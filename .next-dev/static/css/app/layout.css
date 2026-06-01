@@ -1,0 +1,1553 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./app/globals.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+/* =============================================================================
+   Global stylesheet
+   - :root 의 디자인 토큰 CSS 변수는 app/styles/tokens.ts 의 cssRootVars 와
+     1:1 일치시킴. 둘 중 하나를 바꿀 땐 반드시 다른 쪽도 같이 갱신.
+   - 본문 기본 폰트 크기는 16px (--ctrl-h 등 px 토큰과 매끄럽게 어울리도록).
+   ============================================================================= */
+
+:root {
+  /* 사이트는 항상 라이트 톤. OS 가 다크 모드라도 브라우저가 native form 컨트롤
+     (<select> 옵션 패널, <input type=date>, 스크롤바 등) 을 다크 회색으로
+     그리지 않게 강제 — 사이트 톤앤매너(warm white + deep green) 유지. */
+  color-scheme: light;
+
+  /* color */
+  --bg: #FAFAF8;
+  --surface: #FFFFFF;
+  --surface-alt: #F4F4F0;
+  --ink: #16161A;
+  --ink-soft: #6B6B70;
+  --ink-mute: #9A9AA0;
+  --ink-faint: #A0A0A6;
+  --line: #E6E6E2;
+  --line-strong: #D2D2CC;
+  --accent: #2E5D4B;
+  --accent-hover: #244B3C;
+  --accent-soft: #EAF1ED;
+  --accent-ink: #FFFFFF;
+  /* 보조 편집 강조 — 부제목/캡션 등 살짝 따뜻한 포인트 텍스트에만 한정 사용. */
+  --accent-warm: #C2453E;
+  /* 따뜻한 골드(머스타드 톤) — 미니바 등 절제된 포인트에만. */
+  --accent-gold: #B58A2A;
+  --danger: #D64545;
+  --danger-soft: #FBEDED;
+  --success: #1B9F66;
+  --success-soft: #E5F4ED;
+
+  /* spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* shadow */
+  --shadow-1: 0 1px 2px rgba(22, 22, 26, 0.04);
+  --shadow-2: 0 6px 24px rgba(22, 22, 26, 0.08);
+
+  /* control */
+  --ctrl-h: 48px;
+  --ctrl-px: 16px;
+  --btn-px: 20px;
+
+  /* responsive container widths
+   * - reading: 본문(긴 텍스트) 최대 폭. 한 줄이 너무 길어지지 않도록.
+   * - form:    폼/카드 묶음 최대 폭(중앙 정렬형 화면).
+   * - app:     대시보드처럼 표·목록을 넓게 보여줘야 하는 화면.
+   */
+  --container-reading: 720px;
+  --container-form: 560px;
+  --container-app: 1200px;
+}
+
+/* -----------------------------------------------------------------------------
+   워드마크 (.wordmark) — 임시 텍스트 로고. "하루치" + 작은 영문 Haruchi.
+   정식 SVG 로고가 나오면 <Wordmark /> 컴포넌트만 바꾸고 이 클래스는 유지.
+   - 한글: 시스템/노토 세리프 fallback 으로 에디토리얼 톤(hero h1 과 동일 패밀리).
+   - 영문: Pretendard sans, 작게 보조 표기. all-caps 트래킹.
+   - 4가지 크기. 본문 흐름 안에서도 깔끔히 어울리도록 line-height 1.
+-------------------------------------------------------------------------------- */
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.36em;
+  color: var(--ink);
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+}
+.wordmark-ko {
+  font-family: "Noto Serif KR", "AppleSDGothicNeoSerif", "Apple SD Gothic Neo",
+    "Nanum Myeongjo", "Source Han Serif K", "Iowan Old Style", "Times New Roman",
+    "Pretendard Variable", Pretendard, serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.wordmark-en {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  font-size: 0.5em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: var(--ink-soft);
+  /* baseline 정렬 보정 — 세리프 한글과 sans 영문이 같은 베이스라인에 닿도록. */
+  position: relative;
+  top: -0.1em;
+}
+.wordmark--sm { font-size: 14px; }
+.wordmark--md { font-size: 18px; }
+.wordmark--lg { font-size: 22px; }
+.wordmark--xl { font-size: 28px; }
+/* 작은 크기에선 영문 sub 가 너무 작아지므로 비율 살짝 키움. */
+.wordmark--sm .wordmark-en { font-size: 0.6em; }
+
+/* -----------------------------------------------------------------------------
+   반응형 컨테이너 유틸. 페이지마다 .container-* 를 main 직속 wrapper 에 부착.
+   - 좌우 padding 은 모바일 16px → 데스크탑 32px 까지 자연 확장 (clamp).
+-------------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 4vw, 32px);
+  padding-right: clamp(16px, 4vw, 32px);
+  box-sizing: border-box;
+}
+.container-reading { max-width: var(--container-reading); }
+.container-form    { max-width: var(--container-form); }
+.container-app     { max-width: var(--container-app); }
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Pretendard Variable", Pretendard, "Noto Sans KR",
+    -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  /* 기본 본문 16px / 1.6 — 토큰 type.body 와 일치 */
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  max-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* 스크롤바 숨김 - 가로 흔들림 방지 */
+html,
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* =============================================================================
+   FOUC (Flash of Unstyled Content) 방지 — Bible Reading 페이지
+   - 원인: 페이지의 모든 .brp-* 스타일이 styled-jsx 안에 들어 있어, 새로고침
+     순간 styled-jsx <style> 태그가 본문 뒤에 주입되는 짧은 틈에 default
+     브라우저 스타일(맨 left, default 버튼, 숫자 리스트) 이 깜빡 보임.
+   - 해결: globals.css 는 <head> 에 먼저 로드되므로 여기서 .brp-page 를
+     일단 숨겨두고, React 가 하이드레이션 + styled-jsx 적용을 끝낸 직후
+     .brp-page--ready 클래스를 붙여 부드럽게 fade-in.
+   - JS 가 비활성/지연되더라도 페이지가 영원히 숨겨지지 않도록 안전망으로
+     1.2s 후에는 자동으로 보이게 한다 (CSS animation 으로 강제 reveal).
+   ============================================================================= */
+.brp-page {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  /* 안전망: JS 가 어떤 이유로 mounted 클래스를 못 붙이더라도 ~1.2s 뒤에는
+     강제로 화면이 보이도록 forwards animation 으로 최종 상태를 고정. */
+  animation: brp-fouc-fallback 0s ease 1200ms forwards;
+}
+.brp-page.brp-page--ready {
+  visibility: visible;
+  opacity: 1;
+  animation: none;
+}
+@keyframes brp-fouc-fallback {
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   타이포 유틸리티 클래스 — tokens.ts type.* 와 일치.
+   필요한 곳에서 className 으로 적용 (e.g. <h1 class="type-display">).
+-------------------------------------------------------------------------------- */
+.type-display {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.type-h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+.type-h2 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.type-body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+.type-small {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0;
+}
+.type-caption {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+/* 모바일 — display 사이즈를 약간 줄여 모바일 가독성 보전 */
+@media (max-width: 600px) {
+  .type-display {
+    font-size: 32px;
+    letter-spacing: -0.018em;
+  }
+  .type-h1 {
+    font-size: 24px;
+  }
+}
+
+/* =============================================================================
+   인증/어른 화면 공통 chrome (.au-*)
+   - 과거 app/(auth)/authStyles.ts 에 있던 styled-jsx 문자열을 글로벌로 이전.
+     이유: Next.js + SWC 환경에서 `<style jsx>{외부변수}</style>` 패턴은 정적
+     분석이 안 돼 스코프 hash 가 `undefined` 가 되고 스타일이 주입되지 않음.
+   - 클래스명이 .au-* 로 네임스페이스되어 있어 글로벌 노출에 안전.
+   ============================================================================= */
+/* (auth) 페이지 전역 셸. 워드마크 바 + 본문 페이지가 합쳐 viewport 100vh.
+ * 본문(au-page) 은 flex:1 로 남는 공간을 모두 차지 → au-card 의 margin:auto
+ * 세로 중앙 정렬이 그대로 작동. */
+.au-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+.au-shell-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.au-wordmark-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5) var(--space-4) 0;
+}
+.au-wordmark-link {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease;
+  color: var(--ink);
+  text-decoration: none;
+}
+.au-wordmark-link:hover {
+  background: var(--surface-alt);
+}
+
+.au-page {
+  flex: 1 1 auto;
+  background: var(--bg);
+  color: var(--ink);
+  /* 좌우는 모바일 여백, 하단은 카드와 viewport 끝이 너무 붙지 않도록 최소 여백. */
+  padding: 0 var(--space-4) var(--space-6);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.au-topbar {
+  width: 100%;
+  max-width: 560px;
+  margin: var(--space-5) auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+}
+.au-topbar a {
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.au-topbar a:hover {
+  color: var(--ink);
+  background: var(--surface-alt);
+}
+/* 카드:
+ * - `margin: auto` 로 짧은 페이지(/login, /teacher-signup)는 세로 중앙 정렬.
+ *   .au-page 가 `display: flex; flex-direction: column; min-height: 100vh` 라
+ *   남는 공간이 auto 로 균등 분배됨.
+ * - 컨텐츠가 viewport 보다 큰 페이지(/privacy, /dpa)는 auto 가 0 으로 resolve,
+ *   그냥 위에서 아래로 자연 스크롤되므로 양쪽 케이스 모두 깔끔.
+ * - 최소 상하 여백은 .au-page 의 padding 으로 보장 (작은 뷰포트에서 카드가
+ *   topbar 에 붙거나 하단에 끼이지 않도록).
+ */
+.au-card {
+  width: 100%;
+  max-width: 560px;
+  margin: auto;
+  padding: var(--space-7) var(--space-6);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  box-sizing: border-box;
+}
+@media (max-width: 600px) {
+  .au-card {
+    padding: var(--space-6) var(--space-5);
+  }
+}
+.au-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin: 0 0 var(--space-3);
+}
+.au-card h1 {
+  margin: 0 0 var(--space-3);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+@media (max-width: 600px) {
+  .au-card h1 {
+    font-size: 24px;
+  }
+}
+.au-sub {
+  margin: 0 0 var(--space-6);
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 44ch;
+}
+.au-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+.au-field > span {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.au-field input,
+.au-field textarea {
+  height: var(--ctrl-h);
+  padding: 0 var(--ctrl-px);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: var(--radius-lg);
+  font-size: 16px;
+  outline: none;
+  font-family: inherit;
+  line-height: 1.4;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.au-field textarea {
+  height: auto;
+  padding: var(--space-3) var(--ctrl-px);
+  min-height: 96px;
+  resize: vertical;
+}
+.au-field input::-moz-placeholder, .au-field textarea::-moz-placeholder {
+  color: var(--ink-faint);
+}
+.au-field input::placeholder,
+.au-field textarea::placeholder {
+  color: var(--ink-faint);
+}
+.au-field input:focus,
+.au-field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.au-consent-list {
+  margin: var(--space-3) 0 var(--space-4);
+  padding: var(--space-4);
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.au-consent-intro {
+  margin: 0 0 var(--space-2);
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.au-consent-intro code {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+}
+.au-consent {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  align-items: flex-start;
+}
+.au-consent input {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.au-consent label {
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.6;
+  cursor: pointer;
+}
+.au-primary {
+  width: 100%;
+  height: var(--ctrl-h);
+  padding: 0 var(--btn-px);
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: -0.005em;
+  margin-top: var(--space-3);
+  font-family: inherit;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.au-primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+.au-primary:disabled {
+  background: var(--surface-alt);
+  color: var(--ink-mute);
+  border-color: var(--line);
+  cursor: not-allowed;
+}
+.au-secondary {
+  width: 100%;
+  margin-top: var(--space-3);
+  height: var(--ctrl-h);
+  padding: 0 var(--btn-px);
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+  transition: background 0.15s ease;
+}
+.au-secondary:hover {
+  background: var(--surface-alt);
+}
+.au-foot {
+  text-align: center;
+  margin-top: var(--space-5);
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+.au-foot a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.au-foot a:hover {
+  color: var(--ink-soft);
+}
+.au-error {
+  margin: var(--space-3) 0 var(--space-1);
+  padding: var(--space-3);
+  background: var(--danger-soft);
+  border: 1px solid var(--danger);
+  border-radius: var(--radius-md);
+  color: var(--danger);
+  font-size: 13.5px;
+  line-height: 1.55;
+  white-space: pre-line;
+}
+.au-info {
+  margin: var(--space-3) 0 var(--space-1);
+  padding: var(--space-3);
+  background: var(--success-soft);
+  border: 1px solid var(--success);
+  border-radius: var(--radius-md);
+  color: var(--success);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.au-hint {
+  margin-top: var(--space-4);
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.au-hint code {
+  background: var(--surface-alt);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--ink);
+}
+
+/* =============================================================================
+   /signup 시범 디자인 (.sg-*)
+   - 토큰 기반의 더 시원한 레이아웃·디스플레이 타이포·동의 카드.
+   - 다른 페이지엔 영향 없음 (.sg- 네임스페이스).
+   ============================================================================= */
+.sg-page {
+  padding: 0 var(--space-5);
+}
+.sg-topbar {
+  max-width: 560px;
+  margin-top: var(--space-5);
+}
+.sg-card {
+  max-width: 560px;
+  padding: var(--space-7) var(--space-6);
+  margin: var(--space-6) auto var(--space-7);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+}
+
+.sg-stepper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+.sg-stepper-dot {
+  width: 24px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--line);
+  display: inline-block;
+}
+.sg-stepper-dot.is-active {
+  background: var(--accent);
+}
+.sg-stepper-dot.is-done {
+  background: var(--accent);
+  opacity: 0.45;
+}
+.sg-stepper-label {
+  margin-left: var(--space-2);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.sg-title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 var(--space-3);
+}
+@media (max-width: 600px) {
+  .sg-title {
+    font-size: 32px;
+    letter-spacing: -0.018em;
+  }
+  .sg-card {
+    padding: var(--space-6) var(--space-5);
+  }
+}
+
+.sg-sub {
+  margin: 0 0 var(--space-6);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 44ch;
+}
+.sg-sub code {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.sg-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.sg-field {
+  margin-bottom: 0;
+}
+.sg-field > span {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  letter-spacing: 0;
+}
+.sg-field input {
+  height: var(--ctrl-h);
+  padding: 0 var(--ctrl-px);
+  font-size: 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.sg-field input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.sg-consent {
+  margin: var(--space-5) 0 var(--space-4);
+}
+.sg-consent-head {
+  margin-bottom: var(--space-4);
+}
+.sg-consent-title {
+  margin: 0 0 var(--space-2);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.sg-consent-intro {
+  margin: 0 0 var(--space-2);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  max-width: 50ch;
+}
+.sg-consent-version {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+}
+.sg-consent-version code {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+.sg-consent-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.sg-consent-item {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.sg-consent-item.is-checked {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.sg-consent-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--surface-alt);
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.sg-consent-item.is-checked .sg-consent-num {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.sg-consent-item input {
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.sg-consent-item label {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink);
+  cursor: pointer;
+}
+.sg-inline-link {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.sg-inline-link:hover {
+  color: var(--ink-soft);
+}
+
+.sg-primary {
+  height: var(--ctrl-h);
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  margin-top: var(--space-4);
+  letter-spacing: -0.005em;
+}
+.sg-foot {
+  margin-top: var(--space-5);
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+/* -----------------------------------------------------------------------------
+   인증(auth) + signup — 태블릿/PC 정제
+   - 모바일은 기존 그대로 (max-width: 600 룰이 이미 정의됨).
+   - 태블릿/PC 에선 카드 좌우 padding 더 시원, wordmark bar 위 여백 확장.
+   - 가로 짧은 뷰포트에선 카드 위/아래 여백 압축 (login 카드가 화면 안에 들어오게).
+-------------------------------------------------------------------------------- */
+@media (min-width: 960px) {
+  .au-wordmark-bar {
+    padding: var(--space-6) var(--space-5) 0;
+  }
+  .au-page {
+    padding: 0 var(--space-5) var(--space-7);
+  }
+  .au-card {
+    padding: var(--space-7) clamp(var(--space-6), 4vw, var(--space-7));
+  }
+  .sg-card {
+    padding: var(--space-7) clamp(var(--space-6), 4vw, var(--space-7));
+  }
+}
+
+@media (min-width: 1280px) {
+  .au-wordmark-bar {
+    padding: var(--space-7) var(--space-6) 0;
+  }
+  .au-page {
+    padding: 0 var(--space-6) var(--space-7);
+  }
+}
+
+/* 가로 짧은 화면 (가로 태블릿 ~768h 등) — 카드 세로 패딩 압축 */
+@media (min-width: 600px) and (max-height: 760px) {
+  .au-wordmark-bar {
+    padding-top: var(--space-3);
+  }
+  .au-card {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-5);
+  }
+  .au-card h1 {
+    font-size: 24px;
+  }
+  .au-sub {
+    margin-bottom: var(--space-4);
+  }
+  .sg-card {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-5);
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+  .sg-title {
+    font-size: 28px;
+  }
+  .sg-sub {
+    margin-bottom: var(--space-4);
+  }
+}
+
+/* =============================================================================
+   대시보드 (.dash-*) — /admin · /teacher 공통
+   - 토큰 기반. 글로벌 클래스(과거 styled-jsx 외부 변수 패턴이 SWC 에서
+     깨졌던 이슈를 회피).
+   - 3구간 반응형:
+     · ≤599px  모바일: 1열, 풀폭, 컨트롤 44~48px.
+     · 600~1023 태블릿: 폼 2열 가능, 여백 확장.
+     · ≥1024 데스크탑: 최대폭 1200px 중앙 정렬, 표·그리드 시원하게.
+   ============================================================================= */
+.dash-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  width: 100%;
+}
+.dash-shell {
+  width: 100%;
+  max-width: var(--container-app);
+  margin: 0 auto;
+  padding: var(--space-5) clamp(16px, 4vw, 32px) var(--space-7);
+  box-sizing: border-box;
+}
+
+/* 워드마크 브랜드 strip — 헤더 상단에 가벼운 한 줄. */
+.dash-brand-strip {
+  margin-bottom: var(--space-4);
+}
+.dash-brand-link {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  margin-left: calc(var(--space-3) * -1);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.dash-brand-link:hover {
+  background: var(--surface-alt);
+}
+
+/* ── 헤더 ─────────────────────────────────────── */
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding-bottom: var(--space-2);
+  flex-wrap: wrap;
+}
+.dash-header-text {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.dash-eyebrow {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+.dash-header h1 {
+  margin: var(--space-1) 0 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  word-break: keep-all;
+}
+.dash-header-meta {
+  margin: var(--space-2) 0 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+.dash-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+.dash-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.dash-link:hover {
+  background: var(--surface-alt);
+}
+.dash-signout {
+  background: transparent;
+  border: none;
+  padding: var(--space-2) var(--space-1);
+  cursor: pointer;
+  color: var(--ink-soft);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  font-family: inherit;
+}
+.dash-signout:hover {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── 탭 ───────────────────────────────────────── */
+.dash-tabs {
+  display: flex;
+  gap: var(--space-1);
+  margin: var(--space-5) 0 var(--space-4);
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  /* 모바일 가로 스크롤 부드럽게 */
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+.dash-tabs::-webkit-scrollbar { display: none; }
+.dash-tab {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: transparent;
+  border: none;
+  padding: var(--space-3) var(--space-4);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  font-family: inherit;
+  white-space: nowrap;
+  margin-bottom: -1px;
+  scroll-snap-align: start;
+  min-height: 44px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.dash-tab:hover {
+  color: var(--ink);
+}
+.dash-tab.is-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── 섹션(카드) ───────────────────────────────── */
+.dash-section {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-5);
+  margin-bottom: var(--space-4);
+}
+.dash-section h2 {
+  margin: 0 0 var(--space-4);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.dash-section h3 {
+  margin: var(--space-5) 0 var(--space-3);
+  font-size: 15px;
+  color: var(--ink);
+  font-weight: 700;
+}
+.dash-empty {
+  padding: var(--space-6) var(--space-5);
+  text-align: center;
+  color: var(--ink-soft);
+  background: var(--surface-alt);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-md);
+  font-size: 14.5px;
+}
+.dash-section code {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  color: var(--ink);
+}
+.dash-section .dash-header-meta strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* ── 행/폼 ────────────────────────────────────── */
+.dash-row {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  flex-wrap: wrap;
+}
+.dash-row--consent {
+  margin-top: var(--space-3);
+  gap: var(--space-2);
+  font-size: 13.5px;
+  color: var(--ink);
+  align-items: flex-start;
+}
+.dash-row--consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  margin-top: 2px;
+  cursor: pointer;
+}
+.dash-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  align-items: end;
+}
+.dash-form label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  min-width: 0;
+}
+.dash-form input,
+.dash-form select {
+  height: var(--ctrl-h);
+  padding: 0 var(--ctrl-px);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: var(--radius-lg);
+  font-size: 16px;
+  outline: none;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.dash-form input::-moz-placeholder { color: var(--ink-faint); }
+.dash-form input::placeholder { color: var(--ink-faint); }
+.dash-form input:focus,
+.dash-form select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+/* native <select> — OS 기본 화살표 제거 + 사이트 톤의 chevron(SVG inline) 부착.
+   color-scheme: light (root 에서 상속) + warm white bg + 사이트 ink chevron 으로
+   macOS 다크 회색 톤 완전 차단. */
+.dash-form select,
+.dash-inline-input,
+select.dash-inline-input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><path fill='none' stroke='%236B6B70' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' d='M2 4l3 3 3-3'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 10px 10px;
+  padding-right: 36px;
+  cursor: pointer;
+}
+.dash-form select:hover,
+select.dash-inline-input:hover {
+  background-color: var(--surface-alt);
+  border-color: var(--line-strong);
+}
+
+/* ── 버튼 ─────────────────────────────────────── */
+/* 1차: 그린 채움. */
+.dash-primary {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-pill);
+  height: var(--ctrl-h);
+  padding: 0 var(--btn-px);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.dash-primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+.dash-primary:disabled {
+  background: var(--surface-alt);
+  color: var(--ink-mute);
+  border-color: var(--line);
+  cursor: not-allowed;
+}
+/* 2차: 옅은 테두리만. */
+.dash-ghost {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  height: 40px;
+  padding: 0 var(--space-4);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.dash-ghost:hover {
+  background: var(--surface-alt);
+  border-color: var(--line-strong);
+}
+.dash-ghost:disabled {
+  color: var(--ink-faint);
+  cursor: not-allowed;
+}
+/* 위험: danger 톤. */
+.dash-danger {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  height: 40px;
+  padding: 0 var(--space-4);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.dash-danger:hover {
+  background: var(--danger-soft);
+  border-color: var(--danger);
+}
+
+/* ── 리스트 (모바일=카드, 데스크탑=행) ───────── */
+.dash-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.dash-list li {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  flex-wrap: wrap;
+}
+.dash-list .grow {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.dash-list .name {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 15.5px;
+  margin-right: var(--space-2);
+}
+.dash-list .meta {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.dash-inline-input {
+  height: 40px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: inherit;
+  min-width: 120px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.dash-inline-input:focus {
+  border-color: var(--accent);
+}
+
+/* ── 알림 박스 ─────────────────────────────────── */
+.dash-error {
+  margin: var(--space-3) 0 var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--danger-soft);
+  border: 1px solid var(--danger);
+  border-radius: var(--radius-md);
+  color: var(--danger);
+  font-size: 14px;
+  line-height: 1.55;
+  white-space: pre-line;
+}
+.dash-info {
+  margin: var(--space-3) 0 var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--success-soft);
+  border: 1px solid var(--success);
+  border-radius: var(--radius-md);
+  color: var(--success);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* ── 동의 박스 (학생 추가 시 부모 동의 등) ────── */
+.dash-consent {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+.dash-consent > label {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.6;
+  cursor: pointer;
+}
+.dash-consent input[type="checkbox"] {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+}
+.dash-consent-hint {
+  margin: var(--space-2) 0 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  padding-left: calc(18px + var(--space-3));
+}
+
+/* ── 진도 그리드 ──────────────────────────────── */
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+.dash-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-4);
+}
+.dash-card h3 {
+  margin: 0 0 var(--space-1);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.dash-card .sub {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 0 0 var(--space-3);
+}
+.dash-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.dash-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  background: var(--surface-alt);
+  border-radius: 6px;
+  font-size: 11px;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+.dash-cell.is-done {
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+}
+
+/* ── 칩(뱃지) ─────────────────────────────────── */
+.dash-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+.dash-chip.is-muted {
+  background: var(--surface-alt);
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+}
+.dash-chip.is-warn {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+.dash-chip button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  margin-left: 2px;
+}
+
+/* -----------------------------------------------------------------------------
+   태블릿 세로 (≥600px) — 폼 2열, 진도 그리드 2~3열, 미니 그리드 8칸
+-------------------------------------------------------------------------------- */
+@media (min-width: 600px) {
+  .dash-form {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-3);
+  }
+  .dash-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .dash-mini-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  /* 헤더 — 한 줄 정렬 (그 이하에선 wrap 으로 두 줄) */
+  .dash-header {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  /* 탭 — 가로 스크롤 불필요해질 정도로 폭 확보 */
+  .dash-tabs {
+    overflow-x: visible;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   태블릿 가로 (≥960px) — 리스트 2열, 섹션 패딩 확장, dash-list 2-col 분할
+-------------------------------------------------------------------------------- */
+@media (min-width: 960px) {
+  .dash-section {
+    padding: var(--space-5) var(--space-6);
+  }
+  .dash-header h1 {
+    font-size: 30px;
+  }
+  /* 리스트 — 가로 공간 살아나면 2-column 으로 나란히 배치하는 변형 */
+  .dash-list.dash-list--2col {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-2);
+  }
+  /* 진도 미니 그리드 — 10 칸 */
+  .dash-mini-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   데스크탑 (≥1024px) — 섹션 padding 시원하게, 진도 카드 더 넉넉
+-------------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  .dash-shell {
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-7);
+  }
+  .dash-section {
+    padding: var(--space-6) var(--space-6);
+    margin-bottom: var(--space-5);
+  }
+  .dash-header h1 {
+    font-size: 32px;
+  }
+  .dash-grid {
+    gap: var(--space-4);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   대형 PC (≥1280px) — 섹션 더 넉넉, 진도 카드 그리드 시원하게
+-------------------------------------------------------------------------------- */
+@media (min-width: 1280px) {
+  .dash-shell {
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-7);
+  }
+  .dash-section {
+    padding: var(--space-6) var(--space-7);
+    margin-bottom: var(--space-5);
+  }
+  .dash-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-5);
+  }
+  .dash-mini-grid {
+    grid-template-columns: repeat(14, 1fr);
+  }
+  .dash-list.dash-list--2col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   초대형 PC (≥1600px) — 컨테이너 폭 확장 (옵션, 매우 큰 모니터 대응)
+-------------------------------------------------------------------------------- */
+@media (min-width: 1600px) {
+  :root {
+    --container-app: 1320px;
+  }
+  .dash-list.dash-list--2col {
+    /* 3-column 변형으로 자동 확장 — 카드형 리스트가 더 시원하게 */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   짧은 가로 뷰포트 (가로 태블릿 ≈768h) — 헤더/카드 패딩 압축
+-------------------------------------------------------------------------------- */
+@media (min-width: 960px) and (max-height: 820px) {
+  .dash-shell {
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-5);
+  }
+  .dash-section {
+    padding: var(--space-4) var(--space-5);
+    margin-bottom: var(--space-3);
+  }
+  .dash-header h1 {
+    font-size: 26px;
+  }
+}
+

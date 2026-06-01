@@ -11,6 +11,7 @@ import { BOOKS, BOOK_ORDER, type BookId } from "./books";
 import StudentIdentityBar, {
   type StudentIdentityBarHandle,
 } from "./components/StudentIdentityBar";
+import Dropdown, { type DropdownOption } from "./components/Dropdown";
 import {
   fetchCompletedChapters,
   flushPendingLogs,
@@ -628,6 +629,11 @@ export default function BibleReadingPage() {
   const [scrolled, setScrolled] = useState(false);
   const [miniVisible, setMiniVisible] = useState(false);
   const [readerProgress, setReaderProgress] = useState(0);
+  // 새로고침 시 FOUC 방지: SSR/하이드레이션이 끝나기 전까지는 globals.css
+  // 의 .brp-page 규칙이 페이지를 숨겨두고, 마운트 후에만 brp-page--ready
+  // 클래스를 붙여 부드럽게 fade-in. 모든 styled-jsx 가 적용된 시점에만
+  // 화면이 노출되므로 default 브라우저 스타일이 보이는 깜빡임이 사라진다.
+  const [mounted, setMounted] = useState(false);
   // SSR 환경에서는 window가 없어 false가 되며, HMR/하이드레이션 도중 그 값이 굳어
   // 마이크 버튼이 disabled 상태로 멈춰버리는 일이 있다. 기본값을 true로 두고
   // 클라이언트 마운트 후 실제 API 지원 여부로 보정한다.
@@ -643,6 +649,7 @@ export default function BibleReadingPage() {
   const minReadTimeRef = useRef(0);
   const reachedBottomRef = useRef(false);
   const readerSectionRef = useRef<HTMLElement | null>(null);
+  const sideRef = useRef<HTMLElement | null>(null);
   const prayerListeningRef = useRef<number | null>(null);
   const prayerRecognitionRef = useRef<SpeechRecognitionLike | null>(null);
   const prayerReadCountRefs = useRef<Record<number, number>>({});
@@ -652,6 +659,14 @@ export default function BibleReadingPage() {
   useEffect(() => {
     currentStudentRef.current = currentStudent;
   }, [currentStudent]);
+
+  // 하이드레이션 + styled-jsx 적용이 끝난 직후 .brp-page--ready 부착 →
+  // globals.css 의 visibility: hidden 이 해제되며 페이지가 fade-in.
+  // useEffect 는 React commit 이후에 실행되므로 이 시점엔 styled-jsx 의
+  // <style> 태그도 이미 DOM 에 주입돼 있다 (FOUC 없음).
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // 음성 안내 토스트(speechMessage / prayerSpeechMessage)는 3 초 뒤 자동으로 사라짐.
   // 본문 가독성을 가리지 않도록 짧게만 노출.
@@ -1564,6 +1579,49 @@ export default function BibleReadingPage() {
     };
   }, [chapterNumber, translation, bookId]);
 
+  // ───────────────────────────────────────────────────────────────────
+  // 우측 사이드바(.brp-side) sticky-top 계산.
+  // - PC/태블릿 가로(≥960) 에서만 적용 (모바일은 display: contents 라 무효).
+  // - 사이드바 높이가 viewport 보다 작으면: 일반 sticky (top: 80px).
+  // - 사이드바 높이가 viewport 보다 크면: top 을 음수로 설정해 element 가
+  //   viewport 위로 빠지면서 바닥(prayer 카드 끝)이 viewport 안에 들어오게.
+  //   → 본문(reader) 스크롤하는 동안 사이드바는 viewport 에 고정된 채로
+  //     함께 움직이며, reader 가 끝까지 스크롤되면 그 시점에 사이드바
+  //     바닥도 자연스럽게 페이지 바닥과 맞아 떨어짐.
+  // ───────────────────────────────────────────────────────────────────
+  useEffect(() => {
+    const update = () => {
+      const el = sideRef.current;
+      if (!el) return;
+      // 모바일(<960px) 에선 .brp-side 가 display: contents — sticky 무효.
+      if (typeof window === "undefined" || window.innerWidth < 960) {
+        el.style.removeProperty("--brp-side-top");
+        return;
+      }
+      const headerOffset = 80; // 헤더 / 미니바 위 여백
+      const bottomMargin = 20; // viewport 하단과 사이드바 바닥 사이 여유
+      const sideHeight = el.scrollHeight;
+      const viewport = window.innerHeight;
+      if (sideHeight + headerOffset + bottomMargin > viewport) {
+        // 사이드바가 viewport 보다 큼 → top 을 음수로
+        const top = viewport - sideHeight - bottomMargin;
+        el.style.setProperty("--brp-side-top", `${top}px`);
+      } else {
+        el.style.setProperty("--brp-side-top", `${headerOffset}px`);
+      }
+    };
+    update();
+    window.addEventListener("resize", update);
+    // 사이드바 콘텐츠(특히 prayer 카드 열림/닫힘, 책 변경) 가 바뀌면 재계산.
+    const ro =
+      typeof ResizeObserver !== "undefined" ? new ResizeObserver(update) : null;
+    if (ro && sideRef.current) ro.observe(sideRef.current);
+    return () => {
+      window.removeEventListener("resize", update);
+      if (ro) ro.disconnect();
+    };
+  }, []);
+
   const handleQuizAnswer = useCallback((idx: number, option: string) => {
     setQuizAnswers((prev) => {
       const next = [...prev];
@@ -1601,9 +1659,9 @@ export default function BibleReadingPage() {
 
   return (
     <main
-      className={`brp-page ${miniVisible ? "is-scrolled" : ""} ${
-        scrolled && !miniVisible ? "is-past-reader" : ""
-      }`}
+      className={`brp-page ${mounted ? "brp-page--ready" : ""} ${
+        miniVisible ? "is-scrolled" : ""
+      } ${scrolled && !miniVisible ? "is-past-reader" : ""}`}
     >
       <header className={`brp-header ${scrolled ? "is-hidden" : ""}`}>
         <a className="brp-brand" href="/" aria-label="하루치 홈으로">
@@ -1659,58 +1717,96 @@ export default function BibleReadingPage() {
 
       <StudentIdentityBar ref={identityRef} onChange={handleStudentChange} />
 
+      {/* 메인 캔버스 — 모바일/태블릿 세로: flex column + CSS order 로 기존 순서 유지.
+          태블릿 가로/PC(≥960px): grid 2-col 로 좌측(hero+reader), 우측(.brp-side
+          sticky 컨테이너 안에 chrome + progress + prayer) 배치.
+          우측 컨테이너가 sticky 라서 본문 스크롤해도 컨트롤 카드들이 함께 따라옴. */}
+      <div className="brp-canvas">
+
       <section className="brp-hero">
         <h1>{bookMeta.name}</h1>
       </section>
 
+      {/* 우측 컬럼 wrapper — 모바일에선 display: contents 로 layout 영향 0,
+          자식들은 캔버스 직속 flex item 처럼 동작 + CSS order 로 기존 순서 유지.
+          PC(≥960) 에선 sticky 컨테이너로 변신, 본문(reader) 스크롤해도 컨트롤·
+          진도·기도 카드가 함께 따라옴. sticky top 은 JS 가 사이드바 높이를
+          측정해 동적으로 결정(useEffect 참조). */}
+      <aside ref={sideRef} className="brp-side" aria-label="읽기 컨트롤 및 진도">
+
       {/* Row 1: [책 드롭다운] [번역 토글] — 한 줄, 컴팩트 */}
       <section className="brp-top-row" aria-label="성경 책과 번역 선택">
-        <label className="brp-book-picker">
-          <span className="brp-sr-only">성경 책</span>
-          <select
-            value={bookId}
-            onChange={(event) => changeBook(event.target.value as BookId)}
-            aria-label="성경 책 선택"
-          >
-            {BOOK_ORDER.map((id) => (
-              <option key={id} value={id}>
-                {BOOKS[id].name}
-              </option>
-            ))}
-          </select>
-        </label>
+        <Dropdown<BookId>
+          value={bookId}
+          options={BOOK_ORDER.map<DropdownOption<BookId>>((id) => ({
+            value: id,
+            label: BOOKS[id].name,
+          }))}
+          onChange={(next) => changeBook(next)}
+          ariaLabel="성경 책 선택"
+          align="center"
+          size="md"
+        />
 
-        <div className="brp-translation brp-translation--sm">
-          {(Object.keys(data.translations) as TranslationKey[]).map((key) => {
-            const isKrvDisabled = key === "krv" && !hasKrv;
-            return (
-              <button
-                key={key}
-                type="button"
-                className={`${
-                  effectiveTranslation === key ? "is-active" : ""
-                } ${isKrvDisabled ? "is-disabled" : ""}`}
-                disabled={isKrvDisabled}
-                title={
-                  isKrvDisabled
-                    ? "이 책의 개역한글 본문은 아직 준비되지 않았어요."
-                    : undefined
-                }
-                onClick={() => handleTranslationChange(key)}
-              >
-                {data.translations[key].label}
-              </button>
-            );
-          })}
-        </div>
+        {(() => {
+          // 슬라이딩 인디케이터: 활성 버튼의 인덱스/개수를 CSS 변수로 넘겨
+          // 인디케이터(.brp-toggle-indicator) 위치/폭을 계산하도록 한다.
+          // 이렇게 하면 두 버튼이 동시에 배경을 cross-fade 하지 않고,
+          // 하나의 pill 이 좌↔우로 매끄럽게 슬라이드한다 (사각 프레임 아티팩트 제거).
+          const translationKeys = Object.keys(
+            data.translations,
+          ) as TranslationKey[];
+          const activeIdx = Math.max(
+            0,
+            translationKeys.indexOf(effectiveTranslation),
+          );
+          return (
+            <div
+              className="brp-translation brp-translation--sm brp-toggle"
+              style={{
+                ["--brp-toggle-count" as string]: translationKeys.length,
+                ["--brp-toggle-active" as string]: activeIdx,
+              } as React.CSSProperties}
+            >
+              <span className="brp-toggle-indicator" aria-hidden="true" />
+              {translationKeys.map((key) => {
+                const isKrvDisabled = key === "krv" && !hasKrv;
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    className={`${
+                      effectiveTranslation === key ? "is-active" : ""
+                    } ${isKrvDisabled ? "is-disabled" : ""}`}
+                    disabled={isKrvDisabled}
+                    title={
+                      isKrvDisabled
+                        ? "이 책의 개역한글 본문은 아직 준비되지 않았어요."
+                        : undefined
+                    }
+                    onClick={() => handleTranslationChange(key)}
+                  >
+                    {data.translations[key].label}
+                  </button>
+                );
+              })}
+            </div>
+          );
+        })()}
       </section>
 
-      {/* Row 2: 읽기 모드 — 슬림 */}
+      {/* Row 2: 읽기 모드 — 슬림. 번역 토글과 동일한 슬라이딩 인디케이터로
+          매끄럽게 전환된다 (cross-fade 시 보이는 사각 프레임 제거). */}
       <section
-        className="brp-mode-tabs brp-mode-tabs--sm"
+        className="brp-mode-tabs brp-mode-tabs--sm brp-toggle"
         role="tablist"
         aria-label="읽기 모드 선택"
+        style={{
+          ["--brp-toggle-count" as string]: 2,
+          ["--brp-toggle-active" as string]: readingMode === "scroll" ? 1 : 0,
+        } as React.CSSProperties}
       >
+        <span className="brp-toggle-indicator" aria-hidden="true" />
         <button
           type="button"
           role="tab"
@@ -1737,89 +1833,26 @@ export default function BibleReadingPage() {
           <button type="button" onClick={() => moveChapter(chapterNumber - 1)} aria-label="이전 장">
             ←
           </button>
-          <label className="brp-chapter-select">
-            <select
+          <div className="brp-chapter-select-wrap">
+            <Dropdown<number>
               value={chapterNumber}
-              onChange={(event) => moveChapter(Number(event.target.value))}
-              aria-label={`${bookMeta.name} 장 선택`}
-            >
-              {data.chapters.map((item) => (
-                <option key={item.chapter} value={item.chapter}>
-                  제 {item.chapter} 장
-                </option>
-              ))}
-            </select>
-            {chapter.title ? (
-              <span className="brp-select-title">· {chapter.title}</span>
-            ) : null}
-          </label>
+              options={data.chapters.map<DropdownOption<number>>((item) => ({
+                value: item.chapter,
+                label: `제 ${item.chapter} 장`,
+                sub: item.title || undefined,
+              }))}
+              onChange={(next) => moveChapter(next)}
+              ariaLabel={`${bookMeta.name} 장 선택`}
+              align="center"
+              variant="ghost"
+              size="sm"
+              showTriggerSub
+            />
+          </div>
           <button type="button" onClick={() => moveChapter(chapterNumber + 1)} aria-label="다음 장">
             →
           </button>
         </div>
-      </section>
-
-      <section
-        ref={readerSectionRef}
-        className="brp-reader"
-        aria-label={`${bookMeta.name} ${chapterNumber}장 본문`}
-      >
-        {!hasFilledText && (
-          <p className="brp-reader-empty">
-            이 장의 {translation === "krv" ? "개역한글" : "어린이 쉬운"} 본문이
-            아직 준비되지 않았어요. 다른 번역을 선택해 보세요.
-          </p>
-        )}
-        {verses.map((verse, idx) => {
-          // 스크롤 모드는 "스크롤 + 최소 시간 + 퀴즈"가 모두 끝나
-          // 장 자체가 완료(readVerseCount === totalVerses)됐을 때만
-          // 절 색을 바꾼다. 그 외에는 절별 진행 색을 절대 표시하지 않는다.
-          const chapterFullyRead =
-            totalVerses > 0 && readVerseCount >= totalVerses;
-          const isRead =
-            readingMode === "scroll"
-              ? chapterFullyRead
-              : idx < readVerseCount;
-          const isCurrent =
-            readingMode === "mic" &&
-            listening &&
-            !isRead &&
-            idx === readVerseCount;
-          const karaokeWords = isCurrent
-            ? verse.t.split(/\s+/).filter(Boolean)
-            : null;
-          return (
-            <div
-              key={`${bookId}-${chapterNumber}-${effectiveTranslation}-${verse.n}`}
-              className={`brp-verse ${isRead ? "is-read" : ""} ${
-                isCurrent ? "is-current" : ""
-              }`}
-            >
-              <span className="brp-verse-number">{verse.n}</span>
-              {karaokeWords ? (
-                <p className="brp-verse-text">
-                  {karaokeWords.map((word, wIdx) => (
-                    // span 사이에 실제 공백 문자(" ")를 넣어, 일반 텍스트와
-                    // 동일한 break opportunity 를 보장한다. (마진으로 띄우면
-                    // 한글이 단어 중간에서 끊기는 현상이 발생함)
-                    <Fragment key={`${verse.n}-${wIdx}`}>
-                      {wIdx > 0 ? " " : null}
-                      <span
-                        className={`brp-verse-word ${
-                          wIdx < currentVerseWordIndex ? "is-read" : ""
-                        }`}
-                      >
-                        {word}
-                      </span>
-                    </Fragment>
-                  ))}
-                </p>
-              ) : (
-                <p className="brp-verse-text">{verse.t}</p>
-              )}
-            </div>
-          );
-        })}
       </section>
 
       <section
@@ -1864,10 +1897,15 @@ export default function BibleReadingPage() {
           </div>
 
           <div
-            className="brp-prayer-toggle"
+            className="brp-prayer-toggle brp-toggle"
             role="tablist"
             aria-label="학년 선택"
+            style={{
+              ["--brp-toggle-count" as string]: 2,
+              ["--brp-toggle-active" as string]: prayerGrade === "upper" ? 1 : 0,
+            } as React.CSSProperties}
           >
+            <span className="brp-toggle-indicator" aria-hidden="true" />
             <button
               type="button"
               role="tab"
@@ -2064,6 +2102,76 @@ export default function BibleReadingPage() {
           </div>
         )}
       </section>
+
+      </aside>{/* /.brp-side */}
+
+      {/* 본문(reader) — source 상 우측 sidebar(.brp-side) 뒤에 위치.
+          모바일: CSS order 로 toolbar 와 progress 사이(시각 순서 5)에 표시.
+          PC: grid-area: reader 로 좌측 컬럼 차지. */}
+      <section
+        ref={readerSectionRef}
+        className="brp-reader"
+        aria-label={`${bookMeta.name} ${chapterNumber}장 본문`}
+      >
+        {!hasFilledText && (
+          <p className="brp-reader-empty">
+            이 장의 {translation === "krv" ? "개역한글" : "어린이 쉬운"} 본문이
+            아직 준비되지 않았어요. 다른 번역을 선택해 보세요.
+          </p>
+        )}
+        {verses.map((verse, idx) => {
+          // 스크롤 모드는 "스크롤 + 최소 시간 + 퀴즈"가 모두 끝나
+          // 장 자체가 완료(readVerseCount === totalVerses)됐을 때만
+          // 절 색을 바꾼다. 그 외에는 절별 진행 색을 절대 표시하지 않는다.
+          const chapterFullyRead =
+            totalVerses > 0 && readVerseCount >= totalVerses;
+          const isRead =
+            readingMode === "scroll"
+              ? chapterFullyRead
+              : idx < readVerseCount;
+          const isCurrent =
+            readingMode === "mic" &&
+            listening &&
+            !isRead &&
+            idx === readVerseCount;
+          const karaokeWords = isCurrent
+            ? verse.t.split(/\s+/).filter(Boolean)
+            : null;
+          return (
+            <div
+              key={`${bookId}-${chapterNumber}-${effectiveTranslation}-${verse.n}`}
+              className={`brp-verse ${isRead ? "is-read" : ""} ${
+                isCurrent ? "is-current" : ""
+              }`}
+            >
+              <span className="brp-verse-number">{verse.n}</span>
+              {karaokeWords ? (
+                <p className="brp-verse-text">
+                  {karaokeWords.map((word, wIdx) => (
+                    // span 사이에 실제 공백 문자(" ")를 넣어, 일반 텍스트와
+                    // 동일한 break opportunity 를 보장한다. (마진으로 띄우면
+                    // 한글이 단어 중간에서 끊기는 현상이 발생함)
+                    <Fragment key={`${verse.n}-${wIdx}`}>
+                      {wIdx > 0 ? " " : null}
+                      <span
+                        className={`brp-verse-word ${
+                          wIdx < currentVerseWordIndex ? "is-read" : ""
+                        }`}
+                      >
+                        {word}
+                      </span>
+                    </Fragment>
+                  ))}
+                </p>
+              ) : (
+                <p className="brp-verse-text">{verse.t}</p>
+              )}
+            </div>
+          );
+        })}
+      </section>
+
+      </div>{/* /.brp-canvas */}
 
       <div className="brp-dock" role="region" aria-label="읽기 컨트롤">
         {readingMode === "mic" ? (
@@ -2525,6 +2633,8 @@ export default function BibleReadingPage() {
         }
 
         .brp-translation button {
+          position: relative;
+          z-index: 1;
           flex: 1 1 0;
           min-width: 0;
           display: inline-flex;
@@ -2538,16 +2648,15 @@ export default function BibleReadingPage() {
           font-weight: 600;
           letter-spacing: -0.01em;
           line-height: 1;
-          transition: background 0.18s ease, color 0.18s ease;
+          transition: color 0.22s ease;
         }
 
         .brp-translation button:hover:not(:disabled):not(.is-active) {
-          background: var(--surface-alt);
           color: var(--ink);
         }
 
         .brp-translation button.is-active {
-          background: var(--accent);
+          background: transparent;
           color: var(--accent-ink);
         }
 
@@ -2569,8 +2678,18 @@ export default function BibleReadingPage() {
           border-color: var(--line-strong);
         }
 
-        /* 장 번호 + 부제목 한 줄. 화살표와 살짝 떨어지면서, 컨텐츠는 중앙 가까이
-           쏠리도록 좌측 패딩 크게(완전 정중앙은 아님). */
+        /* 장 스위처 내부 — Dropdown 컴포넌트를 감싸는 flex 래퍼.
+           prev/next 버튼 사이 남은 공간을 채우고, Dropdown 트리거가 100% 폭으로
+           가운데에 깔끔히 정렬되도록 함. */
+        .brp-chapter-select-wrap {
+          flex: 1 1 0;
+          min-width: 0;
+          display: flex;
+          align-items: stretch;
+        }
+
+        /* (deprecated) 장 번호 + 부제목 — 네이티브 select 시절 스타일.
+           이제 Dropdown 컴포넌트가 처리하므로 매칭되는 엘리먼트 없음. */
         .brp-chapter-select {
           position: relative;
           flex: 1;
@@ -2645,12 +2764,14 @@ export default function BibleReadingPage() {
           display: grid;
           grid-template-columns: 1.4em minmax(0, 1fr);
           column-gap: clamp(4px, 0.6vw, 8px);
-          align-items: start;
-          margin: 0 0 14px;
-          padding: 4px 0;
+          /* 번호는 본문 첫 줄의 baseline 에 정렬 — 절이 여러 줄이어도
+             숫자가 텍스트 첫 줄과 자연스럽게 맞물려 보임. */
+          align-items: baseline;
+          margin: 0 0 10px;
+          padding: 2px 0;
           border-radius: var(--radius-md);
           font-size: clamp(16px, 1.6vw, 19px);
-          line-height: 1.9;
+          line-height: 1.55;
           font-weight: 400;
           color: var(--ink);
           word-break: keep-all;
@@ -2687,7 +2808,10 @@ export default function BibleReadingPage() {
           color: var(--ink-mute);
           font-size: 1em;
           line-height: inherit;
-          text-align: right;
+          /* 가운데 정렬 + tabular-nums — "1"과 "10"이 같은 1.4em 컬럼 안에서
+             가로 가운데로 정렬되어, 절이 길어 행이 높아져도 숫자가 위쪽에
+             박혀 어색해 보이지 않고 본문 블록과 시각적 균형이 맞는다. */
+          text-align: center;
           font-variant-numeric: tabular-nums;
           transition: color 0.3s ease;
         }
@@ -2798,9 +2922,12 @@ export default function BibleReadingPage() {
         }
 
         /* 컴팩트 번역 토글 — 책 드롭다운(.brp-book-picker)과 시각적으로
-           동일한 pill 로 보이도록 inner padding/gap 을 0 으로. active 버튼이
-           컨테이너 전체 높이를 가득 채워 두 컨트롤이 같은 라인 위에서 같은 톤. */
+           동일한 pill 로 보이도록 inner padding/gap 을 0 으로. 슬라이딩
+           인디케이터(.brp-toggle-indicator)가 활성 영역을 그려주고, 버튼은
+           항상 투명한 상태로 텍스트 색만 전환되어 매끄러운 슬라이드 전환. */
         .brp-translation--sm {
+          position: relative;
+          isolation: isolate;
           height: 40px;
           min-height: 40px;
           padding: 0;
@@ -2814,6 +2941,39 @@ export default function BibleReadingPage() {
           font-weight: 700;
           letter-spacing: -0.01em;
           border-radius: var(--radius-pill);
+        }
+
+        /* 공통 토글 슬라이딩 인디케이터. 컨테이너에 다음 CSS 변수가
+           전달된다는 가정으로 위치/폭이 계산된다:
+             --brp-toggle-count  : 버튼 개수 (정수)
+             --brp-toggle-active : 활성 인덱스 (0..count-1)
+           overflow: hidden 컨테이너 안에서 pill 모양 그대로 슬라이드한다. */
+        .brp-toggle {
+          position: relative;
+          isolation: isolate;
+        }
+        .brp-toggle-indicator {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: calc(100% / var(--brp-toggle-count, 2));
+          background: var(--accent);
+          border-radius: var(--radius-pill);
+          transform: translate3d(
+            calc(var(--brp-toggle-active, 0) * 100%),
+            0,
+            0
+          );
+          transition: transform 0.34s cubic-bezier(0.32, 0.72, 0.24, 1);
+          will-change: transform;
+          pointer-events: none;
+          z-index: 0;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .brp-toggle-indicator {
+            transition: none;
+          }
         }
 
         .brp-translation button.is-disabled,
@@ -2834,31 +2994,41 @@ export default function BibleReadingPage() {
           text-align: center;
         }
 
-        /* 모드 탭 — pill 컨테이너 + pill 버튼. 슬림 변형(--sm)은 36px 높이. */
+        /* 모드 탭 — pill 컨테이너 + 슬라이딩 인디케이터.
+           슬림 변형(--sm)은 36px 높이, 번역 토글과 동일하게 edge-to-edge
+           (padding/gap 0) 로 베젤 없이 깔끔하게 보인다. */
         .brp-mode-tabs {
           max-width: var(--container-reading);
           margin: 0 auto 14px;
+          position: relative;
+          isolation: isolate;
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 6px;
+          gap: 0;
           background: var(--surface);
           border: 1px solid var(--line);
           border-radius: var(--radius-pill);
-          padding: 5px;
+          padding: 0;
           min-height: 52px;
           box-sizing: border-box;
           align-items: stretch;
+          overflow: hidden;
         }
 
+        /* 읽기 모드 탭 — 위 row(책 드롭다운 + 번역 토글, 40px) 와 동일한
+           높이로 맞춰 두 줄이 같은 톤의 컨트롤 띠처럼 보이게 한다. */
         .brp-mode-tabs--sm {
-          min-height: 36px;
-          padding: 3px;
-          gap: 4px;
+          height: 40px;
+          min-height: 40px;
+          padding: 0;
+          gap: 0;
           margin-bottom: 10px;
         }
 
         .brp-mode-tab {
           all: unset;
+          position: relative;
+          z-index: 1;
           cursor: pointer;
           box-sizing: border-box;
           display: inline-flex;
@@ -2871,7 +3041,7 @@ export default function BibleReadingPage() {
           font-size: 15px;
           font-weight: 600;
           letter-spacing: -0.01em;
-          transition: background 0.18s ease, color 0.18s ease;
+          transition: color 0.22s ease;
         }
 
         .brp-mode-tabs--sm .brp-mode-tab {
@@ -2880,12 +3050,11 @@ export default function BibleReadingPage() {
         }
 
         .brp-mode-tab:hover:not(.is-active) {
-          background: var(--surface-alt);
           color: var(--ink);
         }
 
         .brp-mode-tab.is-active {
-          background: var(--accent);
+          background: transparent;
           color: var(--accent-ink);
         }
 
@@ -3138,7 +3307,13 @@ export default function BibleReadingPage() {
         }
 
         .brp-grid button {
+          /* 그리드 셀이 넓어도 칩(동그라미)은 항상 일정 크기로 유지 — 가로폭이
+             넓은 태블릿/PC 에서 한 셀이 커져서 동그라미가 거대해지는 현상 방지.
+             셀 안에선 margin: 0 auto 로 가운데 정렬. */
+          width: 100%;
+          max-width: 40px;
           aspect-ratio: 1;
+          margin: 0 auto;
           border-radius: 50%;
           background: var(--surface);
           color: var(--ink-soft);
@@ -3210,31 +3385,55 @@ export default function BibleReadingPage() {
           font-weight: 700;
         }
 
+        /* 학년 토글 — 번역/모드 토글과 동일하게 슬라이딩 인디케이터 패턴.
+           컨테이너 안 padding 없음 → 베젤 없이 edge-to-edge pill 한 줄.
+           높이는 height 로 명시 고정 (min-height 만 있으면 자식 button 의
+           내재 높이가 줄어들 때 pill 이 작아져 의도와 다르게 보일 수 있음). */
         .brp-prayer-toggle {
           display: inline-flex;
-          align-items: center;
+          align-items: stretch;
           background: var(--surface);
           border: 1px solid var(--line);
           border-radius: var(--radius-pill);
-          padding: 4px;
+          padding: 0;
+          height: 44px;
+          overflow: hidden;
+          position: relative;
+          isolation: isolate;
           flex-shrink: 0;
         }
 
         .brp-prayer-toggle button {
+          position: relative;
+          z-index: 1;
           border: 0;
+          margin: 0;
           cursor: pointer;
           font: inherit;
-          padding: 7px 14px;
+          /* native <button> 기본 padding/margin 0 리셋. flex 가운데 정렬은
+             기본으로 두고, Pretendard 한글 글리프가 line-box 위쪽으로 약간
+             치우쳐 보이는 metric 보정은 line-height 를 넉넉히 줘서 line-box
+             안에서 자연스럽게 중앙에 앉도록 한다. height: 100% 로 pill 전체
+             높이를 그대로 채움. */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          width: auto;
+          height: 100%;
+          line-height: 1.5;
+          padding: 0 16px;
           border-radius: var(--radius-pill);
           background: transparent;
           color: var(--ink-soft);
           font-size: 13px;
           font-weight: 600;
           letter-spacing: -0.01em;
+          transition: color 0.2s ease;
         }
 
         .brp-prayer-toggle button.is-active {
-          background: var(--accent);
+          background: transparent;
           color: var(--accent-ink);
         }
 
@@ -3803,6 +4002,333 @@ export default function BibleReadingPage() {
           }
         }
 
+        /* ─────────────────────────────────────────────────────────────
+           메인 캔버스(.brp-canvas) + 우측 사이드(.brp-side)
+           - 모바일/태블릿 세로(<960px): canvas 는 flex column, side 는
+             display:contents 로 layout 영향 0. 자식들은 캔버스 직속 flex
+             item 처럼 동작 → CSS order 로 기존 모바일 순서 유지
+             (hero → top-row → mode-tabs → toolbar → reader → progress → prayer).
+           - 태블릿 가로 + PC(≥960px): canvas 는 grid 2-col. side 는 우측
+             컬럼(grid-area: side)을 차지하는 flex column + position:sticky
+             → 본문 스크롤해도 컨트롤·진도·기도 카드가 함께 따라옴.
+           ────────────────────────────────────────────────────────────── */
+        .brp-canvas {
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+        .brp-side {
+          /* 모바일: 컨테이너 자체를 layout 에서 제거 — 자식들이 canvas 직속 flex item.
+             PC 에선 grid item 으로 살아남음(미디어 쿼리에서 override). */
+          display: contents;
+        }
+        /* CSS order — 모바일/태블릿 세로 시각 순서. side 가 display: contents 라
+           내부 자식들이 canvas 의 flex item 으로 평탄화 → order 로 배치 가능. */
+        .brp-canvas > .brp-hero,
+        .brp-canvas .brp-hero          { order: 1; }
+        .brp-canvas .brp-top-row       { order: 2; }
+        .brp-canvas .brp-mode-tabs     { order: 3; }
+        .brp-canvas .brp-toolbar       { order: 4; }
+        .brp-canvas > .brp-reader,
+        .brp-canvas .brp-reader        { order: 5; }
+        .brp-canvas .brp-progress-grid { order: 6; }
+        .brp-canvas .brp-prayer        { order: 7; }
+
+        /* ─────────────────────────────────────────────────────────────
+           태블릿 세로 (≥600px) — 챕터 그리드 살짝 더 많은 칸, 리더 패딩 확장
+           ────────────────────────────────────────────────────────────── */
+        @media (min-width: 600px) {
+          .brp-reader {
+            padding: clamp(24px, 3vw, 32px) clamp(14px, 2vw, 22px);
+          }
+          .brp-grid {
+            grid-template-columns: repeat(10, 1fr);
+            gap: 10px;
+          }
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           태블릿 가로 + PC (≥960px) — 2-column 레이아웃 활성화.
+           좌측 컬럼: 책 제목(hero) + 본문(reader)
+           우측 컬럼(사이드바): 책 드롭다운/번역(top-row) → 읽기 모드(mode-tabs)
+                              → 장 스위처(toolbar) → 진도 → 기도
+           ────────────────────────────────────────────────────────────── */
+        @media (min-width: 960px) {
+          .brp-page {
+            padding: 60px clamp(16px, 2vw, 24px) 88px;
+          }
+          /* 헤더 좌우 패딩을 캔버스 폭(1300px)과 동기화 — 뷰포트가 캔버스보다 넓을 땐
+             (viewport - 1300)/2 만큼 들여 캔버스 양끝과 일치, 좁을 땐 최소 20px 유지. */
+          .brp-header {
+            padding: 6px max(20px, calc((100vw - 1300px) / 2));
+            min-height: 44px;
+          }
+
+          /* 캔버스 = 2-col grid. 좌측 1fr(min 0), 우측 sidebar 300px.
+             태블릿 범위(960~1199)에서 reader 폭을 충분히 확보하기 위해
+             사이드바를 컴팩트한 300px 로 유지 (사이드 내부 컴포넌트도 본래
+             "좁은 300px 폭" 기준으로 디자인되어 있어 내부 비례도 자연스럽다).
+             ≥1200px 부터는 아래 @media 에서 940/460 으로 시원하게 확장.
+
+             컨테이너 max 1300 ≈ ~960(reader) + 32(gap) + 300(side).
+             hero 는 row 1 양쪽 컬럼 span (윗선만 차지). row 2 부터 reader 와
+             side 가 같은 높이에서 시작 → 정렬 깔끔. */
+          .brp-canvas {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 300px;
+            grid-template-areas:
+              "hero    hero"
+              "reader  side";
+            column-gap: 32px;
+            row-gap: 14px;
+            max-width: 1300px;
+            margin: 8px auto 0;
+            align-items: start;
+          }
+          /* grid area 매핑 — hero, reader, side 세 영역만. max-width/margin 리셋. */
+          .brp-canvas > .brp-hero {
+            grid-area: hero;
+            max-width: none;
+            margin: 0;
+            padding-right: calc(300px + 32px);
+            padding-bottom: 4px;
+            text-align: center;
+          }
+          .brp-canvas > .brp-reader {
+            grid-area: reader;
+            max-width: none;
+            margin: 0;
+            align-self: start;
+          }
+          /* ⭐️ 우측 컬럼 wrapper — sticky 컨테이너.
+             내부 스크롤 없음. 본문(reader) 스크롤하면 페이지 전체와 함께
+             움직이는 것처럼 보이지만, 실제로는 viewport 상단 기준
+             var(--brp-side-top) 위치에 고정됨.
+             - 사이드바 < viewport: top 80px → 항상 같은 위치에 고정.
+             - 사이드바 > viewport: JS 가 top 을 음수(viewport - sideHeight
+               - margin) 로 설정 → 사이드바가 viewport 위로 일부 빠지며
+               바닥(prayer 카드)이 viewport 안에 들어옴. 본문이 끝까지
+               스크롤되는 동안 사이드바 바닥은 계속 보이고, 페이지 끝에
+               도달하면 사이드바도 자연스럽게 캔버스 바닥과 함께 멈춤. */
+          .brp-side {
+            grid-area: side;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            position: sticky;
+            top: var(--brp-side-top, 80px);
+            align-self: start;
+          }
+          /* 사이드 내부 자식들 — grid area 매핑 불필요(flex item).
+             order 리셋 (모바일용 order 가 PC 에선 의미 없게). */
+          .brp-side > .brp-top-row,
+          .brp-side > .brp-mode-tabs,
+          .brp-side > .brp-toolbar,
+          .brp-side > .brp-progress-grid,
+          .brp-side > .brp-prayer {
+            order: 0;
+            max-width: none;
+            margin: 0;
+          }
+
+          /* 좌측 reader — 본문은 항상 충분히 시원한 padding */
+          .brp-reader {
+            padding: clamp(28px, 3vw, 36px) clamp(22px, 2.5vw, 32px);
+          }
+
+          /* 사이드 내 컨트롤 — 좁은 300px 폭에 맞춰 살짝 컴팩트 */
+          .brp-side .brp-top-row {
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+          }
+          .brp-side .brp-mode-tabs--sm {
+            /* 사이드 내에서도 위 row(40px, base 높이) 와 동일 높이 유지 */
+            height: 40px;
+            min-height: 40px;
+          }
+          .brp-side .brp-toolbar {
+            justify-content: stretch;
+          }
+          .brp-side .brp-chapter-switcher {
+            min-height: 40px;
+            max-width: none;
+          }
+
+          /* 사이드 내 진도 + 기도 — 카드 톤(surface + border + radius)으로 통일.
+             border-top 구분선 대신 카드 형태로. */
+          .brp-side > .brp-progress-grid,
+          .brp-side > .brp-prayer {
+            padding: 20px 18px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            border-top: none;
+            padding-top: 20px;
+          }
+          /* 진도 — 사이드바 좁은 폭에선 1 컬럼 stack */
+          .brp-side > .brp-progress-grid {
+            grid-template-columns: 1fr;
+            gap: 14px;
+          }
+          .brp-side > .brp-progress-grid h2 {
+            font-size: 17px;
+          }
+          .brp-side > .brp-progress-grid .brp-section-label {
+            margin-bottom: 6px;
+            font-size: 11px;
+          }
+          /* 사이드바 안 챕터 칩 그리드 — 좁은 폭에 맞춰 6칸 */
+          .brp-side > .brp-progress-grid .brp-grid {
+            grid-template-columns: repeat(6, 1fr);
+            gap: 6px;
+          }
+          .brp-side > .brp-progress-grid .brp-grid button {
+            font-size: 12px;
+          }
+          /* 기도 카드 — 사이드바 좁은 폭에 맞춘 컴팩트 톤 */
+          .brp-side > .brp-prayer h2 {
+            font-size: 18px;
+          }
+          .brp-side > .brp-prayer .brp-prayer-header {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 12px;
+          }
+          .brp-side > .brp-prayer .brp-prayer-toggle {
+            align-self: stretch;
+            justify-content: center;
+          }
+          .brp-side > .brp-prayer .brp-prayer-toggle button {
+            flex: 1;
+            text-align: center;
+          }
+          .brp-side > .brp-prayer .brp-prayer-trigger {
+            padding: 13px 14px;
+            font-size: 15px;
+            grid-template-columns: 30px 1fr 24px;
+            gap: 10px;
+          }
+          .brp-side > .brp-prayer .brp-prayer-body {
+            padding: 4px 14px 16px;
+            gap: 16px;
+          }
+          .brp-side > .brp-prayer .brp-prayer-verse p,
+          .brp-side > .brp-prayer .brp-prayer-think,
+          .brp-side > .brp-prayer .brp-prayer-text {
+            font-size: 14.5px;
+            line-height: 1.8;
+          }
+          .brp-side > .brp-prayer .brp-prayer-lords {
+            padding: 16px 14px;
+          }
+          .brp-side > .brp-prayer .brp-prayer-actions {
+            flex-direction: column-reverse;
+            align-items: stretch;
+          }
+          .brp-side > .brp-prayer .brp-prayer-mic,
+          .brp-side > .brp-prayer .brp-prayer-check,
+          .brp-side > .brp-prayer .brp-prayer-next,
+          .brp-side > .brp-prayer .brp-prayer-restart {
+            width: 100%;
+            justify-content: center;
+            padding: 10px 12px;
+            font-size: 13px;
+          }
+
+          /* 하단 dock / speech message — 본문(좌측 컬럼) 가운데 정렬.
+             캔버스 중심에서 좌측 컬럼 가운데 = 중심 - (gap + side)/2 = (32+300)/2 = 166px */
+          .brp-dock,
+          .brp-speech-message {
+            left: calc(50% - 166px);
+          }
+          .brp-dock {
+            max-width: 900px;
+          }
+        }
+
+        /* 가로 태블릿의 짧은 세로 높이 (≈768h) — 헤더·dock 더 압축 */
+        @media (min-width: 960px) and (max-height: 820px) {
+          .brp-page {
+            padding-top: 52px;
+            padding-bottom: 72px;
+          }
+          .brp-header {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            min-height: 40px;
+          }
+          .brp-canvas {
+            margin-top: 0;
+            row-gap: 10px;
+          }
+          .brp-hero h1 {
+            font-size: clamp(24px, 4vw, 34px);
+          }
+          .brp-dock {
+            bottom: 10px;
+            padding: 5px;
+          }
+          .brp-mic,
+          .brp-manual,
+          .brp-reset {
+            padding: 7px 14px;
+            font-size: 13px;
+          }
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           PC (≥1200px) — 본문/사이드바 폭 시원하게 확장
+           ────────────────────────────────────────────────────────────── */
+        @media (min-width: 1200px) {
+          .brp-page {
+            padding: 92px clamp(20px, 2vw, 32px) 112px;
+          }
+          /* 헤더 좌우 패딩을 PC 캔버스 폭(1460px)과 동기화. */
+          .brp-header {
+            padding: 6px max(24px, calc((100vw - 1460px) / 2));
+          }
+          .brp-canvas {
+            grid-template-columns: minmax(0, 940px) 460px;
+            column-gap: 60px;
+            max-width: 1460px;
+            margin-top: 16px;
+          }
+          /* hero — PC sidebar(460 + gap 60) 폭만큼 우측 비움 → reader 컬럼 가운데 정렬 */
+          .brp-canvas > .brp-hero {
+            padding-right: calc(460px + 60px);
+          }
+          .brp-side {
+            gap: 16px;
+          }
+          .brp-side > .brp-progress-grid,
+          .brp-side > .brp-prayer {
+            padding: 22px 20px;
+          }
+          .brp-side > .brp-prayer h2 {
+            font-size: 19px;
+          }
+
+          /* dock — 좌측 컬럼(940) 가운데 = 캔버스(1460) 중심 - (60+460)/2 = 260px */
+          .brp-dock,
+          .brp-speech-message {
+            left: calc(50% - 260px);
+          }
+          .brp-dock {
+            max-width: 900px;
+          }
+        }
+
+        /* 대형 PC (≥1440px) — 여백 시원 */
+        @media (min-width: 1440px) {
+          .brp-page {
+            padding-top: 100px;
+            padding-bottom: 120px;
+          }
+          .brp-canvas {
+            margin-top: 24px;
+          }
+        }
+
         @media (max-width: 760px) {
           .brp-page {
             padding-top: 60px;
@@ -3902,10 +4428,10 @@ export default function BibleReadingPage() {
           .brp-verse {
             grid-template-columns: 1.2em minmax(0, 1fr);
             column-gap: 4px;
-            margin-bottom: 10px;
-            padding: 3px 0;
+            margin-bottom: 4px;
+            padding: 2px 0;
             font-size: 16.5px;
-            line-height: 1.8;
+            line-height: 1.55;
           }
 
           /* 책 드롭다운 — 모바일 살짝 더 작은 높이, 중앙 정렬 유지 */
@@ -3932,8 +4458,10 @@ export default function BibleReadingPage() {
           }
 
           .brp-mode-tabs--sm {
-            min-height: 34px;
-            padding: 3px;
+            /* 모바일에서도 위 row(38px) 와 같은 높이로 통일 */
+            height: 38px;
+            min-height: 38px;
+            padding: 0;
             margin-bottom: 10px;
           }
           .brp-mode-tabs--sm .brp-mode-tab {
