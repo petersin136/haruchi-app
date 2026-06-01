@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import proverbsData from "./proverbs.json";
 import matthewData from "./matthew.json";
 import markData from "./mark.json";
@@ -1772,14 +1772,19 @@ export default function BibleReadingPage() {
               {karaokeWords ? (
                 <p className="brp-verse-text">
                   {karaokeWords.map((word, wIdx) => (
-                    <span
-                      key={`${verse.n}-${wIdx}`}
-                      className={`brp-verse-word ${
-                        wIdx < currentVerseWordIndex ? "is-read" : ""
-                      }`}
-                    >
-                      {word}
-                    </span>
+                    // span 사이에 실제 공백 문자(" ")를 넣어, 일반 텍스트와
+                    // 동일한 break opportunity 를 보장한다. (마진으로 띄우면
+                    // 한글이 단어 중간에서 끊기는 현상이 발생함)
+                    <Fragment key={`${verse.n}-${wIdx}`}>
+                      {wIdx > 0 ? " " : null}
+                      <span
+                        className={`brp-verse-word ${
+                          wIdx < currentVerseWordIndex ? "is-read" : ""
+                        }`}
+                      >
+                        {word}
+                      </span>
+                    </Fragment>
                   ))}
                 </p>
               ) : (
@@ -2669,10 +2674,12 @@ export default function BibleReadingPage() {
         }
 
         .brp-verse-word {
+          /* 단어 사이는 JSX 의 실제 공백 문자로 띄움 (margin-right 사용 X).
+             일반 텍스트와 동일한 줄바꿈 동작을 보장 — 한글 단어 중간에서
+             끊기는 현상이 사라짐. */
           display: inline;
-          margin-right: 0.28em;
           color: inherit;
-          transition: color 0.28s ease, font-weight 0.28s ease;
+          transition: color 0.28s ease, text-shadow 0.28s ease;
         }
 
         .brp-verse-word.is-read {
