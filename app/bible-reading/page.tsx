@@ -123,6 +123,7 @@ const currentChapterKey = (bookId: BookId) =>
   `bible_current_chapter_${bookId}`;
 const MIGRATION_V1_KEY = "bible_migrated_v1";
 const READING_MODE_KEY = "bible_reading_mode";
+const TRANSLATION_KEY = "bible_translation";
 
 const migrateLegacyKeys = () => {
   if (typeof window === "undefined") return;
@@ -685,10 +686,20 @@ export default function BibleReadingPage() {
       // reader 카드 하단이 뷰포트 상단(=0)보다 위에 있으면 본문은 다 지나간 것.
       const readerStillInView = rect.bottom > 0;
       setMiniVisible(past && readerStillInView);
-      // 본문 진행도 — top 이 0 일 때 0%, bottom 이 0 일 때 100%.
-      const total = rect.height;
-      const passed = Math.max(0, Math.min(total, -rect.top));
-      const ratio = total > 0 ? passed / total : 0;
+      // 본문 진행도 (0~1):
+      //   0%  → reader 상단이 뷰포트 상단에 닿은 시점 (=막 읽기 시작).
+      //   100% → reader 하단(=마지막 줄)이 뷰포트 하단에 닿은 시점.
+      //   즉 "스크롤 가능한 본문 길이" 기준으로 계산해, 본문 마지막 줄이
+      //   화면에 보이는 순간 정확히 100%. 그 이후 더 스크롤해도 1 로 고정.
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const scrollable = rect.height - vh;
+      let ratio: number;
+      if (scrollable <= 0) {
+        // reader 가 뷰포트보다 짧음 → reader.top 이 0 이하로 내려오면 100%.
+        ratio = rect.top <= 0 ? 1 : 0;
+      } else {
+        ratio = Math.max(0, Math.min(1, -rect.top / scrollable));
+      }
       setReaderProgress(ratio);
     };
     onScroll();
@@ -979,6 +990,17 @@ export default function BibleReadingPage() {
     [readingMode],
   );
 
+  // 번역(개역한글/쉬운말) 선택을 localStorage 에 저장. 새로고침해도 마지막
+  // 선택이 유지되도록 한다. 단, 현재 책에서 지원하지 않는 번역이면 무시.
+  const handleTranslationChange = useCallback(
+    (next: TranslationKey) => {
+      if (next === translation) return;
+      setTranslation(next);
+      window.localStorage.setItem(TRANSLATION_KEY, next);
+    },
+    [translation],
+  );
+
   const startListening = useCallback(() => {
     if (!hasFilledText) {
       setSpeechMessage("본문을 먼저 채워 넣으면 음성 읽기를 시작할 수 있어요.");
@@ -1149,6 +1171,11 @@ export default function BibleReadingPage() {
     const savedMode = window.localStorage.getItem(READING_MODE_KEY);
     if (savedMode === "mic" || savedMode === "scroll") {
       setReadingMode(savedMode);
+    }
+
+    const savedTranslation = window.localStorage.getItem(TRANSLATION_KEY);
+    if (savedTranslation === "krv" || savedTranslation === "kids") {
+      setTranslation(savedTranslation);
     }
 
     // 클라이언트에서 실제 Web Speech API 지원 여부를 확정한다.
@@ -1669,7 +1696,7 @@ export default function BibleReadingPage() {
                     ? "이 책의 개역한글 본문은 아직 준비되지 않았어요."
                     : undefined
                 }
-                onClick={() => setTranslation(key)}
+                onClick={() => handleTranslationChange(key)}
               >
                 {data.translations[key].label}
               </button>
@@ -2619,7 +2646,7 @@ export default function BibleReadingPage() {
           grid-template-columns: 1.4em minmax(0, 1fr);
           column-gap: clamp(4px, 0.6vw, 8px);
           align-items: start;
-          margin: 0 0 20px;
+          margin: 0 0 14px;
           padding: 4px 0;
           border-radius: var(--radius-md);
           font-size: clamp(16px, 1.6vw, 19px);
@@ -3867,7 +3894,7 @@ export default function BibleReadingPage() {
           .brp-verse {
             grid-template-columns: 1.2em minmax(0, 1fr);
             column-gap: 4px;
-            margin-bottom: 14px;
+            margin-bottom: 10px;
             padding: 3px 0;
             font-size: 16.5px;
             line-height: 1.8;
