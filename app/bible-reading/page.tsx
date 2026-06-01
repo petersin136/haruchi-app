@@ -2797,15 +2797,23 @@ export default function BibleReadingPage() {
           border: 0;
         }
 
-        /* 컴팩트 번역 토글 — 같은 40px 높이. 내부 버튼은 flex stretch 로 정확히 중앙. */
+        /* 컴팩트 번역 토글 — 책 드롭다운(.brp-book-picker)과 시각적으로
+           동일한 pill 로 보이도록 inner padding/gap 을 0 으로. active 버튼이
+           컨테이너 전체 높이를 가득 채워 두 컨트롤이 같은 라인 위에서 같은 톤. */
         .brp-translation--sm {
           height: 40px;
           min-height: 40px;
-          padding: 4px;
+          padding: 0;
+          gap: 0;
+          overflow: hidden;
         }
         .brp-translation--sm button {
+          height: 100%;
           padding: 0 12px;
-          font-size: 13px;
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          border-radius: var(--radius-pill);
         }
 
         .brp-translation button.is-disabled,
@@ -3913,14 +3921,14 @@ export default function BibleReadingPage() {
             right: 14px;
           }
 
-          /* 컴팩트 번역 토글 — 모바일에서도 같은 폭 비율 유지 */
+          /* 컴팩트 번역 토글 — 모바일에서도 같은 폭 비율, 책 드롭다운과 동일 높이 */
           .brp-translation--sm {
             height: 38px;
             min-height: 38px;
           }
           .brp-translation--sm button {
-            padding: 0 8px;
-            font-size: 12.5px;
+            padding: 0 10px;
+            font-size: 14px;
           }
 
           .brp-mode-tabs--sm {
