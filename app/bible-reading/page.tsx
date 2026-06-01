@@ -622,8 +622,11 @@ export default function BibleReadingPage() {
   // 스크롤 다운 시 헤더는 사라지고, 책·장·소제목만 표시하는 반투명 미니바가 떠 있음.
   // scrolled: 페이지가 헤더 영역을 지나 스크롤됐는지 (헤더 숨김 토글에 사용).
   // miniVisible: 미니바 표시 여부 (본문 카드가 뷰포트에 보이는 동안만).
+  // readerProgress: 본문(reader) 카드 안에서 얼마나 진행했는지 0~1.
+  //   미니바 내부 좌→우 에너지바 fill 의 width 로 사용됨.
   const [scrolled, setScrolled] = useState(false);
   const [miniVisible, setMiniVisible] = useState(false);
+  const [readerProgress, setReaderProgress] = useState(0);
   // SSR 환경에서는 window가 없어 false가 되며, HMR/하이드레이션 도중 그 값이 굳어
   // 마이크 버튼이 disabled 상태로 멈춰버리는 일이 있다. 기본값을 true로 두고
   // 클라이언트 마운트 후 실제 API 지원 여부로 보정한다.
@@ -662,10 +665,11 @@ export default function BibleReadingPage() {
     return () => window.clearTimeout(t);
   }, [prayerSpeechMessage]);
 
-  // 스크롤 위치에 따라 헤더 ↔ 미니바 토글.
+  // 스크롤 위치에 따라 헤더 ↔ 미니바 토글 + 본문 진행도 계산.
   // 헤더는 80px 이상 스크롤되면 계속 숨김 (가독성 확보).
   // 미니바는 그 위에 추가 조건 — 본문(reader) 카드가 뷰포트 안에 보이는 동안만.
-  // 본문이 다 지나가면(예: 진도/기도 카드 영역) 미니바도 사라져 헤더 정보 없이 깨끗.
+  // readerProgress: reader 카드 top 이 뷰포트 상단을 얼마나 지나갔는지 비율 (0~1).
+  //   본문 안에서 좌→우 에너지바 채움의 width 로 쓰임.
   useEffect(() => {
     if (typeof window === "undefined") return;
     const onScroll = () => {
@@ -674,12 +678,18 @@ export default function BibleReadingPage() {
       const reader = readerSectionRef.current;
       if (!reader) {
         setMiniVisible(false);
+        setReaderProgress(0);
         return;
       }
       const rect = reader.getBoundingClientRect();
       // reader 카드 하단이 뷰포트 상단(=0)보다 위에 있으면 본문은 다 지나간 것.
       const readerStillInView = rect.bottom > 0;
       setMiniVisible(past && readerStillInView);
+      // 본문 진행도 — top 이 0 일 때 0%, bottom 이 0 일 때 100%.
+      const total = rect.height;
+      const passed = Math.max(0, Math.min(total, -rect.top));
+      const ratio = total > 0 ? passed / total : 0;
+      setReaderProgress(ratio);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -1591,28 +1601,36 @@ export default function BibleReadingPage() {
         </nav>
       </header>
 
-      {/* 스크롤 시 헤더 대신 떠 있는 반투명 미니바 — 책·장·소제목만.
-          본문(reader) 카드가 뷰포트에 보이는 동안만 표시. */}
+      {/* 스크롤 시 헤더 대신 떠 있는 반투명 미니바 — 책·장·소제목 + 본문 진행도.
+          본문(reader) 카드가 뷰포트에 보이는 동안만 표시.
+          내부 .brp-mini-fill 이 왼쪽→오른쪽 에너지바처럼 채워짐. */}
       <div
         className={`brp-mini-bar ${miniVisible ? "is-visible" : ""}`}
         aria-hidden={!miniVisible}
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(readerProgress * 100)}
       >
-        <span className="brp-mini-book">{bookMeta.name}</span>
-        <span className="brp-mini-divider" aria-hidden="true">·</span>
-        <span className="brp-mini-chapter">제 {chapterNumber} 장</span>
-        {chapter.title ? (
-          <>
-            <span className="brp-mini-divider" aria-hidden="true">·</span>
-            <span className="brp-mini-title">{chapter.title}</span>
-          </>
-        ) : null}
+        <span
+          className="brp-mini-fill"
+          aria-hidden="true"
+          style={{ width: `${readerProgress * 100}%` }}
+        />
+        <span className="brp-mini-content">
+          <span className="brp-mini-book">{bookMeta.name}</span>
+          <span className="brp-mini-divider" aria-hidden="true">·</span>
+          <span className="brp-mini-chapter">제 {chapterNumber} 장</span>
+          {chapter.title ? (
+            <>
+              <span className="brp-mini-divider" aria-hidden="true">·</span>
+              <span className="brp-mini-title">{chapter.title}</span>
+            </>
+          ) : null}
+        </span>
       </div>
 
       <StudentIdentityBar ref={identityRef} onChange={handleStudentChange} />
-
-      <div className="brp-progress" aria-hidden="true">
-        <span style={{ width: `${progress}%` }} />
-      </div>
 
       <section className="brp-hero">
         <h1>{bookMeta.name}</h1>
@@ -2245,11 +2263,6 @@ export default function BibleReadingPage() {
           left: 0;
           right: 0;
           z-index: 19;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-          padding: 0 16px;
           min-height: 40px;
           background: rgba(0, 0, 0, 0.78);
           backdrop-filter: saturate(180%) blur(14px);
@@ -2262,11 +2275,37 @@ export default function BibleReadingPage() {
           opacity: 0;
           transition: transform 0.28s ease, opacity 0.28s ease;
           pointer-events: none;
+          overflow: hidden;
         }
         .brp-mini-bar.is-visible {
           transform: translateY(0);
           opacity: 1;
           pointer-events: auto;
+        }
+        /* 좌→우로 채워지는 그린 에너지바 — readerProgress(0~1) × 100% width. */
+        .brp-mini-fill {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 0;
+          background: linear-gradient(
+            90deg,
+            rgba(46, 93, 75, 0.55) 0%,
+            rgba(46, 93, 75, 0.85) 100%
+          );
+          transition: width 0.12s linear;
+          pointer-events: none;
+        }
+        .brp-mini-content {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          padding: 0 16px;
+          min-height: 40px;
         }
         .brp-mini-book {
           font-weight: 700;
@@ -2368,33 +2407,8 @@ export default function BibleReadingPage() {
           background: var(--surface-alt);
         }
 
-        .brp-progress {
-          position: fixed;
-          top: 60px;
-          left: 0;
-          right: 0;
-          z-index: 21;
-          height: 2px;
-          background: var(--surface-alt);
-          transition: top 0.28s ease, opacity 0.2s ease;
-        }
-        /* 스크롤되면 미니바(40px) 바로 아래로 진도 바가 따라 올라옴. */
-        .brp-page.is-scrolled .brp-progress {
-          top: 40px;
-        }
-        /* 본문(reader)을 지나간 뒤(헤더·미니바 모두 없는 상태)에는
-           진도 바도 같이 숨김 — 떠 있는 회색 선 제거. */
-        .brp-page.is-past-reader .brp-progress {
-          opacity: 0;
-          pointer-events: none;
-        }
-
-        .brp-progress span {
-          display: block;
-          height: 100%;
-          background: var(--accent);
-          transition: width 0.25s ease;
-        }
+        /* 상단 2px 진도 바(.brp-progress)는 제거됨 — 본문 진행도는 미니바
+           내부 그린 fill(.brp-mini-fill)이 좌→우 에너지바로 표시. */
 
         .brp-hero {
           max-width: var(--container-reading);
@@ -2564,7 +2578,8 @@ export default function BibleReadingPage() {
         }
 
         .brp-select-title {
-          font-size: 13px;
+          /* 장(select) 글씨 크기와 동일하게 맞춰 균형 잡힌 한 줄. */
+          font-size: 14px;
           font-weight: 600;
           line-height: 1.25;
           color: var(--accent-warm);
@@ -2623,7 +2638,10 @@ export default function BibleReadingPage() {
         }
 
         .brp-verse.is-read .brp-verse-text {
-          font-weight: 600;
+          /* font-weight 를 바꾸면 글자 폭이 변해 줄바꿈 위치가 흔들리므로,
+             동일 weight 를 유지하고 text-shadow 로만 "살짝 굵어진 느낌"을 표현.
+             글자 박스 크기 변화 0 → reflow 없음. */
+          text-shadow: 0 0 0.35px currentColor;
         }
 
         .brp-verse.is-current {
@@ -2646,7 +2664,8 @@ export default function BibleReadingPage() {
           min-width: 0;
           margin: 0;
           overflow-wrap: break-word;
-          transition: font-weight 0.3s ease;
+          /* 강조 시 weight 가 아닌 text-shadow 로 처리하므로 부드럽게 페이드. */
+          transition: text-shadow 0.25s ease, color 0.25s ease;
         }
 
         .brp-verse-word {
@@ -2658,7 +2677,9 @@ export default function BibleReadingPage() {
 
         .brp-verse-word.is-read {
           color: var(--accent-warm);
-          font-weight: 600;
+          /* 같은 이유로 weight 변경하지 않음 — 가라오케 진행 중에 줄바꿈이
+             밀려나지 않도록 text-shadow 로 약한 볼드 흉내. */
+          text-shadow: 0 0 0.35px currentColor;
         }
 
         /* ─────────────────────────────────────────────────────────────
@@ -3763,19 +3784,12 @@ export default function BibleReadingPage() {
             flex: 0 1 auto;
           }
 
-          .brp-progress {
-            top: 51px;
-          }
-          .brp-page.is-scrolled .brp-progress {
-            top: 36px;
-          }
-          .brp-page.is-past-reader .brp-progress {
-            opacity: 0;
-            pointer-events: none;
-          }
           .brp-mini-bar {
             min-height: 36px;
             font-size: 12.5px;
+          }
+          .brp-mini-content {
+            min-height: 36px;
             padding: 0 12px;
             gap: 6px;
           }
@@ -3835,7 +3849,7 @@ export default function BibleReadingPage() {
             font-size: 13.5px;
           }
           .brp-select-title {
-            font-size: 12px;
+            font-size: 13.5px;
           }
 
           .brp-reader {
