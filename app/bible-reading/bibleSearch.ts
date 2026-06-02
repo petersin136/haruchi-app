@@ -44,10 +44,18 @@ export type SearchResult = {
   text: string;
 };
 
+export type BookCount = {
+  bookId: BookId;
+  bookName: string;
+  count: number; // 그 책에서 매칭된 구절 수
+};
+
 export type SearchOutcome = {
   results: SearchResult[];
-  total: number; // 정규화 매칭 총 개수
+  total: number; // 매칭된 구절 총 개수
+  occurrences: number; // 단어가 등장한 총 횟수(한 구절에 여러 번 가능)
   truncated: boolean; // total > 화면에 담은 results.length
+  byBook: BookCount[]; // 책별 매칭 구절 수(매칭 있는 책만, 성경 순서)
 };
 
 type IndexEntry = {
@@ -115,21 +123,38 @@ const buildIndex = (): IndexEntry[] => {
 // 총 매칭 수(total)는 그대로 세고, 화면 목록만 상한으로 자른다.
 export const MAX_SEARCH_RESULTS = 300;
 
+// 정규화 문자열에서 검색어가 몇 번 등장하는지(비중첩) 센다.
+const countOccurrences = (hay: string, needle: string): number => {
+  let count = 0;
+  let idx = hay.indexOf(needle);
+  while (idx !== -1) {
+    count += 1;
+    idx = hay.indexOf(needle, idx + needle.length);
+  }
+  return count;
+};
+
 export const searchBible = (
   rawQuery: string,
   translation: SearchTranslation,
 ): SearchOutcome => {
   const q = normalizeForSearch(rawQuery);
-  if (q.length === 0) return { results: [], total: 0, truncated: false };
+  if (q.length === 0) {
+    return { results: [], total: 0, occurrences: 0, truncated: false, byBook: [] };
+  }
 
   const index = buildIndex();
   const results: SearchResult[] = [];
   let total = 0;
+  let occurrences = 0;
+  const perBook = new Map<BookId, number>();
 
   for (const e of index) {
     const hay = translation === "krv" ? e.krvNorm : e.kidsNorm;
     if (hay.length > 0 && hay.includes(q)) {
       total += 1;
+      occurrences += countOccurrences(hay, q);
+      perBook.set(e.bookId, (perBook.get(e.bookId) ?? 0) + 1);
       if (results.length < MAX_SEARCH_RESULTS) {
         results.push({
           bookId: e.bookId,
@@ -142,7 +167,16 @@ export const searchBible = (
     }
   }
 
-  return { results, total, truncated: total > results.length };
+  // 매칭 있는 책만, 성경(BOOK_ORDER) 순서로 정렬해 분포 제공.
+  const byBook: BookCount[] = BOOK_ORDER.filter(
+    (id) => (perBook.get(id) ?? 0) > 0,
+  ).map((id) => ({
+    bookId: id,
+    bookName: BOOKS[id].name,
+    count: perBook.get(id) ?? 0,
+  }));
+
+  return { results, total, occurrences, truncated: total > results.length, byBook };
 };
 
 export const getTranslationLabel = (t: SearchTranslation): string =>

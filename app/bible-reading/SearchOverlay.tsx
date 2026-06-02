@@ -214,14 +214,6 @@ export default function SearchOverlay({
               </button>
             ))}
           </div>
-          {hasQuery ? (
-            <span className="bs-count" aria-live="polite">
-              {outcome.total}개 구절
-              {outcome.truncated
-                ? ` · 상위 ${outcome.results.length}개 표시`
-                : ""}
-            </span>
-          ) : null}
         </div>
 
         <div className="bs-results">
@@ -232,42 +224,70 @@ export default function SearchOverlay({
           ) : outcome.results.length === 0 ? (
             <p className="bs-empty type-small">일치하는 구절이 없습니다.</p>
           ) : (
-            <ul className="bs-list">
-              {outcome.results.map((r) => (
-                <li key={`${r.bookId}-${r.chapter}-${r.verseNo}`}>
-                  <button
-                    type="button"
-                    className="bs-item"
-                    onClick={() =>
-                      onSelect({
-                        bookId: r.bookId,
-                        chapter: r.chapter,
-                        verseNo: r.verseNo,
-                        translation: tr,
-                      })
-                    }
-                  >
-                    <span className="bs-ref">
-                      {r.bookName} {r.chapter}:{r.verseNo}
+            <>
+              {/* 개요 — 총 구절 수 + 등장 횟수 + 어느 성경에 몇 개씩 나오는지(책별 분포) */}
+              <section className="bs-overview" aria-live="polite">
+                <p className="bs-overview-stat">
+                  <span className="bs-overview-q">‘{deferred.trim()}’</span>
+                  <span className="bs-overview-sep">·</span>
+                  <span className="bs-overview-total">
+                    {outcome.total}개 구절
+                  </span>
+                  <span className="bs-overview-occ">
+                    총 {outcome.occurrences}번 나와요
+                  </span>
+                </p>
+                <div className="bs-overview-books">
+                  {outcome.byBook.map((b) => (
+                    <span key={b.bookId} className="bs-book-chip">
+                      {b.bookName}
+                      <b>{b.count}</b>
                     </span>
-                    <span className="bs-text">
-                      {renderHighlighted(r.text, deferred)}
-                    </span>
-                  </button>
-                </li>
-              ))}
-            </ul>
+                  ))}
+                </div>
+                {outcome.truncated ? (
+                  <p className="bs-overview-note">
+                    너무 많아 상위 {outcome.results.length}개만 보여드려요.
+                  </p>
+                ) : null}
+              </section>
+
+              <ul className="bs-list">
+                {outcome.results.map((r) => (
+                  <li key={`${r.bookId}-${r.chapter}-${r.verseNo}`}>
+                    <button
+                      type="button"
+                      className="bs-item"
+                      onClick={() =>
+                        onSelect({
+                          bookId: r.bookId,
+                          chapter: r.chapter,
+                          verseNo: r.verseNo,
+                          translation: tr,
+                        })
+                      }
+                    >
+                      <span className="bs-ref">
+                        {r.bookName} {r.chapter}:{r.verseNo}
+                      </span>
+                      <span className="bs-text">
+                        {renderHighlighted(r.text, deferred)}
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </>
           )}
         </div>
       </div>
 
       <style jsx>{`
+        /* 풀스크린 페이지 형태 — 화면 끝(아래)까지 가득 채운다. */
         .bs-overlay {
           position: fixed;
           inset: 0;
           z-index: 100;
-          display: flex;
-          flex-direction: column;
         }
         .bs-backdrop {
           position: absolute;
@@ -275,31 +295,24 @@ export default function SearchOverlay({
           background: rgba(22, 22, 26, 0.45);
         }
         .bs-panel {
-          position: relative;
+          position: absolute;
+          inset: 0;
           z-index: 1;
           width: 100%;
           max-width: var(--container-reading);
           margin: 0 auto;
+          height: 100%;
           display: flex;
           flex-direction: column;
-          max-height: 88vh;
-          max-height: 88dvh;
           background: var(--surface);
-          border: 1px solid var(--line);
-          border-top: 0;
-          border-bottom-left-radius: var(--radius-lg);
-          border-bottom-right-radius: var(--radius-lg);
-          box-shadow: var(--shadow-2);
           overflow: hidden;
-          animation: bs-drop 0.22s cubic-bezier(0.32, 0.72, 0.24, 1);
+          animation: bs-fade 0.2s ease;
         }
-        @keyframes bs-drop {
+        @keyframes bs-fade {
           from {
-            transform: translateY(-12px);
             opacity: 0;
           }
           to {
-            transform: translateY(0);
             opacity: 1;
           }
         }
@@ -440,12 +453,6 @@ export default function SearchOverlay({
           outline: 2px solid var(--accent);
           outline-offset: 2px;
         }
-        .bs-count {
-          font-size: 13px;
-          color: var(--ink-mute);
-          white-space: nowrap;
-        }
-
         /* 결과 영역 */
         .bs-results {
           flex: 1;
@@ -453,6 +460,65 @@ export default function SearchOverlay({
           overflow-y: auto;
           -webkit-overflow-scrolling: touch;
           padding: 8px;
+        }
+
+        /* 개요 — 총 구절/등장 횟수 + 책별 분포(어느 성경에 몇 개) */
+        .bs-overview {
+          margin: 6px 6px 10px;
+          padding: 14px 16px;
+          background: var(--surface-alt);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-md);
+        }
+        .bs-overview-stat {
+          margin: 0;
+          display: flex;
+          align-items: baseline;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+        .bs-overview-q {
+          font-size: 15px;
+          font-weight: 700;
+          color: var(--accent);
+        }
+        .bs-overview-sep {
+          color: var(--ink-mute);
+        }
+        .bs-overview-total {
+          font-size: 15px;
+          font-weight: 700;
+          color: var(--ink);
+        }
+        .bs-overview-occ {
+          font-size: 13px;
+          color: var(--ink-mute);
+        }
+        .bs-overview-books {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+          margin-top: 12px;
+        }
+        .bs-book-chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 4px 10px;
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-pill);
+          font-size: 12.5px;
+          color: var(--ink-soft);
+        }
+        .bs-book-chip b {
+          font-weight: 700;
+          color: var(--accent);
+        }
+        .bs-overview-note {
+          margin: 10px 0 0;
+          font-size: 12px;
+          color: var(--ink-mute);
         }
         .bs-hint,
         .bs-empty {
@@ -510,16 +576,13 @@ export default function SearchOverlay({
           padding: 0 1px;
         }
 
-        /* 태블릿/PC: 중앙 카드 형태로 띄움 */
+        /* 태블릿/PC: 동일하게 화면 끝까지 채우는 풀하이트 컬럼(720px 중앙).
+           양옆에만 경계선을 둬 backdrop 과 구분. */
         @media (min-width: 640px) {
-          .bs-overlay {
-            padding: 7vh 24px 24px;
-          }
           .bs-panel {
-            border-top: 1px solid var(--line);
-            border-radius: var(--radius-lg);
-            max-height: 78vh;
-            max-height: 78dvh;
+            border-left: 1px solid var(--line);
+            border-right: 1px solid var(--line);
+            box-shadow: var(--shadow-2);
           }
         }
       `}</style>
