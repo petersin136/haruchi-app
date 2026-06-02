@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import { useSettings } from "../components/SettingsProvider";
 import {
   FONT_FAMILIES,
@@ -683,39 +683,64 @@ export default function SettingsPage() {
            아코디언 안 인라인 미리보기는 숨기고 우측 패널 하나로 통합.
            ═══════════════════════════════════════════════════════════════ */
         @media (min-width: 960px) {
+          /* 메인 읽기 화면과 동일 구도:
+             왼쪽 = 큰 성경 본문(라이브 미리보기), 오른쪽 = 작은 설정 바.
+             DOM 순서(list → side)는 유지하고 order 로만 위치를 스왑해
+             모바일 단일 컬럼 흐름에는 영향이 없게 한다. */
+          /* 메인 읽기 페이지(.brp-canvas)의 캔버스 기하를 그대로 복제:
+             동일한 좌우 패딩 / 캔버스 max-width / 사이드 폭(300px) / column-gap(32px)
+             → 왼쪽 미리보기 컬럼 폭 = 메인 reader 컬럼 폭 → 줄바꿈이 메인과 동일.
+             (메인 ≥960: minmax(0,1fr) 300px, gap 32, max 1300, hpad clamp(16,2vw,24)) */
           .hs-shell {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) 420px;
+            /* 사이드는 메인(300)보다 살짝 좁게(284) → 왼쪽(미리보기) 컬럼이 메인
+               reader 보다 약간 넓어, 고정폭(=메인 reader 실측폭) 카드가 줄어들지 않고
+               그대로 들어간다. */
+            grid-template-columns: minmax(0, 1fr) 284px;
+            column-gap: 32px;
             align-items: start;
-            gap: 36px;
-            max-width: 1120px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 24px clamp(24px, 4vw, 40px) 0;
+            padding: 24px clamp(16px, 2vw, 24px) 0;
           }
+          /* 설정 바 = 오른쪽(작은 컬럼). 메인 사이드처럼 약간 더 길게(여유 패딩). */
           .hs-list {
+            order: 1;
             max-width: none;
             margin: 0;
             padding: 0;
-            gap: 12px;
+            gap: 14px;
           }
-          /* 인라인 미리보기 숨김 — 우측 sticky 패널이 대체 */
+          .hs-list :global(.hs-acc-head) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+          }
+          .hs-toggle-row {
+            padding-top: 20px;
+            padding-bottom: 20px;
+          }
+          /* 인라인 미리보기 숨김 — 왼쪽 큰 패널이 대체 */
           .hs-inline-preview {
             display: none;
           }
+          /* 성경 본문 미리보기 = 왼쪽(큰 컬럼). 설정을 만지는 동안 항상 보이도록 sticky. */
           .hs-side {
+            order: 0;
             display: block;
             position: sticky;
             top: 80px;
           }
+          /* 사이드 카드 chrome 제거 — 미리보기 카드(.rp-card)가 곧 메인 읽기 카드. */
           .hs-side-card {
-            background: var(--surface);
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            padding: 18px 20px;
-            box-shadow: var(--shadow-1);
+            background: transparent;
+            border: 0;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: none;
           }
           .hs-side-tag {
-            margin: 0 0 12px;
+            margin: 0 0 10px;
+            padding-left: 2px;
             font-size: 11px;
             letter-spacing: 0.16em;
             text-transform: uppercase;
@@ -729,12 +754,16 @@ export default function SettingsPage() {
           }
         }
 
-        /* 대형 PC (≥1280px) — 캔버스/사이드 폭 시원하게 */
-        @media (min-width: 1280px) {
+        /* 대형 PC (≥1200px) — 메인 .brp-canvas(≥1200) 와 동일 기하 복제:
+           minmax(0,940px) 460px, column-gap 60, max 1460, hpad clamp(20,2vw,32)
+           → 미리보기 reader 폭이 메인과 동일(최대 940px) 유지. */
+        @media (min-width: 1200px) {
           .hs-shell {
-            grid-template-columns: minmax(0, 1fr) 480px;
-            gap: 52px;
-            max-width: 1320px;
+            /* 사이드는 메인(460)보다 살짝 좁게(440) → 위와 동일한 이유(슬랙 확보). */
+            grid-template-columns: minmax(0, 960px) 440px;
+            column-gap: 60px;
+            max-width: 1460px;
+            padding: 24px clamp(20px, 2vw, 32px) 0;
           }
         }
       `}</style>
@@ -885,22 +914,44 @@ function Accordion({
 //   위에서 옵션을 바꾸면 이 카드가 즉시 변한다.
 // =============================================================================
 function ReaderPreview({ bare = false }: { bare?: boolean }) {
+  // 사이드(bare) 미리보기는 메인 읽기 화면(.brp-reader)의 실제 렌더 폭을
+  // localStorage 에서 읽어 그대로 적용 → 폰트/배수/그리드와 합쳐져 줄바꿈이
+  // 메인과 1:1 로 동일해진다. (읽기 페이지가 폭을 저장해 둠)
+  const [readerW, setReaderW] = useState<number | null>(null);
+  useEffect(() => {
+    if (!bare || typeof window === "undefined") return;
+    const read = () => {
+      const v = Number(window.localStorage.getItem("haruchi:reader-width"));
+      setReaderW(Number.isFinite(v) && v > 0 ? v : null);
+    };
+    read();
+    window.addEventListener("focus", read);
+    document.addEventListener("visibilitychange", read);
+    return () => {
+      window.removeEventListener("focus", read);
+      document.removeEventListener("visibilitychange", read);
+    };
+  }, [bare]);
+
+  const cardStyle: CSSProperties | undefined =
+    bare && readerW ? { width: `${readerW}px`, maxWidth: "100%" } : undefined;
+
   return (
     <div className={`rp ${bare ? "rp--bare" : ""}`}>
       <span className="rp-tag">이렇게 보여요</span>
-      <div className="rp-card">
-        <p className="rp-title">마태복음 제 1장</p>
+      <div className="rp-card" style={cardStyle}>
+        <p className="rp-title">창세기 제 1장</p>
         <div className="rp-body">
           <div className="rp-verse">
             <span className="rp-num">1</span>
             <p className="rp-text">
-              이 글은 아브라함의 자손이고, 다윗의 자손이신 예수 그리스도의 족보예요.
+              맨 처음에 하나님이 하늘과 땅을 만드셨어요.
             </p>
           </div>
           <div className="rp-verse rp-verse--read">
             <span className="rp-num">2</span>
             <p className="rp-text">
-              아브라함이 이삭을 낳고, 이삭이 야곱을 낳고, 야곱이 유다와 그의 형제들을 낳았어요.
+              땅은 아직 아무 모양도 없이 텅 비어 있었고, 깊은 물 위는 어둠이 덮고 있었어요. 그리고 하나님의 영이 물 위에 움직이고 계셨어요.
             </p>
           </div>
           {/* 아래 절들은 사이드(bare) 미리보기에서만 보여서 더 길게 채운다.
@@ -908,19 +959,19 @@ function ReaderPreview({ bare = false }: { bare?: boolean }) {
           <div className="rp-verse rp-extra">
             <span className="rp-num">3</span>
             <p className="rp-text">
-              유다는 다말에게서 베레스와 세라를 낳고, 베레스는 헤스론을, 헤스론은 람을 낳았어요.
+              하나님이 “빛이 생겨라” 하고 말씀하시자, 빛이 생겼어요.
             </p>
           </div>
           <div className="rp-verse rp-extra">
             <span className="rp-num">4</span>
             <p className="rp-text">
-              람은 아미나답을, 아미나답은 나손을, 나손은 살몬을 낳았어요.
+              하나님이 보시니 그 빛이 참 좋았어요. 그래서 하나님은 빛과 어둠을 나누셨어요.
             </p>
           </div>
           <div className="rp-verse rp-extra">
             <span className="rp-num">5</span>
             <p className="rp-text">
-              살몬은 라합에게서 보아스를, 보아스는 룻에게서 오벳을, 오벳은 이새를 낳았어요.
+              하나님은 빛을 “낮”이라고 부르시고, 어둠을 “밤”이라고 부르셨어요. 저녁이 지나고 아침이 되니, 이것이 첫째 날이에요.
             </p>
           </div>
         </div>
@@ -959,16 +1010,21 @@ function ReaderPreview({ bare = false }: { bare?: boolean }) {
         .rp--bare .rp-extra {
           display: grid;
         }
+        /* 사이드(왼쪽) 카드 = 메인 읽기 카드(.brp-reader)와 100% 동일하게:
+           배경/테두리/반경 + ≥960 reader 패딩. 폭은 그리드 컬럼이 결정(아래 미디어쿼리에서
+           메인 캔버스와 동일한 컬럼 폭을 부여) → 줄바꿈이 메인과 일치. */
         .rp--bare .rp-card {
-          padding: 24px 26px 26px;
+          max-width: none;
+          margin: 0;
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-lg);
+          overflow: hidden;
+          padding: clamp(28px, 3vw, 36px) clamp(22px, 2.5vw, 32px);
         }
         .rp--bare .rp-title {
-          font-size: 24px;
+          font-size: 22px;
           margin-bottom: 18px;
-        }
-        /* 본문 기준 글자를 17px 로 키움(× 사용자 배수). */
-        .rp--bare .rp-verse {
-          font-size: calc(17px * var(--reader-size-scale, 1));
         }
         .rp--bare .rp-demo {
           margin-top: 22px;
@@ -985,6 +1041,7 @@ function ReaderPreview({ bare = false }: { bare?: boolean }) {
           color: var(--accent);
         }
         .rp-card {
+          box-sizing: border-box;
           background: var(--bg);
           border: 1px solid var(--line);
           border-radius: 12px;
@@ -1002,17 +1059,20 @@ function ReaderPreview({ bare = false }: { bare?: boolean }) {
         .rp-body {
           font-family: var(--reader-font-family, inherit);
         }
+        /* 메인 .brp-verse 와 1:1 동일(컬럼/간격/폰트 공식) → 줄바꿈 일치 */
         .rp-verse {
           display: grid;
-          grid-template-columns: 1.5em minmax(0, 1fr);
-          column-gap: 8px;
+          grid-template-columns: 2em minmax(0, 1fr);
+          column-gap: clamp(8px, 1vw, 12px);
           align-items: baseline;
           margin: 0 0 var(--reader-verse-gap, 10px);
-          /* 16px 기준 × 사용자 배수 → 작게 14 / 보통 16 / 크게 18.4 / 아주크게 21 */
-          font-size: calc(16px * var(--reader-size-scale, 1));
+          padding: 2px 0;
+          font-size: calc(clamp(16px, 1.6vw, 19px) * var(--reader-size-scale, 1));
           line-height: var(--reader-text-line-height, 1.55);
+          font-weight: 400;
           color: var(--ink);
           word-break: keep-all;
+          overflow-wrap: normal;
         }
         .rp-verse:last-child {
           margin-bottom: 0;
@@ -1024,6 +1084,7 @@ function ReaderPreview({ bare = false }: { bare?: boolean }) {
         .rp-num {
           color: var(--ink-mute);
           text-align: center;
+          font-size: 1em;
           font-variant-numeric: tabular-nums;
         }
         .rp-verse--read .rp-num {

@@ -857,6 +857,30 @@ export default function BibleReadingPage() {
   const currentStudentRef = useRef<IdentifiedStudent | null>(null);
   const identityRef = useRef<StudentIdentityBarHandle | null>(null);
 
+  // 설정 페이지 미리보기가 본문 폭을 1:1 로 복제할 수 있도록,
+  // 실제 .brp-reader 의 렌더 폭(border-box)을 localStorage 에 기록한다.
+  // (설정 페이지는 별도 네비게이션이라 mount 시 이 값을 읽어 동일 폭으로 렌더 →
+  //  같은 폰트/배수/그리드와 합쳐져 줄바꿈이 메인과 정확히 일치)
+  useEffect(() => {
+    const el = readerSectionRef.current;
+    if (!el || typeof window === "undefined" || typeof ResizeObserver === "undefined")
+      return;
+    const store = () => {
+      try {
+        window.localStorage.setItem(
+          "haruchi:reader-width",
+          String(Math.round(el.getBoundingClientRect().width))
+        );
+      } catch {
+        /* localStorage 비활성 환경 무시 */
+      }
+    };
+    store();
+    const ro = new ResizeObserver(store);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
   useEffect(() => {
     currentStudentRef.current = currentStudent;
   }, [currentStudent]);
