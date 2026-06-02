@@ -19,6 +19,9 @@ import {
   type IdentifiedStudent,
 } from "../lib/bibleReadingProgress";
 import Wordmark from "../components/Wordmark";
+import Link from "next/link";
+import { useSettings } from "../components/SettingsProvider";
+import { SCROLL_SPEED_MULTIPLIER } from "../lib/userSettings";
 
 type TranslationKey = "krv" | "kids";
 
@@ -359,6 +362,27 @@ const collectQuizWordPool = (verses: Verse[]): string[] => {
   return Array.from(pool);
 };
 
+// 톱니바퀴 아이콘 — 데스크탑 nav 와 모바일 메뉴 둘 다에서 재사용.
+// currentColor 로 그려져 다크/라이트 모드를 자동으로 따라간다.
+function GearIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="3" />
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+    </svg>
+  );
+}
+
 const generateChapterQuiz = (verses: Verse[]): QuizQuestion[] => {
   if (verses.length === 0) return [];
   const wordPool = collectQuizWordPool(verses);
@@ -428,6 +452,175 @@ const generateChapterQuiz = (verses: Verse[]): QuizQuestion[] => {
   return questions;
 };
 
+// =============================================================================
+// 절별 "앞단어 트리거" 매칭 시스템 — 음성 읽기 모드(verse mic) 전용.
+//
+// 기존 토큰 단위 순차 매칭(advanceReadIndex) 은 한 번에 한 단어씩만 전진해
+// 빠른 낭독을 못 따라잡고 절 경계에서 자주 멈추는 문제가 있었다. 그래서
+// 본문 매칭 흐름은 "절 단위 트리거" 방식으로 교체했다(advanceReadIndex 는
+// 기도(prayer) 매칭에서 그대로 사용 중이라 제거하지 않고 보존).
+//
+// 동작 요약:
+//   1) 절마다 앞 3개 단어(normalizeKorean 적용, 빈 토큰 제외)를 트리거
+//      시퀀스로 미리 만들어 둔다. 단어가 3개 미만이면 있는 만큼.
+//   2) 첫 단어가 1음절(신뢰도 낮음)이면 한 단어 더 포함해 길이를 확보.
+//   3) onresult 의 transcript 를 normalizeKorean 처리해 단어 단위로 쪼갠 뒤,
+//      "지금 기다리는 절(currentVerseIdx)" 의 트리거가 spoken 단어 안에서
+//      순서대로(in-order) 등장하는지 본다. 단어 비교는 기존 isLooseMatch.
+//   4) 트리거 3 단어 중 2개 이상이 순서대로 잡히면 PASS. 트리거가 1~2 단어인
+//      짧은 절은 그 개수만큼 전부 잡혀야 PASS.
+//   5) PASS 되면 그 절 전체를 한 번에 "읽음" 처리하고 currentVerseIdx 를
+//      한 칸 앞으로. 같은 transcript 에 다음 절 트리거가 이어서 잡히면
+//      연속으로 통과시킨다(다중 절 fast-pass).
+//   6) 순서 강제: 현재 절 트리거가 잡히기 전엔 절대 뒤 절로 건너뛰지 않는다.
+// =============================================================================
+const buildVerseTrigger = (verseText: string): string[] => {
+  const all = verseText
+    .split(/\s+/)
+    .map(normalizeKorean)
+    .filter(Boolean);
+  if (all.length === 0) return [];
+
+  // 기본 앞 3 단어 (단어 수가 더 적으면 있는 만큼).
+  const trigger = all.slice(0, 3);
+
+  // 첫 단어가 1음절 이하면 신뢰도가 낮으므로 한 단어 더 포함해 길이 확보.
+  // 원본 단어가 부족하면(이미 다 쓴 경우) 그대로 둔다.
+  if (
+    trigger[0] !== undefined &&
+    trigger[0].length <= 1 &&
+    all.length > trigger.length
+  ) {
+    trigger.push(all[trigger.length]!);
+  }
+
+  return trigger;
+};
+
+const advanceVerseIndexByTriggers = (
+  transcript: string,
+  triggers: string[][],
+  startIdx: number,
+): number => {
+  if (startIdx >= triggers.length) return startIdx;
+
+  const spokenWords = transcript
+    .split(/\s+/)
+    .map(normalizeKorean)
+    .filter(Boolean);
+
+  if (spokenWords.length === 0) return startIdx;
+
+  if (STT_DEBUG) {
+    sttLog("triggerScan start", {
+      startIdx,
+      totalVerses: triggers.length,
+      spoken: spokenWords,
+      transcriptRaw: transcript,
+    });
+  }
+
+  let verseIdx = startIdx;
+  let spokenCursor = 0;
+
+  while (verseIdx < triggers.length && spokenCursor < spokenWords.length) {
+    const trig = triggers[verseIdx];
+
+    // 트리거를 만들 수 없는(빈/공백뿐인) 절은 자동 통과.
+    if (!trig || trig.length === 0) {
+      if (STT_DEBUG) {
+        sttLog("triggerScan PASS (empty verse, auto)", { verseIdx });
+      }
+      verseIdx += 1;
+      continue;
+    }
+
+    // 3 단어 이상이면 2 of 3, 1~2 단어인 짧은 절은 가진 개수만큼 전부.
+    const required = trig.length >= 3 ? 2 : trig.length;
+
+    let scanCursor = spokenCursor;
+    let matched = 0;
+    let lastMatchedSpokenIdx = spokenCursor - 1;
+    const matchedTrace: {
+      trigIdx: number;
+      target: string;
+      spokenIdx: number;
+      spoken: string;
+    }[] = [];
+    const missedTrace: { trigIdx: number; target: string }[] = [];
+
+    // 트리거 단어들을 순서대로(in-order) 찾는다. 각 트리거 단어는 이전
+    // 매치 위치보다 뒤에서만 찾을 수 있어 자연스럽게 순서가 강제된다.
+    for (let i = 0; i < trig.length; i += 1) {
+      const target = trig[i]!;
+      let foundAt = -1;
+      for (let s = scanCursor; s < spokenWords.length; s += 1) {
+        if (isLooseMatch(spokenWords[s]!, target)) {
+          foundAt = s;
+          break;
+        }
+      }
+      if (foundAt === -1) {
+        if (STT_DEBUG) missedTrace.push({ trigIdx: i, target });
+        continue;
+      }
+      matched += 1;
+      lastMatchedSpokenIdx = foundAt;
+      scanCursor = foundAt + 1;
+      if (STT_DEBUG) {
+        matchedTrace.push({
+          trigIdx: i,
+          target,
+          spokenIdx: foundAt,
+          spoken: spokenWords[foundAt]!,
+        });
+      }
+    }
+
+    if (matched >= required) {
+      if (STT_DEBUG) {
+        sttLog("triggerScan PASS", {
+          verseIdx,
+          trigger: trig,
+          required,
+          matched,
+          matchedTrace,
+          missedTrace,
+        });
+      }
+      verseIdx += 1;
+      // 다음 절은 마지막 매치 직후부터 검색 (앞 절 트리거와 겹치지 않도록).
+      spokenCursor = lastMatchedSpokenIdx + 1;
+    } else {
+      if (STT_DEBUG) {
+        sttLog("triggerScan WAIT", {
+          verseIdx,
+          trigger: trig,
+          required,
+          matched,
+          matchedTrace,
+          missedTrace,
+        });
+      }
+      // 현재 절 트리거가 안 잡히면 더 진행하지 않는다(순서 강제).
+      break;
+    }
+  }
+
+  if (STT_DEBUG) {
+    sttLog("triggerScan end", {
+      startIdx,
+      finalIdx: verseIdx,
+      advanced: verseIdx - startIdx,
+    });
+  }
+
+  return verseIdx;
+};
+
+// 기존 토큰 단위 순차 매칭 — 본문 음성 모드에서는 더 이상 사용하지 않지만,
+// 기도(prayer) 음성 매칭 흐름(processPrayerTranscript) 이 그대로 사용 중이므로
+// 그대로 보존. 본문 매칭은 위 advanceVerseIndexByTriggers 가 담당.
 const advanceReadIndex = (
   transcript: string,
   words: WordToken[],
@@ -641,6 +834,8 @@ export default function BibleReadingPage() {
   const [currentStudent, setCurrentStudent] = useState<IdentifiedStudent | null>(
     null,
   );
+  const [navMenuOpen, setNavMenuOpen] = useState(false);
+  const { settings } = useSettings();
 
   const listeningRef = useRef(false);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
@@ -889,104 +1084,45 @@ export default function BibleReadingPage() {
     });
   }, [bookId, chapterNumber, stopListening]);
 
-  // 장 전체 단어를 평탄화한 토큰 리스트.
-  // 단어 단위 advance 후 절/절 안 인덱스로 역산해서 노래방 가사처럼
-  // 왼쪽부터 차오르고, "다음 절의 단어가 잡히기 시작할 때" 비로소
-  // 이전 절이 통째로 '읽음' 처리되도록 한다.
-  const chapterTokens = useMemo<WordToken[]>(() => {
-    return verses.flatMap((verse) =>
-      verse.t
-        .split(/\s+/)
-        .map((w) => w.trim())
-        .filter(Boolean)
-        .map((word, index) => ({
-          id: `verse-${verse.n}-${index}`,
-          verse: verse.n,
-          text: word,
-          normalized: normalizeKorean(word),
-        })),
-    );
-  }, [verses]);
-
-  const verseWordCounts = useMemo(
-    () =>
-      verses.map(
-        (v) =>
-          v.t
-            .split(/\s+/)
-            .map((w) => w.trim())
-            .filter(Boolean).length,
-      ),
+  // 절별 "앞단어 트리거" 시퀀스 (음성 본문 매칭 전용).
+  // 정의/동작 규칙은 buildVerseTrigger 주석 참조.
+  // 현재 장의 모든 절에 대해 미리 계산해 두고, 매 transcript 마다
+  // advanceVerseIndexByTriggers 가 "지금 기다리는 절" 의 트리거부터
+  // 차례로 본다.
+  const verseTriggers = useMemo<string[][]>(
+    () => verses.map((v) => buildVerseTrigger(v.t)),
     [verses],
-  );
-
-  const wordIndexFromVerseProgress = useCallback(
-    (verseCount: number, wordInVerse: number) => {
-      let total = 0;
-      const cap = Math.min(verseCount, verseWordCounts.length);
-      for (let i = 0; i < cap; i += 1) total += verseWordCounts[i];
-      return total + wordInVerse;
-    },
-    [verseWordCounts],
-  );
-
-  const verseProgressFromWordIndex = useCallback(
-    (wordIdx: number) => {
-      let vc = 0;
-      let remaining = wordIdx;
-      for (const c of verseWordCounts) {
-        if (remaining >= c) {
-          vc += 1;
-          remaining -= c;
-        } else {
-          break;
-        }
-      }
-      return { verseCount: vc, wordInVerse: remaining };
-    },
-    [verseWordCounts],
   );
 
   const processTranscript = useCallback(
     (transcript: string) => {
-      if (!hasFilledText || chapterTokens.length === 0) return;
-      const startGlobalIdx = wordIndexFromVerseProgress(
-        readVerseCountRef.current,
-        currentVerseWordIndexRef.current,
-      );
-      if (startGlobalIdx >= chapterTokens.length) return;
+      if (!hasFilledText || verseTriggers.length === 0) return;
+      const startVerseIdx = readVerseCountRef.current;
+      if (startVerseIdx >= verseTriggers.length) return;
 
-      const newGlobalIdx = advanceReadIndex(
+      const newVerseIdx = advanceVerseIndexByTriggers(
         transcript,
-        chapterTokens,
-        startGlobalIdx,
+        verseTriggers,
+        startVerseIdx,
       );
-      if (newGlobalIdx <= startGlobalIdx) return;
+      if (newVerseIdx <= startVerseIdx) return;
 
-      const { verseCount: newVerseCount, wordInVerse: newWordInVerse } =
-        verseProgressFromWordIndex(newGlobalIdx);
+      readVerseCountRef.current = newVerseIdx;
+      setReadVerseCount(newVerseIdx);
+      window.localStorage.setItem(
+        verseProgressKey(bookId, chapterNumber),
+        String(newVerseIdx),
+      );
 
-      if (newVerseCount !== readVerseCountRef.current) {
-        readVerseCountRef.current = newVerseCount;
-        setReadVerseCount(newVerseCount);
-        window.localStorage.setItem(
-          verseProgressKey(bookId, chapterNumber),
-          String(newVerseCount),
-        );
-      }
-      if (newWordInVerse !== currentVerseWordIndexRef.current) {
-        currentVerseWordIndexRef.current = newWordInVerse;
-        setCurrentVerseWordIndex(newWordInVerse);
+      // 절 단위 하이라이트로 전환됐기 때문에, 절 내부 단어 진행도
+      // (이전 karaoke fill 용) 는 항상 0 으로 유지한다. 현재 절은
+      // is-current 클래스만으로 표시.
+      if (currentVerseWordIndexRef.current !== 0) {
+        currentVerseWordIndexRef.current = 0;
+        setCurrentVerseWordIndex(0);
       }
     },
-    [
-      bookId,
-      chapterNumber,
-      chapterTokens,
-      hasFilledText,
-      verseProgressFromWordIndex,
-      wordIndexFromVerseProgress,
-    ],
+    [bookId, chapterNumber, hasFilledText, verseTriggers],
   );
 
   const handleReadingModeChange = useCallback(
@@ -1264,16 +1400,29 @@ export default function BibleReadingPage() {
     setScrollReachedBottom(false);
     reachedBottomRef.current = false;
 
-    // 장마다 최소 읽기 시간: "한 줄(절) 당 0.5초" 가 사용자 합의된 속도.
-    // 빠르게 훑는 사람도 거의 막히지 않도록.
-    // - 절 한 줄 = 0.5초
-    // - 최소 2초 (1~3절짜리 단편도 너무 빨리 넘어가지 않도록)
+    // 장마다 최소 읽기 시간: "한 줄(절) 당 0.5초" 가 기본. 사용자 설정
+    // (settings.scrollSpeed) 의 배수를 곱해 더 빠르게/천천히 조정한다.
+    //   - fast(0.5x) → 절당 0.25초
+    //   - normal(1x) → 절당 0.5초 (기본)
+    //   - slow / slowest 는 충분히 천천히 읽도록.
+    // 최소 2초 (1~3절짜리 단편도 너무 빨리 넘어가지 않도록).
     const verseCount = verses.length;
-    const computedSeconds = Math.max(2, Math.ceil(verseCount * 0.5));
+    const speedMultiplier = SCROLL_SPEED_MULTIPLIER[settings.scrollSpeed] ?? 1;
+    const computedSeconds = Math.max(
+      2,
+      Math.ceil(verseCount * 0.5 * speedMultiplier),
+    );
     setChapterMinSeconds(computedSeconds);
     setScrollSecondsLeft(computedSeconds);
     minReadTimeRef.current = Date.now() + computedSeconds * 1000;
-  }, [bookId, chapterNumber, totalVerses, translation, verses]);
+  }, [
+    bookId,
+    chapterNumber,
+    settings.scrollSpeed,
+    totalVerses,
+    translation,
+    verses,
+  ]);
 
   useEffect(() => {
     if (
@@ -1667,7 +1816,16 @@ export default function BibleReadingPage() {
         <a className="brp-brand" href="/" aria-label="하루치 홈으로">
           <Wordmark size="lg" />
         </a>
-        <nav className="brp-nav" aria-label="Account links">
+        {/* 데스크탑/태블릿 (≥640px) — 풀 네비. 톱니바퀴 + 텍스트 링크들이 한 줄. */}
+        <nav className="brp-nav brp-nav--desktop" aria-label="Account links">
+          <Link
+            href="/settings"
+            className="brp-nav-icon"
+            aria-label="설정 열기"
+            title="설정"
+          >
+            <GearIcon />
+          </Link>
           {!currentStudent ? (
             <button
               type="button"
@@ -1684,7 +1842,85 @@ export default function BibleReadingPage() {
             Admin
           </a>
         </nav>
+
+        {/* 모바일 (<640px) — 햄버거 하나만. 누르면 우상단 시트 드롭다운. */}
+        <button
+          type="button"
+          className={`brp-hamburger ${navMenuOpen ? "is-open" : ""}`}
+          onClick={() => setNavMenuOpen((v) => !v)}
+          aria-label={navMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
+          aria-expanded={navMenuOpen}
+          aria-controls="brp-mobile-menu"
+        >
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+        </button>
       </header>
+
+      {/* 모바일 메뉴 — 햄버거 클릭 시 헤더 아래로 슬라이드 다운.
+          바깥(어둡게 처리된 backdrop) 클릭 또는 메뉴 항목 선택 시 닫힘. */}
+      {navMenuOpen && (
+        <div
+          className="brp-mobile-menu-backdrop"
+          role="presentation"
+          onClick={() => setNavMenuOpen(false)}
+        >
+          <nav
+            id="brp-mobile-menu"
+            className="brp-mobile-menu"
+            aria-label="Account links"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {!currentStudent ? (
+              <button
+                type="button"
+                className="brp-mobile-menu-item"
+                onClick={() => {
+                  setNavMenuOpen(false);
+                  identityRef.current?.promptIdentify();
+                }}
+              >
+                <span className="brp-mobile-menu-icon" aria-hidden="true">
+                  <span className="brp-mobile-menu-bullet" />
+                </span>
+                <span>Login</span>
+              </button>
+            ) : null}
+            <a
+              className="brp-mobile-menu-item"
+              href="/signup"
+              onClick={() => setNavMenuOpen(false)}
+            >
+              <span className="brp-mobile-menu-icon" aria-hidden="true">
+                <span className="brp-mobile-menu-bullet" />
+              </span>
+              <span>Join us</span>
+            </a>
+            <a
+              className="brp-mobile-menu-item"
+              href="/login"
+              onClick={() => setNavMenuOpen(false)}
+            >
+              <span className="brp-mobile-menu-icon" aria-hidden="true">
+                <span className="brp-mobile-menu-bullet" />
+              </span>
+              <span>Admin</span>
+            </a>
+            <span className="brp-mobile-menu-divider" aria-hidden="true" />
+            <Link
+              href="/settings"
+              className="brp-mobile-menu-item"
+              onClick={() => setNavMenuOpen(false)}
+            >
+              <span className="brp-mobile-menu-icon" aria-hidden="true">
+                <GearIcon />
+              </span>
+              <span>설정</span>
+            </Link>
+          </nav>
+        </div>
+      )}
 
       {/* 스크롤 시 헤더 대신 떠 있는 반투명 미니바 — 책·장·소제목 + 본문 진행도.
           본문(reader) 카드가 뷰포트에 보이는 동안만 표시.
@@ -2378,7 +2614,7 @@ export default function BibleReadingPage() {
           justify-content: space-between;
           gap: 16px;
           padding: 12px clamp(18px, 5vw, 72px);
-          background: rgba(250, 250, 248, 0.85);
+          background: var(--bg-translucent);
           backdrop-filter: saturate(180%) blur(20px);
           -webkit-backdrop-filter: saturate(180%) blur(20px);
           border-bottom: 1px solid var(--line);
@@ -2422,7 +2658,9 @@ export default function BibleReadingPage() {
           opacity: 1;
           pointer-events: auto;
         }
-        /* 좌→우로 채워지는 그린 에너지바 — readerProgress(0~1) × 100% width. */
+        /* 좌→우로 채워지는 에너지바 — readerProgress(0~1) × 100% width.
+           색은 사용자 테마의 accent 를 따른다. color-mix 로 알파만 입혀
+           기존 그린 톤(0.55→0.85)과 동일한 명도 진행. */
         .brp-mini-fill {
           position: absolute;
           left: 0;
@@ -2431,8 +2669,8 @@ export default function BibleReadingPage() {
           width: 0;
           background: linear-gradient(
             90deg,
-            rgba(46, 93, 75, 0.55) 0%,
-            rgba(46, 93, 75, 0.85) 100%
+            color-mix(in srgb, var(--accent) 55%, transparent) 0%,
+            color-mix(in srgb, var(--accent) 85%, transparent) 100%
           );
           transition: width 0.12s linear;
           pointer-events: none;
@@ -2545,6 +2783,189 @@ export default function BibleReadingPage() {
         .brp-nav-text-link:hover {
           color: var(--ink);
           background: var(--surface-alt);
+        }
+
+        /* 설정 톱니바퀴 — 32x32 라운드 버튼. 텍스트 링크와 같은 라인에 정렬. */
+        .brp-nav-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          padding: 0;
+          border-radius: var(--radius-pill);
+          background: transparent;
+          border: 1px solid transparent;
+          color: var(--ink-soft);
+          cursor: pointer;
+          font: inherit;
+          flex-shrink: 0;
+          transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+        }
+        .brp-nav-icon:hover {
+          background: var(--surface-alt);
+          color: var(--ink);
+        }
+        .brp-nav-icon:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           햄버거 버튼 + 모바일 메뉴
+           - 기본은 숨김(데스크탑은 .brp-nav--desktop 가 보임).
+           - <640px 에서만 햄버거 노출 + 데스크탑 nav 숨김.
+           ────────────────────────────────────────────────────────────── */
+        .brp-hamburger {
+          display: none;
+          position: relative;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          padding: 0;
+          border-radius: var(--radius-pill);
+          background: transparent;
+          border: 1px solid transparent;
+          color: var(--ink);
+          cursor: pointer;
+          font: inherit;
+          flex-shrink: 0;
+          transition: background 0.18s ease, border-color 0.18s ease;
+        }
+        .brp-hamburger:hover {
+          background: var(--surface-alt);
+        }
+        .brp-hamburger:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+        .brp-hamburger > span {
+          position: absolute;
+          left: 9px;
+          right: 9px;
+          height: 2px;
+          background: currentColor;
+          border-radius: 2px;
+          transition: transform 0.22s ease, opacity 0.18s ease, top 0.22s ease;
+        }
+        .brp-hamburger > span:nth-child(1) { top: 11px; }
+        .brp-hamburger > span:nth-child(2) { top: 17px; }
+        .brp-hamburger > span:nth-child(3) { top: 23px; }
+        .brp-hamburger.is-open > span:nth-child(1) {
+          top: 17px;
+          transform: rotate(45deg);
+        }
+        .brp-hamburger.is-open > span:nth-child(2) {
+          opacity: 0;
+        }
+        .brp-hamburger.is-open > span:nth-child(3) {
+          top: 17px;
+          transform: rotate(-45deg);
+        }
+
+        /* 모바일 메뉴 backdrop — 헤더 아래 전체 영역을 덮어 바깥클릭으로 닫힘.
+           투명한 dim + 살짝 blur 만. 작은 시트가 헤더 우측 아래에서 떨어진다. */
+        .brp-mobile-menu-backdrop {
+          position: fixed;
+          inset: 0;
+          z-index: 25;
+          background: rgba(22, 22, 26, 0.32);
+          backdrop-filter: blur(2px);
+          -webkit-backdrop-filter: blur(2px);
+          animation: brp-mm-fade 0.16s ease;
+        }
+        @keyframes brp-mm-fade {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+        .brp-mobile-menu {
+          position: absolute;
+          top: 64px;
+          right: 16px;
+          min-width: 200px;
+          padding: 6px;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-md);
+          box-shadow: var(--shadow-2);
+          animation: brp-mm-pop 0.18s cubic-bezier(0.32, 0.72, 0.24, 1);
+          transform-origin: top right;
+        }
+        @keyframes brp-mm-pop {
+          from { transform: scale(0.96) translateY(-4px); opacity: 0; }
+          to   { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        .brp-mobile-menu-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 11px 12px;
+          border-radius: var(--radius-sm);
+          background: transparent;
+          border: 0;
+          color: var(--ink);
+          font: inherit;
+          font-size: 14px;
+          font-weight: 500;
+          letter-spacing: -0.005em;
+          text-align: left;
+          text-decoration: none;
+          cursor: pointer;
+          width: 100%;
+          transition: background 0.16s ease;
+        }
+        .brp-mobile-menu-item:hover {
+          background: var(--surface-alt);
+        }
+        .brp-mobile-menu-item:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: -2px;
+        }
+        /* 아이콘 슬롯 — 톱니바퀴/불릿이 같은 폭(18px)에 가운데 정렬되도록.
+           톱니바퀴 svg 가 flex 안에서 찌그러지지 않게 고정 폭 + flex-shrink:0. */
+        .brp-mobile-menu-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 18px;
+          height: 18px;
+          flex-shrink: 0;
+          color: var(--ink-soft);
+        }
+        .brp-mobile-menu-icon :global(svg) {
+          display: block;
+          width: 17px;
+          height: 17px;
+          flex-shrink: 0;
+        }
+        .brp-mobile-menu-bullet {
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          border-radius: 999px;
+          background: var(--ink-mute);
+        }
+        .brp-mobile-menu-divider {
+          display: block;
+          height: 1px;
+          margin: 4px 8px;
+          background: var(--line);
+        }
+
+        /* ≥640px: 데스크탑 nav 보임, 햄버거 숨김. */
+        @media (min-width: 640px) {
+          .brp-nav--desktop { display: inline-flex; }
+          .brp-hamburger { display: none !important; }
+          .brp-mobile-menu-backdrop { display: none; }
+        }
+        /* <640px: 데스크탑 nav 숨김, 햄버거 보임. */
+        @media (max-width: 639.98px) {
+          .brp-nav--desktop { display: none; }
+          .brp-hamburger { display: inline-flex; }
         }
 
         /* 상단 2px 진도 바(.brp-progress)는 제거됨 — 본문 진행도는 미니바
@@ -2758,6 +3179,8 @@ export default function BibleReadingPage() {
           border-radius: var(--radius-lg);
           padding: clamp(20px, 3vw, 28px) clamp(6px, 1vw, 10px);
           overflow: hidden;
+          /* 사용자 폰트 설정 — 본문(reader) 영역에만 적용. UI 폰트(.brp-page)는 항상 Pretendard. */
+          font-family: var(--reader-font-family, inherit);
         }
 
         .brp-verse {
@@ -2767,11 +3190,14 @@ export default function BibleReadingPage() {
           /* 번호는 본문 첫 줄의 baseline 에 정렬 — 절이 여러 줄이어도
              숫자가 텍스트 첫 줄과 자연스럽게 맞물려 보임. */
           align-items: baseline;
-          margin: 0 0 10px;
+          /* 절 사이 간격 — 사용자 설정(절 사이 간격) 의 값. */
+          margin: 0 0 var(--reader-verse-gap, 10px);
           padding: 2px 0;
           border-radius: var(--radius-md);
-          font-size: clamp(16px, 1.6vw, 19px);
-          line-height: 1.55;
+          /* 기본 16~19px clamp 에 사용자 글자 크기 배수 곱. */
+          font-size: calc(clamp(16px, 1.6vw, 19px) * var(--reader-size-scale, 1));
+          /* 텍스트 줄 간격 — 사용자 설정. */
+          line-height: var(--reader-text-line-height, 1.55);
           font-weight: 400;
           color: var(--ink);
           word-break: keep-all;
@@ -2941,6 +3367,8 @@ export default function BibleReadingPage() {
           font-weight: 700;
           letter-spacing: -0.01em;
           border-radius: var(--radius-pill);
+          /* 좁은 모바일 폭에서도 "개역한글"이 두 줄로 깨지지 않도록 */
+          white-space: nowrap;
         }
 
         /* 공통 토글 슬라이딩 인디케이터. 컨테이너에 다음 CSS 변수가
@@ -3805,7 +4233,7 @@ export default function BibleReadingPage() {
           gap: 6px;
           padding: 6px;
           border-radius: var(--radius-pill);
-          background: rgba(255, 255, 255, 0.92);
+          background: var(--surface-translucent);
           border: 1px solid var(--line);
           backdrop-filter: saturate(180%) blur(18px);
           -webkit-backdrop-filter: saturate(180%) blur(18px);
@@ -4329,6 +4757,51 @@ export default function BibleReadingPage() {
           }
         }
 
+        /* ─────────────────────────────────────────────────────────────
+           단일 컬럼 구간(PC 2-단 시작 960px 미만) — 책+번역, 읽기 모드,
+           장 스위처 "세 줄"을 모두 캔버스 폭에 가득(edge-to-edge) 채우고
+           동일 폭 + 동일 높이(40px) + 좁은 줄간격(6px)으로 통일.
+           기본 룰의 max-width: 720px 가운데 정렬을 이 구간에서만 해제하고,
+           캔버스의 flex gap(14px) 도 6px 로 줄여 row 사이 총 간격을 6px 로
+           수렴시킨다 (flex 에선 gap + margin 이 합산되므로 row margin-bottom
+           은 0 으로 리셋). */
+        @media (max-width: 959px) {
+          .brp-canvas {
+            gap: 6px;
+          }
+          .brp-top-row,
+          .brp-mode-tabs,
+          .brp-toolbar,
+          .brp-reader,
+          .brp-progress-grid,
+          .brp-prayer {
+            max-width: none;
+            width: 100%;
+            margin: 0;
+          }
+          .brp-chapter-switcher {
+            max-width: none;
+            width: 100%;
+            min-height: 40px;
+          }
+          /* 세 줄 모두 같은 높이로 — 책 드롭다운/번역 토글/모드 탭 */
+          .brp-book-picker {
+            height: 40px;
+          }
+          .brp-translation--sm {
+            height: 40px;
+            min-height: 40px;
+          }
+          .brp-mode-tabs--sm {
+            height: 40px;
+            min-height: 40px;
+          }
+          /* hero(책 제목) 와 첫 row 사이도 컴팩트 */
+          .brp-hero {
+            margin: 0 0 8px;
+          }
+        }
+
         @media (max-width: 760px) {
           .brp-page {
             padding-top: 60px;
@@ -4382,13 +4855,11 @@ export default function BibleReadingPage() {
             grid-template-columns: 1fr;
           }
 
-          .brp-toolbar {
-            margin-bottom: 18px;
-          }
+          /* .brp-toolbar margin-bottom 은 위 (max-width: 959px) 통일(6px). */
 
           .brp-hero {
-            margin-top: 18px;
-            margin-bottom: 20px;
+            margin-top: 14px;
+            /* margin-bottom 은 위 (max-width: 959px) 통일(8px). */
           }
 
           .brp-section-label {
@@ -4403,10 +4874,8 @@ export default function BibleReadingPage() {
             line-height: 1.15;
           }
 
-          .brp-chapter-switcher {
-            min-height: 40px;
-          }
-
+          /* .brp-chapter-switcher 의 min-height/width/margin 은 위 (max-width: 959px)
+             블록에서 40px 풀폭으로 일괄 통일됨. 여기선 좌우 화살표 버튼 사이즈만 축소. */
           .brp-chapter-switcher button {
             width: 30px;
             height: 30px;
@@ -4428,15 +4897,14 @@ export default function BibleReadingPage() {
           .brp-verse {
             grid-template-columns: 1.2em minmax(0, 1fr);
             column-gap: 4px;
-            margin-bottom: 4px;
+            /* margin-bottom / font-size / line-height 는 사용자 설정의
+               CSS 변수로 결정 — 모바일에서 별도 하드코딩하지 않는다. */
             padding: 2px 0;
-            font-size: 16.5px;
-            line-height: 1.55;
           }
 
-          /* 책 드롭다운 — 모바일 살짝 더 작은 높이, 중앙 정렬 유지 */
+          /* 책 드롭다운 — 모바일 내부 텍스트만 살짝 작게. 높이/풀폭/마진은
+             위 (max-width: 959px) 블록에서 40px 풀폭으로 일괄 통일됨. */
           .brp-book-picker {
-            height: 38px;
             padding: 0;
           }
           .brp-book-picker select {
@@ -4447,23 +4915,7 @@ export default function BibleReadingPage() {
             right: 14px;
           }
 
-          /* 컴팩트 번역 토글 — 모바일에서도 같은 폭 비율, 책 드롭다운과 동일 높이 */
-          .brp-translation--sm {
-            height: 38px;
-            min-height: 38px;
-          }
-          .brp-translation--sm button {
-            padding: 0 10px;
-            font-size: 14px;
-          }
-
-          .brp-mode-tabs--sm {
-            /* 모바일에서도 위 row(38px) 와 같은 높이로 통일 */
-            height: 38px;
-            min-height: 38px;
-            padding: 0;
-            margin-bottom: 10px;
-          }
+          /* 모드 탭 — 내부 라벨만 살짝 작게. 높이/풀폭/마진은 위 (959px) 통일. */
           .brp-mode-tabs--sm .brp-mode-tab {
             padding: 5px 12px;
             font-size: 13px;

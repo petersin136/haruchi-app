@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { SettingsProvider } from "./components/SettingsProvider";
+import { SETTINGS_INIT_SCRIPT } from "./lib/userSettings";
 
 export const metadata: Metadata = {
   title: "하루치",
@@ -38,6 +40,12 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
+        {/* 사용자 설정(테마/다크모드/폰트/줄간격…)을 hydration 이전에 <html> 에
+            CSS 변수로 박아넣어 초기 페인트의 깜빡임(FOUC) 을 막는다.
+            localStorage 가 없거나 파싱이 실패해도 안전한 기본값으로 폴백. */}
+        <script
+          dangerouslySetInnerHTML={{ __html: SETTINGS_INIT_SCRIPT }}
+        />
         {/* Noto Sans KR (Google Fonts) — 시스템에 Pretendard가 없을 때를 위한 fallback */}
         <link
           rel="preconnect"
@@ -48,8 +56,10 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin=""
         />
+        {/* Noto Sans KR(기본 fallback) + Noto Serif KR(명조) + Jua(둥근) —
+            설정의 본문 폰트 3종에 대응. 본문 폰트를 바꾸면 즉시 반영되도록 미리 로드. */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
         {/* Pretendard (CDN) — bible-reading 본문이 첫 번째로 시도하는 폰트 */}
@@ -64,7 +74,9 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="하루치" />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.svg" />
       </head>
-      <body>{children}</body>
+      <body>
+        <SettingsProvider>{children}</SettingsProvider>
+      </body>
     </html>
   );
 }

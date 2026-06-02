@@ -66,6 +66,44 @@
   --container-reading: 720px;
   --container-form: 560px;
   --container-app: 1200px;
+
+  /* -----------------------------------------------------------------
+   * 사용자 설정 — 본문(reader) 가독성/속도 (app/lib/userSettings.ts).
+   *   - 인라인 init 스크립트가 localStorage 값을 읽어 이 변수들을 덮어쓴다.
+   *   - 아래는 안전한 기본값.
+   * ----------------------------------------------------------------- */
+  --reader-font-family: inherit;
+  --reader-size-scale: 1;
+  --reader-verse-gap: 10px;
+  --reader-text-line-height: 1.55;
+  --scroll-speed-multiplier: 1;
+
+  /* 반투명 표면 — 헤더/도크/모달 등에서 사용. 다크모드에선 init 스크립트가
+     <html> 인라인 스타일로 어두운 톤으로 덮어쓴다. */
+  --bg-translucent: rgba(250, 250, 248, 0.85);
+  --surface-translucent: rgba(255, 255, 255, 0.92);
+}
+
+/* =============================================================================
+   다크 모드 — :root 의 색상 변수를 1:1 로 덮어쓴다.
+   data-theme="dark" 는 사용자 설정(app/lib/userSettings.ts) 초기화 스크립트가
+   <html> 에 부착. CSS 변수 자체도 init 스크립트가 인라인으로 갱신하기에
+   여기 :root[data-theme="dark"] 블록은 styled-jsx 등에서 var() 폴백이 발생할
+   때를 대비한 "두 번째 안전망" 역할.
+   ============================================================================= */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #14141A;
+  --surface: #1B1B22;
+  --surface-alt: #25252E;
+  --ink: #F2F2EE;
+  --ink-soft: #B5B5BC;
+  --ink-mute: #8B8B92;
+  --ink-faint: #6B6B75;
+  --line: #2E2E38;
+  --line-strong: #3D3D48;
+  --bg-translucent: rgba(20, 20, 26, 0.85);
+  --surface-translucent: rgba(31, 31, 38, 0.92);
 }
 
 /* -----------------------------------------------------------------------------
