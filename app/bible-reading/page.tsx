@@ -794,9 +794,15 @@ export default function BibleReadingPage() {
   // (구) 현재 듣고 있는 절 안의 단어 단위 진행도. 새 트리거 매칭은 절 단위로
   // 한 번에 통과 처리하므로 더 이상 사용하지 않음. 관련 state/ref 도 제거.
   const [doneChapters, setDoneChapters] = useState<Set<number>>(new Set());
-  // 절 복사 선택 — 절 번호(.brp-verse-number) 를 클릭해 토글, Shift+클릭으로
-  // 마지막 선택부터 현재까지 범위 선택. 선택된 절이 있으면 dock 위에 작은
-  // 복사 바가 떠 클립보드로 한 번에 복사. ESC / 책·장·번역 전환 시 자동 해제.
+  // 절 다중 선택 + 복사 — 별도 "선택 모드" 레이어. 음성 인식 읽기·하이라이트
+  // 흐름은 일절 건드리지 않고 위에 얹는다.
+  //   1) 본문(.brp-verse) 어디든 약 500ms 길게 누르면 selectionMode 진입 + 그 절 자동 선택.
+  //   2) 모드 중에는 다른 절을 그냥 탭하면 선택/해제 토글 (길게 누를 필요 없음).
+  //   3) 모든 절을 해제하거나 "선택 취소" 를 누르면 selectionMode 종료.
+  //   4) "복사" 누르면 클립보드에 "{책} {장}:{절} {본문}\n..." 형식으로 들어감.
+  //   5) ESC / 책·장·번역 전환 시 자동 해제.
+  // 길게 누르기는 본문 스크롤과 충돌하지 않도록 10px 이동 시 타이머 취소.
+  const [selectionMode, setSelectionMode] = useState(false);
   const [selectedVerses, setSelectedVerses] = useState<Set<number>>(new Set());
   const [copyToast, setCopyToast] = useState<string>("");
   const [listening, setListening] = useState(false);
@@ -843,8 +849,14 @@ export default function BibleReadingPage() {
   const listeningRef = useRef(false);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
   const readVerseCountRef = useRef(0);
-  // 마지막으로 클릭한 절 번호 — Shift+클릭 범위 선택의 anchor.
-  const lastSelectedVerseRef = useRef<number | null>(null);
+  // ─── 절 선택/복사용 ref들 ─────────────────────────────────────────────
+  // long-press 타이머와 시작 위치. 본문 스크롤 의도로 손가락이 10px 넘게
+  // 움직이면 즉시 취소 → 의도치 않은 선택 모드 진입 방지.
+  const longPressTimerRef = useRef<number | null>(null);
+  const longPressStartRef = useRef<{ x: number; y: number } | null>(null);
+  // long-press 가 실제로 발동되어 selectionMode 로 진입했을 때, 그 직후 따라오는
+  // click 이 같은 절을 즉시 토글-해제 하는 것을 막기 위한 일회성 플래그.
+  const suppressNextClickRef = useRef(false);
   // 복사 토스트 자동 사라짐 타이머 — 연속 복사 시 이전 타이머 클리어.
   const copyToastTimerRef = useRef<number | null>(null);
   const minReadTimeRef = useRef(0);
