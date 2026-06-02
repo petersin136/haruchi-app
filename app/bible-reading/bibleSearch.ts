@@ -137,6 +137,9 @@ const countOccurrences = (hay: string, needle: string): number => {
 export const searchBible = (
   rawQuery: string,
   translation: SearchTranslation,
+  // 특정 책만 목록에 담고 싶을 때(개요의 책 칩 클릭 필터). 집계(total/occurrences/
+  // byBook)는 항상 전체 기준 — 사용자가 다른 책으로 자유롭게 전환할 수 있도록.
+  bookFilter: BookId | null = null,
 ): SearchOutcome => {
   const q = normalizeForSearch(rawQuery);
   if (q.length === 0) {
@@ -155,7 +158,8 @@ export const searchBible = (
       total += 1;
       occurrences += countOccurrences(hay, q);
       perBook.set(e.bookId, (perBook.get(e.bookId) ?? 0) + 1);
-      if (results.length < MAX_SEARCH_RESULTS) {
+      const passesFilter = bookFilter === null || e.bookId === bookFilter;
+      if (passesFilter && results.length < MAX_SEARCH_RESULTS) {
         results.push({
           bookId: e.bookId,
           bookName: e.bookName,
@@ -176,7 +180,16 @@ export const searchBible = (
     count: perBook.get(id) ?? 0,
   }));
 
-  return { results, total, occurrences, truncated: total > results.length, byBook };
+  // 목록 기준 매칭 수(필터 적용 시 그 책의 구절 수) 대비 표시 개수로 truncated 판정.
+  const listTotal = bookFilter === null ? total : perBook.get(bookFilter) ?? 0;
+
+  return {
+    results,
+    total,
+    occurrences,
+    truncated: listTotal > results.length,
+    byBook,
+  };
 };
 
 export const getTranslationLabel = (t: SearchTranslation): string =>

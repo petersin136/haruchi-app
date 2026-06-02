@@ -20,7 +20,17 @@ import {
   type ThemeKey,
 } from "../lib/userSettings";
 
-const FONT_KEYS: FontKey[] = ["sans", "serif", "gothic"];
+// 표시 순서 — 친숙도 → 디자이너 픽 → 어린이 톤 순서로 정렬.
+const FONT_KEYS: FontKey[] = [
+  "sans",
+  "serif",
+  "modern",
+  "gothic",
+  "doh",
+  "gaegu",
+  "gamja",
+  "pen",
+];
 const FONT_SIZE_KEYS: FontSizeKey[] = ["sm", "md", "lg", "xl"];
 const SPACING_KEYS: SpacingKey[] = ["tight", "normal", "relaxed", "loose"];
 const SCROLL_SPEED_KEYS: ScrollSpeedKey[] = [
@@ -526,7 +536,15 @@ export default function SettingsPage() {
 
         .hs-fonts {
           display: grid;
+          /* 모바일은 1열, 가로 폭 600px 이상일 땐 2열로 자동 분할.
+             폰트 8종이 한 화면에 시원하게 들어오도록. */
+          grid-template-columns: 1fr;
           gap: 8px;
+        }
+        @media (min-width: 600px) {
+          .hs-fonts {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
         }
         .hs-font {
           display: grid;

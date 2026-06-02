@@ -106,6 +106,8 @@ export default function SearchOverlay({
   const [query, setQuery] = useState("");
   const [deferred, setDeferred] = useState("");
   const [tr, setTr] = useState<SearchTranslation>(defaultTranslation);
+  // 개요의 책 칩 클릭 시 그 책만 목록에 표시(다시 누르면 전체). 새 검색어/번역 전환 시 해제.
+  const [bookFilter, setBookFilter] = useState<BookId | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   // 열릴 때: 현재 보던 번역으로 동기화하고 입력창에 포커스.
@@ -142,7 +144,15 @@ export default function SearchOverlay({
     };
   }, [open]);
 
-  const outcome = useMemo(() => searchBible(deferred, tr), [deferred, tr]);
+  // 검색어/번역이 바뀌면(=새 검색 맥락) 책 필터는 초기화.
+  useEffect(() => {
+    setBookFilter(null);
+  }, [deferred, tr]);
+
+  const outcome = useMemo(
+    () => searchBible(deferred, tr, bookFilter),
+    [deferred, tr, bookFilter],
+  );
   const hasQuery = deferred.trim().length > 0;
 
   if (!open) return null;
@@ -237,13 +247,41 @@ export default function SearchOverlay({
                     총 {outcome.occurrences}번 나와요
                   </span>
                 </p>
-                <div className="bs-overview-books">
-                  {outcome.byBook.map((b) => (
-                    <span key={b.bookId} className="bs-book-chip">
-                      {b.bookName}
-                      <b>{b.count}</b>
-                    </span>
-                  ))}
+                <div
+                  className="bs-overview-books"
+                  role="group"
+                  aria-label="책별로 결과 보기"
+                >
+                  {outcome.byBook.length > 1 ? (
+                    <button
+                      type="button"
+                      className={`bs-book-chip ${
+                        bookFilter === null ? "is-active" : ""
+                      }`}
+                      aria-pressed={bookFilter === null}
+                      onClick={() => setBookFilter(null)}
+                    >
+                      전체
+                      <b>{outcome.total}</b>
+                    </button>
+                  ) : null}
+                  {outcome.byBook.map((b) => {
+                    const active = bookFilter === b.bookId;
+                    return (
+                      <button
+                        key={b.bookId}
+                        type="button"
+                        className={`bs-book-chip ${active ? "is-active" : ""}`}
+                        aria-pressed={active}
+                        onClick={() =>
+                          setBookFilter(active ? null : b.bookId)
+                        }
+                      >
+                        {b.bookName}
+                        <b>{b.count}</b>
+                      </button>
+                    );
+                  })}
                 </div>
                 {outcome.truncated ? (
                   <p className="bs-overview-note">
@@ -504,16 +542,36 @@ export default function SearchOverlay({
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          padding: 4px 10px;
+          padding: 5px 12px;
           background: var(--surface);
           border: 1px solid var(--line);
           border-radius: var(--radius-pill);
+          font: inherit;
           font-size: 12.5px;
           color: var(--ink-soft);
+          cursor: pointer;
+          transition: background 0.15s ease, border-color 0.15s ease,
+            color 0.15s ease;
+        }
+        .bs-book-chip:hover {
+          border-color: var(--line-strong);
+          background: var(--surface-alt);
         }
         .bs-book-chip b {
           font-weight: 700;
           color: var(--accent);
+        }
+        .bs-book-chip.is-active {
+          background: var(--accent);
+          border-color: var(--accent);
+          color: var(--accent-ink);
+        }
+        .bs-book-chip.is-active b {
+          color: var(--accent-ink);
+        }
+        .bs-book-chip:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
         }
         .bs-overview-note {
           margin: 10px 0 0;

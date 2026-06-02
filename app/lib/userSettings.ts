@@ -12,7 +12,17 @@
 // =============================================================================
 
 export type ThemeKey = "green" | "blue" | "warm" | "purple";
-export type FontKey = "sans" | "serif" | "gothic";
+// font 키는 localStorage 에 저장되므로 절대 이름을 바꾸거나 기존 키를 제거하지 말 것.
+// 새 폰트는 항상 끝에 추가만 한다 (저장된 옛 키와 호환 보존).
+export type FontKey =
+  | "sans"
+  | "serif"
+  | "gothic"
+  | "modern"
+  | "doh"
+  | "gaegu"
+  | "gamja"
+  | "pen";
 export type FontSizeKey = "sm" | "md" | "lg" | "xl";
 export type SpacingKey = "tight" | "normal" | "relaxed" | "loose";
 export type ScrollSpeedKey = "fast" | "normal" | "slow" | "slowest";
@@ -86,23 +96,30 @@ export const THEME_PRESETS: Record<ThemeKey, ThemePreset> = {
 };
 
 // -----------------------------------------------------------------------------
-// 폰트 패밀리 — 본문(reader) 에만 적용.
+// 폰트 패밀리 — 본문(reader) 에만 적용. UI 폰트는 항상 Noto Sans KR(자체 호스팅).
 //
 // 폰트는 next/font/google 로 빌드 타임에 다운로드되어 같은 도메인(/_next/static)
-// 에서 서빙된다 (외부 CDN 의존성 0). <html> 에는 다음 CSS 변수가 부착됨:
-//   --font-noto-sans-kr  → "기본" (sans)
-//   --font-noto-serif-kr → "명조" (serif)
-//   --font-jua           → "둥근" (gothic)
+// 에서 서빙된다 (외부 CDN 의존성 0). <html> 에는 다음 CSS 변수들이 부착됨:
+//   --font-noto-sans-kr  → "기본"   (sans, 모던 산세리프)
+//   --font-noto-serif-kr → "명조"   (serif, 전통 세리프)
+//   --font-jua           → "둥근"   (gothic, 굵은 캐릭터 손글씨)
+//   --font-gothic-a1     → "모던"   (modern, 디자이너 픽 본문 산세리프)
+//   --font-do-hyeon      → "도톰"   (doh, 둥글둥글 두꺼운 디스플레이)
+//   --font-gaegu         → "어린이" (gaegu, 어린이 손글씨)
+//   --font-gamja-flower  → "동화"   (gamja, 동글동글 동화책 손글씨)
+//   --font-nanum-pen     → "펜글씨" (pen, 마커펜 손글씨)
 //
-// 각 변수는 next/font 가 만든 `__NotoSansKR_xxx, __NotoSansKR_Fallback_xxx`
-// 형태의 익명 font-family 문자열로 확장된다. 시스템에 Pretendard 가 있는 PC 든
-// 아무것도 깔려있지 않은 모바일이든 동일하게 자체 호스팅된 폰트가 적용된다.
+// 각 변수는 next/font 가 만든 익명 family 문자열(`__Noto_Sans_KR_xxx` 등) 로
+// 확장된다. 모든 디바이스에서 동일하게 자체 호스팅된 폰트가 적용된다.
+//
+// 주의 — 저장값 호환:
+//   localStorage 에 저장된 옛 키("sans"|"serif"|"gothic")는 그대로 유지하고,
+//   새 키는 끝에 추가한다. settings/page.tsx 의 FONT_KEYS 표시 순서로 UI 정렬.
 // -----------------------------------------------------------------------------
 export const FONT_FAMILIES: Record<
   FontKey,
   { label: string; family: string; sample: string }
 > = {
-  // 세 폰트는 서로 확연히 달라야 한다 (모던 산세리프 / 전통 명조 / 둥근 손글씨톤).
   sans: {
     label: "기본",
     family:
@@ -115,12 +132,45 @@ export const FONT_FAMILIES: Record<
       'var(--font-noto-serif-kr), "Nanum Myeongjo", "Apple SD Gothic Neo", serif',
     sample: "본문 미리보기",
   },
-  // 기존 "gothic" 키는 유지(저장값 호환)하되, 둥근 손글씨 폰트(Jua)로 교체해
-  // 세 폰트의 차이가 한눈에 보이도록 함.
   gothic: {
     label: "둥근",
     family:
       'var(--font-jua), var(--font-noto-sans-kr), sans-serif',
+    sample: "본문 미리보기",
+  },
+  // 디자이너들이 한국어 본문에 가장 즐겨 쓰는 모던 그로테스크. 가독성 최상.
+  modern: {
+    label: "모던",
+    family:
+      'var(--font-gothic-a1), var(--font-noto-sans-kr), sans-serif',
+    sample: "본문 미리보기",
+  },
+  // 동글동글 두꺼운 캐릭터 톤. 학습/어린이 콘텐츠에서 친근함을 줌.
+  doh: {
+    label: "도톰",
+    family:
+      'var(--font-do-hyeon), var(--font-noto-sans-kr), sans-serif',
+    sample: "본문 미리보기",
+  },
+  // 가는 어린이 일기장 손글씨. 따뜻하고 부드러움.
+  gaegu: {
+    label: "어린이",
+    family:
+      'var(--font-gaegu), var(--font-noto-sans-kr), sans-serif',
+    sample: "본문 미리보기",
+  },
+  // 더 어린이스럽고 통통한 동화책 손글씨.
+  gamja: {
+    label: "동화",
+    family:
+      'var(--font-gamja-flower), var(--font-noto-sans-kr), sans-serif',
+    sample: "본문 미리보기",
+  },
+  // 마커펜 손글씨 — 짧은 글에 포인트로 주면 디자이너 픽처럼 보임.
+  pen: {
+    label: "펜글씨",
+    family:
+      'var(--font-nanum-pen), var(--font-noto-sans-kr), sans-serif',
     sample: "본문 미리보기",
   },
 };
