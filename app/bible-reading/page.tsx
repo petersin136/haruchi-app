@@ -1,13 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import proverbsData from "./proverbs.json";
-import matthewData from "./matthew.json";
-import markData from "./mark.json";
-import lukeData from "./luke.json";
-import johnData from "./john.json";
 import prayersJson from "./prayers.json";
 import { BOOKS, BOOK_ORDER, type BookId } from "./books";
+import { BOOK_DATA } from "./bibleData";
 import StudentIdentityBar, {
   type StudentIdentityBarHandle,
 } from "./components/StudentIdentityBar";
@@ -106,13 +102,8 @@ type SpeechRecognitionLike = {
 
 type SpeechRecognitionConstructor = new () => SpeechRecognitionLike;
 
-const BOOK_DATA: Record<BookId, BibleData> = {
-  proverbs: proverbsData as BibleData,
-  matthew: matthewData as BibleData,
-  mark: markData as BibleData,
-  luke: lukeData as BibleData,
-  john: johnData as BibleData,
-};
+// BOOK_DATA 는 bibleData.ts (단일 진입점) 에서 import.
+// 같은 객체를 검색(bibleSearch.ts)과 공유해 본문이 번들에 중복되지 않게 한다.
 
 const prayersData = prayersJson as PrayersData;
 
@@ -1002,8 +993,15 @@ export default function BibleReadingPage() {
     data.chapters[0];
   const hasKrv = chapter.verses.krv.length > 0;
   const hasKids = chapter.verses.kids.length > 0;
+  // 사용자가 선택한 번역이 현재 책에 없으면 반대 번역으로 자동 폴백.
+  //   - 신규 61권은 쉬운말이 없음 → 쉬운말 선택 시 개역한글로 표시.
+  //   - 기존 5권은 양쪽 모두 있어 영향 없음.
   const effectiveTranslation: TranslationKey =
-    translation === "krv" && !hasKrv && hasKids ? "kids" : translation;
+    translation === "krv" && !hasKrv && hasKids
+      ? "kids"
+      : translation === "kids" && !hasKids && hasKrv
+        ? "krv"
+        : translation;
   const verses = chapter.verses[effectiveTranslation];
 
   const totalVerses = verses.length;
@@ -2375,19 +2373,22 @@ export default function BibleReadingPage() {
               <span className="brp-toggle-indicator" aria-hidden="true" />
               {translationKeys.map((key) => {
                 const isKrvDisabled = key === "krv" && !hasKrv;
+                const isKidsDisabled = key === "kids" && !hasKids;
+                const isDisabled = isKrvDisabled || isKidsDisabled;
+                const disabledTitle = isKrvDisabled
+                  ? "이 책의 개역한글 본문은 아직 준비되지 않았어요."
+                  : isKidsDisabled
+                    ? "이 책의 쉬운말 번역은 준비 중입니다."
+                    : undefined;
                 return (
                   <button
                     key={key}
                     type="button"
                     className={`${
                       effectiveTranslation === key ? "is-active" : ""
-                    } ${isKrvDisabled ? "is-disabled" : ""}`}
-                    disabled={isKrvDisabled}
-                    title={
-                      isKrvDisabled
-                        ? "이 책의 개역한글 본문은 아직 준비되지 않았어요."
-                        : undefined
-                    }
+                    } ${isDisabled ? "is-disabled" : ""}`}
+                    disabled={isDisabled}
+                    title={disabledTitle}
                     onClick={() => handleTranslationChange(key)}
                   >
                     {data.translations[key].label}

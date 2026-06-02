@@ -4,37 +4,22 @@
 //   외부 요청 없이 이 모듈 안에서만 검색한다. JSON 내용은 읽기만 한다(변경 없음).
 //
 //   - 책 순서/이름은 books.ts(BOOK_ORDER / BOOKS) 를 그대로 따른다.
+//   - 본문은 bibleData.ts 의 BOOK_DATA 단일 진입점을 공유한다(번들 중복 방지).
 //   - 첫 검색 시 1회 평탄화 인덱스를 만들어 메모이즈(이후 검색은 인덱스 순회만).
 //   - 매칭은 대소문자/공백 무시 부분 문자열(정규화 후 includes).
+//
+//   본문 라이선스/출처: 개역한글판(KRV, 대한성서공회 1961, 보호기간 50년 경과
+//     공공저작물). 데이터 출처: scrollmapper/bible_databases (KorRV, Public
+//     Domain). 상세는 app/bible-reading/DATA-LICENSE.md.
 // =============================================================================
 
-import proverbsData from "./proverbs.json";
-import matthewData from "./matthew.json";
-import markData from "./mark.json";
-import lukeData from "./luke.json";
-import johnData from "./john.json";
 import { BOOKS, BOOK_ORDER, type BookId } from "./books";
+import { BOOK_DATA, type BibleData } from "./bibleData";
 
 export type SearchTranslation = "krv" | "kids";
 
-type RawVerse = { n: number; t: string };
-type RawChapter = {
-  chapter: number;
-  title: string;
-  verses: Record<string, RawVerse[]>;
-};
-type RawBook = {
-  translations: Record<string, { label: string; note?: string }>;
-  chapters: RawChapter[];
-};
-
-const RAW: Record<BookId, RawBook> = {
-  proverbs: proverbsData as RawBook,
-  matthew: matthewData as RawBook,
-  mark: markData as RawBook,
-  luke: lukeData as RawBook,
-  john: johnData as RawBook,
-};
+// bibleData.ts 의 BibleData 와 동일 구조를 그대로 사용한다.
+const RAW: Record<BookId, BibleData> = BOOK_DATA;
 
 export type SearchResult = {
   bookId: BookId;
@@ -195,7 +180,7 @@ export const searchBible = (
 export const getTranslationLabel = (t: SearchTranslation): string =>
   RAW.proverbs.translations[t]?.label ?? (t === "krv" ? "개역한글" : "쉬운말");
 
-// 검색 대상 책 안내 문구용 — "잠언·마태복음·마가복음·누가복음·요한복음"
-export const SEARCHABLE_BOOK_NAMES = BOOK_ORDER.map(
-  (id) => BOOKS[id].name,
-).join("·");
+// 검색 대상 책 안내 문구용. 66권 전체이므로 가독성을 위해
+// 책 목록 대신 권 수 요약 문자열을 제공한다.
+//   예) "성경 전체 66권 (개역한글)"
+export const SEARCHABLE_BOOK_NAMES = `성경 전체 ${BOOK_ORDER.length}권 (개역한글)`;
