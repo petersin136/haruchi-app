@@ -1290,15 +1290,21 @@ export default function BibleReadingPage() {
     const header = `${bookMeta.name} ${chapterNumber}장 ${rangeParts.join(", ")}절`;
     // 본문: 절마다 "{번호} {본문}" — 책 이름은 헤더에만 한 번.
     //
-    // 헤더 ↔ 본문 구분은 일반 LF(\n) 대신 Unicode LINE SEPARATOR(U+2028) 사용.
-    // 이유: Apple Notes / Pages 같은 리치 텍스트 앱은 \n 을 "단락 break" 로
-    // 해석해 첫 줄(헤더) 뒤에 단락 간격(paragraph-after) 을 자동으로 넣어버려
-    // 시각적으로 빈 줄처럼 보인다. U+2028 은 "soft line break" 로 처리되어
-    // 단락 안 줄바꿈(Shift+Enter) 과 같은 효과 → 추가 간격 없이 바로 다음 줄.
-    // 일반 텍스트 에디터(VS Code, 터미널 등) 에서도 줄바꿈으로 자연스럽게 표시됨.
-    const LINE_SEP = "\u2028";
+    // 헤더 ↔ 본문 구분자 — 디바이스별로 다르게 처리:
+    //   ─ 데스크탑(macOS Notes/Pages 등): U+2028 (LINE SEPARATOR) 사용.
+    //     일반 \n 은 단락 간격(paragraph-after) 을 만들어 시각적 빈 줄로 보이는데,
+    //     U+2028 은 "단락 안 줄바꿈(Shift+Enter)" 으로 해석되어 간격 없이 붙는다.
+    //   ─ 모바일(iOS / Android Notes): 일반 \n 사용.
+    //     iOS Notes 는 U+2028 을 지원하지 않아 그대로 □(missing glyph) 로 출력하고
+    //     줄바꿈도 안 된다. 다행히 모바일 Notes 는 \n 에 단락 간격을 추가하지
+    //     않으므로 \n 만으로 헤더 바로 다음 줄에 본문이 깔끔히 붙는다.
+    // 절 사이 줄바꿈은 항상 \n (모든 환경에서 동일하게 한 줄씩 차곡차곡).
+    const isMobileUA =
+      typeof navigator !== "undefined" &&
+      /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const headerSep = isMobileUA ? "\n" : "\u2028";
     const body = picked.map((v) => `${v.n} ${v.t}`).join("\n");
-    const payload = `${header}${LINE_SEP}${body}`;
+    const payload = `${header}${headerSep}${body}`;
 
     try {
       if (
