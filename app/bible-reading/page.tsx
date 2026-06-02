@@ -21,6 +21,7 @@ import {
 import Wordmark from "../components/Wordmark";
 import { useSettings } from "../components/SettingsProvider";
 import { SCROLL_SPEED_MULTIPLIER } from "../lib/userSettings";
+import SearchOverlay, { type SearchSelection } from "./SearchOverlay";
 
 type TranslationKey = "krv" | "kids";
 
@@ -363,6 +364,25 @@ const collectQuizWordPool = (verses: Verse[]): string[] => {
 
 // 톱니바퀴 아이콘 — 데스크탑 nav 와 모바일 메뉴 둘 다에서 재사용.
 // currentColor 로 그려져 다크/라이트 모드를 자동으로 따라간다.
+function SearchIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="11" cy="11" r="7" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+  );
+}
+
 function GearIcon() {
   return (
     <svg
@@ -844,6 +864,11 @@ export default function BibleReadingPage() {
     null,
   );
   const [navMenuOpen, setNavMenuOpen] = useState(false);
+  // 성경 단어 검색 — 독립 기능. 음성/스크롤/기도/선택 흐름과 분리.
+  //   searchOpen: 검색 오버레이 표시 여부.
+  //   flashVerse: 검색 결과로 이동했을 때 잠깐 강조(스크롤 타겟)할 절 번호.
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [flashVerse, setFlashVerse] = useState<number | null>(null);
   const { settings } = useSettings();
 
   const listeningRef = useRef(false);
@@ -1124,40 +1149,25 @@ export default function BibleReadingPage() {
     });
   }, [bookId, chapterNumber, stopListening]);
 
-  // ─── 절 복사: 선택/해제/복사 ─────────────────────────────────────────
-  // 절 번호 버튼 click 핸들러. e.shiftKey 가 true 이면 마지막 anchor 부터
-  // 현재 절까지 한꺼번에 선택(범위 선택). 그 외엔 단일 토글.
-  const toggleVerseSelection = useCallback(
-    (verseN: number, e: React.MouseEvent) => {
-      setSelectedVerses((prev) => {
-        const next = new Set(prev);
-        const anchor = lastSelectedVerseRef.current;
-        if (e.shiftKey && anchor !== null && anchor !== verseN) {
-          const [lo, hi] = anchor < verseN ? [anchor, verseN] : [verseN, anchor];
-          for (const v of verses) {
-            if (v.n >= lo && v.n <= hi) next.add(v.n);
-          }
-        } else if (next.has(verseN)) {
-          next.delete(verseN);
-        } else {
-          next.add(verseN);
-        }
-        return next;
-      });
-      lastSelectedVerseRef.current = verseN;
-    },
-    [verses],
-  );
+  // ─── 절 다중 선택 + 복사 ──────────────────────────────────────────────
+  // long-press 타이머 정리 (이동/up/cancel 시 공통 호출).
+  const cancelLongPress = useCallback(() => {
+    if (longPressTimerRef.current !== null) {
+      window.clearTimeout(longPressTimerRef.current);
+      longPressTimerRef.current = null;
+    }
+    longPressStartRef.current = null;
+  }, []);
 
-  const clearVerseSelection = useCallback(() => {
+  const exitSelectionMode = useCallback(() => {
+    setSelectionMode(false);
     setSelectedVerses(new Set());
-    lastSelectedVerseRef.current = null;
   }, []);
 
   const selectAllVerses = useCallback(() => {
     if (verses.length === 0) return;
+    setSelectionMode(true);
     setSelectedVerses(new Set(verses.map((v) => v.n)));
-    lastSelectedVerseRef.current = verses[verses.length - 1]!.n;
   }, [verses]);
 
   const flashCopyToast = useCallback((msg: string) => {
@@ -1171,14 +1181,124 @@ export default function BibleReadingPage() {
     }, 2200);
   }, []);
 
+  // 본문 절 위에서 pointer down — long-press 타이머 시작. 이미 selectionMode
+  // 라면 길게 누르기 로직은 의미가 없으므로(탭만으로 토글) 타이머를 걸지 않는다.
+  const handleVersePointerDown = useCallback(
+    (verseN: number, e: React.PointerEvent<HTMLDivElement>) => {
+      // 주 버튼(좌클릭) / 터치 / 펜만 long-press 트리거. 우클릭·보조 버튼은 무시.
+      if (e.button !== 0) return;
+      if (selectionMode) return;
+      cancelLongPress();
+      longPressStartRef.current = { x: e.clientX, y: e.clientY };
+      longPressTimerRef.current = window.setTimeout(() => {
+        longPressTimerRef.current = null;
+        longPressStartRef.current = null;
+        // long-press 발동 → 선택 모드 진입 + 그 절 선택. 직후 발생할 click 은 1회 무시.
+        suppressNextClickRef.current = true;
+        setSelectionMode(true);
+        setSelectedVerses((prev) => {
+          if (prev.has(verseN)) return prev;
+          const next = new Set(prev);
+          next.add(verseN);
+          return next;
+        });
+        // 안드로이드 등에서 가벼운 햅틱 — 지원 없는 환경(iOS 등)에선 조용히 무시.
+        if (
+          typeof navigator !== "undefined" &&
+          typeof (navigator as Navigator & { vibrate?: (n: number) => boolean }).vibrate === "function"
+        ) {
+          try {
+            (navigator as Navigator & { vibrate: (n: number) => boolean }).vibrate(15);
+          } catch {
+            /* noop */
+          }
+        }
+      }, 500);
+    },
+    [cancelLongPress, selectionMode],
+  );
+
+  // 손가락이 10px 넘게 움직이면 = 스크롤 의도로 보고 long-press 타이머 취소.
+  const handleVersePointerMove = useCallback(
+    (e: React.PointerEvent<HTMLDivElement>) => {
+      const start = longPressStartRef.current;
+      if (!start || longPressTimerRef.current === null) return;
+      const dx = e.clientX - start.x;
+      const dy = e.clientY - start.y;
+      if (dx * dx + dy * dy > 100) {
+        cancelLongPress();
+      }
+    },
+    [cancelLongPress],
+  );
+
+  // 절 클릭 — selectionMode 일 때만 토글. long-press 직후의 click 은 1회 흡수.
+  const handleVerseClick = useCallback(
+    (verseN: number) => {
+      if (suppressNextClickRef.current) {
+        suppressNextClickRef.current = false;
+        return;
+      }
+      if (!selectionMode) return;
+      setSelectedVerses((prev) => {
+        const next = new Set(prev);
+        if (next.has(verseN)) {
+          next.delete(verseN);
+        } else {
+          next.add(verseN);
+        }
+        return next;
+      });
+    },
+    [selectionMode],
+  );
+
   const copySelectedVerses = useCallback(async () => {
     if (selectedVerses.size === 0) return;
-    // 선택된 절들을 원본 절 순서대로(verses 순서 = 절 번호 오름차순) 정렬해 출력.
+    // 절 번호 오름차순(= verses 원본 순서)으로 정렬.
     const picked = verses.filter((v) => selectedVerses.has(v.n));
     if (picked.length === 0) return;
-    const header = `${bookMeta.name} ${chapterNumber}장`;
+
+    // 헤더 한 줄: "{책} {장}장 {구간}절"
+    //   - 선택된 절 번호를 보고 연속 구간은 "n-m" 으로 묶고, 떨어진 구간은 ", " 로 잇는다.
+    //     예) [2,3,4]       → "2-4"
+    //          [2,3,5]       → "2-3, 5"
+    //          [2,5,7]       → "2, 5, 7"
+    //          [2]           → "2"
+    const nums = picked.map((v) => v.n);
+    const rangeParts: string[] = [];
+    let rangeStart = nums[0]!;
+    let rangeEnd = rangeStart;
+    for (let i = 1; i < nums.length; i += 1) {
+      const n = nums[i]!;
+      if (n === rangeEnd + 1) {
+        rangeEnd = n;
+      } else {
+        rangeParts.push(
+          rangeStart === rangeEnd
+            ? String(rangeStart)
+            : `${rangeStart}-${rangeEnd}`,
+        );
+        rangeStart = n;
+        rangeEnd = n;
+      }
+    }
+    rangeParts.push(
+      rangeStart === rangeEnd ? String(rangeStart) : `${rangeStart}-${rangeEnd}`,
+    );
+
+    const header = `${bookMeta.name} ${chapterNumber}장 ${rangeParts.join(", ")}절`;
+    // 본문: 절마다 "{번호} {본문}" — 책 이름은 헤더에만 한 번.
+    //
+    // 헤더 ↔ 본문 구분은 일반 LF(\n) 대신 Unicode LINE SEPARATOR(U+2028) 사용.
+    // 이유: Apple Notes / Pages 같은 리치 텍스트 앱은 \n 을 "단락 break" 로
+    // 해석해 첫 줄(헤더) 뒤에 단락 간격(paragraph-after) 을 자동으로 넣어버려
+    // 시각적으로 빈 줄처럼 보인다. U+2028 은 "soft line break" 로 처리되어
+    // 단락 안 줄바꿈(Shift+Enter) 과 같은 효과 → 추가 간격 없이 바로 다음 줄.
+    // 일반 텍스트 에디터(VS Code, 터미널 등) 에서도 줄바꿈으로 자연스럽게 표시됨.
+    const LINE_SEP = "\u2028";
     const body = picked.map((v) => `${v.n} ${v.t}`).join("\n");
-    const payload = `${header}\n\n${body}`;
+    const payload = `${header}${LINE_SEP}${body}`;
 
     try {
       if (
@@ -1188,7 +1308,8 @@ export default function BibleReadingPage() {
       ) {
         await navigator.clipboard.writeText(payload);
       } else {
-        // 폴백 (구형 브라우저 / 비 secure context): 보이지 않는 textarea + execCommand.
+        // 폴백 (iOS Safari 일부 / 비 secure context / 구형 브라우저):
+        // 보이지 않는 textarea 에 텍스트를 넣고 execCommand("copy") 로 복사.
         const ta = document.createElement("textarea");
         ta.value = payload;
         ta.setAttribute("readonly", "");
@@ -1198,46 +1319,62 @@ export default function BibleReadingPage() {
         document.body.appendChild(ta);
         ta.focus();
         ta.select();
+        // iOS 에서 select() 만으론 안 잡힐 때 setSelectionRange 보강.
+        if (typeof ta.setSelectionRange === "function") {
+          ta.setSelectionRange(0, payload.length);
+        }
         const ok = document.execCommand("copy");
         document.body.removeChild(ta);
         if (!ok) throw new Error("execCommand copy failed");
       }
       flashCopyToast(
-        picked.length === 1
-          ? `${picked[0]!.n}절을 복사했어요`
-          : `${picked.length}개 절을 복사했어요`,
+        picked.length === 1 ? "복사되었습니다" : `${picked.length}개 절을 복사했어요`,
       );
     } catch {
-      flashCopyToast("복사에 실패했어요. 다시 시도해 주세요.");
+      flashCopyToast(
+        "복사할 수 없는 환경이에요. 본문을 직접 길게 눌러 선택해 주세요.",
+      );
     }
   }, [bookMeta.name, chapterNumber, flashCopyToast, selectedVerses, verses]);
 
-  // 책/장/번역 전환 시 선택 자동 해제 — 이전 장의 절 번호가 다음 장으로
+  // 선택이 모두 해제되면 selectionMode 자동 종료(스펙 요구).
+  useEffect(() => {
+    if (selectionMode && selectedVerses.size === 0) {
+      setSelectionMode(false);
+    }
+  }, [selectionMode, selectedVerses]);
+
+  // 책/장/번역 전환 시 선택/모드 자동 해제 — 이전 장의 절 번호가 다음 장으로
   // 새어 들어가지 않도록.
   useEffect(() => {
+    setSelectionMode(false);
     setSelectedVerses(new Set());
-    lastSelectedVerseRef.current = null;
-  }, [bookId, chapterNumber, effectiveTranslation]);
+    cancelLongPress();
+    suppressNextClickRef.current = false;
+  }, [bookId, cancelLongPress, chapterNumber, effectiveTranslation]);
 
-  // ESC 키로 선택 해제 — 선택된 절이 있을 때만 리스너를 단다(전역 키 충돌 최소화).
+  // ESC 키로 선택 모드 종료 — 모드일 때만 리스너를 단다(전역 키 충돌 최소화).
   useEffect(() => {
-    if (selectedVerses.size === 0) return;
+    if (!selectionMode) return;
     const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") clearVerseSelection();
+      if (e.key === "Escape") exitSelectionMode();
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [clearVerseSelection, selectedVerses.size]);
+  }, [exitSelectionMode, selectionMode]);
 
-  // 언마운트 시 토스트 타이머 정리.
+  // 언마운트 시 타이머 정리.
   useEffect(() => {
     return () => {
       if (copyToastTimerRef.current !== null) {
         window.clearTimeout(copyToastTimerRef.current);
       }
+      if (longPressTimerRef.current !== null) {
+        window.clearTimeout(longPressTimerRef.current);
+      }
     };
   }, []);
-  // ─── /절 복사 ─────────────────────────────────────────────────────────
+  // ─── /절 다중 선택 + 복사 ─────────────────────────────────────────────
 
   // 절별 "앞단어 트리거" 시퀀스 (음성 본문 매칭 전용).
   // 정의/동작 규칙은 buildVerseTrigger 주석 참조.
@@ -1298,6 +1435,59 @@ export default function BibleReadingPage() {
     },
     [translation],
   );
+
+  // 검색 결과 클릭 → 해당 책/장/번역으로 이동 + 그 절을 잠깐 강조(flashVerse).
+  //   기존 책·장·번역 전환과 동일한 state/localStorage 키를 재사용한다.
+  //   (changeBook 은 저장된 장을 불러오는 early-return 이 있어, 여기선 명시적으로
+  //    book + chapter 를 직접 세팅한다.)
+  const goToSearchResult = useCallback(
+    (sel: SearchSelection) => {
+      const {
+        bookId: nextBook,
+        chapter,
+        verseNo,
+        translation: nextTr,
+      } = sel;
+      stopListening();
+      setSearchOpen(false);
+      setNavMenuOpen(false);
+      setTranslation(nextTr);
+      setBookId(nextBook);
+      setChapterNumber(chapter);
+      setCompleteVisible(false);
+      setQuizOpen(false);
+      setQuizSubmitted(false);
+      setQuizAnswers([]);
+      setQuizQuestions([]);
+      setFlashVerse(verseNo);
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem(TRANSLATION_KEY, nextTr);
+        window.localStorage.setItem(CURRENT_BOOK_KEY, nextBook);
+        window.localStorage.setItem(
+          currentChapterKey(nextBook),
+          String(chapter),
+        );
+      }
+    },
+    [stopListening],
+  );
+
+  // flashVerse 가 설정되면, 새 장이 렌더된 뒤 그 절로 스크롤하고 잠깐 강조 후 해제.
+  useEffect(() => {
+    if (flashVerse == null) return;
+    const raf = window.requestAnimationFrame(() => {
+      const root = readerSectionRef.current;
+      const el = root?.querySelector<HTMLElement>(
+        `[data-verse-num="${flashVerse}"]`,
+      );
+      el?.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+    const clear = window.setTimeout(() => setFlashVerse(null), 2000);
+    return () => {
+      window.cancelAnimationFrame(raf);
+      window.clearTimeout(clear);
+    };
+  }, [flashVerse, bookId, chapterNumber, effectiveTranslation]);
 
   const startListening = useCallback(() => {
     if (!hasFilledText) {
@@ -1963,6 +2153,15 @@ export default function BibleReadingPage() {
         </a>
         {/* 데스크탑/태블릿 (≥640px) — 풀 네비. 톱니바퀴 + 텍스트 링크들이 한 줄. */}
         <nav className="brp-nav brp-nav--desktop" aria-label="Account links">
+          <button
+            type="button"
+            className="brp-nav-icon"
+            onClick={() => setSearchOpen(true)}
+            aria-label="성경 단어 검색"
+            title="성경 단어 검색"
+          >
+            <SearchIcon />
+          </button>
           <a
             href="/settings"
             className="brp-nav-icon"
@@ -1988,19 +2187,29 @@ export default function BibleReadingPage() {
           </a>
         </nav>
 
-        {/* 모바일 (<640px) — 햄버거 하나만. 누르면 우상단 시트 드롭다운. */}
-        <button
-          type="button"
-          className={`brp-hamburger ${navMenuOpen ? "is-open" : ""}`}
-          onClick={() => setNavMenuOpen((v) => !v)}
-          aria-label={navMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
-          aria-expanded={navMenuOpen}
-          aria-controls="brp-mobile-menu"
-        >
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
-        </button>
+        {/* 모바일 (<640px) — 검색 + 햄버거. 햄버거는 우상단 시트 드롭다운. */}
+        <div className="brp-mobile-actions">
+          <button
+            type="button"
+            className="brp-mobile-search"
+            onClick={() => setSearchOpen(true)}
+            aria-label="성경 단어 검색"
+          >
+            <SearchIcon />
+          </button>
+          <button
+            type="button"
+            className={`brp-hamburger ${navMenuOpen ? "is-open" : ""}`}
+            onClick={() => setNavMenuOpen((v) => !v)}
+            aria-label={navMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
+            aria-expanded={navMenuOpen}
+            aria-controls="brp-mobile-menu"
+          >
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+          </button>
+        </div>
       </header>
 
       {/* 모바일 메뉴 — 햄버거 클릭 시 헤더 아래로 슬라이드 다운.
@@ -2066,6 +2275,14 @@ export default function BibleReadingPage() {
           </nav>
         </div>
       )}
+
+      {/* 성경 단어 검색 오버레이 — 독립 기능. BOOK_DATA(메모리) 안에서만 검색. */}
+      <SearchOverlay
+        open={searchOpen}
+        defaultTranslation={effectiveTranslation}
+        onClose={() => setSearchOpen(false)}
+        onSelect={goToSearchResult}
+      />
 
       {/* 스크롤 시 헤더 대신 떠 있는 반투명 미니바 — 책·장·소제목 + 본문 진행도.
           본문(reader) 카드가 뷰포트에 보이는 동안만 표시.
@@ -2519,27 +2736,27 @@ export default function BibleReadingPage() {
           return (
             <div
               key={`${bookId}-${chapterNumber}-${effectiveTranslation}-${verse.n}`}
+              data-verse-num={verse.n}
               className={`brp-verse ${isRead ? "is-read" : ""} ${
-                isSelected ? "is-selected" : ""
+                selectionMode ? "is-selecting" : ""
+              } ${isSelected ? "is-selected" : ""} ${
+                flashVerse === verse.n ? "is-flash" : ""
               }`}
+              onPointerDown={(e) => handleVersePointerDown(verse.n, e)}
+              onPointerMove={handleVersePointerMove}
+              onPointerUp={cancelLongPress}
+              onPointerCancel={cancelLongPress}
+              onPointerLeave={cancelLongPress}
+              onClick={() => handleVerseClick(verse.n)}
+              role={selectionMode ? "button" : undefined}
+              aria-pressed={selectionMode ? isSelected : undefined}
+              aria-label={
+                selectionMode
+                  ? `${verse.n}절 ${isSelected ? "선택 해제" : "선택"}`
+                  : undefined
+              }
             >
-              {/* 절 번호는 "이 절 선택" 토글 버튼. 본문(p) 자체는 일반 텍스트로
-                  남겨 두어 데스크탑에서 마우스 드래그로 부분 텍스트 선택이
-                  그대로 가능. Shift+클릭으로 anchor~현재 범위 선택. */}
-              <button
-                type="button"
-                className="brp-verse-number"
-                onClick={(e) => toggleVerseSelection(verse.n, e)}
-                aria-pressed={isSelected}
-                aria-label={`${verse.n}절 ${isSelected ? "선택 해제" : "선택"}`}
-                title={
-                  isSelected
-                    ? "이 절 선택 해제 (Shift+클릭: 범위 선택)"
-                    : "이 절 선택 (Shift+클릭: 범위 선택)"
-                }
-              >
-                {verse.n}
-              </button>
+              <span className="brp-verse-number">{verse.n}</span>
               <p className="brp-verse-text">{verse.t}</p>
             </div>
           );
@@ -2607,17 +2824,21 @@ export default function BibleReadingPage() {
         </button>
       </div>
 
-      {/* 절 선택 시 dock 위에 떠 있는 컴팩트 복사 바.
-          하나라도 선택돼 있으면 표시되고, "복사" 한 번으로 선택된 절들이
-          clipboard 에 줄바꿈으로 묶여 들어간다(헤더: "{책} {장}장"). */}
-      {selectedVerses.size > 0 && (
+      {/* 선택 모드 액션 바 — 본문 절을 길게 눌러 진입한 selectionMode 동안만 표시.
+          dock(마이크/리셋/다읽었어요) 위에 떠 있고, 디자인 토큰만 사용한다:
+            - 컨테이너: --surface(-translucent) + --line + --radius-pill + --shadow-1
+            - 메인 액션(복사): --accent / --accent-ink 채움
+            - 보조(선택 취소): ghost 톤(--surface-alt 호버 + --ink-soft)
+          본문 컨테이너(720px) 기준 가운데 정렬, 모바일에선 화면 폭에 안전하게
+          맞도록 max-width: calc(100vw - 24px). */}
+      {selectionMode && (
         <div
           className="brp-copy-bar"
           role="region"
-          aria-label={`${selectedVerses.size}절 선택됨, 복사 가능`}
+          aria-label={`${selectedVerses.size}개 절 선택됨, 복사 가능`}
         >
           <span className="brp-copy-count">
-            {selectedVerses.size}절 선택
+            {selectedVerses.size}개 선택됨
           </span>
           {selectedVerses.size < verses.length && (
             <button
@@ -2635,17 +2856,17 @@ export default function BibleReadingPage() {
             onClick={() => {
               void copySelectedVerses();
             }}
+            disabled={selectedVerses.size === 0}
           >
             복사
           </button>
           <button
             type="button"
-            className="brp-copy-close"
-            onClick={clearVerseSelection}
-            aria-label="선택 해제"
-            title="선택 해제 (ESC)"
+            className="brp-copy-cancel"
+            onClick={exitSelectionMode}
+            title="선택 모드 종료 (ESC)"
           >
-            ✕
+            선택 취소
           </button>
         </div>
       )}
@@ -3144,15 +3365,49 @@ export default function BibleReadingPage() {
           background: var(--line);
         }
 
-        /* ≥640px: 데스크탑 nav 보임, 햄버거 숨김. */
+        /* 모바일 우상단 액션 묶음(검색 + 햄버거). 데스크탑에선 숨김. */
+        .brp-mobile-actions {
+          display: none;
+          align-items: center;
+          gap: 4px;
+          flex-shrink: 0;
+        }
+        /* 모바일 검색 버튼 — 햄버거와 같은 36x36 라운드 톤. */
+        .brp-mobile-search {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          padding: 0;
+          border-radius: var(--radius-pill);
+          background: transparent;
+          border: 1px solid transparent;
+          color: var(--ink);
+          cursor: pointer;
+          font: inherit;
+          flex-shrink: 0;
+          transition: background 0.18s ease, border-color 0.18s ease;
+        }
+        .brp-mobile-search:hover {
+          background: var(--surface-alt);
+        }
+        .brp-mobile-search:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+
+        /* ≥640px: 데스크탑 nav 보임, 햄버거/모바일액션 숨김. */
         @media (min-width: 640px) {
           .brp-nav--desktop { display: inline-flex; }
           .brp-hamburger { display: none !important; }
+          .brp-mobile-actions { display: none !important; }
           .brp-mobile-menu-backdrop { display: none; }
         }
-        /* <640px: 데스크탑 nav 숨김, 햄버거 보임. */
+        /* <640px: 데스크탑 nav 숨김, 모바일 액션(검색+햄버거) 보임. */
         @media (max-width: 639.98px) {
           .brp-nav--desktop { display: none; }
+          .brp-mobile-actions { display: inline-flex; }
           .brp-hamburger { display: inline-flex; }
         }
 
@@ -3417,48 +3672,66 @@ export default function BibleReadingPage() {
            현재 절을 빠르게 통과 처리하므로 "다음에 기다리는 절" 이 미리 강조되어
            사용자가 헷갈리는 문제가 있어 의도적으로 제거함. */
 
-        /* 선택된 절(복사 대상). 옅은 표면 톤 + 왼쪽 어센트 바.
-           본문 텍스트 자체의 줄바꿈/폭에는 영향 0 (background + box-shadow inset). */
+        /* 선택 모드 진행 중인 절 — 디바이스에서 길게 눌러 진입한 이후
+           탭으로 토글하기 위해 텍스트 선택(드래그) 을 일시 차단하고
+           포인터 커서를 명시 (모드가 끝나면 자연스럽게 원상 복구). */
+        .brp-verse.is-selecting {
+          cursor: pointer;
+          user-select: none;
+          -webkit-user-select: none;
+          -webkit-touch-callout: none;
+        }
+
+        /* 선택된 절(복사 대상) — 옅은 어센트 면만으로 차분히 강조.
+           왼쪽 어센트 바/외곽 outline 같은 "선" 류는 일부러 쓰지 않는다.
+           background + radius 만으로 둥근 highlight chip 느낌. layout-safe
+           (reader 좌우 padding 이 좁은 모바일에서도 한 칸 밖으로 튀어나가지 않게
+           padding/negative margin 같은 트릭은 쓰지 않음).
+           음성 읽기 완료(.is-read, --accent-warm) 와는 톤(웜레드 vs 액센트
+           그린)이 분명히 달라 시각적으로 헷갈리지 않음. */
         .brp-verse.is-selected {
-          background: var(--surface-alt);
-          border-radius: 8px;
-          box-shadow: inset 3px 0 0 0 var(--accent);
+          background: var(--accent-soft);
+          border-radius: var(--radius-md);
         }
         .brp-verse.is-selected .brp-verse-number {
-          color: var(--accent-ink);
+          color: var(--accent);
           font-weight: 700;
         }
 
-        /* 절 번호 — <button>. 시각 톤(.brp-verse-number)은 그대로 유지하되
-           button 의 기본 스타일(border/background/font 등)을 모두 reset 하고
-           cursor: pointer + 호버/포커스 상태를 더해 "클릭하면 이 절이 선택된다"
-           는 신호를 준다.
+        /* 검색 결과로 이동했을 때 그 절을 잠깐 강조(약 2초). 본문 글자 폭/줄바꿈에
+           영향 주지 않도록 배경 + box-shadow 만 사용(텍스트 박스 크기 변화 0). */
+        .brp-verse.is-flash {
+          background: var(--accent-soft);
+          border-radius: var(--radius-md);
+          box-shadow: inset 3px 0 0 0 var(--accent);
+          animation: brp-verse-flash 2s ease;
+        }
+        @keyframes brp-verse-flash {
+          0% {
+            background: color-mix(in srgb, var(--accent) 22%, transparent);
+          }
+          100% {
+            background: var(--accent-soft);
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .brp-verse.is-flash {
+            animation: none;
+          }
+        }
+
+        /* 절 번호 — 표시만. 클릭/선택은 .brp-verse 컨테이너의 long-press +
+           click 핸들러가 담당하므로 별도 인터랙션 스타일은 두지 않는다.
            정렬: text-align: center + tabular-nums — 1자리/2자리 모두 컬럼(2em)
            안에 가운데 정렬. 본문 텍스트와의 간격은 .brp-verse 의 column-gap
            이 책임지므로 자리수가 달라도 일정한 여백을 유지한다. */
         .brp-verse-number {
-          appearance: none;
-          background: transparent;
-          border: 0;
-          padding: 0;
-          margin: 0;
-          font: inherit;
           color: var(--ink-mute);
           font-size: 1em;
           line-height: inherit;
           text-align: center;
           font-variant-numeric: tabular-nums;
-          cursor: pointer;
-          border-radius: 6px;
-          transition: background 0.15s ease, color 0.25s ease;
-        }
-        .brp-verse-number:hover {
-          background: var(--surface-alt);
-          color: var(--ink);
-        }
-        .brp-verse-number:focus-visible {
-          outline: 2px solid var(--accent);
-          outline-offset: 1px;
+          transition: color 0.25s ease;
         }
 
         .brp-verse-text {
@@ -3516,7 +3789,9 @@ export default function BibleReadingPage() {
           background: var(--accent-hover, var(--accent));
           border-color: var(--accent-hover, var(--accent));
         }
-        .brp-copy-all {
+        /* 보조 액션 — ghost 톤. "전체"(전체 선택), "선택 취소"(모드 종료) 공통. */
+        .brp-copy-all,
+        .brp-copy-cancel {
           appearance: none;
           background: transparent;
           border: 1px solid var(--line);
@@ -3528,29 +3803,16 @@ export default function BibleReadingPage() {
           cursor: pointer;
           transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
         }
-        .brp-copy-all:hover {
+        .brp-copy-all:hover,
+        .brp-copy-cancel:hover {
           background: var(--surface-alt);
           color: var(--ink);
           border-color: var(--line-strong, var(--line));
         }
-        .brp-copy-close {
-          appearance: none;
-          background: transparent;
-          border: 0;
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          color: var(--ink-soft);
-          font-size: 14px;
-          cursor: pointer;
-          transition: background 0.15s ease, color 0.15s ease;
-        }
-        .brp-copy-close:hover {
-          background: var(--surface-alt);
-          color: var(--ink);
+
+        .brp-copy-btn:disabled {
+          opacity: 0.55;
+          cursor: not-allowed;
         }
 
         .brp-copy-toast {
@@ -5412,14 +5674,10 @@ export default function BibleReadingPage() {
             padding: 6px 12px;
             font-size: 12.5px;
           }
-          .brp-copy-all {
+          .brp-copy-all,
+          .brp-copy-cancel {
             padding: 5px 10px;
             font-size: 12px;
-          }
-          .brp-copy-close {
-            width: 28px;
-            height: 28px;
-            font-size: 13px;
           }
           .brp-copy-toast {
             bottom: 110px;
