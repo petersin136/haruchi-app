@@ -2750,8 +2750,8 @@ export default function BibleReadingPage() {
           min-height: 100vh;
           background: var(--bg);
           color: var(--ink);
-          font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
-            sans-serif;
+          font-family: var(--font-noto-sans-kr), -apple-system, BlinkMacSystemFont,
+            "Segoe UI", system-ui, sans-serif;
           padding: 88px clamp(16px, 4vw, 40px) 96px;
         }
 
@@ -3142,9 +3142,8 @@ export default function BibleReadingPage() {
            세리프 fallback 까지 두어 OS 어디서나 부드러운 톤. */
         .brp-hero h1 {
           margin: 0;
-          font-family: "Noto Serif KR", "AppleSDGothicNeoSerif", "Apple SD Gothic Neo",
-            "Nanum Myeongjo", "Source Han Serif K", "Iowan Old Style", "Times New Roman",
-            "Pretendard Variable", Pretendard, serif;
+          font-family: var(--font-noto-serif-kr), "Nanum Myeongjo",
+            "Apple SD Gothic Neo", "Iowan Old Style", "Times New Roman", serif;
           font-size: clamp(28px, 5vw, 44px);
           font-weight: 500;
           letter-spacing: -0.025em;
@@ -3337,8 +3336,11 @@ export default function BibleReadingPage() {
 
         .brp-verse {
           display: grid;
-          grid-template-columns: 1.4em minmax(0, 1fr);
-          column-gap: clamp(4px, 0.6vw, 8px);
+          /* 절 번호 컬럼 — 2자리(예: 10, 99) 까지 컬럼 안에 여유 있게 들어가
+             자리수가 달라도 본문 텍스트 시작 x 가 일관되게 보이도록 2em 으로
+             고정. 본문 첫 줄과는 column-gap 으로 명확히 띄움. */
+          grid-template-columns: 2em minmax(0, 1fr);
+          column-gap: clamp(8px, 1vw, 12px);
           /* 번호는 본문 첫 줄의 baseline 에 정렬 — 절이 여러 줄이어도
              숫자가 텍스트 첫 줄과 자연스럽게 맞물려 보임. */
           align-items: baseline;
@@ -3391,24 +3393,23 @@ export default function BibleReadingPage() {
           font-weight: 700;
         }
 
-        /* 절 번호 — 이제 <button>. 시각 톤(.brp-verse-number)은 그대로 유지하되
+        /* 절 번호 — <button>. 시각 톤(.brp-verse-number)은 그대로 유지하되
            button 의 기본 스타일(border/background/font 등)을 모두 reset 하고
            cursor: pointer + 호버/포커스 상태를 더해 "클릭하면 이 절이 선택된다"
-           는 신호를 준다. 그리드(1.4em 컬럼) 안에서 가로 가운데, 본문 첫 줄
-           baseline 에 자연스럽게 맞도록. */
+           는 신호를 준다.
+           정렬: text-align: center + tabular-nums — 1자리/2자리 모두 컬럼(2em)
+           안에 가운데 정렬. 본문 텍스트와의 간격은 .brp-verse 의 column-gap
+           이 책임지므로 자리수가 달라도 일정한 여백을 유지한다. */
         .brp-verse-number {
           appearance: none;
           background: transparent;
           border: 0;
-          padding: 0 4px;
+          padding: 0;
           margin: 0;
           font: inherit;
           color: var(--ink-mute);
           font-size: 1em;
           line-height: inherit;
-          /* 가운데 정렬 + tabular-nums — "1"과 "10"이 같은 1.4em 컬럼 안에서
-             가로 가운데로 정렬되어, 절이 길어 행이 높아져도 숫자가 위쪽에
-             박혀 어색해 보이지 않고 본문 블록과 시각적 균형이 맞는다. */
           text-align: center;
           font-variant-numeric: tabular-nums;
           cursor: pointer;
@@ -4270,8 +4271,8 @@ export default function BibleReadingPage() {
 
         .brp-prayer-verse p {
           margin: 0;
-          font-family: "Noto Serif KR", "Apple SD Gothic Neo", "Nanum Myeongjo",
-            "Iowan Old Style", "Times New Roman", serif;
+          font-family: var(--font-noto-serif-kr), "Nanum Myeongjo",
+            "Apple SD Gothic Neo", "Iowan Old Style", "Times New Roman", serif;
           font-size: 16.5px;
           line-height: 1.85;
           letter-spacing: -0.005em;
@@ -4472,8 +4473,8 @@ export default function BibleReadingPage() {
         .brp-prayer-lords p:last-child {
           margin: 14px 0 0;
           color: var(--ink);
-          font-family: "Noto Serif KR", "Apple SD Gothic Neo", "Nanum Myeongjo",
-            "Iowan Old Style", "Times New Roman", serif;
+          font-family: var(--font-noto-serif-kr), "Nanum Myeongjo",
+            "Apple SD Gothic Neo", "Iowan Old Style", "Times New Roman", serif;
           font-size: 15.5px;
           line-height: 1.95;
           letter-spacing: -0.005em;
@@ -5173,8 +5174,10 @@ export default function BibleReadingPage() {
           }
 
           .brp-verse {
-            grid-template-columns: 1.2em minmax(0, 1fr);
-            column-gap: 4px;
+            /* 모바일도 데스크탑과 동일한 정책: 2자리 절 번호가 컬럼 안에
+               넉넉히 들어가고 본문과 명확히 띄어지도록 폭/간격 확보. */
+            grid-template-columns: 1.9em minmax(0, 1fr);
+            column-gap: 8px;
             /* margin-bottom / font-size / line-height 는 사용자 설정의
                CSS 변수로 결정 — 모바일에서 별도 하드코딩하지 않는다. */
             padding: 2px 0;

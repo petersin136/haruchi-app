@@ -1,7 +1,42 @@
 import type { Metadata, Viewport } from "next";
+import { Noto_Sans_KR, Noto_Serif_KR, Jua } from "next/font/google";
 import "./globals.css";
 import { SettingsProvider } from "./components/SettingsProvider";
 import { SETTINGS_INIT_SCRIPT } from "./lib/userSettings";
+
+// =============================================================================
+// 폰트 — next/font/google 로 빌드 타임에 다운로드 + 같은 출처(/ _next/static)에서
+// 서빙. 외부 CDN(googlefonts/jsdelivr) 의존성을 제거해 모바일 통신망/ISP 차단·
+// 지연으로 폰트가 안 뜨는 문제를 근본적으로 차단.
+//
+//   - --font-noto-sans-kr : 본문 "기본"
+//   - --font-noto-serif-kr: 본문 "명조" + 워드마크 한글
+//   - --font-jua          : 본문 "둥근"
+// =============================================================================
+const notoSansKR = Noto_Sans_KR({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-noto-sans-kr",
+  display: "swap",
+  preload: true,
+});
+
+const notoSerifKR = Noto_Serif_KR({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-noto-serif-kr",
+  display: "swap",
+  // 워드마크/명조 본문에서만 쓰여 페이지 로딩 시점 우선순위가 낮음 → preload off.
+  preload: false,
+});
+
+const jua = Jua({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-jua",
+  display: "swap",
+  preload: false,
+});
 
 export const metadata: Metadata = {
   title: "하루치",
@@ -38,34 +73,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko">
+    <html
+      lang="ko"
+      className={`${notoSansKR.variable} ${notoSerifKR.variable} ${jua.variable}`}
+    >
       <head>
         {/* 사용자 설정(테마/다크모드/폰트/줄간격…)을 hydration 이전에 <html> 에
             CSS 변수로 박아넣어 초기 페인트의 깜빡임(FOUC) 을 막는다.
             localStorage 가 없거나 파싱이 실패해도 안전한 기본값으로 폴백. */}
         <script
           dangerouslySetInnerHTML={{ __html: SETTINGS_INIT_SCRIPT }}
-        />
-        {/* Noto Sans KR (Google Fonts) — 시스템에 Pretendard가 없을 때를 위한 fallback */}
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        {/* Noto Sans KR(기본 fallback) + Noto Serif KR(명조) + Jua(둥근) —
-            설정의 본문 폰트 3종에 대응. 본문 폰트를 바꾸면 즉시 반영되도록 미리 로드. */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-        {/* Pretendard (CDN) — bible-reading 본문이 첫 번째로 시도하는 폰트 */}
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
         />
 
         <meta name="mobile-web-app-capable" content="yes" />

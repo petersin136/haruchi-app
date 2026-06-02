@@ -89,6 +89,7 @@ export default function SettingsPage() {
         </button>
       </header>
 
+      <div className="hs-shell">
       <div className="hs-list">
         {/* ─────────────────── 다크 모드 (토글 한 줄) ─────────────────── */}
         <section className="hs-toggle-row">
@@ -137,7 +138,9 @@ export default function SettingsPage() {
               );
             })}
           </div>
-          <ReaderPreview />
+          <div className="hs-inline-preview">
+            <ReaderPreview />
+          </div>
         </Accordion>
 
         {/* ─────────────────── 본문 폰트 ─────────────────── */}
@@ -171,7 +174,9 @@ export default function SettingsPage() {
               );
             })}
           </div>
-          <ReaderPreview />
+          <div className="hs-inline-preview">
+            <ReaderPreview />
+          </div>
         </Accordion>
 
         {/* ─────────────────── 글자 크기 ─────────────────── */}
@@ -203,7 +208,9 @@ export default function SettingsPage() {
               );
             })}
           </div>
-          <ReaderPreview />
+          <div className="hs-inline-preview">
+            <ReaderPreview />
+          </div>
         </Accordion>
 
         {/* ─────────────────── 절 사이 간격 ─────────────────── */}
@@ -239,7 +246,9 @@ export default function SettingsPage() {
               );
             })}
           </div>
-          <ReaderPreview />
+          <div className="hs-inline-preview">
+            <ReaderPreview />
+          </div>
         </Accordion>
 
         {/* ─────────────────── 텍스트 줄 간격 ─────────────────── */}
@@ -277,7 +286,9 @@ export default function SettingsPage() {
               );
             })}
           </div>
-          <ReaderPreview />
+          <div className="hs-inline-preview">
+            <ReaderPreview />
+          </div>
         </Accordion>
 
         {/* ─────────────────── 스크롤 읽기 속도 ─────────────────── */}
@@ -318,14 +329,24 @@ export default function SettingsPage() {
         </p>
       </div>
 
+      {/* 우측 sticky 미리보기 — 태블릿/PC(≥960px) 에서만 표시. 모바일은
+          각 아코디언 안 인라인 미리보기를 그대로 쓰므로 영향 없음. */}
+      <aside className="hs-side" aria-label="미리보기">
+        <div className="hs-side-card">
+          <p className="hs-side-tag">미리보기</p>
+          <ReaderPreview bare />
+        </div>
+      </aside>
+      </div>{/* /.hs-shell */}
+
       <style jsx>{`
         .hs-page {
           min-height: 100vh;
           background: var(--bg);
           color: var(--ink);
           padding: 0 0 80px;
-          font-family: "Pretendard Variable", Pretendard, "Noto Sans KR",
-            -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+          font-family: var(--font-noto-sans-kr), -apple-system,
+            BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
         }
 
         .hs-topbar {
@@ -385,12 +406,20 @@ export default function SettingsPage() {
           border-color: var(--line-strong);
         }
 
+        /* 모바일 기본 — 단일 컬럼. (모바일은 이 값 그대로 유지) */
+        .hs-shell {
+          display: block;
+        }
         .hs-list {
           max-width: 640px;
           margin: 0 auto;
           padding: 18px clamp(16px, 4vw, 32px) 0;
           display: grid;
           gap: 10px;
+        }
+        /* 우측 미리보기 패널 — 모바일에선 숨김(인라인 미리보기 사용). */
+        .hs-side {
+          display: none;
         }
 
         .hs-toggle-row {
@@ -636,6 +665,78 @@ export default function SettingsPage() {
             font-size: 16px;
           }
         }
+
+        /* ═══════════════════════════════════════════════════════════════
+           태블릿 세로 (≥640px, 2단 전): 단일 컬럼을 살짝 넓혀 양옆 여백 보정.
+           모바일(<640)은 위 기본값 그대로라 영향 없음.
+           ═══════════════════════════════════════════════════════════════ */
+        @media (min-width: 640px) and (max-width: 959.98px) {
+          .hs-list {
+            max-width: 680px;
+            padding-top: 24px;
+          }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           태블릿 가로 / PC (≥960px): 2단 레이아웃.
+           좌측 = 설정 리스트, 우측 = 항상 보이는 sticky 미리보기.
+           아코디언 안 인라인 미리보기는 숨기고 우측 패널 하나로 통합.
+           ═══════════════════════════════════════════════════════════════ */
+        @media (min-width: 960px) {
+          .hs-shell {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 420px;
+            align-items: start;
+            gap: 36px;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 24px clamp(24px, 4vw, 40px) 0;
+          }
+          .hs-list {
+            max-width: none;
+            margin: 0;
+            padding: 0;
+            gap: 12px;
+          }
+          /* 인라인 미리보기 숨김 — 우측 sticky 패널이 대체 */
+          .hs-inline-preview {
+            display: none;
+          }
+          .hs-side {
+            display: block;
+            position: sticky;
+            top: 80px;
+          }
+          .hs-side-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 18px 20px;
+            box-shadow: var(--shadow-1);
+          }
+          .hs-side-tag {
+            margin: 0 0 12px;
+            font-size: 11px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--ink-mute);
+          }
+          .hs-footer-note {
+            text-align: left;
+            margin-left: 0;
+            margin-right: 0;
+          }
+        }
+
+        /* 대형 PC (≥1280px) — 캔버스/사이드 폭 시원하게 */
+        @media (min-width: 1280px) {
+          .hs-shell {
+            grid-template-columns: minmax(0, 1fr) 480px;
+            gap: 52px;
+            max-width: 1320px;
+          }
+        }
       `}</style>
     </main>
   );
@@ -783,9 +884,9 @@ function Accordion({
 //   사용자 설정 CSS 변수(--reader-*) + 테마 --accent 를 그대로 소비하므로,
 //   위에서 옵션을 바꾸면 이 카드가 즉시 변한다.
 // =============================================================================
-function ReaderPreview() {
+function ReaderPreview({ bare = false }: { bare?: boolean }) {
   return (
-    <div className="rp">
+    <div className={`rp ${bare ? "rp--bare" : ""}`}>
       <span className="rp-tag">이렇게 보여요</span>
       <div className="rp-card">
         <p className="rp-title">마태복음 제 1장</p>
@@ -800,6 +901,26 @@ function ReaderPreview() {
             <span className="rp-num">2</span>
             <p className="rp-text">
               아브라함이 이삭을 낳고, 이삭이 야곱을 낳고, 야곱이 유다와 그의 형제들을 낳았어요.
+            </p>
+          </div>
+          {/* 아래 절들은 사이드(bare) 미리보기에서만 보여서 더 길게 채운다.
+              모바일 인라인 미리보기엔 display:none (높이 그대로 유지). */}
+          <div className="rp-verse rp-extra">
+            <span className="rp-num">3</span>
+            <p className="rp-text">
+              유다는 다말에게서 베레스와 세라를 낳고, 베레스는 헤스론을, 헤스론은 람을 낳았어요.
+            </p>
+          </div>
+          <div className="rp-verse rp-extra">
+            <span className="rp-num">4</span>
+            <p className="rp-text">
+              람은 아미나답을, 아미나답은 나손을, 나손은 살몬을 낳았어요.
+            </p>
+          </div>
+          <div className="rp-verse rp-extra">
+            <span className="rp-num">5</span>
+            <p className="rp-text">
+              살몬은 라합에게서 보아스를, 보아스는 룻에게서 오벳을, 오벳은 이새를 낳았어요.
             </p>
           </div>
         </div>
@@ -822,6 +943,38 @@ function ReaderPreview() {
           padding-top: 16px;
           border-top: 1px dashed var(--line);
         }
+        /* 추가 절(3~5)은 기본 숨김 → 사이드 미리보기에서만 노출해 길이를 늘림. */
+        .rp-extra {
+          display: none;
+        }
+        /* 사이드 패널용 — 위 점선/태그 없이 카드 안에 단독으로, 더 크고 길게. */
+        .rp--bare {
+          margin-top: 0;
+          padding-top: 0;
+          border-top: none;
+        }
+        .rp--bare .rp-tag {
+          display: none;
+        }
+        .rp--bare .rp-extra {
+          display: grid;
+        }
+        .rp--bare .rp-card {
+          padding: 24px 26px 26px;
+        }
+        .rp--bare .rp-title {
+          font-size: 24px;
+          margin-bottom: 18px;
+        }
+        /* 본문 기준 글자를 17px 로 키움(× 사용자 배수). */
+        .rp--bare .rp-verse {
+          font-size: calc(17px * var(--reader-size-scale, 1));
+        }
+        .rp--bare .rp-demo {
+          margin-top: 22px;
+          padding-top: 18px;
+          border-top: 1px solid var(--line);
+        }
         .rp-tag {
           display: inline-block;
           margin-bottom: 10px;
@@ -839,7 +992,7 @@ function ReaderPreview() {
         }
         .rp-title {
           margin: 0 0 12px;
-          font-family: "Noto Serif KR", "Nanum Myeongjo", serif;
+          font-family: var(--font-noto-serif-kr), "Nanum Myeongjo", serif;
           font-size: 18px;
           font-weight: 500;
           letter-spacing: -0.015em;

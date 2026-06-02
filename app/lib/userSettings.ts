@@ -86,7 +86,17 @@ export const THEME_PRESETS: Record<ThemeKey, ThemePreset> = {
 };
 
 // -----------------------------------------------------------------------------
-// 폰트 패밀리 — 본문(reader) 에만 적용. UI 폰트는 항상 Pretendard.
+// 폰트 패밀리 — 본문(reader) 에만 적용.
+//
+// 폰트는 next/font/google 로 빌드 타임에 다운로드되어 같은 도메인(/_next/static)
+// 에서 서빙된다 (외부 CDN 의존성 0). <html> 에는 다음 CSS 변수가 부착됨:
+//   --font-noto-sans-kr  → "기본" (sans)
+//   --font-noto-serif-kr → "명조" (serif)
+//   --font-jua           → "둥근" (gothic)
+//
+// 각 변수는 next/font 가 만든 `__NotoSansKR_xxx, __NotoSansKR_Fallback_xxx`
+// 형태의 익명 font-family 문자열로 확장된다. 시스템에 Pretendard 가 있는 PC 든
+// 아무것도 깔려있지 않은 모바일이든 동일하게 자체 호스팅된 폰트가 적용된다.
 // -----------------------------------------------------------------------------
 export const FONT_FAMILIES: Record<
   FontKey,
@@ -96,20 +106,21 @@ export const FONT_FAMILIES: Record<
   sans: {
     label: "기본",
     family:
-      '"Pretendard Variable", Pretendard, "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',
+      'var(--font-noto-sans-kr), -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif',
     sample: "본문 미리보기",
   },
   serif: {
     label: "명조",
     family:
-      '"Noto Serif KR", "Nanum Myeongjo", "AppleSDGothicNeoSerif", "Source Han Serif K", serif',
+      'var(--font-noto-serif-kr), "Nanum Myeongjo", "Apple SD Gothic Neo", serif',
     sample: "본문 미리보기",
   },
   // 기존 "gothic" 키는 유지(저장값 호환)하되, 둥근 손글씨 폰트(Jua)로 교체해
   // 세 폰트의 차이가 한눈에 보이도록 함.
   gothic: {
     label: "둥근",
-    family: '"Jua", "Pretendard Variable", Pretendard, "Noto Sans KR", sans-serif',
+    family:
+      'var(--font-jua), var(--font-noto-sans-kr), sans-serif',
     sample: "본문 미리보기",
   },
 };

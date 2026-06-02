@@ -122,16 +122,15 @@
   text-rendering: optimizeLegibility;
 }
 .wordmark-ko {
-  font-family: "Noto Serif KR", "AppleSDGothicNeoSerif", "Apple SD Gothic Neo",
-    "Nanum Myeongjo", "Source Han Serif K", "Iowan Old Style", "Times New Roman",
-    "Pretendard Variable", Pretendard, serif;
+  font-family: var(--font-noto-serif-kr), "Nanum Myeongjo",
+    "Apple SD Gothic Neo", "Iowan Old Style", "Times New Roman", serif;
   font-weight: 600;
   letter-spacing: -0.03em;
   color: var(--ink);
 }
 .wordmark-en {
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
-    sans-serif;
+  font-family: var(--font-noto-sans-kr), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", system-ui, sans-serif;
   font-size: 0.5em;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -174,8 +173,10 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: "Pretendard Variable", Pretendard, "Noto Sans KR",
-    -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  /* UI 기본 폰트 — next/font 로 자체 호스팅된 Noto Sans KR.
+     본문(reader) 영역은 .brp-reader 에서 var(--reader-font-family) 로 별도 적용. */
+  font-family: var(--font-noto-sans-kr), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", system-ui, sans-serif;
   /* 기본 본문 16px / 1.6 — 토큰 type.body 와 일치 */
   font-size: 16px;
   line-height: 1.6;
