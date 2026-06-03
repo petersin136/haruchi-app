@@ -19,7 +19,16 @@ import { useSettings } from "../components/SettingsProvider";
 import { SCROLL_SPEED_MULTIPLIER } from "../lib/userSettings";
 import SearchOverlay, { type SearchSelection } from "./SearchOverlay";
 
-type TranslationKey = "krv" | "kids";
+// 화면 토글에 노출되는 번역본 키.
+//   - krv:   개역한글
+//   - kids:  쉬운말
+//   - greek: "원어 묵상" 모드. KRV 본문을 화면에서 숨기고, 원어 의역(greekKr)
+//           을 본문 자리에 두며, 그 아래에 헬라어 단어 토큰(greekTokens) 을
+//           헬라어/한글 발음의 ruby 형태로 표시한다. 발음에 점선 밑줄이 있는
+//           단어를 클릭하면 그 단어의 상세 정보 드롭다운이 펼쳐지고, 헬라어
+//           줄 오른쪽의 ▾ 갈매기를 누르면 절 전체 풀이(greekWords) 가 펼쳐진다.
+//           현재 마태복음 1장만 새 디자인으로 채워져 있다.
+type TranslationKey = "krv" | "kids" | "greek";
 
 type PrayerGradeKey = "lower" | "upper";
 
@@ -46,14 +55,34 @@ type Verse = {
   t: string;
 };
 
+// 헬라어 단어 토큰. UI 에서 단어/발음 ruby 와 단어별 정보 드롭다운에 쓴다.
+//   w    : 헬라어 원문 단어(강세·기식 포함)
+//   p    : 한글 발음. 빈 문자열이면 발음 줄에 아무것도 그리지 않는다(구두점용).
+//   info : 있으면 발음에 점선 밑줄이 붙고 클릭 시 정보 드롭다운이 열린다.
+//          없으면 단순 텍스트.
+type GreekToken = { w: string; p: string; info?: string };
+type GreekVerseTokens = { n: number; tokens: GreekToken[] };
+
 type Chapter = {
   chapter: number;
   title: string;
-  verses: Record<TranslationKey, Verse[]>;
+  // krv 는 모든 책 보장. 그 외(쉬운말·원어 관련)는 책마다 유무 다르므로 옵셔널.
+  //   greek        : SBLGNT 헬라어 원문 평문 (현재 UI 직접 노출 X, 데이터 보존)
+  //   greekKr      : 원어 의역 — 원어 모드에서 본문 자리에 표시되는 한국어 문장
+  //   greekTokens  : 절을 단어 단위로 쪼갠 토큰 배열 — 단어/발음 ruby + 단어별 정보
+  //   greekWords   : 절 전체 풀이 줄글 — ▾ 갈매기 버튼을 눌렀을 때만 펼쳐짐
+  verses: {
+    krv: Verse[];
+    kids?: Verse[];
+    greek?: Verse[];
+    greekKr?: Verse[];
+    greekTokens?: GreekVerseTokens[];
+    greekWords?: Verse[];
+  };
 };
 
 type BibleData = {
-  translations: Record<TranslationKey, { label: string; note?: string }>;
+  translations: Partial<Record<TranslationKey, { label: string; note?: string }>>;
   chapters: Chapter[];
 };
 
@@ -802,6 +831,16 @@ export default function BibleReadingPage() {
   const [translation, setTranslation] = useState<TranslationKey>("krv");
   const [readingMode, setReadingMode] = useState<ReadingMode>("mic");
   const [readVerseCount, setReadVerseCount] = useState(0);
+  // 원어묵상 모드 — 절 전체 풀이 서랍(▾ 갈매기)이 펼쳐진 절 번호 집합.
+  // 책/장/번역이 바뀌면 자동으로 비워진다(useEffect 아래).
+  const [openWordDrawers, setOpenWordDrawers] = useState<Set<number>>(
+    () => new Set(),
+  );
+  // 원어묵상 모드 — 단어별 정보 팝오버가 열린 토큰 키 집합.
+  //   key = `${verseNumber}:${tokenIndex}` 형식. 책/장/번역 변경 시 비워짐.
+  const [openTokenInfos, setOpenTokenInfos] = useState<Set<string>>(
+    () => new Set(),
+  );
   // (구) 현재 듣고 있는 절 안의 단어 단위 진행도. 새 트리거 매칭은 절 단위로
   // 한 번에 통과 처리하므로 더 이상 사용하지 않음. 관련 state/ref 도 제거.
   const [doneChapters, setDoneChapters] = useState<Set<number>>(new Set());
@@ -991,18 +1030,51 @@ export default function BibleReadingPage() {
   const chapter =
     data.chapters.find((item) => item.chapter === chapterNumber) ??
     data.chapters[0];
-  const hasKrv = chapter.verses.krv.length > 0;
-  const hasKids = chapter.verses.kids.length > 0;
-  // 사용자가 선택한 번역이 현재 책에 없으면 반대 번역으로 자동 폴백.
+  const hasKrv = (chapter.verses.krv?.length ?? 0) > 0;
+  const hasKids = (chapter.verses.kids?.length ?? 0) > 0;
+  // "원어묵상" 모드는 본문 자리에 들어갈 의역(greekKr) 이 있어야 활성된다.
+  // (헬라어 토큰/절 풀이만 있고 의역이 없으면 화면이 비어 보이므로 비활성)
+  const hasGreekKr = (chapter.verses.greekKr?.length ?? 0) > 0;
+  const hasGreekTokens = (chapter.verses.greekTokens?.length ?? 0) > 0;
+  const hasGreekWords = (chapter.verses.greekWords?.length ?? 0) > 0;
+  const hasGreek = hasGreekKr;
+  // 사용자가 선택한 번역이 현재 책/장에 없으면 다른 번역으로 자동 폴백.
   //   - 신규 61권은 쉬운말이 없음 → 쉬운말 선택 시 개역한글로 표시.
-  //   - 기존 5권은 양쪽 모두 있어 영향 없음.
+  //   - 원어묵상(greek) 자료가 없는 책/장이면 → 개역한글로 폴백.
+  //   - 기존 5권은 krv/kids 양쪽 모두 있어 영향 없음.
   const effectiveTranslation: TranslationKey =
-    translation === "krv" && !hasKrv && hasKids
-      ? "kids"
-      : translation === "kids" && !hasKids && hasKrv
+    translation === "greek" && !hasGreek
+      ? hasKrv
         ? "krv"
-        : translation;
-  const verses = chapter.verses[effectiveTranslation];
+        : hasKids
+          ? "kids"
+          : "krv"
+      : translation === "krv" && !hasKrv && hasKids
+        ? "kids"
+        : translation === "kids" && !hasKids && hasKrv
+          ? "krv"
+          : translation;
+  // 본문 표시용 절 배열. 원어 모드에서는 KRV 가 아닌 "원어 의역(greekKr)" 을
+  // 본문 자리에 두어, 음성/스크롤 진도와 단어 토큰화도 의역 기준으로 동작하게 한다.
+  const verses =
+    effectiveTranslation === "greek"
+      ? chapter.verses.greekKr ?? []
+      : chapter.verses[effectiveTranslation] ?? [];
+  // greek 모드에서만 쓰는 보조 맵 — 절 번호 → 토큰 배열 / 절 전체 풀이.
+  const greekTokensMap = useMemo(() => {
+    if (effectiveTranslation !== "greek") return null;
+    const list = chapter.verses.greekTokens ?? [];
+    const map = new Map<number, GreekToken[]>();
+    for (const v of list) map.set(v.n, v.tokens);
+    return map;
+  }, [effectiveTranslation, chapter.verses.greekTokens]);
+  const greekWordsMap = useMemo(() => {
+    if (effectiveTranslation !== "greek") return null;
+    const list = chapter.verses.greekWords ?? [];
+    const map = new Map<number, string>();
+    for (const w of list) map.set(w.n, w.t);
+    return map;
+  }, [effectiveTranslation, chapter.verses.greekWords]);
 
   const totalVerses = verses.length;
   const progress = totalVerses > 0
@@ -1036,7 +1108,10 @@ export default function BibleReadingPage() {
           student,
           book: bookId,
           chapter: chapterNumber,
-          translation: effectiveTranslation,
+          // Supabase RPC 는 현재 krv/kids 만 허용. 헬라어로 읽었더라도
+          // 진도 기록상으로는 krv 로 남긴다(스키마 확장 전 임시).
+          translation:
+            effectiveTranslation === "greek" ? "krv" : effectiveTranslation,
         });
         if (result === "needs_pin" || result === "bad_pin") {
           identityRef.current?.promptPin();
@@ -1666,7 +1741,11 @@ export default function BibleReadingPage() {
     }
 
     const savedTranslation = window.localStorage.getItem(TRANSLATION_KEY);
-    if (savedTranslation === "krv" || savedTranslation === "kids") {
+    if (
+      savedTranslation === "krv" ||
+      savedTranslation === "kids" ||
+      savedTranslation === "greek"
+    ) {
       setTranslation(savedTranslation);
     }
 
@@ -1720,6 +1799,12 @@ export default function BibleReadingPage() {
       window.removeEventListener("online", onOnline);
     };
   }, [currentStudent]);
+
+  // 책/장/번역이 바뀌면 펼쳐 둔 절 풀이 서랍과 단어 정보 팝오버를 모두 닫는다.
+  useEffect(() => {
+    setOpenWordDrawers(new Set());
+    setOpenTokenInfos(new Set());
+  }, [bookId, chapterNumber, effectiveTranslation]);
 
   useEffect(() => {
     const savedDone =
@@ -2280,10 +2365,11 @@ export default function BibleReadingPage() {
         </div>
       )}
 
-      {/* 성경 단어 검색 오버레이 — 독립 기능. BOOK_DATA(메모리) 안에서만 검색. */}
+      {/* 성경 단어 검색 오버레이 — 독립 기능. BOOK_DATA(메모리) 안에서만 검색.
+          검색은 KRV / 쉬운말만 지원하므로 greek 선택 중이면 krv 로 폴백. */}
       <SearchOverlay
         open={searchOpen}
-        defaultTranslation={effectiveTranslation}
+        defaultTranslation={effectiveTranslation === "greek" ? "krv" : effectiveTranslation}
         onClose={() => setSearchOpen(false)}
         onSelect={goToSearchResult}
       />
@@ -2374,12 +2460,16 @@ export default function BibleReadingPage() {
               {translationKeys.map((key) => {
                 const isKrvDisabled = key === "krv" && !hasKrv;
                 const isKidsDisabled = key === "kids" && !hasKids;
-                const isDisabled = isKrvDisabled || isKidsDisabled;
+                const isGreekDisabled = key === "greek" && !hasGreek;
+                const isDisabled =
+                  isKrvDisabled || isKidsDisabled || isGreekDisabled;
                 const disabledTitle = isKrvDisabled
                   ? "이 책의 개역한글 본문은 아직 준비되지 않았어요."
                   : isKidsDisabled
                     ? "이 책의 쉬운말 번역은 준비 중입니다."
-                    : undefined;
+                    : isGreekDisabled
+                      ? "이 장의 원어 묵상 자료는 아직 준비되지 않았어요."
+                      : undefined;
                 return (
                   <button
                     key={key}
@@ -2391,7 +2481,7 @@ export default function BibleReadingPage() {
                     title={disabledTitle}
                     onClick={() => handleTranslationChange(key)}
                   >
-                    {data.translations[key].label}
+                    {data.translations[key]?.label ?? key}
                   </button>
                 );
               })}
@@ -2720,8 +2810,13 @@ export default function BibleReadingPage() {
       >
         {!hasFilledText && (
           <p className="brp-reader-empty">
-            이 장의 {translation === "krv" ? "개역한글" : "어린이 쉬운"} 본문이
-            아직 준비되지 않았어요. 다른 번역을 선택해 보세요.
+            이 장의{" "}
+            {translation === "krv"
+              ? "개역한글"
+              : translation === "kids"
+                ? "어린이 쉬운"
+                : "원어 묵상"}{" "}
+            본문이 아직 준비되지 않았어요. 다른 번역을 선택해 보세요.
           </p>
         )}
         {verses.map((verse, idx) => {
@@ -2765,6 +2860,130 @@ export default function BibleReadingPage() {
             >
               <span className="brp-verse-number">{verse.n}</span>
               <p className="brp-verse-text">{verse.t}</p>
+              {/* 원어묵상 모드 — 본문(verse.t) 자체가 이미 "원어 의역" 이다.
+                  그 아래에 헬라어 단어 토큰을 ruby 형태로(헬라어/한글 발음)
+                  렌더링하고, 오른쪽에 ▾ 갈매기로 절 전체 풀이를 펼친다.
+                  pointer 이벤트는 절 카드의 long-press 선택과 충돌하지
+                  않도록 모두 stopPropagation 한다. */}
+              {effectiveTranslation === "greek" &&
+                greekTokensMap &&
+                greekTokensMap.has(verse.n) &&
+                (() => {
+                  const tokens = greekTokensMap.get(verse.n)!;
+                  const isDrawerOpen = openWordDrawers.has(verse.n);
+                  const hasDrawer =
+                    greekWordsMap?.has(verse.n) ?? false;
+                  return (
+                    <div className="brp-greek-block">
+                      <div className="brp-greek-line">
+                        <div className="brp-greek-tokens">
+                          {tokens.map((tk, i) => {
+                            const tokenKey = `${verse.n}:${i}`;
+                            const isInfoOpen = openTokenInfos.has(tokenKey);
+                            const hasInfo = !!tk.info;
+                            return (
+                              <span
+                                key={tokenKey}
+                                className="brp-greek-token"
+                              >
+                                <span className="brp-greek-token-word">
+                                  {tk.w}
+                                </span>
+                                {tk.p && (
+                                  hasInfo ? (
+                                    <button
+                                      type="button"
+                                      className={`brp-greek-token-pron is-clickable ${
+                                        isInfoOpen ? "is-open" : ""
+                                      }`}
+                                      aria-expanded={isInfoOpen}
+                                      aria-label={`${tk.w} (${tk.p}) 정보 ${
+                                        isInfoOpen ? "닫기" : "보기"
+                                      }`}
+                                      onPointerDown={(e) =>
+                                        e.stopPropagation()
+                                      }
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setOpenTokenInfos((prev) => {
+                                          const next = new Set(prev);
+                                          if (next.has(tokenKey))
+                                            next.delete(tokenKey);
+                                          else next.add(tokenKey);
+                                          return next;
+                                        });
+                                      }}
+                                    >
+                                      {tk.p}
+                                    </button>
+                                  ) : (
+                                    <span className="brp-greek-token-pron">
+                                      {tk.p}
+                                    </span>
+                                  )
+                                )}
+                                {hasInfo && isInfoOpen && (
+                                  <span
+                                    className="brp-greek-token-info"
+                                    role="region"
+                                    aria-label={`${tk.w} 단어 풀이`}
+                                  >
+                                    <span className="brp-greek-token-info-head">
+                                      <span className="brp-greek-token-info-w">
+                                        {tk.w}
+                                      </span>
+                                      <span className="brp-greek-token-info-p">
+                                        {tk.p}
+                                      </span>
+                                    </span>
+                                    <span className="brp-greek-token-info-body">
+                                      {tk.info}
+                                    </span>
+                                  </span>
+                                )}
+                              </span>
+                            );
+                          })}
+                        </div>
+                        {hasDrawer && (
+                          <button
+                            type="button"
+                            className={`brp-greek-drawer-toggle ${
+                              isDrawerOpen ? "is-open" : ""
+                            }`}
+                            aria-expanded={isDrawerOpen}
+                            aria-label={`${verse.n}절 원어 풀이 ${
+                              isDrawerOpen ? "닫기" : "열기"
+                            }`}
+                            onPointerDown={(e) => e.stopPropagation()}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setOpenWordDrawers((prev) => {
+                                const next = new Set(prev);
+                                if (next.has(verse.n))
+                                  next.delete(verse.n);
+                                else next.add(verse.n);
+                                return next;
+                              });
+                            }}
+                          >
+                            <span
+                              className="brp-greek-drawer-chevron"
+                              aria-hidden="true"
+                            >
+                              ▾
+                            </span>
+                          </button>
+                        )}
+                      </div>
+                      {hasDrawer && isDrawerOpen && (
+                        <p className="brp-verse-greek-words">
+                          {greekWordsMap!.get(verse.n)}
+                        </p>
+                      )}
+                    </div>
+                  );
+                })()}
             </div>
           );
         })}
@@ -3747,6 +3966,163 @@ export default function BibleReadingPage() {
           overflow-wrap: break-word;
           /* 강조 시 weight 가 아닌 text-shadow 로 처리하므로 부드럽게 페이드. */
           transition: text-shadow 0.25s ease, color 0.25s ease;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           원어 묵상 모드 — 본문(verse.t) 은 이미 한국어 "원어 의역" 이고,
+           그 아래에 헬라어 토큰 라인(ruby 형태: 헬라어 위 / 한글 발음 아래)
+           과 ▾ 갈매기로 절 전체 풀이가 펼쳐진다. 모든 부속 요소는
+           grid-column: 2 로 절 번호 칸을 비우고 본문 칸 안에 들어간다.
+           ────────────────────────────────────────────────────────────── */
+
+        /* 헬라어 블록 전체 컨테이너 — 토큰 라인 + (펼쳐졌을 때) 절 풀이. */
+        .brp-greek-block {
+          grid-column: 2;
+          margin: 8px 0 2px;
+        }
+
+        /* 헬라어 토큰 라인 — 왼쪽에 토큰들, 오른쪽에 ▾ 갈매기. */
+        .brp-greek-line {
+          display: flex;
+          align-items: flex-start;
+          gap: 8px;
+        }
+        .brp-greek-tokens {
+          flex: 1;
+          min-width: 0;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 4px 10px;
+          line-height: 1.4;
+        }
+
+        /* 한 단어 토큰 — 위에는 헬라어, 아래에는 작은 회색 발음.
+           inline-flex column 으로 발음을 단어 정확히 아래에 둔다. */
+        .brp-greek-token {
+          display: inline-flex;
+          flex-direction: column;
+          align-items: center;
+          position: relative;
+        }
+        .brp-greek-token-word {
+          font-size: 1em;
+          color: var(--ink);
+          font-variant-ligatures: none;
+          /* 헬라어 강세·기식 폴리토닉이 깨지지 않게 라틴 fallback 우선 */
+          font-family: "EB Garamond", "Garamond", "Times New Roman", serif;
+        }
+        .brp-greek-token-pron {
+          margin-top: 2px;
+          font-size: 0.7em;
+          line-height: 1;
+          color: var(--ink-mute);
+          letter-spacing: -0.01em;
+        }
+        /* 정보가 있는 토큰의 발음은 점선 밑줄 + 클릭 가능. */
+        button.brp-greek-token-pron {
+          appearance: none;
+          background: transparent;
+          border: none;
+          padding: 2px 1px 1px;
+          cursor: pointer;
+          border-bottom: 1px dotted var(--ink-mute, rgba(0, 0, 0, 0.35));
+          transition: color 0.15s ease, border-color 0.15s ease;
+          font-family: inherit;
+        }
+        button.brp-greek-token-pron:hover,
+        button.brp-greek-token-pron.is-open {
+          color: var(--ink);
+          border-bottom-color: var(--ink);
+        }
+
+        /* 단어 정보 팝오버 — 그 토큰 바로 아래에 새 줄로 펼쳐진다.
+           flex-wrap container 안의 한 줄을 통째로 차지하도록 100% width
+           + flex-basis 100% 트릭. 너무 넓어지지 않게 max-width 제한. */
+        .brp-greek-token-info {
+          flex-basis: 100%;
+          width: 100%;
+          order: 1;
+          margin: 6px 0 4px;
+          padding: 10px 12px;
+          background: rgba(0, 0, 0, 0.035);
+          border-left: 2px solid var(--line-strong, rgba(0, 0, 0, 0.25));
+          border-radius: 0 6px 6px 0;
+          color: var(--ink);
+          font-size: 0.85em;
+          line-height: 1.65;
+          text-align: left;
+          display: block;
+        }
+        .brp-greek-token-info-head {
+          display: flex;
+          align-items: baseline;
+          gap: 8px;
+          margin-bottom: 4px;
+          padding-bottom: 4px;
+          border-bottom: 1px dashed var(--line, rgba(0, 0, 0, 0.12));
+        }
+        .brp-greek-token-info-w {
+          font-family: "EB Garamond", "Garamond", "Times New Roman", serif;
+          font-size: 1.05em;
+          font-weight: 600;
+          color: var(--ink);
+        }
+        .brp-greek-token-info-p {
+          font-size: 0.85em;
+          color: var(--ink-mute);
+        }
+        .brp-greek-token-info-body {
+          display: block;
+          color: var(--ink);
+          overflow-wrap: break-word;
+        }
+
+        /* 절 전체 풀이 ▾ 갈매기 — 텍스트 없이 chevron 만. */
+        .brp-greek-drawer-toggle {
+          appearance: none;
+          background: transparent;
+          border: 1px solid transparent;
+          border-radius: 999px;
+          width: 28px;
+          height: 28px;
+          flex: 0 0 auto;
+          padding: 0;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--ink-mute);
+          cursor: pointer;
+          transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+        .brp-greek-drawer-toggle:hover {
+          color: var(--ink);
+          background: rgba(0, 0, 0, 0.04);
+        }
+        .brp-greek-drawer-toggle.is-open {
+          color: var(--ink);
+          background: rgba(0, 0, 0, 0.05);
+          border-color: var(--line, rgba(0, 0, 0, 0.12));
+        }
+        .brp-greek-drawer-chevron {
+          display: inline-block;
+          font-size: 0.95em;
+          line-height: 1;
+          transition: transform 0.2s ease;
+        }
+        .brp-greek-drawer-toggle.is-open .brp-greek-drawer-chevron {
+          transform: rotate(180deg);
+        }
+
+        /* 절 전체 풀이 본문 — 갈매기를 눌렀을 때만 보임. */
+        .brp-verse-greek-words {
+          margin: 8px 0 2px;
+          padding: 10px 12px;
+          border-left: 2px solid var(--line, rgba(0, 0, 0, 0.12));
+          color: var(--ink-mute);
+          font-size: 0.88em;
+          line-height: 1.75;
+          overflow-wrap: break-word;
+          font-variant-ligatures: none;
         }
 
         /* ─────────────────────────────────────────────────────────────

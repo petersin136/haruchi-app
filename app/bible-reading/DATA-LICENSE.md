@@ -93,7 +93,71 @@ sources/ko/KorRV/KorRV.json, License: Public Domain)."
 
 ---
 
-## 6. "쉬운말" 번역에 관해
+## 6. 헬라어(SBLGNT) 본문에 관해
+
+마태복음 일부 장(현재 1~5장)에는 신약 헬라어 원문이 함께 들어 있다.
+사용 본문과 라이선스 근거는 다음과 같다.
+
+| 항목 | 내용 |
+|---|---|
+| 본문 | **SBLGNT** (SBL Greek New Testament) |
+| 편집·발행 | Michael W. Holmes 편 / Society of Biblical Literature, Logos Bible Software |
+| 라이선스 | **Creative Commons Attribution 4.0 (CC BY 4.0)** |
+| 저장소 | [`LogosBible/SBLGNT`](https://github.com/LogosBible/SBLGNT) (`data/sblgnt/text/Matt.txt`) |
+| 적용 범위 | 현재 **마태복음 1~5장 (138절)** 만. 점진적 확장 예정. |
+| 처리 | 본문 표시 단계에서 SBLGNT 의 본문 비평 부호(⸀ ⸁ ⸂…⸃, U+2E00..U+2E03) 만 제거하고, 모음 앞 단축(ʼ U+02BC) 은 원문 그대로 보존. |
+
+> **NA28/UBS5 는 사용하지 않는다.** 두 판본 모두 저작권이 살아 있는 본문 비평판이며,
+> 사용 시 별도 사용 허락이 필요하다. SBLGNT 는 CC BY 4.0 으로 자유 사용·재배포가 가능해
+> 본 앱(공공 배포 가능성 포함) 에 안전하다.
+
+코드 내 출처 표시는 `app/bible-reading/matthew.json` 의 `translations.greek.note`
+에 다음 형태로 들어가 있다:
+
+```
+"SBLGNT (SBL Greek New Testament), © Society of Biblical Literature, CC BY 4.0.
+사용 범위: 마태복음 1~5장 (점진적 확장 예정). 각 절 아래 단어 풀이(greekWords)
+는 본 앱이 직접 작성한 학습용 의역이며, 발음·격·뜻이 불확실한 부분은 단어 뒤
+`(?)` 로 표시한다."
+```
+
+### 6.1 단어 풀이(`greekWords`) 데이터
+
+각 절의 헬라어 단어를 한 단어씩 풀이한 학습용 데이터는 **본 앱이 직접 작성한
+의역**이며, 다음 컨벤션을 따른다.
+
+- 형식: 한 단어 = `헬라어(한글 발음) — 한국어 뜻 (괄호 안 격·시제 등 보조 설명)`,
+  단어 구분은 줄바꿈(`\n`).
+- 발음 표기는 한국 신학계에서 통용되는 **에라스무스식 한글 표기**.
+  (η=에, ω=오, υ단독=위, ου=우, αυ=아우, ευ=에우, ει=에이, οι=오이,
+  θ=ㅌ, φ=ㅍ, χ=ㅋ, β=ㅂ, δ=ㄷ, γ=ㄱ, ρ=ㄹ, ψ=프스, ξ=크스,
+  거친숨표 ῾=ㅎ, 부드러운숨표 ᾿=무음)
+- **불확실한 단어**(드문 어형, 모호한 분사 분석, 표준 한글 표기가 갈리는 고유명사 등)
+  뒤에는 `(?)` 를 붙여 추후 검수 대상으로 표시한다.
+
+> 단어 풀이는 한 단어 한 단어의 격·시제 해석이 검수자마다 다를 수 있다.
+> 발견된 오류는 `scripts/import-bible-greek-matthew.mjs` 의 `WORDS` 객체에서
+> 수정한 뒤 스크립트를 다시 실행해 `matthew.json` 을 재생성한다(절 수 자동 검증 포함).
+
+### 6.2 데이터 재생성
+
+```bash
+# 1) SBLGNT Matt 원본 다운로드
+mkdir -p tmp/bible-sources
+curl -sSL -o tmp/bible-sources/sblgnt-matthew.txt \
+  https://raw.githubusercontent.com/LogosBible/SBLGNT/master/data/sblgnt/text/Matt.txt
+
+# 2) 본문 비평 부호 제거 + 단어 풀이 주입
+node scripts/import-bible-greek-matthew.mjs
+```
+
+스크립트는 실행마다 `matthew.json` 의 1~5장 `verses.greek`/`verses.greekWords` 만
+덮어쓰고 `verses.krv`/`verses.kids` 는 절대 건드리지 않는다. 또한 각 장마다
+`krv = greek = greekWords` 절 개수가 일치하는지 검증해 실패 시 비-0 종료한다.
+
+---
+
+## 7. "쉬운말" 번역에 관해
 
 신규 추가된 61권의 `translations.kids` 자리에는 placeholder 라벨만
 있고 `verses.kids = []` 빈 배열이다. 쉬운말 번역은 본 앱이 직접
@@ -105,7 +169,7 @@ sources/ko/KorRV/KorRV.json, License: Public Domain)."
 
 ---
 
-## 7. 데이터 재생성
+## 8. 데이터 재생성 (KRV)
 
 원본을 다시 받아 변환하려면:
 

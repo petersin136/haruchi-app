@@ -106,21 +106,57 @@ import john3Data from "./john3.json";
 import judeData from "./jude.json";
 import revelationData from "./revelation.json";
 
-export type TranslationKey = "krv" | "kids";
+// 토글에 노출되는 번역(번역본) 키.
+//   - krv:   개역한글 (66권 전부 보유)
+//   - kids:  쉬운말 (기존 5권만 보유, 나머지는 빈 배열)
+//   - greek: "원어 묵상" 모드. 이 모드에서는 KRV 본문은 화면에 표시하지 않고,
+//            대신 한국어 의역(`greekKr`) 을 본문 자리에 두고, 그 아래에 헬라어
+//            단어 토큰(`greekTokens`) 을 표시한다. 각 토큰의 한글 발음을
+//            클릭하면 그 단어의 상세 정보가 펼쳐지고, 줄 오른쪽의 ▾ 갈매기를
+//            누르면 절 전체 풀이(`greekWords`) 가 펼쳐진다. 현재 마태복음 1장만.
+//
+// 데이터 키 (verses.* — 모두 옵셔널):
+//   - greek       : SBLGNT 헬라어 원문 (평문, 데이터로만 보존)
+//   - greekKr     : 원어를 참고한 한국어 의역 (원어 모드의 본문 자리)
+//   - greekTokens : 절을 단어 단위로 쪼갠 토큰 배열 — 각 토큰은 헬라어 단어 + 한글
+//                   발음 + (선택) 상세 정보. UI 에서 ruby 형태로 발음을 단어
+//                   아래에 작게 표시하고, 발음 클릭 시 정보 드롭다운을 펼친다.
+//   - greekWords  : 절 전체 풀이 줄글. UI 에서 ▾ 갈매기 버튼을 눌러야 펼쳐진다.
+export type TranslationKey = "krv" | "kids" | "greek";
 
 export type Verse = {
   n: number;
   t: string;
 };
 
+// 헬라어 토큰: 한 단어(또는 구두점) 단위.
+//   w    : 헬라어 단어(원문 그대로 — 강세·기식 포함)
+//   p    : 한글 발음 — 빈 문자열이면 단어 아래에 발음을 표시하지 않는다
+//          (예: 마침표·세미콜론 등 구두점 토큰).
+//   info : 선택. 들어 있으면 발음이 점선 밑줄로 표시되고 클릭 가능해진다.
+//          비어 있으면 클릭 비활성(평범한 작은 회색 글씨).
+export type GreekToken = { w: string; p: string; info?: string };
+
+export type GreekVerseTokens = { n: number; tokens: GreekToken[] };
+
 export type Chapter = {
   chapter: number;
   title: string;
-  verses: Record<TranslationKey, Verse[]>;
+  // krv 는 모든 책에서 보장되지만(검증된 공공저작물 데이터셋), kids 및 원어 관련 키는
+  // 책마다 유무가 다르므로 옵셔널로 둔다. 호출부에선 `verses.kids?.length ?? 0` 처럼 접근.
+  verses: {
+    krv: Verse[];
+    kids?: Verse[];
+    greek?: Verse[];
+    greekKr?: Verse[];
+    greekTokens?: GreekVerseTokens[];
+    greekWords?: Verse[];
+  };
 };
 
 export type BibleData = {
-  translations: Record<TranslationKey, { label: string; note?: string }>;
+  // 번역 메타정보도 같은 이유로 부분 집합. 라벨이 없는 키는 UI 토글에 노출되지 않는다.
+  translations: Partial<Record<TranslationKey, { label: string; note?: string }>>;
   chapters: Chapter[];
 };
 
