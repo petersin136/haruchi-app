@@ -2173,13 +2173,13 @@ export default function BibleReadingPage() {
 
   // ───────────────────────────────────────────────────────────────────
   // 우측 사이드바(.brp-side) sticky-top 계산.
-  // - PC/태블릿 가로(≥960) 에서만 적용 (모바일은 display: contents 라 무효).
-  // - 사이드바 높이가 viewport 보다 작으면: 일반 sticky (top: 80px).
-  // - 사이드바 높이가 viewport 보다 크면: top 을 음수로 설정해 element 가
-  //   viewport 위로 빠지면서 바닥(prayer 카드 끝)이 viewport 안에 들어오게.
-  //   → 본문(reader) 스크롤하는 동안 사이드바는 viewport 에 고정된 채로
-  //     함께 움직이며, reader 가 끝까지 스크롤되면 그 시점에 사이드바
-  //     바닥도 자연스럽게 페이지 바닥과 맞아 떨어짐.
+  //
+  // ⚠️ DEPRECATED — 2-pane 독립 스크롤 전환(≥960px) 후로는 .brp-side 의
+  //   position: sticky 가 제거되어, 여기서 설정하는 CSS 변수
+  //   --brp-side-top 은 더 이상 어떤 스타일에도 참조되지 않는다.
+  //   삭제하지 않고 남겨둔 이유: 만약 모바일/태블릿 세로(<960px) 에서
+  //   다시 sticky 모드를 도입하거나, A/B 테스트로 sticky 모드를 옵션화할
+  //   때 다시 살릴 수 있도록 한다. 현재로서는 effective-no-op.
   // ───────────────────────────────────────────────────────────────────
   useEffect(() => {
     const update = () => {
@@ -5515,8 +5515,27 @@ export default function BibleReadingPage() {
                               → 장 스위처(toolbar) → 진도 → 기도
            ────────────────────────────────────────────────────────────── */
         @media (min-width: 960px) {
+          /* ⭐️ 2-pane 독립 스크롤 레이아웃 — 태블릿 가로·PC 에서
+             "본문(reader)" 과 "사이드(side)" 가 각자 자기 컨테이너 안에서
+             따로 스크롤된다 (Gmail / Notion 등과 유사한 데스크탑 패턴).
+             구현 포인트:
+               1) .brp-page 자체 스크롤 차단 (overflow: hidden, height: 100vh).
+                  → 페이지 단위 스크롤 사라짐 + 헤더/dock(fixed) 는 그대로 떠 있음.
+               2) .brp-canvas 가 viewport 의 잔여 높이 가득 차도록 명시적 height.
+                  잔여 = 100vh - 페이지 padding-top(헤더 자리) - 캔버스 margin-top.
+                  두 값은 breakpoint 마다 다르므로 CSS 변수로 빼서 재정의.
+               3) reader / side 각각 overflow-y: auto + min-height: 0
+                  (grid item 안에서 overflow 동작하려면 min-height: 0 필수).
+               4) 스크롤바는 두 패널 모두 숨김 (scrollbar-width: none + WebKit).
+                  사용자 요청: "스크롤바를 보여 주진 않게 스크롤이 서로 따로". */
           .brp-page {
-            padding: 60px clamp(16px, 2vw, 24px) 88px;
+            /* PC 기본 — 1200/1440/820h 변형은 아래 별도 블록에서 변수 덮어씀. */
+            --brp-page-top: 60px;
+            --brp-canvas-margin: 8px;
+            padding: var(--brp-page-top) clamp(16px, 2vw, 24px) 0;
+            height: 100vh;
+            overflow: hidden;
+            box-sizing: border-box;
           }
           /* 헤더 좌우 패딩을 캔버스 폭(1300px)과 동기화 — 뷰포트가 캔버스보다 넓을 땐
              (viewport - 1300)/2 만큼 들여 캔버스 양끝과 일치, 좁을 땐 최소 20px 유지. */
@@ -5527,26 +5546,32 @@ export default function BibleReadingPage() {
 
           /* 캔버스 = 2-col grid. 좌측 1fr(min 0), 우측 sidebar 300px.
              태블릿 범위(960~1199)에서 reader 폭을 충분히 확보하기 위해
-             사이드바를 컴팩트한 300px 로 유지 (사이드 내부 컴포넌트도 본래
-             "좁은 300px 폭" 기준으로 디자인되어 있어 내부 비례도 자연스럽다).
-             ≥1200px 부터는 아래 @media 에서 940/460 으로 시원하게 확장.
+             사이드바를 컴팩트한 300px 로 유지. ≥1200px 부터는 아래 @media 에서
+             940/460 으로 확장.
 
-             컨테이너 max 1300 ≈ ~960(reader) + 32(gap) + 300(side).
-             hero 는 row 1 양쪽 컬럼 span (윗선만 차지). row 2 부터 reader 와
-             side 가 같은 높이에서 시작 → 정렬 깔끔. */
+             grid-template-rows: auto minmax(0, 1fr) — 1행은 hero(콘텐츠 높이),
+             2행은 viewport 잔여를 모두 차지 → reader/side 가 그 안에서
+             각자 스크롤. minmax(0, 1fr) 의 min 0 이 핵심 (grid track 의
+             기본 min-content 동작을 풀어 자식 overflow 가 정상 작동). */
           .brp-canvas {
             display: grid;
             grid-template-columns: minmax(0, 1fr) 300px;
+            grid-template-rows: auto minmax(0, 1fr);
             grid-template-areas:
               "hero    hero"
               "reader  side";
             column-gap: 32px;
             row-gap: 14px;
             max-width: 1300px;
-            margin: 8px auto 0;
-            align-items: start;
+            margin: var(--brp-canvas-margin) auto 0;
+            height: calc(
+              100vh - var(--brp-page-top, 60px) -
+                var(--brp-canvas-margin, 8px)
+            );
+            min-height: 0;
+            overflow: hidden;
           }
-          /* grid area 매핑 — hero, reader, side 세 영역만. max-width/margin 리셋. */
+          /* grid area 매핑 — hero, reader, side 세 영역. max-width/margin 리셋. */
           .brp-canvas > .brp-hero {
             grid-area: hero;
             max-width: none;
@@ -5555,30 +5580,37 @@ export default function BibleReadingPage() {
             padding-bottom: 4px;
             text-align: center;
           }
+          /* 좌측 본문 — 독립 세로 스크롤. 마지막 줄이 floating dock 아래로
+             숨지 않도록 padding-bottom 을 dock 영역만큼 확보. */
           .brp-canvas > .brp-reader {
             grid-area: reader;
             max-width: none;
             margin: 0;
-            align-self: start;
+            min-height: 0;
+            overflow-y: auto;
+            scrollbar-width: none;        /* Firefox */
+            -ms-overflow-style: none;     /* legacy Edge / IE */
           }
-          /* ⭐️ 우측 컬럼 wrapper — sticky 컨테이너.
-             내부 스크롤 없음. 본문(reader) 스크롤하면 페이지 전체와 함께
-             움직이는 것처럼 보이지만, 실제로는 viewport 상단 기준
-             var(--brp-side-top) 위치에 고정됨.
-             - 사이드바 < viewport: top 80px → 항상 같은 위치에 고정.
-             - 사이드바 > viewport: JS 가 top 을 음수(viewport - sideHeight
-               - margin) 로 설정 → 사이드바가 viewport 위로 일부 빠지며
-               바닥(prayer 카드)이 viewport 안에 들어옴. 본문이 끝까지
-               스크롤되는 동안 사이드바 바닥은 계속 보이고, 페이지 끝에
-               도달하면 사이드바도 자연스럽게 캔버스 바닥과 함께 멈춤. */
+          .brp-canvas > .brp-reader::-webkit-scrollbar {
+            display: none;                /* WebKit (Safari/Chrome) */
+          }
+          /* 우측 사이드 — 마찬가지로 독립 스크롤.
+             과거에는 position: sticky + 동적 top(JS 계산) 으로 페이지 스크롤을
+             따라가는 "유사 sticky" 패턴이었으나, 이제는 그냥 grid track 안에서
+             자기 overflow 로 스크롤한다. JS 의 --brp-side-top 계산은 무효
+             (위 page useEffect 는 그대로 두되 CSS 가 더 이상 사용하지 않음). */
           .brp-side {
             grid-area: side;
             display: flex;
             flex-direction: column;
             gap: 14px;
-            position: sticky;
-            top: var(--brp-side-top, 80px);
-            align-self: start;
+            min-height: 0;
+            overflow-y: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+          .brp-side::-webkit-scrollbar {
+            display: none;
           }
           /* 사이드 내부 자식들 — grid area 매핑 불필요(flex item).
              order 리셋 (모바일용 order 가 PC 에선 의미 없게). */
@@ -5592,9 +5624,15 @@ export default function BibleReadingPage() {
             margin: 0;
           }
 
-          /* 좌측 reader — 본문은 항상 충분히 시원한 padding */
+          /* 좌측 reader — 본문은 항상 충분히 시원한 padding.
+             padding-bottom 은 dock(약 56px + bottom 16px) 위 여유까지
+             크게 확보 — 독립 스크롤에서 마지막 절이 dock 뒤로 가리지
+             않고, 끝까지 스크롤해도 자연스러운 여백이 보인다. */
           .brp-reader {
-            padding: clamp(28px, 3vw, 36px) clamp(22px, 2.5vw, 32px);
+            padding:
+              clamp(28px, 3vw, 36px)
+              clamp(22px, 2.5vw, 32px)
+              clamp(96px, 8vh, 140px);
           }
 
           /* 사이드 내 컨트롤 — 좁은 300px 폭에 맞춰 살짝 컴팩트 */
@@ -5707,11 +5745,16 @@ export default function BibleReadingPage() {
           }
         }
 
-        /* 가로 태블릿의 짧은 세로 높이 (≈768h) — 헤더·dock 더 압축 */
+        /* 가로 태블릿의 짧은 세로 높이 (≈768h) — 헤더·dock 더 압축.
+           CSS 변수 (--brp-page-top, --brp-canvas-margin) 만 갱신하면
+           .brp-canvas height calc 가 자동 재계산되어 2-pane 레이아웃이
+           새 헤더/마진에 맞춰진다. */
         @media (min-width: 960px) and (max-height: 820px) {
           .brp-page {
-            padding-top: 52px;
-            padding-bottom: 72px;
+            --brp-page-top: 52px;
+            --brp-canvas-margin: 0px;
+            padding-top: var(--brp-page-top);
+            padding-bottom: 0;
           }
           .brp-header {
             padding-top: 5px;
@@ -5719,7 +5762,7 @@ export default function BibleReadingPage() {
             min-height: 40px;
           }
           .brp-canvas {
-            margin-top: 0;
+            margin-top: var(--brp-canvas-margin);
             row-gap: 10px;
           }
           .brp-hero h1 {
@@ -5738,11 +5781,16 @@ export default function BibleReadingPage() {
         }
 
         /* ─────────────────────────────────────────────────────────────
-           PC (≥1200px) — 본문/사이드바 폭 시원하게 확장
+           PC (≥1200px) — 본문/사이드바 폭 시원하게 확장.
+           padding-bottom 은 2-pane 레이아웃이라 0 (페이지 자체 스크롤 X).
+           CSS 변수 --brp-page-top / --brp-canvas-margin 만 바꾸면 canvas
+           height calc 가 자동으로 따라감.
            ────────────────────────────────────────────────────────────── */
         @media (min-width: 1200px) {
           .brp-page {
-            padding: 92px clamp(20px, 2vw, 32px) 112px;
+            --brp-page-top: 92px;
+            --brp-canvas-margin: 16px;
+            padding: var(--brp-page-top) clamp(20px, 2vw, 32px) 0;
           }
           /* 헤더 좌우 패딩을 PC 캔버스 폭(1460px)과 동기화. */
           .brp-header {
@@ -5752,7 +5800,7 @@ export default function BibleReadingPage() {
             grid-template-columns: minmax(0, 940px) 460px;
             column-gap: 60px;
             max-width: 1460px;
-            margin-top: 16px;
+            margin-top: var(--brp-canvas-margin);
           }
           /* hero — PC sidebar(460 + gap 60) 폭만큼 우측 비움 → reader 컬럼 가운데 정렬 */
           .brp-canvas > .brp-hero {
@@ -5779,14 +5827,17 @@ export default function BibleReadingPage() {
           }
         }
 
-        /* 대형 PC (≥1440px) — 여백 시원 */
+        /* 대형 PC (≥1440px) — 여백 시원.
+           padding-bottom 은 2-pane 레이아웃이라 0. */
         @media (min-width: 1440px) {
           .brp-page {
-            padding-top: 100px;
-            padding-bottom: 120px;
+            --brp-page-top: 100px;
+            --brp-canvas-margin: 24px;
+            padding-top: var(--brp-page-top);
+            padding-bottom: 0;
           }
           .brp-canvas {
-            margin-top: 24px;
+            margin-top: var(--brp-canvas-margin);
           }
         }
 
