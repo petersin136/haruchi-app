@@ -2395,10 +2395,11 @@ export default function BibleReadingPage() {
 
       {/* 스크롤 시 헤더 대신 떠 있는 반투명 미니바 — 책·장·소제목 + 본문 진행도.
           본문(reader) 카드가 뷰포트에 보이는 동안만 표시.
-          내부 .brp-mini-fill 이 왼쪽→오른쪽 에너지바처럼 채워짐. */}
+          내부 .brp-mini-fill 이 왼쪽→오른쪽 에너지바처럼 채워짐.
+          책 미선택 상태에서는 책 이름/장 정보 자체가 의미 없으므로 통째로 숨김. */}
       <div
-        className={`brp-mini-bar ${miniVisible ? "is-visible" : ""}`}
-        aria-hidden={!miniVisible}
+        className={`brp-mini-bar ${bookConfirmed && miniVisible ? "is-visible" : ""}`}
+        aria-hidden={!bookConfirmed || !miniVisible}
         role="progressbar"
         aria-valuemin={0}
         aria-valuemax={100}
@@ -2845,18 +2846,31 @@ export default function BibleReadingPage() {
           </div>
         )}
       </section>
+      )}
 
       </aside>{/* /.brp-side */}
 
       {/* 본문(reader) — source 상 우측 sidebar(.brp-side) 뒤에 위치.
           모바일: CSS order 로 toolbar 와 progress 사이(시각 순서 5)에 표시.
-          PC: grid-area: reader 로 좌측 컬럼 차지. */}
+          PC: grid-area: reader 로 좌측 컬럼 차지.
+          책 미선택 상태에서도 section 자체는 살려둔다(readerSectionRef·grid 자리
+          유지 + 진입 안내 메시지를 placeholder 로 표시). */}
       <section
         ref={readerSectionRef}
         className="brp-reader"
-        aria-label={`${bookMeta.name} ${chapterNumber}장 본문`}
+        aria-label={
+          bookConfirmed
+            ? `${bookMeta.name} ${chapterNumber}장 본문`
+            : "성경 본문 — 책 선택 필요"
+        }
       >
-        {!hasFilledText && (
+        {!bookConfirmed && (
+          <p className="brp-reader-empty">
+            먼저 위에서 <strong>구약</strong> 또는 <strong>신약</strong> 중
+            오늘 읽을 책을 골라주세요.
+          </p>
+        )}
+        {bookConfirmed && !hasFilledText && (
           <p className="brp-reader-empty">
             이 장의{" "}
             {translation === "krv"
@@ -2867,7 +2881,7 @@ export default function BibleReadingPage() {
             본문이 아직 준비되지 않았어요. 다른 번역을 선택해 보세요.
           </p>
         )}
-        {verses.map((verse, idx) => {
+        {bookConfirmed && verses.map((verse, idx) => {
           // 스크롤 모드는 "스크롤 + 최소 시간 + 퀴즈"가 모두 끝나
           // 장 자체가 완료(readVerseCount === totalVerses)됐을 때만
           // 절 색을 바꾼다. 그 외에는 절별 진행 색을 절대 표시하지 않는다.
@@ -3039,6 +3053,9 @@ export default function BibleReadingPage() {
 
       </div>{/* /.brp-canvas */}
 
+      {/* 하단 고정 컨트롤 — 마이크/스크롤 상태, 카운터, "다 읽었어요" 버튼.
+          모두 책+장이 정해진 뒤에만 의미 있는 액션이라 책 미선택 시 통째로 숨김. */}
+      {bookConfirmed && (
       <div className="brp-dock" role="region" aria-label="읽기 컨트롤">
         {readingMode === "mic" ? (
           <button
@@ -3097,6 +3114,7 @@ export default function BibleReadingPage() {
           다 읽었어요
         </button>
       </div>
+      )}
 
       {/* 선택 모드 액션 바 — 본문 절을 길게 눌러 진입한 selectionMode 동안만 표시.
           dock(마이크/리셋/다읽었어요) 위에 떠 있고, 디자인 토큰만 사용한다:
