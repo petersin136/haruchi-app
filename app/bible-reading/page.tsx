@@ -2,7 +2,12 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import prayersJson from "./prayers.json";
-import { BOOKS, BOOK_ORDER, type BookId } from "./books";
+import {
+  BOOKS,
+  NT_BOOK_IDS,
+  OT_BOOK_IDS,
+  type BookId,
+} from "./books";
 import { BOOK_DATA } from "./bibleData";
 import StudentIdentityBar, {
   type StudentIdentityBarHandle,
@@ -21,7 +26,7 @@ import SearchOverlay, { type SearchSelection } from "./SearchOverlay";
 
 // 화면 토글에 노출되는 번역본 키.
 //   - krv:   개역한글
-//   - kids:  쉬운말
+//   - kids:  어린이
 //   - greek: "원어 묵상" 모드. KRV 본문을 화면에서 숨기고, 원어 의역(greekKr)
 //           을 본문 자리에 두며, 그 아래에 헬라어 단어 토큰(greekTokens) 을
 //           헬라어/한글 발음의 ruby 형태로 표시한다. 발음에 점선 밑줄이 있는
@@ -66,7 +71,7 @@ type GreekVerseTokens = { n: number; tokens: GreekToken[] };
 type Chapter = {
   chapter: number;
   title: string;
-  // krv 는 모든 책 보장. 그 외(쉬운말·원어 관련)는 책마다 유무 다르므로 옵셔널.
+  // krv 는 모든 책 보장. 그 외(어린이·원어 관련)는 책마다 유무 다르므로 옵셔널.
   //   greek        : SBLGNT 헬라어 원문 평문 (현재 UI 직접 노출 X, 데이터 보존)
   //   greekKr      : 원어 의역 — 원어 모드에서 본문 자리에 표시되는 한국어 문장
   //   greekTokens  : 절을 단어 단위로 쪼갠 토큰 배열 — 단어/발음 ruby + 단어별 정보
@@ -1039,7 +1044,7 @@ export default function BibleReadingPage() {
   const hasGreekWords = (chapter.verses.greekWords?.length ?? 0) > 0;
   const hasGreek = hasGreekKr;
   // 사용자가 선택한 번역이 현재 책/장에 없으면 다른 번역으로 자동 폴백.
-  //   - 신규 61권은 쉬운말이 없음 → 쉬운말 선택 시 개역한글로 표시.
+  //   - 신규 61권은 어린이 번역이 없음 → 어린이 선택 시 개역한글로 표시.
   //   - 원어묵상(greek) 자료가 없는 책/장이면 → 개역한글로 폴백.
   //   - 기존 5권은 krv/kids 양쪽 모두 있어 영향 없음.
   const effectiveTranslation: TranslationKey =
@@ -1504,7 +1509,7 @@ export default function BibleReadingPage() {
     [readingMode],
   );
 
-  // 번역(개역한글/쉬운말) 선택을 localStorage 에 저장. 새로고침해도 마지막
+  // 번역(개역한글/어린이) 선택을 localStorage 에 저장. 새로고침해도 마지막
   // 선택이 유지되도록 한다. 단, 현재 책에서 지원하지 않는 번역이면 무시.
   const handleTranslationChange = useCallback(
     (next: TranslationKey) => {
@@ -2366,7 +2371,7 @@ export default function BibleReadingPage() {
       )}
 
       {/* 성경 단어 검색 오버레이 — 독립 기능. BOOK_DATA(메모리) 안에서만 검색.
-          검색은 KRV / 쉬운말만 지원하므로 greek 선택 중이면 krv 로 폴백. */}
+          검색은 KRV / 어린이만 지원하므로 greek 선택 중이면 krv 로 폴백. */}
       <SearchOverlay
         open={searchOpen}
         defaultTranslation={effectiveTranslation === "greek" ? "krv" : effectiveTranslation}
@@ -2422,20 +2427,10 @@ export default function BibleReadingPage() {
           측정해 동적으로 결정(useEffect 참조). */}
       <aside ref={sideRef} className="brp-side" aria-label="읽기 컨트롤 및 진도">
 
-      {/* Row 1: [책 드롭다운] [번역 토글] — 한 줄, 컴팩트 */}
-      <section className="brp-top-row" aria-label="성경 책과 번역 선택">
-        <Dropdown<BookId>
-          value={bookId}
-          options={BOOK_ORDER.map<DropdownOption<BookId>>((id) => ({
-            value: id,
-            label: BOOKS[id].name,
-          }))}
-          onChange={(next) => changeBook(next)}
-          ariaLabel="성경 책 선택"
-          align="center"
-          size="md"
-        />
-
+      {/* Row 1: [번역 토글] + [읽기 모드 토글] — 한 줄, 1:1 분할.
+          왼쪽: 개역한글 / 어린이 / 원어묵상. 오른쪽: 낭독 / 묵독.
+          두 컨트롤 모두 같은 pill 톤 + 슬라이딩 인디케이터로 시각 톤 통일. */}
+      <section className="brp-top-row" aria-label="번역과 읽기 모드 선택">
         {(() => {
           // 슬라이딩 인디케이터: 활성 버튼의 인덱스/개수를 CSS 변수로 넘겨
           // 인디케이터(.brp-toggle-indicator) 위치/폭을 계산하도록 한다.
@@ -2466,7 +2461,7 @@ export default function BibleReadingPage() {
                 const disabledTitle = isKrvDisabled
                   ? "이 책의 개역한글 본문은 아직 준비되지 않았어요."
                   : isKidsDisabled
-                    ? "이 책의 쉬운말 번역은 준비 중입니다."
+                    ? "이 책의 어린이 번역은 준비 중입니다."
                     : isGreekDisabled
                       ? "이 장의 원어 묵상 자료는 아직 준비되지 않았어요."
                       : undefined;
@@ -2488,38 +2483,66 @@ export default function BibleReadingPage() {
             </div>
           );
         })()}
+
+        <div
+          className="brp-mode-tabs brp-mode-tabs--sm brp-toggle"
+          role="tablist"
+          aria-label="읽기 모드 선택"
+          style={{
+            ["--brp-toggle-count" as string]: 2,
+            ["--brp-toggle-active" as string]: readingMode === "scroll" ? 1 : 0,
+          } as React.CSSProperties}
+        >
+          <span className="brp-toggle-indicator" aria-hidden="true" />
+          <button
+            type="button"
+            role="tab"
+            aria-selected={readingMode === "mic"}
+            className={`brp-mode-tab ${readingMode === "mic" ? "is-active" : ""}`}
+            onClick={() => handleReadingModeChange("mic")}
+          >
+            낭독
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={readingMode === "scroll"}
+            className={`brp-mode-tab ${readingMode === "scroll" ? "is-active" : ""}`}
+            onClick={() => handleReadingModeChange("scroll")}
+          >
+            묵독
+          </button>
+        </div>
       </section>
 
-      {/* Row 2: 읽기 모드 — 슬림. 번역 토글과 동일한 슬라이딩 인디케이터로
-          매끄럽게 전환된다 (cross-fade 시 보이는 사각 프레임 제거). */}
-      <section
-        className="brp-mode-tabs brp-mode-tabs--sm brp-toggle"
-        role="tablist"
-        aria-label="읽기 모드 선택"
-        style={{
-          ["--brp-toggle-count" as string]: 2,
-          ["--brp-toggle-active" as string]: readingMode === "scroll" ? 1 : 0,
-        } as React.CSSProperties}
-      >
-        <span className="brp-toggle-indicator" aria-hidden="true" />
-        <button
-          type="button"
-          role="tab"
-          aria-selected={readingMode === "mic"}
-          className={`brp-mode-tab ${readingMode === "mic" ? "is-active" : ""}`}
-          onClick={() => handleReadingModeChange("mic")}
-        >
-          직접 읽기
-        </button>
-        <button
-          type="button"
-          role="tab"
-          aria-selected={readingMode === "scroll"}
-          className={`brp-mode-tab ${readingMode === "scroll" ? "is-active" : ""}`}
-          onClick={() => handleReadingModeChange("scroll")}
-        >
-          스크롤로 읽기
-        </button>
+      {/* Row 2: [구약 책 드롭다운] + [신약 책 드롭다운] — 한 줄, 1:1 분할.
+          현재 선택된 책이 속하지 않은 쪽 드롭다운은 "구약" / "신약" placeholder 로
+          표시되며(옅은 톤), 옵션을 고르는 즉시 changeBook 으로 전환된다. */}
+      <section className="brp-top-row" aria-label="성경 책 선택 (구약 / 신약)">
+        <Dropdown<BookId>
+          value={bookId}
+          options={OT_BOOK_IDS.map<DropdownOption<BookId>>((id) => ({
+            value: id,
+            label: BOOKS[id].name,
+          }))}
+          onChange={(next) => changeBook(next)}
+          ariaLabel="구약 책 선택"
+          placeholderLabel="구약"
+          align="center"
+          size="md"
+        />
+        <Dropdown<BookId>
+          value={bookId}
+          options={NT_BOOK_IDS.map<DropdownOption<BookId>>((id) => ({
+            value: id,
+            label: BOOKS[id].name,
+          }))}
+          onChange={(next) => changeBook(next)}
+          ariaLabel="신약 책 선택"
+          placeholderLabel="신약"
+          align="center"
+          size="md"
+        />
       </section>
 
       {/* Row 3: 장 스위처 */}
@@ -4403,14 +4426,21 @@ export default function BibleReadingPage() {
           overflow: hidden;
         }
 
-        /* 읽기 모드 탭 — 위 row(책 드롭다운 + 번역 토글, 40px) 와 동일한
-           높이로 맞춰 두 줄이 같은 톤의 컨트롤 띠처럼 보이게 한다. */
+        /* 읽기 모드 탭 — 옆에 놓인 번역 토글(40px)과 동일한 높이로 맞춰
+           한 줄 안에서 두 컨트롤이 같은 톤의 pill 띠처럼 보이게 한다. */
         .brp-mode-tabs--sm {
           height: 40px;
           min-height: 40px;
           padding: 0;
           gap: 0;
-          margin-bottom: 10px;
+          margin-bottom: 0;
+        }
+
+        /* .brp-top-row(1fr 1fr 그리드) 안에 들어가는 경우 — 본인의 max-width
+           / 가운데 마진을 리셋해 그리드 셀에 가득 차도록. */
+        .brp-top-row > .brp-mode-tabs {
+          max-width: none;
+          margin: 0;
         }
 
         .brp-mode-tab {

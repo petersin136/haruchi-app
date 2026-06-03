@@ -10,7 +10,7 @@
 //   타입 메모:
 //     - 신규 61권의 `translations.kids` 는 placeholder 라벨만 가지며 verses.kids = [].
 //       UI 의 `hasKids = verses.kids.length > 0` 체크로 자연스럽게 비활성화된다.
-//     - 기존 5권(잠언/마태/마가/누가/요한)은 쉬운말 번역까지 보유.
+//     - 기존 5권(잠언/마태/마가/누가/요한)은 어린이 번역까지 보유.
 //
 // ─────────────────────────────────────────────────────────────────────────────
 //  데이터 라이선스 / 출처  ── 자세한 내용은 app/bible-reading/DATA-LICENSE.md
@@ -108,7 +108,7 @@ import revelationData from "./revelation.json";
 
 // 토글에 노출되는 번역(번역본) 키.
 //   - krv:   개역한글 (66권 전부 보유)
-//   - kids:  쉬운말 (기존 5권만 보유, 나머지는 빈 배열)
+//   - kids:  어린이 (기존 5권만 보유, 나머지는 빈 배열)
 //   - greek: "원어 묵상" 모드. 이 모드에서는 KRV 본문은 화면에 표시하지 않고,
 //            대신 한국어 의역(`greekKr`) 을 본문 자리에 두고, 그 아래에 헬라어
 //            단어 토큰(`greekTokens`) 을 표시한다. 각 토큰의 한글 발음을
@@ -229,7 +229,7 @@ export const BOOK_DATA: Record<BookId, BibleData> = {
   revelation: revelationData as BibleData,
 };
 
-// 검색·검수용 헬퍼: 한 권에 쉬운말(kids) 번역이 한 절이라도 있으면 true.
+// 검색·검수용 헬퍼: 한 권에 어린이(kids) 번역이 한 절이라도 있으면 true.
 // (현재는 기존 5권만 true) UI 의 토글 비활성화 판정과 함께 사용 가능.
 export const hasKidsTranslation = (bookId: BookId): boolean => {
   const data = BOOK_DATA[bookId];

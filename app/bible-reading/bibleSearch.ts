@@ -16,7 +16,7 @@
 import { BOOKS, BOOK_ORDER, type BookId } from "./books";
 import { BOOK_DATA, type BibleData } from "./bibleData";
 
-// 검색은 KRV / 쉬운말 두 본문만 대상으로 한다.
+// 검색은 KRV / 어린이 두 본문만 대상으로 한다.
 // 헬라어(greek) 본문도 데이터로는 존재하지만(현재 마태복음 1~5장만), 검색 UX 가
 // 한국어 위주이므로 현 시점 검색 대상에서는 제외한다.
 export type SearchTranslation = "krv" | "kids";
@@ -181,9 +181,9 @@ export const searchBible = (
 };
 
 export const getTranslationLabel = (t: SearchTranslation): string =>
-  RAW.proverbs.translations[t]?.label ?? (t === "krv" ? "개역한글" : "쉬운말");
+  RAW.proverbs.translations[t]?.label ?? (t === "krv" ? "개역한글" : "어린이");
 
-// (note) RAW.proverbs.translations 는 Partial 이지만 KRV/쉬운말은 잠언에 항상 존재한다.
+// (note) RAW.proverbs.translations 는 Partial 이지만 KRV/어린이는 잠언에 항상 존재한다.
 
 // 검색 대상 책 안내 문구용. 66권 전체이므로 가독성을 위해
 // 책 목록 대신 권 수 요약 문자열을 제공한다.

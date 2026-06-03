@@ -10,7 +10,7 @@
 //   1) 원본 JSON 로드 (영어 책명 + verses[*].text 구조)
 //   2) 영어 책명 → 우리 BookId/한국어 이름/약어 매핑
 //   3) 기존 5권(proverbs/matthew/mark/luke/john) 은 절대 덮어쓰지 않음
-//      (쉬운말 번역까지 포함되어 있어 보존이 필수)
+//      (어린이 번역까지 포함되어 있어 보존이 필수)
 //   4) 신규 61권만 app/bible-reading/<id>.json 으로 출력
 //      - translations.kids 자리는 유지하되 "준비 중" note
 //      - verses.kids 는 []  → 기존 UI 의 hasKids 체크가 자연스럽게 false
@@ -100,7 +100,7 @@ const BOOK_MAP = [
   ["Revelation of John", "revelation", "요한계시록", "계"],
 ];
 
-// 보존 대상(절대 덮어쓰지 않음) — 기존 데이터 + 쉬운말 번역이 들어있는 5권
+// 보존 대상(절대 덮어쓰지 않음) — 기존 데이터 + 어린이 번역이 들어있는 5권
 const EXISTING_IDS = new Set(["proverbs", "matthew", "mark", "luke", "john"]);
 
 // 라이선스 근거(코드/JSON note 양쪽에 명시):
@@ -119,7 +119,7 @@ const EXISTING_IDS = new Set(["proverbs", "matthew", "mark", "luke", "john"]);
 //   고전 13:13 "세가지는 ... 그 중에 제일은"   (KRV. NKRV 는 "세 가지는 ... 그 중의 제일은")
 const SOURCE_NOTE =
   "성경전서 개역한글판 (대한성서공회, 1961). 라이선스: 대한성서공회 공식 저작권 FAQ에 따라 저작재산권 보호기간 50년 경과로 저작권료 지급 없이 사용 가능 공공저작물 (개역개정판은 해당 없음). 데이터 출처: scrollmapper/bible_databases (GitHub, 2025-languages branch, sources/ko/KorRV/KorRV.json, License: Public Domain).";
-const KIDS_PENDING_NOTE = "쉬운말 번역 준비 중입니다.";
+const KIDS_PENDING_NOTE = "어린이 번역 준비 중입니다.";
 
 const raw = JSON.parse(fs.readFileSync(sourcePath, "utf8"));
 if (!raw?.books || !Array.isArray(raw.books) || raw.books.length !== 66) {
@@ -233,7 +233,7 @@ for (const [enName, id, koName, shortName] of BOOK_MAP) {
       title: "", // 개역한글 원전에 장 제목 없음 (추후 수동 보강 여지)
       verses: {
         krv,
-        kids: [], // 신규 책: 쉬운말 번역 미준비
+        kids: [], // 신규 책: 어린이 번역 미준비
       },
     };
   });
@@ -241,7 +241,7 @@ for (const [enName, id, koName, shortName] of BOOK_MAP) {
   const bookData = {
     translations: {
       krv: { label: "개역한글", note: SOURCE_NOTE },
-      kids: { label: "쉬운말", note: KIDS_PENDING_NOTE },
+      kids: { label: "어린이", note: KIDS_PENDING_NOTE },
     },
     chapters,
   };

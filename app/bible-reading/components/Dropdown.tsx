@@ -50,6 +50,13 @@ type DropdownProps<T extends string | number> = {
   size?: "sm" | "md";
   /** 트리거에 sub 텍스트 표시 여부 (선택된 옵션의 sub) */
   showTriggerSub?: boolean;
+  /**
+   * value 가 options 안에 없을 때 트리거에 보여줄 placeholder.
+   * 예) 책 선택을 구약/신약 두 드롭다운으로 분리한 경우 —
+   * 현재 선택된 책이 신약이면 구약 쪽 드롭다운은 "구약" 으로 표시.
+   * 미지정 시 빈 문자열로 fallback (기존 동작).
+   */
+  placeholderLabel?: string;
 };
 
 export default function Dropdown<T extends string | number>({
@@ -62,6 +69,7 @@ export default function Dropdown<T extends string | number>({
   variant = "pill",
   size = "md",
   showTriggerSub = false,
+  placeholderLabel,
 }: DropdownProps<T>) {
   const [open, setOpen] = useState(false);
   const [direction, setDirection] = useState<"down" | "up">("down");
@@ -144,7 +152,13 @@ export default function Dropdown<T extends string | number>({
         onClick={() => setOpen((v) => !v)}
       >
         <span className="brp-dd-trigger-inner">
-          <span className="brp-dd-trigger-label">{current?.label ?? ""}</span>
+          <span
+            className={`brp-dd-trigger-label ${
+              current ? "" : "is-placeholder"
+            }`}
+          >
+            {current?.label ?? placeholderLabel ?? ""}
+          </span>
           {showTriggerSub && current?.sub ? (
             <span className="brp-dd-trigger-sub">· {current.sub}</span>
           ) : null}
@@ -265,10 +279,17 @@ export default function Dropdown<T extends string | number>({
         .brp-dd-trigger-label {
           color: var(--ink);
         }
+        /* placeholder (현재 선택값이 이 드롭다운의 options 에 없을 때) — 옅게. */
+        .brp-dd-trigger-label.is-placeholder {
+          color: var(--ink-soft);
+          font-weight: 600;
+        }
         .brp-dd-trigger-sub {
           color: var(--accent-warm);
           font-weight: 600;
-          font-size: 0.92em;
+          /* 트리거 메인 라벨과 동일 크기로 — 부제목 가독성 ↑.
+             기존 0.92em(약 12.4px)는 사이드바 좁은 폭에서 다소 작게 보였음. */
+          font-size: 1em;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;

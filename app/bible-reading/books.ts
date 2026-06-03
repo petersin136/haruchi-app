@@ -4,8 +4,8 @@
 //   순서(BOOK_ORDER)는 표준 개신교 성경 책 순서(창세기 ~ 요한계시록).
 //
 //   본문 데이터: app/bible-reading/<id>.json
-//     - 기존 5권(잠언/마태/마가/누가/요한): 개역한글 + 쉬운말 양쪽 보유
-//     - 신규 61권: 개역한글만 보유 (쉬운말은 verses.kids = [] 빈 배열,
+//     - 기존 5권(잠언/마태/마가/누가/요한): 개역한글 + 어린이 양쪽 보유
+//     - 신규 61권: 개역한글만 보유 (어린이는 verses.kids = [] 빈 배열,
 //       UI 의 hasKids 체크가 자연스럽게 false 가 되어 토글이 비활성화됨)
 //
 //   본문 라이선스: 대한성서공회 공식 저작권 FAQ — 개역한글판은 보호기간
@@ -227,3 +227,15 @@ export const BOOK_ORDER: BookId[] = [
   "jude",
   "revelation",
 ];
+
+// 구약/신약 분리 목록 — UI 의 책 선택 드롭다운(구약 / 신약 두 칸 분리) 등에서 사용.
+// 표준 개신교 정경 분류: 창세기(0) ~ 말라기(38) = 구약 39권, 마태복음(39) ~ 요한계시록(65) = 신약 27권.
+// BOOK_ORDER 가 곧 정경 순서이므로 인덱스 슬라이스로 도출한다.
+export const OT_BOOK_IDS: BookId[] = BOOK_ORDER.slice(0, 39);
+export const NT_BOOK_IDS: BookId[] = BOOK_ORDER.slice(39);
+
+// bookId 가 구약/신약 중 어느 쪽인지 빠르게 판정.
+export const isOldTestament = (id: BookId): boolean =>
+  (OT_BOOK_IDS as readonly BookId[]).includes(id);
+export const isNewTestament = (id: BookId): boolean =>
+  (NT_BOOK_IDS as readonly BookId[]).includes(id);
