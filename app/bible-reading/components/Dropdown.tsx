@@ -37,7 +37,11 @@ export type DropdownOption<T extends string | number> = {
 };
 
 type DropdownProps<T extends string | number> = {
-  value: T;
+  /**
+   * 현재 선택값. null/undefined 또는 options 안에 없는 값이면
+   * 트리거에 placeholderLabel 이 옅은 톤으로 표시된다.
+   */
+  value: T | null | undefined;
   options: DropdownOption<T>[];
   onChange: (value: T) => void;
   ariaLabel: string;
@@ -200,8 +204,8 @@ export default function Dropdown<T extends string | number>({
         .brp-dd {
           position: relative;
           width: 100%;
-          /* 상위 요소가 light 모드여도 OS 다크 모드 영향 받지 않게 강제 */
-          color-scheme: light;
+          /* color-scheme 은 :root 가 결정 (light / :root[data-theme="dark"] dark).
+             컴포넌트 단에서 강제하지 않아 사용자 테마를 자연스럽게 따른다. */
         }
 
         /* ── Trigger ─────────────────────────────────────────────── */
@@ -316,15 +320,17 @@ export default function Dropdown<T extends string | number>({
         }
 
         /* ── Panel (옵션 리스트) ─────────────────────────────────── */
-        /* 살짝 투명한 흰색 + backdrop blur 로 뒤가 옅게 비치는 macOS 풍 톤.
-           backdrop-filter 미지원 브라우저에선 좀 더 진한 흰색으로 fallback. */
+        /* 살짝 투명한 surface + backdrop blur 로 뒤가 옅게 비치는 macOS 풍 톤.
+           라이트/다크 모두 --surface-translucent 토큰을 따라 자동 전환된다
+           (globals.css :root / :root[data-theme="dark"]).
+           backdrop-filter 미지원 브라우저에선 좀 더 불투명한 --surface 로 fallback. */
         .brp-dd-panel {
           position: absolute;
           left: 0;
           z-index: 60;
           margin: 0;
           padding: 4px 0;
-          background: rgba(255, 255, 255, 0.78);
+          background: var(--surface-translucent, var(--surface));
           backdrop-filter: saturate(180%) blur(14px);
           -webkit-backdrop-filter: saturate(180%) blur(14px);
           border: 1px solid var(--line);
@@ -335,16 +341,16 @@ export default function Dropdown<T extends string | number>({
           min-width: 100%;
           width: max-content;
           max-width: calc(100vw - 24px);
-          color-scheme: light;
+          color: var(--ink);
           /* 살짝 등장 — 톤은 차분하게 */
           animation: brp-dd-in 0.14s ease-out;
           /* 부드러운 스크롤 */
           scroll-behavior: smooth;
         }
-        /* backdrop-filter 미지원 환경 fallback — 좀 더 진한 흰색 */
+        /* backdrop-filter 미지원 환경 fallback — 불투명한 surface */
         @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
           .brp-dd-panel {
-            background: rgba(255, 255, 255, 0.96);
+            background: var(--surface);
           }
         }
         .brp-dd-panel--down {
@@ -396,9 +402,10 @@ export default function Dropdown<T extends string | number>({
           position: relative;
           transition: background 0.12s ease, color 0.12s ease;
         }
-        /* 옅은 셀 구분선 — 첫 항목 위엔 안 그림 (border-top 으로 처리). */
+        /* 옅은 셀 구분선 — 첫 항목 위엔 안 그림 (border-top 으로 처리).
+           --line 토큰으로 라이트/다크 모두 자연스럽게 어울리는 색조. */
         .brp-dd-opt + .brp-dd-opt {
-          border-top: 1px solid rgba(0, 0, 0, 0.06);
+          border-top: 1px solid var(--line);
         }
         .brp-dd-opt:hover {
           background: var(--surface-alt);

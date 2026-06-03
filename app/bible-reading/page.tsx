@@ -831,7 +831,16 @@ const getMicrophonePermissionState = async () => {
 };
 
 export default function BibleReadingPage() {
+  // bookId 는 항상 유효한 값으로 유지 — 데이터/메모 계산 로직이 한 곳에서
+  // 분기 처리되지 않도록(creep prevention). 단, "사용자가 실제로 책을 골랐는지"
+  // 여부는 별도 bookConfirmed 플래그로 추적한다.
+  //   - bookConfirmed=false: 양쪽 드롭다운에 구약/신약 placeholder, 본문/장
+  //     스위처/진도/기도/dock 모두 숨김 → 깨끗한 "책 선택 안내" 화면.
+  //   - bookConfirmed=true:  평소처럼 모든 컨트롤·본문 표시.
+  // 첫 방문(localStorage 없음)에는 false. 이전 방문에서 골랐던 책이 저장돼
+  // 있으면 mount 시 useEffect 에서 복구하며 true 로 전환된다.
   const [bookId, setBookId] = useState<BookId>("proverbs");
+  const [bookConfirmed, setBookConfirmed] = useState(false);
   const [chapterNumber, setChapterNumber] = useState(1);
   const [translation, setTranslation] = useState<TranslationKey>("krv");
   const [readingMode, setReadingMode] = useState<ReadingMode>("mic");
@@ -1537,6 +1546,7 @@ export default function BibleReadingPage() {
       setNavMenuOpen(false);
       setTranslation(nextTr);
       setBookId(nextBook);
+      setBookConfirmed(true);
       setChapterNumber(chapter);
       setCompleteVisible(false);
       setQuizOpen(false);
@@ -1694,7 +1704,9 @@ export default function BibleReadingPage() {
 
   const changeBook = useCallback(
     (nextBookId: BookId) => {
-      if (nextBookId === bookId) return;
+      // bookConfirmed=false (책 미선택) 상태에서 같은 id 가 들어와도
+      // "확정" 전환은 일어나야 한다 — 따라서 동일성 검사는 confirmed 인 경우에만.
+      if (bookConfirmed && nextBookId === bookId) return;
       stopListening();
       setCompleteVisible(false);
       setQuizOpen(false);
@@ -1702,6 +1714,7 @@ export default function BibleReadingPage() {
       setQuizAnswers([]);
       setQuizQuestions([]);
       setBookId(nextBookId);
+      setBookConfirmed(true);
       const savedChapter = window.localStorage.getItem(
         currentChapterKey(nextBookId),
       );
@@ -1715,25 +1728,26 @@ export default function BibleReadingPage() {
       window.localStorage.setItem(CURRENT_BOOK_KEY, nextBookId);
       window.scrollTo({ top: 0, behavior: "smooth" });
     },
-    [bookId, stopListening],
+    [bookConfirmed, bookId, stopListening],
   );
 
   useEffect(() => {
     migrateLegacyKeys();
 
+    // 이전 방문에서 골랐던 책을 복구. 66권 전체를 허용 (구버전은 5권만
+    // 화이트리스트했었음 — 신규 61권을 골라도 새로고침 시 잠언으로 돌아가던
+    // 문제 수정). 저장값이 유효한 BookId 일 때만 bookConfirmed=true 로 전환,
+    // 그 외(처음 방문/잘못된 값)는 bookConfirmed=false 상태 유지 → 양쪽
+    // 드롭다운이 구약/신약 placeholder 로 시작.
     const savedBook = window.localStorage.getItem(CURRENT_BOOK_KEY);
-    if (
-      savedBook === "proverbs" ||
-      savedBook === "matthew" ||
-      savedBook === "mark" ||
-      savedBook === "luke" ||
-      savedBook === "john"
-    ) {
-      setBookId(savedBook);
+    if (savedBook && savedBook in BOOKS) {
+      const validBook = savedBook as BookId;
+      setBookId(validBook);
+      setBookConfirmed(true);
       const savedChapter = window.localStorage.getItem(
-        currentChapterKey(savedBook),
+        currentChapterKey(validBook),
       );
-      const meta = BOOKS[savedBook];
+      const meta = BOOKS[validBook];
       const next = savedChapter ? Number(savedChapter) : 1;
       if (Number.isFinite(next) && next >= 1 && next <= meta.totalChapters) {
         setChapterNumber(next);
@@ -2417,7 +2431,7 @@ export default function BibleReadingPage() {
       <div className="brp-canvas">
 
       <section className="brp-hero">
-        <h1>{bookMeta.name}</h1>
+        <h1>{bookConfirmed ? bookMeta.name : "오늘은 어떤 말씀을 읽어볼까요?"}</h1>
       </section>
 
       {/* 우측 컬럼 wrapper — 모바일에선 display: contents 로 layout 영향 0,
@@ -2429,7 +2443,10 @@ export default function BibleReadingPage() {
 
       {/* Row 1: [번역 토글] + [읽기 모드 토글] — 한 줄, 1:1 분할.
           왼쪽: 개역한글 / 어린이 / 원어묵상. 오른쪽: 낭독 / 묵독.
-          두 컨트롤 모두 같은 pill 톤 + 슬라이딩 인디케이터로 시각 톤 통일. */}
+          두 컨트롤 모두 같은 pill 톤 + 슬라이딩 인디케이터로 시각 톤 통일.
+          책 미선택(bookConfirmed=false) 상태에서는 의미가 없는 컨트롤이라 통째로
+          숨겨, "책부터 골라주세요" 라는 시선 흐름을 자연스럽게 유도. */}
+      {bookConfirmed && (
       <section className="brp-top-row" aria-label="번역과 읽기 모드 선택">
         {(() => {
           // 슬라이딩 인디케이터: 활성 버튼의 인덱스/개수를 CSS 변수로 넘겨
@@ -2514,13 +2531,16 @@ export default function BibleReadingPage() {
           </button>
         </div>
       </section>
+      )}
 
       {/* Row 2: [구약 책 드롭다운] + [신약 책 드롭다운] — 한 줄, 1:1 분할.
-          현재 선택된 책이 속하지 않은 쪽 드롭다운은 "구약" / "신약" placeholder 로
-          표시되며(옅은 톤), 옵션을 고르는 즉시 changeBook 으로 전환된다. */}
+          - 첫 방문 등 책 미선택(bookConfirmed=false) 상태: 양쪽 모두 "구약" / "신약"
+            placeholder 로 표시(value=null).
+          - 책 선택 후: 그 책이 속한 쪽만 책 이름 표시, 반대쪽은 placeholder 로 회귀.
+          - 옵션 클릭 시 changeBook → bookConfirmed=true 로 전환. */}
       <section className="brp-top-row" aria-label="성경 책 선택 (구약 / 신약)">
         <Dropdown<BookId>
-          value={bookId}
+          value={bookConfirmed ? bookId : null}
           options={OT_BOOK_IDS.map<DropdownOption<BookId>>((id) => ({
             value: id,
             label: BOOKS[id].name,
@@ -2532,7 +2552,7 @@ export default function BibleReadingPage() {
           size="md"
         />
         <Dropdown<BookId>
-          value={bookId}
+          value={bookConfirmed ? bookId : null}
           options={NT_BOOK_IDS.map<DropdownOption<BookId>>((id) => ({
             value: id,
             label: BOOKS[id].name,
@@ -2545,7 +2565,8 @@ export default function BibleReadingPage() {
         />
       </section>
 
-      {/* Row 3: 장 스위처 */}
+      {/* Row 3: 장 스위처 — 책이 정해진 뒤에만 의미. 책 미선택 시 숨김. */}
+      {bookConfirmed && (
       <section className="brp-toolbar" aria-label="장 선택">
         <div className="brp-chapter-switcher">
           <button type="button" onClick={() => moveChapter(chapterNumber - 1)} aria-label="이전 장">
@@ -2572,7 +2593,9 @@ export default function BibleReadingPage() {
           </button>
         </div>
       </section>
+      )}
 
+      {bookConfirmed && (
       <section
         className="brp-progress-grid"
         aria-label={`${bookMeta.name} 통독 진도`}
@@ -2599,7 +2622,9 @@ export default function BibleReadingPage() {
           ))}
         </div>
       </section>
+      )}
 
+      {bookConfirmed && (
       <section className="brp-prayer" aria-label="오늘의 기도">
         <header className="brp-prayer-header">
           <div className="brp-prayer-heading">
