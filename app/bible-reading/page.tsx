@@ -36,7 +36,26 @@ import SearchOverlay, { type SearchSelection } from "./SearchOverlay";
 //           현재 마태복음 1장만 새 디자인으로 채워져 있다.
 type TranslationKey = "krv" | "kids" | "greek";
 
-type PrayerGradeKey = "lower" | "upper";
+type PrayerGradeKey = "children" | "youth" | "youngadult" | "adult";
+
+// 기도 대상(탭) 순서 + 라벨. 저학년/고학년 2단계에서 4단계로 확장.
+const PRAYER_GRADES: PrayerGradeKey[] = [
+  "children",
+  "youth",
+  "youngadult",
+  "adult",
+];
+const PRAYER_GRADE_LABELS: Record<PrayerGradeKey, string> = {
+  children: "어린이",
+  youth: "청소년",
+  youngadult: "청년",
+  adult: "장년",
+};
+const isPrayerGradeKey = (value: unknown): value is PrayerGradeKey =>
+  value === "children" ||
+  value === "youth" ||
+  value === "youngadult" ||
+  value === "adult";
 
 type PrayerEntry = {
   no: number;
@@ -881,7 +900,7 @@ export default function BibleReadingPage() {
   const [quizQuestions, setQuizQuestions] = useState<QuizQuestion[]>([]);
   const [quizAnswers, setQuizAnswers] = useState<(string | null)[]>([]);
   const [quizSubmitted, setQuizSubmitted] = useState(false);
-  const [prayerGrade, setPrayerGrade] = useState<PrayerGradeKey>("lower");
+  const [prayerGrade, setPrayerGrade] = useState<PrayerGradeKey>("children");
   const [prayerDate, setPrayerDate] = useState<string>(() => getTodayKey());
   const [prayerChecks, setPrayerChecks] = useState<Set<number>>(new Set());
   const [openPrayer, setOpenPrayer] = useState<number | null>(null);
@@ -1936,7 +1955,7 @@ export default function BibleReadingPage() {
 
   useEffect(() => {
     const savedGrade = window.localStorage.getItem(PRAYER_GRADE_KEY);
-    if (savedGrade === "lower" || savedGrade === "upper") {
+    if (isPrayerGradeKey(savedGrade)) {
       setPrayerGrade(savedGrade);
     }
   }, []);
@@ -2667,35 +2686,17 @@ export default function BibleReadingPage() {
             </p>
           </div>
 
-          <div
+          <SlidingToggle
             className="brp-prayer-toggle brp-toggle"
+            ariaLabel="대상 선택"
             role="tablist"
-            aria-label="학년 선택"
-            style={{
-              ["--brp-toggle-count" as string]: 2,
-              ["--brp-toggle-active" as string]: prayerGrade === "upper" ? 1 : 0,
-            } as React.CSSProperties}
-          >
-            <span className="brp-toggle-indicator" aria-hidden="true" />
-            <button
-              type="button"
-              role="tab"
-              aria-selected={prayerGrade === "lower"}
-              className={prayerGrade === "lower" ? "is-active" : ""}
-              onClick={() => handlePrayerGradeChange("lower")}
-            >
-              저학년
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={prayerGrade === "upper"}
-              className={prayerGrade === "upper" ? "is-active" : ""}
-              onClick={() => handlePrayerGradeChange("upper")}
-            >
-              고학년
-            </button>
-          </div>
+            activeKey={prayerGrade}
+            onSelect={handlePrayerGradeChange}
+            items={PRAYER_GRADES.map((key) => ({
+              key,
+              label: PRAYER_GRADE_LABELS[key],
+            }))}
+          />
         </header>
 
         <div className="brp-prayer-bar" aria-hidden="true">
@@ -5028,9 +5029,9 @@ export default function BibleReadingPage() {
         .brp-prayer-no {
           font-size: 12px;
           letter-spacing: 0.12em;
-          color: var(--ink-mute);
+          color: var(--accent);
           font-variant-numeric: tabular-nums;
-          font-weight: 600;
+          font-weight: 700;
         }
 
         .brp-prayer-theme {
@@ -5077,12 +5078,27 @@ export default function BibleReadingPage() {
         }
 
         .brp-prayer-verse {
-          /* 좌측 컬러바 제거 — 대신 본문 흐름과 살짝 떨어뜨려 들여쓴 인용처럼 처리.
-             상단에 옅은 1px 라인 + 작은 캡션 라벨로 에디토리얼 톤. */
+          /* 성경 구절 — 옅은 딥그린 배경 패널. 좌측 상단에 작은 따옴표 포인트. */
+          position: relative;
           margin: 22px 0 0;
-          padding: 18px 0 0;
-          border-top: 1px solid var(--line);
+          padding: 18px 18px 16px 34px;
+          border-radius: var(--radius-md);
+          background: var(--accent-soft);
           color: var(--ink);
+        }
+
+        .brp-prayer-verse::before {
+          content: "“";
+          position: absolute;
+          top: 6px;
+          left: 12px;
+          font-family: Georgia, "Times New Roman", var(--font-noto-serif-kr),
+            serif;
+          font-size: 28px;
+          line-height: 1;
+          color: var(--accent);
+          opacity: 0.55;
+          pointer-events: none;
         }
 
         .brp-prayer-verse p {
@@ -5098,13 +5114,15 @@ export default function BibleReadingPage() {
         }
 
         .brp-prayer-verse cite {
+          /* 구절 박스 안에서 우측 정렬 (박스 패딩만큼 안쪽에 정돈). */
           display: block;
           margin-top: 10px;
+          text-align: right;
           font-style: normal;
-          font-size: 11.5px;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          color: var(--ink-mute);
+          font-size: 12px;
+          letter-spacing: 0.04em;
+          font-weight: 700;
+          color: var(--accent);
         }
 
         .brp-prayer-section {
@@ -5117,8 +5135,18 @@ export default function BibleReadingPage() {
           font-size: 11px;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: var(--ink-mute);
-          font-weight: 600;
+          color: var(--accent);
+          font-weight: 700;
+        }
+
+        /* "따라서 기도해요"(따라하기) 영역 라벨 — 다른 라벨보다 더 또렷하게.
+           위 성경 소제목과 같은 따뜻한 붉은 톤(--accent-warm)으로 강조. */
+        .brp-prayer-text-head .brp-prayer-label {
+          color: var(--accent-warm);
+          font-weight: 800;
+          font-size: 14px;
+          letter-spacing: -0.005em;
+          text-transform: none;
         }
 
         .brp-prayer-think,
@@ -5131,6 +5159,13 @@ export default function BibleReadingPage() {
           overflow-wrap: anywhere;
           min-width: 0;
         }
+
+        /* 생각해 보기 본문 — 좌측 accent 포인트(따라하기 본문은 제외). */
+        .brp-prayer-think {
+          padding-left: 14px;
+          border-left: 3px solid var(--accent-soft);
+        }
+
 
         .brp-prayer-text-head {
           display: flex;
@@ -5798,7 +5833,7 @@ export default function BibleReadingPage() {
             padding: 16px 14px;
           }
           .brp-side > .brp-prayer .brp-prayer-actions {
-            flex-direction: column-reverse;
+            flex-direction: column;
             align-items: stretch;
           }
           .brp-side > .brp-prayer .brp-prayer-mic,
@@ -6213,7 +6248,7 @@ export default function BibleReadingPage() {
           }
 
           .brp-prayer-actions {
-            flex-direction: column-reverse;
+            flex-direction: column;
             align-items: stretch;
           }
 
