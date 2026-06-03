@@ -63,15 +63,15 @@ export default function LoginPage() {
     <main className="au-page">
       <div className="au-topbar">
         <Link href="/bible-reading">← 학생 페이지</Link>
-        <Link href="/signup">계정이 없어요</Link>
+        <Link href="/signup">새 교회 만들기</Link>
       </div>
 
       <div className="au-card">
-        <p className="au-eyebrow">관리자 · 교사 로그인</p>
+        <p className="au-eyebrow">어른 로그인</p>
         <h1>로그인</h1>
         <p className="au-sub">
-          가입한 이메일과 비밀번호로 로그인하면 권한(admin/teacher)에 맞는
-          대시보드로 이동해요.
+          관리자·교사용 로그인입니다. 가입한 이메일과 비밀번호로 들어가면
+          역할에 맞는 화면으로 이동해요.
         </p>
 
         <label className="au-field">
@@ -108,8 +108,9 @@ export default function LoginPage() {
         </button>
 
         <p className="au-foot">
-          새로 시작하려면 <Link href="/signup">관리자 가입</Link>,
-          교사 분은 <Link href="/teacher-signup">교사 가입</Link>
+          처음 시작하시는 분은 <Link href="/signup">새 교회 만들기</Link>.
+          <br />
+          교사는 관리자가 보낸 초대 링크로 가입하세요.
         </p>
       </div>
       <style jsx>{authStyles}</style>

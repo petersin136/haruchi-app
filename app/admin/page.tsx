@@ -11,8 +11,10 @@ import {
 } from "react";
 import { isSupabaseConfigured, getSupabaseClient } from "../lib/supabaseClient";
 import {
-  adminAddTeacher,
+  adminCreateTeacherInvite,
+  adminListTeacherInvites,
   adminResetStudentPin,
+  adminRevokeTeacherInvite,
   assignTeacherToClass,
   createClass,
   createStudent,
@@ -33,6 +35,7 @@ import {
   type ReadingLogRow,
   type StudentRow,
   type TeacherClassRow,
+  type TeacherInviteRow,
 } from "../lib/multitenancy";
 import { BOOKS, BOOK_ORDER, type BookId } from "../bible-reading/books";
 import Wordmark from "../components/Wordmark";
@@ -461,67 +464,240 @@ function TeachersTab({
     [members],
   );
 
-  const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [busy, setBusy] = useState(false);
+  const [invites, setInvites] = useState<TeacherInviteRow[]>([]);
+  const [invitesLoading, setInvitesLoading] = useState(false);
+  const [lastInviteUrl, setLastInviteUrl] = useState<string | null>(null);
 
-  const onInvite = useCallback(async () => {
+  const refreshInvites = useCallback(async () => {
+    setInvitesLoading(true);
+    try {
+      const list = await adminListTeacherInvites();
+      setInvites(list);
+    } catch (e) {
+      onError(e instanceof Error ? e.message : "초대 목록을 불러오지 못했어요.");
+    } finally {
+      setInvitesLoading(false);
+    }
+  }, [onError]);
+
+  useEffect(() => {
+    void refreshInvites();
+  }, [refreshInvites]);
+
+  const buildInviteUrl = useCallback((token: string) => {
+    if (typeof window === "undefined") return `/invite/${token}`;
+    return `${window.location.origin}/invite/${token}`;
+  }, []);
+
+  const onCreateInvite = useCallback(async () => {
     onError(null);
     onInfo(null);
-    if (!email.trim() || !name.trim()) {
-      onError("이메일과 이름을 모두 입력해 주세요.");
+    setLastInviteUrl(null);
+    if (!name.trim()) {
+      onError("교사 이름을 입력해 주세요.");
       return;
     }
     setBusy(true);
     try {
-      await adminAddTeacher({ email, name });
-      setEmail("");
+      const created = await adminCreateTeacherInvite({ name });
+      const url = buildInviteUrl(created.token);
+      setLastInviteUrl(url);
       setName("");
-      onInfo(`교사를 연결했어요: ${email.trim()}`);
+      onInfo(
+        `${name.trim()} 교사용 초대 링크를 만들었어요. 아래 링크를 복사해 카톡으로 보내주세요.`,
+      );
+      await refreshInvites();
       await onChanged();
+      if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(url);
+        } catch {
+          // ignore — UI 의 복사 버튼이 있으므로 fallback 가능.
+        }
+      }
     } catch (e) {
-      onError(e instanceof Error ? e.message : "교사 연결에 실패했어요.");
+      onError(e instanceof Error ? e.message : "초대 발급에 실패했어요.");
     } finally {
       setBusy(false);
     }
-  }, [email, name, onChanged, onError, onInfo]);
+  }, [buildInviteUrl, name, onChanged, onError, onInfo, refreshInvites]);
+
+  const onCopyInvite = useCallback(
+    async (token: string) => {
+      const url = buildInviteUrl(token);
+      try {
+        if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(url);
+          onInfo("초대 링크를 복사했어요.");
+        } else {
+          onInfo(`복사하지 못했어요. 직접 복사해 주세요: ${url}`);
+        }
+      } catch {
+        onInfo(`복사하지 못했어요. 직접 복사해 주세요: ${url}`);
+      }
+    },
+    [buildInviteUrl, onInfo],
+  );
+
+  const onRevokeInvite = useCallback(
+    async (invite: TeacherInviteRow) => {
+      if (!window.confirm(`${invite.name} 교사 초대를 취소할까요?`)) return;
+      onError(null);
+      try {
+        await adminRevokeTeacherInvite(invite.id);
+        onInfo("초대를 취소했어요.");
+        await refreshInvites();
+      } catch (e) {
+        onError(e instanceof Error ? e.message : "초대 취소에 실패했어요.");
+      }
+    },
+    [onError, onInfo, refreshInvites],
+  );
 
   return (
     <>
       <section className="dash-section">
-        <h2>교사 초대 (이메일 연결)</h2>
+        <h2>교사 초대</h2>
         <p className="dash-header-meta" style={{ margin: "0 0 10px" }}>
-          교사 본인이 먼저 <code>/teacher-signup</code> 에서 계정을 만들고,
-          그 이메일을 알려주면 여기서 우리 교회 교사로 연결합니다.
+          교사 이름만 입력하면 초대 링크가 만들어집니다. 그 링크를 카톡으로 보내주면,
+          교사는 링크를 열어 본인 이메일·비밀번호를 정해 한 번에 가입·연결을 마칩니다.
+          (링크는 14일간 유효)
         </p>
         <div className="dash-form">
-          <label>
-            교사 이메일
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="teacher@church.example"
-            />
-          </label>
           <label>
             교사 이름
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") void onCreateInvite();
+              }}
               placeholder="예: 이선생"
             />
           </label>
           <button
             type="button"
             className="dash-primary"
-            disabled={busy || !email || !name}
-            onClick={() => void onInvite()}
+            disabled={busy || !name}
+            onClick={() => void onCreateInvite()}
           >
-            교사 연결
+            초대 링크 만들기
           </button>
         </div>
+
+        {lastInviteUrl ? (
+          <div
+            style={{
+              marginTop: 12,
+              padding: 12,
+              background: "var(--accent-soft)",
+              border: "1px solid var(--accent)",
+              borderRadius: 8,
+              fontSize: 14,
+              wordBreak: "break-all",
+            }}
+          >
+            <strong>방금 만든 초대 링크</strong> (자동으로 복사를 시도했어요)
+            <div style={{ marginTop: 6, fontFamily: "monospace", fontSize: 13 }}>
+              {lastInviteUrl}
+            </div>
+          </div>
+        ) : null}
+
+        <h3 style={{ marginTop: 20, fontSize: 15 }}>
+          대기 중인 초대 ({invites.filter((i) => i.status === "pending").length}개)
+        </h3>
+        {invitesLoading ? (
+          <div className="dash-empty">초대 목록을 불러오는 중…</div>
+        ) : invites.length === 0 ? (
+          <div className="dash-empty">아직 발급한 초대가 없어요.</div>
+        ) : (
+          <ul className="dash-list">
+            {invites.map((inv) => {
+              const url = buildInviteUrl(inv.token);
+              const exp = new Date(inv.expires_at);
+              const expLabel = `${exp.getFullYear()}-${String(exp.getMonth() + 1).padStart(2, "0")}-${String(exp.getDate()).padStart(2, "0")}`;
+              return (
+                <li
+                  key={inv.id}
+                  style={{ flexDirection: "column", alignItems: "stretch" }}
+                >
+                  <div className="dash-row">
+                    <span className="name">{inv.name}</span>
+                    <span className="meta">
+                      {inv.email
+                        ? inv.email
+                        : inv.status === "pending"
+                          ? "이메일 미정 (교사가 가입 시 입력)"
+                          : "이메일 미정"}
+                    </span>
+                    <span className="grow" />
+                    <span
+                      className="meta"
+                      style={{
+                        padding: "2px 8px",
+                        borderRadius: 999,
+                        background:
+                          inv.status === "pending"
+                            ? "var(--accent-soft)"
+                            : inv.status === "used"
+                              ? "var(--surface-alt)"
+                              : "var(--surface-alt)",
+                        color:
+                          inv.status === "pending"
+                            ? "var(--accent)"
+                            : "var(--ink-soft)",
+                        fontSize: 12,
+                      }}
+                    >
+                      {inv.status === "pending"
+                        ? `대기 중 · 만료 ${expLabel}`
+                        : inv.status === "used"
+                          ? "사용됨"
+                          : "만료됨"}
+                    </span>
+                  </div>
+                  {inv.status === "pending" ? (
+                    <>
+                      <div
+                        style={{
+                          marginTop: 6,
+                          fontFamily: "monospace",
+                          fontSize: 12,
+                          color: "var(--ink-soft)",
+                          wordBreak: "break-all",
+                        }}
+                      >
+                        {url}
+                      </div>
+                      <div
+                        style={{ display: "flex", gap: 8, marginTop: 8, flexWrap: "wrap" }}
+                      >
+                        <button
+                          type="button"
+                          className="dash-primary"
+                          onClick={() => void onCopyInvite(inv.token)}
+                        >
+                          링크 복사
+                        </button>
+                        <button
+                          type="button"
+                          className="dash-danger"
+                          onClick={() => void onRevokeInvite(inv)}
+                        >
+                          취소
+                        </button>
+                      </div>
+                    </>
+                  ) : null}
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </section>
 
       <section className="dash-section">

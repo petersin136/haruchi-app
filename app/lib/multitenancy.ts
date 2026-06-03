@@ -66,6 +66,29 @@ export type TeacherClassRow = {
   class_id: string;
 };
 
+export type TeacherInviteStatus = "pending" | "expired" | "used";
+
+export type TeacherInviteRow = {
+  id: string;
+  // v3.1: 발급 시점엔 null, 수락 후 교사가 입력한 이메일이 채워짐.
+  email: string | null;
+  name: string;
+  token: string;
+  expires_at: string;
+  accepted_at: string | null;
+  created_at: string;
+  status: TeacherInviteStatus;
+};
+
+export type TeacherInvitePeek = {
+  church_name: string | null;
+  // v3.1: 카톡 모델에서는 발급 시점에 null 이므로 항상 null 가능.
+  email: string | null;
+  name: string | null;
+  valid: boolean;
+  reason: string | null;
+};
+
 export type ReadingLogRow = {
   id: string;
   church_id: string;
@@ -372,6 +395,8 @@ export async function listTeacherAssignments(): Promise<TeacherClassRow[]> {
   return (data ?? []) as TeacherClassRow[];
 }
 
+// [DEPRECATED v3] 교사 초대 링크(adminCreateTeacherInvite) 로 대체됨.
+// 호환을 위해 남겨두지만 새 UI 에서는 호출하지 않는다.
 export async function adminAddTeacher(args: {
   email: string;
   name: string;
@@ -382,6 +407,66 @@ export async function adminAddTeacher(args: {
     p_email: args.email.trim(),
     p_name: args.name.trim(),
   });
+  if (error) throw error;
+  return data as string;
+}
+
+// -----------------------------------------------------------------------------
+// v3: 교사 초대 링크 — 관리자가 발급 → 교사가 /invite/[token] 으로 한 번에 가입+연결.
+// -----------------------------------------------------------------------------
+export type CreatedTeacherInvite = {
+  invite_id: string;
+  token: string;
+  expires_at: string;
+};
+
+// v3.1 (카톡 공유 모델): 이름만 받아 링크를 발급. 이메일은 교사가 수락 시 자기 것 입력.
+export async function adminCreateTeacherInvite(args: {
+  name: string;
+}): Promise<CreatedTeacherInvite> {
+  const supabase = getSupabaseClient();
+  if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
+  const { data, error } = await supabase.rpc("br_admin_create_teacher_invite", {
+    p_name: args.name.trim(),
+  });
+  if (error) throw error;
+  const row = Array.isArray(data) ? data[0] : data;
+  if (!row) throw new Error("초대 발급 응답이 비었어요.");
+  return row as CreatedTeacherInvite;
+}
+
+export async function adminListTeacherInvites(): Promise<TeacherInviteRow[]> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return [];
+  const { data, error } = await supabase.rpc("br_admin_list_teacher_invites");
+  if (error) throw error;
+  return (data ?? []) as TeacherInviteRow[];
+}
+
+export async function adminRevokeTeacherInvite(inviteId: string): Promise<boolean> {
+  const supabase = getSupabaseClient();
+  if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
+  const { data, error } = await supabase.rpc("br_admin_revoke_teacher_invite", {
+    p_invite_id: inviteId,
+  });
+  if (error) throw error;
+  return data === true;
+}
+
+// /invite/[token] 페이지가 SSR 환경에서도 호출할 수 있도록 익명 안전.
+export async function peekTeacherInvite(token: string): Promise<TeacherInvitePeek | null> {
+  const supabase = getSupabaseClient();
+  if (!supabase) return null;
+  const { data, error } = await supabase.rpc("br_peek_teacher_invite", { p_token: token });
+  if (error) throw error;
+  const row = Array.isArray(data) ? data[0] : data;
+  return (row ?? null) as TeacherInvitePeek | null;
+}
+
+export async function acceptTeacherInvite(token: string): Promise<string> {
+  const supabase = getSupabaseClient();
+  if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
+  const { data, error } = await supabase.rpc("br_accept_teacher_invite", { p_token: token });
   if (error) throw error;
   return data as string;
 }

@@ -2360,14 +2360,11 @@ export default function BibleReadingPage() {
               className="brp-nav-link brp-nav-text-link"
               onClick={() => identityRef.current?.promptIdentify()}
             >
-              Login
+              학생 선택
             </button>
           ) : null}
-          <a className="brp-nav-link brp-nav-text-link" href="/signup">
-            Join us
-          </a>
           <a className="brp-nav-link brp-nav-text-link" href="/login">
-            Admin
+            어른 로그인
           </a>
         </nav>
 
@@ -2422,19 +2419,9 @@ export default function BibleReadingPage() {
                 <span className="brp-mobile-menu-icon" aria-hidden="true">
                   <span className="brp-mobile-menu-bullet" />
                 </span>
-                <span>Login</span>
+                <span>학생 선택</span>
               </button>
             ) : null}
-            <a
-              className="brp-mobile-menu-item"
-              href="/signup"
-              onClick={() => setNavMenuOpen(false)}
-            >
-              <span className="brp-mobile-menu-icon" aria-hidden="true">
-                <span className="brp-mobile-menu-bullet" />
-              </span>
-              <span>Join us</span>
-            </a>
             <a
               className="brp-mobile-menu-item"
               href="/login"
@@ -2443,7 +2430,7 @@ export default function BibleReadingPage() {
               <span className="brp-mobile-menu-icon" aria-hidden="true">
                 <span className="brp-mobile-menu-bullet" />
               </span>
-              <span>Admin</span>
+              <span>어른 로그인</span>
             </a>
             <span className="brp-mobile-menu-divider" aria-hidden="true" />
             <a

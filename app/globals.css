@@ -379,7 +379,7 @@ body::-webkit-scrollbar {
   background: var(--surface-alt);
 }
 /* 카드:
- * - `margin: auto` 로 짧은 페이지(/login, /teacher-signup)는 세로 중앙 정렬.
+ * - `margin: auto` 로 짧은 페이지(/login, /invite)는 세로 중앙 정렬.
  *   .au-page 가 `display: flex; flex-direction: column; min-height: 100vh` 라
  *   남는 공간이 auto 로 균등 분배됨.
  * - 컨텐츠가 viewport 보다 큰 페이지(/privacy, /dpa)는 auto 가 0 으로 resolve,
@@ -818,6 +818,87 @@ body::-webkit-scrollbar {
   color: var(--ink);
   cursor: pointer;
 }
+
+/* ---- 마스터 동의 카드 + 펼치기 패널 (v3 단순화) ----
+   "모두 동의합니다" 한 번에 5개를 토글하는 큰 체크 카드.
+   하단의 "자세한 항목 보기" 버튼으로 5개 항목을 펼칠 수 있다.
+   접힌 상태에서도 5개 항목의 boolean 은 그대로 보내져 법적 효력 유지. */
+.sg-consent-master {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.sg-consent-master.is-checked {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.sg-consent-master input {
+  margin-top: 2px;
+  width: 22px;
+  height: 22px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.sg-consent-master-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sg-consent-master-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.sg-consent-master-sub {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+.sg-consent-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--space-3);
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  letter-spacing: 0.01em;
+}
+.sg-consent-toggle:hover {
+  color: var(--ink);
+}
+.sg-consent-toggle-chevron {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 11px;
+  line-height: 1;
+}
+.sg-consent-toggle.is-open .sg-consent-toggle-chevron {
+  transform: rotate(180deg);
+}
+.sg-consent-details {
+  margin-top: var(--space-2);
+  padding: var(--space-3);
+  background: var(--surface-alt);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+}
+.sg-consent-details > .sg-consent-list {
+  margin-top: var(--space-2);
+}
+
 .sg-inline-link {
   color: var(--ink);
   font-weight: 600;

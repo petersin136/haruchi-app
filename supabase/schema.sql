@@ -11,6 +11,7 @@
 
 -- 1) 기존 객체 정리 ----------------------------------------------------------
 drop table if exists public.br_reading_logs    cascade;
+drop table if exists public.br_teacher_invites cascade;
 drop table if exists public.br_students        cascade;
 drop table if exists public.br_teacher_classes cascade;
 drop table if exists public.br_classes         cascade;
@@ -25,6 +26,12 @@ drop function if exists public.br_complete_chapter(uuid, text, text, integer, te
 drop function if exists public.br_list_student_chapters(uuid, text, text);
 drop function if exists public.br_admin_add_teacher(text, text);
 drop function if exists public.br_admin_reset_student_pin(uuid);
+drop function if exists public.br_admin_create_teacher_invite(text, text);
+drop function if exists public.br_admin_create_teacher_invite(text);
+drop function if exists public.br_peek_teacher_invite(text);
+drop function if exists public.br_accept_teacher_invite(text);
+drop function if exists public.br_admin_revoke_teacher_invite(uuid);
+drop function if exists public.br_admin_list_teacher_invites();
 -- 옛 시그니처(v2): br_list_students(p_class_id uuid). v2.2 에서 church_id 동반 검증으로 교체.
 drop function if exists public.br_list_students(uuid);
 drop function if exists public.br_list_students(uuid, uuid);
@@ -109,6 +116,25 @@ create table public.br_students (
 );
 create index br_students_church_idx on public.br_students(church_id);
 create index br_students_class_idx  on public.br_students(class_id);
+
+-- 2-6.1) 교사 초대 (v3.1, 2026-06-04 — 카톡 공유 링크 모델)
+-- 관리자가 이름만 입력해 링크를 발급 → 교사는 링크를 열어 이메일/비밀번호를 직접 정해 가입.
+-- email 컬럼은 nullable. 발급 시점에는 null, 수락 시점에 호출자의 auth.users.email 을 기록(사후 추적용).
+-- token 컬럼은 admin 만 select 가능(RLS). 익명은 RPC(br_peek_teacher_invite)로만 토큰을 검증.
+create table public.br_teacher_invites (
+  id           uuid primary key default gen_random_uuid(),
+  church_id    uuid not null references public.br_churches(id) on delete cascade,
+  token        text not null unique,
+  email        text,
+  name         text not null,
+  created_by   uuid not null references public.br_church_members(id) on delete cascade,
+  expires_at   timestamptz not null default (now() + interval '14 days'),
+  accepted_at  timestamptz,
+  accepted_by  uuid references auth.users(id) on delete set null,
+  created_at   timestamptz not null default now()
+);
+create index br_teacher_invites_church_idx on public.br_teacher_invites(church_id);
+create index br_teacher_invites_token_idx  on public.br_teacher_invites(token);
 
 -- 2-6) 읽기 기록
 create table public.br_reading_logs (
@@ -267,6 +293,7 @@ alter table public.br_teacher_classes enable row level security;
 alter table public.br_classes         enable row level security;
 alter table public.br_students        enable row level security;
 alter table public.br_reading_logs    enable row level security;
+alter table public.br_teacher_invites enable row level security;
 
 -- =============================================================================
 -- 6) 컬럼/테이블 권한
@@ -304,6 +331,10 @@ revoke all on public.br_reading_logs from anon, authenticated;
 -- anon 직접 쓰기 권한 없음(RPC 전용). 교사/관리자는 직접 조회/관리 가능.
 grant select               on public.br_reading_logs to authenticated;
 grant insert, update, delete on public.br_reading_logs to authenticated;
+
+-- br_teacher_invites: 직접 쓰기는 모두 RPC 경유. select 도 admin 만 (RLS 정책).
+revoke all on public.br_teacher_invites from anon, authenticated;
+grant select on public.br_teacher_invites to authenticated;
 
 -- =============================================================================
 -- 7) RLS 정책
@@ -385,6 +416,11 @@ create policy br_reading_logs_write on public.br_reading_logs for all to authent
          and (public.br_current_role() = 'admin' or public.br_can_access_class(class_id)))
   with check (church_id = public.br_current_church_id()
          and (public.br_current_role() = 'admin' or public.br_can_access_class(class_id)));
+
+-- 7-7) br_teacher_invites (admin 만 select; 쓰기는 모두 RPC)
+drop policy if exists br_teacher_invites_admin_select on public.br_teacher_invites;
+create policy br_teacher_invites_admin_select on public.br_teacher_invites for select to authenticated
+  using (church_id = public.br_current_church_id() and public.br_current_role() = 'admin');
 
 -- =============================================================================
 -- 8) 학생 PIN RPC
@@ -599,8 +635,10 @@ end;
 
 $$;
 
--- (B) 관리자가 이메일로 교사를 자기 교회에 연결.
---     사전 조건: 교사 본인이 /teacher-signup 으로 auth.users 행을 먼저 만들어 둠.
+-- (B) [DEPRECATED v3] 관리자가 이메일로 교사를 자기 교회에 연결.
+--     v3 (2026-06-04) 부터는 br_admin_create_teacher_invite (초대 링크) 흐름으로 대체됨.
+--     본 함수는 마이그레이션 호환을 위해 남겨두지만, 신규 UI 에서는 호출하지 않는다.
+--     향후 정리 시 drop 예정.
 create or replace function public.br_admin_add_teacher(
   p_email text,
   p_name  text
@@ -623,7 +661,7 @@ begin
     limit 1;
 
   if v_uid is null then
-    raise exception '해당 이메일로 가입된 사용자가 없습니다. 먼저 /teacher-signup 에서 가입을 부탁해 주세요.';
+    raise exception '해당 이메일로 가입된 사용자가 없습니다. 초대 링크를 보내주세요.';
   end if;
 
   if exists (select 1 from public.br_church_members where user_id = v_uid) then
@@ -634,6 +672,129 @@ begin
     values (v_church, v_uid, 'teacher', btrim(p_name))
     returning id into v_new_id;
   return v_new_id;
+end;
+
+$$;
+
+-- (D) v3.1 — 교사 초대 링크 RPC 5종 (카톡 공유 모델). 자세한 사양은
+--     supabase/migrations/2026-06-04_v3_1_teacher_invites_kakao.sql 참고.
+create or replace function public.br_admin_create_teacher_invite(
+  p_name text
+) returns table (invite_id uuid, token text, expires_at timestamptz)
+language plpgsql security definer set search_path = public, extensions as $$
+declare
+  v_church uuid := public.br_current_church_id();
+  v_role   text := public.br_current_role();
+  v_me     uuid;
+  v_token  text;
+  v_id     uuid;
+  v_exp    timestamptz;
+begin
+  if v_church is null then raise exception 'not in a church'; end if;
+  if v_role   <> 'admin' then raise exception 'admin only'; end if;
+  if p_name is null or btrim(p_name) = '' then raise exception 'name required'; end if;
+  select id into v_me from public.br_church_members
+   where user_id = auth.uid() and church_id = v_church limit 1;
+  v_token := encode(gen_random_bytes(24), 'hex');
+  v_exp   := now() + interval '14 days';
+  insert into public.br_teacher_invites
+      (church_id, token, email, name, created_by, expires_at)
+    values (v_church, v_token, null, btrim(p_name), v_me, v_exp)
+    returning id into v_id;
+  return query select v_id, v_token, v_exp;
+end;
+
+$$;
+
+create or replace function public.br_peek_teacher_invite(p_token text)
+returns table (church_name text, email text, name text, valid boolean, reason text)
+language plpgsql stable security definer set search_path = public as $$
+declare v_inv record; v_church_name text;
+begin
+  if p_token is null or btrim(p_token) = '' then
+    return query select null::text, null::text, null::text, false, 'invalid'::text;
+    return;
+  end if;
+  select * into v_inv from public.br_teacher_invites where token = p_token;
+  if not found then
+    return query select null::text, null::text, null::text, false, 'invalid'::text;
+    return;
+  end if;
+  if v_inv.accepted_at is not null then
+    return query select null::text, v_inv.email, v_inv.name, false, 'used'::text;
+    return;
+  end if;
+  if v_inv.expires_at <= now() then
+    return query select null::text, v_inv.email, v_inv.name, false, 'expired'::text;
+    return;
+  end if;
+  select c.name into v_church_name from public.br_churches c where c.id = v_inv.church_id;
+  return query select v_church_name, v_inv.email, v_inv.name, true, null::text;
+end;
+
+$$;
+
+create or replace function public.br_accept_teacher_invite(p_token text)
+returns uuid
+language plpgsql security definer set search_path = public, auth as $$
+declare v_uid uuid := auth.uid(); v_inv record; v_email text; v_member uuid;
+begin
+  if v_uid is null then raise exception 'not authenticated'; end if;
+  if p_token is null or btrim(p_token) = '' then raise exception 'token required'; end if;
+  select * into v_inv from public.br_teacher_invites where token = p_token for update;
+  if not found then raise exception '유효하지 않은 초대 링크입니다.'; end if;
+  if v_inv.accepted_at is not null then raise exception '이미 사용된 초대 링크입니다.'; end if;
+  if v_inv.expires_at <= now() then raise exception '만료된 초대 링크입니다.'; end if;
+  if exists (select 1 from public.br_church_members where user_id = v_uid) then
+    raise exception '이미 교회에 소속된 사용자입니다.';
+  end if;
+  -- 호출자의 실제 이메일을 사후 추적용으로 기록.
+  select lower(email) into v_email from auth.users where id = v_uid;
+  insert into public.br_church_members (church_id, user_id, role, name)
+    values (v_inv.church_id, v_uid, 'teacher', v_inv.name)
+    returning id into v_member;
+  update public.br_teacher_invites
+     set accepted_at = now(),
+         accepted_by = v_uid,
+         email = coalesce(v_email, v_inv.email)
+   where id = v_inv.id;
+  return v_member;
+end;
+
+$$;
+
+create or replace function public.br_admin_revoke_teacher_invite(p_invite_id uuid)
+returns boolean
+language plpgsql security definer set search_path = public as $$
+declare v_church uuid := public.br_current_church_id(); v_role text := public.br_current_role();
+begin
+  if v_church is null then raise exception 'not in a church'; end if;
+  if v_role   <> 'admin' then raise exception 'admin only'; end if;
+  delete from public.br_teacher_invites
+    where id = p_invite_id and church_id = v_church and accepted_at is null;
+  return found;
+end;
+
+$$;
+
+create or replace function public.br_admin_list_teacher_invites()
+returns table (
+  id uuid, email text, name text, token text,
+  expires_at timestamptz, accepted_at timestamptz, created_at timestamptz, status text
+)
+language plpgsql stable security definer set search_path = public as $$
+declare v_church uuid := public.br_current_church_id(); v_role text := public.br_current_role();
+begin
+  if v_church is null then return; end if;
+  if v_role   <> 'admin' then return; end if;
+  return query
+    select i.id, i.email, i.name, i.token, i.expires_at, i.accepted_at, i.created_at,
+           case when i.accepted_at is not null then 'used'
+                when i.expires_at  <= now()   then 'expired'
+                else 'pending' end as status
+      from public.br_teacher_invites i
+     where i.church_id = v_church
+     order by i.created_at desc;
 end;
 
 $$;
@@ -671,3 +832,8 @@ grant execute on function public.br_list_student_chapters(uuid, text, text)     
 grant execute on function public.br_signup_church(text, text, jsonb, text, text)         to authenticated;
 grant execute on function public.br_admin_add_teacher(text, text)                        to authenticated;
 grant execute on function public.br_admin_reset_student_pin(uuid)                        to authenticated;
+grant execute on function public.br_admin_create_teacher_invite(text)                    to authenticated;
+grant execute on function public.br_peek_teacher_invite(text)                            to anon, authenticated;
+grant execute on function public.br_accept_teacher_invite(text)                          to authenticated;
+grant execute on function public.br_admin_revoke_teacher_invite(uuid)                    to authenticated;
+grant execute on function public.br_admin_list_teacher_invites()                         to authenticated;

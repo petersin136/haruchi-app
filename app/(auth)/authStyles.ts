@@ -1,4 +1,4 @@
-// /signup, /login, /teacher-signup, /privacy, /dpa 등 어른용 인증 화면 공통 스타일.
+// /signup, /login, /invite, /privacy, /dpa 등 어른용 인증 화면 공통 스타일.
 // 값은 모두 app/styles/tokens.ts (= globals.css :root) 의 CSS 변수를 참조.
 // 페이지별 추가 톤은 각 파일 안의 <style jsx> 블록에서 따로 정의.
 export const authStyles = `

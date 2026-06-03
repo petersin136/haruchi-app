@@ -124,6 +124,27 @@ export default function SignupPage() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
+  // 약관 자세히 보기 — 기본은 접힘. 펼치면 5개 항목을 개별로 볼 수 있다.
+  const [consentExpanded, setConsentExpanded] = useState(false);
+
+  const toggleAllConsent = useCallback(() => {
+    setConsent((prev) => {
+      const allOn =
+        prev.controller_acknowledged &&
+        prev.minor_consent &&
+        prev.purpose_limited &&
+        prev.privacy_reviewed &&
+        prev.dpa_agreed;
+      const next = !allOn;
+      return {
+        controller_acknowledged: next,
+        minor_consent: next,
+        purpose_limited: next,
+        privacy_reviewed: next,
+        dpa_agreed: next,
+      };
+    });
+  }, []);
 
   // 이미 로그인되어 있고 멤버십까지 있으면 바로 대시보드로.
   useEffect(() => {
@@ -293,7 +314,7 @@ export default function SignupPage() {
             </button>
 
             <p className="au-foot sg-foot">
-              교사 분이신가요? <Link href="/teacher-signup">교사 가입</Link>
+              교사는 관리자가 보낸 초대 링크로 가입하세요.
             </p>
           </>
         ) : (
@@ -327,44 +348,85 @@ export default function SignupPage() {
 
             <section className="sg-consent">
               <header className="sg-consent-head">
-                <h2 className="sg-consent-title">필수 동의 5개</h2>
+                <h2 className="sg-consent-title">개인정보 동의</h2>
                 <p className="sg-consent-intro">
                   우리 교회가 이용자(특히 어린이)의 개인정보 수집·이용 동의를
-                  확보할 1차 책임자이며, 본 서비스 제공자(당사)에게 데이터 처리를
-                  위탁한다는 사실을 분명히 확인해 주세요. 동의 사실은 가입 시점에
+                  확보할 책임자이며, 본 서비스 제공자에게 데이터 처리를
+                  위탁한다는 사실을 확인해 주세요. 동의 사실은 가입 시점에
                   증빙으로 기록됩니다.
-                </p>
-                <p className="sg-consent-version">
-                  약관 버전 <code>{CONSENT_VERSION}</code>
                 </p>
               </header>
 
-              <ol className="sg-consent-list">
-                {CONSENT_ITEMS.map((item, idx) => {
-                  const id = `signup-consent-${item.key}`;
-                  const checked = consent[item.key];
-                  return (
-                    <li
-                      key={item.key}
-                      className={`sg-consent-item ${checked ? "is-checked" : ""}`}
-                    >
-                      <span className="sg-consent-num">{idx + 1}</span>
-                      <input
-                        id={id}
-                        type="checkbox"
-                        checked={checked}
-                        onChange={(e) =>
-                          setConsent((prev) => ({
-                            ...prev,
-                            [item.key]: e.target.checked,
-                          }))
-                        }
-                      />
-                      <label htmlFor={id}>{item.label}</label>
-                    </li>
-                  );
-                })}
-              </ol>
+              <div
+                className={`sg-consent-master ${allConsentChecked ? "is-checked" : ""}`}
+                onClick={toggleAllConsent}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === " " || e.key === "Enter") {
+                    e.preventDefault();
+                    toggleAllConsent();
+                  }
+                }}
+              >
+                <input
+                  type="checkbox"
+                  checked={allConsentChecked}
+                  onChange={toggleAllConsent}
+                  onClick={(e) => e.stopPropagation()}
+                  aria-label="모든 필수 동의 항목에 동의합니다"
+                />
+                <div className="sg-consent-master-body">
+                  <span className="sg-consent-master-title">
+                    5개 필수 항목에 모두 동의합니다
+                  </span>
+                  <span className="sg-consent-master-sub">
+                    개인정보 컨트롤러 책임 · 미성년자 보호자 동의 · 목적 한정 ·
+                    개인정보처리방침 · DPA (약관 v{CONSENT_VERSION})
+                  </span>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                className={`sg-consent-toggle ${consentExpanded ? "is-open" : ""}`}
+                onClick={() => setConsentExpanded((v) => !v)}
+                aria-expanded={consentExpanded}
+              >
+                <span>{consentExpanded ? "자세한 항목 접기" : "5개 항목 자세히 보기"}</span>
+                <span className="sg-consent-toggle-chevron" aria-hidden="true">▾</span>
+              </button>
+
+              {consentExpanded ? (
+                <div className="sg-consent-details">
+                  <ol className="sg-consent-list">
+                    {CONSENT_ITEMS.map((item, idx) => {
+                      const id = `signup-consent-${item.key}`;
+                      const checked = consent[item.key];
+                      return (
+                        <li
+                          key={item.key}
+                          className={`sg-consent-item ${checked ? "is-checked" : ""}`}
+                        >
+                          <span className="sg-consent-num">{idx + 1}</span>
+                          <input
+                            id={id}
+                            type="checkbox"
+                            checked={checked}
+                            onChange={(e) =>
+                              setConsent((prev) => ({
+                                ...prev,
+                                [item.key]: e.target.checked,
+                              }))
+                            }
+                          />
+                          <label htmlFor={id}>{item.label}</label>
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </div>
+              ) : null}
             </section>
 
             {error ? <div className="au-error">{error}</div> : null}
