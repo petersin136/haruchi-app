@@ -333,6 +333,9 @@ export default function SignupPage() {
                   value={churchName}
                   onChange={(e) => setChurchName(e.target.value)}
                   placeholder="예: 가나안교회"
+                  autoComplete="organization"
+                  spellCheck={false}
+                  maxLength={60}
                 />
               </label>
               <label className="au-field sg-field">
@@ -342,7 +345,19 @@ export default function SignupPage() {
                   value={adminName}
                   onChange={(e) => setAdminName(e.target.value)}
                   placeholder="예: 김관리자"
+                  autoComplete="name"
+                  spellCheck={false}
+                  maxLength={30}
                 />
+                <small
+                  style={{
+                    marginTop: 6,
+                    fontSize: 12,
+                    color: "var(--ink-faint)",
+                  }}
+                >
+                  표시용 이름이에요. 비밀번호와 다른 값을 입력해 주세요.
+                </small>
               </label>
             </div>
 

@@ -28,6 +28,7 @@ import {
   removeChurchMember,
   unassignTeacherFromClass,
   updateClass,
+  updateMemberName,
   updateStudent,
   useAdultSession,
   type ClassRow,
@@ -196,6 +197,7 @@ export default function AdminPage() {
             classes={classes}
             members={members}
             assignments={assignments}
+            currentMemberId={membership.id}
             onChanged={reloadAll}
             onError={setError}
             onInfo={setInfo}
@@ -444,6 +446,7 @@ function TeachersTab({
   classes,
   members,
   assignments,
+  currentMemberId,
   onChanged,
   onError,
   onInfo,
@@ -451,6 +454,7 @@ function TeachersTab({
   classes: ClassRow[];
   members: MemberRow[];
   assignments: TeacherClassRow[];
+  currentMemberId: string;
   onChanged: () => Promise<void>;
   onError: (msg: string | null) => void;
   onInfo: (msg: string | null) => void;
@@ -724,14 +728,129 @@ function TeachersTab({
         <h2>관리자 ({admins.length}명)</h2>
         <ul className="dash-list">
           {admins.map((a) => (
-            <li key={a.id}>
-              <span className="name">{a.name}</span>
-              <span className="meta">관리자</span>
-            </li>
+            <AdminRowItem
+              key={a.id}
+              admin={a}
+              isSelf={a.id === currentMemberId}
+              onChanged={onChanged}
+              onError={onError}
+              onInfo={onInfo}
+            />
           ))}
         </ul>
       </section>
     </>
+  );
+}
+
+// 관리자 행 — 본인 행은 inline 이름 수정 가능. 비밀번호를 실수로 이름에 넣은 경우 등을
+// 본인이 직접 고칠 수 있게 함.
+function AdminRowItem({
+  admin,
+  isSelf,
+  onChanged,
+  onError,
+  onInfo,
+}: {
+  admin: MemberRow;
+  isSelf: boolean;
+  onChanged: () => Promise<void>;
+  onError: (msg: string | null) => void;
+  onInfo: (msg: string | null) => void;
+}) {
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(admin.name);
+  const [busy, setBusy] = useState(false);
+
+  const onSave = useCallback(async () => {
+    onError(null);
+    onInfo(null);
+    if (!draft.trim()) {
+      onError("이름을 입력해 주세요.");
+      return;
+    }
+    setBusy(true);
+    try {
+      await updateMemberName({ memberId: admin.id, name: draft });
+      setEditing(false);
+      onInfo("이름을 바꿨어요.");
+      await onChanged();
+    } catch (e) {
+      onError(e instanceof Error ? e.message : "이름 수정에 실패했어요.");
+    } finally {
+      setBusy(false);
+    }
+  }, [admin.id, draft, onChanged, onError, onInfo]);
+
+  if (editing) {
+    return (
+      <li style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+        <input
+          type="text"
+          value={draft}
+          onChange={(e) => setDraft(e.target.value)}
+          autoComplete="name"
+          spellCheck={false}
+          maxLength={30}
+          autoFocus
+          onKeyDown={(e) => {
+            if (e.key === "Enter") void onSave();
+            if (e.key === "Escape") {
+              setDraft(admin.name);
+              setEditing(false);
+            }
+          }}
+          style={{
+            flex: "1 1 200px",
+            padding: "8px 10px",
+            border: "1px solid var(--line-strong)",
+            borderRadius: 6,
+            fontSize: 14,
+          }}
+        />
+        <button
+          type="button"
+          className="dash-primary"
+          disabled={busy || !draft.trim()}
+          onClick={() => void onSave()}
+        >
+          저장
+        </button>
+        <button
+          type="button"
+          className="dash-ghost"
+          disabled={busy}
+          onClick={() => {
+            setDraft(admin.name);
+            setEditing(false);
+          }}
+        >
+          취소
+        </button>
+      </li>
+    );
+  }
+
+  return (
+    <li>
+      <span className="name">{admin.name}</span>
+      <span className="meta">관리자{isSelf ? " · 본인" : ""}</span>
+      {isSelf ? (
+        <>
+          <span className="grow" />
+          <button
+            type="button"
+            className="dash-ghost"
+            onClick={() => {
+              setDraft(admin.name);
+              setEditing(true);
+            }}
+          >
+            이름 수정
+          </button>
+        </>
+      ) : null}
+    </li>
   );
 }
 

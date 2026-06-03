@@ -481,6 +481,22 @@ export async function removeChurchMember(memberId: string): Promise<void> {
   if (error) throw error;
 }
 
+// 본인 또는 같은 교회 멤버의 표시 이름 변경 (admin 권한 필요 — RLS 가 강제).
+export async function updateMemberName(args: {
+  memberId: string;
+  name: string;
+}): Promise<void> {
+  const supabase = getSupabaseClient();
+  if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
+  const trimmed = args.name.trim();
+  if (!trimmed) throw new Error("이름을 입력해 주세요.");
+  const { error } = await supabase
+    .from("br_church_members")
+    .update({ name: trimmed })
+    .eq("id", args.memberId);
+  if (error) throw error;
+}
+
 export async function assignTeacherToClass(args: {
   churchMemberId: string;
   classId: string;
