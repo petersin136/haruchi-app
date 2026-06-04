@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * LayeredBibleViewer — "성경 공부" 다중 역본 레이어 뷰어 (로마서 1장 전용, 독립 기능).
+ * LayeredBibleViewer — "성경 공부" 다중 역본 레이어 뷰어 (신약 27권, 모든 장).
  *
  * 한 절을 기준으로, 사용자가 켠 역본(레이어)들이 그 절 아래 layerOrder 순서대로
  * 층층이 쌓여 보인다. 영어만 켜면 한 줄, 영어+한글이면 두 줄, 헬라어까지 켜면
@@ -17,7 +17,10 @@
  *   - 절마다 복사 버튼: "현재 켜둔 레이어"를 사용자 순서대로 한 절씩 깔끔한
  *                       텍스트로 복사. 헬라어는 단어 블록이 아니라 원문 한 줄.
  *
- * 이 컴포넌트와 데이터(../romans1.json)는 기존 헬라어 뷰어와 완전히 분리된 새 파일.
+ * 데이터:
+ *   - bookId 에 따라 `app/bible-study/data/<bookId>.json` 을 lazy import.
+ *   - 한 책의 모든 장이 한 파일에 들어 있어, 같은 책의 장 전환은 즉시 가능.
+ *   - 책을 바꾸면 새 파일을 fetch (Next.js 가 자동 chunk 분리).
  */
 
 import {
@@ -28,10 +31,38 @@ import {
   useState,
   type PointerEvent as ReactPointerEvent,
 } from "react";
-import rawData from "../romans1.json";
 
 // ── 타입 ────────────────────────────────────────────────────────────────────
 type LayerId = "english" | "krv" | "greek" | "greekpara" | "kids";
+
+export type StudyBookId =
+  | "matthew"
+  | "mark"
+  | "luke"
+  | "john"
+  | "acts"
+  | "romans"
+  | "corinthians1"
+  | "corinthians2"
+  | "galatians"
+  | "ephesians"
+  | "philippians"
+  | "colossians"
+  | "thessalonians1"
+  | "thessalonians2"
+  | "timothy1"
+  | "timothy2"
+  | "titus"
+  | "philemon"
+  | "hebrews"
+  | "james"
+  | "peter1"
+  | "peter2"
+  | "john1"
+  | "john2"
+  | "john3"
+  | "jude"
+  | "revelation";
 
 type GreekWord = {
   word: string;
@@ -51,20 +82,64 @@ type AnyLayer = TextLayer | WordblockLayer;
 
 type Verse = {
   ref: string;
-  layers: Record<LayerId, AnyLayer>;
+  layers: Partial<Record<LayerId, AnyLayer>>;
 };
 
-type StudyData = {
-  book: string;
+type StudyChapter = {
   chapter: number;
+  verses: Verse[];
+};
+
+type StudyBookData = {
+  book: string;
+  bookId: StudyBookId;
   layerOrder: LayerId[];
   layerLabels: Record<LayerId, string>;
   defaultOn: LayerId[];
   sources?: Partial<Record<LayerId, string>>;
-  verses: Verse[];
+  chapters: StudyChapter[];
 };
 
-const data = rawData as unknown as StudyData;
+// 책별 데이터 — public/bible-study/data/<bookId>.json 을 fetch 로 받아온다.
+//   webpack 이 27개 큰 JSON 을 정적 chunk 로 만들면 dev/build 메모리가 폭발하므로
+//   런타임 fetch + 브라우저 캐시로 우회한다(서비스 워커가 더 길게 캐시 가능).
+//
+// 한 번 받은 책은 모듈 레벨 캐시에 보관해 같은 책의 장 전환은 fetch 없이 즉시.
+const bookCache = new Map<StudyBookId, Promise<StudyBookData>>();
+
+async function loadStudyBook(book: StudyBookId): Promise<StudyBookData> {
+  const cached = bookCache.get(book);
+  if (cached) return cached;
+  const p = (async () => {
+    const res = await fetch(`/bible-study/data/${book}.json`, {
+      cache: "force-cache",
+    });
+    if (!res.ok)
+      throw new Error(`HTTP ${res.status} — ${book} 데이터 없음`);
+    return (await res.json()) as StudyBookData;
+  })();
+  bookCache.set(book, p);
+  // fetch 가 실패해도 다음 시도가 가능하도록 실패 시 캐시 무효화.
+  p.catch(() => bookCache.delete(book));
+  return p;
+}
+
+// 정본(폴백) 라벨/순서. 데이터 파일이 채워두지 않았을 때도 동일 기본값.
+const DEFAULT_LAYER_ORDER: LayerId[] = [
+  "english",
+  "krv",
+  "greek",
+  "greekpara",
+  "kids",
+];
+const DEFAULT_LAYER_LABELS: Record<LayerId, string> = {
+  english: "영어(WEB)",
+  krv: "개역한글",
+  greek: "헬라어",
+  greekpara: "헬라 의역",
+  kids: "어린이 의역",
+};
+const DEFAULT_ON: LayerId[] = ["english", "krv"];
 
 // 레이어별 표시 메타 — 색상 점 + 짧은 라벨.
 const LAYER_META: Record<LayerId, { dot: string; short: string }> = {
@@ -76,8 +151,9 @@ const LAYER_META: Record<LayerId, { dot: string; short: string }> = {
 };
 
 // 켜진 역본 목록과 토글 "순서" 는 별도 키로 저장. 한쪽만 바뀌어도 안전.
-const ON_STORAGE_KEY = "haruchi.bibleStudy.romans1.layers";
-const ORDER_STORAGE_KEY = "haruchi.bibleStudy.romans1.order";
+// 신약 27권 어디서든 동일 사용자 취향이 유지되도록 단일 키로 통일.
+const ON_STORAGE_KEY = "haruchi.bibleStudy.layers";
+const ORDER_STORAGE_KEY = "haruchi.bibleStudy.order";
 
 function loadStoredArray(key: string, valid: LayerId[]): LayerId[] | null {
   try {
@@ -187,14 +263,66 @@ type LayeredBibleViewerProps = {
    * 기본 false (이전 동작과 호환).
    */
   embedded?: boolean;
+  /**
+   * 신약 27권 중 어느 책의 어느 장을 보여줄지. 책이 바뀌면 그 책의 데이터
+   * 파일을 새로 fetch 하고, 같은 책 내에서 장만 바뀌면 즉시 전환된다.
+   * 미지정이면 로마서 1장(이전 동작과의 호환).
+   */
+  bookId?: StudyBookId;
+  chapter?: number;
 };
 
 export default function LayeredBibleViewer({
   embedded = false,
+  bookId = "romans",
+  chapter = 1,
 }: LayeredBibleViewerProps = {}) {
+  // ── 책 데이터 lazy load ────────────────────────────────────────────────
+  // bookId 가 바뀔 때마다 새 책 파일을 import. chapter 만 바뀌면 같은
+  // 책 데이터 안에서 인덱스만 옮기므로 fetch 가 일어나지 않는다.
+  const [bookData, setBookData] = useState<StudyBookData | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoadError(null);
+    setBookData(null);
+    loadStudyBook(bookId)
+      .then((d) => {
+        if (!cancelled) setBookData(d);
+      })
+      .catch((e) => {
+        if (!cancelled) {
+          console.error("성경공부 데이터 로드 실패", e);
+          setLoadError(
+            e instanceof Error ? e.message : "데이터를 불러오지 못했어요.",
+          );
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [bookId]);
+
+  // 정본 layerOrder/labels — 데이터가 들어와도 같은 값을 사용.
+  const layerOrderAll: LayerId[] = useMemo(
+    () => bookData?.layerOrder ?? DEFAULT_LAYER_ORDER,
+    [bookData],
+  );
+  const layerLabels = bookData?.layerLabels ?? DEFAULT_LAYER_LABELS;
+
+  // 현재 장 — chapter prop 으로 찾기. 책의 마지막 장보다 큰 번호가
+  // 들어오면 마지막 장으로 클램프(절 없음 메시지 없이 안전).
+  const currentChapter = useMemo<StudyChapter | null>(() => {
+    if (!bookData) return null;
+    const found = bookData.chapters.find((c) => c.chapter === chapter);
+    if (found) return found;
+    return bookData.chapters[bookData.chapters.length - 1] ?? null;
+  }, [bookData, chapter]);
+
   // SSR 초기값은 정본 — hydration 이후 localStorage 로 동기화.
-  const [onLayers, setOnLayers] = useState<LayerId[]>(data.defaultOn);
-  const [layerOrder, setLayerOrder] = useState<LayerId[]>(data.layerOrder);
+  const [onLayers, setOnLayers] = useState<LayerId[]>(DEFAULT_ON);
+  const [layerOrder, setLayerOrder] = useState<LayerId[]>(DEFAULT_LAYER_ORDER);
   const [openWord, setOpenWord] = useState<Set<string>>(() => new Set());
   const [toast, setToast] = useState<string | null>(null);
   const [hydrated, setHydrated] = useState(false);
@@ -216,12 +344,14 @@ export default function LayeredBibleViewer({
   const suppressClickUntilRef = useRef(0);
 
   useEffect(() => {
-    const storedOn = loadStoredArray(ON_STORAGE_KEY, data.layerOrder);
+    const storedOn = loadStoredArray(ON_STORAGE_KEY, layerOrderAll);
     if (storedOn) setOnLayers(storedOn);
-    const storedOrder = loadStoredArray(ORDER_STORAGE_KEY, data.layerOrder);
-    setLayerOrder(mergedOrder(storedOrder, data.layerOrder));
+    const storedOrder = loadStoredArray(ORDER_STORAGE_KEY, layerOrderAll);
+    setLayerOrder(mergedOrder(storedOrder, layerOrderAll));
     setHydrated(true);
-  }, []);
+    // 데이터의 layerOrder 가 후속 책에서 달라질 가능성도 대비해 layerOrderAll
+    // 변경 시 한 번 더 정렬을 동기화. (현재는 모든 책이 동일한 5개 레이어.)
+  }, [layerOrderAll]);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -395,16 +525,23 @@ export default function LayeredBibleViewer({
     [layerOrder, onLayers],
   );
 
+  // 화면에 그릴 절 목록.
+  const verses = currentChapter?.verses ?? [];
+  const bookLabel = bookData?.book ?? "";
+  const chapterLabel = currentChapter?.chapter ?? chapter;
+
   return (
     <section
       className={`bsv ${embedded ? "bsv--embedded" : ""}`}
-      aria-label={`${data.book} ${data.chapter}장 성경 공부`}
+      aria-label={
+        bookLabel ? `${bookLabel} ${chapterLabel}장 성경 공부` : "성경 공부"
+      }
     >
       <header className="bsv-top">
         {!embedded && (
           <div className="bsv-titles">
             <h1 className="bsv-title">
-              {data.book} {data.chapter}장
+              {bookLabel} {chapterLabel}장
             </h1>
             <p className="bsv-sub">
               켠 역본이 절 아래로 층층이 쌓입니다 · 토글을 드래그(모바일은 길게 눌러서)하면 순서를 바꿀 수 있어요
@@ -446,19 +583,30 @@ export default function LayeredBibleViewer({
                   <span />
                 </span>
                 <span className="bsv-toggle-dot" aria-hidden="true" />
-                {data.layerLabels[id]}
+                {layerLabels[id]}
               </button>
             );
           })}
         </div>
       </header>
 
-      {visibleLayers.length === 0 && (
+      {loadError && (
+        <p className="bsv-empty bsv-error">
+          데이터를 불러오는 중 오류가 발생했어요 — {loadError}
+        </p>
+      )}
+      {!bookData && !loadError && (
+        <p className="bsv-empty">불러오는 중…</p>
+      )}
+      {bookData && verses.length === 0 && (
+        <p className="bsv-empty">이 장에는 절 데이터가 없어요.</p>
+      )}
+      {bookData && verses.length > 0 && visibleLayers.length === 0 && (
         <p className="bsv-empty">위에서 역본을 하나 이상 켜 주세요.</p>
       )}
 
       <ol className="bsv-verses">
-        {data.verses.map((verse) => {
+        {verses.map((verse) => {
           const n = verse.ref.split(":").pop();
           return (
             <li key={verse.ref} className="bsv-verse">
@@ -762,6 +910,9 @@ export default function LayeredBibleViewer({
           padding: 40px 8px;
           text-align: center;
           color: var(--bsv-mute);
+        }
+        .bsv-empty.bsv-error {
+          color: #b54545;
         }
 
         /* ── 절 목록 ── */

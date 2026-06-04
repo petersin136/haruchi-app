@@ -61,6 +61,19 @@ type DropdownProps<T extends string | number> = {
    * 미지정 시 빈 문자열로 fallback (기존 동작).
    */
   placeholderLabel?: string;
+  /**
+   * 트리거 클릭을 부모가 가로채고 싶을 때 사용.
+   *
+   * 사용 예: 구약/신약 책 드롭다운에서 트리거 라벨이 "현재 활성 책" 과
+   * 다르면(=다른 testament 의 마지막 책이 떠 있는 상태) 첫 탭에는 그 책으로
+   * 빠르게 점프하고 패널은 안 연다. 한 번 더 탭하면(이제는 트리거=활성)
+   * 평소처럼 패널이 열려 다른 책을 고를 수 있다.
+   *
+   * 반환값:
+   *   - true / "handled" : 부모가 처리했음. 패널을 열지 않는다.
+   *   - 그 외(false/void): 기본 동작 — 패널 토글.
+   */
+  onTriggerClick?: () => boolean | "handled" | void;
 };
 
 export default function Dropdown<T extends string | number>({
@@ -74,6 +87,7 @@ export default function Dropdown<T extends string | number>({
   size = "md",
   showTriggerSub = false,
   placeholderLabel,
+  onTriggerClick,
 }: DropdownProps<T>) {
   const [open, setOpen] = useState(false);
   const [direction, setDirection] = useState<"down" | "up">("down");
@@ -153,7 +167,16 @@ export default function Dropdown<T extends string | number>({
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-controls={open ? listboxId : undefined}
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          // 부모가 클릭을 가로채길 원하면(예: 다른 책으로 빠르게 점프) 그 결과
+          // 가 truthy 일 때 패널 토글 없이 종료. 부모는 보통 첫 탭에 quick-jump
+          // 처리, 두 번째 탭부터(트리거 라벨 == 활성 책) 패널이 열리도록 한다.
+          if (onTriggerClick) {
+            const handled = onTriggerClick();
+            if (handled === true || handled === "handled") return;
+          }
+          setOpen((v) => !v);
+        }}
       >
         <span className="brp-dd-trigger-inner">
           <span

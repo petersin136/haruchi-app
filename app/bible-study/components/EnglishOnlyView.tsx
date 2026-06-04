@@ -4,8 +4,8 @@
  * EnglishOnlyView — "성경 공부" 모드의 단일 역본(영어 WEB) 읽기 뷰.
  *
  * 기존 한국어 reader 가 책별 데이터(BOOK_DATA) 에서 영어를 지원하지 않기 때문에,
- * 영어 모드만 본 파일이 직접 app/bible-study/romans1.json 의 english 레이어를
- * 한 줄씩 렌더링한다. 범위는 로마서 1장만(요구사항).
+ * 영어 모드는 본 파일이 직접 app/bible-study/data/<bookId>.json 의 english
+ * 레이어만 골라 한 줄씩 렌더링한다. 신약 27권 어떤 장이든 동작한다.
  *
  * 디자인:
  *   - 부모 .brp-reader 카드 안에 임베드되어 동일한 폭/여백/폰트를 상속.
@@ -13,21 +13,75 @@
  *   - 라이선스 푸터 한 줄.
  */
 
-import { useCallback, useEffect, useState } from "react";
-import rawData from "../romans1.json";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
-type StudyDataMinimal = {
-  book: string;
-  chapter: number;
-  verses: Array<{
-    ref: string;
-    layers: {
-      english?: { type: "text"; content: string };
-    };
-  }>;
+export type EnglishBookId =
+  | "matthew"
+  | "mark"
+  | "luke"
+  | "john"
+  | "acts"
+  | "romans"
+  | "corinthians1"
+  | "corinthians2"
+  | "galatians"
+  | "ephesians"
+  | "philippians"
+  | "colossians"
+  | "thessalonians1"
+  | "thessalonians2"
+  | "timothy1"
+  | "timothy2"
+  | "titus"
+  | "philemon"
+  | "hebrews"
+  | "james"
+  | "peter1"
+  | "peter2"
+  | "john1"
+  | "john2"
+  | "john3"
+  | "jude"
+  | "revelation";
+
+type StudyVerse = {
+  ref: string;
+  layers: {
+    english?: { type: "text"; content: string };
+  };
 };
 
-const data = rawData as unknown as StudyDataMinimal;
+type StudyChapter = {
+  chapter: number;
+  verses: StudyVerse[];
+};
+
+type StudyBookData = {
+  book: string;
+  bookId: EnglishBookId;
+  chapters: StudyChapter[];
+};
+
+// 책별 데이터 — public/bible-study/data/<bookId>.json 을 fetch 로 받아온다.
+// LayeredBibleViewer 와 같은 데이터 파일을 공유하므로 같은 책에 대해 두 컴포넌트
+// 사이에서도 두 번 받지 않도록 모듈 레벨 캐시.
+const bookCache = new Map<EnglishBookId, Promise<StudyBookData>>();
+
+async function loadStudyBook(book: EnglishBookId): Promise<StudyBookData> {
+  const cached = bookCache.get(book);
+  if (cached) return cached;
+  const p = (async () => {
+    const res = await fetch(`/bible-study/data/${book}.json`, {
+      cache: "force-cache",
+    });
+    if (!res.ok)
+      throw new Error(`HTTP ${res.status} — ${book} 데이터 없음`);
+    return (await res.json()) as StudyBookData;
+  })();
+  bookCache.set(book, p);
+  p.catch(() => bookCache.delete(book));
+  return p;
+}
 
 async function writeClipboard(text: string): Promise<boolean> {
   try {
@@ -68,8 +122,39 @@ function CopyIcon() {
   );
 }
 
-export default function EnglishOnlyView() {
+type EnglishOnlyViewProps = {
+  /** 어떤 책의 어떤 장을 영어(WEB) 으로 보여줄지. 기본 로마서 1장. */
+  bookId?: EnglishBookId;
+  chapter?: number;
+};
+
+export default function EnglishOnlyView({
+  bookId = "romans",
+  chapter = 1,
+}: EnglishOnlyViewProps = {}) {
   const [toast, setToast] = useState<string | null>(null);
+  const [bookData, setBookData] = useState<StudyBookData | null>(null);
+  const [loadError, setLoadError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    setBookData(null);
+    setLoadError(null);
+    loadStudyBook(bookId)
+      .then((d) => {
+        if (!cancelled) setBookData(d);
+      })
+      .catch((e) => {
+        if (!cancelled) {
+          setLoadError(
+            e instanceof Error ? e.message : "데이터를 불러오지 못했어요.",
+          );
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [bookId]);
 
   useEffect(() => {
     if (!toast) return;
@@ -82,16 +167,38 @@ export default function EnglishOnlyView() {
     setToast(ok ? `${ref} 복사됨` : "복사에 실패했어요");
   }, []);
 
-  const verses = data.verses
-    .map((v) => ({
-      n: parseInt(v.ref.split(":").pop() || "0", 10),
-      ref: v.ref,
-      text: (v.layers.english?.content || "").trim(),
-    }))
-    .filter((v) => v.text);
+  // 현재 장의 영어 절들 — 텍스트가 비어있는 절은 제외.
+  const verses = useMemo(() => {
+    if (!bookData) return [] as { n: number; ref: string; text: string }[];
+    const ch =
+      bookData.chapters.find((c) => c.chapter === chapter) ??
+      bookData.chapters[bookData.chapters.length - 1] ??
+      null;
+    if (!ch) return [];
+    return ch.verses
+      .map((v) => ({
+        n: parseInt(v.ref.split(":").pop() || "0", 10),
+        ref: v.ref,
+        text: (v.layers.english?.content || "").trim(),
+      }))
+      .filter((v) => v.text);
+  }, [bookData, chapter]);
+
+  const ariaLabel = bookData
+    ? `${bookData.book} ${chapter}장 영어(WEB)`
+    : "성경 공부 — 영어(WEB)";
 
   return (
-    <section className="eov" aria-label="로마서 1장 영어(WEB)">
+    <section className="eov" aria-label={ariaLabel}>
+      {loadError && (
+        <p className="eov-empty eov-error">
+          데이터를 불러오는 중 오류가 발생했어요 — {loadError}
+        </p>
+      )}
+      {!bookData && !loadError && <p className="eov-empty">불러오는 중…</p>}
+      {bookData && verses.length === 0 && (
+        <p className="eov-empty">이 장에는 영어(WEB) 본문이 없어요.</p>
+      )}
       <ol className="eov-verses">
         {verses.map((v) => (
           <li key={v.n} className="eov-verse">
@@ -133,6 +240,14 @@ export default function EnglishOnlyView() {
           color: var(--ink, #16161a);
           font-family: var(--reader-font-family, inherit);
           font-size: 16px;
+        }
+        .eov-empty {
+          padding: 32px 8px;
+          text-align: center;
+          color: var(--ink-mute, #9a9aa0);
+        }
+        .eov-empty.eov-error {
+          color: #b54545;
         }
         .eov-verses {
           list-style: none;

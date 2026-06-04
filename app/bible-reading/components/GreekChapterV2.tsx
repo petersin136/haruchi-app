@@ -57,7 +57,20 @@ type GospelId =
   | "philippians"
   | "colossians"
   | "thessalonians1"
-  | "thessalonians2";
+  | "thessalonians2"
+  | "timothy1"
+  | "timothy2"
+  | "titus"
+  | "philemon"
+  | "hebrews"
+  | "james"
+  | "peter1"
+  | "peter2"
+  | "john1"
+  | "john2"
+  | "john3"
+  | "jude"
+  | "revelation";
 
 async function loadGospelData(book: GospelId): Promise<V2Data> {
   switch (book) {
@@ -89,6 +102,32 @@ async function loadGospelData(book: GospelId): Promise<V2Data> {
       return (await import("../thessalonians1-v2.json")).default as V2Data;
     case "thessalonians2":
       return (await import("../thessalonians2-v2.json")).default as V2Data;
+    case "timothy1":
+      return (await import("../timothy1-v2.json")).default as V2Data;
+    case "timothy2":
+      return (await import("../timothy2-v2.json")).default as V2Data;
+    case "titus":
+      return (await import("../titus-v2.json")).default as V2Data;
+    case "philemon":
+      return (await import("../philemon-v2.json")).default as V2Data;
+    case "hebrews":
+      return (await import("../hebrews-v2.json")).default as V2Data;
+    case "james":
+      return (await import("../james-v2.json")).default as V2Data;
+    case "peter1":
+      return (await import("../peter1-v2.json")).default as V2Data;
+    case "peter2":
+      return (await import("../peter2-v2.json")).default as V2Data;
+    case "john1":
+      return (await import("../john1-v2.json")).default as V2Data;
+    case "john2":
+      return (await import("../john2-v2.json")).default as V2Data;
+    case "john3":
+      return (await import("../john3-v2.json")).default as V2Data;
+    case "jude":
+      return (await import("../jude-v2.json")).default as V2Data;
+    case "revelation":
+      return (await import("../revelation-v2.json")).default as V2Data;
   }
 }
 

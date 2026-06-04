@@ -1,11 +1,19 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import prayersJson from "./prayers.json";
 import {
   BOOKS,
   NT_BOOK_IDS,
   OT_BOOK_IDS,
+  isOldTestament,
   type BookId,
 } from "./books";
 import { BOOK_DATA } from "./bibleData";
@@ -19,13 +27,17 @@ import SlidingToggle from "./components/SlidingToggle";
 // 데이터(matthew-v2.json) 가 5MB 가량 크므로 dynamic import 로 lazy-load.
 // 헬라어 모드 진입 시에만 chunk + 데이터가 받아진다.
 import nextDynamic from "next/dynamic";
+const HebrewChapterV2 = nextDynamic(
+  () => import("./components/HebrewChapterV2"),
+  { ssr: false },
+);
 const GreekChapterV2 = nextDynamic(
   () => import("./components/GreekChapterV2"),
   { ssr: false },
 );
-// "성경 공부" 모드(다중 역본 레이어 뷰어, 로마서 1장 전용) + 영어(WEB) 단일
-// 역본 뷰는 새로 추가한 독립 컴포넌트. 다른 모드와 마찬가지로 lazy-load 한다
-// — 사용자가 드롭다운에서 그 모드를 골랐을 때에만 chunk 가 받아진다.
+// "성경 공부" 모드(다중 역본 레이어 뷰어) + 영어(WEB) 단일 역본 뷰는 신약
+// 27권 전체에서 동작한다. 다른 모드와 마찬가지로 lazy-load — 사용자가
+// 드롭다운에서 그 모드를 골랐을 때에만 chunk 가 받아진다.
 const LayeredBibleViewer = nextDynamic(
   () => import("../bible-study/components/LayeredBibleViewer"),
   { ssr: false },
@@ -34,6 +46,66 @@ const EnglishOnlyView = nextDynamic(
   () => import("../bible-study/components/EnglishOnlyView"),
   { ssr: false },
 );
+// 성경 공부/영어(WEB) 두 모드가 지원하는 신약 27권 ID 집합. 사용자가 그
+// 외 책(=구약)에 있을 때 모드를 누르면 자동으로 첫 신약 책(로마서 1장)
+// 으로 이동시킨다.
+const STUDY_NT_BOOK_IDS: readonly string[] = [
+  "matthew",
+  "mark",
+  "luke",
+  "john",
+  "acts",
+  "romans",
+  "corinthians1",
+  "corinthians2",
+  "galatians",
+  "ephesians",
+  "philippians",
+  "colossians",
+  "thessalonians1",
+  "thessalonians2",
+  "timothy1",
+  "timothy2",
+  "titus",
+  "philemon",
+  "hebrews",
+  "james",
+  "peter1",
+  "peter2",
+  "john1",
+  "john2",
+  "john3",
+  "jude",
+  "revelation",
+];
+type StudyNTBookId =
+  | "matthew"
+  | "mark"
+  | "luke"
+  | "john"
+  | "acts"
+  | "romans"
+  | "corinthians1"
+  | "corinthians2"
+  | "galatians"
+  | "ephesians"
+  | "philippians"
+  | "colossians"
+  | "thessalonians1"
+  | "thessalonians2"
+  | "timothy1"
+  | "timothy2"
+  | "titus"
+  | "philemon"
+  | "hebrews"
+  | "james"
+  | "peter1"
+  | "peter2"
+  | "john1"
+  | "john2"
+  | "john3"
+  | "jude"
+  | "revelation";
 import {
   fetchCompletedChapters,
   flushPendingLogs,
@@ -54,7 +126,11 @@ import SearchOverlay, { type SearchSelection } from "./SearchOverlay";
 //           단어를 클릭하면 그 단어의 상세 정보 드롭다운이 펼쳐지고, 헬라어
 //           줄 오른쪽의 ▾ 갈매기를 누르면 절 전체 풀이(greekWords) 가 펼쳐진다.
 //           현재 마태복음 1장만 새 디자인으로 채워져 있다.
-type TranslationKey = "krv" | "kids" | "greek";
+type TranslationKey = "krv" | "kids" | "greek" | "hebrew";
+
+// 히브리어 보기 모드가 지원되는 책 id. 헬라어가 신약 27권 전체를 커버하는 것과
+// 동일하게, 히브리어는 구약을 점진적으로 채워간다. 현재는 PoC 로 창세기만.
+const HEBREW_BOOK_IDS: ReadonlyArray<string> = ["genesis", "exodus"];
 
 // 모드 전환 드롭다운 값.
 //   - krv / kids / greek : 기존 단일 역본 읽기(아무 책/장).
@@ -196,6 +272,12 @@ const verseProgressKey = (bookId: BookId, chapter: number) =>
 const celebratedKey = (bookId: BookId, chapter: number) =>
   `bible_celebrated_${bookId}_${chapter}`;
 const CURRENT_BOOK_KEY = "bible_current_book";
+// 양쪽 드롭다운(구약/신약)이 서로의 마지막 선택을 잊지 않도록, 각 testament 별
+// "마지막으로 본 책" 을 따로 보관한다. 사용자가 구약 어디를 보고 있을 때도
+// 신약 드롭다운에는 직전에 봤던 신약 책 이름이 그대로 떠 있어, 두 testament
+// 사이를 오갈 때마다 매번 처음부터 다시 찾을 필요가 없다.
+const LAST_OT_BOOK_KEY = "bible_last_ot_book";
+const LAST_NT_BOOK_KEY = "bible_last_nt_book";
 const currentChapterKey = (bookId: BookId) =>
   `bible_current_chapter_${bookId}`;
 const MIGRATION_V1_KEY = "bible_migrated_v1";
@@ -204,6 +286,14 @@ const TRANSLATION_KEY = "bible_translation";
 // 모드 드롭다운(reader/english/study) 의 마지막 선택을 보관.
 //   reader 가 기본값(기존 호환). 새로고침해도 마지막 모드를 복구한다.
 const VIEW_MODE_KEY = "bible_view_mode";
+
+// 책+장 단위 마지막 스크롤 위치를 in-memory 로 기억한다.
+//   - 사용자가 다른 testament 로 잠깐 갔다가 신약/구약 드롭다운 트리거를 눌러
+//     "보던 책으로 즉시 복귀" 할 때, 그 안에서 보고 있던 위치 그대로 살려준다.
+//   - localStorage 가 아닌 모듈 레벨 Map — 새로고침 시에는 깨끗히 리셋
+//     (cold start 에서 임의의 위치로 점프하면 오히려 어색하기 때문).
+const scrollMemoryByChapter = new Map<string, number>();
+const scrollMemoryKey = (b: BookId, c: number) => `${b}-${c}`;
 
 const migrateLegacyKeys = () => {
   if (typeof window === "undefined") return;
@@ -892,6 +982,13 @@ export default function BibleReadingPage() {
   // 있으면 mount 시 useEffect 에서 복구하며 true 로 전환된다.
   const [bookId, setBookId] = useState<BookId>("proverbs");
   const [bookConfirmed, setBookConfirmed] = useState(false);
+  // 두 드롭다운이 각자 마지막 선택을 기억하도록, 활성 bookId 와는 별도로
+  // testament 별 "마지막 책" 을 추적한다. 양쪽이 동시에 책 이름을 띄울 수
+  // 있어, 사용자는 구약↔신약 사이를 다시 검색하지 않고 즉시 전환 가능.
+  //   - null  : 그쪽 testament 를 아직 한 번도 안 골랐음 → placeholder.
+  //   - BookId: 그 책 이름이 트리거에 표시됨(현재 보는 활성 책과 무관).
+  const [lastOtBookId, setLastOtBookId] = useState<BookId | null>(null);
+  const [lastNtBookId, setLastNtBookId] = useState<BookId | null>(null);
   const [chapterNumber, setChapterNumber] = useState(1);
   const [translation, setTranslation] = useState<TranslationKey>("krv");
   // 화면 모드 — "reader" 는 기존 단일 역본 reader, "english" 는 로마서 1장
@@ -992,6 +1089,11 @@ export default function BibleReadingPage() {
   const prayerReadCountRefs = useRef<Record<number, number>>({});
   const currentStudentRef = useRef<IdentifiedStudent | null>(null);
   const identityRef = useRef<StudentIdentityBarHandle | null>(null);
+
+  // 다음 (bookId, chapterNumber) 가 적용된 직후 적용할 scrollY.
+  //   quickJumpToBook 에서 세팅 → 그 직후 useLayoutEffect 에서 한 번 소비 후 null.
+  //   null 이면 스크롤을 손대지 않음(panel pick 은 별도로 scrollTo 0 호출).
+  const pendingScrollRestoreRef = useRef<number | null>(null);
 
   // 설정 페이지 미리보기가 본문 폭을 1:1 로 복제할 수 있도록,
   // 실제 .brp-reader 의 렌더 폭(border-box)을 localStorage 에 기록한다.
@@ -1163,9 +1265,13 @@ export default function BibleReadingPage() {
   const hasGreekTokens = (chapter.verses.greekTokens?.length ?? 0) > 0;
   const hasGreekWords = (chapter.verses.greekWords?.length ?? 0) > 0;
   const hasGreek = hasGreekKr;
+  // 히브리어 보기 — 책 id 가 HEBREW_BOOK_IDS 에 들어 있으면 활성. 데이터는
+  // HebrewChapterV2 가 자체 lazy-load 하므로 page 쪽에 별도 verse 배열은 없다.
+  const hasHebrew = HEBREW_BOOK_IDS.includes(bookId);
   // 사용자가 선택한 번역이 현재 책/장에 없으면 다른 번역으로 자동 폴백.
   //   - 신규 61권은 어린이 번역이 없음 → 어린이 선택 시 개역한글로 표시.
   //   - 원어묵상(greek) 자료가 없는 책/장이면 → 개역한글로 폴백.
+  //   - 히브리어(hebrew) 자료가 없는 책이면 → 개역한글로 폴백.
   //   - 기존 5권은 krv/kids 양쪽 모두 있어 영향 없음.
   const effectiveTranslation: TranslationKey =
     translation === "greek" && !hasGreek
@@ -1174,17 +1280,28 @@ export default function BibleReadingPage() {
         : hasKids
           ? "kids"
           : "krv"
-      : translation === "krv" && !hasKrv && hasKids
-        ? "kids"
-        : translation === "kids" && !hasKids && hasKrv
+      : translation === "hebrew" && !hasHebrew
+        ? hasKrv
           ? "krv"
-          : translation;
+          : hasKids
+            ? "kids"
+            : "krv"
+        : translation === "krv" && !hasKrv && hasKids
+          ? "kids"
+          : translation === "kids" && !hasKids && hasKrv
+            ? "krv"
+            : translation;
   // 본문 표시용 절 배열. 원어 모드에서는 KRV 가 아닌 "원어 의역(greekKr)" 을
   // 본문 자리에 두어, 음성/스크롤 진도와 단어 토큰화도 의역 기준으로 동작하게 한다.
   const verses =
     effectiveTranslation === "greek"
       ? chapter.verses.greekKr ?? []
-      : chapter.verses[effectiveTranslation] ?? [];
+      : effectiveTranslation === "hebrew"
+        ? // 히브리어 모드는 HebrewChapterV2 컴포넌트가 자체적으로 절을 렌더하므로
+          // page 쪽 verses 는 빈 배열. 진행 표시·낭독 인식 등 기존 절 기반 UX 는
+          // 비활성된다(컴포넌트 안에서 long-press 복사 등 별도 제공).
+          []
+        : chapter.verses[effectiveTranslation] ?? [];
   // greek 모드에서만 쓰는 보조 맵 — 절 번호 → 토큰 배열 / 절 전체 풀이.
   const greekTokensMap = useMemo(() => {
     if (effectiveTranslation !== "greek") return null;
@@ -1233,10 +1350,12 @@ export default function BibleReadingPage() {
           student,
           book: bookId,
           chapter: chapterNumber,
-          // Supabase RPC 는 현재 krv/kids 만 허용. 헬라어로 읽었더라도
+          // Supabase RPC 는 현재 krv/kids 만 허용. 헬라어/히브리어로 읽었더라도
           // 진도 기록상으로는 krv 로 남긴다(스키마 확장 전 임시).
           translation:
-            effectiveTranslation === "greek" ? "krv" : effectiveTranslation,
+            effectiveTranslation === "greek" || effectiveTranslation === "hebrew"
+              ? "krv"
+              : effectiveTranslation,
         });
         if (result === "needs_pin" || result === "bad_pin") {
           identityRef.current?.promptPin();
@@ -1642,28 +1761,40 @@ export default function BibleReadingPage() {
 
   // 모드 드롭다운 — 5개 항목(개역한글/어린이/영어/헬라어/성경 공부) 통합 핸들러.
   //   - krv / kids / greek : viewMode 를 reader 로 되돌리고 그 번역으로 전환.
-  //   - english / study    : 로마서 1장(전용)으로 자동 이동 + viewMode 전환.
+  //   - english / study    : 신약 27권 전체에서 동작. 현재 책이 신약이면
+  //     그대로 그 책/장에 머물고, 구약(또는 미선택) 이면 로마서 1장으로 이동.
   // 이동 로직은 changeBook(저장된 장 복원 동작) 을 우회하고 직접 setState +
-  // localStorage 기록을 한다 — 항상 1장으로 들어가야 하므로.
+  // localStorage 기록을 한다.
   const handleModeChange = useCallback(
     (next: ModeChoice) => {
-      if (next === "krv" || next === "kids" || next === "greek") {
+      if (
+        next === "krv" ||
+        next === "kids" ||
+        next === "greek" ||
+        next === "hebrew"
+      ) {
         if (viewMode !== "reader") setViewMode("reader");
         handleTranslationChange(next);
         return;
       }
-      // english 또는 study — 로마서 1장으로 정렬한 뒤 모드 전환.
-      const goRomans1 = bookId !== "romans" || chapterNumber !== 1;
-      if (goRomans1) {
+      // english 또는 study — 현재 책이 신약 범위면 그 책/장 유지.
+      // 구약(또는 미선택) 이면 로마서 1장으로 옮긴 뒤 모드 전환.
+      const onNT = STUDY_NT_BOOK_IDS.includes(bookId);
+      if (!onNT) {
         setBookId("romans" as BookId);
         setBookConfirmed(true);
         setChapterNumber(1);
+        // 활성 책은 로마서로 옮기지만, lastOtBookId 는 건드리지 않아 — 사용자가
+        // 마지막으로 보던 구약 책 이름이 구약 드롭다운에 그대로 남는다.
+        // 신약 드롭다운에는 새로 도착한 로마서가 보이도록 lastNtBookId 갱신.
+        setLastNtBookId("romans" as BookId);
         try {
           window.localStorage.setItem(CURRENT_BOOK_KEY, "romans");
           window.localStorage.setItem(
             currentChapterKey("romans" as BookId),
             "1",
           );
+          window.localStorage.setItem(LAST_NT_BOOK_KEY, "romans");
         } catch {
           /* ignore */
         }
@@ -1674,7 +1805,6 @@ export default function BibleReadingPage() {
       viewMode,
       handleTranslationChange,
       bookId,
-      chapterNumber,
     ],
   );
 
@@ -1711,6 +1841,13 @@ export default function BibleReadingPage() {
       setQuizAnswers([]);
       setQuizQuestions([]);
       setFlashVerse(verseNo);
+      // 도착한 책이 속한 testament 의 last 만 갱신. 반대쪽 testament 의
+      // 드롭다운은 직전 마지막 책을 그대로 유지한다.
+      if (isOldTestament(nextBook)) {
+        setLastOtBookId(nextBook);
+      } else {
+        setLastNtBookId(nextBook);
+      }
       if (typeof window !== "undefined") {
         window.localStorage.setItem(TRANSLATION_KEY, nextTr);
         window.localStorage.setItem(CURRENT_BOOK_KEY, nextBook);
@@ -1718,6 +1855,14 @@ export default function BibleReadingPage() {
           currentChapterKey(nextBook),
           String(chapter),
         );
+        try {
+          window.localStorage.setItem(
+            isOldTestament(nextBook) ? LAST_OT_BOOK_KEY : LAST_NT_BOOK_KEY,
+            nextBook,
+          );
+        } catch {
+          /* ignore */
+        }
       }
     },
     [stopListening],
@@ -1859,11 +2004,20 @@ export default function BibleReadingPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const changeBook = useCallback(
+  // 책 전환의 두 가지 의도를 구분한다 ─
+  //
+  // (1) "보던 책으로 돌아가기" (resume / quick-jump)
+  //     예: 신약을 읽다가 잠깐 구약으로 갔다, 신약 드롭다운 트리거에 떠 있던
+  //         "요한복음" 라벨을 다시 누름.
+  //     → 마지막 장 복원, 그 안의 스크롤 위치까지 그대로 복귀. 부드럽게.
+  //
+  // (2) "다른 책 새로 펼치기" (fresh / panel pick)
+  //     예: 드롭다운을 펼쳐 다른 책을 클릭.
+  //     → 1장 1절 / 페이지 최상단으로 이동.
+  //
+  // 공통 부분(상태 리셋, testament 별 last 갱신, 저장)은 헬퍼로 모은다.
+  const applyBookChangeShared = useCallback(
     (nextBookId: BookId) => {
-      // bookConfirmed=false (책 미선택) 상태에서 같은 id 가 들어와도
-      // "확정" 전환은 일어나야 한다 — 따라서 동일성 검사는 confirmed 인 경우에만.
-      if (bookConfirmed && nextBookId === bookId) return;
       stopListening();
       setCompleteVisible(false);
       setQuizOpen(false);
@@ -1872,21 +2026,115 @@ export default function BibleReadingPage() {
       setQuizQuestions([]);
       setBookId(nextBookId);
       setBookConfirmed(true);
-      const savedChapter = window.localStorage.getItem(
+      // 그 testament 쪽의 "마지막 책" 도 갱신. 반대쪽은 그대로 유지되어,
+      // 양쪽 드롭다운이 각자 마지막 선택을 계속 보여준다.
+      if (isOldTestament(nextBookId)) {
+        setLastOtBookId(nextBookId);
+        try {
+          window.localStorage.setItem(LAST_OT_BOOK_KEY, nextBookId);
+        } catch {
+          /* ignore */
+        }
+      } else {
+        setLastNtBookId(nextBookId);
+        try {
+          window.localStorage.setItem(LAST_NT_BOOK_KEY, nextBookId);
+        } catch {
+          /* ignore */
+        }
+      }
+      window.localStorage.setItem(CURRENT_BOOK_KEY, nextBookId);
+    },
+    [stopListening],
+  );
+
+  // (1) 트리거 라벨에 떠 있는 "보던 책" 으로 빠르게 복귀.
+  //     - 마지막 장은 localStorage 에서 복원.
+  //     - 그 (책, 장) 의 마지막 스크롤 Y 가 메모리에 있으면 그 위치로 복원.
+  //       없으면 그대로 두고(=현재 scroll 유지) — 사용자 의도대로 스크롤 안 건드림.
+  //     - bookConfirmed=true 인데 같은 책이면 no-op.
+  const quickJumpToBook = useCallback(
+    (nextBookId: BookId) => {
+      if (bookConfirmed && nextBookId === bookId) return;
+      const savedChapterRaw = window.localStorage.getItem(
         currentChapterKey(nextBookId),
       );
-      const next = savedChapter ? Number(savedChapter) : 1;
       const meta = BOOKS[nextBookId];
+      const candidate = savedChapterRaw ? Number(savedChapterRaw) : 1;
       const safeChapter =
-        Number.isFinite(next) && next >= 1 && next <= meta.totalChapters
-          ? next
+        Number.isFinite(candidate) &&
+        candidate >= 1 &&
+        candidate <= meta.totalChapters
+          ? candidate
           : 1;
+      // 다음 (book, chapter) 가 렌더된 직후 useLayoutEffect 에서 이 값을
+      // window.scrollTo 로 적용. 메모리에 없으면 null → 스크롤 손대지 않음.
+      const remembered = scrollMemoryByChapter.get(
+        scrollMemoryKey(nextBookId, safeChapter),
+      );
+      pendingScrollRestoreRef.current =
+        remembered != null ? remembered : null;
+      applyBookChangeShared(nextBookId);
       setChapterNumber(safeChapter);
-      window.localStorage.setItem(CURRENT_BOOK_KEY, nextBookId);
+    },
+    [bookConfirmed, bookId, applyBookChangeShared],
+  );
+
+  // (2) 드롭다운 패널에서 다른 책을 고른 경우. 항상 1장 1절 / 최상단.
+  const pickBookFromPanel = useCallback(
+    (nextBookId: BookId) => {
+      if (bookConfirmed && nextBookId === bookId) return;
+      applyBookChangeShared(nextBookId);
+      setChapterNumber(1);
+      try {
+        window.localStorage.setItem(currentChapterKey(nextBookId), "1");
+      } catch {
+        /* ignore */
+      }
+      // 새 책 1장의 scroll memory 도 깨끗이 비워, 혹시 이전 세션에서 남아 있던
+      // 위치로 자동 복원되지 않게 한다. 다음 quickJump 까지는 항상 top.
+      scrollMemoryByChapter.delete(scrollMemoryKey(nextBookId, 1));
+      pendingScrollRestoreRef.current = null;
       window.scrollTo({ top: 0, behavior: "smooth" });
     },
-    [bookConfirmed, bookId, stopListening],
+    [bookConfirmed, bookId, applyBookChangeShared],
   );
+
+  // 스크롤 저장 — 현재 (책, 장) 의 scrollY 를 RAF 디바운스로 메모리에 기록.
+  //   quickJumpToBook 으로 다른 책에 잠깐 갔다 돌아왔을 때, 그 안에서 보고
+  //   있던 위치를 그대로 복원하기 위함. 모듈 레벨 Map 이라 새로고침 시 리셋.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    let raf: number | null = null;
+    const onScroll = () => {
+      if (raf != null) return;
+      raf = window.requestAnimationFrame(() => {
+        raf = null;
+        scrollMemoryByChapter.set(
+          scrollMemoryKey(bookId, chapterNumber),
+          window.scrollY,
+        );
+      });
+    };
+    // mount 직후의 scrollY 도 한 번 기록(이후 quick-jump 했다가 돌아올 때 가능
+    // 한 한 동일 위치로 복귀).
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf != null) window.cancelAnimationFrame(raf);
+    };
+  }, [bookId, chapterNumber]);
+
+  // quickJumpToBook 이 세팅한 pendingScrollRestoreRef 를 새 (책, 장) 렌더
+  // 직후 한 번 소비. useLayoutEffect 라 paint 전에 적용되어 깜박임 없음.
+  useLayoutEffect(() => {
+    if (typeof window === "undefined") return;
+    const target = pendingScrollRestoreRef.current;
+    if (target == null) return;
+    pendingScrollRestoreRef.current = null;
+    window.scrollTo(0, target);
+  }, [bookId, chapterNumber]);
 
   useEffect(() => {
     migrateLegacyKeys();
@@ -1911,6 +2159,22 @@ export default function BibleReadingPage() {
       }
     }
 
+    // testament 별 "마지막 책" 복구. 별도 키가 없으면(첫 사용/구버전) 활성
+    // bookId 를 그쪽 testament 의 last 로 채워 넣는다 — 사용자가 다른 쪽
+    // 드롭다운을 처음 열기 전까지는 한쪽만 채워진 상태가 되지만, 그게 자연.
+    const savedOt = window.localStorage.getItem(LAST_OT_BOOK_KEY);
+    if (savedOt && savedOt in BOOKS && isOldTestament(savedOt as BookId)) {
+      setLastOtBookId(savedOt as BookId);
+    } else if (savedBook && savedBook in BOOKS && isOldTestament(savedBook as BookId)) {
+      setLastOtBookId(savedBook as BookId);
+    }
+    const savedNt = window.localStorage.getItem(LAST_NT_BOOK_KEY);
+    if (savedNt && savedNt in BOOKS && !isOldTestament(savedNt as BookId)) {
+      setLastNtBookId(savedNt as BookId);
+    } else if (savedBook && savedBook in BOOKS && !isOldTestament(savedBook as BookId)) {
+      setLastNtBookId(savedBook as BookId);
+    }
+
     const savedMode = window.localStorage.getItem(READING_MODE_KEY);
     if (savedMode === "mic" || savedMode === "scroll") {
       setReadingMode(savedMode);
@@ -1920,7 +2184,8 @@ export default function BibleReadingPage() {
     if (
       savedTranslation === "krv" ||
       savedTranslation === "kids" ||
-      savedTranslation === "greek"
+      savedTranslation === "greek" ||
+      savedTranslation === "hebrew"
     ) {
       setTranslation(savedTranslation);
     }
@@ -1953,9 +2218,12 @@ export default function BibleReadingPage() {
       setBookId("romans" as BookId);
       setBookConfirmed(true);
       setChapterNumber(1);
+      // 신약 드롭다운에 로마서 표시. 구약 쪽 last 는 위에서 복구된 값을 보존.
+      setLastNtBookId("romans" as BookId);
       try {
         window.localStorage.setItem(CURRENT_BOOK_KEY, "romans");
         window.localStorage.setItem(currentChapterKey("romans" as BookId), "1");
+        window.localStorage.setItem(LAST_NT_BOOK_KEY, "romans");
       } catch {
         /* ignore */
       }
@@ -1988,15 +2256,15 @@ export default function BibleReadingPage() {
     }
   }, [viewMode]);
 
-  // english/study 모드는 로마서 1장 전용이라, 사용자가 다른 책·장으로 이동하면
-  // 자동으로 reader 모드로 빠져나오게 한다(드롭다운에는 다시 현재 번역이 선택
-  // 된 것으로 보임).
+  // english/study 모드는 신약 27권 전체에서 동작한다. 사용자가 구약(또는
+  // 미선택) 으로 이동하면 자동으로 reader 모드로 빠져나오게 한다 — 그쪽은
+  // 학습 데이터가 없다.
   useEffect(() => {
     if (viewMode === "reader") return;
-    if (bookId !== "romans" || chapterNumber !== 1) {
+    if (!STUDY_NT_BOOK_IDS.includes(bookId)) {
       setViewMode("reader");
     }
-  }, [bookId, chapterNumber, viewMode]);
+  }, [bookId, viewMode]);
 
   useEffect(() => {
     const done = new Set<number>();
@@ -2615,7 +2883,11 @@ export default function BibleReadingPage() {
           검색은 KRV / 어린이만 지원하므로 greek 선택 중이면 krv 로 폴백. */}
       <SearchOverlay
         open={searchOpen}
-        defaultTranslation={effectiveTranslation === "greek" ? "krv" : effectiveTranslation}
+        defaultTranslation={
+          effectiveTranslation === "greek" || effectiveTranslation === "hebrew"
+            ? "krv"
+            : effectiveTranslation
+        }
         onClose={() => setSearchOpen(false)}
         onSelect={goToSearchResult}
       />
@@ -2686,6 +2958,7 @@ export default function BibleReadingPage() {
             { value: "kids", label: "어린이" },
             { value: "english", label: "영어" },
             { value: "greek", label: "헬라어" },
+            { value: "hebrew", label: "히브리어" },
             { value: "study", label: "성경 공부" },
           ]}
           onChange={handleModeChange}
@@ -2715,25 +2988,43 @@ export default function BibleReadingPage() {
           - 책 선택 후: 그 책이 속한 쪽만 책 이름 표시, 반대쪽은 placeholder 로 회귀.
           - 옵션 클릭 시 changeBook → bookConfirmed=true 로 전환. */}
       <section className="brp-top-row" aria-label="성경 책 선택 (구약 / 신약)">
+        {/* 트리거 라벨이 "현재 활성 책" 과 다르면(=다른 testament 책을 보고
+            있는 상태) 첫 탭은 그 책으로 빠르게 복귀(스크롤 위치 보존). 한 번
+            더 누르면 트리거가 활성 책과 같아져 평소처럼 패널이 열린다. 패널
+            에서 다른 책을 선택하면 항상 1장 1절 / 최상단으로 시작. */}
         <Dropdown<BookId>
-          value={bookConfirmed ? bookId : null}
+          value={bookConfirmed ? lastOtBookId : null}
           options={OT_BOOK_IDS.map<DropdownOption<BookId>>((id) => ({
             value: id,
             label: BOOKS[id].name,
           }))}
-          onChange={(next) => changeBook(next)}
+          onChange={(next) => pickBookFromPanel(next)}
+          onTriggerClick={() => {
+            if (lastOtBookId && lastOtBookId !== bookId) {
+              quickJumpToBook(lastOtBookId);
+              return true;
+            }
+            return false;
+          }}
           ariaLabel="구약 책 선택"
           placeholderLabel="구약"
           align="center"
           size="md"
         />
         <Dropdown<BookId>
-          value={bookConfirmed ? bookId : null}
+          value={bookConfirmed ? lastNtBookId : null}
           options={NT_BOOK_IDS.map<DropdownOption<BookId>>((id) => ({
             value: id,
             label: BOOKS[id].name,
           }))}
-          onChange={(next) => changeBook(next)}
+          onChange={(next) => pickBookFromPanel(next)}
+          onTriggerClick={() => {
+            if (lastNtBookId && lastNtBookId !== bookId) {
+              quickJumpToBook(lastNtBookId);
+              return true;
+            }
+            return false;
+          }}
           ariaLabel="신약 책 선택"
           placeholderLabel="신약"
           align="center"
@@ -3035,11 +3326,30 @@ export default function BibleReadingPage() {
         </header>
         {/* viewMode 분기 — "성경 공부" 또는 "영어(WEB)" 모드를 선택하면
             기존 reader 본문 자리에 그 전용 컴포넌트를 렌더하고, 나머지
-            기존 번역 렌더링은 모두 건너뛴다. 두 모드 모두 로마서 1장 전용. */}
+            기존 번역 렌더링은 모두 건너뛴다. 두 모드는 신약 27권 전체에서
+            동작하며, 책/장이 바뀌면 그에 맞는 데이터를 lazy load 한다.
+            사용자가 구약 책에 있는 상태로 모드를 활성화한 경우(이론상 일어나지
+            않음 — handleModeChange 가 자동으로 신약으로 옮긴다) 데이터 없는
+            안전 fallback 으로 로마서를 사용한다. */}
         {viewMode === "study" ? (
-          <LayeredBibleViewer embedded />
+          <LayeredBibleViewer
+            embedded
+            bookId={
+              (STUDY_NT_BOOK_IDS.includes(bookId)
+                ? (bookId as StudyNTBookId)
+                : "romans")
+            }
+            chapter={chapterNumber}
+          />
         ) : viewMode === "english" ? (
-          <EnglishOnlyView />
+          <EnglishOnlyView
+            bookId={
+              (STUDY_NT_BOOK_IDS.includes(bookId)
+                ? (bookId as StudyNTBookId)
+                : "romans")
+            }
+            chapter={chapterNumber}
+          />
         ) : (
         <>
         {!bookConfirmed && (
@@ -3048,17 +3358,39 @@ export default function BibleReadingPage() {
             오늘 읽을 책을 골라주세요.
           </p>
         )}
-        {bookConfirmed && !hasFilledText && (
-          <p className="brp-reader-empty">
-            이 장의{" "}
-            {translation === "krv"
-              ? "개역한글"
-              : translation === "kids"
-                ? "어린이 쉬운"
-                : "헬라어"}{" "}
-            본문이 아직 준비되지 않았어요. 다른 번역을 선택해 보세요.
-          </p>
-        )}
+        {bookConfirmed &&
+          !hasFilledText &&
+          // 히브리어 모드는 HebrewChapterV2 가 자체 본문을 렌더하므로 page 측의
+          // verses=[] 가 비어있다고 해서 "본문 준비 안 됨" 안내를 띄우면 잘못된
+          // 신호가 된다. 같은 이유로 헬라어 v2 도 해당 신약 책에서는 별도로
+          // 컴포넌트가 본문을 그린다(아래 분기 참고).
+          !(effectiveTranslation === "hebrew" && hasHebrew) && (
+            <p className="brp-reader-empty">
+              이 장의{" "}
+              {translation === "krv"
+                ? "개역한글"
+                : translation === "kids"
+                  ? "어린이 쉬운"
+                  : translation === "hebrew"
+                    ? "히브리어"
+                    : "헬라어"}{" "}
+              본문이 아직 준비되지 않았어요. 다른 번역을 선택해 보세요.
+            </p>
+          )}
+        {/* 히브리어 보기 — 헬라어 v2 와 동일 구조의 단어 블록(3줄) + 상세 카드.
+            RTL/Niqqud/Strong's 등은 HebrewChapterV2 내부에서 처리한다.
+            지원 책 목록은 HEBREW_BOOK_IDS 참고. */}
+        {bookConfirmed &&
+          effectiveTranslation === "hebrew" &&
+          (bookId === "genesis" || bookId === "exodus") && (
+            <HebrewChapterV2
+              bookId={bookId as "genesis" | "exodus"}
+              bookLabel={bookMeta.name}
+              chapter={chapterNumber}
+              chapterLabel={`${chapterNumber}장`}
+            />
+          )}
+
         {/* 4복음서·사도행전·로마·고전·고후 + 헬라어 모드일 때 새 "단어
             블록(3줄)" 구조로 절 단위 표시. 장 단위 컴포넌트 안에서 절·복사·
             상세를 모두 처리하므로 verse-card 기반의 long-press 선택 모드와는
@@ -3079,7 +3411,20 @@ export default function BibleReadingPage() {
             bookId === "philippians" ||
             bookId === "colossians" ||
             bookId === "thessalonians1" ||
-            bookId === "thessalonians2") && (
+            bookId === "thessalonians2" ||
+            bookId === "timothy1" ||
+            bookId === "timothy2" ||
+            bookId === "titus" ||
+            bookId === "philemon" ||
+            bookId === "hebrews" ||
+            bookId === "james" ||
+            bookId === "peter1" ||
+            bookId === "peter2" ||
+            bookId === "john1" ||
+            bookId === "john2" ||
+            bookId === "john3" ||
+            bookId === "jude" ||
+            bookId === "revelation") && (
             <GreekChapterV2
               bookId={
                 bookId as
@@ -3097,6 +3442,19 @@ export default function BibleReadingPage() {
                   | "colossians"
                   | "thessalonians1"
                   | "thessalonians2"
+                  | "timothy1"
+                  | "timothy2"
+                  | "titus"
+                  | "philemon"
+                  | "hebrews"
+                  | "james"
+                  | "peter1"
+                  | "peter2"
+                  | "john1"
+                  | "john2"
+                  | "john3"
+                  | "jude"
+                  | "revelation"
               }
               bookLabel={bookMeta.name}
               chapter={chapterNumber}
@@ -3119,7 +3477,20 @@ export default function BibleReadingPage() {
               bookId === "philippians" ||
               bookId === "colossians" ||
               bookId === "thessalonians1" ||
-              bookId === "thessalonians2")
+              bookId === "thessalonians2" ||
+              bookId === "timothy1" ||
+              bookId === "timothy2" ||
+              bookId === "titus" ||
+              bookId === "philemon" ||
+              bookId === "hebrews" ||
+              bookId === "james" ||
+              bookId === "peter1" ||
+              bookId === "peter2" ||
+              bookId === "john1" ||
+              bookId === "john2" ||
+              bookId === "john3" ||
+              bookId === "jude" ||
+              bookId === "revelation")
           ) &&
           verses.map((verse, idx) => {
           // 스크롤 모드는 "스크롤 + 최소 시간 + 퀴즈"가 모두 끝나

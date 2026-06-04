@@ -71,6 +71,15 @@ const BOOKS = [
   { id: "timothy2", label: "디모데후서" },
   { id: "titus", label: "디도서" },
   { id: "philemon", label: "빌레몬서" },
+  { id: "hebrews", label: "히브리서" },
+  { id: "james", label: "야고보서" },
+  { id: "peter1", label: "베드로전서" },
+  { id: "peter2", label: "베드로후서" },
+  { id: "john1", label: "요한1서" },
+  { id: "john2", label: "요한2서" },
+  { id: "john3", label: "요한3서" },
+  { id: "jude", label: "유다서" },
+  { id: "revelation", label: "요한계시록" },
 ];
 
 const SBLGNT_MARKERS = /[\u2E00-\u2E1F]/g;
