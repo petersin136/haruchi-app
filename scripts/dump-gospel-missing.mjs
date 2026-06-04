@@ -21,6 +21,10 @@ const NT_BOOKS = [
   "colossians",
   "thessalonians1",
   "thessalonians2",
+  "timothy1",
+  "timothy2",
+  "titus",
+  "philemon",
 ];
 const files = NT_BOOKS
   .map((id) => [id, path.join(repoRoot, `app/bible-reading/${id}-v2.json`)])

@@ -67,6 +67,10 @@ const BOOKS = [
   { id: "colossians", label: "골로새서" },
   { id: "thessalonians1", label: "데살로니가전서" },
   { id: "thessalonians2", label: "데살로니가후서" },
+  { id: "timothy1", label: "디모데전서" },
+  { id: "timothy2", label: "디모데후서" },
+  { id: "titus", label: "디도서" },
+  { id: "philemon", label: "빌레몬서" },
 ];
 
 const SBLGNT_MARKERS = /[\u2E00-\u2E1F]/g;
