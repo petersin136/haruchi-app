@@ -280,6 +280,34 @@ export async function adultSignIn(email: string, password: string) {
   if (error) throw toAuthError(error, "로그인에 실패했어요.");
 }
 
+// 비밀번호 재설정 메일 발송. 메일에 담긴 링크는 redirectTo 로 돌아오고
+// /reset-password 페이지가 supabase 의 recovery 세션을 인식해 새 비번을
+// 설정하도록 처리한다.
+export async function adultRequestPasswordReset(email: string) {
+  const supabase = getSupabaseClient();
+  if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
+  // 브라우저 환경이라면 현재 origin 을 그대로 사용. SSR 안전성도 챙김.
+  const origin =
+    typeof window !== "undefined" && window.location?.origin
+      ? window.location.origin
+      : "";
+  const { error } = await supabase.auth.resetPasswordForEmail(
+    normalizeEmail(email),
+    { redirectTo: `${origin}/reset-password` },
+  );
+  if (error) throw toAuthError(error, "재설정 메일 전송에 실패했어요.");
+}
+
+// recovery 링크로 돌아온 사용자가 새 비밀번호를 설정한다.
+// Supabase 가 recovery 토큰을 자동으로 세션화해 두기 때문에 그 상태에서
+// updateUser({ password }) 만 호출하면 된다.
+export async function adultUpdatePassword(newPassword: string) {
+  const supabase = getSupabaseClient();
+  if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
+  const { error } = await supabase.auth.updateUser({ password: newPassword });
+  if (error) throw toAuthError(error, "비밀번호 변경에 실패했어요.");
+}
+
 // -----------------------------------------------------------------------------
 // 셀프 가입: 교회 생성 + 본인을 admin 으로 등록.
 // v2.3: 항목별 동의 + 약관 버전 + 서명자 이름 증빙 저장.

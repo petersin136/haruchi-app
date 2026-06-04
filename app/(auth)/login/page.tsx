@@ -161,10 +161,22 @@ export default function LoginPage() {
           {busy ? "로그인 중…" : "로그인"}
         </button>
 
+        <div className="au-foot-row">
+          <Link href="/forgot-password" className="au-foot-link">
+            비밀번호를 잊으셨나요?
+          </Link>
+        </div>
+
         <p className="au-foot">
           처음 시작하시는 분은 <Link href="/signup">새 교회 만들기</Link>.
           <br />
           교사는 관리자가 보낸 초대 링크로 가입하세요.
+          <br />
+          <span className="au-foot-quiet">
+            아이디는 가입할 때 사용한 <strong>이메일</strong>이에요. 어떤
+            이메일로 가입했는지 기억이 안 나시면 같은 교회 관리자에게
+            문의해 주세요.
+          </span>
         </p>
       </div>
       <style jsx>{authStyles}</style>

@@ -62,7 +62,12 @@ if (isDevHost) {
   // fetch listener를 등록하지 않음 → 모든 요청은 SW를 우회하여 네트워크 직행
 } else {
 
-const CACHE_VERSION = "v1.0.0";
+// v1.1.0 (2026-06-04): adultSignIn/Up 영어 에러 한글화 + URL sanitize 적용.
+//   기존 PWA 클라이언트가 옛 JS 번들을 잡고 있어서 "Invalid path specified in
+//   request URL" 같은 영어 메시지가 그대로 떨어지는 사례가 있었다. 버전을
+//   올려 SW 가 새 캐시 키를 쓰면, activate 단계의 정리 로직이 옛 캐시를
+//   삭제해 다음 새로고침에서 새 번들을 받게 된다.
+const CACHE_VERSION = "v1.1.0";
 const PRECACHE = `precache-${CACHE_VERSION}`;
 const RUNTIME_STATIC = `static-${CACHE_VERSION}`;
 const RUNTIME_PAGES = `pages-${CACHE_VERSION}`;

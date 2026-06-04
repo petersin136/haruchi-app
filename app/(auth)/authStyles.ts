@@ -247,6 +247,30 @@ export const authStyles = `
     text-decoration: underline;
     text-underline-offset: 2px;
   }
+  .au-foot-row {
+    margin-top: var(--space-3);
+    display: flex;
+    justify-content: flex-end;
+  }
+  .au-foot-link {
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 4px 6px;
+    border-radius: var(--radius-sm);
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+  .au-foot-link:hover {
+    color: var(--accent);
+    background: var(--surface-alt);
+  }
+  .au-foot-quiet {
+    display: inline-block;
+    margin-top: var(--space-2);
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    line-height: 1.7;
+  }
   .au-error {
     margin: var(--space-3) 0 var(--space-1);
     padding: var(--space-3);
