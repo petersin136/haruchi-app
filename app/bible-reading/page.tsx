@@ -2917,20 +2917,31 @@ export default function BibleReadingPage() {
             본문이 아직 준비되지 않았어요. 다른 번역을 선택해 보세요.
           </p>
         )}
-        {/* 마태복음 + 헬라어 모드일 때 새 "단어 블록(3줄)" 구조로 절 단위 표시.
-            장 단위 컴포넌트 안에서 절·복사·상세를 모두 처리하므로 verse-card
-            기반의 long-press 선택 모드와는 분리된다.                            */}
+        {/* 4복음서(마태·마가·누가·요한) + 헬라어 모드일 때 새 "단어 블록(3줄)"
+            구조로 절 단위 표시. 장 단위 컴포넌트 안에서 절·복사·상세를 모두
+            처리하므로 verse-card 기반의 long-press 선택 모드와는 분리된다.
+            그 외 책의 헬라어 모드는 기존 ruby UI(.brp-greek-block) 유지.   */}
         {bookConfirmed &&
-          bookId === "matthew" &&
-          effectiveTranslation === "greek" && (
+          effectiveTranslation === "greek" &&
+          (bookId === "matthew" ||
+            bookId === "mark" ||
+            bookId === "luke" ||
+            bookId === "john") && (
             <GreekChapterV2
+              bookId={bookId as "matthew" | "mark" | "luke" | "john"}
               bookLabel={bookMeta.name}
               chapter={chapterNumber}
               chapterLabel={`${chapterNumber}장`}
             />
           )}
         {bookConfirmed &&
-          !(bookId === "matthew" && effectiveTranslation === "greek") &&
+          !(
+            effectiveTranslation === "greek" &&
+            (bookId === "matthew" ||
+              bookId === "mark" ||
+              bookId === "luke" ||
+              bookId === "john")
+          ) &&
           verses.map((verse, idx) => {
           // 스크롤 모드는 "스크롤 + 최소 시간 + 퀴즈"가 모두 끝나
           // 장 자체가 완료(readVerseCount === totalVerses)됐을 때만
