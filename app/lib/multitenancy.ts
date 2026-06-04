@@ -180,18 +180,82 @@ export function useAdultSession(): {
 // -----------------------------------------------------------------------------
 // Auth wrappers
 // -----------------------------------------------------------------------------
+
+// Supabase Auth 가 영어로 던지는 메시지를 한글로 바꿔준다.
+// 새로운 케이스가 보이면 여기에 추가. 매칭이 안 되면 원문을 그대로 둔다.
+function translateAuthError(raw: string): string {
+  const msg = (raw || "").toLowerCase();
+
+  if (msg.includes("invalid login credentials")) {
+    return "이메일 또는 비밀번호가 올바르지 않아요.";
+  }
+  if (msg.includes("email not confirmed")) {
+    return "이메일 인증이 아직 완료되지 않았어요. 받은 메일의 인증 링크를 눌러 주세요.";
+  }
+  if (
+    msg.includes("user already registered") ||
+    msg.includes("already registered")
+  ) {
+    return "이미 가입된 이메일이에요. 로그인해 주세요.";
+  }
+  if (msg.includes("password should be at least")) {
+    return "비밀번호는 8자 이상이어야 해요.";
+  }
+  if (
+    msg.includes("unable to validate email address") ||
+    msg.includes("invalid email")
+  ) {
+    return "이메일 형식을 확인해 주세요.";
+  }
+  if (
+    msg.includes("email rate limit exceeded") ||
+    msg.includes("over_email_send_rate_limit") ||
+    msg.includes("for security purposes")
+  ) {
+    return "요청이 너무 많아요. 잠시 후 다시 시도해 주세요.";
+  }
+  if (msg.includes("signups not allowed")) {
+    return "현재 회원가입이 막혀 있어요. 관리자에게 문의해 주세요.";
+  }
+  if (
+    msg.includes("network request failed") ||
+    msg.includes("failed to fetch") ||
+    msg.includes("networkerror")
+  ) {
+    return "네트워크 연결을 확인해 주세요. Wi-Fi 또는 모바일 데이터 상태를 확인하고 다시 시도해 주세요.";
+  }
+
+  return raw;
+}
+
+function toAuthError(err: unknown, fallback: string): Error {
+  const raw = err instanceof Error ? err.message : String(err ?? "");
+  return new Error(translateAuthError(raw) || fallback);
+}
+
+// 모바일 자동 대문자/공백 등으로 인한 로그인 실패를 막기 위해 이메일을 정규화한다.
+function normalizeEmail(email: string): string {
+  return email.trim().toLowerCase();
+}
+
 export async function adultSignUp(email: string, password: string) {
   const supabase = getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
-  const { error } = await supabase.auth.signUp({ email, password });
-  if (error) throw error;
+  const { error } = await supabase.auth.signUp({
+    email: normalizeEmail(email),
+    password,
+  });
+  if (error) throw toAuthError(error, "회원가입에 실패했어요.");
 }
 
 export async function adultSignIn(email: string, password: string) {
   const supabase = getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
-  const { error } = await supabase.auth.signInWithPassword({ email, password });
-  if (error) throw error;
+  const { error } = await supabase.auth.signInWithPassword({
+    email: normalizeEmail(email),
+    password,
+  });
+  if (error) throw toAuthError(error, "로그인에 실패했어요.");
 }
 
 // -----------------------------------------------------------------------------

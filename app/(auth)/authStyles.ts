@@ -107,6 +107,43 @@ export const authStyles = `
     border-color: var(--accent);
     box-shadow: 0 0 0 3px var(--accent-soft);
   }
+  /* 비밀번호 입력 + 눈 아이콘 토글 래퍼 */
+  .au-password {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+  }
+  .au-password input {
+    width: 100%;
+    padding-right: 44px;
+  }
+  .au-password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: calc(var(--ctrl-h) - 8px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--ink-soft);
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+  .au-password-toggle:hover {
+    color: var(--ink);
+    background: var(--surface-alt);
+  }
+  .au-password-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
   .au-consent-list {
     margin: var(--space-3) 0 var(--space-4);
     padding: var(--space-4);
