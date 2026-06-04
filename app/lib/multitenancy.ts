@@ -224,6 +224,28 @@ function translateAuthError(raw: string): string {
   ) {
     return "네트워크 연결을 확인해 주세요. Wi-Fi 또는 모바일 데이터 상태를 확인하고 다시 시도해 주세요.";
   }
+  // 배포 환경 변수(NEXT_PUBLIC_SUPABASE_URL) 가 잘못됐을 때 CDN/에지에서
+  // 떨어지는 영어 메시지들. 사용자가 고칠 수 있는 문제가 아니라 운영자가
+  // 환경 변수를 확인해야 하는 문제라 그대로 안내해 준다.
+  if (
+    msg.includes("invalid path specified in request url") ||
+    msg.includes("invalid url") ||
+    msg.includes("invalidpath") ||
+    msg.includes("404") ||
+    msg.includes("not found") ||
+    msg.includes("nosuchhost") ||
+    msg.includes("getaddrinfo")
+  ) {
+    return "서버 설정에 문제가 있는 것 같아요. 잠시 후 다시 시도하거나 관리자에게 문의해 주세요.";
+  }
+  if (
+    msg.includes("503") ||
+    msg.includes("502") ||
+    msg.includes("service unavailable") ||
+    msg.includes("bad gateway")
+  ) {
+    return "서버가 일시적으로 응답하지 않아요. 잠시 후 다시 시도해 주세요.";
+  }
 
   return raw;
 }
