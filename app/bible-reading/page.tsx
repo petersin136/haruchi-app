@@ -14,9 +14,15 @@ import StudentIdentityBar, {
 } from "./components/StudentIdentityBar";
 import Dropdown, { type DropdownOption } from "./components/Dropdown";
 import SlidingToggle from "./components/SlidingToggle";
-// 새 "헬라어 보기 v2" 구조 — 마태복음 1장에서만 테스트 노출.
-// 다른 책/장은 기존 ruby 형태(.brp-greek-block) 그대로 유지.
-import GreekChapterV2 from "./components/GreekChapterV2";
+// 새 "헬라어 보기 v2" 구조 — 마태복음 전체에 적용.
+// 다른 책은 기존 ruby 형태(.brp-greek-block) 그대로 유지.
+// 데이터(matthew-v2.json) 가 5MB 가량 크므로 dynamic import 로 lazy-load.
+// 헬라어 모드 진입 시에만 chunk + 데이터가 받아진다.
+import nextDynamic from "next/dynamic";
+const GreekChapterV2 = nextDynamic(
+  () => import("./components/GreekChapterV2"),
+  { ssr: false },
+);
 import {
   fetchCompletedChapters,
   flushPendingLogs,
@@ -2911,21 +2917,20 @@ export default function BibleReadingPage() {
             본문이 아직 준비되지 않았어요. 다른 번역을 선택해 보세요.
           </p>
         )}
-        {/* 마태복음 1장 + 헬라어 모드 한정으로 새 "단어 블록(3줄)" 구조 노출.
-            나머지 책/장은 기존 ruby + greekKr 본문 그대로 (아래 verses.map).
+        {/* 마태복음 + 헬라어 모드일 때 새 "단어 블록(3줄)" 구조로 절 단위 표시.
             장 단위 컴포넌트 안에서 절·복사·상세를 모두 처리하므로 verse-card
             기반의 long-press 선택 모드와는 분리된다.                            */}
         {bookConfirmed &&
           bookId === "matthew" &&
-          chapterNumber === 1 &&
           effectiveTranslation === "greek" && (
             <GreekChapterV2
               bookLabel={bookMeta.name}
+              chapter={chapterNumber}
               chapterLabel={`${chapterNumber}장`}
             />
           )}
         {bookConfirmed &&
-          !(bookId === "matthew" && chapterNumber === 1 && effectiveTranslation === "greek") &&
+          !(bookId === "matthew" && effectiveTranslation === "greek") &&
           verses.map((verse, idx) => {
           // 스크롤 모드는 "스크롤 + 최소 시간 + 퀴즈"가 모두 끝나
           // 장 자체가 완료(readVerseCount === totalVerses)됐을 때만

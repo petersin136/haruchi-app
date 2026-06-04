@@ -37,7 +37,9 @@ import {
   useState,
   type PointerEvent as ReactPointerEvent,
 } from "react";
-import matt1Data from "../matthew1-v2.json";
+// 마태복음 전체(28장) v2 데이터. 5MB 가량이므로 이 컴포넌트는 page.tsx
+// 에서 next/dynamic 으로 lazy-load 해 헬라어 모드 진입 시에만 받는다.
+import matthewData from "../matthew-v2.json";
 
 type V2Token = {
   w: string;
@@ -62,16 +64,23 @@ type V2Verse = {
   tokens: V2Token[];
 };
 
-type V2Data = {
-  meta: {
-    book: string;
-    chapter: number;
-    sources: { sblgnt: string; morphgnt: string; kr: string };
-  };
+type V2Chapter = {
+  chapter: number;
   verses: V2Verse[];
 };
 
-const DATA = matt1Data as V2Data;
+type V2Data = {
+  meta: {
+    book: string;
+    sources: { sblgnt: string; morphgnt: string; kr: string };
+  };
+  chapters: V2Chapter[];
+};
+
+const DATA = matthewData as V2Data;
+const CHAPTER_INDEX = new Map<number, V2Chapter>(
+  DATA.chapters.map((c) => [c.chapter, c]),
+);
 
 type CopyMode = "greek" | "kr" | "both";
 type CopyTarget = {
@@ -197,20 +206,41 @@ function CopyMenu({ point, onPick, onClose }: CopyMenuProps) {
 }
 
 type Props = {
-  // 책/장 라벨 — 복사 텍스트 헤더에 들어감. 미지정이면 헤더 생략.
+  // 책/장 라벨 — 복사 텍스트 헤더에 들어감.
   bookLabel?: string;
   chapterLabel?: string;
+  // 현재 표시할 장 번호 (예: 1, 2, …, 28).
+  chapter: number;
 };
 
 export default function GreekChapterV2({
   bookLabel = "마태복음",
-  chapterLabel = "1장",
+  chapterLabel,
+  chapter,
 }: Props) {
-  const verses = DATA.verses;
+  const chapterData = CHAPTER_INDEX.get(chapter);
+  const verses = chapterData?.verses ?? [];
+  const resolvedChapterLabel = chapterLabel ?? `${chapter}장`;
 
   // 펼침 상태 — 의역(verseN), 단어 상세(verseN:tokenIdx).
+  // Set 은 삽입 순서를 보존하므로, openToken 에 들어간 키 순서가 곧 "유저가
+  // 누른 순번"이 된다. 이 순번을 절 단위로 카운트해 단어 블록·상세 카드에
+  // 같은 번호로 표시한다.
   const [openKr, setOpenKr] = useState<Set<number>>(() => new Set());
   const [openToken, setOpenToken] = useState<Set<string>>(() => new Set());
+
+  // 토큰 키 → 그 절 안에서 몇 번째로 펼쳤는지 (1부터). 절마다 별도 카운터.
+  const tokenOrdinal = useMemo(() => {
+    const map = new Map<string, number>();
+    const perVerse = new Map<number, number>();
+    for (const k of openToken) {
+      const vN = parseInt(k.split(":")[0], 10);
+      const c = (perVerse.get(vN) ?? 0) + 1;
+      perVerse.set(vN, c);
+      map.set(k, c);
+    }
+    return map;
+  }, [openToken]);
 
   // 복사 메뉴 상태.
   const [copyTarget, setCopyTarget] = useState<CopyTarget>(null);
@@ -298,7 +328,7 @@ export default function GreekChapterV2({
       let header = "";
       let target: V2Verse[] = [];
       if (verseN === "chapter") {
-        header = `${bookLabel} ${chapterLabel}`;
+        header = `${bookLabel} ${resolvedChapterLabel}`;
         target = verses;
       } else {
         header = "";
@@ -309,7 +339,7 @@ export default function GreekChapterV2({
       setCopyTarget(null);
       if (ok) {
         if (verseN === "chapter") {
-          setToast(`${chapterLabel} 전체 복사됨 · ${COPY_MODE_LABEL[mode]}`);
+          setToast(`${resolvedChapterLabel} 전체 복사됨 · ${COPY_MODE_LABEL[mode]}`);
         } else {
           setToast(`${verseN}절 복사됨 · ${COPY_MODE_LABEL[mode]}`);
         }
@@ -317,7 +347,7 @@ export default function GreekChapterV2({
         setToast("복사에 실패했어요");
       }
     },
-    [bookLabel, chapterLabel, verses],
+    [bookLabel, resolvedChapterLabel, verses],
   );
 
   const toggleKr = useCallback((n: number) => {
@@ -367,10 +397,10 @@ export default function GreekChapterV2({
   );
 
   return (
-    <section className="brp-g2" aria-label={`${bookLabel} ${chapterLabel} 헬라어`}>
+    <section className="brp-g2" aria-label={`${bookLabel} ${resolvedChapterLabel} 헬라어`}>
       <header className="brp-g2-header">
         <div className="brp-g2-title">
-          <strong>{bookLabel} {chapterLabel}</strong>
+          <strong>{bookLabel} {resolvedChapterLabel}</strong>
           <span className="brp-g2-meta">
             {verses.length}절 · 단어 {totalTokens}개
           </span>
@@ -418,27 +448,36 @@ export default function GreekChapterV2({
                 });
               }}
             >
-              <div className="brp-g2-verse-head">
-                <span className="brp-g2-verse-n">{v.n}</span>
-                <button
-                  type="button"
-                  className={`brp-g2-kr-chev ${krOpen ? "is-open" : ""}`}
-                  aria-expanded={krOpen}
-                  aria-label={`${v.n}절 한글 의역 ${krOpen ? "접기" : "펼치기"}`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleKr(v.n);
-                  }}
-                >
-                  <span aria-hidden="true">▾</span>
-                </button>
-              </div>
+              {/* ▾ 토글 — 절 우측 상단 absolute 배치. 머리 줄을 따로
+                  차지하지 않으므로, 단어 블록이 절 숫자 바로 옆부터 시작한다. */}
+              <button
+                type="button"
+                className={`brp-g2-kr-chev ${krOpen ? "is-open" : ""}`}
+                aria-expanded={krOpen}
+                aria-label={`${v.n}절 한글 의역 ${krOpen ? "접기" : "펼치기"}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleKr(v.n);
+                }}
+              >
+                <span aria-hidden="true">▾</span>
+              </button>
 
-              {/* 단어 블록(3줄) — 가로 빽빽, 세로 빽빽, 글씨 크기는 유지. */}
+              {/* 단어 블록(3줄) — 컨테이너 첫 자식에 절 숫자를 두어 첫 단어
+                  바로 옆부터 시작되게 한다. 절 숫자는 클릭 비활성. */}
               <div className="brp-g2-tokens">
+                <span
+                  className="brp-g2-token brp-g2-token--num"
+                  aria-hidden="true"
+                >
+                  <span className="brp-g2-token-w brp-g2-verse-n">{v.n}</span>
+                  <span className="brp-g2-token-p">{"\u00A0"}</span>
+                  <span className="brp-g2-token-g">{"\u00A0"}</span>
+                </span>
                 {v.tokens.map((tk, i) => {
                   const key = `${v.n}:${i}`;
                   const isOpen = openToken.has(key);
+                  const ord = tokenOrdinal.get(key);
                   return (
                     <button
                       type="button"
@@ -449,12 +488,20 @@ export default function GreekChapterV2({
                       aria-expanded={isOpen}
                       aria-label={`${tk.w} (${tk.p}) ${
                         isOpen ? "상세 닫기" : "상세 열기"
-                      }`}
+                      }${ord ? ` · 펼친 순번 ${ord}` : ""}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         toggleToken(key);
                       }}
                     >
+                      {ord && (
+                        <span
+                          className="brp-g2-token-ord"
+                          aria-hidden="true"
+                        >
+                          {ord}
+                        </span>
+                      )}
                       <span className="brp-g2-token-w" lang="grc">{tk.w}</span>
                       <span className="brp-g2-token-p" aria-hidden="true">
                         {tk.p || "\u00A0"}
@@ -467,22 +514,29 @@ export default function GreekChapterV2({
                 })}
               </div>
 
-              {/* 단어 상세 — 절별로 펼쳐진 항목들을 토큰 컨테이너 아래에 모음. */}
+              {/* 단어 상세 — 펼친 순서(openToken 삽입 순서) 대로 렌더한다.
+                  토큰 인덱스 순이 아니라 사용자가 누른 순으로 위→아래. */}
               {(() => {
-                const openItems = v.tokens
-                  .map((tk, i) => ({ tk, i, k: `${v.n}:${i}` }))
-                  .filter(({ k }) => openToken.has(k));
+                const openItems = Array.from(openToken)
+                  .filter((k) => k.startsWith(`${v.n}:`))
+                  .map((k) => {
+                    const i = parseInt(k.split(":")[1], 10);
+                    return { k, i, tk: v.tokens[i], ord: tokenOrdinal.get(k)! };
+                  });
                 if (openItems.length === 0) return null;
                 return (
                   <div className="brp-g2-detail-panels">
-                    {openItems.map(({ tk, k }) => (
+                    {openItems.map(({ tk, k, ord }) => (
                       <article
                         key={`d-${k}`}
                         className="brp-g2-detail"
                         role="region"
-                        aria-label={`${tk.w} 단어 상세`}
+                        aria-label={`${ord}번째로 펼친 단어 ${tk.w} 상세`}
                       >
                         <header className="brp-g2-detail-head">
+                          <span className="brp-g2-detail-ord" aria-hidden="true">
+                            {ord}
+                          </span>
                           <span className="brp-g2-detail-w" lang="grc">{tk.w}</span>
                           <span className="brp-g2-detail-p">{tk.p}</span>
                           {tk.nameType && (
@@ -530,10 +584,13 @@ export default function GreekChapterV2({
                 );
               })()}
 
-              {/* 한글 의역 — 절의 맨 아래 줄에 펼쳐진다 (접힘 기본).
-                  ▾ 가 있는 머리 줄과 떨어져 있어서 빈 칸이 생기지 않는다. */}
+              {/* 한글 의역 — 절의 맨 아래에 펼쳐진다(접힘 기본).
+                  앞에는 라인이나 표식 없이 절 번호 텍스트만 prefix. */}
               {krOpen && (
                 <p className="brp-g2-kr" lang="ko">
+                  <span className="brp-g2-kr-n" aria-hidden="true">
+                    {v.n}
+                  </span>
                   {v.copyKr}
                 </p>
               )}
@@ -645,7 +702,10 @@ export default function GreekChapterV2({
           gap: 8px;
         }
         .brp-g2-verse {
-          padding: 4px 2px 8px;
+          position: relative;
+          /* ▾ 버튼 영역(우측 약 26px) 만큼만 우측 패딩. 단어 블록 자체는
+             절의 좌측 끝부터 시작하므로 절 숫자 앞에 빈 줄/공간이 없다. */
+          padding: 2px 28px 8px 0;
           border-bottom: 1px solid var(--line, rgba(0, 0, 0, 0.06));
           /* 길게 누르기 동안 텍스트 선택이 끼어드는 것 방지(데스크탑 포함). */
           -webkit-user-select: none;
@@ -664,26 +724,15 @@ export default function GreekChapterV2({
         }
         .brp-g2-verse:last-child { border-bottom: none; }
 
-        /* ── 절 머리: 좌측 번호 + 우측 끝 ▾ 한 줄 ── */
-        .brp-g2-verse-head {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 8px;
-          margin: 0 0 4px;
-          line-height: 1;
-        }
-        .brp-g2-verse-n {
-          font-size: 0.84em;
-          font-weight: 700;
-          color: var(--g2-hl);
-          min-width: 18px;
-        }
+        /* ── ▾ 토글 — 절 우측 상단 absolute, 머리 줄을 차지하지 않음 ── */
         .brp-g2-kr-chev {
+          position: absolute;
+          top: 0;
+          right: 0;
           appearance: none;
           background: transparent;
           border: none;
-          padding: 2px 6px;
+          padding: 4px 6px;
           font: inherit;
           font-size: 0.9em;
           color: var(--g2-soft);
@@ -707,19 +756,45 @@ export default function GreekChapterV2({
           background: color-mix(in srgb, var(--accent, #3b6c47) 10%, transparent);
         }
 
-        /* ── 한글 의역(절 맨 아래, 미니멀하지만 강조감 있는 좌측 라인) ── */
+        /* ── 절 숫자 토큰(클릭 비활성, 헬라어 자리에 숫자만 표시) ── */
+        .brp-g2-token--num {
+          cursor: default;
+          /* button 처럼 hover/open 배경 없음. 헬라어와 같은 padding 으로
+             다른 토큰과 baseline 이 정확히 맞도록. */
+        }
+        .brp-g2-token--num:hover { background: transparent; }
+        .brp-g2-verse-n {
+          /* 헬라어 자리에 놓이지만 serif 가 아닌 sans, 사이즈도 본문 단어보다
+             살짝 작아 시각적으로 "번호" 임을 구분. */
+          font-family: inherit !important;
+          font-variant-ligatures: normal !important;
+          font-size: 0.95rem;
+          font-weight: 700;
+          color: var(--g2-hl);
+          line-height: inherit;
+        }
+
+        /* ── 한글 의역(절 맨 아래) — 좌측 라인 + 옅은 테마 톤 배경으로 강조 ── */
         .brp-g2-kr {
-          margin: 6px 0 2px 0;
-          padding: 6px 0 6px 12px;
+          margin: 8px 0 2px 0;
+          padding: 6px 12px 6px 12px;
           border-left: 3px solid
-            color-mix(in srgb, var(--accent, #3b6c47) 70%, transparent);
-          background: color-mix(in srgb, var(--accent, #3b6c47) 5%, transparent);
+            color-mix(in srgb, var(--accent, #3b6c47) 60%, transparent);
+          background: color-mix(in srgb, var(--accent, #3b6c47) 6%, transparent);
           border-radius: 0 4px 4px 0;
           color: var(--g2-kr-ink);
           font-size: 0.96em;
           line-height: 1.7;
           word-break: keep-all;
           overflow-wrap: break-word;
+          text-indent: 0;
+        }
+        .brp-g2-kr-n {
+          display: inline-block;
+          font-weight: 700;
+          color: var(--g2-hl);
+          margin-right: 6px;
+          font-size: 0.92em;
         }
 
         /* ── 단어 블록(3줄) — 빽빽한 그리드 ── */
@@ -736,7 +811,8 @@ export default function GreekChapterV2({
           background: transparent;
           border: 1px solid transparent;
           /* 세로 3줄을 바짝 붙이고 좌우는 살짝만 패딩 — 블록 사이 간격은
-             gap 으로만 조절 (한 줄에 많이 들어가야 한다는 요구사항). */
+             gap 으로만 조절 (한 줄에 많이 들어가야 한다는 요구사항).
+             펼침 순번 뱃지를 우측 상단에 띄우기 위해 relative. */
           padding: 2px 5px 3px;
           border-radius: 6px;
           display: inline-flex;
@@ -749,7 +825,30 @@ export default function GreekChapterV2({
           font: inherit;
           color: inherit;
           line-height: 1.05; /* 3줄을 위아래로 더 바짝 붙이기 위해 축소 */
+          position: relative;
           transition: background 0.12s ease, border-color 0.12s ease;
+        }
+        /* 펼침 순번 뱃지 — 펼쳐져 있는 단어 블록의 우측 상단에 작은 동그라미.
+           같은 번호가 아래 상세 카드 헤더에 다시 나와 매칭을 보여준다. */
+        .brp-g2-token-ord {
+          position: absolute;
+          top: -4px;
+          right: -3px;
+          min-width: 15px;
+          height: 15px;
+          padding: 0 4px;
+          background: var(--g2-hl);
+          color: var(--bg, #fff);
+          border-radius: 999px;
+          font-size: 0.62rem;
+          font-weight: 700;
+          line-height: 1;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-family: inherit;
+          letter-spacing: 0;
+          box-shadow: 0 0 0 2px var(--surface, #fff);
         }
         .brp-g2-token:hover { background: rgba(0, 0, 0, 0.035); }
         .brp-g2-token.is-open {
@@ -781,45 +880,65 @@ export default function GreekChapterV2({
           white-space: nowrap;
         }
 
-        /* 고유명사(인명·지명) 강조 — "뜻 줄" 만 또렷한 accent + 굵기로.
-           헬라어/발음 줄은 다른 단어와 똑같이 둬서 단어들 간 색 규칙이
-           일관되게 유지되도록 한다. */
+        /* 고유명사(인명·지명) 강조 — "뜻 줄" 색만 진한 accent.
+           굵기는 일부러 주지 않아 한 절 안에서 글자 굵기 규칙이 깨지지
+           않게 한다 (헬라어/발음 줄은 다른 단어와 동일 색). */
         .brp-g2-token.is-person .brp-g2-token-g,
         .brp-g2-token.is-place  .brp-g2-token-g {
           color: var(--g2-hl);
-          font-weight: 700;
         }
 
-        /* ── 단어 상세 카드 ── */
+        /* ── 단어 상세 카드 — 박스/둥근 모서리 없이 가는 좌측 라인만 ── */
         .brp-g2-detail-panels {
           display: flex;
           flex-direction: column;
-          gap: 6px;
+          gap: 10px;
           margin: 6px 0 4px;
         }
         .brp-g2-detail {
-          padding: 10px 14px 12px;
-          background: color-mix(in srgb, var(--accent, #3b6c47) 6%, var(--surface, #fff));
-          border: 1px solid color-mix(in srgb, var(--accent, #3b6c47) 18%, transparent);
-          border-left: 3px solid
-            color-mix(in srgb, var(--accent, #3b6c47) 60%, transparent);
-          border-radius: 8px;
+          padding: 2px 0 2px 12px;
+          background: transparent;
+          border: none;
+          border-left: 2px solid
+            color-mix(in srgb, var(--accent, #3b6c47) 55%, transparent);
+          border-radius: 0;
         }
         .brp-g2-detail-head {
           display: flex;
-          align-items: baseline;
+          align-items: center;
           gap: 8px;
-          margin-bottom: 6px;
-          padding-bottom: 6px;
-          border-bottom: 1px dashed
-            color-mix(in srgb, var(--accent, #3b6c47) 22%, transparent);
+          margin-bottom: 2px;
+          padding-bottom: 0;
+          border-bottom: none;
         }
-        /* 상세 카드 — 헬라어 제목은 본문과 동일한 잉크 색 유지(일관 규칙). */
+        /* 상세 카드 헤더의 순번 뱃지 — 단어 블록 위 뱃지와 같은 번호.
+           살짝 더 크게(읽기 편하게) + 동일한 진한 accent 톤. */
+        .brp-g2-detail-ord {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 20px;
+          height: 20px;
+          padding: 0 6px;
+          background: var(--g2-hl);
+          color: var(--bg, #fff);
+          border-radius: 999px;
+          font-size: 0.74em;
+          font-weight: 700;
+          line-height: 1;
+          letter-spacing: 0;
+          flex: 0 0 auto;
+        }
+        /* 상세 카드 — 헬라어 제목은 본문과 동일한 잉크 색 + 아주 옅은
+           accent 배경 하이라이트(inline highlighter 느낌). */
         .brp-g2-detail-w {
           font-family: "EB Garamond", "Garamond", "Times New Roman", serif;
           font-size: 1.18em;
           font-weight: 700;
           color: var(--g2-ink);
+          background: color-mix(in srgb, var(--accent, #3b6c47) 8%, transparent);
+          padding: 1px 7px 2px;
+          border-radius: 4px;
         }
         .brp-g2-detail-p {
           font-size: 0.85em;

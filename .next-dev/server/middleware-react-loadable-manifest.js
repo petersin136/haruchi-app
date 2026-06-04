@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"app/bible-reading/page.tsx -> ./components/GreekChapterV2\":{\"id\":\"app/bible-reading/page.tsx -> ./components/GreekChapterV2\",\"files\":[\"static/chunks/_app-pages-browser_app_bible-reading_components_GreekChapterV2_tsx.js\"]}}"
