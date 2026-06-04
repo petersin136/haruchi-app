@@ -2364,7 +2364,7 @@ export default function BibleReadingPage() {
             </button>
           ) : null}
           <a className="brp-nav-link brp-nav-text-link" href="/login">
-            어른 로그인
+            관리자·교사 로그인
           </a>
         </nav>
 
@@ -2430,7 +2430,7 @@ export default function BibleReadingPage() {
               <span className="brp-mobile-menu-icon" aria-hidden="true">
                 <span className="brp-mobile-menu-bullet" />
               </span>
-              <span>어른 로그인</span>
+              <span>관리자·교사 로그인</span>
             </a>
             <span className="brp-mobile-menu-divider" aria-hidden="true" />
             <a
@@ -3011,25 +3011,6 @@ export default function BibleReadingPage() {
                                     </span>
                                   )
                                 )}
-                                {hasInfo && isInfoOpen && (
-                                  <span
-                                    className="brp-greek-token-info"
-                                    role="region"
-                                    aria-label={`${tk.w} 단어 풀이`}
-                                  >
-                                    <span className="brp-greek-token-info-head">
-                                      <span className="brp-greek-token-info-w">
-                                        {tk.w}
-                                      </span>
-                                      <span className="brp-greek-token-info-p">
-                                        {tk.p}
-                                      </span>
-                                    </span>
-                                    <span className="brp-greek-token-info-body">
-                                      {tk.info}
-                                    </span>
-                                  </span>
-                                )}
                               </span>
                             );
                           })}
@@ -3065,6 +3046,41 @@ export default function BibleReadingPage() {
                           </button>
                         )}
                       </div>
+                      {(() => {
+                        // 열린 단어 인포 패널 — 토큰 줄 흐름을 깨지 않도록
+                        // tokens 컨테이너 바깥, 그 아래 별도 블록으로 렌더링.
+                        const openInfos = tokens
+                          .map((tk, i) => ({ tk, i }))
+                          .filter(({ tk, i }) =>
+                            !!tk.info &&
+                            openTokenInfos.has(`${verse.n}:${i}`),
+                          );
+                        if (openInfos.length === 0) return null;
+                        return (
+                          <div className="brp-greek-token-info-panels">
+                            {openInfos.map(({ tk, i }) => (
+                              <div
+                                key={`info-${verse.n}:${i}`}
+                                className="brp-greek-token-info"
+                                role="region"
+                                aria-label={`${tk.w} 단어 풀이`}
+                              >
+                                <div className="brp-greek-token-info-head">
+                                  <span className="brp-greek-token-info-w">
+                                    {tk.w}
+                                  </span>
+                                  <span className="brp-greek-token-info-p">
+                                    {tk.p}
+                                  </span>
+                                </div>
+                                <div className="brp-greek-token-info-body">
+                                  {tk.info}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        );
+                      })()}
                       {hasDrawer && isDrawerOpen && (
                         <p className="brp-verse-greek-words">
                           {greekWordsMap!.get(verse.n)}
@@ -4147,26 +4163,36 @@ export default function BibleReadingPage() {
           transition: color 0.15s ease, border-color 0.15s ease;
           font-family: inherit;
         }
-        button.brp-greek-token-pron:hover,
-        button.brp-greek-token-pron.is-open {
+        button.brp-greek-token-pron:hover {
           color: var(--ink);
           border-bottom-color: var(--ink);
         }
+        button.brp-greek-token-pron.is-open {
+          color: color-mix(in srgb, var(--accent) 80%, var(--ink));
+          border-bottom-color: color-mix(in srgb, var(--accent) 70%, transparent);
+          border-bottom-style: solid;
+        }
 
-        /* 단어 정보 팝오버 — 그 토큰 바로 아래에 새 줄로 펼쳐진다.
-           flex-wrap container 안의 한 줄을 통째로 차지하도록 100% width
-           + flex-basis 100% 트릭. 너무 넓어지지 않게 max-width 제한. */
+        /* 단어 정보 패널 — 토큰 줄 흐름을 깨지 않도록 .brp-greek-tokens
+           바깥, 그 아래 별도 블록으로 펼쳐진다. 여러 단어를 동시에 열면
+           세로로 쌓인다. 테마 accent(포레스트 그린)에서 파생한 연한
+           파스텔 민트 톤으로 본문과 자연스럽게 구분된다. */
+        .brp-greek-token-info-panels {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          margin: 10px 0 4px;
+        }
         .brp-greek-token-info {
-          flex-basis: 100%;
-          width: 100%;
-          order: 1;
-          margin: 6px 0 4px;
-          padding: 10px 12px;
-          background: rgba(0, 0, 0, 0.035);
-          border-left: 2px solid var(--line-strong, rgba(0, 0, 0, 0.25));
-          border-radius: 0 6px 6px 0;
+          padding: 10px 14px;
+          background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+          border: 1px solid
+            color-mix(in srgb, var(--accent) 22%, transparent);
+          border-left: 3px solid
+            color-mix(in srgb, var(--accent) 55%, transparent);
+          border-radius: 8px;
           color: var(--ink);
-          font-size: 0.85em;
+          font-size: 0.86em;
           line-height: 1.65;
           text-align: left;
           display: block;
@@ -4175,15 +4201,16 @@ export default function BibleReadingPage() {
           display: flex;
           align-items: baseline;
           gap: 8px;
-          margin-bottom: 4px;
-          padding-bottom: 4px;
-          border-bottom: 1px dashed var(--line, rgba(0, 0, 0, 0.12));
+          margin-bottom: 6px;
+          padding-bottom: 5px;
+          border-bottom: 1px dashed
+            color-mix(in srgb, var(--accent) 25%, transparent);
         }
         .brp-greek-token-info-w {
           font-family: "EB Garamond", "Garamond", "Times New Roman", serif;
           font-size: 1.05em;
           font-weight: 600;
-          color: var(--ink);
+          color: color-mix(in srgb, var(--accent) 80%, var(--ink));
         }
         .brp-greek-token-info-p {
           font-size: 0.85em;

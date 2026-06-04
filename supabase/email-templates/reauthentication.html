@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>하루치 재인증 안내</title>
+  </head>
+  <body
+    style="margin:0;padding:0;background:#F4F1E9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo','Noto Sans KR',sans-serif;color:#1E1E1E;"
+  >
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style="background:#F4F1E9;padding:32px 16px;"
+    >
+      <tr>
+        <td align="center">
+          <table
+            role="presentation"
+            width="520"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="max-width:520px;width:100%;background:#FFFFFF;border:1px solid #E5E2D9;border-radius:16px;overflow:hidden;"
+          >
+            <tr>
+              <td style="padding:28px 32px 8px;">
+                <div
+                  style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#7A7363;font-weight:600;"
+                >
+                  HARUCHI · 하루치
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:8px 32px 24px;">
+                <h1
+                  style="margin:0 0 14px;font-size:22px;font-weight:700;line-height:1.35;color:#1E1E1E;letter-spacing:-0.01em;"
+                >
+                  본인 확인 인증 코드
+                </h1>
+                <p
+                  style="margin:0 0 18px;font-size:15px;line-height:1.7;color:#3D3A33;"
+                >
+                  <strong>하루치</strong>에서 본인 확인을 위해 인증 코드를
+                  요청하셨습니다. 아래 6자리 코드를 입력해 주세요.
+                </p>
+
+                <div
+                  style="margin:6px 0 22px;padding:18px;background:#F4F1E9;border:1px solid #E5E2D9;border-radius:12px;text-align:center;"
+                >
+                  <div
+                    style="font-size:30px;font-weight:700;letter-spacing:0.18em;color:#1F4D3A;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;"
+                  >
+                    {{ .Token }}
+                  </div>
+                </div>
+
+                <p
+                  style="margin:0;font-size:12.5px;line-height:1.7;color:#7A7363;"
+                >
+                  이 코드는 짧은 시간 동안만 유효합니다. 요청하지 않으셨다면
+                  무시하셔도 됩니다. 다른 사람에게 절대로 코드를 알려주지
+                  마세요.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="padding:18px 32px 26px;border-top:1px solid #E5E2D9;background:#FAF8F2;"
+              >
+                <p
+                  style="margin:0;font-size:12px;line-height:1.65;color:#7A7363;"
+                >
+                  하루치 — 교회/단체 성경 읽기 진도 관리 서비스
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

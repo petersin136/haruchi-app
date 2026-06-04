@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>하루치 가입 인증 메일</title>
+  </head>
+  <body
+    style="margin:0;padding:0;background:#F4F1E9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo','Noto Sans KR',sans-serif;color:#1E1E1E;"
+  >
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style="background:#F4F1E9;padding:32px 16px;"
+    >
+      <tr>
+        <td align="center">
+          <table
+            role="presentation"
+            width="520"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="max-width:520px;width:100%;background:#FFFFFF;border:1px solid #E5E2D9;border-radius:16px;overflow:hidden;"
+          >
+            <!-- 헤더: 브랜드 워드마크 -->
+            <tr>
+              <td style="padding:28px 32px 8px;">
+                <div
+                  style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#7A7363;font-weight:600;"
+                >
+                  HARUCHI · 하루치
+                </div>
+              </td>
+            </tr>
+            <!-- 본문 -->
+            <tr>
+              <td style="padding:8px 32px 24px;">
+                <h1
+                  style="margin:0 0 14px;font-size:22px;font-weight:700;line-height:1.35;color:#1E1E1E;letter-spacing:-0.01em;"
+                >
+                  이메일 인증을 마쳐 주세요
+                </h1>
+                <p
+                  style="margin:0 0 18px;font-size:15px;line-height:1.7;color:#3D3A33;"
+                >
+                  안녕하세요. <strong>하루치</strong>에 회원가입을 신청해
+                  주셔서 감사합니다. 아래 버튼을 한 번 눌러 이메일 인증을
+                  마쳐 주시면 곧장 우리 교회/단체를 만들 수 있어요.
+                </p>
+
+                <!-- CTA 버튼 -->
+                <table
+                  role="presentation"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="margin:8px 0 22px;"
+                >
+                  <tr>
+                    <td
+                      align="center"
+                      style="background:#1F4D3A;border-radius:10px;"
+                    >
+                      <a
+                        href="{{ .ConfirmationURL }}"
+                        style="display:inline-block;padding:14px 28px;font-size:15px;font-weight:600;color:#FFFFFF;text-decoration:none;border-radius:10px;"
+                      >
+                        이메일 인증하고 계속하기
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+
+                <p
+                  style="margin:0 0 6px;font-size:13px;line-height:1.7;color:#7A7363;"
+                >
+                  버튼이 눌리지 않으면 아래 주소를 브라우저에 복사해 주세요.
+                </p>
+                <p
+                  style="margin:0 0 22px;font-size:12.5px;line-height:1.6;color:#3D3A33;word-break:break-all;background:#F4F1E9;padding:10px 12px;border-radius:8px;border:1px solid #E5E2D9;"
+                >
+                  {{ .ConfirmationURL }}
+                </p>
+
+                <p
+                  style="margin:0;font-size:12.5px;line-height:1.7;color:#7A7363;"
+                >
+                  이 메일을 요청하지 않으셨다면 그냥 무시하셔도 됩니다.
+                  누군가 다른 사람이 실수로 이메일 주소를 잘못 입력했을 수
+                  있어요. 인증 링크는 일정 시간이 지나면 만료됩니다.
+                </p>
+              </td>
+            </tr>
+            <!-- 푸터 -->
+            <tr>
+              <td
+                style="padding:18px 32px 26px;border-top:1px solid #E5E2D9;background:#FAF8F2;"
+              >
+                <p
+                  style="margin:0;font-size:12px;line-height:1.65;color:#7A7363;"
+                >
+                  하루치 — 교회/단체 성경 읽기 진도 관리 서비스<br />
+                  본 메일은 발신 전용입니다. 문의는 가입하신 교회/단체의
+                  관리자에게 부탁드립니다.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -36,9 +36,24 @@ export default function LoginPage() {
     try {
       await adultSignIn(email.trim(), password);
       await refresh();
+      // 성공 시 직전 진단용 기록 제거.
+      try {
+        sessionStorage.removeItem("haruchi:last-auth-error");
+      } catch {
+        // 무시.
+      }
     } catch (e) {
       const msg = e instanceof Error ? e.message : "로그인에 실패했어요.";
       setError(msg);
+      // 진단 페이지에서 raw 메시지 그대로 보여주기 위해 보관.
+      try {
+        sessionStorage.setItem(
+          "haruchi:last-auth-error",
+          `${new Date().toISOString()}\n${msg}`,
+        );
+      } catch {
+        // sessionStorage 차단된 환경은 그냥 무시.
+      }
     } finally {
       setBusy(false);
     }
@@ -68,12 +83,35 @@ export default function LoginPage() {
       </div>
 
       <div className="au-card">
-        <p className="au-eyebrow">어른 로그인</p>
+        <p className="au-eyebrow">관리자·교사 공통 로그인</p>
         <h1>로그인</h1>
         <p className="au-sub">
-          관리자·교사용 로그인입니다. 가입한 이메일과 비밀번호로 들어가면
-          역할에 맞는 화면으로 이동해요.
+          <strong>관리자와 교사 모두</strong> 이 페이지에서 로그인해요. 가입한
+          이메일과 비밀번호를 입력하시면, 역할(관리자/교사)에 맞는 화면으로
+          자동으로 이동합니다.
         </p>
+
+        <details className="au-roles">
+          <summary>누가 어디서 로그인하나요?</summary>
+          <ul className="au-roles-list">
+            <li>
+              <strong>학생(어린이)</strong> — 로그인 없이{" "}
+              <Link href="/bible-reading">학생 페이지</Link>에서 이름과 PIN
+              으로 입장해요.
+            </li>
+            <li>
+              <strong>교회/단체 관리자</strong> — 직접 가입(또는{" "}
+              <Link href="/signup">새 교회/단체 만들기</Link>) 한 뒤, 다음
+              부터는 이 페이지에서 이메일·비밀번호로 로그인.
+            </li>
+            <li>
+              <strong>교사</strong> — <em>최초 가입은</em> 관리자가 보낸{" "}
+              <strong>카톡 초대 링크</strong>로만 가능해요. 한 번 가입하시면{" "}
+              그 뒤부터는 이 페이지에서 같은 이메일·비밀번호로 로그인하시면
+              교사 페이지로 자동 이동합니다.
+            </li>
+          </ul>
+        </details>
 
         <label className="au-field">
           <span>이메일</span>
@@ -166,6 +204,13 @@ export default function LoginPage() {
             비밀번호를 잊으셨나요?
           </Link>
         </div>
+        {error ? (
+          <p className="au-foot" style={{ marginTop: 6 }}>
+            <Link href="/debug-auth" className="au-foot-link">
+              로그인이 계속 안 되면 진단 페이지 열기 →
+            </Link>
+          </p>
+        ) : null}
 
         <p className="au-foot">
           처음 시작하시는 분은 <Link href="/signup">새 교회 만들기</Link>.

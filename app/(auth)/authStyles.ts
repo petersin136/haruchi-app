@@ -305,4 +305,52 @@ export const authStyles = `
     font-size: 12px;
     color: var(--ink);
   }
+  /* "누가 어디서 로그인하나요?" 접이식 안내 */
+  .au-roles {
+    margin: 0 0 var(--space-4);
+    background: var(--surface-alt);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+  }
+  .au-roles > summary {
+    cursor: pointer;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding: 2px 0;
+  }
+  .au-roles > summary::-webkit-details-marker { display: none; }
+  .au-roles > summary::after {
+    content: "▾";
+    color: var(--ink-soft);
+    font-size: 12px;
+    transition: transform 0.2s ease;
+  }
+  .au-roles[open] > summary::after { transform: rotate(180deg); }
+  .au-roles-list {
+    margin: var(--space-3) 0 0;
+    padding-left: var(--space-4);
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .au-roles-list li strong { color: var(--ink); font-weight: 600; }
+  .au-roles-list a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .au-roles-list a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
 `;

@@ -308,7 +308,15 @@ export default function TeacherInvitePage() {
         </button>
 
         <p className="au-foot">
-          이미 계정이 있다면 <Link href="/login">로그인</Link> 후 이 페이지로 돌아오세요.
+          이미 계정이 있다면 <Link href="/login">로그인</Link> 후 이 페이지로
+          돌아오세요.
+          <br />
+          <span style={{ color: "var(--ink-faint)", fontSize: 12.5 }}>
+            가입을 한 번 끝내시면, <strong>다음부터는</strong>{" "}
+            <Link href="/login">관리자·교사 로그인 페이지</Link>에서 같은
+            이메일·비밀번호로 들어오시면 됩니다. 별도의 교사 전용 로그인
+            페이지는 없어요.
+          </span>
         </p>
       </>
     );

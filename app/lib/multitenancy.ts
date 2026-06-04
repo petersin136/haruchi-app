@@ -207,15 +207,43 @@ function translateAuthError(raw: string): string {
   ) {
     return "이메일 형식을 확인해 주세요.";
   }
+  // Supabase 의 "For security purposes, you can only request this after N
+  // seconds." 메시지에서 남은 시간을 뽑아 더 친절한 안내로 바꾼다.
+  const securityMatch = raw.match(/after\s+(\d+)\s+seconds?/i);
+  if (securityMatch) {
+    const seconds = parseInt(securityMatch[1] ?? "0", 10);
+    if (seconds > 0) {
+      if (seconds < 60) {
+        return `보안을 위해 약 ${seconds}초 뒤에 다시 시도해 주세요. 직전에 보낸 메일이 이미 도착했을 수 있으니 메일함(스팸함 포함)도 확인해 주세요.`;
+      }
+      const minutes = Math.ceil(seconds / 60);
+      return `보안을 위해 약 ${minutes}분 뒤에 다시 시도해 주세요. 직전에 보낸 메일이 이미 도착했을 수 있으니 메일함(스팸함 포함)도 확인해 주세요.`;
+    }
+  }
   if (
     msg.includes("email rate limit exceeded") ||
     msg.includes("over_email_send_rate_limit") ||
     msg.includes("for security purposes")
   ) {
-    return "요청이 너무 많아요. 잠시 후 다시 시도해 주세요.";
+    return "요청이 너무 많아요. 잠시(보통 1~2분) 뒤에 다시 시도해 주세요. 직전에 보낸 메일이 이미 도착했을 수 있으니 메일함(스팸함 포함)도 확인해 주세요.";
   }
   if (msg.includes("signups not allowed")) {
     return "현재 회원가입이 막혀 있어요. 관리자에게 문의해 주세요.";
+  }
+  // Supabase Auth 가 SMTP 로 메일을 발송하다 실패할 때 떨어지는 메시지들.
+  // 사용자(가입자) 잘못이 아니라 운영자가 SMTP 설정을 손봐야 하는 문제라
+  // 그 점을 명확히 안내한다.
+  if (
+    msg.includes("error sending recovery email") ||
+    msg.includes("error sending confirmation email") ||
+    msg.includes("error sending magic link email") ||
+    msg.includes("error sending invite email") ||
+    msg.includes("error sending") ||
+    msg.includes("smtp") ||
+    msg.includes("535 5.7") || // gmail 인증 실패 raw 코드
+    msg.includes("authentication failed")
+  ) {
+    return "메일 발송에 실패했어요. 운영자가 SMTP 설정(보낸 메일 서버)을 확인해야 하는 문제입니다. 잠시 후 다시 시도해 보시고, 계속 같은 문제면 관리자에게 알려 주세요.";
   }
   if (
     msg.includes("network request failed") ||
