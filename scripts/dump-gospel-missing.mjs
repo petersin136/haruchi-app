@@ -1,4 +1,4 @@
-// 4복음서 누락 lemma 통합 리포트.
+// 신약 누락 lemma 통합 리포트.
 // 사용: node scripts/dump-gospel-missing.mjs > .cache/gospel-missing.json
 import fs from "node:fs";
 import path from "node:path";
@@ -6,12 +6,25 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
-const files = [
-  ["matthew", path.join(repoRoot, "app/bible-reading/matthew-v2.json")],
-  ["mark", path.join(repoRoot, "app/bible-reading/mark-v2.json")],
-  ["luke", path.join(repoRoot, "app/bible-reading/luke-v2.json")],
-  ["john", path.join(repoRoot, "app/bible-reading/john-v2.json")],
+const NT_BOOKS = [
+  "matthew",
+  "mark",
+  "luke",
+  "john",
+  "acts",
+  "romans",
+  "corinthians1",
+  "corinthians2",
+  "galatians",
+  "ephesians",
+  "philippians",
+  "colossians",
+  "thessalonians1",
+  "thessalonians2",
 ];
+const files = NT_BOOKS
+  .map((id) => [id, path.join(repoRoot, `app/bible-reading/${id}-v2.json`)])
+  .filter(([, p]) => fs.existsSync(p));
 
 const total = new Map();
 const samples = new Map();

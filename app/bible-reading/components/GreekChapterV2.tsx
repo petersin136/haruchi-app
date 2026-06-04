@@ -42,8 +42,22 @@ import {
 } from "react";
 
 // 책별 v2 데이터를 동적 import — 페이지가 그 책의 헬라어 모드에 진입할 때
-// 만 chunk 가 전송된다. (마태 ~5MB, 마가 ~3MB, 누가 ~5MB, 요한 ~4MB)
-type GospelId = "matthew" | "mark" | "luke" | "john";
+// 만 chunk 가 전송된다.
+type GospelId =
+  | "matthew"
+  | "mark"
+  | "luke"
+  | "john"
+  | "acts"
+  | "romans"
+  | "corinthians1"
+  | "corinthians2"
+  | "galatians"
+  | "ephesians"
+  | "philippians"
+  | "colossians"
+  | "thessalonians1"
+  | "thessalonians2";
 
 async function loadGospelData(book: GospelId): Promise<V2Data> {
   switch (book) {
@@ -55,6 +69,26 @@ async function loadGospelData(book: GospelId): Promise<V2Data> {
       return (await import("../luke-v2.json")).default as V2Data;
     case "john":
       return (await import("../john-v2.json")).default as V2Data;
+    case "acts":
+      return (await import("../acts-v2.json")).default as V2Data;
+    case "romans":
+      return (await import("../romans-v2.json")).default as V2Data;
+    case "corinthians1":
+      return (await import("../corinthians1-v2.json")).default as V2Data;
+    case "corinthians2":
+      return (await import("../corinthians2-v2.json")).default as V2Data;
+    case "galatians":
+      return (await import("../galatians-v2.json")).default as V2Data;
+    case "ephesians":
+      return (await import("../ephesians-v2.json")).default as V2Data;
+    case "philippians":
+      return (await import("../philippians-v2.json")).default as V2Data;
+    case "colossians":
+      return (await import("../colossians-v2.json")).default as V2Data;
+    case "thessalonians1":
+      return (await import("../thessalonians1-v2.json")).default as V2Data;
+    case "thessalonians2":
+      return (await import("../thessalonians2-v2.json")).default as V2Data;
   }
 }
 

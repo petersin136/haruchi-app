@@ -1,26 +1,23 @@
 // =============================================================================
-// 4복음서(마태/마가/누가/요한) — "헬라어 보기 v2" 데이터 빌더 (일반화).
+// 신약 "헬라어 보기 v2" 데이터 빌더 (일반화).
+//
+// 현재 등록된 책: 4복음서 + 사도행전 + 로마서 + 고린도전·후서.
+// 같은 패턴으로 책을 추가하려면 아래 BOOKS 에 항목을 더하면 된다.
 //
 // 사용:
-//   node scripts/build-gospel-v2.mjs            # 4권 모두 빌드
+//   node scripts/build-gospel-v2.mjs            # 등록된 책 모두 빌드
 //   node scripts/build-gospel-v2.mjs matthew    # 특정 책만
-//
-// 산출물:
-//   app/bible-reading/matthew-v2.json
-//   app/bible-reading/mark-v2.json
-//   app/bible-reading/luke-v2.json
-//   app/bible-reading/john-v2.json
 //
 // 입력:
 //   - .cache/sblgnt-<book>.txt        (MorphGNT 형태소 + SBLGNT 본문)
-//   - scripts/lib/gospel-lexicon.mjs  (4복음서 공통 어휘집)
+//   - scripts/lib/gospel-lexicon.mjs  (신약 공통 어휘집)
 //   - scripts/lib/greek-pron.mjs
 //   - scripts/lib/morph-parse.mjs
 //   - app/bible-reading/<book>.json   (verses.greekKr — 한글 의역)
 //
 // 어휘집(GOSPEL_LEXICON) 에 없는 lemma 는 gloss 빈 칸으로 출력된다(블록
-// 3번째 줄이 비어 보일 뿐, 화면은 정상 동작). 누락은 stderr 에 책별로 빈도
-// 순 보고 + 4권 통합 빈도 리포트도 출력해 점진적 보강에 활용한다.
+// 3번째 줄이 비어 보일 뿐, 화면은 정상 동작). 누락은 책별 빈도 보고 +
+// 전체 통합 빈도 리포트도 출력해 점진적 보강에 활용한다.
 // =============================================================================
 
 import fs from "node:fs";
@@ -60,6 +57,16 @@ const BOOKS = [
   { id: "mark", label: "마가복음" },
   { id: "luke", label: "누가복음" },
   { id: "john", label: "요한복음" },
+  { id: "acts", label: "사도행전" },
+  { id: "romans", label: "로마서" },
+  { id: "corinthians1", label: "고린도전서" },
+  { id: "corinthians2", label: "고린도후서" },
+  { id: "galatians", label: "갈라디아서" },
+  { id: "ephesians", label: "에베소서" },
+  { id: "philippians", label: "빌립보서" },
+  { id: "colossians", label: "골로새서" },
+  { id: "thessalonians1", label: "데살로니가전서" },
+  { id: "thessalonians2", label: "데살로니가후서" },
 ];
 
 const SBLGNT_MARKERS = /[\u2E00-\u2E1F]/g;
@@ -234,7 +241,7 @@ function main() {
     if (r) reports.push(r);
   }
 
-  // ─ 4권 통합 누락 빈도 리포트 (어휘 보강 우선순위 산정용) ─
+  // ─ 통합 누락 빈도 리포트 (어휘 보강 우선순위 산정용) ─
   if (reports.length >= 2) {
     const merged = new Map();
     for (const r of reports) {
@@ -246,7 +253,7 @@ function main() {
     const totalM = reports.reduce((s, r) => s + r.totalMissingTokens, 0);
     const cov = (((totalT - totalM) / totalT) * 100).toFixed(1);
     console.log(
-      `\n📊 4복음서 합계 — 토큰 ${totalT} · 커버리지 ${cov}% · 누락 lemma ${merged.size}종 (${totalM} 토큰)`,
+      `\n📊 합계 — 토큰 ${totalT} · 커버리지 ${cov}% · 누락 lemma ${merged.size}종 (${totalM} 토큰)`,
     );
     const arr = [...merged.entries()].sort((a, b) => b[1] - a[1]);
     console.log(`   통합 누락 상위 30 (빈도순):`);

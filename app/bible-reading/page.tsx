@@ -23,6 +23,17 @@ const GreekChapterV2 = nextDynamic(
   () => import("./components/GreekChapterV2"),
   { ssr: false },
 );
+// "성경 공부" 모드(다중 역본 레이어 뷰어, 로마서 1장 전용) + 영어(WEB) 단일
+// 역본 뷰는 새로 추가한 독립 컴포넌트. 다른 모드와 마찬가지로 lazy-load 한다
+// — 사용자가 드롭다운에서 그 모드를 골랐을 때에만 chunk 가 받아진다.
+const LayeredBibleViewer = nextDynamic(
+  () => import("../bible-study/components/LayeredBibleViewer"),
+  { ssr: false },
+);
+const EnglishOnlyView = nextDynamic(
+  () => import("../bible-study/components/EnglishOnlyView"),
+  { ssr: false },
+);
 import {
   fetchCompletedChapters,
   flushPendingLogs,
@@ -44,6 +55,14 @@ import SearchOverlay, { type SearchSelection } from "./SearchOverlay";
 //           줄 오른쪽의 ▾ 갈매기를 누르면 절 전체 풀이(greekWords) 가 펼쳐진다.
 //           현재 마태복음 1장만 새 디자인으로 채워져 있다.
 type TranslationKey = "krv" | "kids" | "greek";
+
+// 모드 전환 드롭다운 값.
+//   - krv / kids / greek : 기존 단일 역본 읽기(아무 책/장).
+//   - english            : 영어(WEB) 단일 역본 읽기 — 로마서 1장 전용.
+//   - study              : 다중 역본 레이어 뷰어(성경 공부) — 로마서 1장 전용.
+// english / study 를 고르면 자동으로 로마서 1장으로 이동한다.
+type ModeChoice = TranslationKey | "english" | "study";
+type ViewMode = "reader" | "english" | "study";
 
 type PrayerGradeKey = "children" | "youth" | "youngadult" | "adult";
 
@@ -182,6 +201,9 @@ const currentChapterKey = (bookId: BookId) =>
 const MIGRATION_V1_KEY = "bible_migrated_v1";
 const READING_MODE_KEY = "bible_reading_mode";
 const TRANSLATION_KEY = "bible_translation";
+// 모드 드롭다운(reader/english/study) 의 마지막 선택을 보관.
+//   reader 가 기본값(기존 호환). 새로고침해도 마지막 모드를 복구한다.
+const VIEW_MODE_KEY = "bible_view_mode";
 
 const migrateLegacyKeys = () => {
   if (typeof window === "undefined") return;
@@ -872,6 +894,10 @@ export default function BibleReadingPage() {
   const [bookConfirmed, setBookConfirmed] = useState(false);
   const [chapterNumber, setChapterNumber] = useState(1);
   const [translation, setTranslation] = useState<TranslationKey>("krv");
+  // 화면 모드 — "reader" 는 기존 단일 역본 reader, "english" 는 로마서 1장
+  // 영어(WEB) 단일 역본, "study" 는 로마서 1장 다중 역본 레이어 뷰어.
+  // 후 두 모드는 로마서 1장 전용이라, 진입 시 자동으로 로마서 1장으로 이동.
+  const [viewMode, setViewMode] = useState<ViewMode>("reader");
   const [readingMode, setReadingMode] = useState<ReadingMode>("mic");
   const [readVerseCount, setReadVerseCount] = useState(0);
   // 원어묵상 모드 — 절 전체 풀이 서랍(▾ 갈매기)이 펼쳐진 절 번호 집합.
@@ -1614,6 +1640,52 @@ export default function BibleReadingPage() {
     [translation],
   );
 
+  // 모드 드롭다운 — 5개 항목(개역한글/어린이/영어/헬라어/성경 공부) 통합 핸들러.
+  //   - krv / kids / greek : viewMode 를 reader 로 되돌리고 그 번역으로 전환.
+  //   - english / study    : 로마서 1장(전용)으로 자동 이동 + viewMode 전환.
+  // 이동 로직은 changeBook(저장된 장 복원 동작) 을 우회하고 직접 setState +
+  // localStorage 기록을 한다 — 항상 1장으로 들어가야 하므로.
+  const handleModeChange = useCallback(
+    (next: ModeChoice) => {
+      if (next === "krv" || next === "kids" || next === "greek") {
+        if (viewMode !== "reader") setViewMode("reader");
+        handleTranslationChange(next);
+        return;
+      }
+      // english 또는 study — 로마서 1장으로 정렬한 뒤 모드 전환.
+      const goRomans1 = bookId !== "romans" || chapterNumber !== 1;
+      if (goRomans1) {
+        setBookId("romans" as BookId);
+        setBookConfirmed(true);
+        setChapterNumber(1);
+        try {
+          window.localStorage.setItem(CURRENT_BOOK_KEY, "romans");
+          window.localStorage.setItem(
+            currentChapterKey("romans" as BookId),
+            "1",
+          );
+        } catch {
+          /* ignore */
+        }
+      }
+      setViewMode(next);
+    },
+    [
+      viewMode,
+      handleTranslationChange,
+      bookId,
+      chapterNumber,
+    ],
+  );
+
+  // 드롭다운에 현재 보이는 값. study/english 가 우선, 그 외에는 현재 번역.
+  const currentModeChoice: ModeChoice =
+    viewMode === "study"
+      ? "study"
+      : viewMode === "english"
+        ? "english"
+        : translation;
+
   // 검색 결과 클릭 → 해당 책/장/번역으로 이동 + 그 절을 잠깐 강조(flashVerse).
   //   기존 책·장·번역 전환과 동일한 state/localStorage 키를 재사용한다.
   //   (changeBook 은 저장된 장을 불러오는 early-return 이 있어, 여기선 명시적으로
@@ -1853,9 +1925,78 @@ export default function BibleReadingPage() {
       setTranslation(savedTranslation);
     }
 
+    // 모드 드롭다운 복구. URL 쿼리(?view=study|english) 가 가장 우선
+    // (메뉴 링크 / 외부 진입), 없으면 localStorage 의 마지막 선택을 따른다.
+    // english/study 는 로마서 1장 전용이라, 진입 시 자동으로 책/장을 로마서
+    // 1장으로 맞춘다. URL 파라미터는 적용 후 history.replaceState 로 정리해
+    // 사용자가 이후 책/장을 바꾸고 새로고침했을 때 다시 study 로 끌려오지
+    // 않도록 한다.
+    let initialView: ViewMode | null = null;
+    let urlParamApplied = false;
+    try {
+      const qp = new URLSearchParams(window.location.search).get("view");
+      if (qp === "study" || qp === "english" || qp === "reader") {
+        initialView = qp;
+        urlParamApplied = true;
+      }
+    } catch {
+      /* ignore */
+    }
+    if (!initialView) {
+      const savedView = window.localStorage.getItem(VIEW_MODE_KEY);
+      if (savedView === "study" || savedView === "english" || savedView === "reader") {
+        initialView = savedView;
+      }
+    }
+    if (initialView && initialView !== "reader") {
+      setViewMode(initialView);
+      setBookId("romans" as BookId);
+      setBookConfirmed(true);
+      setChapterNumber(1);
+      try {
+        window.localStorage.setItem(CURRENT_BOOK_KEY, "romans");
+        window.localStorage.setItem(currentChapterKey("romans" as BookId), "1");
+      } catch {
+        /* ignore */
+      }
+    }
+    if (urlParamApplied) {
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.delete("view");
+        window.history.replaceState(
+          window.history.state,
+          "",
+          url.pathname + (url.search ? url.search : "") + url.hash,
+        );
+      } catch {
+        /* ignore */
+      }
+    }
+
     // 클라이언트에서 실제 Web Speech API 지원 여부를 확정한다.
     setSpeechSupported(getSpeechRecognition() !== null);
   }, []);
+
+  // viewMode 변경을 localStorage 에 영구 보관.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      window.localStorage.setItem(VIEW_MODE_KEY, viewMode);
+    } catch {
+      /* ignore */
+    }
+  }, [viewMode]);
+
+  // english/study 모드는 로마서 1장 전용이라, 사용자가 다른 책·장으로 이동하면
+  // 자동으로 reader 모드로 빠져나오게 한다(드롭다운에는 다시 현재 번역이 선택
+  // 된 것으로 보임).
+  useEffect(() => {
+    if (viewMode === "reader") return;
+    if (bookId !== "romans" || chapterNumber !== 1) {
+      setViewMode("reader");
+    }
+  }, [bookId, chapterNumber, viewMode]);
 
   useEffect(() => {
     const done = new Set<number>();
@@ -2363,6 +2504,9 @@ export default function BibleReadingPage() {
           >
             <GearIcon />
           </a>
+          <a className="brp-nav-link brp-nav-text-link" href="/bible-reading?view=study">
+            성경 공부
+          </a>
           {!currentStudent ? (
             <button
               type="button"
@@ -2416,6 +2560,17 @@ export default function BibleReadingPage() {
             aria-label="Account links"
             onClick={(e) => e.stopPropagation()}
           >
+            <a
+              className="brp-mobile-menu-item"
+              href="/bible-reading?view=study"
+              onClick={() => setNavMenuOpen(false)}
+            >
+              <span className="brp-mobile-menu-icon" aria-hidden="true">
+                <span className="brp-mobile-menu-bullet" />
+              </span>
+              <span>성경 공부</span>
+            </a>
+            <span className="brp-mobile-menu-divider" aria-hidden="true" />
             {!currentStudent ? (
               <button
                 type="button"
@@ -2514,52 +2669,30 @@ export default function BibleReadingPage() {
           측정해 동적으로 결정(useEffect 참조). */}
       <aside ref={sideRef} className="brp-side" aria-label="읽기 컨트롤 및 진도">
 
-      {/* Row 1: [번역 토글] + [읽기 모드 토글] — 한 줄, 1:1 분할.
-          왼쪽: 개역한글 / 어린이 / 원어묵상. 오른쪽: 낭독 / 묵독.
-          두 컨트롤 모두 같은 pill 톤 + 슬라이딩 인디케이터로 시각 톤 통일.
+      {/* Row 1: [모드 드롭다운] + [읽기 모드 토글] — 한 줄, 1:1 분할.
+          왼쪽: 5개 모드 드롭다운(개역한글 / 어린이 / 영어 / 헬라어 / 성경 공부).
+                기존 단일 역본 토글을 드롭다운으로 대체해, '성경 공부(로마서 1장
+                레이어 뷰어)' 진입점을 같은 자리에 통합했다. english/study 항목은
+                고르면 자동으로 로마서 1장으로 이동한다.
+          오른쪽: 낭독 / 묵독.
           책 미선택(bookConfirmed=false) 상태에서는 의미가 없는 컨트롤이라 통째로
           숨겨, "책부터 골라주세요" 라는 시선 흐름을 자연스럽게 유도. */}
       {bookConfirmed && (
-      <section className="brp-top-row" aria-label="번역과 읽기 모드 선택">
-        {(() => {
-          // 슬라이딩 인디케이터: SlidingToggle 이 활성 버튼의 실제 offsetLeft·
-          // offsetWidth 를 측정해 인디케이터를 정확히 그 위치에 정렬한다.
-          // (라벨 길이·컨테이너 폭이 달라도 인디케이터 깨짐 없음 — 태블릿/모바일
-          // 의 좁은 사이드 그리드에서 "원어묵상" 활성 시 우측 가장자리 어긋남
-          // 문제를 본질적으로 해결.)
-          const translationKeys = Object.keys(
-            data.translations,
-          ) as TranslationKey[];
-          return (
-            <SlidingToggle<TranslationKey>
-              className="brp-translation brp-translation--sm brp-toggle"
-              role="group"
-              ariaLabel="번역 선택"
-              activeKey={effectiveTranslation}
-              onSelect={handleTranslationChange}
-              items={translationKeys.map((key) => {
-                const isKrvDisabled = key === "krv" && !hasKrv;
-                const isKidsDisabled = key === "kids" && !hasKids;
-                const isGreekDisabled = key === "greek" && !hasGreek;
-                const isDisabled =
-                  isKrvDisabled || isKidsDisabled || isGreekDisabled;
-                const disabledTitle = isKrvDisabled
-                  ? "이 책의 개역한글 본문은 아직 준비되지 않았어요."
-                  : isKidsDisabled
-                    ? "이 책의 어린이 번역은 준비 중입니다."
-                    : isGreekDisabled
-                      ? "이 장의 헬라어 자료는 아직 준비되지 않았어요."
-                      : undefined;
-                return {
-                  key,
-                  label: data.translations[key]?.label ?? key,
-                  disabled: isDisabled,
-                  title: disabledTitle,
-                };
-              })}
-            />
-          );
-        })()}
+      <section className="brp-top-row" aria-label="모드와 읽기 모드 선택">
+        <Dropdown<ModeChoice>
+          value={currentModeChoice}
+          options={[
+            { value: "krv", label: "개역한글" },
+            { value: "kids", label: "어린이" },
+            { value: "english", label: "영어" },
+            { value: "greek", label: "헬라어" },
+            { value: "study", label: "성경 공부" },
+          ]}
+          onChange={handleModeChange}
+          ariaLabel="모드 선택"
+          align="center"
+          size="sm"
+        />
 
         <SlidingToggle<ReadingMode>
           className="brp-mode-tabs brp-mode-tabs--sm brp-toggle"
@@ -2900,6 +3033,15 @@ export default function BibleReadingPage() {
         <header className="brp-reader-hero">
           <h1>{bookConfirmed ? bookMeta.name : "오늘은 어떤 말씀을 읽어볼까요?"}</h1>
         </header>
+        {/* viewMode 분기 — "성경 공부" 또는 "영어(WEB)" 모드를 선택하면
+            기존 reader 본문 자리에 그 전용 컴포넌트를 렌더하고, 나머지
+            기존 번역 렌더링은 모두 건너뛴다. 두 모드 모두 로마서 1장 전용. */}
+        {viewMode === "study" ? (
+          <LayeredBibleViewer embedded />
+        ) : viewMode === "english" ? (
+          <EnglishOnlyView />
+        ) : (
+        <>
         {!bookConfirmed && (
           <p className="brp-reader-empty">
             먼저 위에서 <strong>구약</strong> 또는 <strong>신약</strong> 중
@@ -2917,18 +3059,45 @@ export default function BibleReadingPage() {
             본문이 아직 준비되지 않았어요. 다른 번역을 선택해 보세요.
           </p>
         )}
-        {/* 4복음서(마태·마가·누가·요한) + 헬라어 모드일 때 새 "단어 블록(3줄)"
-            구조로 절 단위 표시. 장 단위 컴포넌트 안에서 절·복사·상세를 모두
-            처리하므로 verse-card 기반의 long-press 선택 모드와는 분리된다.
-            그 외 책의 헬라어 모드는 기존 ruby UI(.brp-greek-block) 유지.   */}
+        {/* 4복음서·사도행전·로마·고전·고후 + 헬라어 모드일 때 새 "단어
+            블록(3줄)" 구조로 절 단위 표시. 장 단위 컴포넌트 안에서 절·복사·
+            상세를 모두 처리하므로 verse-card 기반의 long-press 선택 모드와는
+            분리된다. 그 외 책의 헬라어 모드는 기존 ruby UI(.brp-greek-block)
+            유지.                                                          */}
         {bookConfirmed &&
           effectiveTranslation === "greek" &&
           (bookId === "matthew" ||
             bookId === "mark" ||
             bookId === "luke" ||
-            bookId === "john") && (
+            bookId === "john" ||
+            bookId === "acts" ||
+            bookId === "romans" ||
+            bookId === "corinthians1" ||
+            bookId === "corinthians2" ||
+            bookId === "galatians" ||
+            bookId === "ephesians" ||
+            bookId === "philippians" ||
+            bookId === "colossians" ||
+            bookId === "thessalonians1" ||
+            bookId === "thessalonians2") && (
             <GreekChapterV2
-              bookId={bookId as "matthew" | "mark" | "luke" | "john"}
+              bookId={
+                bookId as
+                  | "matthew"
+                  | "mark"
+                  | "luke"
+                  | "john"
+                  | "acts"
+                  | "romans"
+                  | "corinthians1"
+                  | "corinthians2"
+                  | "galatians"
+                  | "ephesians"
+                  | "philippians"
+                  | "colossians"
+                  | "thessalonians1"
+                  | "thessalonians2"
+              }
               bookLabel={bookMeta.name}
               chapter={chapterNumber}
               chapterLabel={`${chapterNumber}장`}
@@ -2940,7 +3109,17 @@ export default function BibleReadingPage() {
             (bookId === "matthew" ||
               bookId === "mark" ||
               bookId === "luke" ||
-              bookId === "john")
+              bookId === "john" ||
+              bookId === "acts" ||
+              bookId === "romans" ||
+              bookId === "corinthians1" ||
+              bookId === "corinthians2" ||
+              bookId === "galatians" ||
+              bookId === "ephesians" ||
+              bookId === "philippians" ||
+              bookId === "colossians" ||
+              bookId === "thessalonians1" ||
+              bookId === "thessalonians2")
           ) &&
           verses.map((verse, idx) => {
           // 스크롤 모드는 "스크롤 + 최소 시간 + 퀴즈"가 모두 끝나
@@ -3126,6 +3305,8 @@ export default function BibleReadingPage() {
             </div>
           );
         })}
+        </>
+        )}
       </section>
 
       </div>{/* /.brp-canvas */}
