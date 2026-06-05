@@ -6836,6 +6836,17 @@ export default function BibleReadingPage() {
           .brp-mini-title {
             max-width: 45vw;
           }
+          /* 성경공부(study) 모드 미니바는 우측에 역본 토글이 들어가 좌측 텍스트
+             영역이 좁다. 모바일에선 소제목까지 끼면 줄이 통째로 잘려 책·장이
+             아예 안 보이는 일이 생겨, 소제목과 그 앞의 구분점(·) 을 숨기고
+             "책 이름 · 제 N 장" 만 남겨 둔다.
+             :has() 는 iOS Safari 15.4+ / Chrome 105+ 에서 지원되며, 옛 브라우저
+             에서는 단지 기존처럼 잘려 보일 뿐 동작이 깨지지 않는다 (안전한
+             progressive enhancement). */
+          .brp-mini-bar--study .brp-mini-title,
+          .brp-mini-bar--study .brp-mini-divider:has(+ .brp-mini-title) {
+            display: none;
+          }
 
           .brp-nav {
             gap: 6px;

@@ -264,6 +264,22 @@ const LAYER_META: Record<LayerId, { dot: string; short: string }> = {
 const ON_STORAGE_KEY = "haruchi.bibleStudy.layers";
 const ORDER_STORAGE_KEY = "haruchi.bibleStudy.order";
 
+// 단어 클릭 순서별 컬러 — 같은 절에서 여러 단어를 펼치면 어느 뱃지가 어느
+// 카드와 짝인지 헷갈리므로, 순번(1,2,3…)마다 다른 컬러를 6개씩 순환해 단어
+// 뱃지 + 상세 카드(좌측 보더 + 헤더 뱃지) 를 같은 색으로 묶는다.
+const WORD_ORD_PALETTE = [
+  "#2E5D4B",
+  "#B8722E",
+  "#5E6DBF",
+  "#A14545",
+  "#7A4E2A",
+  "#8E6B9A",
+];
+function wordOrdColor(ord: number | undefined): string | undefined {
+  if (!ord || ord < 1) return undefined;
+  return WORD_ORD_PALETTE[(ord - 1) % WORD_ORD_PALETTE.length];
+}
+
 function loadStoredArray(key: string, valid: LayerId[]): LayerId[] | null {
   try {
     const raw = window.localStorage.getItem(key);
@@ -628,6 +644,22 @@ export default function LayeredBibleViewer({
     });
   }, []);
 
+  // 단어 키 → 그 절(ref) 안에서 몇 번째로 펼쳤는지 (1부터). 절 별로 카운터를
+  // 새로 시작해, 단어 뱃지/상세 카드의 색·번호가 절 단위로 의미를 갖는다.
+  // 하나의 layer(헬라/히브리) 당 한 키 — 헬라+히브리를 동시에 켜도 ref 가
+  // 다르면 자연스럽게 분리된다.
+  const wordOrdinal = useMemo(() => {
+    const map = new Map<string, number>();
+    const perRef = new Map<string, number>();
+    for (const k of openWord) {
+      const refOnly = k.split("#")[0] ?? k;
+      const c = (perRef.get(refOnly) ?? 0) + 1;
+      perRef.set(refOnly, c);
+      map.set(k, c);
+    }
+    return map;
+  }, [openWord]);
+
   const handleCopy = useCallback(
     async (ref: string) => {
       const layers: Partial<Record<LayerId, AnyLayer>> = {};
@@ -976,6 +1008,8 @@ export default function LayeredBibleViewer({
                               {layer.words.map((w, i) => {
                                 const key = `${ref}#${i}`;
                                 const open = openWord.has(key);
+                                const ord = wordOrdinal.get(key);
+                                const oc = wordOrdColor(ord);
                                 return (
                                   <button
                                     type="button"
@@ -986,9 +1020,18 @@ export default function LayeredBibleViewer({
                                     aria-expanded={open}
                                     aria-label={`${w.word} (${w.pron}) 상세 ${
                                       open ? "닫기" : "열기"
-                                    }`}
+                                    }${ord ? ` · 펼친 순번 ${ord}` : ""}`}
+                                    style={oc ? ({ ["--ord-color" as string]: oc } as React.CSSProperties) : undefined}
                                     onClick={() => toggleWord(key)}
                                   >
+                                    {ord && (
+                                      <span
+                                        className="bsv-word-ord"
+                                        aria-hidden="true"
+                                      >
+                                        {ord}
+                                      </span>
+                                    )}
                                     <span
                                       className="bsv-word-g"
                                       lang={id === "hebrew" ? "he" : "grc"}
@@ -1007,12 +1050,31 @@ export default function LayeredBibleViewer({
                               })}
                             </div>
 
-                            {layer.words.map((w, i) => {
-                              const key = `${ref}#${i}`;
-                              if (!openWord.has(key)) return null;
+                            {(() => {
+                              const items = Array.from(openWord)
+                                .filter((k) => k.startsWith(`${ref}#`))
+                                .map((k) => {
+                                  const i = parseInt(k.split("#")[1] ?? "-1", 10);
+                                  const w = layer.words[i];
+                                  return w ? { k, i, w, ord: wordOrdinal.get(k) } : null;
+                                })
+                                .filter(
+                                  (x): x is { k: string; i: number; w: typeof layer.words[number]; ord: number | undefined } => x !== null,
+                                );
+                              return items.map(({ k: key, w, ord }) => {
+                              const oc = wordOrdColor(ord);
                               return (
-                                <article key={`d-${key}`} className="bsv-detail">
+                                <article
+                                  key={`d-${key}`}
+                                  className="bsv-detail"
+                                  style={oc ? ({ ["--ord-color" as string]: oc } as React.CSSProperties) : undefined}
+                                >
                                   <header className="bsv-detail-head">
+                                    {ord && (
+                                      <span className="bsv-detail-ord" aria-hidden="true">
+                                        {ord}
+                                      </span>
+                                    )}
                                     <span
                                       className="bsv-detail-w"
                                       lang={id === "hebrew" ? "he" : "grc"}
@@ -1064,7 +1126,8 @@ export default function LayeredBibleViewer({
                                   </dl>
                                 </article>
                               );
-                            })}
+                              });
+                            })()}
                           </div>
                         )}
                       </div>
@@ -1545,14 +1608,45 @@ export default function LayeredBibleViewer({
           cursor: pointer;
           font: inherit;
           color: inherit;
+          /* 펼친 단어에는 우측 상단에 순번 뱃지가 떠야 하므로 relative. */
+          position: relative;
           transition: background 0.12s ease, border-color 0.12s ease;
         }
         .bsv-word:hover {
           background: rgba(0, 0, 0, 0.04);
         }
         .bsv-word.is-open {
-          background: color-mix(in srgb, var(--bsv-accent) 10%, var(--bsv-surface));
-          border-color: color-mix(in srgb, var(--bsv-accent) 35%, transparent);
+          background: color-mix(
+            in srgb,
+            var(--ord-color, var(--bsv-accent)) 10%,
+            var(--bsv-surface)
+          );
+          border-color: color-mix(
+            in srgb,
+            var(--ord-color, var(--bsv-accent)) 35%,
+            transparent
+          );
+        }
+        /* 단어 펼침 순번 뱃지 — 우측 상단의 작은 동그라미. 같은 번호가 아래
+           상세 카드 헤더에도 같은 색으로 다시 등장해 짝을 보여 준다. */
+        .bsv-word-ord {
+          position: absolute;
+          top: -4px;
+          right: -3px;
+          min-width: 16px;
+          height: 16px;
+          padding: 0 4px;
+          background: var(--ord-color, var(--bsv-accent));
+          color: #fff;
+          border-radius: 999px;
+          font-size: 10px;
+          font-weight: 700;
+          line-height: 1;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          letter-spacing: 0;
+          box-shadow: 0 0 0 2px var(--bsv-surface, #fff);
         }
         .bsv-word-g {
           font-family: "EB Garamond", "Garamond", "Times New Roman", serif;
@@ -1581,14 +1675,36 @@ export default function LayeredBibleViewer({
         .bsv-detail {
           margin: 8px 0 2px;
           padding: 2px 0 4px 12px;
+          /* 좌측 보더도 같은 클릭 순서 컬러로 — 단어 뱃지·카드를 한 묶음으로
+             보여 준다. ord-color 가 없을 때만 기본 accent 로 폴백. */
           border-left: 2px solid
-            color-mix(in srgb, var(--bsv-accent) 55%, transparent);
+            color-mix(
+              in srgb,
+              var(--ord-color, var(--bsv-accent)) 70%,
+              transparent
+            );
         }
         .bsv-detail-head {
           display: flex;
           align-items: center;
           gap: 8px;
           margin-bottom: 4px;
+        }
+        /* 상세 카드 헤더의 순번 뱃지 — 단어 블록 위 뱃지와 같은 번호·같은 색. */
+        .bsv-detail-ord {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 20px;
+          height: 20px;
+          padding: 0 6px;
+          background: var(--ord-color, var(--bsv-accent));
+          color: #fff;
+          border-radius: 999px;
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 1;
+          flex: 0 0 auto;
         }
         .bsv-detail-w {
           font-family: "EB Garamond", "Garamond", "Times New Roman", serif;

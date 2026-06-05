@@ -150,6 +150,22 @@ const LONG_PRESS_MOVE_TOL = 10;
 // 길게 누름이 발동된 직후 600ms 동안은 token click 등 follow-up click 무시.
 const SUPPRESS_CLICK_MS = 600;
 
+// 클릭 순서별 색 — 같은 절 안에서 여러 단어를 펼치면 어느 뱃지가 어느 카드와
+// 짝인지 헷갈리므로, 순번(1,2,3…) 마다 다른 컬러로 단어 뱃지 + 상세 카드(좌측
+// 보더 + 헤더 뱃지) 를 묶어 보여 준다. 6 개를 순환.
+const ORD_PALETTE = [
+  "#2E5D4B",
+  "#B8722E",
+  "#5E6DBF",
+  "#A14545",
+  "#7A4E2A",
+  "#8E6B9A",
+];
+function ordColor(ord: number | undefined): string | undefined {
+  if (!ord || ord < 1) return undefined;
+  return ORD_PALETTE[(ord - 1) % ORD_PALETTE.length];
+}
+
 function buildCopyText(
   mode: CopyMode,
   verses: V2Verse[],
@@ -618,6 +634,7 @@ export default function GreekChapterV2({
                   const key = `${v.n}:${i}`;
                   const isOpen = openToken.has(key);
                   const ord = tokenOrdinal.get(key);
+                  const oc = ordColor(ord);
                   return (
                     <button
                       type="button"
@@ -629,6 +646,7 @@ export default function GreekChapterV2({
                       aria-label={`${tk.w} (${tk.p}) ${
                         isOpen ? "상세 닫기" : "상세 열기"
                       }${ord ? ` · 펼친 순번 ${ord}` : ""}`}
+                      style={oc ? ({ ["--ord-color" as string]: oc } as React.CSSProperties) : undefined}
                       onClick={(e) => {
                         e.stopPropagation();
                         toggleToken(key);
@@ -689,12 +707,15 @@ export default function GreekChapterV2({
                 if (openItems.length === 0) return null;
                 return (
                   <div className="brp-g2-detail-panels">
-                    {openItems.map(({ tk, k, ord }) => (
+                    {openItems.map(({ tk, k, ord }) => {
+                      const oc = ordColor(ord);
+                      return (
                       <article
                         key={`d-${k}`}
                         className="brp-g2-detail"
                         role="region"
                         aria-label={`${ord}번째로 펼친 단어 ${tk.w} 상세`}
+                        style={oc ? ({ ["--ord-color" as string]: oc } as React.CSSProperties) : undefined}
                       >
                         <header className="brp-g2-detail-head">
                           <span className="brp-g2-detail-ord" aria-hidden="true">
@@ -742,7 +763,8 @@ export default function GreekChapterV2({
                           )}
                         </dl>
                       </article>
-                    ))}
+                      );
+                    })}
                   </div>
                 );
               })()}
@@ -1092,8 +1114,9 @@ export default function GreekChapterV2({
           min-width: 0.95em;
           height: 0.95em;
           padding: 0 0.25em;
-          background: var(--g2-hl);
-          color: var(--bg, #fff);
+          /* --ord-color 가 클릭 순서별로 주입된다(없으면 기존 accent). */
+          background: var(--ord-color, var(--g2-hl));
+          color: #fff;
           border-radius: 999px;
           font-size: 0.62em;
           font-weight: 700;
@@ -1107,8 +1130,8 @@ export default function GreekChapterV2({
         }
         .brp-g2-token:hover { background: rgba(0, 0, 0, 0.035); }
         .brp-g2-token.is-open {
-          background: color-mix(in srgb, var(--accent, #3b6c47) 10%, var(--surface, #fff));
-          border-color: color-mix(in srgb, var(--accent, #3b6c47) 35%, transparent);
+          background: color-mix(in srgb, var(--ord-color, var(--accent, #3b6c47)) 10%, var(--surface, #fff));
+          border-color: color-mix(in srgb, var(--ord-color, var(--accent, #3b6c47)) 35%, transparent);
         }
         /* 헬라어 본문 — 모든 단어 같은 잉크 색 (예외 없음, 일관 규칙).
            em 단위라 설정 글자 크기에 함께 스케일. weight 는 개역한글/어린이
@@ -1157,8 +1180,10 @@ export default function GreekChapterV2({
           padding: 2px 0 2px 12px;
           background: transparent;
           border: none;
+          /* 좌측 라인도 클릭 순서 컬러로 — 단어 뱃지와 카드를 같은 색 묶음으로
+             한눈에 보여 준다. */
           border-left: 2px solid
-            color-mix(in srgb, var(--accent, #3b6c47) 55%, transparent);
+            color-mix(in srgb, var(--ord-color, var(--accent, #3b6c47)) 70%, transparent);
           border-radius: 0;
         }
         .brp-g2-detail-head {
@@ -1178,8 +1203,8 @@ export default function GreekChapterV2({
           min-width: 20px;
           height: 20px;
           padding: 0 6px;
-          background: var(--g2-hl);
-          color: var(--bg, #fff);
+          background: var(--ord-color, var(--g2-hl));
+          color: #fff;
           border-radius: 999px;
           font-size: 0.74em;
           font-weight: 700;

@@ -141,6 +141,24 @@ const LONG_PRESS_MS = 500;
 const LONG_PRESS_MOVE_TOL = 10;
 const SUPPRESS_CLICK_MS = 600;
 
+// 클릭 순서별 색 — 같은 절 안에서 여러 단어를 펼치면 어느 뱃지가 어느 카드와
+// 짝인지 헷갈리므로, 순번(1,2,3…) 마다 다른 컬러를 돌려 같은 색으로 단어 뱃지
+// + 상세 카드 (좌측 보더 + 헤더 뱃지) 를 묶어 보여준다. 6 개를 순환.
+//   - 채도/명도는 사이트 테마(어떤 --accent 든) 에 무난히 어울리도록 중간 톤.
+//   - 7 번째 클릭은 다시 첫번째 색이 되며, 그래도 가까이 있는 것끼리는 다른 색.
+const ORD_PALETTE = [
+  "#2E5D4B", // 0 — 초록(기본 accent 톤)
+  "#B8722E", // 1 — 호박
+  "#5E6DBF", // 2 — 페리윙클
+  "#A14545", // 3 — 와인
+  "#7A4E2A", // 4 — 갈색
+  "#8E6B9A", // 5 — 무화과
+];
+function ordColor(ord: number | undefined): string | undefined {
+  if (!ord || ord < 1) return undefined;
+  return ORD_PALETTE[(ord - 1) % ORD_PALETTE.length];
+}
+
 function buildCopyText(
   mode: CopyMode,
   verses: V2Verse[],
@@ -584,6 +602,7 @@ export default function HebrewChapterV2({
                     const key = `${v.n}:${i}`;
                     const isOpen = openToken.has(key);
                     const ord = tokenOrdinal.get(key);
+                    const oc = ordColor(ord);
                     return (
                       <button
                         type="button"
@@ -595,6 +614,9 @@ export default function HebrewChapterV2({
                         aria-label={`${tk.w} (${tk.p}) ${
                           isOpen ? "상세 닫기" : "상세 열기"
                         }${ord ? ` · 펼친 순번 ${ord}` : ""}`}
+                        // 펼친 순번에 따른 컬러를 CSS 변수로 — 뱃지 + 상세 카드
+                        // 보더가 같은 색을 쓰도록 inline 으로 주입.
+                        style={oc ? ({ ["--ord-color" as string]: oc } as React.CSSProperties) : undefined}
                         onClick={(e) => {
                           e.stopPropagation();
                           toggleToken(key);
@@ -665,12 +687,15 @@ export default function HebrewChapterV2({
                   if (openItems.length === 0) return null;
                   return (
                     <div className="brp-h2-detail-panels">
-                      {openItems.map(({ tk, k, ord }) => (
+                      {openItems.map(({ tk, k, ord }) => {
+                        const oc = ordColor(ord);
+                        return (
                         <article
                           key={`d-${k}`}
                           className="brp-h2-detail"
                           role="region"
                           aria-label={`${ord}번째로 펼친 단어 ${tk.w} 상세`}
+                          style={oc ? ({ ["--ord-color" as string]: oc } as React.CSSProperties) : undefined}
                         >
                           <header className="brp-h2-detail-head">
                             <span
@@ -736,7 +761,8 @@ export default function HebrewChapterV2({
                             )}
                           </dl>
                         </article>
-                      ))}
+                        );
+                      })}
                     </div>
                   );
                 })()}
@@ -1068,8 +1094,9 @@ export default function HebrewChapterV2({
           min-width: 0.95em;
           height: 0.95em;
           padding: 0 0.25em;
-          background: var(--h2-hl);
-          color: var(--bg, #fff);
+          /* --ord-color 가 없으면(이론상 발생X) 기존 accent 로 폴백. */
+          background: var(--ord-color, var(--h2-hl));
+          color: #fff;
           border-radius: 999px;
           font-size: 0.62em;
           font-weight: 700;
@@ -1087,12 +1114,12 @@ export default function HebrewChapterV2({
         .brp-h2-token.is-open {
           background: color-mix(
             in srgb,
-            var(--accent, #3b6c47) 10%,
+            var(--ord-color, var(--accent, #3b6c47)) 10%,
             var(--surface, #fff)
           );
           border-color: color-mix(
             in srgb,
-            var(--accent, #3b6c47) 35%,
+            var(--ord-color, var(--accent, #3b6c47)) 35%,
             transparent
           );
         }
@@ -1138,8 +1165,14 @@ export default function HebrewChapterV2({
           padding: 2px 0 2px 12px;
           background: transparent;
           border: none;
+          /* 좌측 보더도 동일한 클릭 순서 컬러로 — 단어 뱃지와 카드가 시각적
+             으로 같은 색 묶음임을 즉시 보여 준다. */
           border-left: 2px solid
-            color-mix(in srgb, var(--accent, #3b6c47) 55%, transparent);
+            color-mix(
+              in srgb,
+              var(--ord-color, var(--accent, #3b6c47)) 70%,
+              transparent
+            );
           border-radius: 0;
         }
         .brp-h2-detail-head {
@@ -1155,8 +1188,8 @@ export default function HebrewChapterV2({
           min-width: 20px;
           height: 20px;
           padding: 0 6px;
-          background: var(--h2-hl);
-          color: var(--bg, #fff);
+          background: var(--ord-color, var(--h2-hl));
+          color: #fff;
           border-radius: 999px;
           font-size: 0.74em;
           font-weight: 700;
