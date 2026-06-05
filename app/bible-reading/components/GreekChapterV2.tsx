@@ -72,63 +72,18 @@ type GospelId =
   | "jude"
   | "revelation";
 
+// v2 JSON 들은 webpack 의존성 그래프에서 빼고 `public/bible-v2/` 에서 런타임
+// fetch 로 받아온다. (66개 책 전체를 dynamic import 후보로 묶으면 dev 컴파일
+// 단계에서 V8 힙이 폭발해 OOM 으로 죽는다 — Next 14 의 알려진 한계.)
 async function loadGospelData(book: GospelId): Promise<V2Data> {
-  switch (book) {
-    case "matthew":
-      return (await import("../matthew-v2.json")).default as V2Data;
-    case "mark":
-      return (await import("../mark-v2.json")).default as V2Data;
-    case "luke":
-      return (await import("../luke-v2.json")).default as V2Data;
-    case "john":
-      return (await import("../john-v2.json")).default as V2Data;
-    case "acts":
-      return (await import("../acts-v2.json")).default as V2Data;
-    case "romans":
-      return (await import("../romans-v2.json")).default as V2Data;
-    case "corinthians1":
-      return (await import("../corinthians1-v2.json")).default as V2Data;
-    case "corinthians2":
-      return (await import("../corinthians2-v2.json")).default as V2Data;
-    case "galatians":
-      return (await import("../galatians-v2.json")).default as V2Data;
-    case "ephesians":
-      return (await import("../ephesians-v2.json")).default as V2Data;
-    case "philippians":
-      return (await import("../philippians-v2.json")).default as V2Data;
-    case "colossians":
-      return (await import("../colossians-v2.json")).default as V2Data;
-    case "thessalonians1":
-      return (await import("../thessalonians1-v2.json")).default as V2Data;
-    case "thessalonians2":
-      return (await import("../thessalonians2-v2.json")).default as V2Data;
-    case "timothy1":
-      return (await import("../timothy1-v2.json")).default as V2Data;
-    case "timothy2":
-      return (await import("../timothy2-v2.json")).default as V2Data;
-    case "titus":
-      return (await import("../titus-v2.json")).default as V2Data;
-    case "philemon":
-      return (await import("../philemon-v2.json")).default as V2Data;
-    case "hebrews":
-      return (await import("../hebrews-v2.json")).default as V2Data;
-    case "james":
-      return (await import("../james-v2.json")).default as V2Data;
-    case "peter1":
-      return (await import("../peter1-v2.json")).default as V2Data;
-    case "peter2":
-      return (await import("../peter2-v2.json")).default as V2Data;
-    case "john1":
-      return (await import("../john1-v2.json")).default as V2Data;
-    case "john2":
-      return (await import("../john2-v2.json")).default as V2Data;
-    case "john3":
-      return (await import("../john3-v2.json")).default as V2Data;
-    case "jude":
-      return (await import("../jude-v2.json")).default as V2Data;
-    case "revelation":
-      return (await import("../revelation-v2.json")).default as V2Data;
+  // `default` 캐시 모드로 HTTP cache + ETag 검증에 맡긴다. (force-cache 로 박으면
+  // 데이터 재빌드 후에도 브라우저가 옛 파일을 평생 들고 있어 사용자가 새 결과를
+  // 보지 못한다.)
+  const res = await fetch(`/bible-v2/${book}-v2.json`, { cache: "default" });
+  if (!res.ok) {
+    throw new Error(`Failed to load ${book}-v2.json: ${res.status}`);
   }
+  return (await res.json()) as V2Data;
 }
 
 type V2Token = {
@@ -150,7 +105,12 @@ type V2Token = {
 type V2Verse = {
   n: number;
   copyGreek: string;
+  // copyKr — 우리가 직접 쓴 한국어 의역(greekKr). ▾ 펼침 시 "의역" 줄.
   copyKr: string;
+  // copyKrv — 개역한글 본문. ▾ 펼침 시 "개역" 줄(의역 아래 흐린 톤).
+  //   기존 v2 파일에는 없을 수 있어 옵셔널. 빌더(build-gospel-v2.mjs) 에서
+  //   채우며, 없으면 의역만 단독 표시한다.
+  copyKrv?: string;
   tokens: V2Token[];
 };
 
@@ -630,27 +590,30 @@ export default function GreekChapterV2({
                 });
               }}
             >
-              {/* grid 좌측 컬럼: 절 숫자 — 일반 본문(.brp-verse) 과 동일한
+              {/* grid 1번 컬럼: 절 숫자 — 일반 본문(.brp-verse) 과 동일한
                   레이아웃/톤. 본문이 wrap 되어도 절 숫자 아래로 콘텐츠가
                   들어가지 않도록 컬럼 자체를 분리한다. */}
               <span className="brp-g2-verse-num" aria-hidden="true">
                 {v.n}
               </span>
-              {/* grid 우측 컬럼: 본문(단어 블록 + ▾ + 상세 + 의역). */}
+              {/* grid 2번 컬럼: ▾ 토글 — 절 숫자 바로 옆에 baseline 정렬로
+                  고정. 본문이 wrap 되어 행 높이가 커져도 절 숫자 옆에서
+                  떨어지지 않는다. 히브리어 화면과 동일한 시각 패턴. */}
+              <button
+                type="button"
+                className={`brp-g2-kr-chev ${krOpen ? "is-open" : ""}`}
+                aria-expanded={krOpen}
+                aria-label={`${v.n}절 한글 의역 ${krOpen ? "접기" : "펼치기"}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleKr(v.n);
+                }}
+              >
+                <span aria-hidden="true">▾</span>
+              </button>
+              {/* grid 3번 컬럼: 본문(단어 블록 + 상세 + 의역). */}
               <div className="brp-g2-verse-body">
                 <div className="brp-g2-tokens">
-                <button
-                  type="button"
-                  className={`brp-g2-kr-chev ${krOpen ? "is-open" : ""}`}
-                  aria-expanded={krOpen}
-                  aria-label={`${v.n}절 한글 의역 ${krOpen ? "접기" : "펼치기"}`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleKr(v.n);
-                  }}
-                >
-                  <span aria-hidden="true">▾</span>
-                </button>
                 {v.tokens.map((tk, i) => {
                   const key = `${v.n}:${i}`;
                   const isOpen = openToken.has(key);
@@ -784,15 +747,35 @@ export default function GreekChapterV2({
                 );
               })()}
 
-              {/* 한글 의역 — 절의 맨 아래에 펼쳐진다(접힘 기본).
-                  앞에는 라인이나 표식 없이 절 번호 텍스트만 prefix. */}
-              {krOpen && (
-                <p className="brp-g2-kr" lang="ko">
-                  <span className="brp-g2-kr-n" aria-hidden="true">
-                    {v.n}
-                  </span>
-                  {v.copyKr}
-                </p>
+              {/* 한글 — 절의 맨 아래에 펼쳐진다(접힘 기본). 두 줄이 함께
+                  나오며, 둘 중 하나가 비어있으면 그 줄은 표시하지 않는다.
+                    1) "의역" — 우리가 직접 쓴 자연스러운 한국어 (copyKr).
+                    2) "개역" — KRV 본문 (copyKrv). 흐린 톤. */}
+              {krOpen && (v.copyKr || v.copyKrv) && (
+                <div className="brp-g2-kr-stack" lang="ko">
+                  {v.copyKr && (
+                    <p className="brp-g2-kr brp-g2-kr-para">
+                      <span className="brp-g2-kr-tag" aria-hidden="true">
+                        의역
+                      </span>
+                      <span className="brp-g2-kr-n" aria-hidden="true">
+                        {v.n}
+                      </span>
+                      {v.copyKr}
+                    </p>
+                  )}
+                  {v.copyKrv && (
+                    <p className="brp-g2-kr brp-g2-kr-krv">
+                      <span className="brp-g2-kr-tag is-mute" aria-hidden="true">
+                        개역
+                      </span>
+                      <span className="brp-g2-kr-n" aria-hidden="true">
+                        {v.n}
+                      </span>
+                      {v.copyKrv}
+                    </p>
+                  )}
+                </div>
               )}
               </div>{/* /.brp-g2-verse-body */}
             </li>
@@ -924,13 +907,12 @@ export default function GreekChapterV2({
         }
         .brp-g2-verse {
           position: relative;
-          /* 일반 본문(.brp-verse) 과 동일한 2-컬럼 grid 구조.
-             좌측: 절 숫자(2em 고정), 우측: 본문(min 0, 1fr).
-             - 본문 wrap 시 절 숫자 아래로 콘텐츠가 흘러들지 않는다.
-             - 절 숫자 컬럼 위치/폭/baseline 정렬이 다른 번역과 정확히 일치. */
+          /* 3 컬럼: [절 숫자] [▾] [본문].
+             ▾ 자리를 따로 두어, 본문 wrap 와 무관하게 절 숫자 바로 옆에
+             고정. 히브리어 화면과 시각 패턴 통일. */
           display: grid;
-          grid-template-columns: 2em minmax(0, 1fr);
-          column-gap: clamp(8px, 1vw, 12px);
+          grid-template-columns: 2em auto minmax(0, 1fr);
+          column-gap: 4px;
           align-items: baseline;
           padding: 2px 0 8px 0;
           border-bottom: 1px solid var(--line, rgba(0, 0, 0, 0.06));
@@ -940,11 +922,12 @@ export default function GreekChapterV2({
           /* iOS Safari long-press 시스템 메뉴 억제. */
           -webkit-touch-callout: none;
         }
-        /* 본문 컬럼 — grid 두 번째 컬럼. min-width: 0 으로 자식 flex(wrap) 가
+        /* 본문 컬럼 — grid 세 번째 컬럼. min-width: 0 으로 자식 flex(wrap) 가
            정상 동작하도록. 자기 컬럼 폭 안에서만 wrap 되므로 절 숫자 컬럼을
            침범하지 않는다. */
         .brp-g2-verse-body {
           min-width: 0;
+          padding-left: 4px;
         }
         .brp-g2-verse :global(.brp-g2-detail) {
           /* 상세 카드 안의 텍스트는 다시 선택/복사 가능하게 풀어준다. */
@@ -957,24 +940,25 @@ export default function GreekChapterV2({
         }
         .brp-g2-verse:last-child { border-bottom: none; }
 
-        /* ── ▾ 토글 — 절 숫자 옆에 inline 으로 (절 좌측 시작부에 위치).
-              본문 우측 자리를 차지하지 않아 풀폭을 그대로 사용한다. ── */
+        /* ── ▾ 토글 — grid 두 번째 컬럼, 절 숫자 옆에 baseline 정렬로 고정.
+              본문이 wrap 되어 행 높이가 커져도 ▾ 는 첫 줄(절 숫자 줄)에
+              남아 있어, 항상 절 숫자 바로 옆에 보인다. ── */
         .brp-g2-kr-chev {
           appearance: none;
           background: transparent;
           border: none;
-          padding: 2px 4px;
+          padding: 0 4px;
           font: inherit;
           /* 절 숫자(0.95em) 와 비슷한 톤으로 작게. */
           font-size: 0.78em;
           color: var(--g2-soft);
           cursor: pointer;
-          line-height: 1;
+          line-height: inherit;
           border-radius: 4px;
           transition: color 0.15s ease, background 0.15s ease;
-          /* 단어 블록(3줄) 들과 같은 행에 위치하되, 첫 줄 baseline 에 자연스럽게
-             정렬되도록 self-align center. flex 자식이라 폭은 자기 콘텐츠만큼. */
-          align-self: center;
+          /* grid 의 align-items: baseline 과 함께 — 절 번호와 같은 baseline 에
+             올라타도록 self 도 baseline. */
+          align-self: baseline;
         }
         .brp-g2-kr-chev:hover {
           color: var(--g2-ink);
@@ -1003,9 +987,15 @@ export default function GreekChapterV2({
           transition: color 0.25s ease;
         }
 
-        /* ── 한글 의역(절 맨 아래) — 좌측 라인 + 옅은 테마 톤 배경으로 강조 ── */
-        .brp-g2-kr {
+        /* ── 한글(절 맨 아래) — 의역 + 개역한글 두 줄 스택 ── */
+        .brp-g2-kr-stack {
           margin: 8px 0 2px 0;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+        .brp-g2-kr {
+          margin: 0;
           padding: 6px 12px 6px 12px;
           border-left: 3px solid
             color-mix(in srgb, var(--accent, #3b6c47) 60%, transparent);
@@ -1018,12 +1008,42 @@ export default function GreekChapterV2({
           overflow-wrap: break-word;
           text-indent: 0;
         }
+        /* 의역 줄(우리가 직접 작성) — 기본 강조 톤 그대로. */
+        .brp-g2-kr-para {
+        }
+        /* 개역한글 줄 — 더 흐리게, 옆에 작은 회색 태그. */
+        .brp-g2-kr-krv {
+          border-left-color: var(--line, rgba(0, 0, 0, 0.16));
+          background: rgba(0, 0, 0, 0.025);
+          color: var(--g2-soft);
+          font-size: 0.92em;
+        }
+        .brp-g2-kr-tag {
+          display: inline-block;
+          margin-right: 6px;
+          padding: 1px 6px;
+          border-radius: 999px;
+          background: color-mix(in srgb, var(--accent, #3b6c47) 18%, transparent);
+          color: var(--g2-hl);
+          font-size: 0.7em;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          line-height: 1.4;
+          vertical-align: 0.08em;
+        }
+        .brp-g2-kr-tag.is-mute {
+          background: rgba(0, 0, 0, 0.06);
+          color: var(--g2-soft);
+        }
         .brp-g2-kr-n {
           display: inline-block;
           font-weight: 600;
           color: var(--g2-hl);
           margin-right: 6px;
           font-size: 0.92em;
+        }
+        .brp-g2-kr-krv .brp-g2-kr-n {
+          color: var(--g2-soft);
         }
 
         /* ── 단어 블록(3줄) — 빽빽한 그리드 ── */

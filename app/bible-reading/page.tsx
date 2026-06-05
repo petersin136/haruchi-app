@@ -22,10 +22,10 @@ import StudentIdentityBar, {
 } from "./components/StudentIdentityBar";
 import Dropdown, { type DropdownOption } from "./components/Dropdown";
 import SlidingToggle from "./components/SlidingToggle";
-// 새 "헬라어 보기 v2" 구조 — 마태복음 전체에 적용.
-// 다른 책은 기존 ruby 형태(.brp-greek-block) 그대로 유지.
-// 데이터(matthew-v2.json) 가 5MB 가량 크므로 dynamic import 로 lazy-load.
-// 헬라어 모드 진입 시에만 chunk + 데이터가 받아진다.
+// 새 "헬라어 보기 v2" 구조 — 신약 27권 전체, 히브리어는 구약 39권 전체.
+// 본문 데이터(`*-v2.json`)는 `public/bible-v2/` 에서 런타임 fetch 로 받는다.
+// (webpack dynamic import 로 묶으면 66권 합 ~150MB 가 의존성 그래프에 들어가
+// dev 컴파일 시 V8 힙이 폭발한다.)
 import nextDynamic from "next/dynamic";
 const HebrewChapterV2 = nextDynamic(
   () => import("./components/HebrewChapterV2"),
@@ -46,9 +46,8 @@ const EnglishOnlyView = nextDynamic(
   () => import("../bible-study/components/EnglishOnlyView"),
   { ssr: false },
 );
-// 성경 공부/영어(WEB) 두 모드가 지원하는 신약 27권 ID 집합. 사용자가 그
-// 외 책(=구약)에 있을 때 모드를 누르면 자동으로 첫 신약 책(로마서 1장)
-// 으로 이동시킨다.
+// 성경 공부/영어(WEB) 두 모드가 지원하는 책 ID 집합. NT 27권 + OT 39권.
+// 사용자가 어느 책에 있든 모드를 누르면 그 책 그대로 모드 진입.
 const STUDY_NT_BOOK_IDS: readonly string[] = [
   "matthew",
   "mark",
@@ -78,6 +77,51 @@ const STUDY_NT_BOOK_IDS: readonly string[] = [
   "jude",
   "revelation",
 ];
+const STUDY_OT_BOOK_IDS: readonly string[] = [
+  "genesis",
+  "exodus",
+  "leviticus",
+  "numbers",
+  "deuteronomy",
+  "joshua",
+  "judges",
+  "ruth",
+  "samuel1",
+  "samuel2",
+  "kings1",
+  "kings2",
+  "chronicles1",
+  "chronicles2",
+  "ezra",
+  "nehemiah",
+  "esther",
+  "job",
+  "psalms",
+  "proverbs",
+  "ecclesiastes",
+  "songofsolomon",
+  "isaiah",
+  "jeremiah",
+  "lamentations",
+  "ezekiel",
+  "daniel",
+  "hosea",
+  "joel",
+  "amos",
+  "obadiah",
+  "jonah",
+  "micah",
+  "nahum",
+  "habakkuk",
+  "zephaniah",
+  "haggai",
+  "zechariah",
+  "malachi",
+];
+const STUDY_BOOK_IDS: readonly string[] = [
+  ...STUDY_NT_BOOK_IDS,
+  ...STUDY_OT_BOOK_IDS,
+];
 type StudyNTBookId =
   | "matthew"
   | "mark"
@@ -106,6 +150,47 @@ type StudyNTBookId =
   | "john3"
   | "jude"
   | "revelation";
+type StudyOTBookId =
+  | "genesis"
+  | "exodus"
+  | "leviticus"
+  | "numbers"
+  | "deuteronomy"
+  | "joshua"
+  | "judges"
+  | "ruth"
+  | "samuel1"
+  | "samuel2"
+  | "kings1"
+  | "kings2"
+  | "chronicles1"
+  | "chronicles2"
+  | "ezra"
+  | "nehemiah"
+  | "esther"
+  | "job"
+  | "psalms"
+  | "proverbs"
+  | "ecclesiastes"
+  | "songofsolomon"
+  | "isaiah"
+  | "jeremiah"
+  | "lamentations"
+  | "ezekiel"
+  | "daniel"
+  | "hosea"
+  | "joel"
+  | "amos"
+  | "obadiah"
+  | "jonah"
+  | "micah"
+  | "nahum"
+  | "habakkuk"
+  | "zephaniah"
+  | "haggai"
+  | "zechariah"
+  | "malachi";
+type StudyBookId = StudyNTBookId | StudyOTBookId;
 import {
   fetchCompletedChapters,
   flushPendingLogs,
@@ -1841,9 +1926,10 @@ export default function BibleReadingPage() {
   );
 
   // 모드 드롭다운 — 5개 항목(개역한글/어린이/영어/헬라어/성경 공부) 통합 핸들러.
-  //   - krv / kids / greek : viewMode 를 reader 로 되돌리고 그 번역으로 전환.
-  //   - english / study    : 신약 27권 전체에서 동작. 현재 책이 신약이면
-  //     그대로 그 책/장에 머물고, 구약(또는 미선택) 이면 로마서 1장으로 이동.
+  //   - krv / kids / greek / hebrew : viewMode 를 reader 로 되돌리고 그 번역으로 전환.
+  //   - english / study             : 구약 39 + 신약 27권 전 범위 지원.
+  //     현재 책이 지원 목록 안이면 그대로 머물고, 그 외(미선택 등) 일 때만
+  //     안전한 기본(로마서 1장) 으로 옮긴 뒤 모드 전환.
   // 이동 로직은 changeBook(저장된 장 복원 동작) 을 우회하고 직접 setState +
   // localStorage 기록을 한다.
   const handleModeChange = useCallback(
@@ -1858,16 +1944,13 @@ export default function BibleReadingPage() {
         handleTranslationChange(next);
         return;
       }
-      // english 또는 study — 현재 책이 신약 범위면 그 책/장 유지.
-      // 구약(또는 미선택) 이면 로마서 1장으로 옮긴 뒤 모드 전환.
-      const onNT = STUDY_NT_BOOK_IDS.includes(bookId);
-      if (!onNT) {
+      // english 또는 study — 현재 책이 NT/OT 어느 쪽이든 지원 목록 안이면 유지.
+      // 그 외(미선택 등) 일 때만 로마서 1장으로 폴백.
+      const supported = STUDY_BOOK_IDS.includes(bookId);
+      if (!supported) {
         setBookId("romans" as BookId);
         setBookConfirmed(true);
         setChapterNumber(1);
-        // 활성 책은 로마서로 옮기지만, lastOtBookId 는 건드리지 않아 — 사용자가
-        // 마지막으로 보던 구약 책 이름이 구약 드롭다운에 그대로 남는다.
-        // 신약 드롭다운에는 새로 도착한 로마서가 보이도록 lastNtBookId 갱신.
         setLastNtBookId("romans" as BookId);
         try {
           window.localStorage.setItem(CURRENT_BOOK_KEY, "romans");
@@ -2340,9 +2423,12 @@ export default function BibleReadingPage() {
   // english/study 모드는 신약 27권 전체에서 동작한다. 사용자가 구약(또는
   // 미선택) 으로 이동하면 자동으로 reader 모드로 빠져나오게 한다 — 그쪽은
   // 학습 데이터가 없다.
+  // 성경 공부/영어 모드 진입 후 학습 데이터가 없는 책으로 이동하면 자동으로
+  // reader 모드로 되돌린다. NT 27 + OT 39권 모두 지원하므로 사실상 정상 책은
+  // 그대로 유지된다.
   useEffect(() => {
     if (viewMode === "reader") return;
-    if (!STUDY_NT_BOOK_IDS.includes(bookId)) {
+    if (!STUDY_BOOK_IDS.includes(bookId)) {
       setViewMode("reader");
     }
   }, [bookId, viewMode]);
@@ -3416,18 +3502,18 @@ export default function BibleReadingPage() {
           <LayeredBibleViewer
             embedded
             bookId={
-              (STUDY_NT_BOOK_IDS.includes(bookId)
-                ? (bookId as StudyNTBookId)
-                : "romans")
+              STUDY_BOOK_IDS.includes(bookId)
+                ? (bookId as StudyBookId)
+                : "romans"
             }
             chapter={chapterNumber}
           />
         ) : viewMode === "english" ? (
           <EnglishOnlyView
             bookId={
-              (STUDY_NT_BOOK_IDS.includes(bookId)
-                ? (bookId as StudyNTBookId)
-                : "romans")
+              STUDY_BOOK_IDS.includes(bookId)
+                ? (bookId as StudyBookId)
+                : "romans"
             }
             chapter={chapterNumber}
           />

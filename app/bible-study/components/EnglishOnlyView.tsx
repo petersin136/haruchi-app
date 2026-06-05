@@ -16,6 +16,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 export type EnglishBookId =
+  // 신약 27권
   | "matthew"
   | "mark"
   | "luke"
@@ -42,7 +43,47 @@ export type EnglishBookId =
   | "john2"
   | "john3"
   | "jude"
-  | "revelation";
+  | "revelation"
+  // 구약 39권
+  | "genesis"
+  | "exodus"
+  | "leviticus"
+  | "numbers"
+  | "deuteronomy"
+  | "joshua"
+  | "judges"
+  | "ruth"
+  | "samuel1"
+  | "samuel2"
+  | "kings1"
+  | "kings2"
+  | "chronicles1"
+  | "chronicles2"
+  | "ezra"
+  | "nehemiah"
+  | "esther"
+  | "job"
+  | "psalms"
+  | "proverbs"
+  | "ecclesiastes"
+  | "songofsolomon"
+  | "isaiah"
+  | "jeremiah"
+  | "lamentations"
+  | "ezekiel"
+  | "daniel"
+  | "hosea"
+  | "joel"
+  | "amos"
+  | "obadiah"
+  | "jonah"
+  | "micah"
+  | "nahum"
+  | "habakkuk"
+  | "zephaniah"
+  | "haggai"
+  | "zechariah"
+  | "malachi";
 
 type StudyVerse = {
   ref: string;
@@ -72,7 +113,7 @@ async function loadStudyBook(book: EnglishBookId): Promise<StudyBookData> {
   if (cached) return cached;
   const p = (async () => {
     const res = await fetch(`/bible-study/data/${book}.json`, {
-      cache: "force-cache",
+      cache: "default",
     });
     if (!res.ok)
       throw new Error(`HTTP ${res.status} — ${book} 데이터 없음`);

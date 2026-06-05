@@ -1,11 +1,12 @@
 "use client";
 
 /**
- * LayeredBibleViewer — "성경 공부" 다중 역본 레이어 뷰어 (신약 27권, 모든 장).
+ * LayeredBibleViewer — "성경 공부" 다중 역본 레이어 뷰어 (구약 39 + 신약 27 = 66권).
  *
  * 한 절을 기준으로, 사용자가 켠 역본(레이어)들이 그 절 아래 layerOrder 순서대로
- * 층층이 쌓여 보인다. 영어만 켜면 한 줄, 영어+한글이면 두 줄, 헬라어까지 켜면
- * 세 줄… 식으로 누적 표시.
+ * 층층이 쌓여 보인다. 영어만 켜면 한 줄, 영어+한글이면 두 줄, 헬라어/히브리어까지
+ * 켜면 세 줄… 식으로 누적 표시. NT 는 5층(영어/개역/헬라/헬라의역/어린이),
+ * OT 는 4층(영어/개역/히브리/어린이 — 히브리 의역은 미보유).
  *
  *   - text 레이어  : 모든 역본이 동일한 테마 폰트·크기를 상속. 레이어 구분은
  *                    오직 줄 앞의 색상 점 + 짧은 라벨로만 한다.
@@ -33,9 +34,17 @@ import {
 } from "react";
 
 // ── 타입 ────────────────────────────────────────────────────────────────────
-type LayerId = "english" | "krv" | "greek" | "greekpara" | "kids";
+type LayerId =
+  | "english"
+  | "krv"
+  | "greek"
+  | "greekpara"
+  | "kids"
+  | "hebrew"
+  | "hebrewpara";
 
-export type StudyBookId =
+// 신약 27권.
+export type StudyNTBookId =
   | "matthew"
   | "mark"
   | "luke"
@@ -63,6 +72,50 @@ export type StudyBookId =
   | "john3"
   | "jude"
   | "revelation";
+
+// 구약 39권.
+export type StudyOTBookId =
+  | "genesis"
+  | "exodus"
+  | "leviticus"
+  | "numbers"
+  | "deuteronomy"
+  | "joshua"
+  | "judges"
+  | "ruth"
+  | "samuel1"
+  | "samuel2"
+  | "kings1"
+  | "kings2"
+  | "chronicles1"
+  | "chronicles2"
+  | "ezra"
+  | "nehemiah"
+  | "esther"
+  | "job"
+  | "psalms"
+  | "proverbs"
+  | "ecclesiastes"
+  | "songofsolomon"
+  | "isaiah"
+  | "jeremiah"
+  | "lamentations"
+  | "ezekiel"
+  | "daniel"
+  | "hosea"
+  | "joel"
+  | "amos"
+  | "obadiah"
+  | "jonah"
+  | "micah"
+  | "nahum"
+  | "habakkuk"
+  | "zephaniah"
+  | "haggai"
+  | "zechariah"
+  | "malachi";
+
+export type StudyBookId = StudyNTBookId | StudyOTBookId;
 
 type GreekWord = {
   word: string;
@@ -93,8 +146,9 @@ type StudyChapter = {
 type StudyBookData = {
   book: string;
   bookId: StudyBookId;
+  testament?: "nt" | "ot";
   layerOrder: LayerId[];
-  layerLabels: Record<LayerId, string>;
+  layerLabels: Partial<Record<LayerId, string>>;
   defaultOn: LayerId[];
   sources?: Partial<Record<LayerId, string>>;
   chapters: StudyChapter[];
@@ -111,8 +165,11 @@ async function loadStudyBook(book: StudyBookId): Promise<StudyBookData> {
   const cached = bookCache.get(book);
   if (cached) return cached;
   const p = (async () => {
+    // 정적 JSON 이지만 `force-cache` 로 못박으면 데이터 재빌드 후에도 브라우저가
+    // 옛 파일을 평생 들고 있는다(레이어 추가 등). HTTP 캐시 헤더(+ETag) 에
+    // 맡기는 `default` 가 dev/prod 모두 안전 — 두 번째 방문은 304 로 가볍게 끝남.
     const res = await fetch(`/bible-study/data/${book}.json`, {
-      cache: "force-cache",
+      cache: "default",
     });
     if (!res.ok)
       throw new Error(`HTTP ${res.status} — ${book} 데이터 없음`);
@@ -125,6 +182,7 @@ async function loadStudyBook(book: StudyBookId): Promise<StudyBookData> {
 }
 
 // 정본(폴백) 라벨/순서. 데이터 파일이 채워두지 않았을 때도 동일 기본값.
+// NT 5층 기본 — 책 데이터의 layerOrder 가 우선한다(OT 는 4층).
 const DEFAULT_LAYER_ORDER: LayerId[] = [
   "english",
   "krv",
@@ -138,6 +196,8 @@ const DEFAULT_LAYER_LABELS: Record<LayerId, string> = {
   greek: "헬라어",
   greekpara: "헬라 의역",
   kids: "어린이 의역",
+  hebrew: "히브리어",
+  hebrewpara: "히브리 의역",
 };
 const DEFAULT_ON: LayerId[] = ["english", "krv"];
 
@@ -148,6 +208,8 @@ const LAYER_META: Record<LayerId, { dot: string; short: string }> = {
   greek: { dot: "#2E5D4B", short: "헬라" },
   greekpara: { dot: "#6F9C84", short: "헬라의역" },
   kids: { dot: "#B58A2A", short: "어린이" },
+  hebrew: { dot: "#7A4E2A", short: "히브리" },
+  hebrewpara: { dot: "#C29B6A", short: "히브리의역" },
 };
 
 // 켜진 역본 목록과 토글 "순서" 는 별도 키로 저장. 한쪽만 바뀌어도 안전.
@@ -309,7 +371,11 @@ export default function LayeredBibleViewer({
     () => bookData?.layerOrder ?? DEFAULT_LAYER_ORDER,
     [bookData],
   );
-  const layerLabels = bookData?.layerLabels ?? DEFAULT_LAYER_LABELS;
+  // 책 데이터 라벨이 일부만 있으면 정본 라벨로 보완.
+  const layerLabels = useMemo<Record<LayerId, string>>(
+    () => ({ ...DEFAULT_LAYER_LABELS, ...(bookData?.layerLabels ?? {}) }),
+    [bookData],
+  );
 
   // 현재 장 — chapter prop 으로 찾기. 책의 마지막 장보다 큰 번호가
   // 들어오면 마지막 장으로 클램프(절 없음 메시지 없이 안전).
@@ -648,8 +714,16 @@ export default function LayeredBibleViewer({
                           {layer.content}
                         </p>
                       ) : (
-                        <div className="bsv-greek">
-                          <div className="bsv-words">
+                        // 헬라어는 LTR, 히브리어는 RTL 로 흘려야 정확한 어순.
+                        <div
+                          className={`bsv-greek ${
+                            id === "hebrew" ? "bsv-greek--rtl" : ""
+                          }`}
+                        >
+                          <div
+                            className="bsv-words"
+                            dir={id === "hebrew" ? "rtl" : "ltr"}
+                          >
                             {layer.words.map((w, i) => {
                               const key = `${verse.ref}#${i}`;
                               const open = openWord.has(key);
@@ -666,7 +740,11 @@ export default function LayeredBibleViewer({
                                   }`}
                                   onClick={() => toggleWord(key)}
                                 >
-                                  <span className="bsv-word-g" lang="grc">
+                                  <span
+                                    className="bsv-word-g"
+                                    lang={id === "hebrew" ? "he" : "grc"}
+                                    dir={id === "hebrew" ? "rtl" : "ltr"}
+                                  >
                                     {w.word}
                                   </span>
                                   <span className="bsv-word-p" aria-hidden="true">
@@ -686,7 +764,11 @@ export default function LayeredBibleViewer({
                             return (
                               <article key={`d-${key}`} className="bsv-detail">
                                 <header className="bsv-detail-head">
-                                  <span className="bsv-detail-w" lang="grc">
+                                  <span
+                                    className="bsv-detail-w"
+                                    lang={id === "hebrew" ? "he" : "grc"}
+                                    dir={id === "hebrew" ? "rtl" : "ltr"}
+                                  >
                                     {w.word}
                                   </span>
                                   {w.pron && (
@@ -700,7 +782,12 @@ export default function LayeredBibleViewer({
                                 </header>
                                 <dl className="bsv-detail-grid">
                                   <dt>원형</dt>
-                                  <dd lang="grc">{w.lemma}</dd>
+                                  <dd
+                                    lang={id === "hebrew" ? "he" : "grc"}
+                                    dir={id === "hebrew" ? "rtl" : "ltr"}
+                                  >
+                                    {w.lemma}
+                                  </dd>
                                   {w.pos && (
                                     <>
                                       <dt>품사</dt>
@@ -744,8 +831,10 @@ export default function LayeredBibleViewer({
         <small>
           영어 World English Bible (WEB, 퍼블릭 도메인) · 개역한글 (퍼블릭
           도메인) · 헬라어 SBLGNT © Society of Biblical Literature, CC BY 4.0 ·
-          형태소 분석 MorphGNT (CC BY-SA 4.0) · 헬라 의역·어린이 의역은 개역한글
-          기반으로 직접 제작한 학습용 자료입니다.
+          형태소 분석 MorphGNT (CC BY-SA 4.0) · 히브리어 WLC (퍼블릭 도메인) ·
+          형태소 분석 OSHB morphhb (CC BY 4.0) · 사전 OSHB HebrewLexicon (Strong's·BDB,
+          퍼블릭 도메인) · 헬라 의역·어린이 의역은 개역한글 기반으로 직접 제작한
+          학습용 자료입니다.
         </small>
       </footer>
 
@@ -1017,7 +1106,7 @@ export default function LayeredBibleViewer({
           color: var(--bsv-soft);
         }
 
-        /* ── 헬라어 단어 블록 ── */
+        /* ── 헬라어/히브리어 단어 블록 ── */
         .bsv-greek {
           min-width: 0;
         }
@@ -1026,6 +1115,19 @@ export default function LayeredBibleViewer({
           flex-wrap: wrap;
           gap: 7px 5px;
           margin-left: -5px;
+        }
+        /* 히브리어는 RTL 로 흘러야 첫 단어가 오른쪽에 온다. flex 의 row 자동
+           반전 효과를 활용해 dir="rtl" 만으로 자연스러운 어순이 된다. */
+        .bsv-greek--rtl .bsv-words {
+          margin-left: 0;
+          margin-right: -5px;
+        }
+        .bsv-greek--rtl .bsv-word-g {
+          /* 히브리어 본문은 자체 폰트 스택 — Serif/Garamond 가 니쿠드(모음 기호) 를
+             충분히 못 그리는 환경이 있어, Hebrew 전용 폰트를 우선한다. */
+          font-family: "SBL Hebrew", "Ezra SIL", "Frank Ruehl CLM",
+            "Times New Roman", serif;
+          font-size: 20px;
         }
         .bsv-word {
           appearance: none;

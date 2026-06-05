@@ -1,6 +1,7 @@
 // =============================================================================
-// WEB(World English Bible) 신약 27권 본문을 TehShrike/world-english-bible
-// (퍼블릭 도메인) GitHub raw 에서 받아 .cache/web/<bookId>.json 으로 저장한다.
+// WEB(World English Bible) 구약 39권 + 신약 27권 본문을
+// TehShrike/world-english-bible (퍼블릭 도메인) GitHub raw 에서 받아
+// .cache/web/<bookId>.json 으로 저장한다.
 //
 // 입력 형식 (TehShrike 의 typed event stream):
 //   [{ type: "paragraph text", chapterNumber, verseNumber, value }, ...]
@@ -27,6 +28,48 @@ const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, "..");
 const cacheDir = path.join(repoRoot, ".cache", "web");
 fs.mkdirSync(cacheDir, { recursive: true });
+
+const OT_BOOKS = [
+  { id: "genesis", slug: "genesis" },
+  { id: "exodus", slug: "exodus" },
+  { id: "leviticus", slug: "leviticus" },
+  { id: "numbers", slug: "numbers" },
+  { id: "deuteronomy", slug: "deuteronomy" },
+  { id: "joshua", slug: "joshua" },
+  { id: "judges", slug: "judges" },
+  { id: "ruth", slug: "ruth" },
+  { id: "samuel1", slug: "1samuel" },
+  { id: "samuel2", slug: "2samuel" },
+  { id: "kings1", slug: "1kings" },
+  { id: "kings2", slug: "2kings" },
+  { id: "chronicles1", slug: "1chronicles" },
+  { id: "chronicles2", slug: "2chronicles" },
+  { id: "ezra", slug: "ezra" },
+  { id: "nehemiah", slug: "nehemiah" },
+  { id: "esther", slug: "esther" },
+  { id: "job", slug: "job" },
+  { id: "psalms", slug: "psalms" },
+  { id: "proverbs", slug: "proverbs" },
+  { id: "ecclesiastes", slug: "ecclesiastes" },
+  { id: "songofsolomon", slug: "songofsolomon" },
+  { id: "isaiah", slug: "isaiah" },
+  { id: "jeremiah", slug: "jeremiah" },
+  { id: "lamentations", slug: "lamentations" },
+  { id: "ezekiel", slug: "ezekiel" },
+  { id: "daniel", slug: "daniel" },
+  { id: "hosea", slug: "hosea" },
+  { id: "joel", slug: "joel" },
+  { id: "amos", slug: "amos" },
+  { id: "obadiah", slug: "obadiah" },
+  { id: "jonah", slug: "jonah" },
+  { id: "micah", slug: "micah" },
+  { id: "nahum", slug: "nahum" },
+  { id: "habakkuk", slug: "habakkuk" },
+  { id: "zephaniah", slug: "zephaniah" },
+  { id: "haggai", slug: "haggai" },
+  { id: "zechariah", slug: "zechariah" },
+  { id: "malachi", slug: "malachi" },
+];
 
 const NT_BOOKS = [
   { id: "matthew", slug: "matthew" },
@@ -152,7 +195,14 @@ async function main() {
   const force = process.argv.includes("--force");
   const onlyArg = process.argv.find((a) => a.startsWith("--only="));
   const only = onlyArg ? onlyArg.slice("--only=".length).split(",") : null;
-  const list = only ? NT_BOOKS.filter((b) => only.includes(b.id)) : NT_BOOKS;
+  // 기본은 OT+NT 전체. `--only=<ids>` 또는 `--ot` / `--nt` 로 한정 가능.
+  const wantOT = !process.argv.includes("--nt");
+  const wantNT = !process.argv.includes("--ot");
+  const pool = [
+    ...(wantOT ? OT_BOOKS : []),
+    ...(wantNT ? NT_BOOKS : []),
+  ];
+  const list = only ? pool.filter((b) => only.includes(b.id)) : pool;
   for (const b of list) {
     try {
       await downloadBook(b, force);

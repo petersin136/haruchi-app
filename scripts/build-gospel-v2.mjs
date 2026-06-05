@@ -166,7 +166,7 @@ function buildVerse(rows, n) {
     greekParts.push(word + trailing);
   }
   return {
-    verse: { n, copyGreek: greekParts.join(" "), copyKr: "", tokens },
+    verse: { n, copyGreek: greekParts.join(" "), copyKr: "", copyKrv: "", tokens },
     missingLex,
   };
 }
@@ -174,7 +174,11 @@ function buildVerse(rows, n) {
 function buildBook({ id, label }) {
   const sblgntPath = path.join(repoRoot, `.cache/sblgnt-${id}.txt`);
   const bookJsonPath = path.join(repoRoot, `app/bible-reading/${id}.json`);
-  const outPath = path.join(repoRoot, `app/bible-reading/${id}-v2.json`);
+  // 출력 위치 — 런타임에 `fetch("/bible-v2/<id>-v2.json")` 으로 받아오므로
+  // public/bible-v2/ 가 source of truth (구약 v2 와 일치).
+  const outDir = path.join(repoRoot, "public/bible-v2");
+  if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+  const outPath = path.join(outDir, `${id}-v2.json`);
 
   if (!fs.existsSync(sblgntPath)) {
     console.warn(`⚠️  ${id}: sblgnt 데이터(${sblgntPath}) 없음 — 빌드 생략`);
@@ -186,11 +190,41 @@ function buildBook({ id, label }) {
     ? JSON.parse(fs.readFileSync(bookJsonPath, "utf8"))
     : { chapters: [] };
 
-  // ch -> verse -> kr
+  // ch -> verse -> greekKr (직접 작성한 한국어 의역)
   const krByCh = new Map();
   for (const c of bookData.chapters ?? []) {
     const m = new Map((c.verses?.greekKr ?? []).map((v) => [v.n, v.t]));
     krByCh.set(c.chapter, m);
+  }
+  // 매니페스트 우선 적용 — `public/greek-test/<id>.manual.json` 에 사람이 직접
+  // 다듬은 의역이 있으면, matthew.json 의 greekKr 보다 우선해 그 텍스트를 쓴다.
+  // 형식(히브리어 매니페스트와 동일한 평탄 키):
+  //   { book, version, note, greekpara: { "ch:n": "의역", ... } }
+  const manifestPath = path.join(repoRoot, `public/greek-test/${id}.manual.json`);
+  if (fs.existsSync(manifestPath)) {
+    const mf = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+    const entries = mf.greekpara ?? {};
+    let applied = 0;
+    for (const key of Object.keys(entries)) {
+      const m = /^(\d+):(\d+)$/.exec(key);
+      if (!m) continue;
+      const ch = Number(m[1]);
+      const n = Number(m[2]);
+      const txt = entries[key];
+      if (typeof txt !== "string" || !txt.trim()) continue;
+      if (!krByCh.has(ch)) krByCh.set(ch, new Map());
+      krByCh.get(ch).set(n, txt);
+      applied++;
+    }
+    console.log(
+      `  ↳ ${id} 매니페스트(${path.relative(repoRoot, manifestPath)}) 적용: ${applied}절`,
+    );
+  }
+  // ch -> verse -> krv (개역한글). ▾ 펼침 시 의역과 함께 보이는 두 번째 줄.
+  const krvByCh = new Map();
+  for (const c of bookData.chapters ?? []) {
+    const m = new Map((c.verses?.krv ?? []).map((v) => [v.n, v.t]));
+    krvByCh.set(c.chapter, m);
   }
 
   const chapterNumbers = Array.from(morph.keys()).sort((a, b) => a - b);
@@ -202,11 +236,13 @@ function buildBook({ id, label }) {
   for (const ch of chapterNumbers) {
     const verseMap = morph.get(ch);
     const krMap = krByCh.get(ch) ?? new Map();
+    const krvMap = krvByCh.get(ch) ?? new Map();
     const verseNumbers = Array.from(verseMap.keys()).sort((a, b) => a - b);
     const verses = [];
     for (const n of verseNumbers) {
       const { verse, missingLex } = buildVerse(verseMap.get(n), n);
       verse.copyKr = krMap.get(n) ?? "";
+      verse.copyKrv = krvMap.get(n) ?? "";
       verses.push(verse);
       totalTokens += verse.tokens.length;
       totalVerses += 1;

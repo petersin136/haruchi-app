@@ -18,7 +18,14 @@
 //   - app/bible-reading/<book>.json      (verses.krv — 한국 의역으로 임시 사용)
 //
 // 출력 스키마 (헬라어 v2 와 동일):
-//   { meta, chapters: [{ chapter, verses: [{ n, copyHebrew, copyKr, tokens: [...] }] }] }
+//   { meta, chapters: [{ chapter, verses: [{ n, copyHebrew, copyKr, copyHebrewpara, tokens: [...] }] }] }
+//
+//   - copyKr           : 개역한글(KRV) — 절 ▾ 의 보조 줄.
+//   - copyHebrewpara   : 직접 작성한 한국어 자연 의역.
+//                        `public/hebrew-test/<id>.manual.json` 매니페스트가 있으면
+//                        그 절의 문장으로 채우고, 없으면 빈 문자열.
+//                        (자동 짝대기 — gloss 이어 붙이기 — 는 이 빌더에서는 하지
+//                        않는다. UI 에서 비어 있으면 의역 줄을 그냥 숨긴다.)
 // =============================================================================
 
 import fs from "node:fs";
@@ -32,6 +39,7 @@ import {
   normalizeStrong,
   lookupTanakh,
 } from "./lib/tanakh-lexicon.mjs";
+import { applyAlignmentToMap } from "./lib/verse-alignment.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
@@ -231,17 +239,53 @@ function buildVerse(rows, n) {
     copyParts.push(wordRaw);
   }
   return {
-    verse: { n, copyHebrew: copyParts.join(" "), copyKr: "", tokens },
+    verse: {
+      n,
+      copyHebrew: copyParts.join(" "),
+      copyKr: "",
+      copyHebrewpara: "",
+      tokens,
+    },
     missing,
     missingKorean,
   };
+}
+
+// 책 별 KRV ↔ WLC 절 번호 매핑(`scripts/lib/verse-alignment.mjs`)을 그대로 쓴다.
+// 매니페스트와 v2 파일은 WLC 번호 기준이며, KRV 본문은 build 단계에서 WLC
+// 좌표로 옮긴 뒤 v2.copyKr 에 채워 넣는다.
+
+// `public/hebrew-test/<id>.manual.json` 에서 직접 작성한 한국어 자연 의역을
+// 읽어 절 단위로 반환. 키는 "ch:verse" (히브리 본문 절 번호 기준).
+function loadHebrewParaManifest(id) {
+  const p = path.join(repoRoot, `public/hebrew-test/${id}.manual.json`);
+  if (!fs.existsSync(p)) return new Map();
+  try {
+    const j = JSON.parse(fs.readFileSync(p, "utf8"));
+    const map = new Map();
+    for (const [k, v] of Object.entries(j.hebrewpara ?? {})) {
+      const t = typeof v === "string" ? v.trim() : "";
+      if (!t) continue;
+      map.set(k, t);
+    }
+    return map;
+  } catch (e) {
+    console.warn(`⚠️  ${id} 매니페스트 파싱 실패:`, e.message);
+    return new Map();
+  }
 }
 
 // ── 한 책 빌드 ──────────────────────────────────────────────────────────────
 function buildBook({ id, label, osis }) {
   const xmlPath = path.join(repoRoot, `.cache/oshb/${osis}.xml`);
   const bookJsonPath = path.join(repoRoot, `app/bible-reading/${id}.json`);
-  const outPath = path.join(repoRoot, `app/bible-reading/${id}-v2.json`);
+  // 산출 위치: 실제 런타임 fetch 가 `/bible-v2/...` 에서 일어나므로
+  // public/bible-v2/ 가 source of truth. (이전엔 app/bible-reading/ 에
+  // 두었으나 webpack OOM 회피로 옮긴 뒤 빌더가 따라가지 못한 채로 남아
+  // 있었다 — 이번에 정렬.)
+  const outDir = path.join(repoRoot, "public/bible-v2");
+  if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+  const outPath = path.join(outDir, `${id}-v2.json`);
 
   if (!fs.existsSync(xmlPath)) {
     console.warn(`⚠️  ${id}: OSHB XML(${xmlPath}) 없음 — 빌드 생략`);
@@ -249,8 +293,6 @@ function buildBook({ id, label, osis }) {
   }
 
   const verses = parseOshbXml(xmlPath);
-  // 한국어 의역: 현재는 krv (개역한글) 을 그대로 copyKr 로 사용.
-  // 추후 hebrewKr 필드가 만들어지면 우선 사용하도록 분기.
   const bookData = fs.existsSync(bookJsonPath)
     ? JSON.parse(fs.readFileSync(bookJsonPath, "utf8"))
     : { chapters: [] };
@@ -263,6 +305,15 @@ function buildBook({ id, label, osis }) {
     }
     krByCh.set(c.chapter, m);
   }
+
+  // KRV ↔ 히브리 본문(WLC) 절 번호 정렬 보정.
+  // 책 별로 한 두 군데 다른 번호 매김이 있다. 매니페스트와 v2 파일은 모두
+  // WLC 번호를 기준으로 하므로, KRV 본문을 그쪽 번호에 맞춰 재배치한다.
+  applyAlignmentToMap(id, krByCh);
+
+  // 한국어 자연 의역(직접 작성). 매니페스트가 있으면 그 절만 채움.
+  const paraManifest = loadHebrewParaManifest(id);
+  let paraUsed = 0;
 
   const chapters = [];
   let totalTokens = 0;
@@ -278,6 +329,12 @@ function buildBook({ id, label, osis }) {
     for (const n of vNums) {
       const { verse, missing, missingKorean } = buildVerse(verseMap.get(n), n);
       verse.copyKr = krMap.get(n) ?? "";
+      const paraKey = `${ch}:${n}`;
+      const paraText = paraManifest.get(paraKey);
+      if (paraText) {
+        verse.copyHebrewpara = paraText;
+        paraUsed += 1;
+      }
       vs.push(verse);
       totalTokens += verse.tokens.length;
       totalVerses += 1;
@@ -326,6 +383,11 @@ function buildBook({ id, label, osis }) {
   console.log(
     `✅ ${label}(${id}) — ${chapters.length}장 · ${totalVerses}절 · 토큰 ${totalTokens} · 커버리지 ${coverage}% · 한국어 ${koCoverage}% (영어 fallback ${missingKoreanAgg.size}종 / ${missingKoreanTokens} 토큰)`,
   );
+  if (paraManifest.size > 0) {
+    console.log(
+      `   히브리 의역 매니페스트 ${paraManifest.size}건 등록 · 사용 ${paraUsed}건`,
+    );
+  }
   return {
     id,
     label,

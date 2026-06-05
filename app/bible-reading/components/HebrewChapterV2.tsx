@@ -69,87 +69,18 @@ type TanakhId =
   | "zechariah"
   | "malachi";
 
+// v2 JSON 들은 webpack 의존성 그래프에서 빼고 `public/bible-v2/` 에서 런타임
+// fetch 로 받아온다. (66개 책 전체를 dynamic import 후보로 묶으면 dev 컴파일
+// 단계에서 V8 힙이 폭발해 OOM 으로 죽는다 — Next 14 의 알려진 한계.)
 async function loadTanakhData(book: TanakhId): Promise<V2Data> {
-  switch (book) {
-    case "genesis":
-      return (await import("../genesis-v2.json")).default as V2Data;
-    case "exodus":
-      return (await import("../exodus-v2.json")).default as V2Data;
-    case "leviticus":
-      return (await import("../leviticus-v2.json")).default as V2Data;
-    case "numbers":
-      return (await import("../numbers-v2.json")).default as V2Data;
-    case "deuteronomy":
-      return (await import("../deuteronomy-v2.json")).default as V2Data;
-    case "joshua":
-      return (await import("../joshua-v2.json")).default as V2Data;
-    case "judges":
-      return (await import("../judges-v2.json")).default as V2Data;
-    case "ruth":
-      return (await import("../ruth-v2.json")).default as V2Data;
-    case "samuel1":
-      return (await import("../samuel1-v2.json")).default as V2Data;
-    case "samuel2":
-      return (await import("../samuel2-v2.json")).default as V2Data;
-    case "kings1":
-      return (await import("../kings1-v2.json")).default as V2Data;
-    case "kings2":
-      return (await import("../kings2-v2.json")).default as V2Data;
-    case "chronicles1":
-      return (await import("../chronicles1-v2.json")).default as V2Data;
-    case "chronicles2":
-      return (await import("../chronicles2-v2.json")).default as V2Data;
-    case "ezra":
-      return (await import("../ezra-v2.json")).default as V2Data;
-    case "nehemiah":
-      return (await import("../nehemiah-v2.json")).default as V2Data;
-    case "esther":
-      return (await import("../esther-v2.json")).default as V2Data;
-    case "job":
-      return (await import("../job-v2.json")).default as V2Data;
-    case "psalms":
-      return (await import("../psalms-v2.json")).default as V2Data;
-    case "proverbs":
-      return (await import("../proverbs-v2.json")).default as V2Data;
-    case "ecclesiastes":
-      return (await import("../ecclesiastes-v2.json")).default as V2Data;
-    case "songofsolomon":
-      return (await import("../songofsolomon-v2.json")).default as V2Data;
-    case "isaiah":
-      return (await import("../isaiah-v2.json")).default as V2Data;
-    case "jeremiah":
-      return (await import("../jeremiah-v2.json")).default as V2Data;
-    case "lamentations":
-      return (await import("../lamentations-v2.json")).default as V2Data;
-    case "ezekiel":
-      return (await import("../ezekiel-v2.json")).default as V2Data;
-    case "daniel":
-      return (await import("../daniel-v2.json")).default as V2Data;
-    case "hosea":
-      return (await import("../hosea-v2.json")).default as V2Data;
-    case "joel":
-      return (await import("../joel-v2.json")).default as V2Data;
-    case "amos":
-      return (await import("../amos-v2.json")).default as V2Data;
-    case "obadiah":
-      return (await import("../obadiah-v2.json")).default as V2Data;
-    case "jonah":
-      return (await import("../jonah-v2.json")).default as V2Data;
-    case "micah":
-      return (await import("../micah-v2.json")).default as V2Data;
-    case "nahum":
-      return (await import("../nahum-v2.json")).default as V2Data;
-    case "habakkuk":
-      return (await import("../habakkuk-v2.json")).default as V2Data;
-    case "zephaniah":
-      return (await import("../zephaniah-v2.json")).default as V2Data;
-    case "haggai":
-      return (await import("../haggai-v2.json")).default as V2Data;
-    case "zechariah":
-      return (await import("../zechariah-v2.json")).default as V2Data;
-    case "malachi":
-      return (await import("../malachi-v2.json")).default as V2Data;
+  // `default` 캐시 모드로 HTTP cache + ETag 검증에 맡긴다. (force-cache 로 박으면
+  // 데이터 재빌드 후에도 브라우저가 옛 파일을 평생 들고 있어 사용자가 새 결과를
+  // 보지 못한다.)
+  const res = await fetch(`/bible-v2/${book}-v2.json`, { cache: "default" });
+  if (!res.ok) {
+    throw new Error(`Failed to load ${book}-v2.json: ${res.status}`);
   }
+  return (await res.json()) as V2Data;
 }
 
 type V2Token = {
@@ -173,6 +104,8 @@ type V2Verse = {
   n: number;
   copyHebrew: string;
   copyKr: string;
+  /** 직접 작성한 한국어 자연 의역. 매니페스트가 있는 절만 채워져 온다. */
+  copyHebrewpara?: string;
   tokens: V2Token[];
 };
 
@@ -626,10 +559,26 @@ export default function HebrewChapterV2({
               <span className="brp-h2-verse-num" aria-hidden="true">
                 {v.n}
               </span>
+              {/* ▾ — grid 세번째 컬럼이 아닌 두번째 컬럼(절 숫자 바로 옆)에
+                  배치하여 헬라어 화면과 시각 패턴을 통일.
+                  RTL flex 안에 두면 본문 wrap 위치 끝(왼쪽)으로 가버려 헬라어와
+                  반대 위치가 되기 때문에, 일부러 본문 컨테이너 밖에 둔다. */}
+              <button
+                type="button"
+                className={`brp-h2-kr-chev ${krOpen ? "is-open" : ""}`}
+                aria-expanded={krOpen}
+                aria-label={`${v.n}절 한글 의역 ${krOpen ? "접기" : "펼치기"}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleKr(v.n);
+                }}
+                onPointerDown={stopPointer}
+                dir="ltr"
+              >
+                <span aria-hidden="true">▾</span>
+              </button>
               <div className="brp-h2-verse-body">
-                {/* RTL 단어 컨테이너 — flex 가 오른쪽부터 흐름. ▾ 버튼은 LTR
-                    톤이라 컨테이너 안에서 시각적으로 좌측 끝에 보이도록
-                    배치 (DOM 상 가장 마지막). */}
+                {/* RTL 단어 컨테이너 — flex 가 오른쪽부터 흐름. */}
                 <div className="brp-h2-tokens" dir="rtl">
                   {v.tokens.map((tk, i) => {
                     const key = `${v.n}:${i}`;
@@ -699,21 +648,6 @@ export default function HebrewChapterV2({
                       </button>
                     );
                   })}
-                  <button
-                    type="button"
-                    className={`brp-h2-kr-chev ${krOpen ? "is-open" : ""}`}
-                    aria-expanded={krOpen}
-                    aria-label={`${v.n}절 한글 의역 ${
-                      krOpen ? "접기" : "펼치기"
-                    }`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggleKr(v.n);
-                    }}
-                    dir="ltr"
-                  >
-                    <span aria-hidden="true">▾</span>
-                  </button>
                 </div>
 
                 {(() => {
@@ -808,12 +742,30 @@ export default function HebrewChapterV2({
                 })()}
 
                 {krOpen && (
-                  <p className="brp-h2-kr" lang="ko">
-                    <span className="brp-h2-kr-n" aria-hidden="true">
-                      {v.n}
-                    </span>
-                    {v.copyKr}
-                  </p>
+                  <div className="brp-h2-kr-stack" lang="ko">
+                    {v.copyHebrewpara && (
+                      <p className="brp-h2-kr brp-h2-kr-para">
+                        <span className="brp-h2-kr-tag" aria-hidden="true">
+                          의역
+                        </span>
+                        <span className="brp-h2-kr-n" aria-hidden="true">
+                          {v.n}
+                        </span>
+                        {v.copyHebrewpara}
+                      </p>
+                    )}
+                    {v.copyKr && (
+                      <p className="brp-h2-kr brp-h2-kr-krv">
+                        <span className="brp-h2-kr-tag is-mute" aria-hidden="true">
+                          개역
+                        </span>
+                        <span className="brp-h2-kr-n" aria-hidden="true">
+                          {v.n}
+                        </span>
+                        {v.copyKr}
+                      </p>
+                    )}
+                  </div>
                 )}
               </div>
             </li>
@@ -931,9 +883,12 @@ export default function HebrewChapterV2({
         }
         .brp-h2-verse {
           position: relative;
+          /* 3 컬럼: [절 숫자] [▾] [본문(RTL)].
+             ▾ 자리를 따로 두어, RTL 본문 wrap 와 무관하게 절 숫자 바로 옆에
+             고정. 헬라어 화면의 ▾ 위치(절 숫자 옆)와 시각 패턴을 통일. */
           display: grid;
-          grid-template-columns: 2em minmax(0, 1fr);
-          column-gap: clamp(8px, 1vw, 12px);
+          grid-template-columns: 2em auto minmax(0, 1fr);
+          column-gap: 4px;
           align-items: baseline;
           padding: 2px 0 8px 0;
           border-bottom: 1px solid var(--line, rgba(0, 0, 0, 0.06));
@@ -943,6 +898,8 @@ export default function HebrewChapterV2({
         }
         .brp-h2-verse-body {
           min-width: 0;
+          /* grid 의 3번째 컬럼에 본문이 들어가며 자체적으로 좌우 여백을 만든다. */
+          padding-left: 4px;
         }
         .brp-h2-verse :global(.brp-h2-detail) {
           -webkit-user-select: text;
@@ -959,15 +916,18 @@ export default function HebrewChapterV2({
           appearance: none;
           background: transparent;
           border: none;
-          padding: 2px 4px;
+          padding: 0 4px;
           font: inherit;
           font-size: 0.78em;
           color: var(--h2-soft);
           cursor: pointer;
-          line-height: 1;
+          line-height: inherit;
           border-radius: 4px;
           transition: color 0.15s ease, background 0.15s ease;
-          align-self: center;
+          /* grid 의 align-items: baseline 와 함께 — 절 번호와 같은 baseline 에
+             올라타도록 self 도 baseline. 본문 wrap 으로 행 높이가 커져도 ▾ 는
+             첫 줄 절 번호 옆에 고정됨. */
+          align-self: baseline;
         }
         .brp-h2-kr-chev:hover {
           color: var(--h2-ink);
@@ -998,8 +958,14 @@ export default function HebrewChapterV2({
           font-variant-numeric: tabular-nums;
           transition: color 0.25s ease;
         }
-        .brp-h2-kr {
+        .brp-h2-kr-stack {
           margin: 8px 0 2px 0;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+        .brp-h2-kr {
+          margin: 0;
           padding: 6px 12px 6px 12px;
           border-left: 3px solid
             color-mix(in srgb, var(--accent, #3b6c47) 60%, transparent);
@@ -1016,12 +982,46 @@ export default function HebrewChapterV2({
           overflow-wrap: break-word;
           text-indent: 0;
         }
+        /* 의역 줄(우리가 직접 작성) — 강조 톤. */
+        .brp-h2-kr-para {
+        }
+        /* 개역한글 줄 — 더 흐리게, 옆에 작은 회색 태그. */
+        .brp-h2-kr-krv {
+          border-left-color: var(--line, rgba(0, 0, 0, 0.16));
+          background: rgba(0, 0, 0, 0.025);
+          color: var(--h2-soft);
+          font-size: 0.92em;
+        }
+        .brp-h2-kr-tag {
+          display: inline-block;
+          margin-right: 6px;
+          padding: 1px 6px;
+          border-radius: 999px;
+          background: color-mix(
+            in srgb,
+            var(--accent, #3b6c47) 18%,
+            transparent
+          );
+          color: var(--h2-hl);
+          font-size: 0.7em;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          line-height: 1.4;
+          vertical-align: 0.08em;
+        }
+        .brp-h2-kr-tag.is-mute {
+          background: rgba(0, 0, 0, 0.06);
+          color: var(--h2-soft);
+        }
         .brp-h2-kr-n {
           display: inline-block;
           font-weight: 600;
           color: var(--h2-hl);
           margin-right: 6px;
           font-size: 0.92em;
+        }
+        .brp-h2-kr-krv .brp-h2-kr-n {
+          color: var(--h2-soft);
         }
         /* ── RTL 단어 컨테이너 ──
            히브리어 문장은 오른쪽 → 왼쪽 흐름. flex-wrap 은 그대로 사용해도
