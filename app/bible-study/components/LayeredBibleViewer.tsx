@@ -32,6 +32,7 @@ import {
   useState,
   type PointerEvent as ReactPointerEvent,
 } from "react";
+import { createPortal } from "react-dom";
 
 // ── 타입 ────────────────────────────────────────────────────────────────────
 type LayerId =
@@ -763,6 +764,27 @@ export default function LayeredBibleViewer({
     [layerOrder, onLayers],
   );
 
+  // ── 미니바 토글 포털 ────────────────────────────────────────────────────────
+  // 부모 페이지(bible-reading) 가 성경 공부 모드 + 스크롤 시 미니바 안에 만들어
+  // 두는 슬롯 `#brp-mini-toggles-slot` 을 찾아, 동일한 토글 UI 의 컴팩트 버전을
+  // React Portal 로 그 자리에 렌더한다. 슬롯이 없으면(다른 모드 / 슬롯이 아직
+  // 마운트되기 전) 포털은 그냥 안 그려진다.
+  //
+  // 컴팩트 버전은 클릭 토글만 — 본 토글 행(.bsv-toggles) 의 드래그 ref 와
+  // 충돌하지 않도록 itemRefs / pointer 핸들러는 사용하지 않는다(순서 변경은
+  // 본 토글 행에서 한다). 미니바 안에서는 빠르게 ON/OFF 만.
+  const [miniSlotEl, setMiniSlotEl] = useState<HTMLElement | null>(null);
+  useEffect(() => {
+    if (!embedded) return;
+    if (typeof document === "undefined") return;
+    const find = () => document.getElementById("brp-mini-toggles-slot");
+    setMiniSlotEl(find());
+    // 미니바 슬롯 자체는 viewMode==="study" 분기로 마운트되며 DOM 등장이
+    // 지연될 수 있어 한 번 더 미세 지연 후 재시도. 이후 변화는 거의 없다.
+    const t = window.setTimeout(() => setMiniSlotEl(find()), 0);
+    return () => window.clearTimeout(t);
+  }, [embedded]);
+
   // 화면에 그릴 절 목록.
   const bookLabel = manifest?.book ?? "";
   const chapterLabel = currentChapterMeta?.chapter ?? chapter;
@@ -1080,6 +1102,104 @@ export default function LayeredBibleViewer({
           {toast}
         </div>
       )}
+
+      {/* 미니바 토글 — 페이지 미니바 슬롯이 존재할 때만 포털로 렌더.
+          상태(onLayers/layerOrder/layerLabels) 는 본 컴포넌트와 공유되어, 어느
+          쪽을 눌러도 다른 쪽이 즉시 반영된다. 드래그 정렬은 본 토글 행에서만
+          가능하므로 ref/pointer 핸들러는 일부러 빼 두었다. */}
+      {embedded && miniSlotEl
+        ? createPortal(
+            <span className="bsv-mini-toggles" role="group" aria-label="역본 토글 (미니)">
+              {layerOrder.map((id) => {
+                const active = isOn(id);
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    className={`bsv-mini-toggle ${active ? "is-on" : ""}`}
+                    aria-pressed={active}
+                    onClick={() => toggleLayer(id)}
+                    style={{ ["--dot" as string]: LAYER_META[id].dot }}
+                    title={layerLabels[id]}
+                  >
+                    <span className="bsv-mini-toggle-dot" aria-hidden="true" />
+                    <span className="bsv-mini-toggle-label">
+                      {LAYER_META[id].short}
+                    </span>
+                  </button>
+                );
+              })}
+              <style>{`
+                .bsv-mini-toggles {
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 6px;
+                  flex-wrap: nowrap;
+                  white-space: nowrap;
+                }
+                /* 미니바 뒤로 흐르는 초록 진도바(.brp-mini-fill) 색이 토글 안으로
+                   비치지 않게 — 모든 상태의 배경을 알파 1.0(불투명) 으로 고정.
+                   OFF: 어두운 솔리드, ON: 그 역본의 dot 색을 어두운 솔리드와
+                   섞어 진한 알약 컬러로. transparent 대신 #16161a 와 섞는다. */
+                .bsv-mini-toggle {
+                  appearance: none;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 5px;
+                  padding: 4px 10px;
+                  border-radius: 999px;
+                  border: 1px solid rgba(255, 255, 255, 0.32);
+                  background: #1f1f22;
+                  color: rgba(255, 255, 255, 0.86);
+                  font: inherit;
+                  font-size: 12px;
+                  font-weight: 600;
+                  line-height: 1;
+                  cursor: pointer;
+                  -webkit-user-select: none;
+                  user-select: none;
+                  transition: background 0.15s ease, color 0.15s ease,
+                    border-color 0.15s ease;
+                }
+                .bsv-mini-toggle:hover {
+                  background: #2a2a2e;
+                  color: #fff;
+                  border-color: rgba(255, 255, 255, 0.55);
+                }
+                .bsv-mini-toggle.is-on {
+                  /* 역본 dot 색 88% + 어두운 베이스 12% — 불투명, 톤 다운된 채도. */
+                  background: color-mix(in srgb, var(--dot) 88%, #16161a);
+                  border-color: color-mix(in srgb, var(--dot) 92%, #ffffff);
+                  color: #fff;
+                }
+                .bsv-mini-toggle-dot {
+                  width: 7px;
+                  height: 7px;
+                  border-radius: 999px;
+                  background: var(--dot);
+                  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
+                }
+                .bsv-mini-toggle.is-on .bsv-mini-toggle-dot {
+                  /* 켠 상태에선 알약 자체가 그 색이라 점은 흰 링으로 강조. */
+                  background: rgba(255, 255, 255, 0.95);
+                  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+                }
+                .bsv-mini-toggle-label {
+                  font-size: 12px;
+                }
+                @media (max-width: 540px) {
+                  .bsv-mini-toggle {
+                    padding: 4px 8px;
+                  }
+                  .bsv-mini-toggle-label {
+                    font-size: 11px;
+                  }
+                }
+              `}</style>
+            </span>,
+            miniSlotEl,
+          )
+        : null}
 
       <style jsx>{`
         .bsv {

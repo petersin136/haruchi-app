@@ -2939,9 +2939,8 @@ export default function BibleReadingPage() {
           >
             <GearIcon />
           </a>
-          <a className="brp-nav-link brp-nav-text-link" href="/bible-reading?view=study">
-            성경 공부
-          </a>
+          {/* "성경 공부" 진입점은 모드 드롭다운(개역한글/어린이/영어/헬라어/히브리어/성경 공부)
+              안으로 통합되었다. 헤더에서 별도 링크는 중복이라 제거. */}
           {!currentStudent ? (
             <button
               type="button"
@@ -2995,17 +2994,7 @@ export default function BibleReadingPage() {
             aria-label="Account links"
             onClick={(e) => e.stopPropagation()}
           >
-            <a
-              className="brp-mobile-menu-item"
-              href="/bible-reading?view=study"
-              onClick={() => setNavMenuOpen(false)}
-            >
-              <span className="brp-mobile-menu-icon" aria-hidden="true">
-                <span className="brp-mobile-menu-bullet" />
-              </span>
-              <span>성경 공부</span>
-            </a>
-            <span className="brp-mobile-menu-divider" aria-hidden="true" />
+            {/* "성경 공부" 진입점은 모드 드롭다운으로 통합됨 — 모바일 메뉴에서도 제거. */}
             {!currentStudent ? (
               <button
                 type="button"
@@ -3062,9 +3051,16 @@ export default function BibleReadingPage() {
       {/* 스크롤 시 헤더 대신 떠 있는 반투명 미니바 — 책·장·소제목 + 본문 진행도.
           본문(reader) 카드가 뷰포트에 보이는 동안만 표시.
           내부 .brp-mini-fill 이 왼쪽→오른쪽 에너지바처럼 채워짐.
-          책 미선택 상태에서는 책 이름/장 정보 자체가 의미 없으므로 통째로 숨김. */}
+          책 미선택 상태에서는 책 이름/장 정보 자체가 의미 없으므로 통째로 숨김.
+
+          성경 공부 모드(viewMode === "study") 일 때는 레이아웃이 바뀐다 —
+          제목은 왼쪽으로 몰리고, 오른쪽에 역본 토글 슬롯(`#brp-mini-toggles-slot`)
+          이 자리잡아 LayeredBibleViewer 가 React Portal 로 컴팩트 토글을
+          꽂아 넣는다(스크롤한 채로도 역본을 켜고 끌 수 있게). */}
       <div
-        className={`brp-mini-bar ${bookConfirmed && miniVisible ? "is-visible" : ""}`}
+        className={`brp-mini-bar ${
+          bookConfirmed && miniVisible ? "is-visible" : ""
+        } ${viewMode === "study" ? "brp-mini-bar--study" : ""}`}
         aria-hidden={!bookConfirmed || !miniVisible}
         role="progressbar"
         aria-valuemin={0}
@@ -3081,14 +3077,23 @@ export default function BibleReadingPage() {
           style={{ transform: `scaleX(${readerProgress})` }}
         />
         <span className="brp-mini-content">
-          <span className="brp-mini-book">{bookMeta.name}</span>
-          <span className="brp-mini-divider" aria-hidden="true">·</span>
-          <span className="brp-mini-chapter">제 {chapterNumber} 장</span>
-          {chapter.title ? (
-            <>
-              <span className="brp-mini-divider" aria-hidden="true">·</span>
-              <span className="brp-mini-title">{chapter.title}</span>
-            </>
+          <span className="brp-mini-text">
+            <span className="brp-mini-book">{bookMeta.name}</span>
+            <span className="brp-mini-divider" aria-hidden="true">·</span>
+            <span className="brp-mini-chapter">제 {chapterNumber} 장</span>
+            {chapter.title ? (
+              <>
+                <span className="brp-mini-divider" aria-hidden="true">·</span>
+                <span className="brp-mini-title">{chapter.title}</span>
+              </>
+            ) : null}
+          </span>
+          {viewMode === "study" ? (
+            <span
+              id="brp-mini-toggles-slot"
+              className="brp-mini-toggles-slot"
+              aria-label="역본 토글 (스크롤 중)"
+            />
           ) : null}
         </span>
       </div>
@@ -4197,6 +4202,46 @@ export default function BibleReadingPage() {
           gap: 8px;
           padding: 0 16px;
           min-height: 40px;
+        }
+        /* 성경 공부 모드 — 제목은 왼쪽으로 몰리고 토글 슬롯이 오른쪽에 자리. */
+        .brp-mini-bar--study .brp-mini-content {
+          justify-content: space-between;
+          gap: 12px;
+          padding: 0 12px 0 16px;
+        }
+        .brp-mini-text {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          min-width: 0;
+        }
+        .brp-mini-bar--study .brp-mini-text {
+          flex: 0 1 auto;
+          /* 책 이름·장·소제목이 토글 자리를 침범하지 않도록 절단. */
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        .brp-mini-bar--study .brp-mini-title {
+          /* 기본 50vw 는 토글 자리를 잡아먹어서 좁힌다. */
+          max-width: clamp(80px, 28vw, 280px);
+        }
+        .brp-mini-toggles-slot {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          flex: 1 1 auto;
+          min-width: 0;
+          justify-content: flex-end;
+          /* 토글 갯수가 많을 때 가로 스크롤로 넘김 — 미니바 자체는 한 줄 유지. */
+          overflow-x: auto;
+          overflow-y: hidden;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          /* iOS 관성 스크롤. */
+          -webkit-overflow-scrolling: touch;
+        }
+        .brp-mini-toggles-slot::-webkit-scrollbar {
+          display: none;
         }
         .brp-mini-book {
           font-weight: 700;
