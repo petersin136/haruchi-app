@@ -154,30 +154,76 @@ type StudyBookData = {
   chapters: StudyChapter[];
 };
 
-// 책별 데이터 — public/bible-study/data/<bookId>.json 을 fetch 로 받아온다.
-//   webpack 이 27개 큰 JSON 을 정적 chunk 로 만들면 dev/build 메모리가 폭발하므로
-//   런타임 fetch + 브라우저 캐시로 우회한다(서비스 워커가 더 길게 캐시 가능).
-//
-// 한 번 받은 책은 모듈 레벨 캐시에 보관해 같은 책의 장 전환은 fetch 없이 즉시.
-const bookCache = new Map<StudyBookId, Promise<StudyBookData>>();
+// ── 청크/manifest 스키마 ─────────────────────────────────────────────────────
+// 책 한 권을 통째 fetch 하면 첫 진입이 느리고(예: 창세기 5MB+) 화면이 깨져 보인다.
+// 따라서 데이터를 작은 manifest + (장, 레이어) 조합 청크로 나눠 받는다.
+//   - manifest:  /bible-study/chunks/<book>/manifest.json — 메타 + 절 갯수만.
+//   - 청크:      /bible-study/chunks/<book>/<ch>/<layer>.json — 그 한 장의 한 레이어.
+// 첫 진입은 (manifest + 현재 장의 defaultOn 레이어) 만 받아 가볍다. 다른 레이어를
+// 켜거나 다른 장으로 이동하면 그때 그 청크를 추가로 fetch 한다.
+type ChapterMeta = { chapter: number; verseCount: number };
 
-async function loadStudyBook(book: StudyBookId): Promise<StudyBookData> {
-  const cached = bookCache.get(book);
+type BookManifest = {
+  book: string;
+  bookId?: StudyBookId;
+  testament?: "nt" | "ot";
+  layerOrder: LayerId[];
+  layerLabels: Partial<Record<LayerId, string>>;
+  defaultOn: LayerId[];
+  sources?: Partial<Record<LayerId, string>>;
+  chapters: ChapterMeta[];
+};
+
+type LayerChunk = {
+  chapter: number;
+  layer: LayerId;
+  verses: Record<string, AnyLayer>;
+};
+
+// ── 모듈 레벨 캐시 — 같은 책/장/레이어를 두 번 받지 않는다.
+//   재마운트(예: 모드 토글로 컴포넌트가 잠깐 사라졌다 돌아옴) 사이에서도 살아있다.
+const manifestCache = new Map<StudyBookId, Promise<BookManifest>>();
+const chunkCache = new Map<string, Promise<LayerChunk>>();
+
+function chunkKey(book: StudyBookId, ch: number, layer: LayerId) {
+  return `${book}|${ch}|${layer}`;
+}
+
+async function loadManifest(book: StudyBookId): Promise<BookManifest> {
+  const cached = manifestCache.get(book);
   if (cached) return cached;
   const p = (async () => {
-    // 정적 JSON 이지만 `force-cache` 로 못박으면 데이터 재빌드 후에도 브라우저가
-    // 옛 파일을 평생 들고 있는다(레이어 추가 등). HTTP 캐시 헤더(+ETag) 에
-    // 맡기는 `default` 가 dev/prod 모두 안전 — 두 번째 방문은 304 로 가볍게 끝남.
-    const res = await fetch(`/bible-study/data/${book}.json`, {
+    // `force-cache` 는 데이터 재빌드 후에도 옛 파일을 안고 있으므로 위험.
+    // HTTP 캐시 헤더(+ETag) 에 맡기는 `default` 가 dev/prod 모두 안전.
+    const res = await fetch(`/bible-study/chunks/${book}/manifest.json`, {
       cache: "default",
     });
-    if (!res.ok)
-      throw new Error(`HTTP ${res.status} — ${book} 데이터 없음`);
-    return (await res.json()) as StudyBookData;
+    if (!res.ok) throw new Error(`HTTP ${res.status} — ${book} manifest 없음`);
+    return (await res.json()) as BookManifest;
   })();
-  bookCache.set(book, p);
-  // fetch 가 실패해도 다음 시도가 가능하도록 실패 시 캐시 무효화.
-  p.catch(() => bookCache.delete(book));
+  manifestCache.set(book, p);
+  p.catch(() => manifestCache.delete(book));
+  return p;
+}
+
+async function loadLayerChunk(
+  book: StudyBookId,
+  ch: number,
+  layer: LayerId,
+): Promise<LayerChunk> {
+  const k = chunkKey(book, ch, layer);
+  const cached = chunkCache.get(k);
+  if (cached) return cached;
+  const p = (async () => {
+    const res = await fetch(
+      `/bible-study/chunks/${book}/${ch}/${layer}.json`,
+      { cache: "default" },
+    );
+    if (!res.ok) throw new Error(`HTTP ${res.status} — ${book} ${ch}장 ${layer} 없음`);
+    return (await res.json()) as LayerChunk;
+  })();
+  chunkCache.set(k, p);
+  p.catch(() => chunkCache.delete(k));
   return p;
 }
 

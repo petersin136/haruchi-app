@@ -4,7 +4,12 @@
  * HebrewLayerViewer — 구약 히브리어 PoC 전용 레이어 뷰어 (창세기 한 권).
  *
  * 의존:
- *   - 데이터: `/hebrew-test/<book>.json` (fetch, cache: "default")
+ *   - 데이터(청크): `/hebrew-test/chunks/<book>/manifest.json` + `<ch>/<layer>.json`
+ *     · 큰 한 권 JSON(예: genesis 4.3MB)을 한꺼번에 받지 않는다.
+ *     · 첫 진입: 작은 manifest + 현재 장의 defaultOn 레이어만 fetch.
+ *     · 다른 장으로 이동하면 그때 그 장의 (켠 레이어) 만 추가로 fetch.
+ *     · 켠 레이어를 추가 토글하면 그때 그 레이어 청크만 추가로 fetch.
+ *     · 한 번 받은 (book, chapter, layer) 청크는 모듈 레벨 캐시에 보관 → 재요청 X.
  *   - 색상/폰트/간격: 사이트 테마 변수(--ink, --line, --accent, --reader-font-family ...)
  *
  * 신약(LayeredBibleViewer) 과 동일한 UX 를 RTL 환경에 맞게 단순화한 별도 컴포넌트.
@@ -16,6 +21,8 @@
  *   - hebrew 레이어는 단어 블록(`dir="rtl"`, flex-wrap) 으로 오른쪽부터 흐름.
  *     단어 클릭 시 그 아래에 원형·Strong's·문법 카드 펼침.
  *   - 절별 복사 버튼: 켠 레이어를 사용자 순서대로 한 줄씩. 히브리는 원문 한 줄.
+ *   - 데이터가 도착 전에는 절 골격(스켈레톤) 으로 자리만 비워둔다 — 레이아웃이
+ *     깨지지 않게.
  */
 
 import {
@@ -62,6 +69,75 @@ export type HebrewBookData = {
   sources?: Partial<Record<LayerId, string>>;
   chapters: Chapter[];
 };
+
+// ── 청크/manifest 스키마 ────────────────────────────────────────────────────
+type ChapterMeta = { chapter: number; verseCount: number };
+
+type BookManifest = {
+  book: string;
+  bookId?: string;
+  direction?: "rtl";
+  layerOrder: LayerId[];
+  layerLabels: Partial<Record<LayerId, string>>;
+  defaultOn: LayerId[];
+  sources?: Partial<Record<LayerId, string>>;
+  chapters: ChapterMeta[];
+};
+
+// 한 (book, chapter, layer) 청크 — verses 는 ref 키맵.
+type LayerChunk = {
+  chapter: number;
+  layer: LayerId;
+  verses: Record<string, AnyLayer>;
+};
+
+// ── 모듈 레벨 캐시 (재마운트/장 이동/책 토글 사이에서 공유) ────────────────
+const manifestCache = new Map<string, Promise<BookManifest>>();
+const chunkCache = new Map<string, Promise<LayerChunk>>();
+
+function manifestKey(bookSlug: string) {
+  return bookSlug;
+}
+function chunkKey(bookSlug: string, ch: number, layer: LayerId) {
+  return `${bookSlug}|${ch}|${layer}`;
+}
+
+async function loadManifest(bookSlug: string): Promise<BookManifest> {
+  const k = manifestKey(bookSlug);
+  const cached = manifestCache.get(k);
+  if (cached) return cached;
+  const p = (async () => {
+    const res = await fetch(`/hebrew-test/chunks/${bookSlug}/manifest.json`, {
+      cache: "default",
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return (await res.json()) as BookManifest;
+  })();
+  manifestCache.set(k, p);
+  p.catch(() => manifestCache.delete(k));
+  return p;
+}
+
+async function loadLayerChunk(
+  bookSlug: string,
+  ch: number,
+  layer: LayerId,
+): Promise<LayerChunk> {
+  const k = chunkKey(bookSlug, ch, layer);
+  const cached = chunkCache.get(k);
+  if (cached) return cached;
+  const p = (async () => {
+    const res = await fetch(
+      `/hebrew-test/chunks/${bookSlug}/${ch}/${layer}.json`,
+      { cache: "default" },
+    );
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return (await res.json()) as LayerChunk;
+  })();
+  chunkCache.set(k, p);
+  p.catch(() => chunkCache.delete(k));
+  return p;
+}
 
 // 정본(폴백) 라벨/순서. 데이터가 빠진 필드는 이 값으로 보강.
 const DEFAULT_LAYER_ORDER: LayerId[] = ["krv", "hebrew", "hebrewpara", "kids"];
@@ -192,24 +268,37 @@ export default function HebrewLayerViewer({
   chapter,
   bookLabel,
 }: Props) {
-  const [bookData, setBookData] = useState<HebrewBookData | null>(null);
+  // 1) 책 manifest — 작은 메타(레이어/장 길이) 만 들어 있음. 책이 바뀌면 새로.
+  const [manifest, setManifest] = useState<BookManifest | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
 
+  // 2) 현재 장의 레이어 청크 — 켠 레이어만 채워진다. 장이 바뀌면 비움.
+  //    Map 자체를 새 인스턴스로 갈아끼워 useMemo 등이 다시 계산되게.
+  const [chunkByLayer, setChunkByLayer] = useState<Map<LayerId, LayerChunk>>(
+    () => new Map(),
+  );
+  const [loadingLayers, setLoadingLayers] = useState<Set<LayerId>>(
+    () => new Set(),
+  );
+  const [layerErrors, setLayerErrors] = useState<Map<LayerId, string>>(
+    () => new Map(),
+  );
+
+  // ── manifest 로드 (책 전환 시) ─────────────────────────────────────────────
   useEffect(() => {
     let cancelled = false;
     setLoadError(null);
-    setBookData(null);
-    fetch(`/hebrew-test/${bookSlug}.json`, { cache: "default" })
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.json();
-      })
-      .then((d: HebrewBookData) => {
-        if (!cancelled) setBookData(d);
+    setManifest(null);
+    setChunkByLayer(new Map());
+    setLoadingLayers(new Set());
+    setLayerErrors(new Map());
+    loadManifest(bookSlug)
+      .then((m) => {
+        if (!cancelled) setManifest(m);
       })
       .catch((e: unknown) => {
         if (!cancelled) {
-          console.error("hebrew-test 데이터 로드 실패", e);
+          console.error("hebrew-test manifest 로드 실패", e);
           setLoadError(
             e instanceof Error ? e.message : "데이터를 불러오지 못했어요.",
           );
@@ -220,22 +309,25 @@ export default function HebrewLayerViewer({
     };
   }, [bookSlug]);
 
-  // 정본 layerOrder/labels — 데이터가 빠진 부분은 정본으로 보강.
+  // 정본 layerOrder/labels — manifest 가 빠진 부분은 정본으로 보강.
   const layerOrderAll: LayerId[] = useMemo(
-    () => bookData?.layerOrder ?? DEFAULT_LAYER_ORDER,
-    [bookData],
+    () => manifest?.layerOrder ?? DEFAULT_LAYER_ORDER,
+    [manifest],
   );
   const layerLabels = useMemo<Record<LayerId, string>>(
-    () => ({ ...DEFAULT_LAYER_LABELS, ...(bookData?.layerLabels ?? {}) }),
-    [bookData],
+    () => ({ ...DEFAULT_LAYER_LABELS, ...(manifest?.layerLabels ?? {}) }),
+    [manifest],
   );
 
-  const currentChapter = useMemo<Chapter | null>(() => {
-    if (!bookData) return null;
-    const found = bookData.chapters.find((c) => c.chapter === chapter);
+  // 현재 장 메타 — chapter 가 데이터 범위를 벗어나면 마지막 장으로 클램프.
+  const currentChapterMeta = useMemo<ChapterMeta | null>(() => {
+    if (!manifest) return null;
+    const found = manifest.chapters.find((c) => c.chapter === chapter);
     if (found) return found;
-    return bookData.chapters[bookData.chapters.length - 1] ?? null;
-  }, [bookData, chapter]);
+    return manifest.chapters[manifest.chapters.length - 1] ?? null;
+  }, [manifest, chapter]);
+
+  const effectiveChapter = currentChapterMeta?.chapter ?? chapter;
 
   // SSR 초기값은 정본 — hydration 이후 localStorage 로 동기화.
   const [onLayers, setOnLayers] = useState<LayerId[]>(DEFAULT_ON);
@@ -260,11 +352,11 @@ export default function HebrewLayerViewer({
   useEffect(() => {
     const storedOn = loadStoredArray(ON_STORAGE_KEY, layerOrderAll);
     if (storedOn && storedOn.length > 0) setOnLayers(storedOn);
-    else setOnLayers(bookData?.defaultOn ?? DEFAULT_ON);
+    else setOnLayers(manifest?.defaultOn ?? DEFAULT_ON);
     const storedOrder = loadStoredArray(ORDER_STORAGE_KEY, layerOrderAll);
     setLayerOrder(mergedOrder(storedOrder, layerOrderAll));
     setHydrated(true);
-  }, [layerOrderAll, bookData]);
+  }, [layerOrderAll, manifest]);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -290,6 +382,79 @@ export default function HebrewLayerViewer({
     return () => window.clearTimeout(t);
   }, [toast]);
 
+  // ── 장이 바뀔 때 — 이전 장 청크는 비우고, 켠 레이어만 다시 받아온다.
+  //    캐시는 그대로 살아있어서 같은 장으로 돌아오면 fetch 가 일어나지 않는다.
+  useEffect(() => {
+    setChunkByLayer(new Map());
+    setLayerErrors(new Map());
+    setLoadingLayers(new Set());
+  }, [bookSlug, effectiveChapter]);
+
+  // ── 켠 레이어 / 장 / 책 변화에 따른 청크 fetch (지연 로딩 + 캐싱) ────────
+  useEffect(() => {
+    if (!manifest) return;
+    let cancelled = false;
+    for (const layer of onLayers) {
+      // 이미 받았거나 받는 중이면 skip — 재요청 방지.
+      if (chunkByLayer.has(layer)) continue;
+      if (loadingLayers.has(layer)) continue;
+      setLoadingLayers((prev) => {
+        if (prev.has(layer)) return prev;
+        const next = new Set(prev);
+        next.add(layer);
+        return next;
+      });
+      loadLayerChunk(bookSlug, effectiveChapter, layer)
+        .then((chunk) => {
+          if (cancelled) return;
+          setChunkByLayer((prev) => {
+            const next = new Map(prev);
+            next.set(layer, chunk);
+            return next;
+          });
+          setLoadingLayers((prev) => {
+            if (!prev.has(layer)) return prev;
+            const next = new Set(prev);
+            next.delete(layer);
+            return next;
+          });
+          setLayerErrors((prev) => {
+            if (!prev.has(layer)) return prev;
+            const next = new Map(prev);
+            next.delete(layer);
+            return next;
+          });
+        })
+        .catch((e: unknown) => {
+          if (cancelled) return;
+          console.error(
+            `hebrew-test 청크 로드 실패: ${bookSlug}/${effectiveChapter}/${layer}`,
+            e,
+          );
+          setLoadingLayers((prev) => {
+            if (!prev.has(layer)) return prev;
+            const next = new Set(prev);
+            next.delete(layer);
+            return next;
+          });
+          setLayerErrors((prev) => {
+            const next = new Map(prev);
+            next.set(
+              layer,
+              e instanceof Error ? e.message : "청크를 불러오지 못했어요.",
+            );
+            return next;
+          });
+        });
+    }
+    return () => {
+      cancelled = true;
+    };
+    // chunkByLayer / loadingLayers 는 effect 내부에서 setter 로 다루므로 deps 에서
+    // 빼도 안전 — onLayers 또는 chapter 가 바뀔 때만 새 fetch 시도.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [manifest, bookSlug, effectiveChapter, onLayers]);
+
   const isOn = useCallback((id: LayerId) => onLayers.includes(id), [onLayers]);
 
   const toggleLayer = useCallback((id: LayerId) => {
@@ -308,12 +473,18 @@ export default function HebrewLayerViewer({
   }, []);
 
   const handleCopy = useCallback(
-    async (verse: Verse) => {
-      const text = buildVerseCopy(verse, onLayers, layerOrder);
+    async (ref: string) => {
+      const layers: Partial<Record<LayerId, AnyLayer>> = {};
+      for (const id of onLayers) {
+        const chunk = chunkByLayer.get(id);
+        const got = chunk?.verses?.[ref];
+        if (got) layers[id] = got;
+      }
+      const text = buildVerseCopy({ ref, layers }, onLayers, layerOrder);
       const ok = await writeClipboard(text);
-      setToast(ok ? `${verse.ref} 복사됨` : "복사에 실패했어요");
+      setToast(ok ? `${ref} 복사됨` : "복사에 실패했어요");
     },
-    [onLayers, layerOrder],
+    [onLayers, layerOrder, chunkByLayer],
   );
 
   // ── 드래그 핸들러 ─────────────────────────────────────────────────────────
@@ -431,9 +602,14 @@ export default function HebrewLayerViewer({
     [layerOrder, onLayers],
   );
 
-  const verses = currentChapter?.verses ?? [];
-  const bookName = bookData?.book ?? bookLabel;
-  const chapterLabel = currentChapter?.chapter ?? chapter;
+  const bookName = manifest?.book ?? bookLabel;
+  const chapterLabel = currentChapterMeta?.chapter ?? chapter;
+  const verseCount = currentChapterMeta?.verseCount ?? 0;
+  // 절 ref 는 데이터에서 "<책 이름> <장>:<절>" 형식. manifest 의 book 라벨로 재구성.
+  const buildRef = useCallback(
+    (n: number) => `${bookName} ${chapterLabel}:${n}`,
+    [bookName, chapterLabel],
+  );
 
   return (
     <section className="hpoc" aria-label={`${bookName} ${chapterLabel}장 (히브리어 PoC)`}>
@@ -488,134 +664,198 @@ export default function HebrewLayerViewer({
           데이터를 불러오는 중 오류가 발생했어요 — {loadError}
         </p>
       )}
-      {!bookData && !loadError && <p className="hpoc-empty">불러오는 중…</p>}
-      {bookData && verses.length === 0 && (
+      {!manifest && !loadError && (
+        <ol className="hpoc-verses" aria-busy="true" aria-live="polite">
+          {Array.from({ length: 6 }, (_, i) => (
+            <li key={`sk-${i}`} className="hpoc-verse hpoc-verse--skeleton">
+              <div className="hpoc-verse-head">
+                <span className="hpoc-verse-num hpoc-skeleton-pill" aria-hidden="true" />
+              </div>
+              <div className="hpoc-layers">
+                <div className="hpoc-layer hpoc-layer--skeleton">
+                  <span className="hpoc-tag hpoc-skeleton-pill" aria-hidden="true" />
+                  <span className="hpoc-skeleton-line" aria-hidden="true" />
+                </div>
+                <div className="hpoc-layer hpoc-layer--skeleton">
+                  <span className="hpoc-tag hpoc-skeleton-pill" aria-hidden="true" />
+                  <span className="hpoc-skeleton-line hpoc-skeleton-line--short" aria-hidden="true" />
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
+      )}
+      {manifest && verseCount === 0 && (
         <p className="hpoc-empty">이 장에는 절 데이터가 없어요.</p>
       )}
-      {bookData && verses.length > 0 && visibleLayers.length === 0 && (
+      {manifest && verseCount > 0 && visibleLayers.length === 0 && (
         <p className="hpoc-empty">위에서 역본을 하나 이상 켜 주세요.</p>
       )}
 
-      <ol className="hpoc-verses">
-        {verses.map((verse) => {
-          const n = verse.ref.split(":").pop();
-          return (
-            <li key={verse.ref} className="hpoc-verse">
-              <div className="hpoc-verse-head">
-                <span className="hpoc-verse-num" aria-hidden="true">
-                  {n}
-                </span>
-                <button
-                  type="button"
-                  className="hpoc-copy"
-                  onClick={() => handleCopy(verse)}
-                  aria-label={`${verse.ref} 켠 역본 복사`}
-                  title="켠 역본 복사"
-                >
-                  <CopyIcon />
-                </button>
-              </div>
+      {manifest && verseCount > 0 && (
+        <ol className="hpoc-verses">
+          {Array.from({ length: verseCount }, (_, idx) => {
+            const n = idx + 1;
+            const ref = buildRef(n);
+            return (
+              <li key={ref} className="hpoc-verse">
+                <div className="hpoc-verse-head">
+                  <span className="hpoc-verse-num" aria-hidden="true">
+                    {n}
+                  </span>
+                  <button
+                    type="button"
+                    className="hpoc-copy"
+                    onClick={() => handleCopy(ref)}
+                    aria-label={`${ref} 켠 역본 복사`}
+                    title="켠 역본 복사"
+                  >
+                    <CopyIcon />
+                  </button>
+                </div>
 
-              <div className="hpoc-layers">
-                {visibleLayers.map((id) => {
-                  const layer = verse.layers[id];
-                  if (!layer) return null;
-                  const meta = LAYER_META[id];
-                  return (
-                    <div key={id} className={`hpoc-layer hpoc-layer--${id}`}>
-                      <span
-                        className="hpoc-tag"
-                        style={{ ["--dot" as string]: meta.dot }}
-                      >
-                        <span className="hpoc-tag-dot" aria-hidden="true" />
-                        <span className="hpoc-tag-text">{meta.short}</span>
-                      </span>
+                <div className="hpoc-layers">
+                  {visibleLayers.map((id) => {
+                    const meta = LAYER_META[id];
+                    const chunk = chunkByLayer.get(id);
+                    const isLayerLoading = loadingLayers.has(id) && !chunk;
+                    const layer = chunk?.verses?.[ref];
 
-                      {layer.type === "text" ? (
-                        <p className="hpoc-text" lang="ko">
-                          {layer.content}
-                        </p>
-                      ) : (
-                        <div className="hpoc-hebrew">
-                          <div className="hpoc-words" dir="rtl">
+                    // 청크가 아직 도착 전 — 그 레이어 한 줄만 스켈레톤.
+                    if (!chunk) {
+                      return (
+                        <div
+                          key={id}
+                          className={`hpoc-layer hpoc-layer--${id} hpoc-layer--pending`}
+                          aria-busy={isLayerLoading || undefined}
+                        >
+                          <span
+                            className="hpoc-tag"
+                            style={{ ["--dot" as string]: meta.dot }}
+                          >
+                            <span className="hpoc-tag-dot" aria-hidden="true" />
+                            <span className="hpoc-tag-text">{meta.short}</span>
+                          </span>
+                          <span
+                            className={
+                              id === "hebrew"
+                                ? "hpoc-skeleton-line hpoc-skeleton-line--rtl"
+                                : "hpoc-skeleton-line"
+                            }
+                            aria-hidden="true"
+                          />
+                        </div>
+                      );
+                    }
+
+                    // 청크는 받았는데 그 절은 비어 있을 수 있다(e.g., kids 미작성).
+                    if (!layer) return null;
+
+                    return (
+                      <div key={id} className={`hpoc-layer hpoc-layer--${id}`}>
+                        <span
+                          className="hpoc-tag"
+                          style={{ ["--dot" as string]: meta.dot }}
+                        >
+                          <span className="hpoc-tag-dot" aria-hidden="true" />
+                          <span className="hpoc-tag-text">{meta.short}</span>
+                        </span>
+
+                        {layer.type === "text" ? (
+                          <p className="hpoc-text" lang="ko">
+                            {layer.content}
+                          </p>
+                        ) : (
+                          <div className="hpoc-hebrew">
+                            <div className="hpoc-words" dir="rtl">
+                              {layer.words.map((w, i) => {
+                                const key = `${ref}#${i}`;
+                                const open = openWord.has(key);
+                                return (
+                                  <button
+                                    type="button"
+                                    key={key}
+                                    className={`hpoc-word ${open ? "is-open" : ""}`}
+                                    aria-expanded={open}
+                                    aria-label={`${w.word} (${w.pron}) 상세 ${
+                                      open ? "닫기" : "열기"
+                                    }`}
+                                    onClick={() => toggleWord(key)}
+                                  >
+                                    <span className="hpoc-word-h" lang="he" dir="rtl">
+                                      {w.word}
+                                    </span>
+                                    <span className="hpoc-word-p" aria-hidden="true">
+                                      {w.pron || "\u00A0"}
+                                    </span>
+                                    <span className="hpoc-word-m" aria-hidden="true">
+                                      {w.meaning || "\u00A0"}
+                                    </span>
+                                  </button>
+                                );
+                              })}
+                            </div>
+
                             {layer.words.map((w, i) => {
-                              const key = `${verse.ref}#${i}`;
-                              const open = openWord.has(key);
+                              const key = `${ref}#${i}`;
+                              if (!openWord.has(key)) return null;
                               return (
-                                <button
-                                  type="button"
-                                  key={key}
-                                  className={`hpoc-word ${open ? "is-open" : ""}`}
-                                  aria-expanded={open}
-                                  aria-label={`${w.word} (${w.pron}) 상세 ${
-                                    open ? "닫기" : "열기"
-                                  }`}
-                                  onClick={() => toggleWord(key)}
-                                >
-                                  <span className="hpoc-word-h" lang="he" dir="rtl">
-                                    {w.word}
-                                  </span>
-                                  <span className="hpoc-word-p" aria-hidden="true">
-                                    {w.pron || "\u00A0"}
-                                  </span>
-                                  <span className="hpoc-word-m" aria-hidden="true">
-                                    {w.meaning || "\u00A0"}
-                                  </span>
-                                </button>
+                                <article key={`d-${key}`} className="hpoc-detail">
+                                  <header className="hpoc-detail-head">
+                                    <span className="hpoc-detail-w" lang="he" dir="rtl">
+                                      {w.word}
+                                    </span>
+                                    {w.pron && (
+                                      <span className="hpoc-detail-p">{w.pron}</span>
+                                    )}
+                                  </header>
+                                  <dl className="hpoc-detail-grid">
+                                    <dt>원형</dt>
+                                    <dd lang="he" dir="rtl">
+                                      {w.lemma}
+                                    </dd>
+                                    {w.strong && (
+                                      <>
+                                        <dt>Strong&apos;s</dt>
+                                        <dd>{w.strong}</dd>
+                                      </>
+                                    )}
+                                    {w.morph && (
+                                      <>
+                                        <dt>문법</dt>
+                                        <dd>{w.morph}</dd>
+                                      </>
+                                    )}
+                                    {w.meaning && (
+                                      <>
+                                        <dt>뜻</dt>
+                                        <dd>{w.meaning}</dd>
+                                      </>
+                                    )}
+                                  </dl>
+                                </article>
                               );
                             })}
                           </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      )}
 
-                          {layer.words.map((w, i) => {
-                            const key = `${verse.ref}#${i}`;
-                            if (!openWord.has(key)) return null;
-                            return (
-                              <article key={`d-${key}`} className="hpoc-detail">
-                                <header className="hpoc-detail-head">
-                                  <span className="hpoc-detail-w" lang="he" dir="rtl">
-                                    {w.word}
-                                  </span>
-                                  {w.pron && (
-                                    <span className="hpoc-detail-p">{w.pron}</span>
-                                  )}
-                                </header>
-                                <dl className="hpoc-detail-grid">
-                                  <dt>원형</dt>
-                                  <dd lang="he" dir="rtl">
-                                    {w.lemma}
-                                  </dd>
-                                  {w.strong && (
-                                    <>
-                                      <dt>Strong&apos;s</dt>
-                                      <dd>{w.strong}</dd>
-                                    </>
-                                  )}
-                                  {w.morph && (
-                                    <>
-                                      <dt>문법</dt>
-                                      <dd>{w.morph}</dd>
-                                    </>
-                                  )}
-                                  {w.meaning && (
-                                    <>
-                                      <dt>뜻</dt>
-                                      <dd>{w.meaning}</dd>
-                                    </>
-                                  )}
-                                </dl>
-                              </article>
-                            );
-                          })}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </li>
-          );
-        })}
-      </ol>
+      {manifest && layerErrors.size > 0 && (
+        <p className="hpoc-empty hpoc-error" role="alert">
+          일부 레이어를 불러오지 못했어요 —{" "}
+          {Array.from(layerErrors.entries())
+            .map(([k, v]) => `${layerLabels[k] ?? k}: ${v}`)
+            .join(" / ")}
+        </p>
+      )}
 
       <footer className="hpoc-footer">
         <small>
@@ -747,6 +987,52 @@ export default function HebrewLayerViewer({
         }
         .hpoc-error {
           color: #a14545;
+        }
+
+        /* ── 스켈레톤(로딩 자리표시자) ── */
+        .hpoc-verse--skeleton {
+          opacity: 0.7;
+        }
+        .hpoc-skeleton-pill {
+          display: inline-block;
+          min-width: 28px;
+          height: 18px;
+          background: color-mix(in srgb, var(--hpoc-line) 70%, var(--hpoc-surface));
+          border-radius: 999px;
+        }
+        .hpoc-skeleton-line {
+          display: block;
+          width: 100%;
+          height: 14px;
+          margin: 4px 0;
+          background: linear-gradient(
+            90deg,
+            color-mix(in srgb, var(--hpoc-line) 60%, var(--hpoc-surface)) 0%,
+            color-mix(in srgb, var(--hpoc-line) 90%, var(--hpoc-surface)) 50%,
+            color-mix(in srgb, var(--hpoc-line) 60%, var(--hpoc-surface)) 100%
+          );
+          background-size: 200% 100%;
+          border-radius: 6px;
+          animation: hpoc-shimmer 1.4s ease-in-out infinite;
+        }
+        .hpoc-skeleton-line--short {
+          width: 60%;
+        }
+        .hpoc-skeleton-line--rtl {
+          margin-left: auto;
+          width: 80%;
+        }
+        @keyframes hpoc-shimmer {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
+        .hpoc-layer--pending {
+          align-items: center;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .hpoc-skeleton-line {
+            animation: none;
+          }
         }
 
         .hpoc-verses {
