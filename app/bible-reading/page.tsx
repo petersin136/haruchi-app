@@ -129,8 +129,48 @@ import SearchOverlay, { type SearchSelection } from "./SearchOverlay";
 type TranslationKey = "krv" | "kids" | "greek" | "hebrew";
 
 // 히브리어 보기 모드가 지원되는 책 id. 헬라어가 신약 27권 전체를 커버하는 것과
-// 동일하게, 히브리어는 구약을 점진적으로 채워간다. 현재는 PoC 로 창세기만.
-const HEBREW_BOOK_IDS: ReadonlyArray<string> = ["genesis", "exodus"];
+// 동일하게, 히브리어는 구약 39권 전체를 커버한다.
+const HEBREW_BOOK_IDS: ReadonlyArray<string> = [
+  "genesis",
+  "exodus",
+  "leviticus",
+  "numbers",
+  "deuteronomy",
+  "joshua",
+  "judges",
+  "ruth",
+  "samuel1",
+  "samuel2",
+  "kings1",
+  "kings2",
+  "chronicles1",
+  "chronicles2",
+  "ezra",
+  "nehemiah",
+  "esther",
+  "job",
+  "psalms",
+  "proverbs",
+  "ecclesiastes",
+  "songofsolomon",
+  "isaiah",
+  "jeremiah",
+  "lamentations",
+  "ezekiel",
+  "daniel",
+  "hosea",
+  "joel",
+  "amos",
+  "obadiah",
+  "jonah",
+  "micah",
+  "nahum",
+  "habakkuk",
+  "zephaniah",
+  "haggai",
+  "zechariah",
+  "malachi",
+];
 
 // 모드 전환 드롭다운 값.
 //   - krv / kids / greek : 기존 단일 역본 읽기(아무 책/장).
@@ -3382,9 +3422,54 @@ export default function BibleReadingPage() {
             지원 책 목록은 HEBREW_BOOK_IDS 참고. */}
         {bookConfirmed &&
           effectiveTranslation === "hebrew" &&
-          (bookId === "genesis" || bookId === "exodus") && (
+          HEBREW_BOOK_IDS.includes(bookId) && (
             <HebrewChapterV2
-              bookId={bookId as "genesis" | "exodus"}
+              bookId={
+                // 위의 includes 체크가 통과한 시점에서 bookId 는 HEBREW_BOOK_IDS
+                // 의 union 인 TanakhId 와 일치하지만, TS 는 includes 의 readonly
+                // 배열 타입으로부터 narrowing 을 못 한다. 컴포넌트 prop 타입과
+                // 동일한 union 으로 단언해 그대로 넘긴다.
+                bookId as
+                  | "genesis"
+                  | "exodus"
+                  | "leviticus"
+                  | "numbers"
+                  | "deuteronomy"
+                  | "joshua"
+                  | "judges"
+                  | "ruth"
+                  | "samuel1"
+                  | "samuel2"
+                  | "kings1"
+                  | "kings2"
+                  | "chronicles1"
+                  | "chronicles2"
+                  | "ezra"
+                  | "nehemiah"
+                  | "esther"
+                  | "job"
+                  | "psalms"
+                  | "proverbs"
+                  | "ecclesiastes"
+                  | "songofsolomon"
+                  | "isaiah"
+                  | "jeremiah"
+                  | "lamentations"
+                  | "ezekiel"
+                  | "daniel"
+                  | "hosea"
+                  | "joel"
+                  | "amos"
+                  | "obadiah"
+                  | "jonah"
+                  | "micah"
+                  | "nahum"
+                  | "habakkuk"
+                  | "zephaniah"
+                  | "haggai"
+                  | "zechariah"
+                  | "malachi"
+              }
               bookLabel={bookMeta.name}
               chapter={chapterNumber}
               chapterLabel={`${chapterNumber}장`}

@@ -28,7 +28,46 @@ import {
   type PointerEvent as ReactPointerEvent,
 } from "react";
 
-type TanakhId = "genesis" | "exodus";
+type TanakhId =
+  | "genesis"
+  | "exodus"
+  | "leviticus"
+  | "numbers"
+  | "deuteronomy"
+  | "joshua"
+  | "judges"
+  | "ruth"
+  | "samuel1"
+  | "samuel2"
+  | "kings1"
+  | "kings2"
+  | "chronicles1"
+  | "chronicles2"
+  | "ezra"
+  | "nehemiah"
+  | "esther"
+  | "job"
+  | "psalms"
+  | "proverbs"
+  | "ecclesiastes"
+  | "songofsolomon"
+  | "isaiah"
+  | "jeremiah"
+  | "lamentations"
+  | "ezekiel"
+  | "daniel"
+  | "hosea"
+  | "joel"
+  | "amos"
+  | "obadiah"
+  | "jonah"
+  | "micah"
+  | "nahum"
+  | "habakkuk"
+  | "zephaniah"
+  | "haggai"
+  | "zechariah"
+  | "malachi";
 
 async function loadTanakhData(book: TanakhId): Promise<V2Data> {
   switch (book) {
@@ -36,6 +75,80 @@ async function loadTanakhData(book: TanakhId): Promise<V2Data> {
       return (await import("../genesis-v2.json")).default as V2Data;
     case "exodus":
       return (await import("../exodus-v2.json")).default as V2Data;
+    case "leviticus":
+      return (await import("../leviticus-v2.json")).default as V2Data;
+    case "numbers":
+      return (await import("../numbers-v2.json")).default as V2Data;
+    case "deuteronomy":
+      return (await import("../deuteronomy-v2.json")).default as V2Data;
+    case "joshua":
+      return (await import("../joshua-v2.json")).default as V2Data;
+    case "judges":
+      return (await import("../judges-v2.json")).default as V2Data;
+    case "ruth":
+      return (await import("../ruth-v2.json")).default as V2Data;
+    case "samuel1":
+      return (await import("../samuel1-v2.json")).default as V2Data;
+    case "samuel2":
+      return (await import("../samuel2-v2.json")).default as V2Data;
+    case "kings1":
+      return (await import("../kings1-v2.json")).default as V2Data;
+    case "kings2":
+      return (await import("../kings2-v2.json")).default as V2Data;
+    case "chronicles1":
+      return (await import("../chronicles1-v2.json")).default as V2Data;
+    case "chronicles2":
+      return (await import("../chronicles2-v2.json")).default as V2Data;
+    case "ezra":
+      return (await import("../ezra-v2.json")).default as V2Data;
+    case "nehemiah":
+      return (await import("../nehemiah-v2.json")).default as V2Data;
+    case "esther":
+      return (await import("../esther-v2.json")).default as V2Data;
+    case "job":
+      return (await import("../job-v2.json")).default as V2Data;
+    case "psalms":
+      return (await import("../psalms-v2.json")).default as V2Data;
+    case "proverbs":
+      return (await import("../proverbs-v2.json")).default as V2Data;
+    case "ecclesiastes":
+      return (await import("../ecclesiastes-v2.json")).default as V2Data;
+    case "songofsolomon":
+      return (await import("../songofsolomon-v2.json")).default as V2Data;
+    case "isaiah":
+      return (await import("../isaiah-v2.json")).default as V2Data;
+    case "jeremiah":
+      return (await import("../jeremiah-v2.json")).default as V2Data;
+    case "lamentations":
+      return (await import("../lamentations-v2.json")).default as V2Data;
+    case "ezekiel":
+      return (await import("../ezekiel-v2.json")).default as V2Data;
+    case "daniel":
+      return (await import("../daniel-v2.json")).default as V2Data;
+    case "hosea":
+      return (await import("../hosea-v2.json")).default as V2Data;
+    case "joel":
+      return (await import("../joel-v2.json")).default as V2Data;
+    case "amos":
+      return (await import("../amos-v2.json")).default as V2Data;
+    case "obadiah":
+      return (await import("../obadiah-v2.json")).default as V2Data;
+    case "jonah":
+      return (await import("../jonah-v2.json")).default as V2Data;
+    case "micah":
+      return (await import("../micah-v2.json")).default as V2Data;
+    case "nahum":
+      return (await import("../nahum-v2.json")).default as V2Data;
+    case "habakkuk":
+      return (await import("../habakkuk-v2.json")).default as V2Data;
+    case "zephaniah":
+      return (await import("../zephaniah-v2.json")).default as V2Data;
+    case "haggai":
+      return (await import("../haggai-v2.json")).default as V2Data;
+    case "zechariah":
+      return (await import("../zechariah-v2.json")).default as V2Data;
+    case "malachi":
+      return (await import("../malachi-v2.json")).default as V2Data;
   }
 }
 
