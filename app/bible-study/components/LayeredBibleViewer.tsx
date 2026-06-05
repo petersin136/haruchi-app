@@ -385,23 +385,37 @@ export default function LayeredBibleViewer({
   bookId = "romans",
   chapter = 1,
 }: LayeredBibleViewerProps = {}) {
-  // ── 책 데이터 lazy load ────────────────────────────────────────────────
-  // bookId 가 바뀔 때마다 새 책 파일을 import. chapter 만 바뀌면 같은
-  // 책 데이터 안에서 인덱스만 옮기므로 fetch 가 일어나지 않는다.
-  const [bookData, setBookData] = useState<StudyBookData | null>(null);
+  // ── 책 manifest + 장별/레이어별 청크 lazy load ───────────────────────────
+  // bookId 가 바뀌면 manifest 를 새로 받고, chapter 만 바뀌면 같은 manifest 안에서
+  // 절 갯수만 가져온다. 켠 레이어의 (book, ch, layer) 청크만 추가로 fetch.
+  const [manifest, setManifest] = useState<BookManifest | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
+
+  // 현재 (book, chapter) 의 레이어별 청크. 장이 바뀌면 비우고 다시 채운다.
+  const [chunkByLayer, setChunkByLayer] = useState<Map<LayerId, LayerChunk>>(
+    () => new Map(),
+  );
+  const [loadingLayers, setLoadingLayers] = useState<Set<LayerId>>(
+    () => new Set(),
+  );
+  const [layerErrors, setLayerErrors] = useState<Map<LayerId, string>>(
+    () => new Map(),
+  );
 
   useEffect(() => {
     let cancelled = false;
     setLoadError(null);
-    setBookData(null);
-    loadStudyBook(bookId)
-      .then((d) => {
-        if (!cancelled) setBookData(d);
+    setManifest(null);
+    setChunkByLayer(new Map());
+    setLoadingLayers(new Set());
+    setLayerErrors(new Map());
+    loadManifest(bookId)
+      .then((m) => {
+        if (!cancelled) setManifest(m);
       })
       .catch((e) => {
         if (!cancelled) {
-          console.error("성경공부 데이터 로드 실패", e);
+          console.error("성경공부 manifest 로드 실패", e);
           setLoadError(
             e instanceof Error ? e.message : "데이터를 불러오지 못했어요.",
           );
@@ -414,23 +428,24 @@ export default function LayeredBibleViewer({
 
   // 정본 layerOrder/labels — 데이터가 들어와도 같은 값을 사용.
   const layerOrderAll: LayerId[] = useMemo(
-    () => bookData?.layerOrder ?? DEFAULT_LAYER_ORDER,
-    [bookData],
+    () => manifest?.layerOrder ?? DEFAULT_LAYER_ORDER,
+    [manifest],
   );
-  // 책 데이터 라벨이 일부만 있으면 정본 라벨로 보완.
+  // 책 manifest 의 라벨이 일부만 있으면 정본 라벨로 보완.
   const layerLabels = useMemo<Record<LayerId, string>>(
-    () => ({ ...DEFAULT_LAYER_LABELS, ...(bookData?.layerLabels ?? {}) }),
-    [bookData],
+    () => ({ ...DEFAULT_LAYER_LABELS, ...(manifest?.layerLabels ?? {}) }),
+    [manifest],
   );
 
-  // 현재 장 — chapter prop 으로 찾기. 책의 마지막 장보다 큰 번호가
-  // 들어오면 마지막 장으로 클램프(절 없음 메시지 없이 안전).
-  const currentChapter = useMemo<StudyChapter | null>(() => {
-    if (!bookData) return null;
-    const found = bookData.chapters.find((c) => c.chapter === chapter);
+  // 현재 장 메타 — chapter 가 책 범위를 벗어나면 마지막 장으로 클램프.
+  const currentChapterMeta = useMemo<ChapterMeta | null>(() => {
+    if (!manifest) return null;
+    const found = manifest.chapters.find((c) => c.chapter === chapter);
     if (found) return found;
-    return bookData.chapters[bookData.chapters.length - 1] ?? null;
-  }, [bookData, chapter]);
+    return manifest.chapters[manifest.chapters.length - 1] ?? null;
+  }, [manifest, chapter]);
+
+  const effectiveChapter = currentChapterMeta?.chapter ?? chapter;
 
   // SSR 초기값은 정본 — hydration 이후 localStorage 로 동기화.
   const [onLayers, setOnLayers] = useState<LayerId[]>(DEFAULT_ON);
@@ -489,6 +504,79 @@ export default function LayeredBibleViewer({
     return () => window.clearTimeout(t);
   }, [toast]);
 
+  // 장 또는 책이 바뀌면 현재 장의 청크 상태를 비운다 — 캐시는 살아있어
+  // 같은 (book, ch, layer) 로 돌아오면 fetch 가 일어나지 않는다.
+  useEffect(() => {
+    setChunkByLayer(new Map());
+    setLoadingLayers(new Set());
+    setLayerErrors(new Map());
+  }, [bookId, effectiveChapter]);
+
+  // 켠 레이어 / 장 / 책이 바뀌면 필요한 (장, 레이어) 청크를 lazy 로 가져온다.
+  // 이미 캐시에 있거나 받는 중이면 skip — 두 번 받지 않는다.
+  useEffect(() => {
+    if (!manifest) return;
+    let cancelled = false;
+    for (const layer of onLayers) {
+      if (chunkByLayer.has(layer)) continue;
+      if (loadingLayers.has(layer)) continue;
+      setLoadingLayers((prev) => {
+        if (prev.has(layer)) return prev;
+        const next = new Set(prev);
+        next.add(layer);
+        return next;
+      });
+      loadLayerChunk(bookId, effectiveChapter, layer)
+        .then((chunk) => {
+          if (cancelled) return;
+          setChunkByLayer((prev) => {
+            const next = new Map(prev);
+            next.set(layer, chunk);
+            return next;
+          });
+          setLoadingLayers((prev) => {
+            if (!prev.has(layer)) return prev;
+            const next = new Set(prev);
+            next.delete(layer);
+            return next;
+          });
+          setLayerErrors((prev) => {
+            if (!prev.has(layer)) return prev;
+            const next = new Map(prev);
+            next.delete(layer);
+            return next;
+          });
+        })
+        .catch((e: unknown) => {
+          if (cancelled) return;
+          console.error(
+            `bible-study 청크 로드 실패: ${bookId}/${effectiveChapter}/${layer}`,
+            e,
+          );
+          setLoadingLayers((prev) => {
+            if (!prev.has(layer)) return prev;
+            const next = new Set(prev);
+            next.delete(layer);
+            return next;
+          });
+          setLayerErrors((prev) => {
+            const next = new Map(prev);
+            next.set(
+              layer,
+              e instanceof Error ? e.message : "청크를 불러오지 못했어요.",
+            );
+            return next;
+          });
+        });
+    }
+    return () => {
+      cancelled = true;
+    };
+    // chunkByLayer / loadingLayers 는 effect 내부에서 setter 로 다루므로 deps 에서
+    // 빼도 안전 — onLayers / chapter / book 변화 시점에만 새 fetch 시도.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [manifest, bookId, effectiveChapter, onLayers]);
+
   const isOn = useCallback((id: LayerId) => onLayers.includes(id), [onLayers]);
 
   const toggleLayer = useCallback((id: LayerId) => {
@@ -507,12 +595,17 @@ export default function LayeredBibleViewer({
   }, []);
 
   const handleCopy = useCallback(
-    async (verse: Verse) => {
-      const text = buildVerseCopy(verse, onLayers, layerOrder);
+    async (ref: string) => {
+      const layers: Partial<Record<LayerId, AnyLayer>> = {};
+      for (const id of onLayers) {
+        const got = chunkByLayer.get(id)?.verses?.[ref];
+        if (got) layers[id] = got;
+      }
+      const text = buildVerseCopy({ ref, layers }, onLayers, layerOrder);
       const ok = await writeClipboard(text);
-      setToast(ok ? `${verse.ref} 복사됨` : "복사에 실패했어요");
+      setToast(ok ? `${ref} 복사됨` : "복사에 실패했어요");
     },
-    [onLayers, layerOrder],
+    [onLayers, layerOrder, chunkByLayer],
   );
 
   // ── 드래그 핸들러 ──────────────────────────────────────────────────────────
@@ -638,9 +731,13 @@ export default function LayeredBibleViewer({
   );
 
   // 화면에 그릴 절 목록.
-  const verses = currentChapter?.verses ?? [];
-  const bookLabel = bookData?.book ?? "";
-  const chapterLabel = currentChapter?.chapter ?? chapter;
+  const bookLabel = manifest?.book ?? "";
+  const chapterLabel = currentChapterMeta?.chapter ?? chapter;
+  const verseCount = currentChapterMeta?.verseCount ?? 0;
+  const buildRef = useCallback(
+    (n: number) => `${bookLabel} ${chapterLabel}:${n}`,
+    [bookLabel, chapterLabel],
+  );
 
   return (
     <section
@@ -707,171 +804,232 @@ export default function LayeredBibleViewer({
           데이터를 불러오는 중 오류가 발생했어요 — {loadError}
         </p>
       )}
-      {!bookData && !loadError && (
-        <p className="bsv-empty">불러오는 중…</p>
+      {!manifest && !loadError && (
+        <ol className="bsv-verses" aria-busy="true" aria-live="polite">
+          {Array.from({ length: 6 }, (_, i) => (
+            <li key={`sk-${i}`} className="bsv-verse bsv-verse--skeleton">
+              <div className="bsv-verse-head">
+                <span className="bsv-verse-num bsv-skeleton-pill" aria-hidden="true" />
+              </div>
+              <div className="bsv-layers">
+                <div className="bsv-layer bsv-layer--skeleton">
+                  <span className="bsv-tag bsv-skeleton-pill" aria-hidden="true" />
+                  <span className="bsv-skeleton-line" aria-hidden="true" />
+                </div>
+                <div className="bsv-layer bsv-layer--skeleton">
+                  <span className="bsv-tag bsv-skeleton-pill" aria-hidden="true" />
+                  <span className="bsv-skeleton-line bsv-skeleton-line--short" aria-hidden="true" />
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
       )}
-      {bookData && verses.length === 0 && (
+      {manifest && verseCount === 0 && (
         <p className="bsv-empty">이 장에는 절 데이터가 없어요.</p>
       )}
-      {bookData && verses.length > 0 && visibleLayers.length === 0 && (
+      {manifest && verseCount > 0 && visibleLayers.length === 0 && (
         <p className="bsv-empty">위에서 역본을 하나 이상 켜 주세요.</p>
       )}
 
-      <ol className="bsv-verses">
-        {verses.map((verse) => {
-          const n = verse.ref.split(":").pop();
-          return (
-            <li key={verse.ref} className="bsv-verse">
-              <div className="bsv-verse-head">
-                <span className="bsv-verse-num" aria-hidden="true">
-                  {n}
-                </span>
-                <button
-                  type="button"
-                  className="bsv-copy"
-                  onClick={() => handleCopy(verse)}
-                  aria-label={`${verse.ref} 켠 역본 복사`}
-                  title="켠 역본 복사"
-                >
-                  <CopyIcon />
-                </button>
-              </div>
+      {manifest && verseCount > 0 && (
+        <ol className="bsv-verses">
+          {Array.from({ length: verseCount }, (_, idx) => {
+            const n = idx + 1;
+            const ref = buildRef(n);
+            return (
+              <li key={ref} className="bsv-verse">
+                <div className="bsv-verse-head">
+                  <span className="bsv-verse-num" aria-hidden="true">
+                    {n}
+                  </span>
+                  <button
+                    type="button"
+                    className="bsv-copy"
+                    onClick={() => handleCopy(ref)}
+                    aria-label={`${ref} 켠 역본 복사`}
+                    title="켠 역본 복사"
+                  >
+                    <CopyIcon />
+                  </button>
+                </div>
 
-              <div className="bsv-layers">
-                {visibleLayers.map((id) => {
-                  const layer = verse.layers[id];
-                  if (!layer) return null;
-                  const meta = LAYER_META[id];
-                  return (
-                    <div key={id} className={`bsv-layer bsv-layer--${id}`}>
-                      <span
-                        className="bsv-tag"
-                        style={{ ["--dot" as string]: meta.dot }}
-                      >
-                        <span className="bsv-tag-dot" aria-hidden="true" />
-                        <span className="bsv-tag-text">{meta.short}</span>
-                      </span>
+                <div className="bsv-layers">
+                  {visibleLayers.map((id) => {
+                    const meta = LAYER_META[id];
+                    const chunk = chunkByLayer.get(id);
+                    const isLayerLoading = loadingLayers.has(id) && !chunk;
+                    const layer = chunk?.verses?.[ref];
 
-                      {layer.type === "text" ? (
-                        <p
-                          className="bsv-text"
-                          lang={id === "english" ? "en" : "ko"}
-                        >
-                          {layer.content}
-                        </p>
-                      ) : (
-                        // 헬라어는 LTR, 히브리어는 RTL 로 흘려야 정확한 어순.
+                    // 청크가 아직 도착 전 — 그 레이어 한 줄만 스켈레톤.
+                    if (!chunk) {
+                      return (
                         <div
-                          className={`bsv-greek ${
-                            id === "hebrew" ? "bsv-greek--rtl" : ""
-                          }`}
+                          key={id}
+                          className={`bsv-layer bsv-layer--${id} bsv-layer--pending`}
+                          aria-busy={isLayerLoading || undefined}
                         >
-                          <div
-                            className="bsv-words"
-                            dir={id === "hebrew" ? "rtl" : "ltr"}
+                          <span
+                            className="bsv-tag"
+                            style={{ ["--dot" as string]: meta.dot }}
                           >
-                            {layer.words.map((w, i) => {
-                              const key = `${verse.ref}#${i}`;
-                              const open = openWord.has(key);
-                              return (
-                                <button
-                                  type="button"
-                                  key={key}
-                                  className={`bsv-word ${open ? "is-open" : ""} ${
-                                    w.nameType ? `is-${w.nameType}` : ""
-                                  }`}
-                                  aria-expanded={open}
-                                  aria-label={`${w.word} (${w.pron}) 상세 ${
-                                    open ? "닫기" : "열기"
-                                  }`}
-                                  onClick={() => toggleWord(key)}
-                                >
-                                  <span
-                                    className="bsv-word-g"
-                                    lang={id === "hebrew" ? "he" : "grc"}
-                                    dir={id === "hebrew" ? "rtl" : "ltr"}
+                            <span className="bsv-tag-dot" aria-hidden="true" />
+                            <span className="bsv-tag-text">{meta.short}</span>
+                          </span>
+                          <span
+                            className={
+                              id === "hebrew"
+                                ? "bsv-skeleton-line bsv-skeleton-line--rtl"
+                                : "bsv-skeleton-line"
+                            }
+                            aria-hidden="true"
+                          />
+                        </div>
+                      );
+                    }
+
+                    // 청크는 받았는데 그 절은 비어있을 수 있다(예: 어떤 레이어 누락).
+                    if (!layer) return null;
+
+                    return (
+                      <div key={id} className={`bsv-layer bsv-layer--${id}`}>
+                        <span
+                          className="bsv-tag"
+                          style={{ ["--dot" as string]: meta.dot }}
+                        >
+                          <span className="bsv-tag-dot" aria-hidden="true" />
+                          <span className="bsv-tag-text">{meta.short}</span>
+                        </span>
+
+                        {layer.type === "text" ? (
+                          <p
+                            className="bsv-text"
+                            lang={id === "english" ? "en" : "ko"}
+                          >
+                            {layer.content}
+                          </p>
+                        ) : (
+                          <div
+                            className={`bsv-greek ${
+                              id === "hebrew" ? "bsv-greek--rtl" : ""
+                            }`}
+                          >
+                            <div
+                              className="bsv-words"
+                              dir={id === "hebrew" ? "rtl" : "ltr"}
+                            >
+                              {layer.words.map((w, i) => {
+                                const key = `${ref}#${i}`;
+                                const open = openWord.has(key);
+                                return (
+                                  <button
+                                    type="button"
+                                    key={key}
+                                    className={`bsv-word ${open ? "is-open" : ""} ${
+                                      w.nameType ? `is-${w.nameType}` : ""
+                                    }`}
+                                    aria-expanded={open}
+                                    aria-label={`${w.word} (${w.pron}) 상세 ${
+                                      open ? "닫기" : "열기"
+                                    }`}
+                                    onClick={() => toggleWord(key)}
                                   >
-                                    {w.word}
-                                  </span>
-                                  <span className="bsv-word-p" aria-hidden="true">
-                                    {w.pron || "\u00A0"}
-                                  </span>
-                                  <span className="bsv-word-m" aria-hidden="true">
-                                    {w.meaning || "\u00A0"}
-                                  </span>
-                                </button>
+                                    <span
+                                      className="bsv-word-g"
+                                      lang={id === "hebrew" ? "he" : "grc"}
+                                      dir={id === "hebrew" ? "rtl" : "ltr"}
+                                    >
+                                      {w.word}
+                                    </span>
+                                    <span className="bsv-word-p" aria-hidden="true">
+                                      {w.pron || "\u00A0"}
+                                    </span>
+                                    <span className="bsv-word-m" aria-hidden="true">
+                                      {w.meaning || "\u00A0"}
+                                    </span>
+                                  </button>
+                                );
+                              })}
+                            </div>
+
+                            {layer.words.map((w, i) => {
+                              const key = `${ref}#${i}`;
+                              if (!openWord.has(key)) return null;
+                              return (
+                                <article key={`d-${key}`} className="bsv-detail">
+                                  <header className="bsv-detail-head">
+                                    <span
+                                      className="bsv-detail-w"
+                                      lang={id === "hebrew" ? "he" : "grc"}
+                                      dir={id === "hebrew" ? "rtl" : "ltr"}
+                                    >
+                                      {w.word}
+                                    </span>
+                                    {w.pron && (
+                                      <span className="bsv-detail-p">{w.pron}</span>
+                                    )}
+                                    {w.nameType && (
+                                      <span className={`bsv-detail-tag is-${w.nameType}`}>
+                                        {w.nameType === "person" ? "인명" : "지명"}
+                                      </span>
+                                    )}
+                                  </header>
+                                  <dl className="bsv-detail-grid">
+                                    <dt>원형</dt>
+                                    <dd
+                                      lang={id === "hebrew" ? "he" : "grc"}
+                                      dir={id === "hebrew" ? "rtl" : "ltr"}
+                                    >
+                                      {w.lemma}
+                                    </dd>
+                                    {w.pos && (
+                                      <>
+                                        <dt>품사</dt>
+                                        <dd>{w.pos}</dd>
+                                      </>
+                                    )}
+                                    {w.morph && (
+                                      <>
+                                        <dt>문법</dt>
+                                        <dd>{w.morph}</dd>
+                                      </>
+                                    )}
+                                    {w.meanings && w.meanings.length > 0 && (
+                                      <>
+                                        <dt>뜻</dt>
+                                        <dd>{w.meanings.join(" · ")}</dd>
+                                      </>
+                                    )}
+                                    {w.note && (
+                                      <>
+                                        <dt>풀이</dt>
+                                        <dd>{w.note}</dd>
+                                      </>
+                                    )}
+                                  </dl>
+                                </article>
                               );
                             })}
                           </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      )}
 
-                          {layer.words.map((w, i) => {
-                            const key = `${verse.ref}#${i}`;
-                            if (!openWord.has(key)) return null;
-                            return (
-                              <article key={`d-${key}`} className="bsv-detail">
-                                <header className="bsv-detail-head">
-                                  <span
-                                    className="bsv-detail-w"
-                                    lang={id === "hebrew" ? "he" : "grc"}
-                                    dir={id === "hebrew" ? "rtl" : "ltr"}
-                                  >
-                                    {w.word}
-                                  </span>
-                                  {w.pron && (
-                                    <span className="bsv-detail-p">{w.pron}</span>
-                                  )}
-                                  {w.nameType && (
-                                    <span className={`bsv-detail-tag is-${w.nameType}`}>
-                                      {w.nameType === "person" ? "인명" : "지명"}
-                                    </span>
-                                  )}
-                                </header>
-                                <dl className="bsv-detail-grid">
-                                  <dt>원형</dt>
-                                  <dd
-                                    lang={id === "hebrew" ? "he" : "grc"}
-                                    dir={id === "hebrew" ? "rtl" : "ltr"}
-                                  >
-                                    {w.lemma}
-                                  </dd>
-                                  {w.pos && (
-                                    <>
-                                      <dt>품사</dt>
-                                      <dd>{w.pos}</dd>
-                                    </>
-                                  )}
-                                  {w.morph && (
-                                    <>
-                                      <dt>문법</dt>
-                                      <dd>{w.morph}</dd>
-                                    </>
-                                  )}
-                                  {w.meanings && w.meanings.length > 0 && (
-                                    <>
-                                      <dt>뜻</dt>
-                                      <dd>{w.meanings.join(" · ")}</dd>
-                                    </>
-                                  )}
-                                  {w.note && (
-                                    <>
-                                      <dt>풀이</dt>
-                                      <dd>{w.note}</dd>
-                                    </>
-                                  )}
-                                </dl>
-                              </article>
-                            );
-                          })}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </li>
-          );
-        })}
-      </ol>
+      {manifest && layerErrors.size > 0 && (
+        <p className="bsv-empty bsv-error" role="alert">
+          일부 레이어를 불러오지 못했어요 —{" "}
+          {Array.from(layerErrors.entries())
+            .map(([k, v]) => `${layerLabels[k] ?? k}: ${v}`)
+            .join(" / ")}
+        </p>
+      )}
 
       <footer className="bsv-footer">
         <small>
@@ -1048,6 +1206,51 @@ export default function LayeredBibleViewer({
         }
         .bsv-empty.bsv-error {
           color: #b54545;
+        }
+        /* ── 로딩 스켈레톤 ── */
+        .bsv-verse--skeleton {
+          opacity: 0.7;
+        }
+        .bsv-skeleton-pill {
+          display: inline-block;
+          min-width: 28px;
+          height: 18px;
+          background: color-mix(in srgb, var(--bsv-line) 70%, var(--bsv-surface));
+          border-radius: 999px;
+        }
+        .bsv-skeleton-line {
+          display: block;
+          width: 100%;
+          height: 14px;
+          margin: 4px 0;
+          background: linear-gradient(
+            90deg,
+            color-mix(in srgb, var(--bsv-line) 60%, var(--bsv-surface)) 0%,
+            color-mix(in srgb, var(--bsv-line) 90%, var(--bsv-surface)) 50%,
+            color-mix(in srgb, var(--bsv-line) 60%, var(--bsv-surface)) 100%
+          );
+          background-size: 200% 100%;
+          border-radius: 6px;
+          animation: bsv-shimmer 1.4s ease-in-out infinite;
+        }
+        .bsv-skeleton-line--short {
+          width: 60%;
+        }
+        .bsv-skeleton-line--rtl {
+          margin-left: auto;
+          width: 80%;
+        }
+        @keyframes bsv-shimmer {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
+        .bsv-layer--pending {
+          align-items: center;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .bsv-skeleton-line {
+            animation: none;
+          }
         }
 
         /* ── 절 목록 ── */

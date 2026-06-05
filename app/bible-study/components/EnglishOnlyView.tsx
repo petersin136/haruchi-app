@@ -85,42 +85,62 @@ export type EnglishBookId =
   | "zechariah"
   | "malachi";
 
-type StudyVerse = {
-  ref: string;
-  layers: {
-    english?: { type: "text"; content: string };
-  };
-};
+// ── 청크/manifest 스키마 ────────────────────────────────────────────────────
+// 한 권 통째로 받지 않고, manifest(메타) + 현재 장의 english 청크만 받는다.
+// 다른 장으로 이동하면 그때 그 장의 english 청크를 lazy 로 받는다(캐시).
+type ChapterMeta = { chapter: number; verseCount: number };
 
-type StudyChapter = {
-  chapter: number;
-  verses: StudyVerse[];
-};
-
-type StudyBookData = {
+type BookManifest = {
   book: string;
-  bookId: EnglishBookId;
-  chapters: StudyChapter[];
+  bookId?: EnglishBookId;
+  chapters: ChapterMeta[];
 };
 
-// 책별 데이터 — public/bible-study/data/<bookId>.json 을 fetch 로 받아온다.
-// LayeredBibleViewer 와 같은 데이터 파일을 공유하므로 같은 책에 대해 두 컴포넌트
-// 사이에서도 두 번 받지 않도록 모듈 레벨 캐시.
-const bookCache = new Map<EnglishBookId, Promise<StudyBookData>>();
+type EnglishLayer = { type: "text"; content: string };
 
-async function loadStudyBook(book: EnglishBookId): Promise<StudyBookData> {
-  const cached = bookCache.get(book);
+type EnglishChunk = {
+  chapter: number;
+  layer: "english";
+  verses: Record<string, EnglishLayer>;
+};
+
+// 모듈 레벨 캐시 — 같은 책의 manifest 와 (책, 장) 조합 청크는 한 번만 fetch.
+const manifestCache = new Map<EnglishBookId, Promise<BookManifest>>();
+const chunkCache = new Map<string, Promise<EnglishChunk>>();
+
+async function loadManifest(book: EnglishBookId): Promise<BookManifest> {
+  const cached = manifestCache.get(book);
   if (cached) return cached;
   const p = (async () => {
-    const res = await fetch(`/bible-study/data/${book}.json`, {
+    const res = await fetch(`/bible-study/chunks/${book}/manifest.json`, {
       cache: "default",
     });
-    if (!res.ok)
-      throw new Error(`HTTP ${res.status} — ${book} 데이터 없음`);
-    return (await res.json()) as StudyBookData;
+    if (!res.ok) throw new Error(`HTTP ${res.status} — ${book} manifest 없음`);
+    return (await res.json()) as BookManifest;
   })();
-  bookCache.set(book, p);
-  p.catch(() => bookCache.delete(book));
+  manifestCache.set(book, p);
+  p.catch(() => manifestCache.delete(book));
+  return p;
+}
+
+async function loadEnglishChunk(
+  book: EnglishBookId,
+  ch: number,
+): Promise<EnglishChunk> {
+  const k = `${book}|${ch}`;
+  const cached = chunkCache.get(k);
+  if (cached) return cached;
+  const p = (async () => {
+    const res = await fetch(
+      `/bible-study/chunks/${book}/${ch}/english.json`,
+      { cache: "default" },
+    );
+    if (!res.ok)
+      throw new Error(`HTTP ${res.status} — ${book} ${ch}장 english 없음`);
+    return (await res.json()) as EnglishChunk;
+  })();
+  chunkCache.set(k, p);
+  p.catch(() => chunkCache.delete(k));
   return p;
 }
 
@@ -174,16 +194,19 @@ export default function EnglishOnlyView({
   chapter = 1,
 }: EnglishOnlyViewProps = {}) {
   const [toast, setToast] = useState<string | null>(null);
-  const [bookData, setBookData] = useState<StudyBookData | null>(null);
+  const [manifest, setManifest] = useState<BookManifest | null>(null);
+  const [chunk, setChunk] = useState<EnglishChunk | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
 
+  // manifest 로드 — 책이 바뀌면 새로. 작은 메타만이라 빠르게 도착한다.
   useEffect(() => {
     let cancelled = false;
-    setBookData(null);
+    setManifest(null);
+    setChunk(null);
     setLoadError(null);
-    loadStudyBook(bookId)
-      .then((d) => {
-        if (!cancelled) setBookData(d);
+    loadManifest(bookId)
+      .then((m) => {
+        if (!cancelled) setManifest(m);
       })
       .catch((e) => {
         if (!cancelled) {
@@ -197,6 +220,38 @@ export default function EnglishOnlyView({
     };
   }, [bookId]);
 
+  // 현재 장 메타 — 책 범위를 벗어나면 마지막 장으로 클램프.
+  const currentChapterMeta = useMemo<ChapterMeta | null>(() => {
+    if (!manifest) return null;
+    const found = manifest.chapters.find((c) => c.chapter === chapter);
+    if (found) return found;
+    return manifest.chapters[manifest.chapters.length - 1] ?? null;
+  }, [manifest, chapter]);
+
+  const effectiveChapter = currentChapterMeta?.chapter ?? chapter;
+
+  // 장 청크 lazy 로드 — 책 또는 장이 바뀔 때만 새로. 캐시 덕에 같은 장
+  // 으로 돌아오면 fetch 가 일어나지 않는다.
+  useEffect(() => {
+    if (!manifest) return;
+    let cancelled = false;
+    setChunk(null);
+    loadEnglishChunk(bookId, effectiveChapter)
+      .then((c) => {
+        if (!cancelled) setChunk(c);
+      })
+      .catch((e) => {
+        if (!cancelled) {
+          setLoadError(
+            e instanceof Error ? e.message : "데이터를 불러오지 못했어요.",
+          );
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [manifest, bookId, effectiveChapter]);
+
   useEffect(() => {
     if (!toast) return;
     const t = window.setTimeout(() => setToast(null), 1400);
@@ -208,25 +263,22 @@ export default function EnglishOnlyView({
     setToast(ok ? `${ref} 복사됨` : "복사에 실패했어요");
   }, []);
 
-  // 현재 장의 영어 절들 — 텍스트가 비어있는 절은 제외.
+  // 현재 장의 영어 절들 — 청크가 도착했을 때만. 비어있는 절은 제외.
   const verses = useMemo(() => {
-    if (!bookData) return [] as { n: number; ref: string; text: string }[];
-    const ch =
-      bookData.chapters.find((c) => c.chapter === chapter) ??
-      bookData.chapters[bookData.chapters.length - 1] ??
-      null;
-    if (!ch) return [];
-    return ch.verses
-      .map((v) => ({
-        n: parseInt(v.ref.split(":").pop() || "0", 10),
-        ref: v.ref,
-        text: (v.layers.english?.content || "").trim(),
-      }))
-      .filter((v) => v.text);
-  }, [bookData, chapter]);
+    if (!manifest || !chunk) return [] as { n: number; ref: string; text: string }[];
+    const verseCount = currentChapterMeta?.verseCount ?? 0;
+    const out: { n: number; ref: string; text: string }[] = [];
+    for (let n = 1; n <= verseCount; n += 1) {
+      const ref = `${manifest.book} ${effectiveChapter}:${n}`;
+      const text = (chunk.verses?.[ref]?.content || "").trim();
+      if (text) out.push({ n, ref, text });
+    }
+    return out;
+  }, [manifest, chunk, currentChapterMeta, effectiveChapter]);
 
-  const ariaLabel = bookData
-    ? `${bookData.book} ${chapter}장 영어(WEB)`
+  const verseCount = currentChapterMeta?.verseCount ?? 0;
+  const ariaLabel = manifest
+    ? `${manifest.book} ${effectiveChapter}장 영어(WEB)`
     : "성경 공부 — 영어(WEB)";
 
   return (
@@ -236,33 +288,59 @@ export default function EnglishOnlyView({
           데이터를 불러오는 중 오류가 발생했어요 — {loadError}
         </p>
       )}
-      {!bookData && !loadError && <p className="eov-empty">불러오는 중…</p>}
-      {bookData && verses.length === 0 && (
+      {!chunk && !loadError && (
+        <ol
+          className="eov-verses"
+          aria-busy="true"
+          aria-live="polite"
+        >
+          {Array.from(
+            { length: verseCount > 0 ? Math.min(verseCount, 10) : 6 },
+            (_, i) => (
+              <li key={`sk-${i}`} className="eov-verse eov-verse--skeleton">
+                <div className="eov-row">
+                  <span className="eov-num eov-skeleton-pill" aria-hidden="true" />
+                  <span
+                    className={`eov-skeleton-line ${
+                      i % 3 === 2 ? "eov-skeleton-line--short" : ""
+                    }`}
+                    aria-hidden="true"
+                  />
+                  <span aria-hidden="true" />
+                </div>
+              </li>
+            ),
+          )}
+        </ol>
+      )}
+      {chunk && verses.length === 0 && !loadError && (
         <p className="eov-empty">이 장에는 영어(WEB) 본문이 없어요.</p>
       )}
-      <ol className="eov-verses">
-        {verses.map((v) => (
-          <li key={v.n} className="eov-verse">
-            <div className="eov-row">
-              <span className="eov-num" aria-hidden="true">
-                {v.n}
-              </span>
-              <p className="eov-text" lang="en">
-                {v.text}
-              </p>
-              <button
-                type="button"
-                className="eov-copy"
-                onClick={() => handleCopy(v.ref, v.text)}
-                aria-label={`${v.ref} 복사`}
-                title="복사"
-              >
-                <CopyIcon />
-              </button>
-            </div>
-          </li>
-        ))}
-      </ol>
+      {chunk && verses.length > 0 && (
+        <ol className="eov-verses">
+          {verses.map((v) => (
+            <li key={v.n} className="eov-verse">
+              <div className="eov-row">
+                <span className="eov-num" aria-hidden="true">
+                  {v.n}
+                </span>
+                <p className="eov-text" lang="en">
+                  {v.text}
+                </p>
+                <button
+                  type="button"
+                  className="eov-copy"
+                  onClick={() => handleCopy(v.ref, v.text)}
+                  aria-label={`${v.ref} 복사`}
+                  title="복사"
+                >
+                  <CopyIcon />
+                </button>
+              </div>
+            </li>
+          ))}
+        </ol>
+      )}
       <footer className="eov-footer">
         <small>
           영어 World English Bible (WEB, 퍼블릭 도메인) — 다른 번역으로 바꾸려면
@@ -289,6 +367,45 @@ export default function EnglishOnlyView({
         }
         .eov-empty.eov-error {
           color: #b54545;
+        }
+        /* ── 로딩 스켈레톤 ── */
+        .eov-verse--skeleton {
+          opacity: 0.7;
+        }
+        .eov-skeleton-pill {
+          display: inline-block;
+          min-width: 18px;
+          height: 14px;
+          background: color-mix(in srgb, var(--line, #e6e6e2) 70%, var(--surface, #fff));
+          border-radius: 999px;
+          align-self: center;
+        }
+        .eov-skeleton-line {
+          display: block;
+          width: 100%;
+          height: 14px;
+          background: linear-gradient(
+            90deg,
+            color-mix(in srgb, var(--line, #e6e6e2) 60%, var(--surface, #fff)) 0%,
+            color-mix(in srgb, var(--line, #e6e6e2) 90%, var(--surface, #fff)) 50%,
+            color-mix(in srgb, var(--line, #e6e6e2) 60%, var(--surface, #fff)) 100%
+          );
+          background-size: 200% 100%;
+          border-radius: 6px;
+          animation: eov-shimmer 1.4s ease-in-out infinite;
+          align-self: center;
+        }
+        .eov-skeleton-line--short {
+          width: 60%;
+        }
+        @keyframes eov-shimmer {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .eov-skeleton-line {
+            animation: none;
+          }
         }
         .eov-verses {
           list-style: none;

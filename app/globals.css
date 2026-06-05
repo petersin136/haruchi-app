@@ -107,9 +107,10 @@
 }
 
 /* -----------------------------------------------------------------------------
-   워드마크 (.wordmark) — 임시 텍스트 로고. "하루치" + 작은 영문 Haruchi.
+   워드마크 (.wordmark) — 임시 텍스트 로고. "하루치" + 작은 "양식" + 영문 Haruchi.
    정식 SVG 로고가 나오면 <Wordmark /> 컴포넌트만 바꾸고 이 클래스는 유지.
-   - 한글: 시스템/노토 세리프 fallback 으로 에디토리얼 톤(hero h1 과 동일 패밀리).
+   - 한글 메인: 시스템/노토 세리프 fallback 으로 에디토리얼 톤(hero h1 과 동일 패밀리).
+   - 한글 sub("양식"): 메인과 같은 세리프, 작은 크기로 보조 표기.
    - 영문: Pretendard sans, 작게 보조 표기. all-caps 트래킹.
    - 4가지 크기. 본문 흐름 안에서도 깔끔히 어울리도록 line-height 1.
 -------------------------------------------------------------------------------- */
@@ -128,6 +129,17 @@
   letter-spacing: -0.03em;
   color: var(--ink);
 }
+.wordmark-sub-ko {
+  font-family: var(--font-noto-serif-kr), "Nanum Myeongjo",
+    "Apple SD Gothic Neo", "Iowan Old Style", "Times New Roman", serif;
+  font-size: 0.5em;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink-soft);
+  /* baseline 정렬 보정 — 메인 세리프 한글과 같은 베이스라인에 닿도록. */
+  position: relative;
+  top: -0.1em;
+}
 .wordmark-en {
   font-family: var(--font-noto-sans-kr), -apple-system, BlinkMacSystemFont,
     "Segoe UI", system-ui, sans-serif;
@@ -144,8 +156,9 @@
 .wordmark--md { font-size: 18px; }
 .wordmark--lg { font-size: 22px; }
 .wordmark--xl { font-size: 28px; }
-/* 작은 크기에선 영문 sub 가 너무 작아지므로 비율 살짝 키움. */
-.wordmark--sm .wordmark-en { font-size: 0.6em; }
+/* 작은 크기에선 sub 들이 너무 작아지므로 비율 살짝 키움. */
+.wordmark--sm .wordmark-en,
+.wordmark--sm .wordmark-sub-ko { font-size: 0.6em; }
 
 /* -----------------------------------------------------------------------------
    반응형 컨테이너 유틸. 페이지마다 .container-* 를 main 직속 wrapper 에 부착.
