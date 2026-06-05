@@ -3122,10 +3122,10 @@ export default function BibleReadingPage() {
           value={currentModeChoice}
           options={[
             { value: "krv", label: "개역한글" },
-            { value: "kids", label: "어린이" },
-            { value: "english", label: "영어" },
-            { value: "greek", label: "헬라어" },
-            { value: "hebrew", label: "히브리어" },
+            { value: "kids", label: "어린이 의역" },
+            { value: "english", label: "영어(WEB)" },
+            { value: "greek", label: "헬라어 보기" },
+            { value: "hebrew", label: "히브리어 보기" },
             { value: "study", label: "성경 공부" },
           ]}
           onChange={handleModeChange}

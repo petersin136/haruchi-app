@@ -472,13 +472,25 @@ export default function LayeredBibleViewer({
 
   useEffect(() => {
     const storedOn = loadStoredArray(ON_STORAGE_KEY, layerOrderAll);
-    if (storedOn) setOnLayers(storedOn);
+    // 저장값이 비어 있거나, 옛 빌드에서 저장된 값이라 현재 유효 LayerId 와
+    // 모두 mismatch 인 경우 → setOnLayers([]) 가 되어 청크 fetch effect 가
+    // 한 줄도 트리거되지 않고 placeholder 만 영구히 보이는 사고를 막는다.
+    // 매니페스트가 도착했으면 그 책의 defaultOn 으로, 아직이면 NT 기본값으로
+    // 폴백.
+    const fallbackOn = manifest?.defaultOn?.length
+      ? manifest.defaultOn
+      : DEFAULT_ON;
+    if (storedOn && storedOn.length > 0) {
+      setOnLayers(storedOn);
+    } else {
+      setOnLayers(fallbackOn);
+    }
     const storedOrder = loadStoredArray(ORDER_STORAGE_KEY, layerOrderAll);
     setLayerOrder(mergedOrder(storedOrder, layerOrderAll));
     setHydrated(true);
     // 데이터의 layerOrder 가 후속 책에서 달라질 가능성도 대비해 layerOrderAll
     // 변경 시 한 번 더 정렬을 동기화. (현재는 모든 책이 동일한 5개 레이어.)
-  }, [layerOrderAll]);
+  }, [layerOrderAll, manifest]);
 
   useEffect(() => {
     if (!hydrated) return;
