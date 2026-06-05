@@ -480,13 +480,25 @@ export default function LayeredBibleViewer({
     const fallbackOn = manifest?.defaultOn?.length
       ? manifest.defaultOn
       : DEFAULT_ON;
-    if (storedOn && storedOn.length > 0) {
-      setOnLayers(storedOn);
-    } else {
-      setOnLayers(fallbackOn);
-    }
+    const nextOn =
+      storedOn && storedOn.length > 0 ? storedOn : (fallbackOn as LayerId[]);
+    // 같은 내용이면 reference 를 유지해 다른 effect 의 onLayers deps 를
+    // 흔들지 않는다. 매니페스트 로드 직후 동일한 내용으로 두 번 set 되면
+    // 청크 fetch effect 가 재실행돼 in-flight 요청이 cancel 처리되는 사고를
+    // 만든 적이 있다.
+    setOnLayers((prev) =>
+      prev.length === nextOn.length && prev.every((x, i) => x === nextOn[i])
+        ? prev
+        : nextOn,
+    );
     const storedOrder = loadStoredArray(ORDER_STORAGE_KEY, layerOrderAll);
-    setLayerOrder(mergedOrder(storedOrder, layerOrderAll));
+    const nextOrder = mergedOrder(storedOrder, layerOrderAll);
+    setLayerOrder((prev) =>
+      prev.length === nextOrder.length &&
+      prev.every((x, i) => x === nextOrder[i])
+        ? prev
+        : nextOrder,
+    );
     setHydrated(true);
     // 데이터의 layerOrder 가 후속 책에서 달라질 가능성도 대비해 layerOrderAll
     // 변경 시 한 번 더 정렬을 동기화. (현재는 모든 책이 동일한 5개 레이어.)
@@ -516,9 +528,18 @@ export default function LayeredBibleViewer({
     return () => window.clearTimeout(t);
   }, [toast]);
 
+  // (book, chapter) "에폭" — 같은 책/장 안에서는 동일하게 유지되고, 책/장이
+  // 바뀌면 1 증가한다. 진행 중인 fetch 의 .then() 이 늦게 도착했을 때 자기 epoch
+  // 과 비교해 stale 한 결과는 버린다. (onLayers 가 새 reference 로 바뀌는 등
+  // 같은 (book, ch) 안에서 일어나는 effect 재실행으로는 in-flight fetch 가
+  // 무효가 되지 않아야 한다 — 그게 아니면 첫 로드 직후 placeholder 가 영구히
+  // 남는 사고가 생긴다.)
+  const fetchEpochRef = useRef(0);
+
   // 장 또는 책이 바뀌면 현재 장의 청크 상태를 비운다 — 캐시는 살아있어
   // 같은 (book, ch, layer) 로 돌아오면 fetch 가 일어나지 않는다.
   useEffect(() => {
+    fetchEpochRef.current += 1;
     setChunkByLayer(new Map());
     setLoadingLayers(new Set());
     setLayerErrors(new Map());
@@ -526,9 +547,11 @@ export default function LayeredBibleViewer({
 
   // 켠 레이어 / 장 / 책이 바뀌면 필요한 (장, 레이어) 청크를 lazy 로 가져온다.
   // 이미 캐시에 있거나 받는 중이면 skip — 두 번 받지 않는다.
+  // 주의: 책/장이 바뀐 게 아니라 onLayers reference 만 바뀌어 effect 가 재실행된
+  //       경우라도, 진행 중이던 fetch 의 결과는 버리지 않는다(같은 epoch).
   useEffect(() => {
     if (!manifest) return;
-    let cancelled = false;
+    const myEpoch = fetchEpochRef.current;
     for (const layer of onLayers) {
       if (chunkByLayer.has(layer)) continue;
       if (loadingLayers.has(layer)) continue;
@@ -540,7 +563,8 @@ export default function LayeredBibleViewer({
       });
       loadLayerChunk(bookId, effectiveChapter, layer)
         .then((chunk) => {
-          if (cancelled) return;
+          // 책/장이 바뀐 후 도착한 stale 응답은 버린다.
+          if (fetchEpochRef.current !== myEpoch) return;
           setChunkByLayer((prev) => {
             const next = new Map(prev);
             next.set(layer, chunk);
@@ -560,7 +584,7 @@ export default function LayeredBibleViewer({
           });
         })
         .catch((e: unknown) => {
-          if (cancelled) return;
+          if (fetchEpochRef.current !== myEpoch) return;
           console.error(
             `bible-study 청크 로드 실패: ${bookId}/${effectiveChapter}/${layer}`,
             e,
@@ -581,9 +605,6 @@ export default function LayeredBibleViewer({
           });
         });
     }
-    return () => {
-      cancelled = true;
-    };
     // chunkByLayer / loadingLayers 는 effect 내부에서 setter 로 다루므로 deps 에서
     // 빼도 안전 — onLayers / chapter / book 변화 시점에만 새 fetch 시도.
     // eslint-disable-next-line react-hooks/exhaustive-deps
