@@ -1233,6 +1233,36 @@ export default function BibleReadingPage() {
   const [flashVerse, setFlashVerse] = useState<number | null>(null);
   const { settings } = useSettings();
 
+  // ─── 읽기 모드(몰입 모드) ──────────────────────────────────────────────
+  // 본문 외 chrome(헤더/사이드/미니바)을 모두 숨기고, 본문을 책처럼 가운데로
+  // 모아 큰 글자/넉넉한 줄간격으로 보여주는 별도 레이어. 일반 읽기와 성경 공부
+  // 양쪽 모두에서 활성 가능. 진입/해제·글자 배율·라이트/다크 테마는 localStorage
+  // 에 영속화된다. (책·장·번역·켜둔 레이어 등 본문 상태는 기존 state 를 그대로
+  // 공유한다 — 따로 저장하지 않는다.)
+  //   immersive          : 읽기 모드 ON/OFF
+  //   immFontScale       : 본문 글자 배율 (0.85 ~ 1.5, 0.05 단위)
+  //   immTheme           : "light" | "dark"
+  //   immBarVisible      : 상단 컨트롤 바의 표시 여부 — 활동 감지 시 true,
+  //                        idle 타이머 만료 시 false. 마우스가 화면 상단 80px
+  //                        안에 있을 때는 idle 카운트가 시작되지 않는다.
+  const [immersive, setImmersive] = useState(false);
+  const [immFontScale, setImmFontScale] = useState(1.0);
+  const [immTheme, setImmTheme] = useState<"light" | "dark">("light");
+  const [immBarVisible, setImmBarVisible] = useState(true);
+  const immBarTimerRef = useRef<number | null>(null);
+  const immBarHoverRef = useRef(false);
+  // 책·장·절 선택 패널 — 오른쪽 슬라이드 인. 책 컬럼에서 책을 선택하면 그 책의
+  // 장 컬럼으로 미리보기(=immSelectorBookId)만 갱신되고, 실제 책 전환은 장
+  // 클릭 순간 확정된다. 패널 안에서 책만 바꾸고 닫으면 본문은 바뀌지 않음.
+  const [immSelectorOpen, setImmSelectorOpen] = useState(false);
+  const [immSelectorBookId, setImmSelectorBookId] = useState<BookId | null>(
+    null,
+  );
+  const [immSelectorTestament, setImmSelectorTestament] = useState<
+    "ot" | "nt"
+  >("nt");
+  const [immVerseInput, setImmVerseInput] = useState("");
+
   const listeningRef = useRef(false);
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
   const readVerseCountRef = useRef(0);
@@ -1296,6 +1326,229 @@ export default function BibleReadingPage() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // ─── 읽기 모드 영속화 / 키보드 / 자동 숨김 ─────────────────────────────
+  // 마운트 시 localStorage 에서 상태 복원. 한 번만 실행.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      const onRaw = window.localStorage.getItem("haruchi/brp-immersive");
+      const fsRaw = window.localStorage.getItem("haruchi/brp-immersive-font");
+      const thRaw = window.localStorage.getItem("haruchi/brp-immersive-theme");
+      if (onRaw === "1") setImmersive(true);
+      if (fsRaw) {
+        const v = Number(fsRaw);
+        if (Number.isFinite(v) && v >= 0.85 && v <= 1.5) setImmFontScale(v);
+      }
+      if (thRaw === "dark" || thRaw === "light") setImmTheme(thRaw);
+    } catch {
+      /* localStorage 비활성 환경 무시 */
+    }
+  }, []);
+
+  // 변경 시 localStorage 에 즉시 반영. 빠른 토글에도 안전(동기 쓰기).
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      window.localStorage.setItem(
+        "haruchi/brp-immersive",
+        immersive ? "1" : "0",
+      );
+    } catch {
+      /* ignore */
+    }
+  }, [immersive]);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      window.localStorage.setItem(
+        "haruchi/brp-immersive-font",
+        String(immFontScale),
+      );
+    } catch {
+      /* ignore */
+    }
+  }, [immFontScale]);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      window.localStorage.setItem("haruchi/brp-immersive-theme", immTheme);
+    } catch {
+      /* ignore */
+    }
+  }, [immTheme]);
+
+  // 다크 테마는 body 에도 클래스를 부착해 portal / fixed overlay 까지 색을 따라
+  // 가게 한다(검색 오버레이, 토스트 등). 읽기 모드 OFF 또는 라이트면 떼어낸다.
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const cls = "brp-immersive-dark";
+    const on = immersive && immTheme === "dark";
+    document.body.classList.toggle(cls, on);
+    return () => {
+      document.body.classList.remove(cls);
+    };
+  }, [immersive, immTheme]);
+
+  // 읽기 모드일 때 body 에 .brp-immersive 클래스 부착 →
+  // .brp-page--immersive 가 position:fixed 풀스크린 스크롤 컨테이너로 viewport
+  // 를 덮는 동안 body 자체 스크롤(외부 페이지) 을 잠가 이중 스크롤 방지.
+  // immersive 종료 시 클래스 제거되어 일반 페이지 스크롤 자동 복귀.
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.body.classList.toggle("brp-immersive", immersive);
+    return () => {
+      document.body.classList.remove("brp-immersive");
+    };
+  }, [immersive]);
+
+  // 선택 패널이 열릴 때마다 현재 활성 책으로 미리보기 책 동기화.
+  // 패널 안에서 OT/NT 탭도 현재 책 소속에 맞춰 자동 전환.
+  useEffect(() => {
+    if (!immSelectorOpen) return;
+    setImmSelectorBookId(bookConfirmed ? bookId : null);
+    setImmSelectorTestament(isOldTestament(bookId) ? "ot" : "nt");
+    setImmVerseInput("");
+  }, [immSelectorOpen, bookId, bookConfirmed]);
+
+  // ─── 읽기 모드 스와이프 ──────────────────────────────────────────────
+  // 오른쪽 → 왼쪽 스와이프: 책·장·절 패널 열기
+  // 왼쪽 → 오른쪽 스와이프(패널 열린 상태): 패널 닫기
+  // 조건: 가로 이동 ≥ 60px, 세로 이동 ≤ 50px(=가로 우세), 시작점이 화면 우측
+  //       60% 안이어야 함(좌측 가장자리 시작은 운영체제 back-swipe 와 충돌).
+  useEffect(() => {
+    if (!immersive) return;
+    if (typeof window === "undefined") return;
+    let startX = 0;
+    let startY = 0;
+    let startedFromOk = false;
+    const onStart = (e: TouchEvent) => {
+      if (e.touches.length !== 1) {
+        startedFromOk = false;
+        return;
+      }
+      const t = e.touches[0];
+      // 패널이 닫힌 상태: 화면 우측 60% 안에서 시작해야 인식.
+      //   (좌측 시작은 iOS back-swipe, 안드로이드 system gesture 와 충돌)
+      // 패널이 열린 상태: 패널 안에서의 swipe(오른쪽 → 왼쪽 등)는 일반 스크롤
+      //   목적일 수 있으므로 우측 30% 안에서 시작했을 때만 닫기 swipe 로 본다.
+      if (!immSelectorOpen) {
+        if (t.clientX < window.innerWidth * 0.4) {
+          startedFromOk = false;
+          return;
+        }
+      } else {
+        // 패널 닫힘은 패널 영역(우측 부분) 안에서 시작한 swipe 만.
+        if (t.clientX < window.innerWidth * 0.55) {
+          startedFromOk = false;
+          return;
+        }
+      }
+      startX = t.clientX;
+      startY = t.clientY;
+      startedFromOk = true;
+    };
+    const onEnd = (e: TouchEvent) => {
+      if (!startedFromOk) return;
+      startedFromOk = false;
+      const t = e.changedTouches?.[0];
+      if (!t) return;
+      const dx = t.clientX - startX;
+      const dy = t.clientY - startY;
+      if (Math.abs(dy) > 50) return;
+      if (Math.abs(dx) < 60) return;
+      if (!immSelectorOpen && dx < 0) {
+        // 우 → 좌 → 패널 열기
+        setImmSelectorOpen(true);
+      } else if (immSelectorOpen && dx > 0) {
+        // 좌 → 우 → 패널 닫기
+        setImmSelectorOpen(false);
+      }
+    };
+    window.addEventListener("touchstart", onStart, { passive: true });
+    window.addEventListener("touchend", onEnd, { passive: true });
+    return () => {
+      window.removeEventListener("touchstart", onStart);
+      window.removeEventListener("touchend", onEnd);
+    };
+  }, [immersive, immSelectorOpen]);
+
+  // ESC 로 읽기 모드 나가기. 단, 책 선택 패널이 열려 있으면 먼저 패널만 닫고
+  // immersive 모드는 유지. 입력 요소 포커스 시에는 가로채지 않는다.
+  useEffect(() => {
+    if (!immersive) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      const t = e.target as HTMLElement | null;
+      const tag = t?.tagName?.toLowerCase();
+      if (tag === "input" || tag === "textarea" || t?.isContentEditable) return;
+      if (immSelectorOpen) {
+        setImmSelectorOpen(false);
+        return;
+      }
+      setImmersive(false);
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [immersive, immSelectorOpen]);
+
+  // 상단 바 자동 숨김: 마우스 이동/터치/키보드 활동 → 표시 + 2.5초 idle 후 숨김.
+  // 마우스가 상단 80px 안(또는 바 위)에 있으면 idle 타이머가 시작되지 않아 계속
+  // 보임. 모바일에서는 본문을 탭하면 다시 표시된다.
+  useEffect(() => {
+    if (!immersive) return;
+    if (typeof window === "undefined") return;
+    const arm = () => {
+      if (immBarTimerRef.current) window.clearTimeout(immBarTimerRef.current);
+      immBarTimerRef.current = window.setTimeout(() => {
+        if (immBarHoverRef.current) return;
+        setImmBarVisible(false);
+      }, 2500);
+    };
+    const onMove = (e: MouseEvent) => {
+      const nearTop = e.clientY <= 80;
+      immBarHoverRef.current = nearTop;
+      setImmBarVisible(true);
+      if (!nearTop) arm();
+    };
+    // 터치는 "탭" 일 때만 바를 토글. swipe(가로/세로 큰 이동) 도중에는
+    // 바가 흔들리지 않도록 touchstart/touchend 좌표 차이를 본다.
+    let tStartX = 0;
+    let tStartY = 0;
+    const onTouchStart = (e: TouchEvent) => {
+      if (e.touches.length !== 1) return;
+      tStartX = e.touches[0].clientX;
+      tStartY = e.touches[0].clientY;
+    };
+    const onTouchEnd = (e: TouchEvent) => {
+      const t = e.changedTouches?.[0];
+      if (!t) return;
+      const dx = Math.abs(t.clientX - tStartX);
+      const dy = Math.abs(t.clientY - tStartY);
+      if (dx > 12 || dy > 12) return; // swipe/스크롤은 무시
+      setImmBarVisible((prev) => !prev);
+    };
+    const onKey = () => {
+      setImmBarVisible(true);
+      arm();
+    };
+    window.addEventListener("mousemove", onMove, { passive: true });
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    window.addEventListener("touchend", onTouchEnd, { passive: true });
+    window.addEventListener("keydown", onKey);
+    setImmBarVisible(true);
+    arm();
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchend", onTouchEnd);
+      window.removeEventListener("keydown", onKey);
+      if (immBarTimerRef.current) {
+        window.clearTimeout(immBarTimerRef.current);
+        immBarTimerRef.current = null;
+      }
+    };
+  }, [immersive]);
 
   // 음성 안내 토스트(speechMessage / prayerSpeechMessage)는 3 초 뒤 자동으로 사라짐.
   // 본문 가독성을 가리지 않도록 짧게만 노출.
@@ -2914,7 +3167,20 @@ export default function BibleReadingPage() {
     <main
       className={`brp-page ${mounted ? "brp-page--ready" : ""} ${
         miniVisible ? "is-scrolled" : ""
-      } ${scrolled && !miniVisible ? "is-past-reader" : ""}`}
+      } ${scrolled && !miniVisible ? "is-past-reader" : ""} ${
+        immersive ? "brp-page--immersive" : ""
+      } ${
+        immersive && immTheme === "dark" ? "brp-page--imm-dark" : ""
+      } ${
+        immersive && !immBarVisible ? "brp-page--imm-idle" : ""
+      }`}
+      style={
+        immersive
+          ? ({
+              ["--brp-imm-font" as string]: String(immFontScale),
+            } as React.CSSProperties)
+          : undefined
+      }
     >
       <header className={`brp-header ${scrolled ? "is-hidden" : ""}`}>
         <a className="brp-brand" href="/" aria-label="하루치 홈으로">
@@ -2922,6 +3188,33 @@ export default function BibleReadingPage() {
         </a>
         {/* 데스크탑/태블릿 (≥640px) — 풀 네비. 톱니바퀴 + 텍스트 링크들이 한 줄. */}
         <nav className="brp-nav brp-nav--desktop" aria-label="Account links">
+          {/* 읽기 모드(몰입) 진입 — 헤더 좌측(검색·설정 옆)에 책 아이콘 버튼.
+              일반 읽기 / 성경 공부 양쪽 viewMode 에서 동일하게 사용 가능.
+              해제는 immersive 바의 ✕ 또는 ESC. */}
+          <button
+            type="button"
+            className="brp-nav-icon brp-immersive-enter-icon-btn"
+            onClick={() => setImmersive(true)}
+            aria-label="읽기 모드 (몰입)"
+            title="읽기 모드"
+          >
+            <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+              <path
+                d="M3 4.2A1.2 1.2 0 0 1 4.2 3H9v13H4.2A1.2 1.2 0 0 1 3 14.8V4.2zm14 0A1.2 1.2 0 0 0 15.8 3H11v13h4.8a1.2 1.2 0 0 0 1.2-1.2V4.2z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M5 17h10"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+              />
+            </svg>
+          </button>
           <button
             type="button"
             className="brp-nav-icon"
@@ -2957,6 +3250,30 @@ export default function BibleReadingPage() {
 
         {/* 모바일 (<640px) — 검색 + 햄버거. 햄버거는 우상단 시트 드롭다운. */}
         <div className="brp-mobile-actions">
+          <button
+            type="button"
+            className="brp-mobile-search brp-immersive-enter-icon-btn"
+            onClick={() => setImmersive(true)}
+            aria-label="읽기 모드 (몰입)"
+            title="읽기 모드"
+          >
+            <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true">
+              <path
+                d="M3 4.2A1.2 1.2 0 0 1 4.2 3H9v13H4.2A1.2 1.2 0 0 1 3 14.8V4.2zm14 0A1.2 1.2 0 0 0 15.8 3H11v13h4.8a1.2 1.2 0 0 0 1.2-1.2V4.2z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M5 17h10"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+              />
+            </svg>
+          </button>
           <button
             type="button"
             className="brp-mobile-search"
@@ -3097,6 +3414,396 @@ export default function BibleReadingPage() {
           ) : null}
         </span>
       </div>
+
+      {/* 읽기 모드(몰입) 상단 바 — immersive=true 때만 fixed top 에 떠 있고,
+          마우스가 위쪽 80px 안에 있거나 최근 활동이 있을 때만 보임(2.5초 idle 시 페이드 아웃).
+          모바일에서는 본문을 탭하면 토글된다.
+
+          내부 컨트롤: 책(구약/신약) / 장 prev·next / 역본 모드 / 절 이동(jump)
+                       글자 크기 −/+ / 라이트·다크 / 닫기(✕).
+          성경 공부(viewMode==="study") 일 때는 LayeredBibleViewer 의 미니 역본
+          토글이 #brp-mini-toggles-slot 으로 들어가 있으므로(미니바와 슬롯 공유)
+          이 바와는 별도로 mini-bar 가 함께 노출되어 레이어 on/off 가 가능하다. */}
+      {immersive && (
+        <div
+          className={`brp-immersive-bar ${
+            immBarVisible ? "is-visible" : "is-hidden"
+          }`}
+          role="toolbar"
+          aria-label="읽기 모드 컨트롤"
+          onMouseEnter={() => {
+            immBarHoverRef.current = true;
+            setImmBarVisible(true);
+          }}
+          onMouseLeave={() => {
+            immBarHoverRef.current = false;
+          }}
+        >
+          <div className="brp-immersive-bar-inner">
+            {/* 좌측: 책·장 통합 트리거 + 이전/다음 장 화살표 + 역본 모드 */}
+            <div className="brp-immersive-section">
+              <button
+                type="button"
+                className="brp-immersive-arrow"
+                onClick={() => moveChapter(chapterNumber - 1)}
+                aria-label="이전 장"
+                disabled={!bookConfirmed || chapterNumber <= 1}
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                className="brp-immersive-trigger"
+                onClick={() => setImmSelectorOpen((v) => !v)}
+                aria-haspopup="dialog"
+                aria-expanded={immSelectorOpen}
+                aria-label="책 / 장 / 절 선택 열기"
+                title="책 / 장 / 절 선택"
+              >
+                <span className="brp-immersive-trigger-text">
+                  {bookConfirmed ? (
+                    <>
+                      <span className="brp-immersive-trigger-book">
+                        {bookMeta.name}
+                      </span>
+                      <span className="brp-immersive-trigger-chapter">
+                        {chapterNumber} 장
+                      </span>
+                    </>
+                  ) : (
+                    <span className="brp-immersive-trigger-placeholder">
+                      책 선택
+                    </span>
+                  )}
+                </span>
+                <span className="brp-immersive-trigger-caret" aria-hidden="true">
+                  ▾
+                </span>
+              </button>
+              <button
+                type="button"
+                className="brp-immersive-arrow"
+                onClick={() => moveChapter(chapterNumber + 1)}
+                aria-label="다음 장"
+                disabled={!bookConfirmed || chapterNumber >= bookMeta.totalChapters}
+              >
+                →
+              </button>
+              <Dropdown<ModeChoice>
+                value={currentModeChoice}
+                options={[
+                  { value: "krv", label: "개역한글" },
+                  { value: "kids", label: "어린이 의역" },
+                  { value: "english", label: "영어(WEB)" },
+                  { value: "greek", label: "헬라어 보기" },
+                  { value: "hebrew", label: "히브리어 보기" },
+                  { value: "study", label: "성경 공부" },
+                ]}
+                onChange={handleModeChange}
+                ariaLabel="모드 선택 (읽기 모드)"
+                align="left"
+                size="sm"
+              />
+            </div>
+
+            {/* 우측: 글자 크기 / 테마 / 닫기 */}
+            <div className="brp-immersive-section brp-immersive-section--end">
+              <div
+                className="brp-immersive-font"
+                role="group"
+                aria-label="글자 크기"
+              >
+                <button
+                  type="button"
+                  className="brp-immersive-icon"
+                  onClick={() =>
+                    setImmFontScale((v) =>
+                      Math.max(0.85, Math.round((v - 0.05) * 100) / 100),
+                    )
+                  }
+                  aria-label="글자 작게"
+                  disabled={immFontScale <= 0.85}
+                  title="글자 작게"
+                >
+                  <span className="brp-immersive-font-small" aria-hidden="true">
+                    가
+                  </span>
+                </button>
+                <span
+                  className="brp-immersive-font-value"
+                  aria-live="polite"
+                  title={`현재 ${Math.round(immFontScale * 100)}%`}
+                >
+                  {Math.round(immFontScale * 100)}%
+                </span>
+                <button
+                  type="button"
+                  className="brp-immersive-icon"
+                  onClick={() =>
+                    setImmFontScale((v) =>
+                      Math.min(1.5, Math.round((v + 0.05) * 100) / 100),
+                    )
+                  }
+                  aria-label="글자 크게"
+                  disabled={immFontScale >= 1.5}
+                  title="글자 크게"
+                >
+                  <span className="brp-immersive-font-large" aria-hidden="true">
+                    가
+                  </span>
+                </button>
+              </div>
+              <button
+                type="button"
+                className="brp-immersive-icon"
+                onClick={() =>
+                  setImmTheme((t) => (t === "dark" ? "light" : "dark"))
+                }
+                aria-label={immTheme === "dark" ? "라이트 모드" : "다크 모드"}
+                title={immTheme === "dark" ? "라이트 모드" : "다크 모드"}
+              >
+                {immTheme === "dark" ? (
+                  <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+                    <circle cx="10" cy="10" r="3.4" fill="currentColor" />
+                    <g
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                    >
+                      <path d="M10 2v2.2M10 15.8V18M2 10h2.2M15.8 10H18M4.4 4.4l1.6 1.6M14 14l1.6 1.6M4.4 15.6L6 14M14 6l1.6-1.6" />
+                    </g>
+                  </svg>
+                ) : (
+                  <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+                    <path
+                      d="M14.5 12.6A6 6 0 0 1 7.4 5.5a.6.6 0 0 0-.85-.7A7.2 7.2 0 1 0 15.2 13.4a.6.6 0 0 0-.7-.85z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                )}
+              </button>
+              <button
+                type="button"
+                className="brp-immersive-close"
+                onClick={() => setImmersive(false)}
+                aria-label="읽기 모드 끝내기 (ESC)"
+                title="읽기 모드 나가기 (ESC)"
+              >
+                <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+                  <path
+                    d="M5 5l10 10M15 5L5 15"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 책 / 장 / 절 선택 패널 — 읽기 모드의 immersive 바 트리거(상단 "책 N장 ▾")
+          또는 오른쪽 → 왼쪽 swipe 제스처로 열린다. 오른쪽에서 슬라이드 인.
+          2 열 (책 목록 | 장 목록) + 하단 절 이동 입력.
+          책 목록은 OT/NT 탭으로 전환. 책을 누르면 미리보기(=immSelectorBookId)만
+          바뀌고, 장을 누르면 그 시점에 책 + 장이 함께 확정되어 본문 이동. */}
+      {immersive && immSelectorOpen && (
+        <>
+          <div
+            className="brp-imm-picker-backdrop"
+            role="presentation"
+            onClick={() => setImmSelectorOpen(false)}
+          />
+          {(() => {
+            const previewBook =
+              immSelectorBookId ?? (bookConfirmed ? bookId : null);
+            const previewMeta = previewBook ? BOOKS[previewBook] : null;
+            const previewTotal = previewMeta?.totalChapters ?? 0;
+            const chapterList: number[] = Array.from(
+              { length: previewTotal },
+              (_, i) => i + 1,
+            );
+            const list =
+              immSelectorTestament === "ot" ? OT_BOOK_IDS : NT_BOOK_IDS;
+            const commitJumpVerse = () => {
+              const n = Number(immVerseInput);
+              if (!Number.isFinite(n) || n <= 0) {
+                setImmVerseInput("");
+                return;
+              }
+              if (previewBook && previewBook !== bookId) {
+                pickBookFromPanel(previewBook);
+                window.setTimeout(() => {
+                  moveChapter(chapterNumber);
+                  setFlashVerse(n);
+                }, 0);
+              } else {
+                setFlashVerse(n);
+              }
+              setImmVerseInput("");
+              setImmSelectorOpen(false);
+            };
+            return (
+              <aside
+                className="brp-imm-picker"
+                role="dialog"
+                aria-modal="true"
+                aria-label="성경 책·장·절 선택"
+              >
+                <header className="brp-imm-picker-head">
+                  <SlidingToggle<"ot" | "nt">
+                    className="brp-imm-picker-tabs brp-toggle"
+                    buttonClassName="brp-imm-picker-tab"
+                    role="tablist"
+                    ariaLabel="구약 / 신약 선택"
+                    activeKey={immSelectorTestament}
+                    onSelect={(k) => setImmSelectorTestament(k)}
+                    items={[
+                      { key: "ot", label: "구약" },
+                      { key: "nt", label: "신약" },
+                    ]}
+                  />
+                  <button
+                    type="button"
+                    className="brp-imm-picker-close"
+                    onClick={() => setImmSelectorOpen(false)}
+                    aria-label="선택 패널 닫기"
+                  >
+                    <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+                      <path
+                        d="M5 5l10 10M15 5L5 15"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </button>
+                </header>
+
+                <div className="brp-imm-picker-body">
+                  {/* 좌: 책 목록 */}
+                  <ul
+                    className="brp-imm-picker-books"
+                    role="listbox"
+                    aria-label="책 목록"
+                  >
+                    {list.map((id) => {
+                      const isActive = previewBook === id;
+                      const isCurrent = bookConfirmed && bookId === id;
+                      return (
+                        <li key={id}>
+                          <button
+                            type="button"
+                            className={`brp-imm-picker-book ${
+                              isActive ? "is-active" : ""
+                            } ${isCurrent ? "is-current" : ""}`}
+                            onClick={() => setImmSelectorBookId(id)}
+                            role="option"
+                            aria-selected={isActive}
+                          >
+                            {BOOKS[id].name}
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+
+                  {/* 우: 장 그리드 + 절 이동 */}
+                  <div className="brp-imm-picker-chapters-wrap">
+                    {previewBook ? (
+                      <>
+                        <ul
+                          className="brp-imm-picker-chapters"
+                          role="listbox"
+                          aria-label={`${previewMeta?.name ?? ""} 장 목록`}
+                        >
+                          {chapterList.map((n) => {
+                            const isCurrent =
+                              previewBook === bookId && n === chapterNumber;
+                            return (
+                              <li key={n}>
+                                <button
+                                  type="button"
+                                  className={`brp-imm-picker-chapter ${
+                                    isCurrent ? "is-current" : ""
+                                  }`}
+                                  onClick={() => {
+                                    if (previewBook !== bookId) {
+                                      pickBookFromPanel(previewBook);
+                                      window.setTimeout(() => moveChapter(n), 0);
+                                    } else {
+                                      moveChapter(n);
+                                    }
+                                    setImmSelectorOpen(false);
+                                  }}
+                                  role="option"
+                                  aria-selected={isCurrent}
+                                >
+                                  {n}
+                                </button>
+                              </li>
+                            );
+                          })}
+                        </ul>
+
+                        <div className="brp-imm-picker-verse-jump">
+                          <label
+                            className="brp-imm-picker-verse-label"
+                            htmlFor="brp-imm-verse-input"
+                          >
+                            절 이동
+                          </label>
+                          <div className="brp-imm-picker-verse-row">
+                            <input
+                              id="brp-imm-verse-input"
+                              type="number"
+                              inputMode="numeric"
+                              min={1}
+                              className="brp-imm-picker-verse-input"
+                              placeholder={
+                                previewBook === bookId
+                                  ? `${chapterNumber}장 안에서 절`
+                                  : "1장 1절로 이동 후"
+                              }
+                              value={immVerseInput}
+                              onChange={(e) => setImmVerseInput(e.target.value)}
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter") {
+                                  e.preventDefault();
+                                  commitJumpVerse();
+                                }
+                              }}
+                            />
+                            <button
+                              type="button"
+                              className="brp-imm-picker-verse-go"
+                              onClick={commitJumpVerse}
+                              disabled={!immVerseInput}
+                              aria-label="해당 절로 이동"
+                            >
+                              이동
+                            </button>
+                          </div>
+                          <p className="brp-imm-picker-verse-hint">
+                            * 장 위 숫자를 누르면 그 장 1절부터 시작
+                          </p>
+                        </div>
+                      </>
+                    ) : (
+                      <p className="brp-imm-picker-empty">
+                        왼쪽에서 책을 먼저 선택해 주세요.
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </aside>
+            );
+          })()}
+        </>
+      )}
 
       <StudentIdentityBar ref={identityRef} onChange={handleStudentChange} />
 
@@ -7161,6 +7868,875 @@ export default function BibleReadingPage() {
 
           .brp-mic {
             gap: 4px;
+          }
+        }
+
+        /* ─────────────────────────────────────────────────────────────────
+           읽기 모드(몰입 모드)
+           - 진입: .brp-immersive-enter 버튼 클릭 → main 에 .brp-page--immersive.
+           - 본문 외 chrome 을 모두 숨기고, .brp-reader 를 화면 가운데로 모아
+             큰 글자/넉넉한 줄간격으로 보여준다.
+           - 컨트롤 바(.brp-immersive-bar)는 fixed top 으로 떠 있고, idle 시 페이드 아웃.
+           - 다크 테마는 .brp-page--imm-dark + body.brp-immersive-dark 로 표현.
+           ───────────────────────────────────────────────────────────────── */
+
+        /* 헤더의 읽기 모드 진입 버튼 — 검색·설정 아이콘과 같은 .brp-nav-icon /
+           .brp-mobile-search 기반에 색만 살짝 강조. 기존 헤더 메뉴 구조는 그대로. */
+        .brp-immersive-enter-icon-btn {
+          color: var(--accent, #c2410c) !important;
+        }
+        .brp-immersive-enter-icon-btn:hover {
+          background: rgba(194, 65, 12, 0.08) !important;
+        }
+
+        /* ── 페이지 전체 — chrome 숨김 + 본문 가운데 ──────────────────────── */
+        /* PC 레이아웃의 .brp-page 는 height:100vh + overflow:hidden 으로 고정되어
+           있고 .brp-reader 가 자체 overflow-y:auto 였다. immersive 에선 부모 구조에
+           일체 의존하지 않도록 .brp-page--immersive 자체를 position:fixed 풀스크린
+           스크롤 컨테이너로 전환한다. 이러면 body/html 의 overflow 가 어떻든,
+           .brp-page 부모가 어떻든 영향 받지 않고 안에서 세로 스크롤이 항상 동작.
+           position:fixed 컨테이너지만 자식의 position:fixed (immersive-bar / picker)는
+           transform/filter 가 없는 한 여전히 viewport 기준이므로 정상 동작. */
+        .brp-page--immersive {
+          --brp-imm-font: 1;
+          --brp-imm-bg: #fbfaf6;
+          --brp-imm-fg: #1f2937;
+          --brp-imm-fg-soft: #6b7280;
+          --brp-imm-bg-bar: rgba(255, 255, 255, 0.92);
+          --brp-imm-border: rgba(15, 23, 42, 0.08);
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          bottom: 0 !important;
+          width: 100vw !important;
+          height: 100vh !important;
+          max-height: 100vh !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow-y: auto !important;
+          overflow-x: hidden !important;
+          -webkit-overflow-scrolling: touch;
+          overscroll-behavior: contain;
+          background: var(--brp-imm-bg) !important;
+          display: block !important;
+          z-index: 50;
+        }
+        .brp-page--immersive.brp-page--imm-dark {
+          --brp-imm-bg: #11131a;
+          --brp-imm-fg: #e7e5e0;
+          --brp-imm-fg-soft: #c4b8a8;
+          --brp-imm-bg-bar: rgba(20, 22, 28, 0.92);
+          --brp-imm-border: rgba(255, 255, 255, 0.08);
+        }
+        /* 더 이상 body/html 의 overflow 를 건드릴 필요가 없지만,
+           .brp-page--immersive 가 fixed 로 viewport 를 덮는 동안에는 body 자체
+           스크롤이 두 겹으로 동작하지 않도록 body 만 lock. immersive 종료 시
+           클래스가 제거되어 자동 복귀. */
+        body.brp-immersive {
+          overflow: hidden !important;
+        }
+        body.brp-immersive-dark {
+          background: #11131a;
+        }
+
+        /* 메인 chrome 숨김: 헤더 / 우측 사이드 / 미니바 / 모바일 메뉴 등.
+           단, 성경 공부(.brp-mini-bar--study) 의 미니바는 #brp-mini-toggles-slot 의
+           앵커이므로 통째로 숨기지 않고 아래에서 별도로 reposition + 토글만 노출. */
+        .brp-page--immersive .brp-header,
+        .brp-page--immersive .brp-side,
+        .brp-page--immersive .brp-mobile-actions,
+        .brp-page--immersive .brp-mobile-menu-backdrop {
+          display: none !important;
+        }
+        /* 일반 모드(viewMode !== "study") 일 때는 미니바도 그냥 숨김. */
+        .brp-page--immersive .brp-mini-bar:not(.brp-mini-bar--study) {
+          display: none !important;
+        }
+        /* 성경 공부 모드의 미니바 — 슬롯(#brp-mini-toggles-slot) 만 살리고 나머지
+           장식(책 이름, 진행도 막대)은 시각적으로 모두 제거. 상단 컨트롤 바와
+           충돌하지 않게 immersive 바 바로 아래 우측에 부유시킨다. */
+        .brp-page--immersive .brp-mini-bar.brp-mini-bar--study {
+          position: fixed !important;
+          top: 64px !important;
+          right: 12px !important;
+          left: auto !important;
+          width: auto !important;
+          max-width: calc(100vw - 24px) !important;
+          padding: 6px 10px !important;
+          background: var(--brp-imm-bg-bar) !important;
+          border: 1px solid var(--brp-imm-border) !important;
+          border-radius: 999px !important;
+          box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08) !important;
+          color: var(--brp-imm-fg) !important;
+          opacity: 1 !important;
+          transform: none !important;
+          transition: opacity 200ms ease !important;
+          z-index: 78;
+          pointer-events: auto !important;
+        }
+        .brp-page--immersive .brp-mini-bar.brp-mini-bar--study .brp-mini-fill,
+        .brp-page--immersive .brp-mini-bar.brp-mini-bar--study .brp-mini-text {
+          display: none !important;
+        }
+        .brp-page--immersive .brp-mini-bar.brp-mini-bar--study .brp-mini-content {
+          justify-content: flex-end !important;
+          padding: 0 !important;
+        }
+        /* 상단 바가 숨어 있을 때(idle) 미니 토글도 함께 페이드 아웃.
+           main 에 .brp-page--imm-idle 가 부착되면 이 자식의 미니바를 가린다. */
+        .brp-page--immersive.brp-page--imm-idle .brp-mini-bar.brp-mini-bar--study {
+          opacity: 0 !important;
+          pointer-events: none !important;
+        }
+        /* 미니바의 기존 .is-visible 제약을 무력화 — immersive 에서는 항상 가시. */
+        .brp-page--immersive .brp-mini-bar.brp-mini-bar--study,
+        .brp-page--immersive .brp-mini-bar.brp-mini-bar--study:not(.is-visible) {
+          visibility: visible !important;
+        }
+
+        /* 캔버스 — grid 해제하고 본문만 가운데로. */
+        .brp-page--immersive .brp-canvas {
+          display: block !important;
+          padding: 0 !important;
+          max-width: none !important;
+          background: transparent !important;
+        }
+
+        /* 본문 카드 — 페이지 가운데로 모으고 일반 화면보다 충분히 넓게.
+           PC: 화면 폭의 ~85% 까지 사용(최대 1440px), 모바일은 좌우 8px 만 여백.
+           PC 레이아웃에서 .brp-reader 는 원래 내부 overflow 스크롤러였는데
+           immersive 에선 자연 흐름으로 풀어 page 자체 스크롤에 맡긴다. */
+        .brp-page--immersive .brp-reader {
+          display: block !important;
+          position: static !important;
+          grid-area: unset !important;
+          margin: 110px auto 96px !important;
+          max-width: min(1440px, calc(100vw - 64px)) !important;
+          width: 100% !important;
+          padding: 32px 56px 120px !important;
+          background: transparent !important;
+          box-shadow: none !important;
+          border-radius: 0 !important;
+          overflow: visible !important;
+          height: auto !important;
+          min-height: 0 !important;
+          max-height: none !important;
+          color: var(--brp-imm-fg) !important;
+        }
+        .brp-page--immersive .brp-reader::-webkit-scrollbar {
+          display: none !important;
+        }
+
+        /* hero(책 제목) — 가운데 정렬, 살짝 얇은 처리. */
+        .brp-page--immersive .brp-reader-hero {
+          text-align: center;
+          padding: 8px 0 36px !important;
+          border-bottom: 1px solid var(--brp-imm-border) !important;
+          margin-bottom: 56px !important;
+          background: transparent !important;
+        }
+        .brp-page--immersive .brp-reader-hero h1 {
+          font-size: calc(30px * var(--brp-imm-font)) !important;
+          color: var(--brp-imm-fg) !important;
+          letter-spacing: -0.02em;
+          line-height: 1.3 !important;
+        }
+
+        /* 절 카드 — 카드형 박스를 풀고 텍스트 흐름처럼. 절 번호는 작고 연하게.
+           절과 절 사이는 책처럼 충분히 떼어 한 호흡씩 쉬어가게. */
+        .brp-page--immersive .brp-verse-card {
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
+          padding: 0 !important;
+          margin: 0 0 calc(36px * var(--brp-imm-font)) !important;
+          display: block !important;
+        }
+        .brp-page--immersive .brp-verse-number {
+          color: var(--brp-imm-fg-soft) !important;
+          font-size: calc(12px * var(--brp-imm-font)) !important;
+          font-weight: 600 !important;
+          opacity: 0.7;
+          margin-right: 12px !important;
+          vertical-align: 0.35em;
+          background: transparent !important;
+          padding: 0 !important;
+          min-width: 1.6em !important;
+          display: inline-block !important;
+          text-align: right;
+          font-variant-numeric: tabular-nums;
+        }
+        /* 어두운 모드 — 진한 배경에서도 절번호가 분명히 보이도록 액센트 톤 + 더 높은 opacity */
+        .brp-page--imm-dark .brp-verse-number {
+          color: #e8a877 !important;
+          opacity: 0.85 !important;
+        }
+        .brp-page--immersive .brp-verse-text {
+          font-size: calc(19px * var(--brp-imm-font)) !important;
+          line-height: 2.15 !important;
+          color: var(--brp-imm-fg) !important;
+          font-weight: 400 !important;
+          letter-spacing: -0.005em;
+          display: inline !important;
+          word-spacing: 0.02em;
+        }
+
+        /* 헬라어/히브리어 단어 블록 — 블록 간격 넉넉히, 단어/발음/뜻 크기도 함께 확대.
+           기존 GreekChapterV2 / HebrewChapterV2 의 단어 블록 자체는 컴포넌트 안에서
+           렌더되므로 외부 wrapper 클래스로만 미세 조정한다. */
+        .brp-page--immersive .gcv,
+        .brp-page--immersive .hcv {
+          font-size: calc(16px * var(--brp-imm-font)) !important;
+        }
+        .brp-page--immersive .gcv-verse,
+        .brp-page--immersive .hcv-verse {
+          margin-bottom: calc(28px * var(--brp-imm-font)) !important;
+        }
+        .brp-page--immersive .gcv-words,
+        .brp-page--immersive .hcv-words {
+          gap: calc(18px * var(--brp-imm-font)) calc(14px * var(--brp-imm-font)) !important;
+          line-height: 1.9 !important;
+        }
+        /* 기존 ruby 기반 헬라어 블록(.brp-greek-block) — 단어/발음 간격 살짝 넓힘 */
+        .brp-page--immersive .brp-greek-block {
+          margin-top: calc(10px * var(--brp-imm-font)) !important;
+        }
+        .brp-page--immersive .brp-greek-tokens {
+          gap: calc(12px * var(--brp-imm-font)) calc(10px * var(--brp-imm-font)) !important;
+        }
+
+        /* 성경 공부(LayeredBibleViewer) — 레이어들 사이 간격 + 가운데 정렬 */
+        .brp-page--immersive .bsv {
+          background: transparent !important;
+          padding: 0 !important;
+          font-size: calc(15px * var(--brp-imm-font)) !important;
+        }
+        .brp-page--immersive .bsv-top {
+          /* viewer 자체 상단 헤더 — 읽기 모드에선 우리 상단 바가 있으므로 숨김. */
+          display: none !important;
+        }
+        .brp-page--immersive .bsv-verse {
+          padding: calc(12px * var(--brp-imm-font)) 0 calc(18px * var(--brp-imm-font)) !important;
+          border-bottom: 1px solid var(--brp-imm-border) !important;
+        }
+        .brp-page--immersive .bsv-verse:last-child {
+          border-bottom: none !important;
+        }
+        .brp-page--immersive .bsv-layer {
+          padding: calc(6px * var(--brp-imm-font)) 0 !important;
+          line-height: 1.85 !important;
+        }
+
+        /* 영어 단일 보기(EnglishOnlyView) — 동일하게 가독성 보강 */
+        .brp-page--immersive .eov {
+          font-size: calc(17px * var(--brp-imm-font)) !important;
+          line-height: 1.95 !important;
+        }
+
+        /* 진행도 그리드 / 기도 / 진입 버튼 등 사이드 영역 — 통째 숨김(사이드는 위에서
+           이미 숨겼지만, source 상 reader 안에 있는 dock(낭독 / 묵독 컨트롤)도 숨김). */
+        .brp-page--immersive .brp-dock,
+        .brp-page--immersive .brp-copy-bar,
+        .brp-page--immersive .brp-copy-toast {
+          display: none !important;
+        }
+        /* StudentIdentityBar 등 fixed 보조 UI 도 몰입을 방해 → 숨김. */
+        .brp-page--immersive .student-identity-bar {
+          display: none !important;
+        }
+
+        /* ── 상단 컨트롤 바 ──────────────────────────────────────────────── */
+        .brp-immersive-bar {
+          position: fixed;
+          inset: 0 0 auto 0;
+          z-index: 80;
+          padding: 12px 16px;
+          background: var(--brp-imm-bg-bar);
+          border-bottom: 1px solid var(--brp-imm-border);
+          color: var(--brp-imm-fg);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          transform: translateY(0);
+          opacity: 1;
+          transition: transform 240ms ease, opacity 200ms ease;
+          will-change: transform, opacity;
+        }
+        .brp-immersive-bar.is-hidden {
+          transform: translateY(-110%);
+          opacity: 0;
+          pointer-events: none;
+        }
+        .brp-immersive-bar-inner {
+          max-width: 1100px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+        .brp-immersive-section {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          min-width: 0;
+          flex-wrap: wrap;
+        }
+        .brp-immersive-section--end {
+          justify-content: flex-end;
+        }
+        .brp-immersive-chapter {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+        }
+        .brp-immersive-arrow {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          border: 1px solid var(--brp-imm-border);
+          background: transparent;
+          color: var(--brp-imm-fg);
+          font-size: 14px;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 120ms ease, opacity 120ms ease;
+        }
+        .brp-immersive-arrow:hover:not(:disabled) {
+          background: rgba(15, 23, 42, 0.06);
+        }
+        .brp-page--imm-dark .brp-immersive-arrow:hover:not(:disabled) {
+          background: rgba(255, 255, 255, 0.06);
+        }
+        .brp-immersive-arrow:disabled {
+          opacity: 0.35;
+          cursor: not-allowed;
+        }
+        .brp-immersive-font {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 2px 6px;
+          border-radius: var(--radius-pill, 999px);
+          border: 1px solid var(--brp-imm-border);
+        }
+        .brp-immersive-font-value {
+          font-size: 11px;
+          font-variant-numeric: tabular-nums;
+          color: var(--brp-imm-fg-soft);
+          min-width: 32px;
+          text-align: center;
+        }
+        .brp-immersive-icon {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          border: 1px solid var(--brp-imm-border);
+          background: transparent;
+          color: var(--brp-imm-fg);
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          transition: background 120ms ease, opacity 120ms ease;
+        }
+        .brp-immersive-icon:hover:not(:disabled) {
+          background: rgba(15, 23, 42, 0.06);
+        }
+        .brp-page--imm-dark .brp-immersive-icon:hover:not(:disabled) {
+          background: rgba(255, 255, 255, 0.06);
+        }
+        .brp-immersive-icon:disabled {
+          opacity: 0.35;
+          cursor: not-allowed;
+        }
+        .brp-immersive-font-small {
+          font-size: 11px;
+          font-weight: 600;
+          line-height: 1;
+        }
+        .brp-immersive-font-large {
+          font-size: 17px;
+          font-weight: 700;
+          line-height: 1;
+        }
+        .brp-immersive-close {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          border: 1px solid var(--brp-imm-border);
+          background: transparent;
+          color: var(--brp-imm-fg);
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 4px;
+        }
+        .brp-immersive-close:hover {
+          background: rgba(15, 23, 42, 0.06);
+        }
+        .brp-page--imm-dark .brp-immersive-close:hover {
+          background: rgba(255, 255, 255, 0.06);
+        }
+
+        /* 모바일 — 컨트롤 바 한 줄이 좁아지므로 글자 크기 위젯/책 라벨 등을 축소. */
+        @media (max-width: 720px) {
+          .brp-immersive-bar {
+            padding: 8px 10px;
+          }
+          .brp-immersive-bar-inner {
+            gap: 8px;
+          }
+          .brp-immersive-section {
+            gap: 6px;
+          }
+          .brp-immersive-arrow,
+          .brp-immersive-icon {
+            width: 30px;
+            height: 30px;
+          }
+          .brp-immersive-close {
+            width: 32px;
+            height: 32px;
+          }
+          .brp-page--immersive .brp-reader {
+            margin: 88px 4px 64px !important;
+            max-width: none !important;
+            padding: 20px 12px 96px !important;
+            width: calc(100vw - 8px) !important;
+          }
+          .brp-page--immersive .brp-reader-hero {
+            padding: 4px 0 24px !important;
+            margin-bottom: 40px !important;
+          }
+          .brp-page--immersive .brp-reader-hero h1 {
+            font-size: calc(24px * var(--brp-imm-font)) !important;
+          }
+          .brp-page--immersive .brp-verse-card {
+            margin: 0 0 calc(28px * var(--brp-imm-font)) !important;
+          }
+          .brp-page--immersive .brp-verse-text {
+            font-size: calc(18px * var(--brp-imm-font)) !important;
+            line-height: 2.05 !important;
+          }
+        }
+
+        /* 다크 테마에서 본문 placeholder / empty 상태 텍스트도 따라가게. */
+        .brp-page--imm-dark .brp-reader-empty {
+          color: var(--brp-imm-fg-soft) !important;
+        }
+
+        /* ───────── 책·장·절 선택 트리거 알약 ──────────────────────────── */
+        .brp-immersive-trigger {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          min-width: 0;
+          padding: 6px 14px;
+          border-radius: 999px;
+          border: 1px solid var(--brp-imm-border);
+          background: transparent;
+          color: var(--brp-imm-fg);
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          cursor: pointer;
+          transition: background 120ms ease, transform 120ms ease;
+          white-space: nowrap;
+          flex: 0 1 auto;
+        }
+        .brp-immersive-trigger:hover {
+          background: rgba(15, 23, 42, 0.06);
+        }
+        .brp-page--imm-dark .brp-immersive-trigger:hover {
+          background: rgba(255, 255, 255, 0.06);
+        }
+        .brp-immersive-trigger:active {
+          transform: scale(0.98);
+        }
+        .brp-immersive-trigger-text {
+          display: inline-flex;
+          align-items: baseline;
+          gap: 8px;
+          min-width: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .brp-immersive-trigger-book {
+          font-weight: 700;
+          color: var(--brp-imm-fg);
+        }
+        .brp-immersive-trigger-chapter {
+          font-weight: 500;
+          color: var(--brp-imm-fg-soft);
+          font-size: 12px;
+        }
+        .brp-immersive-trigger-placeholder {
+          color: var(--brp-imm-fg-soft);
+        }
+        .brp-immersive-trigger-caret {
+          font-size: 10px;
+          color: var(--brp-imm-fg-soft);
+          transition: transform 120ms ease;
+        }
+        .brp-immersive-trigger[aria-expanded="true"] .brp-immersive-trigger-caret {
+          transform: rotate(180deg);
+        }
+
+        /* ───────── 우측 슬라이드 인 선택 패널 ──────────────────────────── */
+        .brp-imm-picker-backdrop {
+          position: fixed;
+          inset: 0;
+          background: rgba(15, 23, 42, 0.42);
+          backdrop-filter: blur(2px);
+          -webkit-backdrop-filter: blur(2px);
+          z-index: 90;
+          animation: brpImmFadeIn 180ms ease;
+        }
+        .brp-page--imm-dark .brp-imm-picker-backdrop {
+          background: rgba(0, 0, 0, 0.55);
+        }
+        @keyframes brpImmFadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .brp-imm-picker {
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: min(360px, 92vw);
+          background: var(--brp-imm-bg, #fbfaf6);
+          color: var(--brp-imm-fg, #1f2937);
+          border-left: 1px solid var(--brp-imm-border, rgba(15, 23, 42, 0.08));
+          box-shadow: -16px 0 48px rgba(15, 23, 42, 0.18);
+          z-index: 91;
+          display: flex;
+          flex-direction: column;
+          animation: brpImmSlideIn 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+        }
+        .brp-page--imm-dark .brp-imm-picker {
+          background: #16181f;
+          color: #e7e5e0;
+          border-left-color: rgba(255, 255, 255, 0.08);
+          box-shadow: -16px 0 48px rgba(0, 0, 0, 0.5);
+        }
+        @keyframes brpImmSlideIn {
+          from { transform: translateX(100%); }
+          to { transform: translateX(0); }
+        }
+        .brp-imm-picker-head {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          padding: 16px 18px 14px;
+          border-bottom: 1px solid var(--brp-imm-border, rgba(15, 23, 42, 0.08));
+        }
+        /* 구약/신약 토글 — 라이트한 트랙 위에 갈색 인디케이터가 슬라이드.
+           SlidingToggle 의 .brp-toggle-indicator 가 z-index: 0 으로 깔리고,
+           각 .brp-imm-picker-tab 버튼은 z-index: 1 위에 떠서 텍스트가 항상
+           인디케이터 위에 보이도록 한다. 활성 버튼은 흰 글씨, 비활성은 잉크색. */
+        .brp-imm-picker-tabs {
+          flex: 0 0 auto;
+          display: inline-flex;
+          align-items: stretch;
+          padding: 3px;
+          border-radius: 999px;
+          background: rgba(15, 23, 42, 0.06);
+          height: 36px;
+          overflow: hidden;
+        }
+        .brp-page--imm-dark .brp-imm-picker-tabs {
+          background: rgba(255, 255, 255, 0.08);
+        }
+        .brp-imm-picker-tab {
+          position: relative;
+          z-index: 1;
+          appearance: none;
+          border: none;
+          background: transparent;
+          padding: 0 18px;
+          height: 30px;
+          line-height: 30px;
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          color: var(--brp-imm-fg, #1f2937);
+          cursor: pointer;
+          border-radius: 999px;
+          white-space: nowrap;
+          transition: color 180ms ease;
+        }
+        .brp-page--imm-dark .brp-imm-picker-tab {
+          color: #e7e5e0;
+        }
+        .brp-imm-picker-tab.is-active {
+          color: #fff;
+        }
+        .brp-imm-picker-tab:hover:not(.is-active) {
+          color: var(--accent, #c2410c);
+        }
+        /* 인디케이터를 트랙 padding 안으로 살짝 인셋(3px) — 트랙과 같은 알약 룩 */
+        .brp-imm-picker-tabs .brp-toggle-indicator {
+          top: 3px;
+          bottom: 3px;
+        }
+
+        .brp-imm-picker-close {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          border: 1px solid var(--brp-imm-border, rgba(15, 23, 42, 0.08));
+          background: transparent;
+          color: inherit;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          transition: background 120ms ease, color 120ms ease, transform 120ms ease;
+        }
+        .brp-imm-picker-close:hover {
+          background: rgba(15, 23, 42, 0.06);
+          color: var(--accent, #c2410c);
+        }
+        .brp-imm-picker-close:active {
+          transform: scale(0.94);
+        }
+        .brp-page--imm-dark .brp-imm-picker-close:hover {
+          background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* 본문 — 좌측 책 목록, 우측 장 목록. 책 이름은 길고(데살로니가전서) 장
+           번호는 짧으므로 1.55 : 1 비율로 책쪽에 가중. */
+        .brp-imm-picker-body {
+          flex: 1;
+          min-height: 0;
+          display: grid;
+          grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+        }
+        .brp-imm-picker-books {
+          list-style: none;
+          margin: 0;
+          padding: 12px 10px;
+          overflow-y: auto;
+          border-right: 1px solid var(--brp-imm-border, rgba(15, 23, 42, 0.08));
+          scrollbar-width: thin;
+        }
+        .brp-imm-picker-books::-webkit-scrollbar {
+          width: 6px;
+        }
+        .brp-imm-picker-books::-webkit-scrollbar-thumb {
+          background: rgba(15, 23, 42, 0.16);
+          border-radius: 999px;
+        }
+        .brp-page--imm-dark .brp-imm-picker-books::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.18);
+        }
+        /* 모든 책 행을 같은 높이의 알약으로 — 부드럽고 일정한 리듬. */
+        .brp-imm-picker-book {
+          display: block;
+          width: 100%;
+          height: 44px;
+          line-height: 44px;
+          padding: 0 14px;
+          margin: 2px 0;
+          border: none;
+          background: transparent;
+          color: inherit;
+          text-align: center;
+          font-size: 14.5px;
+          font-weight: 500;
+          letter-spacing: -0.01em;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: background 140ms ease, color 140ms ease, transform 120ms ease;
+          white-space: nowrap;
+        }
+        .brp-imm-picker-book:hover {
+          background: rgba(15, 23, 42, 0.04);
+        }
+        .brp-page--imm-dark .brp-imm-picker-book:hover {
+          background: rgba(255, 255, 255, 0.05);
+        }
+        .brp-imm-picker-book.is-active {
+          background: var(--accent, #c2410c);
+          color: #fff;
+          font-weight: 700;
+        }
+        .brp-imm-picker-book.is-current:not(.is-active) {
+          color: var(--accent, #c2410c);
+          font-weight: 700;
+        }
+
+        /* 장 그리드 — 항상 고정 폭 정사각형 버튼. 챕터 수가 적어도(3개) 가로로
+           쭉 늘어지지 않고, 챕터 수가 많아도(150장 시편) 자연스럽게 여러 줄.
+           justify-content:center 로 양옆 균등 여백. */
+        .brp-imm-picker-chapters-wrap {
+          display: flex;
+          flex-direction: column;
+          min-height: 0;
+        }
+        /* 장 목록 — 사진 #2 처럼 한 줄씩 세로로 쌓이는 단일 컬럼.
+           책 목록과 같은 높이(44px) 의 알약 형태라 좌우 두 컬럼이 같은 리듬으로
+           나란히 흐른다. 챕터 수가 많아도 자연스럽게 스크롤. */
+        .brp-imm-picker-chapters {
+          list-style: none;
+          margin: 0;
+          padding: 12px 10px;
+          overflow-y: auto;
+          flex: 1;
+          min-height: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          scrollbar-width: thin;
+        }
+        .brp-imm-picker-chapters::-webkit-scrollbar {
+          width: 6px;
+        }
+        .brp-imm-picker-chapters::-webkit-scrollbar-thumb {
+          background: rgba(15, 23, 42, 0.16);
+          border-radius: 999px;
+        }
+        .brp-imm-picker-chapter {
+          width: 100%;
+          height: 44px;
+          padding: 0;
+          border: none;
+          background: transparent;
+          color: inherit;
+          font-size: 14.5px;
+          font-weight: 600;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: background 140ms ease, color 140ms ease,
+            transform 120ms ease;
+          font-variant-numeric: tabular-nums;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .brp-imm-picker-chapter:hover {
+          background: rgba(15, 23, 42, 0.05);
+        }
+        .brp-page--imm-dark .brp-imm-picker-chapter:hover {
+          background: rgba(255, 255, 255, 0.06);
+        }
+        .brp-imm-picker-chapter.is-current {
+          background: var(--accent, #c2410c);
+          color: #fff;
+          font-weight: 700;
+        }
+        .brp-imm-picker-chapter:active {
+          transform: scale(0.98);
+        }
+
+        .brp-imm-picker-verse-jump {
+          padding: 12px 14px 16px;
+          border-top: 1px solid var(--brp-imm-border, rgba(15, 23, 42, 0.08));
+          background: rgba(15, 23, 42, 0.02);
+        }
+        .brp-page--imm-dark .brp-imm-picker-verse-jump {
+          background: rgba(255, 255, 255, 0.02);
+        }
+        .brp-imm-picker-verse-label {
+          display: block;
+          font-size: 11px;
+          font-weight: 700;
+          color: var(--brp-imm-fg-soft);
+          margin-bottom: 6px;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+        }
+        .brp-imm-picker-verse-row {
+          display: flex;
+          gap: 8px;
+        }
+        .brp-imm-picker-verse-input {
+          flex: 1;
+          min-width: 0;
+          height: 40px;
+          padding: 0 12px;
+          font-size: 14px;
+          color: inherit;
+          background: var(--brp-imm-bg, #fbfaf6);
+          border: 1px solid var(--brp-imm-border, rgba(15, 23, 42, 0.12));
+          border-radius: 10px;
+          outline: none;
+          font-variant-numeric: tabular-nums;
+          transition: border-color 140ms ease, box-shadow 140ms ease;
+        }
+        .brp-page--imm-dark .brp-imm-picker-verse-input {
+          background: #11131a;
+          border-color: rgba(255, 255, 255, 0.12);
+        }
+        .brp-imm-picker-verse-input:focus {
+          border-color: var(--accent, #c2410c);
+          box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.18);
+        }
+        .brp-imm-picker-verse-go {
+          flex-shrink: 0;
+          height: 40px;
+          padding: 0 18px;
+          border-radius: 10px;
+          border: none;
+          background: var(--accent, #c2410c);
+          color: #fff;
+          font-size: 13px;
+          font-weight: 700;
+          cursor: pointer;
+          transition: background 140ms ease, transform 120ms ease;
+        }
+        .brp-imm-picker-verse-go:hover:not(:disabled) {
+          background: #a43508;
+        }
+        .brp-imm-picker-verse-go:active:not(:disabled) {
+          transform: scale(0.96);
+        }
+        .brp-imm-picker-verse-go:disabled {
+          opacity: 0.4;
+          cursor: not-allowed;
+        }
+        .brp-imm-picker-verse-hint {
+          margin: 8px 0 0;
+          font-size: 11px;
+          color: var(--brp-imm-fg-soft);
+        }
+        .brp-imm-picker-empty {
+          padding: 32px 14px;
+          font-size: 13px;
+          color: var(--brp-imm-fg-soft);
+          text-align: center;
+        }
+
+        @media (max-width: 480px) {
+          .brp-imm-picker {
+            width: 100vw;
+            max-width: 100vw;
+          }
+          .brp-imm-picker-body {
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+          }
+          .brp-imm-picker-head {
+            padding: 14px 14px 12px;
+          }
+          .brp-imm-picker-book {
+            font-size: 14px;
+            height: 42px;
+            line-height: 42px;
+          }
+          .brp-imm-picker-chapter {
+            height: 42px;
+            font-size: 14px;
+          }
+          .brp-imm-picker-chapters {
+            padding: 10px 8px;
           }
         }
       `}</style>
