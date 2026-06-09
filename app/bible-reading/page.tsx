@@ -1163,6 +1163,44 @@ export default function BibleReadingPage() {
   const [viewMode, setViewMode] = useState<ViewMode>("reader");
   const [readingMode, setReadingMode] = useState<ReadingMode>("mic");
   const [readVerseCount, setReadVerseCount] = useState(0);
+
+  // ─── TTS (음성 합성) ────────────────────────────────────────────────────
+  // 브라우저 기본 SpeechSynthesis API 만 사용 (외부 유료 TTS 사용 안 함).
+  // 낭독 모드(readingMode === "mic")에서 현재 장 본문을 위에서부터 한 절씩
+  // ko-KR 로 읽어주고, 현재 절을 시각적으로 하이라이트 + 자동 스크롤.
+  //   ttsState        : "idle" | "speaking" | "paused"
+  //   ttsVerseN       : 현재 읽고 있는 절 번호 (하이라이트·스크롤 트리거)
+  //   ttsRate         : 0.8 ~ 1.5 (사용자 조절)
+  //   ttsSupported    : 브라우저가 window.speechSynthesis 를 제공하는지
+  //   ttsRateRef      : ttsRate ref (utterance 생성 시 closure stale 방지)
+  //   ttsIndexRef     : 현재 읽는 verses 인덱스 (재시작/속도 변경 시 위치 유지)
+  //   ttsActiveRef    : 정지/취소 이후 늦게 도착하는 onend 콜백 가드
+  //   ttsVersesRef    : 현재 verses 배열 ref (콜백 안에서 최신 verses 참조)
+  const [ttsState, setTtsState] = useState<"idle" | "speaking" | "paused">(
+    "idle",
+  );
+  const [ttsVerseN, setTtsVerseN] = useState<number | null>(null);
+  const [ttsRate, setTtsRate] = useState(1.0);
+  const [ttsSupported, setTtsSupported] = useState(true);
+  const ttsRateRef = useRef(1.0);
+  const ttsIndexRef = useRef(0);
+  const ttsActiveRef = useRef(false);
+  // 목소리 / 음높이 / 음량 — 사용자 선호. 모두 localStorage 에 영속.
+  //   ttsVoices       : 현재 기기/브라우저에서 사용 가능한 voice 목록.
+  //                     voiceschanged 이벤트로 늦게 로드되는 케이스 대응.
+  //   ttsVoiceURI     : 선택된 voice 의 voiceURI. null 이면 브라우저 기본.
+  //   ttsPitch        : 0.5 ~ 1.5 (utterance.pitch)
+  //   ttsVolume       : 0.0 ~ 1.0 (utterance.volume)
+  //   ttsSettingsOpen : 설정 팝오버(목소리·슬라이더) 열림 상태.
+  // ref 들은 speakOne(=콜백 closure) 안에서 stale 값 참조를 피하기 위함.
+  const [ttsVoices, setTtsVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const [ttsVoiceURI, setTtsVoiceURI] = useState<string | null>(null);
+  const [ttsPitch, setTtsPitch] = useState(1.0);
+  const [ttsVolume, setTtsVolume] = useState(1.0);
+  const [ttsSettingsOpen, setTtsSettingsOpen] = useState(false);
+  const ttsVoiceURIRef = useRef<string | null>(null);
+  const ttsPitchRef = useRef(1.0);
+  const ttsVolumeRef = useRef(1.0);
   // 원어묵상 모드 — 절 전체 풀이 서랍(▾ 갈매기)이 펼쳐진 절 번호 집합.
   // 책/장/번역이 바뀌면 자동으로 비워진다(useEffect 아래).
   const [openWordDrawers, setOpenWordDrawers] = useState<Set<number>>(
@@ -1742,6 +1780,374 @@ export default function BibleReadingPage() {
     ? Math.min(100, (readVerseCount / totalVerses) * 100)
     : 0;
   const hasFilledText = totalVerses > 0;
+
+  // ─── TTS: 콜백 + 가드 + cleanup ───────────────────────────────────────
+  // verses 가 매 렌더 새 배열로 만들어지므로 ref 로 잡아 콜백 closure 안에서
+  // 항상 최신 verses 를 참조하도록 한다.
+  const ttsVersesRef = useRef(verses);
+  useEffect(() => {
+    ttsVersesRef.current = verses;
+  }, [verses]);
+
+  // 브라우저가 SpeechSynthesis 를 지원하지 않으면(예: 일부 임베디드 웹뷰)
+  // 컨트롤 자체를 disable. mount 시 1회 체크.
+  // 동시에 voices 목록을 로드하고 ttsVoices state 에 반영. 일부 브라우저는
+  // 첫 getVoices() 가 빈 배열을 반환하고 voiceschanged 이벤트 이후에야 채워
+  // 지므로 이벤트 리스너로 재로드.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const synth = window.speechSynthesis;
+    setTtsSupported(typeof synth !== "undefined");
+    if (!synth) return;
+    const loadVoices = () => {
+      const list = synth.getVoices();
+      // 안정적 정렬: 한국어 → 영어 → 그 외, 같은 그룹 안에서 name 알파벳순.
+      const ranked = list.slice().sort((a, b) => {
+        const score = (v: SpeechSynthesisVoice) =>
+          v.lang.toLowerCase().startsWith("ko")
+            ? 0
+            : v.lang.toLowerCase().startsWith("en")
+              ? 1
+              : 2;
+        const sa = score(a);
+        const sb = score(b);
+        if (sa !== sb) return sa - sb;
+        return a.name.localeCompare(b.name);
+      });
+      setTtsVoices(ranked);
+    };
+    loadVoices();
+    synth.addEventListener?.("voiceschanged", loadVoices);
+    return () => {
+      synth.removeEventListener?.("voiceschanged", loadVoices);
+    };
+  }, []);
+
+  // voices 가 새로 로드되면, 저장된 voiceURI 가 새 목록에 없는지 검증.
+  // 없으면(=다른 기기에서 저장된 voice 등) null 로 떨어뜨려 브라우저 기본을 사용.
+  // 처음 로드 시 한국어 voice 가 하나라도 있고 사용자가 아직 선택하지 않았다면
+  // (= ttsVoiceURIRef.current 가 null) 자동으로 첫 한국어 voice 를 기본값으로 잡는다.
+  useEffect(() => {
+    if (ttsVoices.length === 0) return;
+    const saved = ttsVoiceURIRef.current;
+    if (saved) {
+      const exists = ttsVoices.some((v) => v.voiceURI === saved);
+      if (!exists) {
+        setTtsVoiceURI(null);
+        ttsVoiceURIRef.current = null;
+      }
+      return;
+    }
+    const firstKo = ttsVoices.find((v) =>
+      v.lang.toLowerCase().startsWith("ko"),
+    );
+    if (firstKo) {
+      setTtsVoiceURI(firstKo.voiceURI);
+      ttsVoiceURIRef.current = firstKo.voiceURI;
+    }
+  }, [ttsVoices]);
+
+  // ─── localStorage 영속 ───────────────────────────────────────────────
+  // mount 시 1회 hydration. 잘못 저장된 값(범위 밖)은 무시.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      const v = window.localStorage.getItem("haruchi/tts-voice");
+      if (v) {
+        setTtsVoiceURI(v);
+        ttsVoiceURIRef.current = v;
+      }
+      const p = window.localStorage.getItem("haruchi/tts-pitch");
+      if (p) {
+        const n = parseFloat(p);
+        if (Number.isFinite(n) && n >= 0.5 && n <= 1.5) {
+          setTtsPitch(n);
+          ttsPitchRef.current = n;
+        }
+      }
+      const vol = window.localStorage.getItem("haruchi/tts-volume");
+      if (vol) {
+        const n = parseFloat(vol);
+        if (Number.isFinite(n) && n >= 0 && n <= 1) {
+          setTtsVolume(n);
+          ttsVolumeRef.current = n;
+        }
+      }
+    } catch {
+      // 사파리 사생활 보호 모드 등에서 throw 가능 — 무시.
+    }
+  }, []);
+  // 각 값이 바뀔 때마다 저장.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      if (ttsVoiceURI) {
+        window.localStorage.setItem("haruchi/tts-voice", ttsVoiceURI);
+      } else {
+        window.localStorage.removeItem("haruchi/tts-voice");
+      }
+    } catch {}
+  }, [ttsVoiceURI]);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      window.localStorage.setItem("haruchi/tts-pitch", String(ttsPitch));
+    } catch {}
+  }, [ttsPitch]);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      window.localStorage.setItem("haruchi/tts-volume", String(ttsVolume));
+    } catch {}
+  }, [ttsVolume]);
+  // ref 동기화 — 콜백 closure 안에서 항상 최신 값 사용.
+  useEffect(() => {
+    ttsVoiceURIRef.current = ttsVoiceURI;
+  }, [ttsVoiceURI]);
+  useEffect(() => {
+    ttsPitchRef.current = ttsPitch;
+  }, [ttsPitch]);
+  useEffect(() => {
+    ttsVolumeRef.current = ttsVolume;
+  }, [ttsVolume]);
+
+  // ttsRate 가 바뀌면 ref 동기화. 재생 중 속도가 바뀐 경우엔 아래 별도 effect
+  // 가 현재 절부터 새 속도로 재시작.
+  useEffect(() => {
+    ttsRateRef.current = ttsRate;
+  }, [ttsRate]);
+
+  // 한 절씩 차례로 발화. startIdx 부터 시작하고, 끝나면 onend 에서 다음 절로
+  // 자동 진행. 정지/취소 후 늦게 도착하는 onend 가 새 발화를 다시 시작시키지
+  // 않도록 ttsActiveRef 로 보호.
+  const speakFromIndex = useCallback((startIdx: number) => {
+    if (typeof window === "undefined") return;
+    const synth = window.speechSynthesis;
+    if (!synth) return;
+    const currentVerses = ttsVersesRef.current;
+    if (!currentVerses.length) return;
+    // 항상 이전 발화를 깨끗이 비우고 시작 — 중간 진입(속도 변경 등)에도 안전.
+    synth.cancel();
+    ttsActiveRef.current = true;
+    ttsIndexRef.current = Math.max(
+      0,
+      Math.min(startIdx, currentVerses.length - 1),
+    );
+    const speakOne = (idx: number) => {
+      if (!ttsActiveRef.current) return; // 정지된 뒤 도착한 늦은 콜백 차단
+      const list = ttsVersesRef.current;
+      if (idx >= list.length) {
+        // 장 끝까지 다 읽음 → 자연 종료
+        ttsActiveRef.current = false;
+        setTtsState("idle");
+        setTtsVerseN(null);
+        ttsIndexRef.current = 0;
+        return;
+      }
+      const v = list[idx];
+      const u = new SpeechSynthesisUtterance(v.t);
+      u.lang = "ko-KR";
+      u.rate = ttsRateRef.current;
+      u.pitch = ttsPitchRef.current;
+      u.volume = ttsVolumeRef.current;
+      // 선택된 voice 적용. voiceURI 로 현재 getVoices() 안에서 찾는다.
+      // (voice 객체는 페이지 reload 사이에 동일 instance 가 아니므로 URI 비교)
+      const voiceURI = ttsVoiceURIRef.current;
+      if (voiceURI) {
+        const voice = synth.getVoices().find((vv) => vv.voiceURI === voiceURI);
+        if (voice) {
+          u.voice = voice;
+          // 명시적으로 voice 가 잡힌 경우 voice.lang 우선 — 일부 엔진은
+          // utterance.lang 과 voice.lang 가 다르면 voice 를 무시한다.
+          u.lang = voice.lang;
+        }
+      }
+      u.onstart = () => {
+        if (!ttsActiveRef.current) return;
+        ttsIndexRef.current = idx;
+        setTtsVerseN(v.n);
+        setTtsState("speaking");
+      };
+      u.onend = () => {
+        if (!ttsActiveRef.current) return;
+        speakOne(idx + 1);
+      };
+      u.onerror = (ev: SpeechSynthesisErrorEvent) => {
+        // cancel 시 'canceled' / 'interrupted' 가 정상 종료이므로 무시.
+        if (ev.error === "canceled" || ev.error === "interrupted") return;
+        ttsActiveRef.current = false;
+        setTtsState("idle");
+        setTtsVerseN(null);
+      };
+      synth.speak(u);
+    };
+    speakOne(ttsIndexRef.current);
+  }, []);
+
+  // 재생 (정지 상태 → 처음부터 / 일시정지 상태 → 이어 듣기).
+  const playTts = useCallback(() => {
+    if (typeof window === "undefined") return;
+    const synth = window.speechSynthesis;
+    if (!synth) return;
+    if (ttsState === "paused") {
+      synth.resume();
+      setTtsState("speaking");
+      return;
+    }
+    if (ttsState === "idle") {
+      speakFromIndex(0);
+    }
+  }, [ttsState, speakFromIndex]);
+
+  // 일시정지 — 현재 발화 중인 절의 중간 지점에서 멈추고, 재생 시 그 지점부터 이어짐.
+  const pauseTts = useCallback(() => {
+    if (typeof window === "undefined") return;
+    const synth = window.speechSynthesis;
+    if (!synth) return;
+    if (ttsState === "speaking") {
+      synth.pause();
+      setTtsState("paused");
+    }
+  }, [ttsState]);
+
+  // 정지 — 큐 비우고 처음 상태로. ttsActiveRef 를 먼저 false 로 두어 늦게
+  // 도착하는 onend 의 자동 진행을 차단.
+  const stopTts = useCallback(() => {
+    if (typeof window === "undefined") return;
+    ttsActiveRef.current = false;
+    window.speechSynthesis?.cancel();
+    setTtsState("idle");
+    setTtsVerseN(null);
+    ttsIndexRef.current = 0;
+  }, []);
+
+  // Web Speech 는 발화 도중 rate/voice/pitch/volume 변경을 지원하지 않는다.
+  // 재생/일시정지 상태에서 설정이 바뀌면 현재 절부터 새 설정으로 재시작.
+  //   - ttsActiveRef 를 false 로 떨군 뒤 cancel — 진행 중인 onend 가
+  //     다음 절을 시작하는 race condition 차단.
+  //   - 다음 tick 으로 미뤄 cancel() 의 큐 비우기 지연을 흡수.
+  const restartIfActive = useCallback(() => {
+    if (ttsState !== "speaking" && ttsState !== "paused") return;
+    const idx = ttsIndexRef.current;
+    ttsActiveRef.current = false;
+    window.speechSynthesis?.cancel();
+    window.setTimeout(() => speakFromIndex(idx), 50);
+  }, [ttsState, speakFromIndex]);
+
+  // 속도 — 0.5 ~ 2.0 (UI 는 0.8/1.0/1.25/1.5 4단계 노출).
+  const changeTtsRate = useCallback(
+    (newRate: number) => {
+      const clamped = Math.max(0.5, Math.min(2, newRate));
+      setTtsRate(clamped);
+      ttsRateRef.current = clamped;
+      restartIfActive();
+    },
+    [restartIfActive],
+  );
+
+  // 목소리 — voiceURI 문자열. null 이면 브라우저 기본 voice 사용.
+  const changeTtsVoice = useCallback(
+    (uri: string | null) => {
+      setTtsVoiceURI(uri);
+      ttsVoiceURIRef.current = uri;
+      restartIfActive();
+    },
+    [restartIfActive],
+  );
+
+  // 음 높낮이 — 0.5 ~ 1.5 (utterance.pitch).
+  const changeTtsPitch = useCallback(
+    (p: number) => {
+      const clamped = Math.max(0.5, Math.min(1.5, p));
+      setTtsPitch(clamped);
+      ttsPitchRef.current = clamped;
+      restartIfActive();
+    },
+    [restartIfActive],
+  );
+
+  // 음량 — 0 ~ 1 (utterance.volume).
+  const changeTtsVolume = useCallback(
+    (vol: number) => {
+      const clamped = Math.max(0, Math.min(1, vol));
+      setTtsVolume(clamped);
+      ttsVolumeRef.current = clamped;
+      restartIfActive();
+    },
+    [restartIfActive],
+  );
+
+  // 목소리 목록을 한국어 / 그 외 두 그룹으로 미리 나눠 둠 — drop-down optgroup
+  // 렌더링용. 이미 위 voices 로딩 effect 에서 ko 우선 정렬됐으므로 단순 분리.
+  const { koreanVoices, otherVoices } = useMemo(() => {
+    const ko: SpeechSynthesisVoice[] = [];
+    const other: SpeechSynthesisVoice[] = [];
+    for (const v of ttsVoices) {
+      if (v.lang.toLowerCase().startsWith("ko")) ko.push(v);
+      else other.push(v);
+    }
+    return { koreanVoices: ko, otherVoices: other };
+  }, [ttsVoices]);
+
+  // 설정 팝오버 외부 클릭 시 닫기. brp-tts-bar 안쪽(=기어 버튼/팝오버 자체) 클릭은
+  // 닫지 않는다. mount/unmount 는 ttsSettingsOpen 토글로만 일어남.
+  useEffect(() => {
+    if (!ttsSettingsOpen) return;
+    if (typeof document === "undefined") return;
+    const onDocClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target?.closest(".brp-tts-bar")) return;
+      setTtsSettingsOpen(false);
+    };
+    // mousedown 으로 잡으면 click 보다 먼저 발생해 같은 click 의 일부로
+    // 닫혀버리는 케이스가 있어 click 으로 사용. 다음 tick 등록은 불필요
+    // (state 가 true 가 된 이후에야 effect 가 돌므로 안전).
+    document.addEventListener("click", onDocClick);
+    return () => document.removeEventListener("click", onDocClick);
+  }, [ttsSettingsOpen]);
+
+  // 책/장/번역/모드 가 바뀌면 자동 정지. 읽고 있던 위치도 초기화.
+  // ESLint react-hooks/exhaustive-deps 는 stopTts 가 안정한 callback 이므로 안전.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    ttsActiveRef.current = false;
+    window.speechSynthesis?.cancel();
+    setTtsState("idle");
+    setTtsVerseN(null);
+    ttsIndexRef.current = 0;
+  }, [bookId, chapterNumber, effectiveTranslation, readingMode]);
+
+  // 화면 벗어남(unmount) / 탭 전환 시 자동 정지.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const onVisibility = () => {
+      if (document.hidden) {
+        ttsActiveRef.current = false;
+        window.speechSynthesis?.cancel();
+        setTtsState("idle");
+        setTtsVerseN(null);
+      }
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibility);
+      ttsActiveRef.current = false;
+      window.speechSynthesis?.cancel();
+    };
+  }, []);
+
+  // 현재 읽고 있는 절을 화면 가운데로 부드럽게 스크롤.
+  // 일반 reader 스크롤 컨테이너와 immersive(.brp-page--immersive) 컨테이너 둘 다
+  // scrollIntoView 가 자동으로 가까운 스크롤 부모를 따라가므로 그대로 사용.
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    if (ttsVerseN == null) return;
+    const el = document.querySelector<HTMLElement>(
+      `.brp-verse[data-verse-num="${ttsVerseN}"]`,
+    );
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [ttsVerseN]);
 
   const stopListening = useCallback(() => {
     listeningRef.current = false;
@@ -2609,10 +3015,13 @@ export default function BibleReadingPage() {
 
     // 모드 드롭다운 복구. URL 쿼리(?view=study|english) 가 가장 우선
     // (메뉴 링크 / 외부 진입), 없으면 localStorage 의 마지막 선택을 따른다.
-    // english/study 는 로마서 1장 전용이라, 진입 시 자동으로 책/장을 로마서
-    // 1장으로 맞춘다. URL 파라미터는 적용 후 history.replaceState 로 정리해
-    // 사용자가 이후 책/장을 바꾸고 새로고침했을 때 다시 study 로 끌려오지
-    // 않도록 한다.
+    // study/english 는 이제 NT 27 + OT 39 = 66권 전체를 지원하므로(STUDY_BOOK_IDS)
+    // 위에서 복구된 사용자의 마지막 책/장을 그대로 유지한다. 옛 동작(=무조건
+    // 로마서 1장으로 끌고 오기)은 사용자가 레위기 히브리어 같은 다른 책에
+    // 머무르고 있다가 이 effect 가 다시 돌 때 본문이 갑자기 로마서로 "튕겨
+    // 나가는" 버그를 일으켰다. 안전 폴백은 STUDY_BOOK_IDS 에 없는 책일 때만
+    // 발동(현재는 사실상 일어나지 않음). URL 파라미터는 적용 후
+    // history.replaceState 로 정리해 다음 새로고침에서 다시 끌려오지 않게 한다.
     let initialView: ViewMode | null = null;
     let urlParamApplied = false;
     try {
@@ -2632,17 +3041,26 @@ export default function BibleReadingPage() {
     }
     if (initialView && initialView !== "reader") {
       setViewMode(initialView);
-      setBookId("romans" as BookId);
-      setBookConfirmed(true);
-      setChapterNumber(1);
-      // 신약 드롭다운에 로마서 표시. 구약 쪽 last 는 위에서 복구된 값을 보존.
-      setLastNtBookId("romans" as BookId);
-      try {
-        window.localStorage.setItem(CURRENT_BOOK_KEY, "romans");
-        window.localStorage.setItem(currentChapterKey("romans" as BookId), "1");
-        window.localStorage.setItem(LAST_NT_BOOK_KEY, "romans");
-      } catch {
-        /* ignore */
+      // 위에서 복구된 사용자의 마지막 책(= savedBook)이 study/english 가
+      // 지원하는 66권 안에 있으면 그 책 그대로 둔다. 아주 예외적인 경우
+      // (저장값 없음/잘못된 값으로 bookId 가 기본 "proverbs" 인 상태에서
+      // proverbs 가 어떻게든 빠진다든지) 에만 로마서 1장 폴백을 적용.
+      const currentBook =
+        savedBook && savedBook in BOOKS ? (savedBook as BookId) : null;
+      const keepBook = currentBook !== null && STUDY_BOOK_IDS.includes(currentBook);
+      if (!keepBook) {
+        setBookId("romans" as BookId);
+        setBookConfirmed(true);
+        setChapterNumber(1);
+        // 신약 드롭다운에 로마서 표시. 구약 쪽 last 는 위에서 복구된 값을 보존.
+        setLastNtBookId("romans" as BookId);
+        try {
+          window.localStorage.setItem(CURRENT_BOOK_KEY, "romans");
+          window.localStorage.setItem(currentChapterKey("romans" as BookId), "1");
+          window.localStorage.setItem(LAST_NT_BOOK_KEY, "romans");
+        } catch {
+          /* ignore */
+        }
       }
     }
     if (urlParamApplied) {
@@ -4387,6 +4805,7 @@ export default function BibleReadingPage() {
               ? chapterFullyRead
               : idx < readVerseCount;
           const isSelected = selectedVerses.has(verse.n);
+          const isSpeaking = ttsVerseN === verse.n;
           return (
             <div
               key={`${bookId}-${chapterNumber}-${effectiveTranslation}-${verse.n}`}
@@ -4395,7 +4814,7 @@ export default function BibleReadingPage() {
                 selectionMode ? "is-selecting" : ""
               } ${isSelected ? "is-selected" : ""} ${
                 flashVerse === verse.n ? "is-flash" : ""
-              }`}
+              } ${isSpeaking ? "is-speaking" : ""}`}
               onPointerDown={(e) => handleVersePointerDown(verse.n, e)}
               onPointerMove={handleVersePointerMove}
               onPointerUp={cancelLongPress}
@@ -4560,6 +4979,206 @@ export default function BibleReadingPage() {
       </section>
 
       </div>{/* /.brp-canvas */}
+
+      {/* 음성 재생 컨트롤(브라우저 SpeechSynthesis) — 낭독 모드에서만 노출.
+          묵독(scroll) 모드에서는 숨김. dock 위쪽(bottom: 76px) 에 떠 있는 별도
+          알약. 책/장이 정해졌고 본문(verses) 이 있는 상태에서만 의미 있음. */}
+      {bookConfirmed && readingMode === "mic" && hasFilledText && (
+        <div className="brp-tts-bar" role="region" aria-label="본문 음성 재생">
+          <button
+            type="button"
+            className={`brp-tts-btn brp-tts-btn--primary ${
+              ttsState === "speaking" ? "is-playing" : ""
+            }`}
+            onClick={ttsState === "speaking" ? pauseTts : playTts}
+            disabled={!ttsSupported}
+            aria-label={
+              ttsState === "speaking"
+                ? "음성 재생 일시정지"
+                : ttsState === "paused"
+                  ? "음성 재생 이어 듣기"
+                  : "음성 재생 시작"
+            }
+            title={
+              !ttsSupported
+                ? "이 브라우저는 음성 합성을 지원하지 않습니다"
+                : ttsState === "speaking"
+                  ? "일시정지"
+                  : ttsState === "paused"
+                    ? "이어 듣기"
+                    : "처음부터 재생"
+            }
+          >
+            {ttsState === "speaking" ? (
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                <rect x="3.5" y="2.5" width="3" height="11" rx="1" fill="currentColor" />
+                <rect x="9.5" y="2.5" width="3" height="11" rx="1" fill="currentColor" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                <path d="M3.5 2.5v11l10-5.5-10-5.5z" fill="currentColor" />
+              </svg>
+            )}
+            <span>
+              {ttsState === "speaking"
+                ? "일시정지"
+                : ttsState === "paused"
+                  ? "이어 듣기"
+                  : "음성 재생"}
+            </span>
+          </button>
+          <button
+            type="button"
+            className="brp-tts-btn"
+            onClick={stopTts}
+            disabled={!ttsSupported || ttsState === "idle"}
+            aria-label="음성 재생 정지"
+            title="정지"
+          >
+            <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true">
+              <rect x="3" y="3" width="10" height="10" rx="1.2" fill="currentColor" />
+            </svg>
+          </button>
+          {/* 속도 — 0.8 / 1.0 / 1.25 / 1.5. 활성 속도는 갈색 fill. */}
+          <div
+            className="brp-tts-rates"
+            role="group"
+            aria-label="읽기 속도 선택"
+          >
+            {[0.8, 1.0, 1.25, 1.5].map((r) => (
+              <button
+                key={r}
+                type="button"
+                className={`brp-tts-rate ${
+                  Math.abs(ttsRate - r) < 0.001 ? "is-active" : ""
+                }`}
+                onClick={() => changeTtsRate(r)}
+                disabled={!ttsSupported}
+                aria-pressed={Math.abs(ttsRate - r) < 0.001}
+                aria-label={`읽기 속도 ${r}배속`}
+              >
+                {r === 1.0 ? "1.0×" : `${r}×`}
+              </button>
+            ))}
+          </div>
+          {/* 진행 표시 — 현재 절 번호. ttsVerseN 이 없으면 "대기" */}
+          <span className="brp-tts-progress" aria-live="polite">
+            {ttsVerseN != null
+              ? `${ttsVerseN}절`
+              : ttsSupported
+                ? "대기"
+                : "미지원"}
+          </span>
+          {/* 설정 — 목소리 / 음 높낮이 / 음량. 기어 버튼 토글로 팝오버를 띄운다. */}
+          <button
+            type="button"
+            className={`brp-tts-btn brp-tts-settings-btn ${
+              ttsSettingsOpen ? "is-open" : ""
+            }`}
+            onClick={() => setTtsSettingsOpen((o) => !o)}
+            disabled={!ttsSupported}
+            aria-label="음성 설정"
+            aria-expanded={ttsSettingsOpen}
+            title="목소리 / 음 높낮이 / 음량"
+          >
+            <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+              <path
+                d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zm5.4 3.7-1.4-.32a4.2 4.2 0 0 0-.38-.92l.78-1.22a.4.4 0 0 0-.05-.5l-.78-.78a.4.4 0 0 0-.5-.05L9.84 5.9a4.2 4.2 0 0 0-.92-.38l-.32-1.4a.4.4 0 0 0-.4-.32h-1.1a.4.4 0 0 0-.4.32l-.32 1.4a4.2 4.2 0 0 0-.92.38l-1.22-.78a.4.4 0 0 0-.5.05l-.78.78a.4.4 0 0 0-.05.5l.78 1.22a4.2 4.2 0 0 0-.38.92l-1.4.32a.4.4 0 0 0-.32.4v1.1c0 .2.13.36.32.4l1.4.32c.1.32.22.63.38.92l-.78 1.22a.4.4 0 0 0 .05.5l.78.78c.13.13.34.16.5.05l1.22-.78c.29.16.6.28.92.38l.32 1.4c.04.19.2.32.4.32h1.1a.4.4 0 0 0 .4-.32l.32-1.4c.32-.1.63-.22.92-.38l1.22.78a.4.4 0 0 0 .5-.05l.78-.78a.4.4 0 0 0 .05-.5L12.62 9.84c.16-.29.28-.6.38-.92l1.4-.32a.4.4 0 0 0 .32-.4v-1.1a.4.4 0 0 0-.32-.4z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          {ttsSettingsOpen && ttsSupported && (
+            <div
+              className="brp-tts-settings"
+              role="dialog"
+              aria-label="음성 설정"
+            >
+              {/* 목소리 선택 — 한국어 우선 optgroup. 음성이 없으면 disabled. */}
+              <label className="brp-tts-field">
+                <span className="brp-tts-field-row">
+                  <span className="brp-tts-field-label">목소리</span>
+                  <span className="brp-tts-field-hint">
+                    {koreanVoices.length > 0
+                      ? `한국어 ${koreanVoices.length}개`
+                      : "한국어 음성 없음"}
+                  </span>
+                </span>
+                <select
+                  className="brp-tts-select"
+                  value={ttsVoiceURI ?? ""}
+                  onChange={(e) => changeTtsVoice(e.target.value || null)}
+                  disabled={ttsVoices.length === 0}
+                >
+                  <option value="">기본 (브라우저 자동)</option>
+                  {koreanVoices.length > 0 && (
+                    <optgroup label="한국어">
+                      {koreanVoices.map((v) => (
+                        <option key={v.voiceURI} value={v.voiceURI}>
+                          {v.name}
+                          {v.localService ? "" : " (네트워크)"}
+                        </option>
+                      ))}
+                    </optgroup>
+                  )}
+                  {otherVoices.length > 0 && (
+                    <optgroup label="기타 언어">
+                      {otherVoices.map((v) => (
+                        <option key={v.voiceURI} value={v.voiceURI}>
+                          {v.name} · {v.lang}
+                        </option>
+                      ))}
+                    </optgroup>
+                  )}
+                </select>
+              </label>
+              {/* 음 높낮이 — 0.5 ~ 1.5, 0.1 단위 슬라이더 */}
+              <label className="brp-tts-field">
+                <span className="brp-tts-field-row">
+                  <span className="brp-tts-field-label">음 높낮이</span>
+                  <span className="brp-tts-field-value">
+                    {ttsPitch.toFixed(1)}
+                  </span>
+                </span>
+                <input
+                  className="brp-tts-range"
+                  type="range"
+                  min={0.5}
+                  max={1.5}
+                  step={0.1}
+                  value={ttsPitch}
+                  onChange={(e) => changeTtsPitch(parseFloat(e.target.value))}
+                  aria-label="음 높낮이"
+                />
+                <span className="brp-tts-range-scale">
+                  <span>낮음</span>
+                  <span>기본</span>
+                  <span>높음</span>
+                </span>
+              </label>
+              {/* 음량 — 0 ~ 1, 0.1 단위 */}
+              <label className="brp-tts-field">
+                <span className="brp-tts-field-row">
+                  <span className="brp-tts-field-label">음량</span>
+                  <span className="brp-tts-field-value">
+                    {Math.round(ttsVolume * 100)}%
+                  </span>
+                </span>
+                <input
+                  className="brp-tts-range"
+                  type="range"
+                  min={0}
+                  max={1}
+                  step={0.1}
+                  value={ttsVolume}
+                  onChange={(e) => changeTtsVolume(parseFloat(e.target.value))}
+                  aria-label="음량"
+                />
+              </label>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* 하단 고정 컨트롤 — 마이크/스크롤 상태, 카운터, "다 읽었어요" 버튼.
           모두 책+장이 정해진 뒤에만 의미 있는 액션이라 책 미선택 시 통째로 숨김. */}
@@ -5583,6 +6202,24 @@ export default function BibleReadingPage() {
           .brp-verse.is-flash {
             animation: none;
           }
+        }
+
+        /* TTS 가 지금 읽고 있는 절 — 부드러운 좌측 액센트 바 + 옅은 배경.
+           읽기 진행(is-read) / 선택(is-selected) 와 시각적으로 구분되도록
+           좌측 액센트 띠는 굵게(4px) 두고 배경은 더 옅게. */
+        .brp-verse.is-speaking {
+          background: color-mix(in srgb, var(--accent) 10%, transparent);
+          border-radius: var(--radius-md);
+          box-shadow: inset 4px 0 0 0 var(--accent);
+          transition: background 200ms ease, box-shadow 200ms ease;
+        }
+        .brp-verse.is-speaking .brp-verse-number {
+          color: var(--accent);
+          font-weight: 700;
+        }
+        /* immersive 다크 모드에서는 액센트 톤이 너무 진해 보이지 않게 알파만 조정 */
+        .brp-page--imm-dark .brp-verse.is-speaking {
+          background: color-mix(in srgb, var(--accent) 18%, transparent);
         }
 
         /* 절 번호 — 표시만. 클릭/선택은 .brp-verse 컨테이너의 long-press +
@@ -6888,6 +7525,334 @@ export default function BibleReadingPage() {
           -webkit-backdrop-filter: saturate(180%) blur(18px);
           box-shadow: var(--shadow-1);
           max-width: calc(100vw - 32px);
+        }
+
+        /* ── 본문 음성 재생 컨트롤 (낭독 모드 전용) ─────────────────────────
+           dock 바로 위에 떠 있는 알약 컨트롤. 재생/일시정지 토글(주 버튼),
+           정지, 0.8×~1.5× 속도 4단계, 현재 절 표시.
+           dock 와 같은 시각 톤(surface-translucent + line + shadow-1)으로 통일. */
+        .brp-tts-bar {
+          position: fixed;
+          left: 50%;
+          bottom: 76px;
+          z-index: 22;
+          transform: translateX(-50%);
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          padding: 6px 8px;
+          border-radius: var(--radius-pill);
+          background: var(--surface-translucent);
+          border: 1px solid var(--line);
+          backdrop-filter: saturate(180%) blur(18px);
+          -webkit-backdrop-filter: saturate(180%) blur(18px);
+          box-shadow: var(--shadow-1);
+          max-width: calc(100vw - 32px);
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        /* 설정 기어 버튼 — TTS 바 안의 다른 아이콘 버튼과 정사각 형태로 통일.
+           열린 상태에서 액센트 톤으로 강조. */
+        .brp-tts-settings-btn {
+          width: 34px;
+          padding: 0 !important;
+          justify-content: center;
+        }
+        .brp-tts-settings-btn.is-open {
+          background: rgba(194, 65, 12, 0.12) !important;
+          color: var(--accent, #c2410c);
+        }
+        .brp-page--imm-dark .brp-tts-settings-btn.is-open {
+          background: rgba(232, 168, 119, 0.18) !important;
+          color: #e8a877;
+        }
+        /* 설정 팝오버 — 바 위쪽으로 떠 있는 카드.
+           .brp-tts-bar 가 position: fixed 이므로 absolute 자식은 바 기준 정렬.
+           바 우측 정렬(right: 8px) — 모바일에서도 화면 안으로 잘 들어옴. */
+        .brp-tts-settings {
+          position: absolute;
+          bottom: calc(100% + 10px);
+          right: 8px;
+          width: min(320px, calc(100vw - 24px));
+          padding: 16px;
+          border-radius: 14px;
+          background: var(--surface, #ffffff);
+          border: 1px solid var(--line, rgba(15, 23, 42, 0.1));
+          box-shadow: 0 16px 48px rgba(15, 23, 42, 0.18);
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          z-index: 25;
+          animation: brpTtsSettingsIn 160ms cubic-bezier(0.2, 0.7, 0.2, 1);
+        }
+        @keyframes brpTtsSettingsIn {
+          from {
+            opacity: 0;
+            transform: translateY(6px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .brp-page--immersive .brp-tts-settings {
+          background: var(--brp-imm-bg, #fbfaf6);
+          border-color: var(--brp-imm-border, rgba(15, 23, 42, 0.1));
+          color: var(--brp-imm-fg, #1f2937);
+        }
+        .brp-page--imm-dark .brp-tts-settings {
+          background: #1c1f27;
+          border-color: rgba(255, 255, 255, 0.1);
+          box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+        }
+        .brp-tts-field {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        .brp-tts-field-row {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          gap: 8px;
+        }
+        .brp-tts-field-label {
+          font-size: 12.5px;
+          font-weight: 700;
+          color: var(--ink, #1f2937);
+          letter-spacing: -0.01em;
+        }
+        .brp-page--immersive .brp-tts-field-label {
+          color: var(--brp-imm-fg, #1f2937);
+        }
+        .brp-tts-field-hint {
+          font-size: 11px;
+          color: var(--ink-soft, #6b7280);
+          font-weight: 500;
+        }
+        .brp-tts-field-value {
+          font-size: 12px;
+          font-weight: 700;
+          color: var(--accent, #c2410c);
+          font-variant-numeric: tabular-nums;
+          min-width: 2.4em;
+          text-align: right;
+        }
+        .brp-page--imm-dark .brp-tts-field-value {
+          color: #e8a877;
+        }
+        /* 목소리 드롭다운 — 네이티브 select 에 약간의 테두리 + padding 만 입혀
+           모든 OS 의 기본 룩을 그대로 사용 (한국어 voice 가 OS 별로 다르게 표시되어
+           불필요한 커스텀이 오히려 혼란을 줌). */
+        .brp-tts-select {
+          width: 100%;
+          padding: 10px 12px;
+          font-size: 13.5px;
+          font-weight: 500;
+          color: inherit;
+          background: var(--surface-alt, #f6f6f4);
+          border: 1px solid var(--line, rgba(15, 23, 42, 0.12));
+          border-radius: 10px;
+          outline: none;
+          cursor: pointer;
+          transition: border-color 140ms ease, box-shadow 140ms ease;
+        }
+        .brp-tts-select:focus {
+          border-color: var(--accent, #c2410c);
+          box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.2);
+        }
+        .brp-page--imm-dark .brp-tts-select {
+          background: #11131a;
+          border-color: rgba(255, 255, 255, 0.12);
+        }
+        .brp-tts-select:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+        /* 슬라이더 — 가로 막대, 액센트 thumb. 모든 브라우저에서 일관된 룩을 위해
+           appearance: none + 트랙/엄지를 직접 그린다. */
+        .brp-tts-range {
+          width: 100%;
+          height: 28px;
+          background: transparent;
+          appearance: none;
+          -webkit-appearance: none;
+          margin: 0;
+          padding: 0;
+          cursor: pointer;
+        }
+        .brp-tts-range::-webkit-slider-runnable-track {
+          height: 4px;
+          background: rgba(15, 23, 42, 0.12);
+          border-radius: 999px;
+        }
+        .brp-page--imm-dark .brp-tts-range::-webkit-slider-runnable-track {
+          background: rgba(255, 255, 255, 0.15);
+        }
+        .brp-tts-range::-moz-range-track {
+          height: 4px;
+          background: rgba(15, 23, 42, 0.12);
+          border-radius: 999px;
+        }
+        .brp-page--imm-dark .brp-tts-range::-moz-range-track {
+          background: rgba(255, 255, 255, 0.15);
+        }
+        .brp-tts-range::-webkit-slider-thumb {
+          appearance: none;
+          -webkit-appearance: none;
+          width: 18px;
+          height: 18px;
+          background: var(--accent, #c2410c);
+          border-radius: 50%;
+          margin-top: -7px;
+          box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18);
+          cursor: pointer;
+          transition: transform 120ms ease;
+        }
+        .brp-tts-range::-moz-range-thumb {
+          width: 18px;
+          height: 18px;
+          background: var(--accent, #c2410c);
+          border: none;
+          border-radius: 50%;
+          box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18);
+          cursor: pointer;
+        }
+        .brp-tts-range:active::-webkit-slider-thumb {
+          transform: scale(1.15);
+        }
+        .brp-tts-range:focus-visible::-webkit-slider-thumb {
+          box-shadow: 0 0 0 4px rgba(194, 65, 12, 0.25);
+        }
+        .brp-tts-range-scale {
+          display: flex;
+          justify-content: space-between;
+          font-size: 10.5px;
+          color: var(--ink-soft, #6b7280);
+          margin-top: -2px;
+        }
+        /* immersive 모드에서는 brp-dock 가 숨겨지므로 TTS 바를 그 자리(=화면 하단
+           중앙)로 끌어내려서 한 줄이 되도록 한다. 색은 immersive 토큰 사용. */
+        .brp-page--immersive .brp-tts-bar {
+          bottom: 24px;
+          background: var(--brp-imm-bg-bar) !important;
+          border-color: var(--brp-imm-border) !important;
+          color: var(--brp-imm-fg) !important;
+        }
+        .brp-tts-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          height: 34px;
+          padding: 0 14px;
+          border-radius: var(--radius-pill);
+          border: 1px solid transparent;
+          background: transparent;
+          color: var(--ink);
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          cursor: pointer;
+          transition: background 140ms ease, color 140ms ease, transform 120ms ease;
+        }
+        .brp-tts-btn:hover:not(:disabled) {
+          background: rgba(15, 23, 42, 0.06);
+        }
+        .brp-tts-btn:active:not(:disabled) {
+          transform: scale(0.96);
+        }
+        .brp-tts-btn:disabled {
+          opacity: 0.4;
+          cursor: not-allowed;
+        }
+        .brp-page--imm-dark .brp-tts-btn:hover:not(:disabled) {
+          background: rgba(255, 255, 255, 0.08);
+        }
+        /* 주 버튼(재생/일시정지) — 갈색 fill 으로 명확히 구분. */
+        .brp-tts-btn--primary {
+          background: var(--accent);
+          color: var(--accent-ink, #fff);
+        }
+        .brp-tts-btn--primary:hover:not(:disabled) {
+          background: #a43508;
+        }
+        .brp-tts-btn--primary.is-playing {
+          background: #a43508;
+        }
+        /* 속도 그룹 — 좌우 hairline 으로 구분. */
+        .brp-tts-rates {
+          display: inline-flex;
+          align-items: center;
+          gap: 2px;
+          padding: 2px;
+          margin: 0 2px;
+          border-radius: var(--radius-pill);
+          background: rgba(15, 23, 42, 0.05);
+        }
+        .brp-page--imm-dark .brp-tts-rates {
+          background: rgba(255, 255, 255, 0.06);
+        }
+        .brp-tts-rate {
+          appearance: none;
+          border: none;
+          background: transparent;
+          color: inherit;
+          font-size: 12px;
+          font-weight: 600;
+          padding: 6px 10px;
+          border-radius: var(--radius-pill);
+          cursor: pointer;
+          font-variant-numeric: tabular-nums;
+          transition: background 140ms ease, color 140ms ease;
+        }
+        .brp-tts-rate:hover:not(:disabled):not(.is-active) {
+          background: rgba(15, 23, 42, 0.06);
+        }
+        .brp-page--imm-dark .brp-tts-rate:hover:not(:disabled):not(.is-active) {
+          background: rgba(255, 255, 255, 0.08);
+        }
+        .brp-tts-rate.is-active {
+          background: var(--accent);
+          color: var(--accent-ink, #fff);
+        }
+        .brp-tts-rate:disabled {
+          opacity: 0.4;
+          cursor: not-allowed;
+        }
+        .brp-tts-progress {
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--ink-soft, #6b7280);
+          padding: 0 6px;
+          font-variant-numeric: tabular-nums;
+          min-width: 2.4em;
+          text-align: center;
+        }
+        .brp-page--imm-dark .brp-tts-progress {
+          color: var(--brp-imm-fg-soft);
+        }
+        /* 좁은 모바일 — 라벨 텍스트 숨기고 아이콘만 + 속도 간격 압축. */
+        @media (max-width: 480px) {
+          .brp-tts-bar {
+            gap: 4px;
+            padding: 5px 6px;
+            bottom: 72px;
+          }
+          .brp-tts-btn {
+            padding: 0 10px;
+            font-size: 12.5px;
+          }
+          .brp-tts-btn--primary span {
+            display: inline;
+          }
+          .brp-tts-rate {
+            padding: 5px 8px;
+            font-size: 11.5px;
+          }
+          .brp-tts-progress {
+            font-size: 11.5px;
+            min-width: 2em;
+          }
         }
 
         /* 도크 1차 액션 — "다 읽었어요" 챕터 완료. 강조 그린. */
