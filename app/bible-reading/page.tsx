@@ -1533,6 +1533,18 @@ export default function BibleReadingPage() {
   // 상단 바 자동 숨김: 마우스 이동/터치/키보드 활동 → 표시 + 2.5초 idle 후 숨김.
   // 마우스가 상단 80px 안(또는 바 위)에 있으면 idle 타이머가 시작되지 않아 계속
   // 보임. 모바일에서는 본문을 탭하면 다시 표시된다.
+  //
+  // ⚠️ 모바일 "탭으로 토글" 버그 주의:
+  //   과거에는 어디든 탭하면 바가 토글되었는데, 그러면 X 닫기 버튼을 누른 순간
+  //   같은 touchend 가 window 까지 버블 → 바가 hidden 상태로 토글되면서
+  //   바에 transform: translateY(-110%) + pointer-events: none 가 240ms 트랜지션과
+  //   함께 즉시 적용됨. 그 사이 click 이 dispatch 되면 X 버튼이 더 이상 hit-test
+  //   대상이 아니라 setImmersive(false) 가 호출되지 못함 → "읽기 모드에서 나갈 수
+  //   없음" 증상. 그래서:
+  //     1) 바·피커·버튼 등 인터랙티브 영역의 탭은 토글하지 않고 "표시 + 타이머
+  //        리셋" 만 한다 (X / 책장 선택 / 글자크기 등 모든 컨트롤이 안전).
+  //     2) 본문 탭은 "표시" 만 (숨김으로 토글하지 않음). 숨김은 오직 2.5초 idle
+  //        타이머만 담당 — 사용자가 연속 탭해도 바가 깜빡이지 않는다.
   useEffect(() => {
     if (!immersive) return;
     if (typeof window === "undefined") return;
@@ -1549,10 +1561,14 @@ export default function BibleReadingPage() {
       setImmBarVisible(true);
       if (!nearTop) arm();
     };
-    // 터치는 "탭" 일 때만 바를 토글. swipe(가로/세로 큰 이동) 도중에는
-    // 바가 흔들리지 않도록 touchstart/touchend 좌표 차이를 본다.
+    // 터치는 "탭" 일 때만 처리. swipe(가로/세로 큰 이동) 도중에는 바가 흔들리지
+    // 않도록 touchstart/touchend 좌표 차이를 본다.
     let tStartX = 0;
     let tStartY = 0;
+    const INTERACTIVE_SELECTOR =
+      'button, a, input, textarea, select, [role="button"], [role="dialog"], [role="toolbar"]';
+    const CHROME_SELECTOR =
+      ".brp-immersive-bar, .brp-imm-picker, .brp-imm-picker-backdrop";
     const onTouchStart = (e: TouchEvent) => {
       if (e.touches.length !== 1) return;
       tStartX = e.touches[0].clientX;
@@ -1564,7 +1580,20 @@ export default function BibleReadingPage() {
       const dx = Math.abs(t.clientX - tStartX);
       const dy = Math.abs(t.clientY - tStartY);
       if (dx > 12 || dy > 12) return; // swipe/스크롤은 무시
-      setImmBarVisible((prev) => !prev);
+      const target = e.target as HTMLElement | null;
+      const onChrome = !!target?.closest?.(CHROME_SELECTOR);
+      const onInteractive = !!target?.closest?.(INTERACTIVE_SELECTOR);
+      if (onChrome || onInteractive) {
+        // 바·피커·버튼 위 탭은 토글하지 않는다. 사용자가 X 등을 누르는 도중에
+        // 바가 사라져 click 이 취소되는 것을 방지. 대신 표시 상태를 유지하고
+        // idle 타이머를 다시 건다.
+        setImmBarVisible(true);
+        arm();
+        return;
+      }
+      // 본문 탭: 바를 "표시" 만 한다. 숨김은 idle 타이머에만 맡긴다.
+      setImmBarVisible(true);
+      arm();
     };
     const onKey = () => {
       setImmBarVisible(true);
