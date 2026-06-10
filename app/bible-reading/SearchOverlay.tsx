@@ -9,7 +9,6 @@
 
 import {
   useEffect,
-  useMemo,
   useRef,
   useState,
   type ReactNode,
@@ -17,11 +16,22 @@ import {
 import type { BookId } from "./books";
 import {
   getTranslationLabel,
+  isSearchIndexReady,
   normalizeForSearch,
+  prepareSearchIndex,
   searchBible,
   SEARCHABLE_BOOK_NAMES,
+  type SearchOutcome,
   type SearchTranslation,
 } from "./bibleSearch";
+
+const EMPTY_OUTCOME: SearchOutcome = {
+  results: [],
+  total: 0,
+  occurrences: 0,
+  truncated: false,
+  byBook: [],
+};
 
 const TRANSLATIONS: SearchTranslation[] = ["krv", "kids"];
 const DEBOUNCE_MS = 250;
@@ -149,11 +159,55 @@ export default function SearchOverlay({
     setBookFilter(null);
   }, [deferred, tr]);
 
-  const outcome = useMemo(
-    () => searchBible(deferred, tr, bookFilter),
-    [deferred, tr, bookFilter],
-  );
+  // 검색 인덱스 준비 — 오버레이가 열린 즉시 미리 호출해 두면 사용자가 입력을
+  // 시작할 즈음 인덱스가 거의(또는 이미) 준비돼 있다. 같은 promise 를 공유.
+  const [indexReady, setIndexReady] = useState(isSearchIndexReady());
+  useEffect(() => {
+    if (!open) return;
+    if (indexReady) return;
+    let cancelled = false;
+    prepareSearchIndex()
+      .then(() => {
+        if (!cancelled) setIndexReady(true);
+      })
+      .catch(() => {
+        // 빌드 실패 — 인덱스 promise 가 비워져 다음 검색에서 다시 시도된다.
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [open, indexReady]);
+
+  // 비동기 검색 — `searchBible` 이 인덱스를 await 하므로, 여기선 결과를
+  // useState 에 쌓는다. 한 번 검색이 시작된 뒤 새 입력/번역/필터가 들어오면
+  // cancelled 플래그로 stale 결과를 버린다.
+  const [outcome, setOutcome] = useState<SearchOutcome>(EMPTY_OUTCOME);
+  const [searching, setSearching] = useState(false);
   const hasQuery = deferred.trim().length > 0;
+  useEffect(() => {
+    if (!hasQuery) {
+      setOutcome(EMPTY_OUTCOME);
+      setSearching(false);
+      return;
+    }
+    let cancelled = false;
+    setSearching(true);
+    searchBible(deferred, tr, bookFilter)
+      .then((res) => {
+        if (cancelled) return;
+        setOutcome(res);
+        setSearching(false);
+        setIndexReady(true);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setOutcome(EMPTY_OUTCOME);
+        setSearching(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [deferred, tr, bookFilter, hasQuery]);
 
   if (!open) return null;
 
@@ -230,6 +284,15 @@ export default function SearchOverlay({
           {!hasQuery ? (
             <p className="bs-hint type-small">
               현재 {SEARCHABLE_BOOK_NAMES}에서 검색됩니다.
+              {!indexReady ? (
+                <span className="bs-hint-aux"> · 검색 인덱스 준비 중…</span>
+              ) : null}
+            </p>
+          ) : searching && outcome.results.length === 0 ? (
+            <p className="bs-hint type-small" aria-live="polite">
+              {indexReady
+                ? "검색 중…"
+                : "검색 인덱스 준비 중이에요. 첫 검색만 잠시 걸려요."}
             </p>
           ) : outcome.results.length === 0 ? (
             <p className="bs-empty type-small">일치하는 구절이 없습니다.</p>
@@ -584,6 +647,10 @@ export default function SearchOverlay({
           padding: 28px 16px;
           text-align: center;
           color: var(--ink-mute);
+        }
+        .bs-hint-aux {
+          color: var(--ink-mute);
+          opacity: 0.85;
         }
         .bs-list {
           list-style: none;
