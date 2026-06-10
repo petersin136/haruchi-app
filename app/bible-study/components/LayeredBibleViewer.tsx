@@ -892,25 +892,18 @@ export default function LayeredBibleViewer({
         </p>
       )}
       {!manifest && !loadError && (
-        <ol className="bsv-verses" aria-busy="true" aria-live="polite">
-          {Array.from({ length: 6 }, (_, i) => (
-            <li key={`sk-${i}`} className="bsv-verse bsv-verse--skeleton">
-              <div className="bsv-verse-head">
-                <span className="bsv-verse-num bsv-skeleton-pill" aria-hidden="true" />
-              </div>
-              <div className="bsv-layers">
-                <div className="bsv-layer bsv-layer--skeleton">
-                  <span className="bsv-tag bsv-skeleton-pill" aria-hidden="true" />
-                  <span className="bsv-skeleton-line" aria-hidden="true" />
-                </div>
-                <div className="bsv-layer bsv-layer--skeleton">
-                  <span className="bsv-tag bsv-skeleton-pill" aria-hidden="true" />
-                  <span className="bsv-skeleton-line bsv-skeleton-line--short" aria-hidden="true" />
-                </div>
-              </div>
-            </li>
-          ))}
-        </ol>
+        // manifest 대기는 보통 매우 짧다(메타 1KB · 캐시되면 한 프레임).
+        // 화면을 6줄짜리 통 스켈레톤으로 채워 두면 그 짧은 시간 동안 사용자에겐
+        // "빈 화면" 처럼 보이는 사고가 있어, 한 줄짜리 인라인 표시로 줄였다.
+        <p
+          className="bsv-loading"
+          aria-busy="true"
+          aria-live="polite"
+          role="status"
+        >
+          <span className="bsv-loading-dot" aria-hidden="true" />
+          본문을 불러오는 중…
+        </p>
       )}
       {manifest && verseCount === 0 && (
         <p className="bsv-empty">이 장에는 절 데이터가 없어요.</p>
@@ -1423,7 +1416,32 @@ export default function LayeredBibleViewer({
         .bsv-empty.bsv-error {
           color: #b54545;
         }
-        /* ── 로딩 스켈레톤 ── */
+        /* ── 짧은 인라인 로딩(매니페스트 대기) ── */
+        .bsv-loading {
+          margin: 16px 0 0;
+          padding: 12px 0;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          color: var(--bsv-mute);
+          font-size: 13px;
+        }
+        .bsv-loading-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 999px;
+          background: var(--bsv-mute);
+          opacity: 0.6;
+          animation: bsv-pulse 1.1s ease-in-out infinite;
+        }
+        @keyframes bsv-pulse {
+          0%, 100% { opacity: 0.25; transform: scale(0.85); }
+          50% { opacity: 0.95; transform: scale(1.15); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .bsv-loading-dot { animation: none; opacity: 0.6; }
+        }
+        /* ── 로딩 스켈레톤 (개별 레이어 대기 시) ── */
         .bsv-verse--skeleton {
           opacity: 0.7;
         }

@@ -1,16 +1,21 @@
 // =============================================================================
-// 성경 본문 데이터 단일 진입점.
+// 성경 본문 데이터 단일 진입점 — lazy fetch 기반.
 //
-//   - 66권의 JSON 을 정적 import 해 `BOOK_DATA: Record<BookId, BibleData>` 로 노출.
-//   - page.tsx (읽기) / bibleSearch.ts (검색) 양쪽이 같은 객체를 공유해
-//     번들에 본문 데이터가 중복 포함되지 않도록 한다.
-//   - 옵션 A(오프라인 우선) 정책에 따라 정적 import. 빌드타임 트리쉐이킹은
-//     불가능하나(이미 다 쓰임), 한 번 로드되면 메모리에 상주해 검색·읽기 모두 즉답.
+//   이전(2026-06): 66권 JSON 을 정적 import 해 `BOOK_DATA: Record<BookId, BibleData>`
+//                  를 메모리에 상시 로드. client bundle 에 약 40MB 의 JSON 이 들어가
+//                  bible-reading 페이지의 dev 컴파일/hydration 이 매우 무거웠다
+//                  (4.4s / 750 modules · 첫 진입 후 "클릭해야 화면이 뜨는" 증상의
+//                  근본 원인 중 하나).
 //
-//   타입 메모:
-//     - 신규 61권의 `translations.kids` 는 placeholder 라벨만 가지며 verses.kids = [].
-//       UI 의 `hasKids = verses.kids.length > 0` 체크로 자연스럽게 비활성화된다.
-//     - 기존 5권(잠언/마태/마가/누가/요한)은 어린이 번역까지 보유.
+//   현재: JSON 파일은 `public/bible-data/<bookId>.json` 정적 자산으로 옮기고,
+//        본 모듈은 `loadBookData(bookId)` 비동기 함수로만 노출한다. 모듈 레벨
+//        Map 캐시로 같은 책은 두 번 fetch 하지 않는다.
+//
+//   사용 측:
+//     - page.tsx (읽기): `useBookData(bookId)` (page.tsx 안 hook) → 현재 보는
+//                         한 권만 fetch. 같은 책으로 돌아오면 캐시로 즉시.
+//     - bibleSearch.ts (검색): `loadAllBooks()` → 첫 검색 시 1회 66권 fetch +
+//                              평탄화 인덱스 빌드 + 캐시. 이후 검색은 인덱스 순회.
 //
 // ─────────────────────────────────────────────────────────────────────────────
 //  데이터 라이선스 / 출처  ── 자세한 내용은 app/bible-reading/DATA-LICENSE.md
@@ -21,90 +26,14 @@
 //     대한성서공회(bskorea.or.kr) 공식 저작권 FAQ —
 //     "성경전서 개역한글판은 저작재산권 보호기간 50년이 경과되어
 //      저작권료 지급 없이 사용 가능"
-//     (※ 개역개정판 NKRV 는 해당되지 않으므로 본 앱은 절대 NKRV 를 쓰지 않는다.
-//        scripts/import-bible-krv.mjs 의 KRV_CHECKS 가 변환 시점에 자동 검증함.)
+//     (※ 개역개정판 NKRV 는 해당되지 않으므로 본 앱은 절대 NKRV 를 쓰지 않는다.)
 //
 //   데이터 출처:
 //     scrollmapper/bible_databases (GitHub) — 2025-languages branch
 //     sources/ko/KorRV/KorRV.json (저장소 README: License = Public Domain)
-//
-//   KRV 확정 검증(텍스트 단위 차이):
-//     · 시 23:1   "내가 부족함이 없으리로다"      (KRV. NKRV 는 "내게")
-//     · 요 3:16   "저를 ... 멸망치 ... 하심이니라" (KRV. NKRV 는 "그를 ... 멸망하지 ... 하심이라")
-//     · 고전 13:13 "세가지는 ... 그 중에 제일은"   (KRV. NKRV 는 "세 가지는 ... 그 중의 제일은")
 // =============================================================================
 
 import { BOOK_ORDER, type BookId } from "./books";
-
-// ─── 구약 39권 ──────────────────────────────────────────────────────────────
-import genesisData from "./genesis.json";
-import exodusData from "./exodus.json";
-import leviticusData from "./leviticus.json";
-import numbersData from "./numbers.json";
-import deuteronomyData from "./deuteronomy.json";
-import joshuaData from "./joshua.json";
-import judgesData from "./judges.json";
-import ruthData from "./ruth.json";
-import samuel1Data from "./samuel1.json";
-import samuel2Data from "./samuel2.json";
-import kings1Data from "./kings1.json";
-import kings2Data from "./kings2.json";
-import chronicles1Data from "./chronicles1.json";
-import chronicles2Data from "./chronicles2.json";
-import ezraData from "./ezra.json";
-import nehemiahData from "./nehemiah.json";
-import estherData from "./esther.json";
-import jobData from "./job.json";
-import psalmsData from "./psalms.json";
-import proverbsData from "./proverbs.json";
-import ecclesiastesData from "./ecclesiastes.json";
-import songofsolomonData from "./songofsolomon.json";
-import isaiahData from "./isaiah.json";
-import jeremiahData from "./jeremiah.json";
-import lamentationsData from "./lamentations.json";
-import ezekielData from "./ezekiel.json";
-import danielData from "./daniel.json";
-import hoseaData from "./hosea.json";
-import joelData from "./joel.json";
-import amosData from "./amos.json";
-import obadiahData from "./obadiah.json";
-import jonahData from "./jonah.json";
-import micahData from "./micah.json";
-import nahumData from "./nahum.json";
-import habakkukData from "./habakkuk.json";
-import zephaniahData from "./zephaniah.json";
-import haggaiData from "./haggai.json";
-import zechariahData from "./zechariah.json";
-import malachiData from "./malachi.json";
-
-// ─── 신약 27권 ──────────────────────────────────────────────────────────────
-import matthewData from "./matthew.json";
-import markData from "./mark.json";
-import lukeData from "./luke.json";
-import johnData from "./john.json";
-import actsData from "./acts.json";
-import romansData from "./romans.json";
-import corinthians1Data from "./corinthians1.json";
-import corinthians2Data from "./corinthians2.json";
-import galatiansData from "./galatians.json";
-import ephesiansData from "./ephesians.json";
-import philippiansData from "./philippians.json";
-import colossiansData from "./colossians.json";
-import thessalonians1Data from "./thessalonians1.json";
-import thessalonians2Data from "./thessalonians2.json";
-import timothy1Data from "./timothy1.json";
-import timothy2Data from "./timothy2.json";
-import titusData from "./titus.json";
-import philemonData from "./philemon.json";
-import hebrewsData from "./hebrews.json";
-import jamesData from "./james.json";
-import peter1Data from "./peter1.json";
-import peter2Data from "./peter2.json";
-import john1Data from "./john1.json";
-import john2Data from "./john2.json";
-import john3Data from "./john3.json";
-import judeData from "./jude.json";
-import revelationData from "./revelation.json";
 
 // 토글에 노출되는 번역(번역본) 키.
 //   - krv:   개역한글 (66권 전부 보유)
@@ -160,92 +89,59 @@ export type BibleData = {
   chapters: Chapter[];
 };
 
-export const BOOK_DATA: Record<BookId, BibleData> = {
-  genesis: genesisData as BibleData,
-  exodus: exodusData as BibleData,
-  leviticus: leviticusData as BibleData,
-  numbers: numbersData as BibleData,
-  deuteronomy: deuteronomyData as BibleData,
-  joshua: joshuaData as BibleData,
-  judges: judgesData as BibleData,
-  ruth: ruthData as BibleData,
-  samuel1: samuel1Data as BibleData,
-  samuel2: samuel2Data as BibleData,
-  kings1: kings1Data as BibleData,
-  kings2: kings2Data as BibleData,
-  chronicles1: chronicles1Data as BibleData,
-  chronicles2: chronicles2Data as BibleData,
-  ezra: ezraData as BibleData,
-  nehemiah: nehemiahData as BibleData,
-  esther: estherData as BibleData,
-  job: jobData as BibleData,
-  psalms: psalmsData as BibleData,
-  proverbs: proverbsData as BibleData,
-  ecclesiastes: ecclesiastesData as BibleData,
-  songofsolomon: songofsolomonData as BibleData,
-  isaiah: isaiahData as BibleData,
-  jeremiah: jeremiahData as BibleData,
-  lamentations: lamentationsData as BibleData,
-  ezekiel: ezekielData as BibleData,
-  daniel: danielData as BibleData,
-  hosea: hoseaData as BibleData,
-  joel: joelData as BibleData,
-  amos: amosData as BibleData,
-  obadiah: obadiahData as BibleData,
-  jonah: jonahData as BibleData,
-  micah: micahData as BibleData,
-  nahum: nahumData as BibleData,
-  habakkuk: habakkukData as BibleData,
-  zephaniah: zephaniahData as BibleData,
-  haggai: haggaiData as BibleData,
-  zechariah: zechariahData as BibleData,
-  malachi: malachiData as BibleData,
-  matthew: matthewData as BibleData,
-  mark: markData as BibleData,
-  luke: lukeData as BibleData,
-  john: johnData as BibleData,
-  acts: actsData as BibleData,
-  romans: romansData as BibleData,
-  corinthians1: corinthians1Data as BibleData,
-  corinthians2: corinthians2Data as BibleData,
-  galatians: galatiansData as BibleData,
-  ephesians: ephesiansData as BibleData,
-  philippians: philippiansData as BibleData,
-  colossians: colossiansData as BibleData,
-  thessalonians1: thessalonians1Data as BibleData,
-  thessalonians2: thessalonians2Data as BibleData,
-  timothy1: timothy1Data as BibleData,
-  timothy2: timothy2Data as BibleData,
-  titus: titusData as BibleData,
-  philemon: philemonData as BibleData,
-  hebrews: hebrewsData as BibleData,
-  james: jamesData as BibleData,
-  peter1: peter1Data as BibleData,
-  peter2: peter2Data as BibleData,
-  john1: john1Data as BibleData,
-  john2: john2Data as BibleData,
-  john3: john3Data as BibleData,
-  jude: judeData as BibleData,
-  revelation: revelationData as BibleData,
+// ── 안전 폴백 ──────────────────────────────────────────────────────────────
+// fetch 가 도착하기 전(또는 실패) 에도 호출부가 동기 인터페이스로 안전하게
+// 다룰 수 있도록 빈 BibleData 한 개를 노출한다. chapters=[] 라 verses 접근부
+// (`?? []`) 가 모두 빈 배열로 흘러 자연스럽게 "본문 없음" 상태가 된다.
+export const EMPTY_BIBLE_DATA: BibleData = {
+  translations: {
+    krv: { label: "개역한글" },
+  },
+  chapters: [],
 };
 
-// 검색·검수용 헬퍼: 한 권에 어린이(kids) 번역이 한 절이라도 있으면 true.
-// (현재는 기존 5권만 true) UI 의 토글 비활성화 판정과 함께 사용 가능.
-export const hasKidsTranslation = (bookId: BookId): boolean => {
-  const data = BOOK_DATA[bookId];
-  for (const ch of data.chapters) {
-    if ((ch.verses.kids?.length ?? 0) > 0) return true;
-  }
-  return false;
-};
+// ── 모듈 레벨 캐시 ─────────────────────────────────────────────────────────
+// 같은 책의 JSON 은 한 번만 받는다. 재마운트 사이에서도 유지되어, 모드 토글로
+// 컴포넌트가 잠깐 사라졌다 돌아와도 즉시 그려진다.
+const bookCache = new Map<BookId, Promise<BibleData>>();
 
-// 디버그/통계: 전체 절 수 (책당 합산). 콘솔 검수용으로 안전하게 노출.
-export const computeTotalVerses = (): number => {
-  let total = 0;
-  for (const id of BOOK_ORDER) {
-    for (const ch of BOOK_DATA[id].chapters) {
-      total += ch.verses.krv?.length ?? 0;
+// 전체 66권을 받은 적이 있는지(검색 인덱스 빌드용 1회 트리거).
+let allBooksPromise: Promise<Record<BookId, BibleData>> | null = null;
+
+export async function loadBookData(bookId: BookId): Promise<BibleData> {
+  const cached = bookCache.get(bookId);
+  if (cached) return cached;
+  const p = (async () => {
+    // `cache: "default"` 로 두면 브라우저 HTTP 캐시(ETag) 가 자연스럽게 동작.
+    // dev 에서 데이터 갱신 후 hard reload 가 필요할 수 있으나 일반 사용에는 안전.
+    const res = await fetch(`/bible-data/${bookId}.json`, { cache: "default" });
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status} — ${bookId}.json 을 불러오지 못했어요`);
     }
-  }
-  return total;
-};
+    return (await res.json()) as BibleData;
+  })();
+  bookCache.set(bookId, p);
+  // 실패 시 같은 책을 다시 시도할 수 있도록 캐시에서 제거.
+  p.catch(() => bookCache.delete(bookId));
+  return p;
+}
+
+// 검색 인덱스 빌드용 — 66권을 한꺼번에 fetch. 이미 받은 책은 캐시 재사용.
+// 한 번만 시작되고, 같은 promise 를 모든 호출자가 공유한다.
+export function loadAllBooks(): Promise<Record<BookId, BibleData>> {
+  if (allBooksPromise) return allBooksPromise;
+  allBooksPromise = (async () => {
+    const entries = await Promise.all(
+      BOOK_ORDER.map(async (id) => [id, await loadBookData(id)] as const),
+    );
+    const out = {} as Record<BookId, BibleData>;
+    for (const [id, data] of entries) out[id] = data;
+    return out;
+  })();
+  // 실패 시 다음 호출에서 다시 시도할 수 있게 promise 자체는 보관하되,
+  // 실패한 book 은 loadBookData 안에서 이미 개별로 cache 가 비워진다.
+  allBooksPromise.catch(() => {
+    allBooksPromise = null;
+  });
+  return allBooksPromise;
+}

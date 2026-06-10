@@ -16,7 +16,7 @@ import {
   isOldTestament,
   type BookId,
 } from "./books";
-import { BOOK_DATA } from "./bibleData";
+import { EMPTY_BIBLE_DATA, loadBookData, type BibleData } from "./bibleData";
 import StudentIdentityBar, {
   type StudentIdentityBarHandle,
 } from "./components/StudentIdentityBar";
@@ -27,24 +27,35 @@ import SlidingToggle from "./components/SlidingToggle";
 // (webpack dynamic import 로 묶으면 66권 합 ~150MB 가 의존성 그래프에 들어가
 // dev 컴파일 시 V8 힙이 폭발한다.)
 import nextDynamic from "next/dynamic";
+
+// dynamic chunk 로드 전에 자리에 보이는 짧은 인라인 안내. `loading` 을
+// 비워두면 ssr:false dynamic 컴포넌트의 자리가 첫 진입 시 잠깐 비어
+// "화면이 멈춘 듯한" 인상을 만든다. 한 줄짜리 부드러운 표시로 대체.
+const DynamicViewLoading = () => (
+  <p className="brp-dynamic-loading" role="status" aria-busy="true">
+    <span className="brp-dynamic-loading-dot" aria-hidden="true" />
+    화면을 준비하는 중…
+  </p>
+);
+
 const HebrewChapterV2 = nextDynamic(
   () => import("./components/HebrewChapterV2"),
-  { ssr: false },
+  { ssr: false, loading: DynamicViewLoading },
 );
 const GreekChapterV2 = nextDynamic(
   () => import("./components/GreekChapterV2"),
-  { ssr: false },
+  { ssr: false, loading: DynamicViewLoading },
 );
 // "성경 공부" 모드(다중 역본 레이어 뷰어) + 영어(WEB) 단일 역본 뷰는 신약
 // 27권 전체에서 동작한다. 다른 모드와 마찬가지로 lazy-load — 사용자가
 // 드롭다운에서 그 모드를 골랐을 때에만 chunk 가 받아진다.
 const LayeredBibleViewer = nextDynamic(
   () => import("../bible-study/components/LayeredBibleViewer"),
-  { ssr: false },
+  { ssr: false, loading: DynamicViewLoading },
 );
 const EnglishOnlyView = nextDynamic(
   () => import("../bible-study/components/EnglishOnlyView"),
-  { ssr: false },
+  { ssr: false, loading: DynamicViewLoading },
 );
 // 성경 공부/영어(WEB) 두 모드가 지원하는 책 ID 집합. NT 27권 + OT 39권.
 // 사용자가 어느 책에 있든 모드를 누르면 그 책 그대로 모드 진입.
@@ -426,8 +437,12 @@ type SpeechRecognitionLike = {
 
 type SpeechRecognitionConstructor = new () => SpeechRecognitionLike;
 
-// BOOK_DATA 는 bibleData.ts (단일 진입점) 에서 import.
-// 같은 객체를 검색(bibleSearch.ts)과 공유해 본문이 번들에 중복되지 않게 한다.
+// 본문 데이터는 bibleData.ts (단일 진입점) 의 `loadBookData(bookId)` 로
+// lazy 하게 fetch 한다(`public/bible-data/<bookId>.json`). 검색은 첫 검색 시점에
+// `loadAllBooks()` 로 66권을 한 번에 받아 평탄화 인덱스를 빌드한다 — 이전엔
+// 정적 import 한 객체를 공유했지만, 약 40MB 의 JSON 이 client bundle 에 들어가
+// 페이지 hydration 이 매우 무거워지는 부작용이 있어 모두 정적 자산 fetch 로
+// 통일했다.
 
 const prayersData = prayersJson as PrayersData;
 
@@ -1739,10 +1754,51 @@ export default function BibleReadingPage() {
   );
 
   const bookMeta = BOOKS[bookId];
-  const data = BOOK_DATA[bookId];
+
+  // 본문 데이터는 lazy fetch — `loadBookData(bookId)` 가 `public/bible-data/`
+  // 의 정적 JSON 한 권만 받아온다. 같은 책으로 돌아오면 모듈 캐시로 즉시.
+  // 첫 진입 또는 다른 책으로 전환된 직후 fetch 가 도착하기 전에는
+  // EMPTY_BIBLE_DATA(chapters=[]) 가 들어가 후속 코드가 빈 배열 위에서 안전하게
+  // 흐른다 — 화면에는 잠깐 "본문 준비 중" 안내가 보이고 도착 즉시 평소처럼 표시.
+  const [bookData, setBookData] = useState<BibleData>(EMPTY_BIBLE_DATA);
+  // 데이터 로딩 진행 상태 — 진짜 fetch 중인지(=짧은 placeholder 표시 분기용)
+  // 와 에러 메시지를 구분해 둔다. 같은 책이 캐시에 있으면 거의 한 프레임 안에
+  // 로딩이 끝나, 사용자에게는 보이지 않는다.
+  const [bookDataLoading, setBookDataLoading] = useState(false);
+  const [bookDataError, setBookDataError] = useState<string | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    setBookDataError(null);
+    setBookDataLoading(true);
+    loadBookData(bookId)
+      .then((d) => {
+        if (cancelled) return;
+        setBookData(d);
+        setBookDataLoading(false);
+      })
+      .catch((e) => {
+        if (cancelled) return;
+        setBookData(EMPTY_BIBLE_DATA);
+        setBookDataError(
+          e instanceof Error ? e.message : "본문 데이터를 불러오지 못했어요.",
+        );
+        setBookDataLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [bookId]);
+
+  const data = bookData;
+  // 빈 chapters 안전 폴백 — fetch 도착 전에도 chapter.verses.* 가 throw 하지
+  // 않게 안전한 빈 chapter 객체를 둔다. 도착 후엔 실제 데이터로 즉시 교체.
   const chapter =
     data.chapters.find((item) => item.chapter === chapterNumber) ??
-    data.chapters[0];
+    data.chapters[0] ?? {
+      chapter: chapterNumber,
+      title: "",
+      verses: { krv: [] },
+    };
   const hasKrv = (chapter.verses.krv?.length ?? 0) > 0;
   const hasKids = (chapter.verses.kids?.length ?? 0) > 0;
   // "원어묵상" 모드는 본문 자리에 들어갈 의역(greekKr) 이 있어야 활성된다.
@@ -5456,6 +5512,33 @@ export default function BibleReadingPage() {
           닿지 않는다 — 결과적으로 토글이 UA 기본 button 으로 보이는 버그.
           모든 셀렉터가 .brp-* 로 네임스페이스 돼 있어 global 사용해도 안전. */}
       <style jsx global>{`
+        /* dynamic({ ssr: false }) 컴포넌트들이 chunk 로드 전 잠깐 보이는
+           인라인 안내. 자리가 비어 "멈춘 듯" 보이는 인상을 막는다. */
+        .brp-dynamic-loading {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          margin: 0;
+          padding: 18px 0 8px;
+          color: var(--ink-mute);
+          font-size: 13px;
+        }
+        .brp-dynamic-loading-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 999px;
+          background: var(--ink-mute);
+          opacity: 0.6;
+          animation: brp-dynamic-pulse 1.1s ease-in-out infinite;
+        }
+        @keyframes brp-dynamic-pulse {
+          0%, 100% { opacity: 0.25; transform: scale(0.85); }
+          50% { opacity: 0.95; transform: scale(1.15); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .brp-dynamic-loading-dot { animation: none; opacity: 0.6; }
+        }
+
         .brp-page {
           min-height: 100vh;
           background: var(--bg);
