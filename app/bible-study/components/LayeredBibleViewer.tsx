@@ -173,6 +173,9 @@ type BookManifest = {
   defaultOn: LayerId[];
   sources?: Partial<Record<LayerId, string>>;
   chapters: ChapterMeta[];
+  // split-bible-chunks.mjs 가 매 빌드마다 갱신하는 식별자.
+  // chunk URL 의 ?v= 쿼리로 붙어 옛 빈 chunk 캐시를 자동 무효화한다.
+  buildId?: string;
 };
 
 type LayerChunk = {
@@ -194,10 +197,10 @@ async function loadManifest(book: StudyBookId): Promise<BookManifest> {
   const cached = manifestCache.get(book);
   if (cached) return cached;
   const p = (async () => {
-    // `force-cache` 는 데이터 재빌드 후에도 옛 파일을 안고 있으므로 위험.
-    // HTTP 캐시 헤더(+ETag) 에 맡기는 `default` 가 dev/prod 모두 안전.
+    // manifest 자체는 항상 ETag 검증을 강제(`no-cache`) 한다.
+    // 데이터 재빌드 후 새 buildId 를 곧바로 받아야 chunk 캐시를 무효화할 수 있다.
     const res = await fetch(`/bible-study/chunks/${book}/manifest.json`, {
-      cache: "default",
+      cache: "no-cache",
     });
     if (!res.ok) throw new Error(`HTTP ${res.status} — ${book} manifest 없음`);
     return (await res.json()) as BookManifest;
@@ -211,15 +214,19 @@ async function loadLayerChunk(
   book: StudyBookId,
   ch: number,
   layer: LayerId,
+  buildId?: string,
 ): Promise<LayerChunk> {
-  const k = chunkKey(book, ch, layer);
+  // buildId 가 다르면 다른 캐시 엔트리로 본다(빌드 후 자동 무효화).
+  const k = buildId
+    ? `${chunkKey(book, ch, layer)}|${buildId}`
+    : chunkKey(book, ch, layer);
   const cached = chunkCache.get(k);
   if (cached) return cached;
   const p = (async () => {
-    const res = await fetch(
-      `/bible-study/chunks/${book}/${ch}/${layer}.json`,
-      { cache: "default" },
-    );
+    const url = buildId
+      ? `/bible-study/chunks/${book}/${ch}/${layer}.json?v=${encodeURIComponent(buildId)}`
+      : `/bible-study/chunks/${book}/${ch}/${layer}.json`;
+    const res = await fetch(url, { cache: "default" });
     if (!res.ok) throw new Error(`HTTP ${res.status} — ${book} ${ch}장 ${layer} 없음`);
     return (await res.json()) as LayerChunk;
   })();
@@ -473,7 +480,11 @@ export default function LayeredBibleViewer({
   const [draggingId, setDraggingId] = useState<LayerId | null>(null);
 
   // 토글 DOM ref 모음 — 드래그 중 좌표 → id 매핑에 사용.
+  // 본 토글 행(.bsv-toggles) 과 미니바 토글(.bsv-mini-toggles, 포털) 이 같은
+  // LayerId 를 쓰므로, 두 맵을 분리해 둬야 한 쪽 ref 가 다른 쪽을 덮어쓰지
+  // 않는다. 드래그 시작 위치에 따라 dragRef.from 으로 어느 맵을 쓸지 분기.
   const itemRefs = useRef<Map<LayerId, HTMLButtonElement>>(new Map());
+  const miniItemRefs = useRef<Map<LayerId, HTMLButtonElement>>(new Map());
   // 진행 중인 드래그 제스처 상태.
   const dragRef = useRef<{
     id: LayerId;
@@ -483,6 +494,7 @@ export default function LayeredBibleViewer({
     pointerId: number;
     longPressTimer: number | null;
     active: boolean;
+    from: "main" | "mini";
   } | null>(null);
   // 드래그 직후 click 한 번 무시.
   const suppressClickUntilRef = useRef(0);
@@ -555,11 +567,15 @@ export default function LayeredBibleViewer({
 
   // 장 또는 책이 바뀌면 현재 장의 청크 상태를 비운다 — 캐시는 살아있어
   // 같은 (book, ch, layer) 로 돌아오면 fetch 가 일어나지 않는다.
+  // openWord 도 함께 리셋한다. 그렇지 않으면 로마서 1장의 어떤 단어를 펼쳐
+  // 둔 채로 책/장을 바꿨을 때, 새 화면에 키(`<ref>#<i>`) 가 우연히 일치하는
+  // 단어가 (사용자가 누르지 않았는데도) 펼쳐져 보이는 사고가 난다.
   useEffect(() => {
     fetchEpochRef.current += 1;
     setChunkByLayer(new Map());
     setLoadingLayers(new Set());
     setLayerErrors(new Map());
+    setOpenWord(new Set());
   }, [bookId, effectiveChapter]);
 
   // 켠 레이어 / 장 / 책이 바뀌면 필요한 (장, 레이어) 청크를 lazy 로 가져온다.
@@ -578,7 +594,7 @@ export default function LayeredBibleViewer({
         next.add(layer);
         return next;
       });
-      loadLayerChunk(bookId, effectiveChapter, layer)
+      loadLayerChunk(bookId, effectiveChapter, layer, manifest.buildId)
         .then((chunk) => {
           // 책/장이 바뀐 후 도착한 stale 응답은 버린다.
           if (fetchEpochRef.current !== myEpoch) return;
@@ -676,9 +692,14 @@ export default function LayeredBibleViewer({
 
   // ── 드래그 핸들러 ──────────────────────────────────────────────────────────
   // 포인터 좌표 → 어떤 토글 위에 있는지 식별 (현재 시각적 순서 기준).
+  // dragRef.current.from 에 따라 본 토글 행 또는 미니바 토글 ref 맵을 쓴다.
   const findIdAt = useCallback((x: number, y: number): LayerId | null => {
+    const refs =
+      dragRef.current?.from === "mini"
+        ? miniItemRefs.current
+        : itemRefs.current;
     for (const id of layerOrder) {
-      const el = itemRefs.current.get(id);
+      const el = refs.get(id);
       if (!el) continue;
       const r = el.getBoundingClientRect();
       if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return id;
@@ -697,7 +718,11 @@ export default function LayeredBibleViewer({
   }, []);
 
   const onItemPointerDown = useCallback(
-    (e: ReactPointerEvent<HTMLButtonElement>, id: LayerId) => {
+    (
+      e: ReactPointerEvent<HTMLButtonElement>,
+      id: LayerId,
+      from: "main" | "mini" = "main",
+    ) => {
       // 마우스 좌클릭만 — 우클릭/중간클릭은 무시.
       if (e.pointerType === "mouse" && e.button !== 0) return;
       // 다른 드래그가 진행 중이면 무시.
@@ -731,6 +756,7 @@ export default function LayeredBibleViewer({
         pointerId: e.pointerId,
         longPressTimer,
         active: false,
+        from,
       };
     },
     [],
@@ -1161,20 +1187,36 @@ export default function LayeredBibleViewer({
 
       {/* 미니바 토글 — 페이지 미니바 슬롯이 존재할 때만 포털로 렌더.
           상태(onLayers/layerOrder/layerLabels) 는 본 컴포넌트와 공유되어, 어느
-          쪽을 눌러도 다른 쪽이 즉시 반영된다. 드래그 정렬은 본 토글 행에서만
-          가능하므로 ref/pointer 핸들러는 일부러 빼 두었다. */}
+          쪽을 눌러도 다른 쪽이 즉시 반영된다.
+          읽기(immersive) 모드에선 본 토글 행(.bsv-top)이 숨겨져 있어 미니바가
+          사실상 유일한 토글 자리이므로, 본 토글 행과 동일한 드래그-정렬 제스처
+          를 여기서도 지원한다 — 마우스는 살짝만 드래그, 터치는 길게 누른 뒤
+          이동. 정렬 결과는 layerOrder 한 곳에 저장되므로 본 토글 행에도 그대로
+          반영된다. */}
       {embedded && miniSlotEl
         ? createPortal(
             <span className="bsv-mini-toggles" role="group" aria-label="역본 토글 (미니)">
               {layerOrder.map((id) => {
                 const active = isOn(id);
+                const isDrag = draggingId === id;
                 return (
                   <button
                     key={id}
+                    ref={(el) => {
+                      if (el) miniItemRefs.current.set(id, el);
+                      else miniItemRefs.current.delete(id);
+                    }}
                     type="button"
-                    className={`bsv-mini-toggle ${active ? "is-on" : ""}`}
+                    className={`bsv-mini-toggle ${active ? "is-on" : ""} ${
+                      isDrag ? "is-dragging" : ""
+                    } ${draggingId && !isDrag ? "is-drag-other" : ""}`}
                     aria-pressed={active}
-                    onClick={() => toggleLayer(id)}
+                    aria-grabbed={isDrag}
+                    onClick={() => onItemClick(id)}
+                    onPointerDown={(e) => onItemPointerDown(e, id, "mini")}
+                    onPointerMove={onItemPointerMove}
+                    onPointerUp={endDrag}
+                    onPointerCancel={endDrag}
                     style={{ ["--dot" as string]: LAYER_META[id].dot }}
                     title={layerLabels[id]}
                   >
@@ -1227,6 +1269,17 @@ export default function LayeredBibleViewer({
                   background: color-mix(in srgb, var(--dot) 88%, #16161a);
                   border-color: color-mix(in srgb, var(--dot) 92%, #ffffff);
                   color: #fff;
+                }
+                /* 드래그 중인 알약 — 살짝 떠 보이게 그림자 + 아이콘성 회전. */
+                .bsv-mini-toggle.is-dragging {
+                  cursor: grabbing;
+                  transform: scale(1.04);
+                  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+                  z-index: 1;
+                }
+                /* 같은 줄의 다른 알약은 살짝 흐리게 — drop target 가시성 보조. */
+                .bsv-mini-toggle.is-drag-other {
+                  opacity: 0.78;
                 }
                 .bsv-mini-toggle-dot {
                   width: 7px;

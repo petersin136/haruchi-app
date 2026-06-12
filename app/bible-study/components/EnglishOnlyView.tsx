@@ -94,6 +94,9 @@ type BookManifest = {
   book: string;
   bookId?: EnglishBookId;
   chapters: ChapterMeta[];
+  // split-bible-chunks.mjs 가 매 빌드마다 갱신하는 식별자.
+  // chunk URL 의 ?v= 쿼리로 붙어 옛 chunk 캐시를 자동 무효화한다.
+  buildId?: string;
 };
 
 type EnglishLayer = { type: "text"; content: string };
@@ -112,8 +115,9 @@ async function loadManifest(book: EnglishBookId): Promise<BookManifest> {
   const cached = manifestCache.get(book);
   if (cached) return cached;
   const p = (async () => {
+    // manifest 자체는 항상 ETag 검증(`no-cache`) — 새 buildId 를 즉시 받아야 한다.
     const res = await fetch(`/bible-study/chunks/${book}/manifest.json`, {
-      cache: "default",
+      cache: "no-cache",
     });
     if (!res.ok) throw new Error(`HTTP ${res.status} — ${book} manifest 없음`);
     return (await res.json()) as BookManifest;
@@ -126,15 +130,16 @@ async function loadManifest(book: EnglishBookId): Promise<BookManifest> {
 async function loadEnglishChunk(
   book: EnglishBookId,
   ch: number,
+  buildId?: string,
 ): Promise<EnglishChunk> {
-  const k = `${book}|${ch}`;
+  const k = buildId ? `${book}|${ch}|${buildId}` : `${book}|${ch}`;
   const cached = chunkCache.get(k);
   if (cached) return cached;
   const p = (async () => {
-    const res = await fetch(
-      `/bible-study/chunks/${book}/${ch}/english.json`,
-      { cache: "default" },
-    );
+    const url = buildId
+      ? `/bible-study/chunks/${book}/${ch}/english.json?v=${encodeURIComponent(buildId)}`
+      : `/bible-study/chunks/${book}/${ch}/english.json`;
+    const res = await fetch(url, { cache: "default" });
     if (!res.ok)
       throw new Error(`HTTP ${res.status} — ${book} ${ch}장 english 없음`);
     return (await res.json()) as EnglishChunk;
@@ -236,7 +241,7 @@ export default function EnglishOnlyView({
     if (!manifest) return;
     let cancelled = false;
     setChunk(null);
-    loadEnglishChunk(bookId, effectiveChapter)
+    loadEnglishChunk(bookId, effectiveChapter, manifest.buildId)
       .then((c) => {
         if (!cancelled) setChunk(c);
       })

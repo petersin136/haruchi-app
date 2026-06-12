@@ -6,11 +6,11 @@
 //
 // 원본 데이터(이미 보유):
 //   - English (WEB)         : .cache/web/<bookId>.json (TehShrike WEB JSON)
-//   - 개역한글              : app/bible-reading/<bookId>.json — verses.krv
+//   - 개역한글              : public/bible-data/<bookId>.json — verses.krv
 //   - 헬·히 wordblock       : public/bible-v2/<bookId>-v2.json — chapters[].verses[].tokens
 //                               (token 마다 lemma/품사/문법/뜻/주 모두 포함)
-//   - 헬라 의역(greekpara)  : app/bible-reading/<bookId>.json — verses.greekKr (NT 만)
-//   - 어린이 의역(kids)     : app/bible-reading/<bookId>.json — verses.kids
+//   - 헬라 의역(greekpara)  : public/bible-data/<bookId>.json — verses.greekKr (NT 만)
+//   - 어린이 의역(kids)     : public/bible-data/<bookId>.json — verses.kids
 //
 // 출력:
 //   public/bible-study/data/<bookId>.json
@@ -274,7 +274,21 @@ function buildBook(book) {
   // 신약은 'greek' 레이어, 구약은 'hebrew' 레이어로 같은 wordblock 데이터를 노출.
   const wordblockLayer = isOT ? "hebrew" : "greek";
 
-  const bookJsonPath = path.join(repoRoot, "app/bible-reading", `${book.id}.json`);
+  // 본문 JSON 의 위치가 클라이언트 번들 크기 절감(A-1 lazy fetch) 을 위해
+  // public/bible-data/ 로 옮겨졌다. 이전 경로(app/bible-reading/) 도 호환을 위해 함께 시도한다.
+  const bookJsonPathPublic = path.join(
+    repoRoot,
+    "public/bible-data",
+    `${book.id}.json`,
+  );
+  const bookJsonPathLegacy = path.join(
+    repoRoot,
+    "app/bible-reading",
+    `${book.id}.json`,
+  );
+  const bookJsonPath = fs.existsSync(bookJsonPathPublic)
+    ? bookJsonPathPublic
+    : bookJsonPathLegacy;
   // v2 데이터는 이제 public/bible-v2/ 에 있다 (webpack OOM 방지를 위해 이동).
   const bookV2Path = path.join(
     repoRoot,

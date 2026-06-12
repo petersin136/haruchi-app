@@ -72,8 +72,17 @@ function processBook({ inputFile, outputBookDir, bookId }) {
   const inMtime = fs.statSync(inputFile).mtimeMs;
   if (fs.existsSync(manifestPath)) {
     const outMtime = fs.statSync(manifestPath).mtimeMs;
+    // 입력보다 최신이고 buildId 가 이미 들어 있으면 skip.
+    // buildId 가 없는 옛 manifest 는 무조건 재빌드(클라이언트 캐시 무효화 키가 필요).
     if (outMtime >= inMtime) {
-      return { skipped: true, reason: "up-to-date" };
+      try {
+        const prev = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+        if (prev && typeof prev.buildId === "string") {
+          return { skipped: true, reason: "up-to-date" };
+        }
+      } catch {
+        // manifest 가 깨졌으면 재빌드.
+      }
     }
   }
 
@@ -90,6 +99,11 @@ function processBook({ inputFile, outputBookDir, bookId }) {
     verseCount: (ch.verses ?? []).length,
   }));
 
+  // buildId — 클라이언트 chunk 캐시 무효화용. 매 빌드마다 갱신되어
+  // chunk URL 의 ?v= 쿼리로 붙는다. 입력 mtime + 현재 시각으로 만들어,
+  // 다른 책을 새로 빌드할 때 다른 책의 buildId 는 그대로 둔다(불필요한 무효화 방지).
+  const buildId = `${Math.floor(inMtime)}-${Date.now()}`;
+
   const manifest = {
     book: data.book,
     bookId: data.bookId ?? bookId,
@@ -100,6 +114,7 @@ function processBook({ inputFile, outputBookDir, bookId }) {
     defaultOn: data.defaultOn ?? [],
     sources: data.sources ?? undefined,
     chapters: manifestChapters,
+    buildId,
   };
   // undefined 키는 JSON 직렬화 시 자동으로 빠짐.
 

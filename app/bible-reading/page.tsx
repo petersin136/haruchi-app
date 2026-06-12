@@ -1443,13 +1443,30 @@ export default function BibleReadingPage() {
     };
   }, [immersive, immTheme]);
 
-  // 읽기 모드일 때 body 에 .brp-immersive 클래스 부착 →
-  // .brp-page--immersive 가 position:fixed 풀스크린 스크롤 컨테이너로 viewport
-  // 를 덮는 동안 body 자체 스크롤(외부 페이지) 을 잠가 이중 스크롤 방지.
-  // immersive 종료 시 클래스 제거되어 일반 페이지 스크롤 자동 복귀.
+  // 읽기 모드 진입/종료 동기화.
+  //   · body 에 .brp-immersive 클래스 부착 — 이 클래스로 body 배경, 헤더 숨김,
+  //     immersive 바 표시 등이 활성화된다.
+  //   · 진입 시 body scrollY 를 0 으로 초기화하고, 직전 일반 모드의 scroll
+  //     위치를 ref 에 저장해 종료 후 복원한다. 이렇게 안 하면 사용자가 일반
+  //     모드에서 어딘가 스크롤한 뒤 몰입 진입 시 그 위치 그대로 나타나서
+  //     "왜 챕터 제목이 안 보이지?" 하게 된다.
+  //   · 예전엔 body 를 overflow:hidden 으로 잠갔지만 그러면 본문 자체가
+  //     스크롤 안 되어 위로 스크롤이 막히는 버그가 있었다. 이제 본문은
+  //     native body scroll 그대로 사용한다.
+  const preImmersiveScrollRef = useRef<number>(0);
   useEffect(() => {
     if (typeof document === "undefined") return;
-    document.body.classList.toggle("brp-immersive", immersive);
+    if (immersive) {
+      preImmersiveScrollRef.current = window.scrollY || 0;
+      document.body.classList.add("brp-immersive");
+      window.scrollTo({ top: 0, behavior: "auto" });
+    } else {
+      document.body.classList.remove("brp-immersive");
+      const restore = preImmersiveScrollRef.current;
+      if (restore > 0) {
+        window.scrollTo({ top: restore, behavior: "auto" });
+      }
+    }
     return () => {
       document.body.classList.remove("brp-immersive");
     };
@@ -1614,10 +1631,21 @@ export default function BibleReadingPage() {
       setImmBarVisible(true);
       arm();
     };
+    // 스크롤(휠·트랙패드·터치 swipe) 도 활동으로 본다. 트랙패드로만 스크롤
+    // 하는 사용자는 mousemove/touchstart 가 안 떠서 바가 안 보일 수 있다.
+    // immersive 모드는 native body scroll 을 사용하므로 window.scroll 이
+    // 그대로 떠 추가 capture 가 필요 없지만, 혹시 모를 자식 컨테이너 scroll
+    // 도 잡도록 capture 단계를 사용한다.
+    const onScroll = () => {
+      setImmBarVisible(true);
+      arm();
+    };
     window.addEventListener("mousemove", onMove, { passive: true });
     window.addEventListener("touchstart", onTouchStart, { passive: true });
     window.addEventListener("touchend", onTouchEnd, { passive: true });
     window.addEventListener("keydown", onKey);
+    window.addEventListener("scroll", onScroll, { passive: true, capture: true });
+    window.addEventListener("wheel", onScroll, { passive: true });
     setImmBarVisible(true);
     arm();
     return () => {
@@ -1625,6 +1653,8 @@ export default function BibleReadingPage() {
       window.removeEventListener("touchstart", onTouchStart);
       window.removeEventListener("touchend", onTouchEnd);
       window.removeEventListener("keydown", onKey);
+      window.removeEventListener("scroll", onScroll, true);
+      window.removeEventListener("wheel", onScroll);
       if (immBarTimerRef.current) {
         window.clearTimeout(immBarTimerRef.current);
         immBarTimerRef.current = null;
@@ -8967,51 +8997,133 @@ export default function BibleReadingPage() {
         }
 
         /* ── 페이지 전체 — chrome 숨김 + 본문 가운데 ──────────────────────── */
-        /* PC 레이아웃의 .brp-page 는 height:100vh + overflow:hidden 으로 고정되어
-           있고 .brp-reader 가 자체 overflow-y:auto 였다. immersive 에선 부모 구조에
-           일체 의존하지 않도록 .brp-page--immersive 자체를 position:fixed 풀스크린
-           스크롤 컨테이너로 전환한다. 이러면 body/html 의 overflow 가 어떻든,
-           .brp-page 부모가 어떻든 영향 받지 않고 안에서 세로 스크롤이 항상 동작.
-           position:fixed 컨테이너지만 자식의 position:fixed (immersive-bar / picker)는
-           transform/filter 가 없는 한 여전히 viewport 기준이므로 정상 동작. */
+        /* immersive 모드는 native body scroll 을 그대로 사용한다 (자세한 이유는
+           .brp-page--immersive 블록 안 주석 참고). 기존엔 .brp-page--immersive
+           를 position:fixed + overflow:auto 풀스크린 스크롤 컨테이너로 만들고
+           body 를 잠갔지만, 모바일 Safari/Chrome 에서 "위로 스크롤이 안 되는"
+           회귀가 반복되어 폐기. .brp-immersive-bar / .brp-imm-picker 는 그대로
+           position:fixed 라 viewport 에 붙어 있어 UX 동일. */
         .brp-page--immersive {
           --brp-imm-font: 1;
+          /* 사이트 본 토큰(globals.css)과 톤 동기화 — 차가운 슬레이트가 아니라
+             따뜻한 종이결 베이지로. --line(#E6E6E2) / --ink(#16161A) /
+             --ink-soft(#6B6B70) 와 정확히 같은 값을 그대로 쓴다. 몰입 모드만의
+             별도 토큰으로 두는 이유는 유저가 다크/라이트를 시스템과 무관하게
+             전환할 수 있기 때문. */
           --brp-imm-bg: #fbfaf6;
-          --brp-imm-fg: #1f2937;
-          --brp-imm-fg-soft: #6b7280;
-          --brp-imm-bg-bar: rgba(255, 255, 255, 0.92);
-          --brp-imm-border: rgba(15, 23, 42, 0.08);
-          position: fixed !important;
-          top: 0 !important;
-          left: 0 !important;
-          right: 0 !important;
-          bottom: 0 !important;
-          width: 100vw !important;
-          height: 100vh !important;
-          max-height: 100vh !important;
+          --brp-imm-fg: #16161a;
+          --brp-imm-fg-soft: #6b6b70;
+          --brp-imm-bg-bar: rgba(252, 251, 246, 0.86);
+          --brp-imm-border: #e6e6e2;
+          /* 호버/액티브 — 사이트 accent(#2E5D4B) 6% 알파, 옅은 따뜻한 그린.
+             accent-soft(#EAF1ED) 보다 더 투명하게 잡아 위쪽 바에서 과해 보이지
+             않도록. */
+          --brp-imm-bg-soft: rgba(46, 93, 75, 0.06);
+          /* ── 스크롤 아키텍처 (2024-06 수정) ──────────────────────────────
+             기존엔 .brp-page--immersive 자체를 position:fixed + overflow:auto
+             로 만들고 body 를 overflow:hidden 으로 잠가, "고립된 풀스크린
+             스크롤 컨테이너" 패턴을 썼다. 이론적으로 깔끔하지만 모바일
+             Safari/Chrome 에서 다음 회귀가 반복되어 사용자가 "위로 스크롤이
+             안 된다" 고 호소했다:
+               · iOS Safari 16-17: position:fixed 자식의 wheel 이 body 로
+                 라우팅되어, body 가 잠겨 있으면 양쪽 다 막힘.
+               · 일부 안드로이드 Chrome: 100vh + URL 바 dynamic 변동 시
+                 contentBox 가 viewportBox 보다 작아져 위쪽이 클립됨.
+             해결: 풀스크린 컨테이너를 *그만* 하고 body/document 자체 스크롤
+             에 맡긴다. .brp-immersive-bar / .brp-imm-picker 는 그대로
+             position:fixed 라 viewport 에 붙어 있어 UX 동일. 본문은 가장
+             신뢰할 수 있는 native body scroll 로 흘러서 이 버그 클래스가
+             원천적으로 사라진다. body lock 도 더 이상 필요 없음. */
+          position: relative !important;
+          inset: auto !important;
+          width: 100% !important;
+          /* 본문이 짧을 때라도 viewport 를 채우도록 — 그래야 hero 아래의
+             빈 공간이 .brp-imm-bg 베이지로 깔끔히 채워진다. */
+          min-height: 100vh !important;
+          height: auto !important;
+          max-height: none !important;
           margin: 0 !important;
           padding: 0 !important;
-          overflow-y: auto !important;
-          overflow-x: hidden !important;
-          -webkit-overflow-scrolling: touch;
-          overscroll-behavior: contain;
+          overflow: visible !important;
           background: var(--brp-imm-bg) !important;
           display: block !important;
-          z-index: 50;
+          z-index: auto;
         }
         .brp-page--immersive.brp-page--imm-dark {
-          --brp-imm-bg: #11131a;
-          --brp-imm-fg: #e7e5e0;
-          --brp-imm-fg-soft: #c4b8a8;
-          --brp-imm-bg-bar: rgba(20, 22, 28, 0.92);
+          /* 다크는 globals.css 의 [data-theme="dark"] 와 같은 (#1B1B22 surface
+             + #F2F2EE ink) 라인을 따른다. 단 몰입 바는 살짝 더 어둡게 떠 보이게
+             #14141a 톤으로 잡아 본문(#1B1B22)과의 deep/recede 구분을 둔다. */
+          --brp-imm-bg: #14141a;
+          --brp-imm-fg: #f2f2ee;
+          --brp-imm-fg-soft: #b5b5bc;
+          --brp-imm-bg-bar: rgba(27, 27, 34, 0.86);
           --brp-imm-border: rgba(255, 255, 255, 0.08);
+          --brp-imm-bg-soft: rgba(255, 255, 255, 0.05);
+          /* ── 사이트 본 토큰까지 다크로 동기화 ───────────────────────────
+             reader 안에서 .brp-h2-* / .brp-g2-* / .bsv-* / .gcv-* / .hcv-*
+             등 컴포넌트들은 자체 클래스에서 var(--ink) / var(--ink-soft) /
+             var(--surface) / var(--line) 같은 *사이트 본 토큰* 을 직접 쓴다.
+             html 의 [data-theme="dark"] 를 같이 켜지 않으면 이 토큰들은
+             :root 의 라이트 값으로 남아있어 다크 배경 위에 다크 텍스트가
+             올려지며 "다크모드 가면 본문이 거의 안 보이는" 현상이 난다.
+             site-wide dark 토글과 별개로 작동해야 하므로(immersive 안에서만
+             다크), html data-theme 을 강제하지 않고 immersive 컨테이너 안에서
+             만 토큰을 덮어써 다른 페이지에 영향이 가지 않게 한다. */
+          --bg: #14141a;
+          --surface: #1b1b22;
+          --surface-alt: #25252e;
+          --ink: #f2f2ee;
+          --ink-soft: #b5b5bc;
+          --ink-mute: #8b8b92;
+          --ink-faint: #6b6b75;
+          --line: #2e2e38;
+          --line-strong: #3d3d48;
+          --bg-translucent: rgba(20, 20, 26, 0.85);
+          --surface-translucent: rgba(31, 31, 38, 0.92);
         }
-        /* 더 이상 body/html 의 overflow 를 건드릴 필요가 없지만,
-           .brp-page--immersive 가 fixed 로 viewport 를 덮는 동안에는 body 자체
-           스크롤이 두 겹으로 동작하지 않도록 body 만 lock. immersive 종료 시
-           클래스가 제거되어 자동 복귀. */
+        /* ── 다크 모드에서 Hebrew/헬라/Study 컴포넌트 본문이 안 보이는
+           문제 패치 ────────────────────────────────────────────────────
+           HebrewChapterV2 / GreekChapterV2 / LayeredBibleViewer 의 자체
+           토큰(예: --h2-pron, --bsv-ink)들 중 일부는 사이트 본 토큰을
+           안 거치고 직접 hex(#6c7e9b 등) 로 적혀 있어, 위에서 --ink 만
+           바꿔도 다크 배경 위에서 명도 차가 부족해 "히브리어 안 보여"
+           현상이 난다. 이 블록에서 그 토큰들을 다크 톤으로 맞춤. */
+        .brp-page--immersive.brp-page--imm-dark .brp-h2,
+        .brp-page--immersive.brp-page--imm-dark .gcv,
+        .brp-page--immersive.brp-page--imm-dark .hcv,
+        .brp-page--immersive.brp-page--imm-dark .bsv {
+          /* 발음(라틴 알파벳) 줄 — 라이트에선 고정 #6c7e9b 였지만, 다크에선
+             명도가 낮아 본문과 거의 분간이 안 된다. 더 밝은 청회색으로. */
+          --h2-pron: #a4b5d4;
+          /* gloss(한글 의미) — accent + ink-mute 혼합. 다크에선 그대로 두면
+             accent(#2E5D4B 깊은 그린) 비율 때문에 톤이 너무 가라앉음. 좀 더
+             밝은 민트 톤으로 맞춤. */
+          --h2-gloss: #b9d4c5;
+          /* 강조 highlight — 라이트는 accent 와 검정 12% 혼합(짙어짐). 다크는
+             반대로 흰색 20% 혼합(밝아짐)으로 가독성 확보. */
+          --h2-hl: color-mix(in srgb, var(--accent, #2e5d4b) 65%, #ffffff 35%);
+          /* Study(.bsv) 도 같은 라인업으로. 컴포넌트 내부 변수를 직접 덮어쓴다. */
+          --bsv-ink: #f2f2ee;
+          --bsv-soft: #b5b5bc;
+          --bsv-mute: #8b8b92;
+          --bsv-line: #2e2e38;
+          --bsv-surface: #1b1b22;
+          --bsv-accent: color-mix(in srgb, var(--accent, #2e5d4b) 55%, #ffffff 45%);
+        }
+        /* .bsv-word-p / .bsv-detail-p 는 클래스 안에서 #6c7e9b 로 직접 박혀
+           있어 변수 override 가 안 먹는다. 별도 규칙으로 강제 보정. */
+        .brp-page--immersive.brp-page--imm-dark .bsv-word-p,
+        .brp-page--immersive.brp-page--imm-dark .bsv-detail-p {
+          color: #a4b5d4 !important;
+        }
+        /* immersive 모드는 native body scroll 을 그대로 사용하므로
+           body 를 잠그지 않는다. (예전엔 .brp-page--immersive 가 position:fixed
+           스크롤 컨테이너라서 body 를 lock 했지만, 이제 body 가 본문 스크롤
+           컨테이너 본인이므로 lock 하면 본문 자체가 못 움직인다.)
+           대신 다크 톤만 body 배경에 발라 본문이 끝난 뒤의 over-scroll 공간이
+           다크에서 흰색으로 깜빡이지 않게 한다. */
         body.brp-immersive {
-          overflow: hidden !important;
+          background: var(--brp-imm-bg, #fbfaf6) !important;
         }
         body.brp-immersive-dark {
           background: #11131a;
@@ -9072,12 +9184,26 @@ export default function BibleReadingPage() {
           visibility: visible !important;
         }
 
-        /* 캔버스 — grid 해제하고 본문만 가운데로. */
+        /* 캔버스 — grid 해제하고 본문만 가운데로.
+           ⚠️ 데스크탑(≥960px) 에서는 .brp-canvas 가 grid + height:100vh +
+           overflow:hidden 으로 잠겨 있다 (2-pane 독립 스크롤 패턴).
+           몰입 모드는 body native scroll 을 쓰므로 그 잠금을 모두 풀어야
+           본문이 잘리지 않고 끝까지 보인다. height/overflow/min-height/
+           grid-template-* 까지 명시적으로 무력화. */
         .brp-page--immersive .brp-canvas {
           display: block !important;
           padding: 0 !important;
           max-width: none !important;
           background: transparent !important;
+          height: auto !important;
+          min-height: 0 !important;
+          max-height: none !important;
+          overflow: visible !important;
+          grid-template-columns: none !important;
+          grid-template-rows: none !important;
+          grid-template-areas: none !important;
+          column-gap: 0 !important;
+          row-gap: 0 !important;
         }
 
         /* 본문 카드 — 페이지 가운데로 모으고 일반 화면보다 충분히 넓게.
@@ -9224,20 +9350,39 @@ export default function BibleReadingPage() {
         }
 
         /* ── 상단 컨트롤 바 ──────────────────────────────────────────────── */
+        /* 톤앤매너 — 사이트 본 라인(#E6E6E2)·잉크(#16161A)·그린 accent(#2E5D4B)
+           와 동기화. 시각 노이즈(=각 버튼마다 1px 보더 둘러 7개 알약이 분리되어
+           보이던 문제) 를 줄이기 위해 화면의 "고정 형태(앵커)"는 트리거 알약 +
+           글자 크기 알약 두 개만 남기고, 나머지(이전/다음/테마/닫기)는 보더 없는
+           고스트 아이콘 버튼으로 통일했다. 호버 배경만으로도 충분한 affordance.
+           바 자체는 종이 결을 살리려 하단 보더 한 줄에 살짝 깔린 그림자만 더해
+           본문과 자연스럽게 분리되도록 한다(harsh border-bottom 단독은 헤더가
+           "분리된 패널"처럼 보여 reading flow 가 끊김). */
         .brp-immersive-bar {
           position: fixed;
           inset: 0 0 auto 0;
           z-index: 80;
-          padding: 12px 16px;
+          padding: 10px 18px;
           background: var(--brp-imm-bg-bar);
           border-bottom: 1px solid var(--brp-imm-border);
+          /* 위쪽 1px 하이라이트 + 아래로 흩어지는 옅은 그림자. 종이결 자연광. */
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.55),
+            0 8px 24px -16px rgba(20, 16, 8, 0.18);
           color: var(--brp-imm-fg);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
+          /* 단일 함수 blur 만 — saturate 와 함께 체인하면 iOS Safari 16-17 에서
+             스크롤 컨테이너의 repaint 가 살짝 어긋나며 "위로 스크롤이 끊기는"
+             증상이 보고되어 단순화. */
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
           transform: translateY(0);
           opacity: 1;
           transition: transform 240ms ease, opacity 200ms ease;
           will-change: transform, opacity;
+        }
+        .brp-page--imm-dark .brp-immersive-bar {
+          /* 다크에서는 위쪽 하이라이트가 거슬려 빼고, 그림자만 더 진하게. */
+          box-shadow: 0 8px 24px -16px rgba(0, 0, 0, 0.55);
         }
         .brp-immersive-bar.is-hidden {
           transform: translateY(-110%);
@@ -9250,84 +9395,102 @@ export default function BibleReadingPage() {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          gap: 16px;
-          flex-wrap: wrap;
+          gap: 12px;
+          /* desktop 에서는 한 줄 유지 — 좁아져서 줄바꿈이 필요한 폭(≤720px)
+             에서만 wrap 허용(아래 미디어쿼리). 기존처럼 항상 wrap 이면 데스크탑
+             에서도 좌측 섹션이 두 줄로 깨져 디자인이 와르르 무너진다. */
+          flex-wrap: nowrap;
+          min-height: 36px;
         }
         .brp-immersive-section {
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: 6px;
           min-width: 0;
-          flex-wrap: wrap;
+          flex-wrap: nowrap;
         }
         .brp-immersive-section--end {
           justify-content: flex-end;
+          gap: 4px;
+          flex: 0 0 auto;
         }
         .brp-immersive-chapter {
           display: inline-flex;
           align-items: center;
           gap: 4px;
         }
+        /* 이전/다음 화살표 — 보더 없는 고스트 아이콘. 트리거 알약 양옆에서
+           조용히 보조하는 역할로, 시각적 무게는 줄이고 호버 시에만 살아나게. */
         .brp-immersive-arrow {
-          width: 32px;
-          height: 32px;
+          width: 30px;
+          height: 30px;
           border-radius: 50%;
-          border: 1px solid var(--brp-imm-border);
+          border: none;
           background: transparent;
-          color: var(--brp-imm-fg);
-          font-size: 14px;
+          color: var(--brp-imm-fg-soft);
+          font-size: 15px;
           cursor: pointer;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          transition: background 120ms ease, opacity 120ms ease;
+          transition:
+            background 120ms ease,
+            color 120ms ease,
+            opacity 120ms ease;
         }
         .brp-immersive-arrow:hover:not(:disabled) {
-          background: rgba(15, 23, 42, 0.06);
-        }
-        .brp-page--imm-dark .brp-immersive-arrow:hover:not(:disabled) {
-          background: rgba(255, 255, 255, 0.06);
+          background: var(--brp-imm-bg-soft);
+          color: var(--brp-imm-fg);
         }
         .brp-immersive-arrow:disabled {
-          opacity: 0.35;
+          opacity: 0.32;
           cursor: not-allowed;
         }
+        /* 글자 크기 — 한 알약 안에 "가 / 100% / 가" 묶음. 보더 한 줄로 그룹을
+           시각적으로 묶어 트리거 알약과 시각 무게를 맞춘다. 내부 +/− 는 보더
+           없이 ghost. */
         .brp-immersive-font {
           display: inline-flex;
           align-items: center;
-          gap: 6px;
-          padding: 2px 6px;
+          gap: 2px;
+          padding: 2px 4px;
           border-radius: var(--radius-pill, 999px);
           border: 1px solid var(--brp-imm-border);
+          background: transparent;
         }
         .brp-immersive-font-value {
           font-size: 11px;
           font-variant-numeric: tabular-nums;
           color: var(--brp-imm-fg-soft);
-          min-width: 32px;
+          min-width: 30px;
           text-align: center;
+          letter-spacing: -0.01em;
         }
+        /* 동그란 ghost 아이콘 — 글자 크기 +/− (.brp-immersive-font 안쪽) 와
+           테마 토글 (바깥) 모두 같은 클래스를 쓴다. 보더 없이 호버 배경만으로
+           affordance 를 준다. */
         .brp-immersive-icon {
-          width: 32px;
-          height: 32px;
+          width: 28px;
+          height: 28px;
           border-radius: 50%;
-          border: 1px solid var(--brp-imm-border);
+          border: none;
           background: transparent;
-          color: var(--brp-imm-fg);
+          color: var(--brp-imm-fg-soft);
           cursor: pointer;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          transition: background 120ms ease, opacity 120ms ease;
+          transition:
+            background 120ms ease,
+            color 120ms ease,
+            opacity 120ms ease;
         }
         .brp-immersive-icon:hover:not(:disabled) {
-          background: rgba(15, 23, 42, 0.06);
-        }
-        .brp-page--imm-dark .brp-immersive-icon:hover:not(:disabled) {
-          background: rgba(255, 255, 255, 0.06);
+          background: var(--brp-imm-bg-soft);
+          color: var(--brp-imm-fg);
         }
         .brp-immersive-icon:disabled {
-          opacity: 0.35;
+          opacity: 0.32;
           cursor: not-allowed;
         }
         .brp-immersive-font-small {
@@ -9336,49 +9499,56 @@ export default function BibleReadingPage() {
           line-height: 1;
         }
         .brp-immersive-font-large {
-          font-size: 17px;
+          font-size: 16px;
           font-weight: 700;
           line-height: 1;
         }
+        /* 닫기 ✕ — 우측 끝의 액션. 다른 ghost 아이콘과 같은 톤이지만 약간 더
+           크고, 호버 시 옅은 accent(#2E5D4B) 톤이 들어와 "이 작업은 끝/exit
+           이다" 라는 어조를 살짝 강조. */
         .brp-immersive-close {
-          width: 36px;
-          height: 36px;
+          width: 32px;
+          height: 32px;
           border-radius: 50%;
-          border: 1px solid var(--brp-imm-border);
+          border: none;
           background: transparent;
-          color: var(--brp-imm-fg);
+          color: var(--brp-imm-fg-soft);
           cursor: pointer;
           display: inline-flex;
           align-items: center;
           justify-content: center;
           margin-left: 4px;
+          transition: background 120ms ease, color 120ms ease;
         }
         .brp-immersive-close:hover {
-          background: rgba(15, 23, 42, 0.06);
-        }
-        .brp-page--imm-dark .brp-immersive-close:hover {
-          background: rgba(255, 255, 255, 0.06);
+          background: var(--brp-imm-bg-soft);
+          color: var(--brp-imm-fg);
         }
 
-        /* 모바일 — 컨트롤 바 한 줄이 좁아지므로 글자 크기 위젯/책 라벨 등을 축소. */
+        /* 모바일 — 컨트롤 바 한 줄이 좁아지므로 글자 크기 위젯/책 라벨 등을
+           축소. 한 줄에 다 들어가도록 padding/gap 만 줄이고, 정말 좁은 환경
+           에서만 wrap 을 허용한다. */
         @media (max-width: 720px) {
           .brp-immersive-bar {
-            padding: 8px 10px;
+            padding: 8px 12px;
           }
           .brp-immersive-bar-inner {
-            gap: 8px;
+            gap: 6px;
+            /* 좁은 폭(~360px) 에서는 두 줄로 갈라져도 읽기 흐름이 덜 깨지므로
+               wrap 허용. 데스크탑에서는 위 메인 룰(nowrap) 이 그대로 살아 있다. */
+            flex-wrap: wrap;
           }
           .brp-immersive-section {
-            gap: 6px;
+            gap: 4px;
           }
           .brp-immersive-arrow,
           .brp-immersive-icon {
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
           }
           .brp-immersive-close {
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
           }
           .brp-page--immersive .brp-reader {
             margin: 88px 4px 64px !important;
@@ -9407,13 +9577,21 @@ export default function BibleReadingPage() {
           color: var(--brp-imm-fg-soft) !important;
         }
 
-        /* ───────── 책·장·절 선택 트리거 알약 ──────────────────────────── */
+        /* ───────── 책·장·절 선택 트리거 알약 ────────────────────────────
+           바의 시각적 앵커(=focal point) 두 개 중 하나. 사이트 전반에서 쓰는
+           --line(#E6E6E2) 보더 + 따뜻한 베이지/그린 호버. 글자 weight 는 본문
+           세리프 흐름에 맞춰 700 → 600 으로 한 톤 가볍게 (700 은 toolbar 안에서
+           너무 진해 reading flow 를 깬다).
+           폭: flex 0 0 auto + min-width max-content 로 절대 줄어들지 않도록.
+           이전엔 flex 0 1 auto 였는데, 옆 드롭다운("히브리어 보기")의 자연
+           폭이 커서 트리거가 squeeze 당해 "전도서" 가 "전도ㅅ" 으로 잘려 보였다.
+           desktop 에서는 한 줄 안에 자연스럽게 들어가고, ≤720px 에서는 위
+           미디어쿼리의 flex-wrap wrap 이 두 줄로 풀어 준다. */
         .brp-immersive-trigger {
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          min-width: 0;
-          padding: 6px 14px;
+          padding: 6px 12px 6px 14px;
           border-radius: 999px;
           border: 1px solid var(--brp-imm-border);
           background: transparent;
@@ -9422,15 +9600,21 @@ export default function BibleReadingPage() {
           font-weight: 600;
           letter-spacing: -0.01em;
           cursor: pointer;
-          transition: background 120ms ease, transform 120ms ease;
+          transition:
+            background 120ms ease,
+            border-color 120ms ease,
+            transform 120ms ease;
           white-space: nowrap;
-          flex: 0 1 auto;
+          flex: 0 0 auto;
+          min-width: max-content;
         }
         .brp-immersive-trigger:hover {
-          background: rgba(15, 23, 42, 0.06);
-        }
-        .brp-page--imm-dark .brp-immersive-trigger:hover {
-          background: rgba(255, 255, 255, 0.06);
+          background: var(--brp-imm-bg-soft);
+          border-color: color-mix(
+            in srgb,
+            var(--brp-imm-border) 60%,
+            var(--accent, #2e5d4b) 40%
+          );
         }
         .brp-immersive-trigger:active {
           transform: scale(0.98);
@@ -9438,13 +9622,12 @@ export default function BibleReadingPage() {
         .brp-immersive-trigger-text {
           display: inline-flex;
           align-items: baseline;
-          gap: 8px;
-          min-width: 0;
-          overflow: hidden;
-          text-overflow: ellipsis;
+          gap: 6px;
+          /* 트리거 자체가 flex: 0 0 auto 이므로 자식이 절대 잘리지 않는다 —
+             ellipsis 안전망은 이제 불필요. */
         }
         .brp-immersive-trigger-book {
-          font-weight: 700;
+          font-weight: 600;
           color: var(--brp-imm-fg);
         }
         .brp-immersive-trigger-chapter {

@@ -343,6 +343,17 @@ export default function GreekChapterV2({
   const [openKr, setOpenKr] = useState<Set<number>>(() => new Set());
   const [openToken, setOpenToken] = useState<Set<string>>(() => new Set());
 
+  // 책/장이 바뀌면 펼쳐 놓았던 한글 의역(openKr)·단어 상세(openToken) 를 모두
+  // 닫는다. 그렇지 않으면 마태 1절을 펼친 채 드롭다운에서 마가로 옮겼을 때,
+  // 마가의 1절이 (사용자가 누르지 않았는데도) 펼쳐진 채로 보인다.
+  // openKr 은 verse 번호(1,2,3…), openToken 은 "verseN:tokenIdx" 키라서 책·장
+  // 이 달라도 같은 번호가 우연히 일치하는 즉시 잘못된 verse 가 펼쳐 보이게
+  // 된다 — 양쪽 모두 다음 화면 진입 시 빈 Set 으로 리셋해야 안전하다.
+  useEffect(() => {
+    setOpenKr(new Set());
+    setOpenToken(new Set());
+  }, [bookId, chapter]);
+
   // 토큰 키 → 그 절 안에서 몇 번째로 펼쳤는지 (1부터). 절마다 별도 카운터.
   const tokenOrdinal = useMemo(() => {
     const map = new Map<string, number>();
