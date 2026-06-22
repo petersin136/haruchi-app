@@ -13,3 +13,4 @@ tsconfig.tsbuildinfo
 # Bible data import workspace (원본 KorRV.json 등 임시 다운로드).
 # scripts/import-bible-krv.mjs 로 언제든 재생성 가능.
 tmp/
+.cache/
