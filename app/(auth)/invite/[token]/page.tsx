@@ -235,7 +235,7 @@ export default function TeacherInvitePage() {
             type="button"
             onClick={async () => {
               await signOut();
-              const sb = getSupabaseClient();
+              const sb = await getSupabaseClient();
               if (sb) await sb.auth.signOut();
             }}
             style={{

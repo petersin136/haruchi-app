@@ -35,25 +35,31 @@ export default function ResetPasswordPage() {
 
   useEffect(() => {
     if (!configured) return;
-    const supabase = getSupabaseClient();
-    if (!supabase) {
-      setStage({ kind: "no_session" });
-      return;
-    }
-    // recovery 링크로 들어오면 supabase 가 hash fragment 의 토큰을 읽어
-    // PASSWORD_RECOVERY 이벤트를 발생시키며 세션을 잠시 만들어 준다.
-    const { data } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === "PASSWORD_RECOVERY" || (event === "SIGNED_IN" && session)) {
-        setStage({ kind: "ready", email: session?.user?.email ?? null });
-      }
-    });
-    // 이미 세션이 있을 수도 있으니 한 번 직접 확인.
+    let unsub: (() => void) | null = null;
+    let cancelled = false;
     void (async () => {
+      const supabase = await getSupabaseClient();
+      if (cancelled) return;
+      if (!supabase) {
+        setStage({ kind: "no_session" });
+        return;
+      }
+      // recovery 링크로 들어오면 supabase 가 hash fragment 의 토큰을 읽어
+      // PASSWORD_RECOVERY 이벤트를 발생시키며 세션을 잠시 만들어 준다.
+      const { data } = supabase.auth.onAuthStateChange((event, session) => {
+        if (event === "PASSWORD_RECOVERY" || (event === "SIGNED_IN" && session)) {
+          setStage({ kind: "ready", email: session?.user?.email ?? null });
+        }
+      });
+      if (cancelled) {
+        data.subscription.unsubscribe();
+        return;
+      }
+      unsub = () => data.subscription.unsubscribe();
       const { data: sess } = await supabase.auth.getSession();
       if (sess.session) {
         setStage({ kind: "ready", email: sess.session.user.email ?? null });
       } else {
-        // 잠시 기다렸다가 그래도 없으면 안내.
         setTimeout(async () => {
           const { data: again } = await supabase.auth.getSession();
           if (again.session) {
@@ -65,7 +71,8 @@ export default function ResetPasswordPage() {
       }
     })();
     return () => {
-      data.subscription.unsubscribe();
+      cancelled = true;
+      if (unsub) unsub();
     };
   }, [configured]);
 

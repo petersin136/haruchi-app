@@ -111,7 +111,7 @@ export function useAdultSession(): {
   const [state, setState] = useState<AdultSessionState>({ status: "loading" });
 
   const resolve = useCallback(async () => {
-    const supabase = getSupabaseClient();
+    const supabase = await getSupabaseClient();
     if (!supabase) {
       setState({ status: "signed_out" });
       return;
@@ -154,21 +154,28 @@ export function useAdultSession(): {
 
   useEffect(() => {
     let unsub: (() => void) | null = null;
-    void resolve();
-    const supabase = getSupabaseClient();
-    if (supabase) {
+    let cancelled = false;
+    void (async () => {
+      const supabase = await getSupabaseClient();
+      if (cancelled || !supabase) return;
       const { data } = supabase.auth.onAuthStateChange(() => {
         void resolve();
       });
+      if (cancelled) {
+        data.subscription.unsubscribe();
+        return;
+      }
       unsub = () => data.subscription.unsubscribe();
-    }
+    })();
+    void resolve();
     return () => {
+      cancelled = true;
       if (unsub) unsub();
     };
   }, [resolve]);
 
   const signOut = useCallback(async () => {
-    const supabase = getSupabaseClient();
+    const supabase = await getSupabaseClient();
     if (!supabase) return;
     await supabase.auth.signOut();
     setState({ status: "signed_out" });
@@ -289,7 +296,7 @@ function normalizeEmail(email: string): string {
 }
 
 export async function adultSignUp(email: string, password: string) {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { error } = await supabase.auth.signUp({
     email: normalizeEmail(email),
@@ -299,7 +306,7 @@ export async function adultSignUp(email: string, password: string) {
 }
 
 export async function adultSignIn(email: string, password: string) {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { error } = await supabase.auth.signInWithPassword({
     email: normalizeEmail(email),
@@ -312,7 +319,7 @@ export async function adultSignIn(email: string, password: string) {
 // /reset-password 페이지가 supabase 의 recovery 세션을 인식해 새 비번을
 // 설정하도록 처리한다.
 export async function adultRequestPasswordReset(email: string) {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   // 브라우저 환경이라면 현재 origin 을 그대로 사용. SSR 안전성도 챙김.
   const origin =
@@ -330,7 +337,7 @@ export async function adultRequestPasswordReset(email: string) {
 // Supabase 가 recovery 토큰을 자동으로 세션화해 두기 때문에 그 상태에서
 // updateUser({ password }) 만 호출하면 된다.
 export async function adultUpdatePassword(newPassword: string) {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { error } = await supabase.auth.updateUser({ password: newPassword });
   if (error) throw toAuthError(error, "비밀번호 변경에 실패했어요.");
@@ -356,7 +363,7 @@ export async function signupChurch(args: {
   consentVersion: string;
   consentAdminName: string;
 }): Promise<string> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { data, error } = await supabase.rpc("br_signup_church", {
     p_church_name: args.churchName,
@@ -373,7 +380,7 @@ export async function signupChurch(args: {
 // 반 CRUD
 // -----------------------------------------------------------------------------
 export async function listClasses(): Promise<ClassRow[]> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return [];
   const { data, error } = await supabase
     .from("br_classes")
@@ -388,7 +395,7 @@ export async function createClass(args: {
   name: string;
   memberLabel: string;
 }): Promise<ClassRow> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { data, error } = await supabase
     .from("br_classes")
@@ -408,7 +415,7 @@ export async function updateClass(args: {
   name: string;
   memberLabel: string;
 }): Promise<void> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { error } = await supabase
     .from("br_classes")
@@ -418,7 +425,7 @@ export async function updateClass(args: {
 }
 
 export async function deleteClass(id: string): Promise<void> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { error } = await supabase.from("br_classes").delete().eq("id", id);
   if (error) throw error;
@@ -431,7 +438,7 @@ const STUDENT_COLUMNS =
   "id, church_id, class_id, name, guardian_consent, guardian_consent_at, created_at";
 
 export async function listStudentsByClass(classId: string): Promise<StudentRow[]> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return [];
   const { data, error } = await supabase
     .from("br_students")
@@ -443,7 +450,7 @@ export async function listStudentsByClass(classId: string): Promise<StudentRow[]
 }
 
 export async function listStudentsByChurch(): Promise<StudentRow[]> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return [];
   const { data, error } = await supabase
     .from("br_students")
@@ -459,7 +466,7 @@ export async function createStudent(args: {
   name: string;
   guardianConsent: boolean;
 }): Promise<StudentRow> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   // guardian_consent_at 은 트리거(br_students_consent_timestamp)가 서버에서 자동으로 채움.
   const { data, error } = await supabase
@@ -482,7 +489,7 @@ export async function updateStudent(args: {
   classId?: string;
   guardianConsent?: boolean;
 }): Promise<void> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const patch: Record<string, unknown> = {};
   if (args.name !== undefined) patch.name = args.name.trim();
@@ -497,14 +504,14 @@ export async function updateStudent(args: {
 }
 
 export async function deleteStudent(id: string): Promise<void> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { error } = await supabase.from("br_students").delete().eq("id", id);
   if (error) throw error;
 }
 
 export async function adminResetStudentPin(studentId: string): Promise<boolean> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { data, error } = await supabase.rpc("br_admin_reset_student_pin", {
     p_student_id: studentId,
@@ -517,7 +524,7 @@ export async function adminResetStudentPin(studentId: string): Promise<boolean> 
 // 교사 / 교사-반 배정
 // -----------------------------------------------------------------------------
 export async function listChurchMembers(): Promise<MemberRow[]> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return [];
   const { data, error } = await supabase
     .from("br_church_members")
@@ -528,7 +535,7 @@ export async function listChurchMembers(): Promise<MemberRow[]> {
 }
 
 export async function listTeacherAssignments(): Promise<TeacherClassRow[]> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return [];
   const { data, error } = await supabase
     .from("br_teacher_classes")
@@ -543,7 +550,7 @@ export async function adminAddTeacher(args: {
   email: string;
   name: string;
 }): Promise<string> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { data, error } = await supabase.rpc("br_admin_add_teacher", {
     p_email: args.email.trim(),
@@ -566,7 +573,7 @@ export type CreatedTeacherInvite = {
 export async function adminCreateTeacherInvite(args: {
   name: string;
 }): Promise<CreatedTeacherInvite> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { data, error } = await supabase.rpc("br_admin_create_teacher_invite", {
     p_name: args.name.trim(),
@@ -578,7 +585,7 @@ export async function adminCreateTeacherInvite(args: {
 }
 
 export async function adminListTeacherInvites(): Promise<TeacherInviteRow[]> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return [];
   const { data, error } = await supabase.rpc("br_admin_list_teacher_invites");
   if (error) throw error;
@@ -586,7 +593,7 @@ export async function adminListTeacherInvites(): Promise<TeacherInviteRow[]> {
 }
 
 export async function adminRevokeTeacherInvite(inviteId: string): Promise<boolean> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { data, error } = await supabase.rpc("br_admin_revoke_teacher_invite", {
     p_invite_id: inviteId,
@@ -597,7 +604,7 @@ export async function adminRevokeTeacherInvite(inviteId: string): Promise<boolea
 
 // /invite/[token] 페이지가 SSR 환경에서도 호출할 수 있도록 익명 안전.
 export async function peekTeacherInvite(token: string): Promise<TeacherInvitePeek | null> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return null;
   const { data, error } = await supabase.rpc("br_peek_teacher_invite", { p_token: token });
   if (error) throw error;
@@ -606,7 +613,7 @@ export async function peekTeacherInvite(token: string): Promise<TeacherInvitePee
 }
 
 export async function acceptTeacherInvite(token: string): Promise<string> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { data, error } = await supabase.rpc("br_accept_teacher_invite", { p_token: token });
   if (error) throw error;
@@ -614,7 +621,7 @@ export async function acceptTeacherInvite(token: string): Promise<string> {
 }
 
 export async function removeChurchMember(memberId: string): Promise<void> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { error } = await supabase
     .from("br_church_members")
@@ -628,7 +635,7 @@ export async function updateMemberName(args: {
   memberId: string;
   name: string;
 }): Promise<void> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const trimmed = args.name.trim();
   if (!trimmed) throw new Error("이름을 입력해 주세요.");
@@ -643,7 +650,7 @@ export async function assignTeacherToClass(args: {
   churchMemberId: string;
   classId: string;
 }): Promise<void> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { error } = await supabase.from("br_teacher_classes").insert({
     church_member_id: args.churchMemberId,
@@ -656,7 +663,7 @@ export async function unassignTeacherFromClass(args: {
   churchMemberId: string;
   classId: string;
 }): Promise<void> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) throw new Error("Supabase 가 설정되지 않았어요.");
   const { error } = await supabase
     .from("br_teacher_classes")
@@ -673,7 +680,7 @@ export async function listReadingLogsByClass(args: {
   classId: string;
   book?: string;
 }): Promise<ReadingLogRow[]> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return [];
   let q = supabase
     .from("br_reading_logs")

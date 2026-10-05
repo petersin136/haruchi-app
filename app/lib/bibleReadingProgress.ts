@@ -126,7 +126,7 @@ export function clearStudentPin() {
 // 교회/반/학생 목록 (학생 로그인 흐름)
 // -----------------------------------------------------------------------------
 export async function fetchChurches(): Promise<BibleChurch[]> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return [];
   const { data, error } = await supabase
     .from("br_churches")
@@ -139,7 +139,7 @@ export async function fetchChurches(): Promise<BibleChurch[]> {
 export async function fetchClassesByChurch(
   churchId: string,
 ): Promise<BibleClass[]> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return [];
   const { data, error } = await supabase.rpc("br_list_classes", {
     p_church_id: churchId,
@@ -152,7 +152,7 @@ export async function fetchStudentsByClass(args: {
   churchId: string;
   classId: string;
 }): Promise<BibleStudent[]> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return [];
   // v2.2: 학생 이름은 개인정보. RPC 가 (p_church_id, p_class_id) 두 값을 받아
   // 반의 소속 교회와 호출자가 주장한 교회가 일치할 때만 결과를 돌려준다.
@@ -171,7 +171,7 @@ export async function verifyStudentPin(
   studentId: string,
   pin: string,
 ): Promise<boolean> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return false;
   const { data, error } = await supabase.rpc("br_verify_student", {
     p_student_id: studentId,
@@ -185,7 +185,7 @@ export async function verifyStudentPin(
 }
 
 export async function checkStudentHasPin(studentId: string): Promise<boolean> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return false;
   const { data, error } = await supabase.rpc("br_student_has_pin", {
     p_student_id: studentId,
@@ -209,7 +209,7 @@ export async function setStudentPin(
   studentId: string,
   pin: string,
 ): Promise<SetPinResult> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return { ok: false, reason: "not_configured" };
   const { data, error } = await supabase.rpc("br_set_student_pin", {
     p_student_id: studentId,
@@ -230,7 +230,7 @@ export async function fetchCompletedChapters(
   studentId: string,
   book: BookId,
 ): Promise<ReadingLogRow[]> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return [];
   const pin = loadStudentPin();
   if (!pin) return []; // PIN 없으면 동기화 생략 (다음 진도 기록 시 PIN 요청됨)
@@ -305,7 +305,7 @@ function queueLog(log: PendingLog) {
 }
 
 async function callCompleteChapter(log: PendingLog): Promise<"ok" | "bad_pin" | "fail"> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return "fail";
   const { data, error } = await supabase.rpc("br_complete_chapter", {
     p_student_id: log.studentId,
@@ -347,7 +347,7 @@ export async function recordChapterCompletion(args: {
     completedAt: new Date().toISOString(),
   };
 
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) {
     queueLog(log);
     return "queued";
@@ -365,7 +365,7 @@ export async function recordChapterCompletion(args: {
 }
 
 export async function flushPendingLogs(): Promise<number> {
-  const supabase = getSupabaseClient();
+  const supabase = await getSupabaseClient();
   if (!supabase) return 0;
   const list = readPendingLogs();
   if (list.length === 0) return 0;

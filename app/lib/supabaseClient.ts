@@ -1,8 +1,9 @@
 "use client";
 
-import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import type { SupabaseClient } from "@supabase/supabase-js";
 
 let cachedClient: SupabaseClient | null = null;
+let pendingClient: Promise<SupabaseClient | null> | null = null;
 
 // 배포 환경 변수에 사람이 실수로 끝에 슬래시(`https://xxx.supabase.co/`),
 // 앞뒤 공백/따옴표, 심지어 `https://https://` 같은 이중 프로토콜을 붙여
@@ -58,24 +59,33 @@ function sanitizeSupabaseKey(raw: string | undefined): string | null {
   return trimmed || null;
 }
 
-export function getSupabaseClient(): SupabaseClient | null {
-  if (cachedClient) return cachedClient;
+// @supabase/supabase-js 는 첫 호출 때 불러온다. 성경 첫 화면 번들에 넣지 않기 위함.
+export function getSupabaseClient(): Promise<SupabaseClient | null> {
+  if (cachedClient) return Promise.resolve(cachedClient);
+  if (pendingClient) return pendingClient;
 
   const url = sanitizeSupabaseUrl(process.env.NEXT_PUBLIC_SUPABASE_URL);
   const key = sanitizeSupabaseKey(process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
-  if (!url || !key) return null;
+  if (!url || !key) return Promise.resolve(null);
 
-  cachedClient = createClient(url, key, {
-    auth: {
-      persistSession: true,
-      storageKey: "pbcs-bible-reading-auth",
-      autoRefreshToken: true,
-    },
-    realtime: {
-      params: { eventsPerSecond: 5 },
-    },
+  pendingClient = (async () => {
+    const { createClient } = await import("@supabase/supabase-js");
+    cachedClient = createClient(url, key, {
+      auth: {
+        persistSession: true,
+        storageKey: "pbcs-bible-reading-auth",
+        autoRefreshToken: true,
+      },
+      realtime: {
+        params: { eventsPerSecond: 5 },
+      },
+    });
+    return cachedClient;
+  })().catch((error) => {
+    pendingClient = null;
+    throw error;
   });
-  return cachedClient;
+  return pendingClient;
 }
 
 export function isSupabaseConfigured(): boolean {

@@ -33,7 +33,7 @@ import { SETTINGS_INIT_SCRIPT } from "./lib/userSettings";
 // =============================================================================
 const notoSansKR = Noto_Sans_KR({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-noto-sans-kr",
   display: "swap",
   preload: true,
