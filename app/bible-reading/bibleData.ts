@@ -145,3 +145,81 @@ export function loadAllBooks(): Promise<Record<BookId, BibleData>> {
   });
   return allBooksPromise;
 }
+
+// ── 읽기 화면용 장 단위 본문 ───────────────────────────────────────────────
+// 개역한글/어린이/원어 의역 문장만 담은 파일. greekTokens 는 들어 있지 않다.
+// 검색(loadAllBooks)은 계속 책 전체 `/bible-data/<bookId>.json` 을 쓴다.
+//
+//   /bible-study/chunks/<bookId>/korean-index.json
+//     { chapters: [{ chapter, title }] }
+//   /bible-study/chunks/<bookId>/<chapter>/korean.json
+//     { chapter, layer: "korean", title, verses: { krv, kids?, greekKr? } }
+export type KoreanChapterIndex = {
+  chapters: { chapter: number; title: string }[];
+};
+
+const koreanIndexCache = new Map<BookId, Promise<KoreanChapterIndex>>();
+const koreanChapterCache = new Map<string, Promise<Chapter>>();
+
+export function loadKoreanIndex(bookId: BookId): Promise<KoreanChapterIndex> {
+  const cached = koreanIndexCache.get(bookId);
+  if (cached) return cached;
+  const p = (async () => {
+    const res = await fetch(`/bible-study/chunks/${bookId}/korean-index.json`, {
+      cache: "default",
+    });
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status} — ${bookId}/korean-index.json`);
+    }
+    return (await res.json()) as KoreanChapterIndex;
+  })();
+  koreanIndexCache.set(bookId, p);
+  p.catch(() => koreanIndexCache.delete(bookId));
+  return p;
+}
+
+export function loadKoreanChapter(
+  bookId: BookId,
+  chapter: number,
+): Promise<Chapter> {
+  const key = `${bookId}:${chapter}`;
+  const cached = koreanChapterCache.get(key);
+  if (cached) return cached;
+  const p = (async () => {
+    const res = await fetch(
+      `/bible-study/chunks/${bookId}/${chapter}/korean.json`,
+      { cache: "default" },
+    );
+    if (!res.ok) {
+      throw new Error(
+        `HTTP ${res.status} — ${bookId}/${chapter}/korean.json`,
+      );
+    }
+    const raw = (await res.json()) as {
+      chapter: number;
+      title?: string;
+      verses?: {
+        krv?: Verse[];
+        kids?: Verse[];
+        greekKr?: Verse[];
+      };
+    };
+    const verses: Chapter["verses"] = {
+      krv: raw.verses?.krv ?? [],
+    };
+    if (raw.verses?.kids && raw.verses.kids.length > 0) {
+      verses.kids = raw.verses.kids;
+    }
+    if (raw.verses?.greekKr && raw.verses.greekKr.length > 0) {
+      verses.greekKr = raw.verses.greekKr;
+    }
+    return {
+      chapter: raw.chapter,
+      title: raw.title ?? "",
+      verses,
+    };
+  })();
+  koreanChapterCache.set(key, p);
+  p.catch(() => koreanChapterCache.delete(key));
+  return p;
+}

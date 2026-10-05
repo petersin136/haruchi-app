@@ -16,10 +16,8 @@ import {
   isOldTestament,
   type BookId,
 } from "./books";
-import { EMPTY_BIBLE_DATA, loadBookData, type BibleData } from "./bibleData";
-import StudentIdentityBar, {
-  type StudentIdentityBarHandle,
-} from "./components/StudentIdentityBar";
+import { loadKoreanChapter, loadKoreanIndex } from "./bibleData";
+import type { StudentIdentityBarHandle } from "./components/StudentIdentityBar";
 import Dropdown, { type DropdownOption } from "./components/Dropdown";
 import SlidingToggle from "./components/SlidingToggle";
 // 새 "헬라어 보기 v2" 구조 — 신약 27권 전체, 히브리어는 구약 39권 전체.
@@ -56,6 +54,13 @@ const LayeredBibleViewer = nextDynamic(
 const EnglishOnlyView = nextDynamic(
   () => import("../bible-study/components/EnglishOnlyView"),
   { ssr: false, loading: DynamicViewLoading },
+);
+const SearchOverlay = nextDynamic(() => import("./SearchOverlay"), {
+  ssr: false,
+});
+const StudentIdentityBar = nextDynamic(
+  () => import("./components/StudentIdentityBar"),
+  { ssr: false },
 );
 // 성경 공부/영어(WEB) 두 모드가 지원하는 책 ID 집합. NT 27권 + OT 39권.
 // 사용자가 어느 책에 있든 모드를 누르면 그 책 그대로 모드 진입.
@@ -211,7 +216,8 @@ import {
 import Wordmark from "../components/Wordmark";
 import { useSettings } from "../components/SettingsProvider";
 import { SCROLL_SPEED_MULTIPLIER } from "../lib/userSettings";
-import SearchOverlay, { type SearchSelection } from "./SearchOverlay";
+import type { SearchSelection } from "./SearchOverlay";
+import { normalizeEnglishSpeech } from "./englishSpeech";
 
 // 화면 토글에 노출되는 번역본 키.
 //   - krv:   개역한글
@@ -313,9 +319,10 @@ type TanakhBookId =
 //   - krv / kids / greek : 기존 단일 역본 읽기(아무 책/장).
 //   - english            : 영어(WEB) 단일 역본 읽기 — 로마서 1장 전용.
 //   - study              : 다중 역본 레이어 뷰어(성경 공부) — 로마서 1장 전용.
-// english / study 를 고르면 자동으로 로마서 1장으로 이동한다.
-type ModeChoice = TranslationKey | "english" | "study";
-type ViewMode = "reader" | "english" | "study";
+// english / kjv / study 를 고르면 그 책의 영어(또는 공부) 화면으로 들어간다.
+type ModeChoice = TranslationKey | "english" | "kjv" | "study";
+type ViewMode = "reader" | "english" | "kjv" | "study";
+type ReadingScope = "reader" | "web" | "kjv";
 
 type PrayerGradeKey = "children" | "youth" | "youngadult" | "adult";
 
@@ -361,6 +368,8 @@ type Verse = {
   t: string;
 };
 
+const EMPTY_VERSES: Verse[] = [];
+
 // 헬라어 단어 토큰. UI 에서 단어/발음 ruby 와 단어별 정보 드롭다운에 쓴다.
 //   w    : 헬라어 원문 단어(강세·기식 포함)
 //   p    : 한글 발음. 빈 문자열이면 발음 줄에 아무것도 그리지 않는다(구두점용).
@@ -385,11 +394,6 @@ type Chapter = {
     greekTokens?: GreekVerseTokens[];
     greekWords?: Verse[];
   };
-};
-
-type BibleData = {
-  translations: Partial<Record<TranslationKey, { label: string; note?: string }>>;
-  chapters: Chapter[];
 };
 
 type WordToken = {
@@ -437,21 +441,41 @@ type SpeechRecognitionLike = {
 
 type SpeechRecognitionConstructor = new () => SpeechRecognitionLike;
 
-// 본문 데이터는 bibleData.ts (단일 진입점) 의 `loadBookData(bookId)` 로
-// lazy 하게 fetch 한다(`public/bible-data/<bookId>.json`). 검색은 첫 검색 시점에
-// `loadAllBooks()` 로 66권을 한 번에 받아 평탄화 인덱스를 빌드한다 — 이전엔
-// 정적 import 한 객체를 공유했지만, 약 40MB 의 JSON 이 client bundle 에 들어가
-// 페이지 hydration 이 매우 무거워지는 부작용이 있어 모두 정적 자산 fetch 로
-// 통일했다.
+// 읽기 본문은 장 단위 `korean.json` 만 받는다. 검색은 검색창을 열 때
+// `loadAllBooks()` 로 책 전체 `/bible-data/<bookId>.json` 을 받는다.
 
 const prayersData = prayersJson as PrayersData;
 
-const doneKey = (bookId: BookId, chapter: number) =>
-  `bible_done_${bookId}_${chapter}`;
-const verseProgressKey = (bookId: BookId, chapter: number) =>
-  `bible_verse_progress_${bookId}_${chapter}`;
-const celebratedKey = (bookId: BookId, chapter: number) =>
-  `bible_celebrated_${bookId}_${chapter}`;
+const doneKey = (
+  bookId: BookId,
+  chapter: number,
+  scope: ReadingScope = "reader",
+) =>
+  scope === "reader"
+    ? `bible_done_${bookId}_${chapter}`
+    : `bible_done_${bookId}_${chapter}_${scope}`;
+const verseProgressKey = (
+  bookId: BookId,
+  chapter: number,
+  scope: ReadingScope = "reader",
+) =>
+  scope === "reader"
+    ? `bible_verse_progress_${bookId}_${chapter}`
+    : `bible_verse_progress_${bookId}_${chapter}_${scope}`;
+
+const readingScopeOf = (mode: ViewMode): ReadingScope =>
+  mode === "english" ? "web" : mode === "kjv" ? "kjv" : "reader";
+
+const isEnglishReadingMode = (mode: ViewMode) =>
+  mode === "english" || mode === "kjv";
+const celebratedKey = (
+  bookId: BookId,
+  chapter: number,
+  scope: ReadingScope = "reader",
+) =>
+  scope === "reader"
+    ? `bible_celebrated_${bookId}_${chapter}`
+    : `bible_celebrated_${bookId}_${chapter}_${scope}`;
 const CURRENT_BOOK_KEY = "bible_current_book";
 // 양쪽 드롭다운(구약/신약)이 서로의 마지막 선택을 잊지 않도록, 각 testament 별
 // "마지막으로 본 책" 을 따로 보관한다. 사용자가 구약 어디를 보고 있을 때도
@@ -840,11 +864,11 @@ const generateChapterQuiz = (verses: Verse[]): QuizQuestion[] => {
 //      연속으로 통과시킨다(다중 절 fast-pass).
 //   6) 순서 강제: 현재 절 트리거가 잡히기 전엔 절대 뒤 절로 건너뛰지 않는다.
 // =============================================================================
-const buildVerseTrigger = (verseText: string): string[] => {
-  const all = verseText
-    .split(/\s+/)
-    .map(normalizeKorean)
-    .filter(Boolean);
+const buildVerseTrigger = (
+  verseText: string,
+  normalize: (value: string) => string = normalizeKorean,
+): string[] => {
+  const all = verseText.split(/\s+/).map(normalize).filter(Boolean);
   if (all.length === 0) return [];
 
   // 기본 앞 3 단어 (단어 수가 더 적으면 있는 만큼).
@@ -867,13 +891,11 @@ const advanceVerseIndexByTriggers = (
   transcript: string,
   triggers: string[][],
   startIdx: number,
+  normalize: (value: string) => string = normalizeKorean,
 ): number => {
   if (startIdx >= triggers.length) return startIdx;
 
-  const spokenWords = transcript
-    .split(/\s+/)
-    .map(normalizeKorean)
-    .filter(Boolean);
+  const spokenWords = transcript.split(/\s+/).map(normalize).filter(Boolean);
 
   if (spokenWords.length === 0) return startIdx;
 
@@ -1176,6 +1198,10 @@ export default function BibleReadingPage() {
   // 영어(WEB) 단일 역본, "study" 는 로마서 1장 다중 역본 레이어 뷰어.
   // 후 두 모드는 로마서 1장 전용이라, 진입 시 자동으로 로마서 1장으로 이동.
   const [viewMode, setViewMode] = useState<ViewMode>("reader");
+  const viewModeRef = useRef<ViewMode>("reader");
+  useEffect(() => {
+    viewModeRef.current = viewMode;
+  }, [viewMode]);
   const [readingMode, setReadingMode] = useState<ReadingMode>("mic");
   const [readVerseCount, setReadVerseCount] = useState(0);
 
@@ -1785,30 +1811,45 @@ export default function BibleReadingPage() {
 
   const bookMeta = BOOKS[bookId];
 
-  // 본문 데이터는 lazy fetch — `loadBookData(bookId)` 가 `public/bible-data/`
-  // 의 정적 JSON 한 권만 받아온다. 같은 책으로 돌아오면 모듈 캐시로 즉시.
-  // 첫 진입 또는 다른 책으로 전환된 직후 fetch 가 도착하기 전에는
-  // EMPTY_BIBLE_DATA(chapters=[]) 가 들어가 후속 코드가 빈 배열 위에서 안전하게
-  // 흐른다 — 화면에는 잠깐 "본문 준비 중" 안내가 보이고 도착 즉시 평소처럼 표시.
-  const [bookData, setBookData] = useState<BibleData>(EMPTY_BIBLE_DATA);
-  // 데이터 로딩 진행 상태 — 진짜 fetch 중인지(=짧은 placeholder 표시 분기용)
-  // 와 에러 메시지를 구분해 둔다. 같은 책이 캐시에 있으면 거의 한 프레임 안에
-  // 로딩이 끝나, 사용자에게는 보이지 않는다.
+  // 읽기 본문은 지금 장만 받는다. 장 목록·제목은 korean-index.json.
+  // 검색은 그대로 책 전체 bible-data 를 쓴다.
+  const [loadedChapter, setLoadedChapter] = useState<Chapter | null>(null);
+  const [titleByChapter, setTitleByChapter] = useState<Record<number, string>>(
+    {},
+  );
   const [bookDataLoading, setBookDataLoading] = useState(false);
   const [bookDataError, setBookDataError] = useState<string | null>(null);
   useEffect(() => {
     let cancelled = false;
+    setTitleByChapter({});
+    loadKoreanIndex(bookId)
+      .then((index) => {
+        if (cancelled) return;
+        const next: Record<number, string> = {};
+        for (const item of index.chapters) next[item.chapter] = item.title;
+        setTitleByChapter(next);
+      })
+      .catch(() => {
+        /* 제목이 없어도 장 번호 목록은 books.ts 로 그린다. */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [bookId]);
+  useEffect(() => {
+    let cancelled = false;
     setBookDataError(null);
     setBookDataLoading(true);
-    loadBookData(bookId)
-      .then((d) => {
+    setLoadedChapter(null);
+    loadKoreanChapter(bookId, chapterNumber)
+      .then((chapter) => {
         if (cancelled) return;
-        setBookData(d);
+        setLoadedChapter(chapter);
         setBookDataLoading(false);
       })
       .catch((e) => {
         if (cancelled) return;
-        setBookData(EMPTY_BIBLE_DATA);
+        setLoadedChapter(null);
         setBookDataError(
           e instanceof Error ? e.message : "본문 데이터를 불러오지 못했어요.",
         );
@@ -1817,18 +1858,28 @@ export default function BibleReadingPage() {
     return () => {
       cancelled = true;
     };
-  }, [bookId]);
+  }, [bookId, chapterNumber]);
 
-  const data = bookData;
-  // 빈 chapters 안전 폴백 — fetch 도착 전에도 chapter.verses.* 가 throw 하지
-  // 않게 안전한 빈 chapter 객체를 둔다. 도착 후엔 실제 데이터로 즉시 교체.
-  const chapter =
-    data.chapters.find((item) => item.chapter === chapterNumber) ??
-    data.chapters[0] ?? {
+  const chapterList = useMemo(() => {
+    const items: { chapter: number; title: string }[] = [];
+    for (let n = 1; n <= bookMeta.totalChapters; n++) {
+      items.push({ chapter: n, title: titleByChapter[n] ?? "" });
+    }
+    return items;
+  }, [bookMeta.totalChapters, titleByChapter]);
+
+  const fallbackChapter = useMemo<Chapter>(
+    () => ({
       chapter: chapterNumber,
-      title: "",
-      verses: { krv: [] },
-    };
+      title: titleByChapter[chapterNumber] ?? "",
+      verses: { krv: EMPTY_VERSES },
+    }),
+    [chapterNumber, titleByChapter],
+  );
+  const chapter =
+    loadedChapter && loadedChapter.chapter === chapterNumber
+      ? loadedChapter
+      : fallbackChapter;
   const hasKrv = (chapter.verses.krv?.length ?? 0) > 0;
   const hasKids = (chapter.verses.kids?.length ?? 0) > 0;
   // "원어묵상" 모드는 본문 자리에 들어갈 의역(greekKr) 이 있어야 활성된다.
@@ -1865,15 +1916,26 @@ export default function BibleReadingPage() {
             : translation;
   // 본문 표시용 절 배열. 원어 모드에서는 KRV 가 아닌 "원어 의역(greekKr)" 을
   // 본문 자리에 두어, 음성/스크롤 진도와 단어 토큰화도 의역 기준으로 동작하게 한다.
-  const verses =
-    effectiveTranslation === "greek"
-      ? chapter.verses.greekKr ?? []
-      : effectiveTranslation === "hebrew"
-        ? // 히브리어 모드는 HebrewChapterV2 컴포넌트가 자체적으로 절을 렌더하므로
-          // page 쪽 verses 는 빈 배열. 진행 표시·낭독 인식 등 기존 절 기반 UX 는
-          // 비활성된다(컴포넌트 안에서 long-press 복사 등 별도 제공).
-          []
-        : chapter.verses[effectiveTranslation] ?? [];
+  const verses = useMemo(() => {
+    if (effectiveTranslation === "greek") {
+      return chapter.verses.greekKr ?? EMPTY_VERSES;
+    }
+    if (effectiveTranslation === "hebrew") {
+      // 히브리어 모드는 HebrewChapterV2 가 절을 그린다. 빈 배열은 모듈 상수라
+      // 렌더마다 새 참조가 생기지 않는다.
+      return EMPTY_VERSES;
+    }
+    return chapter.verses[effectiveTranslation] ?? EMPTY_VERSES;
+  }, [chapter, effectiveTranslation]);
+  // 영어(WEB/KJV) 화면의 절. EnglishOnlyView 가 청크를 받은 뒤 올려준다.
+  // 낭독 인식·TTS·0/N 진도는 이 배열을 쓰고, 개역한글 verses 는 그대로 둔다.
+  const [englishVerses, setEnglishVerses] = useState<Verse[]>([]);
+  const handleEnglishVerses = useCallback((next: { n: number; t: string }[]) => {
+    setEnglishVerses(next);
+  }, []);
+  const englishReading = isEnglishReadingMode(viewMode);
+  const speechNormalize = englishReading ? normalizeEnglishSpeech : normalizeKorean;
+  const activeVerses = englishReading ? englishVerses : verses;
   // greek 모드에서만 쓰는 보조 맵 — 절 번호 → 토큰 배열 / 절 전체 풀이.
   const greekTokensMap = useMemo(() => {
     if (effectiveTranslation !== "greek") return null;
@@ -1890,7 +1952,7 @@ export default function BibleReadingPage() {
     return map;
   }, [effectiveTranslation, chapter.verses.greekWords]);
 
-  const totalVerses = verses.length;
+  const totalVerses = activeVerses.length;
   const progress = totalVerses > 0
     ? Math.min(100, (readVerseCount / totalVerses) * 100)
     : 0;
@@ -1899,10 +1961,10 @@ export default function BibleReadingPage() {
   // ─── TTS: 콜백 + 가드 + cleanup ───────────────────────────────────────
   // verses 가 매 렌더 새 배열로 만들어지므로 ref 로 잡아 콜백 closure 안에서
   // 항상 최신 verses 를 참조하도록 한다.
-  const ttsVersesRef = useRef(verses);
+  const ttsVersesRef = useRef(activeVerses);
   useEffect(() => {
-    ttsVersesRef.current = verses;
-  }, [verses]);
+    ttsVersesRef.current = activeVerses;
+  }, [activeVerses]);
 
   // 브라우저가 SpeechSynthesis 를 지원하지 않으면(예: 일부 임베디드 웹뷰)
   // 컨트롤 자체를 disable. mount 시 1회 체크.
@@ -2061,15 +2123,29 @@ export default function BibleReadingPage() {
       }
       const v = list[idx];
       const u = new SpeechSynthesisUtterance(v.t);
-      u.lang = "ko-KR";
+      const englishSpeech = isEnglishReadingMode(viewModeRef.current);
+      u.lang = englishSpeech ? "en-US" : "ko-KR";
       u.rate = ttsRateRef.current;
       u.pitch = ttsPitchRef.current;
       u.volume = ttsVolumeRef.current;
       // 선택된 voice 적용. voiceURI 로 현재 getVoices() 안에서 찾는다.
       // (voice 객체는 페이지 reload 사이에 동일 instance 가 아니므로 URI 비교)
       const voiceURI = ttsVoiceURIRef.current;
-      if (voiceURI) {
-        const voice = synth.getVoices().find((vv) => vv.voiceURI === voiceURI);
+      const voices = synth.getVoices();
+      if (englishSpeech) {
+        const selected = voiceURI
+          ? voices.find((vv) => vv.voiceURI === voiceURI)
+          : undefined;
+        const voice =
+          selected && selected.lang.toLowerCase().startsWith("en")
+            ? selected
+            : voices.find((vv) => vv.lang.toLowerCase().startsWith("en"));
+        if (voice) {
+          u.voice = voice;
+          u.lang = voice.lang;
+        }
+      } else if (voiceURI) {
+        const voice = voices.find((vv) => vv.voiceURI === voiceURI);
         if (voice) {
           u.voice = voice;
           // 명시적으로 voice 가 잡힌 경우 voice.lang 우선 — 일부 엔진은
@@ -2258,7 +2334,7 @@ export default function BibleReadingPage() {
     if (typeof document === "undefined") return;
     if (ttsVerseN == null) return;
     const el = document.querySelector<HTMLElement>(
-      `.brp-verse[data-verse-num="${ttsVerseN}"]`,
+      `[data-verse-num="${ttsVerseN}"]`,
     );
     if (!el) return;
     el.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -2274,15 +2350,18 @@ export default function BibleReadingPage() {
     stopListening();
     setReadVerseCount(totalVerses);
     readVerseCountRef.current = totalVerses;
-    window.localStorage.setItem(doneKey(bookId, chapterNumber), "true");
     window.localStorage.setItem(
-      verseProgressKey(bookId, chapterNumber),
+      doneKey(bookId, chapterNumber, readingScopeOf(viewMode)),
+      "true",
+    );
+    window.localStorage.setItem(
+      verseProgressKey(bookId, chapterNumber, readingScopeOf(viewMode)),
       String(totalVerses),
     );
     setDoneChapters((prev) => new Set(prev).add(chapterNumber));
 
     const student = currentStudentRef.current;
-    if (student) {
+    if (student && !isEnglishReadingMode(viewMode)) {
       void (async () => {
         // br_complete_chapter RPC 는 PIN 이 필요. 보관 PIN 이 없거나(만료/탭 새로 열림)
         // 서버에서 PIN 불일치(bad_pin)가 떨어지면 학생 식별 모달을 다시 띄워 PIN 을 재요청.
@@ -2303,13 +2382,18 @@ export default function BibleReadingPage() {
       })();
     }
 
+    const scope = readingScopeOf(viewMode);
     const alreadyCelebrated =
-      window.localStorage.getItem(celebratedKey(bookId, chapterNumber)) === "true";
+      window.localStorage.getItem(celebratedKey(bookId, chapterNumber, scope)) ===
+      "true";
     if (!alreadyCelebrated) {
-      window.localStorage.setItem(celebratedKey(bookId, chapterNumber), "true");
+      window.localStorage.setItem(
+        celebratedKey(bookId, chapterNumber, scope),
+        "true",
+      );
       setCompleteVisible(true);
     }
-  }, [bookId, chapterNumber, effectiveTranslation, stopListening, totalVerses]);
+  }, [bookId, chapterNumber, effectiveTranslation, stopListening, totalVerses, viewMode]);
 
   const openChapterQuiz = useCallback(() => {
     if (!hasFilledText) return;
@@ -2396,15 +2480,19 @@ export default function BibleReadingPage() {
     setQuizSubmitted(false);
     setQuizAnswers([]);
     setQuizQuestions([]);
-    window.localStorage.removeItem(doneKey(bookId, chapterNumber));
-    window.localStorage.removeItem(verseProgressKey(bookId, chapterNumber));
+    window.localStorage.removeItem(
+      doneKey(bookId, chapterNumber, readingScopeOf(viewMode)),
+    );
+    window.localStorage.removeItem(
+      verseProgressKey(bookId, chapterNumber, readingScopeOf(viewMode)),
+    );
     setDoneChapters((prev) => {
       if (!prev.has(chapterNumber)) return prev;
       const next = new Set(prev);
       next.delete(chapterNumber);
       return next;
     });
-  }, [bookId, chapterNumber, stopListening]);
+  }, [bookId, chapterNumber, stopListening, viewMode]);
 
   // ─── 절 다중 선택 + 복사 ──────────────────────────────────────────────
   // long-press 타이머 정리 (이동/up/cancel 시 공통 호출).
@@ -2645,8 +2733,8 @@ export default function BibleReadingPage() {
   // advanceVerseIndexByTriggers 가 "지금 기다리는 절" 의 트리거부터
   // 차례로 본다.
   const verseTriggers = useMemo<string[][]>(
-    () => verses.map((v) => buildVerseTrigger(v.t)),
-    [verses],
+    () => activeVerses.map((v) => buildVerseTrigger(v.t, speechNormalize)),
+    [activeVerses, speechNormalize],
   );
 
   const processTranscript = useCallback(
@@ -2659,17 +2747,18 @@ export default function BibleReadingPage() {
         transcript,
         verseTriggers,
         startVerseIdx,
+        speechNormalize,
       );
       if (newVerseIdx <= startVerseIdx) return;
 
       readVerseCountRef.current = newVerseIdx;
       setReadVerseCount(newVerseIdx);
       window.localStorage.setItem(
-        verseProgressKey(bookId, chapterNumber),
+        verseProgressKey(bookId, chapterNumber, readingScopeOf(viewMode)),
         String(newVerseIdx),
       );
     },
-    [bookId, chapterNumber, hasFilledText, verseTriggers],
+    [bookId, chapterNumber, hasFilledText, speechNormalize, verseTriggers, viewMode],
   );
 
   const handleReadingModeChange = useCallback(
@@ -2708,6 +2797,7 @@ export default function BibleReadingPage() {
   // localStorage 기록을 한다.
   const handleModeChange = useCallback(
     (next: ModeChoice) => {
+      stopListening();
       if (
         next === "krv" ||
         next === "kids" ||
@@ -2718,7 +2808,7 @@ export default function BibleReadingPage() {
         handleTranslationChange(next);
         return;
       }
-      // english 또는 study — 현재 책이 NT/OT 어느 쪽이든 지원 목록 안이면 유지.
+      // english / kjv / study — 현재 책이 NT/OT 어느 쪽이든 지원 목록 안이면 유지.
       // 그 외(미선택 등) 일 때만 로마서 1장으로 폴백.
       const supported = STUDY_BOOK_IDS.includes(bookId);
       if (!supported) {
@@ -2743,6 +2833,7 @@ export default function BibleReadingPage() {
       viewMode,
       handleTranslationChange,
       bookId,
+      stopListening,
     ],
   );
 
@@ -2750,9 +2841,11 @@ export default function BibleReadingPage() {
   const currentModeChoice: ModeChoice =
     viewMode === "study"
       ? "study"
-      : viewMode === "english"
-        ? "english"
-        : translation;
+      : viewMode === "kjv"
+        ? "kjv"
+        : viewMode === "english"
+          ? "english"
+          : translation;
 
   // 검색 결과 클릭 → 해당 책/장/번역으로 이동 + 그 절을 잠깐 강조(flashVerse).
   //   기존 책·장·번역 전환과 동일한 state/localStorage 키를 재사용한다.
@@ -2842,7 +2935,7 @@ export default function BibleReadingPage() {
     }
 
     const recognition = new Recognition();
-    recognition.lang = "ko-KR";
+    recognition.lang = isEnglishReadingMode(viewMode) ? "en-US" : "ko-KR";
     recognition.continuous = true;
     recognition.interimResults = true;
     recognition.maxAlternatives = 3;
@@ -2922,7 +3015,7 @@ export default function BibleReadingPage() {
       setListening(false);
       listeningRef.current = false;
     }
-  }, [hasFilledText, processTranscript, totalVerses]);
+  }, [hasFilledText, processTranscript, totalVerses, viewMode]);
 
   const moveChapter = (next: number) => {
     const clamped = Math.min(bookMeta.totalChapters, Math.max(1, next));
@@ -3141,7 +3234,7 @@ export default function BibleReadingPage() {
     let urlParamApplied = false;
     try {
       const qp = new URLSearchParams(window.location.search).get("view");
-      if (qp === "study" || qp === "english" || qp === "reader") {
+      if (qp === "study" || qp === "english" || qp === "kjv" || qp === "reader") {
         initialView = qp;
         urlParamApplied = true;
       }
@@ -3150,7 +3243,12 @@ export default function BibleReadingPage() {
     }
     if (!initialView) {
       const savedView = window.localStorage.getItem(VIEW_MODE_KEY);
-      if (savedView === "study" || savedView === "english" || savedView === "reader") {
+      if (
+        savedView === "study" ||
+        savedView === "english" ||
+        savedView === "kjv" ||
+        savedView === "reader"
+      ) {
         initialView = savedView;
       }
     }
@@ -3220,17 +3318,20 @@ export default function BibleReadingPage() {
   }, [bookId, viewMode]);
 
   useEffect(() => {
+    const scope = readingScopeOf(viewMode);
     const done = new Set<number>();
-    data.chapters.forEach((item) => {
+    for (let n = 1; n <= bookMeta.totalChapters; n++) {
       if (
-        window.localStorage.getItem(doneKey(bookId, item.chapter)) === "true"
+        window.localStorage.getItem(doneKey(bookId, n, scope)) === "true"
       ) {
-        done.add(item.chapter);
+        done.add(n);
       }
-    });
+    }
     setDoneChapters(done);
 
-    if (!currentStudent) return;
+    // 서버 완료 기록은 개역한글/어린이 읽기만 반영한다.
+    // 영어(WEB/KJV) 완료를 같은 키에 쓰면 개역한글 진도가 바뀐다.
+    if (scope !== "reader" || !currentStudent) return;
     let cancelled = false;
     (async () => {
       try {
@@ -3252,7 +3353,7 @@ export default function BibleReadingPage() {
     return () => {
       cancelled = true;
     };
-  }, [bookId, currentStudent, data]);
+  }, [bookId, bookMeta.totalChapters, currentStudent, viewMode]);
 
   useEffect(() => {
     if (!currentStudent) return;
@@ -3273,11 +3374,14 @@ export default function BibleReadingPage() {
   }, [bookId, chapterNumber, effectiveTranslation]);
 
   useEffect(() => {
+    const scope = readingScopeOf(viewMode);
     const savedDone =
-      window.localStorage.getItem(doneKey(bookId, chapterNumber)) === "true";
+      window.localStorage.getItem(doneKey(bookId, chapterNumber, scope)) ===
+      "true";
     const savedProgress = Number(
-      window.localStorage.getItem(verseProgressKey(bookId, chapterNumber)) ??
-        "0",
+      window.localStorage.getItem(
+        verseProgressKey(bookId, chapterNumber, scope),
+      ) ?? "0",
     );
     const nextCount =
       savedDone && totalVerses > 0
@@ -3296,7 +3400,7 @@ export default function BibleReadingPage() {
     //   - normal(1x) → 절당 0.5초 (기본)
     //   - slow / slowest 는 충분히 천천히 읽도록.
     // 최소 2초 (1~3절짜리 단편도 너무 빨리 넘어가지 않도록).
-    const verseCount = verses.length;
+    const verseCount = activeVerses.length;
     const speedMultiplier = SCROLL_SPEED_MULTIPLIER[settings.scrollSpeed] ?? 1;
     const computedSeconds = Math.max(
       2,
@@ -3311,7 +3415,8 @@ export default function BibleReadingPage() {
     settings.scrollSpeed,
     totalVerses,
     translation,
-    verses,
+    viewMode,
+    activeVerses,
   ]);
 
   useEffect(() => {
@@ -4028,6 +4133,7 @@ export default function BibleReadingPage() {
                   { value: "krv", label: "개역한글" },
                   { value: "kids", label: "어린이 의역" },
                   { value: "english", label: "영어(WEB)" },
+                  { value: "kjv", label: "영어(KJV)" },
                   { value: "greek", label: "헬라어 보기" },
                   { value: "hebrew", label: "히브리어 보기" },
                   { value: "study", label: "성경 공부" },
@@ -4369,6 +4475,7 @@ export default function BibleReadingPage() {
             { value: "krv", label: "개역한글" },
             { value: "kids", label: "어린이 의역" },
             { value: "english", label: "영어(WEB)" },
+            { value: "kjv", label: "영어(KJV)" },
             { value: "greek", label: "헬라어 보기" },
             { value: "hebrew", label: "히브리어 보기" },
             { value: "study", label: "성경 공부" },
@@ -4454,7 +4561,7 @@ export default function BibleReadingPage() {
           <div className="brp-chapter-select-wrap">
             <Dropdown<number>
               value={chapterNumber}
-              options={data.chapters.map<DropdownOption<number>>((item) => ({
+              options={chapterList.map<DropdownOption<number>>((item) => ({
                 value: item.chapter,
                 label: `제 ${item.chapter} 장`,
                 sub: item.title || undefined,
@@ -4486,7 +4593,7 @@ export default function BibleReadingPage() {
           </h2>
         </div>
         <div className="brp-grid">
-          {data.chapters.map((item) => (
+          {chapterList.map((item) => (
             <button
               key={item.chapter}
               type="button"
@@ -4753,7 +4860,7 @@ export default function BibleReadingPage() {
             }
             chapter={chapterNumber}
           />
-        ) : viewMode === "english" ? (
+        ) : viewMode === "english" || viewMode === "kjv" ? (
           <EnglishOnlyView
             bookId={
               STUDY_BOOK_IDS.includes(bookId)
@@ -4761,6 +4868,10 @@ export default function BibleReadingPage() {
                 : "romans"
             }
             chapter={chapterNumber}
+            translation={viewMode === "kjv" ? "kjv" : "web"}
+            readVerseCount={readVerseCount}
+            speakingVerse={ttsVerseN}
+            onVerses={handleEnglishVerses}
           />
         ) : (
         <>
@@ -4772,6 +4883,7 @@ export default function BibleReadingPage() {
         )}
         {bookConfirmed &&
           !hasFilledText &&
+          !bookDataLoading &&
           // 히브리어 모드는 HebrewChapterV2 가 자체 본문을 렌더하므로 page 측의
           // verses=[] 가 비어있다고 해서 "본문 준비 안 됨" 안내를 띄우면 잘못된
           // 신호가 된다. 같은 이유로 헬라어 v2 도 해당 신약 책에서는 별도로

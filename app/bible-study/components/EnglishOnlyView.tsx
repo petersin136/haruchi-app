@@ -101,10 +101,22 @@ type BookManifest = {
 
 type EnglishLayer = { type: "text"; content: string };
 
+export type EnglishTranslationId = "web" | "kjv";
+
 type EnglishChunk = {
   chapter: number;
-  layer: "english";
+  layer: "english" | "kjv";
   verses: Record<string, EnglishLayer>;
+};
+
+const CHUNK_FILE: Record<EnglishTranslationId, string> = {
+  web: "english",
+  kjv: "kjv",
+};
+
+const TRANSLATION_LABEL: Record<EnglishTranslationId, string> = {
+  web: "영어(WEB)",
+  kjv: "영어(KJV)",
 };
 
 // 모듈 레벨 캐시 — 같은 책의 manifest 와 (책, 장) 조합 청크는 한 번만 fetch.
@@ -130,18 +142,22 @@ async function loadManifest(book: EnglishBookId): Promise<BookManifest> {
 async function loadEnglishChunk(
   book: EnglishBookId,
   ch: number,
+  translation: EnglishTranslationId,
   buildId?: string,
 ): Promise<EnglishChunk> {
-  const k = buildId ? `${book}|${ch}|${buildId}` : `${book}|${ch}`;
+  const file = CHUNK_FILE[translation];
+  const k = buildId
+    ? `${book}|${ch}|${file}|${buildId}`
+    : `${book}|${ch}|${file}`;
   const cached = chunkCache.get(k);
   if (cached) return cached;
   const p = (async () => {
     const url = buildId
-      ? `/bible-study/chunks/${book}/${ch}/english.json?v=${encodeURIComponent(buildId)}`
-      : `/bible-study/chunks/${book}/${ch}/english.json`;
+      ? `/bible-study/chunks/${book}/${ch}/${file}.json?v=${encodeURIComponent(buildId)}`
+      : `/bible-study/chunks/${book}/${ch}/${file}.json`;
     const res = await fetch(url, { cache: "default" });
     if (!res.ok)
-      throw new Error(`HTTP ${res.status} — ${book} ${ch}장 english 없음`);
+      throw new Error(`HTTP ${res.status} — ${book} ${ch}장 ${file} 없음`);
     return (await res.json()) as EnglishChunk;
   })();
   chunkCache.set(k, p);
@@ -189,14 +205,26 @@ function CopyIcon() {
 }
 
 type EnglishOnlyViewProps = {
-  /** 어떤 책의 어떤 장을 영어(WEB) 으로 보여줄지. 기본 로마서 1장. */
+  /** 어떤 책의 어떤 장을 보여줄지. 기본 로마서 1장. */
   bookId?: EnglishBookId;
   chapter?: number;
+  /** web = 기존 WEB 청크, kjv = KJV 청크. 기본 web. */
+  translation?: EnglishTranslationId;
+  /** 낭독 진도(앞에서부터 읽은 절 수). 본문 하이라이트용. */
+  readVerseCount?: number;
+  /** TTS 가 읽고 있는 절 번호. */
+  speakingVerse?: number | null;
+  /** 로드된 절을 부모(음성·진도)에 알린다. */
+  onVerses?: (verses: { n: number; t: string }[]) => void;
 };
 
 export default function EnglishOnlyView({
   bookId = "romans",
   chapter = 1,
+  translation = "web",
+  readVerseCount = 0,
+  speakingVerse = null,
+  onVerses,
 }: EnglishOnlyViewProps = {}) {
   const [toast, setToast] = useState<string | null>(null);
   const [manifest, setManifest] = useState<BookManifest | null>(null);
@@ -241,7 +269,7 @@ export default function EnglishOnlyView({
     if (!manifest) return;
     let cancelled = false;
     setChunk(null);
-    loadEnglishChunk(bookId, effectiveChapter, manifest.buildId)
+    loadEnglishChunk(bookId, effectiveChapter, translation, manifest.buildId)
       .then((c) => {
         if (!cancelled) setChunk(c);
       })
@@ -255,7 +283,7 @@ export default function EnglishOnlyView({
     return () => {
       cancelled = true;
     };
-  }, [manifest, bookId, effectiveChapter]);
+  }, [manifest, bookId, effectiveChapter, translation]);
 
   useEffect(() => {
     if (!toast) return;
@@ -271,20 +299,37 @@ export default function EnglishOnlyView({
   // 현재 장의 영어 절들 — 청크가 도착했을 때만. 비어있는 절은 제외.
   const verses = useMemo(() => {
     if (!manifest || !chunk) return [] as { n: number; ref: string; text: string }[];
-    const verseCount = currentChapterMeta?.verseCount ?? 0;
+    const fromManifest = currentChapterMeta?.verseCount ?? 0;
+    const chunkNums = Object.keys(chunk.verses ?? {})
+      .map((ref) => {
+        const matched = ref.match(/:(\d+)$/);
+        return matched ? Number(matched[1]) : 0;
+      })
+      .filter((n) => n > 0);
+    // WEB 은 기존 manifest 절 수를 그대로 쓴다.
+    // KJV 는 장·절 수가 WEB 과 다른 곳이 있어, 청크에 들어 있는 절까지 보여 준다.
+    const upper =
+      translation === "kjv"
+        ? Math.max(fromManifest, ...chunkNums, 0)
+        : fromManifest;
     const out: { n: number; ref: string; text: string }[] = [];
-    for (let n = 1; n <= verseCount; n += 1) {
+    for (let n = 1; n <= upper; n += 1) {
       const ref = `${manifest.book} ${effectiveChapter}:${n}`;
       const text = (chunk.verses?.[ref]?.content || "").trim();
       if (text) out.push({ n, ref, text });
     }
     return out;
-  }, [manifest, chunk, currentChapterMeta, effectiveChapter]);
+  }, [manifest, chunk, currentChapterMeta, effectiveChapter, translation]);
+
+  useEffect(() => {
+    onVerses?.(verses.map((v) => ({ n: v.n, t: v.text })));
+  }, [verses, onVerses]);
 
   const verseCount = currentChapterMeta?.verseCount ?? 0;
+  const translationLabel = TRANSLATION_LABEL[translation];
   const ariaLabel = manifest
-    ? `${manifest.book} ${effectiveChapter}장 영어(WEB)`
-    : "성경 공부 — 영어(WEB)";
+    ? `${manifest.book} ${effectiveChapter}장 ${translationLabel}`
+    : `성경 공부 — ${translationLabel}`;
 
   return (
     <section className="eov" aria-label={ariaLabel}>
@@ -319,12 +364,18 @@ export default function EnglishOnlyView({
         </ol>
       )}
       {chunk && verses.length === 0 && !loadError && (
-        <p className="eov-empty">이 장에는 영어(WEB) 본문이 없어요.</p>
+        <p className="eov-empty">이 장에는 {translationLabel} 본문이 없어요.</p>
       )}
       {chunk && verses.length > 0 && (
         <ol className="eov-verses">
-          {verses.map((v) => (
-            <li key={v.n} className="eov-verse">
+          {verses.map((v, idx) => (
+            <li
+              key={v.n}
+              data-verse-num={v.n}
+              className={`eov-verse ${idx < readVerseCount ? "is-read" : ""} ${
+                speakingVerse === v.n ? "is-speaking" : ""
+              }`}
+            >
               <div className="eov-row">
                 <span className="eov-num" aria-hidden="true">
                   {v.n}
@@ -348,8 +399,9 @@ export default function EnglishOnlyView({
       )}
       <footer className="eov-footer">
         <small>
-          영어 World English Bible (WEB, 퍼블릭 도메인) — 다른 번역으로 바꾸려면
-          오른쪽 메뉴의 드롭다운을 사용하세요.
+          {translation === "kjv"
+            ? "King James Version (1769) – Public Domain"
+            : "영어 World English Bible (WEB, 퍼블릭 도메인) — 다른 번역으로 바꾸려면 오른쪽 메뉴의 드롭다운을 사용하세요."}
         </small>
       </footer>
 
@@ -425,6 +477,13 @@ export default function EnglishOnlyView({
         }
         .eov-verse:last-child {
           border-bottom: none;
+        }
+        .eov-verse.is-read .eov-text {
+          color: var(--ink-soft, #5c5c62);
+        }
+        .eov-verse.is-speaking {
+          background: color-mix(in srgb, var(--accent, #2e5d4b) 8%, transparent);
+          border-radius: 8px;
         }
         .eov-row {
           display: grid;
