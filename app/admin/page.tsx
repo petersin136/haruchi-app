@@ -1378,7 +1378,18 @@ function ProgressTab({
   classes: ClassRow[];
   students: StudentRow[];
 }) {
-  const supabase = useMemo(() => getSupabaseClient(), []);
+  const [supabase, setSupabase] = useState<Awaited<
+    ReturnType<typeof getSupabaseClient>
+  > | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    void getSupabaseClient().then((client) => {
+      if (!cancelled) setSupabase(client);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
   const [classId, setClassId] = useState<string>(classes[0]?.id ?? "");
   const [book, setBook] = useState<BookId>("proverbs");
   const [logs, setLogs] = useState<ReadingLogRow[]>([]);

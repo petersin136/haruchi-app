@@ -39,7 +39,18 @@ const formatDateTime = (iso: string) => {
 export default function TeacherPage() {
   const router = useRouter();
   const configured = useMemo(() => isSupabaseConfigured(), []);
-  const supabase = useMemo(() => getSupabaseClient(), []);
+  const [supabase, setSupabase] = useState<Awaited<
+    ReturnType<typeof getSupabaseClient>
+  > | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    void getSupabaseClient().then((client) => {
+      if (!cancelled) setSupabase(client);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
   const { state, signOut } = useAdultSession();
 
   const [classes, setClasses] = useState<ClassRow[]>([]);

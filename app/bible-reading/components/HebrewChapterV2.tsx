@@ -15,8 +15,8 @@
  *      (Strong's, 공개 도메인) 으로 변경.
  *
  * 데이터:
- *   - `bookId` 에 따라 `<book>-v2.json` 을 lazy import. 헬라어와 동일 형태이지만
- *     `copyHebrew` 필드를 사용한다.
+ *   - `bookId` + 장 번호에 따라 `/bible-v2/chapters/<book>/<chapter>.json`
+ *     한 장만 fetch 한다. 헬라어와 동일 형태이지만 `copyHebrew` 를 사용한다.
  */
 
 import {
@@ -69,18 +69,18 @@ type TanakhId =
   | "zechariah"
   | "malachi";
 
-// v2 JSON 들은 webpack 의존성 그래프에서 빼고 `public/bible-v2/` 에서 런타임
-// fetch 로 받아온다. (66개 책 전체를 dynamic import 후보로 묶으면 dev 컴파일
-// 단계에서 V8 힙이 폭발해 OOM 으로 죽는다 — Next 14 의 알려진 한계.)
-async function loadTanakhData(book: TanakhId): Promise<V2Data> {
-  // `default` 캐시 모드로 HTTP cache + ETag 검증에 맡긴다. (force-cache 로 박으면
-  // 데이터 재빌드 후에도 브라우저가 옛 파일을 평생 들고 있어 사용자가 새 결과를
-  // 보지 못한다.)
-  const res = await fetch(`/bible-v2/${book}-v2.json`, { cache: "default" });
+// 장 파일은 `public/bible-v2/chapters/` 에서 런타임 fetch 한다.
+async function loadTanakhChapter(
+  book: TanakhId,
+  chapter: number,
+): Promise<V2ChapterFile> {
+  const res = await fetch(`/bible-v2/chapters/${book}/${chapter}.json`, {
+    cache: "default",
+  });
   if (!res.ok) {
-    throw new Error(`Failed to load ${book}-v2.json: ${res.status}`);
+    throw new Error(`Failed to load ${book}/${chapter}.json: ${res.status}`);
   }
-  return (await res.json()) as V2Data;
+  return (await res.json()) as V2ChapterFile;
 }
 
 type V2Token = {
@@ -114,14 +114,13 @@ type V2Chapter = {
   verses: V2Verse[];
 };
 
-type V2Data = {
+type V2ChapterFile = V2Chapter & {
   meta: {
     book: string;
     lang?: string;
     dir?: string;
     sources: Record<string, string>;
   };
-  chapters: V2Chapter[];
 };
 
 type CopyMode = "hebrew" | "kr" | "both";
@@ -271,7 +270,7 @@ type Props = {
   chapter: number;
 };
 
-const DATA_CACHE = new Map<TanakhId, V2Data>();
+const DATA_CACHE = new Map<string, V2ChapterFile>();
 
 export default function HebrewChapterV2({
   bookId,
@@ -279,39 +278,41 @@ export default function HebrewChapterV2({
   chapterLabel,
   chapter,
 }: Props) {
-  const [data, setData] = useState<V2Data | null>(
-    () => DATA_CACHE.get(bookId) ?? null,
+  const cacheKey = `${bookId}:${chapter}`;
+  const [data, setData] = useState<V2ChapterFile | null>(
+    () => DATA_CACHE.get(cacheKey) ?? null,
   );
+  const [missing, setMissing] = useState(false);
 
   useEffect(() => {
     let alive = true;
-    const cached = DATA_CACHE.get(bookId);
+    const key = `${bookId}:${chapter}`;
+    const cached = DATA_CACHE.get(key);
     if (cached) {
       setData(cached);
+      setMissing(false);
       return () => {
         alive = false;
       };
     }
     setData(null);
-    loadTanakhData(bookId).then((d) => {
-      if (!alive) return;
-      DATA_CACHE.set(bookId, d);
-      setData(d);
-    });
+    setMissing(false);
+    loadTanakhChapter(bookId, chapter)
+      .then((d) => {
+        if (!alive) return;
+        DATA_CACHE.set(key, d);
+        setData(d);
+      })
+      .catch(() => {
+        if (!alive) return;
+        setMissing(true);
+      });
     return () => {
       alive = false;
     };
-  }, [bookId]);
+  }, [bookId, chapter]);
 
-  const chapterIndex = useMemo(() => {
-    if (!data) return new Map<number, V2Chapter>();
-    return new Map<number, V2Chapter>(
-      data.chapters.map((c) => [c.chapter, c]),
-    );
-  }, [data]);
-
-  const chapterData = chapterIndex.get(chapter);
-  const verses = chapterData?.verses ?? [];
+  const verses = data?.verses ?? [];
   const resolvedChapterLabel = chapterLabel ?? `${chapter}장`;
 
   const [openKr, setOpenKr] = useState<Set<number>>(() => new Set());
@@ -496,6 +497,22 @@ export default function HebrewChapterV2({
     [verses],
   );
 
+  if (missing) {
+    return (
+      <section className="brp-h2">
+        <header className="brp-h2-header">
+          <div className="brp-h2-title">
+            <strong>
+              {bookLabel} {resolvedChapterLabel}
+            </strong>
+            <span className="brp-h2-meta">자료 없음</span>
+          </div>
+        </header>
+        <div className="brp-h2-loading">이 장의 히브리어 자료가 아직 없어요.</div>
+      </section>
+    );
+  }
+
   if (!data) {
     return (
       <section className="brp-h2" aria-busy="true">
@@ -508,22 +525,6 @@ export default function HebrewChapterV2({
           </div>
         </header>
         <div className="brp-h2-loading">히브리어 본문을 가져오고 있어요…</div>
-      </section>
-    );
-  }
-
-  if (!chapterData) {
-    return (
-      <section className="brp-h2">
-        <header className="brp-h2-header">
-          <div className="brp-h2-title">
-            <strong>
-              {bookLabel} {resolvedChapterLabel}
-            </strong>
-            <span className="brp-h2-meta">자료 없음</span>
-          </div>
-        </header>
-        <div className="brp-h2-loading">이 장의 히브리어 자료가 아직 없어요.</div>
       </section>
     );
   }
