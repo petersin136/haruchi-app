@@ -20,6 +20,7 @@ import { loadKoreanChapter, loadKoreanIndex } from "./bibleData";
 import type { StudentIdentityBarHandle } from "./components/StudentIdentityBar";
 import Dropdown, { type DropdownOption } from "./components/Dropdown";
 import SlidingToggle from "./components/SlidingToggle";
+import VerseList from "./components/VerseList";
 // 새 "헬라어 보기 v2" 구조 — 신약 27권 전체, 히브리어는 구약 39권 전체.
 // 본문 데이터(`*-v2.json`)는 `public/bible-v2/` 에서 런타임 fetch 로 받는다.
 // (webpack dynamic import 로 묶으면 66권 합 ~150MB 가 의존성 그래프에 들어가
@@ -5016,192 +5017,31 @@ export default function BibleReadingPage() {
               bookId === "john3" ||
               bookId === "jude" ||
               bookId === "revelation")
-          ) &&
-          verses.map((verse, idx) => {
-          // 스크롤 모드는 "스크롤 + 최소 시간 + 퀴즈"가 모두 끝나
-          // 장 자체가 완료(readVerseCount === totalVerses)됐을 때만
-          // 절 색을 바꾼다. 그 외에는 절별 진행 색을 절대 표시하지 않는다.
-          //
-          // 음성(verse-mic) 모드는 새 트리거 매칭으로 동작 — 절을 통째로
-          // 한 번에 "읽음" 처리한다. "지금 기다리는 다음 절" 을 미리 회색으로
-          // 깔아 보여주는 is-current 표시는 사용자가 아직 현재 절을 다 읽기도
-          // 전에 다음 절이 강조되어 보여 혼란을 주므로 의도적으로 제거.
-          const chapterFullyRead =
-            totalVerses > 0 && readVerseCount >= totalVerses;
-          const isRead =
-            readingMode === "scroll"
-              ? chapterFullyRead
-              : idx < readVerseCount;
-          const isSelected = selectedVerses.has(verse.n);
-          const isSpeaking = ttsVerseN === verse.n;
-          return (
-            <div
-              key={`${bookId}-${chapterNumber}-${effectiveTranslation}-${verse.n}`}
-              data-verse-num={verse.n}
-              className={`brp-verse ${isRead ? "is-read" : ""} ${
-                selectionMode ? "is-selecting" : ""
-              } ${isSelected ? "is-selected" : ""} ${
-                flashVerse === verse.n ? "is-flash" : ""
-              } ${isSpeaking ? "is-speaking" : ""}`}
-              onPointerDown={(e) => handleVersePointerDown(verse.n, e)}
-              onPointerMove={handleVersePointerMove}
-              onPointerUp={cancelLongPress}
-              onPointerCancel={cancelLongPress}
-              onPointerLeave={cancelLongPress}
-              onClick={() => handleVerseClick(verse.n)}
-              role={selectionMode ? "button" : undefined}
-              aria-pressed={selectionMode ? isSelected : undefined}
-              aria-label={
-                selectionMode
-                  ? `${verse.n}절 ${isSelected ? "선택 해제" : "선택"}`
-                  : undefined
-              }
-            >
-              <span className="brp-verse-number">{verse.n}</span>
-              <p className="brp-verse-text">{verse.t}</p>
-              {/* 원어묵상 모드 — 본문(verse.t) 자체가 이미 "원어 의역" 이다.
-                  그 아래에 헬라어 단어 토큰을 ruby 형태로(헬라어/한글 발음)
-                  렌더링하고, 오른쪽에 ▾ 갈매기로 절 전체 풀이를 펼친다.
-                  pointer 이벤트는 절 카드의 long-press 선택과 충돌하지
-                  않도록 모두 stopPropagation 한다. */}
-              {effectiveTranslation === "greek" &&
-                greekTokensMap &&
-                greekTokensMap.has(verse.n) &&
-                (() => {
-                  const tokens = greekTokensMap.get(verse.n)!;
-                  const isDrawerOpen = openWordDrawers.has(verse.n);
-                  const hasDrawer =
-                    greekWordsMap?.has(verse.n) ?? false;
-                  return (
-                    <div className="brp-greek-block">
-                      <div className="brp-greek-line">
-                        <div className="brp-greek-tokens">
-                          {tokens.map((tk, i) => {
-                            const tokenKey = `${verse.n}:${i}`;
-                            const isInfoOpen = openTokenInfos.has(tokenKey);
-                            const hasInfo = !!tk.info;
-                            return (
-                              <span
-                                key={tokenKey}
-                                className="brp-greek-token"
-                              >
-                                <span className="brp-greek-token-word">
-                                  {tk.w}
-                                </span>
-                                {tk.p && (
-                                  hasInfo ? (
-                                    <button
-                                      type="button"
-                                      className={`brp-greek-token-pron is-clickable ${
-                                        isInfoOpen ? "is-open" : ""
-                                      }`}
-                                      aria-expanded={isInfoOpen}
-                                      aria-label={`${tk.w} (${tk.p}) 정보 ${
-                                        isInfoOpen ? "닫기" : "보기"
-                                      }`}
-                                      onPointerDown={(e) =>
-                                        e.stopPropagation()
-                                      }
-                                      onClick={(e) => {
-                                        e.stopPropagation();
-                                        setOpenTokenInfos((prev) => {
-                                          const next = new Set(prev);
-                                          if (next.has(tokenKey))
-                                            next.delete(tokenKey);
-                                          else next.add(tokenKey);
-                                          return next;
-                                        });
-                                      }}
-                                    >
-                                      {tk.p}
-                                    </button>
-                                  ) : (
-                                    <span className="brp-greek-token-pron">
-                                      {tk.p}
-                                    </span>
-                                  )
-                                )}
-                              </span>
-                            );
-                          })}
-                        </div>
-                        {hasDrawer && (
-                          <button
-                            type="button"
-                            className={`brp-greek-drawer-toggle ${
-                              isDrawerOpen ? "is-open" : ""
-                            }`}
-                            aria-expanded={isDrawerOpen}
-                            aria-label={`${verse.n}절 원어 풀이 ${
-                              isDrawerOpen ? "닫기" : "열기"
-                            }`}
-                            onPointerDown={(e) => e.stopPropagation()}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setOpenWordDrawers((prev) => {
-                                const next = new Set(prev);
-                                if (next.has(verse.n))
-                                  next.delete(verse.n);
-                                else next.add(verse.n);
-                                return next;
-                              });
-                            }}
-                          >
-                            <span
-                              className="brp-greek-drawer-chevron"
-                              aria-hidden="true"
-                            >
-                              ▾
-                            </span>
-                          </button>
-                        )}
-                      </div>
-                      {(() => {
-                        // 열린 단어 인포 패널 — 토큰 줄 흐름을 깨지 않도록
-                        // tokens 컨테이너 바깥, 그 아래 별도 블록으로 렌더링.
-                        const openInfos = tokens
-                          .map((tk, i) => ({ tk, i }))
-                          .filter(({ tk, i }) =>
-                            !!tk.info &&
-                            openTokenInfos.has(`${verse.n}:${i}`),
-                          );
-                        if (openInfos.length === 0) return null;
-                        return (
-                          <div className="brp-greek-token-info-panels">
-                            {openInfos.map(({ tk, i }) => (
-                              <div
-                                key={`info-${verse.n}:${i}`}
-                                className="brp-greek-token-info"
-                                role="region"
-                                aria-label={`${tk.w} 단어 풀이`}
-                              >
-                                <div className="brp-greek-token-info-head">
-                                  <span className="brp-greek-token-info-w">
-                                    {tk.w}
-                                  </span>
-                                  <span className="brp-greek-token-info-p">
-                                    {tk.p}
-                                  </span>
-                                </div>
-                                <div className="brp-greek-token-info-body">
-                                  {tk.info}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        );
-                      })()}
-                      {hasDrawer && isDrawerOpen && (
-                        <p className="brp-verse-greek-words">
-                          {greekWordsMap!.get(verse.n)}
-                        </p>
-                      )}
-                    </div>
-                  );
-                })()}
-            </div>
-          );
-        })}
+          ) && (
+          <VerseList
+            verses={verses}
+            bookId={bookId}
+            chapterNumber={chapterNumber}
+            effectiveTranslation={effectiveTranslation}
+            readingMode={readingMode}
+            readVerseCount={readVerseCount}
+            totalVerses={totalVerses}
+            selectionMode={selectionMode}
+            selectedVerses={selectedVerses}
+            flashVerse={flashVerse}
+            ttsVerseN={ttsVerseN}
+            greekTokensMap={greekTokensMap}
+            greekWordsMap={greekWordsMap}
+            openWordDrawers={openWordDrawers}
+            openTokenInfos={openTokenInfos}
+            onVersePointerDown={handleVersePointerDown}
+            onVersePointerMove={handleVersePointerMove}
+            onVersePointerCancel={cancelLongPress}
+            onVerseClick={handleVerseClick}
+            setOpenTokenInfos={setOpenTokenInfos}
+            setOpenWordDrawers={setOpenWordDrawers}
+          />
+          )}
         </>
         )}
       </section>

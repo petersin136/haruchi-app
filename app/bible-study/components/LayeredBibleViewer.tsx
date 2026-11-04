@@ -588,6 +588,7 @@ export default function LayeredBibleViewer({
     for (const layer of onLayers) {
       if (chunkByLayer.has(layer)) continue;
       if (loadingLayers.has(layer)) continue;
+      if (layerErrors.has(layer)) continue;
       setLoadingLayers((prev) => {
         if (prev.has(layer)) return prev;
         const next = new Set(prev);
@@ -638,10 +639,7 @@ export default function LayeredBibleViewer({
           });
         });
     }
-    // chunkByLayer / loadingLayers 는 effect 내부에서 setter 로 다루므로 deps 에서
-    // 빼도 안전 — onLayers / chapter / book 변화 시점에만 새 fetch 시도.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [manifest, bookId, effectiveChapter, onLayers]);
+  }, [manifest, bookId, effectiveChapter, onLayers, chunkByLayer, loadingLayers, layerErrors]);
 
   const isOn = useCallback((id: LayerId) => onLayers.includes(id), [onLayers]);
 
