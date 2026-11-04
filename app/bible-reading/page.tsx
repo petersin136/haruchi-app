@@ -1176,15 +1176,11 @@ const getMicrophonePermissionState = async () => {
 
 export default function BibleReadingPage() {
   // bookId 는 항상 유효한 값으로 유지 — 데이터/메모 계산 로직이 한 곳에서
-  // 분기 처리되지 않도록(creep prevention). 단, "사용자가 실제로 책을 골랐는지"
-  // 여부는 별도 bookConfirmed 플래그로 추적한다.
-  //   - bookConfirmed=false: 양쪽 드롭다운에 구약/신약 placeholder, 본문/장
-  //     스위처/진도/기도/dock 모두 숨김 → 깨끗한 "책 선택 안내" 화면.
-  //   - bookConfirmed=true:  평소처럼 모든 컨트롤·본문 표시.
-  // 첫 방문(localStorage 없음)에는 false. 이전 방문에서 골랐던 책이 저장돼
-  // 있으면 mount 시 useEffect 에서 복구하며 true 로 전환된다.
+  // 분기 처리되지 않도록(creep prevention). bookConfirmed 는 본문/컨트롤
+  // 표시 여부. 첫 화면부터 본문이 보이도록 기본은 true(잠언 1장).
+  // 이전 방문 책은 mount 시 useEffect 에서 복구한다.
   const [bookId, setBookId] = useState<BookId>("proverbs");
-  const [bookConfirmed, setBookConfirmed] = useState(false);
+  const [bookConfirmed, setBookConfirmed] = useState(true);
   // 두 드롭다운이 각자 마지막 선택을 기억하도록, 활성 bookId 와는 별도로
   // testament 별 "마지막 책" 을 추적한다. 양쪽이 동시에 책 이름을 띄울 수
   // 있어, 사용자는 구약↔신약 사이를 다시 검색하지 않고 즉시 전환 가능.
@@ -3170,40 +3166,45 @@ export default function BibleReadingPage() {
   useEffect(() => {
     migrateLegacyKeys();
 
-    // 이전 방문에서 골랐던 책을 복구. 66권 전체를 허용 (구버전은 5권만
-    // 화이트리스트했었음 — 신규 61권을 골라도 새로고침 시 잠언으로 돌아가던
-    // 문제 수정). 저장값이 유효한 BookId 일 때만 bookConfirmed=true 로 전환,
-    // 그 외(처음 방문/잘못된 값)는 bookConfirmed=false 상태 유지 → 양쪽
-    // 드롭다운이 구약/신약 placeholder 로 시작.
+    // 이전 방문에서 골랐던 책을 복구. 없으면 기본 잠언 1장을 바로 보여 주고
+    // 그 선택을 저장한다(빈 "책 고르기" 안내 화면을 쓰지 않는다).
     const savedBook = window.localStorage.getItem(CURRENT_BOOK_KEY);
+    let activeBook: BookId = "proverbs";
     if (savedBook && savedBook in BOOKS) {
-      const validBook = savedBook as BookId;
-      setBookId(validBook);
-      setBookConfirmed(true);
+      activeBook = savedBook as BookId;
+      setBookId(activeBook);
       const savedChapter = window.localStorage.getItem(
-        currentChapterKey(validBook),
+        currentChapterKey(activeBook),
       );
-      const meta = BOOKS[validBook];
+      const meta = BOOKS[activeBook];
       const next = savedChapter ? Number(savedChapter) : 1;
       if (Number.isFinite(next) && next >= 1 && next <= meta.totalChapters) {
         setChapterNumber(next);
       }
+    } else {
+      setBookId("proverbs");
+      setChapterNumber(1);
+      try {
+        window.localStorage.setItem(CURRENT_BOOK_KEY, "proverbs");
+        window.localStorage.setItem(currentChapterKey("proverbs"), "1");
+      } catch {
+        /* ignore */
+      }
     }
+    setBookConfirmed(true);
 
-    // testament 별 "마지막 책" 복구. 별도 키가 없으면(첫 사용/구버전) 활성
-    // bookId 를 그쪽 testament 의 last 로 채워 넣는다 — 사용자가 다른 쪽
-    // 드롭다운을 처음 열기 전까지는 한쪽만 채워진 상태가 되지만, 그게 자연.
+    // testament 별 "마지막 책" 복구. 별도 키가 없으면 활성 bookId 를 채운다.
     const savedOt = window.localStorage.getItem(LAST_OT_BOOK_KEY);
     if (savedOt && savedOt in BOOKS && isOldTestament(savedOt as BookId)) {
       setLastOtBookId(savedOt as BookId);
-    } else if (savedBook && savedBook in BOOKS && isOldTestament(savedBook as BookId)) {
-      setLastOtBookId(savedBook as BookId);
+    } else if (isOldTestament(activeBook)) {
+      setLastOtBookId(activeBook);
     }
     const savedNt = window.localStorage.getItem(LAST_NT_BOOK_KEY);
     if (savedNt && savedNt in BOOKS && !isOldTestament(savedNt as BookId)) {
       setLastNtBookId(savedNt as BookId);
-    } else if (savedBook && savedBook in BOOKS && !isOldTestament(savedBook as BookId)) {
-      setLastNtBookId(savedBook as BookId);
+    } else if (!isOldTestament(activeBook)) {
+      setLastNtBookId(activeBook);
     }
 
     const savedMode = window.localStorage.getItem(READING_MODE_KEY);
