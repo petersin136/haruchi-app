@@ -212,8 +212,6 @@ type EnglishOnlyViewProps = {
   translation?: EnglishTranslationId;
   /** 낭독 진도(앞에서부터 읽은 절 수). 본문 하이라이트용. */
   readVerseCount?: number;
-  /** TTS 가 읽고 있는 절 번호. */
-  speakingVerse?: number | null;
   /** 로드된 절을 부모(음성·진도)에 알린다. */
   onVerses?: (verses: { n: number; t: string }[]) => void;
 };
@@ -223,7 +221,6 @@ export default function EnglishOnlyView({
   chapter = 1,
   translation = "web",
   readVerseCount = 0,
-  speakingVerse = null,
   onVerses,
 }: EnglishOnlyViewProps = {}) {
   const [toast, setToast] = useState<string | null>(null);
@@ -372,9 +369,7 @@ export default function EnglishOnlyView({
             <li
               key={v.n}
               data-verse-num={v.n}
-              className={`eov-verse ${idx < readVerseCount ? "is-read" : ""} ${
-                speakingVerse === v.n ? "is-speaking" : ""
-              }`}
+              className={`eov-verse ${idx < readVerseCount ? "is-read" : ""}`}
             >
               <div className="eov-row">
                 <span className="eov-num" aria-hidden="true">
@@ -480,10 +475,6 @@ export default function EnglishOnlyView({
         }
         .eov-verse.is-read .eov-text {
           color: var(--ink-soft, #5c5c62);
-        }
-        .eov-verse.is-speaking {
-          background: color-mix(in srgb, var(--accent, #2e5d4b) 8%, transparent);
-          border-radius: 8px;
         }
         .eov-row {
           display: grid;

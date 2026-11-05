@@ -12,8 +12,7 @@
     display: none !important;
   }
 
-  /* TTS / 마이크 독 — 표시만 숨김 (로직 유지) */
-  .brp-page:not(.brp-page--immersive) .brp-tts-bar,
+  /* 마이크 독 — 표시만 숨김 (로직 유지) */
   .brp-page:not(.brp-page--immersive) .brp-dock {
     display: none !important;
   }
@@ -349,7 +348,6 @@
      easing: cubic-bezier(0.32, 0.72, 0, 1)
      open 380ms / close 300ms — 드래그 중 transition 없음 */
   .brp-page.brp-drawer-peek > .brp-canvas,
-  .brp-page.brp-drawer-peek > .brp-tts-bar,
   .brp-page.brp-drawer-peek > .brp-dock,
   .brp-page.brp-drawer-peek > .brp-copy-bar,
   .brp-page.brp-drawer-peek > .brp-speech-message,
@@ -363,7 +361,6 @@
   }
 
   .brp-page.brp-drawer-anim-open > .brp-canvas,
-  .brp-page.brp-drawer-anim-open > .brp-tts-bar,
   .brp-page.brp-drawer-anim-open > .brp-dock,
   .brp-page.brp-drawer-anim-open > .brp-copy-bar,
   .brp-page.brp-drawer-anim-open > .brp-speech-message,
@@ -373,7 +370,6 @@
   }
 
   .brp-page.brp-drawer-anim-close > .brp-canvas,
-  .brp-page.brp-drawer-anim-close > .brp-tts-bar,
   .brp-page.brp-drawer-anim-close > .brp-dock,
   .brp-page.brp-drawer-anim-close > .brp-copy-bar,
   .brp-page.brp-drawer-anim-close > .brp-speech-message,
@@ -383,7 +379,6 @@
   }
 
   .brp-page.brp-drawer-dragging > .brp-canvas,
-  .brp-page.brp-drawer-dragging > .brp-tts-bar,
   .brp-page.brp-drawer-dragging > .brp-dock,
   .brp-page.brp-drawer-dragging > .brp-copy-bar,
   .brp-page.brp-drawer-dragging > .brp-speech-message,
@@ -565,7 +560,6 @@
 
   @media (prefers-reduced-motion: reduce) {
     .brp-page.brp-drawer-peek > .brp-canvas,
-    .brp-page.brp-drawer-peek > .brp-tts-bar,
     .brp-page.brp-drawer-peek > .brp-dock,
     .brp-page.brp-drawer-peek > .brp-copy-bar,
     .brp-page.brp-drawer-peek > .brp-speech-message,

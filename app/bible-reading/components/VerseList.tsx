@@ -22,7 +22,6 @@ type VerseItemProps = {
   verse: Verse;
   isRead: boolean;
   isSelected: boolean;
-  isSpeaking: boolean;
   isFlash: boolean;
   isDrawerOpen: boolean;
   selectionMode: boolean;
@@ -43,7 +42,6 @@ const VerseItem = memo(function VerseItem({
   verse,
   isRead,
   isSelected,
-  isSpeaking,
   isFlash,
   isDrawerOpen,
   selectionMode,
@@ -64,9 +62,7 @@ const VerseItem = memo(function VerseItem({
       data-verse-num={verse.n}
       className={`brp-verse ${isRead ? "is-read" : ""} ${
         selectionMode ? "is-selecting" : ""
-      } ${isSelected ? "is-selected" : ""} ${isFlash ? "is-flash" : ""} ${
-        isSpeaking ? "is-speaking" : ""
-      }`}
+      } ${isSelected ? "is-selected" : ""} ${isFlash ? "is-flash" : ""}`}
       onPointerDown={(e) => onVersePointerDown(verse.n, e)}
       onPointerMove={onVersePointerMove}
       onPointerUp={onVersePointerCancel}
@@ -206,7 +202,6 @@ type VerseListProps = {
   selectionMode: boolean;
   selectedVerses: Set<number>;
   flashVerse: number | null;
-  ttsVerseN: number | null;
   greekTokensMap: Map<number, GreekToken[]> | null;
   greekWordsMap: Map<number, string> | null;
   openWordDrawers: Set<number>;
@@ -230,7 +225,6 @@ const VerseList = memo(function VerseList({
   selectionMode,
   selectedVerses,
   flashVerse,
-  ttsVerseN,
   greekTokensMap,
   greekWordsMap,
   openWordDrawers,
@@ -269,7 +263,6 @@ const VerseList = memo(function VerseList({
             verse={verse}
             isRead={isRead}
             isSelected={selectedVerses.has(verse.n)}
-            isSpeaking={ttsVerseN === verse.n}
             isFlash={flashVerse === verse.n}
             isDrawerOpen={openWordDrawers.has(verse.n)}
             selectionMode={selectionMode}
