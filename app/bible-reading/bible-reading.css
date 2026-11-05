@@ -1,0 +1,4457 @@
+        /* dynamic({ ssr: false }) 컴포넌트들이 chunk 로드 전 잠깐 보이는
+           인라인 안내. 자리가 비어 "멈춘 듯" 보이는 인상을 막는다. */
+        .brp-dynamic-loading {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          margin: 0;
+          padding: 18px 0 8px;
+          color: var(--ink-mute);
+          font-size: 13px;
+        }
+        .brp-dynamic-loading-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 999px;
+          background: var(--ink-mute);
+          opacity: 0.6;
+          animation: brp-dynamic-pulse 1.1s ease-in-out infinite;
+        }
+        @keyframes brp-dynamic-pulse {
+          0%, 100% { opacity: 0.25; transform: scale(0.85); }
+          50% { opacity: 0.95; transform: scale(1.15); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .brp-dynamic-loading-dot { animation: none; opacity: 0.6; }
+        }
+
+        .brp-page {
+          min-height: 100vh;
+          background: var(--bg);
+          color: var(--ink);
+          font-family: var(--font-noto-sans-kr), -apple-system, BlinkMacSystemFont,
+            "Segoe UI", system-ui, sans-serif;
+          padding: 88px clamp(16px, 4vw, 40px) 96px;
+        }
+
+        .brp-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 20;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+          padding: 12px clamp(18px, 5vw, 72px);
+          background: var(--bg-translucent);
+          backdrop-filter: saturate(180%) blur(20px);
+          -webkit-backdrop-filter: saturate(180%) blur(20px);
+          border-bottom: 1px solid var(--line);
+          min-height: 60px;
+          box-sizing: border-box;
+          transform: translateY(0);
+          opacity: 1;
+          transition: transform 0.28s ease, opacity 0.28s ease;
+        }
+        .brp-header.is-hidden {
+          transform: translateY(-100%);
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        /* 미니바 — 스크롤 시 헤더 대신 떠 있는 반투명 한 줄. 책·장·소제목만.
+           베이스는 완전 투명, 그 위에 옐로우 틴트 레이어만 살짝.
+           backdrop-filter 없음 → 뒤 내용이 그대로 비치고 색만 옅게 입혀짐. */
+        .brp-mini-bar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 19;
+          min-height: 40px;
+          background: rgba(0, 0, 0, 0.78);
+          backdrop-filter: saturate(180%) blur(14px);
+          -webkit-backdrop-filter: saturate(180%) blur(14px);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+          font-size: 13px;
+          color: #ffffff;
+          letter-spacing: -0.005em;
+          transform: translateY(-100%);
+          opacity: 0;
+          transition: transform 0.28s ease, opacity 0.28s ease;
+          pointer-events: none;
+          overflow: hidden;
+        }
+        .brp-mini-bar.is-visible {
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: auto;
+        }
+        /* 좌→우로 채워지는 에너지바 — readerProgress(0~1) ⇢ scaleX(0~1).
+           width 가 아니라 transform 으로 그리는 이유:
+             ① iOS Safari 는 width transition 을 메인 스레드 layout/paint 로 처리
+                해 60fps 못 내고 끊겨 보임(주사율 낮은 듯한 jank).
+             ② transform 은 GPU 합성 레이어에서만 처리 → 모든 기기 매끄러움.
+           transform-origin: left center → 좌측 고정점에서 우측으로 늘어남
+           (= width 0→100% 와 시각적으로 동일).
+           backface-visibility: hidden + will-change → 합성 레이어 강제 + 힌트.
+           색은 사용자 테마의 --accent 그라데이션 (color-mix 로 알파만 입힘). */
+        .brp-mini-fill {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 100%;
+          transform: scaleX(0);
+          transform-origin: left center;
+          background: linear-gradient(
+            90deg,
+            color-mix(in srgb, var(--accent) 55%, transparent) 0%,
+            color-mix(in srgb, var(--accent) 85%, transparent) 100%
+          );
+          transition: transform 0.18s linear;
+          will-change: transform;
+          backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          pointer-events: none;
+        }
+        .brp-mini-content {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          padding: 0 16px;
+          min-height: 40px;
+        }
+        /* 성경 공부 모드 — 제목은 왼쪽으로 몰리고 토글 슬롯이 오른쪽에 자리. */
+        .brp-mini-bar--study .brp-mini-content {
+          justify-content: space-between;
+          gap: 12px;
+          padding: 0 12px 0 16px;
+        }
+        .brp-mini-text {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          min-width: 0;
+        }
+        .brp-mini-bar--study .brp-mini-text {
+          flex: 0 1 auto;
+          /* 책 이름·장·소제목이 토글 자리를 침범하지 않도록 절단. */
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        .brp-mini-bar--study .brp-mini-title {
+          /* 기본 50vw 는 토글 자리를 잡아먹어서 좁힌다. */
+          max-width: clamp(80px, 28vw, 280px);
+        }
+        .brp-mini-toggles-slot {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          flex: 1 1 auto;
+          min-width: 0;
+          justify-content: flex-end;
+          /* 토글 갯수가 많을 때 가로 스크롤로 넘김 — 미니바 자체는 한 줄 유지. */
+          overflow-x: auto;
+          overflow-y: hidden;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          /* iOS 관성 스크롤. */
+          -webkit-overflow-scrolling: touch;
+        }
+        .brp-mini-toggles-slot::-webkit-scrollbar {
+          display: none;
+        }
+        .brp-mini-book {
+          font-weight: 700;
+          color: #ffffff;
+        }
+        .brp-mini-chapter {
+          font-weight: 700;
+          color: #ffffff;
+        }
+        /* 소제목 — 어떤 테마의 accent 그라데이션 위에서도 가독성 유지.
+           이전엔 var(--accent-warm) 였지만 빨강 계열 accent 와 동톤이라
+           묻혀버림(가인과 아벨 → 거의 안 보임). 흰색 + 약간 반투명으로
+           book/chapter 와의 hierarchy 만 유지하고 컨트라스트는 항상 충분.
+           text-shadow 로 진한 fill 위에서도 가장자리가 또렷. */
+        .brp-mini-title {
+          color: rgba(255, 255, 255, 0.92);
+          font-weight: 500;
+          max-width: 50vw;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          text-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
+        }
+        .brp-mini-divider {
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        .brp-brand {
+          display: inline-flex;
+          align-items: center;
+          color: var(--ink);
+          padding: 6px 10px;
+          margin-left: -8px;
+          border-radius: var(--radius-pill);
+          transition: background 0.15s ease;
+          text-decoration: none;
+        }
+        .brp-brand:hover {
+          background: var(--surface-alt);
+        }
+
+        .brp-nav {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          flex-shrink: 0;
+        }
+
+        .brp-nav-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          height: 32px;
+          padding: 0 10px;
+          border-radius: var(--radius-pill);
+          font-size: 13px;
+          font-weight: 500;
+          line-height: 1;
+          white-space: nowrap;
+          letter-spacing: 0;
+          text-decoration: none;
+          font-family: inherit;
+          background: transparent;
+          border: 1px solid transparent;
+          cursor: pointer;
+          transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+        }
+
+        .brp-nav-text {
+          display: inline-block;
+        }
+
+        .brp-nav-arrow {
+          display: inline-block;
+          transition: transform 0.18s ease;
+          font-weight: 500;
+          opacity: 0.7;
+        }
+
+        .brp-nav-link:hover .brp-nav-arrow {
+          transform: translateX(2px);
+          opacity: 1;
+        }
+
+        /* 1차 CTA — outlined accent, hover 시 채워짐. */
+        /* 헤더 어른용 진입은 1차 액션이 아님 → ghost. */
+        .brp-nav-cta {
+          color: var(--ink);
+          background: transparent;
+          border: 1px solid var(--line);
+        }
+        .brp-nav-cta:hover {
+          background: var(--surface-alt);
+          border-color: var(--line-strong);
+        }
+
+        /* 2차 — 차분한 텍스트 링크 */
+        .brp-nav-text-link {
+          color: var(--ink-soft);
+          background: transparent;
+          border: 1px solid transparent;
+        }
+        .brp-nav-text-link:hover {
+          color: var(--ink);
+          background: var(--surface-alt);
+        }
+
+        /* 설정 톱니바퀴 — 32x32 라운드 버튼. 텍스트 링크와 같은 라인에 정렬. */
+        .brp-nav-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          padding: 0;
+          border-radius: var(--radius-pill);
+          background: transparent;
+          border: 1px solid transparent;
+          color: var(--ink-soft);
+          cursor: pointer;
+          font: inherit;
+          flex-shrink: 0;
+          transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+        }
+        .brp-nav-icon:hover {
+          background: var(--surface-alt);
+          color: var(--ink);
+        }
+        .brp-nav-icon:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           햄버거 버튼 + 모바일 메뉴
+           - 기본은 숨김(데스크탑은 .brp-nav--desktop 가 보임).
+           - <640px 에서만 햄버거 노출 + 데스크탑 nav 숨김.
+           ────────────────────────────────────────────────────────────── */
+        .brp-hamburger {
+          display: none;
+          position: relative;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          padding: 0;
+          border-radius: var(--radius-pill);
+          background: transparent;
+          border: 1px solid transparent;
+          color: var(--ink);
+          cursor: pointer;
+          font: inherit;
+          flex-shrink: 0;
+          transition: background 0.18s ease, border-color 0.18s ease;
+        }
+        .brp-hamburger:hover {
+          background: var(--surface-alt);
+        }
+        .brp-hamburger:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+        .brp-hamburger > span {
+          position: absolute;
+          left: 9px;
+          right: 9px;
+          height: 2px;
+          background: currentColor;
+          border-radius: 2px;
+          transition: transform 0.22s ease, opacity 0.18s ease, top 0.22s ease;
+        }
+        .brp-hamburger > span:nth-child(1) { top: 11px; }
+        .brp-hamburger > span:nth-child(2) { top: 17px; }
+        .brp-hamburger > span:nth-child(3) { top: 23px; }
+        .brp-hamburger.is-open > span:nth-child(1) {
+          top: 17px;
+          transform: rotate(45deg);
+        }
+        .brp-hamburger.is-open > span:nth-child(2) {
+          opacity: 0;
+        }
+        .brp-hamburger.is-open > span:nth-child(3) {
+          top: 17px;
+          transform: rotate(-45deg);
+        }
+
+        /* 모바일 메뉴 backdrop — 헤더 아래 전체 영역을 덮어 바깥클릭으로 닫힘.
+           투명한 dim + 살짝 blur 만. 작은 시트가 헤더 우측 아래에서 떨어진다. */
+        .brp-mobile-menu-backdrop {
+          position: fixed;
+          inset: 0;
+          z-index: 25;
+          background: rgba(22, 22, 26, 0.32);
+          backdrop-filter: blur(2px);
+          -webkit-backdrop-filter: blur(2px);
+          animation: brp-mm-fade 0.16s ease;
+        }
+        @keyframes brp-mm-fade {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+        .brp-mobile-menu {
+          position: absolute;
+          top: 64px;
+          right: 16px;
+          min-width: 200px;
+          padding: 6px;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-md);
+          box-shadow: var(--shadow-2);
+          animation: brp-mm-pop 0.18s cubic-bezier(0.32, 0.72, 0.24, 1);
+          transform-origin: top right;
+        }
+        @keyframes brp-mm-pop {
+          from { transform: scale(0.96) translateY(-4px); opacity: 0; }
+          to   { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        .brp-mobile-menu-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 11px 12px;
+          border-radius: var(--radius-sm);
+          background: transparent;
+          border: 0;
+          color: var(--ink);
+          font: inherit;
+          font-size: 14px;
+          font-weight: 500;
+          letter-spacing: -0.005em;
+          text-align: left;
+          text-decoration: none;
+          cursor: pointer;
+          width: 100%;
+          transition: background 0.16s ease;
+        }
+        .brp-mobile-menu-item:hover {
+          background: var(--surface-alt);
+        }
+        .brp-mobile-menu-item:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: -2px;
+        }
+        /* 아이콘 슬롯 — 톱니바퀴/불릿이 같은 폭(18px)에 가운데 정렬되도록.
+           톱니바퀴 svg 가 flex 안에서 찌그러지지 않게 고정 폭 + flex-shrink:0. */
+        .brp-mobile-menu-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 18px;
+          height: 18px;
+          flex-shrink: 0;
+          color: var(--ink-soft);
+        }
+        .brp-mobile-menu-icon :global(svg) {
+          display: block;
+          width: 17px;
+          height: 17px;
+          flex-shrink: 0;
+        }
+        .brp-mobile-menu-bullet {
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          border-radius: 999px;
+          background: var(--ink-mute);
+        }
+        .brp-mobile-menu-divider {
+          display: block;
+          height: 1px;
+          margin: 4px 8px;
+          background: var(--line);
+        }
+
+        /* 모바일 우상단 액션 묶음(검색 + 햄버거). 데스크탑에선 숨김. */
+        .brp-mobile-actions {
+          display: none;
+          align-items: center;
+          gap: 4px;
+          flex-shrink: 0;
+        }
+        /* 모바일 검색 버튼 — 햄버거와 같은 36x36 라운드 톤. */
+        .brp-mobile-search {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          padding: 0;
+          border-radius: var(--radius-pill);
+          background: transparent;
+          border: 1px solid transparent;
+          color: var(--ink);
+          cursor: pointer;
+          font: inherit;
+          flex-shrink: 0;
+          transition: background 0.18s ease, border-color 0.18s ease;
+        }
+        .brp-mobile-search:hover {
+          background: var(--surface-alt);
+        }
+        .brp-mobile-search:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+
+        /* ≥640px: 데스크탑 nav 보임, 햄버거/모바일액션 숨김. */
+        @media (min-width: 640px) {
+          .brp-nav--desktop { display: inline-flex; }
+          .brp-hamburger { display: none !important; }
+          .brp-mobile-actions { display: none !important; }
+          .brp-mobile-menu-backdrop { display: none; }
+        }
+        /* <640px: 데스크탑 nav 숨김, 모바일 액션(검색+햄버거) 보임. */
+        @media (max-width: 639.98px) {
+          .brp-nav--desktop { display: none; }
+          .brp-mobile-actions { display: inline-flex; }
+          .brp-hamburger { display: inline-flex; }
+        }
+
+        /* 상단 2px 진도 바(.brp-progress)는 제거됨 — 본문 진행도는 미니바
+           내부 그린 fill(.brp-mini-fill)이 좌→우 에너지바로 표시. */
+
+        /* .brp-reader-hero — reader 카드 최상단의 책 제목 헤더.
+           기존 .brp-hero(외부 노출) 대신 reader 내부에 배치되어 본문과 함께
+           스크롤. 모바일·태블릿·PC 동일 마크업, 폰트 크기만 viewport-aware. */
+        .brp-reader-hero {
+          margin: 0 0 20px;
+          padding: 0;
+          text-align: center;
+        }
+
+        .brp-section-label {
+          margin: 0 0 14px;
+          font-size: 12px;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+
+        /* 책 이름 타이틀 — 편집(에디토리얼) 디스플레이 톤.
+           시스템 세리프(애플=AppleSDGothicNeo→Serif, 윈도=맑은고딕→Times) 우선,
+           세리프 fallback 까지 두어 OS 어디서나 부드러운 톤. */
+        .brp-reader-hero h1 {
+          margin: 0;
+          font-family: var(--font-noto-serif-kr), "Nanum Myeongjo",
+            "Apple SD Gothic Neo", "Iowan Old Style", "Times New Roman", serif;
+          font-size: clamp(28px, 5vw, 44px);
+          font-weight: 500;
+          letter-spacing: -0.025em;
+          line-height: 1.15;
+          color: var(--ink);
+        }
+
+        /* 장 스위처 단독 — 본문 폭 안에서 자연 가운데 정렬 */
+        .brp-toolbar {
+          max-width: var(--container-reading);
+          margin: 0 auto 28px;
+          display: flex;
+          justify-content: center;
+        }
+
+        .brp-translation {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-pill);
+          padding: 5px;
+          min-height: 52px;
+          box-sizing: border-box;
+        }
+
+        /* 장 스위처 — 슬림 44px. 1장 좌측, 부제목 인라인. */
+        .brp-chapter-switcher {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 8px;
+          width: 100%;
+          max-width: var(--container-reading);
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-pill);
+          padding: 4px;
+          min-height: 44px;
+          box-sizing: border-box;
+        }
+
+        /* 번역 토글: 컨테이너 flex/stretch + 버튼 자체도 flex 로 내부 텍스트 정확히 중앙. */
+        .brp-translation {
+          display: flex;
+          align-items: stretch;
+          gap: 6px;
+        }
+
+        .brp-translation button,
+        .brp-chapter-switcher button,
+        .brp-dock button,
+        .brp-grid button,
+        .brp-complete button {
+          border: 0;
+          cursor: pointer;
+          font: inherit;
+        }
+
+        .brp-translation button {
+          position: relative;
+          z-index: 1;
+          flex: 1 1 0;
+          min-width: 0;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 14px;
+          border-radius: var(--radius-pill);
+          background: transparent;
+          color: var(--ink-soft);
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          line-height: 1;
+          transition: color 0.22s ease;
+        }
+
+        .brp-translation button:hover:not(:disabled):not(.is-active) {
+          color: var(--ink);
+        }
+
+        .brp-translation button.is-active {
+          background: transparent;
+          color: var(--accent-ink);
+        }
+
+        .brp-chapter-switcher button {
+          width: 32px;
+          height: 32px;
+          flex-shrink: 0;
+          border-radius: 50%;
+          background: transparent;
+          color: var(--ink-soft);
+          border: 1px solid var(--line);
+          font-size: 15px;
+          transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+        }
+
+        .brp-chapter-switcher button:hover {
+          background: var(--surface-alt);
+          color: var(--ink);
+          border-color: var(--line-strong);
+        }
+
+        /* 장 스위처 내부 — Dropdown 컴포넌트를 감싸는 flex 래퍼.
+           prev/next 버튼 사이 남은 공간을 채우고, Dropdown 트리거가 100% 폭으로
+           가운데에 깔끔히 정렬되도록 함. */
+        .brp-chapter-select-wrap {
+          flex: 1 1 0;
+          min-width: 0;
+          display: flex;
+          align-items: stretch;
+        }
+
+        /* (deprecated) 장 번호 + 부제목 — 네이티브 select 시절 스타일.
+           이제 Dropdown 컴포넌트가 처리하므로 매칭되는 엘리먼트 없음. */
+        .brp-chapter-select {
+          position: relative;
+          flex: 1;
+          min-width: 0;
+          display: inline-flex;
+          align-items: baseline;
+          justify-content: flex-start;
+          gap: 10px;
+          padding: 0 10px 0 14%;
+          cursor: pointer;
+          overflow: hidden;
+        }
+
+        .brp-chapter-select select {
+          flex-shrink: 0;
+          width: auto;
+          appearance: none;
+          -webkit-appearance: none;
+          border: 0;
+          border-radius: 0;
+          background: transparent;
+          background-image: none;
+          color: var(--ink);
+          cursor: pointer;
+          font: inherit;
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 1.25;
+          text-align: left;
+          text-align-last: left;
+          outline: none;
+          padding: 0;
+        }
+
+        .brp-chapter-select select::-ms-expand {
+          display: none;
+        }
+
+        .brp-select-title {
+          /* 장(select) 글씨 크기와 동일하게 맞춰 균형 잡힌 한 줄. */
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1.25;
+          color: var(--accent-warm);
+          letter-spacing: -0.005em;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          min-width: 0;
+        }
+
+        .brp-chapter-select:focus-within .brp-select-title {
+          color: var(--accent-warm);
+        }
+
+        .brp-reader,
+        .brp-progress-grid,
+        .brp-prayer {
+          max-width: var(--container-reading);
+          margin: 0 auto;
+        }
+
+        .brp-reader {
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-lg);
+          padding: clamp(20px, 3vw, 28px) clamp(6px, 1vw, 10px);
+          overflow: hidden;
+          /* 사용자 폰트 설정 — 본문(reader) 영역에만 적용. UI 폰트(.brp-page)는 항상 Pretendard. */
+          font-family: var(--reader-font-family, inherit);
+        }
+
+        .brp-verse {
+          display: grid;
+          /* 절 번호 컬럼 — 2자리(예: 10, 99) 까지 컬럼 안에 여유 있게 들어가
+             자리수가 달라도 본문 텍스트 시작 x 가 일관되게 보이도록 2em 으로
+             고정. 본문 첫 줄과는 column-gap 으로 명확히 띄움. */
+          grid-template-columns: 2em minmax(0, 1fr);
+          column-gap: clamp(8px, 1vw, 12px);
+          /* 번호는 본문 첫 줄의 baseline 에 정렬 — 절이 여러 줄이어도
+             숫자가 텍스트 첫 줄과 자연스럽게 맞물려 보임. */
+          align-items: baseline;
+          /* 절 사이 간격 — 사용자 설정(절 사이 간격) 의 값. */
+          margin: 0 0 var(--reader-verse-gap, 10px);
+          padding: 2px 0;
+          border-radius: var(--radius-md);
+          /* 기본 16~19px clamp 에 사용자 글자 크기 배수 곱. */
+          font-size: calc(clamp(16px, 1.6vw, 19px) * var(--reader-size-scale, 1));
+          /* 텍스트 줄 간격 — 사용자 설정. */
+          line-height: var(--reader-text-line-height, 1.55);
+          font-weight: 400;
+          color: var(--ink);
+          word-break: keep-all;
+          overflow-wrap: normal;
+          transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .brp-verse.is-read {
+          /* 읽은 절 — 그린은 가독성이 떨어져 트렌디한 웜 레드로.
+             부제목 톤(accent-warm)과 묶여 따뜻한 강조 라인으로 통일. */
+          color: var(--accent-warm);
+        }
+
+        .brp-verse.is-read .brp-verse-number {
+          color: var(--accent-warm);
+          opacity: 0.75;
+        }
+
+        .brp-verse.is-read .brp-verse-text {
+          /* font-weight 를 바꾸면 글자 폭이 변해 줄바꿈 위치가 흔들리므로,
+             동일 weight 를 유지하고 text-shadow 로만 "살짝 굵어진 느낌"을 표현.
+             글자 박스 크기 변화 0 → reflow 없음. */
+          text-shadow: 0 0 0.35px currentColor;
+        }
+
+        /* (deprecated) .brp-verse.is-current 회색 하이라이트 — 트리거 매칭은
+           현재 절을 빠르게 통과 처리하므로 "다음에 기다리는 절" 이 미리 강조되어
+           사용자가 헷갈리는 문제가 있어 의도적으로 제거함. */
+
+        /* 선택 모드 진행 중인 절 — 디바이스에서 길게 눌러 진입한 이후
+           탭으로 토글하기 위해 텍스트 선택(드래그) 을 일시 차단하고
+           포인터 커서를 명시 (모드가 끝나면 자연스럽게 원상 복구). */
+        .brp-verse.is-selecting {
+          cursor: pointer;
+          user-select: none;
+          -webkit-user-select: none;
+          -webkit-touch-callout: none;
+        }
+
+        /* 선택된 절(복사 대상) — 옅은 어센트 면만으로 차분히 강조.
+           왼쪽 어센트 바/외곽 outline 같은 "선" 류는 일부러 쓰지 않는다.
+           background + radius 만으로 둥근 highlight chip 느낌. layout-safe
+           (reader 좌우 padding 이 좁은 모바일에서도 한 칸 밖으로 튀어나가지 않게
+           padding/negative margin 같은 트릭은 쓰지 않음).
+           음성 읽기 완료(.is-read, --accent-warm) 와는 톤(웜레드 vs 액센트
+           그린)이 분명히 달라 시각적으로 헷갈리지 않음. */
+        .brp-verse.is-selected {
+          background: var(--accent-soft);
+          border-radius: var(--radius-md);
+        }
+        .brp-verse.is-selected .brp-verse-number {
+          color: var(--accent);
+          font-weight: 700;
+        }
+
+        /* 검색 결과로 이동했을 때 그 절을 잠깐 강조(약 2초). 본문 글자 폭/줄바꿈에
+           영향 주지 않도록 배경 + box-shadow 만 사용(텍스트 박스 크기 변화 0). */
+        .brp-verse.is-flash {
+          background: var(--accent-soft);
+          border-radius: var(--radius-md);
+          box-shadow: inset 3px 0 0 0 var(--accent);
+          animation: brp-verse-flash 2s ease;
+        }
+        @keyframes brp-verse-flash {
+          0% {
+            background: color-mix(in srgb, var(--accent) 22%, transparent);
+          }
+          100% {
+            background: var(--accent-soft);
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .brp-verse.is-flash {
+            animation: none;
+          }
+        }
+
+        /* TTS 가 지금 읽고 있는 절 — 부드러운 좌측 액센트 바 + 옅은 배경.
+           읽기 진행(is-read) / 선택(is-selected) 와 시각적으로 구분되도록
+           좌측 액센트 띠는 굵게(4px) 두고 배경은 더 옅게. */
+        .brp-verse.is-speaking {
+          background: color-mix(in srgb, var(--accent) 10%, transparent);
+          border-radius: var(--radius-md);
+          box-shadow: inset 4px 0 0 0 var(--accent);
+          transition: background 200ms ease, box-shadow 200ms ease;
+        }
+        .brp-verse.is-speaking .brp-verse-number {
+          color: var(--accent);
+          font-weight: 700;
+        }
+        /* immersive 다크 모드에서는 액센트 톤이 너무 진해 보이지 않게 알파만 조정 */
+        .brp-page--imm-dark .brp-verse.is-speaking {
+          background: color-mix(in srgb, var(--accent) 18%, transparent);
+        }
+
+        /* 절 번호 — 표시만. 클릭/선택은 .brp-verse 컨테이너의 long-press +
+           click 핸들러가 담당하므로 별도 인터랙션 스타일은 두지 않는다.
+           정렬: text-align: center + tabular-nums — 1자리/2자리 모두 컬럼(2em)
+           안에 가운데 정렬. 본문 텍스트와의 간격은 .brp-verse 의 column-gap
+           이 책임지므로 자리수가 달라도 일정한 여백을 유지한다. */
+        .brp-verse-number {
+          color: var(--ink-mute);
+          font-size: 1em;
+          line-height: inherit;
+          text-align: center;
+          font-variant-numeric: tabular-nums;
+          transition: color 0.25s ease;
+        }
+
+        .brp-verse-text {
+          min-width: 0;
+          margin: 0;
+          overflow-wrap: break-word;
+          /* 강조 시 weight 가 아닌 text-shadow 로 처리하므로 부드럽게 페이드. */
+          transition: text-shadow 0.25s ease, color 0.25s ease;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           원어 묵상 모드 — 본문(verse.t) 은 이미 한국어 "원어 의역" 이고,
+           그 아래에 헬라어 토큰 라인(ruby 형태: 헬라어 위 / 한글 발음 아래)
+           과 ▾ 갈매기로 절 전체 풀이가 펼쳐진다. 모든 부속 요소는
+           grid-column: 2 로 절 번호 칸을 비우고 본문 칸 안에 들어간다.
+           ────────────────────────────────────────────────────────────── */
+
+        /* 헬라어 블록 전체 컨테이너 — 토큰 라인 + (펼쳐졌을 때) 절 풀이. */
+        .brp-greek-block {
+          grid-column: 2;
+          margin: 8px 0 2px;
+        }
+
+        /* 헬라어 토큰 라인 — 왼쪽에 토큰들, 오른쪽에 ▾ 갈매기. */
+        .brp-greek-line {
+          display: flex;
+          align-items: flex-start;
+          gap: 8px;
+        }
+        .brp-greek-tokens {
+          flex: 1;
+          min-width: 0;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 4px 10px;
+          line-height: 1.4;
+        }
+
+        /* 한 단어 토큰 — 위에는 헬라어, 아래에는 작은 회색 발음.
+           inline-flex column 으로 발음을 단어 정확히 아래에 둔다. */
+        .brp-greek-token {
+          display: inline-flex;
+          flex-direction: column;
+          align-items: center;
+          position: relative;
+        }
+        .brp-greek-token-word {
+          font-size: 1em;
+          color: var(--ink);
+          font-variant-ligatures: none;
+          /* 헬라어 강세·기식 폴리토닉이 깨지지 않게 라틴 fallback 우선 */
+          font-family: "EB Garamond", "Garamond", "Times New Roman", serif;
+        }
+        .brp-greek-token-pron {
+          margin-top: 2px;
+          font-size: 0.7em;
+          line-height: 1;
+          color: var(--ink-mute);
+          letter-spacing: -0.01em;
+        }
+        /* 정보가 있는 토큰의 발음은 점선 밑줄 + 클릭 가능. */
+        button.brp-greek-token-pron {
+          appearance: none;
+          background: transparent;
+          border: none;
+          padding: 2px 1px 1px;
+          cursor: pointer;
+          border-bottom: 1px dotted var(--ink-mute, rgba(0, 0, 0, 0.35));
+          transition: color 0.15s ease, border-color 0.15s ease;
+          font-family: inherit;
+        }
+        button.brp-greek-token-pron:hover {
+          color: var(--ink);
+          border-bottom-color: var(--ink);
+        }
+        button.brp-greek-token-pron.is-open {
+          color: color-mix(in srgb, var(--accent) 80%, var(--ink));
+          border-bottom-color: color-mix(in srgb, var(--accent) 70%, transparent);
+          border-bottom-style: solid;
+        }
+
+        /* 단어 정보 패널 — 토큰 줄 흐름을 깨지 않도록 .brp-greek-tokens
+           바깥, 그 아래 별도 블록으로 펼쳐진다. 여러 단어를 동시에 열면
+           세로로 쌓인다. 테마 accent(포레스트 그린)에서 파생한 연한
+           파스텔 민트 톤으로 본문과 자연스럽게 구분된다. */
+        .brp-greek-token-info-panels {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          margin: 10px 0 4px;
+        }
+        .brp-greek-token-info {
+          padding: 10px 14px;
+          background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+          border: 1px solid
+            color-mix(in srgb, var(--accent) 22%, transparent);
+          border-left: 3px solid
+            color-mix(in srgb, var(--accent) 55%, transparent);
+          border-radius: 8px;
+          color: var(--ink);
+          font-size: 0.86em;
+          line-height: 1.65;
+          text-align: left;
+          display: block;
+        }
+        .brp-greek-token-info-head {
+          display: flex;
+          align-items: baseline;
+          gap: 8px;
+          margin-bottom: 6px;
+          padding-bottom: 5px;
+          border-bottom: 1px dashed
+            color-mix(in srgb, var(--accent) 25%, transparent);
+        }
+        .brp-greek-token-info-w {
+          font-family: "EB Garamond", "Garamond", "Times New Roman", serif;
+          font-size: 1.05em;
+          font-weight: 600;
+          color: color-mix(in srgb, var(--accent) 80%, var(--ink));
+        }
+        .brp-greek-token-info-p {
+          font-size: 0.85em;
+          color: var(--ink-mute);
+        }
+        .brp-greek-token-info-body {
+          display: block;
+          color: var(--ink);
+          overflow-wrap: break-word;
+        }
+
+        /* 절 전체 풀이 ▾ 갈매기 — 텍스트 없이 chevron 만. */
+        .brp-greek-drawer-toggle {
+          appearance: none;
+          background: transparent;
+          border: 1px solid transparent;
+          border-radius: 999px;
+          width: 28px;
+          height: 28px;
+          flex: 0 0 auto;
+          padding: 0;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--ink-mute);
+          cursor: pointer;
+          transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+        .brp-greek-drawer-toggle:hover {
+          color: var(--ink);
+          background: rgba(0, 0, 0, 0.04);
+        }
+        .brp-greek-drawer-toggle.is-open {
+          color: var(--ink);
+          background: rgba(0, 0, 0, 0.05);
+          border-color: var(--line, rgba(0, 0, 0, 0.12));
+        }
+        .brp-greek-drawer-chevron {
+          display: inline-block;
+          font-size: 0.95em;
+          line-height: 1;
+          transition: transform 0.2s ease;
+        }
+        .brp-greek-drawer-toggle.is-open .brp-greek-drawer-chevron {
+          transform: rotate(180deg);
+        }
+
+        /* 절 전체 풀이 본문 — 갈매기를 눌렀을 때만 보임. */
+        .brp-verse-greek-words {
+          margin: 8px 0 2px;
+          padding: 10px 12px;
+          border-left: 2px solid var(--line, rgba(0, 0, 0, 0.12));
+          color: var(--ink-mute);
+          font-size: 0.88em;
+          line-height: 1.75;
+          overflow-wrap: break-word;
+          font-variant-ligatures: none;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           절 복사 — dock 위에 떠 있는 컴팩트 액션 바 + 짧은 토스트.
+           선택된 절이 1개 이상일 때만 표시되며, "복사" 한 번으로 헤더와
+           함께 클립보드에 들어간다 (포맷: "{책} {장}장\n\n{n} {본문}\n...").
+           ────────────────────────────────────────────────────────────── */
+        .brp-copy-bar {
+          position: fixed;
+          left: 50%;
+          bottom: 80px; /* dock(.brp-dock bottom 16 + 약 48 + 여유) 위 */
+          z-index: 23;
+          transform: translateX(-50%);
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 6px 8px 6px 14px;
+          background: var(--surface-translucent, var(--surface));
+          border: 1px solid var(--line-strong, var(--line));
+          border-radius: var(--radius-pill);
+          backdrop-filter: saturate(180%) blur(18px);
+          -webkit-backdrop-filter: saturate(180%) blur(18px);
+          box-shadow: var(--shadow-1);
+          font-size: 13.5px;
+          font-weight: 600;
+          color: var(--ink);
+          max-width: calc(100vw - 24px);
+          white-space: nowrap;
+        }
+        .brp-copy-count {
+          padding-left: 2px;
+          color: var(--ink);
+        }
+        .brp-copy-btn {
+          appearance: none;
+          background: var(--accent);
+          color: var(--accent-ink);
+          border: 1px solid var(--accent);
+          padding: 7px 16px;
+          font: inherit;
+          font-weight: 700;
+          border-radius: var(--radius-pill);
+          cursor: pointer;
+          transition: background 0.15s ease, border-color 0.15s ease;
+        }
+        .brp-copy-btn:hover {
+          background: var(--accent-hover, var(--accent));
+          border-color: var(--accent-hover, var(--accent));
+        }
+        /* 보조 액션 — ghost 톤. "전체"(전체 선택), "선택 취소"(모드 종료) 공통. */
+        .brp-copy-all,
+        .brp-copy-cancel {
+          appearance: none;
+          background: transparent;
+          border: 1px solid var(--line);
+          padding: 6px 12px;
+          font: inherit;
+          font-weight: 600;
+          color: var(--ink-soft);
+          border-radius: var(--radius-pill);
+          cursor: pointer;
+          transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        }
+        .brp-copy-all:hover,
+        .brp-copy-cancel:hover {
+          background: var(--surface-alt);
+          color: var(--ink);
+          border-color: var(--line-strong, var(--line));
+        }
+
+        .brp-copy-btn:disabled {
+          opacity: 0.55;
+          cursor: not-allowed;
+        }
+
+        .brp-copy-toast {
+          position: fixed;
+          left: 50%;
+          bottom: 140px;
+          z-index: 24;
+          transform: translateX(-50%);
+          background: var(--ink);
+          color: var(--bg);
+          padding: 10px 18px;
+          border-radius: var(--radius-pill);
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+          pointer-events: none;
+          max-width: calc(100vw - 24px);
+          white-space: nowrap;
+          animation: brp-copy-toast-in 0.18s ease-out;
+        }
+        @keyframes brp-copy-toast-in {
+          from { opacity: 0; transform: translate(-50%, 6px); }
+          to   { opacity: 1; transform: translate(-50%, 0); }
+        }
+
+        /* (deprecated) .brp-verse-word / .brp-verse-word.is-read — 절 내부
+           단어 단위 가라오케 fill 용 스타일. 트리거 매칭으로 전환되며 절을
+           통째로 한 번에 색칠하는 방식이 되어 더 이상 렌더링되지 않음. */
+
+        /* ─────────────────────────────────────────────────────────────
+           Top row: [책 드롭다운] + [번역 토글] — 한 줄, 컴팩트 40px.
+           ────────────────────────────────────────────────────────────── */
+        /* 책 드롭다운 + 번역 토글 — 항상 한 줄, 1:1 분할. */
+        .brp-top-row {
+          max-width: var(--container-reading);
+          margin: 0 auto 8px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 8px;
+          align-items: stretch;
+          box-sizing: border-box;
+        }
+
+        /* 책 드롭다운 — 네이티브 select 를 pill 컨테이너로 감쌈. 텍스트 중앙 정렬. */
+        .brp-book-picker {
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 40px;
+          padding: 0;
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-pill);
+          box-sizing: border-box;
+          cursor: pointer;
+          transition: border-color 0.15s ease, background 0.15s ease;
+        }
+
+        .brp-book-picker:hover {
+          background: var(--surface-alt);
+          border-color: var(--line-strong);
+        }
+
+        .brp-book-picker select {
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          width: 100%;
+          border: 0;
+          background: transparent;
+          color: var(--ink);
+          font: inherit;
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          line-height: 1;
+          cursor: pointer;
+          outline: none;
+          /* 좌우 동일 패딩 — text-align center 일 때 시각적으로도 진짜 가운데. */
+          text-align: center;
+          text-align-last: center;
+          padding: 0 16px;
+        }
+
+        /* 셰브론 — 절대 위치라 select 의 가운데 정렬에 영향 X */
+        .brp-book-picker::after {
+          content: "";
+          position: absolute;
+          right: 16px;
+          top: 50%;
+          width: 7px;
+          height: 7px;
+          border-right: 1.5px solid var(--ink-soft);
+          border-bottom: 1.5px solid var(--ink-soft);
+          transform: translateY(-65%) rotate(45deg);
+          pointer-events: none;
+        }
+
+        .brp-sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+
+        /* 컴팩트 번역 토글 — 책 드롭다운(.brp-book-picker)과 시각적으로
+           동일한 pill 로 보이도록 inner padding/gap 을 0 으로. 슬라이딩
+           인디케이터(.brp-toggle-indicator)가 활성 영역을 그려주고, 버튼은
+           항상 투명한 상태로 텍스트 색만 전환되어 매끄러운 슬라이드 전환. */
+        .brp-translation--sm {
+          position: relative;
+          isolation: isolate;
+          height: 40px;
+          min-height: 40px;
+          padding: 0;
+          gap: 0;
+          overflow: hidden;
+        }
+        .brp-translation--sm button {
+          height: 100%;
+          padding: 0 12px;
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          border-radius: var(--radius-pill);
+          /* 좁은 모바일 폭에서도 "개역한글"이 두 줄로 깨지지 않도록 */
+          white-space: nowrap;
+        }
+
+        /* 공통 토글 슬라이딩 인디케이터.
+           - width/transform 은 SlidingToggle 컴포넌트가 활성 버튼의 실제
+             offsetWidth/offsetLeft 를 측정해 inline style 로 직접 설정한다.
+             (균등 분할이 아니므로 라벨 길이·컨테이너 폭과 무관하게 항상
+              활성 버튼 위에 정확히 맞물린다.)
+           - overflow: hidden 컨테이너 안에서 pill 모양 그대로 슬라이드한다. */
+        .brp-toggle {
+          position: relative;
+          isolation: isolate;
+        }
+        .brp-toggle-indicator {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          background: var(--accent);
+          border-radius: var(--radius-pill);
+          transition:
+            transform 0.34s cubic-bezier(0.32, 0.72, 0.24, 1),
+            width 0.34s cubic-bezier(0.32, 0.72, 0.24, 1),
+            opacity 0.18s ease;
+          will-change: transform, width;
+          pointer-events: none;
+          z-index: 0;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .brp-toggle-indicator {
+            transition: opacity 0.18s ease;
+          }
+        }
+
+        .brp-translation button.is-disabled,
+        .brp-translation button:disabled {
+          color: var(--ink-mute);
+          cursor: not-allowed;
+          background: transparent;
+        }
+
+        .brp-reader-empty {
+          margin: 0 0 20px;
+          padding: 18px 20px;
+          border-radius: var(--radius-md);
+          background: var(--surface-alt);
+          color: var(--ink-soft);
+          font-size: 14.5px;
+          line-height: 1.7;
+          text-align: center;
+        }
+
+        /* 모드 탭 — pill 컨테이너 + 슬라이딩 인디케이터.
+           슬림 변형(--sm)은 36px 높이, 번역 토글과 동일하게 edge-to-edge
+           (padding/gap 0) 로 베젤 없이 깔끔하게 보인다. */
+        .brp-mode-tabs {
+          max-width: var(--container-reading);
+          margin: 0 auto 14px;
+          position: relative;
+          isolation: isolate;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0;
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-pill);
+          padding: 0;
+          min-height: 52px;
+          box-sizing: border-box;
+          align-items: stretch;
+          overflow: hidden;
+        }
+
+        /* 읽기 모드 탭 — 옆에 놓인 번역 토글(40px)과 동일한 높이로 맞춰
+           한 줄 안에서 두 컨트롤이 같은 톤의 pill 띠처럼 보이게 한다. */
+        .brp-mode-tabs--sm {
+          height: 40px;
+          min-height: 40px;
+          padding: 0;
+          gap: 0;
+          margin-bottom: 0;
+        }
+
+        /* .brp-top-row(1fr 1fr 그리드) 안에 들어가는 경우 — 본인의 max-width
+           / 가운데 마진을 리셋해 그리드 셀에 가득 차도록. */
+        .brp-top-row > .brp-mode-tabs {
+          max-width: none;
+          margin: 0;
+        }
+
+        .brp-mode-tab {
+          all: unset;
+          position: relative;
+          z-index: 1;
+          cursor: pointer;
+          box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 9px 18px;
+          border-radius: var(--radius-pill);
+          background: transparent;
+          color: var(--ink-soft);
+          font-size: 15px;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          transition: color 0.22s ease;
+        }
+
+        .brp-mode-tabs--sm .brp-mode-tab {
+          padding: 5px 14px;
+          font-size: 13px;
+        }
+
+        .brp-mode-tab:hover:not(.is-active) {
+          color: var(--ink);
+        }
+
+        .brp-mode-tab.is-active {
+          background: transparent;
+          color: var(--accent-ink);
+        }
+
+        .brp-scroll-status {
+          display: inline-flex;
+          align-items: center;
+          padding: 12px 14px;
+          color: var(--ink-soft);
+          font-size: 13px;
+          font-weight: 500;
+          white-space: nowrap;
+        }
+
+        .brp-scroll-status.is-ready {
+          color: var(--ink);
+        }
+
+        .brp-quiz {
+          position: fixed;
+          inset: 0;
+          z-index: 32;
+          display: grid;
+          place-items: center;
+          padding: 16px;
+          background: rgba(22, 22, 26, 0.42);
+          backdrop-filter: saturate(180%) blur(8px);
+          -webkit-backdrop-filter: saturate(180%) blur(8px);
+        }
+
+        .brp-quiz-card {
+          width: min(94vw, 520px);
+          max-height: 88vh;
+          overflow-y: auto;
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-lg);
+          padding: clamp(20px, 4vw, 28px);
+          box-shadow: var(--shadow-2);
+        }
+
+        .brp-quiz-eyebrow {
+          margin: 0 0 8px;
+          font-size: 11px;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: var(--ink-mute);
+          font-weight: 600;
+        }
+
+        .brp-quiz-card h2 {
+          margin: 0 0 6px;
+          font-size: 20px;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          color: var(--ink);
+        }
+
+        .brp-quiz-sub {
+          margin: 0 0 20px;
+          font-size: 14px;
+          color: var(--ink-soft);
+          line-height: 1.6;
+        }
+
+        .brp-quiz-list {
+          list-style: none;
+          margin: 0 0 18px;
+          padding: 0;
+          display: grid;
+          gap: 14px;
+        }
+
+        .brp-quiz-item {
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-lg);
+          padding: 16px 16px 14px;
+        }
+
+        .brp-quiz-prompt {
+          margin: 0 0 8px;
+          font-size: 13px;
+          color: var(--ink-soft);
+        }
+
+        .brp-quiz-prompt strong {
+          color: var(--ink);
+          font-weight: 700;
+        }
+
+        .brp-quiz-blanked {
+          margin: 0 0 14px;
+          font-size: 15.5px;
+          line-height: 1.7;
+          color: var(--ink);
+          word-break: keep-all;
+        }
+
+        .brp-quiz-options {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 8px;
+        }
+
+        .brp-quiz-opt {
+          border: 1px solid var(--line);
+          border-radius: var(--radius-pill);
+          padding: 10px 14px;
+          background: transparent;
+          color: var(--ink);
+          font: inherit;
+          font-size: 14px;
+          font-weight: 600;
+          cursor: pointer;
+          text-align: center;
+          transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+        }
+
+        .brp-quiz-opt:hover:not(:disabled):not(.is-selected) {
+          background: var(--surface-alt);
+          border-color: var(--line-strong);
+        }
+
+        /* 선택 상태 — 강조 그린은 안 씀(3곳 외). grayscale 채움으로 위계만 표현. */
+        .brp-quiz-opt.is-selected {
+          background: var(--surface-alt);
+          border-color: var(--ink);
+          color: var(--ink);
+          font-weight: 700;
+        }
+
+        .brp-quiz-opt.is-correct {
+          background: rgba(56, 142, 60, 0.15);
+          border-color: rgba(56, 142, 60, 0.7);
+          color: #2e7d32;
+        }
+
+        .brp-quiz-opt.is-wrong {
+          background: rgba(180, 63, 63, 0.12);
+          border-color: rgba(180, 63, 63, 0.5);
+          color: #b43f3f;
+        }
+
+        .brp-quiz-opt:disabled {
+          cursor: default;
+        }
+
+        .brp-quiz-result {
+          margin: 0 0 14px;
+          padding: 10px 12px;
+          border-radius: var(--radius-md);
+          font-size: 13.5px;
+          font-weight: 600;
+          text-align: center;
+        }
+
+        .brp-quiz-result.is-pass {
+          background: rgba(56, 142, 60, 0.12);
+          color: #2e7d32;
+        }
+
+        .brp-quiz-result.is-fail {
+          background: rgba(180, 63, 63, 0.1);
+          color: #b43f3f;
+        }
+
+        .brp-quiz-actions {
+          display: flex;
+          justify-content: flex-end;
+          gap: 8px;
+        }
+
+        .brp-quiz-cancel,
+        .brp-quiz-submit {
+          border: 0;
+          cursor: pointer;
+          font: inherit;
+          border-radius: var(--radius-pill);
+          padding: 11px 20px;
+          font-size: 14px;
+        }
+
+        .brp-quiz-cancel {
+          background: transparent;
+          color: var(--ink-soft);
+          border: 1px solid var(--line);
+          font-weight: 600;
+        }
+
+        .brp-quiz-cancel:hover {
+          background: var(--surface-alt);
+          color: var(--ink);
+        }
+
+        /* 퀴즈 제출 — 1차 액션. 그린. */
+        .brp-quiz-submit {
+          background: var(--accent);
+          color: var(--accent-ink);
+          font-weight: 600;
+          transition: background 0.18s ease;
+        }
+
+        .brp-quiz-submit:hover:not(:disabled) {
+          background: var(--accent-hover);
+        }
+
+        .brp-quiz-submit:disabled {
+          background: var(--surface-alt);
+          color: var(--ink-mute);
+          cursor: not-allowed;
+        }
+
+        .brp-progress-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+          margin-top: 48px;
+          padding-top: 36px;
+          border-top: 1px solid var(--line);
+        }
+
+        @media (min-width: 720px) {
+          .brp-progress-grid {
+            grid-template-columns: 180px 1fr;
+            gap: 28px;
+            align-items: start;
+          }
+        }
+
+        .brp-progress-grid h2,
+        .brp-prayer h2 {
+          margin: 0;
+          font-size: 22px;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          color: var(--ink);
+        }
+
+        .brp-grid {
+          display: grid;
+          grid-template-columns: repeat(7, 1fr);
+          gap: 8px;
+        }
+
+        @media (min-width: 480px) {
+          .brp-grid {
+            grid-template-columns: repeat(8, 1fr);
+            gap: 10px;
+          }
+        }
+
+        .brp-grid button {
+          /* 그리드 셀이 넓어도 칩(동그라미)은 항상 일정 크기로 유지 — 가로폭이
+             넓은 태블릿/PC 에서 한 셀이 커져서 동그라미가 거대해지는 현상 방지.
+             셀 안에선 margin: 0 auto 로 가운데 정렬. */
+          width: 100%;
+          max-width: 40px;
+          aspect-ratio: 1;
+          margin: 0 auto;
+          border-radius: 50%;
+          background: var(--surface);
+          color: var(--ink-soft);
+          border: 1px solid var(--line);
+          font-size: 13px;
+          font-weight: 600;
+          transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+        }
+
+        .brp-grid button:hover:not(.is-done) {
+          border-color: var(--ink-mute);
+          color: var(--ink);
+        }
+
+        .brp-grid button.is-current {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+
+        .brp-grid button.is-done {
+          background: var(--accent);
+          color: var(--accent-ink);
+          border-color: var(--accent);
+        }
+
+        .brp-prayer {
+          margin-top: 56px;
+          padding-top: 36px;
+          border-top: 1px solid var(--line);
+        }
+
+        .brp-prayer-header {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
+          margin-bottom: 18px;
+        }
+
+        @media (min-width: 600px) {
+          .brp-prayer-header {
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 20px;
+          }
+        }
+
+        .brp-prayer-heading h2 {
+          margin: 0;
+        }
+
+        .brp-prayer-meta {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          margin: 8px 0 0;
+          font-size: 13px;
+          color: var(--ink-soft);
+          font-variant-numeric: tabular-nums;
+        }
+
+        .brp-prayer-divider {
+          color: var(--ink-mute);
+        }
+
+        .brp-prayer-count {
+          color: var(--ink);
+          font-weight: 700;
+        }
+
+        /* 학년 토글 — 번역/모드 토글과 동일하게 슬라이딩 인디케이터 패턴.
+           컨테이너 안 padding 없음 → 베젤 없이 edge-to-edge pill 한 줄.
+           높이는 height 로 명시 고정 (min-height 만 있으면 자식 button 의
+           내재 높이가 줄어들 때 pill 이 작아져 의도와 다르게 보일 수 있음). */
+        .brp-prayer-toggle {
+          display: inline-flex;
+          align-items: stretch;
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-pill);
+          padding: 0;
+          height: 44px;
+          overflow: hidden;
+          position: relative;
+          isolation: isolate;
+          flex-shrink: 0;
+        }
+
+        .brp-prayer-toggle button {
+          position: relative;
+          z-index: 1;
+          border: 0;
+          margin: 0;
+          cursor: pointer;
+          font: inherit;
+          /* native <button> 기본 padding/margin 0 리셋. flex 가운데 정렬은
+             기본으로 두고, Pretendard 한글 글리프가 line-box 위쪽으로 약간
+             치우쳐 보이는 metric 보정은 line-height 를 넉넉히 줘서 line-box
+             안에서 자연스럽게 중앙에 앉도록 한다. height: 100% 로 pill 전체
+             높이를 그대로 채움. */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          width: auto;
+          height: 100%;
+          line-height: 1.5;
+          padding: 0 16px;
+          border-radius: var(--radius-pill);
+          background: transparent;
+          color: var(--ink-soft);
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          transition: color 0.2s ease;
+        }
+
+        .brp-prayer-toggle button.is-active {
+          background: transparent;
+          color: var(--accent-ink);
+        }
+
+        .brp-prayer-bar {
+          height: 2px;
+          background: var(--surface-alt);
+          border-radius: var(--radius-pill);
+          margin-bottom: 20px;
+          overflow: hidden;
+        }
+
+        .brp-prayer-bar span {
+          display: block;
+          height: 100%;
+          background: var(--accent);
+          transition: width 0.3s ease;
+        }
+
+        .brp-prayer-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: grid;
+          grid-template-columns: minmax(0, 1fr);
+          gap: 10px;
+        }
+
+        .brp-prayer-item {
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-lg);
+          transition: border-color 0.2s ease, background 0.2s ease;
+          min-width: 0;
+          overflow: hidden;
+        }
+
+        .brp-prayer-item.is-open {
+          background: var(--surface);
+          border-color: var(--ink-mute);
+        }
+
+        .brp-prayer-item.is-done .brp-prayer-no {
+          color: var(--ink-mute);
+          text-decoration: line-through;
+        }
+
+        .brp-prayer-item.is-done .brp-prayer-theme {
+          color: var(--ink-soft);
+        }
+
+        .brp-prayer-trigger {
+          all: unset;
+          box-sizing: border-box;
+          display: grid;
+          grid-template-columns: 40px 1fr 28px;
+          align-items: center;
+          gap: 12px;
+          width: 100%;
+          padding: 16px 18px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+
+        .brp-prayer-trigger:focus-visible {
+          outline: 2px solid var(--accent);
+          outline-offset: 2px;
+        }
+
+        .brp-prayer-no {
+          font-size: 12px;
+          letter-spacing: 0.12em;
+          color: var(--accent);
+          font-variant-numeric: tabular-nums;
+          font-weight: 700;
+        }
+
+        .brp-prayer-theme {
+          font-weight: 600;
+          color: var(--ink);
+          letter-spacing: -0.01em;
+        }
+
+        .brp-prayer-mark {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          border: 1px solid var(--line-strong, var(--ink-mute));
+          color: var(--ink-soft);
+          background: transparent;
+        }
+
+        .brp-prayer-item.is-done .brp-prayer-mark {
+          background: var(--accent);
+          border-color: var(--accent);
+          color: var(--accent-ink);
+        }
+
+        .brp-prayer-mark-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: var(--ink-mute);
+        }
+
+        .brp-prayer-body {
+          padding: 4px 20px 22px;
+          border-top: 1px solid var(--line);
+          display: grid;
+          gap: 20px;
+          min-width: 0;
+        }
+
+        .brp-prayer-body > * {
+          min-width: 0;
+        }
+
+        .brp-prayer-verse {
+          /* 성경 구절 — 옅은 딥그린 배경 패널. 좌측 상단에 작은 따옴표 포인트. */
+          position: relative;
+          margin: 22px 0 0;
+          padding: 18px 18px 16px 34px;
+          border-radius: var(--radius-md);
+          background: var(--accent-soft);
+          color: var(--ink);
+        }
+
+        .brp-prayer-verse::before {
+          content: "“";
+          position: absolute;
+          top: 6px;
+          left: 12px;
+          font-family: Georgia, "Times New Roman", var(--font-noto-serif-kr),
+            serif;
+          font-size: 28px;
+          line-height: 1;
+          color: var(--accent);
+          opacity: 0.55;
+          pointer-events: none;
+        }
+
+        .brp-prayer-verse p {
+          margin: 0;
+          font-family: var(--font-noto-serif-kr), "Nanum Myeongjo",
+            "Apple SD Gothic Neo", "Iowan Old Style", "Times New Roman", serif;
+          font-size: 16.5px;
+          line-height: 1.85;
+          letter-spacing: -0.005em;
+          color: var(--ink);
+          word-break: keep-all;
+          overflow-wrap: anywhere;
+        }
+
+        .brp-prayer-verse cite {
+          /* 구절 박스 안에서 우측 정렬 (박스 패딩만큼 안쪽에 정돈). */
+          display: block;
+          margin-top: 10px;
+          text-align: right;
+          font-style: normal;
+          font-size: 12px;
+          letter-spacing: 0.04em;
+          font-weight: 700;
+          color: var(--accent);
+        }
+
+        .brp-prayer-section {
+          display: grid;
+          gap: 8px;
+        }
+
+        .brp-prayer-label {
+          margin: 0;
+          font-size: 11px;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: var(--accent);
+          font-weight: 700;
+        }
+
+        /* "따라서 기도해요"(따라하기) 영역 라벨 — 다른 라벨보다 더 또렷하게.
+           위 성경 소제목과 같은 따뜻한 붉은 톤(--accent-warm)으로 강조. */
+        .brp-prayer-text-head .brp-prayer-label {
+          color: var(--accent-warm);
+          font-weight: 800;
+          font-size: 14px;
+          letter-spacing: -0.005em;
+          text-transform: none;
+        }
+
+        .brp-prayer-think,
+        .brp-prayer-text {
+          margin: 0;
+          color: var(--ink);
+          font-size: 15px;
+          line-height: 1.85;
+          word-break: keep-all;
+          overflow-wrap: anywhere;
+          min-width: 0;
+        }
+
+        /* 생각해 보기 본문 — 좌측 accent 포인트(따라하기 본문은 제외). */
+        .brp-prayer-think {
+          padding-left: 14px;
+          border-left: 3px solid var(--accent-soft);
+        }
+
+
+        .brp-prayer-text-head {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          gap: 10px;
+        }
+
+        .brp-prayer-word-count {
+          font-size: 12px;
+          color: var(--ink-soft);
+          font-variant-numeric: tabular-nums;
+          white-space: nowrap;
+        }
+
+        .brp-prayer-text-line {
+          margin-bottom: 6px;
+        }
+
+        .brp-prayer-text-line:last-child {
+          margin-bottom: 0;
+        }
+
+        .brp-prayer-word {
+          display: inline;
+          margin-right: 0.28em;
+          color: var(--ink);
+          transition: color 0.25s ease, font-weight 0.25s ease;
+          overflow-wrap: anywhere;
+          word-break: break-word;
+        }
+
+        .brp-prayer-word.is-read {
+          color: var(--accent);
+          font-weight: 700;
+        }
+
+        .brp-prayer-blank {
+          color: var(--ink-mute);
+          font-style: italic;
+          font-size: 0.92em;
+          padding: 0 2px;
+        }
+
+        .brp-prayer-actions {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+
+        .brp-prayer-mic,
+        .brp-prayer-check,
+        .brp-prayer-next,
+        .brp-prayer-restart,
+        .brp-prayer-reset {
+          border: 0;
+          cursor: pointer;
+          font: inherit;
+          border-radius: var(--radius-pill);
+          padding: 11px 18px;
+          font-size: 14px;
+          white-space: nowrap;
+        }
+
+        .brp-prayer-mic {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: var(--surface);
+          color: var(--ink);
+          border: 1px solid var(--line);
+          font-weight: 600;
+          transition: background 0.18s ease, border-color 0.18s ease;
+        }
+
+        .brp-prayer-mic:hover:not(:disabled):not(.is-listening) {
+          background: var(--surface-alt);
+          border-color: var(--line-strong);
+        }
+
+        .brp-prayer-mic.is-listening {
+          background: var(--danger);
+          color: #fff;
+          border-color: var(--danger);
+        }
+
+        .brp-prayer-mic:disabled {
+          cursor: not-allowed;
+          background: var(--surface-alt);
+          color: var(--ink-mute);
+          border-color: var(--line);
+        }
+
+        .brp-prayer-mic-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: currentColor;
+        }
+
+        .brp-prayer-mic.is-listening .brp-prayer-mic-dot {
+          animation: brpPulse 1.2s ease infinite;
+        }
+
+        .brp-prayer-restart {
+          background: transparent;
+          color: var(--ink-soft);
+          border: 1px solid var(--line);
+          font-size: 13px;
+          font-weight: 600;
+          padding: 10px 14px;
+        }
+
+        .brp-prayer-restart:hover {
+          color: var(--ink);
+          background: var(--surface-alt);
+        }
+
+        .brp-prayer-check {
+          background: transparent;
+          color: var(--ink);
+          border: 1px solid var(--line);
+          font-weight: 600;
+        }
+
+        .brp-prayer-check.is-done {
+          background: var(--surface-alt);
+          color: var(--ink-soft);
+          border: 1px solid var(--line);
+        }
+
+        .brp-prayer-next {
+          background: transparent;
+          color: var(--ink);
+          border: 1px solid var(--line);
+          font-weight: 600;
+        }
+
+        .brp-prayer-next:hover,
+        .brp-prayer-check:hover {
+          background: var(--surface-alt);
+          color: var(--ink);
+        }
+
+        .brp-prayer-lords {
+          /* 좌측 컬러바 제거 — 카드 자체를 깔끔한 하나의 패널로.
+             옅은 표면 + 라운드만으로 충분히 "선택된" 카드 느낌. */
+          margin-top: 24px;
+          padding: 22px 22px 24px;
+          background: var(--surface-alt);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-lg);
+        }
+
+        .brp-prayer-lords p:last-child {
+          margin: 14px 0 0;
+          color: var(--ink);
+          font-family: var(--font-noto-serif-kr), "Nanum Myeongjo",
+            "Apple SD Gothic Neo", "Iowan Old Style", "Times New Roman", serif;
+          font-size: 15.5px;
+          line-height: 1.95;
+          letter-spacing: -0.005em;
+          word-break: keep-all;
+        }
+
+        .brp-prayer-foot {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 18px;
+        }
+
+        .brp-prayer-reset {
+          background: transparent;
+          color: var(--ink-soft);
+          border: 1px solid var(--line);
+          font-size: 13px;
+          font-weight: 600;
+          padding: 9px 14px;
+        }
+
+        .brp-prayer-reset:hover {
+          color: var(--ink);
+          background: var(--surface-alt);
+        }
+
+        .brp-dock {
+          position: fixed;
+          left: 50%;
+          bottom: 16px;
+          z-index: 22;
+          transform: translateX(-50%);
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          padding: 6px;
+          border-radius: var(--radius-pill);
+          background: var(--surface-translucent);
+          border: 1px solid var(--line);
+          backdrop-filter: saturate(180%) blur(18px);
+          -webkit-backdrop-filter: saturate(180%) blur(18px);
+          box-shadow: var(--shadow-1);
+          max-width: calc(100vw - 32px);
+        }
+
+        /* ── 본문 음성 재생 컨트롤 (낭독 모드 전용) ─────────────────────────
+           dock 바로 위에 떠 있는 알약 컨트롤. 재생/일시정지 토글(주 버튼),
+           정지, 0.8×~1.5× 속도 4단계, 현재 절 표시.
+           dock 와 같은 시각 톤(surface-translucent + line + shadow-1)으로 통일. */
+        .brp-tts-bar {
+          position: fixed;
+          left: 50%;
+          bottom: 76px;
+          z-index: 22;
+          transform: translateX(-50%);
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          padding: 6px 8px;
+          border-radius: var(--radius-pill);
+          background: var(--surface-translucent);
+          border: 1px solid var(--line);
+          backdrop-filter: saturate(180%) blur(18px);
+          -webkit-backdrop-filter: saturate(180%) blur(18px);
+          box-shadow: var(--shadow-1);
+          max-width: calc(100vw - 32px);
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        /* 설정 기어 버튼 — TTS 바 안의 다른 아이콘 버튼과 정사각 형태로 통일.
+           열린 상태에서 액센트 톤으로 강조. */
+        .brp-tts-settings-btn {
+          width: 34px;
+          padding: 0 !important;
+          justify-content: center;
+        }
+        .brp-tts-settings-btn.is-open {
+          background: rgba(194, 65, 12, 0.12) !important;
+          color: var(--accent, #c2410c);
+        }
+        .brp-page--imm-dark .brp-tts-settings-btn.is-open {
+          background: rgba(232, 168, 119, 0.18) !important;
+          color: #e8a877;
+        }
+        /* 설정 팝오버 — 바 위쪽으로 떠 있는 카드.
+           .brp-tts-bar 가 position: fixed 이므로 absolute 자식은 바 기준 정렬.
+           바 우측 정렬(right: 8px) — 모바일에서도 화면 안으로 잘 들어옴. */
+        .brp-tts-settings {
+          position: absolute;
+          bottom: calc(100% + 10px);
+          right: 8px;
+          width: min(320px, calc(100vw - 24px));
+          padding: 16px;
+          border-radius: 14px;
+          background: var(--surface, #ffffff);
+          border: 1px solid var(--line, rgba(15, 23, 42, 0.1));
+          box-shadow: 0 16px 48px rgba(15, 23, 42, 0.18);
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          z-index: 25;
+          animation: brpTtsSettingsIn 160ms cubic-bezier(0.2, 0.7, 0.2, 1);
+        }
+        @keyframes brpTtsSettingsIn {
+          from {
+            opacity: 0;
+            transform: translateY(6px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .brp-page--immersive .brp-tts-settings {
+          background: var(--brp-imm-bg, #fbfaf6);
+          border-color: var(--brp-imm-border, rgba(15, 23, 42, 0.1));
+          color: var(--brp-imm-fg, #1f2937);
+        }
+        .brp-page--imm-dark .brp-tts-settings {
+          background: #1c1f27;
+          border-color: rgba(255, 255, 255, 0.1);
+          box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+        }
+        .brp-tts-field {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        .brp-tts-field-row {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          gap: 8px;
+        }
+        .brp-tts-field-label {
+          font-size: 12.5px;
+          font-weight: 700;
+          color: var(--ink, #1f2937);
+          letter-spacing: -0.01em;
+        }
+        .brp-page--immersive .brp-tts-field-label {
+          color: var(--brp-imm-fg, #1f2937);
+        }
+        .brp-tts-field-hint {
+          font-size: 11px;
+          color: var(--ink-soft, #6b7280);
+          font-weight: 500;
+        }
+        .brp-tts-field-value {
+          font-size: 12px;
+          font-weight: 700;
+          color: var(--accent, #c2410c);
+          font-variant-numeric: tabular-nums;
+          min-width: 2.4em;
+          text-align: right;
+        }
+        .brp-page--imm-dark .brp-tts-field-value {
+          color: #e8a877;
+        }
+        /* 목소리 드롭다운 — 네이티브 select 에 약간의 테두리 + padding 만 입혀
+           모든 OS 의 기본 룩을 그대로 사용 (한국어 voice 가 OS 별로 다르게 표시되어
+           불필요한 커스텀이 오히려 혼란을 줌). */
+        .brp-tts-select {
+          width: 100%;
+          padding: 10px 12px;
+          font-size: 13.5px;
+          font-weight: 500;
+          color: inherit;
+          background: var(--surface-alt, #f6f6f4);
+          border: 1px solid var(--line, rgba(15, 23, 42, 0.12));
+          border-radius: 10px;
+          outline: none;
+          cursor: pointer;
+          transition: border-color 140ms ease, box-shadow 140ms ease;
+        }
+        .brp-tts-select:focus {
+          border-color: var(--accent, #c2410c);
+          box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.2);
+        }
+        .brp-page--imm-dark .brp-tts-select {
+          background: #11131a;
+          border-color: rgba(255, 255, 255, 0.12);
+        }
+        .brp-tts-select:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+        /* 슬라이더 — 가로 막대, 액센트 thumb. 모든 브라우저에서 일관된 룩을 위해
+           appearance: none + 트랙/엄지를 직접 그린다. */
+        .brp-tts-range {
+          width: 100%;
+          height: 28px;
+          background: transparent;
+          appearance: none;
+          -webkit-appearance: none;
+          margin: 0;
+          padding: 0;
+          cursor: pointer;
+        }
+        .brp-tts-range::-webkit-slider-runnable-track {
+          height: 4px;
+          background: rgba(15, 23, 42, 0.12);
+          border-radius: 999px;
+        }
+        .brp-page--imm-dark .brp-tts-range::-webkit-slider-runnable-track {
+          background: rgba(255, 255, 255, 0.15);
+        }
+        .brp-tts-range::-moz-range-track {
+          height: 4px;
+          background: rgba(15, 23, 42, 0.12);
+          border-radius: 999px;
+        }
+        .brp-page--imm-dark .brp-tts-range::-moz-range-track {
+          background: rgba(255, 255, 255, 0.15);
+        }
+        .brp-tts-range::-webkit-slider-thumb {
+          appearance: none;
+          -webkit-appearance: none;
+          width: 18px;
+          height: 18px;
+          background: var(--accent, #c2410c);
+          border-radius: 50%;
+          margin-top: -7px;
+          box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18);
+          cursor: pointer;
+          transition: transform 120ms ease;
+        }
+        .brp-tts-range::-moz-range-thumb {
+          width: 18px;
+          height: 18px;
+          background: var(--accent, #c2410c);
+          border: none;
+          border-radius: 50%;
+          box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18);
+          cursor: pointer;
+        }
+        .brp-tts-range:active::-webkit-slider-thumb {
+          transform: scale(1.15);
+        }
+        .brp-tts-range:focus-visible::-webkit-slider-thumb {
+          box-shadow: 0 0 0 4px rgba(194, 65, 12, 0.25);
+        }
+        .brp-tts-range-scale {
+          display: flex;
+          justify-content: space-between;
+          font-size: 10.5px;
+          color: var(--ink-soft, #6b7280);
+          margin-top: -2px;
+        }
+        /* immersive 모드에서는 brp-dock 가 숨겨지므로 TTS 바를 그 자리(=화면 하단
+           중앙)로 끌어내려서 한 줄이 되도록 한다. 색은 immersive 토큰 사용. */
+        .brp-page--immersive .brp-tts-bar {
+          bottom: 24px;
+          background: var(--brp-imm-bg-bar) !important;
+          border-color: var(--brp-imm-border) !important;
+          color: var(--brp-imm-fg) !important;
+        }
+        .brp-tts-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          height: 34px;
+          padding: 0 14px;
+          border-radius: var(--radius-pill);
+          border: 1px solid transparent;
+          background: transparent;
+          color: var(--ink);
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          cursor: pointer;
+          transition: background 140ms ease, color 140ms ease, transform 120ms ease;
+        }
+        .brp-tts-btn:hover:not(:disabled) {
+          background: rgba(15, 23, 42, 0.06);
+        }
+        .brp-tts-btn:active:not(:disabled) {
+          transform: scale(0.96);
+        }
+        .brp-tts-btn:disabled {
+          opacity: 0.4;
+          cursor: not-allowed;
+        }
+        .brp-page--imm-dark .brp-tts-btn:hover:not(:disabled) {
+          background: rgba(255, 255, 255, 0.08);
+        }
+        /* 주 버튼(재생/일시정지) — 갈색 fill 으로 명확히 구분. */
+        .brp-tts-btn--primary {
+          background: var(--accent);
+          color: var(--accent-ink, #fff);
+        }
+        .brp-tts-btn--primary:hover:not(:disabled) {
+          background: #a43508;
+        }
+        .brp-tts-btn--primary.is-playing {
+          background: #a43508;
+        }
+        /* 속도 그룹 — 좌우 hairline 으로 구분. */
+        .brp-tts-rates {
+          display: inline-flex;
+          align-items: center;
+          gap: 2px;
+          padding: 2px;
+          margin: 0 2px;
+          border-radius: var(--radius-pill);
+          background: rgba(15, 23, 42, 0.05);
+        }
+        .brp-page--imm-dark .brp-tts-rates {
+          background: rgba(255, 255, 255, 0.06);
+        }
+        .brp-tts-rate {
+          appearance: none;
+          border: none;
+          background: transparent;
+          color: inherit;
+          font-size: 12px;
+          font-weight: 600;
+          padding: 6px 10px;
+          border-radius: var(--radius-pill);
+          cursor: pointer;
+          font-variant-numeric: tabular-nums;
+          transition: background 140ms ease, color 140ms ease;
+        }
+        .brp-tts-rate:hover:not(:disabled):not(.is-active) {
+          background: rgba(15, 23, 42, 0.06);
+        }
+        .brp-page--imm-dark .brp-tts-rate:hover:not(:disabled):not(.is-active) {
+          background: rgba(255, 255, 255, 0.08);
+        }
+        .brp-tts-rate.is-active {
+          background: var(--accent);
+          color: var(--accent-ink, #fff);
+        }
+        .brp-tts-rate:disabled {
+          opacity: 0.4;
+          cursor: not-allowed;
+        }
+        .brp-tts-progress {
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--ink-soft, #6b7280);
+          padding: 0 6px;
+          font-variant-numeric: tabular-nums;
+          min-width: 2.4em;
+          text-align: center;
+        }
+        .brp-page--imm-dark .brp-tts-progress {
+          color: var(--brp-imm-fg-soft);
+        }
+        /* 좁은 모바일 — 라벨 텍스트 숨기고 아이콘만 + 속도 간격 압축. */
+        @media (max-width: 480px) {
+          .brp-tts-bar {
+            gap: 4px;
+            padding: 5px 6px;
+            bottom: 72px;
+          }
+          .brp-tts-btn {
+            padding: 0 10px;
+            font-size: 12.5px;
+          }
+          .brp-tts-btn--primary span {
+            display: inline;
+          }
+          .brp-tts-rate {
+            padding: 5px 8px;
+            font-size: 11.5px;
+          }
+          .brp-tts-progress {
+            font-size: 11.5px;
+            min-width: 2em;
+          }
+        }
+
+        /* 도크 1차 액션 — "다 읽었어요" 챕터 완료. 강조 그린. */
+        .brp-manual {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          border-radius: var(--radius-pill);
+          padding: 8px 16px;
+          background: var(--accent);
+          color: var(--accent-ink);
+          border: 1px solid var(--accent);
+          font-size: 13.5px;
+          font-weight: 600;
+          white-space: nowrap;
+          transition: background 0.18s ease, border-color 0.18s ease;
+        }
+
+        .brp-manual:hover:not(:disabled):not(.is-pending) {
+          background: var(--accent-hover);
+          border-color: var(--accent-hover);
+        }
+
+        /* 아직 80% 미만 읽음 → 1차 액션은 비활성처럼 보이게 (ghost) */
+        .brp-manual.is-pending {
+          background: transparent;
+          color: var(--ink-mute);
+          border-color: var(--line);
+        }
+
+        .brp-manual.is-pending:hover {
+          background: var(--surface-alt);
+        }
+
+        /* 도크 2차 액션들 — 마이크 토글, 처음부터 다시. ghost. */
+        .brp-mic,
+        .brp-reset {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          border-radius: var(--radius-pill);
+          padding: 7px 14px;
+          background: transparent;
+          color: var(--ink);
+          border: 1px solid var(--line);
+          font-size: 12.5px;
+          font-weight: 600;
+          white-space: nowrap;
+          transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+        }
+
+        .brp-mic:hover:not(:disabled):not(.is-listening),
+        .brp-reset:hover:not(:disabled) {
+          background: var(--surface-alt);
+          border-color: var(--line-strong);
+        }
+
+        .brp-mic:disabled,
+        .brp-manual:disabled,
+        .brp-reset:disabled {
+          cursor: not-allowed;
+          background: transparent;
+          color: var(--ink-mute);
+          border-color: var(--line);
+        }
+
+        .brp-mic span {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: currentColor;
+        }
+
+        .brp-mic.is-listening span {
+          animation: brpPulse 1.2s ease infinite;
+        }
+
+        /* 마이크 ON 상태만 강조 — 듣고 있다는 능동 신호. danger 톤. */
+        .brp-mic.is-listening {
+          background: var(--danger);
+          color: #fff;
+          border-color: var(--danger);
+        }
+
+        .brp-count {
+          color: var(--ink-soft);
+          font-size: 13px;
+          font-weight: 600;
+          white-space: nowrap;
+          padding: 0 8px;
+        }
+
+        .brp-speech-message {
+          /* 한 줄 토스트 — 본문 가독성을 가리지 않게 콤팩트하게.
+             3 초 뒤 자동 페이드아웃 (useEffect 에서 빈 문자열로 설정). */
+          position: fixed;
+          left: 50%;
+          bottom: 88px;
+          z-index: 22;
+          transform: translateX(-50%);
+          margin: 0;
+          padding: 8px 16px;
+          background: var(--ink);
+          color: var(--surface);
+          border-radius: var(--radius-pill);
+          font-size: 12.5px;
+          font-weight: 500;
+          letter-spacing: -0.005em;
+          white-space: nowrap;
+          max-width: calc(100vw - 32px);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          animation: brp-toast-in 0.18s ease-out;
+          box-shadow: var(--shadow-2);
+        }
+
+        @keyframes brp-toast-in {
+          from {
+            opacity: 0;
+            transform: translate(-50%, 6px);
+          }
+          to {
+            opacity: 1;
+            transform: translate(-50%, 0);
+          }
+        }
+
+        .brp-complete {
+          position: fixed;
+          inset: 0;
+          z-index: 30;
+          display: grid;
+          place-items: center;
+          background: rgba(22, 22, 26, 0.42);
+          backdrop-filter: saturate(180%) blur(16px);
+          -webkit-backdrop-filter: saturate(180%) blur(16px);
+          padding: 16px;
+        }
+
+        .brp-complete div {
+          width: min(94vw, 440px);
+          background: var(--surface);
+          border: 1px solid var(--line);
+          border-radius: var(--radius-lg);
+          padding: clamp(28px, 5vw, 40px);
+          text-align: center;
+          box-shadow: var(--shadow-2);
+        }
+
+        .brp-complete p {
+          margin: 0 0 10px;
+          color: var(--ink-mute);
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: 600;
+        }
+
+        .brp-complete h2 {
+          margin: 0 0 22px;
+          font-size: clamp(22px, 4vw, 28px);
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          color: var(--ink);
+        }
+
+        .brp-complete button {
+          border-radius: var(--radius-pill);
+          padding: 12px 24px;
+          background: var(--accent);
+          color: var(--accent-ink);
+          font-weight: 600;
+          font-size: 14px;
+          border: 0;
+          cursor: pointer;
+          transition: background 0.18s ease;
+        }
+
+        .brp-complete button:hover {
+          background: var(--accent-hover);
+        }
+
+        @keyframes brpPulse {
+          0% {
+            box-shadow: 0 0 0 0 rgba(180, 63, 63, 0.35);
+          }
+          100% {
+            box-shadow: 0 0 0 12px rgba(180, 63, 63, 0);
+          }
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           메인 캔버스(.brp-canvas) + 우측 사이드(.brp-side)
+           - 모바일/태블릿 세로(<960px): canvas 는 flex column, side 는
+             display:contents 로 layout 영향 0. 자식들은 캔버스 직속 flex
+             item 처럼 동작 → CSS order 로 기존 모바일 순서 유지
+             (hero → top-row → mode-tabs → toolbar → reader → progress → prayer).
+           - 태블릿 가로 + PC(≥960px): canvas 는 grid 2-col. side 는 우측
+             컬럼(grid-area: side)을 차지하는 flex column + position:sticky
+             → 본문 스크롤해도 컨트롤·진도·기도 카드가 함께 따라옴.
+           ────────────────────────────────────────────────────────────── */
+        .brp-canvas {
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+        .brp-side {
+          /* 모바일: 컨테이너 자체를 layout 에서 제거 — 자식들이 canvas 직속 flex item.
+             PC 에선 grid item 으로 살아남음(미디어 쿼리에서 override). */
+          display: contents;
+        }
+        /* CSS order — 모바일/태블릿 세로 시각 순서. side 가 display: contents 라
+           내부 자식들이 canvas 의 flex item 으로 평탄화 → order 로 배치 가능.
+           hero(.brp-reader-hero) 는 reader 내부 자식이라 order 대상 아님 — 항상
+           reader 카드 최상단에 노출되며, 카드 전체가 order: 5 에 배치됨. */
+        .brp-canvas .brp-top-row       { order: 2; }
+        .brp-canvas .brp-mode-tabs     { order: 3; }
+        .brp-canvas .brp-toolbar       { order: 4; }
+        .brp-canvas > .brp-reader,
+        .brp-canvas .brp-reader        { order: 5; }
+        .brp-canvas .brp-progress-grid { order: 6; }
+        .brp-canvas .brp-prayer        { order: 7; }
+
+        /* ─────────────────────────────────────────────────────────────
+           태블릿 세로 (≥600px) — 챕터 그리드 살짝 더 많은 칸, 리더 패딩 확장
+           ────────────────────────────────────────────────────────────── */
+        @media (min-width: 600px) {
+          .brp-reader {
+            padding: clamp(24px, 3vw, 32px) clamp(14px, 2vw, 22px);
+          }
+          .brp-grid {
+            grid-template-columns: repeat(10, 1fr);
+            gap: 10px;
+          }
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           태블릿 가로 + PC (≥960px) — 2-column 레이아웃 활성화.
+           좌측 컬럼: 책 제목(hero) + 본문(reader)
+           우측 컬럼(사이드바): 책 드롭다운/번역(top-row) → 읽기 모드(mode-tabs)
+                              → 장 스위처(toolbar) → 진도 → 기도
+           ────────────────────────────────────────────────────────────── */
+        @media (min-width: 960px) {
+          /* ⭐️ 2-pane 독립 스크롤 레이아웃 — 태블릿 가로·PC 에서
+             "본문(reader)" 과 "사이드(side)" 가 각자 자기 컨테이너 안에서
+             따로 스크롤된다 (Gmail / Notion 등과 유사한 데스크탑 패턴).
+             구현 포인트:
+               1) .brp-page 자체 스크롤 차단 (overflow: hidden, height: 100vh).
+                  → 페이지 단위 스크롤 사라짐 + 헤더/dock(fixed) 는 그대로 떠 있음.
+               2) .brp-canvas 가 viewport 의 잔여 높이 가득 차도록 명시적 height.
+                  잔여 = 100vh - 페이지 padding-top(헤더 자리) - 캔버스 margin-top.
+                  두 값은 breakpoint 마다 다르므로 CSS 변수로 빼서 재정의.
+               3) reader / side 각각 overflow-y: auto + min-height: 0
+                  (grid item 안에서 overflow 동작하려면 min-height: 0 필수).
+               4) 스크롤바는 두 패널 모두 숨김 (scrollbar-width: none + WebKit).
+                  사용자 요청: "스크롤바를 보여 주진 않게 스크롤이 서로 따로". */
+          .brp-page {
+            /* 캔버스를 viewport 맨 위(y=0)에서 시작 — 페이지 자체에는 padding-top 0.
+               헤더(.brp-header)와 미니바(.brp-mini-bar)는 둘 다 position: fixed
+               로 위에 떠 있고 backdrop-filter 로 콘텐츠가 비치므로, reader 의
+               자체 padding-top 이 헤더 높이만큼만 클리어해 주면 시각적으로
+               콘텐츠가 헤더/미니바 뒤로 부드럽게 슬라이드 한다.
+               → 미니바와 본문 사이 빈 공간이 사라지고, 스크롤이 끊기지 않는 느낌.
+               1200/1440/820h 변형은 아래에서 reader padding-top 만 조정. */
+            --brp-page-top: 0px;
+            --brp-canvas-margin: 0px;
+            padding: 0 clamp(16px, 2vw, 24px);
+            height: 100vh;
+            overflow: hidden;
+            box-sizing: border-box;
+          }
+          /* 헤더 좌우 패딩을 캔버스 폭(1300px)과 동기화 — 뷰포트가 캔버스보다 넓을 땐
+             (viewport - 1300)/2 만큼 들여 캔버스 양끝과 일치, 좁을 땐 최소 20px 유지. */
+          .brp-header {
+            padding: 6px max(20px, calc((100vw - 1300px) / 2));
+            min-height: 44px;
+          }
+
+          /* 미니바 — reader 컬럼 폭에만 정렬 (사이드바 영역은 비움).
+             기존엔 viewport 전체 폭(left:0; right:0)으로 깔려서 우측 사이드바
+             상단까지 검은 띠가 가로지르고 fill 도 거기까지 늘어났는데,
+             정작 그 fill 은 reader 스크롤 진행도라 사이드와 무관 → 시각적으로
+             정보와 위치가 어긋남. left/right 를 canvas 좌측 정렬 + (사이드바 +
+             column gap) 만큼 우측 공백 으로 잡아 reader 컬럼 위에만 떠 있게. */
+          .brp-mini-bar {
+            left: max(16px, calc((100vw - 1300px) / 2));
+            right: calc(max(16px, calc((100vw - 1300px) / 2)) + 300px + 32px);
+            border-radius: 0;
+            border-bottom: none;
+          }
+
+          /* 캔버스 = 2-col grid (단일 행). hero 는 reader 내부로 이동했으니
+             더 이상 별도 행이 필요 없음 → 캔버스가 viewport 잔여 높이를 통째로
+             reader/side 두 컬럼에 분배. 헤더 바로 아래 빈 공간이 거의 사라짐.
+
+             grid-template-rows: minmax(0, 1fr) — 단일 행이 viewport 잔여
+             높이를 모두 차지. minmax(0, 1fr) 의 min 0 이 핵심 (grid track 의
+             기본 min-content 동작을 풀어 자식 overflow 가 정상 작동). */
+          .brp-canvas {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 300px;
+            grid-template-rows: minmax(0, 1fr);
+            grid-template-areas: "reader side";
+            column-gap: 32px;
+            row-gap: 0;
+            max-width: 1300px;
+            margin: 0 auto;
+            height: 100vh;
+            min-height: 0;
+            overflow: hidden;
+          }
+          /* 좌측 본문 — 독립 세로 스크롤. 마지막 줄이 floating dock 아래로
+             숨지 않도록 padding-bottom 을 dock 영역만큼 확보.
+             -webkit-overflow-scrolling: touch — iOS 모멘텀 스크롤 유지.
+             overscroll-behavior: contain — reader 스크롤이 끝에 닿아도 body
+             로 스크롤 체이닝되지 않게 차단(rubber-band 방지). */
+          .brp-canvas > .brp-reader {
+            grid-area: reader;
+            max-width: none;
+            margin: 0;
+            min-height: 0;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            scrollbar-width: none;        /* Firefox */
+            -ms-overflow-style: none;     /* legacy Edge / IE */
+          }
+          .brp-canvas > .brp-reader::-webkit-scrollbar {
+            display: none;                /* WebKit (Safari/Chrome) */
+          }
+          /* 우측 사이드 — 마찬가지로 독립 스크롤.
+             과거에는 position: sticky + 동적 top(JS 계산) 으로 페이지 스크롤을
+             따라가는 "유사 sticky" 패턴이었으나, 이제는 그냥 grid track 안에서
+             자기 overflow 로 스크롤한다. JS 의 --brp-side-top 계산은 무효
+             (위 page useEffect 는 그대로 두되 CSS 가 더 이상 사용하지 않음). */
+          .brp-side {
+            grid-area: side;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            min-height: 0;
+            /* 헤더(44px) 클리어 — reader 와 같은 padding-top 으로 시작 위치 정렬. */
+            padding-top: clamp(56px, 5vw, 64px);
+            padding-bottom: clamp(40px, 5vh, 80px);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+          .brp-side::-webkit-scrollbar {
+            display: none;
+          }
+          /* 사이드 내부 자식들 — grid area 매핑 불필요(flex item).
+             order 리셋 (모바일용 order 가 PC 에선 의미 없게). */
+          .brp-side > .brp-top-row,
+          .brp-side > .brp-mode-tabs,
+          .brp-side > .brp-toolbar,
+          .brp-side > .brp-progress-grid,
+          .brp-side > .brp-prayer {
+            order: 0;
+            max-width: none;
+            margin: 0;
+          }
+
+          /* 좌측 reader — 본문은 항상 충분히 시원한 padding.
+             padding-top: 헤더(44px) + 작은 호흡 — 캔버스가 viewport 최상단에서
+               시작하므로 reader 의 첫 콘텐츠는 헤더에 가려지지 않게 클리어 필요.
+             padding-bottom 은 dock(약 56px + bottom 16px) 위 여유까지
+               크게 확보 — 독립 스크롤에서 마지막 절이 dock 뒤로 가리지
+               않고, 끝까지 스크롤해도 자연스러운 여백이 보인다. */
+          .brp-reader {
+            padding:
+              clamp(56px, 5vw, 64px)
+              clamp(22px, 2.5vw, 32px)
+              clamp(96px, 8vh, 140px);
+          }
+
+          /* 사이드 내 컨트롤 — 좁은 300px 폭에 맞춰 살짝 컴팩트 */
+          .brp-side .brp-top-row {
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+          }
+          .brp-side .brp-mode-tabs--sm {
+            /* 사이드 내에서도 위 row(40px, base 높이) 와 동일 높이 유지 */
+            height: 40px;
+            min-height: 40px;
+          }
+          .brp-side .brp-toolbar {
+            justify-content: stretch;
+          }
+          .brp-side .brp-chapter-switcher {
+            min-height: 40px;
+            max-width: none;
+          }
+
+          /* 사이드 내 진도 + 기도 — 카드 톤(surface + border + radius)으로 통일.
+             border-top 구분선 대신 카드 형태로. */
+          .brp-side > .brp-progress-grid,
+          .brp-side > .brp-prayer {
+            padding: 20px 18px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            border-top: none;
+            padding-top: 20px;
+          }
+          /* 진도 — 사이드바 좁은 폭에선 1 컬럼 stack */
+          .brp-side > .brp-progress-grid {
+            grid-template-columns: 1fr;
+            gap: 14px;
+          }
+          .brp-side > .brp-progress-grid h2 {
+            font-size: 17px;
+          }
+          .brp-side > .brp-progress-grid .brp-section-label {
+            margin-bottom: 6px;
+            font-size: 11px;
+          }
+          /* 사이드바 안 챕터 칩 그리드 — 좁은 폭에 맞춰 6칸 */
+          .brp-side > .brp-progress-grid .brp-grid {
+            grid-template-columns: repeat(6, 1fr);
+            gap: 6px;
+          }
+          .brp-side > .brp-progress-grid .brp-grid button {
+            font-size: 12px;
+          }
+          /* 기도 카드 — 사이드바 좁은 폭에 맞춘 컴팩트 톤 */
+          .brp-side > .brp-prayer h2 {
+            font-size: 18px;
+          }
+          .brp-side > .brp-prayer .brp-prayer-header {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 12px;
+          }
+          .brp-side > .brp-prayer .brp-prayer-toggle {
+            align-self: stretch;
+            justify-content: center;
+          }
+          .brp-side > .brp-prayer .brp-prayer-toggle button {
+            flex: 1;
+            text-align: center;
+          }
+          .brp-side > .brp-prayer .brp-prayer-trigger {
+            padding: 13px 14px;
+            font-size: 15px;
+            grid-template-columns: 30px 1fr 24px;
+            gap: 10px;
+          }
+          .brp-side > .brp-prayer .brp-prayer-body {
+            padding: 4px 14px 16px;
+            gap: 16px;
+          }
+          .brp-side > .brp-prayer .brp-prayer-verse p,
+          .brp-side > .brp-prayer .brp-prayer-think,
+          .brp-side > .brp-prayer .brp-prayer-text {
+            font-size: 14.5px;
+            line-height: 1.8;
+          }
+          .brp-side > .brp-prayer .brp-prayer-lords {
+            padding: 16px 14px;
+          }
+          .brp-side > .brp-prayer .brp-prayer-actions {
+            flex-direction: column;
+            align-items: stretch;
+          }
+          .brp-side > .brp-prayer .brp-prayer-mic,
+          .brp-side > .brp-prayer .brp-prayer-check,
+          .brp-side > .brp-prayer .brp-prayer-next,
+          .brp-side > .brp-prayer .brp-prayer-restart {
+            width: 100%;
+            justify-content: center;
+            padding: 10px 12px;
+            font-size: 13px;
+          }
+
+          /* 하단 dock / speech message — 본문(좌측 컬럼) 가운데 정렬.
+             캔버스 중심에서 좌측 컬럼 가운데 = 중심 - (gap + side)/2 = (32+300)/2 = 166px */
+          .brp-dock,
+          .brp-speech-message {
+            left: calc(50% - 166px);
+          }
+          .brp-dock {
+            max-width: 900px;
+          }
+        }
+
+        /* 가로 태블릿의 짧은 세로 높이 (≈768h) — 헤더·dock 더 압축.
+           캔버스는 기본(min-width: 960px) 블록의 0/0 변수와 100vh 그대로 사용 —
+           이 블록은 헤더 두께/dock 만 압축하고, reader/side padding-top 도 살짝
+           줄여서 짧은 세로에서 콘텐츠 공간을 더 확보. */
+        @media (min-width: 960px) and (max-height: 820px) {
+          .brp-header {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            min-height: 40px;
+          }
+          /* 헤더가 작아진(40px) 만큼 reader/side 의 padding-top 도 줄임. */
+          .brp-canvas > .brp-reader,
+          .brp-side {
+            padding-top: clamp(48px, 4vw, 56px);
+          }
+          .brp-reader-hero h1 {
+            font-size: clamp(24px, 4vw, 34px);
+          }
+          .brp-reader-hero {
+            margin-bottom: 14px;
+          }
+          .brp-dock {
+            bottom: 10px;
+            padding: 5px;
+          }
+          .brp-mic,
+          .brp-manual,
+          .brp-reset {
+            padding: 7px 14px;
+            font-size: 13px;
+          }
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           PC (≥1200px) — 본문/사이드바 폭 시원하게 확장.
+           캔버스는 기본 블록(min-width: 960px) 의 height: 100vh + padding:0
+           그대로 사용 → 헤더/미니바와 콘텐츠 사이 빈 공간 없음.
+           ────────────────────────────────────────────────────────────── */
+        @media (min-width: 1200px) {
+          .brp-page {
+            padding: 0 clamp(20px, 2vw, 32px);
+          }
+          /* 헤더 좌우 패딩을 PC 캔버스 폭(1460px)과 동기화. */
+          .brp-header {
+            padding: 6px max(24px, calc((100vw - 1460px) / 2));
+          }
+          /* 미니바 — PC 캔버스(1460) + 사이드바(460) + gap(60) 기준 재계산.
+             reader 폭이 940 으로 더 넓어지므로 우측 공백도 520px (460+60). */
+          .brp-mini-bar {
+            left: max(20px, calc((100vw - 1460px) / 2));
+            right: calc(max(20px, calc((100vw - 1460px) / 2)) + 460px + 60px);
+          }
+          .brp-canvas {
+            grid-template-columns: minmax(0, 940px) 460px;
+            column-gap: 60px;
+            max-width: 1460px;
+          }
+          .brp-side {
+            gap: 16px;
+          }
+          .brp-side > .brp-progress-grid,
+          .brp-side > .brp-prayer {
+            padding: 22px 20px;
+          }
+          .brp-side > .brp-prayer h2 {
+            font-size: 19px;
+          }
+
+          /* dock — 좌측 컬럼(940) 가운데 = 캔버스(1460) 중심 - (60+460)/2 = 260px */
+          .brp-dock,
+          .brp-speech-message {
+            left: calc(50% - 260px);
+          }
+          .brp-dock {
+            max-width: 900px;
+          }
+        }
+
+        /* 대형 PC (≥1440px) — reader/side padding-top 만 약간 키워 헤더 아래
+           여백을 더 시원하게. 캔버스는 여전히 height: 100vh + padding: 0. */
+        @media (min-width: 1440px) {
+          .brp-canvas > .brp-reader,
+          .brp-side {
+            padding-top: clamp(68px, 5vw, 80px);
+          }
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           단일 컬럼 구간(PC 2-단 시작 960px 미만) — 책+번역, 읽기 모드,
+           장 스위처 "세 줄"을 모두 캔버스 폭에 가득(edge-to-edge) 채우고
+           동일 폭 + 동일 높이(40px) + 좁은 줄간격(6px)으로 통일.
+           기본 룰의 max-width: 720px 가운데 정렬을 이 구간에서만 해제하고,
+           캔버스의 flex gap(14px) 도 6px 로 줄여 row 사이 총 간격을 6px 로
+           수렴시킨다 (flex 에선 gap + margin 이 합산되므로 row margin-bottom
+           은 0 으로 리셋). */
+        @media (max-width: 959px) {
+          .brp-canvas {
+            gap: 6px;
+          }
+          .brp-top-row,
+          .brp-mode-tabs,
+          .brp-toolbar,
+          .brp-reader,
+          .brp-progress-grid,
+          .brp-prayer {
+            max-width: none;
+            width: 100%;
+            margin: 0;
+          }
+          .brp-chapter-switcher {
+            max-width: none;
+            width: 100%;
+            min-height: 40px;
+          }
+          /* 세 줄 모두 같은 높이로 — 책 드롭다운/번역 토글/모드 탭 */
+          .brp-book-picker {
+            height: 40px;
+          }
+          .brp-translation--sm {
+            height: 40px;
+            min-height: 40px;
+          }
+          .brp-mode-tabs--sm {
+            height: 40px;
+            min-height: 40px;
+          }
+          /* hero(책 제목) 와 첫 row 사이도 컴팩트 */
+          .brp-reader-hero {
+            margin: 0 0 12px;
+          }
+        }
+
+        @media (max-width: 760px) {
+          .brp-page {
+            padding-top: 60px;
+            padding-left: 4px;
+            padding-right: 4px;
+            padding-bottom: 76px;
+          }
+
+          .brp-header {
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            min-height: 52px;
+          }
+
+          .brp-brand {
+            padding: 4px 6px;
+            margin-left: -6px;
+            min-width: 0;
+            flex: 0 1 auto;
+          }
+
+          .brp-mini-bar {
+            min-height: 36px;
+            font-size: 12.5px;
+          }
+          .brp-mini-content {
+            min-height: 36px;
+            padding: 0 12px;
+            gap: 6px;
+          }
+          .brp-mini-title {
+            max-width: 45vw;
+          }
+          /* 성경공부(study) 모드 미니바는 우측에 역본 토글이 들어가 좌측 텍스트
+             영역이 좁다. 모바일에선 소제목까지 끼면 줄이 통째로 잘려 책·장이
+             아예 안 보이는 일이 생겨, 소제목과 그 앞의 구분점(·) 을 숨기고
+             "책 이름 · 제 N 장" 만 남겨 둔다.
+             :has() 는 iOS Safari 15.4+ / Chrome 105+ 에서 지원되며, 옛 브라우저
+             에서는 단지 기존처럼 잘려 보일 뿐 동작이 깨지지 않는다 (안전한
+             progressive enhancement). */
+          .brp-mini-bar--study .brp-mini-title,
+          .brp-mini-bar--study .brp-mini-divider:has(+ .brp-mini-title) {
+            display: none;
+          }
+
+          .brp-nav {
+            gap: 6px;
+            flex-shrink: 0;
+          }
+
+          .brp-nav-link {
+            height: 30px;
+            padding: 0 9px;
+            font-size: 12px;
+            border-radius: var(--radius-pill);
+            gap: 3px;
+          }
+
+          .brp-progress-grid {
+            grid-template-columns: 1fr;
+          }
+
+          /* .brp-toolbar margin-bottom 은 위 (max-width: 959px) 통일(6px). */
+
+          .brp-reader-hero {
+            margin: 4px 0 14px;
+          }
+
+          .brp-section-label {
+            margin-bottom: 8px;
+            font-size: 10.5px;
+            letter-spacing: 0.16em;
+          }
+
+          .brp-reader-hero h1 {
+            font-size: clamp(26px, 7vw, 34px);
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+          }
+
+          /* .brp-chapter-switcher 의 min-height/width/margin 은 위 (max-width: 959px)
+             블록에서 40px 풀폭으로 일괄 통일됨. 여기선 좌우 화살표 버튼 사이즈만 축소. */
+          .brp-chapter-switcher button {
+            width: 30px;
+            height: 30px;
+            font-size: 14px;
+          }
+
+          .brp-chapter-select select {
+            font-size: 13.5px;
+          }
+          .brp-select-title {
+            font-size: 13.5px;
+          }
+
+          .brp-reader {
+            padding: 14px 2px;
+            border-radius: var(--radius-lg);
+          }
+
+          .brp-verse {
+            /* 모바일도 데스크탑과 동일한 정책: 2자리 절 번호가 컬럼 안에
+               넉넉히 들어가고 본문과 명확히 띄어지도록 폭/간격 확보. */
+            grid-template-columns: 1.9em minmax(0, 1fr);
+            column-gap: 8px;
+            /* margin-bottom / font-size / line-height 는 사용자 설정의
+               CSS 변수로 결정 — 모바일에서 별도 하드코딩하지 않는다. */
+            padding: 2px 0;
+          }
+
+          /* 책 드롭다운 — 모바일 내부 텍스트만 살짝 작게. 높이/풀폭/마진은
+             위 (max-width: 959px) 블록에서 40px 풀폭으로 일괄 통일됨. */
+          .brp-book-picker {
+            padding: 0;
+          }
+          .brp-book-picker select {
+            font-size: 14px;
+            padding: 0 14px;
+          }
+          .brp-book-picker::after {
+            right: 14px;
+          }
+
+          /* 모드 탭 — 내부 라벨만 살짝 작게. 높이/풀폭/마진은 위 (959px) 통일. */
+          .brp-mode-tabs--sm .brp-mode-tab {
+            padding: 5px 12px;
+            font-size: 13px;
+          }
+
+          .brp-quiz {
+            padding: 12px;
+          }
+
+          .brp-quiz-card {
+            padding: 20px 18px;
+            border-radius: var(--radius-lg);
+          }
+
+          .brp-quiz-card h2 {
+            font-size: 19px;
+          }
+
+          .brp-quiz-sub {
+            font-size: 12.5px;
+            margin-bottom: 18px;
+          }
+
+          .brp-quiz-item {
+            padding: 14px 14px 12px;
+          }
+
+          .brp-quiz-blanked {
+            font-size: 14.5px;
+            line-height: 1.7;
+          }
+
+          .brp-quiz-options {
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+          }
+
+          .brp-quiz-opt {
+            padding: 10px 8px;
+            font-size: 13.5px;
+          }
+
+          .brp-quiz-actions {
+            gap: 6px;
+          }
+
+          .brp-quiz-cancel,
+          .brp-quiz-submit {
+            padding: 10px 14px;
+            font-size: 13px;
+          }
+
+          .brp-scroll-status {
+            padding: 10px 8px;
+            font-size: 12px;
+          }
+
+          .brp-progress-grid {
+            margin-top: 36px;
+            padding: 20px 16px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            border-top: 1px solid var(--line);
+            gap: 16px;
+          }
+
+          .brp-progress-grid h2,
+          .brp-prayer h2 {
+            font-size: 19px;
+          }
+
+          .brp-grid {
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+          }
+
+          .brp-grid button {
+            font-size: 13px;
+          }
+
+          .brp-prayer {
+            margin-top: 24px;
+            padding: 20px 16px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            border-top: 1px solid var(--line);
+          }
+
+          .brp-prayer-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 16px;
+          }
+
+          .brp-prayer-bar {
+            margin-bottom: 18px;
+          }
+
+          .brp-prayer-toggle {
+            align-self: stretch;
+            justify-content: center;
+          }
+
+          .brp-prayer-toggle button {
+            flex: 1;
+            text-align: center;
+          }
+
+          .brp-prayer-list {
+            gap: 12px;
+          }
+
+          .brp-prayer-item {
+            border-radius: var(--radius-lg);
+          }
+
+          .brp-prayer-trigger {
+            grid-template-columns: 32px 1fr 26px;
+            gap: 10px;
+            padding: 14px 14px;
+            font-size: 15.5px;
+          }
+
+          .brp-prayer-body {
+            padding: 4px 14px 18px;
+            gap: 18px;
+          }
+
+          .brp-prayer-verse p,
+          .brp-prayer-think,
+          .brp-prayer-text,
+          .brp-prayer-lords p:last-child {
+            font-size: 15px;
+            line-height: 1.85;
+          }
+
+          .brp-prayer-lords {
+            padding: 20px 18px;
+          }
+
+          .brp-prayer-actions {
+            flex-direction: column;
+            align-items: stretch;
+          }
+
+          .brp-prayer-mic,
+          .brp-prayer-check,
+          .brp-prayer-next,
+          .brp-prayer-restart {
+            width: 100%;
+            text-align: center;
+            padding: 12px 14px;
+            justify-content: center;
+          }
+
+          .brp-dock {
+            width: calc(100% - 16px);
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 4px;
+            padding: 5px 6px;
+            border-radius: var(--radius-pill);
+            bottom: 10px;
+          }
+
+          /* 모바일에서 dock 이 위로 올라간 만큼 복사 바도 자연스럽게 위로. */
+          .brp-copy-bar {
+            bottom: 62px;
+            padding: 5px 8px 5px 12px;
+            gap: 6px;
+            font-size: 12.5px;
+          }
+          .brp-copy-btn {
+            padding: 6px 12px;
+            font-size: 12.5px;
+          }
+          .brp-copy-all,
+          .brp-copy-cancel {
+            padding: 5px 10px;
+            font-size: 12px;
+          }
+          .brp-copy-toast {
+            bottom: 110px;
+            padding: 9px 16px;
+            font-size: 12.5px;
+          }
+
+          .brp-count {
+            display: none;
+          }
+
+          .brp-mic,
+          .brp-manual {
+            flex: 1 1 0;
+            min-width: 0;
+            justify-content: center;
+            padding: 7px 8px;
+            font-size: 12.5px;
+            gap: 4px;
+          }
+
+          .brp-reset {
+            flex: 1 1 0;
+            min-width: 0;
+            justify-content: center;
+            padding: 7px 8px;
+            font-size: 12px;
+          }
+
+          .brp-mic span {
+            width: 6px;
+            height: 6px;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .brp-dock {
+            gap: 4px;
+            padding: 7px 8px;
+          }
+
+          .brp-mic,
+          .brp-manual,
+          .brp-reset {
+            padding: 9px 6px;
+            font-size: 11.5px;
+            letter-spacing: -0.02em;
+          }
+
+          .brp-mic {
+            gap: 4px;
+          }
+        }
+
+        /* ─────────────────────────────────────────────────────────────────
+           읽기 모드(몰입 모드)
+           - 진입: .brp-immersive-enter 버튼 클릭 → main 에 .brp-page--immersive.
+           - 본문 외 chrome 을 모두 숨기고, .brp-reader 를 화면 가운데로 모아
+             큰 글자/넉넉한 줄간격으로 보여준다.
+           - 컨트롤 바(.brp-immersive-bar)는 fixed top 으로 떠 있고, idle 시 페이드 아웃.
+           - 다크 테마는 .brp-page--imm-dark + body.brp-immersive-dark 로 표현.
+           ───────────────────────────────────────────────────────────────── */
+
+        /* 헤더의 읽기 모드 진입 버튼 — 검색·설정 아이콘과 같은 .brp-nav-icon /
+           .brp-mobile-search 기반에 색만 살짝 강조. 기존 헤더 메뉴 구조는 그대로. */
+        .brp-immersive-enter-icon-btn {
+          color: var(--accent, #c2410c) !important;
+        }
+        .brp-immersive-enter-icon-btn:hover {
+          background: rgba(194, 65, 12, 0.08) !important;
+        }
+
+        /* ── 페이지 전체 — chrome 숨김 + 본문 가운데 ──────────────────────── */
+        /* immersive 모드는 native body scroll 을 그대로 사용한다 (자세한 이유는
+           .brp-page--immersive 블록 안 주석 참고). 기존엔 .brp-page--immersive
+           를 position:fixed + overflow:auto 풀스크린 스크롤 컨테이너로 만들고
+           body 를 잠갔지만, 모바일 Safari/Chrome 에서 "위로 스크롤이 안 되는"
+           회귀가 반복되어 폐기. .brp-immersive-bar / .brp-imm-picker 는 그대로
+           position:fixed 라 viewport 에 붙어 있어 UX 동일. */
+        .brp-page--immersive {
+          --brp-imm-font: 1;
+          /* 사이트 본 토큰(globals.css)과 톤 동기화 — 차가운 슬레이트가 아니라
+             따뜻한 종이결 베이지로. --line(#E6E6E2) / --ink(#16161A) /
+             --ink-soft(#6B6B70) 와 정확히 같은 값을 그대로 쓴다. 몰입 모드만의
+             별도 토큰으로 두는 이유는 유저가 다크/라이트를 시스템과 무관하게
+             전환할 수 있기 때문. */
+          --brp-imm-bg: #fbfaf6;
+          --brp-imm-fg: #16161a;
+          --brp-imm-fg-soft: #6b6b70;
+          --brp-imm-bg-bar: rgba(252, 251, 246, 0.86);
+          --brp-imm-border: #e6e6e2;
+          /* 호버/액티브 — 사이트 accent(#2E5D4B) 6% 알파, 옅은 따뜻한 그린.
+             accent-soft(#EAF1ED) 보다 더 투명하게 잡아 위쪽 바에서 과해 보이지
+             않도록. */
+          --brp-imm-bg-soft: rgba(46, 93, 75, 0.06);
+          /* ── 스크롤 아키텍처 (2024-06 수정) ──────────────────────────────
+             기존엔 .brp-page--immersive 자체를 position:fixed + overflow:auto
+             로 만들고 body 를 overflow:hidden 으로 잠가, "고립된 풀스크린
+             스크롤 컨테이너" 패턴을 썼다. 이론적으로 깔끔하지만 모바일
+             Safari/Chrome 에서 다음 회귀가 반복되어 사용자가 "위로 스크롤이
+             안 된다" 고 호소했다:
+               · iOS Safari 16-17: position:fixed 자식의 wheel 이 body 로
+                 라우팅되어, body 가 잠겨 있으면 양쪽 다 막힘.
+               · 일부 안드로이드 Chrome: 100vh + URL 바 dynamic 변동 시
+                 contentBox 가 viewportBox 보다 작아져 위쪽이 클립됨.
+             해결: 풀스크린 컨테이너를 *그만* 하고 body/document 자체 스크롤
+             에 맡긴다. .brp-immersive-bar / .brp-imm-picker 는 그대로
+             position:fixed 라 viewport 에 붙어 있어 UX 동일. 본문은 가장
+             신뢰할 수 있는 native body scroll 로 흘러서 이 버그 클래스가
+             원천적으로 사라진다. body lock 도 더 이상 필요 없음. */
+          position: relative !important;
+          inset: auto !important;
+          width: 100% !important;
+          /* 본문이 짧을 때라도 viewport 를 채우도록 — 그래야 hero 아래의
+             빈 공간이 .brp-imm-bg 베이지로 깔끔히 채워진다. */
+          min-height: 100vh !important;
+          height: auto !important;
+          max-height: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow: visible !important;
+          background: var(--brp-imm-bg) !important;
+          display: block !important;
+          z-index: auto;
+        }
+        .brp-page--immersive.brp-page--imm-dark {
+          /* 다크는 globals.css 의 [data-theme="dark"] 와 같은 (#1B1B22 surface
+             + #F2F2EE ink) 라인을 따른다. 단 몰입 바는 살짝 더 어둡게 떠 보이게
+             #14141a 톤으로 잡아 본문(#1B1B22)과의 deep/recede 구분을 둔다. */
+          --brp-imm-bg: #14141a;
+          --brp-imm-fg: #f2f2ee;
+          --brp-imm-fg-soft: #b5b5bc;
+          --brp-imm-bg-bar: rgba(27, 27, 34, 0.86);
+          --brp-imm-border: rgba(255, 255, 255, 0.08);
+          --brp-imm-bg-soft: rgba(255, 255, 255, 0.05);
+          /* ── 사이트 본 토큰까지 다크로 동기화 ───────────────────────────
+             reader 안에서 .brp-h2-* / .brp-g2-* / .bsv-* / .gcv-* / .hcv-*
+             등 컴포넌트들은 자체 클래스에서 var(--ink) / var(--ink-soft) /
+             var(--surface) / var(--line) 같은 *사이트 본 토큰* 을 직접 쓴다.
+             html 의 [data-theme="dark"] 를 같이 켜지 않으면 이 토큰들은
+             :root 의 라이트 값으로 남아있어 다크 배경 위에 다크 텍스트가
+             올려지며 "다크모드 가면 본문이 거의 안 보이는" 현상이 난다.
+             site-wide dark 토글과 별개로 작동해야 하므로(immersive 안에서만
+             다크), html data-theme 을 강제하지 않고 immersive 컨테이너 안에서
+             만 토큰을 덮어써 다른 페이지에 영향이 가지 않게 한다. */
+          --bg: #14141a;
+          --surface: #1b1b22;
+          --surface-alt: #25252e;
+          --ink: #f2f2ee;
+          --ink-soft: #b5b5bc;
+          --ink-mute: #8b8b92;
+          --ink-faint: #6b6b75;
+          --line: #2e2e38;
+          --line-strong: #3d3d48;
+          --bg-translucent: rgba(20, 20, 26, 0.85);
+          --surface-translucent: rgba(31, 31, 38, 0.92);
+        }
+        /* ── 다크 모드에서 Hebrew/헬라/Study 컴포넌트 본문이 안 보이는
+           문제 패치 ────────────────────────────────────────────────────
+           HebrewChapterV2 / GreekChapterV2 / LayeredBibleViewer 의 자체
+           토큰(예: --h2-pron, --bsv-ink)들 중 일부는 사이트 본 토큰을
+           안 거치고 직접 hex(#6c7e9b 등) 로 적혀 있어, 위에서 --ink 만
+           바꿔도 다크 배경 위에서 명도 차가 부족해 "히브리어 안 보여"
+           현상이 난다. 이 블록에서 그 토큰들을 다크 톤으로 맞춤. */
+        .brp-page--immersive.brp-page--imm-dark .brp-h2,
+        .brp-page--immersive.brp-page--imm-dark .gcv,
+        .brp-page--immersive.brp-page--imm-dark .hcv,
+        .brp-page--immersive.brp-page--imm-dark .bsv {
+          /* 발음(라틴 알파벳) 줄 — 라이트에선 고정 #6c7e9b 였지만, 다크에선
+             명도가 낮아 본문과 거의 분간이 안 된다. 더 밝은 청회색으로. */
+          --h2-pron: #a4b5d4;
+          /* gloss(한글 의미) — accent + ink-mute 혼합. 다크에선 그대로 두면
+             accent(#2E5D4B 깊은 그린) 비율 때문에 톤이 너무 가라앉음. 좀 더
+             밝은 민트 톤으로 맞춤. */
+          --h2-gloss: #b9d4c5;
+          /* 강조 highlight — 라이트는 accent 와 검정 12% 혼합(짙어짐). 다크는
+             반대로 흰색 20% 혼합(밝아짐)으로 가독성 확보. */
+          --h2-hl: color-mix(in srgb, var(--accent, #2e5d4b) 65%, #ffffff 35%);
+          /* Study(.bsv) 도 같은 라인업으로. 컴포넌트 내부 변수를 직접 덮어쓴다. */
+          --bsv-ink: #f2f2ee;
+          --bsv-soft: #b5b5bc;
+          --bsv-mute: #8b8b92;
+          --bsv-line: #2e2e38;
+          --bsv-surface: #1b1b22;
+          --bsv-accent: color-mix(in srgb, var(--accent, #2e5d4b) 55%, #ffffff 45%);
+        }
+        /* .bsv-word-p / .bsv-detail-p 는 클래스 안에서 #6c7e9b 로 직접 박혀
+           있어 변수 override 가 안 먹는다. 별도 규칙으로 강제 보정. */
+        .brp-page--immersive.brp-page--imm-dark .bsv-word-p,
+        .brp-page--immersive.brp-page--imm-dark .bsv-detail-p {
+          color: #a4b5d4 !important;
+        }
+        /* immersive 모드는 native body scroll 을 그대로 사용하므로
+           body 를 잠그지 않는다. (예전엔 .brp-page--immersive 가 position:fixed
+           스크롤 컨테이너라서 body 를 lock 했지만, 이제 body 가 본문 스크롤
+           컨테이너 본인이므로 lock 하면 본문 자체가 못 움직인다.)
+           대신 다크 톤만 body 배경에 발라 본문이 끝난 뒤의 over-scroll 공간이
+           다크에서 흰색으로 깜빡이지 않게 한다. */
+        body.brp-immersive {
+          background: var(--brp-imm-bg, #fbfaf6) !important;
+        }
+        body.brp-immersive-dark {
+          background: #11131a;
+        }
+
+        /* 메인 chrome 숨김: 헤더 / 우측 사이드 / 미니바 / 모바일 메뉴 등.
+           단, 성경 공부(.brp-mini-bar--study) 의 미니바는 #brp-mini-toggles-slot 의
+           앵커이므로 통째로 숨기지 않고 아래에서 별도로 reposition + 토글만 노출. */
+        .brp-page--immersive .brp-header,
+        .brp-page--immersive .brp-side,
+        .brp-page--immersive .brp-mobile-actions,
+        .brp-page--immersive .brp-mobile-menu-backdrop {
+          display: none !important;
+        }
+        /* 일반 모드(viewMode !== "study") 일 때는 미니바도 그냥 숨김. */
+        .brp-page--immersive .brp-mini-bar:not(.brp-mini-bar--study) {
+          display: none !important;
+        }
+        /* 성경 공부 모드의 미니바 — 슬롯(#brp-mini-toggles-slot) 만 살리고 나머지
+           장식(책 이름, 진행도 막대)은 시각적으로 모두 제거. 상단 컨트롤 바와
+           충돌하지 않게 immersive 바 바로 아래 우측에 부유시킨다. */
+        .brp-page--immersive .brp-mini-bar.brp-mini-bar--study {
+          position: fixed !important;
+          top: 64px !important;
+          right: 12px !important;
+          left: auto !important;
+          width: auto !important;
+          max-width: calc(100vw - 24px) !important;
+          padding: 6px 10px !important;
+          background: var(--brp-imm-bg-bar) !important;
+          border: 1px solid var(--brp-imm-border) !important;
+          border-radius: 999px !important;
+          box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08) !important;
+          color: var(--brp-imm-fg) !important;
+          opacity: 1 !important;
+          transform: none !important;
+          transition: opacity 200ms ease !important;
+          z-index: 78;
+          pointer-events: auto !important;
+        }
+        .brp-page--immersive .brp-mini-bar.brp-mini-bar--study .brp-mini-fill,
+        .brp-page--immersive .brp-mini-bar.brp-mini-bar--study .brp-mini-text {
+          display: none !important;
+        }
+        .brp-page--immersive .brp-mini-bar.brp-mini-bar--study .brp-mini-content {
+          justify-content: flex-end !important;
+          padding: 0 !important;
+        }
+        /* 상단 바가 숨어 있을 때(idle) 미니 토글도 함께 페이드 아웃.
+           main 에 .brp-page--imm-idle 가 부착되면 이 자식의 미니바를 가린다. */
+        .brp-page--immersive.brp-page--imm-idle .brp-mini-bar.brp-mini-bar--study {
+          opacity: 0 !important;
+          pointer-events: none !important;
+        }
+        /* 미니바의 기존 .is-visible 제약을 무력화 — immersive 에서는 항상 가시. */
+        .brp-page--immersive .brp-mini-bar.brp-mini-bar--study,
+        .brp-page--immersive .brp-mini-bar.brp-mini-bar--study:not(.is-visible) {
+          visibility: visible !important;
+        }
+
+        /* 캔버스 — grid 해제하고 본문만 가운데로.
+           ⚠️ 데스크탑(≥960px) 에서는 .brp-canvas 가 grid + height:100vh +
+           overflow:hidden 으로 잠겨 있다 (2-pane 독립 스크롤 패턴).
+           몰입 모드는 body native scroll 을 쓰므로 그 잠금을 모두 풀어야
+           본문이 잘리지 않고 끝까지 보인다. height/overflow/min-height/
+           grid-template-* 까지 명시적으로 무력화. */
+        .brp-page--immersive .brp-canvas {
+          display: block !important;
+          padding: 0 !important;
+          max-width: none !important;
+          background: transparent !important;
+          height: auto !important;
+          min-height: 0 !important;
+          max-height: none !important;
+          overflow: visible !important;
+          grid-template-columns: none !important;
+          grid-template-rows: none !important;
+          grid-template-areas: none !important;
+          column-gap: 0 !important;
+          row-gap: 0 !important;
+        }
+
+        /* 본문 카드 — 페이지 가운데로 모으고 일반 화면보다 충분히 넓게.
+           PC: 화면 폭의 ~85% 까지 사용(최대 1440px), 모바일은 좌우 8px 만 여백.
+           PC 레이아웃에서 .brp-reader 는 원래 내부 overflow 스크롤러였는데
+           immersive 에선 자연 흐름으로 풀어 page 자체 스크롤에 맡긴다. */
+        .brp-page--immersive .brp-reader {
+          display: block !important;
+          position: static !important;
+          grid-area: unset !important;
+          margin: 110px auto 96px !important;
+          max-width: min(1440px, calc(100vw - 64px)) !important;
+          width: 100% !important;
+          padding: 32px 56px 120px !important;
+          background: transparent !important;
+          box-shadow: none !important;
+          border-radius: 0 !important;
+          overflow: visible !important;
+          height: auto !important;
+          min-height: 0 !important;
+          max-height: none !important;
+          color: var(--brp-imm-fg) !important;
+        }
+        .brp-page--immersive .brp-reader::-webkit-scrollbar {
+          display: none !important;
+        }
+
+        /* hero(책 제목) — 가운데 정렬, 살짝 얇은 처리. */
+        .brp-page--immersive .brp-reader-hero {
+          text-align: center;
+          padding: 8px 0 36px !important;
+          border-bottom: 1px solid var(--brp-imm-border) !important;
+          margin-bottom: 56px !important;
+          background: transparent !important;
+        }
+        .brp-page--immersive .brp-reader-hero h1 {
+          font-size: calc(30px * var(--brp-imm-font)) !important;
+          color: var(--brp-imm-fg) !important;
+          letter-spacing: -0.02em;
+          line-height: 1.3 !important;
+        }
+
+        /* 절 카드 — 카드형 박스를 풀고 텍스트 흐름처럼. 절 번호는 작고 연하게.
+           절과 절 사이는 책처럼 충분히 떼어 한 호흡씩 쉬어가게. */
+        .brp-page--immersive .brp-verse-card {
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
+          padding: 0 !important;
+          margin: 0 0 calc(36px * var(--brp-imm-font)) !important;
+          display: block !important;
+        }
+        .brp-page--immersive .brp-verse-number {
+          color: var(--brp-imm-fg-soft) !important;
+          font-size: calc(12px * var(--brp-imm-font)) !important;
+          font-weight: 600 !important;
+          opacity: 0.7;
+          margin-right: 12px !important;
+          vertical-align: 0.35em;
+          background: transparent !important;
+          padding: 0 !important;
+          min-width: 1.6em !important;
+          display: inline-block !important;
+          text-align: right;
+          font-variant-numeric: tabular-nums;
+        }
+        /* 어두운 모드 — 진한 배경에서도 절번호가 분명히 보이도록 액센트 톤 + 더 높은 opacity */
+        .brp-page--imm-dark .brp-verse-number {
+          color: #e8a877 !important;
+          opacity: 0.85 !important;
+        }
+        .brp-page--immersive .brp-verse-text {
+          font-size: calc(19px * var(--brp-imm-font)) !important;
+          line-height: 2.15 !important;
+          color: var(--brp-imm-fg) !important;
+          font-weight: 400 !important;
+          letter-spacing: -0.005em;
+          display: inline !important;
+          word-spacing: 0.02em;
+        }
+
+        /* 헬라어/히브리어 단어 블록 — 블록 간격 넉넉히, 단어/발음/뜻 크기도 함께 확대.
+           기존 GreekChapterV2 / HebrewChapterV2 의 단어 블록 자체는 컴포넌트 안에서
+           렌더되므로 외부 wrapper 클래스로만 미세 조정한다. */
+        .brp-page--immersive .gcv,
+        .brp-page--immersive .hcv {
+          font-size: calc(16px * var(--brp-imm-font)) !important;
+        }
+        .brp-page--immersive .gcv-verse,
+        .brp-page--immersive .hcv-verse {
+          margin-bottom: calc(28px * var(--brp-imm-font)) !important;
+        }
+        .brp-page--immersive .gcv-words,
+        .brp-page--immersive .hcv-words {
+          gap: calc(18px * var(--brp-imm-font)) calc(14px * var(--brp-imm-font)) !important;
+          line-height: 1.9 !important;
+        }
+        /* 기존 ruby 기반 헬라어 블록(.brp-greek-block) — 단어/발음 간격 살짝 넓힘 */
+        .brp-page--immersive .brp-greek-block {
+          margin-top: calc(10px * var(--brp-imm-font)) !important;
+        }
+        .brp-page--immersive .brp-greek-tokens {
+          gap: calc(12px * var(--brp-imm-font)) calc(10px * var(--brp-imm-font)) !important;
+        }
+
+        /* 성경 공부(LayeredBibleViewer) — 레이어들 사이 간격 + 가운데 정렬 */
+        .brp-page--immersive .bsv {
+          background: transparent !important;
+          padding: 0 !important;
+          font-size: calc(15px * var(--brp-imm-font)) !important;
+        }
+        .brp-page--immersive .bsv-top {
+          /* viewer 자체 상단 헤더 — 읽기 모드에선 우리 상단 바가 있으므로 숨김. */
+          display: none !important;
+        }
+        .brp-page--immersive .bsv-verse {
+          padding: calc(12px * var(--brp-imm-font)) 0 calc(18px * var(--brp-imm-font)) !important;
+          border-bottom: 1px solid var(--brp-imm-border) !important;
+        }
+        .brp-page--immersive .bsv-verse:last-child {
+          border-bottom: none !important;
+        }
+        .brp-page--immersive .bsv-layer {
+          padding: calc(6px * var(--brp-imm-font)) 0 !important;
+          line-height: 1.85 !important;
+        }
+
+        /* 영어 단일 보기(EnglishOnlyView) — 동일하게 가독성 보강 */
+        .brp-page--immersive .eov {
+          font-size: calc(17px * var(--brp-imm-font)) !important;
+          line-height: 1.95 !important;
+        }
+
+        /* 진행도 그리드 / 기도 / 진입 버튼 등 사이드 영역 — 통째 숨김(사이드는 위에서
+           이미 숨겼지만, source 상 reader 안에 있는 dock(낭독 / 묵독 컨트롤)도 숨김). */
+        .brp-page--immersive .brp-dock,
+        .brp-page--immersive .brp-copy-bar,
+        .brp-page--immersive .brp-copy-toast {
+          display: none !important;
+        }
+        /* StudentIdentityBar 등 fixed 보조 UI 도 몰입을 방해 → 숨김. */
+        .brp-page--immersive .student-identity-bar {
+          display: none !important;
+        }
+
+        /* ── 상단 컨트롤 바 ──────────────────────────────────────────────── */
+        /* 톤앤매너 — 사이트 본 라인(#E6E6E2)·잉크(#16161A)·그린 accent(#2E5D4B)
+           와 동기화. 시각 노이즈(=각 버튼마다 1px 보더 둘러 7개 알약이 분리되어
+           보이던 문제) 를 줄이기 위해 화면의 "고정 형태(앵커)"는 트리거 알약 +
+           글자 크기 알약 두 개만 남기고, 나머지(이전/다음/테마/닫기)는 보더 없는
+           고스트 아이콘 버튼으로 통일했다. 호버 배경만으로도 충분한 affordance.
+           바 자체는 종이 결을 살리려 하단 보더 한 줄에 살짝 깔린 그림자만 더해
+           본문과 자연스럽게 분리되도록 한다(harsh border-bottom 단독은 헤더가
+           "분리된 패널"처럼 보여 reading flow 가 끊김). */
+        .brp-immersive-bar {
+          position: fixed;
+          inset: 0 0 auto 0;
+          z-index: 80;
+          padding: 10px 18px;
+          background: var(--brp-imm-bg-bar);
+          border-bottom: 1px solid var(--brp-imm-border);
+          /* 위쪽 1px 하이라이트 + 아래로 흩어지는 옅은 그림자. 종이결 자연광. */
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.55),
+            0 8px 24px -16px rgba(20, 16, 8, 0.18);
+          color: var(--brp-imm-fg);
+          /* 단일 함수 blur 만 — saturate 와 함께 체인하면 iOS Safari 16-17 에서
+             스크롤 컨테이너의 repaint 가 살짝 어긋나며 "위로 스크롤이 끊기는"
+             증상이 보고되어 단순화. */
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          transform: translateY(0);
+          opacity: 1;
+          transition: transform 240ms ease, opacity 200ms ease;
+          will-change: transform, opacity;
+        }
+        .brp-page--imm-dark .brp-immersive-bar {
+          /* 다크에서는 위쪽 하이라이트가 거슬려 빼고, 그림자만 더 진하게. */
+          box-shadow: 0 8px 24px -16px rgba(0, 0, 0, 0.55);
+        }
+        .brp-immersive-bar.is-hidden {
+          transform: translateY(-110%);
+          opacity: 0;
+          pointer-events: none;
+        }
+        .brp-immersive-bar-inner {
+          max-width: 1100px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          /* desktop 에서는 한 줄 유지 — 좁아져서 줄바꿈이 필요한 폭(≤720px)
+             에서만 wrap 허용(아래 미디어쿼리). 기존처럼 항상 wrap 이면 데스크탑
+             에서도 좌측 섹션이 두 줄로 깨져 디자인이 와르르 무너진다. */
+          flex-wrap: nowrap;
+          min-height: 36px;
+        }
+        .brp-immersive-section {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          min-width: 0;
+          flex-wrap: nowrap;
+        }
+        .brp-immersive-section--end {
+          justify-content: flex-end;
+          gap: 4px;
+          flex: 0 0 auto;
+        }
+        .brp-immersive-chapter {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+        }
+        /* 이전/다음 화살표 — 보더 없는 고스트 아이콘. 트리거 알약 양옆에서
+           조용히 보조하는 역할로, 시각적 무게는 줄이고 호버 시에만 살아나게. */
+        .brp-immersive-arrow {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border: none;
+          background: transparent;
+          color: var(--brp-imm-fg-soft);
+          font-size: 15px;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          transition:
+            background 120ms ease,
+            color 120ms ease,
+            opacity 120ms ease;
+        }
+        .brp-immersive-arrow:hover:not(:disabled) {
+          background: var(--brp-imm-bg-soft);
+          color: var(--brp-imm-fg);
+        }
+        .brp-immersive-arrow:disabled {
+          opacity: 0.32;
+          cursor: not-allowed;
+        }
+        /* 글자 크기 — 한 알약 안에 "가 / 100% / 가" 묶음. 보더 한 줄로 그룹을
+           시각적으로 묶어 트리거 알약과 시각 무게를 맞춘다. 내부 +/− 는 보더
+           없이 ghost. */
+        .brp-immersive-font {
+          display: inline-flex;
+          align-items: center;
+          gap: 2px;
+          padding: 2px 4px;
+          border-radius: var(--radius-pill, 999px);
+          border: 1px solid var(--brp-imm-border);
+          background: transparent;
+        }
+        .brp-immersive-font-value {
+          font-size: 11px;
+          font-variant-numeric: tabular-nums;
+          color: var(--brp-imm-fg-soft);
+          min-width: 30px;
+          text-align: center;
+          letter-spacing: -0.01em;
+        }
+        /* 동그란 ghost 아이콘 — 글자 크기 +/− (.brp-immersive-font 안쪽) 와
+           테마 토글 (바깥) 모두 같은 클래스를 쓴다. 보더 없이 호버 배경만으로
+           affordance 를 준다. */
+        .brp-immersive-icon {
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          border: none;
+          background: transparent;
+          color: var(--brp-imm-fg-soft);
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          transition:
+            background 120ms ease,
+            color 120ms ease,
+            opacity 120ms ease;
+        }
+        .brp-immersive-icon:hover:not(:disabled) {
+          background: var(--brp-imm-bg-soft);
+          color: var(--brp-imm-fg);
+        }
+        .brp-immersive-icon:disabled {
+          opacity: 0.32;
+          cursor: not-allowed;
+        }
+        .brp-immersive-font-small {
+          font-size: 11px;
+          font-weight: 600;
+          line-height: 1;
+        }
+        .brp-immersive-font-large {
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 1;
+        }
+        /* 닫기 ✕ — 우측 끝의 액션. 다른 ghost 아이콘과 같은 톤이지만 약간 더
+           크고, 호버 시 옅은 accent(#2E5D4B) 톤이 들어와 "이 작업은 끝/exit
+           이다" 라는 어조를 살짝 강조. */
+        .brp-immersive-close {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          border: none;
+          background: transparent;
+          color: var(--brp-imm-fg-soft);
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 4px;
+          transition: background 120ms ease, color 120ms ease;
+        }
+        .brp-immersive-close:hover {
+          background: var(--brp-imm-bg-soft);
+          color: var(--brp-imm-fg);
+        }
+
+        /* 모바일 — 컨트롤 바 한 줄이 좁아지므로 글자 크기 위젯/책 라벨 등을
+           축소. 한 줄에 다 들어가도록 padding/gap 만 줄이고, 정말 좁은 환경
+           에서만 wrap 을 허용한다. */
+        @media (max-width: 720px) {
+          .brp-immersive-bar {
+            padding: 8px 12px;
+          }
+          .brp-immersive-bar-inner {
+            gap: 6px;
+            /* 좁은 폭(~360px) 에서는 두 줄로 갈라져도 읽기 흐름이 덜 깨지므로
+               wrap 허용. 데스크탑에서는 위 메인 룰(nowrap) 이 그대로 살아 있다. */
+            flex-wrap: wrap;
+          }
+          .brp-immersive-section {
+            gap: 4px;
+          }
+          .brp-immersive-arrow,
+          .brp-immersive-icon {
+            width: 28px;
+            height: 28px;
+          }
+          .brp-immersive-close {
+            width: 30px;
+            height: 30px;
+          }
+          .brp-page--immersive .brp-reader {
+            margin: 88px 4px 64px !important;
+            max-width: none !important;
+            padding: 20px 12px 96px !important;
+            width: calc(100vw - 8px) !important;
+          }
+          .brp-page--immersive .brp-reader-hero {
+            padding: 4px 0 24px !important;
+            margin-bottom: 40px !important;
+          }
+          .brp-page--immersive .brp-reader-hero h1 {
+            font-size: calc(24px * var(--brp-imm-font)) !important;
+          }
+          .brp-page--immersive .brp-verse-card {
+            margin: 0 0 calc(28px * var(--brp-imm-font)) !important;
+          }
+          .brp-page--immersive .brp-verse-text {
+            font-size: calc(18px * var(--brp-imm-font)) !important;
+            line-height: 2.05 !important;
+          }
+        }
+
+        /* 다크 테마에서 본문 placeholder / empty 상태 텍스트도 따라가게. */
+        .brp-page--imm-dark .brp-reader-empty {
+          color: var(--brp-imm-fg-soft) !important;
+        }
+
+        /* ───────── 책·장·절 선택 트리거 알약 ────────────────────────────
+           바의 시각적 앵커(=focal point) 두 개 중 하나. 사이트 전반에서 쓰는
+           --line(#E6E6E2) 보더 + 따뜻한 베이지/그린 호버. 글자 weight 는 본문
+           세리프 흐름에 맞춰 700 → 600 으로 한 톤 가볍게 (700 은 toolbar 안에서
+           너무 진해 reading flow 를 깬다).
+           폭: flex 0 0 auto + min-width max-content 로 절대 줄어들지 않도록.
+           이전엔 flex 0 1 auto 였는데, 옆 드롭다운("히브리어 보기")의 자연
+           폭이 커서 트리거가 squeeze 당해 "전도서" 가 "전도ㅅ" 으로 잘려 보였다.
+           desktop 에서는 한 줄 안에 자연스럽게 들어가고, ≤720px 에서는 위
+           미디어쿼리의 flex-wrap wrap 이 두 줄로 풀어 준다. */
+        .brp-immersive-trigger {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 6px 12px 6px 14px;
+          border-radius: 999px;
+          border: 1px solid var(--brp-imm-border);
+          background: transparent;
+          color: var(--brp-imm-fg);
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: -0.01em;
+          cursor: pointer;
+          transition:
+            background 120ms ease,
+            border-color 120ms ease,
+            transform 120ms ease;
+          white-space: nowrap;
+          flex: 0 0 auto;
+          min-width: max-content;
+        }
+        .brp-immersive-trigger:hover {
+          background: var(--brp-imm-bg-soft);
+          border-color: color-mix(
+            in srgb,
+            var(--brp-imm-border) 60%,
+            var(--accent, #2e5d4b) 40%
+          );
+        }
+        .brp-immersive-trigger:active {
+          transform: scale(0.98);
+        }
+        .brp-immersive-trigger-text {
+          display: inline-flex;
+          align-items: baseline;
+          gap: 6px;
+          /* 트리거 자체가 flex: 0 0 auto 이므로 자식이 절대 잘리지 않는다 —
+             ellipsis 안전망은 이제 불필요. */
+        }
+        .brp-immersive-trigger-book {
+          font-weight: 600;
+          color: var(--brp-imm-fg);
+        }
+        .brp-immersive-trigger-chapter {
+          font-weight: 500;
+          color: var(--brp-imm-fg-soft);
+          font-size: 12px;
+        }
+        .brp-immersive-trigger-placeholder {
+          color: var(--brp-imm-fg-soft);
+        }
+        .brp-immersive-trigger-caret {
+          font-size: 10px;
+          color: var(--brp-imm-fg-soft);
+          transition: transform 120ms ease;
+        }
+        .brp-immersive-trigger[aria-expanded="true"] .brp-immersive-trigger-caret {
+          transform: rotate(180deg);
+        }
+
+        /* ───────── 우측 슬라이드 인 선택 패널 ──────────────────────────── */
+        .brp-imm-picker-backdrop {
+          position: fixed;
+          inset: 0;
+          background: rgba(15, 23, 42, 0.42);
+          backdrop-filter: blur(2px);
+          -webkit-backdrop-filter: blur(2px);
+          z-index: 90;
+          animation: brpImmFadeIn 180ms ease;
+        }
+        .brp-page--imm-dark .brp-imm-picker-backdrop {
+          background: rgba(0, 0, 0, 0.55);
+        }
+        @keyframes brpImmFadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .brp-imm-picker {
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: min(360px, 92vw);
+          background: var(--brp-imm-bg, #fbfaf6);
+          color: var(--brp-imm-fg, #1f2937);
+          border-left: 1px solid var(--brp-imm-border, rgba(15, 23, 42, 0.08));
+          box-shadow: -16px 0 48px rgba(15, 23, 42, 0.18);
+          z-index: 91;
+          display: flex;
+          flex-direction: column;
+          animation: brpImmSlideIn 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+        }
+        .brp-page--imm-dark .brp-imm-picker {
+          background: #16181f;
+          color: #e7e5e0;
+          border-left-color: rgba(255, 255, 255, 0.08);
+          box-shadow: -16px 0 48px rgba(0, 0, 0, 0.5);
+        }
+        @keyframes brpImmSlideIn {
+          from { transform: translateX(100%); }
+          to { transform: translateX(0); }
+        }
+        .brp-imm-picker-head {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+          padding: 16px 18px 14px;
+          border-bottom: 1px solid var(--brp-imm-border, rgba(15, 23, 42, 0.08));
+        }
+        /* 구약/신약 토글 — 라이트한 트랙 위에 갈색 인디케이터가 슬라이드.
+           SlidingToggle 의 .brp-toggle-indicator 가 z-index: 0 으로 깔리고,
+           각 .brp-imm-picker-tab 버튼은 z-index: 1 위에 떠서 텍스트가 항상
+           인디케이터 위에 보이도록 한다. 활성 버튼은 흰 글씨, 비활성은 잉크색. */
+        .brp-imm-picker-tabs {
+          flex: 0 0 auto;
+          display: inline-flex;
+          align-items: stretch;
+          padding: 3px;
+          border-radius: 999px;
+          background: rgba(15, 23, 42, 0.06);
+          height: 36px;
+          overflow: hidden;
+        }
+        .brp-page--imm-dark .brp-imm-picker-tabs {
+          background: rgba(255, 255, 255, 0.08);
+        }
+        .brp-imm-picker-tab {
+          position: relative;
+          z-index: 1;
+          appearance: none;
+          border: none;
+          background: transparent;
+          padding: 0 18px;
+          height: 30px;
+          line-height: 30px;
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: -0.01em;
+          color: var(--brp-imm-fg, #1f2937);
+          cursor: pointer;
+          border-radius: 999px;
+          white-space: nowrap;
+          transition: color 180ms ease;
+        }
+        .brp-page--imm-dark .brp-imm-picker-tab {
+          color: #e7e5e0;
+        }
+        .brp-imm-picker-tab.is-active {
+          color: #fff;
+        }
+        .brp-imm-picker-tab:hover:not(.is-active) {
+          color: var(--accent, #c2410c);
+        }
+        /* 인디케이터를 트랙 padding 안으로 살짝 인셋(3px) — 트랙과 같은 알약 룩 */
+        .brp-imm-picker-tabs .brp-toggle-indicator {
+          top: 3px;
+          bottom: 3px;
+        }
+
+        .brp-imm-picker-close {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          border: 1px solid var(--brp-imm-border, rgba(15, 23, 42, 0.08));
+          background: transparent;
+          color: inherit;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          transition: background 120ms ease, color 120ms ease, transform 120ms ease;
+        }
+        .brp-imm-picker-close:hover {
+          background: rgba(15, 23, 42, 0.06);
+          color: var(--accent, #c2410c);
+        }
+        .brp-imm-picker-close:active {
+          transform: scale(0.94);
+        }
+        .brp-page--imm-dark .brp-imm-picker-close:hover {
+          background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* 본문 — 좌측 책 목록, 우측 장 목록. 책 이름은 길고(데살로니가전서) 장
+           번호는 짧으므로 1.55 : 1 비율로 책쪽에 가중. */
+        .brp-imm-picker-body {
+          flex: 1;
+          min-height: 0;
+          display: grid;
+          grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+        }
+        .brp-imm-picker-books {
+          list-style: none;
+          margin: 0;
+          padding: 12px 10px;
+          overflow-y: auto;
+          border-right: 1px solid var(--brp-imm-border, rgba(15, 23, 42, 0.08));
+          scrollbar-width: thin;
+        }
+        .brp-imm-picker-books::-webkit-scrollbar {
+          width: 6px;
+        }
+        .brp-imm-picker-books::-webkit-scrollbar-thumb {
+          background: rgba(15, 23, 42, 0.16);
+          border-radius: 999px;
+        }
+        .brp-page--imm-dark .brp-imm-picker-books::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.18);
+        }
+        /* 모든 책 행을 같은 높이의 알약으로 — 부드럽고 일정한 리듬. */
+        .brp-imm-picker-book {
+          display: block;
+          width: 100%;
+          height: 44px;
+          line-height: 44px;
+          padding: 0 14px;
+          margin: 2px 0;
+          border: none;
+          background: transparent;
+          color: inherit;
+          text-align: center;
+          font-size: 14.5px;
+          font-weight: 500;
+          letter-spacing: -0.01em;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: background 140ms ease, color 140ms ease, transform 120ms ease;
+          white-space: nowrap;
+        }
+        .brp-imm-picker-book:hover {
+          background: rgba(15, 23, 42, 0.04);
+        }
+        .brp-page--imm-dark .brp-imm-picker-book:hover {
+          background: rgba(255, 255, 255, 0.05);
+        }
+        .brp-imm-picker-book.is-active {
+          background: var(--accent, #c2410c);
+          color: #fff;
+          font-weight: 700;
+        }
+        .brp-imm-picker-book.is-current:not(.is-active) {
+          color: var(--accent, #c2410c);
+          font-weight: 700;
+        }
+
+        /* 장 그리드 — 항상 고정 폭 정사각형 버튼. 챕터 수가 적어도(3개) 가로로
+           쭉 늘어지지 않고, 챕터 수가 많아도(150장 시편) 자연스럽게 여러 줄.
+           justify-content:center 로 양옆 균등 여백. */
+        .brp-imm-picker-chapters-wrap {
+          display: flex;
+          flex-direction: column;
+          min-height: 0;
+        }
+        /* 장 목록 — 사진 #2 처럼 한 줄씩 세로로 쌓이는 단일 컬럼.
+           책 목록과 같은 높이(44px) 의 알약 형태라 좌우 두 컬럼이 같은 리듬으로
+           나란히 흐른다. 챕터 수가 많아도 자연스럽게 스크롤. */
+        .brp-imm-picker-chapters {
+          list-style: none;
+          margin: 0;
+          padding: 12px 10px;
+          overflow-y: auto;
+          flex: 1;
+          min-height: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          scrollbar-width: thin;
+        }
+        .brp-imm-picker-chapters::-webkit-scrollbar {
+          width: 6px;
+        }
+        .brp-imm-picker-chapters::-webkit-scrollbar-thumb {
+          background: rgba(15, 23, 42, 0.16);
+          border-radius: 999px;
+        }
+        .brp-imm-picker-chapter {
+          width: 100%;
+          height: 44px;
+          padding: 0;
+          border: none;
+          background: transparent;
+          color: inherit;
+          font-size: 14.5px;
+          font-weight: 600;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: background 140ms ease, color 140ms ease,
+            transform 120ms ease;
+          font-variant-numeric: tabular-nums;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .brp-imm-picker-chapter:hover {
+          background: rgba(15, 23, 42, 0.05);
+        }
+        .brp-page--imm-dark .brp-imm-picker-chapter:hover {
+          background: rgba(255, 255, 255, 0.06);
+        }
+        .brp-imm-picker-chapter.is-current {
+          background: var(--accent, #c2410c);
+          color: #fff;
+          font-weight: 700;
+        }
+        .brp-imm-picker-chapter:active {
+          transform: scale(0.98);
+        }
+
+        .brp-imm-picker-verse-jump {
+          padding: 12px 14px 16px;
+          border-top: 1px solid var(--brp-imm-border, rgba(15, 23, 42, 0.08));
+          background: rgba(15, 23, 42, 0.02);
+        }
+        .brp-page--imm-dark .brp-imm-picker-verse-jump {
+          background: rgba(255, 255, 255, 0.02);
+        }
+        .brp-imm-picker-verse-label {
+          display: block;
+          font-size: 11px;
+          font-weight: 700;
+          color: var(--brp-imm-fg-soft);
+          margin-bottom: 6px;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+        }
+        .brp-imm-picker-verse-row {
+          display: flex;
+          gap: 8px;
+        }
+        .brp-imm-picker-verse-input {
+          flex: 1;
+          min-width: 0;
+          height: 40px;
+          padding: 0 12px;
+          font-size: 14px;
+          color: inherit;
+          background: var(--brp-imm-bg, #fbfaf6);
+          border: 1px solid var(--brp-imm-border, rgba(15, 23, 42, 0.12));
+          border-radius: 10px;
+          outline: none;
+          font-variant-numeric: tabular-nums;
+          transition: border-color 140ms ease, box-shadow 140ms ease;
+        }
+        .brp-page--imm-dark .brp-imm-picker-verse-input {
+          background: #11131a;
+          border-color: rgba(255, 255, 255, 0.12);
+        }
+        .brp-imm-picker-verse-input:focus {
+          border-color: var(--accent, #c2410c);
+          box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.18);
+        }
+        .brp-imm-picker-verse-go {
+          flex-shrink: 0;
+          height: 40px;
+          padding: 0 18px;
+          border-radius: 10px;
+          border: none;
+          background: var(--accent, #c2410c);
+          color: #fff;
+          font-size: 13px;
+          font-weight: 700;
+          cursor: pointer;
+          transition: background 140ms ease, transform 120ms ease;
+        }
+        .brp-imm-picker-verse-go:hover:not(:disabled) {
+          background: #a43508;
+        }
+        .brp-imm-picker-verse-go:active:not(:disabled) {
+          transform: scale(0.96);
+        }
+        .brp-imm-picker-verse-go:disabled {
+          opacity: 0.4;
+          cursor: not-allowed;
+        }
+        .brp-imm-picker-verse-hint {
+          margin: 8px 0 0;
+          font-size: 11px;
+          color: var(--brp-imm-fg-soft);
+        }
+        .brp-imm-picker-empty {
+          padding: 32px 14px;
+          font-size: 13px;
+          color: var(--brp-imm-fg-soft);
+          text-align: center;
+        }
+
+        @media (max-width: 480px) {
+          .brp-imm-picker {
+            width: 100vw;
+            max-width: 100vw;
+          }
+          .brp-imm-picker-body {
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+          }
+          .brp-imm-picker-head {
+            padding: 14px 14px 12px;
+          }
+          .brp-imm-picker-book {
+            font-size: 14px;
+            height: 42px;
+            line-height: 42px;
+          }
+          .brp-imm-picker-chapter {
+            height: 42px;
+            font-size: 14px;
+          }
+          .brp-imm-picker-chapters {
+            padding: 10px 8px;
+          }
+        }
