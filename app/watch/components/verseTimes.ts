@@ -2,13 +2,14 @@ import type { BookId } from "@/app/bible-reading/books";
 
 // public/watch-times/{bookId}.json — 절 시작 시간(초).
 //   { videoId, chapters: { "1": { start, end, verses: [9.0, …] } }, missing: [6, 7, …] }
-//   verses[i] = (i+1)절 시작 초. missing 장은 시간 데이터가 없는 장.
+//   start = 장 시작 초, verses[i] = (i+1)절 시작 초. missing 장은 시간 데이터가 없는 장.
 //   (대체 경로: 평면 { "1:14": 121.3 } / 장별 중첩 { "1": { "14": 121.3 } })
 // 개발 모드에서 기록한 보정값은 localStorage 에 { "1:14": 121.3 } 형태로 쌓이고,
 // "JSON 복사" 결과를 data/verse-times-fix/{bookId}.json 에 붙여 쓴다.
 
 export type VerseTimeMap = Record<string, number>;
-export type WatchTimes = { times: VerseTimeMap; missing: number[] };
+/** starts[i] = (i+1)장 시작 초. 파일에 없으면 null. */
+export type WatchTimes = { times: VerseTimeMap; missing: number[]; starts: (number | null)[] };
 export type VerseEntry = { verse: number; t: number; explicit: boolean };
 export type VerseIndex = Map<number, VerseEntry[]>;
 export type VersePos = { chapter: number; verse: number };
@@ -37,15 +38,22 @@ function normalizeTimes(raw: unknown): VerseTimeMap {
 }
 
 function normalizeWatchTimes(raw: unknown): WatchTimes {
-  if (!raw || typeof raw !== "object") return { times: {}, missing: [] };
+  if (!raw || typeof raw !== "object") return { times: {}, missing: [], starts: [] };
   const o = raw as Record<string, unknown>;
-  if (!o.chapters || typeof o.chapters !== "object") return { times: normalizeTimes(raw), missing: [] };
+  if (!o.chapters || typeof o.chapters !== "object") {
+    return { times: normalizeTimes(raw), missing: [], starts: [] };
+  }
 
   const times: VerseTimeMap = {};
+  const starts: (number | null)[] = [];
   for (const [ck, info] of Object.entries(o.chapters as Record<string, unknown>)) {
     const chapter = Number(ck);
     if (!Number.isInteger(chapter) || chapter < 1 || !info || typeof info !== "object") continue;
-    const verses = (info as { verses?: unknown }).verses;
+    const { start, verses } = info as { start?: unknown; verses?: unknown };
+    if (validTime(start)) {
+      while (starts.length < chapter) starts.push(null);
+      starts[chapter - 1] = start;
+    }
     if (!Array.isArray(verses)) continue;
     verses.forEach((t, i) => {
       if (validTime(t)) times[verseKey(chapter, i + 1)] = t;
@@ -54,7 +62,7 @@ function normalizeWatchTimes(raw: unknown): WatchTimes {
   const missing = Array.isArray(o.missing)
     ? o.missing.filter((n): n is number => Number.isInteger(n) && n > 0)
     : [];
-  return { times, missing };
+  return { times, missing, starts };
 }
 
 // ── 원본 데이터 ──────────────────────────────────────────────────────────────

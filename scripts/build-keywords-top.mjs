@@ -718,7 +718,8 @@ function pickForChapter({
   return deduped.slice(0, target).map((e) => enrichWord(e, index));
 }
 
-function buildBook(bookId, chapterFilter) {
+function buildBook(bookId, chapterFilter, opts = {}) {
+  const clearDefKo = opts.clearDefKo === true;
   const hebrew = isHebrewBook(bookId);
   console.log(`[${bookId}] ${hebrew ? "구약" : "신약"} 빈도·책별 집계 중…`);
   // EL_LEX 참조로 미사용 경고 방지 + 구조 로드 확인
@@ -740,7 +741,7 @@ function buildBook(bookId, chapterFilter) {
   for (const ch of chapters) {
     const data = loadChapter(bookId, ch);
     const chapterMap = collectChapterLemmas(data, ch);
-    const words = pickForChapter({
+    let words = pickForChapter({
       chapterMap,
       index,
       firstProper,
@@ -748,6 +749,9 @@ function buildBook(bookId, chapterFilter) {
       picks: picksAll[String(ch)] || picksAll[ch],
       bookId,
     });
+    if (clearDefKo) {
+      words = words.map((w) => ({ ...w, defKo: "" }));
+    }
     const json = JSON.stringify({ words });
     fs.writeFileSync(path.join(outDir, `${ch}.json`), json);
     const bytes = Buffer.byteLength(json);
@@ -763,8 +767,9 @@ function buildBook(bookId, chapterFilter) {
 function main() {
   const args = process.argv.slice(2);
   const chapterFilter = parseChaptersArg(args);
+  const clearDefKo = args.includes("--clear-defko");
   const bookArgs = args.filter((a, i, arr) => {
-    if (a === "--all" || a === "--chapters") return false;
+    if (a === "--all" || a === "--chapters" || a === "--clear-defko") return false;
     if (arr[i - 1] === "--chapters") return false;
     return true;
   });
@@ -772,13 +777,13 @@ function main() {
 
   if (targets.length === 0) {
     console.error(
-      "사용법: node scripts/build-keywords-top.mjs <bookId> [--chapters 1-3] | --all",
+      "사용법: node scripts/build-keywords-top.mjs <bookId> [--chapters 1-3] [--clear-defko] | --all",
     );
     process.exit(1);
   }
 
   for (const bookId of targets) {
-    buildBook(bookId, chapterFilter);
+    buildBook(bookId, chapterFilter, { clearDefKo });
   }
 }
 

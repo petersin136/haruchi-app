@@ -3,6 +3,7 @@
 import { memo, useEffect, useMemo, useState } from "react";
 import { type BookId } from "@/app/bible-reading/books";
 import { loadSummary, parseKeyVerse, type ChapterSummary } from "./summary";
+import { VerseLink } from "./VerseSeek";
 import { loadPreview, type Preview } from "./xref";
 import "./summary.css";
 
@@ -65,6 +66,7 @@ function SummaryBody({ bookId, summary }: { bookId: BookId; summary: ChapterSumm
         <ol className="wt-sum-flow">
           {summary.flow.map((item, i) => (
             <li key={`${item.range}-${i}`} className="wt-sum-flow-item">
+              <span className="wt-sum-flow-dot" aria-hidden />
               <span className="wt-sum-flow-range">{item.range}</span>
               <span className="wt-sum-flow-text">{item.text}</span>
             </li>
@@ -74,7 +76,12 @@ function SummaryBody({ bookId, summary }: { bookId: BookId; summary: ChapterSumm
 
       {summary.keyVerse && <KeyVerse bookId={bookId} raw={summary.keyVerse} />}
 
-      {summary.question && <p className="wt-sum-question">{summary.question}</p>}
+      {summary.question && (
+        <section className="wt-sum-ask">
+          <span className="wt-sum-ask-label">생각해 보기</span>
+          <p className="wt-sum-question">{summary.question}</p>
+        </section>
+      )}
     </div>
   );
 }
@@ -109,7 +116,15 @@ function KeyVerse({ bookId, raw }: { bookId: BookId; raw: string }) {
           {preview.more && " …"}
         </blockquote>
       )}
-      <figcaption className="wt-sum-key-ref">{cite}</figcaption>
+      <figcaption className="wt-sum-key-ref">
+        {ref ? (
+          <VerseLink chapter={ref.from.chapter} verse={ref.from.verse} className="wt-sum-key-link">
+            {cite}
+          </VerseLink>
+        ) : (
+          cite
+        )}
+      </figcaption>
     </figure>
   );
 }

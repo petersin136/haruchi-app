@@ -1,14 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import {
-  GENESIS_TOTAL_CHAPTERS,
-  firstEmptyChapter,
-  type ChapterStarts,
-} from "../data/genesis-chapters";
+import { firstEmptyChapter, type ChapterStarts } from "../data/chapterStarts";
 import { formatTime } from "./watchStorage";
 
 type Props = {
+  bookId: string;
+  totalChapters: number;
   starts: ChapterStarts;
   currentTime: number;
   onRecord: (chapter: number) => boolean;
@@ -21,6 +19,8 @@ type Props = {
 };
 
 export default function DevChapterRecorder({
+  bookId,
+  totalChapters,
   starts,
   currentTime,
   onRecord,
@@ -36,16 +36,16 @@ export default function DevChapterRecorder({
   const existing = starts[target - 1];
 
   const step = (d: number) =>
-    setTarget((n) => Math.min(GENESIS_TOTAL_CHAPTERS, Math.max(1, n + d)));
+    setTarget((n) => Math.min(totalChapters, Math.max(1, n + d)));
 
   const record = () => {
-    if (onRecord(target)) setTarget((n) => Math.min(GENESIS_TOTAL_CHAPTERS, n + 1));
+    if (onRecord(target)) setTarget((n) => Math.min(totalChapters, n + 1));
   };
 
   return (
     <details className="wt-dev">
       <summary className="wt-dev-summary">
-        개발용 · 장 시작 시간 기록 <span className="wt-dev-count">{recorded}/{GENESIS_TOTAL_CHAPTERS}</span>
+        개발용 · 장 시작 시간 기록 <span className="wt-dev-count">{recorded}/{totalChapters}</span>
       </summary>
 
       <div className="wt-dev-body">
@@ -67,7 +67,7 @@ export default function DevChapterRecorder({
         <div className="wt-dev-actions">
           <button
             type="button"
-            onClick={() => console.log("[watch] genesis chapter starts\n" + JSON.stringify(starts))}
+            onClick={() => console.log(`[watch] ${bookId} chapter starts\n` + JSON.stringify(starts))}
           >
             콘솔에 배열 출력
           </button>

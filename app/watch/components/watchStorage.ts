@@ -1,9 +1,14 @@
+import type { WatchBookId } from "../data/books";
+
 export const SPEED_OPTIONS = [1.25, 1.5, 1.75, 2] as const;
 export type SpeedOption = (typeof SPEED_OPTIONS)[number];
 export const DEFAULT_SPEED: SpeedOption = 1.5;
 
-const SPEED_KEY = "haruchi:watch:speed";
-const POSITION_KEY = "haruchi:watch:genesis:position";
+/** 예전 공통 배속 키 — 창세기 마이그레이션용으로만 읽는다. */
+const LEGACY_SPEED_KEY = "haruchi:watch:speed";
+
+const speedKey = (book: WatchBookId) => `haruchi:watch:${book}:speed`;
+const positionKey = (book: WatchBookId) => `haruchi:watch:${book}:position`;
 
 function read(key: string): string | null {
   try {
@@ -22,26 +27,37 @@ function write(key: string, value: string | null): void {
   }
 }
 
-export function loadSpeed(): SpeedOption {
-  const v = Number(read(SPEED_KEY));
-  return (SPEED_OPTIONS as readonly number[]).includes(v) ? (v as SpeedOption) : DEFAULT_SPEED;
+function parseSpeed(raw: string | null): SpeedOption | null {
+  const v = Number(raw);
+  return (SPEED_OPTIONS as readonly number[]).includes(v) ? (v as SpeedOption) : null;
 }
 
-export function saveSpeed(speed: SpeedOption): void {
-  write(SPEED_KEY, String(speed));
+export function loadSpeed(book: WatchBookId): SpeedOption {
+  const own = parseSpeed(read(speedKey(book)));
+  if (own !== null) return own;
+  // 창세기: 예전 공통 키에 있던 값을 그대로 이어 쓴다.
+  if (book === "genesis") {
+    const legacy = parseSpeed(read(LEGACY_SPEED_KEY));
+    if (legacy !== null) return legacy;
+  }
+  return DEFAULT_SPEED;
 }
 
-export function loadPosition(): number {
-  const v = Number(read(POSITION_KEY));
+export function saveSpeed(book: WatchBookId, speed: SpeedOption): void {
+  write(speedKey(book), String(speed));
+}
+
+export function loadPosition(book: WatchBookId): number {
+  const v = Number(read(positionKey(book)));
   return Number.isFinite(v) && v > 0 ? v : 0;
 }
 
-export function savePosition(seconds: number): void {
-  write(POSITION_KEY, String(Math.floor(seconds)));
+export function savePosition(book: WatchBookId, seconds: number): void {
+  write(positionKey(book), String(Math.floor(seconds)));
 }
 
-export function clearPosition(): void {
-  write(POSITION_KEY, null);
+export function clearPosition(book: WatchBookId): void {
+  write(positionKey(book), null);
 }
 
 export function formatTime(total: number): string {
