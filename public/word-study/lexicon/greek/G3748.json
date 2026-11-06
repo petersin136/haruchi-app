@@ -5,15 +5,46 @@
   "posKo": "관계대명사",
   "root": {
     "lemma": "ὅς",
-    "strong": "G3739"
+    "strong": "G3739",
+    "glossKo": "(관계대명사)"
   },
   "family": [
-    "ὅ ἐστι",
-    "ὅθεν",
-    "ὁποῖος",
-    "ὁπότε",
-    "ὅπου",
-    "ὅπως"
+    {
+      "lemma": "ὅ ἐστι",
+      "strong": "G3603",
+      "pron": "호에스티",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ὅθεν",
+      "strong": "G3606",
+      "pron": "호텐",
+      "glossKo": "그러므로"
+    },
+    {
+      "lemma": "ὁποῖος",
+      "strong": "G3697",
+      "pron": "호포이오스",
+      "glossKo": "어떠한"
+    },
+    {
+      "lemma": "ὁπότε",
+      "strong": "G3698",
+      "pron": "호포테",
+      "glossKo": "할때"
+    },
+    {
+      "lemma": "ὅπου",
+      "strong": "G3699",
+      "pron": "호푸",
+      "glossKo": "어디든"
+    },
+    {
+      "lemma": "ὅπως",
+      "strong": "G3704",
+      "pron": "호포스",
+      "glossKo": "위하여"
+    }
   ],
   "defEn": "which some, i.e. any that; also (definite) which same",
   "defKo": "",
@@ -47,9 +78,24 @@
   "phrases": [
     {
       "greek": "ἥτις ἐστὶν",
+      "pron": "헤티스 에스틴",
       "lemmas": [
         "ὅστις",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "ἥτις",
+          "lemma": "ὅστις",
+          "strong": "G3748",
+          "pron": "헤티스"
+        },
+        {
+          "word": "ἐστὶν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 26,
       "refs": [
@@ -70,9 +116,24 @@
     },
     {
       "greek": "οἵτινες οὐ",
+      "pron": "호이티네스 우",
       "lemmas": [
         "ὅστις",
         "οὐ"
+      ],
+      "words": [
+        {
+          "word": "οἵτινες",
+          "lemma": "ὅστις",
+          "strong": "G3748",
+          "pron": "호이티네스"
+        },
+        {
+          "word": "οὐ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우"
+        }
       ],
       "count": 11,
       "refs": [
@@ -92,9 +153,24 @@
     },
     {
       "greek": "εἰσιν οἵτινες",
+      "pron": "에이신 호이티네스",
       "lemmas": [
         "εἰμί",
         "ὅστις"
+      ],
+      "words": [
+        {
+          "word": "εἰσιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에이신"
+        },
+        {
+          "word": "οἵτινες",
+          "lemma": "ὅστις",
+          "strong": "G3748",
+          "pron": "호이티네스"
+        }
       ],
       "count": 5,
       "refs": [
@@ -108,9 +184,24 @@
     },
     {
       "greek": "γυνὴ ἥτις",
+      "pron": "귀네 헤티스",
       "lemmas": [
         "γυνή",
         "ὅστις"
+      ],
+      "words": [
+        {
+          "word": "γυνὴ",
+          "lemma": "γυνή",
+          "strong": "G1135",
+          "pron": "귀네"
+        },
+        {
+          "word": "ἥτις",
+          "lemma": "ὅστις",
+          "strong": "G3748",
+          "pron": "헤티스"
+        }
       ],
       "count": 4,
       "refs": [
@@ -123,9 +214,24 @@
     },
     {
       "greek": "μου οἵτινες",
+      "pron": "무 호이티네스",
       "lemmas": [
         "ἐγώ",
         "ὅστις"
+      ],
+      "words": [
+        {
+          "word": "μου",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "무"
+        },
+        {
+          "word": "οἵτινες",
+          "lemma": "ὅστις",
+          "strong": "G3748",
+          "pron": "호이티네스"
+        }
       ],
       "count": 4,
       "refs": [

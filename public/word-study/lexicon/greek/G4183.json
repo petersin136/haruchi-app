@@ -5,12 +5,42 @@
   "posKo": "형용사",
   "root": null,
   "family": [
-    "πλεῖστος",
-    "πλείων",
-    "πολλάκις",
-    "πολλαπλασίων",
-    "πολυλογία",
-    "πολυμερῶς"
+    {
+      "lemma": "πλεῖστος",
+      "strong": "G4118",
+      "pron": "플레이스토스",
+      "glossKo": ""
+    },
+    {
+      "lemma": "πλείων",
+      "strong": "G4119",
+      "pron": "플레이온",
+      "glossKo": ""
+    },
+    {
+      "lemma": "πολλάκις",
+      "strong": "G4178",
+      "pron": "폴라키스",
+      "glossKo": "자주"
+    },
+    {
+      "lemma": "πολλαπλασίων",
+      "strong": "G4179",
+      "pron": "폴라플라시온",
+      "glossKo": "여러배"
+    },
+    {
+      "lemma": "πολυλογία",
+      "strong": "G4180",
+      "pron": "폴륄로기아",
+      "glossKo": "말많음"
+    },
+    {
+      "lemma": "πολυμερῶς",
+      "strong": "G4181",
+      "pron": "폴뤼메로스",
+      "glossKo": "여러부분으로"
+    }
   ],
   "defEn": "(singular) much (in any respect) or (plural) many; neuter (singular) as adverbial, largely; neuter (plural) as adverb…",
   "defKo": "",
@@ -47,9 +77,24 @@
   "phrases": [
     {
       "greek": "ὄχλος πολύς",
+      "pron": "오클로스 폴뤼스",
       "lemmas": [
         "ὄχλος",
         "πολύς"
+      ],
+      "words": [
+        {
+          "word": "ὄχλος",
+          "lemma": "ὄχλος",
+          "strong": "G3793",
+          "pron": "오클로스"
+        },
+        {
+          "word": "πολύς",
+          "lemma": "πολύς",
+          "strong": "G4183",
+          "pron": "폴뤼스"
+        }
       ],
       "count": 24,
       "refs": [
@@ -70,9 +115,24 @@
     },
     {
       "greek": "αὐτὸν πολλὰ",
+      "pron": "아우톤 폴라",
       "lemmas": [
         "αὐτός",
         "πολύς"
+      ],
+      "words": [
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "πολλὰ",
+          "lemma": "πολύς",
+          "strong": "G4183",
+          "pron": "폴라"
+        }
       ],
       "count": 13,
       "refs": [
@@ -93,10 +153,31 @@
     },
     {
       "greek": "αὐτῷ ὄχλος πολύς",
+      "pron": "아우토 오클로스 폴뤼스",
       "lemmas": [
         "αὐτός",
         "ὄχλος",
         "πολύς"
+      ],
+      "words": [
+        {
+          "word": "αὐτῷ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        },
+        {
+          "word": "ὄχλος",
+          "lemma": "ὄχλος",
+          "strong": "G3793",
+          "pron": "오클로스"
+        },
+        {
+          "word": "πολύς",
+          "lemma": "πολύς",
+          "strong": "G4183",
+          "pron": "폴뤼스"
+        }
       ],
       "count": 12,
       "refs": [
@@ -117,9 +198,24 @@
     },
     {
       "greek": "ὅτι πολλοὶ",
+      "pron": "호티 폴로이",
       "lemmas": [
         "ὅτι",
         "πολύς"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "πολλοὶ",
+          "lemma": "πολύς",
+          "strong": "G4183",
+          "pron": "폴로이"
+        }
       ],
       "count": 12,
       "refs": [
@@ -140,9 +236,24 @@
     },
     {
       "greek": "πολλῷ μᾶλλον",
+      "pron": "폴로 말론",
       "lemmas": [
         "πολύς",
         "μᾶλλον"
+      ],
+      "words": [
+        {
+          "word": "πολλῷ",
+          "lemma": "πολύς",
+          "strong": "G4183",
+          "pron": "폴로"
+        },
+        {
+          "word": "μᾶλλον",
+          "lemma": "μᾶλλον",
+          "strong": "G3123",
+          "pron": "말론"
+        }
       ],
       "count": 12,
       "refs": [

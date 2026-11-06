@@ -1,19 +1,50 @@
 {
   "lemma": "οὕτω(ς)",
-  "pron": "우토스",
+  "pron": "후토",
   "strong": "G3779",
   "posKo": "부사",
   "root": {
     "lemma": "οὗτος",
-    "strong": "G3778"
+    "strong": "G3778",
+    "glossKo": "이것"
   },
   "family": [
-    "οὗτος",
-    "ταῦτα",
-    "ταύταις",
-    "ταύτῃ",
-    "τοῦτο",
-    "τούτοις"
+    {
+      "lemma": "οὗτος",
+      "strong": "G3778",
+      "pron": "후토스",
+      "glossKo": "이것"
+    },
+    {
+      "lemma": "ταῦτα",
+      "strong": "G5023",
+      "pron": "타우타",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ταύταις",
+      "strong": "G5025",
+      "pron": "타우타이스",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ταύτῃ",
+      "strong": "G5026",
+      "pron": "타우테",
+      "glossKo": ""
+    },
+    {
+      "lemma": "τοῦτο",
+      "strong": "G5124",
+      "pron": "투토",
+      "glossKo": ""
+    },
+    {
+      "lemma": "τούτοις",
+      "strong": "G5125",
+      "pron": "투토이스",
+      "glossKo": ""
+    }
   ],
   "defEn": "in this way (referring to what precedes or follows)",
   "defKo": "",
@@ -46,9 +77,24 @@
   "phrases": [
     {
       "greek": "οὕτως ἔσται",
+      "pron": "후토스 에스타이",
       "lemmas": [
         "οὕτω(ς)",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "οὕτως",
+          "lemma": "οὕτω(ς)",
+          "strong": "G3779",
+          "pron": "후토스"
+        },
+        {
+          "word": "ἔσται",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스타이"
+        }
       ],
       "count": 20,
       "refs": [
@@ -69,9 +115,24 @@
     },
     {
       "greek": "ὅτι οὕτως",
+      "pron": "호티 후토스",
       "lemmas": [
         "ὅτι",
         "οὕτω(ς)"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "οὕτως",
+          "lemma": "οὕτω(ς)",
+          "strong": "G3779",
+          "pron": "후토스"
+        }
       ],
       "count": 13,
       "refs": [
@@ -92,10 +153,31 @@
     },
     {
       "greek": "οὕτως καὶ ὑμεῖς",
+      "pron": "후토스 카이 휘메이스",
       "lemmas": [
         "οὕτω(ς)",
         "καί",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "οὕτως",
+          "lemma": "οὕτω(ς)",
+          "strong": "G3779",
+          "pron": "후토스"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "ὑμεῖς",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘메이스"
+        }
       ],
       "count": 12,
       "refs": [
@@ -116,10 +198,31 @@
     },
     {
       "greek": "οὕτως ἔσται ὁ",
+      "pron": "후토스 에스타이 호",
       "lemmas": [
         "οὕτω(ς)",
         "εἰμί",
         "ὁ"
+      ],
+      "words": [
+        {
+          "word": "οὕτως",
+          "lemma": "οὕτω(ς)",
+          "strong": "G3779",
+          "pron": "후토스"
+        },
+        {
+          "word": "ἔσται",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스타이"
+        },
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        }
       ],
       "count": 9,
       "refs": [
@@ -137,9 +240,24 @@
     },
     {
       "greek": "ταῦτα οὕτως",
+      "pron": "타우타 후토스",
       "lemmas": [
         "οὗτος",
         "οὕτω(ς)"
+      ],
+      "words": [
+        {
+          "word": "ταῦτα",
+          "lemma": "οὗτος",
+          "strong": "G3778",
+          "pron": "타우타"
+        },
+        {
+          "word": "οὕτως",
+          "lemma": "οὕτω(ς)",
+          "strong": "G3779",
+          "pron": "후토스"
+        }
       ],
       "count": 7,
       "refs": [

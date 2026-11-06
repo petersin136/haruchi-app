@@ -5,15 +5,46 @@
   "posKo": "접속사",
   "root": {
     "lemma": "ἄλλος",
-    "strong": "G243"
+    "strong": "G243",
+    "glossKo": "다른"
   },
   "family": [
-    "ἀλλάσσω",
-    "ἀλλαχόθεν",
-    "ἀλληγορέω",
-    "ἀλλήλων",
-    "ἀλλογενής",
-    "ἄλλος"
+    {
+      "lemma": "ἀλλάσσω",
+      "strong": "G236",
+      "pron": "알라소",
+      "glossKo": "바꾸다"
+    },
+    {
+      "lemma": "ἀλλαχόθεν",
+      "strong": "G237",
+      "pron": "알라코텐",
+      "glossKo": "다른데서"
+    },
+    {
+      "lemma": "ἀλληγορέω",
+      "strong": "G238",
+      "pron": "알레고레오",
+      "glossKo": "비유하다"
+    },
+    {
+      "lemma": "ἀλλήλων",
+      "strong": "G240",
+      "pron": "알렐론",
+      "glossKo": "서로"
+    },
+    {
+      "lemma": "ἀλλογενής",
+      "strong": "G241",
+      "pron": "알로게네스",
+      "glossKo": "이방인"
+    },
+    {
+      "lemma": "ἄλλος",
+      "strong": "G243",
+      "pron": "알로스",
+      "glossKo": "다른"
+    }
   ],
   "defEn": "properly, other things, i.e. (adverbially) contrariwise (in many relations)",
   "defKo": "",
@@ -52,9 +83,24 @@
   "phrases": [
     {
       "greek": "ἀλλ οὐ",
+      "pron": "알 우",
       "lemmas": [
         "ἀλλά",
         "οὐ"
+      ],
+      "words": [
+        {
+          "word": "ἀλλ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알"
+        },
+        {
+          "word": "οὐ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우"
+        }
       ],
       "count": 33,
       "refs": [
@@ -75,9 +121,24 @@
     },
     {
       "greek": "αὐτοῦ ἀλλὰ",
+      "pron": "아우투 알라",
       "lemmas": [
         "αὐτός",
         "ἀλλά"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "ἀλλὰ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알라"
+        }
       ],
       "count": 24,
       "refs": [
@@ -98,9 +159,24 @@
     },
     {
       "greek": "ἀλλ ἵνα",
+      "pron": "알 히나",
       "lemmas": [
         "ἀλλά",
         "ἵνα"
+      ],
+      "words": [
+        {
+          "word": "ἀλλ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알"
+        },
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        }
       ],
       "count": 19,
       "refs": [
@@ -121,9 +197,24 @@
     },
     {
       "greek": "ὑμῖν ἀλλ",
+      "pron": "휘민 알",
       "lemmas": [
         "σύ",
         "ἀλλά"
+      ],
+      "words": [
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        },
+        {
+          "word": "ἀλλ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알"
+        }
       ],
       "count": 19,
       "refs": [
@@ -144,9 +235,24 @@
     },
     {
       "greek": "ἀλλ ὡς",
+      "pron": "알 호스",
       "lemmas": [
         "ἀλλά",
         "ὡς"
+      ],
+      "words": [
+        {
+          "word": "ἀλλ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알"
+        },
+        {
+          "word": "ὡς",
+          "lemma": "ὡς",
+          "strong": "G5613",
+          "pron": "호스"
+        }
       ],
       "count": 18,
       "refs": [

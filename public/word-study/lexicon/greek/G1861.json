@@ -4,16 +4,47 @@
   "strong": "G1861",
   "posKo": "동사",
   "root": {
-    "lemma": "ἐπί",
-    "strong": "G1909"
+    "lemma": "ἐπί",
+    "strong": "G1909",
+    "glossKo": "위에"
   },
   "family": [
-    "ἐπαγγελία",
-    "ἐπάγγελμα",
-    "ἐπάγω",
-    "ἐπαγωνίζομαι",
-    "ἐπαθροίζω",
-    "ἐπαινέω"
+    {
+      "lemma": "ἐπαγγελία",
+      "strong": "G1860",
+      "pron": "에팡겔리아",
+      "glossKo": "약속"
+    },
+    {
+      "lemma": "ἐπάγγελμα",
+      "strong": "G1862",
+      "pron": "에팡겔마",
+      "glossKo": "약속"
+    },
+    {
+      "lemma": "ἐπάγω",
+      "strong": "G1863",
+      "pron": "에파고",
+      "glossKo": "끌어들이다"
+    },
+    {
+      "lemma": "ἐπαγωνίζομαι",
+      "strong": "G1864",
+      "pron": "에파고니조마이",
+      "glossKo": "힘써싸우다"
+    },
+    {
+      "lemma": "ἐπαθροίζομαι",
+      "strong": "G1865",
+      "pron": "에파트로이조마이",
+      "glossKo": "모이다"
+    },
+    {
+      "lemma": "ἐπαινέω",
+      "strong": "G1867",
+      "pron": "에파이네오",
+      "glossKo": "칭찬하다"
+    }
   ],
   "defEn": "to announce upon (reflexively), i.e. (by implication) to engage to do something, to assert something respecting oneself",
   "defKo": "",
@@ -35,9 +66,24 @@
   "phrases": [
     {
       "greek": "ὃ ἐπήγγελται",
+      "pron": "호 에펭겔타이",
       "lemmas": [
         "ὅς",
         "ἐπαγγέλλομαι"
+      ],
+      "words": [
+        {
+          "word": "ὃ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호"
+        },
+        {
+          "word": "ἐπήγγελται",
+          "lemma": "ἐπαγγέλλομαι",
+          "strong": "G1861",
+          "pron": "에펭겔타이"
+        }
       ],
       "count": 5,
       "refs": [
@@ -51,10 +97,31 @@
     },
     {
       "greek": "ἣν ἐπηγγείλατο ὁ",
+      "pron": "헨 에펭게일라토 호",
       "lemmas": [
         "ὅς",
         "ἐπαγγέλλομαι",
         "ὁ"
+      ],
+      "words": [
+        {
+          "word": "ἣν",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "헨"
+        },
+        {
+          "word": "ἐπηγγείλατο",
+          "lemma": "ἐπαγγέλλομαι",
+          "strong": "G1861",
+          "pron": "에펭게일라토"
+        },
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        }
       ],
       "count": 3,
       "refs": [

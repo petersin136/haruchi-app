@@ -5,7 +5,12 @@
   "posKo": "명사",
   "root": null,
   "family": [
-    "ἐλπίζω"
+    {
+      "lemma": "ἐλπίζω",
+      "strong": "G1679",
+      "pron": "엘피조",
+      "glossKo": "바라다"
+    }
   ],
   "defEn": "expectation (abstractly or concretely) or confidence",
   "defKo": "",
@@ -32,9 +37,24 @@
   "phrases": [
     {
       "greek": "ἐλπὶς ἡμῶν",
+      "pron": "엘피스 헤몬",
       "lemmas": [
         "ἐλπίς",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "ἐλπὶς",
+          "lemma": "ἐλπίς",
+          "strong": "G1680",
+          "pron": "엘피스"
+        },
+        {
+          "word": "ἡμῶν",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "헤몬"
+        }
       ],
       "count": 3,
       "refs": [

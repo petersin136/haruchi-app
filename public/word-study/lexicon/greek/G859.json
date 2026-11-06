@@ -1,0 +1,106 @@
+{
+  "lemma": "ἄφεσις",
+  "pron": "아페시스",
+  "strong": "G859",
+  "posKo": "명사",
+  "root": {
+    "lemma": "ἀφίημι",
+    "strong": "G863",
+    "glossKo": "버리다"
+  },
+  "family": [
+    {
+      "lemma": "ἀφίημι",
+      "strong": "G863",
+      "pron": "아피에미",
+      "glossKo": "버리다"
+    }
+  ],
+  "defEn": "freedom; (figuratively) pardon",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 17,
+  "byBook": {
+    "acts": 5,
+    "luke": 5,
+    "hebrews": 2,
+    "mark": 2,
+    "colossians": 1,
+    "ephesians": 1,
+    "matthew": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἄφεσιν ἁμαρτιῶν",
+      "pron": "아페신 하마르티온",
+      "lemmas": [
+        "ἄφεσις",
+        "ἁμαρτία"
+      ],
+      "words": [
+        {
+          "word": "ἄφεσιν",
+          "lemma": "ἄφεσις",
+          "strong": "G859",
+          "pron": "아페신"
+        },
+        {
+          "word": "ἁμαρτιῶν",
+          "lemma": "ἁμαρτία",
+          "strong": "G266",
+          "pron": "하마르티온"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "matthew 26:28",
+        "mark 1:4",
+        "luke 1:77",
+        "luke 3:3",
+        "luke 24:47",
+        "acts 5:31",
+        "acts 10:43",
+        "acts 13:38",
+        "acts 26:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "εἰς ἄφεσιν ἁμαρτιῶν",
+      "pron": "에이스 아페신 하마르티온",
+      "lemmas": [
+        "εἰς",
+        "ἄφεσις",
+        "ἁμαρτία"
+      ],
+      "words": [
+        {
+          "word": "εἰς",
+          "lemma": "εἰς",
+          "strong": "G1519",
+          "pron": "에이스"
+        },
+        {
+          "word": "ἄφεσιν",
+          "lemma": "ἄφεσις",
+          "strong": "G859",
+          "pron": "아페신"
+        },
+        {
+          "word": "ἁμαρτιῶν",
+          "lemma": "ἁμαρτία",
+          "strong": "G266",
+          "pron": "하마르티온"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 26:28",
+        "mark 1:4",
+        "luke 3:3"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

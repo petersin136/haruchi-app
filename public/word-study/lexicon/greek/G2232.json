@@ -1,0 +1,110 @@
+{
+  "lemma": "ἡγεμών",
+  "pron": "헤게몬",
+  "strong": "G2232",
+  "posKo": "명사",
+  "root": {
+    "lemma": "ἡγέομαι",
+    "strong": "G2233",
+    "glossKo": "여기다"
+  },
+  "family": [
+    {
+      "lemma": "ἡγεμονεύω",
+      "strong": "G2230",
+      "pron": "헤게모네우오",
+      "glossKo": "다스리다"
+    },
+    {
+      "lemma": "ἡγεμονία",
+      "strong": "G2231",
+      "pron": "헤게모니아",
+      "glossKo": "다스림"
+    },
+    {
+      "lemma": "ἡγέομαι",
+      "strong": "G2233",
+      "pron": "헤게오마이",
+      "glossKo": "여기다"
+    }
+  ],
+  "defEn": "a leader, i.e. chief person (or figuratively, place) of a province",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 20,
+  "byBook": {
+    "matthew": 10,
+    "acts": 6,
+    "luke": 2,
+    "mark": 1,
+    "peter1": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἡγεμὼν λέγων",
+      "pron": "헤게몬 레곤",
+      "lemmas": [
+        "ἡγεμών",
+        "λέγω"
+      ],
+      "words": [
+        {
+          "word": "ἡγεμὼν",
+          "lemma": "ἡγεμών",
+          "strong": "G2232",
+          "pron": "헤게몬"
+        },
+        {
+          "word": "λέγων",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레곤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 27:11",
+        "matthew 27:21",
+        "acts 24:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ὁ ἡγεμὼν λέγων",
+      "pron": "호 헤게몬 레곤",
+      "lemmas": [
+        "ὁ",
+        "ἡγεμών",
+        "λέγω"
+      ],
+      "words": [
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        },
+        {
+          "word": "ἡγεμὼν",
+          "lemma": "ἡγεμών",
+          "strong": "G2232",
+          "pron": "헤게몬"
+        },
+        {
+          "word": "λέγων",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레곤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 27:11",
+        "matthew 27:21",
+        "acts 24:10"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

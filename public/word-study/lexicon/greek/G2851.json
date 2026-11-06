@@ -1,18 +1,44 @@
 {
   "lemma": "κόλασις",
-  "pron": "코라시스",
+  "pron": "콜라시스",
   "strong": "G2851",
   "posKo": "명사",
   "root": {
-    "lemma": "κολάζω",
-    "strong": "G2849"
+    "lemma": "κολάζω",
+    "strong": "G2849",
+    "glossKo": "벌하다"
   },
   "family": [
-    "κολάζω",
-    "κολαφίζω",
-    "κολοβόω",
-    "κῶλον",
-    "κωλύω"
+    {
+      "lemma": "κολάζω",
+      "strong": "G2849",
+      "pron": "콜라조",
+      "glossKo": "벌하다"
+    },
+    {
+      "lemma": "κολαφίζω",
+      "strong": "G2852",
+      "pron": "콜라피조",
+      "glossKo": "주먹으로치다"
+    },
+    {
+      "lemma": "κολοβόω",
+      "strong": "G2856",
+      "pron": "콜로보오",
+      "glossKo": "단축하다"
+    },
+    {
+      "lemma": "κῶλον",
+      "strong": "G2966",
+      "pron": "콜론",
+      "glossKo": "시체"
+    },
+    {
+      "lemma": "κωλύω",
+      "strong": "G2967",
+      "pron": "콜뤼오",
+      "glossKo": "막다"
+    }
   ],
   "defEn": "penal infliction",
   "defKo": "",

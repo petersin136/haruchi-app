@@ -4,16 +4,47 @@
   "strong": "G1438",
   "posKo": "인칭대명사",
   "root": {
-    "lemma": "αὐτός",
-    "strong": "G846"
+    "lemma": "αὐτός",
+    "strong": "G846",
+    "glossKo": "그"
   },
   "family": [
-    "αὐθάδης",
-    "αὐθαίρετος",
-    "αὐθεντέω",
-    "αὐτάρκης",
-    "αὐτοκατάκριτος",
-    "αὐτόματος"
+    {
+      "lemma": "αὐθάδης",
+      "strong": "G829",
+      "pron": "아우타데스",
+      "glossKo": "제고집대로하는"
+    },
+    {
+      "lemma": "αὐθαίρετος",
+      "strong": "G830",
+      "pron": "아우타이레토스",
+      "glossKo": "자원하여"
+    },
+    {
+      "lemma": "αὐθεντέω",
+      "strong": "G831",
+      "pron": "아우텐테오",
+      "glossKo": "주관하다"
+    },
+    {
+      "lemma": "αὐτάρκης",
+      "strong": "G842",
+      "pron": "아우타르케스",
+      "glossKo": "자족"
+    },
+    {
+      "lemma": "αὐτοκατάκριτος",
+      "strong": "G843",
+      "pron": "아우토카타크리토스",
+      "glossKo": "스스로정죄한"
+    },
+    {
+      "lemma": "αὐτόματος",
+      "strong": "G844",
+      "pron": "아우토마토스",
+      "glossKo": "스스로"
+    }
   ],
   "defEn": "him- (her-, it-, them-, also (in conjunction with the personal pronoun of the other persons) my-, thy-, our-, your-)…",
   "defKo": "",
@@ -50,9 +81,24 @@
   "phrases": [
     {
       "greek": "ἑαυτοὺς λέγοντες",
+      "pron": "헤아우투스 레곤테스",
       "lemmas": [
         "ἑαυτοῦ",
         "λέγω"
+      ],
+      "words": [
+        {
+          "word": "ἑαυτοὺς",
+          "lemma": "ἑαυτοῦ",
+          "strong": "G1438",
+          "pron": "헤아우투스"
+        },
+        {
+          "word": "λέγοντες",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레곤테스"
+        }
       ],
       "count": 12,
       "refs": [
@@ -73,9 +119,24 @@
     },
     {
       "greek": "ἑαυτὸν οὐ",
+      "pron": "헤아우톤 우",
       "lemmas": [
         "ἑαυτοῦ",
         "οὐ"
+      ],
+      "words": [
+        {
+          "word": "ἑαυτὸν",
+          "lemma": "ἑαυτοῦ",
+          "strong": "G1438",
+          "pron": "헤아우톤"
+        },
+        {
+          "word": "οὐ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우"
+        }
       ],
       "count": 9,
       "refs": [
@@ -93,9 +154,24 @@
     },
     {
       "greek": "ἑαυτοῖς ὅτι",
+      "pron": "헤아우토이스 호티",
       "lemmas": [
         "ἑαυτοῦ",
         "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "ἑαυτοῖς",
+          "lemma": "ἑαυτοῦ",
+          "strong": "G1438",
+          "pron": "헤아우토이스"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
       ],
       "count": 7,
       "refs": [
@@ -111,10 +187,31 @@
     },
     {
       "greek": "λέγειν ἐν ἑαυτοῖς",
+      "pron": "레게인 엔 헤아우토이스",
       "lemmas": [
         "λέγω",
         "ἐν",
         "ἑαυτοῦ"
+      ],
+      "words": [
+        {
+          "word": "λέγειν",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레게인"
+        },
+        {
+          "word": "ἐν",
+          "lemma": "ἐν",
+          "strong": "G1722",
+          "pron": "엔"
+        },
+        {
+          "word": "ἑαυτοῖς",
+          "lemma": "ἑαυτοῦ",
+          "strong": "G1438",
+          "pron": "헤아우토이스"
+        }
       ],
       "count": 7,
       "refs": [
@@ -130,9 +227,24 @@
     },
     {
       "greek": "ἑαυτῷ ἀλλὰ",
+      "pron": "헤아우토 알라",
       "lemmas": [
         "ἑαυτοῦ",
         "ἀλλά"
+      ],
+      "words": [
+        {
+          "word": "ἑαυτῷ",
+          "lemma": "ἑαυτοῦ",
+          "strong": "G1438",
+          "pron": "헤아우토"
+        },
+        {
+          "word": "ἀλλὰ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알라"
+        }
       ],
       "count": 6,
       "refs": [

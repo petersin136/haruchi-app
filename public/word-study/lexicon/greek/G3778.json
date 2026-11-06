@@ -5,15 +5,46 @@
   "posKo": "지시대명사",
   "root": {
     "lemma": "ὁ",
-    "strong": "G3588"
+    "strong": "G3588",
+    "glossKo": "그"
   },
   "family": [
-    "θεός",
-    "τανῦν",
-    "ὁ",
-    "ὅδε",
-    "οἷος",
-    "ὅς"
+    {
+      "lemma": "θεός",
+      "strong": "G2316",
+      "pron": "테오스",
+      "glossKo": "하나님"
+    },
+    {
+      "lemma": "τανῦν",
+      "strong": "G3569",
+      "pron": "타뉜",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ὁ",
+      "strong": "G3588",
+      "pron": "호",
+      "glossKo": "그"
+    },
+    {
+      "lemma": "ὅδε",
+      "strong": "G3592",
+      "pron": "호데",
+      "glossKo": "이것"
+    },
+    {
+      "lemma": "οἷος",
+      "strong": "G3634",
+      "pron": "호이오스",
+      "glossKo": "어떠한"
+    },
+    {
+      "lemma": "ὅς",
+      "strong": "G3739",
+      "pron": "호스",
+      "glossKo": "(관계대명사)"
+    }
   ],
   "defEn": "the he (she or it), i.e. this or that (often with article repeated)",
   "defKo": "",
@@ -52,9 +83,24 @@
   "phrases": [
     {
       "greek": "οὗτός ἐστιν",
+      "pron": "후토스 에스틴",
       "lemmas": [
         "οὗτος",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "οὗτός",
+          "lemma": "οὗτος",
+          "strong": "G3778",
+          "pron": "후토스"
+        },
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 138,
       "refs": [
@@ -75,10 +121,31 @@
     },
     {
       "greek": "οὗτός ἐστιν ὁ",
+      "pron": "후토스 에스틴 호",
       "lemmas": [
         "οὗτος",
         "εἰμί",
         "ὁ"
+      ],
+      "words": [
+        {
+          "word": "οὗτός",
+          "lemma": "οὗτος",
+          "strong": "G3778",
+          "pron": "후토스"
+        },
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        },
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        }
       ],
       "count": 81,
       "refs": [
@@ -99,9 +166,24 @@
     },
     {
       "greek": "τοῦτο λέγω",
+      "pron": "투토 레고",
       "lemmas": [
         "οὗτος",
         "λέγω"
+      ],
+      "words": [
+        {
+          "word": "τοῦτο",
+          "lemma": "οὗτος",
+          "strong": "G3778",
+          "pron": "투토"
+        },
+        {
+          "word": "λέγω",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레고"
+        }
       ],
       "count": 52,
       "refs": [
@@ -122,9 +204,24 @@
     },
     {
       "greek": "αὐτὸ τοῦτο",
+      "pron": "아우토 투토",
       "lemmas": [
         "αὐτός",
         "οὗτος"
+      ],
+      "words": [
+        {
+          "word": "αὐτὸ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        },
+        {
+          "word": "τοῦτο",
+          "lemma": "οὗτος",
+          "strong": "G3778",
+          "pron": "투토"
+        }
       ],
       "count": 40,
       "refs": [
@@ -145,9 +242,24 @@
     },
     {
       "greek": "ταῦτα ποιεῖς",
+      "pron": "타우타 포이에이스",
       "lemmas": [
         "οὗτος",
         "ποιέω"
+      ],
+      "words": [
+        {
+          "word": "ταῦτα",
+          "lemma": "οὗτος",
+          "strong": "G3778",
+          "pron": "타우타"
+        },
+        {
+          "word": "ποιεῖς",
+          "lemma": "ποιέω",
+          "strong": "G4160",
+          "pron": "포이에이스"
+        }
       ],
       "count": 40,
       "refs": [

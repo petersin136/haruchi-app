@@ -5,7 +5,12 @@
   "posKo": "명사",
   "root": null,
   "family": [
-    "καρδιογνώστης"
+    {
+      "lemma": "καρδιογνώστης",
+      "strong": "G2589",
+      "pron": "카르디오그노스테스",
+      "glossKo": "마음아시는"
+    }
   ],
   "defEn": "the heart, i.e. (figuratively) the thoughts or feelings (mind); also (by analogy) the middle",
   "defKo": "",
@@ -39,9 +44,24 @@
   "phrases": [
     {
       "greek": "καρδίας ὑμῶν",
+      "pron": "카르디아스 휘몬",
       "lemmas": [
         "καρδία",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "καρδίας",
+          "lemma": "καρδία",
+          "strong": "G2588",
+          "pron": "카르디아스"
+        },
+        {
+          "word": "ὑμῶν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘몬"
+        }
       ],
       "count": 39,
       "refs": [
@@ -62,10 +82,31 @@
     },
     {
       "greek": "τὰς καρδίας ὑμῶν",
+      "pron": "타스 카르디아스 휘몬",
       "lemmas": [
         "ὁ",
         "καρδία",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "τὰς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "타스"
+        },
+        {
+          "word": "καρδίας",
+          "lemma": "καρδία",
+          "strong": "G2588",
+          "pron": "카르디아스"
+        },
+        {
+          "word": "ὑμῶν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘몬"
+        }
       ],
       "count": 38,
       "refs": [
@@ -86,9 +127,24 @@
     },
     {
       "greek": "καρδίας αὐτῶν",
+      "pron": "카르디아스 아우톤",
       "lemmas": [
         "καρδία",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "καρδίας",
+          "lemma": "καρδία",
+          "strong": "G2588",
+          "pron": "카르디아스"
+        },
+        {
+          "word": "αὐτῶν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
       ],
       "count": 34,
       "refs": [
@@ -109,10 +165,31 @@
     },
     {
       "greek": "τῇ καρδίᾳ αὐτοῦ",
+      "pron": "테 카르디아 아우투",
       "lemmas": [
         "ὁ",
         "καρδία",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τῇ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "테"
+        },
+        {
+          "word": "καρδίᾳ",
+          "lemma": "καρδία",
+          "strong": "G2588",
+          "pron": "카르디아"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 28,
       "refs": [
@@ -133,9 +210,24 @@
     },
     {
       "greek": "καρδίαις ἡμῶν",
+      "pron": "카르디아이스 헤몬",
       "lemmas": [
         "καρδία",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "καρδίαις",
+          "lemma": "καρδία",
+          "strong": "G2588",
+          "pron": "카르디아이스"
+        },
+        {
+          "word": "ἡμῶν",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "헤몬"
+        }
       ],
       "count": 15,
       "refs": [

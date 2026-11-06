@@ -1,0 +1,123 @@
+{
+  "lemma": "ἰσχύω",
+  "pron": "이스퀴오",
+  "strong": "G2480",
+  "posKo": "동사",
+  "root": {
+    "lemma": "ἰσχύς",
+    "strong": "G2479",
+    "glossKo": "힘"
+  },
+  "family": [
+    {
+      "lemma": "ἰσχυρός",
+      "strong": "G2478",
+      "pron": "이스퀴로스",
+      "glossKo": "강한"
+    },
+    {
+      "lemma": "ἰσχύς",
+      "strong": "G2479",
+      "pron": "이스퀴스",
+      "glossKo": "힘"
+    }
+  ],
+  "defEn": "to have (or exercise) force (literally or figuratively)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 28,
+  "byBook": {
+    "luke": 8,
+    "acts": 6,
+    "mark": 4,
+    "matthew": 4,
+    "galatians": 1,
+    "hebrews": 1,
+    "james": 1,
+    "john": 1,
+    "philippians": 1,
+    "revelation": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "οὐκ ἴσχυσεν",
+      "pron": "우크 이스퀴센",
+      "lemmas": [
+        "οὐ",
+        "ἰσχύω"
+      ],
+      "words": [
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        },
+        {
+          "word": "ἴσχυσεν",
+          "lemma": "ἰσχύω",
+          "strong": "G2480",
+          "pron": "이스퀴센"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "matthew 26:40",
+        "mark 9:18",
+        "mark 14:37",
+        "luke 6:48",
+        "luke 8:43",
+        "luke 13:24",
+        "luke 14:6",
+        "luke 14:30",
+        "luke 16:3",
+        "luke 20:26",
+        "acts 6:10",
+        "acts 25:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "καὶ οὐκ ἴσχυσαν",
+      "pron": "카이 우크 이스퀴산",
+      "lemmas": [
+        "καί",
+        "οὐ",
+        "ἰσχύω"
+      ],
+      "words": [
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        },
+        {
+          "word": "ἴσχυσαν",
+          "lemma": "ἰσχύω",
+          "strong": "G2480",
+          "pron": "이스퀴산"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "mark 9:18",
+        "luke 6:48",
+        "luke 13:24",
+        "luke 14:6",
+        "luke 14:30",
+        "luke 20:26",
+        "acts 6:10",
+        "revelation 12:8"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

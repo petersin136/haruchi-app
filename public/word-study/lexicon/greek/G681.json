@@ -1,11 +1,16 @@
 {
   "lemma": "ἅπτω",
-  "pron": "아프토",
+  "pron": "하프토",
   "strong": "G681",
   "posKo": "동사",
   "root": null,
   "family": [
-    "ἅπτομαι"
+    {
+      "lemma": "ἅπτομαι",
+      "strong": "G680",
+      "pron": "하프토마이",
+      "glossKo": ""
+    }
   ],
   "defEn": "properly, to fasten to, i.e. (specially) to set on fire",
   "defKo": "",
@@ -26,9 +31,24 @@
   "phrases": [
     {
       "greek": "ἥψατο αὐτοῦ",
+      "pron": "헤프사토 아우투",
       "lemmas": [
         "ἅπτω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἥψατο",
+          "lemma": "ἅπτω",
+          "strong": "G681",
+          "pron": "헤프사토"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 8,
       "refs": [
@@ -45,9 +65,24 @@
     },
     {
       "greek": "αὐτοῦ ἅψωνται",
+      "pron": "아우투 하프손타이",
       "lemmas": [
         "αὐτός",
         "ἅπτω"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "ἅψωνται",
+          "lemma": "ἅπτω",
+          "strong": "G681",
+          "pron": "하프손타이"
+        }
       ],
       "count": 6,
       "refs": [
@@ -62,10 +97,31 @@
     },
     {
       "greek": "ἵνα αὐτοῦ ἅψωνται",
+      "pron": "히나 아우투 하프손타이",
       "lemmas": [
         "ἵνα",
         "αὐτός",
         "ἅπτω"
+      ],
+      "words": [
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "ἅψωνται",
+          "lemma": "ἅπτω",
+          "strong": "G681",
+          "pron": "하프손타이"
+        }
       ],
       "count": 4,
       "refs": [
@@ -78,9 +134,24 @@
     },
     {
       "greek": "μου ἥψατο",
+      "pron": "무 헤프사토",
       "lemmas": [
         "ἐγώ",
         "ἅπτω"
+      ],
+      "words": [
+        {
+          "word": "μου",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "무"
+        },
+        {
+          "word": "ἥψατο",
+          "lemma": "ἅπτω",
+          "strong": "G681",
+          "pron": "헤프사토"
+        }
       ],
       "count": 4,
       "refs": [
@@ -93,10 +164,31 @@
     },
     {
       "greek": "ἅψωμαι τοῦ ἱματίου",
+      "pron": "하프소마이 투 히마티우",
       "lemmas": [
         "ἅπτω",
         "ὁ",
         "ἱμάτιον"
+      ],
+      "words": [
+        {
+          "word": "ἅψωμαι",
+          "lemma": "ἅπτω",
+          "strong": "G681",
+          "pron": "하프소마이"
+        },
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        },
+        {
+          "word": "ἱματίου",
+          "lemma": "ἱμάτιον",
+          "strong": "G2440",
+          "pron": "히마티우"
+        }
       ],
       "count": 3,
       "refs": [

@@ -1,19 +1,50 @@
 {
   "lemma": "ἁγνίζω",
-  "pron": "아그니조",
+  "pron": "하그니조",
   "strong": "G48",
   "posKo": "동사",
   "root": {
-    "lemma": "ἁγνός",
-    "strong": "G53"
+    "lemma": "ἁγνός",
+    "strong": "G53",
+    "glossKo": "정결한"
   },
   "family": [
-    "ἅγιος",
-    "ἁγνεία",
-    "ἁγνισμός",
-    "ἁγνός",
-    "ἁγνότης",
-    "ἁγνῶς"
+    {
+      "lemma": "ἅγιος",
+      "strong": "G40",
+      "pron": "하기오스",
+      "glossKo": "거룩한"
+    },
+    {
+      "lemma": "ἁγνεία",
+      "strong": "G47",
+      "pron": "하그네이아",
+      "glossKo": "정결"
+    },
+    {
+      "lemma": "ἁγνισμός",
+      "strong": "G49",
+      "pron": "하그니스모스",
+      "glossKo": "결례"
+    },
+    {
+      "lemma": "ἁγνός",
+      "strong": "G53",
+      "pron": "하그노스",
+      "glossKo": "정결한"
+    },
+    {
+      "lemma": "ἁγνότης",
+      "strong": "G54",
+      "pron": "하그노테스",
+      "glossKo": "순결함"
+    },
+    {
+      "lemma": "ἁγνῶς",
+      "strong": "G55",
+      "pron": "하그노스",
+      "glossKo": "정결하게"
+    }
   ],
   "defEn": "to make clean, i.e. (figuratively) sanctify (ceremonially or morally)",
   "defKo": "",

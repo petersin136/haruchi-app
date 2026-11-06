@@ -5,7 +5,12 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "τήρησις"
+    {
+      "lemma": "τήρησις",
+      "strong": "G5084",
+      "pron": "테레시스",
+      "glossKo": "옥에가둠"
+    }
   ],
   "defEn": "perhaps akin to ); to guard (from loss or injury, properly, by keeping the eye upon; and thus differing from , which…",
   "defKo": "지키다, 보존하다, 눈여겨 지키다예요. 감시를 늦추지 않고 지키는 그림이에요. 요한일서에서는 계명을 지킴, 자신을 지킴이 하나님을 아는 표와 연결돼요. 요일 2:3-5, 3:22, 5:3, 5:18을 보면 돼요.",
@@ -33,9 +38,24 @@
   "phrases": [
     {
       "greek": "τηρεῖσθαι αὐτὸν",
+      "pron": "테레이스타이 아우톤",
       "lemmas": [
         "τηρέω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τηρεῖσθαι",
+          "lemma": "τηρέω",
+          "strong": "G5083",
+          "pron": "테레이스타이"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
       ],
       "count": 12,
       "refs": [
@@ -55,9 +75,24 @@
     },
     {
       "greek": "μου τηρήσῃ",
+      "pron": "무 테레세",
       "lemmas": [
         "ἐγώ",
         "τηρέω"
+      ],
+      "words": [
+        {
+          "word": "μου",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "무"
+        },
+        {
+          "word": "τηρήσῃ",
+          "lemma": "τηρέω",
+          "strong": "G5083",
+          "pron": "테레세"
+        }
       ],
       "count": 7,
       "refs": [
@@ -72,9 +107,24 @@
     },
     {
       "greek": "αὐτοῦ τηρῶμεν",
+      "pron": "아우투 테로멘",
       "lemmas": [
         "αὐτός",
         "τηρέω"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "τηρῶμεν",
+          "lemma": "τηρέω",
+          "strong": "G5083",
+          "pron": "테로멘"
+        }
       ],
       "count": 6,
       "refs": [
@@ -89,9 +139,24 @@
     },
     {
       "greek": "ὑμῶν τηρήσητε",
+      "pron": "휘몬 테레세테",
       "lemmas": [
         "σύ",
         "τηρέω"
+      ],
+      "words": [
+        {
+          "word": "ὑμῶν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘몬"
+        },
+        {
+          "word": "τηρήσητε",
+          "lemma": "τηρέω",
+          "strong": "G5083",
+          "pron": "테레세테"
+        }
       ],
       "count": 5,
       "refs": [
@@ -105,10 +170,31 @@
     },
     {
       "greek": "τήρησον τὰς ἐντολάς",
+      "pron": "테레손 타스 엔톨라스",
       "lemmas": [
         "τηρέω",
         "ὁ",
         "ἐντολή"
+      ],
+      "words": [
+        {
+          "word": "τήρησον",
+          "lemma": "τηρέω",
+          "strong": "G5083",
+          "pron": "테레손"
+        },
+        {
+          "word": "τὰς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "타스"
+        },
+        {
+          "word": "ἐντολάς",
+          "lemma": "ἐντολή",
+          "strong": "G1785",
+          "pron": "엔톨라스"
+        }
       ],
       "count": 4,
       "refs": [

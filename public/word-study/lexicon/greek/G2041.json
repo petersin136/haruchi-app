@@ -5,9 +5,24 @@
   "posKo": "명사",
   "root": null,
   "family": [
-    "ἐργάζομαι",
-    "ἐργάτης",
-    "ῥᾳδιούργημα"
+    {
+      "lemma": "ἐργάζομαι",
+      "strong": "G2038",
+      "pron": "에르가조마이",
+      "glossKo": "일하다"
+    },
+    {
+      "lemma": "ἐργάτης",
+      "strong": "G2040",
+      "pron": "에르가테스",
+      "glossKo": "일꾼"
+    },
+    {
+      "lemma": "ῥᾳδιούργημα",
+      "strong": "G4467",
+      "pron": "라디우르게마",
+      "glossKo": "악행"
+    }
   ],
   "defEn": "toil (as an effort or occupation); by implication, an act",
   "defKo": "",
@@ -45,9 +60,24 @@
   "phrases": [
     {
       "greek": "ἔργα αὐτοῦ",
+      "pron": "에르가 아우투",
       "lemmas": [
         "ἔργον",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἔργα",
+          "lemma": "ἔργον",
+          "strong": "G2041",
+          "pron": "에르가"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 25,
       "refs": [
@@ -68,10 +98,31 @@
     },
     {
       "greek": "τὰ ἔργα αὐτοῦ",
+      "pron": "타 에르가 아우투",
       "lemmas": [
         "ὁ",
         "ἔργον",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τὰ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "타"
+        },
+        {
+          "word": "ἔργα",
+          "lemma": "ἔργον",
+          "strong": "G2041",
+          "pron": "에르가"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 23,
       "refs": [
@@ -92,9 +143,24 @@
     },
     {
       "greek": "ἔργον ἀγαθὸν",
+      "pron": "에르곤 아가톤",
       "lemmas": [
         "ἔργον",
         "ἀγαθός"
+      ],
+      "words": [
+        {
+          "word": "ἔργον",
+          "lemma": "ἔργον",
+          "strong": "G2041",
+          "pron": "에르곤"
+        },
+        {
+          "word": "ἀγαθὸν",
+          "lemma": "ἀγαθός",
+          "strong": "G18",
+          "pron": "아가톤"
+        }
       ],
       "count": 12,
       "refs": [
@@ -115,9 +181,24 @@
     },
     {
       "greek": "καλῶν ἔργων",
+      "pron": "칼론 에르곤",
       "lemmas": [
         "καλός",
         "ἔργον"
+      ],
+      "words": [
+        {
+          "word": "καλῶν",
+          "lemma": "καλός",
+          "strong": "G2570",
+          "pron": "칼론"
+        },
+        {
+          "word": "ἔργων",
+          "lemma": "ἔργον",
+          "strong": "G2041",
+          "pron": "에르곤"
+        }
       ],
       "count": 10,
       "refs": [
@@ -136,9 +217,24 @@
     },
     {
       "greek": "ἔργα ἃ",
+      "pron": "에르가 하",
       "lemmas": [
         "ἔργον",
         "ὅς"
+      ],
+      "words": [
+        {
+          "word": "ἔργα",
+          "lemma": "ἔργον",
+          "strong": "G2041",
+          "pron": "에르가"
+        },
+        {
+          "word": "ἃ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "하"
+        }
       ],
       "count": 9,
       "refs": [

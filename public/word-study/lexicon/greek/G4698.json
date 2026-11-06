@@ -5,7 +5,12 @@
   "posKo": "명사",
   "root": null,
   "family": [
-    "σπλαγχνίζομαι"
+    {
+      "lemma": "σπλαγχνίζομαι",
+      "strong": "G4697",
+      "pron": "스플랑크니조마이",
+      "glossKo": "긍휼히여기다"
+    }
   ],
   "defEn": "an intestine (plural); figuratively, pity or sympathy",
   "defKo": "",
@@ -24,9 +29,24 @@
   "phrases": [
     {
       "greek": "σπλάγχνα αὐτοῦ",
+      "pron": "스플랑크나 아우투",
       "lemmas": [
         "σπλάγχνον",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "σπλάγχνα",
+          "lemma": "σπλάγχνον",
+          "strong": "G4698",
+          "pron": "스플랑크나"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 3,
       "refs": [
@@ -38,10 +58,31 @@
     },
     {
       "greek": "τὰ σπλάγχνα αὐτοῦ",
+      "pron": "타 스플랑크나 아우투",
       "lemmas": [
         "ὁ",
         "σπλάγχνον",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τὰ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "타"
+        },
+        {
+          "word": "σπλάγχνα",
+          "lemma": "σπλάγχνον",
+          "strong": "G4698",
+          "pron": "스플랑크나"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 3,
       "refs": [

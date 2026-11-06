@@ -5,15 +5,46 @@
   "posKo": "관계대명사",
   "root": {
     "lemma": "ὁ",
-    "strong": "G3588"
+    "strong": "G3588",
+    "glossKo": "그"
   },
   "family": [
-    "θεός",
-    "τανῦν",
-    "ὁ",
-    "ὅδε",
-    "ὅ ἐστι",
-    "ὅθεν"
+    {
+      "lemma": "θεός",
+      "strong": "G2316",
+      "pron": "테오스",
+      "glossKo": "하나님"
+    },
+    {
+      "lemma": "τανῦν",
+      "strong": "G3569",
+      "pron": "타뉜",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ὁ",
+      "strong": "G3588",
+      "pron": "호",
+      "glossKo": "그"
+    },
+    {
+      "lemma": "ὅδε",
+      "strong": "G3592",
+      "pron": "호데",
+      "glossKo": "이것"
+    },
+    {
+      "lemma": "ὅ ἐστι",
+      "strong": "G3603",
+      "pron": "호에스티",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ὅθεν",
+      "strong": "G3606",
+      "pron": "호텐",
+      "glossKo": "그러므로"
+    }
   ],
   "defEn": "the relatively (sometimes demonstrative) pronoun, who, which, what, that",
   "defKo": "",
@@ -52,9 +83,24 @@
   "phrases": [
     {
       "greek": "ὅ ἐστιν",
+      "pron": "호 에스틴",
       "lemmas": [
         "ὅς",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "ὅ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호"
+        },
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 97,
       "refs": [
@@ -75,9 +121,24 @@
     },
     {
       "greek": "ὃ οὐκ",
+      "pron": "호 우크",
       "lemmas": [
         "ὅς",
         "οὐ"
+      ],
+      "words": [
+        {
+          "word": "ὃ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호"
+        },
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        }
       ],
       "count": 97,
       "refs": [
@@ -98,9 +159,24 @@
     },
     {
       "greek": "αὐτήν ὃς",
+      "pron": "아우텐 호스",
       "lemmas": [
         "αὐτός",
         "ὅς"
+      ],
+      "words": [
+        {
+          "word": "αὐτήν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우텐"
+        },
+        {
+          "word": "ὃς",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호스"
+        }
       ],
       "count": 42,
       "refs": [
@@ -121,9 +197,24 @@
     },
     {
       "greek": "ὃς ἂν",
+      "pron": "호스 안",
       "lemmas": [
         "ὅς",
         "ἄν"
+      ],
+      "words": [
+        {
+          "word": "ὃς",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호스"
+        },
+        {
+          "word": "ἂν",
+          "lemma": "ἄν",
+          "strong": "G302",
+          "pron": "안"
+        }
       ],
       "count": 39,
       "refs": [
@@ -144,9 +235,24 @@
     },
     {
       "greek": "ὃν ἐγὼ",
+      "pron": "혼 에고",
       "lemmas": [
         "ὅς",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "ὃν",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "혼"
+        },
+        {
+          "word": "ἐγὼ",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "에고"
+        }
       ],
       "count": 35,
       "refs": [

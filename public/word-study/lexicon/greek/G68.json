@@ -1,0 +1,127 @@
+{
+  "lemma": "ἀγρός",
+  "pron": "아그로스",
+  "strong": "G68",
+  "posKo": "명사",
+  "root": {
+    "lemma": "ἄγω",
+    "strong": "G71",
+    "glossKo": "이끌다"
+  },
+  "family": [
+    {
+      "lemma": "ἄγγελος",
+      "strong": "G32",
+      "pron": "앙겔로스",
+      "glossKo": "천사"
+    },
+    {
+      "lemma": "ἄγε",
+      "strong": "G33",
+      "pron": "아게",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἀγέλη",
+      "strong": "G34",
+      "pron": "아겔레",
+      "glossKo": "떼"
+    },
+    {
+      "lemma": "ἄγρα",
+      "strong": "G61",
+      "pron": "아그라",
+      "glossKo": "잡힘"
+    },
+    {
+      "lemma": "ἀγραυλέω",
+      "strong": "G63",
+      "pron": "아그라울레오",
+      "glossKo": "들에있다"
+    },
+    {
+      "lemma": "ἄγριος",
+      "strong": "G66",
+      "pron": "아그리오스",
+      "glossKo": "들의"
+    }
+  ],
+  "defEn": "a field (as a drive for cattle); genitive case, the country; specially, a farm, i.e. hamlet",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 36,
+  "byBook": {
+    "matthew": 17,
+    "luke": 9,
+    "mark": 9,
+    "acts": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἀγρῷ αὐτοῦ",
+      "pron": "아그로 아우투",
+      "lemmas": [
+        "ἀγρός",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἀγρῷ",
+          "lemma": "ἀγρός",
+          "strong": "G68",
+          "pron": "아그로"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 13:24",
+        "matthew 13:31",
+        "luke 15:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "τῷ ἀγρῷ αὐτοῦ",
+      "pron": "토 아그로 아우투",
+      "lemmas": [
+        "ὁ",
+        "ἀγρός",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τῷ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토"
+        },
+        {
+          "word": "ἀγρῷ",
+          "lemma": "ἀγρός",
+          "strong": "G68",
+          "pron": "아그로"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 13:24",
+        "matthew 13:31",
+        "luke 15:15"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

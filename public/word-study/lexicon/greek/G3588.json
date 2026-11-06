@@ -5,12 +5,42 @@
   "posKo": "정관사",
   "root": null,
   "family": [
-    "θεός",
-    "τανῦν",
-    "ὅδε",
-    "οἷος",
-    "ὅς",
-    "οὗτος"
+    {
+      "lemma": "θεός",
+      "strong": "G2316",
+      "pron": "테오스",
+      "glossKo": "하나님"
+    },
+    {
+      "lemma": "τανῦν",
+      "strong": "G3569",
+      "pron": "타뉜",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ὅδε",
+      "strong": "G3592",
+      "pron": "호데",
+      "glossKo": "이것"
+    },
+    {
+      "lemma": "οἷος",
+      "strong": "G3634",
+      "pron": "호이오스",
+      "glossKo": "어떠한"
+    },
+    {
+      "lemma": "ὅς",
+      "strong": "G3739",
+      "pron": "호스",
+      "glossKo": "(관계대명사)"
+    },
+    {
+      "lemma": "οὗτος",
+      "strong": "G3778",
+      "pron": "후토스",
+      "glossKo": "이것"
+    }
   ],
   "defEn": "the (sometimes to be supplied, at others omitted, in English idiom)",
   "defKo": "",
@@ -49,10 +79,31 @@
   "phrases": [
     {
       "greek": "αὐτοῖς ὁ Ἰησοῦς",
+      "pron": "아우토이스 호 이에수스",
       "lemmas": [
         "αὐτός",
         "ὁ",
         "Ἰησοῦς"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        },
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        },
+        {
+          "word": "Ἰησοῦς",
+          "lemma": "Ἰησοῦς",
+          "strong": "G2424",
+          "pron": "이에수스"
+        }
       ],
       "count": 111,
       "refs": [
@@ -73,10 +124,31 @@
     },
     {
       "greek": "οἱ μαθηταὶ αὐτοῦ",
+      "pron": "호이 마테타이 아우투",
       "lemmas": [
         "ὁ",
         "μαθητής",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "οἱ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호이"
+        },
+        {
+          "word": "μαθηταὶ",
+          "lemma": "μαθητής",
+          "strong": "G3101",
+          "pron": "마테타이"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 107,
       "refs": [
@@ -97,10 +169,31 @@
     },
     {
       "greek": "λέγει αὐτῷ ὁ",
+      "pron": "레게이 아우토 호",
       "lemmas": [
         "λέγω",
         "αὐτός",
         "ὁ"
+      ],
+      "words": [
+        {
+          "word": "λέγει",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레게이"
+        },
+        {
+          "word": "αὐτῷ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        },
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        }
       ],
       "count": 103,
       "refs": [
@@ -121,10 +214,31 @@
     },
     {
       "greek": "τοῦ κυρίου ἡμῶν",
+      "pron": "투 퀴리우 헤몬",
       "lemmas": [
         "ὁ",
         "κύριος",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        },
+        {
+          "word": "κυρίου",
+          "lemma": "κύριος",
+          "strong": "G2962",
+          "pron": "퀴리우"
+        },
+        {
+          "word": "ἡμῶν",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "헤몬"
+        }
       ],
       "count": 83,
       "refs": [
@@ -145,10 +259,31 @@
     },
     {
       "greek": "τοῦ πατρός μου",
+      "pron": "투 파트로스 무",
       "lemmas": [
         "ὁ",
         "πατήρ",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        },
+        {
+          "word": "πατρός",
+          "lemma": "πατήρ",
+          "strong": "G3962",
+          "pron": "파트로스"
+        },
+        {
+          "word": "μου",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "무"
+        }
       ],
       "count": 83,
       "refs": [

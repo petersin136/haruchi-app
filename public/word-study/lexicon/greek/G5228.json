@@ -5,12 +5,42 @@
   "posKo": "전치사",
   "root": null,
   "family": [
-    "ὕβρις",
-    "ὑπεραίρομαι",
-    "ὑπέρακμος",
-    "ὑπεράνω",
-    "ὑπεραυξάνω",
-    "ὑπερβαίνω"
+    {
+      "lemma": "ὕβρις",
+      "strong": "G5196",
+      "pron": "휘브리스",
+      "glossKo": "능욕"
+    },
+    {
+      "lemma": "ὑπεραίρομαι",
+      "strong": "G5229",
+      "pron": "휘페라이로마이",
+      "glossKo": "지나치게높이다"
+    },
+    {
+      "lemma": "ὑπέρακμος",
+      "strong": "G5230",
+      "pron": "휘페라크모스",
+      "glossKo": "혼기지난"
+    },
+    {
+      "lemma": "ὑπεράνω",
+      "strong": "G5231",
+      "pron": "휘페라노",
+      "glossKo": "지극히높은"
+    },
+    {
+      "lemma": "ὑπεραυξάνω",
+      "strong": "G5232",
+      "pron": "휘페라우크사노",
+      "glossKo": "심히자라다"
+    },
+    {
+      "lemma": "ὑπερβαίνω",
+      "strong": "G5233",
+      "pron": "휘페르바이노",
+      "glossKo": "넘어서다"
+    }
   ],
   "defEn": "\"over\", i.e. (with the genitive case) of place, above, beyond, across, or causal, for the sake of, instead, regarding…",
   "defKo": "",
@@ -44,10 +74,31 @@
   "phrases": [
     {
       "greek": "ἑαυτὸν ὑπὲρ ἡμῶν",
+      "pron": "헤아우톤 휘페르 헤몬",
       "lemmas": [
         "ἑαυτοῦ",
         "ὑπέρ",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "ἑαυτὸν",
+          "lemma": "ἑαυτοῦ",
+          "strong": "G1438",
+          "pron": "헤아우톤"
+        },
+        {
+          "word": "ὑπὲρ",
+          "lemma": "ὑπέρ",
+          "strong": "G5228",
+          "pron": "휘페르"
+        },
+        {
+          "word": "ἡμῶν",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "헤몬"
+        }
       ],
       "count": 3,
       "refs": [
@@ -59,10 +110,31 @@
     },
     {
       "greek": "σου ὑπὲρ ἐμοῦ",
+      "pron": "수 휘페르 에무",
       "lemmas": [
         "σύ",
         "ὑπέρ",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "σου",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "수"
+        },
+        {
+          "word": "ὑπὲρ",
+          "lemma": "ὑπέρ",
+          "strong": "G5228",
+          "pron": "휘페르"
+        },
+        {
+          "word": "ἐμοῦ",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "에무"
+        }
       ],
       "count": 3,
       "refs": [
@@ -74,10 +146,31 @@
     },
     {
       "greek": "ὑπὲρ ἡμῶν ἵνα",
+      "pron": "휘페르 헤몬 히나",
       "lemmas": [
         "ὑπέρ",
         "ἐγώ",
         "ἵνα"
+      ],
+      "words": [
+        {
+          "word": "ὑπὲρ",
+          "lemma": "ὑπέρ",
+          "strong": "G5228",
+          "pron": "휘페르"
+        },
+        {
+          "word": "ἡμῶν",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "헤몬"
+        },
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        }
       ],
       "count": 3,
       "refs": [

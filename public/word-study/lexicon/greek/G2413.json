@@ -1,0 +1,198 @@
+{
+  "lemma": "ἱερός",
+  "pron": "히에로스",
+  "strong": "G2413",
+  "posKo": "형용사",
+  "root": null,
+  "family": [
+    {
+      "lemma": "Ἱεράπολις",
+      "strong": "G2404",
+      "pron": "히에라폴리스",
+      "glossKo": "히에라볼리"
+    },
+    {
+      "lemma": "ἱερεύς",
+      "strong": "G2409",
+      "pron": "히에레우스",
+      "glossKo": "제사장"
+    },
+    {
+      "lemma": "ἱερόν",
+      "strong": "G2411",
+      "pron": "히에론",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἱεροπρεπής",
+      "strong": "G2412",
+      "pron": "히에로프레페스",
+      "glossKo": "거룩한행위에맞는"
+    },
+    {
+      "lemma": "ἱερωσύνη",
+      "strong": "G2420",
+      "pron": "히에로쉬네",
+      "glossKo": "제사장직"
+    },
+    {
+      "lemma": "ὅσιος",
+      "strong": "G3741",
+      "pron": "호시오스",
+      "glossKo": "거룩한"
+    }
+  ],
+  "defEn": "sacred",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 73,
+  "byBook": {
+    "acts": 25,
+    "luke": 14,
+    "matthew": 11,
+    "john": 10,
+    "mark": 10,
+    "corinthians1": 2,
+    "timothy2": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἱερῷ διδάσκων",
+      "pron": "히에로 디다스콘",
+      "lemmas": [
+        "ἱερός",
+        "διδάσκω"
+      ],
+      "words": [
+        {
+          "word": "ἱερῷ",
+          "lemma": "ἱερός",
+          "strong": "G2413",
+          "pron": "히에로"
+        },
+        {
+          "word": "διδάσκων",
+          "lemma": "διδάσκω",
+          "strong": "G1321",
+          "pron": "디다스콘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "mark 14:49",
+        "luke 21:37",
+        "john 7:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἱερῷ καὶ λέγοντας",
+      "pron": "히에로 카이 레곤타스",
+      "lemmas": [
+        "ἱερός",
+        "καί",
+        "λέγω"
+      ],
+      "words": [
+        {
+          "word": "ἱερῷ",
+          "lemma": "ἱερός",
+          "strong": "G2413",
+          "pron": "히에로"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "λέγοντας",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레곤타스"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 21:15",
+        "luke 4:9",
+        "john 5:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "στρατηγὸς τοῦ ἱεροῦ",
+      "pron": "스트라테고스 투 히에루",
+      "lemmas": [
+        "στρατηγός",
+        "ὁ",
+        "ἱερός"
+      ],
+      "words": [
+        {
+          "word": "στρατηγὸς",
+          "lemma": "στρατηγός",
+          "strong": "G4755",
+          "pron": "스트라테고스"
+        },
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        },
+        {
+          "word": "ἱεροῦ",
+          "lemma": "ἱερός",
+          "strong": "G2413",
+          "pron": "히에루"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "luke 22:52",
+        "acts 4:1",
+        "acts 5:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "τῷ ἱερῷ διδάσκων",
+      "pron": "토 히에로 디다스콘",
+      "lemmas": [
+        "ὁ",
+        "ἱερός",
+        "διδάσκω"
+      ],
+      "words": [
+        {
+          "word": "τῷ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토"
+        },
+        {
+          "word": "ἱερῷ",
+          "lemma": "ἱερός",
+          "strong": "G2413",
+          "pron": "히에로"
+        },
+        {
+          "word": "διδάσκων",
+          "lemma": "διδάσκω",
+          "strong": "G1321",
+          "pron": "디다스콘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "mark 14:49",
+        "luke 21:37",
+        "john 7:28"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

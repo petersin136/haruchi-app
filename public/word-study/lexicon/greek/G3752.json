@@ -5,10 +5,16 @@
   "posKo": "접속사",
   "root": {
     "lemma": "ὅτε",
-    "strong": "G3753"
+    "strong": "G3753",
+    "glossKo": "~때에"
   },
   "family": [
-    "ὅτε"
+    {
+      "lemma": "ὅτε",
+      "strong": "G3753",
+      "pron": "호테",
+      "glossKo": "~때에"
+    }
   ],
   "defEn": "whenever (implying hypothesis or more or less uncertainty); also causatively (conjunctionally) inasmuch as",
   "defKo": "",
@@ -37,9 +43,24 @@
   "phrases": [
     {
       "greek": "ὅταν ἔλθῃ",
+      "pron": "호탄 엘테",
       "lemmas": [
         "ὅταν",
         "ἔρχομαι"
+      ],
+      "words": [
+        {
+          "word": "ὅταν",
+          "lemma": "ὅταν",
+          "strong": "G3752",
+          "pron": "호탄"
+        },
+        {
+          "word": "ἔλθῃ",
+          "lemma": "ἔρχομαι",
+          "strong": "G2064",
+          "pron": "엘테"
+        }
       ],
       "count": 12,
       "refs": [
@@ -60,9 +81,24 @@
     },
     {
       "greek": "αὐτῶν ὅταν",
+      "pron": "아우톤 호탄",
       "lemmas": [
         "αὐτός",
         "ὅταν"
+      ],
+      "words": [
+        {
+          "word": "αὐτῶν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "ὅταν",
+          "lemma": "ὅταν",
+          "strong": "G3752",
+          "pron": "호탄"
+        }
       ],
       "count": 7,
       "refs": [
@@ -78,9 +114,24 @@
     },
     {
       "greek": "ἵνα ὅταν",
+      "pron": "히나 호탄",
       "lemmas": [
         "ἵνα",
         "ὅταν"
+      ],
+      "words": [
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        },
+        {
+          "word": "ὅταν",
+          "lemma": "ὅταν",
+          "strong": "G3752",
+          "pron": "호탄"
+        }
       ],
       "count": 7,
       "refs": [
@@ -96,9 +147,24 @@
     },
     {
       "greek": "ὑμεῖς ὅταν",
+      "pron": "휘메이스 호탄",
       "lemmas": [
         "σύ",
         "ὅταν"
+      ],
+      "words": [
+        {
+          "word": "ὑμεῖς",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘메이스"
+        },
+        {
+          "word": "ὅταν",
+          "lemma": "ὅταν",
+          "strong": "G3752",
+          "pron": "호탄"
+        }
       ],
       "count": 6,
       "refs": [
@@ -113,9 +179,24 @@
     },
     {
       "greek": "ὅταν ἴδητε",
+      "pron": "호탄 이데테",
       "lemmas": [
         "ὅταν",
         "ὁράω"
+      ],
+      "words": [
+        {
+          "word": "ὅταν",
+          "lemma": "ὅταν",
+          "strong": "G3752",
+          "pron": "호탄"
+        },
+        {
+          "word": "ἴδητε",
+          "lemma": "ὁράω",
+          "strong": "G3708",
+          "pron": "이데테"
+        }
       ],
       "count": 5,
       "refs": [

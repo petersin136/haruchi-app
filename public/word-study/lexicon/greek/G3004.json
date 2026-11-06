@@ -5,7 +5,12 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "λόγος"
+    {
+      "lemma": "λόγος",
+      "strong": "G3056",
+      "pron": "로고스",
+      "glossKo": "말씀"
+    }
   ],
   "defEn": "properly, to \"lay\" forth, i.e. (figuratively) relate (in words (usually of systematic or set discourse; whereas and g…",
   "defKo": "",
@@ -42,9 +47,24 @@
   "phrases": [
     {
       "greek": "εἶπεν αὐτοῖς",
+      "pron": "에이펜 아우토이스",
       "lemmas": [
         "λέγω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "εἶπεν",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "에이펜"
+        },
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        }
       ],
       "count": 484,
       "refs": [
@@ -65,9 +85,24 @@
     },
     {
       "greek": "λέγω ὑμῖν",
+      "pron": "레고 휘민",
       "lemmas": [
         "λέγω",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "λέγω",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레고"
+        },
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        }
       ],
       "count": 186,
       "refs": [
@@ -88,9 +123,24 @@
     },
     {
       "greek": "αὐτὸν λέγοντες",
+      "pron": "아우톤 레곤테스",
       "lemmas": [
         "αὐτός",
         "λέγω"
+      ],
+      "words": [
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "λέγοντες",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레곤테스"
+        }
       ],
       "count": 176,
       "refs": [
@@ -111,10 +161,31 @@
     },
     {
       "greek": "καὶ λέγει αὐτοῖς",
+      "pron": "카이 레게이 아우토이스",
       "lemmas": [
         "καί",
         "λέγω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "λέγει",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레게이"
+        },
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        }
       ],
       "count": 167,
       "refs": [
@@ -135,9 +206,24 @@
     },
     {
       "greek": "λέγοντες ὅτι",
+      "pron": "레곤테스 호티",
       "lemmas": [
         "λέγω",
         "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "λέγοντες",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레곤테스"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
       ],
       "count": 104,
       "refs": [

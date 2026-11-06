@@ -4,11 +4,17 @@
   "strong": "G2424",
   "posKo": "명사",
   "root": {
-    "lemma": "Λώτ",
-    "strong": "G3091"
+    "lemma": "Λώτ",
+    "strong": "G3091",
+    "glossKo": "롯"
   },
   "family": [
-    "Λώτ"
+    {
+      "lemma": "Λώτ",
+      "strong": "G3091",
+      "pron": "로트",
+      "glossKo": "롯"
+    }
   ],
   "defEn": "Jesus (i.e. Jehoshua), the name of our Lord and two (three) other Israelites",
   "defKo": "",
@@ -46,9 +52,24 @@
   "phrases": [
     {
       "greek": "Ἰησοῦ Χριστοῦ",
+      "pron": "이에수 크리스투",
       "lemmas": [
         "Ἰησοῦς",
         "Χριστός"
+      ],
+      "words": [
+        {
+          "word": "Ἰησοῦ",
+          "lemma": "Ἰησοῦς",
+          "strong": "G2424",
+          "pron": "이에수"
+        },
+        {
+          "word": "Χριστοῦ",
+          "lemma": "Χριστός",
+          "strong": "G5547",
+          "pron": "크리스투"
+        }
       ],
       "count": 133,
       "refs": [
@@ -69,10 +90,31 @@
     },
     {
       "greek": "αὐτοῖς ὁ Ἰησοῦς",
+      "pron": "아우토이스 호 이에수스",
       "lemmas": [
         "αὐτός",
         "ὁ",
         "Ἰησοῦς"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        },
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        },
+        {
+          "word": "Ἰησοῦς",
+          "lemma": "Ἰησοῦς",
+          "strong": "G2424",
+          "pron": "이에수스"
+        }
       ],
       "count": 111,
       "refs": [
@@ -93,9 +135,24 @@
     },
     {
       "greek": "Χριστῷ Ἰησοῦ",
+      "pron": "크리스토 이에수",
       "lemmas": [
         "Χριστός",
         "Ἰησοῦς"
+      ],
+      "words": [
+        {
+          "word": "Χριστῷ",
+          "lemma": "Χριστός",
+          "strong": "G5547",
+          "pron": "크리스토"
+        },
+        {
+          "word": "Ἰησοῦ",
+          "lemma": "Ἰησοῦς",
+          "strong": "G2424",
+          "pron": "이에수"
+        }
       ],
       "count": 91,
       "refs": [
@@ -116,9 +173,24 @@
     },
     {
       "greek": "Ἰησοῦς εἶπεν",
+      "pron": "이에수스 에이펜",
       "lemmas": [
         "Ἰησοῦς",
         "λέγω"
+      ],
+      "words": [
+        {
+          "word": "Ἰησοῦς",
+          "lemma": "Ἰησοῦς",
+          "strong": "G2424",
+          "pron": "이에수스"
+        },
+        {
+          "word": "εἶπεν",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "에이펜"
+        }
       ],
       "count": 90,
       "refs": [
@@ -139,10 +211,31 @@
     },
     {
       "greek": "ὁ Ἰησοῦς εἶπεν",
+      "pron": "호 이에수스 에이펜",
       "lemmas": [
         "ὁ",
         "Ἰησοῦς",
         "λέγω"
+      ],
+      "words": [
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        },
+        {
+          "word": "Ἰησοῦς",
+          "lemma": "Ἰησοῦς",
+          "strong": "G2424",
+          "pron": "이에수스"
+        },
+        {
+          "word": "εἶπεν",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "에이펜"
+        }
       ],
       "count": 64,
       "refs": [

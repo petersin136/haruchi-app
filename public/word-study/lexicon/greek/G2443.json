@@ -5,13 +5,34 @@
   "posKo": "접속사",
   "root": {
     "lemma": "ἑαυτοῦ",
-    "strong": "G1438"
+    "strong": "G1438",
+    "glossKo": "자신"
   },
   "family": [
-    "αὑτοῦ",
-    "ἑαυτοῦ",
-    "ἱνατί",
-    "ἵνα μή"
+    {
+      "lemma": "αὑτοῦ",
+      "strong": "G848",
+      "pron": "아우투",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἑαυτοῦ",
+      "strong": "G1438",
+      "pron": "헤아우투",
+      "glossKo": "자신"
+    },
+    {
+      "lemma": "ἱνατί",
+      "strong": "G2444",
+      "pron": "히나티",
+      "glossKo": "왜"
+    },
+    {
+      "lemma": "ἵνα μή",
+      "strong": "G3363",
+      "pron": "히나메",
+      "glossKo": ""
+    }
   ],
   "defEn": "compare ); in order that (denoting the purpose or the result)",
   "defKo": "",
@@ -49,9 +70,24 @@
   "phrases": [
     {
       "greek": "ἵνα μὴ",
+      "pron": "히나 메",
       "lemmas": [
         "ἵνα",
         "μή"
+      ],
+      "words": [
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        },
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        }
       ],
       "count": 87,
       "refs": [
@@ -72,9 +108,24 @@
     },
     {
       "greek": "αὐτοῖς ἵνα",
+      "pron": "아우토이스 히나",
       "lemmas": [
         "αὐτός",
         "ἵνα"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        },
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        }
       ],
       "count": 60,
       "refs": [
@@ -95,9 +146,24 @@
     },
     {
       "greek": "ὑμῖν ἵνα",
+      "pron": "휘민 히나",
       "lemmas": [
         "σύ",
         "ἵνα"
+      ],
+      "words": [
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        },
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        }
       ],
       "count": 32,
       "refs": [
@@ -118,9 +184,24 @@
     },
     {
       "greek": "μου ἵνα",
+      "pron": "무 히나",
       "lemmas": [
         "ἐγώ",
         "ἵνα"
+      ],
+      "words": [
+        {
+          "word": "μου",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "무"
+        },
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        }
       ],
       "count": 28,
       "refs": [
@@ -141,9 +222,24 @@
     },
     {
       "greek": "ἀλλ ἵνα",
+      "pron": "알 히나",
       "lemmas": [
         "ἀλλά",
         "ἵνα"
+      ],
+      "words": [
+        {
+          "word": "ἀλλ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알"
+        },
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        }
       ],
       "count": 19,
       "refs": [

@@ -1,26 +1,37 @@
 {
   "lemma": "διάβολος",
-  "pron": "디아보로스",
+  "pron": "디아볼로스",
   "strong": "G1228",
   "posKo": "형용사",
   "root": {
-    "lemma": "διαβάλλω",
-    "strong": "G1225"
+    "lemma": "διαβάλλω",
+    "strong": "G1225",
+    "glossKo": "참소되다"
   },
   "family": [
-    "διαβάλλω",
-    "διαφθείρω"
+    {
+      "lemma": "διαβάλλω",
+      "strong": "G1225",
+      "pron": "디아발로",
+      "glossKo": "참소되다"
+    },
+    {
+      "lemma": "διαφθείρω",
+      "strong": "G1311",
+      "pron": "디아프테이로",
+      "glossKo": "쇠하게하다"
+    }
   ],
   "defEn": "a traducer; specially, Satan (compare )",
   "defKo": "",
   "compareKo": "",
-  "countNT": 35,
+  "countNT": 37,
   "byBook": {
     "matthew": 6,
     "luke": 5,
+    "revelation": 5,
     "john1": 4,
     "john": 3,
-    "revelation": 3,
     "timothy1": 3,
     "acts": 2,
     "ephesians": 2,
@@ -35,10 +46,31 @@
   "phrases": [
     {
       "greek": "αὐτὸν ὁ διάβολος",
+      "pron": "아우톤 호 디아볼로스",
       "lemmas": [
         "αὐτός",
         "ὁ",
         "διάβολος"
+      ],
+      "words": [
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        },
+        {
+          "word": "διάβολος",
+          "lemma": "διάβολος",
+          "strong": "G1228",
+          "pron": "디아볼로스"
+        }
       ],
       "count": 5,
       "refs": [
@@ -52,9 +84,24 @@
     },
     {
       "greek": "διάβολός ἐστιν",
+      "pron": "디아볼로스 에스틴",
       "lemmas": [
         "διάβολος",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "διάβολός",
+          "lemma": "διάβολος",
+          "strong": "G1228",
+          "pron": "디아볼로스"
+        },
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 3,
       "refs": [

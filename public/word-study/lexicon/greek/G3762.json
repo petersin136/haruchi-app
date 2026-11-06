@@ -4,14 +4,35 @@
   "strong": "G3762",
   "posKo": "형용사",
   "root": {
-    "lemma": "οὐδέ",
-    "strong": "G3761"
+    "lemma": "οὐδέ",
+    "strong": "G3761",
+    "glossKo": "~도 아니"
   },
   "family": [
-    "οὐδαμῶς",
-    "οὐδέ",
-    "οὐδέποτε",
-    "οὐδέπω"
+    {
+      "lemma": "οὐδαμῶς",
+      "strong": "G3760",
+      "pron": "우다모스",
+      "glossKo": "결코아니"
+    },
+    {
+      "lemma": "οὐδέ",
+      "strong": "G3761",
+      "pron": "우데",
+      "glossKo": "~도 아니"
+    },
+    {
+      "lemma": "οὐδέποτε",
+      "strong": "G3763",
+      "pron": "우데포테",
+      "glossKo": "결코아니"
+    },
+    {
+      "lemma": "οὐδέπω",
+      "strong": "G3764",
+      "pron": "우데포",
+      "glossKo": "아직아니"
+    }
   ],
   "defEn": "not even one (man, woman or thing), i.e. none, nobody, nothing",
   "defKo": "",
@@ -42,9 +63,24 @@
   "phrases": [
     {
       "greek": "ὅτι οὐδεὶς",
+      "pron": "호티 우데이스",
       "lemmas": [
         "ὅτι",
         "οὐδείς"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "οὐδεὶς",
+          "lemma": "οὐδείς",
+          "strong": "G3762",
+          "pron": "우데이스"
+        }
       ],
       "count": 17,
       "refs": [
@@ -65,9 +101,24 @@
     },
     {
       "greek": "οὐδεὶς δύναται",
+      "pron": "우데이스 뒤나타이",
       "lemmas": [
         "οὐδείς",
         "δύναμαι"
+      ],
+      "words": [
+        {
+          "word": "οὐδεὶς",
+          "lemma": "οὐδείς",
+          "strong": "G3762",
+          "pron": "우데이스"
+        },
+        {
+          "word": "δύναται",
+          "lemma": "δύναμαι",
+          "strong": "G1410",
+          "pron": "뒤나타이"
+        }
       ],
       "count": 16,
       "refs": [
@@ -88,9 +139,24 @@
     },
     {
       "greek": "οὐδέν ἐστιν",
+      "pron": "우덴 에스틴",
       "lemmas": [
         "οὐδείς",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "οὐδέν",
+          "lemma": "οὐδείς",
+          "strong": "G3762",
+          "pron": "우덴"
+        },
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 16,
       "refs": [
@@ -111,9 +177,24 @@
     },
     {
       "greek": "αὐτῶν οὐδένα",
+      "pron": "아우톤 우데나",
       "lemmas": [
         "αὐτός",
         "οὐδείς"
+      ],
+      "words": [
+        {
+          "word": "αὐτῶν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "οὐδένα",
+          "lemma": "οὐδείς",
+          "strong": "G3762",
+          "pron": "우데나"
+        }
       ],
       "count": 14,
       "refs": [
@@ -134,9 +215,24 @@
     },
     {
       "greek": "ὃν οὐδεὶς",
+      "pron": "혼 우데이스",
       "lemmas": [
         "ὅς",
         "οὐδείς"
+      ],
+      "words": [
+        {
+          "word": "ὃν",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "혼"
+        },
+        {
+          "word": "οὐδεὶς",
+          "lemma": "οὐδείς",
+          "strong": "G3762",
+          "pron": "우데이스"
+        }
       ],
       "count": 8,
       "refs": [

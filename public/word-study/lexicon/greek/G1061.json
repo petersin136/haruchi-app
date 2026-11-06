@@ -1,0 +1,103 @@
+{
+  "lemma": "γαμίζω",
+  "pron": "가미조",
+  "strong": "G1061",
+  "posKo": "동사",
+  "root": {
+    "lemma": "γάμος",
+    "strong": "G1062",
+    "glossKo": "혼인"
+  },
+  "family": [
+    {
+      "lemma": "γαμέω",
+      "strong": "G1060",
+      "pron": "가메오",
+      "glossKo": "장가들다"
+    },
+    {
+      "lemma": "γάμος",
+      "strong": "G1062",
+      "pron": "가모스",
+      "glossKo": "혼인"
+    }
+  ],
+  "defEn": "to espouse (a daughter to a husband)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 8,
+  "byBook": {
+    "luke": 3,
+    "corinthians1": 2,
+    "matthew": 2,
+    "mark": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "γαμοῦσιν οὔτε γαμίζονται",
+      "pron": "가무신 우테 가미존타이",
+      "lemmas": [
+        "γαμέω",
+        "οὔτε",
+        "γαμίζω"
+      ],
+      "words": [
+        {
+          "word": "γαμοῦσιν",
+          "lemma": "γαμέω",
+          "strong": "G1060",
+          "pron": "가무신"
+        },
+        {
+          "word": "οὔτε",
+          "lemma": "οὔτε",
+          "strong": "G3777",
+          "pron": "우테"
+        },
+        {
+          "word": "γαμίζονται",
+          "lemma": "γαμίζω",
+          "strong": "G1061",
+          "pron": "가미존타이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 22:30",
+        "mark 12:25",
+        "luke 20:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "οὔτε γαμίζονται",
+      "pron": "우테 가미존타이",
+      "lemmas": [
+        "οὔτε",
+        "γαμίζω"
+      ],
+      "words": [
+        {
+          "word": "οὔτε",
+          "lemma": "οὔτε",
+          "strong": "G3777",
+          "pron": "우테"
+        },
+        {
+          "word": "γαμίζονται",
+          "lemma": "γαμίζω",
+          "strong": "G1061",
+          "pron": "가미존타이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 22:30",
+        "mark 12:25",
+        "luke 20:35"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

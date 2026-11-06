@@ -1,0 +1,123 @@
+{
+  "lemma": "ἐπιλαμβάνομαι",
+  "pron": "에필람바노마이",
+  "strong": "G1949",
+  "posKo": "동사",
+  "root": {
+    "lemma": "ἐπί",
+    "strong": "G1909",
+    "glossKo": "위에"
+  },
+  "family": [
+    {
+      "lemma": "ἐπαγγέλλομαι",
+      "strong": "G1861",
+      "pron": "에팡겔로마이",
+      "glossKo": "약속하다"
+    },
+    {
+      "lemma": "ἐπάγω",
+      "strong": "G1863",
+      "pron": "에파고",
+      "glossKo": "끌어들이다"
+    },
+    {
+      "lemma": "ἐπαγωνίζομαι",
+      "strong": "G1864",
+      "pron": "에파고니조마이",
+      "glossKo": "힘써싸우다"
+    },
+    {
+      "lemma": "ἐπαθροίζομαι",
+      "strong": "G1865",
+      "pron": "에파트로이조마이",
+      "glossKo": "모이다"
+    },
+    {
+      "lemma": "ἐπαινέω",
+      "strong": "G1867",
+      "pron": "에파이네오",
+      "glossKo": "칭찬하다"
+    },
+    {
+      "lemma": "ἔπαινος",
+      "strong": "G1868",
+      "pron": "에파이노스",
+      "glossKo": "칭찬"
+    }
+  ],
+  "defEn": "to seize (for help, injury, attainment, or any other purpose; literally or figuratively)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 19,
+  "byBook": {
+    "acts": 7,
+    "luke": 5,
+    "hebrews": 3,
+    "timothy1": 2,
+    "mark": 1,
+    "matthew": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐπελάβετο αὐτοῦ",
+      "pron": "에펠라베토 아우투",
+      "lemmas": [
+        "ἐπιλαμβάνομαι",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἐπελάβετο",
+          "lemma": "ἐπιλαμβάνομαι",
+          "strong": "G1949",
+          "pron": "에펠라베토"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 14:31",
+        "luke 20:20",
+        "acts 9:27",
+        "acts 21:33"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "αὐτῶν ἐπιλαβόμενος",
+      "pron": "아우톤 에필라보메노스",
+      "lemmas": [
+        "αὐτός",
+        "ἐπιλαμβάνομαι"
+      ],
+      "words": [
+        {
+          "word": "αὐτῶν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "ἐπιλαβόμενος",
+          "lemma": "ἐπιλαμβάνομαι",
+          "strong": "G1949",
+          "pron": "에필라보메노스"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "luke 9:47",
+        "luke 23:26",
+        "acts 16:19"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

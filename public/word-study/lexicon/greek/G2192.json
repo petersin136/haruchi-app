@@ -5,12 +5,42 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "ἑξῆς",
-    "ἕξις",
-    "ἔσχατος",
-    "εὐνοῦχος",
-    "ὄχλος",
-    "ὀχύρωμα"
+    {
+      "lemma": "ἑξῆς",
+      "strong": "G1836",
+      "pron": "헤크세스",
+      "glossKo": "이튿날"
+    },
+    {
+      "lemma": "ἕξις",
+      "strong": "G1838",
+      "pron": "헤크시스",
+      "glossKo": "지각"
+    },
+    {
+      "lemma": "ἔσχατος",
+      "strong": "G2078",
+      "pron": "에스카토스",
+      "glossKo": "마지막"
+    },
+    {
+      "lemma": "εὐνοῦχος",
+      "strong": "G2135",
+      "pron": "에우누코스",
+      "glossKo": "고자"
+    },
+    {
+      "lemma": "ὄχλος",
+      "strong": "G3793",
+      "pron": "오크로스",
+      "glossKo": "무리"
+    },
+    {
+      "lemma": "ὀχύρωμα",
+      "strong": "G3794",
+      "pron": "오퀴로마",
+      "glossKo": "견고한진"
+    }
   ],
   "defEn": "to hold (used in very various applications, literally or figuratively, direct or remote; such as possession; ability,…",
   "defKo": "",
@@ -49,9 +79,24 @@
   "phrases": [
     {
       "greek": "οὐκ ἔχει",
+      "pron": "우크 에케이",
       "lemmas": [
         "οὐ",
         "ἔχω"
+      ],
+      "words": [
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        },
+        {
+          "word": "ἔχει",
+          "lemma": "ἔχω",
+          "strong": "G2192",
+          "pron": "에케이"
+        }
       ],
       "count": 68,
       "refs": [
@@ -72,9 +117,24 @@
     },
     {
       "greek": "μὴ ἔχων",
+      "pron": "메 에콘",
       "lemmas": [
         "μή",
         "ἔχω"
+      ],
+      "words": [
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        },
+        {
+          "word": "ἔχων",
+          "lemma": "ἔχω",
+          "strong": "G2192",
+          "pron": "에콘"
+        }
       ],
       "count": 36,
       "refs": [
@@ -95,9 +155,24 @@
     },
     {
       "greek": "ὃ ἔχει",
+      "pron": "호 에케이",
       "lemmas": [
         "ὅς",
         "ἔχω"
+      ],
+      "words": [
+        {
+          "word": "ὃ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호"
+        },
+        {
+          "word": "ἔχει",
+          "lemma": "ἔχω",
+          "strong": "G2192",
+          "pron": "에케이"
+        }
       ],
       "count": 33,
       "refs": [
@@ -118,9 +193,24 @@
     },
     {
       "greek": "χρείαν ἔχει",
+      "pron": "크레이안 에케이",
       "lemmas": [
         "χρεία",
         "ἔχω"
+      ],
+      "words": [
+        {
+          "word": "χρείαν",
+          "lemma": "χρεία",
+          "strong": "G5532",
+          "pron": "크레이안"
+        },
+        {
+          "word": "ἔχει",
+          "lemma": "ἔχω",
+          "strong": "G2192",
+          "pron": "에케이"
+        }
       ],
       "count": 32,
       "refs": [
@@ -141,9 +231,24 @@
     },
     {
       "greek": "ἔχων οὖς",
+      "pron": "에콘 우스",
       "lemmas": [
         "ἔχω",
         "οὖς"
+      ],
+      "words": [
+        {
+          "word": "ἔχων",
+          "lemma": "ἔχω",
+          "strong": "G2192",
+          "pron": "에콘"
+        },
+        {
+          "word": "οὖς",
+          "lemma": "οὖς",
+          "strong": "G3775",
+          "pron": "우스"
+        }
       ],
       "count": 15,
       "refs": [

@@ -1,0 +1,168 @@
+{
+  "lemma": "πόσος",
+  "pron": "포소스",
+  "strong": "G4214",
+  "posKo": "의문/부정 대명사",
+  "root": {
+    "lemma": "ὅς",
+    "strong": "G3739",
+    "glossKo": "(관계대명사)"
+  },
+  "family": [
+    {
+      "lemma": "ὅ ἐστι",
+      "strong": "G3603",
+      "pron": "호에스티",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ὅθεν",
+      "strong": "G3606",
+      "pron": "호텐",
+      "glossKo": "그러므로"
+    },
+    {
+      "lemma": "ὁποῖος",
+      "strong": "G3697",
+      "pron": "호포이오스",
+      "glossKo": "어떠한"
+    },
+    {
+      "lemma": "ὁπότε",
+      "strong": "G3698",
+      "pron": "호포테",
+      "glossKo": "할때"
+    },
+    {
+      "lemma": "ὅπου",
+      "strong": "G3699",
+      "pron": "호푸",
+      "glossKo": "어디든"
+    },
+    {
+      "lemma": "ὅπως",
+      "strong": "G3704",
+      "pron": "호포스",
+      "glossKo": "위하여"
+    }
+  ],
+  "defEn": "interrogative pronoun (of amount) how much (large, long or (plural) many)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 27,
+  "byBook": {
+    "matthew": 8,
+    "luke": 6,
+    "mark": 6,
+    "hebrews": 2,
+    "romans": 2,
+    "acts": 1,
+    "corinthians2": 1,
+    "philemon": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "πόσῳ μᾶλλον",
+      "pron": "포소 말론",
+      "lemmas": [
+        "πόσος",
+        "μᾶλλον"
+      ],
+      "words": [
+        {
+          "word": "πόσῳ",
+          "lemma": "πόσος",
+          "strong": "G4214",
+          "pron": "포소"
+        },
+        {
+          "word": "μᾶλλον",
+          "lemma": "μᾶλλον",
+          "strong": "G3123",
+          "pron": "말론"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "matthew 7:11",
+        "matthew 10:25",
+        "luke 11:13",
+        "luke 12:24",
+        "luke 12:28",
+        "romans 11:12",
+        "romans 11:24",
+        "hebrews 9:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "πόσῳ μᾶλλον ὁ",
+      "pron": "포소 말론 호",
+      "lemmas": [
+        "πόσος",
+        "μᾶλλον",
+        "ὁ"
+      ],
+      "words": [
+        {
+          "word": "πόσῳ",
+          "lemma": "πόσος",
+          "strong": "G4214",
+          "pron": "포소"
+        },
+        {
+          "word": "μᾶλλον",
+          "lemma": "μᾶλλον",
+          "strong": "G3123",
+          "pron": "말론"
+        },
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "matthew 7:11",
+        "matthew 10:25",
+        "luke 11:13",
+        "romans 11:12",
+        "hebrews 9:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "αὐτοῖς Πόσους",
+      "pron": "아우토이스 포수스",
+      "lemmas": [
+        "αὐτός",
+        "πόσος"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        },
+        {
+          "word": "Πόσους",
+          "lemma": "πόσος",
+          "strong": "G4214",
+          "pron": "포수스"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "mark 6:38",
+        "mark 8:5",
+        "mark 9:21",
+        "luke 12:24"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

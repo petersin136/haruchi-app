@@ -4,41 +4,83 @@
   "strong": "G4225",
   "posKo": "부사",
   "root": {
-    "lemma": "πόσος",
-    "strong": "G4214"
+    "lemma": "πόσος",
+    "strong": "G4214",
+    "glossKo": "얼마나"
   },
   "family": [
-    "πηλίκος",
-    "ποσάκις",
-    "πόσος",
-    "ποτέ",
-    "-πώς"
+    {
+      "lemma": "πηλίκος",
+      "strong": "G4080",
+      "pron": "펠리코스",
+      "glossKo": "얼마나큰"
+    },
+    {
+      "lemma": "ποσάκις",
+      "strong": "G4212",
+      "pron": "포사키스",
+      "glossKo": "몇번"
+    },
+    {
+      "lemma": "πόσος",
+      "strong": "G4214",
+      "pron": "포소스",
+      "glossKo": "얼마나"
+    },
+    {
+      "lemma": "ποτέ",
+      "strong": "G4218",
+      "pron": "포테",
+      "glossKo": "언제"
+    },
+    {
+      "lemma": "-πώς",
+      "strong": "G4458",
+      "pron": "포스",
+      "glossKo": ""
+    }
   ],
   "defEn": "as adverb of place, somewhere, i.e. nearly",
   "defKo": "",
   "compareKo": "",
-  "countNT": 47,
+  "countNT": 51,
   "byBook": {
     "john": 18,
     "corinthians1": 8,
     "luke": 7,
     "matthew": 4,
+    "hebrews": 3,
     "mark": 3,
+    "romans": 2,
+    "acts": 1,
     "galatians": 1,
-    "hebrews": 1,
     "john1": 1,
     "peter1": 1,
     "peter2": 1,
-    "revelation": 1,
-    "romans": 1
+    "revelation": 1
   },
   "count1John": 1,
   "phrases": [
     {
       "greek": "Ποῦ ἐστιν",
+      "pron": "푸 에스틴",
       "lemmas": [
         "ποῦ",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "Ποῦ",
+          "lemma": "ποῦ",
+          "strong": "G4225",
+          "pron": "푸"
+        },
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 8,
       "refs": [
@@ -55,9 +97,24 @@
     },
     {
       "greek": "ποῦ ὑπάγει",
+      "pron": "푸 휘파게이",
       "lemmas": [
         "ποῦ",
         "ὑπάγω"
+      ],
+      "words": [
+        {
+          "word": "ποῦ",
+          "lemma": "ποῦ",
+          "strong": "G4225",
+          "pron": "푸"
+        },
+        {
+          "word": "ὑπάγει",
+          "lemma": "ὑπάγω",
+          "strong": "G5217",
+          "pron": "휘파게이"
+        }
       ],
       "count": 8,
       "refs": [
@@ -73,9 +130,24 @@
     },
     {
       "greek": "αὐτῷ Ποῦ",
+      "pron": "아우토 푸",
       "lemmas": [
         "αὐτός",
         "ποῦ"
+      ],
+      "words": [
+        {
+          "word": "αὐτῷ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        },
+        {
+          "word": "Ποῦ",
+          "lemma": "ποῦ",
+          "strong": "G4225",
+          "pron": "푸"
+        }
       ],
       "count": 7,
       "refs": [
@@ -91,9 +163,24 @@
     },
     {
       "greek": "λέγοντες Ποῦ",
+      "pron": "레곤테스 푸",
       "lemmas": [
         "λέγω",
         "ποῦ"
+      ],
+      "words": [
+        {
+          "word": "λέγοντες",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레곤테스"
+        },
+        {
+          "word": "Ποῦ",
+          "lemma": "ποῦ",
+          "strong": "G4225",
+          "pron": "푸"
+        }
       ],
       "count": 6,
       "refs": [
@@ -108,9 +195,24 @@
     },
     {
       "greek": "οἶδεν ποῦ",
+      "pron": "오이덴 푸",
       "lemmas": [
         "οἶδα",
         "ποῦ"
+      ],
+      "words": [
+        {
+          "word": "οἶδεν",
+          "lemma": "οἶδα",
+          "strong": "G1492",
+          "pron": "오이덴"
+        },
+        {
+          "word": "ποῦ",
+          "lemma": "ποῦ",
+          "strong": "G4225",
+          "pron": "푸"
+        }
       ],
       "count": 6,
       "refs": [

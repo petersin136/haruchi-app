@@ -1,0 +1,121 @@
+{
+  "lemma": "πλοῖον",
+  "pron": "플로이온",
+  "strong": "G4143",
+  "posKo": "명사",
+  "root": {
+    "lemma": "πλέω",
+    "strong": "G4126",
+    "glossKo": "항해하다"
+  },
+  "family": [
+    {
+      "lemma": "πλέω",
+      "strong": "G4126",
+      "pron": "플레오",
+      "glossKo": "항해하다"
+    },
+    {
+      "lemma": "πλοιάριον",
+      "strong": "G4142",
+      "pron": "플로이아리온",
+      "glossKo": "작은배"
+    },
+    {
+      "lemma": "πλόος",
+      "strong": "G4144",
+      "pron": "플로오스",
+      "glossKo": ""
+    }
+  ],
+  "defEn": "a sailer, i.e. vessel",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 67,
+  "byBook": {
+    "acts": 19,
+    "mark": 17,
+    "matthew": 13,
+    "luke": 8,
+    "john": 7,
+    "revelation": 2,
+    "james": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐμβὰς εἰς πλοῖον",
+      "pron": "엠바스 에이스 플로이온",
+      "lemmas": [
+        "ἐμβαίνω",
+        "εἰς",
+        "πλοῖον"
+      ],
+      "words": [
+        {
+          "word": "ἐμβὰς",
+          "lemma": "ἐμβαίνω",
+          "strong": "G1684",
+          "pron": "엠바스"
+        },
+        {
+          "word": "εἰς",
+          "lemma": "εἰς",
+          "strong": "G1519",
+          "pron": "에이스"
+        },
+        {
+          "word": "πλοῖον",
+          "lemma": "πλοῖον",
+          "strong": "G4143",
+          "pron": "플로이온"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "matthew 9:1",
+        "matthew 14:22",
+        "luke 8:22",
+        "luke 8:37",
+        "john 6:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "αὐτὸν εἰς πλοῖον",
+      "pron": "아우톤 에이스 플로이온",
+      "lemmas": [
+        "αὐτός",
+        "εἰς",
+        "πλοῖον"
+      ],
+      "words": [
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "εἰς",
+          "lemma": "εἰς",
+          "strong": "G1519",
+          "pron": "에이스"
+        },
+        {
+          "word": "πλοῖον",
+          "lemma": "πλοῖον",
+          "strong": "G4143",
+          "pron": "플로이온"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 8:23",
+        "matthew 13:2",
+        "mark 4:1"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

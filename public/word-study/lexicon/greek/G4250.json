@@ -1,0 +1,227 @@
+{
+  "lemma": "πρίν",
+  "pron": "프린",
+  "strong": "G4250",
+  "posKo": "접속사",
+  "root": {
+    "lemma": "πρό",
+    "strong": "G4253",
+    "glossKo": "전에"
+  },
+  "family": [
+    {
+      "lemma": "πόρρω",
+      "strong": "G4206",
+      "pron": "포로",
+      "glossKo": "멀리"
+    },
+    {
+      "lemma": "πρηνής",
+      "strong": "G4248",
+      "pron": "프레네스",
+      "glossKo": "곤두박이로"
+    },
+    {
+      "lemma": "πρό",
+      "strong": "G4253",
+      "pron": "프로",
+      "glossKo": "전에"
+    },
+    {
+      "lemma": "προάγω",
+      "strong": "G4254",
+      "pron": "프로아고",
+      "glossKo": "앞서가다"
+    },
+    {
+      "lemma": "προαιρέομαι",
+      "strong": "G4255",
+      "pron": "프로아이레오마이",
+      "glossKo": "정하다"
+    },
+    {
+      "lemma": "προαιτιάομαι",
+      "strong": "G4256",
+      "pron": "프로아이티아오마이",
+      "glossKo": "이미증명하다"
+    }
+  ],
+  "defEn": "prior, sooner",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 13,
+  "byBook": {
+    "acts": 3,
+    "john": 3,
+    "matthew": 3,
+    "luke": 2,
+    "mark": 2
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "πρὶν ἢ",
+      "pron": "프린 에",
+      "lemmas": [
+        "πρίν",
+        "ἤ"
+      ],
+      "words": [
+        {
+          "word": "πρὶν",
+          "lemma": "πρίν",
+          "strong": "G4250",
+          "pron": "프린"
+        },
+        {
+          "word": "ἢ",
+          "lemma": "ἤ",
+          "strong": "G2228",
+          "pron": "에"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "matthew 1:18",
+        "mark 14:30",
+        "luke 2:26",
+        "acts 2:20",
+        "acts 7:2",
+        "acts 25:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "Πρὶν ἀλέκτορα",
+      "pron": "프린 알레크토라",
+      "lemmas": [
+        "πρίν",
+        "ἀλέκτωρ"
+      ],
+      "words": [
+        {
+          "word": "Πρὶν",
+          "lemma": "πρίν",
+          "strong": "G4250",
+          "pron": "프린"
+        },
+        {
+          "word": "ἀλέκτορα",
+          "lemma": "ἀλέκτωρ",
+          "strong": "G220",
+          "pron": "알레크토라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 26:34",
+        "matthew 26:75",
+        "mark 14:72",
+        "luke 22:61"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "Πρὶν ἀλέκτορα φωνῆσαι",
+      "pron": "프린 알레크토라 포네사이",
+      "lemmas": [
+        "πρίν",
+        "ἀλέκτωρ",
+        "φωνέω"
+      ],
+      "words": [
+        {
+          "word": "Πρὶν",
+          "lemma": "πρίν",
+          "strong": "G4250",
+          "pron": "프린"
+        },
+        {
+          "word": "ἀλέκτορα",
+          "lemma": "ἀλέκτωρ",
+          "strong": "G220",
+          "pron": "알레크토라"
+        },
+        {
+          "word": "φωνῆσαι",
+          "lemma": "φωνέω",
+          "strong": "G5455",
+          "pron": "포네사이"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 26:34",
+        "matthew 26:75",
+        "mark 14:72",
+        "luke 22:61"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ὅτι Πρὶν",
+      "pron": "호티 프린",
+      "lemmas": [
+        "ὅτι",
+        "πρίν"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "Πρὶν",
+          "lemma": "πρίν",
+          "strong": "G4250",
+          "pron": "프린"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 26:75",
+        "mark 14:72",
+        "luke 22:61"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ὅτι Πρὶν ἀλέκτορα",
+      "pron": "호티 프린 알레크토라",
+      "lemmas": [
+        "ὅτι",
+        "πρίν",
+        "ἀλέκτωρ"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "Πρὶν",
+          "lemma": "πρίν",
+          "strong": "G4250",
+          "pron": "프린"
+        },
+        {
+          "word": "ἀλέκτορα",
+          "lemma": "ἀλέκτωρ",
+          "strong": "G220",
+          "pron": "알레크토라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 26:75",
+        "mark 14:72",
+        "luke 22:61"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

@@ -4,17 +4,47 @@
   "strong": "G3441",
   "posKo": "형용사",
   "root": {
-    "lemma": "μένω",
+    "lemma": "μένω",
     "strong": "G3306",
-    "glossKo": "장소나 상태에 '그대로 있다'가 기본 그림이에요. 요한 문헌의 핵심 동사 중 하나예요."
+    "glossKo": "머물다"
   },
   "family": [
-    "μένω",
-    "μνάομαι",
-    "μονή",
-    "μονογενής",
-    "μόνον",
-    "μονόφθαλμος"
+    {
+      "lemma": "μένω",
+      "strong": "G3306",
+      "pron": "메노",
+      "glossKo": "머물다"
+    },
+    {
+      "lemma": "μνάομαι",
+      "strong": "G3415",
+      "pron": "므나오마이",
+      "glossKo": ""
+    },
+    {
+      "lemma": "μονή",
+      "strong": "G3438",
+      "pron": "모네",
+      "glossKo": "거할곳"
+    },
+    {
+      "lemma": "μονογενής",
+      "strong": "G3439",
+      "pron": "모노게네스",
+      "glossKo": "독생한"
+    },
+    {
+      "lemma": "μόνον",
+      "strong": "G3440",
+      "pron": "모논",
+      "glossKo": "다만"
+    },
+    {
+      "lemma": "μονόφθαλμος",
+      "strong": "G3442",
+      "pron": "모노프탈모스",
+      "glossKo": "한눈의"
+    }
   ],
   "defEn": "remaining, i.e. sole or single; by implication, mere",
   "defKo": "",
@@ -49,9 +79,24 @@
   "phrases": [
     {
       "greek": "οὐ μόνον",
+      "pron": "우 모논",
       "lemmas": [
         "οὐ",
         "μόνος"
+      ],
+      "words": [
+        {
+          "word": "οὐ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우"
+        },
+        {
+          "word": "μόνον",
+          "lemma": "μόνος",
+          "strong": "G3441",
+          "pron": "모논"
+        }
       ],
       "count": 26,
       "refs": [
@@ -72,9 +117,24 @@
     },
     {
       "greek": "μόνον ἀλλὰ",
+      "pron": "모논 알라",
       "lemmas": [
         "μόνος",
         "ἀλλά"
+      ],
+      "words": [
+        {
+          "word": "μόνον",
+          "lemma": "μόνος",
+          "strong": "G3441",
+          "pron": "모논"
+        },
+        {
+          "word": "ἀλλὰ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알라"
+        }
       ],
       "count": 12,
       "refs": [
@@ -95,10 +155,31 @@
     },
     {
       "greek": "οὐ μόνον δὲ",
+      "pron": "우 모논 데",
       "lemmas": [
         "οὐ",
         "μόνος",
         "δέ"
+      ],
+      "words": [
+        {
+          "word": "οὐ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우"
+        },
+        {
+          "word": "μόνον",
+          "lemma": "μόνος",
+          "strong": "G3441",
+          "pron": "모논"
+        },
+        {
+          "word": "δὲ",
+          "lemma": "δέ",
+          "strong": "G1161",
+          "pron": "데"
+        }
       ],
       "count": 9,
       "refs": [
@@ -116,10 +197,31 @@
     },
     {
       "greek": "μόνον ἀλλὰ καὶ",
+      "pron": "모논 알라 카이",
       "lemmas": [
         "μόνος",
         "ἀλλά",
         "καί"
+      ],
+      "words": [
+        {
+          "word": "μόνον",
+          "lemma": "μόνος",
+          "strong": "G3441",
+          "pron": "모논"
+        },
+        {
+          "word": "ἀλλὰ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알라"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        }
       ],
       "count": 8,
       "refs": [
@@ -136,9 +238,24 @@
     },
     {
       "greek": "αὐτὸς μόνος",
+      "pron": "아우토스 모노스",
       "lemmas": [
         "αὐτός",
         "μόνος"
+      ],
+      "words": [
+        {
+          "word": "αὐτὸς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토스"
+        },
+        {
+          "word": "μόνος",
+          "lemma": "μόνος",
+          "strong": "G3441",
+          "pron": "모노스"
+        }
       ],
       "count": 7,
       "refs": [

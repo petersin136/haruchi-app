@@ -5,15 +5,46 @@
   "posKo": "접속사",
   "root": {
     "lemma": "οὐ",
-    "strong": "G3756"
+    "strong": "G3756",
+    "glossKo": "아니다"
   },
   "family": [
-    "μή",
-    "οὐ μή",
-    "οὐ",
-    "οὐδείς",
-    "οὐδέποτε",
-    "οὐδέπω"
+    {
+      "lemma": "μή",
+      "strong": "G3361",
+      "pron": "메",
+      "glossKo": "아니다"
+    },
+    {
+      "lemma": "οὐ μή",
+      "strong": "G3364",
+      "pron": "우메",
+      "glossKo": ""
+    },
+    {
+      "lemma": "οὐ",
+      "strong": "G3756",
+      "pron": "우",
+      "glossKo": "아니다"
+    },
+    {
+      "lemma": "οὐδείς",
+      "strong": "G3762",
+      "pron": "우데이스",
+      "glossKo": "아무도"
+    },
+    {
+      "lemma": "οὐδέποτε",
+      "strong": "G3763",
+      "pron": "우데포테",
+      "glossKo": "결코아니"
+    },
+    {
+      "lemma": "οὐδέπω",
+      "strong": "G3764",
+      "pron": "우데포",
+      "glossKo": "아직아니"
+    }
   ],
   "defEn": "not however, i.e. neither, nor, not even",
   "defKo": "",
@@ -43,9 +74,24 @@
   "phrases": [
     {
       "greek": "αὐτοῖς Οὐδὲ",
+      "pron": "아우토이스 우데",
       "lemmas": [
         "αὐτός",
         "οὐδέ"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        },
+        {
+          "word": "Οὐδὲ",
+          "lemma": "οὐδέ",
+          "strong": "G3761",
+          "pron": "우데"
+        }
       ],
       "count": 7,
       "refs": [
@@ -61,9 +107,24 @@
     },
     {
       "greek": "ἀλλ οὐδὲ",
+      "pron": "알 우데",
       "lemmas": [
         "ἀλλά",
         "οὐδέ"
+      ],
+      "words": [
+        {
+          "word": "ἀλλ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알"
+        },
+        {
+          "word": "οὐδὲ",
+          "lemma": "οὐδέ",
+          "strong": "G3761",
+          "pron": "우데"
+        }
       ],
       "count": 5,
       "refs": [
@@ -77,9 +138,24 @@
     },
     {
       "greek": "Οὐδὲ ἐγὼ",
+      "pron": "우데 에고",
       "lemmas": [
         "οὐδέ",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "Οὐδὲ",
+          "lemma": "οὐδέ",
+          "strong": "G3761",
+          "pron": "우데"
+        },
+        {
+          "word": "ἐγὼ",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "에고"
+        }
       ],
       "count": 5,
       "refs": [
@@ -93,9 +169,24 @@
     },
     {
       "greek": "οὐδὲ ἓν",
+      "pron": "우데 엔",
       "lemmas": [
         "οὐδέ",
         "εἷς"
+      ],
+      "words": [
+        {
+          "word": "οὐδὲ",
+          "lemma": "οὐδέ",
+          "strong": "G3761",
+          "pron": "우데"
+        },
+        {
+          "word": "ἓν",
+          "lemma": "εἷς",
+          "strong": "G1519",
+          "pron": "엔"
+        }
       ],
       "count": 5,
       "refs": [
@@ -109,9 +200,24 @@
     },
     {
       "greek": "ἀνθρώπων οὐδὲ",
+      "pron": "안트로폰 우데",
       "lemmas": [
         "ἄνθρωπος",
         "οὐδέ"
+      ],
+      "words": [
+        {
+          "word": "ἀνθρώπων",
+          "lemma": "ἄνθρωπος",
+          "strong": "G444",
+          "pron": "안트로폰"
+        },
+        {
+          "word": "οὐδὲ",
+          "lemma": "οὐδέ",
+          "strong": "G3761",
+          "pron": "우데"
+        }
       ],
       "count": 3,
       "refs": [

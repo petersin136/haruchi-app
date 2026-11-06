@@ -1,0 +1,219 @@
+{
+  "lemma": "θεραπεύω",
+  "pron": "테라페우오",
+  "strong": "G2323",
+  "posKo": "동사",
+  "root": {
+    "lemma": "θεράπων",
+    "strong": "G2324",
+    "glossKo": "사환"
+  },
+  "family": [
+    {
+      "lemma": "θεραπεία",
+      "strong": "G2322",
+      "pron": "테라페이아",
+      "glossKo": "치료"
+    },
+    {
+      "lemma": "θεράπων",
+      "strong": "G2324",
+      "pron": "테라폰",
+      "glossKo": "사환"
+    }
+  ],
+  "defEn": "to wait upon menially, i.e. (figuratively) to adore (God), or (specially) to relieve (of disease)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 43,
+  "byBook": {
+    "matthew": 16,
+    "luke": 14,
+    "acts": 5,
+    "mark": 5,
+    "revelation": 2,
+    "john": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐθεράπευσεν αὐτούς",
+      "pron": "에테라페우센 아우투스",
+      "lemmas": [
+        "θεραπεύω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἐθεράπευσεν",
+          "lemma": "θεραπεύω",
+          "strong": "G2323",
+          "pron": "에테라페우센"
+        },
+        {
+          "word": "αὐτούς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투스"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "matthew 4:24",
+        "matthew 8:7",
+        "matthew 12:15",
+        "matthew 12:22",
+        "matthew 15:30",
+        "matthew 19:2",
+        "matthew 21:14",
+        "mark 3:2",
+        "luke 4:40"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "καὶ ἐθεράπευσεν αὐτούς",
+      "pron": "카이 에테라페우센 아우투스",
+      "lemmas": [
+        "καί",
+        "θεραπεύω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "ἐθεράπευσεν",
+          "lemma": "θεραπεύω",
+          "strong": "G2323",
+          "pron": "에테라페우센"
+        },
+        {
+          "word": "αὐτούς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투스"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "matthew 4:24",
+        "matthew 12:15",
+        "matthew 12:22",
+        "matthew 15:30",
+        "matthew 19:2",
+        "matthew 21:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "σάββασιν θεραπεύειν",
+      "pron": "사바신 테라페우에인",
+      "lemmas": [
+        "σάββατον",
+        "θεραπεύω"
+      ],
+      "words": [
+        {
+          "word": "σάββασιν",
+          "lemma": "σάββατον",
+          "strong": "G4521",
+          "pron": "사바신"
+        },
+        {
+          "word": "θεραπεύειν",
+          "lemma": "θεραπεύω",
+          "strong": "G2323",
+          "pron": "테라페우에인"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "matthew 12:10",
+        "mark 3:2",
+        "luke 6:7",
+        "luke 13:14",
+        "luke 14:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "τοῖς σάββασιν θεραπεύειν",
+      "pron": "토이스 사바신 테라페우에인",
+      "lemmas": [
+        "ὁ",
+        "σάββατον",
+        "θεραπεύω"
+      ],
+      "words": [
+        {
+          "word": "τοῖς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토이스"
+        },
+        {
+          "word": "σάββασιν",
+          "lemma": "σάββατον",
+          "strong": "G4521",
+          "pron": "사바신"
+        },
+        {
+          "word": "θεραπεύειν",
+          "lemma": "θεραπεύω",
+          "strong": "G2323",
+          "pron": "테라페우에인"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "matthew 12:10",
+        "mark 3:2",
+        "luke 6:7",
+        "luke 13:14",
+        "luke 14:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "αὐτὰ καὶ θεραπεύειν",
+      "pron": "아우타 카이 테라페우에인",
+      "lemmas": [
+        "αὐτός",
+        "καί",
+        "θεραπεύω"
+      ],
+      "words": [
+        {
+          "word": "αὐτὰ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우타"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "θεραπεύειν",
+          "lemma": "θεραπεύω",
+          "strong": "G2323",
+          "pron": "테라페우에인"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 10:1",
+        "matthew 14:14",
+        "matthew 15:30"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

@@ -5,8 +5,18 @@
   "posKo": "명사",
   "root": null,
   "family": [
-    "αἱματεκχυσία",
-    "αἱμοῤῥέω"
+    {
+      "lemma": "αἱματεκχυσία",
+      "strong": "G130",
+      "pron": "하이마테크퀴시아",
+      "glossKo": "피흘림"
+    },
+    {
+      "lemma": "αἱμοῤῥέω",
+      "strong": "G131",
+      "pron": "하이모레오",
+      "glossKo": ""
+    }
   ],
   "defEn": "blood, literally (of men or animals), figuratively (the juice of grapes) or specially (the atoning blood of Christ);…",
   "defKo": "피예요. 생명과 희생, 정결케 함을 상징할 때 핵심 말이에요. 요한일서에서는 예수 피가 우리를 모든 죄에서 깨끗하게 하며, 물과 피와 성령의 증언에 참여해요. 요일 1:7, 5:6-8이 대표예요.",
@@ -32,9 +42,24 @@
   "phrases": [
     {
       "greek": "αἵματος αὐτῆς",
+      "pron": "하이마토스 아우테스",
       "lemmas": [
         "αἷμα",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "αἵματος",
+          "lemma": "αἷμα",
+          "strong": "G129",
+          "pron": "하이마토스"
+        },
+        {
+          "word": "αὐτῆς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우테스"
+        }
       ],
       "count": 7,
       "refs": [
@@ -50,10 +75,31 @@
     },
     {
       "greek": "τοῦ αἵματος αὐτῆς",
+      "pron": "투 하이마토스 아우테스",
       "lemmas": [
         "ὁ",
         "αἷμα",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        },
+        {
+          "word": "αἵματος",
+          "lemma": "αἷμα",
+          "strong": "G129",
+          "pron": "하이마토스"
+        },
+        {
+          "word": "αὐτῆς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우테스"
+        }
       ],
       "count": 6,
       "refs": [
@@ -68,9 +114,24 @@
     },
     {
       "greek": "αἷμά μου",
+      "pron": "하이마 무",
       "lemmas": [
         "αἷμα",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "αἷμά",
+          "lemma": "αἷμα",
+          "strong": "G129",
+          "pron": "하이마"
+        },
+        {
+          "word": "μου",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "무"
+        }
       ],
       "count": 5,
       "refs": [
@@ -84,10 +145,31 @@
     },
     {
       "greek": "τὸ αἷμά μου",
+      "pron": "토 하이마 무",
       "lemmas": [
         "ὁ",
         "αἷμα",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "τὸ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토"
+        },
+        {
+          "word": "αἷμά",
+          "lemma": "αἷμα",
+          "strong": "G129",
+          "pron": "하이마"
+        },
+        {
+          "word": "μου",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "무"
+        }
       ],
       "count": 5,
       "refs": [
@@ -101,9 +183,24 @@
     },
     {
       "greek": "αἵματι Ἰησοῦ",
+      "pron": "하이마티 이에수",
       "lemmas": [
         "αἷμα",
         "Ἰησοῦς"
+      ],
+      "words": [
+        {
+          "word": "αἵματι",
+          "lemma": "αἷμα",
+          "strong": "G129",
+          "pron": "하이마티"
+        },
+        {
+          "word": "Ἰησοῦ",
+          "lemma": "Ἰησοῦς",
+          "strong": "G2424",
+          "pron": "이에수"
+        }
       ],
       "count": 4,
       "refs": [

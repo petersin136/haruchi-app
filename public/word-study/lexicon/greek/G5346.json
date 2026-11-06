@@ -1,0 +1,243 @@
+{
+  "lemma": "φημί",
+  "pron": "페미",
+  "strong": "G5346",
+  "posKo": "동사",
+  "root": {
+    "lemma": "φῶς",
+    "strong": "G5457",
+    "glossKo": "빛"
+  },
+  "family": [
+    {
+      "lemma": "φαίνω",
+      "strong": "G5316",
+      "pron": "파이노",
+      "glossKo": "나타나다"
+    },
+    {
+      "lemma": "φάσις",
+      "strong": "G5334",
+      "pron": "파시스",
+      "glossKo": "보고"
+    },
+    {
+      "lemma": "φάσκω",
+      "strong": "G5335",
+      "pron": "파스코",
+      "glossKo": "주장하다"
+    },
+    {
+      "lemma": "φέγγος",
+      "strong": "G5338",
+      "pron": "펭고스",
+      "glossKo": "빛"
+    },
+    {
+      "lemma": "φήμη",
+      "strong": "G5345",
+      "pron": "페메",
+      "glossKo": "소문"
+    },
+    {
+      "lemma": "φῶς",
+      "strong": "G5457",
+      "pron": "포스",
+      "glossKo": "빛"
+    }
+  ],
+  "defEn": "to show or make known one's thoughts, i.e. speak or say",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 65,
+  "byBook": {
+    "acts": 24,
+    "matthew": 16,
+    "luke": 8,
+    "mark": 6,
+    "corinthians1": 5,
+    "john": 3,
+    "corinthians2": 1,
+    "hebrews": 1,
+    "romans": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἔφη αὐτῷ",
+      "pron": "에페 아우토",
+      "lemmas": [
+        "φημί",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἔφη",
+          "lemma": "φημί",
+          "strong": "G5346",
+          "pron": "에페"
+        },
+        {
+          "word": "αὐτῷ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "matthew 4:7",
+        "matthew 13:28",
+        "matthew 17:26",
+        "matthew 19:21",
+        "matthew 21:27",
+        "matthew 22:37",
+        "matthew 25:21",
+        "matthew 25:23",
+        "matthew 26:34",
+        "matthew 27:65",
+        "mark 9:12",
+        "mark 9:38"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἔφη αὐτῷ ὁ",
+      "pron": "에페 아우토 호",
+      "lemmas": [
+        "φημί",
+        "αὐτός",
+        "ὁ"
+      ],
+      "words": [
+        {
+          "word": "ἔφη",
+          "lemma": "φημί",
+          "strong": "G5346",
+          "pron": "에페"
+        },
+        {
+          "word": "αὐτῷ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        },
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "matthew 4:7",
+        "matthew 17:26",
+        "matthew 19:21",
+        "matthew 25:21",
+        "matthew 25:23",
+        "matthew 26:34",
+        "matthew 27:65",
+        "mark 9:38",
+        "mark 12:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "αὐτῷ ἔφη",
+      "pron": "아우토 에페",
+      "lemmas": [
+        "αὐτός",
+        "φημί"
+      ],
+      "words": [
+        {
+          "word": "αὐτῷ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        },
+        {
+          "word": "ἔφη",
+          "lemma": "φημί",
+          "strong": "G5346",
+          "pron": "에페"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "luke 22:58",
+        "luke 22:70",
+        "luke 23:3",
+        "luke 23:40"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "δὲ ἔφη αὐτοῖς",
+      "pron": "데 에페 아우토이스",
+      "lemmas": [
+        "δέ",
+        "φημί",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "δὲ",
+          "lemma": "δέ",
+          "strong": "G1161",
+          "pron": "데"
+        },
+        {
+          "word": "ἔφη",
+          "lemma": "φημί",
+          "strong": "G5346",
+          "pron": "에페"
+        },
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 13:28",
+        "matthew 22:37",
+        "mark 9:12",
+        "mark 10:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἔφη Ἄνδρες",
+      "pron": "에페 안드레스",
+      "lemmas": [
+        "φημί",
+        "ἀνήρ"
+      ],
+      "words": [
+        {
+          "word": "ἔφη",
+          "lemma": "φημί",
+          "strong": "G5346",
+          "pron": "에페"
+        },
+        {
+          "word": "Ἄνδρες",
+          "lemma": "ἀνήρ",
+          "strong": "G435",
+          "pron": "안드레스"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "acts 7:2",
+        "acts 17:22",
+        "acts 19:35"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

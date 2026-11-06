@@ -5,11 +5,36 @@
   "posKo": "인칭대명사",
   "root": null,
   "family": [
-    "σέ",
-    "σοί",
-    "σός",
-    "σοῦ",
-    "ὑμεῖς"
+    {
+      "lemma": "σέ",
+      "strong": "G4571",
+      "pron": "세",
+      "glossKo": ""
+    },
+    {
+      "lemma": "σοί",
+      "strong": "G4671",
+      "pron": "소이",
+      "glossKo": ""
+    },
+    {
+      "lemma": "σός",
+      "strong": "G4674",
+      "pron": "소스",
+      "glossKo": "너의"
+    },
+    {
+      "lemma": "σοῦ",
+      "strong": "G4675",
+      "pron": "수",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ὑμεῖς",
+      "strong": "G5210",
+      "pron": "휘메이스",
+      "glossKo": ""
+    }
   ],
   "defEn": "thou",
   "defKo": "",
@@ -48,9 +73,24 @@
   "phrases": [
     {
       "greek": "λέγω ὑμῖν",
+      "pron": "레고 휘민",
       "lemmas": [
         "λέγω",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "λέγω",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레고"
+        },
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        }
       ],
       "count": 186,
       "refs": [
@@ -71,9 +111,24 @@
     },
     {
       "greek": "ὑμῖν ὅτι",
+      "pron": "휘민 호티",
       "lemmas": [
         "σύ",
         "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
       ],
       "count": 115,
       "refs": [
@@ -94,9 +149,24 @@
     },
     {
       "greek": "Σὺ εἶ",
+      "pron": "쉬 에이",
       "lemmas": [
         "σύ",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "Σὺ",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "쉬"
+        },
+        {
+          "word": "εἶ",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에이"
+        }
       ],
       "count": 98,
       "refs": [
@@ -117,10 +187,31 @@
     },
     {
       "greek": "ἀμὴν λέγω ὑμῖν",
+      "pron": "아멘 레고 휘민",
       "lemmas": [
         "ἀμήν",
         "λέγω",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "ἀμὴν",
+          "lemma": "ἀμήν",
+          "strong": "G281",
+          "pron": "아멘"
+        },
+        {
+          "word": "λέγω",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레고"
+        },
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        }
       ],
       "count": 69,
       "refs": [
@@ -141,9 +232,24 @@
     },
     {
       "greek": "ὑμῖν οὐ",
+      "pron": "휘민 우",
       "lemmas": [
         "σύ",
         "οὐ"
+      ],
+      "words": [
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        },
+        {
+          "word": "οὐ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우"
+        }
       ],
       "count": 62,
       "refs": [

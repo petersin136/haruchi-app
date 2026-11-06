@@ -5,9 +5,24 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "θαῦμα",
-    "θέατρον",
-    "θεωρέω"
+    {
+      "lemma": "θαῦμα",
+      "strong": "G2295",
+      "pron": "타우마",
+      "glossKo": "이상함"
+    },
+    {
+      "lemma": "θέατρον",
+      "strong": "G2302",
+      "pron": "테아트론",
+      "glossKo": "극장"
+    },
+    {
+      "lemma": "θεωρέω",
+      "strong": "G2334",
+      "pron": "테오레오",
+      "glossKo": "바라보다"
+    }
   ],
   "defEn": "to look closely at, i.e. (by implication) perceive (literally or figuratively); by extension to visit",
   "defKo": "",
@@ -26,9 +41,24 @@
   "phrases": [
     {
       "greek": "θεαθῆναι αὐτοῖς",
+      "pron": "테아테나이 아우토이스",
       "lemmas": [
         "θεάομαι",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "θεαθῆναι",
+          "lemma": "θεάομαι",
+          "strong": "G2300",
+          "pron": "테아테나이"
+        },
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        }
       ],
       "count": 5,
       "refs": [

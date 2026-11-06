@@ -1,0 +1,158 @@
+{
+  "lemma": "ἐκλέγομαι",
+  "pron": "에클레고마이",
+  "strong": "G1586",
+  "posKo": "동사",
+  "root": {
+    "lemma": "ἐκ",
+    "strong": "G1537",
+    "glossKo": "에서"
+  },
+  "family": [
+    {
+      "lemma": "ἐκ",
+      "strong": "G1537",
+      "pron": "에크",
+      "glossKo": "에서"
+    },
+    {
+      "lemma": "ἐκβάλλω",
+      "strong": "G1544",
+      "pron": "에크발로",
+      "glossKo": "내쫓다"
+    },
+    {
+      "lemma": "ἔκβασις",
+      "strong": "G1545",
+      "pron": "에크바시스",
+      "glossKo": "피할길"
+    },
+    {
+      "lemma": "ἐκγαμίζω",
+      "strong": "G1547",
+      "pron": "에크가미조",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἐκγαμίσκω",
+      "strong": "G1548",
+      "pron": "에크가미스코",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἔκγονον",
+      "strong": "G1549",
+      "pron": "에크고논",
+      "glossKo": "자손"
+    }
+  ],
+  "defEn": "to select",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 22,
+  "byBook": {
+    "acts": 7,
+    "john": 5,
+    "luke": 4,
+    "corinthians1": 3,
+    "ephesians": 1,
+    "james": 1,
+    "mark": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐξελέξατο ὁ θεός",
+      "pron": "에크셀레크사토 호 테오스",
+      "lemmas": [
+        "ἐκλέγομαι",
+        "ὁ",
+        "θεός"
+      ],
+      "words": [
+        {
+          "word": "ἐξελέξατο",
+          "lemma": "ἐκλέγομαι",
+          "strong": "G1586",
+          "pron": "에크셀레크사토"
+        },
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        },
+        {
+          "word": "θεός",
+          "lemma": "θεός",
+          "strong": "G2316",
+          "pron": "테오스"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "acts 15:7",
+        "corinthians1 1:27",
+        "corinthians1 1:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἐγὼ ἐξελεξάμην",
+      "pron": "에고 에크셀레크사멘",
+      "lemmas": [
+        "ἐγώ",
+        "ἐκλέγομαι"
+      ],
+      "words": [
+        {
+          "word": "ἐγὼ",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "에고"
+        },
+        {
+          "word": "ἐξελεξάμην",
+          "lemma": "ἐκλέγομαι",
+          "strong": "G1586",
+          "pron": "에크셀레크사멘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "john 15:16",
+        "john 15:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "οὓς ἐξελέξατο",
+      "pron": "후스 에크셀레크사토",
+      "lemmas": [
+        "ὅς",
+        "ἐκλέγομαι"
+      ],
+      "words": [
+        {
+          "word": "οὓς",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "후스"
+        },
+        {
+          "word": "ἐξελέξατο",
+          "lemma": "ἐκλέγομαι",
+          "strong": "G1586",
+          "pron": "에크셀레크사토"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "mark 13:20",
+        "acts 1:2",
+        "acts 1:24"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

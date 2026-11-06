@@ -1,0 +1,104 @@
+{
+  "lemma": "πιάζω",
+  "pron": "피아조",
+  "strong": "G4084",
+  "posKo": "동사",
+  "root": {
+    "lemma": "βιάζω",
+    "strong": "G971",
+    "glossKo": "침노하다"
+  },
+  "family": [
+    {
+      "lemma": "βιάζω",
+      "strong": "G971",
+      "pron": "비아조",
+      "glossKo": "침노하다"
+    },
+    {
+      "lemma": "βιαστής",
+      "strong": "G973",
+      "pron": "비아스테스",
+      "glossKo": "침노하는자"
+    },
+    {
+      "lemma": "πιέζω",
+      "strong": "G4085",
+      "pron": "피에조",
+      "glossKo": "누르다"
+    }
+  ],
+  "defEn": "to squeeze, i.e. seize (gently by the hand (press), or officially (arrest), or in hunting (capture))",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 12,
+  "byBook": {
+    "john": 8,
+    "acts": 2,
+    "corinthians2": 1,
+    "revelation": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "πιάσωσιν αὐτόν",
+      "pron": "피아소신 아우톤",
+      "lemmas": [
+        "πιάζω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "πιάσωσιν",
+          "lemma": "πιάζω",
+          "strong": "G4084",
+          "pron": "피아소신"
+        },
+        {
+          "word": "αὐτόν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "john 7:32",
+        "john 7:44",
+        "john 8:20",
+        "john 11:57",
+        "acts 3:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "αὐτὸν πιάσαι",
+      "pron": "아우톤 피아사이",
+      "lemmas": [
+        "αὐτός",
+        "πιάζω"
+      ],
+      "words": [
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "πιάσαι",
+          "lemma": "πιάζω",
+          "strong": "G4084",
+          "pron": "피아사이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "john 7:30",
+        "john 7:44",
+        "john 10:39"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

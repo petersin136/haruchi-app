@@ -5,15 +5,46 @@
   "posKo": "접속사",
   "root": {
     "lemma": "ὅς",
-    "strong": "G3739"
+    "strong": "G3739",
+    "glossKo": "(관계대명사)"
   },
   "family": [
-    "ὅ ἐστι",
-    "ὅθεν",
-    "ὁποῖος",
-    "ὁπότε",
-    "ὅπου",
-    "ὅπως"
+    {
+      "lemma": "ὅ ἐστι",
+      "strong": "G3603",
+      "pron": "호에스티",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ὅθεν",
+      "strong": "G3606",
+      "pron": "호텐",
+      "glossKo": "그러므로"
+    },
+    {
+      "lemma": "ὁποῖος",
+      "strong": "G3697",
+      "pron": "호포이오스",
+      "glossKo": "어떠한"
+    },
+    {
+      "lemma": "ὁπότε",
+      "strong": "G3698",
+      "pron": "호포테",
+      "glossKo": "할때"
+    },
+    {
+      "lemma": "ὅπου",
+      "strong": "G3699",
+      "pron": "호푸",
+      "glossKo": "어디든"
+    },
+    {
+      "lemma": "ὅπως",
+      "strong": "G3704",
+      "pron": "호포스",
+      "glossKo": "위하여"
+    }
   ],
   "defEn": "which how, i.e. in that manner (very variously used, as follows)",
   "defKo": "",
@@ -51,9 +82,24 @@
   "phrases": [
     {
       "greek": "αὐτοῦ ὡς",
+      "pron": "아우투 호스",
       "lemmas": [
         "αὐτός",
         "ὡς"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "ὡς",
+          "lemma": "ὡς",
+          "strong": "G5613",
+          "pron": "호스"
+        }
       ],
       "count": 36,
       "refs": [
@@ -74,9 +120,24 @@
     },
     {
       "greek": "ὑμῶν ὡς",
+      "pron": "휘몬 호스",
       "lemmas": [
         "σύ",
         "ὡς"
+      ],
+      "words": [
+        {
+          "word": "ὑμῶν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘몬"
+        },
+        {
+          "word": "ὡς",
+          "lemma": "ὡς",
+          "strong": "G5613",
+          "pron": "호스"
+        }
       ],
       "count": 27,
       "refs": [
@@ -97,9 +158,24 @@
     },
     {
       "greek": "ἀλλ ὡς",
+      "pron": "알 호스",
       "lemmas": [
         "ἀλλά",
         "ὡς"
+      ],
+      "words": [
+        {
+          "word": "ἀλλ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알"
+        },
+        {
+          "word": "ὡς",
+          "lemma": "ὡς",
+          "strong": "G5613",
+          "pron": "호스"
+        }
       ],
       "count": 18,
       "refs": [
@@ -120,9 +196,24 @@
     },
     {
       "greek": "ἦν ὡς",
+      "pron": "엔 호스",
       "lemmas": [
         "εἰμί",
         "ὡς"
+      ],
+      "words": [
+        {
+          "word": "ἦν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "엔"
+        },
+        {
+          "word": "ὡς",
+          "lemma": "ὡς",
+          "strong": "G5613",
+          "pron": "호스"
+        }
       ],
       "count": 17,
       "refs": [
@@ -143,9 +234,24 @@
     },
     {
       "greek": "ἐγένετο ὡς",
+      "pron": "에게네토 호스",
       "lemmas": [
         "γίνομαι",
         "ὡς"
+      ],
+      "words": [
+        {
+          "word": "ἐγένετο",
+          "lemma": "γίνομαι",
+          "strong": "G1096",
+          "pron": "에게네토"
+        },
+        {
+          "word": "ὡς",
+          "lemma": "ὡς",
+          "strong": "G5613",
+          "pron": "호스"
+        }
       ],
       "count": 12,
       "refs": [

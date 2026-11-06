@@ -1,0 +1,202 @@
+{
+  "lemma": "κωλύω",
+  "pron": "콜뤼오",
+  "strong": "G2967",
+  "posKo": "동사",
+  "root": {
+    "lemma": "κολάζω",
+    "strong": "G2849",
+    "glossKo": "벌하다"
+  },
+  "family": [
+    {
+      "lemma": "κολάζω",
+      "strong": "G2849",
+      "pron": "콜라조",
+      "glossKo": "벌하다"
+    },
+    {
+      "lemma": "κόλασις",
+      "strong": "G2851",
+      "pron": "콜라시스",
+      "glossKo": "벌"
+    },
+    {
+      "lemma": "κολαφίζω",
+      "strong": "G2852",
+      "pron": "콜라피조",
+      "glossKo": "주먹으로치다"
+    },
+    {
+      "lemma": "κολοβόω",
+      "strong": "G2856",
+      "pron": "콜로보오",
+      "glossKo": "단축하다"
+    },
+    {
+      "lemma": "κῶλον",
+      "strong": "G2966",
+      "pron": "콜론",
+      "glossKo": "시체"
+    }
+  ],
+  "defEn": "to estop, i.e. prevent (by word or act)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 23,
+  "byBook": {
+    "acts": 6,
+    "luke": 6,
+    "mark": 3,
+    "corinthians1": 1,
+    "hebrews": 1,
+    "john3": 1,
+    "matthew": 1,
+    "peter2": 1,
+    "romans": 1,
+    "thessalonians1": 1,
+    "timothy1": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "κωλύετε αὐτά",
+      "pron": "콜뤼에테 아우타",
+      "lemmas": [
+        "κωλύω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "κωλύετε",
+          "lemma": "κωλύω",
+          "strong": "G2967",
+          "pron": "콜뤼에테"
+        },
+        {
+          "word": "αὐτά",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우타"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "matthew 19:14",
+        "mark 9:38",
+        "mark 9:39",
+        "mark 10:14",
+        "luke 9:49",
+        "luke 18:16",
+        "acts 27:43"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "μὴ κωλύετε",
+      "pron": "메 콜뤼에테",
+      "lemmas": [
+        "μή",
+        "κωλύω"
+      ],
+      "words": [
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        },
+        {
+          "word": "κωλύετε",
+          "lemma": "κωλύω",
+          "strong": "G2967",
+          "pron": "콜뤼에테"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "matthew 19:14",
+        "mark 9:39",
+        "mark 10:14",
+        "luke 6:29",
+        "luke 9:50",
+        "luke 18:16",
+        "corinthians1 14:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "μὴ κωλύετε αὐτά",
+      "pron": "메 콜뤼에테 아우타",
+      "lemmas": [
+        "μή",
+        "κωλύω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        },
+        {
+          "word": "κωλύετε",
+          "lemma": "κωλύω",
+          "strong": "G2967",
+          "pron": "콜뤼에테"
+        },
+        {
+          "word": "αὐτά",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우타"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 19:14",
+        "mark 9:39",
+        "mark 10:14",
+        "luke 18:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "κωλύετε αὐτά τῶν",
+      "pron": "콜뤼에테 아우타 톤",
+      "lemmas": [
+        "κωλύω",
+        "αὐτός",
+        "ὁ"
+      ],
+      "words": [
+        {
+          "word": "κωλύετε",
+          "lemma": "κωλύω",
+          "strong": "G2967",
+          "pron": "콜뤼에테"
+        },
+        {
+          "word": "αὐτά",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우타"
+        },
+        {
+          "word": "τῶν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "톤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "mark 10:14",
+        "luke 18:16",
+        "acts 27:43"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

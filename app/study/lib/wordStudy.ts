@@ -15,12 +15,27 @@ export type WordStudyToken = {
 export type WordStudyRoot = {
   lemma: string;
   strong?: string;
+  pron?: string;
   glossKo?: string;
+};
+
+/** 같은 뿌리: 옛 데이터는 lemma 문자열, 새 데이터는 객체 */
+export type WordStudyFamilyItem =
+  | string
+  | { lemma: string; strong?: string; pron?: string; glossKo?: string };
+
+export type WordStudyPhraseWord = {
+  word: string;
+  lemma?: string;
+  strong?: string;
+  pron?: string;
 };
 
 export type WordStudyPhrase = {
   greek: string;
+  pron?: string;
   lemmas?: string[];
+  words?: WordStudyPhraseWord[];
   count?: number;
   refs: string[];
 };
@@ -31,7 +46,7 @@ export type WordStudyLexicon = {
   strong: string;
   posKo?: string;
   root?: WordStudyRoot | null;
-  family?: string[];
+  family?: WordStudyFamilyItem[];
   defKo?: string;
   defEn?: string;
   compare?: string;
@@ -269,9 +284,24 @@ export function loadWordLexicon(
     }
   })();
 
-  p.catch(() => lexCache.delete(id));
+  // 사전 파일이 아직 채워지는 중일 수 있어 없음(null)은 캐시하지 않음
+  p.then(
+    (v) => {
+      if (v == null) lexCache.delete(id);
+    },
+    () => lexCache.delete(id),
+  );
   lexCache.set(id, p);
   return p;
+}
+
+export function familyItem(f: WordStudyFamilyItem): {
+  lemma: string;
+  strong?: string;
+  pron?: string;
+  glossKo?: string;
+} {
+  return typeof f === "string" ? { lemma: f } : f;
 }
 
 function normalizeKo(s: string): string {

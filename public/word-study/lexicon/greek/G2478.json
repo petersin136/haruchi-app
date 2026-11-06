@@ -4,12 +4,23 @@
   "strong": "G2478",
   "posKo": "형용사",
   "root": {
-    "lemma": "ἰσχύς",
-    "strong": "G2479"
+    "lemma": "ἰσχύς",
+    "strong": "G2479",
+    "glossKo": "힘"
   },
   "family": [
-    "ἰσχύς",
-    "ἰσχύω"
+    {
+      "lemma": "ἰσχύς",
+      "strong": "G2479",
+      "pron": "이스퀴스",
+      "glossKo": "힘"
+    },
+    {
+      "lemma": "ἰσχύω",
+      "strong": "G2480",
+      "pron": "이스퀴오",
+      "glossKo": "할 수 있다"
+    }
   ],
   "defEn": "forcible (literally or figuratively)",
   "defKo": "",
@@ -29,9 +40,24 @@
   "phrases": [
     {
       "greek": "ἄγγελον ἰσχυρὸν",
+      "pron": "앙겔론 이스퀴론",
       "lemmas": [
         "ἄγγελος",
         "ἰσχυρός"
+      ],
+      "words": [
+        {
+          "word": "ἄγγελον",
+          "lemma": "ἄγγελος",
+          "strong": "G32",
+          "pron": "앙겔론"
+        },
+        {
+          "word": "ἰσχυρὸν",
+          "lemma": "ἰσχυρός",
+          "strong": "G2478",
+          "pron": "이스퀴론"
+        }
       ],
       "count": 3,
       "refs": [
@@ -43,9 +69,24 @@
     },
     {
       "greek": "ἰσχυρότερός μου",
+      "pron": "이스퀴로테로스 무",
       "lemmas": [
         "ἰσχυρός",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "ἰσχυρότερός",
+          "lemma": "ἰσχυρός",
+          "strong": "G2478",
+          "pron": "이스퀴로테로스"
+        },
+        {
+          "word": "μου",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "무"
+        }
       ],
       "count": 3,
       "refs": [

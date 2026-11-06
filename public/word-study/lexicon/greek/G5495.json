@@ -4,16 +4,47 @@
   "strong": "G5495",
   "posKo": "명사",
   "root": {
-    "lemma": "χειμών",
-    "strong": "G5494"
+    "lemma": "χειμών",
+    "strong": "G5494",
+    "glossKo": "겨울"
   },
   "family": [
-    "χειμάζω",
-    "χείμαῤῥος",
-    "χειμών",
-    "χειραγωγός",
-    "χειρόγραφον",
-    "χειροποίητος"
+    {
+      "lemma": "χειμάζομαι",
+      "strong": "G5492",
+      "pron": "케이마조마이",
+      "glossKo": "광풍에쫓기다"
+    },
+    {
+      "lemma": "χείμαρρος",
+      "strong": "G5493",
+      "pron": "케이마로스",
+      "glossKo": "시내"
+    },
+    {
+      "lemma": "χειμών",
+      "strong": "G5494",
+      "pron": "케이몬",
+      "glossKo": "겨울"
+    },
+    {
+      "lemma": "χειραγωγός",
+      "strong": "G5497",
+      "pron": "케이라고고스",
+      "glossKo": "손잡고이끄는자"
+    },
+    {
+      "lemma": "χειρόγραφον",
+      "strong": "G5498",
+      "pron": "케이로그라폰",
+      "glossKo": "증서"
+    },
+    {
+      "lemma": "χειροποίητος",
+      "strong": "G5499",
+      "pron": "케이로포이에토스",
+      "glossKo": "손으로지은"
+    }
   ],
   "defEn": "the hand (literally or figuratively (power); especially (by Hebraism) a means or instrument)",
   "defKo": "",
@@ -46,9 +77,24 @@
   "phrases": [
     {
       "greek": "χειρὶ αὐτοῦ",
+      "pron": "케이리 아우투",
       "lemmas": [
         "χείρ",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "χειρὶ",
+          "lemma": "χείρ",
+          "strong": "G5495",
+          "pron": "케이리"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 47,
       "refs": [
@@ -69,10 +115,31 @@
     },
     {
       "greek": "τῇ χειρὶ αὐτοῦ",
+      "pron": "테 케이리 아우투",
       "lemmas": [
         "ὁ",
         "χείρ",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τῇ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "테"
+        },
+        {
+          "word": "χειρὶ",
+          "lemma": "χείρ",
+          "strong": "G5495",
+          "pron": "케이리"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 43,
       "refs": [
@@ -93,10 +160,31 @@
     },
     {
       "greek": "αὐτὸν τὰς χεῖρας",
+      "pron": "아우톤 타스 케이라스",
       "lemmas": [
         "αὐτός",
         "ὁ",
         "χείρ"
+      ],
+      "words": [
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "τὰς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "타스"
+        },
+        {
+          "word": "χεῖρας",
+          "lemma": "χείρ",
+          "strong": "G5495",
+          "pron": "케이라스"
+        }
       ],
       "count": 12,
       "refs": [
@@ -117,10 +205,31 @@
     },
     {
       "greek": "ἐκτείνας τὴν χεῖρα",
+      "pron": "에크테이나스 텐 케이라",
       "lemmas": [
         "ἐκτείνω",
         "ὁ",
         "χείρ"
+      ],
+      "words": [
+        {
+          "word": "ἐκτείνας",
+          "lemma": "ἐκτείνω",
+          "strong": "G1614",
+          "pron": "에크테이나스"
+        },
+        {
+          "word": "τὴν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "텐"
+        },
+        {
+          "word": "χεῖρα",
+          "lemma": "χείρ",
+          "strong": "G5495",
+          "pron": "케이라"
+        }
       ],
       "count": 11,
       "refs": [
@@ -140,9 +249,24 @@
     },
     {
       "greek": "χεῖρά σου",
+      "pron": "케이라 수",
       "lemmas": [
         "χείρ",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "χεῖρά",
+          "lemma": "χείρ",
+          "strong": "G5495",
+          "pron": "케이라"
+        },
+        {
+          "word": "σου",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "수"
+        }
       ],
       "count": 11,
       "refs": [

@@ -1,0 +1,115 @@
+{
+  "lemma": "φυτεύω",
+  "pron": "퓌튜오",
+  "strong": "G5452",
+  "posKo": "동사",
+  "root": {
+    "lemma": "φύω",
+    "strong": "G5453",
+    "glossKo": "나다"
+  },
+  "family": [
+    {
+      "lemma": "φυλή",
+      "strong": "G5443",
+      "pron": "퓔레",
+      "glossKo": "지파"
+    },
+    {
+      "lemma": "φύσις",
+      "strong": "G5449",
+      "pron": "퓌시스",
+      "glossKo": "본성"
+    },
+    {
+      "lemma": "φυτεία",
+      "strong": "G5451",
+      "pron": "퓌테이아",
+      "glossKo": "심긴것"
+    },
+    {
+      "lemma": "φύω",
+      "strong": "G5453",
+      "pron": "퓌오",
+      "glossKo": "나다"
+    }
+  ],
+  "defEn": "to set out in the earth, i.e. implant; figuratively, to instil doctrine",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 11,
+  "byBook": {
+    "corinthians1": 4,
+    "luke": 4,
+    "matthew": 2,
+    "mark": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐφύτευσεν ἀμπελῶνα",
+      "pron": "에퓌테우센 암펠로나",
+      "lemmas": [
+        "φυτεύω",
+        "ἀμπελών"
+      ],
+      "words": [
+        {
+          "word": "ἐφύτευσεν",
+          "lemma": "φυτεύω",
+          "strong": "G5452",
+          "pron": "에퓌테우센"
+        },
+        {
+          "word": "ἀμπελῶνα",
+          "lemma": "ἀμπελών",
+          "strong": "G290",
+          "pron": "암펠로나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 21:33",
+        "luke 20:9",
+        "corinthians1 9:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἐφύτευσεν ἀμπελῶνα καὶ",
+      "pron": "에퓌테우센 암펠로나 카이",
+      "lemmas": [
+        "φυτεύω",
+        "ἀμπελών",
+        "καί"
+      ],
+      "words": [
+        {
+          "word": "ἐφύτευσεν",
+          "lemma": "φυτεύω",
+          "strong": "G5452",
+          "pron": "에퓌테우센"
+        },
+        {
+          "word": "ἀμπελῶνα",
+          "lemma": "ἀμπελών",
+          "strong": "G290",
+          "pron": "암펠로나"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 21:33",
+        "luke 20:9",
+        "corinthians1 9:7"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

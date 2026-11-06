@@ -5,12 +5,42 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "εἶ",
-    "εἴην",
-    "εἶναι",
-    "εἰσί",
-    "ἐσμέν",
-    "ἔσομαι"
+    {
+      "lemma": "εἶ",
+      "strong": "G1488",
+      "pron": "에이",
+      "glossKo": ""
+    },
+    {
+      "lemma": "εἴην",
+      "strong": "G1498",
+      "pron": "에이엔",
+      "glossKo": ""
+    },
+    {
+      "lemma": "εἶναι",
+      "strong": "G1511",
+      "pron": "에이나이",
+      "glossKo": ""
+    },
+    {
+      "lemma": "εἰσί",
+      "strong": "G1526",
+      "pron": "에이시",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἐσμέν",
+      "strong": "G2070",
+      "pron": "에스멘",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἔσομαι",
+      "strong": "G2071",
+      "pron": "에소마이",
+      "glossKo": ""
+    }
   ],
   "defEn": "I exist (used only when emphatic)",
   "defKo": "",
@@ -49,9 +79,24 @@
   "phrases": [
     {
       "greek": "οὐκ ἔστιν",
+      "pron": "우크 에스틴",
       "lemmas": [
         "οὐ",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        },
+        {
+          "word": "ἔστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 178,
       "refs": [
@@ -72,9 +117,24 @@
     },
     {
       "greek": "οὗτός ἐστιν",
+      "pron": "후토스 에스틴",
       "lemmas": [
         "οὗτος",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "οὗτός",
+          "lemma": "οὗτος",
+          "strong": "G3778",
+          "pron": "후토스"
+        },
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 138,
       "refs": [
@@ -95,9 +155,24 @@
     },
     {
       "greek": "Σὺ εἶ",
+      "pron": "쉬 에이",
       "lemmas": [
         "σύ",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "Σὺ",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "쉬"
+        },
+        {
+          "word": "εἶ",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에이"
+        }
       ],
       "count": 98,
       "refs": [
@@ -118,9 +193,24 @@
     },
     {
       "greek": "ὅ ἐστιν",
+      "pron": "호 에스틴",
       "lemmas": [
         "ὅς",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "ὅ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호"
+        },
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 97,
       "refs": [
@@ -141,9 +231,24 @@
     },
     {
       "greek": "ἐγώ εἰμι",
+      "pron": "에고 에이미",
       "lemmas": [
         "ἐγώ",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "ἐγώ",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "에고"
+        },
+        {
+          "word": "εἰμι",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에이미"
+        }
       ],
       "count": 95,
       "refs": [

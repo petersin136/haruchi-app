@@ -1,0 +1,139 @@
+{
+  "lemma": "ἀντί",
+  "pron": "안티",
+  "strong": "G473",
+  "posKo": "전치사",
+  "root": null,
+  "family": [
+    {
+      "lemma": "ἀνθίστημι",
+      "strong": "G436",
+      "pron": "안티스테미",
+      "glossKo": "대적하다"
+    },
+    {
+      "lemma": "ἀνθομολογέομαι",
+      "strong": "G437",
+      "pron": "안토몰로게오마이",
+      "glossKo": "감사하다"
+    },
+    {
+      "lemma": "ἀνθύπατος",
+      "strong": "G446",
+      "pron": "안튀파토스",
+      "glossKo": "총독"
+    },
+    {
+      "lemma": "ἀνταγωνίζομαι",
+      "strong": "G464",
+      "pron": "안타고니조마이",
+      "glossKo": "맞서싸우다"
+    },
+    {
+      "lemma": "ἀντάλλαγμα",
+      "strong": "G465",
+      "pron": "안탈라그마",
+      "glossKo": "대가"
+    },
+    {
+      "lemma": "ἀνταναπληρόω",
+      "strong": "G466",
+      "pron": "안타나플레로오",
+      "glossKo": "채우다"
+    }
+  ],
+  "defEn": "opposite, i.e. instead or because of (rarely in addition to)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 22,
+  "byBook": {
+    "matthew": 5,
+    "luke": 4,
+    "hebrews": 2,
+    "peter1": 2,
+    "acts": 1,
+    "corinthians1": 1,
+    "ephesians": 1,
+    "james": 1,
+    "john": 1,
+    "mark": 1,
+    "romans": 1,
+    "thessalonians1": 1,
+    "thessalonians2": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἀνθ ὧν οὐκ",
+      "pron": "안트 혼 우크",
+      "lemmas": [
+        "ἀντί",
+        "ὅς",
+        "οὐ"
+      ],
+      "words": [
+        {
+          "word": "ἀνθ",
+          "lemma": "ἀντί",
+          "strong": "G473",
+          "pron": "안트"
+        },
+        {
+          "word": "ὧν",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "혼"
+        },
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "luke 1:20",
+        "luke 19:44",
+        "acts 12:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "κακὸν ἀντὶ κακοῦ",
+      "pron": "카콘 안티 카쿠",
+      "lemmas": [
+        "κακός",
+        "ἀντί",
+        "κακός"
+      ],
+      "words": [
+        {
+          "word": "κακὸν",
+          "lemma": "κακός",
+          "strong": "G2556",
+          "pron": "카콘"
+        },
+        {
+          "word": "ἀντὶ",
+          "lemma": "ἀντί",
+          "strong": "G473",
+          "pron": "안티"
+        },
+        {
+          "word": "κακοῦ",
+          "lemma": "κακός",
+          "strong": "G2556",
+          "pron": "카쿠"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "romans 12:17",
+        "thessalonians1 5:15",
+        "peter1 3:9"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

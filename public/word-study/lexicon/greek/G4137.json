@@ -4,13 +4,29 @@
   "strong": "G4137",
   "posKo": "동사",
   "root": {
-    "lemma": "πλήρης",
-    "strong": "G4134"
+    "lemma": "πλήρης",
+    "strong": "G4134",
+    "glossKo": "가득찬"
   },
   "family": [
-    "πλήρης",
-    "πληροφορέω",
-    "πλήρωμα"
+    {
+      "lemma": "πλήρης",
+      "strong": "G4134",
+      "pron": "플레레스",
+      "glossKo": "가득찬"
+    },
+    {
+      "lemma": "πληροφορέω",
+      "strong": "G4135",
+      "pron": "플레로포레오",
+      "glossKo": "이루어진"
+    },
+    {
+      "lemma": "πλήρωμα",
+      "strong": "G4138",
+      "pron": "플레로마",
+      "glossKo": "충만"
+    }
   ],
   "defEn": "to make replete, i.e. (literally) to cram (a net), level up (a hollow), or (figuratively) to furnish (or imbue, diffu…",
   "defKo": "",
@@ -39,9 +55,24 @@
   "phrases": [
     {
       "greek": "ἵνα πληρωθῇ",
+      "pron": "히나 플레로테",
       "lemmas": [
         "ἵνα",
         "πληρόω"
+      ],
+      "words": [
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        },
+        {
+          "word": "πληρωθῇ",
+          "lemma": "πληρόω",
+          "strong": "G4137",
+          "pron": "플레로테"
+        }
       ],
       "count": 12,
       "refs": [
@@ -62,10 +93,31 @@
     },
     {
       "greek": "ἵνα πληρωθῇ τὸ",
+      "pron": "히나 플레로테 토",
       "lemmas": [
         "ἵνα",
         "πληρόω",
         "ὁ"
+      ],
+      "words": [
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        },
+        {
+          "word": "πληρωθῇ",
+          "lemma": "πληρόω",
+          "strong": "G4137",
+          "pron": "플레로테"
+        },
+        {
+          "word": "τὸ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토"
+        }
       ],
       "count": 11,
       "refs": [
@@ -85,10 +137,31 @@
     },
     {
       "greek": "πληρωθῇ τὸ ῥηθὲν",
+      "pron": "플레로테 토 레텐",
       "lemmas": [
         "πληρόω",
         "ὁ",
         "λέγω"
+      ],
+      "words": [
+        {
+          "word": "πληρωθῇ",
+          "lemma": "πληρόω",
+          "strong": "G4137",
+          "pron": "플레로테"
+        },
+        {
+          "word": "τὸ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토"
+        },
+        {
+          "word": "ῥηθὲν",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레텐"
+        }
       ],
       "count": 11,
       "refs": [
@@ -108,9 +181,24 @@
     },
     {
       "greek": "πληρῶσαι πᾶσαν",
+      "pron": "플레로사이 파산",
       "lemmas": [
         "πληρόω",
         "πᾶς"
+      ],
+      "words": [
+        {
+          "word": "πληρῶσαι",
+          "lemma": "πληρόω",
+          "strong": "G4137",
+          "pron": "플레로사이"
+        },
+        {
+          "word": "πᾶσαν",
+          "lemma": "πᾶς",
+          "strong": "G3956",
+          "pron": "파산"
+        }
       ],
       "count": 7,
       "refs": [
@@ -126,10 +214,31 @@
     },
     {
       "greek": "πληρωθῶσιν αἱ γραφαὶ",
+      "pron": "플레로토신 하이 그라파이",
       "lemmas": [
         "πληρόω",
         "ὁ",
         "γραφή"
+      ],
+      "words": [
+        {
+          "word": "πληρωθῶσιν",
+          "lemma": "πληρόω",
+          "strong": "G4137",
+          "pron": "플레로토신"
+        },
+        {
+          "word": "αἱ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "하이"
+        },
+        {
+          "word": "γραφαὶ",
+          "lemma": "γραφή",
+          "strong": "G1124",
+          "pron": "그라파이"
+        }
       ],
       "count": 6,
       "refs": [

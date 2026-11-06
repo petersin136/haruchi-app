@@ -1,0 +1,162 @@
+{
+  "lemma": "ἐκδίδωμι",
+  "pron": "에크디도미",
+  "strong": "G1554",
+  "posKo": "동사",
+  "root": {
+    "lemma": "ἐκ",
+    "strong": "G1537",
+    "glossKo": "에서"
+  },
+  "family": [
+    {
+      "lemma": "ἐκ",
+      "strong": "G1537",
+      "pron": "에크",
+      "glossKo": "에서"
+    },
+    {
+      "lemma": "ἐκβάλλω",
+      "strong": "G1544",
+      "pron": "에크발로",
+      "glossKo": "내쫓다"
+    },
+    {
+      "lemma": "ἔκβασις",
+      "strong": "G1545",
+      "pron": "에크바시스",
+      "glossKo": "피할길"
+    },
+    {
+      "lemma": "ἐκγαμίζω",
+      "strong": "G1547",
+      "pron": "에크가미조",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἐκγαμίσκω",
+      "strong": "G1548",
+      "pron": "에크가미스코",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἔκγονον",
+      "strong": "G1549",
+      "pron": "에크고논",
+      "glossKo": "자손"
+    }
+  ],
+  "defEn": "to give forth, i.e. (specially) to lease",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 4,
+  "byBook": {
+    "matthew": 2,
+    "luke": 1,
+    "mark": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐξέδετο αὐτὸν",
+      "pron": "에크세데토 아우톤",
+      "lemmas": [
+        "ἐκδίδωμι",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἐξέδετο",
+          "lemma": "ἐκδίδωμι",
+          "strong": "G1554",
+          "pron": "에크세데토"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 21:33",
+        "mark 12:1",
+        "luke 20:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἐξέδετο αὐτὸν γεωργοῖς",
+      "pron": "에크세데토 아우톤 게오르고이스",
+      "lemmas": [
+        "ἐκδίδωμι",
+        "αὐτός",
+        "γεωργός"
+      ],
+      "words": [
+        {
+          "word": "ἐξέδετο",
+          "lemma": "ἐκδίδωμι",
+          "strong": "G1554",
+          "pron": "에크세데토"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "γεωργοῖς",
+          "lemma": "γεωργός",
+          "strong": "G1092",
+          "pron": "게오르고이스"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 21:33",
+        "mark 12:1",
+        "luke 20:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "καὶ ἐξέδετο αὐτὸν",
+      "pron": "카이 에크세데토 아우톤",
+      "lemmas": [
+        "καί",
+        "ἐκδίδωμι",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "ἐξέδετο",
+          "lemma": "ἐκδίδωμι",
+          "strong": "G1554",
+          "pron": "에크세데토"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 21:33",
+        "mark 12:1",
+        "luke 20:9"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

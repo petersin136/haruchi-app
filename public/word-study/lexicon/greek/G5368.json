@@ -1,0 +1,219 @@
+{
+  "lemma": "φιλέω",
+  "pron": "필레오",
+  "strong": "G5368",
+  "posKo": "동사",
+  "root": {
+    "lemma": "φίλος",
+    "strong": "G5384",
+    "glossKo": "친구"
+  },
+  "family": [
+    {
+      "lemma": "φιλάγαθος",
+      "strong": "G5358",
+      "pron": "필라가토스",
+      "glossKo": "선을좋아하는"
+    },
+    {
+      "lemma": "φιλάδελφος",
+      "strong": "G5361",
+      "pron": "필라델포스",
+      "glossKo": "형제사랑하는"
+    },
+    {
+      "lemma": "φίλανδρος",
+      "strong": "G5362",
+      "pron": "필란드로스",
+      "glossKo": "남편사랑하는"
+    },
+    {
+      "lemma": "φιλανθρώπως",
+      "strong": "G5364",
+      "pron": "필란트로포스",
+      "glossKo": "친절히"
+    },
+    {
+      "lemma": "φιλάργυρος",
+      "strong": "G5366",
+      "pron": "필라르귀로스",
+      "glossKo": "돈을사랑하는"
+    },
+    {
+      "lemma": "φίλαυτος",
+      "strong": "G5367",
+      "pron": "필라우토스",
+      "glossKo": "자기사랑하는"
+    }
+  ],
+  "defEn": "to be a friend to (fond of (an individual or an object)), i.e. have affection for (denoting personal attachment, as a…",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 25,
+  "byBook": {
+    "john": 13,
+    "matthew": 5,
+    "luke": 2,
+    "revelation": 2,
+    "corinthians1": 1,
+    "mark": 1,
+    "titus": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ὅτι φιλῶ",
+      "pron": "호티 필로",
+      "lemmas": [
+        "ὅτι",
+        "φιλέω"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "φιλῶ",
+          "lemma": "φιλέω",
+          "strong": "G5368",
+          "pron": "필로"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 6:5",
+        "john 21:15",
+        "john 21:16",
+        "john 21:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "φιλήσω αὐτός",
+      "pron": "필레소 아우토스",
+      "lemmas": [
+        "φιλέω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "φιλήσω",
+          "lemma": "φιλέω",
+          "strong": "G5368",
+          "pron": "필레소"
+        },
+        {
+          "word": "αὐτός",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토스"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 26:48",
+        "mark 14:44",
+        "luke 22:47",
+        "john 11:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "φιλῶ σε",
+      "pron": "필로 세",
+      "lemmas": [
+        "φιλέω",
+        "σύ"
+      ],
+      "words": [
+        {
+          "word": "φιλῶ",
+          "lemma": "φιλέω",
+          "strong": "G5368",
+          "pron": "필로"
+        },
+        {
+          "word": "σε",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "세"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "john 16:27",
+        "john 21:15",
+        "john 21:16",
+        "john 21:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ὅτι φιλῶ σε",
+      "pron": "호티 필로 세",
+      "lemmas": [
+        "ὅτι",
+        "φιλέω",
+        "σύ"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "φιλῶ",
+          "lemma": "φιλέω",
+          "strong": "G5368",
+          "pron": "필로"
+        },
+        {
+          "word": "σε",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "세"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "john 21:15",
+        "john 21:16",
+        "john 21:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "φιλεῖς με",
+      "pron": "필레이스 메",
+      "lemmas": [
+        "φιλέω",
+        "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "φιλεῖς",
+          "lemma": "φιλέω",
+          "strong": "G5368",
+          "pron": "필레이스"
+        },
+        {
+          "word": "με",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "메"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "john 21:17",
+        "titus 3:15"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

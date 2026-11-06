@@ -1,0 +1,218 @@
+{
+  "lemma": "οὐχί",
+  "pron": "우키",
+  "strong": "G3780",
+  "posKo": "소사",
+  "root": {
+    "lemma": "οὐ",
+    "strong": "G3756",
+    "glossKo": "아니다"
+  },
+  "family": [
+    {
+      "lemma": "μή",
+      "strong": "G3361",
+      "pron": "메",
+      "glossKo": "아니다"
+    },
+    {
+      "lemma": "οὐ μή",
+      "strong": "G3364",
+      "pron": "우메",
+      "glossKo": ""
+    },
+    {
+      "lemma": "οὐ",
+      "strong": "G3756",
+      "pron": "우",
+      "glossKo": "아니다"
+    },
+    {
+      "lemma": "οὐδέ",
+      "strong": "G3761",
+      "pron": "우데",
+      "glossKo": "~도 아니"
+    },
+    {
+      "lemma": "οὐκέτι",
+      "strong": "G3765",
+      "pron": "우케티",
+      "glossKo": "더는아니"
+    },
+    {
+      "lemma": "οὐκοῦν",
+      "strong": "G3766",
+      "pron": "우쿤",
+      "glossKo": "그러면"
+    }
+  ],
+  "defEn": "not indeed",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 53,
+  "byBook": {
+    "luke": 18,
+    "corinthians1": 12,
+    "matthew": 9,
+    "john": 5,
+    "romans": 3,
+    "acts": 2,
+    "hebrews": 2,
+    "corinthians2": 1,
+    "thessalonians1": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "εἶπεν Οὐχί",
+      "pron": "에이펜 우키",
+      "lemmas": [
+        "λέγω",
+        "οὐχί"
+      ],
+      "words": [
+        {
+          "word": "εἶπεν",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "에이펜"
+        },
+        {
+          "word": "Οὐχί",
+          "lemma": "οὐχί",
+          "strong": "G3780",
+          "pron": "우키"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "luke 1:60",
+        "luke 4:22",
+        "luke 16:30",
+        "luke 17:17",
+        "luke 23:39",
+        "john 9:9",
+        "corinthians1 10:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "οὐχί λέγω",
+      "pron": "우키 레고",
+      "lemmas": [
+        "οὐχί",
+        "λέγω"
+      ],
+      "words": [
+        {
+          "word": "οὐχί",
+          "lemma": "οὐχί",
+          "strong": "G3780",
+          "pron": "우키"
+        },
+        {
+          "word": "λέγω",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레고"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "luke 12:51",
+        "luke 13:3",
+        "luke 13:5",
+        "luke 17:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "οὐχὶ μᾶλλον",
+      "pron": "우키 말론",
+      "lemmas": [
+        "οὐχί",
+        "μᾶλλον"
+      ],
+      "words": [
+        {
+          "word": "οὐχὶ",
+          "lemma": "οὐχί",
+          "strong": "G3780",
+          "pron": "우키"
+        },
+        {
+          "word": "μᾶλλον",
+          "lemma": "μᾶλλον",
+          "strong": "G3123",
+          "pron": "말론"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "corinthians1 5:2",
+        "corinthians1 6:7",
+        "corinthians2 3:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "οὐχὶ πάντες",
+      "pron": "우키 판테스",
+      "lemmas": [
+        "οὐχί",
+        "πᾶς"
+      ],
+      "words": [
+        {
+          "word": "οὐχὶ",
+          "lemma": "οὐχί",
+          "strong": "G3780",
+          "pron": "우키"
+        },
+        {
+          "word": "πάντες",
+          "lemma": "πᾶς",
+          "strong": "G3956",
+          "pron": "판테스"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 13:56",
+        "john 13:10",
+        "john 13:11",
+        "hebrews 1:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "Οὐχί ἀλλὰ",
+      "pron": "우키 알라",
+      "lemmas": [
+        "οὐχί",
+        "ἀλλά"
+      ],
+      "words": [
+        {
+          "word": "Οὐχί",
+          "lemma": "οὐχί",
+          "strong": "G3780",
+          "pron": "우키"
+        },
+        {
+          "word": "ἀλλὰ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "luke 1:60",
+        "john 9:9",
+        "romans 3:27"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

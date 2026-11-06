@@ -4,14 +4,35 @@
   "strong": "G2334",
   "posKo": "동사",
   "root": {
-    "lemma": "θεάομαι",
-    "strong": "G2300"
+    "lemma": "θεάομαι",
+    "strong": "G2300",
+    "glossKo": "바라보다"
   },
   "family": [
-    "θαῦμα",
-    "θεάομαι",
-    "θέατρον",
-    "θεωρία"
+    {
+      "lemma": "θαῦμα",
+      "strong": "G2295",
+      "pron": "타우마",
+      "glossKo": "이상함"
+    },
+    {
+      "lemma": "θεάομαι",
+      "strong": "G2300",
+      "pron": "테아오마이",
+      "glossKo": "바라보다"
+    },
+    {
+      "lemma": "θέατρον",
+      "strong": "G2302",
+      "pron": "테아트론",
+      "glossKo": "극장"
+    },
+    {
+      "lemma": "θεωρία",
+      "strong": "G2335",
+      "pron": "테오리아",
+      "glossKo": "구경"
+    }
   ],
   "defEn": "to be a spectator of, i.e. discern, (literally, figuratively (experience) or intensively (acknowledge))",
   "defKo": "",
@@ -31,9 +52,24 @@
   "phrases": [
     {
       "greek": "αὐτὸν ἐθεώρουν",
+      "pron": "아우톤 에테오룬",
       "lemmas": [
         "αὐτός",
         "θεωρέω"
+      ],
+      "words": [
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "ἐθεώρουν",
+          "lemma": "θεωρέω",
+          "strong": "G2334",
+          "pron": "에테오룬"
+        }
       ],
       "count": 6,
       "refs": [
@@ -48,9 +84,24 @@
     },
     {
       "greek": "θεωρεῖτέ με",
+      "pron": "테오레이테 메",
       "lemmas": [
         "θεωρέω",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "θεωρεῖτέ",
+          "lemma": "θεωρέω",
+          "strong": "G2334",
+          "pron": "테오레이테"
+        },
+        {
+          "word": "με",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "메"
+        }
       ],
       "count": 6,
       "refs": [
@@ -65,9 +116,24 @@
     },
     {
       "greek": "θεωροῦντες αὐτοῦ",
+      "pron": "테오룬테스 아우투",
       "lemmas": [
         "θεωρέω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "θεωροῦντες",
+          "lemma": "θεωρέω",
+          "strong": "G2334",
+          "pron": "테오룬테스"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 5,
       "refs": [
@@ -81,9 +147,24 @@
     },
     {
       "greek": "θεωρῶ ὅτι",
+      "pron": "테오로 호티",
       "lemmas": [
         "θεωρέω",
         "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "θεωρῶ",
+          "lemma": "θεωρέω",
+          "strong": "G2334",
+          "pron": "테오로"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
       ],
       "count": 4,
       "refs": [
@@ -96,10 +177,31 @@
     },
     {
       "greek": "θεωρεῖτέ με καὶ",
+      "pron": "테오레이테 메 카이",
       "lemmas": [
         "θεωρέω",
         "ἐγώ",
         "καί"
+      ],
+      "words": [
+        {
+          "word": "θεωρεῖτέ",
+          "lemma": "θεωρέω",
+          "strong": "G2334",
+          "pron": "테오레이테"
+        },
+        {
+          "word": "με",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "메"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        }
       ],
       "count": 3,
       "refs": [

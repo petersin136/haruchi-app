@@ -1,0 +1,116 @@
+{
+  "lemma": "νυμφίος",
+  "pron": "뉨피오스",
+  "strong": "G3566",
+  "posKo": "명사",
+  "root": {
+    "lemma": "νύμφη",
+    "strong": "G3565",
+    "glossKo": "신부"
+  },
+  "family": [
+    {
+      "lemma": "Νυμφᾶς",
+      "strong": "G3564",
+      "pron": "뉨파스",
+      "glossKo": ""
+    },
+    {
+      "lemma": "νύμφη",
+      "strong": "G3565",
+      "pron": "뉨페",
+      "glossKo": "신부"
+    },
+    {
+      "lemma": "νυμφών",
+      "strong": "G3567",
+      "pron": "뉨폰",
+      "glossKo": "혼인집"
+    }
+  ],
+  "defEn": "a bride-groom (literally or figuratively)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 16,
+  "byBook": {
+    "matthew": 6,
+    "john": 4,
+    "mark": 3,
+    "luke": 2,
+    "revelation": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "αὐτῶν ὁ νυμφίος",
+      "pron": "아우톤 호 뉨피오스",
+      "lemmas": [
+        "αὐτός",
+        "ὁ",
+        "νυμφίος"
+      ],
+      "words": [
+        {
+          "word": "αὐτῶν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        },
+        {
+          "word": "νυμφίος",
+          "lemma": "νυμφίος",
+          "strong": "G3566",
+          "pron": "뉨피오스"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 9:15",
+        "mark 2:20",
+        "luke 5:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "νυμφίος μετ αὐτῶν",
+      "pron": "뉨피오스 멧 아우톤",
+      "lemmas": [
+        "νυμφίος",
+        "μετά",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "νυμφίος",
+          "lemma": "νυμφίος",
+          "strong": "G3566",
+          "pron": "뉨피오스"
+        },
+        {
+          "word": "μετ",
+          "lemma": "μετά",
+          "strong": "G3326",
+          "pron": "멧"
+        },
+        {
+          "word": "αὐτῶν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "mark 2:19",
+        "luke 5:34"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

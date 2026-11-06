@@ -5,15 +5,46 @@
   "posKo": "부사",
   "root": {
     "lemma": "οὐ",
-    "strong": "G3756"
+    "strong": "G3756",
+    "glossKo": "아니다"
   },
   "family": [
-    "οὐ μή",
-    "μηδαμῶς",
-    "μηδέ",
-    "μηδείς",
-    "μηκέτι",
-    "μὴ οὐκ"
+    {
+      "lemma": "οὐ μή",
+      "strong": "G3364",
+      "pron": "우메",
+      "glossKo": ""
+    },
+    {
+      "lemma": "μηδαμῶς",
+      "strong": "G3365",
+      "pron": "메다모스",
+      "glossKo": "결코아니"
+    },
+    {
+      "lemma": "μηδέ",
+      "strong": "G3366",
+      "pron": "메데",
+      "glossKo": "~도 말라"
+    },
+    {
+      "lemma": "μηδείς",
+      "strong": "G3367",
+      "pron": "메데이스",
+      "glossKo": "아무도"
+    },
+    {
+      "lemma": "μηκέτι",
+      "strong": "G3371",
+      "pron": "메케티",
+      "glossKo": "더는말라"
+    },
+    {
+      "lemma": "μὴ οὐκ",
+      "strong": "G3378",
+      "pron": "메우크",
+      "glossKo": ""
+    }
   ],
   "defEn": "(adverb) not, (conjunction) lest; also (as an interrogative implying a negative answer (whereas expects an affirmativ…",
   "defKo": "",
@@ -52,9 +83,24 @@
   "phrases": [
     {
       "greek": "οὐ μὴ",
+      "pron": "우 메",
       "lemmas": [
         "οὐ",
         "μή"
+      ],
+      "words": [
+        {
+          "word": "οὐ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우"
+        },
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        }
       ],
       "count": 95,
       "refs": [
@@ -75,9 +121,24 @@
     },
     {
       "greek": "ἵνα μὴ",
+      "pron": "히나 메",
       "lemmas": [
         "ἵνα",
         "μή"
+      ],
+      "words": [
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        },
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        }
       ],
       "count": 87,
       "refs": [
@@ -98,9 +159,24 @@
     },
     {
       "greek": "εἰ μὴ",
+      "pron": "에이 메",
       "lemmas": [
         "εἰ",
         "μή"
+      ],
+      "words": [
+        {
+          "word": "εἰ",
+          "lemma": "εἰ",
+          "strong": "G1487",
+          "pron": "에이"
+        },
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        }
       ],
       "count": 86,
       "refs": [
@@ -121,9 +197,24 @@
     },
     {
       "greek": "ἐὰν μὴ",
+      "pron": "에안 메",
       "lemmas": [
         "ἐάν",
         "μή"
+      ],
+      "words": [
+        {
+          "word": "ἐὰν",
+          "lemma": "ἐάν",
+          "strong": "G1437",
+          "pron": "에안"
+        },
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        }
       ],
       "count": 47,
       "refs": [
@@ -144,9 +235,24 @@
     },
     {
       "greek": "μὴ ἔχων",
+      "pron": "메 에콘",
       "lemmas": [
         "μή",
         "ἔχω"
+      ],
+      "words": [
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        },
+        {
+          "word": "ἔχων",
+          "lemma": "ἔχω",
+          "strong": "G2192",
+          "pron": "에콘"
+        }
       ],
       "count": 36,
       "refs": [

@@ -1,0 +1,122 @@
+{
+  "lemma": "ἐντέλλομαι",
+  "pron": "엔텔로마이",
+  "strong": "G1781",
+  "posKo": "동사",
+  "root": {
+    "lemma": "ἐν",
+    "strong": "G1722",
+    "glossKo": "안에"
+  },
+  "family": [
+    {
+      "lemma": "ἐγγράφω",
+      "strong": "G1449",
+      "pron": "엥그라포",
+      "glossKo": "기록되다"
+    },
+    {
+      "lemma": "ἔγγυος",
+      "strong": "G1450",
+      "pron": "엥귀오스",
+      "glossKo": "보증"
+    },
+    {
+      "lemma": "ἐγκάθετος",
+      "strong": "G1455",
+      "pron": "엥카테토스",
+      "glossKo": "엿보는자"
+    },
+    {
+      "lemma": "ἐγκαίνια",
+      "strong": "G1456",
+      "pron": "엥카이니아",
+      "glossKo": "수전절"
+    },
+    {
+      "lemma": "ἐγκαλέω",
+      "strong": "G1458",
+      "pron": "엥칼레오",
+      "glossKo": "고발하다"
+    },
+    {
+      "lemma": "ἐγκαταλείπω",
+      "strong": "G1459",
+      "pron": "엥카탈레이포",
+      "glossKo": "버리다"
+    }
+  ],
+  "defEn": "to enjoin",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 14,
+  "byBook": {
+    "matthew": 4,
+    "john": 3,
+    "acts": 2,
+    "hebrews": 2,
+    "mark": 2,
+    "luke": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "αὐτοῦ ἐντελεῖται",
+      "pron": "아우투 엔텔레이타이",
+      "lemmas": [
+        "αὐτός",
+        "ἐντέλλομαι"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "ἐντελεῖται",
+          "lemma": "ἐντέλλομαι",
+          "strong": "G1781",
+          "pron": "엔텔레이타이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 4:6",
+        "luke 4:10",
+        "hebrews 11:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἐντέλλομαι ὑμῖν",
+      "pron": "엔텔로마이 휘민",
+      "lemmas": [
+        "ἐντέλλομαι",
+        "σύ"
+      ],
+      "words": [
+        {
+          "word": "ἐντέλλομαι",
+          "lemma": "ἐντέλλομαι",
+          "strong": "G1781",
+          "pron": "엔텔로마이"
+        },
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 28:20",
+        "john 15:14",
+        "john 15:17"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

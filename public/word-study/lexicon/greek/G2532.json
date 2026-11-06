@@ -5,12 +5,42 @@
   "posKo": "접속사",
   "root": null,
   "family": [
-    "κἀγώ",
-    "καίγε",
-    "καίπερ",
-    "καίτοι",
-    "κἀκεῖ",
-    "κἀκεῖθεν"
+    {
+      "lemma": "κἀγώ",
+      "strong": "G2504",
+      "pron": "카고",
+      "glossKo": "나도"
+    },
+    {
+      "lemma": "καίγε",
+      "strong": "G2534",
+      "pron": "카이게",
+      "glossKo": ""
+    },
+    {
+      "lemma": "καίπερ",
+      "strong": "G2539",
+      "pron": "카이페르",
+      "glossKo": "비록"
+    },
+    {
+      "lemma": "καίτοι",
+      "strong": "G2543",
+      "pron": "카이토이",
+      "glossKo": "그러나"
+    },
+    {
+      "lemma": "κἀκεῖ",
+      "strong": "G2546",
+      "pron": "카케이",
+      "glossKo": "그곳에도"
+    },
+    {
+      "lemma": "κἀκεῖθεν",
+      "strong": "G2547",
+      "pron": "카케이텐",
+      "glossKo": "거기서또"
+    }
   ],
   "defEn": "and, also, even, so then, too, etc.; often used in connection (or composition) with other particles or small words",
   "defKo": "",
@@ -49,10 +79,31 @@
   "phrases": [
     {
       "greek": "καὶ λέγει αὐτοῖς",
+      "pron": "카이 레게이 아우토이스",
       "lemmas": [
         "καί",
         "λέγω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "λέγει",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레게이"
+        },
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        }
       ],
       "count": 167,
       "refs": [
@@ -73,10 +124,31 @@
     },
     {
       "greek": "καὶ ἐδόθη αὐτῷ",
+      "pron": "카이 에도테 아우토",
       "lemmas": [
         "καί",
         "δίδωμι",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "ἐδόθη",
+          "lemma": "δίδωμι",
+          "strong": "G1325",
+          "pron": "에도테"
+        },
+        {
+          "word": "αὐτῷ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        }
       ],
       "count": 39,
       "refs": [
@@ -97,10 +169,31 @@
     },
     {
       "greek": "αὐτοῦ καὶ λέγει",
+      "pron": "아우투 카이 레게이",
       "lemmas": [
         "αὐτός",
         "καί",
         "λέγω"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "λέγει",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레게이"
+        }
       ],
       "count": 34,
       "refs": [
@@ -121,10 +214,31 @@
     },
     {
       "greek": "Ἰησοῦς καὶ εἶπεν",
+      "pron": "이에수스 카이 에이펜",
       "lemmas": [
         "Ἰησοῦς",
         "καί",
         "λέγω"
+      ],
+      "words": [
+        {
+          "word": "Ἰησοῦς",
+          "lemma": "Ἰησοῦς",
+          "strong": "G2424",
+          "pron": "이에수스"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "εἶπεν",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "에이펜"
+        }
       ],
       "count": 21,
       "refs": [
@@ -145,10 +259,31 @@
     },
     {
       "greek": "πατρὸς ἡμῶν καὶ",
+      "pron": "파트로스 헤몬 카이",
       "lemmas": [
         "πατήρ",
         "ἐγώ",
         "καί"
+      ],
+      "words": [
+        {
+          "word": "πατρὸς",
+          "lemma": "πατήρ",
+          "strong": "G3962",
+          "pron": "파트로스"
+        },
+        {
+          "word": "ἡμῶν",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "헤몬"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        }
       ],
       "count": 20,
       "refs": [

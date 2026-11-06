@@ -1,16 +1,32 @@
 {
   "lemma": "αἴτημα",
-  "pron": "애테마",
+  "pron": "아이테마",
   "strong": "G155",
   "posKo": "명사",
   "root": {
-    "lemma": "αἰτέω",
-    "strong": "G154"
+    "lemma": "αἰτέω",
+    "strong": "G154",
+    "glossKo": "구하다"
   },
   "family": [
-    "αἰτέω",
-    "αἰτία",
-    "αἴτιος"
+    {
+      "lemma": "αἰτέω",
+      "strong": "G154",
+      "pron": "아이테오",
+      "glossKo": "구하다"
+    },
+    {
+      "lemma": "αἰτία",
+      "strong": "G156",
+      "pron": "아이티아",
+      "glossKo": "이유"
+    },
+    {
+      "lemma": "αἴτιος",
+      "strong": "G159",
+      "pron": "아이티오스",
+      "glossKo": "원인"
+    }
   ],
   "defEn": "a thing asked or (abstractly) an asking",
   "defKo": "",

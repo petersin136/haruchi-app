@@ -1,0 +1,116 @@
+{
+  "lemma": "ἀνάστασις",
+  "pron": "아나스타시스",
+  "strong": "G386",
+  "posKo": "명사",
+  "root": {
+    "lemma": "ἀνίστημι",
+    "strong": "G450",
+    "glossKo": "일어나다"
+  },
+  "family": [
+    {
+      "lemma": "ἀναστατόω",
+      "strong": "G387",
+      "pron": "아나스타토오",
+      "glossKo": "소동케하다"
+    },
+    {
+      "lemma": "ἀνίστημι",
+      "strong": "G450",
+      "pron": "아니스테미",
+      "glossKo": "일어나다"
+    }
+  ],
+  "defEn": "a standing up again, i.e. (literally) a resurrection from death (individual, genitive case or by implication, (its au…",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 42,
+  "byBook": {
+    "acts": 11,
+    "luke": 6,
+    "corinthians1": 4,
+    "john": 4,
+    "matthew": 4,
+    "hebrews": 3,
+    "mark": 2,
+    "peter1": 2,
+    "revelation": 2,
+    "romans": 2,
+    "philippians": 1,
+    "timothy2": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἀναστάσεως νεκρῶν",
+      "pron": "아나스타세오스 네크론",
+      "lemmas": [
+        "ἀνάστασις",
+        "νεκρός"
+      ],
+      "words": [
+        {
+          "word": "ἀναστάσεως",
+          "lemma": "ἀνάστασις",
+          "strong": "G386",
+          "pron": "아나스타세오스"
+        },
+        {
+          "word": "νεκρῶν",
+          "lemma": "νεκρός",
+          "strong": "G3498",
+          "pron": "네크론"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "acts 17:32",
+        "acts 23:6",
+        "acts 24:21",
+        "acts 26:23",
+        "romans 1:4",
+        "corinthians1 15:12",
+        "corinthians1 15:13",
+        "corinthians1 15:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἀναστάσεως τῶν νεκρῶν",
+      "pron": "아나스타세오스 톤 네크론",
+      "lemmas": [
+        "ἀνάστασις",
+        "ὁ",
+        "νεκρός"
+      ],
+      "words": [
+        {
+          "word": "ἀναστάσεως",
+          "lemma": "ἀνάστασις",
+          "strong": "G386",
+          "pron": "아나스타세오스"
+        },
+        {
+          "word": "τῶν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "톤"
+        },
+        {
+          "word": "νεκρῶν",
+          "lemma": "νεκρός",
+          "strong": "G3498",
+          "pron": "네크론"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 22:31",
+        "corinthians1 15:42",
+        "hebrews 11:35"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

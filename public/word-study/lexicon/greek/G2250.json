@@ -5,12 +5,28 @@
   "posKo": "명사",
   "root": {
     "lemma": "ὥρα",
-    "strong": "G5610"
+    "strong": "G5610",
+    "glossKo": "때"
   },
   "family": [
-    "ἑσπέρα",
-    "ὥρα",
-    "ὡραῖος"
+    {
+      "lemma": "ἑσπέρα",
+      "strong": "G2073",
+      "pron": "헤스페라",
+      "glossKo": "저녁"
+    },
+    {
+      "lemma": "ὥρα",
+      "strong": "G5610",
+      "pron": "호라",
+      "glossKo": "때"
+    },
+    {
+      "lemma": "ὡραῖος",
+      "strong": "G5611",
+      "pron": "호라이오스",
+      "glossKo": "아름다운"
+    }
   ],
   "defEn": "day, i.e. (literally) the time space between dawn and dark, or the whole 24 hours (but several days were usually reck…",
   "defKo": "",
@@ -45,9 +61,24 @@
   "phrases": [
     {
       "greek": "ἡμέραις ἐκείναις",
+      "pron": "헤메라이스 에케이나이스",
       "lemmas": [
         "ἡμέρα",
         "ἐκεῖνος"
+      ],
+      "words": [
+        {
+          "word": "ἡμέραις",
+          "lemma": "ἡμέρα",
+          "strong": "G2250",
+          "pron": "헤메라이스"
+        },
+        {
+          "word": "ἐκείναις",
+          "lemma": "ἐκεῖνος",
+          "strong": "G1565",
+          "pron": "에케이나이스"
+        }
       ],
       "count": 25,
       "refs": [
@@ -68,10 +99,31 @@
     },
     {
       "greek": "ταῖς ἡμέραις ἐκείναις",
+      "pron": "타이스 헤메라이스 에케이나이스",
       "lemmas": [
         "ὁ",
         "ἡμέρα",
         "ἐκεῖνος"
+      ],
+      "words": [
+        {
+          "word": "ταῖς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "타이스"
+        },
+        {
+          "word": "ἡμέραις",
+          "lemma": "ἡμέρα",
+          "strong": "G2250",
+          "pron": "헤메라이스"
+        },
+        {
+          "word": "ἐκείναις",
+          "lemma": "ἐκεῖνος",
+          "strong": "G1565",
+          "pron": "에케이나이스"
+        }
       ],
       "count": 25,
       "refs": [
@@ -92,10 +144,31 @@
     },
     {
       "greek": "ἐκείνῃ τῇ ἡμέρᾳ",
+      "pron": "에케이네 테 헤메라",
       "lemmas": [
         "ἐκεῖνος",
         "ὁ",
         "ἡμέρα"
+      ],
+      "words": [
+        {
+          "word": "ἐκείνῃ",
+          "lemma": "ἐκεῖνος",
+          "strong": "G1565",
+          "pron": "에케이네"
+        },
+        {
+          "word": "τῇ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "테"
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "lemma": "ἡμέρα",
+          "strong": "G2250",
+          "pron": "헤메라"
+        }
       ],
       "count": 23,
       "refs": [
@@ -116,9 +189,24 @@
     },
     {
       "greek": "τρεῖς ἡμέρας",
+      "pron": "트레이스 헤메라스",
       "lemmas": [
         "τρεῖς",
         "ἡμέρα"
+      ],
+      "words": [
+        {
+          "word": "τρεῖς",
+          "lemma": "τρεῖς",
+          "strong": "G5140",
+          "pron": "트레이스"
+        },
+        {
+          "word": "ἡμέρας",
+          "lemma": "ἡμέρα",
+          "strong": "G2250",
+          "pron": "헤메라스"
+        }
       ],
       "count": 15,
       "refs": [
@@ -139,9 +227,24 @@
     },
     {
       "greek": "ἡμέραις ταύταις",
+      "pron": "헤메라이스 타우타이스",
       "lemmas": [
         "ἡμέρα",
         "οὗτος"
+      ],
+      "words": [
+        {
+          "word": "ἡμέραις",
+          "lemma": "ἡμέρα",
+          "strong": "G2250",
+          "pron": "헤메라이스"
+        },
+        {
+          "word": "ταύταις",
+          "lemma": "οὗτος",
+          "strong": "G3778",
+          "pron": "타우타이스"
+        }
       ],
       "count": 11,
       "refs": [

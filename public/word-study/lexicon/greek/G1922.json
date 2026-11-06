@@ -1,0 +1,104 @@
+{
+  "lemma": "ἐπίγνωσις",
+  "pron": "에피그노시스",
+  "strong": "G1922",
+  "posKo": "명사",
+  "root": {
+    "lemma": "ἐπιγινώσκω",
+    "strong": "G1921",
+    "glossKo": "알아보다"
+  },
+  "family": [
+    {
+      "lemma": "ἐπιγινώσκω",
+      "strong": "G1921",
+      "pron": "에피기노스코",
+      "glossKo": "알아보다"
+    }
+  ],
+  "defEn": "recognition, i.e. (by implication) full discernment, acknowledgement",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 20,
+  "byBook": {
+    "colossians": 4,
+    "peter2": 4,
+    "romans": 3,
+    "ephesians": 2,
+    "timothy2": 2,
+    "hebrews": 1,
+    "philemon": 1,
+    "philippians": 1,
+    "timothy1": 1,
+    "titus": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐπίγνωσιν ἀληθείας",
+      "pron": "에피그노신 알레테이아스",
+      "lemmas": [
+        "ἐπίγνωσις",
+        "ἀλήθεια"
+      ],
+      "words": [
+        {
+          "word": "ἐπίγνωσιν",
+          "lemma": "ἐπίγνωσις",
+          "strong": "G1922",
+          "pron": "에피그노신"
+        },
+        {
+          "word": "ἀληθείας",
+          "lemma": "ἀλήθεια",
+          "strong": "G225",
+          "pron": "알레테이아스"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "timothy1 2:4",
+        "timothy2 2:25",
+        "timothy2 3:7",
+        "titus 1:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "εἰς ἐπίγνωσιν ἀληθείας",
+      "pron": "에이스 에피그노신 알레테이아스",
+      "lemmas": [
+        "εἰς",
+        "ἐπίγνωσις",
+        "ἀλήθεια"
+      ],
+      "words": [
+        {
+          "word": "εἰς",
+          "lemma": "εἰς",
+          "strong": "G1519",
+          "pron": "에이스"
+        },
+        {
+          "word": "ἐπίγνωσιν",
+          "lemma": "ἐπίγνωσις",
+          "strong": "G1922",
+          "pron": "에피그노신"
+        },
+        {
+          "word": "ἀληθείας",
+          "lemma": "ἀλήθεια",
+          "strong": "G225",
+          "pron": "알레테이아스"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "timothy1 2:4",
+        "timothy2 2:25",
+        "timothy2 3:7"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

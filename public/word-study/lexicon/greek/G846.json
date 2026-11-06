@@ -4,16 +4,47 @@
   "strong": "G846",
   "posKo": "인칭대명사",
   "root": {
-    "lemma": "ἀήρ",
-    "strong": "G109"
+    "lemma": "ἀήρ",
+    "strong": "G109",
+    "glossKo": "공기"
   },
   "family": [
-    "ἀετός",
-    "ἀήρ",
-    "ἄνεμος",
-    "ἀτμίς",
-    "αὐθάδης",
-    "αὐθαίρετος"
+    {
+      "lemma": "ἀετός",
+      "strong": "G105",
+      "pron": "아에토스",
+      "glossKo": "독수리"
+    },
+    {
+      "lemma": "ἀήρ",
+      "strong": "G109",
+      "pron": "아에르",
+      "glossKo": "공기"
+    },
+    {
+      "lemma": "ἄνεμος",
+      "strong": "G417",
+      "pron": "아네모스",
+      "glossKo": "바람"
+    },
+    {
+      "lemma": "ἀτμίς",
+      "strong": "G822",
+      "pron": "아트미스",
+      "glossKo": "안개"
+    },
+    {
+      "lemma": "αὐθάδης",
+      "strong": "G829",
+      "pron": "아우타데스",
+      "glossKo": "제고집대로하는"
+    },
+    {
+      "lemma": "αὐθαίρετος",
+      "strong": "G830",
+      "pron": "아우타이레토스",
+      "glossKo": "자원하여"
+    }
   ],
   "defEn": "the reflexive pronoun self, used (alone or in the comparative ) of the third person , and (with the proper personal p…",
   "defKo": "",
@@ -52,9 +83,24 @@
   "phrases": [
     {
       "greek": "εἶπεν αὐτοῖς",
+      "pron": "에이펜 아우토이스",
       "lemmas": [
         "λέγω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "εἶπεν",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "에이펜"
+        },
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        }
       ],
       "count": 484,
       "refs": [
@@ -75,9 +121,24 @@
     },
     {
       "greek": "αὐτὸν λέγοντες",
+      "pron": "아우톤 레곤테스",
       "lemmas": [
         "αὐτός",
         "λέγω"
+      ],
+      "words": [
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "λέγοντες",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레곤테스"
+        }
       ],
       "count": 176,
       "refs": [
@@ -98,10 +159,31 @@
     },
     {
       "greek": "καὶ λέγει αὐτοῖς",
+      "pron": "카이 레게이 아우토이스",
       "lemmas": [
         "καί",
         "λέγω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "λέγει",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레게이"
+        },
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        }
       ],
       "count": 167,
       "refs": [
@@ -122,9 +204,24 @@
     },
     {
       "greek": "μαθηταὶ αὐτοῦ",
+      "pron": "마테타이 아우투",
       "lemmas": [
         "μαθητής",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "μαθηταὶ",
+          "lemma": "μαθητής",
+          "strong": "G3101",
+          "pron": "마테타이"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 113,
       "refs": [
@@ -145,10 +242,31 @@
     },
     {
       "greek": "αὐτοῖς ὁ Ἰησοῦς",
+      "pron": "아우토이스 호 이에수스",
       "lemmas": [
         "αὐτός",
         "ὁ",
         "Ἰησοῦς"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        },
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        },
+        {
+          "word": "Ἰησοῦς",
+          "lemma": "Ἰησοῦς",
+          "strong": "G2424",
+          "pron": "이에수스"
+        }
       ],
       "count": 111,
       "refs": [

@@ -1,0 +1,242 @@
+{
+  "lemma": "πίνω",
+  "pron": "피노",
+  "strong": "G4095",
+  "posKo": "동사",
+  "root": null,
+  "family": [
+    {
+      "lemma": "πόμα",
+      "strong": "G4188",
+      "pron": "포마",
+      "glossKo": "마시는것"
+    },
+    {
+      "lemma": "πόσις",
+      "strong": "G4213",
+      "pron": "포시스",
+      "glossKo": "마실것"
+    },
+    {
+      "lemma": "ποταμός",
+      "strong": "G4215",
+      "pron": "포타모스",
+      "glossKo": "강"
+    },
+    {
+      "lemma": "ποτήριον",
+      "strong": "G4221",
+      "pron": "포테리온",
+      "glossKo": "잔"
+    },
+    {
+      "lemma": "ποτίζω",
+      "strong": "G4222",
+      "pron": "포티조",
+      "glossKo": "마시게"
+    },
+    {
+      "lemma": "πότος",
+      "strong": "G4224",
+      "pron": "포토스",
+      "glossKo": "연락"
+    }
+  ],
+  "defEn": "to imbibe (literally or figuratively)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 72,
+  "byBook": {
+    "luke": 17,
+    "corinthians1": 14,
+    "matthew": 14,
+    "john": 11,
+    "mark": 8,
+    "acts": 3,
+    "revelation": 3,
+    "hebrews": 1,
+    "romans": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐσθίων καὶ πίνων",
+      "pron": "에스티온 카이 피논",
+      "lemmas": [
+        "ἐσθίω",
+        "καί",
+        "πίνω"
+      ],
+      "words": [
+        {
+          "word": "ἐσθίων",
+          "lemma": "ἐσθίω",
+          "strong": "G2068",
+          "pron": "에스티온"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "πίνων",
+          "lemma": "πίνω",
+          "strong": "G4095",
+          "pron": "피논"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "matthew 11:19",
+        "luke 5:30",
+        "luke 5:33",
+        "luke 7:34",
+        "luke 10:7",
+        "luke 17:8",
+        "luke 22:30",
+        "corinthians1 9:4",
+        "corinthians1 10:7",
+        "corinthians1 11:22",
+        "corinthians1 11:29",
+        "corinthians1 15:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "αὐτὸ πίνω",
+      "pron": "아우토 피노",
+      "lemmas": [
+        "αὐτός",
+        "πίνω"
+      ],
+      "words": [
+        {
+          "word": "αὐτὸ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        },
+        {
+          "word": "πίνω",
+          "lemma": "πίνω",
+          "strong": "G4095",
+          "pron": "피노"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "matthew 26:29",
+        "matthew 26:42",
+        "matthew 27:34",
+        "mark 14:25",
+        "john 4:12",
+        "revelation 14:10",
+        "revelation 18:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἐγὼ πίνω",
+      "pron": "에고 피노",
+      "lemmas": [
+        "ἐγώ",
+        "πίνω"
+      ],
+      "words": [
+        {
+          "word": "ἐγὼ",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "에고"
+        },
+        {
+          "word": "πίνω",
+          "lemma": "πίνω",
+          "strong": "G4095",
+          "pron": "피노"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "matthew 20:23",
+        "mark 10:38",
+        "mark 10:39",
+        "john 4:7",
+        "john 4:9",
+        "john 4:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "μὴ πίω",
+      "pron": "메 피오",
+      "lemmas": [
+        "μή",
+        "πίνω"
+      ],
+      "words": [
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        },
+        {
+          "word": "πίω",
+          "lemma": "πίνω",
+          "strong": "G4095",
+          "pron": "피오"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "matthew 26:29",
+        "mark 14:25",
+        "luke 1:15",
+        "luke 22:18",
+        "john 18:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "οὐ μὴ πίω",
+      "pron": "우 메 피오",
+      "lemmas": [
+        "οὐ",
+        "μή",
+        "πίνω"
+      ],
+      "words": [
+        {
+          "word": "οὐ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우"
+        },
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        },
+        {
+          "word": "πίω",
+          "lemma": "πίνω",
+          "strong": "G4095",
+          "pron": "피오"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "matthew 26:29",
+        "mark 14:25",
+        "luke 1:15",
+        "luke 22:18",
+        "john 18:11"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

@@ -4,16 +4,47 @@
   "strong": "G3366",
   "posKo": "접속사",
   "root": {
-    "lemma": "μή",
-    "strong": "G3361"
+    "lemma": "μή",
+    "strong": "G3361",
+    "glossKo": "아니다"
   },
   "family": [
-    "μή",
-    "μηδαμῶς",
-    "μηδείς",
-    "μηδέποτε",
-    "μηδέπω",
-    "μηκέτι"
+    {
+      "lemma": "μή",
+      "strong": "G3361",
+      "pron": "메",
+      "glossKo": "아니다"
+    },
+    {
+      "lemma": "μηδαμῶς",
+      "strong": "G3365",
+      "pron": "메다모스",
+      "glossKo": "결코아니"
+    },
+    {
+      "lemma": "μηδείς",
+      "strong": "G3367",
+      "pron": "메데이스",
+      "glossKo": "아무도"
+    },
+    {
+      "lemma": "μηδέποτε",
+      "strong": "G3368",
+      "pron": "메데포테",
+      "glossKo": "결코아니"
+    },
+    {
+      "lemma": "μηδέπω",
+      "strong": "G3369",
+      "pron": "메데포",
+      "glossKo": "아직없는"
+    },
+    {
+      "lemma": "μηκέτι",
+      "strong": "G3371",
+      "pron": "메케티",
+      "glossKo": "더는말라"
+    }
   ],
   "defEn": "but not, not even; in a continued negation, nor",
   "defKo": "",
@@ -43,9 +74,24 @@
   "phrases": [
     {
       "greek": "σου μηδὲ",
+      "pron": "수 메데",
       "lemmas": [
         "σύ",
         "μηδέ"
+      ],
+      "words": [
+        {
+          "word": "σου",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "수"
+        },
+        {
+          "word": "μηδὲ",
+          "lemma": "μηδέ",
+          "strong": "G3366",
+          "pron": "메데"
+        }
       ],
       "count": 5,
       "refs": [

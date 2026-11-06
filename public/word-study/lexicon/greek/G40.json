@@ -4,16 +4,47 @@
   "strong": "G40",
   "posKo": "형용사",
   "root": {
-    "lemma": "ἁγνός",
-    "strong": "G53"
+    "lemma": "ἁγνός",
+    "strong": "G53",
+    "glossKo": "정결한"
   },
   "family": [
-    "ἁγιάζω",
-    "ἅγιον",
-    "ἁγιότης",
-    "ἁγιωσύνη",
-    "ἁγνεία",
-    "ἁγνίζω"
+    {
+      "lemma": "ἁγιάζω",
+      "strong": "G37",
+      "pron": "하기아조",
+      "glossKo": "거룩하게하다"
+    },
+    {
+      "lemma": "ἅγιον",
+      "strong": "G39",
+      "pron": "하기온",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἁγιότης",
+      "strong": "G41",
+      "pron": "하기오테스",
+      "glossKo": "거룩함"
+    },
+    {
+      "lemma": "ἁγιωσύνη",
+      "strong": "G42",
+      "pron": "하기오쉬네",
+      "glossKo": "거룩함"
+    },
+    {
+      "lemma": "ἁγνεία",
+      "strong": "G47",
+      "pron": "하그네이아",
+      "glossKo": "정결"
+    },
+    {
+      "lemma": "ἁγνίζω",
+      "strong": "G48",
+      "pron": "하그니조",
+      "glossKo": "정결케하다"
+    }
   ],
   "defEn": "sacred (physically, pure, morally blameless or religious, ceremonially, consecrated)",
   "defKo": "",
@@ -48,9 +79,24 @@
   "phrases": [
     {
       "greek": "πνεύματος ἁγίου",
+      "pron": "프뉴마토스 하기우",
       "lemmas": [
         "πνεῦμα",
         "ἅγιος"
+      ],
+      "words": [
+        {
+          "word": "πνεύματος",
+          "lemma": "πνεῦμα",
+          "strong": "G4151",
+          "pron": "프뉴마토스"
+        },
+        {
+          "word": "ἁγίου",
+          "lemma": "ἅγιος",
+          "strong": "G40",
+          "pron": "하기우"
+        }
       ],
       "count": 45,
       "refs": [
@@ -71,10 +117,31 @@
     },
     {
       "greek": "πνεῦμα τὸ ἅγιον",
+      "pron": "프뉴마 토 하기온",
       "lemmas": [
         "πνεῦμα",
         "ὁ",
         "ἅγιος"
+      ],
+      "words": [
+        {
+          "word": "πνεῦμα",
+          "lemma": "πνεῦμα",
+          "strong": "G4151",
+          "pron": "프뉴마"
+        },
+        {
+          "word": "τὸ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토"
+        },
+        {
+          "word": "ἅγιον",
+          "lemma": "ἅγιος",
+          "strong": "G40",
+          "pron": "하기온"
+        }
       ],
       "count": 28,
       "refs": [
@@ -95,9 +162,24 @@
     },
     {
       "greek": "ἁγίου πνεύματος",
+      "pron": "하기우 프뉴마토스",
       "lemmas": [
         "ἅγιος",
         "πνεῦμα"
+      ],
+      "words": [
+        {
+          "word": "ἁγίου",
+          "lemma": "ἅγιος",
+          "strong": "G40",
+          "pron": "하기우"
+        },
+        {
+          "word": "πνεύματος",
+          "lemma": "πνεῦμα",
+          "strong": "G4151",
+          "pron": "프뉴마토스"
+        }
       ],
       "count": 12,
       "refs": [
@@ -118,10 +200,31 @@
     },
     {
       "greek": "ἐν πνεύματι ἁγίῳ",
+      "pron": "엔 프뉴마티 하기오",
       "lemmas": [
         "ἐν",
         "πνεῦμα",
         "ἅγιος"
+      ],
+      "words": [
+        {
+          "word": "ἐν",
+          "lemma": "ἐν",
+          "strong": "G1722",
+          "pron": "엔"
+        },
+        {
+          "word": "πνεύματι",
+          "lemma": "πνεῦμα",
+          "strong": "G4151",
+          "pron": "프뉴마티"
+        },
+        {
+          "word": "ἁγίῳ",
+          "lemma": "ἅγιος",
+          "strong": "G40",
+          "pron": "하기오"
+        }
       ],
       "count": 12,
       "refs": [
@@ -142,10 +245,31 @@
     },
     {
       "greek": "τοῦ ἁγίου πνεύματος",
+      "pron": "투 하기우 프뉴마토스",
       "lemmas": [
         "ὁ",
         "ἅγιος",
         "πνεῦμα"
+      ],
+      "words": [
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        },
+        {
+          "word": "ἁγίου",
+          "lemma": "ἅγιος",
+          "strong": "G40",
+          "pron": "하기우"
+        },
+        {
+          "word": "πνεύματος",
+          "lemma": "πνεῦμα",
+          "strong": "G4151",
+          "pron": "프뉴마토스"
+        }
       ],
       "count": 10,
       "refs": [

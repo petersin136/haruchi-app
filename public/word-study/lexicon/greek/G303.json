@@ -1,0 +1,127 @@
+{
+  "lemma": "ἀνά",
+  "pron": "아나",
+  "strong": "G303",
+  "posKo": "부사",
+  "root": null,
+  "family": [
+    {
+      "lemma": "ἀναβαίνω",
+      "strong": "G305",
+      "pron": "아나바이노",
+      "glossKo": "올라가다"
+    },
+    {
+      "lemma": "ἀναβάλλομαι",
+      "strong": "G306",
+      "pron": "아나발로마이",
+      "glossKo": "연기하다"
+    },
+    {
+      "lemma": "ἀναβιβάζω",
+      "strong": "G307",
+      "pron": "아나비바조",
+      "glossKo": "끌어올리다"
+    },
+    {
+      "lemma": "ἀναβλέπω",
+      "strong": "G308",
+      "pron": "아나블레포",
+      "glossKo": "쳐다보다"
+    },
+    {
+      "lemma": "ἀναβοάω",
+      "strong": "G310",
+      "pron": "아나보아오",
+      "glossKo": "크게외치다"
+    },
+    {
+      "lemma": "ἀναγγέλλω",
+      "strong": "G312",
+      "pron": "아낭겔로",
+      "glossKo": "전하다"
+    }
+  ],
+  "defEn": "properly, up; but (by extension) used (distributively) severally, or (locally) at (etc.)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 13,
+  "byBook": {
+    "luke": 3,
+    "matthew": 3,
+    "revelation": 3,
+    "corinthians1": 2,
+    "john": 1,
+    "mark": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἀνὰ μέσον",
+      "pron": "아나 메손",
+      "lemmas": [
+        "ἀνά",
+        "μέσος"
+      ],
+      "words": [
+        {
+          "word": "ἀνὰ",
+          "lemma": "ἀνά",
+          "strong": "G303",
+          "pron": "아나"
+        },
+        {
+          "word": "μέσον",
+          "lemma": "μέσος",
+          "strong": "G3319",
+          "pron": "메손"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 13:25",
+        "mark 7:31",
+        "corinthians1 6:5",
+        "revelation 7:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἀνὰ μέσον τοῦ",
+      "pron": "아나 메손 투",
+      "lemmas": [
+        "ἀνά",
+        "μέσος",
+        "ὁ"
+      ],
+      "words": [
+        {
+          "word": "ἀνὰ",
+          "lemma": "ἀνά",
+          "strong": "G303",
+          "pron": "아나"
+        },
+        {
+          "word": "μέσον",
+          "lemma": "μέσος",
+          "strong": "G3319",
+          "pron": "메손"
+        },
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 13:25",
+        "mark 7:31",
+        "corinthians1 6:5",
+        "revelation 7:17"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

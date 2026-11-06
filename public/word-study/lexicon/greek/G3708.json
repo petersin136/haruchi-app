@@ -4,16 +4,47 @@
   "strong": "G3708",
   "posKo": "동사",
   "root": {
-    "lemma": "ὀπτάνομαι",
-    "strong": "G3700"
+    "lemma": "ὀπτάνομαι",
+    "strong": "G3700",
+    "glossKo": "보이다"
   },
   "family": [
-    "Αἰθίοψ",
-    "ὄμμα",
-    "ὀπή",
-    "ὀπτάνομαι",
-    "ὀπτασία",
-    "ὅραμα"
+    {
+      "lemma": "Αἰθίοψ",
+      "strong": "G128",
+      "pron": "아이티오프스",
+      "glossKo": "에디오피아인"
+    },
+    {
+      "lemma": "ὄμμα",
+      "strong": "G3659",
+      "pron": "옴마",
+      "glossKo": "눈"
+    },
+    {
+      "lemma": "ὀπή",
+      "strong": "G3692",
+      "pron": "오페",
+      "glossKo": "구멍"
+    },
+    {
+      "lemma": "ὀπτάνομαι",
+      "strong": "G3700",
+      "pron": "오프타노마이",
+      "glossKo": "보이다"
+    },
+    {
+      "lemma": "ὀπτασία",
+      "strong": "G3701",
+      "pron": "오프타시아",
+      "glossKo": "환상"
+    },
+    {
+      "lemma": "ὅραμα",
+      "strong": "G3705",
+      "pron": "호라마",
+      "glossKo": "환상"
+    }
   ],
   "defEn": "by extension, to attend to; by Hebraism, to experience; passively, to appear",
   "defKo": "",
@@ -48,9 +79,24 @@
   "phrases": [
     {
       "greek": "ἰδόντες αὐτὸν",
+      "pron": "이돈테스 아우톤",
       "lemmas": [
         "ὁράω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἰδόντες",
+          "lemma": "ὁράω",
+          "strong": "G3708",
+          "pron": "이돈테스"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
       ],
       "count": 48,
       "refs": [
@@ -71,9 +117,24 @@
     },
     {
       "greek": "ἃ εἶδες",
+      "pron": "하 에이데스",
       "lemmas": [
         "ὅς",
         "ὁράω"
+      ],
+      "words": [
+        {
+          "word": "ἃ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "하"
+        },
+        {
+          "word": "εἶδες",
+          "lemma": "ὁράω",
+          "strong": "G3708",
+          "pron": "에이데스"
+        }
       ],
       "count": 29,
       "refs": [
@@ -94,9 +155,24 @@
     },
     {
       "greek": "εἰδὼς ὅτι",
+      "pron": "에이도스 호티",
       "lemmas": [
         "ὁράω",
         "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "εἰδὼς",
+          "lemma": "ὁράω",
+          "strong": "G3708",
+          "pron": "에이도스"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
       ],
       "count": 19,
       "refs": [
@@ -117,10 +193,31 @@
     },
     {
       "greek": "καὶ ἰδόντες αὐτὸν",
+      "pron": "카이 이돈테스 아우톤",
       "lemmas": [
         "καί",
         "ὁράω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "ἰδόντες",
+          "lemma": "ὁράω",
+          "strong": "G3708",
+          "pron": "이돈테스"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
       ],
       "count": 17,
       "refs": [
@@ -141,9 +238,24 @@
     },
     {
       "greek": "σε εἴδομεν",
+      "pron": "세 에이도멘",
       "lemmas": [
         "σύ",
         "ὁράω"
+      ],
+      "words": [
+        {
+          "word": "σε",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "세"
+        },
+        {
+          "word": "εἴδομεν",
+          "lemma": "ὁράω",
+          "strong": "G3708",
+          "pron": "에이도멘"
+        }
       ],
       "count": 16,
       "refs": [

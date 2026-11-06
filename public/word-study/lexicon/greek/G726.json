@@ -1,0 +1,95 @@
+{
+  "lemma": "ἁρπάζω",
+  "pron": "하르파조",
+  "strong": "G726",
+  "posKo": "동사",
+  "root": {
+    "lemma": "αἱρέομαι",
+    "strong": "G138",
+    "glossKo": "택하다"
+  },
+  "family": [
+    {
+      "lemma": "αἱρέομαι",
+      "strong": "G138",
+      "pron": "하이레오마이",
+      "glossKo": "택하다"
+    },
+    {
+      "lemma": "αἵρεσις",
+      "strong": "G139",
+      "pron": "하이레시스",
+      "glossKo": "당파"
+    },
+    {
+      "lemma": "αἱρετίζω",
+      "strong": "G140",
+      "pron": "하이레티조",
+      "glossKo": "택하다"
+    },
+    {
+      "lemma": "ἅλωσις",
+      "strong": "G259",
+      "pron": "할로시스",
+      "glossKo": "잡힘"
+    },
+    {
+      "lemma": "ἁρπαγή",
+      "strong": "G724",
+      "pron": "하르파게",
+      "glossKo": "탐욕"
+    },
+    {
+      "lemma": "ἁρπαγμός",
+      "strong": "G725",
+      "pron": "하르파그모스",
+      "glossKo": "취할것"
+    }
+  ],
+  "defEn": "to seize (in various applications)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 14,
+  "byBook": {
+    "john": 4,
+    "matthew": 3,
+    "acts": 2,
+    "corinthians2": 2,
+    "jude": 1,
+    "revelation": 1,
+    "thessalonians1": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἁρπάζουσιν αὐτήν",
+      "pron": "하르파주신 아우텐",
+      "lemmas": [
+        "ἁρπάζω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἁρπάζουσιν",
+          "lemma": "ἁρπάζω",
+          "strong": "G726",
+          "pron": "하르파주신"
+        },
+        {
+          "word": "αὐτήν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우텐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 11:12",
+        "john 6:15",
+        "john 10:12",
+        "acts 23:10"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

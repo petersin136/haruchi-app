@@ -5,12 +5,42 @@
   "posKo": "전치사",
   "root": null,
   "family": [
-    "μεθερμηνεύω",
-    "μεθίστημι",
-    "μεθοδεία",
-    "μεθόριος",
-    "μέσος",
-    "μεταβαίνω"
+    {
+      "lemma": "μεθερμηνεύω",
+      "strong": "G3177",
+      "pron": "메테르메네우오",
+      "glossKo": "번역하다"
+    },
+    {
+      "lemma": "μεθίστημι",
+      "strong": "G3179",
+      "pron": "메티스테미",
+      "glossKo": "옮기다"
+    },
+    {
+      "lemma": "μεθοδεία",
+      "strong": "G3180",
+      "pron": "메토데이아",
+      "glossKo": "간교한책략"
+    },
+    {
+      "lemma": "μεθόριος",
+      "strong": "G3181",
+      "pron": "메토리오스",
+      "glossKo": ""
+    },
+    {
+      "lemma": "μέσος",
+      "strong": "G3319",
+      "pron": "메소스",
+      "glossKo": "가운데"
+    },
+    {
+      "lemma": "μεταβαίνω",
+      "strong": "G3327",
+      "pron": "메타바이노",
+      "glossKo": "옮기다"
+    }
   ],
   "defEn": "properly, denoting accompaniment; \"amid\" (local or causal); modified variously according to the case (genitive associ…",
   "defKo": "",
@@ -46,10 +76,31 @@
   "phrases": [
     {
       "greek": "ἦν μετ αὐτοῦ",
+      "pron": "엔 멧 아우투",
       "lemmas": [
         "εἰμί",
         "μετά",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἦν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "엔"
+        },
+        {
+          "word": "μετ",
+          "lemma": "μετά",
+          "strong": "G3326",
+          "pron": "멧"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 11,
       "refs": [
@@ -69,10 +120,31 @@
     },
     {
       "greek": "μετ αὐτῶν ἐστιν",
+      "pron": "멧 아우톤 에스틴",
       "lemmas": [
         "μετά",
         "αὐτός",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "μετ",
+          "lemma": "μετά",
+          "strong": "G3326",
+          "pron": "멧"
+        },
+        {
+          "word": "αὐτῶν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 9,
       "refs": [
@@ -90,10 +162,31 @@
     },
     {
       "greek": "Ἰησοῦ Χριστοῦ μετὰ",
+      "pron": "이에수 크리스투 메타",
       "lemmas": [
         "Ἰησοῦς",
         "Χριστός",
         "μετά"
+      ],
+      "words": [
+        {
+          "word": "Ἰησοῦ",
+          "lemma": "Ἰησοῦς",
+          "strong": "G2424",
+          "pron": "이에수"
+        },
+        {
+          "word": "Χριστοῦ",
+          "lemma": "Χριστός",
+          "strong": "G5547",
+          "pron": "크리스투"
+        },
+        {
+          "word": "μετὰ",
+          "lemma": "μετά",
+          "strong": "G3326",
+          "pron": "메타"
+        }
       ],
       "count": 8,
       "refs": [
@@ -110,10 +203,31 @@
     },
     {
       "greek": "μετὰ πάντων ὑμῶν",
+      "pron": "메타 판톤 휘몬",
       "lemmas": [
         "μετά",
         "πᾶς",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "μετὰ",
+          "lemma": "μετά",
+          "strong": "G3326",
+          "pron": "메타"
+        },
+        {
+          "word": "πάντων",
+          "lemma": "πᾶς",
+          "strong": "G3956",
+          "pron": "판톤"
+        },
+        {
+          "word": "ὑμῶν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘몬"
+        }
       ],
       "count": 8,
       "refs": [
@@ -130,10 +244,31 @@
     },
     {
       "greek": "ἐλάλησεν μετ ἐμοῦ",
+      "pron": "엘랄레센 멧 에무",
       "lemmas": [
         "λαλέω",
         "μετά",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "ἐλάλησεν",
+          "lemma": "λαλέω",
+          "strong": "G2980",
+          "pron": "엘랄레센"
+        },
+        {
+          "word": "μετ",
+          "lemma": "μετά",
+          "strong": "G3326",
+          "pron": "멧"
+        },
+        {
+          "word": "ἐμοῦ",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "에무"
+        }
       ],
       "count": 6,
       "refs": [

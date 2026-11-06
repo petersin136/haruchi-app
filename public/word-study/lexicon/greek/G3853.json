@@ -1,0 +1,157 @@
+{
+  "lemma": "παραγγέλλω",
+  "pron": "파랑겔로",
+  "strong": "G3853",
+  "posKo": "동사",
+  "root": {
+    "lemma": "παρά",
+    "strong": "G3844",
+    "glossKo": "에게서"
+  },
+  "family": [
+    {
+      "lemma": "παρά",
+      "strong": "G3844",
+      "pron": "파라",
+      "glossKo": "에게서"
+    },
+    {
+      "lemma": "παραβαίνω",
+      "strong": "G3845",
+      "pron": "파라바이노",
+      "glossKo": "어기다"
+    },
+    {
+      "lemma": "παραβάλλω",
+      "strong": "G3846",
+      "pron": "파라발로",
+      "glossKo": "건너가다"
+    },
+    {
+      "lemma": "παραβιάζομαι",
+      "strong": "G3849",
+      "pron": "파라비아조마이",
+      "glossKo": "강권하다"
+    },
+    {
+      "lemma": "παραβουλεύομαι",
+      "strong": "G3851",
+      "pron": "파라불레우오마이",
+      "glossKo": ""
+    },
+    {
+      "lemma": "παραγγελία",
+      "strong": "G3852",
+      "pron": "파랑겔리아",
+      "glossKo": "엄명"
+    }
+  ],
+  "defEn": "to transmit a message, i.e. (by implication) to enjoin",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 32,
+  "byBook": {
+    "acts": 11,
+    "timothy1": 5,
+    "luke": 4,
+    "thessalonians2": 4,
+    "mark": 3,
+    "corinthians1": 2,
+    "matthew": 2,
+    "thessalonians1": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "παρήγγειλεν αὐτοῖς",
+      "pron": "파렝게일렌 아우토이스",
+      "lemmas": [
+        "παραγγέλλω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "παρήγγειλεν",
+          "lemma": "παραγγέλλω",
+          "strong": "G3853",
+          "pron": "파렝게일렌"
+        },
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "matthew 10:5",
+        "mark 6:8",
+        "luke 5:14",
+        "luke 8:56",
+        "acts 1:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "αὐτὸς παρήγγειλεν",
+      "pron": "아우토스 파렝게일렌",
+      "lemmas": [
+        "αὐτός",
+        "παραγγέλλω"
+      ],
+      "words": [
+        {
+          "word": "αὐτὸς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토스"
+        },
+        {
+          "word": "παρήγγειλεν",
+          "lemma": "παραγγέλλω",
+          "strong": "G3853",
+          "pron": "파렝게일렌"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "luke 5:14",
+        "luke 9:21",
+        "acts 4:18",
+        "acts 15:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "παρηγγείλαμεν ὑμῖν",
+      "pron": "파렝게일라멘 휘민",
+      "lemmas": [
+        "παραγγέλλω",
+        "σύ"
+      ],
+      "words": [
+        {
+          "word": "παρηγγείλαμεν",
+          "lemma": "παραγγέλλω",
+          "strong": "G3853",
+          "pron": "파렝게일라멘"
+        },
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "acts 5:28",
+        "acts 16:18",
+        "thessalonians2 3:10",
+        "timothy1 6:13"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

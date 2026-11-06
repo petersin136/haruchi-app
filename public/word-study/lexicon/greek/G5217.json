@@ -4,16 +4,47 @@
   "strong": "G5217",
   "posKo": "동사",
   "root": {
-    "lemma": "ὑπό",
-    "strong": "G5259"
+    "lemma": "ὑπό",
+    "strong": "G5259",
+    "glossKo": "에 의해"
   },
   "family": [
-    "ὑπακούω",
-    "ὕπανδρος",
-    "ὑπαντάω",
-    "ὑπάρχω",
-    "ὑπείκω",
-    "ὑπεναντίος"
+    {
+      "lemma": "ὑπακούω",
+      "strong": "G5219",
+      "pron": "휘파쿠오",
+      "glossKo": "복종하다"
+    },
+    {
+      "lemma": "ὕπανδρος",
+      "strong": "G5220",
+      "pron": "휘판드로스",
+      "glossKo": "남편있는"
+    },
+    {
+      "lemma": "ὑπαντάω",
+      "strong": "G5221",
+      "pron": "휘판타오",
+      "glossKo": "맞이하다"
+    },
+    {
+      "lemma": "ὑπάρχω",
+      "strong": "G5225",
+      "pron": "휘파르코",
+      "glossKo": "있다"
+    },
+    {
+      "lemma": "ὑπείκω",
+      "strong": "G5226",
+      "pron": "휘페이코",
+      "glossKo": "복종하다"
+    },
+    {
+      "lemma": "ὑπεναντίος",
+      "strong": "G5227",
+      "pron": "휘페난티오스",
+      "glossKo": "거스르는"
+    }
   ],
   "defEn": "to lead (oneself) under, i.e. withdraw or retire (as if sinking out of sight), literally or figuratively",
   "defKo": "",
@@ -32,9 +63,24 @@
   "phrases": [
     {
       "greek": "αὐτοῖς Ὑπάγετε",
+      "pron": "아우토이스 휘파게테",
       "lemmas": [
         "αὐτός",
         "ὑπάγω"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        },
+        {
+          "word": "Ὑπάγετε",
+          "lemma": "ὑπάγω",
+          "strong": "G5217",
+          "pron": "휘파게테"
+        }
       ],
       "count": 12,
       "refs": [
@@ -55,10 +101,31 @@
     },
     {
       "greek": "λέγει αὐτοῖς Ὑπάγετε",
+      "pron": "레게이 아우토이스 휘파게테",
       "lemmas": [
         "λέγω",
         "αὐτός",
         "ὑπάγω"
+      ],
+      "words": [
+        {
+          "word": "λέγει",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레게이"
+        },
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        },
+        {
+          "word": "Ὑπάγετε",
+          "lemma": "ὑπάγω",
+          "strong": "G5217",
+          "pron": "휘파게테"
+        }
       ],
       "count": 8,
       "refs": [
@@ -75,9 +142,24 @@
     },
     {
       "greek": "ποῦ ὑπάγει",
+      "pron": "푸 휘파게이",
       "lemmas": [
         "ποῦ",
         "ὑπάγω"
+      ],
+      "words": [
+        {
+          "word": "ποῦ",
+          "lemma": "ποῦ",
+          "strong": "G4225",
+          "pron": "푸"
+        },
+        {
+          "word": "ὑπάγει",
+          "lemma": "ὑπάγω",
+          "strong": "G5217",
+          "pron": "휘파게이"
+        }
       ],
       "count": 8,
       "refs": [
@@ -93,9 +175,24 @@
     },
     {
       "greek": "ἐγὼ ὑπάγω",
+      "pron": "에고 휘파고",
       "lemmas": [
         "ἐγώ",
         "ὑπάγω"
+      ],
+      "words": [
+        {
+          "word": "ἐγὼ",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "에고"
+        },
+        {
+          "word": "ὑπάγω",
+          "lemma": "ὑπάγω",
+          "strong": "G5217",
+          "pron": "휘파고"
+        }
       ],
       "count": 5,
       "refs": [
@@ -108,9 +205,24 @@
     },
     {
       "greek": "εἶπεν Ὑπάγετε",
+      "pron": "에이펜 휘파게테",
       "lemmas": [
         "λέγω",
         "ὑπάγω"
+      ],
+      "words": [
+        {
+          "word": "εἶπεν",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "에이펜"
+        },
+        {
+          "word": "Ὑπάγετε",
+          "lemma": "ὑπάγω",
+          "strong": "G5217",
+          "pron": "휘파게테"
+        }
       ],
       "count": 5,
       "refs": [

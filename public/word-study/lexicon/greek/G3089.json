@@ -5,9 +5,24 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "λυμαίνομαι",
-    "λύσις",
-    "λύτρον"
+    {
+      "lemma": "λυμαίνομαι",
+      "strong": "G3075",
+      "pron": "뤼마이노마이",
+      "glossKo": "잔멸하다"
+    },
+    {
+      "lemma": "λύσις",
+      "strong": "G3080",
+      "pron": "뤼시스",
+      "glossKo": "벗어나기"
+    },
+    {
+      "lemma": "λύτρον",
+      "strong": "G3083",
+      "pron": "뤼트론",
+      "glossKo": "대속물"
+    }
   ],
   "defEn": "to \"loosen\" (literally or figuratively)",
   "defKo": "",
@@ -29,9 +44,24 @@
   "phrases": [
     {
       "greek": "λύσατε αὐτὸν",
+      "pron": "뤼사테 아우톤",
       "lemmas": [
         "λύω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "λύσατε",
+          "lemma": "λύω",
+          "strong": "G3089",
+          "pron": "뤼사테"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
       ],
       "count": 7,
       "refs": [
@@ -47,10 +77,31 @@
     },
     {
       "greek": "λύσατε αὐτὸν καὶ",
+      "pron": "뤼사테 아우톤 카이",
       "lemmas": [
         "λύω",
         "αὐτός",
         "καί"
+      ],
+      "words": [
+        {
+          "word": "λύσατε",
+          "lemma": "λύω",
+          "strong": "G3089",
+          "pron": "뤼사테"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        }
       ],
       "count": 3,
       "refs": [

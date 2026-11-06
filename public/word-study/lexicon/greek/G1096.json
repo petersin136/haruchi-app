@@ -5,9 +5,24 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "γένος",
-    "γονεύς",
-    "γυνή"
+    {
+      "lemma": "γένος",
+      "strong": "G1085",
+      "pron": "게노스",
+      "glossKo": "족속"
+    },
+    {
+      "lemma": "γονεύς",
+      "strong": "G1118",
+      "pron": "고뉴스",
+      "glossKo": "부모"
+    },
+    {
+      "lemma": "γυνή",
+      "strong": "G1135",
+      "pron": "귀네",
+      "glossKo": "여자"
+    }
   ],
   "defEn": "to cause to be (\"gen\"-erate), i.e. (reflexively) to become (come into being), used with great latitude (literal, figu…",
   "defKo": "",
@@ -45,9 +60,24 @@
   "phrases": [
     {
       "greek": "μὴ γένοιτο",
+      "pron": "메 게노이토",
       "lemmas": [
         "μή",
         "γίνομαι"
+      ],
+      "words": [
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        },
+        {
+          "word": "γένοιτο",
+          "lemma": "γίνομαι",
+          "strong": "G1096",
+          "pron": "게노이토"
+        }
       ],
       "count": 27,
       "refs": [
@@ -68,9 +98,24 @@
     },
     {
       "greek": "αὐτοῦ ἐγένετο",
+      "pron": "아우투 에게네토",
       "lemmas": [
         "αὐτός",
         "γίνομαι"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "ἐγένετο",
+          "lemma": "γίνομαι",
+          "strong": "G1096",
+          "pron": "에게네토"
+        }
       ],
       "count": 18,
       "refs": [
@@ -91,9 +136,24 @@
     },
     {
       "greek": "μου γίνεσθε",
+      "pron": "무 기네스테",
       "lemmas": [
         "ἐγώ",
         "γίνομαι"
+      ],
+      "words": [
+        {
+          "word": "μου",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "무"
+        },
+        {
+          "word": "γίνεσθε",
+          "lemma": "γίνομαι",
+          "strong": "G1096",
+          "pron": "기네스테"
+        }
       ],
       "count": 18,
       "refs": [
@@ -114,9 +174,24 @@
     },
     {
       "greek": "οὗτος ἐγενήθη",
+      "pron": "후토스 에게네테",
       "lemmas": [
         "οὗτος",
         "γίνομαι"
+      ],
+      "words": [
+        {
+          "word": "οὗτος",
+          "lemma": "οὗτος",
+          "strong": "G3778",
+          "pron": "후토스"
+        },
+        {
+          "word": "ἐγενήθη",
+          "lemma": "γίνομαι",
+          "strong": "G1096",
+          "pron": "에게네테"
+        }
       ],
       "count": 16,
       "refs": [
@@ -137,9 +212,24 @@
     },
     {
       "greek": "ὃς ἐγένετο",
+      "pron": "호스 에게네토",
       "lemmas": [
         "ὅς",
         "γίνομαι"
+      ],
+      "words": [
+        {
+          "word": "ὃς",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호스"
+        },
+        {
+          "word": "ἐγένετο",
+          "lemma": "γίνομαι",
+          "strong": "G1096",
+          "pron": "에게네토"
+        }
       ],
       "count": 14,
       "refs": [

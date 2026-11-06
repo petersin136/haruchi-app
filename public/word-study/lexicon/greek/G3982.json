@@ -5,12 +5,42 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "πειθαρχέω",
-    "πειθός",
-    "πεισμονή",
-    "πιθανολογία",
-    "πίστις",
-    "πιστός"
+    {
+      "lemma": "πειθαρχέω",
+      "strong": "G3980",
+      "pron": "페이타르케오",
+      "glossKo": "복종하다"
+    },
+    {
+      "lemma": "πειθός",
+      "strong": "G3981",
+      "pron": "페이토스",
+      "glossKo": "권하는"
+    },
+    {
+      "lemma": "πεισμονή",
+      "strong": "G3988",
+      "pron": "페이스모네",
+      "glossKo": "권면"
+    },
+    {
+      "lemma": "πιθανολογία",
+      "strong": "G4086",
+      "pron": "피타놀로기아",
+      "glossKo": "그럴듯한말"
+    },
+    {
+      "lemma": "πίστις",
+      "strong": "G4102",
+      "pron": "피스티스",
+      "glossKo": "믿음"
+    },
+    {
+      "lemma": "πιστός",
+      "strong": "G4103",
+      "pron": "피스토스",
+      "glossKo": "충성된"
+    }
   ],
   "defEn": "to convince (by argument, true or false); by analogy, to pacify or conciliate (by other fair means); reflexively or p…",
   "defKo": "",
@@ -35,9 +65,24 @@
   "phrases": [
     {
       "greek": "ἐπείθοντο αὐτῷ",
+      "pron": "에페이톤토 아우토",
       "lemmas": [
         "πείθω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἐπείθοντο",
+          "lemma": "πείθω",
+          "strong": "G3982",
+          "pron": "에페이톤토"
+        },
+        {
+          "word": "αὐτῷ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        }
       ],
       "count": 7,
       "refs": [
@@ -53,9 +98,24 @@
     },
     {
       "greek": "ἡμεῖς πείσομεν",
+      "pron": "헤메이스 페이소멘",
       "lemmas": [
         "ἐγώ",
         "πείθω"
+      ],
+      "words": [
+        {
+          "word": "ἡμεῖς",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "헤메이스"
+        },
+        {
+          "word": "πείσομεν",
+          "lemma": "πείθω",
+          "strong": "G3982",
+          "pron": "페이소멘"
+        }
       ],
       "count": 5,
       "refs": [
@@ -69,9 +129,24 @@
     },
     {
       "greek": "μὴ πειθομένου",
+      "pron": "메 페이토메누",
       "lemmas": [
         "μή",
         "πείθω"
+      ],
+      "words": [
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        },
+        {
+          "word": "πειθομένου",
+          "lemma": "πείθω",
+          "strong": "G3982",
+          "pron": "페이토메누"
+        }
       ],
       "count": 4,
       "refs": [
@@ -84,9 +159,24 @@
     },
     {
       "greek": "αὐτοῖς ἔπειθον",
+      "pron": "아우토이스 에페이톤",
       "lemmas": [
         "αὐτός",
         "πείθω"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        },
+        {
+          "word": "ἔπειθον",
+          "lemma": "πείθω",
+          "strong": "G3982",
+          "pron": "에페이톤"
+        }
       ],
       "count": 3,
       "refs": [
@@ -98,9 +188,24 @@
     },
     {
       "greek": "ἔπειθέν τε",
+      "pron": "에페이텐 테",
       "lemmas": [
         "πείθω",
         "τέ"
+      ],
+      "words": [
+        {
+          "word": "ἔπειθέν",
+          "lemma": "πείθω",
+          "strong": "G3982",
+          "pron": "에페이텐"
+        },
+        {
+          "word": "τε",
+          "lemma": "τέ",
+          "strong": "G5037",
+          "pron": "테"
+        }
       ],
       "count": 3,
       "refs": [

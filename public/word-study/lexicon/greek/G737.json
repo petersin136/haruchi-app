@@ -5,15 +5,46 @@
   "posKo": "부사",
   "root": {
     "lemma": "αἴρω",
-    "strong": "G142"
+    "strong": "G142",
+    "glossKo": "들다"
   },
   "family": [
-    "αἱρέομαι",
-    "αἴρω",
-    "ἀρά",
-    "ἀρέσκω",
-    "ἀριθμός",
-    "ἀρκέω"
+    {
+      "lemma": "αἱρέομαι",
+      "strong": "G138",
+      "pron": "하이레오마이",
+      "glossKo": "택하다"
+    },
+    {
+      "lemma": "αἴρω",
+      "strong": "G142",
+      "pron": "아이로",
+      "glossKo": "들다"
+    },
+    {
+      "lemma": "ἄρα",
+      "strong": "G685",
+      "pron": "아라",
+      "glossKo": "그러므로"
+    },
+    {
+      "lemma": "ἀρέσκω",
+      "strong": "G700",
+      "pron": "아레스코",
+      "glossKo": "기쁘게하다"
+    },
+    {
+      "lemma": "ἀριθμός",
+      "strong": "G706",
+      "pron": "아리트모스",
+      "glossKo": "수"
+    },
+    {
+      "lemma": "ἀρκέω",
+      "strong": "G714",
+      "pron": "아르케오",
+      "glossKo": "족하다"
+    }
   ],
   "defEn": "just now",
   "defKo": "",
@@ -34,9 +65,24 @@
   "phrases": [
     {
       "greek": "ἄρτι γνώσῃ",
+      "pron": "아르티 그노세",
       "lemmas": [
         "ἄρτι",
         "γινώσκω"
+      ],
+      "words": [
+        {
+          "word": "ἄρτι",
+          "lemma": "ἄρτι",
+          "strong": "G737",
+          "pron": "아르티"
+        },
+        {
+          "word": "γνώσῃ",
+          "lemma": "γινώσκω",
+          "strong": "G1097",
+          "pron": "그노세"
+        }
       ],
       "count": 3,
       "refs": [

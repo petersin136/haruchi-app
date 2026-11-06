@@ -4,12 +4,23 @@
   "strong": "G701",
   "posKo": "형용사",
   "root": {
-    "lemma": "ἀρέσκω",
-    "strong": "G700"
+    "lemma": "ἀρέσκω",
+    "strong": "G700",
+    "glossKo": "기쁘게하다"
   },
   "family": [
-    "ἀρεσκεία",
-    "ἀρέσκω"
+    {
+      "lemma": "ἀρεσκεία",
+      "strong": "G699",
+      "pron": "아레스케이아",
+      "glossKo": "기쁘게함"
+    },
+    {
+      "lemma": "ἀρέσκω",
+      "strong": "G700",
+      "pron": "아레스코",
+      "glossKo": "기쁘게하다"
+    }
   ],
   "defEn": "agreeable; by implication, fit",
   "defKo": "",

@@ -1,0 +1,222 @@
+{
+  "lemma": "πέντε",
+  "pron": "펜테",
+  "strong": "G4002",
+  "posKo": "형용사",
+  "root": null,
+  "family": [
+    {
+      "lemma": "πέμπτος",
+      "strong": "G3991",
+      "pron": "펨프토스",
+      "glossKo": "다섯째"
+    },
+    {
+      "lemma": "πεντάκις",
+      "strong": "G3999",
+      "pron": "펜타키스",
+      "glossKo": "다섯번"
+    },
+    {
+      "lemma": "πεντακόσιοι",
+      "strong": "G4001",
+      "pron": "펜타코시오이",
+      "glossKo": "오백(500)"
+    },
+    {
+      "lemma": "πεντεκαιδέκατος",
+      "strong": "G4003",
+      "pron": "펜테카이데카토스",
+      "glossKo": "열다섯째"
+    },
+    {
+      "lemma": "πεντήκοντα",
+      "strong": "G4004",
+      "pron": "펜테콘타",
+      "glossKo": "오십(50)"
+    }
+  ],
+  "defEn": "\"five\"",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 38,
+  "byBook": {
+    "matthew": 12,
+    "luke": 9,
+    "acts": 5,
+    "john": 5,
+    "mark": 3,
+    "revelation": 3,
+    "corinthians1": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "πέντε ἄρτους",
+      "pron": "펜테 아르투스",
+      "lemmas": [
+        "πέντε",
+        "ἄρτος"
+      ],
+      "words": [
+        {
+          "word": "πέντε",
+          "lemma": "πέντε",
+          "strong": "G4002",
+          "pron": "펜테"
+        },
+        {
+          "word": "ἄρτους",
+          "lemma": "ἄρτος",
+          "strong": "G740",
+          "pron": "아르투스"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "matthew 14:17",
+        "matthew 14:19",
+        "matthew 16:9",
+        "mark 6:41",
+        "mark 8:19",
+        "luke 9:16",
+        "john 6:9",
+        "john 6:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "πέντε τάλαντα",
+      "pron": "펜테 탈란타",
+      "lemmas": [
+        "πέντε",
+        "τάλαντον"
+      ],
+      "words": [
+        {
+          "word": "πέντε",
+          "lemma": "πέντε",
+          "strong": "G4002",
+          "pron": "펜테"
+        },
+        {
+          "word": "τάλαντα",
+          "lemma": "τάλαντον",
+          "strong": "G5007",
+          "pron": "탈란타"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "matthew 25:15",
+        "matthew 25:16",
+        "matthew 25:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "τοὺς πέντε ἄρτους",
+      "pron": "투스 펜테 아르투스",
+      "lemmas": [
+        "ὁ",
+        "πέντε",
+        "ἄρτος"
+      ],
+      "words": [
+        {
+          "word": "τοὺς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투스"
+        },
+        {
+          "word": "πέντε",
+          "lemma": "πέντε",
+          "strong": "G4002",
+          "pron": "펜테"
+        },
+        {
+          "word": "ἄρτους",
+          "lemma": "ἄρτος",
+          "strong": "G740",
+          "pron": "아르투스"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "matthew 14:19",
+        "matthew 16:9",
+        "mark 6:41",
+        "mark 8:19",
+        "luke 9:16",
+        "john 6:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "πέντε ἄρτους καὶ",
+      "pron": "펜테 아르투스 카이",
+      "lemmas": [
+        "πέντε",
+        "ἄρτος",
+        "καί"
+      ],
+      "words": [
+        {
+          "word": "πέντε",
+          "lemma": "πέντε",
+          "strong": "G4002",
+          "pron": "펜테"
+        },
+        {
+          "word": "ἄρτους",
+          "lemma": "ἄρτος",
+          "strong": "G740",
+          "pron": "아르투스"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 14:17",
+        "matthew 14:19",
+        "mark 6:41",
+        "luke 9:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἄλλα πέντε",
+      "pron": "알라 펜테",
+      "lemmas": [
+        "ἄλλος",
+        "πέντε"
+      ],
+      "words": [
+        {
+          "word": "ἄλλα",
+          "lemma": "ἄλλος",
+          "strong": "G243",
+          "pron": "알라"
+        },
+        {
+          "word": "πέντε",
+          "lemma": "πέντε",
+          "strong": "G4002",
+          "pron": "펜테"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 25:16",
+        "matthew 25:20"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

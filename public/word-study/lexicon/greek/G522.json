@@ -1,0 +1,162 @@
+{
+  "lemma": "ἀπαίρω",
+  "pron": "아파이로",
+  "strong": "G522",
+  "posKo": "동사",
+  "root": {
+    "lemma": "ἀπό",
+    "strong": "G575",
+    "glossKo": "에서"
+  },
+  "family": [
+    {
+      "lemma": "ἀπαγγέλλω",
+      "strong": "G518",
+      "pron": "아팡겔로",
+      "glossKo": "전하다"
+    },
+    {
+      "lemma": "ἀπάγχομαι",
+      "strong": "G519",
+      "pron": "아팡코마이",
+      "glossKo": "목매다"
+    },
+    {
+      "lemma": "ἀπάγω",
+      "strong": "G520",
+      "pron": "아파고",
+      "glossKo": "끌고가다"
+    },
+    {
+      "lemma": "ἀπαιτέω",
+      "strong": "G523",
+      "pron": "아파이테오",
+      "glossKo": "요구하다"
+    },
+    {
+      "lemma": "ἀπαλγέω",
+      "strong": "G524",
+      "pron": "아팔게오",
+      "glossKo": "감각없다"
+    },
+    {
+      "lemma": "ἀπαλλάσσω",
+      "strong": "G525",
+      "pron": "아팔라소",
+      "glossKo": "벗어나다"
+    }
+  ],
+  "defEn": "to lift off, i.e. remove",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 3,
+  "byBook": {
+    "luke": 1,
+    "mark": 1,
+    "matthew": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἀπαρθῇ ἀπ αὐτῶν",
+      "pron": "아파르테 압 아우톤",
+      "lemmas": [
+        "ἀπαίρω",
+        "ἀπό",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἀπαρθῇ",
+          "lemma": "ἀπαίρω",
+          "strong": "G522",
+          "pron": "아파르테"
+        },
+        {
+          "word": "ἀπ",
+          "lemma": "ἀπό",
+          "strong": "G575",
+          "pron": "압"
+        },
+        {
+          "word": "αὐτῶν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 9:15",
+        "mark 2:20",
+        "luke 5:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ὅταν ἀπαρθῇ",
+      "pron": "호탄 아파르테",
+      "lemmas": [
+        "ὅταν",
+        "ἀπαίρω"
+      ],
+      "words": [
+        {
+          "word": "ὅταν",
+          "lemma": "ὅταν",
+          "strong": "G3752",
+          "pron": "호탄"
+        },
+        {
+          "word": "ἀπαρθῇ",
+          "lemma": "ἀπαίρω",
+          "strong": "G522",
+          "pron": "아파르테"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 9:15",
+        "mark 2:20",
+        "luke 5:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ὅταν ἀπαρθῇ ἀπ",
+      "pron": "호탄 아파르테 압",
+      "lemmas": [
+        "ὅταν",
+        "ἀπαίρω",
+        "ἀπό"
+      ],
+      "words": [
+        {
+          "word": "ὅταν",
+          "lemma": "ὅταν",
+          "strong": "G3752",
+          "pron": "호탄"
+        },
+        {
+          "word": "ἀπαρθῇ",
+          "lemma": "ἀπαίρω",
+          "strong": "G522",
+          "pron": "아파르테"
+        },
+        {
+          "word": "ἀπ",
+          "lemma": "ἀπό",
+          "strong": "G575",
+          "pron": "압"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 9:15",
+        "mark 2:20",
+        "luke 5:35"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

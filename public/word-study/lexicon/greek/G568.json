@@ -1,0 +1,205 @@
+{
+  "lemma": "ἀπέχω",
+  "pron": "아페코",
+  "strong": "G568",
+  "posKo": "동사",
+  "root": {
+    "lemma": "ἀπό",
+    "strong": "G575",
+    "glossKo": "에서"
+  },
+  "family": [
+    {
+      "lemma": "ἀπαγγέλλω",
+      "strong": "G518",
+      "pron": "아팡겔로",
+      "glossKo": "전하다"
+    },
+    {
+      "lemma": "ἀπάγχομαι",
+      "strong": "G519",
+      "pron": "아팡코마이",
+      "glossKo": "목매다"
+    },
+    {
+      "lemma": "ἀπάγω",
+      "strong": "G520",
+      "pron": "아파고",
+      "glossKo": "끌고가다"
+    },
+    {
+      "lemma": "ἀπαίρω",
+      "strong": "G522",
+      "pron": "아파이로",
+      "glossKo": "빼앗다"
+    },
+    {
+      "lemma": "ἀπαιτέω",
+      "strong": "G523",
+      "pron": "아파이테오",
+      "glossKo": "요구하다"
+    },
+    {
+      "lemma": "ἀπαλγέω",
+      "strong": "G524",
+      "pron": "아팔게오",
+      "glossKo": "감각없다"
+    }
+  ],
+  "defEn": "(actively) to have out, i.e. receive in full; (intransitively) to keep (oneself) away, i.e. be distant (literally or…",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 19,
+  "byBook": {
+    "matthew": 5,
+    "luke": 4,
+    "acts": 2,
+    "mark": 2,
+    "thessalonians1": 2,
+    "peter1": 1,
+    "philemon": 1,
+    "philippians": 1,
+    "timothy1": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ὑμῖν ἀπέχουσιν",
+      "pron": "휘민 아페쿠신",
+      "lemmas": [
+        "σύ",
+        "ἀπέχω"
+      ],
+      "words": [
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        },
+        {
+          "word": "ἀπέχουσιν",
+          "lemma": "ἀπέχω",
+          "strong": "G568",
+          "pron": "아페쿠신"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 6:2",
+        "matthew 6:5",
+        "matthew 6:16",
+        "thessalonians1 4:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἀπέχουσιν τὸν μισθὸν",
+      "pron": "아페쿠신 톤 미스톤",
+      "lemmas": [
+        "ἀπέχω",
+        "ὁ",
+        "μισθός"
+      ],
+      "words": [
+        {
+          "word": "ἀπέχουσιν",
+          "lemma": "ἀπέχω",
+          "strong": "G568",
+          "pron": "아페쿠신"
+        },
+        {
+          "word": "τὸν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "톤"
+        },
+        {
+          "word": "μισθὸν",
+          "lemma": "μισθός",
+          "strong": "G3408",
+          "pron": "미스톤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 6:2",
+        "matthew 6:5",
+        "matthew 6:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "λέγω ὑμῖν ἀπέχουσιν",
+      "pron": "레고 휘민 아페쿠신",
+      "lemmas": [
+        "λέγω",
+        "σύ",
+        "ἀπέχω"
+      ],
+      "words": [
+        {
+          "word": "λέγω",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레고"
+        },
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        },
+        {
+          "word": "ἀπέχουσιν",
+          "lemma": "ἀπέχω",
+          "strong": "G568",
+          "pron": "아페쿠신"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 6:2",
+        "matthew 6:5",
+        "matthew 6:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ὑμῖν ἀπέχουσιν τὸν",
+      "pron": "휘민 아페쿠신 톤",
+      "lemmas": [
+        "σύ",
+        "ἀπέχω",
+        "ὁ"
+      ],
+      "words": [
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        },
+        {
+          "word": "ἀπέχουσιν",
+          "lemma": "ἀπέχω",
+          "strong": "G568",
+          "pron": "아페쿠신"
+        },
+        {
+          "word": "τὸν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "톤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 6:2",
+        "matthew 6:5",
+        "matthew 6:16"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

@@ -5,15 +5,46 @@
   "posKo": "명사",
   "root": {
     "lemma": "πᾶς",
-    "strong": "G3956"
+    "strong": "G3956",
+    "glossKo": "모든"
   },
   "family": [
-    "παμπληθεί",
-    "πάμπολυς",
-    "Παμφυλία",
-    "πανδοχεῖον",
-    "πανήγυρις",
-    "πανοικί"
+    {
+      "lemma": "παμπληθεί",
+      "strong": "G3826",
+      "pron": "팜플레테이",
+      "glossKo": "다함께"
+    },
+    {
+      "lemma": "πάμπολυς",
+      "strong": "G3827",
+      "pron": "팜폴뤼스",
+      "glossKo": ""
+    },
+    {
+      "lemma": "Παμφυλία",
+      "strong": "G3828",
+      "pron": "팜퓔리아",
+      "glossKo": "밤빌리아"
+    },
+    {
+      "lemma": "πανδοχεῖον",
+      "strong": "G3829",
+      "pron": "판도케이온",
+      "glossKo": "주막"
+    },
+    {
+      "lemma": "πανήγυρις",
+      "strong": "G3831",
+      "pron": "파네귀리스",
+      "glossKo": "총회"
+    },
+    {
+      "lemma": "πανοικεί",
+      "strong": "G3832",
+      "pron": "파노이케이",
+      "glossKo": "온집과더불어"
+    }
   ],
   "defEn": "all out-spokenness, i.e. frankness, bluntness, publicity; by implication, assurance",
   "defKo": "",
@@ -36,9 +67,24 @@
   "phrases": [
     {
       "greek": "ἡμῖν παρρησίᾳ",
+      "pron": "헤민 파레시아",
       "lemmas": [
         "ἐγώ",
         "παρρησία"
+      ],
+      "words": [
+        {
+          "word": "ἡμῖν",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "헤민"
+        },
+        {
+          "word": "παρρησίᾳ",
+          "lemma": "παρρησία",
+          "strong": "G3954",
+          "pron": "파레시아"
+        }
       ],
       "count": 4,
       "refs": [
@@ -51,9 +97,24 @@
     },
     {
       "greek": "παρρησίᾳ ἐλάλει",
+      "pron": "파레시아 엘랄레이",
       "lemmas": [
         "παρρησία",
         "λαλέω"
+      ],
+      "words": [
+        {
+          "word": "παρρησίᾳ",
+          "lemma": "παρρησία",
+          "strong": "G3954",
+          "pron": "파레시아"
+        },
+        {
+          "word": "ἐλάλει",
+          "lemma": "λαλέω",
+          "strong": "G2980",
+          "pron": "엘랄레이"
+        }
       ],
       "count": 4,
       "refs": [
@@ -66,9 +127,24 @@
     },
     {
       "greek": "παρρησίαν ἔχων",
+      "pron": "파레시안 에콘",
       "lemmas": [
         "παρρησία",
         "ἔχω"
+      ],
+      "words": [
+        {
+          "word": "παρρησίαν",
+          "lemma": "παρρησία",
+          "strong": "G3954",
+          "pron": "파레시안"
+        },
+        {
+          "word": "ἔχων",
+          "lemma": "ἔχω",
+          "strong": "G2192",
+          "pron": "에콘"
+        }
       ],
       "count": 3,
       "refs": [

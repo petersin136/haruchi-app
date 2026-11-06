@@ -1,0 +1,88 @@
+{
+  "lemma": "βαπτιστής",
+  "pron": "바프티스테스",
+  "strong": "G910",
+  "posKo": "명사",
+  "root": {
+    "lemma": "βαπτίζω",
+    "strong": "G907",
+    "glossKo": "세례주다"
+  },
+  "family": [
+    {
+      "lemma": "βαπτίζω",
+      "strong": "G907",
+      "pron": "밥티조",
+      "glossKo": "세례주다"
+    },
+    {
+      "lemma": "βάπτισμα",
+      "strong": "G908",
+      "pron": "밥티스마",
+      "glossKo": "세례"
+    },
+    {
+      "lemma": "βαπτισμός",
+      "strong": "G909",
+      "pron": "바프티스모스",
+      "glossKo": "씻음"
+    }
+  ],
+  "defEn": "a baptizer, as an epithet of Christ's forerunner",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 12,
+  "byBook": {
+    "matthew": 7,
+    "luke": 3,
+    "mark": 2
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "Ἰωάννου τοῦ βαπτιστοῦ",
+      "pron": "이오안누 투 바프티스투",
+      "lemmas": [
+        "Ἰωάννης",
+        "ὁ",
+        "βαπτιστής"
+      ],
+      "words": [
+        {
+          "word": "Ἰωάννου",
+          "lemma": "Ἰωάννης",
+          "strong": "G2491",
+          "pron": "이오안누"
+        },
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        },
+        {
+          "word": "βαπτιστοῦ",
+          "lemma": "βαπτιστής",
+          "strong": "G910",
+          "pron": "바프티스투"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "matthew 3:1",
+        "matthew 11:11",
+        "matthew 11:12",
+        "matthew 14:2",
+        "matthew 14:8",
+        "matthew 16:14",
+        "matthew 17:13",
+        "mark 6:25",
+        "mark 8:28",
+        "luke 7:20",
+        "luke 7:33",
+        "luke 9:19"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

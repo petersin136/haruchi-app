@@ -1,0 +1,130 @@
+{
+  "lemma": "γνωρίζω",
+  "pron": "그노리조",
+  "strong": "G1107",
+  "posKo": "동사",
+  "root": {
+    "lemma": "γινώσκω",
+    "strong": "G1097",
+    "glossKo": "알다"
+  },
+  "family": [
+    {
+      "lemma": "γινώσκω",
+      "strong": "G1097",
+      "pron": "기노스코",
+      "glossKo": "알다"
+    },
+    {
+      "lemma": "γνώμη",
+      "strong": "G1106",
+      "pron": "그노메",
+      "glossKo": "뜻"
+    },
+    {
+      "lemma": "γνῶσις",
+      "strong": "G1108",
+      "pron": "그노시스",
+      "glossKo": "지식"
+    },
+    {
+      "lemma": "γνώστης",
+      "strong": "G1109",
+      "pron": "그노스테스",
+      "glossKo": "잘아는자"
+    },
+    {
+      "lemma": "γνωστός",
+      "strong": "G1110",
+      "pron": "그노스토스",
+      "glossKo": "아는"
+    },
+    {
+      "lemma": "νοῦς",
+      "strong": "G3563",
+      "pron": "누스",
+      "glossKo": "마음"
+    }
+  ],
+  "defEn": "to make known; subjectively, to know",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 24,
+  "byBook": {
+    "ephesians": 6,
+    "colossians": 3,
+    "john": 3,
+    "corinthians1": 2,
+    "luke": 2,
+    "philippians": 2,
+    "romans": 2,
+    "acts": 1,
+    "corinthians2": 1,
+    "galatians": 1,
+    "peter2": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "γνωρίσει ὑμῖν",
+      "pron": "그노리세이 휘민",
+      "lemmas": [
+        "γνωρίζω",
+        "σύ"
+      ],
+      "words": [
+        {
+          "word": "γνωρίσει",
+          "lemma": "γνωρίζω",
+          "strong": "G1107",
+          "pron": "그노리세이"
+        },
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "john 15:15",
+        "corinthians1 12:3",
+        "ephesians 6:21",
+        "colossians 4:7",
+        "peter2 1:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἐγνώρισεν ἡμῖν",
+      "pron": "에그노리센 헤민",
+      "lemmas": [
+        "γνωρίζω",
+        "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "ἐγνώρισεν",
+          "lemma": "γνωρίζω",
+          "strong": "G1107",
+          "pron": "에그노리센"
+        },
+        {
+          "word": "ἡμῖν",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "헤민"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "luke 2:15",
+        "acts 2:28",
+        "ephesians 1:9",
+        "ephesians 3:3"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

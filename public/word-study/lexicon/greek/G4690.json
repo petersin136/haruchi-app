@@ -4,15 +4,41 @@
   "strong": "G4690",
   "posKo": "명사",
   "root": {
-    "lemma": "σπείρω",
-    "strong": "G4687"
+    "lemma": "σπείρω",
+    "strong": "G4687",
+    "glossKo": "뿌리다"
   },
   "family": [
-    "σπείρω",
-    "σπερμολόγος",
-    "σπορά",
-    "σπόρος",
-    "σπυρίς"
+    {
+      "lemma": "σπείρω",
+      "strong": "G4687",
+      "pron": "스페이로",
+      "glossKo": "뿌리다"
+    },
+    {
+      "lemma": "σπερμολόγος",
+      "strong": "G4691",
+      "pron": "스페르몰로고스",
+      "glossKo": "말장이"
+    },
+    {
+      "lemma": "σπορά",
+      "strong": "G4701",
+      "pron": "스포라",
+      "glossKo": "씨"
+    },
+    {
+      "lemma": "σπόρος",
+      "strong": "G4703",
+      "pron": "스포로스",
+      "glossKo": "씨"
+    },
+    {
+      "lemma": "σπυρίς",
+      "strong": "G4711",
+      "pron": "스퓌리스",
+      "glossKo": "광주리"
+    }
   ],
   "defEn": "something sown, i.e. seed (including the male \"sperm\"); by implication, offspring; specially, a remnant (figuratively…",
   "defKo": "",
@@ -37,9 +63,24 @@
   "phrases": [
     {
       "greek": "σπέρματι αὐτοῦ",
+      "pron": "스페르마티 아우투",
       "lemmas": [
         "σπέρμα",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "σπέρματι",
+          "lemma": "σπέρμα",
+          "strong": "G4690",
+          "pron": "스페르마티"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 7,
       "refs": [
@@ -55,9 +96,24 @@
     },
     {
       "greek": "σπέρμα Ἀβραάμ",
+      "pron": "스페르마 아브라암",
       "lemmas": [
         "σπέρμα",
         "Ἀβραάμ"
+      ],
+      "words": [
+        {
+          "word": "σπέρμα",
+          "lemma": "σπέρμα",
+          "strong": "G4690",
+          "pron": "스페르마"
+        },
+        {
+          "word": "Ἀβραάμ",
+          "lemma": "Ἀβραάμ",
+          "strong": "G11",
+          "pron": "아브라암"
+        }
       ],
       "count": 6,
       "refs": [
@@ -72,10 +128,31 @@
     },
     {
       "greek": "τῷ σπέρματι αὐτοῦ",
+      "pron": "토 스페르마티 아우투",
       "lemmas": [
         "ὁ",
         "σπέρμα",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τῷ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토"
+        },
+        {
+          "word": "σπέρματι",
+          "lemma": "σπέρμα",
+          "strong": "G4690",
+          "pron": "스페르마티"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 6,
       "refs": [
@@ -90,9 +167,24 @@
     },
     {
       "greek": "καλὸν σπέρμα",
+      "pron": "칼론 스페르마",
       "lemmas": [
         "καλός",
         "σπέρμα"
+      ],
+      "words": [
+        {
+          "word": "καλὸν",
+          "lemma": "καλός",
+          "strong": "G2570",
+          "pron": "칼론"
+        },
+        {
+          "word": "σπέρμα",
+          "lemma": "σπέρμα",
+          "strong": "G4690",
+          "pron": "스페르마"
+        }
       ],
       "count": 4,
       "refs": [
@@ -105,10 +197,31 @@
     },
     {
       "greek": "πάντων τῶν σπερμάτων",
+      "pron": "판톤 톤 스페르마톤",
       "lemmas": [
         "πᾶς",
         "ὁ",
         "σπέρμα"
+      ],
+      "words": [
+        {
+          "word": "πάντων",
+          "lemma": "πᾶς",
+          "strong": "G3956",
+          "pron": "판톤"
+        },
+        {
+          "word": "τῶν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "톤"
+        },
+        {
+          "word": "σπερμάτων",
+          "lemma": "σπέρμα",
+          "strong": "G4690",
+          "pron": "스페르마톤"
+        }
       ],
       "count": 3,
       "refs": [

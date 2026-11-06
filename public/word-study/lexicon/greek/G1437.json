@@ -5,15 +5,46 @@
   "posKo": "접속사",
   "root": {
     "lemma": "εἰ",
-    "strong": "G1487"
+    "strong": "G1487",
+    "glossKo": "만일"
   },
   "family": [
-    "εἰ",
-    "εἴγε",
-    "εἰ δὲ μή(γε)",
-    "εἰ καί",
-    "εἰ μή",
-    "εἴ περ"
+    {
+      "lemma": "εἰ",
+      "strong": "G1487",
+      "pron": "에이",
+      "glossKo": "만일"
+    },
+    {
+      "lemma": "εἴγε",
+      "strong": "G1489",
+      "pron": "에이게",
+      "glossKo": ""
+    },
+    {
+      "lemma": "εἰ δὲ μή(γε)",
+      "strong": "G1490",
+      "pron": "에이데메",
+      "glossKo": ""
+    },
+    {
+      "lemma": "εἰ καί",
+      "strong": "G1499",
+      "pron": "에이카이",
+      "glossKo": ""
+    },
+    {
+      "lemma": "εἰ μή",
+      "strong": "G1508",
+      "pron": "에이메",
+      "glossKo": ""
+    },
+    {
+      "lemma": "εἴ περ",
+      "strong": "G1512",
+      "pron": "에이페르",
+      "glossKo": ""
+    }
   ],
   "defEn": "a conditional particle; in case that, provided, etc.; often used in connection with other particles to denote indefin…",
   "defKo": "",
@@ -45,9 +76,24 @@
   "phrases": [
     {
       "greek": "ἐὰν μὴ",
+      "pron": "에안 메",
       "lemmas": [
         "ἐάν",
         "μή"
+      ],
+      "words": [
+        {
+          "word": "ἐὰν",
+          "lemma": "ἐάν",
+          "strong": "G1437",
+          "pron": "에안"
+        },
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        }
       ],
       "count": 47,
       "refs": [
@@ -68,9 +114,24 @@
     },
     {
       "greek": "ἐάν τις",
+      "pron": "에안 티스",
       "lemmas": [
         "ἐάν",
         "τις"
+      ],
+      "words": [
+        {
+          "word": "ἐάν",
+          "lemma": "ἐάν",
+          "strong": "G1437",
+          "pron": "에안"
+        },
+        {
+          "word": "τις",
+          "lemma": "τις",
+          "strong": "G5100",
+          "pron": "티스"
+        }
       ],
       "count": 38,
       "refs": [
@@ -91,9 +152,24 @@
     },
     {
       "greek": "ὃ ἐὰν",
+      "pron": "호 에안",
       "lemmas": [
         "ὅς",
         "ἐάν"
+      ],
+      "words": [
+        {
+          "word": "ὃ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호"
+        },
+        {
+          "word": "ἐὰν",
+          "lemma": "ἐάν",
+          "strong": "G1437",
+          "pron": "에안"
+        }
       ],
       "count": 34,
       "refs": [
@@ -114,9 +190,24 @@
     },
     {
       "greek": "ὅτι ἐὰν",
+      "pron": "호티 에안",
       "lemmas": [
         "ὅτι",
         "ἐάν"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "ἐὰν",
+          "lemma": "ἐάν",
+          "strong": "G1437",
+          "pron": "에안"
+        }
       ],
       "count": 18,
       "refs": [
@@ -137,9 +228,24 @@
     },
     {
       "greek": "ὑμῖν ἐὰν",
+      "pron": "휘민 에안",
       "lemmas": [
         "σύ",
         "ἐάν"
+      ],
+      "words": [
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        },
+        {
+          "word": "ἐὰν",
+          "lemma": "ἐάν",
+          "strong": "G1437",
+          "pron": "에안"
+        }
       ],
       "count": 16,
       "refs": [

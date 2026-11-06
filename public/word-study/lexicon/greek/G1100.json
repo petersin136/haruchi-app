@@ -1,12 +1,22 @@
 {
   "lemma": "γλῶσσα",
-  "pron": "그로스사",
+  "pron": "글로사",
   "strong": "G1100",
   "posKo": "명사",
   "root": null,
   "family": [
-    "Βελίαλ",
-    "γλωσσόκομον"
+    {
+      "lemma": "Βελίαλ",
+      "strong": "G955",
+      "pron": "벨리알",
+      "glossKo": ""
+    },
+    {
+      "lemma": "γλωσσόκομον",
+      "strong": "G1101",
+      "pron": "글로소코몬",
+      "glossKo": "돈궤"
+    }
   ],
   "defEn": "the tongue; by implication, a language (specially, one naturally unacquired)",
   "defKo": "",
@@ -28,9 +38,24 @@
   "phrases": [
     {
       "greek": "λαλῶν γλώσσῃ",
+      "pron": "랄론 글로세",
       "lemmas": [
         "λαλέω",
         "γλῶσσα"
+      ],
+      "words": [
+        {
+          "word": "λαλῶν",
+          "lemma": "λαλέω",
+          "strong": "G2980",
+          "pron": "랄론"
+        },
+        {
+          "word": "γλώσσῃ",
+          "lemma": "γλῶσσα",
+          "strong": "G1100",
+          "pron": "글로세"
+        }
       ],
       "count": 7,
       "refs": [
@@ -45,9 +70,24 @@
     },
     {
       "greek": "γλώσσης αὐτοῦ",
+      "pron": "글로세스 아우투",
       "lemmas": [
         "γλῶσσα",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "γλώσσης",
+          "lemma": "γλῶσσα",
+          "strong": "G1100",
+          "pron": "글로세스"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 6,
       "refs": [
@@ -62,10 +102,31 @@
     },
     {
       "greek": "τῆς γλώσσης αὐτοῦ",
+      "pron": "테스 글로세스 아우투",
       "lemmas": [
         "ὁ",
         "γλῶσσα",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τῆς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "테스"
+        },
+        {
+          "word": "γλώσσης",
+          "lemma": "γλῶσσα",
+          "strong": "G1100",
+          "pron": "글로세스"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 5,
       "refs": [
@@ -79,9 +140,24 @@
     },
     {
       "greek": "γλώσσαις λαλήσουσιν",
+      "pron": "글로사이스 랄레수신",
       "lemmas": [
         "γλῶσσα",
         "λαλέω"
+      ],
+      "words": [
+        {
+          "word": "γλώσσαις",
+          "lemma": "γλῶσσα",
+          "strong": "G1100",
+          "pron": "글로사이스"
+        },
+        {
+          "word": "λαλήσουσιν",
+          "lemma": "λαλέω",
+          "strong": "G2980",
+          "pron": "랄레수신"
+        }
       ],
       "count": 4,
       "refs": [
@@ -94,10 +170,31 @@
     },
     {
       "greek": "ὁ λαλῶν γλώσσῃ",
+      "pron": "호 랄론 글로세",
       "lemmas": [
         "ὁ",
         "λαλέω",
         "γλῶσσα"
+      ],
+      "words": [
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        },
+        {
+          "word": "λαλῶν",
+          "lemma": "λαλέω",
+          "strong": "G2980",
+          "pron": "랄론"
+        },
+        {
+          "word": "γλώσσῃ",
+          "lemma": "γλῶσσα",
+          "strong": "G1100",
+          "pron": "글로세"
+        }
       ],
       "count": 3,
       "refs": [

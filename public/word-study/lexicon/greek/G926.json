@@ -4,15 +4,41 @@
   "strong": "G926",
   "posKo": "형용사",
   "root": {
-    "lemma": "βάρος",
-    "strong": "G922"
+    "lemma": "βάρος",
+    "strong": "G922",
+    "glossKo": "무거움"
   },
   "family": [
-    "βαρέω",
-    "βαρέως",
-    "βάρος",
-    "βαρύνω",
-    "βαρύτιμος"
+    {
+      "lemma": "βαρέω",
+      "strong": "G916",
+      "pron": "바레오",
+      "glossKo": "짓누르다"
+    },
+    {
+      "lemma": "βαρέως",
+      "strong": "G917",
+      "pron": "바레오스",
+      "glossKo": "둔하게"
+    },
+    {
+      "lemma": "βάρος",
+      "strong": "G922",
+      "pron": "바로스",
+      "glossKo": "무거움"
+    },
+    {
+      "lemma": "βαρύνω",
+      "strong": "G925",
+      "pron": "바뤼노",
+      "glossKo": ""
+    },
+    {
+      "lemma": "βαρύτιμος",
+      "strong": "G927",
+      "pron": "바뤼티모스",
+      "glossKo": "값진"
+    }
   ],
   "defEn": "weighty, i.e. (fig) burdensome, grave",
   "defKo": "",

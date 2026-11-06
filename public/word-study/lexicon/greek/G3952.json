@@ -4,11 +4,17 @@
   "strong": "G3952",
   "posKo": "명사",
   "root": {
-    "lemma": "πάρειμι",
-    "strong": "G3918"
+    "lemma": "πάρειμι",
+    "strong": "G3918",
+    "glossKo": "있다"
   },
   "family": [
-    "πάρειμι"
+    {
+      "lemma": "πάρειμι",
+      "strong": "G3918",
+      "pron": "파레이미",
+      "glossKo": "있다"
+    }
   ],
   "defEn": "a being near, i.e. advent (often, return; specially, of Christ to punish Jerusalem, or finally the wicked); (by impli…",
   "defKo": "",
@@ -29,10 +35,31 @@
   "phrases": [
     {
       "greek": "παρουσίᾳ τοῦ κυρίου",
+      "pron": "파루시아 투 퀴리우",
       "lemmas": [
         "παρουσία",
         "ὁ",
         "κύριος"
+      ],
+      "words": [
+        {
+          "word": "παρουσίᾳ",
+          "lemma": "παρουσία",
+          "strong": "G3952",
+          "pron": "파루시아"
+        },
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        },
+        {
+          "word": "κυρίου",
+          "lemma": "κύριος",
+          "strong": "G2962",
+          "pron": "퀴리우"
+        }
       ],
       "count": 6,
       "refs": [
@@ -47,9 +74,24 @@
     },
     {
       "greek": "παρουσίᾳ αὐτοῦ",
+      "pron": "파루시아 아우투",
       "lemmas": [
         "παρουσία",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "παρουσίᾳ",
+          "lemma": "παρουσία",
+          "strong": "G3952",
+          "pron": "파루시아"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 5,
       "refs": [
@@ -63,10 +105,31 @@
     },
     {
       "greek": "τῇ παρουσίᾳ αὐτοῦ",
+      "pron": "테 파루시아 아우투",
       "lemmas": [
         "ὁ",
         "παρουσία",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τῇ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "테"
+        },
+        {
+          "word": "παρουσίᾳ",
+          "lemma": "παρουσία",
+          "strong": "G3952",
+          "pron": "파루시아"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 5,
       "refs": [
@@ -80,10 +143,31 @@
     },
     {
       "greek": "ἔσται ἡ παρουσία",
+      "pron": "에스타이 헤 파루시아",
       "lemmas": [
         "εἰμί",
         "ὁ",
         "παρουσία"
+      ],
+      "words": [
+        {
+          "word": "ἔσται",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스타이"
+        },
+        {
+          "word": "ἡ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "헤"
+        },
+        {
+          "word": "παρουσία",
+          "lemma": "παρουσία",
+          "strong": "G3952",
+          "pron": "파루시아"
+        }
       ],
       "count": 3,
       "refs": [
@@ -95,10 +179,31 @@
     },
     {
       "greek": "παρουσία τοῦ υἱοῦ",
+      "pron": "파루시아 투 휘우",
       "lemmas": [
         "παρουσία",
         "ὁ",
         "υἱός"
+      ],
+      "words": [
+        {
+          "word": "παρουσία",
+          "lemma": "παρουσία",
+          "strong": "G3952",
+          "pron": "파루시아"
+        },
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        },
+        {
+          "word": "υἱοῦ",
+          "lemma": "υἱός",
+          "strong": "G5207",
+          "pron": "휘우"
+        }
       ],
       "count": 3,
       "refs": [

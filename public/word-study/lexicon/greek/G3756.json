@@ -5,39 +5,69 @@
   "posKo": "부사",
   "root": null,
   "family": [
-    "μή",
-    "οὐ μή",
-    "οὐδέ",
-    "οὐκέτι",
-    "οὐκοῦν",
-    "οὔπω"
+    {
+      "lemma": "μή",
+      "strong": "G3361",
+      "pron": "메",
+      "glossKo": "아니다"
+    },
+    {
+      "lemma": "οὐ μή",
+      "strong": "G3364",
+      "pron": "우메",
+      "glossKo": ""
+    },
+    {
+      "lemma": "οὐδέ",
+      "strong": "G3761",
+      "pron": "우데",
+      "glossKo": "~도 아니"
+    },
+    {
+      "lemma": "οὐκέτι",
+      "strong": "G3765",
+      "pron": "우케티",
+      "glossKo": "더는아니"
+    },
+    {
+      "lemma": "οὐκοῦν",
+      "strong": "G3766",
+      "pron": "우쿤",
+      "glossKo": "그러면"
+    },
+    {
+      "lemma": "οὔπω",
+      "strong": "G3768",
+      "pron": "우포",
+      "glossKo": "아직~않다"
+    }
   ],
   "defEn": "the absolute negative (compare ) adverb; no or not",
   "defKo": "",
   "compareKo": "",
-  "countNT": 1605,
+  "countNT": 1647,
   "byBook": {
-    "john": 279,
-    "matthew": 198,
-    "luke": 172,
-    "corinthians1": 156,
-    "romans": 121,
-    "mark": 116,
-    "acts": 110,
-    "corinthians2": 93,
-    "revelation": 67,
-    "hebrews": 66,
+    "john": 282,
+    "matthew": 205,
+    "luke": 179,
+    "corinthians1": 157,
+    "romans": 125,
+    "acts": 119,
+    "mark": 117,
+    "corinthians2": 98,
+    "revelation": 68,
+    "hebrews": 67,
     "john1": 48,
     "galatians": 38,
-    "james": 25,
+    "james": 27,
     "thessalonians1": 18,
     "peter1": 13,
     "philippians": 13,
     "peter2": 12,
     "timothy2": 12,
     "ephesians": 11,
+    "colossians": 9,
     "timothy1": 9,
-    "colossians": 8,
     "thessalonians2": 8,
     "john2": 5,
     "john3": 4,
@@ -48,9 +78,24 @@
   "phrases": [
     {
       "greek": "οὐκ ἔστιν",
+      "pron": "우크 에스틴",
       "lemmas": [
         "οὐ",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        },
+        {
+          "word": "ἔστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 178,
       "refs": [
@@ -71,9 +116,24 @@
     },
     {
       "greek": "ὃ οὐκ",
+      "pron": "호 우크",
       "lemmas": [
         "ὅς",
         "οὐ"
+      ],
+      "words": [
+        {
+          "word": "ὃ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호"
+        },
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        }
       ],
       "count": 97,
       "refs": [
@@ -94,9 +154,24 @@
     },
     {
       "greek": "οὐ μὴ",
+      "pron": "우 메",
       "lemmas": [
         "οὐ",
         "μή"
+      ],
+      "words": [
+        {
+          "word": "οὐ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우"
+        },
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        }
       ],
       "count": 95,
       "refs": [
@@ -117,9 +192,24 @@
     },
     {
       "greek": "ὅτι οὐκ",
+      "pron": "호티 우크",
       "lemmas": [
         "ὅτι",
         "οὐ"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        }
       ],
       "count": 90,
       "refs": [
@@ -140,9 +230,24 @@
     },
     {
       "greek": "οὐκ οἴδατε",
+      "pron": "우크 오이다테",
       "lemmas": [
         "οὐ",
         "οἶδα"
+      ],
+      "words": [
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        },
+        {
+          "word": "οἴδατε",
+          "lemma": "οἶδα",
+          "strong": "G1492",
+          "pron": "오이다테"
+        }
       ],
       "count": 83,
       "refs": [

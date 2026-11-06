@@ -4,12 +4,23 @@
   "strong": "G5479",
   "posKo": "명사",
   "root": {
-    "lemma": "χαίρω",
-    "strong": "G5463"
+    "lemma": "χαίρω",
+    "strong": "G5463",
+    "glossKo": "기뻐하다"
   },
   "family": [
-    "χαίρω",
-    "χάρις"
+    {
+      "lemma": "χαίρω",
+      "strong": "G5463",
+      "pron": "카이로",
+      "glossKo": "기뻐하다"
+    },
+    {
+      "lemma": "χάρις",
+      "strong": "G5485",
+      "pron": "카리스",
+      "glossKo": "은혜"
+    }
   ],
   "defEn": "cheerfulness, i.e. calm delight",
   "defKo": "",
@@ -40,9 +51,24 @@
   "phrases": [
     {
       "greek": "χαρὰ ὑμῶν",
+      "pron": "카라 휘몬",
       "lemmas": [
         "χαρά",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "χαρὰ",
+          "lemma": "χαρά",
+          "strong": "G5479",
+          "pron": "카라"
+        },
+        {
+          "word": "ὑμῶν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘몬"
+        }
       ],
       "count": 6,
       "refs": [
@@ -57,10 +83,31 @@
     },
     {
       "greek": "ἡ χαρὰ ὑμῶν",
+      "pron": "헤 카라 휘몬",
       "lemmas": [
         "ὁ",
         "χαρά",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "ἡ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "헤"
+        },
+        {
+          "word": "χαρὰ",
+          "lemma": "χαρά",
+          "strong": "G5479",
+          "pron": "카라"
+        },
+        {
+          "word": "ὑμῶν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘몬"
+        }
       ],
       "count": 5,
       "refs": [
@@ -74,9 +121,24 @@
     },
     {
       "greek": "χαρὰν μεγάλην",
+      "pron": "카란 메갈렌",
       "lemmas": [
         "χαρά",
         "μέγας"
+      ],
+      "words": [
+        {
+          "word": "χαρὰν",
+          "lemma": "χαρά",
+          "strong": "G5479",
+          "pron": "카란"
+        },
+        {
+          "word": "μεγάλην",
+          "lemma": "μέγας",
+          "strong": "G3173",
+          "pron": "메갈렌"
+        }
       ],
       "count": 5,
       "refs": [
@@ -90,10 +152,31 @@
     },
     {
       "greek": "ἵνα ἡ χαρὰ",
+      "pron": "히나 헤 카라",
       "lemmas": [
         "ἵνα",
         "ὁ",
         "χαρά"
+      ],
+      "words": [
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        },
+        {
+          "word": "ἡ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "헤"
+        },
+        {
+          "word": "χαρὰ",
+          "lemma": "χαρά",
+          "strong": "G5479",
+          "pron": "카라"
+        }
       ],
       "count": 4,
       "refs": [
@@ -106,9 +189,24 @@
     },
     {
       "greek": "πάσης χαρᾶς",
+      "pron": "파세스 카라스",
       "lemmas": [
         "πᾶς",
         "χαρά"
+      ],
+      "words": [
+        {
+          "word": "πάσης",
+          "lemma": "πᾶς",
+          "strong": "G3956",
+          "pron": "파세스"
+        },
+        {
+          "word": "χαρᾶς",
+          "lemma": "χαρά",
+          "strong": "G5479",
+          "pron": "카라스"
+        }
       ],
       "count": 3,
       "refs": [

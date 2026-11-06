@@ -1,0 +1,146 @@
+{
+  "lemma": "χαρίζομαι",
+  "pron": "카리조마이",
+  "strong": "G5483",
+  "posKo": "동사",
+  "root": {
+    "lemma": "χάρις",
+    "strong": "G5485",
+    "glossKo": "은혜"
+  },
+  "family": [
+    {
+      "lemma": "χάριν",
+      "strong": "G5484",
+      "pron": "카린",
+      "glossKo": "위하여"
+    },
+    {
+      "lemma": "χάρις",
+      "strong": "G5485",
+      "pron": "카리스",
+      "glossKo": "은혜"
+    },
+    {
+      "lemma": "χάρισμα",
+      "strong": "G5486",
+      "pron": "카리스마",
+      "glossKo": "은사"
+    },
+    {
+      "lemma": "χαριτόω",
+      "strong": "G5487",
+      "pron": "카리토오",
+      "glossKo": "은혜받은"
+    }
+  ],
+  "defEn": "to grant as a favor, i.e. gratuitously, in kindness, pardon or rescue",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 23,
+  "byBook": {
+    "corinthians2": 5,
+    "acts": 4,
+    "colossians": 3,
+    "luke": 3,
+    "ephesians": 2,
+    "philippians": 2,
+    "corinthians1": 1,
+    "galatians": 1,
+    "philemon": 1,
+    "romans": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐχαρίσατο ὑμῖν",
+      "pron": "에카리사토 휘민",
+      "lemmas": [
+        "χαρίζομαι",
+        "σύ"
+      ],
+      "words": [
+        {
+          "word": "ἐχαρίσατο",
+          "lemma": "χαρίζομαι",
+          "strong": "G5483",
+          "pron": "에카리사토"
+        },
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "acts 3:14",
+        "acts 27:24",
+        "ephesians 4:32",
+        "colossians 3:13",
+        "philemon 1:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ὑμᾶς χαρίσασθαι",
+      "pron": "휘마스 카리사스타이",
+      "lemmas": [
+        "σύ",
+        "χαρίζομαι"
+      ],
+      "words": [
+        {
+          "word": "ὑμᾶς",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘마스"
+        },
+        {
+          "word": "χαρίσασθαι",
+          "lemma": "χαρίζομαι",
+          "strong": "G5483",
+          "pron": "카리사스타이"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "corinthians2 2:7",
+        "corinthians2 12:13",
+        "philippians 1:29",
+        "philemon 1:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "χαρισθέντα ἡμῖν",
+      "pron": "카리스텐타 헤민",
+      "lemmas": [
+        "χαρίζομαι",
+        "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "χαρισθέντα",
+          "lemma": "χαρίζομαι",
+          "strong": "G5483",
+          "pron": "카리스텐타"
+        },
+        {
+          "word": "ἡμῖν",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "헤민"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "corinthians1 2:12",
+        "corinthians2 12:13",
+        "colossians 2:13"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

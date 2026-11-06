@@ -4,12 +4,23 @@
   "strong": "G1860",
   "posKo": "명사",
   "root": {
-    "lemma": "ἐπαγγέλλω",
-    "strong": "G1861"
+    "lemma": "ἐπαγγέλλομαι",
+    "strong": "G1861",
+    "glossKo": "약속하다"
   },
   "family": [
-    "ἐπαγγέλλω",
-    "ἐπάγγελμα"
+    {
+      "lemma": "ἐπαγγέλλομαι",
+      "strong": "G1861",
+      "pron": "에팡겔로마이",
+      "glossKo": "약속하다"
+    },
+    {
+      "lemma": "ἐπάγγελμα",
+      "strong": "G1862",
+      "pron": "에팡겔마",
+      "glossKo": "약속"
+    }
   ],
   "defEn": "an announcement (for information, assent or pledge; especially a divine assurance of good)",
   "defKo": "",
@@ -32,10 +43,31 @@
   "phrases": [
     {
       "greek": "ἐπαγγελίαν τοῦ πατρός",
+      "pron": "에팡겔리안 투 파트로스",
       "lemmas": [
         "ἐπαγγελία",
         "ὁ",
         "πατήρ"
+      ],
+      "words": [
+        {
+          "word": "ἐπαγγελίαν",
+          "lemma": "ἐπαγγελία",
+          "strong": "G1860",
+          "pron": "에팡겔리안"
+        },
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        },
+        {
+          "word": "πατρός",
+          "lemma": "πατήρ",
+          "strong": "G3962",
+          "pron": "파트로스"
+        }
       ],
       "count": 3,
       "refs": [
@@ -47,10 +79,31 @@
     },
     {
       "greek": "ἐστιν ἡ ἐπαγγελία",
+      "pron": "에스틴 헤 에팡겔리아",
       "lemmas": [
         "εἰμί",
         "ὁ",
         "ἐπαγγελία"
+      ],
+      "words": [
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        },
+        {
+          "word": "ἡ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "헤"
+        },
+        {
+          "word": "ἐπαγγελία",
+          "lemma": "ἐπαγγελία",
+          "strong": "G1860",
+          "pron": "에팡겔리아"
+        }
       ],
       "count": 3,
       "refs": [

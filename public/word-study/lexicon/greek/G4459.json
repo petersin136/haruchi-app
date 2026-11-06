@@ -8,31 +8,52 @@
     "strong": "G4226"
   },
   "family": [
-    "ποῖος",
-    "πότε",
-    "πότερον",
-    "ποῦ"
+    {
+      "lemma": "ποῖος",
+      "strong": "G4169",
+      "pron": "포이오스",
+      "glossKo": "어떤"
+    },
+    {
+      "lemma": "πότε",
+      "strong": "G4219",
+      "pron": "포테",
+      "glossKo": ""
+    },
+    {
+      "lemma": "πότερον",
+      "strong": "G4220",
+      "pron": "포테론",
+      "glossKo": "어느쪽"
+    },
+    {
+      "lemma": "ποῦ",
+      "strong": "G4226",
+      "pron": "푸",
+      "glossKo": ""
+    }
   ],
   "defEn": "an interrogative particle of manner; in what way? (sometimes the question is indirect, how?); also as exclamation, ho…",
   "defKo": "",
   "compareKo": "",
-  "countNT": 103,
+  "countNT": 117,
   "byBook": {
     "john": 20,
     "luke": 16,
     "mark": 14,
     "matthew": 14,
-    "acts": 9,
-    "corinthians1": 9,
-    "romans": 8,
-    "galatians": 2,
-    "thessalonians1": 2,
+    "corinthians1": 11,
+    "acts": 10,
+    "romans": 10,
+    "corinthians2": 6,
+    "galatians": 4,
+    "thessalonians1": 3,
     "timothy1": 2,
     "colossians": 1,
-    "corinthians2": 1,
     "ephesians": 1,
     "hebrews": 1,
     "john1": 1,
+    "philippians": 1,
     "revelation": 1,
     "thessalonians2": 1
   },
@@ -40,9 +61,24 @@
   "phrases": [
     {
       "greek": "αὐτοῖς Πῶς",
+      "pron": "아우토이스 포스",
       "lemmas": [
         "αὐτός",
         "πῶς"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        },
+        {
+          "word": "Πῶς",
+          "lemma": "πῶς",
+          "strong": "G4459",
+          "pron": "포스"
+        }
       ],
       "count": 10,
       "refs": [
@@ -61,9 +97,24 @@
     },
     {
       "greek": "Πῶς δύναται",
+      "pron": "포스 뒤나타이",
       "lemmas": [
         "πῶς",
         "δύναμαι"
+      ],
+      "words": [
+        {
+          "word": "Πῶς",
+          "lemma": "πῶς",
+          "strong": "G4459",
+          "pron": "포스"
+        },
+        {
+          "word": "δύναται",
+          "lemma": "δύναμαι",
+          "strong": "G1410",
+          "pron": "뒤나타이"
+        }
       ],
       "count": 10,
       "refs": [
@@ -82,9 +133,24 @@
     },
     {
       "greek": "λέγοντες Πῶς",
+      "pron": "레곤테스 포스",
       "lemmas": [
         "λέγω",
         "πῶς"
+      ],
+      "words": [
+        {
+          "word": "λέγοντες",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레곤테스"
+        },
+        {
+          "word": "Πῶς",
+          "lemma": "πῶς",
+          "strong": "G4459",
+          "pron": "포스"
+        }
       ],
       "count": 7,
       "refs": [
@@ -100,9 +166,24 @@
     },
     {
       "greek": "Πῶς λέγουσιν",
+      "pron": "포스 레구신",
       "lemmas": [
         "πῶς",
         "λέγω"
+      ],
+      "words": [
+        {
+          "word": "Πῶς",
+          "lemma": "πῶς",
+          "strong": "G4459",
+          "pron": "포스"
+        },
+        {
+          "word": "λέγουσιν",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레구신"
+        }
       ],
       "count": 7,
       "refs": [
@@ -118,9 +199,24 @@
     },
     {
       "greek": "πῶς οὖν",
+      "pron": "포스 운",
       "lemmas": [
         "πῶς",
         "οὖν"
+      ],
+      "words": [
+        {
+          "word": "πῶς",
+          "lemma": "πῶς",
+          "strong": "G4459",
+          "pron": "포스"
+        },
+        {
+          "word": "οὖν",
+          "lemma": "οὖν",
+          "strong": "G3767",
+          "pron": "운"
+        }
       ],
       "count": 6,
       "refs": [

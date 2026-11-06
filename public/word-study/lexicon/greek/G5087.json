@@ -5,9 +5,24 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "θεμέλιος",
-    "θήκη",
-    "θησαυρός"
+    {
+      "lemma": "θεμέλιος",
+      "strong": "G2310",
+      "pron": "테멜리오스",
+      "glossKo": "기초"
+    },
+    {
+      "lemma": "θήκη",
+      "strong": "G2336",
+      "pron": "테케",
+      "glossKo": "칼집"
+    },
+    {
+      "lemma": "θησαυρός",
+      "strong": "G2344",
+      "pron": "테사우로스",
+      "glossKo": "보화"
+    }
   ],
   "defEn": "to place (in the widest application, literally and figuratively; properly, in a passive or horizontal posture, and th…",
   "defKo": "",
@@ -35,9 +50,24 @@
   "phrases": [
     {
       "greek": "ἔθηκαν αὐτόν",
+      "pron": "에테칸 아우톤",
       "lemmas": [
         "τίθημι",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἔθηκαν",
+          "lemma": "τίθημι",
+          "strong": "G5087",
+          "pron": "에테칸"
+        },
+        {
+          "word": "αὐτόν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
       ],
       "count": 15,
       "refs": [
@@ -58,10 +88,31 @@
     },
     {
       "greek": "ἔθηκεν αὐτὸν ἐν",
+      "pron": "에테켄 아우톤 엔",
       "lemmas": [
         "τίθημι",
         "αὐτός",
         "ἐν"
+      ],
+      "words": [
+        {
+          "word": "ἔθηκεν",
+          "lemma": "τίθημι",
+          "strong": "G5087",
+          "pron": "에테켄"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "ἐν",
+          "lemma": "ἐν",
+          "strong": "G1722",
+          "pron": "엔"
+        }
       ],
       "count": 6,
       "refs": [
@@ -76,10 +127,31 @@
     },
     {
       "greek": "θῶ τοὺς ἐχθρούς",
+      "pron": "토 투스 에크트루스",
       "lemmas": [
         "τίθημι",
         "ὁ",
         "ἐχθρός"
+      ],
+      "words": [
+        {
+          "word": "θῶ",
+          "lemma": "τίθημι",
+          "strong": "G5087",
+          "pron": "토"
+        },
+        {
+          "word": "τοὺς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투스"
+        },
+        {
+          "word": "ἐχθρούς",
+          "lemma": "ἐχθρός",
+          "strong": "G2190",
+          "pron": "에크트루스"
+        }
       ],
       "count": 6,
       "refs": [
@@ -94,10 +166,31 @@
     },
     {
       "greek": "καὶ ἔθηκεν αὐτὸν",
+      "pron": "카이 에테켄 아우톤",
       "lemmas": [
         "καί",
         "τίθημι",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "ἔθηκεν",
+          "lemma": "τίθημι",
+          "strong": "G5087",
+          "pron": "에테켄"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
       ],
       "count": 6,
       "refs": [
@@ -112,9 +205,24 @@
     },
     {
       "greek": "ὃ ἐτέθην",
+      "pron": "호 에테텐",
       "lemmas": [
         "ὅς",
         "τίθημι"
+      ],
+      "words": [
+        {
+          "word": "ὃ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호"
+        },
+        {
+          "word": "ἐτέθην",
+          "lemma": "τίθημι",
+          "strong": "G5087",
+          "pron": "에테텐"
+        }
       ],
       "count": 6,
       "refs": [

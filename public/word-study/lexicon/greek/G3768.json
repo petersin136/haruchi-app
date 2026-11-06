@@ -5,15 +5,46 @@
   "posKo": "부사",
   "root": {
     "lemma": "οὐ",
-    "strong": "G3756"
+    "strong": "G3756",
+    "glossKo": "아니다"
   },
   "family": [
-    "μή",
-    "οὐ μή",
-    "οὐ",
-    "οὐδέ",
-    "οὐκέτι",
-    "οὐκοῦν"
+    {
+      "lemma": "μή",
+      "strong": "G3361",
+      "pron": "메",
+      "glossKo": "아니다"
+    },
+    {
+      "lemma": "οὐ μή",
+      "strong": "G3364",
+      "pron": "우메",
+      "glossKo": ""
+    },
+    {
+      "lemma": "οὐ",
+      "strong": "G3756",
+      "pron": "우",
+      "glossKo": "아니다"
+    },
+    {
+      "lemma": "οὐδέ",
+      "strong": "G3761",
+      "pron": "우데",
+      "glossKo": "~도 아니"
+    },
+    {
+      "lemma": "οὐκέτι",
+      "strong": "G3765",
+      "pron": "우케티",
+      "glossKo": "더는아니"
+    },
+    {
+      "lemma": "οὐκοῦν",
+      "strong": "G3766",
+      "pron": "우쿤",
+      "glossKo": "그러면"
+    }
   ],
   "defEn": "not yet",
   "defKo": "",
@@ -33,9 +64,24 @@
   "phrases": [
     {
       "greek": "οὔπω ἐληλύθει",
+      "pron": "우포 엘렐뤼테이",
       "lemmas": [
         "οὔπω",
         "ἔρχομαι"
+      ],
+      "words": [
+        {
+          "word": "οὔπω",
+          "lemma": "οὔπω",
+          "strong": "G3768",
+          "pron": "우포"
+        },
+        {
+          "word": "ἐληλύθει",
+          "lemma": "ἔρχομαι",
+          "strong": "G2064",
+          "pron": "엘렐뤼테이"
+        }
       ],
       "count": 4,
       "refs": [

@@ -1,0 +1,213 @@
+{
+  "lemma": "πάσχω",
+  "pron": "파스코",
+  "strong": "G3958",
+  "posKo": "동사",
+  "root": null,
+  "family": [
+    {
+      "lemma": "πάθος",
+      "strong": "G3806",
+      "pron": "파토스",
+      "glossKo": "정욕"
+    },
+    {
+      "lemma": "πένθος",
+      "strong": "G3997",
+      "pron": "펜토스",
+      "glossKo": "슬픔"
+    },
+    {
+      "lemma": "πεποίθησις",
+      "strong": "G4006",
+      "pron": "페포이테시스",
+      "glossKo": "확신"
+    }
+  ],
+  "defEn": "to experience a sensation or impression (usually painful)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 42,
+  "byBook": {
+    "peter1": 12,
+    "luke": 6,
+    "acts": 5,
+    "hebrews": 4,
+    "matthew": 4,
+    "mark": 3,
+    "corinthians1": 1,
+    "corinthians2": 1,
+    "galatians": 1,
+    "philippians": 1,
+    "revelation": 1,
+    "thessalonians1": 1,
+    "thessalonians2": 1,
+    "timothy2": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "πολλὰ παθεῖν",
+      "pron": "폴라 파테인",
+      "lemmas": [
+        "πολύς",
+        "πάσχω"
+      ],
+      "words": [
+        {
+          "word": "πολλὰ",
+          "lemma": "πολύς",
+          "strong": "G4183",
+          "pron": "폴라"
+        },
+        {
+          "word": "παθεῖν",
+          "lemma": "πάσχω",
+          "strong": "G3958",
+          "pron": "파테인"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "matthew 16:21",
+        "mark 5:26",
+        "mark 8:31",
+        "mark 9:12",
+        "luke 9:22",
+        "luke 17:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "πολλὰ παθεῖν καὶ",
+      "pron": "폴라 파테인 카이",
+      "lemmas": [
+        "πολύς",
+        "πάσχω",
+        "καί"
+      ],
+      "words": [
+        {
+          "word": "πολλὰ",
+          "lemma": "πολύς",
+          "strong": "G4183",
+          "pron": "폴라"
+        },
+        {
+          "word": "παθεῖν",
+          "lemma": "πάσχω",
+          "strong": "G3958",
+          "pron": "파테인"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "mark 8:31",
+        "mark 9:12",
+        "luke 9:22",
+        "luke 17:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "με παθεῖν",
+      "pron": "메 파테인",
+      "lemmas": [
+        "ἐγώ",
+        "πάσχω"
+      ],
+      "words": [
+        {
+          "word": "με",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "메"
+        },
+        {
+          "word": "παθεῖν",
+          "lemma": "πάσχω",
+          "strong": "G3958",
+          "pron": "파테인"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "luke 22:15",
+        "acts 9:16",
+        "corinthians2 1:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "παθεῖν αὐτὸν",
+      "pron": "파테인 아우톤",
+      "lemmas": [
+        "πάσχω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "παθεῖν",
+          "lemma": "πάσχω",
+          "strong": "G3958",
+          "pron": "파테인"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "acts 1:3",
+        "hebrews 2:18",
+        "peter1 5:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "παθεῖν καὶ ἀποδοκιμασθῆναι",
+      "pron": "파테인 카이 아포도키마스테나이",
+      "lemmas": [
+        "πάσχω",
+        "καί",
+        "ἀποδοκιμάζω"
+      ],
+      "words": [
+        {
+          "word": "παθεῖν",
+          "lemma": "πάσχω",
+          "strong": "G3958",
+          "pron": "파테인"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "ἀποδοκιμασθῆναι",
+          "lemma": "ἀποδοκιμάζω",
+          "strong": "G593",
+          "pron": "아포도키마스테나이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "mark 8:31",
+        "luke 9:22",
+        "luke 17:25"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

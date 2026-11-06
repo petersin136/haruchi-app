@@ -5,10 +5,30 @@
   "posKo": "형용사",
   "root": null,
   "family": [
-    "ὁλοκαύτωμα",
-    "ὁλόκληρος",
-    "ὁλοτελής",
-    "ὅλως"
+    {
+      "lemma": "ὁλοκαύτωμα",
+      "strong": "G3646",
+      "pron": "홀로카우토마",
+      "glossKo": "번제"
+    },
+    {
+      "lemma": "ὁλόκληρος",
+      "strong": "G3648",
+      "pron": "홀로클레로스",
+      "glossKo": "온전한"
+    },
+    {
+      "lemma": "ὁλοτελής",
+      "strong": "G3651",
+      "pron": "홀로텔레스",
+      "glossKo": "온전히"
+    },
+    {
+      "lemma": "ὅλως",
+      "strong": "G3654",
+      "pron": "홀로스",
+      "glossKo": "도무지"
+    }
   ],
   "defEn": "\"whole\" or \"all\", i.e. complete (in extent, amount, time or degree), especially (neuter) as noun or adverb",
   "defKo": "",
@@ -36,10 +56,31 @@
   "phrases": [
     {
       "greek": "ὅλον τὸ σῶμά",
+      "pron": "홀론 토 소마",
       "lemmas": [
         "ὅλος",
         "ὁ",
         "σῶμα"
+      ],
+      "words": [
+        {
+          "word": "ὅλον",
+          "lemma": "ὅλος",
+          "strong": "G3650",
+          "pron": "홀론"
+        },
+        {
+          "word": "τὸ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토"
+        },
+        {
+          "word": "σῶμά",
+          "lemma": "σῶμα",
+          "strong": "G4983",
+          "pron": "소마"
+        }
       ],
       "count": 9,
       "refs": [
@@ -57,10 +98,31 @@
     },
     {
       "greek": "ὅλην τὴν γῆν",
+      "pron": "홀렌 텐 겐",
       "lemmas": [
         "ὅλος",
         "ὁ",
         "γῆ"
+      ],
+      "words": [
+        {
+          "word": "ὅλην",
+          "lemma": "ὅλος",
+          "strong": "G3650",
+          "pron": "홀렌"
+        },
+        {
+          "word": "τὴν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "텐"
+        },
+        {
+          "word": "γῆν",
+          "lemma": "γῆ",
+          "strong": "G1093",
+          "pron": "겐"
+        }
       ],
       "count": 5,
       "refs": [
@@ -74,9 +136,24 @@
     },
     {
       "greek": "κόσμον ὅλον",
+      "pron": "코스몬 홀론",
       "lemmas": [
         "κόσμος",
         "ὅλος"
+      ],
+      "words": [
+        {
+          "word": "κόσμον",
+          "lemma": "κόσμος",
+          "strong": "G2889",
+          "pron": "코스몬"
+        },
+        {
+          "word": "ὅλον",
+          "lemma": "ὅλος",
+          "strong": "G3650",
+          "pron": "홀론"
+        }
       ],
       "count": 4,
       "refs": [
@@ -89,10 +166,31 @@
     },
     {
       "greek": "ὅλης τῆς Ἰουδαίας",
+      "pron": "홀레스 테스 이우다이아스",
       "lemmas": [
         "ὅλος",
         "ὁ",
         "Ἰουδαία"
+      ],
+      "words": [
+        {
+          "word": "ὅλης",
+          "lemma": "ὅλος",
+          "strong": "G3650",
+          "pron": "홀레스"
+        },
+        {
+          "word": "τῆς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "테스"
+        },
+        {
+          "word": "Ἰουδαίας",
+          "lemma": "Ἰουδαία",
+          "strong": "G2449",
+          "pron": "이우다이아스"
+        }
       ],
       "count": 4,
       "refs": [
@@ -105,10 +203,31 @@
     },
     {
       "greek": "ὅλης τῆς καρδίας",
+      "pron": "홀레스 테스 카르디아스",
       "lemmas": [
         "ὅλος",
         "ὁ",
         "καρδία"
+      ],
+      "words": [
+        {
+          "word": "ὅλης",
+          "lemma": "ὅλος",
+          "strong": "G3650",
+          "pron": "홀레스"
+        },
+        {
+          "word": "τῆς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "테스"
+        },
+        {
+          "word": "καρδίας",
+          "lemma": "καρδία",
+          "strong": "G2588",
+          "pron": "카르디아스"
+        }
       ],
       "count": 4,
       "refs": [

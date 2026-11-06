@@ -1,0 +1,128 @@
+{
+  "lemma": "προλέγω",
+  "pron": "프롤레고",
+  "strong": "G4302",
+  "posKo": "동사",
+  "root": {
+    "lemma": "πρό",
+    "strong": "G4253",
+    "glossKo": "전에"
+  },
+  "family": [
+    {
+      "lemma": "πόρρω",
+      "strong": "G4206",
+      "pron": "포로",
+      "glossKo": "멀리"
+    },
+    {
+      "lemma": "πρηνής",
+      "strong": "G4248",
+      "pron": "프레네스",
+      "glossKo": "곤두박이로"
+    },
+    {
+      "lemma": "πρίν",
+      "strong": "G4250",
+      "pron": "프린",
+      "glossKo": "이전"
+    },
+    {
+      "lemma": "πρό",
+      "strong": "G4253",
+      "pron": "프로",
+      "glossKo": "전에"
+    },
+    {
+      "lemma": "προάγω",
+      "strong": "G4254",
+      "pron": "프로아고",
+      "glossKo": "앞서가다"
+    },
+    {
+      "lemma": "προαιρέομαι",
+      "strong": "G4255",
+      "pron": "프로아이레오마이",
+      "glossKo": "정하다"
+    }
+  ],
+  "defEn": "to say beforehand, i.e. predict, forewarn",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 15,
+  "byBook": {
+    "corinthians2": 3,
+    "galatians": 3,
+    "thessalonians1": 2,
+    "acts": 1,
+    "hebrews": 1,
+    "jude": 1,
+    "mark": 1,
+    "matthew": 1,
+    "peter2": 1,
+    "romans": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "προείρηκα ὑμῖν",
+      "pron": "프로에이레카 휘민",
+      "lemmas": [
+        "προλέγω",
+        "σύ"
+      ],
+      "words": [
+        {
+          "word": "προείρηκα",
+          "lemma": "προλέγω",
+          "strong": "G4302",
+          "pron": "프로에이레카"
+        },
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "matthew 24:25",
+        "mark 13:23",
+        "galatians 5:21",
+        "thessalonians1 3:4",
+        "thessalonians1 4:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "καθὼς προείρηκεν",
+      "pron": "카토스 프로에이레켄",
+      "lemmas": [
+        "καθώς",
+        "προλέγω"
+      ],
+      "words": [
+        {
+          "word": "καθὼς",
+          "lemma": "καθώς",
+          "strong": "G2531",
+          "pron": "카토스"
+        },
+        {
+          "word": "προείρηκεν",
+          "lemma": "προλέγω",
+          "strong": "G4302",
+          "pron": "프로에이레켄"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "romans 9:29",
+        "galatians 5:21",
+        "hebrews 4:7"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

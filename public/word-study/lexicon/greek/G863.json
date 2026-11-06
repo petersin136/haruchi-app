@@ -4,16 +4,47 @@
   "strong": "G863",
   "posKo": "동사",
   "root": {
-    "lemma": "ἀπό",
-    "strong": "G575"
+    "lemma": "ἀπό",
+    "strong": "G575",
+    "glossKo": "에서"
   },
   "family": [
-    "ἀπαγγέλλω",
-    "ἀπάγχομαι",
-    "ἀπάγω",
-    "ἀπαίρω",
-    "ἀπαιτέω",
-    "ἀπαλγέω"
+    {
+      "lemma": "ἀπαγγέλλω",
+      "strong": "G518",
+      "pron": "아팡겔로",
+      "glossKo": "전하다"
+    },
+    {
+      "lemma": "ἀπάγχομαι",
+      "strong": "G519",
+      "pron": "아팡코마이",
+      "glossKo": "목매다"
+    },
+    {
+      "lemma": "ἀπάγω",
+      "strong": "G520",
+      "pron": "아파고",
+      "glossKo": "끌고가다"
+    },
+    {
+      "lemma": "ἀπαίρω",
+      "strong": "G522",
+      "pron": "아파이로",
+      "glossKo": "빼앗다"
+    },
+    {
+      "lemma": "ἀπαιτέω",
+      "strong": "G523",
+      "pron": "아파이테오",
+      "glossKo": "요구하다"
+    },
+    {
+      "lemma": "ἀπαλγέω",
+      "strong": "G524",
+      "pron": "아팔게오",
+      "glossKo": "감각없다"
+    }
   ],
   "defEn": "an intensive form of , to go); to send forth, in various applications (as follow)",
   "defKo": "",
@@ -36,9 +67,24 @@
   "phrases": [
     {
       "greek": "ἀφεθήσεται αὐτῷ",
+      "pron": "아페테세타이 아우토",
       "lemmas": [
         "ἀφίημι",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἀφεθήσεται",
+          "lemma": "ἀφίημι",
+          "strong": "G863",
+          "pron": "아페테세타이"
+        },
+        {
+          "word": "αὐτῷ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        }
       ],
       "count": 36,
       "refs": [
@@ -59,9 +105,24 @@
     },
     {
       "greek": "ἀφίενταί σου",
+      "pron": "아피엔타이 수",
       "lemmas": [
         "ἀφίημι",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "ἀφίενταί",
+          "lemma": "ἀφίημι",
+          "strong": "G863",
+          "pron": "아피엔타이"
+        },
+        {
+          "word": "σου",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "수"
+        }
       ],
       "count": 15,
       "refs": [
@@ -82,9 +143,24 @@
     },
     {
       "greek": "οὐκ ἀφεθήσεται",
+      "pron": "우크 아페테세타이",
       "lemmas": [
         "οὐ",
         "ἀφίημι"
+      ],
+      "words": [
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        },
+        {
+          "word": "ἀφεθήσεται",
+          "lemma": "ἀφίημι",
+          "strong": "G863",
+          "pron": "아페테세타이"
+        }
       ],
       "count": 15,
       "refs": [
@@ -105,10 +181,31 @@
     },
     {
       "greek": "καὶ ἀφέντες αὐτὸν",
+      "pron": "카이 아펜테스 아우톤",
       "lemmas": [
         "καί",
         "ἀφίημι",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "ἀφέντες",
+          "lemma": "ἀφίημι",
+          "strong": "G863",
+          "pron": "아펜테스"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
       ],
       "count": 13,
       "refs": [
@@ -129,10 +226,31 @@
     },
     {
       "greek": "ἀφίενταί σου αἱ",
+      "pron": "아피엔타이 수 하이",
       "lemmas": [
         "ἀφίημι",
         "σύ",
         "ὁ"
+      ],
+      "words": [
+        {
+          "word": "ἀφίενταί",
+          "lemma": "ἀφίημι",
+          "strong": "G863",
+          "pron": "아피엔타이"
+        },
+        {
+          "word": "σου",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "수"
+        },
+        {
+          "word": "αἱ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "하이"
+        }
       ],
       "count": 12,
       "refs": [

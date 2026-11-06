@@ -1,0 +1,106 @@
+{
+  "lemma": "ἀπιστία",
+  "pron": "아피스티아",
+  "strong": "G570",
+  "posKo": "명사",
+  "root": {
+    "lemma": "ἄπιστος",
+    "strong": "G571",
+    "glossKo": "믿음없는"
+  },
+  "family": [
+    {
+      "lemma": "ἀπιστέω",
+      "strong": "G569",
+      "pron": "아피스테오",
+      "glossKo": "믿지않다"
+    },
+    {
+      "lemma": "ἄπιστος",
+      "strong": "G571",
+      "pron": "아피스토스",
+      "glossKo": "믿음없는"
+    }
+  ],
+  "defEn": "faithlessness, i.e. (negatively) disbelief (lack of Christian faith), or (positively) unfaithfulness (disobedience)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 11,
+  "byBook": {
+    "romans": 4,
+    "mark": 3,
+    "hebrews": 2,
+    "matthew": 1,
+    "timothy1": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἀπιστίαν αὐτῶν",
+      "pron": "아피스티안 아우톤",
+      "lemmas": [
+        "ἀπιστία",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἀπιστίαν",
+          "lemma": "ἀπιστία",
+          "strong": "G570",
+          "pron": "아피스티안"
+        },
+        {
+          "word": "αὐτῶν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 13:58",
+        "mark 6:6",
+        "mark 16:14",
+        "romans 3:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "τὴν ἀπιστίαν αὐτῶν",
+      "pron": "텐 아피스티안 아우톤",
+      "lemmas": [
+        "ὁ",
+        "ἀπιστία",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τὴν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "텐"
+        },
+        {
+          "word": "ἀπιστίαν",
+          "lemma": "ἀπιστία",
+          "strong": "G570",
+          "pron": "아피스티안"
+        },
+        {
+          "word": "αὐτῶν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 13:58",
+        "mark 6:6",
+        "mark 16:14",
+        "romans 3:3"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

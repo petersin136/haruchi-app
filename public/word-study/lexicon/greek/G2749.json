@@ -1,14 +1,34 @@
 {
   "lemma": "κεῖμαι",
-  "pron": "케이매",
+  "pron": "케이마이",
   "strong": "G2749",
   "posKo": "동사",
   "root": null,
   "family": [
-    "κοιμάω",
-    "κοίτη",
-    "κώμη",
-    "κῶμος"
+    {
+      "lemma": "κοιμάομαι",
+      "strong": "G2837",
+      "pron": "코이마오마이",
+      "glossKo": "잠들다"
+    },
+    {
+      "lemma": "κοίτη",
+      "strong": "G2845",
+      "pron": "코이테",
+      "glossKo": "잠자리"
+    },
+    {
+      "lemma": "κώμη",
+      "strong": "G2968",
+      "pron": "코메",
+      "glossKo": "마을"
+    },
+    {
+      "lemma": "κῶμος",
+      "strong": "G2970",
+      "pron": "코모스",
+      "glossKo": "방탕"
+    }
   ],
   "defEn": "to lie outstretched (literally or figuratively)",
   "defKo": "",

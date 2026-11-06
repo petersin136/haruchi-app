@@ -5,9 +5,24 @@
   "posKo": "접속사",
   "root": null,
   "family": [
-    "ἤδη",
-    "ἤπερ",
-    "ἤτοι"
+    {
+      "lemma": "ἤδη",
+      "strong": "G2235",
+      "pron": "에데",
+      "glossKo": "이미"
+    },
+    {
+      "lemma": "ἤπερ",
+      "strong": "G2260",
+      "pron": "에페르",
+      "glossKo": "보다"
+    },
+    {
+      "lemma": "ἤτοι",
+      "strong": "G2273",
+      "pron": "에토이",
+      "glossKo": "또는"
+    }
   ],
   "defEn": "disjunctive, or; comparative, than",
   "defKo": "",
@@ -43,9 +58,24 @@
   "phrases": [
     {
       "greek": "ἢ τίς",
+      "pron": "에 티스",
       "lemmas": [
         "ἤ",
         "τίς"
+      ],
+      "words": [
+        {
+          "word": "ἢ",
+          "lemma": "ἤ",
+          "strong": "G2228",
+          "pron": "에"
+        },
+        {
+          "word": "τίς",
+          "lemma": "τίς",
+          "strong": "G5100",
+          "pron": "티스"
+        }
       ],
       "count": 21,
       "refs": [
@@ -66,9 +96,24 @@
     },
     {
       "greek": "σου ἢ",
+      "pron": "수 에",
       "lemmas": [
         "σύ",
         "ἤ"
+      ],
+      "words": [
+        {
+          "word": "σου",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "수"
+        },
+        {
+          "word": "ἢ",
+          "lemma": "ἤ",
+          "strong": "G2228",
+          "pron": "에"
+        }
       ],
       "count": 9,
       "refs": [
@@ -86,9 +131,24 @@
     },
     {
       "greek": "ἢ οὐκ",
+      "pron": "에 우크",
       "lemmas": [
         "ἤ",
         "οὐ"
+      ],
+      "words": [
+        {
+          "word": "ἢ",
+          "lemma": "ἤ",
+          "strong": "G2228",
+          "pron": "에"
+        },
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        }
       ],
       "count": 8,
       "refs": [
@@ -105,9 +165,24 @@
     },
     {
       "greek": "ἦν ἢ",
+      "pron": "엔 에",
       "lemmas": [
         "εἰμί",
         "ἤ"
+      ],
+      "words": [
+        {
+          "word": "ἦν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "엔"
+        },
+        {
+          "word": "ἢ",
+          "lemma": "ἤ",
+          "strong": "G2228",
+          "pron": "에"
+        }
       ],
       "count": 8,
       "refs": [
@@ -124,9 +199,24 @@
     },
     {
       "greek": "πατέρα ἢ",
+      "pron": "파테라 에",
       "lemmas": [
         "πατήρ",
         "ἤ"
+      ],
+      "words": [
+        {
+          "word": "πατέρα",
+          "lemma": "πατήρ",
+          "strong": "G3962",
+          "pron": "파테라"
+        },
+        {
+          "word": "ἢ",
+          "lemma": "ἤ",
+          "strong": "G2228",
+          "pron": "에"
+        }
       ],
       "count": 8,
       "refs": [

@@ -5,10 +5,30 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "ψευδής",
-    "ψεῦδος",
-    "ψεῦσμα",
-    "ψεύστης"
+    {
+      "lemma": "ψευδής",
+      "strong": "G5571",
+      "pron": "프세우데스",
+      "glossKo": "거짓의"
+    },
+    {
+      "lemma": "ψεῦδος",
+      "strong": "G5579",
+      "pron": "프슈도스",
+      "glossKo": "거짓"
+    },
+    {
+      "lemma": "ψεῦσμα",
+      "strong": "G5582",
+      "pron": "프세우스마",
+      "glossKo": "거짓"
+    },
+    {
+      "lemma": "ψεύστης",
+      "strong": "G5583",
+      "pron": "프슈스테스",
+      "glossKo": "거짓말쟁이"
+    }
   ],
   "defEn": "to utter an untruth or attempt to deceive by falsehood",
   "defKo": "",
@@ -31,9 +51,24 @@
   "phrases": [
     {
       "greek": "οὐ ψεύδομαι",
+      "pron": "우 프세우도마이",
       "lemmas": [
         "οὐ",
         "ψεύδομαι"
+      ],
+      "words": [
+        {
+          "word": "οὐ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우"
+        },
+        {
+          "word": "ψεύδομαι",
+          "lemma": "ψεύδομαι",
+          "strong": "G5574",
+          "pron": "프세우도마이"
+        }
       ],
       "count": 5,
       "refs": [

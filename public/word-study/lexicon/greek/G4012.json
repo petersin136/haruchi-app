@@ -4,16 +4,47 @@
   "strong": "G4012",
   "posKo": "전치사",
   "root": {
-    "lemma": "πέραν",
-    "strong": "G4008"
+    "lemma": "πέραν",
+    "strong": "G4008",
+    "glossKo": "건너편"
   },
   "family": [
-    "Βέροια",
-    "πεῖρα",
-    "περ",
-    "πέραν",
-    "πέρας",
-    "περιάγω"
+    {
+      "lemma": "Βέροια",
+      "strong": "G960",
+      "pron": "베로이아",
+      "glossKo": "베뢰아"
+    },
+    {
+      "lemma": "πεῖρα",
+      "strong": "G3984",
+      "pron": "페이라",
+      "glossKo": "시험"
+    },
+    {
+      "lemma": "περ",
+      "strong": "G4007",
+      "pron": "페르",
+      "glossKo": ""
+    },
+    {
+      "lemma": "πέραν",
+      "strong": "G4008",
+      "pron": "페란",
+      "glossKo": "건너편"
+    },
+    {
+      "lemma": "πέρας",
+      "strong": "G4009",
+      "pron": "페라스",
+      "glossKo": "끝"
+    },
+    {
+      "lemma": "περιάγω",
+      "strong": "G4013",
+      "pron": "페리아고",
+      "glossKo": "두루다니다"
+    }
   ],
   "defEn": "properly, through (all over), i.e. around; figuratively with respect to; used in various applications, of place, caus…",
   "defKo": "",
@@ -49,10 +80,31 @@
   "phrases": [
     {
       "greek": "μαρτυρεῖ περὶ ἐμοῦ",
+      "pron": "마르튀레이 페리 에무",
       "lemmas": [
         "μαρτυρέω",
         "περί",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "μαρτυρεῖ",
+          "lemma": "μαρτυρέω",
+          "strong": "G3140",
+          "pron": "마르튀레이"
+        },
+        {
+          "word": "περὶ",
+          "lemma": "περί",
+          "strong": "G4012",
+          "pron": "페리"
+        },
+        {
+          "word": "ἐμοῦ",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "에무"
+        }
       ],
       "count": 8,
       "refs": [
@@ -68,10 +120,31 @@
     },
     {
       "greek": "πάντοτε περὶ ὑμῶν",
+      "pron": "판토테 페리 휘몬",
       "lemmas": [
         "πάντοτε",
         "περί",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "πάντοτε",
+          "lemma": "πάντοτε",
+          "strong": "G3842",
+          "pron": "판토테"
+        },
+        {
+          "word": "περὶ",
+          "lemma": "περί",
+          "strong": "G4012",
+          "pron": "페리"
+        },
+        {
+          "word": "ὑμῶν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘몬"
+        }
       ],
       "count": 5,
       "refs": [
@@ -85,10 +158,31 @@
     },
     {
       "greek": "περὶ αὐτοῦ ὅτι",
+      "pron": "페리 아우투 호티",
       "lemmas": [
         "περί",
         "αὐτός",
         "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "περὶ",
+          "lemma": "περί",
+          "strong": "G4012",
+          "pron": "페리"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
       ],
       "count": 5,
       "refs": [
@@ -102,10 +196,31 @@
     },
     {
       "greek": "ἐλάλει περὶ αὐτοῦ",
+      "pron": "엘랄레이 페리 아우투",
       "lemmas": [
         "λαλέω",
         "περί",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἐλάλει",
+          "lemma": "λαλέω",
+          "strong": "G2980",
+          "pron": "엘랄레이"
+        },
+        {
+          "word": "περὶ",
+          "lemma": "περί",
+          "strong": "G4012",
+          "pron": "페리"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 4,
       "refs": [
@@ -118,10 +233,31 @@
     },
     {
       "greek": "περὶ πάντων ὧν",
+      "pron": "페리 판톤 혼",
       "lemmas": [
         "περί",
         "πᾶς",
         "ὅς"
+      ],
+      "words": [
+        {
+          "word": "περὶ",
+          "lemma": "περί",
+          "strong": "G4012",
+          "pron": "페리"
+        },
+        {
+          "word": "πάντων",
+          "lemma": "πᾶς",
+          "strong": "G3956",
+          "pron": "판톤"
+        },
+        {
+          "word": "ὧν",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "혼"
+        }
       ],
       "count": 4,
       "refs": [

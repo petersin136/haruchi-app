@@ -1,0 +1,109 @@
+{
+  "lemma": "κληρονομέω",
+  "pron": "클레로노메오",
+  "strong": "G2816",
+  "posKo": "동사",
+  "root": {
+    "lemma": "κληρονόμος",
+    "strong": "G2818",
+    "glossKo": "상속자"
+  },
+  "family": [
+    {
+      "lemma": "κληρονομία",
+      "strong": "G2817",
+      "pron": "클레로노미아",
+      "glossKo": "유업"
+    },
+    {
+      "lemma": "κληρονόμος",
+      "strong": "G2818",
+      "pron": "클레로노모스",
+      "glossKo": "상속자"
+    }
+  ],
+  "defEn": "to be an heir to (literally or figuratively)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 18,
+  "byBook": {
+    "corinthians1": 4,
+    "hebrews": 4,
+    "matthew": 3,
+    "galatians": 2,
+    "luke": 2,
+    "mark": 1,
+    "peter1": 1,
+    "revelation": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "αἰώνιον κληρονομήσω",
+      "pron": "아이오니온 클레로노메소",
+      "lemmas": [
+        "αἰώνιος",
+        "κληρονομέω"
+      ],
+      "words": [
+        {
+          "word": "αἰώνιον",
+          "lemma": "αἰώνιος",
+          "strong": "G166",
+          "pron": "아이오니온"
+        },
+        {
+          "word": "κληρονομήσω",
+          "lemma": "κληρονομέω",
+          "strong": "G2816",
+          "pron": "클레로노메소"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 19:29",
+        "mark 10:17",
+        "luke 10:25",
+        "luke 18:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ζωὴν αἰώνιον κληρονομήσω",
+      "pron": "조엔 아이오니온 클레로노메소",
+      "lemmas": [
+        "ζωή",
+        "αἰώνιος",
+        "κληρονομέω"
+      ],
+      "words": [
+        {
+          "word": "ζωὴν",
+          "lemma": "ζωή",
+          "strong": "G2222",
+          "pron": "조엔"
+        },
+        {
+          "word": "αἰώνιον",
+          "lemma": "αἰώνιος",
+          "strong": "G166",
+          "pron": "아이오니온"
+        },
+        {
+          "word": "κληρονομήσω",
+          "lemma": "κληρονομέω",
+          "strong": "G2816",
+          "pron": "클레로노메소"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 19:29",
+        "mark 10:17",
+        "luke 10:25",
+        "luke 18:18"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

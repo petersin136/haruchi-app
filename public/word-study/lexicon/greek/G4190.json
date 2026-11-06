@@ -4,13 +4,29 @@
   "strong": "G4190",
   "posKo": "형용사",
   "root": {
-    "lemma": "πόνος",
-    "strong": "G4192"
+    "lemma": "πόνος",
+    "strong": "G4192",
+    "glossKo": "수고"
   },
   "family": [
-    "πονηρία",
-    "πονηρότερος",
-    "πόνος"
+    {
+      "lemma": "πονηρία",
+      "strong": "G4189",
+      "pron": "포네리아",
+      "glossKo": "악함"
+    },
+    {
+      "lemma": "πονηρότερος",
+      "strong": "G4191",
+      "pron": "포네로테로스",
+      "glossKo": ""
+    },
+    {
+      "lemma": "πόνος",
+      "strong": "G4192",
+      "pron": "포노스",
+      "glossKo": "수고"
+    }
   ],
   "defEn": "hurtful, i.e. evil (properly, in effect or influence, and thus differing from , which refers rather to essential char…",
   "defKo": "",
@@ -42,9 +58,24 @@
   "phrases": [
     {
       "greek": "πονηρά ἐστιν",
+      "pron": "포네라 에스틴",
       "lemmas": [
         "πονηρός",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "πονηρά",
+          "lemma": "πονηρός",
+          "strong": "G4190",
+          "pron": "포네라"
+        },
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 12,
       "refs": [
@@ -64,9 +95,24 @@
     },
     {
       "greek": "ὑμεῖς πονηροὶ",
+      "pron": "휘메이스 포네로이",
       "lemmas": [
         "σύ",
         "πονηρός"
+      ],
+      "words": [
+        {
+          "word": "ὑμεῖς",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘메이스"
+        },
+        {
+          "word": "πονηροὶ",
+          "lemma": "πονηρός",
+          "strong": "G4190",
+          "pron": "포네로이"
+        }
       ],
       "count": 6,
       "refs": [
@@ -81,9 +127,24 @@
     },
     {
       "greek": "αὐτῷ Πονηρὲ",
+      "pron": "아우토 포네레",
       "lemmas": [
         "αὐτός",
         "πονηρός"
+      ],
+      "words": [
+        {
+          "word": "αὐτῷ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        },
+        {
+          "word": "Πονηρὲ",
+          "lemma": "πονηρός",
+          "strong": "G4190",
+          "pron": "포네레"
+        }
       ],
       "count": 4,
       "refs": [
@@ -96,9 +157,24 @@
     },
     {
       "greek": "πνεύματα πονηρότερα",
+      "pron": "프네우마타 포네로테라",
       "lemmas": [
         "πνεῦμα",
         "πονηρός"
+      ],
+      "words": [
+        {
+          "word": "πνεύματα",
+          "lemma": "πνεῦμα",
+          "strong": "G4151",
+          "pron": "프네우마타"
+        },
+        {
+          "word": "πονηρότερα",
+          "lemma": "πονηρός",
+          "strong": "G4190",
+          "pron": "포네로테라"
+        }
       ],
       "count": 4,
       "refs": [
@@ -111,10 +187,31 @@
     },
     {
       "greek": "πνεύματα τὰ πονηρὰ",
+      "pron": "프네우마타 타 포네라",
       "lemmas": [
         "πνεῦμα",
         "ὁ",
         "πονηρός"
+      ],
+      "words": [
+        {
+          "word": "πνεύματα",
+          "lemma": "πνεῦμα",
+          "strong": "G4151",
+          "pron": "프네우마타"
+        },
+        {
+          "word": "τὰ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "타"
+        },
+        {
+          "word": "πονηρὰ",
+          "lemma": "πονηρός",
+          "strong": "G4190",
+          "pron": "포네라"
+        }
       ],
       "count": 4,
       "refs": [

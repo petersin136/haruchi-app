@@ -1,19 +1,50 @@
 {
   "lemma": "ὀφθαλμός",
-  "pron": "오프타르모스",
+  "pron": "오프탈모스",
   "strong": "G3788",
   "posKo": "명사",
   "root": {
-    "lemma": "ὀπτάνομαι",
-    "strong": "G3700"
+    "lemma": "ὀπτάνομαι",
+    "strong": "G3700",
+    "glossKo": "보이다"
   },
   "family": [
-    "Αἰθίοψ",
-    "ὄμμα",
-    "ὀπή",
-    "ὀπτάνομαι",
-    "ὀπτασία",
-    "ὁράω"
+    {
+      "lemma": "Αἰθίοψ",
+      "strong": "G128",
+      "pron": "아이티오프스",
+      "glossKo": "에디오피아인"
+    },
+    {
+      "lemma": "ὄμμα",
+      "strong": "G3659",
+      "pron": "옴마",
+      "glossKo": "눈"
+    },
+    {
+      "lemma": "ὀπή",
+      "strong": "G3692",
+      "pron": "오페",
+      "glossKo": "구멍"
+    },
+    {
+      "lemma": "ὀπτάνομαι",
+      "strong": "G3700",
+      "pron": "오프타노마이",
+      "glossKo": "보이다"
+    },
+    {
+      "lemma": "ὀπτασία",
+      "strong": "G3701",
+      "pron": "오프타시아",
+      "glossKo": "환상"
+    },
+    {
+      "lemma": "ὁράω",
+      "strong": "G3708",
+      "pron": "호라오",
+      "glossKo": "보다"
+    }
   ],
   "defEn": "the eye (literally or figuratively); by implication, vision; figuratively, envy (from the jealous side-glance)",
   "defKo": "",
@@ -39,9 +70,24 @@
   "phrases": [
     {
       "greek": "ὀφθαλμοὺς αὐτοῦ",
+      "pron": "오프탈무스 아우투",
       "lemmas": [
         "ὀφθαλμός",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ὀφθαλμοὺς",
+          "lemma": "ὀφθαλμός",
+          "strong": "G3788",
+          "pron": "오프탈무스"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 22,
       "refs": [
@@ -62,10 +108,31 @@
     },
     {
       "greek": "τοὺς ὀφθαλμοὺς αὐτοῦ",
+      "pron": "투스 오프탈무스 아우투",
       "lemmas": [
         "ὁ",
         "ὀφθαλμός",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τοὺς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투스"
+        },
+        {
+          "word": "ὀφθαλμοὺς",
+          "lemma": "ὀφθαλμός",
+          "strong": "G3788",
+          "pron": "오프탈무스"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 19,
       "refs": [
@@ -86,9 +153,24 @@
     },
     {
       "greek": "ὀφθαλμός σου",
+      "pron": "오프탈모스 수",
       "lemmas": [
         "ὀφθαλμός",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "ὀφθαλμός",
+          "lemma": "ὀφθαλμός",
+          "strong": "G3788",
+          "pron": "오프탈모스"
+        },
+        {
+          "word": "σου",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "수"
+        }
       ],
       "count": 18,
       "refs": [
@@ -109,10 +191,31 @@
     },
     {
       "greek": "ὁ ὀφθαλμός σου",
+      "pron": "호 오프탈모스 수",
       "lemmas": [
         "ὁ",
         "ὀφθαλμός",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        },
+        {
+          "word": "ὀφθαλμός",
+          "lemma": "ὀφθαλμός",
+          "strong": "G3788",
+          "pron": "오프탈모스"
+        },
+        {
+          "word": "σου",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "수"
+        }
       ],
       "count": 17,
       "refs": [
@@ -133,10 +236,31 @@
     },
     {
       "greek": "αὐτῶν οἱ ὀφθαλμοὶ",
+      "pron": "아우톤 호이 오프탈모이",
       "lemmas": [
         "αὐτός",
         "ὁ",
         "ὀφθαλμός"
+      ],
+      "words": [
+        {
+          "word": "αὐτῶν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "οἱ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호이"
+        },
+        {
+          "word": "ὀφθαλμοὶ",
+          "lemma": "ὀφθαλμός",
+          "strong": "G3788",
+          "pron": "오프탈모이"
+        }
       ],
       "count": 6,
       "refs": [

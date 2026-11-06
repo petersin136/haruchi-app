@@ -5,12 +5,42 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "αἱρέομαι",
-    "ἀρά",
-    "ἀρέσκω",
-    "ἀριθμός",
-    "ἀρκέω",
-    "ἅρμα"
+    {
+      "lemma": "αἱρέομαι",
+      "strong": "G138",
+      "pron": "하이레오마이",
+      "glossKo": "택하다"
+    },
+    {
+      "lemma": "ἄρα",
+      "strong": "G685",
+      "pron": "아라",
+      "glossKo": "그러므로"
+    },
+    {
+      "lemma": "ἀρέσκω",
+      "strong": "G700",
+      "pron": "아레스코",
+      "glossKo": "기쁘게하다"
+    },
+    {
+      "lemma": "ἀριθμός",
+      "strong": "G706",
+      "pron": "아리트모스",
+      "glossKo": "수"
+    },
+    {
+      "lemma": "ἀρκέω",
+      "strong": "G714",
+      "pron": "아르케오",
+      "glossKo": "족하다"
+    },
+    {
+      "lemma": "ἅρμα",
+      "strong": "G716",
+      "pron": "하르마",
+      "glossKo": "병거"
+    }
   ],
   "defEn": "to lift up; by implication, to take up or away; figuratively, to raise (the voice), keep in suspense (the mind), spec…",
   "defKo": "",
@@ -32,9 +62,24 @@
   "phrases": [
     {
       "greek": "αὐτοῦ ἦραν",
+      "pron": "아우투 에란",
       "lemmas": [
         "αὐτός",
         "αἴρω"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "ἦραν",
+          "lemma": "αἴρω",
+          "strong": "G142",
+          "pron": "에란"
+        }
       ],
       "count": 8,
       "refs": [
@@ -51,10 +96,31 @@
     },
     {
       "greek": "ἆρον τὸν κράβαττόν",
+      "pron": "아론 톤 크라바톤",
       "lemmas": [
         "αἴρω",
         "ὁ",
         "κράβαττος"
+      ],
+      "words": [
+        {
+          "word": "ἆρον",
+          "lemma": "αἴρω",
+          "strong": "G142",
+          "pron": "아론"
+        },
+        {
+          "word": "τὸν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "톤"
+        },
+        {
+          "word": "κράβαττόν",
+          "lemma": "κράβαττος",
+          "strong": "G2895",
+          "pron": "크라바톤"
+        }
       ],
       "count": 7,
       "refs": [
@@ -70,9 +136,24 @@
     },
     {
       "greek": "εἶπεν Ἄρατε",
+      "pron": "에이펜 아라테",
       "lemmas": [
         "λέγω",
         "αἴρω"
+      ],
+      "words": [
+        {
+          "word": "εἶπεν",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "에이펜"
+        },
+        {
+          "word": "Ἄρατε",
+          "lemma": "αἴρω",
+          "strong": "G142",
+          "pron": "아라테"
+        }
       ],
       "count": 6,
       "refs": [
@@ -87,9 +168,24 @@
     },
     {
       "greek": "ἆραι αὐτά",
+      "pron": "아라이 아우타",
       "lemmas": [
         "αἴρω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἆραι",
+          "lemma": "αἴρω",
+          "strong": "G142",
+          "pron": "아라이"
+        },
+        {
+          "word": "αὐτά",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우타"
+        }
       ],
       "count": 5,
       "refs": [
@@ -103,10 +199,31 @@
     },
     {
       "greek": "ἀράτω τὸν σταυρὸν",
+      "pron": "아라토 톤 스타우론",
       "lemmas": [
         "αἴρω",
         "ὁ",
         "σταυρός"
+      ],
+      "words": [
+        {
+          "word": "ἀράτω",
+          "lemma": "αἴρω",
+          "strong": "G142",
+          "pron": "아라토"
+        },
+        {
+          "word": "τὸν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "톤"
+        },
+        {
+          "word": "σταυρὸν",
+          "lemma": "σταυρός",
+          "strong": "G4716",
+          "pron": "스타우론"
+        }
       ],
       "count": 5,
       "refs": [

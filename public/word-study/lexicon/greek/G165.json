@@ -4,14 +4,35 @@
   "strong": "G165",
   "posKo": "명사",
   "root": {
-    "lemma": "ἀεί",
-    "strong": "G104"
+    "lemma": "ἀεί",
+    "strong": "G104",
+    "glossKo": "항상"
   },
   "family": [
-    "ἀγγαρεύω",
-    "ἀεί",
-    "ἀΐδιος",
-    "αἰώνιος"
+    {
+      "lemma": "ἀγγαρεύω",
+      "strong": "G29",
+      "pron": "앙가레우오",
+      "glossKo": "강제로데려가다"
+    },
+    {
+      "lemma": "ἀεί",
+      "strong": "G104",
+      "pron": "아에이",
+      "glossKo": "항상"
+    },
+    {
+      "lemma": "ἀΐδιος",
+      "strong": "G126",
+      "pron": "아이디오스",
+      "glossKo": "영원한"
+    },
+    {
+      "lemma": "αἰώνιος",
+      "strong": "G166",
+      "pron": "아이오니오스",
+      "glossKo": "영원한"
+    }
   ],
   "defEn": "properly, an age; by extension, perpetuity (also past); by implication, the world; specially (Jewish) a Messianic per…",
   "defKo": "",
@@ -45,10 +66,31 @@
   "phrases": [
     {
       "greek": "αἰῶνας τῶν αἰώνων",
+      "pron": "아이오나스 톤 아이오논",
       "lemmas": [
         "αἰών",
         "ὁ",
         "αἰών"
+      ],
+      "words": [
+        {
+          "word": "αἰῶνας",
+          "lemma": "αἰών",
+          "strong": "G165",
+          "pron": "아이오나스"
+        },
+        {
+          "word": "τῶν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "톤"
+        },
+        {
+          "word": "αἰώνων",
+          "lemma": "αἰών",
+          "strong": "G165",
+          "pron": "아이오논"
+        }
       ],
       "count": 20,
       "refs": [
@@ -69,9 +111,24 @@
     },
     {
       "greek": "αἰώνων ἀμήν",
+      "pron": "아이오논 아멘",
       "lemmas": [
         "αἰών",
         "ἀμήν"
+      ],
+      "words": [
+        {
+          "word": "αἰώνων",
+          "lemma": "αἰών",
+          "strong": "G165",
+          "pron": "아이오논"
+        },
+        {
+          "word": "ἀμήν",
+          "lemma": "ἀμήν",
+          "strong": "G281",
+          "pron": "아멘"
+        }
       ],
       "count": 15,
       "refs": [
@@ -92,10 +149,31 @@
     },
     {
       "greek": "τῶν αἰώνων ἀμήν",
+      "pron": "톤 아이오논 아멘",
       "lemmas": [
         "ὁ",
         "αἰών",
         "ἀμήν"
+      ],
+      "words": [
+        {
+          "word": "τῶν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "톤"
+        },
+        {
+          "word": "αἰώνων",
+          "lemma": "αἰών",
+          "strong": "G165",
+          "pron": "아이오논"
+        },
+        {
+          "word": "ἀμήν",
+          "lemma": "ἀμήν",
+          "strong": "G281",
+          "pron": "아멘"
+        }
       ],
       "count": 14,
       "refs": [
@@ -116,9 +194,24 @@
     },
     {
       "greek": "αἰῶνος τούτου",
+      "pron": "아이오노스 투투",
       "lemmas": [
         "αἰών",
         "οὗτος"
+      ],
+      "words": [
+        {
+          "word": "αἰῶνος",
+          "lemma": "αἰών",
+          "strong": "G165",
+          "pron": "아이오노스"
+        },
+        {
+          "word": "τούτου",
+          "lemma": "οὗτος",
+          "strong": "G3778",
+          "pron": "투투"
+        }
       ],
       "count": 12,
       "refs": [
@@ -138,10 +231,31 @@
     },
     {
       "greek": "τοῦ αἰῶνος τούτου",
+      "pron": "투 아이오노스 투투",
       "lemmas": [
         "ὁ",
         "αἰών",
         "οὗτος"
+      ],
+      "words": [
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        },
+        {
+          "word": "αἰῶνος",
+          "lemma": "αἰών",
+          "strong": "G165",
+          "pron": "아이오노스"
+        },
+        {
+          "word": "τούτου",
+          "lemma": "οὗτος",
+          "strong": "G3778",
+          "pron": "투투"
+        }
       ],
       "count": 12,
       "refs": [

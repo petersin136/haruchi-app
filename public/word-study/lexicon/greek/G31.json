@@ -1,15 +1,26 @@
 {
   "lemma": "ἀγγελία",
-  "pron": "아그게리아",
+  "pron": "앙겔리아",
   "strong": "G31",
   "posKo": "명사",
   "root": {
     "lemma": "ἄγγελος",
-    "strong": "G32"
+    "strong": "G32",
+    "glossKo": "천사"
   },
   "family": [
-    "Ἀβιούδ",
-    "ἄγγελος"
+    {
+      "lemma": "Ἀβιούδ",
+      "strong": "G10",
+      "pron": "아비우드",
+      "glossKo": "아비훗"
+    },
+    {
+      "lemma": "ἄγγελος",
+      "strong": "G32",
+      "pron": "앙겔로스",
+      "glossKo": "천사"
+    }
   ],
   "defEn": "an announcement, i.e. (by implication) precept",
   "defKo": "",

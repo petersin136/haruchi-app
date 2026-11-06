@@ -5,9 +5,24 @@
   "posKo": "명사",
   "root": null,
   "family": [
-    "ἑσπέρα",
-    "ἡμέρα",
-    "ὡραῖος"
+    {
+      "lemma": "ἑσπέρα",
+      "strong": "G2073",
+      "pron": "헤스페라",
+      "glossKo": "저녁"
+    },
+    {
+      "lemma": "ἡμέρα",
+      "strong": "G2250",
+      "pron": "헤메라",
+      "glossKo": "날"
+    },
+    {
+      "lemma": "ὡραῖος",
+      "strong": "G5611",
+      "pron": "호라이오스",
+      "glossKo": "아름다운"
+    }
   ],
   "defEn": "an \"hour\" (literally or figuratively)",
   "defKo": "",
@@ -32,10 +47,31 @@
   "phrases": [
     {
       "greek": "αὐτῇ τῇ ὥρᾳ",
+      "pron": "아우테 테 호라",
       "lemmas": [
         "αὐτός",
         "ὁ",
         "ὥρα"
+      ],
+      "words": [
+        {
+          "word": "αὐτῇ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우테"
+        },
+        {
+          "word": "τῇ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "테"
+        },
+        {
+          "word": "ὥρᾳ",
+          "lemma": "ὥρα",
+          "strong": "G5610",
+          "pron": "호라"
+        }
       ],
       "count": 11,
       "refs": [
@@ -55,10 +91,31 @@
     },
     {
       "greek": "ἐκείνῃ τῇ ὥρᾳ",
+      "pron": "에케이네 테 호라",
       "lemmas": [
         "ἐκεῖνος",
         "ὁ",
         "ὥρα"
+      ],
+      "words": [
+        {
+          "word": "ἐκείνῃ",
+          "lemma": "ἐκεῖνος",
+          "strong": "G1565",
+          "pron": "에케이네"
+        },
+        {
+          "word": "τῇ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "테"
+        },
+        {
+          "word": "ὥρᾳ",
+          "lemma": "ὥρα",
+          "strong": "G5610",
+          "pron": "호라"
+        }
       ],
       "count": 9,
       "refs": [
@@ -76,10 +133,31 @@
     },
     {
       "greek": "ἦλθεν ἡ ὥρα",
+      "pron": "엘텐 헤 호라",
       "lemmas": [
         "ἔρχομαι",
         "ὁ",
         "ὥρα"
+      ],
+      "words": [
+        {
+          "word": "ἦλθεν",
+          "lemma": "ἔρχομαι",
+          "strong": "G2064",
+          "pron": "엘텐"
+        },
+        {
+          "word": "ἡ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "헤"
+        },
+        {
+          "word": "ὥρα",
+          "lemma": "ὥρα",
+          "strong": "G5610",
+          "pron": "호라"
+        }
       ],
       "count": 9,
       "refs": [
@@ -97,9 +175,24 @@
     },
     {
       "greek": "ἔρχεται ὥρα",
+      "pron": "에르케타이 호라",
       "lemmas": [
         "ἔρχομαι",
         "ὥρα"
+      ],
+      "words": [
+        {
+          "word": "ἔρχεται",
+          "lemma": "ἔρχομαι",
+          "strong": "G2064",
+          "pron": "에르케타이"
+        },
+        {
+          "word": "ὥρα",
+          "lemma": "ὥρα",
+          "strong": "G5610",
+          "pron": "호라"
+        }
       ],
       "count": 7,
       "refs": [
@@ -115,9 +208,24 @@
     },
     {
       "greek": "μίαν ὥραν",
+      "pron": "미안 호란",
       "lemmas": [
         "εἷς",
         "ὥρα"
+      ],
+      "words": [
+        {
+          "word": "μίαν",
+          "lemma": "εἷς",
+          "strong": "G1519",
+          "pron": "미안"
+        },
+        {
+          "word": "ὥραν",
+          "lemma": "ὥρα",
+          "strong": "G5610",
+          "pron": "호란"
+        }
       ],
       "count": 7,
       "refs": [

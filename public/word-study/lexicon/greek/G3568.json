@@ -5,7 +5,12 @@
   "posKo": "부사",
   "root": null,
   "family": [
-    "νυνί"
+    {
+      "lemma": "νυνί",
+      "strong": "G3570",
+      "pron": "뉘니",
+      "glossKo": "이제"
+    }
   ],
   "defEn": "\"now\" (as adverb of date, a transition or emphasis); also as noun or adjective present or immediate",
   "defKo": "",
@@ -41,9 +46,24 @@
   "phrases": [
     {
       "greek": "νῦν καιρῷ",
+      "pron": "뉜 카이로",
       "lemmas": [
         "νῦν",
         "καιρός"
+      ],
+      "words": [
+        {
+          "word": "νῦν",
+          "lemma": "νῦν",
+          "strong": "G3568",
+          "pron": "뉜"
+        },
+        {
+          "word": "καιρῷ",
+          "lemma": "καιρός",
+          "strong": "G2540",
+          "pron": "카이로"
+        }
       ],
       "count": 5,
       "refs": [
@@ -57,9 +77,24 @@
     },
     {
       "greek": "νῦν ἐστιν",
+      "pron": "뉜 에스틴",
       "lemmas": [
         "νῦν",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "νῦν",
+          "lemma": "νῦν",
+          "strong": "G3568",
+          "pron": "뉜"
+        },
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 4,
       "refs": [
@@ -72,9 +107,24 @@
     },
     {
       "greek": "νῦν λέγει",
+      "pron": "뉜 레게이",
       "lemmas": [
         "νῦν",
         "λέγω"
+      ],
+      "words": [
+        {
+          "word": "νῦν",
+          "lemma": "νῦν",
+          "strong": "G3568",
+          "pron": "뉜"
+        },
+        {
+          "word": "λέγει",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레게이"
+        }
       ],
       "count": 4,
       "refs": [
@@ -87,9 +137,24 @@
     },
     {
       "greek": "νῦν ὅτι",
+      "pron": "뉜 호티",
       "lemmas": [
         "νῦν",
         "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "νῦν",
+          "lemma": "νῦν",
+          "strong": "G3568",
+          "pron": "뉜"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
       ],
       "count": 4,
       "refs": [
@@ -100,9 +165,24 @@
     },
     {
       "greek": "νῦν οὖν",
+      "pron": "뉜 운",
       "lemmas": [
         "νῦν",
         "οὖν"
+      ],
+      "words": [
+        {
+          "word": "νῦν",
+          "lemma": "νῦν",
+          "strong": "G3568",
+          "pron": "뉜"
+        },
+        {
+          "word": "οὖν",
+          "lemma": "οὖν",
+          "strong": "G3767",
+          "pron": "운"
+        }
       ],
       "count": 4,
       "refs": [

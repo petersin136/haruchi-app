@@ -4,13 +4,29 @@
   "strong": "G5590",
   "posKo": "명사",
   "root": {
-    "lemma": "ψύχω",
-    "strong": "G5594"
+    "lemma": "ψύχομαι",
+    "strong": "G5594",
+    "glossKo": "식다"
   },
   "family": [
-    "ψυχικός",
-    "ψύχος",
-    "ψύχω"
+    {
+      "lemma": "ψυχικός",
+      "strong": "G5591",
+      "pron": "프쉬키코스",
+      "glossKo": "육에속한"
+    },
+    {
+      "lemma": "ψῦχος",
+      "strong": "G5592",
+      "pron": "프쉬코스",
+      "glossKo": "추위"
+    },
+    {
+      "lemma": "ψύχομαι",
+      "strong": "G5594",
+      "pron": "프쉬코마이",
+      "glossKo": "식다"
+    }
   ],
   "defEn": "breath, i.e. (by implication) spirit, abstractly or concretely (the animal sentient principle only; thus distinguishe…",
   "defKo": "",
@@ -41,9 +57,24 @@
   "phrases": [
     {
       "greek": "ψυχὴν αὐτοῦ",
+      "pron": "프쉬켄 아우투",
       "lemmas": [
         "ψυχή",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ψυχὴν",
+          "lemma": "ψυχή",
+          "strong": "G5590",
+          "pron": "프쉬켄"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 25,
       "refs": [
@@ -64,10 +95,31 @@
     },
     {
       "greek": "τὴν ψυχὴν αὐτοῦ",
+      "pron": "텐 프쉬켄 아우투",
       "lemmas": [
         "ὁ",
         "ψυχή",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τὴν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "텐"
+        },
+        {
+          "word": "ψυχὴν",
+          "lemma": "ψυχή",
+          "strong": "G5590",
+          "pron": "프쉬켄"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 22,
       "refs": [
@@ -88,10 +140,31 @@
     },
     {
       "greek": "ἡ ψυχή μου",
+      "pron": "헤 프쉬케 무",
       "lemmas": [
         "ὁ",
         "ψυχή",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "ἡ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "헤"
+        },
+        {
+          "word": "ψυχή",
+          "lemma": "ψυχή",
+          "strong": "G5590",
+          "pron": "프쉬케"
+        },
+        {
+          "word": "μου",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "무"
+        }
       ],
       "count": 15,
       "refs": [
@@ -112,10 +185,31 @@
     },
     {
       "greek": "τὰς ψυχὰς ὑμῶν",
+      "pron": "타스 프쉬카스 휘몬",
       "lemmas": [
         "ὁ",
         "ψυχή",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "τὰς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "타스"
+        },
+        {
+          "word": "ψυχὰς",
+          "lemma": "ψυχή",
+          "strong": "G5590",
+          "pron": "프쉬카스"
+        },
+        {
+          "word": "ὑμῶν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘몬"
+        }
       ],
       "count": 15,
       "refs": [
@@ -136,9 +230,24 @@
     },
     {
       "greek": "ψυχὰς ὑμῶν",
+      "pron": "프쉬카스 휘몬",
       "lemmas": [
         "ψυχή",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "ψυχὰς",
+          "lemma": "ψυχή",
+          "strong": "G5590",
+          "pron": "프쉬카스"
+        },
+        {
+          "word": "ὑμῶν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘몬"
+        }
       ],
       "count": 15,
       "refs": [

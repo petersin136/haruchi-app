@@ -4,14 +4,35 @@
   "strong": "G2564",
   "posKo": "동사",
   "root": {
-    "lemma": "κελεύω",
-    "strong": "G2753"
+    "lemma": "κελεύω",
+    "strong": "G2753",
+    "glossKo": "명하다"
   },
   "family": [
-    "κέλευμα",
-    "κελεύω",
-    "κλέος",
-    "κλῆσις"
+    {
+      "lemma": "κέλευμα",
+      "strong": "G2752",
+      "pron": "켈레우마",
+      "glossKo": ""
+    },
+    {
+      "lemma": "κελεύω",
+      "strong": "G2753",
+      "pron": "켈레우오",
+      "glossKo": "명하다"
+    },
+    {
+      "lemma": "κλέος",
+      "strong": "G2811",
+      "pron": "클레오스",
+      "glossKo": "칭찬"
+    },
+    {
+      "lemma": "κλῆσις",
+      "strong": "G2821",
+      "pron": "클레시스",
+      "glossKo": "부르심"
+    }
   ],
   "defEn": "to \"call\" (properly, aloud, but used in a variety of applications, directly or otherwise)",
   "defKo": "",
@@ -43,9 +64,24 @@
   "phrases": [
     {
       "greek": "κληθήσεταί σοι",
+      "pron": "클레테세타이 소이",
       "lemmas": [
         "καλέω",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "κληθήσεταί",
+          "lemma": "καλέω",
+          "strong": "G2564",
+          "pron": "클레테세타이"
+        },
+        {
+          "word": "σοι",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "소이"
+        }
       ],
       "count": 13,
       "refs": [
@@ -66,9 +102,24 @@
     },
     {
       "greek": "ἐκάλεσεν αὐτούς",
+      "pron": "에칼레센 아우투스",
       "lemmas": [
         "καλέω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἐκάλεσεν",
+          "lemma": "καλέω",
+          "strong": "G2564",
+          "pron": "에칼레센"
+        },
+        {
+          "word": "αὐτούς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투스"
+        }
       ],
       "count": 10,
       "refs": [
@@ -87,10 +138,31 @@
     },
     {
       "greek": "καλέσεις τὸ ὄνομα",
+      "pron": "칼레세이스 토 오노마",
       "lemmas": [
         "καλέω",
         "ὁ",
         "ὄνομα"
+      ],
+      "words": [
+        {
+          "word": "καλέσεις",
+          "lemma": "καλέω",
+          "strong": "G2564",
+          "pron": "칼레세이스"
+        },
+        {
+          "word": "τὸ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토"
+        },
+        {
+          "word": "ὄνομα",
+          "lemma": "ὄνομα",
+          "strong": "G3686",
+          "pron": "오노마"
+        }
       ],
       "count": 8,
       "refs": [
@@ -107,9 +179,24 @@
     },
     {
       "greek": "ὃς καλεῖται",
+      "pron": "호스 칼레이타이",
       "lemmas": [
         "ὅς",
         "καλέω"
+      ],
+      "words": [
+        {
+          "word": "ὃς",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호스"
+        },
+        {
+          "word": "καλεῖται",
+          "lemma": "καλέω",
+          "strong": "G2564",
+          "pron": "칼레이타이"
+        }
       ],
       "count": 8,
       "refs": [
@@ -126,10 +213,31 @@
     },
     {
       "greek": "τοῦ καλοῦντος ὑμᾶς",
+      "pron": "투 칼룬토스 휘마스",
       "lemmas": [
         "ὁ",
         "καλέω",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        },
+        {
+          "word": "καλοῦντος",
+          "lemma": "καλέω",
+          "strong": "G2564",
+          "pron": "칼룬토스"
+        },
+        {
+          "word": "ὑμᾶς",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘마스"
+        }
       ],
       "count": 7,
       "refs": [

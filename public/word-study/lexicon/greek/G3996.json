@@ -1,0 +1,107 @@
+{
+  "lemma": "πενθέω",
+  "pron": "펜테오",
+  "strong": "G3996",
+  "posKo": "동사",
+  "root": {
+    "lemma": "πένθος",
+    "strong": "G3997",
+    "glossKo": "슬픔"
+  },
+  "family": [
+    {
+      "lemma": "πένθος",
+      "strong": "G3997",
+      "pron": "펜토스",
+      "glossKo": "슬픔"
+    }
+  ],
+  "defEn": "to grieve (the feeling or the act)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 10,
+  "byBook": {
+    "revelation": 3,
+    "matthew": 2,
+    "corinthians1": 1,
+    "corinthians2": 1,
+    "james": 1,
+    "luke": 1,
+    "mark": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "κλαίοντες καὶ πενθοῦντες",
+      "pron": "클라이온테스 카이 펜툰테스",
+      "lemmas": [
+        "κλαίω",
+        "καί",
+        "πενθέω"
+      ],
+      "words": [
+        {
+          "word": "κλαίοντες",
+          "lemma": "κλαίω",
+          "strong": "G2799",
+          "pron": "클라이온테스"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "πενθοῦντες",
+          "lemma": "πενθέω",
+          "strong": "G3996",
+          "pron": "펜툰테스"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "revelation 18:11",
+        "revelation 18:15",
+        "revelation 18:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "πενθοῦσι καὶ κλαίουσιν",
+      "pron": "펜투시 카이 클라이우신",
+      "lemmas": [
+        "πενθέω",
+        "καί",
+        "κλαίω"
+      ],
+      "words": [
+        {
+          "word": "πενθοῦσι",
+          "lemma": "πενθέω",
+          "strong": "G3996",
+          "pron": "펜투시"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "κλαίουσιν",
+          "lemma": "κλαίω",
+          "strong": "G2799",
+          "pron": "클라이우신"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "mark 16:10",
+        "luke 6:25",
+        "james 4:9"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

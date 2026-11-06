@@ -5,12 +5,42 @@
   "posKo": "전치사",
   "root": null,
   "family": [
-    "καθά",
-    "καθαιρέω",
-    "καθάπτω",
-    "καθέδρα",
-    "καθέζομαι",
-    "καθεξῆς"
+    {
+      "lemma": "καθά",
+      "strong": "G2505",
+      "pron": "카타",
+      "glossKo": "같이"
+    },
+    {
+      "lemma": "καθαιρέω",
+      "strong": "G2507",
+      "pron": "카타이레오",
+      "glossKo": "끌어내리다"
+    },
+    {
+      "lemma": "καθάπτω",
+      "strong": "G2510",
+      "pron": "카타프토",
+      "glossKo": "물리다"
+    },
+    {
+      "lemma": "καθέδρα",
+      "strong": "G2515",
+      "pron": "카테드라",
+      "glossKo": "의자"
+    },
+    {
+      "lemma": "καθέζομαι",
+      "strong": "G2516",
+      "pron": "카테조마이",
+      "glossKo": "앉다"
+    },
+    {
+      "lemma": "καθεξῆς",
+      "strong": "G2517",
+      "pron": "카테크세스",
+      "glossKo": "차례로"
+    }
   ],
   "defEn": "(prepositionally) down (in place or time), in varied relations (according to the case (genitive, dative or accusative…",
   "defKo": "",
@@ -48,10 +78,31 @@
   "phrases": [
     {
       "greek": "αὐτοῖς κατ ἰδίαν",
+      "pron": "아우토이스 캇 이디안",
       "lemmas": [
         "αὐτός",
         "κατά",
         "ἴδιος"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        },
+        {
+          "word": "κατ",
+          "lemma": "κατά",
+          "strong": "G2596",
+          "pron": "캇"
+        },
+        {
+          "word": "ἰδίαν",
+          "lemma": "ἴδιος",
+          "strong": "G2398",
+          "pron": "이디안"
+        }
       ],
       "count": 4,
       "refs": [
@@ -64,10 +115,31 @@
     },
     {
       "greek": "ἀλλὰ ἔχω κατὰ",
+      "pron": "알라 에코 카타",
       "lemmas": [
         "ἀλλά",
         "ἔχω",
         "κατά"
+      ],
+      "words": [
+        {
+          "word": "ἀλλὰ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알라"
+        },
+        {
+          "word": "ἔχω",
+          "lemma": "ἔχω",
+          "strong": "G2192",
+          "pron": "에코"
+        },
+        {
+          "word": "κατὰ",
+          "lemma": "κατά",
+          "strong": "G2596",
+          "pron": "카타"
+        }
       ],
       "count": 3,
       "refs": [
@@ -79,10 +151,31 @@
     },
     {
       "greek": "ἔχω κατὰ σοῦ",
+      "pron": "에코 카타 수",
       "lemmas": [
         "ἔχω",
         "κατά",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "ἔχω",
+          "lemma": "ἔχω",
+          "strong": "G2192",
+          "pron": "에코"
+        },
+        {
+          "word": "κατὰ",
+          "lemma": "κατά",
+          "strong": "G2596",
+          "pron": "카타"
+        },
+        {
+          "word": "σοῦ",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "수"
+        }
       ],
       "count": 3,
       "refs": [
@@ -94,10 +187,31 @@
     },
     {
       "greek": "κατ αὐτοῦ ὅπως",
+      "pron": "캇 아우투 호포스",
       "lemmas": [
         "κατά",
         "αὐτός",
         "ὅπως"
+      ],
+      "words": [
+        {
+          "word": "κατ",
+          "lemma": "κατά",
+          "strong": "G2596",
+          "pron": "캇"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "ὅπως",
+          "lemma": "ὅπως",
+          "strong": "G3704",
+          "pron": "호포스"
+        }
       ],
       "count": 3,
       "refs": [
@@ -109,10 +223,31 @@
     },
     {
       "greek": "κατ ἰδίαν εἶπον",
+      "pron": "캇 이디안 에이폰",
       "lemmas": [
         "κατά",
         "ἴδιος",
         "λέγω"
+      ],
+      "words": [
+        {
+          "word": "κατ",
+          "lemma": "κατά",
+          "strong": "G2596",
+          "pron": "캇"
+        },
+        {
+          "word": "ἰδίαν",
+          "lemma": "ἴδιος",
+          "strong": "G2398",
+          "pron": "이디안"
+        },
+        {
+          "word": "εἶπον",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "에이폰"
+        }
       ],
       "count": 3,
       "refs": [

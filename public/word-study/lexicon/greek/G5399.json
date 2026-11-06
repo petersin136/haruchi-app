@@ -4,13 +4,29 @@
   "strong": "G5399",
   "posKo": "동사",
   "root": {
-    "lemma": "φόβος",
-    "strong": "G5401"
+    "lemma": "φόβος",
+    "strong": "G5401",
+    "glossKo": "두려움"
   },
   "family": [
-    "φοβερός",
-    "φόβητρον",
-    "φόβος"
+    {
+      "lemma": "φοβερός",
+      "strong": "G5398",
+      "pron": "포베로스",
+      "glossKo": "무서운"
+    },
+    {
+      "lemma": "φόβητρον",
+      "strong": "G5400",
+      "pron": "포베트론",
+      "glossKo": "무서운일"
+    },
+    {
+      "lemma": "φόβος",
+      "strong": "G5401",
+      "pron": "포보스",
+      "glossKo": "두려움"
+    }
   ],
   "defEn": "to frighten, i.e. (passively) to be alarmed; by analogy, to be in awe of, i.e. revere",
   "defKo": "",
@@ -36,9 +52,24 @@
   "phrases": [
     {
       "greek": "Μὴ φοβοῦ",
+      "pron": "메 포부",
       "lemmas": [
         "μή",
         "φοβέομαι"
+      ],
+      "words": [
+        {
+          "word": "Μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        },
+        {
+          "word": "φοβοῦ",
+          "lemma": "φοβέομαι",
+          "strong": "G5399",
+          "pron": "포부"
+        }
       ],
       "count": 27,
       "refs": [
@@ -59,9 +90,24 @@
     },
     {
       "greek": "φοβηθῆτε αὐτούς",
+      "pron": "포베테테 아우투스",
       "lemmas": [
         "φοβέομαι",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "φοβηθῆτε",
+          "lemma": "φοβέομαι",
+          "strong": "G5399",
+          "pron": "포베테테"
+        },
+        {
+          "word": "αὐτούς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투스"
+        }
       ],
       "count": 6,
       "refs": [
@@ -76,10 +122,31 @@
     },
     {
       "greek": "ἐφοβήθη τὸν ὄχλον",
+      "pron": "에포베테 톤 오클론",
       "lemmas": [
         "φοβέομαι",
         "ὁ",
         "ὄχλος"
+      ],
+      "words": [
+        {
+          "word": "ἐφοβήθη",
+          "lemma": "φοβέομαι",
+          "strong": "G5399",
+          "pron": "에포베테"
+        },
+        {
+          "word": "τὸν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "톤"
+        },
+        {
+          "word": "ὄχλον",
+          "lemma": "ὄχλος",
+          "strong": "G3793",
+          "pron": "오클론"
+        }
       ],
       "count": 5,
       "refs": [
@@ -93,10 +160,31 @@
     },
     {
       "greek": "φοβούμενος τὸν θεὸν",
+      "pron": "포부메노스 톤 테온",
       "lemmas": [
         "φοβέομαι",
         "ὁ",
         "θεός"
+      ],
+      "words": [
+        {
+          "word": "φοβούμενος",
+          "lemma": "φοβέομαι",
+          "strong": "G5399",
+          "pron": "포부메노스"
+        },
+        {
+          "word": "τὸν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "톤"
+        },
+        {
+          "word": "θεὸν",
+          "lemma": "θεός",
+          "strong": "G2316",
+          "pron": "테온"
+        }
       ],
       "count": 5,
       "refs": [
@@ -110,10 +198,31 @@
     },
     {
       "greek": "αὐτῇ Μὴ φοβοῦ",
+      "pron": "아우테 메 포부",
       "lemmas": [
         "αὐτός",
         "μή",
         "φοβέομαι"
+      ],
+      "words": [
+        {
+          "word": "αὐτῇ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우테"
+        },
+        {
+          "word": "Μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        },
+        {
+          "word": "φοβοῦ",
+          "lemma": "φοβέομαι",
+          "strong": "G5399",
+          "pron": "포부"
+        }
       ],
       "count": 3,
       "refs": [

@@ -1,0 +1,194 @@
+{
+  "lemma": "εὐαγγελίζω",
+  "pron": "에우앙겔리조",
+  "strong": "G2097",
+  "posKo": "동사",
+  "root": {
+    "lemma": "εὖ",
+    "strong": "G2095",
+    "glossKo": "잘"
+  },
+  "family": [
+    {
+      "lemma": "εὖ",
+      "strong": "G2095",
+      "pron": "에우",
+      "glossKo": "잘"
+    },
+    {
+      "lemma": "εὐαγγέλιον",
+      "strong": "G2098",
+      "pron": "유앙겔리온",
+      "glossKo": "복음"
+    },
+    {
+      "lemma": "εὐαγγελιστής",
+      "strong": "G2099",
+      "pron": "에우앙겔리스테스",
+      "glossKo": "전도자"
+    },
+    {
+      "lemma": "εὐάρεστος",
+      "strong": "G2101",
+      "pron": "유아레스토스",
+      "glossKo": "기쁘시게하는"
+    },
+    {
+      "lemma": "Εὔβουλος",
+      "strong": "G2103",
+      "pron": "에우불로스",
+      "glossKo": "으불로"
+    },
+    {
+      "lemma": "εὐγενής",
+      "strong": "G2104",
+      "pron": "에우게네스",
+      "glossKo": "고귀한"
+    }
+  ],
+  "defEn": "to announce good news (\"evangelize\") especially the gospel",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 54,
+  "byBook": {
+    "acts": 15,
+    "luke": 10,
+    "galatians": 7,
+    "corinthians1": 6,
+    "peter1": 3,
+    "romans": 3,
+    "corinthians2": 2,
+    "ephesians": 2,
+    "hebrews": 2,
+    "revelation": 2,
+    "matthew": 1,
+    "thessalonians1": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "εὐηγγελισάμην ὑμῖν",
+      "pron": "에우엥겔리사멘 휘민",
+      "lemmas": [
+        "εὐαγγελίζω",
+        "σύ"
+      ],
+      "words": [
+        {
+          "word": "εὐηγγελισάμην",
+          "lemma": "εὐαγγελίζω",
+          "strong": "G2097",
+          "pron": "에우엥겔리사멘"
+        },
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "luke 1:19",
+        "luke 2:10",
+        "acts 14:15",
+        "corinthians1 15:1",
+        "corinthians1 15:2",
+        "corinthians2 11:7",
+        "galatians 1:8",
+        "galatians 4:13",
+        "peter1 1:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "εὐαγγελίζεσθαι οὐχ",
+      "pron": "에우앙겔리제스타이 우크",
+      "lemmas": [
+        "εὐαγγελίζω",
+        "οὐ"
+      ],
+      "words": [
+        {
+          "word": "εὐαγγελίζεσθαι",
+          "lemma": "εὐαγγελίζω",
+          "strong": "G2097",
+          "pron": "에우앙겔리제스타이"
+        },
+        {
+          "word": "οὐχ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "romans 15:20",
+        "corinthians1 1:17",
+        "corinthians1 9:16",
+        "corinthians2 10:16",
+        "hebrews 4:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "εὐηγγελίσατο αὐτῷ",
+      "pron": "에우엥겔리사토 아우토",
+      "lemmas": [
+        "εὐαγγελίζω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "εὐηγγελίσατο",
+          "lemma": "εὐαγγελίζω",
+          "strong": "G2097",
+          "pron": "에우엥겔리사토"
+        },
+        {
+          "word": "αὐτῷ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "acts 8:35",
+        "acts 16:10",
+        "galatians 1:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ὑμᾶς εὐαγγελιζόμεθα",
+      "pron": "휘마스 에우앙겔리조메타",
+      "lemmas": [
+        "σύ",
+        "εὐαγγελίζω"
+      ],
+      "words": [
+        {
+          "word": "ὑμᾶς",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘마스"
+        },
+        {
+          "word": "εὐαγγελιζόμεθα",
+          "lemma": "εὐαγγελίζω",
+          "strong": "G2097",
+          "pron": "에우앙겔리조메타"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "acts 13:32",
+        "corinthians2 10:16",
+        "galatians 1:9"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

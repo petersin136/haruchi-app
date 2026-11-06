@@ -5,15 +5,46 @@
   "posKo": "형용사",
   "root": {
     "lemma": "ἅγιος",
-    "strong": "G40"
+    "strong": "G40",
+    "glossKo": "거룩한"
   },
   "family": [
-    "ἁγιάζω",
-    "ἅγιον",
-    "ἅγιος",
-    "ἁγιότης",
-    "ἁγιωσύνη",
-    "ἁγνεία"
+    {
+      "lemma": "ἁγιάζω",
+      "strong": "G37",
+      "pron": "하기아조",
+      "glossKo": "거룩하게하다"
+    },
+    {
+      "lemma": "ἅγιον",
+      "strong": "G39",
+      "pron": "하기온",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἅγιος",
+      "strong": "G40",
+      "pron": "하기오스",
+      "glossKo": "거룩한"
+    },
+    {
+      "lemma": "ἁγιότης",
+      "strong": "G41",
+      "pron": "하기오테스",
+      "glossKo": "거룩함"
+    },
+    {
+      "lemma": "ἁγιωσύνη",
+      "strong": "G42",
+      "pron": "하기오쉬네",
+      "glossKo": "거룩함"
+    },
+    {
+      "lemma": "ἁγνεία",
+      "strong": "G47",
+      "pron": "하그네이아",
+      "glossKo": "정결"
+    }
   ],
   "defEn": "properly, clean, i.e. (figuratively) innocent, modest, perfect",
   "defKo": "",
@@ -32,9 +63,24 @@
   "phrases": [
     {
       "greek": "ἁγνοὺς εἶναι",
+      "pron": "하그누스 에이나이",
       "lemmas": [
         "ἁγνός",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "ἁγνοὺς",
+          "lemma": "ἁγνός",
+          "strong": "G53",
+          "pron": "하그누스"
+        },
+        {
+          "word": "εἶναι",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에이나이"
+        }
       ],
       "count": 3,
       "refs": [

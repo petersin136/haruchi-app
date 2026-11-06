@@ -4,16 +4,47 @@
   "strong": "G5532",
   "posKo": "명사",
   "root": {
-    "lemma": "χράομαι",
-    "strong": "G5530"
+    "lemma": "χράομαι",
+    "strong": "G5530",
+    "glossKo": "쓰다"
   },
   "family": [
-    "χράομαι",
-    "χράω",
-    "χρή",
-    "χρῄζω",
-    "χρῆσις",
-    "χρηστός"
+    {
+      "lemma": "χράομαι",
+      "strong": "G5530",
+      "pron": "크라오마이",
+      "glossKo": "쓰다"
+    },
+    {
+      "lemma": "χράω",
+      "strong": "G5531",
+      "pron": "크라오",
+      "glossKo": ""
+    },
+    {
+      "lemma": "χρή",
+      "strong": "G5534",
+      "pron": "크레",
+      "glossKo": "마땅하다"
+    },
+    {
+      "lemma": "χρῄζω",
+      "strong": "G5535",
+      "pron": "크레조",
+      "glossKo": "필요하다"
+    },
+    {
+      "lemma": "χρῆσις",
+      "strong": "G5540",
+      "pron": "크레시스",
+      "glossKo": "쓰임"
+    },
+    {
+      "lemma": "χρηστός",
+      "strong": "G5543",
+      "pron": "크레스토스",
+      "glossKo": "친절한"
+    }
   ],
   "defEn": "employment, i.e. an affair; also (by implication) occasion, demand, requirement or destitution",
   "defKo": "",
@@ -39,9 +70,24 @@
   "phrases": [
     {
       "greek": "χρείαν ἔχει",
+      "pron": "크레이안 에케이",
       "lemmas": [
         "χρεία",
         "ἔχω"
+      ],
+      "words": [
+        {
+          "word": "χρείαν",
+          "lemma": "χρεία",
+          "strong": "G5532",
+          "pron": "크레이안"
+        },
+        {
+          "word": "ἔχει",
+          "lemma": "ἔχω",
+          "strong": "G2192",
+          "pron": "에케이"
+        }
       ],
       "count": 32,
       "refs": [
@@ -62,9 +108,24 @@
     },
     {
       "greek": "οὐ χρείαν",
+      "pron": "우 크레이안",
       "lemmas": [
         "οὐ",
         "χρεία"
+      ],
+      "words": [
+        {
+          "word": "οὐ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우"
+        },
+        {
+          "word": "χρείαν",
+          "lemma": "χρεία",
+          "strong": "G5532",
+          "pron": "크레이안"
+        }
       ],
       "count": 12,
       "refs": [
@@ -85,10 +146,31 @@
     },
     {
       "greek": "Οὐ χρείαν ἔχουσιν",
+      "pron": "우 크레이안 에쿠신",
       "lemmas": [
         "οὐ",
         "χρεία",
         "ἔχω"
+      ],
+      "words": [
+        {
+          "word": "Οὐ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우"
+        },
+        {
+          "word": "χρείαν",
+          "lemma": "χρεία",
+          "strong": "G5532",
+          "pron": "크레이안"
+        },
+        {
+          "word": "ἔχουσιν",
+          "lemma": "ἔχω",
+          "strong": "G2192",
+          "pron": "에쿠신"
+        }
       ],
       "count": 12,
       "refs": [
@@ -109,9 +191,24 @@
     },
     {
       "greek": "αὐτοῦ χρείαν",
+      "pron": "아우투 크레이안",
       "lemmas": [
         "αὐτός",
         "χρεία"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "χρείαν",
+          "lemma": "χρεία",
+          "strong": "G5532",
+          "pron": "크레이안"
+        }
       ],
       "count": 5,
       "refs": [
@@ -125,10 +222,31 @@
     },
     {
       "greek": "αὐτοῦ χρείαν ἔχει",
+      "pron": "아우투 크레이안 에케이",
       "lemmas": [
         "αὐτός",
         "χρεία",
         "ἔχω"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "χρείαν",
+          "lemma": "χρεία",
+          "strong": "G5532",
+          "pron": "크레이안"
+        },
+        {
+          "word": "ἔχει",
+          "lemma": "ἔχω",
+          "strong": "G2192",
+          "pron": "에케이"
+        }
       ],
       "count": 5,
       "refs": [

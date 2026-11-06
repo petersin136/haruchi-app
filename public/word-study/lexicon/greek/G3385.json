@@ -1,0 +1,154 @@
+{
+  "lemma": "μήτι",
+  "pron": "메티",
+  "strong": "G3385",
+  "posKo": "소사",
+  "root": {
+    "lemma": "μή",
+    "strong": "G3361",
+    "glossKo": "아니다"
+  },
+  "family": [
+    {
+      "lemma": "μή",
+      "strong": "G3361",
+      "pron": "메",
+      "glossKo": "아니다"
+    },
+    {
+      "lemma": "μηδαμῶς",
+      "strong": "G3365",
+      "pron": "메다모스",
+      "glossKo": "결코아니"
+    },
+    {
+      "lemma": "μηδέ",
+      "strong": "G3366",
+      "pron": "메데",
+      "glossKo": "~도 말라"
+    },
+    {
+      "lemma": "μηδείς",
+      "strong": "G3367",
+      "pron": "메데이스",
+      "glossKo": "아무도"
+    },
+    {
+      "lemma": "μηκέτι",
+      "strong": "G3371",
+      "pron": "메케티",
+      "glossKo": "더는말라"
+    },
+    {
+      "lemma": "μὴ οὐκ",
+      "strong": "G3378",
+      "pron": "메우크",
+      "glossKo": ""
+    }
+  ],
+  "defEn": "whether at all",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 17,
+  "byBook": {
+    "matthew": 4,
+    "corinthians2": 3,
+    "john": 3,
+    "luke": 2,
+    "mark": 2,
+    "acts": 1,
+    "corinthians1": 1,
+    "james": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "Μήτι ἐγώ",
+      "pron": "메티 에고",
+      "lemmas": [
+        "μήτι",
+        "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "Μήτι",
+          "lemma": "μήτι",
+          "strong": "G3385",
+          "pron": "메티"
+        },
+        {
+          "word": "ἐγώ",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "에고"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 26:22",
+        "matthew 26:25",
+        "mark 14:19",
+        "john 18:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "αὐτοῖς Μήτι",
+      "pron": "아우토이스 메티",
+      "lemmas": [
+        "αὐτός",
+        "μήτι"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        },
+        {
+          "word": "Μήτι",
+          "lemma": "μήτι",
+          "strong": "G3385",
+          "pron": "메티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 7:16",
+        "mark 4:21",
+        "luke 6:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "εἰ μήτι",
+      "pron": "에이 메티",
+      "lemmas": [
+        "εἰ",
+        "μήτι"
+      ],
+      "words": [
+        {
+          "word": "εἰ",
+          "lemma": "εἰ",
+          "strong": "G1487",
+          "pron": "에이"
+        },
+        {
+          "word": "μήτι",
+          "lemma": "μήτι",
+          "strong": "G3385",
+          "pron": "메티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "luke 9:13",
+        "corinthians1 7:5",
+        "corinthians2 13:5"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

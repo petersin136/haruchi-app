@@ -1,0 +1,115 @@
+{
+  "lemma": "ἰατρός",
+  "pron": "이아트로스",
+  "strong": "G2395",
+  "posKo": "명사",
+  "root": {
+    "lemma": "ἰάομαι",
+    "strong": "G2390",
+    "glossKo": "고치다"
+  },
+  "family": [
+    {
+      "lemma": "ἴαμα",
+      "strong": "G2386",
+      "pron": "이아마",
+      "glossKo": "병고침"
+    },
+    {
+      "lemma": "ἰάομαι",
+      "strong": "G2390",
+      "pron": "이아오마이",
+      "glossKo": "고치다"
+    },
+    {
+      "lemma": "ἴασις",
+      "strong": "G2392",
+      "pron": "이아시스",
+      "glossKo": "고침"
+    },
+    {
+      "lemma": "Ἰάσων",
+      "strong": "G2394",
+      "pron": "이아손",
+      "glossKo": "야손"
+    }
+  ],
+  "defEn": "a physician",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 7,
+  "byBook": {
+    "luke": 3,
+    "mark": 2,
+    "colossians": 1,
+    "matthew": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἰατροῦ ἀλλὰ",
+      "pron": "이아트루 알라",
+      "lemmas": [
+        "ἰατρός",
+        "ἀλλά"
+      ],
+      "words": [
+        {
+          "word": "ἰατροῦ",
+          "lemma": "ἰατρός",
+          "strong": "G2395",
+          "pron": "이아트루"
+        },
+        {
+          "word": "ἀλλὰ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 9:12",
+        "mark 2:17",
+        "luke 5:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἰατροῦ ἀλλὰ οἱ",
+      "pron": "이아트루 알라 호이",
+      "lemmas": [
+        "ἰατρός",
+        "ἀλλά",
+        "ὁ"
+      ],
+      "words": [
+        {
+          "word": "ἰατροῦ",
+          "lemma": "ἰατρός",
+          "strong": "G2395",
+          "pron": "이아트루"
+        },
+        {
+          "word": "ἀλλὰ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알라"
+        },
+        {
+          "word": "οἱ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 9:12",
+        "mark 2:17",
+        "luke 5:31"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

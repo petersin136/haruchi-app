@@ -1,0 +1,96 @@
+{
+  "lemma": "κάμηλος",
+  "pron": "카멜로스",
+  "strong": "G2574",
+  "posKo": "명사",
+  "root": {
+    "lemma": "ἐκκόπτω",
+    "strong": "G1581",
+    "glossKo": "찍어내다"
+  },
+  "family": [
+    {
+      "lemma": "ἐκκόπτω",
+      "strong": "G1581",
+      "pron": "에코프토",
+      "glossKo": "찍어내다"
+    }
+  ],
+  "defEn": "a \"camel\"",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 6,
+  "byBook": {
+    "matthew": 3,
+    "mark": 2,
+    "luke": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐστιν κάμηλον",
+      "pron": "에스틴 카멜론",
+      "lemmas": [
+        "εἰμί",
+        "κάμηλος"
+      ],
+      "words": [
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        },
+        {
+          "word": "κάμηλον",
+          "lemma": "κάμηλος",
+          "strong": "G2574",
+          "pron": "카멜론"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 19:24",
+        "mark 10:25",
+        "luke 18:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἐστιν κάμηλον διὰ",
+      "pron": "에스틴 카멜론 디아",
+      "lemmas": [
+        "εἰμί",
+        "κάμηλος",
+        "διά"
+      ],
+      "words": [
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        },
+        {
+          "word": "κάμηλον",
+          "lemma": "κάμηλος",
+          "strong": "G2574",
+          "pron": "카멜론"
+        },
+        {
+          "word": "διὰ",
+          "lemma": "διά",
+          "strong": "G1223",
+          "pron": "디아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 19:24",
+        "mark 10:25",
+        "luke 18:25"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

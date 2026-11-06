@@ -5,9 +5,24 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "δόμα",
-    "δόσις",
-    "δότης"
+    {
+      "lemma": "δόμα",
+      "strong": "G1390",
+      "pron": "도마",
+      "glossKo": "선물"
+    },
+    {
+      "lemma": "δόσις",
+      "strong": "G1394",
+      "pron": "도시스",
+      "glossKo": "주는것"
+    },
+    {
+      "lemma": "δότης",
+      "strong": "G1395",
+      "pron": "도테스",
+      "glossKo": "주는자"
+    }
   ],
   "defEn": "to give (used in a very wide application, properly, or by implication, literally or figuratively; greatly modified by…",
   "defKo": "",
@@ -41,9 +56,24 @@
   "phrases": [
     {
       "greek": "ἔδωκεν αὐτοῖς",
+      "pron": "에도켄 아우토이스",
       "lemmas": [
         "δίδωμι",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἔδωκεν",
+          "lemma": "δίδωμι",
+          "strong": "G1325",
+          "pron": "에도켄"
+        },
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        }
       ],
       "count": 104,
       "refs": [
@@ -64,9 +94,24 @@
     },
     {
       "greek": "δέδωκάς μοι",
+      "pron": "데도카스 모이",
       "lemmas": [
         "δίδωμι",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "δέδωκάς",
+          "lemma": "δίδωμι",
+          "strong": "G1325",
+          "pron": "데도카스"
+        },
+        {
+          "word": "μοι",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "모이"
+        }
       ],
       "count": 58,
       "refs": [
@@ -87,9 +132,24 @@
     },
     {
       "greek": "δώσω σοι",
+      "pron": "도소 소이",
       "lemmas": [
         "δίδωμι",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "δώσω",
+          "lemma": "δίδωμι",
+          "strong": "G1325",
+          "pron": "도소"
+        },
+        {
+          "word": "σοι",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "소이"
+        }
       ],
       "count": 39,
       "refs": [
@@ -110,10 +170,31 @@
     },
     {
       "greek": "καὶ ἐδόθη αὐτῷ",
+      "pron": "카이 에도테 아우토",
       "lemmas": [
         "καί",
         "δίδωμι",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "ἐδόθη",
+          "lemma": "δίδωμι",
+          "strong": "G1325",
+          "pron": "에도테"
+        },
+        {
+          "word": "αὐτῷ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        }
       ],
       "count": 39,
       "refs": [
@@ -134,9 +215,24 @@
     },
     {
       "greek": "ὃ δέδωκέν",
+      "pron": "호 데도켄",
       "lemmas": [
         "ὅς",
         "δίδωμι"
+      ],
+      "words": [
+        {
+          "word": "ὃ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호"
+        },
+        {
+          "word": "δέδωκέν",
+          "lemma": "δίδωμι",
+          "strong": "G1325",
+          "pron": "데도켄"
+        }
       ],
       "count": 29,
       "refs": [

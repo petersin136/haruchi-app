@@ -5,12 +5,42 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "εἶδος",
-    "ἴδε",
-    "ἰδέα",
-    "ἰδού",
-    "ἴσημι",
-    "ἴσος"
+    {
+      "lemma": "εἶδος",
+      "strong": "G1491",
+      "pron": "에이도스",
+      "glossKo": "모습"
+    },
+    {
+      "lemma": "ἴδε",
+      "strong": "G2396",
+      "pron": "이데",
+      "glossKo": "보라"
+    },
+    {
+      "lemma": "εἰδέα",
+      "strong": "G2397",
+      "pron": "에이데아",
+      "glossKo": "모양"
+    },
+    {
+      "lemma": "ἰδού",
+      "strong": "G2400",
+      "pron": "이두",
+      "glossKo": "보라"
+    },
+    {
+      "lemma": "ἴσημι",
+      "strong": "G2467",
+      "pron": "이세미",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἴσος",
+      "strong": "G2470",
+      "pron": "이소스",
+      "glossKo": "같은"
+    }
   ],
   "defEn": "used only in certain past tenses, the others being borrowed from the equivalent and ; properly, to see (literally or…",
   "defKo": "",
@@ -47,9 +77,24 @@
   "phrases": [
     {
       "greek": "οἴδαμεν ὅτι",
+      "pron": "오이다멘 호티",
       "lemmas": [
         "οἶδα",
         "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "οἴδαμεν",
+          "lemma": "οἶδα",
+          "strong": "G1492",
+          "pron": "오이다멘"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
       ],
       "count": 87,
       "refs": [
@@ -70,9 +115,24 @@
     },
     {
       "greek": "οὐκ οἴδατε",
+      "pron": "우크 오이다테",
       "lemmas": [
         "οὐ",
         "οἶδα"
+      ],
+      "words": [
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        },
+        {
+          "word": "οἴδατε",
+          "lemma": "οἶδα",
+          "strong": "G1492",
+          "pron": "오이다테"
+        }
       ],
       "count": 83,
       "refs": [
@@ -93,10 +153,31 @@
     },
     {
       "greek": "εἰδότες ὅτι ὁ",
+      "pron": "에이도테스 호티 호",
       "lemmas": [
         "οἶδα",
         "ὅτι",
         "ὁ"
+      ],
+      "words": [
+        {
+          "word": "εἰδότες",
+          "lemma": "οἶδα",
+          "strong": "G1492",
+          "pron": "에이도테스"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "ὁ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호"
+        }
       ],
       "count": 18,
       "refs": [
@@ -117,10 +198,31 @@
     },
     {
       "greek": "οὐκ οἴδατε ὅτι",
+      "pron": "우크 오이다테 호티",
       "lemmas": [
         "οὐ",
         "οἶδα",
         "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        },
+        {
+          "word": "οἴδατε",
+          "lemma": "οἶδα",
+          "strong": "G1492",
+          "pron": "오이다테"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
       ],
       "count": 17,
       "refs": [
@@ -141,9 +243,24 @@
     },
     {
       "greek": "οἴδατε τί",
+      "pron": "오이다테 티",
       "lemmas": [
         "οἶδα",
         "τίς"
+      ],
+      "words": [
+        {
+          "word": "οἴδατε",
+          "lemma": "οἶδα",
+          "strong": "G1492",
+          "pron": "오이다테"
+        },
+        {
+          "word": "τί",
+          "lemma": "τίς",
+          "strong": "G5100",
+          "pron": "티"
+        }
       ],
       "count": 14,
       "refs": [

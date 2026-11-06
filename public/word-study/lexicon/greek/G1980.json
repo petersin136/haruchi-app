@@ -1,0 +1,121 @@
+{
+  "lemma": "ἐπισκέπτομαι",
+  "pron": "에피스케프토마이",
+  "strong": "G1980",
+  "posKo": "동사",
+  "root": {
+    "lemma": "ἐπί",
+    "strong": "G1909",
+    "glossKo": "위에"
+  },
+  "family": [
+    {
+      "lemma": "ἐπαγγέλλομαι",
+      "strong": "G1861",
+      "pron": "에팡겔로마이",
+      "glossKo": "약속하다"
+    },
+    {
+      "lemma": "ἐπάγω",
+      "strong": "G1863",
+      "pron": "에파고",
+      "glossKo": "끌어들이다"
+    },
+    {
+      "lemma": "ἐπαγωνίζομαι",
+      "strong": "G1864",
+      "pron": "에파고니조마이",
+      "glossKo": "힘써싸우다"
+    },
+    {
+      "lemma": "ἐπαθροίζομαι",
+      "strong": "G1865",
+      "pron": "에파트로이조마이",
+      "glossKo": "모이다"
+    },
+    {
+      "lemma": "ἐπαινέω",
+      "strong": "G1867",
+      "pron": "에파이네오",
+      "glossKo": "칭찬하다"
+    },
+    {
+      "lemma": "ἔπαινος",
+      "strong": "G1868",
+      "pron": "에파이노스",
+      "glossKo": "칭찬"
+    }
+  ],
+  "defEn": "to inspect, i.e. (by implication) to select; by extension, to go to see, relieve",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 11,
+  "byBook": {
+    "acts": 4,
+    "luke": 3,
+    "matthew": 2,
+    "hebrews": 1,
+    "james": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐπεσκέψασθέ με",
+      "pron": "에페스케프사스테 메",
+      "lemmas": [
+        "ἐπισκέπτομαι",
+        "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "ἐπεσκέψασθέ",
+          "lemma": "ἐπισκέπτομαι",
+          "strong": "G1980",
+          "pron": "에페스케프사스테"
+        },
+        {
+          "word": "με",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "메"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 25:36",
+        "matthew 25:43",
+        "luke 1:78"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ὅτι ἐπεσκέψατο",
+      "pron": "호티 에페스케프사토",
+      "lemmas": [
+        "ὅτι",
+        "ἐπισκέπτομαι"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "ἐπεσκέψατο",
+          "lemma": "ἐπισκέπτομαι",
+          "strong": "G1980",
+          "pron": "에페스케프사토"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "luke 1:68",
+        "luke 7:16",
+        "hebrews 2:6"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

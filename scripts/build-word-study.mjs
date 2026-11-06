@@ -17,7 +17,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { lookupPron, stripDiacritics } from "./lib/greek-pron.mjs";
+import { PRON, LEMMA_PRON, lookupPron, stripDiacritics } from "./lib/greek-pron.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
@@ -43,6 +43,20 @@ const LEMMA_ALIASES = new Map([
   ["ἐπαγγέλλομαι", "ἐπαγγέλλω"],
   ["οὕτω(ς)", "οὕτω"],
   ["οὕτως", "οὕτω"],
+  ["μοιχάομαι", "μοιχάω"],
+  ["γαμίζω", "γαμίσκω"],
+  ["κράβαττος", "κράββατος"],
+  ["τεσσεράκοντα", "τεσσαράκοντα"],
+  ["ἐνενήκοντα", "ἐννενηκονταεννέα"],
+  ["τετραάρχης", "τετράρχης"],
+  ["ἄρσην", "ἄῤῥην"],
+  ["Ἰσκαριώθ", "Ἰσκαριώτης"],
+  ["γένημα", "γέννημα"],
+  ["Μαριάμ", "Μαρία"],
+  ["νοέω", "νοιέω"],
+  ["Μωϋσῆς", "Μωσεύς"],
+  ["σιδηροῦς", "σιδήρεος"],
+  ["μέλει", "μέλω"],
 ]);
 
 const GREEK_BOOKS = [
@@ -52,6 +66,167 @@ const GREEK_BOOKS = [
   "timothy1", "timothy2", "titus", "philemon", "hebrews",
   "james", "peter1", "peter2", "john1", "john2", "john3", "jude", "revelation",
 ];
+
+// ── 에라스무스식 한글 발음 (greek-pron.mjs 머리말 규칙)
+//   α=아 ε,η=에 ι=이 ο,ω=오 υ=위(어말 우) αι=아이 ει=에이 οι=오이 αυ=아우 ευ=에우 ου=우
+//   θ=ㅌ φ=ㅍ χ=ㅋ ξ=크ㅅ ψ=프ㅅ, 기식(῾)=ㅎ, γγ/γκ/γχ/γξ의 γ=ㅇ받침,
+//   ν·μ·λ은 받침, 모음 사이 λ은 ㄹㄹ, 나머지 자음 단독은 ㅡ를 붙인다.
+const KO_INITIALS = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ";
+const KO_MEDIALS = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ";
+const KO_FINALS = ["", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"];
+
+function hangul(initial, medial, final = "") {
+  const i = KO_INITIALS.indexOf(initial);
+  const m = KO_MEDIALS.indexOf(medial);
+  const f = KO_FINALS.indexOf(final);
+  if (i < 0 || m < 0 || f < 0) return "";
+  return String.fromCharCode(0xac00 + (i * 21 + m) * 28 + f);
+}
+
+const EL_CONS = {
+  β: "ㅂ", γ: "ㄱ", δ: "ㄷ", ζ: "ㅈ", θ: "ㅌ", κ: "ㅋ", λ: "ㄹ", μ: "ㅁ", ν: "ㄴ",
+  π: "ㅍ", ρ: "ㄹ", σ: "ㅅ", τ: "ㅌ", φ: "ㅍ", χ: "ㅋ",
+};
+const EL_VOWEL = { α: ["ㅏ"], ε: ["ㅔ"], η: ["ㅔ"], ι: ["ㅣ"], ο: ["ㅗ"], ω: ["ㅗ"], υ: ["ㅟ"] };
+const EL_DIPH = {
+  αι: ["ㅏ", "ㅣ"], ει: ["ㅔ", "ㅣ"], οι: ["ㅗ", "ㅣ"], υι: ["ㅟ"],
+  αυ: ["ㅏ", "ㅜ"], ευ: ["ㅔ", "ㅜ"], ηυ: ["ㅔ", "ㅜ"], ου: ["ㅜ"],
+};
+const CODA_OK = { ㄴ: "ㄴ", ㅁ: "ㅁ", ㄹ: "ㄹ", ㅇ: "ㅇ" };
+
+/** NFD 분석: 글자 + 기식(῾)·분음(¨) 표시 */
+function greekLetters(raw) {
+  const out = [];
+  for (const ch of String(raw || "").normalize("NFD")) {
+    const code = ch.codePointAt(0);
+    if (code >= 0x300 && code <= 0x36f) {
+      const last = out[out.length - 1];
+      if (!last) continue;
+      if (code === 0x314) last.rough = true;
+      if (code === 0x308) last.diaeresis = true;
+      continue;
+    }
+    const c = ch.toLowerCase().replace("ς", "σ");
+    if (/[α-ω]/.test(c)) out.push({ c, rough: false, diaeresis: false });
+  }
+  return out;
+}
+
+export function erasmianKo(raw) {
+  const L = greekLetters(raw);
+  if (!L.length) return "";
+  // 1) 단위 분해: {type:'v', meds:[...]} | {type:'c', jamo, double?}
+  const units = [];
+  let firstVowelSeen = false;
+  for (let i = 0; i < L.length; i++) {
+    const a = L[i];
+    const b = L[i + 1];
+    if (EL_VOWEL[a.c]) {
+      let meds = EL_VOWEL[a.c];
+      let rough = a.rough;
+      let step = 1;
+      if (b && EL_DIPH[a.c + b.c] && !b.diaeresis) {
+        meds = EL_DIPH[a.c + b.c];
+        rough = rough || b.rough;
+        step = 2;
+      }
+      if (!firstVowelSeen && rough && !units.length) units.push({ type: "c", jamo: "ㅎ" });
+      firstVowelSeen = true;
+      units.push({ type: "v", meds: [...meds] });
+      i += step - 1;
+      continue;
+    }
+    if (a.c === "ξ") { units.push({ type: "c", jamo: "ㅋ" }, { type: "c", jamo: "ㅅ" }); continue; }
+    if (a.c === "ψ") { units.push({ type: "c", jamo: "ㅍ" }, { type: "c", jamo: "ㅅ" }); continue; }
+    if (a.c === "γ" && b && "γκχξ".includes(b.c)) { units.push({ type: "c", jamo: "ㅇ", nasal: true }); continue; }
+    const jamo = EL_CONS[a.c];
+    if (!jamo) continue;
+    // 같은 자음 반복(ππ, σσ, ττ …)은 하나로. λλ·μμ·νν은 받침+초성으로 살림.
+    if (b && b.c === a.c && !"λμν".includes(a.c)) continue;
+    units.push({ type: "c", jamo, letter: a.c });
+  }
+  // 어말 단독 υ → 우
+  const lastU = units[units.length - 1];
+  if (lastU?.type === "v" && lastU.meds.length === 1 && lastU.meds[0] === "ㅟ" && units.length > 1) {
+    const prev = units[units.length - 2];
+    if (prev.type === "c") lastU.meds = ["ㅜ"];
+  }
+
+  // 2) 음절 조립
+  /** @type {{ini:string, med:string, fin:string}[]} */
+  const syl = [];
+  let pending = []; // 아직 붙지 않은 자음들
+  const flushStandalone = (cons) => {
+    for (const c of cons) syl.push({ ini: c.jamo === "ㅇ" ? "ㅇ" : c.jamo, med: "ㅡ", fin: "" });
+  };
+  for (let u = 0; u < units.length; u++) {
+    const unit = units[u];
+    if (unit.type === "c") { pending.push(unit); continue; }
+    // 모음: 마지막 자음이 초성, 그 앞 자음은 이전 음절 받침(가능하면) 또는 단독 음절
+    let onset = "ㅇ";
+    if (pending.length) {
+      const last = pending[pending.length - 1];
+      onset = last.jamo;
+      pending = pending.slice(0, -1);
+    }
+    // 남은 자음: 첫 자음이 받침 가능(ν μ λ, 비음 γ)하고 직전 음절이 받침 없으면 받침으로
+    if (pending.length) {
+      const first = pending[0];
+      const prev = syl[syl.length - 1];
+      if (prev && !prev.fin && first.letter !== "ρ" && CODA_OK[first.jamo]) {
+        prev.fin = CODA_OK[first.jamo];
+        pending = pending.slice(1);
+      }
+      flushStandalone(pending);
+      pending = [];
+    }
+    if (onset === "ㄹ" && units[u - 1]?.letter === "λ") {
+      // 초성 λ → 앞 음절에 ㄹ받침 (알레테이아, 에클레시아)
+      const prev = syl[syl.length - 1];
+      if (prev && !prev.fin) prev.fin = "ㄹ";
+    }
+    const [m0, ...rest] = unit.meds;
+    syl.push({ ini: onset, med: m0, fin: "" });
+    for (const m of rest) syl.push({ ini: "ㅇ", med: m, fin: "" });
+  }
+  // 어말 자음
+  if (pending.length) {
+    const prev = syl[syl.length - 1];
+    if (prev && !prev.fin && ["ν", "μ", "λ"].includes(pending[0].letter)) {
+      prev.fin = pending[0].jamo;
+      pending = pending.slice(1);
+    }
+    flushStandalone(pending);
+  }
+  return syl.map((s) => hangul(s.ini, s.med, s.fin)).join("");
+}
+
+function buildStrippedMap(dict) {
+  const m = new Map();
+  for (const [k, v] of Object.entries(dict)) {
+    const s = stripDiacritics(k).toLowerCase();
+    if (!m.has(s)) m.set(s, v);
+  }
+  return m;
+}
+const PRON_STRIP = buildStrippedMap(PRON);
+const LEMMA_PRON_STRIP = buildStrippedMap(LEMMA_PRON);
+
+/** 굴절형 발음: 사전(PRON) 우선 → 규칙 음역 */
+function wordPron(word) {
+  if (!word) return "";
+  if (PRON[word]) return PRON[word];
+  const s = stripDiacritics(word).toLowerCase();
+  return PRON_STRIP.get(s) || erasmianKo(word);
+}
+
+/** 표제어 발음: LEMMA_PRON → PRON → 규칙 음역 */
+function lemmaPron(lemma) {
+  if (!lemma) return "";
+  if (LEMMA_PRON[lemma]) return LEMMA_PRON[lemma];
+  const s = stripDiacritics(lemma).toLowerCase();
+  return LEMMA_PRON_STRIP.get(s) || PRON[lemma] || PRON_STRIP.get(s) || erasmianKo(lemma.replace(/\([^)]*\)/g, ""));
+}
 
 function clip(s, n) {
   const t = String(s || "").replace(/\s+/g, " ").trim();
@@ -145,6 +320,30 @@ function resolveStrong(lemma, lemmaIndex, preferred) {
   // οὕτω(ς) → οὕτω / οὕτως
   const bare = lemma.replace(/\([^)]*\)/g, "");
   if (bare && bare !== lemma) candidates.push(bare);
+  // SBLGNT ↔ Strong 철자 차이 (디포넌트, λημπ/ληπ, θθ/τθ, σσ/ττ, -νυμι/-νύω, ει/ι)
+  const s = stripDiacritics(bare).toLowerCase();
+  const variants = [
+    s.replace(/ομαι$/, "ω"),
+    s.replace(/αομαι$/, "αω"),
+    s.replace(/εομαι$/, "εω"),
+    s.replace(/ω$/, "ομαι"),
+    s.replace(/υμι$/, "υω"),
+    s.replace(/ημι$/, "αω"),
+    s.replace(/μαι$/, ""),
+    s.replace(/λημπ/g, "ληπ"),
+    s.replace(/θθ/g, "τθ"),
+    s.replace(/σσ/g, "ττ"),
+    s.replace(/ττ/g, "σσ"),
+    s.replace(/ει/g, "ι"),
+    s.replace(/ι/g, "ει"),
+    s.replace(/ρ(?!ρ)/g, "ρρ"),
+    s.replace(/ρρ/g, "ρ"),
+    s.replace(/υι/g, "υ"),
+    s.replace(/ϊ/g, "ι"),
+    s.replace(/μπιμπ/g, "μπιπ"),
+    s.replace(/ου?ς$/, "εος"),
+  ];
+  for (const v of variants) if (v && v !== s) candidates.push(v);
   for (const cand of candidates) {
     const key = stripDiacritics(cand).toLowerCase();
     const hits = lemmaIndex.get(key) || [];
@@ -250,7 +449,8 @@ function scanNt(lemmaIndex) {
       }
       const row = bag.get(key);
       row.count += 1;
-      const g = greekWords.join(" ");
+      // 구두점·생략 부호 제거한 형태로 집계
+      const g = greekWords.map((w) => w.replace(/[^\p{L}\p{M}]/gu, "")).join(" ");
       row.greekVotes.set(g, (row.greekVotes.get(g) || 0) + 1);
       if (row.refs.length < PHRASE_REFS_MAX && !row.refs.includes(ref)) {
         row.refs.push(ref);
@@ -341,63 +541,32 @@ function contentLemmaCount(lemmas, lemmaPos) {
   return n;
 }
 
-function buildFamily(lex, strong, selfLemma) {
+/** Strong 번호 → 같은 뿌리 Strong 번호 (최대 FAMILY_MAX) */
+function buildFamilyStrongs(lex, strong, rootIndex) {
   const self = normStrong(strong);
   const selfRoot = normStrong(getLexEntry(lex, strong).entry?.rootStrong) || self;
-  const selfLemmaKey = stripDiacritics(selfLemma || "").toLowerCase();
-  const members = [];
-  for (const [rawId, entry] of Object.entries(lex)) {
-    const id = normStrong(rawId);
-    const entryRoot = normStrong(entry?.rootStrong);
-    // 같은 어근: 공통 root, 또는 상대가 나를 root로 보거나 내가 상대를 root로 봄
-    const same =
-      id === selfRoot ||
-      entryRoot === selfRoot ||
-      entryRoot === self ||
-      id === self;
-    if (!same) continue;
-    const lemma = entry?.word || "";
-    if (!lemma) continue;
-    if (id === self) continue;
-    if (stripDiacritics(lemma).toLowerCase() === selfLemmaKey) continue;
-    members.push({ lemma, strong: id, n: Number(padStrongNum(id)) });
-  }
+  const ids = new Set([
+    selfRoot,
+    ...(rootIndex.get(selfRoot) || []),
+    ...(rootIndex.get(self) || []),
+  ]);
+  ids.delete(self);
+  const selfWord = stripDiacritics(getLexEntry(lex, strong).entry?.word || "").toLowerCase();
   const seen = new Set();
   const out = [];
-  for (const m of members.sort((a, b) => a.n - b.n)) {
-    const k = stripDiacritics(m.lemma).toLowerCase();
-    if (seen.has(k)) continue;
+  for (const id of [...ids].sort((a, b) => Number(padStrongNum(a)) - Number(padStrongNum(b)))) {
+    const word = getLexEntry(lex, id).entry?.word || "";
+    if (!word) continue;
+    const k = stripDiacritics(word).toLowerCase();
+    if (k === selfWord || seen.has(k)) continue;
     seen.add(k);
-    out.push(m.lemma);
+    out.push(id);
     if (out.length >= FAMILY_MAX) break;
   }
   return out;
 }
 
-function buildRoot(lex, strong, notes, glossFallback) {
-  const { entry } = getLexEntry(lex, strong);
-  const rootStrong = normStrong(entry?.rootStrong);
-  if (!rootStrong) return null;
-  const root = getLexEntry(lex, rootStrong);
-  if (!root.entry) {
-    return { lemma: "", strong: rootStrong };
-  }
-  const note = notes[rootStrong] || notes[normStrong(rootStrong)] || notes[root.key] || {};
-  const obj = {
-    lemma: root.entry.word || "",
-    strong: rootStrong,
-  };
-  const glossKo =
-    glossFallback ||
-    note.rootNote ||
-    note.rootGloss ||
-    note.glossKo ||
-    "";
-  if (glossKo) obj.glossKo = glossKo;
-  return obj;
-}
-
-function buildPhrases(lemma, phrasesByLemma, lemmaPos) {
+function buildPhrases(lemma, phrasesByLemma, lemmaPos, lemmaStrong) {
   const bag = phrasesByLemma.get(lemma);
   if (!bag) return [];
   const rows = [];
@@ -407,9 +576,19 @@ function buildPhrases(lemma, phrasesByLemma, lemmaPos) {
     if (!lemmas.includes(lemma)) continue;
     // 관사·접속 소사·전치사만 붙은 표현 제외 → 내용어 ≥ 2
     if (contentLemmaCount(lemmas, lemmaPos) < 2) continue;
+    const greek = pickGreek(row.greekVotes);
+    const forms = greek.split(" ");
+    const words = lemmas.map((L, i) => ({
+      word: forms[i] || "",
+      lemma: L,
+      strong: lemmaStrong.get(L) || "",
+      pron: wordPron(forms[i] || L),
+    }));
     rows.push({
-      greek: pickGreek(row.greekVotes),
+      greek,
+      pron: words.map((w) => w.pron).join(" "),
       lemmas,
+      words,
       count: row.count,
       refs: row.refs.slice(0, PHRASE_REFS_MAX),
       glossKo: "", // Agent 4
@@ -480,35 +659,93 @@ function wordsInChapter(verses) {
   return verses.reduce((n, v) => n + (v.words?.length || 0), 0);
 }
 
-function writeLexicon(uniqueLemmas, scan, lex, notes) {
+/**
+ * 신약 lemma 전체 + Strong's 전체 → lexicon/greek/{strong}.json
+ * (family·phrases·root가 가리키는 strong 파일이 항상 존재하도록)
+ */
+function writeLexicon(scan, lex, notes) {
+  fs.rmSync(OUT_LEX, { recursive: true, force: true });
   fs.mkdirSync(OUT_LEX, { recursive: true });
-  const written = [];
 
-  for (const lemma of [...uniqueLemmas].sort((a, b) => a.localeCompare(b, "el"))) {
-    const strong =
-      scan.lemmaStrong.get(lemma) ||
-      resolveStrong(lemma, buildLemmaIndex(lex), null);
-    if (!strong) {
-      console.warn(`[lex] strong 없음: ${lemma}`);
-      continue;
-    }
+  // strong → NT lemma 목록 (빈도 내림차순; 첫 번째가 대표)
+  /** @type {Map<string, string[]>} */
+  const strongLemmas = new Map();
+  for (const [lemma, s] of scan.lemmaStrong.entries()) {
+    if (!strongLemmas.has(s)) strongLemmas.set(s, []);
+    strongLemmas.get(s).push(lemma);
+  }
+  for (const list of strongLemmas.values()) {
+    list.sort((a, b) => (scan.lemmaCounts.get(b)?.total || 0) - (scan.lemmaCounts.get(a)?.total || 0));
+  }
+
+  // rootStrong → 자식 strong
+  /** @type {Map<string, string[]>} */
+  const rootIndex = new Map();
+  for (const [rawId, entry] of Object.entries(lex)) {
+    const r = normStrong(entry?.rootStrong);
+    if (!r) continue;
+    if (!rootIndex.has(r)) rootIndex.set(r, []);
+    rootIndex.get(r).push(normStrong(rawId));
+  }
+
+  const allStrongs = new Set([
+    ...Object.keys(lex).map(normStrong),
+    ...strongLemmas.keys(),
+  ]);
+
+  const headLemma = (s) =>
+    strongLemmas.get(s)?.[0] || getLexEntry(lex, s).entry?.word || "";
+  const headPron = (s) => {
+    const note = notes[s] || {};
+    return note.pron || lemmaPron(headLemma(s));
+  };
+  const headGloss = (s) => {
+    const L = strongLemmas.get(s)?.[0];
+    return (L && scan.lemmaGloss.get(L)) || notes[s]?.glossKo || "";
+  };
+
+  const written = [];
+  for (const strong of [...allStrongs].sort((a, b) => Number(padStrongNum(a)) - Number(padStrongNum(b)))) {
+    const lemmas = strongLemmas.get(strong) || [];
+    const lemma = headLemma(strong);
+    if (!lemma) continue;
     const { entry } = getLexEntry(lex, strong);
-    const note =
-      notes[strong] ||
-      notes[normStrong(strong)] ||
-      notes[lemma] ||
-      {};
-    const counts = scan.lemmaCounts.get(lemma) || { total: 0, byBook: {} };
-    const posKo = topPos(scan.lemmaPos.get(lemma)) || "";
-    const pron =
-      note.pron ||
-      scan.lemmaPron.get(lemma) ||
-      lookupPron(lemma, lemma) ||
-      "";
+    const note = notes[strong] || notes[lemma] || {};
+
+    const counts = { total: 0, byBook: {} };
+    const posMap = new Map();
+    for (const L of lemmas) {
+      const c = scan.lemmaCounts.get(L);
+      if (c) {
+        counts.total += c.total;
+        for (const [b, n] of Object.entries(c.byBook)) counts.byBook[b] = (counts.byBook[b] || 0) + n;
+      }
+      for (const [p, n] of scan.lemmaPos.get(L) || []) posMap.set(p, (posMap.get(p) || 0) + n);
+    }
+
+    const pron = headPron(strong);
     const defEn = clip(note.defEn || entry?.defEn || "", DEF_EN_MAX);
-    const root = buildRoot(lex, strong, notes, note.rootNote || note.rootGloss || "");
-    const family = buildFamily(lex, strong, lemma);
-    let phrases = buildPhrases(lemma, scan.phrasesByLemma, scan.lemmaPos);
+
+    const rootStrong = normStrong(entry?.rootStrong);
+    let root = null;
+    if (rootStrong && allStrongs.has(rootStrong) && headLemma(rootStrong)) {
+      root = { lemma: headLemma(rootStrong), strong: rootStrong };
+      const rg = note.rootNote || note.rootGloss || headGloss(rootStrong);
+      if (rg) root.glossKo = rg;
+    }
+
+    const family = buildFamilyStrongs(lex, strong, rootIndex)
+      .filter((s) => allStrongs.has(s))
+      .map((s) => ({
+        lemma: headLemma(s),
+        strong: s,
+        pron: headPron(s),
+        glossKo: headGloss(s),
+      }));
+
+    let phrases = lemmas.length
+      ? buildPhrases(lemmas[0], scan.phrasesByLemma, scan.lemmaPos, scan.lemmaStrong)
+      : [];
     // phraseNotes (Agent 4) → 해당 greek 구문에 note 병합
     if (note.phraseNotes && typeof note.phraseNotes === "object") {
       const pn = note.phraseNotes;
@@ -525,7 +762,7 @@ function writeLexicon(uniqueLemmas, scan, lex, notes) {
       lemma,
       pron,
       strong,
-      posKo,
+      posKo: topPos(posMap) || "",
       root,
       family,
       defEn,
@@ -587,7 +824,7 @@ function main() {
     lemmaIndex,
     scan.lemmaStrong,
   );
-  const written = writeLexicon(uniqueLemmas, scan, lex, notes);
+  const written = writeLexicon(scan, lex, notes);
 
   const johnStat = dirSize(OUT_BOOK);
   const lexStat = dirSize(OUT_LEX);

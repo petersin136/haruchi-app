@@ -1,0 +1,127 @@
+{
+  "lemma": "θερίζω",
+  "pron": "테리조",
+  "strong": "G2325",
+  "posKo": "동사",
+  "root": {
+    "lemma": "θέρος",
+    "strong": "G2330",
+    "glossKo": "여름"
+  },
+  "family": [
+    {
+      "lemma": "θεράπων",
+      "strong": "G2324",
+      "pron": "테라폰",
+      "glossKo": "사환"
+    },
+    {
+      "lemma": "θερισμός",
+      "strong": "G2326",
+      "pron": "테리스모스",
+      "glossKo": "추수"
+    },
+    {
+      "lemma": "θεριστής",
+      "strong": "G2327",
+      "pron": "테리스테스",
+      "glossKo": "추수꾼"
+    },
+    {
+      "lemma": "θέρμη",
+      "strong": "G2329",
+      "pron": "테르메",
+      "glossKo": "열기"
+    },
+    {
+      "lemma": "θέρος",
+      "strong": "G2330",
+      "pron": "테로스",
+      "glossKo": "여름"
+    }
+  ],
+  "defEn": "to harvest",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 21,
+  "byBook": {
+    "galatians": 4,
+    "john": 4,
+    "luke": 3,
+    "matthew": 3,
+    "revelation": 3,
+    "corinthians2": 2,
+    "corinthians1": 1,
+    "james": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "θερίζουσιν οἷς",
+      "pron": "테리주신 호이스",
+      "lemmas": [
+        "θερίζω",
+        "ὅς"
+      ],
+      "words": [
+        {
+          "word": "θερίζουσιν",
+          "lemma": "θερίζω",
+          "strong": "G2325",
+          "pron": "테리주신"
+        },
+        {
+          "word": "οἷς",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호이스"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "luke 12:24",
+        "luke 19:21",
+        "luke 19:22",
+        "john 4:38"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "θερίζουσιν οἷς οὐκ",
+      "pron": "테리주신 호이스 우크",
+      "lemmas": [
+        "θερίζω",
+        "ὅς",
+        "οὐ"
+      ],
+      "words": [
+        {
+          "word": "θερίζουσιν",
+          "lemma": "θερίζω",
+          "strong": "G2325",
+          "pron": "테리주신"
+        },
+        {
+          "word": "οἷς",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호이스"
+        },
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "luke 12:24",
+        "luke 19:21",
+        "luke 19:22",
+        "john 4:38"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

@@ -29,9 +29,24 @@
   "phrases": [
     {
       "greek": "ὃς ἂν",
+      "pron": "호스 안",
       "lemmas": [
         "ὅς",
         "ἄν"
+      ],
+      "words": [
+        {
+          "word": "ὃς",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호스"
+        },
+        {
+          "word": "ἂν",
+          "lemma": "ἄν",
+          "strong": "G302",
+          "pron": "안"
+        }
       ],
       "count": 39,
       "refs": [
@@ -52,10 +67,31 @@
     },
     {
       "greek": "ὃς δ ἂν",
+      "pron": "호스 드 안",
       "lemmas": [
         "ὅς",
         "δέ",
         "ἄν"
+      ],
+      "words": [
+        {
+          "word": "ὃς",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호스"
+        },
+        {
+          "word": "δ",
+          "lemma": "δέ",
+          "strong": "G1161",
+          "pron": "드"
+        },
+        {
+          "word": "ἂν",
+          "lemma": "ἄν",
+          "strong": "G302",
+          "pron": "안"
+        }
       ],
       "count": 22,
       "refs": [
@@ -76,9 +112,24 @@
     },
     {
       "greek": "οὐκ ἂν",
+      "pron": "우크 안",
       "lemmas": [
         "οὐ",
         "ἄν"
+      ],
+      "words": [
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        },
+        {
+          "word": "ἂν",
+          "lemma": "ἄν",
+          "strong": "G302",
+          "pron": "안"
+        }
       ],
       "count": 16,
       "refs": [
@@ -99,10 +150,31 @@
     },
     {
       "greek": "καὶ ὃς ἂν",
+      "pron": "카이 호스 안",
       "lemmas": [
         "καί",
         "ὅς",
         "ἄν"
+      ],
+      "words": [
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "ὃς",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호스"
+        },
+        {
+          "word": "ἂν",
+          "lemma": "ἄν",
+          "strong": "G302",
+          "pron": "안"
+        }
       ],
       "count": 11,
       "refs": [
@@ -122,9 +194,24 @@
     },
     {
       "greek": "ἂν εἴη",
+      "pron": "안 에이에",
       "lemmas": [
         "ἄν",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "ἂν",
+          "lemma": "ἄν",
+          "strong": "G302",
+          "pron": "안"
+        },
+        {
+          "word": "εἴη",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에이에"
+        }
       ],
       "count": 8,
       "refs": [

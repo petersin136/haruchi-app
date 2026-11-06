@@ -4,13 +4,29 @@
   "strong": "G3825",
   "posKo": "부사",
   "root": {
-    "lemma": "πάλη",
-    "strong": "G3823"
+    "lemma": "πάλη",
+    "strong": "G3823",
+    "glossKo": "씨름"
   },
   "family": [
-    "πάλαι",
-    "πάλη",
-    "παλιγγενεσία"
+    {
+      "lemma": "πάλαι",
+      "strong": "G3819",
+      "pron": "팔라이",
+      "glossKo": "오래전"
+    },
+    {
+      "lemma": "πάλη",
+      "strong": "G3823",
+      "pron": "팔레",
+      "glossKo": "씨름"
+    },
+    {
+      "lemma": "παλιγγενεσία",
+      "strong": "G3824",
+      "pron": "팔링게네시아",
+      "glossKo": "거듭남"
+    }
   ],
   "defEn": "(adverbially) anew, i.e. (of place) back, (of time) once more, or (conjunctionally) furthermore or on the other hand",
   "defKo": "",
@@ -37,9 +53,24 @@
   "phrases": [
     {
       "greek": "πάλιν εἶπεν",
+      "pron": "팔린 에이펜",
       "lemmas": [
         "πάλιν",
         "λέγω"
+      ],
+      "words": [
+        {
+          "word": "πάλιν",
+          "lemma": "πάλιν",
+          "strong": "G3825",
+          "pron": "팔린"
+        },
+        {
+          "word": "εἶπεν",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "에이펜"
+        }
       ],
       "count": 10,
       "refs": [
@@ -58,9 +89,24 @@
     },
     {
       "greek": "οὖν πάλιν",
+      "pron": "운 팔린",
       "lemmas": [
         "οὖν",
         "πάλιν"
+      ],
+      "words": [
+        {
+          "word": "οὖν",
+          "lemma": "οὖν",
+          "strong": "G3767",
+          "pron": "운"
+        },
+        {
+          "word": "πάλιν",
+          "lemma": "πάλιν",
+          "strong": "G3825",
+          "pron": "팔린"
+        }
       ],
       "count": 9,
       "refs": [
@@ -78,9 +124,24 @@
     },
     {
       "greek": "Ἰησοῦς πάλιν",
+      "pron": "이에수스 팔린",
       "lemmas": [
         "Ἰησοῦς",
         "πάλιν"
+      ],
+      "words": [
+        {
+          "word": "Ἰησοῦς",
+          "lemma": "Ἰησοῦς",
+          "strong": "G2424",
+          "pron": "이에수스"
+        },
+        {
+          "word": "πάλιν",
+          "lemma": "πάλιν",
+          "strong": "G3825",
+          "pron": "팔린"
+        }
       ],
       "count": 5,
       "refs": [
@@ -94,9 +155,24 @@
     },
     {
       "greek": "αὐτοὺς πάλιν",
+      "pron": "아우투스 팔린",
       "lemmas": [
         "αὐτός",
         "πάλιν"
+      ],
+      "words": [
+        {
+          "word": "αὐτοὺς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투스"
+        },
+        {
+          "word": "πάλιν",
+          "lemma": "πάλιν",
+          "strong": "G3825",
+          "pron": "팔린"
+        }
       ],
       "count": 4,
       "refs": [
@@ -109,9 +185,24 @@
     },
     {
       "greek": "μὴ πάλιν",
+      "pron": "메 팔린",
       "lemmas": [
         "μή",
         "πάλιν"
+      ],
+      "words": [
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        },
+        {
+          "word": "πάλιν",
+          "lemma": "πάλιν",
+          "strong": "G3825",
+          "pron": "팔린"
+        }
       ],
       "count": 4,
       "refs": [

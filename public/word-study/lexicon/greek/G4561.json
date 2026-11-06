@@ -4,13 +4,29 @@
   "strong": "G4561",
   "posKo": "명사",
   "root": {
-    "lemma": "σαρόω",
-    "strong": "G4563"
+    "lemma": "σαρόω",
+    "strong": "G4563",
+    "glossKo": "쓸다"
   },
   "family": [
-    "σαρκικός",
-    "σάρκινος",
-    "σαρόω"
+    {
+      "lemma": "σαρκικός",
+      "strong": "G4559",
+      "pron": "사르키코스",
+      "glossKo": "육의"
+    },
+    {
+      "lemma": "σάρκινος",
+      "strong": "G4560",
+      "pron": "사르키노스",
+      "glossKo": "육신의"
+    },
+    {
+      "lemma": "σαρόω",
+      "strong": "G4563",
+      "pron": "사로오",
+      "glossKo": "쓸다"
+    }
   ],
   "defEn": "flesh (as stripped of the skin), i.e. (strictly) the meat of an animal (as food), or (by extension) the body (as oppo…",
   "defKo": "",
@@ -44,9 +60,24 @@
   "phrases": [
     {
       "greek": "σαρκί μου",
+      "pron": "사르키 무",
       "lemmas": [
         "σάρξ",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "σαρκί",
+          "lemma": "σάρξ",
+          "strong": "G4561",
+          "pron": "사르키"
+        },
+        {
+          "word": "μου",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "무"
+        }
       ],
       "count": 11,
       "refs": [
@@ -66,9 +97,24 @@
     },
     {
       "greek": "πᾶσα σὰρξ",
+      "pron": "파사 사르크스",
       "lemmas": [
         "πᾶς",
         "σάρξ"
+      ],
+      "words": [
+        {
+          "word": "πᾶσα",
+          "lemma": "πᾶς",
+          "strong": "G3956",
+          "pron": "파사"
+        },
+        {
+          "word": "σὰρξ",
+          "lemma": "σάρξ",
+          "strong": "G4561",
+          "pron": "사르크스"
+        }
       ],
       "count": 10,
       "refs": [
@@ -87,9 +133,24 @@
     },
     {
       "greek": "σαρκὸς αὐτοῦ",
+      "pron": "사르코스 아우투",
       "lemmas": [
         "σάρξ",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "σαρκὸς",
+          "lemma": "σάρξ",
+          "strong": "G4561",
+          "pron": "사르코스"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 9,
       "refs": [
@@ -107,10 +168,31 @@
     },
     {
       "greek": "τῆς σαρκὸς αὐτοῦ",
+      "pron": "테스 사르코스 아우투",
       "lemmas": [
         "ὁ",
         "σάρξ",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τῆς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "테스"
+        },
+        {
+          "word": "σαρκὸς",
+          "lemma": "σάρξ",
+          "strong": "G4561",
+          "pron": "사르코스"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 9,
       "refs": [
@@ -128,10 +210,31 @@
     },
     {
       "greek": "τῇ σαρκί μου",
+      "pron": "테 사르키 무",
       "lemmas": [
         "ὁ",
         "σάρξ",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "τῇ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "테"
+        },
+        {
+          "word": "σαρκί",
+          "lemma": "σάρξ",
+          "strong": "G4561",
+          "pron": "사르키"
+        },
+        {
+          "word": "μου",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "무"
+        }
       ],
       "count": 8,
       "refs": [

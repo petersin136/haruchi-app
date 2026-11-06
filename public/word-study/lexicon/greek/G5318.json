@@ -4,16 +4,47 @@
   "strong": "G5318",
   "posKo": "형용사",
   "root": {
-    "lemma": "φαίνω",
-    "strong": "G5316"
+    "lemma": "φαίνω",
+    "strong": "G5316",
+    "glossKo": "나타나다"
   },
   "family": [
-    "φαίνω",
-    "φανερόω",
-    "φανερῶς",
-    "φανός",
-    "φαντάζω",
-    "φελόνης"
+    {
+      "lemma": "φαίνω",
+      "strong": "G5316",
+      "pron": "파이노",
+      "glossKo": "나타나다"
+    },
+    {
+      "lemma": "φανερόω",
+      "strong": "G5319",
+      "pron": "파네로오",
+      "glossKo": "나타내다"
+    },
+    {
+      "lemma": "φανερῶς",
+      "strong": "G5320",
+      "pron": "파네로스",
+      "glossKo": "드러나게"
+    },
+    {
+      "lemma": "φανός",
+      "strong": "G5322",
+      "pron": "파노스",
+      "glossKo": "등불"
+    },
+    {
+      "lemma": "φαντάζομαι",
+      "strong": "G5324",
+      "pron": "판타조마이",
+      "glossKo": "보이는것"
+    },
+    {
+      "lemma": "φελόνης",
+      "strong": "G5341",
+      "pron": "펠로네스",
+      "glossKo": ""
+    }
   ],
   "defEn": "shining, i.e. apparent (literally or figuratively); neuter (as adverb) publicly, externally",
   "defKo": "",
@@ -35,9 +66,24 @@
   "phrases": [
     {
       "greek": "φανερὸν γενήσεται",
+      "pron": "파네론 게네세타이",
       "lemmas": [
         "φανερός",
         "γίνομαι"
+      ],
+      "words": [
+        {
+          "word": "φανερὸν",
+          "lemma": "φανερός",
+          "strong": "G5318",
+          "pron": "파네론"
+        },
+        {
+          "word": "γενήσεται",
+          "lemma": "γίνομαι",
+          "strong": "G1096",
+          "pron": "게네세타이"
+        }
       ],
       "count": 5,
       "refs": [
@@ -51,9 +97,24 @@
     },
     {
       "greek": "φανερόν ἐστιν",
+      "pron": "파네론 에스틴",
       "lemmas": [
         "φανερός",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "φανερόν",
+          "lemma": "φανερός",
+          "strong": "G5318",
+          "pron": "파네론"
+        },
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 3,
       "refs": [

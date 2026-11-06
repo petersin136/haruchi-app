@@ -1,0 +1,109 @@
+{
+  "lemma": "μνεία",
+  "pron": "므네이아",
+  "strong": "G3417",
+  "posKo": "명사",
+  "root": {
+    "lemma": "μνάομαι",
+    "strong": "G3415"
+  },
+  "family": [
+    {
+      "lemma": "μιμνῄσκομαι",
+      "strong": "G3403",
+      "pron": "밈네스코마이",
+      "glossKo": "기억하다"
+    },
+    {
+      "lemma": "μνάομαι",
+      "strong": "G3415",
+      "pron": "므나오마이",
+      "glossKo": ""
+    },
+    {
+      "lemma": "μνῆμα",
+      "strong": "G3418",
+      "pron": "므네마",
+      "glossKo": "무덤"
+    },
+    {
+      "lemma": "μνηστεύομαι",
+      "strong": "G3423",
+      "pron": "므네스테우오마이",
+      "glossKo": "약혼하다"
+    }
+  ],
+  "defEn": "recollection; by implication, recital",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 7,
+  "byBook": {
+    "thessalonians1": 2,
+    "ephesians": 1,
+    "philemon": 1,
+    "philippians": 1,
+    "romans": 1,
+    "timothy2": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "μνείαν ὑμῶν",
+      "pron": "므네이안 휘몬",
+      "lemmas": [
+        "μνεία",
+        "σύ"
+      ],
+      "words": [
+        {
+          "word": "μνείαν",
+          "lemma": "μνεία",
+          "strong": "G3417",
+          "pron": "므네이안"
+        },
+        {
+          "word": "ὑμῶν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘몬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "romans 1:9",
+        "philippians 1:3",
+        "philemon 1:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ὑμῶν μνείαν",
+      "pron": "휘몬 므네이안",
+      "lemmas": [
+        "σύ",
+        "μνεία"
+      ],
+      "words": [
+        {
+          "word": "ὑμῶν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘몬"
+        },
+        {
+          "word": "μνείαν",
+          "lemma": "μνεία",
+          "strong": "G3417",
+          "pron": "므네이안"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ephesians 1:16",
+        "thessalonians1 1:2",
+        "timothy2 1:3"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

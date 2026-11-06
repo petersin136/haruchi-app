@@ -1,0 +1,198 @@
+{
+  "lemma": "γαμέω",
+  "pron": "가메오",
+  "strong": "G1060",
+  "posKo": "동사",
+  "root": {
+    "lemma": "γάμος",
+    "strong": "G1062",
+    "glossKo": "혼인"
+  },
+  "family": [
+    {
+      "lemma": "γαμίζω",
+      "strong": "G1061",
+      "pron": "가미조",
+      "glossKo": "시집보내다"
+    },
+    {
+      "lemma": "γάμος",
+      "strong": "G1062",
+      "pron": "가모스",
+      "glossKo": "혼인"
+    }
+  ],
+  "defEn": "to wed (of either sex)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 29,
+  "byBook": {
+    "corinthians1": 9,
+    "matthew": 7,
+    "luke": 6,
+    "mark": 4,
+    "timothy1": 3
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "γαμήσῃ ἄλλην",
+      "pron": "가메세 알렌",
+      "lemmas": [
+        "γαμέω",
+        "ἄλλος"
+      ],
+      "words": [
+        {
+          "word": "γαμήσῃ",
+          "lemma": "γαμέω",
+          "strong": "G1060",
+          "pron": "가메세"
+        },
+        {
+          "word": "ἄλλην",
+          "lemma": "ἄλλος",
+          "strong": "G243",
+          "pron": "알렌"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 19:9",
+        "mark 10:11",
+        "mark 10:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "γαμήσῃ ἄλλην μοιχᾶται",
+      "pron": "가메세 알렌 모이카타이",
+      "lemmas": [
+        "γαμέω",
+        "ἄλλος",
+        "μοιχάομαι"
+      ],
+      "words": [
+        {
+          "word": "γαμήσῃ",
+          "lemma": "γαμέω",
+          "strong": "G1060",
+          "pron": "가메세"
+        },
+        {
+          "word": "ἄλλην",
+          "lemma": "ἄλλος",
+          "strong": "G243",
+          "pron": "알렌"
+        },
+        {
+          "word": "μοιχᾶται",
+          "lemma": "μοιχάομαι",
+          "strong": "G3429",
+          "pron": "모이카타이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 19:9",
+        "mark 10:11",
+        "mark 10:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "γαμοῦσιν οὔτε",
+      "pron": "가무신 우테",
+      "lemmas": [
+        "γαμέω",
+        "οὔτε"
+      ],
+      "words": [
+        {
+          "word": "γαμοῦσιν",
+          "lemma": "γαμέω",
+          "strong": "G1060",
+          "pron": "가무신"
+        },
+        {
+          "word": "οὔτε",
+          "lemma": "οὔτε",
+          "strong": "G3777",
+          "pron": "우테"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 22:30",
+        "mark 12:25",
+        "luke 20:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "γαμοῦσιν οὔτε γαμίζονται",
+      "pron": "가무신 우테 가미존타이",
+      "lemmas": [
+        "γαμέω",
+        "οὔτε",
+        "γαμίζω"
+      ],
+      "words": [
+        {
+          "word": "γαμοῦσιν",
+          "lemma": "γαμέω",
+          "strong": "G1060",
+          "pron": "가무신"
+        },
+        {
+          "word": "οὔτε",
+          "lemma": "οὔτε",
+          "strong": "G3777",
+          "pron": "우테"
+        },
+        {
+          "word": "γαμίζονται",
+          "lemma": "γαμίζω",
+          "strong": "G1061",
+          "pron": "가미존타이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 22:30",
+        "mark 12:25",
+        "luke 20:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "οὔτε γαμοῦσιν",
+      "pron": "우테 가무신",
+      "lemmas": [
+        "οὔτε",
+        "γαμέω"
+      ],
+      "words": [
+        {
+          "word": "οὔτε",
+          "lemma": "οὔτε",
+          "strong": "G3777",
+          "pron": "우테"
+        },
+        {
+          "word": "γαμοῦσιν",
+          "lemma": "γαμέω",
+          "strong": "G1060",
+          "pron": "가무신"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 22:30",
+        "mark 12:25",
+        "luke 20:35"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

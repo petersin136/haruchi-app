@@ -1,0 +1,126 @@
+{
+  "lemma": "γονεύς",
+  "pron": "고뉴스",
+  "strong": "G1118",
+  "posKo": "명사",
+  "root": {
+    "lemma": "γίνομαι",
+    "strong": "G1096",
+    "glossKo": "되다"
+  },
+  "family": [
+    {
+      "lemma": "γένος",
+      "strong": "G1085",
+      "pron": "게노스",
+      "glossKo": "족속"
+    },
+    {
+      "lemma": "γίνομαι",
+      "strong": "G1096",
+      "pron": "기노마이",
+      "glossKo": "되다"
+    },
+    {
+      "lemma": "γυνή",
+      "strong": "G1135",
+      "pron": "귀네",
+      "glossKo": "여자"
+    }
+  ],
+  "defEn": "a parent",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 20,
+  "byBook": {
+    "john": 6,
+    "luke": 6,
+    "corinthians2": 2,
+    "colossians": 1,
+    "ephesians": 1,
+    "mark": 1,
+    "matthew": 1,
+    "romans": 1,
+    "timothy2": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "γονεῖς αὐτοῦ",
+      "pron": "고네이스 아우투",
+      "lemmas": [
+        "γονεύς",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "γονεῖς",
+          "lemma": "γονεύς",
+          "strong": "G1118",
+          "pron": "고네이스"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "luke 2:41",
+        "luke 2:43",
+        "luke 8:56",
+        "john 9:2",
+        "john 9:3",
+        "john 9:18",
+        "john 9:20",
+        "john 9:22",
+        "john 9:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "οἱ γονεῖς αὐτοῦ",
+      "pron": "호이 고네이스 아우투",
+      "lemmas": [
+        "ὁ",
+        "γονεύς",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "οἱ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호이"
+        },
+        {
+          "word": "γονεῖς",
+          "lemma": "γονεύς",
+          "strong": "G1118",
+          "pron": "고네이스"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "luke 2:41",
+        "luke 2:43",
+        "luke 8:56",
+        "john 9:2",
+        "john 9:3",
+        "john 9:18",
+        "john 9:20",
+        "john 9:22",
+        "john 9:23"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

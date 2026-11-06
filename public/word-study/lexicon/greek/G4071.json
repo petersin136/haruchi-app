@@ -1,0 +1,130 @@
+{
+  "lemma": "πετεινόν",
+  "pron": "페테이논",
+  "strong": "G4071",
+  "posKo": "형용사",
+  "root": {
+    "lemma": "πέτομαι",
+    "strong": "G4072",
+    "glossKo": "날다"
+  },
+  "family": [
+    {
+      "lemma": "πέτομαι",
+      "strong": "G4072",
+      "pron": "페토마이",
+      "glossKo": "날다"
+    },
+    {
+      "lemma": "πίπτω",
+      "strong": "G4098",
+      "pron": "피프토",
+      "glossKo": "떨어지다"
+    },
+    {
+      "lemma": "πτέρυξ",
+      "strong": "G4420",
+      "pron": "프테뤼크스",
+      "glossKo": "날개"
+    },
+    {
+      "lemma": "πτηνόν",
+      "strong": "G4421",
+      "pron": "프테논",
+      "glossKo": "날짐승"
+    }
+  ],
+  "defEn": "a flying animal, i.e. bird",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 14,
+  "byBook": {
+    "luke": 4,
+    "matthew": 4,
+    "acts": 2,
+    "mark": 2,
+    "james": 1,
+    "romans": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "πετεινὰ τοῦ οὐρανοῦ",
+      "pron": "페테이나 투 우라누",
+      "lemmas": [
+        "πετεινόν",
+        "ὁ",
+        "οὐρανός"
+      ],
+      "words": [
+        {
+          "word": "πετεινὰ",
+          "lemma": "πετεινόν",
+          "strong": "G4071",
+          "pron": "페테이나"
+        },
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        },
+        {
+          "word": "οὐρανοῦ",
+          "lemma": "οὐρανός",
+          "strong": "G3772",
+          "pron": "우라누"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "matthew 6:26",
+        "matthew 8:20",
+        "matthew 13:32",
+        "mark 4:32",
+        "luke 8:5",
+        "luke 9:58",
+        "luke 13:19",
+        "acts 10:12",
+        "acts 11:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἐλθόντα τὰ πετεινὰ",
+      "pron": "엘톤타 타 페테이나",
+      "lemmas": [
+        "ἔρχομαι",
+        "ὁ",
+        "πετεινόν"
+      ],
+      "words": [
+        {
+          "word": "ἐλθόντα",
+          "lemma": "ἔρχομαι",
+          "strong": "G2064",
+          "pron": "엘톤타"
+        },
+        {
+          "word": "τὰ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "타"
+        },
+        {
+          "word": "πετεινὰ",
+          "lemma": "πετεινόν",
+          "strong": "G4071",
+          "pron": "페테이나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 13:4",
+        "matthew 13:32",
+        "mark 4:4"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

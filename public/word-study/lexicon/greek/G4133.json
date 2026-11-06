@@ -1,0 +1,142 @@
+{
+  "lemma": "πλήν",
+  "pron": "플렌",
+  "strong": "G4133",
+  "posKo": "접속사",
+  "root": {
+    "lemma": "πλείων",
+    "strong": "G4119"
+  },
+  "family": [
+    {
+      "lemma": "πλείων",
+      "strong": "G4119",
+      "pron": "플레이온",
+      "glossKo": ""
+    },
+    {
+      "lemma": "πλεονάζω",
+      "strong": "G4121",
+      "pron": "플레오나조",
+      "glossKo": "넘치다"
+    },
+    {
+      "lemma": "πλεονέκτης",
+      "strong": "G4123",
+      "pron": "플레오네크테스",
+      "glossKo": "탐욕자"
+    }
+  ],
+  "defEn": "moreover (besides), i.e. albeit, save that, rather, yet",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 31,
+  "byBook": {
+    "luke": 15,
+    "matthew": 5,
+    "acts": 4,
+    "philippians": 3,
+    "corinthians1": 1,
+    "ephesians": 1,
+    "mark": 1,
+    "revelation": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "πλὴν οὐαὶ",
+      "pron": "플렌 우아이",
+      "lemmas": [
+        "πλήν",
+        "οὐαί"
+      ],
+      "words": [
+        {
+          "word": "πλὴν",
+          "lemma": "πλήν",
+          "strong": "G4133",
+          "pron": "플렌"
+        },
+        {
+          "word": "οὐαὶ",
+          "lemma": "οὐαί",
+          "strong": "G3759",
+          "pron": "우아이"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 18:7",
+        "luke 6:24",
+        "luke 17:1",
+        "luke 22:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "πλὴν λέγω",
+      "pron": "플렌 레고",
+      "lemmas": [
+        "πλήν",
+        "λέγω"
+      ],
+      "words": [
+        {
+          "word": "πλὴν",
+          "lemma": "πλήν",
+          "strong": "G4133",
+          "pron": "플렌"
+        },
+        {
+          "word": "λέγω",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레고"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 11:22",
+        "matthew 11:24",
+        "matthew 26:64"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "πλὴν λέγω ὑμῖν",
+      "pron": "플렌 레고 휘민",
+      "lemmas": [
+        "πλήν",
+        "λέγω",
+        "σύ"
+      ],
+      "words": [
+        {
+          "word": "πλὴν",
+          "lemma": "πλήν",
+          "strong": "G4133",
+          "pron": "플렌"
+        },
+        {
+          "word": "λέγω",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레고"
+        },
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 11:22",
+        "matthew 11:24",
+        "matthew 26:64"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

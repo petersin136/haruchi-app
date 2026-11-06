@@ -1,0 +1,128 @@
+{
+  "lemma": "διαλογίζομαι",
+  "pron": "디알로기조마이",
+  "strong": "G1260",
+  "posKo": "동사",
+  "root": {
+    "lemma": "διά",
+    "strong": "G1223",
+    "glossKo": "통하여"
+  },
+  "family": [
+    {
+      "lemma": "διά",
+      "strong": "G1223",
+      "pron": "디아",
+      "glossKo": "통하여"
+    },
+    {
+      "lemma": "διαβαίνω",
+      "strong": "G1224",
+      "pron": "디아바이노",
+      "glossKo": "건너가다"
+    },
+    {
+      "lemma": "διαβάλλω",
+      "strong": "G1225",
+      "pron": "디아발로",
+      "glossKo": "참소되다"
+    },
+    {
+      "lemma": "διαβεβαιόομαι",
+      "strong": "G1226",
+      "pron": "디아베바이오오마이",
+      "glossKo": "굳게주장하다"
+    },
+    {
+      "lemma": "διαβλέπω",
+      "strong": "G1227",
+      "pron": "디아블레포",
+      "glossKo": "똑똑보다"
+    },
+    {
+      "lemma": "διαγγέλλω",
+      "strong": "G1229",
+      "pron": "디앙겔로",
+      "glossKo": "전파하다"
+    }
+  ],
+  "defEn": "to reckon thoroughly, i.e. (genitive case) to deliberate (by reflection or discussion)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 16,
+  "byBook": {
+    "mark": 7,
+    "luke": 6,
+    "matthew": 3
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "διελογίζοντο ἐν ἑαυτοῖς",
+      "pron": "디엘로기존토 엔 헤아우토이스",
+      "lemmas": [
+        "διαλογίζομαι",
+        "ἐν",
+        "ἑαυτοῦ"
+      ],
+      "words": [
+        {
+          "word": "διελογίζοντο",
+          "lemma": "διαλογίζομαι",
+          "strong": "G1260",
+          "pron": "디엘로기존토"
+        },
+        {
+          "word": "ἐν",
+          "lemma": "ἐν",
+          "strong": "G1722",
+          "pron": "엔"
+        },
+        {
+          "word": "ἑαυτοῖς",
+          "lemma": "ἑαυτοῦ",
+          "strong": "G1438",
+          "pron": "헤아우토이스"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "matthew 16:7",
+        "matthew 16:8",
+        "matthew 21:25",
+        "mark 2:8",
+        "luke 12:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "Τί διαλογίζεσθε",
+      "pron": "티 디알로기제스테",
+      "lemmas": [
+        "τίς",
+        "διαλογίζομαι"
+      ],
+      "words": [
+        {
+          "word": "Τί",
+          "lemma": "τίς",
+          "strong": "G5100",
+          "pron": "티"
+        },
+        {
+          "word": "διαλογίζεσθε",
+          "lemma": "διαλογίζομαι",
+          "strong": "G1260",
+          "pron": "디알로기제스테"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 16:8",
+        "mark 8:17",
+        "luke 5:22"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

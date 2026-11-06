@@ -1,0 +1,209 @@
+{
+  "lemma": "βάπτισμα",
+  "pron": "밥티스마",
+  "strong": "G908",
+  "posKo": "명사",
+  "root": {
+    "lemma": "βαπτίζω",
+    "strong": "G907",
+    "glossKo": "세례주다"
+  },
+  "family": [
+    {
+      "lemma": "βαπτίζω",
+      "strong": "G907",
+      "pron": "밥티조",
+      "glossKo": "세례주다"
+    },
+    {
+      "lemma": "βαπτισμός",
+      "strong": "G909",
+      "pron": "바프티스모스",
+      "glossKo": "씻음"
+    },
+    {
+      "lemma": "βαπτιστής",
+      "strong": "G910",
+      "pron": "바프티스테스",
+      "glossKo": "세례자(요한)"
+    }
+  ],
+  "defEn": "baptism (technically or figuratively)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 19,
+  "byBook": {
+    "acts": 6,
+    "luke": 4,
+    "mark": 4,
+    "matthew": 2,
+    "ephesians": 1,
+    "peter1": 1,
+    "romans": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "βάπτισμα Ἰωάννου",
+      "pron": "바프티스마 이오안누",
+      "lemmas": [
+        "βάπτισμα",
+        "Ἰωάννης"
+      ],
+      "words": [
+        {
+          "word": "βάπτισμα",
+          "lemma": "βάπτισμα",
+          "strong": "G908",
+          "pron": "바프티스마"
+        },
+        {
+          "word": "Ἰωάννου",
+          "lemma": "Ἰωάννης",
+          "strong": "G2491",
+          "pron": "이오안누"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "luke 7:29",
+        "luke 20:4",
+        "acts 1:22",
+        "acts 18:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "βάπτισμα μετανοίας",
+      "pron": "바프티스마 메타노이아스",
+      "lemmas": [
+        "βάπτισμα",
+        "μετάνοια"
+      ],
+      "words": [
+        {
+          "word": "βάπτισμα",
+          "lemma": "βάπτισμα",
+          "strong": "G908",
+          "pron": "바프티스마"
+        },
+        {
+          "word": "μετανοίας",
+          "lemma": "μετάνοια",
+          "strong": "G3341",
+          "pron": "메타노이아스"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "mark 1:4",
+        "luke 3:3",
+        "acts 13:24",
+        "acts 19:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "τὸ βάπτισμα Ἰωάννου",
+      "pron": "토 바프티스마 이오안누",
+      "lemmas": [
+        "ὁ",
+        "βάπτισμα",
+        "Ἰωάννης"
+      ],
+      "words": [
+        {
+          "word": "τὸ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토"
+        },
+        {
+          "word": "βάπτισμα",
+          "lemma": "βάπτισμα",
+          "strong": "G908",
+          "pron": "바프티스마"
+        },
+        {
+          "word": "Ἰωάννου",
+          "lemma": "Ἰωάννης",
+          "strong": "G2491",
+          "pron": "이오안누"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "luke 7:29",
+        "luke 20:4",
+        "acts 1:22",
+        "acts 18:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "βάπτισμα ὃ",
+      "pron": "바프티스마 호",
+      "lemmas": [
+        "βάπτισμα",
+        "ὅς"
+      ],
+      "words": [
+        {
+          "word": "βάπτισμα",
+          "lemma": "βάπτισμα",
+          "strong": "G908",
+          "pron": "바프티스마"
+        },
+        {
+          "word": "ὃ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "mark 10:38",
+        "mark 10:39",
+        "acts 10:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "τὸ βάπτισμα ὃ",
+      "pron": "토 바프티스마 호",
+      "lemmas": [
+        "ὁ",
+        "βάπτισμα",
+        "ὅς"
+      ],
+      "words": [
+        {
+          "word": "τὸ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토"
+        },
+        {
+          "word": "βάπτισμα",
+          "lemma": "βάπτισμα",
+          "strong": "G908",
+          "pron": "바프티스마"
+        },
+        {
+          "word": "ὃ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "mark 10:38",
+        "mark 10:39",
+        "acts 10:37"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

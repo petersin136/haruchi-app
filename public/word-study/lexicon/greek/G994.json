@@ -1,0 +1,97 @@
+{
+  "lemma": "βοάω",
+  "pron": "보아오",
+  "strong": "G994",
+  "posKo": "동사",
+  "root": null,
+  "family": [
+    {
+      "lemma": "βοή",
+      "strong": "G995",
+      "pron": "보에",
+      "glossKo": "부르짖음"
+    }
+  ],
+  "defEn": "to halloo, i.e. shout (for help or in a tumultuous way)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 12,
+  "byBook": {
+    "luke": 4,
+    "acts": 3,
+    "mark": 2,
+    "galatians": 1,
+    "john": 1,
+    "matthew": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "Φωνὴ βοῶντος",
+      "pron": "포네 보온토스",
+      "lemmas": [
+        "φωνή",
+        "βοάω"
+      ],
+      "words": [
+        {
+          "word": "Φωνὴ",
+          "lemma": "φωνή",
+          "strong": "G5456",
+          "pron": "포네"
+        },
+        {
+          "word": "βοῶντος",
+          "lemma": "βοάω",
+          "strong": "G994",
+          "pron": "보온토스"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 3:3",
+        "mark 1:3",
+        "luke 3:4",
+        "john 1:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "Φωνὴ βοῶντος ἐν",
+      "pron": "포네 보온토스 엔",
+      "lemmas": [
+        "φωνή",
+        "βοάω",
+        "ἐν"
+      ],
+      "words": [
+        {
+          "word": "Φωνὴ",
+          "lemma": "φωνή",
+          "strong": "G5456",
+          "pron": "포네"
+        },
+        {
+          "word": "βοῶντος",
+          "lemma": "βοάω",
+          "strong": "G994",
+          "pron": "보온토스"
+        },
+        {
+          "word": "ἐν",
+          "lemma": "ἐν",
+          "strong": "G1722",
+          "pron": "엔"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 3:3",
+        "mark 1:3",
+        "luke 3:4",
+        "john 1:23"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

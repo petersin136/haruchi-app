@@ -5,12 +5,28 @@
   "posKo": "부사",
   "root": {
     "lemma": "ἤ",
-    "strong": "G2228"
+    "strong": "G2228",
+    "glossKo": "또는"
   },
   "family": [
-    "ἤ",
-    "ἤπερ",
-    "ἤτοι"
+    {
+      "lemma": "ἤ",
+      "strong": "G2228",
+      "pron": "에",
+      "glossKo": "또는"
+    },
+    {
+      "lemma": "ἤπερ",
+      "strong": "G2260",
+      "pron": "에페르",
+      "glossKo": "보다"
+    },
+    {
+      "lemma": "ἤτοι",
+      "strong": "G2273",
+      "pron": "에토이",
+      "glossKo": "또는"
+    }
   ],
   "defEn": "even now",
   "defKo": "",
@@ -35,9 +51,24 @@
   "phrases": [
     {
       "greek": "ὅτι ἤδη",
+      "pron": "호티 에데",
       "lemmas": [
         "ὅτι",
         "ἤδη"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "ἤδη",
+          "lemma": "ἤδη",
+          "strong": "G2235",
+          "pron": "에데"
+        }
       ],
       "count": 7,
       "refs": [
@@ -53,9 +84,24 @@
     },
     {
       "greek": "ἦν ἤδη",
+      "pron": "엔 에데",
       "lemmas": [
         "εἰμί",
         "ἤδη"
+      ],
+      "words": [
+        {
+          "word": "ἦν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "엔"
+        },
+        {
+          "word": "ἤδη",
+          "lemma": "ἤδη",
+          "strong": "G2235",
+          "pron": "에데"
+        }
       ],
       "count": 4,
       "refs": [
@@ -68,9 +114,24 @@
     },
     {
       "greek": "αὐτὴν ἤδη",
+      "pron": "아우텐 에데",
       "lemmas": [
         "αὐτός",
         "ἤδη"
+      ],
+      "words": [
+        {
+          "word": "αὐτὴν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우텐"
+        },
+        {
+          "word": "ἤδη",
+          "lemma": "ἤδη",
+          "strong": "G2235",
+          "pron": "에데"
+        }
       ],
       "count": 3,
       "refs": [
@@ -82,9 +143,24 @@
     },
     {
       "greek": "ἤδη ἐγεγόνει",
+      "pron": "에데 에게고네이",
       "lemmas": [
         "ἤδη",
         "γίνομαι"
+      ],
+      "words": [
+        {
+          "word": "ἤδη",
+          "lemma": "ἤδη",
+          "strong": "G2235",
+          "pron": "에데"
+        },
+        {
+          "word": "ἐγεγόνει",
+          "lemma": "γίνομαι",
+          "strong": "G1096",
+          "pron": "에게고네이"
+        }
       ],
       "count": 3,
       "refs": [
@@ -96,9 +172,24 @@
     },
     {
       "greek": "ἤδη ἡμέραι",
+      "pron": "에데 헤메라이",
       "lemmas": [
         "ἤδη",
         "ἡμέρα"
+      ],
+      "words": [
+        {
+          "word": "ἤδη",
+          "lemma": "ἤδη",
+          "strong": "G2235",
+          "pron": "에데"
+        },
+        {
+          "word": "ἡμέραι",
+          "lemma": "ἡμέρα",
+          "strong": "G2250",
+          "pron": "헤메라이"
+        }
       ],
       "count": 3,
       "refs": [

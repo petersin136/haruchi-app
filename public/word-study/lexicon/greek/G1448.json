@@ -1,0 +1,180 @@
+{
+  "lemma": "ἐγγίζω",
+  "pron": "엥기조",
+  "strong": "G1448",
+  "posKo": "동사",
+  "root": {
+    "lemma": "ἐγγύς",
+    "strong": "G1451",
+    "glossKo": "가까이"
+  },
+  "family": [
+    {
+      "lemma": "ἆσσον",
+      "strong": "G788",
+      "pron": "아손",
+      "glossKo": "더가까이"
+    },
+    {
+      "lemma": "ἐγγύς",
+      "strong": "G1451",
+      "pron": "엥귀스",
+      "glossKo": "가까이"
+    },
+    {
+      "lemma": "ἐγγύτερον",
+      "strong": "G1452",
+      "pron": "엥귀테론",
+      "glossKo": "더가까이"
+    }
+  ],
+  "defEn": "to make near, i.e. (reflexively) approach",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 42,
+  "byBook": {
+    "luke": 18,
+    "matthew": 7,
+    "acts": 6,
+    "james": 3,
+    "mark": 3,
+    "hebrews": 2,
+    "peter1": 1,
+    "philippians": 1,
+    "romans": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "αὐτοῖς Ἤγγικεν",
+      "pron": "아우토이스 엥기켄",
+      "lemmas": [
+        "αὐτός",
+        "ἐγγίζω"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        },
+        {
+          "word": "Ἤγγικεν",
+          "lemma": "ἐγγίζω",
+          "strong": "G1448",
+          "pron": "엥기켄"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "luke 10:9",
+        "luke 15:1",
+        "luke 18:40",
+        "acts 9:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἤγγικεν ἡ βασιλεία",
+      "pron": "엥기켄 헤 바실레이아",
+      "lemmas": [
+        "ἐγγίζω",
+        "ὁ",
+        "βασιλεία"
+      ],
+      "words": [
+        {
+          "word": "ἤγγικεν",
+          "lemma": "ἐγγίζω",
+          "strong": "G1448",
+          "pron": "엥기켄"
+        },
+        {
+          "word": "ἡ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "헤"
+        },
+        {
+          "word": "βασιλεία",
+          "lemma": "βασιλεία",
+          "strong": "G932",
+          "pron": "바실레이아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 10:7",
+        "mark 1:15",
+        "luke 10:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ὅτι ἤγγικεν",
+      "pron": "호티 엥기켄",
+      "lemmas": [
+        "ὅτι",
+        "ἐγγίζω"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "ἤγγικεν",
+          "lemma": "ἐγγίζω",
+          "strong": "G1448",
+          "pron": "엥기켄"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 10:7",
+        "luke 10:11",
+        "luke 21:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ὅτι ἤγγικεν ἡ",
+      "pron": "호티 엥기켄 헤",
+      "lemmas": [
+        "ὅτι",
+        "ἐγγίζω",
+        "ὁ"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "ἤγγικεν",
+          "lemma": "ἐγγίζω",
+          "strong": "G1448",
+          "pron": "엥기켄"
+        },
+        {
+          "word": "ἡ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "헤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 10:7",
+        "luke 10:11",
+        "luke 21:20"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

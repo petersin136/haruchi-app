@@ -8,36 +8,58 @@
   "defEn": "some or any person or object",
   "defKo": "",
   "compareKo": "",
-  "countNT": 554,
+  "countNT": 1084,
   "byBook": {
-    "luke": 114,
-    "matthew": 89,
-    "john": 79,
-    "mark": 73,
-    "acts": 56,
-    "romans": 43,
-    "corinthians1": 30,
-    "revelation": 15,
-    "corinthians2": 11,
-    "hebrews": 10,
-    "ephesians": 9,
-    "galatians": 5,
-    "james": 4,
-    "john1": 4,
-    "peter1": 3,
-    "thessalonians1": 3,
-    "colossians": 2,
-    "philippians": 2,
-    "timothy1": 1,
-    "timothy2": 1
+    "luke": 194,
+    "acts": 170,
+    "john": 135,
+    "matthew": 110,
+    "mark": 107,
+    "corinthians1": 86,
+    "romans": 58,
+    "corinthians2": 36,
+    "hebrews": 31,
+    "revelation": 27,
+    "james": 19,
+    "timothy1": 19,
+    "galatians": 14,
+    "ephesians": 12,
+    "philippians": 12,
+    "john1": 10,
+    "peter1": 9,
+    "colossians": 8,
+    "thessalonians1": 7,
+    "thessalonians2": 6,
+    "peter2": 4,
+    "timothy2": 4,
+    "titus": 2,
+    "john2": 1,
+    "john3": 1,
+    "jude": 1,
+    "philemon": 1
   },
-  "count1John": 4,
+  "count1John": 10,
   "phrases": [
     {
       "greek": "τίς ἐστιν",
+      "pron": "티스 에스틴",
       "lemmas": [
         "τίς",
         "εἰμί"
+      ],
+      "words": [
+        {
+          "word": "τίς",
+          "lemma": "τίς",
+          "strong": "G5100",
+          "pron": "티스"
+        },
+        {
+          "word": "ἐστιν",
+          "lemma": "εἰμί",
+          "strong": "G1510",
+          "pron": "에스틴"
+        }
       ],
       "count": 67,
       "refs": [
@@ -58,9 +80,24 @@
     },
     {
       "greek": "αὐτοῖς Τί",
+      "pron": "아우토이스 티",
       "lemmas": [
         "αὐτός",
         "τίς"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        },
+        {
+          "word": "Τί",
+          "lemma": "τίς",
+          "strong": "G5100",
+          "pron": "티"
+        }
       ],
       "count": 58,
       "refs": [
@@ -81,9 +118,24 @@
     },
     {
       "greek": "λέγοντες Τί",
+      "pron": "레곤테스 티",
       "lemmas": [
         "λέγω",
         "τίς"
+      ],
+      "words": [
+        {
+          "word": "λέγοντες",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레곤테스"
+        },
+        {
+          "word": "Τί",
+          "lemma": "τίς",
+          "strong": "G5100",
+          "pron": "티"
+        }
       ],
       "count": 53,
       "refs": [
@@ -104,9 +156,24 @@
     },
     {
       "greek": "τί με",
+      "pron": "티 메",
       "lemmas": [
         "τίς",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "τί",
+          "lemma": "τίς",
+          "strong": "G5100",
+          "pron": "티"
+        },
+        {
+          "word": "με",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "메"
+        }
       ],
       "count": 34,
       "refs": [
@@ -127,9 +194,24 @@
     },
     {
       "greek": "Τί οὖν",
+      "pron": "티 운",
       "lemmas": [
         "τίς",
         "οὖν"
+      ],
+      "words": [
+        {
+          "word": "Τί",
+          "lemma": "τίς",
+          "strong": "G5100",
+          "pron": "티"
+        },
+        {
+          "word": "οὖν",
+          "lemma": "οὖν",
+          "strong": "G3767",
+          "pron": "운"
+        }
       ],
       "count": 34,
       "refs": [

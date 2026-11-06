@@ -4,13 +4,29 @@
   "strong": "G2307",
   "posKo": "명사",
   "root": {
-    "lemma": "θέλω",
-    "strong": "G2309"
+    "lemma": "θέλω",
+    "strong": "G2309",
+    "glossKo": "원하다"
   },
   "family": [
-    "ἐθελοθρησκεία",
-    "θέλησις",
-    "θέλω"
+    {
+      "lemma": "ἐθελοθρησκία",
+      "strong": "G1479",
+      "pron": "에텔로트레스키아",
+      "glossKo": "자의적숭배"
+    },
+    {
+      "lemma": "θέλησις",
+      "strong": "G2308",
+      "pron": "텔레시스",
+      "glossKo": "뜻"
+    },
+    {
+      "lemma": "θέλω",
+      "strong": "G2309",
+      "pron": "텔로",
+      "glossKo": "원하다"
+    }
   ],
   "defEn": "a determination (properly, the thing), i.e. (actively) choice (specially, purpose, decree; abstractly, volition) or (…",
   "defKo": "",
@@ -40,10 +56,31 @@
   "phrases": [
     {
       "greek": "θέλημα τοῦ θεοῦ",
+      "pron": "텔레마 투 테우",
       "lemmas": [
         "θέλημα",
         "ὁ",
         "θεός"
+      ],
+      "words": [
+        {
+          "word": "θέλημα",
+          "lemma": "θέλημα",
+          "strong": "G2307",
+          "pron": "텔레마"
+        },
+        {
+          "word": "τοῦ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투"
+        },
+        {
+          "word": "θεοῦ",
+          "lemma": "θεός",
+          "strong": "G2316",
+          "pron": "테우"
+        }
       ],
       "count": 12,
       "refs": [
@@ -64,9 +101,24 @@
     },
     {
       "greek": "θέλημα αὐτοῦ",
+      "pron": "텔레마 아우투",
       "lemmas": [
         "θέλημα",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "θέλημα",
+          "lemma": "θέλημα",
+          "strong": "G2307",
+          "pron": "텔레마"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 11,
       "refs": [
@@ -86,10 +138,31 @@
     },
     {
       "greek": "ποιῶν τὸ θέλημα",
+      "pron": "포이온 토 텔레마",
       "lemmas": [
         "ποιέω",
         "ὁ",
         "θέλημα"
+      ],
+      "words": [
+        {
+          "word": "ποιῶν",
+          "lemma": "ποιέω",
+          "strong": "G4160",
+          "pron": "포이온"
+        },
+        {
+          "word": "τὸ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토"
+        },
+        {
+          "word": "θέλημα",
+          "lemma": "θέλημα",
+          "strong": "G2307",
+          "pron": "텔레마"
+        }
       ],
       "count": 11,
       "refs": [
@@ -109,10 +182,31 @@
     },
     {
       "greek": "τὸ θέλημα αὐτοῦ",
+      "pron": "토 텔레마 아우투",
       "lemmas": [
         "ὁ",
         "θέλημα",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τὸ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토"
+        },
+        {
+          "word": "θέλημα",
+          "lemma": "θέλημα",
+          "strong": "G2307",
+          "pron": "텔레마"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
       ],
       "count": 11,
       "refs": [
@@ -132,9 +226,24 @@
     },
     {
       "greek": "θελήματος θεοῦ",
+      "pron": "텔레마토스 테우",
       "lemmas": [
         "θέλημα",
         "θεός"
+      ],
+      "words": [
+        {
+          "word": "θελήματος",
+          "lemma": "θέλημα",
+          "strong": "G2307",
+          "pron": "텔레마토스"
+        },
+        {
+          "word": "θεοῦ",
+          "lemma": "θεός",
+          "strong": "G2316",
+          "pron": "테우"
+        }
       ],
       "count": 9,
       "refs": [

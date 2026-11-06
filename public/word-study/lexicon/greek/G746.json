@@ -8,12 +8,42 @@
     "strong": "G756"
   },
   "family": [
-    "ἀρχαῖος",
-    "ἀρχηγός",
-    "ἀρχιερατικός",
-    "ἀρχιερεύς",
-    "ἀρχιποίμην",
-    "Ἄρχιππος"
+    {
+      "lemma": "ἀρχαῖος",
+      "strong": "G744",
+      "pron": "아르카이오스",
+      "glossKo": "옛"
+    },
+    {
+      "lemma": "ἀρχηγός",
+      "strong": "G747",
+      "pron": "아르케고스",
+      "glossKo": "주"
+    },
+    {
+      "lemma": "ἀρχιερατικός",
+      "strong": "G748",
+      "pron": "아르키에라티코스",
+      "glossKo": "대제사장가의"
+    },
+    {
+      "lemma": "ἀρχιερεύς",
+      "strong": "G749",
+      "pron": "아르키에레우스",
+      "glossKo": "대제사장"
+    },
+    {
+      "lemma": "ἀρχιποίμην",
+      "strong": "G750",
+      "pron": "아르키포이멘",
+      "glossKo": "목자장"
+    },
+    {
+      "lemma": "Ἄρχιππος",
+      "strong": "G751",
+      "pron": "아르키포스",
+      "glossKo": "아킵보"
+    }
   ],
   "defEn": "(properly abstract) a commencement, or (concretely) chief (in various applications of order, time, place, or rank)",
   "defKo": "",
@@ -42,10 +72,31 @@
   "phrases": [
     {
       "greek": "ἀπ ἀρχῆς ἵνα",
+      "pron": "압 아르케스 히나",
       "lemmas": [
         "ἀπό",
         "ἀρχή",
         "ἵνα"
+      ],
+      "words": [
+        {
+          "word": "ἀπ",
+          "lemma": "ἀπό",
+          "strong": "G575",
+          "pron": "압"
+        },
+        {
+          "word": "ἀρχῆς",
+          "lemma": "ἀρχή",
+          "strong": "G746",
+          "pron": "아르케스"
+        },
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        }
       ],
       "count": 3,
       "refs": [
@@ -57,9 +108,24 @@
     },
     {
       "greek": "ἀρχῆς ἵνα",
+      "pron": "아르케스 히나",
       "lemmas": [
         "ἀρχή",
         "ἵνα"
+      ],
+      "words": [
+        {
+          "word": "ἀρχῆς",
+          "lemma": "ἀρχή",
+          "strong": "G746",
+          "pron": "아르케스"
+        },
+        {
+          "word": "ἵνα",
+          "lemma": "ἵνα",
+          "strong": "G2443",
+          "pron": "히나"
+        }
       ],
       "count": 3,
       "refs": [
@@ -71,9 +137,24 @@
     },
     {
       "greek": "ἀρχῆς κτίσεως",
+      "pron": "아르케스 크티세오스",
       "lemmas": [
         "ἀρχή",
         "κτίσις"
+      ],
+      "words": [
+        {
+          "word": "ἀρχῆς",
+          "lemma": "ἀρχή",
+          "strong": "G746",
+          "pron": "아르케스"
+        },
+        {
+          "word": "κτίσεως",
+          "lemma": "κτίσις",
+          "strong": "G2937",
+          "pron": "크티세오스"
+        }
       ],
       "count": 3,
       "refs": [
@@ -85,10 +166,31 @@
     },
     {
       "greek": "ἠκούσατε ἀπ ἀρχῆς",
+      "pron": "에쿠사테 압 아르케스",
       "lemmas": [
         "ἀκούω",
         "ἀπό",
         "ἀρχή"
+      ],
+      "words": [
+        {
+          "word": "ἠκούσατε",
+          "lemma": "ἀκούω",
+          "strong": "G191",
+          "pron": "에쿠사테"
+        },
+        {
+          "word": "ἀπ",
+          "lemma": "ἀπό",
+          "strong": "G575",
+          "pron": "압"
+        },
+        {
+          "word": "ἀρχῆς",
+          "lemma": "ἀρχή",
+          "strong": "G746",
+          "pron": "아르케스"
+        }
       ],
       "count": 3,
       "refs": [
@@ -100,9 +202,24 @@
     },
     {
       "greek": "πάσης ἀρχῆς",
+      "pron": "파세스 아르케스",
       "lemmas": [
         "πᾶς",
         "ἀρχή"
+      ],
+      "words": [
+        {
+          "word": "πάσης",
+          "lemma": "πᾶς",
+          "strong": "G3956",
+          "pron": "파세스"
+        },
+        {
+          "word": "ἀρχῆς",
+          "lemma": "ἀρχή",
+          "strong": "G746",
+          "pron": "아르케스"
+        }
       ],
       "count": 3,
       "refs": [

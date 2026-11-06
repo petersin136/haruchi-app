@@ -5,8 +5,18 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "ἐλεύθερος",
-    "ἔλευσις"
+    {
+      "lemma": "ἐλεύθερος",
+      "strong": "G1658",
+      "pron": "엘류테로스",
+      "glossKo": "자유로운"
+    },
+    {
+      "lemma": "ἔλευσις",
+      "strong": "G1660",
+      "pron": "엘레우시스",
+      "glossKo": "오심"
+    }
   ],
   "defEn": "to come or go (in a great variety of applications, literally and figuratively)",
   "defKo": "",
@@ -42,10 +52,31 @@
   "phrases": [
     {
       "greek": "ἐλθεῖν πρὸς ὑμᾶς",
+      "pron": "엘테인 프로스 휘마스",
       "lemmas": [
         "ἔρχομαι",
         "πρός",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "ἐλθεῖν",
+          "lemma": "ἔρχομαι",
+          "strong": "G2064",
+          "pron": "엘테인"
+        },
+        {
+          "word": "πρὸς",
+          "lemma": "πρός",
+          "strong": "G4314",
+          "pron": "프로스"
+        },
+        {
+          "word": "ὑμᾶς",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘마스"
+        }
       ],
       "count": 23,
       "refs": [
@@ -66,10 +97,31 @@
     },
     {
       "greek": "ἔρχεται πρὸς αὐτὸν",
+      "pron": "에르케타이 프로스 아우톤",
       "lemmas": [
         "ἔρχομαι",
         "πρός",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἔρχεται",
+          "lemma": "ἔρχομαι",
+          "strong": "G2064",
+          "pron": "에르케타이"
+        },
+        {
+          "word": "πρὸς",
+          "lemma": "πρός",
+          "strong": "G4314",
+          "pron": "프로스"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
       ],
       "count": 23,
       "refs": [
@@ -90,10 +142,31 @@
     },
     {
       "greek": "ἐλθεῖν πρός με",
+      "pron": "엘테인 프로스 메",
       "lemmas": [
         "ἔρχομαι",
         "πρός",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "ἐλθεῖν",
+          "lemma": "ἔρχομαι",
+          "strong": "G2064",
+          "pron": "엘테인"
+        },
+        {
+          "word": "πρός",
+          "lemma": "πρός",
+          "strong": "G4314",
+          "pron": "프로스"
+        },
+        {
+          "word": "με",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "메"
+        }
       ],
       "count": 19,
       "refs": [
@@ -114,9 +187,24 @@
     },
     {
       "greek": "ὅτι ἦλθεν",
+      "pron": "호티 엘텐",
       "lemmas": [
         "ὅτι",
         "ἔρχομαι"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "ἦλθεν",
+          "lemma": "ἔρχομαι",
+          "strong": "G2064",
+          "pron": "엘텐"
+        }
       ],
       "count": 18,
       "refs": [
@@ -137,9 +225,24 @@
     },
     {
       "greek": "αὐτοῦ ἦλθον",
+      "pron": "아우투 엘톤",
       "lemmas": [
         "αὐτός",
         "ἔρχομαι"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "ἦλθον",
+          "lemma": "ἔρχομαι",
+          "strong": "G2064",
+          "pron": "엘톤"
+        }
       ],
       "count": 17,
       "refs": [

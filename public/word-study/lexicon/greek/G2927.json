@@ -1,0 +1,113 @@
+{
+  "lemma": "κρυπτός",
+  "pron": "크뤼프토스",
+  "strong": "G2927",
+  "posKo": "형용사",
+  "root": {
+    "lemma": "κρύπτω",
+    "strong": "G2928",
+    "glossKo": "숨기다"
+  },
+  "family": [
+    {
+      "lemma": "κρύπτη",
+      "strong": "G2926",
+      "pron": "크뤼프테",
+      "glossKo": "숨길곳"
+    },
+    {
+      "lemma": "κρύπτω",
+      "strong": "G2928",
+      "pron": "크뤼프토",
+      "glossKo": "숨기다"
+    },
+    {
+      "lemma": "κρυφῇ",
+      "strong": "G2931",
+      "pron": "크뤼페",
+      "glossKo": "은밀히"
+    }
+  ],
+  "defEn": "concealed, i.e. private",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 17,
+  "byBook": {
+    "matthew": 5,
+    "john": 3,
+    "corinthians1": 2,
+    "luke": 2,
+    "romans": 2,
+    "corinthians2": 1,
+    "mark": 1,
+    "peter1": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "κρυπτὸν ὃ",
+      "pron": "크뤼프톤 호",
+      "lemmas": [
+        "κρυπτός",
+        "ὅς"
+      ],
+      "words": [
+        {
+          "word": "κρυπτὸν",
+          "lemma": "κρυπτός",
+          "strong": "G2927",
+          "pron": "크뤼프톤"
+        },
+        {
+          "word": "ὃ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 10:26",
+        "luke 8:17",
+        "luke 12:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "κρυπτὸν ὃ οὐ",
+      "pron": "크뤼프톤 호 우",
+      "lemmas": [
+        "κρυπτός",
+        "ὅς",
+        "οὐ"
+      ],
+      "words": [
+        {
+          "word": "κρυπτὸν",
+          "lemma": "κρυπτός",
+          "strong": "G2927",
+          "pron": "크뤼프톤"
+        },
+        {
+          "word": "ὃ",
+          "lemma": "ὅς",
+          "strong": "G3739",
+          "pron": "호"
+        },
+        {
+          "word": "οὐ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 10:26",
+        "luke 8:17",
+        "luke 12:2"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

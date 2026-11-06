@@ -1,0 +1,127 @@
+{
+  "lemma": "ἐξαιρέω",
+  "pron": "에크사이레오",
+  "strong": "G1807",
+  "posKo": "동사",
+  "root": {
+    "lemma": "ἐκ",
+    "strong": "G1537",
+    "glossKo": "에서"
+  },
+  "family": [
+    {
+      "lemma": "ἐκ",
+      "strong": "G1537",
+      "pron": "에크",
+      "glossKo": "에서"
+    },
+    {
+      "lemma": "ἐκβάλλω",
+      "strong": "G1544",
+      "pron": "에크발로",
+      "glossKo": "내쫓다"
+    },
+    {
+      "lemma": "ἔκβασις",
+      "strong": "G1545",
+      "pron": "에크바시스",
+      "glossKo": "피할길"
+    },
+    {
+      "lemma": "ἐκγαμίζω",
+      "strong": "G1547",
+      "pron": "에크가미조",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἐκγαμίσκω",
+      "strong": "G1548",
+      "pron": "에크가미스코",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἔκγονον",
+      "strong": "G1549",
+      "pron": "에크고논",
+      "glossKo": "자손"
+    }
+  ],
+  "defEn": "actively, to tear out; middle voice, to select; figuratively, to release",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 8,
+  "byBook": {
+    "acts": 5,
+    "matthew": 2,
+    "galatians": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἔξελε αὐτὸν",
+      "pron": "에크셀레 아우톤",
+      "lemmas": [
+        "ἐξαιρέω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἔξελε",
+          "lemma": "ἐξαιρέω",
+          "strong": "G1807",
+          "pron": "에크셀레"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 5:29",
+        "matthew 18:9",
+        "acts 7:10",
+        "acts 7:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἔξελε αὐτὸν καὶ",
+      "pron": "에크셀레 아우톤 카이",
+      "lemmas": [
+        "ἐξαιρέω",
+        "αὐτός",
+        "καί"
+      ],
+      "words": [
+        {
+          "word": "ἔξελε",
+          "lemma": "ἐξαιρέω",
+          "strong": "G1807",
+          "pron": "에크셀레"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 5:29",
+        "matthew 18:9",
+        "acts 7:34"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "lemma": "ἐμβαίνω",
+  "pron": "엠바이노",
+  "strong": "G1684",
+  "posKo": "동사",
+  "root": {
+    "lemma": "ἐν",
+    "strong": "G1722",
+    "glossKo": "안에"
+  },
+  "family": [
+    {
+      "lemma": "ἐγγράφω",
+      "strong": "G1449",
+      "pron": "엥그라포",
+      "glossKo": "기록되다"
+    },
+    {
+      "lemma": "ἔγγυος",
+      "strong": "G1450",
+      "pron": "엥귀오스",
+      "glossKo": "보증"
+    },
+    {
+      "lemma": "ἐγκάθετος",
+      "strong": "G1455",
+      "pron": "엥카테토스",
+      "glossKo": "엿보는자"
+    },
+    {
+      "lemma": "ἐγκαίνια",
+      "strong": "G1456",
+      "pron": "엥카이니아",
+      "glossKo": "수전절"
+    },
+    {
+      "lemma": "ἐγκαλέω",
+      "strong": "G1458",
+      "pron": "엥칼레오",
+      "glossKo": "고발하다"
+    },
+    {
+      "lemma": "ἐγκαταλείπω",
+      "strong": "G1459",
+      "pron": "엥카탈레이포",
+      "glossKo": "버리다"
+    }
+  ],
+  "defEn": "to walk on, i.e. embark (aboard a vessel), reach (a pool)",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 17,
+  "byBook": {
+    "mark": 5,
+    "matthew": 5,
+    "john": 3,
+    "luke": 3,
+    "acts": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐμβὰς εἰς πλοῖον",
+      "pron": "엠바스 에이스 플로이온",
+      "lemmas": [
+        "ἐμβαίνω",
+        "εἰς",
+        "πλοῖον"
+      ],
+      "words": [
+        {
+          "word": "ἐμβὰς",
+          "lemma": "ἐμβαίνω",
+          "strong": "G1684",
+          "pron": "엠바스"
+        },
+        {
+          "word": "εἰς",
+          "lemma": "εἰς",
+          "strong": "G1519",
+          "pron": "에이스"
+        },
+        {
+          "word": "πλοῖον",
+          "lemma": "πλοῖον",
+          "strong": "G4143",
+          "pron": "플로이온"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "matthew 9:1",
+        "matthew 14:22",
+        "luke 8:22",
+        "luke 8:37",
+        "john 6:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "αὐτοῦ ἐμβῆναι",
+      "pron": "아우투 엠베나이",
+      "lemmas": [
+        "αὐτός",
+        "ἐμβαίνω"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "ἐμβῆναι",
+          "lemma": "ἐμβαίνω",
+          "strong": "G1684",
+          "pron": "엠베나이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "mark 6:45",
+        "luke 8:22",
+        "john 6:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἐμβάντι αὐτῷ",
+      "pron": "엠반티 아우토",
+      "lemmas": [
+        "ἐμβαίνω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἐμβάντι",
+          "lemma": "ἐμβαίνω",
+          "strong": "G1684",
+          "pron": "엠반티"
+        },
+        {
+          "word": "αὐτῷ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 8:23",
+        "mark 5:18",
+        "john 6:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἐμβάντι αὐτῷ εἰς",
+      "pron": "엠반티 아우토 에이스",
+      "lemmas": [
+        "ἐμβαίνω",
+        "αὐτός",
+        "εἰς"
+      ],
+      "words": [
+        {
+          "word": "ἐμβάντι",
+          "lemma": "ἐμβαίνω",
+          "strong": "G1684",
+          "pron": "엠반티"
+        },
+        {
+          "word": "αὐτῷ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토"
+        },
+        {
+          "word": "εἰς",
+          "lemma": "εἰς",
+          "strong": "G1519",
+          "pron": "에이스"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 8:23",
+        "mark 5:18",
+        "john 6:24"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

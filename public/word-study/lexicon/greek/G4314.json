@@ -4,16 +4,47 @@
   "strong": "G4314",
   "posKo": "전치사",
   "root": {
-    "lemma": "πρό",
-    "strong": "G4253"
+    "lemma": "πρό",
+    "strong": "G4253",
+    "glossKo": "전에"
   },
   "family": [
-    "πόῤῥω",
-    "πρηνής",
-    "πρίν",
-    "πρό",
-    "προάγω",
-    "προαιρέομαι"
+    {
+      "lemma": "πόρρω",
+      "strong": "G4206",
+      "pron": "포로",
+      "glossKo": "멀리"
+    },
+    {
+      "lemma": "πρηνής",
+      "strong": "G4248",
+      "pron": "프레네스",
+      "glossKo": "곤두박이로"
+    },
+    {
+      "lemma": "πρίν",
+      "strong": "G4250",
+      "pron": "프린",
+      "glossKo": "이전"
+    },
+    {
+      "lemma": "πρό",
+      "strong": "G4253",
+      "pron": "프로",
+      "glossKo": "전에"
+    },
+    {
+      "lemma": "προάγω",
+      "strong": "G4254",
+      "pron": "프로아고",
+      "glossKo": "앞서가다"
+    },
+    {
+      "lemma": "προαιρέομαι",
+      "strong": "G4255",
+      "pron": "프로아이레오마이",
+      "glossKo": "정하다"
+    }
   ],
   "defEn": "a preposition of direction; forward to, i.e. toward (with the genitive case, the side of, i.e. pertaining to; with th…",
   "defKo": "",
@@ -51,10 +82,31 @@
   "phrases": [
     {
       "greek": "εἶπεν πρὸς αὐτούς",
+      "pron": "에이펜 프로스 아우투스",
       "lemmas": [
         "λέγω",
         "πρός",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "εἶπεν",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "에이펜"
+        },
+        {
+          "word": "πρὸς",
+          "lemma": "πρός",
+          "strong": "G4314",
+          "pron": "프로스"
+        },
+        {
+          "word": "αὐτούς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투스"
+        }
       ],
       "count": 49,
       "refs": [
@@ -75,10 +127,31 @@
     },
     {
       "greek": "ἐλθεῖν πρὸς ὑμᾶς",
+      "pron": "엘테인 프로스 휘마스",
       "lemmas": [
         "ἔρχομαι",
         "πρός",
         "σύ"
+      ],
+      "words": [
+        {
+          "word": "ἐλθεῖν",
+          "lemma": "ἔρχομαι",
+          "strong": "G2064",
+          "pron": "엘테인"
+        },
+        {
+          "word": "πρὸς",
+          "lemma": "πρός",
+          "strong": "G4314",
+          "pron": "프로스"
+        },
+        {
+          "word": "ὑμᾶς",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘마스"
+        }
       ],
       "count": 23,
       "refs": [
@@ -99,10 +172,31 @@
     },
     {
       "greek": "ἔρχεται πρὸς αὐτὸν",
+      "pron": "에르케타이 프로스 아우톤",
       "lemmas": [
         "ἔρχομαι",
         "πρός",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἔρχεται",
+          "lemma": "ἔρχομαι",
+          "strong": "G2064",
+          "pron": "에르케타이"
+        },
+        {
+          "word": "πρὸς",
+          "lemma": "πρός",
+          "strong": "G4314",
+          "pron": "프로스"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
       ],
       "count": 23,
       "refs": [
@@ -123,10 +217,31 @@
     },
     {
       "greek": "ἐλθεῖν πρός με",
+      "pron": "엘테인 프로스 메",
       "lemmas": [
         "ἔρχομαι",
         "πρός",
         "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "ἐλθεῖν",
+          "lemma": "ἔρχομαι",
+          "strong": "G2064",
+          "pron": "엘테인"
+        },
+        {
+          "word": "πρός",
+          "lemma": "πρός",
+          "strong": "G4314",
+          "pron": "프로스"
+        },
+        {
+          "word": "με",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "메"
+        }
       ],
       "count": 19,
       "refs": [
@@ -147,10 +262,31 @@
     },
     {
       "greek": "πρὸς αὐτοὺς εἶπεν",
+      "pron": "프로스 아우투스 에이펜",
       "lemmas": [
         "πρός",
         "αὐτός",
         "λέγω"
+      ],
+      "words": [
+        {
+          "word": "πρὸς",
+          "lemma": "πρός",
+          "strong": "G4314",
+          "pron": "프로스"
+        },
+        {
+          "word": "αὐτοὺς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투스"
+        },
+        {
+          "word": "εἶπεν",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "에이펜"
+        }
       ],
       "count": 16,
       "refs": [

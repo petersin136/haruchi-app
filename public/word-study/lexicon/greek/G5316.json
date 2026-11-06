@@ -6,15 +6,45 @@
   "root": {
     "lemma": "φῶς",
     "strong": "G5457",
-    "glossKo": "밝게 비추다라는 뜻의 어근과 연결된 명사로 봐요. 신약에서는 자주 하나님·그리스도와 짝을 이뤄요."
+    "glossKo": "빛"
   },
   "family": [
-    "φανερός",
-    "φανός",
-    "φαντάζω",
-    "φέγγος",
-    "φελόνης",
-    "φημί"
+    {
+      "lemma": "φανερός",
+      "strong": "G5318",
+      "pron": "파네로스",
+      "glossKo": "분명한"
+    },
+    {
+      "lemma": "φανός",
+      "strong": "G5322",
+      "pron": "파노스",
+      "glossKo": "등불"
+    },
+    {
+      "lemma": "φαντάζομαι",
+      "strong": "G5324",
+      "pron": "판타조마이",
+      "glossKo": "보이는것"
+    },
+    {
+      "lemma": "φέγγος",
+      "strong": "G5338",
+      "pron": "펭고스",
+      "glossKo": "빛"
+    },
+    {
+      "lemma": "φελόνης",
+      "strong": "G5341",
+      "pron": "펠로네스",
+      "glossKo": ""
+    },
+    {
+      "lemma": "φημί",
+      "strong": "G5346",
+      "pron": "페미",
+      "glossKo": "말하다"
+    }
   ],
   "defEn": "to lighten (shine), i.e. show (transitive or intransitive, literal or figurative)",
   "defKo": "",
@@ -39,10 +69,31 @@
   "phrases": [
     {
       "greek": "φανῶσιν τοῖς ἀνθρώποις",
+      "pron": "파노신 토이스 안트로포이스",
       "lemmas": [
         "φαίνω",
         "ὁ",
         "ἄνθρωπος"
+      ],
+      "words": [
+        {
+          "word": "φανῶσιν",
+          "lemma": "φαίνω",
+          "strong": "G5316",
+          "pron": "파노신"
+        },
+        {
+          "word": "τοῖς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "토이스"
+        },
+        {
+          "word": "ἀνθρώποις",
+          "lemma": "ἄνθρωπος",
+          "strong": "G444",
+          "pron": "안트로포이스"
+        }
       ],
       "count": 4,
       "refs": [
@@ -55,9 +106,24 @@
     },
     {
       "greek": "μὴ φάνῃ",
+      "pron": "메 파네",
       "lemmas": [
         "μή",
         "φαίνω"
+      ],
+      "words": [
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        },
+        {
+          "word": "φάνῃ",
+          "lemma": "φαίνω",
+          "strong": "G5316",
+          "pron": "파네"
+        }
       ],
       "count": 3,
       "refs": [

@@ -1,0 +1,199 @@
+{
+  "lemma": "ἐπιγινώσκω",
+  "pron": "에피기노스코",
+  "strong": "G1921",
+  "posKo": "동사",
+  "root": {
+    "lemma": "ἐπί",
+    "strong": "G1909",
+    "glossKo": "위에"
+  },
+  "family": [
+    {
+      "lemma": "ἐπαγγέλλομαι",
+      "strong": "G1861",
+      "pron": "에팡겔로마이",
+      "glossKo": "약속하다"
+    },
+    {
+      "lemma": "ἐπάγω",
+      "strong": "G1863",
+      "pron": "에파고",
+      "glossKo": "끌어들이다"
+    },
+    {
+      "lemma": "ἐπαγωνίζομαι",
+      "strong": "G1864",
+      "pron": "에파고니조마이",
+      "glossKo": "힘써싸우다"
+    },
+    {
+      "lemma": "ἐπαθροίζομαι",
+      "strong": "G1865",
+      "pron": "에파트로이조마이",
+      "glossKo": "모이다"
+    },
+    {
+      "lemma": "ἐπαινέω",
+      "strong": "G1867",
+      "pron": "에파이네오",
+      "glossKo": "칭찬하다"
+    },
+    {
+      "lemma": "ἔπαινος",
+      "strong": "G1868",
+      "pron": "에파이노스",
+      "glossKo": "칭찬"
+    }
+  ],
+  "defEn": "to know upon some mark, i.e. recognize; by implication, to become fully acquainted with, to acknowledge",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 44,
+  "byBook": {
+    "acts": 13,
+    "luke": 7,
+    "matthew": 6,
+    "corinthians2": 5,
+    "corinthians1": 4,
+    "mark": 4,
+    "peter2": 2,
+    "colossians": 1,
+    "romans": 1,
+    "timothy1": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐπιγνοὺς ὅτι",
+      "pron": "에피그누스 호티",
+      "lemmas": [
+        "ἐπιγινώσκω",
+        "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "ἐπιγνοὺς",
+          "lemma": "ἐπιγινώσκω",
+          "strong": "G1921",
+          "pron": "에피그누스"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "luke 1:22",
+        "luke 7:37",
+        "luke 23:7",
+        "acts 22:29",
+        "acts 24:11",
+        "acts 28:1",
+        "romans 1:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἐπιγνώσεσθε αὐτούς",
+      "pron": "에피그노세스테 아우투스",
+      "lemmas": [
+        "ἐπιγινώσκω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἐπιγνώσεσθε",
+          "lemma": "ἐπιγινώσκω",
+          "strong": "G1921",
+          "pron": "에피그노세스테"
+        },
+        {
+          "word": "αὐτούς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투스"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "matthew 7:16",
+        "matthew 7:20",
+        "matthew 14:35",
+        "matthew 17:12",
+        "mark 6:54",
+        "luke 24:16",
+        "luke 24:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "καὶ ἐπέγνωσαν ὅτι",
+      "pron": "카이 에페그노산 호티",
+      "lemmas": [
+        "καί",
+        "ἐπιγινώσκω",
+        "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "ἐπέγνωσαν",
+          "lemma": "ἐπιγινώσκω",
+          "strong": "G1921",
+          "pron": "에페그노산"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "luke 1:22",
+        "luke 7:37",
+        "luke 23:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "οὐκ ἐπέγνωσαν",
+      "pron": "우크 에페그노산",
+      "lemmas": [
+        "οὐ",
+        "ἐπιγινώσκω"
+      ],
+      "words": [
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        },
+        {
+          "word": "ἐπέγνωσαν",
+          "lemma": "ἐπιγινώσκω",
+          "strong": "G1921",
+          "pron": "에페그노산"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 17:12",
+        "acts 27:39",
+        "corinthians2 13:5"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

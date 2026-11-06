@@ -1,0 +1,125 @@
+{
+  "lemma": "περιτέμνω",
+  "pron": "페리템노",
+  "strong": "G4059",
+  "posKo": "동사",
+  "root": {
+    "lemma": "περί",
+    "strong": "G4012",
+    "glossKo": "관하여"
+  },
+  "family": [
+    {
+      "lemma": "περί",
+      "strong": "G4012",
+      "pron": "페리",
+      "glossKo": "관하여"
+    },
+    {
+      "lemma": "περιάγω",
+      "strong": "G4013",
+      "pron": "페리아고",
+      "glossKo": "두루다니다"
+    },
+    {
+      "lemma": "περιαιρέω",
+      "strong": "G4014",
+      "pron": "페리아이레오",
+      "glossKo": "벗기다"
+    },
+    {
+      "lemma": "περιαστράπτω",
+      "strong": "G4015",
+      "pron": "페리아스트라프토",
+      "glossKo": "둘러비추다"
+    },
+    {
+      "lemma": "περιβάλλω",
+      "strong": "G4016",
+      "pron": "페리발로",
+      "glossKo": "입다"
+    },
+    {
+      "lemma": "περιβλέπομαι",
+      "strong": "G4017",
+      "pron": "페리블레포마이",
+      "glossKo": "둘러보다"
+    }
+  ],
+  "defEn": "to cut around, i.e. (specially) to circumcise",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 17,
+  "byBook": {
+    "galatians": 6,
+    "acts": 5,
+    "corinthians1": 2,
+    "luke": 2,
+    "colossians": 1,
+    "john": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "περιέτεμεν αὐτὸν",
+      "pron": "페리에테멘 아우톤",
+      "lemmas": [
+        "περιτέμνω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "περιέτεμεν",
+          "lemma": "περιτέμνω",
+          "strong": "G4059",
+          "pron": "페리에테멘"
+        },
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "luke 2:21",
+        "acts 7:8",
+        "acts 15:5",
+        "acts 16:3",
+        "acts 21:21",
+        "galatians 6:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "μὴ περιτμηθῆτε",
+      "pron": "메 페리트메테테",
+      "lemmas": [
+        "μή",
+        "περιτέμνω"
+      ],
+      "words": [
+        {
+          "word": "μὴ",
+          "lemma": "μή",
+          "strong": "G3361",
+          "pron": "메"
+        },
+        {
+          "word": "περιτμηθῆτε",
+          "lemma": "περιτέμνω",
+          "strong": "G4059",
+          "pron": "페리트메테테"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "acts 15:1",
+        "acts 21:21",
+        "corinthians1 7:18"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "lemma": "ἐκτείνω",
+  "pron": "에크테이노",
+  "strong": "G1614",
+  "posKo": "동사",
+  "root": {
+    "lemma": "ἐκ",
+    "strong": "G1537",
+    "glossKo": "에서"
+  },
+  "family": [
+    {
+      "lemma": "ἐκ",
+      "strong": "G1537",
+      "pron": "에크",
+      "glossKo": "에서"
+    },
+    {
+      "lemma": "ἐκβάλλω",
+      "strong": "G1544",
+      "pron": "에크발로",
+      "glossKo": "내쫓다"
+    },
+    {
+      "lemma": "ἔκβασις",
+      "strong": "G1545",
+      "pron": "에크바시스",
+      "glossKo": "피할길"
+    },
+    {
+      "lemma": "ἐκγαμίζω",
+      "strong": "G1547",
+      "pron": "에크가미조",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἐκγαμίσκω",
+      "strong": "G1548",
+      "pron": "에크가미스코",
+      "glossKo": ""
+    },
+    {
+      "lemma": "ἔκγονον",
+      "strong": "G1549",
+      "pron": "에크고논",
+      "glossKo": "자손"
+    }
+  ],
+  "defEn": "to extend",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 16,
+  "byBook": {
+    "matthew": 6,
+    "acts": 3,
+    "luke": 3,
+    "mark": 3,
+    "john": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐκτείνας τὴν χεῖρα",
+      "pron": "에크테이나스 텐 케이라",
+      "lemmas": [
+        "ἐκτείνω",
+        "ὁ",
+        "χείρ"
+      ],
+      "words": [
+        {
+          "word": "ἐκτείνας",
+          "lemma": "ἐκτείνω",
+          "strong": "G1614",
+          "pron": "에크테이나스"
+        },
+        {
+          "word": "τὴν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "텐"
+        },
+        {
+          "word": "χεῖρα",
+          "lemma": "χείρ",
+          "strong": "G5495",
+          "pron": "케이라"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "matthew 8:3",
+        "matthew 12:49",
+        "matthew 14:31",
+        "matthew 26:51",
+        "mark 1:41",
+        "mark 3:5",
+        "luke 5:13",
+        "luke 6:10",
+        "luke 22:53",
+        "john 21:18",
+        "acts 26:1"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

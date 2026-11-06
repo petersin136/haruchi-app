@@ -1,0 +1,101 @@
+{
+  "lemma": "διαλογισμός",
+  "pron": "디알로기스모스",
+  "strong": "G1261",
+  "posKo": "명사",
+  "root": {
+    "lemma": "διαλογίζομαι",
+    "strong": "G1260",
+    "glossKo": "의논하다"
+  },
+  "family": [
+    {
+      "lemma": "διαλογίζομαι",
+      "strong": "G1260",
+      "pron": "디알로기조마이",
+      "glossKo": "의논하다"
+    }
+  ],
+  "defEn": "discussion, i.e. (internal) consideration (by implication, purpose), or (external) debate",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 14,
+  "byBook": {
+    "luke": 6,
+    "romans": 2,
+    "corinthians1": 1,
+    "james": 1,
+    "mark": 1,
+    "matthew": 1,
+    "philippians": 1,
+    "timothy1": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "διαλογισμοὺς αὐτῶν",
+      "pron": "디알로기스무스 아우톤",
+      "lemmas": [
+        "διαλογισμός",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "διαλογισμοὺς",
+          "lemma": "διαλογισμός",
+          "strong": "G1261",
+          "pron": "디알로기스무스"
+        },
+        {
+          "word": "αὐτῶν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "luke 5:22",
+        "luke 6:8",
+        "romans 1:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "τοὺς διαλογισμοὺς αὐτῶν",
+      "pron": "투스 디알로기스무스 아우톤",
+      "lemmas": [
+        "ὁ",
+        "διαλογισμός",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τοὺς",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "투스"
+        },
+        {
+          "word": "διαλογισμοὺς",
+          "lemma": "διαλογισμός",
+          "strong": "G1261",
+          "pron": "디알로기스무스"
+        },
+        {
+          "word": "αὐτῶν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "luke 5:22",
+        "luke 6:8",
+        "romans 1:21"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

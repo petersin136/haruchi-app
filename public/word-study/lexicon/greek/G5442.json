@@ -4,15 +4,41 @@
   "strong": "G5442",
   "posKo": "동사",
   "root": {
-    "lemma": "φυλή",
-    "strong": "G5443"
+    "lemma": "φυλή",
+    "strong": "G5443",
+    "glossKo": "지파"
   },
   "family": [
-    "φυλακή",
-    "φυλακτήριον",
-    "φύλαξ",
-    "φυλή",
-    "φύλλον"
+    {
+      "lemma": "φυλακή",
+      "strong": "G5438",
+      "pron": "퓔라케",
+      "glossKo": "감옥"
+    },
+    {
+      "lemma": "φυλακτήριον",
+      "strong": "G5440",
+      "pron": "퓔라크테리온",
+      "glossKo": "경문"
+    },
+    {
+      "lemma": "φύλαξ",
+      "strong": "G5441",
+      "pron": "퓔락스",
+      "glossKo": "파수꾼"
+    },
+    {
+      "lemma": "φυλή",
+      "strong": "G5443",
+      "pron": "퓔레",
+      "glossKo": "지파"
+    },
+    {
+      "lemma": "φύλλον",
+      "strong": "G5444",
+      "pron": "퓔론",
+      "glossKo": "잎"
+    }
   ],
   "defEn": "to watch, i.e. be on guard (literally of figuratively); by implication, to preserve, obey, avoid",
   "defKo": "",
@@ -37,9 +63,24 @@
   "phrases": [
     {
       "greek": "φυλάξει αὐτήν",
+      "pron": "퓔라크세이 아우텐",
       "lemmas": [
         "φυλάσσω",
         "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "φυλάξει",
+          "lemma": "φυλάσσω",
+          "strong": "G5442",
+          "pron": "퓔라크세이"
+        },
+        {
+          "word": "αὐτήν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우텐"
+        }
       ],
       "count": 5,
       "refs": [

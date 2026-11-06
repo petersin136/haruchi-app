@@ -1,0 +1,100 @@
+{
+  "lemma": "πατρίς",
+  "pron": "파트리스",
+  "strong": "G3968",
+  "posKo": "명사",
+  "root": {
+    "lemma": "παράσημος",
+    "strong": "G3902",
+    "glossKo": "선표한"
+  },
+  "family": [
+    {
+      "lemma": "παράσημος",
+      "strong": "G3902",
+      "pron": "파라세모스",
+      "glossKo": "선표한"
+    }
+  ],
+  "defEn": "a father-land, i.e. native town; (figuratively) heavenly home",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 8,
+  "byBook": {
+    "luke": 2,
+    "mark": 2,
+    "matthew": 2,
+    "hebrews": 1,
+    "john": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "πατρίδα αὐτοῦ",
+      "pron": "파트리다 아우투",
+      "lemmas": [
+        "πατρίς",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "πατρίδα",
+          "lemma": "πατρίς",
+          "strong": "G3968",
+          "pron": "파트리다"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 13:54",
+        "mark 6:1",
+        "mark 6:4",
+        "luke 4:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "τὴν πατρίδα αὐτοῦ",
+      "pron": "텐 파트리다 아우투",
+      "lemmas": [
+        "ὁ",
+        "πατρίς",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "τὴν",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "텐"
+        },
+        {
+          "word": "πατρίδα",
+          "lemma": "πατρίς",
+          "strong": "G3968",
+          "pron": "파트리다"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 13:54",
+        "mark 6:1",
+        "mark 6:4",
+        "luke 4:24"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

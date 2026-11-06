@@ -1,0 +1,151 @@
+{
+  "lemma": "τίκτω",
+  "pron": "틱토",
+  "strong": "G5088",
+  "posKo": "동사",
+  "root": null,
+  "family": [
+    {
+      "lemma": "τεῖχος",
+      "strong": "G5038",
+      "pron": "테이코스",
+      "glossKo": "성벽"
+    },
+    {
+      "lemma": "τέχνη",
+      "strong": "G5078",
+      "pron": "테크네",
+      "glossKo": "기술"
+    },
+    {
+      "lemma": "τόκος",
+      "strong": "G5110",
+      "pron": "토코스",
+      "glossKo": "이자"
+    },
+    {
+      "lemma": "τόξον",
+      "strong": "G5115",
+      "pron": "토크손",
+      "glossKo": "활"
+    }
+  ],
+  "defEn": "to produce (from seed, as a mother, a plant, the earth, etc.), literally or figuratively",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 18,
+  "byBook": {
+    "luke": 5,
+    "revelation": 5,
+    "matthew": 4,
+    "galatians": 1,
+    "hebrews": 1,
+    "james": 1,
+    "john": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἔτεκεν υἱόν",
+      "pron": "에테켄 휘온",
+      "lemmas": [
+        "τίκτω",
+        "υἱός"
+      ],
+      "words": [
+        {
+          "word": "ἔτεκεν",
+          "lemma": "τίκτω",
+          "strong": "G5088",
+          "pron": "에테켄"
+        },
+        {
+          "word": "υἱόν",
+          "lemma": "υἱός",
+          "strong": "G5207",
+          "pron": "휘온"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 1:23",
+        "matthew 1:25",
+        "luke 1:31",
+        "revelation 12:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "καὶ τέξεται υἱόν",
+      "pron": "카이 텍세타이 휘온",
+      "lemmas": [
+        "καί",
+        "τίκτω",
+        "υἱός"
+      ],
+      "words": [
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "τέξεται",
+          "lemma": "τίκτω",
+          "strong": "G5088",
+          "pron": "텍세타이"
+        },
+        {
+          "word": "υἱόν",
+          "lemma": "υἱός",
+          "strong": "G5207",
+          "pron": "휘온"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 1:23",
+        "luke 1:31",
+        "revelation 12:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "τέξεται υἱόν καὶ",
+      "pron": "텍세타이 휘온 카이",
+      "lemmas": [
+        "τίκτω",
+        "υἱός",
+        "καί"
+      ],
+      "words": [
+        {
+          "word": "τέξεται",
+          "lemma": "τίκτω",
+          "strong": "G5088",
+          "pron": "텍세타이"
+        },
+        {
+          "word": "υἱόν",
+          "lemma": "υἱός",
+          "strong": "G5207",
+          "pron": "휘온"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 1:23",
+        "matthew 1:25",
+        "luke 1:31"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

@@ -5,11 +5,22 @@
   "posKo": "접속사",
   "root": {
     "lemma": "ὅστις",
-    "strong": "G3748"
+    "strong": "G3748",
+    "glossKo": "~인 자"
   },
   "family": [
-    "ὅστις",
-    "ὅτου"
+    {
+      "lemma": "ὅστις",
+      "strong": "G3748",
+      "pron": "호스티스",
+      "glossKo": "~인 자"
+    },
+    {
+      "lemma": "ὅτου",
+      "strong": "G3755",
+      "pron": "호투",
+      "glossKo": ""
+    }
   ],
   "defEn": "demonstrative, that (sometimes redundant); causative, because",
   "defKo": "",
@@ -48,9 +59,24 @@
   "phrases": [
     {
       "greek": "ὑμῖν ὅτι",
+      "pron": "휘민 호티",
       "lemmas": [
         "σύ",
         "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "ὑμῖν",
+          "lemma": "σύ",
+          "strong": "G4771",
+          "pron": "휘민"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
       ],
       "count": 115,
       "refs": [
@@ -71,9 +97,24 @@
     },
     {
       "greek": "λέγοντες ὅτι",
+      "pron": "레곤테스 호티",
       "lemmas": [
         "λέγω",
         "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "λέγοντες",
+          "lemma": "λέγω",
+          "strong": "G3004",
+          "pron": "레곤테스"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
       ],
       "count": 104,
       "refs": [
@@ -94,9 +135,24 @@
     },
     {
       "greek": "αὐτοῦ ὅτι",
+      "pron": "아우투 호티",
       "lemmas": [
         "αὐτός",
         "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
       ],
       "count": 91,
       "refs": [
@@ -117,9 +173,24 @@
     },
     {
       "greek": "ὅτι οὐκ",
+      "pron": "호티 우크",
       "lemmas": [
         "ὅτι",
         "οὐ"
+      ],
+      "words": [
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        },
+        {
+          "word": "οὐκ",
+          "lemma": "οὐ",
+          "strong": "G3756",
+          "pron": "우크"
+        }
       ],
       "count": 90,
       "refs": [
@@ -140,9 +211,24 @@
     },
     {
       "greek": "οἴδαμεν ὅτι",
+      "pron": "오이다멘 호티",
       "lemmas": [
         "οἶδα",
         "ὅτι"
+      ],
+      "words": [
+        {
+          "word": "οἴδαμεν",
+          "lemma": "οἶδα",
+          "strong": "G1492",
+          "pron": "오이다멘"
+        },
+        {
+          "word": "ὅτι",
+          "lemma": "ὅτι",
+          "strong": "G3754",
+          "pron": "호티"
+        }
       ],
       "count": 87,
       "refs": [

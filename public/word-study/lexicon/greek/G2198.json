@@ -5,8 +5,18 @@
   "posKo": "동사",
   "root": null,
   "family": [
-    "ζωή",
-    "ζῶον"
+    {
+      "lemma": "ζωή",
+      "strong": "G2222",
+      "pron": "조에",
+      "glossKo": "생명"
+    },
+    {
+      "lemma": "ζῷον",
+      "strong": "G2226",
+      "pron": "조온",
+      "glossKo": "생물"
+    }
   ],
   "defEn": "to live (literally or figuratively)",
   "defKo": "",
@@ -38,9 +48,24 @@
   "phrases": [
     {
       "greek": "θεοῦ ζῶντος",
+      "pron": "테우 존토스",
       "lemmas": [
         "θεός",
         "ζάω"
+      ],
+      "words": [
+        {
+          "word": "θεοῦ",
+          "lemma": "θεός",
+          "strong": "G2316",
+          "pron": "테우"
+        },
+        {
+          "word": "ζῶντος",
+          "lemma": "ζάω",
+          "strong": "G2198",
+          "pron": "존토스"
+        }
       ],
       "count": 12,
       "refs": [
@@ -61,9 +86,24 @@
     },
     {
       "greek": "αὐτὸν ζῆν",
+      "pron": "아우톤 젠",
       "lemmas": [
         "αὐτός",
         "ζάω"
+      ],
+      "words": [
+        {
+          "word": "αὐτὸν",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우톤"
+        },
+        {
+          "word": "ζῆν",
+          "lemma": "ζάω",
+          "strong": "G2198",
+          "pron": "젠"
+        }
       ],
       "count": 10,
       "refs": [
@@ -82,9 +122,24 @@
     },
     {
       "greek": "ἀλλὰ ζώντων",
+      "pron": "알라 존톤",
       "lemmas": [
         "ἀλλά",
         "ζάω"
+      ],
+      "words": [
+        {
+          "word": "ἀλλὰ",
+          "lemma": "ἀλλά",
+          "strong": "G235",
+          "pron": "알라"
+        },
+        {
+          "word": "ζώντων",
+          "lemma": "ζάω",
+          "strong": "G2198",
+          "pron": "존톤"
+        }
       ],
       "count": 5,
       "refs": [
@@ -97,10 +152,31 @@
     },
     {
       "greek": "ζῶντας καὶ νεκρούς",
+      "pron": "존타스 카이 네크루스",
       "lemmas": [
         "ζάω",
         "καί",
         "νεκρός"
+      ],
+      "words": [
+        {
+          "word": "ζῶντας",
+          "lemma": "ζάω",
+          "strong": "G2198",
+          "pron": "존타스"
+        },
+        {
+          "word": "καὶ",
+          "lemma": "καί",
+          "strong": "G2532",
+          "pron": "카이"
+        },
+        {
+          "word": "νεκρούς",
+          "lemma": "νεκρός",
+          "strong": "G3498",
+          "pron": "네크루스"
+        }
       ],
       "count": 4,
       "refs": [
@@ -113,10 +189,31 @@
     },
     {
       "greek": "ἡμεῖς οἱ ζῶντες",
+      "pron": "헤메이스 호이 존테스",
       "lemmas": [
         "ἐγώ",
         "ὁ",
         "ζάω"
+      ],
+      "words": [
+        {
+          "word": "ἡμεῖς",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "헤메이스"
+        },
+        {
+          "word": "οἱ",
+          "lemma": "ὁ",
+          "strong": "G3588",
+          "pron": "호이"
+        },
+        {
+          "word": "ζῶντες",
+          "lemma": "ζάω",
+          "strong": "G2198",
+          "pron": "존테스"
+        }
       ],
       "count": 4,
       "refs": [

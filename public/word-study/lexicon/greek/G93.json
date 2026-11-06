@@ -5,12 +5,28 @@
   "posKo": "명사",
   "root": {
     "lemma": "ἄδικος",
-    "strong": "G94"
+    "strong": "G94",
+    "glossKo": "불의한"
   },
   "family": [
-    "ἀδικέω",
-    "ἄδικος",
-    "ἀδίκως"
+    {
+      "lemma": "ἀδικέω",
+      "strong": "G91",
+      "pron": "아디케오",
+      "glossKo": "해치다"
+    },
+    {
+      "lemma": "ἄδικος",
+      "strong": "G94",
+      "pron": "아디코스",
+      "glossKo": "불의한"
+    },
+    {
+      "lemma": "ἀδίκως",
+      "strong": "G95",
+      "pron": "아디코스",
+      "glossKo": "부당하게"
+    }
   ],
   "defEn": "(legal) injustice (properly, the quality, by implication, the act); morally, wrongfulness (of character, life or act)",
   "defKo": "",
@@ -34,9 +50,24 @@
   "phrases": [
     {
       "greek": "πάσῃ ἀδικίᾳ",
+      "pron": "파세 아디키아",
       "lemmas": [
         "πᾶς",
         "ἀδικία"
+      ],
+      "words": [
+        {
+          "word": "πάσῃ",
+          "lemma": "πᾶς",
+          "strong": "G3956",
+          "pron": "파세"
+        },
+        {
+          "word": "ἀδικίᾳ",
+          "lemma": "ἀδικία",
+          "strong": "G93",
+          "pron": "아디키아"
+        }
       ],
       "count": 3,
       "refs": [

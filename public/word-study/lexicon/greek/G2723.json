@@ -1,0 +1,77 @@
+{
+  "lemma": "κατηγορέω",
+  "pron": "카테고레오",
+  "strong": "G2723",
+  "posKo": "동사",
+  "root": {
+    "lemma": "κατήγορος",
+    "strong": "G2725",
+    "glossKo": "고발자"
+  },
+  "family": [
+    {
+      "lemma": "κατηγορία",
+      "strong": "G2724",
+      "pron": "카테고리아",
+      "glossKo": "고발"
+    },
+    {
+      "lemma": "κατήγορος",
+      "strong": "G2725",
+      "pron": "카테고로스",
+      "glossKo": "고발자"
+    }
+  ],
+  "defEn": "to be a plaintiff, i.e. to charge with some offence",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 22,
+  "byBook": {
+    "acts": 9,
+    "luke": 4,
+    "mark": 3,
+    "john": 2,
+    "matthew": 2,
+    "revelation": 1,
+    "romans": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "κατηγορήσωσιν αὐτοῦ",
+      "pron": "카테고레소신 아우투",
+      "lemmas": [
+        "κατηγορέω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "κατηγορήσωσιν",
+          "lemma": "κατηγορέω",
+          "strong": "G2723",
+          "pron": "카테고레소신"
+        },
+        {
+          "word": "αὐτοῦ",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우투"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "matthew 12:10",
+        "matthew 27:12",
+        "mark 3:2",
+        "mark 15:3",
+        "luke 6:7",
+        "luke 23:2",
+        "luke 23:10",
+        "acts 24:8",
+        "acts 25:5",
+        "revelation 12:10"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

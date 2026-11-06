@@ -1,0 +1,154 @@
+{
+  "lemma": "ἐπιτρέπω",
+  "pron": "에피트레포",
+  "strong": "G2010",
+  "posKo": "동사",
+  "root": {
+    "lemma": "ἐπί",
+    "strong": "G1909",
+    "glossKo": "위에"
+  },
+  "family": [
+    {
+      "lemma": "ἐπαγγέλλομαι",
+      "strong": "G1861",
+      "pron": "에팡겔로마이",
+      "glossKo": "약속하다"
+    },
+    {
+      "lemma": "ἐπάγω",
+      "strong": "G1863",
+      "pron": "에파고",
+      "glossKo": "끌어들이다"
+    },
+    {
+      "lemma": "ἐπαγωνίζομαι",
+      "strong": "G1864",
+      "pron": "에파고니조마이",
+      "glossKo": "힘써싸우다"
+    },
+    {
+      "lemma": "ἐπαθροίζομαι",
+      "strong": "G1865",
+      "pron": "에파트로이조마이",
+      "glossKo": "모이다"
+    },
+    {
+      "lemma": "ἐπαινέω",
+      "strong": "G1867",
+      "pron": "에파이네오",
+      "glossKo": "칭찬하다"
+    },
+    {
+      "lemma": "ἔπαινος",
+      "strong": "G1868",
+      "pron": "에파이노스",
+      "glossKo": "칭찬"
+    }
+  ],
+  "defEn": "to turn over (transfer), i.e. allow",
+  "defKo": "",
+  "compareKo": "",
+  "countNT": 18,
+  "byBook": {
+    "acts": 5,
+    "luke": 4,
+    "corinthians1": 2,
+    "mark": 2,
+    "matthew": 2,
+    "hebrews": 1,
+    "john": 1,
+    "timothy1": 1
+  },
+  "count1John": 0,
+  "phrases": [
+    {
+      "greek": "ἐπέτρεψεν αὐτοῖς",
+      "pron": "에페트레프센 아우토이스",
+      "lemmas": [
+        "ἐπιτρέπω",
+        "αὐτός"
+      ],
+      "words": [
+        {
+          "word": "ἐπέτρεψεν",
+          "lemma": "ἐπιτρέπω",
+          "strong": "G2010",
+          "pron": "에페트레프센"
+        },
+        {
+          "word": "αὐτοῖς",
+          "lemma": "αὐτός",
+          "strong": "G846",
+          "pron": "아우토이스"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "mark 5:13",
+        "luke 8:32",
+        "corinthians1 14:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "ἐπίτρεψόν μοι",
+      "pron": "에피트레프손 모이",
+      "lemmas": [
+        "ἐπιτρέπω",
+        "ἐγώ"
+      ],
+      "words": [
+        {
+          "word": "ἐπίτρεψόν",
+          "lemma": "ἐπιτρέπω",
+          "strong": "G2010",
+          "pron": "에피트레프손"
+        },
+        {
+          "word": "μοι",
+          "lemma": "ἐγώ",
+          "strong": "G1473",
+          "pron": "모이"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "matthew 8:21",
+        "luke 9:59",
+        "luke 9:61",
+        "acts 21:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "greek": "Κύριε ἐπίτρεψόν",
+      "pron": "퀴리에 에피트레프손",
+      "lemmas": [
+        "κύριος",
+        "ἐπιτρέπω"
+      ],
+      "words": [
+        {
+          "word": "Κύριε",
+          "lemma": "κύριος",
+          "strong": "G2962",
+          "pron": "퀴리에"
+        },
+        {
+          "word": "ἐπίτρεψόν",
+          "lemma": "ἐπιτρέπω",
+          "strong": "G2010",
+          "pron": "에피트레프손"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "matthew 8:21",
+        "luke 9:59",
+        "corinthians1 16:7"
+      ],
+      "glossKo": ""
+    }
+  ]
+}
