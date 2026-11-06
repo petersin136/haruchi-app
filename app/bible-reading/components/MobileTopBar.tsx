@@ -1,6 +1,7 @@
 "use client";
 
 import { memo, useEffect, useState } from "react";
+import Link from "next/link";
 import Dropdown from "./Dropdown";
 
 /** page.tsx 의 ModeChoice 와 동일 집합 — 역본/모드 드롭다운 옵션. */
@@ -13,6 +14,13 @@ export type MobileModeChoice =
   | "hebrew"
   | "study";
 
+/** 영상(/watch)이 있는 책. 데스크탑 메뉴도 동일 배열을 쓴다. */
+export const WATCH_AVAILABLE_BOOKS = ["genesis"] as const;
+
+export function isWatchAvailable(bookId: string): boolean {
+  return (WATCH_AVAILABLE_BOOKS as readonly string[]).includes(bookId);
+}
+
 const MODE_OPTIONS: { value: MobileModeChoice; label: string }[] = [
   { value: "krv", label: "개역한글" },
   { value: "kids", label: "어린이 의역" },
@@ -24,6 +32,7 @@ const MODE_OPTIONS: { value: MobileModeChoice; label: string }[] = [
 ];
 
 type MobileTopBarProps = {
+  bookId: string;
   bookName: string;
   chapterNumber: number;
   bookConfirmed: boolean;
@@ -110,6 +119,7 @@ function MoreIcon() {
 }
 
 function MobileTopBar({
+  bookId,
   bookName,
   chapterNumber,
   bookConfirmed,
@@ -132,6 +142,9 @@ function MobileTopBar({
   const bookLabel = bookConfirmed
     ? `${bookName} ${chapterNumber}장`
     : "책 선택";
+
+  const watchReady = isWatchAvailable(bookId);
+  const watchHref = `/watch/${bookId}?chapter=${chapterNumber}`;
 
   return (
     <>
@@ -192,13 +205,31 @@ function MobileTopBar({
             aria-label="계정·설정 메뉴"
             onClick={(e) => e.stopPropagation()}
           >
-            <a
+            {watchReady ? (
+              <Link
+                className="brp-mobile-topbar-sheet-item"
+                href={watchHref}
+                onClick={() => setMenuOpen(false)}
+              >
+                영상으로 보기
+              </Link>
+            ) : (
+              <span
+                className="brp-mobile-topbar-sheet-item"
+                aria-disabled="true"
+                style={{ opacity: 0.45, cursor: "not-allowed" }}
+              >
+                영상으로 보기 · 준비 중
+              </span>
+            )}
+            <Link
               className="brp-mobile-topbar-sheet-item"
               href="/plan"
               onClick={() => setMenuOpen(false)}
             >
               읽기표
-            </a>
+            </Link>
+            <div className="brp-mobile-topbar-sheet-divider" role="separator" />
             <a
               className="brp-mobile-topbar-sheet-item"
               href="/settings"
