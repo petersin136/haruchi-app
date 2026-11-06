@@ -14,10 +14,12 @@ import { loadKoreanChapter } from "../../bible-reading/bibleData";
 import type { BookId } from "../../bible-reading/books";
 import { BOOKS } from "../../bible-reading/books";
 import {
+  DEFAULT_HL,
   HL_COLORS,
   UL_COLOR,
   emptyStudyData,
   loadChapterStudy,
+  newMarkId,
   saveChapterStudy,
   type ChapterStudyData,
   type StudyMark,
@@ -25,10 +27,17 @@ import {
 } from "../lib/marksStorage";
 import {
   buildChapterPlain,
+  circledNum,
   segmentVerse,
   verseAtOffset,
   type VerseSpan,
 } from "../lib/offsets";
+import {
+  loadChapterWordStudy,
+  matchTokenByGloss,
+  type WordStudyToken,
+} from "../lib/wordStudy";
+import WordStudySheet from "./WordStudySheet";
 import "../study.css";
 
 type Props = {
@@ -47,14 +56,20 @@ type ToolbarMode =
     }
   | {
       kind: "mark";
-      index: number;
+      markId: string;
       x: number;
       y: number;
     };
 
-type NoteDraft = {
-  ref: number;
+type NoteDisplay = {
+  mode: "full" | "badge";
+  badge?: number;
+};
+
+type BubbleState = {
   text: string;
+  x: number;
+  y: number;
 };
 
 function StudyNotebook({ bookId, chapter }: Props) {
@@ -65,26 +80,42 @@ function StudyNotebook({ bookId, chapter }: Props) {
   const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState<ChapterStudyData>(emptyStudyData);
   const [toolbar, setToolbar] = useState<ToolbarMode | null>(null);
-  const [noteDraft, setNoteDraft] = useState<NoteDraft | null>(null);
-  const [openMobileNotes, setOpenMobileNotes] = useState<Set<number>>(
-    () => new Set(),
+  const [editingMarkId, setEditingMarkId] = useState<string | null>(null);
+  const [editText, setEditText] = useState("");
+  const [openLegacy, setOpenLegacy] = useState<Set<number>>(() => new Set());
+  const [noteDisplay, setNoteDisplay] = useState<Record<string, NoteDisplay>>(
+    {},
   );
-  const [railTops, setRailTops] = useState<Record<number, number>>({});
+  const [bubble, setBubble] = useState<BubbleState | null>(null);
+  const [wsTokens, setWsTokens] = useState<WordStudyToken[]>([]);
+  const [wsOpen, setWsOpen] = useState(false);
+  const [wsVerse, setWsVerse] = useState(1);
+  const [wsInitial, setWsInitial] = useState<WordStudyToken | null>(null);
   const bodyRef = useRef<HTMLDivElement | null>(null);
   const fileRef = useRef<HTMLInputElement | null>(null);
+  const editInputRef = useRef<HTMLInputElement | null>(null);
   const dataRef = useRef(data);
   dataRef.current = data;
+  const plainRef = useRef("");
 
   const { plain, spans } = useMemo(
     () => buildChapterPlain(verses ?? []),
     [verses],
   );
+  plainRef.current = plain;
+
+  const marksById = useMemo(() => {
+    const map = new Map<string, StudyMark>();
+    for (const m of data.marks) map.set(m.id, m);
+    return map;
+  }, [data.marks]);
 
   useEffect(() => {
     let cancelled = false;
     setVerses(null);
     setError(null);
     setToolbar(null);
+    setEditingMarkId(null);
     loadKoreanChapter(bookId, chapter)
       .then((ch) => {
         if (cancelled) return;
@@ -102,7 +133,20 @@ function StudyNotebook({ bookId, chapter }: Props) {
 
   useEffect(() => {
     setData(loadChapterStudy(bookId, chapter));
-    setOpenMobileNotes(new Set());
+    setOpenLegacy(new Set());
+    setBubble(null);
+    setWsOpen(false);
+  }, [bookId, chapter]);
+
+  useEffect(() => {
+    let stale = false;
+    setWsTokens([]);
+    loadChapterWordStudy(bookId, chapter).then((list) => {
+      if (!stale) setWsTokens(list);
+    });
+    return () => {
+      stale = true;
+    };
   }, [bookId, chapter]);
 
   const persist = useCallback(
@@ -113,27 +157,63 @@ function StudyNotebook({ bookId, chapter }: Props) {
     [bookId, chapter],
   );
 
-  const measureRails = useCallback(() => {
+  const measureNoteCollisions = useCallback(() => {
     const root = bodyRef.current;
     if (!root) return;
-    const pageTop = root.getBoundingClientRect().top + window.scrollY;
-    const next: Record<number, number> = {};
-    root.querySelectorAll<HTMLElement>("[data-verse]").forEach((el) => {
-      const n = Number(el.dataset.verse);
-      if (!Number.isFinite(n)) return;
-      next[n] = el.getBoundingClientRect().top + window.scrollY - pageTop;
-    });
-    setRailTops(next);
+    const nodes = [
+      ...root.querySelectorAll<HTMLElement>("[data-mark-note-id]"),
+    ];
+    if (nodes.length === 0) {
+      setNoteDisplay({});
+      return;
+    }
+    const items = nodes
+      .map((el) => {
+        const id = el.dataset.markNoteId!;
+        const r = el.getBoundingClientRect();
+        return { id, top: r.top, left: r.left, right: r.right, bottom: r.bottom };
+      })
+      .sort((a, b) => a.top - b.top || a.left - b.left);
+
+    const next: Record<string, NoteDisplay> = {};
+    const placed: { id: string; top: number; left: number; right: number }[] =
+      [];
+    let badge = 0;
+    for (const it of items) {
+      const sameLine = placed.filter((p) => Math.abs(p.top - it.top) < 10);
+      const overlaps = sameLine.some(
+        (p) => !(it.right <= p.left + 2 || it.left >= p.right - 2),
+      );
+      if (overlaps) {
+        badge += 1;
+        next[it.id] = { mode: "badge", badge };
+      } else {
+        next[it.id] = { mode: "full" };
+        placed.push(it);
+      }
+    }
+    setNoteDisplay(next);
   }, []);
 
   useLayoutEffect(() => {
-    measureRails();
-  }, [measureRails, verses, data.notes, data.marks]);
+    measureNoteCollisions();
+  }, [measureNoteCollisions, verses, data.marks, editingMarkId]);
 
   useEffect(() => {
-    window.addEventListener("resize", measureRails);
-    return () => window.removeEventListener("resize", measureRails);
-  }, [measureRails]);
+    window.addEventListener("resize", measureNoteCollisions);
+    return () => window.removeEventListener("resize", measureNoteCollisions);
+  }, [measureNoteCollisions]);
+
+  useEffect(() => {
+    if (!editingMarkId) return;
+    editInputRef.current?.focus();
+  }, [editingMarkId]);
+
+  useEffect(() => {
+    if (!bubble) return;
+    const t = window.setTimeout(() => setBubble(null), 2200);
+    return () => window.clearTimeout(t);
+  }, [bubble]);
 
   const selectionToOffsets = useCallback(
     (sel: Selection): { start: number; end: number; ref: number } | null => {
@@ -142,8 +222,18 @@ function StudyNotebook({ bookId, chapter }: Props) {
       const root = bodyRef.current;
       if (!root || !root.contains(range.commonAncestorContainer)) return null;
 
-      const startOff = domPointToOffset(root, range.startContainer, range.startOffset, spans);
-      const endOff = domPointToOffset(root, range.endContainer, range.endOffset, spans);
+      const startOff = domPointToOffset(
+        root,
+        range.startContainer,
+        range.startOffset,
+        spans,
+      );
+      const endOff = domPointToOffset(
+        root,
+        range.endContainer,
+        range.endOffset,
+        spans,
+      );
       if (startOff == null || endOff == null) return null;
       const a = Math.min(startOff, endOff);
       const b = Math.max(startOff, endOff);
@@ -154,6 +244,7 @@ function StudyNotebook({ bookId, chapter }: Props) {
   );
 
   const showSelectionToolbar = useCallback(() => {
+    if (editingMarkId) return;
     const sel = window.getSelection();
     if (!sel) {
       setToolbar((t) => (t?.kind === "selection" ? null : t));
@@ -172,7 +263,7 @@ function StudyNotebook({ bookId, chapter }: Props) {
       x: rect.left + rect.width / 2,
       y: Math.max(8, rect.top - 48),
     });
-  }, [selectionToOffsets]);
+  }, [editingMarkId, selectionToOffsets]);
 
   useEffect(() => {
     const onSel = () => {
@@ -188,40 +279,70 @@ function StudyNotebook({ bookId, chapter }: Props) {
     };
   }, [showSelectionToolbar]);
 
-  const applyHighlight = (color: string) => {
-    if (!toolbar || toolbar.kind !== "selection") return;
+  const upsertMark = (
+    patch: Omit<StudyMark, "id"> & { id?: string },
+  ): StudyMark => {
+    const id = patch.id ?? newMarkId();
     const mark: StudyMark = {
+      id,
+      ref: patch.ref,
+      start: patch.start,
+      end: patch.end,
+      type: patch.type,
+      color: patch.color,
+    };
+    if (patch.note != null && patch.note !== "") mark.note = patch.note;
+    const others = dataRef.current.marks.filter((m) => m.id !== id);
+    persist({ ...dataRef.current, marks: [...others, mark] });
+    return mark;
+  };
+
+  const applyHighlight = (color: string) => {
+    if (!toolbar) return;
+    if (toolbar.kind === "mark") {
+      const cur = marksById.get(toolbar.markId);
+      if (!cur) return;
+      upsertMark({ ...cur, type: "hl", color });
+      setToolbar(null);
+      return;
+    }
+    upsertMark({
       ref: toolbar.ref,
       start: toolbar.start,
       end: toolbar.end,
       type: "hl",
       color,
-    };
-    persist({ ...dataRef.current, marks: [...dataRef.current.marks, mark] });
+    });
     window.getSelection()?.removeAllRanges();
     setToolbar(null);
   };
 
   const applyUnderline = () => {
-    if (!toolbar || toolbar.kind !== "selection") return;
-    const mark: StudyMark = {
+    if (!toolbar) return;
+    if (toolbar.kind === "mark") {
+      const cur = marksById.get(toolbar.markId);
+      if (!cur) return;
+      upsertMark({ ...cur, type: "ul", color: UL_COLOR });
+      setToolbar(null);
+      return;
+    }
+    upsertMark({
       ref: toolbar.ref,
       start: toolbar.start,
       end: toolbar.end,
       type: "ul",
       color: UL_COLOR,
-    };
-    persist({ ...dataRef.current, marks: [...dataRef.current.marks, mark] });
+    });
     window.getSelection()?.removeAllRanges();
     setToolbar(null);
   };
 
-  const eraseSelectionMarks = () => {
+  const eraseFromToolbar = () => {
     if (!toolbar) return;
     if (toolbar.kind === "mark") {
       persist({
         ...dataRef.current,
-        marks: dataRef.current.marks.filter((_, i) => i !== toolbar.index),
+        marks: dataRef.current.marks.filter((m) => m.id !== toolbar.markId),
       });
       setToolbar(null);
       return;
@@ -237,42 +358,79 @@ function StudyNotebook({ bookId, chapter }: Props) {
     setToolbar(null);
   };
 
-  const recolorMark = (color: string) => {
-    if (!toolbar || toolbar.kind !== "mark") return;
-    const marks = dataRef.current.marks.map((m, i) =>
-      i === toolbar.index ? { ...m, type: "hl" as const, color } : m,
-    );
-    persist({ ...dataRef.current, marks });
+  const beginNoteEdit = (markId: string, initial?: string) => {
+    const cur = dataRef.current.marks.find((m) => m.id === markId);
+    setEditText(initial ?? cur?.note ?? "");
+    setEditingMarkId(markId);
     setToolbar(null);
+    setBubble(null);
+    window.getSelection()?.removeAllRanges();
   };
 
   const openNoteFromToolbar = () => {
     if (!toolbar) return;
-    const ref =
-      toolbar.kind === "selection"
-        ? toolbar.ref
-        : dataRef.current.marks[toolbar.index]?.ref ?? 1;
-    const existing = dataRef.current.notes.find((n) => n.ref === ref);
-    setNoteDraft({ ref, text: existing?.text ?? "" });
+    if (toolbar.kind === "mark") {
+      beginNoteEdit(toolbar.markId);
+      return;
+    }
+    // 선택만 있고 칠이 없으면 노랑 자동 적용 후 메모
+    const existing = dataRef.current.marks.find(
+      (m) => m.start === toolbar.start && m.end === toolbar.end,
+    );
+    const mark =
+      existing ??
+      upsertMark({
+        ref: toolbar.ref,
+        start: toolbar.start,
+        end: toolbar.end,
+        type: "hl",
+        color: DEFAULT_HL,
+      });
+    beginNoteEdit(mark.id, mark.note);
+  };
+
+  const openWordStudyFromToolbar = () => {
+    if (!toolbar) return;
+    let selectedKo = "";
+    let verse = 1;
+    if (toolbar.kind === "selection") {
+      selectedKo = plainRef.current.slice(toolbar.start, toolbar.end);
+      verse = toolbar.ref;
+    } else {
+      const mark = marksById.get(toolbar.markId);
+      if (!mark) return;
+      selectedKo = plainRef.current.slice(mark.start, mark.end);
+      verse = mark.ref;
+    }
+    selectedKo = selectedKo.trim();
+    if (!selectedKo) return;
+    const matched = matchTokenByGloss(wsTokens, verse, selectedKo);
+    if (!matched) return;
+    setWsVerse(verse);
+    setWsInitial(matched);
+    setWsOpen(true);
     setToolbar(null);
     window.getSelection()?.removeAllRanges();
   };
 
-  const saveNote = () => {
-    if (!noteDraft) return;
-    const text = noteDraft.text.trim();
-    const others = dataRef.current.notes.filter((n) => n.ref !== noteDraft.ref);
-    const notes: StudyNote[] = text
-      ? [
-          ...others,
-          { ref: noteDraft.ref, text, at: new Date().toISOString() },
-        ]
-      : others;
-    persist({ ...dataRef.current, notes });
-    if (text) {
-      setOpenMobileNotes((prev) => new Set(prev).add(noteDraft.ref));
+  const commitNoteEdit = () => {
+    if (!editingMarkId) return;
+    const cur = dataRef.current.marks.find((m) => m.id === editingMarkId);
+    if (!cur) {
+      setEditingMarkId(null);
+      return;
     }
-    setNoteDraft(null);
+    const text = editText.trim();
+    const next: StudyMark = { ...cur };
+    if (text) next.note = text;
+    else delete next.note;
+    persist({
+      ...dataRef.current,
+      marks: dataRef.current.marks.map((m) =>
+        m.id === editingMarkId ? next : m,
+      ),
+    });
+    setEditingMarkId(null);
   };
 
   const exportJson = () => {
@@ -291,21 +449,60 @@ function StudyNotebook({ bookId, chapter }: Props) {
     try {
       const text = await file.text();
       const parsed = JSON.parse(text) as ChapterStudyData;
-      const next: ChapterStudyData = {
-        marks: Array.isArray(parsed.marks) ? parsed.marks : [],
+      const loaded = {
+        marks: Array.isArray(parsed.marks)
+          ? parsed.marks
+              .map((m) => {
+                const id =
+                  typeof m?.id === "string" && m.id ? m.id : newMarkId();
+                if (
+                  !m ||
+                  typeof m.ref !== "number" ||
+                  typeof m.start !== "number" ||
+                  typeof m.end !== "number"
+                ) {
+                  return null;
+                }
+                const out: StudyMark = {
+                  id,
+                  ref: m.ref,
+                  start: m.start,
+                  end: m.end,
+                  type: m.type === "ul" ? "ul" : "hl",
+                  color: typeof m.color === "string" ? m.color : DEFAULT_HL,
+                };
+                if (typeof m.note === "string" && m.note.trim()) {
+                  out.note = m.note;
+                }
+                return out;
+              })
+              .filter((m): m is StudyMark => m !== null)
+          : [],
         notes: Array.isArray(parsed.notes) ? parsed.notes : [],
       };
-      persist(next);
+      persist(loaded);
     } catch {
       window.alert("가져오기 실패 — JSON 형식을 확인해 주세요.");
     }
   };
 
-  const notesByRef = useMemo(() => {
+  const legacyByRef = useMemo(() => {
     const map = new Map<number, StudyNote>();
     for (const n of data.notes) map.set(n.ref, n);
     return map;
   }, [data.notes]);
+
+  const showNoteBubble = (
+    text: string,
+    el: HTMLElement,
+  ) => {
+    const r = el.getBoundingClientRect();
+    setBubble({
+      text,
+      x: r.left + r.width / 2,
+      y: r.bottom + 6,
+    });
+  };
 
   if (error) {
     return (
@@ -324,7 +521,7 @@ function StudyNotebook({ bookId, chapter }: Props) {
   }
 
   const prev = chapter > 1 ? chapter - 1 : null;
-  const next = chapter < total ? chapter + 1 : null;
+  const nextCh = chapter < total ? chapter + 1 : null;
 
   return (
     <div className="study-root">
@@ -353,25 +550,32 @@ function StudyNotebook({ bookId, chapter }: Props) {
                   span.end,
                   data.marks,
                 );
-                const note = notesByRef.get(span.n);
-                const mobileOpen = openMobileNotes.has(span.n);
+                const legacy = legacyByRef.get(span.n);
+                const legacyOpen = openLegacy.has(span.n);
                 return (
                   <span key={span.n} className="study-verse" data-verse={span.n}>
                     <sup className="study-vnum">{span.n}</sup>
                     <span className="study-verse-text" data-v={span.n}>
                       {segs.map((seg, i) => {
                         const cls = [
+                          "study-seg",
                           seg.style.hl ? "study-seg--hl" : "",
                           seg.style.ul ? "study-seg--ul" : "",
                         ]
                           .filter(Boolean)
                           .join(" ");
-                        if (!cls) {
+                        const primaryId = seg.style.markIds[0];
+                        const noteHosts = seg.style.noteMarkIds.filter((id) => {
+                          const m = marksById.get(id);
+                          return m && (m.note || editingMarkId === id);
+                        });
+
+                        if (!seg.style.hl && !seg.style.ul && noteHosts.length === 0) {
                           return (
                             <span key={`${span.n}-${i}`}>{seg.text}</span>
                           );
                         }
-                        const markIndex = seg.style.markIndexes[0];
+
                         return (
                           <span
                             key={`${span.n}-${i}`}
@@ -383,8 +587,10 @@ function StudyNotebook({ bookId, chapter }: Props) {
                                   } as CSSProperties)
                                 : undefined
                             }
-                            data-mark-index={markIndex}
+                            data-mark-id={primaryId}
                             onClick={(e) => {
+                              if (!primaryId) return;
+                              if (editingMarkId) return;
                               e.preventDefault();
                               e.stopPropagation();
                               window.getSelection()?.removeAllRanges();
@@ -393,68 +599,102 @@ function StudyNotebook({ bookId, chapter }: Props) {
                               ).getBoundingClientRect();
                               setToolbar({
                                 kind: "mark",
-                                index: markIndex,
+                                markId: primaryId,
                                 x: rect.left + rect.width / 2,
                                 y: Math.max(8, rect.top - 48),
                               });
                             }}
                           >
                             {seg.text}
+                            {noteHosts.map((nid) => {
+                              if (editingMarkId === nid) {
+                                return (
+                                  <input
+                                    key={`edit-${nid}`}
+                                    ref={editInputRef}
+                                    className="study-mark-note-input"
+                                    value={editText}
+                                    aria-label="형광펜 메모"
+                                    onClick={(e) => e.stopPropagation()}
+                                    onChange={(e) => setEditText(e.target.value)}
+                                    onKeyDown={(e) => {
+                                      if (e.key === "Enter") {
+                                        e.preventDefault();
+                                        commitNoteEdit();
+                                      }
+                                      if (e.key === "Escape") {
+                                        setEditingMarkId(null);
+                                      }
+                                    }}
+                                    onBlur={commitNoteEdit}
+                                  />
+                                );
+                              }
+                              const mark = marksById.get(nid);
+                              if (!mark?.note) return null;
+                              const disp = noteDisplay[nid] ?? { mode: "full" };
+                              const isBadge = disp.mode === "badge";
+                              const label = isBadge
+                                ? circledNum(disp.badge ?? 1)
+                                : mark.note;
+                              return (
+                                <span
+                                  key={`note-${nid}`}
+                                  className={`study-mark-note${isBadge ? " is-badge" : ""}`}
+                                  data-mark-note-id={nid}
+                                  title={mark.note}
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    const el = e.currentTarget as HTMLElement;
+                                    const truncated =
+                                      isBadge ||
+                                      el.scrollWidth > el.clientWidth + 1;
+                                    if (truncated) {
+                                      showNoteBubble(mark.note!, el);
+                                    } else {
+                                      beginNoteEdit(nid);
+                                    }
+                                  }}
+                                >
+                                  {label}
+                                </span>
+                              );
+                            })}
                           </span>
                         );
                       })}
                     </span>
-                    {note ? (
+                    {legacy ? (
                       <button
                         type="button"
                         className="study-note-dot"
-                        aria-label={`${span.n}절 메모`}
+                        aria-label={`${span.n}절 옛 메모`}
                         onClick={() => {
-                          setOpenMobileNotes((prev) => {
-                            const next = new Set(prev);
-                            if (next.has(span.n)) next.delete(span.n);
-                            else next.add(span.n);
-                            return next;
+                          setOpenLegacy((prev) => {
+                            const n = new Set(prev);
+                            if (n.has(span.n)) n.delete(span.n);
+                            else n.add(span.n);
+                            return n;
                           });
                         }}
                       />
                     ) : null}
-                    {note ? (
-                      <div
-                        className={`study-note-mobile${mobileOpen ? " is-open" : ""}`}
+                    {legacy ? (
+                      <span
+                        className={`study-note-legacy${legacyOpen ? " is-open" : ""}`}
+                        role="note"
                       >
-                        <div className="study-note-mobile-inner">
-                          <p
-                            onClick={() =>
-                              setNoteDraft({
-                                ref: span.n,
-                                text: note.text,
-                              })
-                            }
-                          >
-                            {note.text}
-                          </p>
-                        </div>
-                      </div>
+                        <span className="study-note-legacy-inner">
+                          <span>{legacy.text}</span>
+                        </span>
+                      </span>
                     ) : null}
                   </span>
                 );
               })}
             </div>
           </article>
-
-          <aside className="study-notes-rail" aria-label="메모">
-            {data.notes.map((n) => (
-              <p
-                key={n.ref}
-                className="study-note-rail-item"
-                style={{ top: railTops[n.ref] ?? 0 }}
-                onClick={() => setNoteDraft({ ref: n.ref, text: n.text })}
-              >
-                {n.text}
-              </p>
-            ))}
-          </aside>
         </div>
 
         <nav className="study-nav" aria-label="장 이동">
@@ -463,8 +703,8 @@ function StudyNotebook({ bookId, chapter }: Props) {
           ) : (
             <span>← 이전</span>
           )}
-          {next ? (
-            <Link href={`/study/${bookId}/${next}`}>{next}장 →</Link>
+          {nextCh ? (
+            <Link href={`/study/${bookId}/${nextCh}`}>{nextCh}장 →</Link>
           ) : (
             <span>다음 →</span>
           )}
@@ -506,91 +746,60 @@ function StudyNotebook({ bookId, chapter }: Props) {
               className="study-toolbar-swatch"
               style={{ background: c }}
               aria-label={`형광펜 ${c}`}
-              onClick={() =>
-                toolbar.kind === "mark"
-                  ? recolorMark(c)
-                  : applyHighlight(c)
-              }
+              onClick={() => applyHighlight(c)}
             />
           ))}
           <button
             type="button"
             className="study-toolbar-btn"
-            onClick={() => {
-              if (toolbar.kind === "mark") {
-                persist({
-                  ...dataRef.current,
-                  marks: dataRef.current.marks.map((m, i) =>
-                    i === toolbar.index
-                      ? { ...m, type: "ul", color: UL_COLOR }
-                      : m,
-                  ),
-                });
-                setToolbar(null);
-                return;
-              }
-              applyUnderline();
-            }}
+            onClick={applyUnderline}
           >
             밑줄
           </button>
-          {toolbar.kind === "selection" ? (
-            <button
-              type="button"
-              className="study-toolbar-btn"
-              onClick={openNoteFromToolbar}
-            >
-              메모
-            </button>
-          ) : null}
           <button
             type="button"
             className="study-toolbar-btn"
-            onClick={eraseSelectionMarks}
+            onClick={openNoteFromToolbar}
+          >
+            메모
+          </button>
+          <button
+            type="button"
+            className="study-toolbar-btn"
+            onClick={openWordStudyFromToolbar}
+          >
+            원어
+          </button>
+          <button
+            type="button"
+            className="study-toolbar-btn"
+            onClick={eraseFromToolbar}
           >
             지우개
           </button>
         </div>
       ) : null}
 
-      {noteDraft ? (
+      <WordStudySheet
+        open={wsOpen}
+        bookId={bookId}
+        chapter={chapter}
+        verse={wsVerse}
+        tokens={wsTokens}
+        initial={wsInitial}
+        onClose={() => setWsOpen(false)}
+      />
+
+      {bubble ? (
         <div
-          className="study-modal-backdrop"
-          role="presentation"
-          onClick={() => setNoteDraft(null)}
+          className="study-note-bubble"
+          style={{ left: bubble.x, top: bubble.y }}
+          role="status"
         >
-          <div
-            className="study-modal"
-            role="dialog"
-            aria-label="메모 작성"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h2>{noteDraft.ref}절 메모</h2>
-            <textarea
-              value={noteDraft.text}
-              onChange={(e) =>
-                setNoteDraft({ ...noteDraft, text: e.target.value })
-              }
-              placeholder="손글씨처럼 남겨 보세요"
-              autoFocus
-            />
-            <div className="study-modal-actions">
-              <button
-                type="button"
-                className="is-ghost"
-                onClick={() => setNoteDraft(null)}
-              >
-                취소
-              </button>
-              <button type="button" className="is-primary" onClick={saveNote}>
-                저장
-              </button>
-            </div>
-          </div>
+          {bubble.text}
         </div>
       ) : null}
 
-      {/* plain kept for debug-free offset integrity */}
       <span hidden aria-hidden="true">
         {plain.length}
       </span>
@@ -617,7 +826,19 @@ function domPointToOffset(
   } catch {
     return span.start;
   }
-  return span.start + pre.toString().length;
+  // 메모/입력 UI 텍스트는 오프셋에서 제외
+  const raw = pre.toString();
+  const noteEls = verseEl.querySelectorAll(
+    ".study-mark-note, .study-mark-note-input",
+  );
+  let subtract = 0;
+  noteEls.forEach((el) => {
+    if (pre.intersectsNode(el)) {
+      subtract += (el.textContent || "").length;
+      if (el instanceof HTMLInputElement) subtract += el.value.length;
+    }
+  });
+  return span.start + Math.max(0, raw.length - subtract);
 }
 
 function closestVerseText(node: Node, root: HTMLElement): HTMLElement | null {
