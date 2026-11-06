@@ -1,14 +1,16 @@
 // =============================================================================
-// 유튜브 자막 타임스탬프 ↔ 개역한글 절 정렬 → public/watch-times/genesis.json
+// 유튜브 자막 타임스탬프 ↔ 개역한글 절 정렬 → public/watch-times/<bookId>.json
 //
 // 입력:
-//   .cache/transcript/genesis.json  (또는 genesis.txt — 수동 붙여넣기)
-//   public/bible-study/chunks/genesis/<ch>/korean.json
-//   data/verse-times-fix/genesis.json (선택, {"1:14":121.3} 우선)
+//   .cache/transcript/<bookId>.json  (또는 .txt — 수동 붙여넣기)
+//   public/bible-study/chunks/<bookId>/<ch>/korean.json
+//   data/verse-times-fix/<bookId>.json (선택, {"1:14":121.3} 우선)
 //
-// 산출: public/watch-times/genesis.json  (숫자만, 자막 본문 미포함)
+// 산출: public/watch-times/<bookId>.json  (숫자만, 자막 본문 미포함)
 //
-// 사용: node scripts/align-verse-times.mjs
+// 사용:
+//   node scripts/align-verse-times.mjs genesis
+//   node scripts/align-verse-times.mjs exodus
 // =============================================================================
 
 import fs from "node:fs";
@@ -18,13 +20,22 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
 
-const VIDEO_ID = "YslfYAunGF4";
-const TOTAL_CHAPTERS = 50;
-const DURATION_SEC = 14690; // 4:04:50
-const CACHE_JSON = path.join(repoRoot, ".cache", "transcript", "genesis.json");
-const CACHE_TXT = path.join(repoRoot, ".cache", "transcript", "genesis.txt");
-const OUT_PATH = path.join(repoRoot, "public", "watch-times", "genesis.json");
-const FIX_PATH = path.join(repoRoot, "data", "verse-times-fix", "genesis.json");
+/** @type {Record<string, { videoId: string, totalChapters: number, durationSec: number, chapterLabelRe: RegExp }>} */
+const BOOK_CONFIG = {
+  genesis: {
+    videoId: "YslfYAunGF4",
+    totalChapters: 50,
+    durationSec: 14690,
+    // "창세기 N장" 또는 자막이 "46장 …"처럼만 말하는 경우
+    chapterLabelRe: /(?:창세기\s*)?(\d{1,2})\s*장/g,
+  },
+  exodus: {
+    videoId: "qN0W1g2wpmk",
+    totalChapters: 40,
+    durationSec: 11591,
+    chapterLabelRe: /(?:출애굽기\s*)?(\d{1,2})\s*장/g,
+  },
+};
 
 function round1(n) {
   return Math.round(n * 10) / 10;
@@ -36,27 +47,45 @@ function normalize(text) {
     .toLowerCase();
 }
 
-function loadTranscript() {
-  if (fs.existsSync(CACHE_JSON)) {
-    const data = JSON.parse(fs.readFileSync(CACHE_JSON, "utf8"));
+function resolveBookId(argv) {
+  const arg = argv.find((a) => !a.startsWith("-"));
+  if (!arg) {
+    console.error(
+      "사용법: node scripts/align-verse-times.mjs <bookId>\n" +
+        `지원: ${Object.keys(BOOK_CONFIG).join(", ")}`,
+    );
+    process.exit(1);
+  }
+  if (!BOOK_CONFIG[arg]) {
+    console.error(`알 수 없는 bookId: ${arg}\n지원: ${Object.keys(BOOK_CONFIG).join(", ")}`);
+    process.exit(1);
+  }
+  return arg;
+}
+
+function loadTranscript(bookId) {
+  const cacheJson = path.join(repoRoot, ".cache", "transcript", `${bookId}.json`);
+  const cacheTxt = path.join(repoRoot, ".cache", "transcript", `${bookId}.txt`);
+  if (fs.existsSync(cacheJson)) {
+    const data = JSON.parse(fs.readFileSync(cacheJson, "utf8"));
     if (!Array.isArray(data.events) || data.events.length === 0) {
-      throw new Error("genesis.json 에 events 가 비어 있습니다");
+      throw new Error(`${bookId}.json 에 events 가 비어 있습니다`);
     }
     return data.events.map((e) => ({
       start: Number(e.start),
       text: String(e.text || ""),
     }));
   }
-  if (fs.existsSync(CACHE_TXT)) {
-    return parsePastedTxt(fs.readFileSync(CACHE_TXT, "utf8"));
+  if (fs.existsSync(cacheTxt)) {
+    return parsePastedTxt(fs.readFileSync(cacheTxt, "utf8"), bookId);
   }
   throw new Error(
-    "자막 캐시 없음. .cache/transcript/genesis.json 또는 genesis.txt 가 필요합니다.",
+    `자막 캐시 없음. .cache/transcript/${bookId}.json 또는 ${bookId}.txt 가 필요합니다.`,
   );
 }
 
 /** 유튜브 "스크립트 표시" 복사본: "0:10\\n텍스트" 또는 "0:10 텍스트" */
-function parsePastedTxt(raw) {
+function parsePastedTxt(raw, bookId) {
   const lines = raw.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
   const events = [];
   const timeRe = /^(?:(\d+):)?(\d+):(\d+)(?:\.\d+)?$/;
@@ -71,7 +100,6 @@ function parsePastedTxt(raw) {
       if (text) events.push({ start, text });
       continue;
     }
-    // "0:10 텍스트" 한 줄
     const m2 = lines[i].match(/^((?:\d+:)?\d+:\d+(?:\.\d+)?)\s+(.+)$/);
     if (m2) {
       const tm = m2[1].match(/^(?:(\d+):)?(\d+):(\d+)/);
@@ -80,34 +108,32 @@ function parsePastedTxt(raw) {
       events.push({ start, text: m2[2].trim() });
     }
   }
-  if (!events.length) throw new Error("genesis.txt 파싱 실패");
+  if (!events.length) throw new Error(`${bookId}.txt 파싱 실패`);
   return events;
 }
 
-function extractChapterStarts(events) {
+function extractChapterStarts(events, totalChapters, chapterLabelRe) {
   /** @type {Map<number, number>} */
   const starts = new Map();
   for (const e of events) {
-    // "창세기 N장" 또는 자막이 장 경계를 "46장 …"처럼만 말하는 경우
-    const re = /(?:창세기\s*)?(\d{1,2})\s*장/g;
+    const re = new RegExp(chapterLabelRe.source, chapterLabelRe.flags);
     let m;
     while ((m = re.exec(e.text))) {
       const n = Number(m[1]);
-      if (n < 1 || n > TOTAL_CHAPTERS) continue;
-      // "151장" 같은 오인식 방지 — 이미 잡은 장은 최초 시각 유지
+      if (n < 1 || n > totalChapters) continue;
       if (!starts.has(n)) starts.set(n, e.start);
     }
   }
   return starts;
 }
 
-function loadKoreanChapter(ch) {
+function loadKoreanChapter(bookId, ch) {
   const p = path.join(
     repoRoot,
     "public",
     "bible-study",
     "chunks",
-    "genesis",
+    bookId,
     String(ch),
     "korean.json",
   );
@@ -118,9 +144,10 @@ function loadKoreanChapter(ch) {
     .map((v) => ({ n: v.n, text: v.t || "", norm: normalize(v.t || "") }));
 }
 
-function loadFixes() {
-  if (!fs.existsSync(FIX_PATH)) return {};
-  return JSON.parse(fs.readFileSync(FIX_PATH, "utf8"));
+function loadFixes(bookId) {
+  const fixPath = path.join(repoRoot, "data", "verse-times-fix", `${bookId}.json`);
+  if (!fs.existsSync(fixPath)) return {};
+  return JSON.parse(fs.readFileSync(fixPath, "utf8"));
 }
 
 /** 자막 이벤트 → 문자 스트림 + 각 문자 시각(이벤트 구간 선형 보간) */
@@ -156,7 +183,6 @@ function alignVerses(verseNorms, trChars) {
   const m = T.length;
   if (n === 0 || m === 0) return verseNorms.map(() => -1);
 
-  // 절 경계: verseStarts[v] = V 내 시작 인덱스
   const verseStarts = [];
   let off = 0;
   for (const vn of verseNorms) {
@@ -164,14 +190,11 @@ function alignVerses(verseNorms, trChars) {
     off += vn.length;
   }
 
-  // 메모리: 두 행만 유지하되 경로 추적을 위해 방향 압축 저장
-  // 0=diag, 1=up(delete V), 2=left(insert T)
-  const INF = 1e9;
   let prev = new Float64Array(m + 1);
   let cur = new Float64Array(m + 1);
   const ptr = new Uint8Array((n + 1) * (m + 1));
   for (let j = 0; j <= m; j++) {
-    prev[j] = j; // insert
+    prev[j] = j;
     ptr[j] = 2;
   }
   ptr[0] = 0;
@@ -203,7 +226,6 @@ function alignVerses(verseNorms, trChars) {
     cur = tmp;
   }
 
-  // traceback: V index i → T index j when consuming a V char via diag
   const mapVtoT = new Int32Array(n).fill(-1);
   let i = n;
   let j = m;
@@ -220,16 +242,13 @@ function alignVerses(verseNorms, trChars) {
     }
   }
 
-  // 각 절 첫 글자 위치
-  const verseTrIndex = verseStarts.map((vs, vi) => {
+  return verseStarts.map((vs, vi) => {
     if (!verseNorms[vi].length) return -1;
-    // 절 앞쪽 몇 글자 중 매핑된 첫 인덱스
     for (let k = vs; k < vs + verseNorms[vi].length; k++) {
       if (mapVtoT[k] >= 0) return mapVtoT[k];
     }
     return -1;
   });
-  return verseTrIndex;
 }
 
 function charCount(text) {
@@ -239,12 +258,9 @@ function charCount(text) {
 function fillGaps(times, verses, chapterStart, chapterEnd) {
   const n = times.length;
   const out = times.slice();
-  // 앞쪽 미매칭 → chapterStart 이후 비율 (제목 2초는 이미 chapter start에 반영하지 않음 —
-  // 자막 정렬은 실제 낭독 시각이므로 제목 패드는 장 시작 마커 시각을 그대로 씀)
   let unmatched = 0;
 
-  // 앵커: 매칭된 절 + 장 시작/끝
-  const anchors = [{ v: 0, t: chapterStart }]; // 가상 0절 = 장 시작
+  const anchors = [{ v: 0, t: chapterStart }];
   for (let i = 0; i < n; i++) {
     if (out[i] != null && Number.isFinite(out[i])) anchors.push({ v: i + 1, t: out[i] });
     else unmatched++;
@@ -254,10 +270,9 @@ function fillGaps(times, verses, chapterStart, chapterEnd) {
   for (let a = 0; a < anchors.length - 1; a++) {
     const A = anchors[a];
     const B = anchors[a + 1];
-    const from = A.v + 1; // 채울 절 (1-based)
+    const from = A.v + 1;
     const to = B.v - 1;
     if (to < from) continue;
-    // from..to 를 A.t ~ B.t 사이 글자 비율로
     let sum = 0;
     const lens = [];
     for (let v = from; v <= to; v++) {
@@ -265,8 +280,6 @@ function fillGaps(times, verses, chapterStart, chapterEnd) {
       lens.push(len);
       sum += len;
     }
-    // 구간은 "A 절 낭독 후 ~ B 절 시작" — A가 0이면 장시작부터
-    // 간단히 from..to 전체를 [A.t, B.t)에 분배
     let cum = 0;
     for (let k = 0; k < lens.length; k++) {
       const v = from + k;
@@ -290,7 +303,6 @@ function applyFixes(times, verses, chapterNum, fixes, chapterStart, chapterEnd) 
     anchors.push({ v: vn, t: tv });
   }
   anchors.push({ v: verses.length + 1, t: chapterEnd });
-  // 보정 앵커 사이 재분배 (이미 보정된 절은 고정)
   const fixed = new Set(
     Object.keys(fixes)
       .map((ref) => {
@@ -315,9 +327,6 @@ function applyFixes(times, verses, chapterNum, fixes, chapterStart, chapterEnd) 
     for (let v = from; v <= to; v++) sum += Math.max(1, charCount(verses[v - 1].text));
     let cum = 0;
     for (let v = from; v <= to; v++) {
-      if (v !== from && fixed.has(v)) {
-        // skip overwrite of other fixed — shouldn't happen between
-      }
       if (v === from || fixed.has(v)) {
         cum += Math.max(1, charCount(verses[v - 1].text));
         continue;
@@ -325,24 +334,27 @@ function applyFixes(times, verses, chapterNum, fixes, chapterStart, chapterEnd) 
       times[v - 1] = A.t + (cum / sum) * (B.t - A.t);
       cum += Math.max(1, charCount(verses[v - 1].text));
     }
-    // ensure from kept
     times[from - 1] = A.t;
   }
   return times;
 }
 
 function main() {
-  const events = loadTranscript();
-  const chapterStarts = extractChapterStarts(events);
-  const fixes = loadFixes();
+  const bookId = resolveBookId(process.argv.slice(2));
+  const cfg = BOOK_CONFIG[bookId];
+  const { videoId, totalChapters, durationSec, chapterLabelRe } = cfg;
+
+  const events = loadTranscript(bookId);
+  const chapterStarts = extractChapterStarts(events, totalChapters, chapterLabelRe);
+  const fixes = loadFixes(bookId);
 
   const startList = [];
-  for (let ch = 1; ch <= TOTAL_CHAPTERS; ch++) {
+  for (let ch = 1; ch <= totalChapters; ch++) {
     startList.push(chapterStarts.has(ch) ? chapterStarts.get(ch) : null);
   }
 
-  console.log("=== 추출한 장 시작 (초) ===");
-  for (let ch = 1; ch <= TOTAL_CHAPTERS; ch++) {
+  console.log(`=== [${bookId}] 추출한 장 시작 (초) ===`);
+  for (let ch = 1; ch <= totalChapters; ch++) {
     const s = startList[ch - 1];
     console.log(`  ${ch}: ${s == null ? "null" : round1(s)}`);
   }
@@ -351,14 +363,14 @@ function main() {
   const missing = [];
   let unmatchedTotal = 0;
 
-  for (let ch = 1; ch <= TOTAL_CHAPTERS; ch++) {
+  for (let ch = 1; ch <= totalChapters; ch++) {
     const start = startList[ch - 1];
     if (start == null || !Number.isFinite(start)) {
       missing.push(ch);
       continue;
     }
     let end;
-    if (ch === TOTAL_CHAPTERS) end = DURATION_SEC;
+    if (ch === totalChapters) end = durationSec;
     else {
       const next = startList[ch];
       if (next == null || !Number.isFinite(next)) {
@@ -368,7 +380,7 @@ function main() {
       end = next;
     }
 
-    const verses = loadKoreanChapter(ch);
+    const verses = loadKoreanChapter(bookId, ch);
     const stream = buildCharStream(events, start, end);
     const verseNorms = verses.map((v) => v.norm);
     const trIndex = alignVerses(verseNorms, stream.chars);
@@ -379,7 +391,6 @@ function main() {
       return stream.times[idx];
     });
 
-    // 매칭 품질: 시각이 장 범위 밖이면 무효
     times = times.map((t) =>
       t != null && t >= start - 0.5 && t < end + 0.5 ? t : null,
     );
@@ -389,7 +400,6 @@ function main() {
     let finalTimes = filled.times;
     finalTimes = applyFixes(finalTimes, verses, ch, fixes, start, end);
 
-    // 단조 증가 보정
     for (let i = 1; i < finalTimes.length; i++) {
       if (finalTimes[i] < finalTimes[i - 1]) {
         finalTimes[i] = finalTimes[i - 1];
@@ -403,12 +413,13 @@ function main() {
     };
   }
 
-  const out = { videoId: VIDEO_ID, chapters, missing };
-  fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
+  const outPath = path.join(repoRoot, "public", "watch-times", `${bookId}.json`);
+  const out = { videoId, chapters, missing };
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
   const json = JSON.stringify(out);
-  fs.writeFileSync(OUT_PATH, json);
+  fs.writeFileSync(outPath, json);
 
-  console.log(`\nwrote ${OUT_PATH} (${Buffer.byteLength(json)} bytes)`);
+  console.log(`\nwrote ${outPath} (${Buffer.byteLength(json)} bytes)`);
   console.log(`built chapters: ${Object.keys(chapters).length}, missing: ${missing.length}`);
   console.log(`unmatched verses (pre-fill): ${unmatchedTotal}`);
   if (missing.length) console.log(`missing: ${missing.join(", ")}`);

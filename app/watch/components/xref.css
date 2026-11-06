@@ -1,0 +1,244 @@
+/* ── 관주 탭 (아이보리 · 딥 네이비) ─────────────────────────────────────── */
+
+.wt-tab-card[data-tone="ref"] {
+  --xref-bg: #faf8f3;
+  --xref-navy: #1f3a5f;
+  --xref-ink: #2b2b2b;
+  --xref-dot: #b8b2a6;
+  --xref-line: #ece7dd;
+  --xref-body: #6b655b;
+  --xref-mute: #9a9488;
+
+  padding: 16px 16px calc(var(--wt-remote-h) + var(--wt-safe-b) + 32px);
+  border: 0;
+  border-radius: 0;
+  background: var(--xref-bg);
+  box-shadow: none;
+  overflow: visible;
+}
+
+.wt-xref-title {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: var(--xref-ink);
+  word-break: keep-all;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-xref-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wt-xref-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-top: 1px solid var(--xref-line);
+  content-visibility: auto;
+  contain-intrinsic-size: auto 48px;
+}
+
+.wt-xref-row:first-child {
+  border-top: 0;
+}
+
+.wt-xref-vnum,
+.wt-xref-vnum.wt-verse-link {
+  flex: none;
+  width: 28px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 15px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.8;
+  color: var(--xref-navy);
+  text-align: left;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+.wt-xref-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.wt-xref-refs {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.8;
+  color: var(--xref-ink);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.wt-xref-sep {
+  color: var(--xref-dot);
+  font-weight: 400;
+}
+
+.wt-xref-link {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.wt-xref-link.is-open {
+  color: var(--xref-navy);
+  font-weight: 700;
+}
+
+/* 미리보기 높이 애니메이션 */
+.wt-xref-drawer {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 200ms ease-out, opacity 200ms ease-out;
+}
+
+.wt-xref-drawer[data-open] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.wt-xref-drawer-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.wt-xref-preview {
+  margin-top: 10px;
+  padding: 0 0 2px 12px;
+  border-left: 2px solid var(--xref-navy);
+}
+
+.wt-xref-preview-ref {
+  display: block;
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--xref-navy);
+  font-variant-numeric: tabular-nums;
+  text-box-trim: trim-both;
+  text-box-edge: text alphabetic;
+}
+
+.wt-xref-preview-text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--xref-body);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-xref-pv sup {
+  margin-right: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--xref-mute);
+  font-variant-numeric: tabular-nums;
+}
+
+.wt-xref-more {
+  color: var(--xref-mute);
+}
+
+.wt-xref-preview-loading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.wt-xref-preview-loading > span {
+  height: 10px;
+  border-radius: 4px;
+  background: rgba(31, 58, 95, 0.1);
+  animation: wt-shimmer 1.6s ease-in-out infinite;
+}
+
+.wt-xref-preview-loading > span:last-child {
+  width: 70%;
+}
+
+.wt-xref-empty {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--xref-body);
+}
+
+.wt-xref-retry {
+  margin-left: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--xref-navy);
+  font-size: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.wt-xref-credit {
+  margin: 20px 0 0;
+  padding: 0;
+  border: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--xref-mute);
+}
+
+.wt-xref-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.wt-xref-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.wt-xref-skeleton > span {
+  height: 14px;
+  width: 72%;
+  border-radius: 4px;
+  background: rgba(31, 58, 95, 0.08);
+  animation: wt-shimmer 1.6s ease-in-out infinite;
+}
+
+.wt-xref-skeleton > span:nth-child(2) {
+  width: 58%;
+}
+
+.wt-xref-skeleton > span:nth-child(3) {
+  width: 64%;
+}

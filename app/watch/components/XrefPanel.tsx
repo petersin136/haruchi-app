@@ -1,7 +1,7 @@
 "use client";
 
 import { memo, useEffect, useState } from "react";
-import { BOOKS, type BookId } from "@/app/bible-reading/books";
+import type { BookId } from "@/app/bible-reading/books";
 import {
   loadPreview,
   loadXrefRows,
@@ -10,6 +10,7 @@ import {
   type XrefRow,
 } from "./xref";
 import { VerseLink } from "./VerseSeek";
+import "./xref.css";
 
 type LoadState<T> =
   | { status: "loading" }
@@ -32,20 +33,12 @@ function XrefPanel({ bookId, chapter }: { bookId: BookId; chapter: number }) {
     };
   }, [bookId, chapter, retry]);
 
-  const total = state.status === "done" ? state.data.reduce((n, r) => n + r.refs.length, 0) : 0;
-
   return (
     <div className="wt-xref">
-      <div className="wt-tab-top">
-        <span className="wt-tab-kicker">Cross References</span>
-        {state.status === "done" && total > 0 && <span className="wt-tab-badge">{total}개</span>}
-      </div>
-      <h2 className="wt-tab-title">
-        {BOOKS[bookId].name} {chapter}장 관주
-      </h2>
+      <h2 className="wt-xref-title">{chapter}장 관주</h2>
 
       {state.status === "loading" && (
-        <div className="wt-tab-skeleton" aria-hidden>
+        <div className="wt-xref-skeleton" aria-hidden>
           <span />
           <span />
           <span />
@@ -93,23 +86,29 @@ const XrefVerseRow = memo(function XrefVerseRow({ chapter, row }: { chapter: num
         {row.verse}
       </VerseLink>
       <div className="wt-xref-body">
-        <div className="wt-xref-chips">
-          {row.refs.map((ref) => {
+        <p className="wt-xref-refs">
+          {row.refs.map((ref, i) => {
             const active = open?.key === ref.key;
             return (
-              <button
-                key={ref.key}
-                type="button"
-                className={`wt-xref-chip${active ? " is-open" : ""}`}
-                aria-expanded={active}
-                onClick={() => setOpen(active ? null : ref)}
-              >
-                {ref.label}
-              </button>
+              <span key={ref.key}>
+                {i > 0 && <span className="wt-xref-sep"> · </span>}
+                <button
+                  type="button"
+                  className={`wt-xref-link${active ? " is-open" : ""}`}
+                  aria-expanded={active}
+                  onClick={() => setOpen(active ? null : ref)}
+                >
+                  {ref.label}
+                </button>
+              </span>
             );
           })}
+        </p>
+        <div className="wt-xref-drawer" data-open={open ? "" : undefined} aria-hidden={!open}>
+          <div className="wt-xref-drawer-inner">
+            {open && <XrefPreview key={open.key} refItem={open} />}
+          </div>
         </div>
-        {open && <XrefPreview key={open.key} refItem={open} />}
       </div>
     </li>
   );
@@ -135,7 +134,7 @@ function XrefPreview({ refItem }: { refItem: XrefRef }) {
 
   return (
     <div className="wt-xref-preview">
-      <span className="wt-xref-preview-ref">{refItem.fullLabel} · 개역한글</span>
+      <span className="wt-xref-preview-ref">{refItem.label}</span>
 
       {state.status === "loading" && (
         <div className="wt-xref-preview-loading" aria-hidden>
