@@ -306,6 +306,13 @@ function MobileTopBar({
             >
               읽기표
             </Link>
+            <Link
+              className="brp-mobile-topbar-sheet-item"
+              href="/study/john1/1"
+              onClick={() => setMenuOpen(false)}
+            >
+              공부 노트
+            </Link>
             <div className="brp-mobile-topbar-sheet-divider" role="separator" />
             <a
               className="brp-mobile-topbar-sheet-item"
