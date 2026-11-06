@@ -73,6 +73,32 @@ type NotePos = {
   badge?: number;
 };
 
+/** 시작점~본문 오른쪽 끝이 본문 폭의 이 비율보다 좁으면 줄 왼쪽 끝에서 시작 */
+const NOTE_MIN_RATIO = 0.4;
+/** 같은 줄 앞 메모가 이 폭보다 좁아지면 뒤 메모는 번호 배지로 */
+const NOTE_MIN_ROOM = 40;
+
+const LONG_PRESS_MS = 350;
+const MOVE_CANCEL_PX = 8;
+const AUTO_SCROLL_EDGE = 60;
+const TOOLBAR_H = 44;
+const TOOLBAR_GAP = 10;
+const SEL_HANDLE_SIZE = 14;
+
+type DragMode = "press" | "start" | "end";
+
+type SelRect = { top: number; left: number; width: number; height: number };
+
+/** 선택 범위 위에 둘 자리가 없으면 아래로 */
+function toolbarTop(rangeTop: number, rangeBottom: number): number {
+  const above = rangeTop - TOOLBAR_H - TOOLBAR_GAP;
+  if (above >= 8) return above;
+  return Math.min(
+    rangeBottom + TOOLBAR_GAP,
+    window.innerHeight - TOOLBAR_H - 8,
+  );
+}
+
 type BubbleState = {
   text: string;
   x: number;
