@@ -23,7 +23,7 @@ import VerseList from "./components/VerseList";
 import ProgressGrid from "./components/ProgressGrid";
 import Link from "next/link";
 import MobileTopBar, {
-  isWatchAvailable,
+  watchHrefFor,
 } from "./components/MobileTopBar";
 import BookChapterDrawer from "./components/BookChapterDrawer";
 // 새 "헬라어 보기 v2" 구조 — 신약 27권 전체, 히브리어는 구약 39권 전체.
@@ -1908,22 +1908,12 @@ export default function BibleReadingPage() {
         </a>
         {/* 데스크탑/태블릿 (≥640px) — 풀 네비. 톱니바퀴 + 텍스트 링크들이 한 줄. */}
         <nav className="brp-nav brp-nav--desktop" aria-label="Account links">
-          {isWatchAvailable(bookId) ? (
-            <Link
-              href={`/watch/${bookId}?chapter=${chapterNumber}`}
-              className="brp-nav-text-link brp-nav-link"
-            >
-              영상으로 보기
-            </Link>
-          ) : (
-            <span
-              className="brp-nav-text-link brp-nav-link"
-              aria-disabled="true"
-              style={{ opacity: 0.45, cursor: "not-allowed" }}
-            >
-              영상으로 보기 · 준비 중
-            </span>
-          )}
+          <Link
+            href={watchHrefFor(bookId, chapterNumber)}
+            className="brp-nav-text-link brp-nav-link"
+          >
+            영상으로 보기
+          </Link>
           <Link href="/plan" className="brp-nav-text-link brp-nav-link">
             읽기표
           </Link>

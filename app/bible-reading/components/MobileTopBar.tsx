@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useEffect, useState } from "react";
+import { memo, useEffect, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import Dropdown from "./Dropdown";
 
@@ -19,6 +19,14 @@ export const WATCH_AVAILABLE_BOOKS = ["genesis"] as const;
 
 export function isWatchAvailable(bookId: string): boolean {
   return (WATCH_AVAILABLE_BOOKS as readonly string[]).includes(bookId);
+}
+
+/** 영상 입구 URL — 없는 책은 /watch/genesis 로 보낸다. */
+export function watchHrefFor(bookId: string, chapter: number): string {
+  if (isWatchAvailable(bookId)) {
+    return `/watch/${bookId}?chapter=${chapter}`;
+  }
+  return "/watch/genesis";
 }
 
 const MODE_OPTIONS: { value: MobileModeChoice; label: string }[] = [
@@ -43,6 +51,18 @@ type MobileTopBarProps = {
 };
 
 const STROKE = 1.5;
+const STROKE_ENTRY = 1.75;
+
+const ICON_HIT: CSSProperties = {
+  width: 40,
+  height: 40,
+  flexShrink: 0,
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  color: "inherit",
+  textDecoration: "none",
+};
 
 function SearchIcon() {
   return (
@@ -60,6 +80,52 @@ function SearchIcon() {
         fill="none"
         stroke="currentColor"
         strokeWidth={STROKE}
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function PlayIcon() {
+  return (
+    <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true">
+      <path
+        d="M7 4.75v10.5L15.5 10 7 4.75z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={STROKE_ENTRY}
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function CalendarIcon() {
+  return (
+    <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true">
+      <rect
+        x="3.25"
+        y="4.5"
+        width="13.5"
+        height="12.25"
+        rx="1.75"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={STROKE_ENTRY}
+      />
+      <path
+        d="M3.25 8.25h13.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={STROKE_ENTRY}
+        strokeLinecap="round"
+      />
+      <path
+        d="M7 3.25v2.5M13 3.25v2.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={STROKE_ENTRY}
         strokeLinecap="round"
       />
     </svg>
@@ -143,8 +209,7 @@ function MobileTopBar({
     ? `${bookName} ${chapterNumber}장`
     : "책 선택";
 
-  const watchReady = isWatchAvailable(bookId);
-  const watchHref = `/watch/${bookId}?chapter=${chapterNumber}`;
+  const watchHref = watchHrefFor(bookId, chapterNumber);
 
   return (
     <>
@@ -170,7 +235,10 @@ function MobileTopBar({
         </button>
 
         <div className="brp-mobile-topbar-end">
-          <div className="brp-mobile-topbar-mode">
+          <div
+            className="brp-mobile-topbar-mode"
+            style={{ flexShrink: 1, minWidth: 0 }}
+          >
             <Dropdown<MobileModeChoice>
               value={modeChoice}
               options={MODE_OPTIONS}
@@ -180,9 +248,28 @@ function MobileTopBar({
               size="sm"
             />
           </div>
+          <Link
+            href={watchHref}
+            className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon"
+            style={ICON_HIT}
+            aria-label="영상으로 보기"
+            title="영상으로 보기"
+          >
+            <PlayIcon />
+          </Link>
+          <Link
+            href="/plan"
+            className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon"
+            style={ICON_HIT}
+            aria-label="읽기표"
+            title="읽기표"
+          >
+            <CalendarIcon />
+          </Link>
           <button
             type="button"
             className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon brp-mobile-topbar-menu-btn"
+            style={{ flexShrink: 0 }}
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
             aria-expanded={menuOpen}
@@ -205,23 +292,13 @@ function MobileTopBar({
             aria-label="계정·설정 메뉴"
             onClick={(e) => e.stopPropagation()}
           >
-            {watchReady ? (
-              <Link
-                className="brp-mobile-topbar-sheet-item"
-                href={watchHref}
-                onClick={() => setMenuOpen(false)}
-              >
-                영상으로 보기
-              </Link>
-            ) : (
-              <span
-                className="brp-mobile-topbar-sheet-item"
-                aria-disabled="true"
-                style={{ opacity: 0.45, cursor: "not-allowed" }}
-              >
-                영상으로 보기 · 준비 중
-              </span>
-            )}
+            <Link
+              className="brp-mobile-topbar-sheet-item"
+              href={watchHref}
+              onClick={() => setMenuOpen(false)}
+            >
+              영상으로 보기
+            </Link>
             <Link
               className="brp-mobile-topbar-sheet-item"
               href="/plan"
