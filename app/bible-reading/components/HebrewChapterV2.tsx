@@ -27,6 +27,7 @@ import {
   useState,
   type PointerEvent as ReactPointerEvent,
 } from "react";
+import ChapterEndSentinel from "./ChapterEndSentinel";
 
 type TanakhId =
   | "genesis"
@@ -268,6 +269,8 @@ type Props = {
   bookLabel?: string;
   chapterLabel?: string;
   chapter: number;
+  onEndVisibilityChange?: (visible: boolean) => void;
+  endSentinelNonce?: number;
 };
 
 const DATA_CACHE = new Map<string, V2ChapterFile>();
@@ -277,6 +280,8 @@ export default function HebrewChapterV2({
   bookLabel = "창세기",
   chapterLabel,
   chapter,
+  onEndVisibilityChange,
+  endSentinelNonce = 0,
 }: Props) {
   const cacheKey = `${bookId}:${chapter}`;
   const [data, setData] = useState<V2ChapterFile | null>(
@@ -810,6 +815,13 @@ export default function HebrewChapterV2({
           );
         })}
       </ol>
+
+      {onEndVisibilityChange ? (
+        <ChapterEndSentinel
+          key={`h2-end-${bookId}-${chapter}-${endSentinelNonce}`}
+          onVisibilityChange={onEndVisibilityChange}
+        />
+      ) : null}
 
       <footer className="brp-h2-footer">
         <small>

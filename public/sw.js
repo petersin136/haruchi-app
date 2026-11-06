@@ -6,7 +6,7 @@
  *  - cache-first           : /_next/static/* (해시된 immutable 정적 자산)
  *  - network-first         : 페이지 HTML 문서 (오프라인 대비 캐시 fallback)
  *  - stale-while-revalidate: 기타 동일 출처 GET (구글 폰트 등 cross-origin 포함)
- *  - network-only          : /api/*, supabase 통신 (항상 최신)
+ *  - network-only          : /api/* (항상 최신)
  *
  * 이 SW 파일은 자동 등록되지 않는다. 등록하려면 클라이언트 어딘가에서
  *   navigator.serviceWorker.register("/sw.js")
@@ -122,8 +122,6 @@ self.addEventListener("message", (event) => {
 
 function isApiOrDynamic(url) {
   if (url.pathname.startsWith("/api/")) return true;
-  if (url.hostname.endsWith("supabase.co")) return true;
-  if (url.hostname.endsWith("supabase.in")) return true;
   return false;
 }
 

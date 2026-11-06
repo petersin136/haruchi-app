@@ -40,6 +40,7 @@ import {
   useState,
   type PointerEvent as ReactPointerEvent,
 } from "react";
+import ChapterEndSentinel from "./ChapterEndSentinel";
 
 // 책별 v2 데이터를 동적 import — 페이지가 그 책의 헬라어 모드에 진입할 때
 // 만 chunk 가 전송된다.
@@ -291,6 +292,8 @@ type Props = {
   chapterLabel?: string;
   // 현재 표시할 장 번호.
   chapter: number;
+  onEndVisibilityChange?: (visible: boolean) => void;
+  endSentinelNonce?: number;
 };
 
 // 한 세션 동안 책+장 데이터는 모듈 스코프 캐시에 보관한다.
@@ -301,6 +304,8 @@ export default function GreekChapterV2({
   bookLabel = "마태복음",
   chapterLabel,
   chapter,
+  onEndVisibilityChange,
+  endSentinelNonce = 0,
 }: Props) {
   const cacheKey = `${bookId}:${chapter}`;
   const [data, setData] = useState<V2ChapterFile | null>(
@@ -816,6 +821,13 @@ export default function GreekChapterV2({
           );
         })}
       </ol>
+
+      {onEndVisibilityChange ? (
+        <ChapterEndSentinel
+          key={`g2-end-${bookId}-${chapter}-${endSentinelNonce}`}
+          onVisibilityChange={onEndVisibilityChange}
+        />
+      ) : null}
 
       <footer className="brp-g2-footer">
         <small>

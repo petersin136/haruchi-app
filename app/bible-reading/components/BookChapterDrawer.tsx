@@ -38,7 +38,7 @@ type BookChapterDrawerProps = {
   bookId: BookId;
   chapterNumber: number;
   bookConfirmed: boolean;
-  /** 몰입·검색·절 선택 모드 등 — true 면 스와이프/표시 안 함 */
+  /** 검색·절 선택 모드 등 — true 면 스와이프/표시 안 함 */
   disabled: boolean;
   onSelectBookChapter: (bookId: BookId, chapter: number) => void;
 };

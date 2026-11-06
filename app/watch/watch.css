@@ -1,0 +1,1797 @@
+/* =============================================================================
+   /watch — 영상 + 스와이프 탭 + 떠 있는 리모컨
+   사이트 토큰(--bg, --ink, --surface …)과 data-theme="dark" 를 그대로 상속한다.
+   html/body 에 overflow-x:hidden 이 있어 body 기준 sticky 가 동작하지 않으므로
+   .wt-page 를 자체 스크롤 컨테이너로 만든다.
+   ============================================================================= */
+
+.wt-page {
+  --wt-max: 720px;
+  --wt-remote-h: 68px;
+  --wt-safe-b: env(safe-area-inset-bottom, 0px);
+
+  --tone-ref: #3d6fe0;
+  --tone-orig: #b3121b;
+  --tone-orig-2: #d99a3a;
+  --tone-sum: #6f9270;
+
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  background: var(--bg);
+  color: var(--ink);
+  scrollbar-width: none;
+}
+.wt-page::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── 상단 바 ─────────────────────────────────────────────────────────────── */
+
+.wt-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: var(--wt-max);
+  margin: 0 auto;
+  padding: calc(env(safe-area-inset-top, 0px) + 10px) 16px 10px;
+}
+
+.wt-back {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  background: var(--surface-alt);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.wt-back:active {
+  transform: scale(0.94);
+}
+@media (hover: hover) {
+  .wt-back:hover {
+    background: var(--line);
+  }
+}
+
+.wt-top-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.wt-top-kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink-mute);
+  line-height: 1.2;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-top-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+/* ── 영상 (sticky, 16:9) ─────────────────────────────────────────────────── */
+
+.wt-video {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #000;
+}
+
+.wt-video-frame {
+  position: relative;
+  width: 100%;
+  max-width: var(--wt-max);
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  overflow: hidden;
+}
+
+.wt-video-host,
+.wt-video-host > *,
+.wt-video-host iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.wt-video-poster {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+}
+.wt-video-poster::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.wt-video-spinner {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #fff;
+  animation: wt-spin 0.8s linear infinite;
+}
+
+.wt-video-msg {
+  position: relative;
+  padding: 0 24px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}
+
+@keyframes wt-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 760px) {
+  .wt-video {
+    padding: 12px 16px 0;
+    background: var(--bg);
+  }
+  .wt-video-frame {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-2);
+  }
+}
+
+/* ── 본문 ────────────────────────────────────────────────────────────────── */
+
+.wt-main {
+  max-width: var(--wt-max);
+  margin: 0 auto;
+  padding: 20px 16px calc(var(--wt-remote-h) + var(--wt-safe-b) + 48px);
+}
+
+/* 현재 장 */
+.wt-now {
+  margin-bottom: 20px;
+}
+
+.wt-now-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.wt-now-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--ink-soft);
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-now-num {
+  display: inline-block;
+  font-weight: 800;
+  color: var(--ink);
+  animation: wt-pop 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+@keyframes wt-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.wt-now-time {
+  flex: none;
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+.wt-now-dur {
+  font-weight: 500;
+  color: var(--ink-mute);
+}
+
+.wt-now-bar {
+  position: relative;
+  height: 3px;
+  margin-top: 14px;
+  border-radius: var(--radius-pill);
+  background: var(--line);
+  overflow: hidden;
+}
+.wt-now-bar > span {
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  border-radius: inherit;
+  background: var(--ink);
+  transition: transform 0.5s linear;
+}
+
+/* ── 스와이프 탭 ─────────────────────────────────────────────────────────── */
+
+.wt-tabs[data-tone="ref"],
+.wt-tab-card[data-tone="ref"],
+.wt-dot[data-tone="ref"] {
+  --tone: var(--tone-ref);
+  --tone-2: #6a9bf0;
+}
+.wt-tabs[data-tone="orig"],
+.wt-tab-card[data-tone="orig"],
+.wt-dot[data-tone="orig"] {
+  --tone: var(--tone-orig);
+  --tone-2: var(--tone-orig-2);
+}
+.wt-tabs[data-tone="sum"],
+.wt-tab-card[data-tone="sum"],
+.wt-dot[data-tone="sum"] {
+  --tone: var(--tone-sum);
+  --tone-2: #a3bf8f;
+}
+
+.wt-tabs-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 0 2px;
+}
+
+.wt-tabs-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--tone);
+  line-height: 1.2;
+  transition: color 0.25s ease;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-dots {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.wt-dot {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.wt-dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--line-strong);
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, background 0.25s ease;
+}
+.wt-dot.is-active::after {
+  width: 18px;
+  background: var(--tone);
+}
+
+.wt-tabs-track {
+  display: flex;
+  margin: 0 -16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.wt-tabs-track::-webkit-scrollbar {
+  display: none;
+}
+
+.wt-tab {
+  flex: 0 0 100%;
+  padding: 0 16px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.wt-tab-card {
+  position: relative;
+  min-height: 260px;
+  padding: 24px 22px;
+  border-radius: 22px;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--tone-2) 22%, transparent) 0%, transparent 60%),
+    linear-gradient(160deg, color-mix(in srgb, var(--tone) 12%, var(--surface)) 0%, var(--surface) 75%);
+  border: 1px solid color-mix(in srgb, var(--tone) 18%, var(--line));
+  box-shadow: var(--shadow-1);
+}
+
+.wt-tab-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.wt-tab-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tone);
+  line-height: 1.2;
+  text-box-trim: trim-both;
+  text-box-edge: text alphabetic;
+}
+
+.wt-tab-badge {
+  padding: 5px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--tone);
+  background: color-mix(in srgb, var(--tone) 12%, transparent);
+}
+
+.wt-tab-title {
+  margin: 28px 0 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: var(--ink);
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-tab-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 28px;
+}
+.wt-tab-skeleton > span {
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--tone) 10%, transparent) 0%,
+    color-mix(in srgb, var(--tone) 22%, transparent) 50%,
+    color-mix(in srgb, var(--tone) 10%, transparent) 100%
+  );
+  background-size: 200% 100%;
+  animation: wt-shimmer 1.6s ease-in-out infinite;
+}
+.wt-tab-skeleton > span:nth-child(2) {
+  width: 82%;
+}
+.wt-tab-skeleton > span:nth-child(3) {
+  width: 58%;
+}
+
+@keyframes wt-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+/* 트랙 높이는 SwipeTabs 가 보이는 탭에 맞춰 지정한다. */
+.wt-tabs-track {
+  align-items: flex-start;
+}
+
+/* ── 관주 탭 ────────────────────────────────────────────────────────────── */
+
+.wt-tab-card[data-tone="ref"] {
+  padding-bottom: 18px;
+}
+
+.wt-xref-list {
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wt-xref-row {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid color-mix(in srgb, var(--tone) 12%, var(--line));
+  /* 시 119편(176절) 같은 긴 장도 화면 밖 절은 렌더링을 건너뛴다. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 64px;
+}
+.wt-xref-row:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.wt-xref-vnum {
+  flex: none;
+  width: 24px;
+  padding-top: 5px;
+  font-size: 13px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  color: var(--tone);
+  text-align: right;
+}
+
+.wt-xref-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.wt-xref-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.wt-xref-chip {
+  height: 26px;
+  padding: 0 10px;
+  border: 1px solid color-mix(in srgb, var(--tone) 22%, var(--line));
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--tone) 6%, var(--surface));
+  color: color-mix(in srgb, var(--tone) 70%, var(--ink));
+  font-size: 12.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+}
+.wt-xref-chip:active {
+  transform: scale(0.95);
+}
+.wt-xref-chip.is-open {
+  border-color: var(--tone);
+  background: var(--tone);
+  color: #fff;
+}
+@media (hover: hover) {
+  .wt-xref-chip:not(.is-open):hover {
+    background: color-mix(in srgb, var(--tone) 12%, var(--surface));
+  }
+}
+
+.wt-xref-preview {
+  margin-top: 10px;
+  padding: 14px 16px 16px;
+  border-radius: 14px;
+  border-left: 3px solid var(--tone);
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgba(22, 22, 26, 0.04), 0 4px 14px color-mix(in srgb, var(--tone) 10%, transparent);
+  animation: wt-xref-open 0.22s ease;
+}
+
+@keyframes wt-xref-open {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.wt-xref-preview-ref {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--tone);
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-xref-preview-text {
+  margin: 12px 0 0;
+  font-family: var(--reader-font-family, inherit);
+  font-size: 15.5px;
+  line-height: 1.8;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.wt-xref-pv sup {
+  margin-right: 3px;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--ink-mute);
+  font-variant-numeric: tabular-nums;
+}
+
+.wt-xref-more {
+  color: var(--ink-mute);
+}
+
+.wt-xref-preview-loading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+}
+.wt-xref-preview-loading > span {
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--tone) 12%, transparent);
+  animation: wt-shimmer 1.6s ease-in-out infinite;
+}
+.wt-xref-preview-loading > span:last-child {
+  width: 70%;
+}
+
+.wt-xref-empty {
+  margin: 20px 0 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.wt-xref-retry {
+  margin-left: 6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--tone);
+  font-size: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.wt-xref-credit {
+  margin: 18px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid color-mix(in srgb, var(--tone) 12%, var(--line));
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--ink-mute);
+}
+.wt-xref-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── 원어 탭 ────────────────────────────────────────────────────────────── */
+
+.wt-tab-card[data-tone="orig"] {
+  padding-bottom: 18px;
+}
+
+.wt-kw-list {
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wt-kw-row {
+  display: flex;
+  gap: 10px;
+  padding: 12px 0;
+  border-top: 1px solid color-mix(in srgb, var(--tone) 12%, var(--line));
+  content-visibility: auto;
+  contain-intrinsic-size: auto 118px;
+}
+.wt-kw-row:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+.wt-kw-row .wt-xref-vnum {
+  padding-top: 8px;
+}
+
+.wt-kw-cards {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+/* 히브리어 절은 낭독 순서대로 오른쪽 → 왼쪽에 카드를 놓는다. */
+.wt-kw-cards.is-rtl {
+  direction: rtl;
+}
+
+.wt-kw-row.is-empty {
+  align-items: center;
+  contain-intrinsic-size: auto 40px;
+}
+.wt-kw-row.is-empty .wt-xref-vnum {
+  padding-top: 0;
+  opacity: 0.5;
+}
+
+.wt-kw-none {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--ink-mute);
+  opacity: 0.8;
+}
+
+.wt-kw-card {
+  direction: ltr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  padding: 10px 6px 9px;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--tone) 16%, var(--line));
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--tone-2) 9%, var(--surface)) 0%,
+    var(--surface) 100%
+  );
+  text-align: center;
+}
+
+.wt-kw-word {
+  max-width: 100%;
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  unicode-bidi: isolate;
+}
+.wt-kw-word.is-hebrew {
+  font-family: "SBL Hebrew", "Ezra SIL", "Times New Roman", "Arial Hebrew", "Noto Serif Hebrew",
+    "David", serif;
+  font-size: 24px;
+  font-feature-settings: "kern", "mark", "mkmk";
+}
+
+.wt-kw-pron {
+  margin-top: 4px;
+  max-width: 100%;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--tone);
+  overflow-wrap: anywhere;
+}
+
+.wt-kw-mean {
+  margin-top: 6px;
+  max-width: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.wt-kw-pos {
+  margin-top: 7px;
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--tone) 11%, transparent);
+  color: color-mix(in srgb, var(--tone) 80%, var(--ink));
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* ── 원어 탭 (포스터) ───────────────────────────────────────────────────── */
+
+.wt-tab-card[data-tone="orig"] {
+  --wp-bg: #fbf3e6;
+  --wp-accent: #b3121b;
+  --wp-sub: #8a5a4a;
+  --wp-ink: #2b1a14;
+  --wp-line: rgba(179, 18, 27, 0.12);
+  --wp-label: #a08878;
+
+  padding: 28px 22px 22px;
+  background: var(--wp-bg);
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--wp-ink);
+}
+
+.wt-wp-kicker {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: lowercase;
+  line-height: 1.2;
+  color: var(--wp-sub);
+  text-box-trim: trim-both;
+  text-box-edge: text alphabetic;
+}
+
+.wt-wp-title {
+  margin: 6px 0 0;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: var(--wp-ink);
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-wp-list {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wt-wp-item + .wt-wp-item {
+  border-top: 1px solid var(--wp-line);
+}
+
+/* 접힌 상태 — 한 줄 */
+.wt-wp-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 64px;
+  padding: 8px 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.wt-wp-head:focus-visible {
+  outline: 2px solid var(--wp-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.wt-wp-gloss {
+  flex: 1;
+  min-width: 0;
+  font-size: 15px;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wt-wp-pron {
+  font-weight: 400;
+  color: var(--wp-sub);
+}
+.wt-wp-dot {
+  color: var(--wp-sub);
+}
+.wt-wp-mean {
+  font-weight: 800;
+  color: var(--wp-ink);
+}
+
+.wt-wp-word {
+  flex: none;
+  max-width: 55%;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--wp-accent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  unicode-bidi: isolate;
+}
+
+.wt-wp-caret {
+  flex: none;
+  color: var(--wp-sub);
+  transition: transform 200ms ease-out;
+}
+.wt-wp-item.is-open .wt-wp-caret {
+  transform: rotate(180deg);
+}
+
+/* 펼친 상태 */
+.wt-wp-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 4px 0 20px;
+}
+
+.wt-wp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.wt-wp-field dt {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--wp-label);
+}
+.wt-wp-field dd {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--wp-ink);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.wt-wp-root {
+  margin-right: 8px;
+  font-weight: 700;
+  color: var(--wp-accent);
+  unicode-bidi: isolate;
+}
+.wt-wp-root-pron {
+  margin-right: 6px;
+  color: var(--wp-sub);
+}
+
+.wt-wp-def-en {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--wp-label);
+}
+
+.wt-wp-usage {
+  display: block;
+  font-variant-numeric: tabular-nums;
+}
+
+.wt-wp-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.wt-wp-chip {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: rgba(179, 18, 27, 0.08);
+  color: var(--wp-accent);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+.wt-wp-chip.wt-verse-link {
+  padding: 3px 9px;
+  background: rgba(179, 18, 27, 0.08);
+  text-decoration: none;
+}
+
+.wt-wp-drawer {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 200ms ease-out, opacity 200ms ease-out;
+}
+.wt-wp-drawer[data-open] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.wt-wp-drawer-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.wt-wp-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+.wt-wp-skeleton > span {
+  height: 40px;
+  border-radius: 6px;
+  background: var(--wp-line);
+  animation: wt-shimmer 1.6s ease-in-out infinite;
+}
+
+.wt-wp-empty {
+  margin: 28px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--wp-sub);
+}
+
+.wt-wp-retry {
+  margin-left: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--wp-accent);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.wt-wp-credit {
+  margin: 20px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--wp-line);
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--wp-sub);
+}
+
+/* ── 요약 탭 ────────────────────────────────────────────────────────────── */
+
+.wt-sum-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 32px 16px;
+  border: 1px dashed color-mix(in srgb, var(--tone) 35%, var(--line));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--tone) 5%, transparent);
+  text-align: center;
+}
+
+.wt-sum-empty-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: color-mix(in srgb, var(--tone) 75%, var(--ink));
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-sum-empty-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-mute);
+  word-break: keep-all;
+}
+
+.wt-sum-body {
+  margin-top: 22px;
+}
+
+.wt-sum-headline {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: color-mix(in srgb, var(--tone) 70%, var(--ink));
+  word-break: keep-all;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-sum-label {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--tone) 14%, transparent);
+  color: color-mix(in srgb, var(--tone) 80%, var(--ink));
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+  vertical-align: 1px;
+}
+
+.wt-sum-theme {
+  margin: 14px 0 0;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  word-break: keep-all;
+}
+
+.wt-sum-points {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wt-sum-point {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid color-mix(in srgb, var(--tone) 14%, var(--line));
+}
+.wt-sum-point:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.wt-sum-point-num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  border-radius: 50%;
+  background: var(--tone);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.wt-sum-point-text {
+  flex: 1;
+  min-width: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.wt-sum-key {
+  margin: 20px 0 0;
+  padding: 14px 16px 16px;
+  border-radius: 14px;
+  border-left: 3px solid var(--tone);
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgba(22, 22, 26, 0.04), 0 4px 14px color-mix(in srgb, var(--tone) 10%, transparent);
+}
+
+.wt-sum-key-ref {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--tone) 80%, var(--ink));
+}
+
+.wt-sum-key-text {
+  margin: 10px 0 0;
+  font-family: var(--reader-font-family, inherit);
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: var(--ink);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* ── 제목(장·절 선택 열기) ──────────────────────────────────────────────── */
+
+.wt-now-pick {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.28em;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.wt-now-pick:active {
+  opacity: 0.7;
+}
+
+.wt-now-verse {
+  margin-left: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--ink-mute);
+  font-variant-numeric: tabular-nums;
+}
+
+.wt-now-caret {
+  align-self: center;
+  color: var(--ink-mute);
+}
+
+/* ── 절 이동 링크 (관주·원어) ────────────────────────────────────────────── */
+
+.wt-verse-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  -webkit-tap-highlight-color: transparent;
+}
+.wt-verse-link:active {
+  opacity: 0.6;
+}
+
+/* ── 장·절 선택 시트 ────────────────────────────────────────────────────── */
+
+.wt-vs-layer {
+  --vs-bg: #fbf3e6;
+  --vs-accent: #b3121b;
+  --vs-sub: #8a5a4a;
+  --vs-ink: #2b1a14;
+  --vs-tint: rgba(179, 18, 27, 0.06);
+
+  position: fixed;
+  inset: 0;
+  z-index: 85;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.wt-vs-backdrop {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(20, 10, 8, 0.42);
+  opacity: 0;
+  cursor: default;
+  transition: opacity 250ms ease-out;
+}
+
+.wt-vs {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  max-height: 72vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 10px 20px calc(var(--wt-safe-b) + 24px);
+  border-radius: 24px 24px 0 0;
+  background: var(--vs-bg);
+  color: var(--vs-ink);
+  transform: translateY(100%);
+  transition: transform 250ms ease-out;
+}
+
+.wt-vs-layer.is-shown .wt-vs-backdrop {
+  opacity: 1;
+}
+.wt-vs-layer.is-shown .wt-vs {
+  transform: translateY(0);
+}
+
+.wt-vs-grip {
+  display: block;
+  width: 36px;
+  height: 4px;
+  margin: 0 auto 20px;
+  border-radius: var(--radius-pill);
+  background: rgba(179, 18, 27, 0.2);
+}
+
+.wt-vs-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.wt-vs-kicker {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  line-height: 1.2;
+  color: var(--vs-sub);
+  text-box-trim: trim-both;
+  text-box-edge: text alphabetic;
+}
+
+.wt-vs-title {
+  margin: 10px 0 0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-vs-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--vs-accent);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.wt-vs-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.wt-vs-cell {
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: var(--vs-tint);
+  color: var(--vs-ink);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s ease, transform 0.12s ease;
+}
+.wt-vs-cell:active:not(:disabled) {
+  transform: scale(0.94);
+}
+.wt-vs-cell.is-current {
+  background: var(--vs-accent);
+  color: #fff;
+}
+.wt-vs-cell:disabled {
+  background: transparent;
+  color: var(--vs-sub);
+  opacity: 0.35;
+  cursor: default;
+}
+@media (hover: hover) {
+  .wt-vs-cell:not(:disabled):not(.is-current):hover {
+    background: rgba(179, 18, 27, 0.12);
+  }
+}
+
+/* ── 개발용 장 기록 ──────────────────────────────────────────────────────── */
+
+.wt-dev {
+  margin-top: 24px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  font-size: 13px;
+}
+
+.wt-dev-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  cursor: pointer;
+  list-style: none;
+}
+.wt-dev-summary::-webkit-details-marker {
+  display: none;
+}
+
+.wt-dev-count {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-mute);
+}
+
+.wt-dev-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 14px 14px;
+}
+
+.wt-dev-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.wt-dev-stepper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.wt-dev-stepper > span {
+  min-width: 44px;
+  text-align: center;
+}
+.wt-dev-stepper > button,
+.wt-dev-actions > button {
+  height: 32px;
+  min-width: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+  color: var(--ink);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.wt-dev-meta {
+  color: var(--ink-mute);
+  font-variant-numeric: tabular-nums;
+}
+
+.wt-dev-record {
+  height: 40px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.wt-dev-record:active {
+  opacity: 0.85;
+}
+
+.wt-dev-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.wt-dev-record:disabled,
+.wt-dev-actions > button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.wt-dev-divider {
+  height: 1px;
+  margin: 4px 0;
+  background: var(--line);
+}
+
+.wt-dev-subtitle {
+  font-weight: 700;
+  color: var(--ink);
+}
+.wt-dev-actions > button {
+  flex: 1;
+}
+
+/* ── 토스트 ─────────────────────────────────────────────────────────────── */
+
+.wt-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--wt-remote-h) + var(--wt-safe-b) + 36px);
+  z-index: 60;
+  padding: 9px 16px;
+  border-radius: var(--radius-pill);
+  background: rgba(22, 22, 26, 0.88);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translateX(-50%);
+  animation: wt-toast 1.8s ease forwards;
+}
+
+@keyframes wt-toast {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  12%,
+  80% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* ── 리모컨 (떠 있는 알약) ───────────────────────────────────────────────── */
+
+.wt-remote-wrap {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--wt-safe-b) + 18px);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateX(-50%);
+}
+
+.wt-remote {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: var(--wt-remote-h);
+  padding: 0 8px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-translucent);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(22, 22, 26, 0.16), 0 2px 6px rgba(22, 22, 26, 0.06);
+  backdrop-filter: saturate(1.6) blur(18px);
+  -webkit-backdrop-filter: saturate(1.6) blur(18px);
+}
+
+.wt-remote button,
+.wt-speed-chip {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.wt-remote-side {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.12s ease, opacity 0.15s ease;
+}
+.wt-remote-side:active:not(:disabled) {
+  transform: scale(0.9);
+  background: var(--surface-alt);
+}
+.wt-remote-side:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+@media (hover: hover) {
+  .wt-remote-side:hover:not(:disabled) {
+    background: var(--surface-alt);
+  }
+}
+
+.wt-remote-main {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--bg);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+.wt-remote-main:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.wt-remote-main.is-holding {
+  transform: scale(0.94);
+}
+.wt-remote-main.is-speed {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* 길게 누르기 진행 링 (500ms) */
+.wt-remote-ring {
+  position: absolute;
+  inset: -4px;
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+.wt-remote-ring circle {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 188.5;
+  stroke-dashoffset: 188.5;
+  opacity: 0;
+}
+.wt-remote-main.is-speed .wt-remote-ring circle {
+  stroke: var(--ink);
+}
+.wt-remote-main.is-holding .wt-remote-ring circle {
+  opacity: 1;
+  animation: wt-hold 0.5s linear forwards;
+}
+
+@keyframes wt-hold {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.wt-remote-speed-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--accent);
+  border: 1px solid var(--line);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+
+.wt-speed-chip {
+  display: grid;
+  place-items: center;
+  height: 44px;
+  min-width: 52px;
+  padding: 0 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: var(--surface-translucent);
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 6px 20px rgba(22, 22, 26, 0.12);
+  backdrop-filter: saturate(1.6) blur(18px);
+  -webkit-backdrop-filter: saturate(1.6) blur(18px);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.12s ease;
+}
+.wt-speed-chip:active {
+  transform: scale(0.94);
+}
+.wt-speed-chip.is-on {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+}
+
+/* ── 배속 시트 ──────────────────────────────────────────────────────────── */
+
+.wt-sheet-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.wt-sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(10, 10, 14, 0.4);
+  cursor: default;
+  animation: wt-fade 0.2s ease;
+}
+
+.wt-sheet {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  padding: 10px 20px calc(var(--wt-safe-b) + 24px);
+  border-radius: 24px 24px 0 0;
+  background: var(--surface);
+  box-shadow: 0 -10px 40px rgba(22, 22, 26, 0.18);
+  animation: wt-sheet-up 0.28s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+.wt-sheet-grip {
+  display: block;
+  width: 36px;
+  height: 4px;
+  margin: 0 auto 18px;
+  border-radius: var(--radius-pill);
+  background: var(--line-strong);
+}
+
+.wt-sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.wt-sheet-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wt-switch-track {
+  position: relative;
+  width: 44px;
+  height: 26px;
+  border-radius: var(--radius-pill);
+  background: var(--line-strong);
+  transition: background 0.2s ease;
+}
+.wt-switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+.wt-switch.is-on {
+  color: var(--accent);
+}
+.wt-switch.is-on .wt-switch-track {
+  background: var(--accent);
+}
+.wt-switch.is-on .wt-switch-thumb {
+  transform: translateX(18px);
+}
+
+.wt-speed-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.wt-speed-opt {
+  height: 52px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface-alt);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+}
+.wt-speed-opt:active {
+  transform: scale(0.96);
+}
+.wt-speed-opt.is-selected {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.wt-sheet-hint {
+  margin: 16px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-mute);
+  text-align: center;
+}
+
+@keyframes wt-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes wt-sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+/* ── 다크 모드 보정 ─────────────────────────────────────────────────────── */
+
+:root[data-theme="dark"] .wt-page {
+  --tone-ref: #7aa2f7;
+  --tone-orig: #b3121b;
+  --tone-orig-2: #e6b25c;
+  --tone-sum: #94b98f;
+}
+:root[data-theme="dark"] .wt-remote,
+:root[data-theme="dark"] .wt-speed-chip {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+:root[data-theme="dark"] .wt-remote-main.is-speed .wt-remote-ring circle {
+  stroke: var(--accent-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wt-page *,
+  .wt-page *::before,
+  .wt-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .wt-remote-main.is-holding .wt-remote-ring circle {
+    animation-duration: 0.5s !important;
+  }
+}

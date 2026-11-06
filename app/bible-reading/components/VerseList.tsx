@@ -7,6 +7,7 @@ import {
   type SetStateAction,
 } from "react";
 import type { BookId } from "../books";
+import ChapterEndSentinel from "./ChapterEndSentinel";
 
 type Verse = {
   n: number;
@@ -16,11 +17,9 @@ type Verse = {
 type GreekToken = { w: string; p: string; info?: string };
 
 type TranslationKey = "krv" | "kids" | "greek" | "hebrew";
-type ReadingMode = "mic" | "scroll";
 
 type VerseItemProps = {
   verse: Verse;
-  isRead: boolean;
   isSelected: boolean;
   isFlash: boolean;
   isDrawerOpen: boolean;
@@ -40,7 +39,6 @@ type VerseItemProps = {
 
 const VerseItem = memo(function VerseItem({
   verse,
-  isRead,
   isSelected,
   isFlash,
   isDrawerOpen,
@@ -60,7 +58,7 @@ const VerseItem = memo(function VerseItem({
   return (
     <div
       data-verse-num={verse.n}
-      className={`brp-verse ${isRead ? "is-read" : ""} ${
+      className={`brp-verse ${
         selectionMode ? "is-selecting" : ""
       } ${isSelected ? "is-selected" : ""} ${isFlash ? "is-flash" : ""}`}
       onPointerDown={(e) => onVersePointerDown(verse.n, e)}
@@ -196,9 +194,6 @@ type VerseListProps = {
   bookId: BookId;
   chapterNumber: number;
   effectiveTranslation: TranslationKey;
-  readingMode: ReadingMode;
-  readVerseCount: number;
-  totalVerses: number;
   selectionMode: boolean;
   selectedVerses: Set<number>;
   flashVerse: number | null;
@@ -212,6 +207,8 @@ type VerseListProps = {
   onVerseClick: (verseN: number) => void;
   setOpenTokenInfos: Dispatch<SetStateAction<Set<string>>>;
   setOpenWordDrawers: Dispatch<SetStateAction<Set<number>>>;
+  onEndVisibilityChange?: (visible: boolean) => void;
+  endSentinelNonce?: number;
 };
 
 const VerseList = memo(function VerseList({
@@ -219,9 +216,6 @@ const VerseList = memo(function VerseList({
   bookId,
   chapterNumber,
   effectiveTranslation,
-  readingMode,
-  readVerseCount,
-  totalVerses,
   selectionMode,
   selectedVerses,
   flashVerse,
@@ -235,23 +229,14 @@ const VerseList = memo(function VerseList({
   onVerseClick,
   setOpenTokenInfos,
   setOpenWordDrawers,
+  onEndVisibilityChange,
+  endSentinelNonce = 0,
 }: VerseListProps) {
-  // 스크롤 모드는 "스크롤 + 최소 시간 + 퀴즈"가 모두 끝나
-  // 장 자체가 완료(readVerseCount === totalVerses)됐을 때만
-  // 절 색을 바꾼다. 그 외에는 절별 진행 색을 절대 표시하지 않는다.
-  //
-  // 음성(verse-mic) 모드는 새 트리거 매칭으로 동작 — 절을 통째로
-  // 한 번에 "읽음" 처리한다. "지금 기다리는 다음 절" 을 미리 회색으로
-  // 깔아 보여주는 is-current 표시는 사용자가 아직 현재 절을 다 읽기도
-  // 전에 다음 절이 강조되어 보여 혼란을 주므로 의도적으로 제거.
-  const chapterFullyRead = totalVerses > 0 && readVerseCount >= totalVerses;
   const showGreekUi = effectiveTranslation === "greek" && !!greekTokensMap;
 
   return (
     <>
-      {verses.map((verse, idx) => {
-        const isRead =
-          readingMode === "scroll" ? chapterFullyRead : idx < readVerseCount;
+      {verses.map((verse) => {
         const showGreek =
           showGreekUi && greekTokensMap!.has(verse.n);
         const tokens = showGreek
@@ -261,7 +246,6 @@ const VerseList = memo(function VerseList({
           <VerseItem
             key={`${bookId}-${chapterNumber}-${effectiveTranslation}-${verse.n}`}
             verse={verse}
-            isRead={isRead}
             isSelected={selectedVerses.has(verse.n)}
             isFlash={flashVerse === verse.n}
             isDrawerOpen={openWordDrawers.has(verse.n)}
@@ -280,6 +264,12 @@ const VerseList = memo(function VerseList({
           />
         );
       })}
+      {verses.length > 0 && onEndVisibilityChange ? (
+        <ChapterEndSentinel
+          key={`end-${bookId}-${chapterNumber}-${effectiveTranslation}-${endSentinelNonce}`}
+          onVisibilityChange={onEndVisibilityChange}
+        />
+      ) : null}
     </>
   );
 });

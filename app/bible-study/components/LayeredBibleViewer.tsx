@@ -1186,11 +1186,9 @@ export default function LayeredBibleViewer({
       {/* 미니바 토글 — 페이지 미니바 슬롯이 존재할 때만 포털로 렌더.
           상태(onLayers/layerOrder/layerLabels) 는 본 컴포넌트와 공유되어, 어느
           쪽을 눌러도 다른 쪽이 즉시 반영된다.
-          읽기(immersive) 모드에선 본 토글 행(.bsv-top)이 숨겨져 있어 미니바가
-          사실상 유일한 토글 자리이므로, 본 토글 행과 동일한 드래그-정렬 제스처
-          를 여기서도 지원한다 — 마우스는 살짝만 드래그, 터치는 길게 누른 뒤
-          이동. 정렬 결과는 layerOrder 한 곳에 저장되므로 본 토글 행에도 그대로
-          반영된다. */}
+          본 토글 행과 동일한 드래그-정렬 제스처를 지원한다 — 마우스는 살짝만
+          드래그, 터치는 길게 누른 뒤 이동. 정렬 결과는 layerOrder 한 곳에
+          저장되므로 본 토글 행에도 그대로 반영된다. */}
       {embedded && miniSlotEl
         ? createPortal(
             <span className="bsv-mini-toggles" role="group" aria-label="역본 토글 (미니)">

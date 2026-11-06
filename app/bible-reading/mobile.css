@@ -1,4 +1,4 @@
-/* 모바일(≤768px) 읽기 UI — 데스크탑·몰입 전용 규칙은 건드리지 않음. */
+/* 모바일(≤768px) 읽기 UI — 데스크탑 전용 규칙은 건드리지 않음. */
 
 .brp-mobile-topbar {
   display: none;
@@ -12,15 +12,11 @@
     display: none !important;
   }
 
-  /* 마이크 독 — 표시만 숨김 (로직 유지) */
-  .brp-page:not(.brp-page--immersive) .brp-dock {
-    display: none !important;
-  }
 
   /* 페이지 여백 — 조상 가로 inset 전부 제거.
      실제 좌우 14px 는 .brp-reader 패딩만 담당 (화면 끝 → 절 번호 = 14px).
      bible-reading.css 의 base clamp / ≤760 4px / ≥600 reader 패딩을 덮어씀. */
-  .brp-page:not(.brp-page--immersive) {
+  .brp-page {
     padding-top: 46px !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -240,7 +236,7 @@
   }
 
   /* ── 본문 카드 제거 + 가로 inset 단일화(reader 14px만) ───────────── */
-  .brp-page:not(.brp-page--immersive) .brp-canvas {
+  .brp-page .brp-canvas {
     gap: 0;
     padding: 0 !important;
     margin: 0 !important;
@@ -249,13 +245,13 @@
     background: var(--bg);
   }
 
-  .brp-page:not(.brp-page--immersive) .brp-side {
+  .brp-page .brp-side {
     padding: 0 !important;
     margin: 0 !important;
     max-width: none !important;
   }
 
-  .brp-page:not(.brp-page--immersive) .brp-reader {
+  .brp-page .brp-reader {
     max-width: none !important;
     width: 100% !important;
     margin: 0 !important;
@@ -269,7 +265,7 @@
     box-sizing: border-box;
   }
 
-  .brp-page:not(.brp-page--immersive) .brp-reader-hero {
+  .brp-page .brp-reader-hero {
     padding-left: 0 !important;
     padding-right: 0 !important;
     margin-left: 0 !important;
@@ -277,20 +273,20 @@
     max-width: none !important;
   }
 
-  .brp-page:not(.brp-page--immersive) .brp-side > .brp-progress-grid,
-  .brp-page:not(.brp-page--immersive) .brp-side > .brp-prayer {
+  .brp-page .brp-side > .brp-progress-grid,
+  .brp-page .brp-side > .brp-prayer {
     margin-left: 14px;
     margin-right: 14px;
   }
 
   /* ── 본문 타이포 ─────────────────────────────────────────────────── */
-  .brp-page:not(.brp-page--immersive) .brp-reader-hero {
+  .brp-page .brp-reader-hero {
     margin: 18px 0 16px;
     padding: 0;
     text-align: center;
   }
 
-  .brp-page:not(.brp-page--immersive) .brp-reader-hero h1 {
+  .brp-page .brp-reader-hero h1 {
     margin: 0;
     font-size: clamp(26px, 7vw, 34px);
     font-weight: 400;
@@ -300,7 +296,7 @@
   }
 
   /* 구분선 아래 → 1절까지 약 16px (12px after + 4px verse 여유) */
-  .brp-page:not(.brp-page--immersive) .brp-reader-hero h1::after {
+  .brp-page .brp-reader-hero h1::after {
     content: "";
     display: block;
     width: 40px;
@@ -309,7 +305,7 @@
     background: color-mix(in srgb, var(--ink, #1c1917) 22%, transparent);
   }
 
-  .brp-page:not(.brp-page--immersive) .brp-verse {
+  .brp-page .brp-verse {
     grid-template-columns: 18px minmax(0, 1fr) !important;
     column-gap: 6px !important;
     /* 본문 lh 1.9→1.6 으로 줄 사이 half-leading 손실(약 0.3em)을
@@ -323,11 +319,11 @@
     max-width: none !important;
   }
 
-  .brp-page:not(.brp-page--immersive) .brp-verse:first-of-type {
+  .brp-page .brp-verse:first-of-type {
     margin-top: 4px;
   }
 
-  .brp-page:not(.brp-page--immersive) .brp-verse-number {
+  .brp-page .brp-verse-number {
     font-size: 0.7em;
     color: var(--ink-mute, #a8a29e);
     font-weight: 500;
@@ -340,7 +336,7 @@
     margin: 0 !important;
   }
 
-  .brp-page:not(.brp-page--immersive) .brp-verse-text {
+  .brp-page .brp-verse-text {
     line-height: 1.6;
   }
 
@@ -348,10 +344,9 @@
      easing: cubic-bezier(0.32, 0.72, 0, 1)
      open 380ms / close 300ms — 드래그 중 transition 없음 */
   .brp-page.brp-drawer-peek > .brp-canvas,
-  .brp-page.brp-drawer-peek > .brp-dock,
-  .brp-page.brp-drawer-peek > .brp-copy-bar,
+    .brp-page.brp-drawer-peek > .brp-copy-bar,
   .brp-page.brp-drawer-peek > .brp-speech-message,
-  .brp-page.brp-drawer-peek > .brp-complete {
+  .__removed_complete_peek {
     transform: translateX(calc(-18px * var(--brp-drawer-p, 0)))
       scale(calc(1 - 0.04 * var(--brp-drawer-p, 0)));
     transform-origin: center center;
@@ -361,28 +356,22 @@
   }
 
   .brp-page.brp-drawer-anim-open > .brp-canvas,
-  .brp-page.brp-drawer-anim-open > .brp-dock,
   .brp-page.brp-drawer-anim-open > .brp-copy-bar,
-  .brp-page.brp-drawer-anim-open > .brp-speech-message,
-  .brp-page.brp-drawer-anim-open > .brp-complete {
+  .brp-page.brp-drawer-anim-open > .brp-speech-message {
     transition: transform 380ms cubic-bezier(0.32, 0.72, 0, 1),
       border-radius 380ms cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   .brp-page.brp-drawer-anim-close > .brp-canvas,
-  .brp-page.brp-drawer-anim-close > .brp-dock,
   .brp-page.brp-drawer-anim-close > .brp-copy-bar,
-  .brp-page.brp-drawer-anim-close > .brp-speech-message,
-  .brp-page.brp-drawer-anim-close > .brp-complete {
+  .brp-page.brp-drawer-anim-close > .brp-speech-message {
     transition: transform 300ms cubic-bezier(0.32, 0.72, 0, 1),
       border-radius 300ms cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   .brp-page.brp-drawer-dragging > .brp-canvas,
-  .brp-page.brp-drawer-dragging > .brp-dock,
   .brp-page.brp-drawer-dragging > .brp-copy-bar,
-  .brp-page.brp-drawer-dragging > .brp-speech-message,
-  .brp-page.brp-drawer-dragging > .brp-complete {
+  .brp-page.brp-drawer-dragging > .brp-speech-message {
     transition: none !important;
   }
 
@@ -560,10 +549,8 @@
 
   @media (prefers-reduced-motion: reduce) {
     .brp-page.brp-drawer-peek > .brp-canvas,
-    .brp-page.brp-drawer-peek > .brp-dock,
-    .brp-page.brp-drawer-peek > .brp-copy-bar,
+        .brp-page.brp-drawer-peek > .brp-copy-bar,
     .brp-page.brp-drawer-peek > .brp-speech-message,
-    .brp-page.brp-drawer-peek > .brp-complete,
     .brp-bcd-panel,
     .brp-bcd-backdrop,
     .brp-bcd-book,

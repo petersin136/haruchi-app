@@ -31,9 +31,6 @@ type MobileTopBarProps = {
   onModeChange: (next: MobileModeChoice) => void;
   onSearch: () => void;
   onOpenDrawer: () => void;
-  onEnterImmersive: () => void;
-  showStudentSelect: boolean;
-  onPromptIdentify: () => void;
 };
 
 const STROKE = 1.5;
@@ -120,9 +117,6 @@ function MobileTopBar({
   onModeChange,
   onSearch,
   onOpenDrawer,
-  onEnterImmersive,
-  showStudentSelect,
-  onPromptIdentify,
 }: MobileTopBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -198,37 +192,6 @@ function MobileTopBar({
             aria-label="계정·설정 메뉴"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              type="button"
-              className="brp-mobile-topbar-sheet-item"
-              onClick={() => {
-                setMenuOpen(false);
-                onEnterImmersive();
-              }}
-            >
-              읽기 모드 (몰입)
-            </button>
-            <span className="brp-mobile-topbar-sheet-divider" aria-hidden="true" />
-            {showStudentSelect ? (
-              <button
-                type="button"
-                className="brp-mobile-topbar-sheet-item"
-                onClick={() => {
-                  setMenuOpen(false);
-                  onPromptIdentify();
-                }}
-              >
-                학생 선택
-              </button>
-            ) : null}
-            <a
-              className="brp-mobile-topbar-sheet-item"
-              href="/login"
-              onClick={() => setMenuOpen(false)}
-            >
-              관리자·교사 로그인
-            </a>
-            <span className="brp-mobile-topbar-sheet-divider" aria-hidden="true" />
             <a
               className="brp-mobile-topbar-sheet-item"
               href="/settings"

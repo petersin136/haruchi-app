@@ -14,6 +14,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import ChapterEndSentinel from "../../bible-reading/components/ChapterEndSentinel";
 
 export type EnglishBookId =
   // 신약 27권
@@ -210,18 +211,20 @@ type EnglishOnlyViewProps = {
   chapter?: number;
   /** web = 기존 WEB 청크, kjv = KJV 청크. 기본 web. */
   translation?: EnglishTranslationId;
-  /** 낭독 진도(앞에서부터 읽은 절 수). 본문 하이라이트용. */
-  readVerseCount?: number;
-  /** 로드된 절을 부모(음성·진도)에 알린다. */
+  /** 로드된 절을 부모에 알린다. */
   onVerses?: (verses: { n: number; t: string }[]) => void;
+  /** 본문 끝 센티널 교차 변화 (장 자동 완료용). */
+  onEndVisibilityChange?: (visible: boolean) => void;
+  endSentinelNonce?: number;
 };
 
 export default function EnglishOnlyView({
   bookId = "romans",
   chapter = 1,
   translation = "web",
-  readVerseCount = 0,
   onVerses,
+  onEndVisibilityChange,
+  endSentinelNonce = 0,
 }: EnglishOnlyViewProps = {}) {
   const [toast, setToast] = useState<string | null>(null);
   const [manifest, setManifest] = useState<BookManifest | null>(null);
@@ -364,33 +367,37 @@ export default function EnglishOnlyView({
         <p className="eov-empty">이 장에는 {translationLabel} 본문이 없어요.</p>
       )}
       {chunk && verses.length > 0 && (
-        <ol className="eov-verses">
-          {verses.map((v, idx) => (
-            <li
-              key={v.n}
-              data-verse-num={v.n}
-              className={`eov-verse ${idx < readVerseCount ? "is-read" : ""}`}
-            >
-              <div className="eov-row">
-                <span className="eov-num" aria-hidden="true">
-                  {v.n}
-                </span>
-                <p className="eov-text" lang="en">
-                  {v.text}
-                </p>
-                <button
-                  type="button"
-                  className="eov-copy"
-                  onClick={() => handleCopy(v.ref, v.text)}
-                  aria-label={`${v.ref} 복사`}
-                  title="복사"
-                >
-                  <CopyIcon />
-                </button>
-              </div>
-            </li>
-          ))}
-        </ol>
+        <>
+          <ol className="eov-verses">
+            {verses.map((v) => (
+              <li key={v.n} data-verse-num={v.n} className="eov-verse">
+                <div className="eov-row">
+                  <span className="eov-num" aria-hidden="true">
+                    {v.n}
+                  </span>
+                  <p className="eov-text" lang="en">
+                    {v.text}
+                  </p>
+                  <button
+                    type="button"
+                    className="eov-copy"
+                    onClick={() => handleCopy(v.ref, v.text)}
+                    aria-label={`${v.ref} 복사`}
+                    title="복사"
+                  >
+                    <CopyIcon />
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ol>
+          {onEndVisibilityChange ? (
+            <ChapterEndSentinel
+              key={`eov-end-${bookId}-${effectiveChapter}-${translation}-${endSentinelNonce}`}
+              onVisibilityChange={onEndVisibilityChange}
+            />
+          ) : null}
+        </>
       )}
       <footer className="eov-footer">
         <small>

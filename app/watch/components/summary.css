@@ -1,0 +1,215 @@
+/* ── 요약 탭 (포스터 · 세이지 그린) ─────────────────────────────────────── */
+/* watch.css 기존 .wt-sum-* 를 덮기 위해 data-tone="sum" 아래로 묶는다. */
+
+.wt-tab-card[data-tone="sum"] {
+  --sum-bg: #f3f5ee;
+  --sum-accent: #3f6b4e;
+  --sum-sub: #7a8a7e;
+  --sum-ink: #1f2a22;
+  --sum-line: rgba(63, 107, 78, 0.18);
+
+  padding: 28px 22px 22px;
+  background: var(--sum-bg);
+  border-color: transparent;
+  box-shadow: none;
+  color: var(--sum-ink);
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-kicker {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: lowercase;
+  line-height: 1.2;
+  color: var(--sum-sub);
+  text-box-trim: trim-both;
+  text-box-edge: text alphabetic;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-title {
+  margin: 12px 0 0;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: var(--sum-ink);
+  word-break: keep-all;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-theme {
+  margin: 14px 0 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.55;
+  color: var(--sum-accent);
+  word-break: keep-all;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-body {
+  margin: 0;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-flow {
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-flow-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 14px;
+  padding: 0 0 22px;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-flow-item:last-child {
+  padding-bottom: 0;
+}
+
+/* 타임라인 세로선 — 절 범위 열 중앙 */
+.wt-tab-card[data-tone="sum"] .wt-sum-flow-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 26px;
+  top: 1.35em;
+  bottom: 0;
+  width: 1px;
+  background: var(--sum-line);
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-flow-range {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--sum-sub);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  text-box-trim: trim-both;
+  text-box-edge: text alphabetic;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-flow-text {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--sum-ink);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-key {
+  position: relative;
+  margin: 36px 0 0;
+  padding: 8px 0 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-key-mark {
+  display: block;
+  margin: 0;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 0.7;
+  color: var(--sum-accent);
+  opacity: 0.35;
+  user-select: none;
+  text-box-trim: trim-both;
+  text-box-edge: text alphabetic;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-key-text {
+  margin: 8px 0 0;
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.75;
+  color: var(--sum-ink);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-key-ref {
+  margin: 12px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--sum-accent);
+  font-variant-numeric: tabular-nums;
+  text-box-trim: trim-both;
+  text-box-edge: text alphabetic;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-question {
+  margin: 32px 0 0;
+  font-size: 14.5px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--sum-sub);
+  word-break: keep-all;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-empty {
+  display: block;
+  margin: 28px 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--sum-sub);
+  text-align: left;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-retry {
+  margin-left: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--sum-accent);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-skeleton > span {
+  height: 38px;
+  width: 46%;
+  border-radius: 6px;
+  background: rgba(63, 107, 78, 0.12);
+  animation: wt-shimmer 1.6s ease-in-out infinite;
+}
+
+.wt-tab-card[data-tone="sum"] .wt-sum-skeleton > span:last-child {
+  height: 12px;
+  width: 62%;
+}
