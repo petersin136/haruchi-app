@@ -1,0 +1,331 @@
+/* ── 새 리모컨 (A 아일랜드 / B 미니플레이어) ─────────────────────────────── */
+
+.wt-page {
+  --wt-remote-h: 50px;
+  --wt-rc-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --wt-rc-glass: rgba(22, 22, 24, 0.72);
+  --wt-rc-border: rgba(255, 255, 255, 0.1);
+  --wt-rc-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.wt-page[data-remote="b"] {
+  --wt-remote-h: 58px;
+}
+
+.wt-main {
+  padding-bottom: calc(var(--wt-remote-h) + var(--wt-safe-b) + 40px) !important;
+}
+
+/* 본문 하단 페이드 — 글자와 리모컨이 겹쳐 보이지 않게 */
+.wt-rc-fade {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  height: 96px;
+  pointer-events: none;
+  background: linear-gradient(to top, var(--bg, #faf8f3) 0%, transparent 100%);
+}
+
+.wt-rc-wrap {
+  position: fixed;
+  left: 50%;
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transform: translateX(-50%);
+  transition: width 280ms var(--wt-rc-ease), height 280ms var(--wt-rc-ease);
+}
+
+.wt-page[data-remote="b"] .wt-rc-wrap {
+  left: 12px;
+  right: 12px;
+  width: auto;
+  transform: none;
+  align-items: stretch;
+}
+
+/* 유리 캡슐 */
+.wt-rc {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--wt-remote-h);
+  padding: 0 6px 0 4px;
+  border-radius: 999px;
+  background: var(--wt-rc-glass);
+  border: 0.5px solid var(--wt-rc-border);
+  box-shadow: var(--wt-rc-shadow);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  color: #fff;
+  transition:
+    width 280ms var(--wt-rc-ease),
+    height 280ms var(--wt-rc-ease),
+    border-radius 280ms var(--wt-rc-ease),
+    padding 280ms var(--wt-rc-ease);
+}
+
+.wt-page[data-remote="a"] .wt-rc {
+  width: auto;
+  min-width: 210px;
+  justify-content: center;
+}
+
+.wt-page[data-remote="b"] .wt-rc {
+  width: 100%;
+  border-radius: 18px;
+  padding: 0 10px 0 16px;
+  overflow: hidden;
+}
+
+/* A: 스크롤 축소 → 44px 원 */
+.wt-rc-wrap.is-collapsed .wt-rc {
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  justify-content: center;
+}
+
+.wt-rc-wrap.is-collapsed .wt-rc-side,
+.wt-rc-wrap.is-collapsed .wt-rc-divider,
+.wt-rc-wrap.is-collapsed .wt-rc-rate,
+.wt-rc-wrap.is-collapsed .wt-rc-meta,
+.wt-rc-wrap.is-collapsed .wt-rc-progress {
+  opacity: 0;
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  pointer-events: none;
+  border: 0;
+}
+
+.wt-rc-wrap.is-collapsed .wt-rc-play {
+  margin: 0;
+}
+
+/* B: 진행선 */
+.wt-rc-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.18);
+  transform-origin: left center;
+}
+
+.wt-rc-progress > span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  transform: scaleX(var(--wt-rc-progress, 0));
+  transform-origin: left center;
+}
+
+.wt-rc-meta {
+  flex: 1;
+  min-width: 0;
+  margin-right: 8px;
+  text-align: left;
+}
+
+.wt-rc-meta-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-rc-meta-sub {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.55);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-box-trim: trim-both;
+  text-box-edge: text alphabetic;
+}
+
+.wt-rc-controls {
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+
+.wt-rc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: transform 120ms var(--wt-rc-ease), opacity 120ms ease;
+}
+
+.wt-rc-btn:disabled {
+  opacity: 0.28;
+  cursor: default;
+}
+
+.wt-rc-btn:active:not(:disabled) {
+  transform: scale(0.9);
+}
+
+.wt-rc-play {
+  width: 44px;
+  height: 44px;
+}
+
+.wt-rc-btn svg {
+  display: block;
+  flex: none;
+}
+
+.wt-rc-divider {
+  width: 0.5px;
+  height: 18px;
+  margin: 0 6px 0 2px;
+  background: rgba(255, 255, 255, 0.18);
+  flex: none;
+}
+
+.wt-rc-rate {
+  min-width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0 8px 0 4px;
+  border: 0;
+  background: none;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 120ms var(--wt-rc-ease), color 120ms ease;
+}
+
+.wt-rc-rate:active {
+  transform: scale(0.9);
+}
+
+.wt-rc-rate.is-on {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* 배속 팝오버 */
+.wt-rc-pop-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+}
+
+.wt-rc-pop-layer.is-open {
+  pointer-events: auto;
+}
+
+.wt-rc-pop-backdrop {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: default;
+}
+
+.wt-rc-pop {
+  position: absolute;
+  left: 50%;
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px) + var(--wt-remote-h) + 10px);
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--wt-rc-glass);
+  border: 0.5px solid var(--wt-rc-border);
+  box-shadow: var(--wt-rc-shadow);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  transform: translateX(-50%) translateY(8px) scale(0.96);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 280ms var(--wt-rc-ease),
+    transform 280ms var(--wt-rc-ease);
+}
+
+.wt-page[data-remote="b"] .wt-rc-pop {
+  left: 12px;
+  right: 12px;
+  transform: translateY(8px) scale(0.96);
+  justify-content: space-between;
+}
+
+.wt-rc-pop-layer.is-open .wt-rc-pop {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.wt-page[data-remote="b"] .wt-rc-pop-layer.is-open .wt-rc-pop {
+  transform: translateY(0) scale(1);
+}
+
+.wt-rc-pop-opt {
+  flex: 1;
+  min-width: 44px;
+  height: 34px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 160ms ease, color 160ms ease, transform 120ms var(--wt-rc-ease);
+}
+
+.wt-rc-pop-opt:active {
+  transform: scale(0.9);
+}
+
+.wt-rc-pop-opt.is-selected {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+/* 예전 리모컨/시트 스타일이 남아 있어도 새 마크업에는 영향 없음 */

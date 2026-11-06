@@ -1,7 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { SPEED_OPTIONS, type SpeedOption } from "./watchStorage";
+import "./remote.css";
+
+const POP_SPEEDS = [1, 1.25, 1.5, 1.75, 2] as const;
 
 type Props = {
   open: boolean;
@@ -13,6 +16,26 @@ type Props = {
 };
 
 export default function SpeedSheet({ open, speed, speedOn, onSelect, onToggle, onClose }: Props) {
+  const [mounted, setMounted] = useState(open);
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      setMounted(true);
+      let raf2 = 0;
+      const raf1 = requestAnimationFrame(() => {
+        raf2 = requestAnimationFrame(() => setShown(true));
+      });
+      return () => {
+        cancelAnimationFrame(raf1);
+        cancelAnimationFrame(raf2);
+      };
+    }
+    setShown(false);
+    const id = window.setTimeout(() => setMounted(false), 280);
+    return () => window.clearTimeout(id);
+  }, [open]);
+
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -22,44 +45,37 @@ export default function SpeedSheet({ open, speed, speedOn, onSelect, onToggle, o
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
-  if (!open) return null;
+  if (!mounted) return null;
+
+  const selected = speedOn ? speed : 1;
+
+  const pick = (v: (typeof POP_SPEEDS)[number]) => {
+    if (v === 1) {
+      if (speedOn) onToggle();
+      onClose();
+      return;
+    }
+    if ((SPEED_OPTIONS as readonly number[]).includes(v)) {
+      onSelect(v as SpeedOption);
+    }
+    onClose();
+  };
 
   return (
-    <div className="wt-sheet-layer">
-      <button type="button" className="wt-sheet-backdrop" aria-label="닫기" onClick={onClose} />
-      <div className="wt-sheet" role="dialog" aria-modal="true" aria-label="배속 설정">
-        <span className="wt-sheet-grip" aria-hidden />
-        <div className="wt-sheet-head">
-          <h2 className="wt-sheet-title">배속</h2>
+    <div className={`wt-rc-pop-layer${shown ? " is-open" : ""}`}>
+      <button type="button" className="wt-rc-pop-backdrop" aria-label="닫기" onClick={onClose} />
+      <div className="wt-rc-pop" role="dialog" aria-modal="true" aria-label="배속 선택">
+        {POP_SPEEDS.map((v) => (
           <button
+            key={v}
             type="button"
-            role="switch"
-            aria-checked={speedOn}
-            className={`wt-switch${speedOn ? " is-on" : ""}`}
-            onClick={onToggle}
+            className={`wt-rc-pop-opt${selected === v ? " is-selected" : ""}`}
+            aria-pressed={selected === v}
+            onClick={() => pick(v)}
           >
-            <span className="wt-switch-label">{speedOn ? "켜짐" : "꺼짐"}</span>
-            <span className="wt-switch-track">
-              <span className="wt-switch-thumb" />
-            </span>
+            {v === 1 ? "1.0" : v.toFixed(2).replace(/0$/, "")}
           </button>
-        </div>
-
-        <div className="wt-speed-grid">
-          {SPEED_OPTIONS.map((v) => (
-            <button
-              key={v}
-              type="button"
-              className={`wt-speed-opt${v === speed ? " is-selected" : ""}`}
-              aria-pressed={v === speed}
-              onClick={() => onSelect(v)}
-            >
-              {v}×
-            </button>
-          ))}
-        </div>
-
-        <p className="wt-sheet-hint">리모컨 가운데 버튼을 길게 누르면 배속을 켜고 끌 수 있어요.</p>
+        ))}
       </div>
     </div>
   );
