@@ -1917,6 +1917,9 @@ export default function BibleReadingPage() {
           <Link href="/plan" className="brp-nav-text-link brp-nav-link">
             읽기표
           </Link>
+          <Link href="/study/john1/1" className="brp-nav-text-link brp-nav-link">
+            공부 노트
+          </Link>
           <button
             type="button"
             className="brp-nav-icon"

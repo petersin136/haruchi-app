@@ -112,9 +112,9 @@
 .study-page {
   position: relative;
   padding: 12px 18px 32px;
-  /* 17px × 2.25 = 38.25 → 글리프 사이 여백 ≈21px. 메모 18px + 여유 2px 확보 */
-  line-height: 2.25;
-  font-size: 17px;
+  /* 19px × 2.4 = 45.6 → 글리프 사이 여백 ≈26px. 메모 18px 들어갈 자리 */
+  line-height: 2.4;
+  font-size: 19px;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
@@ -122,7 +122,7 @@
 .study-drop {
   float: left;
   margin: 4px 10px 0 0;
-  font-size: 48px;
+  font-size: 52px;
   font-weight: 700;
   line-height: 0.85;
   color: var(--study-red);
@@ -146,7 +146,7 @@
 }
 
 .study-vnum {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 0;
   vertical-align: super;
@@ -238,8 +238,10 @@
 
 @media (max-width: 480px) {
   .study-page {
-    line-height: 2.25;
-    font-size: 17px;
+    padding-left: 18px;
+    padding-right: 18px;
+    line-height: 2.4;
+    font-size: 19px;
   }
 
   .study-mark-note,
@@ -485,7 +487,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 2px;
+  gap: 8px;
   height: 52px;
   padding: 0 12px;
   border: none;
@@ -502,7 +504,7 @@
 }
 
 .study-ws-chip-w {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.15;
   color: var(--study-ink, #1c1917);
@@ -515,7 +517,7 @@
 }
 
 .study-ws-chip-g {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.15;
   color: #6b5e52;
   text-box-trim: trim-both;
@@ -532,8 +534,17 @@
   overflow-y: auto;
   overflow-x: hidden;
   padding: 20px 20px 32px;
+  font-size: 17px;
+  line-height: 1.75;
+  word-break: keep-all;
+  overflow-wrap: break-word;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.study-ws-body::-webkit-scrollbar {
+  display: none;
 }
 
 .study-ws-hero {
@@ -548,7 +559,7 @@
 
 .study-ws-word {
   margin: 0;
-  font-size: 40px;
+  font-size: 34px;
   font-weight: 700;
   line-height: 1.1;
   color: var(--study-red, #9e1b1b);
@@ -558,7 +569,7 @@
 
 .study-ws-pron {
   margin: 0 0 4px;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.2;
   color: #6b5e52;
   text-box-trim: trim-both;
@@ -583,16 +594,16 @@
 }
 
 .study-ws-sec {
-  margin-top: 28px;
-  padding-top: 28px;
+  margin-top: 20px;
+  padding-top: 20px;
   border-top: 1px solid #efe8dc;
 }
 
 .study-ws-sec h3 {
   margin: 0 0 10px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   color: #a08c78;
   text-box-trim: trim-both;
   text-box-edge: text alphabetic;
@@ -631,8 +642,8 @@
 
 .study-ws-root-note {
   margin: 10px 0 0;
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.75;
   color: #2b2420;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
@@ -640,8 +651,8 @@
 
 .study-ws-def-ko {
   margin: 0;
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.75;
   color: #2b2420;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
@@ -686,7 +697,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 14px;
 }
 
 .study-ws-bars li {
@@ -694,7 +705,7 @@
   grid-template-columns: 36px 1fr 28px;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
+  line-height: 1.2;
 }
 
 .study-ws-bar-label {
@@ -702,6 +713,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 15px;
   color: #6b5e52;
 }
 
@@ -724,6 +736,7 @@
 }
 
 .study-ws-bar-n {
+  font-size: 14px;
   text-align: right;
   font-variant-numeric: tabular-nums;
   color: #6b5e52;
@@ -788,16 +801,16 @@
 .study-ws-ref-chip,
 .study-ws-ref-more {
   box-sizing: border-box;
-  height: 30px;
   margin: 0;
-  padding: 0 10px;
+  padding: 8px 12px;
   display: inline-flex;
   align-items: center;
   border: none;
   border-radius: 8px;
   background: #f4ede1;
   font: inherit;
-  font-size: 12px;
+  font-size: 15px;
+  line-height: 1.2;
   color: #2b2420;
   cursor: pointer;
 }
