@@ -1,8 +1,8 @@
 import type { BookId } from "@/app/bible-reading/books";
 
 // public/keywords-top/{bookId}/{chapter}.json — 장의 대표 단어 목록.
-//   { "words": [{ lemma, word, pron, gloss, pos, refs: ["1:1"], inChapter, inTestament, note,
-//                 root: { word, pron, gloss } | null, defKo, defEn }] }
+//   { "words": [{ lemma, word, pron, gloss, pos, posDetail, refs: ["1:1"], inChapter, inTestament, note,
+//                 root: { word, pron, gloss, note } | null, rootGloss, rootNote, defKo, defEn }] }
 //   (대체 경로: 루트 배열, w/mean/verses/count/total 등 예전 필드명)
 export type VerseRef = { chapter: number; verse: number };
 export type WordRoot = { w: string; pron: string; mean: string };
@@ -13,7 +13,10 @@ export type TopWord = {
   mean: string;
   lemma: string;
   pos: string;
+  posDetail: string;
   root: WordRoot | null;
+  rootGloss: string;
+  rootNote: string;
   defKo: string;
   defEn: string;
   count: number | null;
@@ -78,6 +81,8 @@ function normalize(raw: unknown, chapter: number): TopWord[] {
       ? rawVerses.map((v) => parseVerseRef(v, chapter)).filter((v): v is VerseRef => v !== null)
       : [];
     const lemma = pickStr(o, "lemma", "strong");
+    const root = parseRoot(o.root);
+    const rawRoot = o.root && typeof o.root === "object" ? (o.root as Raw) : {};
     return [
       {
         key: `${lemma || w}-${i}`,
@@ -86,7 +91,10 @@ function normalize(raw: unknown, chapter: number): TopWord[] {
         mean: pickStr(o, "gloss", "mean", "meaning"),
         lemma,
         pos: pickStr(o, "pos"),
-        root: parseRoot(o.root),
+        posDetail: pickStr(o, "posDetail"),
+        root,
+        rootGloss: pickStr(o, "rootGloss") || root?.mean || "",
+        rootNote: pickStr(o, "rootNote") || pickStr(rawRoot, "note"),
         defKo: pickStr(o, "defKo"),
         defEn: pickStr(o, "defEn"),
         count: pickNum(o, "inChapter", "count", "chapterCount") ?? (verses.length || null),

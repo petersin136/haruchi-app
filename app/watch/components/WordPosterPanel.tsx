@@ -125,10 +125,10 @@ const WordBlock = memo(function WordBlock({
       <div className="wt-wp-drawer" data-open={open || undefined} aria-hidden={!open}>
         <div className="wt-wp-drawer-inner">
           <dl className="wt-wp-details">
-            {word.pos && (
+            {(word.posDetail || word.pos) && (
               <div className="wt-wp-field">
                 <dt>품사</dt>
-                <dd>{word.pos}</dd>
+                <dd>{word.posDetail || word.pos}</dd>
               </div>
             )}
 
@@ -136,28 +136,33 @@ const WordBlock = memo(function WordBlock({
               <div className="wt-wp-field">
                 <dt>어원</dt>
                 <dd>
-                  <span
-                    className="wt-wp-root"
-                    dir={rootHebrew ? "rtl" : "ltr"}
-                    lang={rootHebrew ? "he" : "grc"}
-                  >
-                    {word.root.w}
+                  <span className="wt-wp-root-line">
+                    <span
+                      className="wt-wp-root"
+                      dir={rootHebrew ? "rtl" : "ltr"}
+                      lang={rootHebrew ? "he" : "grc"}
+                    >
+                      {word.root.w}
+                    </span>
+                    {word.root.pron && <span className="wt-wp-root-pron">{word.root.pron}</span>}
+                    {word.rootGloss && <strong className="wt-wp-root-mean">{word.rootGloss}</strong>}
                   </span>
-                  {word.root.pron && <span className="wt-wp-root-pron">{word.root.pron}</span>}
-                  {word.root.mean && <span className="wt-wp-root-mean">{word.root.mean}</span>}
+                  {word.rootNote && <p className="wt-wp-prose">{word.rootNote}</p>}
                 </dd>
               </div>
             )}
 
-            {(word.defKo || word.defEn) && (
-              <div className="wt-wp-field">
-                <dt>뜻</dt>
-                <dd>
-                  {word.defKo || word.defEn}
-                  {word.defKo && word.defEn && <span className="wt-wp-def-en">{word.defEn}</span>}
-                </dd>
-              </div>
-            )}
+            <div className="wt-wp-field">
+              <dt>뜻</dt>
+              <dd>
+                {word.defKo ? (
+                  <p className="wt-wp-prose">{word.defKo}</p>
+                ) : (
+                  <p className="wt-wp-prose wt-wp-pending">한국어 풀이 준비 중</p>
+                )}
+                {word.defEn && <span className="wt-wp-def-en">영어: {word.defEn}</span>}
+              </dd>
+            </div>
 
             {(usage || word.verses.length > 0) && (
               <div className="wt-wp-field">

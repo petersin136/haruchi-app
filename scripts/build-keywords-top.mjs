@@ -8,6 +8,8 @@
 //   .cache/strongs-greek/strongsgreek.xml → 캐시 .cache/strongs-greek/strong-el.json
 //     (헬라어는 같은 필드 구조만 준비, NT 생성 시 사용)
 // 수동 우선: data/keyword-picks/<bookId>.json
+// 사람 주석(재생성 보존): data/keyword-notes/hebrew.json
+//   { "H####": { defKo?, rootGloss?, rootNote?, pron?, defEn?, gloss? } } — 있으면 자동값보다 우선
 //
 // 산출: public/keywords-top/<bookId>/<chapter>.json
 //
@@ -20,6 +22,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { decodeMorph } from "./lib/hebrew-morph-parse.mjs";
+import { pron as hebPron } from "./lib/hebrew-pron.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
@@ -27,12 +30,18 @@ const repoRoot = path.resolve(__dirname, "..");
 const SRC_ROOT = path.join(repoRoot, "public", "bible-v2", "chapters");
 const OUT_ROOT = path.join(repoRoot, "public", "keywords-top");
 const PICKS_ROOT = path.join(repoRoot, "data", "keyword-picks");
+const HE_NOTES_PATH = path.join(repoRoot, "data", "keyword-notes", "hebrew.json");
 const KEY_TERMS_PATH = path.join(__dirname, "lib", "key-terms.json");
 
 const OSHB_XML = path.join(repoRoot, ".cache", "oshb", "HebrewStrong.xml");
 const OSHB_CACHE = path.join(repoRoot, ".cache", "oshb", "strong-he-enriched.json");
 const GREEK_XML = path.join(repoRoot, ".cache", "strongs-greek", "strongsgreek.xml");
 const GREEK_CACHE = path.join(repoRoot, ".cache", "strongs-greek", "strong-el.json");
+
+/** @type {Record<string, { defKo?: string, rootGloss?: string, rootNote?: string, pron?: string, defEn?: string, gloss?: string }>} */
+const HE_NOTES = fs.existsSync(HE_NOTES_PATH)
+  ? JSON.parse(fs.readFileSync(HE_NOTES_PATH, "utf8"))
+  : {};
 
 const MIN_WORDS = 5;
 const MAX_WORDS = 9;
@@ -183,6 +192,50 @@ function clip120(s) {
   return t.slice(0, 117).trimEnd() + "…";
 }
 
+/**
+ * BDB/Strong's meaning → 짧은 영어 뜻.
+ * 첫 번째(주된) 의미를 앞에 두고, "; (" / "; by " / "; also " 뒤의
+ * 다른 동사 어간·부가 의미는 제외. 120자 이내.
+ */
+function extractDefEn(body) {
+  const rawMeaning = body.match(/<meaning>([\s\S]*?)<\/meaning>/)?.[1] || "";
+  if (rawMeaning) {
+    const primary = rawMeaning.split(/;\s*(?:\(|by |also )/i)[0];
+    const defs = [...primary.matchAll(/<def>([\s\S]*?)<\/def>/g)]
+      .map((x) => stripTags(x[1]))
+      .filter(Boolean);
+    if (defs.length) return clip120(defs.join("; "));
+    const plain = stripTags(primary).replace(/^\s*(to|a|an|the)\s+/i, "");
+    if (plain) return clip120(plain);
+  }
+  const firstDef = stripTags(body.match(/<def>([\s\S]*?)<\/def>/)?.[1] || "");
+  if (firstDef) return clip120(firstDef);
+  const usage = stripTags(body.match(/<usage>([\s\S]*?)<\/usage>/)?.[1] || "");
+  return clip120(usage);
+}
+
+/**
+ * bible-v2 등에 이미 박힌 음역 보정: צ+e(쩨…) → 체…
+ * 한글 음절 초성 ㅉ + 중성 ㅔ → ㅊ (종성·받침 ㄹ 유지).
+ */
+function normalizePron(pron) {
+  return [...String(pron || "")]
+    .map((ch) => {
+      const code = ch.codePointAt(0);
+      if (code < 0xac00 || code > 0xd7a3) return ch;
+      const s = code - 0xac00;
+      const cho = Math.floor(s / 588);
+      const jung = Math.floor((s % 588) / 28);
+      const jong = s % 28;
+      // CHO: ㅈ=12, ㅉ=13, ㅊ=14; JUNG: ㅔ=5 — צ+e(쩨)만 체
+      if (cho === 13 && jung === 5) {
+        return String.fromCodePoint(0xac00 + 14 * 588 + 5 * 28 + jong);
+      }
+      return ch;
+    })
+    .join("");
+}
+
 /** HebrewStrong.xml → enriched lexicon (defEn, rootStrong, …) */
 function ensureHebrewLexicon() {
   if (fs.existsSync(OSHB_CACHE)) {
@@ -206,19 +259,13 @@ function ensureHebrewLexicon() {
     const pron = body.match(/<w\b[^>]*\bpron="([^"]*)"/)?.[1] || "";
     const sourceBody = body.match(/<source>([\s\S]*?)<\/source>/)?.[1] || "";
     const rootStrong = sourceBody.match(/\bsrc="(H\d+)"/)?.[1] || null;
-    const defs = [...body.matchAll(/<def>([\s\S]*?)<\/def>/g)].map((x) =>
-      stripTags(x[1]),
-    );
-    const meaning = stripTags(body.match(/<meaning>([\s\S]*?)<\/meaning>/)?.[1] || "");
     const usage = stripTags(body.match(/<usage>([\s\S]*?)<\/usage>/)?.[1] || "");
-    let defEn = defs.length ? defs.join("; ") : meaning || usage;
-    defEn = clip120(defEn);
     out[id] = {
       word: hebrew,
       xlit,
       pronEn: pron,
       rootStrong,
-      defEn,
+      defEn: extractDefEn(body),
       usage,
     };
   }
@@ -532,24 +579,37 @@ function loadPicks(bookId) {
   return JSON.parse(fs.readFileSync(p, "utf8"));
 }
 
-function buildRoot(strongId, index) {
+function resolvePron(hebrewWord, fallback = "", notePron = "") {
+  if (notePron) return normalizePron(notePron);
+  if (hebrewWord) {
+    const auto = hebPron(hebrewWord);
+    if (auto) return normalizePron(auto);
+  }
+  return normalizePron(fallback);
+}
+
+function buildRoot(strongId, index, note) {
   const lex = HE_LEX[strongId];
   if (!lex?.rootStrong) return null;
   const rs = lex.rootStrong;
   const rootLex = HE_LEX[rs];
+  const rootWordNote = HE_NOTES[rs] || {};
+  const word = rootLex?.word || index.wordByStrong.get(rs) || "";
   return {
     strong: rs,
-    word: rootLex?.word || index.wordByStrong.get(rs) || "",
-    pron: index.pronByStrong.get(rs) || "",
-    gloss: "",
+    word,
+    pron: resolvePron(word, index.pronByStrong.get(rs) || "", rootWordNote.pron || ""),
+    gloss: (note && note.rootGloss) || "",
+    note: (note && note.rootNote) || "",
   };
 }
 
 function enrichWord(entry, index) {
   const strong = entry.hebrew ? entry.lemma : entry.lemma; // H#### or greek lemma
   const lex = entry.hebrew ? HE_LEX[strong] : null;
+  const note = entry.hebrew ? HE_NOTES[strong] || {} : {};
   // 헬라어는 구조만 — EL_LEX[G####] 는 lemma 가 그리스 원형일 때 나중에 매핑
-  const defEn = lex?.defEn || "";
+  const defEn = note.defEn || lex?.defEn || "";
   const refsAll = index.byBook.get(entry.lemma) || { [entry._bookId || ""]: entry.inChapter };
   // 책 키만 남기고 0 제거
   const refsClean = {};
@@ -557,23 +617,51 @@ function enrichWord(entry, index) {
     if (n > 0) refsClean[b] = n;
   }
 
+  const root = entry.hebrew ? buildRoot(entry.lemma, index, note) : null;
+  const rootGloss = note.rootGloss != null ? note.rootGloss : root?.gloss || "";
+  const rootNote = note.rootNote || root?.note || "";
+
   return {
     lemma: entry.lemma,
     word: entry.word,
-    pron: entry.pron,
-    gloss: entry.gloss,
+    pron: entry.hebrew
+      ? resolvePron(entry.word, entry.pron, note.pron || "")
+      : normalizePron(note.pron || entry.pron),
+    gloss: note.gloss || entry.gloss,
     pos: entry.pos,
     strong: entry.hebrew ? entry.lemma : "",
     posDetail: formatPosDetail(entry.parse, entry.pos),
-    root: entry.hebrew ? buildRoot(entry.lemma, index) : null,
+    root,
+    rootGloss,
+    rootNote,
     defEn,
-    defKo: "",
+    defKo: note.defKo || "",
     refs: entry.refs,
     refsAll: refsClean,
     inChapter: entry.inChapter,
     inTestament: entry.inTestament,
     note: "",
   };
+}
+
+/** 같은 뿌리 명사·동사가 한 장에 있으면 명사만 남김 (H2233/H2232 → H2233). */
+function dropSameRootVerbNounDupes(scored) {
+  const byLemma = new Map(scored.map((e) => [e.lemma, e]));
+  const drop = new Set();
+  for (const e of scored) {
+    if (!e.hebrew || drop.has(e.lemma)) continue;
+    const root = HE_LEX[e.lemma]?.rootStrong;
+    if (!root) continue;
+    const other = byLemma.get(root);
+    if (!other || other === e) continue;
+    const eNoun = e.pos === "명사";
+    const oNoun = other.pos === "명사";
+    const eVerb = e.pos === "동사";
+    const oVerb = other.pos === "동사";
+    if (eNoun && oVerb) drop.add(other.lemma);
+    else if (eVerb && oNoun) drop.add(e.lemma);
+  }
+  return scored.filter((e) => !drop.has(e.lemma));
 }
 
 function pickForChapter({
@@ -619,14 +707,15 @@ function pickForChapter({
       a.lemma.localeCompare(b.lemma),
   );
 
-  const positive = scored.filter((x) => x.score > 0 || x.forced);
+  const deduped = dropSameRootVerbNounDupes(scored);
+  const positive = deduped.filter((x) => x.score > 0 || x.forced);
   let target = Math.min(MAX_WORDS, Math.max(MIN_WORDS, Math.min(7, positive.length || MIN_WORDS)));
   if (positive.length >= 9) target = 9;
   else if (positive.length >= 7) target = 7;
   else if (positive.length >= 5) target = 5;
-  else target = Math.min(MAX_WORDS, Math.max(positive.length, Math.min(MIN_WORDS, scored.length)));
+  else target = Math.min(MAX_WORDS, Math.max(positive.length, Math.min(MIN_WORDS, deduped.length)));
 
-  return scored.slice(0, target).map((e) => enrichWord(e, index));
+  return deduped.slice(0, target).map((e) => enrichWord(e, index));
 }
 
 function buildBook(bookId, chapterFilter) {

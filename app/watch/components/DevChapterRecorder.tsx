@@ -11,7 +11,7 @@ import { formatTime } from "./watchStorage";
 type Props = {
   starts: ChapterStarts;
   currentTime: number;
-  onRecord: (chapter: number) => void;
+  onRecord: (chapter: number) => boolean;
   onReset: () => void;
   nextVerseLabel: string | null;
   verseFixCount: number;
@@ -39,8 +39,7 @@ export default function DevChapterRecorder({
     setTarget((n) => Math.min(GENESIS_TOTAL_CHAPTERS, Math.max(1, n + d)));
 
   const record = () => {
-    onRecord(target);
-    setTarget((n) => Math.min(GENESIS_TOTAL_CHAPTERS, n + 1));
+    if (onRecord(target)) setTarget((n) => Math.min(GENESIS_TOTAL_CHAPTERS, n + 1));
   };
 
   return (

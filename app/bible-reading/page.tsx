@@ -1580,6 +1580,44 @@ export default function BibleReadingPage() {
     }
     setBookConfirmed(true);
 
+    // URL ?book=&chapter= — 읽기표 등 외부 진입. 유효할 때만 덮어쓰고,
+    // 잘못된 값이면 위에서 복구한 localStorage 상태를 그대로 둔다.
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const qBook = params.get("book");
+      const qChapterRaw = params.get("chapter");
+      if (qBook && qBook in BOOKS) {
+        const qMeta = BOOKS[qBook as BookId];
+        const qChapter = qChapterRaw != null ? Number(qChapterRaw) : 1;
+        if (
+          Number.isFinite(qChapter) &&
+          qChapter >= 1 &&
+          qChapter <= qMeta.totalChapters
+        ) {
+          activeBook = qBook as BookId;
+          setBookId(activeBook);
+          setChapterNumber(qChapter);
+          setBookConfirmed(true);
+          try {
+            window.localStorage.setItem(CURRENT_BOOK_KEY, activeBook);
+            window.localStorage.setItem(
+              currentChapterKey(activeBook),
+              String(qChapter),
+            );
+            if (isOldTestament(activeBook)) {
+              window.localStorage.setItem(LAST_OT_BOOK_KEY, activeBook);
+            } else {
+              window.localStorage.setItem(LAST_NT_BOOK_KEY, activeBook);
+            }
+          } catch {
+            /* ignore */
+          }
+        }
+      }
+    } catch {
+      /* ignore */
+    }
+
     // testament 별 "마지막 책" 복구. 별도 키가 없으면 활성 bookId 를 채운다.
     const savedOt = window.localStorage.getItem(LAST_OT_BOOK_KEY);
     if (savedOt && savedOt in BOOKS && isOldTestament(savedOt as BookId)) {
@@ -1660,18 +1698,32 @@ export default function BibleReadingPage() {
         }
       }
     }
-    if (urlParamApplied) {
-      try {
-        const url = new URL(window.location.href);
+    // view / book / chapter 쿼리는 한 번 적용한 뒤 URL 에서 제거
+    // (새로고침 때 다시 덮어쓰지 않도록).
+    try {
+      const url = new URL(window.location.href);
+      let changed = false;
+      if (urlParamApplied && url.searchParams.has("view")) {
         url.searchParams.delete("view");
+        changed = true;
+      }
+      if (url.searchParams.has("book")) {
+        url.searchParams.delete("book");
+        changed = true;
+      }
+      if (url.searchParams.has("chapter")) {
+        url.searchParams.delete("chapter");
+        changed = true;
+      }
+      if (changed) {
         window.history.replaceState(
           window.history.state,
           "",
           url.pathname + (url.search ? url.search : "") + url.hash,
         );
-      } catch {
-        /* ignore */
       }
+    } catch {
+      /* ignore */
     }
 
   }, []);

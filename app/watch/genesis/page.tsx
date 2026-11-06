@@ -40,7 +40,9 @@ import {
   GENESIS_TOTAL_CHAPTERS,
   GENESIS_VIDEO_ID,
   chapterAt,
+  checkChapterStart,
   clearChapterStarts,
+  describeStartCheck,
   findNextChapter,
   findPrevChapter,
   loadChapterStarts,
@@ -109,10 +111,7 @@ export default function WatchGenesisPage() {
     const start = loadPosition();
     setStarts(loadChapterStarts());
     setSpeed(loadSpeed());
-    setDevMode(
-      process.env.NODE_ENV !== "production" ||
-        new URLSearchParams(window.location.search).has("dev"),
-    );
+    setDevMode(new URLSearchParams(window.location.search).get("dev") === "1");
     const resume = start >= RESUME_MIN_S ? start : 0;
     setTime(resume);
     lastSavedRef.current = resume;
@@ -259,13 +258,30 @@ export default function WatchGenesisPage() {
   const closeSheet = useCallback(() => setSheetOpen(false), []);
 
   const recordChapter = useCallback(
-    (n: number) => {
+    (n: number): boolean => {
       const t = Math.floor(playerRef.current?.getCurrentTime() ?? time);
+      const check = checkChapterStart(starts, n, t);
+      if (!check.ok) {
+        console.warn(`[watch] 장 기록 무시: ${describeStartCheck(n, t, check)}`);
+        showToast(
+          check.reason === "before-prev"
+            ? `${check.neighbor.chapter}장(${formatTime(check.neighbor.start)})보다 늦어야 해요`
+            : `${check.neighbor.chapter}장(${formatTime(check.neighbor.start)})보다 일러야 해요`,
+        );
+        return false;
+      }
+      const prev = starts[n - 1];
+      const question =
+        prev !== null && prev !== undefined
+          ? `${n}장 시작을 ${formatTime(prev)} → ${formatTime(t)}로 바꿀까요?`
+          : `${n}장 시작을 ${formatTime(t)}로 기록할까요?`;
+      if (!window.confirm(question)) return false;
       const next = starts.map((s, i) => (i === n - 1 ? t : s));
       setStarts(next);
       saveChapterStarts(next);
       console.log(`[watch] ${n}장 = ${t}초\n` + JSON.stringify(next));
       showToast(`${n}장 시작 = ${formatTime(t)}`);
+      return true;
     },
     [starts, time, showToast],
   );

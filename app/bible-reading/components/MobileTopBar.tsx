@@ -194,6 +194,13 @@ function MobileTopBar({
           >
             <a
               className="brp-mobile-topbar-sheet-item"
+              href="/plan"
+              onClick={() => setMenuOpen(false)}
+            >
+              읽기표
+            </a>
+            <a
+              className="brp-mobile-topbar-sheet-item"
               href="/settings"
               onClick={() => setMenuOpen(false)}
             >

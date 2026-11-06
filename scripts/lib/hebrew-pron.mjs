@@ -10,58 +10,52 @@
 //      자음으로 결합.
 //   3) י(yod) 와 ו(vav) 가 모음 역할을 할 때는 모음으로 처리(hireq + yod = ㅣ,
 //      holem + vav = ㅗ, shureq = ㅜ).
-//   4) שׁ (오른점) = 시/쉬 계열, שׂ (왼점) = 사/세 계열.
-//   5) 닉쿠드 없는 자음은 무성으로 종성처리 (또는 단독이면 묵음 ㅡ로 처리).
-//
-// 입력이 형태소 단위로 "/" 로 갈라져 있어도 (예: "בְּ/רֵאשִׁית") 자동으로
-// 각 부분을 음역해 합친다. 모르는 입력은 빈 문자열 대신 가능한 한 그대로 둔다.
+//   4) שׁ (쉰) = 샤/쉬/셰… 계열, שׂ (신) = 사/세 계열.
+//   5) 끝 ץ→츠, 끝 ח→흐(파타흐 숨은모음이면 아흐), 끝 ר→르.
+//   6) 첫 י+모음 → 야/예….
+//   7) 다게쉬 겹자음은 앞 음절 받침으로 (잇샤).
+//   8) צ+ㅔ → 체. ל 앞 음절에 ㄹ 받침 복제 (첼렘).
 // =============================================================================
 
-// ── 유니코드 상수 ────────────────────────────────────────────────────────────
 const HEB_LETTER_RANGE = /[\u05D0-\u05EA]/;
-// 모음(닉쿠드)만. shin/sin dot (U+05C1/05C2) 는 자음 구분자이므로 별도 처리.
 const NIQQUD_RANGE = /[\u05B0-\u05BB\u05C7]/;
 const SHIN_DOT = "\u05C1";
 const SIN_DOT = "\u05C2";
 const DAGESH = "\u05BC";
-// 칸틸레이션·텡엠 부호 (악센트). 발음에 영향 없음 — 제거.
 const ACCENT_RE = /[\u0591-\u05AF]/g;
 
-// 자음별 초성/종성 매핑 ([초성, 종성, 비고]). 음역 일관성을 위해 표준화.
 const CONS = {
-  "\u05D0": ["ㅇ", ""], // א aleph (silent)
-  "\u05D1": ["ㅂ", "ㅂ"], // ב bet
-  "\u05D2": ["ㄱ", "ㄱ"], // ג gimel
-  "\u05D3": ["ㄷ", "ㄷ"], // ד dalet
-  "\u05D4": ["ㅎ", ""], // ה he (종성에서는 묵음)
-  "\u05D5": ["ㅂ", ""], // ו vav (자음)
-  "\u05D6": ["ㅈ", "ㅅ"], // ז zayin
-  "\u05D7": ["ㅎ", "ㅎ"], // ח het (강한 H — chet)
-  "\u05D8": ["ㄷ", "ㄷ"], // ט tet
-  "\u05D9": ["ㅇ", ""], // י yod (자음 위치에선 묵음 ㅇ, 모음 ㅣ는 별도 처리)
-  "\u05DB": ["ㅋ", "ㄱ"], // כ kaf
-  "\u05DC": ["ㄹ", "ㄹ"], // ל lamed
-  "\u05DE": ["ㅁ", "ㅁ"], // מ mem
-  "\u05E0": ["ㄴ", "ㄴ"], // נ nun
-  "\u05E1": ["ㅅ", "ㅅ"], // ס samekh
-  "\u05E2": ["ㅇ", ""], // ע ayin (silent)
-  "\u05E4": ["ㅍ", "ㅂ"], // פ pe
-  "\u05E6": ["ㅉ", "ㅅ"], // צ tsade
-  "\u05E7": ["ㅋ", "ㄱ"], // ק qof
-  "\u05E8": ["ㄹ", "ㄹ"], // ר resh
-  "\u05E9": ["ㅅ", "ㅅ"], // ש shin/sin
-  "\u05EA": ["ㅌ", "ㅅ"], // ת tav
-  // 어미형
-  "\u05DA": ["ㅋ", "ㄱ"], // ך kaf-final
-  "\u05DD": ["ㅁ", "ㅁ"], // ם mem-final
-  "\u05DF": ["ㄴ", "ㄴ"], // ן nun-final
-  "\u05E3": ["ㅍ", "ㅂ"], // ף pe-final
-  "\u05E5": ["ㅉ", "ㅅ"], // ץ tsade-final
+  "\u05D0": ["ㅇ", ""], // א
+  "\u05D1": ["ㅂ", "ㅂ"], // ב
+  "\u05D2": ["ㄱ", "ㄱ"], // ג
+  "\u05D3": ["ㄷ", "ㄷ"], // ד
+  "\u05D4": ["ㅎ", ""], // ה
+  "\u05D5": ["ㅂ", ""], // ו
+  "\u05D6": ["ㅈ", "ㅅ"], // ז
+  "\u05D7": ["ㅎ", "ㅎ"], // ח
+  "\u05D8": ["ㄷ", "ㄷ"], // ט
+  "\u05D9": ["ㅇ", ""], // י
+  "\u05DB": ["ㅋ", "ㄱ"], // כ
+  "\u05DC": ["ㄹ", "ㄹ"], // ל
+  "\u05DE": ["ㅁ", "ㅁ"], // מ
+  "\u05E0": ["ㄴ", "ㄴ"], // נ
+  "\u05E1": ["ㅅ", "ㅅ"], // ס
+  "\u05E2": ["ㅇ", ""], // ע
+  "\u05E4": ["ㅍ", "ㅂ"], // פ
+  "\u05E6": ["ㅊ", "ㅅ"], // צ (츠/체)
+  "\u05E7": ["ㅋ", "ㄱ"], // ק
+  "\u05E8": ["ㄹ", "ㄹ"], // ר
+  "\u05E9": ["ㅅ", "ㅅ"], // ש
+  "\u05EA": ["ㅌ", "ㅅ"], // ת
+  "\u05DA": ["ㅋ", "ㄱ"], // ך
+  "\u05DD": ["ㅁ", "ㅁ"], // ם
+  "\u05DF": ["ㄴ", "ㄴ"], // ן
+  "\u05E3": ["ㅍ", "ㅂ"], // ף
+  "\u05E5": ["ㅊ", "ㅅ"], // ץ → 츠
 };
 
-// 닉쿠드 → 모음 (중성 인덱스 + 표기). null = 약한 sheva (묵음).
 const VOWEL = {
-  "\u05B0": "ㅡ", // sheva — 약하지만 표기는 ㅡ
+  "\u05B0": "ㅡ", // sheva (음절핵일 때 아래에서 ㅔ/ㅡ로 재결정)
   "\u05B1": "ㅔ", // hataf segol
   "\u05B2": "ㅏ", // hataf patah
   "\u05B3": "ㅗ", // hataf qamets
@@ -69,13 +63,25 @@ const VOWEL = {
   "\u05B5": "ㅔ", // tsere
   "\u05B6": "ㅔ", // segol
   "\u05B7": "ㅏ", // patah
-  "\u05B8": "ㅏ", // qamets (qamets gadol; qamets hatuf 은 ㅗ 이지만 단순화)
-  "\u05B9": "ㅗ", // holem (앞 자음 위)
-  "\u05BA": "ㅗ", // holem haser for vav
+  "\u05B8": "ㅏ", // qamets
+  "\u05B9": "ㅗ", // holem
+  "\u05BA": "ㅗ", // holem haser
   "\u05BB": "ㅜ", // qubuts
 };
 
-// 한글 자모 → 음절 합성 (초성/중성/종성 → 완성형 코드포인트).
+/** 끝자음: 받침 흡수 대신 초성+ㅡ 음절 */
+const FINAL_OPEN = new Set([
+  "\u05E8", // ר → 르
+  "\u05D7", // ח → 흐
+  "\u05E6", // צ
+  "\u05E5", // ץ → 츠
+  "\u05EA", // ת → 트
+  "\u05DB", // כ
+  "\u05DA", // ך → 크
+  "\u05E9", // ש → 쉬
+  "\u05E7", // ק
+]);
+
 const CHO = [
   "ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ",
   "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ",
@@ -98,6 +104,22 @@ function compose(cho, jung, jong) {
   return String.fromCodePoint(0xac00 + i * 588 + j * 28 + k);
 }
 
+/** 쉰(sh): ㅏ→ㅑ, ㅔ→ㅖ, ㅗ→ㅛ, ㅜ→ㅠ, ㅡ→ㅟ */
+function shinJung(jung) {
+  return (
+    { ㅏ: "ㅑ", ㅐ: "ㅒ", ㅓ: "ㅕ", ㅔ: "ㅖ", ㅗ: "ㅛ", ㅜ: "ㅠ", ㅡ: "ㅟ" }[jung] ||
+    jung
+  );
+}
+
+/** 첫 요드: ㅏ→ㅑ, ㅔ→ㅖ … */
+function yodJung(jung) {
+  return (
+    { ㅏ: "ㅑ", ㅐ: "ㅒ", ㅓ: "ㅕ", ㅔ: "ㅖ", ㅗ: "ㅛ", ㅜ: "ㅠ", ㅡ: "ㅟ" }[jung] ||
+    jung
+  );
+}
+
 export function stripHebrewAccents(s) {
   return (s || "").normalize("NFD").replace(ACCENT_RE, "").normalize("NFC");
 }
@@ -109,16 +131,16 @@ function isVowelMark(c) {
   return c && NIQQUD_RANGE.test(c);
 }
 
-// 단일 형태소(prefix 미포함) 음역. "/" 포함 입력은 transliterate() 가 분할 처리.
+function isShin(t) {
+  return t.cons === "\u05E9" && t.dot !== SIN_DOT;
+}
+
 function transliterateWord(raw) {
   const word = stripHebrewAccents(raw)
-    .replace(/[־'״\u05F3\u05F4]/g, "") // 마케프·게르샤임 제거
-    .replace(/[\u05BD\u05BF]/g, ""); // meteg, rafe 제거
+    .replace(/[־'״\u05F3\u05F4]/g, "")
+    .replace(/[\u05BD\u05BF]/g, "");
   if (!word) return "";
 
-  // 토큰화: 자음 + 그 뒤에 붙는 모든 결합 부호 (dagesh, shin-dot, 모음 niqqud).
-  // NFC 정규화 결과에서 결합 부호는 자음 직후에 임의 순서로 나타날 수 있으므로
-  // 다음 자음 전까지 모두 수집한다.
   const tokens = [];
   let i = 0;
   while (i < word.length) {
@@ -131,7 +153,6 @@ function transliterateWord(raw) {
         if (c2 === SHIN_DOT || c2 === SIN_DOT) cur.dot = c2;
         else if (c2 === DAGESH) cur.dagesh = true;
         else if (isVowelMark(c2)) cur.marks.push(c2);
-        // 그 외는 무시 (이미 ACCENT_RE 로 걸러졌지만 안전망)
         i += 1;
       }
       tokens.push(cur);
@@ -140,108 +161,96 @@ function transliterateWord(raw) {
     }
   }
 
-  // 음절 합성. ו(vav) + holem = "ㅗ" 음절, ו + shureq dot = "ㅜ", י + hireq = "ㅣ"
   const out = [];
   for (let idx = 0; idx < tokens.length; idx++) {
     const t = tokens[idx];
     if (t._consumed) continue;
-    // ו가 모음 역할인가? (앞 토큰의 모음이 없는데, ו가 dagesh 또는 holem 부호와 함께)
     const prev = out.length ? out[out.length - 1] : null;
     const cu = t.cons;
+    const isLast = idx === tokens.length - 1;
 
-    // 1) ו 가 holem(왈리프) 또는 shureq 표기를 받쳐주는 경우:
-    //    앞 자음이 holem 부호(05B9)를 가졌고 다음이 ו 라면, ㅗ 로 흡수 (이미 prev 에 적용)
-    //    또는 ו 가 dagesh 만 가지면 shureq (ㅜ) — 단독 모음 음절로 추가.
+    // ו shureq / holem-vav
     if (cu === "\u05D5" && t.dagesh && t.marks.length === 0) {
-      // shureq: 앞 자음의 종성/홀로 음절이 없으면 ㅇ+ㅜ
-      if (prev && !prev.jung) {
-        prev.jung = "ㅜ";
-      } else {
-        out.push({ cho: "ㅇ", jung: "ㅜ", jong: "" });
-      }
+      if (prev && !prev.jung) prev.jung = "ㅜ";
+      else out.push({ cho: "ㅇ", jung: "ㅜ", jong: "" });
       continue;
     }
     if (cu === "\u05D5" && t.marks.length === 1 && t.marks[0] === "\u05B9") {
-      // vav + holem (after consonant) — vav가 holem 를 받친 형태
-      if (prev && !prev.jung) {
-        prev.jung = "ㅗ";
-      } else {
-        out.push({ cho: "ㅇ", jung: "ㅗ", jong: "" });
-      }
+      if (prev && !prev.jung) prev.jung = "ㅗ";
+      else out.push({ cho: "ㅇ", jung: "ㅗ", jong: "" });
       continue;
     }
-    // 2) י (yod) 가 모음 마커 역할인 경우 — 앞 모음이 ㅣ 면 hireq-yod 결합으로
-    //    조용히 흡수. 앞 모음이 ㅔ 면 tsere-yod (ay) 로 ㅣ 처럼 흡수해도 무방.
+
+    // 어중/어말 요드가 앞 모음을 받치는 마터 (hireq-yod / tsere-yod)
     if (cu === "\u05D9" && t.marks.length === 0 && !t.dagesh) {
-      if (prev && (prev.jung === "ㅣ" || prev.jung === "ㅔ")) {
-        continue; // 모음을 받쳐주는 yod — 발음에 영향 없음
+      if (prev && (prev.jung === "ㅣ" || prev.jung === "ㅔ")) continue;
+      // חַי 등: 모음 있는 앞 음절 뒤 맨끝 요드 → 이
+      if (prev && prev.jung && isLast) {
+        out.push({ cho: "ㅇ", jung: "ㅣ", jong: "" });
+        continue;
       }
-      // 그 외는 자음 yod 로 처리 (이 분기에서 떨어지면 fall-through 일반 처리)
     }
 
-    // 3) 묵음 자음 처리.
-    //    aleph/ayin: 모음·다게쉬 없으면 모두 묵음 (성문 폐쇄음, 한글로 표기 무리).
-    //    he:        단어 끝에서 모음·다게쉬 없을 때만 묵음. 어중에서는 다음
-    //               vav-shureq/holem 모음을 받아 발음됨.
+    // 묵음 א/ע (모음·다게쉬 없음), 끝 ה
     const isSilentAlephAyin =
-      (cu === "\u05D0" || cu === "\u05E2") &&
-      t.marks.length === 0 &&
-      !t.dagesh;
+      (cu === "\u05D0" || cu === "\u05E2") && t.marks.length === 0 && !t.dagesh;
     const isSilentFinalHe =
-      cu === "\u05D4" &&
-      t.marks.length === 0 &&
-      !t.dagesh &&
-      idx === tokens.length - 1;
-    if (isSilentAlephAyin || isSilentFinalHe) {
+      cu === "\u05D4" && t.marks.length === 0 && !t.dagesh && isLast;
+    if (isSilentAlephAyin || isSilentFinalHe) continue;
+
+    // 끝 숨은 파타흐(furtive patah): ח→아흐, ע/ה→아 (자음 거의 묵음)
+    if (
+      isLast &&
+      (cu === "\u05D7" || cu === "\u05E2" || cu === "\u05D4") &&
+      t.marks.length === 1 &&
+      t.marks[0] === "\u05B7"
+    ) {
+      out.push({ cho: "ㅇ", jung: "ㅏ", jong: "" });
+      if (cu === "\u05D7") out.push({ cho: "ㅎ", jung: "ㅡ", jong: "" });
       continue;
     }
 
-    // 일반 자음 처리
     let cho = CONS[cu]?.[0] ?? "ㅇ";
     let jung = null;
     let jong = "";
-    if (cu === "\u05E9") {
-      // shin (right dot, U+05C1) → ㅅ (sh) ; sin (left dot, U+05C2) → ㅅ
-      cho = "ㅅ";
-    }
-    if (cu === "\u05D5") {
-      // vav 자음 (모음 역할 아닌 경우): ㅂ 보다 ㅇ+모음 형태가 더 자연. 그러나
-      // 단순화: vav 가 자음 위치이고 모음을 동반하면 일반 ㅂ로 처리.
-      cho = "ㅂ";
-    }
-    // 모음 결정 (마지막으로 등장한 닉쿠드를 모음으로 — 가장 강한 모음을 잡음)
+    let shevaOnly = false;
+
+    if (cu === "\u05E9") cho = "ㅅ";
+    if (cu === "\u05D5") cho = "ㅂ";
+
     if (t.marks.length) {
-      // hataf 류는 다른 모음과 결합되지 않으므로 그대로 사용
       const mark = t.marks[t.marks.length - 1];
+      shevaOnly = mark === "\u05B0" && t.marks.length === 1;
       jung = VOWEL[mark] ?? null;
-      // weak sheva (단독 sheva) 는 종성으로 직전 음절에 흡수
-      if (mark === "\u05B0" && prev && !prev.jong && jung === "ㅡ") {
-        // 직전 음절 종성으로 흡수 시도
+
+      // weak sheva → 앞 음절 받침 흡수 (다게쉬 겹자음이 아닐 때)
+      if (shevaOnly && prev && !prev.jong && !t.dagesh) {
         const jongSym = CONS[cu]?.[1] ?? "";
-        if (jongSym) {
+        if (jongSym && !FINAL_OPEN.has(cu)) {
           prev.jong = jongSym;
           continue;
         }
       }
+      // 음성 셰바(음절핵): ㅔ / 끝이면 ㅡ
+      if (shevaOnly) {
+        jung = isLast ? "ㅡ" : "ㅔ";
+      }
     }
-    // Look-ahead: 다음 토큰이 vav-holem 또는 shureq 라면 모음으로 흡수.
+
+    // look-ahead: vav holem / shureq
     if (!jung) {
       const nx = tokens[idx + 1];
       if (nx && nx.cons === "\u05D5" && !nx._consumed) {
         if (nx.dagesh && nx.marks.length === 0) {
           jung = "ㅜ";
           nx._consumed = true;
-        } else if (
-          !nx.dagesh &&
-          nx.marks.length === 1 &&
-          nx.marks[0] === "\u05B9"
-        ) {
+        } else if (!nx.dagesh && nx.marks.length === 1 && nx.marks[0] === "\u05B9") {
           jung = "ㅗ";
           nx._consumed = true;
         }
       }
     }
-    // Look-ahead: 다음이 마터 yod (모음 마커) 이면 ㅣ/ㅔ 흡수.
+    // look-ahead: mater yod
     if (!jung) {
       const nx = tokens[idx + 1];
       if (
@@ -251,33 +260,54 @@ function transliterateWord(raw) {
         !nx.dagesh &&
         nx.marks.length === 0
       ) {
-        // 모음 마커 yod — 일반적으로 ㅣ 로 흡수.
         jung = "ㅣ";
         nx._consumed = true;
       }
     }
+
     if (!jung) {
-      // 종성으로 흡수 가능?
-      const jongSym = CONS[cu]?.[1] ?? "";
-      if (prev && !prev.jong && jongSym) {
-        prev.jong = jongSym;
-        continue;
+      // 끝 자음 → 츠/르/흐/트/크/쉬 …
+      if (isLast && FINAL_OPEN.has(cu)) {
+        jung = "ㅡ";
+      } else {
+        const jongSym = CONS[cu]?.[1] ?? "";
+        if (prev && !prev.jong && jongSym) {
+          prev.jong = jongSym;
+          continue;
+        }
+        jung = "ㅡ";
       }
-      // 그렇지 않으면 단독 자음을 ㅡ 로 발음 (sheva 묵음 처리)
-      jung = "ㅡ";
     }
+
+    // 쉰 활음
+    if (isShin(t)) jung = shinJung(jung);
+
+    // 첫 요드 + 모음 → 야/예
+    if (idx === 0 && cu === "\u05D9") jung = yodJung(jung);
+
+    // 다게쉬 포르테: 앞 음절 받침으로 겹자음
+    if (t.dagesh && prev && !prev.jong) {
+      const gem = CONS[cu]?.[1] || (isShin(t) ? "ㅅ" : "");
+      // begadkepat 마찰 표시만인 어두 다게쉬는 제외(앞 음절 없을 때는 이미 prev 없음)
+      if (gem) prev.jong = gem;
+    }
+
+    // ל : 앞 음절에 ㄹ 받침 복제 (첼렘)
+    if (cu === "\u05DC" && prev && !prev.jong) {
+      prev.jong = "ㄹ";
+    }
+
     out.push({ cho, jung, jong });
   }
 
   return out
     .map((s) => {
-      if (!s.jung) return s.cho; // 비정상 — 자모 한 글자만
+      if (!s.jung) return s.cho;
       return compose(s.cho, s.jung, s.jong || null);
     })
     .join("");
 }
 
-// "/" 로 분리된 형태소 다발을 전체적으로 음역.
 export function transliterate(hebrew) {
   if (!hebrew) return "";
   return hebrew
@@ -287,23 +317,20 @@ export function transliterate(hebrew) {
     .join("");
 }
 
-// 고전 인명/지명 등 알고리즘이 어색한 케이스는 PRON_OVERRIDES 에서 우선 매핑.
 export const PRON_OVERRIDES = {
-  // 유명한 신성 4자: 별도 처리 (전통적인 음역).
-  "יהוה": "여호와",
-  "אדני": "아도나이",
-  "אלהים": "엘로힘",
-  "אל": "엘",
-  // 알려진 인명 — 발음 안정성 우선
-  "אברהם": "아브라함",
-  "יצחק": "이삭",
-  "יעקב": "야곱",
-  "משה": "모세",
-  "אהרן": "아론",
-  "דוד": "다윗",
-  "שלמה": "솔로몬",
-  "ישראל": "이스라엘",
-  "ירושלם": "예루살렘",
+  יהוה: "여호와",
+  אדני: "아도나이",
+  אלהים: "엘로힘",
+  אל: "엘",
+  אברהם: "아브라함",
+  יצחק: "이삭",
+  יעקב: "야곱",
+  משה: "모세",
+  אהרן: "아론",
+  דוד: "다윗",
+  שלמה: "솔로몬",
+  ישראל: "이스라엘",
+  ירושלם: "예루살렘",
 };
 
 function stripAllNiqqud(s) {
@@ -312,7 +339,6 @@ function stripAllNiqqud(s) {
 
 export function lookupPron(hebrew) {
   if (!hebrew) return "";
-  // 부호 제거 자음 골격만 비교
   const skel = stripAllNiqqud(hebrew).replace(/[־'״\u05F3\u05F4]/g, "");
   return PRON_OVERRIDES[skel] || "";
 }
