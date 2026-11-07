@@ -291,6 +291,55 @@
   color: var(--plan-ink);
 }
 
+.plan-book-progress-title {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--plan-ink);
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.plan-book-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+@media (min-width: 480px) {
+  .plan-book-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+  }
+}
+
+.plan-book-grid button {
+  width: 100%;
+  max-width: 40px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--plan-mute);
+  border: 1px solid var(--plan-faint);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.plan-book-grid button.is-current {
+  outline: 2px solid var(--plan-accent);
+  outline-offset: 2px;
+}
+
+.plan-book-grid button.is-done {
+  background: var(--plan-accent);
+  color: #fff;
+  border-color: var(--plan-accent);
+}
+
 @media (max-width: 480px) {
   .plan-page {
     padding: 36px 16px 64px;

@@ -101,37 +101,6 @@ function PlayIcon() {
   );
 }
 
-function CalendarIcon() {
-  return (
-    <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true">
-      <rect
-        x="3.25"
-        y="4.5"
-        width="13.5"
-        height="12.25"
-        rx="1.75"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={STROKE_ENTRY}
-      />
-      <path
-        d="M3.25 8.25h13.5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={STROKE_ENTRY}
-        strokeLinecap="round"
-      />
-      <path
-        d="M7 3.25v2.5M13 3.25v2.5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={STROKE_ENTRY}
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
 function ChevronIcon() {
   return (
     <svg
@@ -257,15 +226,6 @@ function MobileTopBar({
           >
             <PlayIcon />
           </Link>
-          <Link
-            href="/plan"
-            className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon"
-            style={ICON_HIT}
-            aria-label="읽기표"
-            title="읽기표"
-          >
-            <CalendarIcon />
-          </Link>
           <button
             type="button"
             className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon brp-mobile-topbar-menu-btn"
@@ -298,13 +258,6 @@ function MobileTopBar({
               onClick={() => setMenuOpen(false)}
             >
               영상으로 보기
-            </Link>
-            <Link
-              className="brp-mobile-topbar-sheet-item"
-              href="/plan"
-              onClick={() => setMenuOpen(false)}
-            >
-              읽기표
             </Link>
             <Link
               className="brp-mobile-topbar-sheet-item"

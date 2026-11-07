@@ -25,7 +25,10 @@ import {
 const MQ = "(max-width: 768px)";
 const REDUCE_MQ = "(prefers-reduced-motion: reduce)";
 const DRAWER_RATIO = 0.55;
+/** 왼쪽 베젤(뒤로가기 제스처)과 겹치지 않게 */
 const EDGE_IGNORE_PX = 24;
+/** 닫힌 서랍을 열 수 있는 오른쪽 끝 구역 */
+const OPEN_EDGE_PX = 20;
 const LOCK_PX = 10;
 const FLICK_PX_PER_MS = 0.5;
 const OPEN_MS = 380;
@@ -257,6 +260,18 @@ function BookChapterDrawer({
     [onClose, onOpen],
   );
 
+  // 공부 노트 선택 시작 → 반쯤 나온 서랍도 즉시 닫기
+  useEffect(() => {
+    const onStudySelecting = () => {
+      if (draggingRef.current || progressRef.current > 0.001 || openRef.current) {
+        snapTo(false);
+      }
+    };
+    window.addEventListener("haruchi:study-selecting", onStudySelecting);
+    return () =>
+      window.removeEventListener("haruchi:study-selecting", onStudySelecting);
+  }, [snapTo]);
+
   useEffect(() => {
     if (!isMobile || disabled) return;
 
@@ -273,10 +288,18 @@ function BookChapterDrawer({
     const onStart = (e: TouchEvent) => {
       if (disabledRef.current) return;
       if (e.touches.length !== 1) return;
+      // 공부 노트 선택·손잡이·도구 막대 중이면 서랍 제스처 시작 금지
+      if (document.documentElement.dataset.studySelecting === "1") return;
       const t = e.touches[0];
       if (t.clientX < EDGE_IGNORE_PX) return;
       const sel = window.getSelection();
       if (sel && !sel.isCollapsed && (sel.toString()?.length ?? 0) > 0) return;
+
+      const opening = !openRef.current;
+      if (opening) {
+        // 열기는 화면 오른쪽 끝 20px 에서만. 본문 안 좌우 끌기와 분리
+        if (t.clientX < window.innerWidth - OPEN_EDGE_PX) return;
+      }
 
       startX = t.clientX;
       startY = t.clientY;
@@ -284,12 +307,18 @@ function BookChapterDrawer({
       lastT = performance.now();
       velocity = 0;
       startProgress = openRef.current ? 1 : progressRef.current;
-      mode = openRef.current ? "close" : "open";
+      mode = opening ? "open" : "close";
       locked = null;
       tracking = true;
     };
 
     const onMove = (e: TouchEvent) => {
+      if (document.documentElement.dataset.studySelecting === "1") {
+        tracking = false;
+        locked = null;
+        if (draggingRef.current || progressRef.current > 0.001) snapTo(false);
+        return;
+      }
       if (!tracking || e.touches.length !== 1) return;
       const t = e.touches[0];
       const now = performance.now();

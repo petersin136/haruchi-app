@@ -340,6 +340,17 @@
     line-height: 1.6;
   }
 
+  /* 공부 노트 — 파란 탭 하이라이트·선택 중 터치 간섭 줄이기 */
+  .brp-reader .study-root,
+  .brp-reader .study-root button,
+  .brp-reader .study-body {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html[data-study-selecting="1"] .brp-reader .study-body {
+    touch-action: none;
+  }
+
   /* ── PeekTree 책·장 서랍 ───────────────────────────────────────────
      easing: cubic-bezier(0.32, 0.72, 0, 1)
      open 380ms / close 300ms — 드래그 중 transition 없음 */

@@ -208,6 +208,20 @@ function StudyNotebook({
   const magCursorRef = useRef<HTMLDivElement | null>(null);
   const magHideTimerRef = useRef(0);
   const selRectsRef = useRef<SelRect[]>([]);
+  /** setPointerCapture 한 요소 — 반드시 같은 곳에서 release */
+  const captureTargetRef = useRef<HTMLElement | null>(null);
+  const capturePointerIdRef = useRef<number | null>(null);
+  const lastPointerAtRef = useRef(performance.now());
+  const gestureFnsRef = useRef({
+    updateDragTo: (_x: number, _y: number) => {},
+    armCharTimer: (_x: number, _y: number) => {},
+    placeMagnifier: () => {},
+    finishDrag: () => {},
+    abortSelectGesture: (_o?: {
+      keepSelection?: boolean;
+      showToolbar?: boolean;
+    }) => {},
+  });
   const pressRef = useRef<{
     timer: number;
     x: number;
@@ -510,23 +524,61 @@ function StudyNotebook({
     [stopCharTimer],
   );
 
-  const finishDrag = useCallback(() => {
-    const d = dragRef.current;
-    dragRef.current = null;
-    setDragging(false);
-    stopCharTimer();
-    charModeRef.current = false;
-    setCharMode(false);
-    if (autoScrollRef.current) {
-      cancelAnimationFrame(autoScrollRef.current);
-      autoScrollRef.current = 0;
+  const releasePointerCaptureSafe = useCallback(() => {
+    const el = captureTargetRef.current;
+    const id = capturePointerIdRef.current;
+    if (el && id != null) {
+      try {
+        if (el.hasPointerCapture?.(id)) el.releasePointerCapture(id);
+      } catch {
+        /* already released */
+      }
     }
-    setMagState((m) => (m === "shown" ? "hiding" : m));
-    if (!d) return;
-    const cur = selRef.current;
-    if (!cur) return;
-    setToolbar(selectionToolbarFor(cur));
-  }, [selectionToolbarFor, stopCharTimer]);
+    captureTargetRef.current = null;
+    capturePointerIdRef.current = null;
+  }, []);
+
+  /**
+   * 선택 제스처 강제 종료 — capture·플래그·확대경·오토스크롤을 한곳에서 원복.
+   * keepSelection: 손 뗀 뒤 노란 선택·도구 막대는 남김.
+   */
+  const abortSelectGesture = useCallback(
+    (opts?: { keepSelection?: boolean; showToolbar?: boolean }) => {
+      const keep = opts?.keepSelection ?? false;
+      const showTb = opts?.showToolbar ?? false;
+      if (pressRef.current) {
+        window.clearTimeout(pressRef.current.timer);
+        pressRef.current = null;
+      }
+      stopCharTimer();
+      charModeRef.current = false;
+      setCharMode(false);
+      releasePointerCaptureSafe();
+      const hadDrag = !!dragRef.current;
+      dragRef.current = null;
+      setDragging(false);
+      if (autoScrollRef.current) {
+        cancelAnimationFrame(autoScrollRef.current);
+        autoScrollRef.current = 0;
+      }
+      window.clearTimeout(magHideTimerRef.current);
+      setMagState("hidden");
+      if (!keep) {
+        selRef.current = null;
+        setSel(null);
+        setToolbar((t) => (t?.kind === "selection" ? null : t));
+      } else if (showTb && hadDrag) {
+        const cur = selRef.current;
+        if (cur) setToolbar(selectionToolbarFor(cur));
+      }
+    },
+    [releasePointerCaptureSafe, stopCharTimer, selectionToolbarFor],
+  );
+
+  const finishDrag = useCallback(() => {
+    if (!dragRef.current) return;
+    abortSelectGesture({ keepSelection: true, showToolbar: true });
+  }, [abortSelectGesture]);
 
   const updateDragTo = useCallback(
     (x: number, y: number) => {
@@ -693,9 +745,12 @@ function StudyNotebook({
         moved: false,
       };
       lastPointRef.current = { x, y };
+      lastPointerAtRef.current = performance.now();
       charModeRef.current = false;
       setCharMode(false);
       setDragging(true);
+      document.documentElement.dataset.studySelecting = "1";
+      window.dispatchEvent(new Event("haruchi:study-selecting"));
       if (mode !== "press") armCharTimer(x, y);
       if (!autoScrollRef.current) {
         autoScrollRef.current = requestAnimationFrame(runAutoScroll);
@@ -741,15 +796,26 @@ function StudyNotebook({
     const root = bodyRef.current;
     const rects = selRectsRef.current;
     if (!cur || !root || rects.length === 0) return;
-    (e.currentTarget as HTMLElement).setPointerCapture?.(e.pointerId);
+    const hit = e.currentTarget as HTMLElement;
+    captureTargetRef.current = hit;
+    capturePointerIdRef.current = e.pointerId;
+    hit.setPointerCapture?.(e.pointerId);
     suppressClickRef.current = true;
     const r = which === "start" ? rects[0] : rects[rects.length - 1];
     const lineMid = root.getBoundingClientRect().top + r.top + r.height / 2;
     beginDrag(which, cur, e.clientX, e.clientY, e.clientY - lineMid);
   };
 
+  gestureFnsRef.current.updateDragTo = updateDragTo;
+  gestureFnsRef.current.armCharTimer = armCharTimer;
+  gestureFnsRef.current.placeMagnifier = placeMagnifier;
+  gestureFnsRef.current.finishDrag = finishDrag;
+  gestureFnsRef.current.abortSelectGesture = abortSelectGesture;
+
+  // 선택 중 포인터/터치 리스너 — 빈 deps 로 드래그 중 재구독 방지
   useEffect(() => {
     const onMove = (e: PointerEvent) => {
+      lastPointerAtRef.current = performance.now();
       const p = pressRef.current;
       if (p && p.id === e.pointerId) {
         if (Math.hypot(e.clientX - p.x, e.clientY - p.y) >= MOVE_CANCEL_PX) {
@@ -765,7 +831,10 @@ function StudyNotebook({
       if (px === e.clientX && py === e.clientY) return;
       lastPointRef.current = { x: e.clientX, y: e.clientY };
       if (!d.moved) {
-        if (Math.hypot(e.clientX - d.originX, e.clientY - d.originY) < CHAR_MODE_STILL_PX) {
+        if (
+          Math.hypot(e.clientX - d.originX, e.clientY - d.originY) <
+          CHAR_MODE_STILL_PX
+        ) {
           return;
         }
         d.moved = true;
@@ -774,39 +843,95 @@ function StudyNotebook({
         setMagState("shown");
       }
       const still = charTimerRef.current;
+      const fns = gestureFnsRef.current;
       if (
         d.mode !== "press" &&
         !charModeRef.current &&
         (!still ||
-          Math.hypot(e.clientX - still.x, e.clientY - still.y) >= CHAR_MODE_STILL_PX)
+          Math.hypot(e.clientX - still.x, e.clientY - still.y) >=
+            CHAR_MODE_STILL_PX)
       ) {
-        armCharTimer(e.clientX, e.clientY);
+        fns.armCharTimer(e.clientX, e.clientY);
       }
-      updateDragTo(e.clientX, e.clientY);
-      placeMagnifier();
+      fns.updateDragTo(e.clientX, e.clientY);
+      fns.placeMagnifier();
     };
-    const onUp = (e: PointerEvent) => {
+
+    const onUp = () => {
+      lastPointerAtRef.current = performance.now();
       const p = pressRef.current;
-      if (p && p.id === e.pointerId) {
+      if (p) {
         window.clearTimeout(p.timer);
         pressRef.current = null;
       }
-      if (dragRef.current) finishDrag();
+      if (dragRef.current) gestureFnsRef.current.finishDrag();
     };
+
+    const onAbort = () => {
+      if (!dragRef.current && !pressRef.current) return;
+      gestureFnsRef.current.abortSelectGesture({
+        keepSelection: true,
+        showToolbar: true,
+      });
+    };
+
     const onTouchMove = (e: TouchEvent) => {
       if (dragRef.current && e.cancelable) e.preventDefault();
     };
+
+    const onVis = () => {
+      if (document.visibilityState === "hidden") onAbort();
+    };
+
     document.addEventListener("pointermove", onMove, { passive: false });
     document.addEventListener("pointerup", onUp);
     document.addEventListener("pointercancel", onUp);
+    document.addEventListener("lostpointercapture", onUp);
+    document.addEventListener("touchend", onUp, { passive: true });
+    document.addEventListener("touchcancel", onUp, { passive: true });
     document.addEventListener("touchmove", onTouchMove, { passive: false });
+    window.addEventListener("blur", onAbort);
+    document.addEventListener("visibilitychange", onVis);
     return () => {
       document.removeEventListener("pointermove", onMove);
       document.removeEventListener("pointerup", onUp);
       document.removeEventListener("pointercancel", onUp);
+      document.removeEventListener("lostpointercapture", onUp);
+      document.removeEventListener("touchend", onUp);
+      document.removeEventListener("touchcancel", onUp);
       document.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("blur", onAbort);
+      document.removeEventListener("visibilitychange", onVis);
+      gestureFnsRef.current.abortSelectGesture({ keepSelection: true });
     };
-  }, [updateDragTo, finishDrag, armCharTimer, placeMagnifier]);
+  }, []);
+
+    // 공부 노트 선택 상태를 서랍 스와이프에 알림
+  useEffect(() => {
+    const on =
+      dragging ||
+      !!sel ||
+      toolbar?.kind === "selection" ||
+      magState === "shown";
+    if (on) document.documentElement.dataset.studySelecting = "1";
+    else delete document.documentElement.dataset.studySelecting;
+    return () => {
+      delete document.documentElement.dataset.studySelecting;
+    };
+  }, [dragging, sel, toolbar, magState]);
+
+  // 드래그 중 3초 무터치 → 강제 정리 (먹통 안전장치)
+  useEffect(() => {
+    if (!dragging) return;
+    lastPointerAtRef.current = performance.now();
+    const id = window.setInterval(() => {
+      if (!dragRef.current) return;
+      if (performance.now() - lastPointerAtRef.current < 3000) return;
+      abortSelectGesture({ keepSelection: true, showToolbar: true });
+    }, 400);
+    return () => window.clearInterval(id);
+  }, [dragging, abortSelectGesture]);
+
 
   // 빈 곳 탭 → 선택 취소 (스크롤 제스처는 유지)
   useEffect(() => {

@@ -208,10 +208,19 @@
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .study-body.is-selecting {
   touch-action: none;
+}
+
+.study-root button,
+.study-toolbar-btn,
+.study-toolbar-swatch,
+.study-io-link,
+.study-nav-link {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* 끄는 동안 손잡이 터치 영역·메모가 글자 위치 찾기를 가리지 않게 */
@@ -306,6 +315,7 @@
 
 .study-mag.is-hiding {
   opacity: 0;
+  pointer-events: none;
 }
 
 .study-mag-inner {

@@ -8,7 +8,6 @@ import {
   useRef,
   useState,
 } from "react";
-import prayersJson from "./prayers.json";
 import {
   BOOKS,
   NT_BOOK_IDS,
@@ -18,14 +17,22 @@ import {
 } from "./books";
 import { loadKoreanChapter, loadKoreanIndex } from "./bibleData";
 import Dropdown, { type DropdownOption } from "./components/Dropdown";
-import SlidingToggle from "./components/SlidingToggle";
 import VerseList from "./components/VerseList";
-import ProgressGrid from "./components/ProgressGrid";
 import Link from "next/link";
 import MobileTopBar, {
   watchHrefFor,
 } from "./components/MobileTopBar";
 import BookChapterDrawer from "./components/BookChapterDrawer";
+import BottomTabBar from "../components/BottomTabBar";
+import {
+  appendReadLog,
+  doneKey,
+  isChapterDone,
+  markChapterDone,
+  removeReadLog,
+  unmarkChapterDone,
+  type ReadingScope,
+} from "../lib/readLog";
 // 새 "헬라어 보기 v2" 구조 — 신약 27권 전체, 히브리어는 구약 39권 전체.
 // 본문 데이터(`*-v2.json`)는 `public/bible-v2/` 에서 런타임 fetch 로 받는다.
 // (webpack dynamic import 로 묶으면 66권 합 ~150MB 가 의존성 그래프에 들어가
@@ -321,46 +328,6 @@ type TanakhBookId =
 // english / kjv / study 를 고르면 그 책의 영어(또는 공부) 화면으로 들어간다.
 type ModeChoice = TranslationKey | "english" | "kjv" | "study";
 type ViewMode = "reader" | "english" | "kjv" | "study";
-type ReadingScope = "reader" | "web" | "kjv";
-
-type PrayerGradeKey = "children" | "youth" | "youngadult" | "adult";
-
-// 기도 대상(탭) 순서 + 라벨. 저학년/고학년 2단계에서 4단계로 확장.
-const PRAYER_GRADES: PrayerGradeKey[] = [
-  "children",
-  "youth",
-  "youngadult",
-  "adult",
-];
-const PRAYER_GRADE_LABELS: Record<PrayerGradeKey, string> = {
-  children: "어린이",
-  youth: "청소년",
-  youngadult: "청년",
-  adult: "장년",
-};
-const isPrayerGradeKey = (value: unknown): value is PrayerGradeKey =>
-  value === "children" ||
-  value === "youth" ||
-  value === "youngadult" ||
-  value === "adult";
-
-type PrayerEntry = {
-  no: number;
-  theme: string;
-  verse: string;
-  ref: string;
-  think: string;
-  pray: string;
-};
-
-type PrayerCardData = {
-  grade: PrayerGradeKey;
-  title: string;
-  prayers: PrayerEntry[];
-  lordsPrayer: string;
-};
-
-type PrayersData = Record<PrayerGradeKey, PrayerCardData>;
 
 type Verse = {
   n: number;
@@ -398,63 +365,11 @@ type Chapter = {
 // 읽기 본문은 장 단위 `korean.json` 만 받는다. 검색은 검색창을 열 때
 // `loadAllBooks()` 로 책 전체 `/bible-data/<bookId>.json` 을 받는다.
 
-const prayersData = prayersJson as PrayersData;
-
-const doneKey = (
-  bookId: BookId,
-  chapter: number,
-  scope: ReadingScope = "reader",
-) =>
-  scope === "reader"
-    ? `bible_done_${bookId}_${chapter}`
-    : `bible_done_${bookId}_${chapter}_${scope}`;
 const readingScopeOf = (mode: ViewMode): ReadingScope =>
   mode === "english" ? "web" : mode === "kjv" ? "kjv" : "reader";
 
 const isEnglishReadingMode = (mode: ViewMode) =>
   mode === "english" || mode === "kjv";
-
-
-const READ_LOG_KEY = "haruchi/read-log";
-
-type ReadLogEntry = {
-  book: string;
-  ch: number;
-  at: string;
-};
-
-function loadReadLog(): ReadLogEntry[] {
-  if (typeof window === "undefined") return [];
-  try {
-    const raw = window.localStorage.getItem(READ_LOG_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw) as unknown;
-    if (!Array.isArray(parsed)) return [];
-    return parsed.filter(
-      (row): row is ReadLogEntry =>
-        !!row &&
-        typeof row === "object" &&
-        typeof (row as ReadLogEntry).book === "string" &&
-        typeof (row as ReadLogEntry).ch === "number" &&
-        typeof (row as ReadLogEntry).at === "string",
-    );
-  } catch {
-    return [];
-  }
-}
-
-function appendReadLog(book: string, ch: number) {
-  if (typeof window === "undefined") return;
-  const next = loadReadLog().filter((row) => !(row.book === book && row.ch === ch));
-  next.push({ book, ch, at: new Date().toISOString() });
-  window.localStorage.setItem(READ_LOG_KEY, JSON.stringify(next));
-}
-
-function removeReadLog(book: string, ch: number) {
-  if (typeof window === "undefined") return;
-  const next = loadReadLog().filter((row) => !(row.book === book && row.ch === ch));
-  window.localStorage.setItem(READ_LOG_KEY, JSON.stringify(next));
-}
 
 const CURRENT_BOOK_KEY = "bible_current_book";
 // 양쪽 드롭다운(구약/신약)이 서로의 마지막 선택을 잊지 않도록, 각 testament 별
@@ -498,18 +413,6 @@ const migrateLegacyKeys = () => {
     }
   }
   window.localStorage.setItem(MIGRATION_V1_KEY, "true");
-};
-
-const PRAYER_GRADE_KEY = "prayer_grade";
-const prayerChecksKey = (date: string, grade: PrayerGradeKey) =>
-  `prayer_checks_${date}_${grade}`;
-
-const getTodayKey = () => {
-  const d = new Date();
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  return `${y}-${m}-${day}`;
 };
 
 // 톱니바퀴 아이콘 — 데스크탑 nav 와 모바일 메뉴 둘 다에서 재사용.
@@ -605,10 +508,6 @@ export default function BibleReadingPage() {
   } | null>(null);
   // 되돌리기 후 같은 자리에서 다시 끝 도달을 감지하려면 센티널을 리마운트.
   const [endSentinelNonce, setEndSentinelNonce] = useState(0);
-  const [prayerGrade, setPrayerGrade] = useState<PrayerGradeKey>("children");
-  const [prayerDate, setPrayerDate] = useState<string>(() => getTodayKey());
-  const [prayerChecks, setPrayerChecks] = useState<Set<number>>(new Set());
-  const [openPrayer, setOpenPrayer] = useState<number | null>(null);
   // 스크롤 다운 시 헤더는 사라지고, 책·장·소제목만 표시하는 반투명 미니바가 떠 있음.
   // scrolled: 페이지가 헤더 영역을 지나 스크롤됐는지 (헤더 숨김 토글에 사용).
   // miniVisible: 미니바 표시 여부 (본문 카드가 뷰포트에 보이는 동안만).
@@ -948,9 +847,7 @@ export default function BibleReadingPage() {
 
   const undoChapterCompletion = useCallback(
     (targetBook: BookId, targetChapter: number) => {
-      window.localStorage.removeItem(
-        doneKey(targetBook, targetChapter, readingScopeOf(viewMode)),
-      );
+      unmarkChapterDone(targetBook, targetChapter, readingScopeOf(viewMode));
       removeReadLog(targetBook, targetChapter);
       setDoneChapters((prev) => {
         if (!prev.has(targetChapter)) return prev;
@@ -968,11 +865,10 @@ export default function BibleReadingPage() {
 
   const finalizeChapter = useCallback(() => {
     const scope = readingScopeOf(viewMode);
-    const key = doneKey(bookId, chapterNumber, scope);
-    if (window.localStorage.getItem(key) === "true") return;
+    if (isChapterDone(bookId, chapterNumber, scope)) return;
     if (doneChaptersRef.current.has(chapterNumber)) return;
 
-    window.localStorage.setItem(key, "true");
+    markChapterDone(bookId, chapterNumber, scope);
     appendReadLog(bookId, chapterNumber);
     setDoneChapters((prev) => new Set(prev).add(chapterNumber));
     setDoneToast({
@@ -987,11 +883,7 @@ export default function BibleReadingPage() {
     if (!bookConfirmed) return;
     if (viewMode === "study") return;
     if (doneChaptersRef.current.has(chapterNumber)) return;
-    if (
-      window.localStorage.getItem(
-        doneKey(bookId, chapterNumber, readingScopeOf(viewMode)),
-      ) === "true"
-    ) {
+    if (isChapterDone(bookId, chapterNumber, readingScopeOf(viewMode))) {
       return;
     }
 
@@ -1416,6 +1308,14 @@ export default function BibleReadingPage() {
   const openDrawer = useCallback(() => setDrawerOpen(true), []);
   const closeDrawer = useCallback(() => setDrawerOpen(false), []);
 
+  // 공부 노트 선택이 시작되면 반쯤 열린 서랍을 바로 닫음
+  useEffect(() => {
+    const onStudySelecting = () => setDrawerOpen(false);
+    window.addEventListener("haruchi:study-selecting", onStudySelecting);
+    return () =>
+      window.removeEventListener("haruchi:study-selecting", onStudySelecting);
+  }, []);
+
   // 책 전환의 두 가지 의도를 구분한다 ─
   //
   // (1) "보던 책으로 돌아가기" (resume / quick-jump)
@@ -1762,11 +1662,7 @@ export default function BibleReadingPage() {
     const scope = readingScopeOf(viewMode);
     const done = new Set<number>();
     for (let n = 1; n <= bookMeta.totalChapters; n++) {
-      if (
-        window.localStorage.getItem(doneKey(bookId, n, scope)) === "true"
-      ) {
-        done.add(n);
-      }
+      if (isChapterDone(bookId, n, scope)) done.add(n);
     }
     setDoneChapters(done);
   }, [bookId, bookMeta.totalChapters, viewMode]);
@@ -1776,66 +1672,6 @@ export default function BibleReadingPage() {
     setOpenWordDrawers(new Set());
     setOpenTokenInfos(new Set());
   }, [bookId, chapterNumber, effectiveTranslation]);
-
-  useEffect(() => {
-    const savedGrade = window.localStorage.getItem(PRAYER_GRADE_KEY);
-    if (isPrayerGradeKey(savedGrade)) {
-      setPrayerGrade(savedGrade);
-    }
-  }, []);
-
-  useEffect(() => {
-    const today = getTodayKey();
-    setPrayerDate(today);
-    const raw = window.localStorage.getItem(prayerChecksKey(today, prayerGrade));
-    if (!raw) {
-      setPrayerChecks(new Set());
-      return;
-    }
-    try {
-      const parsed = JSON.parse(raw) as number[];
-      setPrayerChecks(new Set(Array.isArray(parsed) ? parsed : []));
-    } catch {
-      setPrayerChecks(new Set());
-    }
-  }, [prayerGrade]);
-
-  const togglePrayerCheck = useCallback(
-    (no: number) => {
-      setPrayerChecks((prev) => {
-        const next = new Set(prev);
-        if (next.has(no)) {
-          next.delete(no);
-        } else {
-          next.add(no);
-        }
-        window.localStorage.setItem(
-          prayerChecksKey(prayerDate, prayerGrade),
-          JSON.stringify(Array.from(next).sort((a, b) => a - b)),
-        );
-        return next;
-      });
-    },
-    [prayerDate, prayerGrade],
-  );
-
-  const handlePrayerGradeChange = useCallback((grade: PrayerGradeKey) => {
-    setPrayerGrade(grade);
-    setOpenPrayer(null);
-    window.localStorage.setItem(PRAYER_GRADE_KEY, grade);
-  }, []);
-
-  const resetPrayers = useCallback(() => {
-    window.localStorage.removeItem(prayerChecksKey(prayerDate, prayerGrade));
-    setPrayerChecks(new Set());
-    setOpenPrayer(null);
-  }, [prayerDate, prayerGrade]);
-
-  const prayerCard = prayersData[prayerGrade];
-  const prayerTotal = prayerCard.prayers.length;
-  const prayerDone = prayerChecks.size;
-  const prayerAllDone = prayerTotal > 0 && prayerDone >= prayerTotal;
-  const prayerPercent = prayerTotal > 0 ? (prayerDone / prayerTotal) * 100 : 0;
 
   // ───────────────────────────────────────────────────────────────────
   // 우측 사이드바(.brp-side) sticky-top 계산.
@@ -1920,6 +1756,9 @@ export default function BibleReadingPage() {
           </Link>
           <Link href="/plan" className="brp-nav-text-link brp-nav-link">
             읽기표
+          </Link>
+          <Link href="/prayer" className="brp-nav-text-link brp-nav-link">
+            기도
           </Link>
           <Link href="/study/john1/1" className="brp-nav-text-link brp-nav-link">
             공부 노트

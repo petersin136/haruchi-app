@@ -1,6 +1,5 @@
 /**
  * 장 완료·읽기 로그 localStorage 헬퍼.
- * 키 형식은 app/bible-reading/page.tsx 와 동일해야 한다 (page 는 이번 단계에서 수정하지 않음).
  *
  *   bible_done_{book}_{chapter}            = "true"   (한글 reader)
  *   bible_done_{book}_{chapter}_{web|kjv}  = "true"   (영어 모드)
@@ -70,6 +69,54 @@ export function loadReadLog(): ReadLogEntry[] {
     );
   } catch {
     return [];
+  }
+}
+
+/** book+ch 당 최신 1건만 남기고 시각을 지금으로 갱신. */
+export function appendReadLog(book: string, ch: number): void {
+  if (typeof window === "undefined") return;
+  try {
+    const next = loadReadLog().filter((row) => !(row.book === book && row.ch === ch));
+    next.push({ book, ch, at: new Date().toISOString() });
+    window.localStorage.setItem(READ_LOG_KEY, JSON.stringify(next));
+  } catch {
+    /* noop */
+  }
+}
+
+export function removeReadLog(book: string, ch: number): void {
+  if (typeof window === "undefined") return;
+  try {
+    const next = loadReadLog().filter((row) => !(row.book === book && row.ch === ch));
+    window.localStorage.setItem(READ_LOG_KEY, JSON.stringify(next));
+  } catch {
+    /* noop */
+  }
+}
+
+export function markChapterDone(
+  bookId: string,
+  chapter: number,
+  scope: ReadingScope = "reader",
+): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(doneKey(bookId, chapter, scope), "true");
+  } catch {
+    /* noop */
+  }
+}
+
+export function unmarkChapterDone(
+  bookId: string,
+  chapter: number,
+  scope: ReadingScope = "reader",
+): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(doneKey(bookId, chapter, scope));
+  } catch {
+    /* noop */
   }
 }
 

@@ -1,0 +1,457 @@
+/* prayer page — bible-reading.css 에서 기도·토글 스타일 이식 */
+
+.prayer-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-noto-sans-kr), -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  padding: 32px clamp(16px, 4vw, 40px) 96px;
+}
+.prayer-shell { max-width: 720px; margin: 0 auto; }
+.prayer-page .brp-prayer { margin-top: 0; padding-top: 0; border-top: 0; }
+.prayer-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.prayer-back:hover { color: var(--ink); }
+
+.brp-section-label {
+  margin: 0 0 14px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+  position: relative;
+  isolation: isolate;
+}
+.brp-toggle-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: var(--accent);
+  border-radius: var(--radius-pill);
+  transition:
+    transform 0.34s cubic-bezier(0.32, 0.72, 0.24, 1),
+    width 0.34s cubic-bezier(0.32, 0.72, 0.24, 1),
+    opacity 0.18s ease;
+  will-change: transform, width;
+  pointer-events: none;
+  z-index: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .brp-toggle-indicator {
+    transition: opacity 0.18s ease;
+  }
+
+.brp-progress-grid h2,
+.brp-prayer h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.brp-prayer {
+  margin-top: 56px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+
+.brp-prayer-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 600px) {
+  .brp-prayer-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+
+.brp-prayer-heading h2 {
+  margin: 0;
+}
+
+.brp-prayer-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.brp-prayer-divider {
+  color: var(--ink-mute);
+}
+
+.brp-prayer-count {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* 학년 토글 — 번역/모드 토글과 동일하게 슬라이딩 인디케이터 패턴.
+   컨테이너 안 padding 없음 → 베젤 없이 edge-to-edge pill 한 줄.
+   높이는 height 로 명시 고정 (min-height 만 있으면 자식 button 의
+   내재 높이가 줄어들 때 pill 이 작아져 의도와 다르게 보일 수 있음). */
+.brp-prayer-toggle {
+  display: inline-flex;
+  align-items: stretch;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 0;
+  height: 44px;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  flex-shrink: 0;
+}
+
+.brp-prayer-toggle button {
+  position: relative;
+  z-index: 1;
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  /* native <button> 기본 padding/margin 0 리셋. flex 가운데 정렬은
+     기본으로 두고, Pretendard 한글 글리프가 line-box 위쪽으로 약간
+     치우쳐 보이는 metric 보정은 line-height 를 넉넉히 줘서 line-box
+     안에서 자연스럽게 중앙에 앉도록 한다. height: 100% 로 pill 전체
+     높이를 그대로 채움. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: auto;
+  height: 100%;
+  line-height: 1.5;
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.brp-prayer-toggle button.is-active {
+  background: transparent;
+  color: var(--accent-ink);
+}
+
+.brp-prayer-bar {
+  height: 2px;
+  background: var(--surface-alt);
+  border-radius: var(--radius-pill);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.brp-prayer-bar span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.brp-prayer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+}
+
+.brp-prayer-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.2s ease, background 0.2s ease;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.brp-prayer-item.is-open {
+  background: var(--surface);
+  border-color: var(--ink-mute);
+}
+
+.brp-prayer-item.is-done .brp-prayer-no {
+  color: var(--ink-mute);
+  text-decoration: line-through;
+}
+
+.brp-prayer-item.is-done .brp-prayer-theme {
+  color: var(--ink-soft);
+}
+
+.brp-prayer-trigger {
+  all: unset;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 40px 1fr 28px;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 18px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.brp-prayer-trigger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.brp-prayer-no {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.brp-prayer-theme {
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.brp-prayer-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong, var(--ink-mute));
+  color: var(--ink-soft);
+  background: transparent;
+}
+
+.brp-prayer-item.is-done .brp-prayer-mark {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.brp-prayer-mark-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink-mute);
+}
+
+.brp-prayer-body {
+  padding: 4px 20px 22px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+
+.brp-prayer-body > * {
+  min-width: 0;
+}
+
+.brp-prayer-verse {
+  /* 성경 구절 — 옅은 딥그린 배경 패널. 좌측 상단에 작은 따옴표 포인트. */
+  position: relative;
+  margin: 22px 0 0;
+  padding: 18px 18px 16px 34px;
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.brp-prayer-verse::before {
+  content: "“";
+  position: absolute;
+  top: 6px;
+  left: 12px;
+  font-family: Georgia, "Times New Roman", var(--font-noto-serif-kr),
+    serif;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.brp-prayer-verse p {
+  margin: 0;
+  font-family: var(--font-noto-serif-kr), "Nanum Myeongjo",
+    "Apple SD Gothic Neo", "Iowan Old Style", "Times New Roman", serif;
+  font-size: 16.5px;
+  line-height: 1.85;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.brp-prayer-verse cite {
+  /* 구절 박스 안에서 우측 정렬 (박스 패딩만큼 안쪽에 정돈). */
+  display: block;
+  margin-top: 10px;
+  text-align: right;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.brp-prayer-section {
+  display: grid;
+  gap: 8px;
+}
+
+.brp-prayer-label {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* "따라서 기도해요"(따라하기) 영역 라벨 — 다른 라벨보다 더 또렷하게.
+   위 성경 소제목과 같은 따뜻한 붉은 톤(--accent-warm)으로 강조. */
+.brp-prayer-think,
+.brp-prayer-text {
+  margin: 0;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.85;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+/* 생각해 보기 본문 — 좌측 accent 포인트(따라하기 본문은 제외). */
+.brp-prayer-think {
+  padding-left: 14px;
+  border-left: 3px solid var(--accent-soft);
+}
+
+
+.brp-prayer-text-line {
+  margin-bottom: 6px;
+}
+
+.brp-prayer-text-line:last-child {
+  margin-bottom: 0;
+}
+
+.brp-prayer-blank {
+  color: var(--ink-mute);
+  font-style: italic;
+  font-size: 0.92em;
+  padding: 0 2px;
+}
+
+.brp-prayer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.brp-prayer-check,
+.brp-prayer-next,
+.brp-prayer-reset {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  border-radius: var(--radius-pill);
+  padding: 11px 18px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.brp-prayer-check {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  font-weight: 600;
+}
+
+.brp-prayer-check.is-done {
+  background: var(--surface-alt);
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+}
+
+.brp-prayer-next {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  font-weight: 600;
+}
+
+.brp-prayer-next:hover,
+.brp-prayer-check:hover {
+  background: var(--surface-alt);
+  color: var(--ink);
+}
+
+.brp-prayer-lords {
+  /* 좌측 컬러바 제거 — 카드 자체를 깔끔한 하나의 패널로.
+     옅은 표면 + 라운드만으로 충분히 "선택된" 카드 느낌. */
+  margin-top: 24px;
+  padding: 22px 22px 24px;
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.brp-prayer-lords p:last-child {
+  margin: 14px 0 0;
+  color: var(--ink);
+  font-family: var(--font-noto-serif-kr), "Nanum Myeongjo",
+    "Apple SD Gothic Neo", "Iowan Old Style", "Times New Roman", serif;
+  font-size: 15.5px;
+  line-height: 1.95;
+  letter-spacing: -0.005em;
+  word-break: keep-all;
+}
+
+.brp-prayer-foot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.brp-prayer-reset {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 14px;
+}
+
+.brp-prayer-reset:hover {
+  color: var(--ink);
+  background: var(--surface-alt);
+}

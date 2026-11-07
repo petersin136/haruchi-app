@@ -2,7 +2,10 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { BOOKS, type BookId } from "../bible-reading/books";
+import ProgressGrid from "../bible-reading/components/ProgressGrid";
+import BottomTabBar from "../components/BottomTabBar";
 import {
   activityByDate,
   areReadingsDone,
@@ -13,6 +16,9 @@ import {
   toLocalDateKey,
 } from "../lib/readLog";
 import "./plan.css";
+
+const CURRENT_BOOK_KEY = "bible_current_book";
+const currentChapterKey = (bookId: BookId) => `bible_current_chapter_${bookId}`;
 
 type PlanReading = { book: string; chapters: number[] };
 type PlanDay = { day: number; calendar?: string; readings: PlanReading[] };
@@ -63,11 +69,15 @@ function bookLabel(book: string): string {
 }
 
 export default function PlanPage() {
+  const router = useRouter();
   const [planId, setPlanId] = useState<string>("year365");
   const [startDate, setStartDate] = useState<string>(() => todayInputValue());
   const [plan, setPlan] = useState<PlanFile | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [tick, setTick] = useState(0);
+  const [progressBookId, setProgressBookId] = useState<BookId | null>(null);
+  const [progressChapter, setProgressChapter] = useState(1);
+  const [doneChapters, setDoneChapters] = useState<Set<number>>(new Set());
 
   useEffect(() => {
     try {
@@ -134,6 +144,49 @@ export default function PlanPage() {
       window.removeEventListener("storage", bump);
     };
   }, []);
+
+  // 마지막으로 읽던 책·장 + 완료 격자
+  useEffect(() => {
+    void tick;
+    const saved = window.localStorage.getItem(CURRENT_BOOK_KEY);
+    const bookId =
+      saved && Object.prototype.hasOwnProperty.call(BOOKS, saved)
+        ? (saved as BookId)
+        : null;
+    setProgressBookId(bookId);
+    if (!bookId) {
+      setProgressChapter(1);
+      setDoneChapters(new Set());
+      return;
+    }
+    const rawCh = Number(window.localStorage.getItem(currentChapterKey(bookId)));
+    const total = BOOKS[bookId].totalChapters;
+    setProgressChapter(
+      Number.isInteger(rawCh) && rawCh >= 1 && rawCh <= total ? rawCh : 1,
+    );
+    const done = new Set<number>();
+    for (let n = 1; n <= total; n += 1) {
+      if (isChapterDone(bookId, n)) done.add(n);
+    }
+    setDoneChapters(done);
+  }, [tick]);
+
+  const progressChapters = useMemo(() => {
+    if (!progressBookId) return [];
+    return Array.from({ length: BOOKS[progressBookId].totalChapters }, (_, i) => ({
+      chapter: i + 1,
+    }));
+  }, [progressBookId]);
+
+  const onSelectProgressChapter = useCallback(
+    (n: number) => {
+      if (!progressBookId) return;
+      router.push(
+        `/bible-reading?book=${encodeURIComponent(progressBookId)}&chapter=${n}`,
+      );
+    },
+    [progressBookId, router],
+  );
 
   const currentDayNumber = useMemo(() => {
     if (!plan || plan.days.length === 0) return 1;
@@ -308,10 +361,35 @@ export default function PlanPage() {
           <p className="plan-grass-legend">한 칸 = 하루 · 색 = 그날 1장 이상 완료</p>
         </section>
 
+        <section className="plan-section" aria-label="이 책 진도">
+          <h2 className="plan-section-label">이 책 진도</h2>
+          {progressBookId ? (
+            <>
+              <p className="plan-book-progress-title">
+                {BOOKS[progressBookId].totalChapters}장 {BOOKS[progressBookId].name}{" "}
+                읽기
+              </p>
+              <div className="plan-book-grid">
+                <ProgressGrid
+                  chapters={progressChapters}
+                  chapterNumber={progressChapter}
+                  doneChapters={doneChapters}
+                  bookName={BOOKS[progressBookId].name}
+                  onSelectChapter={onSelectProgressChapter}
+                />
+              </div>
+            </>
+          ) : (
+            <p className="plan-empty">아직 읽은 책이 없어요. 성경 탭에서 시작해 보세요.</p>
+          )}
+        </section>
+
         <Link className="plan-back" href="/bible-reading">
           ← 성경 읽기로
         </Link>
       </div>
+
+      <BottomTabBar active="plan" />
     </main>
   );
 }
