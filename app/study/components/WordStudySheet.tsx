@@ -10,6 +10,7 @@ import {
   useState,
   type PointerEvent as ReactPointerEvent,
 } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import { BOOKS, type BookId } from "../../bible-reading/books";
 import {
@@ -33,6 +34,8 @@ type Props = {
   onClose: () => void;
   /** 구절 칩 탭 — 있으면 라우터 대신 이걸로 장 이동 */
   onNavigate?: (bookId: string, chapter: number) => void;
+  /** 사전 fetch 실패 등 */
+  onError?: (message: string) => void;
 };
 
 /** 시트 안에서 따라 들어간 단어 */
@@ -104,8 +107,11 @@ export default function WordStudySheet({
   selectedKo,
   onClose,
   onNavigate,
+  onError,
 }: Props) {
   const router = useRouter();
+  const onErrorRef = useRef(onError);
+  onErrorRef.current = onError;
   const verseWords = useMemo(
     () => tokensInVerse(tokens, verse),
     [tokens, verse],
@@ -205,6 +211,9 @@ export default function WordStudySheet({
       if (stale) return;
       setLex(data);
       setLexLoading(false);
+      if (!data) {
+        onErrorRef.current?.("원어 사전을 불러오지 못했어요");
+      }
     });
     return () => {
       stale = true;
@@ -235,6 +244,7 @@ export default function WordStudySheet({
   }, [open, closeSheet]);
 
   if (!open || !active) return null;
+  if (typeof document === "undefined") return null;
 
   const isInitialChip = (w: WordStudyToken) =>
     !!initial && w.i === initial.i && w.word === initial.word && w.ref === initial.ref;
@@ -391,7 +401,7 @@ export default function WordStudySheet({
     setActive(w);
   };
 
-  return (
+  return createPortal(
     <div className="study-ws-root" role="dialog" aria-label="원어 사전">
       <button
         type="button"
@@ -741,7 +751,8 @@ export default function WordStudySheet({
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 

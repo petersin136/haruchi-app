@@ -27,9 +27,8 @@ const REDUCE_MQ = "(prefers-reduced-motion: reduce)";
 const DRAWER_RATIO = 0.55;
 /** 왼쪽 베젤(뒤로가기 제스처)과 겹치지 않게 */
 const EDGE_IGNORE_PX = 24;
-/** 닫힌 서랍을 열 수 있는 오른쪽 끝 구역 */
-const OPEN_EDGE_PX = 20;
-const LOCK_PX = 10;
+/** 가로가 세로의 1.5배보다 크고 이 값을 넘을 때만 서랍 제스처 */
+const LOCK_PX = 30;
 const FLICK_PX_PER_MS = 0.5;
 const OPEN_MS = 380;
 const CLOSE_MS = 300;
@@ -295,19 +294,14 @@ function BookChapterDrawer({
       const sel = window.getSelection();
       if (sel && !sel.isCollapsed && (sel.toString()?.length ?? 0) > 0) return;
 
-      const opening = !openRef.current;
-      if (opening) {
-        // 열기는 화면 오른쪽 끝 20px 에서만. 본문 안 좌우 끌기와 분리
-        if (t.clientX < window.innerWidth - OPEN_EDGE_PX) return;
-      }
-
+      // 선택 중이 아니면 예전처럼 화면 어디서든 열기 시작 가능
       startX = t.clientX;
       startY = t.clientY;
       lastX = t.clientX;
       lastT = performance.now();
       velocity = 0;
       startProgress = openRef.current ? 1 : progressRef.current;
-      mode = opening ? "open" : "close";
+      mode = openRef.current ? "close" : "open";
       locked = null;
       tracking = true;
     };
@@ -334,7 +328,8 @@ function BookChapterDrawer({
 
       if (!locked) {
         if (Math.abs(dx) < LOCK_PX && Math.abs(dy) < LOCK_PX) return;
-        if (Math.abs(dx) > Math.abs(dy) * 1.25 && Math.abs(dx) > LOCK_PX) {
+        // 가로 > 세로×1.5 이고 30px 넘을 때만 서랍 (본문 선택 좌우 끌기와 분리)
+        if (Math.abs(dx) > Math.abs(dy) * 1.5 && Math.abs(dx) > LOCK_PX) {
           locked = "h";
           draggingRef.current = true;
           setDragging(true);

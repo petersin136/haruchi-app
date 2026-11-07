@@ -1,0 +1,44 @@
+/* 개역한글 장 이어 읽기 */
+
+.brp-cont-krv {
+  width: 100%;
+}
+
+.brp-cont-spacer {
+  width: 100%;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.brp-cont-chapter {
+  width: 100%;
+}
+
+.brp-cont-chapter + .brp-cont-chapter {
+  margin-top: 28px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(236, 228, 214, 0.9);
+}
+
+.brp-cont-next-book {
+  display: flex;
+  justify-content: center;
+  padding: 28px 16px 8px;
+}
+
+.brp-cont-next-book-btn {
+  appearance: none;
+  border: 1px solid #ece4d6;
+  background: #fbf7ee;
+  color: #9e1b1b;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.brp-cont-next-book-btn:active {
+  background: #f3ebe0;
+}

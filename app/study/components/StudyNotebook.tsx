@@ -12,6 +12,7 @@ import {
   type PointerEvent as ReactPointerEvent,
   type ReactNode,
 } from "react";
+import { createPortal } from "react-dom";
 import { loadKoreanChapter } from "../../bible-reading/bibleData";
 import type { BookId } from "../../bible-reading/books";
 import { BOOKS, isNewTestament } from "../../bible-reading/books";
@@ -232,6 +233,8 @@ function StudyNotebook({
   const autoScrollRef = useRef(0);
   const suppressClickRef = useRef(false);
   const toolbarRef = useRef<HTMLDivElement | null>(null);
+  /** 바깥 탭 취소를 막기 위해 도구 막대 동작 직전 선택 범위를 보관 */
+  const toolStashRef = useRef<ToolbarMode | null>(null);
   const [toolTip, setToolTip] = useState<string | null>(null);
   const tipTimerRef = useRef(0);
   /** 이름 말풍선을 띄운 길게 누르기는 버튼 동작으로 치지 않음 */
@@ -906,13 +909,9 @@ function StudyNotebook({
     };
   }, []);
 
-    // 공부 노트 선택 상태를 서랍 스와이프에 알림
+  // 공부 노트 선택·손잡이·도구 막대 상태를 서랍 스와이프에 알림
   useEffect(() => {
-    const on =
-      dragging ||
-      !!sel ||
-      toolbar?.kind === "selection" ||
-      magState === "shown";
+    const on = dragging || !!sel || !!toolbar || magState === "shown";
     if (on) document.documentElement.dataset.studySelecting = "1";
     else delete document.documentElement.dataset.studySelecting;
     return () => {
@@ -947,7 +946,8 @@ function StudyNotebook({
       down = null;
       if (moved >= MOVE_CANCEL_PX || !quick) return;
       const t = e.target as HTMLElement | null;
-      if (t?.closest?.(".study-toolbar, .study-sel-handle")) return;
+      if (t?.closest?.(".study-toolbar, .study-sel-handle, .study-ws-root"))
+        return;
       clearSelection();
     };
     document.addEventListener("pointerdown", onDown);
@@ -1078,57 +1078,68 @@ function StudyNotebook({
     return mark;
   };
 
+  const toolbarActionTarget = (): ToolbarMode | null =>
+    toolbar ?? toolStashRef.current;
+
   const applyHighlight = (color: string) => {
-    if (!toolbar) return;
-    if (toolbar.kind === "mark") {
-      const cur = marksById.get(toolbar.markId);
+    const tb = toolbarActionTarget();
+    if (!tb) return;
+    if (tb.kind === "mark") {
+      const cur = marksById.get(tb.markId);
       if (!cur) return;
       upsertMark({ ...cur, type: "hl", color });
+      toolStashRef.current = null;
       setToolbar(null);
       return;
     }
     upsertMark({
-      ref: toolbar.ref,
-      start: toolbar.start,
-      end: toolbar.end,
+      ref: tb.ref,
+      start: tb.start,
+      end: tb.end,
       type: "hl",
       color,
     });
     window.getSelection()?.removeAllRanges();
+    toolStashRef.current = null;
     setToolbar(null);
   };
 
   const applyUnderline = () => {
-    if (!toolbar) return;
-    if (toolbar.kind === "mark") {
-      const cur = marksById.get(toolbar.markId);
+    const tb = toolbarActionTarget();
+    if (!tb) return;
+    if (tb.kind === "mark") {
+      const cur = marksById.get(tb.markId);
       if (!cur) return;
       upsertMark({ ...cur, type: "ul", color: UL_COLOR });
+      toolStashRef.current = null;
       setToolbar(null);
       return;
     }
     upsertMark({
-      ref: toolbar.ref,
-      start: toolbar.start,
-      end: toolbar.end,
+      ref: tb.ref,
+      start: tb.start,
+      end: tb.end,
       type: "ul",
       color: UL_COLOR,
     });
     window.getSelection()?.removeAllRanges();
+    toolStashRef.current = null;
     setToolbar(null);
   };
 
   const eraseFromToolbar = () => {
-    if (!toolbar) return;
-    if (toolbar.kind === "mark") {
+    const tb = toolbarActionTarget();
+    if (!tb) return;
+    if (tb.kind === "mark") {
       persist({
         ...dataRef.current,
-        marks: dataRef.current.marks.filter((m) => m.id !== toolbar.markId),
+        marks: dataRef.current.marks.filter((m) => m.id !== tb.markId),
       });
+      toolStashRef.current = null;
       setToolbar(null);
       return;
     }
-    const { start, end } = toolbar;
+    const { start, end } = tb;
     persist({
       ...dataRef.current,
       marks: dataRef.current.marks.filter(
@@ -1136,17 +1147,19 @@ function StudyNotebook({
       ),
     });
     window.getSelection()?.removeAllRanges();
+    toolStashRef.current = null;
     setToolbar(null);
   };
 
   const copyFromToolbar = async () => {
-    if (!toolbar) return;
+    const tb = toolbarActionTarget();
+    if (!tb) return;
     let start: number;
     let end: number;
-    if (toolbar.kind === "selection") {
-      ({ start, end } = toolbar);
+    if (tb.kind === "selection") {
+      ({ start, end } = tb);
     } else {
-      const m = marksById.get(toolbar.markId);
+      const m = marksById.get(tb.markId);
       if (!m) return;
       ({ start, end } = m);
     }
@@ -1168,6 +1181,7 @@ function StudyNotebook({
       document.execCommand("copy");
       ta.remove();
     }
+    toolStashRef.current = null;
     setToolbar(null);
     setToast("복사했어요");
   };
@@ -1182,21 +1196,22 @@ function StudyNotebook({
   };
 
   const openNoteFromToolbar = () => {
-    if (!toolbar) return;
-    if (toolbar.kind === "mark") {
-      beginNoteEdit(toolbar.markId);
+    const tb = toolbarActionTarget();
+    if (!tb) return;
+    if (tb.kind === "mark") {
+      beginNoteEdit(tb.markId);
       return;
     }
     // 선택만 있고 칠이 없으면 노랑 자동 적용 후 메모
     const existing = dataRef.current.marks.find(
-      (m) => m.start === toolbar.start && m.end === toolbar.end,
+      (m) => m.start === tb.start && m.end === tb.end,
     );
     const mark =
       existing ??
       upsertMark({
-        ref: toolbar.ref,
-        start: toolbar.start,
-        end: toolbar.end,
+        ref: tb.ref,
+        start: tb.start,
+        end: tb.end,
         type: "hl",
         color: DEFAULT_HL,
       });
@@ -1204,26 +1219,42 @@ function StudyNotebook({
   };
 
   const openWordStudyFromToolbar = () => {
-    if (!toolbar || !wordStudyOk) return;
+    if (!wordStudyOk) return;
+    const tb = toolbarActionTarget();
+    if (!tb) return;
     let selectedKo = "";
     let verse = 1;
-    if (toolbar.kind === "selection") {
-      selectedKo = plainRef.current.slice(toolbar.start, toolbar.end);
-      verse = toolbar.ref;
+    if (tb.kind === "selection") {
+      selectedKo = plainRef.current.slice(tb.start, tb.end);
+      verse = tb.ref;
     } else {
-      const mark = marksById.get(toolbar.markId);
-      if (!mark) return;
+      const mark = marksById.get(tb.markId);
+      if (!mark) {
+        setToast("선택한 표시를 찾지 못했어요");
+        return;
+      }
       selectedKo = plainRef.current.slice(mark.start, mark.end);
       verse = mark.ref;
     }
     selectedKo = selectedKo.trim();
-    if (!selectedKo) return;
+    if (!selectedKo) {
+      setToast("단어를 선택해 주세요");
+      return;
+    }
+    if (wsTokens.length === 0) {
+      setToast("원어 자료를 불러오는 중이에요");
+      return;
+    }
     const matched = matchTokenByGloss(wsTokens, verse, selectedKo);
-    if (!matched) return;
+    if (!matched) {
+      setToast("이 구절의 원어를 찾지 못했어요");
+      return;
+    }
     setWsVerse(verse);
     setWsInitial(matched);
     setWsSelectedKo(selectedKo);
     setWsOpen(true);
+    toolStashRef.current = null;
     setToolbar(null);
     window.getSelection()?.removeAllRanges();
   };
@@ -1351,16 +1382,19 @@ function StudyNotebook({
 
       <div className="study-shell">
         <div className="study-layout">
-          <article className="study-page">
+          <article className="study-page" data-study-chapter-inner={chapter}>
             <span
               className={`study-drop${digLen >= 3 ? " is-wide" : ""}`}
               data-digits={digLen}
+              data-chapter-anchor={title ? undefined : ""}
               aria-hidden="true"
             >
               <span className="study-drop-num">{chapter}</span>
             </span>
             {title ? (
-              <span className="study-chapter-title">{title}</span>
+              <span className="study-chapter-title" data-chapter-anchor="">
+                {title}
+              </span>
             ) : null}
             <div
               className={`study-body${dragging ? " is-selecting" : ""}`}
@@ -1394,7 +1428,7 @@ function StudyNotebook({
                     data-verse={span.n}
                     data-verse-num={span.n}
                   >
-                    <sup className="study-vnum">{span.n}</sup>
+                    <span className="study-vnum">{span.n}</span>
                     <span className="study-verse-text" data-v={span.n}>
                       {segs.map((seg, i) => {
                         const cls = [
@@ -1686,85 +1720,130 @@ function StudyNotebook({
         </div>
       </div>
 
-      {toolbar ? (
-        <div
-          ref={toolbarRef}
-          className="study-toolbar"
-          style={{ left: toolbar.x, top: toolbar.rt }}
-          role="toolbar"
-          aria-label="형광펜 도구"
-          onMouseDown={(e) => e.preventDefault()}
-        >
-          <div className="study-toolbar-colors">
-            {HL_COLORS.map((c) => (
-              <button
-                key={c}
-                type="button"
-                className={`study-toolbar-swatch${
-                  activeColor === c.toUpperCase() ? " is-active" : ""
-                }`}
-                style={{ background: c }}
-                aria-label={`형광펜 ${c}`}
-                onClick={() => applyHighlight(c)}
-              />
-            ))}
-          </div>
-          <span className="study-toolbar-divider" aria-hidden="true" />
-          <div className="study-toolbar-icons">
-            {(
-              [
-                { label: "밑줄", action: applyUnderline, icon: <IconUnderline /> },
-                { label: "메모", action: openNoteFromToolbar, icon: <IconPen /> },
-                ...(wordStudyOk
-                  ? [
-                      {
-                        label: "원어",
-                        action: openWordStudyFromToolbar,
-                        icon: <span className="study-toolbar-alpha">α</span>,
-                      },
-                    ]
-                  : []),
-                {
-                  label: "복사",
-                  action: () => void copyFromToolbar(),
-                  icon: <IconCopy />,
-                },
-                { label: "지우개", action: eraseFromToolbar, icon: <IconEraser /> },
-              ] as {
-                label: string;
-                action: () => void;
-                icon: ReactNode;
-              }[]
-            ).map(({ label, action, icon }) => (
-              <button
-                key={label}
-                type="button"
-                className="study-toolbar-btn"
-                aria-label={label}
-                onPointerDown={() => startToolTip(label)}
-                onPointerUp={endToolTip}
-                onPointerLeave={endToolTip}
-                onPointerCancel={endToolTip}
-                onContextMenu={(e) => e.preventDefault()}
-                onClick={() => {
-                  if (tipShownRef.current) {
-                    tipShownRef.current = false;
-                    return;
-                  }
-                  action();
-                }}
-              >
-                {icon}
-                {toolTip === label ? (
-                  <span className="study-toolbar-tip" aria-hidden="true">
-                    {label}
-                  </span>
-                ) : null}
-              </button>
-            ))}
-          </div>
-        </div>
-      ) : null}
+      {toolbar && typeof document !== "undefined"
+        ? createPortal(
+            <div
+              ref={toolbarRef}
+              className="study-toolbar"
+              style={{ left: toolbar.x, top: toolbar.rt }}
+              role="toolbar"
+              aria-label="형광펜 도구"
+              onMouseDown={(e) => e.preventDefault()}
+              onPointerDown={(e) => {
+                e.stopPropagation();
+                toolStashRef.current = toolbar;
+              }}
+              onPointerUp={(e) => e.stopPropagation()}
+            >
+              <div className="study-toolbar-colors">
+                {HL_COLORS.map((c) => (
+                  <button
+                    key={c}
+                    type="button"
+                    className={`study-toolbar-swatch${
+                      activeColor === c.toUpperCase() ? " is-active" : ""
+                    }`}
+                    style={{ background: c }}
+                    aria-label={`형광펜 ${c}`}
+                    onPointerDown={(e) => {
+                      e.stopPropagation();
+                      toolStashRef.current = toolbar;
+                    }}
+                    onPointerUp={(e) => {
+                      e.stopPropagation();
+                      e.preventDefault();
+                      applyHighlight(c);
+                    }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
+                  />
+                ))}
+              </div>
+              <span className="study-toolbar-divider" aria-hidden="true" />
+              <div className="study-toolbar-icons">
+                {(
+                  [
+                    {
+                      label: "밑줄",
+                      action: applyUnderline,
+                      icon: <IconUnderline />,
+                    },
+                    {
+                      label: "메모",
+                      action: openNoteFromToolbar,
+                      icon: <IconPen />,
+                    },
+                    ...(wordStudyOk
+                      ? [
+                          {
+                            label: "원어",
+                            action: openWordStudyFromToolbar,
+                            icon: (
+                              <span className="study-toolbar-alpha">α</span>
+                            ),
+                          },
+                        ]
+                      : []),
+                    {
+                      label: "복사",
+                      action: () => void copyFromToolbar(),
+                      icon: <IconCopy />,
+                    },
+                    {
+                      label: "지우기",
+                      action: eraseFromToolbar,
+                      icon: <IconEraser />,
+                    },
+                  ] as {
+                    label: string;
+                    action: () => void;
+                    icon: ReactNode;
+                  }[]
+                ).map(({ label, action, icon }) => (
+                  <button
+                    key={label}
+                    type="button"
+                    className="study-toolbar-btn"
+                    aria-label={label}
+                    onPointerDown={(e) => {
+                      e.stopPropagation();
+                      toolStashRef.current = toolbar;
+                      startToolTip(label);
+                    }}
+                    onPointerUp={(e) => {
+                      e.stopPropagation();
+                      e.preventDefault();
+                      endToolTip();
+                      if (tipShownRef.current) {
+                        tipShownRef.current = false;
+                        return;
+                      }
+                      action();
+                    }}
+                    onPointerLeave={endToolTip}
+                    onPointerCancel={endToolTip}
+                    onContextMenu={(e) => e.preventDefault()}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
+                  >
+                    {icon}
+                    <span className="study-toolbar-caption">{label}</span>
+                    {toolTip === label ? (
+                      <span className="study-toolbar-tip" aria-hidden="true">
+                        {label}
+                      </span>
+                    ) : null}
+                  </button>
+                ))}
+              </div>
+            </div>,
+            document.body,
+          )
+        : null}
 
       {backupOpen ? (
         <div className="study-backup-root">
@@ -1830,6 +1909,7 @@ function StudyNotebook({
         initial={wsInitial}
         selectedKo={wsSelectedKo}
         onClose={() => setWsOpen(false)}
+        onError={(msg) => setToast(msg)}
         onNavigate={(nextBook, nextChapter) => {
           if (onMoveChapter && nextBook === bookId) {
             onMoveChapter(nextChapter);

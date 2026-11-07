@@ -72,8 +72,8 @@ const EnglishOnlyView = nextDynamic(
 const SearchOverlay = nextDynamic(() => import("./SearchOverlay"), {
   ssr: false,
 });
-const StudyNotebook = nextDynamic(
-  () => import("../study/components/StudyNotebook"),
+const ContinuousKrvReader = nextDynamic(
+  () => import("./components/ContinuousKrvReader"),
   { ssr: false, loading: DynamicViewLoading },
 );
 // 성경 공부/영어(WEB) 두 모드가 지원하는 책 ID 집합. NT 27권 + OT 39권.
@@ -862,20 +862,36 @@ export default function BibleReadingPage() {
     [viewMode],
   );
 
-  const finalizeChapter = useCallback(() => {
-    const scope = readingScopeOf(viewMode);
-    if (isChapterDone(bookId, chapterNumber, scope)) return;
-    if (doneChaptersRef.current.has(chapterNumber)) return;
+  /** 장 이어 읽기·단일 장 공통 — 센티널이 담은 {book, ch}로 완료 */
+  const finalizeChapterAt = useCallback(
+    (targetBook: BookId, targetChapter: number) => {
+      const scope = readingScopeOf(viewMode);
+      if (isChapterDone(targetBook, targetChapter, scope)) return;
+      if (
+        targetBook === bookId &&
+        doneChaptersRef.current.has(targetChapter)
+      ) {
+        return;
+      }
 
-    markChapterDone(bookId, chapterNumber, scope);
-    appendReadLog(bookId, chapterNumber);
-    setDoneChapters((prev) => new Set(prev).add(chapterNumber));
-    setDoneToast({
-      bookId,
-      chapter: chapterNumber,
-      bookName: BOOKS[bookId].name,
-    });
-  }, [bookId, chapterNumber, viewMode]);
+      markChapterDone(targetBook, targetChapter, scope);
+      appendReadLog(targetBook, targetChapter);
+      if (targetBook === bookId) {
+        setDoneChapters((prev) => new Set(prev).add(targetChapter));
+      }
+      setDoneToast({
+        bookId: targetBook,
+        chapter: targetChapter,
+        bookName: BOOKS[targetBook].name,
+      });
+    },
+    [bookId, viewMode],
+  );
+
+  /** 단일 장 모드(어린이·영어·원어 등)용 — 전역 chapterNumber 기준 */
+  const finalizeChapter = useCallback(() => {
+    finalizeChapterAt(bookId, chapterNumber);
+  }, [bookId, chapterNumber, finalizeChapterAt]);
 
   const attemptFinalizeFromEnd = useCallback(() => {
     if (!endVisibleRef.current) return;
@@ -913,6 +929,26 @@ export default function BibleReadingPage() {
       }
     },
     [attemptFinalizeFromEnd],
+  );
+
+  /** 개역한글 이어 읽기: 스크롤로 현재 장 갱신 (scrollTo 금지) */
+  const onKrvActiveChapterChange = useCallback(
+    (ch: number) => {
+      setChapterNumber(ch);
+      try {
+        window.localStorage.setItem(currentChapterKey(bookId), String(ch));
+      } catch {
+        /* ignore */
+      }
+    },
+    [bookId],
+  );
+
+  const onKrvChapterComplete = useCallback(
+    (b: BookId, ch: number) => {
+      finalizeChapterAt(b, ch);
+    },
+    [finalizeChapterAt],
   );
 
   useEffect(() => {
@@ -1269,8 +1305,13 @@ export default function BibleReadingPage() {
   );
 
   // flashVerse 가 설정되면, 새 장이 렌더된 뒤 그 절로 스크롤하고 잠깐 강조 후 해제.
+  // 개역한글 이어 읽기는 ContinuousKrvReader 가 장 범위로 스크롤한다.
   useEffect(() => {
     if (flashVerse == null) return;
+    if (effectiveTranslation === "krv") {
+      const clear = window.setTimeout(() => setFlashVerse(null), 2000);
+      return () => window.clearTimeout(clear);
+    }
     const raf = window.requestAnimationFrame(() => {
       const root = readerSectionRef.current;
       const el = root?.querySelector<HTMLElement>(
@@ -1295,7 +1336,10 @@ export default function BibleReadingPage() {
         String(clamped),
       );
     }
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // 개역한글 이어 읽기는 ContinuousKrvReader 가 해당 장 앵커로 맞춤
+    if (effectiveTranslation !== "krv") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
   const moveChapterRef = useRef(moveChapter);
   moveChapterRef.current = moveChapter;
@@ -2221,14 +2265,14 @@ export default function BibleReadingPage() {
               bookId === "revelation")
           ) &&
           (effectiveTranslation === "krv" ? (
-            <StudyNotebook
+            <ContinuousKrvReader
               bookId={bookId}
               chapter={chapterNumber}
-              embedded
               flashVerse={flashVerse}
-              onEndVisibilityChange={handleEndVisibilityChange}
-              endSentinelNonce={endSentinelNonce}
-              onMoveChapter={moveChapter}
+              bookConfirmed={bookConfirmed}
+              onActiveChapterChange={onKrvActiveChapterChange}
+              onChapterComplete={onKrvChapterComplete}
+              onGoNextBook={pickBookFromPanel}
             />
           ) : (
             <VerseList

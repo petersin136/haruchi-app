@@ -223,14 +223,16 @@ img {
   -webkit-user-drag: none;
 }
 
-/* 스크롤바 숨김 - 가로 흔들림 방지 */
+/* 스크롤바 숨김 - 가로 흔들림 방지 (/bible-reading · /study · /plan · /prayer 포함) */
 html,
-body {
+body,
+* {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 html::-webkit-scrollbar,
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
   display: none;
   width: 0;
   height: 0;

@@ -146,8 +146,10 @@
   padding: 0 18px 32px;
   line-height: 2.4;
   font-size: 17px;
+  text-align: justify;
+  text-align-last: left;
   word-break: keep-all;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 /* 장 번호: 장 제목 줄 + 본문 두 줄 = 3줄 높이.
@@ -198,12 +200,18 @@
   font-weight: 500;
   line-height: var(--study-lh);
   color: rgba(158, 27, 27, 0.7);
+  text-align: left;
+  text-align-last: left;
 }
 
 .study-body {
   /* 인라인 이어 쓰기 — 블록 자식이 끼면 문단이 갈라짐 */
   display: block;
   position: relative;
+  text-align: justify;
+  text-align-last: left;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
   /* 기본 선택·콜아웃 끄고 자체 선택 사용 */
   user-select: none;
   -webkit-user-select: none;
@@ -351,19 +359,19 @@
   pointer-events: none;
 }
 
-/* 스크롤바 숨김 — 단독 /study 만 (embedded 는 bible-reading 스크롤바 유지) */
-html:has(.study-root:not(.is-embedded)),
-html:has(.study-root:not(.is-embedded)) body,
-.study-root:not(.is-embedded),
-.study-root:not(.is-embedded) * {
+/* 스크롤바 숨김 — /study · embedded 본문 전부 (스크롤은 유지) */
+html:has(.study-root),
+html:has(.study-root) body,
+.study-root,
+.study-root * {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
-html:has(.study-root:not(.is-embedded))::-webkit-scrollbar,
-html:has(.study-root:not(.is-embedded)) body::-webkit-scrollbar,
-.study-root:not(.is-embedded) ::-webkit-scrollbar,
-.study-root:not(.is-embedded)::-webkit-scrollbar {
+html:has(.study-root)::-webkit-scrollbar,
+html:has(.study-root) body::-webkit-scrollbar,
+.study-root ::-webkit-scrollbar,
+.study-root::-webkit-scrollbar {
   display: none;
   width: 0;
   height: 0;
@@ -406,12 +414,12 @@ html:has(.study-root:not(.is-embedded)) body::-webkit-scrollbar,
 }
 
 .study-vnum {
-  font-size: 11px;
+  font-size: 1em;
   font-weight: 600;
-  line-height: 0;
-  vertical-align: super;
-  color: var(--study-red);
-  margin-right: 2px;
+  line-height: inherit;
+  vertical-align: baseline;
+  color: #9e1b1b;
+  margin-right: 0.25em;
   user-select: none;
 }
 
@@ -735,7 +743,7 @@ html:has(.study-root:not(.is-embedded)) body::-webkit-scrollbar,
   color: #9e1b1b;
 }
 
-/* ── 도구 막대: 알약 하나 ── */
+/* ── 도구 막대: 아이콘 + 글자 ── */
 .study-toolbar {
   --study-toolbar-bg: rgba(28, 24, 22, 0.88);
   position: fixed;
@@ -745,9 +753,9 @@ html:has(.study-root:not(.is-embedded)) body::-webkit-scrollbar,
   align-items: center;
   box-sizing: border-box;
   width: max-content;
-  height: 48px;
+  height: 60px;
   padding: 0 4px 0 12px;
-  border-radius: 999px;
+  border-radius: 20px;
   background: var(--study-toolbar-bg);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   backdrop-filter: blur(20px) saturate(160%);
@@ -758,6 +766,7 @@ html:has(.study-root:not(.is-embedded)) body::-webkit-scrollbar,
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
+  touch-action: manipulation;
 }
 
 .study-toolbar.is-below {
@@ -809,6 +818,7 @@ html:has(.study-root:not(.is-embedded)) body::-webkit-scrollbar,
   border-radius: 50%;
   cursor: pointer;
   transition: transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  touch-action: manipulation;
 }
 
 .study-toolbar-swatch.is-active {
@@ -830,18 +840,22 @@ html:has(.study-root:not(.is-embedded)) body::-webkit-scrollbar,
 
 .study-toolbar-btn {
   position: relative;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 52px;
   padding: 0;
   border: none;
-  border-radius: 50%;
+  border-radius: 12px;
   background: transparent;
   color: rgba(255, 255, 255, 0.85);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
   transition: transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -859,6 +873,16 @@ html:has(.study-root:not(.is-embedded)) body::-webkit-scrollbar,
   font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
   font-size: 18px;
   line-height: 1;
+  height: 20px;
+}
+
+.study-toolbar-caption {
+  font-size: 10.5px;
+  line-height: 1;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .study-toolbar-tip {
@@ -882,7 +906,7 @@ html:has(.study-root:not(.is-embedded)) body::-webkit-scrollbar,
     flex-direction: column;
     height: auto;
     padding: 4px;
-    border-radius: 24px;
+    border-radius: 20px;
   }
 
   .study-toolbar-colors {
