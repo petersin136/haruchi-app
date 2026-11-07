@@ -8,11 +8,26 @@ import type { BookId } from "@/app/bible-reading/books";
 // "JSON 복사" 결과를 data/verse-times-fix/{bookId}.json 에 붙여 쓴다.
 
 export type VerseTimeMap = Record<string, number>;
+/** "1:14" → "interp" | "match" | … (파일에 있을 때만) */
+export type VerseSrcMap = Record<string, string>;
 /** starts[i] = (i+1)장 시작 초. 파일에 없으면 null. */
-export type WatchTimes = { times: VerseTimeMap; missing: number[]; starts: (number | null)[] };
+export type WatchTimes = {
+  times: VerseTimeMap;
+  missing: number[];
+  starts: (number | null)[];
+  src: VerseSrcMap;
+};
 export type VerseEntry = { verse: number; t: number; explicit: boolean };
 export type VerseIndex = Map<number, VerseEntry[]>;
 export type VersePos = { chapter: number; verse: number };
+
+/** 절·장 시작 seek 시 앞당기는 여유(초). 현재 절 표시에도 동일 기준. */
+export const VERSE_LEAD_S = 0.3;
+/** seek 후 위치가 목표와 이만큼(초) 이상 어긋나면 한 번 더 seek */
+export const SEEK_VERIFY_TOLERANCE_S = 1;
+export const SEEK_VERIFY_DELAY_MS = 500;
+/** dev 미세 조정 단위(초) */
+export const VERSE_NUDGE_S = 0.2;
 
 export const verseKey = (chapter: number, verse: number) => `${chapter}:${verse}`;
 
@@ -37,32 +52,64 @@ function normalizeTimes(raw: unknown): VerseTimeMap {
   return out;
 }
 
+function readVerseItem(
+  item: unknown,
+): { t: number; src?: string } | null {
+  if (validTime(item)) return { t: item };
+  if (!item || typeof item !== "object") return null;
+  const o = item as { t?: unknown; src?: unknown };
+  if (!validTime(o.t)) return null;
+  return {
+    t: o.t,
+    src: typeof o.src === "string" && o.src ? o.src : undefined,
+  };
+}
+
 function normalizeWatchTimes(raw: unknown): WatchTimes {
-  if (!raw || typeof raw !== "object") return { times: {}, missing: [], starts: [] };
+  if (!raw || typeof raw !== "object") {
+    return { times: {}, missing: [], starts: [], src: {} };
+  }
   const o = raw as Record<string, unknown>;
   if (!o.chapters || typeof o.chapters !== "object") {
-    return { times: normalizeTimes(raw), missing: [], starts: [] };
+    return { times: normalizeTimes(raw), missing: [], starts: [], src: {} };
   }
 
   const times: VerseTimeMap = {};
+  const src: VerseSrcMap = {};
   const starts: (number | null)[] = [];
   for (const [ck, info] of Object.entries(o.chapters as Record<string, unknown>)) {
     const chapter = Number(ck);
     if (!Number.isInteger(chapter) || chapter < 1 || !info || typeof info !== "object") continue;
-    const { start, verses } = info as { start?: unknown; verses?: unknown };
+    const { start, verses, src: srcList } = info as {
+      start?: unknown;
+      verses?: unknown;
+      src?: unknown;
+    };
     if (validTime(start)) {
       while (starts.length < chapter) starts.push(null);
       starts[chapter - 1] = start;
     }
     if (!Array.isArray(verses)) continue;
-    verses.forEach((t, i) => {
-      if (validTime(t)) times[verseKey(chapter, i + 1)] = t;
+    // 장마다 verses 와 같은 길이의 src[] (word/seg/interp/fix)
+    const parallelSrc = Array.isArray(srcList) ? srcList : null;
+    verses.forEach((item, i) => {
+      const parsed = readVerseItem(item);
+      if (!parsed) return;
+      const key = verseKey(chapter, i + 1);
+      times[key] = parsed.t;
+      // {t,src} 객체 형태가 있으면 우선, 없으면 chapters[n].src[i]
+      const fromParallel =
+        parallelSrc && typeof parallelSrc[i] === "string" && parallelSrc[i]
+          ? (parallelSrc[i] as string)
+          : undefined;
+      const kind = parsed.src ?? fromParallel;
+      if (kind) src[key] = kind;
     });
   }
   const missing = Array.isArray(o.missing)
     ? o.missing.filter((n): n is number => Number.isInteger(n) && n > 0)
     : [];
-  return { times, missing, starts };
+  return { times, missing, starts, src };
 }
 
 // ── 원본 데이터 ──────────────────────────────────────────────────────────────

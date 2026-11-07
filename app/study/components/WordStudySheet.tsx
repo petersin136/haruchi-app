@@ -36,6 +36,8 @@ type Props = {
   onNavigate?: (bookId: string, chapter: number) => void;
   /** 사전 fetch 실패 등 */
   onError?: (message: string) => void;
+  /** ?debug=1 진단 로그 */
+  onDebug?: (line: string) => void;
 };
 
 /** 시트 안에서 따라 들어간 단어 */
@@ -108,10 +110,13 @@ export default function WordStudySheet({
   onClose,
   onNavigate,
   onError,
+  onDebug,
 }: Props) {
   const router = useRouter();
   const onErrorRef = useRef(onError);
   onErrorRef.current = onError;
+  const onDebugRef = useRef(onDebug);
+  onDebugRef.current = onDebug;
   const verseWords = useMemo(
     () => tokensInVerse(tokens, verse),
     [tokens, verse],
@@ -200,6 +205,9 @@ export default function WordStudySheet({
       setLexLoading(false);
       return;
     }
+    onDebugRef.current?.(
+      `[원어] 시트 open state=true verse=${verse} strong=${active.strong || "-"}`,
+    );
     let stale = false;
     setLex(null);
     if (!viewStrong) {
@@ -207,18 +215,27 @@ export default function WordStudySheet({
       return;
     }
     setLexLoading(true);
-    loadWordLexicon(viewStrong).then((data) => {
+    const meta: { url: string; status: number | null; error?: string } = {
+      url: "",
+      status: null,
+    };
+    loadWordLexicon(viewStrong, meta).then((data) => {
       if (stale) return;
       setLex(data);
       setLexLoading(false);
+      onDebugRef.current?.(
+        `[원어] fetch ${meta.url} status=${meta.status ?? meta.error ?? "?"}`,
+      );
       if (!data) {
-        onErrorRef.current?.("원어 사전을 불러오지 못했어요");
+        const path = meta.url || `/word-study/lexicon/greek/${viewStrong}.json`;
+        const st = meta.status != null ? ` (${meta.status})` : "";
+        onErrorRef.current?.(`원어 사전 실패: ${path}${st}`);
       }
     });
     return () => {
       stale = true;
     };
-  }, [open, active, viewStrong]);
+  }, [open, active, viewStrong, verse]);
 
   const viewKey = `${active?.ref}-${active?.i}-${stack.length}-${top?.strong ?? top?.lemma ?? ""}`;
   useLayoutEffect(() => {
@@ -226,6 +243,19 @@ export default function WordStudySheet({
     setBooksExpanded(false);
     setPhraseExpanded({});
   }, [viewKey]);
+
+  useLayoutEffect(() => {
+    if (!open || !active) return;
+    const el = sheetRef.current;
+    if (!el) {
+      onDebugRef.current?.("[원어] 시트 mount — sheetRef null");
+      return;
+    }
+    const r = el.getBoundingClientRect();
+    onDebugRef.current?.(
+      `[원어] 시트 mount rect=${Math.round(r.width)}x${Math.round(r.height)}@${Math.round(r.top)},${Math.round(r.left)} parent=${el.parentElement?.tagName}`,
+    );
+  }, [open, active, viewKey]);
 
   useEffect(() => {
     if (!open) return;

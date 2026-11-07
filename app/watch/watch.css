@@ -1139,6 +1139,38 @@
   background: var(--vs-accent);
   color: #fff;
 }
+/* ?dev=1 · chapters[n].src[i] (word/seg/interp/fix) 점 색 구분 */
+.wt-vs-cell[class*="is-src-"] {
+  position: relative;
+}
+.wt-vs-cell[class*="is-src-"]::after {
+  content: "";
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #8a8378;
+}
+.wt-vs-cell.is-src-word::after {
+  background: #3d7a4a; /* 자막 단어 매칭 */
+}
+.wt-vs-cell.is-src-seg::after {
+  background: #3b6ea5; /* 구간 정렬 */
+}
+.wt-vs-cell.is-src-interp::after {
+  background: #c4862b; /* 보간 */
+}
+.wt-vs-cell.is-src-fix::after {
+  background: #9e1b1b; /* 사람 보정 */
+}
+.wt-vs-cell.is-src-interp:not(.is-current) {
+  box-shadow: inset 0 0 0 1.5px rgba(180, 120, 40, 0.45);
+}
+.wt-vs-cell[class*="is-src-"].is-current::after {
+  background: #fff;
+}
 .wt-vs-cell:disabled {
   background: transparent;
   color: var(--vs-sub);
@@ -1260,6 +1292,39 @@
 }
 .wt-dev-actions > button {
   flex: 1;
+}
+
+.wt-dev-nudge {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.wt-dev-nudge > button {
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-alt);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.wt-dev-nudge > button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.wt-dev-nudge-replay {
+  grid-column: 1 / -1;
+  background: var(--ink) !important;
+  color: var(--bg) !important;
+  border-color: transparent !important;
+}
+
+.wt-dev-hint {
+  margin: 0;
+  font-size: 11px;
+  color: var(--ink-mute);
+  line-height: 1.4;
 }
 
 /* ── 토스트 ─────────────────────────────────────────────────────────────── */

@@ -259,27 +259,59 @@ export function loadChapterWordStudy(
   return p;
 }
 
+export type LexiconLoadMeta = {
+  url: string;
+  status: number | null;
+  error?: string;
+};
+
+export function lexiconUrlFor(strong: string): string {
+  const id = normalizeStrong(strong);
+  return `/word-study/lexicon/greek/${id || strong}.json`;
+}
+
 export function loadWordLexicon(
   strong: string,
+  metaOut?: LexiconLoadMeta,
 ): Promise<WordStudyLexicon | null> {
   const id = normalizeStrong(strong);
-  if (!id) return Promise.resolve(null);
+  const url = lexiconUrlFor(strong);
+  if (metaOut) {
+    metaOut.url = url;
+    metaOut.status = null;
+    delete metaOut.error;
+  }
+  if (!id) {
+    if (metaOut) metaOut.error = "empty-strong";
+    return Promise.resolve(null);
+  }
   const hit = lexCache.get(id);
-  if (hit) return hit;
+  if (hit) {
+    return hit.then((v) => {
+      if (metaOut && v) metaOut.status = 200;
+      return v;
+    });
+  }
 
   const p = (async () => {
     try {
-      const res = await fetch(`/word-study/lexicon/greek/${id}.json`, {
-        cache: "default",
-      });
-      if (!res.ok) return null;
+      const res = await fetch(url, { cache: "default" });
+      if (metaOut) metaOut.status = res.status;
+      if (!res.ok) {
+        if (metaOut) metaOut.error = `http-${res.status}`;
+        return null;
+      }
       const raw = (await res.json()) as WordStudyLexicon;
       return {
         ...raw,
         strong: normalizeStrong(raw.strong || id),
         lemma: raw.lemma || "",
       };
-    } catch {
+    } catch (e) {
+      if (metaOut) {
+        metaOut.status = null;
+        metaOut.error = e instanceof Error ? e.message : "network";
+      }
       return null;
     }
   })();

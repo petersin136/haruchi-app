@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { verseTime, type VerseIndex } from "./verseTimes";
+import { verseKey, verseTime, type VerseIndex } from "./verseTimes";
 
 const ANIM_MS = 250;
 
@@ -15,6 +15,10 @@ type Props = {
   currentVerse: number | null;
   onPick: (chapter: number, verse: number) => void;
   onClose: () => void;
+  /** ?dev=1 일 때만 interp 절 점 색 구분 */
+  devMode?: boolean;
+  /** "1:14" → "interp" 등 */
+  verseSrc?: Record<string, string>;
 };
 
 export default function VerseSheet({
@@ -27,6 +31,8 @@ export default function VerseSheet({
   currentVerse,
   onPick,
   onClose,
+  devMode = false,
+  verseSrc = {},
 }: Props) {
   const [mounted, setMounted] = useState(open);
   const [shown, setShown] = useState(false);
@@ -115,11 +121,20 @@ export default function VerseSheet({
               {Array.from({ length: verseTotal }, (_, i) => i + 1).map((v) => {
                 const available = verseTime(index, chapter, v) !== null;
                 const current = chapter === currentChapter && v === currentVerse;
+                const kind = devMode ? verseSrc[verseKey(chapter, v)] : undefined;
+                const srcClass =
+                  kind === "interp" ||
+                  kind === "seg" ||
+                  kind === "fix" ||
+                  kind === "word"
+                    ? ` is-src-${kind}`
+                    : "";
                 return (
                   <button
                     key={v}
                     type="button"
-                    className={`wt-vs-cell${current ? " is-current" : ""}`}
+                    className={`wt-vs-cell${current ? " is-current" : ""}${srcClass}`}
+                    data-verse-src={kind || undefined}
                     disabled={!available}
                     onClick={() => onPick(chapter, v)}
                   >

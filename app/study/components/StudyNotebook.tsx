@@ -9,6 +9,7 @@ import {
   useRef,
   useState,
   type CSSProperties,
+  type MouseEvent as ReactMouseEvent,
   type PointerEvent as ReactPointerEvent,
   type ReactNode,
 } from "react";
@@ -34,8 +35,19 @@ import {
   circledNum,
   segmentVerse,
   verseAtOffset,
+  type TextSeg,
   type VerseSpan,
 } from "../lib/offsets";
+import {
+  loadParagraphMap,
+  paragraphStartsForChapter,
+  type ParagraphMap,
+} from "../lib/paragraphs";
+import {
+  isStudyDebugOn,
+  pushStudyDebug,
+  subscribeStudyDebug,
+} from "../lib/studyDebug";
 import {
   loadChapterWordStudy,
   matchTokenByGloss,
@@ -123,9 +135,8 @@ const TOOLBAR_TAIL_INSET = 24;
 const TOOLBAR_GAP = 10;
 /** 손잡이 원(18px)이 줄 아래로 내려오는 높이 + 여유 */
 const SEL_HANDLE_SIZE = 20;
-/** 손잡이를 이만큼 가만히 잡고 있으면 글자 단위 */
-const CHAR_MODE_MS = 400;
-const CHAR_MODE_STILL_PX = 4;
+/** 손잡이/길게누른채 끌기 시작으로 인정하는 최소 이동 */
+const DRAG_START_PX = 4;
 /** 끄는 동안 손잡이를 손가락보다 위로 */
 const HANDLE_LIFT = 12;
 const MAG_W = 120;
@@ -196,11 +207,8 @@ function StudyNotebook({
     originY: number;
     moved: boolean;
   } | null>(null);
-  const [charMode, setCharMode] = useState(false);
-  const charModeRef = useRef(false);
-  const charTimerRef = useRef<{ timer: number; x: number; y: number } | null>(
-    null,
-  );
+  /** 손잡이 드래그 중이면 돋보기에 글자 단위 스타일 */
+  const [magCharStyle, setMagCharStyle] = useState(false);
   const [magState, setMagState] = useState<"hidden" | "shown" | "hiding">(
     "hidden",
   );
@@ -215,7 +223,6 @@ function StudyNotebook({
   const lastPointerAtRef = useRef(performance.now());
   const gestureFnsRef = useRef({
     updateDragTo: (_x: number, _y: number) => {},
-    armCharTimer: (_x: number, _y: number) => {},
     placeMagnifier: () => {},
     finishDrag: () => {},
     abortSelectGesture: (_o?: {
@@ -235,11 +242,29 @@ function StudyNotebook({
   const toolbarRef = useRef<HTMLDivElement | null>(null);
   /** 바깥 탭 취소를 막기 위해 도구 막대 동작 직전 선택 범위를 보관 */
   const toolStashRef = useRef<ToolbarMode | null>(null);
+  /** 원어: 버튼 누른 순간의 선택 텍스트·절 (cleanup 후에도 유지) */
+  const wsPickRef = useRef<{
+    text: string;
+    verse: number;
+    start: number;
+    end: number;
+  } | null>(null);
+  const wsActionAtRef = useRef(0);
   const [toolTip, setToolTip] = useState<string | null>(null);
   const tipTimerRef = useRef(0);
-  /** 이름 말풍선을 띄운 길게 누르기는 버튼 동작으로 치지 않음 */
+  /** 이름 말풍선(캡션과 별도). 동작은 막지 않음 — 실기기 길게 누르기 오탐 방지 */
   const tipShownRef = useRef(false);
   const [backupOpen, setBackupOpen] = useState(false);
+  const [paraMap, setParaMap] = useState<ParagraphMap | null>(null);
+  const [debugOn, setDebugOn] = useState(false);
+  const [debugLines, setDebugLines] = useState<string[]>([]);
+  /** 연속 읽기 창에서 디버그 UI는 한 인스턴스만 */
+  const [debugHost, setDebugHost] = useState(false);
+  const debugLog = useCallback((line: string) => {
+    pushStudyDebug(line);
+  }, []);
+  const debugLogRef = useRef(debugLog);
+  debugLogRef.current = debugLog;
 
   const startToolTip = (label: string) => {
     window.clearTimeout(tipTimerRef.current);
@@ -318,6 +343,42 @@ function StudyNotebook({
       stale = true;
     };
   }, [bookId, chapter]);
+
+  useEffect(() => {
+    let stale = false;
+    setParaMap(null);
+    loadParagraphMap(bookId).then((map) => {
+      if (!stale) setParaMap(map);
+    });
+    return () => {
+      stale = true;
+    };
+  }, [bookId]);
+
+  useEffect(() => {
+    const on = isStudyDebugOn();
+    setDebugOn(on);
+    if (!on) return;
+    const w = window as Window & { __haruchiStudyDebugHost?: boolean };
+    if (!w.__haruchiStudyDebugHost) {
+      w.__haruchiStudyDebugHost = true;
+      setDebugHost(true);
+      return () => {
+        w.__haruchiStudyDebugHost = false;
+      };
+    }
+    return undefined;
+  }, []);
+
+  useEffect(() => {
+    if (!debugOn || !debugHost) return;
+    return subscribeStudyDebug(setDebugLines);
+  }, [debugOn, debugHost]);
+
+  useEffect(() => {
+    if (!debugOn || !wordStudyOk) return;
+    debugLog(`[원어] 버튼 렌더됨 ch=${chapter}`);
+  }, [debugOn, wordStudyOk, bookId, chapter, debugLog]);
 
   const persist = useCallback(
     (next: ChapterStudyData) => {
@@ -428,9 +489,19 @@ function StudyNotebook({
       const root = bodyRef.current;
       if (!root) return null;
       const caret = caretFromPoint(x, y);
-      if (caret && closestVerseText(caret.node, root)) {
-        const off = domPointToOffset(root, caret.node, caret.offset, spans);
-        if (off != null) return off;
+      if (caret) {
+        const host =
+          caret.node.nodeType === Node.ELEMENT_NODE
+            ? (caret.node as Element)
+            : caret.node.parentElement;
+        // 절 번호·절 사이 공백 위 → 가장 가까운 본문 글자로
+        if (host?.closest?.(".study-vnum, .study-v-gap")) {
+          return offsetFromPointScan(root, x, y, spans);
+        }
+        if (closestVerseText(caret.node, root)) {
+          const off = domPointToOffset(root, caret.node, caret.offset, spans);
+          if (off != null) return off;
+        }
       }
       return offsetFromPointScan(root, x, y, spans);
     },
@@ -503,30 +574,6 @@ function StudyNotebook({
     setToolbar((t) => (t?.kind === "selection" ? null : t));
   }, []);
 
-  const stopCharTimer = useCallback(() => {
-    if (charTimerRef.current) {
-      window.clearTimeout(charTimerRef.current.timer);
-      charTimerRef.current = null;
-    }
-  }, []);
-
-  /** 손잡이를 잡은 채 400ms 가만히 → 글자 단위 */
-  const armCharTimer = useCallback(
-    (x: number, y: number) => {
-      stopCharTimer();
-      const timer = window.setTimeout(() => {
-        charTimerRef.current = null;
-        const d = dragRef.current;
-        if (!d || d.mode === "press" || charModeRef.current) return;
-        charModeRef.current = true;
-        setCharMode(true);
-        if (isAndroid()) navigator.vibrate?.(10);
-      }, CHAR_MODE_MS);
-      charTimerRef.current = { timer, x, y };
-    },
-    [stopCharTimer],
-  );
-
   const releasePointerCaptureSafe = useCallback(() => {
     const el = captureTargetRef.current;
     const id = capturePointerIdRef.current;
@@ -553,12 +600,10 @@ function StudyNotebook({
         window.clearTimeout(pressRef.current.timer);
         pressRef.current = null;
       }
-      stopCharTimer();
-      charModeRef.current = false;
-      setCharMode(false);
       releasePointerCaptureSafe();
       const hadDrag = !!dragRef.current;
       dragRef.current = null;
+      setMagCharStyle(false);
       setDragging(false);
       if (autoScrollRef.current) {
         cancelAnimationFrame(autoScrollRef.current);
@@ -575,7 +620,7 @@ function StudyNotebook({
         if (cur) setToolbar(selectionToolbarFor(cur));
       }
     },
-    [releasePointerCaptureSafe, stopCharTimer, selectionToolbarFor],
+    [releasePointerCaptureSafe, selectionToolbarFor],
   );
 
   const finishDrag = useCallback(() => {
@@ -587,56 +632,64 @@ function StudyNotebook({
     (x: number, y: number) => {
       const d = dragRef.current;
       if (!d) return;
+      // 손잡이: 잡은 지점(grabDy)만큼 보정한 뒤 본문 글자에 붙임
       const hitY = d.mode === "press" ? y : y - d.grabDy - HANDLE_LIFT;
-      const off = offsetAtPoint(x, hitY);
+      let off = offsetAtPoint(x, hitY);
+      // 보정 좌표가 빗나가면 손가락 좌표로 재시도
+      if (off == null && d.mode !== "press") off = offsetAtPoint(x, y);
       if (off == null) return;
       const max = plainRef.current.length;
+      if (max < 1) return;
       const f = Math.max(0, Math.min(max, off));
-      const byChar = charModeRef.current;
-      const toEnd = (b: number) => (byChar ? b : snapEnd(words, b));
-      const toStart = (b: number) => (byChar ? b : snapStart(words, b));
       let next: { start: number; end: number } | null = null;
+
       if (d.mode === "press") {
+        // 길게 누른 채 끌기: 단어 단위 확장 (앵커 어절은 유지)
         if (f > d.anchorEnd) {
-          const e = toEnd(f);
-          next = { start: d.anchorStart, end: Math.max(e ?? d.anchorEnd, d.anchorEnd) };
+          const e = snapEnd(words, f);
+          next = {
+            start: d.anchorStart,
+            end: Math.max(e ?? d.anchorEnd, d.anchorEnd),
+          };
         } else if (f < d.anchorStart) {
-          const s = toStart(f);
-          next = { start: Math.min(s ?? d.anchorStart, d.anchorStart), end: d.anchorEnd };
+          const s = snapStart(words, f);
+          next = {
+            start: Math.min(s ?? d.anchorStart, d.anchorStart),
+            end: d.anchorEnd,
+          };
         } else {
           next = { start: d.anchorStart, end: d.anchorEnd };
         }
       } else {
+        // 손잡이 드래그: 항상 글자 단위 (단어 스냅 없음)
         const cur = selRef.current;
         if (!cur) return;
-        const fixed = d.mode === "start" ? cur.end : cur.start;
-        if (d.mode === "end") {
-          const e = f > fixed ? toEnd(f) : null;
-          if (e != null && e > fixed) next = { start: fixed, end: e };
-          else if (f < fixed) {
-            const s = toStart(f);
-            if (s != null && s < fixed) {
-              next = { start: s, end: fixed };
-              d.mode = "start";
-            }
-          }
-        } else {
-          const s = f < fixed ? toStart(f) : null;
-          if (s != null && s < fixed) next = { start: s, end: fixed };
-          else if (f > fixed) {
-            const e = toEnd(f);
-            if (e != null && e > fixed) {
-              next = { start: fixed, end: e };
-              d.mode = "end";
-            }
+        let a = d.mode === "start" ? f : cur.start;
+        let b = d.mode === "end" ? f : cur.end;
+        if (a === b) {
+          // 최소 1글자
+          if (d.mode === "end") b = Math.min(max, a + 1);
+          else a = Math.max(0, b - 1);
+          if (a === b) {
+            if (a > 0) a -= 1;
+            else b = Math.min(max, b + 1);
           }
         }
+        if (a > b) {
+          const t = a;
+          a = b;
+          b = t;
+          d.mode = d.mode === "start" ? "end" : "start";
+        }
+        next = { start: a, end: b };
       }
+
       if (!next) return;
-      next.end = Math.min(max, next.end);
-      if (next.end <= next.start) return;
+      next.start = Math.max(0, Math.min(max - 1, next.start));
+      next.end = Math.max(next.start + 1, Math.min(max, next.end));
       const prevSel = selRef.current;
-      if (prevSel && prevSel.start === next.start && prevSel.end === next.end) return;
+      if (prevSel && prevSel.start === next.start && prevSel.end === next.end)
+        return;
       selRef.current = next;
       setSel(next);
     },
@@ -749,17 +802,15 @@ function StudyNotebook({
       };
       lastPointRef.current = { x, y };
       lastPointerAtRef.current = performance.now();
-      charModeRef.current = false;
-      setCharMode(false);
+      setMagCharStyle(mode !== "press");
       setDragging(true);
       document.documentElement.dataset.studySelecting = "1";
       window.dispatchEvent(new Event("haruchi:study-selecting"));
-      if (mode !== "press") armCharTimer(x, y);
       if (!autoScrollRef.current) {
         autoScrollRef.current = requestAnimationFrame(runAutoScroll);
       }
     },
-    [runAutoScroll, armCharTimer],
+    [runAutoScroll],
   );
 
   const onBodyPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
@@ -791,18 +842,26 @@ function StudyNotebook({
 
   const onHandlePointerDown = (
     which: "start" | "end",
-    e: ReactPointerEvent<HTMLSpanElement>,
+    e: ReactPointerEvent<HTMLSpanElement> | ReactMouseEvent<HTMLSpanElement>,
   ) => {
     e.preventDefault();
     e.stopPropagation();
+    if (dragRef.current) return;
     const cur = selRef.current;
     const root = bodyRef.current;
     const rects = selRectsRef.current;
     if (!cur || !root || rects.length === 0) return;
     const hit = e.currentTarget as HTMLElement;
-    captureTargetRef.current = hit;
-    capturePointerIdRef.current = e.pointerId;
-    hit.setPointerCapture?.(e.pointerId);
+    // MouseEvent에 가짜 pointerId로 capture하면 lostpointercapture가 바로 나며 드래그가 끊김
+    if ("pointerId" in e && typeof e.pointerId === "number") {
+      captureTargetRef.current = hit;
+      capturePointerIdRef.current = e.pointerId;
+      try {
+        hit.setPointerCapture(e.pointerId);
+      } catch {
+        /* ignore */
+      }
+    }
     suppressClickRef.current = true;
     const r = which === "start" ? rects[0] : rects[rects.length - 1];
     const lineMid = root.getBoundingClientRect().top + r.top + r.height / 2;
@@ -810,7 +869,6 @@ function StudyNotebook({
   };
 
   gestureFnsRef.current.updateDragTo = updateDragTo;
-  gestureFnsRef.current.armCharTimer = armCharTimer;
   gestureFnsRef.current.placeMagnifier = placeMagnifier;
   gestureFnsRef.current.finishDrag = finishDrag;
   gestureFnsRef.current.abortSelectGesture = abortSelectGesture;
@@ -836,7 +894,7 @@ function StudyNotebook({
       if (!d.moved) {
         if (
           Math.hypot(e.clientX - d.originX, e.clientY - d.originY) <
-          CHAR_MODE_STILL_PX
+          DRAG_START_PX
         ) {
           return;
         }
@@ -845,29 +903,26 @@ function StudyNotebook({
         window.clearTimeout(magHideTimerRef.current);
         setMagState("shown");
       }
-      const still = charTimerRef.current;
       const fns = gestureFnsRef.current;
-      if (
-        d.mode !== "press" &&
-        !charModeRef.current &&
-        (!still ||
-          Math.hypot(e.clientX - still.x, e.clientY - still.y) >=
-            CHAR_MODE_STILL_PX)
-      ) {
-        fns.armCharTimer(e.clientX, e.clientY);
-      }
       fns.updateDragTo(e.clientX, e.clientY);
       fns.placeMagnifier();
     };
 
-    const onUp = () => {
+    const onUp = (e?: Event) => {
       lastPointerAtRef.current = performance.now();
       const p = pressRef.current;
       if (p) {
         window.clearTimeout(p.timer);
         pressRef.current = null;
       }
-      if (dragRef.current) gestureFnsRef.current.finishDrag();
+      if (dragRef.current) {
+        const ev = e as PointerEvent | MouseEvent | undefined;
+        if (ev && typeof ev.clientX === "number") {
+          lastPointRef.current = { x: ev.clientX, y: ev.clientY };
+          gestureFnsRef.current.updateDragTo(ev.clientX, ev.clientY);
+        }
+        gestureFnsRef.current.finishDrag();
+      }
     };
 
     const onAbort = () => {
@@ -886,10 +941,21 @@ function StudyNotebook({
       if (document.visibilityState === "hidden") onAbort();
     };
 
+    const onMouseMove = (e: MouseEvent) => {
+      // PointerEvent를 안 보내는 자동화/구형 경로 보완
+      if (window.PointerEvent && (e as MouseEvent & { sourceCapabilities?: { firesTouchEvents?: boolean } }).sourceCapabilities?.firesTouchEvents) {
+        return;
+      }
+      onMove(e as unknown as PointerEvent);
+    };
+    const onMouseUp = (e: MouseEvent) => onUp(e);
+
     document.addEventListener("pointermove", onMove, { passive: false });
     document.addEventListener("pointerup", onUp);
     document.addEventListener("pointercancel", onUp);
     document.addEventListener("lostpointercapture", onUp);
+    document.addEventListener("mousemove", onMouseMove, { passive: false });
+    document.addEventListener("mouseup", onMouseUp);
     document.addEventListener("touchend", onUp, { passive: true });
     document.addEventListener("touchcancel", onUp, { passive: true });
     document.addEventListener("touchmove", onTouchMove, { passive: false });
@@ -900,6 +966,8 @@ function StudyNotebook({
       document.removeEventListener("pointerup", onUp);
       document.removeEventListener("pointercancel", onUp);
       document.removeEventListener("lostpointercapture", onUp);
+      document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mouseup", onMouseUp);
       document.removeEventListener("touchend", onUp);
       document.removeEventListener("touchcancel", onUp);
       document.removeEventListener("touchmove", onTouchMove);
@@ -1081,6 +1149,14 @@ function StudyNotebook({
   const toolbarActionTarget = (): ToolbarMode | null =>
     toolbar ?? toolStashRef.current;
 
+  const lastToolActRef = useRef(0);
+  const fireTool = (fn: () => void) => {
+    const t = Date.now();
+    if (t - lastToolActRef.current < 300) return;
+    lastToolActRef.current = t;
+    fn();
+  };
+
   const applyHighlight = (color: string) => {
     const tb = toolbarActionTarget();
     if (!tb) return;
@@ -1218,38 +1294,91 @@ function StudyNotebook({
     beginNoteEdit(mark.id, mark.note);
   };
 
-  const openWordStudyFromToolbar = () => {
-    if (!wordStudyOk) return;
-    const tb = toolbarActionTarget();
-    if (!tb) return;
-    let selectedKo = "";
+  const stashWordStudyPick = useCallback(() => {
+    const tb = toolbar ?? toolStashRef.current;
+    if (!tb) {
+      debugLogRef.current("[원어] stash 실패 — toolbar 없음");
+      return;
+    }
+    toolStashRef.current = tb;
+    let text = "";
     let verse = 1;
+    let start = 0;
+    let end = 0;
     if (tb.kind === "selection") {
-      selectedKo = plainRef.current.slice(tb.start, tb.end);
+      start = tb.start;
+      end = tb.end;
       verse = tb.ref;
+      text = plainRef.current.slice(start, end);
     } else {
       const mark = marksById.get(tb.markId);
       if (!mark) {
-        setToast("선택한 표시를 찾지 못했어요");
+        debugLogRef.current("[원어] stash 실패 — mark 없음");
         return;
       }
-      selectedKo = plainRef.current.slice(mark.start, mark.end);
+      start = mark.start;
+      end = mark.end;
       verse = mark.ref;
+      text = plainRef.current.slice(start, end);
     }
-    selectedKo = selectedKo.trim();
+    text = text.trim();
+    wsPickRef.current = { text, verse, start, end };
+    debugLogRef.current(
+      `[원어] 저장된 선택 텍스트="${text.slice(0, 40)}" verse=${verse}`,
+    );
+  }, [toolbar, marksById]);
+
+  const openWordStudyFromToolbar = () => {
+    const now = Date.now();
+    if (now - wsActionAtRef.current < 300) {
+      debugLog("[원어] 중복 실행 방지");
+      return;
+    }
+    wsActionAtRef.current = now;
+    debugLog("[원어] open 시도");
+    if (!wordStudyOk) {
+      debugLog("[원어] NT 아님 — 중단");
+      return;
+    }
+    const pick = wsPickRef.current;
+    const tb = toolbarActionTarget();
+    let selectedKo = pick?.text ?? "";
+    let verse = pick?.verse ?? 1;
+    if (!selectedKo && tb) {
+      if (tb.kind === "selection") {
+        selectedKo = plainRef.current.slice(tb.start, tb.end).trim();
+        verse = tb.ref;
+      } else {
+        const mark = marksById.get(tb.markId);
+        if (!mark) {
+          setToast("선택한 표시를 찾지 못했어요");
+          debugLog("[원어] mark 없음");
+          return;
+        }
+        selectedKo = plainRef.current.slice(mark.start, mark.end).trim();
+        verse = mark.ref;
+      }
+    }
     if (!selectedKo) {
       setToast("단어를 선택해 주세요");
+      debugLog("[원어] 선택 텍스트 비어 있음");
       return;
     }
     if (wsTokens.length === 0) {
-      setToast("원어 자료를 불러오는 중이에요");
+      const path = `/word-study/${bookId}/${chapter}.json`;
+      setToast(`원어 자료 없음: ${path}`);
+      debugLog(`[원어] tokens 비어 있음 ${path}`);
       return;
     }
     const matched = matchTokenByGloss(wsTokens, verse, selectedKo);
     if (!matched) {
       setToast("이 구절의 원어를 찾지 못했어요");
+      debugLog(`[원어] match 실패 verse=${verse} ko=${selectedKo.slice(0, 24)}`);
       return;
     }
+    debugLog(
+      `[원어] match ok strong=${matched.strong || "-"} → setWsOpen(true)`,
+    );
     setWsVerse(verse);
     setWsInitial(matched);
     setWsSelectedKo(selectedKo);
@@ -1364,8 +1493,188 @@ function StudyNotebook({
 
   const digLen = String(chapter).length;
 
+  const paraStarts = paragraphStartsForChapter(paraMap, chapter);
+  const useParas = !!paraStarts && paraStarts.length > 0;
+  const paraGroups: { key: string; startN: number; verses: VerseSpan[] }[] =
+    (() => {
+      if (!useParas || !paraStarts) {
+        return [{ key: "all", startN: spans[0]?.n ?? 1, verses: spans }];
+      }
+      const startSet = new Set(paraStarts);
+      const groups: { key: string; startN: number; verses: VerseSpan[] }[] = [];
+      let cur: { key: string; startN: number; verses: VerseSpan[] } | null =
+        null;
+      for (const span of spans) {
+        if (!cur || startSet.has(span.n)) {
+          cur = {
+            key: `p-${span.n}`,
+            startN: span.n,
+            verses: [span],
+          };
+          groups.push(cur);
+        } else {
+          cur.verses.push(span);
+        }
+      }
+      return groups;
+    })();
+
+  const renderSegNodes = (segs: TextSeg[], keyPrefix: string): ReactNode[] =>
+    segs.map((seg, i) => {
+      const cls = [
+        "study-seg",
+        seg.style.hl ? "study-seg--hl" : "",
+        seg.style.ul ? "study-seg--ul" : "",
+      ]
+        .filter(Boolean)
+        .join(" ");
+      const primaryId = seg.style.markIds[0];
+      const noteHosts = seg.style.noteMarkIds.filter((id) => {
+        const m = marksById.get(id);
+        return m && (m.note || editingMarkId === id);
+      });
+
+      if (!seg.style.hl && !seg.style.ul && noteHosts.length === 0) {
+        return <span key={`${keyPrefix}-${i}`}>{seg.text}</span>;
+      }
+
+      return (
+        <span
+          key={`${keyPrefix}-${i}`}
+          className={cls}
+          style={
+            seg.style.hl
+              ? ({ ["--study-hl"]: seg.style.hl } as CSSProperties)
+              : undefined
+          }
+          data-mark-id={primaryId}
+          data-note-anchor={
+            noteHosts.length > 0 ? noteHosts.join(" ") : undefined
+          }
+          onClick={(e) => {
+            if (!primaryId) return;
+            if (editingMarkId) return;
+            e.preventDefault();
+            e.stopPropagation();
+            const lines = mergeLineRects(
+              Array.from((e.currentTarget as HTMLElement).getClientRects()),
+            );
+            const first = lines[0];
+            const last = lines[lines.length - 1];
+            if (!first || !last) return;
+            setToolbar({
+              kind: "mark",
+              markId: primaryId,
+              x: first.left + first.width / 2,
+              rt: first.top,
+              rb: last.bottom,
+            });
+          }}
+        >
+          {seg.text}
+        </span>
+      );
+    });
+
+  /** 절 본문만 data-v — 번호·앞 공백은 오프셋 밖. 번호+첫 글자 nowrap. */
+  const renderVerse = (span: VerseSpan, paraFirst: boolean) => {
+    const segs = segmentVerse(span.text, span.start, span.end, data.marks);
+    const legacy = legacyByRef.get(span.n);
+    const legacyOpen = openLegacy.has(span.n);
+    const firstCp = Array.from(span.text)[0] ?? "";
+    const firstLen = firstCp.length;
+    const splitAt = span.start + firstLen;
+
+    const firstSegs: TextSeg[] = [];
+    const restSegs: TextSeg[] = [];
+    for (const seg of segs) {
+      if (seg.end <= splitAt) firstSegs.push(seg);
+      else if (seg.start >= splitAt) restSegs.push(seg);
+      else {
+        firstSegs.push({
+          ...seg,
+          end: splitAt,
+          text: span.text.slice(seg.start - span.start, firstLen),
+        });
+        restSegs.push({
+          ...seg,
+          start: splitAt,
+          text: span.text.slice(firstLen, seg.end - span.start),
+          style: {
+            ...seg.style,
+            // 메모 앵커는 조각 시작에만 — 앞쪽에만 유지
+            noteMarkIds: [],
+          },
+        });
+      }
+    }
+
+    return (
+      <span
+        key={span.n}
+        className="study-verse"
+        data-verse={span.n}
+        data-verse-num={span.n}
+      >
+        {!paraFirst ? <span className="study-v-gap"> </span> : null}
+        <span className="study-v-nowrap">
+          <span className="study-vnum">{span.n}</span>
+          {firstLen > 0 ? (
+            <span className="study-verse-text" data-v={span.n} data-v-off="0">
+              {renderSegNodes(firstSegs, `${span.n}-a`)}
+            </span>
+          ) : null}
+        </span>
+        {restSegs.length > 0 ? (
+          <span
+            className="study-verse-text"
+            data-v={span.n}
+            data-v-off={String(firstLen)}
+          >
+            {renderSegNodes(restSegs, `${span.n}-b`)}
+          </span>
+        ) : null}
+        {legacy ? (
+          <button
+            type="button"
+            className="study-note-dot"
+            aria-label={`${span.n}절 옛 메모`}
+            onClick={() => {
+              setOpenLegacy((prev) => {
+                const n = new Set(prev);
+                if (n.has(span.n)) n.delete(span.n);
+                else n.add(span.n);
+                return n;
+              });
+            }}
+          />
+        ) : null}
+        {legacy ? (
+          <span
+            className={`study-note-legacy${legacyOpen ? " is-open" : ""}`}
+            role="note"
+          >
+            <span className="study-note-legacy-inner">
+              <span>{legacy.text}</span>
+            </span>
+          </span>
+        ) : null}
+      </span>
+    );
+  };
+
   return (
     <div className={`study-root${embedded ? " is-embedded" : ""}`}>
+      {debugOn && debugHost && typeof document !== "undefined"
+        ? createPortal(
+            <div className="study-debug-log" aria-live="polite">
+              {debugLines.length === 0
+                ? "debug=1 — 원어 로그 대기"
+                : debugLines.join("\n")}
+            </div>,
+            document.body,
+          )
+        : null}
       {!embedded ? (
         <div className="study-top">
           <Link href="/bible-reading" className="study-top-back">
@@ -1412,118 +1721,15 @@ function StudyNotebook({
                 e.stopPropagation();
               }}
             >
-              {spans.map((span) => {
-                const segs = segmentVerse(
-                  span.text,
-                  span.start,
-                  span.end,
-                  data.marks,
-                );
-                const legacy = legacyByRef.get(span.n);
-                const legacyOpen = openLegacy.has(span.n);
-                return (
-                  <span
-                    key={span.n}
-                    className="study-verse"
-                    data-verse={span.n}
-                    data-verse-num={span.n}
-                  >
-                    <span className="study-vnum">{span.n}</span>
-                    <span className="study-verse-text" data-v={span.n}>
-                      {segs.map((seg, i) => {
-                        const cls = [
-                          "study-seg",
-                          seg.style.hl ? "study-seg--hl" : "",
-                          seg.style.ul ? "study-seg--ul" : "",
-                        ]
-                          .filter(Boolean)
-                          .join(" ");
-                        const primaryId = seg.style.markIds[0];
-                        const noteHosts = seg.style.noteMarkIds.filter((id) => {
-                          const m = marksById.get(id);
-                          return m && (m.note || editingMarkId === id);
-                        });
-
-                        if (!seg.style.hl && !seg.style.ul && noteHosts.length === 0) {
-                          return (
-                            <span key={`${span.n}-${i}`}>{seg.text}</span>
-                          );
-                        }
-
-                        return (
-                          <span
-                            key={`${span.n}-${i}`}
-                            className={cls}
-                            style={
-                              seg.style.hl
-                                ? ({
-                                    ["--study-hl"]: seg.style.hl,
-                                  } as CSSProperties)
-                                : undefined
-                            }
-                            data-mark-id={primaryId}
-                            data-note-anchor={
-                              noteHosts.length > 0
-                                ? noteHosts.join(" ")
-                                : undefined
-                            }
-                            onClick={(e) => {
-                              if (!primaryId) return;
-                              if (editingMarkId) return;
-                              e.preventDefault();
-                              e.stopPropagation();
-                              const lines = mergeLineRects(
-                                Array.from(
-                                  (
-                                    e.currentTarget as HTMLElement
-                                  ).getClientRects(),
-                                ),
-                              );
-                              const first = lines[0];
-                              const last = lines[lines.length - 1];
-                              if (!first || !last) return;
-                              setToolbar({
-                                kind: "mark",
-                                markId: primaryId,
-                                x: first.left + first.width / 2,
-                                rt: first.top,
-                                rb: last.bottom,
-                              });
-                            }}
-                          >
-                            {seg.text}
-                          </span>
-                        );
-                      })}
-                    </span>
-                    {legacy ? (
-                      <button
-                        type="button"
-                        className="study-note-dot"
-                        aria-label={`${span.n}절 옛 메모`}
-                        onClick={() => {
-                          setOpenLegacy((prev) => {
-                            const n = new Set(prev);
-                            if (n.has(span.n)) n.delete(span.n);
-                            else n.add(span.n);
-                            return n;
-                          });
-                        }}
-                      />
-                    ) : null}
-                    {legacy ? (
-                      <span
-                        className={`study-note-legacy${legacyOpen ? " is-open" : ""}`}
-                        role="note"
-                      >
-                        <span className="study-note-legacy-inner">
-                          <span>{legacy.text}</span>
-                        </span>
-                      </span>
-                    ) : null}
-                  </span>
-                );
-              })}
+              {useParas
+                ? paraGroups.map((g) => (
+                    <p key={g.key} className="study-para">
+                      {g.verses.map((span, i) => renderVerse(span, i === 0))}
+                    </p>
+                  ))
+                : paraGroups[0]?.verses.map((span, i) =>
+                    renderVerse(span, i === 0),
+                  )}
               <div className="study-note-layer" aria-label="행간 메모">
                 {selRects.map((r, i) => (
                   <span
@@ -1551,8 +1757,10 @@ function StudyNotebook({
                       <span className="study-sel-handle-knob" />
                       <span
                         className="study-sel-handle-hit"
+                        role="button"
                         aria-label="선택 시작 조정"
                         onPointerDown={(e) => onHandlePointerDown("start", e)}
+                        onMouseDown={(e) => onHandlePointerDown("start", e)}
                       />
                     </span>
                     <span
@@ -1569,8 +1777,10 @@ function StudyNotebook({
                       <span className="study-sel-handle-knob" />
                       <span
                         className="study-sel-handle-hit"
+                        role="button"
                         aria-label="선택 끝 조정"
                         onPointerDown={(e) => onHandlePointerDown("end", e)}
+                        onMouseDown={(e) => onHandlePointerDown("end", e)}
                       />
                     </span>
                   </>
@@ -1751,12 +1961,12 @@ function StudyNotebook({
                     }}
                     onPointerUp={(e) => {
                       e.stopPropagation();
-                      e.preventDefault();
-                      applyHighlight(c);
+                      fireTool(() => applyHighlight(c));
                     }}
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
+                      fireTool(() => applyHighlight(c));
                     }}
                   />
                 ))}
@@ -1810,17 +2020,18 @@ function StudyNotebook({
                     onPointerDown={(e) => {
                       e.stopPropagation();
                       toolStashRef.current = toolbar;
+                      if (label === "원어") {
+                        debugLog("[원어] pointerdown");
+                        stashWordStudyPick();
+                      }
                       startToolTip(label);
                     }}
                     onPointerUp={(e) => {
                       e.stopPropagation();
-                      e.preventDefault();
                       endToolTip();
-                      if (tipShownRef.current) {
-                        tipShownRef.current = false;
-                        return;
-                      }
-                      action();
+                      tipShownRef.current = false;
+                      if (label === "원어") debugLog("[원어] pointerup");
+                      fireTool(action);
                     }}
                     onPointerLeave={endToolTip}
                     onPointerCancel={endToolTip}
@@ -1828,6 +2039,11 @@ function StudyNotebook({
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
+                      if (label === "원어") {
+                        debugLog("[원어] click");
+                        stashWordStudyPick();
+                      }
+                      fireTool(action);
                     }}
                   >
                     {icon}
@@ -1884,7 +2100,7 @@ function StudyNotebook({
       {magState !== "hidden" ? (
         <div
           ref={magRef}
-          className={`study-mag${charMode ? " is-char" : ""}${
+          className={`study-mag${magCharStyle ? " is-char" : ""}${
             magState === "hiding" ? " is-hiding" : ""
           }`}
           aria-hidden
@@ -1910,6 +2126,7 @@ function StudyNotebook({
         selectedKo={wsSelectedKo}
         onClose={() => setWsOpen(false)}
         onError={(msg) => setToast(msg)}
+        onDebug={debugOn ? debugLog : undefined}
         onNavigate={(nextBook, nextChapter) => {
           if (onMoveChapter && nextBook === bookId) {
             onMoveChapter(nextChapter);
@@ -1942,6 +2159,19 @@ function StudyNotebook({
   );
 }
 
+function versePlainLen(el: HTMLElement): number {
+  const pre = document.createRange();
+  pre.selectNodeContents(el);
+  let n = pre.toString().length;
+  el.querySelectorAll(".study-mark-note, .study-mark-note-input, .study-vnum").forEach(
+    (node) => {
+      n -= (node.textContent || "").length;
+      if (node instanceof HTMLInputElement) n -= node.value.length;
+    },
+  );
+  return Math.max(0, n);
+}
+
 function domPointToOffset(
   root: HTMLElement,
   node: Node,
@@ -1954,26 +2184,36 @@ function domPointToOffset(
   const span = spans.find((s) => s.n === v);
   if (!span) return null;
 
+  // 같은 절이 첫글자/나머지로 쪼개져 있으면 앞조각 길이를 더함
+  const parts = [
+    ...root.querySelectorAll<HTMLElement>(`[data-v="${v}"]`),
+  ];
+  let prior = 0;
+  for (const part of parts) {
+    if (part === verseEl) break;
+    prior += versePlainLen(part);
+  }
+
   const pre = document.createRange();
   pre.selectNodeContents(verseEl);
   try {
     pre.setEnd(node, offset);
   } catch {
-    return span.start;
+    return span.start + prior;
   }
-  // 메모/입력 UI 텍스트는 오프셋에서 제외
+  // 메모/입력·절 번호 텍스트는 오프셋에서 제외
   const raw = pre.toString();
-  const noteEls = verseEl.querySelectorAll(
-    ".study-mark-note, .study-mark-note-input",
+  const skipEls = verseEl.querySelectorAll(
+    ".study-mark-note, .study-mark-note-input, .study-vnum",
   );
   let subtract = 0;
-  noteEls.forEach((el) => {
+  skipEls.forEach((el) => {
     if (pre.intersectsNode(el)) {
       subtract += (el.textContent || "").length;
       if (el instanceof HTMLInputElement) subtract += el.value.length;
     }
   });
-  return span.start + Math.max(0, raw.length - subtract);
+  return span.start + prior + Math.max(0, raw.length - subtract);
 }
 
 function ToolIcon({ children }: { children: ReactNode }) {
@@ -2188,7 +2428,17 @@ function verseTextNodes(root: HTMLElement): Text[] {
   root.querySelectorAll<HTMLElement>("[data-v]").forEach((v) => {
     const w = document.createTreeWalker(v, NodeFilter.SHOW_TEXT);
     let n: Node | null;
-    while ((n = w.nextNode())) out.push(n as Text);
+    while ((n = w.nextNode())) {
+      const t = n as Text;
+      if (
+        t.parentElement?.closest(
+          ".study-vnum, .study-mark-note, .study-mark-note-input",
+        )
+      ) {
+        continue;
+      }
+      out.push(t);
+    }
   });
   return out;
 }
@@ -2246,19 +2496,26 @@ function offsetToDomPoint(
       isEnd ? offset > s.start && offset <= s.end : offset >= s.start && offset < s.end,
     ) ?? (offset >= (spans[spans.length - 1]?.end ?? 0) ? spans[spans.length - 1] : spans[0]);
   if (!span) return null;
-  const el = root.querySelector<HTMLElement>(`[data-v="${span.n}"]`);
-  if (!el) return null;
+  const parts = [
+    ...root.querySelectorAll<HTMLElement>(`[data-v="${span.n}"]`),
+  ];
+  if (parts.length === 0) return null;
   let rem = Math.max(0, Math.min(offset, span.end) - span.start);
-  const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-  let n: Node | null;
   let last: Text | null = null;
-  while ((n = w.nextNode())) {
-    const t = n as Text;
-    last = t;
-    if (rem < t.length || (isEnd && rem === t.length)) {
-      return { node: t, offset: rem };
+  for (const el of parts) {
+    const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    let n: Node | null;
+    while ((n = w.nextNode())) {
+      const t = n as Text;
+      if (t.parentElement?.closest(".study-vnum, .study-mark-note, .study-mark-note-input")) {
+        continue;
+      }
+      last = t;
+      if (rem < t.length || (isEnd && rem === t.length)) {
+        return { node: t, offset: rem };
+      }
+      rem -= t.length;
     }
-    rem -= t.length;
   }
   return last ? { node: last, offset: last.length } : null;
 }

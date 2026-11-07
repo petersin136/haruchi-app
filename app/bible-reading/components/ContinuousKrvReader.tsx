@@ -144,6 +144,8 @@ export default function ContinuousKrvReader({
     let raf = 0;
     const ro = new ResizeObserver((entries) => {
       let changed = false;
+      let growAbove = 0;
+      const active = lastEmittedRef.current;
       for (const entry of entries) {
         const el = entry.target as HTMLElement;
         const ch = Number(el.dataset.studyChapter);
@@ -154,6 +156,23 @@ export default function ContinuousKrvReader({
         if (Math.abs(prev - h) < 2) continue;
         heightsRef.current.set(ch, h);
         changed = true;
+        // 현재 장보다 위쪽 장이 늦게 커지면 스크롤 보정 (119 정렬 후 118 로드 등)
+        if (
+          h > prev + 40 &&
+          ch < active &&
+          el.getBoundingClientRect().bottom <= TOP_ANCHOR_PX + 40
+        ) {
+          growAbove += h - prev;
+        }
+      }
+      if (growAbove > 0) {
+        const sr = scrollRootOf(root);
+        suppressScrollEmitRef.current = true;
+        freezeUntilRef.current = Date.now() + 300;
+        setScrollTop(sr, getScrollTop(sr) + growAbove);
+        requestAnimationFrame(() => {
+          suppressScrollEmitRef.current = false;
+        });
       }
       if (!changed) return;
       if (raf) cancelAnimationFrame(raf);
@@ -271,17 +290,26 @@ export default function ContinuousKrvReader({
     const y =
       getScrollTop(sr) + anchor.getBoundingClientRect().top - TOP_ANCHOR_PX;
     suppressScrollEmitRef.current = true;
+    freezeUntilRef.current = Date.now() + 900;
     setScrollTop(sr, Math.max(0, y));
     lastEmittedRef.current = target;
     pendingAlignRef.current = null;
-    // 인접 장 높이 확정 후 한 번 더 보정
-    requestAnimationFrame(() => {
+    // 인접 장 높이 확정 후 한두 번 더 보정
+    const refine = () => {
+      const a =
+        root.querySelector<HTMLElement>(
+          `[data-study-chapter="${target}"] [data-chapter-anchor]`,
+        ) ?? anchor;
       const y2 =
-        getScrollTop(sr) + anchor.getBoundingClientRect().top - TOP_ANCHOR_PX;
+        getScrollTop(sr) + a.getBoundingClientRect().top - TOP_ANCHOR_PX;
       setScrollTop(sr, Math.max(0, y2));
-      requestAnimationFrame(() => {
+    };
+    requestAnimationFrame(() => {
+      refine();
+      window.setTimeout(() => {
+        refine();
         suppressScrollEmitRef.current = false;
-      });
+      }, 400);
     });
     return true;
   }, []);
@@ -335,6 +363,7 @@ export default function ContinuousKrvReader({
 
     const readActive = () => {
       if (suppressScrollEmitRef.current) return;
+      if (pendingAlignRef.current != null) return;
       if (Date.now() < freezeUntilRef.current) return;
       const anchors = [
         ...wrap.querySelectorAll<HTMLElement>("[data-chapter-anchor]"),
@@ -347,6 +376,13 @@ export default function ContinuousKrvReader({
         top: a.getBoundingClientRect().top,
       })).filter((x) => Number.isFinite(x.ch));
       if (tops.length === 0) return;
+
+      // 문서 맨 위면 창의 첫 장 (정렬 점프 중이 아닐 때만)
+      const srNow = scrollRootOf(wrap);
+      if (getScrollTop(srNow) <= 4) {
+        emitActive(tops[0].ch);
+        return;
+      }
 
       // 상단 밴드를 지나친 가장 아래 장
       let passed = tops[0].ch;

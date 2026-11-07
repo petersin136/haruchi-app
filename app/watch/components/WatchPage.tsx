@@ -12,6 +12,10 @@ import VerseSheet from "./VerseSheet";
 import { VerseSeekContext, type VerseSeekApi } from "./VerseSeek";
 import { YT_STATE, type YTPlayer } from "./youtube";
 import {
+  SEEK_VERIFY_DELAY_MS,
+  SEEK_VERIFY_TOLERANCE_S,
+  VERSE_LEAD_S,
+  VERSE_NUDGE_S,
   buildVerseIndex,
   clearVerseFix,
   entryAt,
@@ -52,9 +56,30 @@ import {
 } from "../data/chapterStarts";
 
 const POLL_MS = 500;
-const VERSE_LEAD_S = 1.5;
 const SAVE_EVERY_S = 2;
 const RESUME_MIN_S = 5;
+
+/** seekTo 후 재생, 어긋나면 한 번 더 seek (버퍼링 대응) */
+function seekPlayVerify(p: YTPlayer, targetSec: number) {
+  const target = Math.max(0, targetSec);
+  p.seekTo(target, true);
+  p.playVideo();
+  window.setTimeout(() => {
+    try {
+      const cur = p.getCurrentTime();
+      if (
+        Number.isFinite(cur) &&
+        Math.abs(cur - target) >= SEEK_VERIFY_TOLERANCE_S
+      ) {
+        p.seekTo(target, true);
+        p.playVideo();
+      }
+    } catch {
+      /* 플레이어 정리됨 */
+    }
+  }, SEEK_VERIFY_DELAY_MS);
+  return target;
+}
 
 async function copyText(text: string): Promise<boolean> {
   try {
@@ -94,7 +119,12 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
   const [sheetOpen, setSheetOpen] = useState(false);
   const [devMode, setDevMode] = useState(false);
   const [toast, setToast] = useState<{ id: number; text: string } | null>(null);
-  const [fileTimes, setFileTimes] = useState<WatchTimes>({ times: {}, missing: [], starts: [] });
+  const [fileTimes, setFileTimes] = useState<WatchTimes>({
+    times: {},
+    missing: [],
+    starts: [],
+    src: {},
+  });
   const [verseFix, setVerseFix] = useState<VerseTimeMap>({});
   const [verseCounts, setVerseCounts] = useState<number[]>([]);
   const [verseSheetOpen, setVerseSheetOpen] = useState(false);
@@ -128,7 +158,7 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
     let stale = false;
     setVerseFix(loadVerseFix(bookId));
     setFileStarts(null);
-    setFileTimes({ times: {}, missing: [], starts: [] });
+    setFileTimes({ times: {}, missing: [], starts: [], src: {} });
     loadWatchTimes(bookId).then(
       (t) => {
         if (stale) return;
@@ -236,10 +266,10 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
     (target: ChapterTarget | null) => {
       const p = playerRef.current;
       if (!p || !target) return;
-      p.seekTo(target.start, true);
-      setTime(target.start);
-      savePosition(bookId, target.start);
-      lastSavedRef.current = target.start;
+      const seekAt = seekPlayVerify(p, target.start - VERSE_LEAD_S);
+      setTime(seekAt);
+      savePosition(bookId, seekAt);
+      lastSavedRef.current = seekAt;
       showToast(`${name} ${target.chapter}장`);
     },
     [bookId, name, showToast],
@@ -310,7 +340,11 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
     () => buildVerseIndex(fileTimes, verseFix, starts),
     [fileTimes, verseFix, starts],
   );
-  const verseEntry = useMemo(() => entryAt(verseIndex, chapter, time), [verseIndex, chapter, time]);
+  // 절 표시도 seek 여유(VERSE_LEAD_S)와 같은 기준으로 — 앞당긴 구간에서도 해당 절
+  const verseEntry = useMemo(
+    () => entryAt(verseIndex, chapter, time + VERSE_LEAD_S),
+    [verseIndex, chapter, time],
+  );
   const currentVerse = verseEntry?.explicit ? verseEntry.verse : null;
 
   const nextVerse = (() => {
@@ -324,17 +358,43 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
       const p = playerRef.current;
       const t = verseTime(verseIndex, c, v);
       if (!p || t === null) return;
-      const target = Math.max(0, t - VERSE_LEAD_S);
-      p.seekTo(target, true);
-      p.playVideo();
-      setTime(target);
-      savePosition(bookId, target);
-      lastSavedRef.current = target;
+      const seekAt = seekPlayVerify(p, t - VERSE_LEAD_S);
+      setTime(seekAt);
+      savePosition(bookId, seekAt);
+      lastSavedRef.current = seekAt;
       setVerseSheetOpen(false);
       showToast(`${name} ${c}:${v}`);
     },
     [bookId, name, verseIndex, showToast],
   );
+
+  const nudgeCurrentVerse = useCallback(
+    (delta: number) => {
+      if (currentVerse === null) return;
+      const key = verseKey(chapter, currentVerse);
+      const base = verseTime(verseIndex, chapter, currentVerse);
+      if (base === null) return;
+      const nextT = Math.round((base + delta) * 10) / 10;
+      if (nextT < 0) return;
+      const next = { ...verseFix, [key]: nextT };
+      setVerseFix(next);
+      saveVerseFix(bookId, next);
+      const p = playerRef.current;
+      if (p) {
+        const seekAt = seekPlayVerify(p, nextT - VERSE_LEAD_S);
+        setTime(seekAt);
+        savePosition(bookId, seekAt);
+        lastSavedRef.current = seekAt;
+      }
+      showToast(`${key} = ${formatTime(nextT)}`);
+    },
+    [bookId, chapter, currentVerse, verseFix, verseIndex, showToast],
+  );
+
+  const replayCurrentVerse = useCallback(() => {
+    if (currentVerse === null) return;
+    seekVerse(chapter, currentVerse);
+  }, [chapter, currentVerse, seekVerse]);
 
   const seekApi = useMemo<VerseSeekApi>(
     () => ({
@@ -360,9 +420,14 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
     const json = verseFixJson(verseFix);
     console.log(`[watch] data/verse-times-fix/${bookId}.json\n` + json);
     copyText(json).then((ok) =>
-      showToast(ok ? "JSON을 복사했어요" : "복사 실패 — 콘솔을 확인하세요"),
+      showToast(ok ? "보정값을 복사했어요" : "복사 실패 — 콘솔을 확인하세요"),
     );
   }, [bookId, verseFix, showToast]);
+
+  const currentVerseLabel =
+    currentVerse !== null ? verseKey(chapter, currentVerse) : null;
+  const currentVerseTime =
+    currentVerse !== null ? verseTime(verseIndex, chapter, currentVerse) : null;
 
   const resetVerses = useCallback(() => {
     clearVerseFix(bookId);
@@ -449,6 +514,10 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
             onRecordNextVerse={recordNextVerse}
             onCopyVerseJson={copyVerseJson}
             onResetVerses={resetVerses}
+            currentVerseLabel={currentVerseLabel}
+            currentVerseTime={currentVerseTime}
+            onNudgeVerse={nudgeCurrentVerse}
+            onReplayVerse={replayCurrentVerse}
           />
         )}
       </main>
@@ -492,6 +561,8 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
         currentVerse={currentVerse}
         onPick={seekVerse}
         onClose={closeVerseSheet}
+        devMode={devMode}
+        verseSrc={fileTimes.src}
       />
     </div>
   );
