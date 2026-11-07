@@ -390,8 +390,9 @@ html:has(.study-root:not(.is-embedded)) body::-webkit-scrollbar,
 
 .study-verse.is-flash {
   border-radius: 4px;
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--study-red, #9e1b1b) 22%, transparent);
-  transition: box-shadow 0.35s ease;
+  outline: 3px solid rgba(158, 27, 27, 0.35);
+  outline-offset: 2px;
+  transition: outline-color 0.35s ease;
 }
 
 .study-vnum {
