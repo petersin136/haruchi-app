@@ -241,7 +241,7 @@ export default function ContinuousKrvReader({
         if (next === lastEmittedRef.current) return;
         measureMounted();
         lastEmittedRef.current = next;
-        freezeUntilRef.current = Date.now() + 400;
+        freezeUntilRef.current = Date.now() + 550;
         onActiveRef.current(next);
       }, 100);
     },
@@ -470,22 +470,25 @@ export default function ContinuousKrvReader({
         />
       ) : null}
 
-      {mounted.map((ch) => (
-        <div
-          key={`${bookId}-${ch}`}
-          className="brp-cont-chapter"
-          data-study-chapter={ch}
-        >
-          <StudyNotebook
-            bookId={bookId}
-            chapter={ch}
-            embedded
-            flashVerse={ch === chapter ? flashVerse : null}
-            onEndVisibilityChange={(vis) => handleEndVisibility(ch, vis)}
-            onMoveChapter={(next) => onActiveChapterChange(next)}
-          />
-        </div>
-      ))}
+      {mounted.map((ch) => {
+        const minH = heightsRef.current.get(ch);
+        return (
+          <div
+            key={`${bookId}-${ch}`}
+            className="brp-cont-chapter"
+            data-study-chapter={ch}
+            style={minH && minH > 80 ? { minHeight: minH } : undefined}
+          >
+            <StudyNotebook
+              bookId={bookId}
+              chapter={ch}
+              embedded
+              flashVerse={ch === chapter ? flashVerse : null}
+              onEndVisibilityChange={(vis) => handleEndVisibility(ch, vis)}
+            />
+          </div>
+        );
+      })}
 
       {showNextBook && nextBook ? (
         <div className="brp-cont-next-book">
