@@ -20,7 +20,8 @@
     padding-top: 46px !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
-    padding-bottom: 28px !important;
+    /* 하단 탭바(56px + safe-area) + 여유 */
+    padding-bottom: calc(var(--brp-tabbar-h, 56px) + 24px) !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     max-width: none !important;
@@ -255,8 +256,9 @@
     max-width: none !important;
     width: 100% !important;
     margin: 0 !important;
-    /* 유일한 좌우 여백 — 화면 끝 → 절 번호 시작 = 14px */
-    padding: 0 14px 40px !important;
+    /* 유일한 좌우 여백 — 화면 끝 → 절 번호 시작 = 14px
+       하단은 탭바 높이만큼 확보 */
+    padding: 0 14px calc(var(--brp-tabbar-h, 56px) + 16px) !important;
     background: var(--bg);
     border: none !important;
     border-radius: 0 !important;

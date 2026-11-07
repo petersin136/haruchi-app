@@ -27,6 +27,7 @@
   color: var(--ink-soft);
 }
 
+.brp-toggle {
   position: relative;
   isolation: isolate;
 }
@@ -49,6 +50,7 @@
   .brp-toggle-indicator {
     transition: opacity 0.18s ease;
   }
+}
 
 .brp-progress-grid h2,
 .brp-prayer h2 {

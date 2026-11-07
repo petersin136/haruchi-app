@@ -26,7 +26,6 @@ import BookChapterDrawer from "./components/BookChapterDrawer";
 import BottomTabBar from "../components/BottomTabBar";
 import {
   appendReadLog,
-  doneKey,
   isChapterDone,
   markChapterDone,
   removeReadLog,
@@ -2016,180 +2015,6 @@ export default function BibleReadingPage() {
       </section>
       )}
 
-      {bookConfirmed && (
-      <section
-        className="brp-progress-grid"
-        aria-label={`${bookMeta.name} 통독 진도`}
-      >
-        <div>
-          <p className="brp-section-label">진도</p>
-          <h2>
-            {bookMeta.totalChapters}장 {bookMeta.name} 읽기
-          </h2>
-        </div>
-        <div className="brp-grid">
-          <ProgressGrid
-            chapters={chapterList}
-            chapterNumber={chapterNumber}
-            doneChapters={doneChapters}
-            bookName={bookMeta.name}
-            onSelectChapter={onSelectChapter}
-          />
-        </div>
-      </section>
-      )}
-
-      {bookConfirmed && (
-      <section className="brp-prayer" aria-label="오늘의 기도">
-        <header className="brp-prayer-header">
-          <div className="brp-prayer-heading">
-            <p className="brp-section-label">오늘의 기도</p>
-            <h2>
-              {prayerAllDone ? "오늘의 기도 완료" : "7가지 기도를 차례로 따라해요"}
-            </h2>
-            <p className="brp-prayer-meta">
-              <span className="brp-prayer-count">{prayerDone} / {prayerTotal} 마침</span>
-              <span className="brp-prayer-divider" aria-hidden>·</span>
-              <span className="brp-prayer-date">{prayerDate}</span>
-            </p>
-          </div>
-
-          <SlidingToggle
-            className="brp-prayer-toggle brp-toggle"
-            ariaLabel="대상 선택"
-            role="tablist"
-            activeKey={prayerGrade}
-            onSelect={handlePrayerGradeChange}
-            items={PRAYER_GRADES.map((key) => ({
-              key,
-              label: PRAYER_GRADE_LABELS[key],
-            }))}
-          />
-        </header>
-
-        <div className="brp-prayer-bar" aria-hidden="true">
-          <span style={{ width: `${prayerPercent}%` }} />
-        </div>
-
-        <ol className="brp-prayer-list">
-          {prayerCard.prayers.map((prayer) => {
-            const isOpen = openPrayer === prayer.no;
-            const isDone = prayerChecks.has(prayer.no);
-            return (
-              <li
-                key={prayer.no}
-                className={`brp-prayer-item ${isOpen ? "is-open" : ""} ${
-                  isDone ? "is-done" : ""
-                }`}
-              >
-                <button
-                  type="button"
-                  className="brp-prayer-trigger"
-                  aria-expanded={isOpen}
-                  onClick={() => setOpenPrayer(isOpen ? null : prayer.no)}
-                >
-                  <span className="brp-prayer-no">
-                    {String(prayer.no).padStart(2, "0")}
-                  </span>
-                  <span className="brp-prayer-theme">{prayer.theme}</span>
-                  <span className="brp-prayer-mark" aria-hidden="true">
-                    {isDone ? (
-                      <svg viewBox="0 0 20 20" width="14" height="14">
-                        <path
-                          d="M4.5 10.5l3.2 3.2L15.5 6"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    ) : (
-                      <span className="brp-prayer-mark-dot" />
-                    )}
-                  </span>
-                </button>
-
-                {isOpen && (
-                  <div className="brp-prayer-body">
-                    <blockquote className="brp-prayer-verse">
-                      <p>{prayer.verse}</p>
-                      <cite>{prayer.ref}</cite>
-                    </blockquote>
-
-                    <div className="brp-prayer-section">
-                      <p className="brp-prayer-label">생각해보기</p>
-                      <p className="brp-prayer-think">{prayer.think}</p>
-                    </div>
-
-                    <div className="brp-prayer-section">
-                      <p className="brp-prayer-label">따라서 기도해요</p>
-                      <div className="brp-prayer-text">
-                        {prayer.pray.split("\n").map((line, lineIdx) => {
-                          const segments = line.split(/(\([^)]*\))/g);
-                          return (
-                            <div key={lineIdx} className="brp-prayer-text-line">
-                              {segments.map((segment, segIdx) => {
-                                if (!segment) return null;
-                                if (/^\([^)]*\)$/.test(segment)) {
-                                  return (
-                                    <span
-                                      key={segIdx}
-                                      className="brp-prayer-blank"
-                                      aria-label="직접 채워 넣어요"
-                                    >
-                                      {segment}
-                                    </span>
-                                  );
-                                }
-                                return <span key={segIdx}>{segment}</span>;
-                              })}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                    <div className="brp-prayer-actions">
-                      <button
-                        type="button"
-                        className={`brp-prayer-check ${isDone ? "is-done" : ""}`}
-                        onClick={() => togglePrayerCheck(prayer.no)}
-                      >
-                        {isDone ? "체크 해제" : "이 기도 마쳤어요"}
-                      </button>
-                      {prayer.no < prayerTotal && (
-                        <button
-                          type="button"
-                          className="brp-prayer-next"
-                          onClick={() => setOpenPrayer(prayer.no + 1)}
-                        >
-                          다음 기도 →
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                )}
-              </li>
-            );
-          })}
-        </ol>
-
-        <div className="brp-prayer-lords">
-          <p className="brp-prayer-label">주기도문 (마태복음 6:9-13)</p>
-          <p>{prayerCard.lordsPrayer}</p>
-        </div>
-
-        {prayerDone > 0 && (
-          <div className="brp-prayer-foot">
-            <button type="button" className="brp-prayer-reset" onClick={resetPrayers}>
-              오늘 기도 다시하기
-            </button>
-          </div>
-        )}
-      </section>
-      )}
-
       </aside>{/* /.brp-side */}
 
       {/* 본문(reader) — source 상 우측 sidebar(.brp-side) 뒤에 위치.
@@ -2504,11 +2329,7 @@ export default function BibleReadingPage() {
         </div>
       )}
 
-      {/* ⚠️ global 스코프 필수.
-          하위 컴포넌트(SlidingToggle, Dropdown 등)가 별도 파일로 분리돼 있어
-          기본 <style jsx>(컴포넌트 스코프)로는 그 안의 button/요소까지 스타일이
-          닿지 않는다 — 결과적으로 토글이 UA 기본 button 으로 보이는 버그.
-          모든 셀렉터가 .brp-* 로 네임스페이스 돼 있어 global 사용해도 안전. */}
+      <BottomTabBar active="bible" />
     </main>
   );
 }

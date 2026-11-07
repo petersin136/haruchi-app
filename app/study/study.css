@@ -739,7 +739,8 @@ html:has(.study-root:not(.is-embedded)) body::-webkit-scrollbar,
 .study-toolbar {
   --study-toolbar-bg: rgba(28, 24, 22, 0.88);
   position: fixed;
-  z-index: 50;
+  /* 하단 탭바(z-index 40)보다 위 */
+  z-index: 55;
   display: flex;
   align-items: center;
   box-sizing: border-box;
