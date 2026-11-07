@@ -10,6 +10,7 @@ import {
   useState,
   type CSSProperties,
   type PointerEvent as ReactPointerEvent,
+  type ReactNode,
 } from "react";
 import { loadKoreanChapter } from "../../bible-reading/bibleData";
 import type { BookId } from "../../bible-reading/books";
@@ -52,14 +53,17 @@ type ToolbarMode =
       start: number;
       end: number;
       ref: number;
+      /** 선택 범위 가운데 x, 위·아래 끝 y (화면 좌표) */
       x: number;
-      y: number;
+      rt: number;
+      rb: number;
     }
   | {
       kind: "mark";
       markId: string;
       x: number;
-      y: number;
+      rt: number;
+      rb: number;
     };
 
 /** .study-body 기준 좌표. width = 접힌 상태 폭, openLeft/openWidth = 펼친 상태 */
@@ -81,7 +85,10 @@ const NOTE_MIN_ROOM = 40;
 const LONG_PRESS_MS = 350;
 const MOVE_CANCEL_PX = 8;
 const AUTO_SCROLL_EDGE = 60;
-const TOOLBAR_H = 44;
+/** 도구 막대가 화면 좌우에서 떨어질 최소 거리 */
+const TOOLBAR_EDGE = 12;
+/** 꼬리가 알약 둥근 끝에 붙지 않게 */
+const TOOLBAR_TAIL_INSET = 24;
 const TOOLBAR_GAP = 10;
 /** 손잡이 원(18px)이 줄 아래로 내려오는 높이 + 여유 */
 const SEL_HANDLE_SIZE = 20;
@@ -101,13 +108,17 @@ type DragMode = "press" | "start" | "end";
 type SelRect = { top: number; left: number; width: number; height: number };
 
 /** 선택 범위 위에 둘 자리가 없으면 아래로 */
-function toolbarTop(rangeTop: number, rangeBottom: number): number {
-  const above = rangeTop - TOOLBAR_H - TOOLBAR_GAP;
-  if (above >= 8) return above;
-  return Math.min(
-    rangeBottom + TOOLBAR_GAP,
-    window.innerHeight - TOOLBAR_H - 8,
-  );
+function toolbarTop(
+  rangeTop: number,
+  rangeBottom: number,
+  h: number,
+): { top: number; below: boolean } {
+  const above = rangeTop - h - TOOLBAR_GAP;
+  if (above >= 8) return { top: above, below: false };
+  return {
+    top: Math.min(rangeBottom + TOOLBAR_GAP, window.innerHeight - h - 8),
+    below: true,
+  };
 }
 
 type BubbleState = {
@@ -168,6 +179,25 @@ function StudyNotebook({ bookId, chapter }: Props) {
   const autoScrollRef = useRef(0);
   const suppressClickRef = useRef(false);
   const toolbarRef = useRef<HTMLDivElement | null>(null);
+  const [toolTip, setToolTip] = useState<string | null>(null);
+  const tipTimerRef = useRef(0);
+  /** 이름 말풍선을 띄운 길게 누르기는 버튼 동작으로 치지 않음 */
+  const tipShownRef = useRef(false);
+  const [backupOpen, setBackupOpen] = useState(false);
+
+  const startToolTip = (label: string) => {
+    window.clearTimeout(tipTimerRef.current);
+    tipShownRef.current = false;
+    tipTimerRef.current = window.setTimeout(() => {
+      tipShownRef.current = true;
+      setToolTip(label);
+    }, LONG_PRESS_MS);
+  };
+
+  const endToolTip = () => {
+    window.clearTimeout(tipTimerRef.current);
+    setToolTip(null);
+  };
   const [bubble, setBubble] = useState<BubbleState | null>(null);
   const [wsTokens, setWsTokens] = useState<WordStudyToken[]>([]);
   const [wsOpen, setWsOpen] = useState(false);
@@ -405,7 +435,8 @@ function StudyNotebook({ bookId, chapter }: Props) {
         end: range.end,
         ref: verseAtOffset(spans, range.start),
         x: first.left + first.width / 2,
-        y: toolbarTop(first.top, last.bottom + SEL_HANDLE_SIZE),
+        rt: first.top,
+        rb: last.bottom + SEL_HANDLE_SIZE,
       };
     },
     [spans],
@@ -789,13 +820,26 @@ function StudyNotebook({ bookId, chapter }: Props) {
     clearSelection();
   }, [bookId, chapter, clearSelection]);
 
+  // 화면 좌우 12px 안으로 보정 + 꼬리는 선택 범위 쪽
   useLayoutEffect(() => {
     const el = toolbarRef.current;
     if (!el || !toolbar) return;
     const w = el.offsetWidth;
-    const min = w / 2 + 8;
-    const max = window.innerWidth - w / 2 - 8;
-    el.style.left = `${max < min ? window.innerWidth / 2 : Math.min(max, Math.max(min, toolbar.x))}px`;
+    const h = el.offsetHeight;
+    const vw = window.innerWidth;
+    const left = Math.max(
+      TOOLBAR_EDGE,
+      Math.min(vw - TOOLBAR_EDGE - w, toolbar.x - w / 2),
+    );
+    const { top, below } = toolbarTop(toolbar.rt, toolbar.rb, h);
+    const tail = Math.max(
+      TOOLBAR_TAIL_INSET,
+      Math.min(w - TOOLBAR_TAIL_INSET, toolbar.x - left),
+    );
+    el.style.left = `${left}px`;
+    el.style.top = `${top}px`;
+    el.style.setProperty("--tail-x", `${tail}px`);
+    el.classList.toggle("is-below", below);
   }, [toolbar]);
 
   useEffect(() => {
@@ -1086,6 +1130,11 @@ function StudyNotebook({ bookId, chapter }: Props) {
     );
   }
 
+  const toolbarMark =
+    toolbar?.kind === "mark" ? marksById.get(toolbar.markId) : undefined;
+  const activeColor =
+    toolbarMark?.type === "hl" ? toolbarMark.color.toUpperCase() : null;
+
   const prev = chapter > 1 ? chapter - 1 : null;
   const nextCh = chapter < total ? chapter + 1 : null;
 
@@ -1095,8 +1144,12 @@ function StudyNotebook({ bookId, chapter }: Props) {
         <Link href="/bible-reading" className="study-top-back">
           ← 읽기
         </Link>
-        <h1 className="study-book-title">{bookMeta.name}</h1>
-        <span style={{ width: 48 }} aria-hidden="true" />
+        <div className="study-top-row">
+          <h1 className="study-book-title">{bookMeta.name}</h1>
+          <span className="study-top-count">
+            {chapter} / {total}
+          </span>
+        </div>
       </div>
 
       <div className="study-shell">
@@ -1193,7 +1246,8 @@ function StudyNotebook({ bookId, chapter }: Props) {
                                 kind: "mark",
                                 markId: primaryId,
                                 x: first.left + first.width / 2,
-                                y: toolbarTop(first.top, last.bottom),
+                                rt: first.top,
+                                rb: last.bottom,
                               });
                             }}
                           >
@@ -1357,23 +1411,30 @@ function StudyNotebook({ bookId, chapter }: Props) {
 
         <nav className="study-nav" aria-label="장 이동">
           {prev ? (
-            <Link href={`/study/${bookId}/${prev}`}>← {prev}장</Link>
+            <Link href={`/study/${bookId}/${prev}`} className="study-nav-link is-prev">
+              <span className="study-nav-label">← 이전 장</span>
+              <span className="study-nav-name">{prev}장</span>
+            </Link>
           ) : (
-            <span>← 이전</span>
+            <span aria-hidden="true" />
           )}
           {nextCh ? (
-            <Link href={`/study/${bookId}/${nextCh}`}>{nextCh}장 →</Link>
+            <Link href={`/study/${bookId}/${nextCh}`} className="study-nav-link is-next">
+              <span className="study-nav-label">다음 장 →</span>
+              <span className="study-nav-name">{nextCh}장</span>
+            </Link>
           ) : (
-            <span>다음 →</span>
+            <span aria-hidden="true" />
           )}
         </nav>
 
         <div className="study-io">
-          <button type="button" onClick={exportJson}>
-            내보내기
-          </button>
-          <button type="button" onClick={() => fileRef.current?.click()}>
-            가져오기
+          <button
+            type="button"
+            className="study-io-link"
+            onClick={() => setBackupOpen(true)}
+          >
+            노트 백업
           </button>
           <input
             ref={fileRef}
@@ -1393,56 +1454,105 @@ function StudyNotebook({ bookId, chapter }: Props) {
         <div
           ref={toolbarRef}
           className="study-toolbar"
-          style={{ left: toolbar.x, top: toolbar.y }}
+          style={{ left: toolbar.x, top: toolbar.rt }}
           role="toolbar"
           aria-label="형광펜 도구"
           onMouseDown={(e) => e.preventDefault()}
         >
-          {HL_COLORS.map((c) => (
+          <div className="study-toolbar-colors">
+            {HL_COLORS.map((c) => (
+              <button
+                key={c}
+                type="button"
+                className={`study-toolbar-swatch${
+                  activeColor === c.toUpperCase() ? " is-active" : ""
+                }`}
+                style={{ background: c }}
+                aria-label={`형광펜 ${c}`}
+                onClick={() => applyHighlight(c)}
+              />
+            ))}
+          </div>
+          <span className="study-toolbar-divider" aria-hidden="true" />
+          <div className="study-toolbar-icons">
+            {(
+              [
+                ["밑줄", applyUnderline, <IconUnderline key="i" />],
+                ["메모", openNoteFromToolbar, <IconPen key="i" />],
+                [
+                  "원어",
+                  openWordStudyFromToolbar,
+                  <span key="i" className="study-toolbar-alpha">
+                    α
+                  </span>,
+                ],
+                ["복사", () => void copyFromToolbar(), <IconCopy key="i" />],
+                ["지우개", eraseFromToolbar, <IconEraser key="i" />],
+              ] as const
+            ).map(([label, action, icon]) => (
+              <button
+                key={label}
+                type="button"
+                className="study-toolbar-btn"
+                aria-label={label}
+                onPointerDown={() => startToolTip(label)}
+                onPointerUp={endToolTip}
+                onPointerLeave={endToolTip}
+                onPointerCancel={endToolTip}
+                onContextMenu={(e) => e.preventDefault()}
+                onClick={() => {
+                  if (tipShownRef.current) {
+                    tipShownRef.current = false;
+                    return;
+                  }
+                  action();
+                }}
+              >
+                {icon}
+                {toolTip === label ? (
+                  <span className="study-toolbar-tip" aria-hidden="true">
+                    {label}
+                  </span>
+                ) : null}
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : null}
+
+      {backupOpen ? (
+        <div className="study-backup-root">
+          <button
+            type="button"
+            className="study-backup-backdrop"
+            aria-label="닫기"
+            onClick={() => setBackupOpen(false)}
+          />
+          <div className="study-backup-sheet" role="dialog" aria-label="노트 백업">
+            <span className="study-backup-handle" aria-hidden="true" />
             <button
-              key={c}
               type="button"
-              className="study-toolbar-swatch"
-              style={{ background: c }}
-              aria-label={`형광펜 ${c}`}
-              onClick={() => applyHighlight(c)}
-            />
-          ))}
-          <button
-            type="button"
-            className="study-toolbar-btn"
-            onClick={applyUnderline}
-          >
-            밑줄
-          </button>
-          <button
-            type="button"
-            className="study-toolbar-btn"
-            onClick={openNoteFromToolbar}
-          >
-            메모
-          </button>
-          <button
-            type="button"
-            className="study-toolbar-btn"
-            onClick={openWordStudyFromToolbar}
-          >
-            원어
-          </button>
-          <button
-            type="button"
-            className="study-toolbar-btn"
-            onClick={() => void copyFromToolbar()}
-          >
-            복사
-          </button>
-          <button
-            type="button"
-            className="study-toolbar-btn"
-            onClick={eraseFromToolbar}
-          >
-            지우개
-          </button>
+              className="study-backup-row"
+              onClick={() => {
+                setBackupOpen(false);
+                exportJson();
+              }}
+            >
+              <IconDownload />
+              <span>파일로 저장</span>
+            </button>
+            <button
+              type="button"
+              className="study-backup-row"
+              onClick={() => {
+                setBackupOpen(false);
+                fileRef.current?.click();
+              }}
+            >
+              <IconUpload />
+              <span>파일 불러오기</span>
+            </button>
+          </div>
         </div>
       ) : null}
 
@@ -1525,6 +1635,80 @@ function domPointToOffset(
     }
   });
   return span.start + Math.max(0, raw.length - subtract);
+}
+
+function ToolIcon({ children }: { children: ReactNode }) {
+  return (
+    <svg
+      className="study-toolbar-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      {children}
+    </svg>
+  );
+}
+
+function IconUnderline() {
+  return (
+    <ToolIcon>
+      <path d="M7 4v6a5 5 0 0 0 10 0V4" />
+      <path d="M5 20h14" />
+    </ToolIcon>
+  );
+}
+
+function IconPen() {
+  return (
+    <ToolIcon>
+      <path d="M12 20h9" />
+      <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+    </ToolIcon>
+  );
+}
+
+function IconCopy() {
+  return (
+    <ToolIcon>
+      <rect x="9" y="9" width="12" height="12" rx="2" />
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+    </ToolIcon>
+  );
+}
+
+function IconEraser() {
+  return (
+    <ToolIcon>
+      <path d="m7 21-4.3-4.3a2.4 2.4 0 0 1 0-3.4l9.6-9.6a2.4 2.4 0 0 1 3.4 0l5.6 5.6a2.4 2.4 0 0 1 0 3.4L13 21" />
+      <path d="M22 21H7" />
+      <path d="m5 11 9 9" />
+    </ToolIcon>
+  );
+}
+
+function IconDownload() {
+  return (
+    <ToolIcon>
+      <path d="M12 4v11" />
+      <path d="m7 10 5 5 5-5" />
+      <path d="M5 20h14" />
+    </ToolIcon>
+  );
+}
+
+function IconUpload() {
+  return (
+    <ToolIcon>
+      <path d="M12 15V4" />
+      <path d="m7 9 5-5 5 5" />
+      <path d="M5 20h14" />
+    </ToolIcon>
+  );
 }
 
 type WordRange = { start: number; end: number };
