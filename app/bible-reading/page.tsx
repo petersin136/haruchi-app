@@ -66,6 +66,10 @@ const EnglishOnlyView = nextDynamic(
 const SearchOverlay = nextDynamic(() => import("./SearchOverlay"), {
   ssr: false,
 });
+const StudyNotebook = nextDynamic(
+  () => import("../study/components/StudyNotebook"),
+  { ssr: false, loading: DynamicViewLoading },
+);
 // 성경 공부/영어(WEB) 두 모드가 지원하는 책 ID 집합. NT 27권 + OT 39권.
 // 사용자가 어느 책에 있든 모드를 누르면 그 책 그대로 모드 진입.
 const STUDY_NT_BOOK_IDS: readonly string[] = [
@@ -2551,29 +2555,40 @@ export default function BibleReadingPage() {
               bookId === "john3" ||
               bookId === "jude" ||
               bookId === "revelation")
-          ) && (
-          <VerseList
-            verses={verses}
-            bookId={bookId}
-            chapterNumber={chapterNumber}
-            effectiveTranslation={effectiveTranslation}
-            selectionMode={selectionMode}
-            selectedVerses={selectedVerses}
-            flashVerse={flashVerse}
-            greekTokensMap={greekTokensMap}
-            greekWordsMap={greekWordsMap}
-            openWordDrawers={openWordDrawers}
-            openTokenInfos={openTokenInfos}
-            onVersePointerDown={handleVersePointerDown}
-            onVersePointerMove={handleVersePointerMove}
-            onVersePointerCancel={cancelLongPress}
-            onVerseClick={handleVerseClick}
-            setOpenTokenInfos={setOpenTokenInfos}
-            setOpenWordDrawers={setOpenWordDrawers}
-            onEndVisibilityChange={handleEndVisibilityChange}
-            endSentinelNonce={endSentinelNonce}
-          />
-          )}
+          ) &&
+          (effectiveTranslation === "krv" ? (
+            <StudyNotebook
+              bookId={bookId}
+              chapter={chapterNumber}
+              embedded
+              flashVerse={flashVerse}
+              onEndVisibilityChange={handleEndVisibilityChange}
+              endSentinelNonce={endSentinelNonce}
+              onMoveChapter={moveChapter}
+            />
+          ) : (
+            <VerseList
+              verses={verses}
+              bookId={bookId}
+              chapterNumber={chapterNumber}
+              effectiveTranslation={effectiveTranslation}
+              selectionMode={selectionMode}
+              selectedVerses={selectedVerses}
+              flashVerse={flashVerse}
+              greekTokensMap={greekTokensMap}
+              greekWordsMap={greekWordsMap}
+              openWordDrawers={openWordDrawers}
+              openTokenInfos={openTokenInfos}
+              onVersePointerDown={handleVersePointerDown}
+              onVersePointerMove={handleVersePointerMove}
+              onVersePointerCancel={cancelLongPress}
+              onVerseClick={handleVerseClick}
+              setOpenTokenInfos={setOpenTokenInfos}
+              setOpenWordDrawers={setOpenWordDrawers}
+              onEndVisibilityChange={handleEndVisibilityChange}
+              endSentinelNonce={endSentinelNonce}
+            />
+          ))}
         </>
         )}
       </section>

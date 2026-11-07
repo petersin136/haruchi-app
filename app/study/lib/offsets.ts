@@ -27,11 +27,13 @@ export function buildChapterPlain(verses: Verse[]): {
   return { plain, spans };
 }
 
+/** 반개구간 [start, end). 경계 offset === end 는 다음 절 시작(마지막 절 끝만 그 절). */
 export function verseAtOffset(spans: VerseSpan[], offset: number): number {
   for (const s of spans) {
     if (offset >= s.start && offset < s.end) return s.n;
-    if (offset === s.end && offset === s.start + (s.end - s.start)) return s.n;
   }
+  const last = spans[spans.length - 1];
+  if (last && offset === last.end) return last.n;
   for (let i = spans.length - 1; i >= 0; i -= 1) {
     if (offset >= spans[i].start) return spans[i].n;
   }

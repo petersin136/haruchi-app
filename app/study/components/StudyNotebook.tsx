@@ -14,7 +14,8 @@ import {
 } from "react";
 import { loadKoreanChapter } from "../../bible-reading/bibleData";
 import type { BookId } from "../../bible-reading/books";
-import { BOOKS } from "../../bible-reading/books";
+import { BOOKS, isNewTestament } from "../../bible-reading/books";
+import ChapterEndSentinel from "../../bible-reading/components/ChapterEndSentinel";
 import {
   DEFAULT_HL,
   HL_COLORS,
@@ -45,7 +46,36 @@ import "../study.css";
 type Props = {
   bookId: BookId;
   chapter: number;
+  /** /bible-reading 본문 자리에 끼울 때 — 자체 머리·장 링크 숨김 */
+  embedded?: boolean;
+  flashVerse?: number | null;
+  onEndVisibilityChange?: (visible: boolean) => void;
+  endSentinelNonce?: number;
+  onMoveChapter?: (chapter: number) => void;
 };
+
+/** PC(≥960) 에서는 .brp-reader 가 스크롤 컨테이너 */
+function scrollRootOf(body: HTMLElement | null): HTMLElement | Window {
+  const reader = body?.closest(".brp-reader") as HTMLElement | null;
+  if (reader && reader.scrollHeight > reader.clientHeight + 4) return reader;
+  return window;
+}
+
+function scrollByY(root: HTMLElement | Window, dy: number) {
+  if (root === window) window.scrollBy(0, dy);
+  else (root as HTMLElement).scrollBy({ top: dy, behavior: "auto" });
+}
+
+function edgeY(root: HTMLElement | Window, clientY: number): number {
+  if (root === window) return clientY;
+  const r = (root as HTMLElement).getBoundingClientRect();
+  return clientY - r.top;
+}
+
+function edgeHeight(root: HTMLElement | Window): number {
+  if (root === window) return window.innerHeight;
+  return (root as HTMLElement).clientHeight;
+}
 
 type ToolbarMode =
   | {
@@ -127,7 +157,16 @@ type BubbleState = {
   y: number;
 };
 
-function StudyNotebook({ bookId, chapter }: Props) {
+function StudyNotebook({
+  bookId,
+  chapter,
+  embedded = false,
+  flashVerse = null,
+  onEndVisibilityChange,
+  endSentinelNonce = 0,
+  onMoveChapter,
+}: Props) {
+  const wordStudyOk = isNewTestament(bookId);
   const bookMeta = BOOKS[bookId];
   const total = bookMeta.totalChapters;
   const [verses, setVerses] = useState<{ n: number; t: string }[] | null>(null);
@@ -622,13 +661,15 @@ function StudyNotebook({ bookId, chapter }: Props) {
       return;
     }
     const { x, y } = lastPointRef.current;
-    const h = window.innerHeight;
+    const root = scrollRootOf(bodyRef.current);
+    const h = edgeHeight(root);
+    const ey = edgeY(root, y);
     let dy = 0;
-    if (y < AUTO_SCROLL_EDGE) dy = -Math.ceil(((AUTO_SCROLL_EDGE - y) / AUTO_SCROLL_EDGE) * 14);
-    else if (y > h - AUTO_SCROLL_EDGE)
-      dy = Math.ceil(((y - (h - AUTO_SCROLL_EDGE)) / AUTO_SCROLL_EDGE) * 14);
+    if (ey < AUTO_SCROLL_EDGE) dy = -Math.ceil(((AUTO_SCROLL_EDGE - ey) / AUTO_SCROLL_EDGE) * 14);
+    else if (ey > h - AUTO_SCROLL_EDGE)
+      dy = Math.ceil(((ey - (h - AUTO_SCROLL_EDGE)) / AUTO_SCROLL_EDGE) * 14);
     if (dy !== 0) {
-      window.scrollBy(0, dy);
+      scrollByY(root, dy);
       updateDragTo(x, y);
     }
     autoScrollRef.current = requestAnimationFrame(runAutoScroll);
@@ -812,13 +853,40 @@ function StudyNotebook({ bookId, chapter }: Props) {
       const next = selectionToolbarFor(cur);
       if (next) setToolbar(next);
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const root = scrollRootOf(bodyRef.current);
+    const target: EventTarget = root === window ? window : root;
+    target.addEventListener("scroll", onScroll, { passive: true });
+    return () => target.removeEventListener("scroll", onScroll);
   }, [toolbar, selectionToolbarFor]);
 
   useEffect(() => {
     clearSelection();
   }, [bookId, chapter, clearSelection]);
+
+  // 검색 결과 절 — 본문이 그려진 뒤 data-verse-num 을 찾아 스크롤·강조
+  useEffect(() => {
+    if (flashVerse == null || !verses) return;
+    const target = flashVerse;
+    let cancelled = false;
+    let tries = 0;
+    const run = () => {
+      if (cancelled) return;
+      const el = bodyRef.current?.querySelector<HTMLElement>(
+        `[data-verse-num="${target}"]`,
+      );
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        el.classList.add("is-flash");
+        window.setTimeout(() => el.classList.remove("is-flash"), 2000);
+        return;
+      }
+      if (tries++ < 60) requestAnimationFrame(run);
+    };
+    run();
+    return () => {
+      cancelled = true;
+    };
+  }, [flashVerse, verses, bookId, chapter]);
 
   // 화면 좌우 12px 안으로 보정 + 꼬리는 선택 범위 쪽
   useLayoutEffect(() => {
@@ -1011,7 +1079,7 @@ function StudyNotebook({ bookId, chapter }: Props) {
   };
 
   const openWordStudyFromToolbar = () => {
-    if (!toolbar) return;
+    if (!toolbar || !wordStudyOk) return;
     let selectedKo = "";
     let verse = 1;
     if (toolbar.kind === "selection") {
@@ -1116,7 +1184,7 @@ function StudyNotebook({ bookId, chapter }: Props) {
 
   if (error) {
     return (
-      <div className="study-root">
+      <div className={`study-root${embedded ? " is-embedded" : ""}`}>
         <p className="study-loading">{error}</p>
       </div>
     );
@@ -1124,7 +1192,7 @@ function StudyNotebook({ bookId, chapter }: Props) {
 
   if (!verses) {
     return (
-      <div className="study-root">
+      <div className={`study-root${embedded ? " is-embedded" : ""}`}>
         <p className="study-loading">본문을 불러오는 중…</p>
       </div>
     );
@@ -1138,25 +1206,33 @@ function StudyNotebook({ bookId, chapter }: Props) {
   const prev = chapter > 1 ? chapter - 1 : null;
   const nextCh = chapter < total ? chapter + 1 : null;
 
+  const digLen = String(chapter).length;
+
   return (
-    <div className="study-root">
-      <div className="study-top">
-        <Link href="/bible-reading" className="study-top-back">
-          ← 읽기
-        </Link>
-        <div className="study-top-row">
-          <h1 className="study-book-title">{bookMeta.name}</h1>
-          <span className="study-top-count">
-            {chapter} / {total}
-          </span>
+    <div className={`study-root${embedded ? " is-embedded" : ""}`}>
+      {!embedded ? (
+        <div className="study-top">
+          <Link href="/bible-reading" className="study-top-back">
+            ← 읽기
+          </Link>
+          <div className="study-top-row">
+            <h1 className="study-book-title">{bookMeta.name}</h1>
+            <span className="study-top-count">
+              {chapter} / {total}
+            </span>
+          </div>
         </div>
-      </div>
+      ) : null}
 
       <div className="study-shell">
         <div className="study-layout">
           <article className="study-page">
-            <span className="study-drop" aria-hidden="true">
-              {chapter}
+            <span
+              className={`study-drop${digLen >= 3 ? " is-wide" : ""}`}
+              data-digits={digLen}
+              aria-hidden="true"
+            >
+              <span className="study-drop-num">{chapter}</span>
             </span>
             {title ? (
               <span className="study-chapter-title">{title}</span>
@@ -1187,7 +1263,12 @@ function StudyNotebook({ bookId, chapter }: Props) {
                 const legacy = legacyByRef.get(span.n);
                 const legacyOpen = openLegacy.has(span.n);
                 return (
-                  <span key={span.n} className="study-verse" data-verse={span.n}>
+                  <span
+                    key={span.n}
+                    className="study-verse"
+                    data-verse={span.n}
+                    data-verse-num={span.n}
+                  >
                     <sup className="study-vnum">{span.n}</sup>
                     <span className="study-verse-text" data-v={span.n}>
                       {segs.map((seg, i) => {
@@ -1406,29 +1487,59 @@ function StudyNotebook({ bookId, chapter }: Props) {
                 })}
               </div>
             </div>
+            {verses.length > 0 && onEndVisibilityChange ? (
+              <ChapterEndSentinel
+                key={`end-${bookId}-${chapter}-krv-${endSentinelNonce}`}
+                onVisibilityChange={onEndVisibilityChange}
+              />
+            ) : null}
           </article>
         </div>
 
+        {!embedded ? (
         <nav className="study-nav" aria-label="장 이동">
           {prev ? (
-            <Link href={`/study/${bookId}/${prev}`} className="study-nav-link is-prev">
-              <span className="study-nav-label">← 이전 장</span>
-              <span className="study-nav-name">{prev}장</span>
-            </Link>
+            onMoveChapter ? (
+              <button
+                type="button"
+                className="study-nav-link is-prev"
+                onClick={() => onMoveChapter(prev)}
+              >
+                <span className="study-nav-label">← 이전 장</span>
+                <span className="study-nav-name">{prev}장</span>
+              </button>
+            ) : (
+              <Link href={`/study/${bookId}/${prev}`} className="study-nav-link is-prev">
+                <span className="study-nav-label">← 이전 장</span>
+                <span className="study-nav-name">{prev}장</span>
+              </Link>
+            )
           ) : (
             <span aria-hidden="true" />
           )}
           {nextCh ? (
-            <Link href={`/study/${bookId}/${nextCh}`} className="study-nav-link is-next">
-              <span className="study-nav-label">다음 장 →</span>
-              <span className="study-nav-name">{nextCh}장</span>
-            </Link>
+            onMoveChapter ? (
+              <button
+                type="button"
+                className="study-nav-link is-next"
+                onClick={() => onMoveChapter(nextCh)}
+              >
+                <span className="study-nav-label">다음 장 →</span>
+                <span className="study-nav-name">{nextCh}장</span>
+              </button>
+            ) : (
+              <Link href={`/study/${bookId}/${nextCh}`} className="study-nav-link is-next">
+                <span className="study-nav-label">다음 장 →</span>
+                <span className="study-nav-name">{nextCh}장</span>
+              </Link>
+            )
           ) : (
             <span aria-hidden="true" />
           )}
         </nav>
+        ) : null}
 
-        <div className="study-io">
+        <div className={`study-io${embedded ? " is-embedded" : ""}`}>
           <button
             type="button"
             className="study-io-link"
@@ -1477,19 +1588,29 @@ function StudyNotebook({ bookId, chapter }: Props) {
           <div className="study-toolbar-icons">
             {(
               [
-                ["밑줄", applyUnderline, <IconUnderline key="i" />],
-                ["메모", openNoteFromToolbar, <IconPen key="i" />],
-                [
-                  "원어",
-                  openWordStudyFromToolbar,
-                  <span key="i" className="study-toolbar-alpha">
-                    α
-                  </span>,
-                ],
-                ["복사", () => void copyFromToolbar(), <IconCopy key="i" />],
-                ["지우개", eraseFromToolbar, <IconEraser key="i" />],
-              ] as const
-            ).map(([label, action, icon]) => (
+                { label: "밑줄", action: applyUnderline, icon: <IconUnderline /> },
+                { label: "메모", action: openNoteFromToolbar, icon: <IconPen /> },
+                ...(wordStudyOk
+                  ? [
+                      {
+                        label: "원어",
+                        action: openWordStudyFromToolbar,
+                        icon: <span className="study-toolbar-alpha">α</span>,
+                      },
+                    ]
+                  : []),
+                {
+                  label: "복사",
+                  action: () => void copyFromToolbar(),
+                  icon: <IconCopy />,
+                },
+                { label: "지우개", action: eraseFromToolbar, icon: <IconEraser /> },
+              ] as {
+                label: string;
+                action: () => void;
+                icon: ReactNode;
+              }[]
+            ).map(({ label, action, icon }) => (
               <button
                 key={label}
                 type="button"
@@ -1584,6 +1705,19 @@ function StudyNotebook({ bookId, chapter }: Props) {
         initial={wsInitial}
         selectedKo={wsSelectedKo}
         onClose={() => setWsOpen(false)}
+        onNavigate={(nextBook, nextChapter) => {
+          if (onMoveChapter && nextBook === bookId) {
+            onMoveChapter(nextChapter);
+            return;
+          }
+          if (embedded) {
+            window.location.assign(
+              `/bible-reading?book=${encodeURIComponent(nextBook)}&chapter=${nextChapter}`,
+            );
+            return;
+          }
+          window.location.assign(`/study/${nextBook}/${nextChapter}`);
+        }}
       />
 
       {bubble ? (

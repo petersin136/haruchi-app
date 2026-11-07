@@ -31,6 +31,8 @@ type Props = {
   /** 사용자가 본문에서 선택한 한글 (initial 칩과 연결) */
   selectedKo?: string;
   onClose: () => void;
+  /** 구절 칩 탭 — 있으면 라우터 대신 이걸로 장 이동 */
+  onNavigate?: (bookId: string, chapter: number) => void;
 };
 
 /** 시트 안에서 따라 들어간 단어 */
@@ -101,6 +103,7 @@ export default function WordStudySheet({
   initial,
   selectedKo,
   onClose,
+  onNavigate,
 }: Props) {
   const router = useRouter();
   const verseWords = useMemo(
@@ -374,11 +377,13 @@ export default function WordStudySheet({
   const goRef = (ref: string) => {
     const parsed = parsePhraseRef(ref, bookId);
     if (!parsed) return;
-    const href =
-      parsed.book === bookId || parsed.book === "john1"
-        ? `/study/john1/${parsed.chapter}`
-        : `/bible-reading?book=${encodeURIComponent(parsed.book)}&chapter=${parsed.chapter}`;
-    closeSheet(() => router.push(href));
+    if (onNavigate) {
+      closeSheet(() => onNavigate(parsed.book, parsed.chapter));
+      return;
+    }
+    closeSheet(() =>
+      router.push(`/study/${parsed.book}/${parsed.chapter}`),
+    );
   };
 
   const pickChip = (w: WordStudyToken) => {

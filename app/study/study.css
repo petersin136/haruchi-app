@@ -59,6 +59,7 @@
 }
 
 .study-top {
+  position: relative;
   max-width: 640px;
   margin: 0 auto;
   padding: 16px 18px 0;
@@ -66,8 +67,10 @@
 }
 
 .study-top-back {
-  display: inline-block;
-  margin-bottom: 16px;
+  position: absolute;
+  left: 18px;
+  top: 16px;
+  z-index: 1;
   color: var(--ink-soft, #57534e);
   font-size: 14px;
   text-decoration: none;
@@ -80,11 +83,13 @@
 }
 
 .study-top-row {
+  position: relative;
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
+  justify-content: center;
   gap: 12px;
-  padding-bottom: 12px;
+  min-height: 28px;
+  padding: 28px 56px 12px;
   border-bottom: 1px solid #ece4d6;
   margin-bottom: 24px;
 }
@@ -95,12 +100,15 @@
   font-weight: 600;
   letter-spacing: 0.02em;
   color: #2a2420;
+  text-align: center;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
 
 .study-top-count {
-  flex-shrink: 0;
+  position: absolute;
+  right: 0;
+  bottom: 12px;
   font-size: 13px;
   color: #8a7d70;
   font-variant-numeric: tabular-nums;
@@ -143,16 +151,40 @@
 }
 
 /* 장 번호: 장 제목 줄 + 본문 두 줄 = 3줄 높이.
-   제목·본문이 서로 다른 블록이라 initial-letter(한 문단 안에서만 내려앉음) 대신 float */
+   폭은 "88" 기준 고정(tabular) + 오른쪽 14px. 3자리(시편)는 같은 칸에 글자만 줄임 */
 .study-drop {
   float: left;
-  /* 숫자 윗선 = 장 제목 글자 윗선 */
-  margin: 5px 10px 0 0;
+  box-sizing: content-box;
+  margin: 5px 14px 0 0;
   font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
   font-size: calc(var(--study-lh) * 3 * 0.92);
   font-weight: 700;
   line-height: 0.8;
   color: #9e1b1b;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 보이지 않는 "88"로 칸 폭을 고정 */
+.study-drop::before {
+  content: "88";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.study-drop-num {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.study-drop.is-wide .study-drop-num {
+  font-size: 0.68em;
 }
 
 /* 첫 줄 = 장 번호 윗줄. 본문 줄 높이를 그대로 써서 3줄 격자를 맞춤 */
@@ -309,22 +341,57 @@
   pointer-events: none;
 }
 
-/* 공부 노트 화면에서는 스크롤바를 모두 숨김 (스크롤은 유지) */
-html:has(.study-root),
-html:has(.study-root) body,
-.study-root,
-.study-root * {
+/* 스크롤바 숨김 — 단독 /study 만 (embedded 는 bible-reading 스크롤바 유지) */
+html:has(.study-root:not(.is-embedded)),
+html:has(.study-root:not(.is-embedded)) body,
+.study-root:not(.is-embedded),
+.study-root:not(.is-embedded) * {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
-html:has(.study-root)::-webkit-scrollbar,
-html:has(.study-root) body::-webkit-scrollbar,
-.study-root ::-webkit-scrollbar,
-.study-root::-webkit-scrollbar {
+html:has(.study-root:not(.is-embedded))::-webkit-scrollbar,
+html:has(.study-root:not(.is-embedded)) body::-webkit-scrollbar,
+.study-root:not(.is-embedded) ::-webkit-scrollbar,
+.study-root:not(.is-embedded)::-webkit-scrollbar {
   display: none;
   width: 0;
   height: 0;
+}
+
+/* /bible-reading 본문 자리 — 배경·높이·좌우 여백 없음, 글씨 배수만 설정값 */
+.study-root.is-embedded {
+  min-height: 0;
+  background: transparent;
+  background-image: none;
+}
+
+.study-root.is-embedded .study-shell,
+.study-root.is-embedded .study-layout {
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+
+.study-root.is-embedded .study-page {
+  margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 24px;
+  font-family: var(--reader-font-family, inherit);
+  font-size: calc(17px * var(--reader-size-scale, 1));
+  --study-lh: calc(17px * var(--reader-size-scale, 1) * 2.4);
+  line-height: 2.4;
+}
+
+.study-root.is-embedded .study-io {
+  padding-bottom: 16px;
+}
+
+.study-verse.is-flash {
+  border-radius: 4px;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--study-red, #9e1b1b) 22%, transparent);
+  transition: box-shadow 0.35s ease;
 }
 
 .study-vnum {
@@ -527,8 +594,15 @@ html:has(.study-root) body::-webkit-scrollbar,
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
   color: var(--study-ink);
   text-decoration: none;
+  text-align: inherit;
+  cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
 
