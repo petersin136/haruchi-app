@@ -154,6 +154,11 @@
   touch-action: none;
 }
 
+/* 끄는 동안 손잡이 터치 영역·메모가 글자 위치 찾기를 가리지 않게 */
+.study-body.is-selecting .study-note-layer * {
+  pointer-events: none;
+}
+
 .study-note-layer {
   position: absolute;
   inset: 0;
