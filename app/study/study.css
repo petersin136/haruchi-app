@@ -170,27 +170,95 @@
   pointer-events: none;
 }
 
+/* 손잡이: 글자 높이 세로 막대(2px) + 아래 원(지름 18px) */
 .study-sel-handle {
   position: absolute;
   z-index: 5;
-  width: 32px;
-  height: 32px;
-  margin: -6px 0 0 -16px;
+  width: 0;
+  pointer-events: none;
+}
+
+/* 겹치면 끝 손잡이가 위 */
+.study-sel-handle.is-end {
+  z-index: 6;
+}
+
+.study-sel-handle-bar {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  width: 2px;
+  height: 100%;
+  background: #9e1b1b;
+}
+
+.study-sel-handle-knob {
+  position: absolute;
+  top: 100%;
+  left: -9px;
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #9e1b1b;
+  box-shadow: 0 1px 3px rgba(28, 25, 23, 0.3);
+}
+
+/* 투명 터치 영역 48×48, 원 가운데 기준 */
+.study-sel-handle-hit {
+  position: absolute;
+  top: calc(100% + 9px - 24px);
+  left: -24px;
+  width: 48px;
+  height: 48px;
   pointer-events: auto;
   touch-action: none;
   cursor: grab;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.study-sel-handle::after {
-  content: "";
+/* 확대경: 120×44, 본문 1.5배 */
+.study-mag {
+  position: fixed;
+  z-index: 90;
+  width: 120px;
+  height: 44px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1.5px solid #d8cfc0;
+  border-radius: 12px;
+  background: var(--study-ivory, #fbf7ee);
+  box-shadow: 0 6px 18px rgba(28, 25, 23, 0.22);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 150ms ease, border-color 150ms ease;
+}
+
+.study-mag.is-char {
+  border-color: #9e1b1b;
+}
+
+.study-mag.is-hiding {
+  opacity: 0;
+}
+
+.study-mag-inner {
   position: absolute;
-  top: 6px;
-  left: 9px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--study-red, #9e1b1b);
-  box-shadow: 0 1px 3px rgba(28, 25, 23, 0.3);
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+}
+
+.study-mag-inner .study-sel-handle {
+  display: none;
+}
+
+.study-mag-cursor {
+  position: absolute;
+  left: calc(50% - 1px);
+  width: 2px;
+  background: #9e1b1b;
 }
 
 .study-toast {

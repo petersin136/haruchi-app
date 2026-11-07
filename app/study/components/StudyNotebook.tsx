@@ -83,7 +83,18 @@ const MOVE_CANCEL_PX = 8;
 const AUTO_SCROLL_EDGE = 60;
 const TOOLBAR_H = 44;
 const TOOLBAR_GAP = 10;
-const SEL_HANDLE_SIZE = 14;
+/** 손잡이 원(18px)이 줄 아래로 내려오는 높이 + 여유 */
+const SEL_HANDLE_SIZE = 20;
+/** 손잡이를 이만큼 가만히 잡고 있으면 글자 단위 */
+const CHAR_MODE_MS = 400;
+const CHAR_MODE_STILL_PX = 4;
+/** 끄는 동안 손잡이를 손가락보다 위로 */
+const HANDLE_LIFT = 12;
+const MAG_W = 120;
+const MAG_H = 44;
+const MAG_GAP = 60;
+const MAG_SCALE = 1.5;
+const MAG_FADE_MS = 150;
 
 type DragMode = "press" | "start" | "end";
 
@@ -123,7 +134,30 @@ function StudyNotebook({ bookId, chapter }: Props) {
   const [dragging, setDragging] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const selRef = useRef<{ start: number; end: number } | null>(null);
-  const dragRef = useRef<{ mode: DragMode; anchor: number } | null>(null);
+  const dragRef = useRef<{
+    mode: DragMode;
+    /** press: 길게 누른 어절. 이 범위는 늘 선택에 남음 */
+    anchorStart: number;
+    anchorEnd: number;
+    /** 손잡이: 잡은 손가락과 줄 가운데 사이 거리 */
+    grabDy: number;
+    originX: number;
+    originY: number;
+    moved: boolean;
+  } | null>(null);
+  const [charMode, setCharMode] = useState(false);
+  const charModeRef = useRef(false);
+  const charTimerRef = useRef<{ timer: number; x: number; y: number } | null>(
+    null,
+  );
+  const [magState, setMagState] = useState<"hidden" | "shown" | "hiding">(
+    "hidden",
+  );
+  const magRef = useRef<HTMLDivElement | null>(null);
+  const magInnerRef = useRef<HTMLDivElement | null>(null);
+  const magCursorRef = useRef<HTMLDivElement | null>(null);
+  const magHideTimerRef = useRef(0);
+  const selRectsRef = useRef<SelRect[]>([]);
   const pressRef = useRef<{
     timer: number;
     x: number;
@@ -152,6 +186,7 @@ function StudyNotebook({ bookId, chapter }: Props) {
     [verses],
   );
   plainRef.current = plain;
+  const words = useMemo(() => buildWords(spans), [spans]);
 
   const marksById = useMemo(() => {
     const map = new Map<string, StudyMark>();
@@ -320,12 +355,14 @@ function StudyNotebook({ bookId, chapter }: Props) {
     const root = bodyRef.current;
     const cur = selRef.current;
     if (!root || !cur) {
+      selRectsRef.current = [];
       setSelRects([]);
       return;
     }
     const a = offsetToDomPoint(root, cur.start, spans, false);
     const b = offsetToDomPoint(root, cur.end, spans, true);
     if (!a || !b) {
+      selRectsRef.current = [];
       setSelRects([]);
       return;
     }
@@ -333,14 +370,14 @@ function StudyNotebook({ bookId, chapter }: Props) {
     range.setStart(a.node, a.offset);
     range.setEnd(b.node, b.offset);
     const base = root.getBoundingClientRect();
-    setSelRects(
-      mergeLineRects(Array.from(range.getClientRects())).map((r) => ({
-        top: r.top - base.top,
-        left: r.left - base.left,
-        width: r.width,
-        height: r.height,
-      })),
-    );
+    const rects = mergeLineRects(Array.from(range.getClientRects())).map((r) => ({
+      top: r.top - base.top,
+      left: r.left - base.left,
+      width: r.width,
+      height: r.height,
+    }));
+    selRectsRef.current = rects;
+    setSelRects(rects);
   }, [spans]);
 
   useLayoutEffect(() => {
@@ -379,45 +416,98 @@ function StudyNotebook({ bookId, chapter }: Props) {
     setToolbar((t) => (t?.kind === "selection" ? null : t));
   }, []);
 
+  const stopCharTimer = useCallback(() => {
+    if (charTimerRef.current) {
+      window.clearTimeout(charTimerRef.current.timer);
+      charTimerRef.current = null;
+    }
+  }, []);
+
+  /** 손잡이를 잡은 채 400ms 가만히 → 글자 단위 */
+  const armCharTimer = useCallback(
+    (x: number, y: number) => {
+      stopCharTimer();
+      const timer = window.setTimeout(() => {
+        charTimerRef.current = null;
+        const d = dragRef.current;
+        if (!d || d.mode === "press" || charModeRef.current) return;
+        charModeRef.current = true;
+        setCharMode(true);
+        if (isAndroid()) navigator.vibrate?.(10);
+      }, CHAR_MODE_MS);
+      charTimerRef.current = { timer, x, y };
+    },
+    [stopCharTimer],
+  );
+
   const finishDrag = useCallback(() => {
     const d = dragRef.current;
     dragRef.current = null;
     setDragging(false);
+    stopCharTimer();
+    charModeRef.current = false;
+    setCharMode(false);
     if (autoScrollRef.current) {
       cancelAnimationFrame(autoScrollRef.current);
       autoScrollRef.current = 0;
     }
+    setMagState((m) => (m === "shown" ? "hiding" : m));
     if (!d) return;
     const cur = selRef.current;
     if (!cur) return;
     setToolbar(selectionToolbarFor(cur));
-  }, [selectionToolbarFor]);
+  }, [selectionToolbarFor, stopCharTimer]);
 
   const updateDragTo = useCallback(
     (x: number, y: number) => {
       const d = dragRef.current;
       if (!d) return;
-      const off = offsetAtPoint(x, y);
+      const hitY = d.mode === "press" ? y : y - d.grabDy - HANDLE_LIFT;
+      const off = offsetAtPoint(x, hitY);
       if (off == null) return;
       const max = plainRef.current.length;
       const f = Math.max(0, Math.min(max, off));
-      let next: { start: number; end: number };
+      const byChar = charModeRef.current;
+      const toEnd = (b: number) => (byChar ? b : snapEnd(words, b));
+      const toStart = (b: number) => (byChar ? b : snapStart(words, b));
+      let next: { start: number; end: number } | null = null;
       if (d.mode === "press") {
-        next =
-          f > d.anchor
-            ? { start: d.anchor, end: Math.max(f, d.anchor + 1) }
-            : { start: f, end: d.anchor + 1 };
+        if (f > d.anchorEnd) {
+          const e = toEnd(f);
+          next = { start: d.anchorStart, end: Math.max(e ?? d.anchorEnd, d.anchorEnd) };
+        } else if (f < d.anchorStart) {
+          const s = toStart(f);
+          next = { start: Math.min(s ?? d.anchorStart, d.anchorStart), end: d.anchorEnd };
+        } else {
+          next = { start: d.anchorStart, end: d.anchorEnd };
+        }
       } else {
         const cur = selRef.current;
         if (!cur) return;
         const fixed = d.mode === "start" ? cur.end : cur.start;
-        next =
-          f < fixed
-            ? { start: f, end: fixed }
-            : { start: fixed, end: Math.max(f, fixed + 1) };
-        if (f > fixed && d.mode === "start") dragRef.current = { ...d, mode: "end" };
-        if (f < fixed && d.mode === "end") dragRef.current = { ...d, mode: "start" };
+        if (d.mode === "end") {
+          const e = f > fixed ? toEnd(f) : null;
+          if (e != null && e > fixed) next = { start: fixed, end: e };
+          else if (f < fixed) {
+            const s = toStart(f);
+            if (s != null && s < fixed) {
+              next = { start: s, end: fixed };
+              d.mode = "start";
+            }
+          }
+        } else {
+          const s = f < fixed ? toStart(f) : null;
+          if (s != null && s < fixed) next = { start: s, end: fixed };
+          else if (f > fixed) {
+            const e = toEnd(f);
+            if (e != null && e > fixed) {
+              next = { start: fixed, end: e };
+              d.mode = "end";
+            }
+          }
+        }
       }
+      if (!next) return;
       next.end = Math.min(max, next.end);
       if (next.end <= next.start) return;
       const prevSel = selRef.current;
@@ -425,8 +515,74 @@ function StudyNotebook({ bookId, chapter }: Props) {
       selRef.current = next;
       setSel(next);
     },
-    [offsetAtPoint],
+    [offsetAtPoint, words],
   );
+
+  /** 선택의 움직이는 끝(캐럿) 위치, 화면 좌표 */
+  const movingCaret = useCallback(() => {
+    const root = bodyRef.current;
+    const rects = selRectsRef.current;
+    const d = dragRef.current;
+    const cur = selRef.current;
+    if (!root || rects.length === 0 || !cur) return null;
+    let atStart = d?.mode === "start";
+    if (d?.mode === "press") atStart = cur.start < d.anchorStart;
+    const r = atStart ? rects[0] : rects[rects.length - 1];
+    const base = root.getBoundingClientRect();
+    return {
+      x: base.left + (atStart ? r.left : r.left + r.width),
+      y: base.top + r.top + r.height / 2,
+      h: r.height,
+    };
+  }, []);
+
+  const placeMagnifier = useCallback(() => {
+    const mag = magRef.current;
+    const inner = magInnerRef.current;
+    const cursor = magCursorRef.current;
+    const article = bodyRef.current?.closest(".study-page") as HTMLElement | null;
+    const caret = movingCaret();
+    if (!mag || !inner || !article || !caret) return;
+    const { x, y } = lastPointRef.current;
+    const left = Math.max(8, Math.min(window.innerWidth - MAG_W - 8, x - MAG_W / 2));
+    let top = y - MAG_GAP - MAG_H;
+    if (top < 8) top = y + MAG_GAP;
+    mag.style.left = `${left}px`;
+    mag.style.top = `${top}px`;
+    const ar = article.getBoundingClientRect();
+    const cw = mag.clientWidth / 2;
+    const ch = mag.clientHeight / 2;
+    const tx = cw - (caret.x - ar.left) * MAG_SCALE;
+    const ty = ch - (caret.y - ar.top) * MAG_SCALE;
+    inner.style.transform = `translate(${tx}px, ${ty}px) scale(${MAG_SCALE})`;
+    if (cursor) {
+      const h = caret.h * MAG_SCALE;
+      cursor.style.height = `${h}px`;
+      cursor.style.top = `${ch - h / 2}px`;
+    }
+  }, [movingCaret]);
+
+  // 확대경 속 본문: 선택이 바뀔 때마다 본문을 복제해 1.5배로
+  useLayoutEffect(() => {
+    if (magState !== "shown") return;
+    const inner = magInnerRef.current;
+    const article = bodyRef.current?.closest(".study-page") as HTMLElement | null;
+    if (!inner || !article) return;
+    const clone = article.cloneNode(true) as HTMLElement;
+    clone.style.width = `${article.offsetWidth}px`;
+    clone.style.margin = "0";
+    clone.removeAttribute("id");
+    inner.replaceChildren(clone);
+    placeMagnifier();
+  }, [magState, selRects, placeMagnifier]);
+
+  useEffect(() => {
+    if (magState !== "hiding") return;
+    magHideTimerRef.current = window.setTimeout(() => {
+      setMagState("hidden");
+    }, MAG_FADE_MS);
+    return () => window.clearTimeout(magHideTimerRef.current);
+  }, [magState]);
 
   const runAutoScroll = useCallback(() => {
     const d = dragRef.current;
@@ -448,16 +604,32 @@ function StudyNotebook({ bookId, chapter }: Props) {
   }, [updateDragTo]);
 
   const beginDrag = useCallback(
-    (mode: DragMode, anchor: number, x: number, y: number) => {
-      dragRef.current = { mode, anchor };
+    (
+      mode: DragMode,
+      anchor: { start: number; end: number },
+      x: number,
+      y: number,
+      grabDy = 0,
+    ) => {
+      dragRef.current = {
+        mode,
+        anchorStart: anchor.start,
+        anchorEnd: anchor.end,
+        grabDy,
+        originX: x,
+        originY: y,
+        moved: false,
+      };
       lastPointRef.current = { x, y };
+      charModeRef.current = false;
+      setCharMode(false);
       setDragging(true);
-      setToolbar(null);
+      if (mode !== "press") armCharTimer(x, y);
       if (!autoScrollRef.current) {
         autoScrollRef.current = requestAnimationFrame(runAutoScroll);
       }
     },
-    [runAutoScroll],
+    [runAutoScroll, armCharTimer],
   );
 
   const onBodyPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
@@ -473,16 +645,16 @@ function StudyNotebook({ bookId, chapter }: Props) {
       pressRef.current = null;
       const off = offsetAtPoint(startX, startY);
       if (off == null) return;
-      const max = plainRef.current.length;
-      if (max === 0) return;
-      const anchor = Math.min(off, max - 1);
-      if (/Android/i.test(navigator.userAgent)) navigator.vibrate?.(10);
+      const w = wordAt(words, off);
+      if (!w) return;
+      if (isAndroid()) navigator.vibrate?.(10);
       suppressClickRef.current = true;
       setExpandedNoteId(null);
-      const first = { start: anchor, end: anchor + 1 };
+      const first = { start: w.start, end: w.end };
       selRef.current = first;
       setSel(first);
-      beginDrag("press", anchor, startX, startY);
+      setToolbar(selectionToolbarFor(first));
+      beginDrag("press", first, startX, startY);
     }, LONG_PRESS_MS);
     pressRef.current = { timer, x: startX, y: startY, id: e.pointerId };
   };
@@ -494,10 +666,14 @@ function StudyNotebook({ bookId, chapter }: Props) {
     e.preventDefault();
     e.stopPropagation();
     const cur = selRef.current;
-    if (!cur) return;
+    const root = bodyRef.current;
+    const rects = selRectsRef.current;
+    if (!cur || !root || rects.length === 0) return;
     (e.currentTarget as HTMLElement).setPointerCapture?.(e.pointerId);
     suppressClickRef.current = true;
-    beginDrag(which, which === "start" ? cur.end : cur.start, e.clientX, e.clientY);
+    const r = which === "start" ? rects[0] : rects[rects.length - 1];
+    const lineMid = root.getBoundingClientRect().top + r.top + r.height / 2;
+    beginDrag(which, cur, e.clientX, e.clientY, e.clientY - lineMid);
   };
 
   useEffect(() => {
@@ -510,10 +686,32 @@ function StudyNotebook({ bookId, chapter }: Props) {
         }
         return;
       }
-      if (!dragRef.current) return;
+      const d = dragRef.current;
+      if (!d) return;
       e.preventDefault();
+      const { x: px, y: py } = lastPointRef.current;
+      if (px === e.clientX && py === e.clientY) return;
       lastPointRef.current = { x: e.clientX, y: e.clientY };
+      if (!d.moved) {
+        if (Math.hypot(e.clientX - d.originX, e.clientY - d.originY) < CHAR_MODE_STILL_PX) {
+          return;
+        }
+        d.moved = true;
+        setToolbar(null);
+        window.clearTimeout(magHideTimerRef.current);
+        setMagState("shown");
+      }
+      const still = charTimerRef.current;
+      if (
+        d.mode !== "press" &&
+        !charModeRef.current &&
+        (!still ||
+          Math.hypot(e.clientX - still.x, e.clientY - still.y) >= CHAR_MODE_STILL_PX)
+      ) {
+        armCharTimer(e.clientX, e.clientY);
+      }
       updateDragTo(e.clientX, e.clientY);
+      placeMagnifier();
     };
     const onUp = (e: PointerEvent) => {
       const p = pressRef.current;
@@ -536,7 +734,7 @@ function StudyNotebook({ bookId, chapter }: Props) {
       document.removeEventListener("pointercancel", onUp);
       document.removeEventListener("touchmove", onTouchMove);
     };
-  }, [updateDragTo, finishDrag]);
+  }, [updateDragTo, finishDrag, armCharTimer, placeMagnifier]);
 
   // 빈 곳 탭 → 선택 취소 (스크롤 제스처는 유지)
   useEffect(() => {
@@ -1048,27 +1246,39 @@ function StudyNotebook({ bookId, chapter }: Props) {
                 {selRects.length > 0 ? (
                   <>
                     <span
-                      className="study-sel-handle"
+                      className="study-sel-handle is-start"
                       style={{
-                        top: selRects[0].top + selRects[0].height,
+                        top: selRects[0].top,
                         left: selRects[0].left,
+                        height: selRects[0].height,
                       }}
-                      aria-label="선택 시작 조정"
-                      onPointerDown={(e) => onHandlePointerDown("start", e)}
-                    />
+                    >
+                      <span className="study-sel-handle-bar" />
+                      <span className="study-sel-handle-knob" />
+                      <span
+                        className="study-sel-handle-hit"
+                        aria-label="선택 시작 조정"
+                        onPointerDown={(e) => onHandlePointerDown("start", e)}
+                      />
+                    </span>
                     <span
-                      className="study-sel-handle"
+                      className="study-sel-handle is-end"
                       style={{
-                        top:
-                          selRects[selRects.length - 1].top +
-                          selRects[selRects.length - 1].height,
+                        top: selRects[selRects.length - 1].top,
                         left:
                           selRects[selRects.length - 1].left +
                           selRects[selRects.length - 1].width,
+                        height: selRects[selRects.length - 1].height,
                       }}
-                      aria-label="선택 끝 조정"
-                      onPointerDown={(e) => onHandlePointerDown("end", e)}
-                    />
+                    >
+                      <span className="study-sel-handle-bar" />
+                      <span className="study-sel-handle-knob" />
+                      <span
+                        className="study-sel-handle-hit"
+                        aria-label="선택 끝 조정"
+                        onPointerDown={(e) => onHandlePointerDown("end", e)}
+                      />
+                    </span>
                   </>
                 ) : null}
                 {Object.entries(notePos).map(([nid, pos]) => {
@@ -1236,6 +1446,19 @@ function StudyNotebook({ bookId, chapter }: Props) {
         </div>
       ) : null}
 
+      {magState !== "hidden" ? (
+        <div
+          ref={magRef}
+          className={`study-mag${charMode ? " is-char" : ""}${
+            magState === "hiding" ? " is-hiding" : ""
+          }`}
+          aria-hidden
+        >
+          <div ref={magInnerRef} className="study-mag-inner" />
+          <div ref={magCursorRef} className="study-mag-cursor" />
+        </div>
+      ) : null}
+
       {toast ? (
         <div className="study-toast" role="status">
           {toast}
@@ -1302,6 +1525,108 @@ function domPointToOffset(
     }
   });
   return span.start + Math.max(0, raw.length - subtract);
+}
+
+type WordRange = { start: number; end: number };
+
+const WORD_FALLBACK_RE = /[^\s.,?!;:·"'“”‘’()[\]{}「」『』《》〈〉…~\-—]+/g;
+
+/** 절마다 어절(띄어쓰기 기준) 범위. 문장부호는 빼고, 절 경계는 항상 단어 경계 */
+function buildWords(spans: VerseSpan[]): WordRange[] {
+  const out: WordRange[] = [];
+  const Seg = (Intl as unknown as {
+    Segmenter?: new (
+      locale: string,
+      opts: { granularity: "word" },
+    ) => {
+      segment: (s: string) => Iterable<{
+        segment: string;
+        index: number;
+        isWordLike?: boolean;
+      }>;
+    };
+  }).Segmenter;
+  const segmenter = Seg ? new Seg("ko", { granularity: "word" }) : null;
+  for (const span of spans) {
+    const text = span.text;
+    if (segmenter) {
+      let cur: WordRange | null = null;
+      for (const s of segmenter.segment(text)) {
+        const a = span.start + s.index;
+        const b = a + s.segment.length;
+        if (s.isWordLike) {
+          // 띄어쓰기 없이 붙은 조각은 한 어절로 합침
+          if (cur && cur.end === a) cur.end = b;
+          else {
+            cur = { start: a, end: b };
+            out.push(cur);
+          }
+        } else {
+          cur = null;
+        }
+      }
+    } else {
+      for (const m of text.matchAll(WORD_FALLBACK_RE)) {
+        const a = span.start + (m.index ?? 0);
+        out.push({ start: a, end: a + m[0].length });
+      }
+    }
+  }
+  return out;
+}
+
+function wordContainingChar(words: WordRange[], c: number): WordRange | null {
+  let lo = 0;
+  let hi = words.length - 1;
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1;
+    const w = words[mid];
+    if (c < w.start) hi = mid - 1;
+    else if (c >= w.end) lo = mid + 1;
+    else return w;
+  }
+  return null;
+}
+
+/** 경계 b에서 끝을 단어 끝으로: b 왼쪽 글자의 단어, 없으면 앞 단어 */
+function snapEnd(words: WordRange[], b: number): number | null {
+  const w = wordContainingChar(words, b - 1);
+  if (w) return w.end;
+  for (let i = words.length - 1; i >= 0; i -= 1) {
+    if (words[i].end <= b) return words[i].end;
+  }
+  return null;
+}
+
+/** 경계 b에서 시작을 단어 시작으로: b 오른쪽 글자의 단어, 없으면 다음 단어 */
+function snapStart(words: WordRange[], b: number): number | null {
+  const w = wordContainingChar(words, b);
+  if (w) return w.start;
+  for (const x of words) {
+    if (x.start >= b) return x.start;
+  }
+  return null;
+}
+
+/** 길게 누른 자리의 어절. 공백·문장부호 위면 가까운 단어 */
+function wordAt(words: WordRange[], off: number): WordRange | null {
+  const hit =
+    wordContainingChar(words, off) ?? wordContainingChar(words, off - 1);
+  if (hit) return hit;
+  let best: WordRange | null = null;
+  let bestD = Infinity;
+  for (const w of words) {
+    const d = off < w.start ? w.start - off : off - w.end;
+    if (d < bestD) {
+      bestD = d;
+      best = w;
+    }
+  }
+  return best;
+}
+
+function isAndroid(): boolean {
+  return typeof navigator !== "undefined" && /Android/i.test(navigator.userAgent);
 }
 
 function verseContaining(spans: VerseSpan[], offset: number): number {
