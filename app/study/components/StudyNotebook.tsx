@@ -1083,7 +1083,12 @@ function StudyNotebook({
     suppressClickRef.current = false;
     if (editingMarkId) return;
     const t = e.target as HTMLElement;
-    if (t.closest(".study-mark-note, .study-mark-note-input, .study-sel-handle")) return;
+    if (
+      t.closest(
+        ".brp-mobile-topbar, .brp-header, [data-no-drawer-swipe], .study-mark-note, .study-mark-note-input, .study-sel-handle",
+      )
+    )
+      return;
     const startX = e.clientX;
     const startY = e.clientY;
     if (pressRef.current) window.clearTimeout(pressRef.current.timer);
@@ -1385,7 +1390,7 @@ function StudyNotebook({
           el.scrollIntoView({ behavior: "smooth", block: "center" });
         }
         el.classList.add("is-flash");
-        window.setTimeout(() => el.classList.remove("is-flash"), 2000);
+        window.setTimeout(() => el.classList.remove("is-flash"), 1500);
         return;
       }
       if (tries++ < 60) requestAnimationFrame(run);
@@ -1567,7 +1572,7 @@ function StudyNotebook({
     const t = e.target as HTMLElement;
     if (
       t.closest(
-        ".study-spread-edge, .study-spread-pager, .study-toolbar, .study-ws-root, .study-vnum, button, a, input, textarea",
+        ".brp-mobile-topbar, .brp-header, [data-no-drawer-swipe], .study-spread-edge, .study-spread-pager, .study-toolbar, .study-ws-root, .study-vnum, button, a, input, textarea",
       )
     )
       return;
@@ -1991,7 +1996,7 @@ function StudyNotebook({
     const t = e.target as HTMLElement;
     if (
       t.closest(
-        ".study-toolbar, .study-ws-root, .study-sel-handle, .study-mark-note-input, .study-spread-pager, .study-vnum",
+        ".brp-mobile-topbar, .brp-header, [data-no-drawer-swipe], .study-toolbar, .study-ws-root, .study-sel-handle, .study-mark-note-input, .study-spread-pager, .study-vnum",
       )
     )
       return;

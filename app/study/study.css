@@ -1704,6 +1704,14 @@ html[data-study-chrome="0"] .study-spread-folio {
   pointer-events: none;
 }
 
+html[data-study-chrome="1"] .brp-mobile-topbar {
+  pointer-events: auto;
+}
+
+html[data-study-spread="1"] .brp-mobile-topbar {
+  z-index: 50;
+}
+
 html[data-study-chrome="0"] .study-spread-progress {
   opacity: 0.5;
 }

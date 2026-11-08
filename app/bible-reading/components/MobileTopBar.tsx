@@ -220,7 +220,12 @@ function MobileTopBar({
 
   return (
     <>
-      <div className="brp-mobile-topbar" role="banner" aria-label="모바일 읽기 바">
+      <div
+        className="brp-mobile-topbar"
+        role="banner"
+        aria-label="모바일 읽기 바"
+        data-no-drawer-swipe=""
+      >
         <button
           type="button"
           className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon brp-mobile-topbar-search is-phone"
@@ -233,7 +238,11 @@ function MobileTopBar({
         <button
           type="button"
           className="brp-mobile-topbar-btn brp-mobile-topbar-book"
-          onClick={onOpenDrawer}
+          onClick={() => {
+            const ds = document.documentElement.dataset;
+            if (ds.studySelecting === "1" || ds.studyWsOpen === "1") return;
+            onOpenDrawer();
+          }}
           aria-label={`${bookLabel} — 책·장 선택`}
         >
           {bookConfirmed ? (

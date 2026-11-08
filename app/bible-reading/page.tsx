@@ -1301,7 +1301,7 @@ export default function BibleReadingPage() {
   useEffect(() => {
     if (flashVerse == null) return;
     if (effectiveTranslation === "krv") {
-      const clear = window.setTimeout(() => setFlashVerse(null), 2000);
+      const clear = window.setTimeout(() => setFlashVerse(null), 1500);
       return () => window.clearTimeout(clear);
     }
     const raf = window.requestAnimationFrame(() => {
@@ -1311,7 +1311,7 @@ export default function BibleReadingPage() {
       );
       el?.scrollIntoView({ behavior: "smooth", block: "center" });
     });
-    const clear = window.setTimeout(() => setFlashVerse(null), 2000);
+    const clear = window.setTimeout(() => setFlashVerse(null), 1500);
     return () => {
       window.cancelAnimationFrame(raf);
       window.clearTimeout(clear);
@@ -1342,7 +1342,14 @@ export default function BibleReadingPage() {
   }, []);
 
   const openSearch = useCallback(() => setSearchOpen(true), []);
-  const openDrawer = useCallback(() => setDrawerOpen(true), []);
+  const openDrawer = useCallback(() => {
+    if (searchOpen || selectionMode) return;
+    if (typeof document !== "undefined") {
+      const ds = document.documentElement.dataset;
+      if (ds.studySelecting === "1" || ds.studyWsOpen === "1") return;
+    }
+    setDrawerOpen(true);
+  }, [searchOpen, selectionMode]);
   const closeDrawer = useCallback(() => setDrawerOpen(false), []);
 
   // 공부 노트 선택이 시작되면 반쯤 열린 서랍을 바로 닫음
@@ -1443,19 +1450,24 @@ export default function BibleReadingPage() {
     [bookConfirmed, bookId, applyBookChangeShared],
   );
 
-  // 모바일 서랍: 다른 책+특정 장
-  // (pickBookFromPanel → 1장 리셋 후 setTimeout 으로 onSelectChapter).
+  // 모바일 서랍: 책+장(+절). 절이 있으면 flashVerse 로 이동·1.5초 강조.
   const selectDrawerBookChapter = useCallback(
-    (nextBook: BookId, chapter: number) => {
+    (nextBook: BookId, chapter: number, verse?: number) => {
       if (nextBook === bookId) {
         onSelectChapter(chapter);
       } else {
         pickBookFromPanel(nextBook);
         window.setTimeout(() => onSelectChapter(chapter), 0);
       }
+      if (verse != null && verse >= 1) {
+        setFlashVerse(verse);
+        if (effectiveTranslation === "krv") {
+          setKrvAlignNonce((n) => n + 1);
+        }
+      }
       setDrawerOpen(false);
     },
-    [bookId, onSelectChapter, pickBookFromPanel],
+    [bookId, onSelectChapter, pickBookFromPanel, effectiveTranslation],
   );
 
   // 스크롤 저장 — 현재 (책, 장) 의 scrollY 를 RAF 디바운스로 메모리에 기록.

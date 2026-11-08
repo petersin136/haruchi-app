@@ -1,9 +1,10 @@
 "use client";
 
 /**
- * 모바일 PeekTree 스타일 책·장 서랍 (≤768px).
- * - translateX + progress(0~1), 드래그 중 transition 없음 / 놓을 때만 스냅
- * - 플릭(≥0.5px/ms) 시 방향 우선, 아니면 절반 기준
+ * 책·장·절 선택 서랍 (상단 「책 n장 ⌄」).
+ * - 제목 탭 → 현재 책의 장 목록부터
+ * - 책 바꾸기 → 책 목록 / 장 → 절 / 「이 장 처음부터」·절 탭으로 이동
+ * - ≤768: 가장자리 스와이프로도 열기 (상단 바 data-no-drawer-swipe 제외)
  */
 
 import {
@@ -21,10 +22,13 @@ import {
   OT_BOOK_IDS,
   type BookId,
 } from "../books";
+import { loadKoreanChapter } from "../bibleData";
+import { isChapterDone } from "../../lib/readLog";
 
-const MQ = "(max-width: 768px)";
+const SWIPE_MQ = "(max-width: 768px)";
 const REDUCE_MQ = "(prefers-reduced-motion: reduce)";
-const DRAWER_RATIO = 0.55;
+const DRAWER_RATIO = 0.88;
+const DRAWER_MAX_PX = 360;
 /** 왼쪽 베젤(뒤로가기 제스처)과 겹치지 않게 */
 const EDGE_IGNORE_PX = 24;
 /** 가로가 세로의 1.5배보다 크고 이 값을 넘을 때만 서랍 제스처 */
@@ -32,6 +36,8 @@ const LOCK_PX = 30;
 const FLICK_PX_PER_MS = 0.5;
 const OPEN_MS = 380;
 const CLOSE_MS = 300;
+
+type Step = "books" | "chapters" | "verses";
 
 type BookChapterDrawerProps = {
   open: boolean;
@@ -42,14 +48,21 @@ type BookChapterDrawerProps = {
   bookConfirmed: boolean;
   /** 검색·절 선택 모드 등 — true 면 스와이프/표시 안 함 */
   disabled: boolean;
-  onSelectBookChapter: (bookId: BookId, chapter: number) => void;
+  onSelectBookChapter: (
+    bookId: BookId,
+    chapter: number,
+    verse?: number,
+  ) => void;
 };
 
 type AnimPhase = "open" | "close" | null;
 
 function drawerWidthPx() {
   if (typeof window === "undefined") return 280;
-  return Math.round(window.innerWidth * DRAWER_RATIO);
+  return Math.min(
+    DRAWER_MAX_PX,
+    Math.round(window.innerWidth * DRAWER_RATIO),
+  );
 }
 
 function prefersReducedMotion() {
@@ -67,21 +80,23 @@ function BookChapterDrawer({
   disabled,
   onSelectBookChapter,
 }: BookChapterDrawerProps) {
-  const [isMobile, setIsMobile] = useState(false);
+  const [swipeOk, setSwipeOk] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
   const [progress, setProgress] = useState(0);
   const [dragging, setDragging] = useState(false);
   const [animPhase, setAnimPhase] = useState<AnimPhase>(null);
   const [mounted, setMounted] = useState(false);
-  const [booksIn, setBooksIn] = useState(false);
-  const [chapterStaggerKey, setChapterStaggerKey] = useState(0);
-  const [chaptersIn, setChaptersIn] = useState(false);
+  const [listIn, setListIn] = useState(false);
+  const [staggerKey, setStaggerKey] = useState(0);
+  const [step, setStep] = useState<Step>("chapters");
   const [previewBookId, setPreviewBookId] = useState<BookId | null>(
     bookConfirmed ? bookId : null,
   );
+  const [previewChapter, setPreviewChapter] = useState<number | null>(null);
+  const [verseCount, setVerseCount] = useState(0);
+  const [doneChapters, setDoneChapters] = useState<Set<number>>(() => new Set());
 
-  const booksRef = useRef<HTMLUListElement>(null);
-  const chaptersRef = useRef<HTMLUListElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
   const progressRef = useRef(0);
   const openRef = useRef(open);
   const disabledRef = useRef(disabled);
@@ -104,28 +119,54 @@ function BookChapterDrawer({
     }
   }, []);
 
-  const scrollListsToCurrent = useCallback(
-    (preview: BookId | null) => {
-      const bookTarget = preview ?? (bookConfirmed ? bookId : null);
-      if (bookTarget) {
-        booksRef.current
-          ?.querySelector<HTMLElement>(`[data-book-id="${bookTarget}"]`)
+  const refreshDone = useCallback((bid: BookId | null) => {
+    if (!bid) {
+      setDoneChapters(new Set());
+      return;
+    }
+    const total = BOOKS[bid]?.totalChapters ?? 0;
+    const next = new Set<number>();
+    for (let c = 1; c <= total; c++) {
+      if (isChapterDone(bid, c)) next.add(c);
+    }
+    setDoneChapters(next);
+  }, []);
+
+  const scrollListToCurrent = useCallback(() => {
+    const root = listRef.current;
+    if (!root) return;
+    if (step === "books") {
+      const bid = previewBookId ?? (bookConfirmed ? bookId : null);
+      if (bid) {
+        root
+          .querySelector<HTMLElement>(`[data-book-id="${bid}"]`)
           ?.scrollIntoView({ block: "center" });
       }
-      if (preview === bookId && bookConfirmed) {
-        chaptersRef.current
-          ?.querySelector<HTMLElement>(`[data-chapter="${chapterNumber}"]`)
+      return;
+    }
+    if (step === "chapters") {
+      const ch =
+        previewBookId === bookId && bookConfirmed ? chapterNumber : null;
+      if (ch != null) {
+        root
+          .querySelector<HTMLElement>(`[data-chapter="${ch}"]`)
           ?.scrollIntoView({ block: "center" });
       }
-    },
-    [bookConfirmed, bookId, chapterNumber],
-  );
+      return;
+    }
+  }, [
+    step,
+    previewBookId,
+    bookConfirmed,
+    bookId,
+    chapterNumber,
+  ]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const mql = window.matchMedia(MQ);
+    const mql = window.matchMedia(SWIPE_MQ);
     const rMql = window.matchMedia(REDUCE_MQ);
-    const sync = () => setIsMobile(mql.matches);
+    const sync = () => setSwipeOk(mql.matches);
     const syncReduce = () => setReduceMotion(rMql.matches);
     sync();
     syncReduce();
@@ -137,13 +178,18 @@ function BookChapterDrawer({
     };
   }, []);
 
-  // 열릴 때 미리보기 책 동기화 (open 토글과 분리 — 책 변경 시 재애니 방지)
+  // 열릴 때: 현재 책의 장 목록부터
   useEffect(() => {
     if (!open) return;
-    setPreviewBookId(bookConfirmed ? bookId : (OT_BOOK_IDS[0] ?? null));
-  }, [open, bookId, bookConfirmed]);
+    const bid = bookConfirmed ? bookId : (OT_BOOK_IDS[0] ?? null);
+    setPreviewBookId(bid);
+    setPreviewChapter(null);
+    setStep(bid ? "chapters" : "books");
+    setVerseCount(0);
+    refreshDone(bid);
+  }, [open, bookId, bookConfirmed, refreshDone]);
 
-  // controlled open → mount / progress / book stagger
+  // controlled open → mount / progress / stagger
   useEffect(() => {
     if (draggingRef.current) return;
     clearTimers();
@@ -154,20 +200,18 @@ function BookChapterDrawer({
         setAnimPhase(null);
         setProgress(1);
         progressRef.current = 1;
-        setBooksIn(false);
-        setChaptersIn(false);
+        setListIn(false);
         return;
       }
 
       setAnimPhase("open");
-      setBooksIn(false);
-      setChaptersIn(false);
+      setListIn(false);
       requestAnimationFrame(() => {
         setProgress(1);
         progressRef.current = 1;
         requestAnimationFrame(() => {
-          setBooksIn(true);
-          setChapterStaggerKey((k) => k + 1);
+          setListIn(true);
+          setStaggerKey((k) => k + 1);
         });
       });
       animClearTimerRef.current = window.setTimeout(() => {
@@ -176,9 +220,7 @@ function BookChapterDrawer({
       return;
     }
 
-    // close
-    setBooksIn(false);
-    setChaptersIn(false);
+    setListIn(false);
     if (reduceMotion || prefersReducedMotion()) {
       setAnimPhase(null);
       setProgress(0);
@@ -198,26 +240,24 @@ function BookChapterDrawer({
     }, CLOSE_MS);
   }, [open, reduceMotion, clearTimers]);
 
-  // 장 목록 스태거 — key 변경 후 한 프레임 쉬고 is-in
   useEffect(() => {
-    if (chapterStaggerKey === 0) return;
+    if (staggerKey === 0) return;
     if (reduceMotion) {
-      setChaptersIn(false);
+      setListIn(false);
       return;
     }
-    setChaptersIn(false);
+    setListIn(false);
     const id = requestAnimationFrame(() => {
-      requestAnimationFrame(() => setChaptersIn(true));
+      requestAnimationFrame(() => setListIn(true));
     });
     return () => cancelAnimationFrame(id);
-  }, [chapterStaggerKey, reduceMotion]);
+  }, [staggerKey, reduceMotion, step]);
 
   useEffect(() => {
     if (disabled && open) onClose();
   }, [disabled, open, onClose]);
 
   useEffect(() => {
-    if (!isMobile) return;
     const page = document.querySelector(".brp-page") as HTMLElement | null;
     if (!page) return;
     const will =
@@ -240,14 +280,33 @@ function BookChapterDrawer({
         "brp-drawer-willchange",
       );
     };
-  }, [progress, dragging, isMobile, animPhase]);
+  }, [progress, dragging, animPhase]);
 
-  // 애니메이션 시작 전 즉시 스크롤 (열림 / 미리보기 책 변경)
   useLayoutEffect(() => {
-    if (!mounted || !isMobile) return;
+    if (!mounted) return;
     if (!open && progress < 0.02) return;
-    scrollListsToCurrent(previewBookId);
-  }, [mounted, open, isMobile, previewBookId, scrollListsToCurrent, progress]);
+    scrollListToCurrent();
+  }, [mounted, open, progress, scrollListToCurrent, staggerKey]);
+
+  // 절 목록 — 해당 장 verse 수
+  useEffect(() => {
+    if (step !== "verses" || !previewBookId || previewChapter == null) {
+      setVerseCount(0);
+      return;
+    }
+    let cancelled = false;
+    void loadKoreanChapter(previewBookId, previewChapter)
+      .then((ch) => {
+        if (cancelled) return;
+        setVerseCount(ch.verses.krv?.length ?? 0);
+      })
+      .catch(() => {
+        if (!cancelled) setVerseCount(0);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [step, previewBookId, previewChapter]);
 
   const snapTo = useCallback(
     (next: boolean) => {
@@ -259,7 +318,6 @@ function BookChapterDrawer({
     [onClose, onOpen],
   );
 
-  // 공부 노트 선택 시작 → 반쯤 나온 서랍도 즉시 닫기
   useEffect(() => {
     const onStudySelecting = () => {
       if (draggingRef.current || progressRef.current > 0.001 || openRef.current) {
@@ -272,7 +330,7 @@ function BookChapterDrawer({
   }, [snapTo]);
 
   useEffect(() => {
-    if (!isMobile || disabled) return;
+    if (!swipeOk || disabled) return;
 
     let startX = 0;
     let startY = 0;
@@ -287,7 +345,6 @@ function BookChapterDrawer({
     const onStart = (e: TouchEvent) => {
       if (disabledRef.current) return;
       if (e.touches.length !== 1) return;
-      // 공부 노트 선택·원어 시트·메모 입력 중이면 서랍 제스처 금지
       const ds = document.documentElement.dataset;
       if (ds.studySelecting === "1") return;
       if (ds.studyWsOpen === "1") return;
@@ -304,7 +361,6 @@ function BookChapterDrawer({
       const sel = window.getSelection();
       if (sel && !sel.isCollapsed && (sel.toString()?.length ?? 0) > 0) return;
 
-      // 선택 중이 아니면 예전처럼 화면 어디서든 열기 시작 가능
       startX = t.clientX;
       startY = t.clientY;
       lastX = t.clientX;
@@ -343,7 +399,6 @@ function BookChapterDrawer({
 
       if (!locked) {
         if (Math.abs(dx) < LOCK_PX && Math.abs(dy) < LOCK_PX) return;
-        // 가로 > 세로×1.5 이고 30px 넘을 때만 서랍 (본문 선택 좌우 끌기와 분리)
         if (Math.abs(dx) > Math.abs(dy) * 1.5 && Math.abs(dx) > LOCK_PX) {
           locked = "h";
           draggingRef.current = true;
@@ -395,33 +450,78 @@ function BookChapterDrawer({
       window.removeEventListener("touchend", onEnd);
       window.removeEventListener("touchcancel", onEnd);
     };
-  }, [isMobile, disabled, snapTo, clearTimers]);
+  }, [swipeOk, disabled, snapTo, clearTimers]);
+
+  const bumpStagger = useCallback(() => {
+    if (!reduceMotion) setStaggerKey((k) => k + 1);
+  }, [reduceMotion]);
 
   const handleBookClick = useCallback(
     (id: BookId) => {
       setPreviewBookId(id);
-      if (!reduceMotion) setChapterStaggerKey((k) => k + 1);
+      setPreviewChapter(null);
+      setStep("chapters");
+      refreshDone(id);
+      bumpStagger();
     },
-    [reduceMotion],
+    [bumpStagger, refreshDone],
   );
 
   const handleChapterClick = useCallback(
     (chapter: number) => {
-      const target = previewBookId ?? bookId;
-      onSelectBookChapter(target, chapter);
-      onClose();
+      setPreviewChapter(chapter);
+      setStep("verses");
+      bumpStagger();
     },
-    [bookId, onClose, onSelectBookChapter, previewBookId],
+    [bumpStagger],
   );
 
-  if (!isMobile || disabled) return null;
+  const goBooks = useCallback(() => {
+    setStep("books");
+    setPreviewChapter(null);
+    bumpStagger();
+  }, [bumpStagger]);
+
+  const goBack = useCallback(() => {
+    if (step === "verses") {
+      setStep("chapters");
+      setPreviewChapter(null);
+      bumpStagger();
+      return;
+    }
+    if (step === "books") {
+      setStep("chapters");
+      bumpStagger();
+      return;
+    }
+    onClose();
+  }, [step, bumpStagger, onClose]);
+
+  const pickChapterFromStart = useCallback(() => {
+    if (!previewBookId || previewChapter == null) return;
+    onSelectBookChapter(previewBookId, previewChapter, 1);
+    onClose();
+  }, [previewBookId, previewChapter, onSelectBookChapter, onClose]);
+
+  const pickVerse = useCallback(
+    (verse: number) => {
+      if (!previewBookId || previewChapter == null) return;
+      onSelectBookChapter(previewBookId, previewChapter, verse);
+      onClose();
+    },
+    [previewBookId, previewChapter, onSelectBookChapter, onClose],
+  );
+
+  if (disabled) return null;
   if (!mounted && progress <= 0.001 && !dragging) return null;
 
   const preview = previewBookId;
   const previewMeta = preview ? BOOKS[preview] : null;
   const total = previewMeta?.totalChapters ?? 0;
   const chapters = Array.from({ length: total }, (_, i) => i + 1);
+  const verses = Array.from({ length: verseCount }, (_, i) => i + 1);
   const otCount = OT_BOOK_IDS.length;
+  const unit = preview === "psalms" ? "편" : "장";
 
   const rootClass = [
     "brp-bcd",
@@ -431,6 +531,10 @@ function BookChapterDrawer({
   ]
     .filter(Boolean)
     .join(" ");
+
+  const listClass = reduceMotion
+    ? "brp-bcd-list"
+    : `brp-bcd-list brp-bcd-stagger${listIn ? " is-in" : ""}`;
 
   return (
     <div
@@ -454,108 +558,175 @@ function BookChapterDrawer({
         className="brp-bcd-panel"
         role="dialog"
         aria-modal="true"
-        aria-label="책·장 선택"
+        aria-label="책·장·절 선택"
       >
-        <ul
-          ref={booksRef}
-          className={
-            reduceMotion
-              ? "brp-bcd-books"
-              : `brp-bcd-books brp-bcd-stagger${booksIn ? " is-in" : ""}`
-          }
-          role="listbox"
-          aria-label="성경 책 목록"
-        >
-          <li className="brp-bcd-section" aria-hidden="true">
-            구약
-          </li>
-          {OT_BOOK_IDS.map((id, i) => {
-            const isPreview = preview === id;
-            const isCurrent = bookConfirmed && bookId === id;
-            return (
-              <li key={id} style={{ ["--i" as string]: i } as CSSProperties}>
-                <button
-                  type="button"
-                  data-book-id={id}
-                  className={`brp-bcd-book${isPreview ? " is-active" : ""}${
-                    isCurrent ? " is-current" : ""
-                  }`}
-                  onClick={() => handleBookClick(id)}
-                  role="option"
-                  aria-selected={isPreview}
-                >
-                  {BOOKS[id].name}
-                </button>
-              </li>
-            );
-          })}
-          <li className="brp-bcd-section" aria-hidden="true">
-            신약
-          </li>
-          {NT_BOOK_IDS.map((id, i) => {
-            const isPreview = preview === id;
-            const isCurrent = bookConfirmed && bookId === id;
-            return (
-              <li
-                key={id}
-                style={{ ["--i" as string]: otCount + i } as CSSProperties}
-              >
-                <button
-                  type="button"
-                  data-book-id={id}
-                  className={`brp-bcd-book${isPreview ? " is-active" : ""}${
-                    isCurrent ? " is-current" : ""
-                  }`}
-                  onClick={() => handleBookClick(id)}
-                  role="option"
-                  aria-selected={isPreview}
-                >
-                  {BOOKS[id].name}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="brp-bcd-head">
+          {step === "chapters" ? (
+            <button
+              type="button"
+              className="brp-bcd-nav"
+              onClick={goBooks}
+            >
+              책 바꾸기
+            </button>
+          ) : (
+            <button type="button" className="brp-bcd-nav" onClick={goBack}>
+              ← 뒤로
+            </button>
+          )}
+          <h2 className="brp-bcd-title">
+            {step === "books"
+              ? "책 선택"
+              : step === "chapters"
+                ? previewMeta
+                  ? `${previewMeta.name}`
+                  : "장 선택"
+                : previewMeta && previewChapter != null
+                  ? `${previewMeta.name} ${previewChapter}${unit}`
+                  : "절 선택"}
+          </h2>
+          <button
+            type="button"
+            className="brp-bcd-nav brp-bcd-nav--close"
+            onClick={onClose}
+          >
+            닫기
+          </button>
+        </div>
 
         <ul
-          key={chapterStaggerKey}
-          ref={chaptersRef}
-          className={
-            reduceMotion
-              ? "brp-bcd-chapters"
-              : `brp-bcd-chapters brp-bcd-stagger-ch${
-                  chaptersIn ? " is-in" : ""
-                }`
-          }
+          key={`${step}-${staggerKey}`}
+          ref={listRef}
+          className={listClass}
           role="listbox"
           aria-label={
-            previewMeta ? `${previewMeta.name} 장 목록` : "장 목록"
+            step === "books"
+              ? "성경 책 목록"
+              : step === "chapters"
+                ? previewMeta
+                  ? `${previewMeta.name} 장 목록`
+                  : "장 목록"
+                : "절 목록"
           }
         >
-          {preview ? (
-            chapters.map((n, i) => {
-              const isCurrent =
-                bookConfirmed && preview === bookId && n === chapterNumber;
-              return (
-                <li key={n} style={{ ["--i" as string]: i } as CSSProperties}>
-                  <button
-                    type="button"
-                    data-chapter={n}
-                    className={`brp-bcd-chapter${
-                      isCurrent ? " is-current" : ""
-                    }`}
-                    onClick={() => handleChapterClick(n)}
-                    role="option"
-                    aria-selected={isCurrent}
+          {step === "books" ? (
+            <>
+              <li className="brp-bcd-section" aria-hidden="true">
+                구약
+              </li>
+              {OT_BOOK_IDS.map((id, i) => {
+                const isPreview = preview === id;
+                const isCurrent = bookConfirmed && bookId === id;
+                return (
+                  <li key={id} style={{ ["--i" as string]: i } as CSSProperties}>
+                    <button
+                      type="button"
+                      data-book-id={id}
+                      className={`brp-bcd-row${isPreview ? " is-active" : ""}${
+                        isCurrent ? " is-current" : ""
+                      }`}
+                      onClick={() => handleBookClick(id)}
+                      role="option"
+                      aria-selected={isPreview}
+                    >
+                      {BOOKS[id].name}
+                    </button>
+                  </li>
+                );
+              })}
+              <li className="brp-bcd-section" aria-hidden="true">
+                신약
+              </li>
+              {NT_BOOK_IDS.map((id, i) => {
+                const isPreview = preview === id;
+                const isCurrent = bookConfirmed && bookId === id;
+                return (
+                  <li
+                    key={id}
+                    style={{ ["--i" as string]: otCount + i } as CSSProperties}
                   >
-                    {n}
-                  </button>
-                </li>
-              );
-            })
-          ) : (
-            <li className="brp-bcd-empty">책을 선택하세요</li>
-          )}
+                    <button
+                      type="button"
+                      data-book-id={id}
+                      className={`brp-bcd-row${isPreview ? " is-active" : ""}${
+                        isCurrent ? " is-current" : ""
+                      }`}
+                      onClick={() => handleBookClick(id)}
+                      role="option"
+                      aria-selected={isPreview}
+                    >
+                      {BOOKS[id].name}
+                    </button>
+                  </li>
+                );
+              })}
+            </>
+          ) : null}
+
+          {step === "chapters" ? (
+            preview ? (
+              chapters.map((n, i) => {
+                const isCurrent =
+                  bookConfirmed && preview === bookId && n === chapterNumber;
+                const done = doneChapters.has(n);
+                return (
+                  <li key={n} style={{ ["--i" as string]: i } as CSSProperties}>
+                    <button
+                      type="button"
+                      data-chapter={n}
+                      className={`brp-bcd-row brp-bcd-row--num${
+                        isCurrent ? " is-current" : ""
+                      }${done ? " is-done" : ""}`}
+                      onClick={() => handleChapterClick(n)}
+                      role="option"
+                      aria-selected={isCurrent}
+                    >
+                      <span>{n}</span>
+                      {done ? (
+                        <span className="brp-bcd-done-dot" aria-hidden />
+                      ) : null}
+                    </button>
+                  </li>
+                );
+              })
+            ) : (
+              <li className="brp-bcd-empty">책을 선택하세요</li>
+            )
+          ) : null}
+
+          {step === "verses" ? (
+            <>
+              <li style={{ ["--i" as string]: 0 } as CSSProperties}>
+                <button
+                  type="button"
+                  className="brp-bcd-row brp-bcd-row--action"
+                  onClick={pickChapterFromStart}
+                >
+                  이 장 처음부터
+                </button>
+              </li>
+              {verses.length > 0 ? (
+                verses.map((n, i) => (
+                  <li
+                    key={n}
+                    style={{ ["--i" as string]: i + 1 } as CSSProperties}
+                  >
+                    <button
+                      type="button"
+                      data-verse={n}
+                      className="brp-bcd-row brp-bcd-row--num"
+                      onClick={() => pickVerse(n)}
+                      role="option"
+                    >
+                      {n}
+                    </button>
+                  </li>
+                ))
+              ) : (
+                <li className="brp-bcd-empty">절을 불러오는 중…</li>
+              )}
+            </>
+          ) : null}
         </ul>
       </aside>
     </div>

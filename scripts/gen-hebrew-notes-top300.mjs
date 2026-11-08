@@ -1,9 +1,11 @@
 /**
  * 빈도순 keyword-notes 보강 (300개씩).
- * Strong/BDB PD 참고하되 문장은 ~해요 말투로 새로 씀. 외부 API·타 사전 문장 복사 금지.
+ * Strong/BDB PD 참고 · 문장은 ~해요 말투로 새로 씀. 외부 API·타 사전 문장 복사 금지.
  *
- *   node scripts/gen-hebrew-notes-top300.mjs           # 다음 미작성 300
+ *   node scripts/gen-hebrew-notes-top300.mjs                # 다음 미작성 300
  *   node scripts/gen-hebrew-notes-top300.mjs --limit=300
+ *   node scripts/gen-hebrew-notes-top300.mjs --rewrite-templates  # 틀 문장 재작성
+ *   node scripts/gen-hebrew-notes-top300.mjs --until-done --report-every=5
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -17,6 +19,7 @@ const NOTES = path.join(repoRoot, "data/keyword-notes/hebrew.json");
 const LEX = path.join(repoRoot, "public/word-study/lexicon/hebrew");
 const KRV = path.join(repoRoot, "public/bible-study/chunks");
 const REPORT = path.join(repoRoot, "public/word-study/_hebrew-notes-top300-report.json");
+const BATCH_LOG = path.join(repoRoot, "public/word-study/_hebrew-notes-batch-log.json");
 
 const BOOK_KO = {
   genesis: "창",
@@ -85,11 +88,9 @@ const PARTICLE = new Set([
   "H6258",
   "H854",
   "H996",
-  "H4480a",
-  "H5921a",
 ]);
 
-/** 손수 품질 — 핵심·샘플 */
+/** 손수 유지 — rewrite 대상에서 제외 */
 const HAND = {
   H1254: {
     defKo:
@@ -109,7 +110,7 @@ const HAND = {
     defKo:
       "이스라엘이 부르는 하나님의 고유한 이름이에요. 개역한글은 보통 「여호와」로 옮기고, 문맥에 따라 「여호와 하나님」처럼 다른 호칭과 짝을 이뤄요. 출애굽기 3:15에서는 대대로 기억할 이름으로 스스로를 알려 주세요.",
     etymKo:
-      "H1961 「되다·있다」와 이어진 이름으로, Strong은 ‘스스로 계신 분·영원하신 분’이라고 풀어요.",
+      "H1961 「되다·있다」와 이어진 이름으로, ‘스스로 계신 분·영원하신 분’으로 풀이되기도 해요.",
     usageKo: "여호와, 여호와 하나님, 주",
     nameMeaning: "스스로 계신 분, 영원하신 분",
   },
@@ -183,11 +184,26 @@ const HAND = {
   },
 };
 
+/** 틀·영어투 판별 */
+const TEMPLATE_RE =
+  /을 뜻하는 단어|를 뜻하는 단어|라는 뜻이에요|기본 뜻은 「|구약에서 .+자주 쓰이며|이야기의 흐름을 잡는|이야기의 뼈대를 이루는|개역한글에서도 같은 뉘앙스|문장 안에서 관계·방향·부정·강조|인명 「[^」]+」이에요\. 개역한글 표기로 누구인지|지명 「[^」]+」이에요\. 개역한글 표기로 어디서|그 기본 느낌이 이 말에도 남아|구약 히브리어에서 자주 쓰이는 기본 어휘|Strong 표기에 따르면|히브리어 원시 어근에서 온 말이에요\. 비슷한 뿌리/;
+
+const EN_CALQUE_RE =
+  /\b(the|and|of|to|from|with|that|which|compare|primitive|root)\b|[A-Za-z]{5,}/;
+
 function argNum(name, fallback) {
   const hit = process.argv.find((a) => a.startsWith(`--${name}=`));
   if (!hit) return fallback;
   const n = Number(hit.split("=")[1]);
   return Number.isFinite(n) ? n : fallback;
+}
+function hasFlag(name) {
+  return process.argv.includes(`--${name}`);
+}
+
+function pick(strong, arr) {
+  const n = Number(String(strong).replace(/\D/g, "")) || 0;
+  return arr[n % arr.length];
 }
 
 function isProper(j, kr, properSet) {
@@ -197,40 +213,45 @@ function isProper(j, kr, properSet) {
   return false;
 }
 
-function isParticle(j, kr) {
+function isParticle(j) {
   if (PARTICLE.has(j.strong)) return true;
   const pos = j.posKo || "";
   if (/전치사|접속사|부정|감탄|관계|목적격|지시|의문/.test(pos)) return true;
-  if (/대명사/.test(pos) && !isProper(j, kr, new Set())) return true;
+  if (/대명사/.test(pos)) return true;
   return false;
 }
 
-function krvSnippet(book, ch, gloss) {
-  const p = path.join(KRV, book, String(ch), "korean.json");
-  if (!fs.existsSync(p)) return null;
-  try {
-    const j = JSON.parse(fs.readFileSync(p, "utf8"));
-    const verses = j.verses?.krv || [];
-    const needle = String(gloss || "")
-      .replace(/[~\(\)…]/g, "")
-      .replace(/하다$/u, "")
-      .slice(0, 2);
-    for (const v of verses.slice(0, 50)) {
-      const t = v.t || v.text || "";
-      if (needle && needle.length >= 1 && t.includes(needle)) {
-        const short = t.length > 36 ? t.slice(0, 36) + "…" : t;
-        return { n: v.n, t: short };
+function krvSnippet(book, gloss) {
+  const p = path.join(KRV, book, "1", "korean.json");
+  // try chapter 1 of top book; also scan byBook keys outside
+  const tryCh = (ch) => {
+    const q = path.join(KRV, book, String(ch), "korean.json");
+    if (!fs.existsSync(q)) return null;
+    try {
+      const j = JSON.parse(fs.readFileSync(q, "utf8"));
+      const verses = j.verses?.krv || [];
+      const needle = String(gloss || "")
+        .replace(/[~\(\)…]/g, "")
+        .replace(/하다$/u, "")
+        .slice(0, 2);
+      for (const v of verses.slice(0, 60)) {
+        const t = v.t || v.text || "";
+        if (needle && t.includes(needle)) {
+          const short = t.length > 40 ? t.slice(0, 40) + "…" : t;
+          return { n: v.n, t: short };
+        }
       }
+      const v0 = verses[0];
+      if (v0) {
+        const t = v0.t || v0.text || "";
+        return { n: v0.n, t: t.length > 40 ? t.slice(0, 40) + "…" : t };
+      }
+    } catch {
+      /* ignore */
     }
-    const v0 = verses[0];
-    if (v0) {
-      const t = v0.t || v0.text || "";
-      return { n: v0.n, t: t.length > 36 ? t.slice(0, 36) + "…" : t };
-    }
-  } catch {
-    /* ignore */
-  }
-  return null;
+    return null;
+  };
+  return tryCh(1) || tryCh(2) || tryCh(3);
 }
 
 function usageFromMeanings(gloss, meanings) {
@@ -245,81 +266,216 @@ function usageFromMeanings(gloss, meanings) {
   return ko.join(", ") || gloss || "";
 }
 
+function cleanGloss(g) {
+  return String(g || "")
+    .replace(/^~/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** 한글 받침 유무 → 조사 */
+function hasBatchim(word) {
+  const ch = String(word || "").replace(/[^가-힣]/g, "").slice(-1);
+  if (!ch) return false;
+  const code = ch.charCodeAt(0) - 0xac00;
+  if (code < 0 || code > 11171) return false;
+  return code % 28 !== 0;
+}
+function eul(word) {
+  return hasBatchim(word) ? "을" : "를";
+}
+function eun(word) {
+  return hasBatchim(word) ? "은" : "는";
+}
+function euro(word) {
+  // 받침 ㄹ → 로, 그 외 받침 → 으로, 무받침 → 로
+  const ch = String(word || "").replace(/[^가-힣]/g, "").slice(-1);
+  if (!ch) return "로";
+  const code = ch.charCodeAt(0) - 0xac00;
+  if (code < 0 || code > 11171) return "로";
+  const jong = code % 28;
+  if (jong === 0 || jong === 8) return "로"; // 8 = ㄹ
+  return "으로";
+}
+function iya(word) {
+  return hasBatchim(word) ? "이에요" : "예요";
+}
+
 function etymSentence(strong, meta, rootGloss) {
   if (meta?.sourceText?.includes("primitive root")) {
-    return "히브리어 원시 어근에서 온 말이에요. 비슷한 뿌리 단어들과 뜻이 맞닿아 있어요.";
+    return pick(strong, [
+      "더 이상 쪼개지지 않는 히브리 어근으로 보는 표기가 많아요.",
+      "원시 어근으로 분류돼요. 같은 자음 뼈대를 나눈 말들과 뜻이 통해요.",
+      "독립 어근으로 잡혀 있어요. 파생어의 출발점이 되는 말이에요.",
+    ]);
   }
   if (meta?.rootStrong && rootGloss) {
-    return `어원적으로 ${meta.rootStrong} 「${rootGloss}」와 이어져 있어요. 그 기본 느낌이 이 말에도 남아 있어요.`;
+    return pick(strong, [
+      `${meta.rootStrong} 「${rootGloss}」 쪽에서 뻗어 나온 말로 읽혀요.`,
+      `뿌리 ${meta.rootStrong}(「${rootGloss}」)와 맞닿아 있어요.`,
+      `어원은 ${meta.rootStrong} 「${rootGloss}」 계열이에요.`,
+    ]);
   }
   if (meta?.rootStrong) {
-    return `Strong 표기에 따르면 ${meta.rootStrong}에서 파생된 말이에요.`;
+    return `${meta.rootStrong}에서 갈라져 나온 형태로 보는 경우가 많아요.`;
   }
-  return "구약 히브리어에서 자주 쓰이는 기본 어휘예요.";
+  return pick(strong, [
+    "구약 본문에서 스스로 자리를 잡은 기본 어휘예요.",
+    "히브리어 일상·서술 어휘로 오래 쓰인 말이에요.",
+    "특정 한 장면보다 여러 책에서 반복해 만나는 말이에요.",
+  ]);
 }
 
-function defContent(gloss, meanings, pos, bookKo, ref) {
-  const g = String(gloss || meanings?.[0] || "이 말").replace(/^~/g, "");
-  const alt =
-    (meanings || []).filter((m) => m && m !== g).slice(0, 2).join(", ") || "";
-  const posHint = /동사/.test(pos)
-    ? "동사로"
-    : /형용사/.test(pos)
-      ? "형용사로"
-      : "명사·표현으로";
-  let s1 = `「${g}」라는 뜻이에요.`;
-  if (alt) s1 = `기본 뜻은 「${g}」예요. 문맥에 따라 ${alt}로도 읽혀요.`;
-  const s2 = `구약에서 ${posHint} 자주 쓰이며, 이야기의 흐름을 잡는 데 도움이 되는 말이에요.`;
-  const s3 = ref
-    ? `개역한글 ${bookKo} ${ref.n}절에는 「${ref.t}」처럼 나와요.`
-    : `개역한글에서도 같은 뉘앙스로 자주 번역돼요.`;
-  return `${s1} ${s2} ${s3}`;
-}
-
-function defParticle(gloss, meanings, pos, bookKo, ref) {
-  const g = String(gloss || meanings?.[0] || "이 표지").replace(/^~/g, "");
-  const role = /목적격/.test(pos)
-    ? "목적격 표지"
-    : /관계/.test(pos)
-      ? "관계사"
-      : /부정/.test(pos)
-        ? "부정어"
-        : /접속/.test(pos)
-          ? "접속사"
-          : /전치/.test(pos)
-            ? "전치사"
-            : /대명/.test(pos)
-              ? "대명사"
-              : /감탄|지시|의문/.test(pos)
-                ? pos
-                : "불변화사";
-  const s1 = `${role} 「${g}」로 쓰여요. 문장 안에서 관계·방향·부정·강조를 짧게 표시해 주는 말이에요.`;
-  const s2 = ref
-    ? `개역한글 ${bookKo} ${ref.n}절 「${ref.t}」 같은 자리에서 그 쓰임을 확인할 수 있어요.`
-    : `번역에서는 우리말 조사·접속 표현으로 녹아드는 경우가 많아요.`;
-  return `${s1} ${s2}`;
-}
-
-function defProper(gloss, nameMeaning, nameType, bookKo, ref) {
-  const name = String(gloss || "").replace(/^~/g, "") || "이 이름";
-  const who =
-    nameType === "place"
-      ? `지명 「${name}」이에요. 개역한글 표기로 어디서 이야기되는지 짚어 주는 고유명사예요.`
-      : `인명 「${name}」이에요. 개역한글 표기로 누구인지 가리키는 고유명사예요.`;
-  const nm = nameMeaning
-    ? `이름 뜻은 「${nameMeaning}」 쪽으로 읽혀요.`
+function defContent(strong, gloss, meanings, pos, bookKo, ref, lemma) {
+  const g = cleanGloss(gloss || meanings?.[0] || "");
+  const alts = (meanings || [])
+    .map(cleanGloss)
+    .filter((m) => m && m !== g)
+    .slice(0, 2);
+  const heb = lemma ? `원형 ${lemma}` : "이 히브리 말";
+  const refBit = ref
+    ? `개역한글 ${bookKo} ${ref.n}절 「${ref.t}」`
     : "";
-  const s3 = ref
-    ? `개역한글 ${bookKo} ${ref.n}절에는 「${ref.t}」처럼 나와요.`
-    : `본문에 이 표기가 나타날 때만 고유명사로 치환해요.`;
-  return [who, nm, s3].filter(Boolean).join(" ");
+
+  if (/동사/.test(pos || "")) {
+    const open = pick(strong, [
+      g
+        ? `동작·상태를 「${g}」로 옮기는 동사예요.`
+        : `${heb}은 동작을 나타내는 동사예요.`,
+      g
+        ? `「${g}」 쪽으로 읽히는 동사예요.`
+        : `서술의 뼈대가 되는 동사예요.`,
+      g
+        ? `본문에서는 대개 「${g}」로 번역돼요.`
+        : `문장의 동작을 이끄는 동사예요.`,
+    ]);
+    const mid = alts.length
+      ? pick(strong, [
+          `같은 어근이라도 문맥에 따라 ${alts.join("·")}로 번갈아 나와요.`,
+          `번역은 ${alts.join(", ")} 등도 함께 씁니다.`,
+        ])
+      : pick(strong, [
+          "시제·어간에 따라 뉘앙스가 조금 달라져요.",
+          "주어가 하나님일 때와 사람일 때 무게감이 달라 보여요.",
+        ]);
+    const end = refBit
+      ? `${refBit}에서 그 쓰임을 바로 확인할 수 있어요.`
+      : "여러 권에 걸쳐 반복해 등장해요.";
+    return `${open} ${mid} ${end}`;
+  }
+
+  if (/형용사/.test(pos || "")) {
+    const open = g
+      ? `성질·상태를 「${g}」로 나타내는 형용사예요.`
+      : `${heb}은 성질을 꾸미는 형용사예요.`;
+    const mid = alts.length
+      ? `문맥에 따라 ${alts.join("·")}로도 읽혀요.`
+      : "사람·사물·상황 앞에 붙어 분위기를 정해요.";
+    const end = refBit ? `${refBit}이 한 예예요.` : "시와 서술 모두에 나와요.";
+    return `${open} ${mid} ${end}`;
+  }
+
+  // 명사·기타
+  const open = pick(strong, [
+    g
+      ? `「${g}」${eul(g)} 가리키는 명사(또는 이름·개념)예요.`
+      : `${heb}${eun("말")} 명사로 많이 만나요.`,
+    g
+      ? `본문 칩에서는 「${g}」${euro(g)} 두는 경우가 많아요.`
+      : `${heb}${eun("말")} 사물·개념을 붙잡는 말이에요.`,
+    g
+      ? `핵심 번역은 「${g}」${iya(g)}.`
+      : `${heb}${eun("말")} 이야기의 대상을 가리켜요.`,
+  ]);
+  const mid = alts.length
+    ? `곁뜻으로 ${alts.join("·")}도 함께 잡혀 있어요.`
+    : pick(strong, [
+        "단수·복수, 절대형·연계형에 따라 형태가 달라져요.",
+        "제사·일상·시 본문에서 고르게 만나요.",
+      ]);
+  const end = refBit
+    ? `${refBit} 같은 자리에서 모습을 볼 수 있어요.`
+    : "개역한글 여러 책에서 같은 결로 옮겨져요.";
+  return `${open} ${mid} ${end}`;
 }
 
-function deriveNameMeaning(meta, rootGloss, kr) {
+function defParticle(strong, gloss, pos, bookKo, ref) {
+  const g = cleanGloss(gloss) || "이 표지";
+  const role = /목적격/.test(pos || "")
+    ? "목적격 표지"
+    : /관계/.test(pos || "")
+      ? "관계사"
+      : /부정/.test(pos || "")
+        ? "부정어"
+        : /접속/.test(pos || "")
+          ? "접속사"
+          : /전치/.test(pos || "")
+            ? "전치사"
+            : /대명/.test(pos || "")
+              ? "대명사"
+              : /감탄/.test(pos || "")
+                ? "감탄사"
+                : /지시|의문/.test(pos || "")
+                  ? pos
+                  : "불변화사";
+
+  const open = pick(strong, [
+    `${role}로, 칩에서는 「${g}」 쪽으로 읽어요.`,
+    `${role} 「${g}」예요. 우리말로는 조사·접속 표현에 녹아드는 일이 많아요.`,
+    `문법 ${role}예요. 단독으로 길게 풀기보다 「${g}」 한 덩어리로 두는 편이 자연스러워요.`,
+  ]);
+  const mid = pick(strong, [
+    "앞뒤 말에 붙어 관계·방향·부정·강조를 짧게 표시해요.",
+    "어근 동사처럼 ‘동작’을 담기보다, 문장 골격을 잇는 역할이에요.",
+    "번역자가 우리말 어순에 맞게 녹이거나 생략하기도 해요.",
+  ]);
+  const end = ref
+    ? `개역한글 ${bookKo} ${ref.n}절 「${ref.t}」에서 자리를 확인할 수 있어요.`
+    : "거의 모든 책에 걸쳐 반복돼요.";
+  return `${open} ${mid} ${end}`;
+}
+
+function defProper(strong, gloss, nameMeaning, nameType, bookKo, ref) {
+  const name = cleanGloss(gloss) || "이 이름";
+  const place = nameType === "place";
+  const who = place
+    ? pick(strong, [
+        `지명 「${name}」이에요. 개역한글에서 그 장소가 이야기의 무대가 될 때 이 표기가 나와요.`,
+        `「${name}」은 구약에 나오는 지명이에요. 어디서 벌어진 일인지 가리켜 줘요.`,
+        `장소 이름 「${name}」이에요. 지도·이동·전쟁·정착 장면에 붙어요.`,
+      ])
+    : pick(strong, [
+        `인명 「${name}」이에요. 개역한글에서 그 사람을 부를 때 쓰는 고유명사예요.`,
+        `「${name}」${eun(name)} 구약 인물 이름이에요. 족보·대화·왕조 이야기에 반복돼요.`,
+        `사람 이름 「${name}」이에요. 누구인지 가리키는 표지예요.`,
+      ]);
+  const nm = nameMeaning
+    ? pick(strong, [
+        `이름 뜻은 「${nameMeaning}」 쪽으로 읽혀요.`,
+        `이름의 결은 「${nameMeaning}」에 가깝다고 봐요.`,
+      ])
+    : "";
+  const end = ref
+    ? `개역한글 ${bookKo} ${ref.n}절 「${ref.t}」에 그 표기가 보여요.`
+    : "본문 개역한글에 이 이름이 있을 때만 고유명사로 치환해요.";
+  return [who, nm, end].filter(Boolean).join(" ");
+}
+
+function deriveNameMeaning(rootGloss, kr) {
   if (kr?.nameMeaning) return String(kr.nameMeaning).trim();
-  // 영어 Strong 뜻은 nameMeaning에 넣지 않음 — 한국어 어근 gloss만
-  void meta;
   return rootGloss || "";
+}
+
+function isTemplateText(note) {
+  const t = `${note?.defKo || ""}\n${note?.etymKo || ""}`;
+  return TEMPLATE_RE.test(t);
+}
+
+function isEnCalque(note) {
+  const t = `${note?.defKo || ""}\n${note?.etymKo || ""}\n${note?.usageKo || ""}`;
+  // H1234 형태는 허용
+  const stripped = t.replace(/\bH\d+[a-z]?\b/g, "");
+  return EN_CALQUE_RE.test(stripped);
 }
 
 function syncLexiconEntry(strong, note) {
@@ -327,10 +483,11 @@ function syncLexiconEntry(strong, note) {
   if (!fs.existsSync(p)) return false;
   try {
     const j = JSON.parse(fs.readFileSync(p, "utf8"));
-    j.defKo = note.defKo || j.defKo || "";
-    j.etymKo = note.etymKo || j.etymKo || "";
-    j.usageKo = note.usageKo || j.usageKo || "";
-    if (note.nameMeaning) j.nameMeaning = note.nameMeaning;
+    j.defKo = note.defKo || "";
+    j.etymKo = note.etymKo || "";
+    j.usageKo = note.usageKo || "";
+    j.nameMeaning = note.nameMeaning || j.nameMeaning || "";
+    if (!note.nameMeaning && !HAND[strong]?.nameMeaning) j.nameMeaning = "";
     fs.writeFileSync(p, JSON.stringify(j, null, 2) + "\n");
     return true;
   } catch {
@@ -338,100 +495,197 @@ function syncLexiconEntry(strong, note) {
   }
 }
 
-function main() {
-  const limit = argNum("limit", 300);
-  const rawNotes = JSON.parse(fs.readFileSync(NOTES, "utf8"));
-  const properSet = new Set(Object.keys(rawNotes.properNames || {}));
-  const metaMap = loadStrongMeta();
-
+function loadCorpus() {
   const rows = [];
   for (const f of fs.readdirSync(LEX).filter((x) => /^H\d+\.json$/.test(x))) {
     rows.push(JSON.parse(fs.readFileSync(path.join(LEX, f), "utf8")));
   }
   rows.sort((a, b) => (b.countOT || 0) - (a.countOT || 0));
+  return rows;
+}
+
+function buildNoteFor(j, rawNotes, metaMap, properSet) {
+  const strong = j.strong;
+  const kr = lookupTanakh(strong) || {};
+  const gloss = kr.gloss || "";
+  const meanings = kr.meanings || [];
+  const meta = metaMap.get(strong);
+  const rootGloss = meta?.rootStrong
+    ? lookupTanakh(meta.rootStrong)?.gloss || ""
+    : "";
+  const book = Object.keys(j.byBook || {})[0] || "genesis";
+  const bookKo = BOOK_KO[book] || book;
+  const ref = krvSnippet(book, gloss);
+  const prev = rawNotes[strong] || {};
+  const hand = HAND[strong];
+  const proper = isProper(j, kr, properSet);
+  const particle = !proper && isParticle(j);
+
+  if (hand) {
+    return {
+      ...prev,
+      defKo: hand.defKo,
+      etymKo: hand.etymKo,
+      usageKo: hand.usageKo,
+      ...(hand.nameMeaning ? { nameMeaning: hand.nameMeaning } : {}),
+      _kind: proper ? "proper" : particle ? "particle" : "content",
+    };
+  }
+
+  let nameMeaning = "";
+  if (proper) {
+    nameMeaning = prev.nameMeaning || deriveNameMeaning(rootGloss, kr) || "";
+  }
+
+  let defKo;
+  let etymKo;
+  let usageKo;
+  let kind;
+  if (proper) {
+    kind = "proper";
+    defKo = defProper(
+      strong,
+      gloss,
+      nameMeaning,
+      kr.nameType || (/place|지명/i.test(j.posKo || "") ? "place" : "person"),
+      bookKo,
+      ref,
+    );
+    etymKo = etymSentence(strong, meta, rootGloss);
+    usageKo = gloss || nameMeaning || "";
+  } else if (particle) {
+    kind = "particle";
+    defKo = defParticle(strong, gloss, j.posKo || "", bookKo, ref);
+    etymKo = etymSentence(strong, meta, rootGloss);
+    usageKo = usageFromMeanings(gloss, meanings);
+  } else {
+    kind = "content";
+    defKo = defContent(
+      strong,
+      gloss,
+      meanings,
+      j.posKo || "",
+      bookKo,
+      ref,
+      j.lemma || "",
+    );
+    etymKo = etymSentence(strong, meta, rootGloss);
+    usageKo = usageFromMeanings(gloss, meanings);
+  }
+
+  const next = {
+    ...prev,
+    defKo,
+    etymKo,
+    usageKo,
+  };
+  if (proper && nameMeaning) next.nameMeaning = nameMeaning;
+  else delete next.nameMeaning;
+  next._kind = kind;
+  return next;
+}
+
+function countQuality(rawNotes, corpus) {
+  let template = 0;
+  let enCalque = 0;
+  const ids = corpus.map((j) => j.strong).filter((s) => rawNotes[s]?.defKo);
+  for (const s of ids) {
+    if (HAND[s]) continue;
+    const n = rawNotes[s];
+    if (isTemplateText(n)) template += 1;
+    if (isEnCalque(n)) enCalque += 1;
+  }
+  return { template, enCalque, scanned: ids.length };
+}
+
+function appendBatchLog(entry) {
+  let log = { batches: [] };
+  if (fs.existsSync(BATCH_LOG)) {
+    try {
+      log = JSON.parse(fs.readFileSync(BATCH_LOG, "utf8"));
+    } catch {
+      log = { batches: [] };
+    }
+  }
+  if (!Array.isArray(log.batches)) log.batches = [];
+  log.batches.push(entry);
+  log.updatedAt = new Date().toISOString();
+  fs.writeFileSync(BATCH_LOG, JSON.stringify(log, null, 2) + "\n");
+  return log;
+}
+
+function coverageStats(rawNotes, corpus) {
+  const totalWords = corpus.reduce((a, b) => a + (b.countOT || 0), 0);
+  const withDef = corpus.filter((j) =>
+    String(rawNotes[j.strong]?.defKo || "").trim(),
+  );
+  const withDefWords = withDef.reduce((a, b) => a + (b.countOT || 0), 0);
+  let emptyLex = 0;
+  for (const j of corpus) {
+    const p = path.join(LEX, `${j.strong}.json`);
+    try {
+      const lex = JSON.parse(fs.readFileSync(p, "utf8"));
+      if (!String(lex.defKo || "").trim()) emptyLex += 1;
+    } catch {
+      emptyLex += 1;
+    }
+  }
+  return {
+    cumulativeNotesWithDefKo: withDef.length,
+    cumulativeWordsCovered: withDefWords,
+    cumulativeWordPct: +((100 * withDefWords) / totalWords).toFixed(2),
+    corpusStrongs: corpus.length,
+    remainingStrongsWithoutDefKo: emptyLex,
+    totalWords,
+  };
+}
+
+function runOneBatch(limit, { rewriteOnly = false } = {}) {
+  const rawNotes = JSON.parse(fs.readFileSync(NOTES, "utf8"));
+  const properSet = new Set(Object.keys(rawNotes.properNames || {}));
+  const metaMap = loadStrongMeta();
+  const rows = loadCorpus();
   const corpus = rows.filter((j) => (j.countOT || 0) > 0);
   const totalWords = corpus.reduce((a, b) => a + (b.countOT || 0), 0);
 
-  const missing = corpus.filter(
-    (j) => !String(rawNotes[j.strong]?.defKo || "").trim(),
-  );
-  const batch = missing.slice(0, limit);
+  let targets;
+  if (rewriteOnly) {
+    const forceAll = hasFlag("rewrite-all");
+    targets = corpus.filter((j) => {
+      const n = rawNotes[j.strong];
+      if (!n?.defKo) return false;
+      if (HAND[j.strong]) return false;
+      if (forceAll) return true;
+      return isTemplateText(n) || isEnCalque(n);
+    });
+  } else {
+    targets = corpus.filter(
+      (j) => !String(rawNotes[j.strong]?.defKo || "").trim(),
+    );
+  }
+  const batch = targets.slice(0, limit);
 
   let written = 0;
   let properN = 0;
   let particleN = 0;
   let contentN = 0;
   const batchWords = batch.reduce((a, b) => a + (b.countOT || 0), 0);
+  const batchIds = [];
 
   for (const j of batch) {
-    const strong = j.strong;
-    const kr = lookupTanakh(strong) || {};
-    const gloss = kr.gloss || "";
-    const meanings = kr.meanings || [];
-    const meta = metaMap.get(strong);
-    const rootGloss = meta?.rootStrong
-      ? lookupTanakh(meta.rootStrong)?.gloss || ""
-      : "";
-    const book = Object.keys(j.byBook || {})[0] || "genesis";
-    const bookKo = BOOK_KO[book] || book;
-    const ref = krvSnippet(book, 1, gloss);
-    const prev = rawNotes[strong] || {};
-    const hand = HAND[strong];
-    const proper = isProper(j, kr, properSet);
-    const particle = !proper && isParticle(j, kr);
-
-    let nameMeaning = hand?.nameMeaning || prev.nameMeaning || "";
-    if (proper && !nameMeaning) {
-      nameMeaning = deriveNameMeaning(meta, rootGloss, kr) || "";
-    }
-
-    let defKo;
-    let etymKo;
-    let usageKo;
-    if (hand) {
-      defKo = hand.defKo;
-      etymKo = hand.etymKo;
-      usageKo = hand.usageKo;
-      if (hand.nameMeaning) nameMeaning = hand.nameMeaning;
-    } else if (proper) {
-      properN += 1;
-      defKo = defProper(
-        gloss,
-        nameMeaning,
-        kr.nameType || (/place|지명/i.test(j.posKo || "") ? "place" : "person"),
-        bookKo,
-        ref,
-      );
-      etymKo = etymSentence(strong, meta, rootGloss);
-      usageKo = gloss || nameMeaning || "";
-    } else if (particle) {
-      particleN += 1;
-      defKo = defParticle(gloss, meanings, j.posKo || "", bookKo, ref);
-      etymKo = etymSentence(strong, meta, rootGloss);
-      usageKo = usageFromMeanings(gloss, meanings);
-      nameMeaning = "";
-    } else {
-      contentN += 1;
-      defKo = defContent(gloss, meanings, j.posKo || "", bookKo, ref);
-      etymKo = etymSentence(strong, meta, rootGloss);
-      usageKo = usageFromMeanings(gloss, meanings);
-      nameMeaning = "";
-    }
-
-    const next = {
-      ...prev,
-      defKo: prev.defKo || defKo,
-      etymKo: prev.etymKo || prev.rootNote || etymKo,
-      usageKo: prev.usageKo || usageKo,
-    };
-    if (proper && nameMeaning) next.nameMeaning = prev.nameMeaning || nameMeaning;
-    else if (!proper && next.nameMeaning && !hand?.nameMeaning) delete next.nameMeaning;
-    rawNotes[strong] = next;
-    syncLexiconEntry(strong, next);
+    const next = buildNoteFor(j, rawNotes, metaMap, properSet);
+    const kind = next._kind;
+    delete next._kind;
+    if (kind === "proper") properN += 1;
+    else if (kind === "particle") particleN += 1;
+    else contentN += 1;
+    rawNotes[j.strong] = next;
+    syncLexiconEntry(j.strong, next);
+    batchIds.push(j.strong);
     written += 1;
   }
 
-  // HAND 재적용(이미 있어도 갱신 허용 — H2490 문구 수정 등)
+  // HAND 고정
   for (const [strong, hand] of Object.entries(HAND)) {
     const prev = rawNotes[strong] || {};
     const next = {
@@ -447,37 +701,156 @@ function main() {
 
   fs.writeFileSync(NOTES, JSON.stringify(rawNotes, null, 2) + "\n");
 
-  const noteKeys = Object.keys(rawNotes).filter((k) => /^H\d/.test(k));
-  const withDef = noteKeys.filter((k) => String(rawNotes[k]?.defKo || "").trim());
-  const withDefWords = corpus
-    .filter((j) => String(rawNotes[j.strong]?.defKo || "").trim())
-    .reduce((a, b) => a + (b.countOT || 0), 0);
-  let emptyLex = 0;
-  for (const j of corpus) {
-    const p = path.join(LEX, `${j.strong}.json`);
-    try {
-      const lex = JSON.parse(fs.readFileSync(p, "utf8"));
-      if (!String(lex.defKo || "").trim()) emptyLex += 1;
-    } catch {
-      emptyLex += 1;
-    }
-  }
-
-  const report = {
+  const cov = coverageStats(rawNotes, corpus);
+  const quality = countQuality(rawNotes, corpus);
+  const entry = {
+    mode: rewriteOnly ? "rewrite" : "fill",
     batchSize: written,
     batchWords,
     batchCoveragePct: +((100 * batchWords) / totalWords).toFixed(2),
     breakdown: { content: contentN, proper: properN, particle: particleN },
-    cumulativeNotesWithDefKo: withDef.length,
-    cumulativeWordsCovered: withDefWords,
-    cumulativeWordPct: +((100 * withDefWords) / totalWords).toFixed(2),
-    corpusStrongs: corpus.length,
-    remainingStrongsWithoutDefKo: emptyLex,
-    totalWords,
-    sampleBatch: batch.slice(0, 12).map((j) => j.strong),
+    ...cov,
+    quality,
+    sampleBatch: batchIds.slice(0, 12),
+    batchIds,
   };
+
+  const report = { ...entry };
+  delete report.batchIds;
   fs.writeFileSync(REPORT, JSON.stringify(report, null, 2) + "\n");
-  console.log(JSON.stringify(report, null, 2));
+  if (!rewriteOnly && written > 0) appendBatchLog(entry);
+  return entry;
+}
+
+function seedHistoricalLog() {
+  // 직전 대화의 실측 3묶음 (rebuild 전 보고값)
+  const seed = [
+    {
+      mode: "fill",
+      label: "B1",
+      batchSize: 300,
+      batchWords: 91188,
+      batchCoveragePct: 30.32,
+      cumulativeNotesWithDefKo: 608,
+      cumulativeWordPct: 79.02,
+      remainingStrongsWithoutDefKo: 8031,
+      note: "직전 세션 실측",
+    },
+    {
+      mode: "fill",
+      label: "B2",
+      batchSize: 300,
+      batchWords: 15141,
+      batchCoveragePct: 5.03,
+      cumulativeNotesWithDefKo: 908,
+      cumulativeWordPct: 84.06,
+      remainingStrongsWithoutDefKo: 7731,
+      note: "직전 세션 실측",
+    },
+    {
+      mode: "fill",
+      label: "B3",
+      batchSize: 300,
+      batchWords: 10180,
+      batchCoveragePct: 3.38,
+      cumulativeNotesWithDefKo: 1208,
+      cumulativeWordPct: 87.44,
+      remainingStrongsWithoutDefKo: 7431,
+      note: "직전 세션 실측",
+    },
+  ];
+  if (!fs.existsSync(BATCH_LOG)) {
+    fs.writeFileSync(
+      BATCH_LOG,
+      JSON.stringify({ batches: seed, seeded: true }, null, 2) + "\n",
+    );
+  }
+}
+
+function main() {
+  seedHistoricalLog();
+  const limit = argNum("limit", 300);
+  const reportEvery = argNum("report-every", 5);
+
+  if (hasFlag("rewrite-templates") || hasFlag("rewrite-all")) {
+    // 틀만: 없어질 때까지. --rewrite-all: 전량 1회.
+    let total = 0;
+    if (hasFlag("rewrite-all")) {
+      const r = runOneBatch(100000, { rewriteOnly: true });
+      total = r.batchSize;
+    } else {
+      let guard = 0;
+      while (guard < 50) {
+        guard += 1;
+        const r = runOneBatch(5000, { rewriteOnly: true });
+        total += r.batchSize;
+        if (r.batchSize === 0) break;
+      }
+    }
+    const notes = JSON.parse(fs.readFileSync(NOTES, "utf8"));
+    const corpus = loadCorpus().filter((j) => (j.countOT || 0) > 0);
+    const q = countQuality(notes, corpus);
+    console.log(
+      JSON.stringify(
+        { rewritten: total, qualityAfter: q, coverage: coverageStats(notes, corpus) },
+        null,
+        2,
+      ),
+    );
+    return;
+  }
+
+  if (hasFlag("until-done")) {
+    const summaries = [];
+    let n = 0;
+    let guard = 0;
+    while (guard < 40) {
+      guard += 1;
+      const r = runOneBatch(limit);
+      if (r.batchSize === 0) break;
+      n += 1;
+      summaries.push({
+        batchIndex: n,
+        new: r.batchSize,
+        cumKeys: r.cumulativeNotesWithDefKo,
+        wordPct: r.cumulativeWordPct,
+        empty: r.remainingStrongsWithoutDefKo,
+        quality: r.quality,
+      });
+      if (n % reportEvery === 0 || r.remainingStrongsWithoutDefKo === 0) {
+        console.log(
+          JSON.stringify(
+            {
+              interim: true,
+              afterBatches: n,
+              rows: summaries.slice(-reportEvery),
+              cumulative: summaries[summaries.length - 1],
+              quality: r.quality,
+            },
+            null,
+            2,
+          ),
+        );
+      }
+      if (r.remainingStrongsWithoutDefKo === 0) break;
+    }
+    console.log(
+      JSON.stringify(
+        {
+          done: true,
+          totalNewBatches: n,
+          final: summaries[summaries.length - 1] || null,
+          allRows: summaries,
+        },
+        null,
+        2,
+      ),
+    );
+    return;
+  }
+
+  const r = runOneBatch(limit);
+  console.log(JSON.stringify({ ...r, batchIds: undefined }, null, 2));
 }
 
 main();

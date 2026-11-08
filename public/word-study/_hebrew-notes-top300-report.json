@@ -1,30 +1,36 @@
 {
-  "batchSize": 300,
-  "batchWords": 10180,
-  "batchCoveragePct": 3.38,
+  "mode": "fill",
+  "batchSize": 231,
+  "batchWords": 231,
+  "batchCoveragePct": 0.08,
   "breakdown": {
-    "content": 243,
-    "proper": 52,
-    "particle": 5
+    "content": 154,
+    "proper": 75,
+    "particle": 2
   },
-  "cumulativeNotesWithDefKo": 1208,
-  "cumulativeWordsCovered": 262974,
-  "cumulativeWordPct": 87.44,
+  "cumulativeNotesWithDefKo": 8639,
+  "cumulativeWordsCovered": 300742,
+  "cumulativeWordPct": 100,
   "corpusStrongs": 8639,
-  "remainingStrongsWithoutDefKo": 7431,
+  "remainingStrongsWithoutDefKo": 0,
   "totalWords": 300742,
+  "quality": {
+    "template": 0,
+    "enCalque": 0,
+    "scanned": 8639
+  },
   "sampleBatch": [
-    "H7264",
-    "H7622",
-    "H8098",
-    "H1589",
-    "H160",
-    "H1715",
-    "H374",
-    "H4631",
-    "H5203",
-    "H558",
-    "H5654",
-    "H5857"
+    "H8137",
+    "H8139",
+    "H8146",
+    "H8151",
+    "H8153",
+    "H8158",
+    "H8161",
+    "H8164",
+    "H8167",
+    "H8171",
+    "H8176",
+    "H8180"
   ]
 }

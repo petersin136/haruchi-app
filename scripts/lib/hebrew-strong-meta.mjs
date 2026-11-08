@@ -26,23 +26,24 @@ function stripTags(s) {
     .trim();
 }
 
-/** @type {Map<string, { rootStrong: string|null, sourceText: string, meaning: string, def: string, pos: string }>|null} */
+/** @type {Map<string, { rootStrong: string|null, rootStrongs: string[], sourceText: string, meaning: string, def: string, pos: string, nameEtymEn: string }>|null} */
 let _meta = null;
 
 export function loadStrongMeta() {
   if (_meta) return _meta;
   _meta = new Map();
 
-  // 빠른 경로: strong-he.json meaning + XML source
   if (fs.existsSync(RAW_JSON)) {
     const raw = JSON.parse(fs.readFileSync(RAW_JSON, "utf8"));
     for (const [id, e] of Object.entries(raw)) {
       _meta.set(normH(id), {
         rootStrong: null,
+        rootStrongs: [],
         sourceText: "",
         meaning: e.meaning || "",
         def: e.def || "",
         pos: e.pos || "",
+        nameEtymEn: "",
       });
     }
   }
@@ -59,26 +60,69 @@ export function loadStrongMeta() {
         normH(x[1]),
       );
       const sourceText = stripTags(sourceRaw);
-      const meaning =
-        stripTags(body.match(/<meaning>([\s\S]*?)<\/meaning>/)?.[1] || "") ||
-        _meta.get(id)?.meaning ||
-        "";
-      const def =
-        stripTags(body.match(/<def>([\s\S]*?)<\/def>/)?.[1] || "") ||
-        _meta.get(id)?.def ||
-        "";
+      // source 안 <def>가 이름 풀이인 경우가 많음 (meaning의 표제어 def보다 우선)
+      const sourceDef = stripTags(
+        sourceRaw.match(/<def>([\s\S]*?)<\/def>/)?.[1] || "",
+      );
+      const meaningRaw = body.match(/<meaning>([\s\S]*?)<\/meaning>/)?.[1] || "";
+      const meaning = stripTags(meaningRaw) || _meta.get(id)?.meaning || "";
+      const meaningDef = stripTags(
+        meaningRaw.match(/<def>([\s\S]*?)<\/def>/)?.[1] || "",
+      );
       const pos =
         body.match(/<w\b[^>]*\bpos="([^"]+)"/)?.[1] || _meta.get(id)?.pos || "";
+      const nameEtymEn =
+        extractNameEtymEn(sourceText, sourceDef) || sourceDef || "";
       _meta.set(id, {
         rootStrong: srcIds[0] || null,
+        rootStrongs: [...new Set(srcIds)],
         sourceText,
         meaning,
-        def,
+        def: nameEtymEn || meaningDef || _meta.get(id)?.def || "",
         pos,
+        nameEtymEn,
       });
     }
   }
   return _meta;
+}
+
+/**
+ * Strong source에서 이름 풀이(영어)만 뽑음.
+ * 예: "dual of … 672; double fruit;" → "double fruit"
+ *     "from 3068 and 1931; Jehovah (is) He;" → "Jehovah (is) He"
+ */
+export function extractNameEtymEn(sourceText, sourceDef = "") {
+  if (sourceDef && !/^[A-Z][a-z]+$/.test(sourceDef)) {
+    // Urijah 같은 표제어만 있는 def는 제외, flame of Jah 등은 채택
+    if (!/^(?:a |an |the )?[A-Z][a-z]+(?:ites)?$/.test(sourceDef)) {
+      return sourceDef.replace(/\.$/, "").trim();
+    }
+  }
+  const parts = String(sourceText || "")
+    .split(";")
+    .map((s) => s.replace(/\.$/, "").trim())
+    .filter(Boolean);
+  for (let i = parts.length - 1; i >= 0; i--) {
+    let p = parts[i];
+    if (/^from\b/i.test(p)) continue;
+    if (/^(?:dual|plural|prolonged|contracted|or|compare|see|active|passive)\b/i.test(p))
+      continue;
+    if (/^of\b/i.test(p) && p.length < 12) continue;
+    if (/^\d+$/.test(p)) continue;
+    if (/^H?\d+$/i.test(p)) continue;
+    // "apparently …" 같은 주석은 스킵
+    if (/^apparently\b/i.test(p)) continue;
+    p = p
+      .replace(/^\((?:the|a|an)\)\s*/i, "")
+      .replace(/\bi\.e\.\s*/gi, "")
+      .trim();
+    if (p.length < 3) continue;
+    // 단독 고유명사 표기만 있으면 스킵
+    if (/^[A-Z][a-z]+(?:ites)?$/.test(p)) continue;
+    return p;
+  }
+  return "";
 }
 
 /** BDB/Strong 첫 의미 묶음 (세미콜론 앞), 최대 max자 */
@@ -93,79 +137,65 @@ export function firstSenseEn(meaningOrDef, max = 160) {
 }
 
 /**
- * Strong source/meaning에서 고유명사 이름뜻(영어) 추출 후 한국어로.
- * 예: "father of a multitude" → "많은 무리의 아버지"
+ * Strong source 이름 풀이 → 한국어.
+ * 뿌리 한글 gloss만 단독으로 쓰지 않음(추측 금지).
+ * 확정 불가 시 "".
  */
-export function deriveNameMeaningKo(meta, rootGlossKo = "") {
+export function deriveNameMeaningKo(meta, _rootGlossKo = "") {
   if (!meta) return "";
-  const src = meta.sourceText || "";
-  const meaning = meta.meaning || "";
-
-  // source 세미콜론 뒤 설명 (Abraham 등)
-  const afterSemi = src.includes(";")
-    ? src
-        .split(";")
-        .slice(1)
-        .join(";")
-        .replace(/\.$/, "")
-        .trim()
-    : "";
-  const cand =
-    cleanNameGlossEn(afterSemi) ||
-    cleanNameGlossEn(meaning) ||
-    (rootGlossKo ? "" : "");
-
-  if (cand) {
-    const ko = translateNameGloss(cand);
-    if (ko) return ko;
-  }
-  // 뿌리가 보통명사이면 「…라는 뜻의 이름」
-  if (rootGlossKo && !/여호와|하나님|주/.test(rootGlossKo)) {
-    return `${rootGlossKo}이라는 뜻의 이름`;
-  }
-  return "";
-}
-
-function cleanNameGlossEn(s) {
-  let t = String(s || "").trim();
-  if (!t) return "";
-  // "Rachel, a wife of Jacob" → skip biography-only
-  if (/^Rachel|^Abraham|^Moses|^David|^Israel|^Judah|^Joseph/i.test(t) && !/father|mother|son|god|joy|judge|knowledge|multitude|ewe|lamb|exisent|exist/i.test(t)) {
-    // keep if has etymological content in parentheses
-    const paren = t.match(/\(([^)]+)\)/);
-    if (paren && /father|mother|god|joy|judge|know|multitude|lamb|exist/i.test(paren[1])) {
-      t = paren[1];
-    } else {
-      return "";
+  let etymEn =
+    meta.nameEtymEn ||
+    extractNameEtymEn(meta.sourceText || "", "") ||
+    "";
+  // source에 풀이가 없고 meaning 앞머리가 풀이인 경우 (이스라엘 등)
+  if (!etymEn && meta.meaning) {
+    const head = String(meta.meaning).split(";")[0].trim();
+    // "he will rule as God" / "Jehovah-saved" 형태만
+    if (
+      /^(?:he will|jah |jehovah|god |father |son |house |flame |heard |double )/i.test(
+        head,
+      ) &&
+      !/^[A-Z][a-z]+,/.test(head)
+    ) {
+      etymEn = head;
+    } else if (/^he will rule as god/i.test(head)) {
+      etymEn = "he will rule as God";
     }
   }
-  t = t
-    .replace(/^\((the)\)\s*/i, "")
-    .replace(/\bJewish national name of God\b/i, "self-Existent or Eternal")
-    .replace(/\bi\.e\.\s*/gi, "")
-    .replace(/\s+/g, " ")
-    .trim();
-  // too short / just a proper name
-  if (t.length < 4) return "";
-  if (/^[A-Z][a-z]+$/.test(t)) return "";
-  return t;
+  // "Jisraël, …" 앞에 풀이가 세미콜론으로 분리된 경우
+  if (!etymEn && /he will rule as God/i.test(meta.meaning || "")) {
+    etymEn = "he will rule as God";
+  }
+  if (!etymEn) return "";
+  return translateNameGloss(etymEn);
 }
 
-/** Strong 이름뜻 영어 → 짧은 한국어 (퍼블릭 도메인 뜻, 우리 문장) */
-function translateNameGloss(en) {
-  const s = String(en).toLowerCase().replace(/\./g, "").trim();
-  const map = [
+/** Strong 이름뜻 영어 → 짧은 한국어 (퍼블릭 도메인 뜻) */
+export function translateNameGloss(en) {
+  let raw = String(en || "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!raw) return "";
+
+  // 전체 구 매핑 (대소문자 무시)
+  const s = raw.toLowerCase().replace(/\./g, "").trim();
+  const exact = [
     [/self-?existent or eternal|self-?existent/, "스스로 계신 분, 영원하신 분"],
+    [/double fruit/, "두 배의 열매"],
+    [/jehovah \(is\) he|jehovah is he|yahweh \(is\) he/, "여호와는 그분이시다"],
+    [/flame of jah|flame of jehovah|fire of jah/, "여호와의 불꽃"],
+    [/jehovah-?saved|jah-?saved|jehovah is salvation|jah is salvation/, "여호와께서 구원하신다"],
+    [/jah will rise|jehovah will rise/, "여호와께서 일으키시리라"],
+    [/god of jehovah|god of jah/, "여호와의 하나님"],
+    [/heard of god|god has heard/, "하나님이 들으셨다"],
     [/father of a multitude|father of multitudes/, "많은 무리의 아버지"],
     [/father of height|exalted father/, "높은 아버지"],
     [/father of (?:a )?multitude/, "많은 무리의 아버지"],
-    [/father \(i\.?e\.? (?:source|founder)\) of joy|father of joy|source of joy/, "기쁨의 아버지"],
-    [/father of judgment|father \(i\.?e\.? judge\)/, "재판의 아버지"],
-    [/father of knowledge|father \(i\.?e\.? knowing\)/, "지식의 아버지"],
-    [/father \(i\.?e\.? possessor\) of god|father of god/, "하나님의 아버지(소유자)"],
-    [/father of gathering|gatherer/, "모으는 아버지"],
-    [/mother of/, "…의 어머니"],
-    [/son of the right hand/, "오른손의 아들"],
+    [/father of joy|source of joy/, "기쁨의 아버지"],
+    [/father of judgment/, "재판의 아버지"],
+    [/father of knowledge/, "지식의 아버지"],
+    [/son of \(?the\)? ?right hand/, "오른손의 아들"],
+    [/he will rule as god/, "하나님처럼 다스리리라"],
     [/heel.?catcher|supplanter/, "발꿈치를 잡는 자"],
     [/laughter/, "웃음"],
     [/princess|noblewoman/, "공주, 귀부인"],
@@ -173,22 +203,341 @@ function translateNameGloss(en) {
     [/beloved/, "사랑받는 자"],
     [/god has heard/, "하나님이 들으셨다"],
     [/god almighty/, "전능하신 하나님"],
-    [/ewe|female sheep/, "암양"],
-    [/journey/, "여행하다"],
+    [/ewe(?:[- ]lamb)?|female sheep/, "암양"],
+    [/house of god/, "하나님의 집"],
+    [/house of vanity/, "헛됨의 집"],
+    [/house of bread/, "빵의 집"],
+    [/house of the ford/, "여울의 집"],
+    [/whom jehovah healed|jehovah has healed/, "여호와께서 고치신 자"],
+    [/jehovah has heard|jah has heard/, "여호와께서 들으신"],
+    [/jehovah has helped|jah has helped/, "여호와께서 도우신"],
+    [/jehovah is salvation|jah is salvation|salvation of jah/, "여호와의 구원"],
+    [/jehovah is exalted/, "여호와는 높으시다"],
+    [/gift of jehovah|gift of jah/, "여호와의 선물"],
+    [/servant of jehovah|servant of jah/, "여호와의 종"],
+    [/man of god/, "하나님의 사람"],
+    [/strength of god|god is strength/, "하나님의 힘"],
+    [/my god is jah|my god is jehovah/, "나의 하나님은 여호와"],
+    [/god with us/, "하나님이 우리와 함께"],
+    [/judge of god|god has judged/, "하나님이 심판하신"],
+    [/he will be/, "그는 …일 것이다"],
+    [/bitterness/, "씀"],
+    [/peaceful|peaceable/, "평화로운"],
+    [/pleasantness|pleasant/, "기쁨, 즐거움"],
+    [/rest/, "안식"],
+    [/dew of jah/, "여호와의 이슬"],
+    [/whom jehovah raised|jehovah has raised/, "여호와께서 일으키신"],
   ];
-  for (const [re, ko] of map) {
+  for (const [re, ko] of exact) {
     if (re.test(s)) return ko;
   }
-  // 짧은 영어 구 직역 근사
-  if (/^father of /.test(s)) {
-    const rest = s.replace(/^father of (?:a |the )?/, "");
-    return `${rest}의 아버지`;
+
+  // 합성: Jehovah/Jah/El/God/house of …
+  const compound = translateCompound(raw);
+  if (compound) return compound;
+
+  if (/^father of (?:a |the )?(.+)$/i.test(raw)) {
+    const rest = raw.replace(/^father of (?:a |the )?/i, "").trim();
+    const rk = translateAtom(rest);
+    return rk ? `${rk}의 아버지` : "";
   }
-  if (s.length <= 40 && /^[a-z0-9 ,'()-]+$/i.test(en)) {
-    // 남은 건 빈 값 — 억지 직역 금지
-    return "";
+  if (/^son of (?:a |the )?(.+)$/i.test(raw)) {
+    const rest = raw.replace(/^son of (?:a |the )?/i, "").trim();
+    const rk = translateAtom(rest);
+    return rk ? `${rk}의 아들` : "";
+  }
+  if (/^house of (?:a |the )?(.+)$/i.test(raw)) {
+    const rest = raw.replace(/^house of (?:a |the )?/i, "").trim();
+    const rk = translateAtom(rest);
+    return rk ? `${rk}의 집` : "";
+  }
+
+  // 짧은 구만 원자 번역 시도 — 실패 시 빈 값(추측 금지)
+  if (raw.length <= 48) {
+    const atom = translateAtom(raw);
+    if (atom) return atom;
   }
   return "";
+}
+
+function translateCompound(raw) {
+  const s = raw.trim();
+  // Jehovah/Jah + …
+  let m = s.match(
+    /^(?:Jehovah|Jah|Yahweh)\s*[\(（]?(?:is|has)?[\)）]?\s*(.+)$/i,
+  );
+  if (m) {
+    const rest = m[1].replace(/^\((?:is|has)\)\s*/i, "").trim();
+    if (/^he$/i.test(rest)) return "여호와는 그분이시다";
+    const rk = translateAtom(rest);
+    if (rk) return `여호와는 ${rk}`;
+  }
+  m = s.match(/^(.+?)\s+of\s+(?:Jehovah|Jah|Yahweh)$/i);
+  if (m) {
+    const rk = translateAtom(m[1]);
+    if (rk) return `여호와의 ${rk}`;
+  }
+  m = s.match(/^(?:flame|fire|light|lamp)\s+of\s+(?:Jehovah|Jah|Yahweh)$/i);
+  if (m) return "여호와의 불꽃";
+  m = s.match(/^(.+?)\s+of\s+(?:God|El)$/i);
+  if (m) {
+    const rk = translateAtom(m[1]);
+    if (rk) return `하나님의 ${rk}`;
+  }
+  m = s.match(/^(?:God|El)\s+(?:is\s+)?(.+)$/i);
+  if (m) {
+    const rk = translateAtom(m[1]);
+    if (rk) return `하나님은 ${rk}`;
+  }
+  return "";
+}
+
+function translateAtom(en) {
+  const s = String(en || "")
+    .toLowerCase()
+    .replace(/[()]/g, "")
+    .replace(/\bi\.e\.\s*/g, "")
+    .replace(/^(?:a|an|the)\s+/, "")
+    .trim();
+  const map = {
+    he: "그분",
+    she: "그녀",
+    god: "하나님",
+    el: "하나님",
+    jah: "여호와",
+    jehovah: "여호와",
+    yahweh: "여호와",
+    flame: "불꽃",
+    fire: "불",
+    light: "빛",
+    lamp: "등불",
+    fruit: "열매",
+    double: "두 배",
+    house: "집",
+    father: "아버지",
+    mother: "어머니",
+    son: "아들",
+    daughter: "딸",
+    servant: "종",
+    gift: "선물",
+    help: "도움",
+    helped: "도우신 분",
+    heard: "들으신 분",
+    healed: "고치신 분",
+    salvation: "구원",
+    strength: "힘",
+    rock: "반석",
+    peace: "평안",
+    rest: "안식",
+    dew: "이슬",
+    grace: "은혜",
+    mercy: "긍휼",
+    truth: "진리",
+    judge: "재판관",
+    king: "왕",
+    lord: "주",
+    height: "높음",
+    vanity: "헛됨",
+    bread: "빵",
+    wall: "성벽",
+    ford: "여울",
+    valley: "골짜기",
+    desert: "광야",
+    vineyard: "포도원",
+    acacia: "싯딤",
+    pasture: "목장",
+    beloved: "사랑받는 자",
+    pleasant: "기쁨",
+    pleasantness: "기쁨",
+    bitterness: "씀",
+    laughter: "웃음",
+    journey: "여행",
+    multitude: "무리",
+    knowledge: "지식",
+    judgment: "재판",
+    joy: "기쁨",
+    exalted: "높으신 분",
+    raised: "일으키신 분",
+    creative: "창조하는",
+    weaned: "젖뗀",
+    hollowness: "텅 빔",
+    side: "옆",
+    breadth: "넓이",
+    habitation: "거처",
+    ambush: "매복",
+    dagon: "다곤",
+    baal: "바알",
+    partridge: "메추라기",
+    lionesses: "암사자",
+    figcakes: "무화과 과자",
+    deserts: "황무지",
+  };
+  if (map[s]) return map[s];
+  // 두 단어
+  const parts = s.split(/\s+/);
+  if (parts.length === 2 && map[parts[0]] && map[parts[1]]) {
+    return `${map[parts[0]]} ${map[parts[1]]}`;
+  }
+  return "";
+}
+
+function particleEun(word) {
+  const ch = String(word || "").replace(/[^가-힣]/g, "").slice(-1);
+  if (!ch) return "은";
+  const code = ch.charCodeAt(0) - 0xac00;
+  if (code < 0 || code > 11171) return "은";
+  return code % 28 === 0 ? "는" : "은";
+}
+
+/**
+ * Strong meaning의 신원 설명(영어) → 짧은 한국어 한 문장.
+ * 추측·공통 틀 문장 없이, Strong에 있는 사실만.
+ */
+export function deriveIdentityKo(meta, krName = "") {
+  if (!meta?.meaning) return "";
+  let m = String(meta.meaning)
+    .replace(/\s+/g, " ")
+    .trim();
+  // "Jehu, the name of five Israelites" → 신원 빈약 → ""
+  if (/,?\s*the name of (?:five|several|many|one|two|three|four|six|seven|eight|nine|ten|\d+) /i.test(m) &&
+      !/son of|daughter of|king of|place|city|wife|priest|prophet|tribe|river|mountain/i.test(m)) {
+    // "Urijah, the name of one Hittite and five Israelites" — Hittite는 사실
+    const hit = m.match(/one ([A-Za-z]+)/i);
+    if (hit && /Hittite|Moabite|Ammonite|Edomite|Egyptian|Syrian|Philistine/i.test(hit[1])) {
+      const who = translateGentilic(hit[1]);
+      const name = krName || "이 사람";
+      return who ? `${name}는 ${who}으로 기록된 인물이에요.` : "";
+    }
+    return "";
+  }
+  // "he will rule as God; Jisraël, a symbolical name of Jacob…"
+  if (/symbolical name of Jacob|name of Jacob/i.test(m)) {
+    const name = krName || "이스라엘";
+    return `${name}${particleEun(name)} 야곱에게 주신 이름이며, 그 자손 백성과 나라를 가리켜요.`;
+  }
+  if (/the Jewish leader/i.test(m)) {
+    const name = krName || "이 사람";
+    return `${name}${particleEun(name)} 이스라엘을 이끈 지도자로 Strong에 소개돼요.`;
+  }
+  if (/the famous prophet/i.test(m)) {
+    const name = krName || "이 사람";
+    return `${name}${particleEun(name)} 유명한 예언자로 Strong에 소개돼요.`;
+  }
+
+  // "Ephrajim, a son of Joseph; also the tribe…"
+  m = m.replace(/^[^,]+,\s*/, ""); // 영어 이름 제거
+  const first = m.split(";")[0].trim();
+  if (!first || first.length < 8) return "";
+
+  const name = krName || "이 이름";
+  const youngSon = first.match(/youngest son of ([A-Za-z' -]+)/i);
+  if (youngSon) {
+    const parent = transliteratePerson(youngSon[1]);
+    return parent ? `${name}${particleEun(name)} ${parent}의 막내아들이에요.` : "";
+  }
+  const sonOf = first.match(/^a son of ([A-Za-z' -]+)/i);
+  if (sonOf) {
+    const parent = transliteratePerson(sonOf[1]);
+    return parent ? `${name}${particleEun(name)} ${parent}의 아들이에요.` : "";
+  }
+  const dauOf = first.match(/^a daughter of ([A-Za-z' -]+)/i);
+  if (dauOf) {
+    const parent = transliteratePerson(dauOf[1]);
+    return parent ? `${name}${particleEun(name)} ${parent}의 딸이에요.` : "";
+  }
+  const wifeOf = first.match(/^(?:a )?wife of ([A-Za-z' -]+)/i);
+  if (wifeOf) {
+    const hus = transliteratePerson(wifeOf[1]);
+    return hus ? `${name}${particleEun(name)} ${hus}의 아내예요.` : "";
+  }
+  const place = first.match(/^(?:a )?(?:place|city|town|location) (?:in|east of|west of|near) ([A-Za-z' -]+)/i);
+  if (place) {
+    const where = transliteratePlace(place[1]);
+    return where ? `${name}${particleEun(name)} ${where}에 있는 지명이에요.` : `${name}${particleEun(name)} 지명이에요.`;
+  }
+  if (/^an? (?:Israelite|place|city|town|river|mountain|valley|region)/i.test(first)) {
+    if (/^an? Israelite$/i.test(first)) return "";
+    if (/^an? (?:place|city|town)/i.test(first)) return `${name}${particleEun(name)} 지명이에요.`;
+    if (/river/i.test(first)) return `${name}${particleEun(name)} 강 이름이에요.`;
+    if (/mountain/i.test(first)) return `${name}${particleEun(name)} 산 이름이에요.`;
+  }
+  const king = first.match(/^(?:a )?king of ([A-Za-z' -]+)/i);
+  if (king) {
+    const land = transliteratePlace(king[1]);
+    return land ? `${name}${particleEun(name)} ${land}의 왕으로 나와요.` : "";
+  }
+  if (/tribe descended from him/i.test(m) && /son of Joseph/i.test(meta.meaning || "")) {
+    return `${name}${particleEun(name)} 요셉의 아들이자 그 자손 지파·영토를 가리키기도 해요.`;
+  }
+  if (/tribe descended from him/i.test(m) && /son of Jacob|youngest son of Jacob/i.test(meta.meaning || "")) {
+    return `${name}${particleEun(name)} 야곱의 아들이자 그 자손 지파·영토를 가리키기도 해요.`;
+  }
+  return "";
+}
+
+function translateGentilic(en) {
+  const map = {
+    Hittite: "헷 사람",
+    Moabite: "모압 사람",
+    Ammonite: "암몬 사람",
+    Edomite: "에돔 사람",
+    Egyptian: "애굽 사람",
+    Syrian: "아람 사람",
+    Philistine: "블레셋 사람",
+  };
+  return map[en] || "";
+}
+
+function transliteratePerson(en) {
+  const map = {
+    Joseph: "요셉",
+    Jacob: "야곱",
+    Abraham: "아브라함",
+    Isaac: "이삭",
+    David: "다윗",
+    Saul: "사울",
+    Moses: "모세",
+    Aaron: "아론",
+    Solomon: "솔로몬",
+    Jesse: "이새",
+    Noah: "노아",
+    Adam: "아담",
+    Judah: "유다",
+    Levi: "레위",
+    Benjamin: "베냐민",
+    Ephraim: "에브라임",
+    Manasseh: "므낫세",
+    Ahab: "아합",
+    Nebat: "느밧",
+    Nun: "눈",
+    Amram: "아므람",
+    Kish: "기스",
+    Ner: "넬",
+    Zeruiah: "스루야",
+    Naomi: "나오미",
+  };
+  const t = String(en).trim();
+  return map[t] || "";
+}
+
+function transliteratePlace(en) {
+  const map = {
+    Palestine: "가나안/팔레스타인",
+    Canaan: "가나안",
+    Egypt: "애굽",
+    Moab: "모압",
+    Edom: "에돔",
+    Ammon: "암몬",
+    Syria: "아람",
+    Assyria: "앗수르",
+    Babylon: "바벨론",
+    Judah: "유다",
+    Israel: "이스라엘",
+    Jordan: "요단",
+    "the Jordan": "요단",
+  };
+  const t = String(en).trim();
+  return map[t] || map[t.replace(/^the\s+/i, "")] || "";
 }
 
 export function isProperPos(pos) {

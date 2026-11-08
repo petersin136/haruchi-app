@@ -1,0 +1,343 @@
+{
+  "note": "B1–B3=직전 세션 900; B4–B28=이번 until-done 25묶음(마지막 231)",
+  "lexiconFilesTotal": 8664,
+  "corpusCountOT_ge1": 8639,
+  "countOT_eq0": [
+    {
+      "strong": "H25",
+      "lemma": "אֲבִי גִבְעוֹן",
+      "defEn": "Abi-Gibon, perhaps an Israelite"
+    },
+    {
+      "strong": "H58",
+      "lemma": "אָבֵל",
+      "defEn": "a meadow"
+    },
+    {
+      "strong": "H381",
+      "lemma": "אִישׁ־חַיִל",
+      "defEn": "Ishchail (or Ish-chai), an Israelite"
+    },
+    {
+      "strong": "H382",
+      "lemma": "אִישׁ־טוֹב",
+      "defEn": "Ish-Tob, a place in Palestine"
+    },
+    {
+      "strong": "H415",
+      "lemma": "אֵל אֱלֹהֵי יִשְׂרָאֵל",
+      "defEn": "El-Elohi-Jisrael, the title given to a consecrated spot by Jacob"
+    },
+    {
+      "strong": "H416",
+      "lemma": "אֵל בֵּית־אֵל",
+      "defEn": "El-Bethel, the title given to a consecrated spot by Jacob"
+    },
+    {
+      "strong": "H704",
+      "lemma": "אַרְבַּע",
+      "defEn": "Arba, one of the Anakim"
+    },
+    {
+      "strong": "H798",
+      "lemma": "אַשְׁדּוֹת הַפִּסְגָּה",
+      "defEn": "Ashdoth-Pisgah, a place east of the Jordan"
+    },
+    {
+      "strong": "H1181",
+      "lemma": "בַּעֲלֵי בָּמוֹת",
+      "defEn": "Baale-Bamoth, a place East of the Jordan"
+    },
+    {
+      "strong": "H1531",
+      "lemma": "גֹּל",
+      "defEn": "a cup for oil (as round)"
+    },
+    {
+      "strong": "H1751",
+      "lemma": "דּוּק",
+      "defEn": "to crumble"
+    },
+    {
+      "strong": "H1857",
+      "lemma": "דֶּקֶר",
+      "defEn": "Deker, an Israelite"
+    },
+    {
+      "strong": "H1928",
+      "lemma": "הֲדַרְעֶזֶר",
+      "defEn": "Hadarezer, a Syrian king"
+    },
+    {
+      "strong": "H2004",
+      "lemma": "הֵן",
+      "defEn": "they (only used when emphatic)"
+    },
+    {
+      "strong": "H2089",
+      "lemma": "זֶה",
+      "defEn": "a sheep"
+    },
+    {
+      "strong": "H2316",
+      "lemma": "חֲדַר",
+      "defEn": "Chadar, an Ishmaelite"
+    },
+    {
+      "strong": "H2618",
+      "lemma": "חֶסֶד",
+      "defEn": "Chesed, an Israelite"
+    },
+    {
+      "strong": "H3128",
+      "lemma": "יוֹנַת אֵלֶם רְחֹקִים",
+      "defEn": "dove of (the) silence (i.e. dumb Israel) of (i.e. among) distances (i.e. strange"
+    },
+    {
+      "strong": "H3197",
+      "lemma": "יַךְ",
+      "defEn": "a hand or side"
+    },
+    {
+      "strong": "H3264",
+      "lemma": "יָעוֹר",
+      "defEn": "a forest"
+    },
+    {
+      "strong": "H3661",
+      "lemma": "כָּנַן",
+      "defEn": "to set out, i.e. plant"
+    },
+    {
+      "strong": "H4000",
+      "lemma": "מָבוֹן",
+      "defEn": "instructing"
+    },
+    {
+      "strong": "H4078",
+      "lemma": "מַדַּי",
+      "defEn": "what (is) enough, i.e. sufficiently"
+    },
+    {
+      "strong": "H5899",
+      "lemma": "עִיר הַתְּמָרִים",
+      "defEn": "Ir-hat-Temarim, a place in Palestine"
+    },
+    {
+      "strong": "H7741",
+      "lemma": "שָׁוֵה קִרְיָתַיִם",
+      "defEn": "Shaveh-Kirjathajim, a place East of the Jordan"
+    }
+  ],
+  "reason": "파일은 8664개 유지. 보고의 8639는 MorphHB 본문에 1회 이상 나온 strong만. 25개는 Strong 표제어·복합명 등으로 본문 출현 0(countOT=0).",
+  "batches": [
+    {
+      "id": "B1",
+      "new": 300,
+      "cum": 608,
+      "wordPct": 79.02,
+      "empty": 8031
+    },
+    {
+      "id": "B2",
+      "new": 300,
+      "cum": 908,
+      "wordPct": 84.06,
+      "empty": 7731
+    },
+    {
+      "id": "B3",
+      "new": 300,
+      "cum": 1208,
+      "wordPct": 87.44,
+      "empty": 7431
+    },
+    {
+      "id": "B4",
+      "new": 300,
+      "cum": 1508,
+      "wordPct": 89.83,
+      "empty": 7131
+    },
+    {
+      "id": "B5",
+      "new": 300,
+      "cum": 1808,
+      "wordPct": 91.62,
+      "empty": 6831
+    },
+    {
+      "id": "B6",
+      "new": 300,
+      "cum": 2108,
+      "wordPct": 93.02,
+      "empty": 6531
+    },
+    {
+      "id": "B7",
+      "new": 300,
+      "cum": 2408,
+      "wordPct": 94.13,
+      "empty": 6231
+    },
+    {
+      "id": "B8",
+      "new": 300,
+      "cum": 2708,
+      "wordPct": 95.02,
+      "empty": 5931
+    },
+    {
+      "id": "B9",
+      "new": 300,
+      "cum": 3008,
+      "wordPct": 95.76,
+      "empty": 5631
+    },
+    {
+      "id": "B10",
+      "new": 300,
+      "cum": 3308,
+      "wordPct": 96.37,
+      "empty": 5331
+    },
+    {
+      "id": "B11",
+      "new": 300,
+      "cum": 3608,
+      "wordPct": 96.88,
+      "empty": 5031
+    },
+    {
+      "id": "B12",
+      "new": 300,
+      "cum": 3908,
+      "wordPct": 97.31,
+      "empty": 4731
+    },
+    {
+      "id": "B13",
+      "new": 300,
+      "cum": 4208,
+      "wordPct": 97.7,
+      "empty": 4431
+    },
+    {
+      "id": "B14",
+      "new": 300,
+      "cum": 4508,
+      "wordPct": 98,
+      "empty": 4131
+    },
+    {
+      "id": "B15",
+      "new": 300,
+      "cum": 4808,
+      "wordPct": 98.3,
+      "empty": 3831
+    },
+    {
+      "id": "B16",
+      "new": 300,
+      "cum": 5108,
+      "wordPct": 98.5,
+      "empty": 3531
+    },
+    {
+      "id": "B17",
+      "new": 300,
+      "cum": 5408,
+      "wordPct": 98.7,
+      "empty": 3231
+    },
+    {
+      "id": "B18",
+      "new": 300,
+      "cum": 5708,
+      "wordPct": 98.9,
+      "empty": 2931
+    },
+    {
+      "id": "B19",
+      "new": 300,
+      "cum": 6008,
+      "wordPct": 99.09,
+      "empty": 2631
+    },
+    {
+      "id": "B20",
+      "new": 300,
+      "cum": 6308,
+      "wordPct": 99.22,
+      "empty": 2331
+    },
+    {
+      "id": "B21",
+      "new": 300,
+      "cum": 6608,
+      "wordPct": 99.32,
+      "empty": 2031
+    },
+    {
+      "id": "B22",
+      "new": 300,
+      "cum": 6908,
+      "wordPct": 99.42,
+      "empty": 1731
+    },
+    {
+      "id": "B23",
+      "new": 300,
+      "cum": 7208,
+      "wordPct": 99.52,
+      "empty": 1431
+    },
+    {
+      "id": "B24",
+      "new": 300,
+      "cum": 7508,
+      "wordPct": 99.62,
+      "empty": 1131
+    },
+    {
+      "id": "B25",
+      "new": 300,
+      "cum": 7808,
+      "wordPct": 99.72,
+      "empty": 831
+    },
+    {
+      "id": "B26",
+      "new": 300,
+      "cum": 8108,
+      "wordPct": 99.82,
+      "empty": 531
+    },
+    {
+      "id": "B27",
+      "new": 300,
+      "cum": 8408,
+      "wordPct": 99.92,
+      "empty": 231
+    },
+    {
+      "id": "B28",
+      "new": 231,
+      "cum": 8639,
+      "wordPct": 100,
+      "empty": 0
+    }
+  ],
+  "qualityFix": {
+    "before": {
+      "templateStyle": 1187,
+      "meaningWordPattern": 0,
+      "enCalque": 1
+    },
+    "after": {
+      "templateStyle": 0,
+      "meaningWordPattern": 0,
+      "enCalque": 0
+    }
+  }
+}
