@@ -1,6 +1,7 @@
 import type { WatchBookId } from "../data/books";
 
-export const SPEED_OPTIONS = [1.25, 1.5, 1.75, 2] as const;
+/** 배속 팝오버 전체 목록 (1 = 보통) */
+export const SPEED_OPTIONS = [0.75, 1, 1.25, 1.5, 1.75, 2] as const;
 export type SpeedOption = (typeof SPEED_OPTIONS)[number];
 export const DEFAULT_SPEED: SpeedOption = 1.5;
 

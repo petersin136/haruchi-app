@@ -4,31 +4,36 @@ import {
   useEffect,
   useRef,
   useState,
-  type CSSProperties,
-  type KeyboardEvent,
-  type PointerEvent,
+  type PointerEvent as ReactPointerEvent,
 } from "react";
+import { SPEED_OPTIONS, type SpeedOption } from "./watchStorage";
 import "./remote.css";
-
-const HOLD_MS = 500;
-
-type RemoteVariant = "a" | "b";
 
 type Props = {
   disabled: boolean;
   playing: boolean;
-  speedOn: boolean;
-  speed: number;
-  prevLabel: string | null;
-  nextLabel: string | null;
+  speed: SpeedOption;
+  bookName: string;
+  chapter: number;
+  currentVerse: number | null;
+  /** 이 장 안 경과(초) */
+  chapterElapsed: number;
+  /** 이 장 길이(초) */
+  chapterLength: number;
+  chapterProgress: number;
+  prevChapter: number | null;
+  nextChapter: number | null;
   onPrev: () => void;
   onNext: () => void;
   onTogglePlay: () => void;
-  onToggleSpeed: () => void;
-  onOpenSpeedSheet: () => void;
+  onSelectSpeed: (speed: SpeedOption) => void;
+  onOpenVerseSheet: () => void;
+  onReplayVerse: () => void;
+  /** 0~1 — 장 안 위치 */
+  onSeekInChapter: (ratio: number) => void;
 };
 
-type NowInfo = { title: string; sub: string; progress: number };
+const EASE = "cubic-bezier(0.2, 0.8, 0.2, 1)";
 
 const iconProps = {
   fill: "none" as const,
@@ -38,254 +43,251 @@ const iconProps = {
   strokeLinejoin: "round" as const,
 };
 
-const PrevIcon = () => (
-  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden {...iconProps}>
-    <path d="M5 5v14" />
-    <path d="M19 5.8v12.4L9.2 12z" />
-  </svg>
-);
-
-const NextIcon = () => (
-  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden {...iconProps}>
-    <path d="M19 5v14" />
-    <path d="M5 5.8v12.4L14.8 12z" />
+const ReplayIcon = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden {...iconProps}>
+    <path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3" />
+    <path d="M4 4.5v4.2h4.2" />
   </svg>
 );
 
 const PlayIcon = () => (
-  <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden {...iconProps}>
-    <path d="M8 5.5v13l11-6.5z" />
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden {...iconProps}>
+    <path d="M8 5.5v13l11-6.5z" stroke="none" fill="currentColor" />
   </svg>
 );
 
 const PauseIcon = () => (
-  <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden {...iconProps}>
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden {...iconProps}>
     <path d="M8 6v12" />
     <path d="M16 6v12" />
   </svg>
 );
 
-function readVariant(): RemoteVariant {
-  try {
-    return new URLSearchParams(window.location.search).get("remote") === "b" ? "b" : "a";
-  } catch {
-    return "a";
-  }
+function formatChapterClock(total: number): string {
+  const s = Math.max(0, Math.floor(total));
+  const m = Math.floor(s / 60);
+  const sec = String(s % 60).padStart(2, "0");
+  return `${m}:${sec}`;
 }
 
-function readNowInfo(): NowInfo {
-  const pick = document.querySelector(".wt-now-pick");
-  const verse = document.querySelector(".wt-now-verse");
-  const timeEl = document.querySelector(".wt-now-time");
-  const bar = document.querySelector(".wt-now-bar > span") as HTMLElement | null;
-
-  let title = "";
-  if (pick) {
-    const clone = pick.cloneNode(true) as HTMLElement;
-    clone.querySelectorAll(".wt-now-verse, .wt-now-caret, svg").forEach((n) => n.remove());
-    title = (clone.textContent ?? "").replace(/\s+/g, " ").trim();
-  }
-
-  const timeRaw = (timeEl?.childNodes[0]?.textContent ?? timeEl?.textContent ?? "").trim();
-  const elapsed = timeRaw.split("/")[0]?.trim() ?? "";
-  const verseText = (verse?.textContent ?? "").trim();
-  const sub = verseText && elapsed ? `${verseText} · ${elapsed}` : verseText || elapsed;
-
-  let progress = 0;
-  if (bar) {
-    const t = getComputedStyle(bar).transform;
-    if (t && t !== "none") {
-      const m = t.match(/matrix\(([^)]+)\)/);
-      if (m) progress = Math.min(1, Math.max(0, Number(m[1].split(",")[0])));
-    } else {
-      const inline = bar.style.transform.match(/scaleX\(([^)]+)\)/);
-      if (inline) progress = Math.min(1, Math.max(0, Number(inline[1])));
-    }
-  }
-
-  return { title, sub, progress };
+function formatSpeed(v: number): string {
+  if (v === 1) return "1.0×";
+  if (Number.isInteger(v)) return `${v}×`;
+  return `${v}×`;
 }
 
 export default function Remote({
   disabled,
   playing,
-  speedOn,
   speed,
-  prevLabel,
-  nextLabel,
+  bookName,
+  chapter,
+  currentVerse,
+  chapterElapsed,
+  chapterLength,
+  chapterProgress,
+  prevChapter,
+  nextChapter,
   onPrev,
   onNext,
   onTogglePlay,
-  onOpenSpeedSheet,
+  onSelectSpeed,
+  onOpenVerseSheet,
+  onReplayVerse,
+  onSeekInChapter,
 }: Props) {
-  const timerRef = useRef<number | null>(null);
-  const longPressedRef = useRef(false);
-  const lastScrollY = useRef(0);
-  const [variant, setVariant] = useState<RemoteVariant>("a");
-  const [collapsed, setCollapsed] = useState(false);
-  const [now, setNow] = useState<NowInfo>({ title: "", sub: "", progress: 0 });
-
-  const clearTimer = () => {
-    if (timerRef.current !== null) {
-      window.clearTimeout(timerRef.current);
-      timerRef.current = null;
-    }
-  };
-
-  useEffect(() => clearTimer, []);
+  const [speedOpen, setSpeedOpen] = useState(false);
+  const scrubbing = useRef(false);
+  const trackRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const v = readVariant();
-    setVariant(v);
-    const page = document.querySelector(".wt-page");
-    if (page) page.setAttribute("data-remote", v);
+    if (!speedOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSpeedOpen(false);
+    };
+    const onPointer = (e: PointerEvent) => {
+      const t = e.target as Node | null;
+      if (!t) return;
+      const wrap = document.querySelector(".wt-rc-wrap");
+      if (wrap && wrap.contains(t)) return;
+      setSpeedOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("pointerdown", onPointer);
     return () => {
-      page?.removeAttribute("data-remote");
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("pointerdown", onPointer);
     };
-  }, []);
+  }, [speedOpen]);
 
-  useEffect(() => {
-    if (variant !== "b") return;
-    const tick = () => setNow(readNowInfo());
-    tick();
-    const id = window.setInterval(tick, 400);
-    return () => window.clearInterval(id);
-  }, [variant]);
-
-  useEffect(() => {
-    if (variant !== "a") return;
-    const page = document.querySelector(".wt-page");
-    if (!page) return;
-    lastScrollY.current = page.scrollTop;
-    const onScroll = () => {
-      const y = page.scrollTop;
-      const dy = y - lastScrollY.current;
-      lastScrollY.current = y;
-      if (dy > 4 && y > 24) setCollapsed(true);
-      else if (dy < -4) setCollapsed(false);
-      if (y <= 8) setCollapsed(false);
-    };
-    page.addEventListener("scroll", onScroll, { passive: true });
-    return () => page.removeEventListener("scroll", onScroll);
-  }, [variant]);
-
-  const openSpeed = () => {
-    if (variant === "a") setCollapsed(false);
-    onOpenSpeedSheet();
+  const ratioFromClientX = (clientX: number) => {
+    const el = trackRef.current;
+    if (!el) return 0;
+    const r = el.getBoundingClientRect();
+    if (r.width <= 0) return 0;
+    return Math.min(1, Math.max(0, (clientX - r.left) / r.width));
   };
 
-  const handleDown = (e: PointerEvent<HTMLButtonElement>) => {
-    if (disabled || e.button !== 0) return;
-    if (collapsed) return;
+  const onScrubDown = (e: ReactPointerEvent<HTMLDivElement>) => {
+    if (disabled || chapterLength <= 0) return;
     e.currentTarget.setPointerCapture(e.pointerId);
-    longPressedRef.current = false;
-    clearTimer();
-    timerRef.current = window.setTimeout(() => {
-      timerRef.current = null;
-      longPressedRef.current = true;
-      if ("vibrate" in navigator) navigator.vibrate(12);
-      openSpeed();
-    }, HOLD_MS);
+    scrubbing.current = true;
+    onSeekInChapter(ratioFromClientX(e.clientX));
   };
 
-  const handleUp = () => {
-    if (disabled) return;
-    if (collapsed) {
-      setCollapsed(false);
-      return;
-    }
-    const wasLong = longPressedRef.current;
-    clearTimer();
-    longPressedRef.current = false;
-    if (!wasLong) onTogglePlay();
+  const onScrubMove = (e: ReactPointerEvent<HTMLDivElement>) => {
+    if (!scrubbing.current) return;
+    onSeekInChapter(ratioFromClientX(e.clientX));
   };
 
-  const handleCancel = () => {
-    clearTimer();
-    longPressedRef.current = false;
+  const onScrubUp = () => {
+    scrubbing.current = false;
   };
 
-  const handleKey = (e: KeyboardEvent<HTMLButtonElement>) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      if (disabled || e.repeat) return;
-      if (collapsed) setCollapsed(false);
-      else onTogglePlay();
-    }
-  };
-
-  const rateLabel = speedOn ? `${speed}×` : "1.0×";
-  const progressStyle = { "--wt-rc-progress": String(now.progress) } as CSSProperties;
+  const versePart =
+    currentVerse !== null ? `${chapter}:${currentVerse}` : null;
 
   return (
     <>
       <div className="wt-rc-fade" aria-hidden />
-      <div
-        className={`wt-rc-wrap${collapsed ? " is-collapsed" : ""}`}
-        data-variant={variant}
-      >
-        <div className="wt-rc" role="group" aria-label="영상 리모컨" style={progressStyle}>
-          {variant === "b" && (
-            <>
-              <div className="wt-rc-progress" aria-hidden>
-                <span />
-              </div>
-              <div className="wt-rc-meta">
-                <span className="wt-rc-meta-title">{now.title || "…"}</span>
-                <span className="wt-rc-meta-sub">{now.sub || "—"}</span>
-              </div>
-            </>
-          )}
+      <div className="wt-rc-wrap">
+        {speedOpen && (
+          <div className="wt-rc-speed-pop" role="listbox" aria-label="배속 선택">
+            {SPEED_OPTIONS.map((v) => (
+              <button
+                key={v}
+                type="button"
+                role="option"
+                aria-selected={speed === v}
+                className={`wt-rc-speed-opt${speed === v ? " is-selected" : ""}`}
+                onClick={() => {
+                  onSelectSpeed(v);
+                  setSpeedOpen(false);
+                }}
+              >
+                {formatSpeed(v)}
+              </button>
+            ))}
+          </div>
+        )}
 
-          <div className="wt-rc-controls">
+        <div className="wt-rc" role="group" aria-label="영상 리모컨">
+          <div className="wt-rc-row1">
             <button
               type="button"
-              className="wt-rc-btn wt-rc-side"
-              onClick={onPrev}
-              disabled={disabled || prevLabel === null}
-              aria-label={prevLabel ? `${prevLabel}로 이동` : "이전 장 없음"}
-            >
-              <PrevIcon />
-            </button>
-
-            <button
-              type="button"
-              className="wt-rc-btn wt-rc-play"
+              className="wt-rc-title"
+              onClick={onOpenVerseSheet}
               disabled={disabled}
-              aria-label={
-                collapsed
-                  ? "리모컨 펼치기"
-                  : `${playing ? "일시정지" : "재생"} (길게 누르면 배속 선택)`
-              }
-              onPointerDown={handleDown}
-              onPointerUp={handleUp}
-              onPointerCancel={handleCancel}
-              onKeyDown={handleKey}
-              onContextMenu={(e) => e.preventDefault()}
+              aria-haspopup="dialog"
             >
-              {playing ? <PauseIcon /> : <PlayIcon />}
+              <span className="wt-rc-title-book">
+                {bookName} {chapter}장
+              </span>
+              {versePart && (
+                <>
+                  <span className="wt-rc-title-dot" aria-hidden>
+                    ·
+                  </span>
+                  <span className="wt-rc-title-verse">{versePart}</span>
+                </>
+              )}
+              <span className="wt-rc-title-caret" aria-hidden>
+                ▾
+              </span>
+            </button>
+            <span className="wt-rc-clock">
+              {formatChapterClock(chapterElapsed)}
+              <span className="wt-rc-clock-sep"> / </span>
+              {formatChapterClock(chapterLength)}
+            </span>
+          </div>
+
+          <div
+            ref={trackRef}
+            className="wt-rc-scrub"
+            role="slider"
+            aria-label="이 장 진행"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={Math.round(chapterProgress * 100)}
+            tabIndex={disabled ? -1 : 0}
+            onPointerDown={onScrubDown}
+            onPointerMove={onScrubMove}
+            onPointerUp={onScrubUp}
+            onPointerCancel={onScrubUp}
+          >
+            <div className="wt-rc-scrub-track" aria-hidden>
+              <span
+                className="wt-rc-scrub-fill"
+                style={{ transform: `scaleX(${chapterProgress})` }}
+              />
+            </div>
+          </div>
+
+          <div className="wt-rc-row2">
+            <div className="wt-rc-slot">
+              {prevChapter !== null ? (
+                <button
+                  type="button"
+                  className="wt-rc-chap"
+                  onClick={onPrev}
+                  disabled={disabled}
+                  aria-label={`${prevChapter}장으로 이동`}
+                >
+                  ‹ {prevChapter}장
+                </button>
+              ) : null}
+            </div>
+
+            <button
+              type="button"
+              className="wt-rc-icon-btn"
+              onClick={onReplayVerse}
+              disabled={disabled || currentVerse === null}
+              aria-label="이 절 다시 듣기"
+              title="이 절 다시"
+            >
+              <ReplayIcon />
+              <span className="wt-rc-icon-label">이 절 다시</span>
             </button>
 
             <button
               type="button"
-              className="wt-rc-btn wt-rc-side"
-              onClick={onNext}
-              disabled={disabled || nextLabel === null}
-              aria-label={nextLabel ? `${nextLabel}로 이동` : "다음 장 없음"}
+              className={`wt-rc-play${playing ? " is-playing" : ""}`}
+              onClick={onTogglePlay}
+              disabled={disabled}
+              aria-label={playing ? "일시정지" : "재생"}
             >
-              <NextIcon />
+              <span className="wt-rc-play-icon" style={{ transition: `opacity 180ms ${EASE}` }}>
+                {playing ? <PauseIcon /> : <PlayIcon />}
+              </span>
             </button>
-
-            <span className="wt-rc-divider" aria-hidden />
 
             <button
               type="button"
-              className={`wt-rc-rate${speedOn ? " is-on" : ""}`}
-              onClick={openSpeed}
-              aria-label={`배속 설정 (현재 ${rateLabel})`}
+              className={`wt-rc-rate${speedOpen ? " is-open" : ""}`}
+              onClick={() => setSpeedOpen((o) => !o)}
+              disabled={disabled}
+              aria-expanded={speedOpen}
+              aria-haspopup="listbox"
+              aria-label={`배속 (현재 ${formatSpeed(speed)})`}
             >
-              {rateLabel}
+              {formatSpeed(speed)}
             </button>
+
+            <div className="wt-rc-slot">
+              {nextChapter !== null ? (
+                <button
+                  type="button"
+                  className="wt-rc-chap"
+                  onClick={onNext}
+                  disabled={disabled}
+                  aria-label={`${nextChapter}장으로 이동`}
+                >
+                  {nextChapter}장 ›
+                </button>
+              ) : null}
+            </div>
           </div>
         </div>
       </div>

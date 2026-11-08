@@ -7,7 +7,7 @@
 
 .wt-page {
   --wt-max: 720px;
-  --wt-remote-h: 68px;
+  --wt-remote-h: 132px;
   --wt-safe-b: env(safe-area-inset-bottom, 0px);
 
   --tone-ref: #3d6fe0;
@@ -1013,11 +1013,12 @@
 /* ── 장·절 선택 시트 ────────────────────────────────────────────────────── */
 
 .wt-vs-layer {
-  --vs-bg: #fbf3e6;
-  --vs-accent: #b3121b;
-  --vs-sub: #8a5a4a;
-  --vs-ink: #2b1a14;
-  --vs-tint: rgba(179, 18, 27, 0.06);
+  --vs-bg: #fbf7ee;
+  --vs-accent: #9e1b1b;
+  --vs-sub: #8a8378;
+  --vs-ink: #2a2420;
+  --vs-tint: rgba(158, 27, 27, 0.06);
+  --vs-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
 
   position: fixed;
   inset: 0;
@@ -1035,22 +1036,22 @@
   background: rgba(20, 10, 8, 0.42);
   opacity: 0;
   cursor: default;
-  transition: opacity 250ms ease-out;
+  transition: opacity 250ms var(--vs-ease);
 }
 
 .wt-vs {
   position: relative;
   width: 100%;
   max-width: 520px;
-  max-height: 72vh;
+  max-height: 70dvh;
   overflow-y: auto;
   overscroll-behavior: contain;
   padding: 10px 20px calc(var(--wt-safe-b) + 24px);
-  border-radius: 24px 24px 0 0;
+  border-radius: 20px 20px 0 0;
   background: var(--vs-bg);
   color: var(--vs-ink);
   transform: translateY(100%);
-  transition: transform 250ms ease-out;
+  transition: transform 250ms var(--vs-ease);
 }
 
 .wt-vs-layer.is-shown .wt-vs-backdrop {
@@ -1064,31 +1065,28 @@
   display: block;
   width: 36px;
   height: 4px;
-  margin: 0 auto 20px;
-  border-radius: var(--radius-pill);
-  background: rgba(179, 18, 27, 0.2);
+  margin: 0 auto 16px;
+  border-radius: 999px;
+  background: rgba(158, 27, 27, 0.22);
 }
 
 .wt-vs-head {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 20px;
+  align-items: stretch;
+  margin-bottom: 16px;
 }
 
-.wt-vs-kicker {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.32em;
-  line-height: 1.2;
-  color: var(--vs-sub);
-  text-box-trim: trim-both;
-  text-box-edge: text alphabetic;
+.wt-vs-head-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .wt-vs-title {
-  margin: 10px 0 0;
-  font-size: 20px;
+  margin: 0;
+  font-size: 18px;
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.3;
@@ -1096,11 +1094,29 @@
   text-box-edge: cap alphabetic;
 }
 
-.wt-vs-back {
+.wt-vs-playing {
+  margin: 8px 0 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--vs-accent);
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-vs-head .wt-vs-title {
+  margin-top: 10px;
+}
+.wt-vs-head-row .wt-vs-title {
+  margin-top: 0;
+}
+
+.wt-vs-back,
+.wt-vs-close {
   display: inline-flex;
   align-items: center;
   gap: 2px;
-  padding: 0;
+  padding: 6px 0;
   border: 0;
   background: none;
   color: var(--vs-accent);
@@ -1109,28 +1125,36 @@
   font-weight: 700;
   line-height: 1.2;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.wt-vs-close {
+  color: var(--vs-sub);
+  font-weight: 600;
 }
 
 .wt-vs-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 6px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  justify-items: center;
 }
 
 .wt-vs-cell {
-  height: 44px;
+  position: relative;
+  width: 48px;
+  height: 48px;
   padding: 0;
-  border: 0;
-  border-radius: 10px;
+  border: 1.5px solid transparent;
+  border-radius: 12px;
   background: var(--vs-tint);
   color: var(--vs-ink);
   font: inherit;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition: background 0.15s ease, transform 0.12s ease;
+  transition: background 0.15s ease, transform 200ms var(--vs-ease), border-color 0.15s ease;
 }
 .wt-vs-cell:active:not(:disabled) {
   transform: scale(0.94);
@@ -1138,11 +1162,26 @@
 .wt-vs-cell.is-current {
   background: var(--vs-accent);
   color: #fff;
+  border-color: var(--vs-accent);
+}
+.wt-vs-cell.is-verse-current {
+  background: transparent;
+  color: var(--vs-accent);
+  border-color: var(--vs-accent);
+}
+.wt-vs-done-dot {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--vs-accent);
+}
+.wt-vs-cell.is-current .wt-vs-done-dot {
+  background: #fff;
 }
 /* ?dev=1 · chapters[n].src[i] (word/seg/interp/fix) 점 색 구분 */
-.wt-vs-cell[class*="is-src-"] {
-  position: relative;
-}
 .wt-vs-cell[class*="is-src-"]::after {
   content: "";
   position: absolute;
@@ -1154,22 +1193,22 @@
   background: #8a8378;
 }
 .wt-vs-cell.is-src-word::after {
-  background: #3d7a4a; /* 자막 단어 매칭 */
+  background: #3d7a4a;
 }
 .wt-vs-cell.is-src-seg::after {
-  background: #3b6ea5; /* 구간 정렬 */
+  background: #3b6ea5;
 }
 .wt-vs-cell.is-src-interp::after {
-  background: #c4862b; /* 보간 */
+  background: #c4862b;
 }
 .wt-vs-cell.is-src-fix::after {
-  background: #9e1b1b; /* 사람 보정 */
+  background: #9e1b1b;
 }
-.wt-vs-cell.is-src-interp:not(.is-current) {
+.wt-vs-cell.is-src-interp:not(.is-verse-current) {
   box-shadow: inset 0 0 0 1.5px rgba(180, 120, 40, 0.45);
 }
-.wt-vs-cell[class*="is-src-"].is-current::after {
-  background: #fff;
+.wt-vs-cell[class*="is-src-"].is-verse-current::after {
+  background: var(--vs-accent);
 }
 .wt-vs-cell:disabled {
   background: transparent;
@@ -1178,8 +1217,8 @@
   cursor: default;
 }
 @media (hover: hover) {
-  .wt-vs-cell:not(:disabled):not(.is-current):hover {
-    background: rgba(179, 18, 27, 0.12);
+  .wt-vs-cell:not(:disabled):not(.is-current):not(.is-verse-current):hover {
+    background: rgba(158, 27, 27, 0.12);
   }
 }
 

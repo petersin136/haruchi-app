@@ -6,7 +6,6 @@ import "../watch.css";
 import VideoPlayer from "./VideoPlayer";
 import SwipeTabs from "./SwipeTabs";
 import Remote from "./Remote";
-import SpeedSheet from "./SpeedSheet";
 import DevChapterRecorder from "./DevChapterRecorder";
 import VerseSheet from "./VerseSheet";
 import { VerseSeekContext, type VerseSeekApi } from "./VerseSeek";
@@ -15,7 +14,6 @@ import {
   SEEK_VERIFY_DELAY_MS,
   SEEK_VERIFY_TOLERANCE_S,
   VERSE_LEAD_S,
-  VERSE_NUDGE_S,
   buildVerseIndex,
   clearVerseFix,
   entryAt,
@@ -46,7 +44,6 @@ import {
   clearChapterStarts,
   describeStartCheck,
   findNextChapter,
-  findPrevChapter,
   loadStartOverrides,
   resolveChapterStarts,
   saveStartOverrides,
@@ -111,12 +108,10 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
     [bookId, fileStarts, overrides],
   );
   const [speed, setSpeed] = useState<SpeedOption>(DEFAULT_SPEED);
-  const [speedOn, setSpeedOn] = useState(false);
   const [ready, setReady] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [time, setTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [sheetOpen, setSheetOpen] = useState(false);
   const [devMode, setDevMode] = useState(false);
   const [toast, setToast] = useState<{ id: number; text: string } | null>(null);
   const [fileTimes, setFileTimes] = useState<WatchTimes>({
@@ -220,9 +215,8 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
   useEffect(() => {
     const p = playerRef.current;
     if (!ready || !p) return;
-    const target = speedOn ? speed : 1;
-    if (p.getPlaybackRate() !== target) p.setPlaybackRate(target);
-  }, [ready, speedOn, speed]);
+    if (p.getPlaybackRate() !== speed) p.setPlaybackRate(speed);
+  }, [ready, speed]);
 
   const handleReady = useCallback((p: YTPlayer) => {
     playerRef.current = p;
@@ -249,30 +243,44 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
     [bookId],
   );
 
-  const handleRate = useCallback((rate: number) => setSpeedOn(rate !== 1), []);
+  const handleRate = useCallback((_rate: number) => {
+    /* 배속은 리모컨·localStorage 가 소스 — 플레이어 이벤트는 무시 */
+  }, []);
 
   const chapter = useMemo(() => chapterAt(time, starts), [time, starts]);
-  const prevTarget = useMemo(() => findPrevChapter(chapter, starts), [chapter, starts]);
   const nextTarget = useMemo(() => findNextChapter(chapter, starts), [chapter, starts]);
 
   const chapterStart = starts[chapter - 1] ?? 0;
   const chapterEnd = nextTarget?.start ?? duration;
+  const chapterLength = Math.max(0, chapterEnd - chapterStart);
+  const chapterElapsed = Math.min(chapterLength, Math.max(0, time - chapterStart));
   const chapterProgress =
-    chapterEnd > chapterStart
-      ? Math.min(1, Math.max(0, (time - chapterStart) / (chapterEnd - chapterStart)))
-      : 0;
+    chapterLength > 0 ? Math.min(1, Math.max(0, chapterElapsed / chapterLength)) : 0;
+
+  /** 1장·마지막 장에서는 버튼 숨김(자리만 비움). 라벨은 인접 장 번호. */
+  const prevChapterNum = chapter > 1 ? chapter - 1 : null;
+  const nextChapterNum = chapter < totalChapters ? chapter + 1 : null;
 
   const seekToChapter = useCallback(
-    (target: ChapterTarget | null) => {
+    (target: ChapterTarget | null, opts?: { toast?: boolean }) => {
       const p = playerRef.current;
       if (!p || !target) return;
       const seekAt = seekPlayVerify(p, target.start - VERSE_LEAD_S);
       setTime(seekAt);
       savePosition(bookId, seekAt);
       lastSavedRef.current = seekAt;
-      showToast(`${name} ${target.chapter}장`);
+      if (opts?.toast !== false) showToast(`${name} ${target.chapter}장`);
     },
     [bookId, name, showToast],
+  );
+
+  const seekChapterByNumber = useCallback(
+    (n: number, opts?: { toast?: boolean }) => {
+      const start = starts[n - 1];
+      if (typeof start !== "number") return;
+      seekToChapter({ chapter: n, start }, opts);
+    },
+    [starts, seekToChapter],
   );
 
   const togglePlay = useCallback(() => {
@@ -282,23 +290,27 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
     else p.playVideo();
   }, [playing]);
 
-  const toggleSpeed = useCallback(() => {
-    const next = !speedOn;
-    setSpeedOn(next);
-    showToast(next ? `${speed}× 배속 켜짐` : "보통 속도 1×");
-  }, [speedOn, speed, showToast]);
-
   const selectSpeed = useCallback(
     (v: SpeedOption) => {
       setSpeed(v);
       saveSpeed(bookId, v);
-      setSpeedOn(true);
-      showToast(`${v}× 배속 켜짐`);
+      showToast(v === 1 ? "보통 속도 1.0×" : `${v}× 배속`);
     },
     [bookId, showToast],
   );
 
-  const closeSheet = useCallback(() => setSheetOpen(false), []);
+  const seekInChapter = useCallback(
+    (ratio: number) => {
+      const p = playerRef.current;
+      if (!p || chapterLength <= 0) return;
+      const target = chapterStart + Math.min(1, Math.max(0, ratio)) * chapterLength;
+      const seekAt = seekPlayVerify(p, target);
+      setTime(seekAt);
+      savePosition(bookId, seekAt);
+      lastSavedRef.current = seekAt;
+    },
+    [bookId, chapterStart, chapterLength],
+  );
 
   const recordChapter = useCallback(
     (n: number): boolean => {
@@ -469,23 +481,12 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
         <section className="wt-now" aria-live="polite">
           <div className="wt-now-row">
             <h1 className="wt-now-title">
-              <button
-                type="button"
-                className="wt-now-pick"
-                onClick={() => setVerseSheetOpen(true)}
-                aria-haspopup="dialog"
-                aria-label={`${name} ${chapter}장${currentVerse ? ` ${currentVerse}절` : ""} — 장·절 선택`}
-              >
-                {name} <strong key={chapter} className="wt-now-num">{chapter}장</strong>
-                {currentVerse !== null && (
-                  <span className="wt-now-verse">
-                    {chapter}:{currentVerse}
-                  </span>
-                )}
-                <svg className="wt-now-caret" viewBox="0 0 24 24" width="16" height="16" aria-hidden>
-                  <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
+              {name} <strong key={chapter} className="wt-now-num">{chapter}장</strong>
+              {currentVerse !== null && (
+                <span className="wt-now-verse">
+                  · {chapter}:{currentVerse}
+                </span>
+              )}
             </h1>
             <span className="wt-now-time">
               {formatTime(time)}
@@ -531,35 +532,36 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
       <Remote
         disabled={!ready}
         playing={playing}
-        speedOn={speedOn}
         speed={speed}
-        prevLabel={prevTarget ? `${prevTarget.chapter}장` : null}
-        nextLabel={nextTarget ? `${nextTarget.chapter}장` : null}
-        onPrev={() => seekToChapter(prevTarget)}
-        onNext={() => seekToChapter(nextTarget)}
+        bookName={name}
+        chapter={chapter}
+        currentVerse={currentVerse}
+        chapterElapsed={chapterElapsed}
+        chapterLength={chapterLength}
+        chapterProgress={chapterProgress}
+        prevChapter={prevChapterNum}
+        nextChapter={nextChapterNum}
+        onPrev={() => prevChapterNum !== null && seekChapterByNumber(prevChapterNum)}
+        onNext={() => nextChapterNum !== null && seekChapterByNumber(nextChapterNum)}
         onTogglePlay={togglePlay}
-        onToggleSpeed={toggleSpeed}
-        onOpenSpeedSheet={() => setSheetOpen(true)}
-      />
-
-      <SpeedSheet
-        open={sheetOpen}
-        speed={speed}
-        speedOn={speedOn}
-        onSelect={selectSpeed}
-        onToggle={toggleSpeed}
-        onClose={closeSheet}
+        onSelectSpeed={selectSpeed}
+        onOpenVerseSheet={() => setVerseSheetOpen(true)}
+        onReplayVerse={replayCurrentVerse}
+        onSeekInChapter={seekInChapter}
       />
 
       <VerseSheet
         open={verseSheetOpen}
+        bookId={bookId}
         bookName={name}
         totalChapters={totalChapters}
         verseCounts={verseCounts}
         index={verseIndex}
+        starts={starts}
         currentChapter={chapter}
         currentVerse={currentVerse}
-        onPick={seekVerse}
+        onPickChapter={(c) => seekChapterByNumber(c, { toast: false })}
+        onPickVerse={seekVerse}
         onClose={closeVerseSheet}
         devMode={devMode}
         verseSrc={fileTimes.src}
