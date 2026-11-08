@@ -2,6 +2,7 @@
 
 import { memo, useCallback, useEffect, useState } from "react";
 import { BOOKS, isOldTestament, type BookId } from "@/app/bible-reading/books";
+import { chapterLabel } from "../data/books";
 import { isHebrew } from "./keywords";
 import { loadTopWords, type TopWord } from "./keywordsTop";
 import { VerseLink } from "./VerseSeek";
@@ -38,7 +39,7 @@ function WordPosterPanel({ bookId, chapter }: { bookId: BookId; chapter: number 
     <div className="wt-wp">
       <span className="wt-wp-kicker">{ot ? "hebrew" : "greek"}</span>
       <h2 className="wt-wp-title">
-        {BOOKS[bookId].name} {chapter}장의 단어
+        {`${BOOKS[bookId].name} ${chapterLabel(bookId, chapter)}의 단어`}
       </h2>
 
       {state.status === "loading" && (

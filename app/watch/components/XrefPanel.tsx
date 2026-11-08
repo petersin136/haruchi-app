@@ -2,6 +2,7 @@
 
 import { memo, useEffect, useState } from "react";
 import type { BookId } from "@/app/bible-reading/books";
+import { chapterUnit } from "../data/books";
 import {
   loadPreview,
   loadXrefRows,
@@ -35,7 +36,10 @@ function XrefPanel({ bookId, chapter }: { bookId: BookId; chapter: number }) {
 
   return (
     <div className="wt-xref">
-      <h2 className="wt-xref-title">{chapter}장 관주</h2>
+      <h2 className="wt-xref-title">
+        {chapter}
+        {chapterUnit(bookId)} 관주
+      </h2>
 
       {state.status === "loading" && (
         <div className="wt-xref-skeleton" aria-hidden>

@@ -38,6 +38,15 @@ export function watchTitleFor(book: BookId): string {
   return `${BOOKS[book].name} 함께 보기`;
 }
 
+/** 시편만 「편」, 나머지는 「장」 */
+export function chapterUnit(book: BookId): "장" | "편" {
+  return book === "psalms" ? "편" : "장";
+}
+
+export function chapterLabel(book: BookId, chapter: number): string {
+  return `${chapter}${chapterUnit(book)}`;
+}
+
 let manifestPromise: Promise<WatchManifest> | null = null;
 
 function normalizeSegments(raw: unknown): VideoSegment[] {
@@ -168,8 +177,8 @@ export function chapterSeekStart(
 }
 
 /**
- * 절 시간 JSON 이 없을 때: 구간에 속한 장은 모두 선택 가능하고,
- * 시작 시각을 모르면 그 영상 머리(0)로 재생.
+ * 절 시간 JSON 이 없으면 장 선택 비활성(시작 시각 모름 → 엉뚱한 seek 금지).
+ * 있을 때만 파일·대체 시작 시각이 있는 장 선택 가능.
  */
 export function canSelectChapter(
   starts: ChapterStarts,
@@ -177,19 +186,18 @@ export function canSelectChapter(
   chapter: number,
   hasVerseTimes: boolean,
 ): boolean {
+  if (!hasVerseTimes) return false;
   if (!segmentForChapter(segments, chapter)) return false;
-  if (!hasVerseTimes) return true;
   return chapterSeekStart(starts, segments, chapter) !== null;
 }
 
+/** 절 시간이 없으면 null — 장 seek 하지 않음(영상 처음만 재생). */
 export function resolveChapterSeekStart(
   starts: ChapterStarts,
   segments: readonly VideoSegment[],
   chapter: number,
   hasVerseTimes: boolean,
 ): number | null {
-  const exact = chapterSeekStart(starts, segments, chapter);
-  if (exact !== null) return exact;
-  if (!hasVerseTimes && segmentForChapter(segments, chapter)) return 0;
-  return null;
+  if (!hasVerseTimes) return null;
+  return chapterSeekStart(starts, segments, chapter);
 }

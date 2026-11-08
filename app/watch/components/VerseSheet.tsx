@@ -5,6 +5,8 @@ import { isChapterDone } from "@/app/lib/readLog";
 import { verseKey, verseTime, type VerseIndex } from "./verseTimes";
 import {
   canSelectChapter,
+  chapterLabel,
+  chapterUnit,
   type VideoSegment,
   type WatchBookId,
 } from "../data/books";
@@ -21,7 +23,7 @@ type Props = {
   index: VerseIndex;
   starts: ChapterStarts;
   segments: readonly VideoSegment[];
-  /** false 면 절 격자 대신 「절 시간 준비 중」 */
+  /** false 면 장·절 선택 불가, 안내만 */
   hasVerseTimes: boolean;
   currentChapter: number;
   currentVerse: number | null;
@@ -59,6 +61,7 @@ export default function VerseSheet({
   const [chapter, setChapter] = useState<number | null>(null);
   const [justStarted, setJustStarted] = useState(false);
   const [doneChapters, setDoneChapters] = useState<Set<number>>(() => new Set());
+  const unit = chapterUnit(bookId);
 
   useEffect(() => {
     if (open) {
@@ -119,14 +122,35 @@ export default function VerseSheet({
   return (
     <div className={`wt-vs-layer${shown ? " is-shown" : ""}`}>
       <button type="button" className="wt-vs-backdrop" aria-label="닫기" onClick={onClose} />
-      <div className="wt-vs" role="dialog" aria-modal="true" aria-label="장·절 선택">
+      <div
+        className="wt-vs"
+        role="dialog"
+        aria-modal="true"
+        aria-label={`${unit}·절 선택`}
+      >
         <span className="wt-vs-grip" aria-hidden />
 
-        {chapter === null ? (
+        {!hasVerseTimes ? (
           <>
             <div className="wt-vs-head">
               <div className="wt-vs-head-row">
-                <h2 className="wt-vs-title">{bookName} · 장 선택</h2>
+                <h2 className="wt-vs-title">{bookName}</h2>
+                <button type="button" className="wt-vs-close" onClick={onClose}>
+                  닫기
+                </button>
+              </div>
+            </div>
+            <p className="wt-vs-pending" role="status">
+              이 책은 절 시간 준비 중이라 처음부터 재생돼요
+            </p>
+          </>
+        ) : chapter === null ? (
+          <>
+            <div className="wt-vs-head">
+              <div className="wt-vs-head-row">
+                <h2 className="wt-vs-title">
+                  {bookName} · {unit} 선택
+                </h2>
                 <button type="button" className="wt-vs-close" onClick={onClose}>
                   닫기
                 </button>
@@ -158,7 +182,7 @@ export default function VerseSheet({
             <div className="wt-vs-head">
               <div className="wt-vs-head-row">
                 <button type="button" className="wt-vs-back" onClick={backToChapters}>
-                  ← 장 목록
+                  ← {unit} 목록
                 </button>
                 <button type="button" className="wt-vs-close" onClick={onClose}>
                   닫기
@@ -166,45 +190,39 @@ export default function VerseSheet({
               </div>
               {justStarted && (
                 <p className="wt-vs-playing" role="status">
-                  {chapter}장 처음부터 재생 중
+                  {chapterLabel(bookId, chapter)} 처음부터 재생 중
                 </p>
               )}
               <h2 className="wt-vs-title">
-                {bookName} {chapter}장
+                {bookName} {chapterLabel(bookId, chapter)}
               </h2>
             </div>
-            {!hasVerseTimes ? (
-              <p className="wt-vs-pending" role="status">
-                절 시간 준비 중
-              </p>
-            ) : (
-              <div className="wt-vs-grid">
-                {Array.from({ length: verseTotal }, (_, i) => i + 1).map((v) => {
-                  const available = verseTime(index, chapter, v) !== null;
-                  const current = chapter === currentChapter && v === currentVerse;
-                  const kind = devMode ? verseSrc[verseKey(chapter, v)] : undefined;
-                  const srcClass =
-                    kind === "interp" ||
-                    kind === "seg" ||
-                    kind === "fix" ||
-                    kind === "word"
-                      ? ` is-src-${kind}`
-                      : "";
-                  return (
-                    <button
-                      key={v}
-                      type="button"
-                      className={`wt-vs-cell${current ? " is-verse-current" : ""}${srcClass}`}
-                      data-verse-src={kind || undefined}
-                      disabled={!available}
-                      onClick={() => onPickVerse(chapter, v)}
-                    >
-                      {v}
-                    </button>
-                  );
-                })}
-              </div>
-            )}
+            <div className="wt-vs-grid">
+              {Array.from({ length: verseTotal }, (_, i) => i + 1).map((v) => {
+                const available = verseTime(index, chapter, v) !== null;
+                const current = chapter === currentChapter && v === currentVerse;
+                const kind = devMode ? verseSrc[verseKey(chapter, v)] : undefined;
+                const srcClass =
+                  kind === "interp" ||
+                  kind === "seg" ||
+                  kind === "fix" ||
+                  kind === "word"
+                    ? ` is-src-${kind}`
+                    : "";
+                return (
+                  <button
+                    key={v}
+                    type="button"
+                    className={`wt-vs-cell${current ? " is-verse-current" : ""}${srcClass}`}
+                    data-verse-src={kind || undefined}
+                    disabled={!available}
+                    onClick={() => onPickVerse(chapter, v)}
+                  >
+                    {v}
+                  </button>
+                );
+              })}
+            </div>
           </>
         )}
       </div>

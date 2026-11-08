@@ -15,10 +15,12 @@ type Props = {
   speed: SpeedOption;
   bookName: string;
   chapter: number;
+  /** 시편=편, 그 외=장 */
+  chapterUnit: "장" | "편";
   currentVerse: number | null;
-  /** 이 장 안 경과(초) */
+  /** 이 장/편 안 경과(초) */
   chapterElapsed: number;
-  /** 이 장 길이(초) */
+  /** 이 장/편 길이(초) */
   chapterLength: number;
   chapterProgress: number;
   /** null 이면 자리만 비움. 예: "‹ 2장" / "출애굽기 1장 ›" */
@@ -83,6 +85,7 @@ export default function Remote({
   speed,
   bookName,
   chapter,
+  chapterUnit,
   currentVerse,
   chapterElapsed,
   chapterLength,
@@ -182,7 +185,8 @@ export default function Remote({
               aria-haspopup="dialog"
             >
               <span className="wt-rc-title-book">
-                {bookName} {chapter}장
+                {bookName} {chapter}
+                {chapterUnit}
               </span>
               {versePart && (
                 <>
@@ -207,7 +211,7 @@ export default function Remote({
             ref={trackRef}
             className="wt-rc-scrub"
             role="slider"
-            aria-label="이 장 진행"
+            aria-label={`이 ${chapterUnit} 진행`}
             aria-valuemin={0}
             aria-valuemax={100}
             aria-valuenow={Math.round(chapterProgress * 100)}

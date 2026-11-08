@@ -294,25 +294,78 @@ function loadJson3Segs(bookId) {
   return segs;
 }
 
+/** 한글 수사 → 숫자 (ASR이 "삼장"처럼 읽는 경우). 1~150 */
+const KO_NUM = (() => {
+  const dig = { 영: 0, 공: 0, 일: 1, 이: 2, 삼: 3, 사: 4, 오: 5, 육: 6, 륙: 6, 칠: 7, 팔: 8, 구: 9 };
+  const map = new Map();
+  for (let n = 1; n <= 150; n++) {
+    let s;
+    if (n < 10) s = Object.keys(dig).find((k) => dig[k] === n);
+    else if (n === 10) s = "십";
+    else if (n < 20) s = "십" + Object.keys(dig).find((k) => dig[k] === n - 10);
+    else if (n % 10 === 0 && n < 100) {
+      s = Object.keys(dig).find((k) => dig[k] === n / 10) + "십";
+    } else if (n < 100) {
+      s =
+        Object.keys(dig).find((k) => dig[k] === Math.floor(n / 10)) +
+        "십" +
+        Object.keys(dig).find((k) => dig[k] === n % 10);
+    } else if (n === 100) s = "백";
+    else if (n < 110) s = "백" + (n === 100 ? "" : n === 101 ? "일" : Object.keys(dig).find((k) => dig[k] === n - 100) || "");
+    else if (n < 120) s = "백십" + (n === 110 ? "" : Object.keys(dig).find((k) => dig[k] === n - 110) || "");
+    else if (n < 150) {
+      const tens = Math.floor((n - 100) / 10);
+      const ones = n % 10;
+      s =
+        "백" +
+        Object.keys(dig).find((k) => dig[k] === tens) +
+        "십" +
+        (ones ? Object.keys(dig).find((k) => dig[k] === ones) : "");
+    }
+    if (s) map.set(s, n);
+  }
+  // 자주 쓰이는 변형
+  map.set("한", 1);
+  map.set("두", 2);
+  map.set("세", 3);
+  map.set("네", 4);
+  map.set("다섯", 5);
+  map.set("여섯", 6);
+  map.set("일곱", 7);
+  map.set("여덟", 8);
+  map.set("아홉", 9);
+  map.set("열", 10);
+  return map;
+})();
+
+function parseChapterToken(norm, unit) {
+  // 숫자: "3장" / "23편" / ASR 오인식 "22편네"
+  // ※ "제사장" 같은 본문 단어에 한글 수사+장을 붙이면 안 됨 → 한글은 완전일치만
+  const m = new RegExp(`^(\\d{1,3})${unit}`).exec(norm);
+  if (m) return Number(m[1]);
+  // 삼장 / 십이편 (완전 일치만 — endsWith 금지: 제사장→사장=4장 오탐)
+  for (const [ko, n] of KO_NUM) {
+    if (norm === ko + unit) return n;
+  }
+  return null;
+}
+
 /**
  * 장/편 안내 첫 단어 시각.
- * unit="장"|"편". 책 이름 직후 "N장/편"이면 책 이름 단어 시각을 시작으로.
+ * 중간에 라벨이 빠져도(10장 누락 등) 이후 번호를 버리지 않는다.
+ * 시각이 단조 증가하는 첫 등장만 채택.
  */
 function extractChapterStartsFromSegs(segs, totalChapters, bookName, unit = "장") {
   /** @type {Map<number, number>} */
   const starts = new Map();
-  const reExact = new RegExp(`^(\\d{1,3})${unit}$`);
-  const reEnd = new RegExp(`(\\d{1,3})${unit}$`);
-  let last = -1;
+  let lastT = -1;
+  let lastN = 0;
   for (let i = 0; i < segs.length; i++) {
-    const m = reExact.exec(segs[i].norm) || reEnd.exec(segs[i].norm);
-    if (!m) continue;
-    const n = Number(m[1]);
-    if (n < 1 || n > totalChapters || starts.has(n)) continue;
-    // 순서: 1 다음부터는 last+1 만. 다만 last 가 비면 1부터, 또는 단일 장 책.
-    if (totalChapters > 1) {
-      if (n !== last + 1 && !(last === -1 && n === 1)) continue;
-    }
+    const n = parseChapterToken(segs[i].norm, unit);
+    if (n == null || n < 1 || n > totalChapters || starts.has(n)) continue;
+    // 번호가 크게 역행하면 본문 속 "N장" 오탐 가능 → 건너뜀
+    // (작은 역행은 허용하지 않음: 이미 지난 번호)
+    if (n <= lastN && lastN > 0) continue;
     const prev = segs[i - 1];
     const t =
       prev &&
@@ -320,17 +373,20 @@ function extractChapterStartsFromSegs(segs, totalChapters, bookName, unit = "장
       segs[i].t - prev.t < 3
         ? prev.t
         : segs[i].t;
+    if (t <= lastT) continue;
     starts.set(n, t);
-    last = n;
+    lastT = t;
+    lastN = n;
   }
   return starts;
 }
 
 /**
- * 라벨이 없는 장(특히 1장짜리·소개 뒤 1:1) — 절 앞 어절이 자막에 처음 나오는 시각.
- * afterSec 이후만 검색(이전 장 끝 / 소개 구간 스킵).
+ * 라벨이 없는 장 — 절 본문이 자막에 처음 나오는 시각.
+ * 1절만이 아니라 장 안 여러 절 앞부분을 순서대로 시도(번역 차이·ASR 공백 대비).
+ * afterSec 직후 MIN_AFTER 초 이내는 이전 장 본문으로 보고 건너뜀.
  */
-function findVerseStartInSegs(segs, verseText, afterSec = 0, beforeSec = Infinity) {
+function findVerseStartInSegs(segs, verseText, afterSec = 0, beforeSec = Infinity, minAfter = 0) {
   const words = String(verseText || "")
     .trim()
     .split(/\s+/)
@@ -339,19 +395,48 @@ function findVerseStartInSegs(segs, verseText, afterSec = 0, beforeSec = Infinit
   if (!words.length) return null;
   const needle = words.slice(0, Math.min(4, words.length)).join("");
   if (needle.length < 2) return null;
+  const earliest = afterSec + minAfter;
+  const needLen = Math.min(needle.length, Math.max(8, Math.floor(needle.length * 0.6)));
   for (let i = 0; i < segs.length; i++) {
-    if (segs[i].t < afterSec || segs[i].t >= beforeSec) continue;
+    if (segs[i].t < earliest || segs[i].t >= beforeSec) continue;
     let joined = "";
-    for (let k = 0; k < 6 && i + k < segs.length; k++) {
+    for (let k = 0; k < 10 && i + k < segs.length; k++) {
       joined += segs[i + k].norm;
-      if (joined.length < needle.length - 2) continue;
-      // 앞 글자 유사
-      const a = needle.slice(0, Math.min(needle.length, joined.length));
-      const b = joined.slice(0, a.length);
-      if (a === b || (a.length >= 4 && levenshtein(a, b) <= Math.max(1, Math.floor(a.length * 0.25)))) {
+      if (joined.length < needLen) continue;
+      const a = needle.slice(0, needLen);
+      const b = joined.slice(0, needLen);
+      const dist = levenshtein(a, b);
+      if (a === b || dist <= Math.max(1, Math.floor(needLen * 0.2))) {
         return segs[i].t;
       }
+      break; // 이 시작 위치에서 충분히 모였는데 불일치 → 다음 단어로
     }
+  }
+  return null;
+}
+
+/** 여러 장에 반복되는 서두 — 장 시작 추정 때 뒤로 미룸 */
+function isFormulaOpening(text) {
+  const t = String(text || "").replace(/\s+/g, "");
+  return /^(여호와께서모세에게|여호와께서모세와아론|여호와께서모세와)/.test(t);
+}
+
+/** 장 전체 절을 훑어 첫 매칭. 실패 시 null */
+function findChapterContentStart(segs, verses, afterSec, beforeSec) {
+  // 이전 장 구간 앞부분은 건너뜀(긴 장일수록 비율↑)
+  const span = beforeSec < Infinity ? beforeSec - afterSec : 120;
+  const minAfter = Math.min(Math.max(40, span * 0.25), span * 0.7);
+  const ordered = [
+    ...verses.filter((v) => !isFormulaOpening(v.text)),
+    ...verses.filter((v) => isFormulaOpening(v.text)),
+  ];
+  for (const v of ordered) {
+    const t = findVerseStartInSegs(segs, v.text, afterSec, beforeSec, minAfter);
+    if (t != null) return { t, via: `${v.n}` };
+  }
+  if (verses[0]) {
+    const t = findVerseStartInSegs(segs, verses[0].text, afterSec, beforeSec, Math.min(20, minAfter));
+    if (t != null) return { t, via: "1-loose" };
   }
   return null;
 }
@@ -788,14 +873,14 @@ function resolveChapterStarts(cfg, segs, events, exceptions) {
     }
   }
 
-  // 빠진 장 → 1:1 첫 어절 (소개·제목 낭독은 1:1 이전이므로 여기로 잡히지 않음)
+  // 빠진 장 → 본문 매칭 (1절 우선, 실패 시 다른 절) → 그래도 없으면 이웃 중점
   for (let ch = 1; ch <= totalChapters; ch++) {
     if (starts.has(ch)) continue;
     if (!segs) continue;
     let after = 0;
     for (let p = ch - 1; p >= 1; p--) {
       if (starts.has(p)) {
-        after = starts.get(p) + 1;
+        after = starts.get(p);
         break;
       }
     }
@@ -808,16 +893,25 @@ function resolveChapterStarts(cfg, segs, events, exceptions) {
     }
     try {
       const verses = loadKoreanChapter(cfg.bookId, ch);
-      const t = findVerseStartInSegs(segs, verses[0]?.text, after, before);
-      if (t != null) {
+      const hit = findChapterContentStart(segs, verses, after, before);
+      if (hit) {
+        starts.set(ch, hit.t);
+        exceptions.push({
+          type: "verse-fallback",
+          ch,
+          t: hit.t,
+          via: hit.via,
+          note: `${unit} 라벨 없음 → ${ch}:${hit.via} 본문 매칭`,
+        });
+      } else if (before < Infinity && before - after > 60) {
+        // ASR 공백·번역 차이로 본문이 안 잡히면 이웃 사이 중점(최후)
+        const t = after + (before - after) * 0.5;
         starts.set(ch, t);
         exceptions.push({
-          type: "verse1-fallback",
+          type: "midpoint-fallback",
           ch,
           t,
-          note: totalChapters === 1
-            ? "1장짜리(또는 라벨 없음) → 1:1 첫 어절"
-            : `${unit} 라벨 없음 → ${ch}:1 첫 어절`,
+          note: `${unit} 라벨·본문 매칭 실패 → ${after.toFixed(0)}~${before.toFixed(0)} 중점`,
         });
       }
     } catch (e) {
@@ -911,15 +1005,25 @@ function alignOneBook(bookId) {
       missing.push(ch);
       continue;
     }
-    let end;
-    if (ch === totalChapters) end = durationSec;
-    else {
-      const next = startList[ch];
-      if (next == null || !Number.isFinite(next)) {
-        missing.push(ch);
-        continue;
+    let end = durationSec;
+    if (ch < totalChapters) {
+      // 바로 다음이 비어도 그 뒤 첫 유효 장 시작을 끝으로 씀
+      let next = null;
+      for (let n = ch + 1; n <= totalChapters; n++) {
+        if (startList[n - 1] != null && Number.isFinite(startList[n - 1])) {
+          next = startList[n - 1];
+          break;
+        }
       }
-      end = next;
+      if (next == null) {
+        // 뒤에 기준점이 없으면 이 장만으로는 끝을 확정할 수 없음 → missing
+        // (단, 마지막 유효 장이면 duration 사용 — 위에서 end=durationSec)
+        const laterExists = startList.slice(ch).some((t) => t != null);
+        if (laterExists) {
+          missing.push(ch);
+          continue;
+        }
+      } else end = next;
     }
 
     const verses = loadKoreanChapter(bookId, ch);
