@@ -10,13 +10,10 @@ import {
 } from "react";
 import {
   BOOKS,
-  NT_BOOK_IDS,
-  OT_BOOK_IDS,
   isOldTestament,
   type BookId,
 } from "./books";
 import { loadKoreanChapter, loadKoreanIndex } from "./bibleData";
-import Dropdown, { type DropdownOption } from "./components/Dropdown";
 import VerseList from "./components/VerseList";
 import Link from "next/link";
 import MobileTopBar, {
@@ -735,14 +732,6 @@ export default function BibleReadingPage() {
       cancelled = true;
     };
   }, [bookId, chapterNumber]);
-
-  const chapterList = useMemo(() => {
-    const items: { chapter: number; title: string }[] = [];
-    for (let n = 1; n <= bookMeta.totalChapters; n++) {
-      items.push({ chapter: n, title: titleByChapter[n] ?? "" });
-    }
-    return items;
-  }, [bookMeta.totalChapters, titleByChapter]);
 
   const fallbackChapter = useMemo<Chapter>(
     () => ({
