@@ -1,0 +1,121 @@
+  const pageStridePx = spreadStride > 0 ? spreadStride / 2 : pageW;
+
+  const renderPlainFlow = (
+    pack: { chapter: number; title: string; verses: { n: number; t: string }[] },
+    local: number,
+    measurePrev = false,
+  ) => (
+    <article
+      className="study-page study-spread-flow"
+      data-measure-prev={measurePrev ? "" : undefined}
+      data-study-chapter-inner={pack.chapter}
+      style={{ transform: `translate3d(${-local * pageStridePx}px,0,0)` }}
+    >
+      <span
+        className={`study-drop${String(pack.chapter).length >= 3 ? " is-wide" : ""}`}
+        aria-hidden
+      >
+        <span className="study-drop-num">{pack.chapter}</span>
+      </span>
+      {pack.title ? <span className="study-chapter-title">{pack.title}</span> : null}
+      <div className="study-body">
+        {pack.verses.map((v, i) => (
+          <span key={v.n} className="study-verse" data-verse-num={v.n}>
+            {i > 0 ? <span className="study-v-gap"> </span> : null}
+            <span className="study-vnum">{v.n}</span>
+            {v.t}
+          </span>
+        ))}
+      </div>
+    </article>
+  );
+
+  const renderCurrentFlow = (pageIndex: number, measure: boolean) => (
+    <article
+      ref={measure ? spreadFlowRef : undefined}
+      className="study-page study-spread-flow"
+      data-spread-measure={measure ? "" : undefined}
+      data-study-chapter-inner={chapter}
+      style={{ transform: `translate3d(${-pageIndex * pageStridePx}px,0,0)` }}
+    >
+      <span
+        className={`study-drop${digLen >= 3 ? " is-wide" : ""}`}
+        data-digits={digLen}
+        data-chapter-anchor={title ? undefined : ""}
+        aria-hidden="true"
+      >
+        <span className="study-drop-num">{chapter}</span>
+      </span>
+      {title ? (
+        <span className="study-chapter-title" data-chapter-anchor="">
+          {title}
+        </span>
+      ) : null}
+      <div
+        ref={measure ? bodyRef : undefined}
+        className={`study-body${dragging ? " is-selecting" : ""}`}
+        onPointerDown={onBodyPointerDown}
+        onContextMenu={(e) => {
+          const t = e.target as HTMLElement;
+          if (t.closest(".study-mark-note-input")) return;
+          e.preventDefault();
+        }}
+        onClickCapture={(e) => {
+          if (!suppressClickRef.current) return;
+          suppressClickRef.current = false;
+          e.preventDefault();
+          e.stopPropagation();
+        }}
+      >
+        {useParas
+          ? paraGroups.map((g) => (
+              <p key={g.key} className="study-para">
+                {g.verses.map((span, i) => renderVerse(span, i === 0))}
+              </p>
+            ))
+          : paraGroups[0]?.verses.map((span, i) => renderVerse(span, i === 0))}
+      </div>
+    </article>
+  );
+
+  const renderFace = (pageIndex: number, measure: boolean) => {
+    let inner: ReactNode = null;
+    if (pageIndex >= 0 && pageIndex < pageCount) {
+      inner = renderCurrentFlow(pageIndex, measure);
+    } else if (pageIndex >= pageCount) {
+      const over = pageIndex - pageCount;
+      const oddBlank = pageCount % 2 === 1;
+      if (oddBlank && over === 0) {
+        inner =
+          chapter < total ? (
+            <button
+              type="button"
+              className="study-spread-next-ch"
+              onClick={(e) => {
+                e.stopPropagation();
+                if (performance.now() - spreadEdgeTapRef.current < 450) return;
+                goSpreadBy(1);
+              }}
+            >
+              <span className="study-spread-next-kicker">다음 장</span>
+              <span className="study-spread-next-num">{chapter + 1}</span>
+              {nextChTitle ? (
+                <span className="study-spread-next-title">{nextChTitle}</span>
+              ) : null}
+              <span className="study-spread-next-cta">넘겨서 계속 읽기 →</span>
+            </button>
+          ) : (
+            <div className="study-page-blank" />
+          );
+      } else if (nextPack) {
+        inner = renderPlainFlow(nextPack, oddBlank ? over - 1 : over);
+      }
+    } else if (prevPack && prevPageCount > 0) {
+      const start = Math.floor((prevPageCount - 1) / 2) * 2;
+      const local = start + (pageIndex + 2);
+      if (local >= 0 && local < prevPageCount) {
+        inner = renderPlainFlow(prevPack, local);
+      }
+    }
+    return <div className="study-page-view">{inner}</div>;
+  };

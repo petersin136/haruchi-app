@@ -14,9 +14,15 @@ export const STUDY_SPREAD_OUTER = 20;
 export const STUDY_SPREAD_TOPBAR = 46;
 export const STUDY_SPREAD_BAR_H = 30;
 export const STUDY_SPREAD_PGNUM_H = 28;
-export const STUDY_SPREAD_ANIM_MS = 280;
+export const STUDY_SPREAD_ANIM_MS = 420;
 export const STUDY_SPREAD_SWIPE_PX = 40;
-export const STUDY_SPREAD_EDGE = 0.15;
+/** 놓을 때 넘김으로 보는 각도 */
+export const STUDY_SPREAD_COMMIT_DEG = 70;
+/** 놓을 때 넘김으로 보는 속도(px/ms) */
+export const STUDY_SPREAD_COMMIT_VEL = 0.35;
+export const STUDY_SPREAD_PERSPECTIVE = 1800;
+/** 좌우 가장자리 탭 영역 (펼침 폭 대비) */
+export const STUDY_SPREAD_EDGE = 0.18;
 
 export function matchStudySpread(
   win: Window | null | undefined = typeof window !== "undefined" ? window : null,

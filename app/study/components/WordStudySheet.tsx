@@ -33,8 +33,12 @@ type Props = {
   verse: number;
   tokens: WordStudyToken[];
   initial: WordStudyToken | null;
-  /** 사용자가 본문에서 선택한 한글 (initial 칩과 연결) */
+  /** 사용자가 본문에서 선택한 한글 (매칭 성공 시에만 본문 줄) */
   selectedKo?: string;
+  /** gloss 매칭 성공. 실패면 본문 줄을 숨김 */
+  matched?: boolean;
+  /** 매칭 실패 시 안내 */
+  matchHint?: string | null;
   onClose: () => void;
   /** 구절 칩 탭 — 있으면 라우터 대신 이걸로 장 이동 */
   onNavigate?: (bookId: string, chapter: number) => void;
@@ -103,6 +107,16 @@ function grammarLine(parseKo: string): string {
     .join(" · ");
 }
 
+function usageChips(raw: string): string[] {
+  const t = raw.trim();
+  if (!t) return [];
+  const parts = t
+    .split(/\s*[·・]\s*|\n+/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+  return parts.length > 0 ? parts : [t];
+}
+
 export default function WordStudySheet({
   open,
   bookId,
@@ -111,6 +125,8 @@ export default function WordStudySheet({
   tokens,
   initial,
   selectedKo,
+  matched = false,
+  matchHint = null,
   onClose,
   onNavigate,
   onError,
@@ -130,9 +146,7 @@ export default function WordStudySheet({
   const [lex, setLex] = useState<WordStudyLexicon | null>(null);
   const [lexLoading, setLexLoading] = useState(false);
   const [booksExpanded, setBooksExpanded] = useState(false);
-  const [phraseExpanded, setPhraseExpanded] = useState<Record<string, boolean>>(
-    {},
-  );
+  const [enOpen, setEnOpen] = useState(false);
   const sheetRef = useRef<HTMLDivElement | null>(null);
   const bodyRef = useRef<HTMLDivElement | null>(null);
   const dragY = useRef(0);
@@ -148,11 +162,10 @@ export default function WordStudySheet({
 
   useEffect(() => {
     if (!open) return;
-    setActive(initial);
+    setActive(initial ?? verseWords[0] ?? null);
     setStack([]);
     setBooksExpanded(false);
-    setPhraseExpanded({});
-  }, [open, initial]);
+  }, [open, initial, verseWords]);
 
   // 시트 열림 = 기록 한 칸. 단어를 따라 들어갈 때마다 한 칸씩 더 쌓음
   useEffect(() => {
@@ -242,10 +255,15 @@ export default function WordStudySheet({
   }, [open, active, viewStrong, verse]);
 
   const viewKey = `${active?.ref}-${active?.i}-${stack.length}-${top?.strong ?? top?.lemma ?? ""}`;
+  useEffect(() => {
+    if (!open || lexLoading) return;
+    const hasDef = !!((lex?.defKo || lex?.note || "").trim());
+    setEnOpen(!hasDef && !!(lex?.defEn || "").trim());
+  }, [open, viewKey, lexLoading, lex]);
+
   useLayoutEffect(() => {
     if (bodyRef.current) bodyRef.current.scrollTop = 0;
     setBooksExpanded(false);
-    setPhraseExpanded({});
   }, [viewKey]);
 
   useLayoutEffect(() => {
@@ -277,29 +295,63 @@ export default function WordStudySheet({
     return () => window.removeEventListener("keydown", onKey);
   }, [open, closeSheet]);
 
-  if (!open || !active) return null;
+  if (!open) return null;
   if (typeof document === "undefined") return null;
+
+  // 토큰이 전혀 없어도 안내 시트는 연다(무반응 경로 제거)
+  if (!active) {
+    return createPortal(
+      <div
+        className="study-ws-root"
+        role="dialog"
+        aria-label="원어 사전"
+        data-no-drawer-swipe=""
+      >
+        <button
+          type="button"
+          className="study-ws-backdrop"
+          aria-label="닫기"
+          onClick={() => closeSheet()}
+        />
+        <div className="study-ws-sheet" data-no-drawer-swipe="">
+          <div className="study-ws-top" data-no-drawer-swipe="">
+            <div className="study-ws-handle-hit" data-no-drawer-swipe="">
+              <div className="study-ws-handle" aria-hidden="true" />
+            </div>
+            <p className="study-ws-match-hint" role="status">
+              {matchHint || "정확한 단어를 못 찾았어요 · 칩에서 골라 주세요"}
+            </p>
+          </div>
+        </div>
+      </div>,
+      document.body,
+    );
+  }
 
   const isInitialChip = (w: WordStudyToken) =>
     !!initial && w.i === initial.i && w.word === initial.word && w.ref === initial.ref;
   const selectedLabel = (selectedKo ?? "").trim();
-  const bodyKo = !top
-    ? isInitialChip(active) && selectedLabel
-      ? selectedLabel
-      : active.glossKo
-    : "";
+  const showBodyKo =
+    matched && !top && isInitialChip(active) && !!selectedLabel;
+  const bodyKo = showBodyKo ? selectedLabel : "";
 
   const headWord = top ? lex?.lemma || top.lemma : active.word;
   const pron = top ? lex?.pron || top.pron || "" : active.pron || lex?.pron || "";
   const parseKo = top ? lex?.posKo || "" : active.parseKo || lex?.posKo || "";
   const root = lex?.root;
-  const defKo = lex?.defKo || lex?.note || "";
-  const defEn = lex?.defEn || "";
-  const fallbackGloss = top ? top.glossKo || "" : active.glossKo;
-  const compare = lex?.compareKo || lex?.compare || "";
+  const defKo = (lex?.defKo || "").trim();
+  const defEn = (lex?.defEn || "").trim();
+  const usage = usageChips(lex?.usageKo || lex?.compareKo || "");
+  const properName =
+    /고유명/.test(parseKo) || /고유명/.test(lex?.posKo || "");
   const missingLex = !!top && !lexLoading && !lex;
 
   const rootShort = shortRootGloss(root?.glossKo);
+  const nameMeaning =
+    (lex?.nameMeaning || "").trim() ||
+    (!defKo && properName && rootShort && !isProseGloss(rootShort)
+      ? rootShort
+      : "");
   const rootNote =
     (typeof (lex as { rootNote?: string } | null)?.rootNote === "string"
       ? (lex as { rootNote?: string }).rootNote
@@ -316,56 +368,35 @@ export default function WordStudySheet({
     : bookEntries.slice(0, 6);
   const hiddenBookCount = Math.max(0, bookEntries.length - 6);
 
-  const phrases = (lex?.phrases ?? []).filter(
-    (p) => p && p.greek && Array.isArray(p.refs) && p.refs.length > 0,
-  );
-  const hasUsage =
+  const hasPlaces =
     bookEntries.length > 0 ||
     typeof lex?.countNT === "number" ||
+    typeof lex?.countOT === "number" ||
     typeof lex?.count1John === "number";
 
   const showLemma = !top && !!active.lemma && active.lemma !== active.word;
 
-  const etymologyChips: (NavEntry & { key: string })[] = [];
-  const seenLemma = new Set<string>([lex?.lemma || headWord]);
-  if (root?.lemma && !seenLemma.has(root.lemma)) {
-    seenLemma.add(root.lemma);
-    etymologyChips.push({
-      key: `root-${root.lemma}`,
+  const rootChips: (NavEntry & { key: string })[] = [];
+  if (root?.lemma && root.strong && root.strong !== viewStrong) {
+    rootChips.push({
+      key: `root-${root.strong}`,
       lemma: root.lemma,
       strong: root.strong,
       pron: root.pron,
       glossKo: rootShort || undefined,
     });
   }
+  const familyChips: (NavEntry & { key: string })[] = [];
+  const seenFamily = new Set<string>();
   for (const raw of lex?.family ?? []) {
     if (!raw) continue;
     const f = familyItem(raw);
     if (!f.lemma) continue;
-    const dup = etymologyChips.find((c) => c.lemma === f.lemma);
-    if (dup) {
-      dup.strong ||= f.strong;
-      dup.pron ||= f.pron;
-      dup.glossKo ||= f.glossKo;
-      continue;
-    }
-    if (seenLemma.has(f.lemma)) continue;
-    seenLemma.add(f.lemma);
-    etymologyChips.push({ key: `fam-${f.lemma}`, ...f });
-  }
-
-  /** 표현 속 lemma → strong: 표현 words, 같은 뿌리, 이 장 본문 토큰에서 찾기 */
-  const strongByLemma = new Map<string, { strong: string; pron?: string }>();
-  for (const t of tokens) {
-    if (t.lemma && t.strong && !strongByLemma.has(t.lemma)) {
-      strongByLemma.set(t.lemma, { strong: t.strong });
-    }
-  }
-  for (const c of etymologyChips) {
-    if (c.strong) strongByLemma.set(c.lemma, { strong: c.strong, pron: c.pron });
-  }
-  if (lex?.lemma && lex.strong) {
-    strongByLemma.set(lex.lemma, { strong: lex.strong, pron: lex.pron });
+    if (f.strong && f.strong === root?.strong) continue;
+    const id = f.strong || f.lemma;
+    if (seenFamily.has(id)) continue;
+    seenFamily.add(id);
+    familyChips.push({ key: `fam-${id}`, ...f });
   }
 
   const goWord = (entry: NavEntry) => {
@@ -435,6 +466,38 @@ export default function WordStudySheet({
     setActive(w);
   };
 
+  const renderChips = (items: (NavEntry & { key: string })[]) => (
+    <ul className="study-ws-etym-chips">
+      {items.map((c) => {
+        const meta = pronStrongLine(c.pron, c.strong);
+        const inner = (
+          <>
+            <span className="study-ws-etym-top">
+              <span lang="grc">{c.lemma}</span>
+              {c.glossKo ? <em>{c.glossKo}</em> : null}
+            </span>
+            <span className="study-ws-etym-meta">{meta}</span>
+          </>
+        );
+        return (
+          <li key={c.key}>
+            {c.strong ? (
+              <button
+                type="button"
+                className="study-ws-etym-btn"
+                onClick={() => goWord(c)}
+              >
+                {inner}
+              </button>
+            ) : (
+              <span className="study-ws-etym-btn is-static">{inner}</span>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  );
+
   const useRtl =
     (Object.prototype.hasOwnProperty.call(BOOKS, bookId) &&
       isOldTestament(bookId as BookId)) ||
@@ -443,7 +506,12 @@ export default function WordStudySheet({
       .startsWith("H");
 
   return createPortal(
-    <div className="study-ws-root" role="dialog" aria-label="원어 사전">
+    <div
+      className="study-ws-root"
+      role="dialog"
+      aria-label="원어 사전"
+      data-no-drawer-swipe=""
+    >
       <button
         type="button"
         className="study-ws-backdrop"
@@ -454,10 +522,12 @@ export default function WordStudySheet({
         ref={sheetRef}
         className={`study-ws-sheet${useRtl ? " is-rtl" : ""}`}
         dir={useRtl ? "rtl" : undefined}
+        data-no-drawer-swipe=""
       >
-        <div className="study-ws-top">
+        <div className="study-ws-top" data-no-drawer-swipe="">
           <div
             className="study-ws-handle-hit"
+            data-no-drawer-swipe=""
             onPointerDown={onPointerDown}
             onPointerMove={onPointerMove}
             onPointerUp={onPointerUp}
@@ -466,16 +536,25 @@ export default function WordStudySheet({
             <div className="study-ws-handle" aria-hidden="true" />
           </div>
 
+          {matchHint ? (
+            <p className="study-ws-match-hint" role="status">
+              {matchHint}
+            </p>
+          ) : null}
+
           {verseWords.length > 0 ? (
             <div
               className="study-ws-chips"
               role="list"
-              aria-label="이 절의 헬라어"
+              aria-label="이 절의 원어"
+              data-no-drawer-swipe=""
             >
               {verseWords.map((w) => {
                 const on = active.i === w.i && active.word === w.word;
                 const sub =
-                  isInitialChip(w) && selectedLabel ? selectedLabel : w.glossKo;
+                  matched && isInitialChip(w) && selectedLabel
+                    ? selectedLabel
+                    : w.glossKo;
                 return (
                   <button
                     key={`${w.ref}-${w.i}-${w.word}`}
@@ -555,9 +634,6 @@ export default function WordStudySheet({
                   본문: <strong>{bodyKo}</strong>
                 </p>
               ) : null}
-              {parseKo ? (
-                <p className="study-ws-grammar">{grammarLine(parseKo)}</p>
-              ) : null}
               {showLemma ? (
                 <p className="study-ws-lemma">원형 {active.lemma}</p>
               ) : null}
@@ -566,75 +642,66 @@ export default function WordStudySheet({
               ) : null}
             </header>
 
-            {etymologyChips.length > 0 || rootNote ? (
+            {parseKo ? (
               <section className="study-ws-sec">
-                <h3>어원 · 같은 뿌리</h3>
-                {etymologyChips.length > 0 ? (
-                  <ul className="study-ws-etym-chips">
-                    {etymologyChips.map((c) => {
-                      const meta = pronStrongLine(c.pron, c.strong);
-                      const inner = (
-                        <>
-                          <span className="study-ws-etym-top">
-                            <span lang="grc">{c.lemma}</span>
-                            {c.glossKo ? <em>{c.glossKo}</em> : null}
-                          </span>
-                          <span className="study-ws-etym-meta">{meta}</span>
-                        </>
-                      );
-                      return (
-                        <li key={c.key}>
-                          {c.strong ? (
-                            <button
-                              type="button"
-                              className="study-ws-etym-btn"
-                              onClick={() => goWord(c)}
-                            >
-                              {inner}
-                            </button>
-                          ) : (
-                            <span className="study-ws-etym-btn is-static">
-                              {inner}
-                            </span>
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                ) : null}
+                <h3>품사</h3>
+                <p className="study-ws-def-ko">{grammarLine(parseKo)}</p>
+              </section>
+            ) : null}
+
+            {rootChips.length > 0 || rootNote ? (
+              <section className="study-ws-sec">
+                <h3>어원</h3>
+                {rootChips.length > 0 ? renderChips(rootChips) : null}
                 {rootNote ? (
                   <p className="study-ws-root-note">{rootNote}</p>
                 ) : null}
               </section>
             ) : null}
 
-            {defKo || defEn || fallbackGloss ? (
+            {defKo ? (
               <section className="study-ws-sec">
-                <h3>뜻</h3>
-                {defKo ? (
-                  <p className="study-ws-def-ko">{defKo}</p>
-                ) : fallbackGloss ? (
-                  <p className="study-ws-def-ko">{fallbackGloss}</p>
-                ) : null}
-                {defEn ? (
-                  <p className="study-ws-en">
-                    <span className="study-ws-en-label">EN</span>
-                    {defEn}
-                  </p>
-                ) : null}
+                <h3>단어 정의</h3>
+                <p className="study-ws-def-ko">{defKo}</p>
+              </section>
+            ) : nameMeaning ? (
+              <section className="study-ws-sec">
+                <h3>이름 뜻</h3>
+                <p className="study-ws-def-ko">{nameMeaning}</p>
               </section>
             ) : null}
 
-            {hasUsage ? (
+            {usage.length > 0 ? (
+              <section className="study-ws-sec">
+                <h3>이렇게 번역됐어요</h3>
+                <ul className="study-ws-usage">
+                  {usage.map((chip) => (
+                    <li key={chip}>{chip}</li>
+                  ))}
+                </ul>
+              </section>
+            ) : null}
+
+            {hasPlaces ? (
               <section className="study-ws-sec">
                 <h3>쓰인 곳</h3>
                 <p className="study-ws-counts">
+                  {typeof lex?.countOT === "number" ? (
+                    <>
+                      구약 <strong>{lex.countOT}</strong>회
+                    </>
+                  ) : null}
+                  {typeof lex?.countOT === "number" &&
+                  typeof lex?.countNT === "number"
+                    ? " · "
+                    : null}
                   {typeof lex?.countNT === "number" ? (
                     <>
                       신약 <strong>{lex.countNT}</strong>회
                     </>
                   ) : null}
-                  {typeof lex?.countNT === "number" &&
+                  {(typeof lex?.countOT === "number" ||
+                    typeof lex?.countNT === "number") &&
                   typeof lex?.count1John === "number"
                     ? " · "
                     : null}
@@ -678,119 +745,28 @@ export default function WordStudySheet({
               </section>
             ) : null}
 
-            {phrases.length > 0 ? (
+            {familyChips.length > 0 ? (
               <section className="study-ws-sec">
-                <h3>성경 표현</h3>
-                {phrases.map((ph) => {
-                  const expanded = !!phraseExpanded[ph.greek];
-                  const refs = ph.refs;
-                  const shown = expanded ? refs : refs.slice(0, 6);
-                  const rest = refs.length - 6;
-                  const gloss =
-                    typeof (ph as { glossKo?: string }).glossKo === "string"
-                      ? (ph as { glossKo?: string }).glossKo
-                      : "";
-                  const surface = ph.greek.split(/\s+/).filter(Boolean);
-                  const words =
-                    Array.isArray(ph.words) && ph.words.length > 0
-                      ? ph.words.map((w) => {
-                          const hit = w.lemma ? strongByLemma.get(w.lemma) : undefined;
-                          return {
-                            word: w.word,
-                            lemma: w.lemma ?? w.word,
-                            strong: w.strong || hit?.strong,
-                            pron: w.pron,
-                          };
-                        })
-                      : surface.map((word, idx) => {
-                          const lemma = ph.lemmas?.[idx] ?? word;
-                          const hit =
-                            surface.length === (ph.lemmas?.length ?? -1)
-                              ? strongByLemma.get(lemma)
-                              : undefined;
-                          return { word, lemma, strong: hit?.strong, pron: undefined };
-                        });
-                  const phPron =
-                    ph.pron ||
-                    (words.every((w) => w.pron)
-                      ? words.map((w) => w.pron).join(" ")
-                      : "");
-                  return (
-                    <div key={ph.greek} className="study-ws-phrase">
-                      <p className="study-ws-phrase-head">
-                        <span className="study-ws-phrase-g" lang="grc">
-                          {words.map((w, idx) => (
-                            <Fragment key={`${idx}-${w.word}`}>
-                              {idx > 0 ? " " : null}
-                              {w.strong && w.strong !== viewStrong ? (
-                                <button
-                                  type="button"
-                                  className="study-ws-phrase-word"
-                                  onClick={() =>
-                                    goWord({
-                                      lemma: w.lemma,
-                                      strong: w.strong,
-                                      pron: w.lemma === w.word ? w.pron : undefined,
-                                    })
-                                  }
-                                >
-                                  {w.word}
-                                </button>
-                              ) : (
-                                <span>{w.word}</span>
-                              )}
-                            </Fragment>
-                          ))}
-                        </span>
-                        {gloss ? (
-                          <span className="study-ws-phrase-ko">{gloss}</span>
-                        ) : null}
-                        {typeof ph.count === "number" ? (
-                          <span className="study-ws-phrase-n">{ph.count}회</span>
-                        ) : null}
-                      </p>
-                      {phPron ? (
-                        <p className="study-ws-phrase-pron">{phPron}</p>
-                      ) : null}
-                      <div className="study-ws-ref-chips">
-                        {shown.map((ref) => (
-                          <button
-                            key={ref}
-                            type="button"
-                            className="study-ws-ref-chip"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              goRef(ref);
-                            }}
-                          >
-                            {formatRefKo(ref, bookId)}
-                          </button>
-                        ))}
-                        {!expanded && rest > 0 ? (
-                          <button
-                            type="button"
-                            className="study-ws-ref-more"
-                            onClick={() =>
-                              setPhraseExpanded((prev) => ({
-                                ...prev,
-                                [ph.greek]: true,
-                              }))
-                            }
-                          >
-                            +{rest}
-                          </button>
-                        ) : null}
-                      </div>
-                    </div>
-                  );
-                })}
+                <h3>같은 뿌리</h3>
+                {renderChips(familyChips)}
               </section>
             ) : null}
 
-            {compare ? (
+            {defEn ? (
               <section className="study-ws-sec">
-                <h3>비교</h3>
-                <p className="study-ws-def-ko">{compare}</p>
+                <h3>
+                  <button
+                    type="button"
+                    className="study-ws-en-toggle"
+                    aria-expanded={enOpen}
+                    onClick={() => setEnOpen((v) => !v)}
+                  >
+                    영어 원문
+                  </button>
+                </h3>
+                {enOpen ? (
+                  <p className="study-ws-en">{defEn}</p>
+                ) : null}
               </section>
             ) : null}
           </div>

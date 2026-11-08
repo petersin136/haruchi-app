@@ -2,23 +2,29 @@
   "lemma": "אֵת",
   "pron": "에트",
   "strong": "H853",
-  "posKo": "소사",
+  "posKo": "목적격 표지",
   "root": {
     "lemma": "אוֹת",
     "strong": "H226",
+    "glossKo": "표징"
+  },
+  "etym": {
+    "strong": "H226",
+    "lemma": "אוֹת",
+    "pron": "오트",
     "glossKo": "표징"
   },
   "family": [
     {
       "lemma": "אוֹת",
       "strong": "H226",
-      "pron": "르오토트",
+      "pron": "오트",
       "glossKo": "표징"
     },
     {
       "lemma": "אָת",
       "strong": "H852",
-      "pron": "아타아",
+      "pron": "아트",
       "glossKo": "표적(아람)"
     },
     {
@@ -30,12 +36,15 @@
     {
       "lemma": "יַת",
       "strong": "H3487",
-      "pron": "야테혼",
-      "glossKo": "그들에게 목적사(아람)"
+      "pron": "야트",
+      "glossKo": "목적사(아람)"
     }
   ],
-  "defEn": "self; even; namely",
-  "defKo": "",
+  "nameMeaning": "",
+  "defEn": "properly, self (but generally used to point out more definitely the object of a verb or preposition, even or namely)",
+  "defKo": "목적격(직접목적어)을 표시하는 불변화사예요. 우리말에는 보통 안 옮기고, 목적어 앞에 붙는 표지로만 남아요. 창세기 1:1 「천지를」 앞에서처럼 목적어를 분명히 짚어 줘요.",
+  "etymKo": "독자적인 소사로, 어근 파생이라기보다 문법 표지에 가까워요.",
+  "usageKo": "(목적격 표지), …을/를",
   "countOT": 10979,
   "byBook": {
     "exodus": 1026,

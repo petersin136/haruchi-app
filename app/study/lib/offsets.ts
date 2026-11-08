@@ -27,6 +27,41 @@ export function buildChapterPlain(verses: Verse[]): {
   return { plain, spans };
 }
 
+/**
+ * 절 선택 복사.
+ * 한 장에서 이어지면 「1 본문 2 본문 (창 34:1-2)」,
+ * 떨어지면 「1 본문\n5 본문 (창 34:1, 5)」,
+ * 장을 넘으면 「(창 34:31–35:2)」.
+ */
+export function formatStudyCopy(
+  shortName: string,
+  items: { chapter: number; n: number; text: string }[],
+): string {
+  const sorted = [...items].sort((a, b) => a.chapter - b.chapter || a.n - b.n);
+  const clusters: (typeof sorted)[] = [];
+  for (const it of sorted) {
+    const last = clusters[clusters.length - 1];
+    const prev = last?.[last.length - 1];
+    if (prev && prev.chapter === it.chapter && it.n === prev.n + 1) last.push(it);
+    else clusters.push([it]);
+  }
+  const gapped = clusters.length > 1;
+  const body = clusters
+    .map((c) => c.map((v) => `${v.n} ${v.text.trim()}`).join(" "))
+    .join(gapped ? "\n" : " ");
+  const chapters = new Set(sorted.map((v) => v.chapter));
+  if (chapters.size <= 1) {
+    const ch = sorted[0]?.chapter ?? 1;
+    const parts = clusters.map((c) =>
+      c.length === 1 ? `${c[0].n}` : `${c[0].n}-${c[c.length - 1].n}`,
+    );
+    return `${body} (${shortName} ${ch}:${parts.join(", ")})`;
+  }
+  const first = sorted[0];
+  const last = sorted[sorted.length - 1];
+  return `${body} (${shortName} ${first.chapter}:${first.n}–${last.chapter}:${last.n})`;
+}
+
 /** 반개구간 [start, end). 경계 offset === end 는 다음 절 시작(마지막 절 끝만 그 절). */
 export function verseAtOffset(spans: VerseSpan[], offset: number): number {
   for (const s of spans) {

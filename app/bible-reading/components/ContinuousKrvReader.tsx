@@ -20,6 +20,10 @@ type Props = {
   /** 부모의 현재 장 — 스크롤·검색·서랍 이동의 단일 소스 */
   chapter: number;
   flashVerse?: number | null;
+  /**
+   * 장 선택·검색·URL 진입 때마다 증가. 같은 장이어도 큰 장 번호를 상단에 맞춤.
+   */
+  alignNonce?: number;
   bookConfirmed: boolean;
   /** 장 제목이 상단에 닿아 현재 장이 바뀜 (스크롤) — 부모는 scrollTo 하지 말 것 */
   onActiveChapterChange: (chapter: number) => void;
@@ -29,7 +33,17 @@ type Props = {
   onGoNextBook: (bookId: BookId) => void;
 };
 
-const TOP_ANCHOR_PX = 52; // MobileTopBar 46 + 여유
+/** 보이는 본문 상단(고정 톱바 하단). 측정 실패 시 태블릿 52px. */
+function topAnchorPx(): number {
+  const bar = document.querySelector(
+    ".brp-mobile-topbar, .brp-header",
+  ) as HTMLElement | null;
+  if (!bar) return 52;
+  const st = getComputedStyle(bar);
+  if (st.display === "none" || st.visibility === "hidden") return 52;
+  const bottom = bar.getBoundingClientRect().bottom;
+  return bottom > 0 ? Math.round(bottom) : 52;
+}
 const COMPLETE_GATE_MS = 3000;
 
 function scrollRootOf(el: HTMLElement | null): HTMLElement | Window {
@@ -61,6 +75,7 @@ export default function ContinuousKrvReader({
   bookId,
   chapter,
   flashVerse = null,
+  alignNonce = 0,
   bookConfirmed,
   onActiveChapterChange,
   onChapterComplete,
@@ -71,6 +86,7 @@ export default function ContinuousKrvReader({
   const heightsRef = useRef<Map<number, number>>(new Map());
   const [heightTick, setHeightTick] = useState(0);
   const [spreadOn, setSpreadOn] = useState(false);
+  const prevSpreadRef = useRef(false);
   useEffect(() => subscribeStudySpread(setSpreadOn), []);
   const lastEmittedRef = useRef(chapter);
   /** 검색·URL·서랍 등 외부 점프 후 해당 장 앵커로 맞출 목표. null 이면 정렬 불필요 */
@@ -163,7 +179,7 @@ export default function ContinuousKrvReader({
         if (
           h > prev + 40 &&
           ch < active &&
-          el.getBoundingClientRect().bottom <= TOP_ANCHOR_PX + 40
+          el.getBoundingClientRect().bottom <= topAnchorPx() + 40
         ) {
           growAbove += h - prev;
         }
@@ -275,23 +291,41 @@ export default function ContinuousKrvReader({
   useEffect(() => {
     if (chapter === lastEmittedRef.current) return;
     pendingAlignRef.current = chapter;
-    prevLoRef.current = Math.max(1, chapter - 1);
   }, [bookId, chapter]);
+
+  // 같은 장이라도 서랍·검색·첫 진입 nonce → 큰 장 번호를 상단에
+  useEffect(() => {
+    if (alignNonce <= 0) return;
+    pendingAlignRef.current = chapter;
+  }, [alignNonce, chapter]);
+
+  // 양쪽→이어읽기 전환 시 scrollTop≈0 이면 선택 장−1이 상단에 옴 → 재정렬
+  useEffect(() => {
+    const was = prevSpreadRef.current;
+    prevSpreadRef.current = spreadOn;
+    if (was && !spreadOn) {
+      pendingAlignRef.current = chapter;
+    }
+  }, [spreadOn, chapter]);
 
   const alignToChapter = useCallback((target: number) => {
     const root = wrapRef.current;
     if (!root) return false;
-    // 본문·앵커가 실제로 그려진 뒤에만 정렬 (로딩 플레이스홀더면 재시도)
+    // 본문·큰 장 번호가 그려진 뒤에만 정렬 (로딩 플레이스홀더면 재시도)
     const host = root.querySelector<HTMLElement>(
       `[data-study-chapter="${target}"]`,
     );
-    const anchor = host?.querySelector<HTMLElement>("[data-chapter-anchor]");
+    // 큰 장 번호(.study-drop)를 화면 상단에. 제목 앵커만 있으면 그것으로.
+    const anchor =
+      host?.querySelector<HTMLElement>(".study-drop") ??
+      host?.querySelector<HTMLElement>("[data-chapter-anchor]");
     const body = host?.querySelector<HTMLElement>(".study-body");
     if (!host || !anchor || !body) return false;
     if (host.offsetHeight < 80) return false;
     const sr = scrollRootOf(root);
+    const topPx = topAnchorPx();
     const y =
-      getScrollTop(sr) + anchor.getBoundingClientRect().top - TOP_ANCHOR_PX;
+      getScrollTop(sr) + anchor.getBoundingClientRect().top - topPx;
     suppressScrollEmitRef.current = true;
     freezeUntilRef.current = Date.now() + 900;
     setScrollTop(sr, Math.max(0, y));
@@ -301,10 +335,14 @@ export default function ContinuousKrvReader({
     const refine = () => {
       const a =
         root.querySelector<HTMLElement>(
+          `[data-study-chapter="${target}"] .study-drop`,
+        ) ??
+        root.querySelector<HTMLElement>(
           `[data-study-chapter="${target}"] [data-chapter-anchor]`,
-        ) ?? anchor;
+        ) ??
+        anchor;
       const y2 =
-        getScrollTop(sr) + a.getBoundingClientRect().top - TOP_ANCHOR_PX;
+        getScrollTop(sr) + a.getBoundingClientRect().top - topAnchorPx();
       setScrollTop(sr, Math.max(0, y2));
     };
     requestAnimationFrame(() => {
@@ -337,7 +375,7 @@ export default function ContinuousKrvReader({
     return () => window.clearInterval(id);
     // heightTick 제외 — spacer 미세 갱신으로 정렬이 재시작되지 않게
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [alignToChapter, bookId, chapter, mounted.join(",")]);
+  }, [alignToChapter, bookId, chapter, alignNonce, spreadOn, mounted.join(",")]);
 
   // flashVerse — 현재 장 안에서만
   useEffect(() => {
@@ -380,9 +418,12 @@ export default function ContinuousKrvReader({
       })).filter((x) => Number.isFinite(x.ch));
       if (tops.length === 0) return;
 
-      // 문서 맨 위면 창의 첫 장 (정렬 점프 중이 아닐 때만)
+      // 진짜 책 맨 위(1장이 마운트)일 때만 첫 앵커를 현재 장으로.
+      // lo>1 인데 scrollTop≈0 이면 spacer 누락·양쪽→이어읽기 직후라서
+      // tops[0]=chapter-1 을 emit 하면 29→28→27 로 한 장씩 밀린다.
       const srNow = scrollRootOf(wrap);
-      if (getScrollTop(srNow) <= 4) {
+      const topPx = topAnchorPx();
+      if (getScrollTop(srNow) <= 4 && lo === 1) {
         emitActive(tops[0].ch);
         return;
       }
@@ -390,7 +431,7 @@ export default function ContinuousKrvReader({
       // 상단 밴드를 지나친 가장 아래 장
       let passed = tops[0].ch;
       for (const row of tops) {
-        if (row.top <= TOP_ANCHOR_PX + 8) passed = row.ch;
+        if (row.top <= topPx + 8) passed = row.ch;
       }
 
       const cur = lastEmittedRef.current;
@@ -402,7 +443,7 @@ export default function ContinuousKrvReader({
       }
       // 위로: 현재 장 제목이 밴드보다 충분히 아래로 내려간 뒤에만
       const curRow = tops.find((r) => r.ch === cur);
-      if (curRow && curRow.top > TOP_ANCHOR_PX + 96) {
+      if (curRow && curRow.top > topPx + 96) {
         emitActive(passed);
       }
     };
@@ -417,8 +458,8 @@ export default function ContinuousKrvReader({
       () => readActive(),
       {
         root: null,
-        // 상단 TOP_ANCHOR 근처 얇은 밴드
-        rootMargin: `-${TOP_ANCHOR_PX}px 0px -70% 0px`,
+        // 상단 톱바 근처 얇은 밴드
+        rootMargin: `-${topAnchorPx()}px 0px -70% 0px`,
         threshold: [0, 0.01, 1],
       },
     );
@@ -440,7 +481,7 @@ export default function ContinuousKrvReader({
       window.clearTimeout(t1);
       window.clearTimeout(t2);
     };
-  }, [emitActive, mounted, bookId]);
+  }, [emitActive, mounted, bookId, lo]);
 
   const attemptFinalize = useCallback(
     (ch: number) => {

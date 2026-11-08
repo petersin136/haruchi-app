@@ -13,7 +13,7 @@ import {
   type PointerEvent as ReactPointerEvent,
   type ReactNode,
 } from "react";
-import { createPortal } from "react-dom";
+import { createPortal, flushSync } from "react-dom";
 import { loadKoreanChapter } from "../../bible-reading/bibleData";
 import type { BookId } from "../../bible-reading/books";
 import { BOOK_ORDER, BOOKS, isOldTestament } from "../../bible-reading/books";
@@ -33,6 +33,7 @@ import {
 import {
   buildChapterPlain,
   circledNum,
+  formatStudyCopy,
   segmentVerse,
   verseAtOffset,
   type TextSeg,
@@ -49,24 +50,40 @@ import {
   subscribeStudyDebug,
 } from "../lib/studyDebug";
 import {
+  GREEK_SBL_OMIT_HINT,
+  greekVerseKind,
+  loadGreekVerseDiffMap,
+  type GreekVerseKind,
+} from "../lib/greekVerseDiff";
+import {
   loadChapterWordStudy,
-  matchTokenByGloss,
+  matchTokenByGlossDetailed,
+  tokensInVerse,
+  type VerseWordStudyMeta,
   type WordStudyToken,
 } from "../lib/wordStudy";
 import WordStudySheet from "./WordStudySheet";
+import { stemOf } from "../lib/koStem";
 import {
   STUDY_SPREAD_ANIM_MS,
-  STUDY_SPREAD_BAR_H,
+  STUDY_SPREAD_COMMIT_DEG,
+  STUDY_SPREAD_COMMIT_VEL,
   STUDY_SPREAD_EDGE,
   STUDY_SPREAD_OUTER,
   STUDY_SPREAD_PGNUM_H,
-  STUDY_SPREAD_SWIPE_PX,
-  STUDY_SPREAD_TOPBAR,
   calcSpreadGeometry,
-  chapterLabel,
   subscribeStudySpread,
 } from "../lib/studySpread";
 import "../study.css";
+
+/** 책별로 이미 로드된 장 본문을 모아 본체 검증에 쓴다 */
+const bookCorpusMap = new Map<string, string>();
+function rememberBookText(bookId: string, chunk: string) {
+  if (!chunk) return;
+  const prev = bookCorpusMap.get(bookId) ?? "";
+  if (prev.includes(chunk.slice(0, Math.min(80, chunk.length)))) return;
+  bookCorpusMap.set(bookId, prev ? `${prev}\n${chunk}` : chunk);
+}
 
 type Props = {
   bookId: BookId;
@@ -137,7 +154,7 @@ type NotePos = {
 /** 시작점~본문 오른쪽 끝이 본문 폭의 이 비율보다 좁으면 줄 왼쪽 끝에서 시작 */
 const NOTE_MIN_RATIO = 0.4;
 /** 같은 줄 앞 메모가 이 폭보다 좁아지면 뒤 메모는 번호 배지로 */
-const NOTE_MIN_ROOM = 40;
+const NOTE_MIN_ROOM = 56;
 
 const LONG_PRESS_MS = 350;
 const MOVE_CANCEL_PX = 8;
@@ -205,7 +222,30 @@ function StudyNotebook({
   const [spreadBoxStyle, setSpreadBoxStyle] = useState<CSSProperties>({});
   const [spreadDragging, setSpreadDragging] = useState(false);
   const [spreadDragDx, setSpreadDragDx] = useState(0);
+  /** 드래그 진행 0–1. 그림자·종이 밝기 */
+  const [spreadPull, setSpreadPull] = useState(0);
+  /** 커밋 연출 방향. 1 다음, -1 이전 */
+  const [spreadTurn, setSpreadTurn] = useState<0 | 1 | -1>(0);
+  /** 3D 잎이 떠 있는 동안만 4쪽을 마운트. 각도는 ref로만 갱신 */
+  const [flip, setFlip] = useState<{ dir: 1 | -1; auto: boolean } | null>(null);
+  const [pageW, setPageW] = useState(480);
+  const [nextPack, setNextPack] = useState<{
+    chapter: number;
+    title: string;
+    verses: { n: number; t: string }[];
+  } | null>(null);
+  const [prevPack, setPrevPack] = useState<{
+    chapter: number;
+    title: string;
+    verses: { n: number; t: string }[];
+  } | null>(null);
+  const [prevPageCount, setPrevPageCount] = useState(0);
+  const [versePick, setVersePick] = useState<number[] | null>(null);
+  const [spreadHint, setSpreadHint] = useState(false);
+  const [nextChTitle, setNextChTitle] = useState("");
   const [spreadNextBookUi, setSpreadNextBookUi] = useState(false);
+  /** 상단바·쪽번호 표시. 숨겨도 펼침 높이는 다시 계산하지 않음 */
+  const [chromeOn, setChromeOn] = useState(true);
   const spreadVpRef = useRef<HTMLDivElement | null>(null);
   const spreadFlowRef = useRef<HTMLElement | null>(null);
   const spreadIndexRef = useRef(0);
@@ -216,8 +256,38 @@ function StudyNotebook({
     id: number;
     x: number;
     y: number;
-    armed: boolean;
+    t: number;
+    lastX: number;
+    lastT: number;
+    vx: number;
+    moved: number;
+    mode: "pending" | "drag" | "hold" | "ignore";
+    done: boolean;
+    timer: number;
   } | null>(null);
+  const spreadEdgeTapRef = useRef(0);
+  const flipRef = useRef(flip);
+  flipRef.current = flip;
+  const leafRef = useRef<HTMLDivElement | null>(null);
+  const leafInkRef = useRef<HTMLDivElement | null>(null);
+  const leafCastRef = useRef<HTMLDivElement | null>(null);
+  const leafRimRef = useRef<HTMLDivElement | null>(null);
+  const flipAngleRef = useRef(0);
+  const flipRafRef = useRef(0);
+  const flipBusyRef = useRef(false);
+  const pageWRef = useRef(480);
+  const versePickRef = useRef<number[] | null>(null);
+  versePickRef.current = versePick;
+  const verseDragRef = useRef<{
+    id: number;
+    n: number;
+    x: number;
+    y: number;
+    mode: "pending" | "drag";
+    wasSelected: boolean;
+    base: number[];
+  } | null>(null);
+  const noteGuardRef = useRef(0);
   const spreadAnchorVerseRef = useRef<number | null>(null);
   spreadIndexRef.current = spreadIndex;
   spreadCountRef.current = spreadCount;
@@ -324,7 +394,17 @@ function StudyNotebook({
   const [bubble, setBubble] = useState<BubbleState | null>(null);
   const [wsTokens, setWsTokens] = useState<WordStudyToken[]>([]);
   const [wsHasFile, setWsHasFile] = useState(false);
+  const [wsVerseMeta, setWsVerseMeta] = useState<
+    Record<number, VerseWordStudyMeta>
+  >({});
+  const [greekDiffMap, setGreekDiffMap] = useState<Map<
+    string,
+    GreekVerseKind
+  > | null>(null);
   const [wsOpen, setWsOpen] = useState(false);
+  const [wsMatchHint, setWsMatchHint] = useState<string | null>(null);
+  const [wsMatched, setWsMatched] = useState(false);
+  const [wsTitleShift, setWsTitleShift] = useState(false);
   const [wsVerse, setWsVerse] = useState(1);
   const [wsInitial, setWsInitial] = useState<WordStudyToken | null>(null);
   const [wsSelectedKo, setWsSelectedKo] = useState("");
@@ -341,6 +421,16 @@ function StudyNotebook({
   );
   plainRef.current = plain;
   const words = useMemo(() => buildWords(spans), [spans]);
+  /** 길게 누른 어절의 본체↔전체 토글 */
+  const stemToggleRef = useRef<{
+    word: { start: number; end: number };
+    stem: { start: number; end: number };
+    mode: "stem" | "full";
+  } | null>(null);
+
+  useEffect(() => {
+    rememberBookText(bookId, plain);
+  }, [bookId, plain]);
 
   const marksById = useMemo(() => {
     const map = new Map<string, StudyMark>();
@@ -380,11 +470,20 @@ function StudyNotebook({
     let stale = false;
     setWsTokens([]);
     setWsHasFile(false);
+    setWsTitleShift(false);
+    setWsVerseMeta({});
     loadChapterWordStudy(bookId, chapter).then((loaded) => {
       if (stale) return;
       setWsTokens(loaded.tokens);
       setWsHasFile(loaded.hasFile);
+      setWsTitleShift(!!loaded.titleShift);
+      setWsVerseMeta(loaded.verseMeta ?? {});
     });
+    if (!isOldTestament(bookId)) {
+      loadGreekVerseDiffMap().then((map) => {
+        if (!stale) setGreekDiffMap(map);
+      });
+    }
     return () => {
       stale = true;
     };
@@ -439,21 +538,48 @@ function StudyNotebook({
   const measureNotes = useCallback(() => {
     const root = bodyRef.current;
     if (!root) return;
-    const base = root.getBoundingClientRect();
+    // 양쪽: 그 쪽이 보이는 PageView 안에서만 앵커를 잰다
+    const baseEl =
+      spreadOn && spreadVpRef.current ? spreadVpRef.current : root;
+    const base = baseEl.getBoundingClientRect();
     const bodyW = root.clientWidth;
+    const bodies: HTMLElement[] =
+      spreadOn && spreadVpRef.current
+        ? Array.from(
+            spreadVpRef.current.querySelectorAll<HTMLElement>(
+              ".study-page-view .study-body",
+            ),
+          ).filter((body) => !body.closest(".is-covered, .study-spread-measure, .study-leaf"))
+        : [root];
     const items: { id: string; top: number; start: number }[] = [];
-    root
-      .querySelectorAll<HTMLElement>("[data-note-anchor]")
-      .forEach((el) => {
+    const seen = new Set<string>();
+    for (const body of bodies) {
+      const clip = (body.closest(".study-page-view") as HTMLElement | null) ?? body;
+      const clipBox = clip.getBoundingClientRect();
+      body.querySelectorAll<HTMLElement>("[data-note-anchor]").forEach((el) => {
         const rects = Array.from(el.getClientRects());
-        const first = rects.find((r) => r.width > 0) ?? rects[0];
+        const first =
+          rects.find((r) => {
+            const cx = r.left + r.width / 2;
+            const cy = r.top + r.height / 2;
+            return (
+              r.width > 0 &&
+              cx >= clipBox.left &&
+              cx <= clipBox.right &&
+              cy >= clipBox.top &&
+              cy <= clipBox.bottom
+            );
+          }) ?? null;
         if (!first) return;
         const start = Math.max(0, first.left - base.left);
         const top = first.bottom - base.top - 2;
         for (const id of (el.dataset.noteAnchor ?? "").split(" ")) {
-          if (id) items.push({ id, top, start });
+          if (!id || seen.has(id)) continue;
+          seen.add(id);
+          items.push({ id, top, start });
         }
       });
+    }
     items.sort((a, b) => a.top - b.top || a.start - b.start);
 
     const next: Record<string, NotePos> = {};
@@ -465,6 +591,14 @@ function StudyNotebook({
       if (width < bodyW * NOTE_MIN_RATIO) {
         left = 0;
         width = bodyW;
+      }
+      // 양쪽: 메모가 그 쪽(열) 안에서만 가로로 이어지게
+      if (spreadOn && spreadVpRef.current) {
+        const mid = spreadVpRef.current.getBoundingClientRect().width / 2;
+        const colRight = it.start < mid ? mid - 8 : base.width;
+        const colLeft = it.start < mid ? 0 : mid + 8;
+        left = Math.max(left, colLeft);
+        width = Math.max(40, colRight - left);
       }
       const prev = prevId ? next[prevId] : null;
       if (prev && Math.abs(prev.top - it.top) < 10) {
@@ -498,11 +632,11 @@ function StudyNotebook({
       prevId = it.id;
     }
     setNotePos(next);
-  }, []);
+  }, [spreadOn]);
 
   useLayoutEffect(() => {
     measureNotes();
-  }, [measureNotes, verses, data.marks, editingMarkId]);
+  }, [measureNotes, verses, data.marks, editingMarkId, spreadIndex, spreadOn]);
 
   useEffect(() => {
     if (!expandedNoteId) return;
@@ -521,7 +655,25 @@ function StudyNotebook({
 
   useEffect(() => {
     if (!editingMarkId) return;
-    editInputRef.current?.focus();
+    const vv = window.visualViewport;
+    if (!vv) return;
+    const place = () => {
+      const input = editInputRef.current;
+      if (!input) return;
+      const limit = vv.offsetTop + vv.height - 12;
+      const h = input.offsetHeight || 32;
+      const top = parseFloat(input.style.top || "0");
+      if (Number.isFinite(top) && top + h > limit) {
+        input.style.top = `${Math.max(vv.offsetTop + 8, limit - h)}px`;
+      }
+    };
+    vv.addEventListener("resize", place);
+    vv.addEventListener("scroll", place);
+    place();
+    return () => {
+      vv.removeEventListener("resize", place);
+      vv.removeEventListener("scroll", place);
+    };
   }, [editingMarkId]);
 
   useEffect(() => {
@@ -536,22 +688,47 @@ function StudyNotebook({
     (x: number, y: number): number | null => {
       const root = bodyRef.current;
       if (!root) return null;
+      // 좌표는 viewport clientX/Y 만. pageY·scrollY·손가락 들림 보정 금지.
       const caret = caretFromPoint(x, y);
-      if (caret) {
-        const host =
-          caret.node.nodeType === Node.ELEMENT_NODE
-            ? (caret.node as Element)
-            : caret.node.parentElement;
-        // 절 번호·절 사이 공백 위 → 가장 가까운 본문 글자로
-        if (host?.closest?.(".study-vnum, .study-v-gap")) {
-          return offsetFromPointScan(root, x, y, spans);
-        }
-        if (closestVerseText(caret.node, root)) {
-          const off = domPointToOffset(root, caret.node, caret.offset, spans);
-          if (off != null) return off;
+      let glyph: DOMRect | null = null;
+      let raw: number | null = null;
+      const pointRoot =
+        (caret?.node.parentElement?.closest(".study-body") as HTMLElement | null) ??
+        root;
+      if (caret && caret.node.nodeType === Node.TEXT_NODE) {
+        glyph = glyphRectOf(caret.node as Text, caret.offset);
+        const host = caret.node.parentElement;
+        if (!host?.closest(".study-vnum, .study-v-gap")) {
+          if (closestVerseText(caret.node, pointRoot)) {
+            raw = domPointToOffset(pointRoot, caret.node, caret.offset, spans);
+          }
         }
       }
-      return offsetFromPointScan(root, x, y, spans);
+      const contains =
+        !!glyph && y >= glyph.top - 0.5 && y <= glyph.bottom + 0.5;
+      const ch =
+        caret && caret.node.nodeType === Node.TEXT_NODE
+          ? (caret.node as Text).data.charAt(
+              Math.max(
+                0,
+                Math.min((caret.node as Text).length - 1, caret.offset),
+              ),
+            )
+          : "";
+      const space = !ch || /\s/.test(ch);
+      debugLogRef.current(
+        `[선택] pointer clientX=${Math.round(x)} clientY=${Math.round(y)} caretRangeFromPoint(${Math.round(x)},${Math.round(y)}) glyphRect=${glyph ? `${Math.round(glyph.left)},${Math.round(glyph.top)} ${Math.round(glyph.width)}×${Math.round(glyph.height)}` : "none"} ch=${JSON.stringify(ch)} containsY=${contains}`,
+      );
+      // 공백의 줄 박스는 빈 칸까지 덮고, 그 오프셋에서 단어 스냅이 다음 줄로 간다
+      if (raw != null && contains && !space) return raw;
+      const fixed = offsetNearestLine(root, x, y, spans);
+      if (fixed) {
+        debugLogRef.current(
+          `[선택] 줄 보정(같은 열, 세로 중심) glyphRect=${Math.round(fixed.rect.left)},${Math.round(fixed.rect.top)} ${Math.round(fixed.rect.width)}×${Math.round(fixed.rect.height)} off=${fixed.off}`,
+        );
+        return fixed.off;
+      }
+      return raw ?? offsetFromPointScan(root, x, y, spans);
     },
     [spans],
   );
@@ -559,28 +736,55 @@ function StudyNotebook({
   const measureSel = useCallback(() => {
     const root = bodyRef.current;
     const cur = selRef.current;
+    const picks = versePickRef.current;
     if (!root || !cur) {
       selRectsRef.current = [];
       setSelRects([]);
       return;
     }
-    const a = offsetToDomPoint(root, cur.start, spans, false);
-    const b = offsetToDomPoint(root, cur.end, spans, true);
-    if (!a || !b) {
-      selRectsRef.current = [];
-      setSelRects([]);
-      return;
+    const ranges: { start: number; end: number }[] =
+      picks && picks.length
+        ? picks.flatMap((n) => {
+            const sp = spans.find((s) => s.n === n);
+            return sp ? [{ start: sp.start, end: sp.end }] : [];
+          })
+        : [cur];
+    const baseEl = spreadVpRef.current ?? root;
+    const base = baseEl.getBoundingClientRect();
+    const bodies: HTMLElement[] = spreadVpRef.current
+      ? Array.from(
+          spreadVpRef.current.querySelectorAll<HTMLElement>(
+            ".study-page-view .study-body",
+          ),
+        ).filter((body) => !body.closest(".is-covered, .study-spread-measure"))
+      : [root];
+    const rects: SelRect[] = [];
+    for (const body of bodies) {
+      const clip = (body.closest(".study-page-view") as HTMLElement | null) ?? body;
+      const clipBox = clip.getBoundingClientRect();
+      for (const range of ranges) {
+        const a = offsetToDomPoint(body, range.start, spans, false);
+        const b = offsetToDomPoint(body, range.end, spans, true);
+        if (!a || !b) continue;
+        const dom = document.createRange();
+        dom.setStart(a.node, a.offset);
+        dom.setEnd(b.node, b.offset);
+        for (const r of mergeLineRects(Array.from(dom.getClientRects()))) {
+          const cx = r.left + r.width / 2;
+          const cy = r.top + r.height / 2;
+          if (spreadVpRef.current) {
+            if (cx < clipBox.left || cx > clipBox.right || cy < clipBox.top || cy > clipBox.bottom)
+              continue;
+          }
+          rects.push({
+            top: r.top - base.top,
+            left: r.left - base.left,
+            width: r.width,
+            height: r.height,
+          });
+        }
+      }
     }
-    const range = document.createRange();
-    range.setStart(a.node, a.offset);
-    range.setEnd(b.node, b.offset);
-    const base = root.getBoundingClientRect();
-    const rects = mergeLineRects(Array.from(range.getClientRects())).map((r) => ({
-      top: r.top - base.top,
-      left: r.left - base.left,
-      width: r.width,
-      height: r.height,
-    }));
     selRectsRef.current = rects;
     setSelRects(rects);
   }, [spans]);
@@ -588,7 +792,7 @@ function StudyNotebook({
   useLayoutEffect(() => {
     selRef.current = sel;
     measureSel();
-  }, [sel, measureSel, data.marks]);
+  }, [sel, measureSel, data.marks, spreadIndex, spreadOn]);
 
   const selectionToolbarFor = useCallback(
     (range: { start: number; end: number }): ToolbarMode | null => {
@@ -618,6 +822,9 @@ function StudyNotebook({
   );
 
   const clearSelection = useCallback(() => {
+    stemToggleRef.current = null;
+    versePickRef.current = null;
+    setVersePick(null);
     setSel(null);
     setToolbar((t) => (t?.kind === "selection" ? null : t));
   }, []);
@@ -673,6 +880,19 @@ function StudyNotebook({
 
   const finishDrag = useCallback(() => {
     if (!dragRef.current) return;
+    const d = dragRef.current;
+    const cur = selRef.current;
+    const tog = stemToggleRef.current;
+    if (d.moved && tog && cur) {
+      if (cur.start === tog.stem.start && cur.end === tog.stem.end) {
+        tog.mode = "stem";
+      } else if (cur.start === tog.word.start && cur.end === tog.word.end) {
+        tog.mode = "full";
+      } else {
+        // 끌기로 어절 밖으로 넓히면 본체 토글은 더 이상 쓰지 않음
+        stemToggleRef.current = null;
+      }
+    }
     abortSelectGesture({ keepSelection: true, showToolbar: true });
   }, [abortSelectGesture]);
 
@@ -680,11 +900,8 @@ function StudyNotebook({
     (x: number, y: number) => {
       const d = dragRef.current;
       if (!d) return;
-      // 손잡이: 잡은 지점(grabDy)만큼 보정한 뒤 본문 글자에 붙임
-      const hitY = d.mode === "press" ? y : y - d.grabDy - HANDLE_LIFT;
-      let off = offsetAtPoint(x, hitY);
-      // 보정 좌표가 빗나가면 손가락 좌표로 재시도
-      if (off == null && d.mode !== "press") off = offsetAtPoint(x, y);
+      // 길게 누름·손잡이·돋보기 캐럿 모두 clientX/Y 그대로
+      const off = offsetAtPoint(x, y);
       if (off == null) return;
       const max = plainRef.current.length;
       if (max < 1) return;
@@ -754,7 +971,7 @@ function StudyNotebook({
     let atStart = d?.mode === "start";
     if (d?.mode === "press") atStart = cur.start < d.anchorStart;
     const r = atStart ? rects[0] : rects[rects.length - 1];
-    const base = root.getBoundingClientRect();
+    const base = (spreadVpRef.current ?? root).getBoundingClientRect();
     return {
       x: base.left + (atStart ? r.left : r.left + r.width),
       y: base.top + r.top + r.height / 2,
@@ -879,7 +1096,24 @@ function StudyNotebook({
       if (isAndroid()) navigator.vibrate?.(10);
       suppressClickRef.current = true;
       setExpandedNoteId(null);
-      const first = { start: w.start, end: w.end };
+      const eojeol = plainRef.current.slice(w.start, w.end);
+      const packText = [nextPack, prevPack]
+        .filter(Boolean)
+        .map((p) => p!.verses.map((v) => v.t).join(" "))
+        .join("\n");
+      if (packText) rememberBookText(bookId, packText);
+      const corpus = bookCorpusMap.get(bookId) ?? plainRef.current;
+      const local = stemOf(eojeol, corpus);
+      const stem = {
+        start: w.start + local.start,
+        end: w.start + local.end,
+      };
+      if (stem.end <= stem.start) {
+        stem.start = w.start;
+        stem.end = w.end;
+      }
+      stemToggleRef.current = { word: { ...w }, stem: { ...stem }, mode: "stem" };
+      const first = { start: stem.start, end: stem.end };
       selRef.current = first;
       setSel(first);
       setToolbar(selectionToolbarFor(first));
@@ -1048,7 +1282,7 @@ function StudyNotebook({
   }, [dragging, abortSelectGesture]);
 
 
-  // 빈 곳 탭 → 선택 취소 (스크롤 제스처는 유지)
+  // 빈 곳 탭 → 선택 취소. 선택 안을 탭하면 본체↔어절 전체 토글
   useEffect(() => {
     if (!sel || dragging) return;
     let down: { x: number; y: number; t: number } | null = null;
@@ -1064,6 +1298,34 @@ function StudyNotebook({
       const t = e.target as HTMLElement | null;
       if (t?.closest?.(".study-toolbar, .study-sel-handle, .study-ws-root"))
         return;
+      const cur = selRef.current;
+      const tog = stemToggleRef.current;
+      if (cur && tog) {
+        const insideSel = selRectsRef.current.some((r) => {
+          const root = (spreadVpRef.current ?? bodyRef.current)?.getBoundingClientRect();
+          if (!root) return false;
+          const left = root.left + r.left;
+          const top = root.top + r.top;
+          return (
+            e.clientX >= left &&
+            e.clientX <= left + r.width &&
+            e.clientY >= top &&
+            e.clientY <= top + r.height
+          );
+        });
+        if (insideSel) {
+          const next =
+            tog.mode === "stem"
+              ? { start: tog.word.start, end: tog.word.end }
+              : { start: tog.stem.start, end: tog.stem.end };
+          tog.mode = tog.mode === "stem" ? "full" : "stem";
+          selRef.current = next;
+          setSel(next);
+          const tb = selectionToolbarFor(next);
+          if (tb) setToolbar(tb);
+          return;
+        }
+      }
       clearSelection();
     };
     document.addEventListener("pointerdown", onDown);
@@ -1072,7 +1334,7 @@ function StudyNotebook({
       document.removeEventListener("pointerdown", onDown);
       document.removeEventListener("pointerup", onUp);
     };
-  }, [sel, dragging, clearSelection]);
+  }, [sel, dragging, clearSelection, selectionToolbarFor]);
 
   // 도구 막대가 닫히면(버튼 동작 등) 임시 선택도 같이 지움
   useEffect(() => {
@@ -1178,67 +1440,257 @@ function StudyNotebook({
   }, [spreadOn]);
 
   useEffect(() => {
-    setSpreadIndex(0);
+    // 장 전환 시 StudyNotebook이 리마운트되므로 마지막 쪽 요청은 dataset으로 유지
+    if (document.documentElement.dataset.studySpreadEnd !== "1") {
+      setSpreadIndex(0);
+    }
     setSpreadNextBookUi(false);
     setSpreadDragDx(0);
+    setSpreadPull(0);
     spreadAnchorVerseRef.current = null;
+    const turn = document.documentElement.dataset.studySpreadTurn;
+    delete document.documentElement.dataset.studySpreadTurn;
+    if (turn === "next" || turn === "prev") {
+      setSpreadTurn(turn === "next" ? 1 : -1);
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.setTimeout(
+        () => setSpreadTurn(0),
+        reduce ? 200 : STUDY_SPREAD_ANIM_MS,
+      );
+    }
   }, [bookId, chapter]);
+
+  useEffect(() => {
+    if (!spreadOn) return;
+    let seen = false;
+    try {
+      seen = window.localStorage.getItem("haruchi/spread-hint-seen") === "1";
+    } catch {
+      return;
+    }
+    if (seen) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      try {
+        window.localStorage.setItem("haruchi/spread-hint-seen", "1");
+      } catch {
+        /* ignore */
+      }
+      return;
+    }
+    setSpreadHint(true);
+    const t = window.setTimeout(() => {
+      setSpreadHint(false);
+      try {
+        window.localStorage.setItem("haruchi/spread-hint-seen", "1");
+      } catch {
+        /* ignore */
+      }
+    }, 700);
+    return () => window.clearTimeout(t);
+  }, [spreadOn]);
+
+  useEffect(() => {
+    if (!spreadOn || chapter >= total) return;
+    if (spreadCount > 0 && spreadIndex < spreadCount - 1 && !flip) return;
+    let cancel = false;
+    setNextChTitle("");
+    loadKoreanChapter(bookId, chapter + 1)
+      .then((ch) => {
+        if (cancel) return;
+        setNextChTitle(ch.title ?? "");
+        setNextPack({
+          chapter: chapter + 1,
+          title: ch.title ?? "",
+          verses: ch.verses.krv ?? [],
+        });
+      })
+      .catch(() => {});
+    void loadChapterWordStudy(bookId, chapter + 1).catch(() => {});
+    return () => {
+      cancel = true;
+    };
+  }, [spreadOn, spreadIndex, spreadCount, chapter, bookId, total, flip]);
+
+  useEffect(() => {
+    if (!spreadOn || chapter <= 1) return;
+    if (spreadIndex > 0 && flip?.dir !== -1) return;
+    let cancel = false;
+    loadKoreanChapter(bookId, chapter - 1)
+      .then((ch) => {
+        if (cancel) return;
+        setPrevPack({
+          chapter: chapter - 1,
+          title: ch.title ?? "",
+          verses: ch.verses.krv ?? [],
+        });
+      })
+      .catch(() => {});
+    return () => {
+      cancel = true;
+    };
+  }, [spreadOn, spreadIndex, chapter, bookId, flip]);
+
+  useEffect(() => {
+    document.documentElement.dataset.studyWsOpen = wsOpen ? "1" : "";
+    return () => {
+      delete document.documentElement.dataset.studyWsOpen;
+    };
+  }, [wsOpen]);
+
+  useEffect(() => {
+    document.documentElement.dataset.studyNoteOpen = editingMarkId
+      ? "1"
+      : "";
+    return () => {
+      delete document.documentElement.dataset.studyNoteOpen;
+    };
+  }, [editingMarkId]);
+
+  useEffect(() => {
+    if (!spreadOn) {
+      delete document.documentElement.dataset.studyChrome;
+      return;
+    }
+    document.documentElement.dataset.studyChrome = chromeOn ? "1" : "0";
+    return () => {
+      delete document.documentElement.dataset.studyChrome;
+    };
+  }, [spreadOn, chromeOn]);
+
+  const toggleChrome = (e: ReactMouseEvent<HTMLDivElement>) => {
+    if (suppressClickRef.current) return;
+    const ds = document.documentElement.dataset;
+    if (ds.studySelecting === "1") return;
+    if (ds.studyWsOpen === "1") return;
+    if (ds.studyNoteOpen === "1") return;
+    if (selRef.current) return;
+    const t = e.target as HTMLElement;
+    if (
+      t.closest(
+        ".study-spread-edge, .study-spread-pager, .study-toolbar, .study-ws-root, .study-vnum, button, a, input, textarea",
+      )
+    )
+      return;
+    const box = e.currentTarget.getBoundingClientRect();
+    const rel = (e.clientX - box.left) / Math.max(1, box.width);
+    if (rel < STUDY_SPREAD_EDGE || rel > 1 - STUDY_SPREAD_EDGE) return;
+    setChromeOn((v) => !v);
+  };
 
   const measureSpread = useCallback(() => {
     const vp = spreadVpRef.current;
-    const flow = spreadFlowRef.current;
+    const flow =
+      (vp?.querySelector("[data-spread-measure]") as HTMLElement | null) ??
+      spreadFlowRef.current;
     if (!vp || !flow || !spreadOn) return;
 
-    const topbar = STUDY_SPREAD_TOPBAR;
-    const barH = STUDY_SPREAD_BAR_H;
-    const pgnumH = STUDY_SPREAD_PGNUM_H;
+    const vv = window.visualViewport;
+    const vvTop = vv?.offsetTop ?? 0;
+    const vvH = vv?.height ?? window.innerHeight;
+    const vvW = vv?.width ?? window.innerWidth;
     const outer = STUDY_SPREAD_OUTER;
-    const spreadH = Math.max(
-      120,
-      window.innerHeight - topbar - barH - pgnumH,
-    );
-    const spreadW = Math.max(
-      200,
-      Math.min(window.innerWidth - outer * 2, window.innerWidth - outer * 2),
-    );
+
+    // 실제로 보이는 상단 요소(모바일 톱바 또는 데스크탑 헤더) 하단 Y
+    let topChrome = 0;
+    for (const sel of [".brp-mobile-topbar", ".brp-header"]) {
+      const el = document.querySelector(sel) as HTMLElement | null;
+      if (!el) continue;
+      const st = getComputedStyle(el);
+      if (st.display === "none" || st.visibility === "hidden") continue;
+      const r = el.getBoundingClientRect();
+      if (r.height < 1) continue;
+      topChrome = Math.max(topChrome, r.bottom);
+    }
+    const pgEl = document.querySelector(
+      ".study-spread-pager",
+    ) as HTMLElement | null;
+    // 상단 「n / n쪽」 줄은 없음. 바를 숨겨도(opacity) 높이는 유지되므로 여기서 다시 키우지 않음
+    const barH = 0;
+    const pgnumH =
+      pgEl?.getBoundingClientRect().height || STUDY_SPREAD_PGNUM_H;
+    // spread 높이 = visualViewport − 보이는 상단 − 쪽번호줄
+    const contentTop = Math.max(topChrome, vvTop) + barH;
+    const contentBottom = vvTop + vvH - pgnumH;
+    const spreadH = Math.max(120, Math.floor(contentBottom - contentTop));
+    const spreadW = Math.max(200, Math.floor(vvW - outer * 2));
     const g = calcSpreadGeometry(spreadW, spreadH);
 
+    pageWRef.current = g.pageW;
+    setPageW(g.pageW);
+    vp.style.setProperty("--study-page-w", `${g.pageW}px`);
     setSpreadBoxStyle({
       width: `${g.spreadW}px`,
       height: `${g.spreadH}px`,
       ["--study-spread-w" as string]: `${g.spreadW}px`,
+      ["--study-page-w" as string]: `${g.pageW}px`,
     });
 
-    // 열 본문: 쪽 안여백을 column-width/gap 으로 반영
-    // width:max-content 는 WebKit에서 scrollWidth가 비정상적으로 커져 쓰지 않음
-    flow.style.width = "";
-    flow.style.minWidth = `${g.spreadW}px`;
-    flow.style.height = `${g.spreadH}px`;
-    flow.style.maxHeight = `${g.spreadH}px`;
-    flow.style.columnWidth = `${g.colW}px`;
-    flow.style.columnGap = `${g.colGap}px`;
-    flow.style.columnFill = "auto";
-    flow.style.paddingLeft = `${g.padOuter}px`;
-    flow.style.paddingRight = `${g.padOuter}px`;
-    flow.style.paddingTop = "16px";
-    flow.style.paddingBottom = "12px";
-    flow.style.boxSizing = "border-box";
+    const paintFlow = (node: HTMLElement) => {
+      node.style.width = "";
+      node.style.minWidth = `${Math.ceil(g.colW + g.padOuter * 2)}px`;
+      node.style.height = `${g.spreadH}px`;
+      node.style.maxHeight = `${g.spreadH}px`;
+      node.style.columnWidth = `${g.colW}px`;
+      node.style.columnGap = `${g.colGap}px`;
+      node.style.columnFill = "auto";
+      node.style.paddingLeft = `${g.padOuter}px`;
+      node.style.paddingRight = `${g.padOuter}px`;
+      node.style.paddingTop = "32px";
+      node.style.paddingBottom = "36px";
+      node.style.boxSizing = "border-box";
+    };
+    vp.querySelectorAll<HTMLElement>(".study-spread-flow").forEach(paintFlow);
 
     void flow.offsetHeight;
-    // 쪽 수: 본문(열 컨테이너) 실측 폭 기준
+
+    // 쪽 수: 열 시작 위치(실측)로 마지막 글자가 몇 번째 열인지
     const body = flow.querySelector(".study-body") as HTMLElement | null;
-    const measureW = Math.max(
-      body?.offsetWidth ?? 0,
-      flow.scrollWidth - g.padOuter * 2,
-    );
-    const pages = Math.max(
-      1,
-      Math.ceil((measureW + g.colGap) / (g.colW + g.colGap)),
-    );
+    const pageStride = g.colW + g.colGap;
+    let pages = 1;
+    if (body) {
+      // getBoundingClientRect 는 이미 transform 반영 → tx를 다시 더하면 쪽 수 폭주
+      const flowLeft = flow.getBoundingClientRect().left;
+      let maxCol = 0;
+      const nodes = body.querySelectorAll<HTMLElement>("[data-verse-num]");
+      const list =
+        nodes.length > 0
+          ? nodes
+          : body.querySelectorAll<HTMLElement>(":scope > *");
+      list.forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.width < 1 && r.height < 1) return;
+        const x = r.left - flowLeft - g.padOuter;
+        const col = Math.max(0, Math.floor((x + 1) / pageStride));
+        if (col > maxCol) maxCol = col;
+      });
+      pages = Math.max(1, maxCol + 1);
+      // scrollWidth는 펼침 상자 너비라 짧은 장도 2쪽으로 부푼다. 절이 있으면 열 실측만.
+      if (nodes.length === 0) {
+        pages = Math.max(
+          1,
+          Math.ceil(Math.max(flow.scrollWidth - g.padOuter * 2, 0) / pageStride),
+        );
+      }
+    }
     const spreads = Math.max(1, Math.ceil(pages / 2));
     setPageCount(pages);
     setSpreadCount(spreads);
     setSpreadStride(g.spreadStride);
+    const prevFlow = vp.querySelector<HTMLElement>("[data-measure-prev]");
+    if (prevFlow) {
+      const left = prevFlow.getBoundingClientRect().left;
+      let maxCol = 0;
+      prevFlow.querySelectorAll<HTMLElement>("[data-verse-num]").forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.width < 1 && r.height < 1) return;
+        const col = Math.max(
+          0,
+          Math.floor((r.left - left - g.padOuter + 1) / g.pageStride),
+        );
+        if (col > maxCol) maxCol = col;
+      });
+      setPrevPageCount(Math.max(1, maxCol + 1));
+    }
 
     const anchor = spreadAnchorVerseRef.current;
     if (anchor != null) {
@@ -1246,19 +1698,28 @@ function StudyNotebook({
         `[data-verse-num="${anchor}"]`,
       );
       if (el) {
-        const vr = vp.getBoundingClientRect();
+        const flowLeft = flow.getBoundingClientRect().left;
         const er = el.getBoundingClientRect();
-        const contentX =
-          spreadIndexRef.current * g.spreadStride + (er.left - vr.left);
+        const contentX = er.left - flowLeft - g.padOuter;
         const page = Math.max(
           0,
-          Math.min(pages - 1, Math.floor(contentX / g.pageStride)),
+          Math.min(pages - 1, Math.floor((contentX + 1) / g.pageStride)),
         );
         const si = Math.floor(page / 2);
         setSpreadIndex(si);
         spreadAnchorVerseRef.current = null;
+        delete document.documentElement.dataset.studySpreadEnd;
         return;
       }
+    }
+    if (document.documentElement.dataset.studySpreadEnd === "1") {
+      // 본문 절이 아직 배치되기 전에 pages=1로 조기 확정하면 1쪽으로 떨어짐
+      const laidOut =
+        (body?.querySelectorAll("[data-verse-num]")?.length ?? 0) > 0;
+      if (!laidOut) return;
+      setSpreadIndex(Math.max(0, spreads - 1));
+      delete document.documentElement.dataset.studySpreadEnd;
+      return;
     }
     setSpreadIndex((i) => Math.min(i, Math.max(0, spreads - 1)));
   }, [spreadOn]);
@@ -1268,60 +1729,218 @@ function StudyNotebook({
     measureSpread();
     const onResize = () => measureSpread();
     window.addEventListener("resize", onResize);
+    window.addEventListener("orientationchange", onResize);
+    const vv = window.visualViewport;
+    vv?.addEventListener("resize", onResize);
+    vv?.addEventListener("scroll", onResize);
+    const ro = new ResizeObserver(() => measureSpread());
+    ro.observe(document.documentElement);
+    const topbar = document.querySelector(".brp-mobile-topbar");
+    const header = document.querySelector(".brp-header");
+    const pg = document.querySelector(".study-spread-pager");
+    const reader = document.querySelector(".brp-reader");
+    for (const el of [topbar, header, pg, reader]) {
+      if (el) ro.observe(el);
+    }
+    document.fonts?.ready.then(measureSpread).catch(() => {});
     const mo = new MutationObserver(() => measureSpread());
     mo.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ["style", "class"],
+      attributeFilter: ["style", "class", "data-study-spread"],
     });
-    const reader = document.querySelector(".brp-reader");
-    if (reader) {
-      mo.observe(reader, { attributes: true, attributeFilter: ["style", "class"] });
-    }
     const t0 = window.setTimeout(measureSpread, 50);
     const t1 = window.setTimeout(measureSpread, 200);
     return () => {
       window.removeEventListener("resize", onResize);
+      window.removeEventListener("orientationchange", onResize);
+      vv?.removeEventListener("resize", onResize);
+      vv?.removeEventListener("scroll", onResize);
+      ro.disconnect();
       mo.disconnect();
       window.clearTimeout(t0);
       window.clearTimeout(t1);
     };
   }, [spreadOn, verses, title, chapter, bookId, data.marks.length, measureSpread]);
 
+  const spreadBlocked = (dir: 1 | -1) => {
+    if (dir < 0) return spreadIndexRef.current <= 0 && chapter <= 1;
+    return (
+      spreadIndexRef.current >= spreadCountRef.current - 1 && chapter >= total
+    );
+  };
+
+  const reducedMotion = () =>
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const paintShade = (angle: number) => {
+    const t = Math.sin((Math.min(180, Math.abs(angle)) * Math.PI) / 180);
+    if (leafInkRef.current) leafInkRef.current.style.opacity = String(t);
+    if (leafCastRef.current) leafCastRef.current.style.opacity = String(t);
+    if (leafRimRef.current) leafRimRef.current.style.opacity = String(Math.min(1, t));
+  };
+
+  const stopShade = () => {
+    if (flipRafRef.current) cancelAnimationFrame(flipRafRef.current);
+    flipRafRef.current = 0;
+  };
+
+  const bezierY = (p: number) => {
+    const x1 = 0.2;
+    const y1 = 0.8;
+    const x2 = 0.2;
+    const y2 = 1;
+    const cx = 3 * x1;
+    const bx = 3 * (x2 - x1) - cx;
+    const ax = 1 - cx - bx;
+    const cy = 3 * y1;
+    const by = 3 * (y2 - y1) - cy;
+    const ay = 1 - cy - by;
+    const sampleX = (t: number) => ((ax * t + bx) * t + cx) * t;
+    const sampleY = (t: number) => ((ay * t + by) * t + cy) * t;
+    let t = p;
+    for (let i = 0; i < 5; i++) {
+      const dx = (3 * ax * t + 2 * bx) * t + cx;
+      if (Math.abs(dx) < 1e-4) break;
+      t = Math.min(1, Math.max(0, t - (sampleX(t) - p) / dx));
+    }
+    return sampleY(t);
+  };
+
+  const trackShade = (from: number, to: number) => {
+    stopShade();
+    const t0 = performance.now();
+    const loop = (now: number) => {
+      const p = Math.min(1, (now - t0) / STUDY_SPREAD_ANIM_MS);
+      paintShade(from + (to - from) * bezierY(p));
+      if (p < 1) flipRafRef.current = requestAnimationFrame(loop);
+    };
+    flipRafRef.current = requestAnimationFrame(loop);
+  };
+
+  const commitFlip = (commit: boolean) => {
+    if (flipBusyRef.current) return;
+    flipBusyRef.current = true;
+    stopShade();
+    const dir = flipRef.current?.dir ?? 0;
+    const spread = spreadVpRef.current;
+    spread?.classList.remove("is-fade-turn");
+    setFlip(null);
+    flipAngleRef.current = 0;
+    if (!commit || !dir || spreadBlocked(dir)) {
+      flipBusyRef.current = false;
+      return;
+    }
+    if (dir > 0 && spreadIndexRef.current >= spreadCountRef.current - 1) {
+      if (chapter < total) {
+        delete document.documentElement.dataset.studySpreadEnd;
+        if (onMoveChapter) onMoveChapter(chapter + 1);
+        else if (!embedded)
+          window.location.assign(`/study/${bookId}/${chapter + 1}`);
+      }
+      flipBusyRef.current = false;
+      return;
+    }
+    if (dir < 0 && spreadIndexRef.current <= 0) {
+      if (chapter > 1) {
+        document.documentElement.dataset.studySpreadEnd = "1";
+        if (onMoveChapter) onMoveChapter(chapter - 1);
+        else if (!embedded)
+          window.location.assign(`/study/${bookId}/${chapter - 1}`);
+      }
+      flipBusyRef.current = false;
+      return;
+    }
+    setSpreadIndex((i) => i + dir);
+    flipBusyRef.current = false;
+  };
+
+  const settleFlip = (commit: boolean) => {
+    const leaf = leafRef.current;
+    const dir = flipRef.current?.dir ?? 1;
+    if (reducedMotion()) {
+      const spread = spreadVpRef.current;
+      spread?.classList.add("is-fade-turn");
+      if (spread) {
+        spread.style.transition = "opacity 200ms ease";
+        spread.style.opacity = "0.45";
+      }
+      window.setTimeout(() => {
+        commitFlip(commit);
+        if (spread) spread.style.opacity = "1";
+      }, 200);
+      return;
+    }
+    if (!leaf) {
+      commitFlip(commit);
+      return;
+    }
+    const target = commit ? (dir > 0 ? -180 : 180) : 0;
+    const from = flipAngleRef.current;
+    leaf.style.transition = "none";
+    void leaf.offsetWidth;
+    leaf.style.transition = `transform ${STUDY_SPREAD_ANIM_MS}ms cubic-bezier(0.2, 0.8, 0.2, 1)`;
+    leaf.style.transform = `rotateY(${target}deg)`;
+    trackShade(from, target);
+    let settled = false;
+    const done = () => {
+      if (settled) return;
+      settled = true;
+      leaf.removeEventListener("transitionend", onEnd);
+      window.clearTimeout(fallback);
+      commitFlip(commit);
+    };
+    const onEnd = (ev: TransitionEvent) => {
+      if (ev.target !== leaf || ev.propertyName !== "transform") return;
+      done();
+    };
+    leaf.addEventListener("transitionend", onEnd);
+    const fallback = window.setTimeout(done, STUDY_SPREAD_ANIM_MS + 80);
+  };
+
   const goSpreadBy = useCallback(
     (delta: number) => {
       if (document.documentElement.dataset.studySelecting === "1") return;
+      if (document.documentElement.dataset.studyWsOpen === "1") return;
+      if (document.documentElement.dataset.studyNoteOpen === "1") return;
+      if (flipRef.current) return;
+      const dir: 1 | -1 = delta > 0 ? 1 : -1;
       setSpreadNextBookUi(false);
-      setSpreadIndex((p) => {
-        const next = p + delta;
-        if (next < 0) {
-          if (chapter > 1) {
-            if (onMoveChapter) onMoveChapter(chapter - 1);
-            else if (!embedded) {
-              window.location.assign(`/study/${bookId}/${chapter - 1}`);
-            }
-          }
-          return 0;
-        }
-        if (next > spreadCountRef.current - 1) {
-          if (chapter < total) {
-            if (onMoveChapter) onMoveChapter(chapter + 1);
-            else if (!embedded) {
-              window.location.assign(`/study/${bookId}/${chapter + 1}`);
-            }
-            return p;
-          }
-          const idx = BOOK_ORDER.indexOf(bookId);
-          const hasNextBook = idx >= 0 && idx < BOOK_ORDER.length - 1;
-          if (hasNextBook) {
-            setSpreadNextBookUi(true);
-          }
-          return p;
-        }
-        return next;
-      });
+      if (spreadBlocked(dir)) return;
+      flipBusyRef.current = false;
+      flipAngleRef.current = 0;
+      setFlip({ dir, auto: true });
     },
-    [bookId, chapter, embedded, onMoveChapter, total],
+    [chapter, total],
   );
+
+  useLayoutEffect(() => {
+    if (!flip?.auto) return;
+    let cancel = false;
+    const id = requestAnimationFrame(() => {
+      if (!cancel) settleFlip(true);
+    });
+    return () => {
+      cancel = true;
+      cancelAnimationFrame(id);
+    };
+    // settleFlip는 렌더마다 새로 만들어지지만, flip이 바뀔 때만 재생한다.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [flip]);
+
+  useLayoutEffect(() => {
+    if (!flip || flip.auto) return;
+    const leaf = leafRef.current;
+    if (!leaf) return;
+    leaf.style.transition = "none";
+    leaf.style.transform = `rotateY(${flipAngleRef.current}deg)`;
+    paintShade(flipAngleRef.current);
+  }, [flip]);
+
+  useLayoutEffect(() => {
+    if (!spreadOn) return;
+    measureSpread();
+  }, [flip, spreadOn, measureSpread, nextPack, prevPack]);
 
   // 마지막 펼침(마지막 쪽 포함)이 보이면 장 완료
   useEffect(() => {
@@ -1345,58 +1964,171 @@ function StudyNotebook({
     return () => window.removeEventListener("keydown", onKey);
   }, [spreadOn, goSpreadBy]);
 
+  const releaseSpreadCapture = (
+    el: HTMLDivElement,
+    id: number,
+  ) => {
+    try {
+      if (el.hasPointerCapture(id)) el.releasePointerCapture(id);
+    } catch {
+      /* ignore */
+    }
+  };
+
+  const resetSpreadDrag = () => {
+    setSpreadDragging(false);
+    setSpreadDragDx(0);
+    setSpreadPull(0);
+  };
+
   const onSpreadPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
     if (!spreadOn) return;
-    if (document.documentElement.dataset.studySelecting === "1") return;
+    const ds = document.documentElement.dataset;
+    if (ds.studySelecting === "1") return;
+    if (ds.studyWsOpen === "1") return;
+    if (ds.studyNoteOpen === "1") return;
     if (e.pointerType === "mouse" && e.button !== 0) return;
     const t = e.target as HTMLElement;
-    if (t.closest(".study-spread-edge, .study-spread-next-book, .study-toolbar, .study-ws-root"))
+    if (
+      t.closest(
+        ".study-toolbar, .study-ws-root, .study-sel-handle, .study-mark-note-input, .study-spread-pager, .study-vnum",
+      )
+    )
       return;
-    spreadSwipeRef.current = {
+    const now = performance.now();
+    const gesture = {
       id: e.pointerId,
       x: e.clientX,
       y: e.clientY,
-      armed: true,
+      t: now,
+      lastX: e.clientX,
+      lastT: now,
+      vx: 0,
+      moved: 0,
+      mode: "pending" as const,
+      done: false,
+      timer: 0,
     };
+    gesture.timer = window.setTimeout(() => {
+      const cur = spreadSwipeRef.current;
+      if (!cur || cur.id !== gesture.id || cur.mode !== "pending") return;
+      if (cur.moved < 8) cur.mode = "hold";
+    }, 350);
+    spreadSwipeRef.current = gesture;
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch {
+      /* ignore */
+    }
   };
 
   const onSpreadPointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
     const s = spreadSwipeRef.current;
-    if (!s || s.id !== e.pointerId || !s.armed) return;
-    if (document.documentElement.dataset.studySelecting === "1") {
-      spreadSwipeRef.current = null;
-      setSpreadDragging(false);
-      setSpreadDragDx(0);
+    if (!s || s.id !== e.pointerId || s.done) return;
+    if (s.mode === "hold" || s.mode === "ignore") return;
+    const ds = document.documentElement.dataset;
+    if (
+      ds.studySelecting === "1" ||
+      ds.studyWsOpen === "1" ||
+      ds.studyNoteOpen === "1"
+    ) {
+      s.mode = "ignore";
+      if (pressRef.current == null) resetSpreadDrag();
       return;
     }
     const dx = e.clientX - s.x;
     const dy = e.clientY - s.y;
-    if (!spreadDragging) {
-      if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
-      if (Math.abs(dx) <= Math.abs(dy) * 1.5) {
-        s.armed = false;
+    s.moved = Math.hypot(dx, dy);
+    const now = performance.now();
+    const dt = Math.max(1, now - s.lastT);
+    s.vx = (e.clientX - s.lastX) / dt;
+    s.lastX = e.clientX;
+    s.lastT = now;
+    const elapsed = now - s.t;
+    if (s.mode === "pending") {
+      const horizontal =
+        Math.abs(dx) >= 10 && Math.abs(dx) > Math.abs(dy) * 1.5;
+      const verticalish = Math.abs(dx) <= Math.abs(dy) * 1.5;
+      if (elapsed <= 350 && horizontal) {
+        s.mode = "drag";
+        if (pressRef.current) {
+          window.clearTimeout(pressRef.current.timer);
+          pressRef.current = null;
+        }
+        const dragDir: 1 | -1 = dx < 0 ? 1 : -1;
+        if (!flipRef.current) {
+          flipBusyRef.current = false;
+          flipAngleRef.current = 0;
+          setFlip({ dir: dragDir, auto: false });
+        }
+      } else if (elapsed > 350 || (s.moved >= 8 && verticalish)) {
+        s.mode = "ignore";
+        if (s.moved >= 8 && pressRef.current) {
+          window.clearTimeout(pressRef.current.timer);
+          pressRef.current = null;
+        }
+        return;
+      } else {
         return;
       }
-      setSpreadDragging(true);
     }
-    setSpreadDragDx(dx);
+    if (s.mode !== "drag") return;
+    const active: 1 | -1 = flipRef.current?.dir ?? (dx < 0 ? 1 : -1);
+    const width = Math.max(1, pageWRef.current);
+    let angle = (dx / width) * 180;
+    if (active > 0) angle = Math.max(-180, Math.min(0, angle));
+    else angle = Math.min(180, Math.max(0, angle));
+    if (spreadBlocked(active)) angle *= 0.3;
+    flipAngleRef.current = angle;
+    if (flipRafRef.current) return;
+    flipRafRef.current = requestAnimationFrame(() => {
+      flipRafRef.current = 0;
+      const leaf = leafRef.current;
+      if (!leaf) return;
+      leaf.style.transition = "none";
+      leaf.style.transform = `rotateY(${flipAngleRef.current}deg)`;
+      paintShade(flipAngleRef.current);
+    });
   };
 
-  const finishSpreadSwipe = (e: ReactPointerEvent<HTMLDivElement>) => {
+  const finishSpreadSwipe = (
+    e: ReactPointerEvent<HTMLDivElement>,
+    cancel = false,
+  ) => {
     const s = spreadSwipeRef.current;
-    if (!s || s.id !== e.pointerId) return;
+    if (!s || s.id !== e.pointerId || s.done) return;
+    s.done = true;
+    window.clearTimeout(s.timer);
     spreadSwipeRef.current = null;
-    const dx = spreadDragging ? spreadDragDx : e.clientX - s.x;
-    const dy = e.clientY - s.y;
-    setSpreadDragging(false);
-    setSpreadDragDx(0);
-    if (document.documentElement.dataset.studySelecting === "1") return;
-    if (
-      Math.abs(dx) >= STUDY_SPREAD_SWIPE_PX &&
-      Math.abs(dx) > Math.abs(dy) * 1.5
-    ) {
-      goSpreadBy(dx < 0 ? 1 : -1);
+    releaseSpreadCapture(e.currentTarget, e.pointerId);
+    const wasDrag = s.mode === "drag";
+    const dx = e.clientX - s.x;
+    const dir: 1 | -1 =
+      flipRef.current?.dir ?? (dx < 0 || (dx === 0 && s.vx < 0) ? 1 : -1);
+    resetSpreadDrag();
+    if (cancel || !wasDrag) {
+      if (flipRef.current) settleFlip(false);
+      if (!cancel && s.mode === "pending" && s.moved < 8) {
+        const box = e.currentTarget.getBoundingClientRect();
+        const rel = (e.clientX - box.left) / Math.max(1, box.width);
+        const target = e.target as HTMLElement | null;
+        if (!target?.closest?.(".study-vnum")) {
+          if (rel < STUDY_SPREAD_EDGE || rel > 1 - STUDY_SPREAD_EDGE) {
+            spreadEdgeTapRef.current = performance.now();
+            goSpreadBy(rel < STUDY_SPREAD_EDGE ? -1 : 1);
+          }
+        }
+      }
+      return;
     }
+    suppressClickRef.current = true;
+    spreadEdgeTapRef.current = performance.now();
+    const flick =
+      dir > 0 ? s.vx < -STUDY_SPREAD_COMMIT_VEL : s.vx > STUDY_SPREAD_COMMIT_VEL;
+    const commit =
+      !spreadBlocked(dir) &&
+      (Math.abs(flipAngleRef.current) > STUDY_SPREAD_COMMIT_DEG || flick);
+    settleFlip(commit);
   };
 
   // 화면 좌우 12px 안으로 보정 + 꼬리는 선택 범위 쪽
@@ -1475,9 +2207,35 @@ function StudyNotebook({
     fn();
   };
 
+  const pickedVerseMarks = (type: "hl" | "ul", color: string) => {
+    const picks = versePickRef.current;
+    if (!picks || picks.length === 0) return false;
+    const marks = [...dataRef.current.marks];
+    for (const n of picks) {
+      const sp = spans.find((s) => s.n === n);
+      if (!sp) continue;
+      marks.push({
+        id: newMarkId(),
+        ref: n,
+        start: sp.start,
+        end: sp.end,
+        type,
+        color,
+      });
+    }
+    persist({ ...dataRef.current, marks });
+    versePickRef.current = null;
+    setVersePick(null);
+    toolStashRef.current = null;
+    setToolbar(null);
+    setSel(null);
+    return true;
+  };
+
   const applyHighlight = (color: string) => {
     const tb = toolbarActionTarget();
     if (!tb) return;
+    if (tb.kind === "selection" && pickedVerseMarks("hl", color)) return;
     if (tb.kind === "mark") {
       const cur = marksById.get(tb.markId);
       if (!cur) return;
@@ -1501,6 +2259,7 @@ function StudyNotebook({
   const applyUnderline = () => {
     const tb = toolbarActionTarget();
     if (!tb) return;
+    if (tb.kind === "selection" && pickedVerseMarks("ul", UL_COLOR)) return;
     if (tb.kind === "mark") {
       const cur = marksById.get(tb.markId);
       if (!cur) return;
@@ -1533,13 +2292,23 @@ function StudyNotebook({
       setToolbar(null);
       return;
     }
-    const { start, end } = tb;
+    const picks = versePickRef.current;
+    const ranges =
+      picks && picks.length
+        ? picks.flatMap((n) => {
+            const sp = spans.find((s) => s.n === n);
+            return sp ? [{ start: sp.start, end: sp.end }] : [];
+          })
+        : [{ start: tb.start, end: tb.end }];
     persist({
       ...dataRef.current,
       marks: dataRef.current.marks.filter(
-        (m) => m.end <= start || m.start >= end,
+        (m) => !ranges.some((r) => m.start < r.end && m.end > r.start),
       ),
     });
+    versePickRef.current = null;
+    setVersePick(null);
+    setSel(null);
     window.getSelection()?.removeAllRanges();
     toolStashRef.current = null;
     setToolbar(null);
@@ -1557,12 +2326,22 @@ function StudyNotebook({
       if (!m) return;
       ({ start, end } = m);
     }
-    const text = plainRef.current.slice(start, end).trim();
-    if (!text) return;
-    const v1 = verseContaining(spans, start);
-    const v2 = verseContaining(spans, Math.max(start, end - 1));
-    const refLabel = `${bookMeta.shortName} ${chapter}:${v1}${v2 !== v1 ? `-${v2}` : ""}`;
-    const payload = `${text} (${refLabel})`;
+    const picks = versePickRef.current;
+    const items =
+      picks && picks.length
+        ? picks.flatMap((n) => {
+            const sp = spans.find((s) => s.n === n);
+            return sp ? [{ chapter, n, text: sp.text }] : [];
+          })
+        : [
+            {
+              chapter,
+              n: verseContaining(spans, start),
+              text: plainRef.current.slice(start, end),
+            },
+          ];
+    const payload = formatStudyCopy(bookMeta.shortName, items);
+    if (!payload.trim()) return;
     try {
       await navigator.clipboard.writeText(payload);
     } catch {
@@ -1580,6 +2359,36 @@ function StudyNotebook({
     setToast("복사했어요");
   };
 
+  const focusNoteInput = (markId?: string) => {
+    const input = editInputRef.current;
+    if (!input) return;
+    if (markId) {
+      const anchor = document.querySelector<HTMLElement>(
+        `[data-note-anchor~="${markId}"]`,
+      );
+      if (anchor) {
+        const r = anchor.getBoundingClientRect();
+        const vv = window.visualViewport;
+        const limit = (vv ? vv.offsetTop + vv.height : window.innerHeight) - 12;
+        let top = r.bottom - 2;
+        if (top + 32 > limit) top = Math.max(8, limit - 32);
+        input.style.position = "fixed";
+        input.style.top = `${top}px`;
+        input.style.left = `${Math.max(8, r.left)}px`;
+        input.style.width = `${Math.max(140, Math.min(280, window.innerWidth - r.left - 16))}px`;
+        input.style.zIndex = "80";
+      }
+    }
+    noteGuardRef.current = performance.now() + 600;
+    input.focus();
+    const len = input.value.length;
+    try {
+      input.setSelectionRange(len, len);
+    } catch {
+      /* ignore */
+    }
+  };
+
   const beginNoteEdit = (markId: string, initial?: string) => {
     const cur = dataRef.current.marks.find((m) => m.id === markId);
     setEditText(initial ?? cur?.note ?? "");
@@ -1593,8 +2402,17 @@ function StudyNotebook({
     const tb = toolbarActionTarget();
     if (!tb) return;
     if (tb.kind === "mark") {
-      beginNoteEdit(tb.markId);
+      flushSync(() => beginNoteEdit(tb.markId));
+      focusNoteInput(tb.markId);
       return;
+    }
+    if (versePickRef.current && versePickRef.current.length > 1) {
+      const first = spans.find((s) => s.n === versePickRef.current?.[0]);
+      if (first) {
+        tb.start = first.start;
+        tb.end = first.end;
+        tb.ref = first.n;
+      }
     }
     // 선택만 있고 칠이 없으면 노랑 자동 적용 후 메모
     const existing = dataRef.current.marks.find(
@@ -1609,7 +2427,8 @@ function StudyNotebook({
         type: "hl",
         color: DEFAULT_HL,
       });
-    beginNoteEdit(mark.id, mark.note);
+    flushSync(() => beginNoteEdit(mark.id, mark.note));
+    focusNoteInput(mark.id);
   };
 
   const stashWordStudyPick = useCallback(() => {
@@ -1654,19 +2473,7 @@ function StudyNotebook({
     }
     wsActionAtRef.current = now;
     debugLog("[원어] open 시도");
-    if (!wsHasFile) {
-      if (isOtBook) {
-        setToast("히브리어 사전은 준비 중이에요");
-        debugLog("[원어] OT word-study 파일 없음 — 토스트");
-        return;
-      }
-      if (wsTokens.length === 0) {
-        const path = `/word-study/${bookId}/${chapter}.json`;
-        setToast(`원어 자료 없음: ${path}`);
-        debugLog(`[원어] tokens 비어 있음 ${path}`);
-        return;
-      }
-    }
+
     const pick = wsPickRef.current;
     const tb = toolbarActionTarget();
     let selectedKo = pick?.text ?? "";
@@ -1678,41 +2485,117 @@ function StudyNotebook({
       } else {
         const mark = marksById.get(tb.markId);
         if (!mark) {
-          setToast("선택한 표시를 찾지 못했어요");
-          debugLog("[원어] mark 없음");
-          return;
+          debugLog("[원어] mark 없음 — 시트는 1절 칩으로 연다");
+          verse = 1;
+          selectedKo = "";
+        } else {
+          selectedKo = plainRef.current.slice(mark.start, mark.end).trim();
+          verse = mark.ref;
         }
-        selectedKo = plainRef.current.slice(mark.start, mark.end).trim();
-        verse = mark.ref;
       }
     }
-    if (!selectedKo) {
-      setToast("단어를 선택해 주세요");
-      debugLog("[원어] 선택 텍스트 비어 있음");
+
+    const path = `/word-study/${bookId}/${chapter}.json`;
+    const openSheet = (opts: {
+      initial: WordStudyToken | null;
+      matched: boolean;
+      hint: string | null;
+    }) => {
+      setWsVerse(verse);
+      setWsInitial(opts.initial);
+      setWsSelectedKo(selectedKo);
+      setWsMatched(opts.matched);
+      setWsMatchHint(opts.hint);
+      setWsOpen(true);
+      toolStashRef.current = null;
+      setToolbar(null);
+      window.getSelection()?.removeAllRanges();
+    };
+
+    if (!wsHasFile && wsTokens.length === 0) {
+      debugLog(`[원어] 실패 사유=파일 없음 ${path}`);
+      setToast(
+        isOtBook
+          ? "히브리어 원어 파일이 아직 없어요"
+          : `원어 자료 없음: ${path}`,
+      );
+      // 파일이 없어도 빈 시트를 열어 무반응 경로를 없앰
+      openSheet({
+        initial: null,
+        matched: false,
+        hint: "정확한 단어를 못 찾았어요 · 칩에서 골라 주세요",
+      });
       return;
     }
-    if (wsTokens.length === 0) {
-      const path = `/word-study/${bookId}/${chapter}.json`;
-      setToast(`원어 자료 없음: ${path}`);
-      debugLog(`[원어] tokens 비어 있음 ${path}`);
+
+    const verseToks = tokensInVerse(wsTokens, verse);
+    const meta = wsVerseMeta[verse];
+    const diffKind = isOtBook
+      ? null
+      : greekVerseKind(greekDiffMap, bookId, chapter, verse);
+    // 리포트(krvOnlyOmit/krvEmpty) 또는 장 JSON의 빈 칩 → SBL 안내
+    const isOmit =
+      !isOtBook &&
+      (diffKind === "omit" || (!!meta?.empty && verseToks.length === 0));
+
+    if (isOmit) {
+      debugLog(`[원어] SBL 생략/빈 절 verse=${verse} diff=${diffKind ?? "-"}`);
+      openSheet({
+        initial: null,
+        matched: false,
+        hint: GREEK_SBL_OMIT_HINT,
+      });
       return;
     }
-    const matched = matchTokenByGloss(wsTokens, verse, selectedKo);
-    if (!matched) {
-      setToast("이 구절의 원어를 찾지 못했어요");
-      debugLog(`[원어] match 실패 verse=${verse} ko=${selectedKo.slice(0, 24)}`);
-      return;
-    }
-    debugLog(
-      `[원어] match ok strong=${matched.strong || "-"} → setWsOpen(true)`,
+
+    const span = spans.find((s) => s.n === verse);
+    const verseLen = span ? Math.max(0, span.end - span.start) : 0;
+    const absStart =
+      pick?.start ??
+      (tb?.kind === "selection"
+        ? tb.start
+        : tb?.kind === "mark"
+          ? (marksById.get(tb.markId)?.start ?? 0)
+          : 0);
+    const charIndex = span
+      ? Math.max(0, Math.min(Math.max(0, verseLen - 1), absStart - span.start))
+      : 0;
+    const result = matchTokenByGlossDetailed(
+      wsTokens,
+      verse,
+      selectedKo,
+      { titleShift: wsTitleShift, charIndex, verseLen },
     );
-    setWsVerse(verse);
-    setWsInitial(matched);
-    setWsSelectedKo(selectedKo);
-    setWsOpen(true);
-    toolStashRef.current = null;
-    setToolbar(null);
-    window.getSelection()?.removeAllRanges();
+    const reasonKo: Record<string, string> = {
+      ok: "ok",
+      "empty-query": "선택 텍스트 비어 있음",
+      "no-file": "파일 없음",
+      "no-verse": "절 없음",
+      split: "split",
+      titleShift: "titleShift",
+      "match-zero": "매칭 0",
+    };
+    if (result.reason !== "ok") {
+      debugLog(
+        `[원어] 실패 사유=${reasonKo[result.reason] ?? result.reason} verse=${verse} ko="${selectedKo.slice(0, 24)}" score=${result.score} nearest=${result.nearest?.strong || "-"}`,
+      );
+    } else {
+      debugLog(
+        `[원어] match ok strong=${result.token?.strong || "-"} → setWsOpen(true)`,
+      );
+    }
+
+    // split 절: 히브리어와 같이 칩을 보여 주고, 없으면 첫 칩을 고름
+    const pickToken =
+      result.token ?? result.nearest ?? verseToks[0] ?? null;
+    openSheet({
+      initial: pickToken,
+      matched: result.reason === "ok",
+      hint:
+        result.reason === "ok"
+          ? null
+          : "정확한 단어를 못 찾았어요 · 칩에서 골라 주세요",
+    });
   };
 
   const commitNoteEdit = () => {
@@ -1904,6 +2787,101 @@ function StudyNotebook({
     });
 
   /** 절 본문만 data-v — 번호·앞 공백은 오프셋 밖. 번호+첫 글자 nowrap. */
+  const applyVersePick = (nums: number[]) => {
+    const unique = [...new Set(nums)]
+      .filter((n) => spans.some((s) => s.n === n))
+      .sort((a, b) => a - b);
+    if (unique.length === 0) {
+      clearSelection();
+      return;
+    }
+    versePickRef.current = unique;
+    setVersePick(unique);
+    const first = spans.find((s) => s.n === unique[0]);
+    if (!first) return;
+    const range = { start: first.start, end: first.end };
+    selRef.current = range;
+    setSel(range);
+    const tb = selectionToolbarFor(range);
+    if (tb) setToolbar(tb);
+  };
+
+  const verseAtPointer = (x: number, y: number) => {
+    const root = (spreadOn ? spreadVpRef.current : bodyRef.current) ?? document.body;
+    const box = root.getBoundingClientRect();
+    const best = { n: -1, d: Infinity };
+    root.querySelectorAll<HTMLElement>(".study-vnum").forEach((el) => {
+      if (el.closest(".is-covered, .study-spread-measure")) return;
+      const r = el.getBoundingClientRect();
+      if (r.width < 1 || r.height < 1) return;
+      if (r.right < box.left || r.left > box.right || r.bottom < box.top || r.top > box.bottom)
+        return;
+      if (x < r.left - 140 || x > r.right + 320) return;
+      const num = Number(el.textContent);
+      if (!Number.isFinite(num)) return;
+      const d = Math.abs((r.top + r.bottom) / 2 - y);
+      if (d < best.d) {
+        best.n = num;
+        best.d = d;
+      }
+    });
+    return best.d < 100 ? best.n : null;
+  };
+
+  const onVerseNumPointerDown = (n: number, e: ReactPointerEvent<HTMLSpanElement>) => {
+    e.stopPropagation();
+    e.preventDefault();
+    const base = versePickRef.current ?? [];
+    verseDragRef.current = {
+      id: e.pointerId,
+      n,
+      x: e.clientX,
+      y: e.clientY,
+      mode: "pending",
+      wasSelected: base.includes(n),
+      base,
+    };
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch {
+      /* ignore */
+    }
+  };
+
+  const onVerseNumPointerMove = (e: ReactPointerEvent<HTMLSpanElement>) => {
+    const d = verseDragRef.current;
+    if (!d || d.id !== e.pointerId) return;
+    if (d.mode === "pending" && Math.hypot(e.clientX - d.x, e.clientY - d.y) < 8) return;
+    d.mode = "drag";
+    const hit = verseAtPointer(e.clientX, e.clientY) ?? d.n;
+    const lo = Math.min(d.n, hit);
+    const hi = Math.max(d.n, hit);
+    applyVersePick(spans.filter((s) => s.n >= lo && s.n <= hi).map((s) => s.n));
+    if (spreadOn) return;
+    const sc = scrollRootOf(bodyRef.current);
+    const edge =
+      sc === window
+        ? { top: 0, bottom: window.innerHeight }
+        : (sc as HTMLElement).getBoundingClientRect();
+    if (e.clientY < edge.top + 48) scrollByY(sc, -16);
+    else if (e.clientY > edge.bottom - 48) scrollByY(sc, 16);
+  };
+
+  const onVerseNumPointerUp = (e: ReactPointerEvent<HTMLSpanElement>) => {
+    const d = verseDragRef.current;
+    if (!d || d.id !== e.pointerId) return;
+    verseDragRef.current = null;
+    try {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+    } catch {
+      /* ignore */
+    }
+    if (d.mode === "drag") return;
+    if (d.base.length === 0) applyVersePick([d.n]);
+    else if (d.wasSelected) applyVersePick(d.base.filter((n) => n !== d.n));
+    else applyVersePick([...d.base, d.n]);
+  };
+
   const renderVerse = (span: VerseSpan, paraFirst: boolean) => {
     const segs = segmentVerse(span.text, span.start, span.end, data.marks);
     const legacy = legacyByRef.get(span.n);
@@ -1945,7 +2923,19 @@ function StudyNotebook({
       >
         {!paraFirst ? <span className="study-v-gap"> </span> : null}
         <span className="study-v-nowrap">
-          <span className="study-vnum">{span.n}</span>
+          <span
+            className="study-vnum"
+            onPointerDown={(e) => onVerseNumPointerDown(span.n, e)}
+            onPointerMove={onVerseNumPointerMove}
+            onPointerUp={onVerseNumPointerUp}
+            onPointerCancel={onVerseNumPointerUp}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+            }}
+          >
+            {span.n}
+          </span>
           {firstLen > 0 ? (
             <span className="study-verse-text" data-v={span.n} data-v-off="0">
               {renderSegNodes(firstSegs, `${span.n}-a`)}
@@ -1990,12 +2980,277 @@ function StudyNotebook({
     );
   };
 
+  const renderMarkNotes = (): ReactNode => {
+    const rows = Object.entries(notePos).map(([nid, pos]) => {
+      if (editingMarkId === nid) {
+        return (
+          <input
+            key={`edit-${nid}`}
+            ref={editInputRef}
+            className="study-mark-note-input"
+            style={{
+              top: pos.top,
+              left: pos.openLeft,
+              width: pos.openWidth,
+            }}
+            value={editText}
+            aria-label="형광펜 메모"
+            onClick={(e) => e.stopPropagation()}
+            onChange={(e) => setEditText(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                commitNoteEdit();
+              }
+              if (e.key === "Escape") {
+                setEditingMarkId(null);
+              }
+            }}
+            onBlur={() => {
+              if (performance.now() < noteGuardRef.current) {
+                requestAnimationFrame(() => editInputRef.current?.focus());
+                return;
+              }
+              commitNoteEdit();
+            }}
+          />
+        );
+      }
+      const mark = marksById.get(nid);
+      if (!mark?.note) return null;
+      const expanded = expandedNoteId === nid;
+      const isBadge = pos.mode === "badge" && !expanded;
+      const style: CSSProperties = expanded
+        ? {
+            top: pos.top,
+            left: pos.openLeft,
+            width: pos.openWidth,
+          }
+        : isBadge
+          ? { top: pos.top, left: pos.left }
+          : {
+              top: pos.top,
+              left: pos.left,
+              maxWidth: pos.width,
+            };
+      return (
+        <span
+          key={`note-${nid}`}
+          className={[
+            "study-mark-note",
+            isBadge ? "is-badge" : "",
+            expanded ? "is-open" : "",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+          style={style}
+          data-mark-note-id={nid}
+          title={mark.note}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (expanded) {
+              setExpandedNoteId(null);
+              return;
+            }
+            const el = e.currentTarget as HTMLElement;
+            const truncated =
+              isBadge || el.scrollWidth > el.clientWidth + 1;
+            if (truncated) setExpandedNoteId(nid);
+            else {
+              flushSync(() => beginNoteEdit(nid));
+              focusNoteInput(nid);
+            }
+          }}
+        >
+          {isBadge ? circledNum(pos.badge ?? 1) : mark.note}
+        </span>
+      );
+    });
+    if (editingMarkId && !notePos[editingMarkId]) {
+      rows.push(
+        <input
+          key={`edit-pending-${editingMarkId}`}
+          ref={editInputRef}
+          className="study-mark-note-input"
+          style={{
+            position: "fixed",
+            top: 72,
+            left: 16,
+            width: 240,
+            zIndex: 80,
+          }}
+          value={editText}
+          aria-label="형광펜 메모"
+          onClick={(e) => e.stopPropagation()}
+          onChange={(e) => setEditText(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              commitNoteEdit();
+            }
+            if (e.key === "Escape") setEditingMarkId(null);
+          }}
+          onBlur={() => {
+            if (performance.now() < noteGuardRef.current) {
+              requestAnimationFrame(() => editInputRef.current?.focus());
+              return;
+            }
+            commitNoteEdit();
+          }}
+        />,
+      );
+    }
+    return rows;
+  };
+
+  const pageStridePx = spreadStride > 0 ? spreadStride / 2 : pageW;
+
+  const renderPlainFlow = (
+    pack: { chapter: number; title: string; verses: { n: number; t: string }[] },
+    local: number,
+    measurePrev = false,
+  ) => (
+    <article
+      className="study-page study-spread-flow"
+      data-measure-prev={measurePrev ? "" : undefined}
+      data-study-chapter-inner={pack.chapter}
+      style={{ transform: `translate3d(${-local * pageStridePx}px,0,0)` }}
+    >
+      <span
+        className={`study-drop${String(pack.chapter).length >= 3 ? " is-wide" : ""}`}
+        aria-hidden
+      >
+        <span className="study-drop-num">{pack.chapter}</span>
+      </span>
+      {pack.title ? <span className="study-chapter-title">{pack.title}</span> : null}
+      <div className="study-body">
+        {pack.verses.map((v, i) => (
+          <span key={v.n} className="study-verse" data-verse-num={v.n}>
+            {i > 0 ? <span className="study-v-gap"> </span> : null}
+            <span className="study-vnum">{v.n}</span>
+            {v.t}
+          </span>
+        ))}
+      </div>
+    </article>
+  );
+
+  const renderCurrentFlow = (pageIndex: number, measure: boolean) => (
+    <article
+      ref={measure ? spreadFlowRef : undefined}
+      className="study-page study-spread-flow"
+      data-spread-measure={measure ? "" : undefined}
+      data-study-chapter-inner={chapter}
+      style={{ transform: `translate3d(${-pageIndex * pageStridePx}px,0,0)` }}
+    >
+      <span
+        className={`study-drop${digLen >= 3 ? " is-wide" : ""}`}
+        data-digits={digLen}
+        data-chapter-anchor={title ? undefined : ""}
+        aria-hidden="true"
+      >
+        <span className="study-drop-num">{chapter}</span>
+      </span>
+      {title ? (
+        <span className="study-chapter-title" data-chapter-anchor="">
+          {title}
+        </span>
+      ) : null}
+      <div
+        ref={measure ? bodyRef : undefined}
+        className={`study-body${dragging ? " is-selecting" : ""}`}
+        onPointerDown={onBodyPointerDown}
+        onContextMenu={(e) => {
+          const t = e.target as HTMLElement;
+          if (t.closest(".study-mark-note-input")) return;
+          e.preventDefault();
+        }}
+        onClickCapture={(e) => {
+          if (!suppressClickRef.current) return;
+          suppressClickRef.current = false;
+          e.preventDefault();
+          e.stopPropagation();
+        }}
+      >
+        {useParas
+          ? paraGroups.map((g) => (
+              <p key={g.key} className="study-para">
+                {g.verses.map((span, i) => renderVerse(span, i === 0))}
+              </p>
+            ))
+          : paraGroups[0]?.verses.map((span, i) => renderVerse(span, i === 0))}
+      </div>
+    </article>
+  );
+
+  const renderFace = (pageIndex: number, measure: boolean) => {
+    let inner: ReactNode = null;
+    if (pageIndex >= 0 && pageIndex < pageCount) {
+      inner = renderCurrentFlow(pageIndex, measure);
+    } else if (pageIndex >= pageCount) {
+      const over = pageIndex - pageCount;
+      const oddBlank = pageCount % 2 === 1;
+      if (oddBlank && over === 0) {
+        inner =
+          chapter < total ? (
+            <button
+              type="button"
+              className="study-spread-next-ch"
+              onClick={(e) => {
+                e.stopPropagation();
+                if (performance.now() - spreadEdgeTapRef.current < 450) return;
+                goSpreadBy(1);
+              }}
+            >
+              <span className="study-spread-next-kicker">다음 장</span>
+              <span className="study-spread-next-num">{chapter + 1}</span>
+              {nextChTitle ? (
+                <span className="study-spread-next-title">{nextChTitle}</span>
+              ) : null}
+              <span className="study-spread-next-cta">넘겨서 계속 읽기 →</span>
+            </button>
+          ) : (
+            <div className="study-page-blank" />
+          );
+      } else if (nextPack) {
+        inner = renderPlainFlow(nextPack, oddBlank ? over - 1 : over);
+      }
+    } else if (prevPack && prevPageCount > 0) {
+      const start = Math.floor((prevPageCount - 1) / 2) * 2;
+      const local = start + (pageIndex + 2);
+      if (local >= 0 && local < prevPageCount) {
+        inner = renderPlainFlow(prevPack, local);
+      }
+    }
+    return <div className="study-page-view">{inner}</div>;
+  };
+
   const spreadTx =
     spreadOn
       ? -(spreadIndex * spreadStride) + (spreadDragging ? spreadDragDx : 0)
       : 0;
+  const leftPage = spreadIndex * 2;
   const leftPageNum = spreadIndex * 2 + 1;
   const rightPageNum = spreadIndex * 2 + 2;
+  const stackCount = (n: number) => {
+    if (n <= 0) return 0;
+    if (n <= 2) return 1;
+    if (n <= 6) return 2;
+    if (n <= 12) return 3;
+    return 4;
+  };
+  const leftStack = stackCount(Math.max(0, leftPageNum - 1));
+  const rightStack = stackCount(
+    Math.max(0, pageCount - Math.min(pageCount, rightPageNum)),
+  );
+  const blankRight = rightPageNum > pageCount;
+  const showNextCard = spreadOn && blankRight && chapter < total;
+  const spreadProgress =
+    pageCount > 0 ? Math.min(pageCount, rightPageNum) / pageCount : 0;
+  const liftOp = spreadDragging
+    ? 0.04 * (1 - Math.abs(2 * spreadPull - 1))
+    : 0;
   const nextBookId =
     BOOK_ORDER.indexOf(bookId) >= 0 &&
     BOOK_ORDER.indexOf(bookId) < BOOK_ORDER.length - 1
@@ -2033,222 +3288,179 @@ function StudyNotebook({
       ) : null}
 
       <div className="study-shell">
-        {spreadOn ? (
-          <div className="study-spread-bar" aria-live="polite">
-            {chapterLabel(bookMeta.name, chapter, bookId)} · {leftPageNum} /{" "}
-            {pageCount}쪽
-          </div>
-        ) : null}
         <div className="study-layout">
           {spreadOn ? (
             <div
-              className="study-spread spread"
+              className={`study-spread spread${spreadTurn ? " is-turn" : ""}`}
               ref={spreadVpRef}
               style={spreadBoxStyle}
               onPointerDown={onSpreadPointerDown}
               onPointerMove={onSpreadPointerMove}
-              onPointerUp={finishSpreadSwipe}
-              onPointerCancel={finishSpreadSwipe}
+              onPointerUp={(e) => finishSpreadSwipe(e, false)}
+              onPointerCancel={(e) => finishSpreadSwipe(e, true)}
+              onLostPointerCapture={(e) => finishSpreadSwipe(e, true)}
+              onClick={toggleChrome}
             >
-              <div
-                className={`study-spread-track${
-                  spreadDragging ? " is-dragging" : ""
-                }`}
-                style={{
-                  transform: `translate3d(${spreadTx}px,0,0)`,
-                  transitionDuration: spreadDragging
-                    ? "0ms"
-                    : `${STUDY_SPREAD_ANIM_MS}ms`,
-                }}
-              >
-                <article
-                  ref={spreadFlowRef}
-                  className="study-page study-spread-flow"
-                  data-study-chapter-inner={chapter}
+              {prevPack && spreadIndex === 0 && !flip ? (
+                <div className="study-spread-measure" aria-hidden>
+                  {renderPlainFlow(prevPack, 0, true)}
+                </div>
+              ) : null}
+              {flip?.dir === -1 ? (
+                <div className="study-sheet is-left is-under">
+                  {renderFace(leftPage - 2, false)}
+                  <div ref={leafCastRef} className="study-leaf-cast" />
+                </div>
+              ) : (
+                <div className="study-sheet is-left">
+                  {renderFace(leftPage, true)}
+                </div>
+              )}
+              {flip?.dir === 1 ? (
+                <div className="study-sheet is-right is-under">
+                  {renderFace(leftPage + 3, false)}
+                  <div ref={leafCastRef} className="study-leaf-cast" />
+                </div>
+              ) : (
+                <div className="study-sheet is-right">
+                  {renderFace(leftPage + 1, flip?.dir === -1)}
+                </div>
+              )}
+              {flip ? (
+                <div
+                  ref={leafRef}
+                  className={`study-leaf is-hot ${flip.dir === 1 ? "is-next" : "is-prev"}`}
                 >
-                  <span
-                    className={`study-drop${digLen >= 3 ? " is-wide" : ""}`}
-                    data-digits={digLen}
-                    data-chapter-anchor={title ? undefined : ""}
-                    aria-hidden="true"
-                  >
-                    <span className="study-drop-num">{chapter}</span>
-                  </span>
-                  {title ? (
-                    <span className="study-chapter-title" data-chapter-anchor="">
-                      {title}
-                    </span>
-                  ) : null}
-                  <div
-                    className={`study-body${dragging ? " is-selecting" : ""}`}
-                    ref={bodyRef}
-                    onPointerDown={onBodyPointerDown}
-                    onContextMenu={(e) => {
-                      const t = e.target as HTMLElement;
-                      if (t.closest(".study-mark-note-input")) return;
-                      e.preventDefault();
-                    }}
-                    onClickCapture={(e) => {
-                      if (!suppressClickRef.current) return;
-                      suppressClickRef.current = false;
-                      e.preventDefault();
-                      e.stopPropagation();
-                    }}
-                  >
-                    {useParas
-                      ? paraGroups.map((g) => (
-                          <p key={g.key} className="study-para">
-                            {g.verses.map((span, i) =>
-                              renderVerse(span, i === 0),
-                            )}
-                          </p>
-                        ))
-                      : paraGroups[0]?.verses.map((span, i) =>
-                          renderVerse(span, i === 0),
-                        )}
-                    <div className="study-note-layer" aria-label="행간 메모">
-                      {selRects.map((r, i) => (
-                        <span
-                          key={`sel-${i}`}
-                          className="study-sel-rect"
-                          style={{
-                            top: r.top,
-                            left: r.left,
-                            width: r.width,
-                            height: r.height,
-                          }}
-                        />
-                      ))}
-                      {selRects.length > 0 ? (
-                        <>
-                          <span
-                            className="study-sel-handle is-start"
-                            style={{
-                              top: selRects[0].top,
-                              left: selRects[0].left,
-                              height: selRects[0].height,
-                            }}
-                          >
-                            <span className="study-sel-handle-bar" />
-                            <span className="study-sel-handle-knob" />
-                            <span
-                              className="study-sel-handle-hit"
-                              data-handle="start"
-                              onPointerDown={(e) =>
-                                onHandlePointerDown("start", e)
-                              }
-                              onMouseDown={(e) =>
-                                onHandlePointerDown("start", e)
-                              }
-                            />
-                          </span>
-                          <span
-                            className="study-sel-handle is-end"
-                            style={{
-                              top: selRects[selRects.length - 1].top,
-                              left:
-                                selRects[selRects.length - 1].left +
-                                selRects[selRects.length - 1].width,
-                              height: selRects[selRects.length - 1].height,
-                            }}
-                          >
-                            <span className="study-sel-handle-bar" />
-                            <span className="study-sel-handle-knob" />
-                            <span
-                              className="study-sel-handle-hit"
-                              data-handle="end"
-                              onPointerDown={(e) =>
-                                onHandlePointerDown("end", e)
-                              }
-                              onMouseDown={(e) =>
-                                onHandlePointerDown("end", e)
-                              }
-                            />
-                          </span>
-                        </>
-                      ) : null}
-                      {Object.entries(notePos).map(([nid, pos]) => {
-                        if (editingMarkId === nid) {
-                          return (
-                            <input
-                              key={`edit-${nid}`}
-                              ref={editInputRef}
-                              className="study-mark-note-input"
-                              style={{
-                                top: pos.top,
-                                left: pos.openLeft,
-                                width: pos.openWidth,
-                              }}
-                              value={editText}
-                              aria-label="형광펜 메모"
-                              onClick={(e) => e.stopPropagation()}
-                              onChange={(e) => setEditText(e.target.value)}
-                              onKeyDown={(e) => {
-                                if (e.key === "Enter") {
-                                  e.preventDefault();
-                                  commitNoteEdit();
-                                }
-                                if (e.key === "Escape") {
-                                  setEditingMarkId(null);
-                                }
-                              }}
-                              onBlur={commitNoteEdit}
-                            />
-                          );
-                        }
-                        const mark = marksById.get(nid);
-                        if (!mark?.note) return null;
-                        const expanded = expandedNoteId === nid;
-                        const isBadge = pos.mode === "badge" && !expanded;
-                        const style: CSSProperties = expanded
-                          ? {
-                              top: pos.top,
-                              left: pos.openLeft,
-                              width: pos.openWidth,
-                            }
-                          : isBadge
-                            ? { top: pos.top, left: pos.left }
-                            : {
-                                top: pos.top,
-                                left: pos.left,
-                                maxWidth: pos.width,
-                              };
-                        return (
-                          <span
-                            key={`note-${nid}`}
-                            className={[
-                              "study-mark-note",
-                              isBadge ? "is-badge" : "",
-                              expanded ? "is-open" : "",
-                            ]
-                              .filter(Boolean)
-                              .join(" ")}
-                            style={style}
-                            data-mark-note-id={nid}
-                            title={mark.note}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              e.stopPropagation();
-                              if (expanded) {
-                                setExpandedNoteId(null);
-                                return;
-                              }
-                              const el = e.currentTarget as HTMLElement;
-                              const truncated =
-                                isBadge || el.scrollWidth > el.clientWidth + 1;
-                              if (truncated) setExpandedNoteId(nid);
-                              else beginNoteEdit(nid);
-                            }}
-                          >
-                            {isBadge ? circledNum(pos.badge ?? 1) : mark.note}
-                          </span>
-                        );
-                      })}
-                    </div>
+                  <div className="study-leaf-face is-front">
+                    {renderFace(flip.dir === 1 ? leftPage + 1 : leftPage, false)}
+                    <div ref={leafInkRef} className="study-leaf-ink" />
+                    <div ref={leafRimRef} className="study-leaf-rim" />
                   </div>
-                </article>
-              </div>
+                  <div className="study-leaf-face is-back">
+                    {renderFace(flip.dir === 1 ? leftPage + 2 : leftPage - 1, false)}
+                  </div>
+                </div>
+              ) : null}
+
+              {spreadOn &&
+              (selRects.length > 0 || Object.keys(notePos).length > 0) ? (
+                <div className="study-note-layer is-spread-overlay">
+                  {selRects.map((r, i) => (
+                    <span
+                      key={`sel-ov-${i}`}
+                      className="study-sel-rect"
+                      style={{
+                        top: r.top,
+                        left: r.left,
+                        width: r.width,
+                        height: r.height,
+                      }}
+                    />
+                  ))}
+                  {renderMarkNotes()}
+                  {selRects.length > 0 ? (
+                    <>
+                      <span
+                        className="study-sel-handle is-start"
+                        style={{
+                          top: selRects[0].top,
+                          left: selRects[0].left,
+                          height: selRects[0].height,
+                        }}
+                      >
+                        <span className="study-sel-handle-bar" />
+                        <span className="study-sel-handle-knob" />
+                        <span
+                          className="study-sel-handle-hit"
+                          data-handle="start"
+                          onPointerDown={(e) =>
+                            onHandlePointerDown("start", e)
+                          }
+                          onMouseDown={(e) =>
+                            onHandlePointerDown("start", e)
+                          }
+                        />
+                      </span>
+                      <span
+                        className="study-sel-handle is-end"
+                        style={{
+                          top: selRects[selRects.length - 1].top,
+                          left:
+                            selRects[selRects.length - 1].left +
+                            selRects[selRects.length - 1].width,
+                          height: selRects[selRects.length - 1].height,
+                        }}
+                      >
+                        <span className="study-sel-handle-bar" />
+                        <span className="study-sel-handle-knob" />
+                        <span
+                          className="study-sel-handle-hit"
+                          data-handle="end"
+                          onPointerDown={(e) => onHandlePointerDown("end", e)}
+                          onMouseDown={(e) => onHandlePointerDown("end", e)}
+                        />
+                      </span>
+                    </>
+                  ) : null}
+                </div>
+              ) : null}
+              <div
+                className="study-spread-lift"
+                style={spreadDragging ? { opacity: liftOp } : undefined}
+                aria-hidden
+              />
+              <div
+                className={`study-spread-shade is-next${
+                  spreadTurn === 1 ? " is-on" : ""
+                }`}
+                style={
+                  spreadDragging && spreadDragDx < 0
+                    ? { opacity: spreadPull }
+                    : undefined
+                }
+                aria-hidden
+              />
+              <div
+                className={`study-spread-shade is-prev${
+                  spreadTurn === -1 ? " is-on" : ""
+                }`}
+                style={
+                  spreadDragging && spreadDragDx > 0
+                    ? { opacity: spreadPull }
+                    : undefined
+                }
+                aria-hidden
+              />
+              {leftStack > 0 ? (
+                <div className="study-spread-stack is-left" aria-hidden>
+                  {Array.from({ length: leftStack }, (_, i) => (
+                    <i key={i} />
+                  ))}
+                </div>
+              ) : null}
+              {rightStack > 0 ? (
+                <div className="study-spread-stack is-right" aria-hidden>
+                  {Array.from({ length: rightStack }, (_, i) => (
+                    <i key={i} />
+                  ))}
+                </div>
+              ) : null}
               <div className="study-spread-fold" aria-hidden />
+              <div className="study-spread-runhead is-left" aria-hidden>
+                {bookMeta.name}
+              </div>
+              <div className="study-spread-runhead is-right" aria-hidden>
+                {chapter}
+                {bookId === "psalms" ? "편" : "장"}
+              </div>
+              <div className="study-spread-folio is-left" aria-hidden>
+                {leftPageNum}
+              </div>
+              {rightPageNum <= pageCount ? (
+                <div className="study-spread-folio is-right" aria-hidden>
+                  {rightPageNum}
+                </div>
+              ) : null}
               <button
                 type="button"
                 className="study-spread-edge is-prev"
@@ -2256,9 +3468,14 @@ function StudyNotebook({
                 style={{ width: `${STUDY_SPREAD_EDGE * 100}%` }}
                 onClick={(e) => {
                   e.stopPropagation();
+                  if (performance.now() - spreadEdgeTapRef.current < 450) return;
                   goSpreadBy(-1);
                 }}
-              />
+              >
+                <span className="study-spread-turn" aria-hidden>
+                  ‹
+                </span>
+              </button>
               <button
                 type="button"
                 className="study-spread-edge is-next"
@@ -2266,9 +3483,15 @@ function StudyNotebook({
                 style={{ width: `${STUDY_SPREAD_EDGE * 100}%` }}
                 onClick={(e) => {
                   e.stopPropagation();
+                  if (performance.now() - spreadEdgeTapRef.current < 450) return;
                   goSpreadBy(1);
                 }}
-              />
+              >
+                <span className="study-spread-turn" aria-hidden>
+                  ›
+                </span>
+              </button>
+              {spreadHint ? <div className="study-spread-hint" aria-hidden /> : null}
               {spreadNextBookUi && nextBookId ? (
                 <div className="study-spread-next-book">
                   <button
@@ -2386,75 +3609,7 @@ function StudyNotebook({
                     </span>
                   </>
                 ) : null}
-                {Object.entries(notePos).map(([nid, pos]) => {
-                  if (editingMarkId === nid) {
-                    return (
-                      <input
-                        key={`edit-${nid}`}
-                        ref={editInputRef}
-                        className="study-mark-note-input"
-                        style={{
-                          top: pos.top,
-                          left: pos.openLeft,
-                          width: pos.openWidth,
-                        }}
-                        value={editText}
-                        aria-label="형광펜 메모"
-                        onClick={(e) => e.stopPropagation()}
-                        onChange={(e) => setEditText(e.target.value)}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter") {
-                            e.preventDefault();
-                            commitNoteEdit();
-                          }
-                          if (e.key === "Escape") {
-                            setEditingMarkId(null);
-                          }
-                        }}
-                        onBlur={commitNoteEdit}
-                      />
-                    );
-                  }
-                  const mark = marksById.get(nid);
-                  if (!mark?.note) return null;
-                  const expanded = expandedNoteId === nid;
-                  const isBadge = pos.mode === "badge" && !expanded;
-                  const style: CSSProperties = expanded
-                    ? { top: pos.top, left: pos.openLeft, width: pos.openWidth }
-                    : isBadge
-                      ? { top: pos.top, left: pos.left }
-                      : { top: pos.top, left: pos.left, maxWidth: pos.width };
-                  return (
-                    <span
-                      key={`note-${nid}`}
-                      className={[
-                        "study-mark-note",
-                        isBadge ? "is-badge" : "",
-                        expanded ? "is-open" : "",
-                      ]
-                        .filter(Boolean)
-                        .join(" ")}
-                      style={style}
-                      data-mark-note-id={nid}
-                      title={mark.note}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        if (expanded) {
-                          setExpandedNoteId(null);
-                          return;
-                        }
-                        const el = e.currentTarget as HTMLElement;
-                        const truncated =
-                          isBadge || el.scrollWidth > el.clientWidth + 1;
-                        if (truncated) setExpandedNoteId(nid);
-                        else beginNoteEdit(nid);
-                      }}
-                    >
-                      {isBadge ? circledNum(pos.badge ?? 1) : mark.note}
-                    </span>
-                  );
-                })}
+                {renderMarkNotes()}
               </div>
             </div>
             {verses.length > 0 && onEndVisibilityChange ? (
@@ -2467,18 +3622,42 @@ function StudyNotebook({
           )}
           {spreadOn ? (
             <div
-              className="study-spread-pgnum-row"
+              className="study-spread-pager"
               style={{ width: spreadBoxStyle.width }}
-              aria-hidden
+              aria-live="polite"
             >
-              <span className="study-spread-pgnum is-left">{leftPageNum}</span>
-              {rightPageNum <= pageCount ? (
-                <span className="study-spread-pgnum is-right">
-                  {rightPageNum}
+              <div className="study-spread-progress" aria-hidden>
+                <span style={{ width: `${spreadProgress * 100}%` }} />
+              </div>
+              <div className="study-spread-pager-row">
+                <button
+                  type="button"
+                  className="study-spread-pager-btn"
+                  aria-label="이전 쪽"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goSpreadBy(-1);
+                  }}
+                >
+                  ‹
+                </button>
+                <span className="study-spread-pager-label">
+                  {rightPageNum <= pageCount
+                    ? `${leftPageNum}–${rightPageNum} / ${pageCount}`
+                    : `${leftPageNum} / ${pageCount}`}
                 </span>
-              ) : (
-                <span className="study-spread-pgnum is-right is-blank" />
-              )}
+                <button
+                  type="button"
+                  className="study-spread-pager-btn"
+                  aria-label="다음 쪽"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goSpreadBy(1);
+                  }}
+                >
+                  ›
+                </button>
+              </div>
             </div>
           ) : null}
         </div>
@@ -2553,6 +3732,7 @@ function StudyNotebook({
             <div
               ref={toolbarRef}
               className="study-toolbar"
+              data-no-drawer-swipe=""
               style={{ left: toolbar.x, top: toolbar.rt }}
               role="toolbar"
               aria-label="형광펜 도구"
@@ -2736,7 +3916,12 @@ function StudyNotebook({
         tokens={wsTokens}
         initial={wsInitial}
         selectedKo={wsSelectedKo}
-        onClose={() => setWsOpen(false)}
+        matched={wsMatched}
+        matchHint={wsMatchHint}
+        onClose={() => {
+          setWsOpen(false);
+          setWsMatchHint(null);
+        }}
         onError={(msg) => setToast(msg)}
         onDebug={debugOn ? debugLog : undefined}
         onNavigate={(nextBook, nextChapter) => {
@@ -3007,6 +4192,103 @@ function isAndroid(): boolean {
 function verseContaining(spans: VerseSpan[], offset: number): number {
   const hit = spans.find((s) => offset >= s.start && offset < s.end);
   return hit?.n ?? spans[spans.length - 1]?.n ?? 1;
+}
+
+function glyphRectOf(node: Text, offset: number): DOMRect | null {
+  if (!node.length) return null;
+  const i = Math.max(0, Math.min(node.length - 1, offset));
+  const range = document.createRange();
+  range.setStart(node, i);
+  range.setEnd(node, i + 1);
+  const r = range.getBoundingClientRect();
+  if (r.width < 0.4 && r.height < 0.4) return null;
+  return r;
+}
+
+/** 같은 열에서 세로 중심이 터치 y에 가장 가까운 줄의 글자 */
+function offsetNearestLine(
+  root: HTMLElement,
+  x: number,
+  y: number,
+  spans: VerseSpan[],
+): { off: number; rect: DOMRect } | null {
+  type Line = {
+    top: number;
+    bottom: number;
+    left: number;
+    right: number;
+    chars: { node: Text; i: number; r: DOMRect }[];
+  };
+  const lines: Line[] = [];
+  const range = document.createRange();
+  for (const node of verseTextNodes(root)) {
+    for (let i = 0; i < node.length; i += 1) {
+      range.setStart(node, i);
+      range.setEnd(node, i + 1);
+      const r = range.getBoundingClientRect();
+      if (r.width < 0.4 || r.height < 0.4) continue;
+      if (/\s/.test(node.data.charAt(i))) continue;
+      const mid = (r.top + r.bottom) / 2;
+      let line = lines.find(
+        (l) =>
+          mid >= l.top &&
+          mid <= l.bottom &&
+          r.left <= l.right + 28 &&
+          r.right >= l.left - 28,
+      );
+      if (!line) {
+        line = {
+          top: r.top,
+          bottom: r.bottom,
+          left: r.left,
+          right: r.right,
+          chars: [],
+        };
+        lines.push(line);
+      } else {
+        line.top = Math.min(line.top, r.top);
+        line.bottom = Math.max(line.bottom, r.bottom);
+        line.left = Math.min(line.left, r.left);
+        line.right = Math.max(line.right, r.right);
+      }
+      line.chars.push({ node, i, r });
+    }
+  }
+  if (lines.length === 0) return null;
+  const inCol = lines.filter((l) => x >= l.left - 12 && x <= l.right + 12);
+  const pool = inCol.length > 0 ? inCol : lines;
+  let best = pool[0];
+  let bestDy = Infinity;
+  for (const l of pool) {
+    const dy = Math.abs((l.top + l.bottom) / 2 - y);
+    if (dy < bestDy) {
+      bestDy = dy;
+      best = l;
+    }
+  }
+  let pick = best.chars[0];
+  let bestDx = Infinity;
+  for (const c of best.chars) {
+    if (x >= c.r.left && x <= c.r.right) {
+      pick = c;
+      bestDx = 0;
+      break;
+    }
+    const dx = x < c.r.left ? c.r.left - x : x - c.r.right;
+    if (dx < bestDx) {
+      bestDx = dx;
+      pick = c;
+    }
+  }
+  const after = x > pick.r.left + pick.r.width / 2;
+  const off = domPointToOffset(
+    root,
+    pick.node,
+    after ? pick.i + 1 : pick.i,
+    spans,
+  );
+  if (off == null) return null;
+  return { off, rect: pick.r };
 }
 
 function caretFromPoint(

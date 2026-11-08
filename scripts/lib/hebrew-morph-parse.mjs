@@ -36,17 +36,45 @@ const VERB_CONJ = {
 const PERSON = { 1: "1인칭", 2: "2인칭", 3: "3인칭" };
 const GENDER = { m: "남성", f: "여성", b: "공성", c: "공성" };
 const NUMBER = { s: "단수", p: "복수", d: "양수" };
-const NOUN_TYPE = { c: "보통", p: "고유", g: "민족", t: "지명" };
+// Np=고유명사(OSHB는 사람/장소 미구분 — Nt 실사용 0건), Ng=민족명, Nc=보통, Nt=지명(예비)
+const NOUN_TYPE = { c: "보통", p: "고유명사", g: "민족", t: "지명" };
 const NOUN_STATE = { a: "절대", c: "연계", d: "결정" };
 const PRON_TYPE = {
   p: "인칭", d: "지시", i: "의문",
   r: "관계", f: "재귀",
 };
+/**
+ * OSHB Particle (T*) — https://hb.openscriptures.org/parsing/HebrewMorphologyCodes.html
+ *   a affirmation · d article · e exhortation · i interrogative
+ *   j interjection · m demonstrative · n negative · o object marker
+ *   r relative · x unknown
+ * (구버전 오류: j→지시, m→지명, e→감탄 으로 뒤바뀌어 있었음)
+ */
 const PART_TYPE = {
-  a: "긍정", d: "정관사", e: "감탄", i: "의문",
-  j: "지시", m: "지명", n: "부정", o: "직접목적격",
-  r: "관계", x: "허사",
+  a: "긍정",
+  d: "정관사",
+  e: "권고",
+  i: "의문사",
+  j: "감탄사",
+  m: "지시",
+  n: "부정어",
+  o: "목적격 표지",
+  r: "관계사",
+  x: "허사",
 };
+/** 품사 자리(posKo)로 승격할 불변화사 세부 유형 */
+const PART_AS_POS = new Set([
+  "감탄사",
+  "부정어",
+  "목적격 표지",
+  "관계사",
+  "의문사",
+  "정관사",
+  "지시",
+  "권고",
+  "긍정",
+  "허사",
+]);
 const ADJ_TYPE = { a: "일반", c: "기수", g: "민족", o: "서수", x: "기타" };
 
 function decodeOne(code) {
@@ -139,6 +167,15 @@ function decodeOne(code) {
     }
     case "T": {
       const type = PART_TYPE[rest[1]];
+      if (type && PART_AS_POS.has(type)) {
+        // 감탄사·부정어·목적격 표지 등은 대표 품사로 표시
+        return {
+          posLabel: type,
+          parseLabel: "",
+          parseLabelLong: type,
+          lang,
+        };
+      }
       if (type) parts.push(type);
       break;
     }
@@ -181,10 +218,12 @@ export function decodeMorph(morphRaw) {
     return (morphRaw[0] === "A" ? "A" : "H") + m;
   });
   const decoded = tokens.map(decodeOne);
-  // 대표 항목은 동사가 있으면 동사, 없으면 마지막 형태소.
+  // 대표: 동사 > 명사/형용사 > 전치사(접미 결합 포함) > 마지막
+  // HR/Sp3ms 같은 전치사+접미는 마지막이 접미대명사라서 전치사를 우선한다.
   const main =
     decoded.find((d) => d.posLabel === "동사") ||
     decoded.find((d) => d.posLabel === "명사" || d.posLabel === "형용사") ||
+    decoded.find((d) => d.posLabel === "전치사") ||
     decoded[decoded.length - 1] ||
     {};
   return {
@@ -200,13 +239,13 @@ export function decodeMorph(morphRaw) {
 
 // 1 글자 prefix lemma 코드(b, c, d, k, l, m, s, i 등) → 한국어 라벨.
 export const PREFIX_LEMMA = {
-  a: { gloss: "~의", role: "전치사" },
-  b: { gloss: "~ 안에/으로", role: "전치사 בְּ" },
+  a: { gloss: "의", role: "전치사" },
+  b: { gloss: "안에/으로", role: "전치사 בְּ" },
   c: { gloss: "그리고", role: "접속사 וְ" },
   d: { gloss: "그", role: "정관사 הַ" },
-  i: { gloss: "~인가?", role: "의문사 הֲ" },
-  k: { gloss: "~처럼", role: "전치사 כְּ" },
-  l: { gloss: "~에게/를 위해", role: "전치사 לְ" },
-  m: { gloss: "~로부터", role: "전치사 מִן" },
-  s: { gloss: "~한 (자/것)", role: "관계대명사 שֶׁ" },
+  i: { gloss: "인가?", role: "의문사 הֲ" },
+  k: { gloss: "처럼", role: "전치사 כְּ" },
+  l: { gloss: "에게", role: "전치사 לְ" },
+  m: { gloss: "로부터", role: "전치사 מִן" },
+  s: { gloss: "한 (자/것)", role: "관계대명사 שֶׁ" },
 };

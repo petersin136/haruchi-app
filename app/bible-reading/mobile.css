@@ -45,16 +45,33 @@
 .brp-mobile-topbar-book {
   grid-column: 2;
   justify-self: center;
+  display: inline-flex;
+  align-items: center;
   max-width: min(56vw, 280px);
-  padding: 6px 4px;
+  height: auto;
+  padding: 0 4px;
+  line-height: 1.35;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
 }
 
 .brp-mobile-topbar-book-label {
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  overflow: visible;
+  line-height: 1.35;
+  text-box-trim: none;
+}
+
+.brp-mobile-topbar-book-clip {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
+  line-height: 1.35;
 }
 
 .brp-mobile-topbar-chevron {
@@ -207,7 +224,7 @@
      실제 좌우 14px 는 .brp-reader 패딩만 담당 (화면 끝 → 절 번호 = 14px).
      bible-reading.css 의 base clamp / ≤760 4px / ≥600 reader 패딩을 덮어씀. */
   .brp-page {
-    padding-top: 46px !important;
+    padding-top: calc(46px + env(safe-area-inset-top)) !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
     /* 하단 탭바(56px + safe-area) + 여유 */
@@ -230,10 +247,11 @@
     left: 0;
     right: 0;
     z-index: 30;
-    height: 46px;
-    min-height: 46px;
-    padding: 0 14px;
+    height: calc(46px + env(safe-area-inset-top));
+    min-height: calc(46px + env(safe-area-inset-top));
+    padding: env(safe-area-inset-top) 14px 0;
     box-sizing: border-box;
+    overflow: visible;
     background: color-mix(in srgb, #fbf7ee 82%, transparent);
     backdrop-filter: saturate(180%) blur(16px);
     -webkit-backdrop-filter: saturate(180%) blur(16px);
@@ -700,5 +718,93 @@
     border-radius: 0 !important;
     box-shadow: none !important;
     overflow: visible !important;
+  }
+}
+
+/* 폰: 검색은 왼쪽. 태블릿 검색은 오른쪽 묶음 */
+@media (max-width: 767.98px) {
+  .brp-mobile-topbar-search.is-tablet {
+    display: none !important;
+  }
+}
+
+/* ≥768 한 줄 상단바. 768~1023·세로는 본문 680 */
+@media (min-width: 768px) {
+  .brp-mobile-topbar-search.is-phone {
+    display: none !important;
+  }
+
+  .brp-header,
+  .brp-mini-bar {
+    display: none !important;
+  }
+
+  .brp-page {
+    padding-top: calc(52px + env(safe-area-inset-top)) !important;
+  }
+
+  .brp-mobile-topbar {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(52px + env(safe-area-inset-top)) !important;
+    min-height: calc(52px + env(safe-area-inset-top)) !important;
+    padding: env(safe-area-inset-top) 8px 0 16px !important;
+    box-sizing: border-box;
+    overflow: visible !important;
+    background: rgba(251, 247, 238, 0.86) !important;
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border-bottom: 1px solid #ece4d6 !important;
+  }
+
+  .brp-mobile-topbar-book {
+    grid-column: auto;
+    justify-self: start;
+    max-width: none;
+    font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #2a2420;
+    gap: 4px;
+  }
+
+  .brp-mobile-topbar-book-label {
+    line-height: 1.35;
+    overflow: visible;
+    text-box-trim: none;
+  }
+
+  .brp-mobile-topbar-book-ch {
+    color: #9e1b1b;
+  }
+
+  .brp-mobile-topbar-end {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .brp-mobile-topbar-btn--icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .brp-mobile-topbar-mode .brp-dd-trigger {
+    height: 30px;
+    padding: 0 12px;
+    border: 1px solid #e2d8c6;
+    border-radius: 999px;
+    background: transparent;
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px),
+  (min-width: 768px) and (max-width: 1279.98px) and (orientation: portrait) {
+  .brp-page .brp-reader {
+    max-width: 680px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }

@@ -525,6 +525,8 @@ export default function BibleReadingPage() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [flashVerse, setFlashVerse] = useState<number | null>(null);
+  /** 개역한글 이어읽기: 장 선택·검색 시 큰 장 번호 상단 정렬 강제 */
+  const [krvAlignNonce, setKrvAlignNonce] = useState(0);
 
   // ─── 절 선택/복사용 ref들 ─────────────────────────────────────────────
   // long-press 타이머와 시작 위치. 본문 스크롤 의도로 손가락이 10px 넘게
@@ -1266,6 +1268,7 @@ export default function BibleReadingPage() {
       setBookConfirmed(true);
       setChapterNumber(chapter);
       setFlashVerse(verseNo);
+      if (nextTr === "krv") setKrvAlignNonce((n) => n + 1);
       // 도착한 책이 속한 testament 의 last 만 갱신. 반대쪽 testament 의
       // 드롭다운은 직전 마지막 책을 그대로 유지한다.
       if (isOldTestament(nextBook)) {
@@ -1325,8 +1328,10 @@ export default function BibleReadingPage() {
         String(clamped),
       );
     }
-    // 개역한글 이어 읽기는 ContinuousKrvReader 가 해당 장 앵커로 맞춤
-    if (effectiveTranslation !== "krv") {
+    // 개역한글 이어 읽기는 ContinuousKrvReader 가 해당 장 큰 번호로 맞춤
+    if (effectiveTranslation === "krv") {
+      setKrvAlignNonce((n) => n + 1);
+    } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
@@ -1537,6 +1542,7 @@ export default function BibleReadingPage() {
           setBookId(activeBook);
           setChapterNumber(qChapter);
           setBookConfirmed(true);
+          setKrvAlignNonce((n) => n + 1);
           try {
             window.localStorage.setItem(CURRENT_BOOK_KEY, activeBook);
             window.localStorage.setItem(
@@ -2110,6 +2116,7 @@ export default function BibleReadingPage() {
               bookId={bookId}
               chapter={chapterNumber}
               flashVerse={flashVerse}
+              alignNonce={krvAlignNonce}
               bookConfirmed={bookConfirmed}
               onActiveChapterChange={onKrvActiveChapterChange}
               onChapterComplete={onKrvChapterComplete}

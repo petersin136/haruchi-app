@@ -287,10 +287,20 @@ function BookChapterDrawer({
     const onStart = (e: TouchEvent) => {
       if (disabledRef.current) return;
       if (e.touches.length !== 1) return;
-      // 공부 노트 선택·손잡이·도구 막대 중이면 서랍 제스처 시작 금지
-      if (document.documentElement.dataset.studySelecting === "1") return;
+      // 공부 노트 선택·원어 시트·메모 입력 중이면 서랍 제스처 금지
+      const ds = document.documentElement.dataset;
+      if (ds.studySelecting === "1") return;
+      if (ds.studyWsOpen === "1") return;
+      if (ds.studyNoteOpen === "1") return;
       const t = e.touches[0];
       if (t.clientX < EDGE_IGNORE_PX) return;
+      const target = e.target;
+      if (
+        target instanceof Element &&
+        target.closest("[data-no-drawer-swipe]")
+      ) {
+        return;
+      }
       const sel = window.getSelection();
       if (sel && !sel.isCollapsed && (sel.toString()?.length ?? 0) > 0) return;
 
@@ -307,7 +317,12 @@ function BookChapterDrawer({
     };
 
     const onMove = (e: TouchEvent) => {
-      if (document.documentElement.dataset.studySelecting === "1") {
+      const ds = document.documentElement.dataset;
+      if (
+        ds.studySelecting === "1" ||
+        ds.studyWsOpen === "1" ||
+        ds.studyNoteOpen === "1"
+      ) {
         tracking = false;
         locked = null;
         if (draggingRef.current || progressRef.current > 0.001) snapTo(false);

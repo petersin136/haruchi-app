@@ -1,18 +1,19 @@
 #!/usr/bin/env node
 /**
- * 요한일서 원어 단어 연구 데이터 빌드.
+ * 신약 27권 원어 단어 연구 데이터 빌드.
  *
- * 입력 (프로젝트 우선, 없으면 .cache 다운로드):
- *   - public/bible-v2/chapters/*  (MorphGNT/SBLGNT 토큰; CC BY-SA 4.0 / CC BY 4.0)
- *   - .cache/strongs-greek/strong-el.json  (또는 strongsgreek.xml)
- *   - data/keyword-notes/greek.json       (있으면 병합; Agent 4)
- *   - scripts/lib/greek-pron.mjs          (에라스무스식 한글)
+ * 입력:
+ *   - public/bible-v2/chapters/*     MorphGNT/SBLGNT 토큰
+ *   - public/bible-data/{book}.json  개역한글 절 번호(정렬·차이 표시)
+ *   - .cache/strongs-greek/strong-el.json (또는 strongsgreek.xml)
+ *   - data/keyword-notes/greek.json  defKo·etymKo·usageKo·phraseGlosses
+ *   - scripts/lib/greek-pron.mjs
  *
- * 출력 (신규 폴더만):
- *   - public/word-study/john1/{장}.json
+ * 출력:
+ *   - public/word-study/{bookId}/{장}.json  (books.ts bookId)
  *   - public/word-study/lexicon/greek/{strong}.json
  *
- * 설치·커밋·기존 파일 수정 금지.
+ * 설치·커밋·외부 API 금지.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -23,13 +24,14 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
 
 const SRC_ROOT = path.join(repoRoot, "public", "bible-v2", "chapters");
-const OUT_BOOK = path.join(repoRoot, "public", "word-study", "john1");
-const OUT_LEX = path.join(repoRoot, "public", "word-study", "lexicon", "greek");
+const OUT_ROOT = path.join(repoRoot, "public", "word-study");
+const OUT_LEX = path.join(OUT_ROOT, "lexicon", "greek");
+const BIBLE_DATA = path.join(repoRoot, "public", "bible-data");
 const GREEK_CACHE = path.join(repoRoot, ".cache", "strongs-greek", "strong-el.json");
 const GREEK_XML = path.join(repoRoot, ".cache", "strongs-greek", "strongsgreek.xml");
 const NOTES_PATH = path.join(repoRoot, "data", "keyword-notes", "greek.json");
+const DIFF_REPORT = path.join(OUT_ROOT, "_greek-verse-diff-report.json");
 
-const BOOK_ID = "john1";
 const DEF_EN_MAX = 160;
 const FAMILY_MAX = 6;
 const PHRASE_MIN_COUNT = 3;
@@ -598,65 +600,422 @@ function buildPhrases(lemma, phrasesByLemma, lemmaPos, lemmaStrong) {
   return rows.slice(0, PHRASE_MAX);
 }
 
-function writeJohn1Chapters(lemmaIndex, lemmaStrong) {
-  fs.mkdirSync(OUT_BOOK, { recursive: true });
-  const chapters = listChapters(BOOK_ID);
-  let wordCount = 0;
-  const uniqueLemmas = new Set();
+/** 칩용 짧은 한국어 뜻 (긴 문장·어원 prose에서 추출) */
+function shortKoGloss(s) {
+  const t = String(s || "").trim();
+  if (!t) return "";
+  const paren = t.match(/[（(]([^）)]{1,16})[）)]/);
+  if (paren) return paren[1].trim();
+  if (t.length <= 16 && !/[.。!?]/.test(t) && !/이에요|습니다|해요|예요/.test(t)) return t;
+  const head = t.split(/[,，.。!?\n]/)[0].trim();
+  return head.slice(0, 16);
+}
 
-  for (const ch of chapters) {
-    const data = readChapter(BOOK_ID, ch);
-    const verses = [];
-    for (const verse of data.verses || []) {
-      const words = [];
-      let i = 0;
-      for (const t of verse.tokens || []) {
-        const lemma = t.lemma || "";
-        const strong =
-          resolveStrong(lemma, lemmaIndex, t.strong) ||
-          lemmaStrong.get(lemma) ||
-          "";
-        if (lemma) uniqueLemmas.add(lemma);
-        const pron =
-          t.p ||
-          lookupPron(t.w || "", lemma) ||
-          t.lemmaP ||
-          "";
-        words.push({
-          ref: `${ch}:${verse.n}`,
-          i,
-          word: t.w || "",
-          lemma,
-          strong,
-          pron,
-          parse: t.parse || "",
-          parseKo: toParseKo(t.posLabel || "", t.parseLabel || ""),
-          glossKo: t.gloss || "",
-        });
-        i += 1;
-        wordCount += 1;
-      }
-      verses.push({ n: verse.n, words });
-    }
-    const out = {
-      book: BOOK_ID,
-      chapter: ch,
-      sources: data.meta?.sources || {
-        sblgnt: "SBLGNT © Society of Biblical Literature & Logos Bible Software (CC BY 4.0)",
-        morphgnt: "MorphGNT (CC BY-SA 4.0)",
-      },
-      verses,
-    };
-    const outPath = path.join(OUT_BOOK, `${ch}.json`);
-    fs.writeFileSync(outPath, JSON.stringify(out) + "\n");
-    console.log(`[john1] ch ${ch} → ${wordsInChapter(verses)} words → ${outPath}`);
+function lookPhraseHit(map, greek, lemmas) {
+  if (!map || typeof map !== "object") return "";
+  if (map[greek]) return String(map[greek]);
+  if (lemmas && map[lemmas.join(" ")]) return String(map[lemmas.join(" ")]);
+  const key = stripDiacritics(greek);
+  for (const [k, v] of Object.entries(map)) {
+    if (stripDiacritics(k) === key) return String(v);
   }
+  return "";
+}
 
-  return { chapters: chapters.length, wordCount, uniqueLemmas };
+function applyPhraseNotes(phrases, note) {
+  const pn = note?.phraseNotes;
+  const pg = note?.phraseGlosses;
+  return phrases.map((p) => {
+    const next = { ...p };
+    const noteHit = lookPhraseHit(pn, p.greek, p.lemmas);
+    if (noteHit) next.noteKo = noteHit;
+    const glossHit = lookPhraseHit(pg, p.greek, p.lemmas);
+    if (glossHit) next.glossKo = glossHit;
+    else if (!next.glossKo) next.glossKo = next.glossKo || "";
+    return next;
+  });
+}
+
+/** 고유명사 이름 뜻 (노트 우선, 없으면 흔한 이름 표) */
+const NAME_MEANING_BY_STRONG = {
+  G2424: "여호와는 구원이시다",
+  G5547: "기름 부음 받은 이, 메시아",
+  G4074: "바위, 반석",
+  G2491: "여호와는 은혜로우시다",
+  G3972: "작은 이",
+  G4613: "들으심",
+  G11: "많은 무리의 아버지",
+  G3475: "물에서 끌어내다",
+  G2419: "평화의 기초",
+  G2414: "평화의 기초",
+  G2474: "하나님과 겨루다, 하나님이 다스리시다",
+  G1056: "이방의 둘레, 갈릴리",
+};
+
+function looksLikeProperName(lemma, defEn) {
+  const L = String(lemma || "");
+  if (/^[Ἀ-ῬA-Z]/.test(L)) return true;
+  const d = String(defEn || "");
+  return /\b(name of|the name)\b/i.test(d) || /\bi\.e\.\s+[A-Z]/.test(d);
+}
+
+function deriveNameMeaning(lemma, defEn) {
+  // strong은 호출부에서 note/표로 우선 처리; 여기선 lemma 휴리스틱만
+  if (!looksLikeProperName(lemma, defEn)) return "";
+  return "";
 }
 
 function wordsInChapter(verses) {
   return verses.reduce((n, v) => n + (v.words?.length || 0), 0);
+}
+
+function loadKrvChapter(bookId, ch) {
+  const p = path.join(BIBLE_DATA, `${bookId}.json`);
+  if (!fs.existsSync(p)) return null;
+  const d = JSON.parse(fs.readFileSync(p, "utf8"));
+  const chapter = (d.chapters || [])[ch - 1];
+  if (!chapter?.verses?.krv) return null;
+  return {
+    krv: chapter.verses.krv,
+    greekTokens: chapter.verses.greekTokens || null,
+  };
+}
+
+/** SBL 절이 KRV 여러 절을 덮는 경우 (첫 절에 토큰, 나머지도 split 표시·복제) */
+const SBL_COVERS_KRV = {
+  "acts/19": { 40: [40, 41] },
+};
+
+/** SBL 전용 절 → 다른 KRV 절에 병합 (prepend) */
+const SBL_MERGE_INTO = {
+  "revelation/12": { 18: { book: "revelation", ch: 13, v: 1 } },
+};
+
+/** KRV에만 있는 송영 등: bible-data greekTokens로 채움 */
+const FILL_FROM_BIBLE_DATA = {
+  "romans/16": [25, 26, 27],
+};
+
+/** 한 문장이 KRV 두 절에 걸쳐 보이는 쌍 (입맞춤 등) */
+const SPLIT_PAIRS = {
+  "corinthians2/13": [[11, 12]],
+};
+
+function tokenToWord(t, ch, verseN, i, lemmaIndex, lemmaStrong, uniqueLemmas) {
+  const lemma = t.lemma || "";
+  const strong =
+    resolveStrong(lemma, lemmaIndex, t.strong) ||
+    lemmaStrong.get(lemma) ||
+    "";
+  if (lemma) uniqueLemmas.add(lemma);
+  const pron = t.p || lookupPron(t.w || "", lemma) || t.lemmaP || "";
+  return {
+    ref: `${ch}:${verseN}`,
+    i,
+    word: t.w || "",
+    lemma,
+    strong,
+    pron,
+    parse: t.parse || "",
+    parseKo: toParseKo(t.posLabel || "", t.parseLabel || ""),
+    glossKo: t.gloss || "",
+  };
+}
+
+/** bible-data greekTokens (형태 없음) → 표면형으로 strong 추정 */
+function bibleDataTokensToWords(tokens, ch, verseN, lemmaIndex, lemmaStrong, uniqueLemmas) {
+  const words = [];
+  let i = 0;
+  for (const t of tokens || []) {
+    const w = String(t.w || "").trim();
+    if (!w || /^[,.;··:!?—–\-()\[\]「」『』]$/.test(w)) continue;
+    const key = stripDiacritics(w).toLowerCase();
+    let lemma = "";
+    let strong = "";
+    // 표면형 ≈ lemma 인 경우
+    const hits = lemmaIndex.get(key) || [];
+    if (hits.length) {
+      strong = hits[0];
+      lemma = w;
+    } else {
+      // lemmaStrong 역방향: 모든 lemma 중 표면과 같으면
+      for (const [L, s] of lemmaStrong.entries()) {
+        if (stripDiacritics(L).toLowerCase() === key) {
+          lemma = L;
+          strong = s;
+          break;
+        }
+      }
+    }
+    if (lemma) uniqueLemmas.add(lemma);
+    const pron = t.p || lookupPron(w, lemma) || "";
+    words.push({
+      ref: `${ch}:${verseN}`,
+      i,
+      word: w,
+      lemma: lemma || w,
+      strong,
+      pron,
+      parse: "",
+      parseKo: "",
+      glossKo: "",
+    });
+    i += 1;
+  }
+  return words;
+}
+
+function buildChapterAligned(bookId, ch, lemmaIndex, lemmaStrong, uniqueLemmas, diffLog) {
+  const data = readChapter(bookId, ch);
+  const sblByN = new Map();
+  for (const verse of data.verses || []) {
+    sblByN.set(verse.n, verse.tokens || []);
+  }
+  const krvPack = loadKrvChapter(bookId, ch);
+  const krvList = krvPack?.krv || [];
+  const krvNs = krvList.length
+    ? krvList.map((v) => v.n)
+    : [...sblByN.keys()].sort((a, b) => a - b);
+
+  const key = `${bookId}/${ch}`;
+  const covers = SBL_COVERS_KRV[key] || {};
+  const mergeAway = SBL_MERGE_INTO[key] || {};
+  const fillNs = new Set(FILL_FROM_BIBLE_DATA[key] || []);
+  const splitPairs = SPLIT_PAIRS[key] || [];
+
+  /** krvN → { tokens, sblSources, splitWith } */
+  const buckets = new Map();
+  for (const n of krvNs) {
+    buckets.set(n, { tokens: null, sblSources: [], splitWith: [] });
+  }
+
+  // 1) 기본 1:1 (cover 2절 이후·mergeAway 제외)
+  const secondaryCovered = new Set();
+  for (const arr of Object.values(covers)) {
+    for (const kn of arr.slice(1)) secondaryCovered.add(kn);
+  }
+  const mergeAwayNs = new Set(Object.keys(mergeAway).map(Number));
+  for (const n of krvNs) {
+    if (secondaryCovered.has(n) || mergeAwayNs.has(n)) continue;
+    if (sblByN.has(n)) {
+      buckets.get(n).tokens = sblByN.get(n);
+      buckets.get(n).sblSources.push(n);
+    }
+  }
+
+  // 2) SBL covers multiple KRV
+  for (const [sblN, krvArr] of Object.entries(covers)) {
+    const sn = Number(sblN);
+    const toks = sblByN.get(sn) || [];
+    for (const kn of krvArr) {
+      if (!buckets.has(kn)) buckets.set(kn, { tokens: null, sblSources: [], splitWith: [] });
+      const b = buckets.get(kn);
+      b.tokens = toks; // 복제 (히브리어 split과 동일)
+      b.sblSources.push(sn);
+      b.splitWith = [...krvArr];
+    }
+    diffLog.push({
+      book: bookId,
+      ch,
+      kind: "sblCoversKrv",
+      sbl: sn,
+      krv: krvArr,
+      note: "SBL 한 절이 개역한글 여러 절에 해당 — 토큰 복제 + split",
+    });
+  }
+
+  // 3) SBL-only merge away (rev 12:18 → 13:1 handled when writing target)
+  for (const sn of Object.keys(mergeAway)) {
+    const n = Number(sn);
+    if (buckets.has(n)) {
+      buckets.get(n).tokens = [];
+      buckets.get(n).sblSources = [];
+    }
+    diffLog.push({
+      book: bookId,
+      ch,
+      kind: "sblMergeAway",
+      sbl: n,
+      into: mergeAway[n],
+      note: "SBL 절을 개역한글 다른 절로 병합(대상 장에서 prepend)",
+    });
+  }
+
+  // 4) Incoming merges into this chapter (e.g. rev 12:18 → 13:1)
+  for (const [srcKey, map] of Object.entries(SBL_MERGE_INTO)) {
+    for (const [sn, dest] of Object.entries(map)) {
+      if (dest.book !== bookId || dest.ch !== ch) continue;
+      const srcBook = srcKey.split("/")[0];
+      const srcCh = Number(srcKey.split("/")[1]);
+      const srcData = readChapter(srcBook, srcCh);
+      const srcVerse = (srcData.verses || []).find((v) => v.n === Number(sn));
+      const extra = srcVerse?.tokens || [];
+      if (!buckets.has(dest.v)) {
+        buckets.set(dest.v, { tokens: [], sblSources: [], splitWith: [] });
+      }
+      const b = buckets.get(dest.v);
+      b.tokens = [...extra, ...(b.tokens || [])];
+      b.sblSources.push(Number(sn));
+      b.splitWith = [...new Set([...(b.splitWith || []), Number(sn), dest.v])].sort(
+        (a, c) => a - c,
+      );
+      diffLog.push({
+        book: bookId,
+        ch,
+        kind: "sblMergedIn",
+        from: `${srcBook} ${srcCh}:${sn}`,
+        krv: dest.v,
+        note: "SBL 전용 절을 개역한글 절 앞에 붙임 + split",
+      });
+    }
+  }
+
+  // 5) Fill from bible-data (romans 16:25-27)
+  for (const n of fillNs) {
+    const gt = (krvPack?.greekTokens || []).find((v) => v.n === n);
+    if (gt?.tokens?.length) {
+      if (!buckets.has(n)) buckets.set(n, { tokens: null, sblSources: [], splitWith: [] });
+      buckets.get(n).tokens = { __bibleData: true, tokens: gt.tokens };
+      diffLog.push({
+        book: bookId,
+        ch,
+        kind: "fillBibleData",
+        krv: n,
+        note: "SBL(MorphGNT)에 없음 — bible-data greekTokens로 채움(형태 추정)",
+      });
+    }
+  }
+
+  // 6) split pairs (2cor 13:11-12)
+  for (const pair of splitPairs) {
+    for (const n of pair) {
+      if (!buckets.has(n)) continue;
+      buckets.get(n).splitWith = [...new Set([...(buckets.get(n).splitWith || []), ...pair])].sort(
+        (a, c) => a - c,
+      );
+    }
+    diffLog.push({
+      book: bookId,
+      ch,
+      kind: "splitPair",
+      krv: pair,
+      note: "개역한글·SBL 절 경계가 어긋남(입맞춤 등)",
+    });
+  }
+
+  // 7) KRV-only omissions (empty)
+  for (const n of krvNs) {
+    const b = buckets.get(n);
+    if (b.tokens == null && !sblByN.has(n)) {
+      b.tokens = [];
+      const krvText = (krvList.find((v) => v.n === n)?.t || "").trim();
+      if (krvText && krvText !== "(없 음)") {
+        diffLog.push({
+          book: bookId,
+          ch,
+          kind: "krvOnlyOmit",
+          krv: n,
+          note: "개역한글에만 있는 절(SBL 본문 없음/비포함) — 칩 비움",
+        });
+      } else if (!krvText || krvText === "(없 음)") {
+        diffLog.push({
+          book: bookId,
+          ch,
+          kind: "krvEmpty",
+          krv: n,
+          note: "개역한글 빈 절",
+        });
+      }
+    }
+  }
+
+  const verses = [];
+  for (const n of [...buckets.keys()].sort((a, b) => a - b)) {
+    const b = buckets.get(n);
+    let words = [];
+    const raw = b.tokens;
+    if (raw && raw.__bibleData) {
+      words = bibleDataTokensToWords(
+        raw.tokens,
+        ch,
+        n,
+        lemmaIndex,
+        lemmaStrong,
+        uniqueLemmas,
+      );
+    } else if (Array.isArray(raw)) {
+      let i = 0;
+      for (const t of raw) {
+        words.push(tokenToWord(t, ch, n, i, lemmaIndex, lemmaStrong, uniqueLemmas));
+        i += 1;
+      }
+    }
+    const verseObj = { n, words };
+    if (b.splitWith?.length >= 2) {
+      verseObj.split = true;
+      verseObj.splitWith = b.splitWith;
+    }
+    verses.push(verseObj);
+  }
+
+  return {
+    verses,
+    sources: data.meta?.sources || {
+      sblgnt: "SBLGNT © Society of Biblical Literature & Logos Bible Software (CC BY 4.0)",
+      morphgnt: "MorphGNT (CC BY-SA 4.0)",
+      kr: "개역한글 절 번호 정렬(public/bible-data)",
+    },
+  };
+}
+
+function writeAllNtChapters(lemmaIndex, lemmaStrong) {
+  const uniqueLemmas = new Set();
+  const diffLog = [];
+  const bookStats = [];
+  let totalWords = 0;
+  let totalChapters = 0;
+
+  for (const bookId of GREEK_BOOKS) {
+    const outDir = path.join(OUT_ROOT, bookId);
+    fs.mkdirSync(outDir, { recursive: true });
+    const chapters = listChapters(bookId);
+    let bookWords = 0;
+    for (const ch of chapters) {
+      const { verses, sources } = buildChapterAligned(
+        bookId,
+        ch,
+        lemmaIndex,
+        lemmaStrong,
+        uniqueLemmas,
+        diffLog,
+      );
+      const out = {
+        book: bookId,
+        chapter: ch,
+        sources,
+        verses,
+      };
+      // 장 단위 titleShift는 헬라어에 해당 없음(시편 표제와 다름). split만 절 단위.
+      const outPath = path.join(outDir, `${ch}.json`);
+      fs.writeFileSync(outPath, JSON.stringify(out) + "\n");
+      const wc = wordsInChapter(verses);
+      bookWords += wc;
+      totalWords += wc;
+      totalChapters += 1;
+      const splits = verses.filter((v) => v.split).length;
+      console.log(
+        `[${bookId}] ch ${ch} → ${verses.length}v / ${wc}w${splits ? ` split=${splits}` : ""}`,
+      );
+    }
+    bookStats.push({
+      book: bookId,
+      chapters: chapters.length,
+      words: bookWords,
+    });
+  }
+
+  fs.writeFileSync(DIFF_REPORT, JSON.stringify({ diffs: diffLog, bookStats }, null, 2) + "\n");
+  return { totalChapters, totalWords, uniqueLemmas, bookStats, diffLog };
 }
 
 /**
@@ -730,8 +1089,10 @@ function writeLexicon(scan, lex, notes) {
     let root = null;
     if (rootStrong && allStrongs.has(rootStrong) && headLemma(rootStrong)) {
       root = { lemma: headLemma(rootStrong), strong: rootStrong };
-      const rg = note.rootNote || note.rootGloss || headGloss(rootStrong);
-      if (rg) root.glossKo = rg;
+      const short = headGloss(rootStrong);
+      const prose = note.etymKo || note.rootNote || note.rootGloss || "";
+      if (prose) root.glossKo = prose;
+      else if (short) root.glossKo = short;
     }
 
     const family = buildFamilyStrongs(lex, strong, rootIndex)
@@ -743,20 +1104,27 @@ function writeLexicon(scan, lex, notes) {
         glossKo: headGloss(s),
       }));
 
+    // etym: 뿌리 + 짧은 한국어 뜻 (칩용). prose etymKo는 root.glossKo에 둠.
+    let etym = null;
+    if (root) {
+      const short =
+        headGloss(root.strong) ||
+        shortKoGloss(note.etymKo || note.rootNote || "") ||
+        shortKoGloss(note.defKo || "");
+      etym = { lemma: root.lemma, strong: root.strong, glossKo: short };
+    }
+
+    const nameMeaning =
+      (typeof note.nameMeaning === "string" && note.nameMeaning.trim()) ||
+      NAME_MEANING_BY_STRONG[strong] ||
+      deriveNameMeaning(lemma, entry?.defEn || "") ||
+      "";
+
     let phrases = lemmas.length
       ? buildPhrases(lemmas[0], scan.phrasesByLemma, scan.lemmaPos, scan.lemmaStrong)
       : [];
-    // phraseNotes (Agent 4) → 해당 greek 구문에 note 병합
-    if (note.phraseNotes && typeof note.phraseNotes === "object") {
-      const pn = note.phraseNotes;
-      phrases = phrases.map((p) => {
-        const hit =
-          pn[p.greek] ||
-          pn[p.lemmas.join(" ")] ||
-          Object.entries(pn).find(([k]) => stripDiacritics(k) === stripDiacritics(p.greek))?.[1];
-        return hit ? { ...p, noteKo: hit } : p;
-      });
-    }
+    // phraseNotes → noteKo, phraseGlosses → glossKo
+    phrases = applyPhraseNotes(phrases, note);
 
     const obj = {
       lemma,
@@ -764,16 +1132,19 @@ function writeLexicon(scan, lex, notes) {
       strong,
       posKo: topPos(posMap) || "",
       root,
+      etym,
       family,
+      nameMeaning,
       defEn,
-      // Agent 4 notes 병합 (없으면 빈 문자열)
+      // notes 병합 (없으면 빈 문자열)
       defKo: note.defKo || "",
-      compareKo: note.compare || note.compareKo || note.note || "",
+      compareKo:
+        note.usageKo || note.compare || note.compareKo || note.note || "",
       countNT: counts.total,
       byBook: Object.fromEntries(
         Object.entries(counts.byBook).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])),
       ),
-      count1John: counts.byBook[BOOK_ID] || 0,
+      count1John: counts.byBook.john1 || 0,
       phrases,
     };
 
@@ -805,7 +1176,7 @@ function dirSize(dir) {
 }
 
 function main() {
-  console.log("[word-study] Strong's Greek + MorphGNT(bible-v2) → public/word-study/");
+  console.log("[word-study] NT 27권 chips + lexicon → public/word-study/");
   const lex = ensureGreekLexicon();
   const notes = loadNotes();
   const lemmaIndex = buildLemmaIndex(lex);
@@ -813,48 +1184,41 @@ function main() {
   if (Object.keys(notes).length) {
     console.log(`[word-study] notes merge ${Object.keys(notes).length} from ${NOTES_PATH}`);
   } else {
-    console.log(`[word-study] notes 없음 (defKo/compareKo 빈 문자열) — ${NOTES_PATH}`);
+    console.log(`[word-study] notes 없음 — ${NOTES_PATH}`);
   }
 
   console.log("[word-study] NT scan…");
   const scan = scanNt(lemmaIndex);
   console.log(`[word-study] lemmas in NT: ${scan.lemmaCounts.size}`);
 
-  const { chapters, wordCount, uniqueLemmas } = writeJohn1Chapters(
-    lemmaIndex,
-    scan.lemmaStrong,
-  );
+  const { totalChapters, totalWords, uniqueLemmas, bookStats, diffLog } =
+    writeAllNtChapters(lemmaIndex, scan.lemmaStrong);
   const written = writeLexicon(scan, lex, notes);
 
-  const johnStat = dirSize(OUT_BOOK);
-  const lexStat = dirSize(OUT_LEX);
-  const zoePath = path.join(OUT_LEX, "G2222.json");
-  let zoe = null;
-  if (fs.existsSync(zoePath)) {
-    zoe = JSON.parse(fs.readFileSync(zoePath, "utf8"));
-  } else {
-    // lemma 파일명 폴백 탐색
-    for (const f of fs.readdirSync(OUT_LEX)) {
-      const j = JSON.parse(fs.readFileSync(path.join(OUT_LEX, f), "utf8"));
-      if (j.lemma === "ζωή" || stripDiacritics(j.lemma) === "ζωη") {
-        zoe = j;
-        break;
-      }
-    }
+  let ntChipBytes = 0;
+  let ntChipFiles = 0;
+  for (const b of GREEK_BOOKS) {
+    const st = dirSize(path.join(OUT_ROOT, b));
+    ntChipBytes += st.bytes;
+    ntChipFiles += st.files;
   }
+  const lexStat = dirSize(OUT_LEX);
 
   const report = {
-    john1Chapters: chapters,
-    john1Words: wordCount,
+    books: bookStats,
+    totalChapters,
+    totalWords,
     uniqueLemmas: uniqueLemmas.size,
     lexiconFiles: written.length,
+    verseDiffs: diffLog.length,
+    diffReport: DIFF_REPORT,
     sizes: {
-      john1: johnStat,
-      lexicon: lexStat,
-      totalBytes: johnStat.bytes + lexStat.bytes,
-      totalFiles: johnStat.files + lexStat.files,
+      ntChipsBytes: ntChipBytes,
+      ntChipsMB: +(ntChipBytes / (1024 * 1024)).toFixed(2),
+      ntChipFiles,
+      lexiconBytes: lexStat.bytes,
+      lexiconMB: +(lexStat.bytes / (1024 * 1024)).toFixed(2),
     },
-    zoe,
   };
   console.log("\n=== REPORT ===");
   console.log(JSON.stringify(report, null, 2));

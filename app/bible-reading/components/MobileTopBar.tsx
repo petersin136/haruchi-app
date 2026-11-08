@@ -86,7 +86,7 @@ type MobileTopBarProps = {
   onOpenDrawer: () => void;
 };
 
-const STROKE = 1.5;
+const STROKE = 1.75;
 const STROKE_ENTRY = 1.75;
 
 const ICON_HIT: CSSProperties = {
@@ -210,8 +210,9 @@ function MobileTopBar({
     return () => window.removeEventListener("keydown", onKey);
   }, [menuOpen]);
 
+  const unit = bookId === "psalms" ? "편" : "장";
   const bookLabel = bookConfirmed
-    ? `${bookName} ${chapterNumber}장`
+    ? `${bookName} ${chapterNumber}${unit}`
     : "책 선택";
 
   const watchReady = useWatchAvailable(bookId);
@@ -222,21 +223,34 @@ function MobileTopBar({
       <div className="brp-mobile-topbar" role="banner" aria-label="모바일 읽기 바">
         <button
           type="button"
-          className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon brp-mobile-topbar-search"
+          className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon brp-mobile-topbar-search is-phone"
           onClick={onSearch}
           aria-label="성경 단어 검색"
           title="성경 단어 검색"
         >
           <SearchIcon />
         </button>
-
         <button
           type="button"
           className="brp-mobile-topbar-btn brp-mobile-topbar-book"
           onClick={onOpenDrawer}
           aria-label={`${bookLabel} — 책·장 선택`}
         >
-          <span className="brp-mobile-topbar-book-label">{bookLabel}</span>
+          {bookConfirmed ? (
+            <span className="brp-mobile-topbar-book-label">
+              <span className="brp-mobile-topbar-book-clip">
+                <span className="brp-mobile-topbar-book-name">{bookName}</span>{" "}
+                <span className="brp-mobile-topbar-book-ch">
+                  {chapterNumber}
+                  {unit}
+                </span>
+              </span>
+            </span>
+          ) : (
+            <span className="brp-mobile-topbar-book-label">
+              <span className="brp-mobile-topbar-book-clip">{bookLabel}</span>
+            </span>
+          )}
           <ChevronIcon />
         </button>
 
@@ -275,6 +289,15 @@ function MobileTopBar({
               <PlayIcon />
             </span>
           )}
+          <button
+            type="button"
+            className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon brp-mobile-topbar-search is-tablet"
+            onClick={onSearch}
+            aria-label="성경 단어 검색"
+            title="성경 단어 검색"
+          >
+            <SearchIcon />
+          </button>
           <button
             type="button"
             className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon brp-mobile-topbar-menu-btn"
