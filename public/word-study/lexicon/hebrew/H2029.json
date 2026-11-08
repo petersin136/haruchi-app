@@ -1,6 +1,6 @@
 {
   "lemma": "הָרָה",
-  "pron": "하라",
+  "pron": "브하라",
   "strong": "H2029",
   "posKo": "동사",
   "root": null,
@@ -20,8 +20,8 @@
     {
       "lemma": "הֵרוֹן",
       "strong": "H2032",
-      "pron": "헤로네",
-      "glossKo": "임신"
+      "pron": "브헤로네크",
+      "glossKo": "너의 임신"
     }
   ],
   "defEn": "be; become; pregnant; conceive",
@@ -33,18 +33,50 @@
   },
   "phrases": [
     {
-      "hebrew": "תַּ֣הַר עוֹד֮",
-      "pron": "하라 옫",
+      "hebrew": "וַתַּ֖הַר וַתֵּ֣לֶד",
+      "pron": "브하라 옐릳티카",
+      "lemmas": [
+        "הָרָה",
+        "יָלַד"
+      ],
+      "words": [
+        {
+          "word": "וַתַּ֖הַר",
+          "lemma": "הָרָה",
+          "strong": "H2029",
+          "pron": "브하라"
+        },
+        {
+          "word": "וַתֵּ֣לֶד",
+          "lemma": "יָלַד",
+          "strong": "H3205",
+          "pron": "옐릳티카"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 4:1",
+        "genesis 4:17",
+        "genesis 21:2",
+        "genesis 30:17",
+        "genesis 30:23",
+        "genesis 38:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתַּ֣הַר עוֹד֮",
+      "pron": "브하라 옫",
       "lemmas": [
         "הָרָה",
         "עוֹד"
       ],
       "words": [
         {
-          "word": "תַּ֣הַר",
+          "word": "וַתַּ֣הַר",
           "lemma": "הָרָה",
           "strong": "H2029",
-          "pron": "하라"
+          "pron": "브하라"
         },
         {
           "word": "עוֹד֮",
@@ -65,40 +97,8 @@
       "glossKo": ""
     },
     {
-      "hebrew": "תַּ֖הַר תֵּ֣לֶד",
-      "pron": "하라 옐릳티",
-      "lemmas": [
-        "הָרָה",
-        "יָלַד"
-      ],
-      "words": [
-        {
-          "word": "תַּ֖הַר",
-          "lemma": "הָרָה",
-          "strong": "H2029",
-          "pron": "하라"
-        },
-        {
-          "word": "תֵּ֣לֶד",
-          "lemma": "יָלַד",
-          "strong": "H3205",
-          "pron": "옐릳티"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "genesis 4:1",
-        "genesis 4:17",
-        "genesis 21:2",
-        "genesis 30:17",
-        "genesis 30:23",
-        "genesis 38:3"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "תַּ֣הַר עוֹד֮ תֵּ֣לֶד",
-      "pron": "하라 옫 옐릳티",
+      "hebrew": "וַתַּ֣הַר עוֹד֮ וַתֵּ֣לֶד",
+      "pron": "브하라 옫 옐릳티카",
       "lemmas": [
         "הָרָה",
         "עוֹד",
@@ -106,10 +106,10 @@
       ],
       "words": [
         {
-          "word": "תַּ֣הַר",
+          "word": "וַתַּ֣הַר",
           "lemma": "הָרָה",
           "strong": "H2029",
-          "pron": "하라"
+          "pron": "브하라"
         },
         {
           "word": "עוֹד֮",
@@ -118,10 +118,10 @@
           "pron": "옫"
         },
         {
-          "word": "תֵּ֣לֶד",
+          "word": "וַתֵּ֣לֶד",
           "lemma": "יָלַד",
           "strong": "H3205",
-          "pron": "옐릳티"
+          "pron": "옐릳티카"
         }
       ],
       "count": 5,

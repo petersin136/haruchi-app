@@ -8,19 +8,19 @@
     {
       "lemma": "חֲוִילָה",
       "strong": "H2341",
-      "pron": "하빌라",
+      "pron": "아하빌라",
       "glossKo": "하윌라"
     },
     {
       "lemma": "חוּל",
       "strong": "H2343",
-      "pron": "훌",
+      "pron": "브훌",
       "glossKo": "훌"
     },
     {
       "lemma": "חוֹל",
       "strong": "H2344",
-      "pron": "홀",
+      "pron": "우크홀",
       "glossKo": "모래"
     },
     {
@@ -38,8 +38,8 @@
     {
       "lemma": "חָלָה",
       "strong": "H2470",
-      "pron": "할로타",
-      "glossKo": "병들다"
+      "pron": "바할로타므",
+      "glossKo": "그들에게 병들다"
     }
   ],
   "defEn": "twist; whirl; dance; writhe in pain; fear; wait; pervert",
@@ -50,6 +50,35 @@
     "genesis": 1
   },
   "phrases": [
+    {
+      "hebrew": "וַתְּח֣וֹלֵֽל אֶ֣רֶץ",
+      "pron": "야힐루 에레츠",
+      "lemmas": [
+        "חוּל",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "וַתְּח֣וֹלֵֽל",
+          "lemma": "חוּל",
+          "strong": "H2342",
+          "pron": "야힐루"
+        },
+        {
+          "word": "אֶ֣רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "에레츠"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 90:2",
+        "psalms 97:4",
+        "psalms 114:7"
+      ],
+      "glossKo": ""
+    },
     {
       "hebrew": "יְ֭הוָה יָחִ֣יל",
       "pron": "여호와 야힐루",
@@ -76,35 +105,6 @@
         "psalms 29:8",
         "psalms 29:9",
         "psalms 37:7"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "תְּח֣וֹלֵֽל אֶ֣רֶץ",
-      "pron": "야힐루 에레츠",
-      "lemmas": [
-        "חוּל",
-        "אֶרֶץ"
-      ],
-      "words": [
-        {
-          "word": "תְּח֣וֹלֵֽל",
-          "lemma": "חוּל",
-          "strong": "H2342",
-          "pron": "야힐루"
-        },
-        {
-          "word": "אֶ֣רֶץ",
-          "lemma": "אֶרֶץ",
-          "strong": "H776",
-          "pron": "에레츠"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 90:2",
-        "psalms 97:4",
-        "psalms 114:7"
       ],
       "glossKo": ""
     }

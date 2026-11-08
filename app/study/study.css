@@ -1569,3 +1569,211 @@ html:has(.study-root) body::-webkit-scrollbar,
   color: var(--study-red, #9e1b1b);
   font-weight: 600;
 }
+
+/* ── B: 가로 태블릿 양쪽 페이지(≥1024 + landscape) ───────────────── */
+
+html[data-study-spread="1"],
+html[data-study-spread="1"] body {
+  overflow: hidden !important;
+  height: 100% !important;
+  overscroll-behavior: none;
+}
+
+html[data-study-spread="1"] .brp-page {
+  height: 100dvh !important;
+  overflow: hidden !important;
+  padding-bottom: 0 !important;
+}
+
+html[data-study-spread="1"] .brp-page .brp-reader {
+  height: 100% !important;
+  max-height: none !important;
+  overflow: hidden !important;
+  padding-bottom: 0 !important;
+  max-width: none !important;
+}
+
+html[data-study-spread="1"] .brp-tabbar {
+  display: none !important;
+}
+
+.study-root.is-spread {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: #fbf7ee;
+  background-image: none;
+}
+
+.study-root.is-spread .study-top,
+.study-root.is-spread .study-nav,
+.study-root.is-spread .study-io {
+  display: none;
+}
+
+.study-root.is-spread .study-shell,
+.study-root.is-spread .study-layout {
+  flex: 1;
+  min-height: 0;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.study-spread-bar {
+  flex-shrink: 0;
+  padding: 8px 16px 6px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #8a7d70;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.study-spread-viewport {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  margin: 0 auto 12px;
+  width: min(1120px, calc(100% - 24px));
+  background: #fbf7ee;
+  box-shadow: 0 2px 18px rgba(40, 30, 20, 0.07);
+  overflow: hidden;
+  touch-action: pan-y;
+  border-radius: 2px;
+}
+
+.study-spread-fold {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 3;
+  width: 24px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(40, 28, 16, 0.1) 0%,
+    rgba(40, 28, 16, 0.02) 45%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(40, 28, 16, 0.02) 55%,
+    rgba(40, 28, 16, 0.1) 100%
+  );
+}
+
+.study-spread-track {
+  height: 100%;
+  will-change: transform;
+  transition: transform 280ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.study-spread-track.is-dragging {
+  transition: none;
+}
+
+.study-root.is-spread .study-page {
+  height: 100%;
+  margin: 0;
+  padding: 20px 22px 36px;
+  box-sizing: border-box;
+  column-width: var(--study-page-w, 320px);
+  column-gap: var(--study-spread-gap, 48px);
+  column-fill: auto;
+  overflow: visible;
+  background: #fbf7ee;
+}
+
+.study-root.is-spread .study-body {
+  /* 컬럼 안에서 절 흐름 유지 */
+  min-height: 0;
+}
+
+.study-root.is-spread .study-note-layer {
+  /* 컬럼 좌표계 — 메모가 페이지 밖으로 잘리지 않게 레이어는 본문과 함께 흐름 */
+  overflow: visible;
+}
+
+.study-spread-pgnum {
+  position: absolute;
+  bottom: 10px;
+  z-index: 4;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: #9a8f82;
+  pointer-events: none;
+  text-box-trim: trim-both;
+  text-box-edge: text alphabetic;
+}
+
+.study-spread-pgnum.is-left {
+  left: 14px;
+}
+
+.study-spread-pgnum.is-right {
+  right: 14px;
+}
+
+.study-spread-edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  width: 15%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.study-spread-edge.is-prev {
+  left: 0;
+}
+
+.study-spread-edge.is-next {
+  right: 0;
+}
+
+.study-spread-next-book {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, #fbf7ee 88%, transparent);
+}
+
+.study-spread-next-book-btn {
+  margin: 0;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 12px;
+  background: #2a2420;
+  color: #fbf7ee;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.brp-cont-krv.is-spread {
+  height: 100%;
+  min-height: 0;
+}
+
+.brp-cont-krv.is-spread .brp-cont-chapter {
+  height: 100%;
+  min-height: 0 !important;
+}
+
+.brp-cont-krv.is-spread .study-root {
+  height: 100%;
+}

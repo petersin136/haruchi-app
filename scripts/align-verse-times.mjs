@@ -339,11 +339,11 @@ const KO_NUM = (() => {
 })();
 
 function parseChapterToken(norm, unit) {
-  // 숫자: "3장" / "23편" / ASR 오인식 "22편네"
-  // ※ "제사장" 같은 본문 단어에 한글 수사+장을 붙이면 안 됨 → 한글은 완전일치만
-  const m = new RegExp(`^(\\d{1,3})${unit}`).exec(norm);
+  // 숫자: "3장" / "23편" / ASR 말꼬리 "9장이"·"22편네"
+  // ※ "8장을"(팔짱을 오인식)처럼 목적격 조사는 제외 — 본문 오탐
+  // ※ "제사장" 등 한글 수사+장은 완전일치만
+  const m = new RegExp(`^(\\d{1,3})${unit}([이은는네예요]?)$`).exec(norm);
   if (m) return Number(m[1]);
-  // 삼장 / 십이편 (완전 일치만 — endsWith 금지: 제사장→사장=4장 오탐)
   for (const [ko, n] of KO_NUM) {
     if (norm === ko + unit) return n;
   }
@@ -360,19 +360,21 @@ function extractChapterStartsFromSegs(segs, totalChapters, bookName, unit = "장
   const starts = new Map();
   let lastT = -1;
   let lastN = 0;
+  const bookNorm = normalize(bookName);
   for (let i = 0; i < segs.length; i++) {
     const n = parseChapterToken(segs[i].norm, unit);
     if (n == null || n < 1 || n > totalChapters || starts.has(n)) continue;
     // 번호가 크게 역행하면 본문 속 "N장" 오탐 가능 → 건너뜀
-    // (작은 역행은 허용하지 않음: 이미 지난 번호)
     if (n <= lastN && lastN > 0) continue;
     const prev = segs[i - 1];
-    const t =
+    const hasBookPrefix =
       prev &&
-      (prev.norm === bookName || prev.norm.endsWith(bookName)) &&
-      segs[i].t - prev.t < 3
-        ? prev.t
-        : segs[i].t;
+      (prev.norm === bookNorm || prev.norm.endsWith(bookNorm)) &&
+      segs[i].t - prev.t < 3;
+    // 한 장 이상 건너뛰는 라벨은 책이름+"N장" 형태만 채택
+    // (전도서 본문 "팔짱을"→ASR "8장을" 오탐 차단)
+    if (n > lastN + 1 && lastN > 0 && !hasBookPrefix) continue;
+    const t = hasBookPrefix ? prev.t : segs[i].t;
     if (t <= lastT) continue;
     starts.set(n, t);
     lastT = t;

@@ -16,7 +16,7 @@ import {
 import { createPortal } from "react-dom";
 import { loadKoreanChapter } from "../../bible-reading/bibleData";
 import type { BookId } from "../../bible-reading/books";
-import { BOOKS, isOldTestament } from "../../bible-reading/books";
+import { BOOK_ORDER, BOOKS, isOldTestament } from "../../bible-reading/books";
 import ChapterEndSentinel from "../../bible-reading/components/ChapterEndSentinel";
 import {
   DEFAULT_HL,
@@ -54,6 +54,14 @@ import {
   type WordStudyToken,
 } from "../lib/wordStudy";
 import WordStudySheet from "./WordStudySheet";
+import {
+  STUDY_SPREAD_ANIM_MS,
+  STUDY_SPREAD_EDGE,
+  STUDY_SPREAD_GAP,
+  STUDY_SPREAD_SWIPE_PX,
+  chapterLabel,
+  subscribeStudySpread,
+} from "../lib/studySpread";
 import "../study.css";
 
 type Props = {
@@ -65,6 +73,8 @@ type Props = {
   onEndVisibilityChange?: (visible: boolean) => void;
   endSentinelNonce?: number;
   onMoveChapter?: (chapter: number) => void;
+  /** 스프레드: 책 마지막 장 다음 → 다음 책 */
+  onGoNextBook?: () => void;
 };
 
 /** PC(≥960) 에서는 .brp-reader 가 스크롤 컨테이너 */
@@ -177,10 +187,33 @@ function StudyNotebook({
   onEndVisibilityChange,
   endSentinelNonce = 0,
   onMoveChapter,
+  onGoNextBook,
 }: Props) {
   const isOtBook = isOldTestament(bookId);
   const bookMeta = BOOKS[bookId];
   const total = bookMeta.totalChapters;
+  const [spreadOn, setSpreadOn] = useState(false);
+  const [spreadPage, setSpreadPage] = useState(0);
+  const [spreadCount, setSpreadCount] = useState(1);
+  const [spreadStride, setSpreadStride] = useState(360);
+  const [spreadDragging, setSpreadDragging] = useState(false);
+  const [spreadDragDx, setSpreadDragDx] = useState(0);
+  const [spreadNextBookUi, setSpreadNextBookUi] = useState(false);
+  const spreadVpRef = useRef<HTMLDivElement | null>(null);
+  const spreadFlowRef = useRef<HTMLElement | null>(null);
+  const spreadPageRef = useRef(0);
+  const spreadCountRef = useRef(1);
+  const spreadStrideRef = useRef(360);
+  const spreadSwipeRef = useRef<{
+    id: number;
+    x: number;
+    y: number;
+    armed: boolean;
+  } | null>(null);
+  const spreadAnchorVerseRef = useRef<number | null>(null);
+  spreadPageRef.current = spreadPage;
+  spreadCountRef.current = spreadCount;
+  spreadStrideRef.current = spreadStride;
   const [verses, setVerses] = useState<{ n: number; t: string }[] | null>(null);
   const [title, setTitle] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -1074,7 +1107,12 @@ function StudyNotebook({
         `[data-verse-num="${target}"]`,
       );
       if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        if (spreadOn) {
+          spreadAnchorVerseRef.current = target;
+          // 페이지 측정 후 jump — measure effect 가 처리
+        } else {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
         el.classList.add("is-flash");
         window.setTimeout(() => el.classList.remove("is-flash"), 2000);
         return;
@@ -1085,7 +1123,238 @@ function StudyNotebook({
     return () => {
       cancelled = true;
     };
-  }, [flashVerse, verses, bookId, chapter]);
+  }, [flashVerse, verses, bookId, chapter, spreadOn]);
+
+  useEffect(() => subscribeStudySpread(setSpreadOn), []);
+
+  // 가로↔세로 전환 시 보던 절 유지
+  useEffect(() => {
+    if (spreadOn) {
+      const body = bodyRef.current;
+      if (body) {
+        const versesEls = [
+          ...body.querySelectorAll<HTMLElement>("[data-verse-num]"),
+        ];
+        let bestNum: number | null = null;
+        let bestDist = Infinity;
+        const mid = window.innerHeight * 0.35;
+        for (const el of versesEls) {
+          const r = el.getBoundingClientRect();
+          const d = Math.abs(r.top - mid);
+          if (d < bestDist) {
+            bestDist = d;
+            const raw = el.getAttribute("data-verse-num");
+            const n = raw ? Number(raw) : NaN;
+            bestNum = Number.isFinite(n) ? n : null;
+          }
+        }
+        if (bestNum != null) spreadAnchorVerseRef.current = bestNum;
+      }
+      document.documentElement.dataset.studySpread = "1";
+      return () => {
+        delete document.documentElement.dataset.studySpread;
+      };
+    }
+    delete document.documentElement.dataset.studySpread;
+    const v = spreadAnchorVerseRef.current;
+    if (v != null) {
+      requestAnimationFrame(() => {
+        const el = bodyRef.current?.querySelector<HTMLElement>(
+          `[data-verse-num="${v}"]`,
+        );
+        el?.scrollIntoView({ block: "center" });
+      });
+    }
+    return undefined;
+  }, [spreadOn]);
+
+  useEffect(() => {
+    setSpreadPage(0);
+    setSpreadNextBookUi(false);
+    setSpreadDragDx(0);
+    spreadAnchorVerseRef.current = null;
+  }, [bookId, chapter]);
+
+  const measureSpread = useCallback(() => {
+    const vp = spreadVpRef.current;
+    const flow = spreadFlowRef.current;
+    if (!vp || !flow || !spreadOn) return;
+    const gap = STUDY_SPREAD_GAP;
+    const w = vp.clientWidth;
+    const h = vp.clientHeight;
+    if (w < 80 || h < 80) return;
+    const pageW = Math.max(120, (w - gap) / 2);
+    const stride = pageW + gap;
+    flow.style.setProperty("--study-page-w", `${pageW}px`);
+    flow.style.setProperty("--study-spread-gap", `${gap}px`);
+    flow.style.height = `${h}px`;
+    // 컬럼 재계산
+    void flow.offsetHeight;
+    const totalW = flow.scrollWidth;
+    const count = Math.max(1, Math.round(totalW / stride));
+    setSpreadStride(stride);
+    setSpreadCount(count);
+
+    const anchor = spreadAnchorVerseRef.current;
+    if (anchor != null) {
+      const el = bodyRef.current?.querySelector<HTMLElement>(
+        `[data-verse-num="${anchor}"]`,
+      );
+      if (el) {
+        const p = (() => {
+          const vr = vp.getBoundingClientRect();
+          const er = el.getBoundingClientRect();
+          const contentX = spreadPageRef.current * stride + (er.left - vr.left);
+          return Math.max(0, Math.min(count - 1, Math.floor((contentX + 1) / stride)));
+        })();
+        setSpreadPage(p);
+        spreadAnchorVerseRef.current = null;
+        return;
+      }
+    }
+    setSpreadPage((p) => Math.min(p, Math.max(0, count - 1)));
+  }, [spreadOn]);
+
+  useLayoutEffect(() => {
+    if (!spreadOn || !verses) return;
+    measureSpread();
+    const vp = spreadVpRef.current;
+    if (!vp) return;
+    const ro = new ResizeObserver(() => measureSpread());
+    ro.observe(vp);
+    const reader = vp.closest(".brp-reader");
+    if (reader) ro.observe(reader);
+    // 글씨 배수(--reader-size-scale) 변경 감지
+    const mo = new MutationObserver(() => measureSpread());
+    mo.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["style", "class"],
+    });
+    if (reader) {
+      mo.observe(reader, { attributes: true, attributeFilter: ["style", "class"] });
+    }
+    const t = window.setTimeout(measureSpread, 80);
+    return () => {
+      ro.disconnect();
+      mo.disconnect();
+      window.clearTimeout(t);
+    };
+  }, [spreadOn, verses, title, chapter, bookId, data.marks.length, measureSpread]);
+
+  const goSpreadBy = useCallback(
+    (delta: number) => {
+      if (document.documentElement.dataset.studySelecting === "1") return;
+      setSpreadNextBookUi(false);
+      setSpreadPage((p) => {
+        const next = p + delta;
+        if (next < 0) {
+          if (chapter > 1) {
+            if (onMoveChapter) onMoveChapter(chapter - 1);
+            else if (!embedded) {
+              window.location.assign(`/study/${bookId}/${chapter - 1}`);
+            }
+          }
+          return 0;
+        }
+        if (next > spreadCountRef.current - 1) {
+          if (chapter < total) {
+            if (onMoveChapter) onMoveChapter(chapter + 1);
+            else if (!embedded) {
+              window.location.assign(`/study/${bookId}/${chapter + 1}`);
+            }
+            return p;
+          }
+          const idx = BOOK_ORDER.indexOf(bookId);
+          const hasNextBook = idx >= 0 && idx < BOOK_ORDER.length - 1;
+          if (hasNextBook) {
+            setSpreadNextBookUi(true);
+          }
+          return p;
+        }
+        return next;
+      });
+    },
+    [bookId, chapter, embedded, onMoveChapter, total],
+  );
+
+  // 마지막 페이지가 보이면 장 완료(센티널 대체)
+  useEffect(() => {
+    if (!spreadOn || !onEndVisibilityChange) return;
+    const lastVisible = Math.min(
+      spreadCount - 1,
+      spreadPage + 1,
+    );
+    const viewingLast = spreadCount > 0 && lastVisible >= spreadCount - 1;
+    onEndVisibilityChange(viewingLast);
+  }, [spreadOn, spreadPage, spreadCount, onEndVisibilityChange]);
+
+  useEffect(() => {
+    if (!spreadOn) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      const t = e.target as HTMLElement | null;
+      if (t?.closest?.("input, textarea, [contenteditable=true]")) return;
+      if (document.documentElement.dataset.studySelecting === "1") return;
+      e.preventDefault();
+      goSpreadBy(e.key === "ArrowRight" ? 1 : -1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [spreadOn, goSpreadBy]);
+
+  const onSpreadPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
+    if (!spreadOn) return;
+    if (document.documentElement.dataset.studySelecting === "1") return;
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    const t = e.target as HTMLElement;
+    if (t.closest(".study-spread-edge, .study-spread-next-book, .study-toolbar, .study-ws-root"))
+      return;
+    spreadSwipeRef.current = {
+      id: e.pointerId,
+      x: e.clientX,
+      y: e.clientY,
+      armed: true,
+    };
+  };
+
+  const onSpreadPointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
+    const s = spreadSwipeRef.current;
+    if (!s || s.id !== e.pointerId || !s.armed) return;
+    if (document.documentElement.dataset.studySelecting === "1") {
+      spreadSwipeRef.current = null;
+      setSpreadDragging(false);
+      setSpreadDragDx(0);
+      return;
+    }
+    const dx = e.clientX - s.x;
+    const dy = e.clientY - s.y;
+    if (!spreadDragging) {
+      if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+      if (Math.abs(dx) <= Math.abs(dy) * 1.5) {
+        s.armed = false;
+        return;
+      }
+      setSpreadDragging(true);
+    }
+    setSpreadDragDx(dx);
+  };
+
+  const finishSpreadSwipe = (e: ReactPointerEvent<HTMLDivElement>) => {
+    const s = spreadSwipeRef.current;
+    if (!s || s.id !== e.pointerId) return;
+    spreadSwipeRef.current = null;
+    const dx = spreadDragging ? spreadDragDx : e.clientX - s.x;
+    const dy = e.clientY - s.y;
+    setSpreadDragging(false);
+    setSpreadDragDx(0);
+    if (document.documentElement.dataset.studySelecting === "1") return;
+    if (
+      Math.abs(dx) >= STUDY_SPREAD_SWIPE_PX &&
+      Math.abs(dx) > Math.abs(dy) * 1.5
+    ) {
+      goSpreadBy(dx < 0 ? 1 : -1);
+    }
+  };
 
   // 화면 좌우 12px 안으로 보정 + 꼬리는 선택 범위 쪽
   useLayoutEffect(() => {
@@ -1678,8 +1947,24 @@ function StudyNotebook({
     );
   };
 
+  const spreadTx =
+    spreadOn
+      ? -(spreadPage * spreadStride) + (spreadDragging ? spreadDragDx : 0)
+      : 0;
+  const leftPageNum = spreadPage + 1;
+  const rightPageNum = spreadPage + 2;
+  const nextBookId =
+    BOOK_ORDER.indexOf(bookId) >= 0 &&
+    BOOK_ORDER.indexOf(bookId) < BOOK_ORDER.length - 1
+      ? BOOK_ORDER[BOOK_ORDER.indexOf(bookId) + 1]
+      : null;
+
   return (
-    <div className={`study-root${embedded ? " is-embedded" : ""}`}>
+    <div
+      className={`study-root${embedded ? " is-embedded" : ""}${
+        spreadOn ? " is-spread" : ""
+      }`}
+    >
       {debugOn && debugHost && typeof document !== "undefined"
         ? createPortal(
             <div className="study-debug-log" aria-live="polite">
@@ -1705,7 +1990,270 @@ function StudyNotebook({
       ) : null}
 
       <div className="study-shell">
+        {spreadOn ? (
+          <div className="study-spread-bar" aria-live="polite">
+            {chapterLabel(bookMeta.name, chapter, bookId)} · {leftPageNum} /{" "}
+            {spreadCount}쪽
+          </div>
+        ) : null}
         <div className="study-layout">
+          {spreadOn ? (
+            <div
+              className="study-spread-viewport"
+              ref={spreadVpRef}
+              onPointerDown={onSpreadPointerDown}
+              onPointerMove={onSpreadPointerMove}
+              onPointerUp={finishSpreadSwipe}
+              onPointerCancel={finishSpreadSwipe}
+            >
+              <div
+                className={`study-spread-track${
+                  spreadDragging ? " is-dragging" : ""
+                }`}
+                style={{
+                  transform: `translate3d(${spreadTx}px,0,0)`,
+                  transitionDuration: spreadDragging
+                    ? "0ms"
+                    : `${STUDY_SPREAD_ANIM_MS}ms`,
+                }}
+              >
+                <article
+                  ref={spreadFlowRef}
+                  className="study-page"
+                  data-study-chapter-inner={chapter}
+                >
+                  <span
+                    className={`study-drop${digLen >= 3 ? " is-wide" : ""}`}
+                    data-digits={digLen}
+                    data-chapter-anchor={title ? undefined : ""}
+                    aria-hidden="true"
+                  >
+                    <span className="study-drop-num">{chapter}</span>
+                  </span>
+                  {title ? (
+                    <span className="study-chapter-title" data-chapter-anchor="">
+                      {title}
+                    </span>
+                  ) : null}
+                  <div
+                    className={`study-body${dragging ? " is-selecting" : ""}`}
+                    ref={bodyRef}
+                    onPointerDown={onBodyPointerDown}
+                    onContextMenu={(e) => {
+                      const t = e.target as HTMLElement;
+                      if (t.closest(".study-mark-note-input")) return;
+                      e.preventDefault();
+                    }}
+                    onClickCapture={(e) => {
+                      if (!suppressClickRef.current) return;
+                      suppressClickRef.current = false;
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
+                  >
+                    {useParas
+                      ? paraGroups.map((g) => (
+                          <p key={g.key} className="study-para">
+                            {g.verses.map((span, i) =>
+                              renderVerse(span, i === 0),
+                            )}
+                          </p>
+                        ))
+                      : paraGroups[0]?.verses.map((span, i) =>
+                          renderVerse(span, i === 0),
+                        )}
+                    <div className="study-note-layer" aria-label="행간 메모">
+                      {selRects.map((r, i) => (
+                        <span
+                          key={`sel-${i}`}
+                          className="study-sel-rect"
+                          style={{
+                            top: r.top,
+                            left: r.left,
+                            width: r.width,
+                            height: r.height,
+                          }}
+                        />
+                      ))}
+                      {selRects.length > 0 ? (
+                        <>
+                          <span
+                            className="study-sel-handle is-start"
+                            style={{
+                              top: selRects[0].top,
+                              left: selRects[0].left,
+                              height: selRects[0].height,
+                            }}
+                          >
+                            <span className="study-sel-handle-bar" />
+                            <span className="study-sel-handle-knob" />
+                            <span
+                              className="study-sel-handle-hit"
+                              data-handle="start"
+                              onPointerDown={(e) =>
+                                onHandlePointerDown("start", e)
+                              }
+                              onMouseDown={(e) =>
+                                onHandlePointerDown("start", e)
+                              }
+                            />
+                          </span>
+                          <span
+                            className="study-sel-handle is-end"
+                            style={{
+                              top: selRects[selRects.length - 1].top,
+                              left:
+                                selRects[selRects.length - 1].left +
+                                selRects[selRects.length - 1].width,
+                              height: selRects[selRects.length - 1].height,
+                            }}
+                          >
+                            <span className="study-sel-handle-bar" />
+                            <span className="study-sel-handle-knob" />
+                            <span
+                              className="study-sel-handle-hit"
+                              data-handle="end"
+                              onPointerDown={(e) =>
+                                onHandlePointerDown("end", e)
+                              }
+                              onMouseDown={(e) =>
+                                onHandlePointerDown("end", e)
+                              }
+                            />
+                          </span>
+                        </>
+                      ) : null}
+                      {Object.entries(notePos).map(([nid, pos]) => {
+                        if (editingMarkId === nid) {
+                          return (
+                            <input
+                              key={`edit-${nid}`}
+                              ref={editInputRef}
+                              className="study-mark-note-input"
+                              style={{
+                                top: pos.top,
+                                left: pos.openLeft,
+                                width: pos.openWidth,
+                              }}
+                              value={editText}
+                              aria-label="형광펜 메모"
+                              onClick={(e) => e.stopPropagation()}
+                              onChange={(e) => setEditText(e.target.value)}
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter") {
+                                  e.preventDefault();
+                                  commitNoteEdit();
+                                }
+                                if (e.key === "Escape") {
+                                  setEditingMarkId(null);
+                                }
+                              }}
+                              onBlur={commitNoteEdit}
+                            />
+                          );
+                        }
+                        const mark = marksById.get(nid);
+                        if (!mark?.note) return null;
+                        const expanded = expandedNoteId === nid;
+                        const isBadge = pos.mode === "badge" && !expanded;
+                        const style: CSSProperties = expanded
+                          ? {
+                              top: pos.top,
+                              left: pos.openLeft,
+                              width: pos.openWidth,
+                            }
+                          : isBadge
+                            ? { top: pos.top, left: pos.left }
+                            : {
+                                top: pos.top,
+                                left: pos.left,
+                                maxWidth: pos.width,
+                              };
+                        return (
+                          <span
+                            key={`note-${nid}`}
+                            className={[
+                              "study-mark-note",
+                              isBadge ? "is-badge" : "",
+                              expanded ? "is-open" : "",
+                            ]
+                              .filter(Boolean)
+                              .join(" ")}
+                            style={style}
+                            data-mark-note-id={nid}
+                            title={mark.note}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              if (expanded) {
+                                setExpandedNoteId(null);
+                                return;
+                              }
+                              const el = e.currentTarget as HTMLElement;
+                              const truncated =
+                                isBadge || el.scrollWidth > el.clientWidth + 1;
+                              if (truncated) setExpandedNoteId(nid);
+                              else beginNoteEdit(nid);
+                            }}
+                          >
+                            {isBadge ? circledNum(pos.badge ?? 1) : mark.note}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div className="study-spread-fold" aria-hidden />
+              <span className="study-spread-pgnum is-left">{leftPageNum}</span>
+              {rightPageNum <= spreadCount ? (
+                <span className="study-spread-pgnum is-right">
+                  {rightPageNum}
+                </span>
+              ) : null}
+              <button
+                type="button"
+                className="study-spread-edge is-prev"
+                aria-label="이전 쪽"
+                style={{ width: `${STUDY_SPREAD_EDGE * 100}%` }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goSpreadBy(-1);
+                }}
+              />
+              <button
+                type="button"
+                className="study-spread-edge is-next"
+                aria-label="다음 쪽"
+                style={{ width: `${STUDY_SPREAD_EDGE * 100}%` }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goSpreadBy(1);
+                }}
+              />
+              {spreadNextBookUi && nextBookId ? (
+                <div className="study-spread-next-book">
+                  <button
+                    type="button"
+                    className="study-spread-next-book-btn"
+                    onClick={() => {
+                      setSpreadNextBookUi(false);
+                      if (onGoNextBook) onGoNextBook();
+                      else {
+                        window.location.assign(
+                          embedded
+                            ? `/bible-reading?book=${encodeURIComponent(nextBookId)}&chapter=1`
+                            : `/study/${nextBookId}/1`,
+                        );
+                      }
+                    }}
+                  >
+                    다음 책: {BOOKS[nextBookId].name} →
+                  </button>
+                </div>
+              ) : null}
+            </div>
+          ) : (
           <article className="study-page" data-study-chapter-inner={chapter}>
             <span
               className={`study-drop${digLen >= 3 ? " is-wide" : ""}`}
@@ -1878,6 +2426,7 @@ function StudyNotebook({
               />
             ) : null}
           </article>
+          )}
         </div>
 
         {!embedded ? (

@@ -1,6 +1,6 @@
 {
   "lemma": "כֹּל",
-  "pron": "콜",
+  "pron": "브콜",
   "strong": "H3605",
   "posKo": "명사",
   "root": {
@@ -18,8 +18,8 @@
     {
       "lemma": "כַּלָּה",
       "strong": "H3618",
-      "pron": "칼라트",
-      "glossKo": "신부"
+      "pron": "칼라트오",
+      "glossKo": "그의 신부"
     },
     {
       "lemma": "כׇּל־חֹזֶה",
@@ -30,7 +30,7 @@
     {
       "lemma": "כָּלִיל",
       "strong": "H3632",
-      "pron": "칼릴",
+      "pron": "브칼릴",
       "glossKo": "완전한"
     },
     {
@@ -56,7 +56,7 @@
   "phrases": [
     {
       "hebrew": "אֶת כָּל",
-      "pron": "에트 콜",
+      "pron": "에트 브콜",
       "lemmas": [
         "אֵת",
         "כֹּל"
@@ -72,7 +72,7 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "콜"
+          "pron": "브콜"
         }
       ],
       "count": 89,
@@ -93,56 +93,18 @@
       "glossKo": ""
     },
     {
-      "hebrew": "כָּל אָֽרֶץ",
-      "pron": "콜 에레츠",
-      "lemmas": [
-        "כֹּל",
-        "אֶרֶץ"
-      ],
-      "words": [
-        {
-          "word": "כָּל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "콜"
-        },
-        {
-          "word": "אָֽרֶץ",
-          "lemma": "אֶרֶץ",
-          "strong": "H776",
-          "pron": "에레츠"
-        }
-      ],
-      "count": 56,
-      "refs": [
-        "psalms 8:1",
-        "psalms 8:9",
-        "psalms 19:4",
-        "psalms 33:8",
-        "psalms 45:16",
-        "psalms 47:2",
-        "psalms 47:7",
-        "psalms 48:2",
-        "psalms 57:5",
-        "psalms 57:11",
-        "psalms 66:1",
-        "psalms 66:4"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "כָל אֲשֶׁר",
-      "pron": "콜 아셰르",
+      "hebrew": "וְכָל אֲשֶׁר",
+      "pron": "브콜 아셰르",
       "lemmas": [
         "כֹּל",
         "אֲשֶׁר"
       ],
       "words": [
         {
-          "word": "כָל",
+          "word": "וְכָל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "콜"
+          "pron": "브콜"
         },
         {
           "word": "אֲשֶׁר",
@@ -169,8 +131,46 @@
       "glossKo": ""
     },
     {
+      "hebrew": "כָּל הָאָֽרֶץ",
+      "pron": "브콜 에레츠",
+      "lemmas": [
+        "כֹּל",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "브콜"
+        },
+        {
+          "word": "הָאָֽרֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "에레츠"
+        }
+      ],
+      "count": 56,
+      "refs": [
+        "psalms 8:1",
+        "psalms 8:9",
+        "psalms 19:4",
+        "psalms 33:8",
+        "psalms 45:16",
+        "psalms 47:2",
+        "psalms 47:7",
+        "psalms 48:2",
+        "psalms 57:5",
+        "psalms 57:11",
+        "psalms 66:1",
+        "psalms 66:4"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "כָּל יְמֵ֣י",
-      "pron": "콜 욤",
+      "pron": "브콜 아욤",
       "lemmas": [
         "כֹּל",
         "יוֹם"
@@ -180,13 +180,13 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "콜"
+          "pron": "브콜"
         },
         {
           "word": "יְמֵ֣י",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "욤"
+          "pron": "아욤"
         }
       ],
       "count": 51,
@@ -208,7 +208,7 @@
     },
     {
       "hebrew": "יְ֭הוָה כָּל",
-      "pron": "여호와 콜",
+      "pron": "여호와 브콜",
       "lemmas": [
         "יְהֹוָה",
         "כֹּל"
@@ -224,7 +224,7 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "콜"
+          "pron": "브콜"
         }
       ],
       "count": 31,

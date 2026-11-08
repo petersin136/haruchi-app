@@ -12,6 +12,7 @@ import { BOOKS, BOOK_ORDER, type BookId } from "../books";
 import { loadKoreanChapter } from "../bibleData";
 import { isChapterDone } from "../../lib/readLog";
 import StudyNotebook from "../../study/components/StudyNotebook";
+import { subscribeStudySpread } from "../../study/lib/studySpread";
 import "./continuous-krv.css";
 
 type Props = {
@@ -69,6 +70,8 @@ export default function ContinuousKrvReader({
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const heightsRef = useRef<Map<number, number>>(new Map());
   const [heightTick, setHeightTick] = useState(0);
+  const [spreadOn, setSpreadOn] = useState(false);
+  useEffect(() => subscribeStudySpread(setSpreadOn), []);
   const lastEmittedRef = useRef(chapter);
   /** 검색·URL·서랍 등 외부 점프 후 해당 장 앵커로 맞출 목표. null 이면 정렬 불필요 */
   const pendingAlignRef = useRef<number | null>(chapter);
@@ -86,8 +89,8 @@ export default function ContinuousKrvReader({
   /** 창 재구성 직후 짧은 동결 — 4↔5 진동 방지 */
   const freezeUntilRef = useRef(0);
 
-  const lo = Math.max(1, chapter - 1);
-  const hi = Math.min(total, chapter + 1);
+  const lo = spreadOn ? chapter : Math.max(1, chapter - 1);
+  const hi = spreadOn ? chapter : Math.min(total, chapter + 1);
   const mounted = useMemo(() => {
     const list: number[] = [];
     for (let c = lo; c <= hi; c++) list.push(c);
@@ -494,11 +497,22 @@ export default function ContinuousKrvReader({
   }, [mounted]);
 
   const nextBook = nextBookId(bookId);
-  const showNextBook = hi >= total && nextBook != null;
+  const showNextBook = !spreadOn && hi >= total && nextBook != null;
+
+  const goChapter = useCallback(
+    (ch: number) => {
+      const n = Math.max(1, Math.min(total, ch));
+      onActiveRef.current(n);
+    },
+    [total],
+  );
 
   return (
-    <div className="brp-cont-krv" ref={wrapRef}>
-      {topSpacer > 0 ? (
+    <div
+      className={`brp-cont-krv${spreadOn ? " is-spread" : ""}`}
+      ref={wrapRef}
+    >
+      {!spreadOn && topSpacer > 0 ? (
         <div
           className="brp-cont-spacer"
           style={{ height: topSpacer }}
@@ -513,7 +527,13 @@ export default function ContinuousKrvReader({
             key={`${bookId}-${ch}`}
             className="brp-cont-chapter"
             data-study-chapter={ch}
-            style={minH && minH > 80 ? { minHeight: minH } : undefined}
+            style={
+              spreadOn
+                ? { height: "100%", minHeight: 0 }
+                : minH && minH > 80
+                  ? { minHeight: minH }
+                  : undefined
+            }
           >
             <StudyNotebook
               bookId={bookId}
@@ -521,6 +541,12 @@ export default function ContinuousKrvReader({
               embedded
               flashVerse={ch === chapter ? flashVerse : null}
               onEndVisibilityChange={(vis) => handleEndVisibility(ch, vis)}
+              onMoveChapter={spreadOn ? goChapter : undefined}
+              onGoNextBook={
+                spreadOn && nextBook
+                  ? () => onGoNextBook(nextBook)
+                  : undefined
+              }
             />
           </div>
         );
@@ -538,7 +564,7 @@ export default function ContinuousKrvReader({
         </div>
       ) : null}
 
-      {bottomSpacer > 0 ? (
+      {!spreadOn && bottomSpacer > 0 ? (
         <div
           className="brp-cont-spacer"
           style={{ height: bottomSpacer }}

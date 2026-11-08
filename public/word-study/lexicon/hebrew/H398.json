@@ -38,7 +38,7 @@
     {
       "lemma": "מַאֲכֶלֶת",
       "strong": "H3979",
-      "pron": "마아켈레트",
+      "pron": "아마아켈레트",
       "glossKo": "칼"
     }
   ],
@@ -87,40 +87,6 @@
       "glossKo": ""
     },
     {
-      "hebrew": "אֱכֹ֪ל אֶת",
-      "pron": "오켈레 에트",
-      "lemmas": [
-        "אָכַל",
-        "אֵת"
-      ],
-      "words": [
-        {
-          "word": "אֱכֹ֪ל",
-          "lemma": "אָכַל",
-          "strong": "H398",
-          "pron": "오켈레"
-        },
-        {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        }
-      ],
-      "count": 8,
-      "refs": [
-        "psalms 27:2",
-        "psalms 79:7",
-        "genesis 3:18",
-        "genesis 31:15",
-        "genesis 40:17",
-        "genesis 43:2",
-        "genesis 45:18",
-        "genesis 47:22"
-      ],
-      "glossKo": ""
-    },
-    {
       "hebrew": "לֹ֥א תֹאכַ֖ל",
       "pron": "로 오켈레",
       "lemmas": [
@@ -155,8 +121,42 @@
       "glossKo": ""
     },
     {
-      "hebrew": "תֹאכַ֖ל מִמֶּ֑",
-      "pron": "오켈레 밈메",
+      "hebrew": "לֶאֱכֹ֪ל אֶת",
+      "pron": "오켈레 에트",
+      "lemmas": [
+        "אָכַל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "לֶאֱכֹ֪ל",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "오켈레"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "psalms 27:2",
+        "psalms 79:7",
+        "genesis 3:18",
+        "genesis 31:15",
+        "genesis 40:17",
+        "genesis 43:2",
+        "genesis 45:18",
+        "genesis 47:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תֹאכַ֖ל מִמֶּ֑נּוּ",
+      "pron": "오켈레 밈메누",
       "lemmas": [
         "אָכַל",
         "מִן"
@@ -169,10 +169,10 @@
           "pron": "오켈레"
         },
         {
-          "word": "מִמֶּ֑",
+          "word": "מִמֶּ֑נּוּ",
           "lemma": "מִן",
           "strong": "H4480",
-          "pron": "밈메"
+          "pron": "밈메누"
         }
       ],
       "count": 7,
@@ -186,15 +186,15 @@
       "glossKo": ""
     },
     {
-      "hebrew": "יֹּ֣אכַל כָּל",
-      "pron": "오켈레 콜",
+      "hebrew": "וַיֹּ֣אכַל כָּל",
+      "pron": "오켈레 브콜",
       "lemmas": [
         "אָכַל",
         "כֹּל"
       ],
       "words": [
         {
-          "word": "יֹּ֣אכַל",
+          "word": "וַיֹּ֣אכַל",
           "lemma": "אָכַל",
           "strong": "H398",
           "pron": "오켈레"
@@ -203,7 +203,7 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "콜"
+          "pron": "브콜"
         }
       ],
       "count": 5,

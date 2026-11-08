@@ -33,7 +33,7 @@
   },
   "phrases": [
     {
-      "hebrew": "תֵּרֵ֣ד מִצְרָ֑יְמָ",
+      "hebrew": "תֵּרֵ֣ד מִצְרָ֑יְמָה",
       "pron": "예렏 미체라임",
       "lemmas": [
         "יָרַד",
@@ -47,7 +47,7 @@
           "pron": "예렏"
         },
         {
-          "word": "מִצְרָ֑יְמָ",
+          "word": "מִצְרָ֑יְמָה",
           "lemma": "מִצְרַיִם",
           "strong": "H4714",
           "pron": "미체라임"
@@ -64,7 +64,37 @@
       "glossKo": ""
     },
     {
-      "hebrew": "הוֹרַדְתֶּ֧ם אֶת",
+      "hebrew": "בְּרִדְתִּ֪י אֶ֫ל",
+      "pron": "예렏 엘레모",
+      "lemmas": [
+        "יָרַד",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "בְּרִדְתִּ֪י",
+          "lemma": "יָרַד",
+          "strong": "H3381",
+          "pron": "예렏"
+        },
+        {
+          "word": "אֶ֫ל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘레모"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 30:9",
+        "genesis 37:35",
+        "genesis 44:21",
+        "genesis 45:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהוֹרַדְתֶּ֧ם אֶת",
       "pron": "예렏 에트",
       "lemmas": [
         "יָרַד",
@@ -72,7 +102,7 @@
       ],
       "words": [
         {
-          "word": "הוֹרַדְתֶּ֧ם",
+          "word": "וְהוֹרַדְתֶּ֧ם",
           "lemma": "יָרַד",
           "strong": "H3381",
           "pron": "예렏"
@@ -89,6 +119,36 @@
         "genesis 42:38",
         "genesis 43:7",
         "genesis 44:29",
+        "genesis 45:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתְּמַהֵ֗ר וַתֹּ֧רֶד",
+      "pron": "마하루 예렏",
+      "lemmas": [
+        "מָהַר",
+        "יָרַד"
+      ],
+      "words": [
+        {
+          "word": "וַתְּמַהֵ֗ר",
+          "lemma": "מָהַר",
+          "strong": "H4116",
+          "pron": "마하루"
+        },
+        {
+          "word": "וַתֹּ֧רֶד",
+          "lemma": "יָרַד",
+          "strong": "H3381",
+          "pron": "예렏"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 24:18",
+        "genesis 24:46",
+        "genesis 44:11",
         "genesis 45:13"
       ],
       "glossKo": ""
@@ -120,64 +180,6 @@
         "psalms 30:3",
         "psalms 88:4",
         "psalms 143:7"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יורדי יָּֽרְדִ",
-      "pron": "예렏 예렏",
-      "lemmas": [
-        "יָרַד",
-        "יָרַד"
-      ],
-      "words": [
-        {
-          "word": "יורדי",
-          "lemma": "יָרַד",
-          "strong": "H3381",
-          "pron": "예렏"
-        },
-        {
-          "word": "יָּֽרְדִ",
-          "lemma": "יָרַד",
-          "strong": "H3381",
-          "pron": "예렏"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 30:3",
-        "genesis 43:20"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "לֹא יֵרֵ֖ד",
-      "pron": "로 예렏",
-      "lemmas": [
-        "לֹא",
-        "יָרַד"
-      ],
-      "words": [
-        {
-          "word": "לֹא",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        },
-        {
-          "word": "יֵרֵ֖ד",
-          "lemma": "יָרַד",
-          "strong": "H3381",
-          "pron": "예렏"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 49:17",
-        "genesis 42:38",
-        "genesis 43:5",
-        "genesis 44:23"
       ],
       "glossKo": ""
     }

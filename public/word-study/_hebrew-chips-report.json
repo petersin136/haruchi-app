@@ -1,0 +1,561 @@
+{
+  "mode": "pilot",
+  "verseMapSource": "OSHB <note>KJV:Book.ch.v</note> only (no hand list)",
+  "mismatchVsKrv": [
+    {
+      "book": "psalms",
+      "ch": 13,
+      "mappedVerses": 5,
+      "krvVerses": 6,
+      "delta": -1
+    }
+  ],
+  "mismatchInPilotEmit": [
+    {
+      "book": "psalms",
+      "ch": 13,
+      "mappedVerses": 5,
+      "krvVerses": 6,
+      "delta": -1
+    }
+  ],
+  "emit": [
+    {
+      "book": "psalms",
+      "ch": 1,
+      "verses": 6,
+      "chips": 67
+    },
+    {
+      "book": "psalms",
+      "ch": 2,
+      "verses": 12,
+      "chips": 92
+    },
+    {
+      "book": "psalms",
+      "ch": 3,
+      "verses": 8,
+      "chips": 70
+    },
+    {
+      "book": "psalms",
+      "ch": 4,
+      "verses": 8,
+      "chips": 77
+    },
+    {
+      "book": "psalms",
+      "ch": 5,
+      "verses": 12,
+      "chips": 112
+    },
+    {
+      "book": "psalms",
+      "ch": 6,
+      "verses": 10,
+      "chips": 85
+    },
+    {
+      "book": "psalms",
+      "ch": 7,
+      "verses": 17,
+      "chips": 142
+    },
+    {
+      "book": "psalms",
+      "ch": 8,
+      "verses": 9,
+      "chips": 77
+    },
+    {
+      "book": "psalms",
+      "ch": 9,
+      "verses": 20,
+      "chips": 166
+    },
+    {
+      "book": "psalms",
+      "ch": 10,
+      "verses": 18,
+      "chips": 167
+    },
+    {
+      "book": "psalms",
+      "ch": 11,
+      "verses": 7,
+      "chips": 69
+    },
+    {
+      "book": "psalms",
+      "ch": 12,
+      "verses": 8,
+      "chips": 79
+    },
+    {
+      "book": "psalms",
+      "ch": 13,
+      "verses": 5,
+      "chips": 55
+    },
+    {
+      "book": "psalms",
+      "ch": 14,
+      "verses": 7,
+      "chips": 73
+    },
+    {
+      "book": "psalms",
+      "ch": 15,
+      "verses": 5,
+      "chips": 55
+    },
+    {
+      "book": "psalms",
+      "ch": 16,
+      "verses": 11,
+      "chips": 97
+    },
+    {
+      "book": "psalms",
+      "ch": 17,
+      "verses": 15,
+      "chips": 126
+    },
+    {
+      "book": "psalms",
+      "ch": 18,
+      "verses": 50,
+      "chips": 398
+    },
+    {
+      "book": "psalms",
+      "ch": 19,
+      "verses": 14,
+      "chips": 126
+    },
+    {
+      "book": "psalms",
+      "ch": 20,
+      "verses": 9,
+      "chips": 70
+    },
+    {
+      "book": "psalms",
+      "ch": 21,
+      "verses": 13,
+      "chips": 105
+    },
+    {
+      "book": "psalms",
+      "ch": 22,
+      "verses": 31,
+      "chips": 253
+    },
+    {
+      "book": "psalms",
+      "ch": 23,
+      "verses": 6,
+      "chips": 57
+    },
+    {
+      "book": "psalms",
+      "ch": 24,
+      "verses": 10,
+      "chips": 90
+    },
+    {
+      "book": "psalms",
+      "ch": 25,
+      "verses": 22,
+      "chips": 159
+    },
+    {
+      "book": "psalms",
+      "ch": 26,
+      "verses": 12,
+      "chips": 86
+    },
+    {
+      "book": "psalms",
+      "ch": 27,
+      "verses": 14,
+      "chips": 149
+    },
+    {
+      "book": "psalms",
+      "ch": 28,
+      "verses": 9,
+      "chips": 96
+    },
+    {
+      "book": "psalms",
+      "ch": 29,
+      "verses": 11,
+      "chips": 91
+    },
+    {
+      "book": "psalms",
+      "ch": 30,
+      "verses": 12,
+      "chips": 98
+    },
+    {
+      "book": "genesis",
+      "ch": 1,
+      "verses": 31,
+      "chips": 434
+    },
+    {
+      "book": "genesis",
+      "ch": 2,
+      "verses": 25,
+      "chips": 328
+    },
+    {
+      "book": "genesis",
+      "ch": 3,
+      "verses": 24,
+      "chips": 347
+    }
+  ],
+  "lexiconFiles": 3272,
+  "sizes": {
+    "psalms": {
+      "files": 30,
+      "bytes": 1072725
+    },
+    "genesis": {
+      "files": 3,
+      "bytes": 347527
+    },
+    "lexicon": {
+      "files": 3272,
+      "bytes": 3651312
+    }
+  },
+  "pronChecks": {
+    "מזמור": "미즈모르",
+    "ישגבך": "예삭게브카",
+    "מנצח": "메낫체아흐",
+    "למנצח": "라메낫체아흐",
+    "יענך": "야아네카"
+  },
+  "psalm20_1_sample": [
+    {
+      "word": "לַמְנַצֵּ֗חַ",
+      "pron": "라메낫체아흐",
+      "glossKo": "지휘자를 따라",
+      "parts": [
+        {
+          "role": "prefix",
+          "word": "לַ",
+          "pron": "라",
+          "glossKo": "~에게/를 위해",
+          "prefix": "l"
+        },
+        {
+          "role": "stem",
+          "word": "מְנַצֵּ֗חַ",
+          "pron": "메낫체아흐",
+          "glossKo": "지휘자",
+          "strong": "H5329"
+        }
+      ]
+    },
+    {
+      "word": "מִזְמ֥וֹר",
+      "pron": "미즈모르",
+      "glossKo": "시",
+      "parts": [
+        {
+          "role": "stem",
+          "word": "מִזְמ֥וֹר",
+          "pron": "미즈모르",
+          "glossKo": "시",
+          "strong": "H4210"
+        }
+      ]
+    },
+    {
+      "word": "לְדָוִֽד",
+      "pron": "르다윗",
+      "glossKo": "다윗",
+      "parts": [
+        {
+          "role": "prefix",
+          "word": "לְ",
+          "pron": "르",
+          "glossKo": "~에게/를 위해",
+          "prefix": "l"
+        },
+        {
+          "role": "stem",
+          "word": "דָוִֽד",
+          "pron": "다윗",
+          "glossKo": "다윗",
+          "strong": "H1732"
+        }
+      ]
+    },
+    {
+      "word": "יַֽעַנְךָ֣",
+      "pron": "야아네카",
+      "glossKo": "너에게 응답하다",
+      "parts": [
+        {
+          "role": "stem",
+          "word": "יַֽעַנְ",
+          "pron": "야아네",
+          "glossKo": "응답하다",
+          "strong": "H6030"
+        },
+        {
+          "role": "suffix",
+          "word": "ךָ֣",
+          "pron": "카",
+          "glossKo": "너를/너에게",
+          "suffix": "2ms"
+        }
+      ]
+    },
+    {
+      "word": "יְ֭הוָה",
+      "pron": "여호와",
+      "glossKo": "여호와",
+      "parts": [
+        {
+          "role": "stem",
+          "word": "יְ֭הוָה",
+          "pron": "여호와",
+          "glossKo": "여호와",
+          "strong": "H3068"
+        }
+      ]
+    },
+    {
+      "word": "בְּי֣וֹם",
+      "pron": "브욤",
+      "glossKo": "날",
+      "parts": [
+        {
+          "role": "prefix",
+          "word": "בְּ",
+          "pron": "브",
+          "glossKo": "~ 안에/으로",
+          "prefix": "b"
+        },
+        {
+          "role": "stem",
+          "word": "י֣וֹם",
+          "pron": "욤",
+          "glossKo": "날",
+          "strong": "H3117"
+        }
+      ]
+    }
+  ],
+  "krChipLinks": {
+    "시20:1 응답하시고": [
+      {
+        "ref": "20:1",
+        "i": 3,
+        "word": "יַֽעַנְךָ֣",
+        "pron": "야아네카",
+        "glossKo": "너에게 응답하다",
+        "strong": "H6030",
+        "parts": [
+          {
+            "role": "stem",
+            "word": "יַֽעַנְ",
+            "pron": "야아네",
+            "glossKo": "응답하다",
+            "strong": "H6030"
+          },
+          {
+            "role": "suffix",
+            "word": "ךָ֣",
+            "pron": "카",
+            "glossKo": "너를/너에게",
+            "suffix": "2ms"
+          }
+        ]
+      },
+      {
+        "ref": "20:6",
+        "i": 6,
+        "word": "יַ֭עֲנֵהוּ",
+        "pron": "야아네후",
+        "glossKo": "그에게 응답하다",
+        "strong": "H6030",
+        "parts": [
+          {
+            "role": "stem",
+            "word": "יַ֭עֲנֵ",
+            "pron": "야아네",
+            "glossKo": "응답하다",
+            "strong": "H6030"
+          },
+          {
+            "role": "suffix",
+            "word": "הוּ",
+            "pron": "후",
+            "glossKo": "그를/그에게",
+            "suffix": "3ms"
+          }
+        ]
+      },
+      {
+        "ref": "20:9",
+        "i": 3,
+        "word": "יַעֲנֵ֥נוּ",
+        "pron": "야아네누",
+        "glossKo": "우리를 응답하다",
+        "strong": "H6030",
+        "parts": [
+          {
+            "role": "stem",
+            "word": "יַעֲנֵ֥",
+            "pron": "야아네",
+            "glossKo": "응답하다",
+            "strong": "H6030"
+          },
+          {
+            "role": "suffix",
+            "word": "נוּ",
+            "pron": "누",
+            "glossKo": "우리를",
+            "suffix": "1cp"
+          }
+        ]
+      }
+    ],
+    "창1:1 창조하시니라": [
+      {
+        "ref": "1:1",
+        "i": 1,
+        "word": "בָּרָ֣א",
+        "pron": "바라",
+        "glossKo": "창조하다",
+        "strong": "H1254",
+        "parts": [
+          {
+            "role": "stem",
+            "word": "בָּרָ֣א",
+            "pron": "바라",
+            "glossKo": "창조하다",
+            "strong": "H1254"
+          }
+        ]
+      },
+      {
+        "ref": "1:21",
+        "i": 0,
+        "word": "וַיִּבְרָ֣א",
+        "pron": "바입라",
+        "glossKo": "창조하다",
+        "strong": "H1254",
+        "parts": [
+          {
+            "role": "prefix",
+            "word": "וַ",
+            "pron": "바",
+            "glossKo": "그리고",
+            "prefix": "c"
+          },
+          {
+            "role": "stem",
+            "word": "יִּבְרָ֣א",
+            "pron": "입라",
+            "glossKo": "창조하다",
+            "strong": "H1254"
+          }
+        ]
+      },
+      {
+        "ref": "1:27",
+        "i": 0,
+        "word": "וַיִּבְרָ֨א",
+        "pron": "바입라",
+        "glossKo": "창조하다",
+        "strong": "H1254",
+        "parts": [
+          {
+            "role": "prefix",
+            "word": "וַ",
+            "pron": "바",
+            "glossKo": "그리고",
+            "prefix": "c"
+          },
+          {
+            "role": "stem",
+            "word": "יִּבְרָ֨א",
+            "pron": "입라",
+            "glossKo": "창조하다",
+            "strong": "H1254"
+          }
+        ]
+      },
+      {
+        "ref": "1:27",
+        "i": 7,
+        "word": "בָּרָ֣א",
+        "pron": "바라",
+        "glossKo": "창조하다",
+        "strong": "H1254",
+        "parts": [
+          {
+            "role": "stem",
+            "word": "בָּרָ֣א",
+            "pron": "바라",
+            "glossKo": "창조하다",
+            "strong": "H1254"
+          }
+        ]
+      },
+      {
+        "ref": "1:27",
+        "i": 11,
+        "word": "בָּרָ֥א",
+        "pron": "바라",
+        "glossKo": "창조하다",
+        "strong": "H1254",
+        "parts": [
+          {
+            "role": "stem",
+            "word": "בָּרָ֥א",
+            "pron": "바라",
+            "glossKo": "창조하다",
+            "strong": "H1254"
+          }
+        ]
+      }
+    ],
+    "시23:1 목자": [
+      {
+        "ref": "23:1",
+        "i": 3,
+        "word": "רֹ֝עִ֗י",
+        "pron": "로이위",
+        "glossKo": "나의 목자",
+        "strong": "H7462",
+        "parts": [
+          {
+            "role": "stem",
+            "word": "רֹ֝עִ֗",
+            "pron": "로이",
+            "glossKo": "목자",
+            "strong": "H7462"
+          },
+          {
+            "role": "suffix",
+            "word": "י",
+            "pron": "위",
+            "glossKo": "나의",
+            "suffix": "1cs"
+          }
+        ]
+      }
+    ]
+  }
+}

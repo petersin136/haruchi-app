@@ -27,8 +27,8 @@
   },
   "phrases": [
     {
-      "hebrew": "כָּל אָֽרֶץ",
-      "pron": "콜 에레츠",
+      "hebrew": "כָּל הָאָֽרֶץ",
+      "pron": "브콜 에레츠",
       "lemmas": [
         "כֹּל",
         "אֶרֶץ"
@@ -38,10 +38,10 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "콜"
+          "pron": "브콜"
         },
         {
-          "word": "אָֽרֶץ",
+          "word": "הָאָֽרֶץ",
           "lemma": "אֶרֶץ",
           "strong": "H776",
           "pron": "에레츠"
@@ -65,7 +65,7 @@
       "glossKo": ""
     },
     {
-      "hebrew": "עַל אָ֑רֶץ",
+      "hebrew": "עַל הָאָ֑רֶץ",
       "pron": "알 에레츠",
       "lemmas": [
         "עַל",
@@ -79,7 +79,7 @@
           "pron": "알"
         },
         {
-          "word": "אָ֑רֶץ",
+          "word": "הָאָ֑רֶץ",
           "lemma": "אֶרֶץ",
           "strong": "H776",
           "pron": "에레츠"
@@ -99,44 +99,6 @@
         "genesis 1:26",
         "genesis 1:28",
         "genesis 1:30"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֶ֣רֶץ כְּנָ֑עַן",
-      "pron": "에레츠 케나안",
-      "lemmas": [
-        "אֶרֶץ",
-        "כְּנַעַן"
-      ],
-      "words": [
-        {
-          "word": "אֶ֣רֶץ",
-          "lemma": "אֶרֶץ",
-          "strong": "H776",
-          "pron": "에레츠"
-        },
-        {
-          "word": "כְּנָ֑עַן",
-          "lemma": "כְּנַעַן",
-          "strong": "H3667",
-          "pron": "케나안"
-        }
-      ],
-      "count": 36,
-      "refs": [
-        "psalms 105:11",
-        "genesis 11:31",
-        "genesis 12:5",
-        "genesis 13:12",
-        "genesis 16:3",
-        "genesis 17:8",
-        "genesis 23:2",
-        "genesis 23:19",
-        "genesis 31:18",
-        "genesis 33:18",
-        "genesis 35:6",
-        "genesis 36:5"
       ],
       "glossKo": ""
     },
@@ -179,7 +141,45 @@
       "glossKo": ""
     },
     {
-      "hebrew": "אֶת אָ֖רֶץ",
+      "hebrew": "בְּאֶ֣רֶץ כְּנָ֑עַן",
+      "pron": "에레츠 케나안",
+      "lemmas": [
+        "אֶרֶץ",
+        "כְּנַעַן"
+      ],
+      "words": [
+        {
+          "word": "בְּאֶ֣רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "에레츠"
+        },
+        {
+          "word": "כְּנָ֑עַן",
+          "lemma": "כְּנַעַן",
+          "strong": "H3667",
+          "pron": "케나안"
+        }
+      ],
+      "count": 36,
+      "refs": [
+        "psalms 105:11",
+        "genesis 11:31",
+        "genesis 12:5",
+        "genesis 13:12",
+        "genesis 16:3",
+        "genesis 17:8",
+        "genesis 23:2",
+        "genesis 23:19",
+        "genesis 31:18",
+        "genesis 33:18",
+        "genesis 35:6",
+        "genesis 36:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הָאָֽרֶץ",
       "pron": "에트 에레츠",
       "lemmas": [
         "אֵת",
@@ -193,7 +193,7 @@
           "pron": "에트"
         },
         {
-          "word": "אָ֖רֶץ",
+          "word": "הָאָֽרֶץ",
           "lemma": "אֶרֶץ",
           "strong": "H776",
           "pron": "에레츠"
