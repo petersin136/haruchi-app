@@ -1,6 +1,6 @@
 {
   "lemma": "בָּחַר",
-  "pron": "입하르",
+  "pron": "바하루",
   "strong": "H977",
   "posKo": "동사",
   "root": null,
@@ -8,25 +8,25 @@
     {
       "lemma": "בָּחוּר",
       "strong": "H970",
-      "pron": "우바후레",
+      "pron": "바후르",
       "glossKo": "젊은이"
     },
     {
       "lemma": "בָּחִיר",
       "strong": "H972",
-      "pron": "리베히리위",
-      "glossKo": "나를 택한 자"
+      "pron": "베히르",
+      "glossKo": "택한 자"
     },
     {
       "lemma": "יִבְחַר",
       "strong": "H2984",
-      "pron": "",
+      "pron": "브입하르",
       "glossKo": "입할"
     },
     {
       "lemma": "מִבְחוֹר",
       "strong": "H4004",
-      "pron": "",
+      "pron": "밉호르",
       "glossKo": "정선한"
     },
     {
@@ -38,10 +38,243 @@
   ],
   "defEn": "try; select",
   "defKo": "",
-  "countOT": 15,
+  "countOT": 170,
   "byBook": {
+    "deuteronomy": 31,
+    "isaiah": 20,
+    "chronicles2": 16,
+    "kings1": 13,
     "psalms": 13,
-    "genesis": 2
+    "samuel1": 12,
+    "chronicles1": 10,
+    "samuel2": 9,
+    "proverbs": 8,
+    "job": 7,
+    "judges": 5,
+    "joshua": 4,
+    "exodus": 3,
+    "jeremiah": 3,
+    "numbers": 3,
+    "zechariah": 3,
+    "genesis": 2,
+    "kings2": 2,
+    "nehemiah": 2,
+    "ecclesiastes": 1,
+    "ezekiel": 1,
+    "haggai": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲשֶׁ֥ר יִבְחַ֛ר",
+      "pron": "아셰르 바하루",
+      "lemmas": [
+        "אֲשֶׁר",
+        "בָּחַר"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יִבְחַ֛ר",
+          "lemma": "בָּחַר",
+          "strong": "H977",
+          "pron": "바하루"
+        }
+      ],
+      "count": 58,
+      "refs": [
+        "genesis 6:2",
+        "numbers 16:5",
+        "numbers 16:7",
+        "numbers 17:5",
+        "deuteronomy 12:5",
+        "deuteronomy 12:11",
+        "deuteronomy 12:14",
+        "deuteronomy 12:18",
+        "deuteronomy 12:21",
+        "deuteronomy 12:26",
+        "deuteronomy 14:23",
+        "deuteronomy 14:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִבְחַ֛ר יְהוָ֥ה",
+      "pron": "바하루 여호와",
+      "lemmas": [
+        "בָּחַר",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "יִבְחַ֛ר",
+          "lemma": "בָּחַר",
+          "strong": "H977",
+          "pron": "바하루"
+        },
+        {
+          "word": "יְהוָ֥ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 37,
+      "refs": [
+        "numbers 16:7",
+        "deuteronomy 7:6",
+        "deuteronomy 12:5",
+        "deuteronomy 12:11",
+        "deuteronomy 12:14",
+        "deuteronomy 12:18",
+        "deuteronomy 12:21",
+        "deuteronomy 12:26",
+        "deuteronomy 14:2",
+        "deuteronomy 14:24",
+        "deuteronomy 14:25",
+        "deuteronomy 15:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֥ר יִבְחַ֛ר יְהוָ֥ה",
+      "pron": "아셰르 바하루 여호와",
+      "lemmas": [
+        "אֲשֶׁר",
+        "בָּחַר",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יִבְחַ֛ר",
+          "lemma": "בָּחַר",
+          "strong": "H977",
+          "pron": "바하루"
+        },
+        {
+          "word": "יְהוָ֥ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "numbers 16:7",
+        "deuteronomy 12:5",
+        "deuteronomy 12:11",
+        "deuteronomy 12:14",
+        "deuteronomy 12:18",
+        "deuteronomy 12:21",
+        "deuteronomy 12:26",
+        "deuteronomy 14:24",
+        "deuteronomy 14:25",
+        "deuteronomy 15:20",
+        "deuteronomy 16:2",
+        "deuteronomy 16:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַמָּק֞וֹם אֲשֶׁר יִבְחַ֨ר",
+      "pron": "마콤 아셰르 바하루",
+      "lemmas": [
+        "מָקוֹם",
+        "אֲשֶׁר",
+        "בָּחַר"
+      ],
+      "words": [
+        {
+          "word": "הַמָּק֞וֹם",
+          "lemma": "מָקוֹם",
+          "strong": "H4725",
+          "pron": "마콤"
+        },
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יִבְחַ֨ר",
+          "lemma": "בָּחַר",
+          "strong": "H977",
+          "pron": "바하루"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "deuteronomy 12:5",
+        "deuteronomy 12:11",
+        "deuteronomy 12:14",
+        "deuteronomy 12:18",
+        "deuteronomy 12:21",
+        "deuteronomy 12:26",
+        "deuteronomy 14:23",
+        "deuteronomy 14:24",
+        "deuteronomy 14:25",
+        "deuteronomy 15:20",
+        "deuteronomy 16:2",
+        "deuteronomy 16:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִבְחַ֛ר יְהוָ֥ה אֱלֹהֶ֖יךָ",
+      "pron": "바하루 여호와 엘로힘",
+      "lemmas": [
+        "בָּחַר",
+        "יְהֹוָה",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "יִבְחַ֛ר",
+          "lemma": "בָּחַר",
+          "strong": "H977",
+          "pron": "바하루"
+        },
+        {
+          "word": "יְהוָ֥ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "אֱלֹהֶ֖יךָ",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "deuteronomy 7:6",
+        "deuteronomy 12:5",
+        "deuteronomy 12:11",
+        "deuteronomy 12:18",
+        "deuteronomy 12:21",
+        "deuteronomy 14:24",
+        "deuteronomy 14:25",
+        "deuteronomy 16:6",
+        "deuteronomy 16:7",
+        "deuteronomy 16:11",
+        "deuteronomy 17:8",
+        "deuteronomy 17:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

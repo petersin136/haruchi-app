@@ -1,6 +1,6 @@
 {
   "lemma": "רַחַם",
-  "pron": "라하메카",
+  "pron": "라하밈",
   "strong": "H7356",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "יְרֹחָם",
       "strong": "H3395",
-      "pron": "",
+      "pron": "예로함",
       "glossKo": "여로함"
     },
     {
       "lemma": "יְרַחְמְאֵל",
       "strong": "H3396",
-      "pron": "",
+      "pron": "예라헴엘",
       "glossKo": "여라므엘"
     },
     {
@@ -30,28 +30,206 @@
     {
       "lemma": "רָחַם",
       "strong": "H7355",
-      "pron": "에레함카",
-      "glossKo": "너에게 긍휼히 여기다"
+      "pron": "브리함티",
+      "glossKo": "긍휼히 여기다"
     },
     {
       "lemma": "רַחַם",
       "strong": "H7357",
-      "pron": "",
+      "pron": "라함",
       "glossKo": "라함"
     },
     {
       "lemma": "רֶחֶם",
       "strong": "H7358",
-      "pron": "메라헴",
+      "pron": "레헴",
       "glossKo": "태"
     }
   ],
   "defEn": "compassion",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 45,
   "byBook": {
     "psalms": 11,
-    "genesis": 3
+    "isaiah": 5,
+    "nehemiah": 5,
+    "daniel": 3,
+    "genesis": 3,
+    "jeremiah": 2,
+    "kings1": 2,
+    "proverbs": 2,
+    "samuel2": 2,
+    "zechariah": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "hosea": 1,
+    "judges": 1,
+    "lamentations": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּרַחֲמֶ֣יךָ הָֽרַבִּ֔ים",
+      "pron": "라하밈 랍바",
+      "lemmas": [
+        "רַחַם",
+        "רַב"
+      ],
+      "words": [
+        {
+          "word": "בְּרַחֲמֶ֣יךָ",
+          "lemma": "רַחַם",
+          "strong": "H7356",
+          "pron": "라하밈"
+        },
+        {
+          "word": "הָֽרַבִּ֔ים",
+          "lemma": "רַב",
+          "strong": "H7227",
+          "pron": "랍바"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "nehemiah 9:19",
+        "nehemiah 9:27",
+        "nehemiah 9:28",
+        "nehemiah 9:31",
+        "psalms 119:156",
+        "daniel 9:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רַחֲמִים֙ לִפְנֵ֣י",
+      "pron": "라하밈 페네",
+      "lemmas": [
+        "רַחַם",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "רַחֲמִים֙",
+          "lemma": "רַחַם",
+          "strong": "H7356",
+          "pron": "라하밈"
+        },
+        {
+          "word": "לִפְנֵ֣י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 43:14",
+        "kings1 8:50",
+        "chronicles2 30:9",
+        "nehemiah 1:11",
+        "psalms 106:46",
+        "daniel 1:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִתֵּ֨ן רַחֲמִים֙",
+      "pron": "바잇텐 라하밈",
+      "lemmas": [
+        "נָתַן",
+        "רַחַם"
+      ],
+      "words": [
+        {
+          "word": "יִתֵּ֨ן",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "רַחֲמִים֙",
+          "lemma": "רַחַם",
+          "strong": "H7356",
+          "pron": "라하밈"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 43:14",
+        "deuteronomy 13:17",
+        "kings1 8:50",
+        "nehemiah 1:11",
+        "jeremiah 42:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֶ֣סֶד וְרַחֲמִֽים",
+      "pron": "핫데카 라하밈",
+      "lemmas": [
+        "חֶסֶד",
+        "רַחַם"
+      ],
+      "words": [
+        {
+          "word": "חֶ֣סֶד",
+          "lemma": "חֶסֶד",
+          "strong": "H2617",
+          "pron": "핫데카"
+        },
+        {
+          "word": "וְרַחֲמִֽים",
+          "lemma": "רַחַם",
+          "strong": "H7356",
+          "pron": "라하밈"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 103:4",
+        "daniel 1:9",
+        "hosea 2:19",
+        "zechariah 7:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִתֵּ֨ן רַחֲמִים֙ לִפְנֵ֣י",
+      "pron": "바잇텐 라하밈 페네",
+      "lemmas": [
+        "נָתַן",
+        "רַחַם",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "יִתֵּ֨ן",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "רַחֲמִים֙",
+          "lemma": "רַחַם",
+          "strong": "H7356",
+          "pron": "라하밈"
+        },
+        {
+          "word": "לִפְנֵ֣י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 43:14",
+        "kings1 8:50",
+        "nehemiah 1:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

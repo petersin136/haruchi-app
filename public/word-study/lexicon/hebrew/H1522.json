@@ -2,7 +2,7 @@
   "lemma": "גֵּיחֲזִי",
   "pron": "게하지",
   "strong": "H1522",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גַּיְא",
     "strong": "H1516",
@@ -12,13 +12,142 @@
     {
       "lemma": "גַּיְא",
       "strong": "H1516",
-      "pron": "브게",
+      "pron": "아가에",
       "glossKo": "골짜기"
     }
   ],
   "defEn": "Gechazi",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 12,
+  "byBook": {
+    "kings2": 12
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶל גֵּחֲזִ֣י",
+      "pron": "엘 게하지",
+      "lemmas": [
+        "אֵל",
+        "גֵּיחֲזִי"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "גֵּחֲזִ֣י",
+          "lemma": "גֵּיחֲזִי",
+          "strong": "H1522",
+          "pron": "게하지"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 4:12",
+        "kings2 4:25",
+        "kings2 4:36",
+        "kings2 8:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גֵּחֲזִ֣י נַעֲר֔וֹ",
+      "pron": "게하지 아네아림",
+      "lemmas": [
+        "גֵּיחֲזִי",
+        "נַעַר"
+      ],
+      "words": [
+        {
+          "word": "גֵּחֲזִ֣י",
+          "lemma": "גֵּיחֲזִי",
+          "strong": "H1522",
+          "pron": "게하지"
+        },
+        {
+          "word": "נַעֲר֔וֹ",
+          "lemma": "נַעַר",
+          "strong": "H5288",
+          "pron": "아네아림"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 4:12",
+        "kings2 4:25",
+        "kings2 5:20",
+        "kings2 8:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֣אמֶר גֵּיחֲזִ֗י",
+      "pron": "바요메르 게하지",
+      "lemmas": [
+        "אָמַר",
+        "גֵּיחֲזִי"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֣אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "גֵּיחֲזִ֗י",
+          "lemma": "גֵּיחֲזִי",
+          "strong": "H1522",
+          "pron": "게하지"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 4:14",
+        "kings2 4:29",
+        "kings2 5:20",
+        "kings2 8:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל גֵּחֲזִ֣י נַעֲר֔וֹ",
+      "pron": "엘 게하지 아네아림",
+      "lemmas": [
+        "אֵל",
+        "גֵּיחֲזִי",
+        "נַעַר"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "גֵּחֲזִ֣י",
+          "lemma": "גֵּיחֲזִי",
+          "strong": "H1522",
+          "pron": "게하지"
+        },
+        {
+          "word": "נַעֲר֔וֹ",
+          "lemma": "נַעַר",
+          "strong": "H5288",
+          "pron": "아네아림"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 4:12",
+        "kings2 4:25",
+        "kings2 8:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

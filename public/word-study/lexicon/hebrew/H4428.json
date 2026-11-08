@@ -1,6 +1,6 @@
 {
   "lemma": "מֶלֶךְ",
-  "pron": "말케",
+  "pron": "멜레크",
   "strong": "H4428",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "יַמְלֵךְ",
       "strong": "H3230",
-      "pron": "",
+      "pron": "브얌레크",
       "glossKo": "야믈렉"
     },
     {
       "lemma": "מַלּוּךְ",
       "strong": "H4409",
-      "pron": "",
+      "pron": "말루크",
       "glossKo": "말룩"
     },
     {
@@ -30,179 +30,250 @@
     {
       "lemma": "מָלַךְ",
       "strong": "H4427",
-      "pron": "말라크",
+      "pron": "말쿠",
       "glossKo": "왕이 되다"
     },
     {
       "lemma": "מֶלֶךְ",
       "strong": "H4429",
-      "pron": "",
+      "pron": "바멜레크",
       "glossKo": "멜렉"
     },
     {
       "lemma": "מֶלֶךְ",
       "strong": "H4430",
-      "pron": "",
+      "pron": "말카",
       "glossKo": "왕(아람)"
     }
   ],
   "defEn": "king",
   "defKo": "",
-  "countOT": 108,
+  "countOT": 2526,
   "byBook": {
+    "kings2": 372,
+    "kings1": 306,
+    "samuel2": 284,
+    "chronicles2": 277,
+    "jeremiah": 268,
+    "esther": 196,
+    "joshua": 109,
+    "samuel1": 86,
+    "isaiah": 80,
+    "chronicles1": 69,
     "psalms": 67,
-    "genesis": 41
+    "daniel": 52,
+    "nehemiah": 43,
+    "genesis": 41,
+    "ezekiel": 37,
+    "judges": 37,
+    "ezra": 32,
+    "proverbs": 32,
+    "deuteronomy": 26,
+    "numbers": 20,
+    "hosea": 19,
+    "exodus": 14,
+    "ecclesiastes": 12,
+    "zechariah": 9,
+    "job": 8,
+    "amos": 7,
+    "micah": 5,
+    "songofsolomon": 5,
+    "lamentations": 3,
+    "zephaniah": 3,
+    "haggai": 2,
+    "jonah": 2,
+    "habakkuk": 1,
+    "malachi": 1,
+    "nahum": 1
   },
   "phrases": [
     {
-      "hebrew": "לְמַלְכֵי אָֽרֶץ",
-      "pron": "말케 에레츠",
+      "hebrew": "מֶ֣לֶךְ יְהוּדָ֑ה",
+      "pron": "멜레크 예후다",
       "lemmas": [
         "מֶלֶךְ",
-        "אֶרֶץ"
-      ],
-      "words": [
-        {
-          "word": "לְמַלְכֵי",
-          "lemma": "מֶלֶךְ",
-          "strong": "H4428",
-          "pron": "말케"
-        },
-        {
-          "word": "אָֽרֶץ",
-          "lemma": "אֶרֶץ",
-          "strong": "H776",
-          "pron": "에레츠"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "psalms 2:2",
-        "psalms 76:12",
-        "psalms 89:27",
-        "psalms 102:15",
-        "psalms 138:4",
-        "psalms 148:11"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "מֶ֣לֶךְ סְדֹ֔ם",
-      "pron": "말케 세도마",
-      "lemmas": [
-        "מֶלֶךְ",
-        "סְדֹם"
+        "יְהוּדָה"
       ],
       "words": [
         {
           "word": "מֶ֣לֶךְ",
           "lemma": "מֶלֶךְ",
           "strong": "H4428",
-          "pron": "말케"
+          "pron": "멜레크"
         },
         {
-          "word": "סְדֹ֔ם",
-          "lemma": "סְדֹם",
-          "strong": "H5467",
-          "pron": "세도마"
+          "word": "יְהוּדָ֑ה",
+          "lemma": "יְהוּדָה",
+          "strong": "H3063",
+          "pron": "예후다"
         }
       ],
-      "count": 6,
+      "count": 191,
       "refs": [
-        "genesis 14:2",
-        "genesis 14:8",
-        "genesis 14:10",
-        "genesis 14:17",
+        "samuel1 27:6",
+        "kings1 12:23",
+        "kings1 12:27",
+        "kings1 14:29",
+        "kings1 15:7",
+        "kings1 15:9",
+        "kings1 15:17",
+        "kings1 15:23",
+        "kings1 15:25",
+        "kings1 15:28",
+        "kings1 15:33",
+        "kings1 16:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֶ֣לֶךְ יִשְׂרָאֵ֔ל",
+      "pron": "멜레크 이스라엘",
+      "lemmas": [
+        "מֶלֶךְ",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "מֶ֣לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "יִשְׂרָאֵ֔ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 176,
+      "refs": [
+        "judges 17:6",
+        "judges 18:1",
+        "judges 21:25",
+        "samuel1 24:14",
+        "samuel1 26:20",
+        "samuel1 29:3",
+        "samuel2 6:20",
+        "samuel2 19:8",
+        "kings1 14:19",
+        "kings1 15:9",
+        "kings1 15:16",
+        "kings1 15:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל הַמֶּ֔לֶךְ",
+      "pron": "엘 멜레크",
+      "lemmas": [
+        "אֵל",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "הַמֶּ֔לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 166,
+      "refs": [
+        "genesis 14:22",
+        "exodus 1:17",
+        "exodus 3:18",
+        "exodus 5:4",
+        "numbers 20:14",
+        "joshua 11:1",
+        "joshua 11:2",
+        "judges 3:19",
+        "judges 11:12",
+        "judges 11:14",
+        "judges 11:17",
+        "samuel1 22:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֤אמֶר הַמֶּ֨לֶךְ֙",
+      "pron": "바요메르 멜레크",
+      "lemmas": [
+        "אָמַר",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֤אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "הַמֶּ֨לֶךְ֙",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 139,
+      "refs": [
         "genesis 14:21",
-        "genesis 14:22"
+        "exodus 1:15",
+        "joshua 2:2",
+        "judges 11:13",
+        "samuel1 17:56",
+        "samuel1 22:16",
+        "samuel1 22:17",
+        "samuel1 22:18",
+        "samuel1 28:13",
+        "samuel2 3:38",
+        "samuel2 7:2",
+        "samuel2 9:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "מֶ֣לֶךְ הַכָּבֽוֹד",
-      "pron": "말케 케보디위",
+      "hebrew": "מֶֽלֶךְ בָּבֶ֖ל",
+      "pron": "멜레크 바벨",
       "lemmas": [
         "מֶלֶךְ",
-        "כָּבוֹד"
-      ],
-      "words": [
-        {
-          "word": "מֶ֣לֶךְ",
-          "lemma": "מֶלֶךְ",
-          "strong": "H4428",
-          "pron": "말케"
-        },
-        {
-          "word": "הַכָּבֽוֹד",
-          "lemma": "כָּבוֹד",
-          "strong": "H3519",
-          "pron": "케보디위"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 24:7",
-        "psalms 24:8",
-        "psalms 24:9",
-        "psalms 24:10"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "מֶֽלֶךְ מִצְרַ֖יִם",
-      "pron": "말케 미체라임",
-      "lemmas": [
-        "מֶלֶךְ",
-        "מִצְרַיִם"
+        "בָּבֶל"
       ],
       "words": [
         {
           "word": "מֶֽלֶךְ",
           "lemma": "מֶלֶךְ",
           "strong": "H4428",
-          "pron": "말케"
+          "pron": "멜레크"
         },
         {
-          "word": "מִצְרַ֖יִם",
-          "lemma": "מִצְרַיִם",
-          "strong": "H4714",
-          "pron": "미체라임"
+          "word": "בָּבֶ֖ל",
+          "lemma": "בָּבֶל",
+          "strong": "H894",
+          "pron": "바벨"
         }
       ],
-      "count": 4,
+      "count": 133,
       "refs": [
-        "genesis 40:1",
-        "genesis 40:5",
-        "genesis 41:46"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֲבִימֶ֨לֶךְ֙ מֶ֣לֶךְ",
-      "pron": "아비멜레크 말케",
-      "lemmas": [
-        "אֲבִימֶלֶךְ",
-        "מֶלֶךְ"
-      ],
-      "words": [
-        {
-          "word": "אֲבִימֶ֨לֶךְ֙",
-          "lemma": "אֲבִימֶלֶךְ",
-          "strong": "H40",
-          "pron": "아비멜레크"
-        },
-        {
-          "word": "מֶ֣לֶךְ",
-          "lemma": "מֶלֶךְ",
-          "strong": "H4428",
-          "pron": "말케"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 20:2",
-        "genesis 26:1",
-        "genesis 26:8"
+        "kings2 20:12",
+        "kings2 20:18",
+        "kings2 24:1",
+        "kings2 24:7",
+        "kings2 24:10",
+        "kings2 24:11",
+        "kings2 24:12",
+        "kings2 24:16",
+        "kings2 24:17",
+        "kings2 24:20",
+        "kings2 25:1",
+        "kings2 25:6"
       ],
       "glossKo": ""
     }

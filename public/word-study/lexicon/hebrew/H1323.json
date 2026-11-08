@@ -1,6 +1,6 @@
 {
   "lemma": "בַּת",
-  "pron": "바트",
+  "pron": "우바노트",
   "strong": "H1323",
   "posKo": "명사",
   "root": {
@@ -12,51 +12,83 @@
     {
       "lemma": "אֶבֶן",
       "strong": "H68",
-      "pron": "바에벤",
+      "pron": "브에벤",
       "glossKo": "돌"
     },
     {
       "lemma": "בַּיִת",
       "strong": "H1004",
-      "pron": "베테카",
-      "glossKo": "너의 집"
+      "pron": "미바이트",
+      "glossKo": "집"
     },
     {
       "lemma": "בֵּן",
       "strong": "H1121",
-      "pron": "베니위",
-      "glossKo": "나의 아들"
+      "pron": "바님",
+      "glossKo": "아들"
     },
     {
       "lemma": "בְּנָא",
       "strong": "H1124",
-      "pron": "",
+      "pron": "바나인",
       "glossKo": "건축하다(아람)"
     },
     {
       "lemma": "בָּנָה",
       "strong": "H1129",
-      "pron": "입네므",
-      "glossKo": "그들에게 건축하다"
+      "pron": "바이벤",
+      "glossKo": "건축하다"
     },
     {
       "lemma": "בִּנּוּי",
       "strong": "H1131",
-      "pron": "",
+      "pron": "빈누이",
       "glossKo": "빈누이"
     }
   ],
   "defEn": "daughter",
   "defKo": "",
-  "countOT": 122,
+  "countOT": 590,
   "byBook": {
     "genesis": 110,
-    "psalms": 12
+    "jeremiah": 41,
+    "ezekiel": 37,
+    "chronicles1": 29,
+    "chronicles2": 27,
+    "isaiah": 27,
+    "judges": 27,
+    "numbers": 26,
+    "exodus": 23,
+    "lamentations": 23,
+    "leviticus": 23,
+    "deuteronomy": 22,
+    "samuel2": 20,
+    "nehemiah": 18,
+    "kings2": 17,
+    "joshua": 16,
+    "samuel1": 16,
+    "psalms": 12,
+    "kings1": 11,
+    "ruth": 11,
+    "songofsolomon": 11,
+    "micah": 8,
+    "job": 6,
+    "esther": 5,
+    "ezra": 4,
+    "hosea": 4,
+    "zechariah": 4,
+    "zephaniah": 3,
+    "daniel": 2,
+    "joel": 2,
+    "proverbs": 2,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "malachi": 1
   },
   "phrases": [
     {
       "hebrew": "בָּנִ֖ים וּבָנֽוֹת",
-      "pron": "베니위 바트",
+      "pron": "바님 우바노트",
       "lemmas": [
         "בֵּן",
         "בַּת"
@@ -66,61 +98,16 @@
           "word": "בָּנִ֖ים",
           "lemma": "בֵּן",
           "strong": "H1121",
-          "pron": "베니위"
+          "pron": "바님"
         },
         {
           "word": "וּבָנֽוֹת",
           "lemma": "בַּת",
           "strong": "H1323",
-          "pron": "바트"
+          "pron": "우바노트"
         }
       ],
-      "count": 24,
-      "refs": [
-        "psalms 106:38",
-        "genesis 5:4",
-        "genesis 5:7",
-        "genesis 5:10",
-        "genesis 5:13",
-        "genesis 5:16",
-        "genesis 5:19",
-        "genesis 5:22",
-        "genesis 5:26",
-        "genesis 5:30",
-        "genesis 11:11",
-        "genesis 11:13"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת",
-      "pron": "옐릳티카 베니위 바트",
-      "lemmas": [
-        "יָלַד",
-        "בֵּן",
-        "בַּת"
-      ],
-      "words": [
-        {
-          "word": "וַיּ֥וֹלֶד",
-          "lemma": "יָלַד",
-          "strong": "H3205",
-          "pron": "옐릳티카"
-        },
-        {
-          "word": "בָּנִ֖ים",
-          "lemma": "בֵּן",
-          "strong": "H1121",
-          "pron": "베니위"
-        },
-        {
-          "word": "וּבָנֽוֹת",
-          "lemma": "בַּת",
-          "strong": "H1323",
-          "pron": "바트"
-        }
-      ],
-      "count": 17,
+      "count": 80,
       "refs": [
         "genesis 5:4",
         "genesis 5:7",
@@ -138,29 +125,28 @@
       "glossKo": ""
     },
     {
-      "hebrew": "וְאֶת בְּנֹתֵ֖ינוּ",
-      "pron": "에트 바트",
+      "hebrew": "אֶת בַּת",
+      "pron": "에트 우바노트",
       "lemmas": [
         "אֵת",
         "בַּת"
       ],
       "words": [
         {
-          "word": "וְאֶת",
+          "word": "אֶת",
           "lemma": "אֵת",
           "strong": "H853",
           "pron": "에트"
         },
         {
-          "word": "בְּנֹתֵ֖ינוּ",
+          "word": "בַּת",
           "lemma": "בַּת",
           "strong": "H1323",
-          "pron": "바트"
+          "pron": "우바노트"
         }
       ],
-      "count": 14,
+      "count": 64,
       "refs": [
-        "psalms 106:37",
         "genesis 6:2",
         "genesis 24:48",
         "genesis 31:26",
@@ -170,72 +156,130 @@
         "genesis 34:16",
         "genesis 34:17",
         "genesis 34:21",
-        "genesis 36:6"
+        "genesis 36:6",
+        "exodus 2:1",
+        "exodus 21:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שְׁתֵּ֣י בָנ֗וֹת",
-      "pron": "셰넴 바트",
+      "hebrew": "בַּת צִיּ֔וֹן",
+      "pron": "우바노트 치온",
       "lemmas": [
-        "שְׁנַיִם",
-        "בַּת"
+        "בַּת",
+        "צִיּוֹן"
       ],
       "words": [
         {
-          "word": "שְׁתֵּ֣י",
-          "lemma": "שְׁנַיִם",
-          "strong": "H8147",
-          "pron": "셰넴"
-        },
-        {
-          "word": "בָנ֗וֹת",
+          "word": "בַּת",
           "lemma": "בַּת",
           "strong": "H1323",
-          "pron": "바트"
+          "pron": "우바노트"
+        },
+        {
+          "word": "צִיּ֔וֹן",
+          "lemma": "צִיּוֹן",
+          "strong": "H6726",
+          "pron": "치온"
         }
       ],
-      "count": 8,
+      "count": 29,
       "refs": [
-        "genesis 19:8",
-        "genesis 19:15",
-        "genesis 19:16",
-        "genesis 19:30",
-        "genesis 19:36",
-        "genesis 29:16",
-        "genesis 31:41"
+        "kings2 19:21",
+        "psalms 9:14",
+        "songofsolomon 3:11",
+        "isaiah 1:8",
+        "isaiah 3:16",
+        "isaiah 3:17",
+        "isaiah 4:4",
+        "isaiah 16:1",
+        "isaiah 37:22",
+        "isaiah 52:2",
+        "isaiah 62:11",
+        "jeremiah 4:31"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "רָחֵ֣ל בִּתּ֔וֹ",
-      "pron": "라헬 바트",
+      "hebrew": "וַיּ֥וֹלֶד בָּנִ֖ים וּבָנֽוֹת",
+      "pron": "텔디 바님 우바노트",
       "lemmas": [
-        "רָחֵל",
+        "יָלַד",
+        "בֵּן",
         "בַּת"
       ],
       "words": [
         {
-          "word": "רָחֵ֣ל",
-          "lemma": "רָחֵל",
-          "strong": "H7354",
-          "pron": "라헬"
+          "word": "וַיּ֥וֹלֶד",
+          "lemma": "יָלַד",
+          "strong": "H3205",
+          "pron": "텔디"
         },
         {
-          "word": "בִּתּ֔וֹ",
+          "word": "בָּנִ֖ים",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "וּבָנֽוֹת",
           "lemma": "בַּת",
           "strong": "H1323",
-          "pron": "바트"
+          "pron": "우바노트"
         }
       ],
-      "count": 6,
+      "count": 21,
       "refs": [
-        "genesis 29:6",
-        "genesis 29:10",
-        "genesis 29:18",
-        "genesis 29:28",
-        "genesis 29:29",
-        "genesis 46:25"
+        "genesis 5:4",
+        "genesis 5:7",
+        "genesis 5:10",
+        "genesis 5:13",
+        "genesis 5:16",
+        "genesis 5:19",
+        "genesis 5:22",
+        "genesis 5:26",
+        "genesis 5:30",
+        "genesis 11:11",
+        "genesis 11:13",
+        "genesis 11:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּת עַמִּֽי",
+      "pron": "우바노트 암",
+      "lemmas": [
+        "בַּת",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "בַּת",
+          "lemma": "בַּת",
+          "strong": "H1323",
+          "pron": "우바노트"
+        },
+        {
+          "word": "עַמִּֽי",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "nehemiah 10:30",
+        "isaiah 22:4",
+        "jeremiah 4:11",
+        "jeremiah 6:26",
+        "jeremiah 8:11",
+        "jeremiah 8:19",
+        "jeremiah 8:21",
+        "jeremiah 8:22",
+        "jeremiah 9:1",
+        "jeremiah 9:7",
+        "jeremiah 14:17",
+        "lamentations 2:11"
       ],
       "glossKo": ""
     }

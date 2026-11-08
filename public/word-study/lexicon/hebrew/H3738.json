@@ -1,6 +1,6 @@
 {
   "lemma": "כָּרָה",
-  "pron": "카라",
+  "pron": "바이케루",
   "strong": "H3738",
   "posKo": "동사",
   "root": null,
@@ -8,28 +8,64 @@
     {
       "lemma": "כָּרָא",
       "strong": "H3735",
-      "pron": "",
+      "pron": "에텍케리아트",
       "glossKo": "가라"
     },
     {
       "lemma": "כָּרָה",
       "strong": "H3739",
-      "pron": "",
+      "pron": "티케루",
       "glossKo": "사다"
     },
     {
       "lemma": "מִכְרֶה",
       "strong": "H4379",
-      "pron": "",
+      "pron": "우미케레",
       "glossKo": "구덩이"
     }
   ],
   "defEn": "dig; plot; bore; open",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 17,
   "byBook": {
     "psalms": 6,
-    "genesis": 2
+    "genesis": 2,
+    "jeremiah": 2,
+    "job": 2,
+    "proverbs": 2,
+    "chronicles2": 1,
+    "exodus": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כִּֽי יִכְרֶ֥ה",
+      "pron": "키 바이케루",
+      "lemmas": [
+        "כִּי",
+        "כָּרָה"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "יִכְרֶ֥ה",
+          "lemma": "כָּרָה",
+          "strong": "H3738",
+          "pron": "바이케루"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 21:33",
+        "jeremiah 18:20",
+        "jeremiah 18:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

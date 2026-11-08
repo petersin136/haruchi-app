@@ -1,8 +1,8 @@
 {
   "lemma": "יָרׇבְעָם",
-  "pron": "얄베암",
+  "pron": "브야랍암",
   "strong": "H3379",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רִיב",
     "strong": "H7378",
@@ -12,37 +12,245 @@
     {
       "lemma": "יָרֵב",
       "strong": "H3377",
-      "pron": "",
+      "pron": "야렙",
       "glossKo": "야렙"
     },
     {
       "lemma": "יְרֻבַּעַל",
       "strong": "H3378",
-      "pron": "",
+      "pron": "예룹바알",
       "glossKo": "여룹바알"
     },
     {
       "lemma": "יְרֻבֶּשֶׁת",
       "strong": "H3380",
-      "pron": "",
+      "pron": "예룹베셰트",
       "glossKo": "여룹베셋"
     },
     {
       "lemma": "יָרִיב",
       "strong": "H3401",
-      "pron": "예리바위",
+      "pron": "예리바이",
       "glossKo": "나의 다투는 자"
     },
     {
       "lemma": "מְרִיב בַּעַל",
       "strong": "H4807",
-      "pron": "",
+      "pron": "메립",
       "glossKo": "므립바알"
+    },
+    {
+      "lemma": "מְרִיבָה",
+      "strong": "H4808",
+      "pron": "메리바",
+      "glossKo": "다툼"
     }
   ],
   "defEn": "Jarobam",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 104,
+  "byBook": {
+    "kings1": 55,
+    "kings2": 24,
+    "chronicles2": 19,
+    "amos": 4,
+    "chronicles1": 1,
+    "hosea": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "יָרָבְעָ֣ם בֶּן",
+      "pron": "브야랍암 바님",
+      "lemmas": [
+        "יָרׇבְעָם",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "יָרָבְעָ֣ם",
+          "lemma": "יָרׇבְעָם",
+          "strong": "H3379",
+          "pron": "브야랍암"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 31,
+      "refs": [
+        "kings1 11:26",
+        "kings1 12:2",
+        "kings1 12:15",
+        "kings1 15:1",
+        "kings1 16:3",
+        "kings1 16:26",
+        "kings1 16:31",
+        "kings1 21:22",
+        "kings1 22:52",
+        "kings2 3:3",
+        "kings2 9:9",
+        "kings2 10:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָרָבְעָ֣ם בֶּן נְבָ֔ט",
+      "pron": "브야랍암 바님 네받",
+      "lemmas": [
+        "יָרׇבְעָם",
+        "בֵּן",
+        "נְבָט"
+      ],
+      "words": [
+        {
+          "word": "יָרָבְעָ֣ם",
+          "lemma": "יָרׇבְעָם",
+          "strong": "H3379",
+          "pron": "브야랍암"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נְבָ֔ט",
+          "lemma": "נְבָט",
+          "strong": "H5028",
+          "pron": "네받"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "kings1 11:26",
+        "kings1 12:2",
+        "kings1 12:15",
+        "kings1 15:1",
+        "kings1 16:3",
+        "kings1 16:26",
+        "kings1 16:31",
+        "kings1 21:22",
+        "kings1 22:52",
+        "kings2 3:3",
+        "kings2 9:9",
+        "kings2 10:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חַטֹּאות֙ יָרָבְעָ֣ם",
+      "pron": "핟다트 브야랍암",
+      "lemmas": [
+        "חַטָּאָה",
+        "יָרׇבְעָם"
+      ],
+      "words": [
+        {
+          "word": "חַטֹּאות֙",
+          "lemma": "חַטָּאָה",
+          "strong": "H2403",
+          "pron": "핟다트"
+        },
+        {
+          "word": "יָרָבְעָ֣ם",
+          "lemma": "יָרׇבְעָם",
+          "strong": "H3379",
+          "pron": "브야랍암"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "kings1 14:16",
+        "kings1 15:30",
+        "kings1 16:31",
+        "kings2 3:3",
+        "kings2 10:31",
+        "kings2 13:2",
+        "kings2 13:11",
+        "kings2 14:24",
+        "kings2 15:9",
+        "kings2 15:18",
+        "kings2 15:24",
+        "kings2 15:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּ֣ית יָרָבְעָ֔ם",
+      "pron": "미바이트 브야랍암",
+      "lemmas": [
+        "בַּיִת",
+        "יָרׇבְעָם"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֣ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "יָרָבְעָ֔ם",
+          "lemma": "יָרׇבְעָם",
+          "strong": "H3379",
+          "pron": "브야랍암"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "kings1 13:34",
+        "kings1 14:10",
+        "kings1 14:13",
+        "kings1 14:14",
+        "kings1 15:29",
+        "kings1 16:3",
+        "kings1 16:7",
+        "kings1 21:22",
+        "kings2 9:9",
+        "kings2 13:6",
+        "amos 7:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָרָבְעָ֖ם וְכָל",
+      "pron": "브야랍암 칼",
+      "lemmas": [
+        "יָרׇבְעָם",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "יָרָבְעָ֖ם",
+          "lemma": "יָרׇבְעָם",
+          "strong": "H3379",
+          "pron": "브야랍암"
+        },
+        {
+          "word": "וְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "kings1 12:3",
+        "kings1 12:12",
+        "kings1 14:30",
+        "kings1 15:6",
+        "kings2 14:28",
+        "chronicles2 10:3",
+        "chronicles2 10:12",
+        "chronicles2 12:15",
+        "chronicles2 13:4",
+        "chronicles2 13:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "דְּמוּת",
-  "pron": "키데무트",
+  "pron": "킫무테누",
   "strong": "H1823",
   "posKo": "명사",
   "root": {
@@ -12,28 +12,92 @@
     {
       "lemma": "דָּמָה",
       "strong": "H1819",
-      "pron": "딤미누",
+      "pron": "딤미티",
       "glossKo": "닮다"
     },
     {
       "lemma": "דְּמָה",
       "strong": "H1821",
-      "pron": "",
+      "pron": "다메",
       "glossKo": "닮다(아람)"
     },
     {
       "lemma": "דִּמְיוֹן",
       "strong": "H1825",
-      "pron": "딤온오",
+      "pron": "딤오노",
       "glossKo": "그의 모양"
     }
   ],
   "defEn": "resemblance; model; shape; like",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 25,
   "byBook": {
+    "ezekiel": 16,
     "genesis": 3,
+    "isaiah": 2,
+    "chronicles2": 1,
+    "daniel": 1,
+    "kings2": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מַרְאֵֽיהֶ֔ן דְּמ֥וּת",
+      "pron": "르마레에 킫무테누",
+      "lemmas": [
+        "מַרְאֶה",
+        "דְּמוּת"
+      ],
+      "words": [
+        {
+          "word": "מַרְאֵֽיהֶ֔ן",
+          "lemma": "מַרְאֶה",
+          "strong": "H4758",
+          "pron": "르마레에"
+        },
+        {
+          "word": "דְּמ֥וּת",
+          "lemma": "דְּמוּת",
+          "strong": "H1823",
+          "pron": "킫무테누"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 1:5",
+        "ezekiel 1:28",
+        "ezekiel 10:1",
+        "ezekiel 10:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דְּמ֣וּת כִּסֵּ֑א",
+      "pron": "킫무테누 아킷세",
+      "lemmas": [
+        "דְּמוּת",
+        "כִּסֵּא"
+      ],
+      "words": [
+        {
+          "word": "דְּמ֣וּת",
+          "lemma": "דְּמוּת",
+          "strong": "H1823",
+          "pron": "킫무테누"
+        },
+        {
+          "word": "כִּסֵּ֑א",
+          "lemma": "כִּסֵּא",
+          "strong": "H3678",
+          "pron": "아킷세"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 1:26",
+        "ezekiel 10:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

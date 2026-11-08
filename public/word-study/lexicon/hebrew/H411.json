@@ -8,7 +8,7 @@
     {
       "lemma": "אֵל",
       "strong": "H412",
-      "pron": "",
+      "pron": "르",
       "glossKo": "이것(아람)"
     },
     {
@@ -20,9 +20,42 @@
   ],
   "defEn": "these; those",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 9,
   "byBook": {
-    "genesis": 4
+    "genesis": 4,
+    "deuteronomy": 3,
+    "chronicles1": 1,
+    "leviticus": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הֶעָרִ֣ים הָאֵ֔ל",
+      "pron": "이르 하엘",
+      "lemmas": [
+        "עִיר",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "הֶעָרִ֣ים",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        },
+        {
+          "word": "הָאֵ֔ל",
+          "lemma": "אֵל",
+          "strong": "H411",
+          "pron": "하엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 19:25",
+        "deuteronomy 4:42",
+        "deuteronomy 19:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

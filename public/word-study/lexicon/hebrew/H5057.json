@@ -1,6 +1,6 @@
 {
   "lemma": "נָגִיד",
-  "pron": "네기딤",
+  "pron": "르나긷",
   "strong": "H5057",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,226 @@
     {
       "lemma": "נָגַד",
       "strong": "H5046",
-      "pron": "학기두",
+      "pron": "힉긷",
       "glossKo": "고하다"
     },
     {
       "lemma": "נְגַד",
       "strong": "H5047",
-      "pron": "",
+      "pron": "나겓",
       "glossKo": "흐르다(아람)"
     },
     {
       "lemma": "נֶגֶד",
       "strong": "H5048",
-      "pron": "미넥드오",
+      "pron": "케넥도",
       "glossKo": "그에게 앞에"
     }
   ],
   "defEn": "commander; front; honorable",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 44,
   "byBook": {
+    "chronicles1": 12,
+    "chronicles2": 9,
+    "samuel1": 4,
+    "daniel": 3,
+    "kings1": 3,
+    "samuel2": 3,
+    "job": 2,
+    "proverbs": 2,
+    "ezekiel": 1,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "kings2": 1,
+    "nehemiah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נָגִ֔יד עַ֖ל",
+      "pron": "르나긷 알",
+      "lemmas": [
+        "נָגִיד",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "נָגִ֔יד",
+          "lemma": "נָגִיד",
+          "strong": "H5057",
+          "pron": "르나긷"
+        },
+        {
+          "word": "עַ֖ל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "samuel1 9:16",
+        "samuel1 13:14",
+        "samuel1 25:30",
+        "samuel2 5:2",
+        "samuel2 6:21",
+        "samuel2 7:8",
+        "kings1 1:35",
+        "kings1 14:7",
+        "kings1 16:2",
+        "chronicles1 11:2",
+        "chronicles1 17:7",
+        "chronicles1 26:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נָגִ֔יד עַ֖ל עַמִּ֥י",
+      "pron": "르나긷 알 암",
+      "lemmas": [
+        "נָגִיד",
+        "עַל",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "נָגִ֔יד",
+          "lemma": "נָגִיד",
+          "strong": "H5057",
+          "pron": "르나긷"
+        },
+        {
+          "word": "עַ֖ל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "עַמִּ֥י",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "samuel1 9:16",
+        "samuel1 13:14",
+        "samuel2 6:21",
+        "samuel2 7:8",
+        "kings1 14:7",
+        "kings1 16:2",
+        "chronicles1 11:2",
+        "chronicles1 17:7",
+        "chronicles2 6:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְגִ֖יד בֵּ֥ית",
+      "pron": "르나긷 미바이트",
+      "lemmas": [
+        "נָגִיד",
+        "בַּיִת"
+      ],
+      "words": [
+        {
+          "word": "נְגִ֖יד",
+          "lemma": "נָגִיד",
+          "strong": "H5057",
+          "pron": "르나긷"
+        },
+        {
+          "word": "בֵּ֥ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "chronicles1 9:11",
+        "chronicles1 28:4",
+        "chronicles2 19:11",
+        "chronicles2 28:7",
+        "chronicles2 31:13",
+        "chronicles2 35:8",
+        "nehemiah 11:11",
+        "jeremiah 20:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִֽהְי֣וֹת נָגִ֔יד",
+      "pron": "하에타 르나긷",
+      "lemmas": [
+        "הָיָה",
+        "נָגִיד"
+      ],
+      "words": [
+        {
+          "word": "לִֽהְי֣וֹת",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "נָגִ֔יד",
+          "lemma": "נָגִיד",
+          "strong": "H5057",
+          "pron": "르나긷"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel2 5:2",
+        "samuel2 7:8",
+        "kings1 1:35",
+        "chronicles1 11:2",
+        "chronicles1 17:7",
+        "chronicles2 6:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִֽהְי֣וֹת נָגִ֔יד עַל",
+      "pron": "하에타 르나긷 알",
+      "lemmas": [
+        "הָיָה",
+        "נָגִיד",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "לִֽהְי֣וֹת",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "נָגִ֔יד",
+          "lemma": "נָגִיד",
+          "strong": "H5057",
+          "pron": "르나긷"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel2 5:2",
+        "samuel2 7:8",
+        "kings1 1:35",
+        "chronicles1 11:2",
+        "chronicles1 17:7",
+        "chronicles2 6:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

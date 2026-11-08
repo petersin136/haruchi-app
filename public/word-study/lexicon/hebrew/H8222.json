@@ -2,7 +2,7 @@
   "lemma": "שָׂפָם",
   "pron": "사팜",
   "strong": "H8222",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׂפָה",
     "strong": "H8193",
@@ -12,13 +12,49 @@
     {
       "lemma": "שָׂפָה",
       "strong": "H8193",
-      "pron": "세파트",
+      "pron": "사파",
       "glossKo": "입술"
     }
   ],
   "defEn": "beard; lip-piece",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "ezekiel": 2,
+    "leviticus": 1,
+    "micah": 1,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְעַל שָׂפָ֖ם",
+      "pron": "알 사팜",
+      "lemmas": [
+        "עַל",
+        "שָׂפָם"
+      ],
+      "words": [
+        {
+          "word": "וְעַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "שָׂפָ֖ם",
+          "lemma": "שָׂפָם",
+          "strong": "H8222",
+          "pron": "사팜"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 13:45",
+        "ezekiel 24:17",
+        "ezekiel 24:22",
+        "micah 3:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

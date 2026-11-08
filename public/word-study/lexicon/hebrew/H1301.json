@@ -1,8 +1,8 @@
 {
   "lemma": "בָּרָק",
-  "pron": "바라크",
+  "pron": "르바라크",
   "strong": "H1301",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בָּרָק",
     "strong": "H1300",
@@ -18,19 +18,87 @@
     {
       "lemma": "בַּרְקָן",
       "strong": "H1303",
-      "pron": "",
+      "pron": "아바레코님",
       "glossKo": "찔레"
     },
     {
       "lemma": "בָּרֶקֶת",
       "strong": "H1304",
-      "pron": "",
+      "pron": "우바레케트",
       "glossKo": "녹주옥"
     }
   ],
   "defEn": "Barak",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "judges": 13
+  },
+  "phrases": [
+    {
+      "hebrew": "לְבָרָ֣ק בֶּן",
+      "pron": "르바라크 바님",
+      "lemmas": [
+        "בָּרָק",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "לְבָרָ֣ק",
+          "lemma": "בָּרָק",
+          "strong": "H1301",
+          "pron": "르바라크"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 4:6",
+        "judges 4:12",
+        "judges 5:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְבָרָ֣ק בֶּן אֲבִינֹ֔עַם",
+      "pron": "르바라크 바님 아비노암",
+      "lemmas": [
+        "בָּרָק",
+        "בֵּן",
+        "אֲבִינֹעַם"
+      ],
+      "words": [
+        {
+          "word": "לְבָרָ֣ק",
+          "lemma": "בָּרָק",
+          "strong": "H1301",
+          "pron": "르바라크"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "אֲבִינֹ֔עַם",
+          "lemma": "אֲבִינֹעַם",
+          "strong": "H42",
+          "pron": "아비노암"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 4:6",
+        "judges 4:12",
+        "judges 5:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

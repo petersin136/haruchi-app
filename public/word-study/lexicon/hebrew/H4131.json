@@ -1,6 +1,6 @@
 {
   "lemma": "מוֹט",
-  "pron": "엠몯",
+  "pron": "우마다",
   "strong": "H4131",
   "posKo": "동사",
   "root": null,
@@ -8,20 +8,26 @@
     {
       "lemma": "מוֹט",
       "strong": "H4132",
-      "pron": "라몯",
+      "pron": "아몯",
       "glossKo": "흔들림"
     }
   ],
   "defEn": "waver",
   "defKo": "",
-  "countOT": 25,
+  "countOT": 39,
   "byBook": {
-    "psalms": 25
+    "psalms": 25,
+    "isaiah": 6,
+    "proverbs": 4,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "job": 1,
+    "leviticus": 1
   },
   "phrases": [
     {
-      "hebrew": "בַּל תִּמּ֑וֹט",
-      "pron": "발 엠몯",
+      "hebrew": "בַּל יִמּֽוֹט",
+      "pron": "발 우마다",
       "lemmas": [
         "בַּל",
         "מוֹט"
@@ -34,14 +40,16 @@
           "pron": "발"
         },
         {
-          "word": "תִּמּ֑וֹט",
+          "word": "יִמּֽוֹט",
           "lemma": "מוֹט",
           "strong": "H4131",
-          "pron": "엠몯"
+          "pron": "우마다"
         }
       ],
-      "count": 9,
+      "count": 13,
       "refs": [
+        "chronicles1 16:30",
+        "job 41:23",
         "psalms 10:6",
         "psalms 16:8",
         "psalms 17:5",
@@ -50,44 +58,48 @@
         "psalms 46:5",
         "psalms 93:1",
         "psalms 96:10",
-        "psalms 104:5"
+        "psalms 104:5",
+        "proverbs 10:30"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לֹ֖א יִמּ֣וֹט",
-      "pron": "로 엠몯",
+      "hebrew": "לֹ֥א יִמּֽוֹט",
+      "pron": "로 우마다",
       "lemmas": [
         "לֹא",
         "מוֹט"
       ],
       "words": [
         {
-          "word": "לֹ֖א",
+          "word": "לֹ֥א",
           "lemma": "לֹא",
           "strong": "H3808",
           "pron": "로"
         },
         {
-          "word": "יִמּ֣וֹט",
+          "word": "יִמּֽוֹט",
           "lemma": "מוֹט",
           "strong": "H4131",
-          "pron": "엠몯"
+          "pron": "우마다"
         }
       ],
-      "count": 5,
+      "count": 8,
       "refs": [
         "psalms 15:5",
         "psalms 62:2",
         "psalms 62:6",
         "psalms 112:6",
-        "psalms 125:1"
+        "psalms 125:1",
+        "isaiah 40:20",
+        "isaiah 41:7",
+        "isaiah 54:10"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "יִמּ֣וֹט לְעוֹלָֽם",
-      "pron": "엠몯 르올람",
+      "pron": "우마다 르올람",
       "lemmas": [
         "מוֹט",
         "עוֹלָם"
@@ -97,7 +109,7 @@
           "word": "יִמּ֣וֹט",
           "lemma": "מוֹט",
           "strong": "H4131",
-          "pron": "엠몯"
+          "pron": "우마다"
         },
         {
           "word": "לְעוֹלָֽם",
@@ -116,8 +128,36 @@
       "glossKo": ""
     },
     {
+      "hebrew": "ימיטו יִמּ֥וֹטוּ",
+      "pron": "우마다 우마다",
+      "lemmas": [
+        "מוֹט",
+        "מוֹט"
+      ],
+      "words": [
+        {
+          "word": "ימיטו",
+          "lemma": "מוֹט",
+          "strong": "H4131",
+          "pron": "우마다"
+        },
+        {
+          "word": "יִמּ֥וֹטוּ",
+          "lemma": "מוֹט",
+          "strong": "H4131",
+          "pron": "우마다"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 140:10",
+        "isaiah 24:19"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "כִּ֣י אֶמּֽוֹט",
-      "pron": "키 엠몯",
+      "pron": "키 우마다",
       "lemmas": [
         "כִּי",
         "מוֹט"
@@ -133,7 +173,7 @@
           "word": "אֶמּֽוֹט",
           "lemma": "מוֹט",
           "strong": "H4131",
-          "pron": "엠몯"
+          "pron": "우마다"
         }
       ],
       "count": 3,

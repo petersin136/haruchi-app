@@ -8,57 +8,46 @@
     {
       "lemma": "חָפֵץ",
       "strong": "H2655",
-      "pron": "하페츠",
+      "pron": "헤하페츠",
       "glossKo": "기뻐하는"
     },
     {
       "lemma": "חֵפֶץ",
       "strong": "H2656",
-      "pron": "헵츠오",
-      "glossKo": "그의 기쁨"
+      "pron": "아헤페츠",
+      "glossKo": "기쁨"
     }
   ],
   "defEn": "incline",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 75,
   "byBook": {
     "psalms": 17,
-    "genesis": 1
+    "isaiah": 12,
+    "esther": 7,
+    "job": 5,
+    "ezekiel": 4,
+    "samuel2": 4,
+    "deuteronomy": 3,
+    "jeremiah": 3,
+    "samuel1": 3,
+    "songofsolomon": 3,
+    "kings1": 2,
+    "proverbs": 2,
+    "chronicles2": 1,
+    "ecclesiastes": 1,
+    "genesis": 1,
+    "hosea": 1,
+    "jonah": 1,
+    "judges": 1,
+    "malachi": 1,
+    "micah": 1,
+    "numbers": 1,
+    "ruth": 1
   },
   "phrases": [
     {
-      "hebrew": "כִּ֘י חָ֥פֵֽץ",
-      "pron": "키 하페츠",
-      "lemmas": [
-        "כִּי",
-        "חָפֵץ"
-      ],
-      "words": [
-        {
-          "word": "כִּ֘י",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
-        },
-        {
-          "word": "חָ֥פֵֽץ",
-          "lemma": "חָפֵץ",
-          "strong": "H2654",
-          "pron": "하페츠"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 18:19",
-        "psalms 22:8",
-        "psalms 41:11",
-        "psalms 119:35",
-        "genesis 34:19"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "לֹֽא חָפַ֗צְתָּ",
+      "hebrew": "לֹ֥א חָפַ֖צְתִּי",
       "pron": "로 하페츠",
       "lemmas": [
         "לֹא",
@@ -66,24 +55,173 @@
       ],
       "words": [
         {
-          "word": "לֹֽא",
+          "word": "לֹ֥א",
           "lemma": "לֹא",
           "strong": "H3808",
           "pron": "로"
         },
         {
-          "word": "חָפַ֗צְתָּ",
+          "word": "חָפַ֖צְתִּי",
           "lemma": "חָפֵץ",
           "strong": "H2654",
           "pron": "하페츠"
         }
       ],
-      "count": 4,
+      "count": 17,
       "refs": [
+        "deuteronomy 21:14",
+        "deuteronomy 25:7",
+        "deuteronomy 25:8",
+        "ruth 3:13",
+        "samuel2 15:26",
+        "job 21:14",
         "psalms 40:6",
         "psalms 51:16",
         "psalms 73:25",
-        "psalms 109:17"
+        "psalms 109:17",
+        "proverbs 18:2",
+        "isaiah 1:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֨ר חָפֵ֧ץ",
+      "pron": "아셰르 하페츠",
+      "lemmas": [
+        "אֲשֶׁר",
+        "חָפֵץ"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "חָפֵ֧ץ",
+          "lemma": "חָפֵץ",
+          "strong": "H2654",
+          "pron": "하페츠"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "samuel2 20:11",
+        "kings1 9:1",
+        "kings1 10:9",
+        "chronicles2 9:8",
+        "psalms 115:3",
+        "psalms 135:6",
+        "proverbs 21:1",
+        "ecclesiastes 8:3",
+        "isaiah 55:11",
+        "isaiah 56:4",
+        "jeremiah 42:22",
+        "jonah 1:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי חָפֵ֥ץ",
+      "pron": "키 하페츠",
+      "lemmas": [
+        "כִּי",
+        "חָפֵץ"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "חָפֵ֥ץ",
+          "lemma": "חָפֵץ",
+          "strong": "H2654",
+          "pron": "하페츠"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "genesis 34:19",
+        "samuel1 2:25",
+        "samuel2 22:20",
+        "job 33:32",
+        "psalms 18:19",
+        "psalms 22:8",
+        "psalms 41:11",
+        "psalms 119:35",
+        "isaiah 62:4",
+        "micah 7:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֥ר הַמֶּ֖לֶךְ חָפֵ֥ץ",
+      "pron": "아셰르 멜레크 하페츠",
+      "lemmas": [
+        "אֲשֶׁר",
+        "מֶלֶךְ",
+        "חָפֵץ"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הַמֶּ֖לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "חָפֵ֥ץ",
+          "lemma": "חָפֵץ",
+          "strong": "H2654",
+          "pron": "하페츠"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "esther 6:6",
+        "esther 6:7",
+        "esther 6:9",
+        "esther 6:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַמֶּ֖לֶךְ חָפֵ֥ץ",
+      "pron": "멜레크 하페츠",
+      "lemmas": [
+        "מֶלֶךְ",
+        "חָפֵץ"
+      ],
+      "words": [
+        {
+          "word": "הַמֶּ֖לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "חָפֵ֥ץ",
+          "lemma": "חָפֵץ",
+          "strong": "H2654",
+          "pron": "하페츠"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "esther 6:6",
+        "esther 6:7",
+        "esther 6:9",
+        "esther 6:11"
       ],
       "glossKo": ""
     }

@@ -1,8 +1,8 @@
 {
   "lemma": "יִרְמְיָה",
-  "pron": "이렘아",
+  "pron": "이렘아후",
   "strong": "H3414",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רוּם",
     "strong": "H7311",
@@ -12,43 +12,249 @@
     {
       "lemma": "יְרִימוֹת",
       "strong": "H3406",
-      "pron": "",
+      "pron": "비위리모트",
       "glossKo": "여리못"
     },
     {
       "lemma": "יַרְמוּת",
       "strong": "H3412",
-      "pron": "",
+      "pron": "야레무트",
       "glossKo": "야르뭇"
     },
     {
       "lemma": "יְרֵמַי",
       "strong": "H3413",
-      "pron": "",
+      "pron": "예레마이",
       "glossKo": "여레매"
     },
     {
       "lemma": "מָרוֹם",
       "strong": "H4791",
-      "pron": "라마롬",
+      "pron": "메로메",
       "glossKo": "높은 곳"
     },
     {
       "lemma": "מְרֵמוֹת",
       "strong": "H4822",
-      "pron": "",
+      "pron": "메레모트",
       "glossKo": "므레못"
     },
     {
       "lemma": "רוּם",
       "strong": "H7311",
-      "pron": "우메림",
+      "pron": "바타람",
       "glossKo": "높이다"
     }
   ],
   "defEn": "Jirmejah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 147,
+  "byBook": {
+    "jeremiah": 131,
+    "chronicles1": 4,
+    "chronicles2": 4,
+    "nehemiah": 4,
+    "kings2": 2,
+    "daniel": 1,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶֽל יִרְמְיָ֖הוּ",
+      "pron": "엘 이렘아후",
+      "lemmas": [
+        "אֵל",
+        "יִרְמְיָה"
+      ],
+      "words": [
+        {
+          "word": "אֶֽל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "יִרְמְיָ֖הוּ",
+          "lemma": "יִרְמְיָה",
+          "strong": "H3414",
+          "pron": "이렘아후"
+        }
+      ],
+      "count": 46,
+      "refs": [
+        "jeremiah 7:1",
+        "jeremiah 11:1",
+        "jeremiah 14:1",
+        "jeremiah 18:1",
+        "jeremiah 20:3",
+        "jeremiah 21:1",
+        "jeremiah 26:9",
+        "jeremiah 27:1",
+        "jeremiah 28:12",
+        "jeremiah 29:30",
+        "jeremiah 30:1",
+        "jeremiah 32:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִרְמְיָ֥הוּ הַנָּבִ֖יא",
+      "pron": "이렘아후 나비",
+      "lemmas": [
+        "יִרְמְיָה",
+        "נָבִיא"
+      ],
+      "words": [
+        {
+          "word": "יִרְמְיָ֥הוּ",
+          "lemma": "יִרְמְיָה",
+          "strong": "H3414",
+          "pron": "이렘아후"
+        },
+        {
+          "word": "הַנָּבִ֖יא",
+          "lemma": "נָבִיא",
+          "strong": "H5030",
+          "pron": "나비"
+        }
+      ],
+      "count": 33,
+      "refs": [
+        "chronicles2 36:12",
+        "jeremiah 20:2",
+        "jeremiah 25:2",
+        "jeremiah 28:5",
+        "jeremiah 28:6",
+        "jeremiah 28:10",
+        "jeremiah 28:11",
+        "jeremiah 28:12",
+        "jeremiah 28:15",
+        "jeremiah 29:1",
+        "jeremiah 29:29",
+        "jeremiah 32:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֔ה אֶֽל יִרְמְיָ֖הוּ",
+      "pron": "여호와 엘 이렘아후",
+      "lemmas": [
+        "יְהֹוָה",
+        "אֵל",
+        "יִרְמְיָה"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "אֶֽל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "יִרְמְיָ֖הוּ",
+          "lemma": "יִרְמְיָה",
+          "strong": "H3414",
+          "pron": "이렘아후"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "jeremiah 14:1",
+        "jeremiah 28:12",
+        "jeremiah 29:30",
+        "jeremiah 32:26",
+        "jeremiah 33:1",
+        "jeremiah 33:19",
+        "jeremiah 33:23",
+        "jeremiah 34:12",
+        "jeremiah 35:12",
+        "jeremiah 36:27",
+        "jeremiah 37:6",
+        "jeremiah 42:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶֽת יִרְמְיָ֖הוּ",
+      "pron": "에트 이렘아후",
+      "lemmas": [
+        "אֵת",
+        "יִרְמְיָה"
+      ],
+      "words": [
+        {
+          "word": "אֶֽת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יִרְמְיָ֖הוּ",
+          "lemma": "יִרְמְיָה",
+          "strong": "H3414",
+          "pron": "이렘아후"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "jeremiah 20:1",
+        "jeremiah 20:2",
+        "jeremiah 20:3",
+        "jeremiah 26:7",
+        "jeremiah 36:26",
+        "jeremiah 37:13",
+        "jeremiah 37:21",
+        "jeremiah 38:6",
+        "jeremiah 38:7",
+        "jeremiah 38:10",
+        "jeremiah 38:13",
+        "jeremiah 38:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֥אמֶר יִרְמְיָ֖הוּ",
+      "pron": "바요메르 이렘아후",
+      "lemmas": [
+        "אָמַר",
+        "יִרְמְיָה"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֥אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "יִרְמְיָ֖הוּ",
+          "lemma": "יִרְמְיָה",
+          "strong": "H3414",
+          "pron": "이렘아후"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "jeremiah 21:3",
+        "jeremiah 26:12",
+        "jeremiah 28:5",
+        "jeremiah 28:6",
+        "jeremiah 28:15",
+        "jeremiah 32:6",
+        "jeremiah 35:18",
+        "jeremiah 37:14",
+        "jeremiah 37:17",
+        "jeremiah 37:18",
+        "jeremiah 38:15",
+        "jeremiah 38:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

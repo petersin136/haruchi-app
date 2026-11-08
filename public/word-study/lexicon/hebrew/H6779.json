@@ -1,6 +1,6 @@
 {
   "lemma": "צָמַח",
-  "pron": "티체마흐",
+  "pron": "이체마흐",
   "strong": "H6779",
   "posKo": "동사",
   "root": null,
@@ -8,16 +8,58 @@
     {
       "lemma": "צֶמַח",
       "strong": "H6780",
-      "pron": "침하흐",
-      "glossKo": "그녀의 싹"
+      "pron": "브체마흐",
+      "glossKo": "싹"
     }
   ],
   "defEn": "sprout",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 33,
   "byBook": {
+    "isaiah": 8,
     "genesis": 5,
-    "psalms": 4
+    "psalms": 4,
+    "ezekiel": 3,
+    "job": 3,
+    "samuel2": 2,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "leviticus": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְלֹ֣א תַצְמִ֔חַ",
+      "pron": "로 이체마흐",
+      "lemmas": [
+        "לֹא",
+        "צָמַח"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תַצְמִ֔חַ",
+          "lemma": "צָמַח",
+          "strong": "H6779",
+          "pron": "이체마흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 29:23",
+        "samuel2 23:5",
+        "job 5:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "עִזָּבוֹן",
-  "pron": "잇자본",
+  "pron": "잇보나이크",
   "strong": "H5801",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָזַב",
     "strong": "H5800",
@@ -12,25 +12,58 @@
     {
       "lemma": "עָזַב",
       "strong": "H5800",
-      "pron": "아잡타",
+      "pron": "야아잡",
       "glossKo": "버리다"
     },
     {
       "lemma": "עֲזוּבָה",
       "strong": "H5805",
-      "pron": "",
+      "pron": "하아주바",
       "glossKo": "버림"
     },
     {
       "lemma": "שְׁזַב",
       "strong": "H7804",
-      "pron": "",
-      "glossKo": "구원하다(아람)"
+      "pron": "예셰읏빈콘",
+      "glossKo": "너희에게 구원하다(아람)"
     }
   ],
   "defEn": "trade; place; payment",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "ezekiel": 7
+  },
+  "phrases": [
+    {
+      "hebrew": "נָתְנ֖וּ עִזְבוֹנָֽיִךְ",
+      "pron": "바잇텐 잇보나이크",
+      "lemmas": [
+        "נָתַן",
+        "עִזָּבוֹן"
+      ],
+      "words": [
+        {
+          "word": "נָתְנ֖וּ",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "עִזְבוֹנָֽיִךְ",
+          "lemma": "עִזָּבוֹן",
+          "strong": "H5801",
+          "pron": "잇보나이크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 27:12",
+        "ezekiel 27:14",
+        "ezekiel 27:16",
+        "ezekiel 27:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

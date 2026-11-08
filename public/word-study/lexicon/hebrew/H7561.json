@@ -1,6 +1,6 @@
 {
   "lemma": "רָשַׁע",
-  "pron": "라샤엣티",
+  "pron": "야레시운",
   "strong": "H7561",
   "posKo": "동사",
   "root": null,
@@ -8,27 +8,166 @@
     {
       "lemma": "מִרְשַׁעַת",
       "strong": "H4849",
-      "pron": "",
+      "pron": "아미레샤아트",
       "glossKo": "악녀"
     },
     {
       "lemma": "רֶשַׁע",
       "strong": "H7562",
-      "pron": "레샤",
-      "glossKo": "악함"
+      "pron": "리셰오",
+      "glossKo": "그의 악함"
     },
     {
       "lemma": "רָשָׁע",
       "strong": "H7563",
-      "pron": "레샤임",
+      "pron": "라샤",
       "glossKo": "악인"
     }
   ],
   "defEn": "be; do; declare; wrong",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 36,
   "byBook": {
-    "psalms": 4
+    "job": 11,
+    "daniel": 5,
+    "psalms": 4,
+    "chronicles2": 3,
+    "isaiah": 2,
+    "kings1": 2,
+    "proverbs": 2,
+    "samuel1": 2,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "nehemiah": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְלֹ֥א רָשַׁ֖עְתִּי",
+      "pron": "로 야레시운",
+      "lemmas": [
+        "לֹא",
+        "רָשַׁע"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "רָשַׁ֖עְתִּי",
+          "lemma": "רָשַׁע",
+          "strong": "H7561",
+          "pron": "야레시운"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 22:22",
+        "job 10:7",
+        "job 34:12",
+        "psalms 18:21",
+        "psalms 37:33"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהֶעֱוִ֖ינוּ רָשָֽׁעְנוּ",
+      "pron": "나아바트 야레시운",
+      "lemmas": [
+        "עָוָה",
+        "רָשַׁע"
+      ],
+      "words": [
+        {
+          "word": "וְהֶעֱוִ֖ינוּ",
+          "lemma": "עָוָה",
+          "strong": "H5753",
+          "pron": "나아바트"
+        },
+        {
+          "word": "רָשָֽׁעְנוּ",
+          "lemma": "רָשַׁע",
+          "strong": "H7561",
+          "pron": "야레시운"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 8:47",
+        "chronicles2 6:37",
+        "psalms 106:6",
+        "daniel 9:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָטָ֥אנוּ וְהֶעֱוִ֖ינוּ רָשָֽׁעְנוּ",
+      "pron": "메하도 나아바트 야레시운",
+      "lemmas": [
+        "חָטָא",
+        "עָוָה",
+        "רָשַׁע"
+      ],
+      "words": [
+        {
+          "word": "חָטָ֥אנוּ",
+          "lemma": "חָטָא",
+          "strong": "H2398",
+          "pron": "메하도"
+        },
+        {
+          "word": "וְהֶעֱוִ֖ינוּ",
+          "lemma": "עָוָה",
+          "strong": "H5753",
+          "pron": "나아바트"
+        },
+        {
+          "word": "רָשָֽׁעְנוּ",
+          "lemma": "רָשַׁע",
+          "strong": "H7561",
+          "pron": "야레시운"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 8:47",
+        "chronicles2 6:37",
+        "daniel 9:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יַרְשִׁיעֻן֙ אֱלֹהִ֔ים",
+      "pron": "야레시운 엘로힘",
+      "lemmas": [
+        "רָשַׁע",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "יַרְשִׁיעֻן֙",
+          "lemma": "רָשַׁע",
+          "strong": "H7561",
+          "pron": "야레시운"
+        },
+        {
+          "word": "אֱלֹהִ֔ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 22:9",
+        "samuel2 22:22",
+        "psalms 18:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

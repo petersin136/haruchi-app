@@ -2,7 +2,7 @@
   "lemma": "שְׁבוּאֵל",
   "pron": "셰부엘",
   "strong": "H7619",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁבָה",
     "strong": "H7617",
@@ -12,31 +12,63 @@
     {
       "lemma": "שָׁבָה",
       "strong": "H7617",
-      "pron": "샤비타",
+      "pron": "니솁바",
       "glossKo": "사로잡다"
     },
     {
       "lemma": "שְׁבוּ",
       "strong": "H7618",
-      "pron": "",
+      "pron": "셰보",
       "glossKo": "마노"
     },
     {
       "lemma": "שְׁבוּת",
       "strong": "H7622",
-      "pron": "셰부트",
-      "glossKo": "사로잡힘"
+      "pron": "셰부테카",
+      "glossKo": "너의 사로잡힘"
     },
     {
       "lemma": "שֹׁבִי",
       "strong": "H7629",
-      "pron": "",
+      "pron": "브쇼비",
       "glossKo": "소비"
     }
   ],
   "defEn": "Shebuel; Shubael",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "chronicles1": 6
+  },
+  "phrases": [
+    {
+      "hebrew": "שֽׁוּבָאֵ֔ל לִבְנֵ֥י",
+      "pron": "셰부엘 바님",
+      "lemmas": [
+        "שְׁבוּאֵל",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "שֽׁוּבָאֵ֔ל",
+          "lemma": "שְׁבוּאֵל",
+          "strong": "H7619",
+          "pron": "셰부엘"
+        },
+        {
+          "word": "לִבְנֵ֥י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 24:20",
+        "chronicles1 25:20",
+        "chronicles1 26:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

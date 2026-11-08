@@ -1,6 +1,6 @@
 {
   "lemma": "גְּוִיָּה",
-  "pron": "게비오트",
+  "pron": "게비아테누",
   "strong": "H1472",
   "posKo": "명사",
   "root": {
@@ -12,28 +12,65 @@
     {
       "lemma": "גֵּוָה",
       "strong": "H1465",
-      "pron": "",
+      "pron": "미게바",
       "glossKo": "등"
     },
     {
       "lemma": "גֵּוָה",
       "strong": "H1466",
-      "pron": "",
+      "pron": "게바",
       "glossKo": "교만"
     },
     {
       "lemma": "גּוֹי",
       "strong": "H1471",
-      "pron": "고임",
+      "pron": "아고임",
       "glossKo": "민족"
     }
   ],
   "defEn": "body",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 13,
   "byBook": {
+    "samuel1": 3,
+    "ezekiel": 2,
+    "judges": 2,
+    "nahum": 2,
+    "daniel": 1,
     "genesis": 1,
+    "nehemiah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְאֶת גְּוִיָּתוֹ֙",
+      "pron": "에트 게비아테누",
+      "lemmas": [
+        "אֵת",
+        "גְּוִיָּה"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "גְּוִיָּתוֹ֙",
+          "lemma": "גְּוִיָּה",
+          "strong": "H1472",
+          "pron": "게비아테누"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 31:10",
+        "samuel1 31:12",
+        "ezekiel 1:11",
+        "ezekiel 1:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

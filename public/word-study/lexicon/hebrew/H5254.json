@@ -1,6 +1,6 @@
 {
   "lemma": "נָסָה",
-  "pron": "브낫세니",
+  "pron": "닛사",
   "strong": "H5254",
   "posKo": "동사",
   "root": null,
@@ -8,21 +8,136 @@
     {
       "lemma": "מַסָּה",
       "strong": "H4531",
-      "pron": "맛사",
+      "pron": "브맛소트",
       "glossKo": "시험"
     }
   ],
   "defEn": "test",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 36,
   "byBook": {
+    "deuteronomy": 8,
     "psalms": 6,
-    "genesis": 1
+    "exodus": 5,
+    "judges": 4,
+    "chronicles2": 2,
+    "daniel": 2,
+    "ecclesiastes": 2,
+    "samuel1": 2,
+    "genesis": 1,
+    "isaiah": 1,
+    "job": 1,
+    "kings1": 1,
+    "numbers": 1
   },
   "phrases": [
     {
+      "hebrew": "לְנַסּ֥וֹת אֶת",
+      "pron": "닛사 에트",
+      "lemmas": [
+        "נָסָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "לְנַסּ֥וֹת",
+          "lemma": "נָסָה",
+          "strong": "H5254",
+          "pron": "닛사"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 22:1",
+        "exodus 17:2",
+        "exodus 17:7",
+        "exodus 20:20",
+        "numbers 14:22",
+        "deuteronomy 6:16",
+        "judges 2:22",
+        "judges 3:1",
+        "judges 3:4",
+        "chronicles2 9:1",
+        "isaiah 7:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֣א תְנַסּ֔וּ",
+      "pron": "로 닛사",
+      "lemmas": [
+        "לֹא",
+        "נָסָה"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תְנַסּ֔וּ",
+          "lemma": "נָסָה",
+          "strong": "H5254",
+          "pron": "닛사"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 6:16",
+        "deuteronomy 28:56",
+        "samuel1 17:39",
+        "isaiah 7:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּנַסּ֖וּן אֶת יְהוָֽה",
+      "pron": "닛사 에트 여호와",
+      "lemmas": [
+        "נָסָה",
+        "אֵת",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "תְּנַסּ֖וּן",
+          "lemma": "נָסָה",
+          "strong": "H5254",
+          "pron": "닛사"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יְהוָֽה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 17:2",
+        "exodus 17:7",
+        "deuteronomy 6:16",
+        "isaiah 7:12"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וַיְנַסּוּ אֵ֥ל",
-      "pron": "브낫세니 엘",
+      "pron": "닛사 르엘",
       "lemmas": [
         "נָסָה",
         "אֵל"
@@ -32,13 +147,13 @@
           "word": "וַיְנַסּוּ",
           "lemma": "נָסָה",
           "strong": "H5254",
-          "pron": "브낫세니"
+          "pron": "닛사"
         },
         {
           "word": "אֵ֥ל",
           "lemma": "אֵל",
           "strong": "H410",
-          "pron": "엘"
+          "pron": "르엘"
         }
       ],
       "count": 3,
@@ -46,6 +161,35 @@
         "psalms 78:18",
         "psalms 78:41",
         "psalms 106:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַּאֲשֶׁ֥ר נִסִּיתֶ֖ם",
+      "pron": "아셰르 닛사",
+      "lemmas": [
+        "אֲשֶׁר",
+        "נָסָה"
+      ],
+      "words": [
+        {
+          "word": "כַּאֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "נִסִּיתֶ֖ם",
+          "lemma": "נָסָה",
+          "strong": "H5254",
+          "pron": "닛사"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 6:16",
+        "deuteronomy 33:8",
+        "psalms 95:9"
       ],
       "glossKo": ""
     }

@@ -2,7 +2,7 @@
   "lemma": "עֶבֶד",
   "pron": "에벧",
   "strong": "H5651",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עֶבֶד",
     "strong": "H5650",
@@ -12,13 +12,98 @@
     {
       "lemma": "עֶבֶד",
       "strong": "H5650",
-      "pron": "르에벧",
+      "pron": "에벧",
       "glossKo": "종"
+    },
+    {
+      "lemma": "עַבְדִיאֵל",
+      "strong": "H5661",
+      "pron": "압디엘",
+      "glossKo": "압디엘"
+    },
+    {
+      "lemma": "עֶבֶד מֶלֶךְ",
+      "strong": "H5663",
+      "pron": "에벧",
+      "glossKo": "에벳멜렉"
     }
   ],
   "defEn": "Ebed",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "judges": 5,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶּן עֶ֨בֶד֙",
+      "pron": "바님 에벧",
+      "lemmas": [
+        "בֵּן",
+        "עֶבֶד"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עֶ֨בֶד֙",
+          "lemma": "עֶבֶד",
+          "strong": "H5651",
+          "pron": "에벧"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 9:26",
+        "judges 9:28",
+        "judges 9:30",
+        "judges 9:31",
+        "judges 9:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גַּ֤עַל בֶּן עֶ֨בֶד֙",
+      "pron": "가알 바님 에벧",
+      "lemmas": [
+        "גַּעַל",
+        "בֵּן",
+        "עֶבֶד"
+      ],
+      "words": [
+        {
+          "word": "גַּ֤עַל",
+          "lemma": "גַּעַל",
+          "strong": "H1603",
+          "pron": "가알"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עֶ֨בֶד֙",
+          "lemma": "עֶבֶד",
+          "strong": "H5651",
+          "pron": "에벧"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 9:26",
+        "judges 9:28",
+        "judges 9:30",
+        "judges 9:31",
+        "judges 9:35"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "צַעֲקָה",
-  "pron": "차아카트",
+  "pron": "학케차아카타흐",
   "strong": "H6818",
   "posKo": "명사",
   "root": {
@@ -12,16 +12,112 @@
     {
       "lemma": "צָעַק",
       "strong": "H6817",
-      "pron": "차아쿠",
+      "pron": "초아킴",
       "glossKo": "부르짖다"
     }
   ],
   "defEn": "shriek",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 21,
   "byBook": {
+    "exodus": 5,
+    "jeremiah": 4,
     "genesis": 3,
-    "psalms": 1
+    "job": 3,
+    "samuel1": 2,
+    "isaiah": 1,
+    "nehemiah": 1,
+    "psalms": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "ק֣וֹל הַצְּעָקָ֔ה",
+      "pron": "콜 학케차아카타흐",
+      "lemmas": [
+        "קוֹל",
+        "צַעֲקָה"
+      ],
+      "words": [
+        {
+          "word": "ק֣וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        },
+        {
+          "word": "הַצְּעָקָ֔ה",
+          "lemma": "צַעֲקָה",
+          "strong": "H6818",
+          "pron": "학케차아카타흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 4:14",
+        "jeremiah 25:36",
+        "jeremiah 48:3",
+        "zephaniah 1:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָֽיְתָ֛ה צְעָקָ֥ה",
+      "pron": "하에타 학케차아카타흐",
+      "lemmas": [
+        "הָיָה",
+        "צַעֲקָה"
+      ],
+      "words": [
+        {
+          "word": "וְהָֽיְתָ֛ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "צְעָקָ֥ה",
+          "lemma": "צַעֲקָה",
+          "strong": "H6818",
+          "pron": "학케차아카타흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 11:6",
+        "exodus 12:30",
+        "nehemiah 5:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "צְעָקָ֥ה גְדֹלָ֖ה",
+      "pron": "학케차아카타흐 아게돌림",
+      "lemmas": [
+        "צַעֲקָה",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "צְעָקָ֥ה",
+          "lemma": "צַעֲקָה",
+          "strong": "H6818",
+          "pron": "학케차아카타흐"
+        },
+        {
+          "word": "גְדֹלָ֖ה",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 27:34",
+        "exodus 11:6",
+        "exodus 12:30"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

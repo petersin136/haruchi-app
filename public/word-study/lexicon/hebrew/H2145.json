@@ -12,50 +12,63 @@
     {
       "lemma": "אַזְכָּרָה",
       "strong": "H234",
-      "pron": "",
-      "glossKo": "기념물"
+      "pron": "앗카라타흐",
+      "glossKo": "그녀의 기념물"
     },
     {
       "lemma": "דְּכַר",
       "strong": "H1798",
-      "pron": "",
+      "pron": "브디케린",
       "glossKo": "수컷(아람)"
     },
     {
       "lemma": "זָכוּר",
       "strong": "H2138",
-      "pron": "",
-      "glossKo": "남자"
+      "pron": "제쿠레카",
+      "glossKo": "너의 남자"
     },
     {
       "lemma": "זַכּוּר",
       "strong": "H2139",
-      "pron": "",
+      "pron": "작쿠르",
       "glossKo": "사굴"
     },
     {
       "lemma": "זָכַר",
       "strong": "H2142",
-      "pron": "팃케레누",
-      "glossKo": "그에게 기억하다"
+      "pron": "바잇코르",
+      "glossKo": "기억하다"
     },
     {
       "lemma": "זֵכֶר",
       "strong": "H2143",
-      "pron": "지케레카",
-      "glossKo": "너의 기억"
+      "pron": "지케리",
+      "glossKo": "나의 기억"
     }
   ],
   "defEn": "remembered; male",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 82,
   "byBook": {
-    "genesis": 14
+    "leviticus": 18,
+    "numbers": 18,
+    "genesis": 14,
+    "ezra": 12,
+    "exodus": 4,
+    "judges": 3,
+    "chronicles2": 2,
+    "deuteronomy": 2,
+    "jeremiah": 2,
+    "joshua": 2,
+    "kings1": 2,
+    "ezekiel": 1,
+    "isaiah": 1,
+    "malachi": 1
   },
   "phrases": [
     {
-      "hebrew": "כָּל זָכָֽר",
-      "pron": "브콜 자카르",
+      "hebrew": "כָּל זָכָ֖ר",
+      "pron": "칼 자카르",
       "lemmas": [
         "כֹּל",
         "זָכָר"
@@ -65,16 +78,16 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
-          "word": "זָכָֽר",
+          "word": "זָכָ֖ר",
           "lemma": "זָכָר",
           "strong": "H2145",
           "pron": "자카르"
         }
       ],
-      "count": 7,
+      "count": 27,
       "refs": [
         "genesis 17:10",
         "genesis 17:12",
@@ -82,7 +95,92 @@
         "genesis 34:15",
         "genesis 34:22",
         "genesis 34:24",
-        "genesis 34:25"
+        "genesis 34:25",
+        "exodus 12:48",
+        "leviticus 6:18",
+        "leviticus 6:29",
+        "leviticus 7:6",
+        "numbers 1:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זָכָ֔ר מִבֶּן",
+      "pron": "자카르 바님",
+      "lemmas": [
+        "זָכָר",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "זָכָ֔ר",
+          "lemma": "זָכָר",
+          "strong": "H2145",
+          "pron": "자카르"
+        },
+        {
+          "word": "מִבֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 12:5",
+        "leviticus 6:18",
+        "leviticus 27:3",
+        "numbers 1:20",
+        "numbers 1:22",
+        "numbers 3:15",
+        "numbers 3:22",
+        "numbers 3:28",
+        "numbers 3:34",
+        "numbers 3:39",
+        "numbers 3:40",
+        "numbers 26:62"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל זָכָ֔ר מִבֶּן",
+      "pron": "칼 자카르 바님",
+      "lemmas": [
+        "כֹּל",
+        "זָכָר",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "זָכָ֔ר",
+          "lemma": "זָכָר",
+          "strong": "H2145",
+          "pron": "자카르"
+        },
+        {
+          "word": "מִבֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "leviticus 6:18",
+        "numbers 1:20",
+        "numbers 1:22",
+        "numbers 3:15",
+        "numbers 3:22",
+        "numbers 3:28",
+        "numbers 3:34",
+        "numbers 3:39",
+        "numbers 26:62"
       ],
       "glossKo": ""
     },
@@ -107,20 +205,21 @@
           "pron": "우네케바"
         }
       ],
-      "count": 6,
+      "count": 7,
       "refs": [
         "genesis 1:27",
         "genesis 5:2",
         "genesis 6:19",
         "genesis 7:3",
         "genesis 7:9",
-        "genesis 7:16"
+        "genesis 7:16",
+        "leviticus 15:33"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "הִמּ֥וֹל כָּל זָכָֽר",
-      "pron": "이테몰랄루 브콜 자카르",
+      "pron": "힘몰 칼 자카르",
       "lemmas": [
         "מוּל",
         "כֹּל",
@@ -131,13 +230,13 @@
           "word": "הִמּ֥וֹל",
           "lemma": "מוּל",
           "strong": "H4135",
-          "pron": "이테몰랄루"
+          "pron": "힘몰"
         },
         {
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
           "word": "זָכָֽר",
@@ -146,13 +245,14 @@
           "pron": "자카르"
         }
       ],
-      "count": 5,
+      "count": 6,
       "refs": [
         "genesis 17:10",
         "genesis 17:12",
         "genesis 34:15",
         "genesis 34:22",
-        "genesis 34:24"
+        "genesis 34:24",
+        "exodus 12:48"
       ],
       "glossKo": ""
     }

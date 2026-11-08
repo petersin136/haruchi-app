@@ -2,7 +2,7 @@
   "lemma": "מְשֻׁלָּם",
   "pron": "메슐람",
   "strong": "H4918",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁלַם",
     "strong": "H7999",
@@ -12,25 +12,31 @@
     {
       "lemma": "מְשִׁלֵּמוֹת",
       "strong": "H4919",
-      "pron": "",
+      "pron": "메실레모트",
       "glossKo": "므실레못"
     },
     {
       "lemma": "מְשֶׁלֶמְיָה",
       "strong": "H4920",
-      "pron": "",
+      "pron": "메셸렘아",
       "glossKo": "므셀레먀"
     },
     {
       "lemma": "מְשִׁלֵּמִית",
       "strong": "H4921",
-      "pron": "",
+      "pron": "메실레미트",
       "glossKo": "므실레밋"
+    },
+    {
+      "lemma": "מְשֻׁלֶּמֶת",
+      "strong": "H4922",
+      "pron": "메슐레메트",
+      "glossKo": "므술레멧"
     },
     {
       "lemma": "שׁוּלַמִּית",
       "strong": "H7759",
-      "pron": "",
+      "pron": "아슐람미트",
       "glossKo": "술람미 여인"
     },
     {
@@ -42,7 +48,185 @@
   ],
   "defEn": "Meshullam",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 25,
+  "byBook": {
+    "nehemiah": 13,
+    "chronicles1": 7,
+    "ezra": 3,
+    "chronicles2": 1,
+    "kings2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "מְשֻׁלָּ֣ם בֶּן",
+      "pron": "메슐람 바님",
+      "lemmas": [
+        "מְשֻׁלָּם",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "מְשֻׁלָּ֣ם",
+          "lemma": "מְשֻׁלָּם",
+          "strong": "H4918",
+          "pron": "메슐람"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "chronicles1 9:7",
+        "chronicles1 9:8",
+        "chronicles1 9:11",
+        "chronicles1 9:12",
+        "nehemiah 3:4",
+        "nehemiah 3:6",
+        "nehemiah 3:30",
+        "nehemiah 6:18",
+        "nehemiah 11:7",
+        "nehemiah 11:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן מְשֻׁלָּ֣ם",
+      "pron": "바님 메슐람",
+      "lemmas": [
+        "בֵּן",
+        "מְשֻׁלָּם"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "מְשֻׁלָּ֣ם",
+          "lemma": "מְשֻׁלָּם",
+          "strong": "H4918",
+          "pron": "메슐람"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings2 22:3",
+        "chronicles1 9:7",
+        "chronicles1 9:11",
+        "chronicles1 9:12",
+        "nehemiah 11:7",
+        "nehemiah 11:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן מְשֻׁלָּ֣ם בֶּן",
+      "pron": "바님 메슐람 바님",
+      "lemmas": [
+        "בֵּן",
+        "מְשֻׁלָּם",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "מְשֻׁלָּ֣ם",
+          "lemma": "מְשֻׁלָּם",
+          "strong": "H4918",
+          "pron": "메슐람"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "chronicles1 9:7",
+        "chronicles1 9:11",
+        "chronicles1 9:12",
+        "nehemiah 11:7",
+        "nehemiah 11:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּזְכַרְיָ֧ה וּמְשֻׁלָּ֛ם",
+      "pron": "제카레아 메슐람",
+      "lemmas": [
+        "זְכַרְיָה",
+        "מְשֻׁלָּם"
+      ],
+      "words": [
+        {
+          "word": "וּזְכַרְיָ֧ה",
+          "lemma": "זְכַרְיָה",
+          "strong": "H2148",
+          "pron": "제카레아"
+        },
+        {
+          "word": "וּמְשֻׁלָּ֛ם",
+          "lemma": "מְשֻׁלָּם",
+          "strong": "H4918",
+          "pron": "메슐람"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles2 34:12",
+        "ezra 8:16",
+        "nehemiah 8:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְשֻׁלָּ֥ם בֶּן בֶּרֶכְיָ֖ה",
+      "pron": "메슐람 바님 우베레케아",
+      "lemmas": [
+        "מְשֻׁלָּם",
+        "בֵּן",
+        "בֶּרֶכְיָה"
+      ],
+      "words": [
+        {
+          "word": "מְשֻׁלָּ֥ם",
+          "lemma": "מְשֻׁלָּם",
+          "strong": "H4918",
+          "pron": "메슐람"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "בֶּרֶכְיָ֖ה",
+          "lemma": "בֶּרֶכְיָה",
+          "strong": "H1296",
+          "pron": "우베레케아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "nehemiah 3:4",
+        "nehemiah 3:30",
+        "nehemiah 6:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

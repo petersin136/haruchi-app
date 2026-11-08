@@ -1,8 +1,8 @@
 {
   "lemma": "אִישׁ־בֹּשֶׁת",
-  "pron": "잇보셰트",
+  "pron": "이쉬",
   "strong": "H378",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אִישׁ",
     "strong": "H376",
@@ -12,19 +12,19 @@
     {
       "lemma": "אִישׁ",
       "strong": "H376",
-      "pron": "하이쉬",
+      "pron": "메이쉬",
       "glossKo": "사람"
     },
     {
       "lemma": "אִישׁ",
       "strong": "H377",
-      "pron": "",
-      "glossKo": "사내답게 행하다"
+      "pron": "브히테오샤슈",
+      "glossKo": "사내답게 행하는 이"
     },
     {
       "lemma": "אִישְׁהוֹד",
       "strong": "H379",
-      "pron": "",
+      "pron": "이셰혿",
       "glossKo": "이스홋"
     },
     {
@@ -48,7 +48,191 @@
   ],
   "defEn": "Ish-Bosheth",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 22,
+  "byBook": {
+    "samuel2": 22
+  },
+  "phrases": [
+    {
+      "hebrew": "אִֽישׁ בֹּ֣שֶׁת",
+      "pron": "이쉬 이쉬",
+      "lemmas": [
+        "אִישׁ־בֹּשֶׁת",
+        "אִישׁ־בֹּשֶׁת"
+      ],
+      "words": [
+        {
+          "word": "אִֽישׁ",
+          "lemma": "אִישׁ־בֹּשֶׁת",
+          "strong": "H378",
+          "pron": "이쉬"
+        },
+        {
+          "word": "בֹּ֣שֶׁת",
+          "lemma": "אִישׁ־בֹּשֶׁת",
+          "strong": "H378",
+          "pron": "이쉬"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "samuel2 2:8",
+        "samuel2 2:10",
+        "samuel2 2:12",
+        "samuel2 2:15",
+        "samuel2 3:8",
+        "samuel2 3:14",
+        "samuel2 3:15",
+        "samuel2 4:5",
+        "samuel2 4:8",
+        "samuel2 4:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִֽישׁ בֹּ֣שֶׁת בֶּן",
+      "pron": "이쉬 이쉬 바님",
+      "lemmas": [
+        "אִישׁ־בֹּשֶׁת",
+        "אִישׁ־בֹּשֶׁת",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "אִֽישׁ",
+          "lemma": "אִישׁ־בֹּשֶׁת",
+          "strong": "H378",
+          "pron": "이쉬"
+        },
+        {
+          "word": "בֹּ֣שֶׁת",
+          "lemma": "אִישׁ־בֹּשֶׁת",
+          "strong": "H378",
+          "pron": "이쉬"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "samuel2 2:8",
+        "samuel2 2:10",
+        "samuel2 2:12",
+        "samuel2 2:15",
+        "samuel2 3:14",
+        "samuel2 4:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֹּ֨שֶׁת֙ בֶּן",
+      "pron": "이쉬 바님",
+      "lemmas": [
+        "אִישׁ־בֹּשֶׁת",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "בֹּ֨שֶׁת֙",
+          "lemma": "אִישׁ־בֹּשֶׁת",
+          "strong": "H378",
+          "pron": "이쉬"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel2 2:8",
+        "samuel2 2:10",
+        "samuel2 2:12",
+        "samuel2 2:15",
+        "samuel2 3:14",
+        "samuel2 4:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֹּ֨שֶׁת֙ בֶּן שָׁא֔וּל",
+      "pron": "이쉬 바님 샤울",
+      "lemmas": [
+        "אִישׁ־בֹּשֶׁת",
+        "בֵּן",
+        "שָׁאוּל"
+      ],
+      "words": [
+        {
+          "word": "בֹּ֨שֶׁת֙",
+          "lemma": "אִישׁ־בֹּשֶׁת",
+          "strong": "H378",
+          "pron": "이쉬"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "שָׁא֔וּל",
+          "lemma": "שָׁאוּל",
+          "strong": "H7586",
+          "pron": "샤울"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel2 2:8",
+        "samuel2 2:10",
+        "samuel2 2:12",
+        "samuel2 2:15",
+        "samuel2 3:14",
+        "samuel2 4:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רֹ֨אשׁ אִֽישׁ בֹּ֥שֶׁת",
+      "pron": "라심 이쉬 이쉬",
+      "lemmas": [
+        "רֹאשׁ",
+        "אִישׁ־בֹּשֶׁת",
+        "אִישׁ־בֹּשֶׁת"
+      ],
+      "words": [
+        {
+          "word": "רֹ֨אשׁ",
+          "lemma": "רֹאשׁ",
+          "strong": "H7218",
+          "pron": "라심"
+        },
+        {
+          "word": "אִֽישׁ",
+          "lemma": "אִישׁ־בֹּשֶׁת",
+          "strong": "H378",
+          "pron": "이쉬"
+        },
+        {
+          "word": "בֹּ֥שֶׁת",
+          "lemma": "אִישׁ־בֹּשֶׁת",
+          "strong": "H378",
+          "pron": "이쉬"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel2 4:8",
+        "samuel2 4:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

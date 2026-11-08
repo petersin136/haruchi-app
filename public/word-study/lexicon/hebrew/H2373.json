@@ -1,8 +1,8 @@
 {
   "lemma": "חָזֶה",
-  "pron": "하제",
+  "pron": "헤하제",
   "strong": "H2373",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָזָה",
     "strong": "H2372",
@@ -12,37 +12,214 @@
     {
       "lemma": "הָזָה",
       "strong": "H1957",
-      "pron": "",
+      "pron": "호짐",
       "glossKo": "꿈을 꾸다"
+    },
+    {
+      "lemma": "חֲדִי",
+      "strong": "H2306",
+      "pron": "하도히",
+      "glossKo": "그의 가슴(아람)"
     },
     {
       "lemma": "חֲזָא",
       "strong": "H2370",
-      "pron": "",
+      "pron": "르메헤제",
       "glossKo": "보다(아람)"
     },
     {
       "lemma": "חֲזָאֵל",
       "strong": "H2371",
-      "pron": "",
+      "pron": "하자엘",
       "glossKo": "하사엘"
     },
     {
       "lemma": "חָזָה",
       "strong": "H2372",
-      "pron": "예헤주",
+      "pron": "테헤제",
       "glossKo": "보다"
     },
     {
       "lemma": "חֹזֶה",
       "strong": "H2374",
-      "pron": "",
+      "pron": "호제",
       "glossKo": "선견자"
     }
   ],
   "defEn": "breast; seen",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "leviticus": 9,
+    "exodus": 2,
+    "numbers": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶת הֶֽחָזֶ֗ה",
+      "pron": "에트 헤하제",
+      "lemmas": [
+        "אֵת",
+        "חָזֶה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הֶֽחָזֶ֗ה",
+          "lemma": "חָזֶה",
+          "strong": "H2373",
+          "pron": "헤하제"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 29:26",
+        "exodus 29:27",
+        "leviticus 7:30",
+        "leviticus 7:34",
+        "leviticus 8:29",
+        "leviticus 9:21",
+        "leviticus 10:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲזֵ֨ה הַתְּנוּפָ֜ה",
+      "pron": "헤하제 테누파",
+      "lemmas": [
+        "חָזֶה",
+        "תְּנוּפָה"
+      ],
+      "words": [
+        {
+          "word": "חֲזֵ֨ה",
+          "lemma": "חָזֶה",
+          "strong": "H2373",
+          "pron": "헤하제"
+        },
+        {
+          "word": "הַתְּנוּפָ֜ה",
+          "lemma": "תְּנוּפָה",
+          "strong": "H8573",
+          "pron": "테누파"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 29:27",
+        "leviticus 7:34",
+        "leviticus 10:14",
+        "leviticus 10:15",
+        "numbers 6:20",
+        "numbers 18:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֣ת חֲזֵ֣ה הַתְּנוּפָ֗ה",
+      "pron": "에트 헤하제 테누파",
+      "lemmas": [
+        "אֵת",
+        "חָזֶה",
+        "תְּנוּפָה"
+      ],
+      "words": [
+        {
+          "word": "אֵ֣ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "חֲזֵ֣ה",
+          "lemma": "חָזֶה",
+          "strong": "H2373",
+          "pron": "헤하제"
+        },
+        {
+          "word": "הַתְּנוּפָ֗ה",
+          "lemma": "תְּנוּפָה",
+          "strong": "H8573",
+          "pron": "테누파"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 29:27",
+        "leviticus 7:34",
+        "leviticus 10:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲזֵ֨ה הַתְּנוּפָ֜ה וְאֵ֣ת",
+      "pron": "헤하제 테누파 에트",
+      "lemmas": [
+        "חָזֶה",
+        "תְּנוּפָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "חֲזֵ֨ה",
+          "lemma": "חָזֶה",
+          "strong": "H2373",
+          "pron": "헤하제"
+        },
+        {
+          "word": "הַתְּנוּפָ֜ה",
+          "lemma": "תְּנוּפָה",
+          "strong": "H8573",
+          "pron": "테누파"
+        },
+        {
+          "word": "וְאֵ֣ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 29:27",
+        "leviticus 7:34",
+        "leviticus 10:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל הֶֽחָזֶה֙",
+      "pron": "알 헤하제",
+      "lemmas": [
+        "עַל",
+        "חָזֶה"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הֶֽחָזֶה֙",
+          "lemma": "חָזֶה",
+          "strong": "H2373",
+          "pron": "헤하제"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 7:30",
+        "leviticus 9:20",
+        "numbers 6:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

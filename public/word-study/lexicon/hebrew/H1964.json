@@ -12,74 +12,237 @@
     {
       "lemma": "הֵיכַל",
       "strong": "H1965",
-      "pron": "",
+      "pron": "헤켈라",
       "glossKo": "성전(아람)"
     },
     {
       "lemma": "יְהוּכַל",
       "strong": "H3081",
-      "pron": "",
+      "pron": "예후칼",
       "glossKo": "여후갈"
     },
     {
       "lemma": "יָכֹל",
       "strong": "H3201",
-      "pron": "예칼티브",
-      "glossKo": "그에게 할 수 있다"
+      "pron": "야켈루",
+      "glossKo": "할 수 있다"
     },
     {
       "lemma": "יְכֵל",
       "strong": "H3202",
-      "pron": "",
+      "pron": "유칼",
       "glossKo": "할 수 있다(아람)"
     },
     {
       "lemma": "יְכׇלְיָה",
       "strong": "H3203",
-      "pron": "",
+      "pron": "예칼아후",
       "glossKo": "여골리야"
     },
     {
       "lemma": "מִיכָל",
       "strong": "H4323",
-      "pron": "",
+      "pron": "미칼",
       "glossKo": "그릇"
     }
   ],
   "defEn": "palace; temple",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 80,
   "byBook": {
-    "psalms": 13
+    "psalms": 13,
+    "ezekiel": 10,
+    "chronicles2": 8,
+    "kings1": 7,
+    "jeremiah": 6,
+    "isaiah": 5,
+    "zechariah": 5,
+    "kings2": 4,
+    "ezra": 3,
+    "nehemiah": 3,
+    "haggai": 2,
+    "jonah": 2,
+    "samuel1": 2,
+    "amos": 1,
+    "daniel": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "joel": 1,
+    "malachi": 1,
+    "micah": 1,
+    "nahum": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "הֵֽיכַל קָ֝דְשְׁךָ֗",
-      "pron": "헤칼 칻시위",
+      "hebrew": "בְּהֵיכַ֣ל יְהוָ֔ה",
+      "pron": "헤칼 여호와",
+      "lemmas": [
+        "הֵיכָל",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "בְּהֵיכַ֣ל",
+          "lemma": "הֵיכָל",
+          "strong": "H1964",
+          "pron": "헤칼"
+        },
+        {
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "samuel1 1:9",
+        "samuel1 3:3",
+        "kings2 18:16",
+        "kings2 23:4",
+        "kings2 24:13",
+        "chronicles2 26:16",
+        "chronicles2 27:2",
+        "chronicles2 29:16",
+        "ezra 3:6",
+        "ezra 3:10",
+        "ezra 4:1",
+        "jeremiah 7:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל הֵיכַ֣ל",
+      "pron": "엘 헤칼",
+      "lemmas": [
+        "אֵל",
+        "הֵיכָל"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "הֵיכַ֣ל",
+          "lemma": "הֵיכָל",
+          "strong": "H1964",
+          "pron": "헤칼"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "chronicles2 26:16",
+        "chronicles2 27:2",
+        "nehemiah 6:11",
+        "psalms 5:7",
+        "psalms 138:2",
+        "ezekiel 8:16",
+        "ezekiel 41:1",
+        "jonah 2:4",
+        "jonah 2:7",
+        "malachi 3:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֵיכַ֖ל קָדְשֶֽׁךָ",
+      "pron": "헤칼 코데쉬",
       "lemmas": [
         "הֵיכָל",
         "קֹדֶשׁ"
       ],
       "words": [
         {
-          "word": "הֵֽיכַל",
+          "word": "הֵיכַ֖ל",
           "lemma": "הֵיכָל",
           "strong": "H1964",
           "pron": "헤칼"
         },
         {
-          "word": "קָ֝דְשְׁךָ֗",
+          "word": "קָדְשֶֽׁךָ",
           "lemma": "קֹדֶשׁ",
           "strong": "H6944",
-          "pron": "칻시위"
+          "pron": "코데쉬"
         }
       ],
-      "count": 4,
+      "count": 9,
       "refs": [
         "psalms 5:7",
         "psalms 11:4",
         "psalms 79:1",
-        "psalms 138:2"
+        "psalms 138:2",
+        "ezekiel 41:23",
+        "jonah 2:4",
+        "jonah 2:7",
+        "micah 1:2",
+        "habakkuk 2:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הֵיכַ֣ל",
+      "pron": "에트 헤칼",
+      "lemmas": [
+        "אֵת",
+        "הֵיכָל"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הֵיכַ֣ל",
+          "lemma": "הֵיכָל",
+          "strong": "H1964",
+          "pron": "헤칼"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezra 3:10",
+        "psalms 79:1",
+        "isaiah 6:1",
+        "zechariah 6:12",
+        "zechariah 6:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּהֵיכַ֖ל מֶ֥לֶךְ",
+      "pron": "헤칼 멜레크",
+      "lemmas": [
+        "הֵיכָל",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "בְּהֵיכַ֖ל",
+          "lemma": "הֵיכָל",
+          "strong": "H1964",
+          "pron": "헤칼"
+        },
+        {
+          "word": "מֶ֥לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings2 20:18",
+        "psalms 45:15",
+        "proverbs 30:28",
+        "isaiah 39:7",
+        "daniel 1:4"
       ],
       "glossKo": ""
     }

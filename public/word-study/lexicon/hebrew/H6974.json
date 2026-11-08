@@ -1,6 +1,6 @@
 {
   "lemma": "קוּץ",
-  "pron": "헤키초티",
+  "pron": "메키츠",
   "strong": "H6974",
   "posKo": "동사",
   "root": {
@@ -12,15 +12,56 @@
     {
       "lemma": "יָקַץ",
       "strong": "H3364",
-      "pron": "바이카츠",
+      "pron": "바이케츠",
       "glossKo": "깨다"
     }
   ],
   "defEn": "awake",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 23,
   "byBook": {
-    "psalms": 7
+    "psalms": 7,
+    "isaiah": 3,
+    "jeremiah": 3,
+    "habakkuk": 2,
+    "proverbs": 2,
+    "daniel": 1,
+    "ezekiel": 1,
+    "job": 1,
+    "joel": 1,
+    "kings2": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְלֹ֣א יָקִ֑יצוּ",
+      "pron": "로 메키츠",
+      "lemmas": [
+        "לֹא",
+        "קוּץ"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יָקִ֑יצוּ",
+          "lemma": "קוּץ",
+          "strong": "H6974",
+          "pron": "메키츠"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 4:31",
+        "job 14:12",
+        "jeremiah 51:39",
+        "jeremiah 51:57"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

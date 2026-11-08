@@ -2,7 +2,7 @@
   "lemma": "מַחְמָד",
   "pron": "마헤맏",
   "strong": "H4261",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָמַד",
     "strong": "H2530",
@@ -12,25 +12,97 @@
     {
       "lemma": "חָמַד",
       "strong": "H2530",
-      "pron": "아네헤마딤",
+      "pron": "네헤맏",
       "glossKo": "탐내다"
     },
     {
       "lemma": "חֶמֶד",
       "strong": "H2531",
-      "pron": "",
+      "pron": "헤멛",
       "glossKo": "소망"
     },
     {
       "lemma": "מַחְמֻד",
       "strong": "H4262",
-      "pron": "",
-      "glossKo": "값진 것"
+      "pron": "마하무데하",
+      "glossKo": "그녀의 값진 것"
     }
   ],
   "defEn": "delightful; a delight",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "ezekiel": 3,
+    "lamentations": 3,
+    "hosea": 2,
+    "chronicles2": 1,
+    "isaiah": 1,
+    "joel": 1,
+    "kings1": 1,
+    "songofsolomon": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "כָּל מַחְמַ֣ד",
+      "pron": "칼 마헤맏",
+      "lemmas": [
+        "כֹּל",
+        "מַחְמָד"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מַחְמַ֣ד",
+          "lemma": "מַחְמָד",
+          "strong": "H4261",
+          "pron": "마헤맏"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 20:6",
+        "songofsolomon 5:16",
+        "isaiah 64:11",
+        "lamentations 1:10",
+        "lamentations 2:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַחְמַ֣ד עֵינֶ֔יךָ",
+      "pron": "마헤맏 에네켐",
+      "lemmas": [
+        "מַחְמָד",
+        "עַיִן"
+      ],
+      "words": [
+        {
+          "word": "מַחְמַ֣ד",
+          "lemma": "מַחְמָד",
+          "strong": "H4261",
+          "pron": "마헤맏"
+        },
+        {
+          "word": "עֵינֶ֔יךָ",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 20:6",
+        "lamentations 2:4",
+        "ezekiel 24:16",
+        "ezekiel 24:21",
+        "ezekiel 24:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

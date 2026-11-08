@@ -1,6 +1,6 @@
 {
   "lemma": "פֶּרֶץ",
-  "pron": "바페레츠",
+  "pron": "파레츠",
   "strong": "H6556",
   "posKo": "명사",
   "root": {
@@ -12,8 +12,8 @@
     {
       "lemma": "מִפְרָץ",
       "strong": "H4664",
-      "pron": "",
-      "glossKo": "갈라진 곳"
+      "pron": "밉라차으브",
+      "glossKo": "그의 갈라진 곳"
     },
     {
       "lemma": "פְּרִיץ",
@@ -24,16 +24,73 @@
     {
       "lemma": "פָּרַץ",
       "strong": "H6555",
-      "pron": "페라쳇타누",
-      "glossKo": "우리를 터뜨리다"
+      "pron": "우파라쳇타",
+      "glossKo": "터뜨리다"
+    },
+    {
+      "lemma": "פֶּרֶץ",
+      "strong": "H6557",
+      "pron": "파레츠",
+      "glossKo": "베레스"
+    },
+    {
+      "lemma": "פְּרָצִים",
+      "strong": "H6559",
+      "pron": "페라침",
+      "glossKo": "브라심"
+    },
+    {
+      "lemma": "פֶּרֶץ עֻזָּא",
+      "strong": "H6560",
+      "pron": "페레츠",
+      "glossKo": "베레스웃사"
     }
   ],
   "defEn": "break",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 19,
   "byBook": {
+    "job": 3,
+    "amos": 2,
+    "chronicles1": 2,
+    "ezekiel": 2,
+    "isaiah": 2,
     "psalms": 2,
-    "genesis": 1
+    "samuel2": 2,
+    "genesis": 1,
+    "judges": 1,
+    "kings1": 1,
+    "nehemiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יְהוָ֛ה פֶּ֖רֶץ",
+      "pron": "여호와 파레츠",
+      "lemmas": [
+        "יְהֹוָה",
+        "פֶּרֶץ"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֛ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "פֶּ֖רֶץ",
+          "lemma": "פֶּרֶץ",
+          "strong": "H6556",
+          "pron": "파레츠"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 21:15",
+        "samuel2 6:8",
+        "chronicles1 13:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

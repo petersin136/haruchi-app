@@ -1,6 +1,6 @@
 {
   "lemma": "מַעֲרָב",
-  "pron": "우미마아랍",
+  "pron": "브라마아랍",
   "strong": "H4628",
   "posKo": "명사",
   "root": {
@@ -12,39 +12,73 @@
     {
       "lemma": "עָרַב",
       "strong": "H6150",
-      "pron": "",
+      "pron": "라아롭",
       "glossKo": "어두워지다"
     },
     {
       "lemma": "עֲרָב",
       "strong": "H6152",
-      "pron": "",
+      "pron": "하에렙",
       "glossKo": "아라비아"
     },
     {
       "lemma": "עֶרֶב",
       "strong": "H6153",
-      "pron": "바에렙",
+      "pron": "에렙",
       "glossKo": "저녁"
     },
     {
       "lemma": "עֹרֵב",
       "strong": "H6158",
-      "pron": "오렙",
+      "pron": "하오렙",
       "glossKo": "까마귀"
     },
     {
       "lemma": "עֲרָבָה",
       "strong": "H6160",
-      "pron": "바아라보트",
+      "pron": "브아레보트",
       "glossKo": "광야"
     }
   ],
   "defEn": "west; evening",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 14,
   "byBook": {
-    "psalms": 3
+    "chronicles1": 5,
+    "isaiah": 3,
+    "psalms": 3,
+    "chronicles2": 2,
+    "daniel": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לַמִּזְרָ֖ח וְלַֽמַּעֲרָֽב",
+      "pron": "밋라하 브라마아랍",
+      "lemmas": [
+        "מִזְרָח",
+        "מַעֲרָב"
+      ],
+      "words": [
+        {
+          "word": "לַמִּזְרָ֖ח",
+          "lemma": "מִזְרָח",
+          "strong": "H4217",
+          "pron": "밋라하"
+        },
+        {
+          "word": "וְלַֽמַּעֲרָֽב",
+          "lemma": "מַעֲרָב",
+          "strong": "H4628",
+          "pron": "브라마아랍"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 12:15",
+        "psalms 103:12",
+        "psalms 107:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

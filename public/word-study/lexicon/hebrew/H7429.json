@@ -1,6 +1,6 @@
 {
   "lemma": "רָמַס",
-  "pron": "브이레못",
+  "pron": "바이렘수후",
   "strong": "H7429",
   "posKo": "동사",
   "root": null,
@@ -8,15 +8,53 @@
     {
       "lemma": "מִרְמָס",
       "strong": "H4823",
-      "pron": "",
+      "pron": "르미레맛",
       "glossKo": "짓밟힘"
     }
   ],
   "defEn": "tread",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 19,
   "byBook": {
-    "psalms": 2
+    "isaiah": 6,
+    "kings2": 4,
+    "daniel": 2,
+    "ezekiel": 2,
+    "psalms": 2,
+    "chronicles2": 1,
+    "micah": 1,
+    "nahum": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַתִּרְמֹ֖ס אֶת",
+      "pron": "바이렘수후 에트",
+      "lemmas": [
+        "רָמַס",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַתִּרְמֹ֖ס",
+          "lemma": "רָמַס",
+          "strong": "H7429",
+          "pron": "바이렘수후"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 7:20",
+        "kings2 14:9",
+        "chronicles2 25:18",
+        "ezekiel 26:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,20 +12,20 @@
     {
       "lemma": "מַרְאָשָׁה",
       "strong": "H4761",
-      "pron": "",
-      "glossKo": "베개 자리"
+      "pron": "마레아쇼테켐",
+      "glossKo": "너희의 베개 자리"
     },
     {
       "lemma": "רֵאשׁ",
       "strong": "H7217",
-      "pron": "",
-      "glossKo": "머리(아람)"
+      "pron": "베라셰으홈",
+      "glossKo": "그들의 머리(아람)"
     },
     {
       "lemma": "רֹאשׁ",
       "strong": "H7218",
-      "pron": "로시위",
-      "glossKo": "나의 머리"
+      "pron": "라심",
+      "glossKo": "머리"
     },
     {
       "lemma": "רֹאשׁ",
@@ -36,21 +36,93 @@
     {
       "lemma": "רִאשָׁה",
       "strong": "H7221",
-      "pron": "",
-      "glossKo": "시작"
+      "pron": "메리쇼테켐",
+      "glossKo": "너희의 시작"
     },
     {
       "lemma": "רֹאשָׁה",
       "strong": "H7222",
-      "pron": "",
+      "pron": "하로샤",
       "glossKo": "꼭대기"
     }
   ],
   "defEn": "poisonous plant; poppy; poison",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 12,
   "byBook": {
+    "deuteronomy": 3,
+    "jeremiah": 3,
+    "lamentations": 2,
+    "amos": 1,
+    "hosea": 1,
+    "job": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיַּשְׁקֵ֣נוּ מֵי רֹ֔אשׁ",
+      "pron": "브히셰카 아마임 로쉬",
+      "lemmas": [
+        "שָׁקָה",
+        "מַיִם",
+        "רֹאשׁ"
+      ],
+      "words": [
+        {
+          "word": "וַיַּשְׁקֵ֣נוּ",
+          "lemma": "שָׁקָה",
+          "strong": "H8248",
+          "pron": "브히셰카"
+        },
+        {
+          "word": "מֵי",
+          "lemma": "מַיִם",
+          "strong": "H4325",
+          "pron": "아마임"
+        },
+        {
+          "word": "רֹ֔אשׁ",
+          "lemma": "רֹאשׁ",
+          "strong": "H7219",
+          "pron": "로쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 8:14",
+        "jeremiah 9:15",
+        "jeremiah 23:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵי רֹ֔אשׁ",
+      "pron": "아마임 로쉬",
+      "lemmas": [
+        "מַיִם",
+        "רֹאשׁ"
+      ],
+      "words": [
+        {
+          "word": "מֵי",
+          "lemma": "מַיִם",
+          "strong": "H4325",
+          "pron": "아마임"
+        },
+        {
+          "word": "רֹ֔אשׁ",
+          "lemma": "רֹאשׁ",
+          "strong": "H7219",
+          "pron": "로쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 8:14",
+        "jeremiah 9:15",
+        "jeremiah 23:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "גָּלוּת",
-  "pron": "갈루트",
+  "pron": "르갈루트",
   "strong": "H1546",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גָּלָה",
     "strong": "H1540",
@@ -12,37 +12,138 @@
     {
       "lemma": "גּוֹלָה",
       "strong": "H1473",
-      "pron": "",
+      "pron": "골레",
       "glossKo": "유배"
     },
     {
       "lemma": "גָּלָה",
       "strong": "H1540",
-      "pron": "바익갈루",
+      "pron": "바이텍갈",
       "glossKo": "드러내다"
     },
     {
       "lemma": "גְּלָה",
       "strong": "H1541",
-      "pron": "",
+      "pron": "학리",
       "glossKo": "드러나다(아람)"
     },
     {
       "lemma": "גִּלֹה",
       "strong": "H1542",
-      "pron": "",
+      "pron": "브길로",
       "glossKo": "길로"
+    },
+    {
+      "lemma": "גָּלוּת",
+      "strong": "H1547",
+      "pron": "갈루타",
+      "glossKo": "유배(아람)"
     },
     {
       "lemma": "גִּלָּיוֹן",
       "strong": "H1549",
-      "pron": "",
+      "pron": "브아길오님",
       "glossKo": "기록판"
     }
   ],
   "defEn": "captivity; exiles",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 15,
+  "byBook": {
+    "jeremiah": 5,
+    "ezekiel": 3,
+    "amos": 2,
+    "isaiah": 2,
+    "obadiah": 2,
+    "kings2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "גָּל֣וּת יְהוּדָ֗ה",
+      "pron": "르갈루트 예후다",
+      "lemmas": [
+        "גָּלוּת",
+        "יְהוּדָה"
+      ],
+      "words": [
+        {
+          "word": "גָּל֣וּת",
+          "lemma": "גָּלוּת",
+          "strong": "H1546",
+          "pron": "르갈루트"
+        },
+        {
+          "word": "יְהוּדָ֗ה",
+          "lemma": "יְהוּדָה",
+          "strong": "H3063",
+          "pron": "예후다"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 24:5",
+        "jeremiah 28:4",
+        "jeremiah 29:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל גָּל֨וּת",
+      "pron": "칼 르갈루트",
+      "lemmas": [
+        "כֹּל",
+        "גָּלוּת"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "גָּל֨וּת",
+          "lemma": "גָּלוּת",
+          "strong": "H1546",
+          "pron": "르갈루트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 28:4",
+        "jeremiah 29:22",
+        "jeremiah 40:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁנָ֗ה לְגָלוּת֙",
+      "pron": "브샤님 르갈루트",
+      "lemmas": [
+        "שָׁנֶה",
+        "גָּלוּת"
+      ],
+      "words": [
+        {
+          "word": "שָׁנָ֗ה",
+          "lemma": "שָׁנֶה",
+          "strong": "H8141",
+          "pron": "브샤님"
+        },
+        {
+          "word": "לְגָלוּת֙",
+          "lemma": "גָּלוּת",
+          "strong": "H1546",
+          "pron": "르갈루트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 25:27",
+        "jeremiah 52:31",
+        "ezekiel 40:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "עֹפֶר",
-  "pron": "오페르",
+  "pron": "르오페르",
   "strong": "H6082",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָפַר",
     "strong": "H6080",
@@ -12,25 +12,170 @@
     {
       "lemma": "עוֹפֶרֶת",
       "strong": "H5777",
-      "pron": "",
+      "pron": "카오페레트",
       "glossKo": "납"
     },
     {
       "lemma": "עָפַר",
       "strong": "H6080",
-      "pron": "",
+      "pron": "브입파르",
       "glossKo": "흙먼지가 되다"
+    },
+    {
+      "lemma": "עֵפֶר",
+      "strong": "H6081",
+      "pron": "바에페르",
+      "glossKo": "에벨"
     },
     {
       "lemma": "עָפָר",
       "strong": "H6083",
-      "pron": "레아파르",
+      "pron": "아파르",
       "glossKo": "흙"
+    },
+    {
+      "lemma": "עׇפְרָה",
+      "strong": "H6084",
+      "pron": "브압라",
+      "glossKo": "오브라"
     }
   ],
   "defEn": "fawn",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "songofsolomon": 5
+  },
+  "phrases": [
+    {
+      "hebrew": "א֖וֹ לְעֹ֣פֶר",
+      "pron": "오 르오페르",
+      "lemmas": [
+        "אוֹ",
+        "עֹפֶר"
+      ],
+      "words": [
+        {
+          "word": "א֖וֹ",
+          "lemma": "אוֹ",
+          "strong": "H176",
+          "pron": "오"
+        },
+        {
+          "word": "לְעֹ֣פֶר",
+          "lemma": "עֹפֶר",
+          "strong": "H6082",
+          "pron": "르오페르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "songofsolomon 2:9",
+        "songofsolomon 2:17",
+        "songofsolomon 8:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "א֖וֹ לְעֹ֣פֶר הָֽאַיָּלִ֑ים",
+      "pron": "오 르오페르 브카아알",
+      "lemmas": [
+        "אוֹ",
+        "עֹפֶר",
+        "אַיָּל"
+      ],
+      "words": [
+        {
+          "word": "א֖וֹ",
+          "lemma": "אוֹ",
+          "strong": "H176",
+          "pron": "오"
+        },
+        {
+          "word": "לְעֹ֣פֶר",
+          "lemma": "עֹפֶר",
+          "strong": "H6082",
+          "pron": "르오페르"
+        },
+        {
+          "word": "הָֽאַיָּלִ֑ים",
+          "lemma": "אַיָּל",
+          "strong": "H354",
+          "pron": "브카아알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "songofsolomon 2:9",
+        "songofsolomon 2:17",
+        "songofsolomon 8:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְעֹ֣פֶר הָֽאַיָּלִ֑ים",
+      "pron": "르오페르 브카아알",
+      "lemmas": [
+        "עֹפֶר",
+        "אַיָּל"
+      ],
+      "words": [
+        {
+          "word": "לְעֹ֣פֶר",
+          "lemma": "עֹפֶר",
+          "strong": "H6082",
+          "pron": "르오페르"
+        },
+        {
+          "word": "הָֽאַיָּלִ֑ים",
+          "lemma": "אַיָּל",
+          "strong": "H354",
+          "pron": "브카아알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "songofsolomon 2:9",
+        "songofsolomon 2:17",
+        "songofsolomon 8:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִצְבִ֔י א֖וֹ לְעֹ֣פֶר",
+      "pron": "카체비 오 르오페르",
+      "lemmas": [
+        "צְבִי",
+        "אוֹ",
+        "עֹפֶר"
+      ],
+      "words": [
+        {
+          "word": "לִצְבִ֔י",
+          "lemma": "צְבִי",
+          "strong": "H6643",
+          "pron": "카체비"
+        },
+        {
+          "word": "א֖וֹ",
+          "lemma": "אוֹ",
+          "strong": "H176",
+          "pron": "오"
+        },
+        {
+          "word": "לְעֹ֣פֶר",
+          "lemma": "עֹפֶר",
+          "strong": "H6082",
+          "pron": "르오페르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "songofsolomon 2:9",
+        "songofsolomon 2:17",
+        "songofsolomon 8:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

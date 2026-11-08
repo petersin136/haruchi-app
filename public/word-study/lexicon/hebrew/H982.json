@@ -1,6 +1,6 @@
 {
   "lemma": "בָּטַח",
-  "pron": "우빋후",
+  "pron": "보데아흐",
   "strong": "H982",
   "posKo": "동사",
   "root": null,
@@ -8,44 +8,59 @@
     {
       "lemma": "בֶּטַח",
       "strong": "H983",
-      "pron": "라베다흐",
+      "pron": "베다흐",
       "glossKo": "안전"
     },
     {
       "lemma": "בִּטָּחוֹן",
       "strong": "H986",
-      "pron": "",
+      "pron": "아빋다혼",
       "glossKo": "신뢰"
     },
     {
       "lemma": "בַּטֻּחוֹת",
       "strong": "H987",
-      "pron": "",
+      "pron": "우받두호트",
       "glossKo": "안전한 곳"
     },
     {
       "lemma": "חָסָה",
       "strong": "H2620",
-      "pron": "호세",
-      "glossKo": "피하는 이"
+      "pron": "하사우",
+      "glossKo": "피하다"
     },
     {
       "lemma": "מִבְטָח",
       "strong": "H4009",
-      "pron": "밉다흐오",
+      "pron": "밉다호",
       "glossKo": "그의 신뢰"
     }
   ],
   "defEn": "hie; precipitately; trust; confident; sure",
   "defKo": "",
-  "countOT": 46,
+  "countOT": 120,
   "byBook": {
-    "psalms": 46
+    "psalms": 46,
+    "isaiah": 20,
+    "jeremiah": 16,
+    "proverbs": 10,
+    "kings2": 9,
+    "judges": 5,
+    "job": 4,
+    "ezekiel": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "micah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
       "hebrew": "בִּטְח֣וּ בַיהוָ֑ה",
-      "pron": "우빋후 여호와",
+      "pron": "보데아흐 여호와",
       "lemmas": [
         "בָּטַח",
         "יְהֹוָה"
@@ -55,7 +70,7 @@
           "word": "בִּטְח֣וּ",
           "lemma": "בָּטַח",
           "strong": "H982",
-          "pron": "우빋후"
+          "pron": "보데아흐"
         },
         {
           "word": "בַיהוָ֑ה",
@@ -64,7 +79,7 @@
           "pron": "여호와"
         }
       ],
-      "count": 10,
+      "count": 14,
       "refs": [
         "psalms 21:7",
         "psalms 31:14",
@@ -75,129 +90,151 @@
         "psalms 115:9",
         "psalms 115:10",
         "psalms 115:11",
-        "psalms 125:1"
+        "psalms 125:1",
+        "proverbs 16:20",
+        "proverbs 29:25"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֱֽלֹהַ֗י בָ֭טַחְתִּי",
-      "pron": "베엘로힘 우빋후",
+      "hebrew": "הַבֹּטְחִ֖ים עָלָֽיו",
+      "pron": "보데아흐 알",
+      "lemmas": [
+        "בָּטַח",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "הַבֹּטְחִ֖ים",
+          "lemma": "בָּטַח",
+          "strong": "H982",
+          "pron": "보데아흐"
+        },
+        {
+          "word": "עָלָֽיו",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "kings2 18:21",
+        "kings2 18:24",
+        "psalms 22:9",
+        "psalms 37:5",
+        "psalms 49:6",
+        "proverbs 28:25",
+        "isaiah 31:1",
+        "isaiah 36:6",
+        "isaiah 36:9",
+        "isaiah 59:4",
+        "jeremiah 7:8",
+        "ezekiel 33:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַתָּ֛ה בֹּטֵ֥חַ",
+      "pron": "앗타 보데아흐",
+      "lemmas": [
+        "אַתָּה",
+        "בָּטַח"
+      ],
+      "words": [
+        {
+          "word": "אַתָּ֛ה",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
+        },
+        {
+          "word": "בֹּטֵ֥חַ",
+          "lemma": "בָּטַח",
+          "strong": "H982",
+          "pron": "보데아흐"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "deuteronomy 28:52",
+        "kings2 19:10",
+        "chronicles2 32:10",
+        "isaiah 37:10",
+        "jeremiah 5:17",
+        "jeremiah 7:8",
+        "jeremiah 7:14",
+        "jeremiah 12:5",
+        "jeremiah 28:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי בָטַ֥חְתָּ",
+      "pron": "키 보데아흐",
+      "lemmas": [
+        "כִּי",
+        "בָּטַח"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "בָטַ֥חְתָּ",
+          "lemma": "בָּטַח",
+          "strong": "H982",
+          "pron": "보데아흐"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "judges 20:36",
+        "chronicles1 5:20",
+        "job 6:20",
+        "psalms 119:42",
+        "psalms 143:8",
+        "isaiah 26:3",
+        "jeremiah 39:18",
+        "hosea 10:13",
+        "habakkuk 2:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֱלֹהֵ֖ינוּ בָּטָ֑חְנוּ",
+      "pron": "엘로힘 보데아흐",
       "lemmas": [
         "אֱלֹהִים",
         "בָּטַח"
       ],
       "words": [
         {
-          "word": "אֱֽלֹהַ֗י",
+          "word": "אֱלֹהֵ֖ינוּ",
           "lemma": "אֱלֹהִים",
           "strong": "H430",
-          "pron": "베엘로힘"
+          "pron": "엘로힘"
         },
         {
-          "word": "בָ֭טַחְתִּי",
+          "word": "בָּטָ֑חְנוּ",
           "lemma": "בָּטַח",
           "strong": "H982",
-          "pron": "우빋후"
+          "pron": "보데아흐"
         }
       ],
-      "count": 6,
+      "count": 8,
       "refs": [
+        "kings2 18:22",
         "psalms 25:2",
         "psalms 52:8",
         "psalms 56:4",
         "psalms 56:11",
         "psalms 86:2",
-        "psalms 91:2"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "בַּיהוָ֑ה מִ֝בְּטֹ֗חַ",
-      "pron": "여호와 우빋후",
-      "lemmas": [
-        "יְהֹוָה",
-        "בָּטַח"
-      ],
-      "words": [
-        {
-          "word": "בַּיהוָ֑ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        },
-        {
-          "word": "מִ֝בְּטֹ֗חַ",
-          "lemma": "בָּטַח",
-          "strong": "H982",
-          "pron": "우빋후"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 26:1",
-        "psalms 31:6",
-        "psalms 115:11",
-        "psalms 118:8",
-        "psalms 118:9"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "בָּ֭טַחְתִּי לֹ֣א",
-      "pron": "우빋후 로",
-      "lemmas": [
-        "בָּטַח",
-        "לֹא"
-      ],
-      "words": [
-        {
-          "word": "בָּ֭טַחְתִּי",
-          "lemma": "בָּטַח",
-          "strong": "H982",
-          "pron": "우빋후"
-        },
-        {
-          "word": "לֹ֣א",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 22:5",
-        "psalms 26:1",
-        "psalms 56:4",
-        "psalms 56:11"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֲשֶׁר בֹּטֵ֣חַ",
-      "pron": "아셰르 우빋후",
-      "lemmas": [
-        "אֲשֶׁר",
-        "בָּטַח"
-      ],
-      "words": [
-        {
-          "word": "אֲשֶׁר",
-          "lemma": "אֲשֶׁר",
-          "strong": "H834",
-          "pron": "아셰르"
-        },
-        {
-          "word": "בֹּטֵ֣חַ",
-          "lemma": "בָּטַח",
-          "strong": "H982",
-          "pron": "우빋후"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 41:9",
-        "psalms 115:8",
-        "psalms 135:18"
+        "psalms 91:2",
+        "isaiah 36:7"
       ],
       "glossKo": ""
     }

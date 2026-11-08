@@ -12,13 +12,13 @@
     {
       "lemma": "גָּדוֹל",
       "strong": "H1419",
-      "pron": "게돌로트",
+      "pron": "아게돌림",
       "glossKo": "큰"
     },
     {
       "lemma": "גָּדַל",
       "strong": "H1431",
-      "pron": "믁들",
+      "pron": "바아갇델라",
       "glossKo": "자라다"
     },
     {
@@ -30,27 +30,60 @@
     {
       "lemma": "גְּדִל",
       "strong": "H1434",
-      "pron": "",
+      "pron": "게딜림",
       "glossKo": "옷단 술"
     },
     {
       "lemma": "גִּדֵּל",
       "strong": "H1435",
-      "pron": "",
+      "pron": "긷델",
       "glossKo": "깃델"
     },
     {
       "lemma": "גְּדַּלְיָה",
       "strong": "H1436",
-      "pron": "",
+      "pron": "게달아후",
       "glossKo": "그달리야"
     }
   ],
   "defEn": "large",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 4,
   "byBook": {
-    "genesis": 1
+    "chronicles2": 1,
+    "ezekiel": 1,
+    "genesis": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הֹלֵ֥ךְ וְגָדֵ֖ל",
+      "pron": "아홀레크 브가델",
+      "lemmas": [
+        "הָלַךְ",
+        "גָּדֵל"
+      ],
+      "words": [
+        {
+          "word": "הֹלֵ֥ךְ",
+          "lemma": "הָלַךְ",
+          "strong": "H1980",
+          "pron": "아홀레크"
+        },
+        {
+          "word": "וְגָדֵ֖ל",
+          "lemma": "גָּדֵל",
+          "strong": "H1432",
+          "pron": "브가델"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 26:13",
+        "samuel1 2:26",
+        "chronicles2 17:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "אָשָׁם",
-  "pron": "바아샤마이브",
+  "pron": "아샴",
   "strong": "H817",
   "posKo": "명사",
   "root": {
@@ -12,22 +12,195 @@
     {
       "lemma": "אָשַׁם",
       "strong": "H816",
-      "pron": "하아시메므",
-      "glossKo": "그들에게 죄가 되다"
+      "pron": "브아셰무",
+      "glossKo": "죄가 되다"
     },
     {
       "lemma": "אָשֵׁם",
       "strong": "H818",
       "pron": "아셰밈",
       "glossKo": "죄 있는"
+    },
+    {
+      "lemma": "אַשְׁמָה",
+      "strong": "H819",
+      "pron": "르아셰마트",
+      "glossKo": "죄책"
     }
   ],
   "defEn": "guilt",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 46,
   "byBook": {
+    "leviticus": 27,
+    "numbers": 5,
+    "ezekiel": 4,
+    "samuel1": 4,
     "genesis": 1,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "kings2": 1,
+    "proverbs": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת אֲשָׁמוֹ֙",
+      "pron": "에트 아샴",
+      "lemmas": [
+        "אֵת",
+        "אָשָׁם"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "אֲשָׁמוֹ֙",
+          "lemma": "אָשָׁם",
+          "strong": "H817",
+          "pron": "아샴"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "leviticus 5:6",
+        "leviticus 5:7",
+        "leviticus 5:15",
+        "leviticus 6:6",
+        "leviticus 7:2",
+        "leviticus 14:12",
+        "leviticus 19:21",
+        "numbers 5:7",
+        "ezekiel 46:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהַחַטָּ֣את וְהָאָשָׁ֔ם",
+      "pron": "핟다트 아샴",
+      "lemmas": [
+        "חַטָּאָה",
+        "אָשָׁם"
+      ],
+      "words": [
+        {
+          "word": "וְהַחַטָּ֣את",
+          "lemma": "חַטָּאָה",
+          "strong": "H2403",
+          "pron": "핟다트"
+        },
+        {
+          "word": "וְהָאָשָׁ֔ם",
+          "lemma": "אָשָׁם",
+          "strong": "H817",
+          "pron": "아샴"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 6:17",
+        "leviticus 7:7",
+        "leviticus 7:37",
+        "leviticus 14:13",
+        "ezekiel 40:39",
+        "ezekiel 42:13",
+        "ezekiel 44:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשָׁמ֣וֹ לַיהוָ֡ה",
+      "pron": "아샴 여호와",
+      "lemmas": [
+        "אָשָׁם",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "אֲשָׁמ֣וֹ",
+          "lemma": "אָשָׁם",
+          "strong": "H817",
+          "pron": "아샴"
+        },
+        {
+          "word": "לַיהוָ֡ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 5:6",
+        "leviticus 5:15",
+        "leviticus 19:21",
+        "samuel1 6:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דַּ֥ם הָאָשָֽׁם",
+      "pron": "데메 아샴",
+      "lemmas": [
+        "דָּם",
+        "אָשָׁם"
+      ],
+      "words": [
+        {
+          "word": "דַּ֥ם",
+          "lemma": "דָּם",
+          "strong": "H1818",
+          "pron": "데메"
+        },
+        {
+          "word": "הָאָשָֽׁם",
+          "lemma": "אָשָׁם",
+          "strong": "H817",
+          "pron": "아샴"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 14:14",
+        "leviticus 14:17",
+        "leviticus 14:25",
+        "leviticus 14:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָאָשָׁ֖ם וְאֶת",
+      "pron": "아샴 에트",
+      "lemmas": [
+        "אָשָׁם",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הָאָשָׁ֖ם",
+          "lemma": "אָשָׁם",
+          "strong": "H817",
+          "pron": "아샴"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 7:2",
+        "leviticus 14:12",
+        "leviticus 14:24",
+        "ezekiel 46:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,7 +12,7 @@
     {
       "lemma": "כָּתַם",
       "strong": "H3799",
-      "pron": "",
+      "pron": "니켓탐",
       "glossKo": "새기다"
     },
     {
@@ -24,9 +24,45 @@
   ],
   "defEn": "carved; ore; gold",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 9,
   "byBook": {
-    "psalms": 1
+    "job": 3,
+    "daniel": 1,
+    "isaiah": 1,
+    "lamentations": 1,
+    "proverbs": 1,
+    "psalms": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּכֶ֣תֶם אוֹפִ֑יר",
+      "pron": "브케템 오피르",
+      "lemmas": [
+        "כֶּתֶם",
+        "אוֹפִיר"
+      ],
+      "words": [
+        {
+          "word": "בְּכֶ֣תֶם",
+          "lemma": "כֶּתֶם",
+          "strong": "H3800",
+          "pron": "브케템"
+        },
+        {
+          "word": "אוֹפִ֑יר",
+          "lemma": "אוֹפִיר",
+          "strong": "H211",
+          "pron": "오피르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 28:16",
+        "psalms 45:9",
+        "isaiah 13:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

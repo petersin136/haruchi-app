@@ -1,6 +1,6 @@
 {
   "lemma": "הָרַג",
-  "pron": "야하록",
+  "pron": "바아하레게후",
   "strong": "H2026",
   "posKo": "동사",
   "root": null,
@@ -8,44 +8,209 @@
     {
       "lemma": "הֶרֶג",
       "strong": "H2027",
-      "pron": "",
+      "pron": "브헤렉",
       "glossKo": "살륙"
     }
   ],
   "defEn": "smite",
   "defKo": "",
-  "countOT": 25,
+  "countOT": 167,
   "byBook": {
     "genesis": 16,
-    "psalms": 9
+    "judges": 16,
+    "chronicles2": 12,
+    "exodus": 11,
+    "kings1": 11,
+    "numbers": 11,
+    "ezekiel": 10,
+    "esther": 9,
+    "isaiah": 9,
+    "psalms": 9,
+    "samuel2": 8,
+    "kings2": 5,
+    "samuel1": 5,
+    "amos": 4,
+    "joshua": 4,
+    "lamentations": 4,
+    "nehemiah": 4,
+    "chronicles1": 3,
+    "jeremiah": 3,
+    "deuteronomy": 2,
+    "hosea": 2,
+    "job": 2,
+    "leviticus": 2,
+    "proverbs": 2,
+    "ecclesiastes": 1,
+    "habakkuk": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "וְהָרְג֥וּ אֹתִ֖י",
-      "pron": "야하록 에트",
+      "hebrew": "וַֽיַּהֲרֹ֖ג אֶת",
+      "pron": "바아하레게후 에트",
       "lemmas": [
         "הָרַג",
         "אֵת"
       ],
       "words": [
         {
-          "word": "וְהָרְג֥וּ",
+          "word": "וַֽיַּהֲרֹ֖ג",
           "lemma": "הָרַג",
           "strong": "H2026",
-          "pron": "야하록"
+          "pron": "바아하레게후"
         },
         {
-          "word": "אֹתִ֖י",
+          "word": "אֶת",
           "lemma": "אֵת",
           "strong": "H853",
           "pron": "에트"
         }
       ],
-      "count": 3,
+      "count": 29,
       "refs": [
         "genesis 12:12",
         "genesis 27:41",
-        "genesis 37:26"
+        "genesis 37:26",
+        "exodus 2:14",
+        "exodus 2:15",
+        "exodus 4:23",
+        "exodus 22:24",
+        "exodus 32:12",
+        "leviticus 20:16",
+        "numbers 22:33",
+        "joshua 8:24",
+        "judges 7:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּחֶ֣רֶב תַּהֲרֹ֔ג",
+      "pron": "아헤렙 바아하레게후",
+      "lemmas": [
+        "חֶרֶב",
+        "הָרַג"
+      ],
+      "words": [
+        {
+          "word": "בַּחֶ֣רֶב",
+          "lemma": "חֶרֶב",
+          "strong": "H2719",
+          "pron": "아헤렙"
+        },
+        {
+          "word": "תַּהֲרֹ֔ג",
+          "lemma": "הָרַג",
+          "strong": "H2026",
+          "pron": "바아하레게후"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "kings2 8:12",
+        "jeremiah 15:3",
+        "lamentations 2:21",
+        "ezekiel 23:10",
+        "ezekiel 26:6",
+        "ezekiel 26:8",
+        "ezekiel 26:11",
+        "amos 9:1",
+        "amos 9:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַּאֲשֶׁ֥ר הָרַ֖גְתָּ",
+      "pron": "아셰르 바아하레게후",
+      "lemmas": [
+        "אֲשֶׁר",
+        "הָרַג"
+      ],
+      "words": [
+        {
+          "word": "כַּאֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הָרַ֖גְתָּ",
+          "lemma": "הָרַג",
+          "strong": "H2026",
+          "pron": "바아하레게후"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 2:14",
+        "joshua 10:11",
+        "judges 8:18",
+        "judges 9:24",
+        "judges 9:45",
+        "samuel2 14:7",
+        "kings1 19:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָרְג֣וּ בֶחָ֑רֶב",
+      "pron": "바아하레게후 아헤렙",
+      "lemmas": [
+        "הָרַג",
+        "חֶרֶב"
+      ],
+      "words": [
+        {
+          "word": "הָרְג֣וּ",
+          "lemma": "הָרַג",
+          "strong": "H2026",
+          "pron": "바아하레게후"
+        },
+        {
+          "word": "בֶחָ֑רֶב",
+          "lemma": "חֶרֶב",
+          "strong": "H2719",
+          "pron": "아헤렙"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 31:8",
+        "samuel2 12:9",
+        "kings1 2:32",
+        "kings1 19:10",
+        "kings1 19:14",
+        "amos 4:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיַּֽהַרְג֖וּ כָּל",
+      "pron": "바아하레게후 칼",
+      "lemmas": [
+        "הָרַג",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "וַיַּֽהַרְג֖וּ",
+          "lemma": "הָרַג",
+          "strong": "H2026",
+          "pron": "바아하레게후"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 34:25",
+        "numbers 31:7",
+        "numbers 31:17",
+        "psalms 44:22",
+        "lamentations 2:4"
       ],
       "glossKo": ""
     }

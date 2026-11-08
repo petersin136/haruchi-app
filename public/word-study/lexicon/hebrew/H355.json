@@ -1,6 +1,6 @@
 {
   "lemma": "אַיָּלָה",
-  "pron": "카아알로트",
+  "pron": "아알라",
   "strong": "H355",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "אַיָּל",
       "strong": "H354",
-      "pron": "크아알",
+      "pron": "브카아알",
       "glossKo": "사슴"
     },
     {
       "lemma": "אַיָּלוֹן",
       "strong": "H357",
-      "pron": "",
+      "pron": "아알론",
       "glossKo": "아얄론"
     },
     {
@@ -30,10 +30,145 @@
   ],
   "defEn": "doe; female deer",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 8,
   "byBook": {
     "psalms": 2,
-    "genesis": 1
+    "songofsolomon": 2,
+    "genesis": 1,
+    "habakkuk": 1,
+    "job": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כָּאַיָּל֑וֹת וְעַ֥ל",
+      "pron": "아알라 알",
+      "lemmas": [
+        "אַיָּלָה",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "כָּאַיָּל֑וֹת",
+          "lemma": "אַיָּלָה",
+          "strong": "H355",
+          "pron": "아알라"
+        },
+        {
+          "word": "וְעַ֥ל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:34",
+        "psalms 18:33",
+        "habakkuk 3:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּאַיָּל֑וֹת וְעַ֥ל בָּמוֹתַ֖י",
+      "pron": "아알라 알 바모테켐",
+      "lemmas": [
+        "אַיָּלָה",
+        "עַל",
+        "בָּמָה"
+      ],
+      "words": [
+        {
+          "word": "כָּאַיָּל֑וֹת",
+          "lemma": "אַיָּלָה",
+          "strong": "H355",
+          "pron": "아알라"
+        },
+        {
+          "word": "וְעַ֥ל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "בָּמוֹתַ֖י",
+          "lemma": "בָּמָה",
+          "strong": "H1116",
+          "pron": "바모테켐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:34",
+        "psalms 18:33",
+        "habakkuk 3:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רַגְלַ֖י כָּאַיָּל֑וֹת",
+      "pron": "락라흐 아알라",
+      "lemmas": [
+        "רֶגֶל",
+        "אַיָּלָה"
+      ],
+      "words": [
+        {
+          "word": "רַגְלַ֖י",
+          "lemma": "רֶגֶל",
+          "strong": "H7272",
+          "pron": "락라흐"
+        },
+        {
+          "word": "כָּאַיָּל֑וֹת",
+          "lemma": "אַיָּלָה",
+          "strong": "H355",
+          "pron": "아알라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:34",
+        "psalms 18:33",
+        "habakkuk 3:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רַגְלַ֖י כָּאַיָּל֑וֹת וְעַ֥ל",
+      "pron": "락라흐 아알라 알",
+      "lemmas": [
+        "רֶגֶל",
+        "אַיָּלָה",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "רַגְלַ֖י",
+          "lemma": "רֶגֶל",
+          "strong": "H7272",
+          "pron": "락라흐"
+        },
+        {
+          "word": "כָּאַיָּל֑וֹת",
+          "lemma": "אַיָּלָה",
+          "strong": "H355",
+          "pron": "아알라"
+        },
+        {
+          "word": "וְעַ֥ל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:34",
+        "psalms 18:33",
+        "habakkuk 3:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

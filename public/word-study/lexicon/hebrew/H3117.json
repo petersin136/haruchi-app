@@ -1,6 +1,6 @@
 {
   "lemma": "יוֹם",
-  "pron": "아욤",
+  "pron": "욤",
   "strong": "H3117",
   "posKo": "명사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "יוֹם",
       "strong": "H3118",
-      "pron": "",
+      "pron": "요마트",
       "glossKo": "날(아람)"
     },
     {
@@ -32,21 +32,96 @@
     {
       "lemma": "יְמִימָה",
       "strong": "H3224",
-      "pron": "",
+      "pron": "예미마",
       "glossKo": "여미마"
     }
   ],
   "defEn": "day",
   "defKo": "",
-  "countOT": 267,
+  "countOT": 2304,
   "byBook": {
+    "deuteronomy": 167,
     "genesis": 152,
-    "psalms": 115
+    "samuel1": 150,
+    "jeremiah": 138,
+    "numbers": 121,
+    "isaiah": 120,
+    "exodus": 115,
+    "psalms": 115,
+    "leviticus": 113,
+    "ezekiel": 108,
+    "kings1": 100,
+    "kings2": 79,
+    "joshua": 78,
+    "chronicles2": 75,
+    "judges": 75,
+    "samuel2": 75,
+    "nehemiah": 60,
+    "job": 59,
+    "esther": 53,
+    "chronicles1": 41,
+    "zechariah": 40,
+    "proverbs": 32,
+    "hosea": 28,
+    "ecclesiastes": 26,
+    "daniel": 23,
+    "amos": 22,
+    "ezra": 21,
+    "zephaniah": 21,
+    "lamentations": 19,
+    "micah": 14,
+    "joel": 13,
+    "obadiah": 12,
+    "haggai": 8,
+    "malachi": 8,
+    "ruth": 8,
+    "songofsolomon": 5,
+    "jonah": 4,
+    "nahum": 4,
+    "habakkuk": 2
   },
   "phrases": [
     {
-      "hebrew": "כָּל יְמֵ֣י",
-      "pron": "브콜 아욤",
+      "hebrew": "בַּיּ֣וֹם הַה֗וּא",
+      "pron": "욤 후",
+      "lemmas": [
+        "יוֹם",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "בַּיּ֣וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "הַה֗וּא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        }
+      ],
+      "count": 230,
+      "refs": [
+        "genesis 15:18",
+        "genesis 26:32",
+        "genesis 30:35",
+        "genesis 33:16",
+        "genesis 48:20",
+        "exodus 5:6",
+        "exodus 8:22",
+        "exodus 10:13",
+        "exodus 13:8",
+        "exodus 14:30",
+        "exodus 32:28",
+        "leviticus 22:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל הַיָּמִֽים",
+      "pron": "칼 욤",
       "lemmas": [
         "כֹּל",
         "יוֹם"
@@ -56,124 +131,54 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
-          "word": "יְמֵ֣י",
+          "word": "הַיָּמִֽים",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "아욤"
+          "pron": "욤"
         }
       ],
-      "count": 51,
+      "count": 194,
       "refs": [
-        "psalms 7:11",
-        "psalms 23:6",
-        "psalms 25:5",
-        "psalms 27:4",
-        "psalms 32:3",
-        "psalms 35:28",
-        "psalms 37:26",
-        "psalms 38:6",
-        "psalms 38:12",
-        "psalms 42:3",
-        "psalms 42:10",
-        "psalms 44:8"
+        "genesis 3:14",
+        "genesis 3:17",
+        "genesis 5:5",
+        "genesis 5:8",
+        "genesis 5:11",
+        "genesis 5:14",
+        "genesis 5:17",
+        "genesis 5:20",
+        "genesis 5:23",
+        "genesis 5:27",
+        "genesis 5:31",
+        "genesis 6:5"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַיְהִ֣י בַּיּ֣וֹם",
-      "pron": "브하아 아욤",
-      "lemmas": [
-        "הָיָה",
-        "יוֹם"
-      ],
-      "words": [
-        {
-          "word": "וַיְהִ֣י",
-          "lemma": "הָיָה",
-          "strong": "H1961",
-          "pron": "브하아"
-        },
-        {
-          "word": "בַּיּ֣וֹם",
-          "lemma": "יוֹם",
-          "strong": "H3117",
-          "pron": "아욤"
-        }
-      ],
-      "count": 15,
-      "refs": [
-        "psalms 109:8",
-        "genesis 5:4",
-        "genesis 6:3",
-        "genesis 11:32",
-        "genesis 14:1",
-        "genesis 26:1",
-        "genesis 26:32",
-        "genesis 31:40",
-        "genesis 34:25",
-        "genesis 35:28",
-        "genesis 39:11",
-        "genesis 40:4"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "י֣וֹם לְ֭יוֹם",
-      "pron": "아욤 아욤",
-      "lemmas": [
-        "יוֹם",
-        "יוֹם"
-      ],
-      "words": [
-        {
-          "word": "י֣וֹם",
-          "lemma": "יוֹם",
-          "strong": "H3117",
-          "pron": "아욤"
-        },
-        {
-          "word": "לְ֭יוֹם",
-          "lemma": "יוֹם",
-          "strong": "H3117",
-          "pron": "아욤"
-        }
-      ],
-      "count": 12,
-      "refs": [
-        "psalms 19:2",
-        "psalms 44:1",
-        "psalms 61:8",
-        "psalms 68:19",
-        "psalms 96:2",
-        "genesis 39:10"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "הַיּ֣וֹם הַזֶּ֔ה",
-      "pron": "아욤 제",
+      "hebrew": "הַיּ֥וֹם הַזֶּֽה",
+      "pron": "욤 제",
       "lemmas": [
         "יוֹם",
         "זֶה"
       ],
       "words": [
         {
-          "word": "הַיּ֣וֹם",
+          "word": "הַיּ֥וֹם",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "아욤"
+          "pron": "욤"
         },
         {
-          "word": "הַזֶּ֔ה",
+          "word": "הַזֶּֽה",
           "lemma": "זֶה",
           "strong": "H2088",
           "pron": "제"
         }
       ],
-      "count": 10,
+      "count": 177,
       "refs": [
         "genesis 7:11",
         "genesis 7:13",
@@ -184,50 +189,85 @@
         "genesis 39:11",
         "genesis 47:26",
         "genesis 48:15",
-        "genesis 50:20"
+        "genesis 50:20",
+        "exodus 10:6",
+        "exodus 12:14"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַיִּֽהְיוּ֙ כָּל יְמֵי",
-      "pron": "브하아 브콜 아욤",
+      "hebrew": "עַ֖ד הַיּ֥וֹם",
+      "pron": "앋 욤",
       "lemmas": [
-        "הָיָה",
-        "כֹּל",
+        "עַד",
         "יוֹם"
       ],
       "words": [
         {
-          "word": "וַיִּֽהְיוּ֙",
-          "lemma": "הָיָה",
-          "strong": "H1961",
-          "pron": "브하아"
+          "word": "עַ֖ד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
         },
         {
-          "word": "כָּל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
-        },
-        {
-          "word": "יְמֵי",
+          "word": "הַיּ֥וֹם",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "아욤"
+          "pron": "욤"
         }
       ],
-      "count": 10,
+      "count": 118,
       "refs": [
-        "genesis 5:5",
-        "genesis 5:8",
-        "genesis 5:11",
-        "genesis 5:14",
-        "genesis 5:17",
-        "genesis 5:20",
-        "genesis 5:23",
-        "genesis 5:27",
-        "genesis 5:31",
-        "genesis 9:29"
+        "genesis 19:37",
+        "genesis 19:38",
+        "genesis 26:33",
+        "genesis 32:32",
+        "genesis 35:20",
+        "genesis 47:26",
+        "genesis 48:15",
+        "exodus 10:6",
+        "exodus 12:15",
+        "exodus 12:18",
+        "exodus 40:37",
+        "leviticus 8:33"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָיָ֣ה בַּיּ֣וֹם",
+      "pron": "하에타 욤",
+      "lemmas": [
+        "הָיָה",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "וְהָיָ֣ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "בַּיּ֣וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 114,
+      "refs": [
+        "genesis 5:4",
+        "genesis 6:3",
+        "genesis 11:32",
+        "genesis 14:1",
+        "genesis 26:1",
+        "genesis 26:32",
+        "genesis 31:40",
+        "genesis 34:25",
+        "genesis 35:28",
+        "genesis 39:11",
+        "genesis 40:4",
+        "genesis 40:20"
       ],
       "glossKo": ""
     }

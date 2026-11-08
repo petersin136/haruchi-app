@@ -1,6 +1,6 @@
 {
   "lemma": "גָּמַל",
-  "pron": "가말티",
+  "pron": "바익가말",
   "strong": "H1580",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "גְּמוּל",
       "strong": "H1576",
-      "pron": "게물라므",
-      "glossKo": "그들의 게라"
+      "pron": "키게물",
+      "glossKo": "게라"
     },
     {
       "lemma": "גָּמוּל",
       "strong": "H1577",
-      "pron": "",
+      "pron": "르가물",
       "glossKo": "가물"
     },
     {
@@ -26,7 +26,7 @@
     {
       "lemma": "גַּמְלִיאֵל",
       "strong": "H1583",
-      "pron": "",
+      "pron": "감리엘",
       "glossKo": "가말리엘"
     },
     {
@@ -38,41 +38,169 @@
   ],
   "defEn": "treat; benefit; requite",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 37,
   "byBook": {
     "psalms": 10,
-    "genesis": 4
+    "isaiah": 6,
+    "samuel1": 6,
+    "genesis": 4,
+    "proverbs": 3,
+    "samuel2": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "hosea": 1,
+    "joel": 1,
+    "kings1": 1,
+    "numbers": 1
   },
   "phrases": [
     {
-      "hebrew": "גָמַ֣ל עָלָֽי",
-      "pron": "가말티 알",
+      "hebrew": "גֹּמְלִ֖ים עָלֵ֑ינוּ",
+      "pron": "바익가말 알",
       "lemmas": [
         "גָּמַל",
         "עַל"
       ],
       "words": [
         {
-          "word": "גָמַ֣ל",
+          "word": "גֹּמְלִ֖ים",
           "lemma": "גָּמַל",
           "strong": "H1580",
-          "pron": "가말티"
+          "pron": "바익가말"
         },
         {
-          "word": "עָלָֽי",
+          "word": "עָלֵ֑ינוּ",
           "lemma": "עַל",
           "strong": "H5921",
           "pron": "알"
         }
       ],
-      "count": 7,
+      "count": 8,
       "refs": [
-        "psalms 13:5",
+        "chronicles2 20:11",
+        "psalms 13:6",
         "psalms 103:10",
         "psalms 116:7",
         "psalms 119:17",
         "psalms 131:2",
         "psalms 142:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִגָּמֵ֥ל אֶת",
+      "pron": "바익가말 에트",
+      "lemmas": [
+        "גָּמַל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הִגָּמֵ֥ל",
+          "lemma": "גָּמַל",
+          "strong": "H1580",
+          "pron": "바익가말"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 21:8",
+        "genesis 50:15",
+        "samuel1 1:23",
+        "hosea 1:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֥ר גָּמַ֖לְנוּ",
+      "pron": "아셰르 바익가말",
+      "lemmas": [
+        "אֲשֶׁר",
+        "גָּמַל"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "גָּמַ֖לְנוּ",
+          "lemma": "גָּמַל",
+          "strong": "H1580",
+          "pron": "바익가말"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 50:15",
+        "samuel1 1:24",
+        "isaiah 63:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גְּמַלְתִּ֥יךָ הָרָעָֽה",
+      "pron": "바익가말 바라",
+      "lemmas": [
+        "גָּמַל",
+        "רַע"
+      ],
+      "words": [
+        {
+          "word": "גְּמַלְתִּ֥יךָ",
+          "lemma": "גָּמַל",
+          "strong": "H1580",
+          "pron": "바익가말"
+        },
+        {
+          "word": "הָרָעָֽה",
+          "lemma": "רַע",
+          "strong": "H7451",
+          "pron": "바라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 24:17",
+        "proverbs 3:30",
+        "isaiah 3:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִגְמְלֵ֥נִי יְהוָ֖ה",
+      "pron": "바익가말 여호와",
+      "lemmas": [
+        "גָּמַל",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "יִגְמְלֵ֥נִי",
+          "lemma": "גָּמַל",
+          "strong": "H1580",
+          "pron": "바익가말"
+        },
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:21",
+        "psalms 18:20",
+        "isaiah 63:7"
       ],
       "glossKo": ""
     }

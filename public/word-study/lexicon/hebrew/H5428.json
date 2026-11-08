@@ -1,15 +1,113 @@
 {
   "lemma": "נָתַשׁ",
-  "pron": "나타솃타",
+  "pron": "바잇테솀",
   "strong": "H5428",
   "posKo": "동사",
   "root": null,
   "family": [],
   "defEn": "tear away",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 21,
   "byBook": {
+    "jeremiah": 13,
+    "amos": 1,
+    "chronicles2": 1,
+    "daniel": 1,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "kings1": 1,
+    "micah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְלֹ֥א אֶתּֽוֹשׁ",
+      "pron": "로 바잇테솀",
+      "lemmas": [
+        "לֹא",
+        "נָתַשׁ"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "אֶתּֽוֹשׁ",
+          "lemma": "נָתַשׁ",
+          "strong": "H5428",
+          "pron": "바잇테솀"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 24:6",
+        "jeremiah 31:40",
+        "jeremiah 42:10",
+        "amos 9:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנָתַ֣שׁ אֶת",
+      "pron": "바잇테솀 에트",
+      "lemmas": [
+        "נָתַשׁ",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְנָתַ֣שׁ",
+          "lemma": "נָתַשׁ",
+          "strong": "H5428",
+          "pron": "바잇테솀"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 14:15",
+        "jeremiah 12:15",
+        "jeremiah 12:17",
+        "jeremiah 45:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִנְת֥וֹשׁ וְלִנְת֖וֹץ",
+      "pron": "바잇테솀 팃토춘",
+      "lemmas": [
+        "נָתַשׁ",
+        "נָתַץ"
+      ],
+      "words": [
+        {
+          "word": "לִנְת֥וֹשׁ",
+          "lemma": "נָתַשׁ",
+          "strong": "H5428",
+          "pron": "바잇테솀"
+        },
+        {
+          "word": "וְלִנְת֖וֹץ",
+          "lemma": "נָתַץ",
+          "strong": "H5422",
+          "pron": "팃토춘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 1:10",
+        "jeremiah 18:7",
+        "jeremiah 31:28"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

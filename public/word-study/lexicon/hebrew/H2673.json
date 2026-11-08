@@ -1,6 +1,6 @@
 {
   "lemma": "חָצָה",
-  "pron": "예헤추",
+  "pron": "바야하츠",
   "strong": "H2673",
   "posKo": "동사",
   "root": {
@@ -16,18 +16,82 @@
       "glossKo": "교만한 자"
     },
     {
+      "lemma": "חָצוֹת",
+      "strong": "H2676",
+      "pron": "카하초트",
+      "glossKo": "한밤중"
+    },
+    {
+      "lemma": "חֵצִי",
+      "strong": "H2677",
+      "pron": "바하치",
+      "glossKo": "절반"
+    },
+    {
       "lemma": "חָצַץ",
       "strong": "H2686",
-      "pron": "",
+      "pron": "메하체침",
       "glossKo": "활을 쏘다"
+    },
+    {
+      "lemma": "יַחְצְאֵל",
+      "strong": "H3183",
+      "pron": "야헤체엘",
+      "glossKo": "야시엘"
+    },
+    {
+      "lemma": "יַחְצִיאֵל",
+      "strong": "H3185",
+      "pron": "야하치엘",
+      "glossKo": "야시엘"
     }
   ],
   "defEn": "cut; split; halve",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 15,
   "byBook": {
+    "exodus": 2,
     "genesis": 2,
+    "judges": 2,
+    "kings2": 2,
+    "numbers": 2,
+    "daniel": 1,
+    "ezekiel": 1,
+    "isaiah": 1,
+    "job": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיַּ֜חַץ אֶת",
+      "pron": "바야하츠 에트",
+      "lemmas": [
+        "חָצָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיַּ֜חַץ",
+          "lemma": "חָצָה",
+          "strong": "H2673",
+          "pron": "바야하츠"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 32:7",
+        "genesis 33:1",
+        "exodus 21:35",
+        "numbers 31:27",
+        "judges 7:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,51 +12,154 @@
     {
       "lemma": "בּוֹקֵר",
       "strong": "H951",
-      "pron": "",
+      "pron": "보케르",
       "glossKo": "목자"
     },
     {
       "lemma": "בַּקְבַּקַּר",
       "strong": "H1230",
-      "pron": "",
+      "pron": "우바켑박카르",
       "glossKo": "박박갈"
     },
     {
       "lemma": "בָּקַר",
       "strong": "H1239",
-      "pron": "우르박케르",
+      "pron": "예박케르",
       "glossKo": "살피다"
     },
     {
       "lemma": "בְּקַר",
       "strong": "H1240",
-      "pron": "",
+      "pron": "예박카르",
       "glossKo": "찾다(아람)"
     },
     {
       "lemma": "בָּקָר",
       "strong": "H1241",
-      "pron": "바카르",
+      "pron": "우바카르",
       "glossKo": "소"
     },
     {
       "lemma": "בַּקָּרָה",
       "strong": "H1243",
-      "pron": "",
+      "pron": "크박카라트",
       "glossKo": "돌봄"
     }
   ],
   "defEn": "dawn; morning",
   "defKo": "",
-  "countOT": 37,
+  "countOT": 214,
   "byBook": {
+    "exodus": 36,
     "genesis": 19,
-    "psalms": 18
+    "psalms": 18,
+    "samuel1": 18,
+    "numbers": 12,
+    "isaiah": 11,
+    "ezekiel": 10,
+    "judges": 10,
+    "leviticus": 9,
+    "samuel2": 9,
+    "job": 7,
+    "kings2": 7,
+    "chronicles1": 5,
+    "chronicles2": 5,
+    "joshua": 5,
+    "deuteronomy": 4,
+    "kings1": 4,
+    "ruth": 4,
+    "hosea": 3,
+    "zephaniah": 3,
+    "amos": 2,
+    "daniel": 2,
+    "ecclesiastes": 2,
+    "esther": 2,
+    "jeremiah": 2,
+    "proverbs": 2,
+    "ezra": 1,
+    "lamentations": 1,
+    "micah": 1
   },
   "phrases": [
     {
+      "hebrew": "בַּבֹּ֣קֶר בַּבֹּ֔קֶר",
+      "pron": "보케르 보케르",
+      "lemmas": [
+        "בֹּקֶר",
+        "בֹּקֶר"
+      ],
+      "words": [
+        {
+          "word": "בַּבֹּ֣קֶר",
+          "lemma": "בֹּקֶר",
+          "strong": "H1242",
+          "pron": "보케르"
+        },
+        {
+          "word": "בַּבֹּ֔קֶר",
+          "lemma": "בֹּקֶר",
+          "strong": "H1242",
+          "pron": "보케르"
+        }
+      ],
+      "count": 28,
+      "refs": [
+        "exodus 16:21",
+        "exodus 30:7",
+        "exodus 36:3",
+        "leviticus 6:12",
+        "samuel2 13:4",
+        "chronicles1 9:27",
+        "chronicles1 23:30",
+        "chronicles2 13:11",
+        "isaiah 28:19",
+        "isaiah 50:4",
+        "ezekiel 46:13",
+        "ezekiel 46:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַד בֹּֽקֶר",
+      "pron": "앋 보케르",
+      "lemmas": [
+        "עַד",
+        "בֹּקֶר"
+      ],
+      "words": [
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "בֹּֽקֶר",
+          "lemma": "בֹּקֶר",
+          "strong": "H1242",
+          "pron": "보케르"
+        }
+      ],
+      "count": 27,
+      "refs": [
+        "exodus 12:10",
+        "exodus 12:22",
+        "exodus 16:19",
+        "exodus 16:20",
+        "exodus 16:23",
+        "exodus 16:24",
+        "exodus 23:18",
+        "exodus 27:21",
+        "exodus 29:34",
+        "leviticus 6:9",
+        "leviticus 7:15",
+        "leviticus 19:13"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וַֽיְהִי בֹ֖קֶר",
-      "pron": "브하아 보케르",
+      "pron": "하에타 보케르",
       "lemmas": [
         "הָיָה",
         "בֹּקֶר"
@@ -66,7 +169,7 @@
           "word": "וַֽיְהִי",
           "lemma": "הָיָה",
           "strong": "H1961",
-          "pron": "브하아"
+          "pron": "하에타"
         },
         {
           "word": "בֹ֖קֶר",
@@ -75,9 +178,8 @@
           "pron": "보케르"
         }
       ],
-      "count": 9,
+      "count": 18,
       "refs": [
-        "psalms 90:5",
         "genesis 1:5",
         "genesis 1:8",
         "genesis 1:13",
@@ -85,147 +187,83 @@
         "genesis 1:23",
         "genesis 1:31",
         "genesis 29:25",
-        "genesis 41:8"
+        "genesis 41:8",
+        "exodus 19:16",
+        "numbers 22:41",
+        "judges 9:33",
+        "ruth 3:13"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בֹ֖קֶר י֥וֹם",
-      "pron": "보케르 아욤",
+      "hebrew": "וַיַּשְׁכִּ֣ימוּ בַבֹּ֔קֶר",
+      "pron": "브히셱캄템 보케르",
       "lemmas": [
-        "בֹּקֶר",
-        "יוֹם"
-      ],
-      "words": [
-        {
-          "word": "בֹ֖קֶר",
-          "lemma": "בֹּקֶר",
-          "strong": "H1242",
-          "pron": "보케르"
-        },
-        {
-          "word": "י֥וֹם",
-          "lemma": "יוֹם",
-          "strong": "H3117",
-          "pron": "아욤"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "genesis 1:5",
-        "genesis 1:8",
-        "genesis 1:13",
-        "genesis 1:19",
-        "genesis 1:23",
-        "genesis 1:31"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַֽיְהִי בֹ֖קֶר י֥וֹם",
-      "pron": "브하아 보케르 아욤",
-      "lemmas": [
-        "הָיָה",
-        "בֹּקֶר",
-        "יוֹם"
-      ],
-      "words": [
-        {
-          "word": "וַֽיְהִי",
-          "lemma": "הָיָה",
-          "strong": "H1961",
-          "pron": "브하아"
-        },
-        {
-          "word": "בֹ֖קֶר",
-          "lemma": "בֹּקֶר",
-          "strong": "H1242",
-          "pron": "보케르"
-        },
-        {
-          "word": "י֥וֹם",
-          "lemma": "יוֹם",
-          "strong": "H3117",
-          "pron": "아욤"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "genesis 1:5",
-        "genesis 1:8",
-        "genesis 1:13",
-        "genesis 1:19",
-        "genesis 1:23",
-        "genesis 1:31"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "עֶ֥רֶב וַֽיְהִי בֹ֖קֶר",
-      "pron": "바에렙 브하아 보케르",
-      "lemmas": [
-        "עֶרֶב",
-        "הָיָה",
+        "שָׁכַם",
         "בֹּקֶר"
       ],
       "words": [
         {
-          "word": "עֶ֥רֶב",
-          "lemma": "עֶרֶב",
-          "strong": "H6153",
-          "pron": "바에렙"
+          "word": "וַיַּשְׁכִּ֣ימוּ",
+          "lemma": "שָׁכַם",
+          "strong": "H7925",
+          "pron": "브히셱캄템"
         },
         {
-          "word": "וַֽיְהִי",
-          "lemma": "הָיָה",
-          "strong": "H1961",
-          "pron": "브하아"
-        },
-        {
-          "word": "בֹ֖קֶר",
+          "word": "בַבֹּ֔קֶר",
           "lemma": "בֹּקֶר",
           "strong": "H1242",
           "pron": "보케르"
         }
       ],
-      "count": 6,
+      "count": 17,
       "refs": [
-        "genesis 1:5",
-        "genesis 1:8",
-        "genesis 1:13",
-        "genesis 1:19",
-        "genesis 1:23",
-        "genesis 1:31"
+        "genesis 26:31",
+        "exodus 8:20",
+        "exodus 9:13",
+        "exodus 24:4",
+        "numbers 14:40",
+        "judges 19:5",
+        "judges 19:8",
+        "samuel1 1:19",
+        "samuel1 5:4",
+        "samuel1 29:10",
+        "kings2 3:22",
+        "kings2 19:35"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לַבֹּ֗קֶר חַ֫סְדֶּ֥ךָ",
-      "pron": "보케르 핫드카",
+      "hebrew": "א֥וֹר הַבֹּ֖קֶר",
+      "pron": "오르 보케르",
       "lemmas": [
-        "בֹּקֶר",
-        "חֶסֶד"
+        "אוֹר",
+        "בֹּקֶר"
       ],
       "words": [
         {
-          "word": "לַבֹּ֗קֶר",
+          "word": "א֥וֹר",
+          "lemma": "אוֹר",
+          "strong": "H216",
+          "pron": "오르"
+        },
+        {
+          "word": "הַבֹּ֖קֶר",
           "lemma": "בֹּקֶר",
           "strong": "H1242",
           "pron": "보케르"
-        },
-        {
-          "word": "חַ֫סְדֶּ֥ךָ",
-          "lemma": "חֶסֶד",
-          "strong": "H2617",
-          "pron": "핫드카"
         }
       ],
-      "count": 4,
+      "count": 8,
       "refs": [
-        "psalms 59:16",
-        "psalms 90:14",
-        "psalms 92:2",
-        "psalms 143:8"
+        "judges 16:2",
+        "samuel1 14:36",
+        "samuel1 25:34",
+        "samuel1 25:36",
+        "samuel2 17:22",
+        "samuel2 23:4",
+        "kings2 7:9",
+        "micah 2:1"
       ],
       "glossKo": ""
     }

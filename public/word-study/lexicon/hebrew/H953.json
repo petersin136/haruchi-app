@@ -1,6 +1,6 @@
 {
   "lemma": "בּוֹר",
-  "pron": "보르",
+  "pron": "아보로트",
   "strong": "H953",
   "posKo": "명사",
   "root": {
@@ -12,21 +12,37 @@
     {
       "lemma": "בּוּר",
       "strong": "H952",
-      "pron": "",
+      "pron": "브라부르",
       "glossKo": "당황하다"
     }
   ],
   "defEn": "hole",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 68,
   "byBook": {
+    "jeremiah": 12,
+    "ezekiel": 10,
     "genesis": 9,
-    "psalms": 7
+    "psalms": 7,
+    "isaiah": 6,
+    "exodus": 4,
+    "chronicles1": 3,
+    "proverbs": 3,
+    "kings2": 2,
+    "lamentations": 2,
+    "samuel1": 2,
+    "samuel2": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "leviticus": 1,
+    "nehemiah": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
       "hebrew": "י֥וֹרְדֵי בֽוֹר",
-      "pron": "예렏 보르",
+      "pron": "바예렏 아보로트",
       "lemmas": [
         "יָרַד",
         "בּוֹר"
@@ -36,57 +52,162 @@
           "word": "י֥וֹרְדֵי",
           "lemma": "יָרַד",
           "strong": "H3381",
-          "pron": "예렏"
+          "pron": "바예렏"
         },
         {
           "word": "בֽוֹר",
           "lemma": "בּוֹר",
           "strong": "H953",
-          "pron": "보르"
+          "pron": "아보로트"
         }
       ],
-      "count": 4,
+      "count": 15,
       "refs": [
         "psalms 28:1",
         "psalms 30:3",
         "psalms 88:4",
-        "psalms 143:7"
+        "psalms 143:7",
+        "proverbs 1:12",
+        "isaiah 38:18",
+        "ezekiel 26:20",
+        "ezekiel 31:14",
+        "ezekiel 31:16",
+        "ezekiel 32:18",
+        "ezekiel 32:24",
+        "ezekiel 32:25"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "עִם י֥וֹרְדֵי בֽוֹר",
-      "pron": "임오 예렏 보르",
+      "hebrew": "אֶל הַבּ֑וֹר",
+      "pron": "엘 아보로트",
       "lemmas": [
-        "עִם",
+        "אֵל",
+        "בּוֹר"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "הַבּ֑וֹר",
+          "lemma": "בּוֹר",
+          "strong": "H953",
+          "pron": "아보로트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 37:22",
+        "genesis 37:29",
+        "kings2 10:14",
+        "ecclesiastes 12:6",
+        "jeremiah 38:6",
+        "jeremiah 38:7",
+        "jeremiah 38:9",
+        "jeremiah 38:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת י֥וֹרְדֵי בֽוֹר",
+      "pron": "에트 바예렏 아보로트",
+      "lemmas": [
+        "אֵת",
         "יָרַד",
         "בּוֹר"
       ],
       "words": [
         {
-          "word": "עִם",
-          "lemma": "עִם",
-          "strong": "H5973",
-          "pron": "임오"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H854",
+          "pron": "에트"
         },
         {
           "word": "י֥וֹרְדֵי",
           "lemma": "יָרַד",
           "strong": "H3381",
-          "pron": "예렏"
+          "pron": "바예렏"
         },
         {
           "word": "בֽוֹר",
           "lemma": "בּוֹר",
           "strong": "H953",
-          "pron": "보르"
+          "pron": "아보로트"
         }
       ],
-      "count": 3,
+      "count": 8,
       "refs": [
-        "psalms 28:1",
-        "psalms 88:4",
-        "psalms 143:7"
+        "ezekiel 26:20",
+        "ezekiel 31:16",
+        "ezekiel 32:18",
+        "ezekiel 32:24",
+        "ezekiel 32:25",
+        "ezekiel 32:29",
+        "ezekiel 32:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵֽי בוֹרֽוֹ",
+      "pron": "아마임 아보로트",
+      "lemmas": [
+        "מַיִם",
+        "בּוֹר"
+      ],
+      "words": [
+        {
+          "word": "מֵֽי",
+          "lemma": "מַיִם",
+          "strong": "H4325",
+          "pron": "아마임"
+        },
+        {
+          "word": "בוֹרֽוֹ",
+          "lemma": "בּוֹר",
+          "strong": "H953",
+          "pron": "아보로트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings2 18:31",
+        "chronicles1 11:17",
+        "chronicles1 11:18",
+        "proverbs 5:15",
+        "isaiah 36:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַבֹּ֑רָה וְהַבּ֣וֹר",
+      "pron": "아보로트 아보로트",
+      "lemmas": [
+        "בּוֹר",
+        "בּוֹר"
+      ],
+      "words": [
+        {
+          "word": "הַבֹּ֑רָה",
+          "lemma": "בּוֹר",
+          "strong": "H953",
+          "pron": "아보로트"
+        },
+        {
+          "word": "וְהַבּ֣וֹר",
+          "lemma": "בּוֹר",
+          "strong": "H953",
+          "pron": "아보로트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 37:24",
+        "jeremiah 6:7"
       ],
       "glossKo": ""
     }

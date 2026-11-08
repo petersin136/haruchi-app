@@ -1,6 +1,6 @@
 {
   "lemma": "פָּחַד",
-  "pron": "파하두",
+  "pron": "우파핟타",
   "strong": "H6342",
   "posKo": "동사",
   "root": null,
@@ -8,15 +8,53 @@
     {
       "lemma": "פַּחַד",
       "strong": "H6343",
-      "pron": "파핟",
+      "pron": "우파핟",
       "glossKo": "공포"
     }
   ],
   "defEn": "be startled; fear",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 25,
   "byBook": {
-    "psalms": 5
+    "isaiah": 8,
+    "psalms": 5,
+    "jeremiah": 3,
+    "job": 3,
+    "deuteronomy": 2,
+    "proverbs": 2,
+    "hosea": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְלֹ֣א פָחָ֑דוּ",
+      "pron": "로 우파핟타",
+      "lemmas": [
+        "לֹא",
+        "פָּחַד"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "פָחָ֑דוּ",
+          "lemma": "פָּחַד",
+          "strong": "H6342",
+          "pron": "우파핟타"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 78:53",
+        "proverbs 3:24",
+        "isaiah 12:2",
+        "jeremiah 36:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

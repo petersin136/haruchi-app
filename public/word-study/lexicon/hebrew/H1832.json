@@ -1,6 +1,6 @@
 {
   "lemma": "דִּמְעָה",
-  "pron": "브딤아티위",
+  "pron": "딤아테카",
   "strong": "H1832",
   "posKo": "명사",
   "root": {
@@ -12,15 +12,89 @@
     {
       "lemma": "דֶּמַע",
       "strong": "H1831",
-      "pron": "",
-      "glossKo": "눈물"
+      "pron": "베딤아카",
+      "glossKo": "너의 눈물"
     }
   ],
   "defEn": "weeping",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 23,
   "byBook": {
-    "psalms": 8
+    "psalms": 8,
+    "jeremiah": 5,
+    "isaiah": 3,
+    "lamentations": 3,
+    "ecclesiastes": 1,
+    "ezekiel": 1,
+    "kings2": 1,
+    "malachi": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עֵינֵ֨ינוּ֙ דִּמְעָ֔ה",
+      "pron": "에네켐 딤아테카",
+      "lemmas": [
+        "עַיִן",
+        "דִּמְעָה"
+      ],
+      "words": [
+        {
+          "word": "עֵינֵ֨ינוּ֙",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        },
+        {
+          "word": "דִּמְעָ֔ה",
+          "lemma": "דִּמְעָה",
+          "strong": "H1832",
+          "pron": "딤아테카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 9:18",
+        "jeremiah 13:17",
+        "jeremiah 14:17",
+        "jeremiah 31:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְתֵרַ֤דְנָה עֵינֵ֨ינוּ֙ דִּמְעָ֔ה",
+      "pron": "바예렏 에네켐 딤아테카",
+      "lemmas": [
+        "יָרַד",
+        "עַיִן",
+        "דִּמְעָה"
+      ],
+      "words": [
+        {
+          "word": "וְתֵרַ֤דְנָה",
+          "lemma": "יָרַד",
+          "strong": "H3381",
+          "pron": "바예렏"
+        },
+        {
+          "word": "עֵינֵ֨ינוּ֙",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        },
+        {
+          "word": "דִּמְעָ֔ה",
+          "lemma": "דִּמְעָה",
+          "strong": "H1832",
+          "pron": "딤아테카"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 9:18",
+        "jeremiah 13:17",
+        "jeremiah 14:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

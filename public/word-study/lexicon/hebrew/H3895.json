@@ -1,6 +1,6 @@
 {
   "lemma": "לְחִי",
-  "pron": "레히",
+  "pron": "브아레하아임",
   "strong": "H3895",
   "posKo": "명사",
   "root": null,
@@ -8,15 +8,116 @@
     {
       "lemma": "לֶחִי",
       "strong": "H3896",
-      "pron": "",
+      "pron": "바레히",
       "glossKo": "레히"
     }
   ],
   "defEn": "cheek; fleshiness; jaw",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 21,
   "byBook": {
+    "judges": 5,
+    "ezekiel": 2,
+    "isaiah": 2,
+    "job": 2,
+    "lamentations": 2,
+    "songofsolomon": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "hosea": 1,
+    "kings1": 1,
+    "micah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עַל הַלֶּ֑חִי",
+      "pron": "알 브아레하아임",
+      "lemmas": [
+        "עַל",
+        "לְחִי"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הַלֶּ֑חִי",
+          "lemma": "לְחִי",
+          "strong": "H3895",
+          "pron": "브아레하아임"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 22:24",
+        "chronicles2 18:23",
+        "isaiah 30:28",
+        "lamentations 1:2",
+        "hosea 11:4",
+        "micah 5:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּלְחִ֣י הַחֲמ֔וֹר",
+      "pron": "브아레하아임 바하모림",
+      "lemmas": [
+        "לְחִי",
+        "חֲמוֹר"
+      ],
+      "words": [
+        {
+          "word": "בִּלְחִ֣י",
+          "lemma": "לְחִי",
+          "strong": "H3895",
+          "pron": "브아레하아임"
+        },
+        {
+          "word": "הַחֲמ֔וֹר",
+          "lemma": "חֲמוֹר",
+          "strong": "H2543",
+          "pron": "바하모림"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 15:15",
+        "judges 15:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִכּ֣וּ לְחָיָ֑י",
+      "pron": "학코트 브아레하아임",
+      "lemmas": [
+        "נָכָה",
+        "לְחִי"
+      ],
+      "words": [
+        {
+          "word": "הִכּ֣וּ",
+          "lemma": "נָכָה",
+          "strong": "H5221",
+          "pron": "학코트"
+        },
+        {
+          "word": "לְחָיָ֑י",
+          "lemma": "לְחִי",
+          "strong": "H3895",
+          "pron": "브아레하아임"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 16:10",
+        "isaiah 50:6",
+        "lamentations 3:30"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

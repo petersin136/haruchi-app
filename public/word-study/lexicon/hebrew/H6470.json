@@ -1,6 +1,6 @@
 {
   "lemma": "פָּעַם",
-  "pron": "닙암티",
+  "pron": "바팁파엠",
   "strong": "H6470",
   "posKo": "동사",
   "root": null,
@@ -8,16 +8,48 @@
     {
       "lemma": "פַּעַם",
       "strong": "H6471",
-      "pron": "페아마위",
-      "glossKo": "나의 걸음"
+      "pron": "아파암",
+      "glossKo": "걸음"
     }
   ],
   "defEn": "tap; beat regularly; impel; agitate",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 5,
   "byBook": {
+    "daniel": 2,
     "genesis": 1,
+    "judges": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַתִּפָּ֣עֶם רוּח֔וֹ",
+      "pron": "바팁파엠 브루아흐",
+      "lemmas": [
+        "פָּעַם",
+        "רוּחַ"
+      ],
+      "words": [
+        {
+          "word": "וַתִּפָּ֣עֶם",
+          "lemma": "פָּעַם",
+          "strong": "H6470",
+          "pron": "바팁파엠"
+        },
+        {
+          "word": "רוּח֔וֹ",
+          "lemma": "רוּחַ",
+          "strong": "H7307",
+          "pron": "브루아흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 41:8",
+        "daniel 2:1",
+        "daniel 2:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

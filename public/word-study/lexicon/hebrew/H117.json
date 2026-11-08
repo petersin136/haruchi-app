@@ -1,6 +1,6 @@
 {
   "lemma": "אַדִּיר",
-  "pron": "앋디르",
+  "pron": "앋디림",
   "strong": "H117",
   "posKo": "형용사",
   "root": {
@@ -12,45 +12,85 @@
     {
       "lemma": "אֲדוֹרַיִם",
       "strong": "H115",
-      "pron": "",
+      "pron": "아도라임",
       "glossKo": "아도라임"
     },
     {
       "lemma": "אָדַר",
       "strong": "H142",
-      "pron": "",
-      "glossKo": "엄위하다"
+      "pron": "네엗다리",
+      "glossKo": "엄위하는 이"
     },
     {
       "lemma": "אֶדֶר",
       "strong": "H145",
-      "pron": "",
+      "pron": "에데르",
       "glossKo": "위엄"
     },
     {
       "lemma": "אַדָּר",
       "strong": "H146",
-      "pron": "",
+      "pron": "앋다라",
       "glossKo": "앗달"
     },
     {
       "lemma": "אִדַּר",
       "strong": "H147",
-      "pron": "",
+      "pron": "읻데레",
       "glossKo": "큰(아람)"
     },
     {
       "lemma": "אֲדְרַמֶּלֶךְ",
       "strong": "H152",
-      "pron": "",
+      "pron": "르앋람멜레크",
       "glossKo": "아드람멜렉"
     }
   ],
   "defEn": "wide; large; powerful",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 27,
   "byBook": {
-    "psalms": 7
+    "psalms": 7,
+    "jeremiah": 5,
+    "isaiah": 3,
+    "ezekiel": 2,
+    "judges": 2,
+    "nahum": 2,
+    "nehemiah": 2,
+    "chronicles2": 1,
+    "exodus": 1,
+    "samuel1": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אַדִּירֵ֣י הַצֹּ֔אן",
+      "pron": "앋디림 촌",
+      "lemmas": [
+        "אַדִּיר",
+        "צֹאן"
+      ],
+      "words": [
+        {
+          "word": "אַדִּירֵ֣י",
+          "lemma": "אַדִּיר",
+          "strong": "H117",
+          "pron": "앋디림"
+        },
+        {
+          "word": "הַצֹּ֔אן",
+          "lemma": "צֹאן",
+          "strong": "H6629",
+          "pron": "촌"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 25:34",
+        "jeremiah 25:35",
+        "jeremiah 25:36"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

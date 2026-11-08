@@ -1,8 +1,8 @@
 {
   "lemma": "עֲלַל",
-  "pron": "알랄",
+  "pron": "알",
   "strong": "H5954",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "עָלַל",
     "strong": "H5953",
@@ -10,15 +10,21 @@
   },
   "family": [
     {
+      "lemma": "מֵעָל",
+      "strong": "H4606",
+      "pron": "메알레",
+      "glossKo": "지는 곳(아람)"
+    },
+    {
       "lemma": "מַעֲלָל",
       "strong": "H4611",
-      "pron": "마알레헴",
-      "glossKo": "그들의 행위"
+      "pron": "마알랄레카",
+      "glossKo": "너의 행위"
     },
     {
       "lemma": "עֹל",
       "strong": "H5923",
-      "pron": "울오",
+      "pron": "울로",
       "glossKo": "그의 멍에"
     },
     {
@@ -30,19 +36,147 @@
     {
       "lemma": "עֲלִילָה",
       "strong": "H5949",
-      "pron": "알릴로타이브",
-      "glossKo": "그의 행적"
+      "pron": "알릴로트",
+      "glossKo": "행적"
     },
     {
       "lemma": "עָלַל",
       "strong": "H5953",
-      "pron": "르히테올렐",
-      "glossKo": "이삭을 줍다를 따라"
+      "pron": "히테알랄티",
+      "glossKo": "이삭을 줍다"
     }
   ],
   "defEn": "enter; introduce",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 17,
+  "byBook": {
+    "daniel": 17
+  },
+  "phrases": [
+    {
+      "hebrew": "הַעֵ֨לְנִי֙ קֳדָ֣ם",
+      "pron": "알 카다마이",
+      "lemmas": [
+        "עֲלַל",
+        "קֳדָם"
+      ],
+      "words": [
+        {
+          "word": "הַעֵ֨לְנִי֙",
+          "lemma": "עֲלַל",
+          "strong": "H5954",
+          "pron": "알"
+        },
+        {
+          "word": "קֳדָ֣ם",
+          "lemma": "קֳדָם",
+          "strong": "H6925",
+          "pron": "카다마이"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "daniel 2:24",
+        "daniel 4:6",
+        "daniel 4:8",
+        "daniel 5:13",
+        "daniel 5:15",
+        "daniel 6:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עללין עָלִּ֗ין",
+      "pron": "알 알",
+      "lemmas": [
+        "עֲלַל",
+        "עֲלַל"
+      ],
+      "words": [
+        {
+          "word": "עללין",
+          "lemma": "עֲלַל",
+          "strong": "H5954",
+          "pron": "알"
+        },
+        {
+          "word": "עָלִּ֗ין",
+          "lemma": "עֲלַל",
+          "strong": "H5954",
+          "pron": "알"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "daniel 4:7",
+        "daniel 5:8",
+        "daniel 5:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּאדַ֣יִן עללין עָלִּ֗ין",
+      "pron": "에다인 알 알",
+      "lemmas": [
+        "אֱדַיִן",
+        "עֲלַל",
+        "עֲלַל"
+      ],
+      "words": [
+        {
+          "word": "בֵּאדַ֣יִן",
+          "lemma": "אֱדַיִן",
+          "strong": "H116",
+          "pron": "에다인"
+        },
+        {
+          "word": "עללין",
+          "lemma": "עֲלַל",
+          "strong": "H5954",
+          "pron": "알"
+        },
+        {
+          "word": "עָלִּ֗ין",
+          "lemma": "עֲלַל",
+          "strong": "H5954",
+          "pron": "알"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:7",
+        "daniel 5:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְדָ֣נִיֵּ֔אל עַ֖ל",
+      "pron": "다니엘 알",
+      "lemmas": [
+        "דָּנִיֵּאל",
+        "עֲלַל"
+      ],
+      "words": [
+        {
+          "word": "וְדָ֣נִיֵּ֔אל",
+          "lemma": "דָּנִיֵּאל",
+          "strong": "H1841",
+          "pron": "다니엘"
+        },
+        {
+          "word": "עַ֖ל",
+          "lemma": "עֲלַל",
+          "strong": "H5954",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:16",
+        "daniel 2:24",
+        "daniel 5:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

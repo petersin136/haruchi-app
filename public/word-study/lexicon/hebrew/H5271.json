@@ -1,6 +1,6 @@
 {
   "lemma": "נָעוּר",
-  "pron": "네우라위",
+  "pron": "민네우라으브",
   "strong": "H5271",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "נַעַר",
       "strong": "H5288",
-      "pron": "나아르",
+      "pron": "아네아림",
       "glossKo": "소년"
     },
     {
@@ -24,19 +24,19 @@
     {
       "lemma": "נַעֲרַי",
       "strong": "H5293",
-      "pron": "",
+      "pron": "나아라이",
       "glossKo": "나아래 사람"
     },
     {
       "lemma": "נְעַרְיָה",
       "strong": "H5294",
-      "pron": "",
+      "pron": "우네아레아",
       "glossKo": "느아랴"
     },
     {
       "lemma": "נַעֲרָן",
       "strong": "H5295",
-      "pron": "",
+      "pron": "나아란",
       "glossKo": "나아란"
     },
     {
@@ -48,10 +48,186 @@
   ],
   "defEn": "youth; juvenility; young",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 47,
   "byBook": {
+    "ezekiel": 9,
+    "jeremiah": 8,
     "psalms": 8,
-    "genesis": 2
+    "isaiah": 3,
+    "genesis": 2,
+    "job": 2,
+    "malachi": 2,
+    "numbers": 2,
+    "proverbs": 2,
+    "samuel1": 2,
+    "hosea": 1,
+    "joel": 1,
+    "kings1": 1,
+    "lamentations": 1,
+    "leviticus": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מִנְּעוּרֵ֣ינוּ וְעַד",
+      "pron": "민네우라으브 앋",
+      "lemmas": [
+        "נָעוּר",
+        "עַד"
+      ],
+      "words": [
+        {
+          "word": "מִנְּעוּרֵ֣ינוּ",
+          "lemma": "נָעוּר",
+          "strong": "H5271",
+          "pron": "민네우라으브"
+        },
+        {
+          "word": "וְעַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 46:34",
+        "samuel1 12:2",
+        "samuel2 19:7",
+        "psalms 71:17",
+        "jeremiah 3:25",
+        "ezekiel 4:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְמֵ֣י נְעוּרָ֑יִךְ",
+      "pron": "욤 민네우라으브",
+      "lemmas": [
+        "יוֹם",
+        "נָעוּר"
+      ],
+      "words": [
+        {
+          "word": "יְמֵ֣י",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "נְעוּרָ֑יִךְ",
+          "lemma": "נָעוּר",
+          "strong": "H5271",
+          "pron": "민네우라으브"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezekiel 16:22",
+        "ezekiel 16:43",
+        "ezekiel 16:60",
+        "ezekiel 23:19",
+        "hosea 2:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָבִ֨יהָ֙ כִּנְעוּרֶ֔יהָ",
+      "pron": "아비브 민네우라으브",
+      "lemmas": [
+        "אָב",
+        "נָעוּר"
+      ],
+      "words": [
+        {
+          "word": "אָבִ֨יהָ֙",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        },
+        {
+          "word": "כִּנְעוּרֶ֔יהָ",
+          "lemma": "נָעוּר",
+          "strong": "H5271",
+          "pron": "민네우라으브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 22:13",
+        "numbers 30:3",
+        "jeremiah 3:24",
+        "jeremiah 3:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת יְמֵ֣י נְעוּרָ֑יִךְ",
+      "pron": "에트 욤 민네우라으브",
+      "lemmas": [
+        "אֵת",
+        "יוֹם",
+        "נָעוּר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יְמֵ֣י",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "נְעוּרָ֑יִךְ",
+          "lemma": "נָעוּר",
+          "strong": "H5271",
+          "pron": "민네우라으브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 16:22",
+        "ezekiel 16:43",
+        "ezekiel 16:60",
+        "ezekiel 23:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵאֵ֥שֶׁת נְעוּרֶֽךָ",
+      "pron": "르잇샤 민네우라으브",
+      "lemmas": [
+        "אִשָּׁה",
+        "נָעוּר"
+      ],
+      "words": [
+        {
+          "word": "מֵאֵ֥שֶׁת",
+          "lemma": "אִשָּׁה",
+          "strong": "H802",
+          "pron": "르잇샤"
+        },
+        {
+          "word": "נְעוּרֶֽךָ",
+          "lemma": "נָעוּר",
+          "strong": "H5271",
+          "pron": "민네우라으브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "proverbs 5:18",
+        "isaiah 54:6",
+        "malachi 2:14",
+        "malachi 2:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

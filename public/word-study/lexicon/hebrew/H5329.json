@@ -1,6 +1,6 @@
 {
   "lemma": "נָצַח",
-  "pron": "라메낫체아흐",
+  "pron": "르낫체아흐",
   "strong": "H5329",
   "posKo": "동사",
   "root": {
@@ -12,38 +12,43 @@
     {
       "lemma": "נְצַח",
       "strong": "H5330",
-      "pron": "",
+      "pron": "미테낫차흐",
       "glossKo": "뛰어나다(아람)"
     },
     {
       "lemma": "נֶצַח",
       "strong": "H5331",
-      "pron": "라네차흐",
+      "pron": "네차흐",
       "glossKo": "영원"
     },
     {
       "lemma": "נֵצַח",
       "strong": "H5332",
-      "pron": "",
-      "glossKo": "광채"
+      "pron": "니체함",
+      "glossKo": "그들의 광채"
     },
     {
       "lemma": "נְצִיחַ",
       "strong": "H5335",
-      "pron": "",
+      "pron": "네치아흐",
       "glossKo": "느시아"
     }
   ],
   "defEn": "glitter from afar; be eminent; be permanent",
   "defKo": "",
-  "countOT": 55,
+  "countOT": 65,
   "byBook": {
-    "psalms": 55
+    "psalms": 55,
+    "chronicles2": 4,
+    "chronicles1": 2,
+    "ezra": 2,
+    "habakkuk": 1,
+    "jeremiah": 1
   },
   "phrases": [
     {
       "hebrew": "לַמְנַצֵּ֥חַ עַֽל",
-      "pron": "라메낫체아흐 알",
+      "pron": "르낫체아흐 알",
       "lemmas": [
         "נָצַח",
         "עַל"
@@ -53,7 +58,7 @@
           "word": "לַמְנַצֵּ֥חַ",
           "lemma": "נָצַח",
           "strong": "H5329",
-          "pron": "라메낫체아흐"
+          "pron": "르낫체아흐"
         },
         {
           "word": "עַֽל",
@@ -62,8 +67,12 @@
           "pron": "알"
         }
       ],
-      "count": 14,
+      "count": 18,
       "refs": [
+        "chronicles1 23:4",
+        "chronicles2 2:2",
+        "ezra 3:8",
+        "ezra 3:9",
         "psalms 8:1",
         "psalms 12:1",
         "psalms 22:1",
@@ -71,17 +80,13 @@
         "psalms 53:1",
         "psalms 56:1",
         "psalms 60:1",
-        "psalms 61:1",
-        "psalms 62:1",
-        "psalms 69:1",
-        "psalms 77:1",
-        "psalms 81:1"
+        "psalms 61:1"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "לַמְנַצֵּ֗חַ מִזְמ֥וֹר",
-      "pron": "라메낫체아흐 미즈모르",
+      "pron": "르낫체아흐 미즈모르",
       "lemmas": [
         "נָצַח",
         "מִזְמוֹר"
@@ -91,7 +96,7 @@
           "word": "לַמְנַצֵּ֗חַ",
           "lemma": "נָצַח",
           "strong": "H5329",
-          "pron": "라메낫체아흐"
+          "pron": "르낫체아흐"
         },
         {
           "word": "מִזְמ֥וֹר",
@@ -117,7 +122,7 @@
     },
     {
       "hebrew": "לַמְנַצֵּ֗חַ מִזְמ֥וֹר לְדָוִֽד",
-      "pron": "라메낫체아흐 미즈모르 르다윗",
+      "pron": "르낫체아흐 미즈모르 다윗",
       "lemmas": [
         "נָצַח",
         "מִזְמוֹר",
@@ -128,7 +133,7 @@
           "word": "לַמְנַצֵּ֗חַ",
           "lemma": "נָצַח",
           "strong": "H5329",
-          "pron": "라메낫체아흐"
+          "pron": "르낫체아흐"
         },
         {
           "word": "מִזְמ֥וֹר",
@@ -140,7 +145,7 @@
           "word": "לְדָוִֽד",
           "lemma": "דָּוִד",
           "strong": "H1732",
-          "pron": "르다윗"
+          "pron": "다윗"
         }
       ],
       "count": 10,
@@ -159,8 +164,41 @@
       "glossKo": ""
     },
     {
+      "hebrew": "לַמְנַצֵּ֥חַ בִּנְגִינֹ֗ת",
+      "pron": "르낫체아흐 네기나탐",
+      "lemmas": [
+        "נָצַח",
+        "נְגִינָה"
+      ],
+      "words": [
+        {
+          "word": "לַמְנַצֵּ֥חַ",
+          "lemma": "נָצַח",
+          "strong": "H5329",
+          "pron": "르낫체아흐"
+        },
+        {
+          "word": "בִּנְגִינֹ֗ת",
+          "lemma": "נְגִינָה",
+          "strong": "H5058",
+          "pron": "네기나탐"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "psalms 4:1",
+        "psalms 6:1",
+        "psalms 54:1",
+        "psalms 55:1",
+        "psalms 67:1",
+        "psalms 76:1",
+        "habakkuk 3:19"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "לַמְנַצֵּ֗חַ לְדָ֫וִ֥ד",
-      "pron": "라메낫체아흐 르다윗",
+      "pron": "르낫체아흐 다윗",
       "lemmas": [
         "נָצַח",
         "דָּוִד"
@@ -170,13 +208,13 @@
           "word": "לַמְנַצֵּ֗חַ",
           "lemma": "נָצַח",
           "strong": "H5329",
-          "pron": "라메낫체아흐"
+          "pron": "르낫체아흐"
         },
         {
           "word": "לְדָ֫וִ֥ד",
           "lemma": "דָּוִד",
           "strong": "H1732",
-          "pron": "르다윗"
+          "pron": "다윗"
         }
       ],
       "count": 7,
@@ -188,38 +226,6 @@
         "psalms 70:1",
         "psalms 109:1",
         "psalms 139:1"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "לַמְנַצֵּ֥חַ בִּנְגִינֹ֗ת",
-      "pron": "라메낫체아흐 비네기노트",
-      "lemmas": [
-        "נָצַח",
-        "נְגִינָה"
-      ],
-      "words": [
-        {
-          "word": "לַמְנַצֵּ֥חַ",
-          "lemma": "נָצַח",
-          "strong": "H5329",
-          "pron": "라메낫체아흐"
-        },
-        {
-          "word": "בִּנְגִינֹ֗ת",
-          "lemma": "נְגִינָה",
-          "strong": "H5058",
-          "pron": "비네기노트"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "psalms 4:1",
-        "psalms 6:1",
-        "psalms 54:1",
-        "psalms 55:1",
-        "psalms 67:1",
-        "psalms 76:1"
       ],
       "glossKo": ""
     }

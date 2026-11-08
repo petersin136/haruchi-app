@@ -2,7 +2,7 @@
   "lemma": "בִּלְעָם",
   "pron": "빌암",
   "strong": "H1109",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בַּל",
     "strong": "H1077",
@@ -18,13 +18,204 @@
     {
       "lemma": "בִּלְעֲדֵי",
       "strong": "H1107",
-      "pron": "미발아데",
-      "glossKo": "~외에"
+      "pron": "빌아다이",
+      "glossKo": "나를 ~외에"
     }
   ],
   "defEn": "Bilam",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 61,
+  "byBook": {
+    "numbers": 53,
+    "joshua": 3,
+    "deuteronomy": 2,
+    "chronicles1": 1,
+    "micah": 1,
+    "nehemiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶל בִּלְעָ֔ם",
+      "pron": "엘 빌암",
+      "lemmas": [
+        "אֵל",
+        "בִּלְעָם"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "בִּלְעָ֔ם",
+          "lemma": "בִּלְעָם",
+          "strong": "H1109",
+          "pron": "빌암"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "numbers 22:5",
+        "numbers 22:7",
+        "numbers 22:9",
+        "numbers 22:12",
+        "numbers 22:16",
+        "numbers 22:20",
+        "numbers 22:30",
+        "numbers 22:35",
+        "numbers 22:37",
+        "numbers 23:4",
+        "numbers 23:11",
+        "numbers 23:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֤אמֶר בִּלְעָם֙",
+      "pron": "바요메르 빌암",
+      "lemmas": [
+        "אָמַר",
+        "בִּלְעָם"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֤אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "בִּלְעָם֙",
+          "lemma": "בִּלְעָם",
+          "strong": "H1109",
+          "pron": "빌암"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "numbers 22:10",
+        "numbers 22:28",
+        "numbers 22:29",
+        "numbers 22:34",
+        "numbers 22:38",
+        "numbers 23:1",
+        "numbers 23:3",
+        "numbers 23:29",
+        "numbers 23:30",
+        "numbers 24:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת בִּלְעָ֔ם",
+      "pron": "에트 빌암",
+      "lemmas": [
+        "אֵת",
+        "בִּלְעָם"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "בִּלְעָ֔ם",
+          "lemma": "בִּלְעָם",
+          "strong": "H1109",
+          "pron": "빌암"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "numbers 22:41",
+        "numbers 23:28",
+        "numbers 31:8",
+        "deuteronomy 23:4",
+        "joshua 13:22",
+        "chronicles1 6:70",
+        "nehemiah 13:2",
+        "micah 6:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּלְעָ֣ם בֶּן",
+      "pron": "빌암 바님",
+      "lemmas": [
+        "בִּלְעָם",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "בִּלְעָ֣ם",
+          "lemma": "בִּלְעָם",
+          "strong": "H1109",
+          "pron": "빌암"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "numbers 22:5",
+        "numbers 24:3",
+        "numbers 24:15",
+        "numbers 31:8",
+        "deuteronomy 23:4",
+        "joshua 13:22",
+        "joshua 24:9",
+        "micah 6:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּלְעָ֣ם בֶּן בְּע֗וֹר",
+      "pron": "빌암 바님 베오르",
+      "lemmas": [
+        "בִּלְעָם",
+        "בֵּן",
+        "בְּעוֹר"
+      ],
+      "words": [
+        {
+          "word": "בִּלְעָ֣ם",
+          "lemma": "בִּלְעָם",
+          "strong": "H1109",
+          "pron": "빌암"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "בְּע֗וֹר",
+          "lemma": "בְּעוֹר",
+          "strong": "H1160",
+          "pron": "베오르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "numbers 22:5",
+        "numbers 24:3",
+        "numbers 24:15",
+        "numbers 31:8",
+        "deuteronomy 23:4",
+        "joshua 13:22",
+        "joshua 24:9",
+        "micah 6:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

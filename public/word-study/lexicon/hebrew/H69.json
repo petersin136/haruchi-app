@@ -2,7 +2,7 @@
   "lemma": "אֶבֶן",
   "pron": "에벤",
   "strong": "H69",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אֶבֶן",
     "strong": "H68",
@@ -12,31 +12,101 @@
     {
       "lemma": "אֶבֶן",
       "strong": "H68",
-      "pron": "바에벤",
+      "pron": "브에벤",
       "glossKo": "돌"
     },
     {
       "lemma": "אֹבֶן",
       "strong": "H70",
-      "pron": "",
+      "pron": "하압나임",
       "glossKo": "녹로"
     },
     {
       "lemma": "אֲבָנָה",
       "strong": "H71",
-      "pron": "",
+      "pron": "븐",
       "glossKo": "아바나"
     },
     {
       "lemma": "אֶבֶן הָעֵזֶר",
       "strong": "H72",
-      "pron": "",
+      "pron": "하에벤",
       "glossKo": "에벤에셀"
     }
   ],
   "defEn": "stone.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 8,
+  "byBook": {
+    "daniel": 6,
+    "ezra": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶ֨בֶן֙ דִּי",
+      "pron": "에벤 드흐브",
+      "lemmas": [
+        "אֶבֶן",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "אֶ֨בֶן֙",
+          "lemma": "אֶבֶן",
+          "strong": "H69",
+          "pron": "에벤"
+        },
+        {
+          "word": "דִּי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 2:34",
+        "daniel 2:35",
+        "daniel 2:45",
+        "daniel 5:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֨בֶן֙ דִּי לָ֣א",
+      "pron": "에벤 드흐브 라",
+      "lemmas": [
+        "אֶבֶן",
+        "דִּי",
+        "לָא"
+      ],
+      "words": [
+        {
+          "word": "אֶ֨בֶן֙",
+          "lemma": "אֶבֶן",
+          "strong": "H69",
+          "pron": "에벤"
+        },
+        {
+          "word": "דִּי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "לָ֣א",
+          "lemma": "לָא",
+          "strong": "H3809",
+          "pron": "라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:34",
+        "daniel 2:45",
+        "daniel 5:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

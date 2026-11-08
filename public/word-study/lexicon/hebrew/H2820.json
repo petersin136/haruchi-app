@@ -1,6 +1,6 @@
 {
   "lemma": "חָשַׂךְ",
-  "pron": "하소크",
+  "pron": "바에헤소크",
   "strong": "H2820",
   "posKo": "동사",
   "root": {
@@ -12,25 +12,25 @@
     {
       "lemma": "חֲשׁוֹךְ",
       "strong": "H2816",
-      "pron": "",
+      "pron": "바하쇼카",
       "glossKo": "어두움(아람)"
     },
     {
       "lemma": "חָשַׁךְ",
       "strong": "H2821",
-      "pron": "테헤샤케나",
+      "pron": "바테헤샤크",
       "glossKo": "어두워지다"
     },
     {
       "lemma": "חֹשֶׁךְ",
       "strong": "H2822",
-      "pron": "호셰크",
+      "pron": "브호셰크",
       "glossKo": "어둠"
     },
     {
       "lemma": "חָשֹׁךְ",
       "strong": "H2823",
-      "pron": "",
+      "pron": "하슉킴",
       "glossKo": "어두운"
     },
     {
@@ -42,45 +42,58 @@
     {
       "lemma": "חֲשֵׁכָה",
       "strong": "H2825",
-      "pron": "바하셰카",
+      "pron": "하셰카",
       "glossKo": "어둠"
     }
   ],
   "defEn": "restrain; refrain",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 27,
   "byBook": {
+    "job": 7,
+    "proverbs": 6,
     "genesis": 4,
-    "psalms": 2
+    "isaiah": 3,
+    "psalms": 2,
+    "ezra": 1,
+    "jeremiah": 1,
+    "kings2": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "לֹא חָשַׂ֣ךְ",
-      "pron": "로 하소크",
+      "hebrew": "וְלֹ֥א חָשַׂ֛כְתָּ",
+      "pron": "로 바에헤소크",
       "lemmas": [
         "לֹא",
         "חָשַׂךְ"
       ],
       "words": [
         {
-          "word": "לֹא",
+          "word": "וְלֹ֥א",
           "lemma": "לֹא",
           "strong": "H3808",
           "pron": "로"
         },
         {
-          "word": "חָשַׂ֣ךְ",
+          "word": "חָשַׂ֛כְתָּ",
           "lemma": "חָשַׂךְ",
           "strong": "H2820",
-          "pron": "하소크"
+          "pron": "바에헤소크"
         }
       ],
-      "count": 4,
+      "count": 9,
       "refs": [
-        "psalms 78:50",
         "genesis 22:12",
         "genesis 22:16",
-        "genesis 39:9"
+        "genesis 39:9",
+        "job 7:11",
+        "job 16:6",
+        "job 30:10",
+        "psalms 78:50",
+        "proverbs 21:26",
+        "jeremiah 14:10"
       ],
       "glossKo": ""
     }

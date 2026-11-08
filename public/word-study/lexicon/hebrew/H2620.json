@@ -1,6 +1,6 @@
 {
   "lemma": "חָסָה",
-  "pron": "호세",
+  "pron": "하사우",
   "strong": "H2620",
   "posKo": "동사",
   "root": {
@@ -12,50 +12,89 @@
     {
       "lemma": "בָּטַח",
       "strong": "H982",
-      "pron": "우빋후",
-      "glossKo": "신뢰하다"
+      "pron": "보데아흐",
+      "glossKo": "신뢰하는 이"
     },
     {
       "lemma": "בֶּטַח",
       "strong": "H983",
-      "pron": "라베다흐",
+      "pron": "베다흐",
       "glossKo": "안전"
     },
     {
       "lemma": "בִּטָּחוֹן",
       "strong": "H986",
-      "pron": "",
+      "pron": "아빋다혼",
       "glossKo": "신뢰"
     },
     {
       "lemma": "בַּטֻּחוֹת",
       "strong": "H987",
-      "pron": "",
+      "pron": "우받두호트",
       "glossKo": "안전한 곳"
     },
     {
       "lemma": "חֹסָה",
       "strong": "H2621",
-      "pron": "",
+      "pron": "호사",
       "glossKo": "호사"
     },
     {
       "lemma": "חָסוּת",
       "strong": "H2622",
-      "pron": "",
+      "pron": "브헤하수트",
       "glossKo": "피난처"
     }
   ],
   "defEn": "flee; confide",
   "defKo": "",
-  "countOT": 25,
+  "countOT": 37,
   "byBook": {
-    "psalms": 25
+    "psalms": 25,
+    "isaiah": 3,
+    "proverbs": 2,
+    "samuel2": 2,
+    "deuteronomy": 1,
+    "judges": 1,
+    "nahum": 1,
+    "ruth": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
+      "hebrew": "לְכֹ֖ל הַחֹסִ֥ים",
+      "pron": "칼 하사우",
+      "lemmas": [
+        "כֹּל",
+        "חָסָה"
+      ],
+      "words": [
+        {
+          "word": "לְכֹ֖ל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הַחֹסִ֥ים",
+          "lemma": "חָסָה",
+          "strong": "H2620",
+          "pron": "하사우"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 22:31",
+        "psalms 2:12",
+        "psalms 5:11",
+        "psalms 18:30",
+        "psalms 34:22"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "בַּֽיהוָ֨ה חָסִ֗יתִי",
-      "pron": "여호와 호세",
+      "pron": "여호와 하사우",
       "lemmas": [
         "יְהֹוָה",
         "חָסָה"
@@ -71,7 +110,7 @@
           "word": "חָסִ֗יתִי",
           "lemma": "חָסָה",
           "strong": "H2620",
-          "pron": "호세"
+          "pron": "하사우"
         }
       ],
       "count": 4,
@@ -85,7 +124,7 @@
     },
     {
       "hebrew": "כִּֽי חָסִ֥יתִי",
-      "pron": "키 호세",
+      "pron": "키 하사우",
       "lemmas": [
         "כִּי",
         "חָסָה"
@@ -101,7 +140,7 @@
           "word": "חָסִ֥יתִי",
           "lemma": "חָסָה",
           "strong": "H2620",
-          "pron": "호세"
+          "pron": "하사우"
         }
       ],
       "count": 4,
@@ -114,38 +153,8 @@
       "glossKo": ""
     },
     {
-      "hebrew": "כָּל ח֥וֹסֵי",
-      "pron": "브콜 호세",
-      "lemmas": [
-        "כֹּל",
-        "חָסָה"
-      ],
-      "words": [
-        {
-          "word": "כָּל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
-        },
-        {
-          "word": "ח֥וֹסֵי",
-          "lemma": "חָסָה",
-          "strong": "H2620",
-          "pron": "호세"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 2:12",
-        "psalms 5:11",
-        "psalms 18:30",
-        "psalms 34:22"
-      ],
-      "glossKo": ""
-    },
-    {
       "hebrew": "חָ֭סִיתִי אַל",
-      "pron": "호세 브엘",
+      "pron": "하사우 엘",
       "lemmas": [
         "חָסָה",
         "אַל"
@@ -155,13 +164,13 @@
           "word": "חָ֭סִיתִי",
           "lemma": "חָסָה",
           "strong": "H2620",
-          "pron": "호세"
+          "pron": "하사우"
         },
         {
           "word": "אַל",
           "lemma": "אַל",
           "strong": "H408",
-          "pron": "브엘"
+          "pron": "엘"
         }
       ],
       "count": 3,
@@ -174,7 +183,7 @@
     },
     {
       "hebrew": "כְּ֝נָפֶ֗יךָ יֶחֱסָיֽוּן",
-      "pron": "케나페카 호세",
+      "pron": "카납 하사우",
       "lemmas": [
         "כָּנָף",
         "חָסָה"
@@ -184,13 +193,13 @@
           "word": "כְּ֝נָפֶ֗יךָ",
           "lemma": "כָּנָף",
           "strong": "H3671",
-          "pron": "케나페카"
+          "pron": "카납"
         },
         {
           "word": "יֶחֱסָיֽוּן",
           "lemma": "חָסָה",
           "strong": "H2620",
-          "pron": "호세"
+          "pron": "하사우"
         }
       ],
       "count": 3,

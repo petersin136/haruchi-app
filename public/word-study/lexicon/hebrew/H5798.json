@@ -1,8 +1,8 @@
 {
   "lemma": "עֻזָּא",
-  "pron": "웃자",
+  "pron": "브웃자",
   "strong": "H5798",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עֹז",
     "strong": "H5797",
@@ -12,13 +12,132 @@
     {
       "lemma": "עֹז",
       "strong": "H5797",
-      "pron": "옷",
-      "glossKo": "힘"
+      "pron": "앗지",
+      "glossKo": "나의 힘"
+    },
+    {
+      "lemma": "עֻזִּיאֵל",
+      "strong": "H5816",
+      "pron": "브웃지엘",
+      "glossKo": "웃시엘"
+    },
+    {
+      "lemma": "עֻזִּיָּה",
+      "strong": "H5818",
+      "pron": "르우지아",
+      "glossKo": "웃시야"
+    },
+    {
+      "lemma": "עׇזְנִיָּה",
+      "strong": "H5822",
+      "pron": "하앗니아",
+      "glossKo": "흰꼬리수리"
     }
   ],
   "defEn": "Uzza; Uzzah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "chronicles1": 6,
+    "samuel2": 4,
+    "kings2": 2,
+    "ezra": 1,
+    "nehemiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בְנ֖וֹ עֻזָּ֥ה",
+      "pron": "바님 브웃자",
+      "lemmas": [
+        "בֵּן",
+        "עֻזָּא"
+      ],
+      "words": [
+        {
+          "word": "בְנ֖וֹ",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עֻזָּ֥ה",
+          "lemma": "עֻזָּא",
+          "strong": "H5798",
+          "pron": "브웃자"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 6:29",
+        "ezra 2:49",
+        "nehemiah 7:51"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְנ֖וֹ עֻזָּ֥ה בְנֽוֹ",
+      "pron": "바님 브웃자 바님",
+      "lemmas": [
+        "בֵּן",
+        "עֻזָּא",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "בְנ֖וֹ",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עֻזָּ֥ה",
+          "lemma": "עֻזָּא",
+          "strong": "H5798",
+          "pron": "브웃자"
+        },
+        {
+          "word": "בְנֽוֹ",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 6:29",
+        "ezra 2:49",
+        "nehemiah 7:51"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֻזָּ֥ה בְנֽוֹ",
+      "pron": "브웃자 바님",
+      "lemmas": [
+        "עֻזָּא",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "עֻזָּ֥ה",
+          "lemma": "עֻזָּא",
+          "strong": "H5798",
+          "pron": "브웃자"
+        },
+        {
+          "word": "בְנֽוֹ",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 6:29",
+        "ezra 2:49",
+        "nehemiah 7:51"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

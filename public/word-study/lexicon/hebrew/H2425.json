@@ -12,45 +12,122 @@
     {
       "lemma": "חַי",
       "strong": "H2416",
-      "pron": "하아위",
-      "glossKo": "나의 산"
+      "pron": "하아",
+      "glossKo": "산"
     },
     {
       "lemma": "חֲיָא",
       "strong": "H2418",
-      "pron": "",
+      "pron": "헤이",
       "glossKo": "살다(아람)"
     },
     {
       "lemma": "חָיָה",
       "strong": "H2421",
-      "pron": "예히",
+      "pron": "바예히",
       "glossKo": "살다"
     },
     {
       "lemma": "חָיֶה",
       "strong": "H2422",
-      "pron": "",
+      "pron": "하오트",
       "glossKo": "활기 있는"
     },
     {
       "lemma": "חַיּוּת",
       "strong": "H2424",
-      "pron": "",
+      "pron": "하우트",
       "glossKo": "생명"
     },
     {
       "lemma": "יְחִיאֵל",
       "strong": "H3171",
-      "pron": "",
+      "pron": "비위히엘",
       "glossKo": "여히엘"
     }
   ],
   "defEn": "live; revive",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 20,
   "byBook": {
-    "genesis": 3
+    "ezekiel": 6,
+    "deuteronomy": 4,
+    "genesis": 3,
+    "exodus": 2,
+    "numbers": 2,
+    "leviticus": 1,
+    "nehemiah": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הָֽאָדָם֙ וָחַ֣י",
+      "pron": "아담 바하이",
+      "lemmas": [
+        "אָדָם",
+        "חָיַי"
+      ],
+      "words": [
+        {
+          "word": "הָֽאָדָם֙",
+          "lemma": "אָדָם",
+          "strong": "H120",
+          "pron": "아담"
+        },
+        {
+          "word": "וָחַ֣י",
+          "lemma": "חָיַי",
+          "strong": "H2425",
+          "pron": "바하이"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 33:20",
+        "leviticus 18:5",
+        "deuteronomy 5:24",
+        "ezekiel 20:11",
+        "ezekiel 20:13",
+        "ezekiel 20:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֹתָ֛ם הָאָדָ֖ם וָחַ֣י",
+      "pron": "에트 아담 바하이",
+      "lemmas": [
+        "אֵת",
+        "אָדָם",
+        "חָיַי"
+      ],
+      "words": [
+        {
+          "word": "אֹתָ֛ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הָאָדָ֖ם",
+          "lemma": "אָדָם",
+          "strong": "H120",
+          "pron": "아담"
+        },
+        {
+          "word": "וָחַ֣י",
+          "lemma": "חָיַי",
+          "strong": "H2425",
+          "pron": "바하이"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 18:5",
+        "ezekiel 20:11",
+        "ezekiel 20:13",
+        "ezekiel 20:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

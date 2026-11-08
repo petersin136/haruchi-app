@@ -1,6 +1,6 @@
 {
   "lemma": "רָעָה",
-  "pron": "로이위",
+  "pron": "로에",
   "strong": "H7462",
   "posKo": "동사",
   "root": null,
@@ -32,58 +32,50 @@
     {
       "lemma": "רֵעַ",
       "strong": "H7454",
-      "pron": "르레이위",
+      "pron": "레레이",
       "glossKo": "나의 생각"
     },
     {
       "lemma": "רֵעֶה",
       "strong": "H7463",
-      "pron": "",
+      "pron": "레에",
       "glossKo": "친구"
     }
   ],
   "defEn": "tend; pasture; graze; rule",
   "defKo": "",
-  "countOT": 25,
+  "countOT": 164,
   "byBook": {
+    "ezekiel": 32,
+    "jeremiah": 27,
     "genesis": 17,
-    "psalms": 8
+    "isaiah": 15,
+    "zechariah": 12,
+    "psalms": 8,
+    "songofsolomon": 7,
+    "proverbs": 6,
+    "samuel1": 6,
+    "micah": 5,
+    "exodus": 4,
+    "chronicles1": 3,
+    "hosea": 3,
+    "job": 3,
+    "zephaniah": 3,
+    "amos": 2,
+    "numbers": 2,
+    "samuel2": 2,
+    "chronicles2": 1,
+    "ecclesiastes": 1,
+    "jonah": 1,
+    "judges": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "nahum": 1
   },
   "phrases": [
     {
-      "hebrew": "רֹ֣עֵה צֹ֔אן",
-      "pron": "로이위 크촌",
-      "lemmas": [
-        "רָעָה",
-        "צֹאן"
-      ],
-      "words": [
-        {
-          "word": "רֹ֣עֵה",
-          "lemma": "רָעָה",
-          "strong": "H7462",
-          "pron": "로이위"
-        },
-        {
-          "word": "צֹ֔אן",
-          "lemma": "צֹאן",
-          "strong": "H6629",
-          "pron": "크촌"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "genesis 4:2",
-        "genesis 30:31",
-        "genesis 46:32",
-        "genesis 46:34",
-        "genesis 47:3"
-      ],
-      "glossKo": ""
-    },
-    {
       "hebrew": "רֹעֶ֛ה אֶת",
-      "pron": "로이위 에트",
+      "pron": "로에 에트",
       "lemmas": [
         "רָעָה",
         "אֵת"
@@ -93,7 +85,7 @@
           "word": "רֹעֶ֛ה",
           "lemma": "רָעָה",
           "strong": "H7462",
-          "pron": "로이위"
+          "pron": "로에"
         },
         {
           "word": "אֶת",
@@ -102,12 +94,161 @@
           "pron": "에트"
         }
       ],
-      "count": 4,
+      "count": 27,
       "refs": [
         "genesis 30:36",
         "genesis 36:24",
         "genesis 37:12",
-        "genesis 48:15"
+        "genesis 48:15",
+        "exodus 3:1",
+        "samuel1 17:15",
+        "samuel2 5:2",
+        "samuel2 7:7",
+        "chronicles1 11:2",
+        "chronicles1 17:6",
+        "songofsolomon 1:8",
+        "jeremiah 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רֹ֣עֵה צֹ֔אן",
+      "pron": "로에 촌",
+      "lemmas": [
+        "רָעָה",
+        "צֹאן"
+      ],
+      "words": [
+        {
+          "word": "רֹ֣עֵה",
+          "lemma": "רָעָה",
+          "strong": "H7462",
+          "pron": "로에"
+        },
+        {
+          "word": "צֹ֔אן",
+          "lemma": "צֹאן",
+          "strong": "H6629",
+          "pron": "촌"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 4:2",
+        "genesis 30:31",
+        "genesis 46:32",
+        "genesis 46:34",
+        "genesis 47:3",
+        "samuel1 16:11",
+        "samuel1 25:16",
+        "isaiah 61:5",
+        "isaiah 63:11",
+        "ezekiel 34:10",
+        "ezekiel 34:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רֹעַ֨יִךְ֙ תִּרְעֶה",
+      "pron": "로에 로에",
+      "lemmas": [
+        "רָעָה",
+        "רָעָה"
+      ],
+      "words": [
+        {
+          "word": "רֹעַ֨יִךְ֙",
+          "lemma": "רָעָה",
+          "strong": "H7462",
+          "pron": "로에"
+        },
+        {
+          "word": "תִּרְעֶה",
+          "lemma": "רָעָה",
+          "strong": "H7462",
+          "pron": "로에"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "jeremiah 22:22",
+        "jeremiah 23:2",
+        "jeremiah 23:4",
+        "ezekiel 34:2",
+        "ezekiel 34:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רֹעֶ֛ה אֶת צֹ֥אן",
+      "pron": "로에 에트 촌",
+      "lemmas": [
+        "רָעָה",
+        "אֵת",
+        "צֹאן"
+      ],
+      "words": [
+        {
+          "word": "רֹעֶ֛ה",
+          "lemma": "רָעָה",
+          "strong": "H7462",
+          "pron": "로에"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "צֹ֥אן",
+          "lemma": "צֹאן",
+          "strong": "H6629",
+          "pron": "촌"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 30:36",
+        "genesis 37:12",
+        "exodus 3:1",
+        "samuel1 17:15",
+        "ezekiel 34:8",
+        "zechariah 11:4",
+        "zechariah 11:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַֽל הָרֹעִים֮",
+      "pron": "알 로에",
+      "lemmas": [
+        "עַל",
+        "רָעָה"
+      ],
+      "words": [
+        {
+          "word": "עַֽל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הָרֹעִים֮",
+          "lemma": "רָעָה",
+          "strong": "H7462",
+          "pron": "로에"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "jeremiah 23:2",
+        "jeremiah 23:4",
+        "ezekiel 34:2",
+        "ezekiel 34:23",
+        "ezekiel 37:24",
+        "zephaniah 2:7",
+        "zechariah 10:3"
       ],
       "glossKo": ""
     }

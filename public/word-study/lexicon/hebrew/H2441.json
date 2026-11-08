@@ -1,6 +1,6 @@
 {
   "lemma": "חֵךְ",
-  "pron": "르힉키위",
+  "pron": "힉키",
   "strong": "H2441",
   "posKo": "명사",
   "root": {
@@ -18,14 +18,14 @@
     {
       "lemma": "חָנִיךְ",
       "strong": "H2593",
-      "pron": "하니카이브",
+      "pron": "하니카으브",
       "glossKo": "그의 훈련된"
     },
     {
       "lemma": "חָנַךְ",
       "strong": "H2596",
-      "pron": "",
-      "glossKo": "헌신하다"
+      "pron": "하나코",
+      "glossKo": "그에게 헌신하다"
     },
     {
       "lemma": "חֲנֻכָּה",
@@ -36,15 +36,80 @@
     {
       "lemma": "חָנַק",
       "strong": "H2614",
-      "pron": "",
+      "pron": "바예하나크",
       "glossKo": "목을 매다"
     }
   ],
   "defEn": "palate; mouth",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 18,
   "byBook": {
-    "psalms": 2
+    "job": 7,
+    "proverbs": 3,
+    "songofsolomon": 3,
+    "psalms": 2,
+    "ezekiel": 1,
+    "hosea": 1,
+    "lamentations": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶל חכּ֖וֹ",
+      "pron": "엘 힉키",
+      "lemmas": [
+        "אֵל",
+        "חֵךְ"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "חכּ֖וֹ",
+          "lemma": "חֵךְ",
+          "strong": "H2441",
+          "pron": "힉키"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "lamentations 4:4",
+        "ezekiel 3:26",
+        "hosea 8:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּ֝לְשׁוֹנָ֗ם לְחִכָּ֥ם",
+      "pron": "릴쇼노 힉키",
+      "lemmas": [
+        "לָשׁוֹן",
+        "חֵךְ"
+      ],
+      "words": [
+        {
+          "word": "וּ֝לְשׁוֹנָ֗ם",
+          "lemma": "לָשׁוֹן",
+          "strong": "H3956",
+          "pron": "릴쇼노"
+        },
+        {
+          "word": "לְחִכָּ֥ם",
+          "lemma": "חֵךְ",
+          "strong": "H2441",
+          "pron": "힉키"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 29:10",
+        "job 33:2",
+        "psalms 137:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -2,7 +2,7 @@
   "lemma": "בָּמוֹת",
   "pron": "바모트",
   "strong": "H1120",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בָּמָה",
     "strong": "H1116",
@@ -12,19 +12,51 @@
     {
       "lemma": "בָּמָה",
       "strong": "H1116",
-      "pron": "바모타위",
-      "glossKo": "나의 산당"
+      "pron": "바모테켐",
+      "glossKo": "너희의 산당"
     },
     {
       "lemma": "בָּמָה",
       "strong": "H1117",
-      "pron": "",
+      "pron": "바마",
       "glossKo": "산당"
     }
   ],
   "defEn": "Bamoth; Bamoth-Baal",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "numbers": 4,
+    "joshua": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "בָּמ֣וֹת בָּ֑עַל",
+      "pron": "바모트 바모트",
+      "lemmas": [
+        "בָּמוֹת",
+        "בָּמוֹת"
+      ],
+      "words": [
+        {
+          "word": "בָּמ֣וֹת",
+          "lemma": "בָּמוֹת",
+          "strong": "H1120",
+          "pron": "바모트"
+        },
+        {
+          "word": "בָּ֑עַל",
+          "lemma": "בָּמוֹת",
+          "strong": "H1120",
+          "pron": "바모트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 22:41",
+        "joshua 13:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

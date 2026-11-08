@@ -1,6 +1,6 @@
 {
   "lemma": "גָּאַל",
-  "pron": "브고알리위",
+  "pron": "아고엘",
   "strong": "H1350",
   "posKo": "동사",
   "root": null,
@@ -8,28 +8,217 @@
     {
       "lemma": "גָּאַל",
       "strong": "H1351",
-      "pron": "",
+      "pron": "바예고알루",
       "glossKo": "더럽히다"
     },
     {
       "lemma": "גְּאֻלָּה",
       "strong": "H1353",
-      "pron": "",
+      "pron": "게울라",
       "glossKo": "구속"
     },
     {
       "lemma": "יִגְאָל",
       "strong": "H3008",
-      "pron": "",
+      "pron": "익알",
       "glossKo": "이갈"
     }
   ],
   "defEn": "redeem; be the next of kin; buy back; marry",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 105,
   "byBook": {
+    "isaiah": 24,
+    "leviticus": 22,
+    "ruth": 22,
     "psalms": 11,
-    "genesis": 1
+    "numbers": 8,
+    "joshua": 3,
+    "deuteronomy": 2,
+    "exodus": 2,
+    "jeremiah": 2,
+    "job": 2,
+    "genesis": 1,
+    "hosea": 1,
+    "kings1": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "גֹּאֵ֣ל הַדָּ֔ם",
+      "pron": "아고엘 데메",
+      "lemmas": [
+        "גָּאַל",
+        "דָּם"
+      ],
+      "words": [
+        {
+          "word": "גֹּאֵ֣ל",
+          "lemma": "גָּאַל",
+          "strong": "H1350",
+          "pron": "아고엘"
+        },
+        {
+          "word": "הַדָּ֔ם",
+          "lemma": "דָּם",
+          "strong": "H1818",
+          "pron": "데메"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 35:19",
+        "numbers 35:21",
+        "numbers 35:24",
+        "numbers 35:25",
+        "numbers 35:27",
+        "deuteronomy 19:6",
+        "deuteronomy 19:12",
+        "joshua 20:3",
+        "joshua 20:5",
+        "joshua 20:9",
+        "samuel2 14:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גָּאֹ֖ל יִגְאָלֶ֑נָּה",
+      "pron": "아고엘 아고엘",
+      "lemmas": [
+        "גָּאַל",
+        "גָּאַל"
+      ],
+      "words": [
+        {
+          "word": "גָּאֹ֖ל",
+          "lemma": "גָּאַל",
+          "strong": "H1350",
+          "pron": "아고엘"
+        },
+        {
+          "word": "יִגְאָלֶ֑נָּה",
+          "lemma": "גָּאַל",
+          "strong": "H1350",
+          "pron": "아고엘"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "leviticus 27:13",
+        "leviticus 27:19",
+        "leviticus 27:31",
+        "ruth 3:13",
+        "ruth 4:4",
+        "ruth 4:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גְּאוּלֵ֣י יְהוָ֑ה",
+      "pron": "아고엘 여호와",
+      "lemmas": [
+        "גָּאַל",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "גְּאוּלֵ֣י",
+          "lemma": "גָּאַל",
+          "strong": "H1350",
+          "pron": "아고엘"
+        },
+        {
+          "word": "יְהוָ֑ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "psalms 107:2",
+        "isaiah 44:6",
+        "isaiah 44:23",
+        "isaiah 47:4",
+        "isaiah 48:20",
+        "isaiah 54:8",
+        "isaiah 62:12",
+        "micah 4:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאִם גָּאֹ֖ל יִגְאָלֶ֑נָּה",
+      "pron": "임 아고엘 아고엘",
+      "lemmas": [
+        "אִם",
+        "גָּאַל",
+        "גָּאַל"
+      ],
+      "words": [
+        {
+          "word": "וְאִם",
+          "lemma": "אִם",
+          "strong": "H518",
+          "pron": "임"
+        },
+        {
+          "word": "גָּאֹ֖ל",
+          "lemma": "גָּאַל",
+          "strong": "H1350",
+          "pron": "아고엘"
+        },
+        {
+          "word": "יִגְאָלֶ֑נָּה",
+          "lemma": "גָּאַל",
+          "strong": "H1350",
+          "pron": "아고엘"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "leviticus 27:13",
+        "leviticus 27:19",
+        "leviticus 27:31",
+        "ruth 4:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֥א יִגָּאֵ֖ל",
+      "pron": "로 아고엘",
+      "lemmas": [
+        "לֹא",
+        "גָּאַל"
+      ],
+      "words": [
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִגָּאֵ֖ל",
+          "lemma": "גָּאַל",
+          "strong": "H1350",
+          "pron": "아고엘"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "leviticus 25:30",
+        "leviticus 25:54",
+        "leviticus 27:20",
+        "leviticus 27:27",
+        "leviticus 27:28",
+        "leviticus 27:33",
+        "ruth 4:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

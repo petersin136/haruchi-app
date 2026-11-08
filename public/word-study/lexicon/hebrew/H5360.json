@@ -1,6 +1,6 @@
 {
   "lemma": "נְקָמָה",
-  "pron": "네카모트",
+  "pron": "니케마트",
   "strong": "H5360",
   "posKo": "명사",
   "root": {
@@ -12,15 +12,112 @@
     {
       "lemma": "נָקָם",
       "strong": "H5359",
-      "pron": "나캄",
+      "pron": "네캄",
       "glossKo": "복수"
     }
   ],
   "defEn": "avengement",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 27,
   "byBook": {
-    "psalms": 5
+    "jeremiah": 11,
+    "ezekiel": 5,
+    "psalms": 5,
+    "numbers": 2,
+    "samuel2": 2,
+    "judges": 1,
+    "lamentations": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת נִקְמַת֙",
+      "pron": "에트 니케마트",
+      "lemmas": [
+        "אֵת",
+        "נְקָמָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "נִקְמַת֙",
+          "lemma": "נְקָמָה",
+          "strong": "H5360",
+          "pron": "니케마트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "jeremiah 50:28",
+        "jeremiah 51:36",
+        "ezekiel 25:14",
+        "ezekiel 25:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נִקְמַת יְהוָ֖ה",
+      "pron": "니케마트 여호와",
+      "lemmas": [
+        "נְקָמָה",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "נִקְמַת",
+          "lemma": "נְקָמָה",
+          "strong": "H5360",
+          "pron": "니케마트"
+        },
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 31:3",
+        "psalms 94:1",
+        "jeremiah 50:15",
+        "jeremiah 50:28",
+        "jeremiah 51:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָתֵ֥ת נִקְמַת",
+      "pron": "바잇텐 니케마트",
+      "lemmas": [
+        "נָתַן",
+        "נְקָמָה"
+      ],
+      "words": [
+        {
+          "word": "לָתֵ֥ת",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "נִקְמַת",
+          "lemma": "נְקָמָה",
+          "strong": "H5360",
+          "pron": "니케마트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 31:3",
+        "samuel2 22:48",
+        "psalms 18:47"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

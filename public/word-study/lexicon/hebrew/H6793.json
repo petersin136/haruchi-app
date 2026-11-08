@@ -1,6 +1,6 @@
 {
   "lemma": "צִנָּה",
-  "pron": "카친나",
+  "pron": "아친나",
   "strong": "H6793",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,154 @@
     {
       "lemma": "צֵן",
       "strong": "H6791",
-      "pron": "",
+      "pron": "미친님",
       "glossKo": "가시"
     },
     {
       "lemma": "צָנִין",
       "strong": "H6796",
-      "pron": "",
+      "pron": "브리체니님",
       "glossKo": "가시"
     },
     {
       "lemma": "צִנְצֶנֶת",
       "strong": "H6803",
-      "pron": "",
+      "pron": "친체네트",
       "glossKo": "항아리"
     }
   ],
   "defEn": "hook; pointed",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 22,
   "byBook": {
-    "psalms": 3
+    "chronicles2": 5,
+    "ezekiel": 4,
+    "chronicles1": 3,
+    "psalms": 3,
+    "kings1": 2,
+    "samuel1": 2,
+    "amos": 1,
+    "jeremiah": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְנֹשֵׂ֥א הַצִּנָּ֖ה",
+      "pron": "미네소 아친나",
+      "lemmas": [
+        "נָשָׂא",
+        "צִנָּה"
+      ],
+      "words": [
+        {
+          "word": "וְנֹשֵׂ֥א",
+          "lemma": "נָשָׂא",
+          "strong": "H5375",
+          "pron": "미네소"
+        },
+        {
+          "word": "הַצִּנָּ֖ה",
+          "lemma": "צִנָּה",
+          "strong": "H6793",
+          "pron": "아친나"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 17:7",
+        "samuel1 17:41",
+        "chronicles1 12:24",
+        "chronicles2 14:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "צִנָּ֖ה וָרֹ֑מַח",
+      "pron": "아친나 로마흐",
+      "lemmas": [
+        "צִנָּה",
+        "רֹמַח"
+      ],
+      "words": [
+        {
+          "word": "צִנָּ֖ה",
+          "lemma": "צִנָּה",
+          "strong": "H6793",
+          "pron": "아친나"
+        },
+        {
+          "word": "וָרֹ֑מַח",
+          "lemma": "רֹמַח",
+          "strong": "H7420",
+          "pron": "로마흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles1 12:8",
+        "chronicles1 12:24",
+        "chronicles2 11:12",
+        "chronicles2 14:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָגֵ֣ן וְצִנָּ֑ה",
+      "pron": "마겐 아친나",
+      "lemmas": [
+        "מָגֵן",
+        "צִנָּה"
+      ],
+      "words": [
+        {
+          "word": "מָגֵ֣ן",
+          "lemma": "מָגֵן",
+          "strong": "H4043",
+          "pron": "마겐"
+        },
+        {
+          "word": "וְצִנָּ֑ה",
+          "lemma": "צִנָּה",
+          "strong": "H6793",
+          "pron": "아친나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 35:2",
+        "jeremiah 46:3",
+        "ezekiel 39:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל הַצִּנָּ֥ה",
+      "pron": "알 아친나",
+      "lemmas": [
+        "עַל",
+        "צִנָּה"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הַצִּנָּ֥ה",
+          "lemma": "צִנָּה",
+          "strong": "H6793",
+          "pron": "아친나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 10:16",
+        "chronicles2 9:15",
+        "ezekiel 26:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

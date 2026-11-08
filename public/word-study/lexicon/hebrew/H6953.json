@@ -2,7 +2,7 @@
   "lemma": "קֹהֶלֶת",
   "pron": "코헬레트",
   "strong": "H6953",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "קָהַל",
     "strong": "H6950",
@@ -18,37 +18,69 @@
     {
       "lemma": "קָהַל",
       "strong": "H6950",
-      "pron": "",
+      "pron": "바익카헬",
       "glossKo": "모이다"
     },
     {
       "lemma": "קָהָל",
       "strong": "H6951",
-      "pron": "카할",
+      "pron": "리케할",
       "glossKo": "총회"
     },
     {
       "lemma": "קְהִלָּה",
       "strong": "H6952",
-      "pron": "",
+      "pron": "케힐라트",
       "glossKo": "총회"
     },
     {
       "lemma": "קְהֵלָתָה",
       "strong": "H6954",
-      "pron": "",
+      "pron": "비케헬라타",
       "glossKo": "그헬라다"
     },
     {
       "lemma": "קָלַהּ",
       "strong": "H7035",
-      "pron": "",
+      "pron": "브윅르흐브",
       "glossKo": "모으다"
     }
   ],
   "defEn": "assembler; preaching",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "ecclesiastes": 7
+  },
+  "phrases": [
+    {
+      "hebrew": "אָמַ֣ר קֹהֶ֔לֶת",
+      "pron": "바요메르 코헬레트",
+      "lemmas": [
+        "אָמַר",
+        "קֹהֶלֶת"
+      ],
+      "words": [
+        {
+          "word": "אָמַ֣ר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "קֹהֶ֔לֶת",
+          "lemma": "קֹהֶלֶת",
+          "strong": "H6953",
+          "pron": "코헬레트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ecclesiastes 1:2",
+        "ecclesiastes 7:27",
+        "ecclesiastes 12:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -18,21 +18,143 @@
     {
       "lemma": "עַזְבּוּק",
       "strong": "H5802",
-      "pron": "",
+      "pron": "앗부크",
       "glossKo": "아스북"
     },
     {
       "lemma": "עַזְגָּד",
       "strong": "H5803",
-      "pron": "",
+      "pron": "앗갇",
       "glossKo": "아스갓"
+    },
+    {
+      "lemma": "עַזְמָוֶת",
+      "strong": "H5820",
+      "pron": "앗마베트",
+      "glossKo": "아스마웻"
+    },
+    {
+      "lemma": "עַזָּן",
+      "strong": "H5821",
+      "pron": "앗잔",
+      "glossKo": "앗산"
+    },
+    {
+      "lemma": "עַזָּתִי",
+      "strong": "H5841",
+      "pron": "하앗자티",
+      "glossKo": "가사 사람"
     }
   ],
   "defEn": "Azzah",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 21,
   "byBook": {
-    "genesis": 1
+    "judges": 4,
+    "jeremiah": 3,
+    "joshua": 3,
+    "amos": 2,
+    "zechariah": 2,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "genesis": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "samuel1": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עַד עַזָּ֑ה",
+      "pron": "앋 앗자",
+      "lemmas": [
+        "עַד",
+        "עַזָּה"
+      ],
+      "words": [
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "עַזָּ֑ה",
+          "lemma": "עַזָּה",
+          "strong": "H5804",
+          "pron": "앗자"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 10:19",
+        "deuteronomy 2:23",
+        "joshua 10:41",
+        "kings1 4:24",
+        "kings2 18:8",
+        "chronicles1 7:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת עַזָּ֣ה",
+      "pron": "에트 앗자",
+      "lemmas": [
+        "אֵת",
+        "עַזָּה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "עַזָּ֣ה",
+          "lemma": "עַזָּה",
+          "strong": "H5804",
+          "pron": "앗자"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 1:18",
+        "judges 16:21",
+        "jeremiah 25:20",
+        "jeremiah 47:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַזָּ֑ה וְאֵ֛ת",
+      "pron": "앗자 에트",
+      "lemmas": [
+        "עַזָּה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "עַזָּ֑ה",
+          "lemma": "עַזָּה",
+          "strong": "H5804",
+          "pron": "앗자"
+        },
+        {
+          "word": "וְאֵ֛ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 10:41",
+        "judges 1:18",
+        "kings2 18:8",
+        "jeremiah 25:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

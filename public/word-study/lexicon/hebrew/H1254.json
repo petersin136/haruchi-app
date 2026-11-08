@@ -1,6 +1,6 @@
 {
   "lemma": "בָּרָא",
-  "pron": "베라",
+  "pron": "바라",
   "strong": "H1254",
   "posKo": "동사",
   "root": null,
@@ -8,68 +8,170 @@
     {
       "lemma": "בְּרָאיָה",
       "strong": "H1256",
-      "pron": "",
+      "pron": "우베라아",
       "glossKo": "브라야"
     },
     {
       "lemma": "בָּרִיא",
       "strong": "H1277",
-      "pron": "우바리",
+      "pron": "우베리오트",
       "glossKo": "살진"
     },
     {
       "lemma": "בְּרִיאָה",
       "strong": "H1278",
-      "pron": "",
+      "pron": "베리아",
       "glossKo": "새 일"
     }
   ],
   "defEn": "create, shape (God as subject)",
   "defKo": "기본형(칼형)으로 쓰일 때는 주어가 언제나 하나님이에요. 무엇으로 만들었는지 재료도 말하지 않아요. 창세기 1장에서는 천지(1:1), 큰 바다 짐승(1:21), 사람(1:27)에만 쓰여요. 특히 사람을 지으실 때는 한 절에 세 번이나 나와요.",
-  "countOT": 17,
+  "countOT": 54,
   "byBook": {
+    "isaiah": 21,
     "genesis": 11,
-    "psalms": 6
+    "ezekiel": 6,
+    "psalms": 6,
+    "joshua": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "jeremiah": 1,
+    "malachi": 1,
+    "numbers": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
-      "hebrew": "בְּרָא אֱלֹהִ֑ים",
-      "pron": "베라 베엘로힘",
+      "hebrew": "בָּרָ֣א אֱלֹהִ֑ים",
+      "pron": "바라 엘로힘",
       "lemmas": [
         "בָּרָא",
         "אֱלֹהִים"
       ],
       "words": [
         {
-          "word": "בְּרָא",
+          "word": "בָּרָ֣א",
           "lemma": "בָּרָא",
           "strong": "H1254",
-          "pron": "베라"
+          "pron": "바라"
         },
         {
           "word": "אֱלֹהִ֑ים",
           "lemma": "אֱלֹהִים",
           "strong": "H430",
-          "pron": "베엘로힘"
+          "pron": "엘로힘"
         }
       ],
-      "count": 6,
+      "count": 7,
       "refs": [
-        "psalms 51:10",
         "genesis 1:1",
         "genesis 1:21",
         "genesis 1:27",
         "genesis 2:3",
-        "genesis 5:1"
+        "genesis 5:1",
+        "deuteronomy 4:32",
+        "psalms 51:10"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בָּרָ֣א אֱלֹהִ֑ים אֵ֥ת",
-      "pron": "베라 베엘로힘 에트",
+      "hebrew": "יְהוָה֙ בּוֹרֵא֙",
+      "pron": "여호와 바라",
+      "lemmas": [
+        "יְהֹוָה",
+        "בָּרָא"
+      ],
+      "words": [
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "בּוֹרֵא֙",
+          "lemma": "בָּרָא",
+          "strong": "H1254",
+          "pron": "바라"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "isaiah 40:28",
+        "isaiah 42:5",
+        "isaiah 43:1",
+        "isaiah 45:8",
+        "isaiah 45:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר בָּרָ֥א",
+      "pron": "아셰르 바라",
+      "lemmas": [
+        "אֲשֶׁר",
+        "בָּרָא"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "בָּרָ֥א",
+          "lemma": "בָּרָא",
+          "strong": "H1254",
+          "pron": "바라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 2:3",
+        "genesis 6:7",
+        "deuteronomy 4:32",
+        "ezekiel 21:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּי֗וֹם בְּרֹ֤א",
+      "pron": "욤 바라",
+      "lemmas": [
+        "יוֹם",
+        "בָּרָא"
+      ],
+      "words": [
+        {
+          "word": "בְּי֗וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "בְּרֹ֤א",
+          "lemma": "בָּרָא",
+          "strong": "H1254",
+          "pron": "바라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 5:1",
+        "genesis 5:2",
+        "ezekiel 28:13",
+        "ezekiel 28:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בָּרָ֣א אֹת֑וֹ",
+      "pron": "바라 에트",
       "lemmas": [
         "בָּרָא",
-        "אֱלֹהִים",
         "אֵת"
       ],
       "words": [
@@ -77,26 +179,20 @@
           "word": "בָּרָ֣א",
           "lemma": "בָּרָא",
           "strong": "H1254",
-          "pron": "베라"
+          "pron": "바라"
         },
         {
-          "word": "אֱלֹהִ֑ים",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        },
-        {
-          "word": "אֵ֥ת",
+          "word": "אֹת֑וֹ",
           "lemma": "אֵת",
           "strong": "H853",
           "pron": "에트"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
-        "genesis 1:1",
-        "genesis 1:21",
-        "genesis 1:27"
+        "genesis 1:27",
+        "isaiah 65:18",
+        "ezekiel 23:47"
       ],
       "glossKo": ""
     }

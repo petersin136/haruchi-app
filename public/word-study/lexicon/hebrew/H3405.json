@@ -1,8 +1,8 @@
 {
   "lemma": "יְרִיחוֹ",
-  "pron": "예리호",
+  "pron": "예레호",
   "strong": "H3405",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "יָרֵחַ",
     "strong": "H3394",
@@ -12,19 +12,204 @@
     {
       "lemma": "יָרוֹחַ",
       "strong": "H3386",
-      "pron": "",
+      "pron": "야로아흐",
       "glossKo": "야로아"
     },
     {
       "lemma": "יָרֵחַ",
       "strong": "H3394",
-      "pron": "야레아흐",
+      "pron": "브아야레아흐",
       "glossKo": "달"
     }
   ],
   "defEn": "Jericho; Jerecho",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 57,
+  "byBook": {
+    "joshua": 29,
+    "numbers": 9,
+    "kings2": 6,
+    "deuteronomy": 3,
+    "chronicles1": 2,
+    "jeremiah": 2,
+    "nehemiah": 2,
+    "chronicles2": 1,
+    "ezra": 1,
+    "kings1": 1,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "יַרְדֵּ֥ן יְרֵחֽוֹ",
+      "pron": "아야렏덴 예레호",
+      "lemmas": [
+        "יַרְדֵּן",
+        "יְרִיחוֹ"
+      ],
+      "words": [
+        {
+          "word": "יַרְדֵּ֥ן",
+          "lemma": "יַרְדֵּן",
+          "strong": "H3383",
+          "pron": "아야렏덴"
+        },
+        {
+          "word": "יְרֵחֽוֹ",
+          "lemma": "יְרִיחוֹ",
+          "strong": "H3405",
+          "pron": "예레호"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "numbers 22:1",
+        "numbers 26:3",
+        "numbers 26:63",
+        "numbers 31:12",
+        "numbers 33:48",
+        "numbers 33:50",
+        "numbers 34:15",
+        "numbers 35:1",
+        "numbers 36:13",
+        "joshua 13:32",
+        "joshua 16:1",
+        "joshua 20:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל יַרְדֵּ֥ן יְרֵח֖וֹ",
+      "pron": "알 아야렏덴 예레호",
+      "lemmas": [
+        "עַל",
+        "יַרְדֵּן",
+        "יְרִיחוֹ"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "יַרְדֵּ֥ן",
+          "lemma": "יַרְדֵּן",
+          "strong": "H3383",
+          "pron": "아야렏덴"
+        },
+        {
+          "word": "יְרֵח֖וֹ",
+          "lemma": "יְרִיחוֹ",
+          "strong": "H3405",
+          "pron": "예레호"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "numbers 26:3",
+        "numbers 26:63",
+        "numbers 31:12",
+        "numbers 33:48",
+        "numbers 33:50",
+        "numbers 35:1",
+        "numbers 36:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְרֵח֖וֹ לֵאמֹֽר",
+      "pron": "예레호 바요메르",
+      "lemmas": [
+        "יְרִיחוֹ",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "יְרֵח֖וֹ",
+          "lemma": "יְרִיחוֹ",
+          "strong": "H3405",
+          "pron": "예레호"
+        },
+        {
+          "word": "לֵאמֹֽר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 26:3",
+        "numbers 33:50",
+        "numbers 35:1",
+        "joshua 2:2",
+        "kings2 2:4",
+        "kings2 2:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת יְרִיח֑וֹ",
+      "pron": "에트 예레호",
+      "lemmas": [
+        "אֵת",
+        "יְרִיחוֹ"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יְרִיח֑וֹ",
+          "lemma": "יְרִיחוֹ",
+          "strong": "H3405",
+          "pron": "예레호"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "joshua 2:1",
+        "joshua 6:2",
+        "joshua 6:25",
+        "joshua 6:26",
+        "kings1 16:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְמֶ֥לֶךְ יְרִיחֽוֹ",
+      "pron": "멜레크 예레호",
+      "lemmas": [
+        "מֶלֶךְ",
+        "יְרִיחוֹ"
+      ],
+      "words": [
+        {
+          "word": "לְמֶ֥לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "יְרִיחֽוֹ",
+          "lemma": "יְרִיחוֹ",
+          "strong": "H3405",
+          "pron": "예레호"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "joshua 2:2",
+        "joshua 2:3",
+        "joshua 10:28",
+        "joshua 10:30",
+        "joshua 12:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

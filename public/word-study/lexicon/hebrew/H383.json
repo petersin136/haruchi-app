@@ -2,7 +2,7 @@
   "lemma": "אִיתַי",
   "pron": "이타이",
   "strong": "H383",
-  "posKo": "",
+  "posKo": "소사",
   "root": {
     "lemma": "יֵשׁ",
     "strong": "H3426",
@@ -24,7 +24,160 @@
   ],
   "defEn": "entity; particle of affirmation; there is",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 19,
+  "byBook": {
+    "daniel": 17,
+    "ezra": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "לָ֥א אִיתַ֖י",
+      "pron": "라 이타이",
+      "lemmas": [
+        "לָא",
+        "אִיתַי"
+      ],
+      "words": [
+        {
+          "word": "לָ֥א",
+          "lemma": "לָא",
+          "strong": "H3809",
+          "pron": "라"
+        },
+        {
+          "word": "אִיתַ֖י",
+          "lemma": "אִיתַי",
+          "strong": "H383",
+          "pron": "이타이"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "ezra 4:16",
+        "daniel 2:10",
+        "daniel 2:11",
+        "daniel 3:14",
+        "daniel 3:18",
+        "daniel 3:25",
+        "daniel 3:29",
+        "daniel 4:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "האיתיך הַֽאִיתָ֣ךְ",
+      "pron": "이타이 이타이",
+      "lemmas": [
+        "אִיתַי",
+        "אִיתַי"
+      ],
+      "words": [
+        {
+          "word": "האיתיך",
+          "lemma": "אִיתַי",
+          "strong": "H383",
+          "pron": "이타이"
+        },
+        {
+          "word": "הַֽאִיתָ֣ךְ",
+          "lemma": "אִיתַי",
+          "strong": "H383",
+          "pron": "이타이"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 2:26",
+        "daniel 3:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִיתַ֞י אֱלָ֤הּ",
+      "pron": "이타이 엘라하",
+      "lemmas": [
+        "אִיתַי",
+        "אֱלָהּ"
+      ],
+      "words": [
+        {
+          "word": "אִיתַ֞י",
+          "lemma": "אִיתַי",
+          "strong": "H383",
+          "pron": "이타이"
+        },
+        {
+          "word": "אֱלָ֤הּ",
+          "lemma": "אֱלָהּ",
+          "strong": "H426",
+          "pron": "엘라하"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:28",
+        "daniel 3:17",
+        "daniel 3:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִיתַ֗י דִּֽי",
+      "pron": "이타이 드흐브",
+      "lemmas": [
+        "אִיתַי",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "אִיתַ֗י",
+          "lemma": "אִיתַי",
+          "strong": "H383",
+          "pron": "이타이"
+        },
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 5:17",
+        "daniel 2:11",
+        "daniel 4:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֵ֣ן אִיתַ֗י",
+      "pron": "헨 이타이",
+      "lemmas": [
+        "הֵן",
+        "אִיתַי"
+      ],
+      "words": [
+        {
+          "word": "הֵ֣ן",
+          "lemma": "הֵן",
+          "strong": "H2006",
+          "pron": "헨"
+        },
+        {
+          "word": "אִיתַ֗י",
+          "lemma": "אִיתַי",
+          "strong": "H383",
+          "pron": "이타이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 5:17",
+        "daniel 3:15",
+        "daniel 3:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

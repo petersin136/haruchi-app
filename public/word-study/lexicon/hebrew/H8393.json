@@ -1,6 +1,6 @@
 {
   "lemma": "תְּבוּאָה",
-  "pron": "테부아",
+  "pron": "바테부오트",
   "strong": "H8393",
   "posKo": "명사",
   "root": {
@@ -12,28 +12,145 @@
     {
       "lemma": "בְּאָה",
       "strong": "H872",
-      "pron": "",
+      "pron": "바비아",
       "glossKo": "들어옴"
     },
     {
       "lemma": "בּוֹא",
       "strong": "H935",
-      "pron": "아보",
+      "pron": "바야베",
       "glossKo": "오다"
     },
     {
       "lemma": "מָבוֹא",
       "strong": "H3996",
-      "pron": "메보오",
-      "glossKo": "그의 들어옴"
+      "pron": "메보",
+      "glossKo": "들어옴"
     }
   ],
   "defEn": "income; produce",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 43,
   "byBook": {
+    "leviticus": 11,
+    "proverbs": 8,
+    "deuteronomy": 6,
+    "chronicles2": 2,
+    "ezekiel": 2,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "numbers": 2,
+    "ecclesiastes": 1,
+    "exodus": 1,
     "genesis": 1,
+    "job": 1,
+    "joshua": 1,
+    "kings2": 1,
+    "nehemiah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כָל תְּבוּאָתָ֖הּ",
+      "pron": "칼 바테부오트",
+      "lemmas": [
+        "כֹּל",
+        "תְּבוּאָה"
+      ],
+      "words": [
+        {
+          "word": "כָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "תְּבוּאָתָ֖הּ",
+          "lemma": "תְּבוּאָה",
+          "strong": "H8393",
+          "pron": "바테부오트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 25:7",
+        "deuteronomy 14:22",
+        "deuteronomy 16:15",
+        "kings2 8:6",
+        "chronicles2 31:5",
+        "job 31:12",
+        "proverbs 3:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת תְּבוּאָתָֽהּ",
+      "pron": "에트 바테부오트",
+      "lemmas": [
+        "אֵת",
+        "תְּבוּאָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "תְּבוּאָתָֽהּ",
+          "lemma": "תְּבוּאָה",
+          "strong": "H8393",
+          "pron": "바테부오트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 23:10",
+        "leviticus 23:39",
+        "leviticus 25:3",
+        "leviticus 25:12",
+        "leviticus 25:20",
+        "leviticus 25:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאָסַפְתָּ֖ אֶת תְּבוּאָתָֽהּ",
+      "pron": "브아삽타 에트 바테부오트",
+      "lemmas": [
+        "אָסַף",
+        "אֵת",
+        "תְּבוּאָה"
+      ],
+      "words": [
+        {
+          "word": "וְאָסַפְתָּ֖",
+          "lemma": "אָסַף",
+          "strong": "H622",
+          "pron": "브아삽타"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "תְּבוּאָתָֽהּ",
+          "lemma": "תְּבוּאָה",
+          "strong": "H8393",
+          "pron": "바테부오트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 23:10",
+        "leviticus 23:39",
+        "leviticus 25:3",
+        "leviticus 25:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

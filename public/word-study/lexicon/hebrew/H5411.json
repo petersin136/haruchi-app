@@ -1,8 +1,8 @@
 {
   "lemma": "נָתִין",
-  "pron": "나틴",
+  "pron": "브아네티님",
   "strong": "H5411",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נָתַן",
     "strong": "H5414",
@@ -16,33 +16,140 @@
       "glossKo": "선물"
     },
     {
+      "lemma": "נְתִין",
+      "strong": "H5412",
+      "pron": "네티나아",
+      "glossKo": "느디님 사람(아람)"
+    },
+    {
       "lemma": "נָתַן",
       "strong": "H5414",
-      "pron": "잇텐",
+      "pron": "바잇텐",
       "glossKo": "주다"
     },
     {
       "lemma": "נְתַן",
       "strong": "H5415",
-      "pron": "",
+      "pron": "인테눈",
       "glossKo": "주다(아람)"
     },
     {
       "lemma": "נָתָן",
       "strong": "H5416",
-      "pron": "나탄",
+      "pron": "브나탄",
       "glossKo": "나단"
     },
     {
       "lemma": "נְתַנְאֵל",
       "strong": "H5417",
-      "pron": "",
+      "pron": "네탄엘",
       "glossKo": "느다넬"
     }
   ],
   "defEn": "Nethinim; Temple-servants",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 18,
+  "byBook": {
+    "nehemiah": 9,
+    "ezra": 8,
+    "chronicles1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "הַנְּתִינִ֑ים בְּנֵי",
+      "pron": "브아네티님 바님",
+      "lemmas": [
+        "נָתִין",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "הַנְּתִינִ֑ים",
+          "lemma": "נָתִין",
+          "strong": "H5411",
+          "pron": "브아네티님"
+        },
+        {
+          "word": "בְּנֵי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezra 2:43",
+        "ezra 2:58",
+        "nehemiah 7:46",
+        "nehemiah 7:60",
+        "nehemiah 11:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַלְוִיִּ֖ם וְהַנְּתִינִֽים",
+      "pron": "아레비 브아네티님",
+      "lemmas": [
+        "לֵוִיִּי",
+        "נָתִין"
+      ],
+      "words": [
+        {
+          "word": "הַלְוִיִּ֖ם",
+          "lemma": "לֵוִיִּי",
+          "strong": "H3881",
+          "pron": "아레비"
+        },
+        {
+          "word": "וְהַנְּתִינִֽים",
+          "lemma": "נָתִין",
+          "strong": "H5411",
+          "pron": "브아네티님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 9:2",
+        "ezra 8:20",
+        "nehemiah 11:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַנְּתִינִ֔ים וּבְנֵ֖י עַבְדֵ֣י",
+      "pron": "브아네티님 바님 에벧",
+      "lemmas": [
+        "נָתִין",
+        "בֵּן",
+        "עֶבֶד"
+      ],
+      "words": [
+        {
+          "word": "הַנְּתִינִ֔ים",
+          "lemma": "נָתִין",
+          "strong": "H5411",
+          "pron": "브아네티님"
+        },
+        {
+          "word": "וּבְנֵ֖י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עַבְדֵ֣י",
+          "lemma": "עֶבֶד",
+          "strong": "H5650",
+          "pron": "에벧"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 2:58",
+        "nehemiah 7:60",
+        "nehemiah 11:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

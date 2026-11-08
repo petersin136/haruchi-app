@@ -1,6 +1,6 @@
 {
   "lemma": "מֶמְשָׁלָה",
-  "pron": "멤샬트오",
+  "pron": "르멤셸레트",
   "strong": "H4475",
   "posKo": "명사",
   "root": {
@@ -12,16 +12,52 @@
     {
       "lemma": "מִמְשָׁל",
       "strong": "H4474",
-      "pron": "",
-      "glossKo": "통치자"
+      "pron": "멤샬토",
+      "glossKo": "그의 통치자"
     }
   ],
   "defEn": "rule",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 15,
   "byBook": {
     "psalms": 5,
-    "genesis": 2
+    "genesis": 2,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "chronicles2": 1,
+    "daniel": 1,
+    "kings1": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶ֥רֶץ מֶמְשַׁלְתּֽוֹ",
+      "pron": "하아레츠 르멤셸레트",
+      "lemmas": [
+        "אֶרֶץ",
+        "מֶמְשָׁלָה"
+      ],
+      "words": [
+        {
+          "word": "אֶ֥רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "מֶמְשַׁלְתּֽוֹ",
+          "lemma": "מֶמְשָׁלָה",
+          "strong": "H4475",
+          "pron": "르멤셸레트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 9:19",
+        "jeremiah 34:1",
+        "jeremiah 51:28"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

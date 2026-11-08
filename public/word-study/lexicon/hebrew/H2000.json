@@ -1,6 +1,6 @@
 {
   "lemma": "הָמַם",
-  "pron": "바예훔메므",
+  "pron": "바야함",
   "strong": "H2000",
   "posKo": "동사",
   "root": {
@@ -12,39 +12,78 @@
     {
       "lemma": "הוּם",
       "strong": "H1949",
-      "pron": "브아히마",
+      "pron": "바테홈",
       "glossKo": "소동하다"
     },
     {
       "lemma": "הוֹמָם",
       "strong": "H1950",
-      "pron": "",
+      "pron": "브호맘",
       "glossKo": "호맘"
     },
     {
       "lemma": "הָמָה",
       "strong": "H1993",
-      "pron": "예헤마우느",
+      "pron": "호마",
       "glossKo": "떠들다"
     },
     {
       "lemma": "מְהוּמָה",
       "strong": "H4103",
-      "pron": "",
+      "pron": "메후마",
       "glossKo": "혼란"
     },
     {
       "lemma": "תְּהוֹם",
       "strong": "H8415",
-      "pron": "테호모트",
+      "pron": "테홈",
       "glossKo": "깊음"
     }
   ],
   "defEn": "put in commotion",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 16,
   "byBook": {
-    "psalms": 2
+    "deuteronomy": 2,
+    "exodus": 2,
+    "jeremiah": 2,
+    "psalms": 2,
+    "samuel2": 2,
+    "chronicles2": 1,
+    "esther": 1,
+    "isaiah": 1,
+    "joshua": 1,
+    "judges": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "ויהמם וַיָּהֹֽם",
+      "pron": "바야함 바야함",
+      "lemmas": [
+        "הָמַם",
+        "הָמַם"
+      ],
+      "words": [
+        {
+          "word": "ויהמם",
+          "lemma": "הָמַם",
+          "strong": "H2000",
+          "pron": "바야함"
+        },
+        {
+          "word": "וַיָּהֹֽם",
+          "lemma": "הָמַם",
+          "strong": "H2000",
+          "pron": "바야함"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 22:15",
+        "jeremiah 51:34"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "חׇרְבָּה",
-  "pron": "호라보트",
+  "pron": "하렙바",
   "strong": "H2723",
   "posKo": "명사",
   "root": {
@@ -18,9 +18,169 @@
   ],
   "defEn": "drought; desolation",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 42,
   "byBook": {
-    "psalms": 3
+    "ezekiel": 14,
+    "jeremiah": 10,
+    "isaiah": 9,
+    "psalms": 3,
+    "leviticus": 2,
+    "daniel": 1,
+    "ezra": 1,
+    "job": 1,
+    "malachi": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הַבֹּנִ֖ים חֳרָב֣וֹת",
+      "pron": "바이벤 하렙바",
+      "lemmas": [
+        "בָּנָה",
+        "חׇרְבָּה"
+      ],
+      "words": [
+        {
+          "word": "הַבֹּנִ֖ים",
+          "lemma": "בָּנָה",
+          "strong": "H1129",
+          "pron": "바이벤"
+        },
+        {
+          "word": "חֳרָב֣וֹת",
+          "lemma": "חׇרְבָּה",
+          "strong": "H2723",
+          "pron": "하렙바"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "job 3:14",
+        "isaiah 44:26",
+        "isaiah 61:4",
+        "ezekiel 36:33",
+        "malachi 1:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָרְב֣וֹת עוֹלָ֔ם",
+      "pron": "하렙바 르올람",
+      "lemmas": [
+        "חׇרְבָּה",
+        "עוֹלָם"
+      ],
+      "words": [
+        {
+          "word": "חָרְב֣וֹת",
+          "lemma": "חׇרְבָּה",
+          "strong": "H2723",
+          "pron": "하렙바"
+        },
+        {
+          "word": "עוֹלָ֔ם",
+          "lemma": "עוֹלָם",
+          "strong": "H5769",
+          "pron": "르올람"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "isaiah 58:12",
+        "isaiah 61:4",
+        "jeremiah 25:9",
+        "jeremiah 49:13",
+        "ezekiel 26:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִהְי֥וּ חָרְבָּֽה",
+      "pron": "하에타 하렙바",
+      "lemmas": [
+        "הָיָה",
+        "חׇרְבָּה"
+      ],
+      "words": [
+        {
+          "word": "יִהְי֥וּ",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "חָרְבָּֽה",
+          "lemma": "חׇרְבָּה",
+          "strong": "H2723",
+          "pron": "하렙바"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 26:33",
+        "isaiah 64:11",
+        "jeremiah 44:6",
+        "jeremiah 49:13",
+        "ezekiel 38:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֤י חָרְבֹתַ֨יִךְ֙",
+      "pron": "키 하렙바",
+      "lemmas": [
+        "כִּי",
+        "חׇרְבָּה"
+      ],
+      "words": [
+        {
+          "word": "כִּ֤י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "חָרְבֹתַ֨יִךְ֙",
+          "lemma": "חׇרְבָּה",
+          "strong": "H2723",
+          "pron": "하렙바"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 49:19",
+        "jeremiah 7:34",
+        "jeremiah 22:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְחָרְבָּ֖ה לְשַׁמָּ֑ה",
+      "pron": "하렙바 르샴마",
+      "lemmas": [
+        "חׇרְבָּה",
+        "שַׁמָּה"
+      ],
+      "words": [
+        {
+          "word": "לְחָרְבָּ֖ה",
+          "lemma": "חׇרְבָּה",
+          "strong": "H2723",
+          "pron": "하렙바"
+        },
+        {
+          "word": "לְשַׁמָּ֑ה",
+          "lemma": "שַׁמָּה",
+          "strong": "H8047",
+          "pron": "르샴마"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 25:11",
+        "jeremiah 25:18",
+        "jeremiah 44:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

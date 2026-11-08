@@ -1,6 +1,6 @@
 {
   "lemma": "כָּנָף",
-  "pron": "케나페카",
+  "pron": "카납",
   "strong": "H3671",
   "posKo": "명사",
   "root": {
@@ -12,74 +12,203 @@
     {
       "lemma": "כָּנַף",
       "strong": "H3670",
-      "pron": "",
+      "pron": "익카넵",
       "glossKo": "옆으로 내려가다"
     }
   ],
   "defEn": "edge; extremity; wing; flap; quarter; pinnacle",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 111,
   "byBook": {
+    "ezekiel": 26,
+    "kings1": 12,
     "psalms": 12,
-    "genesis": 2
+    "chronicles2": 10,
+    "isaiah": 7,
+    "deuteronomy": 5,
+    "exodus": 5,
+    "job": 5,
+    "samuel1": 5,
+    "zechariah": 4,
+    "jeremiah": 3,
+    "ecclesiastes": 2,
+    "genesis": 2,
+    "haggai": 2,
+    "numbers": 2,
+    "proverbs": 2,
+    "ruth": 2,
+    "daniel": 1,
+    "hosea": 1,
+    "leviticus": 1,
+    "malachi": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "בְּצֵ֥ל כְּ֝נָפֶ֗יךָ",
-      "pron": "브첼 케나페카",
+      "hebrew": "כַּנְפֵ֥י הַכְּרוּבִֽים",
+      "pron": "카납 아케루빔",
       "lemmas": [
-        "צֵל",
-        "כָּנָף"
+        "כָּנָף",
+        "כְּרוּב"
       ],
       "words": [
         {
-          "word": "בְּצֵ֥ל",
-          "lemma": "צֵל",
-          "strong": "H6738",
-          "pron": "브첼"
-        },
-        {
-          "word": "כְּ֝נָפֶ֗יךָ",
+          "word": "כַּנְפֵ֥י",
           "lemma": "כָּנָף",
           "strong": "H3671",
-          "pron": "케나페카"
+          "pron": "카납"
+        },
+        {
+          "word": "הַכְּרוּבִֽים",
+          "lemma": "כְּרוּב",
+          "strong": "H3742",
+          "pron": "아케루빔"
         }
       ],
-      "count": 4,
+      "count": 12,
       "refs": [
-        "psalms 17:8",
-        "psalms 36:7",
-        "psalms 57:1",
-        "psalms 63:7"
+        "kings1 6:24",
+        "kings1 6:27",
+        "kings1 8:6",
+        "chronicles2 3:11",
+        "chronicles2 3:12",
+        "chronicles2 3:13",
+        "chronicles2 5:7",
+        "ezekiel 10:5"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כְּ֝נָפֶ֗יךָ יֶחֱסָיֽוּן",
-      "pron": "케나페카 호세",
+      "hebrew": "אֹת֣וֹ בִכְנָפָיו֮",
+      "pron": "에트 카납",
       "lemmas": [
-        "כָּנָף",
-        "חָסָה"
+        "אֵת",
+        "כָּנָף"
       ],
       "words": [
         {
-          "word": "כְּ֝נָפֶ֗יךָ",
-          "lemma": "כָּנָף",
-          "strong": "H3671",
-          "pron": "케나페카"
+          "word": "אֹת֣וֹ",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         },
         {
-          "word": "יֶחֱסָיֽוּן",
-          "lemma": "חָסָה",
-          "strong": "H2620",
-          "pron": "호세"
+          "word": "בִכְנָפָיו֮",
+          "lemma": "כָּנָף",
+          "strong": "H3671",
+          "pron": "카납"
         }
       ],
-      "count": 3,
+      "count": 11,
       "refs": [
-        "psalms 36:7",
-        "psalms 57:1",
-        "psalms 91:4"
+        "leviticus 1:17",
+        "samuel1 24:4",
+        "samuel1 24:5",
+        "samuel1 24:11",
+        "kings1 6:27",
+        "ezekiel 5:3",
+        "ezekiel 10:16",
+        "ezekiel 10:19",
+        "ezekiel 11:22",
+        "hosea 4:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פֹּרְשֵׂ֨י כְנָפַ֜יִם",
+      "pron": "엡로스 카납",
+      "lemmas": [
+        "פָּרַשׂ",
+        "כָּנָף"
+      ],
+      "words": [
+        {
+          "word": "פֹּרְשֵׂ֨י",
+          "lemma": "פָּרַשׂ",
+          "strong": "H6566",
+          "pron": "엡로스"
+        },
+        {
+          "word": "כְנָפַ֜יִם",
+          "lemma": "כָּנָף",
+          "strong": "H3671",
+          "pron": "카납"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 25:20",
+        "exodus 37:9",
+        "deuteronomy 32:11",
+        "ruth 3:9",
+        "kings1 8:7",
+        "chronicles2 5:8",
+        "job 39:26",
+        "jeremiah 48:40",
+        "jeremiah 49:22",
+        "ezekiel 16:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כנפו כְּנָפָ֣יו",
+      "pron": "카납 카납",
+      "lemmas": [
+        "כָּנָף",
+        "כָּנָף"
+      ],
+      "words": [
+        {
+          "word": "כנפו",
+          "lemma": "כָּנָף",
+          "strong": "H3671",
+          "pron": "카납"
+        },
+        {
+          "word": "כְּנָפָ֣יו",
+          "lemma": "כָּנָף",
+          "strong": "H3671",
+          "pron": "카납"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "job 39:26",
+        "ecclesiastes 10:20",
+        "zechariah 5:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכַנְפֵיהֶם֙ עַל",
+      "pron": "카납 알",
+      "lemmas": [
+        "כָּנָף",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "בְּכַנְפֵיהֶם֙",
+          "lemma": "כָּנָף",
+          "strong": "H3671",
+          "pron": "카납"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 25:20",
+        "exodus 37:9",
+        "ruth 3:9",
+        "chronicles2 5:8",
+        "jeremiah 49:22",
+        "ezekiel 1:8",
+        "ezekiel 16:8"
       ],
       "glossKo": ""
     }

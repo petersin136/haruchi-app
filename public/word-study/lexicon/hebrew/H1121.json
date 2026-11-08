@@ -1,6 +1,6 @@
 {
   "lemma": "בֵּן",
-  "pron": "베니위",
+  "pron": "바님",
   "strong": "H1121",
   "posKo": "명사",
   "root": {
@@ -12,203 +12,238 @@
     {
       "lemma": "אֶבֶן",
       "strong": "H68",
-      "pron": "바에벤",
+      "pron": "브에벤",
       "glossKo": "돌"
     },
     {
       "lemma": "בַּיִת",
       "strong": "H1004",
-      "pron": "베테카",
-      "glossKo": "너의 집"
+      "pron": "미바이트",
+      "glossKo": "집"
     },
     {
       "lemma": "בֵּן",
       "strong": "H1122",
-      "pron": "",
+      "pron": "벤",
       "glossKo": "벤"
     },
     {
       "lemma": "בֵּן",
       "strong": "H1123",
-      "pron": "",
+      "pron": "우베네",
       "glossKo": "아들(아람)"
     },
     {
       "lemma": "בְּנָא",
       "strong": "H1124",
-      "pron": "",
+      "pron": "바나인",
       "glossKo": "건축하다(아람)"
     },
     {
       "lemma": "בֶּן־אֲבִינָדָב",
       "strong": "H1125",
-      "pron": "",
+      "pron": "벤",
       "glossKo": "벤아비나답"
     }
   ],
   "defEn": "son",
   "defKo": "",
-  "countOT": 467,
+  "countOT": 4942,
   "byBook": {
+    "chronicles1": 709,
+    "numbers": 611,
     "genesis": 365,
-    "psalms": 102
+    "nehemiah": 246,
+    "joshua": 243,
+    "chronicles2": 235,
+    "exodus": 233,
+    "jeremiah": 229,
+    "kings2": 224,
+    "samuel2": 207,
+    "judges": 204,
+    "ezra": 197,
+    "ezekiel": 191,
+    "kings1": 183,
+    "leviticus": 160,
+    "samuel1": 141,
+    "deuteronomy": 129,
+    "psalms": 102,
+    "isaiah": 84,
+    "proverbs": 60,
+    "job": 36,
+    "hosea": 24,
+    "ecclesiastes": 16,
+    "esther": 15,
+    "joel": 15,
+    "zechariah": 13,
+    "amos": 11,
+    "daniel": 10,
+    "haggai": 10,
+    "ruth": 8,
+    "zephaniah": 8,
+    "malachi": 6,
+    "micah": 6,
+    "lamentations": 4,
+    "jonah": 3,
+    "obadiah": 2,
+    "songofsolomon": 2
   },
   "phrases": [
     {
-      "hebrew": "וַיּ֥וֹלֶד בָּנִ֖ים",
-      "pron": "옐릳티카 베니위",
+      "hebrew": "בְּנֵ֣י יִשְׂרָאֵ֔ל",
+      "pron": "바님 이스라엘",
       "lemmas": [
-        "יָלַד",
-        "בֵּן"
+        "בֵּן",
+        "יִשְׂרָאֵל"
       ],
       "words": [
         {
-          "word": "וַיּ֥וֹלֶד",
-          "lemma": "יָלַד",
-          "strong": "H3205",
-          "pron": "옐릳티카"
-        },
-        {
-          "word": "בָּנִ֖ים",
+          "word": "בְּנֵ֣י",
           "lemma": "בֵּן",
           "strong": "H1121",
-          "pron": "베니위"
+          "pron": "바님"
+        },
+        {
+          "word": "יִשְׂרָאֵ֔ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
         }
       ],
-      "count": 35,
+      "count": 640,
       "refs": [
-        "genesis 3:16",
-        "genesis 4:25",
-        "genesis 4:26",
-        "genesis 5:4",
-        "genesis 5:7",
-        "genesis 5:10",
-        "genesis 5:13",
-        "genesis 5:16",
-        "genesis 5:19",
-        "genesis 5:22",
-        "genesis 5:26",
-        "genesis 5:28"
+        "genesis 32:32",
+        "genesis 36:31",
+        "genesis 42:5",
+        "genesis 45:21",
+        "genesis 46:5",
+        "genesis 46:8",
+        "genesis 50:25",
+        "exodus 1:1",
+        "exodus 1:7",
+        "exodus 1:9",
+        "exodus 1:12",
+        "exodus 1:13"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לִבְנֵ֥י אָדָֽם",
-      "pron": "베니위 아담",
+      "hebrew": "אֶת בְּנֵ֣י",
+      "pron": "에트 바님",
+      "lemmas": [
+        "אֵת",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 211,
+      "refs": [
+        "genesis 9:1",
+        "genesis 18:19",
+        "genesis 21:9",
+        "genesis 21:10",
+        "genesis 21:13",
+        "genesis 22:2",
+        "genesis 22:10",
+        "genesis 22:12",
+        "genesis 22:16",
+        "genesis 24:5",
+        "genesis 24:6",
+        "genesis 24:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן אָדָ֕ם",
+      "pron": "바님 아담",
       "lemmas": [
         "בֵּן",
         "אָדָם"
       ],
       "words": [
         {
-          "word": "לִבְנֵ֥י",
+          "word": "בֶּן",
           "lemma": "בֵּן",
           "strong": "H1121",
-          "pron": "베니위"
+          "pron": "바님"
         },
         {
-          "word": "אָדָֽם",
+          "word": "אָדָ֕ם",
           "lemma": "אָדָם",
           "strong": "H120",
           "pron": "아담"
         }
       ],
-      "count": 27,
+      "count": 155,
       "refs": [
+        "genesis 11:5",
+        "numbers 23:19",
+        "deuteronomy 32:8",
+        "samuel1 26:19",
+        "samuel2 7:14",
+        "kings1 8:39",
+        "chronicles2 6:30",
+        "job 16:21",
+        "job 25:6",
+        "job 35:8",
         "psalms 8:4",
-        "psalms 11:4",
-        "psalms 12:1",
-        "psalms 12:8",
-        "psalms 14:2",
-        "psalms 21:10",
-        "psalms 31:19",
-        "psalms 33:13",
-        "psalms 36:7",
-        "psalms 45:2",
-        "psalms 49:2",
-        "psalms 53:2"
+        "psalms 11:4"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֵ֚לֶּה בְּנֵ֣י",
-      "pron": "엘레 베니위",
+      "hebrew": "אֶל בְּנֵ֣י",
+      "pron": "엘 바님",
       "lemmas": [
-        "אֵלֶּה",
+        "אֵל",
         "בֵּן"
       ],
       "words": [
         {
-          "word": "אֵ֚לֶּה",
-          "lemma": "אֵלֶּה",
-          "strong": "H428",
-          "pron": "엘레"
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
         },
         {
           "word": "בְּנֵ֣י",
           "lemma": "בֵּן",
           "strong": "H1121",
-          "pron": "베니위"
+          "pron": "바님"
         }
       ],
-      "count": 25,
+      "count": 138,
       "refs": [
-        "genesis 9:19",
-        "genesis 10:20",
-        "genesis 10:29",
-        "genesis 10:31",
-        "genesis 25:4",
-        "genesis 35:26",
-        "genesis 36:5",
-        "genesis 36:12",
-        "genesis 36:13",
-        "genesis 36:16",
-        "genesis 36:17",
-        "genesis 36:18"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "בָּנִ֖ים וּבָנֽוֹת",
-      "pron": "베니위 바트",
-      "lemmas": [
-        "בֵּן",
-        "בַּת"
-      ],
-      "words": [
-        {
-          "word": "בָּנִ֖ים",
-          "lemma": "בֵּן",
-          "strong": "H1121",
-          "pron": "베니위"
-        },
-        {
-          "word": "וּבָנֽוֹת",
-          "lemma": "בַּת",
-          "strong": "H1323",
-          "pron": "바트"
-        }
-      ],
-      "count": 24,
-      "refs": [
-        "psalms 106:38",
-        "genesis 5:4",
-        "genesis 5:7",
-        "genesis 5:10",
-        "genesis 5:13",
-        "genesis 5:16",
-        "genesis 5:19",
-        "genesis 5:22",
-        "genesis 5:26",
-        "genesis 5:30",
-        "genesis 11:11",
-        "genesis 11:13"
+        "genesis 9:8",
+        "genesis 23:3",
+        "genesis 27:1",
+        "genesis 27:20",
+        "genesis 37:35",
+        "genesis 49:1",
+        "exodus 3:13",
+        "exodus 3:15",
+        "exodus 6:9",
+        "exodus 6:13",
+        "exodus 12:26",
+        "exodus 14:2"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "בְּנ֔וֹ בֶּן",
-      "pron": "베니위 베니위",
+      "pron": "바님 바님",
       "lemmas": [
         "בֵּן",
         "בֵּן"
@@ -218,25 +253,29 @@
           "word": "בְּנ֔וֹ",
           "lemma": "בֵּן",
           "strong": "H1121",
-          "pron": "베니위"
+          "pron": "바님"
         },
         {
           "word": "בֶּן",
           "lemma": "בֵּן",
           "strong": "H1121",
-          "pron": "베니위"
+          "pron": "바님"
         }
       ],
-      "count": 20,
+      "count": 104,
       "refs": [
-        "psalms 103:17",
-        "psalms 128:6",
         "genesis 11:31",
         "genesis 17:25",
         "genesis 21:4",
         "genesis 31:43",
         "genesis 45:10",
-        "genesis 46:7"
+        "genesis 46:7",
+        "exodus 10:2",
+        "exodus 34:7",
+        "deuteronomy 2:33",
+        "deuteronomy 4:9",
+        "deuteronomy 4:25",
+        "deuteronomy 6:2"
       ],
       "glossKo": ""
     }

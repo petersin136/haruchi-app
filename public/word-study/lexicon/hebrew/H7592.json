@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁאַל",
-  "pron": "셰알",
+  "pron": "바에셰알",
   "strong": "H7592",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "אֶשְׁתָּאֹל",
       "strong": "H847",
-      "pron": "",
+      "pron": "에솃타올",
       "glossKo": "에스다올"
     },
     {
       "lemma": "מִשְׁאָל",
       "strong": "H4861",
-      "pron": "",
+      "pron": "우미셰알",
       "glossKo": "미살"
     },
     {
@@ -26,7 +26,7 @@
     {
       "lemma": "שְׁאוֹל",
       "strong": "H7585",
-      "pron": "비셰올",
+      "pron": "셰올라",
       "glossKo": "스올"
     },
     {
@@ -38,21 +38,118 @@
     {
       "lemma": "שְׁאֵל",
       "strong": "H7593",
-      "pron": "",
+      "pron": "셰엘나",
       "glossKo": "묻다(아람)"
     }
   ],
   "defEn": "inquire",
   "defKo": "",
-  "countOT": 23,
+  "countOT": 174,
   "byBook": {
+    "samuel1": 32,
+    "kings1": 15,
+    "judges": 14,
     "genesis": 13,
-    "psalms": 10
+    "jeremiah": 11,
+    "samuel2": 11,
+    "psalms": 10,
+    "deuteronomy": 8,
+    "exodus": 7,
+    "isaiah": 7,
+    "job": 7,
+    "chronicles1": 6,
+    "chronicles2": 6,
+    "kings2": 6,
+    "joshua": 5,
+    "proverbs": 3,
+    "ecclesiastes": 2,
+    "nehemiah": 2,
+    "ezekiel": 1,
+    "ezra": 1,
+    "haggai": 1,
+    "hosea": 1,
+    "jonah": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "numbers": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
+      "hebrew": "לשאול לִשְׁאָל",
+      "pron": "바에셰알 바에셰알",
+      "lemmas": [
+        "שָׁאַל",
+        "שָׁאַל"
+      ],
+      "words": [
+        {
+          "word": "לשאול",
+          "lemma": "שָׁאַל",
+          "strong": "H7592",
+          "pron": "바에셰알"
+        },
+        {
+          "word": "לִשְׁאָל",
+          "lemma": "שָׁאַל",
+          "strong": "H7592",
+          "pron": "바에셰알"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "genesis 43:7",
+        "samuel1 20:6",
+        "samuel1 20:28",
+        "samuel1 22:15",
+        "samuel2 20:18",
+        "chronicles1 18:10",
+        "chronicles2 1:11",
+        "proverbs 20:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֣ר שָׁאָ֔ל",
+      "pron": "아셰르 바에셰알",
+      "lemmas": [
+        "אֲשֶׁר",
+        "שָׁאַל"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "שָׁאָ֔ל",
+          "lemma": "שָׁאַל",
+          "strong": "H7592",
+          "pron": "바에셰알"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "deuteronomy 14:26",
+        "deuteronomy 18:16",
+        "joshua 4:21",
+        "joshua 19:50",
+        "judges 8:26",
+        "samuel1 1:17",
+        "samuel1 1:27",
+        "samuel1 2:20",
+        "samuel1 12:13",
+        "samuel2 16:23",
+        "kings1 3:11",
+        "kings1 10:13"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וַיִּשְׁאַ֞ל אֶת",
-      "pron": "셰알 에트",
+      "pron": "바에셰알 에트",
       "lemmas": [
         "שָׁאַל",
         "אֵת"
@@ -62,7 +159,7 @@
           "word": "וַיִּשְׁאַ֞ל",
           "lemma": "שָׁאַל",
           "strong": "H7592",
-          "pron": "셰알"
+          "pron": "바에셰알"
         },
         {
           "word": "אֶת",
@@ -71,42 +168,90 @@
           "pron": "에트"
         }
       ],
-      "count": 5,
+      "count": 14,
       "refs": [
         "genesis 24:47",
         "genesis 24:57",
         "genesis 38:21",
         "genesis 40:7",
-        "genesis 44:19"
+        "genesis 44:19",
+        "joshua 19:50",
+        "samuel1 25:8",
+        "samuel2 14:18",
+        "kings1 2:22",
+        "kings1 3:11",
+        "kings1 19:4",
+        "jeremiah 38:27"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַֽיִּשְׁאֲל֞וּ אַנְשֵׁ֤י",
-      "pron": "셰알 하이쉬",
+      "hebrew": "לֹ֥א שָׁאָֽלוּ",
+      "pron": "로 바에셰알",
       "lemmas": [
-        "שָׁאַל",
-        "אִישׁ"
+        "לֹא",
+        "שָׁאַל"
       ],
       "words": [
         {
-          "word": "וַֽיִּשְׁאֲל֞וּ",
-          "lemma": "שָׁאַל",
-          "strong": "H7592",
-          "pron": "셰알"
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
         },
         {
-          "word": "אַנְשֵׁ֤י",
-          "lemma": "אִישׁ",
-          "strong": "H376",
-          "pron": "하이쉬"
+          "word": "שָׁאָֽלוּ",
+          "lemma": "שָׁאַל",
+          "strong": "H7592",
+          "pron": "바에셰알"
         }
       ],
-      "count": 3,
+      "count": 13,
       "refs": [
-        "genesis 26:7",
-        "genesis 37:15",
-        "genesis 43:7"
+        "joshua 9:14",
+        "judges 13:6",
+        "kings1 3:11",
+        "kings1 3:13",
+        "chronicles2 1:11",
+        "job 21:29",
+        "psalms 40:6",
+        "isaiah 7:12",
+        "isaiah 30:2",
+        "isaiah 65:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּשְׁאַ֨ל דָּוִ֤ד",
+      "pron": "바에셰알 다윗",
+      "lemmas": [
+        "שָׁאַל",
+        "דָּוִד"
+      ],
+      "words": [
+        {
+          "word": "וַיִּשְׁאַ֨ל",
+          "lemma": "שָׁאַל",
+          "strong": "H7592",
+          "pron": "바에셰알"
+        },
+        {
+          "word": "דָּוִ֤ד",
+          "lemma": "דָּוִד",
+          "strong": "H1732",
+          "pron": "다윗"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "samuel1 20:28",
+        "samuel1 23:2",
+        "samuel1 30:8",
+        "samuel2 2:1",
+        "samuel2 5:19",
+        "samuel2 5:23",
+        "samuel2 11:7",
+        "chronicles1 14:10"
       ],
       "glossKo": ""
     }

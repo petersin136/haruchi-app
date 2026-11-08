@@ -1,6 +1,6 @@
 {
   "lemma": "שֶׁבֶר",
-  "pron": "셰바레하",
+  "pron": "셰베르",
   "strong": "H7667",
   "posKo": "명사",
   "root": {
@@ -12,33 +12,222 @@
     {
       "lemma": "מִשְׁבֵּר",
       "strong": "H4866",
-      "pron": "",
+      "pron": "마솁베르",
       "glossKo": "구멍"
     },
     {
       "lemma": "מִשְׁבָּר",
       "strong": "H4867",
-      "pron": "미솁바레카",
-      "glossKo": "너의 큰 파도"
+      "pron": "미솁베레",
+      "glossKo": "큰 파도"
     },
     {
       "lemma": "שָׁבַר",
       "strong": "H7665",
-      "pron": "십바렛타",
+      "pron": "리솁보르",
       "glossKo": "꺾다"
+    },
+    {
+      "lemma": "שֶׁבֶר",
+      "strong": "H7668",
+      "pron": "셰베르",
+      "glossKo": "곡식"
+    },
+    {
+      "lemma": "שֶׁבֶר",
+      "strong": "H7669",
+      "pron": "셰베르",
+      "glossKo": "세벨"
     },
     {
       "lemma": "שִׁבְרוֹן",
       "strong": "H7670",
-      "pron": "",
+      "pron": "십바론",
       "glossKo": "파괴"
     }
   ],
   "defEn": "fracture; ruin; solution",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 44,
   "byBook": {
-    "psalms": 1
+    "jeremiah": 15,
+    "isaiah": 9,
+    "lamentations": 5,
+    "leviticus": 4,
+    "proverbs": 4,
+    "amos": 1,
+    "ezekiel": 1,
+    "job": 1,
+    "judges": 1,
+    "nahum": 1,
+    "psalms": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְשֶׁ֥בֶר גָּדֽוֹל",
+      "pron": "셰베르 아게돌림",
+      "lemmas": [
+        "שֶׁבֶר",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "וְשֶׁ֥בֶר",
+          "lemma": "שֶׁבֶר",
+          "strong": "H7667",
+          "pron": "셰베르"
+        },
+        {
+          "word": "גָּדֽוֹל",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "jeremiah 4:6",
+        "jeremiah 6:1",
+        "jeremiah 14:17",
+        "jeremiah 48:3",
+        "jeremiah 50:22",
+        "jeremiah 51:54",
+        "zephaniah 1:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל שֶׁ֖בֶר",
+      "pron": "알 셰베르",
+      "lemmas": [
+        "עַל",
+        "שֶׁבֶר"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "שֶׁ֖בֶר",
+          "lemma": "שֶׁבֶר",
+          "strong": "H7667",
+          "pron": "셰베르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "jeremiah 4:20",
+        "jeremiah 8:21",
+        "jeremiah 10:19",
+        "jeremiah 30:15",
+        "lamentations 2:11",
+        "lamentations 3:48",
+        "amos 6:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שֶׁ֖בֶר בַּת",
+      "pron": "셰베르 우바노트",
+      "lemmas": [
+        "שֶׁבֶר",
+        "בַּת"
+      ],
+      "words": [
+        {
+          "word": "שֶׁ֖בֶר",
+          "lemma": "שֶׁבֶר",
+          "strong": "H7667",
+          "pron": "셰베르"
+        },
+        {
+          "word": "בַּת",
+          "lemma": "בַּת",
+          "strong": "H1323",
+          "pron": "우바노트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "jeremiah 8:11",
+        "jeremiah 8:21",
+        "lamentations 2:11",
+        "lamentations 3:48",
+        "lamentations 4:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שֶׁ֤בֶר בַּת עַמִּי֙",
+      "pron": "셰베르 우바노트 암",
+      "lemmas": [
+        "שֶׁבֶר",
+        "בַּת",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "שֶׁ֤בֶר",
+          "lemma": "שֶׁבֶר",
+          "strong": "H7667",
+          "pron": "셰베르"
+        },
+        {
+          "word": "בַּת",
+          "lemma": "בַּת",
+          "strong": "H1323",
+          "pron": "우바노트"
+        },
+        {
+          "word": "עַמִּי֙",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "jeremiah 8:11",
+        "jeremiah 8:21",
+        "lamentations 2:11",
+        "lamentations 3:48",
+        "lamentations 4:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת שֶׁ֤בֶר",
+      "pron": "에트 셰베르",
+      "lemmas": [
+        "אֵת",
+        "שֶׁבֶר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שֶׁ֤בֶר",
+          "lemma": "שֶׁבֶר",
+          "strong": "H7667",
+          "pron": "셰베르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 7:15",
+        "isaiah 30:26",
+        "jeremiah 6:14",
+        "jeremiah 8:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

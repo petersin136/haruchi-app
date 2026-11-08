@@ -1,8 +1,8 @@
 {
   "lemma": "תִּרְצָה",
-  "pron": "티레차",
+  "pron": "브티레차",
   "strong": "H8656",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רָצָה",
     "strong": "H7521",
@@ -12,25 +12,97 @@
     {
       "lemma": "רָצָה",
       "strong": "H7521",
-      "pron": "레체",
-      "glossKo": "기쁘게 받다"
+      "pron": "밧티레체니",
+      "glossKo": "나를 기쁘게 받다"
     },
     {
       "lemma": "רָצוֹן",
       "strong": "H7522",
-      "pron": "라촌",
-      "glossKo": "기쁨"
+      "pron": "우비레초남",
+      "glossKo": "그들의 기쁨"
     },
     {
       "lemma": "רִצְיָא",
       "strong": "H7525",
-      "pron": "",
+      "pron": "브리체아",
       "glossKo": "리시아"
     }
   ],
   "defEn": "Tirtsah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 18,
+  "byBook": {
+    "kings1": 10,
+    "numbers": 3,
+    "joshua": 2,
+    "kings2": 2,
+    "songofsolomon": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "חָגְלָ֥ה מִלְכָּ֖ה וְתִרְצָֽה",
+      "pron": "학라 밀카 브티레차",
+      "lemmas": [
+        "חׇגְלָה",
+        "מִלְכָּה",
+        "תִּרְצָה"
+      ],
+      "words": [
+        {
+          "word": "חָגְלָ֥ה",
+          "lemma": "חׇגְלָה",
+          "strong": "H2295",
+          "pron": "학라"
+        },
+        {
+          "word": "מִלְכָּ֖ה",
+          "lemma": "מִלְכָּה",
+          "strong": "H4435",
+          "pron": "밀카"
+        },
+        {
+          "word": "וְתִרְצָֽה",
+          "lemma": "תִּרְצָה",
+          "strong": "H8656",
+          "pron": "브티레차"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 26:33",
+        "numbers 27:1",
+        "joshua 17:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִלְכָּ֖ה וְתִרְצָֽה",
+      "pron": "밀카 브티레차",
+      "lemmas": [
+        "מִלְכָּה",
+        "תִּרְצָה"
+      ],
+      "words": [
+        {
+          "word": "מִלְכָּ֖ה",
+          "lemma": "מִלְכָּה",
+          "strong": "H4435",
+          "pron": "밀카"
+        },
+        {
+          "word": "וְתִרְצָֽה",
+          "lemma": "תִּרְצָה",
+          "strong": "H8656",
+          "pron": "브티레차"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 26:33",
+        "numbers 27:1",
+        "joshua 17:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

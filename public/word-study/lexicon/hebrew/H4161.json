@@ -1,6 +1,6 @@
 {
   "lemma": "מוֹצָא",
-  "pron": "모차오",
+  "pron": "모차",
   "strong": "H4161",
   "posKo": "명사",
   "root": {
@@ -12,45 +12,179 @@
     {
       "lemma": "יָצָא",
       "strong": "H3318",
-      "pron": "예체",
+      "pron": "바토체",
       "glossKo": "나가다"
     },
     {
       "lemma": "יְצָא",
       "strong": "H3319",
-      "pron": "",
+      "pron": "브셰으치",
       "glossKo": "나오다(아람)"
     },
     {
       "lemma": "יָצִיא",
       "strong": "H3329",
-      "pron": "",
-      "glossKo": "발달"
+      "pron": "브미치브",
+      "glossKo": "그의 발달"
     },
     {
       "lemma": "מוֹצָא",
       "strong": "H4162",
-      "pron": "",
+      "pron": "모차",
       "glossKo": "모사"
     },
     {
       "lemma": "מוֹצָאָה",
       "strong": "H4163",
-      "pron": "",
+      "pron": "르모차오트",
       "glossKo": "혈통"
     },
     {
       "lemma": "צָאָה",
       "strong": "H6627",
-      "pron": "",
-      "glossKo": "오물"
+      "pron": "체아테카",
+      "glossKo": "너의 오물"
     }
   ],
   "defEn": "going forth; egress; exit; source; product; dawn; rising; East; exportation; utterance; gate; fountain; mine; meadow",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 27,
   "byBook": {
-    "psalms": 6
+    "psalms": 6,
+    "ezekiel": 4,
+    "numbers": 3,
+    "chronicles2": 2,
+    "deuteronomy": 2,
+    "isaiah": 2,
+    "job": 2,
+    "daniel": 1,
+    "hosea": 1,
+    "jeremiah": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מוֹצָ֣א הַמַּ֔יִם",
+      "pron": "모차 아마임",
+      "lemmas": [
+        "מוֹצָא",
+        "מַיִם"
+      ],
+      "words": [
+        {
+          "word": "מוֹצָ֣א",
+          "lemma": "מוֹצָא",
+          "strong": "H4161",
+          "pron": "모차"
+        },
+        {
+          "word": "הַמַּ֔יִם",
+          "lemma": "מַיִם",
+          "strong": "H4325",
+          "pron": "아마임"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings2 2:21",
+        "chronicles2 32:30",
+        "psalms 107:33",
+        "psalms 107:35",
+        "isaiah 41:18",
+        "isaiah 58:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל מוֹצָ֨א",
+      "pron": "칼 모차",
+      "lemmas": [
+        "כֹּל",
+        "מוֹצָא"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מוֹצָ֨א",
+          "lemma": "מוֹצָא",
+          "strong": "H4161",
+          "pron": "모차"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 30:12",
+        "deuteronomy 8:3",
+        "ezekiel 42:11",
+        "ezekiel 44:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מוֹצָ֨א שְׂפָתֶ֧יהָ",
+      "pron": "모차 사파",
+      "lemmas": [
+        "מוֹצָא",
+        "שָׂפָה"
+      ],
+      "words": [
+        {
+          "word": "מוֹצָ֨א",
+          "lemma": "מוֹצָא",
+          "strong": "H4161",
+          "pron": "모차"
+        },
+        {
+          "word": "שְׂפָתֶ֧יהָ",
+          "lemma": "שָׂפָה",
+          "strong": "H8193",
+          "pron": "사파"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 30:12",
+        "deuteronomy 23:23",
+        "psalms 89:34",
+        "jeremiah 17:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת מוֹצָאֵיהֶ֛ם",
+      "pron": "에트 모차",
+      "lemmas": [
+        "אֵת",
+        "מוֹצָא"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מוֹצָאֵיהֶ֛ם",
+          "lemma": "מוֹצָא",
+          "strong": "H4161",
+          "pron": "모차"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 33:2",
+        "samuel2 3:25",
+        "chronicles2 32:30"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "אַחַר",
-  "pron": "아하레하",
+  "pron": "아하레",
   "strong": "H310",
   "posKo": "전치사",
   "root": {
@@ -12,8 +12,14 @@
     {
       "lemma": "אָחַר",
       "strong": "H309",
-      "pron": "테아하르",
+      "pron": "테아하루",
       "glossKo": "지체하다"
+    },
+    {
+      "lemma": "אַחַר",
+      "strong": "H311",
+      "pron": "아하레",
+      "glossKo": "후에(아람)"
     },
     {
       "lemma": "אַחֵר",
@@ -24,157 +30,81 @@
     {
       "lemma": "אַחֲרוֹן",
       "strong": "H314",
-      "pron": "아하론",
+      "pron": "아하로님",
       "glossKo": "뒤의"
+    },
+    {
+      "lemma": "אַחְרַח",
+      "strong": "H315",
+      "pron": "브아헤라흐",
+      "glossKo": "아라"
+    },
+    {
+      "lemma": "אֲחַרְחֵל",
+      "strong": "H316",
+      "pron": "아하레헬",
+      "glossKo": "아하르헬"
     }
   ],
   "defEn": "the hind part; after",
   "defKo": "",
-  "countOT": 94,
+  "countOT": 718,
   "byBook": {
     "genesis": 85,
-    "psalms": 9
+    "samuel2": 60,
+    "kings1": 56,
+    "jeremiah": 54,
+    "samuel1": 53,
+    "judges": 42,
+    "joshua": 40,
+    "deuteronomy": 31,
+    "kings2": 31,
+    "chronicles2": 30,
+    "numbers": 29,
+    "exodus": 28,
+    "nehemiah": 27,
+    "ezekiel": 25,
+    "leviticus": 25,
+    "chronicles1": 15,
+    "job": 15,
+    "isaiah": 10,
+    "psalms": 9,
+    "ruth": 9,
+    "ecclesiastes": 8,
+    "hosea": 7,
+    "proverbs": 6,
+    "joel": 5,
+    "ezra": 4,
+    "zechariah": 4,
+    "amos": 3,
+    "daniel": 2,
+    "esther": 2,
+    "songofsolomon": 2,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "אַֽחֲרֵי֙ הוֹלִיד֣וֹ",
-      "pron": "아하레하 옐릳티카",
-      "lemmas": [
-        "אַחַר",
-        "יָלַד"
-      ],
-      "words": [
-        {
-          "word": "אַֽחֲרֵי֙",
-          "lemma": "אַחַר",
-          "strong": "H310",
-          "pron": "아하레하"
-        },
-        {
-          "word": "הוֹלִיד֣וֹ",
-          "lemma": "יָלַד",
-          "strong": "H3205",
-          "pron": "옐릳티카"
-        }
-      ],
-      "count": 18,
-      "refs": [
-        "genesis 5:4",
-        "genesis 5:7",
-        "genesis 5:10",
-        "genesis 5:13",
-        "genesis 5:16",
-        "genesis 5:19",
-        "genesis 5:22",
-        "genesis 5:26",
-        "genesis 5:30",
-        "genesis 11:11",
-        "genesis 11:13",
-        "genesis 11:15"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אַֽחֲרֵי֙ הוֹלִיד֣וֹ אֶת",
-      "pron": "아하레하 옐릳티카 에트",
-      "lemmas": [
-        "אַחַר",
-        "יָלַד",
-        "אֵת"
-      ],
-      "words": [
-        {
-          "word": "אַֽחֲרֵי֙",
-          "lemma": "אַחַר",
-          "strong": "H310",
-          "pron": "아하레하"
-        },
-        {
-          "word": "הוֹלִיד֣וֹ",
-          "lemma": "יָלַד",
-          "strong": "H3205",
-          "pron": "옐릳티카"
-        },
-        {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        }
-      ],
-      "count": 17,
-      "refs": [
-        "genesis 5:4",
-        "genesis 5:7",
-        "genesis 5:10",
-        "genesis 5:13",
-        "genesis 5:16",
-        "genesis 5:19",
-        "genesis 5:22",
-        "genesis 5:26",
-        "genesis 5:30",
-        "genesis 11:11",
-        "genesis 11:13",
-        "genesis 11:15"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "זַרְעֲכֶ֖ם אַֽחֲרֵיכֶֽם",
-      "pron": "우르자레오 아하레하",
-      "lemmas": [
-        "זֶרַע",
-        "אַחַר"
-      ],
-      "words": [
-        {
-          "word": "זַרְעֲכֶ֖ם",
-          "lemma": "זֶרַע",
-          "strong": "H2233",
-          "pron": "우르자레오"
-        },
-        {
-          "word": "אַֽחֲרֵיכֶֽם",
-          "lemma": "אַחַר",
-          "strong": "H310",
-          "pron": "아하레하"
-        }
-      ],
-      "count": 9,
-      "refs": [
-        "genesis 9:9",
-        "genesis 17:7",
-        "genesis 17:8",
-        "genesis 17:9",
-        "genesis 17:10",
-        "genesis 17:19",
-        "genesis 35:12",
-        "genesis 48:4"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אַֽחֲרֵי כֵ֗ן",
-      "pron": "아하레하 켄",
+      "hebrew": "אַחֲרֵי כֵ֔ן",
+      "pron": "아하레 켄",
       "lemmas": [
         "אַחַר",
         "כֵּן"
       ],
       "words": [
         {
-          "word": "אַֽחֲרֵי",
+          "word": "אַחֲרֵי",
           "lemma": "אַחַר",
           "strong": "H310",
-          "pron": "아하레하"
+          "pron": "아하레"
         },
         {
-          "word": "כֵ֗ן",
+          "word": "כֵ֔ן",
           "lemma": "כֵּן",
           "strong": "H3651",
           "pron": "켄"
         }
       ],
-      "count": 7,
+      "count": 53,
       "refs": [
         "genesis 6:4",
         "genesis 15:14",
@@ -182,39 +112,164 @@
         "genesis 25:26",
         "genesis 32:20",
         "genesis 41:31",
-        "genesis 45:15"
+        "genesis 45:15",
+        "exodus 3:20",
+        "exodus 11:1",
+        "exodus 11:8",
+        "exodus 34:32",
+        "leviticus 14:36"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אַחַר֙ הַדְּבָרִ֣ים",
-      "pron": "아하레하 딥레",
+      "hebrew": "וַיְהִ֗י אַחַר֙",
+      "pron": "하에타 아하레",
       "lemmas": [
-        "אַחַר",
-        "דָּבָר"
+        "הָיָה",
+        "אַחַר"
       ],
       "words": [
+        {
+          "word": "וַיְהִ֗י",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
         {
           "word": "אַחַר֙",
           "lemma": "אַחַר",
           "strong": "H310",
-          "pron": "아하레하"
-        },
-        {
-          "word": "הַדְּבָרִ֣ים",
-          "lemma": "דָּבָר",
-          "strong": "H1697",
-          "pron": "딥레"
+          "pron": "아하레"
         }
       ],
-      "count": 6,
+      "count": 45,
       "refs": [
-        "genesis 15:1",
         "genesis 22:1",
         "genesis 22:20",
+        "genesis 25:11",
         "genesis 39:7",
         "genesis 40:1",
-        "genesis 48:1"
+        "genesis 48:1",
+        "exodus 23:2",
+        "numbers 26:1",
+        "joshua 1:1",
+        "joshua 24:29",
+        "judges 1:1",
+        "judges 16:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָלֶ֗כֶת אַחֲרֵ֛י",
+      "pron": "텔레크 아하레",
+      "lemmas": [
+        "יָלַךְ",
+        "אַחַר"
+      ],
+      "words": [
+        {
+          "word": "לָלֶ֗כֶת",
+          "lemma": "יָלַךְ",
+          "strong": "H3212",
+          "pron": "텔레크"
+        },
+        {
+          "word": "אַחֲרֵ֛י",
+          "lemma": "אַחַר",
+          "strong": "H310",
+          "pron": "아하레"
+        }
+      ],
+      "count": 42,
+      "refs": [
+        "genesis 24:5",
+        "genesis 24:8",
+        "genesis 24:61",
+        "exodus 14:19",
+        "numbers 16:25",
+        "deuteronomy 6:14",
+        "deuteronomy 11:28",
+        "deuteronomy 13:2",
+        "deuteronomy 28:14",
+        "judges 2:12",
+        "judges 2:19",
+        "judges 9:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽיִּרְדְּפ֖וּ אַחֲרֵ֥י",
+      "pron": "바이렏돕 아하레",
+      "lemmas": [
+        "רָדַף",
+        "אַחַר"
+      ],
+      "words": [
+        {
+          "word": "וַֽיִּרְדְּפ֖וּ",
+          "lemma": "רָדַף",
+          "strong": "H7291",
+          "pron": "바이렏돕"
+        },
+        {
+          "word": "אַחֲרֵ֥י",
+          "lemma": "אַחַר",
+          "strong": "H310",
+          "pron": "아하레"
+        }
+      ],
+      "count": 32,
+      "refs": [
+        "genesis 31:23",
+        "genesis 35:5",
+        "genesis 44:4",
+        "exodus 14:4",
+        "exodus 14:8",
+        "deuteronomy 11:4",
+        "joshua 2:7",
+        "joshua 2:16",
+        "joshua 8:16",
+        "joshua 8:17",
+        "joshua 10:19",
+        "judges 1:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַחֲרֵ֛י אֱלֹהִ֥ים",
+      "pron": "아하레 엘로힘",
+      "lemmas": [
+        "אַחַר",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "אַחֲרֵ֛י",
+          "lemma": "אַחַר",
+          "strong": "H310",
+          "pron": "아하레"
+        },
+        {
+          "word": "אֱלֹהִ֥ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 24,
+      "refs": [
+        "exodus 34:15",
+        "exodus 34:16",
+        "deuteronomy 6:14",
+        "deuteronomy 8:19",
+        "deuteronomy 11:28",
+        "deuteronomy 13:2",
+        "deuteronomy 28:14",
+        "deuteronomy 31:16",
+        "judges 2:12",
+        "judges 2:17",
+        "judges 2:19",
+        "kings1 11:2"
       ],
       "glossKo": ""
     }

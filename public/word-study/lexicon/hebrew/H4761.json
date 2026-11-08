@@ -1,8 +1,8 @@
 {
   "lemma": "מַרְאָשָׁה",
-  "pron": "마레아샤",
+  "pron": "마레아쇼테켐",
   "strong": "H4761",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רֹאשׁ",
     "strong": "H7218",
@@ -10,16 +10,28 @@
   },
   "family": [
     {
+      "lemma": "מַרְאֵשָׁה",
+      "strong": "H4762",
+      "pron": "우마레샤",
+      "glossKo": "마레사"
+    },
+    {
+      "lemma": "מְרַאֲשָׁה",
+      "strong": "H4763",
+      "pron": "메라아쇼타으브",
+      "glossKo": "그의 베개"
+    },
+    {
       "lemma": "רֵאשׁ",
       "strong": "H7217",
-      "pron": "",
-      "glossKo": "머리(아람)"
+      "pron": "베라셰으홈",
+      "glossKo": "그들의 머리(아람)"
     },
     {
       "lemma": "רֹאשׁ",
       "strong": "H7218",
-      "pron": "로시위",
-      "glossKo": "나의 머리"
+      "pron": "라심",
+      "glossKo": "머리"
     },
     {
       "lemma": "רֹאשׁ",
@@ -36,7 +48,9 @@
   ],
   "defEn": "headship; dominion",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 1,
+  "byBook": {
+    "jeremiah": 1
+  },
   "phrases": []
 }

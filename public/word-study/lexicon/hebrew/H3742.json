@@ -1,6 +1,6 @@
 {
   "lemma": "כְּרוּב",
-  "pron": "케룹",
+  "pron": "아케루빔",
   "strong": "H3742",
   "posKo": "명사",
   "root": null,
@@ -8,16 +8,193 @@
     {
       "lemma": "כְּרוּב",
       "strong": "H3743",
-      "pron": "",
+      "pron": "케룹",
       "glossKo": "그룹"
     }
   ],
   "defEn": "cherub; imaginary figure",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 91,
   "byBook": {
+    "ezekiel": 31,
+    "kings1": 20,
+    "exodus": 17,
+    "chronicles2": 11,
     "psalms": 3,
-    "genesis": 1
+    "chronicles1": 2,
+    "samuel2": 2,
+    "genesis": 1,
+    "isaiah": 1,
+    "kings2": 1,
+    "numbers": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כַּנְפֵ֥י הַכְּרוּבִֽים",
+      "pron": "카납 아케루빔",
+      "lemmas": [
+        "כָּנָף",
+        "כְּרוּב"
+      ],
+      "words": [
+        {
+          "word": "כַּנְפֵ֥י",
+          "lemma": "כָּנָף",
+          "strong": "H3671",
+          "pron": "카납"
+        },
+        {
+          "word": "הַכְּרוּבִֽים",
+          "lemma": "כְּרוּב",
+          "strong": "H3742",
+          "pron": "아케루빔"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "kings1 6:24",
+        "kings1 6:27",
+        "kings1 8:6",
+        "chronicles2 3:11",
+        "chronicles2 3:12",
+        "chronicles2 3:13",
+        "chronicles2 5:7",
+        "ezekiel 10:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּכְרוּב אֶחָ֥ד",
+      "pron": "아케루빔 에핟",
+      "lemmas": [
+        "כְּרוּב",
+        "אֶחָד"
+      ],
+      "words": [
+        {
+          "word": "וּכְרוּב",
+          "lemma": "כְּרוּב",
+          "strong": "H3742",
+          "pron": "아케루빔"
+        },
+        {
+          "word": "אֶחָ֥ד",
+          "lemma": "אֶחָד",
+          "strong": "H259",
+          "pron": "에핟"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 25:19",
+        "exodus 37:8",
+        "kings1 6:24",
+        "kings1 6:26",
+        "chronicles2 3:12",
+        "ezekiel 10:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַכְּרֻבִ֖ים עַל",
+      "pron": "아케루빔 알",
+      "lemmas": [
+        "כְּרוּב",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "הַכְּרֻבִ֖ים",
+          "lemma": "כְּרוּב",
+          "strong": "H3742",
+          "pron": "아케루빔"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 25:19",
+        "samuel2 6:2",
+        "kings1 6:32",
+        "kings1 7:29",
+        "kings1 8:7",
+        "chronicles2 3:7",
+        "chronicles2 5:8",
+        "ezekiel 10:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הַכְּרֻבִ֖ים",
+      "pron": "에트 아케루빔",
+      "lemmas": [
+        "אֵת",
+        "כְּרוּב"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַכְּרֻבִ֖ים",
+          "lemma": "כְּרוּב",
+          "strong": "H3742",
+          "pron": "아케루빔"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 3:24",
+        "exodus 25:19",
+        "exodus 26:31",
+        "exodus 36:35",
+        "exodus 37:8",
+        "kings1 6:27",
+        "kings1 6:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יֹשֵׁ֣ב הַכְּרֻבִ֔ים",
+      "pron": "바예솁 아케루빔",
+      "lemmas": [
+        "יָשַׁב",
+        "כְּרוּב"
+      ],
+      "words": [
+        {
+          "word": "יֹשֵׁ֣ב",
+          "lemma": "יָשַׁב",
+          "strong": "H3427",
+          "pron": "바예솁"
+        },
+        {
+          "word": "הַכְּרֻבִ֔ים",
+          "lemma": "כְּרוּב",
+          "strong": "H3742",
+          "pron": "아케루빔"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel1 4:4",
+        "samuel2 6:2",
+        "kings2 19:15",
+        "chronicles1 13:6",
+        "psalms 80:1",
+        "psalms 99:1",
+        "isaiah 37:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

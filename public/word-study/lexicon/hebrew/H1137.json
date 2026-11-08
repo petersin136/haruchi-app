@@ -2,7 +2,7 @@
   "lemma": "בָּנִי",
   "pron": "바니",
   "strong": "H1137",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בָּנָה",
     "strong": "H1129",
@@ -12,43 +12,81 @@
     {
       "lemma": "אֶבֶן",
       "strong": "H68",
-      "pron": "바에벤",
+      "pron": "브에벤",
       "glossKo": "돌"
     },
     {
       "lemma": "בַּיִת",
       "strong": "H1004",
-      "pron": "베테카",
-      "glossKo": "너의 집"
+      "pron": "미바이트",
+      "glossKo": "집"
     },
     {
       "lemma": "בֵּן",
       "strong": "H1121",
-      "pron": "베니위",
-      "glossKo": "나의 아들"
+      "pron": "바님",
+      "glossKo": "아들"
     },
     {
       "lemma": "בְּנָא",
       "strong": "H1124",
-      "pron": "",
+      "pron": "바나인",
       "glossKo": "건축하다(아람)"
     },
     {
       "lemma": "בָּנָה",
       "strong": "H1129",
-      "pron": "입네므",
-      "glossKo": "그들에게 건축하다"
+      "pron": "바이벤",
+      "glossKo": "건축하다"
     },
     {
       "lemma": "בִּנּוּי",
       "strong": "H1131",
-      "pron": "",
+      "pron": "빈누이",
       "glossKo": "빈누이"
     }
   ],
   "defEn": "Bani",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 15,
+  "byBook": {
+    "nehemiah": 8,
+    "ezra": 4,
+    "chronicles1": 2,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶן בָּנִ֖י",
+      "pron": "바님 바니",
+      "lemmas": [
+        "בֵּן",
+        "בָּנִי"
+      ],
+      "words": [
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "בָּנִ֖י",
+          "lemma": "בָּנִי",
+          "strong": "H1137",
+          "pron": "바니"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "chronicles1 6:46",
+        "ezra 2:10",
+        "ezra 10:29",
+        "ezra 10:34",
+        "nehemiah 3:17",
+        "nehemiah 11:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

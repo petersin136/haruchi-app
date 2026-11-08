@@ -18,7 +18,7 @@
     {
       "lemma": "אַרְבַּע",
       "strong": "H703",
-      "pron": "",
+      "pron": "아렙바",
       "glossKo": "넷(아람)"
     },
     {
@@ -30,21 +30,78 @@
     {
       "lemma": "אַרְבַּעְתַּיִם",
       "strong": "H706",
-      "pron": "",
+      "pron": "아렙바엣타임",
       "glossKo": "사 배"
     }
   ],
   "defEn": "forty",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 135,
   "byBook": {
+    "numbers": 20,
+    "deuteronomy": 16,
     "genesis": 15,
+    "nehemiah": 12,
+    "kings1": 10,
+    "exodus": 9,
+    "ezra": 7,
+    "judges": 7,
+    "ezekiel": 6,
+    "chronicles1": 5,
+    "chronicles2": 5,
+    "joshua": 5,
+    "kings2": 5,
+    "samuel2": 4,
+    "amos": 2,
+    "samuel1": 2,
+    "jeremiah": 1,
+    "job": 1,
+    "jonah": 1,
+    "leviticus": 1,
     "psalms": 1
   },
   "phrases": [
     {
+      "hebrew": "אַרְבָּעִ֣ים שָׁנָ֔ה",
+      "pron": "아렙바임 브샤님",
+      "lemmas": [
+        "אַרְבָּעִים",
+        "שָׁנֶה"
+      ],
+      "words": [
+        {
+          "word": "אַרְבָּעִ֣ים",
+          "lemma": "אַרְבָּעִים",
+          "strong": "H705",
+          "pron": "아렙바임"
+        },
+        {
+          "word": "שָׁנָ֔ה",
+          "lemma": "שָׁנֶה",
+          "strong": "H8141",
+          "pron": "브샤님"
+        }
+      ],
+      "count": 37,
+      "refs": [
+        "genesis 5:13",
+        "genesis 25:20",
+        "genesis 26:34",
+        "exodus 16:35",
+        "leviticus 25:8",
+        "numbers 14:33",
+        "numbers 14:34",
+        "numbers 32:13",
+        "deuteronomy 1:3",
+        "deuteronomy 2:7",
+        "deuteronomy 8:2",
+        "deuteronomy 8:4"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "אַרְבָּעִ֣ים י֔וֹם",
-      "pron": "아렙바임 아욤",
+      "pron": "아렙바임 욤",
       "lemmas": [
         "אַרְבָּעִים",
         "יוֹם"
@@ -60,22 +117,29 @@
           "word": "י֔וֹם",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "아욤"
+          "pron": "욤"
         }
       ],
-      "count": 5,
+      "count": 18,
       "refs": [
         "genesis 7:4",
         "genesis 7:12",
         "genesis 7:17",
         "genesis 8:6",
-        "genesis 50:3"
+        "genesis 50:3",
+        "exodus 24:18",
+        "exodus 34:28",
+        "numbers 13:25",
+        "numbers 14:34",
+        "deuteronomy 9:9",
+        "deuteronomy 9:11",
+        "deuteronomy 9:18"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "אַרְבָּעִ֣ים י֔וֹם וְאַרְבָּעִ֖ים",
-      "pron": "아렙바임 아욤 아렙바임",
+      "pron": "아렙바임 욤 아렙바임",
       "lemmas": [
         "אַרְבָּעִים",
         "יוֹם",
@@ -92,7 +156,7 @@
           "word": "י֔וֹם",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "아욤"
+          "pron": "욤"
         },
         {
           "word": "וְאַרְבָּעִ֖ים",
@@ -101,40 +165,93 @@
           "pron": "아렙바임"
         }
       ],
-      "count": 4,
+      "count": 18,
       "refs": [
         "genesis 7:4",
-        "genesis 7:12"
+        "genesis 7:12",
+        "exodus 24:18",
+        "exodus 34:28",
+        "deuteronomy 9:9",
+        "deuteronomy 9:11",
+        "deuteronomy 9:18",
+        "deuteronomy 10:10",
+        "kings1 19:8"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אַרְבָּעִ֣ים שָׁנָ֔ה",
-      "pron": "아렙바임 우셰노타위",
+      "hebrew": "וְאַרְבָּעִ֛ים אֶ֖לֶף",
+      "pron": "아렙바임 엘렙",
       "lemmas": [
         "אַרְבָּעִים",
-        "שָׁנֶה"
+        "אֶלֶף"
       ],
       "words": [
         {
-          "word": "אַרְבָּעִ֣ים",
+          "word": "וְאַרְבָּעִ֛ים",
           "lemma": "אַרְבָּעִים",
           "strong": "H705",
           "pron": "아렙바임"
         },
         {
-          "word": "שָׁנָ֔ה",
-          "lemma": "שָׁנֶה",
-          "strong": "H8141",
-          "pron": "우셰노타위"
+          "word": "אֶ֖לֶף",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
         }
       ],
-      "count": 4,
+      "count": 18,
       "refs": [
-        "psalms 95:10",
-        "genesis 5:13",
-        "genesis 25:20",
-        "genesis 26:34"
+        "numbers 1:21",
+        "numbers 1:25",
+        "numbers 1:33",
+        "numbers 1:41",
+        "numbers 2:11",
+        "numbers 2:15",
+        "numbers 2:19",
+        "numbers 2:28",
+        "numbers 26:7",
+        "numbers 26:18",
+        "numbers 26:41",
+        "numbers 26:50"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵא֖וֹת אַרְבָּעִ֥ים",
+      "pron": "우메아트 아렙바임",
+      "lemmas": [
+        "מֵאָה",
+        "אַרְבָּעִים"
+      ],
+      "words": [
+        {
+          "word": "מֵא֖וֹת",
+          "lemma": "מֵאָה",
+          "strong": "H3967",
+          "pron": "우메아트"
+        },
+        {
+          "word": "אַרְבָּעִ֥ים",
+          "lemma": "אַרְבָּעִים",
+          "strong": "H705",
+          "pron": "아렙바임"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "ezra 2:8",
+        "ezra 2:10",
+        "ezra 2:25",
+        "ezra 2:34",
+        "ezra 2:38",
+        "ezra 2:66",
+        "nehemiah 7:13",
+        "nehemiah 7:15",
+        "nehemiah 7:29",
+        "nehemiah 7:36",
+        "nehemiah 7:41",
+        "nehemiah 7:44"
       ],
       "glossKo": ""
     }

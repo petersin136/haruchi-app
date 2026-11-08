@@ -1,6 +1,6 @@
 {
   "lemma": "פָּקַח",
-  "pron": "포케아흐",
+  "pron": "브닙케후",
   "strong": "H6491",
   "posKo": "동사",
   "root": null,
@@ -8,34 +8,199 @@
     {
       "lemma": "פֶּקַח",
       "strong": "H6492",
-      "pron": "",
+      "pron": "페카흐",
       "glossKo": "베가"
     },
     {
       "lemma": "פִּקֵּחַ",
       "strong": "H6493",
-      "pron": "",
+      "pron": "픽케아흐",
       "glossKo": "눈이 밝은"
     },
     {
       "lemma": "פְּקַחְיָה",
       "strong": "H6494",
-      "pron": "",
+      "pron": "페카헤아",
       "glossKo": "브가히야"
     },
     {
       "lemma": "פְּקַח־קוֹחַ",
       "strong": "H6495",
-      "pron": "",
+      "pron": "페카흐",
       "glossKo": "열림"
     }
   ],
   "defEn": "open; be observant",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 21,
   "byBook": {
+    "kings2": 6,
+    "isaiah": 4,
     "genesis": 3,
-    "psalms": 1
+    "daniel": 2,
+    "job": 2,
+    "jeremiah": 1,
+    "proverbs": 1,
+    "psalms": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְנִפְקְח֖וּ עֵֽינֵיכֶ֑ם",
+      "pron": "브닙케후 에네켐",
+      "lemmas": [
+        "פָּקַח",
+        "עַיִן"
+      ],
+      "words": [
+        {
+          "word": "וְנִפְקְח֖וּ",
+          "lemma": "פָּקַח",
+          "strong": "H6491",
+          "pron": "브닙케후"
+        },
+        {
+          "word": "עֵֽינֵיכֶ֑ם",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 3:5",
+        "genesis 3:7",
+        "job 14:3",
+        "proverbs 20:13",
+        "isaiah 35:5",
+        "isaiah 42:7",
+        "daniel 9:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּפְקַ֤ח יְהוָה֙",
+      "pron": "브닙케후 여호와",
+      "lemmas": [
+        "פָּקַח",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וַיִּפְקַ֤ח",
+          "lemma": "פָּקַח",
+          "strong": "H6491",
+          "pron": "브닙케후"
+        },
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 6:17",
+        "kings2 6:20",
+        "kings2 19:16",
+        "isaiah 37:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָזְנְךָ֙ וּֽשֲׁמָ֔ע פְּקַ֧ח",
+      "pron": "베앗네헴 바이솀우 브닙케후",
+      "lemmas": [
+        "אֹזֶן",
+        "שָׁמַע",
+        "פָּקַח"
+      ],
+      "words": [
+        {
+          "word": "אָזְנְךָ֙",
+          "lemma": "אֹזֶן",
+          "strong": "H241",
+          "pron": "베앗네헴"
+        },
+        {
+          "word": "וּֽשֲׁמָ֔ע",
+          "lemma": "שָׁמַע",
+          "strong": "H8085",
+          "pron": "바이솀우"
+        },
+        {
+          "word": "פְּקַ֧ח",
+          "lemma": "פָּקַח",
+          "strong": "H6491",
+          "pron": "브닙케후"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 19:16",
+        "isaiah 37:17",
+        "daniel 9:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּֽשֲׁמָ֔ע פְּקַ֧ח",
+      "pron": "바이솀우 브닙케후",
+      "lemmas": [
+        "שָׁמַע",
+        "פָּקַח"
+      ],
+      "words": [
+        {
+          "word": "וּֽשֲׁמָ֔ע",
+          "lemma": "שָׁמַע",
+          "strong": "H8085",
+          "pron": "바이솀우"
+        },
+        {
+          "word": "פְּקַ֧ח",
+          "lemma": "פָּקַח",
+          "strong": "H6491",
+          "pron": "브닙케후"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 19:16",
+        "isaiah 37:17",
+        "daniel 9:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֕ה פְּקַח",
+      "pron": "여호와 브닙케후",
+      "lemmas": [
+        "יְהֹוָה",
+        "פָּקַח"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֕ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "פְּקַח",
+          "lemma": "פָּקַח",
+          "strong": "H6491",
+          "pron": "브닙케후"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 6:17",
+        "kings2 6:20",
+        "psalms 146:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

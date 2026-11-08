@@ -1,6 +1,6 @@
 {
   "lemma": "אָחַז",
-  "pron": "아하자타므",
+  "pron": "네에핫",
   "strong": "H270",
   "posKo": "동사",
   "root": null,
@@ -8,40 +8,205 @@
     {
       "lemma": "אָחָז",
       "strong": "H271",
-      "pron": "",
+      "pron": "아핫",
       "glossKo": "아하스"
     },
     {
       "lemma": "אֲחֻזָּה",
       "strong": "H272",
-      "pron": "바아훗자트카",
-      "glossKo": "너의 소유"
+      "pron": "라아훗자트",
+      "glossKo": "소유"
     },
     {
       "lemma": "אַחְזַי",
       "strong": "H273",
-      "pron": "",
+      "pron": "아헤자이",
       "glossKo": "아하시야"
     },
     {
       "lemma": "אֲחַזְיָה",
       "strong": "H274",
-      "pron": "",
+      "pron": "아핫아후",
       "glossKo": "아하스(왕)"
     },
     {
       "lemma": "אֲחֻזָּם",
       "strong": "H275",
-      "pron": "",
+      "pron": "아훗잠",
       "glossKo": "아하시야(왕)"
     }
   ],
   "defEn": "seize",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 68,
   "byBook": {
+    "job": 9,
     "psalms": 7,
-    "genesis": 4
+    "judges": 5,
+    "samuel2": 5,
+    "chronicles1": 4,
+    "ecclesiastes": 4,
+    "genesis": 4,
+    "isaiah": 4,
+    "songofsolomon": 4,
+    "exodus": 3,
+    "kings1": 3,
+    "numbers": 3,
+    "chronicles2": 2,
+    "ezekiel": 2,
+    "jeremiah": 2,
+    "joshua": 2,
+    "ruth": 2,
+    "deuteronomy": 1,
+    "esther": 1,
+    "nehemiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיֹּאחֲז֣וּ אֹת֔וֹ",
+      "pron": "네에핫 에트",
+      "lemmas": [
+        "אָחַז",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּאחֲז֣וּ",
+          "lemma": "אָחַז",
+          "strong": "H270",
+          "pron": "네에핫"
+        },
+        {
+          "word": "אֹת֔וֹ",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 1:6",
+        "judges 12:6",
+        "kings1 6:10",
+        "chronicles1 13:9",
+        "psalms 56:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶֽחֳזִי וַתֹּ֣אחֶז",
+      "pron": "네에핫 네에핫",
+      "lemmas": [
+        "אָחַז",
+        "אָחַז"
+      ],
+      "words": [
+        {
+          "word": "וְאֶֽחֳזִי",
+          "lemma": "אָחַז",
+          "strong": "H270",
+          "pron": "네에핫"
+        },
+        {
+          "word": "וַתֹּ֣אחֶז",
+          "lemma": "אָחַז",
+          "strong": "H270",
+          "pron": "네에핫"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ruth 3:15",
+        "chronicles1 24:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽחֲבָלִים֙ יֹֽאחֵז֔וּן",
+      "pron": "헤벨 네에핫",
+      "lemmas": [
+        "חֶבֶל",
+        "אָחַז"
+      ],
+      "words": [
+        {
+          "word": "וַֽחֲבָלִים֙",
+          "lemma": "חֶבֶל",
+          "strong": "H2256",
+          "pron": "헤벨"
+        },
+        {
+          "word": "יֹֽאחֵז֔וּן",
+          "lemma": "אָחַז",
+          "strong": "H270",
+          "pron": "네에핫"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 13:8",
+        "jeremiah 13:21",
+        "jeremiah 49:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיָד֤וֹ אֹחֶ֨זֶת֙",
+      "pron": "야도 네에핫",
+      "lemmas": [
+        "יָד",
+        "אָחַז"
+      ],
+      "words": [
+        {
+          "word": "וְיָד֤וֹ",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        },
+        {
+          "word": "אֹחֶ֨זֶת֙",
+          "lemma": "אָחַז",
+          "strong": "H270",
+          "pron": "네에핫"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 25:26",
+        "exodus 4:4",
+        "chronicles1 13:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתֹּ֜חֶז יַד",
+      "pron": "네에핫 야도",
+      "lemmas": [
+        "אָחַז",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "וַתֹּ֜חֶז",
+          "lemma": "אָחַז",
+          "strong": "H270",
+          "pron": "네에핫"
+        },
+        {
+          "word": "יַד",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 20:9",
+        "chronicles2 9:18",
+        "psalms 73:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

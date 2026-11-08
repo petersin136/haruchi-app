@@ -1,6 +1,6 @@
 {
   "lemma": "בִּלְעֲדֵי",
-  "pron": "미발아데",
+  "pron": "빌아다이",
   "strong": "H1107",
   "posKo": "접미대명사",
   "root": {
@@ -18,16 +18,54 @@
     {
       "lemma": "בִּלְעָם",
       "strong": "H1109",
-      "pron": "",
+      "pron": "빌암",
       "glossKo": "발람"
     }
   ],
   "defEn": "except; without; besides",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 17,
   "byBook": {
+    "isaiah": 6,
     "genesis": 3,
+    "samuel2": 2,
+    "jeremiah": 1,
+    "job": 1,
+    "joshua": 1,
+    "kings2": 1,
+    "numbers": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מִבַּלְעֲדֵ֣י יְהוָ֑ה",
+      "pron": "빌아다이 여호와",
+      "lemmas": [
+        "בִּלְעֲדֵי",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "מִבַּלְעֲדֵ֣י",
+          "lemma": "בִּלְעֲדֵי",
+          "strong": "H1107",
+          "pron": "빌아다이"
+        },
+        {
+          "word": "יְהוָ֑ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 22:32",
+        "kings2 18:25",
+        "psalms 18:31",
+        "isaiah 36:10"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

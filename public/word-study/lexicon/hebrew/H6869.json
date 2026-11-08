@@ -1,6 +1,6 @@
 {
   "lemma": "צָרָה",
-  "pron": "밧차라",
+  "pron": "차라티",
   "strong": "H6869",
   "posKo": "명사",
   "root": {
@@ -18,21 +18,40 @@
     {
       "lemma": "צַר",
       "strong": "H6862",
-      "pron": "차라위",
-      "glossKo": "나의 대적"
+      "pron": "차레카",
+      "glossKo": "너의 대적"
     }
   ],
   "defEn": "tightness; trouble; rival",
   "defKo": "",
-  "countOT": 27,
+  "countOT": 73,
   "byBook": {
     "psalms": 24,
-    "genesis": 3
+    "jeremiah": 8,
+    "isaiah": 7,
+    "proverbs": 7,
+    "genesis": 3,
+    "samuel1": 3,
+    "chronicles2": 2,
+    "deuteronomy": 2,
+    "job": 2,
+    "nahum": 2,
+    "nehemiah": 2,
+    "obadiah": 2,
+    "daniel": 1,
+    "habakkuk": 1,
+    "jonah": 1,
+    "judges": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "samuel2": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
       "hebrew": "בְּי֣וֹם צָרָ֑ה",
-      "pron": "아욤 밧차라",
+      "pron": "욤 차라티",
       "lemmas": [
         "יוֹם",
         "צָרָה"
@@ -42,58 +61,136 @@
           "word": "בְּי֣וֹם",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "아욤"
+          "pron": "욤"
         },
         {
           "word": "צָרָ֑ה",
           "lemma": "צָרָה",
           "strong": "H6869",
-          "pron": "밧차라"
+          "pron": "차라티"
         }
       ],
-      "count": 5,
+      "count": 15,
       "refs": [
+        "genesis 35:3",
+        "kings2 19:3",
         "psalms 20:1",
         "psalms 50:15",
         "psalms 77:2",
         "psalms 86:7",
-        "genesis 35:3"
+        "proverbs 24:10",
+        "proverbs 25:19",
+        "isaiah 37:3",
+        "jeremiah 16:19",
+        "obadiah 1:12",
+        "obadiah 1:14"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "מִ֝כֹּ֗ל צָֽרוֹתָיו",
-      "pron": "브콜 밧차라",
+      "hebrew": "בְּעֵ֥ת צָרַתְכֶֽם",
+      "pron": "르에트 차라티",
+      "lemmas": [
+        "עֵת",
+        "צָרָה"
+      ],
+      "words": [
+        {
+          "word": "בְּעֵ֥ת",
+          "lemma": "עֵת",
+          "strong": "H6256",
+          "pron": "르에트"
+        },
+        {
+          "word": "צָרַתְכֶֽם",
+          "lemma": "צָרָה",
+          "strong": "H6869",
+          "pron": "차라티"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "judges 10:14",
+        "nehemiah 9:27",
+        "psalms 9:9",
+        "psalms 10:1",
+        "psalms 37:39",
+        "isaiah 33:2",
+        "jeremiah 14:8",
+        "jeremiah 15:11",
+        "jeremiah 30:7",
+        "daniel 12:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִכָּל צָרָֽה",
+      "pron": "칼 차라티",
       "lemmas": [
         "כֹּל",
         "צָרָה"
       ],
       "words": [
         {
-          "word": "מִ֝כֹּ֗ל",
+          "word": "מִכָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
-          "word": "צָֽרוֹתָיו",
+          "word": "צָרָֽה",
           "lemma": "צָרָה",
           "strong": "H6869",
-          "pron": "밧차라"
+          "pron": "차라티"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "samuel1 26:24",
+        "samuel2 4:9",
+        "kings1 1:29",
+        "chronicles2 15:6",
+        "psalms 25:22",
+        "psalms 34:6",
+        "psalms 34:17",
+        "psalms 54:7",
+        "isaiah 63:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "צָרַ֥ת נַפְשׁ֛וֹ",
+      "pron": "차라티 네페쉬",
+      "lemmas": [
+        "צָרָה",
+        "נֶפֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "צָרַ֥ת",
+          "lemma": "צָרָה",
+          "strong": "H6869",
+          "pron": "차라티"
+        },
+        {
+          "word": "נַפְשׁ֛וֹ",
+          "lemma": "נֶפֶשׁ",
+          "strong": "H5315",
+          "pron": "네페쉬"
         }
       ],
       "count": 4,
       "refs": [
-        "psalms 25:22",
-        "psalms 34:6",
-        "psalms 34:17",
-        "psalms 54:7"
+        "genesis 42:21",
+        "psalms 31:7",
+        "psalms 143:11",
+        "proverbs 21:23"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "בַּצָּרָ֥ה קָרָ֗אתָ",
-      "pron": "밧차라 에케라",
+      "pron": "차라티 바이케라",
       "lemmas": [
         "צָרָה",
         "קָרָא"
@@ -103,13 +200,13 @@
           "word": "בַּצָּרָ֥ה",
           "lemma": "צָרָה",
           "strong": "H6869",
-          "pron": "밧차라"
+          "pron": "차라티"
         },
         {
           "word": "קָרָ֗אתָ",
           "lemma": "קָרָא",
           "strong": "H7121",
-          "pron": "에케라"
+          "pron": "바이케라"
         }
       ],
       "count": 3,
@@ -117,64 +214,6 @@
         "psalms 81:7",
         "psalms 86:7",
         "psalms 120:1"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "בְּצָר֥וֹת נַפְשִֽׁי",
-      "pron": "밧차라 르납시위",
-      "lemmas": [
-        "צָרָה",
-        "נֶפֶשׁ"
-      ],
-      "words": [
-        {
-          "word": "בְּצָר֥וֹת",
-          "lemma": "צָרָה",
-          "strong": "H6869",
-          "pron": "밧차라"
-        },
-        {
-          "word": "נַפְשִֽׁי",
-          "lemma": "נֶפֶשׁ",
-          "strong": "H5315",
-          "pron": "르납시위"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 31:7",
-        "psalms 143:11",
-        "genesis 42:21"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "לְעִתּ֥וֹת בַּצָּרָֽה",
-      "pron": "브잇트오 밧차라",
-      "lemmas": [
-        "עֵת",
-        "צָרָה"
-      ],
-      "words": [
-        {
-          "word": "לְעִתּ֥וֹת",
-          "lemma": "עֵת",
-          "strong": "H6256",
-          "pron": "브잇트오"
-        },
-        {
-          "word": "בַּצָּרָֽה",
-          "lemma": "צָרָה",
-          "strong": "H6869",
-          "pron": "밧차라"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 9:9",
-        "psalms 10:1",
-        "psalms 37:39"
       ],
       "glossKo": ""
     }

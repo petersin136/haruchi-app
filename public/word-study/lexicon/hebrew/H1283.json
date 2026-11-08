@@ -10,17 +10,121 @@
   },
   "family": [
     {
+      "lemma": "בְּרִיעִי",
+      "strong": "H1284",
+      "pron": "아베리이",
+      "glossKo": "브리아 자손"
+    },
+    {
       "lemma": "רַע",
       "strong": "H7451",
-      "pron": "라",
+      "pron": "바라",
       "glossKo": "악한"
     }
   ],
   "defEn": "Beriah",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 11,
   "byBook": {
-    "genesis": 2
+    "chronicles1": 7,
+    "genesis": 2,
+    "numbers": 2
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּבְנֵ֣י בְרִיעָ֔ה",
+      "pron": "바님 우베리아",
+      "lemmas": [
+        "בֵּן",
+        "בְּרִיעָה"
+      ],
+      "words": [
+        {
+          "word": "וּבְנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "בְרִיעָ֔ה",
+          "lemma": "בְּרִיעָה",
+          "strong": "H1283",
+          "pron": "우베리아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 46:17",
+        "numbers 26:45",
+        "chronicles1 7:31",
+        "chronicles1 8:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְרִיעָ֔ה חֶ֖בֶר",
+      "pron": "우베리아 헤베르",
+      "lemmas": [
+        "בְּרִיעָה",
+        "חֶבֶר"
+      ],
+      "words": [
+        {
+          "word": "בְרִיעָ֔ה",
+          "lemma": "בְּרִיעָה",
+          "strong": "H1283",
+          "pron": "우베리아"
+        },
+        {
+          "word": "חֶ֖בֶר",
+          "lemma": "חֶבֶר",
+          "strong": "H2268",
+          "pron": "헤베르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 46:17",
+        "numbers 26:45",
+        "chronicles1 7:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבְנֵ֣י בְרִיעָ֔ה חֶ֖בֶר",
+      "pron": "바님 우베리아 헤베르",
+      "lemmas": [
+        "בֵּן",
+        "בְּרִיעָה",
+        "חֶבֶר"
+      ],
+      "words": [
+        {
+          "word": "וּבְנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "בְרִיעָ֔ה",
+          "lemma": "בְּרִיעָה",
+          "strong": "H1283",
+          "pron": "우베리아"
+        },
+        {
+          "word": "חֶ֖בֶר",
+          "lemma": "חֶבֶר",
+          "strong": "H2268",
+          "pron": "헤베르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 46:17",
+        "numbers 26:45",
+        "chronicles1 7:31"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

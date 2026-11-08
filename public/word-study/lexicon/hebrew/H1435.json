@@ -2,7 +2,7 @@
   "lemma": "גִּדֵּל",
   "pron": "긷델",
   "strong": "H1435",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גָּדַל",
     "strong": "H1431",
@@ -12,13 +12,13 @@
     {
       "lemma": "גָּדוֹל",
       "strong": "H1419",
-      "pron": "게돌로트",
+      "pron": "아게돌림",
       "glossKo": "큰"
     },
     {
       "lemma": "גָּדַל",
       "strong": "H1431",
-      "pron": "믁들",
+      "pron": "바아갇델라",
       "glossKo": "자라다"
     },
     {
@@ -36,19 +36,53 @@
     {
       "lemma": "גְּדִל",
       "strong": "H1434",
-      "pron": "",
+      "pron": "게딜림",
       "glossKo": "옷단 술"
     },
     {
       "lemma": "גְּדַּלְיָה",
       "strong": "H1436",
-      "pron": "",
+      "pron": "게달아후",
       "glossKo": "그달리야"
     }
   ],
   "defEn": "Giddel",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "ezra": 2,
+    "nehemiah": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "בְּנֵ֥י גִדֵּֽל",
+      "pron": "바님 긷델",
+      "lemmas": [
+        "בֵּן",
+        "גִּדֵּל"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵ֥י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "גִדֵּֽל",
+          "lemma": "גִּדֵּל",
+          "strong": "H1435",
+          "pron": "긷델"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 2:47",
+        "ezra 2:56",
+        "nehemiah 7:49",
+        "nehemiah 7:58"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

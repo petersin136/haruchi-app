@@ -1,6 +1,6 @@
 {
   "lemma": "נְחוּשָׁה",
-  "pron": "네후샤",
+  "pron": "카네후샤",
   "strong": "H5154",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "נָחוּשׁ",
       "strong": "H5153",
-      "pron": "",
+      "pron": "나후쉬",
       "glossKo": "구리빛의"
     },
     {
       "lemma": "נְחָשׁ",
       "strong": "H5174",
-      "pron": "",
+      "pron": "네하쉬",
       "glossKo": "놋(아람)"
     },
     {
@@ -30,9 +30,44 @@
   ],
   "defEn": "copper",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 10,
   "byBook": {
-    "psalms": 1
+    "job": 4,
+    "isaiah": 2,
+    "leviticus": 1,
+    "micah": 1,
+    "psalms": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "קֶֽשֶׁת נְחוּשָׁ֖ה",
+      "pron": "카솃티 카네후샤",
+      "lemmas": [
+        "קֶשֶׁת",
+        "נְחוּשָׁה"
+      ],
+      "words": [
+        {
+          "word": "קֶֽשֶׁת",
+          "lemma": "קֶשֶׁת",
+          "strong": "H7198",
+          "pron": "카솃티"
+        },
+        {
+          "word": "נְחוּשָׁ֖ה",
+          "lemma": "נְחוּשָׁה",
+          "strong": "H5154",
+          "pron": "카네후샤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:35",
+        "job 20:24",
+        "psalms 18:34"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

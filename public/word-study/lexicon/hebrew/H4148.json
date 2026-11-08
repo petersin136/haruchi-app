@@ -12,33 +12,202 @@
     {
       "lemma": "יִסּוֹר",
       "strong": "H3250",
-      "pron": "",
+      "pron": "잇소르",
       "glossKo": "징계자"
     },
     {
       "lemma": "יָסַר",
       "strong": "H3256",
-      "pron": "히밧루",
+      "pron": "르얏세라",
       "glossKo": "징계하다"
     },
     {
       "lemma": "מוֹסֵר",
       "strong": "H4147",
-      "pron": "못로테모",
-      "glossKo": "그들의 결박"
+      "pron": "우못로트",
+      "glossKo": "결박"
     },
     {
       "lemma": "מֹסָר",
       "strong": "H4561",
-      "pron": "",
-      "glossKo": "훈계"
+      "pron": "웁모사람",
+      "glossKo": "그들의 훈계"
     }
   ],
   "defEn": "chastisement; reproof; warning; instruction",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 50,
   "byBook": {
+    "proverbs": 30,
+    "jeremiah": 8,
+    "job": 4,
+    "isaiah": 2,
+    "zephaniah": 2,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "hosea": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לָ֭קַחַת מוּסַ֣ר",
+      "pron": "바익카흐 무사르",
+      "lemmas": [
+        "לָקַח",
+        "מוּסָר"
+      ],
+      "words": [
+        {
+          "word": "לָ֭קַחַת",
+          "lemma": "לָקַח",
+          "strong": "H3947",
+          "pron": "바익카흐"
+        },
+        {
+          "word": "מוּסַ֣ר",
+          "lemma": "מוּסָר",
+          "strong": "H4148",
+          "pron": "무사르"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "proverbs 1:3",
+        "proverbs 8:10",
+        "proverbs 24:32",
+        "jeremiah 5:3",
+        "jeremiah 7:28",
+        "jeremiah 17:23",
+        "jeremiah 32:33",
+        "jeremiah 35:13",
+        "zephaniah 3:2",
+        "zephaniah 3:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מ֣וּסַר אָ֑ב",
+      "pron": "무사르 아비브",
+      "lemmas": [
+        "מוּסָר",
+        "אָב"
+      ],
+      "words": [
+        {
+          "word": "מ֣וּסַר",
+          "lemma": "מוּסָר",
+          "strong": "H4148",
+          "pron": "무사르"
+        },
+        {
+          "word": "אָ֑ב",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "proverbs 1:8",
+        "proverbs 4:1",
+        "proverbs 13:1",
+        "proverbs 15:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּ֭נִי מוּסַ֣ר",
+      "pron": "바님 무사르",
+      "lemmas": [
+        "בֵּן",
+        "מוּסָר"
+      ],
+      "words": [
+        {
+          "word": "בְּ֭נִי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "מוּסַ֣ר",
+          "lemma": "מוּסָר",
+          "strong": "H4148",
+          "pron": "무사르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 1:8",
+        "proverbs 4:1",
+        "jeremiah 2:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֥א לָקְח֖וּ מוּסָ֑ר",
+      "pron": "로 바익카흐 무사르",
+      "lemmas": [
+        "לֹא",
+        "לָקַח",
+        "מוּסָר"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "לָקְח֖וּ",
+          "lemma": "לָקַח",
+          "strong": "H3947",
+          "pron": "바익카흐"
+        },
+        {
+          "word": "מוּסָ֑ר",
+          "lemma": "מוּסָר",
+          "strong": "H4148",
+          "pron": "무사르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 7:28",
+        "jeremiah 35:13",
+        "zephaniah 3:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּ֝מוּסָ֗ר אֱוִילִ֥ים",
+      "pron": "무사르 레에빌",
+      "lemmas": [
+        "מוּסָר",
+        "אֱוִיל"
+      ],
+      "words": [
+        {
+          "word": "וּ֝מוּסָ֗ר",
+          "lemma": "מוּסָר",
+          "strong": "H4148",
+          "pron": "무사르"
+        },
+        {
+          "word": "אֱוִילִ֥ים",
+          "lemma": "אֱוִיל",
+          "strong": "H191",
+          "pron": "레에빌"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 1:7",
+        "proverbs 7:22",
+        "proverbs 16:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

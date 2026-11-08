@@ -1,8 +1,8 @@
 {
   "lemma": "מַעֲלֶה",
-  "pron": "마알레",
+  "pron": "르마알레",
   "strong": "H4608",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָלָה",
     "strong": "H5927",
@@ -12,31 +12,148 @@
     {
       "lemma": "מַעַל",
       "strong": "H4605",
-      "pron": "르마엘라",
+      "pron": "미르마엘라",
       "glossKo": "위"
     },
     {
       "lemma": "מֹעַל",
       "strong": "H4607",
-      "pron": "",
+      "pron": "브모알",
       "glossKo": "올림"
+    },
+    {
+      "lemma": "מַעֲלָה",
+      "strong": "H4609",
+      "pron": "브마알로트",
+      "glossKo": "층계"
+    },
+    {
+      "lemma": "מַעֲלֵה עַקְרַבִּים",
+      "strong": "H4610",
+      "pron": "르마알레",
+      "glossKo": "아그랍빔 비탈"
     },
     {
       "lemma": "עִילַי",
       "strong": "H5866",
-      "pron": "",
+      "pron": "일라이",
       "glossKo": "일래"
     },
     {
       "lemma": "עַל",
       "strong": "H5920",
-      "pron": "메알",
+      "pron": "알",
       "glossKo": "위"
     }
   ],
   "defEn": "elevation; acclivity; platform; rise; priority",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 18,
+  "byBook": {
+    "ezekiel": 6,
+    "chronicles2": 2,
+    "joshua": 2,
+    "nehemiah": 2,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "kings2": 1,
+    "samuel1": 1,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "מעלו מַעֲלָֽיו",
+      "pron": "르마알레 르마알레",
+      "lemmas": [
+        "מַעֲלֶה",
+        "מַעֲלֶה"
+      ],
+      "words": [
+        {
+          "word": "מעלו",
+          "lemma": "מַעֲלֶה",
+          "strong": "H4608",
+          "pron": "르마알레"
+        },
+        {
+          "word": "מַעֲלָֽיו",
+          "lemma": "מַעֲלֶה",
+          "strong": "H4608",
+          "pron": "르마알레"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "ezekiel 40:31",
+        "ezekiel 40:34",
+        "ezekiel 40:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַעֲל֖וֹת מעלו מַעֲלָֽיו",
+      "pron": "브마알로트 르마알레 르마알레",
+      "lemmas": [
+        "מַעֲלָה",
+        "מַעֲלֶה",
+        "מַעֲלֶה"
+      ],
+      "words": [
+        {
+          "word": "מַעֲל֖וֹת",
+          "lemma": "מַעֲלָה",
+          "strong": "H4609",
+          "pron": "브마알로트"
+        },
+        {
+          "word": "מעלו",
+          "lemma": "מַעֲלֶה",
+          "strong": "H4608",
+          "pron": "르마알레"
+        },
+        {
+          "word": "מַעֲלָֽיו",
+          "lemma": "מַעֲלֶה",
+          "strong": "H4608",
+          "pron": "르마알레"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 40:34",
+        "ezekiel 40:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֹלִים֙ בְּמַעֲלֵ֣ה",
+      "pron": "야알레 르마알레",
+      "lemmas": [
+        "עָלָה",
+        "מַעֲלֶה"
+      ],
+      "words": [
+        {
+          "word": "עֹלִים֙",
+          "lemma": "עָלָה",
+          "strong": "H5927",
+          "pron": "야알레"
+        },
+        {
+          "word": "בְּמַעֲלֵ֣ה",
+          "lemma": "מַעֲלֶה",
+          "strong": "H4608",
+          "pron": "르마알레"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 9:11",
+        "samuel2 15:30",
+        "chronicles2 20:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

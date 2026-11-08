@@ -1,6 +1,6 @@
 {
   "lemma": "כָּלָה",
-  "pron": "칼로타므",
+  "pron": "바예쿨루",
   "strong": "H3615",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "כָּלֶה",
       "strong": "H3616",
-      "pron": "",
+      "pron": "브칼로트",
       "glossKo": "쇠약한"
     },
     {
@@ -20,39 +20,216 @@
     {
       "lemma": "כְּלוּהַי",
       "strong": "H3622",
-      "pron": "",
+      "pron": "클히",
       "glossKo": "글루해"
     },
     {
       "lemma": "כְּלִי",
       "strong": "H3627",
-      "pron": "키켈리",
+      "pron": "켈레",
       "glossKo": "그릇"
     },
     {
       "lemma": "כִּלָּיוֹן",
       "strong": "H3631",
-      "pron": "",
+      "pron": "브킬온",
       "glossKo": "쇠약"
     },
     {
       "lemma": "מִכְלָה",
       "strong": "H4357",
-      "pron": "",
+      "pron": "미켈로트",
       "glossKo": "완성"
     }
   ],
   "defEn": "end; cease; be finished; perish; complete; prepare; consume",
   "defKo": "",
-  "countOT": 40,
+  "countOT": 205,
   "byBook": {
     "psalms": 23,
-    "genesis": 17
+    "chronicles2": 17,
+    "genesis": 17,
+    "ezekiel": 16,
+    "jeremiah": 13,
+    "isaiah": 12,
+    "kings1": 12,
+    "job": 11,
+    "exodus": 10,
+    "samuel1": 10,
+    "deuteronomy": 7,
+    "numbers": 7,
+    "samuel2": 6,
+    "joshua": 5,
+    "lamentations": 5,
+    "leviticus": 5,
+    "daniel": 4,
+    "ezra": 4,
+    "ruth": 4,
+    "chronicles1": 3,
+    "kings2": 3,
+    "proverbs": 3,
+    "judges": 2,
+    "amos": 1,
+    "esther": 1,
+    "hosea": 1,
+    "malachi": 1,
+    "nehemiah": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
+      "hebrew": "עַד כַּלּוֹתָֽם",
+      "pron": "앋 바예쿨루",
+      "lemmas": [
+        "עַד",
+        "כָּלָה"
+      ],
+      "words": [
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "כַּלּוֹתָֽם",
+          "lemma": "כָּלָה",
+          "strong": "H3615",
+          "pron": "바예쿨루"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "deuteronomy 28:21",
+        "ruth 2:23",
+        "ruth 3:3",
+        "samuel1 15:18",
+        "samuel2 22:38",
+        "kings1 3:1",
+        "kings1 22:11",
+        "kings2 13:17",
+        "kings2 13:19",
+        "chronicles1 28:20",
+        "chronicles2 8:16",
+        "chronicles2 18:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַּלּוֹתִ֖י אוֹתָֽם",
+      "pron": "바예쿨루 에트",
+      "lemmas": [
+        "כָּלָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "כַּלּוֹתִ֖י",
+          "lemma": "כָּלָה",
+          "strong": "H3615",
+          "pron": "바예쿨루"
+        },
+        {
+          "word": "אוֹתָֽם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "numbers 16:21",
+        "numbers 16:45",
+        "numbers 25:11",
+        "deuteronomy 28:21",
+        "joshua 24:20",
+        "ruth 2:21",
+        "samuel1 2:33",
+        "samuel1 15:18",
+        "samuel2 11:19",
+        "kings1 7:1",
+        "jeremiah 9:16",
+        "jeremiah 10:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיְהִ֣י כְּכַלּ֣וֹת",
+      "pron": "하에타 바예쿨루",
+      "lemmas": [
+        "הָיָה",
+        "כָּלָה"
+      ],
+      "words": [
+        {
+          "word": "וַיְהִ֣י",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "כְּכַלּ֣וֹת",
+          "lemma": "כָּלָה",
+          "strong": "H3615",
+          "pron": "바예쿨루"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "numbers 16:31",
+        "deuteronomy 20:9",
+        "deuteronomy 31:24",
+        "joshua 8:24",
+        "joshua 10:20",
+        "judges 15:17",
+        "samuel1 13:10",
+        "samuel1 18:1",
+        "samuel1 24:16",
+        "samuel2 13:36",
+        "kings1 8:54",
+        "kings1 9:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹא֩ כִלִּיתֶ֨ם",
+      "pron": "로 바예쿨루",
+      "lemmas": [
+        "לֹא",
+        "כָּלָה"
+      ],
+      "words": [
+        {
+          "word": "לֹא֩",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "כִלִּיתֶ֨ם",
+          "lemma": "כָּלָה",
+          "strong": "H3615",
+          "pron": "바예쿨루"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 5:14",
+        "leviticus 19:9",
+        "leviticus 23:22",
+        "numbers 25:11",
+        "kings1 17:14",
+        "kings1 17:16",
+        "chronicles1 27:24",
+        "chronicles2 8:8",
+        "lamentations 3:22",
+        "malachi 3:6"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וַיְכַ֖ל לְדַבֵּ֣ר",
-      "pron": "칼로타므 예답베르",
+      "pron": "바예쿨루 바예답베르",
       "lemmas": [
         "כָּלָה",
         "דָבַר"
@@ -62,116 +239,26 @@
           "word": "וַיְכַ֖ל",
           "lemma": "כָּלָה",
           "strong": "H3615",
-          "pron": "칼로타므"
+          "pron": "바예쿨루"
         },
         {
           "word": "לְדַבֵּ֣ר",
           "lemma": "דָבַר",
           "strong": "H1696",
-          "pron": "예답베르"
+          "pron": "바예답베르"
         }
       ],
-      "count": 4,
+      "count": 9,
       "refs": [
         "genesis 17:22",
         "genesis 18:33",
         "genesis 24:15",
-        "genesis 24:45"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "כַּאֲשֶׁ֣ר כִּלָּ֔ה",
-      "pron": "아셰르 칼로타므",
-      "lemmas": [
-        "אֲשֶׁר",
-        "כָּלָה"
-      ],
-      "words": [
-        {
-          "word": "כַּאֲשֶׁ֣ר",
-          "lemma": "אֲשֶׁר",
-          "strong": "H834",
-          "pron": "아셰르"
-        },
-        {
-          "word": "כִּלָּ֔ה",
-          "lemma": "כָּלָה",
-          "strong": "H3615",
-          "pron": "칼로타므"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 18:33",
-        "genesis 24:22",
-        "genesis 27:30",
-        "genesis 43:2"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיְהִ֗י כַּאֲשֶׁ֨ר כִּלּ֤וּ",
-      "pron": "브하아 아셰르 칼로타므",
-      "lemmas": [
-        "הָיָה",
-        "אֲשֶׁר",
-        "כָּלָה"
-      ],
-      "words": [
-        {
-          "word": "וַיְהִ֗י",
-          "lemma": "הָיָה",
-          "strong": "H1961",
-          "pron": "브하아"
-        },
-        {
-          "word": "כַּאֲשֶׁ֨ר",
-          "lemma": "אֲשֶׁר",
-          "strong": "H834",
-          "pron": "아셰르"
-        },
-        {
-          "word": "כִּלּ֤וּ",
-          "lemma": "כָּלָה",
-          "strong": "H3615",
-          "pron": "칼로타므"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 24:22",
-        "genesis 27:30",
-        "genesis 43:2"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "כִּ֤י כָל֪וּ",
-      "pron": "키 칼로타므",
-      "lemmas": [
-        "כִּי",
-        "כָּלָה"
-      ],
-      "words": [
-        {
-          "word": "כִּ֤י",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
-        },
-        {
-          "word": "כָל֪וּ",
-          "lemma": "כָּלָה",
-          "strong": "H3615",
-          "pron": "칼로타므"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 31:10",
-        "psalms 90:7",
-        "psalms 102:3"
+        "genesis 24:45",
+        "exodus 31:18",
+        "numbers 16:31",
+        "judges 15:17",
+        "samuel1 18:1",
+        "samuel2 13:36"
       ],
       "glossKo": ""
     }

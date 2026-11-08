@@ -1,6 +1,6 @@
 {
   "lemma": "חוֹל",
-  "pron": "우크홀",
+  "pron": "브카홀",
   "strong": "H2344",
   "posKo": "명사",
   "root": {
@@ -18,7 +18,7 @@
     {
       "lemma": "חוּל",
       "strong": "H2342",
-      "pron": "야힐루",
+      "pron": "바야헬",
       "glossKo": "산고"
     },
     {
@@ -36,50 +36,139 @@
     {
       "lemma": "חַיִל",
       "strong": "H2428",
-      "pron": "하일",
-      "glossKo": "힘"
+      "pron": "헬람",
+      "glossKo": "그들의 힘"
     },
     {
       "lemma": "חָלָה",
       "strong": "H2470",
-      "pron": "바할로타므",
-      "glossKo": "그들에게 병들다"
+      "pron": "홀레",
+      "glossKo": "병들다"
     }
   ],
   "defEn": "sand",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 23,
   "byBook": {
     "genesis": 3,
-    "psalms": 2
+    "jeremiah": 3,
+    "isaiah": 2,
+    "job": 2,
+    "kings1": 2,
+    "psalms": 2,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "joshua": 1,
+    "judges": 1,
+    "proverbs": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "וּֽכְח֥וֹל יַ֝מִּ֗ים",
-      "pron": "우크홀 아얌",
+      "hebrew": "כְּח֣וֹל הַיָּ֔ם",
+      "pron": "브카홀 얌밈",
       "lemmas": [
         "חוֹל",
         "יָם"
       ],
       "words": [
         {
-          "word": "וּֽכְח֥וֹל",
+          "word": "כְּח֣וֹל",
           "lemma": "חוֹל",
           "strong": "H2344",
-          "pron": "우크홀"
+          "pron": "브카홀"
         },
         {
-          "word": "יַ֝מִּ֗ים",
+          "word": "הַיָּ֔ם",
           "lemma": "יָם",
           "strong": "H3220",
-          "pron": "아얌"
+          "pron": "얌밈"
         }
       ],
-      "count": 3,
+      "count": 8,
       "refs": [
-        "psalms 78:27",
         "genesis 32:12",
-        "genesis 41:49"
+        "genesis 41:49",
+        "job 6:3",
+        "psalms 78:27",
+        "isaiah 10:22",
+        "jeremiah 15:8",
+        "jeremiah 33:22",
+        "hosea 1:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַּח֛וֹל אֲשֶׁ֥ר",
+      "pron": "브카홀 아셰르",
+      "lemmas": [
+        "חוֹל",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "כַּח֛וֹל",
+          "lemma": "חוֹל",
+          "strong": "H2344",
+          "pron": "브카홀"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 22:17",
+        "joshua 11:4",
+        "samuel1 13:5",
+        "samuel2 17:11",
+        "kings1 4:20",
+        "kings1 4:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַּח֛וֹל אֲשֶׁ֥ר עַל",
+      "pron": "브카홀 아셰르 알",
+      "lemmas": [
+        "חוֹל",
+        "אֲשֶׁר",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "כַּח֛וֹל",
+          "lemma": "חוֹל",
+          "strong": "H2344",
+          "pron": "브카홀"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 22:17",
+        "joshua 11:4",
+        "samuel1 13:5",
+        "samuel2 17:11",
+        "kings1 4:20",
+        "kings1 4:29"
       ],
       "glossKo": ""
     }

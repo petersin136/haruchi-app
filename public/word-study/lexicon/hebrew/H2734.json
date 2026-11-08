@@ -1,6 +1,6 @@
 {
   "lemma": "חָרָה",
-  "pron": "하라",
+  "pron": "바이하르",
   "strong": "H2734",
   "posKo": "동사",
   "root": {
@@ -12,83 +12,69 @@
     {
       "lemma": "חֹר",
       "strong": "H2715",
-      "pron": "",
+      "pron": "아호림",
       "glossKo": "귀인"
     },
     {
       "lemma": "חַרְהֲיָה",
       "strong": "H2736",
-      "pron": "",
+      "pron": "하레하아",
       "glossKo": "하르하야"
     },
     {
       "lemma": "חָרוֹן",
       "strong": "H2740",
-      "pron": "우바하론오",
-      "glossKo": "그의 맹렬한 노"
+      "pron": "하론카",
+      "glossKo": "너의 맹렬한 노"
     },
     {
       "lemma": "חַרְחֻר",
       "strong": "H2746",
-      "pron": "",
+      "pron": "우바하레후르",
       "glossKo": "열병"
     },
     {
       "lemma": "חֳרִי",
       "strong": "H2750",
-      "pron": "",
+      "pron": "바호리",
       "glossKo": "맹렬함"
     },
     {
       "lemma": "חֲרַךְ",
       "strong": "H2761",
-      "pron": "",
+      "pron": "히테하라크",
       "glossKo": "그슬리다(아람)"
     }
   ],
   "defEn": "glow; grow warm; blaze up",
   "defKo": "",
-  "countOT": 17,
+  "countOT": 90,
   "byBook": {
     "genesis": 11,
-    "psalms": 6
+    "numbers": 11,
+    "samuel2": 8,
+    "judges": 7,
+    "samuel1": 7,
+    "exodus": 6,
+    "job": 6,
+    "psalms": 6,
+    "deuteronomy": 5,
+    "jonah": 4,
+    "nehemiah": 4,
+    "isaiah": 3,
+    "chronicles1": 2,
+    "chronicles2": 2,
+    "joshua": 2,
+    "kings2": 2,
+    "habakkuk": 1,
+    "hosea": 1,
+    "proverbs": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "אַל תִּתְחַ֥ר",
-      "pron": "브엘 하라",
-      "lemmas": [
-        "אַל",
-        "חָרָה"
-      ],
-      "words": [
-        {
-          "word": "אַל",
-          "lemma": "אַל",
-          "strong": "H408",
-          "pron": "브엘"
-        },
-        {
-          "word": "תִּתְחַ֥ר",
-          "lemma": "חָרָה",
-          "strong": "H2734",
-          "pron": "하라"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "psalms 37:1",
-        "psalms 37:7",
-        "psalms 37:8",
-        "genesis 31:35",
-        "genesis 44:18",
-        "genesis 45:5"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיִּֽחַר אַ֣ף",
-      "pron": "하라 브압오",
+      "hebrew": "וַיִּֽחַר אַ֥ף",
+      "pron": "바이하르 베압파으브",
       "lemmas": [
         "חָרָה",
         "אַף"
@@ -98,22 +84,169 @@
           "word": "וַיִּֽחַר",
           "lemma": "חָרָה",
           "strong": "H2734",
-          "pron": "하라"
+          "pron": "바이하르"
         },
         {
-          "word": "אַ֣ף",
+          "word": "אַ֥ף",
           "lemma": "אַף",
           "strong": "H639",
-          "pron": "브압오"
+          "pron": "베압파으브"
         }
       ],
-      "count": 5,
+      "count": 52,
       "refs": [
-        "psalms 106:40",
-        "psalms 124:3",
         "genesis 30:2",
         "genesis 39:19",
-        "genesis 44:18"
+        "genesis 44:18",
+        "exodus 4:14",
+        "exodus 22:24",
+        "exodus 32:10",
+        "exodus 32:11",
+        "exodus 32:19",
+        "exodus 32:22",
+        "numbers 11:1",
+        "numbers 11:10",
+        "numbers 12:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּֽחַר אַ֥ף יְהוָ֖ה",
+      "pron": "바이하르 베압파으브 여호와",
+      "lemmas": [
+        "חָרָה",
+        "אַף",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וַיִּֽחַר",
+          "lemma": "חָרָה",
+          "strong": "H2734",
+          "pron": "바이하르"
+        },
+        {
+          "word": "אַ֥ף",
+          "lemma": "אַף",
+          "strong": "H639",
+          "pron": "베압파으브"
+        },
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "exodus 4:14",
+        "numbers 11:10",
+        "numbers 12:9",
+        "numbers 25:3",
+        "numbers 32:10",
+        "numbers 32:13",
+        "deuteronomy 6:15",
+        "deuteronomy 7:4",
+        "deuteronomy 11:17",
+        "deuteronomy 29:27",
+        "joshua 7:1",
+        "joshua 23:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַל תִּתְחַ֥ר",
+      "pron": "엘 바이하르",
+      "lemmas": [
+        "אַל",
+        "חָרָה"
+      ],
+      "words": [
+        {
+          "word": "אַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "תִּתְחַ֥ר",
+          "lemma": "חָרָה",
+          "strong": "H2734",
+          "pron": "바이하르"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "genesis 31:35",
+        "genesis 44:18",
+        "genesis 45:5",
+        "exodus 32:22",
+        "judges 6:39",
+        "psalms 37:1",
+        "psalms 37:7",
+        "psalms 37:8",
+        "proverbs 24:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּ֥חַר מְאֹ֑ד",
+      "pron": "바이하르 메옫",
+      "lemmas": [
+        "חָרָה",
+        "מְאֹד"
+      ],
+      "words": [
+        {
+          "word": "וַיִּ֥חַר",
+          "lemma": "חָרָה",
+          "strong": "H2734",
+          "pron": "바이하르"
+        },
+        {
+          "word": "מְאֹ֑ד",
+          "lemma": "מְאֹד",
+          "strong": "H3966",
+          "pron": "메옫"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 34:7",
+        "samuel2 13:21",
+        "nehemiah 4:7",
+        "nehemiah 5:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָה֙ יֶחֱרֶ֤ה",
+      "pron": "여호와 바이하르",
+      "lemmas": [
+        "יְהֹוָה",
+        "חָרָה"
+      ],
+      "words": [
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "יֶחֱרֶ֤ה",
+          "lemma": "חָרָה",
+          "strong": "H2734",
+          "pron": "바이하르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 32:11",
+        "numbers 11:1",
+        "numbers 11:33",
+        "samuel2 24:1"
       ],
       "glossKo": ""
     }

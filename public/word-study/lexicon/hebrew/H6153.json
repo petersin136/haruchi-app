@@ -1,6 +1,6 @@
 {
   "lemma": "עֶרֶב",
-  "pron": "바에렙",
+  "pron": "에렙",
   "strong": "H6153",
   "posKo": "명사",
   "root": {
@@ -12,64 +12,209 @@
     {
       "lemma": "מַעֲרָב",
       "strong": "H4628",
-      "pron": "우미마아랍",
+      "pron": "브라마아랍",
       "glossKo": "서쪽"
     },
     {
       "lemma": "עָרַב",
       "strong": "H6150",
-      "pron": "",
+      "pron": "라아롭",
       "glossKo": "어두워지다"
     },
     {
       "lemma": "עֲרָב",
       "strong": "H6152",
-      "pron": "",
+      "pron": "하에렙",
       "glossKo": "아라비아"
     },
     {
       "lemma": "עֹרֵב",
       "strong": "H6158",
-      "pron": "오렙",
+      "pron": "하오렙",
       "glossKo": "까마귀"
     },
     {
       "lemma": "עֲרָבָה",
       "strong": "H6160",
-      "pron": "바아라보트",
+      "pron": "브아레보트",
       "glossKo": "광야"
     }
   ],
   "defEn": "dusk",
   "defKo": "",
-  "countOT": 21,
+  "countOT": 134,
   "byBook": {
+    "leviticus": 33,
+    "exodus": 13,
     "genesis": 13,
-    "psalms": 8
+    "numbers": 13,
+    "psalms": 8,
+    "chronicles2": 7,
+    "deuteronomy": 5,
+    "ezekiel": 5,
+    "joshua": 4,
+    "judges": 4,
+    "daniel": 3,
+    "ezra": 3,
+    "samuel1": 3,
+    "samuel2": 3,
+    "chronicles1": 2,
+    "job": 2,
+    "kings1": 2,
+    "zephaniah": 2,
+    "ecclesiastes": 1,
+    "esther": 1,
+    "habakkuk": 1,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "kings2": 1,
+    "proverbs": 1,
+    "ruth": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "וַֽיְהִי עֶ֥רֶב",
-      "pron": "브하아 바에렙",
+      "hebrew": "עַד הָעָֽרֶב",
+      "pron": "앋 에렙",
       "lemmas": [
-        "הָיָה",
+        "עַד",
         "עֶרֶב"
       ],
       "words": [
         {
-          "word": "וַֽיְהִי",
-          "lemma": "הָיָה",
-          "strong": "H1961",
-          "pron": "브하아"
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
         },
+        {
+          "word": "הָעָֽרֶב",
+          "lemma": "עֶרֶב",
+          "strong": "H6153",
+          "pron": "에렙"
+        }
+      ],
+      "count": 49,
+      "refs": [
+        "exodus 18:13",
+        "exodus 18:14",
+        "leviticus 11:24",
+        "leviticus 11:25",
+        "leviticus 11:27",
+        "leviticus 11:28",
+        "leviticus 11:31",
+        "leviticus 11:32",
+        "leviticus 11:39",
+        "leviticus 11:40",
+        "leviticus 14:46",
+        "leviticus 15:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְטָמֵ֥א עַד הָעָֽרֶב",
+      "pron": "딤메 앋 에렙",
+      "lemmas": [
+        "טָמֵא",
+        "עַד",
+        "עֶרֶב"
+      ],
+      "words": [
+        {
+          "word": "וְטָמֵ֥א",
+          "lemma": "טָמֵא",
+          "strong": "H2930",
+          "pron": "딤메"
+        },
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "הָעָֽרֶב",
+          "lemma": "עֶרֶב",
+          "strong": "H6153",
+          "pron": "에렙"
+        }
+      ],
+      "count": 31,
+      "refs": [
+        "leviticus 11:24",
+        "leviticus 11:25",
+        "leviticus 11:27",
+        "leviticus 11:28",
+        "leviticus 11:31",
+        "leviticus 11:32",
+        "leviticus 11:39",
+        "leviticus 11:40",
+        "leviticus 14:46",
+        "leviticus 15:5",
+        "leviticus 15:6",
+        "leviticus 15:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּ֥ין הָעַרְבָּֽיִם",
+      "pron": "벤 에렙",
+      "lemmas": [
+        "בֵּין",
+        "עֶרֶב"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֥ין",
+          "lemma": "בֵּין",
+          "strong": "H996",
+          "pron": "벤"
+        },
+        {
+          "word": "הָעַרְבָּֽיִם",
+          "lemma": "עֶרֶב",
+          "strong": "H6153",
+          "pron": "에렙"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 12:6",
+        "exodus 16:12",
+        "exodus 29:39",
+        "exodus 29:41",
+        "exodus 30:8",
+        "leviticus 23:5",
+        "numbers 9:3",
+        "numbers 9:5",
+        "numbers 9:11",
+        "numbers 28:4",
+        "numbers 28:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֶ֥רֶב וַֽיְהִי",
+      "pron": "에렙 하에타",
+      "lemmas": [
+        "עֶרֶב",
+        "הָיָה"
+      ],
+      "words": [
         {
           "word": "עֶ֥רֶב",
           "lemma": "עֶרֶב",
           "strong": "H6153",
-          "pron": "바에렙"
+          "pron": "에렙"
+        },
+        {
+          "word": "וַֽיְהִי",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
         }
       ],
-      "count": 7,
+      "count": 9,
       "refs": [
         "genesis 1:5",
         "genesis 1:8",
@@ -77,117 +222,38 @@
         "genesis 1:19",
         "genesis 1:23",
         "genesis 1:31",
-        "genesis 29:23"
+        "numbers 9:15",
+        "numbers 19:10",
+        "zechariah 14:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַֽיְהִי עֶ֥רֶב וַֽיְהִי",
-      "pron": "브하아 바에렙 브하아",
+      "hebrew": "בָּעֶ֔רֶב מֵעֶ֣רֶב",
+      "pron": "에렙 에렙",
       "lemmas": [
-        "הָיָה",
         "עֶרֶב",
-        "הָיָה"
+        "עֶרֶב"
       ],
       "words": [
         {
-          "word": "וַֽיְהִי",
-          "lemma": "הָיָה",
-          "strong": "H1961",
-          "pron": "브하아"
-        },
-        {
-          "word": "עֶ֥רֶב",
+          "word": "בָּעֶ֔רֶב",
           "lemma": "עֶרֶב",
           "strong": "H6153",
-          "pron": "바에렙"
+          "pron": "에렙"
         },
         {
-          "word": "וַֽיְהִי",
-          "lemma": "הָיָה",
-          "strong": "H1961",
-          "pron": "브하아"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "genesis 1:5",
-        "genesis 1:8",
-        "genesis 1:13",
-        "genesis 1:19",
-        "genesis 1:23",
-        "genesis 1:31"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "עֶ֥רֶב וַֽיְהִי",
-      "pron": "바에렙 브하아",
-      "lemmas": [
-        "עֶרֶב",
-        "הָיָה"
-      ],
-      "words": [
-        {
-          "word": "עֶ֥רֶב",
+          "word": "מֵעֶ֣רֶב",
           "lemma": "עֶרֶב",
           "strong": "H6153",
-          "pron": "바에렙"
-        },
-        {
-          "word": "וַֽיְהִי",
-          "lemma": "הָיָה",
-          "strong": "H1961",
-          "pron": "브하아"
+          "pron": "에렙"
         }
       ],
-      "count": 6,
+      "count": 8,
       "refs": [
-        "genesis 1:5",
-        "genesis 1:8",
-        "genesis 1:13",
-        "genesis 1:19",
-        "genesis 1:23",
-        "genesis 1:31"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "עֶ֥רֶב וַֽיְהִי בֹ֖קֶר",
-      "pron": "바에렙 브하아 보케르",
-      "lemmas": [
-        "עֶרֶב",
-        "הָיָה",
-        "בֹּקֶר"
-      ],
-      "words": [
-        {
-          "word": "עֶ֥רֶב",
-          "lemma": "עֶרֶב",
-          "strong": "H6153",
-          "pron": "바에렙"
-        },
-        {
-          "word": "וַֽיְהִי",
-          "lemma": "הָיָה",
-          "strong": "H1961",
-          "pron": "브하아"
-        },
-        {
-          "word": "בֹ֖קֶר",
-          "lemma": "בֹּקֶר",
-          "strong": "H1242",
-          "pron": "보케르"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "genesis 1:5",
-        "genesis 1:8",
-        "genesis 1:13",
-        "genesis 1:19",
-        "genesis 1:23",
-        "genesis 1:31"
+        "leviticus 23:32",
+        "deuteronomy 28:67",
+        "chronicles2 13:11"
       ],
       "glossKo": ""
     }

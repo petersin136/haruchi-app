@@ -1,6 +1,6 @@
 {
   "lemma": "רֶכֶב",
-  "pron": "바레켑",
+  "pron": "레켑",
   "strong": "H7393",
   "posKo": "명사",
   "root": {
@@ -12,46 +12,246 @@
     {
       "lemma": "אַרְכֻבָה",
       "strong": "H755",
-      "pron": "",
-      "glossKo": "무릎(아람)"
+      "pron": "베아레쿱바테흐",
+      "glossKo": "그의 무릎(아람)"
     },
     {
       "lemma": "מֶרְכָּב",
       "strong": "H4817",
-      "pron": "",
+      "pron": "아메렉캅",
       "glossKo": "수레"
     },
     {
       "lemma": "רָכַב",
       "strong": "H7392",
-      "pron": "바이렉캅",
+      "pron": "바티렉캅나",
       "glossKo": "타다"
     },
     {
       "lemma": "רֵכָב",
       "strong": "H7394",
-      "pron": "",
+      "pron": "레캅",
       "glossKo": "레갑"
     },
     {
       "lemma": "רַכָּב",
       "strong": "H7395",
-      "pron": "",
-      "glossKo": "마부"
+      "pron": "레락카보",
+      "glossKo": "그의 마부"
     },
     {
       "lemma": "רִכְבָּה",
       "strong": "H7396",
-      "pron": "",
+      "pron": "르리켑바",
       "glossKo": "병거"
     }
   ],
   "defEn": "vehicle",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 120,
   "byBook": {
+    "kings2": 20,
+    "kings1": 16,
+    "chronicles2": 14,
+    "isaiah": 11,
+    "exodus": 10,
+    "judges": 9,
+    "chronicles1": 6,
+    "jeremiah": 6,
+    "samuel2": 5,
+    "ezekiel": 4,
+    "joshua": 4,
+    "deuteronomy": 3,
+    "nahum": 3,
     "psalms": 3,
-    "genesis": 1
+    "samuel1": 2,
+    "daniel": 1,
+    "genesis": 1,
+    "songofsolomon": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּרִכְבּ֖וֹ וּבְפָרָשָֽׁיו",
+      "pron": "레켑 파라심",
+      "lemmas": [
+        "רֶכֶב",
+        "פָּרָשׁ"
+      ],
+      "words": [
+        {
+          "word": "בְּרִכְבּ֖וֹ",
+          "lemma": "רֶכֶב",
+          "strong": "H7393",
+          "pron": "레켑"
+        },
+        {
+          "word": "וּבְפָרָשָֽׁיו",
+          "lemma": "פָּרָשׁ",
+          "strong": "H6571",
+          "pron": "파라심"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "exodus 14:17",
+        "exodus 14:18",
+        "exodus 14:23",
+        "exodus 15:19",
+        "joshua 24:6",
+        "kings1 1:5",
+        "kings1 9:22",
+        "kings1 10:26",
+        "kings2 18:24",
+        "chronicles1 19:6",
+        "chronicles2 1:14",
+        "chronicles2 8:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְס֣וּס וָרָ֑כֶב",
+      "pron": "바수심 레켑",
+      "lemmas": [
+        "סוּס",
+        "רֶכֶב"
+      ],
+      "words": [
+        {
+          "word": "וְס֣וּס",
+          "lemma": "סוּס",
+          "strong": "H5483",
+          "pron": "바수심"
+        },
+        {
+          "word": "וָרָ֑כֶב",
+          "lemma": "רֶכֶב",
+          "strong": "H7393",
+          "pron": "레켑"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 14:9",
+        "deuteronomy 11:4",
+        "deuteronomy 20:1",
+        "joshua 11:4",
+        "kings1 20:1",
+        "kings1 20:25",
+        "kings2 5:9",
+        "kings2 6:14",
+        "kings2 6:15",
+        "kings2 6:17",
+        "isaiah 66:20",
+        "ezekiel 26:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׂרֵ֣י הָרֶ֔כֶב",
+      "pron": "사레 레켑",
+      "lemmas": [
+        "שַׂר",
+        "רֶכֶב"
+      ],
+      "words": [
+        {
+          "word": "שָׂרֵ֣י",
+          "lemma": "שַׂר",
+          "strong": "H8269",
+          "pron": "사레"
+        },
+        {
+          "word": "הָרֶ֔כֶב",
+          "lemma": "רֶכֶב",
+          "strong": "H7393",
+          "pron": "레켑"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "kings1 9:22",
+        "kings1 22:31",
+        "kings1 22:32",
+        "kings1 22:33",
+        "kings2 8:21",
+        "chronicles2 8:9",
+        "chronicles2 18:30",
+        "chronicles2 18:31",
+        "chronicles2 18:32",
+        "chronicles2 21:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָרֶ֔כֶב וְאֵ֖ת",
+      "pron": "레켑 에트",
+      "lemmas": [
+        "רֶכֶב",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הָרֶ֔כֶב",
+          "lemma": "רֶכֶב",
+          "strong": "H7393",
+          "pron": "레켑"
+        },
+        {
+          "word": "וְאֵ֖ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 14:6",
+        "exodus 14:28",
+        "judges 4:7",
+        "judges 4:15",
+        "kings1 9:19",
+        "kings1 22:32",
+        "chronicles1 19:7",
+        "chronicles2 8:6",
+        "chronicles2 18:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵאוֹת֙ רֶ֔כֶב",
+      "pron": "우메아트 레켑",
+      "lemmas": [
+        "מֵאָה",
+        "רֶכֶב"
+      ],
+      "words": [
+        {
+          "word": "מֵאוֹת֙",
+          "lemma": "מֵאָה",
+          "strong": "H3967",
+          "pron": "우메아트"
+        },
+        {
+          "word": "רֶ֔כֶב",
+          "lemma": "רֶכֶב",
+          "strong": "H7393",
+          "pron": "레켑"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 14:7",
+        "judges 4:3",
+        "judges 4:13",
+        "samuel2 8:4",
+        "samuel2 10:18",
+        "kings1 10:26",
+        "chronicles1 18:4",
+        "chronicles2 1:14",
+        "chronicles2 12:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "כַּלָּה",
-  "pron": "칼라트오",
+  "pron": "칼라토",
   "strong": "H3618",
   "posKo": "명사",
   "root": {
@@ -12,33 +12,183 @@
     {
       "lemma": "כֹּל",
       "strong": "H3605",
-      "pron": "브콜",
+      "pron": "칼",
       "glossKo": "모든"
+    },
+    {
+      "lemma": "כְּלוּלָה",
+      "strong": "H3623",
+      "pron": "켈룰로타이크",
+      "glossKo": "너의 신부의 시절"
     },
     {
       "lemma": "כָּלִיל",
       "strong": "H3632",
-      "pron": "브칼릴",
+      "pron": "켈릴",
       "glossKo": "완전한"
     },
     {
       "lemma": "כָּלַל",
       "strong": "H3634",
-      "pron": "",
+      "pron": "칼루",
       "glossKo": "완성하다"
     },
     {
       "lemma": "כְּלַל",
       "strong": "H3635",
-      "pron": "",
+      "pron": "쉭를브",
       "glossKo": "완성하다(아람)"
+    },
+    {
+      "lemma": "כְּלָל",
+      "strong": "H3636",
+      "pron": "우켈랄",
+      "glossKo": "글랄"
     }
   ],
   "defEn": "bride; son's wife",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 34,
   "byBook": {
-    "genesis": 4
+    "ruth": 7,
+    "songofsolomon": 6,
+    "jeremiah": 5,
+    "genesis": 4,
+    "isaiah": 3,
+    "hosea": 2,
+    "leviticus": 2,
+    "chronicles1": 1,
+    "ezekiel": 1,
+    "joel": 1,
+    "micah": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲחֹתִ֣י כַלָּ֑ה",
+      "pron": "바아호트 칼라토",
+      "lemmas": [
+        "אָחוֹת",
+        "כַּלָּה"
+      ],
+      "words": [
+        {
+          "word": "אֲחֹתִ֣י",
+          "lemma": "אָחוֹת",
+          "strong": "H269",
+          "pron": "바아호트"
+        },
+        {
+          "word": "כַלָּ֑ה",
+          "lemma": "כַּלָּה",
+          "strong": "H3618",
+          "pron": "칼라토"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "songofsolomon 4:9",
+        "songofsolomon 4:10",
+        "songofsolomon 4:12",
+        "songofsolomon 5:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְק֣וֹל כַּלָּ֑ה",
+      "pron": "콜 칼라토",
+      "lemmas": [
+        "קוֹל",
+        "כַּלָּה"
+      ],
+      "words": [
+        {
+          "word": "וְק֣וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        },
+        {
+          "word": "כַּלָּ֑ה",
+          "lemma": "כַּלָּה",
+          "strong": "H3618",
+          "pron": "칼라토"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 7:34",
+        "jeremiah 16:9",
+        "jeremiah 25:10",
+        "jeremiah 33:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָתָ֖ן וְק֣וֹל כַּלָּ֑ה",
+      "pron": "하탄 콜 칼라토",
+      "lemmas": [
+        "חָתָן",
+        "קוֹל",
+        "כַּלָּה"
+      ],
+      "words": [
+        {
+          "word": "חָתָ֖ן",
+          "lemma": "חָתָן",
+          "strong": "H2860",
+          "pron": "하탄"
+        },
+        {
+          "word": "וְק֣וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        },
+        {
+          "word": "כַּלָּ֑ה",
+          "lemma": "כַּלָּה",
+          "strong": "H3618",
+          "pron": "칼라토"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 7:34",
+        "jeremiah 16:9",
+        "jeremiah 25:10",
+        "jeremiah 33:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְתָמָ֨ר כַּלָּת֜וֹ",
+      "pron": "타마르 칼라토",
+      "lemmas": [
+        "תָּמָר",
+        "כַּלָּה"
+      ],
+      "words": [
+        {
+          "word": "לְתָמָ֨ר",
+          "lemma": "תָּמָר",
+          "strong": "H8559",
+          "pron": "타마르"
+        },
+        {
+          "word": "כַּלָּת֜וֹ",
+          "lemma": "כַּלָּה",
+          "strong": "H3618",
+          "pron": "칼라토"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 38:11",
+        "genesis 38:24",
+        "chronicles1 2:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

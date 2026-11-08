@@ -8,20 +8,35 @@
     {
       "lemma": "מַת",
       "strong": "H4962",
-      "pron": "미메팀",
+      "pron": "메테",
       "glossKo": "사람"
     }
   ],
   "defEn": "extent; when",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 43,
   "byBook": {
     "psalms": 13,
-    "genesis": 1
+    "jeremiah": 7,
+    "proverbs": 4,
+    "exodus": 3,
+    "daniel": 2,
+    "nehemiah": 2,
+    "samuel1": 2,
+    "amos": 1,
+    "genesis": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "isaiah": 1,
+    "job": 1,
+    "kings1": 1,
+    "numbers": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "עַד מָתַ֥י",
+      "hebrew": "עַד מָתַ֖י",
       "pron": "앋 마타이",
       "lemmas": [
         "עַד",
@@ -35,20 +50,55 @@
           "pron": "앋"
         },
         {
-          "word": "מָתַ֥י",
+          "word": "מָתַ֖י",
           "lemma": "מָתַי",
           "strong": "H4970",
           "pron": "마타이"
         }
       ],
-      "count": 7,
+      "count": 29,
       "refs": [
+        "exodus 10:3",
+        "exodus 10:7",
+        "numbers 14:27",
+        "samuel1 1:14",
+        "samuel1 16:1",
+        "samuel2 2:26",
+        "kings1 18:21",
+        "nehemiah 2:6",
         "psalms 6:3",
         "psalms 74:10",
         "psalms 80:4",
-        "psalms 82:2",
-        "psalms 90:13",
-        "psalms 94:3"
+        "psalms 82:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאָמַ֗רְתִּי מָתַ֣י",
+      "pron": "바요메르 마타이",
+      "lemmas": [
+        "אָמַר",
+        "מָתַי"
+      ],
+      "words": [
+        {
+          "word": "וְאָמַ֗רְתִּי",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "מָתַ֣י",
+          "lemma": "מָתַי",
+          "strong": "H4970",
+          "pron": "마타이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 7:4",
+        "psalms 119:82",
+        "amos 8:5"
       ],
       "glossKo": ""
     },
@@ -85,6 +135,71 @@
         "psalms 6:3",
         "psalms 90:13",
         "psalms 94:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָתַי֙ אַתָּה֙",
+      "pron": "마타이 앗타",
+      "lemmas": [
+        "מָתַי",
+        "אַתָּה"
+      ],
+      "words": [
+        {
+          "word": "מָתַי֙",
+          "lemma": "מָתַי",
+          "strong": "H4970",
+          "pron": "마타이"
+        },
+        {
+          "word": "אַתָּה֙",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 16:1",
+        "kings1 18:21",
+        "zechariah 1:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַד מָתַי֙ אַתָּה֙",
+      "pron": "앋 마타이 앗타",
+      "lemmas": [
+        "עַד",
+        "מָתַי",
+        "אַתָּה"
+      ],
+      "words": [
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "מָתַי֙",
+          "lemma": "מָתַי",
+          "strong": "H4970",
+          "pron": "마타이"
+        },
+        {
+          "word": "אַתָּה֙",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 16:1",
+        "kings1 18:21",
+        "zechariah 1:12"
       ],
       "glossKo": ""
     }

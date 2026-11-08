@@ -2,7 +2,7 @@
   "lemma": "מִקְרָא",
   "pron": "미케라",
   "strong": "H4744",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "קָרָא",
     "strong": "H7121",
@@ -12,31 +12,235 @@
     {
       "lemma": "קוֹרֵא",
       "strong": "H6981",
-      "pron": "",
+      "pron": "코레",
       "glossKo": "고레"
     },
     {
       "lemma": "קָרָא",
       "strong": "H7121",
-      "pron": "에케라",
+      "pron": "바이케라",
       "glossKo": "부르다"
     },
     {
       "lemma": "קְרָא",
       "strong": "H7123",
-      "pron": "",
+      "pron": "케리",
       "glossKo": "부르다(아람)"
     },
     {
       "lemma": "קֹרֵא",
       "strong": "H7124",
-      "pron": "",
+      "pron": "아코레",
       "glossKo": "메추라기"
+    },
+    {
+      "lemma": "קָרִיא",
+      "strong": "H7148",
+      "pron": "크리",
+      "glossKo": "부름 받은"
+    },
+    {
+      "lemma": "קְרִיאָה",
+      "strong": "H7150",
+      "pron": "아케리아",
+      "glossKo": "선포"
     }
   ],
   "defEn": "called; meeting",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 23,
+  "byBook": {
+    "leviticus": 11,
+    "numbers": 7,
+    "exodus": 2,
+    "isaiah": 2,
+    "nehemiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "מִֽקְרָא קֹ֨דֶשׁ֙",
+      "pron": "미케라 코데쉬",
+      "lemmas": [
+        "מִקְרָא",
+        "קֹדֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "מִֽקְרָא",
+          "lemma": "מִקְרָא",
+          "strong": "H4744",
+          "pron": "미케라"
+        },
+        {
+          "word": "קֹ֨דֶשׁ֙",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "exodus 12:16",
+        "leviticus 23:2",
+        "leviticus 23:3",
+        "leviticus 23:4",
+        "leviticus 23:7",
+        "leviticus 23:8",
+        "leviticus 23:21",
+        "leviticus 23:24",
+        "leviticus 23:27",
+        "leviticus 23:35",
+        "leviticus 23:36",
+        "leviticus 23:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִֽקְרָא קֹ֨דֶשׁ֙ יִהְיֶ֣ה",
+      "pron": "미케라 코데쉬 하에타",
+      "lemmas": [
+        "מִקְרָא",
+        "קֹדֶשׁ",
+        "הָיָה"
+      ],
+      "words": [
+        {
+          "word": "מִֽקְרָא",
+          "lemma": "מִקְרָא",
+          "strong": "H4744",
+          "pron": "미케라"
+        },
+        {
+          "word": "קֹ֨דֶשׁ֙",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        },
+        {
+          "word": "יִהְיֶ֣ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 12:16",
+        "leviticus 23:7",
+        "leviticus 23:21",
+        "leviticus 23:27",
+        "leviticus 23:36",
+        "numbers 28:25",
+        "numbers 28:26",
+        "numbers 29:1",
+        "numbers 29:7",
+        "numbers 29:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּיּ֥וֹם הָרִאשׁ֖וֹן מִקְרָא",
+      "pron": "욤 바리숀 미케라",
+      "lemmas": [
+        "יוֹם",
+        "רִאשׁוֹן",
+        "מִקְרָא"
+      ],
+      "words": [
+        {
+          "word": "בַּיּ֥וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "הָרִאשׁ֖וֹן",
+          "lemma": "רִאשׁוֹן",
+          "strong": "H7223",
+          "pron": "바리숀"
+        },
+        {
+          "word": "מִקְרָא",
+          "lemma": "מִקְרָא",
+          "strong": "H4744",
+          "pron": "미케라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 12:16",
+        "leviticus 23:7",
+        "leviticus 23:35",
+        "numbers 28:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָרִאשׁ֖וֹן מִקְרָא",
+      "pron": "바리숀 미케라",
+      "lemmas": [
+        "רִאשׁוֹן",
+        "מִקְרָא"
+      ],
+      "words": [
+        {
+          "word": "הָרִאשׁ֖וֹן",
+          "lemma": "רִאשׁוֹן",
+          "strong": "H7223",
+          "pron": "바리숀"
+        },
+        {
+          "word": "מִקְרָא",
+          "lemma": "מִקְרָא",
+          "strong": "H4744",
+          "pron": "미케라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 12:16",
+        "leviticus 23:7",
+        "leviticus 23:35",
+        "numbers 28:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָרִאשׁ֖וֹן מִקְרָא קֹ֑דֶשׁ",
+      "pron": "바리숀 미케라 코데쉬",
+      "lemmas": [
+        "רִאשׁוֹן",
+        "מִקְרָא",
+        "קֹדֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "הָרִאשׁ֖וֹן",
+          "lemma": "רִאשׁוֹן",
+          "strong": "H7223",
+          "pron": "바리숀"
+        },
+        {
+          "word": "מִקְרָא",
+          "lemma": "מִקְרָא",
+          "strong": "H4744",
+          "pron": "미케라"
+        },
+        {
+          "word": "קֹ֑דֶשׁ",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 12:16",
+        "leviticus 23:7",
+        "leviticus 23:35",
+        "numbers 28:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "לָבַשׁ",
-  "pron": "일베슈",
+  "pron": "바알비솀",
   "strong": "H3847",
   "posKo": "동사",
   "root": null,
@@ -8,34 +8,230 @@
     {
       "lemma": "לְבוּשׁ",
       "strong": "H3830",
-      "pron": "레부시위",
-      "glossKo": "나의 옷"
+      "pron": "레부쇼",
+      "glossKo": "그의 옷"
     },
     {
       "lemma": "לְבַשׁ",
       "strong": "H3848",
-      "pron": "",
+      "pron": "일바쉬",
       "glossKo": "입다(아람)"
     },
     {
       "lemma": "מַלְבּוּשׁ",
       "strong": "H4403",
-      "pron": "",
-      "glossKo": "의복"
+      "pron": "우말부셰으헴",
+      "glossKo": "그들의 의복"
     },
     {
       "lemma": "תַּלְבֹּשֶׁת",
       "strong": "H8516",
-      "pron": "",
+      "pron": "틸보셰트",
       "glossKo": "의복"
     }
   ],
   "defEn": "wrap around; put on a garment; clothe",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 111,
   "byBook": {
+    "ezekiel": 16,
+    "leviticus": 11,
+    "isaiah": 10,
     "psalms": 10,
-    "genesis": 6
+    "job": 8,
+    "chronicles2": 7,
+    "esther": 6,
+    "exodus": 6,
+    "genesis": 6,
+    "samuel1": 4,
+    "zechariah": 4,
+    "daniel": 3,
+    "samuel2": 3,
+    "deuteronomy": 2,
+    "jeremiah": 2,
+    "kings1": 2,
+    "numbers": 2,
+    "proverbs": 2,
+    "chronicles1": 1,
+    "ezra": 1,
+    "haggai": 1,
+    "jonah": 1,
+    "judges": 1,
+    "songofsolomon": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיַּלְבֵּ֤שׁ אֹתוֹ֙",
+      "pron": "바알비솀 에트",
+      "lemmas": [
+        "לָבַשׁ",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיַּלְבֵּ֤שׁ",
+          "lemma": "לָבַשׁ",
+          "strong": "H3847",
+          "pron": "바알비솀"
+        },
+        {
+          "word": "אֹתוֹ֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "genesis 27:15",
+        "genesis 41:42",
+        "exodus 28:41",
+        "exodus 29:5",
+        "exodus 40:13",
+        "exodus 40:14",
+        "leviticus 8:7",
+        "leviticus 16:24",
+        "leviticus 16:32",
+        "leviticus 21:10",
+        "numbers 20:26",
+        "numbers 20:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְלֻבָּשִׁ֤ים בְּגָדִים֙",
+      "pron": "바알비솀 우베가딤",
+      "lemmas": [
+        "לָבַשׁ",
+        "בֶּגֶד"
+      ],
+      "words": [
+        {
+          "word": "מְלֻבָּשִׁ֤ים",
+          "lemma": "לָבַשׁ",
+          "strong": "H3847",
+          "pron": "바알비솀"
+        },
+        {
+          "word": "בְּגָדִים֙",
+          "lemma": "בֶּגֶד",
+          "strong": "H899",
+          "pron": "우베가딤"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "genesis 38:19",
+        "leviticus 6:11",
+        "samuel1 28:8",
+        "kings1 22:10",
+        "kings1 22:30",
+        "chronicles2 18:9",
+        "chronicles2 18:29",
+        "isaiah 52:1",
+        "isaiah 59:17",
+        "isaiah 61:10",
+        "ezekiel 42:14",
+        "ezekiel 44:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָבֻ֣שׁ בַּדִּ֔ים",
+      "pron": "바알비솀 받",
+      "lemmas": [
+        "לָבַשׁ",
+        "בַּד"
+      ],
+      "words": [
+        {
+          "word": "לָבֻ֣שׁ",
+          "lemma": "לָבַשׁ",
+          "strong": "H3847",
+          "pron": "바알비솀"
+        },
+        {
+          "word": "בַּדִּ֔ים",
+          "lemma": "בַּד",
+          "strong": "H906",
+          "pron": "받"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "ezekiel 9:2",
+        "ezekiel 9:3",
+        "ezekiel 10:2",
+        "ezekiel 10:6",
+        "ezekiel 10:7",
+        "daniel 10:5",
+        "daniel 12:6",
+        "daniel 12:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבֶ֥גֶד לִלְבֹּֽשׁ",
+      "pron": "우베가딤 바알비솀",
+      "lemmas": [
+        "בֶּגֶד",
+        "לָבַשׁ"
+      ],
+      "words": [
+        {
+          "word": "וּבֶ֥גֶד",
+          "lemma": "בֶּגֶד",
+          "strong": "H899",
+          "pron": "우베가딤"
+        },
+        {
+          "word": "לִלְבֹּֽשׁ",
+          "lemma": "לָבַשׁ",
+          "strong": "H3847",
+          "pron": "바알비솀"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 28:20",
+        "exodus 29:5",
+        "leviticus 6:11",
+        "numbers 20:26",
+        "numbers 20:28",
+        "esther 4:1",
+        "esther 4:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָ֭בַשְׁתִּי וַיִּלְבָּשֵׁ֑נִי",
+      "pron": "바알비솀 바알비솀",
+      "lemmas": [
+        "לָבַשׁ",
+        "לָבַשׁ"
+      ],
+      "words": [
+        {
+          "word": "לָ֭בַשְׁתִּי",
+          "lemma": "לָבַשׁ",
+          "strong": "H3847",
+          "pron": "바알비솀"
+        },
+        {
+          "word": "וַיִּלְבָּשֵׁ֑נִי",
+          "lemma": "לָבַשׁ",
+          "strong": "H3847",
+          "pron": "바알비솀"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "job 29:14",
+        "psalms 93:1",
+        "ezekiel 42:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

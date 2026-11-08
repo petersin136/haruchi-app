@@ -1,6 +1,6 @@
 {
   "lemma": "גֵּאֶה",
-  "pron": "게임",
+  "pron": "게에",
   "strong": "H1343",
   "posKo": "형용사",
   "root": {
@@ -10,41 +10,81 @@
   },
   "family": [
     {
+      "lemma": "גֵּא",
+      "strong": "H1341",
+      "pron": "게",
+      "glossKo": "교만한"
+    },
+    {
       "lemma": "גָּאָה",
       "strong": "H1342",
-      "pron": "",
+      "pron": "가오",
       "glossKo": "솟아나다"
     },
     {
       "lemma": "גֵּאָה",
       "strong": "H1344",
-      "pron": "",
+      "pron": "게아",
       "glossKo": "교만"
     },
     {
       "lemma": "גְּאוּאֵל",
       "strong": "H1345",
-      "pron": "",
+      "pron": "게우엘",
       "glossKo": "그우엘"
     },
     {
       "lemma": "גַּאֲוָה",
       "strong": "H1346",
-      "pron": "브가아바트",
-      "glossKo": "교만"
+      "pron": "웁가아바토",
+      "glossKo": "그의 교만"
     },
     {
       "lemma": "גָּאוֹן",
       "strong": "H1347",
-      "pron": "게온",
-      "glossKo": "교만"
+      "pron": "게온카",
+      "glossKo": "너의 교만"
     }
   ],
   "defEn": "lofty; arrogant",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 8,
   "byBook": {
-    "psalms": 2
+    "job": 2,
+    "proverbs": 2,
+    "psalms": 2,
+    "isaiah": 1,
+    "jeremiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כָל גֵּ֝אֶ֗ה",
+      "pron": "칼 게에",
+      "lemmas": [
+        "כֹּל",
+        "גֵּאֶה"
+      ],
+      "words": [
+        {
+          "word": "כָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "גֵּ֝אֶ֗ה",
+          "lemma": "גֵּאֶה",
+          "strong": "H1343",
+          "pron": "게에"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 40:11",
+        "job 40:12",
+        "isaiah 2:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

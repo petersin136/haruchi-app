@@ -1,6 +1,6 @@
 {
   "lemma": "נָפַץ",
-  "pron": "테납페체므",
+  "pron": "납차",
   "strong": "H5310",
   "posKo": "동사",
   "root": null,
@@ -8,28 +8,64 @@
     {
       "lemma": "מַפָּץ",
       "strong": "H4660",
-      "pron": "",
-      "glossKo": "산산조각냄"
+      "pron": "맙파초",
+      "glossKo": "그의 산산조각냄"
     },
     {
       "lemma": "מַפֵּץ",
       "strong": "H4661",
-      "pron": "",
+      "pron": "맙페츠",
       "glossKo": "철퇴"
     },
     {
       "lemma": "נֶפֶץ",
       "strong": "H5311",
-      "pron": "",
+      "pron": "네페츠",
       "glossKo": "흩어버림"
     }
   ],
   "defEn": "dash; scatter",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 22,
   "byBook": {
+    "jeremiah": 12,
+    "isaiah": 3,
     "psalms": 2,
-    "genesis": 1
+    "daniel": 1,
+    "genesis": 1,
+    "judges": 1,
+    "kings1": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְנִפַּצְתִּים֩ אִ֨ישׁ",
+      "pron": "납차 메이쉬",
+      "lemmas": [
+        "נָפַץ",
+        "אִישׁ"
+      ],
+      "words": [
+        {
+          "word": "וְנִפַּצְתִּים֩",
+          "lemma": "נָפַץ",
+          "strong": "H5310",
+          "pron": "납차"
+        },
+        {
+          "word": "אִ֨ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 13:14",
+        "jeremiah 22:28",
+        "jeremiah 51:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

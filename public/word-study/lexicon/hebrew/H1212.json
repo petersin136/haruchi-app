@@ -2,7 +2,7 @@
   "lemma": "בְּצַלְאֵל",
   "pron": "베찰엘",
   "strong": "H1212",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "צֵל",
     "strong": "H6738",
@@ -24,25 +24,133 @@
     {
       "lemma": "צַלְמָוֶת",
       "strong": "H6757",
-      "pron": "찰마베트",
+      "pron": "브찰마베트",
       "glossKo": "음침함"
     },
     {
       "lemma": "צַלְמֻנָּע",
       "strong": "H6759",
-      "pron": "우크찰문나",
+      "pron": "브찰문나",
       "glossKo": "살문나"
     },
     {
       "lemma": "צֶלְצַח",
       "strong": "H6766",
-      "pron": "",
+      "pron": "브첼차흐",
       "glossKo": "셀세라"
+    },
+    {
+      "lemma": "צִלְּתַי",
+      "strong": "H6769",
+      "pron": "브칠레타이",
+      "glossKo": "실르대"
     }
   ],
   "defEn": "Betsalel",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "exodus": 6,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בְּצַלְאֵ֛ל בֶּן",
+      "pron": "베찰엘 바님",
+      "lemmas": [
+        "בְּצַלְאֵל",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "בְּצַלְאֵ֛ל",
+          "lemma": "בְּצַלְאֵל",
+          "strong": "H1212",
+          "pron": "베찰엘"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 31:2",
+        "exodus 35:30",
+        "exodus 38:22",
+        "chronicles2 1:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּצַלְאֵ֛ל בֶּן אוּרִ֥י",
+      "pron": "베찰엘 바님 우리",
+      "lemmas": [
+        "בְּצַלְאֵל",
+        "בֵּן",
+        "אוּרִי"
+      ],
+      "words": [
+        {
+          "word": "בְּצַלְאֵ֛ל",
+          "lemma": "בְּצַלְאֵל",
+          "strong": "H1212",
+          "pron": "베찰엘"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "אוּרִ֥י",
+          "lemma": "אוּרִי",
+          "strong": "H221",
+          "pron": "우리"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 31:2",
+        "exodus 35:30",
+        "exodus 38:22",
+        "chronicles2 1:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעָשָׂה֩ בְצַלְאֵ֨ל",
+      "pron": "바야아스 베찰엘",
+      "lemmas": [
+        "עָשָׂה",
+        "בְּצַלְאֵל"
+      ],
+      "words": [
+        {
+          "word": "וְעָשָׂה֩",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "בְצַלְאֵ֨ל",
+          "lemma": "בְּצַלְאֵל",
+          "strong": "H1212",
+          "pron": "베찰엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 36:1",
+        "exodus 37:1",
+        "chronicles2 1:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

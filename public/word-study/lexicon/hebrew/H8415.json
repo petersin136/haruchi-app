@@ -1,6 +1,6 @@
 {
   "lemma": "תְּהוֹם",
-  "pron": "테호모트",
+  "pron": "테홈",
   "strong": "H8415",
   "posKo": "명사",
   "root": {
@@ -12,39 +12,48 @@
     {
       "lemma": "הוּם",
       "strong": "H1949",
-      "pron": "브아히마",
+      "pron": "바테홈",
       "glossKo": "소동하다"
     },
     {
       "lemma": "הָמָה",
       "strong": "H1993",
-      "pron": "예헤마우느",
+      "pron": "호마",
       "glossKo": "떠들다"
     },
     {
       "lemma": "הָמַם",
       "strong": "H2000",
-      "pron": "바예훔메므",
-      "glossKo": "그들에게 혼란케 하다"
+      "pron": "바야함",
+      "glossKo": "혼란케 하다"
     },
     {
       "lemma": "מְהוּמָה",
       "strong": "H4103",
-      "pron": "",
+      "pron": "메후마",
       "glossKo": "혼란"
     }
   ],
   "defEn": "abyss; deep",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 36,
   "byBook": {
     "psalms": 12,
-    "genesis": 4
+    "genesis": 4,
+    "job": 4,
+    "proverbs": 4,
+    "ezekiel": 3,
+    "deuteronomy": 2,
+    "exodus": 2,
+    "isaiah": 2,
+    "amos": 1,
+    "habakkuk": 1,
+    "jonah": 1
   },
   "phrases": [
     {
-      "hebrew": "תְּה֣וֹם רַבָּ֑ה",
-      "pron": "테호모트 랍빔",
+      "hebrew": "תְּה֣וֹם רַבָּ֔ה",
+      "pron": "테홈 랍바",
       "lemmas": [
         "תְּהוֹם",
         "רַב"
@@ -54,20 +63,80 @@
           "word": "תְּה֣וֹם",
           "lemma": "תְּהוֹם",
           "strong": "H8415",
-          "pron": "테호모트"
+          "pron": "테홈"
         },
         {
-          "word": "רַבָּ֑ה",
+          "word": "רַבָּ֔ה",
           "lemma": "רַב",
           "strong": "H7227",
-          "pron": "랍빔"
+          "pron": "랍바"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 7:11",
+        "psalms 36:6",
+        "psalms 78:15",
+        "isaiah 51:10",
+        "amos 7:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת תְּה֔וֹם",
+      "pron": "에트 테홈",
+      "lemmas": [
+        "אֵת",
+        "תְּהוֹם"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "תְּה֔וֹם",
+          "lemma": "תְּהוֹם",
+          "strong": "H8415",
+          "pron": "테홈"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 36:6",
-        "psalms 78:15",
-        "genesis 7:11"
+        "ezekiel 26:19",
+        "ezekiel 31:15",
+        "amos 7:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פְּנֵ֣י תְה֑וֹם",
+      "pron": "페네 테홈",
+      "lemmas": [
+        "פָּנִים",
+        "תְּהוֹם"
+      ],
+      "words": [
+        {
+          "word": "פְּנֵ֣י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "תְה֑וֹם",
+          "lemma": "תְּהוֹם",
+          "strong": "H8415",
+          "pron": "테홈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 1:2",
+        "job 38:30",
+        "proverbs 8:27"
       ],
       "glossKo": ""
     }

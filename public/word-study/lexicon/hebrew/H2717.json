@@ -1,6 +1,6 @@
 {
   "lemma": "חָרַב",
-  "pron": "바예헤랍",
+  "pron": "하레부",
   "strong": "H2717",
   "posKo": "동사",
   "root": null,
@@ -8,25 +8,25 @@
     {
       "lemma": "חֲרַב",
       "strong": "H2718",
-      "pron": "",
+      "pron": "하하레바트",
       "glossKo": "황폐하게 하다(아람)"
     },
     {
       "lemma": "חֶרֶב",
       "strong": "H2719",
-      "pron": "하렙오",
-      "glossKo": "그의 칼"
+      "pron": "아헤렙",
+      "glossKo": "칼"
     },
     {
       "lemma": "חָרֵב",
       "strong": "H2720",
-      "pron": "",
+      "pron": "바하레바",
       "glossKo": "마른"
     },
     {
       "lemma": "חֹרֵב",
       "strong": "H2722",
-      "pron": "브호렙",
+      "pron": "호레바",
       "glossKo": "호렙"
     },
     {
@@ -38,10 +38,139 @@
   ],
   "defEn": "parch; desolate; destroy; kill",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 42,
   "byBook": {
+    "isaiah": 12,
+    "ezekiel": 8,
+    "jeremiah": 5,
+    "kings2": 4,
+    "judges": 3,
     "genesis": 2,
-    "psalms": 1
+    "nehemiah": 2,
+    "amos": 1,
+    "hosea": 1,
+    "job": 1,
+    "nahum": 1,
+    "psalms": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הֶעָרִ֣ים תֶּחֱרַ֔בְנָה",
+      "pron": "이르 하레부",
+      "lemmas": [
+        "עִיר",
+        "חָרַב"
+      ],
+      "words": [
+        {
+          "word": "הֶעָרִ֣ים",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        },
+        {
+          "word": "תֶּחֱרַ֔בְנָה",
+          "lemma": "חָרַב",
+          "strong": "H2717",
+          "pron": "하레부"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezekiel 6:6",
+        "ezekiel 19:7",
+        "ezekiel 26:19",
+        "ezekiel 29:12",
+        "ezekiel 30:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָחֳרֵ֤ב נֶֽחֶרְבוּ֙",
+      "pron": "하레부 하레부",
+      "lemmas": [
+        "חָרַב",
+        "חָרַב"
+      ],
+      "words": [
+        {
+          "word": "הָחֳרֵ֤ב",
+          "lemma": "חָרַב",
+          "strong": "H2717",
+          "pron": "하레부"
+        },
+        {
+          "word": "נֶֽחֶרְבוּ֙",
+          "lemma": "חָרַב",
+          "strong": "H2717",
+          "pron": "하레부"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 3:23",
+        "isaiah 60:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֶחֱרִ֜יבוּ מַלְכֵ֥י",
+      "pron": "하레부 멜레크",
+      "lemmas": [
+        "חָרַב",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "הֶחֱרִ֜יבוּ",
+          "lemma": "חָרַב",
+          "strong": "H2717",
+          "pron": "하레부"
+        },
+        {
+          "word": "מַלְכֵ֥י",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 3:23",
+        "kings2 19:17",
+        "isaiah 37:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְ֝נָהָ֗ר יֶחֱרַ֥ב",
+      "pron": "브나할르 하레부",
+      "lemmas": [
+        "נָהָר",
+        "חָרַב"
+      ],
+      "words": [
+        {
+          "word": "וְ֝נָהָ֗ר",
+          "lemma": "נָהָר",
+          "strong": "H5104",
+          "pron": "브나할르"
+        },
+        {
+          "word": "יֶחֱרַ֥ב",
+          "lemma": "חָרַב",
+          "strong": "H2717",
+          "pron": "하레부"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 14:11",
+        "isaiah 19:5",
+        "nahum 1:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

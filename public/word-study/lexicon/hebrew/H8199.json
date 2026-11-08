@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁפַט",
-  "pron": "숍데",
+  "pron": "이솁폳",
   "strong": "H8199",
   "posKo": "동사",
   "root": null,
@@ -8,51 +8,205 @@
     {
       "lemma": "מִשְׁפָּט",
       "strong": "H4941",
-      "pron": "바미솁팓",
+      "pron": "우미솁팓",
       "glossKo": "공의"
     },
     {
       "lemma": "שְׁפוֹט",
       "strong": "H8196",
-      "pron": "",
+      "pron": "셰폳",
       "glossKo": "심판"
     },
     {
       "lemma": "שְׁפַט",
       "strong": "H8200",
-      "pron": "",
+      "pron": "샵딘",
       "glossKo": "재판하다(아람)"
     },
     {
       "lemma": "שֶׁפֶט",
       "strong": "H8201",
-      "pron": "",
+      "pron": "우비셰파딤",
       "glossKo": "심판"
     },
     {
       "lemma": "שָׁפָט",
       "strong": "H8202",
-      "pron": "",
+      "pron": "샤팓",
       "glossKo": "사밧"
     },
     {
       "lemma": "שְׁפַטְיָה",
       "strong": "H8203",
-      "pron": "",
+      "pron": "셰팓아",
       "glossKo": "스바댜"
     }
   ],
   "defEn": "judge; sentence",
   "defKo": "",
-  "countOT": 37,
+  "countOT": 204,
   "byBook": {
     "psalms": 32,
-    "genesis": 5
+    "ezekiel": 30,
+    "judges": 21,
+    "isaiah": 15,
+    "samuel1": 15,
+    "deuteronomy": 11,
+    "chronicles2": 10,
+    "exodus": 8,
+    "job": 6,
+    "chronicles1": 5,
+    "genesis": 5,
+    "kings1": 5,
+    "jeremiah": 4,
+    "micah": 4,
+    "proverbs": 4,
+    "samuel2": 4,
+    "joshua": 3,
+    "kings2": 3,
+    "daniel": 2,
+    "hosea": 2,
+    "joel": 2,
+    "numbers": 2,
+    "ruth": 2,
+    "zechariah": 2,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "ezra": 1,
+    "lamentations": 1,
+    "leviticus": 1,
+    "obadiah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
+      "hebrew": "וַיִּשְׁפֹּ֥ט אֶת",
+      "pron": "이솁폳 에트",
+      "lemmas": [
+        "שָׁפַט",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיִּשְׁפֹּ֥ט",
+          "lemma": "שָׁפַט",
+          "strong": "H8199",
+          "pron": "이솁폳"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 39,
+      "refs": [
+        "exodus 18:13",
+        "exodus 18:22",
+        "exodus 18:26",
+        "deuteronomy 16:18",
+        "judges 3:10",
+        "judges 4:4",
+        "judges 10:2",
+        "judges 10:3",
+        "judges 12:9",
+        "judges 12:11",
+        "judges 12:14",
+        "judges 15:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּשְׁפֹּ֥ט אֶת יִשְׂרָאֵ֖ל",
+      "pron": "이솁폳 에트 이스라엘",
+      "lemmas": [
+        "שָׁפַט",
+        "אֵת",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "וַיִּשְׁפֹּ֥ט",
+          "lemma": "שָׁפַט",
+          "strong": "H8199",
+          "pron": "이솁폳"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יִשְׂרָאֵ֖ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "judges 3:10",
+        "judges 4:4",
+        "judges 10:2",
+        "judges 10:3",
+        "judges 12:9",
+        "judges 12:11",
+        "judges 12:14",
+        "judges 15:20",
+        "judges 16:31",
+        "samuel1 4:18",
+        "samuel1 7:16",
+        "samuel1 7:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְשָׁפְט֥וּ אֶת הָעָ֖ם",
+      "pron": "이솁폳 에트 암",
+      "lemmas": [
+        "שָׁפַט",
+        "אֵת",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "וְשָׁפְט֥וּ",
+          "lemma": "שָׁפַט",
+          "strong": "H8199",
+          "pron": "이솁폳"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הָעָ֖ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 18:13",
+        "exodus 18:22",
+        "exodus 18:26",
+        "deuteronomy 16:18",
+        "kings1 3:9",
+        "kings2 15:5",
+        "chronicles2 1:10",
+        "chronicles2 1:11",
+        "chronicles2 26:21"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "לִשְׁפֹּ֪ט הָ֫אָ֥רֶץ",
-      "pron": "숍데 에레츠",
+      "pron": "이솁폳 하아레츠",
       "lemmas": [
         "שָׁפַט",
         "אֶרֶץ"
@@ -62,156 +216,57 @@
           "word": "לִשְׁפֹּ֪ט",
           "lemma": "שָׁפַט",
           "strong": "H8199",
-          "pron": "숍데"
+          "pron": "이솁폳"
         },
         {
           "word": "הָ֫אָ֥רֶץ",
           "lemma": "אֶרֶץ",
           "strong": "H776",
-          "pron": "에레츠"
+          "pron": "하아레츠"
         }
       ],
-      "count": 7,
+      "count": 10,
       "refs": [
+        "samuel2 15:4",
+        "chronicles2 19:5",
         "psalms 2:10",
         "psalms 58:11",
         "psalms 82:8",
         "psalms 94:2",
         "psalms 96:13",
         "psalms 98:9",
-        "psalms 148:11"
+        "psalms 148:11",
+        "isaiah 40:23"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֱ֭לֹהִים שׁוֹפֵ֣ט",
-      "pron": "베엘로힘 숍데",
+      "hebrew": "וַיִּשְׁפֹּ֣ט שָׁפ֔וֹט",
+      "pron": "이솁폳 이솁폳",
       "lemmas": [
-        "אֱלֹהִים",
+        "שָׁפַט",
         "שָׁפַט"
       ],
       "words": [
         {
-          "word": "אֱ֭לֹהִים",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        },
-        {
-          "word": "שׁוֹפֵ֣ט",
+          "word": "וַיִּשְׁפֹּ֣ט",
           "lemma": "שָׁפַט",
           "strong": "H8199",
-          "pron": "숍데"
+          "pron": "이솁폳"
+        },
+        {
+          "word": "שָׁפ֔וֹט",
+          "lemma": "שָׁפַט",
+          "strong": "H8199",
+          "pron": "이솁폳"
         }
       ],
-      "count": 6,
+      "count": 8,
       "refs": [
-        "psalms 7:11",
-        "psalms 50:6",
-        "psalms 58:11",
-        "psalms 75:7",
-        "psalms 82:1",
-        "psalms 82:8"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "לִשְׁפֹּ֪ט הָ֫אָ֥רֶץ יִשְׁפֹּֽט",
-      "pron": "숍데 에레츠 숍데",
-      "lemmas": [
-        "שָׁפַט",
-        "אֶרֶץ",
-        "שָׁפַט"
-      ],
-      "words": [
-        {
-          "word": "לִשְׁפֹּ֪ט",
-          "lemma": "שָׁפַט",
-          "strong": "H8199",
-          "pron": "숍데"
-        },
-        {
-          "word": "הָ֫אָ֥רֶץ",
-          "lemma": "אֶרֶץ",
-          "strong": "H776",
-          "pron": "에레츠"
-        },
-        {
-          "word": "יִשְׁפֹּֽט",
-          "lemma": "שָׁפַט",
-          "strong": "H8199",
-          "pron": "숍데"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 96:13",
-        "psalms 98:9"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יִשְׁפֹּֽט תֵּבֵ֥ל",
-      "pron": "숍데 테벨",
-      "lemmas": [
-        "שָׁפַט",
-        "תֵּבֵל"
-      ],
-      "words": [
-        {
-          "word": "יִשְׁפֹּֽט",
-          "lemma": "שָׁפַט",
-          "strong": "H8199",
-          "pron": "숍데"
-        },
-        {
-          "word": "תֵּבֵ֥ל",
-          "lemma": "תֵּבֵל",
-          "strong": "H8398",
-          "pron": "테벨"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 9:8",
-        "psalms 96:13",
-        "psalms 98:9"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יִשְׁפֹּֽט תֵּבֵ֥ל בְּצֶ֑דֶק",
-      "pron": "숍데 테벨 칟키위",
-      "lemmas": [
-        "שָׁפַט",
-        "תֵּבֵל",
-        "צֶדֶק"
-      ],
-      "words": [
-        {
-          "word": "יִשְׁפֹּֽט",
-          "lemma": "שָׁפַט",
-          "strong": "H8199",
-          "pron": "숍데"
-        },
-        {
-          "word": "תֵּבֵ֥ל",
-          "lemma": "תֵּבֵל",
-          "strong": "H8398",
-          "pron": "테벨"
-        },
-        {
-          "word": "בְּצֶ֑דֶק",
-          "lemma": "צֶדֶק",
-          "strong": "H6664",
-          "pron": "칟키위"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 9:8",
-        "psalms 96:13",
-        "psalms 98:9"
+        "genesis 19:9",
+        "ruth 1:1",
+        "ezekiel 22:2",
+        "ezekiel 44:24"
       ],
       "glossKo": ""
     }

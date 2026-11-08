@@ -1,8 +1,8 @@
 {
   "lemma": "עֹבֵד אֱדוֹם",
-  "pron": "오벧에돔",
+  "pron": "오벧",
   "strong": "H5654",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָבַד",
     "strong": "H5647",
@@ -12,43 +12,230 @@
     {
       "lemma": "מַעְבָּד",
       "strong": "H4566",
-      "pron": "",
-      "glossKo": "행위"
+      "pron": "마엡바데헴",
+      "glossKo": "그들의 행위"
     },
     {
       "lemma": "עָבַד",
       "strong": "H5647",
-      "pron": "입두",
+      "pron": "라아볻",
       "glossKo": "섬기다"
     },
     {
       "lemma": "עֲבַד",
       "strong": "H5648",
-      "pron": "",
+      "pron": "압딘",
       "glossKo": "행하다(아람)"
     },
     {
       "lemma": "עֶבֶד",
       "strong": "H5650",
-      "pron": "르에벧",
+      "pron": "에벧",
       "glossKo": "종"
     },
     {
       "lemma": "עֲבָד",
       "strong": "H5652",
-      "pron": "",
-      "glossKo": "행위"
+      "pron": "바아바데헴",
+      "glossKo": "그들의 행위"
     },
     {
       "lemma": "עַבְדָּא",
       "strong": "H5653",
-      "pron": "",
+      "pron": "압다",
       "glossKo": "압다"
     }
   ],
   "defEn": "Obed-Edom",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 40,
+  "byBook": {
+    "chronicles1": 28,
+    "samuel2": 10,
+    "chronicles2": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "עֹבֵ֥ד אֱדֹ֛ם",
+      "pron": "오벧 오벧",
+      "lemmas": [
+        "עֹבֵד אֱדוֹם",
+        "עֹבֵד אֱדוֹם"
+      ],
+      "words": [
+        {
+          "word": "עֹבֵ֥ד",
+          "lemma": "עֹבֵד אֱדוֹם",
+          "strong": "H5654",
+          "pron": "오벧"
+        },
+        {
+          "word": "אֱדֹ֛ם",
+          "lemma": "עֹבֵד אֱדוֹם",
+          "strong": "H5654",
+          "pron": "오벧"
+        }
+      ],
+      "count": 40,
+      "refs": [
+        "samuel2 6:10",
+        "samuel2 6:11",
+        "samuel2 6:12",
+        "chronicles1 13:13",
+        "chronicles1 13:14",
+        "chronicles1 15:18",
+        "chronicles1 15:21",
+        "chronicles1 15:24",
+        "chronicles1 15:25",
+        "chronicles1 16:5",
+        "chronicles1 16:38",
+        "chronicles1 26:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּ֥ית עֹבֵֽד אֱדֹ֖ם",
+      "pron": "미바이트 오벧 오벧",
+      "lemmas": [
+        "בַּיִת",
+        "עֹבֵד אֱדוֹם",
+        "עֹבֵד אֱדוֹם"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֥ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "עֹבֵֽד",
+          "lemma": "עֹבֵד אֱדוֹם",
+          "strong": "H5654",
+          "pron": "오벧"
+        },
+        {
+          "word": "אֱדֹ֖ם",
+          "lemma": "עֹבֵד אֱדוֹם",
+          "strong": "H5654",
+          "pron": "오벧"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "samuel2 6:10",
+        "samuel2 6:11",
+        "samuel2 6:12",
+        "chronicles1 13:13",
+        "chronicles1 13:14",
+        "chronicles1 15:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּ֥ית עֹבֵֽד",
+      "pron": "미바이트 오벧",
+      "lemmas": [
+        "בַּיִת",
+        "עֹבֵד אֱדוֹם"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֥ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "עֹבֵֽד",
+          "lemma": "עֹבֵד אֱדוֹם",
+          "strong": "H5654",
+          "pron": "오벧"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "samuel2 6:10",
+        "samuel2 6:11",
+        "samuel2 6:12",
+        "chronicles1 13:13",
+        "chronicles1 13:14",
+        "chronicles1 15:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֹבֵ֥ד אֱדֹ֖ם וְאֶת",
+      "pron": "오벧 오벧 에트",
+      "lemmas": [
+        "עֹבֵד אֱדוֹם",
+        "עֹבֵד אֱדוֹם",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "עֹבֵ֥ד",
+          "lemma": "עֹבֵד אֱדוֹם",
+          "strong": "H5654",
+          "pron": "오벧"
+        },
+        {
+          "word": "אֱדֹ֖ם",
+          "lemma": "עֹבֵד אֱדוֹם",
+          "strong": "H5654",
+          "pron": "오벧"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "samuel2 6:11",
+        "samuel2 6:12",
+        "chronicles1 13:14",
+        "chronicles2 25:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעֹבֵ֥ד אֱדֹ֛ם וִֽיעִיאֵ֖ל",
+      "pron": "오벧 오벧 예이엘",
+      "lemmas": [
+        "עֹבֵד אֱדוֹם",
+        "עֹבֵד אֱדוֹם",
+        "יְעִיאֵל"
+      ],
+      "words": [
+        {
+          "word": "וְעֹבֵ֥ד",
+          "lemma": "עֹבֵד אֱדוֹם",
+          "strong": "H5654",
+          "pron": "오벧"
+        },
+        {
+          "word": "אֱדֹ֛ם",
+          "lemma": "עֹבֵד אֱדוֹם",
+          "strong": "H5654",
+          "pron": "오벧"
+        },
+        {
+          "word": "וִֽיעִיאֵ֖ל",
+          "lemma": "יְעִיאֵל",
+          "strong": "H3273",
+          "pron": "예이엘"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "chronicles1 15:18",
+        "chronicles1 15:21",
+        "chronicles1 16:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "דּוּר",
-  "pron": "두르",
+  "pron": "드린",
   "strong": "H1753",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "דּוּר",
     "strong": "H1752",
@@ -18,25 +18,205 @@
     {
       "lemma": "דּוּר",
       "strong": "H1754",
-      "pron": "",
+      "pron": "칻두르",
       "glossKo": "원"
     },
     {
       "lemma": "דּוֹר",
       "strong": "H1755",
-      "pron": "르도르",
-      "glossKo": "세대"
+      "pron": "베도로타으브",
+      "glossKo": "그의 세대"
+    },
+    {
+      "lemma": "דּוּרָא",
+      "strong": "H1757",
+      "pron": "두라",
+      "glossKo": "두라"
+    },
+    {
+      "lemma": "מְדוֹר",
+      "strong": "H4070",
+      "pron": "메다레혼",
+      "glossKo": "그들의 거처(아람)"
     },
     {
       "lemma": "מְדוּרָה",
       "strong": "H4071",
-      "pron": "",
-      "glossKo": "장작더미"
+      "pron": "메두라타흐",
+      "glossKo": "그녀의 장작더미"
     }
   ],
   "defEn": "reside",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "daniel": 13
+  },
+  "phrases": [
+    {
+      "hebrew": "דארין דָיְרִ֥ין",
+      "pron": "드린 드린",
+      "lemmas": [
+        "דּוּר",
+        "דּוּר"
+      ],
+      "words": [
+        {
+          "word": "דארין",
+          "lemma": "דּוּר",
+          "strong": "H1753",
+          "pron": "드린"
+        },
+        {
+          "word": "דָיְרִ֥ין",
+          "lemma": "דּוּר",
+          "strong": "H1753",
+          "pron": "드린"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "daniel 2:38",
+        "daniel 4:1",
+        "daniel 4:12",
+        "daniel 4:35",
+        "daniel 6:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּֽי דארין דָיְרִ֥ין",
+      "pron": "드흐브 드린 드린",
+      "lemmas": [
+        "דִּי",
+        "דּוּר",
+        "דּוּר"
+      ],
+      "words": [
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "דארין",
+          "lemma": "דּוּר",
+          "strong": "H1753",
+          "pron": "드린"
+        },
+        {
+          "word": "דָיְרִ֥ין",
+          "lemma": "דּוּר",
+          "strong": "H1753",
+          "pron": "드린"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "daniel 2:38",
+        "daniel 4:1",
+        "daniel 6:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דארי דָּיְרֵ֤י אַרְעָא֙",
+      "pron": "드린 드린 브아레아",
+      "lemmas": [
+        "דּוּר",
+        "דּוּר",
+        "אֲרַע"
+      ],
+      "words": [
+        {
+          "word": "דארי",
+          "lemma": "דּוּר",
+          "strong": "H1753",
+          "pron": "드린"
+        },
+        {
+          "word": "דָּיְרֵ֤י",
+          "lemma": "דּוּר",
+          "strong": "H1753",
+          "pron": "드린"
+        },
+        {
+          "word": "אַרְעָא֙",
+          "lemma": "אֲרַע",
+          "strong": "H772",
+          "pron": "브아레아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דארין דָיְרִ֥ין בְּכָל",
+      "pron": "드린 드린 카르",
+      "lemmas": [
+        "דּוּר",
+        "דּוּר",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "דארין",
+          "lemma": "דּוּר",
+          "strong": "H1753",
+          "pron": "드린"
+        },
+        {
+          "word": "דָיְרִ֥ין",
+          "lemma": "דּוּר",
+          "strong": "H1753",
+          "pron": "드린"
+        },
+        {
+          "word": "בְּכָל",
+          "lemma": "כֹּל",
+          "strong": "H3606",
+          "pron": "카르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:1",
+        "daniel 6:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּֽי דארין",
+      "pron": "드흐브 드린",
+      "lemmas": [
+        "דִּי",
+        "דּוּר"
+      ],
+      "words": [
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "דארין",
+          "lemma": "דּוּר",
+          "strong": "H1753",
+          "pron": "드린"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:38",
+        "daniel 4:1",
+        "daniel 6:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

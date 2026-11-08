@@ -12,19 +12,19 @@
     {
       "lemma": "אֲרוּכָה",
       "strong": "H724",
-      "pron": "",
+      "pron": "아루카",
       "glossKo": "회복"
     },
     {
       "lemma": "אָרַךְ",
       "strong": "H748",
-      "pron": "헤에리쿠",
+      "pron": "아레쿠",
       "glossKo": "길게 하다"
     },
     {
       "lemma": "אֲרַךְ",
       "strong": "H749",
-      "pron": "",
+      "pron": "아리크",
       "glossKo": "적합하다(아람)"
     },
     {
@@ -36,7 +36,7 @@
     {
       "lemma": "אָרֹךְ",
       "strong": "H752",
-      "pron": "",
+      "pron": "아룩카",
       "glossKo": "긴"
     },
     {
@@ -48,37 +48,164 @@
   ],
   "defEn": "long",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 15,
   "byBook": {
-    "psalms": 3
+    "proverbs": 3,
+    "psalms": 3,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "ezekiel": 1,
+    "jeremiah": 1,
+    "joel": 1,
+    "jonah": 1,
+    "nahum": 1,
+    "nehemiah": 1,
+    "numbers": 1
   },
   "phrases": [
     {
-      "hebrew": "אֶ֥רֶךְ אַ֝פַּ֗יִם",
-      "pron": "에레크 브압오",
+      "hebrew": "אֶ֤רֶךְ אַפַּ֨יִם֙",
+      "pron": "에레크 베압파으브",
       "lemmas": [
         "אָרֵךְ",
         "אַף"
       ],
       "words": [
         {
-          "word": "אֶ֥רֶךְ",
+          "word": "אֶ֤רֶךְ",
           "lemma": "אָרֵךְ",
           "strong": "H750",
           "pron": "에레크"
         },
         {
-          "word": "אַ֝פַּ֗יִם",
+          "word": "אַפַּ֨יִם֙",
           "lemma": "אַף",
           "strong": "H639",
-          "pron": "브압오"
+          "pron": "베압파으브"
         }
       ],
-      "count": 3,
+      "count": 13,
       "refs": [
+        "exodus 34:6",
+        "numbers 14:18",
+        "nehemiah 9:17",
         "psalms 86:15",
         "psalms 103:8",
-        "psalms 145:8"
+        "psalms 145:8",
+        "proverbs 14:29",
+        "proverbs 15:18",
+        "proverbs 16:32",
+        "jeremiah 15:15",
+        "joel 2:13",
+        "jonah 4:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֤רֶךְ אַפַּ֨יִם֙ וְרַב",
+      "pron": "에레크 베압파으브 랍바",
+      "lemmas": [
+        "אָרֵךְ",
+        "אַף",
+        "רַב"
+      ],
+      "words": [
+        {
+          "word": "אֶ֤רֶךְ",
+          "lemma": "אָרֵךְ",
+          "strong": "H750",
+          "pron": "에레크"
+        },
+        {
+          "word": "אַפַּ֨יִם֙",
+          "lemma": "אַף",
+          "strong": "H639",
+          "pron": "베압파으브"
+        },
+        {
+          "word": "וְרַב",
+          "lemma": "רַב",
+          "strong": "H7227",
+          "pron": "랍바"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 34:6",
+        "numbers 14:18",
+        "nehemiah 9:17",
+        "psalms 86:15",
+        "psalms 103:8",
+        "proverbs 14:29",
+        "joel 2:13",
+        "jonah 4:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֗ה אֶ֤רֶךְ",
+      "pron": "여호와 에레크",
+      "lemmas": [
+        "יְהֹוָה",
+        "אָרֵךְ"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֗ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "אֶ֤רֶךְ",
+          "lemma": "אָרֵךְ",
+          "strong": "H750",
+          "pron": "에레크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 14:18",
+        "psalms 103:8",
+        "psalms 145:8",
+        "nahum 1:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֗ה אֶ֤רֶךְ אַפַּ֨יִם֙",
+      "pron": "여호와 에레크 베압파으브",
+      "lemmas": [
+        "יְהֹוָה",
+        "אָרֵךְ",
+        "אַף"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֗ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "אֶ֤רֶךְ",
+          "lemma": "אָרֵךְ",
+          "strong": "H750",
+          "pron": "에레크"
+        },
+        {
+          "word": "אַפַּ֨יִם֙",
+          "lemma": "אַף",
+          "strong": "H639",
+          "pron": "베압파으브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 14:18",
+        "psalms 103:8",
+        "psalms 145:8",
+        "nahum 1:3"
       ],
       "glossKo": ""
     }

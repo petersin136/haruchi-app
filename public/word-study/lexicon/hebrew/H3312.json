@@ -2,7 +2,7 @@
   "lemma": "יְפֻנֶּה",
   "pron": "예푼네",
   "strong": "H3312",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "פָּנָה",
     "strong": "H6437",
@@ -18,7 +18,7 @@
     {
       "lemma": "פָּנָה",
       "strong": "H6437",
-      "pron": "페네",
+      "pron": "바입누",
       "glossKo": "돌이키다"
     },
     {
@@ -30,13 +30,167 @@
     {
       "lemma": "פָּנִים",
       "strong": "H6440",
-      "pron": "미페네",
+      "pron": "페네",
       "glossKo": "얼굴"
     }
   ],
   "defEn": "Jephunneh",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 16,
+  "byBook": {
+    "numbers": 7,
+    "joshua": 5,
+    "chronicles1": 3,
+    "deuteronomy": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶּן יְפֻנֶּ֔ה",
+      "pron": "바님 예푼네",
+      "lemmas": [
+        "בֵּן",
+        "יְפֻנֶּה"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יְפֻנֶּ֔ה",
+          "lemma": "יְפֻנֶּה",
+          "strong": "H3312",
+          "pron": "예푼네"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "numbers 13:6",
+        "numbers 14:6",
+        "numbers 14:30",
+        "numbers 14:38",
+        "numbers 26:65",
+        "numbers 32:12",
+        "numbers 34:19",
+        "deuteronomy 1:36",
+        "joshua 14:6",
+        "joshua 14:13",
+        "joshua 14:14",
+        "joshua 15:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּלֵ֣ב בֶּן יְפֻנֶּ֔ה",
+      "pron": "칼렙 바님 예푼네",
+      "lemmas": [
+        "כָּלֵב",
+        "בֵּן",
+        "יְפֻנֶּה"
+      ],
+      "words": [
+        {
+          "word": "כָּלֵ֣ב",
+          "lemma": "כָּלֵב",
+          "strong": "H3612",
+          "pron": "칼렙"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יְפֻנֶּ֔ה",
+          "lemma": "יְפֻנֶּה",
+          "strong": "H3312",
+          "pron": "예푼네"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "numbers 13:6",
+        "numbers 14:6",
+        "numbers 14:30",
+        "numbers 14:38",
+        "numbers 26:65",
+        "numbers 32:12",
+        "numbers 34:19",
+        "deuteronomy 1:36",
+        "joshua 14:6",
+        "joshua 14:13",
+        "joshua 14:14",
+        "joshua 15:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן יְפֻנֶּה֙ הַקְּנִזִּ֔י",
+      "pron": "바님 예푼네 아케닛지",
+      "lemmas": [
+        "בֵּן",
+        "יְפֻנֶּה",
+        "קְנִזִּי"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יְפֻנֶּה֙",
+          "lemma": "יְפֻנֶּה",
+          "strong": "H3312",
+          "pron": "예푼네"
+        },
+        {
+          "word": "הַקְּנִזִּ֔י",
+          "lemma": "קְנִזִּי",
+          "strong": "H7074",
+          "pron": "아케닛지"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 32:12",
+        "joshua 14:6",
+        "joshua 14:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְפֻנֶּה֙ הַקְּנִזִּ֔י",
+      "pron": "예푼네 아케닛지",
+      "lemmas": [
+        "יְפֻנֶּה",
+        "קְנִזִּי"
+      ],
+      "words": [
+        {
+          "word": "יְפֻנֶּה֙",
+          "lemma": "יְפֻנֶּה",
+          "strong": "H3312",
+          "pron": "예푼네"
+        },
+        {
+          "word": "הַקְּנִזִּ֔י",
+          "lemma": "קְנִזִּי",
+          "strong": "H7074",
+          "pron": "아케닛지"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 32:12",
+        "joshua 14:6",
+        "joshua 14:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

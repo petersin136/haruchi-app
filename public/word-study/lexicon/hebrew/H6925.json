@@ -1,8 +1,8 @@
 {
   "lemma": "קֳדָם",
-  "pron": "코담",
+  "pron": "카다마이",
   "strong": "H6925",
-  "posKo": "",
+  "posKo": "접미대명사",
   "root": {
     "lemma": "קֶדֶם",
     "strong": "H6924",
@@ -12,7 +12,7 @@
     {
       "lemma": "קֶדֶם",
       "strong": "H6924",
-      "pron": "케뎀",
+      "pron": "미케뎀",
       "glossKo": "동방"
     },
     {
@@ -24,13 +24,184 @@
     {
       "lemma": "קַדְמִיאֵל",
       "strong": "H6934",
-      "pron": "",
+      "pron": "브칻미엘",
       "glossKo": "갓미엘"
     }
   ],
   "defEn": "before",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 46,
+  "byBook": {
+    "daniel": 42,
+    "ezra": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "קֳדָ֣ם מַלְכָּ֑א",
+      "pron": "카다마이 말카",
+      "lemmas": [
+        "קֳדָם",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "קֳדָ֣ם",
+          "lemma": "קֳדָם",
+          "strong": "H6925",
+          "pron": "카다마이"
+        },
+        {
+          "word": "מַלְכָּ֑א",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4430",
+          "pron": "말카"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "ezra 7:14",
+        "daniel 2:10",
+        "daniel 2:11",
+        "daniel 2:15",
+        "daniel 2:24",
+        "daniel 2:25",
+        "daniel 2:27",
+        "daniel 2:36",
+        "daniel 3:13",
+        "daniel 5:13",
+        "daniel 5:17",
+        "daniel 6:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִן קֳדָמ֔וֹהִי",
+      "pron": "민 카다마이",
+      "lemmas": [
+        "מִן",
+        "קֳדָם"
+      ],
+      "words": [
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4481",
+          "pron": "민"
+        },
+        {
+          "word": "קֳדָמ֔וֹהִי",
+          "lemma": "קֳדָם",
+          "strong": "H6925",
+          "pron": "카다마이"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "ezra 7:14",
+        "daniel 2:6",
+        "daniel 2:15",
+        "daniel 2:18",
+        "daniel 5:19",
+        "daniel 5:24",
+        "daniel 6:26",
+        "daniel 7:8",
+        "daniel 7:10",
+        "daniel 7:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קדמיך קָֽדָמָ֗ךְ",
+      "pron": "카다마이 카다마이",
+      "lemmas": [
+        "קֳדָם",
+        "קֳדָם"
+      ],
+      "words": [
+        {
+          "word": "קדמיך",
+          "lemma": "קֳדָם",
+          "strong": "H6925",
+          "pron": "카다마이"
+        },
+        {
+          "word": "קָֽדָמָ֗ךְ",
+          "lemma": "קֳדָם",
+          "strong": "H6925",
+          "pron": "카다마이"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "daniel 5:23",
+        "daniel 6:22",
+        "daniel 7:8",
+        "daniel 7:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַעֵ֨לְנִי֙ קֳדָ֣ם",
+      "pron": "알 카다마이",
+      "lemmas": [
+        "עֲלַל",
+        "קֳדָם"
+      ],
+      "words": [
+        {
+          "word": "הַעֵ֨לְנִי֙",
+          "lemma": "עֲלַל",
+          "strong": "H5954",
+          "pron": "알"
+        },
+        {
+          "word": "קֳדָ֣ם",
+          "lemma": "קֳדָם",
+          "strong": "H6925",
+          "pron": "카다마이"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "daniel 2:24",
+        "daniel 4:6",
+        "daniel 4:8",
+        "daniel 5:13",
+        "daniel 5:15",
+        "daniel 6:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְמֵאמַ֣ר קָֽדָמַ֔י",
+      "pron": "암린 카다마이",
+      "lemmas": [
+        "אֲמַר",
+        "קֳדָם"
+      ],
+      "words": [
+        {
+          "word": "לְמֵאמַ֣ר",
+          "lemma": "אֲמַר",
+          "strong": "H560",
+          "pron": "암린"
+        },
+        {
+          "word": "קָֽדָמַ֔י",
+          "lemma": "קֳדָם",
+          "strong": "H6925",
+          "pron": "카다마이"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 2:9",
+        "daniel 2:36",
+        "daniel 5:17",
+        "daniel 6:12",
+        "daniel 6:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

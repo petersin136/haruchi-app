@@ -2,7 +2,7 @@
   "lemma": "גָּבֹהַּ",
   "pron": "아게보힘",
   "strong": "H1364",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "גָּבַהּ",
     "strong": "H1361",
@@ -12,7 +12,7 @@
     {
       "lemma": "גָּבַהּ",
       "strong": "H1361",
-      "pron": "키게보아",
+      "pron": "바익바흐",
       "glossKo": "높다"
     },
     {
@@ -24,28 +24,199 @@
     {
       "lemma": "גֹּבַהּ",
       "strong": "H1363",
-      "pron": "크고바흐",
-      "glossKo": "높음"
+      "pron": "갑호",
+      "glossKo": "그의 높음"
     },
     {
       "lemma": "גַּבְהוּת",
       "strong": "H1365",
-      "pron": "",
+      "pron": "갑후트",
       "glossKo": "교만"
     },
     {
       "lemma": "יׇגְבְּהָה",
       "strong": "H3011",
-      "pron": "",
+      "pron": "브약보하",
       "glossKo": "욕브하"
     }
   ],
   "defEn": "elevated; powerful; arrogant",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 37,
   "byBook": {
+    "isaiah": 6,
+    "ezekiel": 5,
+    "ecclesiastes": 4,
+    "jeremiah": 4,
+    "samuel1": 4,
+    "daniel": 3,
+    "deuteronomy": 2,
+    "esther": 2,
     "psalms": 2,
-    "genesis": 1
+    "genesis": 1,
+    "job": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הֶֽהָרִים֙ הַגְּבֹהִ֔ים",
+      "pron": "헤하림 아게보힘",
+      "lemmas": [
+        "הַר",
+        "גָּבֹהַּ"
+      ],
+      "words": [
+        {
+          "word": "הֶֽהָרִים֙",
+          "lemma": "הַר",
+          "strong": "H2022",
+          "pron": "헤하림"
+        },
+        {
+          "word": "הַגְּבֹהִ֔ים",
+          "lemma": "גָּבֹהַּ",
+          "strong": "H1364",
+          "pron": "아게보힘"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 7:19",
+        "psalms 104:18",
+        "isaiah 30:25",
+        "isaiah 40:9",
+        "isaiah 57:7",
+        "jeremiah 3:6",
+        "ezekiel 17:22",
+        "ezekiel 40:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גָבֹ֜הַּ מֵעַ֤ל",
+      "pron": "아게보힘 알",
+      "lemmas": [
+        "גָּבֹהַּ",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "גָבֹ֜הַּ",
+          "lemma": "גָּבֹהַּ",
+          "strong": "H1364",
+          "pron": "아게보힘"
+        },
+        {
+          "word": "מֵעַ֤ל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ecclesiastes 5:8",
+        "isaiah 2:15",
+        "isaiah 30:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גִּבְעָ֣ה גְבֹהָ֔ה",
+      "pron": "깁오트 아게보힘",
+      "lemmas": [
+        "גִּבְעָה",
+        "גָּבֹהַּ"
+      ],
+      "words": [
+        {
+          "word": "גִּבְעָ֣ה",
+          "lemma": "גִּבְעָה",
+          "strong": "H1389",
+          "pron": "깁오트"
+        },
+        {
+          "word": "גְבֹהָ֔ה",
+          "lemma": "גָּבֹהַּ",
+          "strong": "H1364",
+          "pron": "아게보힘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 14:23",
+        "kings2 17:10",
+        "jeremiah 2:20",
+        "jeremiah 17:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גְבֹהָ֔ה וְתַ֖חַת",
+      "pron": "아게보힘 미타하트",
+      "lemmas": [
+        "גָּבֹהַּ",
+        "תַּחַת"
+      ],
+      "words": [
+        {
+          "word": "גְבֹהָ֔ה",
+          "lemma": "גָּבֹהַּ",
+          "strong": "H1364",
+          "pron": "아게보힘"
+        },
+        {
+          "word": "וְתַ֖חַת",
+          "lemma": "תַּחַת",
+          "strong": "H8478",
+          "pron": "미타하트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 14:23",
+        "kings2 17:10",
+        "jeremiah 2:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גְבֹהָ֔ה וְתַ֖חַת כָּל",
+      "pron": "아게보힘 미타하트 칼",
+      "lemmas": [
+        "גָּבֹהַּ",
+        "תַּחַת",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "גְבֹהָ֔ה",
+          "lemma": "גָּבֹהַּ",
+          "strong": "H1364",
+          "pron": "아게보힘"
+        },
+        {
+          "word": "וְתַ֖חַת",
+          "lemma": "תַּחַת",
+          "strong": "H8478",
+          "pron": "미타하트"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 14:23",
+        "kings2 17:10",
+        "jeremiah 2:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

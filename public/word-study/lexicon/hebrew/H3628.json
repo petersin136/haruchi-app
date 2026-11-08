@@ -1,8 +1,8 @@
 {
   "lemma": "כְּלִיא",
-  "pron": "켈리",
+  "pron": "클리",
   "strong": "H3628",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "כְּלִי",
     "strong": "H3627",
@@ -12,19 +12,85 @@
     {
       "lemma": "כְּלִי",
       "strong": "H3627",
-      "pron": "키켈리",
+      "pron": "켈레",
       "glossKo": "그릇"
     },
     {
       "lemma": "כִּלְיָה",
       "strong": "H3629",
-      "pron": "우켈라오트",
+      "pron": "아켈라오트",
       "glossKo": "콩팥"
     }
   ],
   "defEn": "prison",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "jeremiah": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "בֵּ֥ית הכליא הַכְּלֽוּא",
+      "pron": "미바이트 클리 클리",
+      "lemmas": [
+        "בַּיִת",
+        "כְּלִיא",
+        "כְּלִיא"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֥ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "הכליא",
+          "lemma": "כְּלִיא",
+          "strong": "H3628",
+          "pron": "클리"
+        },
+        {
+          "word": "הַכְּלֽוּא",
+          "lemma": "כְּלִיא",
+          "strong": "H3628",
+          "pron": "클리"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 37:4",
+        "jeremiah 52:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הכליא הַכְּלֽוּא",
+      "pron": "클리 클리",
+      "lemmas": [
+        "כְּלִיא",
+        "כְּלִיא"
+      ],
+      "words": [
+        {
+          "word": "הכליא",
+          "lemma": "כְּלִיא",
+          "strong": "H3628",
+          "pron": "클리"
+        },
+        {
+          "word": "הַכְּלֽוּא",
+          "lemma": "כְּלִיא",
+          "strong": "H3628",
+          "pron": "클리"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 37:4",
+        "jeremiah 52:31"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

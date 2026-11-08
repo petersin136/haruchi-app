@@ -12,28 +12,137 @@
     {
       "lemma": "עָשַׁן",
       "strong": "H6225",
-      "pron": "예에샨",
+      "pron": "아샨",
       "glossKo": "연기 나다"
     },
     {
       "lemma": "עָשֵׁן",
       "strong": "H6226",
-      "pron": "",
+      "pron": "아셴",
       "glossKo": "연기 나는"
     },
     {
       "lemma": "עָשָׁן",
       "strong": "H6228",
-      "pron": "",
+      "pron": "브아샨",
       "glossKo": "아산"
     }
   ],
   "defEn": "smoke; vapor; dust; anger",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 25,
   "byBook": {
+    "isaiah": 7,
     "psalms": 4,
-    "genesis": 1
+    "exodus": 2,
+    "joshua": 2,
+    "judges": 2,
+    "genesis": 1,
+    "hosea": 1,
+    "job": 1,
+    "joel": 1,
+    "nahum": 1,
+    "proverbs": 1,
+    "samuel2": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיַּ֤עַל עֲשָׁנוֹ֙",
+      "pron": "야알레 아샨",
+      "lemmas": [
+        "עָלָה",
+        "עָשָׁן"
+      ],
+      "words": [
+        {
+          "word": "וַיַּ֤עַל",
+          "lemma": "עָלָה",
+          "strong": "H5927",
+          "pron": "야알레"
+        },
+        {
+          "word": "עֲשָׁנוֹ֙",
+          "lemma": "עָשָׁן",
+          "strong": "H6227",
+          "pron": "아샨"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 19:18",
+        "joshua 8:20",
+        "joshua 8:21",
+        "samuel2 22:9",
+        "psalms 18:8",
+        "isaiah 34:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָשָׁן֙ בְּאַפּ֔וֹ",
+      "pron": "아샨 베압파으브",
+      "lemmas": [
+        "עָשָׁן",
+        "אַף"
+      ],
+      "words": [
+        {
+          "word": "עָשָׁן֙",
+          "lemma": "עָשָׁן",
+          "strong": "H6227",
+          "pron": "아샨"
+        },
+        {
+          "word": "בְּאַפּ֔וֹ",
+          "lemma": "אַף",
+          "strong": "H639",
+          "pron": "베압파으브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:9",
+        "psalms 18:8",
+        "isaiah 65:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָשָׁן֙ בְּאַפּ֔וֹ וְאֵ֥שׁ",
+      "pron": "아샨 베압파으브 에쉬",
+      "lemmas": [
+        "עָשָׁן",
+        "אַף",
+        "אֵשׁ"
+      ],
+      "words": [
+        {
+          "word": "עָשָׁן֙",
+          "lemma": "עָשָׁן",
+          "strong": "H6227",
+          "pron": "아샨"
+        },
+        {
+          "word": "בְּאַפּ֔וֹ",
+          "lemma": "אַף",
+          "strong": "H639",
+          "pron": "베압파으브"
+        },
+        {
+          "word": "וְאֵ֥שׁ",
+          "lemma": "אֵשׁ",
+          "strong": "H784",
+          "pron": "에쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:9",
+        "psalms 18:8",
+        "isaiah 65:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

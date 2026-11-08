@@ -1,6 +1,6 @@
 {
   "lemma": "אֹיֵב",
-  "pron": "오에바위",
+  "pron": "오에바으브",
   "strong": "H341",
   "posKo": "동사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "אָיַב",
       "strong": "H340",
-      "pron": "",
+      "pron": "브아압티",
       "glossKo": "원수가 되다"
     },
     {
@@ -24,21 +24,47 @@
     {
       "lemma": "אִיּוֹב",
       "strong": "H347",
-      "pron": "",
+      "pron": "이옵",
       "glossKo": "욥"
     }
   ],
   "defEn": "hating; adversary",
   "defKo": "",
-  "countOT": 76,
+  "countOT": 284,
   "byBook": {
     "psalms": 74,
-    "genesis": 2
+    "deuteronomy": 25,
+    "samuel1": 21,
+    "jeremiah": 19,
+    "samuel2": 16,
+    "lamentations": 15,
+    "leviticus": 13,
+    "joshua": 11,
+    "judges": 9,
+    "chronicles2": 8,
+    "isaiah": 8,
+    "kings1": 8,
+    "numbers": 8,
+    "esther": 6,
+    "micah": 6,
+    "chronicles1": 5,
+    "exodus": 5,
+    "nehemiah": 5,
+    "nahum": 4,
+    "job": 3,
+    "kings2": 3,
+    "proverbs": 3,
+    "ezekiel": 2,
+    "ezra": 2,
+    "genesis": 2,
+    "amos": 1,
+    "hosea": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "כָּל אֹיְבַ֣י",
-      "pron": "브콜 오에바위",
+      "hebrew": "כָּל אֹיְבֶ֖יךָ",
+      "pron": "칼 오에바으브",
       "lemmas": [
         "כֹּל",
         "אֹיֵב"
@@ -48,140 +74,181 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
-          "word": "אֹיְבַ֣י",
+          "word": "אֹיְבֶ֖יךָ",
           "lemma": "אֹיֵב",
           "strong": "H341",
-          "pron": "오에바위"
+          "pron": "오에바으브"
         }
       ],
-      "count": 5,
+      "count": 32,
       "refs": [
-        "psalms 3:7",
-        "psalms 6:10",
-        "psalms 18:1",
-        "psalms 21:8",
-        "psalms 89:42"
+        "exodus 23:27",
+        "deuteronomy 6:19",
+        "deuteronomy 12:10",
+        "deuteronomy 25:19",
+        "joshua 10:25",
+        "joshua 21:44",
+        "joshua 23:1",
+        "judges 5:31",
+        "judges 8:34",
+        "samuel1 14:47",
+        "samuel2 3:18",
+        "samuel2 7:1"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הַצִּילֵ֖נִי מֵאֹיְבַ֥י",
-      "pron": "브핫칠레니 오에바위",
+      "hebrew": "לִפְנֵ֣י אוֹיֵ֑ב",
+      "pron": "페네 오에바으브",
       "lemmas": [
-        "נָצַל",
+        "פָּנִים",
         "אֹיֵב"
       ],
       "words": [
         {
-          "word": "הַצִּילֵ֖נִי",
-          "lemma": "נָצַל",
-          "strong": "H5337",
-          "pron": "브핫칠레니"
+          "word": "לִפְנֵ֣י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
         },
         {
-          "word": "מֵאֹיְבַ֥י",
+          "word": "אוֹיֵ֑ב",
           "lemma": "אֹיֵב",
           "strong": "H341",
-          "pron": "오에바위"
+          "pron": "오에바으브"
         }
       ],
-      "count": 4,
+      "count": 24,
       "refs": [
-        "psalms 18:17",
-        "psalms 54:7",
-        "psalms 59:1",
-        "psalms 143:9"
+        "leviticus 26:17",
+        "leviticus 26:37",
+        "numbers 14:42",
+        "deuteronomy 1:42",
+        "deuteronomy 28:25",
+        "deuteronomy 33:27",
+        "joshua 7:8",
+        "joshua 7:12",
+        "joshua 7:13",
+        "judges 2:14",
+        "kings1 8:33",
+        "kings1 8:46"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְאֹיְבֵ֣י יְ֭הוָה",
-      "pron": "오에바위 여호와",
+      "hebrew": "אֶת אֹ֣יְבֶ֔יךָ",
+      "pron": "에트 오에바으브",
       "lemmas": [
-        "אֹיֵב",
-        "יְהֹוָה"
+        "אֵת",
+        "אֹיֵב"
       ],
       "words": [
         {
-          "word": "וְאֹיְבֵ֣י",
-          "lemma": "אֹיֵב",
-          "strong": "H341",
-          "pron": "오에바위"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         },
         {
-          "word": "יְ֭הוָה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
+          "word": "אֹ֣יְבֶ֔יךָ",
+          "lemma": "אֹיֵב",
+          "strong": "H341",
+          "pron": "오에바으브"
         }
       ],
-      "count": 4,
+      "count": 21,
       "refs": [
-        "psalms 37:20",
-        "psalms 89:51",
-        "psalms 92:9",
-        "psalms 143:9"
+        "exodus 23:22",
+        "leviticus 26:7",
+        "numbers 32:21",
+        "deuteronomy 28:7",
+        "deuteronomy 28:48",
+        "judges 3:28",
+        "judges 16:24",
+        "samuel1 19:17",
+        "samuel1 20:15",
+        "samuel1 24:4",
+        "samuel1 24:19",
+        "samuel1 26:8"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אוֹיֵ֨ב נַפְשִׁ֡י",
-      "pron": "오에바위 르납시위",
-      "lemmas": [
-        "אֹיֵב",
-        "נֶפֶשׁ"
-      ],
-      "words": [
-        {
-          "word": "אוֹיֵ֨ב",
-          "lemma": "אֹיֵב",
-          "strong": "H341",
-          "pron": "오에바위"
-        },
-        {
-          "word": "נַפְשִׁ֡י",
-          "lemma": "נֶפֶשׁ",
-          "strong": "H5315",
-          "pron": "르납시위"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 7:5",
-        "psalms 17:9",
-        "psalms 143:3"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "בְּיַד אוֹיֵ֑ב",
-      "pron": "야데카 오에바위",
+      "hebrew": "בְּיַ֣ד אֹֽיְבֵיהֶ֔ם",
+      "pron": "야도 오에바으브",
       "lemmas": [
         "יָד",
         "אֹיֵב"
       ],
       "words": [
         {
-          "word": "בְּיַד",
+          "word": "בְּיַ֣ד",
           "lemma": "יָד",
           "strong": "H3027",
-          "pron": "야데카"
+          "pron": "야도"
         },
         {
-          "word": "אוֹיֵ֑ב",
+          "word": "אֹֽיְבֵיהֶ֔ם",
           "lemma": "אֹיֵב",
           "strong": "H341",
-          "pron": "오에바위"
+          "pron": "오에바으브"
         }
       ],
-      "count": 3,
+      "count": 18,
       "refs": [
+        "leviticus 26:25",
+        "judges 2:14",
+        "judges 2:18",
+        "samuel1 12:10",
+        "samuel1 12:11",
+        "samuel1 20:16",
+        "samuel2 18:19",
+        "kings2 21:14",
+        "nehemiah 9:28",
         "psalms 31:8",
         "psalms 31:15",
         "psalms 106:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל אֹיְבֶ֑יךָ",
+      "pron": "알 오에바으브",
+      "lemmas": [
+        "עַל",
+        "אֹיֵב"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "אֹיְבֶ֑יךָ",
+          "lemma": "אֹיֵב",
+          "strong": "H341",
+          "pron": "오에바으브"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "leviticus 26:32",
+        "deuteronomy 20:1",
+        "deuteronomy 20:3",
+        "deuteronomy 21:10",
+        "deuteronomy 23:9",
+        "deuteronomy 30:7",
+        "samuel1 2:1",
+        "kings1 8:44",
+        "chronicles2 6:34",
+        "chronicles2 26:13",
+        "psalms 27:6",
+        "isaiah 42:13"
       ],
       "glossKo": ""
     }

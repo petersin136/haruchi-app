@@ -8,33 +8,38 @@
     {
       "lemma": "נָחוּשׁ",
       "strong": "H5153",
-      "pron": "",
+      "pron": "나후쉬",
       "glossKo": "구리빛의"
     },
     {
       "lemma": "נַחַשׁ",
       "strong": "H5173",
-      "pron": "",
+      "pron": "나하쉬",
       "glossKo": "주술"
     },
     {
       "lemma": "נָחָשׁ",
       "strong": "H5175",
-      "pron": "나하쉬",
+      "pron": "브아나하쉬",
       "glossKo": "뱀"
     },
     {
       "lemma": "נַחְשׁוֹן",
       "strong": "H5177",
-      "pron": "",
+      "pron": "나헤숀",
       "glossKo": "나손"
     }
   ],
   "defEn": "hiss; whisper; prognosticate",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 11,
   "byBook": {
-    "genesis": 5
+    "genesis": 5,
+    "kings2": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "kings1": 1,
+    "leviticus": 1
   },
   "phrases": [
     {
@@ -62,6 +67,35 @@
       "refs": [
         "genesis 44:5",
         "genesis 44:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְעוֹנֵ֥ן וּמְנַחֵ֖שׁ",
+      "pron": "베안니 니하솃티",
+      "lemmas": [
+        "עָנַן",
+        "נָחַשׁ"
+      ],
+      "words": [
+        {
+          "word": "מְעוֹנֵ֥ן",
+          "lemma": "עָנַן",
+          "strong": "H6049",
+          "pron": "베안니"
+        },
+        {
+          "word": "וּמְנַחֵ֖שׁ",
+          "lemma": "נָחַשׁ",
+          "strong": "H5172",
+          "pron": "니하솃티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 18:10",
+        "kings2 21:6",
+        "chronicles2 33:6"
       ],
       "glossKo": ""
     }

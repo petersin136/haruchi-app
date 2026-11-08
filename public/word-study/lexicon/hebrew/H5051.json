@@ -18,27 +18,64 @@
     {
       "lemma": "נֹגַהּ",
       "strong": "H5052",
-      "pron": "",
+      "pron": "브노가흐",
       "glossKo": "노가"
     },
     {
       "lemma": "נֹגַהּ",
       "strong": "H5053",
-      "pron": "",
+      "pron": "브낙하",
       "glossKo": "동틈(아람)"
     },
     {
       "lemma": "נְגֹהָה",
       "strong": "H5054",
-      "pron": "",
+      "pron": "리네고호트",
       "glossKo": "빛"
     }
   ],
   "defEn": "brilliancy",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 19,
   "byBook": {
+    "ezekiel": 5,
+    "isaiah": 5,
+    "habakkuk": 2,
+    "joel": 2,
+    "samuel2": 2,
+    "amos": 1,
+    "proverbs": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְנֹ֥גַֽהּ סָבִ֑יב",
+      "pron": "미노가흐 사빕",
+      "lemmas": [
+        "נֹגַהּ",
+        "סָבִיב"
+      ],
+      "words": [
+        {
+          "word": "וְנֹ֥גַֽהּ",
+          "lemma": "נֹגַהּ",
+          "strong": "H5051",
+          "pron": "미노가흐"
+        },
+        {
+          "word": "סָבִ֑יב",
+          "lemma": "סָבִיב",
+          "strong": "H5439",
+          "pron": "사빕"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 1:4",
+        "ezekiel 1:27",
+        "ezekiel 1:28"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

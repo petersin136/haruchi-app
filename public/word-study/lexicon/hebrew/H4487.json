@@ -1,6 +1,6 @@
 {
   "lemma": "מָנָה",
-  "pron": "만",
+  "pron": "리메노트",
   "strong": "H4487",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "מְנָא",
       "strong": "H4483",
-      "pron": "",
+      "pron": "멘니",
       "glossKo": "세다(아람)"
     },
     {
       "lemma": "מָנֶה",
       "strong": "H4488",
-      "pron": "",
+      "pron": "마님",
       "glossKo": "마네"
     },
     {
@@ -26,28 +26,102 @@
     {
       "lemma": "מָנָה",
       "strong": "H4490",
-      "pron": "메나트",
+      "pron": "르마나",
       "glossKo": "몫"
     },
     {
       "lemma": "מְנִי",
       "strong": "H4507",
-      "pron": "",
+      "pron": "라메니",
       "glossKo": "므니 신"
     },
     {
       "lemma": "מְנָת",
       "strong": "H4521",
-      "pron": "메나트",
+      "pron": "우메나트",
       "glossKo": "분깃"
     }
   ],
   "defEn": "weigh out",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 28,
   "byBook": {
+    "chronicles1": 4,
+    "jonah": 4,
+    "daniel": 3,
+    "kings1": 3,
     "psalms": 3,
-    "genesis": 2
+    "genesis": 2,
+    "isaiah": 2,
+    "chronicles2": 1,
+    "ecclesiastes": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "kings2": 1,
+    "numbers": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לִמְנוֹת֙ אֶת",
+      "pron": "리메노트 에트",
+      "lemmas": [
+        "מָנָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "לִמְנוֹת֙",
+          "lemma": "מָנָה",
+          "strong": "H4487",
+          "pron": "리메노트"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 13:16",
+        "samuel2 24:1",
+        "kings2 12:10",
+        "chronicles1 21:1",
+        "isaiah 65:12",
+        "daniel 1:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֥א יִמָּנ֖וּ",
+      "pron": "로 리메노트",
+      "lemmas": [
+        "לֹא",
+        "מָנָה"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִמָּנ֖וּ",
+          "lemma": "מָנָה",
+          "strong": "H4487",
+          "pron": "리메노트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 3:8",
+        "kings1 8:5",
+        "chronicles2 5:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

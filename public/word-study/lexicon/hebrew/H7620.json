@@ -12,33 +12,130 @@
     {
       "lemma": "אַשְׁבֵּעַ",
       "strong": "H791",
-      "pron": "",
+      "pron": "아솁베아",
       "glossKo": "아스베아"
     },
     {
       "lemma": "שְׁבוּעָה",
       "strong": "H7621",
-      "pron": "우셰부아트오",
-      "glossKo": "그의 맹세"
+      "pron": "밋셰부아티",
+      "glossKo": "나의 맹세"
     },
     {
       "lemma": "שָׁבַע",
       "strong": "H7650",
-      "pron": "니솁바",
+      "pron": "힛샵아",
       "glossKo": "맹세하다"
     },
     {
       "lemma": "שֶׁבַע",
       "strong": "H7651",
-      "pron": "셰바",
+      "pron": "브십아",
       "glossKo": "일곱"
     }
   ],
   "defEn": "sevened; week",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 20,
   "byBook": {
-    "genesis": 2
+    "daniel": 8,
+    "deuteronomy": 4,
+    "genesis": 2,
+    "chronicles2": 1,
+    "exodus": 1,
+    "ezekiel": 1,
+    "jeremiah": 1,
+    "leviticus": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּבְחַ֥ג הַשָּׁבֻע֖וֹת",
+      "pron": "학 셰부아",
+      "lemmas": [
+        "חַג",
+        "שָׁבוּעַ"
+      ],
+      "words": [
+        {
+          "word": "וּבְחַ֥ג",
+          "lemma": "חַג",
+          "strong": "H2282",
+          "pron": "학"
+        },
+        {
+          "word": "הַשָּׁבֻע֖וֹת",
+          "lemma": "שָׁבוּעַ",
+          "strong": "H7620",
+          "pron": "셰부아"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 34:22",
+        "deuteronomy 16:10",
+        "deuteronomy 16:16",
+        "chronicles2 8:13",
+        "ezekiel 45:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שִׁבְעָ֥ה שָׁבֻעֹ֖ת",
+      "pron": "브십아 셰부아",
+      "lemmas": [
+        "שֶׁבַע",
+        "שָׁבוּעַ"
+      ],
+      "words": [
+        {
+          "word": "שִׁבְעָ֥ה",
+          "lemma": "שֶׁבַע",
+          "strong": "H7651",
+          "pron": "브십아"
+        },
+        {
+          "word": "שָׁבֻעֹ֖ת",
+          "lemma": "שָׁבוּעַ",
+          "strong": "H7620",
+          "pron": "셰부아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 16:9",
+        "daniel 9:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁבֻעִ֖ים יָמִֽים",
+      "pron": "셰부아 욤",
+      "lemmas": [
+        "שָׁבוּעַ",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "שָׁבֻעִ֖ים",
+          "lemma": "שָׁבוּעַ",
+          "strong": "H7620",
+          "pron": "셰부아"
+        },
+        {
+          "word": "יָמִֽים",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 45:21",
+        "daniel 10:2",
+        "daniel 10:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

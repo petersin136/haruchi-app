@@ -12,33 +12,64 @@
     {
       "lemma": "קָצָה",
       "strong": "H7096",
-      "pron": "",
+      "pron": "히케추",
       "glossKo": "끊다"
     },
     {
       "lemma": "קָצֶה",
       "strong": "H7097",
-      "pron": "우비케체",
+      "pron": "미케체",
       "glossKo": "끝"
     },
     {
       "lemma": "קָצִין",
       "strong": "H7101",
-      "pron": "",
+      "pron": "케치네",
       "glossKo": "지도자"
     },
     {
       "lemma": "קְצָת",
       "strong": "H7117",
-      "pron": "",
-      "glossKo": "끝(아람)"
+      "pron": "큿브븟브",
+      "glossKo": "그의 끝(아람)"
     }
   ],
   "defEn": "limit",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 3,
   "byBook": {
-    "psalms": 2
+    "psalms": 2,
+    "isaiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "קַצְוֵי אֶ֑רֶץ",
+      "pron": "카체베 하아레츠",
+      "lemmas": [
+        "קֶצֶו",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "קַצְוֵי",
+          "lemma": "קֶצֶו",
+          "strong": "H7099",
+          "pron": "카체베"
+        },
+        {
+          "word": "אֶ֑רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 48:10",
+        "psalms 65:5",
+        "isaiah 26:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

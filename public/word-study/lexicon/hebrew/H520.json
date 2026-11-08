@@ -12,27 +12,245 @@
     {
       "lemma": "אֵם",
       "strong": "H517",
-      "pron": "임미위",
-      "glossKo": "나의 어머니"
+      "pron": "임모",
+      "glossKo": "그의 어머니"
+    },
+    {
+      "lemma": "אַמָּה",
+      "strong": "H521",
+      "pron": "암민",
+      "glossKo": "규빗(아람)"
+    },
+    {
+      "lemma": "אַמָּה",
+      "strong": "H522",
+      "pron": "암마",
+      "glossKo": "암마"
     },
     {
       "lemma": "אֻמַּה",
       "strong": "H523",
-      "pron": "하움밈",
-      "glossKo": "백성"
+      "pron": "레움모탐",
+      "glossKo": "그들의 백성"
     },
     {
       "lemma": "אֲמָם",
       "strong": "H538",
-      "pron": "",
+      "pron": "아맘",
       "glossKo": "아맘"
     }
   ],
   "defEn": "a mother; a cubit",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 249,
   "byBook": {
-    "genesis": 5
+    "ezekiel": 89,
+    "exodus": 59,
+    "kings1": 45,
+    "chronicles2": 25,
+    "numbers": 6,
+    "genesis": 5,
+    "jeremiah": 4,
+    "kings2": 4,
+    "deuteronomy": 3,
+    "esther": 2,
+    "zechariah": 2,
+    "chronicles1": 1,
+    "isaiah": 1,
+    "joshua": 1,
+    "nehemiah": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בָּֽאַמָּ֔ה וְרֹ֨חַב֙",
+      "pron": "암마 라헵바흐",
+      "lemmas": [
+        "אַמָּה",
+        "רֹחַב"
+      ],
+      "words": [
+        {
+          "word": "בָּֽאַמָּ֔ה",
+          "lemma": "אַמָּה",
+          "strong": "H520",
+          "pron": "암마"
+        },
+        {
+          "word": "וְרֹ֨חַב֙",
+          "lemma": "רֹחַב",
+          "strong": "H7341",
+          "pron": "라헵바흐"
+        }
+      ],
+      "count": 42,
+      "refs": [
+        "genesis 6:15",
+        "exodus 25:23",
+        "exodus 26:2",
+        "exodus 26:8",
+        "exodus 26:16",
+        "exodus 27:1",
+        "exodus 27:18",
+        "exodus 30:2",
+        "exodus 36:9",
+        "exodus 36:15",
+        "exodus 36:21",
+        "exodus 37:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָמֵ֥שׁ אַמּ֖וֹת",
+      "pron": "하메쉬 암마",
+      "lemmas": [
+        "חָמֵשׁ",
+        "אַמָּה"
+      ],
+      "words": [
+        {
+          "word": "חָמֵ֥שׁ",
+          "lemma": "חָמֵשׁ",
+          "strong": "H2568",
+          "pron": "하메쉬"
+        },
+        {
+          "word": "אַמּ֖וֹת",
+          "lemma": "אַמָּה",
+          "strong": "H520",
+          "pron": "암마"
+        }
+      ],
+      "count": 30,
+      "refs": [
+        "exodus 27:1",
+        "exodus 27:18",
+        "exodus 38:1",
+        "exodus 38:18",
+        "kings1 6:6",
+        "kings1 6:10",
+        "kings1 6:24",
+        "kings1 7:16",
+        "kings1 7:23",
+        "chronicles1 11:23",
+        "chronicles2 4:2",
+        "chronicles2 6:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַמָּה֙ אָרְכּ֔וֹ",
+      "pron": "암마 오레크",
+      "lemmas": [
+        "אַמָּה",
+        "אֹרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "אַמָּה֙",
+          "lemma": "אַמָּה",
+          "strong": "H520",
+          "pron": "암마"
+        },
+        {
+          "word": "אָרְכּ֔וֹ",
+          "lemma": "אֹרֶךְ",
+          "strong": "H753",
+          "pron": "오레크"
+        }
+      ],
+      "count": 24,
+      "refs": [
+        "genesis 6:15",
+        "exodus 25:23",
+        "exodus 26:16",
+        "exodus 27:1",
+        "exodus 27:9",
+        "exodus 30:2",
+        "exodus 36:21",
+        "exodus 37:10",
+        "exodus 37:25",
+        "exodus 38:1",
+        "exodus 38:18",
+        "deuteronomy 3:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֶשְׂרִ֣ים אַמָּ֗ה",
+      "pron": "브에세림 암마",
+      "lemmas": [
+        "עֶשְׂרִים",
+        "אַמָּה"
+      ],
+      "words": [
+        {
+          "word": "עֶשְׂרִ֣ים",
+          "lemma": "עֶשְׂרִים",
+          "strong": "H6242",
+          "pron": "브에세림"
+        },
+        {
+          "word": "אַמָּ֗ה",
+          "lemma": "אַמָּה",
+          "strong": "H520",
+          "pron": "암마"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "exodus 26:2",
+        "exodus 27:16",
+        "exodus 36:9",
+        "exodus 38:18",
+        "kings1 6:3",
+        "kings1 6:16",
+        "kings1 6:20",
+        "chronicles2 4:1",
+        "ezekiel 40:21",
+        "ezekiel 40:25",
+        "ezekiel 40:30",
+        "ezekiel 40:33"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַמּ֖וֹת קֹמָתֽוֹ",
+      "pron": "암마 코마타흐",
+      "lemmas": [
+        "אַמָּה",
+        "קוֹמָה"
+      ],
+      "words": [
+        {
+          "word": "אַמּ֖וֹת",
+          "lemma": "אַמָּה",
+          "strong": "H520",
+          "pron": "암마"
+        },
+        {
+          "word": "קֹמָתֽוֹ",
+          "lemma": "קוֹמָה",
+          "strong": "H6967",
+          "pron": "코마타흐"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "genesis 6:15",
+        "exodus 27:1",
+        "exodus 30:2",
+        "exodus 37:25",
+        "exodus 38:1",
+        "kings1 6:2",
+        "kings1 6:10",
+        "kings1 6:20",
+        "kings1 6:23",
+        "kings1 7:2",
+        "kings1 7:15",
+        "kings1 7:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

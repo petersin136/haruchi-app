@@ -12,44 +12,122 @@
     {
       "lemma": "אַשְׁמֻרָה",
       "strong": "H821",
-      "pron": "브아셰무로트",
+      "pron": "브아셰모레트",
       "glossKo": "야경"
     },
     {
       "lemma": "יִשְׁמְרַי",
       "strong": "H3461",
-      "pron": "",
+      "pron": "브이솀라이",
       "glossKo": "이스므래"
+    },
+    {
+      "lemma": "מִשְׁמֶרֶת",
+      "strong": "H4931",
+      "pron": "미셰마렛티",
+      "glossKo": "나의 직임"
     },
     {
       "lemma": "שׁוֹמֵר",
       "strong": "H7763",
-      "pron": "",
+      "pron": "쇼메르",
       "glossKo": "소멜"
     },
     {
       "lemma": "שָׁמִיר",
       "strong": "H8068",
-      "pron": "",
+      "pron": "샤미르",
       "glossKo": "다이아몬드"
     },
     {
       "lemma": "שָׁמַר",
       "strong": "H8104",
-      "pron": "티솀레므",
-      "glossKo": "그들에게 지키다"
+      "pron": "울샴라흐",
+      "glossKo": "그녀에게 지키다"
     }
   ],
   "defEn": "guard; deposit",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 22,
   "byBook": {
-    "genesis": 6
+    "nehemiah": 8,
+    "genesis": 6,
+    "chronicles1": 2,
+    "ezekiel": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "leviticus": 1,
+    "numbers": 1,
+    "proverbs": 1
   },
   "phrases": [
     {
+      "hebrew": "מִשְׁמָ֖ר לְעֻמַּ֥ת מִשְׁמָֽר",
+      "pron": "브미셰마르 르움마트 브미셰마르",
+      "lemmas": [
+        "מִשְׁמָר",
+        "עֻמָּה",
+        "מִשְׁמָר"
+      ],
+      "words": [
+        {
+          "word": "מִשְׁמָ֖ר",
+          "lemma": "מִשְׁמָר",
+          "strong": "H4929",
+          "pron": "브미셰마르"
+        },
+        {
+          "word": "לְעֻמַּ֥ת",
+          "lemma": "עֻמָּה",
+          "strong": "H5980",
+          "pron": "르움마트"
+        },
+        {
+          "word": "מִשְׁמָֽר",
+          "lemma": "מִשְׁמָר",
+          "strong": "H4929",
+          "pron": "브미셰마르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles1 26:16",
+        "nehemiah 12:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֹתָ֜ם בְּמִשְׁמַ֗ר",
+      "pron": "에트 브미셰마르",
+      "lemmas": [
+        "אֵת",
+        "מִשְׁמָר"
+      ],
+      "words": [
+        {
+          "word": "אֹתָ֜ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "בְּמִשְׁמַ֗ר",
+          "lemma": "מִשְׁמָר",
+          "strong": "H4929",
+          "pron": "브미셰마르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 40:3",
+        "genesis 41:10",
+        "numbers 15:34"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "בְּמִשְׁמַ֗ר בֵּ֛ית",
-      "pron": "브미셰마르 베테카",
+      "pron": "브미셰마르 미바이트",
       "lemmas": [
         "מִשְׁמָר",
         "בַּיִת"
@@ -65,7 +143,7 @@
           "word": "בֵּ֛ית",
           "lemma": "בַּיִת",
           "strong": "H1004",
-          "pron": "베테카"
+          "pron": "미바이트"
         }
       ],
       "count": 3,

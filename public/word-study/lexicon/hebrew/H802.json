@@ -1,6 +1,6 @@
 {
   "lemma": "אִשָּׁה",
-  "pron": "에셰트",
+  "pron": "르잇샤",
   "strong": "H802",
   "posKo": "명사",
   "root": {
@@ -12,25 +12,25 @@
     {
       "lemma": "אִישׁ",
       "strong": "H376",
-      "pron": "하이쉬",
+      "pron": "메이쉬",
       "glossKo": "사람"
     },
     {
       "lemma": "אִישׁ",
       "strong": "H377",
-      "pron": "",
-      "glossKo": "사내답게 행하다"
+      "pron": "브히테오샤슈",
+      "glossKo": "사내답게 행하는 이"
     },
     {
       "lemma": "אִישׁ־בֹּשֶׁת",
       "strong": "H378",
-      "pron": "",
+      "pron": "이쉬",
       "glossKo": "이스보셋"
     },
     {
       "lemma": "אִישְׁהוֹד",
       "strong": "H379",
-      "pron": "",
+      "pron": "이셰혿",
       "glossKo": "이스홋"
     },
     {
@@ -48,15 +48,46 @@
   ],
   "defEn": "woman",
   "defKo": "",
-  "countOT": 155,
+  "countOT": 781,
   "byBook": {
     "genesis": 152,
-    "psalms": 3
+    "judges": 69,
+    "samuel1": 54,
+    "samuel2": 49,
+    "deuteronomy": 41,
+    "numbers": 41,
+    "exodus": 38,
+    "kings1": 38,
+    "jeremiah": 36,
+    "leviticus": 35,
+    "proverbs": 25,
+    "ezekiel": 22,
+    "esther": 21,
+    "chronicles1": 20,
+    "chronicles2": 19,
+    "kings2": 19,
+    "ruth": 15,
+    "ezra": 12,
+    "isaiah": 12,
+    "joshua": 10,
+    "nehemiah": 10,
+    "zechariah": 9,
+    "job": 8,
+    "hosea": 5,
+    "ecclesiastes": 3,
+    "lamentations": 3,
+    "malachi": 3,
+    "psalms": 3,
+    "songofsolomon": 3,
+    "amos": 2,
+    "daniel": 2,
+    "micah": 1,
+    "nahum": 1
   },
   "phrases": [
     {
       "hebrew": "אֶת אִשְׁתּ֔וֹ",
-      "pron": "에트 에셰트",
+      "pron": "에트 르잇샤",
       "lemmas": [
         "אֵת",
         "אִשָּׁה"
@@ -72,10 +103,10 @@
           "word": "אִשְׁתּ֔וֹ",
           "lemma": "אִשָּׁה",
           "strong": "H802",
-          "pron": "에셰트"
+          "pron": "르잇샤"
         }
       ],
-      "count": 17,
+      "count": 63,
       "refs": [
         "genesis 4:17",
         "genesis 4:25",
@@ -93,46 +124,46 @@
       "glossKo": ""
     },
     {
-      "hebrew": "אִשָּׁה֙ לִבְנִ֔י",
-      "pron": "에셰트 베니위",
+      "hebrew": "אִשָּׁה֙ אֶת",
+      "pron": "르잇샤 에트",
       "lemmas": [
         "אִשָּׁה",
-        "בֵּן"
+        "אֵת"
       ],
       "words": [
         {
           "word": "אִשָּׁה֙",
           "lemma": "אִשָּׁה",
           "strong": "H802",
-          "pron": "에셰트"
+          "pron": "르잇샤"
         },
         {
-          "word": "לִבְנִ֔י",
-          "lemma": "בֵּן",
-          "strong": "H1121",
-          "pron": "베니위"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         }
       ],
-      "count": 14,
+      "count": 36,
       "refs": [
-        "genesis 6:18",
-        "genesis 7:7",
-        "genesis 7:13",
-        "genesis 8:16",
-        "genesis 8:18",
-        "genesis 24:3",
-        "genesis 24:4",
-        "genesis 24:7",
-        "genesis 24:37",
-        "genesis 24:38",
-        "genesis 24:40",
-        "genesis 24:51"
+        "genesis 12:5",
+        "genesis 12:20",
+        "genesis 14:16",
+        "genesis 19:15",
+        "genesis 26:34",
+        "genesis 30:26",
+        "genesis 32:22",
+        "genesis 33:5",
+        "genesis 34:21",
+        "genesis 36:6",
+        "exodus 4:20",
+        "exodus 21:5"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "תִקַּ֤ח אִשָּׁה֙",
-      "pron": "익카흐 에셰트",
+      "pron": "바익카흐 르잇샤",
       "lemmas": [
         "לָקַח",
         "אִשָּׁה"
@@ -142,16 +173,16 @@
           "word": "תִקַּ֤ח",
           "lemma": "לָקַח",
           "strong": "H3947",
-          "pron": "익카흐"
+          "pron": "바익카흐"
         },
         {
           "word": "אִשָּׁה֙",
           "lemma": "אִשָּׁה",
           "strong": "H802",
-          "pron": "에셰트"
+          "pron": "르잇샤"
         }
       ],
-      "count": 14,
+      "count": 33,
       "refs": [
         "genesis 6:2",
         "genesis 12:15",
@@ -169,74 +200,78 @@
       "glossKo": ""
     },
     {
-      "hebrew": "אִשְׁתּ֜וֹ וְאֶת",
-      "pron": "에셰트 에트",
+      "hebrew": "אֶל הָאִשָּׁ֖ה",
+      "pron": "엘 르잇샤",
       "lemmas": [
-        "אִשָּׁה",
-        "אֵת"
-      ],
-      "words": [
-        {
-          "word": "אִשְׁתּ֜וֹ",
-          "lemma": "אִשָּׁה",
-          "strong": "H802",
-          "pron": "에셰트"
-        },
-        {
-          "word": "וְאֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        }
-      ],
-      "count": 10,
-      "refs": [
-        "genesis 12:5",
-        "genesis 12:20",
-        "genesis 14:16",
-        "genesis 19:15",
-        "genesis 26:34",
-        "genesis 30:26",
-        "genesis 32:22",
-        "genesis 33:5",
-        "genesis 34:21",
-        "genesis 36:6"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "שָׂרָ֣ה אִשְׁתְּךָ֗",
-      "pron": "사라 에셰트",
-      "lemmas": [
-        "שָׂרָה",
+        "אֵל",
         "אִשָּׁה"
       ],
       "words": [
         {
-          "word": "שָׂרָ֣ה",
-          "lemma": "שָׂרָה",
-          "strong": "H8283",
-          "pron": "사라"
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
         },
         {
-          "word": "אִשְׁתְּךָ֗",
+          "word": "הָאִשָּׁ֖ה",
           "lemma": "אִשָּׁה",
           "strong": "H802",
-          "pron": "에셰트"
+          "pron": "르잇샤"
         }
       ],
-      "count": 10,
+      "count": 31,
       "refs": [
-        "genesis 17:19",
-        "genesis 18:9",
-        "genesis 18:10",
-        "genesis 20:2",
-        "genesis 20:14",
-        "genesis 20:18",
-        "genesis 23:19",
-        "genesis 24:36",
-        "genesis 25:10",
-        "genesis 49:31"
+        "genesis 3:1",
+        "genesis 3:4",
+        "genesis 3:16",
+        "genesis 38:8",
+        "genesis 38:9",
+        "genesis 39:8",
+        "exodus 18:6",
+        "exodus 19:15",
+        "leviticus 18:14",
+        "leviticus 18:19",
+        "leviticus 18:20",
+        "numbers 5:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִשָּׁה֙ לִבְנִ֔י",
+      "pron": "르잇샤 바님",
+      "lemmas": [
+        "אִשָּׁה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "אִשָּׁה֙",
+          "lemma": "אִשָּׁה",
+          "strong": "H802",
+          "pron": "르잇샤"
+        },
+        {
+          "word": "לִבְנִ֔י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 30,
+      "refs": [
+        "genesis 6:18",
+        "genesis 7:7",
+        "genesis 7:13",
+        "genesis 8:16",
+        "genesis 8:18",
+        "genesis 24:3",
+        "genesis 24:4",
+        "genesis 24:7",
+        "genesis 24:37",
+        "genesis 24:38",
+        "genesis 24:40",
+        "genesis 24:51"
       ],
       "glossKo": ""
     }

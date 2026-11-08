@@ -1,6 +1,6 @@
 {
   "lemma": "אֶצְבַּע",
-  "pron": "에쳅베오테카",
+  "pron": "에쳅바",
   "strong": "H676",
   "posKo": "명사",
   "root": {
@@ -12,25 +12,25 @@
     {
       "lemma": "אֶצְבַּע",
       "strong": "H677",
-      "pron": "",
+      "pron": "브에쳅베아타",
       "glossKo": "손가락(아람)"
     },
     {
       "lemma": "צָבוּעַ",
       "strong": "H6641",
-      "pron": "",
+      "pron": "차부아",
       "glossKo": "물든 짐승"
     },
     {
       "lemma": "צְבַע",
       "strong": "H6647",
-      "pron": "",
+      "pron": "이체답바",
       "glossKo": "사브낫바네아"
     },
     {
       "lemma": "צֶבַע",
       "strong": "H6648",
-      "pron": "",
+      "pron": "체바임",
       "glossKo": "염료"
     },
     {
@@ -42,9 +42,145 @@
   ],
   "defEn": "sieze; finger",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 31,
   "byBook": {
-    "psalms": 2
+    "leviticus": 13,
+    "isaiah": 4,
+    "exodus": 3,
+    "proverbs": 2,
+    "psalms": 2,
+    "samuel2": 2,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "jeremiah": 1,
+    "numbers": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מִדָּמָהּ֙ בְּאֶצְבָּע֔וֹ",
+      "pron": "데메 에쳅바",
+      "lemmas": [
+        "דָּם",
+        "אֶצְבַּע"
+      ],
+      "words": [
+        {
+          "word": "מִדָּמָהּ֙",
+          "lemma": "דָּם",
+          "strong": "H1818",
+          "pron": "데메"
+        },
+        {
+          "word": "בְּאֶצְבָּע֔וֹ",
+          "lemma": "אֶצְבַּע",
+          "strong": "H676",
+          "pron": "에쳅바"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 4:30",
+        "leviticus 16:14",
+        "leviticus 16:19",
+        "numbers 19:4",
+        "isaiah 59:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶצְבַּ֥ע אֱלֹהִ֖ים",
+      "pron": "에쳅바 엘로힘",
+      "lemmas": [
+        "אֶצְבַּע",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "אֶצְבַּ֥ע",
+          "lemma": "אֶצְבַּע",
+          "strong": "H676",
+          "pron": "에쳅바"
+        },
+        {
+          "word": "אֱלֹהִ֖ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 8:19",
+        "exodus 31:18",
+        "deuteronomy 9:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּאֶצְבָּע֔וֹ וְנָתַ֕ן",
+      "pron": "에쳅바 바잇텐",
+      "lemmas": [
+        "אֶצְבַּע",
+        "נָתַן"
+      ],
+      "words": [
+        {
+          "word": "בְּאֶצְבָּע֔וֹ",
+          "lemma": "אֶצְבַּע",
+          "strong": "H676",
+          "pron": "에쳅바"
+        },
+        {
+          "word": "וְנָתַ֕ן",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 4:25",
+        "leviticus 4:30",
+        "leviticus 4:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּאֶצְבָּע֔וֹ וְנָתַ֕ן עַל",
+      "pron": "에쳅바 바잇텐 알",
+      "lemmas": [
+        "אֶצְבַּע",
+        "נָתַן",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "בְּאֶצְבָּע֔וֹ",
+          "lemma": "אֶצְבַּע",
+          "strong": "H676",
+          "pron": "에쳅바"
+        },
+        {
+          "word": "וְנָתַ֕ן",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 4:25",
+        "leviticus 4:30",
+        "leviticus 4:34"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "נִקָּיוֹן",
-  "pron": "브닉카온",
+  "pron": "우브니케온",
   "strong": "H5356",
   "posKo": "명사",
   "root": {
@@ -12,20 +12,20 @@
     {
       "lemma": "מְנַקִּית",
       "strong": "H4518",
-      "pron": "",
-      "glossKo": "잔"
+      "pron": "움낙키오타으브",
+      "glossKo": "그의 잔"
     },
     {
       "lemma": "נְקֵא",
       "strong": "H5343",
-      "pron": "",
+      "pron": "네케",
       "glossKo": "깨끗한(아람)"
     },
     {
       "lemma": "נָקָה",
       "strong": "H5352",
-      "pron": "낙케니",
-      "glossKo": "나를 면제되다"
+      "pron": "브닉키타",
+      "glossKo": "면제되다"
     },
     {
       "lemma": "נָקִי",
@@ -36,38 +36,40 @@
   ],
   "defEn": "clearness",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 5,
   "byBook": {
     "psalms": 2,
-    "genesis": 1
+    "amos": 1,
+    "genesis": 1,
+    "hosea": 1
   },
   "phrases": [
     {
-      "hebrew": "בְּנִקָּי֣וֹן כַּפָּ֑י",
-      "pron": "브닉카온 브캅파위",
+      "hebrew": "וּבְנִקְיֹ֥ן כַּפַּ֖י",
+      "pron": "우브니케온 르캅",
       "lemmas": [
         "נִקָּיוֹן",
         "כַּף"
       ],
       "words": [
         {
-          "word": "בְּנִקָּי֣וֹן",
+          "word": "וּבְנִקְיֹ֥ן",
           "lemma": "נִקָּיוֹן",
           "strong": "H5356",
-          "pron": "브닉카온"
+          "pron": "우브니케온"
         },
         {
-          "word": "כַּפָּ֑י",
+          "word": "כַּפַּ֖י",
           "lemma": "כַּף",
           "strong": "H3709",
-          "pron": "브캅파위"
+          "pron": "르캅"
         }
       ],
       "count": 3,
       "refs": [
+        "genesis 20:5",
         "psalms 26:6",
-        "psalms 73:13",
-        "genesis 20:5"
+        "psalms 73:13"
       ],
       "glossKo": ""
     }

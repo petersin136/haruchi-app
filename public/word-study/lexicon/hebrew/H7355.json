@@ -1,6 +1,6 @@
 {
   "lemma": "רָחַם",
-  "pron": "에레함카",
+  "pron": "브리함티",
   "strong": "H7355",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "יְרֹחָם",
       "strong": "H3395",
-      "pron": "",
+      "pron": "예로함",
       "glossKo": "여로함"
     },
     {
       "lemma": "יְרַחְמְאֵל",
       "strong": "H3396",
-      "pron": "",
+      "pron": "예라헴엘",
       "glossKo": "여라므엘"
     },
     {
@@ -26,27 +26,196 @@
     {
       "lemma": "רַחַם",
       "strong": "H7356",
-      "pron": "라하메카",
-      "glossKo": "너의 긍휼"
+      "pron": "라하밈",
+      "glossKo": "긍휼"
     },
     {
       "lemma": "רֶחֶם",
       "strong": "H7358",
-      "pron": "메라헴",
+      "pron": "레헴",
       "glossKo": "태"
     },
     {
       "lemma": "רָחָם",
       "strong": "H7360",
-      "pron": "",
+      "pron": "하라함",
       "glossKo": "독수리의 일종"
     }
   ],
   "defEn": "fondle",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 47,
   "byBook": {
-    "psalms": 5
+    "isaiah": 12,
+    "jeremiah": 10,
+    "hosea": 7,
+    "psalms": 5,
+    "deuteronomy": 2,
+    "exodus": 2,
+    "zechariah": 2,
+    "ezekiel": 1,
+    "habakkuk": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְלֹ֣א יְרַחֵ֔מוּ",
+      "pron": "로 브리함티",
+      "lemmas": [
+        "לֹא",
+        "רָחַם"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יְרַחֵ֔מוּ",
+          "lemma": "רָחַם",
+          "strong": "H7355",
+          "pron": "브리함티"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "isaiah 9:17",
+        "isaiah 13:18",
+        "isaiah 27:11",
+        "jeremiah 6:23",
+        "jeremiah 13:14",
+        "jeremiah 21:7",
+        "jeremiah 50:42",
+        "hosea 2:4",
+        "hosea 2:23",
+        "zechariah 1:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְרִחַמְתִּ֖י אֶת",
+      "pron": "브리함티 에트",
+      "lemmas": [
+        "רָחַם",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְרִחַמְתִּ֖י",
+          "lemma": "רָחַם",
+          "strong": "H7355",
+          "pron": "브리함티"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 33:19",
+        "jeremiah 42:12",
+        "hosea 1:6",
+        "hosea 2:23",
+        "zechariah 1:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶרְחָמְךָ֖ יְהוָ֣ה",
+      "pron": "브리함티 여호와",
+      "lemmas": [
+        "רָחַם",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "אֶרְחָמְךָ֖",
+          "lemma": "רָחַם",
+          "strong": "H7355",
+          "pron": "브리함티"
+        },
+        {
+          "word": "יְהוָ֣ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 18:1",
+        "psalms 103:13",
+        "isaiah 14:1",
+        "isaiah 54:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְרַחֵ֔ם כִּ֤י",
+      "pron": "브리함티 키",
+      "lemmas": [
+        "רָחַם",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "יְרַחֵ֔ם",
+          "lemma": "רָחַם",
+          "strong": "H7355",
+          "pron": "브리함티"
+        },
+        {
+          "word": "כִּ֤י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 9:17",
+        "isaiah 30:18",
+        "hosea 2:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּי֩ יְרַחֵ֨ם",
+      "pron": "키 브리함티",
+      "lemmas": [
+        "כִּי",
+        "רָחַם"
+      ],
+      "words": [
+        {
+          "word": "כִּי֩",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "יְרַחֵ֨ם",
+          "lemma": "רָחַם",
+          "strong": "H7355",
+          "pron": "브리함티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 14:1",
+        "isaiah 49:10",
+        "zechariah 10:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

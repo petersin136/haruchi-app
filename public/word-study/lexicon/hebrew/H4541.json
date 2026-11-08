@@ -1,6 +1,6 @@
 {
   "lemma": "מַסֵּכָה",
-  "pron": "르맛세카",
+  "pron": "맛세카",
   "strong": "H4541",
   "posKo": "명사",
   "root": {
@@ -12,39 +12,216 @@
     {
       "lemma": "נְסִיךְ",
       "strong": "H5257",
-      "pron": "네시케모",
+      "pron": "네시캄",
       "glossKo": "그들의 전제로 부은 것"
     },
     {
       "lemma": "נָסַךְ",
       "strong": "H5258",
-      "pron": "나사켓티",
+      "pron": "바얏세크",
       "glossKo": "붓다"
     },
     {
       "lemma": "נָסַךְ",
       "strong": "H5259",
-      "pron": "",
+      "pron": "아네수카",
       "glossKo": "엮다"
     },
     {
       "lemma": "נְסַךְ",
       "strong": "H5260",
-      "pron": "",
+      "pron": "르낫사카",
       "glossKo": "관제하다(아람)"
     },
     {
       "lemma": "נֶסֶךְ",
       "strong": "H5262",
-      "pron": "닛케헴",
-      "glossKo": "그들의 전제"
+      "pron": "네세크",
+      "glossKo": "전제"
     }
   ],
   "defEn": "pouring; fusion; cast",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 28,
   "byBook": {
+    "isaiah": 5,
+    "judges": 5,
+    "chronicles2": 3,
+    "deuteronomy": 3,
+    "exodus": 3,
+    "habakkuk": 1,
+    "hosea": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "leviticus": 1,
+    "nahum": 1,
+    "nehemiah": 1,
+    "numbers": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "פֶּ֣סֶל וּמַסֵּכָ֔ה",
+      "pron": "페셀 맛세카",
+      "lemmas": [
+        "פֶּסֶל",
+        "מַסֵּכָה"
+      ],
+      "words": [
+        {
+          "word": "פֶּ֣סֶל",
+          "lemma": "פֶּסֶל",
+          "strong": "H6459",
+          "pron": "페셀"
+        },
+        {
+          "word": "וּמַסֵּכָ֔ה",
+          "lemma": "מַסֵּכָה",
+          "strong": "H4541",
+          "pron": "맛세카"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 27:15",
+        "judges 17:3",
+        "judges 17:4",
+        "judges 18:14",
+        "nahum 1:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽיַּעֲשֵׂ֖הוּ עֵ֣גֶל מַסֵּכָ֑ה",
+      "pron": "바야아스 에겔 맛세카",
+      "lemmas": [
+        "עָשָׂה",
+        "עֵגֶל",
+        "מַסֵּכָה"
+      ],
+      "words": [
+        {
+          "word": "וַֽיַּעֲשֵׂ֖הוּ",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "עֵ֣גֶל",
+          "lemma": "עֵגֶל",
+          "strong": "H5695",
+          "pron": "에겔"
+        },
+        {
+          "word": "מַסֵּכָ֑ה",
+          "lemma": "מַסֵּכָה",
+          "strong": "H4541",
+          "pron": "맛세카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 32:4",
+        "exodus 32:8",
+        "deuteronomy 9:16",
+        "nehemiah 9:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֵ֖גֶל מַסֵּכָ֑ה",
+      "pron": "에겔 맛세카",
+      "lemmas": [
+        "עֵגֶל",
+        "מַסֵּכָה"
+      ],
+      "words": [
+        {
+          "word": "עֵ֖גֶל",
+          "lemma": "עֵגֶל",
+          "strong": "H5695",
+          "pron": "에겔"
+        },
+        {
+          "word": "מַסֵּכָ֑ה",
+          "lemma": "מַסֵּכָה",
+          "strong": "H4541",
+          "pron": "맛세카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 32:4",
+        "exodus 32:8",
+        "deuteronomy 9:16",
+        "nehemiah 9:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יַעֲשֶׂה֩ פֶ֨סֶל וּמַסֵּכָ֜ה",
+      "pron": "바야아스 페셀 맛세카",
+      "lemmas": [
+        "עָשָׂה",
+        "פֶּסֶל",
+        "מַסֵּכָה"
+      ],
+      "words": [
+        {
+          "word": "יַעֲשֶׂה֩",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "פֶ֨סֶל",
+          "lemma": "פֶּסֶל",
+          "strong": "H6459",
+          "pron": "페셀"
+        },
+        {
+          "word": "וּמַסֵּכָ֜ה",
+          "lemma": "מַסֵּכָה",
+          "strong": "H4541",
+          "pron": "맛세카"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 27:15",
+        "judges 17:3",
+        "judges 17:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַסֵּכָ֑ה וַיֹּ֣אמְר֔וּ",
+      "pron": "맛세카 바요메르",
+      "lemmas": [
+        "מַסֵּכָה",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "מַסֵּכָ֑ה",
+          "lemma": "מַסֵּכָה",
+          "strong": "H4541",
+          "pron": "맛세카"
+        },
+        {
+          "word": "וַיֹּ֣אמְר֔וּ",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 32:4",
+        "judges 18:18",
+        "nehemiah 9:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

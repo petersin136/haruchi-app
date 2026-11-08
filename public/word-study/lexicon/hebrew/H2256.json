@@ -1,6 +1,6 @@
 {
   "lemma": "חֶבֶל",
-  "pron": "하발림",
+  "pron": "헤벨",
   "strong": "H2256",
   "posKo": "명사",
   "root": {
@@ -12,45 +12,219 @@
     {
       "lemma": "חָבַל",
       "strong": "H2254",
-      "pron": "예합벨",
+      "pron": "하볼",
       "glossKo": "묶다"
     },
     {
       "lemma": "חֲבַל",
       "strong": "H2255",
-      "pron": "",
+      "pron": "르합발라",
       "glossKo": "해치다(아람)"
     },
     {
       "lemma": "חֲבֹל",
       "strong": "H2258",
-      "pron": "",
-      "glossKo": "전당물"
+      "pron": "하볼라토",
+      "glossKo": "그의 전당물"
     },
     {
       "lemma": "חֹבֵל",
       "strong": "H2259",
-      "pron": "",
-      "glossKo": "선원"
+      "pron": "홉라이크",
+      "glossKo": "너의 선원"
     },
     {
       "lemma": "חִבֵּל",
       "strong": "H2260",
-      "pron": "",
+      "pron": "힙벨",
       "glossKo": "돛대"
     },
     {
       "lemma": "תַּחְבֻּלָה",
       "strong": "H8458",
-      "pron": "",
-      "glossKo": "지략"
+      "pron": "븟흡블트브",
+      "glossKo": "그의 지략"
     }
   ],
   "defEn": "rope; line",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 62,
   "byBook": {
-    "psalms": 8
+    "psalms": 8,
+    "jeremiah": 7,
+    "isaiah": 6,
+    "job": 5,
+    "joshua": 5,
+    "samuel2": 5,
+    "deuteronomy": 4,
+    "kings1": 3,
+    "zechariah": 3,
+    "zephaniah": 3,
+    "ezekiel": 2,
+    "hosea": 2,
+    "micah": 2,
+    "samuel1": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "ecclesiastes": 1,
+    "esther": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "חֶ֣בֶל אַרְגֹּ֔ב",
+      "pron": "헤벨 아렉곱",
+      "lemmas": [
+        "חֶבֶל",
+        "אַרְגֹּב"
+      ],
+      "words": [
+        {
+          "word": "חֶ֣בֶל",
+          "lemma": "חֶבֶל",
+          "strong": "H2256",
+          "pron": "헤벨"
+        },
+        {
+          "word": "אַרְגֹּ֔ב",
+          "lemma": "אַרְגֹּב",
+          "strong": "H709",
+          "pron": "아렉곱"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 3:4",
+        "deuteronomy 3:13",
+        "deuteronomy 3:14",
+        "kings1 4:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֶ֥בֶל נַחֲלָתֽוֹ",
+      "pron": "헤벨 브나할라",
+      "lemmas": [
+        "חֶבֶל",
+        "נַחֲלָה"
+      ],
+      "words": [
+        {
+          "word": "חֶ֥בֶל",
+          "lemma": "חֶבֶל",
+          "strong": "H2256",
+          "pron": "헤벨"
+        },
+        {
+          "word": "נַחֲלָתֽוֹ",
+          "lemma": "נַחֲלָה",
+          "strong": "H5159",
+          "pron": "브나할라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 32:9",
+        "chronicles1 16:18",
+        "psalms 78:55",
+        "psalms 105:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל חֶ֣בֶל",
+      "pron": "칼 헤벨",
+      "lemmas": [
+        "כֹּל",
+        "חֶבֶל"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "חֶ֣בֶל",
+          "lemma": "חֶבֶל",
+          "strong": "H2256",
+          "pron": "헤벨"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 3:4",
+        "deuteronomy 3:13",
+        "deuteronomy 3:14",
+        "isaiah 33:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽחֲבָלִים֙ יֹֽאחֵז֔וּן",
+      "pron": "헤벨 네에핫",
+      "lemmas": [
+        "חֶבֶל",
+        "אָחַז"
+      ],
+      "words": [
+        {
+          "word": "וַֽחֲבָלִים֙",
+          "lemma": "חֶבֶל",
+          "strong": "H2256",
+          "pron": "헤벨"
+        },
+        {
+          "word": "יֹֽאחֵז֔וּן",
+          "lemma": "אָחַז",
+          "strong": "H270",
+          "pron": "네에핫"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 13:8",
+        "jeremiah 13:21",
+        "jeremiah 49:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל חֶ֣בֶל אַרְגֹּ֔ב",
+      "pron": "칼 헤벨 아렉곱",
+      "lemmas": [
+        "כֹּל",
+        "חֶבֶל",
+        "אַרְגֹּב"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "חֶ֣בֶל",
+          "lemma": "חֶבֶל",
+          "strong": "H2256",
+          "pron": "헤벨"
+        },
+        {
+          "word": "אַרְגֹּ֔ב",
+          "lemma": "אַרְגֹּב",
+          "strong": "H709",
+          "pron": "아렉곱"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 3:4",
+        "deuteronomy 3:13",
+        "deuteronomy 3:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "מִשְׁעֵנָה",
-  "pron": "우미셰안테카",
+  "pron": "미셰안토",
   "strong": "H4938",
   "posKo": "명사",
   "root": {
@@ -12,15 +12,81 @@
     {
       "lemma": "מִשְׁעֵן",
       "strong": "H4937",
-      "pron": "르미셰안",
+      "pron": "미셰안",
       "glossKo": "지팡이"
     }
   ],
   "defEn": "support; sustenance; walking-stick",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 12,
   "byBook": {
-    "psalms": 1
+    "kings2": 4,
+    "isaiah": 2,
+    "exodus": 1,
+    "ezekiel": 1,
+    "judges": 1,
+    "numbers": 1,
+    "psalms": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מִשְׁעֶנֶת֩ הַקָּנֶ֨ה",
+      "pron": "미셰안토 브카네",
+      "lemmas": [
+        "מִשְׁעֵנָה",
+        "קָנֶה"
+      ],
+      "words": [
+        {
+          "word": "מִשְׁעֶנֶת֩",
+          "lemma": "מִשְׁעֵנָה",
+          "strong": "H4938",
+          "pron": "미셰안토"
+        },
+        {
+          "word": "הַקָּנֶ֨ה",
+          "lemma": "קָנֶה",
+          "strong": "H7070",
+          "pron": "브카네"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 18:21",
+        "isaiah 36:6",
+        "ezekiel 29:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל מִשְׁעֶנֶת֩",
+      "pron": "알 미셰안토",
+      "lemmas": [
+        "עַל",
+        "מִשְׁעֵנָה"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "מִשְׁעֶנֶת֩",
+          "lemma": "מִשְׁעֵנָה",
+          "strong": "H4938",
+          "pron": "미셰안토"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 21:19",
+        "kings2 18:21",
+        "isaiah 36:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

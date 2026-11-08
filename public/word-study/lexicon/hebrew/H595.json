@@ -1,6 +1,6 @@
 {
   "lemma": "אָנֹכִי",
-  "pron": "브아노키",
+  "pron": "아노키",
   "strong": "H595",
   "posKo": "대명사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "אֲנַחְנוּ",
       "strong": "H587",
-      "pron": "바아나헤누",
+      "pron": "아나헤누",
       "glossKo": "우리"
     },
     {
@@ -20,107 +20,39 @@
   ],
   "defEn": "I",
   "defKo": "",
-  "countOT": 69,
+  "countOT": 359,
   "byBook": {
+    "deuteronomy": 56,
     "genesis": 56,
-    "psalms": 13
+    "jeremiah": 37,
+    "isaiah": 26,
+    "samuel1": 26,
+    "samuel2": 24,
+    "exodus": 22,
+    "judges": 17,
+    "job": 14,
+    "psalms": 13,
+    "hosea": 11,
+    "amos": 10,
+    "joshua": 9,
+    "kings1": 7,
+    "numbers": 7,
+    "ruth": 7,
+    "zechariah": 5,
+    "jonah": 2,
+    "kings2": 2,
+    "proverbs": 2,
+    "chronicles1": 1,
+    "daniel": 1,
+    "ezekiel": 1,
+    "malachi": 1,
+    "micah": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
-      "hebrew": "הִנֵּ֛ה אָנֹכִ֥י",
-      "pron": "힌네 브아노키",
-      "lemmas": [
-        "הִנֵּה",
-        "אָנֹכִי"
-      ],
-      "words": [
-        {
-          "word": "הִנֵּ֛ה",
-          "lemma": "הִנֵּה",
-          "strong": "H2009",
-          "pron": "힌네"
-        },
-        {
-          "word": "אָנֹכִ֥י",
-          "lemma": "אָנֹכִי",
-          "strong": "H595",
-          "pron": "브아노키"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "genesis 24:13",
-        "genesis 24:43",
-        "genesis 25:32",
-        "genesis 28:15",
-        "genesis 48:21",
-        "genesis 50:5"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "גַם אָנֹכִ֖י",
-      "pron": "브감 브아노키",
-      "lemmas": [
-        "גַּם",
-        "אָנֹכִי"
-      ],
-      "words": [
-        {
-          "word": "גַם",
-          "lemma": "גַּם",
-          "strong": "H1571",
-          "pron": "브감"
-        },
-        {
-          "word": "אָנֹכִ֖י",
-          "lemma": "אָנֹכִי",
-          "strong": "H595",
-          "pron": "브아노키"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "genesis 20:6",
-        "genesis 21:26",
-        "genesis 30:3",
-        "genesis 30:30"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אָנֹכִ֣י עִמָּ֑ךְ",
-      "pron": "브아노키 임오",
-      "lemmas": [
-        "אָנֹכִי",
-        "עִם"
-      ],
-      "words": [
-        {
-          "word": "אָנֹכִ֣י",
-          "lemma": "אָנֹכִי",
-          "strong": "H595",
-          "pron": "브아노키"
-        },
-        {
-          "word": "עִמָּ֑ךְ",
-          "lemma": "עִם",
-          "strong": "H5973",
-          "pron": "임오"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 39:12",
-        "genesis 23:4",
-        "genesis 28:15",
-        "genesis 31:38"
-      ],
-      "glossKo": ""
-    },
-    {
       "hebrew": "אֲשֶׁ֥ר אָנֹכִ֖י",
-      "pron": "아셰르 브아노키",
+      "pron": "아셰르 아노키",
       "lemmas": [
         "אֲשֶׁר",
         "אָנֹכִי"
@@ -136,45 +68,189 @@
           "word": "אָנֹכִ֖י",
           "lemma": "אָנֹכִי",
           "strong": "H595",
-          "pron": "브아노키"
+          "pron": "아노키"
         }
       ],
-      "count": 4,
+      "count": 68,
       "refs": [
         "genesis 24:3",
         "genesis 24:37",
         "genesis 24:42",
-        "genesis 28:20"
+        "genesis 28:20",
+        "exodus 34:11",
+        "numbers 11:21",
+        "deuteronomy 4:1",
+        "deuteronomy 4:2",
+        "deuteronomy 4:8",
+        "deuteronomy 4:40",
+        "deuteronomy 5:1",
+        "deuteronomy 5:31"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְאָנֹכִ֖י הוֹלֵ֣ךְ",
-      "pron": "브아노키 할라크",
+      "hebrew": "אָנֹכִ֥י מְצַוְּךָ֖",
+      "pron": "아노키 바예차브",
       "lemmas": [
         "אָנֹכִי",
-        "הָלַךְ"
+        "צָוָה"
       ],
       "words": [
         {
-          "word": "וְאָנֹכִ֖י",
+          "word": "אָנֹכִ֥י",
           "lemma": "אָנֹכִי",
           "strong": "H595",
-          "pron": "브아노키"
+          "pron": "아노키"
         },
         {
-          "word": "הוֹלֵ֣ךְ",
-          "lemma": "הָלַךְ",
-          "strong": "H1980",
-          "pron": "할라크"
+          "word": "מְצַוְּךָ֖",
+          "lemma": "צָוָה",
+          "strong": "H6680",
+          "pron": "바예차브"
         }
       ],
-      "count": 4,
+      "count": 41,
       "refs": [
-        "genesis 15:2",
-        "genesis 24:42",
+        "exodus 34:11",
+        "deuteronomy 4:2",
+        "deuteronomy 4:40",
+        "deuteronomy 6:2",
+        "deuteronomy 6:6",
+        "deuteronomy 7:11",
+        "deuteronomy 8:1",
+        "deuteronomy 8:11",
+        "deuteronomy 10:13",
+        "deuteronomy 11:8",
+        "deuteronomy 11:13",
+        "deuteronomy 11:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִנֵּ֨ה אָנֹכִ֜י",
+      "pron": "힌네 아노키",
+      "lemmas": [
+        "הִנֵּה",
+        "אָנֹכִי"
+      ],
+      "words": [
+        {
+          "word": "הִנֵּ֨ה",
+          "lemma": "הִנֵּה",
+          "strong": "H2009",
+          "pron": "힌네"
+        },
+        {
+          "word": "אָנֹכִ֜י",
+          "lemma": "אָנֹכִי",
+          "strong": "H595",
+          "pron": "아노키"
+        }
+      ],
+      "count": 36,
+      "refs": [
+        "genesis 24:13",
+        "genesis 24:43",
         "genesis 25:32",
-        "genesis 28:20"
+        "genesis 28:15",
+        "genesis 48:21",
+        "genesis 50:5",
+        "exodus 3:13",
+        "exodus 4:23",
+        "exodus 7:17",
+        "exodus 8:2",
+        "exodus 8:29",
+        "exodus 19:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֛ר אָנֹכִ֥י מְצַוְּךָ֖",
+      "pron": "아셰르 아노키 바예차브",
+      "lemmas": [
+        "אֲשֶׁר",
+        "אָנֹכִי",
+        "צָוָה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֛ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "אָנֹכִ֥י",
+          "lemma": "אָנֹכִי",
+          "strong": "H595",
+          "pron": "아노키"
+        },
+        {
+          "word": "מְצַוְּךָ֖",
+          "lemma": "צָוָה",
+          "strong": "H6680",
+          "pron": "바예차브"
+        }
+      ],
+      "count": 34,
+      "refs": [
+        "exodus 34:11",
+        "deuteronomy 4:2",
+        "deuteronomy 4:40",
+        "deuteronomy 6:2",
+        "deuteronomy 6:6",
+        "deuteronomy 7:11",
+        "deuteronomy 8:1",
+        "deuteronomy 8:11",
+        "deuteronomy 10:13",
+        "deuteronomy 11:8",
+        "deuteronomy 11:13",
+        "deuteronomy 11:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָנֹכִ֥י מְצַוְּךָ֖ הַיּ֑וֹם",
+      "pron": "아노키 바예차브 욤",
+      "lemmas": [
+        "אָנֹכִי",
+        "צָוָה",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "אָנֹכִ֥י",
+          "lemma": "אָנֹכִי",
+          "strong": "H595",
+          "pron": "아노키"
+        },
+        {
+          "word": "מְצַוְּךָ֖",
+          "lemma": "צָוָה",
+          "strong": "H6680",
+          "pron": "바예차브"
+        },
+        {
+          "word": "הַיּ֑וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "exodus 34:11",
+        "deuteronomy 4:40",
+        "deuteronomy 6:6",
+        "deuteronomy 7:11",
+        "deuteronomy 8:1",
+        "deuteronomy 8:11",
+        "deuteronomy 10:13",
+        "deuteronomy 11:8",
+        "deuteronomy 13:18",
+        "deuteronomy 15:5",
+        "deuteronomy 19:9",
+        "deuteronomy 27:10"
       ],
       "glossKo": ""
     }

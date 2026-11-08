@@ -2,7 +2,7 @@
   "lemma": "אֲנָא",
   "pron": "아나",
   "strong": "H576",
-  "posKo": "",
+  "posKo": "대명사",
   "root": {
     "lemma": "אֲנִי",
     "strong": "H589",
@@ -18,7 +18,40 @@
   ],
   "defEn": "I",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 16,
+  "byBook": {
+    "daniel": 14,
+    "ezra": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "אֲנָ֣ה נְבוּכַדְנֶצַּ֗ר",
+      "pron": "아나 늡븍든츠브르",
+      "lemmas": [
+        "אֲנָא",
+        "נְבוּכַדְנֶצַּר"
+      ],
+      "words": [
+        {
+          "word": "אֲנָ֣ה",
+          "lemma": "אֲנָא",
+          "strong": "H576",
+          "pron": "아나"
+        },
+        {
+          "word": "נְבוּכַדְנֶצַּ֗ר",
+          "lemma": "נְבוּכַדְנֶצַּר",
+          "strong": "H5020",
+          "pron": "늡븍든츠브르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 4:4",
+        "daniel 4:34",
+        "daniel 4:37"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

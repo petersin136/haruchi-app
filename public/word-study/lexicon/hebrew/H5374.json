@@ -2,7 +2,7 @@
   "lemma": "נֵרִיָּה",
   "pron": "네리아",
   "strong": "H5374",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נִיר",
     "strong": "H5216",
@@ -12,37 +12,118 @@
     {
       "lemma": "נוּר",
       "strong": "H5135",
-      "pron": "",
+      "pron": "누라",
       "glossKo": "불(아람)"
     },
     {
       "lemma": "נִיר",
       "strong": "H5214",
-      "pron": "",
+      "pron": "니루",
       "glossKo": "땅을 갈다"
     },
     {
       "lemma": "נִיר",
       "strong": "H5216",
-      "pron": "네리위",
-      "glossKo": "나의 등불"
+      "pron": "네로테하",
+      "glossKo": "그녀의 등불"
     },
     {
       "lemma": "נֵר",
       "strong": "H5369",
-      "pron": "",
+      "pron": "네르",
       "glossKo": "넬"
     },
     {
       "lemma": "תַּנּוּר",
       "strong": "H8574",
-      "pron": "크탄누르",
+      "pron": "탄누르",
       "glossKo": "화로"
     }
   ],
   "defEn": "Nerijah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 10,
+  "byBook": {
+    "jeremiah": 10
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶּן נֵ֣רִיָּ֔ה",
+      "pron": "바님 네리아",
+      "lemmas": [
+        "בֵּן",
+        "נֵרִיָּה"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נֵ֣רִיָּ֔ה",
+          "lemma": "נֵרִיָּה",
+          "strong": "H5374",
+          "pron": "네리아"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "jeremiah 32:12",
+        "jeremiah 32:16",
+        "jeremiah 36:4",
+        "jeremiah 36:8",
+        "jeremiah 36:14",
+        "jeremiah 36:32",
+        "jeremiah 43:3",
+        "jeremiah 43:6",
+        "jeremiah 45:1",
+        "jeremiah 51:59"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בָּרוּךְ֙ בֶּן נֵ֣רִיָּ֔ה",
+      "pron": "바루크 바님 네리아",
+      "lemmas": [
+        "בָּרוּךְ",
+        "בֵּן",
+        "נֵרִיָּה"
+      ],
+      "words": [
+        {
+          "word": "בָּרוּךְ֙",
+          "lemma": "בָּרוּךְ",
+          "strong": "H1263",
+          "pron": "바루크"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נֵ֣רִיָּ֔ה",
+          "lemma": "נֵרִיָּה",
+          "strong": "H5374",
+          "pron": "네리아"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "jeremiah 32:12",
+        "jeremiah 32:16",
+        "jeremiah 36:4",
+        "jeremiah 36:8",
+        "jeremiah 36:14",
+        "jeremiah 36:32",
+        "jeremiah 43:3",
+        "jeremiah 43:6",
+        "jeremiah 45:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

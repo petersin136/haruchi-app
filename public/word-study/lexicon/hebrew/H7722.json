@@ -8,33 +8,68 @@
     {
       "lemma": "מְשׁוֹאָה",
       "strong": "H4875",
-      "pron": "",
+      "pron": "우메쇼아",
       "glossKo": "황폐"
     },
     {
       "lemma": "שָׁוְא",
       "strong": "H7723",
-      "pron": "샤베",
+      "pron": "라샤베",
       "glossKo": "헛된 것"
     },
     {
       "lemma": "שִׁיאוֹן",
       "strong": "H7866",
-      "pron": "",
+      "pron": "브시온",
       "glossKo": "시온"
     },
     {
       "lemma": "תְּשֻׁאָה",
       "strong": "H8663",
-      "pron": "",
+      "pron": "테슈오트",
       "glossKo": "황폐"
     }
   ],
   "defEn": "tempest",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 13,
   "byBook": {
-    "psalms": 4
+    "psalms": 4,
+    "job": 3,
+    "isaiah": 2,
+    "proverbs": 2,
+    "ezekiel": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "שׁוֹאָ֥ה וּמְשֹׁאָֽה",
+      "pron": "쇼아 우메쇼아",
+      "lemmas": [
+        "שׁוֹא",
+        "מְשׁוֹאָה"
+      ],
+      "words": [
+        {
+          "word": "שׁוֹאָ֥ה",
+          "lemma": "שׁוֹא",
+          "strong": "H7722",
+          "pron": "쇼아"
+        },
+        {
+          "word": "וּמְשֹׁאָֽה",
+          "lemma": "מְשׁוֹאָה",
+          "strong": "H4875",
+          "pron": "우메쇼아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 30:3",
+        "job 38:27",
+        "zephaniah 1:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

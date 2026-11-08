@@ -1,6 +1,6 @@
 {
   "lemma": "פָּרַץ",
-  "pron": "페라쳇타누",
+  "pron": "우파라쳇타",
   "strong": "H6555",
   "posKo": "동사",
   "root": null,
@@ -8,8 +8,8 @@
     {
       "lemma": "מִפְרָץ",
       "strong": "H4664",
-      "pron": "",
-      "glossKo": "갈라진 곳"
+      "pron": "밉라차으브",
+      "glossKo": "그의 갈라진 곳"
     },
     {
       "lemma": "פְּרִיץ",
@@ -20,16 +20,149 @@
     {
       "lemma": "פֶּרֶץ",
       "strong": "H6556",
-      "pron": "바페레츠",
+      "pron": "파레츠",
       "glossKo": "터진 곳"
     }
   ],
   "defEn": "break",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 50,
   "byBook": {
+    "chronicles2": 7,
+    "chronicles1": 5,
+    "nehemiah": 5,
     "genesis": 4,
-    "psalms": 4
+    "psalms": 4,
+    "samuel2": 4,
+    "exodus": 3,
+    "job": 3,
+    "samuel1": 3,
+    "ecclesiastes": 2,
+    "hosea": 2,
+    "isaiah": 2,
+    "kings2": 2,
+    "micah": 2,
+    "proverbs": 2
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יִפְרֹ֥ץ יְהוָֽה",
+      "pron": "우파라쳇타 여호와",
+      "lemmas": [
+        "פָּרַץ",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "יִפְרֹ֥ץ",
+          "lemma": "פָּרַץ",
+          "strong": "H6555",
+          "pron": "우파라쳇타"
+        },
+        {
+          "word": "יְהוָֽה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 19:22",
+        "samuel2 5:20",
+        "samuel2 6:8",
+        "chronicles1 13:11",
+        "chronicles1 15:13",
+        "chronicles2 20:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּפְרֹץ֩ בְּחוֹמַ֨ת",
+      "pron": "우파라쳇타 호마",
+      "lemmas": [
+        "פָּרַץ",
+        "חוֹמָה"
+      ],
+      "words": [
+        {
+          "word": "וַיִּפְרֹץ֩",
+          "lemma": "פָּרַץ",
+          "strong": "H6555",
+          "pron": "우파라쳇타"
+        },
+        {
+          "word": "בְּחוֹמַ֨ת",
+          "lemma": "חוֹמָה",
+          "strong": "H2346",
+          "pron": "호마"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 14:13",
+        "chronicles2 25:23",
+        "nehemiah 4:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְר֣וּשָׁלִַ֔ם וַיִּפְרֹץ֩",
+      "pron": "예루살렘 우파라쳇타",
+      "lemmas": [
+        "יְרוּשָׁלִַ͏ם",
+        "פָּרַץ"
+      ],
+      "words": [
+        {
+          "word": "יְר֣וּשָׁלִַ֔ם",
+          "lemma": "יְרוּשָׁלִַ͏ם",
+          "strong": "H3389",
+          "pron": "예루살렘"
+        },
+        {
+          "word": "וַיִּפְרֹץ֩",
+          "lemma": "פָּרַץ",
+          "strong": "H6555",
+          "pron": "우파라쳇타"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 14:13",
+        "chronicles2 25:23",
+        "nehemiah 1:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פָּרַ֣צְתָּ גְדֵרֶ֑יהָ",
+      "pron": "우파라쳇타 가데르",
+      "lemmas": [
+        "פָּרַץ",
+        "גָּדֵר"
+      ],
+      "words": [
+        {
+          "word": "פָּרַ֣צְתָּ",
+          "lemma": "פָּרַץ",
+          "strong": "H6555",
+          "pron": "우파라쳇타"
+        },
+        {
+          "word": "גְדֵרֶ֑יהָ",
+          "lemma": "גָּדֵר",
+          "strong": "H1447",
+          "pron": "가데르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 80:12",
+        "ecclesiastes 10:8",
+        "isaiah 5:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

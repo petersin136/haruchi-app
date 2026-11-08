@@ -1,6 +1,6 @@
 {
   "lemma": "כִּלְיָה",
-  "pron": "우켈라오트",
+  "pron": "아켈라오트",
   "strong": "H3629",
   "posKo": "명사",
   "root": {
@@ -12,21 +12,227 @@
     {
       "lemma": "כְּלִי",
       "strong": "H3627",
-      "pron": "키켈리",
+      "pron": "켈레",
       "glossKo": "그릇"
     },
     {
       "lemma": "כְּלִיא",
       "strong": "H3628",
-      "pron": "",
+      "pron": "클리",
       "glossKo": "옥(아람)"
     }
   ],
   "defEn": "kidney; organ; mind",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 31,
   "byBook": {
-    "psalms": 5
+    "leviticus": 14,
+    "psalms": 5,
+    "jeremiah": 4,
+    "exodus": 2,
+    "job": 2,
+    "deuteronomy": 1,
+    "isaiah": 1,
+    "lamentations": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הַכְּלָיֹ֔ת וְאֶת",
+      "pron": "아켈라오트 에트",
+      "lemmas": [
+        "כִּלְיָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הַכְּלָיֹ֔ת",
+          "lemma": "כִּלְיָה",
+          "strong": "H3629",
+          "pron": "아켈라오트"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 29:13",
+        "exodus 29:22",
+        "leviticus 3:4",
+        "leviticus 3:10",
+        "leviticus 3:15",
+        "leviticus 4:9",
+        "leviticus 7:4",
+        "leviticus 8:16",
+        "leviticus 8:25",
+        "leviticus 9:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַכְּלָיֹ֔ת וְאֶת הַחֵ֨לֶב֙",
+      "pron": "아켈라오트 에트 우메헬베헨",
+      "lemmas": [
+        "כִּלְיָה",
+        "אֵת",
+        "חֶלֶב"
+      ],
+      "words": [
+        {
+          "word": "הַכְּלָיֹ֔ת",
+          "lemma": "כִּלְיָה",
+          "strong": "H3629",
+          "pron": "아켈라오트"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַחֵ֨לֶב֙",
+          "lemma": "חֶלֶב",
+          "strong": "H2459",
+          "pron": "우메헬베헨"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 29:13",
+        "exodus 29:22",
+        "leviticus 3:4",
+        "leviticus 3:10",
+        "leviticus 3:15",
+        "leviticus 4:9",
+        "leviticus 7:4",
+        "leviticus 8:16",
+        "leviticus 8:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֵת֙ שְׁתֵּ֣י הַכְּלָיֹ֔ת",
+      "pron": "에트 셰네 아켈라오트",
+      "lemmas": [
+        "אֵת",
+        "שְׁנַיִם",
+        "כִּלְיָה"
+      ],
+      "words": [
+        {
+          "word": "וְאֵת֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שְׁתֵּ֣י",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        },
+        {
+          "word": "הַכְּלָיֹ֔ת",
+          "lemma": "כִּלְיָה",
+          "strong": "H3629",
+          "pron": "아켈라오트"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 29:13",
+        "exodus 29:22",
+        "leviticus 3:4",
+        "leviticus 3:10",
+        "leviticus 3:15",
+        "leviticus 4:9",
+        "leviticus 7:4",
+        "leviticus 8:16",
+        "leviticus 8:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁתֵּ֣י הַכְּלָיֹ֔ת",
+      "pron": "셰네 아켈라오트",
+      "lemmas": [
+        "שְׁנַיִם",
+        "כִּלְיָה"
+      ],
+      "words": [
+        {
+          "word": "שְׁתֵּ֣י",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        },
+        {
+          "word": "הַכְּלָיֹ֔ת",
+          "lemma": "כִּלְיָה",
+          "strong": "H3629",
+          "pron": "아켈라오트"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 29:13",
+        "exodus 29:22",
+        "leviticus 3:4",
+        "leviticus 3:10",
+        "leviticus 3:15",
+        "leviticus 4:9",
+        "leviticus 7:4",
+        "leviticus 8:16",
+        "leviticus 8:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁתֵּ֣י הַכְּלָיֹ֔ת וְאֶת",
+      "pron": "셰네 아켈라오트 에트",
+      "lemmas": [
+        "שְׁנַיִם",
+        "כִּלְיָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "שְׁתֵּ֣י",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        },
+        {
+          "word": "הַכְּלָיֹ֔ת",
+          "lemma": "כִּלְיָה",
+          "strong": "H3629",
+          "pron": "아켈라오트"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 29:13",
+        "exodus 29:22",
+        "leviticus 3:4",
+        "leviticus 3:10",
+        "leviticus 3:15",
+        "leviticus 4:9",
+        "leviticus 7:4",
+        "leviticus 8:16",
+        "leviticus 8:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

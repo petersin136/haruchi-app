@@ -1,8 +1,8 @@
 {
   "lemma": "מָנֶה",
-  "pron": "마네",
+  "pron": "마님",
   "strong": "H4488",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "מָנָה",
     "strong": "H4487",
@@ -12,13 +12,13 @@
     {
       "lemma": "מְנָא",
       "strong": "H4483",
-      "pron": "",
+      "pron": "멘니",
       "glossKo": "세다(아람)"
     },
     {
       "lemma": "מָנָה",
       "strong": "H4487",
-      "pron": "만",
+      "pron": "리메노트",
       "glossKo": "세다"
     },
     {
@@ -30,25 +30,60 @@
     {
       "lemma": "מָנָה",
       "strong": "H4490",
-      "pron": "메나트",
+      "pron": "르마나",
       "glossKo": "몫"
     },
     {
       "lemma": "מְנִי",
       "strong": "H4507",
-      "pron": "",
+      "pron": "라메니",
       "glossKo": "므니 신"
     },
     {
       "lemma": "מְנָת",
       "strong": "H4521",
-      "pron": "메나트",
+      "pron": "우메나트",
       "glossKo": "분깃"
     }
   ],
   "defEn": "fixed weight; measured amount; maneh; mina",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "nehemiah": 2,
+    "ezekiel": 1,
+    "ezra": 1,
+    "kings1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְכֶ֕סֶף מָנִ֖ים",
+      "pron": "바케셉 마님",
+      "lemmas": [
+        "כֶּסֶף",
+        "מָנֶה"
+      ],
+      "words": [
+        {
+          "word": "וְכֶ֕סֶף",
+          "lemma": "כֶּסֶף",
+          "strong": "H3701",
+          "pron": "바케셉"
+        },
+        {
+          "word": "מָנִ֖ים",
+          "lemma": "מָנֶה",
+          "strong": "H4488",
+          "pron": "마님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 2:69",
+        "nehemiah 7:71",
+        "nehemiah 7:72"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

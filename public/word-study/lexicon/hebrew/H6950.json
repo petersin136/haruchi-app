@@ -1,8 +1,8 @@
 {
   "lemma": "קָהַל",
-  "pron": "카할",
+  "pron": "바익카헬",
   "strong": "H6950",
-  "posKo": "",
+  "posKo": "동사",
   "root": null,
   "family": [
     {
@@ -14,37 +14,204 @@
     {
       "lemma": "קָהָל",
       "strong": "H6951",
-      "pron": "카할",
+      "pron": "리케할",
       "glossKo": "총회"
     },
     {
       "lemma": "קְהִלָּה",
       "strong": "H6952",
-      "pron": "",
+      "pron": "케힐라트",
       "glossKo": "총회"
     },
     {
       "lemma": "קֹהֶלֶת",
       "strong": "H6953",
-      "pron": "",
+      "pron": "코헬레트",
       "glossKo": "전도자"
     },
     {
       "lemma": "קְהֵלָתָה",
       "strong": "H6954",
-      "pron": "",
+      "pron": "비케헬라타",
       "glossKo": "그헬라다"
     },
     {
       "lemma": "קָלַהּ",
       "strong": "H7035",
-      "pron": "",
+      "pron": "브윅르흐브",
       "glossKo": "모으다"
     }
   ],
   "defEn": "convoke",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 39,
+  "byBook": {
+    "numbers": 9,
+    "esther": 5,
+    "chronicles2": 4,
+    "chronicles1": 3,
+    "deuteronomy": 3,
+    "kings1": 3,
+    "exodus": 2,
+    "ezekiel": 2,
+    "joshua": 2,
+    "leviticus": 2,
+    "jeremiah": 1,
+    "job": 1,
+    "judges": 1,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וַיַּקְהֵל֩ אֶת",
+      "pron": "바익카헬 에트",
+      "lemmas": [
+        "קָהַל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיַּקְהֵל֩",
+          "lemma": "קָהַל",
+          "strong": "H6950",
+          "pron": "바익카헬"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "numbers 8:9",
+        "numbers 10:7",
+        "numbers 20:8",
+        "deuteronomy 4:10",
+        "deuteronomy 31:12",
+        "kings1 12:21",
+        "chronicles2 11:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַקְהֵ֑ל אֶל",
+      "pron": "바익카헬 엘",
+      "lemmas": [
+        "קָהַל",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "הַקְהֵ֑ל",
+          "lemma": "קָהַל",
+          "strong": "H6950",
+          "pron": "바익카헬"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 8:3",
+        "deuteronomy 31:28",
+        "kings1 8:2",
+        "chronicles2 5:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּֽקָּהֲל֞וּ עַל",
+      "pron": "바익카헬 알",
+      "lemmas": [
+        "קָהַל",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "וַיִּֽקָּהֲל֞וּ",
+          "lemma": "קָהַל",
+          "strong": "H6950",
+          "pron": "바익카헬"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 16:3",
+        "numbers 16:19",
+        "numbers 20:2",
+        "ezekiel 38:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָעֵדָ֖ה הַקְהֵ֑ל",
+      "pron": "아다트 바익카헬",
+      "lemmas": [
+        "עֵדָה",
+        "קָהַל"
+      ],
+      "words": [
+        {
+          "word": "הָעֵדָ֖ה",
+          "lemma": "עֵדָה",
+          "strong": "H5712",
+          "pron": "아다트"
+        },
+        {
+          "word": "הַקְהֵ֑ל",
+          "lemma": "קָהַל",
+          "strong": "H6950",
+          "pron": "바익카헬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 8:3",
+        "numbers 1:18",
+        "numbers 20:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיַּקְהֵ֤ל דָּוִיד֙",
+      "pron": "바익카헬 다윗",
+      "lemmas": [
+        "קָהַל",
+        "דָּוִד"
+      ],
+      "words": [
+        {
+          "word": "וַיַּקְהֵ֤ל",
+          "lemma": "קָהַל",
+          "strong": "H6950",
+          "pron": "바익카헬"
+        },
+        {
+          "word": "דָּוִיד֙",
+          "lemma": "דָּוִד",
+          "strong": "H1732",
+          "pron": "다윗"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 13:5",
+        "chronicles1 15:3",
+        "chronicles1 28:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

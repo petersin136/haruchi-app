@@ -1,6 +1,6 @@
 {
   "lemma": "לֵב",
-  "pron": "브립비위",
+  "pron": "립보",
   "strong": "H3820",
   "posKo": "명사",
   "root": {
@@ -12,20 +12,20 @@
     {
       "lemma": "לֵב",
       "strong": "H3821",
-      "pron": "",
-      "glossKo": "마음(아람)"
+      "pron": "벨립비",
+      "glossKo": "나의 마음(아람)"
     },
     {
       "lemma": "לֵבָב",
       "strong": "H3824",
-      "pron": "비레밥켐",
-      "glossKo": "너희의 마음"
+      "pron": "레바비",
+      "glossKo": "나의 마음"
     },
     {
       "lemma": "לְבַב",
       "strong": "H3825",
-      "pron": "",
-      "glossKo": "마음(아람)"
+      "pron": "립바크",
+      "glossKo": "너의 마음(아람)"
     },
     {
       "lemma": "לִבָּה",
@@ -36,15 +36,160 @@
   ],
   "defEn": "heart",
   "defKo": "",
-  "countOT": 113,
+  "countOT": 596,
   "byBook": {
     "psalms": 100,
-    "genesis": 13
+    "proverbs": 93,
+    "jeremiah": 58,
+    "exodus": 46,
+    "ecclesiastes": 41,
+    "ezekiel": 41,
+    "isaiah": 31,
+    "job": 20,
+    "samuel2": 18,
+    "samuel1": 17,
+    "chronicles2": 16,
+    "judges": 14,
+    "kings1": 14,
+    "genesis": 13,
+    "hosea": 9,
+    "lamentations": 9,
+    "chronicles1": 8,
+    "kings2": 6,
+    "nehemiah": 6,
+    "deuteronomy": 4,
+    "esther": 4,
+    "malachi": 4,
+    "numbers": 4,
+    "zechariah": 4,
+    "songofsolomon": 3,
+    "daniel": 2,
+    "ezra": 2,
+    "joshua": 2,
+    "obadiah": 2,
+    "ruth": 2,
+    "amos": 1,
+    "nahum": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "בְּכָל לִבִּ֑י",
-      "pron": "브콜 브립비위",
+      "hebrew": "אֶת לֵ֣ב",
+      "pron": "에트 립보",
+      "lemmas": [
+        "אֵת",
+        "לֵב"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "לֵ֣ב",
+          "lemma": "לֵב",
+          "strong": "H3820",
+          "pron": "립보"
+        }
+      ],
+      "count": 37,
+      "refs": [
+        "genesis 31:20",
+        "exodus 4:21",
+        "exodus 7:3",
+        "exodus 8:15",
+        "exodus 8:32",
+        "exodus 9:12",
+        "exodus 10:1",
+        "exodus 10:20",
+        "exodus 10:27",
+        "exodus 11:10",
+        "exodus 14:4",
+        "exodus 14:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל לֵֽב",
+      "pron": "알 립보",
+      "lemmas": [
+        "עַל",
+        "לֵב"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "לֵֽב",
+          "lemma": "לֵב",
+          "strong": "H3820",
+          "pron": "립보"
+        }
+      ],
+      "count": 36,
+      "refs": [
+        "genesis 34:3",
+        "genesis 50:21",
+        "exodus 28:29",
+        "exodus 28:30",
+        "judges 19:3",
+        "ruth 2:13",
+        "samuel1 1:13",
+        "samuel2 19:7",
+        "kings2 12:4",
+        "chronicles2 7:11",
+        "chronicles2 30:22",
+        "proverbs 6:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל לִבּֽוֹ",
+      "pron": "엘 립보",
+      "lemmas": [
+        "אֵל",
+        "לֵב"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "לִבּֽוֹ",
+          "lemma": "לֵב",
+          "strong": "H3820",
+          "pron": "립보"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "genesis 6:6",
+        "genesis 8:21",
+        "genesis 24:45",
+        "exodus 9:14",
+        "samuel1 27:1",
+        "samuel2 13:33",
+        "samuel2 18:3",
+        "samuel2 19:19",
+        "kings1 8:47",
+        "nehemiah 2:12",
+        "nehemiah 7:5",
+        "job 7:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכָל לִבָּֽם",
+      "pron": "칼 립보",
       "lemmas": [
         "כֹּל",
         "לֵב"
@@ -54,51 +199,59 @@
           "word": "בְּכָל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
-          "word": "לִבִּ֑י",
+          "word": "לִבָּֽם",
           "lemma": "לֵב",
           "strong": "H3820",
-          "pron": "브립비위"
+          "pron": "립보"
         }
       ],
-      "count": 8,
+      "count": 21,
       "refs": [
+        "judges 16:17",
+        "judges 16:18",
+        "kings1 8:23",
+        "kings2 23:3",
+        "chronicles2 6:14",
+        "chronicles2 6:38",
         "psalms 9:1",
         "psalms 119:2",
         "psalms 119:10",
         "psalms 119:34",
         "psalms 119:58",
-        "psalms 119:69",
-        "psalms 119:145",
-        "psalms 138:1"
+        "psalms 119:69"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בְּ֝לִבּ֗וֹ לֹ֣א",
-      "pron": "브립비위 로",
+      "hebrew": "לִבּ֔וֹ וְלֹ֥א",
+      "pron": "립보 로",
       "lemmas": [
         "לֵב",
         "לֹא"
       ],
       "words": [
         {
-          "word": "בְּ֝לִבּ֗וֹ",
+          "word": "לִבּ֔וֹ",
           "lemma": "לֵב",
           "strong": "H3820",
-          "pron": "브립비위"
+          "pron": "립보"
         },
         {
-          "word": "לֹ֣א",
+          "word": "וְלֹ֥א",
           "lemma": "לֹא",
           "strong": "H3808",
           "pron": "로"
         }
       ],
-      "count": 8,
+      "count": 17,
       "refs": [
+        "genesis 8:21",
+        "exodus 4:21",
+        "exodus 8:15",
+        "samuel1 6:6",
         "psalms 10:13",
         "psalms 37:31",
         "psalms 66:18",
@@ -106,104 +259,7 @@
         "psalms 78:37",
         "psalms 112:8",
         "psalms 131:1",
-        "genesis 8:21"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אָמַ֣ר בְּ֭לִבּוֹ",
-      "pron": "아마르 브립비위",
-      "lemmas": [
-        "אָמַר",
-        "לֵב"
-      ],
-      "words": [
-        {
-          "word": "אָמַ֣ר",
-          "lemma": "אָמַר",
-          "strong": "H559",
-          "pron": "아마르"
-        },
-        {
-          "word": "בְּ֭לִבּוֹ",
-          "lemma": "לֵב",
-          "strong": "H3820",
-          "pron": "브립비위"
-        }
-      ],
-      "count": 7,
-      "refs": [
-        "psalms 10:6",
-        "psalms 10:11",
-        "psalms 10:13",
-        "psalms 27:8",
-        "psalms 35:25",
-        "psalms 74:8",
-        "genesis 17:17"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יִשְׁרֵי לֵֽב",
-      "pron": "이셰레 브립비위",
-      "lemmas": [
-        "יָשָׁר",
-        "לֵב"
-      ],
-      "words": [
-        {
-          "word": "יִשְׁרֵי",
-          "lemma": "יָשָׁר",
-          "strong": "H3477",
-          "pron": "이셰레"
-        },
-        {
-          "word": "לֵֽב",
-          "lemma": "לֵב",
-          "strong": "H3820",
-          "pron": "브립비위"
-        }
-      ],
-      "count": 7,
-      "refs": [
-        "psalms 7:10",
-        "psalms 11:2",
-        "psalms 32:11",
-        "psalms 36:10",
-        "psalms 64:10",
-        "psalms 94:15",
-        "psalms 97:11"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "תָּכִ֥ין לִ֝בָּ֗ם",
-      "pron": "네코나 브립비위",
-      "lemmas": [
-        "כּוּן",
-        "לֵב"
-      ],
-      "words": [
-        {
-          "word": "תָּכִ֥ין",
-          "lemma": "כּוּן",
-          "strong": "H3559",
-          "pron": "네코나"
-        },
-        {
-          "word": "לִ֝בָּ֗ם",
-          "lemma": "לֵב",
-          "strong": "H3820",
-          "pron": "브립비위"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "psalms 10:17",
-        "psalms 57:7",
-        "psalms 78:8",
-        "psalms 108:1",
-        "psalms 112:7"
+        "proverbs 17:20"
       ],
       "glossKo": ""
     }

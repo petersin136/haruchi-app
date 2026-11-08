@@ -1,6 +1,6 @@
 {
   "lemma": "זָעַם",
-  "pron": "조엠",
+  "pron": "조아마",
   "strong": "H2194",
   "posKo": "동사",
   "root": null,
@@ -14,9 +14,46 @@
   ],
   "defEn": "foam; be enraged",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 12,
   "byBook": {
-    "psalms": 1
+    "numbers": 3,
+    "proverbs": 3,
+    "daniel": 1,
+    "isaiah": 1,
+    "malachi": 1,
+    "micah": 1,
+    "psalms": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "זָעַ֖ם יְהוָֽה",
+      "pron": "조아마 여호와",
+      "lemmas": [
+        "זָעַם",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "זָעַ֖ם",
+          "lemma": "זָעַם",
+          "strong": "H2194",
+          "pron": "조아마"
+        },
+        {
+          "word": "יְהוָֽה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 23:8",
+        "proverbs 22:14",
+        "malachi 1:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

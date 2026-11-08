@@ -1,6 +1,6 @@
 {
   "lemma": "בָּלָה",
-  "pron": "발루",
+  "pron": "벨로티",
   "strong": "H1086",
   "posKo": "동사",
   "root": null,
@@ -14,25 +14,25 @@
     {
       "lemma": "בְּלָא",
       "strong": "H1080",
-      "pron": "",
+      "pron": "예발레",
       "glossKo": "쇠퇴시키다(아람)"
     },
     {
       "lemma": "בָּלֶה",
       "strong": "H1087",
-      "pron": "",
+      "pron": "발림",
       "glossKo": "낡은"
     },
     {
       "lemma": "בְּלוֹ",
       "strong": "H1093",
-      "pron": "",
+      "pron": "벨로",
       "glossKo": "공물(아람)"
     },
     {
       "lemma": "בְּלוֹא",
       "strong": "H1094",
-      "pron": "",
+      "pron": "벨로에",
       "glossKo": "헌 옷"
     },
     {
@@ -44,10 +44,76 @@
   ],
   "defEn": "fail",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 16,
   "byBook": {
+    "deuteronomy": 3,
+    "isaiah": 3,
     "psalms": 3,
-    "genesis": 1
+    "job": 2,
+    "chronicles1": 1,
+    "genesis": 1,
+    "joshua": 1,
+    "lamentations": 1,
+    "nehemiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹ֤א בָֽלְתָה֙",
+      "pron": "로 벨로티",
+      "lemmas": [
+        "לֹא",
+        "בָּלָה"
+      ],
+      "words": [
+        {
+          "word": "לֹ֤א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "בָֽלְתָה֙",
+          "lemma": "בָּלָה",
+          "strong": "H1086",
+          "pron": "벨로티"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 8:4",
+        "deuteronomy 29:5",
+        "nehemiah 9:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַּבֶּ֣גֶד יִבְל֑וּ",
+      "pron": "우베가딤 벨로티",
+      "lemmas": [
+        "בֶּגֶד",
+        "בָּלָה"
+      ],
+      "words": [
+        {
+          "word": "כַּבֶּ֣גֶד",
+          "lemma": "בֶּגֶד",
+          "strong": "H899",
+          "pron": "우베가딤"
+        },
+        {
+          "word": "יִבְל֑וּ",
+          "lemma": "בָּלָה",
+          "strong": "H1086",
+          "pron": "벨로티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 102:26",
+        "isaiah 50:9",
+        "isaiah 51:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

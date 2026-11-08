@@ -18,28 +18,208 @@
     {
       "lemma": "פָּתִיל",
       "strong": "H6616",
-      "pron": "우페틸레카",
+      "pron": "웁틸레카",
       "glossKo": "너의 노끈"
     },
     {
       "lemma": "פָּתַל",
       "strong": "H6617",
-      "pron": "티텝팟탈",
+      "pron": "닙탈티",
       "glossKo": "꼬다"
     },
     {
       "lemma": "פְּתַלְתֹּל",
       "strong": "H6618",
-      "pron": "",
+      "pron": "우페탈톨",
       "glossKo": "왜곡된"
     }
   ],
   "defEn": "Naphtali",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 51,
   "byBook": {
+    "numbers": 11,
+    "chronicles1": 7,
+    "judges": 7,
+    "joshua": 6,
+    "deuteronomy": 4,
     "genesis": 4,
+    "ezekiel": 3,
+    "kings1": 3,
+    "chronicles2": 2,
+    "exodus": 1,
+    "isaiah": 1,
+    "kings2": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לִבְנֵ֣י נַפְתָּלִ֔י",
+      "pron": "바님 납탈리",
+      "lemmas": [
+        "בֵּן",
+        "נַפְתָּלִי"
+      ],
+      "words": [
+        {
+          "word": "לִבְנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נַפְתָּלִ֔י",
+          "lemma": "נַפְתָּלִי",
+          "strong": "H5321",
+          "pron": "납탈리"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "genesis 46:24",
+        "numbers 1:42",
+        "numbers 2:29",
+        "numbers 7:78",
+        "numbers 10:27",
+        "numbers 26:48",
+        "numbers 34:28",
+        "joshua 19:32",
+        "joshua 19:39",
+        "judges 4:6",
+        "chronicles1 7:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמִמַּטֵּ֨ה נַפְתָּלִ֜י",
+      "pron": "우맏데카 납탈리",
+      "lemmas": [
+        "מַטֶּה",
+        "נַפְתָּלִי"
+      ],
+      "words": [
+        {
+          "word": "וּמִמַּטֵּ֨ה",
+          "lemma": "מַטֶּה",
+          "strong": "H4294",
+          "pron": "우맏데카"
+        },
+        {
+          "word": "נַפְתָּלִ֜י",
+          "lemma": "נַפְתָּלִי",
+          "strong": "H5321",
+          "pron": "납탈리"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "numbers 1:43",
+        "numbers 2:29",
+        "numbers 13:14",
+        "joshua 21:6",
+        "joshua 21:32",
+        "kings1 7:14",
+        "chronicles1 6:62",
+        "chronicles1 6:76"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נַפְתָּלִ֑י אֲחִירַ֖ע",
+      "pron": "납탈리 아히라",
+      "lemmas": [
+        "נַפְתָּלִי",
+        "אֲחִירַע"
+      ],
+      "words": [
+        {
+          "word": "נַפְתָּלִ֑י",
+          "lemma": "נַפְתָּלִי",
+          "strong": "H5321",
+          "pron": "납탈리"
+        },
+        {
+          "word": "אֲחִירַ֖ע",
+          "lemma": "אֲחִירַע",
+          "strong": "H299",
+          "pron": "아히라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 1:15",
+        "numbers 2:29",
+        "numbers 7:78",
+        "numbers 10:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נַפְתָּלִ֑י אֲחִירַ֖ע בֶּן",
+      "pron": "납탈리 아히라 바님",
+      "lemmas": [
+        "נַפְתָּלִי",
+        "אֲחִירַע",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "נַפְתָּלִ֑י",
+          "lemma": "נַפְתָּלִי",
+          "strong": "H5321",
+          "pron": "납탈리"
+        },
+        {
+          "word": "אֲחִירַ֖ע",
+          "lemma": "אֲחִירַע",
+          "strong": "H299",
+          "pron": "아히라"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 1:15",
+        "numbers 2:29",
+        "numbers 7:78",
+        "numbers 10:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נַפְתָּלִ֔י וְאֶת",
+      "pron": "납탈리 에트",
+      "lemmas": [
+        "נַפְתָּלִי",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "נַפְתָּלִ֔י",
+          "lemma": "נַפְתָּלִי",
+          "strong": "H5321",
+          "pron": "납탈리"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 34:2",
+        "joshua 20:7",
+        "joshua 21:32",
+        "chronicles1 6:76"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

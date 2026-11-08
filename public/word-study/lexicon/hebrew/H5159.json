@@ -1,6 +1,6 @@
 {
   "lemma": "נַחֲלָה",
-  "pron": "나할라테카",
+  "pron": "브나할라",
   "strong": "H5159",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,50 @@
     {
       "lemma": "נָחַל",
       "strong": "H5157",
-      "pron": "인할루하",
-      "glossKo": "그녀에게 기업으로 받다"
+      "pron": "브나할타",
+      "glossKo": "기업으로 받다"
     },
     {
       "lemma": "נַחַל",
       "strong": "H5158",
-      "pron": "브나할레",
+      "pron": "브나할",
       "glossKo": "시내"
     }
   ],
   "defEn": "inherited; occupancy; heirloom; estate; patrimony; portion",
   "defKo": "",
-  "countOT": 25,
+  "countOT": 222,
   "byBook": {
+    "joshua": 50,
+    "numbers": 46,
+    "deuteronomy": 25,
     "psalms": 23,
-    "genesis": 2
+    "ezekiel": 15,
+    "jeremiah": 12,
+    "judges": 7,
+    "isaiah": 6,
+    "kings1": 6,
+    "job": 4,
+    "samuel2": 4,
+    "micah": 3,
+    "proverbs": 3,
+    "ruth": 3,
+    "chronicles2": 2,
+    "genesis": 2,
+    "joel": 2,
+    "samuel1": 2,
+    "chronicles1": 1,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "kings2": 1,
+    "lamentations": 1,
+    "malachi": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
-      "hebrew": "אֶת נַחֲלָתֶ֑ךָ",
-      "pron": "에트 나할라테카",
+      "hebrew": "אֶת נַחֲלַ֥ת",
+      "pron": "에트 브나할라",
       "lemmas": [
         "אֵת",
         "נַחֲלָה"
@@ -45,17 +68,178 @@
           "pron": "에트"
         },
         {
-          "word": "נַחֲלָתֶ֑ךָ",
+          "word": "נַחֲלַ֥ת",
           "lemma": "נַחֲלָה",
           "strong": "H5159",
-          "pron": "나할라테카"
+          "pron": "브나할라"
         }
       ],
-      "count": 3,
+      "count": 20,
       "refs": [
-        "psalms 28:9",
-        "psalms 47:4",
-        "psalms 106:40"
+        "numbers 27:7",
+        "numbers 27:8",
+        "numbers 27:9",
+        "numbers 27:10",
+        "numbers 27:11",
+        "numbers 33:54",
+        "numbers 36:2",
+        "joshua 18:2",
+        "ruth 4:6",
+        "samuel2 21:3",
+        "kings1 21:3",
+        "kings1 21:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נֹתֵ֥ן נַחֲלָֽה",
+      "pron": "바잇텐 브나할라",
+      "lemmas": [
+        "נָתַן",
+        "נַחֲלָה"
+      ],
+      "words": [
+        {
+          "word": "נֹתֵ֥ן",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "נַחֲלָֽה",
+          "lemma": "נַחֲלָה",
+          "strong": "H5159",
+          "pron": "브나할라"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "numbers 16:14",
+        "numbers 26:54",
+        "numbers 26:62",
+        "deuteronomy 4:21",
+        "deuteronomy 15:4",
+        "deuteronomy 19:10",
+        "deuteronomy 20:16",
+        "deuteronomy 21:23",
+        "deuteronomy 24:4",
+        "deuteronomy 25:19",
+        "deuteronomy 26:1",
+        "deuteronomy 29:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זֹ֗את נַחֲלַ֛ת",
+      "pron": "조트 브나할라",
+      "lemmas": [
+        "זֹאת",
+        "נַחֲלָה"
+      ],
+      "words": [
+        {
+          "word": "זֹ֗את",
+          "lemma": "זֹאת",
+          "strong": "H2063",
+          "pron": "조트"
+        },
+        {
+          "word": "נַחֲלַ֛ת",
+          "lemma": "נַחֲלָה",
+          "strong": "H5159",
+          "pron": "브나할라"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "joshua 13:7",
+        "joshua 13:23",
+        "joshua 13:28",
+        "joshua 15:20",
+        "joshua 16:8",
+        "joshua 18:20",
+        "joshua 18:28",
+        "joshua 19:8",
+        "joshua 19:16",
+        "joshua 19:23",
+        "joshua 19:31",
+        "joshua 19:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נַחֲלָת֔וֹ כַּאֲשֶׁ֖ר",
+      "pron": "브나할라 아셰르",
+      "lemmas": [
+        "נַחֲלָה",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "נַחֲלָת֔וֹ",
+          "lemma": "נַחֲלָה",
+          "strong": "H5159",
+          "pron": "브나할라"
+        },
+        {
+          "word": "כַּאֲשֶׁ֖ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "numbers 35:8",
+        "deuteronomy 9:26",
+        "deuteronomy 9:29",
+        "deuteronomy 10:9",
+        "deuteronomy 12:9",
+        "deuteronomy 18:2",
+        "deuteronomy 19:14",
+        "joshua 13:6",
+        "joshua 13:8",
+        "joshua 13:14",
+        "joshua 13:33",
+        "joshua 14:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נַחֲלַ֥ת בְּנֵֽי",
+      "pron": "브나할라 바님",
+      "lemmas": [
+        "נַחֲלָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "נַחֲלַ֥ת",
+          "lemma": "נַחֲלָה",
+          "strong": "H5159",
+          "pron": "브나할라"
+        },
+        {
+          "word": "בְּנֵֽי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "numbers 36:7",
+        "joshua 13:23",
+        "joshua 13:28",
+        "joshua 14:9",
+        "joshua 16:9",
+        "joshua 18:20",
+        "joshua 18:28",
+        "joshua 19:1",
+        "joshua 19:9",
+        "joshua 19:16",
+        "samuel2 20:1",
+        "kings1 12:16"
       ],
       "glossKo": ""
     }

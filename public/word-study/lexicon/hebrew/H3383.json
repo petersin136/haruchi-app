@@ -1,6 +1,6 @@
 {
   "lemma": "יַרְדֵּן",
-  "pron": "야렏덴",
+  "pron": "아야렏덴",
   "strong": "H3383",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "יָרַד",
       "strong": "H3381",
-      "pron": "예렏",
+      "pron": "바예렏",
       "glossKo": "내려가다"
     },
     {
@@ -24,16 +24,236 @@
     {
       "lemma": "מוֹרָד",
       "strong": "H4174",
-      "pron": "",
+      "pron": "바모랃",
       "glossKo": "내리막"
     }
   ],
   "defEn": "Jarden",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 183,
   "byBook": {
+    "joshua": 70,
+    "deuteronomy": 26,
+    "numbers": 21,
+    "samuel2": 17,
+    "judges": 12,
+    "kings2": 9,
+    "chronicles1": 6,
     "genesis": 5,
-    "psalms": 3
+    "kings1": 4,
+    "jeremiah": 3,
+    "psalms": 3,
+    "samuel1": 2,
+    "chronicles2": 1,
+    "ezekiel": 1,
+    "isaiah": 1,
+    "job": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת הַיַּרְדֵּ֔ן",
+      "pron": "에트 아야렏덴",
+      "lemmas": [
+        "אֵת",
+        "יַרְדֵּן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַיַּרְדֵּ֔ן",
+          "lemma": "יַרְדֵּן",
+          "strong": "H3383",
+          "pron": "아야렏덴"
+        }
+      ],
+      "count": 46,
+      "refs": [
+        "genesis 32:10",
+        "numbers 32:5",
+        "numbers 32:21",
+        "numbers 32:29",
+        "numbers 33:51",
+        "numbers 35:10",
+        "deuteronomy 2:29",
+        "deuteronomy 3:27",
+        "deuteronomy 4:21",
+        "deuteronomy 4:22",
+        "deuteronomy 4:26",
+        "deuteronomy 9:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּעֵ֣בֶר הַיַּרְדֵּ֑ן",
+      "pron": "브에베르 아야렏덴",
+      "lemmas": [
+        "עֵבֶר",
+        "יַרְדֵּן"
+      ],
+      "words": [
+        {
+          "word": "בְּעֵ֣בֶר",
+          "lemma": "עֵבֶר",
+          "strong": "H5676",
+          "pron": "브에베르"
+        },
+        {
+          "word": "הַיַּרְדֵּ֑ן",
+          "lemma": "יַרְדֵּן",
+          "strong": "H3383",
+          "pron": "아야렏덴"
+        }
+      ],
+      "count": 45,
+      "refs": [
+        "genesis 50:10",
+        "genesis 50:11",
+        "numbers 22:1",
+        "numbers 32:19",
+        "numbers 32:32",
+        "numbers 34:15",
+        "numbers 35:14",
+        "deuteronomy 1:1",
+        "deuteronomy 1:5",
+        "deuteronomy 3:8",
+        "deuteronomy 3:20",
+        "deuteronomy 3:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֹבְרִ֧ים אֶת הַיַּרְדֵּ֛ן",
+      "pron": "바야아베르 에트 아야렏덴",
+      "lemmas": [
+        "עָבַר",
+        "אֵת",
+        "יַרְדֵּן"
+      ],
+      "words": [
+        {
+          "word": "עֹבְרִ֧ים",
+          "lemma": "עָבַר",
+          "strong": "H5674",
+          "pron": "바야아베르"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַיַּרְדֵּ֛ן",
+          "lemma": "יַרְדֵּן",
+          "strong": "H3383",
+          "pron": "아야렏덴"
+        }
+      ],
+      "count": 32,
+      "refs": [
+        "genesis 32:10",
+        "numbers 32:5",
+        "numbers 33:51",
+        "numbers 35:10",
+        "deuteronomy 2:29",
+        "deuteronomy 3:27",
+        "deuteronomy 4:21",
+        "deuteronomy 4:22",
+        "deuteronomy 4:26",
+        "deuteronomy 11:31",
+        "deuteronomy 12:10",
+        "deuteronomy 27:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יַרְדֵּ֥ן יְרֵחֽוֹ",
+      "pron": "아야렏덴 예레호",
+      "lemmas": [
+        "יַרְדֵּן",
+        "יְרִיחוֹ"
+      ],
+      "words": [
+        {
+          "word": "יַרְדֵּ֥ן",
+          "lemma": "יַרְדֵּן",
+          "strong": "H3383",
+          "pron": "아야렏덴"
+        },
+        {
+          "word": "יְרֵחֽוֹ",
+          "lemma": "יְרִיחוֹ",
+          "strong": "H3405",
+          "pron": "예레호"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "numbers 22:1",
+        "numbers 26:3",
+        "numbers 26:63",
+        "numbers 31:12",
+        "numbers 33:48",
+        "numbers 33:50",
+        "numbers 34:15",
+        "numbers 35:1",
+        "numbers 36:13",
+        "joshua 13:32",
+        "joshua 16:1",
+        "joshua 20:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֖ר בְּעֵ֣בֶר הַיַּרְדֵּ֑ן",
+      "pron": "아셰르 브에베르 아야렏덴",
+      "lemmas": [
+        "אֲשֶׁר",
+        "עֵבֶר",
+        "יַרְדֵּן"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֖ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "בְּעֵ֣בֶר",
+          "lemma": "עֵבֶר",
+          "strong": "H5676",
+          "pron": "브에베르"
+        },
+        {
+          "word": "הַיַּרְדֵּ֑ן",
+          "lemma": "יַרְדֵּן",
+          "strong": "H3383",
+          "pron": "아야렏덴"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "genesis 50:10",
+        "genesis 50:11",
+        "deuteronomy 3:8",
+        "deuteronomy 3:25",
+        "deuteronomy 4:47",
+        "joshua 2:10",
+        "joshua 5:1",
+        "joshua 9:1",
+        "joshua 9:10",
+        "joshua 17:5",
+        "judges 10:8",
+        "samuel1 31:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

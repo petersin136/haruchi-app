@@ -12,13 +12,13 @@
     {
       "lemma": "בְּצַלְאֵל",
       "strong": "H1212",
-      "pron": "",
+      "pron": "베찰엘",
       "glossKo": "브살렐"
     },
     {
       "lemma": "מְצֻלָּה",
       "strong": "H4699",
-      "pron": "",
+      "pron": "바메출라",
       "glossKo": "그늘"
     },
     {
@@ -30,33 +30,46 @@
     {
       "lemma": "צָלַל",
       "strong": "H6751",
-      "pron": "",
+      "pron": "찰랄루",
       "glossKo": "그늘지다"
     },
     {
       "lemma": "צֵלֶל",
       "strong": "H6752",
-      "pron": "",
-      "glossKo": "그늘"
+      "pron": "칠랄로",
+      "glossKo": "그의 그늘"
     },
     {
       "lemma": "צַלְמָוֶת",
       "strong": "H6757",
-      "pron": "찰마베트",
+      "pron": "브찰마베트",
       "glossKo": "음침함"
     }
   ],
   "defEn": "shade",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 49,
   "byBook": {
+    "isaiah": 11,
     "psalms": 10,
-    "genesis": 1
+    "ecclesiastes": 4,
+    "ezekiel": 4,
+    "job": 4,
+    "kings2": 4,
+    "hosea": 2,
+    "jonah": 2,
+    "judges": 2,
+    "chronicles1": 1,
+    "genesis": 1,
+    "jeremiah": 1,
+    "lamentations": 1,
+    "numbers": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
       "hebrew": "בְּצֵ֥ל כְּ֝נָפֶ֗יךָ",
-      "pron": "브첼 케나페카",
+      "pron": "브첼 카납",
       "lemmas": [
         "צֵל",
         "כָּנָף"
@@ -72,7 +85,7 @@
           "word": "כְּ֝נָפֶ֗יךָ",
           "lemma": "כָּנָף",
           "strong": "H3671",
-          "pron": "케나페카"
+          "pron": "카납"
         }
       ],
       "count": 4,
@@ -81,6 +94,123 @@
         "psalms 36:7",
         "psalms 57:1",
         "psalms 63:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "צִלָּ֧ם מֵעֲלֵיהֶ֛ם",
+      "pron": "브첼 알",
+      "lemmas": [
+        "צֵל",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "צִלָּ֧ם",
+          "lemma": "צֵל",
+          "strong": "H6738",
+          "pron": "브첼"
+        },
+        {
+          "word": "מֵעֲלֵיהֶ֛ם",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 14:9",
+        "psalms 121:5",
+        "hosea 4:13",
+        "jonah 4:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֣ת צֵ֧ל",
+      "pron": "에트 브첼",
+      "lemmas": [
+        "אֵת",
+        "צֵל"
+      ],
+      "words": [
+        {
+          "word": "אֵ֣ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "צֵ֧ל",
+          "lemma": "צֵל",
+          "strong": "H6738",
+          "pron": "브첼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 9:36",
+        "kings2 20:11",
+        "isaiah 38:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָ֭מַי כְּצֵ֣ל",
+      "pron": "욤 브첼",
+      "lemmas": [
+        "יוֹם",
+        "צֵל"
+      ],
+      "words": [
+        {
+          "word": "יָ֭מַי",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "כְּצֵ֣ל",
+          "lemma": "צֵל",
+          "strong": "H6738",
+          "pron": "브첼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 102:11",
+        "psalms 144:4",
+        "ecclesiastes 8:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַצֵּ֔ל לִנְט֖וֹת",
+      "pron": "브첼 바옏",
+      "lemmas": [
+        "צֵל",
+        "נָטָה"
+      ],
+      "words": [
+        {
+          "word": "לַצֵּ֔ל",
+          "lemma": "צֵל",
+          "strong": "H6738",
+          "pron": "브첼"
+        },
+        {
+          "word": "לִנְט֖וֹת",
+          "lemma": "נָטָה",
+          "strong": "H5186",
+          "pron": "바옏"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 20:10",
+        "psalms 102:11",
+        "psalms 109:23"
       ],
       "glossKo": ""
     }

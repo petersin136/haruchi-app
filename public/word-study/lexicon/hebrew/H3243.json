@@ -1,6 +1,6 @@
 {
   "lemma": "יָנַק",
-  "pron": "브욘킴",
+  "pron": "헤니카",
   "strong": "H3243",
   "posKo": "동사",
   "root": null,
@@ -8,22 +8,155 @@
     {
       "lemma": "יוֹנֵק",
       "strong": "H3126",
-      "pron": "",
+      "pron": "카요네크",
       "glossKo": "어린 가지"
     },
     {
       "lemma": "יְנִיקָה",
       "strong": "H3242",
-      "pron": "",
-      "glossKo": "어린 가지"
+      "pron": "예니코타으브",
+      "glossKo": "그의 어린 가지"
     }
   ],
   "defEn": "suck; give milk",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 32,
   "byBook": {
+    "isaiah": 6,
     "genesis": 4,
-    "psalms": 1
+    "deuteronomy": 3,
+    "exodus": 3,
+    "lamentations": 3,
+    "samuel1": 3,
+    "job": 2,
+    "chronicles2": 1,
+    "jeremiah": 1,
+    "joel": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "numbers": 1,
+    "psalms": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְאֶת מֵנִקְתָּ֑הּ",
+      "pron": "에트 헤니카",
+      "lemmas": [
+        "אֵת",
+        "יָנַק"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מֵנִקְתָּ֑הּ",
+          "lemma": "יָנַק",
+          "strong": "H3243",
+          "pron": "헤니카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 24:59",
+        "numbers 11:12",
+        "kings2 11:2",
+        "chronicles2 22:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵנִקְתָּ֑הּ וְאֶת",
+      "pron": "헤니카 에트",
+      "lemmas": [
+        "יָנַק",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "מֵנִקְתָּ֑הּ",
+          "lemma": "יָנַק",
+          "strong": "H3243",
+          "pron": "헤니카"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 24:59",
+        "exodus 2:7",
+        "samuel1 1:23",
+        "kings1 3:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֽוֹלְלִ֨ים וְֽיֹנְקִים֮",
+      "pron": "메올렐 헤니카",
+      "lemmas": [
+        "עוֹלֵל",
+        "יָנַק"
+      ],
+      "words": [
+        {
+          "word": "עֽוֹלְלִ֨ים",
+          "lemma": "עוֹלֵל",
+          "strong": "H5768",
+          "pron": "메올렐"
+        },
+        {
+          "word": "וְֽיֹנְקִים֮",
+          "lemma": "יָנַק",
+          "strong": "H3243",
+          "pron": "헤니카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 8:2",
+        "jeremiah 44:7",
+        "lamentations 2:11",
+        "joel 2:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַיֹּנֵ֔ק עַ֚ל",
+      "pron": "헤니카 알",
+      "lemmas": [
+        "יָנַק",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "הַיֹּנֵ֔ק",
+          "lemma": "יָנַק",
+          "strong": "H3243",
+          "pron": "헤니카"
+        },
+        {
+          "word": "עַ֚ל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 11:12",
+        "isaiah 11:8",
+        "isaiah 66:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

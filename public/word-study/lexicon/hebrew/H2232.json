@@ -1,6 +1,6 @@
 {
   "lemma": "זָרַע",
-  "pron": "자루아",
+  "pron": "맛리아",
   "strong": "H2232",
   "posKo": "동사",
   "root": null,
@@ -8,139 +8,223 @@
     {
       "lemma": "זְרוֹעַ",
       "strong": "H2220",
-      "pron": "제로아",
+      "pron": "제로에",
       "glossKo": "팔"
     },
     {
       "lemma": "זֵרוּעַ",
       "strong": "H2221",
-      "pron": "",
+      "pron": "제루아",
       "glossKo": "씨 뿌리는"
     },
     {
       "lemma": "זֶרַע",
       "strong": "H2233",
-      "pron": "우르자레오",
-      "glossKo": "그의 씨"
+      "pron": "제라",
+      "glossKo": "씨"
     },
     {
       "lemma": "זֵרֹעַ",
       "strong": "H2235",
-      "pron": "",
+      "pron": "아제로임",
       "glossKo": "씨앗"
     },
     {
       "lemma": "יִזְרְעֵאל",
       "strong": "H3157",
-      "pron": "",
+      "pron": "브잇레엘",
       "glossKo": "이스르엘"
     },
     {
       "lemma": "מִזְרָע",
       "strong": "H4218",
-      "pron": "",
+      "pron": "밋라",
       "glossKo": "씨 뿌리는 곳"
     }
   ],
   "defEn": "sow; disseminate; plant; fructify",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 56,
   "byBook": {
+    "leviticus": 9,
+    "isaiah": 7,
     "genesis": 6,
-    "psalms": 3
+    "jeremiah": 6,
+    "deuteronomy": 5,
+    "hosea": 3,
+    "psalms": 3,
+    "ecclesiastes": 2,
+    "exodus": 2,
+    "job": 2,
+    "judges": 2,
+    "proverbs": 2,
+    "ezekiel": 1,
+    "haggai": 1,
+    "kings2": 1,
+    "micah": 1,
+    "nahum": 1,
+    "numbers": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "מַזְרִ֣יעַ זֶ֔רַע",
-      "pron": "자루아 우르자레오",
+      "hebrew": "לֹא תִזְרַ֣ע",
+      "pron": "로 맛리아",
       "lemmas": [
-        "זָרַע",
-        "זֶרַע"
-      ],
-      "words": [
-        {
-          "word": "מַזְרִ֣יעַ",
-          "lemma": "זָרַע",
-          "strong": "H2232",
-          "pron": "자루아"
-        },
-        {
-          "word": "זֶ֔רַע",
-          "lemma": "זֶרַע",
-          "strong": "H2233",
-          "pron": "우르자레오"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 1:11",
-        "genesis 1:12",
-        "genesis 1:29"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "עֵ֚שֶׂב מַזְרִ֣יעַ",
-      "pron": "크에셉 자루아",
-      "lemmas": [
-        "עֶשֶׂב",
+        "לֹא",
         "זָרַע"
       ],
       "words": [
         {
-          "word": "עֵ֚שֶׂב",
-          "lemma": "עֶשֶׂב",
-          "strong": "H6212",
-          "pron": "크에셉"
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
         },
         {
-          "word": "מַזְרִ֣יעַ",
+          "word": "תִזְרַ֣ע",
           "lemma": "זָרַע",
           "strong": "H2232",
-          "pron": "자루아"
+          "pron": "맛리아"
         }
       ],
-      "count": 3,
+      "count": 11,
       "refs": [
-        "genesis 1:11",
-        "genesis 1:12",
-        "genesis 1:29"
+        "leviticus 19:19",
+        "leviticus 25:4",
+        "leviticus 25:11",
+        "leviticus 25:20",
+        "deuteronomy 21:4",
+        "deuteronomy 22:9",
+        "deuteronomy 29:23",
+        "ecclesiastes 11:4",
+        "jeremiah 2:2",
+        "jeremiah 35:7",
+        "nahum 1:14"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "עֵ֚שֶׂב מַזְרִ֣יעַ זֶ֔רַע",
-      "pron": "크에셉 자루아 우르자레오",
+      "hebrew": "תִּזְרַ֣ע אֶת",
+      "pron": "맛리아 에트",
       "lemmas": [
-        "עֶשֶׂב",
+        "זָרַע",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "תִּזְרַ֣ע",
+          "lemma": "זָרַע",
+          "strong": "H2232",
+          "pron": "맛리아"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 47:23",
+        "exodus 23:10",
+        "leviticus 25:22",
+        "deuteronomy 11:10",
+        "ecclesiastes 11:6",
+        "isaiah 30:23",
+        "jeremiah 31:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֥ר תִּזְרַ֖ע",
+      "pron": "아셰르 맛리아",
+      "lemmas": [
+        "אֲשֶׁר",
+        "זָרַע"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "תִּזְרַ֖ע",
+          "lemma": "זָרַע",
+          "strong": "H2232",
+          "pron": "맛리아"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 23:16",
+        "leviticus 11:37",
+        "deuteronomy 11:10",
+        "deuteronomy 22:9",
+        "isaiah 30:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַזְרִ֣יעַ זֶ֔רַע",
+      "pron": "맛리아 제라",
+      "lemmas": [
         "זָרַע",
         "זֶרַע"
       ],
       "words": [
         {
-          "word": "עֵ֚שֶׂב",
-          "lemma": "עֶשֶׂב",
-          "strong": "H6212",
-          "pron": "크에셉"
-        },
-        {
           "word": "מַזְרִ֣יעַ",
           "lemma": "זָרַע",
           "strong": "H2232",
-          "pron": "자루아"
+          "pron": "맛리아"
         },
         {
           "word": "זֶ֔רַע",
           "lemma": "זֶרַע",
           "strong": "H2233",
-          "pron": "우르자레오"
+          "pron": "제라"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
         "genesis 1:11",
         "genesis 1:12",
-        "genesis 1:29"
+        "genesis 1:29",
+        "numbers 5:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תִזְרָ֔עוּ וְלֹ֤א",
+      "pron": "맛리아 로",
+      "lemmas": [
+        "זָרַע",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "תִזְרָ֔עוּ",
+          "lemma": "זָרַע",
+          "strong": "H2232",
+          "pron": "맛리아"
+        },
+        {
+          "word": "וְלֹ֤א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 25:11",
+        "leviticus 25:20",
+        "deuteronomy 29:23",
+        "micah 6:15"
       ],
       "glossKo": ""
     }

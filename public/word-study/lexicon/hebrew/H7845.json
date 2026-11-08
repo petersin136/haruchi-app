@@ -1,6 +1,6 @@
 {
   "lemma": "שַׁחַת",
-  "pron": "브샤하트",
+  "pron": "바샤하트",
   "strong": "H7845",
   "posKo": "명사",
   "root": {
@@ -24,21 +24,57 @@
     {
       "lemma": "שׁוּחָה",
       "strong": "H7745",
-      "pron": "",
+      "pron": "슈하",
       "glossKo": "구덩이"
     },
     {
       "lemma": "שׁוּחָם",
       "strong": "H7748",
-      "pron": "",
+      "pron": "르슈함",
       "glossKo": "수함"
     }
   ],
   "defEn": "pit; destruction",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 23,
   "byBook": {
-    "psalms": 9
+    "psalms": 9,
+    "job": 7,
+    "ezekiel": 3,
+    "isaiah": 2,
+    "jonah": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "שָׁ֑חַת וְ֝חַיָּת֗וֹ",
+      "pron": "바샤하트 하아",
+      "lemmas": [
+        "שַׁחַת",
+        "חַי"
+      ],
+      "words": [
+        {
+          "word": "שָׁ֑חַת",
+          "lemma": "שַׁחַת",
+          "strong": "H7845",
+          "pron": "바샤하트"
+        },
+        {
+          "word": "וְ֝חַיָּת֗וֹ",
+          "lemma": "חַי",
+          "strong": "H2416",
+          "pron": "하아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 33:18",
+        "job 33:28",
+        "psalms 103:4",
+        "jonah 2:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

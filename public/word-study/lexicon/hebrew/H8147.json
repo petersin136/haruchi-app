@@ -1,6 +1,6 @@
 {
   "lemma": "שְׁנַיִם",
-  "pron": "셰넴",
+  "pron": "셰네",
   "strong": "H8147",
   "posKo": "형용사",
   "root": {
@@ -18,48 +18,76 @@
     {
       "lemma": "תִּנְיָן",
       "strong": "H8578",
-      "pron": "",
+      "pron": "틴아나",
       "glossKo": "둘째(아람)"
     },
     {
       "lemma": "תְּרֵין",
       "strong": "H8648",
-      "pron": "",
+      "pron": "타렛텐",
       "glossKo": "둘(아람)"
     }
   ],
   "defEn": "two",
   "defKo": "",
-  "countOT": 65,
+  "countOT": 769,
   "byBook": {
+    "exodus": 113,
+    "numbers": 87,
     "genesis": 63,
-    "psalms": 2
+    "kings1": 57,
+    "chronicles1": 45,
+    "kings2": 43,
+    "leviticus": 41,
+    "ezekiel": 36,
+    "chronicles2": 30,
+    "samuel1": 30,
+    "joshua": 26,
+    "deuteronomy": 25,
+    "nehemiah": 23,
+    "samuel2": 21,
+    "judges": 20,
+    "ezra": 18,
+    "zechariah": 12,
+    "isaiah": 11,
+    "jeremiah": 11,
+    "esther": 10,
+    "ruth": 9,
+    "proverbs": 8,
+    "daniel": 6,
+    "ecclesiastes": 5,
+    "job": 5,
+    "songofsolomon": 4,
+    "amos": 3,
+    "haggai": 3,
+    "psalms": 2,
+    "hosea": 1,
+    "jonah": 1
   },
   "phrases": [
     {
-      "hebrew": "שְׁתֵּ֤ים עֶשְׂרֵה֙",
-      "pron": "셰넴 아사르",
+      "hebrew": "שְׁנֵ֥ים עָשָֽׂר",
+      "pron": "셰네 에세레",
       "lemmas": [
         "שְׁנַיִם",
         "עָשָׂר"
       ],
       "words": [
         {
-          "word": "שְׁתֵּ֤ים",
+          "word": "שְׁנֵ֥ים",
           "lemma": "שְׁנַיִם",
           "strong": "H8147",
-          "pron": "셰넴"
+          "pron": "셰네"
         },
         {
-          "word": "עֶשְׂרֵה֙",
+          "word": "עָשָֽׂר",
           "lemma": "עָשָׂר",
           "strong": "H6240",
-          "pron": "아사르"
+          "pron": "에세레"
         }
       ],
-      "count": 9,
+      "count": 132,
       "refs": [
-        "psalms 60:1",
         "genesis 5:8",
         "genesis 14:4",
         "genesis 17:20",
@@ -67,13 +95,17 @@
         "genesis 35:22",
         "genesis 42:13",
         "genesis 42:32",
-        "genesis 49:28"
+        "genesis 49:28",
+        "exodus 15:27",
+        "exodus 24:4",
+        "exodus 28:21",
+        "exodus 39:14"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֶת שְׁנֵ֤י",
-      "pron": "에트 셰넴",
+      "hebrew": "אֶת שְׁתֵּי֙",
+      "pron": "에트 셰네",
       "lemmas": [
         "אֵת",
         "שְׁנַיִם"
@@ -86,13 +118,13 @@
           "pron": "에트"
         },
         {
-          "word": "שְׁנֵ֤י",
+          "word": "שְׁתֵּי֙",
           "lemma": "שְׁנַיִם",
           "strong": "H8147",
-          "pron": "셰넴"
+          "pron": "셰네"
         }
       ],
-      "count": 8,
+      "count": 62,
       "refs": [
         "genesis 1:16",
         "genesis 19:15",
@@ -100,102 +132,133 @@
         "genesis 32:22",
         "genesis 42:37",
         "genesis 48:1",
-        "genesis 48:13"
+        "genesis 48:13",
+        "exodus 18:3",
+        "exodus 25:18",
+        "exodus 28:9",
+        "exodus 28:11",
+        "exodus 28:12"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שְׁתֵּ֣י בָנ֗וֹת",
-      "pron": "셰넴 바트",
+      "hebrew": "עַל שְׁנֵ֖י",
+      "pron": "알 셰네",
       "lemmas": [
-        "שְׁנַיִם",
-        "בַּת"
+        "עַל",
+        "שְׁנַיִם"
       ],
       "words": [
         {
-          "word": "שְׁתֵּ֣י",
-          "lemma": "שְׁנַיִם",
-          "strong": "H8147",
-          "pron": "셰넴"
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
         },
         {
-          "word": "בָנ֗וֹת",
-          "lemma": "בַּת",
-          "strong": "H1323",
-          "pron": "바트"
+          "word": "שְׁנֵ֖י",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
         }
       ],
-      "count": 8,
+      "count": 34,
       "refs": [
-        "genesis 19:8",
-        "genesis 19:15",
-        "genesis 19:16",
-        "genesis 19:30",
-        "genesis 19:36",
-        "genesis 29:16",
-        "genesis 31:41"
+        "genesis 33:1",
+        "genesis 40:2",
+        "exodus 12:7",
+        "exodus 12:23",
+        "exodus 25:19",
+        "exodus 27:7",
+        "exodus 28:12",
+        "exodus 28:23",
+        "exodus 28:24",
+        "exodus 28:25",
+        "exodus 28:26",
+        "exodus 28:27"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שְׁנֵ֣י בָנִ֑ים",
-      "pron": "셰넴 베니위",
+      "hebrew": "שְׁנֵ֖י בְּנֵ֣י",
+      "pron": "셰네 바님",
       "lemmas": [
         "שְׁנַיִם",
         "בֵּן"
       ],
       "words": [
         {
-          "word": "שְׁנֵ֣י",
+          "word": "שְׁנֵ֖י",
           "lemma": "שְׁנַיִם",
           "strong": "H8147",
-          "pron": "셰넴"
+          "pron": "셰네"
         },
         {
-          "word": "בָנִ֑ים",
+          "word": "בְּנֵ֣י",
           "lemma": "בֵּן",
           "strong": "H1121",
-          "pron": "베니위"
+          "pron": "바님"
         }
       ],
-      "count": 6,
+      "count": 31,
       "refs": [
         "genesis 10:25",
         "genesis 34:25",
         "genesis 41:50",
         "genesis 42:37",
         "genesis 48:1",
-        "genesis 48:5"
+        "genesis 48:5",
+        "exodus 18:3",
+        "exodus 18:6",
+        "leviticus 5:7",
+        "leviticus 5:11",
+        "leviticus 12:8",
+        "leviticus 14:22"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שְׁנַ֧יִם מִכֹּ֛ל",
-      "pron": "셰넴 브콜",
+      "hebrew": "בָּנָ֥יו וְאֶחָ֖יו שְׁנֵ֥ים",
+      "pron": "바님 아히브 셰네",
       "lemmas": [
-        "שְׁנַיִם",
-        "כֹּל"
+        "בֵּן",
+        "אָח",
+        "שְׁנַיִם"
       ],
       "words": [
         {
-          "word": "שְׁנַ֧יִם",
-          "lemma": "שְׁנַיִם",
-          "strong": "H8147",
-          "pron": "셰넴"
+          "word": "בָּנָ֥יו",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
         },
         {
-          "word": "מִכֹּ֛ל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
+          "word": "וְאֶחָ֖יו",
+          "lemma": "אָח",
+          "strong": "H251",
+          "pron": "아히브"
+        },
+        {
+          "word": "שְׁנֵ֥ים",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
         }
       ],
-      "count": 4,
+      "count": 22,
       "refs": [
-        "genesis 6:19",
-        "genesis 6:20",
-        "genesis 7:15",
-        "genesis 46:27"
+        "chronicles1 25:10",
+        "chronicles1 25:11",
+        "chronicles1 25:12",
+        "chronicles1 25:13",
+        "chronicles1 25:14",
+        "chronicles1 25:15",
+        "chronicles1 25:16",
+        "chronicles1 25:17",
+        "chronicles1 25:18",
+        "chronicles1 25:19",
+        "chronicles1 25:20",
+        "chronicles1 25:21"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "יֹשֶׁר",
-  "pron": "바요셰르",
+  "pron": "우브요셰르",
   "strong": "H3476",
   "posKo": "명사",
   "root": {
@@ -12,45 +12,81 @@
     {
       "lemma": "יָשַׁר",
       "strong": "H3474",
-      "pron": "흐븟르",
+      "pron": "이샤르",
       "glossKo": "곧다"
     },
     {
       "lemma": "יֵשֶׁר",
       "strong": "H3475",
-      "pron": "",
+      "pron": "예셰르",
       "glossKo": "예셀"
     },
     {
       "lemma": "יָשָׁר",
       "strong": "H3477",
-      "pron": "이셰레",
+      "pron": "브아야샤르",
       "glossKo": "옳은"
     },
     {
       "lemma": "יְשֻׁרוּן",
       "strong": "H3484",
-      "pron": "",
+      "pron": "예슈룬",
       "glossKo": "여수룬"
     },
     {
       "lemma": "מִישׁוֹר",
       "strong": "H4334",
-      "pron": "브미쇼르",
+      "pron": "아미쇼르",
       "glossKo": "평지"
     },
     {
       "lemma": "מֵישָׁר",
       "strong": "H4339",
-      "pron": "브메샤림",
+      "pron": "우메샤림",
       "glossKo": "정직"
     }
   ],
   "defEn": "right",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 14,
   "byBook": {
-    "psalms": 2
+    "proverbs": 5,
+    "job": 3,
+    "psalms": 2,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "kings1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּבְיֹ֨שֶׁר֙ לְבָ֣בְךָ֔",
+      "pron": "우브요셰르 레바비",
+      "lemmas": [
+        "יֹשֶׁר",
+        "לֵבָב"
+      ],
+      "words": [
+        {
+          "word": "וּבְיֹ֨שֶׁר֙",
+          "lemma": "יֹשֶׁר",
+          "strong": "H3476",
+          "pron": "우브요셰르"
+        },
+        {
+          "word": "לְבָ֣בְךָ֔",
+          "lemma": "לֵבָב",
+          "strong": "H3824",
+          "pron": "레바비"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 9:5",
+        "chronicles1 29:17",
+        "psalms 119:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

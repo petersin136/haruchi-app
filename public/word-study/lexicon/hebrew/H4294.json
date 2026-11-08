@@ -1,6 +1,6 @@
 {
   "lemma": "מַטֶּה",
-  "pron": "맏데",
+  "pron": "우맏데카",
   "strong": "H4294",
   "posKo": "명사",
   "root": {
@@ -12,40 +12,244 @@
     {
       "lemma": "יֻטָּה",
       "strong": "H3194",
-      "pron": "",
+      "pron": "브윧다",
       "glossKo": "윳다"
     },
     {
       "lemma": "מִטָּה",
       "strong": "H4296",
-      "pron": "믿다티위",
-      "glossKo": "나의 침상"
+      "pron": "아믿다",
+      "glossKo": "침상"
     },
     {
       "lemma": "מֻטֶּה",
       "strong": "H4297",
-      "pron": "",
+      "pron": "묻데",
       "glossKo": "기울어진"
     },
     {
       "lemma": "מֻטָּה",
       "strong": "H4298",
-      "pron": "",
+      "pron": "묻도트",
       "glossKo": "펼침"
     },
     {
       "lemma": "נָטָה",
       "strong": "H5186",
-      "pron": "핟",
+      "pron": "바옏",
       "glossKo": "펴다"
     }
   ],
   "defEn": "branch; extending; tribe",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 252,
   "byBook": {
+    "numbers": 111,
+    "joshua": 59,
+    "exodus": 27,
+    "chronicles1": 23,
+    "ezekiel": 9,
+    "isaiah": 8,
     "genesis": 2,
-    "psalms": 2
+    "habakkuk": 2,
+    "kings1": 2,
+    "leviticus": 2,
+    "psalms": 2,
+    "samuel1": 2,
+    "chronicles2": 1,
+    "jeremiah": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מַטֵּ֖ה בְּנֵ֣י",
+      "pron": "우맏데카 바님",
+      "lemmas": [
+        "מַטֶּה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "מַטֵּ֖ה",
+          "lemma": "מַטֶּה",
+          "strong": "H4294",
+          "pron": "우맏데카"
+        },
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 47,
+      "refs": [
+        "numbers 10:15",
+        "numbers 10:16",
+        "numbers 10:19",
+        "numbers 10:20",
+        "numbers 10:23",
+        "numbers 10:24",
+        "numbers 10:26",
+        "numbers 10:27",
+        "numbers 30:1",
+        "numbers 32:28",
+        "numbers 34:14",
+        "numbers 34:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת מַטֵּהוּ֮",
+      "pron": "에트 우맏데카",
+      "lemmas": [
+        "אֵת",
+        "מַטֶּה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מַטֵּהוּ֮",
+          "lemma": "מַטֶּה",
+          "strong": "H4294",
+          "pron": "우맏데카"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "exodus 4:17",
+        "exodus 4:20",
+        "exodus 7:9",
+        "exodus 7:10",
+        "exodus 7:12",
+        "exodus 8:16",
+        "exodus 9:23",
+        "exodus 10:13",
+        "exodus 14:16",
+        "numbers 1:49",
+        "numbers 3:6",
+        "numbers 17:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַטֵּ֣ה מְנַשֶּׁ֔ה",
+      "pron": "우맏데카 메낫셰",
+      "lemmas": [
+        "מַטֶּה",
+        "מְנַשֶּׁה"
+      ],
+      "words": [
+        {
+          "word": "מַטֵּ֣ה",
+          "lemma": "מַטֶּה",
+          "strong": "H4294",
+          "pron": "우맏데카"
+        },
+        {
+          "word": "מְנַשֶּׁ֔ה",
+          "lemma": "מְנַשֶּׁה",
+          "strong": "H4519",
+          "pron": "메낫셰"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "numbers 1:35",
+        "numbers 2:20",
+        "numbers 13:11",
+        "numbers 34:14",
+        "joshua 14:4",
+        "joshua 17:1",
+        "joshua 20:8",
+        "joshua 21:5",
+        "joshua 21:6",
+        "joshua 21:25",
+        "joshua 21:27",
+        "joshua 22:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נַחֲלַ֛ת מַטֵּ֥ה",
+      "pron": "브나할라 우맏데카",
+      "lemmas": [
+        "נַחֲלָה",
+        "מַטֶּה"
+      ],
+      "words": [
+        {
+          "word": "נַחֲלַ֛ת",
+          "lemma": "נַחֲלָה",
+          "strong": "H5159",
+          "pron": "브나할라"
+        },
+        {
+          "word": "מַטֵּ֥ה",
+          "lemma": "מַטֶּה",
+          "strong": "H4294",
+          "pron": "우맏데카"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "numbers 36:3",
+        "numbers 36:4",
+        "numbers 36:7",
+        "numbers 36:8",
+        "numbers 36:9",
+        "joshua 15:20",
+        "joshua 16:8",
+        "joshua 19:8",
+        "joshua 19:23",
+        "joshua 19:31",
+        "joshua 19:39",
+        "joshua 19:48"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַחֲצִ֥י הַמַּטֶּֽה",
+      "pron": "바하치 우맏데카",
+      "lemmas": [
+        "חֵצִי",
+        "מַטֶּה"
+      ],
+      "words": [
+        {
+          "word": "וַחֲצִ֥י",
+          "lemma": "חֵצִי",
+          "strong": "H2677",
+          "pron": "바하치"
+        },
+        {
+          "word": "הַמַּטֶּֽה",
+          "lemma": "מַטֶּה",
+          "strong": "H4294",
+          "pron": "우맏데카"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 34:13",
+        "numbers 34:14",
+        "numbers 34:15",
+        "joshua 13:29",
+        "joshua 14:2",
+        "joshua 14:3",
+        "joshua 21:5",
+        "joshua 21:6",
+        "joshua 21:27",
+        "joshua 22:1",
+        "chronicles1 6:71",
+        "chronicles1 12:31"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

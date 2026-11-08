@@ -1,8 +1,8 @@
 {
   "lemma": "מֵרוֹץ",
-  "pron": "메로츠",
+  "pron": "아메로츠",
   "strong": "H4793",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רוּץ",
     "strong": "H7323",
@@ -10,15 +10,23 @@
   },
   "family": [
     {
+      "lemma": "מְרוּצָה",
+      "strong": "H4794",
+      "pron": "메루차트",
+      "glossKo": "달리는 길"
+    },
+    {
       "lemma": "רוּץ",
       "strong": "H7323",
-      "pron": "아루츠",
+      "pron": "바야라츠",
       "glossKo": "달리다"
     }
   ],
   "defEn": "run",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 1,
+  "byBook": {
+    "ecclesiastes": 1
+  },
   "phrases": []
 }

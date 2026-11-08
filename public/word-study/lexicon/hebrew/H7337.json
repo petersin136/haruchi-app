@@ -1,6 +1,6 @@
 {
   "lemma": "רָחַב",
-  "pron": "히레합타",
+  "pron": "히레힙",
   "strong": "H7337",
   "posKo": "동사",
   "root": null,
@@ -14,14 +14,14 @@
     {
       "lemma": "רַחַב",
       "strong": "H7338",
-      "pron": "",
+      "pron": "라합",
       "glossKo": "넓은 곳"
     },
     {
       "lemma": "רְחֹב",
       "strong": "H7339",
-      "pron": "메레호바흐",
-      "glossKo": "그녀의 광장"
+      "pron": "바레홉",
+      "glossKo": "광장"
     },
     {
       "lemma": "רֹחַב",
@@ -32,22 +32,91 @@
     {
       "lemma": "רָחָב",
       "strong": "H7342",
-      "pron": "우레합",
+      "pron": "라하바트",
       "glossKo": "넓은"
     },
     {
       "lemma": "רְחַבְיָה",
       "strong": "H7345",
-      "pron": "",
+      "pron": "레합아",
       "glossKo": "르하뱌"
     }
   ],
   "defEn": "broaden",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 25,
   "byBook": {
+    "isaiah": 7,
     "psalms": 6,
-    "genesis": 1
+    "deuteronomy": 3,
+    "amos": 1,
+    "exodus": 1,
+    "ezekiel": 1,
+    "genesis": 1,
+    "habakkuk": 1,
+    "micah": 1,
+    "proverbs": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הִרְחִ֧יב יְהוָ֛ה",
+      "pron": "히레힙 여호와",
+      "lemmas": [
+        "רָחַב",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "הִרְחִ֧יב",
+          "lemma": "רָחַב",
+          "strong": "H7337",
+          "pron": "히레힙"
+        },
+        {
+          "word": "יְהוָ֛ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 26:22",
+        "deuteronomy 12:20",
+        "deuteronomy 19:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רָ֤חַב פִּי֙",
+      "pron": "히레힙 피하",
+      "lemmas": [
+        "רָחַב",
+        "פֶּה"
+      ],
+      "words": [
+        {
+          "word": "רָ֤חַב",
+          "lemma": "רָחַב",
+          "strong": "H7337",
+          "pron": "히레힙"
+        },
+        {
+          "word": "פִּי֙",
+          "lemma": "פֶּה",
+          "strong": "H6310",
+          "pron": "피하"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 2:1",
+        "psalms 81:10",
+        "isaiah 57:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

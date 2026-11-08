@@ -1,6 +1,6 @@
 {
   "lemma": "דָּגָן",
-  "pron": "데가나므",
+  "pron": "다간",
   "strong": "H1715",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "דָּג",
       "strong": "H1709",
-      "pron": "우데게",
+      "pron": "데게",
       "glossKo": "물고기"
     },
     {
@@ -24,38 +24,201 @@
   ],
   "defEn": "increase; grain",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 40,
   "byBook": {
+    "deuteronomy": 7,
+    "nehemiah": 7,
+    "hosea": 6,
+    "joel": 3,
     "psalms": 3,
-    "genesis": 2
+    "chronicles2": 2,
+    "genesis": 2,
+    "isaiah": 2,
+    "numbers": 2,
+    "ezekiel": 1,
+    "haggai": 1,
+    "jeremiah": 1,
+    "kings2": 1,
+    "lamentations": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "דְּגָנָ֖ם וְתִֽירוֹשָׁ֣ם",
-      "pron": "데가나므 브티로샤므",
+      "hebrew": "דָּגָ֖ן וְתִירֹֽשׁ",
+      "pron": "다간 브티로쉬",
       "lemmas": [
         "דָּגָן",
         "תִּירוֹשׁ"
       ],
       "words": [
         {
-          "word": "דְּגָנָ֖ם",
+          "word": "דָּגָ֖ן",
           "lemma": "דָּגָן",
           "strong": "H1715",
-          "pron": "데가나므"
+          "pron": "다간"
         },
         {
-          "word": "וְתִֽירוֹשָׁ֣ם",
+          "word": "וְתִירֹֽשׁ",
           "lemma": "תִּירוֹשׁ",
           "strong": "H8492",
-          "pron": "브티로샤므"
+          "pron": "브티로쉬"
+        }
+      ],
+      "count": 21,
+      "refs": [
+        "genesis 27:28",
+        "genesis 27:37",
+        "deuteronomy 7:13",
+        "deuteronomy 11:14",
+        "deuteronomy 12:17",
+        "deuteronomy 14:23",
+        "deuteronomy 18:4",
+        "deuteronomy 28:51",
+        "deuteronomy 33:28",
+        "kings2 18:32",
+        "chronicles2 31:5",
+        "chronicles2 32:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דְּגָ֨נְךָ֜ וְתִֽירֹשְׁךָ֣ וְיִצְהָרֶ֗ךָ",
+      "pron": "다간 브티로쉬 이체하르",
+      "lemmas": [
+        "דָּגָן",
+        "תִּירוֹשׁ",
+        "יִצְהָר"
+      ],
+      "words": [
+        {
+          "word": "דְּגָ֨נְךָ֜",
+          "lemma": "דָּגָן",
+          "strong": "H1715",
+          "pron": "다간"
+        },
+        {
+          "word": "וְתִֽירֹשְׁךָ֣",
+          "lemma": "תִּירוֹשׁ",
+          "strong": "H8492",
+          "pron": "브티로쉬"
+        },
+        {
+          "word": "וְיִצְהָרֶ֗ךָ",
+          "lemma": "יִצְהָר",
+          "strong": "H3323",
+          "pron": "이체하르"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "deuteronomy 7:13",
+        "deuteronomy 11:14",
+        "deuteronomy 12:17",
+        "deuteronomy 14:23",
+        "deuteronomy 18:4",
+        "deuteronomy 28:51",
+        "chronicles2 31:5",
+        "chronicles2 32:28",
+        "nehemiah 5:11",
+        "nehemiah 10:39",
+        "nehemiah 13:5",
+        "nehemiah 13:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַעְשַׂ֤ר דְּגָֽנְךָ֙",
+      "pron": "마아세르 다간",
+      "lemmas": [
+        "מַעֲשֵׂר",
+        "דָּגָן"
+      ],
+      "words": [
+        {
+          "word": "מַעְשַׂ֤ר",
+          "lemma": "מַעֲשֵׂר",
+          "strong": "H4643",
+          "pron": "마아세르"
+        },
+        {
+          "word": "דְּגָֽנְךָ֙",
+          "lemma": "דָּגָן",
+          "strong": "H1715",
+          "pron": "다간"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 12:17",
+        "deuteronomy 14:23",
+        "nehemiah 13:5",
+        "nehemiah 13:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַעְשַׂ֤ר דְּגָֽנְךָ֙ וְתִֽירֹשְׁךָ֣",
+      "pron": "마아세르 다간 브티로쉬",
+      "lemmas": [
+        "מַעֲשֵׂר",
+        "דָּגָן",
+        "תִּירוֹשׁ"
+      ],
+      "words": [
+        {
+          "word": "מַעְשַׂ֤ר",
+          "lemma": "מַעֲשֵׂר",
+          "strong": "H4643",
+          "pron": "마아세르"
+        },
+        {
+          "word": "דְּגָֽנְךָ֙",
+          "lemma": "דָּגָן",
+          "strong": "H1715",
+          "pron": "다간"
+        },
+        {
+          "word": "וְתִֽירֹשְׁךָ֣",
+          "lemma": "תִּירוֹשׁ",
+          "strong": "H8492",
+          "pron": "브티로쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 12:17",
+        "deuteronomy 14:23",
+        "nehemiah 13:5",
+        "nehemiah 13:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֖רֶץ דָּגָ֣ן",
+      "pron": "하아레츠 다간",
+      "lemmas": [
+        "אֶרֶץ",
+        "דָּגָן"
+      ],
+      "words": [
+        {
+          "word": "אֶ֖רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "דָּגָ֣ן",
+          "lemma": "דָּגָן",
+          "strong": "H1715",
+          "pron": "다간"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 4:7",
-        "genesis 27:28",
-        "genesis 27:37"
+        "deuteronomy 33:28",
+        "kings2 18:32",
+        "isaiah 36:17"
       ],
       "glossKo": ""
     }

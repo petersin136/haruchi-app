@@ -12,33 +12,223 @@
     {
       "lemma": "חָנָה",
       "strong": "H2583",
-      "pron": "타하네",
+      "pron": "바이한",
       "glossKo": "진치다"
     },
     {
       "lemma": "חָנוּת",
       "strong": "H2588",
-      "pron": "",
+      "pron": "아하누오트",
       "glossKo": "지하실"
     },
     {
       "lemma": "חָנַן",
       "strong": "H2603",
-      "pron": "한네니",
-      "glossKo": "나를 은혜를 베풀다"
+      "pron": "하난",
+      "glossKo": "은혜를 베풀다"
     },
     {
       "lemma": "מַחֲנֶה",
       "strong": "H4264",
       "pron": "마하네",
       "glossKo": "진영"
+    },
+    {
+      "lemma": "תַּחַן",
+      "strong": "H8465",
+      "pron": "르타한",
+      "glossKo": "다한"
+    },
+    {
+      "lemma": "תַּחֲנָה",
+      "strong": "H8466",
+      "pron": "타하노티",
+      "glossKo": "나의 진영"
     }
   ],
   "defEn": "lance; thrusting; pitching",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 48,
   "byBook": {
-    "psalms": 3
+    "samuel1": 21,
+    "samuel2": 9,
+    "chronicles1": 7,
+    "psalms": 3,
+    "job": 2,
+    "chronicles2": 1,
+    "habakkuk": 1,
+    "isaiah": 1,
+    "kings2": 1,
+    "micah": 1,
+    "nahum": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶֽת הַחֲנִית֙",
+      "pron": "에트 하니트",
+      "lemmas": [
+        "אֵת",
+        "חֲנִית"
+      ],
+      "words": [
+        {
+          "word": "אֶֽת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַחֲנִית֙",
+          "lemma": "חֲנִית",
+          "strong": "H2595",
+          "pron": "하니트"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "samuel1 18:11",
+        "samuel1 19:10",
+        "samuel1 20:33",
+        "samuel1 26:11",
+        "samuel1 26:12",
+        "samuel2 23:18",
+        "samuel2 23:21",
+        "kings2 11:10",
+        "chronicles1 11:11",
+        "chronicles1 11:20",
+        "chronicles1 11:23",
+        "chronicles2 23:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַחֲנִית֙ מִיַּ֣ד",
+      "pron": "하니트 야도",
+      "lemmas": [
+        "חֲנִית",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "הַחֲנִית֙",
+          "lemma": "חֲנִית",
+          "strong": "H2595",
+          "pron": "하니트"
+        },
+        {
+          "word": "מִיַּ֣ד",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel1 13:22",
+        "samuel1 18:10",
+        "samuel1 19:9",
+        "samuel1 22:6",
+        "samuel2 23:21",
+        "chronicles1 11:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת חֲנִית֔וֹ עַל",
+      "pron": "에트 하니트 알",
+      "lemmas": [
+        "אֵת",
+        "חֲנִית",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "חֲנִית֔וֹ",
+          "lemma": "חֲנִית",
+          "strong": "H2595",
+          "pron": "하니트"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 20:33",
+        "samuel2 23:18",
+        "chronicles1 11:11",
+        "chronicles1 11:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעֵ֣ץ חֲנִית֔וֹ",
+      "pron": "에츠 하니트",
+      "lemmas": [
+        "עֵץ",
+        "חֲנִית"
+      ],
+      "words": [
+        {
+          "word": "וְעֵ֣ץ",
+          "lemma": "עֵץ",
+          "strong": "H6086",
+          "pron": "에츠"
+        },
+        {
+          "word": "חֲנִית֔וֹ",
+          "lemma": "חֲנִית",
+          "strong": "H2595",
+          "pron": "하니트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 17:7",
+        "samuel2 21:19",
+        "samuel2 23:7",
+        "chronicles1 20:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲנִית֔וֹ כִּמְנ֖וֹר",
+      "pron": "하니트 키메노르",
+      "lemmas": [
+        "חֲנִית",
+        "מָנוֹר"
+      ],
+      "words": [
+        {
+          "word": "חֲנִית֔וֹ",
+          "lemma": "חֲנִית",
+          "strong": "H2595",
+          "pron": "하니트"
+        },
+        {
+          "word": "כִּמְנ֖וֹר",
+          "lemma": "מָנוֹר",
+          "strong": "H4500",
+          "pron": "키메노르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 17:7",
+        "samuel2 21:19",
+        "chronicles1 11:23",
+        "chronicles1 20:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

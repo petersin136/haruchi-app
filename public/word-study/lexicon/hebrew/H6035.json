@@ -1,6 +1,6 @@
 {
   "lemma": "עָנָו",
-  "pron": "아나빔",
+  "pron": "느브",
   "strong": "H6035",
   "posKo": "형용사",
   "root": {
@@ -12,27 +12,124 @@
     {
       "lemma": "עַנְוָה",
       "strong": "H6037",
-      "pron": "브안바트카",
+      "pron": "베안바테카",
       "glossKo": "너의 온유"
     },
     {
       "lemma": "עֲנָוָה",
       "strong": "H6038",
-      "pron": "",
+      "pron": "아나바",
       "glossKo": "겸손"
     },
     {
       "lemma": "עָנִי",
       "strong": "H6041",
-      "pron": "님",
+      "pron": "헤아니",
       "glossKo": "가난한"
     }
   ],
   "defEn": "depressed; gentle; needy; saintly",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 26,
   "byBook": {
-    "psalms": 13
+    "psalms": 13,
+    "isaiah": 4,
+    "proverbs": 3,
+    "amos": 2,
+    "numbers": 2,
+    "job": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עניים עֲנָוִֽים",
+      "pron": "헤아니 느브",
+      "lemmas": [
+        "עָנִי",
+        "עָנָו"
+      ],
+      "words": [
+        {
+          "word": "עניים",
+          "lemma": "עָנִי",
+          "strong": "H6041",
+          "pron": "헤아니"
+        },
+        {
+          "word": "עֲנָוִֽים",
+          "lemma": "עָנָו",
+          "strong": "H6035",
+          "pron": "느브"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 9:12",
+        "psalms 10:12",
+        "proverbs 3:34",
+        "proverbs 14:21",
+        "proverbs 16:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲנִיֵּי אָֽרֶץ",
+      "pron": "느브 하아레츠",
+      "lemmas": [
+        "עָנָו",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "עֲנִיֵּי",
+          "lemma": "עָנָו",
+          "strong": "H6035",
+          "pron": "느브"
+        },
+        {
+          "word": "אָֽרֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 24:4",
+        "psalms 76:9",
+        "isaiah 11:4",
+        "zephaniah 2:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ענוים עֲ֝נִיִּ֗ים",
+      "pron": "느브 헤아니",
+      "lemmas": [
+        "עָנָו",
+        "עָנִי"
+      ],
+      "words": [
+        {
+          "word": "ענוים",
+          "lemma": "עָנָו",
+          "strong": "H6035",
+          "pron": "느브"
+        },
+        {
+          "word": "עֲ֝נִיִּ֗ים",
+          "lemma": "עָנִי",
+          "strong": "H6041",
+          "pron": "헤아니"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 9:18",
+        "isaiah 32:7",
+        "amos 8:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "שָׂמֵחַ",
-  "pron": "세메헤",
+  "pron": "사메아흐",
   "strong": "H8056",
   "posKo": "형용사",
   "root": {
@@ -12,21 +12,154 @@
     {
       "lemma": "שָׂמַח",
       "strong": "H8055",
-      "pron": "브이셈후",
+      "pron": "브사마흐",
       "glossKo": "기뻐하다"
     },
     {
       "lemma": "שִׂמְחָה",
       "strong": "H8057",
-      "pron": "심하",
+      "pron": "브심하",
       "glossKo": "기쁨"
     }
   ],
   "defEn": "blithe; gleeful",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 20,
   "byBook": {
-    "psalms": 3
+    "kings1": 4,
+    "proverbs": 4,
+    "psalms": 3,
+    "chronicles2": 2,
+    "esther": 2,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "isaiah": 1,
+    "kings2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֵ֣ב שָׂ֭מֵחַ",
+      "pron": "립보 사메아흐",
+      "lemmas": [
+        "לֵב",
+        "שָׂמֵחַ"
+      ],
+      "words": [
+        {
+          "word": "לֵ֣ב",
+          "lemma": "לֵב",
+          "strong": "H3820",
+          "pron": "립보"
+        },
+        {
+          "word": "שָׂ֭מֵחַ",
+          "lemma": "שָׂמֵחַ",
+          "strong": "H8056",
+          "pron": "사메아흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 15:13",
+        "proverbs 17:22",
+        "ecclesiastes 2:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׂ֭מֵחַ יֵיטִ֣ב",
+      "pron": "사메아흐 테딥",
+      "lemmas": [
+        "שָׂמֵחַ",
+        "יָטַב"
+      ],
+      "words": [
+        {
+          "word": "שָׂ֭מֵחַ",
+          "lemma": "שָׂמֵחַ",
+          "strong": "H8056",
+          "pron": "사메아흐"
+        },
+        {
+          "word": "יֵיטִ֣ב",
+          "lemma": "יָטַב",
+          "strong": "H3190",
+          "pron": "테딥"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 5:14",
+        "proverbs 15:13",
+        "proverbs 17:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׂמֵחִים֙ וְט֣וֹבֵי",
+      "pron": "사메아흐 돕",
+      "lemmas": [
+        "שָׂמֵחַ",
+        "טוֹב"
+      ],
+      "words": [
+        {
+          "word": "שְׂמֵחִים֙",
+          "lemma": "שָׂמֵחַ",
+          "strong": "H8056",
+          "pron": "사메아흐"
+        },
+        {
+          "word": "וְט֣וֹבֵי",
+          "lemma": "טוֹב",
+          "strong": "H2896",
+          "pron": "돕"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 8:66",
+        "chronicles2 7:10",
+        "esther 5:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׂמֵחִים֙ וְט֣וֹבֵי לֵ֔ב",
+      "pron": "사메아흐 돕 립보",
+      "lemmas": [
+        "שָׂמֵחַ",
+        "טוֹב",
+        "לֵב"
+      ],
+      "words": [
+        {
+          "word": "שְׂמֵחִים֙",
+          "lemma": "שָׂמֵחַ",
+          "strong": "H8056",
+          "pron": "사메아흐"
+        },
+        {
+          "word": "וְט֣וֹבֵי",
+          "lemma": "טוֹב",
+          "strong": "H2896",
+          "pron": "돕"
+        },
+        {
+          "word": "לֵ֔ב",
+          "lemma": "לֵב",
+          "strong": "H3820",
+          "pron": "립보"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 8:66",
+        "chronicles2 7:10",
+        "esther 5:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

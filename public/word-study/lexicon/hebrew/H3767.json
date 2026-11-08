@@ -1,8 +1,8 @@
 {
   "lemma": "כָּרָע",
-  "pron": "카라",
+  "pron": "케라아으브",
   "strong": "H3767",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "כָּרַע",
     "strong": "H3766",
@@ -12,13 +12,112 @@
     {
       "lemma": "כָּרַע",
       "strong": "H3766",
-      "pron": "하케리에후",
-      "glossKo": "그에게 꿇다"
+      "pron": "카라",
+      "glossKo": "꿇다"
     }
   ],
   "defEn": "leg",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "leviticus": 6,
+    "exodus": 2,
+    "amos": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וּכְרָעָ֖יו יִרְחַ֣ץ",
+      "pron": "케라아으브 브라하추",
+      "lemmas": [
+        "כָּרָע",
+        "רָחַץ"
+      ],
+      "words": [
+        {
+          "word": "וּכְרָעָ֖יו",
+          "lemma": "כָּרָע",
+          "strong": "H3767",
+          "pron": "케라아으브"
+        },
+        {
+          "word": "יִרְחַ֣ץ",
+          "lemma": "רָחַץ",
+          "strong": "H7364",
+          "pron": "브라하추"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 1:9",
+        "leviticus 1:13",
+        "leviticus 8:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּכְרָעָ֖יו יִרְחַ֣ץ בַּמָּ֑יִם",
+      "pron": "케라아으브 브라하추 아마임",
+      "lemmas": [
+        "כָּרָע",
+        "רָחַץ",
+        "מַיִם"
+      ],
+      "words": [
+        {
+          "word": "וּכְרָעָ֖יו",
+          "lemma": "כָּרָע",
+          "strong": "H3767",
+          "pron": "케라아으브"
+        },
+        {
+          "word": "יִרְחַ֣ץ",
+          "lemma": "רָחַץ",
+          "strong": "H7364",
+          "pron": "브라하추"
+        },
+        {
+          "word": "בַּמָּ֑יִם",
+          "lemma": "מַיִם",
+          "strong": "H4325",
+          "pron": "아마임"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 1:9",
+        "leviticus 1:13",
+        "leviticus 8:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קִרְבּוֹ֙ וּכְרָעָ֔יו",
+      "pron": "베키렙바흐 케라아으브",
+      "lemmas": [
+        "קֶרֶב",
+        "כָּרָע"
+      ],
+      "words": [
+        {
+          "word": "קִרְבּוֹ֙",
+          "lemma": "קֶרֶב",
+          "strong": "H7130",
+          "pron": "베키렙바흐"
+        },
+        {
+          "word": "וּכְרָעָ֔יו",
+          "lemma": "כָּרָע",
+          "strong": "H3767",
+          "pron": "케라아으브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 29:17",
+        "leviticus 1:9",
+        "leviticus 1:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "מָלַט",
-  "pron": "브님라두",
+  "pron": "힘말렏",
   "strong": "H4422",
   "posKo": "동사",
   "root": null,
@@ -8,16 +8,195 @@
     {
       "lemma": "מֶלֶט",
       "strong": "H4423",
-      "pron": "",
+      "pron": "바멜렏",
       "glossKo": "회반죽"
     }
   ],
   "defEn": "be smooth; escape; release; rescue; bring forth young; emit sparks",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 95,
   "byBook": {
+    "jeremiah": 13,
+    "samuel1": 13,
+    "job": 11,
+    "isaiah": 9,
     "psalms": 8,
-    "genesis": 5
+    "genesis": 5,
+    "kings1": 5,
+    "amos": 4,
+    "ezekiel": 4,
+    "samuel2": 4,
+    "ecclesiastes": 3,
+    "judges": 3,
+    "kings2": 3,
+    "proverbs": 3,
+    "daniel": 2,
+    "chronicles2": 1,
+    "esther": 1,
+    "joel": 1,
+    "malachi": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹ֣א יְמַלֵּֽט",
+      "pron": "로 힘말렏",
+      "lemmas": [
+        "לֹא",
+        "מָלַט"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יְמַלֵּֽט",
+          "lemma": "מָלַט",
+          "strong": "H4422",
+          "pron": "힘말렏"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "judges 3:29",
+        "samuel1 30:17",
+        "job 20:20",
+        "psalms 33:17",
+        "proverbs 19:5",
+        "ecclesiastes 8:8",
+        "jeremiah 32:4",
+        "jeremiah 34:3",
+        "jeremiah 38:18",
+        "jeremiah 38:23",
+        "jeremiah 48:8",
+        "ezekiel 17:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנִמְלַטְתִּ֖י מִיָּדֽוֹ",
+      "pron": "힘말렏 야도",
+      "lemmas": [
+        "מָלַט",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "וְנִמְלַטְתִּ֖י",
+          "lemma": "מָלַט",
+          "strong": "H4422",
+          "pron": "힘말렏"
+        },
+        {
+          "word": "מִיָּדֽוֹ",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel1 27:1",
+        "job 6:23",
+        "jeremiah 32:4",
+        "jeremiah 34:3",
+        "jeremiah 38:18",
+        "jeremiah 38:23",
+        "daniel 11:41"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְמַלֵּ֨ט נַפְשׁ֖וֹ",
+      "pron": "힘말렏 네페쉬",
+      "lemmas": [
+        "מָלַט",
+        "נֶפֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "יְמַלֵּ֨ט",
+          "lemma": "מָלַט",
+          "strong": "H4422",
+          "pron": "힘말렏"
+        },
+        {
+          "word": "נַפְשׁ֖וֹ",
+          "lemma": "נֶפֶשׁ",
+          "strong": "H5315",
+          "pron": "네페쉬"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 89:48",
+        "psalms 116:4",
+        "jeremiah 48:6",
+        "amos 2:14",
+        "amos 2:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִמָּלֵ֥ט אִמָּלֵ֣ט",
+      "pron": "힘말렏 힘말렏",
+      "lemmas": [
+        "מָלַט",
+        "מָלַט"
+      ],
+      "words": [
+        {
+          "word": "הִמָּלֵ֥ט",
+          "lemma": "מָלַט",
+          "strong": "H4422",
+          "pron": "힘말렏"
+        },
+        {
+          "word": "אִמָּלֵ֣ט",
+          "lemma": "מָלַט",
+          "strong": "H4422",
+          "pron": "힘말렏"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 27:1",
+        "jeremiah 39:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וָאִמָּ֨לְטָ֧ה רַק",
+      "pron": "힘말렏 라크",
+      "lemmas": [
+        "מָלַט",
+        "רַק"
+      ],
+      "words": [
+        {
+          "word": "וָאִמָּ֨לְטָ֧ה",
+          "lemma": "מָלַט",
+          "strong": "H4422",
+          "pron": "힘말렏"
+        },
+        {
+          "word": "רַק",
+          "lemma": "רַק",
+          "strong": "H7535",
+          "pron": "라크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 1:15",
+        "job 1:16",
+        "job 1:17",
+        "job 1:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

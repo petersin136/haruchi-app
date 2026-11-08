@@ -1,6 +1,6 @@
 {
   "lemma": "שִׁיר",
-  "pron": "샤르",
+  "pron": "야시르",
   "strong": "H7891",
   "posKo": "동사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "שׁוּר",
       "strong": "H7788",
-      "pron": "",
+      "pron": "바타슈리",
       "glossKo": "여행하다"
     },
     {
@@ -24,54 +24,75 @@
     {
       "lemma": "שׁוֹר",
       "strong": "H7794",
-      "pron": "미쇼르",
+      "pron": "쇼르",
       "glossKo": "황소"
     },
     {
       "lemma": "שִׁיר",
       "strong": "H7892",
-      "pron": "아시라",
+      "pron": "우브시림",
       "glossKo": "노래"
     },
     {
       "lemma": "תְּשׁוּרָה",
       "strong": "H8670",
-      "pron": "",
+      "pron": "우테슈라",
       "glossKo": "예물"
     }
   ],
   "defEn": "sing",
   "defKo": "",
-  "countOT": 27,
+  "countOT": 88,
   "byBook": {
-    "psalms": 27
+    "psalms": 27,
+    "nehemiah": 17,
+    "chronicles2": 9,
+    "chronicles1": 8,
+    "ezra": 6,
+    "exodus": 3,
+    "isaiah": 3,
+    "ecclesiastes": 2,
+    "judges": 2,
+    "samuel1": 2,
+    "samuel2": 2,
+    "ezekiel": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "kings1": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "שִׁ֣ירוּ לַ֭יהוָה",
-      "pron": "샤르 여호와",
+      "hebrew": "שִׁ֤ירוּ לַֽיהוָה֙",
+      "pron": "야시르 여호와",
       "lemmas": [
         "שִׁיר",
         "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "שִׁ֣ירוּ",
+          "word": "שִׁ֤ירוּ",
           "lemma": "שִׁיר",
           "strong": "H7891",
-          "pron": "샤르"
+          "pron": "야시르"
         },
         {
-          "word": "לַ֭יהוָה",
+          "word": "לַֽיהוָה֙",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         }
       ],
-      "count": 9,
+      "count": 15,
       "refs": [
+        "exodus 15:1",
+        "exodus 15:21",
+        "chronicles1 16:23",
+        "chronicles2 20:21",
         "psalms 7:1",
-        "psalms 13:5",
+        "psalms 13:6",
         "psalms 96:1",
         "psalms 96:2",
         "psalms 98:1",
@@ -82,8 +103,40 @@
       "glossKo": ""
     },
     {
+      "hebrew": "לשור לָשִׁ֣יר",
+      "pron": "야시르 야시르",
+      "lemmas": [
+        "שִׁיר",
+        "שִׁיר"
+      ],
+      "words": [
+        {
+          "word": "לשור",
+          "lemma": "שִׁיר",
+          "strong": "H7891",
+          "pron": "야시르"
+        },
+        {
+          "word": "לָשִׁ֣יר",
+          "lemma": "שִׁיר",
+          "strong": "H7891",
+          "pron": "야시르"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "samuel1 18:6",
+        "samuel2 19:35",
+        "chronicles2 35:25",
+        "ezra 2:65",
+        "nehemiah 7:67",
+        "ecclesiastes 2:8"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "אָשִׁ֥ירָה וַ֝אֲזַמְּרָ֗ה",
-      "pron": "샤르 바아잠메라",
+      "pron": "야시르 아잠메르",
       "lemmas": [
         "שִׁיר",
         "זָמַר"
@@ -93,17 +146,19 @@
           "word": "אָשִׁ֥ירָה",
           "lemma": "שִׁיר",
           "strong": "H7891",
-          "pron": "샤르"
+          "pron": "야시르"
         },
         {
           "word": "וַ֝אֲזַמְּרָ֗ה",
           "lemma": "זָמַר",
           "strong": "H2167",
-          "pron": "바아잠메라"
+          "pron": "아잠메르"
         }
       ],
-      "count": 5,
+      "count": 7,
       "refs": [
+        "judges 5:3",
+        "chronicles1 16:9",
         "psalms 21:13",
         "psalms 27:6",
         "psalms 57:7",
@@ -113,38 +168,64 @@
       "glossKo": ""
     },
     {
-      "hebrew": "שִׁ֣ירוּ לַ֭יהוָה שִׁ֣יר",
-      "pron": "샤르 여호와 아시라",
+      "hebrew": "הַמְשֹׁ֣רְרִ֔ים וְשִׁיר",
+      "pron": "야시르 우브시림",
       "lemmas": [
         "שִׁיר",
-        "יְהֹוָה",
         "שִׁיר"
       ],
       "words": [
         {
-          "word": "שִׁ֣ירוּ",
+          "word": "הַמְשֹׁ֣רְרִ֔ים",
           "lemma": "שִׁיר",
           "strong": "H7891",
-          "pron": "샤르"
+          "pron": "야시르"
         },
         {
-          "word": "לַ֭יהוָה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        },
-        {
-          "word": "שִׁ֣יר",
+          "word": "וְשִׁיר",
           "lemma": "שִׁיר",
           "strong": "H7892",
-          "pron": "아시라"
+          "pron": "우브시림"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
-        "psalms 96:1",
-        "psalms 98:1",
-        "psalms 149:1"
+        "nehemiah 12:46",
+        "psalms 33:3",
+        "psalms 137:3",
+        "proverbs 25:20",
+        "isaiah 26:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהַמְשֹׁרְרִ֖ים וְהַשֹּׁעֲרִ֑ים",
+      "pron": "야시르 아쇼에르",
+      "lemmas": [
+        "שִׁיר",
+        "שׁוֹעֵר"
+      ],
+      "words": [
+        {
+          "word": "וְהַמְשֹׁרְרִ֖ים",
+          "lemma": "שִׁיר",
+          "strong": "H7891",
+          "pron": "야시르"
+        },
+        {
+          "word": "וְהַשֹּׁעֲרִ֑ים",
+          "lemma": "שׁוֹעֵר",
+          "strong": "H7778",
+          "pron": "아쇼에르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezra 2:70",
+        "ezra 7:7",
+        "nehemiah 12:45",
+        "nehemiah 12:47",
+        "nehemiah 13:5"
       ],
       "glossKo": ""
     }

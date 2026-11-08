@@ -2,7 +2,7 @@
   "lemma": "עַד",
   "pron": "앋",
   "strong": "H5705",
-  "posKo": "",
+  "posKo": "전치사",
   "root": {
     "lemma": "עַד",
     "strong": "H5704",
@@ -12,8 +12,8 @@
     {
       "lemma": "בְּעַד",
       "strong": "H1157",
-      "pron": "바아디위",
-      "glossKo": "나를 ~위하여"
+      "pron": "바아도",
+      "glossKo": "그에게 ~위하여"
     },
     {
       "lemma": "עַד",
@@ -24,13 +24,188 @@
     {
       "lemma": "עֲדֶן",
       "strong": "H5728",
-      "pron": "",
+      "pron": "아데나",
       "glossKo": "지금까지"
     }
   ],
   "defEn": "× and, at, for, (hither-) to, on till, (un-) to, until, within.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 35,
+  "byBook": {
+    "daniel": 26,
+    "ezra": 9
+  },
+  "phrases": [
+    {
+      "hebrew": "עַ֣ד דִּֽי",
+      "pron": "앋 드흐브",
+      "lemmas": [
+        "עַד",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "עַ֣ד",
+          "lemma": "עַד",
+          "strong": "H5705",
+          "pron": "앋"
+        },
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "daniel 2:9",
+        "daniel 2:34",
+        "daniel 4:23",
+        "daniel 4:25",
+        "daniel 4:32",
+        "daniel 4:33",
+        "daniel 5:21",
+        "daniel 6:24",
+        "daniel 7:4",
+        "daniel 7:9",
+        "daniel 7:11",
+        "daniel 7:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֲוֵ֡ית עַד֩",
+      "pron": "레헤베 앋",
+      "lemmas": [
+        "הָוָא",
+        "עַד"
+      ],
+      "words": [
+        {
+          "word": "הֲוֵ֡ית",
+          "lemma": "הָוָא",
+          "strong": "H1934",
+          "pron": "레헤베"
+        },
+        {
+          "word": "עַד֩",
+          "lemma": "עַד",
+          "strong": "H5705",
+          "pron": "앋"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 2:34",
+        "daniel 7:4",
+        "daniel 7:9",
+        "daniel 7:11",
+        "daniel 7:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֲוַ֗יְתָ עַ֠ד דִּ֣י",
+      "pron": "레헤베 앋 드흐브",
+      "lemmas": [
+        "הָוָא",
+        "עַד",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "הֲוַ֗יְתָ",
+          "lemma": "הָוָא",
+          "strong": "H1934",
+          "pron": "레헤베"
+        },
+        {
+          "word": "עַ֠ד",
+          "lemma": "עַד",
+          "strong": "H5705",
+          "pron": "앋"
+        },
+        {
+          "word": "דִּ֣י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 2:34",
+        "daniel 7:4",
+        "daniel 7:9",
+        "daniel 7:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָזֵ֣ה הֲוֵ֡ית עַד֩",
+      "pron": "르메헤제 레헤베 앋",
+      "lemmas": [
+        "חֲזָא",
+        "הָוָא",
+        "עַד"
+      ],
+      "words": [
+        {
+          "word": "חָזֵ֣ה",
+          "lemma": "חֲזָא",
+          "strong": "H2370",
+          "pron": "르메헤제"
+        },
+        {
+          "word": "הֲוֵ֡ית",
+          "lemma": "הָוָא",
+          "strong": "H1934",
+          "pron": "레헤베"
+        },
+        {
+          "word": "עַד֩",
+          "lemma": "עַד",
+          "strong": "H5705",
+          "pron": "앋"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 2:34",
+        "daniel 7:4",
+        "daniel 7:9",
+        "daniel 7:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעַ֣ד עָלְמָ֑א",
+      "pron": "앋 알마",
+      "lemmas": [
+        "עַד",
+        "עָלַם"
+      ],
+      "words": [
+        {
+          "word": "וְעַ֣ד",
+          "lemma": "עַד",
+          "strong": "H5705",
+          "pron": "앋"
+        },
+        {
+          "word": "עָלְמָ֑א",
+          "lemma": "עָלַם",
+          "strong": "H5957",
+          "pron": "알마"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:20",
+        "daniel 7:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,13 +12,13 @@
     {
       "lemma": "יַעֲקֹבָה",
       "strong": "H3291",
-      "pron": "",
+      "pron": "브야아코바",
       "glossKo": "야아고바"
     },
     {
       "lemma": "עָקַב",
       "strong": "H6117",
-      "pron": "바야곱니",
+      "pron": "바아에케베니",
       "glossKo": "나를 발꿈치를 잡다"
     },
     {
@@ -36,27 +36,85 @@
     {
       "lemma": "עָקֵב",
       "strong": "H6120",
-      "pron": "아케바위",
+      "pron": "아케바이",
       "glossKo": "나의 발꿈치치는 자"
     },
     {
       "lemma": "עָקֹב",
       "strong": "H6121",
-      "pron": "",
+      "pron": "헤아콥",
       "glossKo": "굽은"
     }
   ],
   "defEn": "Jaakob",
   "defKo": "",
-  "countOT": 214,
+  "countOT": 349,
   "byBook": {
     "genesis": 180,
-    "psalms": 34
+    "isaiah": 42,
+    "psalms": 34,
+    "jeremiah": 16,
+    "deuteronomy": 11,
+    "exodus": 11,
+    "micah": 11,
+    "numbers": 9,
+    "amos": 6,
+    "ezekiel": 4,
+    "malachi": 4,
+    "hosea": 3,
+    "joshua": 3,
+    "lamentations": 3,
+    "obadiah": 3,
+    "chronicles1": 2,
+    "kings2": 2,
+    "kings1": 1,
+    "leviticus": 1,
+    "nahum": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
+      "hebrew": "בֵּ֣ית יַעֲקֹ֔ב",
+      "pron": "미바이트 야곱",
+      "lemmas": [
+        "בַּיִת",
+        "יַעֲקֹב"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֣ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "יַעֲקֹ֔ב",
+          "lemma": "יַעֲקֹב",
+          "strong": "H3290",
+          "pron": "야곱"
+        }
+      ],
+      "count": 21,
+      "refs": [
+        "genesis 46:27",
+        "exodus 19:3",
+        "psalms 114:1",
+        "isaiah 2:5",
+        "isaiah 2:6",
+        "isaiah 8:17",
+        "isaiah 10:20",
+        "isaiah 14:1",
+        "isaiah 29:22",
+        "isaiah 46:3",
+        "isaiah 48:1",
+        "isaiah 58:1"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וַיֹּ֤אמֶר יַעֲקֹב֙",
-      "pron": "아마르 야곱",
+      "pron": "바요메르 야곱",
       "lemmas": [
         "אָמַר",
         "יַעֲקֹב"
@@ -66,7 +124,7 @@
           "word": "וַיֹּ֤אמֶר",
           "lemma": "אָמַר",
           "strong": "H559",
-          "pron": "아마르"
+          "pron": "바요메르"
         },
         {
           "word": "יַעֲקֹב֙",
@@ -75,7 +133,7 @@
           "pron": "야곱"
         }
       ],
-      "count": 19,
+      "count": 21,
       "refs": [
         "genesis 25:31",
         "genesis 25:33",
@@ -94,7 +152,7 @@
     },
     {
       "hebrew": "אֶֽל יַעֲקֹ֗ב",
-      "pron": "엘레모 야곱",
+      "pron": "엘 야곱",
       "lemmas": [
         "אֵל",
         "יַעֲקֹב"
@@ -104,7 +162,7 @@
           "word": "אֶֽל",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
         },
         {
           "word": "יַעֲקֹ֗ב",
@@ -113,7 +171,7 @@
           "pron": "야곱"
         }
       ],
-      "count": 17,
+      "count": 19,
       "refs": [
         "genesis 25:30",
         "genesis 27:6",
@@ -151,9 +209,8 @@
           "pron": "야곱"
         }
       ],
-      "count": 13,
+      "count": 19,
       "refs": [
-        "psalms 79:7",
         "genesis 25:28",
         "genesis 27:15",
         "genesis 27:30",
@@ -164,83 +221,46 @@
         "genesis 31:25",
         "genesis 35:4",
         "genesis 46:5",
-        "genesis 47:7"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יַעֲקֹב֙ אֶל",
-      "pron": "야곱 엘레모",
-      "lemmas": [
-        "יַעֲקֹב",
-        "אֵל"
-      ],
-      "words": [
-        {
-          "word": "יַעֲקֹב֙",
-          "lemma": "יַעֲקֹב",
-          "strong": "H3290",
-          "pron": "야곱"
-        },
-        {
-          "word": "אֶל",
-          "lemma": "אֵל",
-          "strong": "H413",
-          "pron": "엘레모"
-        }
-      ],
-      "count": 12,
-      "refs": [
-        "genesis 27:11",
-        "genesis 27:19",
-        "genesis 27:22",
-        "genesis 28:7",
-        "genesis 29:21",
-        "genesis 30:25",
-        "genesis 34:30",
-        "genesis 35:2",
-        "genesis 35:27",
-        "genesis 47:9",
-        "genesis 48:3",
-        "genesis 49:1"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יַעֲקֹ֖ב אֶת",
-      "pron": "야곱 에트",
-      "lemmas": [
-        "יַעֲקֹב",
-        "אֵת"
-      ],
-      "words": [
-        {
-          "word": "יַעֲקֹ֖ב",
-          "lemma": "יַעֲקֹב",
-          "strong": "H3290",
-          "pron": "야곱"
-        },
-        {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        }
-      ],
-      "count": 12,
-      "refs": [
-        "psalms 79:7",
-        "genesis 29:10",
-        "genesis 29:18",
-        "genesis 30:41",
-        "genesis 31:1",
-        "genesis 31:2",
-        "genesis 31:20",
-        "genesis 34:13",
-        "genesis 35:4",
-        "genesis 35:15",
         "genesis 47:7",
-        "genesis 47:10"
+        "joshua 24:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֱלֹהֵ֖י יַעֲקֹ֣ב",
+      "pron": "엘로힘 야곱",
+      "lemmas": [
+        "אֱלֹהִים",
+        "יַעֲקֹב"
+      ],
+      "words": [
+        {
+          "word": "אֱלֹהֵ֖י",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "יַעֲקֹ֣ב",
+          "lemma": "יַעֲקֹב",
+          "strong": "H3290",
+          "pron": "야곱"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "exodus 3:6",
+        "exodus 3:15",
+        "exodus 4:5",
+        "samuel2 23:1",
+        "psalms 20:1",
+        "psalms 46:7",
+        "psalms 46:11",
+        "psalms 75:9",
+        "psalms 76:6",
+        "psalms 81:1",
+        "psalms 81:4",
+        "psalms 84:8"
       ],
       "glossKo": ""
     }

@@ -1,16 +1,208 @@
 {
   "lemma": "כֹּחַ",
-  "pron": "코히위",
+  "pron": "코하흐",
   "strong": "H3581",
   "posKo": "명사",
   "root": null,
   "family": [],
   "defEn": "vigor",
   "defKo": "",
-  "countOT": 15,
+  "countOT": 127,
   "byBook": {
+    "job": 21,
+    "daniel": 13,
+    "isaiah": 12,
     "psalms": 12,
-    "genesis": 3
+    "chronicles2": 8,
+    "judges": 8,
+    "jeremiah": 5,
+    "proverbs": 5,
+    "chronicles1": 4,
+    "deuteronomy": 4,
+    "samuel1": 4,
+    "exodus": 3,
+    "genesis": 3,
+    "joshua": 3,
+    "ecclesiastes": 2,
+    "ezra": 2,
+    "kings2": 2,
+    "lamentations": 2,
+    "leviticus": 2,
+    "nahum": 2,
+    "nehemiah": 2,
+    "numbers": 2,
+    "amos": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "kings1": 1,
+    "micah": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּכֹ֥חַ גָּד֖וֹל",
+      "pron": "코하흐 아게돌림",
+      "lemmas": [
+        "כֹּחַ",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "בְּכֹ֥חַ",
+          "lemma": "כֹּחַ",
+          "strong": "H3581",
+          "pron": "코하흐"
+        },
+        {
+          "word": "גָּד֖וֹל",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 32:11",
+        "deuteronomy 4:37",
+        "deuteronomy 9:29",
+        "joshua 17:17",
+        "judges 16:5",
+        "judges 16:6",
+        "judges 16:15",
+        "kings2 17:36",
+        "nehemiah 1:10",
+        "jeremiah 27:5",
+        "jeremiah 32:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֵ֥ין כֹּ֖חַ",
+      "pron": "아인 코하흐",
+      "lemmas": [
+        "אַיִן",
+        "כֹּחַ"
+      ],
+      "words": [
+        {
+          "word": "וְאֵ֥ין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
+        },
+        {
+          "word": "כֹּ֖חַ",
+          "lemma": "כֹּחַ",
+          "strong": "H3581",
+          "pron": "코하흐"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel1 30:4",
+        "chronicles2 14:11",
+        "chronicles2 20:12",
+        "ezra 10:13",
+        "isaiah 44:12",
+        "isaiah 50:2",
+        "daniel 11:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָצַ֖רְתִּי כֹּֽחַ",
+      "pron": "아차라니 코하흐",
+      "lemmas": [
+        "עָצָר",
+        "כֹּחַ"
+      ],
+      "words": [
+        {
+          "word": "עָצַ֖רְתִּי",
+          "lemma": "עָצָר",
+          "strong": "H6113",
+          "pron": "아차라니"
+        },
+        {
+          "word": "כֹּֽחַ",
+          "lemma": "כֹּחַ",
+          "strong": "H3581",
+          "pron": "코하흐"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "chronicles1 29:14",
+        "chronicles2 2:6",
+        "chronicles2 13:20",
+        "chronicles2 22:9",
+        "daniel 10:8",
+        "daniel 10:16",
+        "daniel 11:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֥א בְכֹ֖חַ",
+      "pron": "로 코하흐",
+      "lemmas": [
+        "לֹא",
+        "כֹּחַ"
+      ],
+      "words": [
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "בְכֹ֖חַ",
+          "lemma": "כֹּחַ",
+          "strong": "H3581",
+          "pron": "코하흐"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel1 2:9",
+        "job 26:2",
+        "lamentations 1:6",
+        "daniel 8:22",
+        "daniel 8:24",
+        "zechariah 4:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֨רֶץ֙ בְּכֹח֔וֹ",
+      "pron": "하아레츠 코하흐",
+      "lemmas": [
+        "אֶרֶץ",
+        "כֹּחַ"
+      ],
+      "words": [
+        {
+          "word": "אֶ֨רֶץ֙",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "בְּכֹח֔וֹ",
+          "lemma": "כֹּחַ",
+          "strong": "H3581",
+          "pron": "코하흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 10:12",
+        "jeremiah 27:5",
+        "jeremiah 32:17",
+        "jeremiah 51:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

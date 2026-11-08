@@ -1,6 +1,6 @@
 {
   "lemma": "גַּל",
-  "pron": "브갈레카",
+  "pron": "갈",
   "strong": "H1530",
   "posKo": "명사",
   "root": {
@@ -16,6 +16,12 @@
       "glossKo": ""
     },
     {
+      "lemma": "גִּלְבֹּעַ",
+      "strong": "H1533",
+      "pron": "바길보아",
+      "glossKo": "길보아"
+    },
+    {
       "lemma": "גַּלְגַּל",
       "strong": "H1534",
       "pron": "바갈갈",
@@ -24,33 +30,44 @@
     {
       "lemma": "גֻּלְגֹּלֶת",
       "strong": "H1538",
-      "pron": "",
+      "pron": "라굴골레트",
       "glossKo": "해골"
     },
     {
       "lemma": "גֻּלָּה",
       "strong": "H1543",
-      "pron": "",
+      "pron": "굴로트",
       "glossKo": "기름병"
     },
     {
       "lemma": "גִּלּוּל",
       "strong": "H1544",
-      "pron": "",
-      "glossKo": "우상"
+      "pron": "길룰레켐",
+      "glossKo": "너희의 우상"
     }
   ],
   "defEn": "rolled; heap; ruins; spring; waves",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 34,
   "byBook": {
     "genesis": 7,
-    "psalms": 5
+    "jeremiah": 6,
+    "psalms": 5,
+    "isaiah": 4,
+    "job": 3,
+    "joshua": 2,
+    "ezekiel": 1,
+    "hosea": 1,
+    "jonah": 1,
+    "kings2": 1,
+    "samuel2": 1,
+    "songofsolomon": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
       "hebrew": "הַגַּ֣ל הַזֶּ֔ה",
-      "pron": "브갈레카 제",
+      "pron": "갈 제",
       "lemmas": [
         "גַּל",
         "זֶה"
@@ -60,7 +77,7 @@
           "word": "הַגַּ֣ל",
           "lemma": "גַּל",
           "strong": "H1530",
-          "pron": "브갈레카"
+          "pron": "갈"
         },
         {
           "word": "הַזֶּ֔ה",
@@ -74,6 +91,132 @@
         "genesis 31:48",
         "genesis 31:51",
         "genesis 31:52"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל הַגָּֽל",
+      "pron": "알 갈",
+      "lemmas": [
+        "עַל",
+        "גַּל"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הַגָּֽל",
+          "lemma": "גַּל",
+          "strong": "H1530",
+          "pron": "갈"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 31:46",
+        "joshua 7:26",
+        "joshua 8:29",
+        "samuel2 18:17",
+        "job 8:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֶּהֱמ֖וּ גַּלָּ֑יו",
+      "pron": "호마 갈",
+      "lemmas": [
+        "הָמָה",
+        "גַּל"
+      ],
+      "words": [
+        {
+          "word": "וַיֶּהֱמ֖וּ",
+          "lemma": "הָמָה",
+          "strong": "H1993",
+          "pron": "호마"
+        },
+        {
+          "word": "גַּלָּ֑יו",
+          "lemma": "גַּל",
+          "strong": "H1530",
+          "pron": "갈"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 51:15",
+        "jeremiah 5:22",
+        "jeremiah 31:35",
+        "jeremiah 51:55"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גַּל אֲבָנִ֣ים",
+      "pron": "갈 브에벤",
+      "lemmas": [
+        "גַּל",
+        "אֶבֶן"
+      ],
+      "words": [
+        {
+          "word": "גַּל",
+          "lemma": "גַּל",
+          "strong": "H1530",
+          "pron": "갈"
+        },
+        {
+          "word": "אֲבָנִ֣ים",
+          "lemma": "אֶבֶן",
+          "strong": "H68",
+          "pron": "브에벤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 7:26",
+        "joshua 8:29",
+        "samuel2 18:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גַּל אֲבָנִ֣ים גָּד֗וֹל",
+      "pron": "갈 브에벤 아게돌림",
+      "lemmas": [
+        "גַּל",
+        "אֶבֶן",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "גַּל",
+          "lemma": "גַּל",
+          "strong": "H1530",
+          "pron": "갈"
+        },
+        {
+          "word": "אֲבָנִ֣ים",
+          "lemma": "אֶבֶן",
+          "strong": "H68",
+          "pron": "브에벤"
+        },
+        {
+          "word": "גָּד֗וֹל",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 7:26",
+        "joshua 8:29",
+        "samuel2 18:17"
       ],
       "glossKo": ""
     }

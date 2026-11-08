@@ -1,6 +1,6 @@
 {
   "lemma": "שִׁית",
-  "pron": "샤투",
+  "pron": "아시트",
   "strong": "H7896",
   "posKo": "동사",
   "root": null,
@@ -14,7 +14,7 @@
     {
       "lemma": "שַׁיִת",
       "strong": "H7898",
-      "pron": "",
+      "pron": "바샤이트",
       "glossKo": "가시"
     },
     {
@@ -32,82 +32,197 @@
     {
       "lemma": "שֵׁתָה",
       "strong": "H8357",
-      "pron": "",
-      "glossKo": "엉덩이"
+      "pron": "셰토테헴",
+      "glossKo": "그들의 엉덩이"
     },
     {
       "lemma": "שְׁתִי",
       "strong": "H8359",
-      "pron": "",
+      "pron": "비셰티",
       "glossKo": "씨"
     }
   ],
   "defEn": "place",
   "defKo": "",
-  "countOT": 39,
+  "countOT": 86,
   "byBook": {
     "psalms": 31,
-    "genesis": 8
+    "job": 9,
+    "exodus": 8,
+    "genesis": 8,
+    "jeremiah": 8,
+    "isaiah": 6,
+    "proverbs": 4,
+    "samuel2": 3,
+    "hosea": 2,
+    "numbers": 2,
+    "ruth": 2,
+    "samuel1": 2,
+    "kings1": 1
   },
   "phrases": [
     {
-      "hebrew": "שָׁ֣תוּ עָלָֽי",
-      "pron": "샤투 알",
+      "hebrew": "שָׁתָ֖ם עַל",
+      "pron": "아시트 알",
       "lemmas": [
         "שִׁית",
         "עַל"
       ],
       "words": [
         {
-          "word": "שָׁ֣תוּ",
+          "word": "שָׁתָ֖ם",
           "lemma": "שִׁית",
           "strong": "H7896",
-          "pron": "샤투"
+          "pron": "아시트"
         },
         {
-          "word": "עָלָֽי",
+          "word": "עַל",
           "lemma": "עַל",
           "strong": "H5921",
           "pron": "알"
         }
       ],
-      "count": 5,
+      "count": 13,
       "refs": [
-        "psalms 3:6",
-        "psalms 139:5",
         "genesis 30:40",
         "genesis 41:33",
-        "genesis 48:14"
+        "genesis 48:14",
+        "exodus 21:22",
+        "exodus 21:30",
+        "numbers 12:11",
+        "ruth 3:15",
+        "samuel1 2:8",
+        "job 22:24",
+        "psalms 3:6",
+        "psalms 139:5",
+        "isaiah 15:9"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כִּֽי תְשִׁיתֵ֣הוּ",
-      "pron": "키 샤투",
+      "hebrew": "ישית וְשִׁ֥ית",
+      "pron": "아시트 아시트",
+      "lemmas": [
+        "שִׁית",
+        "שִׁית"
+      ],
+      "words": [
+        {
+          "word": "ישית",
+          "lemma": "שִׁית",
+          "strong": "H7896",
+          "pron": "아시트"
+        },
+        {
+          "word": "וְשִׁ֥ית",
+          "lemma": "שִׁית",
+          "strong": "H7896",
+          "pron": "아시트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "job 10:20",
+        "psalms 90:8",
+        "isaiah 22:7",
+        "jeremiah 13:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁ֥ת לִבּ֖וֹ",
+      "pron": "아시트 립보",
+      "lemmas": [
+        "שִׁית",
+        "לֵב"
+      ],
+      "words": [
+        {
+          "word": "שָׁ֥ת",
+          "lemma": "שִׁית",
+          "strong": "H7896",
+          "pron": "아시트"
+        },
+        {
+          "word": "לִבּ֖וֹ",
+          "lemma": "לֵב",
+          "strong": "H3820",
+          "pron": "립보"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 7:23",
+        "samuel1 4:20",
+        "psalms 48:13",
+        "psalms 62:10",
+        "proverbs 24:32",
+        "proverbs 27:23",
+        "jeremiah 31:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֥א שָׁתָ֖ם",
+      "pron": "로 아시트",
+      "lemmas": [
+        "לֹא",
+        "שִׁית"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "שָׁתָ֖ם",
+          "lemma": "שִׁית",
+          "strong": "H7896",
+          "pron": "아시트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 30:40",
+        "exodus 7:23",
+        "exodus 33:4",
+        "samuel1 4:20",
+        "psalms 101:3",
+        "jeremiah 22:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֣י שָֽׁת",
+      "pron": "키 아시트",
       "lemmas": [
         "כִּי",
         "שִׁית"
       ],
       "words": [
         {
-          "word": "כִּֽי",
+          "word": "כִּ֣י",
           "lemma": "כִּי",
           "strong": "H3588",
           "pron": "키"
         },
         {
-          "word": "תְשִׁיתֵ֣הוּ",
+          "word": "שָֽׁת",
           "lemma": "שִׁית",
           "strong": "H7896",
-          "pron": "샤투"
+          "pron": "아시트"
         }
       ],
-      "count": 4,
+      "count": 6,
       "refs": [
+        "genesis 4:25",
+        "genesis 48:17",
+        "job 7:17",
         "psalms 21:6",
         "psalms 21:12",
-        "genesis 4:25",
-        "genesis 48:17"
+        "isaiah 15:9"
       ],
       "glossKo": ""
     }

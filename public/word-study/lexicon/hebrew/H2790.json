@@ -1,6 +1,6 @@
 {
   "lemma": "חָרַשׁ",
-  "pron": "테헤라쉬",
+  "pron": "마하리쉬",
   "strong": "H2790",
   "posKo": "동사",
   "root": null,
@@ -14,19 +14,19 @@
     {
       "lemma": "חֲרִישִׁי",
       "strong": "H2759",
-      "pron": "",
+      "pron": "하리시트",
       "glossKo": "조용한"
     },
     {
       "lemma": "חֶרֶשׁ",
       "strong": "H2791",
-      "pron": "",
+      "pron": "헤레쉬",
       "glossKo": "마법"
     },
     {
       "lemma": "חֹרֶשׁ",
       "strong": "H2793",
-      "pron": "",
+      "pron": "바호레샤",
       "glossKo": "수풀"
     },
     {
@@ -38,47 +38,194 @@
     {
       "lemma": "חֵרֵשׁ",
       "strong": "H2795",
-      "pron": "크헤레쉬",
+      "pron": "헤레쉬",
       "glossKo": "귀먹은"
     }
   ],
   "defEn": "scratch; engrave; plough; fabricate; devise; be silent; let alone; be deaf",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 72,
   "byBook": {
+    "job": 11,
     "psalms": 10,
-    "genesis": 2
+    "proverbs": 9,
+    "numbers": 6,
+    "isaiah": 5,
+    "jeremiah": 4,
+    "samuel1": 4,
+    "esther": 3,
+    "judges": 3,
+    "amos": 2,
+    "genesis": 2,
+    "hosea": 2,
+    "micah": 2,
+    "samuel2": 2,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "habakkuk": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "nehemiah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "אַֽל תֶּחֱרַ֪שׁ",
-      "pron": "브엘 테헤라쉬",
+      "hebrew": "הַחֲרֵשׁ֩ יַחֲרִ֨ישׁ",
+      "pron": "마하리쉬 마하리쉬",
+      "lemmas": [
+        "חָרַשׁ",
+        "חָרַשׁ"
+      ],
+      "words": [
+        {
+          "word": "הַחֲרֵשׁ֩",
+          "lemma": "חָרַשׁ",
+          "strong": "H2790",
+          "pron": "마하리쉬"
+        },
+        {
+          "word": "יַחֲרִ֨ישׁ",
+          "lemma": "חָרַשׁ",
+          "strong": "H2790",
+          "pron": "마하리쉬"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "numbers 30:14",
+        "esther 4:14",
+        "job 13:5",
+        "psalms 129:3",
+        "isaiah 28:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַל תַּחֲרֵ֣שׁ",
+      "pron": "엘 마하리쉬",
       "lemmas": [
         "אַל",
         "חָרַשׁ"
       ],
       "words": [
         {
-          "word": "אַֽל",
+          "word": "אַל",
           "lemma": "אַל",
           "strong": "H408",
-          "pron": "브엘"
+          "pron": "엘"
         },
         {
-          "word": "תֶּחֱרַ֪שׁ",
+          "word": "תַּחֲרֵ֣שׁ",
           "lemma": "חָרַשׁ",
           "strong": "H2790",
-          "pron": "테헤라쉬"
+          "pron": "마하리쉬"
         }
       ],
-      "count": 6,
+      "count": 8,
       "refs": [
+        "samuel1 7:8",
         "psalms 28:1",
         "psalms 35:22",
         "psalms 39:12",
         "psalms 50:3",
         "psalms 83:1",
-        "psalms 109:1"
+        "psalms 109:1",
+        "proverbs 3:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאִם הַחֲרֵשׁ֩ יַחֲרִ֨ישׁ",
+      "pron": "임 마하리쉬 마하리쉬",
+      "lemmas": [
+        "אִם",
+        "חָרַשׁ",
+        "חָרַשׁ"
+      ],
+      "words": [
+        {
+          "word": "וְאִם",
+          "lemma": "אִם",
+          "strong": "H518",
+          "pron": "임"
+        },
+        {
+          "word": "הַחֲרֵשׁ֩",
+          "lemma": "חָרַשׁ",
+          "strong": "H2790",
+          "pron": "마하리쉬"
+        },
+        {
+          "word": "יַחֲרִ֨ישׁ",
+          "lemma": "חָרַשׁ",
+          "strong": "H2790",
+          "pron": "마하리쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 30:14",
+        "esther 4:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֹ֣רְשֵׁי רָ֑ע",
+      "pron": "마하리쉬 바라",
+      "lemmas": [
+        "חָרַשׁ",
+        "רַע"
+      ],
+      "words": [
+        {
+          "word": "חֹ֣רְשֵׁי",
+          "lemma": "חָרַשׁ",
+          "strong": "H2790",
+          "pron": "마하리쉬"
+        },
+        {
+          "word": "רָ֑ע",
+          "lemma": "רַע",
+          "strong": "H7451",
+          "pron": "바라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 23:9",
+        "proverbs 6:14",
+        "proverbs 12:20",
+        "proverbs 14:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹֽא תַחֲרֹ֥שׁ",
+      "pron": "로 마하리쉬",
+      "lemmas": [
+        "לֹא",
+        "חָרַשׁ"
+      ],
+      "words": [
+        {
+          "word": "לֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תַחֲרֹ֥שׁ",
+          "lemma": "חָרַשׁ",
+          "strong": "H2790",
+          "pron": "마하리쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 22:10",
+        "job 41:12",
+        "proverbs 20:4",
+        "jeremiah 4:19"
       ],
       "glossKo": ""
     }

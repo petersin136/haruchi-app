@@ -1,8 +1,8 @@
 {
   "lemma": "מְדִינָה",
-  "pron": "메디나",
+  "pron": "아메디노트",
   "strong": "H4082",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "דִּין",
     "strong": "H1777",
@@ -12,25 +12,25 @@
     {
       "lemma": "דִּין",
       "strong": "H1777",
-      "pron": "야딘",
+      "pron": "야돈",
       "glossKo": "재판하다"
     },
     {
       "lemma": "דִּין",
       "strong": "H1778",
-      "pron": "",
+      "pron": "드닌",
       "glossKo": "재판관(아람)"
     },
     {
       "lemma": "דִּין",
       "strong": "H1779",
-      "pron": "브디니위",
-      "glossKo": "나의 판결"
+      "pron": "딘",
+      "glossKo": "판결"
     },
     {
       "lemma": "דַּיָּן",
       "strong": "H1781",
-      "pron": "브다안",
+      "pron": "르다안",
       "glossKo": "재판관"
     },
     {
@@ -48,7 +48,202 @@
   ],
   "defEn": "judgeship; jurisdiction",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 53,
+  "byBook": {
+    "esther": 39,
+    "kings1": 4,
+    "nehemiah": 3,
+    "daniel": 2,
+    "ecclesiastes": 2,
+    "ezekiel": 1,
+    "ezra": 1,
+    "lamentations": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "מְדִינָ֤ה וּמְדִינָה֙",
+      "pron": "아메디노트 아메디노트",
+      "lemmas": [
+        "מְדִינָה",
+        "מְדִינָה"
+      ],
+      "words": [
+        {
+          "word": "מְדִינָ֤ה",
+          "lemma": "מְדִינָה",
+          "strong": "H4082",
+          "pron": "아메디노트"
+        },
+        {
+          "word": "וּמְדִינָה֙",
+          "lemma": "מְדִינָה",
+          "strong": "H4082",
+          "pron": "아메디노트"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "esther 1:22",
+        "esther 3:12",
+        "esther 3:14",
+        "esther 4:3",
+        "esther 8:9",
+        "esther 8:13",
+        "esther 8:17",
+        "esther 9:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכָל מְדִינ֖וֹת",
+      "pron": "칼 아메디노트",
+      "lemmas": [
+        "כֹּל",
+        "מְדִינָה"
+      ],
+      "words": [
+        {
+          "word": "בְּכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מְדִינ֖וֹת",
+          "lemma": "מְדִינָה",
+          "strong": "H4082",
+          "pron": "아메디노트"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "esther 1:16",
+        "esther 1:22",
+        "esther 2:3",
+        "esther 3:8",
+        "esther 3:13",
+        "esther 3:14",
+        "esther 4:3",
+        "esther 8:5",
+        "esther 8:12",
+        "esther 8:13",
+        "esther 8:17",
+        "esther 9:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְדִינוֹת֙ הַמֶּ֣לֶךְ",
+      "pron": "아메디노트 멜레크",
+      "lemmas": [
+        "מְדִינָה",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "מְדִינוֹת֙",
+          "lemma": "מְדִינָה",
+          "strong": "H4082",
+          "pron": "아메디노트"
+        },
+        {
+          "word": "הַמֶּ֣לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "esther 1:16",
+        "esther 1:22",
+        "esther 3:13",
+        "esther 4:11",
+        "esther 8:5",
+        "esther 8:12",
+        "esther 9:2",
+        "esther 9:12",
+        "esther 9:16",
+        "esther 9:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכָל מְדִינָ֣ה וּמְדִינָ֔ה",
+      "pron": "칼 아메디노트 아메디노트",
+      "lemmas": [
+        "כֹּל",
+        "מְדִינָה",
+        "מְדִינָה"
+      ],
+      "words": [
+        {
+          "word": "בְּכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מְדִינָ֣ה",
+          "lemma": "מְדִינָה",
+          "strong": "H4082",
+          "pron": "아메디노트"
+        },
+        {
+          "word": "וּמְדִינָ֔ה",
+          "lemma": "מְדִינָה",
+          "strong": "H4082",
+          "pron": "아메디노트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "esther 3:14",
+        "esther 4:3",
+        "esther 8:13",
+        "esther 8:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכָל מְדִינוֹת֙ הַמֶּ֣לֶךְ",
+      "pron": "칼 아메디노트 멜레크",
+      "lemmas": [
+        "כֹּל",
+        "מְדִינָה",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "בְּכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מְדִינוֹת֙",
+          "lemma": "מְדִינָה",
+          "strong": "H4082",
+          "pron": "아메디노트"
+        },
+        {
+          "word": "הַמֶּ֣לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "esther 1:16",
+        "esther 1:22",
+        "esther 3:13",
+        "esther 8:5",
+        "esther 8:12",
+        "esther 9:2",
+        "esther 9:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

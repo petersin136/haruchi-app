@@ -1,6 +1,6 @@
 {
   "lemma": "קְרָב",
-  "pron": "미카랍",
+  "pron": "바케랍",
   "strong": "H7128",
   "posKo": "명사",
   "root": {
@@ -12,25 +12,31 @@
     {
       "lemma": "קָרַב",
       "strong": "H7126",
-      "pron": "비케롭",
+      "pron": "히케립",
       "glossKo": "가까이 오다"
     },
     {
       "lemma": "קְרֵב",
       "strong": "H7127",
-      "pron": "",
+      "pron": "메하케레빈",
       "glossKo": "가까이 가다(아람)"
+    },
+    {
+      "lemma": "קְרָב",
+      "strong": "H7129",
+      "pron": "케랍",
+      "glossKo": "전쟁(아람)"
     },
     {
       "lemma": "קֶרֶב",
       "strong": "H7130",
-      "pron": "키렙바므",
-      "glossKo": "그들의 속"
+      "pron": "베키렙바흐",
+      "glossKo": "그녀의 속"
     },
     {
       "lemma": "קָרֵב",
       "strong": "H7131",
-      "pron": "",
+      "pron": "아카렙",
       "glossKo": "가까운"
     },
     {
@@ -42,9 +48,43 @@
   ],
   "defEn": "hostile encounter",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 9,
   "byBook": {
-    "psalms": 5
+    "psalms": 5,
+    "ecclesiastes": 1,
+    "job": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לְי֥וֹם קְ֝רָ֗ב",
+      "pron": "욤 바케랍",
+      "lemmas": [
+        "יוֹם",
+        "קְרָב"
+      ],
+      "words": [
+        {
+          "word": "לְי֥וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "קְ֝רָ֗ב",
+          "lemma": "קְרָב",
+          "strong": "H7128",
+          "pron": "바케랍"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 38:23",
+        "psalms 78:9",
+        "zechariah 14:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

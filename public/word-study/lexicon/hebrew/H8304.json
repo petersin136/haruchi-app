@@ -1,8 +1,8 @@
 {
   "lemma": "שְׂרָיָה",
-  "pron": "세라아",
+  "pron": "우세라아",
   "strong": "H8304",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׂרָה",
     "strong": "H8280",
@@ -18,7 +18,7 @@
     {
       "lemma": "מִשְׂרָה",
       "strong": "H4951",
-      "pron": "",
+      "pron": "아미세라",
       "glossKo": "통치"
     },
     {
@@ -30,7 +30,80 @@
   ],
   "defEn": "Serajah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 20,
+  "byBook": {
+    "jeremiah": 6,
+    "chronicles1": 5,
+    "nehemiah": 4,
+    "ezra": 2,
+    "kings2": 2,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וּשְׂרָיָ֨ה בֶן",
+      "pron": "우세라아 바님",
+      "lemmas": [
+        "שְׂרָיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "וּשְׂרָיָ֨ה",
+          "lemma": "שְׂרָיָה",
+          "strong": "H8304",
+          "pron": "우세라아"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "kings2 25:23",
+        "chronicles1 4:13",
+        "chronicles1 4:35",
+        "ezra 7:1",
+        "nehemiah 11:11",
+        "jeremiah 36:26",
+        "jeremiah 40:8",
+        "jeremiah 51:59"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת שְׂרָיָה֙",
+      "pron": "에트 우세라아",
+      "lemmas": [
+        "אֵת",
+        "שְׂרָיָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שְׂרָיָה֙",
+          "lemma": "שְׂרָיָה",
+          "strong": "H8304",
+          "pron": "우세라아"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings2 25:18",
+        "chronicles1 6:14",
+        "jeremiah 36:26",
+        "jeremiah 51:59",
+        "jeremiah 52:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

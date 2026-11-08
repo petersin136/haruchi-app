@@ -18,7 +18,7 @@
     {
       "lemma": "שָׁשָׁה",
       "strong": "H8341",
-      "pron": "",
+      "pron": "브싯시템",
       "glossKo": "여섯 번째"
     },
     {
@@ -30,15 +30,86 @@
     {
       "lemma": "שֵׁת",
       "strong": "H8353",
-      "pron": "",
+      "pron": "셰트",
       "glossKo": "여섯(아람)"
     }
   ],
   "defEn": "sixth",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 28,
   "byBook": {
-    "genesis": 2
+    "chronicles1": 9,
+    "ezekiel": 5,
+    "exodus": 4,
+    "genesis": 2,
+    "haggai": 2,
+    "numbers": 2,
+    "joshua": 1,
+    "leviticus": 1,
+    "nehemiah": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "י֥וֹם הַשִּׁשִּֽׁי",
+      "pron": "욤 아싯시",
+      "lemmas": [
+        "יוֹם",
+        "שִׁשִּׁי"
+      ],
+      "words": [
+        {
+          "word": "י֥וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "הַשִּׁשִּֽׁי",
+          "lemma": "שִׁשִּׁי",
+          "strong": "H8345",
+          "pron": "아싯시"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 1:31",
+        "exodus 16:5",
+        "exodus 16:22",
+        "exodus 16:29",
+        "numbers 7:42",
+        "numbers 29:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַחֹ֣דֶשׁ הַשִּׁשִּׁ֔י",
+      "pron": "바호데쉬 아싯시",
+      "lemmas": [
+        "חֹדֶשׁ",
+        "שִׁשִּׁי"
+      ],
+      "words": [
+        {
+          "word": "לַחֹ֣דֶשׁ",
+          "lemma": "חֹדֶשׁ",
+          "strong": "H2320",
+          "pron": "바호데쉬"
+        },
+        {
+          "word": "הַשִּׁשִּׁ֔י",
+          "lemma": "שִׁשִּׁי",
+          "strong": "H8345",
+          "pron": "아싯시"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 27:9",
+        "haggai 1:1",
+        "haggai 1:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

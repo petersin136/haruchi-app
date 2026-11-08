@@ -1,8 +1,8 @@
 {
   "lemma": "שְׁכַח",
-  "pron": "셰카흐",
+  "pron": "우테하셱카흐",
   "strong": "H7912",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "שָׁכַח",
     "strong": "H7911",
@@ -12,7 +12,7 @@
     {
       "lemma": "שָׁכַח",
       "strong": "H7911",
-      "pron": "샤카흐",
+      "pron": "브샤카흐",
       "glossKo": "잊다"
     },
     {
@@ -24,7 +24,71 @@
   ],
   "defEn": "discover",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 18,
+  "byBook": {
+    "daniel": 14,
+    "ezra": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "הִשְׁתְּכַ֤חַת בְּדָ֣נִיֵּ֔אל",
+      "pron": "우테하셱카흐 다니엘",
+      "lemmas": [
+        "שְׁכַח",
+        "דָּנִיֵּאל"
+      ],
+      "words": [
+        {
+          "word": "הִשְׁתְּכַ֤חַת",
+          "lemma": "שְׁכַח",
+          "strong": "H7912",
+          "pron": "우테하셱카흐"
+        },
+        {
+          "word": "בְּדָ֣נִיֵּ֔אל",
+          "lemma": "דָּנִיֵּאל",
+          "strong": "H1841",
+          "pron": "다니엘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 5:12",
+        "daniel 6:4",
+        "daniel 6:5",
+        "daniel 6:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָא הִשְׁתֲּכַ֣ח",
+      "pron": "라 우테하셱카흐",
+      "lemmas": [
+        "לָא",
+        "שְׁכַח"
+      ],
+      "words": [
+        {
+          "word": "לָא",
+          "lemma": "לָא",
+          "strong": "H3809",
+          "pron": "라"
+        },
+        {
+          "word": "הִשְׁתֲּכַ֣ח",
+          "lemma": "שְׁכַח",
+          "strong": "H7912",
+          "pron": "우테하셱카흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 2:35",
+        "daniel 6:4",
+        "daniel 6:5",
+        "daniel 6:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

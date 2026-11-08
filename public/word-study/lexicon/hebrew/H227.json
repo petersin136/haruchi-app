@@ -14,10 +14,200 @@
   ],
   "defEn": "at that time; place",
   "defKo": "",
-  "countOT": 21,
+  "countOT": 141,
   "byBook": {
+    "isaiah": 16,
     "psalms": 15,
-    "genesis": 6
+    "joshua": 10,
+    "samuel2": 9,
+    "chronicles1": 8,
+    "exodus": 8,
+    "jeremiah": 8,
+    "job": 8,
+    "kings1": 8,
+    "judges": 7,
+    "kings2": 7,
+    "chronicles2": 6,
+    "genesis": 6,
+    "proverbs": 6,
+    "leviticus": 4,
+    "deuteronomy": 2,
+    "samuel1": 2,
+    "zephaniah": 2,
+    "ecclesiastes": 1,
+    "ezekiel": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "malachi": 1,
+    "micah": 1,
+    "numbers": 1,
+    "ruth": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כִּ֣י אָ֤ז",
+      "pron": "키 앗",
+      "lemmas": [
+        "כִּי",
+        "אָז"
+      ],
+      "words": [
+        {
+          "word": "כִּ֣י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "אָ֤ז",
+          "lemma": "אָז",
+          "strong": "H227",
+          "pron": "앗"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "deuteronomy 29:20",
+        "joshua 1:8",
+        "samuel2 2:27",
+        "samuel2 5:24",
+        "samuel2 19:6",
+        "job 11:15",
+        "job 22:26",
+        "job 38:21",
+        "jeremiah 22:22",
+        "zephaniah 3:9",
+        "zephaniah 3:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָ֖ז אָמַ֣ר",
+      "pron": "앗 바요메르",
+      "lemmas": [
+        "אָז",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "אָ֖ז",
+          "lemma": "אָז",
+          "strong": "H227",
+          "pron": "앗"
+        },
+        {
+          "word": "אָמַ֣ר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 4:26",
+        "kings1 8:12",
+        "kings1 22:49",
+        "chronicles1 15:2",
+        "chronicles2 6:1",
+        "psalms 40:7",
+        "psalms 126:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵאָ֥ז דַּבֶּרְךָ",
+      "pron": "앗 바예답베르",
+      "lemmas": [
+        "אָז",
+        "דָבַר"
+      ],
+      "words": [
+        {
+          "word": "מֵאָ֥ז",
+          "lemma": "אָז",
+          "strong": "H227",
+          "pron": "앗"
+        },
+        {
+          "word": "דַּבֶּרְךָ",
+          "lemma": "דָבַר",
+          "strong": "H1696",
+          "pron": "바예답베르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 4:10",
+        "joshua 10:12",
+        "joshua 14:10",
+        "psalms 2:5",
+        "psalms 89:19",
+        "isaiah 41:1",
+        "malachi 3:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָ֣ז עָלָ֗ה",
+      "pron": "앗 야알레",
+      "lemmas": [
+        "אָז",
+        "עָלָה"
+      ],
+      "words": [
+        {
+          "word": "אָ֣ז",
+          "lemma": "אָז",
+          "strong": "H227",
+          "pron": "앗"
+        },
+        {
+          "word": "עָלָ֗ה",
+          "lemma": "עָלָה",
+          "strong": "H5927",
+          "pron": "야알레"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "joshua 10:33",
+        "kings2 12:17",
+        "kings2 16:5",
+        "chronicles2 8:12",
+        "psalms 51:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָ֣ז הִכָּ֗ה",
+      "pron": "앗 학코트",
+      "lemmas": [
+        "אָז",
+        "נָכָה"
+      ],
+      "words": [
+        {
+          "word": "אָ֣ז",
+          "lemma": "אָז",
+          "strong": "H227",
+          "pron": "앗"
+        },
+        {
+          "word": "הִכָּ֗ה",
+          "lemma": "נָכָה",
+          "strong": "H5221",
+          "pron": "학코트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 21:18",
+        "kings2 13:19",
+        "kings2 15:16",
+        "chronicles1 20:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

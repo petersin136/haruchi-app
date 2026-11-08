@@ -1,6 +1,6 @@
 {
   "lemma": "גְּבוּרָה",
-  "pron": "비게부로트",
+  "pron": "게부라",
   "strong": "H1369",
   "posKo": "명사",
   "root": {
@@ -12,21 +12,202 @@
     {
       "lemma": "גִּבּוֹר",
       "strong": "H1368",
-      "pron": "크깁보르",
+      "pron": "아깁보림",
       "glossKo": "용사"
     },
     {
       "lemma": "גְּבוּרָה",
       "strong": "H1370",
-      "pron": "",
+      "pron": "우게부레타",
       "glossKo": "용맹(아람)"
     }
   ],
   "defEn": "force",
   "defKo": "",
-  "countOT": 17,
+  "countOT": 62,
   "byBook": {
-    "psalms": 17
+    "psalms": 17,
+    "isaiah": 7,
+    "kings2": 7,
+    "jeremiah": 6,
+    "job": 5,
+    "kings1": 4,
+    "chronicles1": 3,
+    "ecclesiastes": 2,
+    "ezekiel": 2,
+    "judges": 2,
+    "micah": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "esther": 1,
+    "exodus": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַאֲשֶׁ֥ר עָשָׂ֖ה וּגְבֽוּרָת֑וֹ",
+      "pron": "아셰르 바야아스 게부라",
+      "lemmas": [
+        "אֲשֶׁר",
+        "עָשָׂה",
+        "גְּבוּרָה"
+      ],
+      "words": [
+        {
+          "word": "וַאֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "עָשָׂ֖ה",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "וּגְבֽוּרָת֑וֹ",
+          "lemma": "גְּבוּרָה",
+          "strong": "H1369",
+          "pron": "게부라"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 16:5",
+        "kings1 16:27",
+        "kings2 13:8",
+        "kings2 13:12",
+        "kings2 14:15",
+        "kings2 14:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּגְבוּרָת֖וֹ אֲשֶׁ֣ר",
+      "pron": "게부라 아셰르",
+      "lemmas": [
+        "גְּבוּרָה",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "וּגְבוּרָת֖וֹ",
+          "lemma": "גְּבוּרָה",
+          "strong": "H1369",
+          "pron": "게부라"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 16:27",
+        "kings1 22:45",
+        "kings2 13:12",
+        "kings2 14:15",
+        "kings2 14:28",
+        "kings2 20:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּגְבֽוּרָת֑וֹ הֲלֹא",
+      "pron": "게부라 로",
+      "lemmas": [
+        "גְּבוּרָה",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "וּגְבֽוּרָת֑וֹ",
+          "lemma": "גְּבוּרָה",
+          "strong": "H1369",
+          "pron": "게부라"
+        },
+        {
+          "word": "הֲלֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 16:5",
+        "kings2 10:34",
+        "kings2 13:8",
+        "ecclesiastes 10:17",
+        "isaiah 30:15",
+        "jeremiah 23:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָשָׂ֖ה וּגְבֽוּרָת֑וֹ",
+      "pron": "바야아스 게부라",
+      "lemmas": [
+        "עָשָׂה",
+        "גְּבוּרָה"
+      ],
+      "words": [
+        {
+          "word": "עָשָׂ֖ה",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "וּגְבֽוּרָת֑וֹ",
+          "lemma": "גְּבוּרָה",
+          "strong": "H1369",
+          "pron": "게부라"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 16:5",
+        "kings1 16:27",
+        "kings2 13:8",
+        "kings2 13:12",
+        "kings2 14:15",
+        "kings2 14:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְכָל גְּב֨וּרָת֜וֹ",
+      "pron": "칼 게부라",
+      "lemmas": [
+        "כֹּל",
+        "גְּבוּרָה"
+      ],
+      "words": [
+        {
+          "word": "וְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "גְּב֨וּרָת֜וֹ",
+          "lemma": "גְּבוּרָה",
+          "strong": "H1369",
+          "pron": "게부라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 15:23",
+        "kings2 10:34",
+        "kings2 20:20",
+        "micah 7:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

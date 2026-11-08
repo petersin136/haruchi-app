@@ -1,6 +1,6 @@
 {
   "lemma": "דָּמַם",
-  "pron": "브돔무",
+  "pron": "읻데무",
   "strong": "H1826",
   "posKo": "동사",
   "root": {
@@ -12,33 +12,102 @@
     {
       "lemma": "דָּהַם",
       "strong": "H1724",
-      "pron": "",
+      "pron": "닏함",
       "glossKo": "벙어리 되다"
     },
     {
       "lemma": "דּוּמָם",
       "strong": "H1748",
-      "pron": "",
+      "pron": "두맘",
       "glossKo": "잠잠히"
     },
     {
       "lemma": "דָּם",
       "strong": "H1818",
-      "pron": "다밈",
+      "pron": "데메",
       "glossKo": "피"
     },
     {
       "lemma": "דְּמָמָה",
       "strong": "H1827",
-      "pron": "리데마마",
+      "pron": "데마마",
       "glossKo": "고요"
     }
   ],
   "defEn": "be dumb",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 30,
   "byBook": {
-    "psalms": 7
+    "jeremiah": 8,
+    "psalms": 7,
+    "job": 3,
+    "lamentations": 3,
+    "joshua": 2,
+    "samuel1": 2,
+    "amos": 1,
+    "exodus": 1,
+    "ezekiel": 1,
+    "isaiah": 1,
+    "leviticus": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְלֹא דָ֗מּוּ",
+      "pron": "로 읻데무",
+      "lemmas": [
+        "לֹא",
+        "דָּמַם"
+      ],
+      "words": [
+        {
+          "word": "וְלֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "דָ֗מּוּ",
+          "lemma": "דָּמַם",
+          "strong": "H1826",
+          "pron": "읻데무"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 30:27",
+        "psalms 30:12",
+        "psalms 35:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִדָּ֑מּוּ כִּֽי",
+      "pron": "읻데무 키",
+      "lemmas": [
+        "דָּמַם",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "יִדָּ֑מּוּ",
+          "lemma": "דָּמַם",
+          "strong": "H1826",
+          "pron": "읻데무"
+        },
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 2:9",
+        "lamentations 3:28",
+        "amos 5:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

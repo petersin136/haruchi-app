@@ -1,6 +1,6 @@
 {
   "lemma": "עָבוּר",
-  "pron": "바아부르",
+  "pron": "바아부레카",
   "strong": "H5668",
   "posKo": "명사",
   "root": {
@@ -18,13 +18,13 @@
     {
       "lemma": "עָבוּר",
       "strong": "H5669",
-      "pron": "",
+      "pron": "메아부르",
       "glossKo": "곡식"
     },
     {
       "lemma": "עָבַר",
       "strong": "H5674",
-      "pron": "오베르",
+      "pron": "바야아베르",
       "glossKo": "건너다"
     },
     {
@@ -36,21 +36,30 @@
     {
       "lemma": "עֲבָרָה",
       "strong": "H5679",
-      "pron": "",
+      "pron": "브블브트",
       "glossKo": "건넘"
     }
   ],
   "defEn": "crossed; transit; account; order",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 49,
   "byBook": {
     "genesis": 15,
-    "psalms": 3
+    "samuel2": 12,
+    "exodus": 7,
+    "chronicles1": 3,
+    "psalms": 3,
+    "samuel1": 3,
+    "amos": 2,
+    "chronicles2": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "micah": 1
   },
   "phrases": [
     {
       "hebrew": "בַּעֲב֖וּר תְּבָרֲכַ֥נִּי",
-      "pron": "바아부르 테바레크",
+      "pron": "바아부레카 바예바레크",
       "lemmas": [
         "עָבוּר",
         "בָּרַךְ"
@@ -60,13 +69,13 @@
           "word": "בַּעֲב֖וּר",
           "lemma": "עָבוּר",
           "strong": "H5668",
-          "pron": "바아부르"
+          "pron": "바아부레카"
         },
         {
           "word": "תְּבָרֲכַ֥נִּי",
           "lemma": "בָּרַךְ",
           "strong": "H1288",
-          "pron": "테바레크"
+          "pron": "바예바레크"
         }
       ],
       "count": 3,
@@ -79,7 +88,7 @@
     },
     {
       "hebrew": "בַּעֲב֖וּר תְּבָרֲכַ֥נִּי נַפְשֶֽׁךָ",
-      "pron": "바아부르 테바레크 르납시위",
+      "pron": "바아부레카 바예바레크 네페쉬",
       "lemmas": [
         "עָבוּר",
         "בָּרַךְ",
@@ -90,19 +99,19 @@
           "word": "בַּעֲב֖וּר",
           "lemma": "עָבוּר",
           "strong": "H5668",
-          "pron": "바아부르"
+          "pron": "바아부레카"
         },
         {
           "word": "תְּבָרֲכַ֥נִּי",
           "lemma": "בָּרַךְ",
           "strong": "H1288",
-          "pron": "테바레크"
+          "pron": "바예바레크"
         },
         {
           "word": "נַפְשֶֽׁךָ",
           "lemma": "נֶפֶשׁ",
           "strong": "H5315",
-          "pron": "르납시위"
+          "pron": "네페쉬"
         }
       ],
       "count": 3,
@@ -110,6 +119,35 @@
         "genesis 27:4",
         "genesis 27:19",
         "genesis 27:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּעֲבוּרָ֑הּ וַֽיְהִי",
+      "pron": "바아부레카 하에타",
+      "lemmas": [
+        "עָבוּר",
+        "הָיָה"
+      ],
+      "words": [
+        {
+          "word": "בַּעֲבוּרָ֑הּ",
+          "lemma": "עָבוּר",
+          "strong": "H5668",
+          "pron": "바아부레카"
+        },
+        {
+          "word": "וַֽיְהִי",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 12:16",
+        "genesis 21:30",
+        "exodus 20:20"
       ],
       "glossKo": ""
     }

@@ -1,8 +1,8 @@
 {
   "lemma": "כְּסַף",
-  "pron": "케삽",
+  "pron": "브캇파",
   "strong": "H3702",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "כֶּסֶף",
     "strong": "H3701",
@@ -12,19 +12,150 @@
     {
       "lemma": "כֶּסֶף",
       "strong": "H3701",
-      "pron": "케셉",
+      "pron": "바케셉",
       "glossKo": "은"
     },
     {
       "lemma": "כָּסִפְיָא",
       "strong": "H3703",
-      "pron": "",
+      "pron": "브카십아",
       "glossKo": "가시뱌"
     }
   ],
   "defEn": "money, silver.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "ezra": 7,
+    "daniel": 6
+  },
+  "phrases": [
+    {
+      "hebrew": "כְּסַ֣ף וּדְהַ֑ב",
+      "pron": "브캇파 다하바",
+      "lemmas": [
+        "כְּסַף",
+        "דְּהַב"
+      ],
+      "words": [
+        {
+          "word": "כְּסַ֣ף",
+          "lemma": "כְּסַף",
+          "strong": "H3702",
+          "pron": "브캇파"
+        },
+        {
+          "word": "וּדְהַ֑ב",
+          "lemma": "דְּהַב",
+          "strong": "H1722",
+          "pron": "다하바"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "ezra 7:15",
+        "ezra 7:16",
+        "ezra 7:18",
+        "daniel 2:35",
+        "daniel 2:45",
+        "daniel 5:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דַהֲבָ֣ה וְכַסְפָּא֒",
+      "pron": "다하바 브캇파",
+      "lemmas": [
+        "דְּהַב",
+        "כְּסַף"
+      ],
+      "words": [
+        {
+          "word": "דַהֲבָ֣ה",
+          "lemma": "דְּהַב",
+          "strong": "H1722",
+          "pron": "다하바"
+        },
+        {
+          "word": "וְכַסְפָּא֒",
+          "lemma": "כְּסַף",
+          "strong": "H3702",
+          "pron": "브캇파"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 5:14",
+        "ezra 6:5",
+        "daniel 5:2",
+        "daniel 5:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דַהֲבָ֣ה וְכַסְפָּא֒ דִּ֣י",
+      "pron": "다하바 브캇파 드흐브",
+      "lemmas": [
+        "דְּהַב",
+        "כְּסַף",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "דַהֲבָ֣ה",
+          "lemma": "דְּהַב",
+          "strong": "H1722",
+          "pron": "다하바"
+        },
+        {
+          "word": "וְכַסְפָּא֒",
+          "lemma": "כְּסַף",
+          "strong": "H3702",
+          "pron": "브캇파"
+        },
+        {
+          "word": "דִּ֣י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 5:14",
+        "ezra 6:5",
+        "daniel 5:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְכַסְפָּא֒ דִּ֣י",
+      "pron": "브캇파 드흐브",
+      "lemmas": [
+        "כְּסַף",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "וְכַסְפָּא֒",
+          "lemma": "כְּסַף",
+          "strong": "H3702",
+          "pron": "브캇파"
+        },
+        {
+          "word": "דִּ֣י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 5:14",
+        "ezra 6:5",
+        "daniel 5:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

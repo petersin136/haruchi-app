@@ -1,6 +1,6 @@
 {
   "lemma": "אַיִן",
-  "pron": "엔",
+  "pron": "아인",
   "strong": "H369",
   "posKo": "소사",
   "root": null,
@@ -14,28 +14,64 @@
     {
       "lemma": "אִין",
       "strong": "H371",
-      "pron": "",
+      "pron": "브인",
       "glossKo": "있느냐"
     }
   ],
   "defEn": "nonentity",
   "defKo": "",
-  "countOT": 104,
+  "countOT": 790,
   "byBook": {
+    "isaiah": 92,
+    "jeremiah": 89,
     "psalms": 67,
-    "genesis": 37
+    "ecclesiastes": 44,
+    "proverbs": 38,
+    "genesis": 37,
+    "job": 37,
+    "samuel1": 33,
+    "deuteronomy": 30,
+    "judges": 27,
+    "chronicles2": 25,
+    "kings1": 25,
+    "ezekiel": 24,
+    "exodus": 22,
+    "leviticus": 21,
+    "kings2": 20,
+    "numbers": 19,
+    "hosea": 15,
+    "samuel2": 15,
+    "lamentations": 13,
+    "nehemiah": 11,
+    "esther": 10,
+    "chronicles1": 9,
+    "daniel": 9,
+    "nahum": 7,
+    "malachi": 6,
+    "micah": 6,
+    "amos": 5,
+    "haggai": 5,
+    "joshua": 5,
+    "songofsolomon": 5,
+    "ezra": 4,
+    "zechariah": 4,
+    "habakkuk": 3,
+    "joel": 3,
+    "zephaniah": 3,
+    "obadiah": 1,
+    "ruth": 1
   },
   "phrases": [
     {
-      "hebrew": "כִּי אֵ֥ין",
-      "pron": "키 엔",
+      "hebrew": "כִּ֣י אֵ֥ין",
+      "pron": "키 아인",
       "lemmas": [
         "כִּי",
         "אַיִן"
       ],
       "words": [
         {
-          "word": "כִּי",
+          "word": "כִּ֣י",
           "lemma": "כִּי",
           "strong": "H3588",
           "pron": "키"
@@ -44,150 +80,175 @@
           "word": "אֵ֥ין",
           "lemma": "אַיִן",
           "strong": "H369",
-          "pron": "엔"
+          "pron": "아인"
         }
       ],
-      "count": 11,
+      "count": 80,
       "refs": [
-        "psalms 5:9",
-        "psalms 6:5",
-        "psalms 22:11",
-        "psalms 34:9",
-        "psalms 71:11",
-        "psalms 73:4",
-        "psalms 139:4",
         "genesis 31:5",
         "genesis 41:49",
         "genesis 44:31",
-        "genesis 47:4"
+        "genesis 47:4",
+        "exodus 2:12",
+        "exodus 5:11",
+        "exodus 8:10",
+        "exodus 9:14",
+        "exodus 12:30",
+        "numbers 14:42",
+        "numbers 21:5",
+        "numbers 27:4"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֵ֬ין מִסְפָּ֗ר",
-      "pron": "엔 밋파르",
+      "hebrew": "אֲשֶׁ֥ר אֵין",
+      "pron": "아셰르 아인",
       "lemmas": [
-        "אַיִן",
-        "מִסְפָּר"
+        "אֲשֶׁר",
+        "אַיִן"
       ],
       "words": [
         {
-          "word": "אֵ֬ין",
-          "lemma": "אַיִן",
-          "strong": "H369",
-          "pron": "엔"
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
         },
         {
-          "word": "מִסְפָּ֗ר",
-          "lemma": "מִסְפָּר",
-          "strong": "H4557",
-          "pron": "밋파르"
+          "word": "אֵין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
         }
       ],
-      "count": 5,
+      "count": 35,
       "refs": [
-        "psalms 40:12",
-        "psalms 104:25",
-        "psalms 105:34",
-        "psalms 147:5",
-        "genesis 41:49"
+        "genesis 7:8",
+        "genesis 30:33",
+        "genesis 45:6",
+        "exodus 12:30",
+        "leviticus 11:10",
+        "leviticus 11:12",
+        "leviticus 25:31",
+        "numbers 19:2",
+        "numbers 19:15",
+        "numbers 22:26",
+        "numbers 27:17",
+        "deuteronomy 8:15"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֵ֣ין אִתִּֽי",
-      "pron": "엔 에트",
+      "hebrew": "וְאִם אַ֕יִן",
+      "pron": "임 아인",
       "lemmas": [
-        "אַיִן",
-        "אֵת"
+        "אִם",
+        "אַיִן"
       ],
       "words": [
         {
-          "word": "אֵ֣ין",
-          "lemma": "אַיִן",
-          "strong": "H369",
-          "pron": "엔"
+          "word": "וְאִם",
+          "lemma": "אִם",
+          "strong": "H518",
+          "pron": "임"
         },
         {
-          "word": "אִתִּֽי",
-          "lemma": "אֵת",
-          "strong": "H854",
-          "pron": "에트"
+          "word": "אַ֕יִן",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
         }
       ],
-      "count": 4,
+      "count": 24,
       "refs": [
-        "psalms 38:10",
-        "genesis 44:26",
-        "genesis 44:30",
-        "genesis 44:34"
+        "genesis 20:7",
+        "genesis 30:1",
+        "genesis 43:5",
+        "exodus 8:21",
+        "exodus 17:7",
+        "exodus 22:3",
+        "exodus 32:32",
+        "exodus 33:15",
+        "numbers 5:8",
+        "numbers 13:20",
+        "numbers 27:9",
+        "numbers 27:10"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֵ֣ין עֹֽשֵׂה",
-      "pron": "엔 야아세",
+      "hebrew": "אֵ֥ין אִ֖ישׁ",
+      "pron": "아인 메이쉬",
       "lemmas": [
         "אַיִן",
-        "עָשָׂה"
+        "אִישׁ"
       ],
       "words": [
         {
-          "word": "אֵ֣ין",
+          "word": "אֵ֥ין",
           "lemma": "אַיִן",
           "strong": "H369",
-          "pron": "엔"
+          "pron": "아인"
         },
         {
-          "word": "עֹֽשֵׂה",
-          "lemma": "עָשָׂה",
-          "strong": "H6213",
-          "pron": "야아세"
+          "word": "אִ֖ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
         }
       ],
-      "count": 4,
+      "count": 20,
       "refs": [
-        "psalms 14:1",
-        "psalms 14:3",
-        "psalms 53:1",
-        "psalms 53:3"
+        "genesis 31:50",
+        "genesis 39:11",
+        "exodus 2:12",
+        "numbers 5:8",
+        "judges 19:15",
+        "judges 19:18",
+        "samuel1 9:2",
+        "samuel2 21:4",
+        "kings1 5:6",
+        "kings2 4:14",
+        "proverbs 7:19",
+        "proverbs 25:14"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֵ֣ין עֹֽשֵׂה טֽוֹב",
-      "pron": "엔 야아세 돕",
+      "hebrew": "וְאֵ֥ין עֽוֹד",
+      "pron": "아인 옫",
       "lemmas": [
         "אַיִן",
-        "עָשָׂה",
-        "טוֹב"
+        "עוֹד"
       ],
       "words": [
         {
-          "word": "אֵ֣ין",
+          "word": "וְאֵ֥ין",
           "lemma": "אַיִן",
           "strong": "H369",
-          "pron": "엔"
+          "pron": "아인"
         },
         {
-          "word": "עֹֽשֵׂה",
-          "lemma": "עָשָׂה",
-          "strong": "H6213",
-          "pron": "야아세"
-        },
-        {
-          "word": "טֽוֹב",
-          "lemma": "טוֹב",
-          "strong": "H2896",
-          "pron": "돕"
+          "word": "עֽוֹד",
+          "lemma": "עוֹד",
+          "strong": "H5750",
+          "pron": "옫"
         }
       ],
-      "count": 4,
+      "count": 18,
       "refs": [
-        "psalms 14:1",
-        "psalms 14:3",
-        "psalms 53:1",
-        "psalms 53:3"
+        "deuteronomy 4:35",
+        "deuteronomy 4:39",
+        "kings1 8:60",
+        "kings2 4:6",
+        "psalms 74:9",
+        "ecclesiastes 9:5",
+        "ecclesiastes 9:6",
+        "isaiah 45:5",
+        "isaiah 45:6",
+        "isaiah 45:14",
+        "isaiah 45:18",
+        "isaiah 45:21"
       ],
       "glossKo": ""
     }

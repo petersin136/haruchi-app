@@ -8,33 +8,66 @@
     {
       "lemma": "מִנְהָרָה",
       "strong": "H4492",
-      "pron": "",
+      "pron": "아민하로트",
       "glossKo": "굴"
     },
     {
       "lemma": "נְהַר",
       "strong": "H5103",
-      "pron": "",
+      "pron": "나하라",
       "glossKo": "강(아람)"
     },
     {
       "lemma": "נָהָר",
       "strong": "H5104",
-      "pron": "네하로트",
+      "pron": "브나할르",
       "glossKo": "강"
     },
     {
       "lemma": "נְהָרָה",
       "strong": "H5105",
-      "pron": "",
+      "pron": "네하라",
       "glossKo": "낮의 빛"
     }
   ],
   "defEn": "sparkle; be cheerful; sheen; flow; assemble",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 6,
   "byBook": {
+    "isaiah": 2,
+    "jeremiah": 2,
+    "micah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְנָהֲר֥וּ אֵלָ֖יו",
+      "pron": "브나하루 엘",
+      "lemmas": [
+        "נָהַר",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "וְנָהֲר֥וּ",
+          "lemma": "נָהַר",
+          "strong": "H5102",
+          "pron": "브나하루"
+        },
+        {
+          "word": "אֵלָ֖יו",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 2:2",
+        "jeremiah 31:12",
+        "jeremiah 51:44"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

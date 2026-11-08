@@ -12,20 +12,20 @@
     {
       "lemma": "מִפְקָד",
       "strong": "H4662",
-      "pron": "",
+      "pron": "밉칻",
       "glossKo": "지정된 일"
     },
     {
       "lemma": "פָּקַד",
       "strong": "H6485",
-      "pron": "팁케데누",
-      "glossKo": "그에게 돌아보다"
+      "pron": "파칻",
+      "glossKo": "돌아보다"
     },
     {
       "lemma": "פְּקֻדָּה",
       "strong": "H6486",
-      "pron": "페쿧다트오",
-      "glossKo": "그의 감독"
+      "pron": "페쿧다트",
+      "glossKo": "감독"
     },
     {
       "lemma": "פִּקָּדוֹן",
@@ -34,17 +34,61 @@
       "glossKo": "맡긴 것"
     },
     {
+      "lemma": "פְּקִדֻת",
+      "strong": "H6488",
+      "pron": "페키두트",
+      "glossKo": "감독"
+    },
+    {
       "lemma": "פְּקוֹד",
       "strong": "H6489",
-      "pron": "",
+      "pron": "페콛",
       "glossKo": "브곳"
     }
   ],
   "defEn": "superintendent",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 13,
   "byBook": {
-    "genesis": 1
+    "nehemiah": 4,
+    "jeremiah": 3,
+    "chronicles2": 2,
+    "esther": 1,
+    "genesis": 1,
+    "judges": 1,
+    "kings2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "פָקִ֣יד עַל",
+      "pron": "페키딤 알",
+      "lemmas": [
+        "פָּקִיד",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "פָקִ֣יד",
+          "lemma": "פָּקִיד",
+          "strong": "H6496",
+          "pron": "페키딤"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 41:34",
+        "kings2 25:19",
+        "nehemiah 11:9",
+        "nehemiah 11:14",
+        "jeremiah 52:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

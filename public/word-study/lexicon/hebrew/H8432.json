@@ -8,7 +8,7 @@
     {
       "lemma": "תִּיכוֹן",
       "strong": "H8484",
-      "pron": "",
+      "pron": "아티콘",
       "glossKo": "가운데의"
     },
     {
@@ -20,10 +20,233 @@
   ],
   "defEn": "bisection; centre",
   "defKo": "",
-  "countOT": 31,
+  "countOT": 420,
   "byBook": {
+    "ezekiel": 118,
+    "numbers": 46,
+    "exodus": 32,
+    "joshua": 29,
+    "jeremiah": 23,
+    "deuteronomy": 21,
     "genesis": 17,
-    "psalms": 14
+    "leviticus": 17,
+    "psalms": 14,
+    "isaiah": 12,
+    "kings1": 11,
+    "samuel1": 10,
+    "samuel2": 9,
+    "zechariah": 9,
+    "judges": 8,
+    "proverbs": 8,
+    "chronicles2": 6,
+    "job": 6,
+    "kings2": 5,
+    "nehemiah": 5,
+    "chronicles1": 4,
+    "micah": 3,
+    "amos": 2,
+    "esther": 2,
+    "haggai": 1,
+    "songofsolomon": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּת֖וֹךְ בְּנֵ֥י",
+      "pron": "브토크 바님",
+      "lemmas": [
+        "תָּוֶךְ",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "בְּת֖וֹךְ",
+          "lemma": "תָּוֶךְ",
+          "strong": "H8432",
+          "pron": "브토크"
+        },
+        {
+          "word": "בְּנֵ֥י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 34,
+      "refs": [
+        "genesis 23:10",
+        "exodus 28:1",
+        "exodus 29:45",
+        "leviticus 22:32",
+        "leviticus 24:10",
+        "leviticus 25:33",
+        "numbers 1:49",
+        "numbers 2:33",
+        "numbers 3:12",
+        "numbers 4:2",
+        "numbers 8:6",
+        "numbers 8:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּת֖וֹךְ בְּנֵ֥י יִשְׂרָאֵֽל",
+      "pron": "브토크 바님 이스라엘",
+      "lemmas": [
+        "תָּוֶךְ",
+        "בֵּן",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "בְּת֖וֹךְ",
+          "lemma": "תָּוֶךְ",
+          "strong": "H8432",
+          "pron": "브토크"
+        },
+        {
+          "word": "בְּנֵ֥י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יִשְׂרָאֵֽל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "exodus 28:1",
+        "exodus 29:45",
+        "leviticus 22:32",
+        "leviticus 24:10",
+        "leviticus 25:33",
+        "numbers 1:49",
+        "numbers 2:33",
+        "numbers 3:12",
+        "numbers 8:6",
+        "numbers 8:14",
+        "numbers 8:16",
+        "numbers 8:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל תּ֣וֹךְ",
+      "pron": "엘 브토크",
+      "lemmas": [
+        "אֵל",
+        "תָּוֶךְ"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "תּ֣וֹךְ",
+          "lemma": "תָּוֶךְ",
+          "strong": "H8432",
+          "pron": "브토크"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "exodus 14:23",
+        "leviticus 11:33",
+        "numbers 16:47",
+        "numbers 19:6",
+        "deuteronomy 4:12",
+        "deuteronomy 13:16",
+        "deuteronomy 21:12",
+        "deuteronomy 22:2",
+        "deuteronomy 23:10",
+        "deuteronomy 23:11",
+        "joshua 4:5",
+        "samuel2 3:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּת֥וֹךְ הָעָֽם",
+      "pron": "브토크 암",
+      "lemmas": [
+        "תָּוֶךְ",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "בְּת֥וֹךְ",
+          "lemma": "תָּוֶךְ",
+          "strong": "H8432",
+          "pron": "브토크"
+        },
+        {
+          "word": "הָעָֽם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "exodus 12:31",
+        "numbers 5:21",
+        "joshua 8:9",
+        "samuel1 10:23",
+        "kings1 3:8",
+        "kings1 14:7",
+        "kings2 4:13",
+        "isaiah 6:5",
+        "isaiah 24:13",
+        "isaiah 61:9",
+        "jeremiah 12:16",
+        "jeremiah 29:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּת֣וֹךְ הָעִ֔יר",
+      "pron": "브토크 이르",
+      "lemmas": [
+        "תָּוֶךְ",
+        "עִיר"
+      ],
+      "words": [
+        {
+          "word": "בְּת֣וֹךְ",
+          "lemma": "תָּוֶךְ",
+          "strong": "H8432",
+          "pron": "브토크"
+        },
+        {
+          "word": "הָעִ֔יר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "genesis 18:24",
+        "genesis 18:26",
+        "joshua 17:9",
+        "judges 9:51",
+        "samuel1 9:14",
+        "esther 4:1",
+        "jeremiah 21:4",
+        "jeremiah 41:7",
+        "jeremiah 52:25",
+        "ezekiel 5:2",
+        "ezekiel 9:4",
+        "ezekiel 11:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

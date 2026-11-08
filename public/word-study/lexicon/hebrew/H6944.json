@@ -1,6 +1,6 @@
 {
   "lemma": "קֹדֶשׁ",
-  "pron": "칻시위",
+  "pron": "코데쉬",
   "strong": "H6944",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "מִקְדָּשׁ",
       "strong": "H4720",
-      "pron": "미미켇다셰이카",
-      "glossKo": "너의 성소"
+      "pron": "믹케다쉬",
+      "glossKo": "성소"
     },
     {
       "lemma": "קָדוֹשׁ",
       "strong": "H6918",
-      "pron": "리케도심",
+      "pron": "카도쉬",
       "glossKo": "거룩한"
     },
     {
@@ -30,26 +30,213 @@
     {
       "lemma": "קֶדֶשׁ",
       "strong": "H6943",
-      "pron": "",
+      "pron": "케데쉬",
       "glossKo": "게데스"
     },
     {
       "lemma": "קָדֵשׁ",
       "strong": "H6945",
-      "pron": "",
+      "pron": "카데쉬",
       "glossKo": "신전 창기"
     }
   ],
   "defEn": "sacred; sanctity",
   "defKo": "",
-  "countOT": 45,
+  "countOT": 467,
   "byBook": {
-    "psalms": 45
+    "leviticus": 92,
+    "exodus": 70,
+    "ezekiel": 57,
+    "numbers": 55,
+    "psalms": 45,
+    "chronicles2": 29,
+    "isaiah": 23,
+    "chronicles1": 17,
+    "daniel": 13,
+    "kings1": 13,
+    "nehemiah": 7,
+    "ezra": 6,
+    "jeremiah": 6,
+    "zechariah": 5,
+    "deuteronomy": 4,
+    "joel": 3,
+    "kings2": 3,
+    "samuel1": 3,
+    "amos": 2,
+    "jonah": 2,
+    "joshua": 2,
+    "obadiah": 2,
+    "zephaniah": 2,
+    "habakkuk": 1,
+    "haggai": 1,
+    "lamentations": 1,
+    "malachi": 1,
+    "micah": 1,
+    "proverbs": 1
   },
   "phrases": [
     {
+      "hebrew": "קֹ֥דֶשׁ קָֽדָשִׁ֖ים",
+      "pron": "코데쉬 코데쉬",
+      "lemmas": [
+        "קֹדֶשׁ",
+        "קֹדֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "קֹ֥דֶשׁ",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        },
+        {
+          "word": "קָֽדָשִׁ֖ים",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        }
+      ],
+      "count": 92,
+      "refs": [
+        "exodus 26:33",
+        "exodus 26:34",
+        "exodus 29:37",
+        "exodus 30:10",
+        "exodus 30:29",
+        "exodus 30:36",
+        "exodus 40:10",
+        "leviticus 2:3",
+        "leviticus 2:10",
+        "leviticus 6:17",
+        "leviticus 6:25",
+        "leviticus 6:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קֹ֥דֶשׁ קָֽדָשִׁ֖ים הִֽוא",
+      "pron": "코데쉬 코데쉬 후",
+      "lemmas": [
+        "קֹדֶשׁ",
+        "קֹדֶשׁ",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "קֹ֥דֶשׁ",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        },
+        {
+          "word": "קָֽדָשִׁ֖ים",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        },
+        {
+          "word": "הִֽוא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        }
+      ],
+      "count": 26,
+      "refs": [
+        "exodus 30:10",
+        "leviticus 6:17",
+        "leviticus 6:25",
+        "leviticus 6:29",
+        "leviticus 7:1",
+        "leviticus 7:6",
+        "leviticus 10:12",
+        "leviticus 10:17",
+        "leviticus 14:13",
+        "leviticus 24:9",
+        "leviticus 27:28",
+        "numbers 18:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּשֶׁ֣קֶל הַקֹּ֑דֶשׁ",
+      "pron": "셰켈 코데쉬",
+      "lemmas": [
+        "שֶׁקֶל",
+        "קֹדֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "בְּשֶׁ֣קֶל",
+          "lemma": "שֶׁקֶל",
+          "strong": "H8255",
+          "pron": "셰켈"
+        },
+        {
+          "word": "הַקֹּ֑דֶשׁ",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "exodus 30:13",
+        "exodus 30:24",
+        "exodus 38:24",
+        "exodus 38:25",
+        "exodus 38:26",
+        "leviticus 5:15",
+        "leviticus 27:3",
+        "leviticus 27:25",
+        "numbers 3:47",
+        "numbers 3:50",
+        "numbers 7:13",
+        "numbers 7:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קֹ֨דֶשׁ֙ יִהְיֶ֣ה",
+      "pron": "코데쉬 하에타",
+      "lemmas": [
+        "קֹדֶשׁ",
+        "הָיָה"
+      ],
+      "words": [
+        {
+          "word": "קֹ֨דֶשׁ֙",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        },
+        {
+          "word": "יִהְיֶ֣ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "exodus 12:16",
+        "exodus 22:31",
+        "exodus 28:38",
+        "exodus 30:25",
+        "exodus 30:31",
+        "exodus 30:32",
+        "exodus 30:36",
+        "exodus 30:37",
+        "exodus 38:24",
+        "leviticus 23:7",
+        "leviticus 23:20",
+        "leviticus 23:21"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "הַר קָדְשִֽׁי",
-      "pron": "하르 칻시위",
+      "pron": "헤하림 코데쉬",
       "lemmas": [
         "הַר",
         "קֹדֶשׁ"
@@ -59,113 +246,29 @@
           "word": "הַר",
           "lemma": "הַר",
           "strong": "H2022",
-          "pron": "하르"
+          "pron": "헤하림"
         },
         {
           "word": "קָדְשִֽׁי",
           "lemma": "קֹדֶשׁ",
           "strong": "H6944",
-          "pron": "칻시위"
+          "pron": "코데쉬"
         }
       ],
-      "count": 6,
+      "count": 23,
       "refs": [
         "psalms 2:6",
         "psalms 3:4",
         "psalms 15:1",
         "psalms 43:3",
         "psalms 48:1",
-        "psalms 99:9"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "בְשֵׁ֖ם קָדְשׁ֣וֹ",
-      "pron": "셰메카 칻시위",
-      "lemmas": [
-        "שֵׁם",
-        "קֹדֶשׁ"
-      ],
-      "words": [
-        {
-          "word": "בְשֵׁ֖ם",
-          "lemma": "שֵׁם",
-          "strong": "H8034",
-          "pron": "셰메카"
-        },
-        {
-          "word": "קָדְשׁ֣וֹ",
-          "lemma": "קֹדֶשׁ",
-          "strong": "H6944",
-          "pron": "칻시위"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 33:21",
-        "psalms 103:1",
-        "psalms 105:3",
-        "psalms 106:47",
-        "psalms 145:21"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "הֵֽיכַל קָ֝דְשְׁךָ֗",
-      "pron": "헤칼 칻시위",
-      "lemmas": [
-        "הֵיכָל",
-        "קֹדֶשׁ"
-      ],
-      "words": [
-        {
-          "word": "הֵֽיכַל",
-          "lemma": "הֵיכָל",
-          "strong": "H1964",
-          "pron": "헤칼"
-        },
-        {
-          "word": "קָ֝דְשְׁךָ֗",
-          "lemma": "קֹדֶשׁ",
-          "strong": "H6944",
-          "pron": "칻시위"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 5:7",
-        "psalms 11:4",
-        "psalms 79:1",
-        "psalms 138:2"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "קָדְשׁ֗וֹ יְהוָה֮",
-      "pron": "칻시위 여호와",
-      "lemmas": [
-        "קֹדֶשׁ",
-        "יְהֹוָה"
-      ],
-      "words": [
-        {
-          "word": "קָדְשׁ֗וֹ",
-          "lemma": "קֹדֶשׁ",
-          "strong": "H6944",
-          "pron": "칻시위"
-        },
-        {
-          "word": "יְהוָה֮",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 11:4",
-        "psalms 93:5",
-        "psalms 102:19"
+        "psalms 99:9",
+        "isaiah 11:9",
+        "isaiah 27:13",
+        "isaiah 56:7",
+        "isaiah 57:13",
+        "isaiah 65:11",
+        "isaiah 65:25"
       ],
       "glossKo": ""
     }

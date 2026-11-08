@@ -1,8 +1,8 @@
 {
   "lemma": "עָמֵל",
-  "pron": "아멜",
+  "pron": "아멜림",
   "strong": "H6001",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "עָמַל",
     "strong": "H5998",
@@ -18,13 +18,84 @@
     {
       "lemma": "עָמָל",
       "strong": "H5999",
-      "pron": "아말",
-      "glossKo": "수고"
+      "pron": "아말리",
+      "glossKo": "나의 수고"
     }
   ],
   "defEn": "toiling; laborer; sorrowful",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "ecclesiastes": 5,
+    "job": 2,
+    "judges": 1,
+    "proverbs": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "עָמֵ֖ל תַּ֥חַת",
+      "pron": "아멜림 미타하트",
+      "lemmas": [
+        "עָמֵל",
+        "תַּחַת"
+      ],
+      "words": [
+        {
+          "word": "עָמֵ֖ל",
+          "lemma": "עָמֵל",
+          "strong": "H6001",
+          "pron": "아멜림"
+        },
+        {
+          "word": "תַּ֥חַת",
+          "lemma": "תַּחַת",
+          "strong": "H8478",
+          "pron": "미타하트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ecclesiastes 2:18",
+        "ecclesiastes 2:22",
+        "ecclesiastes 9:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָמֵ֖ל תַּ֥חַת הַשָּֽׁמֶשׁ",
+      "pron": "아멜림 미타하트 아셰메쉬",
+      "lemmas": [
+        "עָמֵל",
+        "תַּחַת",
+        "שֶׁמֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "עָמֵ֖ל",
+          "lemma": "עָמֵל",
+          "strong": "H6001",
+          "pron": "아멜림"
+        },
+        {
+          "word": "תַּ֥חַת",
+          "lemma": "תַּחַת",
+          "strong": "H8478",
+          "pron": "미타하트"
+        },
+        {
+          "word": "הַשָּֽׁמֶשׁ",
+          "lemma": "שֶׁמֶשׁ",
+          "strong": "H8121",
+          "pron": "아셰메쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ecclesiastes 2:18",
+        "ecclesiastes 2:22",
+        "ecclesiastes 9:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

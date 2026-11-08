@@ -1,6 +1,6 @@
 {
   "lemma": "זָהַר",
-  "pron": "닛하르",
+  "pron": "브힛하렛타",
   "strong": "H2094",
   "posKo": "동사",
   "root": null,
@@ -8,21 +8,185 @@
     {
       "lemma": "זְהַר",
       "strong": "H2095",
-      "pron": "",
+      "pron": "우제히린",
       "glossKo": "조심하다(아람)"
     },
     {
       "lemma": "זֹהַר",
       "strong": "H2096",
-      "pron": "",
+      "pron": "조하르",
       "glossKo": "광채"
     }
   ],
   "defEn": "gleam; enlighten",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 23,
   "byBook": {
+    "ezekiel": 15,
+    "ecclesiastes": 2,
+    "kings2": 2,
+    "chronicles2": 1,
+    "daniel": 1,
+    "exodus": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְהִזְהַרְתָּ֣ה אֶתְהֶ֔ם",
+      "pron": "브힛하렛타 에트",
+      "lemmas": [
+        "זָהַר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְהִזְהַרְתָּ֣ה",
+          "lemma": "זָהַר",
+          "strong": "H2094",
+          "pron": "브힛하렛타"
+        },
+        {
+          "word": "אֶתְהֶ֔ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 18:20",
+        "chronicles2 19:10",
+        "ezekiel 3:17",
+        "ezekiel 33:3",
+        "ezekiel 33:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֣א נִזְהָ֔ר",
+      "pron": "로 브힛하렛타",
+      "lemmas": [
+        "לֹא",
+        "זָהַר"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "נִזְהָ֔ר",
+          "lemma": "זָהַר",
+          "strong": "H2094",
+          "pron": "브힛하렛타"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezekiel 3:18",
+        "ezekiel 3:20",
+        "ezekiel 33:4",
+        "ezekiel 33:5",
+        "ezekiel 33:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי הִזְהַ֣רְתָּ",
+      "pron": "키 브힛하렛타",
+      "lemmas": [
+        "כִּי",
+        "זָהַר"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "הִזְהַ֣רְתָּ",
+          "lemma": "זָהַר",
+          "strong": "H2094",
+          "pron": "브힛하렛타"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 3:19",
+        "ezekiel 3:21",
+        "ezekiel 33:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְהַזְהִ֥יר רָשָׁ֛ע",
+      "pron": "브힛하렛타 라샤",
+      "lemmas": [
+        "זָהַר",
+        "רָשָׁע"
+      ],
+      "words": [
+        {
+          "word": "לְהַזְהִ֥יר",
+          "lemma": "זָהַר",
+          "strong": "H2094",
+          "pron": "브힛하렛타"
+        },
+        {
+          "word": "רָשָׁ֛ע",
+          "lemma": "רָשָׁע",
+          "strong": "H7563",
+          "pron": "라샤"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 3:18",
+        "ezekiel 3:19",
+        "ezekiel 33:8",
+        "ezekiel 33:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאַתָּה֙ כִּֽי הִזְהַ֣רְתָּ",
+      "pron": "앗타 키 브힛하렛타",
+      "lemmas": [
+        "אַתָּה",
+        "כִּי",
+        "זָהַר"
+      ],
+      "words": [
+        {
+          "word": "וְאַתָּה֙",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
+        },
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "הִזְהַ֣רְתָּ",
+          "lemma": "זָהַר",
+          "strong": "H2094",
+          "pron": "브힛하렛타"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 3:19",
+        "ezekiel 3:21",
+        "ezekiel 33:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

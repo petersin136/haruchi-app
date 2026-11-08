@@ -18,32 +18,184 @@
     {
       "lemma": "מָהַר",
       "strong": "H4116",
-      "pron": "마하루",
+      "pron": "바예마헤르",
       "glossKo": "서두르다"
     },
     {
       "lemma": "מָהַר",
       "strong": "H4117",
-      "pron": "",
+      "pron": "마호르",
       "glossKo": "신부값을 치르다"
+    },
+    {
+      "lemma": "מְהֵרָה",
+      "strong": "H4120",
+      "pron": "메헤라",
+      "glossKo": "급히"
     },
     {
       "lemma": "מַהֲרַי",
       "strong": "H4121",
-      "pron": "",
+      "pron": "마헤라이",
       "glossKo": "마하래"
+    },
+    {
+      "lemma": "מַהֵר שָׁלָל חָשׁ בַּז",
+      "strong": "H4122",
+      "pron": "르마헤르",
+      "glossKo": "마헬살랄하스바스"
     }
   ],
   "defEn": "hurrying; in a hurry",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 18,
   "byBook": {
-    "psalms": 4
+    "deuteronomy": 8,
+    "psalms": 4,
+    "judges": 2,
+    "exodus": 1,
+    "joshua": 1,
+    "proverbs": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
+      "hebrew": "מַהֵ֗ר מִן",
+      "pron": "마헤르 민",
+      "lemmas": [
+        "מַהֵר",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "מַהֵ֗ר",
+          "lemma": "מַהֵר",
+          "strong": "H4118",
+          "pron": "마헤르"
+        },
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 32:8",
+        "deuteronomy 9:12",
+        "deuteronomy 9:16",
+        "judges 2:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַהֵ֗ר מִן הַדֶּ֨רֶךְ֙",
+      "pron": "마헤르 민 데레크",
+      "lemmas": [
+        "מַהֵר",
+        "מִן",
+        "דֶּרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "מַהֵ֗ר",
+          "lemma": "מַהֵר",
+          "strong": "H4118",
+          "pron": "마헤르"
+        },
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        },
+        {
+          "word": "הַדֶּ֨רֶךְ֙",
+          "lemma": "דֶּרֶךְ",
+          "strong": "H1870",
+          "pron": "데레크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 32:8",
+        "deuteronomy 9:12",
+        "deuteronomy 9:16",
+        "judges 2:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "סָ֣רוּ מַהֵ֗ר",
+      "pron": "바야사르 마헤르",
+      "lemmas": [
+        "סוּר",
+        "מַהֵר"
+      ],
+      "words": [
+        {
+          "word": "סָ֣רוּ",
+          "lemma": "סוּר",
+          "strong": "H5493",
+          "pron": "바야사르"
+        },
+        {
+          "word": "מַהֵ֗ר",
+          "lemma": "מַהֵר",
+          "strong": "H4118",
+          "pron": "마헤르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 32:8",
+        "deuteronomy 9:12",
+        "deuteronomy 9:16",
+        "judges 2:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "סָ֣רוּ מַהֵ֗ר מִן",
+      "pron": "바야사르 마헤르 민",
+      "lemmas": [
+        "סוּר",
+        "מַהֵר",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "סָ֣רוּ",
+          "lemma": "סוּר",
+          "strong": "H5493",
+          "pron": "바야사르"
+        },
+        {
+          "word": "מַהֵ֗ר",
+          "lemma": "מַהֵר",
+          "strong": "H4118",
+          "pron": "마헤르"
+        },
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 32:8",
+        "deuteronomy 9:12",
+        "deuteronomy 9:16",
+        "judges 2:17"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "מַהֵ֥ר עֲנֵֽנִי",
-      "pron": "마헤르 바야아네니",
+      "pron": "마헤르 바야안",
       "lemmas": [
         "מַהֵר",
         "עָנָה"
@@ -59,7 +211,7 @@
           "word": "עֲנֵֽנִי",
           "lemma": "עָנָה",
           "strong": "H6030",
-          "pron": "바야아네니"
+          "pron": "바야안"
         }
       ],
       "count": 3,

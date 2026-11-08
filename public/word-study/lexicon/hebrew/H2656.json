@@ -1,6 +1,6 @@
 {
   "lemma": "חֵפֶץ",
-  "pron": "헵츠오",
+  "pron": "아헤페츠",
   "strong": "H2656",
   "posKo": "명사",
   "root": {
@@ -18,21 +18,205 @@
     {
       "lemma": "חָפֵץ",
       "strong": "H2655",
-      "pron": "하페츠",
+      "pron": "헤하페츠",
       "glossKo": "기뻐하는"
     },
     {
       "lemma": "חֶפְצִי בָּהּ",
       "strong": "H2657",
-      "pron": "",
+      "pron": "헵치",
       "glossKo": "헵시바"
     }
   ],
   "defEn": "pleasure; desire; valuable; matter",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 39,
   "byBook": {
-    "psalms": 4
+    "isaiah": 8,
+    "ecclesiastes": 7,
+    "kings1": 5,
+    "psalms": 4,
+    "job": 3,
+    "proverbs": 3,
+    "jeremiah": 2,
+    "malachi": 2,
+    "samuel1": 2,
+    "chronicles2": 1,
+    "hosea": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כָּל חֶפְצָהּ֙",
+      "pron": "칼 아헤페츠",
+      "lemmas": [
+        "כֹּל",
+        "חֵפֶץ"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "חֶפְצָהּ֙",
+          "lemma": "חֵפֶץ",
+          "strong": "H2656",
+          "pron": "아헤페츠"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "samuel2 23:5",
+        "kings1 5:8",
+        "kings1 5:10",
+        "kings1 9:11",
+        "kings1 10:13",
+        "chronicles2 9:12",
+        "psalms 16:3",
+        "psalms 111:2",
+        "proverbs 3:15",
+        "proverbs 8:11",
+        "ecclesiastes 3:1",
+        "ecclesiastes 3:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֥ין חֵ֖פֶץ",
+      "pron": "아인 아헤페츠",
+      "lemmas": [
+        "אַיִן",
+        "חֵפֶץ"
+      ],
+      "words": [
+        {
+          "word": "אֵ֥ין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
+        },
+        {
+          "word": "חֵ֖פֶץ",
+          "lemma": "חֵפֶץ",
+          "strong": "H2656",
+          "pron": "아헤페츠"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel1 18:25",
+        "ecclesiastes 5:4",
+        "ecclesiastes 12:1",
+        "jeremiah 22:28",
+        "jeremiah 48:38",
+        "hosea 8:8",
+        "malachi 1:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת כָּל חֶפְצָהּ֙",
+      "pron": "에트 칼 아헤페츠",
+      "lemmas": [
+        "אֵת",
+        "כֹּל",
+        "חֵפֶץ"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "חֶפְצָהּ֙",
+          "lemma": "חֵפֶץ",
+          "strong": "H2656",
+          "pron": "아헤페츠"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 5:8",
+        "kings1 10:13",
+        "chronicles2 9:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַ֝תַּ֗עַשׂ בְּחֵ֣פֶץ",
+      "pron": "바야아스 아헤페츠",
+      "lemmas": [
+        "עָשָׂה",
+        "חֵפֶץ"
+      ],
+      "words": [
+        {
+          "word": "וַ֝תַּ֗עַשׂ",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "בְּחֵ֣פֶץ",
+          "lemma": "חֵפֶץ",
+          "strong": "H2656",
+          "pron": "아헤페츠"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 31:13",
+        "isaiah 48:14",
+        "isaiah 58:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כְּלִ֔י אֵ֥ין חֵ֖פֶץ",
+      "pron": "켈레 아인 아헤페츠",
+      "lemmas": [
+        "כְּלִי",
+        "אַיִן",
+        "חֵפֶץ"
+      ],
+      "words": [
+        {
+          "word": "כְּלִ֔י",
+          "lemma": "כְּלִי",
+          "strong": "H3627",
+          "pron": "켈레"
+        },
+        {
+          "word": "אֵ֥ין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
+        },
+        {
+          "word": "חֵ֖פֶץ",
+          "lemma": "חֵפֶץ",
+          "strong": "H2656",
+          "pron": "아헤페츠"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 22:28",
+        "jeremiah 48:38",
+        "hosea 8:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

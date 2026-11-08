@@ -1,6 +1,6 @@
 {
   "lemma": "רָעַשׁ",
-  "pron": "바티레아쉬",
+  "pron": "라아샤",
   "strong": "H7493",
   "posKo": "동사",
   "root": null,
@@ -8,43 +8,118 @@
     {
       "lemma": "רַעַשׁ",
       "strong": "H7494",
-      "pron": "",
+      "pron": "라아쉬",
       "glossKo": "지진"
     }
   ],
   "defEn": "undulate",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 30,
   "byBook": {
-    "psalms": 6
+    "jeremiah": 6,
+    "psalms": 6,
+    "ezekiel": 5,
+    "haggai": 3,
+    "isaiah": 3,
+    "joel": 2,
+    "amos": 1,
+    "job": 1,
+    "judges": 1,
+    "nahum": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "וַתִּרְעַ֨שׁ הָאָ֗רֶץ",
-      "pron": "바티레아쉬 에레츠",
+      "hebrew": "וַתִּרְעַשׁ֙ הָאָ֔רֶץ",
+      "pron": "라아샤 하아레츠",
       "lemmas": [
         "רָעַשׁ",
         "אֶרֶץ"
       ],
       "words": [
         {
-          "word": "וַתִּרְעַ֨שׁ",
+          "word": "וַתִּרְעַשׁ֙",
           "lemma": "רָעַשׁ",
           "strong": "H7493",
-          "pron": "바티레아쉬"
+          "pron": "라아샤"
         },
         {
-          "word": "הָאָ֗רֶץ",
+          "word": "הָאָ֔רֶץ",
           "lemma": "אֶרֶץ",
           "strong": "H776",
-          "pron": "에레츠"
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "samuel2 22:8",
+        "psalms 18:7",
+        "psalms 60:2",
+        "psalms 77:18",
+        "isaiah 13:13",
+        "jeremiah 10:10",
+        "jeremiah 49:21",
+        "jeremiah 50:46",
+        "jeremiah 51:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֣רֶץ רָעָ֔שָׁה",
+      "pron": "하아레츠 라아샤",
+      "lemmas": [
+        "אֶרֶץ",
+        "רָעַשׁ"
+      ],
+      "words": [
+        {
+          "word": "אֶ֣רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "רָעָ֔שָׁה",
+          "lemma": "רָעַשׁ",
+          "strong": "H7493",
+          "pron": "라아샤"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 5:4",
+        "psalms 68:8",
+        "isaiah 14:16",
+        "joel 2:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַרְעִישׁ֙ אֶת",
+      "pron": "라아샤 에트",
+      "lemmas": [
+        "רָעַשׁ",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "מַרְעִישׁ֙",
+          "lemma": "רָעַשׁ",
+          "strong": "H7493",
+          "pron": "라아샤"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 18:7",
-        "psalms 60:2",
-        "psalms 77:18"
+        "haggai 2:6",
+        "haggai 2:7",
+        "haggai 2:21"
       ],
       "glossKo": ""
     }

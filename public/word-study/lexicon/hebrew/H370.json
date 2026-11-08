@@ -12,34 +12,79 @@
     {
       "lemma": "אַי",
       "strong": "H335",
-      "pron": "아에카",
+      "pron": "아엑카",
       "glossKo": "너에게 어디"
     },
     {
       "lemma": "אַיִן",
       "strong": "H369",
-      "pron": "엔",
+      "pron": "아인",
       "glossKo": "없다"
     },
     {
       "lemma": "אִין",
       "strong": "H371",
-      "pron": "",
+      "pron": "브인",
       "glossKo": "있느냐"
     },
     {
       "lemma": "אָן",
       "strong": "H575",
-      "pron": "아나",
+      "pron": "브아나",
       "glossKo": "어디"
     }
   ],
   "defEn": "where?",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 16,
   "byBook": {
+    "job": 3,
     "genesis": 2,
+    "joshua": 2,
+    "judges": 2,
+    "kings2": 2,
+    "isaiah": 1,
+    "jonah": 1,
+    "nahum": 1,
+    "numbers": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מֵאַ֣יִן תָּב֑וֹא",
+      "pron": "메아인 바야베",
+      "lemmas": [
+        "אַיִן",
+        "בּוֹא"
+      ],
+      "words": [
+        {
+          "word": "מֵאַ֣יִן",
+          "lemma": "אַיִן",
+          "strong": "H370",
+          "pron": "메아인"
+        },
+        {
+          "word": "תָּב֑וֹא",
+          "lemma": "בּוֹא",
+          "strong": "H935",
+          "pron": "바야베"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "genesis 42:7",
+        "joshua 9:8",
+        "judges 17:9",
+        "judges 19:17",
+        "kings2 20:14",
+        "job 1:7",
+        "job 28:20",
+        "psalms 121:1",
+        "isaiah 39:3",
+        "jonah 1:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

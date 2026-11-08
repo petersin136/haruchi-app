@@ -1,6 +1,6 @@
 {
   "lemma": "פְּרִי",
-  "pron": "피레오",
+  "pron": "페리",
   "strong": "H6529",
   "posKo": "명사",
   "root": {
@@ -12,108 +12,229 @@
     {
       "lemma": "אֶפְרָת",
       "strong": "H672",
-      "pron": "브엡라타",
+      "pron": "엡라타",
       "glossKo": "에브랏"
     },
     {
       "lemma": "פָּרָה",
       "strong": "H6509",
-      "pron": "바예페르",
+      "pron": "페루",
       "glossKo": "열매 맺다"
     }
   ],
   "defEn": "fruit",
   "defKo": "열매예요. 1장에서는 씨 가진 열매가 사람의 먹을거리가 돼요(1:29). 3장에서는 먹지 말라 하신 나무의 열매로 나와요(3:3, 3:6).",
-  "countOT": 20,
+  "countOT": 119,
   "byBook": {
+    "deuteronomy": 21,
+    "ezekiel": 11,
+    "jeremiah": 11,
     "psalms": 11,
-    "genesis": 9
+    "proverbs": 10,
+    "genesis": 9,
+    "isaiah": 9,
+    "leviticus": 8,
+    "hosea": 5,
+    "songofsolomon": 5,
+    "amos": 3,
+    "nehemiah": 3,
+    "numbers": 3,
+    "kings2": 2,
+    "micah": 2,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "joel": 1,
+    "lamentations": 1,
+    "malachi": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "וַ֝יַּעֲשׂ֗וּ פְּרִ֣י",
-      "pron": "야아세 피레오",
+      "hebrew": "וּפְרִ֣י אַדְמָתֶ֑ךָ",
+      "pron": "페리 하아다마",
       "lemmas": [
-        "עָשָׂה",
+        "פְּרִי",
+        "אֲדָמָה"
+      ],
+      "words": [
+        {
+          "word": "וּפְרִ֣י",
+          "lemma": "פְּרִי",
+          "strong": "H6529",
+          "pron": "페리"
+        },
+        {
+          "word": "אַדְמָתֶ֑ךָ",
+          "lemma": "אֲדָמָה",
+          "strong": "H127",
+          "pron": "하아다마"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "genesis 4:3",
+        "deuteronomy 7:13",
+        "deuteronomy 26:2",
+        "deuteronomy 26:10",
+        "deuteronomy 28:4",
+        "deuteronomy 28:11",
+        "deuteronomy 28:18",
+        "deuteronomy 28:33",
+        "deuteronomy 28:42",
+        "deuteronomy 28:51",
+        "deuteronomy 30:9",
+        "psalms 105:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאִכְל֥וּ פִרְיָֽם",
+      "pron": "아콜 페리",
+      "lemmas": [
+        "אָכַל",
         "פְּרִי"
       ],
       "words": [
         {
-          "word": "וַ֝יַּעֲשׂ֗וּ",
-          "lemma": "עָשָׂה",
-          "strong": "H6213",
-          "pron": "야아세"
+          "word": "וְאִכְל֥וּ",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "아콜"
+        },
+        {
+          "word": "פִרְיָֽם",
+          "lemma": "פְּרִי",
+          "strong": "H6529",
+          "pron": "페리"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "deuteronomy 28:51",
+        "deuteronomy 28:53",
+        "kings2 19:29",
+        "psalms 105:35",
+        "proverbs 1:31",
+        "proverbs 18:21",
+        "proverbs 27:18",
+        "songofsolomon 4:16",
+        "isaiah 37:30",
+        "isaiah 65:21",
+        "jeremiah 2:7",
+        "ezekiel 25:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת פְּרִ֣י",
+      "pron": "에트 페리",
+      "lemmas": [
+        "אֵת",
+        "פְּרִי"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         },
         {
           "word": "פְּרִ֣י",
           "lemma": "פְּרִי",
           "strong": "H6529",
-          "pron": "피레오"
+          "pron": "페리"
         }
       ],
-      "count": 3,
+      "count": 12,
       "refs": [
-        "psalms 107:37",
-        "genesis 1:11",
-        "genesis 1:12"
+        "leviticus 19:23",
+        "leviticus 19:25",
+        "numbers 13:26",
+        "nehemiah 9:36",
+        "songofsolomon 8:12",
+        "jeremiah 29:5",
+        "jeremiah 29:28",
+        "ezekiel 17:9",
+        "ezekiel 34:27",
+        "ezekiel 36:30",
+        "amos 9:14",
+        "malachi 3:11"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "פְּרִ֣י הַבָּֽטֶן",
-      "pron": "피레오 빋나므",
+      "hebrew": "פְּרִי בָֽטֶן",
+      "pron": "페리 베빋네크",
       "lemmas": [
         "פְּרִי",
         "בֶּטֶן"
       ],
       "words": [
         {
-          "word": "פְּרִ֣י",
+          "word": "פְּרִי",
           "lemma": "פְּרִי",
           "strong": "H6529",
-          "pron": "피레오"
+          "pron": "페리"
         },
         {
-          "word": "הַבָּֽטֶן",
+          "word": "בָֽטֶן",
           "lemma": "בֶּטֶן",
           "strong": "H990",
-          "pron": "빋나므"
+          "pron": "베빋네크"
         }
       ],
-      "count": 3,
+      "count": 11,
       "refs": [
+        "genesis 30:2",
+        "deuteronomy 7:13",
+        "deuteronomy 28:4",
+        "deuteronomy 28:11",
+        "deuteronomy 28:18",
+        "deuteronomy 28:53",
+        "deuteronomy 30:9",
         "psalms 127:3",
         "psalms 132:11",
-        "genesis 30:2"
+        "isaiah 13:18",
+        "micah 6:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "פְרִי עֵ֖ץ",
-      "pron": "피레오 크에츠",
+      "hebrew": "פְּרִֽי בִטְנְךָ֣ וּפְרִֽי",
+      "pron": "페리 베빋네크 페리",
       "lemmas": [
         "פְּרִי",
-        "עֵץ"
+        "בֶּטֶן",
+        "פְּרִי"
       ],
       "words": [
         {
-          "word": "פְרִי",
+          "word": "פְּרִֽי",
           "lemma": "פְּרִי",
           "strong": "H6529",
-          "pron": "피레오"
+          "pron": "페리"
         },
         {
-          "word": "עֵ֖ץ",
-          "lemma": "עֵץ",
-          "strong": "H6086",
-          "pron": "크에츠"
+          "word": "בִטְנְךָ֣",
+          "lemma": "בֶּטֶן",
+          "strong": "H990",
+          "pron": "베빋네크"
+        },
+        {
+          "word": "וּפְרִֽי",
+          "lemma": "פְּרִי",
+          "strong": "H6529",
+          "pron": "페리"
         }
       ],
-      "count": 3,
+      "count": 10,
       "refs": [
-        "genesis 1:29",
-        "genesis 3:2",
-        "genesis 3:3"
+        "deuteronomy 7:13",
+        "deuteronomy 28:4",
+        "deuteronomy 28:11",
+        "deuteronomy 28:18",
+        "deuteronomy 30:9"
       ],
       "glossKo": ""
     }

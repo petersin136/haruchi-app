@@ -1,6 +1,6 @@
 {
   "lemma": "לָהַט",
-  "pron": "로하딤",
+  "pron": "바텔라헫",
   "strong": "H3857",
   "posKo": "동사",
   "root": null,
@@ -14,9 +14,44 @@
   ],
   "defEn": "lick; blaze",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 11,
   "byBook": {
-    "psalms": 5
+    "psalms": 5,
+    "joel": 2,
+    "deuteronomy": 1,
+    "isaiah": 1,
+    "job": 1,
+    "malachi": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּ֝כְלֶהָבָ֗ה תְּלַהֵ֥ט",
+      "pron": "레하바 바텔라헫",
+      "lemmas": [
+        "לֶהָבָה",
+        "לָהַט"
+      ],
+      "words": [
+        {
+          "word": "וּ֝כְלֶהָבָ֗ה",
+          "lemma": "לֶהָבָה",
+          "strong": "H3852",
+          "pron": "레하바"
+        },
+        {
+          "word": "תְּלַהֵ֥ט",
+          "lemma": "לָהַט",
+          "strong": "H3857",
+          "pron": "바텔라헫"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 83:14",
+        "psalms 106:18",
+        "joel 1:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,8 +12,8 @@
     {
       "lemma": "קָבַר",
       "strong": "H6912",
-      "pron": "코베르",
-      "glossKo": "장사하는 이"
+      "pron": "틱카베르",
+      "glossKo": "장사하다"
     },
     {
       "lemma": "קֶבֶר",
@@ -24,9 +24,47 @@
   ],
   "defEn": "sepulture",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 14,
   "byBook": {
-    "genesis": 3
+    "genesis": 3,
+    "kings2": 3,
+    "ezekiel": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת קְבֻ֣רָת֔וֹ",
+      "pron": "에트 케부라타흐",
+      "lemmas": [
+        "אֵת",
+        "קְבוּרָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "קְבֻ֣רָת֔וֹ",
+          "lemma": "קְבוּרָה",
+          "strong": "H6900",
+          "pron": "케부라타흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 34:6",
+        "kings2 9:28",
+        "kings2 21:26"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

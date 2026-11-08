@@ -1,6 +1,6 @@
 {
   "lemma": "אָשַׁם",
-  "pron": "하아시메므",
+  "pron": "브아셰무",
   "strong": "H816",
   "posKo": "동사",
   "root": null,
@@ -8,8 +8,8 @@
     {
       "lemma": "אָשָׁם",
       "strong": "H817",
-      "pron": "바아샤마이브",
-      "glossKo": "그의 속건제"
+      "pron": "아샴",
+      "glossKo": "속건제"
     },
     {
       "lemma": "אָשֵׁם",
@@ -20,9 +20,109 @@
   ],
   "defEn": "be guilty",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 35,
   "byBook": {
-    "psalms": 3
+    "leviticus": 11,
+    "hosea": 5,
+    "ezekiel": 4,
+    "psalms": 3,
+    "chronicles2": 2,
+    "jeremiah": 2,
+    "numbers": 2,
+    "habakkuk": 1,
+    "isaiah": 1,
+    "joel": 1,
+    "judges": 1,
+    "proverbs": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְלֹ֤א יֶאְשְׁמוּ֙",
+      "pron": "로 브아셰무",
+      "lemmas": [
+        "לֹא",
+        "אָשַׁם"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֤א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יֶאְשְׁמוּ֙",
+          "lemma": "אָשַׁם",
+          "strong": "H816",
+          "pron": "브아셰무"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "chronicles2 19:10",
+        "psalms 34:22",
+        "jeremiah 50:7",
+        "zechariah 11:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָשֹׁ֥ם אָשַׁ֖ם",
+      "pron": "브아셰무 브아셰무",
+      "lemmas": [
+        "אָשַׁם",
+        "אָשַׁם"
+      ],
+      "words": [
+        {
+          "word": "אָשֹׁ֥ם",
+          "lemma": "אָשַׁם",
+          "strong": "H816",
+          "pron": "브아셰무"
+        },
+        {
+          "word": "אָשַׁ֖ם",
+          "lemma": "אָשַׁם",
+          "strong": "H816",
+          "pron": "브아셰무"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 5:19",
+        "ezekiel 25:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָדַ֥ע וְאָשֵׁ֖ם",
+      "pron": "요데아 브아셰무",
+      "lemmas": [
+        "יָדַע",
+        "אָשַׁם"
+      ],
+      "words": [
+        {
+          "word": "יָדַ֥ע",
+          "lemma": "יָדַע",
+          "strong": "H3045",
+          "pron": "요데아"
+        },
+        {
+          "word": "וְאָשֵׁ֖ם",
+          "lemma": "אָשַׁם",
+          "strong": "H816",
+          "pron": "브아셰무"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 5:3",
+        "leviticus 5:4",
+        "leviticus 5:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "אוֹת",
-  "pron": "메오토테카",
+  "pron": "르오토트",
   "strong": "H226",
   "posKo": "명사",
   "root": {
@@ -18,7 +18,7 @@
     {
       "lemma": "אָת",
       "strong": "H852",
-      "pron": "",
+      "pron": "아타아",
       "glossKo": "표적(아람)"
     },
     {
@@ -30,71 +30,62 @@
     {
       "lemma": "אָתָה",
       "strong": "H857",
-      "pron": "예에타우",
+      "pron": "브아타",
       "glossKo": "오다"
     }
   ],
   "defEn": "signal; flag; beacon; monument; omen; prodigy; evidence",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 79,
   "byBook": {
+    "exodus": 16,
+    "deuteronomy": 12,
+    "isaiah": 11,
     "psalms": 8,
-    "genesis": 6
+    "genesis": 6,
+    "numbers": 5,
+    "ezekiel": 4,
+    "jeremiah": 4,
+    "samuel1": 4,
+    "joshua": 3,
+    "kings2": 3,
+    "job": 1,
+    "judges": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
-      "hebrew": "אֽוֹת הַבְּרִית֙",
-      "pron": "메오토테카 베리트오",
-      "lemmas": [
-        "אוֹת",
-        "בְּרִית"
-      ],
-      "words": [
-        {
-          "word": "אֽוֹת",
-          "lemma": "אוֹת",
-          "strong": "H226",
-          "pron": "메오토테카"
-        },
-        {
-          "word": "הַבְּרִית֙",
-          "lemma": "בְּרִית",
-          "strong": "H1285",
-          "pron": "베리트오"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 9:12",
-        "genesis 9:13",
-        "genesis 9:17",
-        "genesis 17:11"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֹֽתוֹתָ֑יו וּ֝מוֹפְתָ֗יו",
-      "pron": "메오토테카 크모페트",
+      "hebrew": "בְּאֹתֹ֨ת וּבְמוֹפְתִ֜ים",
+      "pron": "르오토트 아몹팀",
       "lemmas": [
         "אוֹת",
         "מוֹפֵת"
       ],
       "words": [
         {
-          "word": "אֹֽתוֹתָ֑יו",
+          "word": "בְּאֹתֹ֨ת",
           "lemma": "אוֹת",
           "strong": "H226",
-          "pron": "메오토테카"
+          "pron": "르오토트"
         },
         {
-          "word": "וּ֝מוֹפְתָ֗יו",
+          "word": "וּבְמוֹפְתִ֜ים",
           "lemma": "מוֹפֵת",
           "strong": "H4159",
-          "pron": "크모페트"
+          "pron": "아몹팀"
         }
       ],
-      "count": 3,
+      "count": 16,
       "refs": [
+        "deuteronomy 4:34",
+        "deuteronomy 6:22",
+        "deuteronomy 7:19",
+        "deuteronomy 13:2",
+        "deuteronomy 26:8",
+        "deuteronomy 28:46",
+        "deuteronomy 29:3",
+        "deuteronomy 34:11",
+        "nehemiah 9:10",
         "psalms 78:43",
         "psalms 105:27",
         "psalms 135:9"
@@ -103,7 +94,7 @@
     },
     {
       "hebrew": "וְהָי֤וּ לְאֹתֹת֙",
-      "pron": "브하아 메오토테카",
+      "pron": "하에타 르오토트",
       "lemmas": [
         "הָיָה",
         "אוֹת"
@@ -113,20 +104,125 @@
           "word": "וְהָי֤וּ",
           "lemma": "הָיָה",
           "strong": "H1961",
-          "pron": "브하아"
+          "pron": "하에타"
         },
         {
           "word": "לְאֹתֹת֙",
           "lemma": "אוֹת",
           "strong": "H226",
-          "pron": "메오토테카"
+          "pron": "르오토트"
         }
       ],
-      "count": 3,
+      "count": 11,
       "refs": [
         "genesis 1:14",
         "genesis 9:13",
-        "genesis 17:11"
+        "genesis 17:11",
+        "exodus 8:23",
+        "exodus 13:9",
+        "exodus 13:16",
+        "numbers 16:38",
+        "deuteronomy 28:46",
+        "isaiah 19:20",
+        "ezekiel 20:12",
+        "ezekiel 20:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הָאֹתֹֽת",
+      "pron": "에트 르오토트",
+      "lemmas": [
+        "אֵת",
+        "אוֹת"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הָאֹתֹֽת",
+          "lemma": "אוֹת",
+          "strong": "H226",
+          "pron": "르오토트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 4:17",
+        "exodus 7:3",
+        "exodus 10:2",
+        "numbers 14:22",
+        "deuteronomy 11:3",
+        "deuteronomy 11:18",
+        "joshua 24:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְזֶה הָא֔וֹת",
+      "pron": "제 르오토트",
+      "lemmas": [
+        "זֶה",
+        "אוֹת"
+      ],
+      "words": [
+        {
+          "word": "וְזֶה",
+          "lemma": "זֶה",
+          "strong": "H2088",
+          "pron": "제"
+        },
+        {
+          "word": "הָא֔וֹת",
+          "lemma": "אוֹת",
+          "strong": "H226",
+          "pron": "르오토트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 3:12",
+        "samuel1 2:34",
+        "samuel1 14:10",
+        "kings2 19:29",
+        "kings2 20:9",
+        "isaiah 37:30",
+        "isaiah 38:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָאֹתֹ֖ת אֲשֶׁ֥ר",
+      "pron": "르오토트 아셰르",
+      "lemmas": [
+        "אוֹת",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הָאֹתֹ֖ת",
+          "lemma": "אוֹת",
+          "strong": "H226",
+          "pron": "르오토트"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 4:28",
+        "exodus 10:2",
+        "numbers 14:11",
+        "numbers 14:22",
+        "samuel1 2:34"
       ],
       "glossKo": ""
     }

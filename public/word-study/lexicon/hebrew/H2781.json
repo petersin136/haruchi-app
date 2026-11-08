@@ -1,6 +1,6 @@
 {
   "lemma": "חֶרְפָּה",
-  "pron": "브헤렙파",
+  "pron": "헤렙파티",
   "strong": "H2781",
   "posKo": "명사",
   "root": {
@@ -12,14 +12,14 @@
     {
       "lemma": "חָרִיף",
       "strong": "H2756",
-      "pron": "",
+      "pron": "하립",
       "glossKo": "하립"
     },
     {
       "lemma": "חָרַף",
       "strong": "H2778",
-      "pron": "헤레푸니",
-      "glossKo": "나를 비방하다"
+      "pron": "네헤레페트",
+      "glossKo": "비방하는 이"
     },
     {
       "lemma": "חֹרֶף",
@@ -30,21 +30,36 @@
     {
       "lemma": "חָרֵף",
       "strong": "H2780",
-      "pron": "",
+      "pron": "하렙",
       "glossKo": "하렙"
     }
   ],
   "defEn": "contumely; disgrace; pudenda",
   "defKo": "",
-  "countOT": 22,
+  "countOT": 73,
   "byBook": {
     "psalms": 20,
-    "genesis": 2
+    "jeremiah": 12,
+    "ezekiel": 7,
+    "isaiah": 6,
+    "daniel": 4,
+    "nehemiah": 4,
+    "lamentations": 3,
+    "samuel1": 3,
+    "genesis": 2,
+    "job": 2,
+    "joel": 2,
+    "proverbs": 2,
+    "zephaniah": 2,
+    "hosea": 1,
+    "joshua": 1,
+    "micah": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
       "hebrew": "הָיִ֪יתִי חֶרְפָּ֡ה",
-      "pron": "브하아 브헤렙파",
+      "pron": "하에타 헤렙파티",
       "lemmas": [
         "הָיָה",
         "חֶרְפָּה"
@@ -54,28 +69,121 @@
           "word": "הָיִ֪יתִי",
           "lemma": "הָיָה",
           "strong": "H1961",
-          "pron": "브하아"
+          "pron": "하에타"
         },
         {
           "word": "חֶרְפָּ֡ה",
           "lemma": "חֶרְפָּה",
           "strong": "H2781",
-          "pron": "브헤렙파"
+          "pron": "헤렙파티"
         }
       ],
-      "count": 5,
+      "count": 7,
       "refs": [
         "psalms 31:11",
         "psalms 69:10",
         "psalms 79:4",
         "psalms 89:41",
-        "psalms 109:25"
+        "psalms 109:25",
+        "jeremiah 6:10",
+        "ezekiel 5:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָ֝לַ֗י חֶרְפָּתִּֽי",
+      "pron": "알 헤렙파티",
+      "lemmas": [
+        "עַל",
+        "חֶרְפָּה"
+      ],
+      "words": [
+        {
+          "word": "עָ֝לַ֗י",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "חֶרְפָּתִּֽי",
+          "lemma": "חֶרְפָּה",
+          "strong": "H2781",
+          "pron": "헤렙파티"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "job 19:5",
+        "psalms 119:22",
+        "jeremiah 15:15",
+        "jeremiah 23:40",
+        "zephaniah 3:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת חֶרְפָּתִֽי",
+      "pron": "에트 헤렙파티",
+      "lemmas": [
+        "אֵת",
+        "חֶרְפָּה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "חֶרְפָּתִֽי",
+          "lemma": "חֶרְפָּה",
+          "strong": "H2781",
+          "pron": "헤렙파티"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 30:23",
+        "joshua 5:9",
+        "samuel2 13:13",
+        "lamentations 5:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְ֝חֶרְפָּ֗ה לֹא",
+      "pron": "헤렙파티 로",
+      "lemmas": [
+        "חֶרְפָּה",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "וְ֝חֶרְפָּ֗ה",
+          "lemma": "חֶרְפָּה",
+          "strong": "H2781",
+          "pron": "헤렙파티"
+        },
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 15:3",
+        "proverbs 6:33",
+        "jeremiah 6:10",
+        "jeremiah 42:18"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "חֶ֭רְפָּה לִשְׁכֵנֵ֑ינוּ",
-      "pron": "브헤렙파 브리샤케나위",
+      "pron": "헤렙파티 밋셰켄타흐",
       "lemmas": [
         "חֶרְפָּה",
         "שָׁכֵן"
@@ -85,55 +193,19 @@
           "word": "חֶ֭רְפָּה",
           "lemma": "חֶרְפָּה",
           "strong": "H2781",
-          "pron": "브헤렙파"
+          "pron": "헤렙파티"
         },
         {
           "word": "לִשְׁכֵנֵ֑ינוּ",
           "lemma": "שָׁכֵן",
           "strong": "H7934",
-          "pron": "브리샤케나위"
+          "pron": "밋셰켄타흐"
         }
       ],
       "count": 4,
       "refs": [
         "psalms 31:11",
         "psalms 44:13",
-        "psalms 79:4",
-        "psalms 89:41"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "הָיִ֪יתִי חֶרְפָּ֡ה וְלִשֲׁכֵנַ֨י",
-      "pron": "브하아 브헤렙파 브리샤케나위",
-      "lemmas": [
-        "הָיָה",
-        "חֶרְפָּה",
-        "שָׁכֵן"
-      ],
-      "words": [
-        {
-          "word": "הָיִ֪יתִי",
-          "lemma": "הָיָה",
-          "strong": "H1961",
-          "pron": "브하아"
-        },
-        {
-          "word": "חֶרְפָּ֡ה",
-          "lemma": "חֶרְפָּה",
-          "strong": "H2781",
-          "pron": "브헤렙파"
-        },
-        {
-          "word": "וְלִשֲׁכֵנַ֨י",
-          "lemma": "שָׁכֵן",
-          "strong": "H7934",
-          "pron": "브리샤케나위"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 31:11",
         "psalms 79:4",
         "psalms 89:41"
       ],

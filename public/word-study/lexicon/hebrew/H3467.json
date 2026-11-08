@@ -1,6 +1,6 @@
 {
   "lemma": "יָשַׁע",
-  "pron": "호시에니",
+  "pron": "바오시안",
   "strong": "H3467",
   "posKo": "동사",
   "root": null,
@@ -8,194 +8,255 @@
     {
       "lemma": "הוֹשֵׁעַ",
       "strong": "H1954",
-      "pron": "",
+      "pron": "호셰아",
       "glossKo": "호세아"
     },
     {
       "lemma": "הוֹשַׁעְיָה",
       "strong": "H1955",
-      "pron": "",
+      "pron": "호샤에아",
       "glossKo": "호사야"
     },
     {
       "lemma": "יְשׁוּעָה",
       "strong": "H3444",
-      "pron": "예슈아타",
-      "glossKo": "구원"
+      "pron": "리슈아테카",
+      "glossKo": "너의 구원"
     },
     {
       "lemma": "יֶשַׁע",
       "strong": "H3468",
-      "pron": "브예샤",
-      "glossKo": "구원"
+      "pron": "이셰이",
+      "glossKo": "나의 구원"
     },
     {
       "lemma": "יִשְׁעִי",
       "strong": "H3469",
-      "pron": "",
+      "pron": "이셰이",
       "glossKo": "이시"
     },
     {
       "lemma": "יְשַׁעְיָה",
       "strong": "H3470",
-      "pron": "",
+      "pron": "예샤에아후",
       "glossKo": "이사야"
     }
   ],
   "defEn": "be open; wide; free; be safe; free; succor",
   "defKo": "",
-  "countOT": 57,
+  "countOT": 206,
   "byBook": {
-    "psalms": 57
+    "psalms": 57,
+    "isaiah": 29,
+    "judges": 21,
+    "jeremiah": 19,
+    "samuel1": 15,
+    "samuel2": 12,
+    "kings2": 8,
+    "chronicles1": 6,
+    "zechariah": 6,
+    "deuteronomy": 5,
+    "hosea": 5,
+    "job": 4,
+    "ezekiel": 3,
+    "chronicles2": 2,
+    "exodus": 2,
+    "joshua": 2,
+    "nehemiah": 2,
+    "proverbs": 2,
+    "zephaniah": 2,
+    "habakkuk": 1,
+    "lamentations": 1,
+    "numbers": 1,
+    "obadiah": 1
   },
   "phrases": [
     {
-      "hebrew": "אֱלֹהִ֑ים מ֝וֹשִׁ֗יעַ",
-      "pron": "베엘로힘 호시에니",
+      "hebrew": "לְהוֹשִׁ֥יעַ אֶתְכֶֽם",
+      "pron": "바오시안 에트",
       "lemmas": [
-        "אֱלֹהִים",
-        "יָשַׁע"
+        "יָשַׁע",
+        "אֵת"
       ],
       "words": [
         {
-          "word": "אֱלֹהִ֑ים",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        },
-        {
-          "word": "מ֝וֹשִׁ֗יעַ",
+          "word": "לְהוֹשִׁ֥יעַ",
           "lemma": "יָשַׁע",
           "strong": "H3467",
-          "pron": "호시에니"
+          "pron": "바오시안"
+        },
+        {
+          "word": "אֶתְכֶֽם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         }
       ],
-      "count": 4,
+      "count": 25,
       "refs": [
-        "psalms 7:10",
-        "psalms 69:35",
-        "psalms 76:9",
-        "psalms 109:26"
+        "deuteronomy 20:4",
+        "judges 3:9",
+        "judges 3:15",
+        "judges 6:14",
+        "judges 6:15",
+        "judges 6:31",
+        "judges 7:7",
+        "judges 10:1",
+        "judges 10:12",
+        "judges 10:13",
+        "judges 12:2",
+        "judges 13:5"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הוֹשִׁ֣יעָה יְ֭הוָה",
-      "pron": "호시에니 여호와",
+      "hebrew": "וַיּ֤וֹשַׁע יְהוָה֙",
+      "pron": "바오시안 여호와",
       "lemmas": [
         "יָשַׁע",
         "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "הוֹשִׁ֣יעָה",
+          "word": "וַיּ֤וֹשַׁע",
           "lemma": "יָשַׁע",
           "strong": "H3467",
-          "pron": "호시에니"
+          "pron": "바오시안"
         },
         {
-          "word": "יְ֭הוָה",
+          "word": "יְהוָה֙",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         }
       ],
-      "count": 4,
+      "count": 20,
       "refs": [
-        "psalms 12:1",
-        "psalms 20:6",
-        "psalms 36:6",
-        "psalms 106:47"
+        "exodus 14:30",
+        "deuteronomy 33:29",
+        "samuel1 14:23",
+        "samuel1 17:47",
+        "samuel2 8:6",
+        "samuel2 8:14",
+        "kings2 6:27",
+        "chronicles1 11:14",
+        "chronicles1 18:6",
+        "chronicles1 18:13",
+        "chronicles2 32:22",
+        "psalms 12:1"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הוֹשִׁ֖יעָה יְמִֽינְךָ֣",
-      "pron": "호시에니 미위미니위",
-      "lemmas": [
-        "יָשַׁע",
-        "יָמִין"
-      ],
-      "words": [
-        {
-          "word": "הוֹשִׁ֖יעָה",
-          "lemma": "יָשַׁע",
-          "strong": "H3467",
-          "pron": "호시에니"
-        },
-        {
-          "word": "יְמִֽינְךָ֣",
-          "lemma": "יָמִין",
-          "strong": "H3225",
-          "pron": "미위미니위"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 60:5",
-        "psalms 98:1",
-        "psalms 108:6",
-        "psalms 138:7"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וְיוֹשִׁיעֵ֑ם כִּי",
-      "pron": "호시에니 키",
-      "lemmas": [
-        "יָשַׁע",
-        "כִּי"
-      ],
-      "words": [
-        {
-          "word": "וְיוֹשִׁיעֵ֑ם",
-          "lemma": "יָשַׁע",
-          "strong": "H3467",
-          "pron": "호시에니"
-        },
-        {
-          "word": "כִּי",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 37:40",
-        "psalms 44:3",
-        "psalms 71:3",
-        "psalms 119:94"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יְהוָ֨ה הוֹשִׁ֘יעֵ֤נִי",
-      "pron": "여호와 호시에니",
+      "hebrew": "יְהוָה֙ מֽוֹשִׁיעֵ֔ךְ",
+      "pron": "여호와 바오시안",
       "lemmas": [
         "יְהֹוָה",
         "יָשַׁע"
       ],
       "words": [
         {
-          "word": "יְהוָ֨ה",
+          "word": "יְהוָה֙",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         },
         {
-          "word": "הוֹשִׁ֘יעֵ֤נִי",
+          "word": "מֽוֹשִׁיעֵ֔ךְ",
           "lemma": "יָשַׁע",
           "strong": "H3467",
-          "pron": "호시에니"
+          "pron": "바오시안"
         }
       ],
-      "count": 4,
+      "count": 13,
       "refs": [
+        "judges 3:9",
+        "judges 3:15",
+        "samuel1 14:39",
         "psalms 3:7",
         "psalms 20:9",
         "psalms 55:16",
-        "psalms 118:25"
+        "psalms 118:25",
+        "proverbs 20:22",
+        "isaiah 38:20",
+        "isaiah 49:26",
+        "isaiah 59:1",
+        "isaiah 60:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיּ֣וֹשִׁיע֔וּם מִיַּ֖ד",
+      "pron": "바오시안 야도",
+      "lemmas": [
+        "יָשַׁע",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "וַיּ֣וֹשִׁיע֔וּם",
+          "lemma": "יָשַׁע",
+          "strong": "H3467",
+          "pron": "바오시안"
+        },
+        {
+          "word": "מִיַּ֖ד",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "judges 2:16",
+        "judges 2:18",
+        "judges 6:36",
+        "judges 6:37",
+        "judges 8:22",
+        "samuel1 7:8",
+        "samuel1 25:26",
+        "samuel1 25:33",
+        "kings2 14:27",
+        "nehemiah 9:27",
+        "psalms 106:10",
+        "isaiah 37:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹֽא הוֹשַׁעְתֶּ֥ם",
+      "pron": "로 바오시안",
+      "lemmas": [
+        "לֹא",
+        "יָשַׁע"
+      ],
+      "words": [
+        {
+          "word": "וְלֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "הוֹשַׁעְתֶּ֥ם",
+          "lemma": "יָשַׁע",
+          "strong": "H3467",
+          "pron": "바오시안"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "judges 12:2",
+        "psalms 44:3",
+        "psalms 44:6",
+        "isaiah 45:20",
+        "isaiah 46:7",
+        "jeremiah 8:20",
+        "jeremiah 11:12",
+        "lamentations 4:17",
+        "hosea 1:7",
+        "hosea 14:3",
+        "habakkuk 1:2"
       ],
       "glossKo": ""
     }

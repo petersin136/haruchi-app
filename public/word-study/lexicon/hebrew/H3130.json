@@ -1,6 +1,6 @@
 {
   "lemma": "יוֹסֵף",
-  "pron": "브요셉",
+  "pron": "요셉",
   "strong": "H3130",
   "posKo": "명사",
   "root": {
@@ -12,39 +12,59 @@
     {
       "lemma": "וׇפְסִי",
       "strong": "H2058",
-      "pron": "",
+      "pron": "밥시",
       "glossKo": "왑시"
+    },
+    {
+      "lemma": "יְהוֹסֵף",
+      "strong": "H3084",
+      "pron": "비위호셉",
+      "glossKo": "여호셉"
     },
     {
       "lemma": "יוֹסִפְיָה",
       "strong": "H3131",
-      "pron": "",
+      "pron": "요십아",
       "glossKo": "요시뱌"
     },
     {
       "lemma": "יָסַף",
       "strong": "H3254",
-      "pron": "요십",
+      "pron": "바토셉",
       "glossKo": "더하다"
     },
     {
       "lemma": "יְסַף",
       "strong": "H3255",
-      "pron": "",
+      "pron": "훗파트",
       "glossKo": "더하다(아람)"
     }
   ],
   "defEn": "Joseph",
   "defKo": "",
-  "countOT": 160,
+  "countOT": 213,
   "byBook": {
     "genesis": 156,
-    "psalms": 4
+    "joshua": 12,
+    "numbers": 12,
+    "chronicles1": 6,
+    "exodus": 4,
+    "ezekiel": 4,
+    "psalms": 4,
+    "amos": 3,
+    "deuteronomy": 3,
+    "judges": 3,
+    "ezra": 1,
+    "kings1": 1,
+    "nehemiah": 1,
+    "obadiah": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
       "hebrew": "אֶל יוֹסֵ֔ף",
-      "pron": "엘레모 브요셉",
+      "pron": "엘 요셉",
       "lemmas": [
         "אֵל",
         "יוֹסֵף"
@@ -54,13 +74,13 @@
           "word": "אֶל",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
         },
         {
           "word": "יוֹסֵ֔ף",
           "lemma": "יוֹסֵף",
           "strong": "H3130",
-          "pron": "브요셉"
+          "pron": "요셉"
         }
       ],
       "count": 26,
@@ -81,8 +101,46 @@
       "glossKo": ""
     },
     {
+      "hebrew": "בְּנֵ֣י יוֹסֵ֑ף",
+      "pron": "바님 요셉",
+      "lemmas": [
+        "בֵּן",
+        "יוֹסֵף"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יוֹסֵ֑ף",
+          "lemma": "יוֹסֵף",
+          "strong": "H3130",
+          "pron": "요셉"
+        }
+      ],
+      "count": 26,
+      "refs": [
+        "genesis 45:9",
+        "genesis 46:27",
+        "genesis 47:29",
+        "genesis 48:2",
+        "genesis 48:8",
+        "numbers 1:10",
+        "numbers 1:32",
+        "numbers 13:7",
+        "numbers 26:28",
+        "numbers 26:37",
+        "numbers 27:1",
+        "numbers 32:33"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "יוֹסֵ֛ף אֶת",
-      "pron": "브요셉 에트",
+      "pron": "요셉 에트",
       "lemmas": [
         "יוֹסֵף",
         "אֵת"
@@ -92,7 +150,7 @@
           "word": "יוֹסֵ֛ף",
           "lemma": "יוֹסֵף",
           "strong": "H3130",
-          "pron": "브요셉"
+          "pron": "요셉"
         },
         {
           "word": "אֶת",
@@ -101,7 +159,7 @@
           "pron": "에트"
         }
       ],
-      "count": 20,
+      "count": 21,
       "refs": [
         "genesis 37:2",
         "genesis 37:23",
@@ -119,8 +177,46 @@
       "glossKo": ""
     },
     {
+      "hebrew": "בֵּ֣ית יוֹסֵ֔ף",
+      "pron": "미바이트 요셉",
+      "lemmas": [
+        "בַּיִת",
+        "יוֹסֵף"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֣ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "יוֹסֵ֔ף",
+          "lemma": "יוֹסֵף",
+          "strong": "H3130",
+          "pron": "요셉"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "genesis 43:17",
+        "genesis 43:18",
+        "genesis 43:19",
+        "genesis 43:24",
+        "genesis 44:14",
+        "genesis 50:8",
+        "joshua 17:17",
+        "joshua 18:5",
+        "judges 1:22",
+        "judges 1:23",
+        "judges 1:35",
+        "samuel2 19:20"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וַיֹּ֤אמֶר יוֹסֵף֙",
-      "pron": "아마르 브요셉",
+      "pron": "바요메르 요셉",
       "lemmas": [
         "אָמַר",
         "יוֹסֵף"
@@ -130,13 +226,13 @@
           "word": "וַיֹּ֤אמֶר",
           "lemma": "אָמַר",
           "strong": "H559",
-          "pron": "아마르"
+          "pron": "바요메르"
         },
         {
           "word": "יוֹסֵף֙",
           "lemma": "יוֹסֵף",
           "strong": "H3130",
-          "pron": "브요셉"
+          "pron": "요셉"
         }
       ],
       "count": 15,
@@ -153,80 +249,6 @@
         "genesis 47:23",
         "genesis 48:1",
         "genesis 48:9"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יוֹסֵ֖ף לֵאמֹ֑ר",
-      "pron": "브요셉 아마르",
-      "lemmas": [
-        "יוֹסֵף",
-        "אָמַר"
-      ],
-      "words": [
-        {
-          "word": "יוֹסֵ֖ף",
-          "lemma": "יוֹסֵף",
-          "strong": "H3130",
-          "pron": "브요셉"
-        },
-        {
-          "word": "לֵאמֹ֑ר",
-          "lemma": "אָמַר",
-          "strong": "H559",
-          "pron": "아마르"
-        }
-      ],
-      "count": 14,
-      "refs": [
-        "genesis 30:24",
-        "genesis 30:25",
-        "genesis 39:7",
-        "genesis 40:9",
-        "genesis 40:18",
-        "genesis 43:18",
-        "genesis 44:4",
-        "genesis 45:17",
-        "genesis 47:5",
-        "genesis 47:15",
-        "genesis 47:29",
-        "genesis 48:8"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֶת יוֹסֵף֙",
-      "pron": "에트 브요셉",
-      "lemmas": [
-        "אֵת",
-        "יוֹסֵף"
-      ],
-      "words": [
-        {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        },
-        {
-          "word": "יוֹסֵף֙",
-          "lemma": "יוֹסֵף",
-          "strong": "H3130",
-          "pron": "브요셉"
-        }
-      ],
-      "count": 12,
-      "refs": [
-        "genesis 30:25",
-        "genesis 33:2",
-        "genesis 37:3",
-        "genesis 37:23",
-        "genesis 37:28",
-        "genesis 40:4",
-        "genesis 40:23",
-        "genesis 41:14",
-        "genesis 47:26",
-        "genesis 48:15"
       ],
       "glossKo": ""
     }

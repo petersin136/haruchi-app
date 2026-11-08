@@ -18,33 +18,73 @@
     {
       "lemma": "כִּסֵּא",
       "strong": "H3678",
-      "pron": "르킷세",
+      "pron": "아킷세",
       "glossKo": "보좌"
     },
     {
       "lemma": "כָּסָה",
       "strong": "H3680",
-      "pron": "케수이",
+      "pron": "바예쿳수",
       "glossKo": "덮다"
     },
     {
       "lemma": "כָּסוּי",
       "strong": "H3681",
-      "pron": "",
+      "pron": "케수이",
       "glossKo": "덮인"
     },
     {
       "lemma": "כֶּסֶת",
       "strong": "H3704",
-      "pron": "",
+      "pron": "케사토트",
       "glossKo": "방석"
+    },
+    {
+      "lemma": "מִכְסֶה",
+      "strong": "H4372",
+      "pron": "미케세",
+      "glossKo": "덮개"
     }
   ],
   "defEn": "cover; garment; veiling",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 9,
   "byBook": {
-    "genesis": 1
+    "exodus": 3,
+    "job": 3,
+    "deuteronomy": 1,
+    "genesis": 1,
+    "isaiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְאֵ֥ין כְּ֝ס֗וּת",
+      "pron": "아인 케수트",
+      "lemmas": [
+        "אַיִן",
+        "כְּסוּת"
+      ],
+      "words": [
+        {
+          "word": "וְאֵ֥ין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
+        },
+        {
+          "word": "כְּ֝ס֗וּת",
+          "lemma": "כְּסוּת",
+          "strong": "H3682",
+          "pron": "케수트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 24:7",
+        "job 26:6",
+        "job 31:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

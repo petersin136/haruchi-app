@@ -1,6 +1,6 @@
 {
   "lemma": "גִּיל",
-  "pron": "브길루",
+  "pron": "브타겔",
   "strong": "H1523",
   "posKo": "동사",
   "root": null,
@@ -8,20 +8,61 @@
     {
       "lemma": "גִּיל",
       "strong": "H1524",
-      "pron": "길리위",
-      "glossKo": "나의 기쁨"
+      "pron": "길",
+      "glossKo": "기쁨"
     }
   ],
   "defEn": "spin; rejoice; cringing; fear",
   "defKo": "",
-  "countOT": 20,
+  "countOT": 46,
   "byBook": {
-    "psalms": 20
+    "psalms": 20,
+    "isaiah": 11,
+    "proverbs": 5,
+    "habakkuk": 2,
+    "joel": 2,
+    "zechariah": 2,
+    "chronicles1": 1,
+    "hosea": 1,
+    "songofsolomon": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
+      "hebrew": "אָגִ֥ילָה וְאֶשְׂמְחָ֗ה",
+      "pron": "브타겔 브사마흐",
+      "lemmas": [
+        "גִּיל",
+        "שָׂמַח"
+      ],
+      "words": [
+        {
+          "word": "אָגִ֥ילָה",
+          "lemma": "גִּיל",
+          "strong": "H1523",
+          "pron": "브타겔"
+        },
+        {
+          "word": "וְאֶשְׂמְחָ֗ה",
+          "lemma": "שָׂמַח",
+          "strong": "H8055",
+          "pron": "브사마흐"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "psalms 31:7",
+        "psalms 118:24",
+        "songofsolomon 1:4",
+        "isaiah 25:9",
+        "joel 2:21",
+        "joel 2:23"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "צִיּ֑וֹן אָ֝גִ֗ילָה",
-      "pron": "치온 브길루",
+      "pron": "치온 브타겔",
       "lemmas": [
         "צִיּוֹן",
         "גִּיל"
@@ -37,15 +78,103 @@
           "word": "אָ֝גִ֗ילָה",
           "lemma": "גִּיל",
           "strong": "H1523",
-          "pron": "브길루"
+          "pron": "브타겔"
         }
       ],
-      "count": 4,
+      "count": 5,
       "refs": [
         "psalms 9:14",
         "psalms 48:11",
         "psalms 97:8",
-        "psalms 149:2"
+        "psalms 149:2",
+        "joel 2:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְתָגֵ֣ל הָאָ֔רֶץ",
+      "pron": "브타겔 하아레츠",
+      "lemmas": [
+        "גִּיל",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "וְתָגֵ֣ל",
+          "lemma": "גִּיל",
+          "strong": "H1523",
+          "pron": "브타겔"
+        },
+        {
+          "word": "הָאָ֔רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles1 16:31",
+        "psalms 96:11",
+        "psalms 97:1",
+        "isaiah 49:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יגיל יָּ֥גֶל",
+      "pron": "브타겔 브타겔",
+      "lemmas": [
+        "גִּיל",
+        "גִּיל"
+      ],
+      "words": [
+        {
+          "word": "יגיל",
+          "lemma": "גִּיל",
+          "strong": "H1523",
+          "pron": "브타겔"
+        },
+        {
+          "word": "יָּ֥גֶל",
+          "lemma": "גִּיל",
+          "strong": "H1523",
+          "pron": "브타겔"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 21:1",
+        "proverbs 23:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַֽיהוָ֣ה וְ֭גִילוּ",
+      "pron": "여호와 브타겔",
+      "lemmas": [
+        "יְהֹוָה",
+        "גִּיל"
+      ],
+      "words": [
+        {
+          "word": "בַֽיהוָ֣ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "וְ֭גִילוּ",
+          "lemma": "גִּיל",
+          "strong": "H1523",
+          "pron": "브타겔"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 32:11",
+        "psalms 118:24",
+        "isaiah 61:10"
       ],
       "glossKo": ""
     }

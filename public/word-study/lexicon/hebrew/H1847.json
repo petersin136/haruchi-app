@@ -1,6 +1,6 @@
 {
   "lemma": "דַּעַת",
-  "pron": "다아트",
+  "pron": "아다아트",
   "strong": "H1847",
   "posKo": "명사",
   "root": {
@@ -12,25 +12,25 @@
     {
       "lemma": "דֵּעַ",
       "strong": "H1843",
-      "pron": "",
-      "glossKo": "지식"
+      "pron": "데이",
+      "glossKo": "나의 지식"
     },
     {
       "lemma": "דְּעוּאֵל",
       "strong": "H1845",
-      "pron": "",
+      "pron": "데우엘",
       "glossKo": "드우엘"
     },
     {
       "lemma": "יַדּוּעַ",
       "strong": "H3037",
-      "pron": "",
+      "pron": "얃두아",
       "glossKo": "얏두아"
     },
     {
       "lemma": "יְדִיעֲאֵל",
       "strong": "H3043",
-      "pron": "",
+      "pron": "비위디아엘",
       "glossKo": "여디아엘"
     },
     {
@@ -42,16 +42,187 @@
     {
       "lemma": "יְדַע",
       "strong": "H3046",
-      "pron": "",
+      "pron": "예디아",
       "glossKo": "알다(아람)"
     }
   ],
   "defEn": "knowledge",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 93,
   "byBook": {
+    "proverbs": 40,
+    "job": 11,
+    "isaiah": 10,
+    "ecclesiastes": 7,
+    "hosea": 4,
     "psalms": 4,
-    "genesis": 2
+    "jeremiah": 3,
+    "daniel": 2,
+    "deuteronomy": 2,
+    "exodus": 2,
+    "genesis": 2,
+    "joshua": 2,
+    "judges": 1,
+    "kings1": 1,
+    "malachi": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בִּבְלִי דַ֔עַת",
+      "pron": "벨리 아다아트",
+      "lemmas": [
+        "בְּלִי",
+        "דַּעַת"
+      ],
+      "words": [
+        {
+          "word": "בִּבְלִי",
+          "lemma": "בְּלִי",
+          "strong": "H1097",
+          "pron": "벨리"
+        },
+        {
+          "word": "דַ֔עַת",
+          "lemma": "דַּעַת",
+          "strong": "H1847",
+          "pron": "아다아트"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "deuteronomy 4:42",
+        "deuteronomy 19:4",
+        "joshua 20:3",
+        "joshua 20:5",
+        "job 35:16",
+        "job 36:12",
+        "job 38:2",
+        "job 42:3",
+        "isaiah 5:13",
+        "hosea 4:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָכְמָ֑ה וְדַ֖עַת",
+      "pron": "하케마 아다아트",
+      "lemmas": [
+        "חׇכְמָה",
+        "דַּעַת"
+      ],
+      "words": [
+        {
+          "word": "חָכְמָ֑ה",
+          "lemma": "חׇכְמָה",
+          "strong": "H2451",
+          "pron": "하케마"
+        },
+        {
+          "word": "וְדַ֖עַת",
+          "lemma": "דַּעַת",
+          "strong": "H1847",
+          "pron": "아다아트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "proverbs 30:3",
+        "ecclesiastes 1:16",
+        "ecclesiastes 2:21",
+        "ecclesiastes 2:26",
+        "isaiah 33:6",
+        "isaiah 47:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דַ֔עַת וְה֛וּא",
+      "pron": "아다아트 후",
+      "lemmas": [
+        "דַּעַת",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "דַ֔עַת",
+          "lemma": "דַּעַת",
+          "strong": "H1847",
+          "pron": "아다아트"
+        },
+        {
+          "word": "וְה֛וּא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 4:42",
+        "deuteronomy 19:4",
+        "job 21:22",
+        "isaiah 47:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָדָם֙ מִדַּ֔עַת",
+      "pron": "아담 아다아트",
+      "lemmas": [
+        "אָדָם",
+        "דַּעַת"
+      ],
+      "words": [
+        {
+          "word": "אָדָם֙",
+          "lemma": "אָדָם",
+          "strong": "H120",
+          "pron": "아담"
+        },
+        {
+          "word": "מִדַּ֔עַת",
+          "lemma": "דַּעַת",
+          "strong": "H1847",
+          "pron": "아다아트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 94:10",
+        "jeremiah 10:14",
+        "jeremiah 51:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲמָרָ֑י וְדַ֥עַת",
+      "pron": "임레 아다아트",
+      "lemmas": [
+        "אֵמֶר",
+        "דַּעַת"
+      ],
+      "words": [
+        {
+          "word": "אֲמָרָ֑י",
+          "lemma": "אֵמֶר",
+          "strong": "H561",
+          "pron": "임레"
+        },
+        {
+          "word": "וְדַ֥עַת",
+          "lemma": "דַּעַת",
+          "strong": "H1847",
+          "pron": "아다아트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 33:3",
+        "proverbs 19:27",
+        "proverbs 23:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

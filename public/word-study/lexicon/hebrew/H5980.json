@@ -1,8 +1,8 @@
 {
   "lemma": "עֻמָּה",
-  "pron": "움마",
+  "pron": "르움마트",
   "strong": "H5980",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָמַם",
     "strong": "H6004",
@@ -18,19 +18,156 @@
     {
       "lemma": "עִם",
       "strong": "H5973",
-      "pron": "임오",
-      "glossKo": "그에게 함께"
+      "pron": "임마흐",
+      "glossKo": "그녀에게 함께"
+    },
+    {
+      "lemma": "עֻמָּה",
+      "strong": "H5981",
+      "pron": "브우마",
+      "glossKo": "우마"
     },
     {
       "lemma": "עָמַם",
       "strong": "H6004",
-      "pron": "",
+      "pron": "유암",
       "glossKo": "감추다"
     }
   ],
   "defEn": "conjunction; society; near; beside; along with",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 32,
+  "byBook": {
+    "ezekiel": 15,
+    "chronicles1": 5,
+    "exodus": 5,
+    "ecclesiastes": 2,
+    "samuel2": 2,
+    "kings1": 1,
+    "leviticus": 1,
+    "nehemiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְהָאֽוֹפַנִּ֖ים לְעֻמָּתָ֑ם",
+      "pron": "오판 르움마트",
+      "lemmas": [
+        "אוֹפָן",
+        "עֻמָּה"
+      ],
+      "words": [
+        {
+          "word": "וְהָאֽוֹפַנִּ֖ים",
+          "lemma": "אוֹפָן",
+          "strong": "H212",
+          "pron": "오판"
+        },
+        {
+          "word": "לְעֻמָּתָ֑ם",
+          "lemma": "עֻמָּה",
+          "strong": "H5980",
+          "pron": "르움마트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 1:21",
+        "ezekiel 3:13",
+        "ezekiel 10:19",
+        "ezekiel 11:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְעֻמַּ֣ת אֲחֵיהֶ֣ם",
+      "pron": "르움마트 아히브",
+      "lemmas": [
+        "עֻמָּה",
+        "אָח"
+      ],
+      "words": [
+        {
+          "word": "לְעֻמַּ֣ת",
+          "lemma": "עֻמָּה",
+          "strong": "H5980",
+          "pron": "르움마트"
+        },
+        {
+          "word": "אֲחֵיהֶ֣ם",
+          "lemma": "אָח",
+          "strong": "H251",
+          "pron": "아히브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 24:31",
+        "chronicles1 26:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְעֻמַּ֖ת תְּרוּמַ֣ת",
+      "pron": "르움마트 테루마",
+      "lemmas": [
+        "עֻמָּה",
+        "תְּרוּמָה"
+      ],
+      "words": [
+        {
+          "word": "לְעֻמַּ֖ת",
+          "lemma": "עֻמָּה",
+          "strong": "H5980",
+          "pron": "르움마트"
+        },
+        {
+          "word": "תְּרוּמַ֣ת",
+          "lemma": "תְּרוּמָה",
+          "strong": "H8641",
+          "pron": "테루마"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 45:6",
+        "ezekiel 48:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְעֻמַּ֖ת תְּרוּמַ֣ת הַקֹּ֑דֶשׁ",
+      "pron": "르움마트 테루마 코데쉬",
+      "lemmas": [
+        "עֻמָּה",
+        "תְּרוּמָה",
+        "קֹדֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "לְעֻמַּ֖ת",
+          "lemma": "עֻמָּה",
+          "strong": "H5980",
+          "pron": "르움마트"
+        },
+        {
+          "word": "תְּרוּמַ֣ת",
+          "lemma": "תְּרוּמָה",
+          "strong": "H8641",
+          "pron": "테루마"
+        },
+        {
+          "word": "הַקֹּ֑דֶשׁ",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 45:6",
+        "ezekiel 48:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

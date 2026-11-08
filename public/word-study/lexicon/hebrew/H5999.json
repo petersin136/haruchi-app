@@ -1,6 +1,6 @@
 {
   "lemma": "עָמָל",
-  "pron": "아말",
+  "pron": "아말리",
   "strong": "H5999",
   "posKo": "명사",
   "root": {
@@ -18,22 +18,204 @@
     {
       "lemma": "עָמָל",
       "strong": "H6000",
-      "pron": "",
+      "pron": "브아말",
       "glossKo": "아말"
     },
     {
       "lemma": "עָמֵל",
       "strong": "H6001",
-      "pron": "",
+      "pron": "아멜림",
       "glossKo": "노동자"
     }
   ],
   "defEn": "toil; wearing effort; worry",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 55,
   "byBook": {
+    "ecclesiastes": 22,
     "psalms": 13,
-    "genesis": 1
+    "job": 8,
+    "isaiah": 3,
+    "habakkuk": 2,
+    "proverbs": 2,
+    "deuteronomy": 1,
+    "genesis": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כָּל עֲמָלִ֔י",
+      "pron": "칼 아말리",
+      "lemmas": [
+        "כֹּל",
+        "עָמָל"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "עֲמָלִ֔י",
+          "lemma": "עָמָל",
+          "strong": "H5999",
+          "pron": "아말리"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "genesis 41:51",
+        "ecclesiastes 1:3",
+        "ecclesiastes 2:10",
+        "ecclesiastes 2:18",
+        "ecclesiastes 2:19",
+        "ecclesiastes 2:20",
+        "ecclesiastes 2:22",
+        "ecclesiastes 3:13",
+        "ecclesiastes 4:4",
+        "ecclesiastes 4:8",
+        "ecclesiastes 5:18",
+        "ecclesiastes 6:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲמָל֔וֹ שֶֽׁיַּעֲמֹ֖ל",
+      "pron": "아말리 암루",
+      "lemmas": [
+        "עָמָל",
+        "עָמַל"
+      ],
+      "words": [
+        {
+          "word": "עֲמָל֔וֹ",
+          "lemma": "עָמָל",
+          "strong": "H5999",
+          "pron": "아말리"
+        },
+        {
+          "word": "שֶֽׁיַּעֲמֹ֖ל",
+          "lemma": "עָמַל",
+          "strong": "H5998",
+          "pron": "암루"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ecclesiastes 1:3",
+        "ecclesiastes 2:11",
+        "ecclesiastes 2:19",
+        "ecclesiastes 2:20",
+        "ecclesiastes 5:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכָל עֲמָל֔וֹ שֶֽׁיַּעֲמֹ֖ל",
+      "pron": "칼 아말리 암루",
+      "lemmas": [
+        "כֹּל",
+        "עָמָל",
+        "עָמַל"
+      ],
+      "words": [
+        {
+          "word": "בְּכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "עֲמָל֔וֹ",
+          "lemma": "עָמָל",
+          "strong": "H5999",
+          "pron": "아말리"
+        },
+        {
+          "word": "שֶֽׁיַּעֲמֹ֖ל",
+          "lemma": "עָמַל",
+          "strong": "H5998",
+          "pron": "암루"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ecclesiastes 1:3",
+        "ecclesiastes 2:19",
+        "ecclesiastes 2:20",
+        "ecclesiastes 5:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְעָמָ֣ל יוּלָּ֑ד",
+      "pron": "아말리 텔디",
+      "lemmas": [
+        "עָמָל",
+        "יָלַד"
+      ],
+      "words": [
+        {
+          "word": "לְעָמָ֣ל",
+          "lemma": "עָמָל",
+          "strong": "H5999",
+          "pron": "아말리"
+        },
+        {
+          "word": "יוּלָּ֑ד",
+          "lemma": "יָלַד",
+          "strong": "H3205",
+          "pron": "텔디"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 5:7",
+        "job 15:35",
+        "psalms 7:14",
+        "isaiah 59:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת כָּל עֲמָלִ֔י",
+      "pron": "에트 칼 아말리",
+      "lemmas": [
+        "אֵת",
+        "כֹּל",
+        "עָמָל"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "עֲמָלִ֔י",
+          "lemma": "עָמָל",
+          "strong": "H5999",
+          "pron": "아말리"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 41:51",
+        "ecclesiastes 2:18",
+        "ecclesiastes 4:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

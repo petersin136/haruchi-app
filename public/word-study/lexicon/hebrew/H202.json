@@ -1,6 +1,6 @@
 {
   "lemma": "אוֹן",
-  "pron": "오님",
+  "pron": "오니",
   "strong": "H202",
   "posKo": "명사",
   "root": {
@@ -10,6 +10,12 @@
   },
   "family": [
     {
+      "lemma": "אוֹן",
+      "strong": "H203",
+      "pron": "브온",
+      "glossKo": "온"
+    },
+    {
       "lemma": "אָוֶן",
       "strong": "H205",
       "pron": "아벤",
@@ -18,22 +24,62 @@
     {
       "lemma": "אָוֶן",
       "strong": "H206",
-      "pron": "",
+      "pron": "아벤",
       "glossKo": "아웬"
+    },
+    {
+      "lemma": "אוֹנוֹ",
+      "strong": "H207",
+      "pron": "오노",
+      "glossKo": "오노"
     },
     {
       "lemma": "תְּאֻן",
       "strong": "H8383",
-      "pron": "",
+      "pron": "테우님",
       "glossKo": "악행"
     }
   ],
   "defEn": "ability; power; wealth",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 12,
   "byBook": {
+    "job": 4,
+    "hosea": 2,
+    "isaiah": 2,
     "psalms": 2,
+    "deuteronomy": 1,
     "genesis": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְרֵאשִׁ֣ית אוֹנִ֑י",
+      "pron": "브레시트 오니",
+      "lemmas": [
+        "רֵאשִׁית",
+        "אוֹן"
+      ],
+      "words": [
+        {
+          "word": "וְרֵאשִׁ֣ית",
+          "lemma": "רֵאשִׁית",
+          "strong": "H7225",
+          "pron": "브레시트"
+        },
+        {
+          "word": "אוֹנִ֑י",
+          "lemma": "אוֹן",
+          "strong": "H202",
+          "pron": "오니"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 49:3",
+        "deuteronomy 21:17",
+        "psalms 78:51"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

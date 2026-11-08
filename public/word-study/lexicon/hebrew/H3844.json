@@ -1,6 +1,6 @@
 {
   "lemma": "לְבָנוֹן",
-  "pron": "아레바논",
+  "pron": "브아레바논",
   "strong": "H3844",
   "posKo": "명사",
   "root": {
@@ -12,20 +12,35 @@
     {
       "lemma": "לְבַב",
       "strong": "H3825",
-      "pron": "",
-      "glossKo": "마음(아람)"
+      "pron": "립바크",
+      "glossKo": "너의 마음(아람)"
     }
   ],
   "defEn": "Lebanon",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 71,
   "byBook": {
-    "psalms": 5
+    "chronicles2": 9,
+    "isaiah": 9,
+    "kings1": 9,
+    "songofsolomon": 7,
+    "joshua": 6,
+    "ezekiel": 5,
+    "psalms": 5,
+    "jeremiah": 4,
+    "kings2": 4,
+    "deuteronomy": 3,
+    "hosea": 3,
+    "judges": 2,
+    "zechariah": 2,
+    "ezra": 1,
+    "habakkuk": 1,
+    "nahum": 1
   },
   "phrases": [
     {
       "hebrew": "אַרְזֵ֥י הַלְּבָנֽוֹן",
-      "pron": "아라짐 아레바논",
+      "pron": "에렛 브아레바논",
       "lemmas": [
         "אֶרֶז",
         "לְבָנוֹן"
@@ -35,20 +50,155 @@
           "word": "אַרְזֵ֥י",
           "lemma": "אֶרֶז",
           "strong": "H730",
-          "pron": "아라짐"
+          "pron": "에렛"
         },
         {
           "word": "הַלְּבָנֽוֹן",
           "lemma": "לְבָנוֹן",
           "strong": "H3844",
-          "pron": "아레바논"
+          "pron": "브아레바논"
         }
       ],
-      "count": 3,
+      "count": 8,
       "refs": [
+        "judges 9:15",
         "psalms 29:5",
         "psalms 92:12",
-        "psalms 104:16"
+        "psalms 104:16",
+        "isaiah 2:13",
+        "isaiah 14:8",
+        "ezekiel 27:5",
+        "ezekiel 31:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֣ר בַּלְּבָנ֔וֹן",
+      "pron": "아셰르 브아레바논",
+      "lemmas": [
+        "אֲשֶׁר",
+        "לְבָנוֹן"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "בַּלְּבָנ֔וֹן",
+          "lemma": "לְבָנוֹן",
+          "strong": "H3844",
+          "pron": "브아레바논"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "kings1 4:33",
+        "kings2 14:9",
+        "chronicles2 25:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִן הַלְּבָנוֹן֙",
+      "pron": "민 브아레바논",
+      "lemmas": [
+        "מִן",
+        "לְבָנוֹן"
+      ],
+      "words": [
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        },
+        {
+          "word": "הַלְּבָנוֹן֙",
+          "lemma": "לְבָנוֹן",
+          "strong": "H3844",
+          "pron": "브아레바논"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "joshua 13:6",
+        "kings1 5:6",
+        "kings1 5:9",
+        "chronicles2 2:16",
+        "ezra 3:7",
+        "songofsolomon 4:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּֽית יַ֥עַר הַלְּבָנ֖וֹן",
+      "pron": "미바이트 바야아르 브아레바논",
+      "lemmas": [
+        "בַּיִת",
+        "יַעַר",
+        "לְבָנוֹן"
+      ],
+      "words": [
+        {
+          "word": "בֵּֽית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "יַ֥עַר",
+          "lemma": "יַעַר",
+          "strong": "H3293",
+          "pron": "바야아르"
+        },
+        {
+          "word": "הַלְּבָנ֖וֹן",
+          "lemma": "לְבָנוֹן",
+          "strong": "H3844",
+          "pron": "브아레바논"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 7:2",
+        "kings1 10:17",
+        "kings1 10:21",
+        "chronicles2 9:16",
+        "chronicles2 9:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבַלְּבָנ֔וֹן וּבְכֹ֖ל",
+      "pron": "브아레바논 칼",
+      "lemmas": [
+        "לְבָנוֹן",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "וּבַלְּבָנ֔וֹן",
+          "lemma": "לְבָנוֹן",
+          "strong": "H3844",
+          "pron": "브아레바논"
+        },
+        {
+          "word": "וּבְכֹ֖ל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 9:19",
+        "chronicles2 2:16",
+        "chronicles2 8:6",
+        "ezekiel 31:15",
+        "ezekiel 31:16"
       ],
       "glossKo": ""
     }

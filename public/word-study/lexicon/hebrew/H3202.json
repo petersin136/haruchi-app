@@ -1,8 +1,8 @@
 {
   "lemma": "יְכֵל",
-  "pron": "예켈",
+  "pron": "유칼",
   "strong": "H3202",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "יָכֹל",
     "strong": "H3201",
@@ -18,31 +18,90 @@
     {
       "lemma": "יְהוּכַל",
       "strong": "H3081",
-      "pron": "",
+      "pron": "예후칼",
       "glossKo": "여후갈"
     },
     {
       "lemma": "יָכֹל",
       "strong": "H3201",
-      "pron": "예칼티브",
-      "glossKo": "그에게 할 수 있다"
+      "pron": "야켈루",
+      "glossKo": "할 수 있다"
     },
     {
       "lemma": "יְכׇלְיָה",
       "strong": "H3203",
-      "pron": "",
+      "pron": "예칼아후",
       "glossKo": "여골리야"
     },
     {
       "lemma": "מִיכָל",
       "strong": "H4323",
-      "pron": "",
+      "pron": "미칼",
       "glossKo": "그릇"
     }
   ],
   "defEn": "be able, can, couldest, prevail.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "daniel": 14
+  },
+  "phrases": [
+    {
+      "hebrew": "תוכל תִיכּ֥וּל",
+      "pron": "유칼 유칼",
+      "lemmas": [
+        "יְכֵל",
+        "יְכֵל"
+      ],
+      "words": [
+        {
+          "word": "תוכל",
+          "lemma": "יְכֵל",
+          "strong": "H3202",
+          "pron": "유칼"
+        },
+        {
+          "word": "תִיכּ֥וּל",
+          "lemma": "יְכֵל",
+          "strong": "H3202",
+          "pron": "유칼"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 5:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּ֣י יְכֵ֔לְתָּ",
+      "pron": "드흐브 유칼",
+      "lemmas": [
+        "דִּי",
+        "יְכֵל"
+      ],
+      "words": [
+        {
+          "word": "דִּ֣י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "יְכֵ֔לְתָּ",
+          "lemma": "יְכֵל",
+          "strong": "H3202",
+          "pron": "유칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:47",
+        "daniel 3:29",
+        "daniel 5:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

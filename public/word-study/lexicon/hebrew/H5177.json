@@ -2,7 +2,7 @@
   "lemma": "נַחְשׁוֹן",
   "pron": "나헤숀",
   "strong": "H5177",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נָחַשׁ",
     "strong": "H5172",
@@ -12,7 +12,7 @@
     {
       "lemma": "נָחוּשׁ",
       "strong": "H5153",
-      "pron": "",
+      "pron": "나후쉬",
       "glossKo": "구리빛의"
     },
     {
@@ -24,19 +24,94 @@
     {
       "lemma": "נַחַשׁ",
       "strong": "H5173",
-      "pron": "",
+      "pron": "나하쉬",
       "glossKo": "주술"
     },
     {
       "lemma": "נָחָשׁ",
       "strong": "H5175",
-      "pron": "나하쉬",
+      "pron": "브아나하쉬",
       "glossKo": "뱀"
     }
   ],
   "defEn": "Nachshon",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 10,
+  "byBook": {
+    "numbers": 5,
+    "chronicles1": 2,
+    "ruth": 2,
+    "exodus": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "נַחְשׁ֖וֹן בֶּן",
+      "pron": "나헤숀 바님",
+      "lemmas": [
+        "נַחְשׁוֹן",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "נַחְשׁ֖וֹן",
+          "lemma": "נַחְשׁוֹן",
+          "strong": "H5177",
+          "pron": "나헤숀"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 1:7",
+        "numbers 2:3",
+        "numbers 7:12",
+        "numbers 7:17",
+        "numbers 10:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נַחְשׁ֖וֹן בֶּן עַמִּינָדָֽב",
+      "pron": "나헤숀 바님 암미나답",
+      "lemmas": [
+        "נַחְשׁוֹן",
+        "בֵּן",
+        "עַמִּינָדָב"
+      ],
+      "words": [
+        {
+          "word": "נַחְשׁ֖וֹן",
+          "lemma": "נַחְשׁוֹן",
+          "strong": "H5177",
+          "pron": "나헤숀"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עַמִּינָדָֽב",
+          "lemma": "עַמִּינָדָב",
+          "strong": "H5992",
+          "pron": "암미나답"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 1:7",
+        "numbers 2:3",
+        "numbers 7:12",
+        "numbers 7:17",
+        "numbers 10:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

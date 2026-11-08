@@ -1,6 +1,6 @@
 {
   "lemma": "רְבָבָה",
-  "pron": "메립보트",
+  "pron": "레바바",
   "strong": "H7233",
   "posKo": "명사",
   "root": {
@@ -12,46 +12,213 @@
     {
       "lemma": "מֵרָב",
       "strong": "H4764",
-      "pron": "",
+      "pron": "메랍",
       "glossKo": "메랍"
     },
     {
       "lemma": "רַב",
       "strong": "H7227",
-      "pron": "랍빔",
+      "pron": "랍바",
       "glossKo": "많은"
     },
     {
       "lemma": "רֹב",
       "strong": "H7230",
-      "pron": "브롭",
+      "pron": "메롭",
       "glossKo": "많음"
     },
     {
       "lemma": "רָבַב",
       "strong": "H7231",
-      "pron": "랍부",
+      "pron": "라롭",
       "glossKo": "많다"
     },
     {
       "lemma": "רָבַב",
       "strong": "H7232",
-      "pron": "랍",
+      "pron": "바롭부",
       "glossKo": "활을 쏘다"
     },
     {
       "lemma": "רִבּוֹ",
       "strong": "H7239",
-      "pron": "립보타임",
+      "pron": "립보",
       "glossKo": "만"
     }
   ],
   "defEn": "abundance; myriad",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 18,
   "byBook": {
+    "samuel1": 6,
+    "deuteronomy": 3,
     "psalms": 2,
-    "genesis": 1
+    "ezekiel": 1,
+    "genesis": 1,
+    "judges": 1,
+    "leviticus": 1,
+    "micah": 1,
+    "numbers": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "ברבבתו בְּרִבְבֹתָֽיו",
+      "pron": "레바바 레바바",
+      "lemmas": [
+        "רְבָבָה",
+        "רְבָבָה"
+      ],
+      "words": [
+        {
+          "word": "ברבבתו",
+          "lemma": "רְבָבָה",
+          "strong": "H7233",
+          "pron": "레바바"
+        },
+        {
+          "word": "בְּרִבְבֹתָֽיו",
+          "lemma": "רְבָבָה",
+          "strong": "H7233",
+          "pron": "레바바"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 21:11",
+        "samuel1 29:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְדָוִ֖ד ברבבתו",
+      "pron": "다윗 레바바",
+      "lemmas": [
+        "דָּוִד",
+        "רְבָבָה"
+      ],
+      "words": [
+        {
+          "word": "וְדָוִ֖ד",
+          "lemma": "דָּוִד",
+          "strong": "H1732",
+          "pron": "다윗"
+        },
+        {
+          "word": "ברבבתו",
+          "lemma": "רְבָבָה",
+          "strong": "H7233",
+          "pron": "레바바"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 18:7",
+        "samuel1 18:8",
+        "samuel1 21:11",
+        "samuel1 29:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְדָוִ֖ד ברבבתו בְּרִבְבֹתָֽיו",
+      "pron": "다윗 레바바 레바바",
+      "lemmas": [
+        "דָּוִד",
+        "רְבָבָה",
+        "רְבָבָה"
+      ],
+      "words": [
+        {
+          "word": "וְדָוִ֖ד",
+          "lemma": "דָּוִד",
+          "strong": "H1732",
+          "pron": "다윗"
+        },
+        {
+          "word": "ברבבתו",
+          "lemma": "רְבָבָה",
+          "strong": "H7233",
+          "pron": "레바바"
+        },
+        {
+          "word": "בְּרִבְבֹתָֽיו",
+          "lemma": "רְבָבָה",
+          "strong": "H7233",
+          "pron": "레바바"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 21:11",
+        "samuel1 29:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּאֲלָפָ֔יו וְדָוִ֖ד בְּרִבְבֹתָֽיו",
+      "pron": "엘렙 다윗 레바바",
+      "lemmas": [
+        "אֶלֶף",
+        "דָּוִד",
+        "רְבָבָה"
+      ],
+      "words": [
+        {
+          "word": "בַּאֲלָפָ֔יו",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
+        },
+        {
+          "word": "וְדָוִ֖ד",
+          "lemma": "דָּוִד",
+          "strong": "H1732",
+          "pron": "다윗"
+        },
+        {
+          "word": "בְּרִבְבֹתָֽיו",
+          "lemma": "רְבָבָה",
+          "strong": "H7233",
+          "pron": "레바바"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 18:7",
+        "samuel1 21:11",
+        "samuel1 29:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְאַלְפֵ֣י רְבָבָ֑ה",
+      "pron": "엘렙 레바바",
+      "lemmas": [
+        "אֶלֶף",
+        "רְבָבָה"
+      ],
+      "words": [
+        {
+          "word": "לְאַלְפֵ֣י",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
+        },
+        {
+          "word": "רְבָבָ֑ה",
+          "lemma": "רְבָבָה",
+          "strong": "H7233",
+          "pron": "레바바"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 24:60",
+        "judges 20:10",
+        "psalms 91:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

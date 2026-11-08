@@ -1,6 +1,6 @@
 {
   "lemma": "כַּף",
-  "pron": "브캅파위",
+  "pron": "르캅",
   "strong": "H3709",
   "posKo": "명사",
   "root": {
@@ -12,14 +12,14 @@
     {
       "lemma": "כֵּף",
       "strong": "H3710",
-      "pron": "",
+      "pron": "브케핌",
       "glossKo": "바위 틈"
     },
     {
       "lemma": "כִּפָּה",
       "strong": "H3712",
-      "pron": "",
-      "glossKo": "야자나무 가지"
+      "pron": "베킵파토",
+      "glossKo": "그의 야자나무 가지"
     },
     {
       "lemma": "כָּפַף",
@@ -30,15 +30,43 @@
   ],
   "defEn": "hollow hand; palm; power",
   "defKo": "",
-  "countOT": 30,
+  "countOT": 195,
   "byBook": {
     "psalms": 21,
-    "genesis": 9
+    "numbers": 20,
+    "leviticus": 14,
+    "ezekiel": 13,
+    "isaiah": 13,
+    "job": 13,
+    "kings2": 11,
+    "exodus": 9,
+    "genesis": 9,
+    "proverbs": 9,
+    "samuel2": 8,
+    "chronicles2": 7,
+    "kings1": 7,
+    "deuteronomy": 6,
+    "judges": 6,
+    "jeremiah": 5,
+    "samuel1": 5,
+    "joshua": 3,
+    "lamentations": 3,
+    "ezra": 2,
+    "micah": 2,
+    "chronicles1": 1,
+    "daniel": 1,
+    "ecclesiastes": 1,
+    "habakkuk": 1,
+    "haggai": 1,
+    "jonah": 1,
+    "malachi": 1,
+    "nahum": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
       "hebrew": "עַל כַּ֥ף",
-      "pron": "알 브캅파위",
+      "pron": "알 르캅",
       "lemmas": [
         "עַל",
         "כַּף"
@@ -54,73 +82,181 @@
           "word": "כַּ֥ף",
           "lemma": "כַּף",
           "strong": "H3709",
-          "pron": "브캅파위"
+          "pron": "르캅"
         }
       ],
-      "count": 5,
+      "count": 30,
       "refs": [
-        "psalms 91:12",
-        "psalms 139:5",
         "genesis 32:32",
         "genesis 40:11",
-        "genesis 40:21"
+        "genesis 40:21",
+        "exodus 29:24",
+        "leviticus 8:27",
+        "leviticus 8:28",
+        "leviticus 11:27",
+        "leviticus 14:15",
+        "leviticus 14:16",
+        "leviticus 14:17",
+        "leviticus 14:18",
+        "leviticus 14:26"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בְּכַף יְרֵכ֑וֹ",
-      "pron": "브캅파위 야레크",
+      "hebrew": "כַּֽף רַגְלְכֶ֛ם",
+      "pron": "르캅 락라흐",
       "lemmas": [
         "כַּף",
-        "יָרֵךְ"
+        "רֶגֶל"
       ],
       "words": [
         {
-          "word": "בְּכַף",
+          "word": "כַּֽף",
           "lemma": "כַּף",
           "strong": "H3709",
-          "pron": "브캅파위"
+          "pron": "르캅"
         },
         {
-          "word": "יְרֵכ֑וֹ",
-          "lemma": "יָרֵךְ",
-          "strong": "H3409",
-          "pron": "야레크"
+          "word": "רַגְלְכֶ֛ם",
+          "lemma": "רֶגֶל",
+          "strong": "H7272",
+          "pron": "락라흐"
         }
       ],
-      "count": 4,
+      "count": 18,
       "refs": [
-        "genesis 32:25",
-        "genesis 32:32"
+        "genesis 8:9",
+        "deuteronomy 2:5",
+        "deuteronomy 11:24",
+        "deuteronomy 28:35",
+        "deuteronomy 28:56",
+        "deuteronomy 28:65",
+        "joshua 1:3",
+        "joshua 3:13",
+        "joshua 4:18",
+        "samuel2 14:25",
+        "kings1 5:3",
+        "job 2:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בְּנִקָּי֣וֹן כַּפָּ֑י",
-      "pron": "브닉카온 브캅파위",
+      "hebrew": "כַּ֥ף אַחַ֛ת",
+      "pron": "르캅 에핟",
       "lemmas": [
-        "נִקָּיוֹן",
+        "כַּף",
+        "אֶחָד"
+      ],
+      "words": [
+        {
+          "word": "כַּ֥ף",
+          "lemma": "כַּף",
+          "strong": "H3709",
+          "pron": "르캅"
+        },
+        {
+          "word": "אַחַ֛ת",
+          "lemma": "אֶחָד",
+          "strong": "H259",
+          "pron": "에핟"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 7:14",
+        "numbers 7:20",
+        "numbers 7:26",
+        "numbers 7:32",
+        "numbers 7:38",
+        "numbers 7:44",
+        "numbers 7:50",
+        "numbers 7:56",
+        "numbers 7:62",
+        "numbers 7:68",
+        "numbers 7:74",
+        "numbers 7:80"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַּ֥ף אַחַ֛ת עֲשָׂרָ֥ה",
+      "pron": "르캅 에핟 에세르",
+      "lemmas": [
+        "כַּף",
+        "אֶחָד",
+        "עֶשֶׂר"
+      ],
+      "words": [
+        {
+          "word": "כַּ֥ף",
+          "lemma": "כַּף",
+          "strong": "H3709",
+          "pron": "르캅"
+        },
+        {
+          "word": "אַחַ֛ת",
+          "lemma": "אֶחָד",
+          "strong": "H259",
+          "pron": "에핟"
+        },
+        {
+          "word": "עֲשָׂרָ֥ה",
+          "lemma": "עֶשֶׂר",
+          "strong": "H6235",
+          "pron": "에세르"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 7:14",
+        "numbers 7:20",
+        "numbers 7:26",
+        "numbers 7:32",
+        "numbers 7:38",
+        "numbers 7:44",
+        "numbers 7:50",
+        "numbers 7:56",
+        "numbers 7:62",
+        "numbers 7:68",
+        "numbers 7:74",
+        "numbers 7:80"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת הַכַּפּ֗וֹת",
+      "pron": "에트 르캅",
+      "lemmas": [
+        "אֵת",
         "כַּף"
       ],
       "words": [
         {
-          "word": "בְּנִקָּי֣וֹן",
-          "lemma": "נִקָּיוֹן",
-          "strong": "H5356",
-          "pron": "브닉카온"
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         },
         {
-          "word": "כַּפָּ֑י",
+          "word": "הַכַּפּ֗וֹת",
           "lemma": "כַּף",
           "strong": "H3709",
-          "pron": "브캅파위"
+          "pron": "르캅"
         }
       ],
-      "count": 3,
+      "count": 11,
       "refs": [
-        "psalms 26:6",
-        "psalms 73:13",
-        "genesis 20:5"
+        "exodus 9:29",
+        "exodus 33:23",
+        "exodus 37:16",
+        "numbers 4:7",
+        "numbers 24:10",
+        "deuteronomy 25:12",
+        "samuel2 22:1",
+        "kings2 25:14",
+        "psalms 18:1",
+        "jeremiah 52:18",
+        "jeremiah 52:19"
       ],
       "glossKo": ""
     }

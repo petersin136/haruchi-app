@@ -1,6 +1,6 @@
 {
   "lemma": "כֹּפֶר",
-  "pron": "캅르오",
+  "pron": "바코페르",
   "strong": "H3724",
   "posKo": "명사",
   "root": {
@@ -12,40 +12,114 @@
     {
       "lemma": "כְּפוֹר",
       "strong": "H3713",
-      "pron": "케포르",
+      "pron": "카케포르",
       "glossKo": "잔"
     },
     {
       "lemma": "כְּפִיר",
       "strong": "H3715",
-      "pron": "브키케피르",
+      "pron": "케피르",
       "glossKo": "젊은 사자"
     },
     {
       "lemma": "כָּפַר",
       "strong": "H3722",
-      "pron": "테캅페레므",
-      "glossKo": "그들에게 속죄하다"
+      "pron": "브카파렛타",
+      "glossKo": "속죄하다"
     },
     {
       "lemma": "כָּפָר",
       "strong": "H3723",
-      "pron": "",
+      "pron": "우바케파림",
       "glossKo": "마을"
     },
     {
       "lemma": "כִּפֻּר",
       "strong": "H3725",
-      "pron": "",
+      "pron": "아킵푸림",
       "glossKo": "속죄"
+    },
+    {
+      "lemma": "כַּפֹּרֶת",
+      "strong": "H3727",
+      "pron": "캅포레트",
+      "glossKo": "속죄소"
     }
   ],
   "defEn": "cover; village",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 17,
   "byBook": {
+    "proverbs": 3,
+    "exodus": 2,
+    "job": 2,
+    "numbers": 2,
+    "samuel1": 2,
+    "songofsolomon": 2,
+    "amos": 1,
     "genesis": 1,
+    "isaiah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "תִקְח֥וּ כֹ֨פֶר֙",
+      "pron": "바익카흐 바코페르",
+      "lemmas": [
+        "לָקַח",
+        "כֹּפֶר"
+      ],
+      "words": [
+        {
+          "word": "תִקְח֥וּ",
+          "lemma": "לָקַח",
+          "strong": "H3947",
+          "pron": "바익카흐"
+        },
+        {
+          "word": "כֹ֨פֶר֙",
+          "lemma": "כֹּפֶר",
+          "strong": "H3724",
+          "pron": "바코페르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 35:31",
+        "numbers 35:32",
+        "samuel1 12:3",
+        "amos 5:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כֹּ֧פֶר נַפְשׁ֛וֹ",
+      "pron": "바코페르 네페쉬",
+      "lemmas": [
+        "כֹּפֶר",
+        "נֶפֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "כֹּ֧פֶר",
+          "lemma": "כֹּפֶר",
+          "strong": "H3724",
+          "pron": "바코페르"
+        },
+        {
+          "word": "נַפְשׁ֛וֹ",
+          "lemma": "נֶפֶשׁ",
+          "strong": "H5315",
+          "pron": "네페쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 30:12",
+        "numbers 35:31",
+        "proverbs 13:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

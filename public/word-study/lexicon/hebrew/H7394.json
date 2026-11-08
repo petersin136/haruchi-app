@@ -2,7 +2,7 @@
   "lemma": "רֵכָב",
   "pron": "레캅",
   "strong": "H7394",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רָכַב",
     "strong": "H7392",
@@ -12,43 +12,122 @@
     {
       "lemma": "אַרְכֻבָה",
       "strong": "H755",
-      "pron": "",
-      "glossKo": "무릎(아람)"
+      "pron": "베아레쿱바테흐",
+      "glossKo": "그의 무릎(아람)"
     },
     {
       "lemma": "מֶרְכָּב",
       "strong": "H4817",
-      "pron": "",
+      "pron": "아메렉캅",
       "glossKo": "수레"
     },
     {
       "lemma": "רָכַב",
       "strong": "H7392",
-      "pron": "바이렉캅",
+      "pron": "바티렉캅나",
       "glossKo": "타다"
     },
     {
       "lemma": "רֶכֶב",
       "strong": "H7393",
-      "pron": "바레켑",
+      "pron": "레켑",
       "glossKo": "병거"
     },
     {
       "lemma": "רַכָּב",
       "strong": "H7395",
-      "pron": "",
-      "glossKo": "마부"
+      "pron": "레락카보",
+      "glossKo": "그의 마부"
     },
     {
       "lemma": "רְכוּב",
       "strong": "H7398",
-      "pron": "레쿱오",
+      "pron": "레쿠보",
       "glossKo": "그의 맷돌"
     }
   ],
   "defEn": "Rekab",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "jeremiah": 5,
+    "samuel2": 4,
+    "kings2": 2,
+    "chronicles1": 1,
+    "nehemiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶּן רֵכָ֨ב",
+      "pron": "바님 레캅",
+      "lemmas": [
+        "בֵּן",
+        "רֵכָב"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "רֵכָ֨ב",
+          "lemma": "רֵכָב",
+          "strong": "H7394",
+          "pron": "레캅"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "kings2 10:15",
+        "kings2 10:23",
+        "nehemiah 3:14",
+        "jeremiah 35:6",
+        "jeremiah 35:8",
+        "jeremiah 35:14",
+        "jeremiah 35:16",
+        "jeremiah 35:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוֹנָדָב֩ בֶּן רֵכָ֨ב",
+      "pron": "예호나답 바님 레캅",
+      "lemmas": [
+        "יְהוֹנָדָב",
+        "בֵּן",
+        "רֵכָב"
+      ],
+      "words": [
+        {
+          "word": "יְהוֹנָדָב֩",
+          "lemma": "יְהוֹנָדָב",
+          "strong": "H3082",
+          "pron": "예호나답"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "רֵכָ֨ב",
+          "lemma": "רֵכָב",
+          "strong": "H7394",
+          "pron": "레캅"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings2 10:15",
+        "kings2 10:23",
+        "jeremiah 35:8",
+        "jeremiah 35:14",
+        "jeremiah 35:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -18,38 +18,39 @@
     {
       "lemma": "אֹהֶל",
       "strong": "H168",
-      "pron": "브아홀레카",
-      "glossKo": "너의 장막"
+      "pron": "오헬",
+      "glossKo": "장막"
     },
     {
       "lemma": "אֹהֶל",
       "strong": "H169",
-      "pron": "",
+      "pron": "바오헬",
       "glossKo": "오헬"
     },
     {
       "lemma": "אׇהֳלָה",
       "strong": "H170",
-      "pron": "",
+      "pron": "아홀라",
       "glossKo": "오홀라"
     },
     {
       "lemma": "אׇהֳלִיאָב",
       "strong": "H171",
-      "pron": "",
+      "pron": "아홀리압",
       "glossKo": "오홀리압"
     }
   ],
   "defEn": "Oholibamah",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 8,
   "byBook": {
-    "genesis": 7
+    "genesis": 7,
+    "chronicles1": 1
   },
   "phrases": [
     {
       "hebrew": "אָהֳלִֽיבָמָה֙ בַּת",
-      "pron": "아홀리바마 바트",
+      "pron": "아홀리바마 우바노트",
       "lemmas": [
         "אׇהֳלִיבָמָה",
         "בַּת"
@@ -65,7 +66,7 @@
           "word": "בַּת",
           "lemma": "בַּת",
           "strong": "H1323",
-          "pron": "바트"
+          "pron": "우바노트"
         }
       ],
       "count": 4,
@@ -79,7 +80,7 @@
     },
     {
       "hebrew": "אָהֳלִֽיבָמָה֙ בַּת עֲנָ֔ה",
-      "pron": "아홀리바마 바트 아나",
+      "pron": "아홀리바마 우바노트 아나",
       "lemmas": [
         "אׇהֳלִיבָמָה",
         "בַּת",
@@ -96,7 +97,7 @@
           "word": "בַּת",
           "lemma": "בַּת",
           "strong": "H1323",
-          "pron": "바트"
+          "pron": "우바노트"
         },
         {
           "word": "עֲנָ֔ה",
@@ -111,6 +112,35 @@
         "genesis 36:14",
         "genesis 36:18",
         "genesis 36:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַלּ֧וּף אָהֳלִיבָמָ֛ה",
+      "pron": "알루페 아홀리바마",
+      "lemmas": [
+        "אַלּוּף",
+        "אׇהֳלִיבָמָה"
+      ],
+      "words": [
+        {
+          "word": "אַלּ֧וּף",
+          "lemma": "אַלּוּף",
+          "strong": "H441",
+          "pron": "알루페"
+        },
+        {
+          "word": "אָהֳלִיבָמָ֛ה",
+          "lemma": "אׇהֳלִיבָמָה",
+          "strong": "H173",
+          "pron": "아홀리바마"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 36:18",
+        "genesis 36:41",
+        "chronicles1 1:52"
       ],
       "glossKo": ""
     }

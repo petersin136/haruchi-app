@@ -1,8 +1,8 @@
 {
   "lemma": "צָדוֹק",
-  "pron": "차도크",
+  "pron": "브차도크",
   "strong": "H6659",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "צָדַק",
     "strong": "H6663",
@@ -12,31 +12,212 @@
     {
       "lemma": "צַדִּיק",
       "strong": "H6662",
-      "pron": "찯디킴",
+      "pron": "찯디크",
       "glossKo": "의인"
     },
     {
       "lemma": "צָדַק",
       "strong": "H6663",
-      "pron": "찯쿠",
+      "pron": "찯카",
       "glossKo": "의롭다"
     },
     {
       "lemma": "צֶדֶק",
       "strong": "H6664",
-      "pron": "칟키위",
-      "glossKo": "나의 의"
+      "pron": "브체데크",
+      "glossKo": "의"
     },
     {
       "lemma": "צְדָקָה",
       "strong": "H6666",
-      "pron": "브칟카테카",
-      "glossKo": "너의 의"
+      "pron": "체다카",
+      "glossKo": "의"
     }
   ],
   "defEn": "Tsadok",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 53,
+  "byBook": {
+    "chronicles1": 15,
+    "samuel2": 14,
+    "kings1": 11,
+    "nehemiah": 5,
+    "ezekiel": 4,
+    "chronicles2": 2,
+    "ezra": 1,
+    "kings2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "צָד֨וֹק הַכֹּהֵ֜ן",
+      "pron": "브차도크 코헨",
+      "lemmas": [
+        "צָדוֹק",
+        "כֹּהֵן"
+      ],
+      "words": [
+        {
+          "word": "צָד֨וֹק",
+          "lemma": "צָדוֹק",
+          "strong": "H6659",
+          "pron": "브차도크"
+        },
+        {
+          "word": "הַכֹּהֵ֜ן",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "samuel2 15:27",
+        "kings1 1:8",
+        "kings1 1:26",
+        "kings1 1:32",
+        "kings1 1:34",
+        "kings1 1:38",
+        "kings1 1:39",
+        "kings1 1:44",
+        "kings1 1:45",
+        "kings1 2:35",
+        "kings1 4:2",
+        "chronicles1 16:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן צָדוֹק֙",
+      "pron": "바님 브차도크",
+      "lemmas": [
+        "בֵּן",
+        "צָדוֹק"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "צָדוֹק֙",
+          "lemma": "צָדוֹק",
+          "strong": "H6659",
+          "pron": "브차도크"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "samuel2 18:19",
+        "samuel2 18:22",
+        "samuel2 18:27",
+        "kings1 4:2",
+        "chronicles1 9:11",
+        "ezra 7:2",
+        "nehemiah 11:11",
+        "ezekiel 40:46",
+        "ezekiel 44:15",
+        "ezekiel 48:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְצָד֧וֹק בֶּן",
+      "pron": "브차도크 바님",
+      "lemmas": [
+        "צָדוֹק",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "וְצָד֧וֹק",
+          "lemma": "צָדוֹק",
+          "strong": "H6659",
+          "pron": "브차도크"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "samuel2 8:17",
+        "chronicles1 6:53",
+        "chronicles1 9:11",
+        "chronicles1 18:16",
+        "ezra 7:2",
+        "nehemiah 3:4",
+        "nehemiah 3:29",
+        "nehemiah 11:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת צָד֔וֹק",
+      "pron": "에트 브차도크",
+      "lemmas": [
+        "אֵת",
+        "צָדוֹק"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "צָד֔וֹק",
+          "lemma": "צָדוֹק",
+          "strong": "H6659",
+          "pron": "브차도크"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 1:44",
+        "kings1 1:45",
+        "kings1 2:35",
+        "chronicles1 6:8",
+        "chronicles1 6:12",
+        "chronicles1 16:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְצָד֥וֹק וּלְאֶבְיָתָ֖ר",
+      "pron": "브차도크 엡아타르",
+      "lemmas": [
+        "צָדוֹק",
+        "אֶבְיָתָר"
+      ],
+      "words": [
+        {
+          "word": "לְצָד֥וֹק",
+          "lemma": "צָדוֹק",
+          "strong": "H6659",
+          "pron": "브차도크"
+        },
+        {
+          "word": "וּלְאֶבְיָתָ֖ר",
+          "lemma": "אֶבְיָתָר",
+          "strong": "H54",
+          "pron": "엡아타르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel2 15:29",
+        "samuel2 15:35",
+        "samuel2 20:25",
+        "kings1 4:4",
+        "chronicles1 15:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

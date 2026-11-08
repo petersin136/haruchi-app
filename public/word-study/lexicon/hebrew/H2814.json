@@ -1,15 +1,51 @@
 {
   "lemma": "חָשָׁה",
-  "pron": "테헤셰",
+  "pron": "마헤심",
   "strong": "H2814",
   "posKo": "동사",
   "root": null,
   "family": [],
   "defEn": "hush",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 16,
   "byBook": {
-    "psalms": 3
+    "isaiah": 6,
+    "kings2": 3,
+    "psalms": 3,
+    "ecclesiastes": 1,
+    "judges": 1,
+    "kings1": 1,
+    "nehemiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹ֣א אֶחֱשֶׁ֔ה",
+      "pron": "로 마헤심",
+      "lemmas": [
+        "לֹא",
+        "חָשָׁה"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "אֶחֱשֶׁ֔ה",
+          "lemma": "חָשָׁה",
+          "strong": "H2814",
+          "pron": "마헤심"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 62:1",
+        "isaiah 62:6",
+        "isaiah 65:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

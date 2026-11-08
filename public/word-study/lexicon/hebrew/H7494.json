@@ -2,7 +2,7 @@
   "lemma": "רַעַשׁ",
   "pron": "라아쉬",
   "strong": "H7494",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רָעַשׁ",
     "strong": "H7493",
@@ -12,13 +12,82 @@
     {
       "lemma": "רָעַשׁ",
       "strong": "H7493",
-      "pron": "바티레아쉬",
+      "pron": "라아샤",
       "glossKo": "흔들리다"
     }
   ],
   "defEn": "vibration; bounding; uproar",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 17,
+  "byBook": {
+    "ezekiel": 5,
+    "kings1": 3,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "job": 2,
+    "amos": 1,
+    "nahum": 1,
+    "zechariah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְרַ֥עַשׁ גָּד֖וֹל",
+      "pron": "라아쉬 아게돌림",
+      "lemmas": [
+        "רַעַשׁ",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "וְרַ֥עַשׁ",
+          "lemma": "רַעַשׁ",
+          "strong": "H7494",
+          "pron": "라아쉬"
+        },
+        {
+          "word": "גָּד֖וֹל",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 10:22",
+        "ezekiel 3:12",
+        "ezekiel 3:13",
+        "ezekiel 38:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ק֖וֹל רַ֣עַשׁ",
+      "pron": "콜 라아쉬",
+      "lemmas": [
+        "קוֹל",
+        "רַעַשׁ"
+      ],
+      "words": [
+        {
+          "word": "ק֖וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        },
+        {
+          "word": "רַ֣עַשׁ",
+          "lemma": "רַעַשׁ",
+          "strong": "H7494",
+          "pron": "라아쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 3:12",
+        "ezekiel 3:13",
+        "nahum 3:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

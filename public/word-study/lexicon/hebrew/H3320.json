@@ -1,6 +1,6 @@
 {
   "lemma": "יָצַב",
-  "pron": "이테앗체부",
+  "pron": "바테탓찹",
   "strong": "H3320",
   "posKo": "동사",
   "root": null,
@@ -8,15 +8,183 @@
     {
       "lemma": "יְצַב",
       "strong": "H3321",
-      "pron": "",
+      "pron": "르얏차바",
       "glossKo": "굳건한(아람)"
     }
   ],
   "defEn": "place; station; offer; continue",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 48,
   "byBook": {
-    "psalms": 4
+    "exodus": 6,
+    "job": 6,
+    "samuel1": 6,
+    "deuteronomy": 5,
+    "numbers": 4,
+    "psalms": 4,
+    "samuel2": 4,
+    "chronicles2": 3,
+    "jeremiah": 2,
+    "joshua": 2,
+    "proverbs": 2,
+    "chronicles1": 1,
+    "habakkuk": 1,
+    "judges": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לְהִתְיַצֵּ֖ב עַל",
+      "pron": "바테탓찹 알",
+      "lemmas": [
+        "יָצַב",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "לְהִתְיַצֵּ֖ב",
+          "lemma": "יָצַב",
+          "strong": "H3320",
+          "pron": "바테탓찹"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "numbers 23:3",
+        "chronicles2 11:13",
+        "job 1:6",
+        "job 2:1",
+        "psalms 36:4",
+        "habakkuk 2:1",
+        "zechariah 6:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהִתְיַצֵּב֙ לִפְנֵ֣י",
+      "pron": "바테탓찹 페네",
+      "lemmas": [
+        "יָצַב",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "וְהִתְיַצֵּב֙",
+          "lemma": "יָצַב",
+          "strong": "H3320",
+          "pron": "바테탓찹"
+        },
+        {
+          "word": "לִפְנֵ֣י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 8:20",
+        "exodus 9:13",
+        "deuteronomy 9:2",
+        "joshua 24:1",
+        "samuel1 10:19",
+        "proverbs 22:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹֽא יִתְיַצֵּ֥ב",
+      "pron": "로 바테탓찹",
+      "lemmas": [
+        "לֹא",
+        "יָצַב"
+      ],
+      "words": [
+        {
+          "word": "לֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִתְיַצֵּ֥ב",
+          "lemma": "יָצַב",
+          "strong": "H3320",
+          "pron": "바테탓찹"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 7:24",
+        "deuteronomy 11:25",
+        "joshua 1:5",
+        "psalms 5:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּתְיַצֵּ֖ב בְּת֣וֹךְ",
+      "pron": "바테탓찹 브토크",
+      "lemmas": [
+        "יָצַב",
+        "תָּוֶךְ"
+      ],
+      "words": [
+        {
+          "word": "וַיִּתְיַצֵּ֖ב",
+          "lemma": "יָצַב",
+          "strong": "H3320",
+          "pron": "바테탓찹"
+        },
+        {
+          "word": "בְּת֣וֹךְ",
+          "lemma": "תָּוֶךְ",
+          "strong": "H8432",
+          "pron": "브토크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 10:23",
+        "samuel2 23:12",
+        "chronicles1 11:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעַתָּ֗ה הִֽתְיַצְּבוּ֙",
+      "pron": "브앗타 바테탓찹",
+      "lemmas": [
+        "עַתָּה",
+        "יָצַב"
+      ],
+      "words": [
+        {
+          "word": "וְעַתָּ֗ה",
+          "lemma": "עַתָּה",
+          "strong": "H6258",
+          "pron": "브앗타"
+        },
+        {
+          "word": "הִֽתְיַצְּבוּ֙",
+          "lemma": "יָצַב",
+          "strong": "H3320",
+          "pron": "바테탓찹"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 10:19",
+        "samuel1 12:7",
+        "samuel1 12:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "בְּהַל",
-  "pron": "베할",
+  "pron": "브히텝베할라",
   "strong": "H927",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "בָּהַל",
     "strong": "H926",
@@ -10,27 +10,93 @@
   },
   "family": [
     {
+      "lemma": "בְּהִילוּ",
+      "strong": "H924",
+      "pron": "비베힐루",
+      "glossKo": "급함(아람)"
+    },
+    {
       "lemma": "בָּהַל",
       "strong": "H926",
-      "pron": "예바할레모",
-      "glossKo": "그들에게 놀라다"
+      "pron": "닙할루",
+      "glossKo": "놀라다"
     },
     {
       "lemma": "בֶּהָלָה",
       "strong": "H928",
-      "pron": "바베할라",
+      "pron": "베할라",
       "glossKo": "공포"
     },
     {
       "lemma": "בָּלַהּ",
       "strong": "H1089",
-      "pron": "",
+      "pron": "브믑르힘",
       "glossKo": "두근거리다"
     }
   ],
   "defEn": "terrify; hasten",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 11,
+  "byBook": {
+    "daniel": 11
+  },
+  "phrases": [
+    {
+      "hebrew": "בְּהִתְבְּהָלָ֑ה עָנֵ֨ה",
+      "pron": "브히텝베할라 븐느브",
+      "lemmas": [
+        "בְּהַל",
+        "עֲנָה"
+      ],
+      "words": [
+        {
+          "word": "בְּהִתְבְּהָלָ֑ה",
+          "lemma": "בְּהַל",
+          "strong": "H927",
+          "pron": "브히텝베할라"
+        },
+        {
+          "word": "עָנֵ֨ה",
+          "lemma": "עֲנָה",
+          "strong": "H6032",
+          "pron": "븐느브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 3:24",
+        "daniel 4:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְרַעְיֹנֹ֖הִי יְבַהֲלֻנֵּ֑הּ",
+      "pron": "라에오나크 브히텝베할라",
+      "lemmas": [
+        "רַעְיוֹן",
+        "בְּהַל"
+      ],
+      "words": [
+        {
+          "word": "וְרַעְיֹנֹ֖הִי",
+          "lemma": "רַעְיוֹן",
+          "strong": "H7476",
+          "pron": "라에오나크"
+        },
+        {
+          "word": "יְבַהֲלֻנֵּ֑הּ",
+          "lemma": "בְּהַל",
+          "strong": "H927",
+          "pron": "브히텝베할라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 4:19",
+        "daniel 5:6",
+        "daniel 7:28"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

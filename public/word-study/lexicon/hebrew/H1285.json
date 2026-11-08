@@ -1,6 +1,6 @@
 {
   "lemma": "בְּרִית",
-  "pron": "베리트오",
+  "pron": "베리티",
   "strong": "H1285",
   "posKo": "명사",
   "root": {
@@ -12,45 +12,70 @@
     {
       "lemma": "בָּרָה",
       "strong": "H1262",
-      "pron": "",
+      "pron": "베루",
       "glossKo": "먹다"
     },
     {
       "lemma": "בָּרוּת",
       "strong": "H1267",
-      "pron": "브바루티위",
+      "pron": "베바루티",
       "glossKo": "나의 양식"
     },
     {
       "lemma": "בְּרִי",
       "strong": "H1274",
-      "pron": "",
+      "pron": "비레아",
       "glossKo": "기름진"
     },
     {
       "lemma": "בִּרְיָה",
       "strong": "H1279",
-      "pron": "",
+      "pron": "아비레아",
       "glossKo": "음식"
     },
     {
       "lemma": "בְּרִית",
       "strong": "H1286",
-      "pron": "",
+      "pron": "베리트",
       "glossKo": "바알브릿"
     }
   ],
   "defEn": "compact",
   "defKo": "",
-  "countOT": 48,
+  "countOT": 284,
   "byBook": {
+    "deuteronomy": 27,
     "genesis": 27,
-    "psalms": 21
+    "jeremiah": 24,
+    "joshua": 22,
+    "psalms": 21,
+    "ezekiel": 18,
+    "chronicles2": 17,
+    "kings1": 14,
+    "chronicles1": 13,
+    "exodus": 13,
+    "isaiah": 12,
+    "kings2": 12,
+    "leviticus": 10,
+    "samuel1": 8,
+    "daniel": 7,
+    "malachi": 6,
+    "samuel2": 6,
+    "hosea": 5,
+    "numbers": 5,
+    "judges": 4,
+    "nehemiah": 4,
+    "job": 3,
+    "zechariah": 2,
+    "amos": 1,
+    "ezra": 1,
+    "obadiah": 1,
+    "proverbs": 1
   },
   "phrases": [
     {
       "hebrew": "אֶת בְּרִיתִ֖י",
-      "pron": "에트 베리트오",
+      "pron": "에트 베리티",
       "lemmas": [
         "אֵת",
         "בְּרִית"
@@ -66,10 +91,10 @@
           "word": "בְּרִיתִ֖י",
           "lemma": "בְּרִית",
           "strong": "H1285",
-          "pron": "베리트오"
+          "pron": "베리티"
         }
       ],
-      "count": 9,
+      "count": 52,
       "refs": [
         "genesis 6:18",
         "genesis 9:9",
@@ -79,138 +104,169 @@
         "genesis 17:9",
         "genesis 17:14",
         "genesis 17:19",
-        "genesis 17:21"
+        "genesis 17:21",
+        "exodus 2:24",
+        "exodus 6:4",
+        "exodus 6:5"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בְּרִ֣ית עוֹלָֽם",
-      "pron": "베리트오 르올람",
+      "hebrew": "אֲר֣וֹן בְּרִית",
+      "pron": "바아론 베리티",
       "lemmas": [
-        "בְּרִית",
-        "עוֹלָם"
-      ],
-      "words": [
-        {
-          "word": "בְּרִ֣ית",
-          "lemma": "בְּרִית",
-          "strong": "H1285",
-          "pron": "베리트오"
-        },
-        {
-          "word": "עוֹלָֽם",
-          "lemma": "עוֹלָם",
-          "strong": "H5769",
-          "pron": "르올람"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 105:10",
-        "genesis 9:16",
-        "genesis 17:7",
-        "genesis 17:13",
-        "genesis 17:19"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "בְּרִיתִ֖י אִתָּ֑ךְ",
-      "pron": "베리트오 에트",
-      "lemmas": [
-        "בְּרִית",
-        "אֵת"
-      ],
-      "words": [
-        {
-          "word": "בְּרִיתִ֖י",
-          "lemma": "בְּרִית",
-          "strong": "H1285",
-          "pron": "베리트오"
-        },
-        {
-          "word": "אִתָּ֑ךְ",
-          "lemma": "אֵת",
-          "strong": "H854",
-          "pron": "에트"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "genesis 6:18",
-        "genesis 9:9",
-        "genesis 9:11",
-        "genesis 17:4",
-        "genesis 17:19"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַהֲקִמֹתִ֥י אֶת בְּרִיתִ֖י",
-      "pron": "야쿠무 에트 베리트오",
-      "lemmas": [
-        "קוּם",
-        "אֵת",
+        "אָרוֹן",
         "בְּרִית"
       ],
       "words": [
         {
-          "word": "וַהֲקִמֹתִ֥י",
-          "lemma": "קוּם",
-          "strong": "H6965",
-          "pron": "야쿠무"
+          "word": "אֲר֣וֹן",
+          "lemma": "אָרוֹן",
+          "strong": "H727",
+          "pron": "바아론"
         },
         {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        },
-        {
-          "word": "בְּרִיתִ֖י",
+          "word": "בְּרִית",
           "lemma": "בְּרִית",
           "strong": "H1285",
-          "pron": "베리트오"
+          "pron": "베리티"
         }
       ],
-      "count": 5,
+      "count": 42,
       "refs": [
-        "genesis 6:18",
-        "genesis 9:9",
-        "genesis 9:11",
-        "genesis 17:7",
-        "genesis 17:19"
+        "numbers 10:33",
+        "numbers 14:44",
+        "deuteronomy 10:8",
+        "deuteronomy 31:9",
+        "deuteronomy 31:25",
+        "deuteronomy 31:26",
+        "joshua 3:3",
+        "joshua 3:6",
+        "joshua 3:8",
+        "joshua 3:11",
+        "joshua 3:14",
+        "joshua 3:17"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כֹּרְתֵ֖י בְרִיתִ֣י",
-      "pron": "야케레트 베리트오",
+      "hebrew": "בְּרִית יְהוָה֙",
+      "pron": "베리티 여호와",
+      "lemmas": [
+        "בְּרִית",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "בְּרִית",
+          "lemma": "בְּרִית",
+          "strong": "H1285",
+          "pron": "베리티"
+        },
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 40,
+      "refs": [
+        "numbers 10:33",
+        "numbers 14:44",
+        "deuteronomy 4:23",
+        "deuteronomy 10:8",
+        "deuteronomy 29:12",
+        "deuteronomy 29:25",
+        "deuteronomy 31:9",
+        "deuteronomy 31:25",
+        "deuteronomy 31:26",
+        "joshua 3:3",
+        "joshua 3:17",
+        "joshua 4:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְכָרַתִּ֤י בְּרִ֣ית",
+      "pron": "익카레트 베리티",
       "lemmas": [
         "כָּרַת",
         "בְּרִית"
       ],
       "words": [
         {
-          "word": "כֹּרְתֵ֖י",
+          "word": "וְכָרַתִּ֤י",
           "lemma": "כָּרַת",
           "strong": "H3772",
-          "pron": "야케레트"
+          "pron": "익카레트"
         },
         {
-          "word": "בְרִיתִ֣י",
+          "word": "בְּרִ֣ית",
           "lemma": "בְּרִית",
           "strong": "H1285",
-          "pron": "베리트오"
+          "pron": "베리티"
         }
       ],
-      "count": 5,
+      "count": 32,
       "refs": [
-        "psalms 50:5",
-        "psalms 89:3",
         "genesis 21:32",
         "genesis 26:28",
-        "genesis 31:44"
+        "genesis 31:44",
+        "exodus 34:10",
+        "exodus 34:12",
+        "exodus 34:15",
+        "deuteronomy 7:2",
+        "joshua 9:6",
+        "joshua 9:7",
+        "joshua 9:11",
+        "joshua 9:15",
+        "joshua 9:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲר֧וֹן בְּרִית יְהוָ֛ה",
+      "pron": "바아론 베리티 여호와",
+      "lemmas": [
+        "אָרוֹן",
+        "בְּרִית",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "אֲר֧וֹן",
+          "lemma": "אָרוֹן",
+          "strong": "H727",
+          "pron": "바아론"
+        },
+        {
+          "word": "בְּרִית",
+          "lemma": "בְּרִית",
+          "strong": "H1285",
+          "pron": "베리티"
+        },
+        {
+          "word": "יְהוָ֛ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 30,
+      "refs": [
+        "numbers 10:33",
+        "numbers 14:44",
+        "deuteronomy 10:8",
+        "deuteronomy 31:9",
+        "deuteronomy 31:25",
+        "deuteronomy 31:26",
+        "joshua 3:3",
+        "joshua 3:17",
+        "joshua 4:7",
+        "joshua 4:18",
+        "joshua 6:8",
+        "joshua 8:33"
       ],
       "glossKo": ""
     }

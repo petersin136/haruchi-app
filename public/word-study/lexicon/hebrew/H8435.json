@@ -12,8 +12,8 @@
     {
       "lemma": "יָלַד",
       "strong": "H3205",
-      "pron": "옐릳티카",
-      "glossKo": "너에게 낳다"
+      "pron": "텔디",
+      "glossKo": "낳다"
     },
     {
       "lemma": "יֶלֶד",
@@ -24,7 +24,7 @@
     {
       "lemma": "יִלּוֹד",
       "strong": "H3209",
-      "pron": "",
+      "pron": "아일롣",
       "glossKo": "갓난 아이"
     },
     {
@@ -36,21 +36,25 @@
     {
       "lemma": "מוֹלָדָה",
       "strong": "H4137",
-      "pron": "",
+      "pron": "우몰라다",
       "glossKo": "몰라다"
     },
     {
       "lemma": "מוֹלֶדֶת",
       "strong": "H4138",
-      "pron": "몰랃트오",
+      "pron": "몰랃토",
       "glossKo": "그의 친족"
     }
   ],
   "defEn": "descent; family",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 39,
   "byBook": {
-    "genesis": 13
+    "genesis": 13,
+    "numbers": 13,
+    "chronicles1": 9,
+    "exodus": 3,
+    "ruth": 1
   },
   "phrases": [
     {
@@ -74,7 +78,7 @@
           "pron": "톨도트"
         }
       ],
-      "count": 10,
+      "count": 13,
       "refs": [
         "genesis 2:4",
         "genesis 6:9",
@@ -85,7 +89,122 @@
         "genesis 25:19",
         "genesis 36:1",
         "genesis 36:9",
-        "genesis 37:2"
+        "genesis 37:2",
+        "numbers 3:1",
+        "ruth 4:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תּוֹלְדֹתָ֥ם לְמִשְׁפְּחֹתָ֖ם",
+      "pron": "톨도트 레미솁페호테헴",
+      "lemmas": [
+        "תּוֹלְדָה",
+        "מִשְׁפָּחָה"
+      ],
+      "words": [
+        {
+          "word": "תּוֹלְדֹתָ֥ם",
+          "lemma": "תּוֹלְדָה",
+          "strong": "H8435",
+          "pron": "톨도트"
+        },
+        {
+          "word": "לְמִשְׁפְּחֹתָ֖ם",
+          "lemma": "מִשְׁפָּחָה",
+          "strong": "H4940",
+          "pron": "레미솁페호테헴"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 1:20",
+        "numbers 1:22",
+        "numbers 1:24",
+        "numbers 1:26",
+        "numbers 1:28",
+        "numbers 1:30",
+        "numbers 1:32",
+        "numbers 1:34",
+        "numbers 1:36",
+        "numbers 1:38",
+        "numbers 1:40",
+        "numbers 1:42"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תּוֹלְדֹתָ֥ם לְמִשְׁפְּחֹתָ֖ם לְבֵ֣ית",
+      "pron": "톨도트 레미솁페호테헴 미바이트",
+      "lemmas": [
+        "תּוֹלְדָה",
+        "מִשְׁפָּחָה",
+        "בַּיִת"
+      ],
+      "words": [
+        {
+          "word": "תּוֹלְדֹתָ֥ם",
+          "lemma": "תּוֹלְדָה",
+          "strong": "H8435",
+          "pron": "톨도트"
+        },
+        {
+          "word": "לְמִשְׁפְּחֹתָ֖ם",
+          "lemma": "מִשְׁפָּחָה",
+          "strong": "H4940",
+          "pron": "레미솁페호테헴"
+        },
+        {
+          "word": "לְבֵ֣ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 1:20",
+        "numbers 1:22",
+        "numbers 1:24",
+        "numbers 1:26",
+        "numbers 1:28",
+        "numbers 1:30",
+        "numbers 1:32",
+        "numbers 1:34",
+        "numbers 1:36",
+        "numbers 1:38",
+        "numbers 1:40",
+        "numbers 1:42"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְתֹלְדוֹתָ֖ם רָאשִׁ֑ים",
+      "pron": "톨도트 라심",
+      "lemmas": [
+        "תּוֹלְדָה",
+        "רֹאשׁ"
+      ],
+      "words": [
+        {
+          "word": "לְתֹלְדוֹתָ֖ם",
+          "lemma": "תּוֹלְדָה",
+          "strong": "H8435",
+          "pron": "톨도트"
+        },
+        {
+          "word": "רָאשִׁ֑ים",
+          "lemma": "רֹאשׁ",
+          "strong": "H7218",
+          "pron": "라심"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles1 5:7",
+        "chronicles1 7:9",
+        "chronicles1 8:28",
+        "chronicles1 9:34"
       ],
       "glossKo": ""
     }

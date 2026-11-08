@@ -1,8 +1,8 @@
 {
   "lemma": "עֲזַרְאֵל",
-  "pron": "아자레엘",
+  "pron": "바아자레엘",
   "strong": "H5832",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָזַר",
     "strong": "H5826",
@@ -12,43 +12,77 @@
     {
       "lemma": "יַעֲזֵיר",
       "strong": "H3270",
-      "pron": "",
+      "pron": "야에제르",
       "glossKo": "야셀"
     },
     {
       "lemma": "עַזּוּר",
       "strong": "H5809",
-      "pron": "",
+      "pron": "앗주르",
       "glossKo": "앗술"
     },
     {
       "lemma": "עָזַר",
       "strong": "H5826",
-      "pron": "오제르",
-      "glossKo": "돕다"
+      "pron": "베아엣렉카",
+      "glossKo": "너에게 돕다"
     },
     {
       "lemma": "עֶזֶר",
       "strong": "H5827",
-      "pron": "",
+      "pron": "브에제르",
       "glossKo": "에셀"
     },
     {
       "lemma": "עֵזֶר",
       "strong": "H5828",
-      "pron": "엣르카",
-      "glossKo": "너의 도움"
+      "pron": "에제르",
+      "glossKo": "도움"
     },
     {
       "lemma": "עֲזָרָה",
       "strong": "H5835",
-      "pron": "",
+      "pron": "브하아자라",
       "glossKo": "뜰"
     }
   ],
   "defEn": "Azarel",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "chronicles1": 3,
+    "nehemiah": 2,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "עֲזַרְאֵ֔ל בָּנָ֥יו",
+      "pron": "바아자레엘 바님",
+      "lemmas": [
+        "עֲזַרְאֵל",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "עֲזַרְאֵ֔ל",
+          "lemma": "עֲזַרְאֵל",
+          "strong": "H5832",
+          "pron": "바아자레엘"
+        },
+        {
+          "word": "בָּנָ֥יו",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 25:18",
+        "chronicles1 27:22",
+        "nehemiah 11:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "קָצָה",
-  "pron": "케초타므",
+  "pron": "케초트",
   "strong": "H7098",
   "posKo": "명사",
   "root": {
@@ -12,15 +12,199 @@
     {
       "lemma": "קָצֶה",
       "strong": "H7097",
-      "pron": "우비케체",
+      "pron": "미케체",
       "glossKo": "끝"
     }
   ],
   "defEn": "termination",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 36,
   "byBook": {
-    "psalms": 2
+    "exodus": 21,
+    "kings1": 4,
+    "isaiah": 3,
+    "job": 2,
+    "psalms": 2,
+    "ezekiel": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "kings2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מִשְּׁנֵ֖י קְצ֥וֹת",
+      "pron": "셰네 케초트",
+      "lemmas": [
+        "שְׁנַיִם",
+        "קָצָה"
+      ],
+      "words": [
+        {
+          "word": "מִשְּׁנֵ֖י",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        },
+        {
+          "word": "קְצ֥וֹת",
+          "lemma": "קָצָה",
+          "strong": "H7098",
+          "pron": "케초트"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 25:18",
+        "exodus 25:19",
+        "exodus 28:7",
+        "exodus 28:23",
+        "exodus 28:25",
+        "exodus 28:26",
+        "exodus 37:7",
+        "exodus 39:16",
+        "exodus 39:18",
+        "exodus 39:19",
+        "ezekiel 15:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶחָ֤ד מִקָּצָה֙",
+      "pron": "에핟 케초트",
+      "lemmas": [
+        "אֶחָד",
+        "קָצָה"
+      ],
+      "words": [
+        {
+          "word": "אֶחָ֤ד",
+          "lemma": "אֶחָד",
+          "strong": "H259",
+          "pron": "에핟"
+        },
+        {
+          "word": "מִקָּצָה֙",
+          "lemma": "קָצָה",
+          "strong": "H7098",
+          "pron": "케초트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 25:19",
+        "exodus 26:4",
+        "exodus 36:11",
+        "exodus 37:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קְצ֥וֹת הַחֹֽשֶׁן",
+      "pron": "케초트 브라호셴",
+      "lemmas": [
+        "קָצָה",
+        "חֹשֶׁן"
+      ],
+      "words": [
+        {
+          "word": "קְצ֥וֹת",
+          "lemma": "קָצָה",
+          "strong": "H7098",
+          "pron": "케초트"
+        },
+        {
+          "word": "הַחֹֽשֶׁן",
+          "lemma": "חֹשֶׁן",
+          "strong": "H2833",
+          "pron": "브라호셴"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 28:23",
+        "exodus 28:24",
+        "exodus 28:26",
+        "exodus 39:16",
+        "exodus 39:17",
+        "exodus 39:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֹתָ֔ם מִשְּׁנֵ֖י קְצ֥וֹת",
+      "pron": "에트 셰네 케초트",
+      "lemmas": [
+        "אֵת",
+        "שְׁנַיִם",
+        "קָצָה"
+      ],
+      "words": [
+        {
+          "word": "אֹתָ֔ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מִשְּׁנֵ֖י",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        },
+        {
+          "word": "קְצ֥וֹת",
+          "lemma": "קָצָה",
+          "strong": "H7098",
+          "pron": "케초트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 25:18",
+        "exodus 28:25",
+        "exodus 37:7",
+        "exodus 39:18",
+        "ezekiel 15:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל שְׁנֵ֖י קְצ֥וֹת",
+      "pron": "알 셰네 케초트",
+      "lemmas": [
+        "עַל",
+        "שְׁנַיִם",
+        "קָצָה"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "שְׁנֵ֖י",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        },
+        {
+          "word": "קְצ֥וֹת",
+          "lemma": "קָצָה",
+          "strong": "H7098",
+          "pron": "케초트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 25:19",
+        "exodus 28:23",
+        "exodus 28:26",
+        "exodus 39:16",
+        "exodus 39:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

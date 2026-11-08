@@ -1,8 +1,8 @@
 {
   "lemma": "שְׁזַב",
-  "pron": "셰잡",
+  "pron": "예셰읏빈콘",
   "strong": "H7804",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "עָזַב",
     "strong": "H5800",
@@ -10,27 +10,65 @@
   },
   "family": [
     {
+      "lemma": "מְשֵׁיזַבְאֵל",
+      "strong": "H4898",
+      "pron": "메셰으잡엘",
+      "glossKo": "므세사벨"
+    },
+    {
       "lemma": "עָזַב",
       "strong": "H5800",
-      "pron": "아잡타",
+      "pron": "야아잡",
       "glossKo": "버리다"
     },
     {
       "lemma": "עִזָּבוֹן",
       "strong": "H5801",
-      "pron": "",
-      "glossKo": "상품"
+      "pron": "잇보나이크",
+      "glossKo": "너의 상품"
     },
     {
       "lemma": "עֲזוּבָה",
       "strong": "H5805",
-      "pron": "",
+      "pron": "하아주바",
       "glossKo": "버림"
     }
   ],
   "defEn": "leave; free",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "daniel": 9
+  },
+  "phrases": [
+    {
+      "hebrew": "יְשֵֽׁיזְבִנְכ֖וֹן מִן",
+      "pron": "예셰읏빈콘 민",
+      "lemmas": [
+        "שְׁזַב",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "יְשֵֽׁיזְבִנְכ֖וֹן",
+          "lemma": "שְׁזַב",
+          "strong": "H7804",
+          "pron": "예셰읏빈콘"
+        },
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4481",
+          "pron": "민"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 3:15",
+        "daniel 3:17",
+        "daniel 6:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

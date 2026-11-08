@@ -1,6 +1,6 @@
 {
   "lemma": "בַּרְזֶל",
-  "pron": "바레젤",
+  "pron": "우바레젤",
   "strong": "H1270",
   "posKo": "명사",
   "root": {
@@ -12,28 +12,212 @@
     {
       "lemma": "בִּרְזוֹת",
       "strong": "H1269",
-      "pron": "",
+      "pron": "블즈브트",
       "glossKo": "비르사윗"
     },
     {
       "lemma": "בַּרְזִלַּי",
       "strong": "H1271",
-      "pron": "",
+      "pron": "우바레질라이",
       "glossKo": "바르실래"
     },
     {
       "lemma": "פַּרְזֶל",
       "strong": "H6523",
-      "pron": "",
+      "pron": "파레젤",
       "glossKo": "철(아람)"
     }
   ],
   "defEn": "iron",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 76,
   "byBook": {
+    "deuteronomy": 8,
+    "jeremiah": 8,
+    "chronicles1": 7,
+    "ezekiel": 6,
+    "isaiah": 6,
+    "joshua": 6,
+    "job": 5,
     "psalms": 5,
-    "genesis": 1
+    "chronicles2": 4,
+    "judges": 3,
+    "kings1": 3,
+    "samuel2": 3,
+    "kings2": 2,
+    "numbers": 2,
+    "proverbs": 2,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "genesis": 1,
+    "leviticus": 1,
+    "micah": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נְחֹ֖שֶׁת וּבַרְזֶ֑ל",
+      "pron": "네호셰트 우바레젤",
+      "lemmas": [
+        "נְחֹשֶׁת",
+        "בַּרְזֶל"
+      ],
+      "words": [
+        {
+          "word": "נְחֹ֖שֶׁת",
+          "lemma": "נְחֹשֶׁת",
+          "strong": "H5178",
+          "pron": "네호셰트"
+        },
+        {
+          "word": "וּבַרְזֶ֑ל",
+          "lemma": "בַּרְזֶל",
+          "strong": "H1270",
+          "pron": "우바레젤"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 4:22",
+        "joshua 6:19",
+        "joshua 6:24",
+        "joshua 22:8",
+        "chronicles1 22:14",
+        "chronicles1 22:16",
+        "chronicles1 29:2",
+        "chronicles2 2:7",
+        "chronicles2 2:14",
+        "jeremiah 6:28",
+        "ezekiel 22:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַבַּרְזֶל֙ לַבַּרְזֶ֔ל",
+      "pron": "우바레젤 우바레젤",
+      "lemmas": [
+        "בַּרְזֶל",
+        "בַּרְזֶל"
+      ],
+      "words": [
+        {
+          "word": "הַבַּרְזֶל֙",
+          "lemma": "בַּרְזֶל",
+          "strong": "H1270",
+          "pron": "우바레젤"
+        },
+        {
+          "word": "לַבַּרְזֶ֔ל",
+          "lemma": "בַּרְזֶל",
+          "strong": "H1270",
+          "pron": "우바레젤"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "chronicles1 29:2",
+        "proverbs 27:17",
+        "jeremiah 15:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְרֶ֣כֶב בַּרְזֶ֗ל",
+      "pron": "레켑 우바레젤",
+      "lemmas": [
+        "רֶכֶב",
+        "בַּרְזֶל"
+      ],
+      "words": [
+        {
+          "word": "וְרֶ֣כֶב",
+          "lemma": "רֶכֶב",
+          "strong": "H7393",
+          "pron": "레켑"
+        },
+        {
+          "word": "בַּרְזֶ֗ל",
+          "lemma": "בַּרְזֶל",
+          "strong": "H1270",
+          "pron": "우바레젤"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "joshua 17:16",
+        "joshua 17:18",
+        "judges 1:19",
+        "judges 4:3",
+        "judges 4:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַּבַּרְזֶ֔ל וְאֶֽת",
+      "pron": "우바레젤 에트",
+      "lemmas": [
+        "בַּרְזֶל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "כַּבַּרְזֶ֔ל",
+          "lemma": "בַּרְזֶל",
+          "strong": "H1270",
+          "pron": "우바레젤"
+        },
+        {
+          "word": "וְאֶֽת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 26:19",
+        "numbers 31:22",
+        "judges 4:13",
+        "amos 1:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַכֶּ֛סֶף וְלַנְּחֹ֥שֶׁת וְלַבַּרְזֶ֖ל",
+      "pron": "바케셉 네호셰트 우바레젤",
+      "lemmas": [
+        "כֶּסֶף",
+        "נְחֹשֶׁת",
+        "בַּרְזֶל"
+      ],
+      "words": [
+        {
+          "word": "לַכֶּ֛סֶף",
+          "lemma": "כֶּסֶף",
+          "strong": "H3701",
+          "pron": "바케셉"
+        },
+        {
+          "word": "וְלַנְּחֹ֥שֶׁת",
+          "lemma": "נְחֹשֶׁת",
+          "strong": "H5178",
+          "pron": "네호셰트"
+        },
+        {
+          "word": "וְלַבַּרְזֶ֖ל",
+          "lemma": "בַּרְזֶל",
+          "strong": "H1270",
+          "pron": "우바레젤"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles1 22:16",
+        "chronicles2 2:7",
+        "chronicles2 2:14",
+        "ezekiel 22:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

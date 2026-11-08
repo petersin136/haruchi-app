@@ -1,6 +1,6 @@
 {
   "lemma": "עִמָּד",
-  "pron": "임마디위",
+  "pron": "임마디",
   "strong": "H5978",
   "posKo": "접미대명사",
   "root": {
@@ -12,33 +12,40 @@
     {
       "lemma": "עִם",
       "strong": "H5973",
-      "pron": "임오",
-      "glossKo": "그에게 함께"
+      "pron": "임마흐",
+      "glossKo": "그녀에게 함께"
     },
     {
       "lemma": "עִם",
       "strong": "H5974",
-      "pron": "",
-      "glossKo": "함께(아람)"
+      "pron": "베임메혼",
+      "glossKo": "그들에게 함께(아람)"
     },
     {
       "lemma": "עִמָּנוּאֵל",
       "strong": "H6005",
-      "pron": "",
+      "pron": "임마누",
       "glossKo": "임마누엘"
     }
   ],
   "defEn": "along with",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 44,
   "byBook": {
     "genesis": 14,
-    "psalms": 4
+    "job": 14,
+    "psalms": 4,
+    "samuel1": 4,
+    "deuteronomy": 3,
+    "samuel2": 2,
+    "exodus": 1,
+    "judges": 1,
+    "leviticus": 1
   },
   "phrases": [
     {
       "hebrew": "עָשִׂ֨יתָ֙ עִמָּדִ֔י",
-      "pron": "야아세 임마디위",
+      "pron": "바야아스 임마디",
       "lemmas": [
         "עָשָׂה",
         "עִמָּד"
@@ -48,51 +55,143 @@
           "word": "עָשִׂ֨יתָ֙",
           "lemma": "עָשָׂה",
           "strong": "H6213",
-          "pron": "야아세"
+          "pron": "바야아스"
         },
         {
           "word": "עִמָּדִ֔י",
           "lemma": "עִמָּד",
           "strong": "H5978",
-          "pron": "임마디위"
+          "pron": "임마디"
         }
       ],
-      "count": 5,
+      "count": 8,
       "refs": [
         "genesis 19:19",
         "genesis 20:9",
         "genesis 20:13",
         "genesis 21:23",
-        "genesis 47:29"
+        "genesis 47:29",
+        "samuel1 20:14",
+        "job 10:12",
+        "job 13:20"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הָי֥וּ עִמָּדִֽי",
-      "pron": "브하아 임마디위",
+      "hebrew": "יָרִ֣יב עִמָּדִ֑י",
+      "pron": "바야리부 임마디",
+      "lemmas": [
+        "רִיב",
+        "עִמָּד"
+      ],
+      "words": [
+        {
+          "word": "יָרִ֣יב",
+          "lemma": "רִיב",
+          "strong": "H7378",
+          "pron": "바야리부"
+        },
+        {
+          "word": "עִמָּדִ֑י",
+          "lemma": "עִמָּד",
+          "strong": "H5978",
+          "pron": "임마디"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 17:2",
+        "job 13:19",
+        "job 23:6",
+        "job 31:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עִמָּדִ֖י חָ֑סֶד",
+      "pron": "임마디 핫데카",
+      "lemmas": [
+        "עִמָּד",
+        "חֶסֶד"
+      ],
+      "words": [
+        {
+          "word": "עִמָּדִ֖י",
+          "lemma": "עִמָּד",
+          "strong": "H5978",
+          "pron": "임마디"
+        },
+        {
+          "word": "חָ֑סֶד",
+          "lemma": "חֶסֶד",
+          "strong": "H2617",
+          "pron": "핫데카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 40:14",
+        "genesis 47:29",
+        "samuel1 20:14",
+        "samuel2 10:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַתֶּ֖ם עִמָּדִֽי",
+      "pron": "앗타 임마디",
+      "lemmas": [
+        "אַתָּה",
+        "עִמָּד"
+      ],
+      "words": [
+        {
+          "word": "אַתֶּ֖ם",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
+        },
+        {
+          "word": "עִמָּדִֽי",
+          "lemma": "עִמָּד",
+          "strong": "H5978",
+          "pron": "임마디"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 25:23",
+        "samuel1 22:23",
+        "psalms 23:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָיָ֖ה עִמָּדִֽי",
+      "pron": "하에타 임마디",
       "lemmas": [
         "הָיָה",
         "עִמָּד"
       ],
       "words": [
         {
-          "word": "הָי֥וּ",
+          "word": "הָיָ֖ה",
           "lemma": "הָיָה",
           "strong": "H1961",
-          "pron": "브하아"
+          "pron": "하에타"
         },
         {
           "word": "עִמָּדִֽי",
           "lemma": "עִמָּד",
           "strong": "H5978",
-          "pron": "임마디위"
+          "pron": "임마디"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 55:18",
         "genesis 31:5",
-        "genesis 35:3"
+        "genesis 35:3",
+        "psalms 55:18"
       ],
       "glossKo": ""
     }

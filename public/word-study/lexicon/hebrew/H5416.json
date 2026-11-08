@@ -1,6 +1,6 @@
 {
   "lemma": "נָתָן",
-  "pron": "나탄",
+  "pron": "브나탄",
   "strong": "H5416",
   "posKo": "명사",
   "root": {
@@ -18,39 +18,223 @@
     {
       "lemma": "נָתִין",
       "strong": "H5411",
-      "pron": "",
+      "pron": "브아네티님",
       "glossKo": "느디님 사람"
     },
     {
       "lemma": "נָתַן",
       "strong": "H5414",
-      "pron": "잇텐",
+      "pron": "바잇텐",
       "glossKo": "주다"
     },
     {
       "lemma": "נְתַן",
       "strong": "H5415",
-      "pron": "",
+      "pron": "인테눈",
       "glossKo": "주다(아람)"
     },
     {
       "lemma": "נְתַנְאֵל",
       "strong": "H5417",
-      "pron": "",
+      "pron": "네탄엘",
       "glossKo": "느다넬"
     },
     {
       "lemma": "נְתַנְיָה",
       "strong": "H5418",
-      "pron": "",
+      "pron": "네탄아",
       "glossKo": "느다냐"
     }
   ],
   "defEn": "Nathan",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 42,
   "byBook": {
-    "psalms": 1
+    "kings1": 13,
+    "samuel2": 13,
+    "chronicles1": 10,
+    "chronicles2": 2,
+    "ezra": 2,
+    "psalms": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נָתָ֣ן הַנָּבִ֔יא",
+      "pron": "브나탄 나비",
+      "lemmas": [
+        "נָתָן",
+        "נָבִיא"
+      ],
+      "words": [
+        {
+          "word": "נָתָ֣ן",
+          "lemma": "נָתָן",
+          "strong": "H5416",
+          "pron": "브나탄"
+        },
+        {
+          "word": "הַנָּבִ֔יא",
+          "lemma": "נָבִיא",
+          "strong": "H5030",
+          "pron": "나비"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "samuel2 7:2",
+        "samuel2 12:25",
+        "kings1 1:8",
+        "kings1 1:10",
+        "kings1 1:22",
+        "kings1 1:23",
+        "kings1 1:32",
+        "kings1 1:34",
+        "kings1 1:38",
+        "kings1 1:44",
+        "kings1 1:45",
+        "chronicles1 17:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נָתָ֖ן אֶל",
+      "pron": "브나탄 엘",
+      "lemmas": [
+        "נָתָן",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "נָתָ֖ן",
+          "lemma": "נָתָן",
+          "strong": "H5416",
+          "pron": "브나탄"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "samuel2 7:3",
+        "samuel2 7:17",
+        "samuel2 12:1",
+        "samuel2 12:7",
+        "samuel2 12:13",
+        "samuel2 12:15",
+        "kings1 1:11",
+        "chronicles1 17:2",
+        "chronicles1 17:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל נָתָ֣ן",
+      "pron": "엘 브나탄",
+      "lemmas": [
+        "אֵל",
+        "נָתָן"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "נָתָ֣ן",
+          "lemma": "נָתָן",
+          "strong": "H5416",
+          "pron": "브나탄"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel2 7:2",
+        "samuel2 7:4",
+        "samuel2 12:5",
+        "samuel2 12:13",
+        "chronicles1 17:1",
+        "chronicles1 17:3",
+        "psalms 51:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֤אמֶר נָתָן֙",
+      "pron": "바요메르 브나탄",
+      "lemmas": [
+        "אָמַר",
+        "נָתָן"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֤אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "נָתָן֙",
+          "lemma": "נָתָן",
+          "strong": "H5416",
+          "pron": "브나탄"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel2 7:3",
+        "samuel2 12:7",
+        "samuel2 12:13",
+        "kings1 1:11",
+        "kings1 1:24",
+        "chronicles1 17:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נָתָ֖ן אֶל דָּוִֽד",
+      "pron": "브나탄 엘 다윗",
+      "lemmas": [
+        "נָתָן",
+        "אֵל",
+        "דָּוִד"
+      ],
+      "words": [
+        {
+          "word": "נָתָ֖ן",
+          "lemma": "נָתָן",
+          "strong": "H5416",
+          "pron": "브나탄"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "דָּוִֽד",
+          "lemma": "דָּוִד",
+          "strong": "H1732",
+          "pron": "다윗"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel2 7:17",
+        "samuel2 12:1",
+        "samuel2 12:7",
+        "samuel2 12:13",
+        "chronicles1 17:2",
+        "chronicles1 17:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

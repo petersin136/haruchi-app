@@ -1,6 +1,6 @@
 {
   "lemma": "יָסַף",
-  "pron": "요십",
+  "pron": "바토셉",
   "strong": "H3254",
   "posKo": "동사",
   "root": null,
@@ -8,100 +8,259 @@
     {
       "lemma": "וׇפְסִי",
       "strong": "H2058",
-      "pron": "",
+      "pron": "밥시",
       "glossKo": "왑시"
     },
     {
       "lemma": "יוֹסֵף",
       "strong": "H3130",
-      "pron": "브요셉",
+      "pron": "요셉",
       "glossKo": "요셉"
     },
     {
       "lemma": "יוֹסִפְיָה",
       "strong": "H3131",
-      "pron": "",
+      "pron": "요십아",
       "glossKo": "요시뱌"
     },
     {
       "lemma": "יְסַף",
       "strong": "H3255",
-      "pron": "",
+      "pron": "훗파트",
       "glossKo": "더하다(아람)"
     }
   ],
   "defEn": "add; augment; continue",
   "defKo": "",
-  "countOT": 22,
+  "countOT": 210,
   "byBook": {
+    "isaiah": 19,
+    "samuel1": 18,
+    "deuteronomy": 15,
     "genesis": 14,
-    "psalms": 8
+    "proverbs": 14,
+    "samuel2": 14,
+    "judges": 13,
+    "job": 11,
+    "leviticus": 11,
+    "exodus": 9,
+    "numbers": 9,
+    "psalms": 8,
+    "kings1": 7,
+    "chronicles2": 6,
+    "kings2": 6,
+    "chronicles1": 5,
+    "ecclesiastes": 5,
+    "amos": 4,
+    "ezekiel": 3,
+    "hosea": 3,
+    "jeremiah": 3,
+    "lamentations": 3,
+    "joshua": 2,
+    "daniel": 1,
+    "esther": 1,
+    "ezra": 1,
+    "joel": 1,
+    "jonah": 1,
+    "nahum": 1,
+    "ruth": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "יוֹסִ֥יף ע֑וֹד",
-      "pron": "요십 옫",
-      "lemmas": [
-        "יָסַף",
-        "עוֹד"
-      ],
-      "words": [
-        {
-          "word": "יוֹסִ֥יף",
-          "lemma": "יָסַף",
-          "strong": "H3254",
-          "pron": "요십"
-        },
-        {
-          "word": "ע֑וֹד",
-          "lemma": "עוֹד",
-          "strong": "H5750",
-          "pron": "옫"
-        }
-      ],
-      "count": 8,
-      "refs": [
-        "psalms 10:18",
-        "psalms 78:17",
-        "genesis 8:21",
-        "genesis 18:29",
-        "genesis 37:5",
-        "genesis 37:8",
-        "genesis 38:5",
-        "genesis 38:26"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "לֹא יוֹסִ֥יף",
-      "pron": "로 요십",
+      "hebrew": "לֹ֤א תוֹסִ֨יפִי֙",
+      "pron": "로 바토셉",
       "lemmas": [
         "לֹא",
         "יָסַף"
       ],
       "words": [
         {
-          "word": "לֹא",
+          "word": "לֹ֤א",
           "lemma": "לֹא",
           "strong": "H3808",
           "pron": "로"
         },
         {
-          "word": "יוֹסִ֥יף",
+          "word": "תוֹסִ֨יפִי֙",
           "lemma": "יָסַף",
           "strong": "H3254",
-          "pron": "요십"
+          "pron": "바토셉"
         }
       ],
-      "count": 8,
+      "count": 67,
       "refs": [
-        "psalms 41:8",
-        "psalms 77:7",
         "genesis 4:12",
         "genesis 8:12",
         "genesis 8:21",
         "genesis 38:26",
-        "genesis 44:23"
+        "genesis 44:23",
+        "exodus 5:7",
+        "exodus 9:28",
+        "exodus 10:29",
+        "exodus 11:6",
+        "exodus 14:13",
+        "numbers 11:25",
+        "deuteronomy 4:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֨סֶף ע֜וֹד",
+      "pron": "바토셉 옫",
+      "lemmas": [
+        "יָסַף",
+        "עוֹד"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֨סֶף",
+          "lemma": "יָסַף",
+          "strong": "H3254",
+          "pron": "바토셉"
+        },
+        {
+          "word": "ע֜וֹד",
+          "lemma": "עוֹד",
+          "strong": "H5750",
+          "pron": "옫"
+        }
+      ],
+      "count": 38,
+      "refs": [
+        "genesis 8:21",
+        "genesis 18:29",
+        "genesis 37:5",
+        "genesis 37:8",
+        "genesis 38:5",
+        "genesis 38:26",
+        "exodus 10:29",
+        "numbers 22:15",
+        "numbers 32:15",
+        "deuteronomy 19:9",
+        "deuteronomy 28:68",
+        "judges 9:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יֹסֵ֣ף עָלָ֑יו",
+      "pron": "바토셉 알",
+      "lemmas": [
+        "יָסַף",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "יֹסֵ֣ף",
+          "lemma": "יָסַף",
+          "strong": "H3254",
+          "pron": "바토셉"
+        },
+        {
+          "word": "עָלָ֑יו",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 24,
+      "refs": [
+        "leviticus 5:16",
+        "leviticus 6:5",
+        "leviticus 26:21",
+        "leviticus 27:31",
+        "numbers 5:7",
+        "numbers 36:3",
+        "deuteronomy 1:11",
+        "deuteronomy 4:2",
+        "deuteronomy 12:32",
+        "samuel1 12:19",
+        "kings1 12:11",
+        "kings1 12:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹֽא אֹסִ֥ף ע֛וֹד",
+      "pron": "로 바토셉 옫",
+      "lemmas": [
+        "לֹא",
+        "יָסַף",
+        "עוֹד"
+      ],
+      "words": [
+        {
+          "word": "וְלֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "אֹסִ֥ף",
+          "lemma": "יָסַף",
+          "strong": "H3254",
+          "pron": "바토셉"
+        },
+        {
+          "word": "ע֛וֹד",
+          "lemma": "עוֹד",
+          "strong": "H5750",
+          "pron": "옫"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "genesis 8:21",
+        "genesis 38:26",
+        "exodus 10:29",
+        "deuteronomy 28:68",
+        "judges 13:21",
+        "samuel1 7:13",
+        "samuel2 2:28",
+        "samuel2 14:10",
+        "kings2 6:23",
+        "kings2 24:7",
+        "isaiah 10:20",
+        "isaiah 23:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יֹסֵ֧ף יְהוָ֛ה",
+      "pron": "바토셉 여호와",
+      "lemmas": [
+        "יָסַף",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "יֹסֵ֧ף",
+          "lemma": "יָסַף",
+          "strong": "H3254",
+          "pron": "바토셉"
+        },
+        {
+          "word": "יְהוָ֛ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "genesis 30:24",
+        "numbers 22:19",
+        "joshua 23:13",
+        "samuel1 3:6",
+        "samuel1 3:8",
+        "samuel1 3:21",
+        "samuel2 24:3",
+        "chronicles1 21:3",
+        "job 42:10",
+        "psalms 115:14",
+        "isaiah 7:10",
+        "isaiah 8:5"
       ],
       "glossKo": ""
     }

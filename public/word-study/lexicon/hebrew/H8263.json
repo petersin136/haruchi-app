@@ -2,7 +2,7 @@
   "lemma": "שֶׁקֶץ",
   "pron": "셰케츠",
   "strong": "H8263",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁקַץ",
     "strong": "H8262",
@@ -12,19 +12,83 @@
     {
       "lemma": "שִׁקּוּץ",
       "strong": "H8251",
-      "pron": "",
-      "glossKo": "가증한 우상"
+      "pron": "식쿠체헴",
+      "glossKo": "그들의 가증한 우상"
     },
     {
       "lemma": "שָׁקַץ",
       "strong": "H8262",
-      "pron": "식카츠",
+      "pron": "테샥케추",
       "glossKo": "가증히 여기다"
     }
   ],
   "defEn": "filth; idolatrous",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 11,
+  "byBook": {
+    "leviticus": 9,
+    "ezekiel": 1,
+    "isaiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "שֶׁ֥קֶץ ה֖וּא",
+      "pron": "셰케츠 후",
+      "lemmas": [
+        "שֶׁקֶץ",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "שֶׁ֥קֶץ",
+          "lemma": "שֶׁקֶץ",
+          "strong": "H8263",
+          "pron": "셰케츠"
+        },
+        {
+          "word": "ה֖וּא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 11:12",
+        "leviticus 11:20",
+        "leviticus 11:23",
+        "leviticus 11:41"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שֶׁ֥קֶץ הֵ֖ם",
+      "pron": "셰케츠 헴",
+      "lemmas": [
+        "שֶׁקֶץ",
+        "הֵם"
+      ],
+      "words": [
+        {
+          "word": "שֶׁ֥קֶץ",
+          "lemma": "שֶׁקֶץ",
+          "strong": "H8263",
+          "pron": "셰케츠"
+        },
+        {
+          "word": "הֵ֖ם",
+          "lemma": "הֵם",
+          "strong": "H1992",
+          "pron": "헴"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 11:10",
+        "leviticus 11:13",
+        "leviticus 11:42"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

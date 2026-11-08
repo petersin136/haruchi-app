@@ -12,14 +12,14 @@
     {
       "lemma": "אָחַר",
       "strong": "H309",
-      "pron": "테아하르",
+      "pron": "테아하루",
       "glossKo": "지체하다"
     },
     {
       "lemma": "אַחַר",
       "strong": "H310",
-      "pron": "아하레하",
-      "glossKo": "그녀에게 뒤에"
+      "pron": "아하레",
+      "glossKo": "뒤에"
     },
     {
       "lemma": "אַחֵר",
@@ -30,15 +30,200 @@
     {
       "lemma": "אַחֲרוֹן",
       "strong": "H314",
-      "pron": "아하론",
+      "pron": "아하로님",
       "glossKo": "뒤의"
+    },
+    {
+      "lemma": "מׇחֳרָת",
+      "strong": "H4283",
+      "pron": "미마호라트",
+      "glossKo": "이튿날"
     }
   ],
   "defEn": "deferred; morrow; tomorrow; hereafter",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 52,
   "byBook": {
-    "genesis": 1
+    "exodus": 11,
+    "joshua": 9,
+    "samuel1": 8,
+    "kings2": 4,
+    "numbers": 4,
+    "esther": 3,
+    "chronicles2": 2,
+    "isaiah": 2,
+    "judges": 2,
+    "kings1": 2,
+    "proverbs": 2,
+    "deuteronomy": 1,
+    "genesis": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כָּעֵ֣ת מָחָ֔ר",
+      "pron": "르에트 마하르",
+      "lemmas": [
+        "עֵת",
+        "מָחָר"
+      ],
+      "words": [
+        {
+          "word": "כָּעֵ֣ת",
+          "lemma": "עֵת",
+          "strong": "H6256",
+          "pron": "르에트"
+        },
+        {
+          "word": "מָחָ֔ר",
+          "lemma": "מָחָר",
+          "strong": "H4279",
+          "pron": "마하르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 9:18",
+        "samuel1 9:16",
+        "samuel1 20:12",
+        "kings1 19:2",
+        "kings1 20:6",
+        "kings2 7:1",
+        "kings2 7:18",
+        "kings2 10:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְמָחָ֑ר וַיֹּ֨אמֶר֙",
+      "pron": "마하르 바요메르",
+      "lemmas": [
+        "מָחָר",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "לְמָחָ֑ר",
+          "lemma": "מָחָר",
+          "strong": "H4279",
+          "pron": "마하르"
+        },
+        {
+          "word": "וַיֹּ֨אמֶר֙",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 8:10",
+        "exodus 13:14",
+        "deuteronomy 6:20",
+        "joshua 4:6",
+        "joshua 22:24",
+        "joshua 22:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּי֣וֹם מָחָ֔ר",
+      "pron": "욤 마하르",
+      "lemmas": [
+        "יוֹם",
+        "מָחָר"
+      ],
+      "words": [
+        {
+          "word": "בְּי֣וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "מָחָ֔ר",
+          "lemma": "מָחָר",
+          "strong": "H4279",
+          "pron": "마하르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 30:33",
+        "exodus 19:10",
+        "samuel2 11:12",
+        "proverbs 27:1",
+        "isaiah 56:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִנְךָ֛ מָחָ֖ר",
+      "pron": "바님 마하르",
+      "lemmas": [
+        "בֵּן",
+        "מָחָר"
+      ],
+      "words": [
+        {
+          "word": "בִנְךָ֛",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "מָחָ֖ר",
+          "lemma": "מָחָר",
+          "strong": "H4279",
+          "pron": "마하르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 13:14",
+        "deuteronomy 6:20",
+        "joshua 4:6",
+        "joshua 4:21",
+        "joshua 22:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִשְׁאָלְךָ֥ בִנְךָ֛ מָחָ֖ר",
+      "pron": "바에셰알 바님 마하르",
+      "lemmas": [
+        "שָׁאַל",
+        "בֵּן",
+        "מָחָר"
+      ],
+      "words": [
+        {
+          "word": "יִשְׁאָלְךָ֥",
+          "lemma": "שָׁאַל",
+          "strong": "H7592",
+          "pron": "바에셰알"
+        },
+        {
+          "word": "בִנְךָ֛",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "מָחָ֖ר",
+          "lemma": "מָחָר",
+          "strong": "H4279",
+          "pron": "마하르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 13:14",
+        "deuteronomy 6:20",
+        "joshua 4:6",
+        "joshua 4:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

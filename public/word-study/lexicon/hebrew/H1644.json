@@ -1,6 +1,6 @@
 {
   "lemma": "גָּרַשׁ",
-  "pron": "바예가라셰후",
+  "pron": "바예가레쉬",
   "strong": "H1644",
   "posKo": "동사",
   "root": null,
@@ -8,14 +8,14 @@
     {
       "lemma": "גֶּרֶשׁ",
       "strong": "H1645",
-      "pron": "",
+      "pron": "게레쉬",
       "glossKo": "산물"
     },
     {
       "lemma": "גְרֻשָׁה",
       "strong": "H1646",
-      "pron": "",
-      "glossKo": "쫓아냄"
+      "pron": "게루쇼테켐",
+      "glossKo": "너희의 쫓아냄"
     },
     {
       "lemma": "גֵּרְשׁוֹן",
@@ -26,16 +26,171 @@
     {
       "lemma": "מִגְרָשׁ",
       "strong": "H4054",
-      "pron": "",
+      "pron": "믹라쉬",
       "glossKo": "교외"
     }
   ],
   "defEn": "drive out; expatriate; divorce",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 47,
   "byBook": {
+    "exodus": 12,
+    "judges": 5,
     "genesis": 3,
-    "psalms": 3
+    "leviticus": 3,
+    "numbers": 3,
+    "psalms": 3,
+    "ezekiel": 2,
+    "isaiah": 2,
+    "joshua": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "hosea": 1,
+    "job": 1,
+    "jonah": 1,
+    "kings1": 1,
+    "micah": 1,
+    "proverbs": 1,
+    "samuel1": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיְגָ֖רֶשׁ אֶת",
+      "pron": "바예가레쉬 에트",
+      "lemmas": [
+        "גָּרַשׁ",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיְגָ֖רֶשׁ",
+          "lemma": "גָּרַשׁ",
+          "strong": "H1644",
+          "pron": "바예가레쉬"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "genesis 3:24",
+        "genesis 4:14",
+        "exodus 10:11",
+        "exodus 11:1",
+        "exodus 23:28",
+        "exodus 33:2",
+        "joshua 24:12",
+        "judges 2:3",
+        "judges 6:9",
+        "judges 11:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲגָרְשֶׁ֛נּוּ מִפָּנֶ֖יךָ",
+      "pron": "바예가레쉬 페네",
+      "lemmas": [
+        "גָּרַשׁ",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "אֲגָרְשֶׁ֛נּוּ",
+          "lemma": "גָּרַשׁ",
+          "strong": "H1644",
+          "pron": "바예가레쉬"
+        },
+        {
+          "word": "מִפָּנֶ֖יךָ",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 23:29",
+        "exodus 23:30",
+        "exodus 23:31",
+        "exodus 34:11",
+        "deuteronomy 33:27",
+        "chronicles1 17:21",
+        "psalms 78:55"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַלְמָנָ֤ה וּגְרוּשָׁה֙",
+      "pron": "알마나 바예가레쉬",
+      "lemmas": [
+        "אַלְמָנָה",
+        "גָּרַשׁ"
+      ],
+      "words": [
+        {
+          "word": "אַלְמָנָ֤ה",
+          "lemma": "אַלְמָנָה",
+          "strong": "H490",
+          "pron": "알마나"
+        },
+        {
+          "word": "וּגְרוּשָׁה֙",
+          "lemma": "גָּרַשׁ",
+          "strong": "H1644",
+          "pron": "바예가레쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 21:14",
+        "leviticus 22:13",
+        "numbers 30:9",
+        "ezekiel 44:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתְּגָ֤רֶשׁ אוֹתָם֙ מִפְּנֵיכֶ֔ם",
+      "pron": "바예가레쉬 에트 페네",
+      "lemmas": [
+        "גָּרַשׁ",
+        "אֵת",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "וַתְּגָ֤רֶשׁ",
+          "lemma": "גָּרַשׁ",
+          "strong": "H1644",
+          "pron": "바예가레쉬"
+        },
+        {
+          "word": "אוֹתָם֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מִפְּנֵיכֶ֔ם",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 24:12",
+        "judges 2:3",
+        "judges 6:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

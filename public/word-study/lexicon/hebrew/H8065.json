@@ -1,8 +1,8 @@
 {
   "lemma": "שָׁמַיִן",
-  "pron": "샤마인",
+  "pron": "셰마아",
   "strong": "H8065",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁמַיִם",
     "strong": "H8064",
@@ -18,7 +18,183 @@
   ],
   "defEn": "heaven.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 38,
+  "byBook": {
+    "daniel": 28,
+    "ezra": 8,
+    "jeremiah": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "אֱלָ֣הּ שְׁמַיָּ֔א",
+      "pron": "엘라하 셰마아",
+      "lemmas": [
+        "אֱלָהּ",
+        "שָׁמַיִן"
+      ],
+      "words": [
+        {
+          "word": "אֱלָ֣הּ",
+          "lemma": "אֱלָהּ",
+          "strong": "H426",
+          "pron": "엘라하"
+        },
+        {
+          "word": "שְׁמַיָּ֔א",
+          "lemma": "שָׁמַיִן",
+          "strong": "H8065",
+          "pron": "셰마아"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "ezra 5:11",
+        "ezra 5:12",
+        "ezra 6:9",
+        "ezra 6:10",
+        "ezra 7:12",
+        "ezra 7:21",
+        "ezra 7:23",
+        "daniel 2:18",
+        "daniel 2:19",
+        "daniel 2:28",
+        "daniel 2:37",
+        "daniel 2:44"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמִטַּ֥ל שְׁמַיָּ֖א",
+      "pron": "우브달 셰마아",
+      "lemmas": [
+        "טַל",
+        "שָׁמַיִן"
+      ],
+      "words": [
+        {
+          "word": "וּמִטַּ֥ל",
+          "lemma": "טַל",
+          "strong": "H2920",
+          "pron": "우브달"
+        },
+        {
+          "word": "שְׁמַיָּ֖א",
+          "lemma": "שָׁמַיִן",
+          "strong": "H8065",
+          "pron": "셰마아"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 4:15",
+        "daniel 4:23",
+        "daniel 4:25",
+        "daniel 4:33",
+        "daniel 5:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִֽי אֱלָ֨הּ שְׁמַיָּ֜א",
+      "pron": "드흐브 엘라하 셰마아",
+      "lemmas": [
+        "דִּי",
+        "אֱלָהּ",
+        "שָׁמַיִן"
+      ],
+      "words": [
+        {
+          "word": "דִֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "אֱלָ֨הּ",
+          "lemma": "אֱלָהּ",
+          "strong": "H426",
+          "pron": "엘라하"
+        },
+        {
+          "word": "שְׁמַיָּ֜א",
+          "lemma": "שָׁמַיִן",
+          "strong": "H8065",
+          "pron": "셰마아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 5:11",
+        "ezra 7:12",
+        "ezra 7:21",
+        "daniel 2:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבְטַ֤ל שְׁמַיָּא֙ יִצְטַבַּ֔ע",
+      "pron": "우브달 셰마아 이체답바",
+      "lemmas": [
+        "טַל",
+        "שָׁמַיִן",
+        "צְבַע"
+      ],
+      "words": [
+        {
+          "word": "וּבְטַ֤ל",
+          "lemma": "טַל",
+          "strong": "H2920",
+          "pron": "우브달"
+        },
+        {
+          "word": "שְׁמַיָּא֙",
+          "lemma": "שָׁמַיִן",
+          "strong": "H8065",
+          "pron": "셰마아"
+        },
+        {
+          "word": "יִצְטַבַּ֔ע",
+          "lemma": "צְבַע",
+          "strong": "H6647",
+          "pron": "이체답바"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 4:15",
+        "daniel 4:23",
+        "daniel 4:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִמְטֵ֣א לִשְׁמַיָּ֔א",
+      "pron": "임데 셰마아",
+      "lemmas": [
+        "מְטָא",
+        "שָׁמַיִן"
+      ],
+      "words": [
+        {
+          "word": "יִמְטֵ֣א",
+          "lemma": "מְטָא",
+          "strong": "H4291",
+          "pron": "임데"
+        },
+        {
+          "word": "לִשְׁמַיָּ֔א",
+          "lemma": "שָׁמַיִן",
+          "strong": "H8065",
+          "pron": "셰마아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 4:11",
+        "daniel 4:20",
+        "daniel 4:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

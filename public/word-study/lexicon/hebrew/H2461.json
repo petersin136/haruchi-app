@@ -12,45 +12,256 @@
     {
       "lemma": "אַחְלָב",
       "strong": "H303",
-      "pron": "",
+      "pron": "아헬랍",
       "glossKo": "알랍"
     },
     {
       "lemma": "חֶלֶב",
       "strong": "H2459",
-      "pron": "헬바모",
+      "pron": "우메헬베헨",
       "glossKo": "그들의 기름"
     },
     {
       "lemma": "חֵלֶב",
       "strong": "H2460",
-      "pron": "",
+      "pron": "헬렙",
       "glossKo": "헬렙"
     },
     {
       "lemma": "חֶלְבָּה",
       "strong": "H2462",
-      "pron": "",
+      "pron": "헬바",
       "glossKo": "헬바"
     },
     {
       "lemma": "חֶלְבּוֹן",
       "strong": "H2463",
-      "pron": "",
+      "pron": "헬본",
       "glossKo": "헬본"
     },
     {
       "lemma": "חֶלְבְּנָה",
       "strong": "H2464",
-      "pron": "",
+      "pron": "브헬베나",
       "glossKo": "갈바눔"
     }
   ],
   "defEn": "milk; richness",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 44,
   "byBook": {
-    "genesis": 2
+    "deuteronomy": 8,
+    "exodus": 6,
+    "isaiah": 4,
+    "numbers": 4,
+    "ezekiel": 3,
+    "songofsolomon": 3,
+    "genesis": 2,
+    "jeremiah": 2,
+    "job": 2,
+    "judges": 2,
+    "proverbs": 2,
+    "samuel1": 2,
+    "joel": 1,
+    "joshua": 1,
+    "lamentations": 1,
+    "leviticus": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "זָבַ֥ת חָלָ֖ב",
+      "pron": "자바트 브할랍",
+      "lemmas": [
+        "זוּב",
+        "חָלָב"
+      ],
+      "words": [
+        {
+          "word": "זָבַ֥ת",
+          "lemma": "זוּב",
+          "strong": "H2100",
+          "pron": "자바트"
+        },
+        {
+          "word": "חָלָ֖ב",
+          "lemma": "חָלָב",
+          "strong": "H2461",
+          "pron": "브할랍"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "exodus 3:8",
+        "exodus 3:17",
+        "exodus 13:5",
+        "exodus 33:3",
+        "leviticus 20:24",
+        "numbers 13:27",
+        "numbers 14:8",
+        "numbers 16:13",
+        "numbers 16:14",
+        "deuteronomy 6:3",
+        "deuteronomy 11:9",
+        "deuteronomy 26:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זָבַ֥ת חָלָ֖ב וּדְבָֽשׁ",
+      "pron": "자바트 브할랍 데바쉬",
+      "lemmas": [
+        "זוּב",
+        "חָלָב",
+        "דְּבַשׁ"
+      ],
+      "words": [
+        {
+          "word": "זָבַ֥ת",
+          "lemma": "זוּב",
+          "strong": "H2100",
+          "pron": "자바트"
+        },
+        {
+          "word": "חָלָ֖ב",
+          "lemma": "חָלָב",
+          "strong": "H2461",
+          "pron": "브할랍"
+        },
+        {
+          "word": "וּדְבָֽשׁ",
+          "lemma": "דְּבַשׁ",
+          "strong": "H1706",
+          "pron": "데바쉬"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "exodus 3:8",
+        "exodus 3:17",
+        "exodus 13:5",
+        "exodus 33:3",
+        "leviticus 20:24",
+        "numbers 13:27",
+        "numbers 14:8",
+        "numbers 16:13",
+        "numbers 16:14",
+        "deuteronomy 6:3",
+        "deuteronomy 11:9",
+        "deuteronomy 26:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָלָ֖ב וּדְבָֽשׁ",
+      "pron": "브할랍 데바쉬",
+      "lemmas": [
+        "חָלָב",
+        "דְּבַשׁ"
+      ],
+      "words": [
+        {
+          "word": "חָלָ֖ב",
+          "lemma": "חָלָב",
+          "strong": "H2461",
+          "pron": "브할랍"
+        },
+        {
+          "word": "וּדְבָֽשׁ",
+          "lemma": "דְּבַשׁ",
+          "strong": "H1706",
+          "pron": "데바쉬"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "exodus 3:8",
+        "exodus 3:17",
+        "exodus 13:5",
+        "exodus 33:3",
+        "leviticus 20:24",
+        "numbers 13:27",
+        "numbers 14:8",
+        "numbers 16:13",
+        "numbers 16:14",
+        "deuteronomy 6:3",
+        "deuteronomy 11:9",
+        "deuteronomy 26:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֛רֶץ זָבַ֥ת חָלָ֖ב",
+      "pron": "하아레츠 자바트 브할랍",
+      "lemmas": [
+        "אֶרֶץ",
+        "זוּב",
+        "חָלָב"
+      ],
+      "words": [
+        {
+          "word": "אֶ֛רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "זָבַ֥ת",
+          "lemma": "זוּב",
+          "strong": "H2100",
+          "pron": "자바트"
+        },
+        {
+          "word": "חָלָ֖ב",
+          "lemma": "חָלָב",
+          "strong": "H2461",
+          "pron": "브할랍"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "exodus 3:8",
+        "exodus 3:17",
+        "exodus 13:5",
+        "exodus 33:3",
+        "leviticus 20:24",
+        "numbers 16:13",
+        "numbers 16:14",
+        "deuteronomy 6:3",
+        "deuteronomy 11:9",
+        "deuteronomy 26:9",
+        "deuteronomy 26:15",
+        "deuteronomy 27:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּחֲלֵ֥ב אִמּֽוֹ",
+      "pron": "브할랍 임모",
+      "lemmas": [
+        "חָלָב",
+        "אֵם"
+      ],
+      "words": [
+        {
+          "word": "בַּחֲלֵ֥ב",
+          "lemma": "חָלָב",
+          "strong": "H2461",
+          "pron": "브할랍"
+        },
+        {
+          "word": "אִמּֽוֹ",
+          "lemma": "אֵם",
+          "strong": "H517",
+          "pron": "임모"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 23:19",
+        "exodus 34:26",
+        "deuteronomy 14:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

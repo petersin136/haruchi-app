@@ -1,6 +1,6 @@
 {
   "lemma": "כֶּלֶב",
-  "pron": "켈라빔",
+  "pron": "켈렙",
   "strong": "H3611",
   "posKo": "명사",
   "root": null,
@@ -8,21 +8,192 @@
     {
       "lemma": "כָּלֵב",
       "strong": "H3612",
-      "pron": "",
+      "pron": "칼렙",
       "glossKo": "갈렙"
     },
     {
       "lemma": "כְּלוּב",
       "strong": "H3619",
-      "pron": "",
+      "pron": "키켈룹",
       "glossKo": "조롱"
     }
   ],
   "defEn": "dog; prostitute",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 32,
   "byBook": {
-    "psalms": 5
+    "kings1": 7,
+    "psalms": 5,
+    "isaiah": 3,
+    "kings2": 3,
+    "samuel2": 3,
+    "exodus": 2,
+    "proverbs": 2,
+    "samuel1": 2,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "judges": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כֶּ֣לֶב מֵ֔ת",
+      "pron": "켈렙 모트",
+      "lemmas": [
+        "כֶּלֶב",
+        "מוּת"
+      ],
+      "words": [
+        {
+          "word": "כֶּ֣לֶב",
+          "lemma": "כֶּלֶב",
+          "strong": "H3611",
+          "pron": "켈렙"
+        },
+        {
+          "word": "מֵ֔ת",
+          "lemma": "מוּת",
+          "strong": "H4191",
+          "pron": "모트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel1 24:14",
+        "samuel2 9:8",
+        "samuel2 16:9",
+        "kings1 14:11",
+        "kings1 16:4",
+        "kings1 21:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תֹאכֵ֔לוּ לַכֶּ֖לֶב",
+      "pron": "아콜 켈렙",
+      "lemmas": [
+        "אָכַל",
+        "כֶּלֶב"
+      ],
+      "words": [
+        {
+          "word": "תֹאכֵ֔לוּ",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "아콜"
+        },
+        {
+          "word": "לַכֶּ֖לֶב",
+          "lemma": "כֶּלֶב",
+          "strong": "H3611",
+          "pron": "켈렙"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 22:31",
+        "kings1 14:11",
+        "kings1 16:4",
+        "kings1 21:24",
+        "kings2 9:10",
+        "kings2 9:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַכְּלָבִים֙ אֶת",
+      "pron": "켈렙 에트",
+      "lemmas": [
+        "כֶּלֶב",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הַכְּלָבִים֙",
+          "lemma": "כֶּלֶב",
+          "strong": "H3611",
+          "pron": "켈렙"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 21:19",
+        "kings1 22:38",
+        "kings2 9:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָלֹ֣ק הַכֶּ֗לֶב",
+      "pron": "얄로크 켈렙",
+      "lemmas": [
+        "לָקַק",
+        "כֶּלֶב"
+      ],
+      "words": [
+        {
+          "word": "יָלֹ֣ק",
+          "lemma": "לָקַק",
+          "strong": "H3952",
+          "pron": "얄로크"
+        },
+        {
+          "word": "הַכֶּ֗לֶב",
+          "lemma": "כֶּלֶב",
+          "strong": "H3611",
+          "pron": "켈렙"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 7:5",
+        "kings1 21:19",
+        "kings1 22:38"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בָּעִיר֙ יֹאכְל֣וּ הַכְּלָבִ֔ים",
+      "pron": "이르 아콜 켈렙",
+      "lemmas": [
+        "עִיר",
+        "אָכַל",
+        "כֶּלֶב"
+      ],
+      "words": [
+        {
+          "word": "בָּעִיר֙",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        },
+        {
+          "word": "יֹאכְל֣וּ",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "아콜"
+        },
+        {
+          "word": "הַכְּלָבִ֔ים",
+          "lemma": "כֶּלֶב",
+          "strong": "H3611",
+          "pron": "켈렙"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 14:11",
+        "kings1 16:4",
+        "kings1 21:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

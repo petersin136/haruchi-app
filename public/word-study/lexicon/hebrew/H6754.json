@@ -8,28 +8,64 @@
     {
       "lemma": "צָלַל",
       "strong": "H6751",
-      "pron": "",
+      "pron": "찰랄루",
       "glossKo": "그늘지다"
     },
     {
       "lemma": "צֶלֶם",
       "strong": "H6755",
-      "pron": "",
+      "pron": "첼렘",
       "glossKo": "형상"
     },
     {
       "lemma": "צַלְמוֹן",
       "strong": "H6756",
-      "pron": "브찰몬",
+      "pron": "찰몬",
       "glossKo": "살문"
     }
   ],
   "defEn": "image, likeness; also idol, shadow",
   "defKo": "무언가를 본떠 만든 모양이에요. 다른 곳에서는 우상(민 33:52)이나 그림자 같은 덧없는 모습(시 39:6)이라는 뜻으로도 쓰여요. 창세기에서는 사람이 하나님을 드러내는 존재라는 뜻으로 쓰였어요.",
-  "countOT": 7,
+  "countOT": 17,
   "byBook": {
     "genesis": 5,
-    "psalms": 2
+    "ezekiel": 3,
+    "samuel1": 3,
+    "psalms": 2,
+    "amos": 1,
+    "chronicles2": 1,
+    "kings2": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְאֵ֖ת צַלְמֵ֥י",
+      "pron": "에트 첼렘",
+      "lemmas": [
+        "אֵת",
+        "צֶלֶם"
+      ],
+      "words": [
+        {
+          "word": "וְאֵ֖ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "צַלְמֵ֥י",
+          "lemma": "צֶלֶם",
+          "strong": "H6754",
+          "pron": "첼렘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 6:11",
+        "kings2 11:18",
+        "chronicles2 23:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

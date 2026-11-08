@@ -1,6 +1,6 @@
 {
   "lemma": "שָׂשׂוֹן",
-  "pron": "사손",
+  "pron": "브사손",
   "strong": "H8342",
   "posKo": "명사",
   "root": {
@@ -18,19 +18,19 @@
     {
       "lemma": "שׂוּשׂ",
       "strong": "H7797",
-      "pron": "야시스",
+      "pron": "사스",
       "glossKo": "기뻐하다"
     },
     {
       "lemma": "שַׁוְשָׁא",
       "strong": "H7798",
-      "pron": "",
+      "pron": "브샤베샤",
       "glossKo": "사브사"
     },
     {
       "lemma": "שׁוּשַׁן",
       "strong": "H7799",
-      "pron": "쇼샨님",
+      "pron": "슈샨",
       "glossKo": "백합"
     },
     {
@@ -42,9 +42,182 @@
   ],
   "defEn": "cheerfulness; welcome",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 22,
   "byBook": {
-    "psalms": 5
+    "jeremiah": 7,
+    "isaiah": 6,
+    "psalms": 5,
+    "esther": 2,
+    "joel": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "שָׂשׂ֤וֹן וְשִׂמְחָה֙",
+      "pron": "브사손 브심하",
+      "lemmas": [
+        "שָׂשׂוֹן",
+        "שִׂמְחָה"
+      ],
+      "words": [
+        {
+          "word": "שָׂשׂ֤וֹן",
+          "lemma": "שָׂשׂוֹן",
+          "strong": "H8342",
+          "pron": "브사손"
+        },
+        {
+          "word": "וְשִׂמְחָה֙",
+          "lemma": "שִׂמְחָה",
+          "strong": "H8057",
+          "pron": "브심하"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "psalms 51:8",
+        "isaiah 22:13",
+        "isaiah 35:10",
+        "isaiah 51:3",
+        "isaiah 51:11",
+        "jeremiah 15:16",
+        "zechariah 8:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ק֤וֹל שָׂשׂוֹן֙",
+      "pron": "콜 브사손",
+      "lemmas": [
+        "קוֹל",
+        "שָׂשׂוֹן"
+      ],
+      "words": [
+        {
+          "word": "ק֤וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        },
+        {
+          "word": "שָׂשׂוֹן֙",
+          "lemma": "שָׂשׂוֹן",
+          "strong": "H8342",
+          "pron": "브사손"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 7:34",
+        "jeremiah 16:9",
+        "jeremiah 25:10",
+        "jeremiah 33:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ק֤וֹל שָׂשׂוֹן֙ וְק֣וֹל",
+      "pron": "콜 브사손 콜",
+      "lemmas": [
+        "קוֹל",
+        "שָׂשׂוֹן",
+        "קוֹל"
+      ],
+      "words": [
+        {
+          "word": "ק֤וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        },
+        {
+          "word": "שָׂשׂוֹן֙",
+          "lemma": "שָׂשׂוֹן",
+          "strong": "H8342",
+          "pron": "브사손"
+        },
+        {
+          "word": "וְק֣וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 7:34",
+        "jeremiah 16:9",
+        "jeremiah 25:10",
+        "jeremiah 33:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׂשׂוֹן֙ וְק֣וֹל",
+      "pron": "브사손 콜",
+      "lemmas": [
+        "שָׂשׂוֹן",
+        "קוֹל"
+      ],
+      "words": [
+        {
+          "word": "שָׂשׂוֹן֙",
+          "lemma": "שָׂשׂוֹן",
+          "strong": "H8342",
+          "pron": "브사손"
+        },
+        {
+          "word": "וְק֣וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 7:34",
+        "jeremiah 16:9",
+        "jeremiah 25:10",
+        "jeremiah 33:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׂשׂוֹן֙ וְק֣וֹל שִׂמְחָ֔ה",
+      "pron": "브사손 콜 브심하",
+      "lemmas": [
+        "שָׂשׂוֹן",
+        "קוֹל",
+        "שִׂמְחָה"
+      ],
+      "words": [
+        {
+          "word": "שָׂשׂוֹן֙",
+          "lemma": "שָׂשׂוֹן",
+          "strong": "H8342",
+          "pron": "브사손"
+        },
+        {
+          "word": "וְק֣וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        },
+        {
+          "word": "שִׂמְחָ֔ה",
+          "lemma": "שִׂמְחָה",
+          "strong": "H8057",
+          "pron": "브심하"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 7:34",
+        "jeremiah 16:9",
+        "jeremiah 25:10",
+        "jeremiah 33:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

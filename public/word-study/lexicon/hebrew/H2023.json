@@ -2,7 +2,7 @@
   "lemma": "הֹר",
   "pron": "호르",
   "strong": "H2023",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "הַר",
     "strong": "H2022",
@@ -12,19 +12,19 @@
     {
       "lemma": "הַר",
       "strong": "H2022",
-      "pron": "하르",
+      "pron": "헤하림",
       "glossKo": "산"
     },
     {
       "lemma": "הָרָא",
       "strong": "H2024",
-      "pron": "",
+      "pron": "브하라",
       "glossKo": "하라"
     },
     {
       "lemma": "הַרְאֵל",
       "strong": "H2025",
-      "pron": "",
+      "pron": "브아하레엘",
       "glossKo": "아리엘"
     },
     {
@@ -32,11 +32,59 @@
       "strong": "H2039",
       "pron": "하란",
       "glossKo": "하란"
+    },
+    {
+      "lemma": "יָהִיר",
+      "strong": "H3093",
+      "pron": "야히르",
+      "glossKo": "교만한"
     }
   ],
   "defEn": "Hor",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 12,
+  "byBook": {
+    "numbers": 11,
+    "deuteronomy": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "הֹ֥ר הָהָֽר",
+      "pron": "호르 헤하림",
+      "lemmas": [
+        "הֹר",
+        "הַר"
+      ],
+      "words": [
+        {
+          "word": "הֹ֥ר",
+          "lemma": "הֹר",
+          "strong": "H2023",
+          "pron": "호르"
+        },
+        {
+          "word": "הָהָֽר",
+          "lemma": "הַר",
+          "strong": "H2022",
+          "pron": "헤하림"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 20:22",
+        "numbers 20:23",
+        "numbers 20:25",
+        "numbers 20:27",
+        "numbers 21:4",
+        "numbers 33:37",
+        "numbers 33:38",
+        "numbers 33:39",
+        "numbers 33:41",
+        "numbers 34:7",
+        "numbers 34:8",
+        "deuteronomy 32:50"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

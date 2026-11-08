@@ -12,33 +12,254 @@
     {
       "lemma": "רָוַח",
       "strong": "H7304",
-      "pron": "",
+      "pron": "브라바흐",
       "glossKo": "한숨을 돌리다"
     },
     {
       "lemma": "רוּחַ",
       "strong": "H7306",
-      "pron": "예리후느",
+      "pron": "바야라흐",
       "glossKo": "냄새 맡다"
     },
     {
       "lemma": "רוּחַ",
       "strong": "H7307",
-      "pron": "루아흐",
+      "pron": "브루아흐",
       "glossKo": "영"
     },
     {
       "lemma": "רַחַת",
       "strong": "H7371",
-      "pron": "",
+      "pron": "바라하트",
       "glossKo": "키"
+    },
+    {
+      "lemma": "רֵיחַ",
+      "strong": "H7382",
+      "pron": "브레아흐",
+      "glossKo": "향기(아람)"
     }
   ],
   "defEn": "odor",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 58,
   "byBook": {
-    "genesis": 4
+    "numbers": 18,
+    "leviticus": 17,
+    "songofsolomon": 8,
+    "exodus": 4,
+    "ezekiel": 4,
+    "genesis": 4,
+    "hosea": 1,
+    "jeremiah": 1,
+    "job": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "רֵֽיחַ נִיחֹ֖חַ",
+      "pron": "레아흐 아니호아흐",
+      "lemmas": [
+        "רֵיחַ",
+        "נִיחוֹחַ"
+      ],
+      "words": [
+        {
+          "word": "רֵֽיחַ",
+          "lemma": "רֵיחַ",
+          "strong": "H7381",
+          "pron": "레아흐"
+        },
+        {
+          "word": "נִיחֹ֖חַ",
+          "lemma": "נִיחוֹחַ",
+          "strong": "H5207",
+          "pron": "아니호아흐"
+        }
+      ],
+      "count": 43,
+      "refs": [
+        "genesis 8:21",
+        "exodus 29:18",
+        "exodus 29:25",
+        "exodus 29:41",
+        "leviticus 1:9",
+        "leviticus 1:13",
+        "leviticus 1:17",
+        "leviticus 2:2",
+        "leviticus 2:9",
+        "leviticus 2:12",
+        "leviticus 3:5",
+        "leviticus 3:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רֵ֥יחַ נִיחֹ֖חַ לַיהוָֽה",
+      "pron": "레아흐 아니호아흐 여호와",
+      "lemmas": [
+        "רֵיחַ",
+        "נִיחוֹחַ",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "רֵ֥יחַ",
+          "lemma": "רֵיחַ",
+          "strong": "H7381",
+          "pron": "레아흐"
+        },
+        {
+          "word": "נִיחֹ֖חַ",
+          "lemma": "נִיחוֹחַ",
+          "strong": "H5207",
+          "pron": "아니호아흐"
+        },
+        {
+          "word": "לַיהוָֽה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "leviticus 1:9",
+        "leviticus 1:13",
+        "leviticus 1:17",
+        "leviticus 2:2",
+        "leviticus 2:9",
+        "leviticus 3:5",
+        "leviticus 4:31",
+        "leviticus 6:21",
+        "leviticus 17:6",
+        "leviticus 23:18",
+        "numbers 15:3",
+        "numbers 15:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִשֵּׁ֥ה רֵֽיחַ",
+      "pron": "잇셰 레아흐",
+      "lemmas": [
+        "אִשָּׁה",
+        "רֵיחַ"
+      ],
+      "words": [
+        {
+          "word": "אִשֵּׁ֥ה",
+          "lemma": "אִשָּׁה",
+          "strong": "H801",
+          "pron": "잇셰"
+        },
+        {
+          "word": "רֵֽיחַ",
+          "lemma": "רֵיחַ",
+          "strong": "H7381",
+          "pron": "레아흐"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "leviticus 1:9",
+        "leviticus 1:13",
+        "leviticus 1:17",
+        "leviticus 2:2",
+        "leviticus 2:9",
+        "leviticus 3:5",
+        "leviticus 3:16",
+        "leviticus 23:18",
+        "numbers 15:10",
+        "numbers 15:13",
+        "numbers 15:14",
+        "numbers 18:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִשֵּׁ֛ה רֵ֥יחַ נִיחֹ֖חַ",
+      "pron": "잇셰 레아흐 아니호아흐",
+      "lemmas": [
+        "אִשָּׁה",
+        "רֵיחַ",
+        "נִיחוֹחַ"
+      ],
+      "words": [
+        {
+          "word": "אִשֵּׁ֛ה",
+          "lemma": "אִשָּׁה",
+          "strong": "H801",
+          "pron": "잇셰"
+        },
+        {
+          "word": "רֵ֥יחַ",
+          "lemma": "רֵיחַ",
+          "strong": "H7381",
+          "pron": "레아흐"
+        },
+        {
+          "word": "נִיחֹ֖חַ",
+          "lemma": "נִיחוֹחַ",
+          "strong": "H5207",
+          "pron": "아니호아흐"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "leviticus 1:9",
+        "leviticus 1:13",
+        "leviticus 1:17",
+        "leviticus 2:2",
+        "leviticus 2:9",
+        "leviticus 3:5",
+        "leviticus 3:16",
+        "leviticus 23:18",
+        "numbers 15:10",
+        "numbers 15:13",
+        "numbers 15:14",
+        "numbers 18:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְרֵ֣יחַ נִיחֹ֔חַ אִשֶּׁ֖ה",
+      "pron": "레아흐 아니호아흐 잇셰",
+      "lemmas": [
+        "רֵיחַ",
+        "נִיחוֹחַ",
+        "אִשָּׁה"
+      ],
+      "words": [
+        {
+          "word": "לְרֵ֣יחַ",
+          "lemma": "רֵיחַ",
+          "strong": "H7381",
+          "pron": "레아흐"
+        },
+        {
+          "word": "נִיחֹ֔חַ",
+          "lemma": "נִיחוֹחַ",
+          "strong": "H5207",
+          "pron": "아니호아흐"
+        },
+        {
+          "word": "אִשֶּׁ֖ה",
+          "lemma": "אִשָּׁה",
+          "strong": "H801",
+          "pron": "잇셰"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 29:18",
+        "exodus 29:41",
+        "leviticus 8:21",
+        "leviticus 8:28",
+        "numbers 28:6",
+        "numbers 28:13",
+        "numbers 29:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

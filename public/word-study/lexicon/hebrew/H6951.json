@@ -1,6 +1,6 @@
 {
   "lemma": "קָהָל",
-  "pron": "카할",
+  "pron": "리케할",
   "strong": "H6951",
   "posKo": "명사",
   "root": {
@@ -18,98 +18,247 @@
     {
       "lemma": "קָהַל",
       "strong": "H6950",
-      "pron": "",
+      "pron": "바익카헬",
       "glossKo": "모이다"
     },
     {
       "lemma": "קְהִלָּה",
       "strong": "H6952",
-      "pron": "",
+      "pron": "케힐라트",
       "glossKo": "총회"
     },
     {
       "lemma": "קֹהֶלֶת",
       "strong": "H6953",
-      "pron": "",
+      "pron": "코헬레트",
       "glossKo": "전도자"
     },
     {
       "lemma": "קְהֵלָתָה",
       "strong": "H6954",
-      "pron": "",
+      "pron": "비케헬라타",
       "glossKo": "그헬라다"
     },
     {
       "lemma": "קָלַהּ",
       "strong": "H7035",
-      "pron": "",
+      "pron": "브윅르흐브",
       "glossKo": "모으다"
     }
   ],
   "defEn": "assemblage",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 123,
   "byBook": {
+    "chronicles2": 26,
+    "ezekiel": 15,
+    "numbers": 12,
+    "deuteronomy": 11,
     "psalms": 9,
-    "genesis": 4
+    "chronicles1": 7,
+    "kings1": 6,
+    "ezra": 5,
+    "leviticus": 5,
+    "nehemiah": 5,
+    "genesis": 4,
+    "jeremiah": 4,
+    "judges": 3,
+    "proverbs": 3,
+    "exodus": 2,
+    "job": 1,
+    "joel": 1,
+    "joshua": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
-      "hebrew": "בְּקָהָ֥ל רָ֑ב",
-      "pron": "카할 랍빔",
+      "hebrew": "כָּל קְהַ֣ל",
+      "pron": "칼 리케할",
       "lemmas": [
-        "קָהָל",
-        "רַב"
+        "כֹּל",
+        "קָהָל"
       ],
       "words": [
         {
-          "word": "בְּקָהָ֥ל",
-          "lemma": "קָהָל",
-          "strong": "H6951",
-          "pron": "카할"
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
         },
         {
-          "word": "רָ֑ב",
-          "lemma": "רַב",
-          "strong": "H7227",
-          "pron": "랍빔"
+          "word": "קְהַ֣ל",
+          "lemma": "קָהָל",
+          "strong": "H6951",
+          "pron": "리케할"
         }
       ],
-      "count": 4,
+      "count": 46,
       "refs": [
-        "psalms 22:25",
-        "psalms 35:18",
-        "psalms 40:9",
-        "psalms 40:10"
+        "exodus 12:6",
+        "exodus 16:3",
+        "leviticus 16:17",
+        "numbers 14:5",
+        "deuteronomy 5:22",
+        "deuteronomy 31:30",
+        "joshua 8:35",
+        "samuel1 17:47",
+        "kings1 8:14",
+        "kings1 8:22",
+        "kings1 8:55",
+        "kings1 12:3"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בִּקְהַל עָ֑ם",
-      "pron": "카할 암",
+      "hebrew": "קְהַ֣ל יִשְׂרָאֵ֑ל",
+      "pron": "리케할 이스라엘",
+      "lemmas": [
+        "קָהָל",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "קְהַ֣ל",
+          "lemma": "קָהָל",
+          "strong": "H6951",
+          "pron": "리케할"
+        },
+        {
+          "word": "יִשְׂרָאֵ֑ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "leviticus 16:17",
+        "deuteronomy 31:30",
+        "joshua 8:35",
+        "kings1 8:14",
+        "kings1 8:22",
+        "kings1 8:55",
+        "kings1 12:3",
+        "chronicles1 13:2",
+        "chronicles2 6:3",
+        "chronicles2 6:12",
+        "chronicles2 6:13",
+        "chronicles2 24:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל קְהַ֣ל יִשְׂרָאֵ֑ל",
+      "pron": "칼 리케할 이스라엘",
+      "lemmas": [
+        "כֹּל",
+        "קָהָל",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "קְהַ֣ל",
+          "lemma": "קָהָל",
+          "strong": "H6951",
+          "pron": "리케할"
+        },
+        {
+          "word": "יִשְׂרָאֵ֑ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "leviticus 16:17",
+        "deuteronomy 31:30",
+        "joshua 8:35",
+        "kings1 8:14",
+        "kings1 8:22",
+        "kings1 8:55",
+        "kings1 12:3",
+        "chronicles1 13:2",
+        "chronicles2 6:3",
+        "chronicles2 6:12",
+        "chronicles2 6:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּקְהַ֥ל יְהוָֽה",
+      "pron": "리케할 여호와",
+      "lemmas": [
+        "קָהָל",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "בִּקְהַ֥ל",
+          "lemma": "קָהָל",
+          "strong": "H6951",
+          "pron": "리케할"
+        },
+        {
+          "word": "יְהוָֽה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "numbers 16:3",
+        "numbers 20:4",
+        "deuteronomy 23:1",
+        "deuteronomy 23:2",
+        "deuteronomy 23:3",
+        "deuteronomy 23:8",
+        "chronicles1 28:8",
+        "chronicles1 29:20",
+        "micah 2:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִקְהַ֥ל עַמִּֽים",
+      "pron": "리케할 암",
       "lemmas": [
         "קָהָל",
         "עַם"
       ],
       "words": [
         {
-          "word": "בִּקְהַל",
+          "word": "לִקְהַ֥ל",
           "lemma": "קָהָל",
           "strong": "H6951",
-          "pron": "카할"
+          "pron": "리케할"
         },
         {
-          "word": "עָ֑ם",
+          "word": "עַמִּֽים",
           "lemma": "עַם",
           "strong": "H5971",
           "pron": "암"
         }
       ],
-      "count": 3,
+      "count": 8,
       "refs": [
-        "psalms 107:32",
         "genesis 28:3",
-        "genesis 48:4"
+        "genesis 48:4",
+        "judges 20:2",
+        "psalms 107:32",
+        "jeremiah 26:17",
+        "ezekiel 23:24",
+        "ezekiel 26:7",
+        "ezekiel 32:3"
       ],
       "glossKo": ""
     }

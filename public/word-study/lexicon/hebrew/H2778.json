@@ -1,6 +1,6 @@
 {
   "lemma": "חָרַף",
-  "pron": "헤레푸니",
+  "pron": "네헤레페트",
   "strong": "H2778",
   "posKo": "동사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "חָרִיף",
       "strong": "H2756",
-      "pron": "",
+      "pron": "하립",
       "glossKo": "하립"
     },
     {
@@ -24,48 +24,192 @@
     {
       "lemma": "חָרֵף",
       "strong": "H2780",
-      "pron": "",
+      "pron": "하렙",
       "glossKo": "하렙"
     },
     {
       "lemma": "חֶרְפָּה",
       "strong": "H2781",
-      "pron": "브헤렙파",
-      "glossKo": "비방"
+      "pron": "헤렙파티",
+      "glossKo": "나의 비방"
     }
   ],
   "defEn": "pull off; expose; betroth; carp at; defame; spend the winter",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 41,
   "byBook": {
-    "psalms": 12
+    "psalms": 12,
+    "isaiah": 6,
+    "samuel1": 5,
+    "kings2": 4,
+    "proverbs": 3,
+    "judges": 2,
+    "samuel2": 2,
+    "zephaniah": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "job": 1,
+    "leviticus": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
-      "hebrew": "אֲשֶׁ֖ר חֵרְפ֣וּךָ",
-      "pron": "아셰르 헤레푸니",
+      "hebrew": "אֲשֶׁר֩ חֵרַפְתֶּ֨ם",
+      "pron": "아셰르 네헤레페트",
       "lemmas": [
         "אֲשֶׁר",
         "חָרַף"
       ],
       "words": [
         {
-          "word": "אֲשֶׁ֖ר",
+          "word": "אֲשֶׁר֩",
           "lemma": "אֲשֶׁר",
           "strong": "H834",
           "pron": "아셰르"
         },
         {
-          "word": "חֵרְפ֣וּךָ",
+          "word": "חֵרַפְתֶּ֨ם",
           "lemma": "חָרַף",
           "strong": "H2778",
-          "pron": "헤레푸니"
+          "pron": "네헤레페트"
         }
       ],
-      "count": 3,
+      "count": 6,
       "refs": [
+        "judges 8:15",
+        "samuel1 17:45",
         "psalms 79:12",
-        "psalms 89:51"
+        "psalms 89:51",
+        "zephaniah 2:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיְחָרֵ֖ף אֶת",
+      "pron": "네헤레페트 에트",
+      "lemmas": [
+        "חָרַף",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיְחָרֵ֖ף",
+          "lemma": "חָרַף",
+          "strong": "H2778",
+          "pron": "네헤레페트"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "judges 8:15",
+        "samuel1 17:10",
+        "samuel1 17:25",
+        "samuel2 21:21",
+        "chronicles1 20:7",
+        "zephaniah 2:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֣י חֵרֵ֔ף",
+      "pron": "키 네헤레페트",
+      "lemmas": [
+        "כִּי",
+        "חָרַף"
+      ],
+      "words": [
+        {
+          "word": "כִּ֣י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "חֵרֵ֔ף",
+          "lemma": "חָרַף",
+          "strong": "H2778",
+          "pron": "네헤레페트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 17:25",
+        "samuel1 17:26",
+        "samuel1 17:36",
+        "zephaniah 2:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְחָרֵף֙ אֱלֹהִ֣ים",
+      "pron": "네헤레페트 엘로힘",
+      "lemmas": [
+        "חָרַף",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "לְחָרֵף֙",
+          "lemma": "חָרַף",
+          "strong": "H2778",
+          "pron": "네헤레페트"
+        },
+        {
+          "word": "אֱלֹהִ֣ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 19:4",
+        "kings2 19:16",
+        "isaiah 37:4",
+        "isaiah 37:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְחָרֵף֙ אֱלֹהִ֣ים חַ֔י",
+      "pron": "네헤레페트 엘로힘 하아",
+      "lemmas": [
+        "חָרַף",
+        "אֱלֹהִים",
+        "חַי"
+      ],
+      "words": [
+        {
+          "word": "לְחָרֵף֙",
+          "lemma": "חָרַף",
+          "strong": "H2778",
+          "pron": "네헤레페트"
+        },
+        {
+          "word": "אֱלֹהִ֣ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "חַ֔י",
+          "lemma": "חַי",
+          "strong": "H2416",
+          "pron": "하아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 19:4",
+        "kings2 19:16",
+        "isaiah 37:4",
+        "isaiah 37:17"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "מַשָּׂא",
-  "pron": "크맛사",
+  "pron": "맛사오",
   "strong": "H4853",
   "posKo": "명사",
   "root": {
@@ -16,35 +16,205 @@
       "glossKo": "잇사갈"
     },
     {
+      "lemma": "מַשָּׂא",
+      "strong": "H4854",
+      "pron": "우맛사",
+      "glossKo": "맛사"
+    },
+    {
       "lemma": "מַשֹּׂא",
       "strong": "H4856",
-      "pron": "",
+      "pron": "우맛소",
       "glossKo": "편애"
     },
     {
       "lemma": "מַשָּׂאָה",
       "strong": "H4858",
-      "pron": "",
+      "pron": "맛사아",
       "glossKo": "타오름"
     },
     {
       "lemma": "מַשְׂאֵת",
       "strong": "H4864",
-      "pron": "마세아트",
+      "pron": "마세오트",
       "glossKo": "들어 올림"
     },
     {
       "lemma": "מִתְנַשֵּׂא",
       "strong": "H4984",
-      "pron": "",
+      "pron": "미테낫세",
       "glossKo": "지극히 높이심"
     }
   ],
   "defEn": "burden; tribute; porterage; utterance; doom; singing; desire",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 65,
   "byBook": {
+    "isaiah": 14,
+    "jeremiah": 12,
+    "numbers": 11,
+    "chronicles2": 4,
+    "chronicles1": 3,
+    "kings2": 3,
+    "ezekiel": 2,
+    "nehemiah": 2,
+    "proverbs": 2,
+    "samuel2": 2,
+    "zechariah": 2,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "job": 1,
+    "malachi": 1,
+    "nahum": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מַשָּׂ֣א יְהוָ֑ה",
+      "pron": "맛사오 여호와",
+      "lemmas": [
+        "מַשָּׂא",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "מַשָּׂ֣א",
+          "lemma": "מַשָּׂא",
+          "strong": "H4853",
+          "pron": "맛사오"
+        },
+        {
+          "word": "יְהוָ֑ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "jeremiah 23:33",
+        "jeremiah 23:34",
+        "jeremiah 23:36",
+        "jeremiah 23:38"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת מַשָּׂ֛א",
+      "pron": "에트 맛사오",
+      "lemmas": [
+        "אֵת",
+        "מַשָּׂא"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מַשָּׂ֛א",
+          "lemma": "מַשָּׂא",
+          "strong": "H4853",
+          "pron": "맛사오"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 11:11",
+        "kings2 9:25",
+        "ezekiel 24:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַמַּשָּׂ֖א הַזֶּֽה",
+      "pron": "맛사오 제",
+      "lemmas": [
+        "מַשָּׂא",
+        "זֶה"
+      ],
+      "words": [
+        {
+          "word": "הַמַּשָּׂ֖א",
+          "lemma": "מַשָּׂא",
+          "strong": "H4853",
+          "pron": "맛사오"
+        },
+        {
+          "word": "הַזֶּֽה",
+          "lemma": "זֶה",
+          "strong": "H2088",
+          "pron": "제"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 9:25",
+        "isaiah 14:28",
+        "ezekiel 12:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעַל מַשָּׂא֑וֹ",
+      "pron": "알 맛사오",
+      "lemmas": [
+        "עַל",
+        "מַשָּׂא"
+      ],
+      "words": [
+        {
+          "word": "וְעַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "מַשָּׂא֑וֹ",
+          "lemma": "מַשָּׂא",
+          "strong": "H4853",
+          "pron": "맛사오"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 4:49",
+        "samuel2 15:33",
+        "job 7:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְכָל מַשָּׂאָ֔ם",
+      "pron": "칼 맛사오",
+      "lemmas": [
+        "כֹּל",
+        "מַשָּׂא"
+      ],
+      "words": [
+        {
+          "word": "לְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מַשָּׂאָ֔ם",
+          "lemma": "מַשָּׂא",
+          "strong": "H4853",
+          "pron": "맛사오"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 4:27",
+        "nehemiah 13:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "עֹרֶף",
-  "pron": "오렙",
+  "pron": "브오렙",
   "strong": "H6203",
   "posKo": "명사",
   "root": {
@@ -12,22 +12,212 @@
     {
       "lemma": "עָרַף",
       "strong": "H6202",
-      "pron": "",
-      "glossKo": "목을 꺾다"
+      "pron": "바아랍토",
+      "glossKo": "그에게 목을 꺾다"
     },
     {
       "lemma": "עׇרְפָּה",
       "strong": "H6204",
-      "pron": "",
+      "pron": "아렙파",
       "glossKo": "오르바"
     }
   ],
   "defEn": "nape; declining; back",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 33,
   "byBook": {
+    "jeremiah": 7,
+    "exodus": 5,
+    "deuteronomy": 4,
+    "chronicles2": 3,
+    "nehemiah": 3,
+    "joshua": 2,
+    "kings2": 2,
     "genesis": 1,
-    "psalms": 1
+    "isaiah": 1,
+    "job": 1,
+    "leviticus": 1,
+    "proverbs": 1,
+    "psalms": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת עָרְפָּ֔ם",
+      "pron": "에트 브오렙",
+      "lemmas": [
+        "אֵת",
+        "עֹרֶף"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "עָרְפָּ֔ם",
+          "lemma": "עֹרֶף",
+          "strong": "H6203",
+          "pron": "브오렙"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "deuteronomy 31:27",
+        "kings2 17:14",
+        "chronicles2 36:13",
+        "nehemiah 9:16",
+        "nehemiah 9:17",
+        "jeremiah 7:26",
+        "jeremiah 17:23",
+        "jeremiah 19:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיַּקְשׁוּ֙ אֶת עָרְפָּ֔ם",
+      "pron": "바테카쉬 에트 브오렙",
+      "lemmas": [
+        "קָשָׁה",
+        "אֵת",
+        "עֹרֶף"
+      ],
+      "words": [
+        {
+          "word": "וַיַּקְשׁוּ֙",
+          "lemma": "קָשָׁה",
+          "strong": "H7185",
+          "pron": "바테카쉬"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "עָרְפָּ֔ם",
+          "lemma": "עֹרֶף",
+          "strong": "H6203",
+          "pron": "브오렙"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "kings2 17:14",
+        "chronicles2 36:13",
+        "nehemiah 9:16",
+        "nehemiah 9:17",
+        "jeremiah 7:26",
+        "jeremiah 17:23",
+        "jeremiah 19:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַם קְשֵׁה עֹ֖רֶף",
+      "pron": "암 카쇼트 브오렙",
+      "lemmas": [
+        "עַם",
+        "קָשֶׁה",
+        "עֹרֶף"
+      ],
+      "words": [
+        {
+          "word": "עַם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "קְשֵׁה",
+          "lemma": "קָשֶׁה",
+          "strong": "H7186",
+          "pron": "카쇼트"
+        },
+        {
+          "word": "עֹ֖רֶף",
+          "lemma": "עֹרֶף",
+          "strong": "H6203",
+          "pron": "브오렙"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 32:9",
+        "exodus 33:3",
+        "exodus 33:5",
+        "exodus 34:9",
+        "deuteronomy 9:6",
+        "deuteronomy 9:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֹ֖רֶף וְלֹ֣א",
+      "pron": "브오렙 로",
+      "lemmas": [
+        "עֹרֶף",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "עֹ֖רֶף",
+          "lemma": "עֹרֶף",
+          "strong": "H6203",
+          "pron": "브오렙"
+        },
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "leviticus 5:8",
+        "deuteronomy 10:16",
+        "nehemiah 9:16",
+        "jeremiah 2:27",
+        "jeremiah 18:17",
+        "jeremiah 32:33"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קְשֵׁה עֹ֖רֶף",
+      "pron": "카쇼트 브오렙",
+      "lemmas": [
+        "קָשֶׁה",
+        "עֹרֶף"
+      ],
+      "words": [
+        {
+          "word": "קְשֵׁה",
+          "lemma": "קָשֶׁה",
+          "strong": "H7186",
+          "pron": "카쇼트"
+        },
+        {
+          "word": "עֹ֖רֶף",
+          "lemma": "עֹרֶף",
+          "strong": "H6203",
+          "pron": "브오렙"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 32:9",
+        "exodus 33:3",
+        "exodus 33:5",
+        "exodus 34:9",
+        "deuteronomy 9:6",
+        "deuteronomy 9:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

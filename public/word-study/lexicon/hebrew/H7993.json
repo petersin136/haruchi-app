@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁלַךְ",
-  "pron": "브나셸리카",
+  "pron": "바타셸레크",
   "strong": "H7993",
   "posKo": "동사",
   "root": null,
@@ -8,37 +8,61 @@
     {
       "lemma": "שָׁלָךְ",
       "strong": "H7994",
-      "pron": "",
+      "pron": "아샬라크",
       "glossKo": "가마우지"
     },
     {
       "lemma": "שַׁלֶּכֶת",
       "strong": "H7995",
-      "pron": "",
+      "pron": "브샬레케트",
       "glossKo": "낙엽"
     }
   ],
   "defEn": "throw",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 125,
   "byBook": {
+    "jeremiah": 15,
+    "kings2": 15,
+    "exodus": 10,
+    "ezekiel": 10,
     "psalms": 10,
-    "genesis": 4
+    "chronicles2": 5,
+    "isaiah": 5,
+    "joshua": 5,
+    "kings1": 5,
+    "samuel2": 5,
+    "genesis": 4,
+    "job": 4,
+    "judges": 4,
+    "zechariah": 4,
+    "daniel": 3,
+    "deuteronomy": 3,
+    "nehemiah": 3,
+    "numbers": 3,
+    "amos": 2,
+    "ecclesiastes": 2,
+    "leviticus": 2,
+    "micah": 2,
+    "joel": 1,
+    "jonah": 1,
+    "lamentations": 1,
+    "nahum": 1
   },
   "phrases": [
     {
-      "hebrew": "וַתַּשְׁלֵ֣ךְ אֶת",
-      "pron": "브나셸리카 에트",
+      "hebrew": "וַיַּשְׁלֵךְ֙ אֶת",
+      "pron": "바타셸레크 에트",
       "lemmas": [
         "שָׁלַךְ",
         "אֵת"
       ],
       "words": [
         {
-          "word": "וַתַּשְׁלֵ֣ךְ",
+          "word": "וַיַּשְׁלֵךְ֙",
           "lemma": "שָׁלַךְ",
           "strong": "H7993",
-          "pron": "브나셸리카"
+          "pron": "바타셸레크"
         },
         {
           "word": "אֶת",
@@ -47,11 +71,166 @@
           "pron": "에트"
         }
       ],
-      "count": 3,
+      "count": 27,
       "refs": [
         "genesis 21:15",
         "genesis 37:22",
-        "genesis 37:24"
+        "genesis 37:24",
+        "exodus 22:31",
+        "leviticus 1:16",
+        "leviticus 14:40",
+        "deuteronomy 9:21",
+        "joshua 8:29",
+        "judges 9:17",
+        "samuel2 18:17",
+        "kings2 13:21",
+        "kings2 23:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִשְׁלִ֥יךְ עָלָ֛יו",
+      "pron": "바타셸레크 알",
+      "lemmas": [
+        "שָׁלַךְ",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "הִשְׁלִ֥יךְ",
+          "lemma": "שָׁלַךְ",
+          "strong": "H7993",
+          "pron": "바타셸레크"
+        },
+        {
+          "word": "עָלָ֛יו",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "numbers 35:20",
+        "numbers 35:22",
+        "deuteronomy 9:17",
+        "joshua 10:11",
+        "samuel2 11:21",
+        "samuel2 20:12",
+        "kings2 13:23",
+        "chronicles2 7:20",
+        "job 27:22",
+        "psalms 55:22",
+        "jeremiah 22:28",
+        "ezekiel 18:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיַּשְׁלֵךְ֙ אֶל",
+      "pron": "바타셸레크 엘",
+      "lemmas": [
+        "שָׁלַךְ",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "וַיַּשְׁלֵךְ֙",
+          "lemma": "שָׁלַךְ",
+          "strong": "H7993",
+          "pron": "바타셸레크"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 15:25",
+        "numbers 19:6",
+        "deuteronomy 29:28",
+        "joshua 10:27",
+        "samuel2 20:21",
+        "samuel2 20:22",
+        "kings2 4:41",
+        "jeremiah 36:23",
+        "jeremiah 38:9",
+        "jeremiah 51:63",
+        "ezekiel 16:5",
+        "zechariah 11:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשְׁלִ֣יכוּ אֹת֗וֹ אֶל",
+      "pron": "바타셸레크 에트 엘",
+      "lemmas": [
+        "שָׁלַךְ",
+        "אֵת",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "הַשְׁלִ֣יכוּ",
+          "lemma": "שָׁלַךְ",
+          "strong": "H7993",
+          "pron": "바타셸레크"
+        },
+        {
+          "word": "אֹת֗וֹ",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 37:22",
+        "leviticus 14:40",
+        "joshua 8:29",
+        "jeremiah 38:6",
+        "ezekiel 5:4",
+        "zechariah 5:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר הִשְׁלִ֥יכוּ",
+      "pron": "아셰르 바타셸레크",
+      "lemmas": [
+        "אֲשֶׁר",
+        "שָׁלַךְ"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הִשְׁלִ֥יכוּ",
+          "lemma": "שָׁלַךְ",
+          "strong": "H7993",
+          "pron": "바타셸레크"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings2 7:15",
+        "kings2 17:20",
+        "jeremiah 7:15",
+        "jeremiah 38:9",
+        "jeremiah 41:9"
       ],
       "glossKo": ""
     }

@@ -8,16 +8,197 @@
     {
       "lemma": "אַף",
       "strong": "H638",
-      "pron": "",
+      "pron": "브압",
       "glossKo": "또한(아람)"
     }
   ],
   "defEn": "accession",
   "defKo": "",
-  "countOT": 28,
+  "countOT": 134,
   "byBook": {
+    "isaiah": 30,
     "psalms": 23,
-    "genesis": 5
+    "job": 20,
+    "leviticus": 9,
+    "proverbs": 9,
+    "deuteronomy": 7,
+    "genesis": 5,
+    "samuel1": 4,
+    "chronicles1": 3,
+    "chronicles2": 3,
+    "ezekiel": 3,
+    "nehemiah": 3,
+    "samuel2": 3,
+    "habakkuk": 2,
+    "kings2": 2,
+    "songofsolomon": 2,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "esther": 1,
+    "judges": 1,
+    "kings1": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אַ֝֗ף כִּֽי",
+      "pron": "압 키",
+      "lemmas": [
+        "אַף",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "אַ֝֗ף",
+          "lemma": "אַף",
+          "strong": "H637",
+          "pron": "압"
+        },
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 26,
+      "refs": [
+        "genesis 3:1",
+        "deuteronomy 31:27",
+        "samuel1 14:30",
+        "samuel1 21:5",
+        "samuel1 23:3",
+        "samuel2 4:11",
+        "samuel2 16:11",
+        "kings1 8:27",
+        "kings2 5:13",
+        "chronicles2 6:18",
+        "chronicles2 32:15",
+        "nehemiah 9:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַף אָֽנִי",
+      "pron": "압 바아니",
+      "lemmas": [
+        "אַף",
+        "אֲנִי"
+      ],
+      "words": [
+        {
+          "word": "אַף",
+          "lemma": "אַף",
+          "strong": "H637",
+          "pron": "압"
+        },
+        {
+          "word": "אָֽנִי",
+          "lemma": "אֲנִי",
+          "strong": "H589",
+          "pron": "바아니"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 40:16",
+        "leviticus 26:16",
+        "leviticus 26:24",
+        "leviticus 26:28",
+        "leviticus 26:41",
+        "chronicles2 12:5",
+        "job 32:10",
+        "job 32:17",
+        "psalms 89:27",
+        "isaiah 48:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַ֝֗ף אֵין",
+      "pron": "압 아인",
+      "lemmas": [
+        "אַף",
+        "אַיִן"
+      ],
+      "words": [
+        {
+          "word": "אַ֝֗ף",
+          "lemma": "אַף",
+          "strong": "H637",
+          "pron": "압"
+        },
+        {
+          "word": "אֵין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 135:17",
+        "isaiah 41:26",
+        "amos 2:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַף הִ֑וא",
+      "pron": "압 후",
+      "lemmas": [
+        "אַף",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "אַף",
+          "lemma": "אַף",
+          "strong": "H637",
+          "pron": "압"
+        },
+        {
+          "word": "הִ֑וא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 2:20",
+        "judges 5:29",
+        "kings2 2:14",
+        "proverbs 23:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַ֣ף בַּל",
+      "pron": "압 발",
+      "lemmas": [
+        "אַף",
+        "בַּל"
+      ],
+      "words": [
+        {
+          "word": "אַ֣ף",
+          "lemma": "אַף",
+          "strong": "H637",
+          "pron": "압"
+        },
+        {
+          "word": "בַּל",
+          "lemma": "בַּל",
+          "strong": "H1077",
+          "pron": "발"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 40:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

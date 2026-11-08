@@ -8,21 +8,121 @@
     {
       "lemma": "מוֹרָה",
       "strong": "H4177",
-      "pron": "",
+      "pron": "우모라",
       "glossKo": "삭도"
     },
     {
       "lemma": "תְּמוּרָה",
       "strong": "H8545",
-      "pron": "",
-      "glossKo": "교환"
+      "pron": "우테무라토",
+      "glossKo": "그의 교환"
     }
   ],
   "defEn": "alter",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 15,
   "byBook": {
-    "psalms": 3
+    "leviticus": 6,
+    "jeremiah": 3,
+    "psalms": 3,
+    "ezekiel": 1,
+    "hosea": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְלֹֽא יָמִ֥יר",
+      "pron": "로 야미르",
+      "lemmas": [
+        "לֹא",
+        "מוּר"
+      ],
+      "words": [
+        {
+          "word": "וְלֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יָמִ֥יר",
+          "lemma": "מוּר",
+          "strong": "H4171",
+          "pron": "야미르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 27:10",
+        "leviticus 27:33",
+        "psalms 15:4",
+        "jeremiah 48:11",
+        "ezekiel 48:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָמֵ֨ר יָמִ֤יר",
+      "pron": "야미르 야미르",
+      "lemmas": [
+        "מוּר",
+        "מוּר"
+      ],
+      "words": [
+        {
+          "word": "הָמֵ֨ר",
+          "lemma": "מוּר",
+          "strong": "H4171",
+          "pron": "야미르"
+        },
+        {
+          "word": "יָמִ֤יר",
+          "lemma": "מוּר",
+          "strong": "H4171",
+          "pron": "야미르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 27:10",
+        "leviticus 27:33"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאִם הָמֵ֨ר יָמִ֤יר",
+      "pron": "임 야미르 야미르",
+      "lemmas": [
+        "אִם",
+        "מוּר",
+        "מוּר"
+      ],
+      "words": [
+        {
+          "word": "וְאִם",
+          "lemma": "אִם",
+          "strong": "H518",
+          "pron": "임"
+        },
+        {
+          "word": "הָמֵ֨ר",
+          "lemma": "מוּר",
+          "strong": "H4171",
+          "pron": "야미르"
+        },
+        {
+          "word": "יָמִ֤יר",
+          "lemma": "מוּר",
+          "strong": "H4171",
+          "pron": "야미르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 27:10",
+        "leviticus 27:33"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

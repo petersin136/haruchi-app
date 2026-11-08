@@ -1,6 +1,6 @@
 {
   "lemma": "יָסַר",
-  "pron": "히밧루",
+  "pron": "르얏세라",
   "strong": "H3256",
   "posKo": "동사",
   "root": null,
@@ -8,14 +8,14 @@
     {
       "lemma": "יִסּוֹר",
       "strong": "H3250",
-      "pron": "",
+      "pron": "잇소르",
       "glossKo": "징계자"
     },
     {
       "lemma": "מוֹסֵר",
       "strong": "H4147",
-      "pron": "못로테모",
-      "glossKo": "그들의 결박"
+      "pron": "우못로트",
+      "glossKo": "결박"
     },
     {
       "lemma": "מוּסָר",
@@ -26,15 +26,193 @@
     {
       "lemma": "מֹסָר",
       "strong": "H4561",
-      "pron": "",
-      "glossKo": "훈계"
+      "pron": "웁모사람",
+      "glossKo": "그들의 훈계"
     }
   ],
   "defEn": "chastise; instruct",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 43,
   "byBook": {
-    "psalms": 9
+    "psalms": 9,
+    "jeremiah": 7,
+    "deuteronomy": 5,
+    "proverbs": 5,
+    "kings1": 4,
+    "hosea": 3,
+    "leviticus": 3,
+    "chronicles2": 2,
+    "isaiah": 2,
+    "chronicles1": 1,
+    "ezekiel": 1,
+    "job": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יִסַּ֤ר אֶתְכֶם֙",
+      "pron": "르얏세라 에트",
+      "lemmas": [
+        "יָסַר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "יִסַּ֤ר",
+          "lemma": "יָסַר",
+          "strong": "H3256",
+          "pron": "르얏세라"
+        },
+        {
+          "word": "אֶתְכֶם֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "leviticus 26:18",
+        "leviticus 26:28",
+        "deuteronomy 21:18",
+        "deuteronomy 22:18",
+        "kings1 12:11",
+        "kings1 12:14",
+        "chronicles2 10:11",
+        "chronicles2 10:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָבִ֗י יִסַּ֤ר",
+      "pron": "아비브 르얏세라",
+      "lemmas": [
+        "אָב",
+        "יָסַר"
+      ],
+      "words": [
+        {
+          "word": "אָבִ֗י",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        },
+        {
+          "word": "יִסַּ֤ר",
+          "lemma": "יָסַר",
+          "strong": "H3256",
+          "pron": "르얏세라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 12:11",
+        "kings1 12:14",
+        "chronicles2 10:11",
+        "chronicles2 10:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָבִ֗י יִסַּ֤ר אֶתְכֶם֙",
+      "pron": "아비브 르얏세라 에트",
+      "lemmas": [
+        "אָב",
+        "יָסַר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "אָבִ֗י",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        },
+        {
+          "word": "יִסַּ֤ר",
+          "lemma": "יָסַר",
+          "strong": "H3256",
+          "pron": "르얏세라"
+        },
+        {
+          "word": "אֶתְכֶם֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 12:11",
+        "kings1 12:14",
+        "chronicles2 10:11",
+        "chronicles2 10:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִסַּ֤ר אֶתְכֶם֙ בַּשּׁוֹטִ֔ים",
+      "pron": "르얏세라 에트 바쇼딤",
+      "lemmas": [
+        "יָסַר",
+        "אֵת",
+        "שׁוֹט"
+      ],
+      "words": [
+        {
+          "word": "יִסַּ֤ר",
+          "lemma": "יָסַר",
+          "strong": "H3256",
+          "pron": "르얏세라"
+        },
+        {
+          "word": "אֶתְכֶם֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "בַּשּׁוֹטִ֔ים",
+          "lemma": "שׁוֹט",
+          "strong": "H7752",
+          "pron": "바쇼딤"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 12:11",
+        "kings1 12:14",
+        "chronicles2 10:11",
+        "chronicles2 10:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יַסֹּ֣ר יִסְּרַ֣נִּי",
+      "pron": "르얏세라 르얏세라",
+      "lemmas": [
+        "יָסַר",
+        "יָסַר"
+      ],
+      "words": [
+        {
+          "word": "יַסֹּ֣ר",
+          "lemma": "יָסַר",
+          "strong": "H3256",
+          "pron": "르얏세라"
+        },
+        {
+          "word": "יִסְּרַ֣נִּי",
+          "lemma": "יָסַר",
+          "strong": "H3256",
+          "pron": "르얏세라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 118:18",
+        "jeremiah 31:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

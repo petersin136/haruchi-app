@@ -1,8 +1,8 @@
 {
   "lemma": "בָּרָה",
-  "pron": "바라",
+  "pron": "베루",
   "strong": "H1262",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "בָּר",
     "strong": "H1250",
@@ -16,27 +16,43 @@
       "glossKo": "곡식"
     },
     {
+      "lemma": "בַּר",
+      "strong": "H1251",
+      "pron": "바라",
+      "glossKo": "들(아람)"
+    },
+    {
+      "lemma": "בַּרְבֻּר",
+      "strong": "H1257",
+      "pron": "우바렙부림",
+      "glossKo": "살찐 새"
+    },
+    {
       "lemma": "בָּרוּת",
       "strong": "H1267",
-      "pron": "브바루티위",
+      "pron": "베바루티",
       "glossKo": "나의 양식"
     },
     {
       "lemma": "בְּרִי",
       "strong": "H1274",
-      "pron": "",
+      "pron": "비레아",
       "glossKo": "기름진"
     },
     {
       "lemma": "בִּרְיָה",
       "strong": "H1279",
-      "pron": "",
+      "pron": "아비레아",
       "glossKo": "음식"
     }
   ],
   "defEn": "select; feed; render clear",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 7,
+  "byBook": {
+    "samuel2": 5,
+    "lamentations": 1,
+    "samuel1": 1
+  },
   "phrases": []
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "בָּחוּר",
-  "pron": "우바후레",
+  "pron": "바후르",
   "strong": "H970",
   "posKo": "명사",
   "root": {
@@ -12,33 +12,178 @@
     {
       "lemma": "בָּחִיר",
       "strong": "H972",
-      "pron": "리베히리위",
-      "glossKo": "나를 택한 자"
+      "pron": "베히르",
+      "glossKo": "택한 자"
     },
     {
       "lemma": "בָּחַר",
       "strong": "H977",
-      "pron": "입하르",
+      "pron": "바하루",
       "glossKo": "택하다"
+    },
+    {
+      "lemma": "בְּחֻרוֹת",
+      "strong": "H979",
+      "pron": "밉베후라으브",
+      "glossKo": "그의 젊은 시절"
+    },
+    {
+      "lemma": "בַּחֻרִים",
+      "strong": "H980",
+      "pron": "바후림",
+      "glossKo": "바후림"
     },
     {
       "lemma": "יִבְחַר",
       "strong": "H2984",
-      "pron": "",
+      "pron": "브입하르",
       "glossKo": "입할"
     },
     {
       "lemma": "מִבְחוֹר",
       "strong": "H4004",
-      "pron": "",
+      "pron": "밉호르",
       "glossKo": "정선한"
     }
   ],
   "defEn": "selected; youth",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 46,
   "byBook": {
-    "psalms": 4
+    "jeremiah": 12,
+    "ezekiel": 5,
+    "isaiah": 5,
+    "lamentations": 5,
+    "psalms": 4,
+    "amos": 3,
+    "chronicles2": 2,
+    "samuel1": 2,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "joel": 1,
+    "judges": 1,
+    "kings2": 1,
+    "proverbs": 1,
+    "ruth": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בָּח֥וּר וּבְתוּלָ֖ה",
+      "pron": "바후르 베툴라",
+      "lemmas": [
+        "בָּחוּר",
+        "בְּתוּלָה"
+      ],
+      "words": [
+        {
+          "word": "בָּח֥וּר",
+          "lemma": "בָּחוּר",
+          "strong": "H970",
+          "pron": "바후르"
+        },
+        {
+          "word": "וּבְתוּלָ֖ה",
+          "lemma": "בְּתוּלָה",
+          "strong": "H1330",
+          "pron": "베툴라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles2 36:17",
+        "isaiah 62:5",
+        "jeremiah 51:22",
+        "ezekiel 9:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּח֥וּרֵי חֶ֖מֶד",
+      "pron": "바후르 헤멛",
+      "lemmas": [
+        "בָּחוּר",
+        "חֶמֶד"
+      ],
+      "words": [
+        {
+          "word": "בַּח֥וּרֵי",
+          "lemma": "בָּחוּר",
+          "strong": "H970",
+          "pron": "바후르"
+        },
+        {
+          "word": "חֶ֖מֶד",
+          "lemma": "חֶמֶד",
+          "strong": "H2531",
+          "pron": "헤멛"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 23:6",
+        "ezekiel 23:12",
+        "ezekiel 23:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַחוּרֶ֖יהָ בִּרְחֹבֹתֶ֑יהָ",
+      "pron": "바후르 바레홉",
+      "lemmas": [
+        "בָּחוּר",
+        "רְחֹב"
+      ],
+      "words": [
+        {
+          "word": "בַחוּרֶ֖יהָ",
+          "lemma": "בָּחוּר",
+          "strong": "H970",
+          "pron": "바후르"
+        },
+        {
+          "word": "בִּרְחֹבֹתֶ֑יהָ",
+          "lemma": "רְחֹב",
+          "strong": "H7339",
+          "pron": "바레홉"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 9:21",
+        "jeremiah 49:26",
+        "jeremiah 50:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל בָּח֥וּר",
+      "pron": "알 바후르",
+      "lemmas": [
+        "עַל",
+        "בָּחוּר"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "בָּח֥וּר",
+          "lemma": "בָּחוּר",
+          "strong": "H970",
+          "pron": "바후르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles2 36:17",
+        "isaiah 9:17",
+        "jeremiah 11:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

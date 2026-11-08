@@ -1,6 +1,6 @@
 {
   "lemma": "שַׂק",
-  "pron": "삭키위",
+  "pron": "사크",
   "strong": "H8242",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "מַשָּׁק",
       "strong": "H4944",
-      "pron": "",
+      "pron": "크맛샤크",
       "glossKo": "달리는 소리"
     },
     {
@@ -24,10 +24,191 @@
   ],
   "defEn": "mesh; run; sacking; bag",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 48,
   "byBook": {
+    "isaiah": 8,
     "genesis": 5,
-    "psalms": 3
+    "esther": 4,
+    "jeremiah": 4,
+    "kings1": 4,
+    "jonah": 3,
+    "kings2": 3,
+    "psalms": 3,
+    "ezekiel": 2,
+    "joel": 2,
+    "samuel2": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "daniel": 1,
+    "job": 1,
+    "joshua": 1,
+    "lamentations": 1,
+    "leviticus": 1,
+    "nehemiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְחִגְר֣וּ שַׂקִּ֔ים",
+      "pron": "하구림 사크",
+      "lemmas": [
+        "חָגַר",
+        "שַׂק"
+      ],
+      "words": [
+        {
+          "word": "וְחִגְר֣וּ",
+          "lemma": "חָגַר",
+          "strong": "H2296",
+          "pron": "하구림"
+        },
+        {
+          "word": "שַׂקִּ֔ים",
+          "lemma": "שַׂק",
+          "strong": "H8242",
+          "pron": "사크"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "samuel2 3:31",
+        "kings1 20:32",
+        "isaiah 15:3",
+        "isaiah 22:12",
+        "jeremiah 4:8",
+        "jeremiah 6:26",
+        "jeremiah 49:3",
+        "lamentations 2:10",
+        "ezekiel 7:18",
+        "ezekiel 27:31",
+        "joel 1:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שַׂ֥ק עַל",
+      "pron": "사크 알",
+      "lemmas": [
+        "שַׂק",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "שַׂ֥ק",
+          "lemma": "שַׂק",
+          "strong": "H8242",
+          "pron": "사크"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "kings1 21:27",
+        "kings2 6:30",
+        "chronicles1 21:16",
+        "esther 4:4",
+        "isaiah 15:3",
+        "isaiah 20:2",
+        "joel 1:8",
+        "amos 8:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּתְכַּ֣ס בַּשָּׂ֔ק",
+      "pron": "바예쿳수 사크",
+      "lemmas": [
+        "כָּסָה",
+        "שַׂק"
+      ],
+      "words": [
+        {
+          "word": "וַיִּתְכַּ֣ס",
+          "lemma": "כָּסָה",
+          "strong": "H3680",
+          "pron": "바예쿳수"
+        },
+        {
+          "word": "בַּשָּׂ֔ק",
+          "lemma": "שַׂק",
+          "strong": "H8242",
+          "pron": "사크"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "kings2 19:1",
+        "kings2 19:2",
+        "chronicles1 21:16",
+        "isaiah 37:1",
+        "isaiah 37:2",
+        "jonah 3:6",
+        "jonah 3:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שַׂ֖ק וָאֵ֑פֶר",
+      "pron": "사크 바에페르",
+      "lemmas": [
+        "שַׂק",
+        "אֵפֶר"
+      ],
+      "words": [
+        {
+          "word": "שַׂ֖ק",
+          "lemma": "שַׂק",
+          "strong": "H8242",
+          "pron": "사크"
+        },
+        {
+          "word": "וָאֵ֑פֶר",
+          "lemma": "אֵפֶר",
+          "strong": "H665",
+          "pron": "바에페르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "esther 4:1",
+        "esther 4:3",
+        "isaiah 58:5",
+        "daniel 9:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּלְב֥וּשׁ שָֽׂק",
+      "pron": "레부쇼 사크",
+      "lemmas": [
+        "לְבוּשׁ",
+        "שַׂק"
+      ],
+      "words": [
+        {
+          "word": "בִּלְב֥וּשׁ",
+          "lemma": "לְבוּשׁ",
+          "strong": "H3830",
+          "pron": "레부쇼"
+        },
+        {
+          "word": "שָֽׂק",
+          "lemma": "שַׂק",
+          "strong": "H8242",
+          "pron": "사크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 4:2",
+        "psalms 35:13",
+        "psalms 69:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

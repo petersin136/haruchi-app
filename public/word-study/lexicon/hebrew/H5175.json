@@ -1,6 +1,6 @@
 {
   "lemma": "נָחָשׁ",
-  "pron": "나하쉬",
+  "pron": "브아나하쉬",
   "strong": "H5175",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "נָחוּשׁ",
       "strong": "H5153",
-      "pron": "",
+      "pron": "나후쉬",
       "glossKo": "구리빛의"
     },
     {
@@ -24,28 +24,156 @@
     {
       "lemma": "נַחַשׁ",
       "strong": "H5173",
-      "pron": "",
+      "pron": "나하쉬",
       "glossKo": "주술"
     },
     {
       "lemma": "נָחָשׁ",
       "strong": "H5176",
-      "pron": "",
+      "pron": "나하쉬",
       "glossKo": "나하스"
     },
     {
       "lemma": "נַחְשׁוֹן",
       "strong": "H5177",
-      "pron": "",
+      "pron": "나헤숀",
       "glossKo": "나손"
     }
   ],
   "defEn": "snake",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 31,
   "byBook": {
     "genesis": 6,
-    "psalms": 2
+    "numbers": 5,
+    "isaiah": 4,
+    "amos": 2,
+    "ecclesiastes": 2,
+    "exodus": 2,
+    "jeremiah": 2,
+    "proverbs": 2,
+    "psalms": 2,
+    "deuteronomy": 1,
+    "job": 1,
+    "kings2": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נָשַׁ֤ךְ הַנָּחָשׁ֙",
+      "pron": "아노셰크 브아나하쉬",
+      "lemmas": [
+        "נָשַׁךְ",
+        "נָחָשׁ"
+      ],
+      "words": [
+        {
+          "word": "נָשַׁ֤ךְ",
+          "lemma": "נָשַׁךְ",
+          "strong": "H5391",
+          "pron": "아노셰크"
+        },
+        {
+          "word": "הַנָּחָשׁ֙",
+          "lemma": "נָחָשׁ",
+          "strong": "H5175",
+          "pron": "브아나하쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 21:9",
+        "ecclesiastes 10:8",
+        "ecclesiastes 10:11",
+        "amos 5:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל הַנָּחָ֑שׁ",
+      "pron": "엘 브아나하쉬",
+      "lemmas": [
+        "אֵל",
+        "נָחָשׁ"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "הַנָּחָ֑שׁ",
+          "lemma": "נָחָשׁ",
+          "strong": "H5175",
+          "pron": "브아나하쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 3:2",
+        "genesis 3:14",
+        "numbers 21:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֚ת הַנְּחָשִׁ֣ים",
+      "pron": "에트 브아나하쉬",
+      "lemmas": [
+        "אֵת",
+        "נָחָשׁ"
+      ],
+      "words": [
+        {
+          "word": "אֵ֚ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַנְּחָשִׁ֣ים",
+          "lemma": "נָחָשׁ",
+          "strong": "H5175",
+          "pron": "브아나하쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 21:6",
+        "numbers 21:7",
+        "amos 9:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְחַ֣שׁ נְחֹ֔שֶׁת",
+      "pron": "브아나하쉬 네호셰트",
+      "lemmas": [
+        "נָחָשׁ",
+        "נְחֹשֶׁת"
+      ],
+      "words": [
+        {
+          "word": "נְחַ֣שׁ",
+          "lemma": "נָחָשׁ",
+          "strong": "H5175",
+          "pron": "브아나하쉬"
+        },
+        {
+          "word": "נְחֹ֔שֶׁת",
+          "lemma": "נְחֹשֶׁת",
+          "strong": "H5178",
+          "pron": "네호셰트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 21:9",
+        "kings2 18:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

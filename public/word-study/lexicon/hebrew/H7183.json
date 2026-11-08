@@ -12,21 +12,55 @@
     {
       "lemma": "קָשַׁב",
       "strong": "H7181",
-      "pron": "하케시바",
+      "pron": "르하케십",
       "glossKo": "귀 기울이다"
     },
     {
       "lemma": "קֶשֶׁב",
       "strong": "H7182",
-      "pron": "",
+      "pron": "카솁",
       "glossKo": "귀 기울임"
     }
   ],
   "defEn": "hearkening",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 5,
   "byBook": {
+    "chronicles2": 2,
+    "nehemiah": 2,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְאָזְנֶ֖יךָ קַשֻּׁב֑וֹת",
+      "pron": "베앗네헴 캇슈보트",
+      "lemmas": [
+        "אֹזֶן",
+        "קַשָּׁב"
+      ],
+      "words": [
+        {
+          "word": "וְאָזְנֶ֖יךָ",
+          "lemma": "אֹזֶן",
+          "strong": "H241",
+          "pron": "베앗네헴"
+        },
+        {
+          "word": "קַשֻּׁב֑וֹת",
+          "lemma": "קַשָּׁב",
+          "strong": "H7183",
+          "pron": "캇슈보트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "chronicles2 6:40",
+        "chronicles2 7:15",
+        "nehemiah 1:6",
+        "nehemiah 1:11",
+        "psalms 130:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

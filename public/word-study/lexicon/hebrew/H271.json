@@ -2,7 +2,7 @@
   "lemma": "אָחָז",
   "pron": "아핫",
   "strong": "H271",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אָחַז",
     "strong": "H270",
@@ -12,37 +12,207 @@
     {
       "lemma": "אָחַז",
       "strong": "H270",
-      "pron": "아하자타므",
-      "glossKo": "그들에게 잡다"
+      "pron": "네에핫",
+      "glossKo": "잡다"
     },
     {
       "lemma": "אֲחֻזָּה",
       "strong": "H272",
-      "pron": "바아훗자트카",
-      "glossKo": "너의 소유"
+      "pron": "라아훗자트",
+      "glossKo": "소유"
     },
     {
       "lemma": "אַחְזַי",
       "strong": "H273",
-      "pron": "",
+      "pron": "아헤자이",
       "glossKo": "아하시야"
     },
     {
       "lemma": "אֲחַזְיָה",
       "strong": "H274",
-      "pron": "",
+      "pron": "아핫아후",
       "glossKo": "아하스(왕)"
     },
     {
       "lemma": "אֲחֻזָּם",
       "strong": "H275",
-      "pron": "",
+      "pron": "아훗잠",
       "glossKo": "아하시야(왕)"
     }
   ],
   "defEn": "Achaz",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 41,
+  "byBook": {
+    "kings2": 19,
+    "chronicles2": 9,
+    "isaiah": 7,
+    "chronicles1": 4,
+    "hosea": 1,
+    "micah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "הַמֶּ֨לֶךְ אָחָ֜ז",
+      "pron": "멜레크 아핫",
+      "lemmas": [
+        "מֶלֶךְ",
+        "אָחָז"
+      ],
+      "words": [
+        {
+          "word": "הַמֶּ֨לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "אָחָ֜ז",
+          "lemma": "אָחָז",
+          "strong": "H271",
+          "pron": "아핫"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "kings2 16:10",
+        "kings2 16:11",
+        "kings2 16:15",
+        "kings2 16:16",
+        "kings2 16:17",
+        "chronicles2 28:16",
+        "chronicles2 28:22",
+        "chronicles2 29:19",
+        "isaiah 14:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָחָ֜ז אֶת",
+      "pron": "아핫 에트",
+      "lemmas": [
+        "אָחָז",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "אָחָ֜ז",
+          "lemma": "אָחָז",
+          "strong": "H271",
+          "pron": "아핫"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings2 16:8",
+        "kings2 16:15",
+        "kings2 16:17",
+        "chronicles2 28:21",
+        "chronicles2 28:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָחָ֥ז בְּנ֖וֹ",
+      "pron": "아핫 바님",
+      "lemmas": [
+        "אָחָז",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "אָחָ֥ז",
+          "lemma": "אָחָז",
+          "strong": "H271",
+          "pron": "아핫"
+        },
+        {
+          "word": "בְּנ֖וֹ",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings2 15:38",
+        "kings2 16:1",
+        "chronicles1 3:13",
+        "chronicles2 27:9",
+        "isaiah 7:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָחָ֥ז יְחִזְקִיָּ֖ה",
+      "pron": "아핫 힛키아후",
+      "lemmas": [
+        "אָחָז",
+        "חִזְקִיָּה"
+      ],
+      "words": [
+        {
+          "word": "אָחָ֥ז",
+          "lemma": "אָחָז",
+          "strong": "H271",
+          "pron": "아핫"
+        },
+        {
+          "word": "יְחִזְקִיָּ֖ה",
+          "lemma": "חִזְקִיָּה",
+          "strong": "H2396",
+          "pron": "힛키아후"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 1:1",
+        "hosea 1:1",
+        "micah 1:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָחָ֥ז יְחִזְקִיָּ֖ה מַלְכֵ֣י",
+      "pron": "아핫 힛키아후 멜레크",
+      "lemmas": [
+        "אָחָז",
+        "חִזְקִיָּה",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "אָחָ֥ז",
+          "lemma": "אָחָז",
+          "strong": "H271",
+          "pron": "아핫"
+        },
+        {
+          "word": "יְחִזְקִיָּ֖ה",
+          "lemma": "חִזְקִיָּה",
+          "strong": "H2396",
+          "pron": "힛키아후"
+        },
+        {
+          "word": "מַלְכֵ֣י",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 1:1",
+        "hosea 1:1",
+        "micah 1:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

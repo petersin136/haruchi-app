@@ -2,7 +2,7 @@
   "lemma": "הֵן",
   "pron": "헨",
   "strong": "H2006",
-  "posKo": "",
+  "posKo": "접속사",
   "root": {
     "lemma": "הֵן",
     "strong": "H2005",
@@ -24,13 +24,161 @@
     {
       "lemma": "לָהֵן",
       "strong": "H3860",
-      "pron": "",
+      "pron": "하라헨",
       "glossKo": "그러므로"
     }
   ],
   "defEn": "lo!; there; less; whether; but; if",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 18,
+  "byBook": {
+    "daniel": 11,
+    "ezra": 7
+  },
+  "phrases": [
+    {
+      "hebrew": "וְהֵ֨ן חֶלְמָ֤א",
+      "pron": "헨 헬마",
+      "lemmas": [
+        "הֵן",
+        "חֵלֶם"
+      ],
+      "words": [
+        {
+          "word": "וְהֵ֨ן",
+          "lemma": "הֵן",
+          "strong": "H2006",
+          "pron": "헨"
+        },
+        {
+          "word": "חֶלְמָ֤א",
+          "lemma": "חֵלֶם",
+          "strong": "H2493",
+          "pron": "헬마"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 2:6",
+        "daniel 2:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּ֠י הֵ֣ן",
+      "pron": "드흐브 헨",
+      "lemmas": [
+        "דִּי",
+        "הֵן"
+      ],
+      "words": [
+        {
+          "word": "דִּ֠י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "הֵ֣ן",
+          "lemma": "הֵן",
+          "strong": "H2006",
+          "pron": "헨"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 4:13",
+        "ezra 4:16",
+        "daniel 2:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֵ֣ן אִיתַ֗י",
+      "pron": "헨 이타이",
+      "lemmas": [
+        "הֵן",
+        "אִיתַי"
+      ],
+      "words": [
+        {
+          "word": "הֵ֣ן",
+          "lemma": "הֵן",
+          "strong": "H2006",
+          "pron": "헨"
+        },
+        {
+          "word": "אִיתַ֗י",
+          "lemma": "אִיתַי",
+          "strong": "H383",
+          "pron": "이타이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 5:17",
+        "daniel 3:15",
+        "daniel 3:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֵ֣ן לָ֤א",
+      "pron": "헨 라",
+      "lemmas": [
+        "הֵן",
+        "לָא"
+      ],
+      "words": [
+        {
+          "word": "הֵ֣ן",
+          "lemma": "הֵן",
+          "strong": "H2006",
+          "pron": "헨"
+        },
+        {
+          "word": "לָ֤א",
+          "lemma": "לָא",
+          "strong": "H3809",
+          "pron": "라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:5",
+        "daniel 3:15",
+        "daniel 3:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּכְעַ֞ן הֵ֧ן",
+      "pron": "케안 헨",
+      "lemmas": [
+        "כְּעַן",
+        "הֵן"
+      ],
+      "words": [
+        {
+          "word": "וּכְעַ֞ן",
+          "lemma": "כְּעַן",
+          "strong": "H3705",
+          "pron": "케안"
+        },
+        {
+          "word": "הֵ֧ן",
+          "lemma": "הֵן",
+          "strong": "H2006",
+          "pron": "헨"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 5:17",
+        "daniel 3:15",
+        "daniel 5:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

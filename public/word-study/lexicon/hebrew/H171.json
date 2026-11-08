@@ -1,8 +1,8 @@
 {
   "lemma": "אׇהֳלִיאָב",
-  "pron": "으홀리압",
+  "pron": "아홀리압",
   "strong": "H171",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אֹהֶל",
     "strong": "H168",
@@ -18,19 +18,19 @@
     {
       "lemma": "אֹהֶל",
       "strong": "H168",
-      "pron": "브아홀레카",
-      "glossKo": "너의 장막"
+      "pron": "오헬",
+      "glossKo": "장막"
     },
     {
       "lemma": "אֹהֶל",
       "strong": "H169",
-      "pron": "",
+      "pron": "바오헬",
       "glossKo": "오헬"
     },
     {
       "lemma": "אׇהֳלָה",
       "strong": "H170",
-      "pron": "",
+      "pron": "아홀라",
       "glossKo": "오홀라"
     },
     {
@@ -42,7 +42,75 @@
   ],
   "defEn": "Oholiab",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "exodus": 5
+  },
+  "phrases": [
+    {
+      "hebrew": "אָהֳלִיאָ֞ב בֶּן",
+      "pron": "아홀리압 바님",
+      "lemmas": [
+        "אׇהֳלִיאָב",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "אָהֳלִיאָ֞ב",
+          "lemma": "אׇהֳלִיאָב",
+          "strong": "H171",
+          "pron": "아홀리압"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 31:6",
+        "exodus 35:34",
+        "exodus 38:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָהֳלִיאָ֞ב בֶּן אֲחִֽיסָמָךְ֙",
+      "pron": "아홀리압 바님 아히사마크",
+      "lemmas": [
+        "אׇהֳלִיאָב",
+        "בֵּן",
+        "אֲחִיסָמָךְ"
+      ],
+      "words": [
+        {
+          "word": "אָהֳלִיאָ֞ב",
+          "lemma": "אׇהֳלִיאָב",
+          "strong": "H171",
+          "pron": "아홀리압"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "אֲחִֽיסָמָךְ֙",
+          "lemma": "אֲחִיסָמָךְ",
+          "strong": "H294",
+          "pron": "아히사마크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 31:6",
+        "exodus 35:34",
+        "exodus 38:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

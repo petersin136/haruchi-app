@@ -1,20 +1,26 @@
 {
   "lemma": "גֶּחֶל",
-  "pron": "게할림",
+  "pron": "가할레",
   "strong": "H1513",
   "posKo": "명사",
   "root": null,
   "family": [],
   "defEn": "ember",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 18,
   "byBook": {
-    "psalms": 5
+    "psalms": 5,
+    "ezekiel": 3,
+    "proverbs": 3,
+    "samuel2": 3,
+    "isaiah": 2,
+    "job": 1,
+    "leviticus": 1
   },
   "phrases": [
     {
       "hebrew": "וְגַֽחֲלֵי אֵֽשׁ",
-      "pron": "게할림 에쉬",
+      "pron": "가할레 에쉬",
       "lemmas": [
         "גֶּחֶל",
         "אֵשׁ"
@@ -24,7 +30,7 @@
           "word": "וְגַֽחֲלֵי",
           "lemma": "גֶּחֶל",
           "strong": "H1513",
-          "pron": "게할림"
+          "pron": "가할레"
         },
         {
           "word": "אֵֽשׁ",
@@ -33,11 +39,45 @@
           "pron": "에쉬"
         }
       ],
-      "count": 3,
+      "count": 7,
       "refs": [
+        "leviticus 16:12",
+        "samuel2 22:13",
         "psalms 18:12",
         "psalms 18:13",
-        "psalms 140:10"
+        "psalms 140:10",
+        "ezekiel 1:13",
+        "ezekiel 10:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲלֵיהֶ֗ם גֶּֽחָ֫לִ֥ים",
+      "pron": "알 가할레",
+      "lemmas": [
+        "עַל",
+        "גֶּחֶל"
+      ],
+      "words": [
+        {
+          "word": "עֲלֵיהֶ֗ם",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "גֶּֽחָ֫לִ֥ים",
+          "lemma": "גֶּחֶל",
+          "strong": "H1513",
+          "pron": "가할레"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 140:10",
+        "proverbs 6:28",
+        "isaiah 44:19",
+        "ezekiel 24:11"
       ],
       "glossKo": ""
     }

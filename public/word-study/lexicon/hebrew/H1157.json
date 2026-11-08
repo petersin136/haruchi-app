@@ -1,8 +1,8 @@
 {
   "lemma": "בְּעַד",
-  "pron": "바아디위",
+  "pron": "바아도",
   "strong": "H1157",
-  "posKo": "접미대명사",
+  "posKo": "전치사",
   "root": {
     "lemma": "עַד",
     "strong": "H5704",
@@ -18,22 +18,226 @@
     {
       "lemma": "עַד",
       "strong": "H5705",
-      "pron": "",
+      "pron": "앋",
       "glossKo": "~까지(아람)"
     },
     {
       "lemma": "עֲדֶן",
       "strong": "H5728",
-      "pron": "",
+      "pron": "아데나",
       "glossKo": "지금까지"
     }
   ],
   "defEn": "in up to; over against; at; beside; among; behind; for",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 103,
   "byBook": {
+    "kings2": 12,
+    "leviticus": 12,
+    "job": 11,
+    "jeremiah": 10,
+    "samuel1": 7,
+    "isaiah": 5,
+    "judges": 5,
+    "samuel2": 5,
+    "ezekiel": 4,
     "genesis": 4,
-    "psalms": 4
+    "proverbs": 4,
+    "psalms": 4,
+    "chronicles1": 3,
+    "chronicles2": 3,
+    "songofsolomon": 3,
+    "exodus": 2,
+    "joel": 2,
+    "deuteronomy": 1,
+    "jonah": 1,
+    "joshua": 1,
+    "kings1": 1,
+    "lamentations": 1,
+    "numbers": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בַּעֲד֖וֹ וּבְעַ֥ד",
+      "pron": "바아도 바아도",
+      "lemmas": [
+        "בְּעַד",
+        "בְּעַד"
+      ],
+      "words": [
+        {
+          "word": "בַּעֲד֖וֹ",
+          "lemma": "בְּעַד",
+          "strong": "H1157",
+          "pron": "바아도"
+        },
+        {
+          "word": "וּבְעַ֥ד",
+          "lemma": "בְּעַד",
+          "strong": "H1157",
+          "pron": "바아도"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "leviticus 9:7",
+        "leviticus 16:6",
+        "leviticus 16:11",
+        "leviticus 16:17",
+        "leviticus 16:24",
+        "kings2 4:4",
+        "kings2 4:5",
+        "kings2 22:13",
+        "chronicles2 34:21",
+        "job 1:10",
+        "ezekiel 45:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיִתְפַּלֵּ֥ל בַּֽעַדְךָ֖",
+      "pron": "브이텝팔렐 바아도",
+      "lemmas": [
+        "פָּלַל",
+        "בְּעַד"
+      ],
+      "words": [
+        {
+          "word": "וְיִתְפַּלֵּ֥ל",
+          "lemma": "פָּלַל",
+          "strong": "H6419",
+          "pron": "브이텝팔렐"
+        },
+        {
+          "word": "בַּֽעַדְךָ֖",
+          "lemma": "בְּעַד",
+          "strong": "H1157",
+          "pron": "바아도"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 20:7",
+        "samuel1 7:5",
+        "samuel1 12:19",
+        "samuel1 12:23",
+        "kings1 13:6",
+        "job 42:10",
+        "psalms 72:15",
+        "jeremiah 7:16",
+        "jeremiah 11:14",
+        "jeremiah 14:11",
+        "jeremiah 29:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְכִפֶּ֥ר בַּעֲד֖וֹ וּבְעַ֥ד",
+      "pron": "브카파렛타 바아도 바아도",
+      "lemmas": [
+        "כָּפַר",
+        "בְּעַד",
+        "בְּעַד"
+      ],
+      "words": [
+        {
+          "word": "וְכִפֶּ֥ר",
+          "lemma": "כָּפַר",
+          "strong": "H3722",
+          "pron": "브카파렛타"
+        },
+        {
+          "word": "בַּעֲד֖וֹ",
+          "lemma": "בְּעַד",
+          "strong": "H1157",
+          "pron": "바아도"
+        },
+        {
+          "word": "וּבְעַ֥ד",
+          "lemma": "בְּעַד",
+          "strong": "H1157",
+          "pron": "바아도"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "leviticus 9:7",
+        "leviticus 16:6",
+        "leviticus 16:11",
+        "leviticus 16:17",
+        "leviticus 16:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּעַד עַמֵּ֔נוּ",
+      "pron": "바아도 암",
+      "lemmas": [
+        "בְּעַד",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "בְּעַד",
+          "lemma": "בְּעַד",
+          "strong": "H1157",
+          "pron": "바아도"
+        },
+        {
+          "word": "עַמֵּ֔נוּ",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "leviticus 9:7",
+        "leviticus 16:24",
+        "numbers 21:7",
+        "samuel2 10:12",
+        "kings2 22:13",
+        "chronicles1 19:13",
+        "jeremiah 7:16",
+        "jeremiah 11:14",
+        "jeremiah 14:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְכִפֶּ֥ר בַּעֲד֖וֹ",
+      "pron": "브카파렛타 바아도",
+      "lemmas": [
+        "כָּפַר",
+        "בְּעַד"
+      ],
+      "words": [
+        {
+          "word": "וְכִפֶּ֥ר",
+          "lemma": "כָּפַר",
+          "strong": "H3722",
+          "pron": "브카파렛타"
+        },
+        {
+          "word": "בַּעֲד֖וֹ",
+          "lemma": "בְּעַד",
+          "strong": "H1157",
+          "pron": "바아도"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 32:30",
+        "leviticus 9:7",
+        "leviticus 16:6",
+        "leviticus 16:11",
+        "leviticus 16:17",
+        "leviticus 16:24",
+        "chronicles2 30:18",
+        "ezekiel 45:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "שָׂכַל",
-  "pron": "하섹킬루",
+  "pron": "르하섹킬",
   "strong": "H7919",
   "posKo": "동사",
   "root": null,
@@ -14,7 +14,7 @@
     {
       "lemma": "שְׂכַל",
       "strong": "H7920",
-      "pron": "",
+      "pron": "미셋탁칼",
       "glossKo": "쉬다(아람)"
     },
     {
@@ -26,10 +26,174 @@
   ],
   "defEn": "be; make; act; circumspect; intelligent",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 63,
   "byBook": {
+    "proverbs": 13,
     "psalms": 12,
-    "genesis": 2
+    "daniel": 9,
+    "jeremiah": 6,
+    "samuel1": 4,
+    "isaiah": 3,
+    "job": 3,
+    "deuteronomy": 2,
+    "genesis": 2,
+    "joshua": 2,
+    "nehemiah": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "kings1": 1,
+    "kings2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹ֣א הִשְׂכִּ֔ילוּ",
+      "pron": "로 르하섹킬",
+      "lemmas": [
+        "לֹא",
+        "שָׂכַל"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "הִשְׂכִּ֔ילוּ",
+          "lemma": "שָׂכַל",
+          "strong": "H7919",
+          "pron": "르하섹킬"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "job 34:27",
+        "job 34:35",
+        "psalms 106:7",
+        "jeremiah 10:21",
+        "jeremiah 20:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תַּשְׂכִּ֔יל בְּכֹ֖ל",
+      "pron": "르하섹킬 칼",
+      "lemmas": [
+        "שָׂכַל",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "תַּשְׂכִּ֔יל",
+          "lemma": "שָׂכַל",
+          "strong": "H7919",
+          "pron": "르하섹킬"
+        },
+        {
+          "word": "בְּכֹ֖ל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "joshua 1:7",
+        "chronicles1 28:19",
+        "jeremiah 10:21",
+        "daniel 1:4",
+        "daniel 1:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְמַ֣עַן תַּשְׂכִּ֔ילוּ",
+      "pron": "레마안 르하섹킬",
+      "lemmas": [
+        "מַעַן",
+        "שָׂכַל"
+      ],
+      "words": [
+        {
+          "word": "לְמַ֣עַן",
+          "lemma": "מַעַן",
+          "strong": "H4616",
+          "pron": "레마안"
+        },
+        {
+          "word": "תַּשְׂכִּ֔ילוּ",
+          "lemma": "שָׂכַל",
+          "strong": "H7919",
+          "pron": "르하섹킬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 29:9",
+        "joshua 1:7",
+        "kings1 2:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "צֵאתָ֗ם שָׂכַ֤ל",
+      "pron": "바토체 르하섹킬",
+      "lemmas": [
+        "יָצָא",
+        "שָׂכַל"
+      ],
+      "words": [
+        {
+          "word": "צֵאתָ֗ם",
+          "lemma": "יָצָא",
+          "strong": "H3318",
+          "pron": "바토체"
+        },
+        {
+          "word": "שָׂכַ֤ל",
+          "lemma": "שָׂכַל",
+          "strong": "H7919",
+          "pron": "르하섹킬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 18:30",
+        "kings2 18:7",
+        "daniel 9:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שִׂכֵּל֙ אֶת",
+      "pron": "르하섹킬 에트",
+      "lemmas": [
+        "שָׂכַל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "שִׂכֵּל֙",
+          "lemma": "שָׂכַל",
+          "strong": "H7919",
+          "pron": "르하섹킬"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 48:14",
+        "deuteronomy 29:9",
+        "kings1 2:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

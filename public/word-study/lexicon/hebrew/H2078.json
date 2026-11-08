@@ -1,6 +1,6 @@
 {
   "lemma": "זֶבַח",
-  "pron": "우크제바흐",
+  "pron": "제바흐",
   "strong": "H2078",
   "posKo": "명사",
   "root": {
@@ -12,15 +12,180 @@
     {
       "lemma": "זֶבַח",
       "strong": "H2077",
-      "pron": "집헤",
+      "pron": "제바흐",
       "glossKo": "제물"
     }
   ],
   "defEn": "Zebach",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 12,
   "byBook": {
+    "judges": 11,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "זֶ֥בַח וְצַלְמֻנָּ֖ע",
+      "pron": "제바흐 브찰문나",
+      "lemmas": [
+        "זֶבַח",
+        "צַלְמֻנָּע"
+      ],
+      "words": [
+        {
+          "word": "זֶ֥בַח",
+          "lemma": "זֶבַח",
+          "strong": "H2078",
+          "pron": "제바흐"
+        },
+        {
+          "word": "וְצַלְמֻנָּ֖ע",
+          "lemma": "צַלְמֻנָּע",
+          "strong": "H6759",
+          "pron": "브찰문나"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "judges 8:5",
+        "judges 8:6",
+        "judges 8:10",
+        "judges 8:12",
+        "judges 8:15",
+        "judges 8:21",
+        "psalms 83:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת זֶ֥בַח",
+      "pron": "에트 제바흐",
+      "lemmas": [
+        "אֵת",
+        "זֶבַח"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "זֶ֥בַח",
+          "lemma": "זֶבַח",
+          "strong": "H2078",
+          "pron": "제바흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 8:7",
+        "judges 8:12",
+        "judges 8:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת זֶ֥בַח וְאֶת",
+      "pron": "에트 제바흐 에트",
+      "lemmas": [
+        "אֵת",
+        "זֶבַח",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "זֶ֥בַח",
+          "lemma": "זֶבַח",
+          "strong": "H2078",
+          "pron": "제바흐"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 8:7",
+        "judges 8:12",
+        "judges 8:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זֶ֥בַח וְאֶת",
+      "pron": "제바흐 에트",
+      "lemmas": [
+        "זֶבַח",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "זֶ֥בַח",
+          "lemma": "זֶבַח",
+          "strong": "H2078",
+          "pron": "제바흐"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 8:7",
+        "judges 8:12",
+        "judges 8:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זֶ֥בַח וְאֶת צַלְמֻנָּ֖ע",
+      "pron": "제바흐 에트 브찰문나",
+      "lemmas": [
+        "זֶבַח",
+        "אֵת",
+        "צַלְמֻנָּע"
+      ],
+      "words": [
+        {
+          "word": "זֶ֥בַח",
+          "lemma": "זֶבַח",
+          "strong": "H2078",
+          "pron": "제바흐"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "צַלְמֻנָּ֖ע",
+          "lemma": "צַלְמֻנָּע",
+          "strong": "H6759",
+          "pron": "브찰문나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 8:7",
+        "judges 8:12",
+        "judges 8:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

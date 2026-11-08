@@ -1,6 +1,6 @@
 {
   "lemma": "אָדוֹן",
-  "pron": "아도나이누",
+  "pron": "아도나이",
   "strong": "H113",
   "posKo": "명사",
   "root": null,
@@ -8,51 +8,112 @@
     {
       "lemma": "אַדּוֹן",
       "strong": "H114",
-      "pron": "",
+      "pron": "앋돈",
       "glossKo": "아도람"
     },
     {
       "lemma": "אֶדֶן",
       "strong": "H134",
-      "pron": "",
+      "pron": "아도나이",
       "glossKo": "받침"
     },
     {
       "lemma": "אֲדֹנָי",
       "strong": "H136",
-      "pron": "아도나위",
+      "pron": "아도나이",
       "glossKo": "나의 주"
     },
     {
       "lemma": "אֲדֹנִי־בֶזֶק",
       "strong": "H137",
-      "pron": "",
+      "pron": "아도나이",
       "glossKo": "아도니베섹"
     },
     {
       "lemma": "אֲדֹנִיָּה",
       "strong": "H138",
-      "pron": "",
+      "pron": "아도니아",
       "glossKo": "아도니야"
     },
     {
       "lemma": "אֲדֹנִי־צֶדֶק",
       "strong": "H139",
-      "pron": "",
+      "pron": "아도나이",
       "glossKo": "아도니세덱"
     }
   ],
   "defEn": "sovereign; controller",
   "defKo": "",
-  "countOT": 84,
+  "countOT": 329,
   "byBook": {
     "genesis": 72,
-    "psalms": 12
+    "samuel2": 52,
+    "samuel1": 38,
+    "kings2": 37,
+    "kings1": 34,
+    "isaiah": 16,
+    "psalms": 12,
+    "exodus": 10,
+    "judges": 7,
+    "zechariah": 7,
+    "daniel": 6,
+    "jeremiah": 6,
+    "numbers": 6,
+    "chronicles1": 5,
+    "chronicles2": 4,
+    "proverbs": 4,
+    "deuteronomy": 3,
+    "malachi": 3,
+    "amos": 1,
+    "ezra": 1,
+    "job": 1,
+    "micah": 1,
+    "nehemiah": 1,
+    "ruth": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "אֶל אֲדֹנִ֑י",
-      "pron": "엘레모 아도나이누",
+      "hebrew": "אֲדֹנִ֣י הַמֶּ֔לֶךְ",
+      "pron": "아도나이 멜레크",
+      "lemmas": [
+        "אָדוֹן",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "אֲדֹנִ֣י",
+          "lemma": "אָדוֹן",
+          "strong": "H113",
+          "pron": "아도나이"
+        },
+        {
+          "word": "הַמֶּ֔לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 67,
+      "refs": [
+        "genesis 40:1",
+        "samuel1 24:8",
+        "samuel1 26:15",
+        "samuel1 26:17",
+        "samuel1 26:19",
+        "samuel1 29:8",
+        "samuel2 3:21",
+        "samuel2 4:8",
+        "samuel2 9:11",
+        "samuel2 13:33",
+        "samuel2 14:9",
+        "samuel2 14:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל אֲדֹנִ֖י",
+      "pron": "엘 아도나이",
       "lemmas": [
         "אֵל",
         "אָדוֹן"
@@ -62,151 +123,141 @@
           "word": "אֶל",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
         },
         {
-          "word": "אֲדֹנִ֑י",
+          "word": "אֲדֹנִ֖י",
           "lemma": "אָדוֹן",
           "strong": "H113",
-          "pron": "아도나이누"
+          "pron": "아도나이"
         }
       ],
-      "count": 6,
+      "count": 31,
       "refs": [
         "genesis 24:39",
         "genesis 33:13",
         "genesis 33:14",
         "genesis 44:20",
         "genesis 44:22",
-        "genesis 47:18"
+        "genesis 47:18",
+        "deuteronomy 23:15",
+        "judges 19:11",
+        "judges 19:12",
+        "samuel1 20:38",
+        "samuel1 25:17",
+        "samuel1 25:26"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֲדֹנִ֣י אַבְרָהָ֔ם",
-      "pron": "아도나이누 아브라함",
+      "hebrew": "אֱמֹ֥ר לַאדֹנֶ֖יךָ",
+      "pron": "바요메르 아도나이",
       "lemmas": [
-        "אָדוֹן",
-        "אַבְרָהָם"
-      ],
-      "words": [
-        {
-          "word": "אֲדֹנִ֣י",
-          "lemma": "אָדוֹן",
-          "strong": "H113",
-          "pron": "아도나이누"
-        },
-        {
-          "word": "אַבְרָהָ֔ם",
-          "lemma": "אַבְרָהָם",
-          "strong": "H85",
-          "pron": "아브라함"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "genesis 24:12",
-        "genesis 24:27",
-        "genesis 24:42",
-        "genesis 24:48"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֱלֹהֵי֙ אֲדֹנִ֣י",
-      "pron": "베엘로힘 아도나이누",
-      "lemmas": [
-        "אֱלֹהִים",
+        "אָמַר",
         "אָדוֹן"
       ],
       "words": [
         {
-          "word": "אֱלֹהֵי֙",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
+          "word": "אֱמֹ֥ר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
         },
         {
-          "word": "אֲדֹנִ֣י",
+          "word": "לַאדֹנֶ֖יךָ",
           "lemma": "אָדוֹן",
           "strong": "H113",
-          "pron": "아도나이누"
+          "pron": "아도나이"
         }
       ],
-      "count": 5,
+      "count": 16,
       "refs": [
-        "genesis 24:12",
-        "genesis 24:27",
-        "genesis 24:42",
-        "genesis 24:48",
-        "genesis 45:9"
+        "genesis 18:3",
+        "genesis 32:4",
+        "genesis 44:16",
+        "numbers 11:28",
+        "samuel1 24:8",
+        "samuel2 13:32",
+        "samuel2 19:26",
+        "kings1 1:17",
+        "kings1 18:8",
+        "kings1 18:11",
+        "kings1 18:14",
+        "kings1 20:9"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֱלֹהֵי֙ אֲדֹנִ֣י אַבְרָהָ֔ם",
-      "pron": "베엘로힘 아도나이누 아브라함",
+      "hebrew": "עַבְדֵ֣י אֲדֹנָ֔יו",
+      "pron": "에벧 아도나이",
       "lemmas": [
-        "אֱלֹהִים",
-        "אָדוֹן",
-        "אַבְרָהָם"
-      ],
-      "words": [
-        {
-          "word": "אֱלֹהֵי֙",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        },
-        {
-          "word": "אֲדֹנִ֣י",
-          "lemma": "אָדוֹן",
-          "strong": "H113",
-          "pron": "아도나이누"
-        },
-        {
-          "word": "אַבְרָהָ֔ם",
-          "lemma": "אַבְרָהָם",
-          "strong": "H85",
-          "pron": "아브라함"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 24:12",
-        "genesis 24:27",
-        "genesis 24:42",
-        "genesis 24:48"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "בְּעֵינֵ֣י אֲדֹנִ֔י",
-      "pron": "에네카 아도나이누",
-      "lemmas": [
-        "עַיִן",
+        "עֶבֶד",
         "אָדוֹן"
       ],
       "words": [
         {
-          "word": "בְּעֵינֵ֣י",
-          "lemma": "עַיִן",
-          "strong": "H5869",
-          "pron": "에네카"
+          "word": "עַבְדֵ֣י",
+          "lemma": "עֶבֶד",
+          "strong": "H5650",
+          "pron": "에벧"
         },
         {
-          "word": "אֲדֹנִ֔י",
+          "word": "אֲדֹנָ֔יו",
           "lemma": "אָדוֹן",
           "strong": "H113",
-          "pron": "아도나이누"
+          "pron": "아도나이"
         }
       ],
-      "count": 4,
+      "count": 15,
       "refs": [
-        "genesis 31:35",
-        "genesis 33:8",
-        "genesis 33:15",
-        "genesis 47:25"
+        "genesis 44:16",
+        "genesis 44:33",
+        "samuel1 25:41",
+        "samuel1 29:10",
+        "samuel2 11:9",
+        "samuel2 11:11",
+        "samuel2 11:13",
+        "samuel2 20:6",
+        "kings1 1:33",
+        "kings2 9:11",
+        "kings2 18:24",
+        "isaiah 24:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲדֹנָ֛יו אֶת",
+      "pron": "아도나이 에트",
+      "lemmas": [
+        "אָדוֹן",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "אֲדֹנָ֛יו",
+          "lemma": "אָדוֹן",
+          "strong": "H113",
+          "pron": "아도나이"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "genesis 39:7",
+        "genesis 39:19",
+        "exodus 21:5",
+        "exodus 21:6",
+        "samuel1 25:25",
+        "samuel2 12:8",
+        "samuel2 13:32",
+        "samuel2 14:15",
+        "kings1 18:13",
+        "kings2 5:20"
       ],
       "glossKo": ""
     }

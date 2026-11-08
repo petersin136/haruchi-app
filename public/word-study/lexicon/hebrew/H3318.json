@@ -1,6 +1,6 @@
 {
   "lemma": "יָצָא",
-  "pron": "예체",
+  "pron": "바토체",
   "strong": "H3318",
   "posKo": "동사",
   "root": null,
@@ -8,70 +8,219 @@
     {
       "lemma": "יְצָא",
       "strong": "H3319",
-      "pron": "",
+      "pron": "브셰으치",
       "glossKo": "나오다(아람)"
     },
     {
       "lemma": "יָצִיא",
       "strong": "H3329",
-      "pron": "",
-      "glossKo": "발달"
+      "pron": "브미치브",
+      "glossKo": "그의 발달"
     },
     {
       "lemma": "מוֹצָא",
       "strong": "H4161",
-      "pron": "모차오",
-      "glossKo": "그의 나가는 것"
+      "pron": "모차",
+      "glossKo": "나가는 것"
     },
     {
       "lemma": "צָאָה",
       "strong": "H6627",
-      "pron": "",
-      "glossKo": "오물"
+      "pron": "체아테카",
+      "glossKo": "너의 오물"
     },
     {
       "lemma": "צֶאֱצָא",
       "strong": "H6631",
-      "pron": "",
-      "glossKo": "후손"
+      "pron": "베체에차에카",
+      "glossKo": "너의 후손"
     },
     {
       "lemma": "תּוֹצָאָה",
       "strong": "H8444",
-      "pron": "토차오트",
-      "glossKo": "출입구"
+      "pron": "토체오타으브",
+      "glossKo": "그의 출입구"
     }
   ],
   "defEn": "go; bring; out",
   "defKo": "",
-  "countOT": 115,
+  "countOT": 1076,
   "byBook": {
+    "exodus": 94,
     "genesis": 80,
-    "psalms": 35
+    "ezekiel": 75,
+    "jeremiah": 74,
+    "numbers": 70,
+    "deuteronomy": 66,
+    "judges": 54,
+    "joshua": 53,
+    "kings2": 52,
+    "chronicles2": 49,
+    "samuel2": 47,
+    "samuel1": 46,
+    "kings1": 42,
+    "isaiah": 41,
+    "leviticus": 38,
+    "psalms": 35,
+    "job": 29,
+    "chronicles1": 24,
+    "zechariah": 22,
+    "proverbs": 11,
+    "nehemiah": 10,
+    "esther": 9,
+    "micah": 8,
+    "daniel": 7,
+    "ezra": 6,
+    "ecclesiastes": 5,
+    "habakkuk": 5,
+    "amos": 4,
+    "ruth": 4,
+    "songofsolomon": 4,
+    "lamentations": 3,
+    "haggai": 2,
+    "hosea": 2,
+    "joel": 2,
+    "jonah": 1,
+    "malachi": 1,
+    "nahum": 1
   },
   "phrases": [
     {
-      "hebrew": "צֵ֖א מִן",
-      "pron": "예체 밈메누",
+      "hebrew": "לְהוֹצִ֥יא אֶת",
+      "pron": "바토체 에트",
+      "lemmas": [
+        "יָצָא",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "לְהוֹצִ֥יא",
+          "lemma": "יָצָא",
+          "strong": "H3318",
+          "pron": "바토체"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 91,
+      "refs": [
+        "genesis 15:5",
+        "genesis 19:17",
+        "genesis 44:4",
+        "exodus 3:10",
+        "exodus 3:11",
+        "exodus 3:12",
+        "exodus 6:6",
+        "exodus 6:7",
+        "exodus 6:13",
+        "exodus 6:26",
+        "exodus 6:27",
+        "exodus 7:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר הוֹצֵ֥אתִי",
+      "pron": "아셰르 바토체",
+      "lemmas": [
+        "אֲשֶׁר",
+        "יָצָא"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הוֹצֵ֥אתִי",
+          "lemma": "יָצָא",
+          "strong": "H3318",
+          "pron": "바토체"
+        }
+      ],
+      "count": 67,
+      "refs": [
+        "genesis 10:14",
+        "genesis 15:4",
+        "genesis 15:7",
+        "genesis 24:5",
+        "exodus 12:39",
+        "exodus 13:3",
+        "exodus 20:2",
+        "exodus 29:46",
+        "exodus 32:11",
+        "leviticus 15:32",
+        "leviticus 19:36",
+        "leviticus 22:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֵּצֵ֧א אֲלֵהֶ֛ם",
+      "pron": "바토체 엘",
+      "lemmas": [
+        "יָצָא",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "וַיֵּצֵ֧א",
+          "lemma": "יָצָא",
+          "strong": "H3318",
+          "pron": "바토체"
+        },
+        {
+          "word": "אֲלֵהֶ֛ם",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 63,
+      "refs": [
+        "genesis 19:5",
+        "genesis 19:6",
+        "genesis 43:23",
+        "exodus 2:11",
+        "exodus 15:22",
+        "exodus 33:7",
+        "leviticus 14:45",
+        "leviticus 16:18",
+        "leviticus 16:27",
+        "deuteronomy 23:10",
+        "deuteronomy 24:11",
+        "deuteronomy 28:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַיֹּצְאִ֖ים מִן",
+      "pron": "바토체 민",
       "lemmas": [
         "יָצָא",
         "מִן"
       ],
       "words": [
         {
-          "word": "צֵ֖א",
+          "word": "הַיֹּצְאִ֖ים",
           "lemma": "יָצָא",
           "strong": "H3318",
-          "pron": "예체"
+          "pron": "바토체"
         },
         {
           "word": "מִן",
           "lemma": "מִן",
           "strong": "H4480",
-          "pron": "밈메누"
+          "pron": "민"
         }
       ],
-      "count": 7,
+      "count": 42,
       "refs": [
         "genesis 8:16",
         "genesis 8:19",
@@ -79,13 +228,18 @@
         "genesis 19:12",
         "genesis 19:14",
         "genesis 31:13",
-        "genesis 40:14"
+        "genesis 40:14",
+        "exodus 12:46",
+        "exodus 16:27",
+        "exodus 17:6",
+        "exodus 25:33",
+        "exodus 25:35"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "וַיֵּצֵ֤א יָצוֹא֙",
-      "pron": "예체 예체",
+      "pron": "바토체 바토체",
       "lemmas": [
         "יָצָא",
         "יָצָא"
@@ -95,109 +249,29 @@
           "word": "וַיֵּצֵ֤א",
           "lemma": "יָצָא",
           "strong": "H3318",
-          "pron": "예체"
+          "pron": "바토체"
         },
         {
           "word": "יָצוֹא֙",
           "lemma": "יָצָא",
           "strong": "H3318",
-          "pron": "예체"
+          "pron": "바토체"
         }
       ],
-      "count": 6,
+      "count": 42,
       "refs": [
         "genesis 8:7",
         "genesis 8:17",
-        "genesis 27:30"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֲשֶׁ֨ר יָצְא֥וּ",
-      "pron": "아셰르 예체",
-      "lemmas": [
-        "אֲשֶׁר",
-        "יָצָא"
-      ],
-      "words": [
-        {
-          "word": "אֲשֶׁ֨ר",
-          "lemma": "אֲשֶׁר",
-          "strong": "H834",
-          "pron": "아셰르"
-        },
-        {
-          "word": "יָצְא֥וּ",
-          "lemma": "יָצָא",
-          "strong": "H3318",
-          "pron": "예체"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 10:14",
-        "genesis 15:4",
-        "genesis 15:7",
-        "genesis 24:5"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וְֽלֹא תֵצֵ֥א",
-      "pron": "로 예체",
-      "lemmas": [
-        "לֹא",
-        "יָצָא"
-      ],
-      "words": [
-        {
-          "word": "וְֽלֹא",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        },
-        {
-          "word": "תֵצֵ֥א",
-          "lemma": "יָצָא",
-          "strong": "H3318",
-          "pron": "예체"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 44:9",
-        "psalms 60:10",
-        "psalms 88:8",
-        "psalms 108:11"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "הֽוּא יוֹצִ֖יא",
-      "pron": "브후 예체",
-      "lemmas": [
-        "הוּא",
-        "יָצָא"
-      ],
-      "words": [
-        {
-          "word": "הֽוּא",
-          "lemma": "הוּא",
-          "strong": "H1931",
-          "pron": "브후"
-        },
-        {
-          "word": "יוֹצִ֖יא",
-          "lemma": "יָצָא",
-          "strong": "H3318",
-          "pron": "예체"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 25:15",
-        "genesis 10:11",
-        "genesis 38:25"
+        "genesis 27:30",
+        "exodus 11:8",
+        "exodus 21:7",
+        "exodus 34:34",
+        "numbers 35:26",
+        "samuel2 5:2",
+        "samuel2 16:5",
+        "samuel2 16:7",
+        "samuel2 18:2",
+        "kings2 5:11"
       ],
       "glossKo": ""
     }

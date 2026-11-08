@@ -1,6 +1,6 @@
 {
   "lemma": "גָּבַהּ",
-  "pron": "키게보아",
+  "pron": "바익바흐",
   "strong": "H1361",
   "posKo": "동사",
   "root": null,
@@ -14,8 +14,8 @@
     {
       "lemma": "גֹּבַהּ",
       "strong": "H1363",
-      "pron": "크고바흐",
-      "glossKo": "높음"
+      "pron": "갑호",
+      "glossKo": "그의 높음"
     },
     {
       "lemma": "גָּבֹהַּ",
@@ -26,21 +26,154 @@
     {
       "lemma": "גַּבְהוּת",
       "strong": "H1365",
-      "pron": "",
+      "pron": "갑후트",
       "glossKo": "교만"
     },
     {
       "lemma": "יׇגְבְּהָה",
       "strong": "H3011",
-      "pron": "",
+      "pron": "브약보하",
       "glossKo": "욕브하"
     }
   ],
   "defEn": "soar; be lofty; be haughty",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 34,
   "byBook": {
-    "psalms": 3
+    "ezekiel": 10,
+    "isaiah": 6,
+    "chronicles2": 4,
+    "job": 4,
+    "psalms": 3,
+    "jeremiah": 2,
+    "proverbs": 2,
+    "obadiah": 1,
+    "samuel1": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "גָּבַ֤הּ לִבְּךָ֙",
+      "pron": "바익바흐 립보",
+      "lemmas": [
+        "גָּבַהּ",
+        "לֵב"
+      ],
+      "words": [
+        {
+          "word": "גָּבַ֤הּ",
+          "lemma": "גָּבַהּ",
+          "strong": "H1361",
+          "pron": "바익바흐"
+        },
+        {
+          "word": "לִבְּךָ֙",
+          "lemma": "לֵב",
+          "strong": "H3820",
+          "pron": "립보"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "chronicles2 17:6",
+        "chronicles2 26:16",
+        "chronicles2 32:25",
+        "psalms 131:1",
+        "proverbs 18:12",
+        "ezekiel 28:2",
+        "ezekiel 28:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֥י גָבַ֖הּ",
+      "pron": "키 바익바흐",
+      "lemmas": [
+        "כִּי",
+        "גָּבַהּ"
+      ],
+      "words": [
+        {
+          "word": "כִּ֥י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "גָבַ֖הּ",
+          "lemma": "גָּבַהּ",
+          "strong": "H1361",
+          "pron": "바익바흐"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "chronicles2 32:25",
+        "psalms 103:11",
+        "isaiah 3:16",
+        "isaiah 55:9",
+        "jeremiah 49:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתִּגְבַּ֥הּ קֽוֹמָת֖וֹ",
+      "pron": "바익바흐 코마타흐",
+      "lemmas": [
+        "גָּבַהּ",
+        "קוֹמָה"
+      ],
+      "words": [
+        {
+          "word": "וַתִּגְבַּ֥הּ",
+          "lemma": "גָּבַהּ",
+          "strong": "H1361",
+          "pron": "바익바흐"
+        },
+        {
+          "word": "קֽוֹמָת֖וֹ",
+          "lemma": "קוֹמָה",
+          "strong": "H6967",
+          "pron": "코마타흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 19:11",
+        "ezekiel 31:5",
+        "ezekiel 31:10",
+        "ezekiel 31:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יַגְבִּ֣יהַּ נָ֑שֶׁר",
+      "pron": "바익바흐 네샤림",
+      "lemmas": [
+        "גָּבַהּ",
+        "נֶשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "יַגְבִּ֣יהַּ",
+          "lemma": "גָּבַהּ",
+          "strong": "H1361",
+          "pron": "바익바흐"
+        },
+        {
+          "word": "נָ֑שֶׁר",
+          "lemma": "נֶשֶׁר",
+          "strong": "H5404",
+          "pron": "네샤림"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 39:27",
+        "jeremiah 49:16",
+        "obadiah 1:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "מִשְׁבָּר",
-  "pron": "미솁바레카",
+  "pron": "미솁베레",
   "strong": "H4867",
   "posKo": "명사",
   "root": {
@@ -12,39 +12,71 @@
     {
       "lemma": "מִשְׁבֵּר",
       "strong": "H4866",
-      "pron": "",
+      "pron": "마솁베르",
       "glossKo": "구멍"
     },
     {
       "lemma": "שָׁבַר",
       "strong": "H7665",
-      "pron": "십바렛타",
+      "pron": "리솁보르",
       "glossKo": "꺾다"
     },
     {
       "lemma": "שֶׁבֶר",
       "strong": "H7667",
-      "pron": "셰바레하",
-      "glossKo": "그녀의 파괴"
+      "pron": "셰베르",
+      "glossKo": "파괴"
     },
     {
       "lemma": "שִׁבְרוֹן",
       "strong": "H7670",
-      "pron": "",
+      "pron": "십바론",
       "glossKo": "파괴"
     },
     {
       "lemma": "תְּבַר",
       "strong": "H8406",
-      "pron": "",
+      "pron": "테비라",
       "glossKo": "깨다(아람)"
     }
   ],
   "defEn": "breaker",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 5,
   "byBook": {
-    "psalms": 3
+    "psalms": 3,
+    "jonah": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כָּֽל מִשְׁבָּרֶ֥יךָ",
+      "pron": "칼 미솁베레",
+      "lemmas": [
+        "כֹּל",
+        "מִשְׁבָּר"
+      ],
+      "words": [
+        {
+          "word": "כָּֽל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מִשְׁבָּרֶ֥יךָ",
+          "lemma": "מִשְׁבָּר",
+          "strong": "H4867",
+          "pron": "미솁베레"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 42:7",
+        "psalms 88:7",
+        "jonah 2:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

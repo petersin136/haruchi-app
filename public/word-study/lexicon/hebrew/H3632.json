@@ -1,8 +1,8 @@
 {
   "lemma": "כָּלִיל",
-  "pron": "브칼릴",
+  "pron": "켈릴",
   "strong": "H3632",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "כָּלַל",
     "strong": "H3634",
@@ -12,33 +12,113 @@
     {
       "lemma": "כֹּל",
       "strong": "H3605",
-      "pron": "브콜",
+      "pron": "칼",
       "glossKo": "모든"
     },
     {
       "lemma": "כַּלָּה",
       "strong": "H3618",
-      "pron": "칼라트오",
+      "pron": "칼라토",
       "glossKo": "그의 신부"
     },
     {
       "lemma": "כָּלַל",
       "strong": "H3634",
-      "pron": "",
+      "pron": "칼루",
       "glossKo": "완성하다"
     },
     {
       "lemma": "כְּלַל",
       "strong": "H3635",
-      "pron": "",
+      "pron": "쉭를브",
       "glossKo": "완성하다(아람)"
+    },
+    {
+      "lemma": "כְּלָל",
+      "strong": "H3636",
+      "pron": "우켈랄",
+      "glossKo": "글랄"
+    },
+    {
+      "lemma": "מִכְלוֹל",
+      "strong": "H4358",
+      "pron": "미켈롤",
+      "glossKo": "완전"
     }
   ],
   "defEn": "complete; whole; entirely consumed; fully",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 15,
   "byBook": {
-    "psalms": 1
+    "ezekiel": 3,
+    "deuteronomy": 2,
+    "exodus": 2,
+    "leviticus": 2,
+    "isaiah": 1,
+    "judges": 1,
+    "lamentations": 1,
+    "numbers": 1,
+    "psalms": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כְּלִ֥יל תְּכֵֽלֶת",
+      "pron": "켈릴 우테켈레트",
+      "lemmas": [
+        "כָּלִיל",
+        "תְּכֵלֶת"
+      ],
+      "words": [
+        {
+          "word": "כְּלִ֥יל",
+          "lemma": "כָּלִיל",
+          "strong": "H3632",
+          "pron": "켈릴"
+        },
+        {
+          "word": "תְּכֵֽלֶת",
+          "lemma": "תְּכֵלֶת",
+          "strong": "H8504",
+          "pron": "우테켈레트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 28:31",
+        "exodus 39:22",
+        "numbers 4:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כְּלִ֣ילַת יֹ֔פִי",
+      "pron": "켈릴 얍아흐",
+      "lemmas": [
+        "כָּלִיל",
+        "יֳפִי"
+      ],
+      "words": [
+        {
+          "word": "כְּלִ֣ילַת",
+          "lemma": "כָּלִיל",
+          "strong": "H3632",
+          "pron": "켈릴"
+        },
+        {
+          "word": "יֹ֔פִי",
+          "lemma": "יֳפִי",
+          "strong": "H3308",
+          "pron": "얍아흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "lamentations 2:15",
+        "ezekiel 27:3",
+        "ezekiel 28:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

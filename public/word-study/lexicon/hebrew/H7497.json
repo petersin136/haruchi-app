@@ -12,39 +12,173 @@
     {
       "lemma": "יִרְפְּאֵל",
       "strong": "H3416",
-      "pron": "",
+      "pron": "브이렙페엘",
       "glossKo": "이르브엘"
     },
     {
       "lemma": "מַרְפֵּא",
       "strong": "H4832",
-      "pron": "",
+      "pron": "마렙페",
       "glossKo": "치유"
     },
     {
       "lemma": "רָפָא",
       "strong": "H7495",
-      "pron": "레파에니",
-      "glossKo": "나를 치료하다"
+      "pron": "바이렙파",
+      "glossKo": "치료하다"
     },
     {
       "lemma": "רָפָא",
       "strong": "H7496",
-      "pron": "레파임",
+      "pron": "하레파임",
       "glossKo": "유령"
+    },
+    {
+      "lemma": "רָפָא",
+      "strong": "H7498",
+      "pron": "브라파",
+      "glossKo": "라바"
     },
     {
       "lemma": "רְפֻאָה",
       "strong": "H7499",
-      "pron": "",
+      "pron": "레푸오트",
       "glossKo": "치유"
     }
   ],
   "defEn": "giant",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 25,
   "byBook": {
-    "genesis": 2
+    "samuel2": 7,
+    "chronicles1": 5,
+    "deuteronomy": 5,
+    "joshua": 5,
+    "genesis": 2,
+    "isaiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּעֵ֥מֶק רְפָאִֽים",
+      "pron": "에메크 레파임",
+      "lemmas": [
+        "עֵמֶק",
+        "רָפָא"
+      ],
+      "words": [
+        {
+          "word": "בְּעֵ֥מֶק",
+          "lemma": "עֵמֶק",
+          "strong": "H6010",
+          "pron": "에메크"
+        },
+        {
+          "word": "רְפָאִֽים",
+          "lemma": "רָפָא",
+          "strong": "H7497",
+          "pron": "레파임"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "joshua 15:8",
+        "joshua 18:16",
+        "samuel2 5:18",
+        "samuel2 5:22",
+        "samuel2 23:13",
+        "chronicles1 11:15",
+        "chronicles1 14:9",
+        "isaiah 17:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יֻלַּ֥ד לְהָרָפָֽה",
+      "pron": "텔디 레파임",
+      "lemmas": [
+        "יָלַד",
+        "רָפָא"
+      ],
+      "words": [
+        {
+          "word": "יֻלַּ֥ד",
+          "lemma": "יָלַד",
+          "strong": "H3205",
+          "pron": "텔디"
+        },
+        {
+          "word": "לְהָרָפָֽה",
+          "lemma": "רָפָא",
+          "strong": "H7497",
+          "pron": "레파임"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 21:20",
+        "samuel2 21:22",
+        "chronicles1 20:6",
+        "chronicles1 20:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּילִידֵ֣י הָרָפָ֗ה",
+      "pron": "옐리데 레파임",
+      "lemmas": [
+        "יָלִיד",
+        "רָפָא"
+      ],
+      "words": [
+        {
+          "word": "בִּילִידֵ֣י",
+          "lemma": "יָלִיד",
+          "strong": "H3211",
+          "pron": "옐리데"
+        },
+        {
+          "word": "הָרָפָ֗ה",
+          "lemma": "רָפָא",
+          "strong": "H7497",
+          "pron": "레파임"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 21:16",
+        "samuel2 21:18",
+        "chronicles1 20:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִיֶּ֣תֶר הָרְפָאִים֒",
+      "pron": "예테르 레파임",
+      "lemmas": [
+        "יֶתֶר",
+        "רָפָא"
+      ],
+      "words": [
+        {
+          "word": "מִיֶּ֣תֶר",
+          "lemma": "יֶתֶר",
+          "strong": "H3499",
+          "pron": "예테르"
+        },
+        {
+          "word": "הָרְפָאִים֒",
+          "lemma": "רָפָא",
+          "strong": "H7497",
+          "pron": "레파임"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 3:11",
+        "joshua 12:4",
+        "joshua 13:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "סָפָה",
-  "pron": "리셉포타흐",
+  "pron": "팃페",
   "strong": "H5595",
   "posKo": "동사",
   "root": null,
@@ -8,16 +8,53 @@
     {
       "lemma": "שָׂפָה",
       "strong": "H8193",
-      "pron": "세파트",
+      "pron": "사파",
       "glossKo": "입술"
     }
   ],
   "defEn": "scrape; together; away",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 20,
   "byBook": {
     "genesis": 4,
+    "isaiah": 4,
+    "samuel1": 3,
+    "deuteronomy": 2,
+    "jeremiah": 2,
+    "numbers": 2,
+    "chronicles1": 1,
+    "proverbs": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "פֶּן תִּסָּפֶ֖ה",
+      "pron": "펜 팃페",
+      "lemmas": [
+        "פֵּן",
+        "סָפָה"
+      ],
+      "words": [
+        {
+          "word": "פֶּן",
+          "lemma": "פֵּן",
+          "strong": "H6435",
+          "pron": "펜"
+        },
+        {
+          "word": "תִּסָּפֶ֖ה",
+          "lemma": "סָפָה",
+          "strong": "H5595",
+          "pron": "팃페"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 19:15",
+        "genesis 19:17",
+        "numbers 16:26"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

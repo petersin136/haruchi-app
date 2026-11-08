@@ -1,6 +1,6 @@
 {
   "lemma": "מוֹלֶדֶת",
-  "pron": "몰랃트오",
+  "pron": "몰랃토",
   "strong": "H4138",
   "posKo": "명사",
   "root": {
@@ -12,8 +12,8 @@
     {
       "lemma": "יָלַד",
       "strong": "H3205",
-      "pron": "옐릳티카",
-      "glossKo": "너에게 낳다"
+      "pron": "텔디",
+      "glossKo": "낳다"
     },
     {
       "lemma": "יֶלֶד",
@@ -24,7 +24,7 @@
     {
       "lemma": "יִלּוֹד",
       "strong": "H3209",
-      "pron": "",
+      "pron": "아일롣",
       "glossKo": "갓난 아이"
     },
     {
@@ -36,26 +36,32 @@
     {
       "lemma": "מוֹלָדָה",
       "strong": "H4137",
-      "pron": "",
+      "pron": "우몰라다",
       "glossKo": "몰라다"
     },
     {
       "lemma": "מוֹלִיד",
       "strong": "H4140",
-      "pron": "",
+      "pron": "몰릳",
       "glossKo": "몰릿"
     }
   ],
   "defEn": "nativity",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 22,
   "byBook": {
-    "genesis": 9
+    "genesis": 9,
+    "esther": 3,
+    "ezekiel": 3,
+    "leviticus": 3,
+    "jeremiah": 2,
+    "numbers": 1,
+    "ruth": 1
   },
   "phrases": [
     {
       "hebrew": "בְּאֶ֥רֶץ מוֹלַדְתּ֖וֹ",
-      "pron": "에레츠 몰랃트오",
+      "pron": "하아레츠 몰랃토",
       "lemmas": [
         "אֶרֶץ",
         "מוֹלֶדֶת"
@@ -65,22 +71,55 @@
           "word": "בְּאֶ֥רֶץ",
           "lemma": "אֶרֶץ",
           "strong": "H776",
-          "pron": "에레츠"
+          "pron": "하아레츠"
         },
         {
           "word": "מוֹלַדְתּ֖וֹ",
           "lemma": "מוֹלֶדֶת",
           "strong": "H4138",
-          "pron": "몰랃트오"
+          "pron": "몰랃토"
         }
       ],
-      "count": 5,
+      "count": 9,
       "refs": [
         "genesis 11:28",
         "genesis 12:1",
         "genesis 24:7",
         "genesis 31:13",
-        "genesis 32:9"
+        "genesis 32:9",
+        "ruth 2:11",
+        "jeremiah 22:10",
+        "jeremiah 46:16",
+        "ezekiel 23:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מוֹלַדְתִּ֖י תֵּלֵ֑ךְ",
+      "pron": "몰랃토 텔레크",
+      "lemmas": [
+        "מוֹלֶדֶת",
+        "יָלַךְ"
+      ],
+      "words": [
+        {
+          "word": "מוֹלַדְתִּ֖י",
+          "lemma": "מוֹלֶדֶת",
+          "strong": "H4138",
+          "pron": "몰랃토"
+        },
+        {
+          "word": "תֵּלֵ֑ךְ",
+          "lemma": "יָלַךְ",
+          "strong": "H3212",
+          "pron": "텔레크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 24:4",
+        "numbers 10:30",
+        "ruth 2:11"
       ],
       "glossKo": ""
     }

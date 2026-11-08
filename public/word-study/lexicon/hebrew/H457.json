@@ -1,6 +1,6 @@
 {
   "lemma": "אֱלִיל",
-  "pron": "엘릴림",
+  "pron": "하엘릴림",
   "strong": "H457",
   "posKo": "명사",
   "root": {
@@ -12,25 +12,31 @@
     {
       "lemma": "אַל",
       "strong": "H408",
-      "pron": "브엘",
+      "pron": "엘",
       "glossKo": "(말라)"
     },
     {
       "lemma": "אַל",
       "strong": "H409",
-      "pron": "",
+      "pron": "엘",
       "glossKo": "~말라(아람)"
     },
     {
       "lemma": "אִלּוּ",
       "strong": "H432",
-      "pron": "",
+      "pron": "브일루",
       "glossKo": "만일"
+    },
+    {
+      "lemma": "אֱלוּל",
+      "strong": "H434",
+      "pron": "브르블",
+      "glossKo": "쓸모없는"
     },
     {
       "lemma": "אַלְקוּם",
       "strong": "H510",
-      "pron": "",
+      "pron": "알쿰",
       "glossKo": "거역할 수 없는"
     },
     {
@@ -42,9 +48,17 @@
   ],
   "defEn": "nothing; vain; vanity; idol",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 20,
   "byBook": {
-    "psalms": 2
+    "isaiah": 10,
+    "leviticus": 2,
+    "psalms": 2,
+    "chronicles1": 1,
+    "ezekiel": 1,
+    "habakkuk": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "zechariah": 1
   },
   "phrases": []
 }

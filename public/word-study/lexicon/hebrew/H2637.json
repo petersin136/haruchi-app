@@ -1,6 +1,6 @@
 {
   "lemma": "חָסֵר",
-  "pron": "바테핫세레후",
+  "pron": "바야헷루",
   "strong": "H2637",
   "posKo": "동사",
   "root": null,
@@ -8,46 +8,121 @@
     {
       "lemma": "חַסִּיר",
       "strong": "H2627",
-      "pron": "",
+      "pron": "핫시르",
       "glossKo": "부족한(아람)"
     },
     {
       "lemma": "חָסֵר",
       "strong": "H2638",
-      "pron": "",
+      "pron": "하사르",
       "glossKo": "부족한"
     },
     {
       "lemma": "חֶסֶר",
       "strong": "H2639",
-      "pron": "",
+      "pron": "브헤세르",
       "glossKo": "부족"
     },
     {
       "lemma": "חֹסֶר",
       "strong": "H2640",
-      "pron": "",
+      "pron": "우브호세르",
       "glossKo": "결핍"
     },
     {
       "lemma": "חַסְרָה",
       "strong": "H2641",
-      "pron": "",
+      "pron": "핫라",
       "glossKo": "하스라"
     },
     {
       "lemma": "חֶסְרוֹן",
       "strong": "H2642",
-      "pron": "",
+      "pron": "브헷론",
       "glossKo": "결핍"
     }
   ],
   "defEn": "lack",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 21,
   "byBook": {
+    "deuteronomy": 3,
     "genesis": 3,
-    "psalms": 3
+    "psalms": 3,
+    "ecclesiastes": 2,
+    "isaiah": 2,
+    "proverbs": 2,
+    "exodus": 1,
+    "ezekiel": 1,
+    "jeremiah": 1,
+    "kings1": 1,
+    "nehemiah": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹ֣א הֶחְסִ֑יר",
+      "pron": "로 바야헷루",
+      "lemmas": [
+        "לֹא",
+        "חָסֵר"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "הֶחְסִ֑יר",
+          "lemma": "חָסֵר",
+          "strong": "H2637",
+          "pron": "바야헷루"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 16:18",
+        "deuteronomy 2:7",
+        "deuteronomy 8:9",
+        "kings1 17:14",
+        "nehemiah 9:21",
+        "psalms 23:1",
+        "psalms 34:10",
+        "proverbs 31:11",
+        "isaiah 51:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תֶחְסַ֥ר כֹּ֖ל",
+      "pron": "바야헷루 칼",
+      "lemmas": [
+        "חָסֵר",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "תֶחְסַ֥ר",
+          "lemma": "חָסֵר",
+          "strong": "H2637",
+          "pron": "바야헷루"
+        },
+        {
+          "word": "כֹּ֖ל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 8:9",
+        "psalms 34:10",
+        "jeremiah 44:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

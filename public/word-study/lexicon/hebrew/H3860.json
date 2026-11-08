@@ -1,8 +1,8 @@
 {
   "lemma": "לָהֵן",
-  "pron": "라헨",
+  "pron": "하라헨",
   "strong": "H3860",
-  "posKo": "",
+  "posKo": "접속사",
   "root": {
     "lemma": "הֵן",
     "strong": "H2005",
@@ -18,7 +18,7 @@
     {
       "lemma": "הֵן",
       "strong": "H2006",
-      "pron": "",
+      "pron": "헨",
       "glossKo": "보라(아람)"
     },
     {
@@ -26,11 +26,20 @@
       "strong": "H2009",
       "pron": "힌네",
       "glossKo": "보라"
+    },
+    {
+      "lemma": "לָהֵן",
+      "strong": "H3861",
+      "pron": "라헨",
+      "glossKo": "그러나(아람)"
     }
   ],
   "defEn": "for if; therefore",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 3,
+  "byBook": {
+    "ruth": 2,
+    "job": 1
+  },
   "phrases": []
 }

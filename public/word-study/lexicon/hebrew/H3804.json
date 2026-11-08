@@ -1,8 +1,8 @@
 {
   "lemma": "כֶּתֶר",
-  "pron": "케테르",
+  "pron": "브케테르",
   "strong": "H3804",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "כָּתַר",
     "strong": "H3803",
@@ -12,19 +12,51 @@
     {
       "lemma": "כָּתַר",
       "strong": "H3803",
-      "pron": "킷테루니",
-      "glossKo": "나를 에워싸다"
+      "pron": "킷테루",
+      "glossKo": "에워싸다"
     },
     {
       "lemma": "כֹתֶרֶת",
       "strong": "H3805",
-      "pron": "",
+      "pron": "코타로트",
       "glossKo": "기둥머리"
     }
   ],
   "defEn": "circlet; diadem",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 3,
+  "byBook": {
+    "esther": 3
+  },
+  "phrases": [
+    {
+      "hebrew": "בְּכֶ֣תֶר מַלְכ֑וּת",
+      "pron": "브케테르 말쿠토",
+      "lemmas": [
+        "כֶּתֶר",
+        "מַלְכוּת"
+      ],
+      "words": [
+        {
+          "word": "בְּכֶ֣תֶר",
+          "lemma": "כֶּתֶר",
+          "strong": "H3804",
+          "pron": "브케테르"
+        },
+        {
+          "word": "מַלְכ֑וּת",
+          "lemma": "מַלְכוּת",
+          "strong": "H4438",
+          "pron": "말쿠토"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 1:11",
+        "esther 2:17",
+        "esther 6:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "מַסְגֵּר",
-  "pron": "미맛게르",
+  "pron": "브아맛게르",
   "strong": "H4525",
   "posKo": "명사",
   "root": {
@@ -12,45 +12,78 @@
     {
       "lemma": "מִסְגֶּרֶת",
       "strong": "H4526",
-      "pron": "미밋게로테헴",
-      "glossKo": "그들의 변두리"
+      "pron": "밋게레트",
+      "glossKo": "변두리"
     },
     {
       "lemma": "סְגוֹר",
       "strong": "H5458",
-      "pron": "",
+      "pron": "세고르",
       "glossKo": "정금"
     },
     {
       "lemma": "סָגַר",
       "strong": "H5462",
-      "pron": "삭루",
+      "pron": "바잇고르",
       "glossKo": "닫다"
     },
     {
       "lemma": "סְגַר",
       "strong": "H5463",
-      "pron": "",
+      "pron": "우사가르",
       "glossKo": "닫다(아람)"
     },
     {
       "lemma": "סַגְרִיד",
       "strong": "H5464",
-      "pron": "",
+      "pron": "삭리르",
       "glossKo": "퍼붓는 비"
     },
     {
       "lemma": "סוּגַר",
       "strong": "H5474",
-      "pron": "",
+      "pron": "바수가르",
       "glossKo": "감금"
     }
   ],
   "defEn": "fastener; smith; prison",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 7,
   "byBook": {
+    "isaiah": 2,
+    "jeremiah": 2,
+    "kings2": 2,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הֶחָרָ֖שׁ וְהַמַּסְגֵּ֑ר",
+      "pron": "하라쉬 브아맛게르",
+      "lemmas": [
+        "חָרָשׁ",
+        "מַסְגֵּר"
+      ],
+      "words": [
+        {
+          "word": "הֶחָרָ֖שׁ",
+          "lemma": "חָרָשׁ",
+          "strong": "H2796",
+          "pron": "하라쉬"
+        },
+        {
+          "word": "וְהַמַּסְגֵּ֑ר",
+          "lemma": "מַסְגֵּר",
+          "strong": "H4525",
+          "pron": "브아맛게르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 24:14",
+        "kings2 24:16",
+        "jeremiah 29:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

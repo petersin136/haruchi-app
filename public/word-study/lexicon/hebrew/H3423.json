@@ -1,6 +1,6 @@
 {
   "lemma": "יָרַשׁ",
-  "pron": "이라쉬",
+  "pron": "요레쉬",
   "strong": "H3423",
   "posKo": "동사",
   "root": null,
@@ -8,107 +8,267 @@
     {
       "lemma": "יְרוּשָׁא",
       "strong": "H3388",
-      "pron": "",
+      "pron": "예루샤",
       "glossKo": "여루사"
     },
     {
       "lemma": "יְרֵשָׁה",
       "strong": "H3424",
-      "pron": "",
+      "pron": "예레샤",
       "glossKo": "소유"
     },
     {
       "lemma": "יְרֻשָּׁה",
       "strong": "H3425",
-      "pron": "예룻샤트",
+      "pron": "예룻샤",
       "glossKo": "기업"
     },
     {
       "lemma": "מוֹרָשׁ",
       "strong": "H4180",
-      "pron": "",
+      "pron": "모라셰이",
       "glossKo": "소유물"
     },
     {
       "lemma": "מוֹרֶשֶׁת גַּת",
       "strong": "H4182",
-      "pron": "",
+      "pron": "모레셰트",
       "glossKo": "모레셋가드"
     },
     {
       "lemma": "רֶשֶׁת",
       "strong": "H7568",
-      "pron": "브레셰트",
+      "pron": "레셰트",
       "glossKo": "그물"
     }
   ],
   "defEn": "occupy; driving; possessing",
   "defKo": "",
-  "countOT": 21,
+  "countOT": 232,
   "byBook": {
+    "deuteronomy": 71,
+    "joshua": 29,
+    "judges": 27,
+    "numbers": 16,
     "psalms": 11,
-    "genesis": 10
+    "genesis": 10,
+    "isaiah": 10,
+    "jeremiah": 7,
+    "ezekiel": 6,
+    "kings1": 6,
+    "nehemiah": 5,
+    "chronicles2": 4,
+    "kings2": 4,
+    "obadiah": 4,
+    "proverbs": 4,
+    "leviticus": 3,
+    "amos": 2,
+    "exodus": 2,
+    "ezra": 2,
+    "job": 2,
+    "chronicles1": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "micah": 1,
+    "samuel1": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "יִֽירְשׁוּ אָ֑רֶץ",
-      "pron": "이라쉬 에레츠",
-      "lemmas": [
-        "יָרַשׁ",
-        "אֶרֶץ"
-      ],
-      "words": [
-        {
-          "word": "יִֽירְשׁוּ",
-          "lemma": "יָרַשׁ",
-          "strong": "H3423",
-          "pron": "이라쉬"
-        },
-        {
-          "word": "אָ֑רֶץ",
-          "lemma": "אֶרֶץ",
-          "strong": "H776",
-          "pron": "에레츠"
-        }
-      ],
-      "count": 7,
-      "refs": [
-        "psalms 25:13",
-        "psalms 37:9",
-        "psalms 37:11",
-        "psalms 37:22",
-        "psalms 37:29",
-        "psalms 37:34",
-        "psalms 44:3"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "נִ֣ירֲשָׁה אֵ֝֗ת",
-      "pron": "이라쉬 에트",
+      "hebrew": "לָרֶ֣שֶׁת אֶת",
+      "pron": "요레쉬 에트",
       "lemmas": [
         "יָרַשׁ",
         "אֵת"
       ],
       "words": [
         {
-          "word": "נִ֣ירֲשָׁה",
+          "word": "לָרֶ֣שֶׁת",
           "lemma": "יָרַשׁ",
           "strong": "H3423",
-          "pron": "이라쉬"
+          "pron": "요레쉬"
         },
         {
-          "word": "אֵ֝֗ת",
+          "word": "אֶת",
           "lemma": "אֵת",
           "strong": "H853",
           "pron": "에트"
         }
       ],
-      "count": 3,
+      "count": 76,
       "refs": [
-        "psalms 83:12",
         "genesis 15:3",
-        "genesis 28:4"
+        "genesis 28:4",
+        "leviticus 20:24",
+        "numbers 13:30",
+        "numbers 21:24",
+        "numbers 21:32",
+        "numbers 21:35",
+        "numbers 27:11",
+        "numbers 32:21",
+        "numbers 32:39",
+        "numbers 33:52",
+        "numbers 33:53"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָרֶ֣שֶׁת אֶת הָאָ֔רֶץ",
+      "pron": "요레쉬 에트 하아레츠",
+      "lemmas": [
+        "יָרַשׁ",
+        "אֵת",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "לָרֶ֣שֶׁת",
+          "lemma": "יָרַשׁ",
+          "strong": "H3423",
+          "pron": "요레쉬"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הָאָ֔רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 32,
+      "refs": [
+        "genesis 28:4",
+        "leviticus 20:24",
+        "numbers 21:24",
+        "numbers 21:35",
+        "numbers 33:53",
+        "deuteronomy 1:8",
+        "deuteronomy 2:31",
+        "deuteronomy 4:1",
+        "deuteronomy 4:22",
+        "deuteronomy 4:47",
+        "deuteronomy 6:18",
+        "deuteronomy 8:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁ֖מָּה לְרִשְׁתָּֽהּ",
+      "pron": "샴 요레쉬",
+      "lemmas": [
+        "שָׁם",
+        "יָרַשׁ"
+      ],
+      "words": [
+        {
+          "word": "שָׁ֖מָּה",
+          "lemma": "שָׁם",
+          "strong": "H8033",
+          "pron": "샴"
+        },
+        {
+          "word": "לְרִשְׁתָּֽהּ",
+          "lemma": "יָרַשׁ",
+          "strong": "H3423",
+          "pron": "요레쉬"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "deuteronomy 4:5",
+        "deuteronomy 4:14",
+        "deuteronomy 4:26",
+        "deuteronomy 6:1",
+        "deuteronomy 7:1",
+        "deuteronomy 11:8",
+        "deuteronomy 11:10",
+        "deuteronomy 11:11",
+        "deuteronomy 11:29",
+        "deuteronomy 12:29",
+        "deuteronomy 23:20",
+        "deuteronomy 28:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבָאתֶם֙ וִֽירִשְׁתֶּ֣ם",
+      "pron": "바야베 요레쉬",
+      "lemmas": [
+        "בּוֹא",
+        "יָרַשׁ"
+      ],
+      "words": [
+        {
+          "word": "וּבָאתֶם֙",
+          "lemma": "בּוֹא",
+          "strong": "H935",
+          "pron": "바야베"
+        },
+        {
+          "word": "וִֽירִשְׁתֶּ֣ם",
+          "lemma": "יָרַשׁ",
+          "strong": "H3423",
+          "pron": "요레쉬"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "deuteronomy 1:8",
+        "deuteronomy 4:1",
+        "deuteronomy 6:18",
+        "deuteronomy 8:1",
+        "deuteronomy 9:1",
+        "deuteronomy 9:5",
+        "deuteronomy 10:11",
+        "deuteronomy 11:8",
+        "deuteronomy 11:31",
+        "joshua 1:11",
+        "joshua 18:3",
+        "judges 18:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֥א הוֹרִישֽׁוֹ",
+      "pron": "로 요레쉬",
+      "lemmas": [
+        "לֹא",
+        "יָרַשׁ"
+      ],
+      "words": [
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "הוֹרִישֽׁוֹ",
+          "lemma": "יָרַשׁ",
+          "strong": "H3423",
+          "pron": "요레쉬"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "genesis 15:4",
+        "genesis 21:10",
+        "numbers 33:55",
+        "joshua 13:13",
+        "joshua 16:10",
+        "joshua 17:13",
+        "judges 1:19",
+        "judges 1:21",
+        "judges 1:27",
+        "judges 1:28",
+        "judges 1:29",
+        "judges 1:30"
       ],
       "glossKo": ""
     }

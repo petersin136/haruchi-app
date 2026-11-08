@@ -1,8 +1,8 @@
 {
   "lemma": "סְפַר",
-  "pron": "세파르",
+  "pron": "비세파르",
   "strong": "H5609",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "סָפַר",
     "strong": "H5608",
@@ -18,20 +18,26 @@
     {
       "lemma": "סַפִּיר",
       "strong": "H5601",
-      "pron": "",
+      "pron": "아삽피르",
       "glossKo": "청옥"
     },
     {
       "lemma": "סָפַר",
       "strong": "H5608",
-      "pron": "아삽페라",
+      "pron": "우세포르",
       "glossKo": "세다"
     },
     {
       "lemma": "סְפָר",
       "strong": "H5610",
-      "pron": "",
+      "pron": "아세파르",
       "glossKo": "수"
+    },
+    {
+      "lemma": "סָפֵר",
+      "strong": "H5613",
+      "pron": "삽라",
+      "glossKo": "서기관(아람)"
     },
     {
       "lemma": "סְפֹרָה",
@@ -42,7 +48,10 @@
   ],
   "defEn": "book",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 5,
+  "byBook": {
+    "ezra": 4,
+    "daniel": 1
+  },
   "phrases": []
 }

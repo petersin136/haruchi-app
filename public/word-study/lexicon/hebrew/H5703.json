@@ -12,13 +12,13 @@
     {
       "lemma": "מַעֲדַי",
       "strong": "H4572",
-      "pron": "",
+      "pron": "마아다이",
       "glossKo": "마아대"
     },
     {
       "lemma": "מַעֲדְיָה",
       "strong": "H4573",
-      "pron": "",
+      "pron": "마앋아",
       "glossKo": "마아댜"
     },
     {
@@ -36,21 +36,32 @@
     {
       "lemma": "עֵד",
       "strong": "H5708",
-      "pron": "",
+      "pron": "읻딤",
       "glossKo": "월경포"
     },
     {
       "lemma": "עֲדָא",
       "strong": "H5709",
-      "pron": "",
+      "pron": "메하엗데",
       "glossKo": "가다(아람)"
     }
   ],
   "defEn": "terminus; duration; advance; perpetuity",
   "defKo": "",
-  "countOT": 31,
+  "countOT": 51,
   "byBook": {
-    "psalms": 31
+    "psalms": 31,
+    "isaiah": 6,
+    "job": 2,
+    "micah": 2,
+    "numbers": 2,
+    "proverbs": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "daniel": 1,
+    "exodus": 1,
+    "habakkuk": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
@@ -74,8 +85,9 @@
           "pron": "바엗"
         }
       ],
-      "count": 12,
+      "count": 16,
       "refs": [
+        "exodus 15:18",
         "psalms 9:5",
         "psalms 10:16",
         "psalms 21:4",
@@ -86,14 +98,13 @@
         "psalms 104:5",
         "psalms 119:44",
         "psalms 145:1",
-        "psalms 145:2",
-        "psalms 145:21"
+        "psalms 145:2"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "עֹמֶ֥דֶת לָעַֽד",
-      "pron": "아맏 바엗",
+      "pron": "오멛 바엗",
       "lemmas": [
         "עָמַד",
         "עַד"
@@ -103,7 +114,7 @@
           "word": "עֹמֶ֥דֶת",
           "lemma": "עָמַד",
           "strong": "H5975",
-          "pron": "아맏"
+          "pron": "오멛"
         },
         {
           "word": "לָעַֽד",
@@ -120,6 +131,43 @@
         "psalms 112:3",
         "psalms 112:9",
         "psalms 148:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֱ֭לֹהִים עוֹלָ֣ם וָעֶ֑ד",
+      "pron": "엘로힘 르올람 바엗",
+      "lemmas": [
+        "אֱלֹהִים",
+        "עוֹלָם",
+        "עַד"
+      ],
+      "words": [
+        {
+          "word": "אֱ֭לֹהִים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "עוֹלָ֣ם",
+          "lemma": "עוֹלָם",
+          "strong": "H5769",
+          "pron": "르올람"
+        },
+        {
+          "word": "וָעֶ֑ד",
+          "lemma": "עַד",
+          "strong": "H5703",
+          "pron": "바엗"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 45:6",
+        "psalms 48:14",
+        "psalms 52:8",
+        "micah 4:5"
       ],
       "glossKo": ""
     },
@@ -152,44 +200,8 @@
       "glossKo": ""
     },
     {
-      "hebrew": "אֱ֭לֹהִים עוֹלָ֣ם וָעֶ֑ד",
-      "pron": "베엘로힘 르올람 바엗",
-      "lemmas": [
-        "אֱלֹהִים",
-        "עוֹלָם",
-        "עַד"
-      ],
-      "words": [
-        {
-          "word": "אֱ֭לֹהִים",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        },
-        {
-          "word": "עוֹלָ֣ם",
-          "lemma": "עוֹלָם",
-          "strong": "H5769",
-          "pron": "르올람"
-        },
-        {
-          "word": "וָעֶ֑ד",
-          "lemma": "עַד",
-          "strong": "H5703",
-          "pron": "바엗"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 45:6",
-        "psalms 48:14",
-        "psalms 52:8"
-      ],
-      "glossKo": ""
-    },
-    {
       "hebrew": "וְ֝צִדְקָת֗וֹ עֹמֶ֥דֶת לָעַֽד",
-      "pron": "브칟카테카 아맏 바엗",
+      "pron": "체다카 오멛 바엗",
       "lemmas": [
         "צְדָקָה",
         "עָמַד",
@@ -200,13 +212,13 @@
           "word": "וְ֝צִדְקָת֗וֹ",
           "lemma": "צְדָקָה",
           "strong": "H6666",
-          "pron": "브칟카테카"
+          "pron": "체다카"
         },
         {
           "word": "עֹמֶ֥דֶת",
           "lemma": "עָמַד",
           "strong": "H5975",
-          "pron": "아맏"
+          "pron": "오멛"
         },
         {
           "word": "לָעַֽד",

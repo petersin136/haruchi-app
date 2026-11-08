@@ -1,6 +1,6 @@
 {
   "lemma": "מָאוֹר",
-  "pron": "마오르",
+  "pron": "메오로트",
   "strong": "H3974",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "אוֹר",
       "strong": "H215",
-      "pron": "하이라",
+      "pron": "르하이르",
       "glossKo": "비추다"
     },
     {
@@ -24,28 +24,102 @@
     {
       "lemma": "אוּר",
       "strong": "H217",
-      "pron": "",
+      "pron": "바우림",
       "glossKo": "불꽃"
     },
     {
       "lemma": "יָאִיר",
       "strong": "H2971",
-      "pron": "",
+      "pron": "브야이르",
       "glossKo": "야일"
     },
     {
       "lemma": "מְאוּרָה",
       "strong": "H3975",
-      "pron": "",
+      "pron": "메우라트",
       "glossKo": "밝혀진 곳"
     }
   ],
   "defEn": "luminous; luminary; light; brightness; cheerfulness; chandelier",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 19,
   "byBook": {
+    "exodus": 7,
     "genesis": 5,
-    "psalms": 2
+    "numbers": 2,
+    "psalms": 2,
+    "ezekiel": 1,
+    "leviticus": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "שֶׁ֥מֶן הַמָּאֽוֹר",
+      "pron": "셰멘 메오로트",
+      "lemmas": [
+        "שֶׁמֶן",
+        "מָאוֹר"
+      ],
+      "words": [
+        {
+          "word": "שֶׁ֥מֶן",
+          "lemma": "שֶׁמֶן",
+          "strong": "H8081",
+          "pron": "셰멘"
+        },
+        {
+          "word": "הַמָּאֽוֹר",
+          "lemma": "מָאוֹר",
+          "strong": "H3974",
+          "pron": "메오로트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 25:6",
+        "exodus 35:8",
+        "exodus 35:14",
+        "exodus 35:28",
+        "exodus 39:37",
+        "numbers 4:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֵ֖ת שֶׁ֥מֶן הַמָּאֽוֹר",
+      "pron": "에트 셰멘 메오로트",
+      "lemmas": [
+        "אֵת",
+        "שֶׁמֶן",
+        "מָאוֹר"
+      ],
+      "words": [
+        {
+          "word": "וְאֵ֖ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שֶׁ֥מֶן",
+          "lemma": "שֶׁמֶן",
+          "strong": "H8081",
+          "pron": "셰멘"
+        },
+        {
+          "word": "הַמָּאֽוֹר",
+          "lemma": "מָאוֹר",
+          "strong": "H3974",
+          "pron": "메오로트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 35:14",
+        "exodus 35:28",
+        "exodus 39:37"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

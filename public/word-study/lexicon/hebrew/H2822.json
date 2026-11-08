@@ -1,6 +1,6 @@
 {
   "lemma": "חֹשֶׁךְ",
-  "pron": "호셰크",
+  "pron": "브호셰크",
   "strong": "H2822",
   "posKo": "명사",
   "root": {
@@ -12,25 +12,25 @@
     {
       "lemma": "חֲשׁוֹךְ",
       "strong": "H2816",
-      "pron": "",
+      "pron": "바하쇼카",
       "glossKo": "어두움(아람)"
     },
     {
       "lemma": "חָשַׂךְ",
       "strong": "H2820",
-      "pron": "하소크",
+      "pron": "바에헤소크",
       "glossKo": "삼가다"
     },
     {
       "lemma": "חָשַׁךְ",
       "strong": "H2821",
-      "pron": "테헤샤케나",
+      "pron": "바테헤샤크",
       "glossKo": "어두워지다"
     },
     {
       "lemma": "חָשֹׁךְ",
       "strong": "H2823",
-      "pron": "",
+      "pron": "하슉킴",
       "glossKo": "어두운"
     },
     {
@@ -42,16 +42,186 @@
     {
       "lemma": "חֲשֵׁכָה",
       "strong": "H2825",
-      "pron": "바하셰카",
+      "pron": "하셰카",
       "glossKo": "어둠"
     }
   ],
   "defEn": "dark; darkness; misery; destruction; death; ignorance; sorrow; wickedness",
   "defKo": "어둠이에요. 1:2에서 깊음 위를 덮고 있었어요. 하나님이 빛과 나누시고 '밤'이라 이름 붙이세요(1:4-5). 이름을 붙이시는 것은 그것을 다스리신다는 표현이에요.",
-  "countOT": 15,
+  "countOT": 80,
   "byBook": {
+    "job": 23,
+    "isaiah": 14,
     "psalms": 11,
-    "genesis": 4
+    "ecclesiastes": 6,
+    "exodus": 4,
+    "genesis": 4,
+    "amos": 2,
+    "deuteronomy": 2,
+    "ezekiel": 2,
+    "joel": 2,
+    "proverbs": 2,
+    "samuel2": 2,
+    "joshua": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "nahum": 1,
+    "samuel1": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "חֹ֥שֶׁךְ וְלֹא",
+      "pron": "브호셰크 로",
+      "lemmas": [
+        "חֹשֶׁךְ",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "חֹ֥שֶׁךְ",
+          "lemma": "חֹשֶׁךְ",
+          "strong": "H2822",
+          "pron": "브호셰크"
+        },
+        {
+          "word": "וְלֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "job 12:25",
+        "job 22:11",
+        "psalms 139:12",
+        "isaiah 45:19",
+        "lamentations 3:2",
+        "amos 5:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "י֔וֹם וְלַחֹ֖שֶׁךְ",
+      "pron": "욤 브호셰크",
+      "lemmas": [
+        "יוֹם",
+        "חֹשֶׁךְ"
+      ],
+      "words": [
+        {
+          "word": "י֔וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "וְלַחֹ֖שֶׁךְ",
+          "lemma": "חֹשֶׁךְ",
+          "strong": "H2822",
+          "pron": "브호셰크"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 1:5",
+        "job 15:23",
+        "ecclesiastes 5:17",
+        "ecclesiastes 11:8",
+        "joel 2:2",
+        "zephaniah 1:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֹ֣שֶׁךְ וְ֭צַלְמָוֶת",
+      "pron": "브호셰크 브찰마베트",
+      "lemmas": [
+        "חֹשֶׁךְ",
+        "צַלְמָוֶת"
+      ],
+      "words": [
+        {
+          "word": "חֹ֣שֶׁךְ",
+          "lemma": "חֹשֶׁךְ",
+          "strong": "H2822",
+          "pron": "브호셰크"
+        },
+        {
+          "word": "וְ֭צַלְמָוֶת",
+          "lemma": "צַלְמָוֶת",
+          "strong": "H6757",
+          "pron": "브찰마베트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 3:5",
+        "job 10:21",
+        "psalms 107:10",
+        "psalms 107:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִנִּי חֹ֑שֶׁךְ",
+      "pron": "민 브호셰크",
+      "lemmas": [
+        "מִן",
+        "חֹשֶׁךְ"
+      ],
+      "words": [
+        {
+          "word": "מִנִּי",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        },
+        {
+          "word": "חֹ֑שֶׁךְ",
+          "lemma": "חֹשֶׁךְ",
+          "strong": "H2822",
+          "pron": "브호셰크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 12:22",
+        "job 15:22",
+        "job 15:30",
+        "ecclesiastes 2:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֣לֶךְ חֹֽשֶׁךְ",
+      "pron": "텔레크 브호셰크",
+      "lemmas": [
+        "יָלַךְ",
+        "חֹשֶׁךְ"
+      ],
+      "words": [
+        {
+          "word": "אֵ֣לֶךְ",
+          "lemma": "יָלַךְ",
+          "strong": "H3212",
+          "pron": "텔레크"
+        },
+        {
+          "word": "חֹֽשֶׁךְ",
+          "lemma": "חֹשֶׁךְ",
+          "strong": "H2822",
+          "pron": "브호셰크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 29:3",
+        "ecclesiastes 6:4",
+        "lamentations 3:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

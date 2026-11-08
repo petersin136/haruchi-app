@@ -1,8 +1,8 @@
 {
   "lemma": "בַּרְזִלַּי",
-  "pron": "바레질라이",
+  "pron": "우바레질라이",
   "strong": "H1271",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בַּרְזֶל",
     "strong": "H1270",
@@ -12,19 +12,86 @@
     {
       "lemma": "בַּרְזֶל",
       "strong": "H1270",
-      "pron": "바레젤",
+      "pron": "우바레젤",
       "glossKo": "철"
     },
     {
       "lemma": "פַּרְזֶל",
       "strong": "H6523",
-      "pron": "",
+      "pron": "파레젤",
       "glossKo": "철(아람)"
     }
   ],
   "defEn": "Barzillai",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 12,
+  "byBook": {
+    "samuel2": 7,
+    "ezra": 2,
+    "nehemiah": 2,
+    "kings1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בַּרְזִלַּ֤י הַגִּלְעָדִי֙",
+      "pron": "우바레질라이 아길아디",
+      "lemmas": [
+        "בַּרְזִלַּי",
+        "גִּלְעָדִי"
+      ],
+      "words": [
+        {
+          "word": "בַּרְזִלַּ֤י",
+          "lemma": "בַּרְזִלַּי",
+          "strong": "H1271",
+          "pron": "우바레질라이"
+        },
+        {
+          "word": "הַגִּלְעָדִי֙",
+          "lemma": "גִּלְעָדִי",
+          "strong": "H1569",
+          "pron": "아길아디"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 17:27",
+        "samuel2 19:31",
+        "kings1 2:7",
+        "ezra 2:61",
+        "nehemiah 7:63"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּנֵ֣י בַרְזִלַּ֗י",
+      "pron": "바님 우바레질라이",
+      "lemmas": [
+        "בֵּן",
+        "בַּרְזִלַּי"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "בַרְזִלַּ֗י",
+          "lemma": "בַּרְזִלַּי",
+          "strong": "H1271",
+          "pron": "우바레질라이"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 21:8",
+        "kings1 2:7",
+        "ezra 2:61",
+        "nehemiah 7:63"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

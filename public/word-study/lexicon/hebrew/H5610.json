@@ -1,8 +1,8 @@
 {
   "lemma": "סְפָר",
-  "pron": "세파르",
+  "pron": "아세파르",
   "strong": "H5610",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "סָפַר",
     "strong": "H5608",
@@ -18,20 +18,26 @@
     {
       "lemma": "סַפִּיר",
       "strong": "H5601",
-      "pron": "",
+      "pron": "아삽피르",
       "glossKo": "청옥"
     },
     {
       "lemma": "סָפַר",
       "strong": "H5608",
-      "pron": "아삽페라",
+      "pron": "우세포르",
       "glossKo": "세다"
     },
     {
       "lemma": "סְפַר",
       "strong": "H5609",
-      "pron": "",
+      "pron": "비세파르",
       "glossKo": "책(아람)"
+    },
+    {
+      "lemma": "סְפָר",
+      "strong": "H5611",
+      "pron": "세파라",
+      "glossKo": "스발"
     },
     {
       "lemma": "סְפֹרָה",
@@ -42,7 +48,9 @@
   ],
   "defEn": "census",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 1,
+  "byBook": {
+    "chronicles2": 1
+  },
   "phrases": []
 }

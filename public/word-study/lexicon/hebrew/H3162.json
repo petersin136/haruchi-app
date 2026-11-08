@@ -1,6 +1,6 @@
 {
   "lemma": "יַחַד",
-  "pron": "야핟",
+  "pron": "야헫다브",
   "strong": "H3162",
   "posKo": "부사",
   "root": {
@@ -12,103 +12,221 @@
     {
       "lemma": "יָחַד",
       "strong": "H3161",
-      "pron": "야헫",
+      "pron": "테핟",
       "glossKo": "연합하다"
     },
     {
       "lemma": "יַחְדוֹ",
       "strong": "H3163",
-      "pron": "",
+      "pron": "야헫도",
       "glossKo": "야도"
     },
     {
       "lemma": "יַחְדִּיאֵל",
       "strong": "H3164",
-      "pron": "",
+      "pron": "브야헫디엘",
       "glossKo": "야디엘"
     },
     {
       "lemma": "יֶחְדִּיָּהוּ",
       "strong": "H3165",
-      "pron": "",
+      "pron": "예헫데아후",
       "glossKo": "여디디야"
     },
     {
       "lemma": "יָחִיד",
       "strong": "H3173",
-      "pron": "예히다티위",
-      "glossKo": "나의 독자"
+      "pron": "예힏카",
+      "glossKo": "너의 독자"
     },
     {
       "lemma": "יַחַת",
       "strong": "H3189",
-      "pron": "",
+      "pron": "야하트",
       "glossKo": "야핫"
     }
   ],
   "defEn": "unit; unitedly",
   "defKo": "",
-  "countOT": 33,
+  "countOT": 142,
   "byBook": {
+    "isaiah": 34,
     "psalms": 27,
-    "genesis": 6
+    "jeremiah": 18,
+    "job": 16,
+    "deuteronomy": 8,
+    "genesis": 6,
+    "samuel2": 6,
+    "samuel1": 4,
+    "exodus": 3,
+    "hosea": 3,
+    "nehemiah": 3,
+    "amos": 2,
+    "chronicles1": 2,
+    "joshua": 2,
+    "judges": 2,
+    "ezra": 1,
+    "kings1": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "proverbs": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "יָ֑חַד עַל",
-      "pron": "야핟 알",
+      "hebrew": "יַ֝֗חַד עָלַ֥י",
+      "pron": "야헫다브 알",
       "lemmas": [
         "יַחַד",
         "עַל"
       ],
       "words": [
         {
-          "word": "יָ֑חַד",
+          "word": "יַ֝֗חַד",
           "lemma": "יַחַד",
           "strong": "H3162",
-          "pron": "야핟"
+          "pron": "야헫다브"
         },
         {
-          "word": "עַל",
+          "word": "עָלַ֥י",
           "lemma": "עַל",
           "strong": "H5921",
           "pron": "알"
         }
       ],
-      "count": 4,
+      "count": 8,
       "refs": [
+        "job 16:10",
+        "job 17:16",
+        "job 21:26",
         "psalms 2:2",
         "psalms 31:13",
         "psalms 41:7",
-        "psalms 83:5"
+        "psalms 83:5",
+        "proverbs 22:18"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לָשֶׁ֣בֶת יַחְדָּ֑ו",
-      "pron": "야샵 야핟",
+      "hebrew": "שְׁנֵיהֶ֖ם יַחְדָּֽו",
+      "pron": "셰네 야헫다브",
       "lemmas": [
-        "יָשַׁב",
+        "שְׁנַיִם",
         "יַחַד"
       ],
       "words": [
         {
-          "word": "לָשֶׁ֣בֶת",
-          "lemma": "יָשַׁב",
-          "strong": "H3427",
-          "pron": "야샵"
+          "word": "שְׁנֵיהֶ֖ם",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        },
+        {
+          "word": "יַחְדָּֽו",
+          "lemma": "יַחַד",
+          "strong": "H3162",
+          "pron": "야헫다브"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 22:6",
+        "genesis 22:8",
+        "judges 19:6",
+        "samuel1 11:11",
+        "isaiah 1:31",
+        "amos 3:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יַחְדָּ֑ו כִּֽי",
+      "pron": "야헫다브 키",
+      "lemmas": [
+        "יַחַד",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "יַחְדָּ֑ו",
+          "lemma": "יַחַד",
+          "strong": "H3162",
+          "pron": "야헫다브"
+        },
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 13:6",
+        "isaiah 40:5",
+        "isaiah 41:20",
+        "jeremiah 6:11",
+        "jeremiah 6:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בָּנָ֖יו יַחְדָּ֑ו",
+      "pron": "바님 야헫다브",
+      "lemmas": [
+        "בֵּן",
+        "יַחַד"
+      ],
+      "words": [
+        {
+          "word": "בָּנָ֖יו",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
         },
         {
           "word": "יַחְדָּ֑ו",
           "lemma": "יַחַד",
           "strong": "H3162",
-          "pron": "야핟"
+          "pron": "야헫다브"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
-        "genesis 13:6",
-        "genesis 36:7"
+        "samuel2 12:3",
+        "samuel2 14:16",
+        "jeremiah 6:21",
+        "jeremiah 13:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יַחְדָּ֑ו וְלֹ֨א",
+      "pron": "야헫다브 로",
+      "lemmas": [
+        "יַחַד",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "יַחְדָּ֑ו",
+          "lemma": "יַחַד",
+          "strong": "H3162",
+          "pron": "야헫다브"
+        },
+        {
+          "word": "וְלֹ֨א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 36:7",
+        "isaiah 46:2",
+        "jeremiah 46:21",
+        "hosea 11:7"
       ],
       "glossKo": ""
     }

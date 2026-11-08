@@ -2,7 +2,7 @@
   "lemma": "אִתַּי",
   "pron": "잇타이",
   "strong": "H863",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אֵת",
     "strong": "H854",
@@ -18,13 +18,46 @@
     {
       "lemma": "אֶתְבַּעַל",
       "strong": "H856",
-      "pron": "",
+      "pron": "에텝바알",
       "glossKo": "엣바알"
     }
   ],
   "defEn": "Ittai; Ithai",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "samuel2": 8,
+    "chronicles1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אִתַּ֣י הַגִּתִּ֔י",
+      "pron": "잇타이 아깃티",
+      "lemmas": [
+        "אִתַּי",
+        "גִּתִּי"
+      ],
+      "words": [
+        {
+          "word": "אִתַּ֣י",
+          "lemma": "אִתַּי",
+          "strong": "H863",
+          "pron": "잇타이"
+        },
+        {
+          "word": "הַגִּתִּ֔י",
+          "lemma": "גִּתִּי",
+          "strong": "H1663",
+          "pron": "아깃티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 15:19",
+        "samuel2 15:22",
+        "samuel2 18:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "חַטָּאָה",
-  "pron": "핟도브트",
+  "pron": "핟다트",
   "strong": "H2403",
   "posKo": "명사",
   "root": {
@@ -12,62 +12,253 @@
     {
       "lemma": "חָטָא",
       "strong": "H2398",
-      "pron": "테헤다우",
+      "pron": "메하도",
       "glossKo": "범죄하다"
     },
     {
       "lemma": "חֵטְא",
       "strong": "H2399",
-      "pron": "우브헫",
-      "glossKo": "죄"
+      "pron": "하다아이",
+      "glossKo": "나의 죄"
     },
     {
       "lemma": "חַטָּא",
       "strong": "H2400",
-      "pron": "핟다임",
+      "pron": "브핟다임",
       "glossKo": "죄인"
     },
     {
       "lemma": "חֲטִי",
       "strong": "H2408",
-      "pron": "",
-      "glossKo": "죄(아람)"
+      "pron": "븧디크",
+      "glossKo": "너의 죄(아람)"
     }
   ],
   "defEn": "offence; penalty; occasion; sacrifice; expiation",
   "defKo": "",
-  "countOT": 17,
+  "countOT": 299,
   "byBook": {
+    "leviticus": 82,
+    "numbers": 43,
+    "ezekiel": 26,
+    "kings1": 20,
+    "kings2": 14,
+    "isaiah": 13,
+    "jeremiah": 13,
     "psalms": 13,
-    "genesis": 4
+    "chronicles2": 9,
+    "exodus": 9,
+    "proverbs": 7,
+    "job": 6,
+    "micah": 6,
+    "samuel1": 6,
+    "hosea": 5,
+    "nehemiah": 5,
+    "daniel": 4,
+    "deuteronomy": 4,
+    "genesis": 4,
+    "lamentations": 3,
+    "zechariah": 3,
+    "amos": 1,
+    "ezra": 1,
+    "joshua": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "וְחַ֨טָּאתָ֔ם כִּ֥י",
-      "pron": "핟도브트 키",
+      "hebrew": "חַטֹּאתָיו֙ אֲשֶׁ֣ר",
+      "pron": "핟다트 아셰르",
       "lemmas": [
         "חַטָּאָה",
-        "כִּי"
+        "אֲשֶׁר"
       ],
       "words": [
         {
-          "word": "וְחַ֨טָּאתָ֔ם",
+          "word": "חַטֹּאתָיו֙",
           "lemma": "חַטָּאָה",
           "strong": "H2403",
-          "pron": "핟도브트"
+          "pron": "핟다트"
         },
         {
-          "word": "כִּ֥י",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
         }
       ],
-      "count": 3,
+      "count": 38,
       "refs": [
-        "genesis 18:20",
-        "genesis 31:36",
-        "genesis 50:17"
+        "leviticus 4:3",
+        "leviticus 4:14",
+        "leviticus 4:23",
+        "leviticus 4:28",
+        "leviticus 4:35",
+        "leviticus 5:6",
+        "leviticus 5:10",
+        "leviticus 5:13",
+        "leviticus 6:30",
+        "leviticus 9:8",
+        "leviticus 9:15",
+        "leviticus 16:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶחָ֖ד לְחַטָּֽאת",
+      "pron": "에핟 핟다트",
+      "lemmas": [
+        "אֶחָד",
+        "חַטָּאָה"
+      ],
+      "words": [
+        {
+          "word": "אֶחָ֖ד",
+          "lemma": "אֶחָד",
+          "strong": "H259",
+          "pron": "에핟"
+        },
+        {
+          "word": "לְחַטָּֽאת",
+          "lemma": "חַטָּאָה",
+          "strong": "H2403",
+          "pron": "핟다트"
+        }
+      ],
+      "count": 28,
+      "refs": [
+        "leviticus 5:7",
+        "leviticus 12:8",
+        "leviticus 14:22",
+        "leviticus 14:31",
+        "leviticus 15:15",
+        "leviticus 15:30",
+        "leviticus 23:19",
+        "numbers 6:11",
+        "numbers 7:16",
+        "numbers 7:22",
+        "numbers 7:28",
+        "numbers 7:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְכָל חַטֹּאתָ֑ם",
+      "pron": "칼 핟다트",
+      "lemmas": [
+        "כֹּל",
+        "חַטָּאָה"
+      ],
+      "words": [
+        {
+          "word": "לְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "חַטֹּאתָ֑ם",
+          "lemma": "חַטָּאָה",
+          "strong": "H2403",
+          "pron": "핟다트"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "leviticus 6:30",
+        "leviticus 16:16",
+        "leviticus 16:21",
+        "leviticus 16:30",
+        "leviticus 16:34",
+        "numbers 5:6",
+        "numbers 16:26",
+        "numbers 18:9",
+        "deuteronomy 9:18",
+        "deuteronomy 19:15",
+        "samuel1 12:19",
+        "kings1 15:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַ֣ל חַטָּאתוֹ֩",
+      "pron": "알 핟다트",
+      "lemmas": [
+        "עַל",
+        "חַטָּאָה"
+      ],
+      "words": [
+        {
+          "word": "עַ֣ל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "חַטָּאתוֹ֩",
+          "lemma": "חַטָּאָה",
+          "strong": "H2403",
+          "pron": "핟다트"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "exodus 32:34",
+        "leviticus 4:3",
+        "leviticus 4:28",
+        "leviticus 4:35",
+        "leviticus 5:6",
+        "leviticus 5:13",
+        "leviticus 19:22",
+        "leviticus 26:18",
+        "leviticus 26:24",
+        "leviticus 26:28",
+        "numbers 12:11",
+        "kings1 15:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חַטָּאתוֹ֩ אֲשֶׁ֨ר חָטָ֜א",
+      "pron": "핟다트 아셰르 메하도",
+      "lemmas": [
+        "חַטָּאָה",
+        "אֲשֶׁר",
+        "חָטָא"
+      ],
+      "words": [
+        {
+          "word": "חַטָּאתוֹ֩",
+          "lemma": "חַטָּאָה",
+          "strong": "H2403",
+          "pron": "핟다트"
+        },
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "חָטָ֜א",
+          "lemma": "חָטָא",
+          "strong": "H2398",
+          "pron": "메하도"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "leviticus 4:3",
+        "leviticus 4:14",
+        "leviticus 4:23",
+        "leviticus 4:28",
+        "leviticus 4:35",
+        "leviticus 5:6",
+        "leviticus 5:10",
+        "leviticus 5:13",
+        "leviticus 19:22",
+        "deuteronomy 9:18",
+        "kings1 14:22",
+        "kings1 15:26"
       ],
       "glossKo": ""
     }

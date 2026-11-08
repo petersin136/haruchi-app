@@ -2,7 +2,7 @@
   "lemma": "עַזְגָּד",
   "pron": "앗갇",
   "strong": "H5803",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עַז",
     "strong": "H5794",
@@ -18,7 +18,7 @@
     {
       "lemma": "עַזְבּוּק",
       "strong": "H5802",
-      "pron": "",
+      "pron": "앗부크",
       "glossKo": "아스북"
     },
     {
@@ -26,11 +26,56 @@
       "strong": "H5804",
       "pron": "앗자",
       "glossKo": "가사"
+    },
+    {
+      "lemma": "עַזְמָוֶת",
+      "strong": "H5820",
+      "pron": "앗마베트",
+      "glossKo": "아스마웻"
+    },
+    {
+      "lemma": "עַזָּן",
+      "strong": "H5821",
+      "pron": "앗잔",
+      "glossKo": "앗산"
     }
   ],
   "defEn": "Azgad",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "ezra": 2,
+    "nehemiah": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "בְּנֵ֣י עַזְגָּ֔ד",
+      "pron": "바님 앗갇",
+      "lemmas": [
+        "בֵּן",
+        "עַזְגָּד"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עַזְגָּ֔ד",
+          "lemma": "עַזְגָּד",
+          "strong": "H5803",
+          "pron": "앗갇"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 2:12",
+        "ezra 8:12",
+        "nehemiah 7:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

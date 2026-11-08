@@ -12,19 +12,19 @@
     {
       "lemma": "יִשְׂרָאֵל",
       "strong": "H3479",
-      "pron": "",
+      "pron": "이스라엘",
       "glossKo": "이스라엘(아람)"
     },
     {
       "lemma": "יִשְׂרְאֵלִי",
       "strong": "H3481",
-      "pron": "",
+      "pron": "아이세레엘리",
       "glossKo": "이스라엘 사람"
     },
     {
       "lemma": "מִשְׂרָה",
       "strong": "H4951",
-      "pron": "",
+      "pron": "아미세라",
       "glossKo": "통치"
     },
     {
@@ -36,101 +36,63 @@
     {
       "lemma": "שְׂרָיָה",
       "strong": "H8304",
-      "pron": "",
+      "pron": "우세라아",
       "glossKo": "스라야"
     }
   ],
   "defEn": "he will rule as God; Jisraël",
   "defKo": "",
-  "countOT": 105,
+  "countOT": 2507,
   "byBook": {
+    "numbers": 237,
+    "kings1": 203,
+    "chronicles2": 187,
+    "ezekiel": 186,
+    "judges": 184,
+    "exodus": 170,
+    "kings2": 164,
+    "joshua": 160,
+    "samuel1": 151,
+    "jeremiah": 125,
+    "samuel2": 118,
+    "chronicles1": 114,
+    "isaiah": 92,
+    "deuteronomy": 72,
+    "leviticus": 65,
     "psalms": 62,
-    "genesis": 43
+    "hosea": 44,
+    "genesis": 43,
+    "ezra": 32,
+    "amos": 30,
+    "nehemiah": 22,
+    "micah": 12,
+    "malachi": 5,
+    "ruth": 5,
+    "zechariah": 5,
+    "daniel": 4,
+    "zephaniah": 4,
+    "joel": 3,
+    "lamentations": 3,
+    "ecclesiastes": 1,
+    "nahum": 1,
+    "obadiah": 1,
+    "proverbs": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "אֱלֹ֘הֵ֤י יִשְׂרָאֵ֗ל",
-      "pron": "베엘로힘 이스라엘",
-      "lemmas": [
-        "אֱלֹהִים",
-        "יִשְׂרָאֵל"
-      ],
-      "words": [
-        {
-          "word": "אֱלֹ֘הֵ֤י",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        },
-        {
-          "word": "יִשְׂרָאֵ֗ל",
-          "lemma": "יִשְׂרָאֵל",
-          "strong": "H3478",
-          "pron": "이스라엘"
-        }
-      ],
-      "count": 9,
-      "refs": [
-        "psalms 41:13",
-        "psalms 59:5",
-        "psalms 68:8",
-        "psalms 69:6",
-        "psalms 72:18",
-        "psalms 76:1",
-        "psalms 106:48",
-        "genesis 33:20",
-        "genesis 46:2"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "בְנֵֽי יִשְׂרָאֵ֜ל",
-      "pron": "베니위 이스라엘",
+      "hebrew": "בְּנֵ֣י יִשְׂרָאֵ֔ל",
+      "pron": "바님 이스라엘",
       "lemmas": [
         "בֵּן",
         "יִשְׂרָאֵל"
       ],
       "words": [
         {
-          "word": "בְנֵֽי",
+          "word": "בְּנֵ֣י",
           "lemma": "בֵּן",
           "strong": "H1121",
-          "pron": "베니위"
-        },
-        {
-          "word": "יִשְׂרָאֵ֜ל",
-          "lemma": "יִשְׂרָאֵל",
-          "strong": "H3478",
-          "pron": "이스라엘"
-        }
-      ],
-      "count": 9,
-      "refs": [
-        "psalms 103:7",
-        "psalms 148:14",
-        "genesis 32:32",
-        "genesis 36:31",
-        "genesis 42:5",
-        "genesis 45:21",
-        "genesis 46:5",
-        "genesis 46:8",
-        "genesis 50:25"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיֹּ֨אמֶר֙ יִשְׂרָאֵ֔ל",
-      "pron": "아마르 이스라엘",
-      "lemmas": [
-        "אָמַר",
-        "יִשְׂרָאֵל"
-      ],
-      "words": [
-        {
-          "word": "וַיֹּ֨אמֶר֙",
-          "lemma": "אָמַר",
-          "strong": "H559",
-          "pron": "아마르"
+          "pron": "바님"
         },
         {
           "word": "יִשְׂרָאֵ֔ל",
@@ -139,77 +101,172 @@
           "pron": "이스라엘"
         }
       ],
-      "count": 6,
-      "refs": [
-        "genesis 37:13",
-        "genesis 43:6",
-        "genesis 45:28",
-        "genesis 46:30",
-        "genesis 48:11",
-        "genesis 48:21"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יִשְׂרָאֵל֙ אֶל",
-      "pron": "이스라엘 엘레모",
-      "lemmas": [
-        "יִשְׂרָאֵל",
-        "אֵל"
-      ],
-      "words": [
-        {
-          "word": "יִשְׂרָאֵל֙",
-          "lemma": "יִשְׂרָאֵל",
-          "strong": "H3478",
-          "pron": "이스라엘"
-        },
-        {
-          "word": "אֶל",
-          "lemma": "אֵל",
-          "strong": "H413",
-          "pron": "엘레모"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "psalms 130:7",
-        "psalms 131:3",
-        "genesis 37:13",
-        "genesis 46:30",
-        "genesis 48:11",
-        "genesis 48:21"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יִשְׂרָאֵ֜ל אֶת",
-      "pron": "이스라엘 에트",
-      "lemmas": [
-        "יִשְׂרָאֵל",
-        "אֵת"
-      ],
-      "words": [
-        {
-          "word": "יִשְׂרָאֵ֜ל",
-          "lemma": "יִשְׂרָאֵל",
-          "strong": "H3478",
-          "pron": "이스라엘"
-        },
-        {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        }
-      ],
-      "count": 5,
+      "count": 640,
       "refs": [
         "genesis 32:32",
+        "genesis 36:31",
+        "genesis 42:5",
+        "genesis 45:21",
         "genesis 46:5",
-        "genesis 48:8",
-        "genesis 48:13",
-        "genesis 48:14"
+        "genesis 46:8",
+        "genesis 50:25",
+        "exodus 1:1",
+        "exodus 1:7",
+        "exodus 1:9",
+        "exodus 1:12",
+        "exodus 1:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֱלֹהֵ֣י יִשְׂרָאֵ֔ל",
+      "pron": "엘로힘 이스라엘",
+      "lemmas": [
+        "אֱלֹהִים",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "אֱלֹהֵ֣י",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "יִשְׂרָאֵ֔ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 210,
+      "refs": [
+        "genesis 33:20",
+        "genesis 46:2",
+        "exodus 5:1",
+        "exodus 24:10",
+        "exodus 32:4",
+        "exodus 32:8",
+        "exodus 32:27",
+        "exodus 34:23",
+        "numbers 16:9",
+        "joshua 7:13",
+        "joshua 7:19",
+        "joshua 7:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֶ֣לֶךְ יִשְׂרָאֵ֔ל",
+      "pron": "멜레크 이스라엘",
+      "lemmas": [
+        "מֶלֶךְ",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "מֶ֣לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "יִשְׂרָאֵ֔ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 176,
+      "refs": [
+        "judges 17:6",
+        "judges 18:1",
+        "judges 21:25",
+        "samuel1 24:14",
+        "samuel1 26:20",
+        "samuel1 29:3",
+        "samuel2 6:20",
+        "samuel2 19:8",
+        "kings1 14:19",
+        "kings1 15:9",
+        "kings1 15:16",
+        "kings1 15:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל יִשְׂרָאֵ֔ל",
+      "pron": "칼 이스라엘",
+      "lemmas": [
+        "כֹּל",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "יִשְׂרָאֵ֔ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 153,
+      "refs": [
+        "exodus 18:25",
+        "numbers 16:34",
+        "deuteronomy 1:1",
+        "deuteronomy 5:1",
+        "deuteronomy 11:6",
+        "deuteronomy 13:11",
+        "deuteronomy 18:6",
+        "deuteronomy 21:21",
+        "deuteronomy 27:9",
+        "deuteronomy 29:2",
+        "deuteronomy 31:1",
+        "deuteronomy 31:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּ֣ית יִשְׂרָאֵ֔ל",
+      "pron": "미바이트 이스라엘",
+      "lemmas": [
+        "בַּיִת",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֣ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "יִשְׂרָאֵ֔ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 147,
+      "refs": [
+        "exodus 16:31",
+        "exodus 40:38",
+        "leviticus 10:6",
+        "leviticus 17:3",
+        "leviticus 17:8",
+        "leviticus 17:10",
+        "leviticus 22:18",
+        "numbers 20:29",
+        "joshua 21:45",
+        "ruth 4:11",
+        "samuel1 7:2",
+        "samuel1 7:3"
       ],
       "glossKo": ""
     }

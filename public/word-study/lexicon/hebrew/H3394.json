@@ -1,6 +1,6 @@
 {
   "lemma": "יָרֵחַ",
-  "pron": "야레아흐",
+  "pron": "브아야레아흐",
   "strong": "H3394",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "יָרוֹחַ",
       "strong": "H3386",
-      "pron": "",
+      "pron": "야로아흐",
       "glossKo": "야로아"
     },
     {
       "lemma": "יֶרַח",
       "strong": "H3391",
-      "pron": "",
+      "pron": "예라힘",
       "glossKo": "달"
     },
     {
@@ -30,22 +30,127 @@
     {
       "lemma": "יְרַח",
       "strong": "H3393",
-      "pron": "",
+      "pron": "리위라흐",
       "glossKo": "달(아람)"
     },
     {
       "lemma": "יְרִיחוֹ",
       "strong": "H3405",
-      "pron": "",
+      "pron": "예레호",
       "glossKo": "여리고"
     }
   ],
   "defEn": "moon",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 26,
   "byBook": {
     "psalms": 8,
-    "genesis": 1
+    "joel": 3,
+    "deuteronomy": 2,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "job": 2,
+    "joshua": 2,
+    "ecclesiastes": 1,
+    "ezekiel": 1,
+    "genesis": 1,
+    "habakkuk": 1,
+    "kings2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הַשֶּׁ֣מֶשׁ וְהַיָּרֵ֗חַ",
+      "pron": "아셰메쉬 브아야레아흐",
+      "lemmas": [
+        "שֶׁמֶשׁ",
+        "יָרֵחַ"
+      ],
+      "words": [
+        {
+          "word": "הַשֶּׁ֣מֶשׁ",
+          "lemma": "שֶׁמֶשׁ",
+          "strong": "H8121",
+          "pron": "아셰메쉬"
+        },
+        {
+          "word": "וְהַיָּרֵ֗חַ",
+          "lemma": "יָרֵחַ",
+          "strong": "H3394",
+          "pron": "브아야레아흐"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 37:9",
+        "joshua 10:13",
+        "kings2 23:5",
+        "psalms 148:3",
+        "jeremiah 8:2",
+        "joel 2:10",
+        "joel 3:15",
+        "habakkuk 3:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָרֵ֥חַ וְ֝כוֹכָבִ֗ים",
+      "pron": "브아야레아흐 아코카빔",
+      "lemmas": [
+        "יָרֵחַ",
+        "כּוֹכָב"
+      ],
+      "words": [
+        {
+          "word": "יָרֵ֥חַ",
+          "lemma": "יָרֵחַ",
+          "strong": "H3394",
+          "pron": "브아야레아흐"
+        },
+        {
+          "word": "וְ֝כוֹכָבִ֗ים",
+          "lemma": "כּוֹכָב",
+          "strong": "H3556",
+          "pron": "아코카빔"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 8:3",
+        "psalms 136:9",
+        "ecclesiastes 12:2",
+        "jeremiah 31:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָ֭רֵחַ וְלֹ֣א",
+      "pron": "브아야레아흐 로",
+      "lemmas": [
+        "יָרֵחַ",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "יָ֭רֵחַ",
+          "lemma": "יָרֵחַ",
+          "strong": "H3394",
+          "pron": "브아야레아흐"
+        },
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 25:5",
+        "isaiah 13:10",
+        "isaiah 60:19",
+        "ezekiel 32:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

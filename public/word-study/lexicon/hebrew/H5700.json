@@ -2,7 +2,7 @@
   "lemma": "עֶגְלוֹן",
   "pron": "엑론",
   "strong": "H5700",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עֵגֶל",
     "strong": "H5695",
@@ -20,11 +20,118 @@
       "strong": "H5697",
       "pron": "엑라",
       "glossKo": "암송아지"
+    },
+    {
+      "lemma": "עֵין עֶגְלַיִם",
+      "strong": "H5882",
+      "pron": "엔",
+      "glossKo": "엔에글라임"
     }
   ],
   "defEn": "Eglon",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "joshua": 8,
+    "judges": 5
+  },
+  "phrases": [
+    {
+      "hebrew": "מֶֽלֶךְ עֶגְל֖וֹן",
+      "pron": "멜레크 엑론",
+      "lemmas": [
+        "מֶלֶךְ",
+        "עֶגְלוֹן"
+      ],
+      "words": [
+        {
+          "word": "מֶֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "עֶגְל֖וֹן",
+          "lemma": "עֶגְלוֹן",
+          "strong": "H5700",
+          "pron": "엑론"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 10:3",
+        "joshua 10:5",
+        "joshua 10:23",
+        "joshua 12:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֶגְל֤וֹן מֶֽלֶךְ",
+      "pron": "엑론 멜레크",
+      "lemmas": [
+        "עֶגְלוֹן",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "עֶגְל֤וֹן",
+          "lemma": "עֶגְלוֹן",
+          "strong": "H5700",
+          "pron": "엑론"
+        },
+        {
+          "word": "מֶֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 3:12",
+        "judges 3:14",
+        "judges 3:15",
+        "judges 3:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֶגְל֤וֹן מֶֽלֶךְ מוֹאָב֙",
+      "pron": "엑론 멜레크 모압",
+      "lemmas": [
+        "עֶגְלוֹן",
+        "מֶלֶךְ",
+        "מוֹאָב"
+      ],
+      "words": [
+        {
+          "word": "עֶגְל֤וֹן",
+          "lemma": "עֶגְלוֹן",
+          "strong": "H5700",
+          "pron": "엑론"
+        },
+        {
+          "word": "מֶֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "מוֹאָב֙",
+          "lemma": "מוֹאָב",
+          "strong": "H4124",
+          "pron": "모압"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 3:12",
+        "judges 3:14",
+        "judges 3:15",
+        "judges 3:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "רָקִיעַ",
-  "pron": "하라키아",
+  "pron": "라키아",
   "strong": "H7549",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,29 @@
     {
       "lemma": "רָקַע",
       "strong": "H7554",
-      "pron": "르로카",
-      "glossKo": "두드리다를 따라"
+      "pron": "바예락케우",
+      "glossKo": "두드리다"
     },
     {
       "lemma": "רִקֻּעַ",
       "strong": "H7555",
-      "pron": "",
+      "pron": "릭쿠에",
       "glossKo": "두들겨 편"
     }
   ],
   "defEn": "expanse; firmament; visible arch of the sky",
   "defKo": "넓게 펼쳐 놓은 공간이에요. 위의 물과 아래의 물 사이에 있는 하늘을 둥근 천장처럼 그린 말이에요. 어원 라카는 '두드려 얇게 펴다'라는 뜻이고, 금을 두드려 판으로 펴는 장면에도 쓰여요(출 39:3).",
-  "countOT": 11,
+  "countOT": 17,
   "byBook": {
     "genesis": 9,
-    "psalms": 2
+    "ezekiel": 5,
+    "psalms": 2,
+    "daniel": 1
   },
   "phrases": [
     {
       "hebrew": "בִּרְקִ֣יעַ הַשָּׁמַ֔יִם",
-      "pron": "하라키아 샤마임",
+      "pron": "라키아 샤마임",
       "lemmas": [
         "רָקִיעַ",
         "שָׁמַיִם"
@@ -42,7 +44,7 @@
           "word": "בִּרְקִ֣יעַ",
           "lemma": "רָקִיעַ",
           "strong": "H7549",
-          "pron": "하라키아"
+          "pron": "라키아"
         },
         {
           "word": "הַשָּׁמַ֔יִם",
@@ -58,6 +60,71 @@
         "genesis 1:15",
         "genesis 1:17",
         "genesis 1:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָרָקִ֖יעַ אֲשֶׁ֣ר",
+      "pron": "라키아 아셰르",
+      "lemmas": [
+        "רָקִיעַ",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "לָרָקִ֖יעַ",
+          "lemma": "רָקִיעַ",
+          "strong": "H7549",
+          "pron": "라키아"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 1:25",
+        "ezekiel 1:26",
+        "ezekiel 10:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָרָקִ֖יעַ אֲשֶׁ֣ר עַל",
+      "pron": "라키아 아셰르 알",
+      "lemmas": [
+        "רָקִיעַ",
+        "אֲשֶׁר",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "לָרָקִ֖יעַ",
+          "lemma": "רָקִיעַ",
+          "strong": "H7549",
+          "pron": "라키아"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 1:25",
+        "ezekiel 1:26",
+        "ezekiel 10:1"
       ],
       "glossKo": ""
     }

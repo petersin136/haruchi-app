@@ -1,6 +1,6 @@
 {
   "lemma": "נָחַם",
-  "pron": "예나하무니",
+  "pron": "예나하메누",
   "strong": "H5162",
   "posKo": "동사",
   "root": null,
@@ -8,46 +8,241 @@
     {
       "lemma": "מְנַחֵם",
       "strong": "H4505",
-      "pron": "",
+      "pron": "메나헴",
       "glossKo": "므나헴"
     },
     {
       "lemma": "נְחוּם",
       "strong": "H5149",
-      "pron": "",
+      "pron": "네훔",
       "glossKo": "느훔"
     },
     {
       "lemma": "נִחוּם",
       "strong": "H5150",
-      "pron": "",
+      "pron": "니후밈",
       "glossKo": "위로"
     },
     {
       "lemma": "נַחוּם",
       "strong": "H5151",
-      "pron": "",
+      "pron": "나훔",
       "glossKo": "나훔"
     },
     {
       "lemma": "נַחַם",
       "strong": "H5163",
-      "pron": "",
+      "pron": "나함",
       "glossKo": "나함"
     },
     {
       "lemma": "נֹחַם",
       "strong": "H5164",
-      "pron": "",
+      "pron": "노함",
       "glossKo": "회한"
     }
   ],
   "defEn": "sigh; breathe",
   "defKo": "",
-  "countOT": 21,
+  "countOT": 108,
   "byBook": {
+    "isaiah": 17,
+    "jeremiah": 14,
     "psalms": 12,
-    "genesis": 9
+    "genesis": 9,
+    "ezekiel": 7,
+    "job": 7,
+    "lamentations": 6,
+    "chronicles1": 5,
+    "samuel2": 5,
+    "samuel1": 4,
+    "exodus": 3,
+    "jonah": 3,
+    "judges": 3,
+    "zechariah": 3,
+    "amos": 2,
+    "ecclesiastes": 2,
+    "joel": 2,
+    "deuteronomy": 1,
+    "nahum": 1,
+    "numbers": 1,
+    "ruth": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לְנַחֲמ֣וֹ עַל",
+      "pron": "예나하메누 알",
+      "lemmas": [
+        "נָחַם",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "לְנַחֲמ֣וֹ",
+          "lemma": "נָחַם",
+          "strong": "H5162",
+          "pron": "예나하메누"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "exodus 32:12",
+        "samuel2 13:39",
+        "chronicles1 19:2",
+        "chronicles1 21:15",
+        "job 42:6",
+        "psalms 90:13",
+        "isaiah 22:4",
+        "jeremiah 8:6",
+        "jeremiah 16:7",
+        "jeremiah 18:8",
+        "jeremiah 18:10",
+        "jeremiah 31:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּנָּ֣חֶם יְהוָ֔ה",
+      "pron": "예나하메누 여호와",
+      "lemmas": [
+        "נָחַם",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וַיִּנָּ֣חֶם",
+          "lemma": "נָחַם",
+          "strong": "H5162",
+          "pron": "예나하메누"
+        },
+        {
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "genesis 6:6",
+        "exodus 32:14",
+        "judges 2:18",
+        "samuel2 24:16",
+        "isaiah 49:13",
+        "isaiah 51:3",
+        "isaiah 52:9",
+        "jeremiah 26:13",
+        "jeremiah 26:19",
+        "amos 7:3",
+        "amos 7:6",
+        "zechariah 1:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי נִחַ֤ם",
+      "pron": "키 예나하메누",
+      "lemmas": [
+        "כִּי",
+        "נָחַם"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "נִחַ֤ם",
+          "lemma": "נָחַם",
+          "strong": "H5162",
+          "pron": "예나하메누"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 6:7",
+        "judges 2:18",
+        "ruth 2:13",
+        "samuel2 13:39",
+        "isaiah 49:13",
+        "isaiah 51:3",
+        "isaiah 52:9",
+        "jeremiah 42:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֤ין מְנַחֵם֙",
+      "pron": "아인 예나하메누",
+      "lemmas": [
+        "אַיִן",
+        "נָחַם"
+      ],
+      "words": [
+        {
+          "word": "אֵ֤ין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
+        },
+        {
+          "word": "מְנַחֵם֙",
+          "lemma": "נָחַם",
+          "strong": "H5162",
+          "pron": "예나하메누"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "psalms 69:20",
+        "ecclesiastes 4:1",
+        "lamentations 1:2",
+        "lamentations 1:9",
+        "lamentations 1:17",
+        "lamentations 1:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֣א יִנָּחֵ֑ם",
+      "pron": "로 예나하메누",
+      "lemmas": [
+        "לֹא",
+        "נָחַם"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִנָּחֵ֑ם",
+          "lemma": "נָחַם",
+          "strong": "H5162",
+          "pron": "예나하메누"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel1 15:29",
+        "psalms 110:4",
+        "isaiah 54:11",
+        "jeremiah 4:28",
+        "jeremiah 20:16",
+        "ezekiel 24:14",
+        "zechariah 8:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

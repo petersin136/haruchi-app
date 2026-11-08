@@ -2,7 +2,7 @@
   "lemma": "נָבָל",
   "pron": "나발",
   "strong": "H5037",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נָבָל",
     "strong": "H5036",
@@ -24,13 +24,186 @@
     {
       "lemma": "נַבְלוּת",
       "strong": "H5040",
-      "pron": "",
-      "glossKo": "수치"
+      "pron": "납루타흐",
+      "glossKo": "그녀의 수치"
+    },
+    {
+      "lemma": "נְבַלָּט",
+      "strong": "H5041",
+      "pron": "네발랃",
+      "glossKo": "느발랏"
     }
   ],
   "defEn": "Nabal",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 22,
+  "byBook": {
+    "samuel1": 20,
+    "samuel2": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "אֵ֖שֶׁת נָבָ֥ל",
+      "pron": "르잇샤 나발",
+      "lemmas": [
+        "אִשָּׁה",
+        "נָבָל"
+      ],
+      "words": [
+        {
+          "word": "אֵ֖שֶׁת",
+          "lemma": "אִשָּׁה",
+          "strong": "H802",
+          "pron": "르잇샤"
+        },
+        {
+          "word": "נָבָ֥ל",
+          "lemma": "נָבָל",
+          "strong": "H5037",
+          "pron": "나발"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 25:14",
+        "samuel1 27:3",
+        "samuel1 30:5",
+        "samuel2 2:2",
+        "samuel2 3:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַאֲבִיגַ֕יִל אֵ֖שֶׁת נָבָ֥ל",
+      "pron": "아비가일 르잇샤 나발",
+      "lemmas": [
+        "אֲבִיגַיִל",
+        "אִשָּׁה",
+        "נָבָל"
+      ],
+      "words": [
+        {
+          "word": "וַאֲבִיגַ֕יִל",
+          "lemma": "אֲבִיגַיִל",
+          "strong": "H26",
+          "pron": "아비가일"
+        },
+        {
+          "word": "אֵ֖שֶׁת",
+          "lemma": "אִשָּׁה",
+          "strong": "H802",
+          "pron": "르잇샤"
+        },
+        {
+          "word": "נָבָ֥ל",
+          "lemma": "נָבָל",
+          "strong": "H5037",
+          "pron": "나발"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 25:14",
+        "samuel1 27:3",
+        "samuel1 30:5",
+        "samuel2 2:2",
+        "samuel2 3:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל נָבָ֔ל",
+      "pron": "엘 나발",
+      "lemmas": [
+        "אֵל",
+        "נָבָל"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "נָבָ֔ל",
+          "lemma": "נָבָל",
+          "strong": "H5037",
+          "pron": "나발"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 25:5",
+        "samuel1 25:9",
+        "samuel1 25:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֖שֶׁת נָבָ֥ל הַֽכַּרְמְלִֽי",
+      "pron": "르잇샤 나발 아카렘리",
+      "lemmas": [
+        "אִשָּׁה",
+        "נָבָל",
+        "כַּרְמְלִי"
+      ],
+      "words": [
+        {
+          "word": "אֵ֖שֶׁת",
+          "lemma": "אִשָּׁה",
+          "strong": "H802",
+          "pron": "르잇샤"
+        },
+        {
+          "word": "נָבָ֥ל",
+          "lemma": "נָבָל",
+          "strong": "H5037",
+          "pron": "나발"
+        },
+        {
+          "word": "הַֽכַּרְמְלִֽי",
+          "lemma": "כַּרְמְלִי",
+          "strong": "H3761",
+          "pron": "아카렘리"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 30:5",
+        "samuel2 2:2",
+        "samuel2 3:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נָבָ֖ל אֶת",
+      "pron": "나발 에트",
+      "lemmas": [
+        "נָבָל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "נָבָ֖ל",
+          "lemma": "נָבָל",
+          "strong": "H5037",
+          "pron": "나발"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 25:4",
+        "samuel1 25:10",
+        "samuel1 25:39"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

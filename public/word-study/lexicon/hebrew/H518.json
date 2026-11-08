@@ -7,12 +7,85 @@
   "family": [],
   "defEn": "lo!; whether?; if; although",
   "defKo": "",
-  "countOT": 121,
+  "countOT": 1070,
   "byBook": {
+    "job": 109,
+    "jeremiah": 92,
+    "leviticus": 91,
     "genesis": 76,
-    "psalms": 45
+    "numbers": 66,
+    "exodus": 60,
+    "samuel1": 56,
+    "psalms": 45,
+    "isaiah": 40,
+    "kings2": 40,
+    "kings1": 39,
+    "ezekiel": 37,
+    "judges": 37,
+    "samuel2": 37,
+    "deuteronomy": 34,
+    "proverbs": 31,
+    "chronicles2": 21,
+    "ecclesiastes": 21,
+    "joshua": 20,
+    "amos": 17,
+    "chronicles1": 16,
+    "esther": 16,
+    "nehemiah": 11,
+    "songofsolomon": 10,
+    "ruth": 9,
+    "zechariah": 7,
+    "lamentations": 5,
+    "malachi": 5,
+    "obadiah": 5,
+    "micah": 4,
+    "habakkuk": 3,
+    "hosea": 3,
+    "joel": 2,
+    "nahum": 2,
+    "daniel": 1,
+    "ezra": 1,
+    "haggai": 1
   },
   "phrases": [
+    {
+      "hebrew": "כִּ֣י אִם",
+      "pron": "키 임",
+      "lemmas": [
+        "כִּי",
+        "אִם"
+      ],
+      "words": [
+        {
+          "word": "כִּ֣י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "אִם",
+          "lemma": "אִם",
+          "strong": "H518",
+          "pron": "임"
+        }
+      ],
+      "count": 156,
+      "refs": [
+        "genesis 15:4",
+        "genesis 28:17",
+        "genesis 32:26",
+        "genesis 32:28",
+        "genesis 35:10",
+        "genesis 39:6",
+        "genesis 39:9",
+        "genesis 40:14",
+        "genesis 42:15",
+        "genesis 47:18",
+        "exodus 8:21",
+        "exodus 9:2"
+      ],
+      "glossKo": ""
+    },
     {
       "hebrew": "אִם לֹ֥א",
       "pron": "임 로",
@@ -34,12 +107,8 @@
           "pron": "로"
         }
       ],
-      "count": 20,
+      "count": 130,
       "refs": [
-        "psalms 7:12",
-        "psalms 59:15",
-        "psalms 131:2",
-        "psalms 137:6",
         "genesis 4:7",
         "genesis 18:21",
         "genesis 24:8",
@@ -47,51 +116,17 @@
         "genesis 24:38",
         "genesis 24:41",
         "genesis 24:49",
-        "genesis 27:21"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "כִּ֥י אִם",
-      "pron": "키 임",
-      "lemmas": [
-        "כִּי",
-        "אִם"
-      ],
-      "words": [
-        {
-          "word": "כִּ֥י",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
-        },
-        {
-          "word": "אִם",
-          "lemma": "אִם",
-          "strong": "H518",
-          "pron": "임"
-        }
-      ],
-      "count": 12,
-      "refs": [
-        "psalms 1:2",
-        "psalms 1:4",
-        "genesis 15:4",
-        "genesis 28:17",
-        "genesis 32:26",
-        "genesis 32:28",
-        "genesis 35:10",
-        "genesis 39:6",
-        "genesis 39:9",
-        "genesis 40:14",
-        "genesis 42:15",
-        "genesis 47:18"
+        "genesis 27:21",
+        "genesis 34:17",
+        "genesis 37:32",
+        "genesis 42:16",
+        "genesis 42:37"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "לֵאמֹ֑ר אִם",
-      "pron": "아마르 임",
+      "pron": "바요메르 임",
       "lemmas": [
         "אָמַר",
         "אִם"
@@ -101,7 +136,7 @@
           "word": "לֵאמֹ֑ר",
           "lemma": "אָמַר",
           "strong": "H559",
-          "pron": "아마르"
+          "pron": "바요메르"
         },
         {
           "word": "אִם",
@@ -110,7 +145,7 @@
           "pron": "임"
         }
       ],
-      "count": 8,
+      "count": 32,
       "refs": [
         "genesis 23:8",
         "genesis 25:22",
@@ -119,71 +154,87 @@
         "genesis 38:17",
         "genesis 44:32",
         "genesis 47:29",
-        "genesis 50:4"
+        "genesis 50:4",
+        "exodus 15:26",
+        "exodus 34:9",
+        "numbers 21:2",
+        "numbers 22:20"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אִֽם יֶשׁ",
-      "pron": "임 예쉬",
+      "hebrew": "וְהָיָ֗ה אִם",
+      "pron": "하에타 임",
       "lemmas": [
-        "אִם",
-        "יֵשׁ"
+        "הָיָה",
+        "אִם"
       ],
       "words": [
         {
-          "word": "אִֽם",
+          "word": "וְהָיָ֗ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "אִם",
           "lemma": "אִם",
           "strong": "H518",
           "pron": "임"
-        },
-        {
-          "word": "יֶשׁ",
-          "lemma": "יֵשׁ",
-          "strong": "H3426",
-          "pron": "예쉬"
         }
       ],
-      "count": 6,
+      "count": 25,
       "refs": [
-        "psalms 7:3",
-        "genesis 23:8",
-        "genesis 24:42",
-        "genesis 24:49",
-        "genesis 43:4",
-        "genesis 44:26"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וְאִם בָּ֤א",
-      "pron": "임 아보",
-      "lemmas": [
-        "אִם",
-        "בּוֹא"
-      ],
-      "words": [
-        {
-          "word": "וְאִם",
-          "lemma": "אִם",
-          "strong": "H518",
-          "pron": "임"
-        },
-        {
-          "word": "בָּ֤א",
-          "lemma": "בּוֹא",
-          "strong": "H935",
-          "pron": "아보"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "psalms 41:6",
-        "psalms 95:11",
-        "psalms 132:3",
-        "genesis 32:8",
         "genesis 38:9",
-        "genesis 42:15"
+        "exodus 4:8",
+        "exodus 4:9",
+        "numbers 5:27",
+        "numbers 15:24",
+        "numbers 21:9",
+        "deuteronomy 8:19",
+        "deuteronomy 11:13",
+        "deuteronomy 20:11",
+        "deuteronomy 21:14",
+        "deuteronomy 24:1",
+        "deuteronomy 25:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֔ה אִם",
+      "pron": "여호와 임",
+      "lemmas": [
+        "יְהֹוָה",
+        "אִם"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "אִם",
+          "lemma": "אִם",
+          "strong": "H518",
+          "pron": "임"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "genesis 18:26",
+        "numbers 14:28",
+        "joshua 22:23",
+        "samuel1 14:45",
+        "samuel1 19:6",
+        "samuel1 24:6",
+        "samuel1 24:21",
+        "samuel1 28:10",
+        "samuel2 14:11",
+        "isaiah 1:18",
+        "isaiah 66:9",
+        "jeremiah 5:9"
       ],
       "glossKo": ""
     }

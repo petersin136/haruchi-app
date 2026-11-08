@@ -1,14 +1,20 @@
 {
   "lemma": "גִּתִּי",
-  "pron": "깃티",
+  "pron": "아깃티",
   "strong": "H1663",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גַּת",
     "strong": "H1661",
     "glossKo": "가드"
   },
   "family": [
+    {
+      "lemma": "גַּת",
+      "strong": "H1661",
+      "pron": "브가트",
+      "glossKo": "가드"
+    },
     {
       "lemma": "גִּתִּית",
       "strong": "H1665",
@@ -18,7 +24,106 @@
   ],
   "defEn": "Gittite",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 10,
+  "byBook": {
+    "samuel2": 7,
+    "chronicles1": 2,
+    "joshua": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֱד֖וֹם הַגִּתִּֽי",
+      "pron": "오벧 아깃티",
+      "lemmas": [
+        "עֹבֵד אֱדוֹם",
+        "גִּתִּי"
+      ],
+      "words": [
+        {
+          "word": "אֱד֖וֹם",
+          "lemma": "עֹבֵד אֱדוֹם",
+          "strong": "H5654",
+          "pron": "오벧"
+        },
+        {
+          "word": "הַגִּתִּֽי",
+          "lemma": "גִּתִּי",
+          "strong": "H1663",
+          "pron": "아깃티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 6:10",
+        "samuel2 6:11",
+        "chronicles1 13:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִתַּ֣י הַגִּתִּ֔י",
+      "pron": "잇타이 아깃티",
+      "lemmas": [
+        "אִתַּי",
+        "גִּתִּי"
+      ],
+      "words": [
+        {
+          "word": "אִתַּ֣י",
+          "lemma": "אִתַּי",
+          "strong": "H863",
+          "pron": "잇타이"
+        },
+        {
+          "word": "הַגִּתִּ֔י",
+          "lemma": "גִּתִּי",
+          "strong": "H1663",
+          "pron": "아깃티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 15:19",
+        "samuel2 15:22",
+        "samuel2 18:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֹבֵֽד אֱד֖וֹם הַגִּתִּֽי",
+      "pron": "오벧 오벧 아깃티",
+      "lemmas": [
+        "עֹבֵד אֱדוֹם",
+        "עֹבֵד אֱדוֹם",
+        "גִּתִּי"
+      ],
+      "words": [
+        {
+          "word": "עֹבֵֽד",
+          "lemma": "עֹבֵד אֱדוֹם",
+          "strong": "H5654",
+          "pron": "오벧"
+        },
+        {
+          "word": "אֱד֖וֹם",
+          "lemma": "עֹבֵד אֱדוֹם",
+          "strong": "H5654",
+          "pron": "오벧"
+        },
+        {
+          "word": "הַגִּתִּֽי",
+          "lemma": "גִּתִּי",
+          "strong": "H1663",
+          "pron": "아깃티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 6:10",
+        "samuel2 6:11",
+        "chronicles1 13:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "אָחַר",
-  "pron": "테아하르",
+  "pron": "테아하루",
   "strong": "H309",
   "posKo": "동사",
   "root": null,
@@ -8,8 +8,8 @@
     {
       "lemma": "אַחַר",
       "strong": "H310",
-      "pron": "아하레하",
-      "glossKo": "그녀에게 뒤에"
+      "pron": "아하레",
+      "glossKo": "뒤에"
     },
     {
       "lemma": "אַחֵר",
@@ -20,7 +20,7 @@
     {
       "lemma": "אַחֲרוֹן",
       "strong": "H314",
-      "pron": "아하론",
+      "pron": "아하로님",
       "glossKo": "뒤의"
     },
     {
@@ -32,15 +32,56 @@
   ],
   "defEn": "loiter",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 17,
   "byBook": {
     "genesis": 3,
-    "psalms": 3
+    "psalms": 3,
+    "deuteronomy": 2,
+    "isaiah": 2,
+    "daniel": 1,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "habakkuk": 1,
+    "judges": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
+      "hebrew": "לֹ֣א תְאַחֵ֑ר",
+      "pron": "로 테아하루",
+      "lemmas": [
+        "לֹא",
+        "אָחַר"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תְאַחֵ֑ר",
+          "lemma": "אָחַר",
+          "strong": "H309",
+          "pron": "테아하루"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 34:19",
+        "exodus 22:29",
+        "deuteronomy 7:10",
+        "deuteronomy 23:21",
+        "isaiah 46:13",
+        "habakkuk 2:3"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "אַל תְּאַחַֽר",
-      "pron": "브엘 테아하르",
+      "pron": "엘 테아하루",
       "lemmas": [
         "אַל",
         "אָחַר"
@@ -50,20 +91,22 @@
           "word": "אַל",
           "lemma": "אַל",
           "strong": "H408",
-          "pron": "브엘"
+          "pron": "엘"
         },
         {
           "word": "תְּאַחַֽר",
           "lemma": "אָחַר",
           "strong": "H309",
-          "pron": "테아하르"
+          "pron": "테아하루"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
+        "genesis 24:56",
         "psalms 40:17",
         "psalms 70:5",
-        "genesis 24:56"
+        "ecclesiastes 5:4",
+        "daniel 9:19"
       ],
       "glossKo": ""
     }

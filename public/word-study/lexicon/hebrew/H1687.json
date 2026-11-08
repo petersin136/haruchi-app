@@ -1,6 +1,6 @@
 {
   "lemma": "דְּבִיר",
-  "pron": "데비르",
+  "pron": "브라데비르",
   "strong": "H1687",
   "posKo": "명사",
   "root": {
@@ -12,45 +12,109 @@
     {
       "lemma": "דְּבוֹרָה",
       "strong": "H1682",
-      "pron": "키데보림",
+      "pron": "아데보림",
       "glossKo": "꿀벌"
     },
     {
       "lemma": "דָבַר",
       "strong": "H1696",
-      "pron": "예답베르",
+      "pron": "바예답베르",
       "glossKo": "이야기하다"
     },
     {
       "lemma": "דָּבָר",
       "strong": "H1697",
-      "pron": "딥레",
+      "pron": "우데바림",
       "glossKo": "말씀"
     },
     {
       "lemma": "דֶּבֶר",
       "strong": "H1698",
-      "pron": "라데베르",
+      "pron": "바데베르",
       "glossKo": "전염병"
     },
     {
       "lemma": "דֹּבֶר",
       "strong": "H1699",
-      "pron": "",
-      "glossKo": "초장"
+      "pron": "케답람",
+      "glossKo": "그들의 초장"
     },
     {
       "lemma": "דֹּבְרָה",
       "strong": "H1702",
-      "pron": "",
+      "pron": "돕로트",
       "glossKo": "뗏목"
     }
   ],
   "defEn": "shrine",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 16,
   "byBook": {
+    "kings1": 11,
+    "chronicles2": 4,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לִפְנֵ֥י הַדְּבִ֖יר",
+      "pron": "페네 브라데비르",
+      "lemmas": [
+        "פָּנִים",
+        "דְּבִיר"
+      ],
+      "words": [
+        {
+          "word": "לִפְנֵ֥י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "הַדְּבִ֖יר",
+          "lemma": "דְּבִיר",
+          "strong": "H1687",
+          "pron": "브라데비르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 6:20",
+        "kings1 6:21",
+        "kings1 7:49",
+        "kings1 8:8",
+        "chronicles2 4:20",
+        "chronicles2 5:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל דְּבִ֥יר",
+      "pron": "엘 브라데비르",
+      "lemmas": [
+        "אֵל",
+        "דְּבִיר"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "דְּבִ֥יר",
+          "lemma": "דְּבִיר",
+          "strong": "H1687",
+          "pron": "브라데비르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 8:6",
+        "chronicles2 5:7",
+        "psalms 28:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

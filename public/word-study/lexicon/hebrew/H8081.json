@@ -1,6 +1,6 @@
 {
   "lemma": "שֶׁמֶן",
-  "pron": "바셰멘",
+  "pron": "셰멘",
   "strong": "H8081",
   "posKo": "명사",
   "root": {
@@ -12,25 +12,25 @@
     {
       "lemma": "אַשְׁמָן",
       "strong": "H820",
-      "pron": "",
+      "pron": "바아셰만님",
       "glossKo": "기름진"
     },
     {
       "lemma": "מַשְׁמָן",
       "strong": "H4924",
-      "pron": "브미셰만네헴",
-      "glossKo": "그들의 기름진 것"
+      "pron": "우미셰만네",
+      "glossKo": "기름진 것"
     },
     {
       "lemma": "מִשְׁמַנָּה",
       "strong": "H4925",
-      "pron": "",
+      "pron": "미셰만나",
       "glossKo": "미스만나"
     },
     {
       "lemma": "שָׁמַן",
       "strong": "H8080",
-      "pron": "",
+      "pron": "바이셰만",
       "glossKo": "기름지다"
     },
     {
@@ -42,10 +42,232 @@
   ],
   "defEn": "grease; richness",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 193,
   "byBook": {
+    "leviticus": 42,
+    "numbers": 34,
+    "exodus": 24,
+    "ezekiel": 16,
+    "isaiah": 11,
     "psalms": 10,
-    "genesis": 2
+    "kings1": 9,
+    "kings2": 7,
+    "proverbs": 5,
+    "deuteronomy": 4,
+    "chronicles1": 3,
+    "chronicles2": 3,
+    "ecclesiastes": 3,
+    "samuel1": 3,
+    "songofsolomon": 3,
+    "genesis": 2,
+    "hosea": 2,
+    "jeremiah": 2,
+    "micah": 2,
+    "samuel2": 2,
+    "amos": 1,
+    "esther": 1,
+    "ezra": 1,
+    "haggai": 1,
+    "job": 1,
+    "nehemiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּלוּלָ֥ה בַשֶּׁ֖מֶן",
+      "pron": "브납라 셰멘",
+      "lemmas": [
+        "בָּלַל",
+        "שֶׁמֶן"
+      ],
+      "words": [
+        {
+          "word": "בְּלוּלָ֥ה",
+          "lemma": "בָּלַל",
+          "strong": "H1101",
+          "pron": "브납라"
+        },
+        {
+          "word": "בַשֶּׁ֖מֶן",
+          "lemma": "שֶׁמֶן",
+          "strong": "H8081",
+          "pron": "셰멘"
+        }
+      ],
+      "count": 38,
+      "refs": [
+        "exodus 29:2",
+        "exodus 29:40",
+        "leviticus 2:4",
+        "leviticus 2:5",
+        "leviticus 7:10",
+        "leviticus 7:12",
+        "leviticus 9:4",
+        "leviticus 14:10",
+        "leviticus 14:21",
+        "leviticus 23:13",
+        "numbers 6:15",
+        "numbers 7:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "סֹ֛לֶת בְּלוּלָ֥ה בַשֶּׁ֖מֶן",
+      "pron": "솔레트 브납라 셰멘",
+      "lemmas": [
+        "סֹלֶת",
+        "בָּלַל",
+        "שֶׁמֶן"
+      ],
+      "words": [
+        {
+          "word": "סֹ֛לֶת",
+          "lemma": "סֹלֶת",
+          "strong": "H5560",
+          "pron": "솔레트"
+        },
+        {
+          "word": "בְּלוּלָ֥ה",
+          "lemma": "בָּלַל",
+          "strong": "H1101",
+          "pron": "브납라"
+        },
+        {
+          "word": "בַשֶּׁ֖מֶן",
+          "lemma": "שֶׁמֶן",
+          "strong": "H8081",
+          "pron": "셰멘"
+        }
+      ],
+      "count": 21,
+      "refs": [
+        "exodus 29:40",
+        "leviticus 2:5",
+        "leviticus 23:13",
+        "numbers 7:13",
+        "numbers 7:19",
+        "numbers 7:25",
+        "numbers 7:31",
+        "numbers 7:37",
+        "numbers 7:43",
+        "numbers 7:49",
+        "numbers 7:55",
+        "numbers 7:61"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שֶׁ֣מֶן הַמִּשְׁחָ֔ה",
+      "pron": "셰멘 아미셰하",
+      "lemmas": [
+        "שֶׁמֶן",
+        "מִשְׁחָה"
+      ],
+      "words": [
+        {
+          "word": "שֶׁ֣מֶן",
+          "lemma": "שֶׁמֶן",
+          "strong": "H8081",
+          "pron": "셰멘"
+        },
+        {
+          "word": "הַמִּשְׁחָ֔ה",
+          "lemma": "מִשְׁחָה",
+          "strong": "H4888",
+          "pron": "아미셰하"
+        }
+      ],
+      "count": 21,
+      "refs": [
+        "exodus 25:6",
+        "exodus 29:7",
+        "exodus 29:21",
+        "exodus 30:25",
+        "exodus 30:31",
+        "exodus 31:11",
+        "exodus 35:8",
+        "exodus 35:15",
+        "exodus 35:28",
+        "exodus 37:29",
+        "exodus 39:38",
+        "exodus 40:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת שֶׁ֣מֶן",
+      "pron": "에트 셰멘",
+      "lemmas": [
+        "אֵת",
+        "שֶׁמֶן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שֶׁ֣מֶן",
+          "lemma": "שֶׁמֶן",
+          "strong": "H8081",
+          "pron": "셰멘"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "exodus 29:7",
+        "exodus 30:25",
+        "exodus 31:11",
+        "exodus 35:14",
+        "exodus 35:15",
+        "exodus 35:28",
+        "exodus 37:29",
+        "exodus 39:37",
+        "exodus 39:38",
+        "exodus 40:9",
+        "leviticus 8:2",
+        "leviticus 8:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַשֶּׁ֖מֶן לְמִנְחָֽה",
+      "pron": "셰멘 민하",
+      "lemmas": [
+        "שֶׁמֶן",
+        "מִנְחָה"
+      ],
+      "words": [
+        {
+          "word": "בַשֶּׁ֖מֶן",
+          "lemma": "שֶׁמֶן",
+          "strong": "H8081",
+          "pron": "셰멘"
+        },
+        {
+          "word": "לְמִנְחָֽה",
+          "lemma": "מִנְחָה",
+          "strong": "H4503",
+          "pron": "민하"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "leviticus 2:6",
+        "leviticus 14:21",
+        "numbers 6:15",
+        "numbers 7:13",
+        "numbers 7:19",
+        "numbers 7:25",
+        "numbers 7:31",
+        "numbers 7:37",
+        "numbers 7:43",
+        "numbers 7:49",
+        "numbers 7:55",
+        "numbers 7:61"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "פֶּלֶא",
-  "pron": "필에카",
+  "pron": "펠레",
   "strong": "H6382",
   "posKo": "명사",
   "root": {
@@ -12,61 +12,67 @@
     {
       "lemma": "מִפְלָאָה",
       "strong": "H4652",
-      "pron": "",
+      "pron": "밉레오트",
       "glossKo": "기적"
     },
     {
       "lemma": "פָּלָא",
       "strong": "H6381",
-      "pron": "닙레오테카",
-      "glossKo": "너의 기이하는 이"
+      "pron": "하입팔레",
+      "glossKo": "기이하다"
     },
     {
       "lemma": "פִּלְאִי",
       "strong": "H6383",
-      "pron": "플으",
+      "pron": "펠리",
       "glossKo": "놀라운"
     },
     {
       "lemma": "פְּלָיָה",
       "strong": "H6411",
-      "pron": "",
+      "pron": "우펠라아",
       "glossKo": "블라야"
     }
   ],
   "defEn": "miracle",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 13,
   "byBook": {
-    "psalms": 7
+    "psalms": 7,
+    "isaiah": 3,
+    "daniel": 1,
+    "exodus": 1,
+    "lamentations": 1
   },
   "phrases": [
     {
-      "hebrew": "עֹ֣שֵׂה פֶ֑לֶא",
-      "pron": "야아세 필에카",
+      "hebrew": "עֹ֥שֵׂה פֶֽלֶא",
+      "pron": "바야아스 펠레",
       "lemmas": [
         "עָשָׂה",
         "פֶּלֶא"
       ],
       "words": [
         {
-          "word": "עֹ֣שֵׂה",
+          "word": "עֹ֥שֵׂה",
           "lemma": "עָשָׂה",
           "strong": "H6213",
-          "pron": "야아세"
+          "pron": "바야아스"
         },
         {
-          "word": "פֶ֑לֶא",
+          "word": "פֶֽלֶא",
           "lemma": "פֶּלֶא",
           "strong": "H6382",
-          "pron": "필에카"
+          "pron": "펠레"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
+        "exodus 15:11",
         "psalms 77:14",
         "psalms 78:12",
-        "psalms 88:10"
+        "psalms 88:10",
+        "isaiah 25:1"
       ],
       "glossKo": ""
     }

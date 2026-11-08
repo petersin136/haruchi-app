@@ -1,6 +1,6 @@
 {
   "lemma": "לֵבָב",
-  "pron": "비레밥켐",
+  "pron": "레바비",
   "strong": "H3824",
   "posKo": "명사",
   "root": {
@@ -12,63 +12,259 @@
     {
       "lemma": "לֵב",
       "strong": "H3820",
-      "pron": "브립비위",
-      "glossKo": "나의 마음"
+      "pron": "립보",
+      "glossKo": "그의 마음"
     },
     {
       "lemma": "לָבַב",
       "strong": "H3823",
-      "pron": "",
+      "pron": "우텔랍벱",
       "glossKo": "마음에 새기다"
     },
     {
       "lemma": "לְבַב",
       "strong": "H3825",
-      "pron": "",
-      "glossKo": "마음(아람)"
+      "pron": "립바크",
+      "glossKo": "너의 마음(아람)"
     },
     {
       "lemma": "לָבִיבָה",
       "strong": "H3834",
-      "pron": "",
+      "pron": "레비보트",
       "glossKo": "전병"
     }
   ],
   "defEn": "heart",
   "defKo": "",
-  "countOT": 38,
+  "countOT": 252,
   "byBook": {
+    "deuteronomy": 47,
     "psalms": 35,
-    "genesis": 3
+    "chronicles2": 28,
+    "kings1": 23,
+    "isaiah": 18,
+    "samuel1": 14,
+    "chronicles1": 12,
+    "job": 9,
+    "jeremiah": 8,
+    "kings2": 8,
+    "joshua": 7,
+    "ezekiel": 6,
+    "daniel": 5,
+    "haggai": 5,
+    "genesis": 3,
+    "leviticus": 3,
+    "joel": 2,
+    "judges": 2,
+    "proverbs": 2,
+    "samuel2": 2,
+    "zechariah": 2,
+    "zephaniah": 2,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "ezra": 1,
+    "hosea": 1,
+    "jonah": 1,
+    "lamentations": 1,
+    "nahum": 1,
+    "nehemiah": 1,
+    "numbers": 1
   },
   "phrases": [
     {
-      "hebrew": "כְּתֹ֣ם לְבָב֑וֹ",
-      "pron": "우크툼미위 비레밥켐",
+      "hebrew": "בְּכָל לְבָבְךָ֖",
+      "pron": "칼 레바비",
       "lemmas": [
-        "תֹּם",
+        "כֹּל",
         "לֵבָב"
       ],
       "words": [
         {
-          "word": "כְּתֹ֣ם",
-          "lemma": "תֹּם",
-          "strong": "H8537",
-          "pron": "우크툼미위"
+          "word": "בְּכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
         },
         {
-          "word": "לְבָב֑וֹ",
+          "word": "לְבָבְךָ֖",
           "lemma": "לֵבָב",
           "strong": "H3824",
-          "pron": "비레밥켐"
+          "pron": "레바비"
         }
       ],
-      "count": 4,
+      "count": 34,
       "refs": [
-        "psalms 78:72",
-        "psalms 101:2",
-        "genesis 20:5",
-        "genesis 20:6"
+        "deuteronomy 4:29",
+        "deuteronomy 6:5",
+        "deuteronomy 10:12",
+        "deuteronomy 11:13",
+        "deuteronomy 13:3",
+        "deuteronomy 26:16",
+        "deuteronomy 30:2",
+        "deuteronomy 30:6",
+        "deuteronomy 30:10",
+        "joshua 22:5",
+        "joshua 23:14",
+        "samuel1 7:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְבָבְךָ֖ וּבְכָל",
+      "pron": "레바비 칼",
+      "lemmas": [
+        "לֵבָב",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "לְבָבְךָ֖",
+          "lemma": "לֵבָב",
+          "strong": "H3824",
+          "pron": "레바비"
+        },
+        {
+          "word": "וּבְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 24,
+      "refs": [
+        "deuteronomy 4:9",
+        "deuteronomy 4:29",
+        "deuteronomy 6:5",
+        "deuteronomy 10:12",
+        "deuteronomy 11:13",
+        "deuteronomy 13:3",
+        "deuteronomy 26:16",
+        "deuteronomy 30:1",
+        "deuteronomy 30:2",
+        "deuteronomy 30:6",
+        "deuteronomy 30:10",
+        "deuteronomy 32:46"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת לְבָב֔וֹ",
+      "pron": "에트 레바비",
+      "lemmas": [
+        "אֵת",
+        "לֵבָב"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "לְבָב֔וֹ",
+          "lemma": "לֵבָב",
+          "strong": "H3824",
+          "pron": "레바비"
+        }
+      ],
+      "count": 21,
+      "refs": [
+        "genesis 31:26",
+        "deuteronomy 1:28",
+        "deuteronomy 2:30",
+        "deuteronomy 15:7",
+        "deuteronomy 20:8",
+        "deuteronomy 30:6",
+        "joshua 24:23",
+        "samuel1 6:6",
+        "samuel2 19:14",
+        "kings1 8:39",
+        "kings1 11:2",
+        "kings1 11:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עִם לְבַ֖ב",
+      "pron": "임마흐 레바비",
+      "lemmas": [
+        "עִם",
+        "לֵבָב"
+      ],
+      "words": [
+        {
+          "word": "עִם",
+          "lemma": "עִם",
+          "strong": "H5973",
+          "pron": "임마흐"
+        },
+        {
+          "word": "לְבַ֖ב",
+          "lemma": "לֵבָב",
+          "strong": "H3824",
+          "pron": "레바비"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "deuteronomy 8:5",
+        "deuteronomy 15:9",
+        "joshua 14:7",
+        "samuel1 14:7",
+        "kings1 8:17",
+        "kings1 8:18",
+        "kings1 10:2",
+        "kings2 10:15",
+        "chronicles1 22:7",
+        "chronicles1 28:2",
+        "chronicles2 1:11",
+        "chronicles2 6:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכָל לְבָבְךָ֖ וּבְכָל",
+      "pron": "칼 레바비 칼",
+      "lemmas": [
+        "כֹּל",
+        "לֵבָב",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "בְּכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "לְבָבְךָ֖",
+          "lemma": "לֵבָב",
+          "strong": "H3824",
+          "pron": "레바비"
+        },
+        {
+          "word": "וּבְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "deuteronomy 4:29",
+        "deuteronomy 6:5",
+        "deuteronomy 10:12",
+        "deuteronomy 11:13",
+        "deuteronomy 13:3",
+        "deuteronomy 26:16",
+        "deuteronomy 30:2",
+        "deuteronomy 30:6",
+        "deuteronomy 30:10",
+        "joshua 22:5",
+        "joshua 23:14",
+        "kings1 2:4"
       ],
       "glossKo": ""
     }

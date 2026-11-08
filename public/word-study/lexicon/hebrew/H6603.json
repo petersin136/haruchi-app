@@ -1,6 +1,6 @@
 {
   "lemma": "פִּתּוּחַ",
-  "pron": "핏투헤하",
+  "pron": "핏투헤",
   "strong": "H6603",
   "posKo": "명사",
   "root": {
@@ -12,45 +12,111 @@
     {
       "lemma": "יִפְתָּח",
       "strong": "H3316",
-      "pron": "",
+      "pron": "브입타흐",
       "glossKo": "입다"
     },
     {
       "lemma": "יִפְתַּח־אֵל",
       "strong": "H3317",
-      "pron": "",
+      "pron": "입타흐",
       "glossKo": "입다엘"
     },
     {
       "lemma": "מַפְתֵּחַ",
       "strong": "H4668",
-      "pron": "",
+      "pron": "아맙테아흐",
       "glossKo": "열쇠"
     },
     {
       "lemma": "מִפְתָּח",
       "strong": "H4669",
-      "pron": "",
+      "pron": "아맙테아흐",
       "glossKo": "트인 곳"
     },
     {
       "lemma": "נֶפְתּוֹחַ",
       "strong": "H5318",
-      "pron": "",
+      "pron": "넵토아흐",
       "glossKo": "넵도아"
     },
     {
       "lemma": "פָּתַח",
       "strong": "H6605",
-      "pron": "파투아흐",
+      "pron": "닙타후",
       "glossKo": "열다"
     }
   ],
   "defEn": "sculpture",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 11,
   "byBook": {
-    "psalms": 1
+    "exodus": 6,
+    "chronicles2": 2,
+    "kings1": 1,
+    "psalms": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "פִּתּוּחֵ֣י חוֹתָ֔ם",
+      "pron": "핏투헤 호탐카",
+      "lemmas": [
+        "פִּתּוּחַ",
+        "חוֹתָם"
+      ],
+      "words": [
+        {
+          "word": "פִּתּוּחֵ֣י",
+          "lemma": "פִּתּוּחַ",
+          "strong": "H6603",
+          "pron": "핏투헤"
+        },
+        {
+          "word": "חוֹתָ֔ם",
+          "lemma": "חוֹתָם",
+          "strong": "H2368",
+          "pron": "호탐카"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 28:11",
+        "exodus 28:21",
+        "exodus 28:36",
+        "exodus 39:6",
+        "exodus 39:14",
+        "exodus 39:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְפֻתָּחֹת֙ פִּתּוּחֵ֣י",
+      "pron": "닙타후 핏투헤",
+      "lemmas": [
+        "פָּתַח",
+        "פִּתּוּחַ"
+      ],
+      "words": [
+        {
+          "word": "מְפֻתָּחֹת֙",
+          "lemma": "פָּתַח",
+          "strong": "H6605",
+          "pron": "닙타후"
+        },
+        {
+          "word": "פִּתּוּחֵ֣י",
+          "lemma": "פִּתּוּחַ",
+          "strong": "H6603",
+          "pron": "핏투헤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 39:6",
+        "chronicles2 2:7",
+        "zechariah 3:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

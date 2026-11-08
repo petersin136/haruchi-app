@@ -1,6 +1,6 @@
 {
   "lemma": "תּוֹרָה",
-  "pron": "브토라트",
+  "pron": "베토로타이",
   "strong": "H8451",
   "posKo": "명사",
   "root": {
@@ -12,81 +12,191 @@
     {
       "lemma": "יוֹרֶה",
       "strong": "H3138",
-      "pron": "",
+      "pron": "요레",
       "glossKo": "이른 비"
     },
     {
       "lemma": "יוֹרָה",
       "strong": "H3139",
-      "pron": "",
+      "pron": "요라",
       "glossKo": "요라"
     },
     {
       "lemma": "יוֹרַי",
       "strong": "H3140",
-      "pron": "",
+      "pron": "브요라이",
       "glossKo": "요래"
     },
     {
       "lemma": "יָרָה",
       "strong": "H3384",
-      "pron": "리위로트",
+      "pron": "야리티",
       "glossKo": "가르치다"
     },
     {
       "lemma": "יְרוּאֵל",
       "strong": "H3385",
-      "pron": "",
+      "pron": "예루엘",
       "glossKo": "여르엘"
     },
     {
       "lemma": "יְרִיאֵל",
       "strong": "H3400",
-      "pron": "",
+      "pron": "비위리엘",
       "glossKo": "여리엘"
     }
   ],
   "defEn": "precept; statute; Decalogue; Pentateuch",
   "defKo": "",
-  "countOT": 37,
+  "countOT": 222,
   "byBook": {
     "psalms": 36,
-    "genesis": 1
+    "deuteronomy": 22,
+    "nehemiah": 21,
+    "chronicles2": 17,
+    "leviticus": 16,
+    "proverbs": 13,
+    "isaiah": 12,
+    "jeremiah": 12,
+    "kings2": 10,
+    "numbers": 10,
+    "ezekiel": 9,
+    "joshua": 9,
+    "exodus": 7,
+    "malachi": 5,
+    "daniel": 4,
+    "ezra": 4,
+    "hosea": 3,
+    "chronicles1": 2,
+    "amos": 1,
+    "genesis": 1,
+    "habakkuk": 1,
+    "haggai": 1,
+    "job": 1,
+    "kings1": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "מִ֝תּֽוֹרָתְךָ֗ לֹ֣א",
-      "pron": "브토라트 로",
+      "hebrew": "אֶת הַתּוֹרָ֥ה",
+      "pron": "에트 베토로타이",
       "lemmas": [
-        "תּוֹרָה",
-        "לֹא"
+        "אֵת",
+        "תּוֹרָה"
       ],
       "words": [
         {
-          "word": "מִ֝תּֽוֹרָתְךָ֗",
-          "lemma": "תּוֹרָה",
-          "strong": "H8451",
-          "pron": "브토라트"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         },
         {
-          "word": "לֹ֣א",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
+          "word": "הַתּוֹרָ֥ה",
+          "lemma": "תּוֹרָה",
+          "strong": "H8451",
+          "pron": "베토로타이"
         }
       ],
-      "count": 4,
+      "count": 20,
       "refs": [
-        "psalms 119:51",
-        "psalms 119:61",
-        "psalms 119:109",
-        "psalms 119:153"
+        "exodus 18:16",
+        "exodus 18:20",
+        "deuteronomy 1:5",
+        "deuteronomy 31:9",
+        "deuteronomy 31:11",
+        "joshua 22:5",
+        "chronicles1 22:12",
+        "chronicles2 12:1",
+        "ezra 7:10",
+        "nehemiah 8:2",
+        "nehemiah 9:26",
+        "nehemiah 13:3"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בְּתוֹרַ֥ת יְהוָ֗ה",
-      "pron": "브토라트 여호와",
+      "hebrew": "בְּסֵ֥פֶר הַתּוֹרָ֖ה",
+      "pron": "세페르 베토로타이",
+      "lemmas": [
+        "סֵפֶר",
+        "תּוֹרָה"
+      ],
+      "words": [
+        {
+          "word": "בְּסֵ֥פֶר",
+          "lemma": "סֵפֶר",
+          "strong": "H5612",
+          "pron": "세페르"
+        },
+        {
+          "word": "הַתּוֹרָ֖ה",
+          "lemma": "תּוֹרָה",
+          "strong": "H8451",
+          "pron": "베토로타이"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "deuteronomy 28:61",
+        "deuteronomy 29:21",
+        "deuteronomy 30:10",
+        "deuteronomy 31:26",
+        "joshua 1:8",
+        "joshua 8:31",
+        "joshua 8:34",
+        "joshua 23:6",
+        "joshua 24:26",
+        "kings2 14:6",
+        "kings2 22:8",
+        "kings2 22:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זֹ֥את תּוֹרַ֖ת",
+      "pron": "조트 베토로타이",
+      "lemmas": [
+        "זֹאת",
+        "תּוֹרָה"
+      ],
+      "words": [
+        {
+          "word": "זֹ֥את",
+          "lemma": "זֹאת",
+          "strong": "H2063",
+          "pron": "조트"
+        },
+        {
+          "word": "תּוֹרַ֖ת",
+          "lemma": "תּוֹרָה",
+          "strong": "H8451",
+          "pron": "베토로타이"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "leviticus 6:9",
+        "leviticus 6:14",
+        "leviticus 6:25",
+        "leviticus 7:1",
+        "leviticus 7:11",
+        "leviticus 7:37",
+        "leviticus 11:46",
+        "leviticus 12:7",
+        "leviticus 13:59",
+        "leviticus 14:32",
+        "leviticus 14:54",
+        "leviticus 14:57"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּתוֹרַ֥ת יְהוָֽה",
+      "pron": "베토로타이 여호와",
       "lemmas": [
         "תּוֹרָה",
         "יְהֹוָה"
@@ -96,114 +206,67 @@
           "word": "בְּתוֹרַ֥ת",
           "lemma": "תּוֹרָה",
           "strong": "H8451",
-          "pron": "브토라트"
+          "pron": "베토로타이"
         },
         {
-          "word": "יְהוָ֗ה",
+          "word": "יְהוָֽה",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         }
       ],
-      "count": 3,
+      "count": 19,
       "refs": [
-        "psalms 1:2",
-        "psalms 19:7",
-        "psalms 119:1"
+        "exodus 13:9",
+        "kings2 10:31",
+        "chronicles1 16:40",
+        "chronicles1 22:12",
+        "chronicles2 12:1",
+        "chronicles2 17:9",
+        "chronicles2 31:3",
+        "chronicles2 31:4",
+        "chronicles2 34:14",
+        "chronicles2 35:26",
+        "ezra 7:10",
+        "nehemiah 9:3"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְאֶשְׁמְרָ֖ה תוֹרָתְךָ֥",
-      "pron": "티솀레므 브토라트",
-      "lemmas": [
-        "שָׁמַר",
-        "תּוֹרָה"
-      ],
-      "words": [
-        {
-          "word": "וְאֶשְׁמְרָ֖ה",
-          "lemma": "שָׁמַר",
-          "strong": "H8104",
-          "pron": "티솀레므"
-        },
-        {
-          "word": "תוֹרָתְךָ֥",
-          "lemma": "תּוֹרָה",
-          "strong": "H8451",
-          "pron": "브토라트"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 119:44",
-        "psalms 119:55",
-        "psalms 119:136"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "תּֽ֝וֹרָתְךָ֗ לֹ֣א שָׁכָֽחְתִּי",
-      "pron": "브토라트 로 샤카흐",
+      "hebrew": "הַתּוֹרָ֥ה הַזֹּ֖את",
+      "pron": "베토로타이 조트",
       "lemmas": [
         "תּוֹרָה",
-        "לֹא",
-        "שָׁכַח"
+        "זֹאת"
       ],
       "words": [
         {
-          "word": "תּֽ֝וֹרָתְךָ֗",
+          "word": "הַתּוֹרָ֥ה",
           "lemma": "תּוֹרָה",
           "strong": "H8451",
-          "pron": "브토라트"
+          "pron": "베토로타이"
         },
         {
-          "word": "לֹ֣א",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        },
-        {
-          "word": "שָׁכָֽחְתִּי",
-          "lemma": "שָׁכַח",
-          "strong": "H7911",
-          "pron": "샤카흐"
+          "word": "הַזֹּ֖את",
+          "lemma": "זֹאת",
+          "strong": "H2063",
+          "pron": "조트"
         }
       ],
-      "count": 3,
+      "count": 16,
       "refs": [
-        "psalms 119:61",
-        "psalms 119:109",
-        "psalms 119:153"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "תֽ֝וֹרָתְךָ֗ שַֽׁעֲשֻׁעָֽי",
-      "pron": "브토라트 샤아슈아위",
-      "lemmas": [
-        "תּוֹרָה",
-        "שַׁעְשֻׁעַ"
-      ],
-      "words": [
-        {
-          "word": "תֽ֝וֹרָתְךָ֗",
-          "lemma": "תּוֹרָה",
-          "strong": "H8451",
-          "pron": "브토라트"
-        },
-        {
-          "word": "שַֽׁעֲשֻׁעָֽי",
-          "lemma": "שַׁעְשֻׁעַ",
-          "strong": "H8191",
-          "pron": "샤아슈아위"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 119:77",
-        "psalms 119:92",
-        "psalms 119:174"
+        "numbers 5:30",
+        "deuteronomy 1:5",
+        "deuteronomy 4:8",
+        "deuteronomy 17:18",
+        "deuteronomy 17:19",
+        "deuteronomy 27:3",
+        "deuteronomy 27:8",
+        "deuteronomy 27:26",
+        "deuteronomy 28:58",
+        "deuteronomy 28:61",
+        "deuteronomy 29:29",
+        "deuteronomy 31:9"
       ],
       "glossKo": ""
     }

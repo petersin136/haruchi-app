@@ -1,6 +1,6 @@
 {
   "lemma": "רָדָה",
-  "pron": "바이렏두",
+  "pron": "브이렏두",
   "strong": "H7287",
   "posKo": "동사",
   "root": null,
@@ -8,16 +8,186 @@
     {
       "lemma": "רַדַּי",
       "strong": "H7288",
-      "pron": "",
+      "pron": "랃다이",
       "glossKo": "랏대"
     }
   ],
   "defEn": "tread; subjugate; crumble",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 27,
   "byBook": {
+    "judges": 4,
+    "leviticus": 4,
     "psalms": 4,
-    "genesis": 2
+    "isaiah": 3,
+    "kings1": 3,
+    "ezekiel": 2,
+    "genesis": 2,
+    "chronicles2": 1,
+    "jeremiah": 1,
+    "lamentations": 1,
+    "nehemiah": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הָרֹדִ֣ים בָּעָ֔ם",
+      "pron": "브이렏두 암",
+      "lemmas": [
+        "רָדָה",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "הָרֹדִ֣ים",
+          "lemma": "רָדָה",
+          "strong": "H7287",
+          "pron": "브이렏두"
+        },
+        {
+          "word": "בָּעָ֔ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 5:16",
+        "kings1 9:23",
+        "chronicles2 8:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹא תִרְדֶּ֥ה",
+      "pron": "로 브이렏두",
+      "lemmas": [
+        "לֹא",
+        "רָדָה"
+      ],
+      "words": [
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תִרְדֶּ֥ה",
+          "lemma": "רָדָה",
+          "strong": "H7287",
+          "pron": "브이렏두"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 25:43",
+        "leviticus 25:46",
+        "leviticus 25:53"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹא תִרְדֶּ֥ה בְּפָ֑רֶךְ",
+      "pron": "로 브이렏두 브파레크",
+      "lemmas": [
+        "לֹא",
+        "רָדָה",
+        "פֶּרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תִרְדֶּ֥ה",
+          "lemma": "רָדָה",
+          "strong": "H7287",
+          "pron": "브이렏두"
+        },
+        {
+          "word": "בְּפָ֑רֶךְ",
+          "lemma": "פֶּרֶךְ",
+          "strong": "H6531",
+          "pron": "브파레크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 25:43",
+        "leviticus 25:46",
+        "leviticus 25:53"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵא֑וֹת הָרֹדִ֣ים",
+      "pron": "우메아트 브이렏두",
+      "lemmas": [
+        "מֵאָה",
+        "רָדָה"
+      ],
+      "words": [
+        {
+          "word": "מֵא֑וֹת",
+          "lemma": "מֵאָה",
+          "strong": "H3967",
+          "pron": "우메아트"
+        },
+        {
+          "word": "הָרֹדִ֣ים",
+          "lemma": "רָדָה",
+          "strong": "H7287",
+          "pron": "브이렏두"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 5:16",
+        "kings1 9:23",
+        "chronicles2 8:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵא֑וֹת הָרֹדִ֣ים בָּעָ֔ם",
+      "pron": "우메아트 브이렏두 암",
+      "lemmas": [
+        "מֵאָה",
+        "רָדָה",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "מֵא֑וֹת",
+          "lemma": "מֵאָה",
+          "strong": "H3967",
+          "pron": "우메아트"
+        },
+        {
+          "word": "הָרֹדִ֣ים",
+          "lemma": "רָדָה",
+          "strong": "H7287",
+          "pron": "브이렏두"
+        },
+        {
+          "word": "בָּעָ֔ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 5:16",
+        "kings1 9:23",
+        "chronicles2 8:10"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

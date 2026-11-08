@@ -1,6 +1,6 @@
 {
   "lemma": "קָצֶה",
-  "pron": "우비케체",
+  "pron": "미케체",
   "strong": "H7097",
   "posKo": "명사",
   "root": {
@@ -12,14 +12,14 @@
     {
       "lemma": "קָצָה",
       "strong": "H7096",
-      "pron": "",
+      "pron": "히케추",
       "glossKo": "끊다"
     },
     {
       "lemma": "קָצָה",
       "strong": "H7098",
-      "pron": "케초타므",
-      "glossKo": "그들의 끝"
+      "pron": "케초트",
+      "glossKo": "끝"
     },
     {
       "lemma": "קֶצֶו",
@@ -30,50 +30,219 @@
     {
       "lemma": "קָצִין",
       "strong": "H7101",
-      "pron": "",
+      "pron": "케치네",
       "glossKo": "지도자"
     },
     {
       "lemma": "קְצָת",
       "strong": "H7117",
-      "pron": "",
-      "glossKo": "끝(아람)"
+      "pron": "큿브븟브",
+      "glossKo": "그의 끝(아람)"
     }
   ],
   "defEn": "extremity",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 97,
   "byBook": {
+    "joshua": 15,
+    "isaiah": 12,
+    "deuteronomy": 9,
+    "exodus": 9,
+    "jeremiah": 8,
+    "numbers": 8,
     "genesis": 6,
-    "psalms": 5
+    "ezekiel": 5,
+    "psalms": 5,
+    "judges": 4,
+    "kings2": 4,
+    "samuel1": 4,
+    "nahum": 3,
+    "kings1": 1,
+    "nehemiah": 1,
+    "proverbs": 1,
+    "ruth": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "קְצֵ֪ה הָ֫אָ֥רֶץ",
-      "pron": "우비케체 에레츠",
+      "hebrew": "קְצֵ֣ה הָאָ֑רֶץ",
+      "pron": "미케체 하아레츠",
       "lemmas": [
         "קָצֶה",
         "אֶרֶץ"
       ],
       "words": [
         {
-          "word": "קְצֵ֪ה",
+          "word": "קְצֵ֣ה",
           "lemma": "קָצֶה",
           "strong": "H7097",
-          "pron": "우비케체"
+          "pron": "미케체"
         },
         {
-          "word": "הָ֫אָ֥רֶץ",
+          "word": "הָאָ֑רֶץ",
           "lemma": "אֶרֶץ",
           "strong": "H776",
-          "pron": "에레츠"
+          "pron": "하아레츠"
         }
       ],
-      "count": 3,
+      "count": 24,
       "refs": [
+        "exodus 16:35",
+        "numbers 33:37",
+        "deuteronomy 13:7",
+        "deuteronomy 28:49",
+        "deuteronomy 28:64",
         "psalms 46:9",
         "psalms 61:2",
-        "psalms 135:7"
+        "psalms 135:7",
+        "proverbs 17:24",
+        "isaiah 5:26",
+        "isaiah 42:10",
+        "isaiah 43:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעַד קְצֵ֣ה",
+      "pron": "앋 미케체",
+      "lemmas": [
+        "עַד",
+        "קָצֶה"
+      ],
+      "words": [
+        {
+          "word": "וְעַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "קְצֵ֣ה",
+          "lemma": "קָצֶה",
+          "strong": "H7097",
+          "pron": "미케체"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "genesis 47:21",
+        "deuteronomy 4:32",
+        "deuteronomy 13:7",
+        "deuteronomy 28:64",
+        "joshua 3:8",
+        "joshua 13:27",
+        "joshua 15:5",
+        "kings2 7:5",
+        "kings2 7:8",
+        "psalms 46:9",
+        "isaiah 48:20",
+        "isaiah 49:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל הַקָּצֶֽה",
+      "pron": "엘 미케체",
+      "lemmas": [
+        "אֵל",
+        "קָצֶה"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "הַקָּצֶֽה",
+          "lemma": "קָצֶה",
+          "strong": "H7097",
+          "pron": "미케체"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 16:35",
+        "exodus 26:28",
+        "exodus 36:33",
+        "joshua 18:16",
+        "joshua 18:19",
+        "judges 7:11",
+        "isaiah 7:3",
+        "isaiah 62:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעַד קְצֵ֣ה הָאָ֑רֶץ",
+      "pron": "앋 미케체 하아레츠",
+      "lemmas": [
+        "עַד",
+        "קָצֶה",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "וְעַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "קְצֵ֣ה",
+          "lemma": "קָצֶה",
+          "strong": "H7097",
+          "pron": "미케체"
+        },
+        {
+          "word": "הָאָ֑רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "deuteronomy 13:7",
+        "deuteronomy 28:64",
+        "psalms 46:9",
+        "isaiah 48:20",
+        "isaiah 49:6",
+        "jeremiah 12:12",
+        "jeremiah 25:31",
+        "jeremiah 25:33"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּלְמִקְצֵ֥ה הַשָּׁמַ֖יִם",
+      "pron": "미케체 샤마임",
+      "lemmas": [
+        "קָצֶה",
+        "שָׁמַיִם"
+      ],
+      "words": [
+        {
+          "word": "וּלְמִקְצֵ֥ה",
+          "lemma": "קָצֶה",
+          "strong": "H7097",
+          "pron": "미케체"
+        },
+        {
+          "word": "הַשָּׁמַ֖יִם",
+          "lemma": "שָׁמַיִם",
+          "strong": "H8064",
+          "pron": "샤마임"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 4:32",
+        "deuteronomy 30:4",
+        "nehemiah 1:9",
+        "psalms 19:6",
+        "isaiah 13:5"
       ],
       "glossKo": ""
     }

@@ -18,14 +18,14 @@
     {
       "lemma": "אָשַׁר",
       "strong": "H833",
-      "pron": "윗르",
-      "glossKo": "복되다"
+      "pron": "잇셰루니",
+      "glossKo": "나를 복되다"
     },
     {
       "lemma": "אֶשֶׁר",
       "strong": "H835",
-      "pron": "아셰레",
-      "glossKo": "복"
+      "pron": "아셰레카",
+      "glossKo": "너의 복"
     },
     {
       "lemma": "אָשֵׁר",
@@ -36,22 +36,238 @@
     {
       "lemma": "אֹשֶׁר",
       "strong": "H837",
-      "pron": "브아셰리위",
+      "pron": "베아셰리",
       "glossKo": "나의 복"
     },
     {
       "lemma": "אָשֻׁר",
       "strong": "H838",
-      "pron": "아슈라위",
-      "glossKo": "나의 걸음"
+      "pron": "바아슈로",
+      "glossKo": "그의 걸음"
     }
   ],
   "defEn": "Ashshur",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 151,
   "byBook": {
+    "kings2": 49,
+    "isaiah": 44,
+    "chronicles2": 13,
+    "ezekiel": 9,
+    "hosea": 9,
+    "chronicles1": 4,
     "genesis": 4,
-    "psalms": 1
+    "jeremiah": 4,
+    "micah": 4,
+    "ezra": 2,
+    "numbers": 2,
+    "zechariah": 2,
+    "lamentations": 1,
+    "nahum": 1,
+    "nehemiah": 1,
+    "psalms": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מֶ֣לֶךְ אַשּׁ֔וּר",
+      "pron": "멜레크 앗슈르",
+      "lemmas": [
+        "מֶלֶךְ",
+        "אַשּׁוּר"
+      ],
+      "words": [
+        {
+          "word": "מֶ֣לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "אַשּׁ֔וּר",
+          "lemma": "אַשּׁוּר",
+          "strong": "H804",
+          "pron": "앗슈르"
+        }
+      ],
+      "count": 92,
+      "refs": [
+        "kings2 15:19",
+        "kings2 15:20",
+        "kings2 15:29",
+        "kings2 16:7",
+        "kings2 16:8",
+        "kings2 16:9",
+        "kings2 16:10",
+        "kings2 16:18",
+        "kings2 17:3",
+        "kings2 17:4",
+        "kings2 17:5",
+        "kings2 17:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַשּׁ֛וּר אֶת",
+      "pron": "앗슈르 에트",
+      "lemmas": [
+        "אַשּׁוּר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "אַשּׁ֛וּר",
+          "lemma": "אַשּׁוּר",
+          "strong": "H804",
+          "pron": "앗슈르"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "kings2 17:6",
+        "kings2 18:11",
+        "kings2 18:17",
+        "kings2 19:6",
+        "kings2 19:17",
+        "chronicles1 5:26",
+        "isaiah 7:20",
+        "isaiah 8:7",
+        "isaiah 20:4",
+        "isaiah 36:2",
+        "isaiah 37:6",
+        "isaiah 37:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַלְכֵ֥י אַשּׁ֛וּר אֶת",
+      "pron": "멜레크 앗슈르 에트",
+      "lemmas": [
+        "מֶלֶךְ",
+        "אַשּׁוּר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "מַלְכֵ֥י",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "אַשּׁ֛וּר",
+          "lemma": "אַשּׁוּר",
+          "strong": "H804",
+          "pron": "앗슈르"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "kings2 17:6",
+        "kings2 18:11",
+        "kings2 18:17",
+        "kings2 19:6",
+        "kings2 19:17",
+        "chronicles1 5:26",
+        "isaiah 7:20",
+        "isaiah 8:7",
+        "isaiah 20:4",
+        "isaiah 36:2",
+        "isaiah 37:6",
+        "isaiah 37:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַשּׁוּר֙ עַ֣ל",
+      "pron": "앗슈르 알",
+      "lemmas": [
+        "אַשּׁוּר",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "אַשּׁוּר֙",
+          "lemma": "אַשּׁוּר",
+          "strong": "H804",
+          "pron": "앗슈르"
+        },
+        {
+          "word": "עַ֣ל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "genesis 25:18",
+        "kings2 15:19",
+        "kings2 18:9",
+        "kings2 18:13",
+        "kings2 18:14",
+        "kings2 23:29",
+        "chronicles2 32:10",
+        "ezra 6:22",
+        "isaiah 10:12",
+        "isaiah 36:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "סַנְחֵרִ֣יב מֶֽלֶךְ אַשּׁ֑וּר",
+      "pron": "산헤립 멜레크 앗슈르",
+      "lemmas": [
+        "סַנְחֵרִיב",
+        "מֶלֶךְ",
+        "אַשּׁוּר"
+      ],
+      "words": [
+        {
+          "word": "סַנְחֵרִ֣יב",
+          "lemma": "סַנְחֵרִיב",
+          "strong": "H5576",
+          "pron": "산헤립"
+        },
+        {
+          "word": "מֶֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "אַשּׁ֑וּר",
+          "lemma": "אַשּׁוּר",
+          "strong": "H804",
+          "pron": "앗슈르"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "kings2 18:13",
+        "kings2 19:20",
+        "kings2 19:36",
+        "chronicles2 32:1",
+        "chronicles2 32:9",
+        "chronicles2 32:10",
+        "chronicles2 32:22",
+        "isaiah 36:1",
+        "isaiah 37:21",
+        "isaiah 37:37"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

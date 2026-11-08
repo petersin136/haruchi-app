@@ -1,6 +1,6 @@
 {
   "lemma": "עָנִי",
-  "pron": "님",
+  "pron": "헤아니",
   "strong": "H6041",
   "posKo": "형용사",
   "root": {
@@ -12,31 +12,31 @@
     {
       "lemma": "בַּעֲנָה",
       "strong": "H1196",
-      "pron": "",
+      "pron": "바아나",
       "glossKo": "바아나"
     },
     {
       "lemma": "מַעֲנָה",
       "strong": "H4618",
-      "pron": "르믄브트므",
-      "glossKo": "그들의 고랑"
+      "pron": "마아나",
+      "glossKo": "고랑"
     },
     {
       "lemma": "עָנָה",
       "strong": "H6031",
-      "pron": "인네티",
+      "pron": "브인누",
       "glossKo": "괴롭히다"
     },
     {
       "lemma": "עֲנָה",
       "strong": "H6033",
-      "pron": "",
+      "pron": "아나인",
       "glossKo": "대답하다(아람)"
     },
     {
       "lemma": "עָנָו",
       "strong": "H6035",
-      "pron": "아나빔",
+      "pron": "느브",
       "glossKo": "겸손한"
     },
     {
@@ -48,14 +48,28 @@
   ],
   "defEn": "depressed",
   "defKo": "",
-  "countOT": 31,
+  "countOT": 79,
   "byBook": {
-    "psalms": 31
+    "psalms": 31,
+    "isaiah": 13,
+    "proverbs": 8,
+    "job": 6,
+    "deuteronomy": 4,
+    "ezekiel": 4,
+    "zechariah": 4,
+    "leviticus": 2,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "habakkuk": 1,
+    "jeremiah": 1,
+    "samuel2": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "עָנִ֣י וְאֶבְיוֹן֮",
-      "pron": "님 엡온",
+      "hebrew": "עָנִ֣י וְאֶבְי֑וֹן",
+      "pron": "헤아니 엡온카",
       "lemmas": [
         "עָנִי",
         "אֶבְיוֹן"
@@ -65,17 +79,20 @@
           "word": "עָנִ֣י",
           "lemma": "עָנִי",
           "strong": "H6041",
-          "pron": "님"
+          "pron": "헤아니"
         },
         {
-          "word": "וְאֶבְיוֹן֮",
+          "word": "וְאֶבְי֑וֹן",
           "lemma": "אֶבְיוֹן",
           "strong": "H34",
-          "pron": "엡온"
+          "pron": "엡온카"
         }
       ],
-      "count": 8,
+      "count": 17,
       "refs": [
+        "deuteronomy 15:11",
+        "deuteronomy 24:14",
+        "job 24:14",
         "psalms 35:10",
         "psalms 37:14",
         "psalms 40:17",
@@ -83,13 +100,75 @@
         "psalms 74:21",
         "psalms 86:1",
         "psalms 109:16",
-        "psalms 109:22"
+        "psalms 109:22",
+        "proverbs 31:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עניים עֲנָוִֽים",
+      "pron": "헤아니 느브",
+      "lemmas": [
+        "עָנִי",
+        "עָנָו"
+      ],
+      "words": [
+        {
+          "word": "עניים",
+          "lemma": "עָנִי",
+          "strong": "H6041",
+          "pron": "헤아니"
+        },
+        {
+          "word": "עֲנָוִֽים",
+          "lemma": "עָנָו",
+          "strong": "H6035",
+          "pron": "느브"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 9:12",
+        "psalms 10:12",
+        "proverbs 3:34",
+        "proverbs 14:21",
+        "proverbs 16:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַ֥ם עָנִ֖י",
+      "pron": "암 헤아니",
+      "lemmas": [
+        "עַם",
+        "עָנִי"
+      ],
+      "words": [
+        {
+          "word": "עַ֥ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "עָנִ֖י",
+          "lemma": "עָנִי",
+          "strong": "H6041",
+          "pron": "헤아니"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 22:28",
+        "psalms 18:27",
+        "isaiah 49:13",
+        "zephaniah 3:12"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "וַאֲנִ֤י עָנִ֣י",
-      "pron": "바아니 님",
+      "pron": "바아니 헤아니",
       "lemmas": [
         "אֲנִי",
         "עָנִי"
@@ -105,7 +184,7 @@
           "word": "עָנִ֣י",
           "lemma": "עָנִי",
           "strong": "H6041",
-          "pron": "님"
+          "pron": "헤아니"
         }
       ],
       "count": 3,
@@ -113,6 +192,35 @@
         "psalms 40:17",
         "psalms 69:29",
         "psalms 70:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֤י עָנִי֙",
+      "pron": "키 헤아니",
+      "lemmas": [
+        "כִּי",
+        "עָנִי"
+      ],
+      "words": [
+        {
+          "word": "כִּ֤י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "עָנִי֙",
+          "lemma": "עָנִי",
+          "strong": "H6041",
+          "pron": "헤아니"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 24:15",
+        "psalms 86:1",
+        "psalms 109:22"
       ],
       "glossKo": ""
     }

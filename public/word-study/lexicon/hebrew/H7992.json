@@ -2,7 +2,7 @@
   "lemma": "שְׁלִישִׁי",
   "pron": "셸리시",
   "strong": "H7992",
-  "posKo": "형용사",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁלוֹשׁ",
     "strong": "H7969",
@@ -24,7 +24,7 @@
     {
       "lemma": "שָׁלִישׁ",
       "strong": "H7991",
-      "pron": "샬리쉬",
+      "pron": "브샬리심",
       "glossKo": "장군"
     },
     {
@@ -36,20 +36,40 @@
     {
       "lemma": "תְּלָת",
       "strong": "H8532",
-      "pron": "",
+      "pron": "텔라타",
       "glossKo": "셋(아람)"
     }
   ],
   "defEn": "third; third",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 108,
   "byBook": {
-    "genesis": 9
+    "chronicles1": 15,
+    "ezekiel": 11,
+    "numbers": 10,
+    "genesis": 9,
+    "chronicles2": 8,
+    "kings2": 8,
+    "kings1": 7,
+    "exodus": 6,
+    "samuel1": 6,
+    "samuel2": 6,
+    "leviticus": 4,
+    "isaiah": 3,
+    "zechariah": 3,
+    "deuteronomy": 2,
+    "esther": 2,
+    "jeremiah": 2,
+    "joshua": 2,
+    "hosea": 1,
+    "job": 1,
+    "judges": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
-      "hebrew": "בַּיּ֣וֹם הַשְּׁלִישִׁ֗י",
-      "pron": "아욤 셸리시",
+      "hebrew": "בַּיּ֣וֹם הַשְּׁלִישִׁ֑י",
+      "pron": "욤 셸리시",
       "lemmas": [
         "יוֹם",
         "שְׁלִישִׁי"
@@ -59,7 +79,84 @@
           "word": "בַּיּ֣וֹם",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "아욤"
+          "pron": "욤"
+        },
+        {
+          "word": "הַשְּׁלִישִׁ֑י",
+          "lemma": "שְׁלִישִׁי",
+          "strong": "H7992",
+          "pron": "셸리시"
+        }
+      ],
+      "count": 32,
+      "refs": [
+        "genesis 1:13",
+        "genesis 22:4",
+        "genesis 31:22",
+        "genesis 34:25",
+        "genesis 40:20",
+        "genesis 42:18",
+        "exodus 19:11",
+        "exodus 19:16",
+        "leviticus 7:17",
+        "leviticus 7:18",
+        "leviticus 19:6",
+        "leviticus 19:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבַשָּׁנָ֣ה הַשְּׁלִישִׁ֗ית",
+      "pron": "브샤님 셸리시",
+      "lemmas": [
+        "שָׁנֶה",
+        "שְׁלִישִׁי"
+      ],
+      "words": [
+        {
+          "word": "וּבַשָּׁנָ֣ה",
+          "lemma": "שָׁנֶה",
+          "strong": "H8141",
+          "pron": "브샤님"
+        },
+        {
+          "word": "הַשְּׁלִישִׁ֗ית",
+          "lemma": "שְׁלִישִׁי",
+          "strong": "H7992",
+          "pron": "셸리시"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 26:12",
+        "kings1 18:1",
+        "kings1 22:2",
+        "kings2 19:29",
+        "isaiah 37:30",
+        "ezekiel 31:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיְהִ֣י בַּיּ֣וֹם הַשְּׁלִישִׁ֗י",
+      "pron": "하에타 욤 셸리시",
+      "lemmas": [
+        "הָיָה",
+        "יוֹם",
+        "שְׁלִישִׁי"
+      ],
+      "words": [
+        {
+          "word": "וַיְהִ֣י",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "בַּיּ֣וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
         },
         {
           "word": "הַשְּׁלִישִׁ֗י",
@@ -70,12 +167,80 @@
       ],
       "count": 6,
       "refs": [
-        "genesis 1:13",
-        "genesis 22:4",
-        "genesis 31:22",
         "genesis 34:25",
         "genesis 40:20",
-        "genesis 42:18"
+        "exodus 19:16",
+        "samuel2 1:2",
+        "kings1 3:18",
+        "esther 5:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּחֹ֨דֶשׁ֙ הַשְּׁלִישִׁ֔י",
+      "pron": "바호데쉬 셸리시",
+      "lemmas": [
+        "חֹדֶשׁ",
+        "שְׁלִישִׁי"
+      ],
+      "words": [
+        {
+          "word": "בַּחֹ֨דֶשׁ֙",
+          "lemma": "חֹדֶשׁ",
+          "strong": "H2320",
+          "pron": "바호데쉬"
+        },
+        {
+          "word": "הַשְּׁלִישִׁ֔י",
+          "lemma": "שְׁלִישִׁי",
+          "strong": "H7992",
+          "pron": "셸리시"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 19:1",
+        "chronicles1 27:5",
+        "chronicles2 15:10",
+        "chronicles2 31:7",
+        "esther 8:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּיּ֧וֹם הַשְּׁלִישִׁ֛י וּבַיּ֥וֹם",
+      "pron": "욤 셸리시 욤",
+      "lemmas": [
+        "יוֹם",
+        "שְׁלִישִׁי",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "בַּיּ֧וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "הַשְּׁלִישִׁ֛י",
+          "lemma": "שְׁלִישִׁי",
+          "strong": "H7992",
+          "pron": "셸리시"
+        },
+        {
+          "word": "וּבַיּ֥וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 40:20",
+        "numbers 19:12",
+        "numbers 19:19",
+        "numbers 31:19"
       ],
       "glossKo": ""
     }

@@ -2,7 +2,7 @@
   "lemma": "בְּלוֹ",
   "pron": "벨로",
   "strong": "H1093",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בָּלָה",
     "strong": "H1086",
@@ -18,25 +18,25 @@
     {
       "lemma": "בְּלָא",
       "strong": "H1080",
-      "pron": "",
+      "pron": "예발레",
       "glossKo": "쇠퇴시키다(아람)"
     },
     {
       "lemma": "בָּלָה",
       "strong": "H1086",
-      "pron": "발루",
-      "glossKo": "쇠하다"
+      "pron": "벨로티",
+      "glossKo": "나를 쇠하다"
     },
     {
       "lemma": "בָּלֶה",
       "strong": "H1087",
-      "pron": "",
+      "pron": "발림",
       "glossKo": "낡은"
     },
     {
       "lemma": "בְּלוֹא",
       "strong": "H1094",
-      "pron": "",
+      "pron": "벨로에",
       "glossKo": "헌 옷"
     },
     {
@@ -48,7 +48,104 @@
   ],
   "defEn": "excise",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 3,
+  "byBook": {
+    "ezra": 3
+  },
+  "phrases": [
+    {
+      "hebrew": "בְל֤וֹ וַהֲלָךְ֙",
+      "pron": "벨로 바할라크",
+      "lemmas": [
+        "בְּלוֹ",
+        "הֲלָךְ"
+      ],
+      "words": [
+        {
+          "word": "בְל֤וֹ",
+          "lemma": "בְּלוֹ",
+          "strong": "H1093",
+          "pron": "벨로"
+        },
+        {
+          "word": "וַהֲלָךְ֙",
+          "lemma": "הֲלָךְ",
+          "strong": "H1983",
+          "pron": "바할라크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 4:13",
+        "ezra 4:20",
+        "ezra 7:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִנְדָּֽה בְל֤וֹ",
+      "pron": "민다 벨로",
+      "lemmas": [
+        "מִדָּה",
+        "בְּלוֹ"
+      ],
+      "words": [
+        {
+          "word": "מִנְדָּֽה",
+          "lemma": "מִדָּה",
+          "strong": "H4061",
+          "pron": "민다"
+        },
+        {
+          "word": "בְל֤וֹ",
+          "lemma": "בְּלוֹ",
+          "strong": "H1093",
+          "pron": "벨로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 4:13",
+        "ezra 4:20",
+        "ezra 7:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִנְדָּֽה בְל֤וֹ וַהֲלָךְ֙",
+      "pron": "민다 벨로 바할라크",
+      "lemmas": [
+        "מִדָּה",
+        "בְּלוֹ",
+        "הֲלָךְ"
+      ],
+      "words": [
+        {
+          "word": "מִנְדָּֽה",
+          "lemma": "מִדָּה",
+          "strong": "H4061",
+          "pron": "민다"
+        },
+        {
+          "word": "בְל֤וֹ",
+          "lemma": "בְּלוֹ",
+          "strong": "H1093",
+          "pron": "벨로"
+        },
+        {
+          "word": "וַהֲלָךְ֙",
+          "lemma": "הֲלָךְ",
+          "strong": "H1983",
+          "pron": "바할라크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 4:13",
+        "ezra 4:20",
+        "ezra 7:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

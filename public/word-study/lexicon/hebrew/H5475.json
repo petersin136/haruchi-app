@@ -1,6 +1,6 @@
 {
   "lemma": "סוֹד",
-  "pron": "솓",
+  "pron": "베소담",
   "strong": "H5475",
   "posKo": "명사",
   "root": {
@@ -12,31 +12,31 @@
     {
       "lemma": "בְּסוֹדְיָה",
       "strong": "H1152",
-      "pron": "",
+      "pron": "베솓아",
       "glossKo": "브소드야"
     },
     {
       "lemma": "יָסַד",
       "strong": "H3245",
-      "pron": "놋두",
-      "glossKo": "기초를 놓다"
+      "pron": "히밧다",
+      "glossKo": "그녀에게 기초를 놓다"
     },
     {
       "lemma": "יְסֻד",
       "strong": "H3246",
-      "pron": "",
+      "pron": "예숟",
       "glossKo": "기초(아람)"
     },
     {
       "lemma": "יְסוֹד",
       "strong": "H3247",
-      "pron": "아예솓",
+      "pron": "예솓",
       "glossKo": "기초"
     },
     {
       "lemma": "מוּסָד",
       "strong": "H4143",
-      "pron": "",
+      "pron": "무삳",
       "glossKo": "기초"
     },
     {
@@ -48,10 +48,45 @@
   ],
   "defEn": "session; company",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 21,
   "byBook": {
     "psalms": 6,
+    "proverbs": 5,
+    "jeremiah": 4,
+    "job": 3,
+    "amos": 1,
+    "ezekiel": 1,
     "genesis": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מְגַלֶּה סּ֑וֹד",
+      "pron": "바이텍갈 베소담",
+      "lemmas": [
+        "גָּלָה",
+        "סוֹד"
+      ],
+      "words": [
+        {
+          "word": "מְגַלֶּה",
+          "lemma": "גָּלָה",
+          "strong": "H1540",
+          "pron": "바이텍갈"
+        },
+        {
+          "word": "סּ֑וֹד",
+          "lemma": "סוֹד",
+          "strong": "H5475",
+          "pron": "베소담"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 11:13",
+        "proverbs 20:19",
+        "amos 3:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

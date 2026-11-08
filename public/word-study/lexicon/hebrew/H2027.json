@@ -1,8 +1,8 @@
 {
   "lemma": "הֶרֶג",
-  "pron": "헤렉",
+  "pron": "브헤렉",
   "strong": "H2027",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "הָרַג",
     "strong": "H2026",
@@ -12,13 +12,24 @@
     {
       "lemma": "הָרַג",
       "strong": "H2026",
-      "pron": "야하록",
-      "glossKo": "죽이다"
+      "pron": "바아하레게후",
+      "glossKo": "그에게 죽이다"
+    },
+    {
+      "lemma": "הֲרֵגָה",
+      "strong": "H2028",
+      "pron": "아하레가",
+      "glossKo": "도살"
     }
   ],
   "defEn": "slaughter",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 5,
+  "byBook": {
+    "isaiah": 2,
+    "esther": 1,
+    "ezekiel": 1,
+    "proverbs": 1
+  },
   "phrases": []
 }

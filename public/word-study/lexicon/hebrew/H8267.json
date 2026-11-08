@@ -12,43 +12,199 @@
     {
       "lemma": "שָׁקַר",
       "strong": "H8266",
-      "pron": "식카레누",
+      "pron": "티셰코르",
       "glossKo": "거짓되이 행하다"
     }
   ],
   "defEn": "untruth",
   "defKo": "",
-  "countOT": 22,
+  "countOT": 113,
   "byBook": {
-    "psalms": 22
+    "jeremiah": 37,
+    "psalms": 22,
+    "proverbs": 20,
+    "isaiah": 7,
+    "zechariah": 4,
+    "exodus": 3,
+    "leviticus": 3,
+    "chronicles2": 2,
+    "deuteronomy": 2,
+    "job": 2,
+    "kings1": 2,
+    "micah": 2,
+    "ezekiel": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "kings2": 1,
+    "malachi": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "שֶׁ֑קֶר שֹׂנְאַ֥י",
-      "pron": "샤케르 사네타",
+      "hebrew": "כִּ֛י שֶׁ֥קֶר",
+      "pron": "키 샤케르",
       "lemmas": [
-        "שֶׁקֶר",
-        "שָׂנֵא"
+        "כִּי",
+        "שֶׁקֶר"
       ],
       "words": [
         {
-          "word": "שֶׁ֑קֶר",
+          "word": "כִּ֛י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "שֶׁ֥קֶר",
           "lemma": "שֶׁקֶר",
           "strong": "H8267",
           "pron": "샤케르"
-        },
-        {
-          "word": "שֹׂנְאַ֥י",
-          "lemma": "שָׂנֵא",
-          "strong": "H8130",
-          "pron": "사네타"
         }
       ],
-      "count": 3,
+      "count": 10,
       "refs": [
-        "psalms 35:19",
-        "psalms 119:128",
-        "psalms 119:163"
+        "psalms 119:78",
+        "psalms 119:118",
+        "jeremiah 10:14",
+        "jeremiah 27:10",
+        "jeremiah 27:14",
+        "jeremiah 27:16",
+        "jeremiah 29:9",
+        "jeremiah 40:16",
+        "jeremiah 51:17",
+        "zechariah 13:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֵ֣ד שָֽׁקֶר",
+      "pron": "르엗 샤케르",
+      "lemmas": [
+        "עֵד",
+        "שֶׁקֶר"
+      ],
+      "words": [
+        {
+          "word": "עֵ֣ד",
+          "lemma": "עֵד",
+          "strong": "H5707",
+          "pron": "르엗"
+        },
+        {
+          "word": "שָֽׁקֶר",
+          "lemma": "שֶׁקֶר",
+          "strong": "H8267",
+          "pron": "샤케르"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 20:16",
+        "deuteronomy 19:18",
+        "psalms 27:12",
+        "proverbs 6:19",
+        "proverbs 12:17",
+        "proverbs 14:5",
+        "proverbs 19:5",
+        "proverbs 19:9",
+        "proverbs 25:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּדִבְרֵי שָֽׁקֶר",
+      "pron": "우데바림 샤케르",
+      "lemmas": [
+        "דָּבָר",
+        "שֶׁקֶר"
+      ],
+      "words": [
+        {
+          "word": "בְּדִבְרֵי",
+          "lemma": "דָּבָר",
+          "strong": "H1697",
+          "pron": "우데바림"
+        },
+        {
+          "word": "שָֽׁקֶר",
+          "lemma": "שֶׁקֶר",
+          "strong": "H8267",
+          "pron": "샤케르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 5:9",
+        "exodus 23:7",
+        "proverbs 13:5",
+        "proverbs 29:12",
+        "isaiah 59:13",
+        "jeremiah 7:4",
+        "jeremiah 7:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּשְׁמִ֖י לַשָּׁ֑קֶר",
+      "pron": "솀 샤케르",
+      "lemmas": [
+        "שֵׁם",
+        "שֶׁקֶר"
+      ],
+      "words": [
+        {
+          "word": "בִּשְׁמִ֖י",
+          "lemma": "שֵׁם",
+          "strong": "H8034",
+          "pron": "솀"
+        },
+        {
+          "word": "לַשָּׁ֑קֶר",
+          "lemma": "שֶׁקֶר",
+          "strong": "H8267",
+          "pron": "샤케르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "leviticus 19:12",
+        "jeremiah 23:25",
+        "jeremiah 27:15",
+        "jeremiah 29:21",
+        "jeremiah 29:23",
+        "zechariah 5:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דֽוֹבְרֵי שָֽׁקֶר",
+      "pron": "바예답베르 샤케르",
+      "lemmas": [
+        "דָבַר",
+        "שֶׁקֶר"
+      ],
+      "words": [
+        {
+          "word": "דֽוֹבְרֵי",
+          "lemma": "דָבַר",
+          "strong": "H1696",
+          "pron": "바예답베르"
+        },
+        {
+          "word": "שָֽׁקֶר",
+          "lemma": "שֶׁקֶר",
+          "strong": "H8267",
+          "pron": "샤케르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 63:11",
+        "psalms 101:7",
+        "isaiah 59:3",
+        "jeremiah 9:5",
+        "micah 6:12"
       ],
       "glossKo": ""
     }

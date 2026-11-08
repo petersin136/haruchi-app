@@ -18,65 +18,57 @@
     {
       "lemma": "אֵל",
       "strong": "H412",
-      "pron": "",
+      "pron": "르",
       "glossKo": "이것(아람)"
     },
     {
       "lemma": "אֵלֶּה",
       "strong": "H429",
-      "pron": "",
+      "pron": "엘레",
       "glossKo": "이들(아람)"
     }
   ],
   "defEn": "these; those",
   "defKo": "",
-  "countOT": 98,
+  "countOT": 747,
   "byBook": {
     "genesis": 90,
-    "psalms": 8
+    "chronicles1": 84,
+    "numbers": 73,
+    "jeremiah": 60,
+    "joshua": 51,
+    "deuteronomy": 49,
+    "ezekiel": 46,
+    "isaiah": 27,
+    "samuel1": 27,
+    "exodus": 26,
+    "leviticus": 26,
+    "zechariah": 24,
+    "kings1": 21,
+    "chronicles2": 20,
+    "kings2": 17,
+    "nehemiah": 17,
+    "samuel2": 15,
+    "ezra": 11,
+    "judges": 11,
+    "esther": 10,
+    "job": 10,
+    "daniel": 9,
+    "psalms": 8,
+    "ecclesiastes": 3,
+    "lamentations": 2,
+    "micah": 2,
+    "proverbs": 2,
+    "ruth": 2,
+    "amos": 1,
+    "habakkuk": 1,
+    "haggai": 1,
+    "hosea": 1
   },
   "phrases": [
     {
-      "hebrew": "אֵ֚לֶּה בְּנֵ֣י",
-      "pron": "엘레 베니위",
-      "lemmas": [
-        "אֵלֶּה",
-        "בֵּן"
-      ],
-      "words": [
-        {
-          "word": "אֵ֚לֶּה",
-          "lemma": "אֵלֶּה",
-          "strong": "H428",
-          "pron": "엘레"
-        },
-        {
-          "word": "בְּנֵ֣י",
-          "lemma": "בֵּן",
-          "strong": "H1121",
-          "pron": "베니위"
-        }
-      ],
-      "count": 25,
-      "refs": [
-        "genesis 9:19",
-        "genesis 10:20",
-        "genesis 10:29",
-        "genesis 10:31",
-        "genesis 25:4",
-        "genesis 35:26",
-        "genesis 36:5",
-        "genesis 36:12",
-        "genesis 36:13",
-        "genesis 36:16",
-        "genesis 36:17",
-        "genesis 36:18"
-      ],
-      "glossKo": ""
-    },
-    {
       "hebrew": "הַדְּבָרִ֣ים הָאֵ֔לֶּה",
-      "pron": "딥레 엘레",
+      "pron": "우데바림 엘레",
       "lemmas": [
         "דָּבָר",
         "אֵלֶּה"
@@ -86,7 +78,7 @@
           "word": "הַדְּבָרִ֣ים",
           "lemma": "דָּבָר",
           "strong": "H1697",
-          "pron": "딥레"
+          "pron": "우데바림"
         },
         {
           "word": "הָאֵ֔לֶּה",
@@ -95,7 +87,7 @@
           "pron": "엘레"
         }
       ],
-      "count": 14,
+      "count": 96,
       "refs": [
         "genesis 15:1",
         "genesis 20:8",
@@ -113,47 +105,11 @@
       "glossKo": ""
     },
     {
-      "hebrew": "אֵ֚לֶּה תּוֹלְדֹ֣ת",
-      "pron": "엘레 톨도트",
+      "hebrew": "אֵ֖לֶּה בְּנֵ֥י",
+      "pron": "엘레 바님",
       "lemmas": [
         "אֵלֶּה",
-        "תּוֹלְדָה"
-      ],
-      "words": [
-        {
-          "word": "אֵ֚לֶּה",
-          "lemma": "אֵלֶּה",
-          "strong": "H428",
-          "pron": "엘레"
-        },
-        {
-          "word": "תּוֹלְדֹ֣ת",
-          "lemma": "תּוֹלְדָה",
-          "strong": "H8435",
-          "pron": "톨도트"
-        }
-      ],
-      "count": 10,
-      "refs": [
-        "genesis 2:4",
-        "genesis 6:9",
-        "genesis 10:1",
-        "genesis 11:10",
-        "genesis 11:27",
-        "genesis 25:12",
-        "genesis 25:19",
-        "genesis 36:1",
-        "genesis 36:9",
-        "genesis 37:2"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֵ֖לֶּה אַלּוּפֵ֣י",
-      "pron": "엘레 알루피위",
-      "lemmas": [
-        "אֵלֶּה",
-        "אַלּוּף"
+        "בֵּן"
       ],
       "words": [
         {
@@ -163,62 +119,154 @@
           "pron": "엘레"
         },
         {
-          "word": "אַלּוּפֵ֣י",
-          "lemma": "אַלּוּף",
-          "strong": "H441",
-          "pron": "알루피위"
+          "word": "בְּנֵ֥י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
         }
       ],
-      "count": 9,
+      "count": 64,
       "refs": [
-        "genesis 36:15",
+        "genesis 9:19",
+        "genesis 10:20",
+        "genesis 10:29",
+        "genesis 10:31",
+        "genesis 25:4",
+        "genesis 35:26",
+        "genesis 36:5",
+        "genesis 36:12",
+        "genesis 36:13",
         "genesis 36:16",
         "genesis 36:17",
-        "genesis 36:18",
-        "genesis 36:19",
-        "genesis 36:21",
-        "genesis 36:29",
-        "genesis 36:30",
-        "genesis 36:43"
+        "genesis 36:18"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אַחַר֙ הַדְּבָרִ֣ים הָאֵ֔לֶּה",
-      "pron": "아하레하 딥레 엘레",
+      "hebrew": "כָּל אֵ֖לֶּה",
+      "pron": "칼 엘레",
       "lemmas": [
-        "אַחַר",
-        "דָּבָר",
+        "כֹּל",
         "אֵלֶּה"
       ],
       "words": [
         {
-          "word": "אַחַר֙",
-          "lemma": "אַחַר",
-          "strong": "H310",
-          "pron": "아하레하"
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
         },
         {
-          "word": "הַדְּבָרִ֣ים",
-          "lemma": "דָּבָר",
-          "strong": "H1697",
-          "pron": "딥레"
-        },
-        {
-          "word": "הָאֵ֔לֶּה",
+          "word": "אֵ֖לֶּה",
           "lemma": "אֵלֶּה",
           "strong": "H428",
           "pron": "엘레"
         }
       ],
-      "count": 6,
+      "count": 55,
       "refs": [
-        "genesis 15:1",
-        "genesis 22:1",
-        "genesis 22:20",
-        "genesis 39:7",
-        "genesis 40:1",
-        "genesis 48:1"
+        "genesis 10:29",
+        "genesis 14:3",
+        "genesis 15:10",
+        "genesis 25:4",
+        "genesis 49:28",
+        "leviticus 18:24",
+        "leviticus 20:23",
+        "leviticus 22:25",
+        "deuteronomy 3:5",
+        "judges 13:23",
+        "judges 20:25",
+        "judges 20:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל הַדְּבָרִ֖ים הָאֵֽלֶּה",
+      "pron": "칼 우데바림 엘레",
+      "lemmas": [
+        "כֹּל",
+        "דָּבָר",
+        "אֵלֶּה"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הַדְּבָרִ֖ים",
+          "lemma": "דָּבָר",
+          "strong": "H1697",
+          "pron": "우데바림"
+        },
+        {
+          "word": "הָאֵֽלֶּה",
+          "lemma": "אֵלֶּה",
+          "strong": "H428",
+          "pron": "엘레"
+        }
+      ],
+      "count": 34,
+      "refs": [
+        "genesis 20:8",
+        "genesis 29:13",
+        "exodus 19:7",
+        "exodus 20:1",
+        "exodus 24:8",
+        "numbers 16:31",
+        "deuteronomy 4:30",
+        "deuteronomy 12:28",
+        "deuteronomy 30:1",
+        "deuteronomy 32:45",
+        "judges 9:3",
+        "samuel1 19:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הַדְּבָרִ֣ים הָאֵ֑לֶּה",
+      "pron": "에트 우데바림 엘레",
+      "lemmas": [
+        "אֵת",
+        "דָּבָר",
+        "אֵלֶּה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַדְּבָרִ֣ים",
+          "lemma": "דָּבָר",
+          "strong": "H1697",
+          "pron": "우데바림"
+        },
+        {
+          "word": "הָאֵ֑לֶּה",
+          "lemma": "אֵלֶּה",
+          "strong": "H428",
+          "pron": "엘레"
+        }
+      ],
+      "count": 32,
+      "refs": [
+        "genesis 44:6",
+        "exodus 34:27",
+        "numbers 14:39",
+        "deuteronomy 5:22",
+        "deuteronomy 11:18",
+        "deuteronomy 31:1",
+        "deuteronomy 31:28",
+        "joshua 24:26",
+        "judges 2:4",
+        "samuel1 11:6",
+        "samuel1 18:23",
+        "samuel1 18:26"
       ],
       "glossKo": ""
     }

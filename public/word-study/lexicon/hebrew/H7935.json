@@ -2,7 +2,7 @@
   "lemma": "שְׁכַנְיָה",
   "pron": "셰칸아",
   "strong": "H7935",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁכַן",
     "strong": "H7931",
@@ -12,37 +12,104 @@
     {
       "lemma": "מִשְׁכָּן",
       "strong": "H4908",
-      "pron": "미셱칸",
+      "pron": "아미셱칸",
       "glossKo": "성막"
     },
     {
       "lemma": "שָׁכַן",
       "strong": "H7931",
-      "pron": "야셱켄",
+      "pron": "바야셱켄",
       "glossKo": "거주하다"
     },
     {
       "lemma": "שְׁכַן",
       "strong": "H7932",
-      "pron": "",
+      "pron": "샥킨",
       "glossKo": "거하다(아람)"
     },
     {
       "lemma": "שֶׁכֶן",
       "strong": "H7933",
-      "pron": "",
-      "glossKo": "거주"
+      "pron": "레시케노",
+      "glossKo": "그에게 거주"
     },
     {
       "lemma": "שָׁכֵן",
       "strong": "H7934",
-      "pron": "브리샤케나위",
-      "glossKo": "나를 이웃"
+      "pron": "밋셰켄타흐",
+      "glossKo": "그녀에게 이웃"
     }
   ],
   "defEn": "Shekanjah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 10,
+  "byBook": {
+    "chronicles1": 3,
+    "ezra": 3,
+    "nehemiah": 3,
+    "chronicles2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בְּנֵ֥י שְׁכַנְיָֽה",
+      "pron": "바님 셰칸아",
+      "lemmas": [
+        "בֵּן",
+        "שְׁכַנְיָה"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵ֥י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "שְׁכַנְיָֽה",
+          "lemma": "שְׁכַנְיָה",
+          "strong": "H7935",
+          "pron": "셰칸아"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "chronicles1 3:21",
+        "chronicles1 3:22",
+        "ezra 8:3",
+        "ezra 8:5",
+        "nehemiah 3:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁכַנְיָ֔ה מִבְּנֵ֥י",
+      "pron": "셰칸아 바님",
+      "lemmas": [
+        "שְׁכַנְיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "שְׁכַנְיָ֔ה",
+          "lemma": "שְׁכַנְיָה",
+          "strong": "H7935",
+          "pron": "셰칸아"
+        },
+        {
+          "word": "מִבְּנֵ֥י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 8:3",
+        "ezra 8:5",
+        "ezra 10:2",
+        "nehemiah 6:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

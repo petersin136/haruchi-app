@@ -2,7 +2,7 @@
   "lemma": "אֹדֶם",
   "pron": "오뎀",
   "strong": "H124",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אָדַם",
     "strong": "H119",
@@ -12,7 +12,7 @@
     {
       "lemma": "אָדַם",
       "strong": "H119",
-      "pron": "",
+      "pron": "메앋다밈",
       "glossKo": "붉다"
     },
     {
@@ -30,19 +30,58 @@
     {
       "lemma": "אֲדַמְדָּם",
       "strong": "H125",
-      "pron": "",
+      "pron": "아담다메트",
       "glossKo": "발그스름한"
     },
     {
       "lemma": "אֲדָמָה",
       "strong": "H127",
-      "pron": "아다모트",
+      "pron": "하아다마",
       "glossKo": "땅"
+    },
+    {
+      "lemma": "אַדְמֹנִי",
+      "strong": "H132",
+      "pron": "앋모니",
+      "glossKo": "붉은"
     }
   ],
   "defEn": "redness; ruby; garnet",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 3,
+  "byBook": {
+    "exodus": 2,
+    "ezekiel": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֹ֤דֶם פִּטְדָה֙",
+      "pron": "오뎀 핃다",
+      "lemmas": [
+        "אֹדֶם",
+        "פִּטְדָה"
+      ],
+      "words": [
+        {
+          "word": "אֹ֤דֶם",
+          "lemma": "אֹדֶם",
+          "strong": "H124",
+          "pron": "오뎀"
+        },
+        {
+          "word": "פִּטְדָה֙",
+          "lemma": "פִּטְדָה",
+          "strong": "H6357",
+          "pron": "핃다"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 28:17",
+        "exodus 39:10",
+        "ezekiel 28:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

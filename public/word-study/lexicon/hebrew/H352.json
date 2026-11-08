@@ -1,6 +1,6 @@
 {
   "lemma": "אַיִל",
-  "pron": "엘림",
+  "pron": "브아일",
   "strong": "H352",
   "posKo": "명사",
   "root": {
@@ -10,6 +10,12 @@
   },
   "family": [
     {
+      "lemma": "אוּל",
+      "strong": "H193",
+      "pron": "블리",
+      "glossKo": "몸통"
+    },
+    {
       "lemma": "אֱיָל",
       "strong": "H353",
       "pron": "에알",
@@ -18,7 +24,7 @@
     {
       "lemma": "אַיָּל",
       "strong": "H354",
-      "pron": "크아알",
+      "pron": "브카아알",
       "glossKo": "사슴"
     },
     {
@@ -30,22 +36,234 @@
     {
       "lemma": "אֵילוֹת",
       "strong": "H359",
-      "pron": "",
+      "pron": "메엘라트",
       "glossKo": "엘롯"
     },
     {
       "lemma": "אֵילָם",
       "strong": "H361",
-      "pron": "",
+      "pron": "라엘람모트",
       "glossKo": "현관"
     }
   ],
   "defEn": "strength; strong; chief",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 196,
   "byBook": {
+    "numbers": 66,
+    "ezekiel": 47,
+    "exodus": 23,
+    "leviticus": 22,
+    "daniel": 8,
+    "chronicles2": 5,
     "genesis": 5,
-    "psalms": 3
+    "isaiah": 5,
+    "psalms": 3,
+    "chronicles1": 2,
+    "ezra": 2,
+    "kings2": 2,
+    "deuteronomy": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "kings1": 1,
+    "micah": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אַ֧יִל אֶחָ֛ד",
+      "pron": "브아일 에핟",
+      "lemmas": [
+        "אַיִל",
+        "אֶחָד"
+      ],
+      "words": [
+        {
+          "word": "אַ֧יִל",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
+        },
+        {
+          "word": "אֶחָ֛ד",
+          "lemma": "אֶחָד",
+          "strong": "H259",
+          "pron": "에핟"
+        }
+      ],
+      "count": 28,
+      "refs": [
+        "exodus 29:15",
+        "leviticus 16:5",
+        "numbers 6:14",
+        "numbers 7:15",
+        "numbers 7:21",
+        "numbers 7:27",
+        "numbers 7:33",
+        "numbers 7:39",
+        "numbers 7:45",
+        "numbers 7:51",
+        "numbers 7:57",
+        "numbers 7:63"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ואילו וְאֵילָ֤יו",
+      "pron": "브아일 브아일",
+      "lemmas": [
+        "אַיִל",
+        "אַיִל"
+      ],
+      "words": [
+        {
+          "word": "ואילו",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
+        },
+        {
+          "word": "וְאֵילָ֤יו",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "ezekiel 40:9",
+        "ezekiel 40:21",
+        "ezekiel 40:24",
+        "ezekiel 40:26",
+        "ezekiel 40:29",
+        "ezekiel 40:31",
+        "ezekiel 40:33",
+        "ezekiel 40:34",
+        "ezekiel 40:36",
+        "ezekiel 40:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁנַיִם֒ אֵילִ֤ם",
+      "pron": "셰네 브아일",
+      "lemmas": [
+        "שְׁנַיִם",
+        "אַיִל"
+      ],
+      "words": [
+        {
+          "word": "שְׁנַיִם֒",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        },
+        {
+          "word": "אֵילִ֤ם",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "exodus 29:3",
+        "leviticus 8:2",
+        "numbers 7:17",
+        "numbers 7:23",
+        "numbers 7:29",
+        "numbers 7:35",
+        "numbers 7:41",
+        "numbers 7:47",
+        "numbers 7:53",
+        "numbers 7:59",
+        "numbers 7:65",
+        "numbers 7:71"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הָאַ֔יִל",
+      "pron": "에트 브아일",
+      "lemmas": [
+        "אֵת",
+        "אַיִל"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הָאַ֔יִל",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "genesis 22:13",
+        "exodus 29:15",
+        "exodus 29:16",
+        "exodus 29:17",
+        "exodus 29:19",
+        "exodus 29:20",
+        "exodus 29:31",
+        "leviticus 8:18",
+        "leviticus 8:20",
+        "leviticus 8:22",
+        "leviticus 9:18",
+        "numbers 6:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַ֧יִל אֶחָ֛ד כֶּֽבֶשׂ",
+      "pron": "브아일 에핟 아케바심",
+      "lemmas": [
+        "אַיִל",
+        "אֶחָד",
+        "כֶּבֶשׂ"
+      ],
+      "words": [
+        {
+          "word": "אַ֧יִל",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
+        },
+        {
+          "word": "אֶחָ֛ד",
+          "lemma": "אֶחָד",
+          "strong": "H259",
+          "pron": "에핟"
+        },
+        {
+          "word": "כֶּֽבֶשׂ",
+          "lemma": "כֶּבֶשׂ",
+          "strong": "H3532",
+          "pron": "아케바심"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "numbers 7:15",
+        "numbers 7:21",
+        "numbers 7:27",
+        "numbers 7:33",
+        "numbers 7:39",
+        "numbers 7:45",
+        "numbers 7:51",
+        "numbers 7:57",
+        "numbers 7:63",
+        "numbers 7:69",
+        "numbers 7:75",
+        "numbers 7:81"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

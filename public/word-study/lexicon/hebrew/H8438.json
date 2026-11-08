@@ -1,6 +1,6 @@
 {
   "lemma": "תּוֹלָע",
-  "pron": "톨라아트",
+  "pron": "톨라임",
   "strong": "H8438",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "יָלַע",
       "strong": "H3216",
-      "pron": "",
+      "pron": "얄라",
       "glossKo": "삼키다"
     },
     {
       "lemma": "מְתַלְּעָה",
       "strong": "H4973",
-      "pron": "",
+      "pron": "메탈레오트",
       "glossKo": "어금니"
     },
     {
@@ -30,15 +30,235 @@
     {
       "lemma": "תָּלַע",
       "strong": "H8529",
-      "pron": "",
+      "pron": "메툴라임",
       "glossKo": "주홍색을 띠다"
     }
   ],
   "defEn": "maggot; voracious; grub",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 43,
   "byBook": {
+    "exodus": 27,
+    "leviticus": 5,
+    "isaiah": 4,
+    "numbers": 2,
+    "deuteronomy": 1,
+    "job": 1,
+    "jonah": 1,
+    "lamentations": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְתוֹלַ֥עַת שָׁנִ֖י",
+      "pron": "톨라임 샤니",
+      "lemmas": [
+        "תּוֹלָע",
+        "שָׁנִי"
+      ],
+      "words": [
+        {
+          "word": "וְתוֹלַ֥עַת",
+          "lemma": "תּוֹלָע",
+          "strong": "H8438",
+          "pron": "톨라임"
+        },
+        {
+          "word": "שָׁנִ֖י",
+          "lemma": "שָׁנִי",
+          "strong": "H8144",
+          "pron": "샤니"
+        }
+      ],
+      "count": 27,
+      "refs": [
+        "exodus 25:4",
+        "exodus 26:1",
+        "exodus 26:31",
+        "exodus 26:36",
+        "exodus 27:16",
+        "exodus 28:5",
+        "exodus 28:6",
+        "exodus 28:8",
+        "exodus 28:15",
+        "exodus 28:33",
+        "exodus 35:6",
+        "exodus 35:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאַרְגָּמָ֛ן וְתוֹלַ֥עַת",
+      "pron": "브아렉가만 톨라임",
+      "lemmas": [
+        "אַרְגָּמָן",
+        "תּוֹלָע"
+      ],
+      "words": [
+        {
+          "word": "וְאַרְגָּמָ֛ן",
+          "lemma": "אַרְגָּמָן",
+          "strong": "H713",
+          "pron": "브아렉가만"
+        },
+        {
+          "word": "וְתוֹלַ֥עַת",
+          "lemma": "תּוֹלָע",
+          "strong": "H8438",
+          "pron": "톨라임"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "exodus 25:4",
+        "exodus 26:1",
+        "exodus 26:31",
+        "exodus 26:36",
+        "exodus 27:16",
+        "exodus 28:6",
+        "exodus 28:8",
+        "exodus 28:15",
+        "exodus 28:33",
+        "exodus 35:6",
+        "exodus 35:23",
+        "exodus 35:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאַרְגָּמָ֛ן וְתוֹלַ֥עַת שָׁנִ֖י",
+      "pron": "브아렉가만 톨라임 샤니",
+      "lemmas": [
+        "אַרְגָּמָן",
+        "תּוֹלָע",
+        "שָׁנִי"
+      ],
+      "words": [
+        {
+          "word": "וְאַרְגָּמָ֛ן",
+          "lemma": "אַרְגָּמָן",
+          "strong": "H713",
+          "pron": "브아렉가만"
+        },
+        {
+          "word": "וְתוֹלַ֥עַת",
+          "lemma": "תּוֹלָע",
+          "strong": "H8438",
+          "pron": "톨라임"
+        },
+        {
+          "word": "שָׁנִ֖י",
+          "lemma": "שָׁנִי",
+          "strong": "H8144",
+          "pron": "샤니"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "exodus 25:4",
+        "exodus 26:1",
+        "exodus 26:31",
+        "exodus 26:36",
+        "exodus 27:16",
+        "exodus 28:6",
+        "exodus 28:8",
+        "exodus 28:15",
+        "exodus 28:33",
+        "exodus 35:6",
+        "exodus 35:23",
+        "exodus 35:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּכֵ֧לֶת וְאַרְגָּמָ֛ן וְתוֹלַ֥עַת",
+      "pron": "우테켈레트 브아렉가만 톨라임",
+      "lemmas": [
+        "תְּכֵלֶת",
+        "אַרְגָּמָן",
+        "תּוֹלָע"
+      ],
+      "words": [
+        {
+          "word": "תְּכֵ֧לֶת",
+          "lemma": "תְּכֵלֶת",
+          "strong": "H8504",
+          "pron": "우테켈레트"
+        },
+        {
+          "word": "וְאַרְגָּמָ֛ן",
+          "lemma": "אַרְגָּמָן",
+          "strong": "H713",
+          "pron": "브아렉가만"
+        },
+        {
+          "word": "וְתוֹלַ֥עַת",
+          "lemma": "תּוֹלָע",
+          "strong": "H8438",
+          "pron": "톨라임"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "exodus 25:4",
+        "exodus 26:1",
+        "exodus 26:31",
+        "exodus 26:36",
+        "exodus 27:16",
+        "exodus 28:6",
+        "exodus 28:8",
+        "exodus 28:15",
+        "exodus 28:33",
+        "exodus 35:6",
+        "exodus 35:23",
+        "exodus 35:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְתוֹלַ֥עַת שָׁנִ֖י וְשֵׁ֣שׁ",
+      "pron": "톨라임 샤니 셰쉬",
+      "lemmas": [
+        "תּוֹלָע",
+        "שָׁנִי",
+        "שֵׁשׁ"
+      ],
+      "words": [
+        {
+          "word": "וְתוֹלַ֥עַת",
+          "lemma": "תּוֹלָע",
+          "strong": "H8438",
+          "pron": "톨라임"
+        },
+        {
+          "word": "שָׁנִ֖י",
+          "lemma": "שָׁנִי",
+          "strong": "H8144",
+          "pron": "샤니"
+        },
+        {
+          "word": "וְשֵׁ֣שׁ",
+          "lemma": "שֵׁשׁ",
+          "strong": "H8336",
+          "pron": "셰쉬"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "exodus 25:4",
+        "exodus 26:31",
+        "exodus 26:36",
+        "exodus 27:16",
+        "exodus 28:6",
+        "exodus 28:8",
+        "exodus 28:15",
+        "exodus 35:6",
+        "exodus 35:23",
+        "exodus 35:35",
+        "exodus 36:35",
+        "exodus 36:37"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

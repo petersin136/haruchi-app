@@ -8,18 +8,93 @@
     {
       "lemma": "אַנְתָּה",
       "strong": "H607",
-      "pron": "",
+      "pron": "브안트",
       "glossKo": "당신(아람)"
     }
   ],
   "defEn": "thou; thee; ye; you",
   "defKo": "",
-  "countOT": 190,
+  "countOT": 1104,
   "byBook": {
     "psalms": 120,
-    "genesis": 70
+    "jeremiah": 105,
+    "ezekiel": 93,
+    "deuteronomy": 91,
+    "genesis": 70,
+    "kings1": 58,
+    "samuel1": 58,
+    "exodus": 55,
+    "isaiah": 52,
+    "samuel2": 48,
+    "judges": 43,
+    "numbers": 42,
+    "chronicles2": 41,
+    "joshua": 35,
+    "nehemiah": 31,
+    "kings2": 26,
+    "chronicles1": 17,
+    "job": 17,
+    "malachi": 11,
+    "zechariah": 11,
+    "proverbs": 9,
+    "ruth": 8,
+    "leviticus": 7,
+    "hosea": 6,
+    "amos": 5,
+    "ecclesiastes": 5,
+    "ezra": 5,
+    "micah": 5,
+    "daniel": 4,
+    "jonah": 4,
+    "esther": 3,
+    "habakkuk": 3,
+    "haggai": 3,
+    "joel": 3,
+    "lamentations": 3,
+    "obadiah": 3,
+    "nahum": 2,
+    "songofsolomon": 1,
+    "zephaniah": 1
   },
   "phrases": [
+    {
+      "hebrew": "אֲשֶׁר אַתָּ֥ה",
+      "pron": "아셰르 앗타",
+      "lemmas": [
+        "אֲשֶׁר",
+        "אַתָּה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "אַתָּ֥ה",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
+        }
+      ],
+      "count": 94,
+      "refs": [
+        "genesis 13:14",
+        "genesis 13:15",
+        "genesis 21:22",
+        "genesis 28:13",
+        "genesis 31:43",
+        "genesis 39:9",
+        "exodus 3:5",
+        "exodus 12:13",
+        "exodus 16:8",
+        "exodus 18:14",
+        "exodus 18:17",
+        "exodus 25:40"
+      ],
+      "glossKo": ""
+    },
     {
       "hebrew": "כִּֽי אַתָּ֣ה",
       "pron": "키 앗타",
@@ -41,29 +116,29 @@
           "pron": "앗타"
         }
       ],
-      "count": 25,
+      "count": 80,
       "refs": [
-        "psalms 4:8",
-        "psalms 5:12",
-        "psalms 10:14",
-        "psalms 18:27",
-        "psalms 18:28",
-        "psalms 22:9",
-        "psalms 23:4",
-        "psalms 25:5",
-        "psalms 31:4",
-        "psalms 39:9",
-        "psalms 43:2",
-        "psalms 61:5"
+        "genesis 30:26",
+        "exodus 19:23",
+        "numbers 14:14",
+        "numbers 22:34",
+        "numbers 33:51",
+        "numbers 34:2",
+        "numbers 35:10",
+        "deuteronomy 7:7",
+        "deuteronomy 11:31",
+        "deuteronomy 18:9",
+        "deuteronomy 29:16",
+        "deuteronomy 31:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְאַתָּ֣ה יְ֭הוָה",
-      "pron": "앗타 여호와",
+      "hebrew": "וְאַתָּ֣ה בֶן",
+      "pron": "앗타 바님",
       "lemmas": [
         "אַתָּה",
-        "יְהֹוָה"
+        "בֵּן"
       ],
       "words": [
         {
@@ -73,127 +148,102 @@
           "pron": "앗타"
         },
         {
-          "word": "יְ֭הוָה",
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 54,
+      "refs": [
+        "genesis 6:18",
+        "genesis 27:18",
+        "genesis 45:10",
+        "exodus 20:10",
+        "leviticus 10:9",
+        "leviticus 10:14",
+        "numbers 18:1",
+        "numbers 18:2",
+        "numbers 18:7",
+        "deuteronomy 5:14",
+        "deuteronomy 6:2",
+        "deuteronomy 12:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַתָּ֤ה יְהוָה֙",
+      "pron": "앗타 여호와",
+      "lemmas": [
+        "אַתָּה",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "אַתָּ֤ה",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
+        },
+        {
+          "word": "יְהוָה֙",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         }
       ],
-      "count": 20,
+      "count": 46,
       "refs": [
-        "psalms 3:3",
-        "psalms 4:8",
-        "psalms 6:3",
-        "psalms 12:7",
-        "psalms 22:19",
-        "psalms 40:5",
-        "psalms 40:11",
-        "psalms 41:10",
-        "psalms 59:5",
-        "psalms 59:8",
-        "psalms 70:5",
-        "psalms 86:17"
+        "numbers 14:14",
+        "deuteronomy 7:6",
+        "deuteronomy 14:1",
+        "deuteronomy 14:2",
+        "deuteronomy 14:21",
+        "ruth 3:10",
+        "samuel1 15:13",
+        "samuel1 23:21",
+        "samuel2 2:5",
+        "samuel2 7:24",
+        "samuel2 7:27",
+        "kings1 18:37"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אַתָּ֣ה יָ֭דַעְתָּ",
-      "pron": "앗타 요데아",
+      "hebrew": "גַּם אַתָּ֖ה",
+      "pron": "감 앗타",
       "lemmas": [
-        "אַתָּה",
-        "יָדַע"
-      ],
-      "words": [
-        {
-          "word": "אַתָּ֣ה",
-          "lemma": "אַתָּה",
-          "strong": "H859",
-          "pron": "앗타"
-        },
-        {
-          "word": "יָ֭דַעְתָּ",
-          "lemma": "יָדַע",
-          "strong": "H3045",
-          "pron": "요데아"
-        }
-      ],
-      "count": 9,
-      "refs": [
-        "psalms 40:9",
-        "psalms 69:5",
-        "psalms 69:19",
-        "psalms 139:2",
-        "psalms 142:3",
-        "genesis 30:26",
-        "genesis 30:29",
-        "genesis 31:6",
-        "genesis 44:27"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אַ֭תָּה אֱלֹהֵ֣י",
-      "pron": "앗타 베엘로힘",
-      "lemmas": [
-        "אַתָּה",
-        "אֱלֹהִים"
-      ],
-      "words": [
-        {
-          "word": "אַ֭תָּה",
-          "lemma": "אַתָּה",
-          "strong": "H859",
-          "pron": "앗타"
-        },
-        {
-          "word": "אֱלֹהֵ֣י",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        }
-      ],
-      "count": 8,
-      "refs": [
-        "psalms 25:5",
-        "psalms 40:17",
-        "psalms 43:2",
-        "psalms 55:23",
-        "psalms 60:10",
-        "psalms 61:5",
-        "psalms 86:2",
-        "psalms 86:10"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֱלֹהַ֥י אָֽתָּה",
-      "pron": "베엘로힘 앗타",
-      "lemmas": [
-        "אֱלֹהִים",
+        "גַּם",
         "אַתָּה"
       ],
       "words": [
         {
-          "word": "אֱלֹהַ֥י",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
+          "word": "גַּם",
+          "lemma": "גַּם",
+          "strong": "H1571",
+          "pron": "감"
         },
         {
-          "word": "אָֽתָּה",
+          "word": "אַתָּ֖ה",
           "lemma": "אַתָּה",
           "strong": "H859",
           "pron": "앗타"
         }
       ],
-      "count": 6,
+      "count": 37,
       "refs": [
-        "psalms 31:14",
-        "psalms 69:5",
-        "psalms 82:6",
-        "psalms 99:8",
-        "genesis 22:12",
-        "genesis 23:6"
+        "genesis 21:26",
+        "genesis 24:44",
+        "genesis 43:8",
+        "exodus 10:25",
+        "exodus 12:31",
+        "exodus 18:18",
+        "numbers 18:3",
+        "numbers 18:28",
+        "numbers 22:19",
+        "numbers 27:13",
+        "deuteronomy 1:37",
+        "joshua 2:12"
       ],
       "glossKo": ""
     }

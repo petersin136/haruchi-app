@@ -1,6 +1,6 @@
 {
   "lemma": "עֲלִילָה",
-  "pron": "알릴로타이브",
+  "pron": "알릴로트",
   "strong": "H5949",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "מַעֲלָל",
       "strong": "H4611",
-      "pron": "마알레헴",
-      "glossKo": "그들의 행위"
+      "pron": "마알랄레카",
+      "glossKo": "너의 행위"
     },
     {
       "lemma": "עֹל",
       "strong": "H5923",
-      "pron": "울오",
+      "pron": "울로",
       "glossKo": "그의 멍에"
     },
     {
@@ -30,27 +30,159 @@
     {
       "lemma": "עֲלִילִיָּה",
       "strong": "H5950",
-      "pron": "",
+      "pron": "하알릴리아",
       "glossKo": "행위"
     },
     {
       "lemma": "עָלַל",
       "strong": "H5953",
-      "pron": "르히테올렐",
-      "glossKo": "이삭을 줍다를 따라"
+      "pron": "히테알랄티",
+      "glossKo": "이삭을 줍다"
     },
     {
       "lemma": "עֲלַל",
       "strong": "H5954",
-      "pron": "",
+      "pron": "알",
       "glossKo": "들어가다(아람)"
     }
   ],
   "defEn": "exploit; performance",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 24,
   "byBook": {
-    "psalms": 9
+    "psalms": 9,
+    "ezekiel": 8,
+    "deuteronomy": 2,
+    "zephaniah": 2,
+    "chronicles1": 1,
+    "isaiah": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בָעַמִּ֖ים עֲלִילֹתָֽיו",
+      "pron": "암 알릴로트",
+      "lemmas": [
+        "עַם",
+        "עֲלִילָה"
+      ],
+      "words": [
+        {
+          "word": "בָעַמִּ֖ים",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "עֲלִילֹתָֽיו",
+          "lemma": "עֲלִילָה",
+          "strong": "H5949",
+          "pron": "알릴로트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles1 16:8",
+        "psalms 9:11",
+        "psalms 105:1",
+        "isaiah 12:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל עֲלִיל֣וֹתֵיכֶ֔ם",
+      "pron": "칼 알릴로트",
+      "lemmas": [
+        "כֹּל",
+        "עֲלִילָה"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "עֲלִיל֣וֹתֵיכֶ֔ם",
+          "lemma": "עֲלִילָה",
+          "strong": "H5949",
+          "pron": "알릴로트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 20:43",
+        "ezekiel 21:24",
+        "zephaniah 3:7",
+        "zephaniah 3:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הוֹדִ֥יעוּ בָעַמִּ֖ים עֲלִילֹתָֽיו",
+      "pron": "요데아 암 알릴로트",
+      "lemmas": [
+        "יָדַע",
+        "עַם",
+        "עֲלִילָה"
+      ],
+      "words": [
+        {
+          "word": "הוֹדִ֥יעוּ",
+          "lemma": "יָדַע",
+          "strong": "H3045",
+          "pron": "요데아"
+        },
+        {
+          "word": "בָעַמִּ֖ים",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "עֲלִילֹתָֽיו",
+          "lemma": "עֲלִילָה",
+          "strong": "H5949",
+          "pron": "알릴로트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 16:8",
+        "psalms 105:1",
+        "isaiah 12:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּדְרָכַ֤יִךְ וְכַעֲלִילוֹתַ֨יִךְ֙",
+      "pron": "데레크 알릴로트",
+      "lemmas": [
+        "דֶּרֶךְ",
+        "עֲלִילָה"
+      ],
+      "words": [
+        {
+          "word": "כִּדְרָכַ֤יִךְ",
+          "lemma": "דֶּרֶךְ",
+          "strong": "H1870",
+          "pron": "데레크"
+        },
+        {
+          "word": "וְכַעֲלִילוֹתַ֨יִךְ֙",
+          "lemma": "עֲלִילָה",
+          "strong": "H5949",
+          "pron": "알릴로트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 24:14",
+        "ezekiel 36:17",
+        "ezekiel 36:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "שִׁבְעָה",
-  "pron": "십아",
+  "pron": "브십아트",
   "strong": "H7655",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "שֶׁבַע",
     "strong": "H7651",
@@ -12,19 +12,19 @@
     {
       "lemma": "שָׁבַע",
       "strong": "H7650",
-      "pron": "니솁바",
+      "pron": "힛샵아",
       "glossKo": "맹세하다"
     },
     {
       "lemma": "שֶׁבַע",
       "strong": "H7651",
-      "pron": "셰바",
+      "pron": "브십아",
       "glossKo": "일곱"
     },
     {
       "lemma": "שֶׁבַע",
       "strong": "H7652",
-      "pron": "",
+      "pron": "브셰바",
       "glossKo": "일곱"
     },
     {
@@ -38,11 +38,88 @@
       "strong": "H7657",
       "pron": "십임",
       "glossKo": "일흔"
+    },
+    {
+      "lemma": "שִׁבְעָנָה",
+      "strong": "H7658",
+      "pron": "십아나",
+      "glossKo": "일곱 배"
     }
   ],
   "defEn": "seven (times).",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "daniel": 5,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְשִׁבְעָ֥ה עִדָּנִ֖ין",
+      "pron": "브십아트 읻다나",
+      "lemmas": [
+        "שִׁבְעָה",
+        "עִדָּן"
+      ],
+      "words": [
+        {
+          "word": "וְשִׁבְעָ֥ה",
+          "lemma": "שִׁבְעָה",
+          "strong": "H7655",
+          "pron": "브십아트"
+        },
+        {
+          "word": "עִדָּנִ֖ין",
+          "lemma": "עִדָּן",
+          "strong": "H5732",
+          "pron": "읻다나"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:16",
+        "daniel 4:23",
+        "daniel 4:25",
+        "daniel 4:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְשִׁבְעָ֥ה עִדָּנִ֖ין יַחְלְפ֣וּן",
+      "pron": "브십아트 읻다나 야헬푼",
+      "lemmas": [
+        "שִׁבְעָה",
+        "עִדָּן",
+        "חֲלַף"
+      ],
+      "words": [
+        {
+          "word": "וְשִׁבְעָ֥ה",
+          "lemma": "שִׁבְעָה",
+          "strong": "H7655",
+          "pron": "브십아트"
+        },
+        {
+          "word": "עִדָּנִ֖ין",
+          "lemma": "עִדָּן",
+          "strong": "H5732",
+          "pron": "읻다나"
+        },
+        {
+          "word": "יַחְלְפ֣וּן",
+          "lemma": "חֲלַף",
+          "strong": "H2499",
+          "pron": "야헬푼"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:16",
+        "daniel 4:23",
+        "daniel 4:25",
+        "daniel 4:32"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

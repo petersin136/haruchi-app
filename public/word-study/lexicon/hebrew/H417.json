@@ -2,7 +2,7 @@
   "lemma": "אֶלְגָּבִישׁ",
   "pron": "엘가비쉬",
   "strong": "H417",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אֵל",
     "strong": "H410",
@@ -12,7 +12,7 @@
     {
       "lemma": "אֵל",
       "strong": "H410",
-      "pron": "엘",
+      "pron": "르엘",
       "glossKo": "하나님"
     },
     {
@@ -30,7 +30,7 @@
     {
       "lemma": "אֶלְדָּד",
       "strong": "H419",
-      "pron": "",
+      "pron": "엘닫",
       "glossKo": "엘닷"
     },
     {
@@ -48,7 +48,39 @@
   ],
   "defEn": "hail",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 3,
+  "byBook": {
+    "ezekiel": 3
+  },
+  "phrases": [
+    {
+      "hebrew": "אַבְנֵ֤י אֶלְגָּבִישׁ֙",
+      "pron": "브에벤 엘가비쉬",
+      "lemmas": [
+        "אֶבֶן",
+        "אֶלְגָּבִישׁ"
+      ],
+      "words": [
+        {
+          "word": "אַבְנֵ֤י",
+          "lemma": "אֶבֶן",
+          "strong": "H68",
+          "pron": "브에벤"
+        },
+        {
+          "word": "אֶלְגָּבִישׁ֙",
+          "lemma": "אֶלְגָּבִישׁ",
+          "strong": "H417",
+          "pron": "엘가비쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 13:11",
+        "ezekiel 13:13",
+        "ezekiel 38:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

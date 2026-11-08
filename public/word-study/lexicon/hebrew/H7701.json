@@ -12,7 +12,7 @@
     {
       "lemma": "שַׁד",
       "strong": "H7699",
-      "pron": "셰데",
+      "pron": "샤다임",
       "glossKo": "유방"
     },
     {
@@ -30,15 +30,85 @@
     {
       "lemma": "שִׂיד",
       "strong": "H7874",
-      "pron": "",
+      "pron": "브삳타",
       "glossKo": "회 칠하다"
     }
   ],
   "defEn": "violence; ravage",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 25,
   "byBook": {
+    "isaiah": 6,
+    "hosea": 4,
+    "amos": 3,
+    "jeremiah": 3,
+    "habakkuk": 2,
+    "job": 2,
+    "proverbs": 2,
+    "ezekiel": 1,
+    "joel": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "חָמָ֥ס וָשֹׁ֖ד",
+      "pron": "하맛 미숃",
+      "lemmas": [
+        "חָמָס",
+        "שֹׁד"
+      ],
+      "words": [
+        {
+          "word": "חָמָ֥ס",
+          "lemma": "חָמָס",
+          "strong": "H2555",
+          "pron": "하맛"
+        },
+        {
+          "word": "וָשֹׁ֖ד",
+          "lemma": "שֹׁד",
+          "strong": "H7701",
+          "pron": "미숃"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 6:7",
+        "jeremiah 20:8",
+        "ezekiel 45:9",
+        "amos 3:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שֹׁ֥ד וָשֶׁ֖בֶר",
+      "pron": "미숃 셰베르",
+      "lemmas": [
+        "שֹׁד",
+        "שֶׁבֶר"
+      ],
+      "words": [
+        {
+          "word": "שֹׁ֥ד",
+          "lemma": "שֹׁד",
+          "strong": "H7701",
+          "pron": "미숃"
+        },
+        {
+          "word": "וָשֶׁ֖בֶר",
+          "lemma": "שֶׁבֶר",
+          "strong": "H7667",
+          "pron": "셰베르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 51:19",
+        "isaiah 59:7",
+        "isaiah 60:18",
+        "jeremiah 48:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -2,7 +2,7 @@
   "lemma": "מְרֵמוֹת",
   "pron": "메레모트",
   "strong": "H4822",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רוּם",
     "strong": "H7311",
@@ -12,43 +12,112 @@
     {
       "lemma": "יְרִימוֹת",
       "strong": "H3406",
-      "pron": "",
+      "pron": "비위리모트",
       "glossKo": "여리못"
     },
     {
       "lemma": "יַרְמוּת",
       "strong": "H3412",
-      "pron": "",
+      "pron": "야레무트",
       "glossKo": "야르뭇"
     },
     {
       "lemma": "יְרֵמַי",
       "strong": "H3413",
-      "pron": "",
+      "pron": "예레마이",
       "glossKo": "여레매"
     },
     {
       "lemma": "יִרְמְיָה",
       "strong": "H3414",
-      "pron": "",
+      "pron": "이렘아후",
       "glossKo": "예레미야"
     },
     {
       "lemma": "מָרוֹם",
       "strong": "H4791",
-      "pron": "라마롬",
+      "pron": "메로메",
       "glossKo": "높은 곳"
     },
     {
       "lemma": "רוּם",
       "strong": "H7311",
-      "pron": "우메림",
+      "pron": "바타람",
       "glossKo": "높이다"
     }
   ],
   "defEn": "Meremoth",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "nehemiah": 4,
+    "ezra": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "מְרֵמ֤וֹת בֶּן",
+      "pron": "메레모트 바님",
+      "lemmas": [
+        "מְרֵמוֹת",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "מְרֵמ֤וֹת",
+          "lemma": "מְרֵמוֹת",
+          "strong": "H4822",
+          "pron": "메레모트"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 8:33",
+        "nehemiah 3:4",
+        "nehemiah 3:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְרֵמ֤וֹת בֶּן אֽוּרִיָּה֙",
+      "pron": "메레모트 바님 우리아",
+      "lemmas": [
+        "מְרֵמוֹת",
+        "בֵּן",
+        "אוּרִיָּה"
+      ],
+      "words": [
+        {
+          "word": "מְרֵמ֤וֹת",
+          "lemma": "מְרֵמוֹת",
+          "strong": "H4822",
+          "pron": "메레모트"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "אֽוּרִיָּה֙",
+          "lemma": "אוּרִיָּה",
+          "strong": "H223",
+          "pron": "우리아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 8:33",
+        "nehemiah 3:4",
+        "nehemiah 3:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

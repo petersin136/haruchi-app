@@ -12,28 +12,57 @@
     {
       "lemma": "עֵת",
       "strong": "H6256",
-      "pron": "브잇트오",
-      "glossKo": "그의 때"
+      "pron": "르에트",
+      "glossKo": "때"
     },
     {
       "lemma": "עִתִּי",
       "strong": "H6261",
-      "pron": "",
+      "pron": "잇티",
       "glossKo": "때맞은"
     },
     {
       "lemma": "עֵת קָצִין",
       "strong": "H6278",
-      "pron": "",
+      "pron": "잇타",
       "glossKo": "엣가신"
     }
   ],
   "defEn": "at this time",
   "defKo": "",
-  "countOT": 54,
+  "countOT": 435,
   "byBook": {
+    "samuel1": 46,
     "genesis": 40,
-    "psalms": 14
+    "samuel2": 30,
+    "chronicles2": 29,
+    "isaiah": 29,
+    "judges": 24,
+    "kings1": 23,
+    "kings2": 22,
+    "exodus": 20,
+    "joshua": 19,
+    "job": 18,
+    "jeremiah": 16,
+    "numbers": 15,
+    "psalms": 14,
+    "chronicles1": 13,
+    "hosea": 12,
+    "deuteronomy": 9,
+    "ezekiel": 9,
+    "micah": 8,
+    "daniel": 7,
+    "ezra": 6,
+    "nehemiah": 5,
+    "haggai": 4,
+    "ruth": 4,
+    "malachi": 3,
+    "proverbs": 3,
+    "amos": 2,
+    "zechariah": 2,
+    "joel": 1,
+    "jonah": 1,
+    "nahum": 1
   },
   "phrases": [
     {
@@ -57,82 +86,172 @@
           "pron": "브앗타"
         }
       ],
-      "count": 5,
+      "count": 29,
       "refs": [
         "genesis 22:12",
         "genesis 26:22",
         "genesis 29:32",
         "genesis 31:42",
-        "genesis 43:10"
+        "genesis 43:10",
+        "exodus 9:15",
+        "numbers 22:29",
+        "numbers 22:33",
+        "samuel1 2:16",
+        "samuel1 13:13",
+        "samuel1 14:30",
+        "samuel2 16:11"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "מֵֽ֝עַתָּ֗ה וְעַד",
-      "pron": "브앗타 앋",
+      "hebrew": "וְעַתָּה֙ הִנֵּ֣ה",
+      "pron": "브앗타 힌네",
       "lemmas": [
         "עַתָּה",
-        "עַד"
+        "הִנֵּה"
       ],
       "words": [
         {
-          "word": "מֵֽ֝עַתָּ֗ה",
+          "word": "וְעַתָּה֙",
           "lemma": "עַתָּה",
           "strong": "H6258",
           "pron": "브앗타"
         },
         {
-          "word": "וְעַד",
-          "lemma": "עַד",
-          "strong": "H5704",
-          "pron": "앋"
+          "word": "הִנֵּ֣ה",
+          "lemma": "הִנֵּה",
+          "strong": "H2009",
+          "pron": "힌네"
         }
       ],
-      "count": 5,
+      "count": 16,
       "refs": [
-        "psalms 113:2",
-        "psalms 115:18",
-        "psalms 121:8",
-        "psalms 125:2",
-        "psalms 131:3"
+        "genesis 12:19",
+        "exodus 3:9",
+        "deuteronomy 26:10",
+        "joshua 9:12",
+        "joshua 14:10",
+        "samuel1 12:2",
+        "samuel1 12:13",
+        "samuel1 24:20",
+        "kings1 1:18",
+        "kings1 22:23",
+        "kings2 18:21",
+        "chronicles2 18:22"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "מֵֽ֝עַתָּ֗ה וְעַד עוֹלָֽם",
-      "pron": "브앗타 앋 르올람",
+      "hebrew": "וְעַתָּה֙ יְהוָ֣ה",
+      "pron": "브앗타 여호와",
       "lemmas": [
         "עַתָּה",
-        "עַד",
-        "עוֹלָם"
+        "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "מֵֽ֝עַתָּ֗ה",
+          "word": "וְעַתָּה֙",
           "lemma": "עַתָּה",
           "strong": "H6258",
           "pron": "브앗타"
         },
         {
-          "word": "וְעַד",
-          "lemma": "עַד",
-          "strong": "H5704",
-          "pron": "앋"
-        },
-        {
-          "word": "עוֹלָֽם",
-          "lemma": "עוֹלָם",
-          "strong": "H5769",
-          "pron": "르올람"
+          "word": "יְהוָ֣ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         }
       ],
-      "count": 5,
+      "count": 15,
       "refs": [
-        "psalms 113:2",
-        "psalms 115:18",
-        "psalms 121:8",
-        "psalms 125:2",
-        "psalms 131:3"
+        "judges 11:23",
+        "samuel2 7:25",
+        "samuel2 24:10",
+        "kings1 3:7",
+        "kings1 8:25",
+        "kings1 19:4",
+        "kings2 19:19",
+        "chronicles1 17:23",
+        "chronicles1 17:26",
+        "chronicles2 1:9",
+        "chronicles2 6:16",
+        "chronicles2 6:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעַתָּ֣ה לְכָ֔ה",
+      "pron": "브앗타 텔레크",
+      "lemmas": [
+        "עַתָּה",
+        "יָלַךְ"
+      ],
+      "words": [
+        {
+          "word": "וְעַתָּ֣ה",
+          "lemma": "עַתָּה",
+          "strong": "H6258",
+          "pron": "브앗타"
+        },
+        {
+          "word": "לְכָ֔ה",
+          "lemma": "יָלַךְ",
+          "strong": "H3212",
+          "pron": "텔레크"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "genesis 31:44",
+        "genesis 37:20",
+        "exodus 3:10",
+        "exodus 3:18",
+        "exodus 4:12",
+        "exodus 5:18",
+        "exodus 32:34",
+        "numbers 22:6",
+        "numbers 22:11",
+        "samuel1 9:6",
+        "samuel1 15:3",
+        "kings1 1:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעַתָּה֙ לֹֽא",
+      "pron": "브앗타 로",
+      "lemmas": [
+        "עַתָּה",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "וְעַתָּה֙",
+          "lemma": "עַתָּה",
+          "strong": "H6258",
+          "pron": "브앗타"
+        },
+        {
+          "word": "לֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "genesis 11:6",
+        "genesis 45:8",
+        "joshua 9:19",
+        "judges 8:2",
+        "ruth 3:2",
+        "samuel1 14:30",
+        "samuel1 17:29",
+        "samuel2 4:11",
+        "samuel2 12:10",
+        "job 37:21",
+        "ezekiel 4:14",
+        "daniel 10:17"
       ],
       "glossKo": ""
     }

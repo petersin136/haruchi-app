@@ -1,6 +1,6 @@
 {
   "lemma": "עוּף",
-  "pron": "바야옵",
+  "pron": "예오펩",
   "strong": "H5774",
   "posKo": "동사",
   "root": {
@@ -12,46 +12,86 @@
     {
       "lemma": "מוּעָף",
       "strong": "H4155",
-      "pron": "",
+      "pron": "무압",
       "glossKo": "어둠"
     },
     {
       "lemma": "מָעוּף",
       "strong": "H4588",
-      "pron": "",
+      "pron": "메웁",
       "glossKo": "덮개"
     },
     {
       "lemma": "עוֹף",
       "strong": "H5775",
-      "pron": "옵",
+      "pron": "브옵",
       "glossKo": "새"
     },
     {
       "lemma": "עוֹף",
       "strong": "H5776",
-      "pron": "",
+      "pron": "브옵",
       "glossKo": "새(아람)"
     },
     {
       "lemma": "עוֹפַי",
       "strong": "H5778",
-      "pron": "",
+      "pron": "브피",
       "glossKo": "에배"
     },
     {
       "lemma": "עֵיפָה",
       "strong": "H5890",
-      "pron": "",
+      "pron": "에파타",
       "glossKo": "어두움"
     }
   ],
   "defEn": "fly",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 32,
   "byBook": {
+    "isaiah": 7,
+    "proverbs": 5,
     "psalms": 4,
-    "genesis": 1
+    "job": 3,
+    "samuel1": 2,
+    "samuel2": 2,
+    "zechariah": 2,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "genesis": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "judges": 1,
+    "nahum": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "התעוף הֲתָ֤עִיף",
+      "pron": "예오펩 예오펩",
+      "lemmas": [
+        "עוּף",
+        "עוּף"
+      ],
+      "words": [
+        {
+          "word": "התעוף",
+          "lemma": "עוּף",
+          "strong": "H5774",
+          "pron": "예오펩"
+        },
+        {
+          "word": "הֲתָ֤עִיף",
+          "lemma": "עוּף",
+          "strong": "H5774",
+          "pron": "예오펩"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "proverbs 23:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

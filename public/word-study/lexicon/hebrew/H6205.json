@@ -1,6 +1,6 @@
 {
   "lemma": "עֲרָפֶל",
-  "pron": "바아라펠",
+  "pron": "하아라펠",
   "strong": "H6205",
   "posKo": "명사",
   "root": {
@@ -12,21 +12,101 @@
     {
       "lemma": "עָרִיף",
       "strong": "H6183",
-      "pron": "",
-      "glossKo": "구름"
+      "pron": "바아리페하",
+      "glossKo": "그녀의 구름"
     },
     {
       "lemma": "עָרַף",
       "strong": "H6201",
-      "pron": "",
+      "pron": "야아롭",
       "glossKo": "목을 꺾다"
     }
   ],
   "defEn": "gloom; lowering",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 15,
   "byBook": {
-    "psalms": 2
+    "deuteronomy": 2,
+    "job": 2,
+    "psalms": 2,
+    "chronicles2": 1,
+    "exodus": 1,
+    "ezekiel": 1,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "joel": 1,
+    "kings1": 1,
+    "samuel2": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עָנָ֖ן וַעֲרָפֶֽל",
+      "pron": "베아난 하아라펠",
+      "lemmas": [
+        "עָנָן",
+        "עֲרָפֶל"
+      ],
+      "words": [
+        {
+          "word": "עָנָ֖ן",
+          "lemma": "עָנָן",
+          "strong": "H6051",
+          "pron": "베아난"
+        },
+        {
+          "word": "וַעֲרָפֶֽל",
+          "lemma": "עֲרָפֶל",
+          "strong": "H6205",
+          "pron": "하아라펠"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 4:11",
+        "deuteronomy 5:22",
+        "psalms 97:2",
+        "ezekiel 34:12",
+        "joel 2:2",
+        "zephaniah 1:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּי֥וֹם עָנָ֖ן וַעֲרָפֶֽל",
+      "pron": "욤 베아난 하아라펠",
+      "lemmas": [
+        "יוֹם",
+        "עָנָן",
+        "עֲרָפֶל"
+      ],
+      "words": [
+        {
+          "word": "בְּי֥וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "עָנָ֖ן",
+          "lemma": "עָנָן",
+          "strong": "H6051",
+          "pron": "베아난"
+        },
+        {
+          "word": "וַעֲרָפֶֽל",
+          "lemma": "עֲרָפֶל",
+          "strong": "H6205",
+          "pron": "하아라펠"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 34:12",
+        "joel 2:2",
+        "zephaniah 1:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -8,13 +8,13 @@
     {
       "lemma": "מַקָּבָה",
       "strong": "H4717",
-      "pron": "",
+      "pron": "우막카보트",
       "glossKo": "큰 망치"
     },
     {
       "lemma": "מַקֶּבֶת",
       "strong": "H4718",
-      "pron": "",
+      "pron": "아막케베트",
       "glossKo": "쇠망치"
     },
     {
@@ -26,9 +26,124 @@
   ],
   "defEn": "puncture; perforate; specify; designate; libel",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 24,
   "byBook": {
-    "genesis": 1
+    "job": 3,
+    "leviticus": 3,
+    "numbers": 3,
+    "chronicles1": 2,
+    "chronicles2": 2,
+    "isaiah": 2,
+    "kings2": 2,
+    "proverbs": 2,
+    "amos": 1,
+    "ezra": 1,
+    "genesis": 1,
+    "habakkuk": 1,
+    "haggai": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נִקְּב֖וּ בְּשֵׁמ֑וֹת",
+      "pron": "나케바 솀",
+      "lemmas": [
+        "נָקַב",
+        "שֵׁם"
+      ],
+      "words": [
+        {
+          "word": "נִקְּב֖וּ",
+          "lemma": "נָקַב",
+          "strong": "H5344",
+          "pron": "나케바"
+        },
+        {
+          "word": "בְּשֵׁמ֑וֹת",
+          "lemma": "שֵׁם",
+          "strong": "H8034",
+          "pron": "솀"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "leviticus 24:16",
+        "numbers 1:17",
+        "chronicles1 12:31",
+        "chronicles1 16:41",
+        "chronicles2 28:15",
+        "chronicles2 31:19",
+        "ezra 8:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֥ר נִקְּב֖וּ",
+      "pron": "아셰르 나케바",
+      "lemmas": [
+        "אֲשֶׁר",
+        "נָקַב"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "נִקְּב֖וּ",
+          "lemma": "נָקַב",
+          "strong": "H5344",
+          "pron": "나케바"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 1:17",
+        "chronicles1 12:31",
+        "chronicles1 16:41",
+        "chronicles2 28:15",
+        "chronicles2 31:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֥ר נִקְּב֖וּ בְּשֵׁמ֑וֹת",
+      "pron": "아셰르 나케바 솀",
+      "lemmas": [
+        "אֲשֶׁר",
+        "נָקַב",
+        "שֵׁם"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "נִקְּב֖וּ",
+          "lemma": "נָקַב",
+          "strong": "H5344",
+          "pron": "나케바"
+        },
+        {
+          "word": "בְּשֵׁמ֑וֹת",
+          "lemma": "שֵׁם",
+          "strong": "H8034",
+          "pron": "솀"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 1:17",
+        "chronicles1 12:31",
+        "chronicles1 16:41",
+        "chronicles2 28:15",
+        "chronicles2 31:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -2,19 +2,19 @@
   "lemma": "עָגֹל",
   "pron": "아골",
   "strong": "H5696",
-  "posKo": "",
+  "posKo": "형용사",
   "root": null,
   "family": [
     {
       "lemma": "מַעְגָּל",
       "strong": "H4570",
-      "pron": "브마엑겔로테카",
-      "glossKo": "너의 행로"
+      "pron": "아마엑갈라",
+      "glossKo": "행로"
     },
     {
       "lemma": "עָגִיל",
       "strong": "H5694",
-      "pron": "",
+      "pron": "아길",
       "glossKo": "둥근 귀고리"
     },
     {
@@ -32,7 +32,40 @@
   ],
   "defEn": "circular",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "kings1": 5,
+    "chronicles2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "עָגֹ֣ל סָבִ֗יב",
+      "pron": "아골 사빕",
+      "lemmas": [
+        "עָגֹל",
+        "סָבִיב"
+      ],
+      "words": [
+        {
+          "word": "עָגֹ֣ל",
+          "lemma": "עָגֹל",
+          "strong": "H5696",
+          "pron": "아골"
+        },
+        {
+          "word": "סָבִ֗יב",
+          "lemma": "סָבִיב",
+          "strong": "H5439",
+          "pron": "사빕"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 7:23",
+        "kings1 7:35",
+        "chronicles2 4:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

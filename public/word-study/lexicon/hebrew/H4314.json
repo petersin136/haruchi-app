@@ -12,27 +12,92 @@
     {
       "lemma": "מֵידְבָא",
       "strong": "H4311",
-      "pron": "",
+      "pron": "멛바",
       "glossKo": "메드바"
     },
     {
       "lemma": "מֵי הַיַּרְקוֹן",
       "strong": "H4313",
-      "pron": "",
+      "pron": "우메",
       "glossKo": "메얄곤"
     },
     {
       "lemma": "מַיִם",
       "strong": "H4325",
-      "pron": "마임",
+      "pron": "아마임",
       "glossKo": "물"
     }
   ],
   "defEn": "Me-Zahab",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 4,
   "byBook": {
+    "chronicles1": 2,
     "genesis": 2
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בַּ֖ת מֵ֥י זָהָֽב",
+      "pron": "우바노트 메 메",
+      "lemmas": [
+        "בַּת",
+        "מֵי זָהָב",
+        "מֵי זָהָב"
+      ],
+      "words": [
+        {
+          "word": "בַּ֖ת",
+          "lemma": "בַּת",
+          "strong": "H1323",
+          "pron": "우바노트"
+        },
+        {
+          "word": "מֵ֥י",
+          "lemma": "מֵי זָהָב",
+          "strong": "H4314",
+          "pron": "메"
+        },
+        {
+          "word": "זָהָֽב",
+          "lemma": "מֵי זָהָב",
+          "strong": "H4314",
+          "pron": "메"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 36:39",
+        "chronicles1 1:50"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵ֥י זָהָֽב",
+      "pron": "메 메",
+      "lemmas": [
+        "מֵי זָהָב",
+        "מֵי זָהָב"
+      ],
+      "words": [
+        {
+          "word": "מֵ֥י",
+          "lemma": "מֵי זָהָב",
+          "strong": "H4314",
+          "pron": "메"
+        },
+        {
+          "word": "זָהָֽב",
+          "lemma": "מֵי זָהָב",
+          "strong": "H4314",
+          "pron": "메"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 36:39",
+        "chronicles1 1:50"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,31 +12,31 @@
     {
       "lemma": "בְּלָא",
       "strong": "H1080",
-      "pron": "",
+      "pron": "예발레",
       "glossKo": "쇠퇴시키다(아람)"
     },
     {
       "lemma": "בָּלָה",
       "strong": "H1086",
-      "pron": "발루",
-      "glossKo": "쇠하다"
+      "pron": "벨로티",
+      "glossKo": "나를 쇠하다"
     },
     {
       "lemma": "בָּלֶה",
       "strong": "H1087",
-      "pron": "",
+      "pron": "발림",
       "glossKo": "낡은"
     },
     {
       "lemma": "בְּלוֹ",
       "strong": "H1093",
-      "pron": "",
+      "pron": "벨로",
       "glossKo": "공물(아람)"
     },
     {
       "lemma": "בְּלוֹא",
       "strong": "H1094",
-      "pron": "",
+      "pron": "벨로에",
       "glossKo": "헌 옷"
     },
     {
@@ -48,14 +48,19 @@
   ],
   "defEn": "failure",
   "defKo": "",
-  "countOT": 34,
+  "countOT": 72,
   "byBook": {
-    "psalms": 34
+    "psalms": 34,
+    "isaiah": 24,
+    "proverbs": 10,
+    "hosea": 2,
+    "chronicles1": 1,
+    "job": 1
   },
   "phrases": [
     {
-      "hebrew": "בַּל תִּמּ֑וֹט",
-      "pron": "발 엠몯",
+      "hebrew": "בַּל יִמּֽוֹט",
+      "pron": "발 우마다",
       "lemmas": [
         "בַּל",
         "מוֹט"
@@ -68,14 +73,16 @@
           "pron": "발"
         },
         {
-          "word": "תִּמּ֑וֹט",
+          "word": "יִמּֽוֹט",
           "lemma": "מוֹט",
           "strong": "H4131",
-          "pron": "엠몯"
+          "pron": "우마다"
         }
       ],
-      "count": 9,
+      "count": 13,
       "refs": [
+        "chronicles1 16:30",
+        "job 41:23",
         "psalms 10:6",
         "psalms 16:8",
         "psalms 17:5",
@@ -84,13 +91,103 @@
         "psalms 46:5",
         "psalms 93:1",
         "psalms 96:10",
-        "psalms 104:5"
+        "psalms 104:5",
+        "proverbs 10:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּל יְדָע֗וּם",
+      "pron": "발 요데아",
+      "lemmas": [
+        "בַּל",
+        "יָדַע"
+      ],
+      "words": [
+        {
+          "word": "בַּל",
+          "lemma": "בַּל",
+          "strong": "H1077",
+          "pron": "발"
+        },
+        {
+          "word": "יְדָע֗וּם",
+          "lemma": "יָדַע",
+          "strong": "H3045",
+          "pron": "요데아"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "psalms 147:20",
+        "proverbs 9:13",
+        "proverbs 14:7",
+        "proverbs 23:35",
+        "isaiah 44:8",
+        "isaiah 44:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּֽל יָקֽוּמוּ",
+      "pron": "발 바야캄",
+      "lemmas": [
+        "בַּל",
+        "קוּם"
+      ],
+      "words": [
+        {
+          "word": "בַּֽל",
+          "lemma": "בַּל",
+          "strong": "H1077",
+          "pron": "발"
+        },
+        {
+          "word": "יָקֽוּמוּ",
+          "lemma": "קוּם",
+          "strong": "H6965",
+          "pron": "바야캄"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 140:10",
+        "isaiah 14:21",
+        "isaiah 26:14",
+        "isaiah 43:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַ֣ף בַּל",
+      "pron": "압 발",
+      "lemmas": [
+        "אַף",
+        "בַּל"
+      ],
+      "words": [
+        {
+          "word": "אַ֣ף",
+          "lemma": "אַף",
+          "strong": "H637",
+          "pron": "압"
+        },
+        {
+          "word": "בַּל",
+          "lemma": "בַּל",
+          "strong": "H1077",
+          "pron": "발"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 40:24"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "בַּל אֻמִּֽים",
-      "pron": "발 우레움밈",
+      "pron": "발 레움밈",
       "lemmas": [
         "בַּל",
         "לְאֹם"
@@ -106,7 +203,7 @@
           "word": "אֻמִּֽים",
           "lemma": "לְאֹם",
           "strong": "H3816",
-          "pron": "우레움밈"
+          "pron": "레움밈"
         }
       ],
       "count": 3,

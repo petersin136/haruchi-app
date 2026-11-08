@@ -8,15 +8,54 @@
     {
       "lemma": "נֶשֶׁךְ",
       "strong": "H5392",
-      "pron": "브네셰크",
+      "pron": "네셰크",
       "glossKo": "이자"
     }
   ],
   "defEn": "strike; oppress",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 16,
   "byBook": {
-    "genesis": 1
+    "deuteronomy": 4,
+    "numbers": 3,
+    "amos": 2,
+    "ecclesiastes": 2,
+    "genesis": 1,
+    "habakkuk": 1,
+    "jeremiah": 1,
+    "micah": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נָשַׁ֤ךְ הַנָּחָשׁ֙",
+      "pron": "아노셰크 브아나하쉬",
+      "lemmas": [
+        "נָשַׁךְ",
+        "נָחָשׁ"
+      ],
+      "words": [
+        {
+          "word": "נָשַׁ֤ךְ",
+          "lemma": "נָשַׁךְ",
+          "strong": "H5391",
+          "pron": "아노셰크"
+        },
+        {
+          "word": "הַנָּחָשׁ֙",
+          "lemma": "נָחָשׁ",
+          "strong": "H5175",
+          "pron": "브아나하쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 21:9",
+        "ecclesiastes 10:8",
+        "ecclesiastes 10:11",
+        "amos 5:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

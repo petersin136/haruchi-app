@@ -1,0 +1,123 @@
+{
+  "lemma": "חָגַג",
+  "pron": "브야혹구",
+  "strong": "H2287",
+  "posKo": "동사",
+  "root": {
+    "lemma": "חָגָא",
+    "strong": "H2283",
+    "glossKo": "공포"
+  },
+  "family": [
+    {
+      "lemma": "חַג",
+      "strong": "H2282",
+      "pron": "학",
+      "glossKo": "절기"
+    },
+    {
+      "lemma": "חָגָא",
+      "strong": "H2283",
+      "pron": "르학가",
+      "glossKo": "공포"
+    },
+    {
+      "lemma": "חַגִּי",
+      "strong": "H2291",
+      "pron": "브학기",
+      "glossKo": "학기"
+    },
+    {
+      "lemma": "חוּג",
+      "strong": "H2328",
+      "pron": "학",
+      "glossKo": "원형으로 두르다"
+    }
+  ],
+  "defEn": "move in a circle; march; observe",
+  "defKo": "",
+  "countOT": 16,
+  "byBook": {
+    "exodus": 4,
+    "leviticus": 3,
+    "zechariah": 3,
+    "psalms": 2,
+    "deuteronomy": 1,
+    "nahum": 1,
+    "numbers": 1,
+    "samuel1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "לָחֹ֖ג אֶת",
+      "pron": "브야혹구 에트",
+      "lemmas": [
+        "חָגַג",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "לָחֹ֖ג",
+          "lemma": "חָגַג",
+          "strong": "H2287",
+          "pron": "브야혹구"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 12:14",
+        "leviticus 23:39",
+        "leviticus 23:41",
+        "zechariah 14:16",
+        "zechariah 14:18",
+        "zechariah 14:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָחֹ֖ג אֶת חַ֥ג",
+      "pron": "브야혹구 에트 학",
+      "lemmas": [
+        "חָגַג",
+        "אֵת",
+        "חַג"
+      ],
+      "words": [
+        {
+          "word": "לָחֹ֖ג",
+          "lemma": "חָגַג",
+          "strong": "H2287",
+          "pron": "브야혹구"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "חַ֥ג",
+          "lemma": "חַג",
+          "strong": "H2282",
+          "pron": "학"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 12:14",
+        "leviticus 23:39",
+        "leviticus 23:41",
+        "zechariah 14:16",
+        "zechariah 14:18",
+        "zechariah 14:19"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

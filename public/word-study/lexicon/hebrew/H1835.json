@@ -12,33 +12,236 @@
     {
       "lemma": "דִּין",
       "strong": "H1777",
-      "pron": "야딘",
+      "pron": "야돈",
       "glossKo": "재판하다"
     },
     {
       "lemma": "דִּין",
       "strong": "H1778",
-      "pron": "",
+      "pron": "드닌",
       "glossKo": "재판관(아람)"
     },
     {
       "lemma": "דִּין",
       "strong": "H1779",
-      "pron": "브디니위",
-      "glossKo": "나의 판결"
+      "pron": "딘",
+      "glossKo": "판결"
     },
     {
       "lemma": "דַּיָּן",
       "strong": "H1781",
-      "pron": "브다안",
+      "pron": "르다안",
       "glossKo": "재판관"
+    },
+    {
+      "lemma": "דָּנִי",
+      "strong": "H1839",
+      "pron": "아다니",
+      "glossKo": "단 자손"
+    },
+    {
+      "lemma": "דָנִיֵּאל",
+      "strong": "H1840",
+      "pron": "다니엘",
+      "glossKo": "다니엘"
     }
   ],
   "defEn": "Dan",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 70,
   "byBook": {
-    "genesis": 6
+    "judges": 13,
+    "numbers": 12,
+    "joshua": 8,
+    "genesis": 6,
+    "deuteronomy": 4,
+    "exodus": 4,
+    "kings1": 4,
+    "samuel2": 4,
+    "chronicles1": 3,
+    "chronicles2": 3,
+    "ezekiel": 3,
+    "jeremiah": 2,
+    "amos": 1,
+    "kings2": 1,
+    "leviticus": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְנֵי דָ֖ן",
+      "pron": "바님 단",
+      "lemmas": [
+        "בֵּן",
+        "דָּן"
+      ],
+      "words": [
+        {
+          "word": "בְנֵי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "דָ֖ן",
+          "lemma": "דָּן",
+          "strong": "H1835",
+          "pron": "단"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "genesis 46:23",
+        "numbers 1:38",
+        "numbers 2:25",
+        "numbers 7:66",
+        "numbers 10:25",
+        "numbers 26:42",
+        "numbers 34:22",
+        "joshua 19:40",
+        "joshua 19:47",
+        "joshua 19:48",
+        "judges 1:34",
+        "judges 18:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְמַטֵּה דָֽן",
+      "pron": "우맏데카 단",
+      "lemmas": [
+        "מַטֶּה",
+        "דָּן"
+      ],
+      "words": [
+        {
+          "word": "לְמַטֵּה",
+          "lemma": "מַטֶּה",
+          "strong": "H4294",
+          "pron": "우맏데카"
+        },
+        {
+          "word": "דָֽן",
+          "lemma": "דָּן",
+          "strong": "H1835",
+          "pron": "단"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 31:6",
+        "exodus 35:34",
+        "exodus 38:23",
+        "leviticus 24:11",
+        "numbers 1:39",
+        "numbers 13:12",
+        "joshua 21:5",
+        "joshua 21:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִדָּ֖ן וְעַד",
+      "pron": "단 앋",
+      "lemmas": [
+        "דָּן",
+        "עַד"
+      ],
+      "words": [
+        {
+          "word": "מִדָּ֖ן",
+          "lemma": "דָּן",
+          "strong": "H1835",
+          "pron": "단"
+        },
+        {
+          "word": "וְעַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "judges 20:1",
+        "samuel1 3:20",
+        "samuel2 3:10",
+        "samuel2 17:11",
+        "samuel2 24:2",
+        "samuel2 24:15",
+        "kings1 4:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִדָּן֙ וְעַד בְּאֵ֣ר",
+      "pron": "단 앋 베에르",
+      "lemmas": [
+        "דָּן",
+        "עַד",
+        "בְּאֵר שֶׁבַע"
+      ],
+      "words": [
+        {
+          "word": "מִדָּן֙",
+          "lemma": "דָּן",
+          "strong": "H1835",
+          "pron": "단"
+        },
+        {
+          "word": "וְעַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "בְּאֵ֣ר",
+          "lemma": "בְּאֵר שֶׁבַע",
+          "strong": "H884",
+          "pron": "베에르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "judges 20:1",
+        "samuel1 3:20",
+        "samuel2 3:10",
+        "samuel2 17:11",
+        "samuel2 24:2",
+        "samuel2 24:15",
+        "kings1 4:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דָ֖ן לְמִשְׁפְּחֹתָ֑ם",
+      "pron": "단 레미솁페호테헴",
+      "lemmas": [
+        "דָּן",
+        "מִשְׁפָּחָה"
+      ],
+      "words": [
+        {
+          "word": "דָ֖ן",
+          "lemma": "דָּן",
+          "strong": "H1835",
+          "pron": "단"
+        },
+        {
+          "word": "לְמִשְׁפְּחֹתָ֑ם",
+          "lemma": "מִשְׁפָּחָה",
+          "strong": "H4940",
+          "pron": "레미솁페호테헴"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 26:42",
+        "joshua 19:40",
+        "joshua 19:48",
+        "judges 18:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

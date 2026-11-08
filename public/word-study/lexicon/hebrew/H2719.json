@@ -1,6 +1,6 @@
 {
   "lemma": "חֶרֶב",
-  "pron": "하렙오",
+  "pron": "아헤렙",
   "strong": "H2719",
   "posKo": "명사",
   "root": {
@@ -12,19 +12,19 @@
     {
       "lemma": "חָרַב",
       "strong": "H2717",
-      "pron": "바예헤랍",
+      "pron": "하레부",
       "glossKo": "마르다"
     },
     {
       "lemma": "חֲרַב",
       "strong": "H2718",
-      "pron": "",
+      "pron": "하하레바트",
       "glossKo": "황폐하게 하다(아람)"
     },
     {
       "lemma": "חָרֵב",
       "strong": "H2720",
-      "pron": "",
+      "pron": "바하레바",
       "glossKo": "마른"
     },
     {
@@ -36,7 +36,7 @@
     {
       "lemma": "חֹרֵב",
       "strong": "H2722",
-      "pron": "브호렙",
+      "pron": "호레바",
       "glossKo": "호렙"
     },
     {
@@ -48,10 +48,232 @@
   ],
   "defEn": "drought",
   "defKo": "",
-  "countOT": 24,
+  "countOT": 413,
   "byBook": {
+    "ezekiel": 91,
+    "jeremiah": 71,
+    "samuel1": 24,
+    "judges": 23,
+    "isaiah": 22,
+    "joshua": 20,
     "psalms": 18,
-    "genesis": 6
+    "samuel2": 15,
+    "chronicles1": 11,
+    "job": 11,
+    "kings1": 11,
+    "chronicles2": 9,
+    "numbers": 9,
+    "amos": 8,
+    "deuteronomy": 8,
+    "exodus": 8,
+    "kings2": 8,
+    "leviticus": 7,
+    "genesis": 6,
+    "hosea": 5,
+    "lamentations": 4,
+    "micah": 4,
+    "proverbs": 4,
+    "nahum": 3,
+    "zechariah": 3,
+    "nehemiah": 2,
+    "songofsolomon": 2,
+    "daniel": 1,
+    "esther": 1,
+    "ezra": 1,
+    "haggai": 1,
+    "joel": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לְפִי חָ֑רֶב",
+      "pron": "피하 아헤렙",
+      "lemmas": [
+        "פֶּה",
+        "חֶרֶב"
+      ],
+      "words": [
+        {
+          "word": "לְפִי",
+          "lemma": "פֶּה",
+          "strong": "H6310",
+          "pron": "피하"
+        },
+        {
+          "word": "חָ֑רֶב",
+          "lemma": "חֶרֶב",
+          "strong": "H2719",
+          "pron": "아헤렙"
+        }
+      ],
+      "count": 37,
+      "refs": [
+        "genesis 34:26",
+        "exodus 17:13",
+        "numbers 21:24",
+        "deuteronomy 13:15",
+        "deuteronomy 20:13",
+        "joshua 6:21",
+        "joshua 8:24",
+        "joshua 10:28",
+        "joshua 10:30",
+        "joshua 10:32",
+        "joshua 10:35",
+        "joshua 10:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הַחֶ֔רֶב",
+      "pron": "에트 아헤렙",
+      "lemmas": [
+        "אֵת",
+        "חֶרֶב"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַחֶ֔רֶב",
+          "lemma": "חֶרֶב",
+          "strong": "H2719",
+          "pron": "아헤렙"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "exodus 22:24",
+        "judges 3:21",
+        "judges 7:22",
+        "samuel1 17:39",
+        "samuel1 17:51",
+        "samuel1 22:10",
+        "samuel1 25:13",
+        "samuel1 31:4",
+        "chronicles1 10:4",
+        "isaiah 65:12",
+        "jeremiah 9:16",
+        "jeremiah 15:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּחֶ֖רֶב בָּרָעָ֣ב",
+      "pron": "아헤렙 라압",
+      "lemmas": [
+        "חֶרֶב",
+        "רָעָב"
+      ],
+      "words": [
+        {
+          "word": "בַּחֶ֖רֶב",
+          "lemma": "חֶרֶב",
+          "strong": "H2719",
+          "pron": "아헤렙"
+        },
+        {
+          "word": "בָּרָעָ֣ב",
+          "lemma": "רָעָב",
+          "strong": "H7458",
+          "pron": "라압"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "jeremiah 5:12",
+        "jeremiah 14:12",
+        "jeremiah 14:13",
+        "jeremiah 14:15",
+        "jeremiah 16:4",
+        "jeremiah 21:9",
+        "jeremiah 27:8",
+        "jeremiah 27:13",
+        "jeremiah 29:18",
+        "jeremiah 32:24",
+        "jeremiah 32:36",
+        "jeremiah 38:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּחֶ֣רֶב יִפֹּ֔לוּ",
+      "pron": "아헤렙 바얍펠",
+      "lemmas": [
+        "חֶרֶב",
+        "נָפַל"
+      ],
+      "words": [
+        {
+          "word": "בַּחֶ֣רֶב",
+          "lemma": "חֶרֶב",
+          "strong": "H2719",
+          "pron": "아헤렙"
+        },
+        {
+          "word": "יִפֹּ֔לוּ",
+          "lemma": "נָפַל",
+          "strong": "H5307",
+          "pron": "바얍펠"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "leviticus 26:36",
+        "samuel1 31:4",
+        "chronicles1 10:4",
+        "psalms 78:64",
+        "isaiah 3:25",
+        "ezekiel 5:12",
+        "ezekiel 6:12",
+        "ezekiel 11:10",
+        "ezekiel 17:21",
+        "ezekiel 23:25",
+        "ezekiel 24:21",
+        "ezekiel 25:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהִפַּלְתִּ֥יו בַּחֶ֖רֶב",
+      "pron": "바얍펠 아헤렙",
+      "lemmas": [
+        "נָפַל",
+        "חֶרֶב"
+      ],
+      "words": [
+        {
+          "word": "וְהִפַּלְתִּ֥יו",
+          "lemma": "נָפַל",
+          "strong": "H5307",
+          "pron": "바얍펠"
+        },
+        {
+          "word": "בַּחֶ֖רֶב",
+          "lemma": "חֶרֶב",
+          "strong": "H2719",
+          "pron": "아헤렙"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "numbers 14:3",
+        "numbers 14:43",
+        "samuel2 1:12",
+        "samuel2 3:29",
+        "kings2 19:7",
+        "chronicles2 32:21",
+        "isaiah 13:15",
+        "isaiah 37:7",
+        "jeremiah 19:7",
+        "jeremiah 20:4",
+        "jeremiah 44:12",
+        "lamentations 2:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

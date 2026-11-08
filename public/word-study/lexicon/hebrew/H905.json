@@ -1,6 +1,6 @@
 {
   "lemma": "בַּד",
-  "pron": "르받드카",
+  "pron": "레받도",
   "strong": "H905",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "בַּד",
       "strong": "H906",
-      "pron": "",
+      "pron": "받",
       "glossKo": "베"
     },
     {
       "lemma": "בָּדַד",
       "strong": "H909",
-      "pron": "보덷",
+      "pron": "바닫",
       "glossKo": "홀로 떨어지다"
     },
     {
@@ -36,10 +36,217 @@
   ],
   "defEn": "separation",
   "defKo": "",
-  "countOT": 21,
+  "countOT": 202,
   "byBook": {
+    "exodus": 40,
+    "numbers": 22,
+    "kings1": 18,
     "genesis": 14,
-    "psalms": 7
+    "zechariah": 11,
+    "job": 10,
+    "chronicles2": 9,
+    "deuteronomy": 9,
+    "isaiah": 9,
+    "judges": 9,
+    "samuel2": 8,
+    "psalms": 7,
+    "kings2": 5,
+    "leviticus": 5,
+    "ezekiel": 4,
+    "daniel": 3,
+    "esther": 3,
+    "joshua": 3,
+    "samuel1": 3,
+    "chronicles1": 2,
+    "ezra": 2,
+    "nehemiah": 2,
+    "proverbs": 2,
+    "ecclesiastes": 1,
+    "hosea": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת הַבַּדִּים֙",
+      "pron": "에트 레받도",
+      "lemmas": [
+        "אֵת",
+        "בַּד"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַבַּדִּים֙",
+          "lemma": "בַּד",
+          "strong": "H905",
+          "pron": "레받도"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "exodus 25:14",
+        "exodus 25:28",
+        "exodus 27:7",
+        "exodus 30:5",
+        "exodus 35:12",
+        "exodus 35:13",
+        "exodus 35:15",
+        "exodus 35:16",
+        "exodus 37:5",
+        "exodus 37:15",
+        "exodus 37:28",
+        "exodus 38:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִלְּבַד֙ עֹלַ֣ת",
+      "pron": "레받도 올로트",
+      "lemmas": [
+        "בַּד",
+        "עֹלָה"
+      ],
+      "words": [
+        {
+          "word": "מִלְּבַד֙",
+          "lemma": "בַּד",
+          "strong": "H905",
+          "pron": "레받도"
+        },
+        {
+          "word": "עֹלַ֣ת",
+          "lemma": "עֹלָה",
+          "strong": "H5930",
+          "pron": "올로트"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "leviticus 9:17",
+        "numbers 28:23",
+        "numbers 28:31",
+        "numbers 29:6",
+        "numbers 29:16",
+        "numbers 29:19",
+        "numbers 29:22",
+        "numbers 29:25",
+        "numbers 29:28",
+        "numbers 29:31",
+        "numbers 29:34",
+        "numbers 29:38"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּדָּ֖יו וְאֶת",
+      "pron": "레받도 에트",
+      "lemmas": [
+        "בַּד",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "בַּדָּ֖יו",
+          "lemma": "בַּד",
+          "strong": "H905",
+          "pron": "레받도"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 26:9",
+        "exodus 35:12",
+        "exodus 35:13",
+        "exodus 35:15",
+        "exodus 35:16",
+        "exodus 36:16",
+        "exodus 39:35",
+        "exodus 39:39",
+        "kings1 8:39",
+        "daniel 10:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְבָ֔ד וּנְשֵׁיהֶ֖ם לְבָֽד",
+      "pron": "레받도 르잇샤 레받도",
+      "lemmas": [
+        "בַּד",
+        "אִשָּׁה",
+        "בַּד"
+      ],
+      "words": [
+        {
+          "word": "לְבָ֔ד",
+          "lemma": "בַּד",
+          "strong": "H905",
+          "pron": "레받도"
+        },
+        {
+          "word": "וּנְשֵׁיהֶ֖ם",
+          "lemma": "אִשָּׁה",
+          "strong": "H802",
+          "pron": "르잇샤"
+        },
+        {
+          "word": "לְבָֽד",
+          "lemma": "בַּד",
+          "strong": "H905",
+          "pron": "레받도"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "zechariah 12:12",
+        "zechariah 12:13",
+        "zechariah 12:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֛ה לְבַדּ֖וֹ",
+      "pron": "여호와 레받도",
+      "lemmas": [
+        "יְהֹוָה",
+        "בַּד"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֛ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "לְבַדּ֖וֹ",
+          "lemma": "בַּד",
+          "strong": "H905",
+          "pron": "레받도"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 22:20",
+        "leviticus 23:38",
+        "samuel1 7:4",
+        "kings1 18:22",
+        "nehemiah 9:6",
+        "psalms 83:18",
+        "isaiah 2:11",
+        "isaiah 2:17",
+        "isaiah 37:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

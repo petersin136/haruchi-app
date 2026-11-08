@@ -18,7 +18,7 @@
     {
       "lemma": "שָׁשָׁה",
       "strong": "H8341",
-      "pron": "",
+      "pron": "브싯시템",
       "glossKo": "여섯 번째"
     },
     {
@@ -30,20 +30,80 @@
     {
       "lemma": "שֵׁת",
       "strong": "H8353",
-      "pron": "",
+      "pron": "셰트",
       "glossKo": "여섯(아람)"
+    },
+    {
+      "lemma": "שִׁתִּין",
+      "strong": "H8361",
+      "pron": "싯틴",
+      "glossKo": "육십(아람)"
     }
   ],
   "defEn": "sixty",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 59,
   "byBook": {
-    "genesis": 8
+    "numbers": 11,
+    "genesis": 8,
+    "chronicles1": 6,
+    "nehemiah": 6,
+    "chronicles2": 5,
+    "ezra": 5,
+    "kings1": 4,
+    "leviticus": 3,
+    "daniel": 2,
+    "songofsolomon": 2,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "joshua": 1,
+    "kings2": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
+      "hebrew": "מֵא֛וֹת שִׁשִּׁ֥ים",
+      "pron": "우메아트 브싯심",
+      "lemmas": [
+        "מֵאָה",
+        "שִׁשִּׁים"
+      ],
+      "words": [
+        {
+          "word": "מֵא֛וֹת",
+          "lemma": "מֵאָה",
+          "strong": "H3967",
+          "pron": "우메아트"
+        },
+        {
+          "word": "שִׁשִּׁ֥ים",
+          "lemma": "שִׁשִּׁים",
+          "strong": "H8346",
+          "pron": "브싯심"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "samuel2 2:31",
+        "kings1 10:14",
+        "chronicles1 5:18",
+        "chronicles1 9:13",
+        "chronicles2 9:13",
+        "ezra 2:9",
+        "ezra 2:13",
+        "ezra 2:64",
+        "ezra 8:10",
+        "nehemiah 7:14",
+        "nehemiah 7:18",
+        "nehemiah 7:66"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וְשִׁשִּׁים֙ שָׁנָ֔ה",
-      "pron": "브싯심 우셰노타위",
+      "pron": "브싯심 브샤님",
       "lemmas": [
         "שִׁשִּׁים",
         "שָׁנֶה"
@@ -59,10 +119,10 @@
           "word": "שָׁנָ֔ה",
           "lemma": "שָׁנֶה",
           "strong": "H8141",
-          "pron": "우셰노타위"
+          "pron": "브샤님"
         }
       ],
-      "count": 7,
+      "count": 10,
       "refs": [
         "genesis 5:15",
         "genesis 5:18",
@@ -70,21 +130,94 @@
         "genesis 5:21",
         "genesis 5:23",
         "genesis 5:27",
-        "genesis 25:26"
+        "genesis 25:26",
+        "leviticus 27:3",
+        "leviticus 27:7",
+        "chronicles1 2:21"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְשִׁשִּׁ֣ים שָׁנָ֑ה וַיּ֖וֹלֶד",
-      "pron": "브싯심 우셰노타위 옐릳티카",
+      "hebrew": "וְשִׁשִּׁ֛ים אֶ֖לֶף",
+      "pron": "브싯심 엘렙",
       "lemmas": [
         "שִׁשִּׁים",
-        "שָׁנֶה",
-        "יָלַד"
+        "אֶלֶף"
       ],
       "words": [
         {
-          "word": "וְשִׁשִּׁ֣ים",
+          "word": "וְשִׁשִּׁ֛ים",
+          "lemma": "שִׁשִּׁים",
+          "strong": "H8346",
+          "pron": "브싯심"
+        },
+        {
+          "word": "אֶ֖לֶף",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "numbers 1:39",
+        "numbers 2:26",
+        "numbers 26:25",
+        "numbers 26:27",
+        "numbers 26:43",
+        "numbers 31:34",
+        "chronicles2 12:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן שִׁשִּׁ֣ים",
+      "pron": "바님 브싯심",
+      "lemmas": [
+        "בֵּן",
+        "שִׁשִּׁים"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "שִׁשִּׁ֣ים",
+          "lemma": "שִׁשִּׁים",
+          "strong": "H8346",
+          "pron": "브싯심"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 25:26",
+        "leviticus 27:3",
+        "leviticus 27:7",
+        "chronicles1 2:21",
+        "chronicles2 11:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן שִׁשִּׁ֣ים שָׁנָ֑ה",
+      "pron": "바님 브싯심 브샤님",
+      "lemmas": [
+        "בֵּן",
+        "שִׁשִּׁים",
+        "שָׁנֶה"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "שִׁשִּׁ֣ים",
           "lemma": "שִׁשִּׁים",
           "strong": "H8346",
           "pron": "브싯심"
@@ -93,20 +226,15 @@
           "word": "שָׁנָ֑ה",
           "lemma": "שָׁנֶה",
           "strong": "H8141",
-          "pron": "우셰노타위"
-        },
-        {
-          "word": "וַיּ֖וֹלֶד",
-          "lemma": "יָלַד",
-          "strong": "H3205",
-          "pron": "옐릳티카"
+          "pron": "브샤님"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
-        "genesis 5:15",
-        "genesis 5:21",
-        "genesis 25:26"
+        "genesis 25:26",
+        "leviticus 27:3",
+        "leviticus 27:7",
+        "chronicles1 2:21"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "מֵעֶה",
-  "pron": "메아위",
+  "pron": "밈메에카",
   "strong": "H4578",
   "posKo": "명사",
   "root": null,
@@ -8,28 +8,107 @@
     {
       "lemma": "מְעָה",
       "strong": "H4577",
-      "pron": "",
-      "glossKo": "창자(아람)"
+      "pron": "메오히",
+      "glossKo": "그의 창자(아람)"
     },
     {
       "lemma": "מֵעָה",
       "strong": "H4579",
-      "pron": "",
-      "glossKo": "창자"
+      "pron": "킴오타으브",
+      "glossKo": "그의 창자"
     },
     {
       "lemma": "מָעַי",
       "strong": "H4597",
-      "pron": "",
+      "pron": "마아이",
       "glossKo": "마애"
     }
   ],
   "defEn": "intestines; abdomen; sympathy",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 32,
   "byBook": {
+    "chronicles2": 5,
+    "isaiah": 4,
+    "jeremiah": 3,
     "psalms": 3,
-    "genesis": 2
+    "samuel2": 3,
+    "ezekiel": 2,
+    "genesis": 2,
+    "job": 2,
+    "jonah": 2,
+    "lamentations": 2,
+    "songofsolomon": 2,
+    "numbers": 1,
+    "ruth": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יֵצֵ֣א מִמֵּעֶ֔יךָ",
+      "pron": "바토체 밈메에카",
+      "lemmas": [
+        "יָצָא",
+        "מֵעֶה"
+      ],
+      "words": [
+        {
+          "word": "יֵצֵ֣א",
+          "lemma": "יָצָא",
+          "strong": "H3318",
+          "pron": "바토체"
+        },
+        {
+          "word": "מִמֵּעֶ֔יךָ",
+          "lemma": "מֵעֶה",
+          "strong": "H4578",
+          "pron": "밈메에카"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 15:4",
+        "samuel2 7:12",
+        "samuel2 16:11",
+        "chronicles2 21:15",
+        "chronicles2 21:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֣ר יֵצֵ֣א מִמֵּעֶ֔יךָ",
+      "pron": "아셰르 바토체 밈메에카",
+      "lemmas": [
+        "אֲשֶׁר",
+        "יָצָא",
+        "מֵעֶה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יֵצֵ֣א",
+          "lemma": "יָצָא",
+          "strong": "H3318",
+          "pron": "바토체"
+        },
+        {
+          "word": "מִמֵּעֶ֔יךָ",
+          "lemma": "מֵעֶה",
+          "strong": "H4578",
+          "pron": "밈메에카"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 15:4",
+        "samuel2 7:12",
+        "samuel2 16:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -2,7 +2,7 @@
   "lemma": "יִמְלָא",
   "pron": "임라",
   "strong": "H3229",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "מָלֵא",
     "strong": "H4390",
@@ -12,13 +12,13 @@
     {
       "lemma": "מָלֵא",
       "strong": "H4390",
-      "pron": "말레",
+      "pron": "우밀우",
       "glossKo": "가득하다"
     },
     {
       "lemma": "מְלָא",
       "strong": "H4391",
-      "pron": "",
+      "pron": "우멜라트",
       "glossKo": "채우다(아람)"
     },
     {
@@ -30,25 +30,96 @@
     {
       "lemma": "מְלֹא",
       "strong": "H4393",
-      "pron": "우멜로아흐",
-      "glossKo": "그녀의 충만"
+      "pron": "멜로",
+      "glossKo": "충만"
     },
     {
       "lemma": "מִלֻּא",
       "strong": "H4394",
-      "pron": "",
+      "pron": "밀루임",
       "glossKo": "취임"
     },
     {
       "lemma": "מִלֵּאת",
       "strong": "H4402",
-      "pron": "",
+      "pron": "밀레트",
       "glossKo": "충만"
     }
   ],
   "defEn": "Jimla; Jimlah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "chronicles2": 2,
+    "kings1": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶּן יִמְלָ֑ה",
+      "pron": "바님 임라",
+      "lemmas": [
+        "בֵּן",
+        "יִמְלָא"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יִמְלָ֑ה",
+          "lemma": "יִמְלָא",
+          "strong": "H3229",
+          "pron": "임라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 22:8",
+        "kings1 22:9",
+        "chronicles2 18:7",
+        "chronicles2 18:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִיכָ֖יְהוּ בֶּן יִמְלָ֑ה",
+      "pron": "미카에후 바님 임라",
+      "lemmas": [
+        "מִיכָיְהוּ",
+        "בֵּן",
+        "יִמְלָא"
+      ],
+      "words": [
+        {
+          "word": "מִיכָ֖יְהוּ",
+          "lemma": "מִיכָיְהוּ",
+          "strong": "H4321",
+          "pron": "미카에후"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יִמְלָ֑ה",
+          "lemma": "יִמְלָא",
+          "strong": "H3229",
+          "pron": "임라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 22:8",
+        "kings1 22:9",
+        "chronicles2 18:7",
+        "chronicles2 18:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

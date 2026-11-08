@@ -1,6 +1,6 @@
 {
   "lemma": "בָּקַשׁ",
-  "pron": "테바케슈",
+  "pron": "테바케셴나",
   "strong": "H1245",
   "posKo": "동사",
   "root": null,
@@ -8,40 +8,109 @@
     {
       "lemma": "בַּקָּשָׁה",
       "strong": "H1246",
-      "pron": "",
-      "glossKo": "청원(아람)"
+      "pron": "박카샤토",
+      "glossKo": "그의 청원(아람)"
     }
   ],
   "defEn": "search",
   "defKo": "",
-  "countOT": 32,
+  "countOT": 225,
   "byBook": {
     "psalms": 27,
-    "genesis": 5
+    "samuel1": 26,
+    "jeremiah": 23,
+    "proverbs": 14,
+    "samuel2": 11,
+    "ezekiel": 10,
+    "kings1": 10,
+    "esther": 9,
+    "chronicles2": 8,
+    "ecclesiastes": 7,
+    "isaiah": 7,
+    "nehemiah": 6,
+    "songofsolomon": 6,
+    "chronicles1": 5,
+    "exodus": 5,
+    "genesis": 5,
+    "hosea": 5,
+    "zechariah": 5,
+    "daniel": 4,
+    "ezra": 4,
+    "judges": 4,
+    "zephaniah": 4,
+    "kings2": 3,
+    "malachi": 3,
+    "deuteronomy": 2,
+    "joshua": 2,
+    "lamentations": 2,
+    "nahum": 2,
+    "numbers": 2,
+    "amos": 1,
+    "job": 1,
+    "leviticus": 1,
+    "ruth": 1
   },
   "phrases": [
     {
-      "hebrew": "מְבַקְשֵׁ֪י נַ֫פְשִׁ֥י",
-      "pron": "테바케슈 르납시위",
+      "hebrew": "לְבַקֵּ֥שׁ אֶת",
+      "pron": "테바케셴나 에트",
+      "lemmas": [
+        "בָּקַשׁ",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "לְבַקֵּ֥שׁ",
+          "lemma": "בָּקַשׁ",
+          "strong": "H1245",
+          "pron": "테바케셴나"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 42,
+      "refs": [
+        "exodus 4:19",
+        "samuel1 9:3",
+        "samuel1 10:14",
+        "samuel1 20:1",
+        "samuel1 22:23",
+        "samuel1 23:15",
+        "samuel1 24:2",
+        "samuel1 25:29",
+        "samuel1 26:2",
+        "samuel1 26:20",
+        "samuel2 3:17",
+        "samuel2 4:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְבַקְשֵׁ֣י נַפְשָׁ֑ם",
+      "pron": "테바케셴나 네페쉬",
       "lemmas": [
         "בָּקַשׁ",
         "נֶפֶשׁ"
       ],
       "words": [
         {
-          "word": "מְבַקְשֵׁ֪י",
+          "word": "מְבַקְשֵׁ֣י",
           "lemma": "בָּקַשׁ",
           "strong": "H1245",
-          "pron": "테바케슈"
+          "pron": "테바케셴나"
         },
         {
-          "word": "נַ֫פְשִׁ֥י",
+          "word": "נַפְשָׁ֑ם",
           "lemma": "נֶפֶשׁ",
           "strong": "H5315",
-          "pron": "르납시위"
+          "pron": "네페쉬"
         }
       ],
-      "count": 7,
+      "count": 19,
       "refs": [
         "psalms 35:4",
         "psalms 38:12",
@@ -49,36 +118,131 @@
         "psalms 54:3",
         "psalms 63:9",
         "psalms 70:2",
-        "psalms 86:14"
+        "psalms 86:14",
+        "proverbs 29:10",
+        "ecclesiastes 7:28",
+        "jeremiah 19:7",
+        "jeremiah 19:9",
+        "jeremiah 21:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "מְבַקְשֵׁ֨י פָנֶ֖יךָ",
-      "pron": "테바케슈 미페네",
+      "hebrew": "וּבְיַ֖ד מְבַקְשֵׁ֣י",
+      "pron": "야도 테바케셴나",
       "lemmas": [
-        "בָּקַשׁ",
-        "פָּנִים"
+        "יָד",
+        "בָּקַשׁ"
       ],
       "words": [
         {
-          "word": "מְבַקְשֵׁ֨י",
-          "lemma": "בָּקַשׁ",
-          "strong": "H1245",
-          "pron": "테바케슈"
+          "word": "וּבְיַ֖ד",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
         },
         {
-          "word": "פָנֶ֖יךָ",
-          "lemma": "פָּנִים",
-          "strong": "H6440",
-          "pron": "미페네"
+          "word": "מְבַקְשֵׁ֣י",
+          "lemma": "בָּקַשׁ",
+          "strong": "H1245",
+          "pron": "테바케셴나"
         }
       ],
-      "count": 3,
+      "count": 13,
       "refs": [
-        "psalms 24:6",
-        "psalms 27:8",
-        "psalms 105:4"
+        "genesis 31:39",
+        "genesis 43:9",
+        "esther 9:2",
+        "jeremiah 19:7",
+        "jeremiah 21:7",
+        "jeremiah 22:25",
+        "jeremiah 34:20",
+        "jeremiah 34:21",
+        "jeremiah 44:30",
+        "jeremiah 46:26",
+        "ezekiel 3:18",
+        "ezekiel 3:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיְבַקְשׁ֥וּ אֶת נַפְשִׁ֖י",
+      "pron": "테바케셴나 에트 네페쉬",
+      "lemmas": [
+        "בָּקַשׁ",
+        "אֵת",
+        "נֶפֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "וַיְבַקְשׁ֥וּ",
+          "lemma": "בָּקַשׁ",
+          "strong": "H1245",
+          "pron": "테바케셴나"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "נַפְשִׁ֖י",
+          "lemma": "נֶפֶשׁ",
+          "strong": "H5315",
+          "pron": "네페쉬"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 4:19",
+        "samuel1 20:1",
+        "samuel1 22:23",
+        "samuel1 23:15",
+        "samuel1 25:29",
+        "samuel2 4:8",
+        "samuel2 16:11",
+        "kings1 19:10",
+        "kings1 19:14",
+        "jeremiah 11:21",
+        "jeremiah 38:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּקַּשְׁתִּ֖יו וְלֹ֥א",
+      "pron": "테바케셴나 로",
+      "lemmas": [
+        "בָּקַשׁ",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "בִּקַּשְׁתִּ֖יו",
+          "lemma": "בָּקַשׁ",
+          "strong": "H1245",
+          "pron": "테바케셴나"
+        },
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "samuel1 10:21",
+        "samuel2 17:20",
+        "psalms 37:36",
+        "ecclesiastes 8:17",
+        "songofsolomon 3:1",
+        "songofsolomon 3:2",
+        "songofsolomon 5:6",
+        "isaiah 41:12",
+        "jeremiah 2:24",
+        "ezekiel 26:21",
+        "hosea 2:7"
       ],
       "glossKo": ""
     }

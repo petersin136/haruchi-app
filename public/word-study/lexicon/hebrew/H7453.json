@@ -30,28 +30,253 @@
     {
       "lemma": "רֵעַ",
       "strong": "H7454",
-      "pron": "르레이위",
+      "pron": "레레이",
       "glossKo": "나의 생각"
     },
     {
       "lemma": "רָעָה",
       "strong": "H7462",
-      "pron": "로이위",
-      "glossKo": "나의 목자"
+      "pron": "로에",
+      "glossKo": "목자"
     },
     {
       "lemma": "רֵעֶה",
       "strong": "H7463",
-      "pron": "",
+      "pron": "레에",
       "glossKo": "친구"
     }
   ],
   "defEn": "associate",
   "defKo": "",
-  "countOT": 15,
+  "countOT": 189,
   "byBook": {
+    "proverbs": 34,
+    "deuteronomy": 21,
+    "jeremiah": 21,
+    "exodus": 20,
+    "job": 14,
     "psalms": 8,
-    "genesis": 7
+    "zechariah": 8,
+    "genesis": 7,
+    "samuel1": 7,
+    "ezekiel": 6,
+    "samuel2": 6,
+    "isaiah": 5,
+    "judges": 5,
+    "leviticus": 4,
+    "kings1": 3,
+    "kings2": 3,
+    "chronicles2": 2,
+    "esther": 2,
+    "ruth": 2,
+    "songofsolomon": 2,
+    "chronicles1": 1,
+    "ecclesiastes": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "jonah": 1,
+    "joshua": 1,
+    "lamentations": 1,
+    "malachi": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אִ֣ישׁ לְרֵעֵ֑הוּ",
+      "pron": "메이쉬 레에후",
+      "lemmas": [
+        "אִישׁ",
+        "רֵעַ"
+      ],
+      "words": [
+        {
+          "word": "אִ֣ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "לְרֵעֵ֑הוּ",
+          "lemma": "רֵעַ",
+          "strong": "H7453",
+          "pron": "레에후"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "genesis 31:49",
+        "exodus 18:7",
+        "judges 7:22",
+        "samuel1 14:20",
+        "kings1 8:31",
+        "chronicles2 6:22",
+        "chronicles2 20:23",
+        "esther 9:19",
+        "esther 9:22",
+        "proverbs 18:24",
+        "ecclesiastes 4:4",
+        "isaiah 3:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת רֵעֵ֔הוּ",
+      "pron": "에트 레에후",
+      "lemmas": [
+        "אֵת",
+        "רֵעַ"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "רֵעֵ֔הוּ",
+          "lemma": "רֵעַ",
+          "strong": "H7453",
+          "pron": "레에후"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "exodus 21:18",
+        "exodus 32:27",
+        "leviticus 19:13",
+        "deuteronomy 4:42",
+        "deuteronomy 15:2",
+        "deuteronomy 19:4",
+        "deuteronomy 19:5",
+        "joshua 20:5",
+        "ruth 3:14",
+        "samuel1 20:41",
+        "kings2 3:23",
+        "job 35:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל רֵעֵ֗הוּ",
+      "pron": "엘 레에후",
+      "lemmas": [
+        "אֵל",
+        "רֵעַ"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "רֵעֵ֗הוּ",
+          "lemma": "רֵעַ",
+          "strong": "H7453",
+          "pron": "레에후"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "genesis 11:3",
+        "genesis 43:33",
+        "exodus 22:7",
+        "exodus 22:10",
+        "exodus 33:11",
+        "judges 6:29",
+        "judges 10:18",
+        "samuel1 10:11",
+        "kings1 20:35",
+        "kings2 7:3",
+        "kings2 7:9",
+        "isaiah 13:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִ֣ישׁ אֶל רֵעֵ֗הוּ",
+      "pron": "메이쉬 엘 레에후",
+      "lemmas": [
+        "אִישׁ",
+        "אֵל",
+        "רֵעַ"
+      ],
+      "words": [
+        {
+          "word": "אִ֣ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "רֵעֵ֗הוּ",
+          "lemma": "רֵעַ",
+          "strong": "H7453",
+          "pron": "레에후"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "genesis 11:3",
+        "genesis 43:33",
+        "exodus 22:7",
+        "exodus 22:10",
+        "exodus 33:11",
+        "judges 6:29",
+        "judges 10:18",
+        "samuel1 10:11",
+        "kings2 7:3",
+        "kings2 7:9",
+        "isaiah 13:8",
+        "jeremiah 22:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֥שֶׁת רֵעֵ֖הוּ",
+      "pron": "르잇샤 레에후",
+      "lemmas": [
+        "אִשָּׁה",
+        "רֵעַ"
+      ],
+      "words": [
+        {
+          "word": "אֵ֥שֶׁת",
+          "lemma": "אִשָּׁה",
+          "strong": "H802",
+          "pron": "르잇샤"
+        },
+        {
+          "word": "רֵעֵ֖הוּ",
+          "lemma": "רֵעַ",
+          "strong": "H7453",
+          "pron": "레에후"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 20:17",
+        "leviticus 20:10",
+        "deuteronomy 5:21",
+        "deuteronomy 22:24",
+        "proverbs 6:29",
+        "jeremiah 3:20",
+        "jeremiah 5:8",
+        "jeremiah 29:23",
+        "ezekiel 18:6",
+        "ezekiel 18:11",
+        "ezekiel 18:15",
+        "ezekiel 22:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

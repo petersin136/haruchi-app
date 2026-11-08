@@ -1,6 +1,6 @@
 {
   "lemma": "יָרֵא",
-  "pron": "이라",
+  "pron": "바이라",
   "strong": "H3372",
   "posKo": "동사",
   "root": null,
@@ -8,77 +8,71 @@
     {
       "lemma": "יָרֵא",
       "strong": "H3373",
-      "pron": "이레에",
+      "pron": "예레",
       "glossKo": "두려워하는"
     },
     {
       "lemma": "יִרְאוֹן",
       "strong": "H3375",
-      "pron": "",
+      "pron": "브이레온",
       "glossKo": "이론"
     },
     {
       "lemma": "מוֹרָא",
       "strong": "H4172",
-      "pron": "모라",
-      "glossKo": "두려움"
+      "pron": "우모라아켐",
+      "glossKo": "너희의 두려움"
     },
     {
       "lemma": "תִּירְיָא",
       "strong": "H8493",
-      "pron": "",
+      "pron": "티레아",
       "glossKo": "디르야"
     }
   ],
   "defEn": "fear; revere; frighten",
   "defKo": "",
-  "countOT": 66,
+  "countOT": 329,
   "byBook": {
     "psalms": 46,
-    "genesis": 20
+    "deuteronomy": 36,
+    "isaiah": 25,
+    "samuel1": 22,
+    "genesis": 20,
+    "jeremiah": 20,
+    "kings2": 19,
+    "exodus": 13,
+    "joshua": 11,
+    "nehemiah": 11,
+    "job": 9,
+    "samuel2": 9,
+    "leviticus": 8,
+    "chronicles2": 7,
+    "ecclesiastes": 7,
+    "kings1": 7,
+    "chronicles1": 6,
+    "ezekiel": 6,
+    "judges": 6,
+    "malachi": 6,
+    "joel": 4,
+    "numbers": 4,
+    "proverbs": 4,
+    "zephaniah": 4,
+    "daniel": 3,
+    "jonah": 3,
+    "zechariah": 3,
+    "habakkuk": 2,
+    "haggai": 2,
+    "micah": 2,
+    "amos": 1,
+    "hosea": 1,
+    "lamentations": 1,
+    "ruth": 1
   },
   "phrases": [
     {
-      "hebrew": "לֹ֣א אִירָ֑א",
-      "pron": "로 이라",
-      "lemmas": [
-        "לֹא",
-        "יָרֵא"
-      ],
-      "words": [
-        {
-          "word": "לֹ֣א",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        },
-        {
-          "word": "אִירָ֑א",
-          "lemma": "יָרֵא",
-          "strong": "H3372",
-          "pron": "이라"
-        }
-      ],
-      "count": 12,
-      "refs": [
-        "psalms 3:6",
-        "psalms 23:4",
-        "psalms 27:3",
-        "psalms 46:2",
-        "psalms 55:19",
-        "psalms 56:4",
-        "psalms 56:11",
-        "psalms 64:4",
-        "psalms 91:5",
-        "psalms 112:7",
-        "psalms 112:8",
-        "psalms 118:6"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אַל תִּ֣ירְאִ֔י",
-      "pron": "브엘 이라",
+      "hebrew": "אַל תִּירָא֙",
+      "pron": "엘 바이라",
       "lemmas": [
         "אַל",
         "יָרֵא"
@@ -88,18 +82,17 @@
           "word": "אַל",
           "lemma": "אַל",
           "strong": "H408",
-          "pron": "브엘"
+          "pron": "엘"
         },
         {
-          "word": "תִּ֣ירְאִ֔י",
+          "word": "תִּירָא֙",
           "lemma": "יָרֵא",
           "strong": "H3372",
-          "pron": "이라"
+          "pron": "바이라"
         }
       ],
-      "count": 9,
+      "count": 78,
       "refs": [
-        "psalms 49:16",
         "genesis 15:1",
         "genesis 21:17",
         "genesis 26:24",
@@ -107,13 +100,93 @@
         "genesis 43:23",
         "genesis 46:3",
         "genesis 50:19",
-        "genesis 50:21"
+        "genesis 50:21",
+        "exodus 14:13",
+        "exodus 20:20",
+        "numbers 14:9",
+        "numbers 21:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תִּירָ֣א אֹת֔וֹ",
+      "pron": "바이라 에트",
+      "lemmas": [
+        "יָרֵא",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "תִּירָ֣א",
+          "lemma": "יָרֵא",
+          "strong": "H3372",
+          "pron": "바이라"
+        },
+        {
+          "word": "אֹת֔וֹ",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 54,
+      "refs": [
+        "exodus 9:20",
+        "leviticus 19:3",
+        "numbers 14:9",
+        "numbers 21:34",
+        "deuteronomy 3:2",
+        "deuteronomy 4:10",
+        "deuteronomy 5:29",
+        "deuteronomy 6:2",
+        "deuteronomy 6:13",
+        "deuteronomy 6:24",
+        "deuteronomy 8:6",
+        "deuteronomy 10:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֥א תִירָ֖א",
+      "pron": "로 바이라",
+      "lemmas": [
+        "לֹא",
+        "יָרֵא"
+      ],
+      "words": [
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תִירָ֖א",
+          "lemma": "יָרֵא",
+          "strong": "H3372",
+          "pron": "바이라"
+        }
+      ],
+      "count": 42,
+      "refs": [
+        "numbers 12:8",
+        "deuteronomy 1:29",
+        "deuteronomy 3:22",
+        "deuteronomy 7:18",
+        "deuteronomy 20:1",
+        "deuteronomy 31:8",
+        "judges 6:10",
+        "samuel2 1:14",
+        "kings2 17:25",
+        "kings2 17:35",
+        "kings2 17:37",
+        "kings2 17:38"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "תִּ֣ירְאִ֔י כִּֽי",
-      "pron": "이라 키",
+      "pron": "바이라 키",
       "lemmas": [
         "יָרֵא",
         "כִּי"
@@ -123,7 +196,7 @@
           "word": "תִּ֣ירְאִ֔י",
           "lemma": "יָרֵא",
           "strong": "H3372",
-          "pron": "이라"
+          "pron": "바이라"
         },
         {
           "word": "כִּֽי",
@@ -132,84 +205,65 @@
           "pron": "키"
         }
       ],
-      "count": 7,
+      "count": 26,
       "refs": [
-        "psalms 49:16",
         "genesis 3:10",
         "genesis 21:17",
         "genesis 26:24",
         "genesis 31:31",
         "genesis 35:17",
-        "genesis 50:19"
+        "genesis 50:19",
+        "exodus 20:20",
+        "deuteronomy 3:22",
+        "deuteronomy 20:1",
+        "joshua 10:8",
+        "judges 8:20",
+        "samuel1 4:20"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אַל תִּ֣ירְאִ֔י כִּֽי",
-      "pron": "브엘 이라 키",
+      "hebrew": "לְיִרְאָ֖ה אֶת יְהוָ֣ה",
+      "pron": "바이라 에트 여호와",
       "lemmas": [
-        "אַל",
         "יָרֵא",
-        "כִּי"
+        "אֵת",
+        "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "אַל",
-          "lemma": "אַל",
-          "strong": "H408",
-          "pron": "브엘"
-        },
-        {
-          "word": "תִּ֣ירְאִ֔י",
+          "word": "לְיִרְאָ֖ה",
           "lemma": "יָרֵא",
           "strong": "H3372",
-          "pron": "이라"
+          "pron": "바이라"
         },
         {
-          "word": "כִּֽי",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 49:16",
-        "genesis 21:17",
-        "genesis 26:24",
-        "genesis 35:17",
-        "genesis 50:19"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "כִּ֥י נוֹרָא֗וֹת",
-      "pron": "키 이라",
-      "lemmas": [
-        "כִּי",
-        "יָרֵא"
-      ],
-      "words": [
-        {
-          "word": "כִּ֥י",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         },
         {
-          "word": "נוֹרָא֗וֹת",
-          "lemma": "יָרֵא",
-          "strong": "H3372",
-          "pron": "이라"
+          "word": "יְהוָ֣ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         }
       ],
-      "count": 5,
+      "count": 23,
       "refs": [
-        "psalms 139:14",
-        "genesis 18:15",
-        "genesis 19:30",
-        "genesis 26:7",
-        "genesis 31:31"
+        "deuteronomy 6:2",
+        "deuteronomy 6:24",
+        "deuteronomy 10:12",
+        "deuteronomy 14:23",
+        "deuteronomy 17:19",
+        "deuteronomy 31:12",
+        "deuteronomy 31:13",
+        "joshua 4:24",
+        "joshua 22:25",
+        "joshua 24:14",
+        "samuel1 12:14",
+        "samuel1 12:24"
       ],
       "glossKo": ""
     }

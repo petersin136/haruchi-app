@@ -2,7 +2,7 @@
   "lemma": "מִן",
   "pron": "민",
   "strong": "H4481",
-  "posKo": "",
+  "posKo": "전치사",
   "root": {
     "lemma": "מִן",
     "strong": "H4480",
@@ -12,19 +12,185 @@
     {
       "lemma": "מִן",
       "strong": "H4480",
-      "pron": "밈메누",
-      "glossKo": "우리를 ~로부터"
+      "pron": "민",
+      "glossKo": "~로부터"
     },
     {
       "lemma": "מִנְיָמִין",
       "strong": "H4509",
-      "pron": "",
+      "pron": "우민아민",
       "glossKo": "미냐민"
     }
   ],
   "defEn": "according, after, because, before, by, for, from, × him, × more than, (out) of, part, since, × these, to, upon, when.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 115,
+  "byBook": {
+    "daniel": 89,
+    "ezra": 25,
+    "jeremiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "ומנהון וּמִנְּהֵ֣ין",
+      "pron": "민 민",
+      "lemmas": [
+        "מִן",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "ומנהון",
+          "lemma": "מִן",
+          "strong": "H4481",
+          "pron": "민"
+        },
+        {
+          "word": "וּמִנְּהֵ֣ין",
+          "lemma": "מִן",
+          "strong": "H4481",
+          "pron": "민"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "daniel 2:33",
+        "daniel 2:41",
+        "daniel 2:42"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִן קֳדָמ֔וֹהִי",
+      "pron": "민 카다마이",
+      "lemmas": [
+        "מִן",
+        "קֳדָם"
+      ],
+      "words": [
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4481",
+          "pron": "민"
+        },
+        {
+          "word": "קֳדָמ֔וֹהִי",
+          "lemma": "קֳדָם",
+          "strong": "H6925",
+          "pron": "카다마이"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "ezra 7:14",
+        "daniel 2:6",
+        "daniel 2:15",
+        "daniel 2:18",
+        "daniel 5:19",
+        "daniel 5:24",
+        "daniel 6:26",
+        "daniel 7:8",
+        "daniel 7:10",
+        "daniel 7:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִן דִּ֞י",
+      "pron": "민 드흐브",
+      "lemmas": [
+        "מִן",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4481",
+          "pron": "민"
+        },
+        {
+          "word": "דִּ֞י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "ezra 4:23",
+        "ezra 5:12",
+        "daniel 2:23",
+        "daniel 2:33",
+        "daniel 3:22",
+        "daniel 4:26",
+        "daniel 6:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבְעָ֣ה מִן",
+      "pron": "우베오 민",
+      "lemmas": [
+        "בְּעָא",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "וּבְעָ֣ה",
+          "lemma": "בְּעָא",
+          "strong": "H1156",
+          "pron": "우베오"
+        },
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4481",
+          "pron": "민"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "daniel 2:16",
+        "daniel 2:18",
+        "daniel 2:23",
+        "daniel 2:49",
+        "daniel 6:12",
+        "daniel 7:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּֽי מִן",
+      "pron": "드흐브 민",
+      "lemmas": [
+        "דִּי",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4481",
+          "pron": "민"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezra 5:17",
+        "ezra 7:14",
+        "ezra 7:23",
+        "daniel 5:13",
+        "daniel 6:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

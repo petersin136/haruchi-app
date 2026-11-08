@@ -1,6 +1,6 @@
 {
   "lemma": "חָפֵר",
-  "pron": "예헵파루",
+  "pron": "바예헵파루",
   "strong": "H2659",
   "posKo": "동사",
   "root": {
@@ -12,32 +12,37 @@
     {
       "lemma": "חָפַר",
       "strong": "H2658",
-      "pron": "바야헵페레후",
-      "glossKo": "그에게 파다"
+      "pron": "하파렛티",
+      "glossKo": "파다"
     },
     {
       "lemma": "חֵפֶר",
       "strong": "H2660",
-      "pron": "",
+      "pron": "브헤페르",
       "glossKo": "헤벨"
     },
     {
       "lemma": "חֲפֹר",
       "strong": "H2661",
-      "pron": "",
+      "pron": "라헵포르",
       "glossKo": "쥐구멍"
     }
   ],
   "defEn": "blush; be ashamed; disappointed; shame; reproach",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 17,
   "byBook": {
-    "psalms": 7
+    "psalms": 7,
+    "isaiah": 4,
+    "jeremiah": 2,
+    "proverbs": 2,
+    "job": 1,
+    "micah": 1
   },
   "phrases": [
     {
       "hebrew": "יֵ֘בֹ֤שׁוּ וְיַחְפְּר֨וּ",
-      "pron": "예보슈 예헵파루",
+      "pron": "이텝보샤슈 바예헵파루",
       "lemmas": [
         "בּוּשׁ",
         "חָפֵר"
@@ -47,20 +52,22 @@
           "word": "יֵ֘בֹ֤שׁוּ",
           "lemma": "בּוּשׁ",
           "strong": "H954",
-          "pron": "예보슈"
+          "pron": "이텝보샤슈"
         },
         {
           "word": "וְיַחְפְּר֨וּ",
           "lemma": "חָפֵר",
           "strong": "H2659",
-          "pron": "예헵파루"
+          "pron": "바예헵파루"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
         "psalms 35:26",
         "psalms 40:14",
-        "psalms 70:2"
+        "psalms 70:2",
+        "proverbs 19:26",
+        "jeremiah 15:9"
       ],
       "glossKo": ""
     }

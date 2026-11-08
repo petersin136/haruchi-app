@@ -1,6 +1,6 @@
 {
   "lemma": "מָאַס",
-  "pron": "님앗",
+  "pron": "팀아수",
   "strong": "H3988",
   "posKo": "동사",
   "root": null,
@@ -8,15 +8,195 @@
     {
       "lemma": "מָאוֹס",
       "strong": "H3973",
-      "pron": "",
+      "pron": "우마옷",
       "glossKo": "더러운 것"
     }
   ],
   "defEn": "spurn",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 76,
   "byBook": {
-    "psalms": 9
+    "jeremiah": 12,
+    "job": 12,
+    "isaiah": 10,
+    "psalms": 9,
+    "samuel1": 9,
+    "ezekiel": 6,
+    "hosea": 3,
+    "kings2": 3,
+    "leviticus": 3,
+    "amos": 2,
+    "lamentations": 2,
+    "numbers": 2,
+    "proverbs": 2,
+    "judges": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מָאָ֔סוּ וְאֶת",
+      "pron": "팀아수 에트",
+      "lemmas": [
+        "מָאַס",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "מָאָ֔סוּ",
+          "lemma": "מָאַס",
+          "strong": "H3988",
+          "pron": "팀아수"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "leviticus 26:43",
+        "numbers 11:20",
+        "samuel1 10:19",
+        "samuel1 15:23",
+        "samuel1 15:26",
+        "kings2 17:15",
+        "kings2 23:27",
+        "psalms 15:4",
+        "isaiah 5:24",
+        "jeremiah 14:19",
+        "jeremiah 33:24",
+        "ezekiel 20:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי מְאַסְתֶּ֤ם",
+      "pron": "키 팀아수",
+      "lemmas": [
+        "כִּי",
+        "מָאַס"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "מְאַסְתֶּ֤ם",
+          "lemma": "מָאַס",
+          "strong": "H3988",
+          "pron": "팀아수"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "numbers 11:20",
+        "samuel1 15:26",
+        "samuel1 16:7",
+        "job 10:3",
+        "job 34:33",
+        "isaiah 5:24",
+        "isaiah 8:6",
+        "isaiah 54:6",
+        "jeremiah 2:37",
+        "jeremiah 6:30",
+        "jeremiah 7:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֲמָאֹ֨ס מָאַ֜סְתָּ",
+      "pron": "팀아수 팀아수",
+      "lemmas": [
+        "מָאַס",
+        "מָאַס"
+      ],
+      "words": [
+        {
+          "word": "הֲמָאֹ֨ס",
+          "lemma": "מָאַס",
+          "strong": "H3988",
+          "pron": "팀아수"
+        },
+        {
+          "word": "מָאַ֜סְתָּ",
+          "lemma": "מָאַס",
+          "strong": "H3988",
+          "pron": "팀아수"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "jeremiah 14:19",
+        "lamentations 5:22",
+        "hosea 4:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּמְאָסְךָ֣ יְהוָ֔ה",
+      "pron": "팀아수 여호와",
+      "lemmas": [
+        "מָאַס",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וַיִּמְאָסְךָ֣",
+          "lemma": "מָאַס",
+          "strong": "H3988",
+          "pron": "팀아수"
+        },
+        {
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 15:26",
+        "kings2 17:20",
+        "jeremiah 2:37",
+        "jeremiah 6:30",
+        "jeremiah 7:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹֽא מְאַסְתִּ֤ים",
+      "pron": "로 팀아수",
+      "lemmas": [
+        "לֹא",
+        "מָאַס"
+      ],
+      "words": [
+        {
+          "word": "לֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "מְאַסְתִּ֤ים",
+          "lemma": "מָאַס",
+          "strong": "H3988",
+          "pron": "팀아수"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 26:44",
+        "job 8:20",
+        "job 36:5",
+        "psalms 36:4",
+        "isaiah 41:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

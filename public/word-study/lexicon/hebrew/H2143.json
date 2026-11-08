@@ -1,6 +1,6 @@
 {
   "lemma": "זֵכֶר",
-  "pron": "지케레카",
+  "pron": "지케리",
   "strong": "H2143",
   "posKo": "명사",
   "root": {
@@ -12,31 +12,31 @@
     {
       "lemma": "אַזְכָּרָה",
       "strong": "H234",
-      "pron": "",
-      "glossKo": "기념물"
+      "pron": "앗카라타흐",
+      "glossKo": "그녀의 기념물"
     },
     {
       "lemma": "זָכוּר",
       "strong": "H2138",
-      "pron": "",
-      "glossKo": "남자"
+      "pron": "제쿠레카",
+      "glossKo": "너의 남자"
     },
     {
       "lemma": "זַכּוּר",
       "strong": "H2139",
-      "pron": "",
+      "pron": "작쿠르",
       "glossKo": "사굴"
     },
     {
       "lemma": "זָכַר",
       "strong": "H2142",
-      "pron": "팃케레누",
-      "glossKo": "그에게 기억하다"
+      "pron": "바잇코르",
+      "glossKo": "기억하다"
     },
     {
       "lemma": "זֶכֶר",
       "strong": "H2144",
-      "pron": "",
+      "pron": "바자케르",
       "glossKo": "세겔"
     },
     {
@@ -48,9 +48,83 @@
   ],
   "defEn": "memento; recollection",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 23,
   "byBook": {
-    "psalms": 11
+    "psalms": 11,
+    "deuteronomy": 2,
+    "exodus": 2,
+    "hosea": 2,
+    "isaiah": 2,
+    "ecclesiastes": 1,
+    "esther": 1,
+    "job": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "זִכְרִ֖י לְדֹ֥ר",
+      "pron": "지케리 베도로타으브",
+      "lemmas": [
+        "זֵכֶר",
+        "דּוֹר"
+      ],
+      "words": [
+        {
+          "word": "זִכְרִ֖י",
+          "lemma": "זֵכֶר",
+          "strong": "H2143",
+          "pron": "지케리"
+        },
+        {
+          "word": "לְדֹ֥ר",
+          "lemma": "דּוֹר",
+          "strong": "H1755",
+          "pron": "베도로타으브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 3:15",
+        "psalms 102:12",
+        "psalms 135:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זִכְרִ֖י לְדֹ֥ר דֹּֽר",
+      "pron": "지케리 베도로타으브 베도로타으브",
+      "lemmas": [
+        "זֵכֶר",
+        "דּוֹר",
+        "דּוֹר"
+      ],
+      "words": [
+        {
+          "word": "זִכְרִ֖י",
+          "lemma": "זֵכֶר",
+          "strong": "H2143",
+          "pron": "지케리"
+        },
+        {
+          "word": "לְדֹ֥ר",
+          "lemma": "דּוֹר",
+          "strong": "H1755",
+          "pron": "베도로타으브"
+        },
+        {
+          "word": "דֹּֽר",
+          "lemma": "דּוֹר",
+          "strong": "H1755",
+          "pron": "베도로타으브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 3:15",
+        "psalms 102:12",
+        "psalms 135:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

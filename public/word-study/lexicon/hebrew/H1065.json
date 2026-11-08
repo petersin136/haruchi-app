@@ -1,6 +1,6 @@
 {
   "lemma": "בְּכִי",
-  "pron": "비케이위",
+  "pron": "비베키",
   "strong": "H1065",
   "posKo": "명사",
   "root": {
@@ -18,34 +18,134 @@
     {
       "lemma": "בָּכָה",
       "strong": "H1058",
-      "pron": "바엡케",
+      "pron": "바텝크",
       "glossKo": "울다"
     },
     {
       "lemma": "בֶּכֶה",
       "strong": "H1059",
-      "pron": "",
+      "pron": "베케",
       "glossKo": "통곡"
     },
     {
       "lemma": "בֹּכִים",
       "strong": "H1066",
-      "pron": "",
+      "pron": "아보킴",
       "glossKo": "보김"
     },
     {
       "lemma": "בְּכִית",
       "strong": "H1068",
-      "pron": "베키트오",
+      "pron": "베키토",
       "glossKo": "그의 통곡"
     }
   ],
   "defEn": "weeping",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 28,
   "byBook": {
+    "jeremiah": 8,
+    "isaiah": 7,
     "psalms": 3,
-    "genesis": 1
+    "job": 2,
+    "deuteronomy": 1,
+    "esther": 1,
+    "ezra": 1,
+    "genesis": 1,
+    "joel": 1,
+    "judges": 1,
+    "malachi": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "קֹל֖וֹ בִּבְכִ֑י",
+      "pron": "콜 비베키",
+      "lemmas": [
+        "קוֹל",
+        "בְּכִי"
+      ],
+      "words": [
+        {
+          "word": "קֹל֖וֹ",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        },
+        {
+          "word": "בִּבְכִ֑י",
+          "lemma": "בְּכִי",
+          "strong": "H1065",
+          "pron": "비베키"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 45:2",
+        "ezra 3:13",
+        "psalms 6:8",
+        "isaiah 65:19",
+        "jeremiah 31:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבְכִ֖י וּמִסְפֵּ֑ד",
+      "pron": "비베키 밋펟",
+      "lemmas": [
+        "בְּכִי",
+        "מִסְפֵּד"
+      ],
+      "words": [
+        {
+          "word": "וּבְכִ֖י",
+          "lemma": "בְּכִי",
+          "strong": "H1065",
+          "pron": "비베키"
+        },
+        {
+          "word": "וּמִסְפֵּ֑ד",
+          "lemma": "מִסְפֵּד",
+          "strong": "H4553",
+          "pron": "밋펟"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 4:3",
+        "isaiah 22:12",
+        "joel 2:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּבְכּ֖וּ בְּכִ֥י",
+      "pron": "바텝크 비베키",
+      "lemmas": [
+        "בָּכָה",
+        "בְּכִי"
+      ],
+      "words": [
+        {
+          "word": "וַיִּבְכּ֖וּ",
+          "lemma": "בָּכָה",
+          "strong": "H1058",
+          "pron": "바텝크"
+        },
+        {
+          "word": "בְּכִ֥י",
+          "lemma": "בְּכִי",
+          "strong": "H1065",
+          "pron": "비베키"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 21:2",
+        "samuel2 13:36",
+        "isaiah 16:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

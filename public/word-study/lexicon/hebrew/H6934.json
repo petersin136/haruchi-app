@@ -1,8 +1,8 @@
 {
   "lemma": "קַדְמִיאֵל",
-  "pron": "칻미엘",
+  "pron": "브칻미엘",
   "strong": "H6934",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "קֶדֶם",
     "strong": "H6924",
@@ -12,14 +12,14 @@
     {
       "lemma": "קֶדֶם",
       "strong": "H6924",
-      "pron": "케뎀",
+      "pron": "미케뎀",
       "glossKo": "동방"
     },
     {
       "lemma": "קֳדָם",
       "strong": "H6925",
-      "pron": "",
-      "glossKo": "앞(아람)"
+      "pron": "카다마이",
+      "glossKo": "나를 앞(아람)"
     },
     {
       "lemma": "קִדְמָה",
@@ -30,7 +30,69 @@
   ],
   "defEn": "Kadmiel",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 8,
+  "byBook": {
+    "nehemiah": 6,
+    "ezra": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "וְקַדְמִיאֵ֛ל לִבְנֵ֥י",
+      "pron": "브칻미엘 바님",
+      "lemmas": [
+        "קַדְמִיאֵל",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "וְקַדְמִיאֵ֛ל",
+          "lemma": "קַדְמִיאֵל",
+          "strong": "H6934",
+          "pron": "브칻미엘"
+        },
+        {
+          "word": "לִבְנֵ֥י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 2:40",
+        "ezra 3:9",
+        "nehemiah 7:43"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יֵשׁ֧וּעַ וְקַדְמִיאֵ֛ל",
+      "pron": "르예슈아 브칻미엘",
+      "lemmas": [
+        "יֵשׁוּעַ",
+        "קַדְמִיאֵל"
+      ],
+      "words": [
+        {
+          "word": "יֵשׁ֧וּעַ",
+          "lemma": "יֵשׁוּעַ",
+          "strong": "H3442",
+          "pron": "르예슈아"
+        },
+        {
+          "word": "וְקַדְמִיאֵ֛ל",
+          "lemma": "קַדְמִיאֵל",
+          "strong": "H6934",
+          "pron": "브칻미엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 2:40",
+        "nehemiah 7:43",
+        "nehemiah 9:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

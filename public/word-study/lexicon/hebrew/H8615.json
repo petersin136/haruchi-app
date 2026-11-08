@@ -18,33 +18,132 @@
     {
       "lemma": "קַו",
       "strong": "H6957",
-      "pron": "카바므",
-      "glossKo": "그들의 줄"
+      "pron": "카브",
+      "glossKo": "줄"
     },
     {
       "lemma": "קָוָה",
       "strong": "H6960",
-      "pron": "코베카",
-      "glossKo": "너의 모이다"
+      "pron": "익카부",
+      "glossKo": "모이다"
     },
     {
       "lemma": "קָוֶה",
       "strong": "H6961",
-      "pron": "",
+      "pron": "브크브",
       "glossKo": "줄"
     },
     {
       "lemma": "תִּקְוָה",
       "strong": "H8616",
-      "pron": "",
+      "pron": "티케바",
       "glossKo": "디과"
     }
   ],
   "defEn": "cord; attachment; expectancy",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 34,
   "byBook": {
-    "psalms": 3
+    "job": 13,
+    "proverbs": 8,
+    "psalms": 3,
+    "ezekiel": 2,
+    "jeremiah": 2,
+    "joshua": 2,
+    "hosea": 1,
+    "lamentations": 1,
+    "ruth": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יֵ֣שׁ תִּקְוָ֑ה",
+      "pron": "예쉬 티케바트",
+      "lemmas": [
+        "יֵשׁ",
+        "תִּקְוָה"
+      ],
+      "words": [
+        {
+          "word": "יֵ֣שׁ",
+          "lemma": "יֵשׁ",
+          "strong": "H3426",
+          "pron": "예쉬"
+        },
+        {
+          "word": "תִּקְוָ֑ה",
+          "lemma": "תִּקְוָה",
+          "strong": "H8615",
+          "pron": "티케바트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ruth 1:12",
+        "job 11:18",
+        "proverbs 19:18",
+        "jeremiah 31:17",
+        "lamentations 3:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַחֲרִ֑ית וְ֝תִקְוָתְךָ֗",
+      "pron": "브아하리트 티케바트",
+      "lemmas": [
+        "אַחֲרִית",
+        "תִּקְוָה"
+      ],
+      "words": [
+        {
+          "word": "אַחֲרִ֑ית",
+          "lemma": "אַחֲרִית",
+          "strong": "H319",
+          "pron": "브아하리트"
+        },
+        {
+          "word": "וְ֝תִקְוָתְךָ֗",
+          "lemma": "תִּקְוָה",
+          "strong": "H8615",
+          "pron": "티케바트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 23:18",
+        "proverbs 24:14",
+        "jeremiah 29:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תֹּאבַ֣ד תִּקְוָ֑ה",
+      "pron": "압다 티케바트",
+      "lemmas": [
+        "אָבַד",
+        "תִּקְוָה"
+      ],
+      "words": [
+        {
+          "word": "תֹּאבַ֣ד",
+          "lemma": "אָבַד",
+          "strong": "H6",
+          "pron": "압다"
+        },
+        {
+          "word": "תִּקְוָ֑ה",
+          "lemma": "תִּקְוָה",
+          "strong": "H8615",
+          "pron": "티케바트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 11:7",
+        "ezekiel 19:5",
+        "ezekiel 37:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

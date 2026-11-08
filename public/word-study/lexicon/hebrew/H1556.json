@@ -1,6 +1,6 @@
 {
   "lemma": "גָּלַל",
-  "pron": "골",
+  "pron": "브갈랄루",
   "strong": "H1556",
   "posKo": "동사",
   "root": null,
@@ -8,8 +8,8 @@
     {
       "lemma": "גַּל",
       "strong": "H1530",
-      "pron": "브갈레카",
-      "glossKo": "너의 무더기"
+      "pron": "갈",
+      "glossKo": "무더기"
     },
     {
       "lemma": "גֹּל",
@@ -26,62 +26,41 @@
     {
       "lemma": "גֻּלְגֹּלֶת",
       "strong": "H1538",
-      "pron": "",
+      "pron": "라굴골레트",
       "glossKo": "해골"
     },
     {
       "lemma": "גֻּלָּה",
       "strong": "H1543",
-      "pron": "",
+      "pron": "굴로트",
       "glossKo": "기름병"
     },
     {
       "lemma": "גִּלּוּל",
       "strong": "H1544",
-      "pron": "",
-      "glossKo": "우상"
+      "pron": "길룰레켐",
+      "glossKo": "너희의 우상"
     }
   ],
   "defEn": "roll",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 18,
   "byBook": {
     "genesis": 4,
-    "psalms": 3
+    "psalms": 3,
+    "isaiah": 2,
+    "joshua": 2,
+    "proverbs": 2,
+    "amos": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "גּ֣וֹל עַל",
-      "pron": "골 알",
-      "lemmas": [
-        "גָּלַל",
-        "עַל"
-      ],
-      "words": [
-        {
-          "word": "גּ֣וֹל",
-          "lemma": "גָּלַל",
-          "strong": "H1556",
-          "pron": "골"
-        },
-        {
-          "word": "עַל",
-          "lemma": "עַל",
-          "strong": "H5921",
-          "pron": "알"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 37:5",
-        "psalms 119:22",
-        "genesis 43:18"
-      ],
-      "glossKo": ""
-    },
-    {
       "hebrew": "וְגָלֲל֤וּ אֶת",
-      "pron": "골 에트",
+      "pron": "브갈랄루 에트",
       "lemmas": [
         "גָּלַל",
         "אֵת"
@@ -91,7 +70,7 @@
           "word": "וְגָלֲל֤וּ",
           "lemma": "גָּלַל",
           "strong": "H1556",
-          "pron": "골"
+          "pron": "브갈랄루"
         },
         {
           "word": "אֶת",
@@ -100,17 +79,47 @@
           "pron": "에트"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "genesis 29:3",
         "genesis 29:8",
-        "genesis 29:10"
+        "genesis 29:10",
+        "joshua 5:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גֹּ֣ל אֶל",
+      "pron": "브갈랄루 엘",
+      "lemmas": [
+        "גָּלַל",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "גֹּ֣ל",
+          "lemma": "גָּלַל",
+          "strong": "H1556",
+          "pron": "브갈랄루"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 14:33",
+        "psalms 22:8",
+        "proverbs 16:3"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "וְגָלֲל֤וּ אֶת הָאֶ֨בֶן֙",
-      "pron": "골 에트 바에벤",
+      "pron": "브갈랄루 에트 브에벤",
       "lemmas": [
         "גָּלַל",
         "אֵת",
@@ -121,7 +130,7 @@
           "word": "וְגָלֲל֤וּ",
           "lemma": "גָּלַל",
           "strong": "H1556",
-          "pron": "골"
+          "pron": "브갈랄루"
         },
         {
           "word": "אֶת",
@@ -133,7 +142,7 @@
           "word": "הָאֶ֨בֶן֙",
           "lemma": "אֶבֶן",
           "strong": "H68",
-          "pron": "바에벤"
+          "pron": "브에벤"
         }
       ],
       "count": 3,
@@ -141,6 +150,35 @@
         "genesis 29:3",
         "genesis 29:8",
         "genesis 29:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְהִתְגֹּלֵ֤ל עָלֵ֨ינוּ֙",
+      "pron": "브갈랄루 알",
+      "lemmas": [
+        "גָּלַל",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "לְהִתְגֹּלֵ֤ל",
+          "lemma": "גָּלַל",
+          "strong": "H1556",
+          "pron": "브갈랄루"
+        },
+        {
+          "word": "עָלֵ֨ינוּ֙",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 43:18",
+        "psalms 37:5",
+        "psalms 119:22"
       ],
       "glossKo": ""
     }

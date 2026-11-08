@@ -1,8 +1,8 @@
 {
   "lemma": "יַד",
-  "pron": "얃",
+  "pron": "베엗홈",
   "strong": "H3028",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "יָד",
     "strong": "H3027",
@@ -12,13 +12,13 @@
     {
       "lemma": "יָד",
       "strong": "H3027",
-      "pron": "야데카",
-      "glossKo": "너의 손"
+      "pron": "야도",
+      "glossKo": "그의 손"
     },
     {
       "lemma": "יָדָה",
       "strong": "H3034",
-      "pron": "요데",
+      "pron": "오데",
       "glossKo": "찬송하다"
     },
     {
@@ -30,7 +30,70 @@
   ],
   "defEn": "hand, power.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 17,
+  "byBook": {
+    "daniel": 12,
+    "ezra": 5
+  },
+  "phrases": [
+    {
+      "hebrew": "דִּ֥י בִידָֽךְ",
+      "pron": "드흐브 베엗홈",
+      "lemmas": [
+        "דִּי",
+        "יַד"
+      ],
+      "words": [
+        {
+          "word": "דִּ֥י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "בִידָֽךְ",
+          "lemma": "יַד",
+          "strong": "H3028",
+          "pron": "베엗홈"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 7:14",
+        "ezra 7:25",
+        "daniel 5:5",
+        "daniel 5:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִן יְדָֽי",
+      "pron": "민 베엗홈",
+      "lemmas": [
+        "מִן",
+        "יַד"
+      ],
+      "words": [
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4481",
+          "pron": "민"
+        },
+        {
+          "word": "יְדָֽי",
+          "lemma": "יַד",
+          "strong": "H3028",
+          "pron": "베엗홈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 3:15",
+        "daniel 3:17",
+        "daniel 6:27"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

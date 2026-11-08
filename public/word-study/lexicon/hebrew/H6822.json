@@ -1,6 +1,6 @@
 {
   "lemma": "צָפָה",
-  "pron": "바아찹페",
+  "pron": "이쳅",
   "strong": "H6822",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "מִצְפֶּה",
       "strong": "H4707",
-      "pron": "",
+      "pron": "아미쳅페",
       "glossKo": "망대"
     },
     {
       "lemma": "צָפָה",
       "strong": "H6823",
-      "pron": "",
+      "pron": "브칩피타",
       "glossKo": "입히다"
     },
     {
@@ -26,8 +26,8 @@
     {
       "lemma": "צְפִיָּה",
       "strong": "H6836",
-      "pron": "",
-      "glossKo": "감시"
+      "pron": "베칩피아테누",
+      "glossKo": "우리의 감시"
     },
     {
       "lemma": "צִפְיוֹן",
@@ -38,16 +38,88 @@
     {
       "lemma": "צֹפִים",
       "strong": "H6839",
-      "pron": "",
+      "pron": "초핌",
       "glossKo": "소빔"
     }
   ],
   "defEn": "lean; peer",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 37,
   "byBook": {
+    "samuel2": 6,
+    "ezekiel": 5,
+    "isaiah": 4,
+    "kings2": 3,
     "psalms": 3,
-    "genesis": 1
+    "jeremiah": 2,
+    "job": 2,
+    "micah": 2,
+    "proverbs": 2,
+    "samuel1": 2,
+    "genesis": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "lamentations": 1,
+    "nahum": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וצפו וְצָפ֖וּי",
+      "pron": "이쳅 이쳅",
+      "lemmas": [
+        "צָפָה",
+        "צָפָה"
+      ],
+      "words": [
+        {
+          "word": "וצפו",
+          "lemma": "צָפָה",
+          "strong": "H6822",
+          "pron": "이쳅"
+        },
+        {
+          "word": "וְצָפ֖וּי",
+          "lemma": "צָפָה",
+          "strong": "H6822",
+          "pron": "이쳅"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 15:22",
+        "isaiah 56:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַצֹּפֶ֜ה אֶל",
+      "pron": "이쳅 엘",
+      "lemmas": [
+        "צָפָה",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "הַצֹּפֶ֜ה",
+          "lemma": "צָפָה",
+          "strong": "H6822",
+          "pron": "이쳅"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 18:24",
+        "samuel2 18:26",
+        "lamentations 4:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

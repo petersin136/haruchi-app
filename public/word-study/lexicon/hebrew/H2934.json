@@ -1,6 +1,6 @@
 {
   "lemma": "טָמַן",
-  "pron": "다마누",
+  "pron": "바읻몬",
   "strong": "H2934",
   "posKo": "동사",
   "root": null,
@@ -14,10 +14,105 @@
   ],
   "defEn": "hide; covering",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 31,
   "byBook": {
+    "jeremiah": 7,
     "psalms": 7,
-    "genesis": 1
+    "job": 6,
+    "joshua": 3,
+    "kings2": 2,
+    "proverbs": 2,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "genesis": 1,
+    "isaiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲשֶׁר טָמַ֣ן",
+      "pron": "아셰르 바읻몬",
+      "lemmas": [
+        "אֲשֶׁר",
+        "טָמַן"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "טָמַ֣ן",
+          "lemma": "טָמַן",
+          "strong": "H2934",
+          "pron": "바읻몬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 35:8",
+        "jeremiah 13:7",
+        "jeremiah 43:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְטָמְנֵ֥הוּ שָׁ֖ם",
+      "pron": "바읻몬 샴",
+      "lemmas": [
+        "טָמַן",
+        "שָׁם"
+      ],
+      "words": [
+        {
+          "word": "וְטָמְנֵ֥הוּ",
+          "lemma": "טָמַן",
+          "strong": "H2934",
+          "pron": "바읻몬"
+        },
+        {
+          "word": "שָׁ֖ם",
+          "lemma": "שָׁם",
+          "strong": "H8033",
+          "pron": "샴"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 13:4",
+        "jeremiah 13:6",
+        "jeremiah 13:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֵּלְכ֖וּ וַיַּטְמִ֑נוּ",
+      "pron": "텔레크 바읻몬",
+      "lemmas": [
+        "יָלַךְ",
+        "טָמַן"
+      ],
+      "words": [
+        {
+          "word": "וַיֵּלְכ֖וּ",
+          "lemma": "יָלַךְ",
+          "strong": "H3212",
+          "pron": "텔레크"
+        },
+        {
+          "word": "וַיַּטְמִ֑נוּ",
+          "lemma": "טָמַן",
+          "strong": "H2934",
+          "pron": "바읻몬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 7:8",
+        "jeremiah 13:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

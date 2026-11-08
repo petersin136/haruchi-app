@@ -1,6 +1,6 @@
 {
   "lemma": "עַמּוּד",
-  "pron": "암무데하",
+  "pron": "브암묻",
   "strong": "H5982",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "מַעֲמָד",
       "strong": "H4612",
-      "pron": "",
+      "pron": "우마아맏",
       "glossKo": "직위"
     },
     {
@@ -24,27 +24,223 @@
     {
       "lemma": "עָמַד",
       "strong": "H5975",
-      "pron": "아맏",
+      "pron": "오멛",
       "glossKo": "서다"
     },
     {
       "lemma": "עֹמֶד",
       "strong": "H5977",
-      "pron": "",
-      "glossKo": "선 자리"
+      "pron": "암담",
+      "glossKo": "그들의 선 자리"
     },
     {
       "lemma": "עֶמְדָּה",
       "strong": "H5979",
-      "pron": "",
-      "glossKo": "자리"
+      "pron": "엠다토",
+      "glossKo": "그의 자리"
     }
   ],
   "defEn": "column; standing",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 112,
   "byBook": {
-    "psalms": 2
+    "exodus": 40,
+    "kings1": 22,
+    "chronicles2": 8,
+    "jeremiah": 7,
+    "numbers": 7,
+    "kings2": 6,
+    "judges": 4,
+    "nehemiah": 4,
+    "ezekiel": 3,
+    "deuteronomy": 2,
+    "job": 2,
+    "psalms": 2,
+    "songofsolomon": 2,
+    "chronicles1": 1,
+    "esther": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת עַמּ֣וּד",
+      "pron": "에트 브암묻",
+      "lemmas": [
+        "אֵת",
+        "עַמּוּד"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "עַמּ֣וּד",
+          "lemma": "עַמּוּד",
+          "strong": "H5982",
+          "pron": "브암묻"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "exodus 33:10",
+        "exodus 35:11",
+        "exodus 35:17",
+        "exodus 36:38",
+        "exodus 39:40",
+        "exodus 40:18",
+        "judges 16:26",
+        "kings1 7:15",
+        "kings1 7:18",
+        "kings1 7:21",
+        "kings2 25:13",
+        "chronicles1 18:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַמּ֤וּד הֶֽעָנָן֙",
+      "pron": "브암묻 베아난",
+      "lemmas": [
+        "עַמּוּד",
+        "עָנָן"
+      ],
+      "words": [
+        {
+          "word": "עַמּ֤וּד",
+          "lemma": "עַמּוּד",
+          "strong": "H5982",
+          "pron": "브암묻"
+        },
+        {
+          "word": "הֶֽעָנָן֙",
+          "lemma": "עָנָן",
+          "strong": "H6051",
+          "pron": "베아난"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 13:21",
+        "exodus 13:22",
+        "exodus 14:19",
+        "exodus 33:9",
+        "exodus 33:10",
+        "numbers 12:5",
+        "numbers 14:14",
+        "deuteronomy 31:15",
+        "nehemiah 9:12",
+        "nehemiah 9:19",
+        "psalms 99:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל רָאשֵׁ֥י הָֽעַמּוּדִ֖ים",
+      "pron": "알 라심 브암묻",
+      "lemmas": [
+        "עַל",
+        "רֹאשׁ",
+        "עַמּוּד"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "רָאשֵׁ֥י",
+          "lemma": "רֹאשׁ",
+          "strong": "H7218",
+          "pron": "라심"
+        },
+        {
+          "word": "הָֽעַמּוּדִ֖ים",
+          "lemma": "עַמּוּד",
+          "strong": "H5982",
+          "pron": "브암묻"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "kings1 7:16",
+        "kings1 7:17",
+        "kings1 7:19",
+        "kings1 7:22",
+        "kings1 7:41",
+        "chronicles2 3:16",
+        "chronicles2 4:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רֹ֥אשׁ הָעַמּוּדִ֖ים",
+      "pron": "라심 브암묻",
+      "lemmas": [
+        "רֹאשׁ",
+        "עַמּוּד"
+      ],
+      "words": [
+        {
+          "word": "רֹ֥אשׁ",
+          "lemma": "רֹאשׁ",
+          "strong": "H7218",
+          "pron": "라심"
+        },
+        {
+          "word": "הָעַמּוּדִ֖ים",
+          "lemma": "עַמּוּד",
+          "strong": "H5982",
+          "pron": "브암묻"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "kings1 7:16",
+        "kings1 7:17",
+        "kings1 7:19",
+        "kings1 7:22",
+        "kings1 7:41",
+        "chronicles2 3:16",
+        "chronicles2 4:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָעַמּוּדִ֣ים שְׁנַ֗יִם",
+      "pron": "브암묻 셰네",
+      "lemmas": [
+        "עַמּוּד",
+        "שְׁנַיִם"
+      ],
+      "words": [
+        {
+          "word": "הָעַמּוּדִ֣ים",
+          "lemma": "עַמּוּד",
+          "strong": "H5982",
+          "pron": "브암묻"
+        },
+        {
+          "word": "שְׁנַ֗יִם",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "kings1 7:18",
+        "kings1 7:41",
+        "kings2 25:16",
+        "chronicles2 3:15",
+        "chronicles2 4:12",
+        "jeremiah 52:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "בָּרִיא",
-  "pron": "우바리",
+  "pron": "우베리오트",
   "strong": "H1277",
   "posKo": "형용사",
   "root": {
@@ -12,28 +12,64 @@
     {
       "lemma": "בָּרָא",
       "strong": "H1254",
-      "pron": "베라",
+      "pron": "바라",
       "glossKo": "창조하다"
     },
     {
       "lemma": "בְּרָאיָה",
       "strong": "H1256",
-      "pron": "",
+      "pron": "우베라아",
       "glossKo": "브라야"
     },
     {
       "lemma": "בְּרִיאָה",
       "strong": "H1278",
-      "pron": "",
+      "pron": "베리아",
       "glossKo": "새 일"
     }
   ],
   "defEn": "fatted; plump",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 13,
   "byBook": {
     "genesis": 6,
-    "psalms": 1
+    "daniel": 1,
+    "ezekiel": 1,
+    "habakkuk": 1,
+    "judges": 1,
+    "kings1": 1,
+    "psalms": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּבְרִיאֹ֣ת בָּשָׂ֑ר",
+      "pron": "우베리오트 바사르",
+      "lemmas": [
+        "בָּרִיא",
+        "בָּשָׂר"
+      ],
+      "words": [
+        {
+          "word": "וּבְרִיאֹ֣ת",
+          "lemma": "בָּרִיא",
+          "strong": "H1277",
+          "pron": "우베리오트"
+        },
+        {
+          "word": "בָּשָׂ֑ר",
+          "lemma": "בָּשָׂר",
+          "strong": "H1320",
+          "pron": "바사르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 41:2",
+        "genesis 41:18",
+        "daniel 1:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "עֶצֶם",
-  "pron": "아차마위",
+  "pron": "에쳄",
   "strong": "H6106",
   "posKo": "명사",
   "root": {
@@ -12,26 +12,26 @@
     {
       "lemma": "עָצוּם",
       "strong": "H6099",
-      "pron": "바아추마이브",
-      "glossKo": "그에게 강한"
+      "pron": "브아춤",
+      "glossKo": "강한"
     },
     {
       "lemma": "עָצַם",
       "strong": "H6105",
-      "pron": "아체무",
+      "pron": "아참타",
       "glossKo": "강성해지다"
     },
     {
       "lemma": "עֶצֶם",
       "strong": "H6107",
-      "pron": "",
+      "pron": "바아쳄",
       "glossKo": "에셈"
     },
     {
       "lemma": "עֹצֶם",
       "strong": "H6108",
-      "pron": "아체미위",
-      "glossKo": "나의 힘"
+      "pron": "브오쳄",
+      "glossKo": "힘"
     },
     {
       "lemma": "תַּעֲצֻמָה",
@@ -42,45 +42,75 @@
   ],
   "defEn": "bone; strong",
   "defKo": "",
-  "countOT": 22,
+  "countOT": 126,
   "byBook": {
+    "ezekiel": 21,
     "psalms": 15,
-    "genesis": 7
+    "job": 13,
+    "samuel2": 9,
+    "exodus": 7,
+    "genesis": 7,
+    "jeremiah": 7,
+    "kings2": 7,
+    "leviticus": 5,
+    "proverbs": 5,
+    "lamentations": 4,
+    "numbers": 4,
+    "isaiah": 3,
+    "joshua": 3,
+    "kings1": 3,
+    "amos": 2,
+    "chronicles1": 2,
+    "judges": 2,
+    "micah": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "habakkuk": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
-      "hebrew": "כָּֽל עַצְמ֫וֹתָ֥י",
-      "pron": "브콜 아차마위",
+      "hebrew": "אֶת עַצְמ֥וֹת",
+      "pron": "에트 에쳄",
       "lemmas": [
-        "כֹּל",
+        "אֵת",
         "עֶצֶם"
       ],
       "words": [
         {
-          "word": "כָּֽל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         },
         {
-          "word": "עַצְמ֫וֹתָ֥י",
+          "word": "עַצְמ֥וֹת",
           "lemma": "עֶצֶם",
           "strong": "H6106",
-          "pron": "아차마위"
+          "pron": "에쳄"
         }
       ],
-      "count": 4,
+      "count": 23,
       "refs": [
-        "psalms 22:14",
-        "psalms 22:17",
-        "psalms 34:20",
-        "psalms 35:10"
+        "genesis 50:25",
+        "exodus 13:19",
+        "joshua 24:32",
+        "samuel1 31:13",
+        "samuel2 21:12",
+        "samuel2 21:13",
+        "samuel2 21:14",
+        "kings1 13:31",
+        "kings2 23:16",
+        "kings2 23:20",
+        "chronicles1 10:12",
+        "jeremiah 8:1"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "בְּעֶ֨צֶם֙ הַיּ֣וֹם",
-      "pron": "아차마위 아욤",
+      "pron": "에쳄 욤",
       "lemmas": [
         "עֶצֶם",
         "יוֹם"
@@ -90,26 +120,35 @@
           "word": "בְּעֶ֨צֶם֙",
           "lemma": "עֶצֶם",
           "strong": "H6106",
-          "pron": "아차마위"
+          "pron": "에쳄"
         },
         {
           "word": "הַיּ֣וֹם",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "아욤"
+          "pron": "욤"
         }
       ],
-      "count": 3,
+      "count": 19,
       "refs": [
         "genesis 7:13",
         "genesis 17:23",
-        "genesis 17:26"
+        "genesis 17:26",
+        "exodus 12:17",
+        "exodus 12:41",
+        "exodus 12:51",
+        "leviticus 23:14",
+        "leviticus 23:21",
+        "leviticus 23:28",
+        "leviticus 23:29",
+        "leviticus 23:30",
+        "deuteronomy 32:48"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "בְּעֶ֨צֶם֙ הַיּ֣וֹם הַזֶּ֔ה",
-      "pron": "아차마위 아욤 제",
+      "pron": "에쳄 욤 제",
       "lemmas": [
         "עֶצֶם",
         "יוֹם",
@@ -120,13 +159,13 @@
           "word": "בְּעֶ֨צֶם֙",
           "lemma": "עֶצֶם",
           "strong": "H6106",
-          "pron": "아차마위"
+          "pron": "에쳄"
         },
         {
           "word": "הַיּ֣וֹם",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "아욤"
+          "pron": "욤"
         },
         {
           "word": "הַזֶּ֔ה",
@@ -135,40 +174,86 @@
           "pron": "제"
         }
       ],
-      "count": 3,
+      "count": 18,
       "refs": [
         "genesis 7:13",
         "genesis 17:23",
-        "genesis 17:26"
+        "genesis 17:26",
+        "exodus 12:17",
+        "exodus 12:41",
+        "exodus 12:51",
+        "leviticus 23:14",
+        "leviticus 23:21",
+        "leviticus 23:28",
+        "leviticus 23:29",
+        "leviticus 23:30",
+        "deuteronomy 32:48"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "עַ֝צְמִ֗י לִבְשָׂרִֽי",
-      "pron": "아차마위 베사리위",
+      "hebrew": "עַצְמִ֥י וּבְשָׂרִ֖י",
+      "pron": "에쳄 바사르",
       "lemmas": [
         "עֶצֶם",
         "בָּשָׂר"
       ],
       "words": [
         {
-          "word": "עַ֝צְמִ֗י",
+          "word": "עַצְמִ֥י",
           "lemma": "עֶצֶם",
           "strong": "H6106",
-          "pron": "아차마위"
+          "pron": "에쳄"
         },
         {
-          "word": "לִבְשָׂרִֽי",
+          "word": "וּבְשָׂרִ֖י",
           "lemma": "בָּשָׂר",
           "strong": "H1320",
-          "pron": "베사리위"
+          "pron": "바사르"
         }
       ],
-      "count": 3,
+      "count": 8,
       "refs": [
-        "psalms 102:5",
         "genesis 2:23",
-        "genesis 29:14"
+        "genesis 29:14",
+        "judges 9:2",
+        "samuel2 5:1",
+        "samuel2 19:12",
+        "samuel2 19:13",
+        "chronicles1 11:1",
+        "psalms 102:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל עַצְמוֹתָ֑י",
+      "pron": "칼 에쳄",
+      "lemmas": [
+        "כֹּל",
+        "עֶצֶם"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "עַצְמוֹתָ֑י",
+          "lemma": "עֶצֶם",
+          "strong": "H6106",
+          "pron": "에쳄"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "psalms 22:14",
+        "psalms 22:17",
+        "psalms 34:20",
+        "psalms 35:10",
+        "isaiah 38:13",
+        "jeremiah 23:9"
       ],
       "glossKo": ""
     }

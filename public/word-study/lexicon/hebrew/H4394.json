@@ -1,8 +1,8 @@
 {
   "lemma": "מִלֻּא",
-  "pron": "밀루",
+  "pron": "밀루임",
   "strong": "H4394",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "מָלֵא",
     "strong": "H4390",
@@ -12,19 +12,19 @@
     {
       "lemma": "יִמְלָא",
       "strong": "H3229",
-      "pron": "",
+      "pron": "임라",
       "glossKo": "임라"
     },
     {
       "lemma": "מָלֵא",
       "strong": "H4390",
-      "pron": "말레",
+      "pron": "우밀우",
       "glossKo": "가득하다"
     },
     {
       "lemma": "מְלָא",
       "strong": "H4391",
-      "pron": "",
+      "pron": "우멜라트",
       "glossKo": "채우다(아람)"
     },
     {
@@ -36,13 +36,179 @@
     {
       "lemma": "מְלֹא",
       "strong": "H4393",
-      "pron": "우멜로아흐",
-      "glossKo": "그녀의 충만"
+      "pron": "멜로",
+      "glossKo": "충만"
+    },
+    {
+      "lemma": "מִלֻּאָה",
+      "strong": "H4396",
+      "pron": "밀루아트",
+      "glossKo": "박은 보석"
     }
   ],
   "defEn": "fulfilling; setting; consecration",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 15,
+  "byBook": {
+    "exodus": 8,
+    "leviticus": 6,
+    "chronicles1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֵ֥יל מִלֻּאִ֖ים",
+      "pron": "브아일 밀루임",
+      "lemmas": [
+        "אַיִל",
+        "מִלֻּא"
+      ],
+      "words": [
+        {
+          "word": "אֵ֥יל",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
+        },
+        {
+          "word": "מִלֻּאִ֖ים",
+          "lemma": "מִלֻּא",
+          "strong": "H4394",
+          "pron": "밀루임"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 29:22",
+        "exodus 29:26",
+        "exodus 29:27",
+        "exodus 29:31",
+        "leviticus 8:22",
+        "leviticus 8:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַמִּלֻּאִים֙ אֲשֶׁ֣ר",
+      "pron": "밀루임 아셰르",
+      "lemmas": [
+        "מִלֻּא",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הַמִּלֻּאִים֙",
+          "lemma": "מִלֻּא",
+          "strong": "H4394",
+          "pron": "밀루임"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 29:26",
+        "exodus 29:27",
+        "leviticus 8:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאַבְנֵ֖י מִלֻּאִ֑ים",
+      "pron": "브에벤 밀루임",
+      "lemmas": [
+        "אֶבֶן",
+        "מִלֻּא"
+      ],
+      "words": [
+        {
+          "word": "וְאַבְנֵ֖י",
+          "lemma": "אֶבֶן",
+          "strong": "H68",
+          "pron": "브에벤"
+        },
+        {
+          "word": "מִלֻּאִ֑ים",
+          "lemma": "מִלֻּא",
+          "strong": "H4394",
+          "pron": "밀루임"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 25:7",
+        "exodus 35:9",
+        "exodus 35:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאַבְנֵ֖י מִלֻּאִ֑ים לָאֵפֹ֖ד",
+      "pron": "브에벤 밀루임 라에폳",
+      "lemmas": [
+        "אֶבֶן",
+        "מִלֻּא",
+        "אֵפוֹד"
+      ],
+      "words": [
+        {
+          "word": "וְאַבְנֵ֖י",
+          "lemma": "אֶבֶן",
+          "strong": "H68",
+          "pron": "브에벤"
+        },
+        {
+          "word": "מִלֻּאִ֑ים",
+          "lemma": "מִלֻּא",
+          "strong": "H4394",
+          "pron": "밀루임"
+        },
+        {
+          "word": "לָאֵפֹ֖ד",
+          "lemma": "אֵפוֹד",
+          "strong": "H646",
+          "pron": "라에폳"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 25:7",
+        "exodus 35:9",
+        "exodus 35:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִלֻּאִ֑ים לָאֵפֹ֖ד",
+      "pron": "밀루임 라에폳",
+      "lemmas": [
+        "מִלֻּא",
+        "אֵפוֹד"
+      ],
+      "words": [
+        {
+          "word": "מִלֻּאִ֑ים",
+          "lemma": "מִלֻּא",
+          "strong": "H4394",
+          "pron": "밀루임"
+        },
+        {
+          "word": "לָאֵפֹ֖ד",
+          "lemma": "אֵפוֹד",
+          "strong": "H646",
+          "pron": "라에폳"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 25:7",
+        "exodus 35:9",
+        "exodus 35:27"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

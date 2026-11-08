@@ -1,6 +1,6 @@
 {
   "lemma": "חָלַץ",
-  "pron": "할레차",
+  "pron": "브힐레추",
   "strong": "H2502",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "חֶלֶץ",
       "strong": "H2503",
-      "pron": "",
+      "pron": "헬레츠",
       "glossKo": "헬렉"
     },
     {
@@ -20,15 +20,184 @@
     {
       "lemma": "מַחֲלָצָה",
       "strong": "H4254",
-      "pron": "",
+      "pron": "아마할라초트",
       "glossKo": "예복"
     }
   ],
   "defEn": "pull off; strip; depart",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 44,
   "byBook": {
-    "psalms": 12
+    "psalms": 12,
+    "numbers": 9,
+    "joshua": 4,
+    "chronicles2": 3,
+    "deuteronomy": 3,
+    "isaiah": 3,
+    "chronicles1": 2,
+    "leviticus": 2,
+    "proverbs": 2,
+    "hosea": 1,
+    "job": 1,
+    "lamentations": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "חֲלוּצֵ֥י צָבָֽא",
+      "pron": "브힐레추 체바암",
+      "lemmas": [
+        "חָלַץ",
+        "צָבָא"
+      ],
+      "words": [
+        {
+          "word": "חֲלוּצֵ֥י",
+          "lemma": "חָלַץ",
+          "strong": "H2502",
+          "pron": "브힐레추"
+        },
+        {
+          "word": "צָבָֽא",
+          "lemma": "צָבָא",
+          "strong": "H6635",
+          "pron": "체바암"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 31:5",
+        "numbers 32:27",
+        "joshua 4:13",
+        "chronicles1 12:23",
+        "chronicles1 12:24",
+        "chronicles2 17:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְחִלְּצוּ֙ אֶת",
+      "pron": "브힐레추 에트",
+      "lemmas": [
+        "חָלַץ",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְחִלְּצוּ֙",
+          "lemma": "חָלַץ",
+          "strong": "H2502",
+          "pron": "브힐레추"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 14:40",
+        "leviticus 14:43",
+        "numbers 32:21",
+        "chronicles2 28:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֖לֶף חֲלוּצֵ֥י",
+      "pron": "엘렙 브힐레추",
+      "lemmas": [
+        "אֶלֶף",
+        "חָלַץ"
+      ],
+      "words": [
+        {
+          "word": "אֶ֖לֶף",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
+        },
+        {
+          "word": "חֲלוּצֵ֥י",
+          "lemma": "חָלַץ",
+          "strong": "H2502",
+          "pron": "브힐레추"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 31:5",
+        "joshua 4:13",
+        "chronicles2 17:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֖לֶף חֲלוּצֵ֥י צָבָֽא",
+      "pron": "엘렙 브힐레추 체바암",
+      "lemmas": [
+        "אֶלֶף",
+        "חָלַץ",
+        "צָבָא"
+      ],
+      "words": [
+        {
+          "word": "אֶ֖לֶף",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
+        },
+        {
+          "word": "חֲלוּצֵ֥י",
+          "lemma": "חָלַץ",
+          "strong": "H2502",
+          "pron": "브힐레추"
+        },
+        {
+          "word": "צָבָֽא",
+          "lemma": "צָבָא",
+          "strong": "H6635",
+          "pron": "체바암"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 31:5",
+        "joshua 4:13",
+        "chronicles2 17:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְחַלְּצֵ֖נִי כִּי",
+      "pron": "브힐레추 키",
+      "lemmas": [
+        "חָלַץ",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "יְחַלְּצֵ֖נִי",
+          "lemma": "חָלַץ",
+          "strong": "H2502",
+          "pron": "브힐레추"
+        },
+        {
+          "word": "כִּי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:20",
+        "psalms 18:19",
+        "psalms 119:153"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

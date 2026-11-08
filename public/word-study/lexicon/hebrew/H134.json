@@ -1,8 +1,8 @@
 {
   "lemma": "אֶדֶן",
-  "pron": "에덴",
+  "pron": "아도나이",
   "strong": "H134",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אָדוֹן",
     "strong": "H113",
@@ -12,37 +12,224 @@
     {
       "lemma": "אָדוֹן",
       "strong": "H113",
-      "pron": "아도나이누",
-      "glossKo": "우리의 주인"
+      "pron": "아도나이",
+      "glossKo": "나의 주인"
     },
     {
       "lemma": "אַדּוֹן",
       "strong": "H114",
-      "pron": "",
+      "pron": "앋돈",
       "glossKo": "아도람"
+    },
+    {
+      "lemma": "אַדָּן",
+      "strong": "H135",
+      "pron": "앋단",
+      "glossKo": "앗단"
     },
     {
       "lemma": "אֲדֹנָי",
       "strong": "H136",
-      "pron": "아도나위",
+      "pron": "아도나이",
       "glossKo": "나의 주"
     },
     {
       "lemma": "אֲדֹנִי־בֶזֶק",
       "strong": "H137",
-      "pron": "",
+      "pron": "아도나이",
       "glossKo": "아도니베섹"
     },
     {
       "lemma": "אֲדֹנִיָּה",
       "strong": "H138",
-      "pron": "",
+      "pron": "아도니아",
       "glossKo": "아도니야"
     }
   ],
   "defEn": "basis",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 57,
+  "byBook": {
+    "exodus": 51,
+    "numbers": 4,
+    "job": 1,
+    "songofsolomon": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "שְׁנֵ֣י אֲדָנִ֗ים",
+      "pron": "셰네 아도나이",
+      "lemmas": [
+        "שְׁנַיִם",
+        "אֶדֶן"
+      ],
+      "words": [
+        {
+          "word": "שְׁנֵ֣י",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        },
+        {
+          "word": "אֲדָנִ֗ים",
+          "lemma": "אֶדֶן",
+          "strong": "H134",
+          "pron": "아도나이"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 26:19",
+        "exodus 26:21",
+        "exodus 26:25",
+        "exodus 36:24",
+        "exodus 36:26",
+        "exodus 36:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲדָנִ֔ים תַּ֖חַת",
+      "pron": "아도나이 미타하트",
+      "lemmas": [
+        "אֶדֶן",
+        "תַּחַת"
+      ],
+      "words": [
+        {
+          "word": "אֲדָנִ֔ים",
+          "lemma": "אֶדֶן",
+          "strong": "H134",
+          "pron": "아도나이"
+        },
+        {
+          "word": "תַּ֖חַת",
+          "lemma": "תַּחַת",
+          "strong": "H8478",
+          "pron": "미타하트"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 26:19",
+        "exodus 26:21",
+        "exodus 26:25",
+        "exodus 36:24",
+        "exodus 36:26",
+        "exodus 36:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲדָנִ֔ים תַּ֖חַת הַקֶּ֥רֶשׁ",
+      "pron": "아도나이 미타하트 아케라심",
+      "lemmas": [
+        "אֶדֶן",
+        "תַּחַת",
+        "קֶרֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "אֲדָנִ֔ים",
+          "lemma": "אֶדֶן",
+          "strong": "H134",
+          "pron": "아도나이"
+        },
+        {
+          "word": "תַּ֖חַת",
+          "lemma": "תַּחַת",
+          "strong": "H8478",
+          "pron": "미타하트"
+        },
+        {
+          "word": "הַקֶּ֥רֶשׁ",
+          "lemma": "קֶרֶשׁ",
+          "strong": "H7175",
+          "pron": "아케라심"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 26:19",
+        "exodus 26:21",
+        "exodus 26:25",
+        "exodus 36:24",
+        "exodus 36:26",
+        "exodus 36:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁנֵ֣י אֲדָנִ֗ים תַּ֚חַת",
+      "pron": "셰네 아도나이 미타하트",
+      "lemmas": [
+        "שְׁנַיִם",
+        "אֶדֶן",
+        "תַּחַת"
+      ],
+      "words": [
+        {
+          "word": "שְׁנֵ֣י",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        },
+        {
+          "word": "אֲדָנִ֗ים",
+          "lemma": "אֶדֶן",
+          "strong": "H134",
+          "pron": "아도나이"
+        },
+        {
+          "word": "תַּ֚חַת",
+          "lemma": "תַּחַת",
+          "strong": "H8478",
+          "pron": "미타하트"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 26:19",
+        "exodus 26:21",
+        "exodus 26:25",
+        "exodus 36:24",
+        "exodus 36:26",
+        "exodus 36:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת אֲדָנָֽיו",
+      "pron": "에트 아도나이",
+      "lemmas": [
+        "אֵת",
+        "אֶדֶן"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "אֲדָנָֽיו",
+          "lemma": "אֶדֶן",
+          "strong": "H134",
+          "pron": "아도나이"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 35:11",
+        "exodus 35:17",
+        "exodus 38:27",
+        "exodus 38:30",
+        "exodus 38:31",
+        "exodus 39:40",
+        "exodus 40:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

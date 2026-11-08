@@ -1,6 +1,6 @@
 {
   "lemma": "אָרַב",
-  "pron": "예에롭",
+  "pron": "브아랍",
   "strong": "H693",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "אֲרָב",
       "strong": "H694",
-      "pron": "",
+      "pron": "아랍",
       "glossKo": "아랍"
     },
     {
       "lemma": "אֶרֶב",
       "strong": "H695",
-      "pron": "",
+      "pron": "아렙",
       "glossKo": "매복"
     },
     {
@@ -26,15 +26,58 @@
     {
       "lemma": "מַאֲרָב",
       "strong": "H3993",
-      "pron": "브마에랍",
+      "pron": "아마에랍",
       "glossKo": "복병"
     }
   ],
   "defEn": "lurk",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 41,
   "byBook": {
-    "psalms": 3
+    "judges": 14,
+    "joshua": 7,
+    "proverbs": 6,
+    "psalms": 3,
+    "lamentations": 2,
+    "samuel1": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "ezra": 1,
+    "hosea": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מְאָרְבִ֗ים עַ֚ל",
+      "pron": "브아랍 알",
+      "lemmas": [
+        "אָרַב",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "מְאָרְבִ֗ים",
+          "lemma": "אָרַב",
+          "strong": "H693",
+          "pron": "브아랍"
+        },
+        {
+          "word": "עַ֚ל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 9:25",
+        "judges 9:34",
+        "chronicles2 20:22",
+        "ezra 8:31"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

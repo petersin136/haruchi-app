@@ -12,8 +12,8 @@
     {
       "lemma": "גּוּר",
       "strong": "H1481",
-      "pron": "예구르카",
-      "glossKo": "너에게 거류하다"
+      "pron": "라구르",
+      "glossKo": "거류하다"
     },
     {
       "lemma": "גּוּר",
@@ -24,7 +24,7 @@
     {
       "lemma": "גּוּר־בַּעַל",
       "strong": "H1485",
-      "pron": "",
+      "pron": "브구르",
       "glossKo": "구르바알"
     },
     {
@@ -36,21 +36,57 @@
     {
       "lemma": "גֵּרוּת",
       "strong": "H1628",
-      "pron": "",
+      "pron": "브게루트",
       "glossKo": "거주"
     },
     {
       "lemma": "יָגוּר",
       "strong": "H3017",
-      "pron": "",
+      "pron": "브야구르",
       "glossKo": "야굴"
     }
   ],
   "defEn": "fright",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 8,
   "byBook": {
+    "jeremiah": 5,
+    "isaiah": 1,
+    "lamentations": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מָג֖וֹר מִסָּבִֽיב",
+      "pron": "마고르 사빕",
+      "lemmas": [
+        "מָגוֹר",
+        "סָבִיב"
+      ],
+      "words": [
+        {
+          "word": "מָג֖וֹר",
+          "lemma": "מָגוֹר",
+          "strong": "H4032",
+          "pron": "마고르"
+        },
+        {
+          "word": "מִסָּבִֽיב",
+          "lemma": "סָבִיב",
+          "strong": "H5439",
+          "pron": "사빕"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "psalms 31:13",
+        "jeremiah 6:25",
+        "jeremiah 20:10",
+        "jeremiah 46:5",
+        "jeremiah 49:29",
+        "lamentations 2:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

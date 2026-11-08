@@ -2,7 +2,7 @@
   "lemma": "יַרְמוּת",
   "pron": "야레무트",
   "strong": "H3412",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רוּם",
     "strong": "H7311",
@@ -12,43 +12,77 @@
     {
       "lemma": "יְרִימוֹת",
       "strong": "H3406",
-      "pron": "",
+      "pron": "비위리모트",
       "glossKo": "여리못"
     },
     {
       "lemma": "יְרֵמַי",
       "strong": "H3413",
-      "pron": "",
+      "pron": "예레마이",
       "glossKo": "여레매"
     },
     {
       "lemma": "יִרְמְיָה",
       "strong": "H3414",
-      "pron": "",
+      "pron": "이렘아후",
       "glossKo": "예레미야"
     },
     {
       "lemma": "מָרוֹם",
       "strong": "H4791",
-      "pron": "라마롬",
+      "pron": "메로메",
       "glossKo": "높은 곳"
     },
     {
       "lemma": "מְרֵמוֹת",
       "strong": "H4822",
-      "pron": "",
+      "pron": "메레모트",
       "glossKo": "므레못"
     },
     {
       "lemma": "רוּם",
       "strong": "H7311",
-      "pron": "우메림",
+      "pron": "바타람",
       "glossKo": "높이다"
     }
   ],
   "defEn": "Jarmuth",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "joshua": 6,
+    "nehemiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "מֶֽלֶךְ יַרְמ֜וּת",
+      "pron": "멜레크 야레무트",
+      "lemmas": [
+        "מֶלֶךְ",
+        "יַרְמוּת"
+      ],
+      "words": [
+        {
+          "word": "מֶֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "יַרְמ֜וּת",
+          "lemma": "יַרְמוּת",
+          "strong": "H3412",
+          "pron": "야레무트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 10:3",
+        "joshua 10:5",
+        "joshua 10:23",
+        "joshua 12:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

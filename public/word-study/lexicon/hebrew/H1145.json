@@ -12,25 +12,25 @@
     {
       "lemma": "אִישׁ",
       "strong": "H376",
-      "pron": "하이쉬",
+      "pron": "메이쉬",
       "glossKo": "사람"
     },
     {
       "lemma": "אִישׁ",
       "strong": "H377",
-      "pron": "",
-      "glossKo": "사내답게 행하다"
+      "pron": "브히테오샤슈",
+      "glossKo": "사내답게 행하는 이"
     },
     {
       "lemma": "אִישׁ־בֹּשֶׁת",
       "strong": "H378",
-      "pron": "",
+      "pron": "이쉬",
       "glossKo": "이스보셋"
     },
     {
       "lemma": "אִישְׁהוֹד",
       "strong": "H379",
-      "pron": "",
+      "pron": "이셰혿",
       "glossKo": "이스홋"
     },
     {
@@ -48,9 +48,151 @@
   ],
   "defEn": "Benjaminite",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 17,
   "byBook": {
-    "psalms": 2
+    "judges": 4,
+    "samuel2": 4,
+    "esther": 2,
+    "kings1": 2,
+    "psalms": 2,
+    "samuel1": 2,
+    "chronicles1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בֶּן הַיְמִינִ֔י",
+      "pron": "벤 벤",
+      "lemmas": [
+        "בֶּן־יְמִינִי",
+        "בֶּן־יְמִינִי"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֶּן־יְמִינִי",
+          "strong": "H1145",
+          "pron": "벤"
+        },
+        {
+          "word": "הַיְמִינִ֔י",
+          "lemma": "בֶּן־יְמִינִי",
+          "strong": "H1145",
+          "pron": "벤"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "judges 3:15",
+        "judges 19:16",
+        "samuel1 9:21",
+        "samuel2 16:11",
+        "samuel2 19:16",
+        "kings1 2:8",
+        "esther 2:5",
+        "psalms 7:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גֵּרָא֙ בֶּן הַיְמִינִ֔י",
+      "pron": "게라 벤 벤",
+      "lemmas": [
+        "גֵּרָא",
+        "בֶּן־יְמִינִי",
+        "בֶּן־יְמִינִי"
+      ],
+      "words": [
+        {
+          "word": "גֵּרָא֙",
+          "lemma": "גֵּרָא",
+          "strong": "H1617",
+          "pron": "게라"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֶּן־יְמִינִי",
+          "strong": "H1145",
+          "pron": "벤"
+        },
+        {
+          "word": "הַיְמִינִ֔י",
+          "lemma": "בֶּן־יְמִינִי",
+          "strong": "H1145",
+          "pron": "벤"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "judges 3:15",
+        "samuel2 19:16",
+        "kings1 2:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן גֵּרָא֙ בֶּן",
+      "pron": "바님 게라 벤",
+      "lemmas": [
+        "בֵּן",
+        "גֵּרָא",
+        "בֶּן־יְמִינִי"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "גֵּרָא֙",
+          "lemma": "גֵּרָא",
+          "strong": "H1617",
+          "pron": "게라"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֶּן־יְמִינִי",
+          "strong": "H1145",
+          "pron": "벤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 3:15",
+        "samuel2 19:16",
+        "kings1 2:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גֵּרָא֙ בֶּן",
+      "pron": "게라 벤",
+      "lemmas": [
+        "גֵּרָא",
+        "בֶּן־יְמִינִי"
+      ],
+      "words": [
+        {
+          "word": "גֵּרָא֙",
+          "lemma": "גֵּרָא",
+          "strong": "H1617",
+          "pron": "게라"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֶּן־יְמִינִי",
+          "strong": "H1145",
+          "pron": "벤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 3:15",
+        "samuel2 19:16",
+        "kings1 2:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "חָרוֹן",
-  "pron": "우바하론오",
+  "pron": "하론카",
   "strong": "H2740",
   "posKo": "명사",
   "root": {
@@ -12,67 +12,240 @@
     {
       "lemma": "חָרָה",
       "strong": "H2734",
-      "pron": "하라",
+      "pron": "바이하르",
       "glossKo": "노하다"
     },
     {
       "lemma": "חַרְהֲיָה",
       "strong": "H2736",
-      "pron": "",
+      "pron": "하레하아",
       "glossKo": "하르하야"
     },
     {
       "lemma": "חֳרִי",
       "strong": "H2750",
-      "pron": "",
+      "pron": "바호리",
       "glossKo": "맹렬함"
     },
     {
       "lemma": "תַּחֲרָא",
       "strong": "H8473",
-      "pron": "",
+      "pron": "타헤라",
       "glossKo": "갑옷"
     },
     {
       "lemma": "תַּחָרָה",
       "strong": "H8474",
-      "pron": "",
+      "pron": "테타하레",
       "glossKo": "경쟁하다"
     }
   ],
   "defEn": "burning",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 41,
   "byBook": {
-    "psalms": 6
+    "jeremiah": 9,
+    "psalms": 6,
+    "chronicles2": 4,
+    "exodus": 2,
+    "ezekiel": 2,
+    "isaiah": 2,
+    "lamentations": 2,
+    "numbers": 2,
+    "zephaniah": 2,
+    "deuteronomy": 1,
+    "ezra": 1,
+    "hosea": 1,
+    "job": 1,
+    "jonah": 1,
+    "joshua": 1,
+    "kings2": 1,
+    "nahum": 1,
+    "nehemiah": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
-      "hebrew": "וַחֲר֥וֹן אַ֝פְּךָ֗",
-      "pron": "우바하론오 브압오",
+      "hebrew": "חֲר֥וֹן אַפּֽוֹ",
+      "pron": "하론카 베압파으브",
       "lemmas": [
         "חָרוֹן",
         "אַף"
       ],
       "words": [
         {
-          "word": "וַחֲר֥וֹן",
+          "word": "חֲר֥וֹן",
           "lemma": "חָרוֹן",
           "strong": "H2740",
-          "pron": "우바하론오"
+          "pron": "하론카"
         },
         {
-          "word": "אַ֝פְּךָ֗",
+          "word": "אַפּֽוֹ",
           "lemma": "אַף",
           "strong": "H639",
-          "pron": "브압오"
+          "pron": "베압파으브"
         }
       ],
-      "count": 3,
+      "count": 33,
       "refs": [
-        "psalms 69:24",
-        "psalms 78:49",
-        "psalms 85:3"
+        "exodus 32:12",
+        "numbers 25:4",
+        "numbers 32:14",
+        "deuteronomy 13:17",
+        "joshua 7:26",
+        "samuel1 28:18",
+        "kings2 23:26",
+        "chronicles2 28:11",
+        "chronicles2 28:13",
+        "chronicles2 29:10",
+        "chronicles2 30:8",
+        "ezra 10:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲר֥וֹן אַף יְהוָ֖ה",
+      "pron": "하론카 베압파으브 여호와",
+      "lemmas": [
+        "חָרוֹן",
+        "אַף",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "חֲר֥וֹן",
+          "lemma": "חָרוֹן",
+          "strong": "H2740",
+          "pron": "하론카"
+        },
+        {
+          "word": "אַף",
+          "lemma": "אַף",
+          "strong": "H639",
+          "pron": "베압파으브"
+        },
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "numbers 25:4",
+        "numbers 32:14",
+        "chronicles2 28:11",
+        "jeremiah 4:8",
+        "jeremiah 12:13",
+        "jeremiah 25:37",
+        "jeremiah 30:24",
+        "jeremiah 51:45",
+        "zephaniah 2:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שׁ֚וּב מֵחֲר֣וֹן",
+      "pron": "슙카 하론카",
+      "lemmas": [
+        "שׁוּב",
+        "חָרוֹן"
+      ],
+      "words": [
+        {
+          "word": "שׁ֚וּב",
+          "lemma": "שׁוּב",
+          "strong": "H7725",
+          "pron": "슙카"
+        },
+        {
+          "word": "מֵחֲר֣וֹן",
+          "lemma": "חָרוֹן",
+          "strong": "H2740",
+          "pron": "하론카"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 32:12",
+        "numbers 25:4",
+        "chronicles2 30:8",
+        "ezra 10:14",
+        "psalms 85:3",
+        "jeremiah 4:8",
+        "jeremiah 30:24",
+        "jonah 3:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שׁ֚וּב מֵחֲר֣וֹן אַפֶּ֔ךָ",
+      "pron": "슙카 하론카 베압파으브",
+      "lemmas": [
+        "שׁוּב",
+        "חָרוֹן",
+        "אַף"
+      ],
+      "words": [
+        {
+          "word": "שׁ֚וּב",
+          "lemma": "שׁוּב",
+          "strong": "H7725",
+          "pron": "슙카"
+        },
+        {
+          "word": "מֵחֲר֣וֹן",
+          "lemma": "חָרוֹן",
+          "strong": "H2740",
+          "pron": "하론카"
+        },
+        {
+          "word": "אַפֶּ֔ךָ",
+          "lemma": "אַף",
+          "strong": "H639",
+          "pron": "베압파으브"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 32:12",
+        "numbers 25:4",
+        "chronicles2 30:8",
+        "ezra 10:14",
+        "psalms 85:3",
+        "jeremiah 4:8",
+        "jeremiah 30:24",
+        "jonah 3:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִפְּנֵ֖י חֲר֥וֹן",
+      "pron": "페네 하론카",
+      "lemmas": [
+        "פָּנִים",
+        "חָרוֹן"
+      ],
+      "words": [
+        {
+          "word": "מִפְּנֵ֖י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "חֲר֥וֹן",
+          "lemma": "חָרוֹן",
+          "strong": "H2740",
+          "pron": "하론카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 4:26",
+        "jeremiah 25:37",
+        "jeremiah 25:38"
       ],
       "glossKo": ""
     }

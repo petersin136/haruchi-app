@@ -1,16 +1,211 @@
 {
   "lemma": "נָשַׂג",
-  "pron": "브얏섹",
+  "pron": "바얏섹",
   "strong": "H5381",
   "posKo": "동사",
   "root": null,
   "family": [],
   "defEn": "reach",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 50,
   "byBook": {
+    "leviticus": 12,
+    "deuteronomy": 4,
     "genesis": 4,
-    "psalms": 4
+    "psalms": 4,
+    "samuel1": 4,
+    "isaiah": 3,
+    "jeremiah": 3,
+    "job": 3,
+    "exodus": 2,
+    "hosea": 2,
+    "chronicles1": 1,
+    "ezekiel": 1,
+    "joshua": 1,
+    "kings2": 1,
+    "lamentations": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "תַּשִּׂ֖יג יָד֑וֹ",
+      "pron": "바얏섹 야도",
+      "lemmas": [
+        "נָשַׂג",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "תַּשִּׂ֖יג",
+          "lemma": "נָשַׂג",
+          "strong": "H5381",
+          "pron": "바얏섹"
+        },
+        {
+          "word": "יָד֑וֹ",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "leviticus 5:11",
+        "leviticus 14:22",
+        "leviticus 14:30",
+        "leviticus 14:31",
+        "leviticus 14:32",
+        "leviticus 25:26",
+        "leviticus 25:47",
+        "leviticus 25:49",
+        "leviticus 27:8",
+        "numbers 6:21",
+        "samuel1 14:26",
+        "ezekiel 46:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִשִּׂ֗יגוּ אֶת",
+      "pron": "바얏섹 에트",
+      "lemmas": [
+        "נָשַׂג",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הִשִּׂ֗יגוּ",
+          "lemma": "נָשַׂג",
+          "strong": "H5381",
+          "pron": "바얏섹"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 47:9",
+        "exodus 14:9",
+        "leviticus 26:5",
+        "kings2 25:5",
+        "jeremiah 39:5",
+        "jeremiah 42:16",
+        "jeremiah 52:8",
+        "hosea 2:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֣א הִשִּׂ֗יגוּ",
+      "pron": "로 바얏섹",
+      "lemmas": [
+        "לֹא",
+        "נָשַׂג"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "הִשִּׂ֗יגוּ",
+          "lemma": "נָשַׂג",
+          "strong": "H5381",
+          "pron": "바얏섹"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 47:9",
+        "leviticus 5:11",
+        "leviticus 14:32",
+        "proverbs 2:19",
+        "isaiah 59:9",
+        "hosea 2:7",
+        "hosea 10:9",
+        "zechariah 1:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֥ר תַּשִּׂ֖יג",
+      "pron": "아셰르 바얏섹",
+      "lemmas": [
+        "אֲשֶׁר",
+        "נָשַׂג"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "תַּשִּׂ֖יג",
+          "lemma": "נָשַׂג",
+          "strong": "H5381",
+          "pron": "바얏섹"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "leviticus 14:22",
+        "leviticus 14:30",
+        "leviticus 14:31",
+        "leviticus 27:8",
+        "numbers 6:21",
+        "ezekiel 46:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֥ר תַּשִּׂ֖יג יָד֑וֹ",
+      "pron": "아셰르 바얏섹 야도",
+      "lemmas": [
+        "אֲשֶׁר",
+        "נָשַׂג",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "תַּשִּׂ֖יג",
+          "lemma": "נָשַׂג",
+          "strong": "H5381",
+          "pron": "바얏섹"
+        },
+        {
+          "word": "יָד֑וֹ",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "leviticus 14:22",
+        "leviticus 14:30",
+        "leviticus 14:31",
+        "leviticus 27:8",
+        "numbers 6:21",
+        "ezekiel 46:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

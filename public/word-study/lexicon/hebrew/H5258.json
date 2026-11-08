@@ -1,6 +1,6 @@
 {
   "lemma": "נָסַךְ",
-  "pron": "나사켓티",
+  "pron": "바얏세크",
   "strong": "H5258",
   "posKo": "동사",
   "root": null,
@@ -8,40 +8,231 @@
     {
       "lemma": "מַסֵּכָה",
       "strong": "H4541",
-      "pron": "르맛세카",
+      "pron": "맛세카",
       "glossKo": "부어 만든 것"
     },
     {
       "lemma": "נְסִיךְ",
       "strong": "H5257",
-      "pron": "네시케모",
+      "pron": "네시캄",
       "glossKo": "그들의 전제로 부은 것"
     },
     {
       "lemma": "נָסַךְ",
       "strong": "H5259",
-      "pron": "",
+      "pron": "아네수카",
       "glossKo": "엮다"
     },
     {
       "lemma": "נְסַךְ",
       "strong": "H5260",
-      "pron": "",
+      "pron": "르낫사카",
       "glossKo": "관제하다(아람)"
     },
     {
       "lemma": "נֶסֶךְ",
       "strong": "H5262",
-      "pron": "닛케헴",
-      "glossKo": "그들의 전제"
+      "pron": "네세크",
+      "glossKo": "전제"
     }
   ],
   "defEn": "pour; cast",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 25,
   "byBook": {
+    "jeremiah": 8,
+    "isaiah": 4,
+    "exodus": 3,
     "psalms": 2,
-    "genesis": 1
+    "chronicles1": 1,
+    "ezekiel": 1,
+    "genesis": 1,
+    "hosea": 1,
+    "kings2": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּלְהַסֵּ֥ךְ נְסָכִ֑ים",
+      "pron": "바얏세크 네세크",
+      "lemmas": [
+        "נָסַךְ",
+        "נֶסֶךְ"
+      ],
+      "words": [
+        {
+          "word": "וּלְהַסֵּ֥ךְ",
+          "lemma": "נָסַךְ",
+          "strong": "H5258",
+          "pron": "바얏세크"
+        },
+        {
+          "word": "נְסָכִ֑ים",
+          "lemma": "נֶסֶךְ",
+          "strong": "H5262",
+          "pron": "네세크"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "numbers 28:7",
+        "psalms 16:4",
+        "jeremiah 7:18",
+        "jeremiah 19:13",
+        "jeremiah 32:29",
+        "jeremiah 44:17",
+        "jeremiah 44:18",
+        "jeremiah 44:19",
+        "jeremiah 44:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשָּׁמַ֔יִם וּלְהַסֵּ֥ךְ",
+      "pron": "샤마임 바얏세크",
+      "lemmas": [
+        "שָׁמַיִם",
+        "נָסַךְ"
+      ],
+      "words": [
+        {
+          "word": "הַשָּׁמַ֔יִם",
+          "lemma": "שָׁמַיִם",
+          "strong": "H8064",
+          "pron": "샤마임"
+        },
+        {
+          "word": "וּלְהַסֵּ֥ךְ",
+          "lemma": "נָסַךְ",
+          "strong": "H5258",
+          "pron": "바얏세크"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "jeremiah 7:18",
+        "jeremiah 19:13",
+        "jeremiah 44:17",
+        "jeremiah 44:18",
+        "jeremiah 44:19",
+        "jeremiah 44:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשָּׁמַ֔יִם וּלְהַסֵּ֥ךְ נְסָכִ֑ים",
+      "pron": "샤마임 바얏세크 네세크",
+      "lemmas": [
+        "שָׁמַיִם",
+        "נָסַךְ",
+        "נֶסֶךְ"
+      ],
+      "words": [
+        {
+          "word": "הַשָּׁמַ֔יִם",
+          "lemma": "שָׁמַיִם",
+          "strong": "H8064",
+          "pron": "샤마임"
+        },
+        {
+          "word": "וּלְהַסֵּ֥ךְ",
+          "lemma": "נָסַךְ",
+          "strong": "H5258",
+          "pron": "바얏세크"
+        },
+        {
+          "word": "נְסָכִ֑ים",
+          "lemma": "נֶסֶךְ",
+          "strong": "H5262",
+          "pron": "네세크"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "jeremiah 7:18",
+        "jeremiah 19:13",
+        "jeremiah 44:17",
+        "jeremiah 44:18",
+        "jeremiah 44:19",
+        "jeremiah 44:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִמְלֶ֣כֶת הַשָּׁמַ֔יִם וּלְהַסֵּ֥ךְ",
+      "pron": "리멜레케트 샤마임 바얏세크",
+      "lemmas": [
+        "מְלֶכֶת",
+        "שָׁמַיִם",
+        "נָסַךְ"
+      ],
+      "words": [
+        {
+          "word": "לִמְלֶ֣כֶת",
+          "lemma": "מְלֶכֶת",
+          "strong": "H4446",
+          "pron": "리멜레케트"
+        },
+        {
+          "word": "הַשָּׁמַ֔יִם",
+          "lemma": "שָׁמַיִם",
+          "strong": "H8064",
+          "pron": "샤마임"
+        },
+        {
+          "word": "וּלְהַסֵּ֥ךְ",
+          "lemma": "נָסַךְ",
+          "strong": "H5258",
+          "pron": "바얏세크"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "jeremiah 7:18",
+        "jeremiah 44:17",
+        "jeremiah 44:18",
+        "jeremiah 44:19",
+        "jeremiah 44:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהַסֵּ֤ךְ נְסָכִים֙ לֵאלֹהִ֣ים",
+      "pron": "바얏세크 네세크 엘로힘",
+      "lemmas": [
+        "נָסַךְ",
+        "נֶסֶךְ",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "וְהַסֵּ֤ךְ",
+          "lemma": "נָסַךְ",
+          "strong": "H5258",
+          "pron": "바얏세크"
+        },
+        {
+          "word": "נְסָכִים֙",
+          "lemma": "נֶסֶךְ",
+          "strong": "H5262",
+          "pron": "네세크"
+        },
+        {
+          "word": "לֵאלֹהִ֣ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 7:18",
+        "jeremiah 19:13",
+        "jeremiah 32:29"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "שְׁכָבָה",
-  "pron": "셰카바",
+  "pron": "시케바트",
   "strong": "H7902",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁכַב",
     "strong": "H7901",
@@ -12,31 +12,170 @@
     {
       "lemma": "מִשְׁכָּב",
       "strong": "H4904",
-      "pron": "미셱캅켐",
-      "glossKo": "너희의 침상"
+      "pron": "미셱케베",
+      "glossKo": "침상"
     },
     {
       "lemma": "שָׁכַב",
       "strong": "H7901",
-      "pron": "샤캅티",
+      "pron": "이셱카부",
       "glossKo": "눕다"
     },
     {
       "lemma": "שְׁכֹבֶת",
       "strong": "H7903",
-      "pron": "",
-      "glossKo": "누움"
+      "pron": "셰캅테카",
+      "glossKo": "너의 누움"
     },
     {
       "lemma": "שָׁכַן",
       "strong": "H7931",
-      "pron": "야셱켄",
+      "pron": "바야셱켄",
       "glossKo": "거주하다"
     }
   ],
   "defEn": "lying",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "leviticus": 6,
+    "exodus": 2,
+    "numbers": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "שִׁכְבַת זָ֑רַע",
+      "pron": "시케바트 제라",
+      "lemmas": [
+        "שְׁכָבָה",
+        "זֶרַע"
+      ],
+      "words": [
+        {
+          "word": "שִׁכְבַת",
+          "lemma": "שְׁכָבָה",
+          "strong": "H7902",
+          "pron": "시케바트"
+        },
+        {
+          "word": "זָ֑רַע",
+          "lemma": "זֶרַע",
+          "strong": "H2233",
+          "pron": "제라"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 15:16",
+        "leviticus 15:17",
+        "leviticus 15:18",
+        "leviticus 15:32",
+        "leviticus 19:20",
+        "leviticus 22:4",
+        "numbers 5:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִמֶּ֖נּוּ שִׁכְבַת",
+      "pron": "민 시케바트",
+      "lemmas": [
+        "מִן",
+        "שְׁכָבָה"
+      ],
+      "words": [
+        {
+          "word": "מִמֶּ֖נּוּ",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        },
+        {
+          "word": "שִׁכְבַת",
+          "lemma": "שְׁכָבָה",
+          "strong": "H7902",
+          "pron": "시케바트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 15:16",
+        "leviticus 15:32",
+        "leviticus 22:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִמֶּ֖נּוּ שִׁכְבַת זָ֑רַע",
+      "pron": "민 시케바트 제라",
+      "lemmas": [
+        "מִן",
+        "שְׁכָבָה",
+        "זֶרַע"
+      ],
+      "words": [
+        {
+          "word": "מִמֶּ֖נּוּ",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        },
+        {
+          "word": "שִׁכְבַת",
+          "lemma": "שְׁכָבָה",
+          "strong": "H7902",
+          "pron": "시케바트"
+        },
+        {
+          "word": "זָ֑רַע",
+          "lemma": "זֶרַע",
+          "strong": "H2233",
+          "pron": "제라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 15:16",
+        "leviticus 15:32",
+        "leviticus 22:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תֵצֵ֥א מִמֶּ֖נּוּ שִׁכְבַת",
+      "pron": "바토체 민 시케바트",
+      "lemmas": [
+        "יָצָא",
+        "מִן",
+        "שְׁכָבָה"
+      ],
+      "words": [
+        {
+          "word": "תֵצֵ֥א",
+          "lemma": "יָצָא",
+          "strong": "H3318",
+          "pron": "바토체"
+        },
+        {
+          "word": "מִמֶּ֖נּוּ",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        },
+        {
+          "word": "שִׁכְבַת",
+          "lemma": "שְׁכָבָה",
+          "strong": "H7902",
+          "pron": "시케바트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 15:16",
+        "leviticus 15:32",
+        "leviticus 22:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

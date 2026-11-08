@@ -1,6 +1,6 @@
 {
   "lemma": "נָקָם",
-  "pron": "나캄",
+  "pron": "네캄",
   "strong": "H5359",
   "posKo": "명사",
   "root": {
@@ -12,21 +12,91 @@
     {
       "lemma": "נָקַם",
       "strong": "H5358",
-      "pron": "우미테낙켐",
-      "glossKo": "보복하는 이"
+      "pron": "육캄",
+      "glossKo": "보복하다"
     },
     {
       "lemma": "נְקָמָה",
       "strong": "H5360",
-      "pron": "네카모트",
+      "pron": "니케마트",
       "glossKo": "보복"
     }
   ],
   "defEn": "revenge",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 17,
   "byBook": {
+    "isaiah": 6,
+    "deuteronomy": 3,
+    "ezekiel": 3,
+    "judges": 1,
+    "leviticus": 1,
+    "micah": 1,
+    "proverbs": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נֹקֶ֨מֶת֙ נְקַם",
+      "pron": "육캄 네캄",
+      "lemmas": [
+        "נָקַם",
+        "נָקָם"
+      ],
+      "words": [
+        {
+          "word": "נֹקֶ֨מֶת֙",
+          "lemma": "נָקַם",
+          "strong": "H5358",
+          "pron": "육캄"
+        },
+        {
+          "word": "נְקַם",
+          "lemma": "נָקָם",
+          "strong": "H5359",
+          "pron": "네캄"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "leviticus 26:25",
+        "deuteronomy 32:43",
+        "judges 16:28",
+        "ezekiel 24:8",
+        "ezekiel 25:12",
+        "ezekiel 25:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "י֥וֹם נָקָ֖ם",
+      "pron": "욤 네캄",
+      "lemmas": [
+        "יוֹם",
+        "נָקָם"
+      ],
+      "words": [
+        {
+          "word": "י֥וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "נָקָ֖ם",
+          "lemma": "נָקָם",
+          "strong": "H5359",
+          "pron": "네캄"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "proverbs 6:34",
+        "isaiah 34:8",
+        "isaiah 61:2",
+        "isaiah 63:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

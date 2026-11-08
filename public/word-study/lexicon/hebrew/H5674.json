@@ -1,6 +1,6 @@
 {
   "lemma": "עָבַר",
-  "pron": "오베르",
+  "pron": "바야아베르",
   "strong": "H5674",
   "posKo": "동사",
   "root": null,
@@ -14,8 +14,8 @@
     {
       "lemma": "עָבוּר",
       "strong": "H5668",
-      "pron": "바아부르",
-      "glossKo": "~때문에"
+      "pron": "바아부레카",
+      "glossKo": "너의 ~때문에"
     },
     {
       "lemma": "עֵבֶר",
@@ -26,31 +26,65 @@
     {
       "lemma": "עֲבָרָה",
       "strong": "H5679",
-      "pron": "",
+      "pron": "브블브트",
       "glossKo": "건넘"
     }
   ],
   "defEn": "cross; transition; cover",
   "defKo": "",
-  "countOT": 57,
+  "countOT": 562,
   "byBook": {
+    "joshua": 58,
+    "deuteronomy": 49,
+    "samuel2": 49,
+    "ezekiel": 37,
+    "numbers": 37,
+    "isaiah": 36,
     "psalms": 33,
-    "genesis": 24
+    "jeremiah": 28,
+    "samuel1": 26,
+    "genesis": 24,
+    "judges": 23,
+    "kings2": 18,
+    "job": 17,
+    "exodus": 15,
+    "proverbs": 15,
+    "chronicles2": 12,
+    "kings1": 12,
+    "esther": 7,
+    "amos": 6,
+    "micah": 6,
+    "zechariah": 6,
+    "leviticus": 5,
+    "nahum": 5,
+    "nehemiah": 5,
+    "songofsolomon": 5,
+    "chronicles1": 4,
+    "daniel": 4,
+    "lamentations": 4,
+    "hosea": 3,
+    "zephaniah": 3,
+    "ezra": 2,
+    "habakkuk": 2,
+    "jonah": 2,
+    "ruth": 2,
+    "ecclesiastes": 1,
+    "joel": 1
   },
   "phrases": [
     {
-      "hebrew": "וַיַּעֲבֹ֣ר אֶת",
-      "pron": "오베르 에트",
+      "hebrew": "עֹבְרִ֧ים אֶת",
+      "pron": "바야아베르 에트",
       "lemmas": [
         "עָבַר",
         "אֵת"
       ],
       "words": [
         {
-          "word": "וַיַּעֲבֹ֣ר",
+          "word": "עֹבְרִ֧ים",
           "lemma": "עָבַר",
           "strong": "H5674",
-          "pron": "오베르"
+          "pron": "바야아베르"
         },
         {
           "word": "אֶת",
@@ -59,30 +93,36 @@
           "pron": "에트"
         }
       ],
-      "count": 7,
+      "count": 81,
       "refs": [
         "genesis 31:21",
         "genesis 32:10",
         "genesis 32:22",
         "genesis 32:23",
         "genesis 32:31",
-        "genesis 47:21"
+        "genesis 47:21",
+        "numbers 14:41",
+        "numbers 22:18",
+        "numbers 24:13",
+        "numbers 27:7",
+        "numbers 27:8",
+        "numbers 32:5"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "עָבַ֥ר עַל",
-      "pron": "오베르 알",
+      "hebrew": "הָעֹבֵר֙ עַל",
+      "pron": "바야아베르 알",
       "lemmas": [
         "עָבַר",
         "עַל"
       ],
       "words": [
         {
-          "word": "עָבַ֥ר",
+          "word": "הָעֹבֵר֙",
           "lemma": "עָבַר",
           "strong": "H5674",
-          "pron": "오베르"
+          "pron": "바야아베르"
         },
         {
           "word": "עַל",
@@ -91,40 +131,141 @@
           "pron": "알"
         }
       ],
-      "count": 4,
+      "count": 45,
       "refs": [
-        "psalms 124:4",
-        "psalms 124:5",
         "genesis 18:3",
-        "genesis 18:5"
+        "genesis 18:5",
+        "exodus 30:13",
+        "exodus 30:14",
+        "exodus 38:26",
+        "numbers 5:14",
+        "numbers 5:30",
+        "numbers 6:5",
+        "deuteronomy 24:5",
+        "judges 9:25",
+        "samuel1 14:4",
+        "samuel2 15:18"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְלֹ֣א יַעֲבֽוֹר",
-      "pron": "로 오베르",
+      "hebrew": "לֹ֥א תַעֲבֹ֖ר",
+      "pron": "로 바야아베르",
       "lemmas": [
         "לֹא",
         "עָבַר"
       ],
       "words": [
         {
-          "word": "וְלֹ֣א",
+          "word": "לֹ֥א",
           "lemma": "לֹא",
           "strong": "H3808",
           "pron": "로"
         },
         {
-          "word": "יַעֲבֽוֹר",
+          "word": "תַעֲבֹ֖ר",
           "lemma": "עָבַר",
           "strong": "H5674",
-          "pron": "오베르"
+          "pron": "바야아베르"
         }
       ],
-      "count": 3,
+      "count": 38,
       "refs": [
-        "psalms 148:6",
-        "genesis 31:52"
+        "genesis 31:52",
+        "leviticus 26:6",
+        "numbers 6:5",
+        "numbers 20:17",
+        "numbers 20:18",
+        "numbers 20:20",
+        "numbers 32:30",
+        "deuteronomy 3:27",
+        "deuteronomy 24:5",
+        "deuteronomy 26:13",
+        "deuteronomy 31:2",
+        "deuteronomy 34:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֹבְרִ֧ים אֶת הַיַּרְדֵּ֛ן",
+      "pron": "바야아베르 에트 아야렏덴",
+      "lemmas": [
+        "עָבַר",
+        "אֵת",
+        "יַרְדֵּן"
+      ],
+      "words": [
+        {
+          "word": "עֹבְרִ֧ים",
+          "lemma": "עָבַר",
+          "strong": "H5674",
+          "pron": "바야아베르"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַיַּרְדֵּ֛ן",
+          "lemma": "יַרְדֵּן",
+          "strong": "H3383",
+          "pron": "아야렏덴"
+        }
+      ],
+      "count": 32,
+      "refs": [
+        "genesis 32:10",
+        "numbers 32:5",
+        "numbers 33:51",
+        "numbers 35:10",
+        "deuteronomy 2:29",
+        "deuteronomy 3:27",
+        "deuteronomy 4:21",
+        "deuteronomy 4:22",
+        "deuteronomy 4:26",
+        "deuteronomy 11:31",
+        "deuteronomy 12:10",
+        "deuteronomy 27:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַֽעֲב֑וֹר וַיַּעֲבֹ֧ר",
+      "pron": "바야아베르 바야아베르",
+      "lemmas": [
+        "עָבַר",
+        "עָבַר"
+      ],
+      "words": [
+        {
+          "word": "לַֽעֲב֑וֹר",
+          "lemma": "עָבַר",
+          "strong": "H5674",
+          "pron": "바야아베르"
+        },
+        {
+          "word": "וַיַּעֲבֹ֧ר",
+          "lemma": "עָבַר",
+          "strong": "H5674",
+          "pron": "바야아베르"
+        }
+      ],
+      "count": 26,
+      "refs": [
+        "joshua 4:11",
+        "joshua 5:1",
+        "joshua 7:7",
+        "samuel2 15:22",
+        "samuel2 17:16",
+        "samuel2 19:40",
+        "proverbs 26:17",
+        "isaiah 26:20",
+        "isaiah 28:15",
+        "isaiah 62:10",
+        "ezekiel 39:15",
+        "ezekiel 48:14"
       ],
       "glossKo": ""
     }

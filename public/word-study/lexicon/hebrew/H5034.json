@@ -1,6 +1,6 @@
 {
   "lemma": "נָבֵל",
-  "pron": "입볼",
+  "pron": "나볼",
   "strong": "H5034",
   "posKo": "동사",
   "root": null,
@@ -20,15 +20,84 @@
     {
       "lemma": "נְבֵלָה",
       "strong": "H5038",
-      "pron": "닙라트",
+      "pron": "브닙라트",
       "glossKo": "시체"
     }
   ],
   "defEn": "wilt; fall; fail; faint; be foolish; wicked; despise; disgrace",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 25,
   "byBook": {
-    "psalms": 3
+    "isaiah": 11,
+    "psalms": 3,
+    "exodus": 2,
+    "jeremiah": 2,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "job": 1,
+    "micah": 1,
+    "nahum": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נָבֹ֣ל תִּבֹּ֔ל",
+      "pron": "나볼 나볼",
+      "lemmas": [
+        "נָבֵל",
+        "נָבֵל"
+      ],
+      "words": [
+        {
+          "word": "נָבֹ֣ל",
+          "lemma": "נָבֵל",
+          "strong": "H5034",
+          "pron": "나볼"
+        },
+        {
+          "word": "תִּבֹּ֔ל",
+          "lemma": "נָבֵל",
+          "strong": "H5034",
+          "pron": "나볼"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 18:18",
+        "isaiah 34:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נֹבֶ֣לֶת עָלֶ֑הָ",
+      "pron": "나볼 알레",
+      "lemmas": [
+        "נָבֵל",
+        "עָלֶה"
+      ],
+      "words": [
+        {
+          "word": "נֹבֶ֣לֶת",
+          "lemma": "נָבֵל",
+          "strong": "H5034",
+          "pron": "나볼"
+        },
+        {
+          "word": "עָלֶ֑הָ",
+          "lemma": "עָלֶה",
+          "strong": "H5929",
+          "pron": "알레"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 1:30",
+        "isaiah 34:4",
+        "isaiah 64:6",
+        "ezekiel 47:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

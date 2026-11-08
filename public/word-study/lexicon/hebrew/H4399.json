@@ -1,6 +1,6 @@
 {
   "lemma": "מְלָאכָה",
-  "pron": "말아코테카",
+  "pron": "멜라켓토",
   "strong": "H4399",
   "posKo": "명사",
   "root": {
@@ -18,62 +18,52 @@
     {
       "lemma": "מַלְאַךְ",
       "strong": "H4398",
-      "pron": "",
-      "glossKo": "천사(아람)"
+      "pron": "말아케흐",
+      "glossKo": "그의 천사(아람)"
     },
     {
       "lemma": "מַלְאֲכוּת",
       "strong": "H4400",
-      "pron": "",
+      "pron": "브말아쿠트",
       "glossKo": "사역"
     },
     {
       "lemma": "מַלְאָכִי",
       "strong": "H4401",
-      "pron": "",
+      "pron": "말아키",
       "glossKo": "말라기"
     }
   ],
   "defEn": "deputyship; ministry; employment; work",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 167,
   "byBook": {
+    "exodus": 33,
+    "nehemiah": 22,
+    "chronicles1": 20,
+    "chronicles2": 16,
+    "leviticus": 16,
+    "kings1": 10,
+    "numbers": 8,
+    "kings2": 6,
+    "ezekiel": 5,
+    "ezra": 5,
     "genesis": 5,
-    "psalms": 2
+    "jeremiah": 5,
+    "deuteronomy": 3,
+    "proverbs": 3,
+    "esther": 2,
+    "psalms": 2,
+    "samuel1": 2,
+    "daniel": 1,
+    "haggai": 1,
+    "jonah": 1,
+    "judges": 1
   },
   "phrases": [
     {
-      "hebrew": "מְלַאכְתּ֖וֹ אֲשֶׁ֣ר",
-      "pron": "말아코테카 아셰르",
-      "lemmas": [
-        "מְלָאכָה",
-        "אֲשֶׁר"
-      ],
-      "words": [
-        {
-          "word": "מְלַאכְתּ֖וֹ",
-          "lemma": "מְלָאכָה",
-          "strong": "H4399",
-          "pron": "말아코테카"
-        },
-        {
-          "word": "אֲשֶׁ֣ר",
-          "lemma": "אֲשֶׁר",
-          "strong": "H834",
-          "pron": "아셰르"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 2:2",
-        "genesis 2:3",
-        "genesis 33:14"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "כָּל מַלְאֲכוֹתֶֽיךָ",
-      "pron": "브콜 말아코테카",
+      "hebrew": "כָּל מְלֶ֥אכֶת",
+      "pron": "칼 멜라켓토",
       "lemmas": [
         "כֹּל",
         "מְלָאכָה"
@@ -83,20 +73,188 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
-          "word": "מַלְאֲכוֹתֶֽיךָ",
+          "word": "מְלֶ֥אכֶת",
           "lemma": "מְלָאכָה",
           "strong": "H4399",
-          "pron": "말아코테카"
+          "pron": "멜라켓토"
         }
       ],
-      "count": 3,
+      "count": 59,
       "refs": [
-        "psalms 73:28",
         "genesis 2:2",
-        "genesis 2:3"
+        "genesis 2:3",
+        "exodus 12:16",
+        "exodus 20:9",
+        "exodus 20:10",
+        "exodus 31:3",
+        "exodus 31:5",
+        "exodus 35:24",
+        "exodus 35:29",
+        "exodus 35:31",
+        "exodus 35:33",
+        "exodus 35:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֹשֵׂ֣י הַמְּלָאכָ֔ה",
+      "pron": "바야아스 멜라켓토",
+      "lemmas": [
+        "עָשָׂה",
+        "מְלָאכָה"
+      ],
+      "words": [
+        {
+          "word": "עֹשֵׂ֣י",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "הַמְּלָאכָ֔ה",
+          "lemma": "מְלָאכָה",
+          "strong": "H4399",
+          "pron": "멜라켓토"
+        }
+      ],
+      "count": 48,
+      "refs": [
+        "genesis 39:11",
+        "exodus 31:14",
+        "exodus 31:15",
+        "exodus 35:2",
+        "exodus 36:8",
+        "exodus 38:24",
+        "leviticus 11:32",
+        "leviticus 23:3",
+        "numbers 4:3",
+        "deuteronomy 16:8",
+        "judges 16:11",
+        "samuel1 8:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְלֶ֥אכֶת עֲבֹדָ֖ה",
+      "pron": "멜라켓토 바아보다",
+      "lemmas": [
+        "מְלָאכָה",
+        "עֲבֹדָה"
+      ],
+      "words": [
+        {
+          "word": "מְלֶ֥אכֶת",
+          "lemma": "מְלָאכָה",
+          "strong": "H4399",
+          "pron": "멜라켓토"
+        },
+        {
+          "word": "עֲבֹדָ֖ה",
+          "lemma": "עֲבֹדָה",
+          "strong": "H5656",
+          "pron": "바아보다"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "exodus 35:24",
+        "exodus 36:1",
+        "exodus 36:3",
+        "leviticus 23:7",
+        "leviticus 23:8",
+        "leviticus 23:21",
+        "leviticus 23:25",
+        "leviticus 23:35",
+        "leviticus 23:36",
+        "numbers 28:18",
+        "numbers 28:25",
+        "numbers 28:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל מְלֶ֥אכֶת עֲבֹדָ֖ה",
+      "pron": "칼 멜라켓토 바아보다",
+      "lemmas": [
+        "כֹּל",
+        "מְלָאכָה",
+        "עֲבֹדָה"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מְלֶ֥אכֶת",
+          "lemma": "מְלָאכָה",
+          "strong": "H4399",
+          "pron": "멜라켓토"
+        },
+        {
+          "word": "עֲבֹדָ֖ה",
+          "lemma": "עֲבֹדָה",
+          "strong": "H5656",
+          "pron": "바아보다"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "exodus 35:24",
+        "exodus 36:1",
+        "leviticus 23:7",
+        "leviticus 23:8",
+        "leviticus 23:21",
+        "leviticus 23:25",
+        "leviticus 23:35",
+        "leviticus 23:36",
+        "numbers 28:18",
+        "numbers 28:25",
+        "numbers 28:26",
+        "numbers 29:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַמְּלָאכָ֔ה אֲשֶׁ֥ר",
+      "pron": "멜라켓토 아셰르",
+      "lemmas": [
+        "מְלָאכָה",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הַמְּלָאכָ֔ה",
+          "lemma": "מְלָאכָה",
+          "strong": "H4399",
+          "pron": "멜라켓토"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "genesis 2:2",
+        "genesis 2:3",
+        "genesis 33:14",
+        "exodus 35:29",
+        "exodus 36:4",
+        "exodus 36:5",
+        "kings1 7:40",
+        "kings1 7:51",
+        "kings2 22:5",
+        "chronicles2 4:11",
+        "chronicles2 5:1",
+        "chronicles2 34:10"
       ],
       "glossKo": ""
     }

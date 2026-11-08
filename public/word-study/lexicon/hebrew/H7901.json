@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁכַב",
-  "pron": "샤캅티",
+  "pron": "이셱카부",
   "strong": "H7901",
   "posKo": "동사",
   "root": null,
@@ -8,58 +8,82 @@
     {
       "lemma": "מִשְׁכָּב",
       "strong": "H4904",
-      "pron": "미셱캅켐",
-      "glossKo": "너희의 침상"
+      "pron": "미셱케베",
+      "glossKo": "침상"
     },
     {
       "lemma": "שְׁכָבָה",
       "strong": "H7902",
-      "pron": "",
+      "pron": "시케바트",
       "glossKo": "동침"
     },
     {
       "lemma": "שְׁכֹבֶת",
       "strong": "H7903",
-      "pron": "",
-      "glossKo": "누움"
+      "pron": "셰캅테카",
+      "glossKo": "너의 누움"
     },
     {
       "lemma": "שָׁכַן",
       "strong": "H7931",
-      "pron": "야셱켄",
+      "pron": "바야셱켄",
       "glossKo": "거주하다"
     }
   ],
   "defEn": "lie down",
   "defKo": "",
-  "countOT": 27,
+  "countOT": 213,
   "byBook": {
     "genesis": 21,
-    "psalms": 6
+    "kings1": 21,
+    "kings2": 19,
+    "samuel2": 18,
+    "deuteronomy": 17,
+    "leviticus": 17,
+    "ezekiel": 13,
+    "samuel1": 13,
+    "chronicles2": 12,
+    "job": 11,
+    "ruth": 9,
+    "proverbs": 8,
+    "isaiah": 7,
+    "psalms": 6,
+    "numbers": 4,
+    "exodus": 3,
+    "ecclesiastes": 2,
+    "jeremiah": 2,
+    "joshua": 2,
+    "judges": 2,
+    "amos": 1,
+    "hosea": 1,
+    "jonah": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "וְנִשְׁכְּבָ֣ה עִמּ֑וֹ",
-      "pron": "샤캅티 임오",
+      "hebrew": "וְשָׁכַ֣ב עִמָּ֑הּ",
+      "pron": "이셱카부 임마흐",
       "lemmas": [
         "שָׁכַב",
         "עִם"
       ],
       "words": [
         {
-          "word": "וְנִשְׁכְּבָ֣ה",
+          "word": "וְשָׁכַ֣ב",
           "lemma": "שָׁכַב",
           "strong": "H7901",
-          "pron": "샤캅티"
+          "pron": "이셱카부"
         },
         {
-          "word": "עִמּ֑וֹ",
+          "word": "עִמָּ֑הּ",
           "lemma": "עִם",
           "strong": "H5973",
-          "pron": "임오"
+          "pron": "임마흐"
         }
       ],
-      "count": 9,
+      "count": 30,
       "refs": [
         "genesis 19:32",
         "genesis 19:34",
@@ -69,23 +93,102 @@
         "genesis 39:7",
         "genesis 39:12",
         "genesis 39:14",
-        "genesis 47:30"
+        "genesis 47:30",
+        "exodus 22:16",
+        "exodus 22:19",
+        "leviticus 15:33"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַתִּשְׁכַּ֣ב אֶת",
-      "pron": "샤캅티 에트",
+      "hebrew": "שֹׁכֵ֣ב עָלֶ֔יהָ",
+      "pron": "이셱카부 알",
+      "lemmas": [
+        "שָׁכַב",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "שֹׁכֵ֣ב",
+          "lemma": "שָׁכַב",
+          "strong": "H7901",
+          "pron": "이셱카부"
+        },
+        {
+          "word": "עָלֶ֔יהָ",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "genesis 28:13",
+        "leviticus 15:4",
+        "leviticus 15:20",
+        "leviticus 15:24",
+        "leviticus 15:26",
+        "samuel2 4:7",
+        "samuel2 13:5",
+        "kings1 3:19",
+        "kings1 17:19",
+        "kings1 21:4",
+        "kings2 4:21",
+        "kings2 4:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֤ר יִשְׁכַּב֙",
+      "pron": "아셰르 이셱카부",
+      "lemmas": [
+        "אֲשֶׁר",
+        "שָׁכַב"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֤ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יִשְׁכַּב֙",
+          "lemma": "שָׁכַב",
+          "strong": "H7901",
+          "pron": "이셱카부"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "leviticus 15:4",
+        "leviticus 15:18",
+        "leviticus 15:20",
+        "leviticus 15:24",
+        "leviticus 15:26",
+        "leviticus 15:33",
+        "leviticus 20:11",
+        "leviticus 20:12",
+        "leviticus 20:13",
+        "leviticus 20:18",
+        "leviticus 20:20",
+        "deuteronomy 22:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִשְׁכַּב֙ אֶת",
+      "pron": "이셱카부 에트",
       "lemmas": [
         "שָׁכַב",
         "אֵת"
       ],
       "words": [
         {
-          "word": "וַתִּשְׁכַּ֣ב",
+          "word": "יִשְׁכַּב֙",
           "lemma": "שָׁכַב",
           "strong": "H7901",
-          "pron": "샤캅티"
+          "pron": "이셱카부"
         },
         {
           "word": "אֶת",
@@ -94,11 +197,60 @@
           "pron": "에트"
         }
       ],
-      "count": 3,
+      "count": 16,
       "refs": [
         "genesis 19:33",
         "genesis 34:7",
-        "genesis 35:22"
+        "genesis 35:22",
+        "leviticus 19:20",
+        "leviticus 20:11",
+        "leviticus 20:12",
+        "leviticus 20:13",
+        "leviticus 20:18",
+        "leviticus 20:20",
+        "samuel1 2:22",
+        "samuel2 7:12",
+        "ezekiel 31:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאִ֗ישׁ אֲשֶׁ֤ר יִשְׁכַּב֙",
+      "pron": "메이쉬 아셰르 이셱카부",
+      "lemmas": [
+        "אִישׁ",
+        "אֲשֶׁר",
+        "שָׁכַב"
+      ],
+      "words": [
+        {
+          "word": "וְאִ֗ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "אֲשֶׁ֤ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יִשְׁכַּב֙",
+          "lemma": "שָׁכַב",
+          "strong": "H7901",
+          "pron": "이셱카부"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 15:33",
+        "leviticus 20:11",
+        "leviticus 20:12",
+        "leviticus 20:13",
+        "leviticus 20:18",
+        "leviticus 20:20",
+        "deuteronomy 22:25"
       ],
       "glossKo": ""
     }

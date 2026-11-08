@@ -2,7 +2,7 @@
   "lemma": "רֶבַע",
   "pron": "레바",
   "strong": "H7253",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רָבַע",
     "strong": "H7251",
@@ -24,25 +24,103 @@
     {
       "lemma": "רָבַע",
       "strong": "H7251",
-      "pron": "",
+      "pron": "라부아",
       "glossKo": "사각형"
+    },
+    {
+      "lemma": "רֶבַע",
+      "strong": "H7254",
+      "pron": "레바",
+      "glossKo": "레바"
     },
     {
       "lemma": "רֹבַע",
       "strong": "H7255",
-      "pron": "",
+      "pron": "로바",
       "glossKo": "사 분의 일"
     },
     {
       "lemma": "רִבֵּעַ",
       "strong": "H7256",
-      "pron": "",
+      "pron": "립베임",
       "glossKo": "네 번째"
     }
   ],
   "defEn": "fourth",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 8,
+  "byBook": {
+    "ezekiel": 5,
+    "exodus": 2,
+    "samuel1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אַרְבַּ֣עַת רִבְעֵיהֶ֑ם",
+      "pron": "르아렙바아 레바",
+      "lemmas": [
+        "אַרְבַּע",
+        "רֶבַע"
+      ],
+      "words": [
+        {
+          "word": "אַרְבַּ֣עַת",
+          "lemma": "אַרְבַּע",
+          "strong": "H702",
+          "pron": "르아렙바아"
+        },
+        {
+          "word": "רִבְעֵיהֶ֑ם",
+          "lemma": "רֶבַע",
+          "strong": "H7253",
+          "pron": "레바"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezekiel 1:8",
+        "ezekiel 1:17",
+        "ezekiel 10:11",
+        "ezekiel 43:16",
+        "ezekiel 43:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל אַרְבַּ֤עַת רִבְעֵיהֶם֙",
+      "pron": "엘 르아렙바아 레바",
+      "lemmas": [
+        "אֵל",
+        "אַרְבַּע",
+        "רֶבַע"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "אַרְבַּ֤עַת",
+          "lemma": "אַרְבַּע",
+          "strong": "H702",
+          "pron": "르아렙바아"
+        },
+        {
+          "word": "רִבְעֵיהֶם֙",
+          "lemma": "רֶבַע",
+          "strong": "H7253",
+          "pron": "레바"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 10:11",
+        "ezekiel 43:16",
+        "ezekiel 43:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

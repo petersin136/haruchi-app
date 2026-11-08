@@ -12,15 +12,23 @@
     {
       "lemma": "כָּתֵף",
       "strong": "H3802",
-      "pron": "",
+      "pron": "라카텝",
       "glossKo": "어깨"
     }
   ],
   "defEn": "shirt",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 29,
   "byBook": {
-    "genesis": 9
+    "genesis": 9,
+    "exodus": 7,
+    "leviticus": 4,
+    "samuel2": 3,
+    "nehemiah": 2,
+    "ezra": 1,
+    "isaiah": 1,
+    "job": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
@@ -44,11 +52,16 @@
           "pron": "카테노트"
         }
       ],
-      "count": 5,
+      "count": 10,
       "refs": [
         "genesis 37:23",
         "genesis 37:31",
-        "genesis 37:32"
+        "genesis 37:32",
+        "exodus 29:5",
+        "exodus 39:27",
+        "exodus 40:14",
+        "leviticus 8:7",
+        "songofsolomon 5:3"
       ],
       "glossKo": ""
     },
@@ -73,11 +86,71 @@
           "pron": "팟심"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
         "genesis 37:3",
         "genesis 37:23",
-        "genesis 37:32"
+        "genesis 37:32",
+        "samuel2 13:18",
+        "samuel2 13:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהִלְבַּשְׁתָּ֖ם כֻּתֳּנֹֽת",
+      "pron": "바알비솀 카테노트",
+      "lemmas": [
+        "לָבַשׁ",
+        "כְּתֹנֶת"
+      ],
+      "words": [
+        {
+          "word": "וְהִלְבַּשְׁתָּ֖ם",
+          "lemma": "לָבַשׁ",
+          "strong": "H3847",
+          "pron": "바알비솀"
+        },
+        {
+          "word": "כֻּתֳּנֹֽת",
+          "lemma": "כְּתֹנֶת",
+          "strong": "H3801",
+          "pron": "카테노트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 29:8",
+        "leviticus 8:13",
+        "isaiah 22:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְכָתְנֹ֥ת כֹּהֲנִ֖ים",
+      "pron": "카테노트 코헨",
+      "lemmas": [
+        "כְּתֹנֶת",
+        "כֹּהֵן"
+      ],
+      "words": [
+        {
+          "word": "וְכָתְנֹ֥ת",
+          "lemma": "כְּתֹנֶת",
+          "strong": "H3801",
+          "pron": "카테노트"
+        },
+        {
+          "word": "כֹּהֲנִ֖ים",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 2:69",
+        "nehemiah 7:70",
+        "nehemiah 7:72"
       ],
       "glossKo": ""
     }

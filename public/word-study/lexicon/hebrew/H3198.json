@@ -1,6 +1,6 @@
 {
   "lemma": "יָכַח",
-  "pron": "토키헤니",
+  "pron": "브노카하트",
   "strong": "H3198",
   "posKo": "동사",
   "root": null,
@@ -8,16 +8,152 @@
     {
       "lemma": "תּוֹכֵחָה",
       "strong": "H8433",
-      "pron": "토카호트",
+      "pron": "브토케하",
       "glossKo": "책망"
     }
   ],
   "defEn": "be right; argue; decide; justify; convict",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 59,
   "byBook": {
+    "job": 17,
+    "proverbs": 10,
     "psalms": 7,
-    "genesis": 6
+    "genesis": 6,
+    "isaiah": 6,
+    "chronicles1": 2,
+    "leviticus": 2,
+    "micah": 2,
+    "amos": 1,
+    "ezekiel": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "jeremiah": 1,
+    "kings2": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הוֹכֵ֤חַ תּוֹכִ֨יחַ֙",
+      "pron": "브노카하트 브노카하트",
+      "lemmas": [
+        "יָכַח",
+        "יָכַח"
+      ],
+      "words": [
+        {
+          "word": "הוֹכֵ֤חַ",
+          "lemma": "יָכַח",
+          "strong": "H3198",
+          "pron": "브노카하트"
+        },
+        {
+          "word": "תּוֹכִ֨יחַ֙",
+          "lemma": "יָכַח",
+          "strong": "H3198",
+          "pron": "브노카하트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "leviticus 19:17",
+        "job 6:25",
+        "job 13:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הוֹכֵ֤חַ תּוֹכִ֨יחַ֙ אֶת",
+      "pron": "브노카하트 브노카하트 에트",
+      "lemmas": [
+        "יָכַח",
+        "יָכַח",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הוֹכֵ֤חַ",
+          "lemma": "יָכַח",
+          "strong": "H3198",
+          "pron": "브노카하트"
+        },
+        {
+          "word": "תּוֹכִ֨יחַ֙",
+          "lemma": "יָכַח",
+          "strong": "H3198",
+          "pron": "브노카하트"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 19:17",
+        "job 13:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהוֹכִ֨יחַ֙ בַּדְּבָרִ֔ים",
+      "pron": "브노카하트 우데바림",
+      "lemmas": [
+        "יָכַח",
+        "דָּבָר"
+      ],
+      "words": [
+        {
+          "word": "וְהוֹכִ֨יחַ֙",
+          "lemma": "יָכַח",
+          "strong": "H3198",
+          "pron": "브노카하트"
+        },
+        {
+          "word": "בַּדְּבָרִ֔ים",
+          "lemma": "דָּבָר",
+          "strong": "H1697",
+          "pron": "우데바림"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 19:4",
+        "job 15:3",
+        "isaiah 37:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיּ֥וֹכַח עֲלֵיהֶ֖ם",
+      "pron": "브노카하트 알",
+      "lemmas": [
+        "יָכַח",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "וַיּ֥וֹכַח",
+          "lemma": "יָכַח",
+          "strong": "H3198",
+          "pron": "브노카하트"
+        },
+        {
+          "word": "עֲלֵיהֶ֖ם",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 16:21",
+        "job 19:5",
+        "psalms 105:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

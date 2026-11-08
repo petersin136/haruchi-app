@@ -2,7 +2,7 @@
   "lemma": "אַיָּלוֹן",
   "pron": "아알론",
   "strong": "H357",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אַיָּל",
     "strong": "H354",
@@ -12,19 +12,123 @@
     {
       "lemma": "אַיָּל",
       "strong": "H354",
-      "pron": "크아알",
+      "pron": "브카아알",
       "glossKo": "사슴"
     },
     {
       "lemma": "אַיָּלָה",
       "strong": "H355",
-      "pron": "카아알로트",
+      "pron": "아알라",
       "glossKo": "암사슴"
     }
   ],
   "defEn": "Ajalon",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 10,
+  "byBook": {
+    "joshua": 3,
+    "chronicles1": 2,
+    "chronicles2": 2,
+    "judges": 2,
+    "samuel1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אַיָּלוֹן֙ וְאֶת",
+      "pron": "아알론 에트",
+      "lemmas": [
+        "אַיָּלוֹן",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "אַיָּלוֹן֙",
+          "lemma": "אַיָּלוֹן",
+          "strong": "H357",
+          "pron": "아알론"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 21:24",
+        "chronicles1 6:69",
+        "chronicles2 11:10",
+        "chronicles2 28:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת אַיָּלוֹן֙",
+      "pron": "에트 아알론",
+      "lemmas": [
+        "אֵת",
+        "אַיָּלוֹן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "אַיָּלוֹן֙",
+          "lemma": "אַיָּלוֹן",
+          "strong": "H357",
+          "pron": "아알론"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 21:24",
+        "chronicles1 6:69",
+        "chronicles2 11:10",
+        "chronicles2 28:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת אַיָּלוֹן֙ וְאֶת",
+      "pron": "에트 아알론 에트",
+      "lemmas": [
+        "אֵת",
+        "אַיָּלוֹן",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "אַיָּלוֹן֙",
+          "lemma": "אַיָּלוֹן",
+          "strong": "H357",
+          "pron": "아알론"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 21:24",
+        "chronicles1 6:69",
+        "chronicles2 11:10",
+        "chronicles2 28:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

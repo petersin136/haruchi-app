@@ -1,6 +1,6 @@
 {
   "lemma": "רוּחַ",
-  "pron": "루아흐",
+  "pron": "브루아흐",
   "strong": "H7307",
   "posKo": "명사",
   "root": {
@@ -12,25 +12,25 @@
     {
       "lemma": "רָוַח",
       "strong": "H7304",
-      "pron": "",
+      "pron": "브라바흐",
       "glossKo": "한숨을 돌리다"
     },
     {
       "lemma": "רוּחַ",
       "strong": "H7306",
-      "pron": "예리후느",
+      "pron": "바야라흐",
       "glossKo": "냄새 맡다"
     },
     {
       "lemma": "רוּחַ",
       "strong": "H7308",
-      "pron": "",
+      "pron": "루하",
       "glossKo": "영(아람)"
     },
     {
       "lemma": "רַחַת",
       "strong": "H7371",
-      "pron": "",
+      "pron": "바라하트",
       "glossKo": "키"
     },
     {
@@ -42,126 +42,228 @@
   ],
   "defEn": "wind",
   "defKo": "",
-  "countOT": 50,
+  "countOT": 378,
   "byBook": {
+    "ezekiel": 52,
+    "isaiah": 51,
     "psalms": 39,
-    "genesis": 11
+    "job": 31,
+    "ecclesiastes": 24,
+    "proverbs": 21,
+    "jeremiah": 18,
+    "samuel1": 16,
+    "numbers": 14,
+    "exodus": 11,
+    "genesis": 11,
+    "kings1": 11,
+    "chronicles2": 10,
+    "judges": 10,
+    "zechariah": 9,
+    "hosea": 7,
+    "chronicles1": 5,
+    "kings2": 5,
+    "daniel": 4,
+    "haggai": 4,
+    "malachi": 3,
+    "micah": 3,
+    "samuel2": 3,
+    "deuteronomy": 2,
+    "ezra": 2,
+    "habakkuk": 2,
+    "joel": 2,
+    "jonah": 2,
+    "joshua": 2,
+    "nehemiah": 2,
+    "amos": 1,
+    "lamentations": 1
   },
   "phrases": [
     {
-      "hebrew": "פְּנֵי ר֑וּחַ",
-      "pron": "미페네 루아흐",
+      "hebrew": "אֶת ר֣וּחַ",
+      "pron": "에트 브루아흐",
       "lemmas": [
-        "פָּנִים",
+        "אֵת",
         "רוּחַ"
       ],
       "words": [
         {
-          "word": "פְּנֵי",
-          "lemma": "פָּנִים",
-          "strong": "H6440",
-          "pron": "미페네"
-        },
-        {
-          "word": "ר֑וּחַ",
-          "lemma": "רוּחַ",
-          "strong": "H7307",
-          "pron": "루아흐"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 18:42",
-        "psalms 35:5",
-        "psalms 51:11",
-        "psalms 83:13"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֱלֹהִ֑ים וְר֥וּחַ",
-      "pron": "베엘로힘 루아흐",
-      "lemmas": [
-        "אֱלֹהִים",
-        "רוּחַ"
-      ],
-      "words": [
-        {
-          "word": "אֱלֹהִ֑ים",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        },
-        {
-          "word": "וְר֥וּחַ",
-          "lemma": "רוּחַ",
-          "strong": "H7307",
-          "pron": "루아흐"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 51:10",
-        "psalms 51:17",
-        "genesis 8:1"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֲשֶׁר ר֣וּחַ",
-      "pron": "아셰르 루아흐",
-      "lemmas": [
-        "אֲשֶׁר",
-        "רוּחַ"
-      ],
-      "words": [
-        {
-          "word": "אֲשֶׁר",
-          "lemma": "אֲשֶׁר",
-          "strong": "H834",
-          "pron": "아셰르"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         },
         {
           "word": "ר֣וּחַ",
           "lemma": "רוּחַ",
           "strong": "H7307",
-          "pron": "루아흐"
+          "pron": "브루아흐"
         }
       ],
-      "count": 3,
+      "count": 30,
       "refs": [
-        "genesis 6:17",
-        "genesis 7:15",
-        "genesis 41:38"
+        "exodus 31:3",
+        "exodus 35:31",
+        "numbers 11:29",
+        "deuteronomy 2:30",
+        "chronicles1 5:26",
+        "chronicles2 21:16",
+        "chronicles2 36:22",
+        "ezra 1:1",
+        "ezra 1:5",
+        "psalms 106:33",
+        "ecclesiastes 8:8",
+        "isaiah 40:13"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "ר֣וּחַ חַיִּ֔ים",
-      "pron": "루아흐 하아위",
+      "hebrew": "ר֣וּחַ יְהוָ֔ה",
+      "pron": "브루아흐 여호와",
       "lemmas": [
         "רוּחַ",
-        "חַי"
+        "יְהֹוָה"
       ],
       "words": [
         {
           "word": "ר֣וּחַ",
           "lemma": "רוּחַ",
           "strong": "H7307",
-          "pron": "루아흐"
+          "pron": "브루아흐"
         },
         {
-          "word": "חַיִּ֔ים",
-          "lemma": "חַי",
-          "strong": "H2416",
-          "pron": "하아위"
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         }
       ],
-      "count": 3,
+      "count": 30,
       "refs": [
-        "genesis 6:17",
-        "genesis 7:15",
-        "genesis 7:22"
+        "judges 3:10",
+        "judges 6:34",
+        "judges 11:29",
+        "judges 13:25",
+        "judges 14:6",
+        "judges 14:19",
+        "judges 15:14",
+        "samuel1 10:6",
+        "samuel1 16:13",
+        "samuel1 16:14",
+        "samuel1 19:9",
+        "samuel2 23:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָלָ֜יו ר֣וּחַ",
+      "pron": "알 브루아흐",
+      "lemmas": [
+        "עַל",
+        "רוּחַ"
+      ],
+      "words": [
+        {
+          "word": "עָלָ֜יו",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "ר֣וּחַ",
+          "lemma": "רוּחַ",
+          "strong": "H7307",
+          "pron": "브루아흐"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "numbers 5:14",
+        "numbers 5:30",
+        "numbers 11:25",
+        "numbers 11:26",
+        "numbers 24:2",
+        "judges 3:10",
+        "judges 14:6",
+        "judges 14:19",
+        "judges 15:14",
+        "samuel1 10:6",
+        "samuel1 10:10",
+        "samuel1 16:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רֽוּחַ אֱלֹהִים֙",
+      "pron": "브루아흐 엘로힘",
+      "lemmas": [
+        "רוּחַ",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "רֽוּחַ",
+          "lemma": "רוּחַ",
+          "strong": "H7307",
+          "pron": "브루아흐"
+        },
+        {
+          "word": "אֱלֹהִים֙",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "genesis 1:2",
+        "genesis 41:38",
+        "exodus 31:3",
+        "exodus 35:31",
+        "numbers 24:2",
+        "samuel1 10:10",
+        "samuel1 11:6",
+        "samuel1 16:15",
+        "samuel1 16:16",
+        "samuel1 16:23",
+        "samuel1 18:10",
+        "samuel1 19:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֛י ר֥וּחַ",
+      "pron": "키 브루아흐",
+      "lemmas": [
+        "כִּי",
+        "רוּחַ"
+      ],
+      "words": [
+        {
+          "word": "כִּ֛י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "ר֥וּחַ",
+          "lemma": "רוּחַ",
+          "strong": "H7307",
+          "pron": "브루아흐"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "job 7:7",
+        "psalms 103:16",
+        "isaiah 25:4",
+        "isaiah 40:7",
+        "isaiah 57:16",
+        "ezekiel 1:20",
+        "ezekiel 1:21",
+        "ezekiel 10:17",
+        "hosea 4:12",
+        "hosea 5:4",
+        "hosea 8:7"
       ],
       "glossKo": ""
     }

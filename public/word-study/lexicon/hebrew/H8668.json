@@ -1,6 +1,6 @@
 {
   "lemma": "תְּשׁוּעָה",
-  "pron": "리테슈아",
+  "pron": "아테슈아",
   "strong": "H8668",
   "posKo": "명사",
   "root": {
@@ -12,39 +12,219 @@
     {
       "lemma": "שָׁוַע",
       "strong": "H7768",
-      "pron": "아샤베아",
+      "pron": "아샤바",
       "glossKo": "도와달라 외치다"
     },
     {
       "lemma": "שׁוּעַ",
       "strong": "H7769",
-      "pron": "",
+      "pron": "슈아",
       "glossKo": "외침"
     },
     {
       "lemma": "שׁוֹעַ",
       "strong": "H7771",
-      "pron": "",
+      "pron": "쇼아",
       "glossKo": "수가의 집"
     },
     {
       "lemma": "שֶׁוַע",
       "strong": "H7773",
-      "pron": "샤베이위",
+      "pron": "샤베이",
       "glossKo": "나의 외침"
     },
     {
       "lemma": "שׁוּעָא",
       "strong": "H7774",
-      "pron": "",
+      "pron": "슈아",
       "glossKo": "수아"
     }
   ],
   "defEn": "rescue",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 34,
   "byBook": {
-    "psalms": 13
+    "psalms": 13,
+    "isaiah": 3,
+    "kings2": 3,
+    "proverbs": 3,
+    "samuel1": 3,
+    "samuel2": 3,
+    "chronicles1": 2,
+    "chronicles2": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "lamentations": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יְהוָ֥ה תְּשׁוּעָ֖ה",
+      "pron": "여호와 아테슈아",
+      "lemmas": [
+        "יְהֹוָה",
+        "תְּשׁוּעָה"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֥ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "תְּשׁוּעָ֖ה",
+          "lemma": "תְּשׁוּעָה",
+          "strong": "H8668",
+          "pron": "아테슈아"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "samuel1 11:13",
+        "samuel1 19:5",
+        "samuel2 23:10",
+        "samuel2 23:12",
+        "kings2 5:1",
+        "chronicles1 11:14",
+        "psalms 119:41",
+        "proverbs 21:31",
+        "isaiah 45:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּשׁוּעָ֥ה גְדוֹלָֽה",
+      "pron": "아테슈아 아게돌림",
+      "lemmas": [
+        "תְּשׁוּעָה",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "תְּשׁוּעָ֥ה",
+          "lemma": "תְּשׁוּעָה",
+          "strong": "H8668",
+          "pron": "아테슈아"
+        },
+        {
+          "word": "גְדוֹלָֽה",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 15:18",
+        "samuel1 19:5",
+        "samuel2 23:10",
+        "samuel2 23:12",
+        "chronicles1 11:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֖ה תְּשׁוּעָ֥ה גְדוֹלָֽה",
+      "pron": "여호와 아테슈아 아게돌림",
+      "lemmas": [
+        "יְהֹוָה",
+        "תְּשׁוּעָה",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "תְּשׁוּעָ֥ה",
+          "lemma": "תְּשׁוּעָה",
+          "strong": "H8668",
+          "pron": "아테슈아"
+        },
+        {
+          "word": "גְדוֹלָֽה",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 19:5",
+        "samuel2 23:10",
+        "samuel2 23:12",
+        "chronicles1 11:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָשָֽׂה יְהוָ֥ה תְּשׁוּעָ֖ה",
+      "pron": "바야아스 여호와 아테슈아",
+      "lemmas": [
+        "עָשָׂה",
+        "יְהֹוָה",
+        "תְּשׁוּעָה"
+      ],
+      "words": [
+        {
+          "word": "עָשָֽׂה",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "יְהוָ֥ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "תְּשׁוּעָ֖ה",
+          "lemma": "תְּשׁוּעָה",
+          "strong": "H8668",
+          "pron": "아테슈아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 11:13",
+        "samuel1 19:5",
+        "samuel2 23:10",
+        "samuel2 23:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּ֝תְשׁוּעָ֗ה בְּרֹ֣ב",
+      "pron": "아테슈아 메롭",
+      "lemmas": [
+        "תְּשׁוּעָה",
+        "רֹב"
+      ],
+      "words": [
+        {
+          "word": "וּ֝תְשׁוּעָ֗ה",
+          "lemma": "תְּשׁוּעָה",
+          "strong": "H8668",
+          "pron": "아테슈아"
+        },
+        {
+          "word": "בְּרֹ֣ב",
+          "lemma": "רֹב",
+          "strong": "H7230",
+          "pron": "메롭"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 33:17",
+        "proverbs 11:14",
+        "proverbs 24:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

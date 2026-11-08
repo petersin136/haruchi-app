@@ -12,27 +12,256 @@
     {
       "lemma": "מָשָׁה",
       "strong": "H4871",
-      "pron": "얌셰니",
-      "glossKo": "나를 건져내다"
+      "pron": "메시티후",
+      "glossKo": "그에게 건져내다"
+    },
+    {
+      "lemma": "מֹשֶׁה",
+      "strong": "H4873",
+      "pron": "모세",
+      "glossKo": "모세(아람)"
     },
     {
       "lemma": "מֶשִׁי",
       "strong": "H4897",
-      "pron": "",
+      "pron": "메시",
       "glossKo": "비단"
     },
     {
       "lemma": "נִמְשִׁי",
       "strong": "H5250",
-      "pron": "",
+      "pron": "님시",
       "glossKo": "님시"
     }
   ],
   "defEn": "Mosheh",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 766,
   "byBook": {
-    "psalms": 8
+    "exodus": 290,
+    "numbers": 233,
+    "leviticus": 86,
+    "joshua": 58,
+    "deuteronomy": 38,
+    "chronicles2": 12,
+    "chronicles1": 9,
+    "psalms": 8,
+    "nehemiah": 7,
+    "kings2": 6,
+    "judges": 4,
+    "kings1": 4,
+    "daniel": 2,
+    "ezra": 2,
+    "isaiah": 2,
+    "samuel1": 2,
+    "jeremiah": 1,
+    "malachi": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶל מֹשֶׁ֥ה",
+      "pron": "엘 모세",
+      "lemmas": [
+        "אֵל",
+        "מֹשֶׁה"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "מֹשֶׁ֥ה",
+          "lemma": "מֹשֶׁה",
+          "strong": "H4872",
+          "pron": "모세"
+        }
+      ],
+      "count": 210,
+      "refs": [
+        "exodus 3:14",
+        "exodus 3:15",
+        "exodus 4:4",
+        "exodus 4:19",
+        "exodus 4:21",
+        "exodus 4:30",
+        "exodus 6:1",
+        "exodus 6:2",
+        "exodus 6:9",
+        "exodus 6:10",
+        "exodus 6:13",
+        "exodus 6:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֖ה אֶל מֹשֶׁ֥ה",
+      "pron": "여호와 엘 모세",
+      "lemmas": [
+        "יְהֹוָה",
+        "אֵל",
+        "מֹשֶׁה"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "מֹשֶׁ֥ה",
+          "lemma": "מֹשֶׁה",
+          "strong": "H4872",
+          "pron": "모세"
+        }
+      ],
+      "count": 166,
+      "refs": [
+        "exodus 4:4",
+        "exodus 4:19",
+        "exodus 4:21",
+        "exodus 4:30",
+        "exodus 6:1",
+        "exodus 6:10",
+        "exodus 6:13",
+        "exodus 6:28",
+        "exodus 6:29",
+        "exodus 7:1",
+        "exodus 7:8",
+        "exodus 7:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֹשֶׁ֥ה לֵּאמֹֽר",
+      "pron": "모세 바요메르",
+      "lemmas": [
+        "מֹשֶׁה",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "מֹשֶׁ֥ה",
+          "lemma": "מֹשֶׁה",
+          "strong": "H4872",
+          "pron": "모세"
+        },
+        {
+          "word": "לֵּאמֹֽר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 99,
+      "refs": [
+        "exodus 2:10",
+        "exodus 2:14",
+        "exodus 3:4",
+        "exodus 4:1",
+        "exodus 4:14",
+        "exodus 6:2",
+        "exodus 6:10",
+        "exodus 6:29",
+        "exodus 7:19",
+        "exodus 8:5",
+        "exodus 8:16",
+        "exodus 10:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל מֹשֶׁ֥ה לֵּאמֹֽר",
+      "pron": "엘 모세 바요메르",
+      "lemmas": [
+        "אֵל",
+        "מֹשֶׁה",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "מֹשֶׁ֥ה",
+          "lemma": "מֹשֶׁה",
+          "strong": "H4872",
+          "pron": "모세"
+        },
+        {
+          "word": "לֵּאמֹֽר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 88,
+      "refs": [
+        "exodus 6:2",
+        "exodus 6:10",
+        "exodus 6:29",
+        "exodus 7:19",
+        "exodus 8:5",
+        "exodus 8:16",
+        "exodus 10:24",
+        "exodus 13:1",
+        "exodus 14:1",
+        "exodus 16:11",
+        "exodus 24:1",
+        "exodus 25:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֹשֶׁה֙ אֶל",
+      "pron": "모세 엘",
+      "lemmas": [
+        "מֹשֶׁה",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "מֹשֶׁה֙",
+          "lemma": "מֹשֶׁה",
+          "strong": "H4872",
+          "pron": "모세"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 88,
+      "refs": [
+        "exodus 3:11",
+        "exodus 3:13",
+        "exodus 4:10",
+        "exodus 5:22",
+        "exodus 6:13",
+        "exodus 7:8",
+        "exodus 8:12",
+        "exodus 9:8",
+        "exodus 12:1",
+        "exodus 13:3",
+        "exodus 14:13",
+        "exodus 16:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

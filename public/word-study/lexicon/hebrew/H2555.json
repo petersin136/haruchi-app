@@ -1,6 +1,6 @@
 {
   "lemma": "חָמָס",
-  "pron": "하맛오",
+  "pron": "하맛",
   "strong": "H2555",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,45 @@
     {
       "lemma": "חָמַס",
       "strong": "H2554",
-      "pron": "",
+      "pron": "야헤못",
       "glossKo": "포학하다"
     },
     {
       "lemma": "תַּחְמָס",
       "strong": "H8464",
-      "pron": "",
+      "pron": "아타헤맛",
       "glossKo": "수타조"
     }
   ],
   "defEn": "violence",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 60,
   "byBook": {
     "psalms": 14,
-    "genesis": 4
+    "proverbs": 7,
+    "ezekiel": 6,
+    "habakkuk": 6,
+    "genesis": 4,
+    "jeremiah": 4,
+    "isaiah": 3,
+    "amos": 2,
+    "job": 2,
+    "samuel2": 2,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "joel": 1,
+    "jonah": 1,
+    "judges": 1,
+    "malachi": 1,
+    "micah": 1,
+    "obadiah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "מֵאִ֥ישׁ חָ֝מָ֗ס",
-      "pron": "하이쉬 하맛오",
+      "hebrew": "מֵאִ֥ישׁ חֲמָסִ֖ים",
+      "pron": "메이쉬 하맛",
       "lemmas": [
         "אִישׁ",
         "חָמָס"
@@ -42,50 +60,143 @@
           "word": "מֵאִ֥ישׁ",
           "lemma": "אִישׁ",
           "strong": "H376",
-          "pron": "하이쉬"
+          "pron": "메이쉬"
         },
         {
-          "word": "חָ֝מָ֗ס",
+          "word": "חֲמָסִ֖ים",
           "lemma": "חָמָס",
           "strong": "H2555",
-          "pron": "하맛오"
+          "pron": "하맛"
         }
       ],
-      "count": 4,
+      "count": 7,
       "refs": [
+        "samuel2 22:49",
         "psalms 18:48",
         "psalms 140:1",
         "psalms 140:4",
-        "psalms 140:11"
+        "psalms 140:11",
+        "proverbs 3:31",
+        "proverbs 16:29"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בָּאָ֡רֶץ חֲמַ֥ס",
-      "pron": "에레츠 하맛오",
+      "hebrew": "הָאָ֖רֶץ חָמָֽס",
+      "pron": "하아레츠 하맛",
       "lemmas": [
         "אֶרֶץ",
         "חָמָס"
       ],
       "words": [
         {
-          "word": "בָּאָ֡רֶץ",
+          "word": "הָאָ֖רֶץ",
           "lemma": "אֶרֶץ",
           "strong": "H776",
-          "pron": "에레츠"
+          "pron": "하아레츠"
         },
         {
-          "word": "חֲמַ֥ס",
+          "word": "חָמָֽס",
           "lemma": "חָמָס",
           "strong": "H2555",
-          "pron": "하맛오"
+          "pron": "하맛"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 6:11",
+        "genesis 6:13",
+        "psalms 58:2",
+        "ezekiel 8:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַחֲמַס אֶ֔רֶץ",
+      "pron": "하맛 하아레츠",
+      "lemmas": [
+        "חָמָס",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "וַחֲמַס",
+          "lemma": "חָמָס",
+          "strong": "H2555",
+          "pron": "하맛"
+        },
+        {
+          "word": "אֶ֔רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 60:18",
+        "jeremiah 51:46",
+        "habakkuk 2:8",
+        "habakkuk 2:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָמָ֥ס וָשֹׁ֖ד",
+      "pron": "하맛 미숃",
+      "lemmas": [
+        "חָמָס",
+        "שֹׁד"
+      ],
+      "words": [
+        {
+          "word": "חָמָ֥ס",
+          "lemma": "חָמָס",
+          "strong": "H2555",
+          "pron": "하맛"
+        },
+        {
+          "word": "וָשֹׁ֖ד",
+          "lemma": "שֹׁד",
+          "strong": "H7701",
+          "pron": "미숃"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 6:7",
+        "jeremiah 20:8",
+        "ezekiel 45:9",
+        "amos 3:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָמָס֙ בְּכַפַּ֔י",
+      "pron": "하맛 르캅",
+      "lemmas": [
+        "חָמָס",
+        "כַּף"
+      ],
+      "words": [
+        {
+          "word": "חָמָס֙",
+          "lemma": "חָמָס",
+          "strong": "H2555",
+          "pron": "하맛"
+        },
+        {
+          "word": "בְּכַפַּ֔י",
+          "lemma": "כַּף",
+          "strong": "H3709",
+          "pron": "르캅"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 58:2",
-        "genesis 6:11",
-        "genesis 6:13"
+        "chronicles1 12:17",
+        "job 16:17",
+        "isaiah 59:6"
       ],
       "glossKo": ""
     }

@@ -18,39 +18,229 @@
     {
       "lemma": "בְּלָא",
       "strong": "H1080",
-      "pron": "",
+      "pron": "예발레",
       "glossKo": "쇠퇴시키다(아람)"
     },
     {
       "lemma": "בָּלָה",
       "strong": "H1086",
-      "pron": "발루",
-      "glossKo": "쇠하다"
+      "pron": "벨로티",
+      "glossKo": "나를 쇠하다"
     },
     {
       "lemma": "בָּלֶה",
       "strong": "H1087",
-      "pron": "",
+      "pron": "발림",
       "glossKo": "낡은"
     },
     {
       "lemma": "בְּלוֹ",
       "strong": "H1093",
-      "pron": "",
+      "pron": "벨로",
       "glossKo": "공물(아람)"
     },
     {
       "lemma": "בְּלוֹא",
       "strong": "H1094",
-      "pron": "",
+      "pron": "벨로에",
       "glossKo": "헌 옷"
     }
   ],
   "defEn": "failure of; not; except; without; unless; besides; because not; until",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 112,
   "byBook": {
-    "genesis": 8
+    "jeremiah": 25,
+    "ezekiel": 14,
+    "joshua": 9,
+    "deuteronomy": 8,
+    "genesis": 8,
+    "numbers": 6,
+    "exodus": 5,
+    "isaiah": 5,
+    "kings2": 5,
+    "judges": 4,
+    "kings1": 3,
+    "leviticus": 3,
+    "ruth": 3,
+    "samuel2": 3,
+    "amos": 2,
+    "daniel": 2,
+    "job": 2,
+    "samuel1": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "hosea": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לְבִלְתִּ֨י שְׁמֹ֤עַ",
+      "pron": "르빌티 바이솀우",
+      "lemmas": [
+        "בִּלְתִּי",
+        "שָׁמַע"
+      ],
+      "words": [
+        {
+          "word": "לְבִלְתִּ֨י",
+          "lemma": "בִּלְתִּי",
+          "strong": "H1115",
+          "pron": "르빌티"
+        },
+        {
+          "word": "שְׁמֹ֤עַ",
+          "lemma": "שָׁמַע",
+          "strong": "H8085",
+          "pron": "바이솀우"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "deuteronomy 17:12",
+        "jeremiah 16:12",
+        "jeremiah 17:23",
+        "jeremiah 18:10",
+        "jeremiah 19:15",
+        "jeremiah 42:13",
+        "daniel 9:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַד בִּלְתִּ֥י",
+      "pron": "앋 르빌티",
+      "lemmas": [
+        "עַד",
+        "בִּלְתִּי"
+      ],
+      "words": [
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "בִּלְתִּ֥י",
+          "lemma": "בִּלְתִּי",
+          "strong": "H1115",
+          "pron": "르빌티"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "numbers 21:35",
+        "deuteronomy 3:3",
+        "joshua 8:22",
+        "joshua 10:33",
+        "joshua 11:8",
+        "kings2 10:11",
+        "job 14:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּלְתִּ֥י הִשְׁאִֽיר",
+      "pron": "르빌티 바잇샤에르",
+      "lemmas": [
+        "בִּלְתִּי",
+        "שָׁאַר"
+      ],
+      "words": [
+        {
+          "word": "בִּלְתִּ֥י",
+          "lemma": "בִּלְתִּי",
+          "strong": "H1115",
+          "pron": "르빌티"
+        },
+        {
+          "word": "הִשְׁאִֽיר",
+          "lemma": "שָׁאַר",
+          "strong": "H7604",
+          "pron": "바잇샤에르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 21:35",
+        "deuteronomy 3:3",
+        "joshua 8:22",
+        "joshua 10:33",
+        "joshua 11:8",
+        "kings2 10:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּלְתִּ֥י הִשְׁאִֽיר שָׂרִֽיד",
+      "pron": "르빌티 바잇샤에르 사릳",
+      "lemmas": [
+        "בִּלְתִּי",
+        "שָׁאַר",
+        "שָׂרִיד"
+      ],
+      "words": [
+        {
+          "word": "בִּלְתִּ֥י",
+          "lemma": "בִּלְתִּי",
+          "strong": "H1115",
+          "pron": "르빌티"
+        },
+        {
+          "word": "הִשְׁאִֽיר",
+          "lemma": "שָׁאַר",
+          "strong": "H7604",
+          "pron": "바잇샤에르"
+        },
+        {
+          "word": "שָׂרִֽיד",
+          "lemma": "שָׂרִיד",
+          "strong": "H8300",
+          "pron": "사릳"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 21:35",
+        "deuteronomy 3:3",
+        "joshua 8:22",
+        "joshua 10:33",
+        "joshua 11:8",
+        "kings2 10:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְבִלְתִּי בֹא֙",
+      "pron": "르빌티 바야베",
+      "lemmas": [
+        "בִּלְתִּי",
+        "בּוֹא"
+      ],
+      "words": [
+        {
+          "word": "לְבִלְתִּי",
+          "lemma": "בִּלְתִּי",
+          "strong": "H1115",
+          "pron": "르빌티"
+        },
+        {
+          "word": "בֹא֙",
+          "lemma": "בּוֹא",
+          "strong": "H935",
+          "pron": "바야베"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 32:9",
+        "deuteronomy 4:21",
+        "joshua 23:7",
+        "jeremiah 17:24",
+        "jeremiah 27:18",
+        "ezekiel 20:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

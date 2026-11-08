@@ -1,6 +1,6 @@
 {
   "lemma": "אַחֲרוֹן",
-  "pron": "아하론",
+  "pron": "아하로님",
   "strong": "H314",
   "posKo": "형용사",
   "root": {
@@ -12,14 +12,14 @@
     {
       "lemma": "אָחַר",
       "strong": "H309",
-      "pron": "테아하르",
+      "pron": "테아하루",
       "glossKo": "지체하다"
     },
     {
       "lemma": "אַחַר",
       "strong": "H310",
-      "pron": "아하레하",
-      "glossKo": "그녀에게 뒤에"
+      "pron": "아하레",
+      "glossKo": "뒤에"
     },
     {
       "lemma": "אַחֵר",
@@ -36,39 +36,193 @@
   ],
   "defEn": "hinder; late; last; western",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 51,
   "byBook": {
+    "chronicles2": 8,
+    "deuteronomy": 7,
+    "isaiah": 5,
     "psalms": 4,
-    "genesis": 2
+    "samuel2": 4,
+    "ecclesiastes": 3,
+    "chronicles1": 2,
+    "daniel": 2,
+    "genesis": 2,
+    "job": 2,
+    "exodus": 1,
+    "ezra": 1,
+    "haggai": 1,
+    "jeremiah": 1,
+    "joel": 1,
+    "kings1": 1,
+    "nehemiah": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "ruth": 1,
+    "samuel1": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "לְד֣וֹר אַחֲרֽוֹן",
-      "pron": "르도르 아하론",
+      "hebrew": "הָרִאשֹׁנִ֖ים וְהָאַחֲרֹנִ֑ים",
+      "pron": "바리숀 아하로님",
+      "lemmas": [
+        "רִאשׁוֹן",
+        "אַחֲרוֹן"
+      ],
+      "words": [
+        {
+          "word": "הָרִאשֹׁנִ֖ים",
+          "lemma": "רִאשׁוֹן",
+          "strong": "H7223",
+          "pron": "바리숀"
+        },
+        {
+          "word": "וְהָאַחֲרֹנִ֑ים",
+          "lemma": "אַחֲרוֹן",
+          "strong": "H314",
+          "pron": "아하로님"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "chronicles1 29:29",
+        "chronicles2 9:29",
+        "chronicles2 12:15",
+        "chronicles2 16:11",
+        "chronicles2 20:34",
+        "chronicles2 25:26",
+        "chronicles2 26:22",
+        "chronicles2 28:26",
+        "chronicles2 35:27",
+        "daniel 11:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַדּ֣וֹר הָֽאַחֲר֗וֹן",
+      "pron": "베도로타으브 아하로님",
       "lemmas": [
         "דּוֹר",
         "אַחֲרוֹן"
       ],
       "words": [
         {
-          "word": "לְד֣וֹר",
+          "word": "הַדּ֣וֹר",
           "lemma": "דּוֹר",
           "strong": "H1755",
-          "pron": "르도르"
+          "pron": "베도로타으브"
         },
         {
-          "word": "אַחֲרֽוֹן",
+          "word": "הָֽאַחֲר֗וֹן",
           "lemma": "אַחֲרוֹן",
           "strong": "H314",
-          "pron": "아하론"
+          "pron": "아하로님"
         }
       ],
-      "count": 4,
+      "count": 5,
       "refs": [
+        "deuteronomy 29:22",
         "psalms 48:13",
         "psalms 78:4",
         "psalms 78:6",
         "psalms 102:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַיָּ֣ם הָֽאַחֲר֔וֹן",
+      "pron": "얌밈 아하로님",
+      "lemmas": [
+        "יָם",
+        "אַחֲרוֹן"
+      ],
+      "words": [
+        {
+          "word": "הַיָּ֣ם",
+          "lemma": "יָם",
+          "strong": "H3220",
+          "pron": "얌밈"
+        },
+        {
+          "word": "הָֽאַחֲר֔וֹן",
+          "lemma": "אַחֲרוֹן",
+          "strong": "H314",
+          "pron": "아하로님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 11:24",
+        "deuteronomy 34:2",
+        "joel 2:20",
+        "zechariah 14:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָרִאשֹׁנִ֖ים וְהָאַחֲרֹנִ֑ים הִנָּ֣ם",
+      "pron": "바리숀 아하로님 헨",
+      "lemmas": [
+        "רִאשׁוֹן",
+        "אַחֲרוֹן",
+        "הֵן"
+      ],
+      "words": [
+        {
+          "word": "הָרִאשֹׁנִ֖ים",
+          "lemma": "רִאשׁוֹן",
+          "strong": "H7223",
+          "pron": "바리숀"
+        },
+        {
+          "word": "וְהָאַחֲרֹנִ֑ים",
+          "lemma": "אַחֲרוֹן",
+          "strong": "H314",
+          "pron": "아하로님"
+        },
+        {
+          "word": "הִנָּ֣ם",
+          "lemma": "הֵן",
+          "strong": "H2005",
+          "pron": "헨"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles2 16:11",
+        "chronicles2 20:34",
+        "chronicles2 28:26",
+        "chronicles2 35:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָאֲחֲרוֹנִ֑ים הֲלֹא",
+      "pron": "아하로님 로",
+      "lemmas": [
+        "אַחֲרוֹן",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "וְהָאֲחֲרוֹנִ֑ים",
+          "lemma": "אַחֲרוֹן",
+          "strong": "H314",
+          "pron": "아하로님"
+        },
+        {
+          "word": "הֲלֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles2 9:29",
+        "chronicles2 12:15",
+        "chronicles2 25:26",
+        "ecclesiastes 4:16"
       ],
       "glossKo": ""
     }

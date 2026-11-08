@@ -1,6 +1,6 @@
 {
   "lemma": "יָחִיד",
-  "pron": "예히다티위",
+  "pron": "예힏카",
   "strong": "H3173",
   "posKo": "형용사",
   "root": {
@@ -12,33 +12,38 @@
     {
       "lemma": "יָחַד",
       "strong": "H3161",
-      "pron": "야헫",
+      "pron": "테핟",
       "glossKo": "연합하다"
     },
     {
       "lemma": "יַחַד",
       "strong": "H3162",
-      "pron": "야핟",
+      "pron": "야헫다브",
       "glossKo": "함께"
     },
     {
       "lemma": "יַחַת",
       "strong": "H3189",
-      "pron": "",
+      "pron": "야하트",
       "glossKo": "야핫"
     }
   ],
   "defEn": "united; sole",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 12,
   "byBook": {
     "psalms": 4,
-    "genesis": 3
+    "genesis": 3,
+    "amos": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "proverbs": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
       "hebrew": "אֶת יְחִֽידְךָ֤",
-      "pron": "에트 예히다티위",
+      "pron": "에트 예힏카",
       "lemmas": [
         "אֵת",
         "יָחִיד"
@@ -54,7 +59,7 @@
           "word": "יְחִֽידְךָ֤",
           "lemma": "יָחִיד",
           "strong": "H3173",
-          "pron": "예히다티위"
+          "pron": "예힏카"
         }
       ],
       "count": 3,
@@ -67,7 +72,7 @@
     },
     {
       "hebrew": "בִּנְךָ֨ אֶת יְחִֽידְךָ֤",
-      "pron": "베니위 에트 예히다티위",
+      "pron": "바님 에트 예힏카",
       "lemmas": [
         "בֵּן",
         "אֵת",
@@ -78,7 +83,7 @@
           "word": "בִּנְךָ֨",
           "lemma": "בֵּן",
           "strong": "H1121",
-          "pron": "베니위"
+          "pron": "바님"
         },
         {
           "word": "אֶת",
@@ -90,7 +95,7 @@
           "word": "יְחִֽידְךָ֤",
           "lemma": "יָחִיד",
           "strong": "H3173",
-          "pron": "예히다티위"
+          "pron": "예힏카"
         }
       ],
       "count": 3,

@@ -8,29 +8,185 @@
     {
       "lemma": "לִמּוּד",
       "strong": "H3928",
-      "pron": "",
-      "glossKo": "배운 자"
+      "pron": "벨림무다이",
+      "glossKo": "나를 배운 자"
     },
     {
       "lemma": "מַלְמָד",
       "strong": "H4451",
-      "pron": "",
+      "pron": "브말맏",
       "glossKo": "소몰이 막대"
     },
     {
       "lemma": "תַּלְמִיד",
       "strong": "H8527",
-      "pron": "",
+      "pron": "탈믿",
       "glossKo": "제자"
     }
   ],
   "defEn": "goad; teach; incentive",
   "defKo": "",
-  "countOT": 27,
+  "countOT": 87,
   "byBook": {
-    "psalms": 27
+    "psalms": 27,
+    "deuteronomy": 17,
+    "jeremiah": 14,
+    "isaiah": 9,
+    "chronicles2": 3,
+    "chronicles1": 2,
+    "ezekiel": 2,
+    "proverbs": 2,
+    "samuel2": 2,
+    "songofsolomon": 2,
+    "daniel": 1,
+    "ecclesiastes": 1,
+    "ezra": 1,
+    "hosea": 1,
+    "job": 1,
+    "judges": 1,
+    "micah": 1
   },
   "phrases": [
+    {
+      "hebrew": "מְלַמֵּ֥ד אֶתְכֶ֖ם",
+      "pron": "멜람멛 에트",
+      "lemmas": [
+        "לָמַד",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "מְלַמֵּ֥ד",
+          "lemma": "לָמַד",
+          "strong": "H3925",
+          "pron": "멜람멛"
+        },
+        {
+          "word": "אֶתְכֶ֖ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "deuteronomy 4:1",
+        "deuteronomy 4:5",
+        "deuteronomy 4:14",
+        "deuteronomy 5:1",
+        "deuteronomy 6:1",
+        "deuteronomy 11:19",
+        "deuteronomy 20:18",
+        "deuteronomy 31:19",
+        "deuteronomy 31:22",
+        "psalms 119:135",
+        "jeremiah 2:33",
+        "jeremiah 12:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹֽא תִלְמַ֣ד",
+      "pron": "로 멜람멛",
+      "lemmas": [
+        "לֹא",
+        "לָמַד"
+      ],
+      "words": [
+        {
+          "word": "לֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תִלְמַ֣ד",
+          "lemma": "לָמַד",
+          "strong": "H3925",
+          "pron": "멜람멛"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "deuteronomy 18:9",
+        "deuteronomy 20:18",
+        "proverbs 30:3",
+        "isaiah 2:4",
+        "jeremiah 31:18",
+        "jeremiah 31:34",
+        "micah 4:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִלְמְד֜וּן לְיִרְאָ֣ה",
+      "pron": "멜람멛 바이라",
+      "lemmas": [
+        "לָמַד",
+        "יָרֵא"
+      ],
+      "words": [
+        {
+          "word": "יִלְמְד֜וּן",
+          "lemma": "לָמַד",
+          "strong": "H3925",
+          "pron": "멜람멛"
+        },
+        {
+          "word": "לְיִרְאָ֣ה",
+          "lemma": "יָרֵא",
+          "strong": "H3372",
+          "pron": "바이라"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 4:10",
+        "deuteronomy 14:23",
+        "deuteronomy 17:19",
+        "deuteronomy 31:12",
+        "deuteronomy 31:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִלְמְד֜וּן לְיִרְאָ֣ה אֹתִ֗י",
+      "pron": "멜람멛 바이라 에트",
+      "lemmas": [
+        "לָמַד",
+        "יָרֵא",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "יִלְמְד֜וּן",
+          "lemma": "לָמַד",
+          "strong": "H3925",
+          "pron": "멜람멛"
+        },
+        {
+          "word": "לְיִרְאָ֣ה",
+          "lemma": "יָרֵא",
+          "strong": "H3372",
+          "pron": "바이라"
+        },
+        {
+          "word": "אֹתִ֗י",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 4:10",
+        "deuteronomy 14:23",
+        "deuteronomy 17:19",
+        "deuteronomy 31:12",
+        "deuteronomy 31:13"
+      ],
+      "glossKo": ""
+    },
     {
       "hebrew": "לַמְּדֵ֥נִי חֻקֶּֽיךָ",
       "pron": "멜람멛 호크",

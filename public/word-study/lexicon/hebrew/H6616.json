@@ -1,6 +1,6 @@
 {
   "lemma": "פָּתִיל",
-  "pron": "우페틸레카",
+  "pron": "웁틸레카",
   "strong": "H6616",
   "posKo": "명사",
   "root": {
@@ -24,21 +24,93 @@
     {
       "lemma": "פָּתַל",
       "strong": "H6617",
-      "pron": "티텝팟탈",
+      "pron": "닙탈티",
       "glossKo": "꼬다"
     },
     {
       "lemma": "פְּתַלְתֹּל",
       "strong": "H6618",
-      "pron": "",
+      "pron": "우페탈톨",
       "glossKo": "왜곡된"
     }
   ],
   "defEn": "twine",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 11,
   "byBook": {
-    "genesis": 2
+    "exodus": 5,
+    "genesis": 2,
+    "numbers": 2,
+    "ezekiel": 1,
+    "judges": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "פְּתִ֣יל תְּכֵ֔לֶת",
+      "pron": "웁틸레카 우테켈레트",
+      "lemmas": [
+        "פָּתִיל",
+        "תְּכֵלֶת"
+      ],
+      "words": [
+        {
+          "word": "פְּתִ֣יל",
+          "lemma": "פָּתִיל",
+          "strong": "H6616",
+          "pron": "웁틸레카"
+        },
+        {
+          "word": "תְּכֵ֔לֶת",
+          "lemma": "תְּכֵלֶת",
+          "strong": "H8504",
+          "pron": "우테켈레트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 28:28",
+        "exodus 28:37",
+        "exodus 39:21",
+        "exodus 39:31",
+        "numbers 15:38"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּפְתִ֣יל תְּכֵ֔לֶת לִֽהְי֖וֹת",
+      "pron": "웁틸레카 우테켈레트 하에타",
+      "lemmas": [
+        "פָּתִיל",
+        "תְּכֵלֶת",
+        "הָיָה"
+      ],
+      "words": [
+        {
+          "word": "בִּפְתִ֣יל",
+          "lemma": "פָּתִיל",
+          "strong": "H6616",
+          "pron": "웁틸레카"
+        },
+        {
+          "word": "תְּכֵ֔לֶת",
+          "lemma": "תְּכֵלֶת",
+          "strong": "H8504",
+          "pron": "우테켈레트"
+        },
+        {
+          "word": "לִֽהְי֖וֹת",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 28:28",
+        "exodus 28:37",
+        "exodus 39:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

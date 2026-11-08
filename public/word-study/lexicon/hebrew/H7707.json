@@ -2,7 +2,7 @@
   "lemma": "שְׁדֵיאוּר",
   "pron": "셰데우르",
   "strong": "H7707",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׂדֶה",
     "strong": "H7704",
@@ -12,7 +12,7 @@
     {
       "lemma": "שָׂדֶה",
       "strong": "H7704",
-      "pron": "사다이",
+      "pron": "아사데",
       "glossKo": "들"
     },
     {
@@ -24,13 +24,85 @@
     {
       "lemma": "שְׁדֵמָה",
       "strong": "H7709",
-      "pron": "",
+      "pron": "우미샫모트",
       "glossKo": "들밭"
     }
   ],
   "defEn": "Shedejur",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "numbers": 5
+  },
+  "phrases": [
+    {
+      "hebrew": "אֱלִיצ֖וּר בֶּן שְׁדֵיאֽוּר",
+      "pron": "엘리추르 바님 셰데우르",
+      "lemmas": [
+        "אֱלִיצוּר",
+        "בֵּן",
+        "שְׁדֵיאוּר"
+      ],
+      "words": [
+        {
+          "word": "אֱלִיצ֖וּר",
+          "lemma": "אֱלִיצוּר",
+          "strong": "H468",
+          "pron": "엘리추르"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "שְׁדֵיאֽוּר",
+          "lemma": "שְׁדֵיאוּר",
+          "strong": "H7707",
+          "pron": "셰데우르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 1:5",
+        "numbers 2:10",
+        "numbers 7:30",
+        "numbers 7:35",
+        "numbers 10:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן שְׁדֵיאֽוּר",
+      "pron": "바님 셰데우르",
+      "lemmas": [
+        "בֵּן",
+        "שְׁדֵיאוּר"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "שְׁדֵיאֽוּר",
+          "lemma": "שְׁדֵיאוּר",
+          "strong": "H7707",
+          "pron": "셰데우르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 1:5",
+        "numbers 2:10",
+        "numbers 7:30",
+        "numbers 7:35",
+        "numbers 10:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

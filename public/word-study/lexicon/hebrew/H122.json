@@ -2,7 +2,7 @@
   "lemma": "אָדֹם",
   "pron": "하아돔",
   "strong": "H122",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "אָדַם",
     "strong": "H119",
@@ -12,7 +12,7 @@
     {
       "lemma": "אָדַם",
       "strong": "H119",
-      "pron": "",
+      "pron": "메앋다밈",
       "glossKo": "붉다"
     },
     {
@@ -22,29 +22,69 @@
       "glossKo": "사람"
     },
     {
+      "lemma": "אֱדֹם",
+      "strong": "H123",
+      "pron": "에돔",
+      "glossKo": "에돔"
+    },
+    {
       "lemma": "אֹדֶם",
       "strong": "H124",
-      "pron": "",
+      "pron": "오뎀",
       "glossKo": "홍보석"
     },
     {
       "lemma": "אֲדַמְדָּם",
       "strong": "H125",
-      "pron": "",
+      "pron": "아담다메트",
       "glossKo": "발그스름한"
     },
     {
       "lemma": "אֲדָמָה",
       "strong": "H127",
-      "pron": "아다모트",
+      "pron": "하아다마",
       "glossKo": "땅"
     }
   ],
   "defEn": "rosy",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 9,
   "byBook": {
-    "genesis": 2
+    "zechariah": 3,
+    "genesis": 2,
+    "isaiah": 1,
+    "kings2": 1,
+    "numbers": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "ס֣וּס אָדֹ֔ם",
+      "pron": "바수심 하아돔",
+      "lemmas": [
+        "סוּס",
+        "אָדֹם"
+      ],
+      "words": [
+        {
+          "word": "ס֣וּס",
+          "lemma": "סוּס",
+          "strong": "H5483",
+          "pron": "바수심"
+        },
+        {
+          "word": "אָדֹ֔ם",
+          "lemma": "אָדֹם",
+          "strong": "H122",
+          "pron": "하아돔"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "zechariah 1:8",
+        "zechariah 6:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

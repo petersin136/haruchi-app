@@ -18,15 +18,56 @@
     {
       "lemma": "יַת",
       "strong": "H3487",
-      "pron": "",
-      "glossKo": "목적사(아람)"
+      "pron": "야테혼",
+      "glossKo": "그들에게 목적사(아람)"
+    },
+    {
+      "lemma": "תְּמוֹל",
+      "strong": "H8543",
+      "pron": "키테몰",
+      "glossKo": "전날"
     }
   ],
   "defEn": "heretofore; yesterday",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 8,
   "byBook": {
-    "psalms": 1
+    "samuel1": 4,
+    "isaiah": 1,
+    "micah": 1,
+    "psalms": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶתְמ֥וֹל שִׁלְשֹֽׁם",
+      "pron": "에테몰 실숌",
+      "lemmas": [
+        "אֶתְמוֹל",
+        "שִׁלְשׁוֹם"
+      ],
+      "words": [
+        {
+          "word": "אֶתְמ֥וֹל",
+          "lemma": "אֶתְמוֹל",
+          "strong": "H865",
+          "pron": "에테몰"
+        },
+        {
+          "word": "שִׁלְשֹֽׁם",
+          "lemma": "שִׁלְשׁוֹם",
+          "strong": "H8032",
+          "pron": "실숌"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 4:7",
+        "samuel1 10:11",
+        "samuel1 14:21",
+        "samuel1 19:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

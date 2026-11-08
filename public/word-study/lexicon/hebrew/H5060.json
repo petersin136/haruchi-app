@@ -1,6 +1,6 @@
 {
   "lemma": "נָגַע",
-  "pron": "약기우",
+  "pron": "틱게우",
   "strong": "H5060",
   "posKo": "동사",
   "root": null,
@@ -8,45 +8,233 @@
     {
       "lemma": "נֶגַע",
       "strong": "H5061",
-      "pron": "닉이위",
-      "glossKo": "나의 재앙"
+      "pron": "네가임",
+      "glossKo": "재앙"
     }
   ],
   "defEn": "touch; lay the hand upon",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 150,
   "byBook": {
+    "leviticus": 28,
+    "isaiah": 10,
+    "numbers": 10,
+    "esther": 9,
+    "daniel": 8,
     "genesis": 8,
-    "psalms": 8
+    "job": 8,
+    "psalms": 8,
+    "exodus": 7,
+    "jeremiah": 6,
+    "chronicles2": 5,
+    "kings1": 5,
+    "ecclesiastes": 3,
+    "ezekiel": 3,
+    "judges": 3,
+    "lamentations": 3,
+    "samuel1": 3,
+    "samuel2": 3,
+    "zechariah": 3,
+    "haggai": 2,
+    "joshua": 2,
+    "kings2": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "ezra": 1,
+    "hosea": 1,
+    "jonah": 1,
+    "micah": 1,
+    "nehemiah": 1,
+    "proverbs": 1,
+    "ruth": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "לֹ֣א יַגִּֽיעוּ",
-      "pron": "로 약기우",
+      "hebrew": "כָּל הַנֹּגֵ֥עַ",
+      "pron": "칼 틱게우",
+      "lemmas": [
+        "כֹּל",
+        "נָגַע"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הַנֹּגֵ֥עַ",
+          "lemma": "נָגַע",
+          "strong": "H5060",
+          "pron": "틱게우"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "exodus 19:12",
+        "exodus 29:37",
+        "exodus 30:29",
+        "leviticus 11:24",
+        "leviticus 11:26",
+        "leviticus 11:27",
+        "leviticus 11:31",
+        "leviticus 15:10",
+        "leviticus 15:19",
+        "leviticus 15:21",
+        "leviticus 15:22",
+        "leviticus 15:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר יִגַּ֥ע",
+      "pron": "아셰르 틱게우",
+      "lemmas": [
+        "אֲשֶׁר",
+        "נָגַע"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יִגַּ֥ע",
+          "lemma": "נָגַע",
+          "strong": "H5060",
+          "pron": "틱게우"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "leviticus 5:2",
+        "leviticus 6:18",
+        "leviticus 6:27",
+        "leviticus 7:19",
+        "leviticus 15:5",
+        "leviticus 15:11",
+        "leviticus 15:12",
+        "leviticus 22:5",
+        "leviticus 22:6",
+        "numbers 19:16",
+        "numbers 19:22",
+        "samuel1 10:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֥א תִגְּע֖וּ",
+      "pron": "로 틱게우",
       "lemmas": [
         "לֹא",
         "נָגַע"
       ],
       "words": [
         {
-          "word": "לֹ֣א",
+          "word": "וְלֹ֥א",
           "lemma": "לֹא",
           "strong": "H3808",
           "pron": "로"
         },
         {
-          "word": "יַגִּֽיעוּ",
+          "word": "תִגְּע֖וּ",
           "lemma": "נָגַע",
           "strong": "H5060",
-          "pron": "약기우"
+          "pron": "틱게우"
         }
       ],
-      "count": 4,
+      "count": 12,
       "refs": [
+        "genesis 3:3",
+        "genesis 26:29",
+        "exodus 19:13",
+        "leviticus 5:7",
+        "leviticus 11:8",
+        "leviticus 12:4",
+        "numbers 4:15",
+        "deuteronomy 14:8",
+        "job 5:19",
         "psalms 32:6",
         "psalms 73:5",
-        "genesis 3:3",
-        "genesis 26:29"
+        "ezekiel 17:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִנְגֹּ֥עַ אֵלֶֽיהָ",
+      "pron": "틱게우 엘",
+      "lemmas": [
+        "נָגַע",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "לִנְגֹּ֥עַ",
+          "lemma": "נָגַע",
+          "strong": "H5060",
+          "pron": "틱게우"
+        },
+        {
+          "word": "אֵלֶֽיהָ",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "genesis 20:6",
+        "exodus 12:22",
+        "leviticus 12:4",
+        "numbers 4:15",
+        "samuel1 14:9",
+        "esther 9:26",
+        "job 2:5",
+        "ecclesiastes 8:14",
+        "jeremiah 51:9",
+        "ezekiel 13:14",
+        "daniel 9:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֤י נָגַע֙",
+      "pron": "키 틱게우",
+      "lemmas": [
+        "כִּי",
+        "נָגַע"
+      ],
+      "words": [
+        {
+          "word": "כִּ֤י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "נָגַע֙",
+          "lemma": "נָגַע",
+          "strong": "H5060",
+          "pron": "틱게우"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "genesis 32:32",
+        "leviticus 5:3",
+        "leviticus 7:21",
+        "judges 20:34",
+        "judges 20:41",
+        "chronicles2 26:20",
+        "jeremiah 4:18",
+        "jeremiah 51:9",
+        "zechariah 2:8",
+        "zechariah 14:5"
       ],
       "glossKo": ""
     }

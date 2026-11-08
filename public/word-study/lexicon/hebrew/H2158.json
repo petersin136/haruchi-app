@@ -1,6 +1,6 @@
 {
   "lemma": "זָמִיר",
-  "pron": "비제미로트",
+  "pron": "제미로트",
   "strong": "H2158",
   "posKo": "명사",
   "root": {
@@ -10,27 +10,33 @@
   },
   "family": [
     {
+      "lemma": "זְמִירָה",
+      "strong": "H2160",
+      "pron": "제미라",
+      "glossKo": "스미라"
+    },
+    {
       "lemma": "זָמַר",
       "strong": "H2167",
-      "pron": "바아잠메라",
+      "pron": "아잠메르",
       "glossKo": "노래하다"
     },
     {
       "lemma": "זָמַר",
       "strong": "H2168",
-      "pron": "",
+      "pron": "팃모르",
       "glossKo": "노래하다"
     },
     {
       "lemma": "זֶמֶר",
       "strong": "H2169",
-      "pron": "",
+      "pron": "바자메르",
       "glossKo": "노래"
     },
     {
       "lemma": "זְמָר",
       "strong": "H2170",
-      "pron": "",
+      "pron": "제마라",
       "glossKo": "음악(아람)"
     },
     {
@@ -42,9 +48,12 @@
   ],
   "defEn": "song",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 6,
   "byBook": {
-    "psalms": 2
+    "isaiah": 2,
+    "psalms": 2,
+    "job": 1,
+    "samuel2": 1
   },
   "phrases": []
 }

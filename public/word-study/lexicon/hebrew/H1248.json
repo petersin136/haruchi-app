@@ -12,15 +12,44 @@
     {
       "lemma": "בַּר",
       "strong": "H1247",
-      "pron": "",
+      "pron": "바르",
       "glossKo": "아들(아람)"
     }
   ],
   "defEn": "heir",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 4,
   "byBook": {
+    "proverbs": 3,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מַה בְּ֭רִי",
+      "pron": "마 바르",
+      "lemmas": [
+        "מָה",
+        "בַּר"
+      ],
+      "words": [
+        {
+          "word": "מַה",
+          "lemma": "מָה",
+          "strong": "H4100",
+          "pron": "마"
+        },
+        {
+          "word": "בְּ֭רִי",
+          "lemma": "בַּר",
+          "strong": "H1248",
+          "pron": "바르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 31:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

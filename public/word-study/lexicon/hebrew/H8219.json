@@ -1,8 +1,8 @@
 {
   "lemma": "שְׁפֵלָה",
-  "pron": "셰펠라",
+  "pron": "우바셰펠라",
   "strong": "H8219",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁפֵל",
     "strong": "H8213",
@@ -12,37 +12,209 @@
     {
       "lemma": "שָׁפֵל",
       "strong": "H8213",
-      "pron": "타솁필",
+      "pron": "마솁필",
       "glossKo": "낮아지다"
     },
     {
       "lemma": "שְׁפַל",
       "strong": "H8214",
-      "pron": "",
+      "pron": "르하솁팔라",
       "glossKo": "낮아지다(아람)"
     },
     {
       "lemma": "שֶׁפֶל",
       "strong": "H8216",
-      "pron": "셰브십레누",
+      "pron": "솁베십레누",
       "glossKo": "우리의 낮은 자리"
     },
     {
       "lemma": "שָׁפָל",
       "strong": "H8217",
-      "pron": "브샤팔",
+      "pron": "샤팔",
       "glossKo": "낮은"
     },
     {
       "lemma": "שִׁפְלוּת",
       "strong": "H8220",
-      "pron": "",
+      "pron": "우브십루트",
       "glossKo": "낮은 위치"
     }
   ],
   "defEn": "Lowland",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 20,
+  "byBook": {
+    "joshua": 7,
+    "chronicles2": 4,
+    "jeremiah": 3,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "judges": 1,
+    "kings1": 1,
+    "obadiah": 1,
+    "zechariah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֲשֶׁר בַּשְּׁפֵלָ֖ה",
+      "pron": "아셰르 우바셰펠라",
+      "lemmas": [
+        "אֲשֶׁר",
+        "שְׁפֵלָה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "בַּשְּׁפֵלָ֖ה",
+          "lemma": "שְׁפֵלָה",
+          "strong": "H8219",
+          "pron": "우바셰펠라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 10:27",
+        "chronicles1 27:28",
+        "chronicles2 1:15",
+        "chronicles2 9:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַּשִּׁקְמִ֥ים אֲשֶׁר בַּשְּׁפֵלָ֖ה",
+      "pron": "카시케밈 아셰르 우바셰펠라",
+      "lemmas": [
+        "שִׁקְמָה",
+        "אֲשֶׁר",
+        "שְׁפֵלָה"
+      ],
+      "words": [
+        {
+          "word": "כַּשִּׁקְמִ֥ים",
+          "lemma": "שִׁקְמָה",
+          "strong": "H8256",
+          "pron": "카시케밈"
+        },
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "בַּשְּׁפֵלָ֖ה",
+          "lemma": "שְׁפֵלָה",
+          "strong": "H8219",
+          "pron": "우바셰펠라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 10:27",
+        "chronicles1 27:28",
+        "chronicles2 1:15",
+        "chronicles2 9:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר בַּשְּׁפֵלָ֖ה לָרֹֽב",
+      "pron": "아셰르 우바셰펠라 메롭",
+      "lemmas": [
+        "אֲשֶׁר",
+        "שְׁפֵלָה",
+        "רֹב"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "בַּשְּׁפֵלָ֖ה",
+          "lemma": "שְׁפֵלָה",
+          "strong": "H8219",
+          "pron": "우바셰펠라"
+        },
+        {
+          "word": "לָרֹֽב",
+          "lemma": "רֹב",
+          "strong": "H7230",
+          "pron": "메롭"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 10:27",
+        "chronicles2 1:15",
+        "chronicles2 9:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בָּהָ֣ר וּבַשְּׁפֵלָ֗ה",
+      "pron": "헤하림 우바셰펠라",
+      "lemmas": [
+        "הַר",
+        "שְׁפֵלָה"
+      ],
+      "words": [
+        {
+          "word": "בָּהָ֣ר",
+          "lemma": "הַר",
+          "strong": "H2022",
+          "pron": "헤하림"
+        },
+        {
+          "word": "וּבַשְּׁפֵלָ֗ה",
+          "lemma": "שְׁפֵלָה",
+          "strong": "H8219",
+          "pron": "우바셰펠라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 1:7",
+        "joshua 9:1",
+        "joshua 12:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּעָרֵ֨י הַשְּׁפֵלָ֣ה",
+      "pron": "이르 우바셰펠라",
+      "lemmas": [
+        "עִיר",
+        "שְׁפֵלָה"
+      ],
+      "words": [
+        {
+          "word": "בְּעָרֵ֨י",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        },
+        {
+          "word": "הַשְּׁפֵלָ֣ה",
+          "lemma": "שְׁפֵלָה",
+          "strong": "H8219",
+          "pron": "우바셰펠라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles2 28:18",
+        "jeremiah 32:44",
+        "jeremiah 33:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

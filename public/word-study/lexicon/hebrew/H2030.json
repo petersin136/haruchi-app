@@ -12,27 +12,201 @@
     {
       "lemma": "הָרָה",
       "strong": "H2029",
-      "pron": "브하라",
+      "pron": "바타하르",
       "glossKo": "임신하다"
     },
     {
       "lemma": "הַרְהֹר",
       "strong": "H2031",
-      "pron": "",
+      "pron": "브하레호린",
       "glossKo": "생각(아람)"
     },
     {
       "lemma": "הֵרוֹן",
       "strong": "H2032",
-      "pron": "브헤로네크",
+      "pron": "베헤로네크",
       "glossKo": "너의 임신"
     }
   ],
   "defEn": "pregnant",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 16,
   "byBook": {
-    "genesis": 3
+    "genesis": 3,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "judges": 2,
+    "kings2": 2,
+    "amos": 1,
+    "exodus": 1,
+    "hosea": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הָרָ֖ה וְיֹלַ֣דְתְּ",
+      "pron": "하라 텔디",
+      "lemmas": [
+        "הָרֶה",
+        "יָלַד"
+      ],
+      "words": [
+        {
+          "word": "הָרָ֖ה",
+          "lemma": "הָרֶה",
+          "strong": "H2030",
+          "pron": "하라"
+        },
+        {
+          "word": "וְיֹלַ֣דְתְּ",
+          "lemma": "יָלַד",
+          "strong": "H3205",
+          "pron": "텔디"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 16:11",
+        "judges 13:5",
+        "judges 13:7",
+        "samuel1 4:19",
+        "isaiah 7:14",
+        "jeremiah 31:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִנָּ֥ךְ הָרָ֖ה",
+      "pron": "힌네 하라",
+      "lemmas": [
+        "הִנֵּה",
+        "הָרֶה"
+      ],
+      "words": [
+        {
+          "word": "הִנָּ֥ךְ",
+          "lemma": "הִנֵּה",
+          "strong": "H2009",
+          "pron": "힌네"
+        },
+        {
+          "word": "הָרָ֖ה",
+          "lemma": "הָרֶה",
+          "strong": "H2030",
+          "pron": "하라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 16:11",
+        "genesis 38:24",
+        "judges 13:5",
+        "judges 13:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָרָ֖ה וְיֹלַ֣דְתְּ בֵּ֑ן",
+      "pron": "하라 텔디 바님",
+      "lemmas": [
+        "הָרֶה",
+        "יָלַד",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "הָרָ֖ה",
+          "lemma": "הָרֶה",
+          "strong": "H2030",
+          "pron": "하라"
+        },
+        {
+          "word": "וְיֹלַ֣דְתְּ",
+          "lemma": "יָלַד",
+          "strong": "H3205",
+          "pron": "텔디"
+        },
+        {
+          "word": "בֵּ֑ן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 16:11",
+        "judges 13:5",
+        "judges 13:7",
+        "isaiah 7:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִנָּ֥ךְ הָרָ֖ה וְיֹלַ֣דְתְּ",
+      "pron": "힌네 하라 텔디",
+      "lemmas": [
+        "הִנֵּה",
+        "הָרֶה",
+        "יָלַד"
+      ],
+      "words": [
+        {
+          "word": "הִנָּ֥ךְ",
+          "lemma": "הִנֵּה",
+          "strong": "H2009",
+          "pron": "힌네"
+        },
+        {
+          "word": "הָרָ֖ה",
+          "lemma": "הָרֶה",
+          "strong": "H2030",
+          "pron": "하라"
+        },
+        {
+          "word": "וְיֹלַ֣דְתְּ",
+          "lemma": "יָלַד",
+          "strong": "H3205",
+          "pron": "텔디"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 16:11",
+        "judges 13:5",
+        "judges 13:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָרֹתֵיהֶ֖ם תְּבַקֵּֽעַ",
+      "pron": "하라 닙케우",
+      "lemmas": [
+        "הָרֶה",
+        "בָּקַע"
+      ],
+      "words": [
+        {
+          "word": "וְהָרֹתֵיהֶ֖ם",
+          "lemma": "הָרֶה",
+          "strong": "H2030",
+          "pron": "하라"
+        },
+        {
+          "word": "תְּבַקֵּֽעַ",
+          "lemma": "בָּקַע",
+          "strong": "H1234",
+          "pron": "닙케우"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 8:12",
+        "kings2 15:16",
+        "hosea 13:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "זְמָר",
-  "pron": "제마르",
+  "pron": "제마라",
   "strong": "H2170",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "זָמַר",
     "strong": "H2167",
@@ -12,26 +12,32 @@
     {
       "lemma": "זָמִיר",
       "strong": "H2158",
-      "pron": "비제미로트",
+      "pron": "제미로트",
       "glossKo": "노래"
     },
     {
       "lemma": "זָמַר",
       "strong": "H2167",
-      "pron": "바아잠메라",
+      "pron": "아잠메르",
       "glossKo": "노래하다"
     },
     {
       "lemma": "זָמַר",
       "strong": "H2168",
-      "pron": "",
+      "pron": "팃모르",
       "glossKo": "노래하다"
     },
     {
       "lemma": "זֶמֶר",
       "strong": "H2169",
-      "pron": "",
+      "pron": "바자메르",
       "glossKo": "노래"
+    },
+    {
+      "lemma": "זַמָּר",
+      "strong": "H2171",
+      "pron": "잠마라아",
+      "glossKo": "악사(아람)"
     },
     {
       "lemma": "זִמְרָה",
@@ -42,7 +48,180 @@
   ],
   "defEn": "instrumental music",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "daniel": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "וְכֹ֖ל זְנֵ֣י זְמָרָ֑א",
+      "pron": "카르 제네 제마라",
+      "lemmas": [
+        "כֹּל",
+        "זַן",
+        "זְמָר"
+      ],
+      "words": [
+        {
+          "word": "וְכֹ֖ל",
+          "lemma": "כֹּל",
+          "strong": "H3606",
+          "pron": "카르"
+        },
+        {
+          "word": "זְנֵ֣י",
+          "lemma": "זַן",
+          "strong": "H2178",
+          "pron": "제네"
+        },
+        {
+          "word": "זְמָרָ֑א",
+          "lemma": "זְמָר",
+          "strong": "H2170",
+          "pron": "제마라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זְמָרָ֑א תִּפְּל֤וּן",
+      "pron": "제마라 입펠",
+      "lemmas": [
+        "זְמָר",
+        "נְפַל"
+      ],
+      "words": [
+        {
+          "word": "זְמָרָ֑א",
+          "lemma": "זְמָר",
+          "strong": "H2170",
+          "pron": "제마라"
+        },
+        {
+          "word": "תִּפְּל֤וּן",
+          "lemma": "נְפַל",
+          "strong": "H5308",
+          "pron": "입펠"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זְנֵ֣י זְמָרָ֑א",
+      "pron": "제네 제마라",
+      "lemmas": [
+        "זַן",
+        "זְמָר"
+      ],
+      "words": [
+        {
+          "word": "זְנֵ֣י",
+          "lemma": "זַן",
+          "strong": "H2178",
+          "pron": "제네"
+        },
+        {
+          "word": "זְמָרָ֑א",
+          "lemma": "זְמָר",
+          "strong": "H2170",
+          "pron": "제마라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זְנֵ֣י זְמָרָ֑א תִּפְּל֤וּן",
+      "pron": "제네 제마라 입펠",
+      "lemmas": [
+        "זַן",
+        "זְמָר",
+        "נְפַל"
+      ],
+      "words": [
+        {
+          "word": "זְנֵ֣י",
+          "lemma": "זַן",
+          "strong": "H2178",
+          "pron": "제네"
+        },
+        {
+          "word": "זְמָרָ֑א",
+          "lemma": "זְמָר",
+          "strong": "H2170",
+          "pron": "제마라"
+        },
+        {
+          "word": "תִּפְּל֤וּן",
+          "lemma": "נְפַל",
+          "strong": "H5308",
+          "pron": "입펠"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זְמָרָ֑א תִּפְּל֤וּן וְתִסְגְּדוּן֙",
+      "pron": "제마라 입펠 세긷",
+      "lemmas": [
+        "זְמָר",
+        "נְפַל",
+        "סְגִד"
+      ],
+      "words": [
+        {
+          "word": "זְמָרָ֑א",
+          "lemma": "זְמָר",
+          "strong": "H2170",
+          "pron": "제마라"
+        },
+        {
+          "word": "תִּפְּל֤וּן",
+          "lemma": "נְפַל",
+          "strong": "H5308",
+          "pron": "입펠"
+        },
+        {
+          "word": "וְתִסְגְּדוּן֙",
+          "lemma": "סְגִד",
+          "strong": "H5457",
+          "pron": "세긷"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 3:5",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

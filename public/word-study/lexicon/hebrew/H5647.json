@@ -1,6 +1,6 @@
 {
   "lemma": "עָבַד",
-  "pron": "입두",
+  "pron": "라아볻",
   "strong": "H5647",
   "posKo": "동사",
   "root": null,
@@ -8,61 +8,84 @@
     {
       "lemma": "מַעְבָּד",
       "strong": "H4566",
-      "pron": "",
-      "glossKo": "행위"
+      "pron": "마엡바데헴",
+      "glossKo": "그들의 행위"
     },
     {
       "lemma": "עֲבַד",
       "strong": "H5648",
-      "pron": "",
+      "pron": "압딘",
       "glossKo": "행하다(아람)"
     },
     {
       "lemma": "עֶבֶד",
       "strong": "H5650",
-      "pron": "르에벧",
+      "pron": "에벧",
       "glossKo": "종"
     },
     {
       "lemma": "עֲבָד",
       "strong": "H5652",
-      "pron": "",
-      "glossKo": "행위"
+      "pron": "바아바데헴",
+      "glossKo": "그들의 행위"
     },
     {
       "lemma": "עַבְדָּא",
       "strong": "H5653",
-      "pron": "",
+      "pron": "압다",
       "glossKo": "압다"
     },
     {
       "lemma": "עֹבֵד אֱדוֹם",
       "strong": "H5654",
-      "pron": "",
+      "pron": "오벧",
       "glossKo": "오벧에돔"
     }
   ],
   "defEn": "work",
   "defKo": "",
-  "countOT": 31,
+  "countOT": 289,
   "byBook": {
+    "jeremiah": 36,
+    "deuteronomy": 35,
+    "exodus": 31,
     "genesis": 23,
-    "psalms": 8
+    "joshua": 21,
+    "numbers": 21,
+    "kings2": 18,
+    "judges": 17,
+    "samuel1": 13,
+    "chronicles2": 12,
+    "ezekiel": 11,
+    "isaiah": 9,
+    "kings1": 8,
+    "psalms": 8,
+    "samuel2": 6,
+    "malachi": 4,
+    "job": 3,
+    "leviticus": 3,
+    "chronicles1": 2,
+    "ecclesiastes": 2,
+    "proverbs": 2,
+    "hosea": 1,
+    "nehemiah": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "עִבְד֣וּ אֶת",
-      "pron": "입두 에트",
+      "hebrew": "לַעֲבֹ֖ד אֶת",
+      "pron": "라아볻 에트",
       "lemmas": [
         "עָבַד",
         "אֵת"
       ],
       "words": [
         {
-          "word": "עִבְד֣וּ",
+          "word": "לַעֲבֹ֖ד",
           "lemma": "עָבַד",
           "strong": "H5647",
-          "pron": "입두"
+          "pron": "라아볻"
         },
         {
           "word": "אֶת",
@@ -71,25 +94,147 @@
           "pron": "에트"
         }
       ],
-      "count": 11,
+      "count": 93,
       "refs": [
-        "psalms 2:11",
-        "psalms 100:2",
-        "psalms 102:22",
-        "psalms 106:36",
         "genesis 2:5",
         "genesis 3:23",
         "genesis 4:12",
         "genesis 14:4",
         "genesis 30:26",
         "genesis 30:29",
-        "genesis 31:6"
+        "genesis 31:6",
+        "exodus 3:12",
+        "exodus 6:5",
+        "exodus 10:7",
+        "exodus 10:8",
+        "exodus 10:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עִבְד֣וּ אֶת יְהוָ֣ה",
+      "pron": "라아볻 에트 여호와",
+      "lemmas": [
+        "עָבַד",
+        "אֵת",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "עִבְד֣וּ",
+          "lemma": "עָבַד",
+          "strong": "H5647",
+          "pron": "라아볻"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יְהוָ֣ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 27,
+      "refs": [
+        "exodus 10:7",
+        "exodus 10:8",
+        "exodus 10:11",
+        "exodus 10:24",
+        "exodus 10:26",
+        "exodus 12:31",
+        "exodus 23:25",
+        "deuteronomy 10:12",
+        "deuteronomy 28:47",
+        "joshua 24:14",
+        "joshua 24:15",
+        "joshua 24:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֣א תָעָבְדֵ֑ם",
+      "pron": "로 라아볻",
+      "lemmas": [
+        "לֹא",
+        "עָבַד"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תָעָבְדֵ֑ם",
+          "lemma": "עָבַד",
+          "strong": "H5647",
+          "pron": "라아볻"
+        }
+      ],
+      "count": 26,
+      "refs": [
+        "genesis 15:13",
+        "exodus 20:5",
+        "exodus 23:24",
+        "leviticus 25:39",
+        "numbers 8:25",
+        "numbers 8:26",
+        "deuteronomy 5:9",
+        "deuteronomy 7:16",
+        "deuteronomy 15:19",
+        "deuteronomy 21:3",
+        "deuteronomy 21:4",
+        "deuteronomy 28:47"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַעֲבַדְתֶּם֙ אֱלֹהִ֣ים",
+      "pron": "라아볻 엘로힘",
+      "lemmas": [
+        "עָבַד",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "וַעֲבַדְתֶּם֙",
+          "lemma": "עָבַד",
+          "strong": "H5647",
+          "pron": "라아볻"
+        },
+        {
+          "word": "אֱלֹהִ֣ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "deuteronomy 7:4",
+        "deuteronomy 11:16",
+        "deuteronomy 13:6",
+        "deuteronomy 13:13",
+        "deuteronomy 17:3",
+        "deuteronomy 29:26",
+        "joshua 23:16",
+        "joshua 24:2",
+        "joshua 24:16",
+        "joshua 24:20",
+        "judges 10:13",
+        "samuel1 8:8"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "אֲשֶׁ֥ר יַעֲבֹ֖דוּ",
-      "pron": "아셰르 입두",
+      "pron": "아셰르 라아볻",
       "lemmas": [
         "אֲשֶׁר",
         "עָבַד"
@@ -105,87 +250,23 @@
           "word": "יַעֲבֹ֖דוּ",
           "lemma": "עָבַד",
           "strong": "H5647",
-          "pron": "입두"
+          "pron": "라아볻"
         }
       ],
-      "count": 5,
+      "count": 16,
       "refs": [
         "genesis 15:14",
         "genesis 29:27",
         "genesis 30:26",
-        "genesis 30:29"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "לַֽעֲבֹ֖ד אֶת הָֽאֲדָמָֽה",
-      "pron": "입두 에트 아다모트",
-      "lemmas": [
-        "עָבַד",
-        "אֵת",
-        "אֲדָמָה"
-      ],
-      "words": [
-        {
-          "word": "לַֽעֲבֹ֖ד",
-          "lemma": "עָבַד",
-          "strong": "H5647",
-          "pron": "입두"
-        },
-        {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        },
-        {
-          "word": "הָֽאֲדָמָֽה",
-          "lemma": "אֲדָמָה",
-          "strong": "H127",
-          "pron": "아다모트"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 2:5",
-        "genesis 3:23",
-        "genesis 4:12"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "עִבְד֣וּ אֶת יְהוָ֣ה",
-      "pron": "입두 에트 여호와",
-      "lemmas": [
-        "עָבַד",
-        "אֵת",
-        "יְהֹוָה"
-      ],
-      "words": [
-        {
-          "word": "עִבְד֣וּ",
-          "lemma": "עָבַד",
-          "strong": "H5647",
-          "pron": "입두"
-        },
-        {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        },
-        {
-          "word": "יְהוָ֣ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 2:11",
-        "psalms 100:2",
-        "psalms 102:22"
+        "genesis 30:29",
+        "exodus 1:14",
+        "deuteronomy 12:2",
+        "joshua 24:14",
+        "joshua 24:15",
+        "samuel1 4:9",
+        "samuel2 16:19",
+        "kings2 21:21",
+        "isaiah 14:3"
       ],
       "glossKo": ""
     }

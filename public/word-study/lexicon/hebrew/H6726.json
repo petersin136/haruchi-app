@@ -12,17 +12,108 @@
     {
       "lemma": "צִיּוּן",
       "strong": "H6725",
-      "pron": "",
+      "pron": "아치운",
       "glossKo": "표지"
     }
   ],
   "defEn": "Tsijon; capital",
   "defKo": "",
-  "countOT": 38,
+  "countOT": 153,
   "byBook": {
-    "psalms": 38
+    "isaiah": 46,
+    "psalms": 38,
+    "jeremiah": 17,
+    "lamentations": 15,
+    "micah": 9,
+    "zechariah": 8,
+    "joel": 7,
+    "amos": 2,
+    "kings2": 2,
+    "obadiah": 2,
+    "zephaniah": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "kings1": 1,
+    "samuel2": 1,
+    "songofsolomon": 1
   },
   "phrases": [
+    {
+      "hebrew": "בַּת צִיּ֔וֹן",
+      "pron": "우바노트 치온",
+      "lemmas": [
+        "בַּת",
+        "צִיּוֹן"
+      ],
+      "words": [
+        {
+          "word": "בַּת",
+          "lemma": "בַּת",
+          "strong": "H1323",
+          "pron": "우바노트"
+        },
+        {
+          "word": "צִיּ֔וֹן",
+          "lemma": "צִיּוֹן",
+          "strong": "H6726",
+          "pron": "치온"
+        }
+      ],
+      "count": 29,
+      "refs": [
+        "kings2 19:21",
+        "psalms 9:14",
+        "songofsolomon 3:11",
+        "isaiah 1:8",
+        "isaiah 3:16",
+        "isaiah 3:17",
+        "isaiah 4:4",
+        "isaiah 16:1",
+        "isaiah 37:22",
+        "isaiah 52:2",
+        "isaiah 62:11",
+        "jeremiah 4:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵהַ֣ר צִיּ֑וֹן",
+      "pron": "헤하림 치온",
+      "lemmas": [
+        "הַר",
+        "צִיּוֹן"
+      ],
+      "words": [
+        {
+          "word": "מֵהַ֣ר",
+          "lemma": "הַר",
+          "strong": "H2022",
+          "pron": "헤하림"
+        },
+        {
+          "word": "צִיּ֑וֹן",
+          "lemma": "צִיּוֹן",
+          "strong": "H6726",
+          "pron": "치온"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "kings2 19:31",
+        "psalms 48:2",
+        "psalms 48:11",
+        "psalms 74:2",
+        "psalms 78:68",
+        "psalms 125:1",
+        "isaiah 4:5",
+        "isaiah 8:18",
+        "isaiah 10:12",
+        "isaiah 18:7",
+        "isaiah 24:23",
+        "isaiah 29:8"
+      ],
+      "glossKo": ""
+    },
     {
       "hebrew": "יְ֭הוָה מִצִּיּ֑וֹן",
       "pron": "여호와 치온",
@@ -44,7 +135,7 @@
           "pron": "치온"
         }
       ],
-      "count": 7,
+      "count": 13,
       "refs": [
         "psalms 99:2",
         "psalms 102:16",
@@ -52,74 +143,51 @@
         "psalms 128:5",
         "psalms 132:13",
         "psalms 134:3",
-        "psalms 135:21"
+        "psalms 135:21",
+        "isaiah 51:3",
+        "isaiah 52:8",
+        "isaiah 60:14",
+        "lamentations 2:6",
+        "joel 3:16"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הַר צִ֭יּוֹן",
-      "pron": "하르 치온",
+      "hebrew": "צִיּ֑וֹן כִּֽי",
+      "pron": "치온 키",
       "lemmas": [
-        "הַר",
-        "צִיּוֹן"
+        "צִיּוֹן",
+        "כִּי"
       ],
       "words": [
         {
-          "word": "הַר",
-          "lemma": "הַר",
-          "strong": "H2022",
-          "pron": "하르"
-        },
-        {
-          "word": "צִ֭יּוֹן",
+          "word": "צִיּ֑וֹן",
           "lemma": "צִיּוֹן",
           "strong": "H6726",
           "pron": "치온"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 48:2",
-        "psalms 48:11",
-        "psalms 74:2",
-        "psalms 78:68",
-        "psalms 125:1"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֱלֹ֘הִ֥ים בְּצִיּ֑וֹן",
-      "pron": "베엘로힘 치온",
-      "lemmas": [
-        "אֱלֹהִים",
-        "צִיּוֹן"
-      ],
-      "words": [
-        {
-          "word": "אֱלֹ֘הִ֥ים",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
         },
         {
-          "word": "בְּצִיּ֑וֹן",
-          "lemma": "צִיּוֹן",
-          "strong": "H6726",
-          "pron": "치온"
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
         }
       ],
-      "count": 4,
+      "count": 7,
       "refs": [
-        "psalms 65:1",
-        "psalms 84:7",
-        "psalms 146:10",
-        "psalms 147:12"
+        "psalms 102:13",
+        "psalms 133:3",
+        "isaiah 12:6",
+        "lamentations 2:13",
+        "micah 1:13",
+        "micah 4:13",
+        "zechariah 2:10"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "צִיּ֑וֹן אָ֝גִ֗ילָה",
-      "pron": "치온 브길루",
+      "pron": "치온 브타겔",
       "lemmas": [
         "צִיּוֹן",
         "גִּיל"
@@ -135,51 +203,16 @@
           "word": "אָ֝גִ֗ילָה",
           "lemma": "גִּיל",
           "strong": "H1523",
-          "pron": "브길루"
+          "pron": "브타겔"
         }
       ],
-      "count": 4,
+      "count": 5,
       "refs": [
         "psalms 9:14",
         "psalms 48:11",
         "psalms 97:8",
-        "psalms 149:2"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יְבָרֶכְךָ֥ יְהוָ֗ה מִצִּ֫יּ֥וֹן",
-      "pron": "테바레크 여호와 치온",
-      "lemmas": [
-        "בָּרַךְ",
-        "יְהֹוָה",
-        "צִיּוֹן"
-      ],
-      "words": [
-        {
-          "word": "יְבָרֶכְךָ֥",
-          "lemma": "בָּרַךְ",
-          "strong": "H1288",
-          "pron": "테바레크"
-        },
-        {
-          "word": "יְהוָ֗ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        },
-        {
-          "word": "מִצִּ֫יּ֥וֹן",
-          "lemma": "צִיּוֹן",
-          "strong": "H6726",
-          "pron": "치온"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 128:5",
-        "psalms 134:3",
-        "psalms 135:21"
+        "psalms 149:2",
+        "joel 2:23"
       ],
       "glossKo": ""
     }

@@ -1,8 +1,8 @@
 {
   "lemma": "צָפָה",
-  "pron": "차파",
+  "pron": "브칩피타",
   "strong": "H6823",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "צָפָה",
     "strong": "H6822",
@@ -12,14 +12,20 @@
     {
       "lemma": "מִצְפֶּה",
       "strong": "H4707",
-      "pron": "",
+      "pron": "아미쳅페",
       "glossKo": "망대"
     },
     {
       "lemma": "צָפָה",
       "strong": "H6822",
-      "pron": "바아찹페",
+      "pron": "이쳅",
       "glossKo": "지키다"
+    },
+    {
+      "lemma": "צָפָה",
+      "strong": "H6824",
+      "pron": "차파테카",
+      "glossKo": "너의 범람"
     },
     {
       "lemma": "צְפוֹ",
@@ -28,15 +34,229 @@
       "glossKo": "스보"
     },
     {
+      "lemma": "צִפּוּי",
+      "strong": "H6826",
+      "pron": "브칩푸이",
+      "glossKo": "입히는 것"
+    },
+    {
       "lemma": "צְפִיָּה",
       "strong": "H6836",
-      "pron": "",
-      "glossKo": "감시"
+      "pron": "베칩피아테누",
+      "glossKo": "우리의 감시"
     }
   ],
   "defEn": "sheet",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 47,
+  "byBook": {
+    "exodus": 26,
+    "kings1": 13,
+    "chronicles2": 5,
+    "isaiah": 1,
+    "kings2": 1,
+    "proverbs": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְצִפִּיתָ֥ אֹתָ֖ם",
+      "pron": "브칩피타 에트",
+      "lemmas": [
+        "צָפָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְצִפִּיתָ֥",
+          "lemma": "צָפָה",
+          "strong": "H6823",
+          "pron": "브칩피타"
+        },
+        {
+          "word": "אֹתָ֖ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "exodus 25:11",
+        "exodus 25:13",
+        "exodus 25:24",
+        "exodus 25:28",
+        "exodus 26:29",
+        "exodus 26:37",
+        "exodus 27:2",
+        "exodus 27:6",
+        "exodus 30:3",
+        "exodus 30:5",
+        "exodus 36:34",
+        "exodus 37:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיְצַפֵּ֖הוּ זָהָ֥ב",
+      "pron": "브칩피타 아자합",
+      "lemmas": [
+        "צָפָה",
+        "זָהָב"
+      ],
+      "words": [
+        {
+          "word": "וַיְצַפֵּ֖הוּ",
+          "lemma": "צָפָה",
+          "strong": "H6823",
+          "pron": "브칩피타"
+        },
+        {
+          "word": "זָהָ֥ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "exodus 26:29",
+        "exodus 26:32",
+        "exodus 36:34",
+        "exodus 36:36",
+        "exodus 37:2",
+        "kings1 6:20",
+        "kings1 6:21",
+        "kings1 6:22",
+        "kings1 6:30",
+        "kings1 6:32",
+        "kings1 6:35",
+        "kings1 10:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְצִפִּיתָ֥ אֹתָ֖ם זָהָֽב",
+      "pron": "브칩피타 에트 아자합",
+      "lemmas": [
+        "צָפָה",
+        "אֵת",
+        "זָהָב"
+      ],
+      "words": [
+        {
+          "word": "וְצִפִּיתָ֥",
+          "lemma": "צָפָה",
+          "strong": "H6823",
+          "pron": "브칩피타"
+        },
+        {
+          "word": "אֹתָ֖ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "זָהָֽב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 25:11",
+        "exodus 25:13",
+        "exodus 25:24",
+        "exodus 25:28",
+        "exodus 26:37",
+        "exodus 30:3",
+        "exodus 30:5",
+        "exodus 37:4",
+        "exodus 37:11",
+        "exodus 37:15",
+        "exodus 37:26",
+        "exodus 37:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שִׁטִּ֑ים וְצִפִּיתָ֥",
+      "pron": "싣딤 브칩피타",
+      "lemmas": [
+        "שִׁטָּה",
+        "צָפָה"
+      ],
+      "words": [
+        {
+          "word": "שִׁטִּ֑ים",
+          "lemma": "שִׁטָּה",
+          "strong": "H7848",
+          "pron": "싣딤"
+        },
+        {
+          "word": "וְצִפִּיתָ֥",
+          "lemma": "צָפָה",
+          "strong": "H6823",
+          "pron": "브칩피타"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 25:13",
+        "exodus 25:28",
+        "exodus 26:32",
+        "exodus 26:37",
+        "exodus 27:6",
+        "exodus 30:5",
+        "exodus 36:36",
+        "exodus 37:4",
+        "exodus 37:15",
+        "exodus 37:28",
+        "exodus 38:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שִׁטִּ֑ים וְצִפִּיתָ֥ אֹתָ֖ם",
+      "pron": "싣딤 브칩피타 에트",
+      "lemmas": [
+        "שִׁטָּה",
+        "צָפָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "שִׁטִּ֑ים",
+          "lemma": "שִׁטָּה",
+          "strong": "H7848",
+          "pron": "싣딤"
+        },
+        {
+          "word": "וְצִפִּיתָ֥",
+          "lemma": "צָפָה",
+          "strong": "H6823",
+          "pron": "브칩피타"
+        },
+        {
+          "word": "אֹתָ֖ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 25:13",
+        "exodus 25:28",
+        "exodus 26:37",
+        "exodus 27:6",
+        "exodus 30:5",
+        "exodus 37:4",
+        "exodus 37:15",
+        "exodus 37:28",
+        "exodus 38:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

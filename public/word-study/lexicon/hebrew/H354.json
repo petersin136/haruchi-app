@@ -1,6 +1,6 @@
 {
   "lemma": "אַיָּל",
-  "pron": "크아알",
+  "pron": "브카아알",
   "strong": "H354",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "אַיִל",
       "strong": "H352",
-      "pron": "엘림",
+      "pron": "브아일",
       "glossKo": "수양"
     },
     {
@@ -24,7 +24,7 @@
     {
       "lemma": "אַיָּלָה",
       "strong": "H355",
-      "pron": "카아알로트",
+      "pron": "아알라",
       "glossKo": "암사슴"
     },
     {
@@ -36,21 +36,92 @@
     {
       "lemma": "אַיָּלוֹן",
       "strong": "H357",
-      "pron": "",
+      "pron": "아알론",
       "glossKo": "아얄론"
     },
     {
       "lemma": "אֵילוֹת",
       "strong": "H359",
-      "pron": "",
+      "pron": "메엘라트",
       "glossKo": "엘롯"
     }
   ],
   "defEn": "stag; male deer",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 11,
   "byBook": {
+    "deuteronomy": 4,
+    "songofsolomon": 3,
+    "isaiah": 1,
+    "kings1": 1,
+    "lamentations": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "א֖וֹ לְעֹ֣פֶר הָֽאַיָּלִ֑ים",
+      "pron": "오 르오페르 브카아알",
+      "lemmas": [
+        "אוֹ",
+        "עֹפֶר",
+        "אַיָּל"
+      ],
+      "words": [
+        {
+          "word": "א֖וֹ",
+          "lemma": "אוֹ",
+          "strong": "H176",
+          "pron": "오"
+        },
+        {
+          "word": "לְעֹ֣פֶר",
+          "lemma": "עֹפֶר",
+          "strong": "H6082",
+          "pron": "르오페르"
+        },
+        {
+          "word": "הָֽאַיָּלִ֑ים",
+          "lemma": "אַיָּל",
+          "strong": "H354",
+          "pron": "브카아알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "songofsolomon 2:9",
+        "songofsolomon 2:17",
+        "songofsolomon 8:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְעֹ֣פֶר הָֽאַיָּלִ֑ים",
+      "pron": "르오페르 브카아알",
+      "lemmas": [
+        "עֹפֶר",
+        "אַיָּל"
+      ],
+      "words": [
+        {
+          "word": "לְעֹ֣פֶר",
+          "lemma": "עֹפֶר",
+          "strong": "H6082",
+          "pron": "르오페르"
+        },
+        {
+          "word": "הָֽאַיָּלִ֑ים",
+          "lemma": "אַיָּל",
+          "strong": "H354",
+          "pron": "브카아알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "songofsolomon 2:9",
+        "songofsolomon 2:17",
+        "songofsolomon 8:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

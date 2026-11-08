@@ -1,8 +1,8 @@
 {
   "lemma": "דְּבַח",
-  "pron": "데바흐",
+  "pron": "답힌",
   "strong": "H1684",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "זָבַח",
     "strong": "H2076",
@@ -10,27 +10,41 @@
   },
   "family": [
     {
+      "lemma": "דְּבַח",
+      "strong": "H1685",
+      "pron": "딥힌",
+      "glossKo": "제물(아람)"
+    },
+    {
       "lemma": "זָבַח",
       "strong": "H2076",
-      "pron": "집후",
+      "pron": "바잇바흐",
       "glossKo": "제사 드리다"
     },
     {
       "lemma": "זֶבַח",
       "strong": "H2077",
-      "pron": "집헤",
+      "pron": "제바흐",
       "glossKo": "제물"
+    },
+    {
+      "lemma": "מַדְבַּח",
+      "strong": "H4056",
+      "pron": "맏베하",
+      "glossKo": "제단(아람)"
     },
     {
       "lemma": "מִזְבֵּחַ",
       "strong": "H4196",
-      "pron": "밋바하카",
-      "glossKo": "너의 제단"
+      "pron": "밋베아흐",
+      "glossKo": "제단"
     }
   ],
   "defEn": "sacrifice",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 1,
+  "byBook": {
+    "ezra": 1
+  },
   "phrases": []
 }

@@ -2,7 +2,7 @@
   "lemma": "מְרִי",
   "pron": "메리",
   "strong": "H4805",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "מָרָה",
     "strong": "H4784",
@@ -12,19 +12,193 @@
     {
       "lemma": "מָרָה",
       "strong": "H4784",
-      "pron": "마루",
-      "glossKo": "거역하다"
+      "pron": "아모림",
+      "glossKo": "거역하는 이"
+    },
+    {
+      "lemma": "מְרִי בַעַל",
+      "strong": "H4810",
+      "pron": "우메리",
+      "glossKo": "므립바알"
     },
     {
       "lemma": "מְרָיָה",
       "strong": "H4811",
-      "pron": "",
+      "pron": "메라아",
       "glossKo": "므라야"
+    },
+    {
+      "lemma": "מִרְיָם",
+      "strong": "H4813",
+      "pron": "미레암",
+      "glossKo": "미리암"
     }
   ],
   "defEn": "bitterness; rebellion; bitter; rebellious",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 23,
+  "byBook": {
+    "ezekiel": 16,
+    "deuteronomy": 1,
+    "isaiah": 1,
+    "job": 1,
+    "nehemiah": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "samuel1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֵּ֥ית מְרִ֖י",
+      "pron": "미바이트 메리",
+      "lemmas": [
+        "בַּיִת",
+        "מְרִי"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֥ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "מְרִ֖י",
+          "lemma": "מְרִי",
+          "strong": "H4805",
+          "pron": "메리"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "ezekiel 2:5",
+        "ezekiel 2:6",
+        "ezekiel 2:8",
+        "ezekiel 3:9",
+        "ezekiel 3:26",
+        "ezekiel 3:27",
+        "ezekiel 12:2",
+        "ezekiel 12:3",
+        "ezekiel 12:9",
+        "ezekiel 12:25",
+        "ezekiel 17:12",
+        "ezekiel 24:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְרִ֖י הֵֽמָּה",
+      "pron": "메리 헴",
+      "lemmas": [
+        "מְרִי",
+        "הֵם"
+      ],
+      "words": [
+        {
+          "word": "מְרִ֖י",
+          "lemma": "מְרִי",
+          "strong": "H4805",
+          "pron": "메리"
+        },
+        {
+          "word": "הֵֽמָּה",
+          "lemma": "הֵם",
+          "strong": "H1992",
+          "pron": "헴"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "ezekiel 2:5",
+        "ezekiel 2:6",
+        "ezekiel 2:7",
+        "ezekiel 3:9",
+        "ezekiel 3:26",
+        "ezekiel 3:27",
+        "ezekiel 12:2",
+        "ezekiel 12:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּ֥ית מְרִ֖י הֵֽמָּה",
+      "pron": "미바이트 메리 헴",
+      "lemmas": [
+        "בַּיִת",
+        "מְרִי",
+        "הֵם"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֥ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "מְרִ֖י",
+          "lemma": "מְרִי",
+          "strong": "H4805",
+          "pron": "메리"
+        },
+        {
+          "word": "הֵֽמָּה",
+          "lemma": "הֵם",
+          "strong": "H1992",
+          "pron": "헴"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "ezekiel 2:5",
+        "ezekiel 2:6",
+        "ezekiel 3:9",
+        "ezekiel 3:26",
+        "ezekiel 3:27",
+        "ezekiel 12:2",
+        "ezekiel 12:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֛י בֵּ֥ית מְרִ֖י",
+      "pron": "키 미바이트 메리",
+      "lemmas": [
+        "כִּי",
+        "בַּיִת",
+        "מְרִי"
+      ],
+      "words": [
+        {
+          "word": "כִּ֛י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "בֵּ֥ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "מְרִ֖י",
+          "lemma": "מְרִי",
+          "strong": "H4805",
+          "pron": "메리"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "ezekiel 2:5",
+        "ezekiel 2:6",
+        "ezekiel 3:9",
+        "ezekiel 3:26",
+        "ezekiel 3:27",
+        "ezekiel 12:2",
+        "ezekiel 12:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

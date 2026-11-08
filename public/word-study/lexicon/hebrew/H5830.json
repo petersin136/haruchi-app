@@ -2,7 +2,7 @@
   "lemma": "עֶזְרָא",
   "pron": "엣라",
   "strong": "H5830",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עֶזְרָה",
     "strong": "H5833",
@@ -10,21 +10,158 @@
   },
   "family": [
     {
+      "lemma": "עֶזְרָא",
+      "strong": "H5831",
+      "pron": "르엣라",
+      "glossKo": "에스라"
+    },
+    {
       "lemma": "עֶזְרָה",
       "strong": "H5833",
-      "pron": "르엣라티위",
-      "glossKo": "나의 도움"
+      "pron": "르엣라트",
+      "glossKo": "도움"
     },
     {
       "lemma": "עֶזְרָה",
       "strong": "H5834",
-      "pron": "",
+      "pron": "엣라",
       "glossKo": "에스라"
     }
   ],
   "defEn": "Ezra",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 22,
+  "byBook": {
+    "nehemiah": 12,
+    "ezra": 10
+  },
+  "phrases": [
+    {
+      "hebrew": "לְעֶזְרָ֥א הַכֹּהֵ֖ן",
+      "pron": "엣라 코헨",
+      "lemmas": [
+        "עֶזְרָא",
+        "כֹּהֵן"
+      ],
+      "words": [
+        {
+          "word": "לְעֶזְרָ֥א",
+          "lemma": "עֶזְרָא",
+          "strong": "H5830",
+          "pron": "엣라"
+        },
+        {
+          "word": "הַכֹּהֵ֖ן",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "ezra 7:11",
+        "ezra 10:10",
+        "ezra 10:16",
+        "nehemiah 8:2",
+        "nehemiah 8:9",
+        "nehemiah 12:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְעֶזְרָ֣א הַסֹּפֵ֔ר",
+      "pron": "엣라 우세포르",
+      "lemmas": [
+        "עֶזְרָא",
+        "סָפַר"
+      ],
+      "words": [
+        {
+          "word": "לְעֶזְרָ֣א",
+          "lemma": "עֶזְרָא",
+          "strong": "H5830",
+          "pron": "엣라"
+        },
+        {
+          "word": "הַסֹּפֵ֔ר",
+          "lemma": "סָפַר",
+          "strong": "H5608",
+          "pron": "우세포르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "nehemiah 8:1",
+        "nehemiah 8:4",
+        "nehemiah 8:13",
+        "nehemiah 12:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיָּ֣קָם עֶזְרָ֡א",
+      "pron": "바야캄 엣라",
+      "lemmas": [
+        "קוּם",
+        "עֶזְרָא"
+      ],
+      "words": [
+        {
+          "word": "וַיָּ֣קָם",
+          "lemma": "קוּם",
+          "strong": "H6965",
+          "pron": "바야캄"
+        },
+        {
+          "word": "עֶזְרָ֡א",
+          "lemma": "עֶזְרָא",
+          "strong": "H5830",
+          "pron": "엣라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 10:5",
+        "ezra 10:6",
+        "ezra 10:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְעֶזְרָ֥א הַכֹּהֵ֖ן הַסֹּפֵ֑ר",
+      "pron": "엣라 코헨 우세포르",
+      "lemmas": [
+        "עֶזְרָא",
+        "כֹּהֵן",
+        "סָפַר"
+      ],
+      "words": [
+        {
+          "word": "לְעֶזְרָ֥א",
+          "lemma": "עֶזְרָא",
+          "strong": "H5830",
+          "pron": "엣라"
+        },
+        {
+          "word": "הַכֹּהֵ֖ן",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        },
+        {
+          "word": "הַסֹּפֵ֑ר",
+          "lemma": "סָפַר",
+          "strong": "H5608",
+          "pron": "우세포르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 7:11",
+        "nehemiah 8:9",
+        "nehemiah 12:26"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

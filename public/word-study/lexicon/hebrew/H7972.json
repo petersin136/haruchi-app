@@ -1,8 +1,8 @@
 {
   "lemma": "שְׁלַח",
-  "pron": "셸라흐",
+  "pron": "셸라후",
   "strong": "H7972",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "שָׁלַח",
     "strong": "H7971",
@@ -12,26 +12,26 @@
     {
       "lemma": "מִשְׁלוֹחַ",
       "strong": "H4916",
-      "pron": "",
+      "pron": "미셸라흐",
       "glossKo": "보냄"
     },
     {
       "lemma": "שִׁלּוּחַ",
       "strong": "H7964",
-      "pron": "",
-      "glossKo": "이혼"
+      "pron": "실루헤하",
+      "glossKo": "그녀의 이혼"
     },
     {
       "lemma": "שָׁלַח",
       "strong": "H7971",
-      "pron": "바이셸라흐",
+      "pron": "이셸라흐",
       "glossKo": "보내다"
     },
     {
       "lemma": "שֶׁלַח",
       "strong": "H7973",
-      "pron": "",
-      "glossKo": "병기"
+      "pron": "실호",
+      "glossKo": "그의 병기"
     },
     {
       "lemma": "שֻׁלְחָן",
@@ -42,7 +42,73 @@
   ],
   "defEn": "put, send.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "ezra": 10,
+    "daniel": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "דִּֽי שְׁלַ֞ח",
+      "pron": "드흐브 셸라후",
+      "lemmas": [
+        "דִּי",
+        "שְׁלַח"
+      ],
+      "words": [
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "שְׁלַ֞ח",
+          "lemma": "שְׁלַח",
+          "strong": "H7972",
+          "pron": "셸라후"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "ezra 4:11",
+        "ezra 4:18",
+        "ezra 5:6",
+        "ezra 6:12",
+        "ezra 6:13",
+        "daniel 3:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁלַ֣חוּ עֲל֔וֹהִי",
+      "pron": "셸라후 알",
+      "lemmas": [
+        "שְׁלַח",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "שְׁלַ֣חוּ",
+          "lemma": "שְׁלַח",
+          "strong": "H7972",
+          "pron": "셸라후"
+        },
+        {
+          "word": "עֲל֔וֹהִי",
+          "lemma": "עַל",
+          "strong": "H5922",
+          "pron": "알"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 4:11",
+        "ezra 4:18",
+        "ezra 5:7",
+        "ezra 5:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

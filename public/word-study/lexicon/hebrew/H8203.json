@@ -2,7 +2,7 @@
   "lemma": "שְׁפַטְיָה",
   "pron": "셰팓아",
   "strong": "H8203",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁפַט",
     "strong": "H8199",
@@ -12,43 +12,154 @@
     {
       "lemma": "מִשְׁפָּט",
       "strong": "H4941",
-      "pron": "바미솁팓",
+      "pron": "우미솁팓",
       "glossKo": "공의"
     },
     {
       "lemma": "שְׁפוֹט",
       "strong": "H8196",
-      "pron": "",
+      "pron": "셰폳",
       "glossKo": "심판"
     },
     {
       "lemma": "שָׁפַט",
       "strong": "H8199",
-      "pron": "숍데",
-      "glossKo": "재판하는 이"
+      "pron": "이솁폳",
+      "glossKo": "재판하다"
     },
     {
       "lemma": "שְׁפַט",
       "strong": "H8200",
-      "pron": "",
+      "pron": "샵딘",
       "glossKo": "재판하다(아람)"
     },
     {
       "lemma": "שֶׁפֶט",
       "strong": "H8201",
-      "pron": "",
+      "pron": "우비셰파딤",
       "glossKo": "심판"
     },
     {
       "lemma": "שָׁפָט",
       "strong": "H8202",
-      "pron": "",
+      "pron": "샤팓",
       "glossKo": "사밧"
     }
   ],
   "defEn": "Shephatjah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "chronicles1": 4,
+    "ezra": 3,
+    "nehemiah": 3,
+    "chronicles2": 1,
+    "jeremiah": 1,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בְּנֵ֣י שְׁפַטְיָ֔ה",
+      "pron": "바님 셰팓아",
+      "lemmas": [
+        "בֵּן",
+        "שְׁפַטְיָה"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "שְׁפַטְיָ֔ה",
+          "lemma": "שְׁפַטְיָה",
+          "strong": "H8203",
+          "pron": "셰팓아"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "chronicles1 9:8",
+        "ezra 2:4",
+        "ezra 2:57",
+        "ezra 8:8",
+        "nehemiah 7:9",
+        "nehemiah 7:59",
+        "nehemiah 11:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁפַטְיָ֥ה בֶן",
+      "pron": "셰팓아 바님",
+      "lemmas": [
+        "שְׁפַטְיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "שְׁפַטְיָ֥ה",
+          "lemma": "שְׁפַטְיָה",
+          "strong": "H8203",
+          "pron": "셰팓아"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel2 3:4",
+        "chronicles1 9:8",
+        "chronicles1 27:16",
+        "ezra 2:57",
+        "nehemiah 7:59",
+        "nehemiah 11:4",
+        "jeremiah 38:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּנֵ֧י שְׁפַטְיָ֣ה בְנֵֽי",
+      "pron": "바님 셰팓아 바님",
+      "lemmas": [
+        "בֵּן",
+        "שְׁפַטְיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵ֧י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "שְׁפַטְיָ֣ה",
+          "lemma": "שְׁפַטְיָה",
+          "strong": "H8203",
+          "pron": "셰팓아"
+        },
+        {
+          "word": "בְנֵֽי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles1 9:8",
+        "ezra 2:57",
+        "nehemiah 7:59",
+        "nehemiah 11:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "רוּם",
-  "pron": "우메림",
+  "pron": "바타람",
   "strong": "H7311",
   "posKo": "동사",
   "root": null,
@@ -8,51 +8,110 @@
     {
       "lemma": "יְרִימוֹת",
       "strong": "H3406",
-      "pron": "",
+      "pron": "비위리모트",
       "glossKo": "여리못"
     },
     {
       "lemma": "יַרְמוּת",
       "strong": "H3412",
-      "pron": "",
+      "pron": "야레무트",
       "glossKo": "야르뭇"
     },
     {
       "lemma": "יְרֵמַי",
       "strong": "H3413",
-      "pron": "",
+      "pron": "예레마이",
       "glossKo": "여레매"
     },
     {
       "lemma": "יִרְמְיָה",
       "strong": "H3414",
-      "pron": "",
+      "pron": "이렘아후",
       "glossKo": "예레미야"
     },
     {
       "lemma": "מָרוֹם",
       "strong": "H4791",
-      "pron": "라마롬",
+      "pron": "메로메",
       "glossKo": "높은 곳"
     },
     {
       "lemma": "מְרֵמוֹת",
       "strong": "H4822",
-      "pron": "",
+      "pron": "메레모트",
       "glossKo": "므레못"
     }
   ],
   "defEn": "be high; rise; raise",
   "defKo": "",
-  "countOT": 57,
+  "countOT": 193,
   "byBook": {
     "psalms": 51,
-    "genesis": 6
+    "isaiah": 25,
+    "ezekiel": 17,
+    "numbers": 16,
+    "deuteronomy": 9,
+    "exodus": 8,
+    "proverbs": 8,
+    "leviticus": 7,
+    "chronicles2": 6,
+    "daniel": 6,
+    "genesis": 6,
+    "job": 6,
+    "samuel1": 5,
+    "ezra": 4,
+    "kings1": 4,
+    "hosea": 3,
+    "kings2": 3,
+    "samuel2": 3,
+    "chronicles1": 2,
+    "joshua": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
+      "hebrew": "כַּאֲשֶׁ֨ר יָרִ֥ים",
+      "pron": "아셰르 바타람",
+      "lemmas": [
+        "אֲשֶׁר",
+        "רוּם"
+      ],
+      "words": [
+        {
+          "word": "כַּאֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יָרִ֥ים",
+          "lemma": "רוּם",
+          "strong": "H7311",
+          "pron": "바타람"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 17:11",
+        "exodus 29:27",
+        "leviticus 4:10",
+        "leviticus 22:15",
+        "numbers 18:19",
+        "numbers 18:24",
+        "numbers 31:52",
+        "kings1 11:27",
+        "kings1 14:7",
+        "kings1 16:2",
+        "ezekiel 45:13",
+        "ezekiel 48:8"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "ר֣וּמָה עַל",
-      "pron": "우메림 알",
+      "pron": "바타람 알",
       "lemmas": [
         "רוּם",
         "עַל"
@@ -62,7 +121,7 @@
           "word": "ר֣וּמָה",
           "lemma": "רוּם",
           "strong": "H7311",
-          "pron": "우메림"
+          "pron": "바타람"
         },
         {
           "word": "עַל",
@@ -71,81 +130,97 @@
           "pron": "알"
         }
       ],
-      "count": 5,
+      "count": 11,
       "refs": [
+        "genesis 7:17",
+        "deuteronomy 12:2",
+        "nehemiah 9:5",
         "psalms 57:5",
         "psalms 57:11",
         "psalms 108:5",
         "psalms 113:4",
-        "genesis 7:17"
+        "isaiah 2:12",
+        "isaiah 2:14",
+        "ezekiel 10:16",
+        "ezekiel 34:6"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "רֽוֹמְמ֡וּ יְה֘וָ֤ה",
-      "pron": "우메림 여호와",
+      "hebrew": "הֲרִימֹ֥תִי קוֹלִ֖י",
+      "pron": "바타람 콜",
       "lemmas": [
         "רוּם",
-        "יְהֹוָה"
+        "קוֹל"
       ],
       "words": [
         {
-          "word": "רֽוֹמְמ֡וּ",
+          "word": "הֲרִימֹ֥תִי",
           "lemma": "רוּם",
           "strong": "H7311",
-          "pron": "우메림"
+          "pron": "바타람"
         },
         {
-          "word": "יְה֘וָ֤ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
+          "word": "קוֹלִ֖י",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
         }
       ],
-      "count": 5,
+      "count": 10,
       "refs": [
-        "psalms 21:13",
-        "psalms 30:1",
-        "psalms 99:5",
-        "psalms 99:9",
-        "psalms 138:6"
+        "genesis 39:15",
+        "genesis 39:18",
+        "kings2 19:22",
+        "chronicles1 15:16",
+        "chronicles2 5:13",
+        "ezra 3:12",
+        "isaiah 13:2",
+        "isaiah 37:23",
+        "isaiah 58:1",
+        "ezekiel 21:22"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "תָּרִ֥ימוּ קָֽרֶן",
-      "pron": "우메림 브케렌",
+      "hebrew": "הָרֵ֣ם אֶֽת",
+      "pron": "바타람 에트",
       "lemmas": [
         "רוּם",
-        "קֶרֶן"
+        "אֵת"
       ],
       "words": [
         {
-          "word": "תָּרִ֥ימוּ",
+          "word": "הָרֵ֣ם",
           "lemma": "רוּם",
           "strong": "H7311",
-          "pron": "우메림"
+          "pron": "바타람"
         },
         {
-          "word": "קָֽרֶן",
-          "lemma": "קֶרֶן",
-          "strong": "H7161",
-          "pron": "브케렌"
+          "word": "אֶֽת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         }
       ],
-      "count": 5,
+      "count": 10,
       "refs": [
-        "psalms 75:4",
-        "psalms 75:10",
-        "psalms 89:17",
-        "psalms 89:24",
-        "psalms 148:14"
+        "exodus 14:16",
+        "leviticus 6:10",
+        "numbers 15:20",
+        "numbers 16:37",
+        "numbers 18:29",
+        "numbers 18:30",
+        "numbers 18:32",
+        "kings2 2:13",
+        "ezra 9:9",
+        "ezekiel 48:20"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "ירימו יָר֖וּמוּ",
-      "pron": "우메림 우메림",
+      "pron": "바타람 바타람",
       "lemmas": [
         "רוּם",
         "רוּם"
@@ -155,48 +230,22 @@
           "word": "ירימו",
           "lemma": "רוּם",
           "strong": "H7311",
-          "pron": "우메림"
+          "pron": "바타람"
         },
         {
           "word": "יָר֖וּמוּ",
           "lemma": "רוּם",
           "strong": "H7311",
-          "pron": "우메림"
+          "pron": "바타람"
         }
       ],
-      "count": 4,
+      "count": 10,
       "refs": [
         "psalms 66:7",
-        "psalms 89:17"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אַל ירימו",
-      "pron": "브엘 우메림",
-      "lemmas": [
-        "אַל",
-        "רוּם"
-      ],
-      "words": [
-        {
-          "word": "אַל",
-          "lemma": "אַל",
-          "strong": "H408",
-          "pron": "브엘"
-        },
-        {
-          "word": "ירימו",
-          "lemma": "רוּם",
-          "strong": "H7311",
-          "pron": "우메림"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 66:7",
-        "psalms 75:4",
-        "psalms 75:5"
+        "psalms 89:17",
+        "isaiah 10:15",
+        "daniel 8:11",
+        "daniel 11:12"
       ],
       "glossKo": ""
     }

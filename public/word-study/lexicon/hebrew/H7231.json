@@ -1,6 +1,6 @@
 {
   "lemma": "רָבַב",
-  "pron": "랍부",
+  "pron": "라롭",
   "strong": "H7231",
   "posKo": "동사",
   "root": {
@@ -12,46 +12,80 @@
     {
       "lemma": "מֵרָב",
       "strong": "H4764",
-      "pron": "",
+      "pron": "메랍",
       "glossKo": "메랍"
     },
     {
       "lemma": "רַב",
       "strong": "H7227",
-      "pron": "랍빔",
+      "pron": "랍바",
       "glossKo": "많은"
     },
     {
       "lemma": "רֹב",
       "strong": "H7230",
-      "pron": "브롭",
+      "pron": "메롭",
       "glossKo": "많음"
     },
     {
       "lemma": "רָבַב",
       "strong": "H7232",
-      "pron": "랍",
+      "pron": "바롭부",
       "glossKo": "활을 쏘다"
     },
     {
       "lemma": "רְבָבָה",
       "strong": "H7233",
-      "pron": "메립보트",
+      "pron": "레바바",
       "glossKo": "만(萬)"
     },
     {
       "lemma": "רִבּוֹ",
       "strong": "H7239",
-      "pron": "립보타임",
+      "pron": "립보",
       "glossKo": "만"
     }
   ],
   "defEn": "cast together; increase; multiply by the myriad",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 13,
   "byBook": {
     "psalms": 7,
-    "genesis": 1
+    "jeremiah": 3,
+    "genesis": 1,
+    "isaiah": 1,
+    "job": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כִּ֤י רַבּוּ֙",
+      "pron": "키 라롭",
+      "lemmas": [
+        "כִּי",
+        "רָבַב"
+      ],
+      "words": [
+        {
+          "word": "כִּ֤י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "רַבּוּ֙",
+          "lemma": "רָבַב",
+          "strong": "H7231",
+          "pron": "라롭"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 25:19",
+        "jeremiah 5:6",
+        "jeremiah 14:7",
+        "jeremiah 46:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

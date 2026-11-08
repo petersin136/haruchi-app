@@ -1,6 +1,6 @@
 {
   "lemma": "עֲבֹת",
-  "pron": "아보테모",
+  "pron": "아보트",
   "strong": "H5688",
   "posKo": "명사",
   "root": {
@@ -12,15 +12,171 @@
     {
       "lemma": "עָבֹת",
       "strong": "H5687",
-      "pron": "",
+      "pron": "아보트",
       "glossKo": "엉킨"
     }
   ],
   "defEn": "intwined; string; wreath; foliage",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 24,
   "byBook": {
-    "psalms": 3
+    "exodus": 8,
+    "ezekiel": 6,
+    "judges": 4,
+    "psalms": 3,
+    "hosea": 1,
+    "isaiah": 1,
+    "job": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "שְׁתֵּי֙ עֲבֹתֹ֣ת",
+      "pron": "셰네 아보트",
+      "lemmas": [
+        "שְׁנַיִם",
+        "עֲבֹת"
+      ],
+      "words": [
+        {
+          "word": "שְׁתֵּי֙",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        },
+        {
+          "word": "עֲבֹתֹ֣ת",
+          "lemma": "עֲבֹת",
+          "strong": "H5688",
+          "pron": "아보트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 28:24",
+        "exodus 28:25",
+        "exodus 39:17",
+        "exodus 39:18",
+        "judges 15:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּ֣ין עֲבֹתִ֑ים",
+      "pron": "벤 아보트",
+      "lemmas": [
+        "בֵּין",
+        "עֲבֹת"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֣ין",
+          "lemma": "בֵּין",
+          "strong": "H996",
+          "pron": "벤"
+        },
+        {
+          "word": "עֲבֹתִ֑ים",
+          "lemma": "עֲבֹת",
+          "strong": "H5688",
+          "pron": "아보트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 19:11",
+        "ezekiel 31:3",
+        "ezekiel 31:10",
+        "ezekiel 31:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲבֹ֑ת זָהָ֖ב",
+      "pron": "아보트 아자합",
+      "lemmas": [
+        "עֲבֹת",
+        "זָהָב"
+      ],
+      "words": [
+        {
+          "word": "עֲבֹ֑ת",
+          "lemma": "עֲבֹת",
+          "strong": "H5688",
+          "pron": "아보트"
+        },
+        {
+          "word": "זָהָ֖ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 28:22",
+        "exodus 28:24",
+        "exodus 39:15",
+        "exodus 39:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַעֲשֵׂ֣ה עֲבֹ֑ת",
+      "pron": "밈마아세누 아보트",
+      "lemmas": [
+        "מַעֲשֶׂה",
+        "עֲבֹת"
+      ],
+      "words": [
+        {
+          "word": "מַעֲשֵׂ֣ה",
+          "lemma": "מַעֲשֶׂה",
+          "strong": "H4639",
+          "pron": "밈마아세누"
+        },
+        {
+          "word": "עֲבֹ֑ת",
+          "lemma": "עֲבֹת",
+          "strong": "H5688",
+          "pron": "아보트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 28:14",
+        "exodus 28:22",
+        "exodus 39:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲבֹ֑ת וְנָתַתָּ֛ה",
+      "pron": "아보트 바잇텐",
+      "lemmas": [
+        "עֲבֹת",
+        "נָתַן"
+      ],
+      "words": [
+        {
+          "word": "עֲבֹ֑ת",
+          "lemma": "עֲבֹת",
+          "strong": "H5688",
+          "pron": "아보트"
+        },
+        {
+          "word": "וְנָתַתָּ֛ה",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 28:14",
+        "exodus 28:25",
+        "exodus 39:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "צָפוֹן",
-  "pron": "차폰",
+  "pron": "차포나",
   "strong": "H6828",
   "posKo": "명사",
   "root": {
@@ -12,34 +12,243 @@
     {
       "lemma": "מִצְפֻּן",
       "strong": "H4710",
-      "pron": "",
-      "glossKo": "비밀의 것"
+      "pron": "마쳅푸나으브",
+      "glossKo": "그의 비밀의 것"
+    },
+    {
+      "lemma": "צָפוֹן",
+      "strong": "H6829",
+      "pron": "브차폰",
+      "glossKo": "사본"
+    },
+    {
+      "lemma": "צְפוֹנִי",
+      "strong": "H6830",
+      "pron": "아체포니",
+      "glossKo": "북쪽의"
     },
     {
       "lemma": "צָפִין",
       "strong": "H6840",
-      "pron": "브츠핀크",
+      "pron": "븟핀크",
       "glossKo": "너의 감춰진 보물"
     },
     {
       "lemma": "צָפַן",
       "strong": "H6845",
-      "pron": "이쳅포누",
-      "glossKo": "감추다"
+      "pron": "밧티쳅페네후",
+      "glossKo": "그에게 감추다"
     },
     {
       "lemma": "צְפַנְיָה",
       "strong": "H6846",
-      "pron": "",
+      "pron": "체판아후",
       "glossKo": "스바냐"
     }
   ],
   "defEn": "hidden; dark; north",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 153,
   "byBook": {
+    "ezekiel": 46,
+    "jeremiah": 25,
+    "joshua": 25,
+    "daniel": 9,
+    "exodus": 6,
+    "isaiah": 5,
+    "numbers": 5,
+    "zechariah": 5,
+    "judges": 4,
+    "chronicles1": 3,
     "psalms": 3,
-    "genesis": 2
+    "deuteronomy": 2,
+    "ecclesiastes": 2,
+    "genesis": 2,
+    "job": 2,
+    "amos": 1,
+    "chronicles2": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "leviticus": 1,
+    "proverbs": 1,
+    "samuel1": 1,
+    "songofsolomon": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מֵאֶ֣רֶץ צָפ֔וֹן",
+      "pron": "하아레츠 차포나",
+      "lemmas": [
+        "אֶרֶץ",
+        "צָפוֹן"
+      ],
+      "words": [
+        {
+          "word": "מֵאֶ֣רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "צָפ֔וֹן",
+          "lemma": "צָפוֹן",
+          "strong": "H6828",
+          "pron": "차포나"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "jeremiah 3:18",
+        "jeremiah 6:22",
+        "jeremiah 10:22",
+        "jeremiah 16:15",
+        "jeremiah 23:8",
+        "jeremiah 31:8",
+        "jeremiah 46:10",
+        "jeremiah 50:9",
+        "zechariah 2:6",
+        "zechariah 6:6",
+        "zechariah 6:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִפְאַ֣ת צָפ֑וֹן",
+      "pron": "아페오트 차포나",
+      "lemmas": [
+        "פֵּאָה",
+        "צָפוֹן"
+      ],
+      "words": [
+        {
+          "word": "לִפְאַ֣ת",
+          "lemma": "פֵּאָה",
+          "strong": "H6285",
+          "pron": "아페오트"
+        },
+        {
+          "word": "צָפ֑וֹן",
+          "lemma": "צָפוֹן",
+          "strong": "H6828",
+          "pron": "차포나"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 26:20",
+        "exodus 27:11",
+        "exodus 36:25",
+        "exodus 38:11",
+        "numbers 35:5",
+        "joshua 15:5",
+        "joshua 18:12",
+        "ezekiel 47:15",
+        "ezekiel 47:17",
+        "ezekiel 48:16",
+        "ezekiel 48:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דֶּ֣רֶךְ הַצָּפ֔וֹן",
+      "pron": "데레크 차포나",
+      "lemmas": [
+        "דֶּרֶךְ",
+        "צָפוֹן"
+      ],
+      "words": [
+        {
+          "word": "דֶּ֣רֶךְ",
+          "lemma": "דֶּרֶךְ",
+          "strong": "H1870",
+          "pron": "데레크"
+        },
+        {
+          "word": "הַצָּפ֔וֹן",
+          "lemma": "צָפוֹן",
+          "strong": "H6828",
+          "pron": "차포나"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "ezekiel 8:5",
+        "ezekiel 40:20",
+        "ezekiel 40:44",
+        "ezekiel 40:46",
+        "ezekiel 41:11",
+        "ezekiel 42:1",
+        "ezekiel 42:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשַּׁ֔עַר לַצָּפ֖וֹן",
+      "pron": "브샤아르 차포나",
+      "lemmas": [
+        "שַׁעַר",
+        "צָפוֹן"
+      ],
+      "words": [
+        {
+          "word": "הַשַּׁ֔עַר",
+          "lemma": "שַׁעַר",
+          "strong": "H8179",
+          "pron": "브샤아르"
+        },
+        {
+          "word": "לַצָּפ֖וֹן",
+          "lemma": "צָפוֹן",
+          "strong": "H6828",
+          "pron": "차포나"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "ezekiel 40:23",
+        "ezekiel 40:35",
+        "ezekiel 40:40",
+        "ezekiel 40:44",
+        "ezekiel 44:4",
+        "ezekiel 46:9",
+        "ezekiel 47:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֶ֣לֶךְ הַצָּפ֔וֹן",
+      "pron": "멜레크 차포나",
+      "lemmas": [
+        "מֶלֶךְ",
+        "צָפוֹן"
+      ],
+      "words": [
+        {
+          "word": "מֶ֣לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "הַצָּפ֔וֹן",
+          "lemma": "צָפוֹן",
+          "strong": "H6828",
+          "pron": "차포나"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "jeremiah 25:26",
+        "daniel 11:6",
+        "daniel 11:7",
+        "daniel 11:8",
+        "daniel 11:11",
+        "daniel 11:13",
+        "daniel 11:15",
+        "daniel 11:40"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

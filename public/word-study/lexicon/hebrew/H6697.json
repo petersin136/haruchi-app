@@ -1,6 +1,6 @@
 {
   "lemma": "צוּר",
-  "pron": "추리위",
+  "pron": "아추르",
   "strong": "H6697",
   "posKo": "명사",
   "root": {
@@ -12,50 +12,126 @@
     {
       "lemma": "טוּר",
       "strong": "H2906",
-      "pron": "",
+      "pron": "르두르",
       "glossKo": "산(아람)"
     },
     {
       "lemma": "מָצוֹר",
       "strong": "H4692",
-      "pron": "마초르",
+      "pron": "바마초르",
       "glossKo": "포위"
     },
     {
       "lemma": "צַוָּאר",
       "strong": "H6677",
-      "pron": "브차바르",
-      "glossKo": "목"
+      "pron": "차바라으브",
+      "glossKo": "그의 목"
     },
     {
       "lemma": "צוּר",
       "strong": "H6696",
-      "pron": "차렛타니",
-      "glossKo": "나를 포위하다"
+      "pron": "브차렛티",
+      "glossKo": "포위하다"
     },
     {
       "lemma": "צוּר",
       "strong": "H6698",
-      "pron": "",
+      "pron": "추르",
       "glossKo": "수르"
     },
     {
       "lemma": "צוּרָה",
       "strong": "H6699",
-      "pron": "",
+      "pron": "추라트",
       "glossKo": "형태"
     }
   ],
   "defEn": "cliff; compressed; rock; boulder; refuge",
   "defKo": "",
-  "countOT": 26,
+  "countOT": 78,
   "byBook": {
-    "psalms": 26
+    "psalms": 26,
+    "isaiah": 12,
+    "deuteronomy": 9,
+    "job": 7,
+    "samuel2": 6,
+    "exodus": 4,
+    "judges": 3,
+    "jeremiah": 2,
+    "joshua": 2,
+    "samuel1": 2,
+    "chronicles1": 1,
+    "habakkuk": 1,
+    "nahum": 1,
+    "numbers": 1,
+    "proverbs": 1
   },
   "phrases": [
     {
+      "hebrew": "אֱלֹהֵ֑ימוֹ צ֖וּר",
+      "pron": "엘로힘 아추르",
+      "lemmas": [
+        "אֱלֹהִים",
+        "צוּר"
+      ],
+      "words": [
+        {
+          "word": "אֱלֹהֵ֑ימוֹ",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "צ֖וּר",
+          "lemma": "צוּר",
+          "strong": "H6697",
+          "pron": "아추르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 32:37",
+        "samuel2 22:3",
+        "samuel2 22:47",
+        "psalms 78:35",
+        "psalms 94:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַֽל הַצּוּר֮",
+      "pron": "알 아추르",
+      "lemmas": [
+        "עַל",
+        "צוּר"
+      ],
+      "words": [
+        {
+          "word": "עַֽל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הַצּוּר֮",
+          "lemma": "צוּר",
+          "strong": "H6697",
+          "pron": "아추르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 17:6",
+        "exodus 33:21",
+        "judges 13:19",
+        "chronicles1 11:15",
+        "proverbs 30:19"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "יְ֝הוָ֗ה צוּרִ֥י",
-      "pron": "여호와 추리위",
+      "pron": "여호와 아추르",
       "lemmas": [
         "יְהֹוָה",
         "צוּר"
@@ -71,20 +147,21 @@
           "word": "צוּרִ֥י",
           "lemma": "צוּר",
           "strong": "H6697",
-          "pron": "추리위"
+          "pron": "아추르"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "psalms 19:14",
         "psalms 92:15",
-        "psalms 144:1"
+        "psalms 144:1",
+        "isaiah 26:4"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "צוּרִ֑י וְ֝יָר֗וּם",
-      "pron": "추리위 우메림",
+      "hebrew": "צוּרִ֑י וְיָרֻ֕ם",
+      "pron": "아추르 바타람",
       "lemmas": [
         "צוּר",
         "רוּם"
@@ -94,17 +171,18 @@
           "word": "צוּרִ֑י",
           "lemma": "צוּר",
           "strong": "H6697",
-          "pron": "추리위"
+          "pron": "아추르"
         },
         {
-          "word": "וְ֝יָר֗וּם",
+          "word": "וְיָרֻ֕ם",
           "lemma": "רוּם",
           "strong": "H7311",
-          "pron": "우메림"
+          "pron": "바타람"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
+        "samuel2 22:47",
         "psalms 18:46",
         "psalms 27:5",
         "psalms 61:2"
@@ -113,7 +191,7 @@
     },
     {
       "hebrew": "צ֭וּרִי וִֽישׁוּעָתִ֑י",
-      "pron": "추리위 예슈아타",
+      "pron": "아추르 리슈아테카",
       "lemmas": [
         "צוּר",
         "יְשׁוּעָה"
@@ -123,17 +201,18 @@
           "word": "צ֭וּרִי",
           "lemma": "צוּר",
           "strong": "H6697",
-          "pron": "추리위"
+          "pron": "아추르"
         },
         {
           "word": "וִֽישׁוּעָתִ֑י",
           "lemma": "יְשׁוּעָה",
           "strong": "H3444",
-          "pron": "예슈아타"
+          "pron": "리슈아테카"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
+        "deuteronomy 32:15",
         "psalms 62:2",
         "psalms 62:6",
         "psalms 89:26"

@@ -2,7 +2,7 @@
   "lemma": "מִגְרָשׁ",
   "pron": "믹라쉬",
   "strong": "H4054",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גָּרַשׁ",
     "strong": "H1644",
@@ -12,20 +12,20 @@
     {
       "lemma": "גָּרַשׁ",
       "strong": "H1644",
-      "pron": "바예가라셰후",
-      "glossKo": "그에게 쫓아내다"
+      "pron": "바예가레쉬",
+      "glossKo": "쫓아내다"
     },
     {
       "lemma": "גֶּרֶשׁ",
       "strong": "H1645",
-      "pron": "",
+      "pron": "게레쉬",
       "glossKo": "산물"
     },
     {
       "lemma": "גְרֻשָׁה",
       "strong": "H1646",
-      "pron": "",
-      "glossKo": "쫓아냄"
+      "pron": "게루쇼테켐",
+      "glossKo": "너희의 쫓아냄"
     },
     {
       "lemma": "גֵּרְשׁוֹן",
@@ -36,7 +36,218 @@
   ],
   "defEn": "suburb; area around a building; margin of the sea",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 115,
+  "byBook": {
+    "joshua": 58,
+    "chronicles1": 44,
+    "ezekiel": 5,
+    "numbers": 5,
+    "chronicles2": 2,
+    "leviticus": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְאֶת מִגְרָשֶׁ֑הָ",
+      "pron": "에트 믹라쉬",
+      "lemmas": [
+        "אֵת",
+        "מִגְרָשׁ"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מִגְרָשֶׁ֑הָ",
+          "lemma": "מִגְרָשׁ",
+          "strong": "H4054",
+          "pron": "믹라쉬"
+        }
+      ],
+      "count": 95,
+      "refs": [
+        "numbers 35:7",
+        "joshua 21:3",
+        "joshua 21:8",
+        "joshua 21:11",
+        "joshua 21:13",
+        "joshua 21:14",
+        "joshua 21:15",
+        "joshua 21:16",
+        "joshua 21:17",
+        "joshua 21:18",
+        "joshua 21:21",
+        "joshua 21:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת מִגְרָשֶׁ֔יהָ וְאֶת",
+      "pron": "에트 믹라쉬 에트",
+      "lemmas": [
+        "אֵת",
+        "מִגְרָשׁ",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מִגְרָשֶׁ֔יהָ",
+          "lemma": "מִגְרָשׁ",
+          "strong": "H4054",
+          "pron": "믹라쉬"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 44,
+      "refs": [
+        "joshua 21:13",
+        "joshua 21:14",
+        "joshua 21:15",
+        "joshua 21:16",
+        "joshua 21:17",
+        "joshua 21:18",
+        "joshua 21:22",
+        "joshua 21:23",
+        "joshua 21:24",
+        "joshua 21:25",
+        "joshua 21:27",
+        "joshua 21:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִגְרָשֶׁ֔יהָ וְאֶת",
+      "pron": "믹라쉬 에트",
+      "lemmas": [
+        "מִגְרָשׁ",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "מִגְרָשֶׁ֔יהָ",
+          "lemma": "מִגְרָשׁ",
+          "strong": "H4054",
+          "pron": "믹라쉬"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 44,
+      "refs": [
+        "joshua 21:13",
+        "joshua 21:14",
+        "joshua 21:15",
+        "joshua 21:16",
+        "joshua 21:17",
+        "joshua 21:18",
+        "joshua 21:22",
+        "joshua 21:23",
+        "joshua 21:24",
+        "joshua 21:25",
+        "joshua 21:27",
+        "joshua 21:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִגְרָשֶׁ֑הָ עָרִ֖ים",
+      "pron": "믹라쉬 이르",
+      "lemmas": [
+        "מִגְרָשׁ",
+        "עִיר"
+      ],
+      "words": [
+        {
+          "word": "מִגְרָשֶׁ֑הָ",
+          "lemma": "מִגְרָשׁ",
+          "strong": "H4054",
+          "pron": "믹라쉬"
+        },
+        {
+          "word": "עָרִ֖ים",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "leviticus 25:34",
+        "numbers 35:2",
+        "numbers 35:4",
+        "numbers 35:5",
+        "joshua 21:16",
+        "joshua 21:18",
+        "joshua 21:22",
+        "joshua 21:24",
+        "joshua 21:25",
+        "joshua 21:27",
+        "joshua 21:29",
+        "joshua 21:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת מִגְרָשֶׁ֑הָ עָרִ֖ים",
+      "pron": "에트 믹라쉬 이르",
+      "lemmas": [
+        "אֵת",
+        "מִגְרָשׁ",
+        "עִיר"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מִגְרָשֶׁ֑הָ",
+          "lemma": "מִגְרָשׁ",
+          "strong": "H4054",
+          "pron": "믹라쉬"
+        },
+        {
+          "word": "עָרִ֖ים",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "joshua 21:16",
+        "joshua 21:18",
+        "joshua 21:22",
+        "joshua 21:24",
+        "joshua 21:25",
+        "joshua 21:27",
+        "joshua 21:29",
+        "joshua 21:31",
+        "joshua 21:32",
+        "joshua 21:35",
+        "joshua 21:37"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

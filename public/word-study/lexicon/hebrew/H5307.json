@@ -1,6 +1,6 @@
 {
   "lemma": "נָפַל",
-  "pron": "입펠루",
+  "pron": "바얍펠",
   "strong": "H5307",
   "posKo": "동사",
   "root": null,
@@ -8,19 +8,19 @@
     {
       "lemma": "מַפָּל",
       "strong": "H4651",
-      "pron": "",
+      "pron": "맙펠레",
       "glossKo": "떨어진 것"
     },
     {
       "lemma": "מַפָּלָה",
       "strong": "H4654",
-      "pron": "",
+      "pron": "맙팔라",
       "glossKo": "쓰러짐"
     },
     {
       "lemma": "מַפֶּלֶת",
       "strong": "H4658",
-      "pron": "",
+      "pron": "맙펠레트",
       "glossKo": "쓰러짐"
     },
     {
@@ -32,63 +32,175 @@
     {
       "lemma": "נְפַל",
       "strong": "H5308",
-      "pron": "",
+      "pron": "입펠",
       "glossKo": "떨어지다(아람)"
     },
     {
       "lemma": "נֶפֶל",
       "strong": "H5309",
-      "pron": "네펠",
+      "pron": "크네펠",
       "glossKo": "낙태아"
     }
   ],
   "defEn": "fall",
   "defKo": "",
-  "countOT": 47,
+  "countOT": 435,
   "byBook": {
+    "ezekiel": 54,
+    "jeremiah": 45,
+    "samuel2": 30,
     "psalms": 29,
-    "genesis": 18
+    "isaiah": 25,
+    "samuel1": 25,
+    "judges": 21,
+    "chronicles1": 19,
+    "genesis": 18,
+    "numbers": 17,
+    "kings2": 16,
+    "proverbs": 16,
+    "joshua": 15,
+    "job": 13,
+    "esther": 11,
+    "chronicles2": 9,
+    "leviticus": 9,
+    "daniel": 8,
+    "deuteronomy": 8,
+    "kings1": 8,
+    "amos": 7,
+    "ecclesiastes": 6,
+    "exodus": 6,
+    "hosea": 4,
+    "jonah": 3,
+    "lamentations": 3,
+    "nehemiah": 3,
+    "ruth": 2,
+    "ezra": 1,
+    "joel": 1,
+    "micah": 1,
+    "nahum": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "נָפְל֥וּ עָלָֽי",
-      "pron": "입펠루 알",
+      "hebrew": "וַיִּפֹּ֥ל עַל",
+      "pron": "바얍펠 알",
       "lemmas": [
         "נָפַל",
         "עַל"
       ],
       "words": [
         {
-          "word": "נָפְל֥וּ",
+          "word": "וַיִּפֹּ֥ל",
           "lemma": "נָפַל",
           "strong": "H5307",
-          "pron": "입펠루"
+          "pron": "바얍펠"
         },
         {
-          "word": "עָלָֽי",
+          "word": "עַל",
           "lemma": "עַל",
           "strong": "H5921",
           "pron": "알"
         }
       ],
-      "count": 9,
+      "count": 62,
       "refs": [
-        "psalms 55:4",
-        "psalms 69:9",
         "genesis 15:12",
         "genesis 24:64",
         "genesis 33:4",
         "genesis 43:18",
         "genesis 45:14",
-        "genesis 46:29"
+        "genesis 46:29",
+        "exodus 15:16",
+        "leviticus 9:24",
+        "leviticus 11:32",
+        "numbers 16:4",
+        "numbers 16:22",
+        "numbers 16:45"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַֽיִּפְּל֖וּ פָּנָֽיו",
-      "pron": "입펠루 미페네",
+      "hebrew": "בַּחֶ֣רֶב יִפֹּ֔לוּ",
+      "pron": "아헤렙 바얍펠",
+      "lemmas": [
+        "חֶרֶב",
+        "נָפַל"
+      ],
+      "words": [
+        {
+          "word": "בַּחֶ֣רֶב",
+          "lemma": "חֶרֶב",
+          "strong": "H2719",
+          "pron": "아헤렙"
+        },
+        {
+          "word": "יִפֹּ֔לוּ",
+          "lemma": "נָפַל",
+          "strong": "H5307",
+          "pron": "바얍펠"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "leviticus 26:36",
+        "samuel1 31:4",
+        "chronicles1 10:4",
+        "psalms 78:64",
+        "isaiah 3:25",
+        "ezekiel 5:12",
+        "ezekiel 6:12",
+        "ezekiel 11:10",
+        "ezekiel 17:21",
+        "ezekiel 23:25",
+        "ezekiel 24:21",
+        "ezekiel 25:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהִפַּלְתִּ֥יו בַּחֶ֖רֶב",
+      "pron": "바얍펠 아헤렙",
       "lemmas": [
         "נָפַל",
+        "חֶרֶב"
+      ],
+      "words": [
+        {
+          "word": "וְהִפַּלְתִּ֥יו",
+          "lemma": "נָפַל",
+          "strong": "H5307",
+          "pron": "바얍펠"
+        },
+        {
+          "word": "בַּחֶ֖רֶב",
+          "lemma": "חֶרֶב",
+          "strong": "H2719",
+          "pron": "아헤렙"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "numbers 14:3",
+        "numbers 14:43",
+        "samuel2 1:12",
+        "samuel2 3:29",
+        "kings2 19:7",
+        "chronicles2 32:21",
+        "isaiah 13:15",
+        "isaiah 37:7",
+        "jeremiah 19:7",
+        "jeremiah 20:4",
+        "jeremiah 44:12",
+        "lamentations 2:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽיִּפְּל֖וּ עַל פְּנֵיהֶֽם",
+      "pron": "바얍펠 알 페네",
+      "lemmas": [
+        "נָפַל",
+        "עַל",
         "פָּנִים"
       ],
       "words": [
@@ -96,38 +208,7 @@
           "word": "וַֽיִּפְּל֖וּ",
           "lemma": "נָפַל",
           "strong": "H5307",
-          "pron": "입펠루"
-        },
-        {
-          "word": "פָּנָֽיו",
-          "lemma": "פָּנִים",
-          "strong": "H6440",
-          "pron": "미페네"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 4:5",
-        "genesis 4:6",
-        "genesis 44:14",
-        "genesis 50:18"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיִּפֹּ֥ל עַל צַוָּארָ֖ו",
-      "pron": "입펠루 알 브차바르",
-      "lemmas": [
-        "נָפַל",
-        "עַל",
-        "צַוָּאר"
-      ],
-      "words": [
-        {
-          "word": "וַיִּפֹּ֥ל",
-          "lemma": "נָפַל",
-          "strong": "H5307",
-          "pron": "입펠루"
+          "pron": "바얍펠"
         },
         {
           "word": "עַל",
@@ -136,17 +217,64 @@
           "pron": "알"
         },
         {
-          "word": "צַוָּארָ֖ו",
-          "lemma": "צַוָּאר",
-          "strong": "H6677",
-          "pron": "브차바르"
+          "word": "פְּנֵיהֶֽם",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
         }
       ],
-      "count": 3,
+      "count": 18,
       "refs": [
-        "genesis 33:4",
-        "genesis 45:14",
-        "genesis 46:29"
+        "leviticus 9:24",
+        "numbers 16:4",
+        "numbers 16:22",
+        "numbers 16:45",
+        "numbers 20:6",
+        "joshua 7:6",
+        "joshua 7:10",
+        "judges 13:20",
+        "ruth 2:10",
+        "samuel1 17:49",
+        "samuel2 9:6",
+        "kings1 18:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נֹפֵ֤ל לְפָנָיו֙",
+      "pron": "바얍펠 페네",
+      "lemmas": [
+        "נָפַל",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "נֹפֵ֤ל",
+          "lemma": "נָפַל",
+          "strong": "H5307",
+          "pron": "바얍펠"
+        },
+        {
+          "word": "לְפָנָיו֙",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "genesis 4:5",
+        "genesis 4:6",
+        "genesis 44:14",
+        "genesis 50:18",
+        "leviticus 26:7",
+        "deuteronomy 9:18",
+        "deuteronomy 9:25",
+        "samuel1 5:3",
+        "samuel1 5:4",
+        "samuel1 14:13",
+        "samuel2 3:34",
+        "samuel2 19:18"
       ],
       "glossKo": ""
     }

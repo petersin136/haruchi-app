@@ -1,6 +1,6 @@
 {
   "lemma": "גָּבַר",
-  "pron": "낙비르",
+  "pron": "바익베루",
   "strong": "H1396",
   "posKo": "동사",
   "root": null,
@@ -14,7 +14,7 @@
     {
       "lemma": "גֶּבֶר",
       "strong": "H1397",
-      "pron": "아게베르",
+      "pron": "아게바림",
       "glossKo": "장정"
     },
     {
@@ -26,15 +26,85 @@
   ],
   "defEn": "be strong",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 25,
   "byBook": {
     "genesis": 5,
-    "psalms": 4
+    "psalms": 4,
+    "job": 3,
+    "exodus": 2,
+    "samuel2": 2,
+    "zechariah": 2,
+    "chronicles1": 1,
+    "daniel": 1,
+    "ecclesiastes": 1,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "lamentations": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
+      "hebrew": "כִּֽי גָבְר֤וּ",
+      "pron": "키 바익베루",
+      "lemmas": [
+        "כִּי",
+        "גָּבַר"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "גָבְר֤וּ",
+          "lemma": "גָּבַר",
+          "strong": "H1396",
+          "pron": "바익베루"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 11:23",
+        "job 36:9",
+        "psalms 117:2",
+        "lamentations 1:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גָּֽבְרוּ֙ עַל",
+      "pron": "바익베루 알",
+      "lemmas": [
+        "גָּבַר",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "גָּֽבְרוּ֙",
+          "lemma": "גָּבַר",
+          "strong": "H1396",
+          "pron": "바익베루"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 49:26",
+        "samuel2 11:23",
+        "psalms 117:2"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וַיִּגְבְּר֥וּ הַמַּ֛יִם",
-      "pron": "낙비르 마임",
+      "pron": "바익베루 아마임",
       "lemmas": [
         "גָּבַר",
         "מַיִם"
@@ -44,13 +114,13 @@
           "word": "וַיִּגְבְּר֥וּ",
           "lemma": "גָּבַר",
           "strong": "H1396",
-          "pron": "낙비르"
+          "pron": "바익베루"
         },
         {
           "word": "הַמַּ֛יִם",
           "lemma": "מַיִם",
           "strong": "H4325",
-          "pron": "마임"
+          "pron": "아마임"
         }
       ],
       "count": 3,

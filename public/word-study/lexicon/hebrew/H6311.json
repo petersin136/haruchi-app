@@ -10,21 +10,27 @@
   },
   "family": [
     {
+      "lemma": "אֵפוֹ",
+      "strong": "H645",
+      "pron": "에포",
+      "glossKo": "그러면"
+    },
+    {
       "lemma": "הוּא",
       "strong": "H1931",
-      "pron": "브후",
+      "pron": "후",
       "glossKo": "그"
     },
     {
       "lemma": "הוּא",
       "strong": "H1932",
-      "pron": "",
+      "pron": "브후",
       "glossKo": "그(아람)"
     },
     {
       "lemma": "הֵם",
       "strong": "H1992",
-      "pron": "헴마",
+      "pron": "헴",
       "glossKo": "그들"
     },
     {
@@ -42,10 +48,185 @@
   ],
   "defEn": "this place; here",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 82,
   "byBook": {
+    "ezekiel": 38,
+    "kings2": 8,
+    "deuteronomy": 5,
+    "isaiah": 4,
+    "kings1": 4,
     "genesis": 3,
-    "psalms": 1
+    "judges": 3,
+    "numbers": 3,
+    "samuel1": 3,
+    "job": 2,
+    "joshua": 2,
+    "ruth": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "ezra": 1,
+    "psalms": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מִפּ֣וֹ וּמִפּ֑וֹ",
+      "pron": "포 포",
+      "lemmas": [
+        "פֹּה",
+        "פֹּה"
+      ],
+      "words": [
+        {
+          "word": "מִפּ֣וֹ",
+          "lemma": "פֹּה",
+          "strong": "H6311",
+          "pron": "포"
+        },
+        {
+          "word": "וּמִפּ֑וֹ",
+          "lemma": "פֹּה",
+          "strong": "H6311",
+          "pron": "포"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "ezekiel 40:10",
+        "ezekiel 40:34",
+        "ezekiel 40:37",
+        "ezekiel 41:15",
+        "ezekiel 41:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַמּ֖וֹת מִפּֽוֹ",
+      "pron": "암마 포",
+      "lemmas": [
+        "אַמָּה",
+        "פֹּה"
+      ],
+      "words": [
+        {
+          "word": "אַמּ֖וֹת",
+          "lemma": "אַמָּה",
+          "strong": "H520",
+          "pron": "암마"
+        },
+        {
+          "word": "מִפּֽוֹ",
+          "lemma": "פֹּה",
+          "strong": "H6311",
+          "pron": "포"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "ezekiel 40:12",
+        "ezekiel 40:48",
+        "ezekiel 41:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָאֵילִ֖ם מִפֹּ֥ה וּמִפּֽוֹ",
+      "pron": "브아일 포 포",
+      "lemmas": [
+        "אַיִל",
+        "פֹּה",
+        "פֹּה"
+      ],
+      "words": [
+        {
+          "word": "לָאֵילִ֖ם",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
+        },
+        {
+          "word": "מִפֹּ֥ה",
+          "lemma": "פֹּה",
+          "strong": "H6311",
+          "pron": "포"
+        },
+        {
+          "word": "וּמִפּֽוֹ",
+          "lemma": "פֹּה",
+          "strong": "H6311",
+          "pron": "포"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "ezekiel 40:10",
+        "ezekiel 40:34",
+        "ezekiel 40:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁבוּ פֹּה֙",
+      "pron": "바예솁 포",
+      "lemmas": [
+        "יָשַׁב",
+        "פֹּה"
+      ],
+      "words": [
+        {
+          "word": "שְׁבוּ",
+          "lemma": "יָשַׁב",
+          "strong": "H3427",
+          "pron": "바예솁"
+        },
+        {
+          "word": "פֹּה֙",
+          "lemma": "פֹּה",
+          "strong": "H6311",
+          "pron": "포"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 22:5",
+        "numbers 32:6",
+        "ruth 4:1",
+        "ruth 4:2",
+        "kings2 7:3",
+        "kings2 7:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַה פֹ֖ה",
+      "pron": "마 포",
+      "lemmas": [
+        "מָה",
+        "פֹּה"
+      ],
+      "words": [
+        {
+          "word": "מַה",
+          "lemma": "מָה",
+          "strong": "H4100",
+          "pron": "마"
+        },
+        {
+          "word": "פֹ֖ה",
+          "lemma": "פֹּה",
+          "strong": "H6311",
+          "pron": "포"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 18:3",
+        "kings1 19:9",
+        "kings1 19:13",
+        "isaiah 22:16",
+        "isaiah 52:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

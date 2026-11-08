@@ -12,21 +12,90 @@
     {
       "lemma": "זָעַק",
       "strong": "H2199",
-      "pron": "자아쿠",
+      "pron": "바잇아쿠",
       "glossKo": "외치다"
     },
     {
       "lemma": "זְעִק",
       "strong": "H2200",
-      "pron": "",
+      "pron": "제이크",
       "glossKo": "부르짖다"
     }
   ],
   "defEn": "shriek; outcry",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 19,
   "byBook": {
-    "genesis": 1
+    "jeremiah": 6,
+    "isaiah": 4,
+    "esther": 2,
+    "nehemiah": 2,
+    "ecclesiastes": 1,
+    "ezekiel": 1,
+    "genesis": 1,
+    "job": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לְק֣וֹל זַעֲקֶ֔ךָ",
+      "pron": "콜 자아카트",
+      "lemmas": [
+        "קוֹל",
+        "זַעַק"
+      ],
+      "words": [
+        {
+          "word": "לְק֣וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        },
+        {
+          "word": "זַעֲקֶ֔ךָ",
+          "lemma": "זַעַק",
+          "strong": "H2201",
+          "pron": "자아카트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 30:19",
+        "isaiah 65:19",
+        "jeremiah 51:54",
+        "ezekiel 27:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נִשְׁמָעִ֑ים מִזַּעֲקַ֥ת",
+      "pron": "바이솀우 자아카트",
+      "lemmas": [
+        "שָׁמַע",
+        "זַעַק"
+      ],
+      "words": [
+        {
+          "word": "נִשְׁמָעִ֑ים",
+          "lemma": "שָׁמַע",
+          "strong": "H8085",
+          "pron": "바이솀우"
+        },
+        {
+          "word": "מִזַּעֲקַ֥ת",
+          "lemma": "זַעַק",
+          "strong": "H2201",
+          "pron": "자아카트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ecclesiastes 9:17",
+        "jeremiah 18:22",
+        "jeremiah 20:16",
+        "jeremiah 48:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

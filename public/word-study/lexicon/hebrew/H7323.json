@@ -1,6 +1,6 @@
 {
   "lemma": "רוּץ",
-  "pron": "아루츠",
+  "pron": "바야라츠",
   "strong": "H7323",
   "posKo": "동사",
   "root": null,
@@ -8,16 +8,188 @@
     {
       "lemma": "מֵרוֹץ",
       "strong": "H4793",
-      "pron": "",
+      "pron": "아메로츠",
       "glossKo": "달림"
     }
   ],
   "defEn": "run; rush",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 104,
   "byBook": {
+    "kings2": 13,
+    "samuel1": 12,
+    "samuel2": 12,
     "genesis": 10,
-    "psalms": 6
+    "jeremiah": 8,
+    "chronicles2": 7,
+    "kings1": 6,
+    "psalms": 6,
+    "esther": 4,
+    "proverbs": 4,
+    "isaiah": 3,
+    "job": 3,
+    "joel": 3,
+    "joshua": 2,
+    "judges": 2,
+    "numbers": 2,
+    "amos": 1,
+    "daniel": 1,
+    "habakkuk": 1,
+    "haggai": 1,
+    "nahum": 1,
+    "songofsolomon": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "ר֑וּץ וַיָּ֤רָץ",
+      "pron": "바야라츠 바야라츠",
+      "lemmas": [
+        "רוּץ",
+        "רוּץ"
+      ],
+      "words": [
+        {
+          "word": "ר֑וּץ",
+          "lemma": "רוּץ",
+          "strong": "H7323",
+          "pron": "바야라츠"
+        },
+        {
+          "word": "וַיָּ֤רָץ",
+          "lemma": "רוּץ",
+          "strong": "H7323",
+          "pron": "바야라츠"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel2 18:23",
+        "jeremiah 50:44",
+        "jeremiah 51:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיָּ֨רָץ֙ אֶל",
+      "pron": "바야라츠 엘",
+      "lemmas": [
+        "רוּץ",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "וַיָּ֨רָץ֙",
+          "lemma": "רוּץ",
+          "strong": "H7323",
+          "pron": "바야라츠"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 16:47",
+        "samuel1 3:5",
+        "esther 3:13",
+        "job 15:26",
+        "daniel 8:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִ֖ישׁ רָצִ֥ים",
+      "pron": "메이쉬 바야라츠",
+      "lemmas": [
+        "אִישׁ",
+        "רוּץ"
+      ],
+      "words": [
+        {
+          "word": "אִ֖ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "רָצִ֥ים",
+          "lemma": "רוּץ",
+          "strong": "H7323",
+          "pron": "바야라츠"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 15:1",
+        "samuel2 18:24",
+        "samuel2 18:26",
+        "kings1 1:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיָּ֤רָץ אִישׁ",
+      "pron": "바야라츠 메이쉬",
+      "lemmas": [
+        "רוּץ",
+        "אִישׁ"
+      ],
+      "words": [
+        {
+          "word": "וַיָּ֤רָץ",
+          "lemma": "רוּץ",
+          "strong": "H7323",
+          "pron": "바야라츠"
+        },
+        {
+          "word": "אִישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 4:12",
+        "kings2 11:11",
+        "joel 2:7",
+        "haggai 1:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רָצִ֥ים לְפָנָֽיו",
+      "pron": "바야라츠 페네",
+      "lemmas": [
+        "רוּץ",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "רָצִ֥ים",
+          "lemma": "רוּץ",
+          "strong": "H7323",
+          "pron": "바야라츠"
+        },
+        {
+          "word": "לְפָנָֽיו",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 8:11",
+        "samuel2 15:1",
+        "kings1 1:5",
+        "kings1 18:46"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

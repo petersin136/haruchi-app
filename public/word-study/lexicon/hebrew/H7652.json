@@ -1,8 +1,8 @@
 {
   "lemma": "שֶׁבַע",
-  "pron": "셰바",
+  "pron": "브셰바",
   "strong": "H7652",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "שֶׁבַע",
     "strong": "H7651",
@@ -12,19 +12,19 @@
     {
       "lemma": "שָׁבַע",
       "strong": "H7650",
-      "pron": "니솁바",
+      "pron": "힛샵아",
       "glossKo": "맹세하다"
     },
     {
       "lemma": "שֶׁבַע",
       "strong": "H7651",
-      "pron": "셰바",
+      "pron": "브십아",
       "glossKo": "일곱"
     },
     {
       "lemma": "שִׁבְעָה",
       "strong": "H7655",
-      "pron": "",
+      "pron": "브십아트",
       "glossKo": "일곱(아람)"
     },
     {
@@ -38,11 +38,200 @@
       "strong": "H7657",
       "pron": "십임",
       "glossKo": "일흔"
+    },
+    {
+      "lemma": "שִׁבְעָנָה",
+      "strong": "H7658",
+      "pron": "십아나",
+      "glossKo": "일곱 배"
     }
   ],
   "defEn": "Sheba",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 10,
+  "byBook": {
+    "samuel2": 8,
+    "chronicles1": 1,
+    "joshua": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "שֶׁ֥בַע בֶּן",
+      "pron": "브셰바 바님",
+      "lemmas": [
+        "שֶׁבַע",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "שֶׁ֥בַע",
+          "lemma": "שֶׁבַע",
+          "strong": "H7652",
+          "pron": "브셰바"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "samuel2 20:1",
+        "samuel2 20:2",
+        "samuel2 20:6",
+        "samuel2 20:7",
+        "samuel2 20:10",
+        "samuel2 20:13",
+        "samuel2 20:21",
+        "samuel2 20:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שֶׁ֥בַע בֶּן בִּכְרִֽי",
+      "pron": "브셰바 바님 비케리",
+      "lemmas": [
+        "שֶׁבַע",
+        "בֵּן",
+        "בִּכְרִי"
+      ],
+      "words": [
+        {
+          "word": "שֶׁ֥בַע",
+          "lemma": "שֶׁבַע",
+          "strong": "H7652",
+          "pron": "브셰바"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "בִּכְרִֽי",
+          "lemma": "בִּכְרִי",
+          "strong": "H1075",
+          "pron": "비케리"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "samuel2 20:1",
+        "samuel2 20:2",
+        "samuel2 20:6",
+        "samuel2 20:7",
+        "samuel2 20:10",
+        "samuel2 20:13",
+        "samuel2 20:21",
+        "samuel2 20:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַחֲרֵ֖י שֶׁ֥בַע",
+      "pron": "아하레 브셰바",
+      "lemmas": [
+        "אַחַר",
+        "שֶׁבַע"
+      ],
+      "words": [
+        {
+          "word": "אַחֲרֵ֖י",
+          "lemma": "אַחַר",
+          "strong": "H310",
+          "pron": "아하레"
+        },
+        {
+          "word": "שֶׁ֥בַע",
+          "lemma": "שֶׁבַע",
+          "strong": "H7652",
+          "pron": "브셰바"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 20:2",
+        "samuel2 20:7",
+        "samuel2 20:10",
+        "samuel2 20:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַחֲרֵ֖י שֶׁ֥בַע בֶּן",
+      "pron": "아하레 브셰바 바님",
+      "lemmas": [
+        "אַחַר",
+        "שֶׁבַע",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "אַחֲרֵ֖י",
+          "lemma": "אַחַר",
+          "strong": "H310",
+          "pron": "아하레"
+        },
+        {
+          "word": "שֶׁ֥בַע",
+          "lemma": "שֶׁבַע",
+          "strong": "H7652",
+          "pron": "브셰바"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 20:2",
+        "samuel2 20:7",
+        "samuel2 20:10",
+        "samuel2 20:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִרְדֹּ֕ף אַחֲרֵ֖י שֶׁ֥בַע",
+      "pron": "바이렏돕 아하레 브셰바",
+      "lemmas": [
+        "רָדַף",
+        "אַחַר",
+        "שֶׁבַע"
+      ],
+      "words": [
+        {
+          "word": "לִרְדֹּ֕ף",
+          "lemma": "רָדַף",
+          "strong": "H7291",
+          "pron": "바이렏돕"
+        },
+        {
+          "word": "אַחֲרֵ֖י",
+          "lemma": "אַחַר",
+          "strong": "H310",
+          "pron": "아하레"
+        },
+        {
+          "word": "שֶׁ֥בַע",
+          "lemma": "שֶׁבַע",
+          "strong": "H7652",
+          "pron": "브셰바"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 20:7",
+        "samuel2 20:10",
+        "samuel2 20:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,13 +12,13 @@
     {
       "lemma": "גָּדוֹל",
       "strong": "H1419",
-      "pron": "게돌로트",
+      "pron": "아게돌림",
       "glossKo": "큰"
     },
     {
       "lemma": "גָּדַל",
       "strong": "H1431",
-      "pron": "믁들",
+      "pron": "바아갇델라",
       "glossKo": "자라다"
     },
     {
@@ -30,27 +30,126 @@
     {
       "lemma": "גְּדִל",
       "strong": "H1434",
-      "pron": "",
+      "pron": "게딜림",
       "glossKo": "옷단 술"
     },
     {
       "lemma": "גִּדֵּל",
       "strong": "H1435",
-      "pron": "",
+      "pron": "긷델",
       "glossKo": "깃델"
     },
     {
       "lemma": "גְּדַּלְיָה",
       "strong": "H1436",
-      "pron": "",
+      "pron": "게달아후",
       "glossKo": "그달리야"
     }
   ],
   "defEn": "magnitude",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 13,
   "byBook": {
-    "psalms": 2
+    "deuteronomy": 5,
+    "ezekiel": 3,
+    "isaiah": 2,
+    "psalms": 2,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶ֨ת גָּדְלְךָ֔",
+      "pron": "에트 크고델",
+      "lemmas": [
+        "אֵת",
+        "גֹּדֶל"
+      ],
+      "words": [
+        {
+          "word": "אֶ֨ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "גָּדְלְךָ֔",
+          "lemma": "גֹּדֶל",
+          "strong": "H1433",
+          "pron": "크고델"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 3:24",
+        "deuteronomy 5:24",
+        "deuteronomy 11:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֨ת גָּדְלְךָ֔ וְאֶת",
+      "pron": "에트 크고델 에트",
+      "lemmas": [
+        "אֵת",
+        "גֹּדֶל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "אֶ֨ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "גָּדְלְךָ֔",
+          "lemma": "גֹּדֶל",
+          "strong": "H1433",
+          "pron": "크고델"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 3:24",
+        "deuteronomy 5:24",
+        "deuteronomy 11:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גָּדְלְךָ֔ וְאֶת",
+      "pron": "크고델 에트",
+      "lemmas": [
+        "גֹּדֶל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "גָּדְלְךָ֔",
+          "lemma": "גֹּדֶל",
+          "strong": "H1433",
+          "pron": "크고델"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 3:24",
+        "deuteronomy 5:24",
+        "deuteronomy 11:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

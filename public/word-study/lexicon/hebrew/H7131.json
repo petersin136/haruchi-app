@@ -1,8 +1,8 @@
 {
   "lemma": "קָרֵב",
-  "pron": "카렙",
+  "pron": "아카렙",
   "strong": "H7131",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "קָרַב",
     "strong": "H7126",
@@ -12,26 +12,26 @@
     {
       "lemma": "קָרַב",
       "strong": "H7126",
-      "pron": "비케롭",
+      "pron": "히케립",
       "glossKo": "가까이 오다"
     },
     {
       "lemma": "קְרֵב",
       "strong": "H7127",
-      "pron": "",
+      "pron": "메하케레빈",
       "glossKo": "가까이 가다(아람)"
     },
     {
       "lemma": "קְרָב",
       "strong": "H7128",
-      "pron": "미카랍",
+      "pron": "바케랍",
       "glossKo": "전쟁"
     },
     {
       "lemma": "קֶרֶב",
       "strong": "H7130",
-      "pron": "키렙바므",
-      "glossKo": "그들의 속"
+      "pron": "베키렙바흐",
+      "glossKo": "그녀의 속"
     },
     {
       "lemma": "קְרָבָה",
@@ -42,13 +42,50 @@
     {
       "lemma": "קׇרְבָּן",
       "strong": "H7133",
-      "pron": "",
+      "pron": "카렙반",
       "glossKo": "예물"
     }
   ],
   "defEn": "near",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 8,
+  "byBook": {
+    "ezekiel": 2,
+    "numbers": 2,
+    "deuteronomy": 1,
+    "kings1": 1,
+    "samuel1": 1,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "הַקָּרֵ֛ב אֶל",
+      "pron": "아카렙 엘",
+      "lemmas": [
+        "קָרֵב",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "הַקָּרֵ֛ב",
+          "lemma": "קָרֵב",
+          "strong": "H7131",
+          "pron": "아카렙"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 17:13",
+        "samuel1 17:41",
+        "kings1 4:27"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

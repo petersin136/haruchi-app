@@ -1,8 +1,8 @@
 {
   "lemma": "קַו־קַו",
-  "pron": "카브카브",
+  "pron": "카브",
   "strong": "H6978",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "קַו",
     "strong": "H6957",
@@ -12,13 +12,114 @@
     {
       "lemma": "קַו",
       "strong": "H6957",
-      "pron": "카바므",
-      "glossKo": "그들의 줄"
+      "pron": "카브",
+      "glossKo": "줄"
     }
   ],
   "defEn": "stalwart",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "isaiah": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "גּ֚וֹי קַו קָ֣ו",
+      "pron": "아고임 카브 카브",
+      "lemmas": [
+        "גּוֹי",
+        "קַו־קַו",
+        "קַו־קַו"
+      ],
+      "words": [
+        {
+          "word": "גּ֚וֹי",
+          "lemma": "גּוֹי",
+          "strong": "H1471",
+          "pron": "아고임"
+        },
+        {
+          "word": "קַו",
+          "lemma": "קַו־קַו",
+          "strong": "H6978",
+          "pron": "카브"
+        },
+        {
+          "word": "קָ֣ו",
+          "lemma": "קַו־קַו",
+          "strong": "H6978",
+          "pron": "카브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 18:2",
+        "isaiah 18:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קַו קָ֣ו",
+      "pron": "카브 카브",
+      "lemmas": [
+        "קַו־קַו",
+        "קַו־קַו"
+      ],
+      "words": [
+        {
+          "word": "קַו",
+          "lemma": "קַו־קַו",
+          "strong": "H6978",
+          "pron": "카브"
+        },
+        {
+          "word": "קָ֣ו",
+          "lemma": "קַו־קַו",
+          "strong": "H6978",
+          "pron": "카브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 18:2",
+        "isaiah 18:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קַו קָ֣ו וּמְבוּסָ֔ה",
+      "pron": "카브 카브 우메부사",
+      "lemmas": [
+        "קַו־קַו",
+        "קַו־קַו",
+        "מְבוּסָה"
+      ],
+      "words": [
+        {
+          "word": "קַו",
+          "lemma": "קַו־קַו",
+          "strong": "H6978",
+          "pron": "카브"
+        },
+        {
+          "word": "קָ֣ו",
+          "lemma": "קַו־קַו",
+          "strong": "H6978",
+          "pron": "카브"
+        },
+        {
+          "word": "וּמְבוּסָ֔ה",
+          "lemma": "מְבוּסָה",
+          "strong": "H4001",
+          "pron": "우메부사"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 18:2",
+        "isaiah 18:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

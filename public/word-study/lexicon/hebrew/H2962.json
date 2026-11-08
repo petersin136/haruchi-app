@@ -1,6 +1,6 @@
 {
   "lemma": "טֶרֶם",
-  "pron": "르네겓",
+  "pron": "데렘",
   "strong": "H2962",
   "posKo": "부사",
   "root": null,
@@ -8,16 +8,157 @@
     {
       "lemma": "טְרוֹם",
       "strong": "H2958",
-      "pron": "",
+      "pron": "브들븜",
       "glossKo": "아직 ~아니"
     }
   ],
   "defEn": "non-occurrence; not yet; before",
   "defKo": "",
-  "countOT": 15,
+  "countOT": 57,
   "byBook": {
     "genesis": 10,
-    "psalms": 5
+    "isaiah": 9,
+    "jeremiah": 6,
+    "psalms": 5,
+    "samuel1": 5,
+    "exodus": 4,
+    "proverbs": 3,
+    "zephaniah": 3,
+    "joshua": 2,
+    "kings2": 2,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "haggai": 1,
+    "job": 1,
+    "judges": 1,
+    "leviticus": 1,
+    "numbers": 1,
+    "ruth": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּטֶ֥רֶם תָּב֖וֹא",
+      "pron": "데렘 바야베",
+      "lemmas": [
+        "טֶרֶם",
+        "בּוֹא"
+      ],
+      "words": [
+        {
+          "word": "בְּטֶ֥רֶם",
+          "lemma": "טֶרֶם",
+          "strong": "H2962",
+          "pron": "데렘"
+        },
+        {
+          "word": "תָּב֖וֹא",
+          "lemma": "בּוֹא",
+          "strong": "H935",
+          "pron": "바야베"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "genesis 27:33",
+        "genesis 41:50",
+        "exodus 1:19",
+        "leviticus 14:36",
+        "deuteronomy 31:21",
+        "judges 14:18",
+        "kings2 6:32",
+        "isaiah 48:5",
+        "isaiah 66:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּטֶ֥רֶם אָמֽוּת",
+      "pron": "데렘 모트",
+      "lemmas": [
+        "טֶרֶם",
+        "מוּת"
+      ],
+      "words": [
+        {
+          "word": "בְּטֶ֥רֶם",
+          "lemma": "טֶרֶם",
+          "strong": "H2962",
+          "pron": "데렘"
+        },
+        {
+          "word": "אָמֽוּת",
+          "lemma": "מוּת",
+          "strong": "H4191",
+          "pron": "모트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 27:4",
+        "genesis 45:28",
+        "proverbs 30:7",
+        "jeremiah 38:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֲטֶ֣רֶם תֵּדַ֔ע",
+      "pron": "데렘 요데아",
+      "lemmas": [
+        "טֶרֶם",
+        "יָדַע"
+      ],
+      "words": [
+        {
+          "word": "הֲטֶ֣רֶם",
+          "lemma": "טֶרֶם",
+          "strong": "H2962",
+          "pron": "데렘"
+        },
+        {
+          "word": "תֵּדַ֔ע",
+          "lemma": "יָדַע",
+          "strong": "H3045",
+          "pron": "요데아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 10:7",
+        "samuel1 3:7",
+        "isaiah 7:16",
+        "isaiah 8:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֚י טֶ֣רֶם",
+      "pron": "키 데렘",
+      "lemmas": [
+        "כִּי",
+        "טֶרֶם"
+      ],
+      "words": [
+        {
+          "word": "כִּ֚י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "טֶ֣רֶם",
+          "lemma": "טֶרֶם",
+          "strong": "H2962",
+          "pron": "데렘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 9:30",
+        "isaiah 7:16",
+        "isaiah 8:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

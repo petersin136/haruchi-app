@@ -1,8 +1,8 @@
 {
   "lemma": "קְרָא",
-  "pron": "케라",
+  "pron": "케리",
   "strong": "H7123",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "קָרָא",
     "strong": "H7121",
@@ -12,31 +12,106 @@
     {
       "lemma": "מִקְרָא",
       "strong": "H4744",
-      "pron": "",
+      "pron": "미케라",
       "glossKo": "모임"
     },
     {
       "lemma": "קוֹרֵא",
       "strong": "H6981",
-      "pron": "",
+      "pron": "코레",
       "glossKo": "고레"
     },
     {
       "lemma": "קָרָא",
       "strong": "H7121",
-      "pron": "에케라",
+      "pron": "바이케라",
       "glossKo": "부르다"
     },
     {
       "lemma": "קֹרֵא",
       "strong": "H7124",
-      "pron": "",
+      "pron": "아코레",
       "glossKo": "메추라기"
+    },
+    {
+      "lemma": "קָרִיא",
+      "strong": "H7148",
+      "pron": "크리",
+      "glossKo": "부름 받은"
+    },
+    {
+      "lemma": "קְרִיאָה",
+      "strong": "H7150",
+      "pron": "아케리아",
+      "glossKo": "선포"
     }
   ],
   "defEn": "call, cry, read.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 11,
+  "byBook": {
+    "daniel": 9,
+    "ezra": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "לְמִקְרֵ֔א ופשרא",
+      "pron": "케리 우피셰라",
+      "lemmas": [
+        "קְרָא",
+        "פְּשַׁר"
+      ],
+      "words": [
+        {
+          "word": "לְמִקְרֵ֔א",
+          "lemma": "קְרָא",
+          "strong": "H7123",
+          "pron": "케리"
+        },
+        {
+          "word": "ופשרא",
+          "lemma": "פְּשַׁר",
+          "strong": "H6591",
+          "pron": "우피셰라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 5:8",
+        "daniel 5:12",
+        "daniel 5:15",
+        "daniel 5:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כְּתָבָא֙ לְמִקְרֵ֔א",
+      "pron": "키케탑 케리",
+      "lemmas": [
+        "כְּתָב",
+        "קְרָא"
+      ],
+      "words": [
+        {
+          "word": "כְּתָבָא֙",
+          "lemma": "כְּתָב",
+          "strong": "H3792",
+          "pron": "키케탑"
+        },
+        {
+          "word": "לְמִקְרֵ֔א",
+          "lemma": "קְרָא",
+          "strong": "H7123",
+          "pron": "케리"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 5:8",
+        "daniel 5:16",
+        "daniel 5:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "עֲרָב",
-  "pron": "아랍",
+  "pron": "하에렙",
   "strong": "H6152",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָרַב",
     "strong": "H6150",
@@ -12,37 +12,115 @@
     {
       "lemma": "מַעֲרָב",
       "strong": "H4628",
-      "pron": "우미마아랍",
+      "pron": "브라마아랍",
       "glossKo": "서쪽"
     },
     {
       "lemma": "עָרַב",
       "strong": "H6150",
-      "pron": "",
+      "pron": "라아롭",
       "glossKo": "어두워지다"
     },
     {
       "lemma": "עֶרֶב",
       "strong": "H6153",
-      "pron": "바에렙",
+      "pron": "에렙",
       "glossKo": "저녁"
     },
     {
       "lemma": "עֹרֵב",
       "strong": "H6158",
-      "pron": "오렙",
+      "pron": "하오렙",
       "glossKo": "까마귀"
     },
     {
       "lemma": "עֲרָבָה",
       "strong": "H6160",
-      "pron": "바아라보트",
+      "pron": "브아레보트",
       "glossKo": "광야"
+    },
+    {
+      "lemma": "עֲרָבִי",
+      "strong": "H6163",
+      "pron": "하아레비임",
+      "glossKo": "아라비아 사람"
     }
   ],
   "defEn": "Arab; Arabia",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "isaiah": 2,
+    "chronicles2": 1,
+    "ezekiel": 1,
+    "jeremiah": 1,
+    "kings1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְכָל מַלְכֵ֥י הָעֶ֖רֶב",
+      "pron": "칼 멜레크 하에렙",
+      "lemmas": [
+        "כֹּל",
+        "מֶלֶךְ",
+        "עֲרָב"
+      ],
+      "words": [
+        {
+          "word": "וְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מַלְכֵ֥י",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "הָעֶ֖רֶב",
+          "lemma": "עֲרָב",
+          "strong": "H6152",
+          "pron": "하에렙"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 10:15",
+        "chronicles2 9:14",
+        "jeremiah 25:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַלְכֵ֥י הָעֶ֖רֶב",
+      "pron": "멜레크 하에렙",
+      "lemmas": [
+        "מֶלֶךְ",
+        "עֲרָב"
+      ],
+      "words": [
+        {
+          "word": "מַלְכֵ֥י",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "הָעֶ֖רֶב",
+          "lemma": "עֲרָב",
+          "strong": "H6152",
+          "pron": "하에렙"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 10:15",
+        "chronicles2 9:14",
+        "jeremiah 25:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

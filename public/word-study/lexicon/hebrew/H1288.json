@@ -1,6 +1,6 @@
 {
   "lemma": "בָּרַךְ",
-  "pron": "테바레크",
+  "pron": "바예바레크",
   "strong": "H1288",
   "posKo": "동사",
   "root": null,
@@ -8,227 +8,264 @@
     {
       "lemma": "בָּרוּךְ",
       "strong": "H1263",
-      "pron": "",
+      "pron": "바루크",
       "glossKo": "바룩"
     },
     {
       "lemma": "בְּרַךְ",
       "strong": "H1289",
-      "pron": "",
+      "pron": "바리크",
       "glossKo": "축복하다(아람)"
     },
     {
       "lemma": "בֶּרֶךְ",
       "strong": "H1290",
-      "pron": "비렉카위",
+      "pron": "비렉카이",
       "glossKo": "나의 무릎"
     },
     {
       "lemma": "בָּרַכְאֵל",
       "strong": "H1292",
-      "pron": "",
+      "pron": "바라케엘",
       "glossKo": "바라겔"
     },
     {
       "lemma": "בְּרָכָה",
       "strong": "H1293",
-      "pron": "비레카테카",
-      "glossKo": "너의 복"
+      "pron": "베라카",
+      "glossKo": "복"
     },
     {
       "lemma": "בְּרֵכָה",
       "strong": "H1295",
-      "pron": "",
+      "pron": "베레카트",
       "glossKo": "못"
     }
   ],
   "defEn": "kneel",
   "defKo": "",
-  "countOT": 148,
+  "countOT": 330,
   "byBook": {
     "psalms": 75,
-    "genesis": 73
+    "genesis": 73,
+    "deuteronomy": 39,
+    "numbers": 17,
+    "chronicles1": 16,
+    "samuel2": 14,
+    "kings1": 12,
+    "samuel1": 11,
+    "chronicles2": 9,
+    "isaiah": 8,
+    "job": 8,
+    "joshua": 8,
+    "exodus": 6,
+    "judges": 6,
+    "proverbs": 6,
+    "ruth": 5,
+    "jeremiah": 4,
+    "nehemiah": 4,
+    "kings2": 3,
+    "leviticus": 2,
+    "ezekiel": 1,
+    "ezra": 1,
+    "haggai": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "בָּרֲכ֣וּ אֶת",
-      "pron": "테바레크 에트",
+      "hebrew": "בָּר֤וּךְ יְהוָה֙",
+      "pron": "바예바레크 여호와",
+      "lemmas": [
+        "בָּרַךְ",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "בָּר֤וּךְ",
+          "lemma": "בָּרַךְ",
+          "strong": "H1288",
+          "pron": "바예바레크"
+        },
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 66,
+      "refs": [
+        "genesis 9:26",
+        "genesis 24:27",
+        "genesis 24:31",
+        "genesis 26:12",
+        "genesis 26:29",
+        "genesis 27:27",
+        "genesis 30:27",
+        "genesis 30:30",
+        "genesis 39:5",
+        "exodus 18:10",
+        "exodus 20:11",
+        "numbers 6:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיְבָ֕רֶךְ אֵ֖ת",
+      "pron": "바예바레크 에트",
       "lemmas": [
         "בָּרַךְ",
         "אֵת"
       ],
       "words": [
         {
-          "word": "בָּרֲכ֣וּ",
+          "word": "וַיְבָ֕רֶךְ",
           "lemma": "בָּרַךְ",
           "strong": "H1288",
-          "pron": "테바레크"
+          "pron": "바예바레크"
         },
         {
-          "word": "אֶת",
+          "word": "אֵ֖ת",
           "lemma": "אֵת",
           "strong": "H853",
           "pron": "에트"
         }
       ],
-      "count": 34,
+      "count": 66,
       "refs": [
-        "psalms 16:7",
-        "psalms 28:9",
-        "psalms 29:11",
-        "psalms 34:1",
-        "psalms 115:12",
-        "psalms 129:8",
-        "psalms 134:1",
-        "psalms 134:2",
-        "psalms 135:19",
-        "psalms 135:20",
         "genesis 1:22",
-        "genesis 1:28"
+        "genesis 1:28",
+        "genesis 5:2",
+        "genesis 17:16",
+        "genesis 17:20",
+        "genesis 24:1",
+        "genesis 24:35",
+        "genesis 24:48",
+        "genesis 24:60",
+        "genesis 27:30",
+        "genesis 28:1",
+        "genesis 28:3"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בָּר֥וּךְ יְהוָ֑ה",
-      "pron": "테바레크 여호와",
-      "lemmas": [
-        "בָּרַךְ",
-        "יְהֹוָה"
-      ],
-      "words": [
-        {
-          "word": "בָּר֥וּךְ",
-          "lemma": "בָּרַךְ",
-          "strong": "H1288",
-          "pron": "테바레크"
-        },
-        {
-          "word": "יְהוָ֑ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        }
-      ],
-      "count": 24,
-      "refs": [
-        "psalms 26:12",
-        "psalms 28:6",
-        "psalms 31:21",
-        "psalms 41:13",
-        "psalms 72:18",
-        "psalms 89:52",
-        "psalms 103:20",
-        "psalms 103:21",
-        "psalms 103:22",
-        "psalms 106:48",
-        "psalms 124:6",
-        "psalms 128:5"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יְבָ֫רֵ֥ךְ יְ֭בָרֵךְ",
-      "pron": "테바레크 테바레크",
+      "hebrew": "וַאֲבָֽרֲכָה֙ מְבָ֣רְכֶ֔יךָ",
+      "pron": "바예바레크 바예바레크",
       "lemmas": [
         "בָּרַךְ",
         "בָּרַךְ"
       ],
       "words": [
         {
-          "word": "יְבָ֫רֵ֥ךְ",
+          "word": "וַאֲבָֽרֲכָה֙",
           "lemma": "בָּרַךְ",
           "strong": "H1288",
-          "pron": "테바레크"
+          "pron": "바예바레크"
         },
         {
-          "word": "יְ֭בָרֵךְ",
+          "word": "מְבָ֣רְכֶ֔יךָ",
           "lemma": "בָּרַךְ",
           "strong": "H1288",
-          "pron": "테바레크"
+          "pron": "바예바레크"
         }
       ],
-      "count": 10,
+      "count": 26,
       "refs": [
-        "psalms 115:12",
-        "psalms 132:15",
         "genesis 12:3",
         "genesis 22:17",
-        "genesis 27:29"
+        "genesis 27:29",
+        "numbers 22:6",
+        "numbers 23:11",
+        "numbers 24:9",
+        "numbers 24:10",
+        "deuteronomy 15:4",
+        "joshua 24:10",
+        "chronicles1 4:10",
+        "chronicles1 17:27",
+        "psalms 115:12"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בָּרֲכ֣וּ אֶת יְהוָ֑ה",
-      "pron": "테바레크 에트 여호와",
+      "hebrew": "בָּר֤וּךְ יְהוָה֙ אֱלֹהֵ֣י",
+      "pron": "바예바레크 여호와 엘로힘",
       "lemmas": [
         "בָּרַךְ",
-        "אֵת",
-        "יְהֹוָה"
+        "יְהֹוָה",
+        "אֱלֹהִים"
       ],
       "words": [
         {
-          "word": "בָּרֲכ֣וּ",
+          "word": "בָּר֤וּךְ",
           "lemma": "בָּרַךְ",
           "strong": "H1288",
-          "pron": "테바레크"
+          "pron": "바예바레크"
         },
         {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        },
-        {
-          "word": "יְהוָ֑ה",
+          "word": "יְהוָה֙",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
+        },
+        {
+          "word": "אֱלֹהֵ֣י",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
         }
       ],
-      "count": 9,
+      "count": 24,
       "refs": [
-        "psalms 16:7",
-        "psalms 34:1",
-        "psalms 134:1",
-        "psalms 134:2",
-        "psalms 135:19",
-        "psalms 135:20",
-        "genesis 24:48"
+        "genesis 9:26",
+        "genesis 24:27",
+        "deuteronomy 12:7",
+        "deuteronomy 14:24",
+        "deuteronomy 14:29",
+        "deuteronomy 15:10",
+        "deuteronomy 15:14",
+        "deuteronomy 15:18",
+        "deuteronomy 16:10",
+        "deuteronomy 16:15",
+        "deuteronomy 23:20",
+        "deuteronomy 24:19"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בָּרֲכִ֣י נַ֭פְשִׁי",
-      "pron": "테바레크 르납시위",
+      "hebrew": "וַיֹּ֗אמֶר בָּר֤וּךְ",
+      "pron": "바요메르 바예바레크",
       "lemmas": [
-        "בָּרַךְ",
-        "נֶפֶשׁ"
+        "אָמַר",
+        "בָּרַךְ"
       ],
       "words": [
         {
-          "word": "בָּרֲכִ֣י",
-          "lemma": "בָּרַךְ",
-          "strong": "H1288",
-          "pron": "테바레크"
+          "word": "וַיֹּ֗אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
         },
         {
-          "word": "נַ֭פְשִׁי",
-          "lemma": "נֶפֶשׁ",
-          "strong": "H5315",
-          "pron": "르납시위"
+          "word": "בָּר֤וּךְ",
+          "lemma": "בָּרַךְ",
+          "strong": "H1288",
+          "pron": "바예바레크"
         }
       ],
-      "count": 9,
+      "count": 19,
       "refs": [
-        "psalms 103:1",
-        "psalms 103:2",
-        "psalms 103:22",
-        "psalms 104:1",
-        "psalms 104:35",
-        "genesis 27:4",
-        "genesis 27:19",
-        "genesis 27:25",
-        "genesis 27:31"
+        "genesis 9:26",
+        "genesis 14:19",
+        "genesis 24:27",
+        "genesis 48:20",
+        "deuteronomy 33:13",
+        "deuteronomy 33:20",
+        "deuteronomy 33:24",
+        "ruth 2:4",
+        "ruth 3:10",
+        "samuel1 25:39",
+        "samuel2 6:12",
+        "samuel2 18:28"
       ],
       "glossKo": ""
     }

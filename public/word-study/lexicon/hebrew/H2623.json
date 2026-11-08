@@ -1,6 +1,6 @@
 {
   "lemma": "חָסִיד",
-  "pron": "하싣",
+  "pron": "하시데카",
   "strong": "H2623",
   "posKo": "형용사",
   "root": {
@@ -18,26 +18,96 @@
     {
       "lemma": "חֶסֶד",
       "strong": "H2617",
-      "pron": "핫드카",
+      "pron": "핫데카",
       "glossKo": "너의 인자"
     },
     {
       "lemma": "חֲסִידָה",
       "strong": "H2624",
-      "pron": "하시다",
+      "pron": "아하시다",
       "glossKo": "황새"
     }
   ],
   "defEn": "kind; pious",
   "defKo": "",
-  "countOT": 25,
+  "countOT": 34,
   "byBook": {
-    "psalms": 25
+    "psalms": 25,
+    "proverbs": 2,
+    "samuel1": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "jeremiah": 1,
+    "micah": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
+      "hebrew": "חסידו חֲסִידָיו֙",
+      "pron": "하시데카 하시데카",
+      "lemmas": [
+        "חָסִיד",
+        "חָסִיד"
+      ],
+      "words": [
+        {
+          "word": "חסידו",
+          "lemma": "חָסִיד",
+          "strong": "H2623",
+          "pron": "하시데카"
+        },
+        {
+          "word": "חֲסִידָיו֙",
+          "lemma": "חָסִיד",
+          "strong": "H2623",
+          "pron": "하시데카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 2:9",
+        "proverbs 2:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חסידו חֲסִידָיו֙ יִשְׁמֹ֔ר",
+      "pron": "하시데카 하시데카 울샴라흐",
+      "lemmas": [
+        "חָסִיד",
+        "חָסִיד",
+        "שָׁמַר"
+      ],
+      "words": [
+        {
+          "word": "חסידו",
+          "lemma": "חָסִיד",
+          "strong": "H2623",
+          "pron": "하시데카"
+        },
+        {
+          "word": "חֲסִידָיו֙",
+          "lemma": "חָסִיד",
+          "strong": "H2623",
+          "pron": "하시데카"
+        },
+        {
+          "word": "יִשְׁמֹ֔ר",
+          "lemma": "שָׁמַר",
+          "strong": "H8104",
+          "pron": "울샴라흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 2:9",
+        "proverbs 2:8"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "כָּֽל חֲסִ֫ידָ֥יו",
-      "pron": "브콜 하싣",
+      "pron": "칼 하시데카",
       "lemmas": [
         "כֹּל",
         "חָסִיד"
@@ -47,13 +117,13 @@
           "word": "כָּֽל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
           "word": "חֲסִ֫ידָ֥יו",
           "lemma": "חָסִיד",
           "strong": "H2623",
-          "pron": "하싣"
+          "pron": "하시데카"
         }
       ],
       "count": 4,

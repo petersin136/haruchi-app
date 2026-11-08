@@ -1,6 +1,6 @@
 {
   "lemma": "נָחַל",
-  "pron": "인할루하",
+  "pron": "브나할타",
   "strong": "H5157",
   "posKo": "동사",
   "root": null,
@@ -8,21 +8,222 @@
     {
       "lemma": "נַחַל",
       "strong": "H5158",
-      "pron": "브나할레",
+      "pron": "브나할",
       "glossKo": "시내"
     },
     {
       "lemma": "נַחֲלָה",
       "strong": "H5159",
-      "pron": "나할라테카",
-      "glossKo": "너의 기업"
+      "pron": "브나할라",
+      "glossKo": "기업"
     }
   ],
   "defEn": "inherit; occupy; bequeath; distribute; instate",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 59,
   "byBook": {
-    "psalms": 3
+    "numbers": 13,
+    "joshua": 9,
+    "deuteronomy": 8,
+    "proverbs": 6,
+    "exodus": 3,
+    "ezekiel": 3,
+    "isaiah": 3,
+    "jeremiah": 3,
+    "psalms": 3,
+    "zechariah": 2,
+    "chronicles1": 1,
+    "job": 1,
+    "judges": 1,
+    "leviticus": 1,
+    "samuel1": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְנָחַלְתָּ֖ אֶת",
+      "pron": "브나할타 에트",
+      "lemmas": [
+        "נָחַל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְנָחַלְתָּ֖",
+          "lemma": "נָחַל",
+          "strong": "H5157",
+          "pron": "브나할타"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 21,
+      "refs": [
+        "exodus 23:30",
+        "leviticus 25:46",
+        "numbers 33:54",
+        "numbers 34:13",
+        "numbers 34:17",
+        "numbers 34:18",
+        "numbers 34:29",
+        "deuteronomy 1:38",
+        "deuteronomy 3:28",
+        "deuteronomy 12:10",
+        "deuteronomy 21:16",
+        "deuteronomy 31:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֨ר תִּתְנַחֲל֤וּ",
+      "pron": "아셰르 브나할타",
+      "lemmas": [
+        "אֲשֶׁר",
+        "נָחַל"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "תִּתְנַחֲל֤וּ",
+          "lemma": "נָחַל",
+          "strong": "H5157",
+          "pron": "브나할타"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 34:13",
+        "numbers 34:17",
+        "numbers 35:8",
+        "deuteronomy 19:3",
+        "deuteronomy 19:14",
+        "joshua 13:32",
+        "joshua 14:1",
+        "joshua 19:51",
+        "jeremiah 3:18",
+        "jeremiah 12:14",
+        "ezekiel 47:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֨ר תִּתְנַחֲל֤וּ אֹתָהּ֙",
+      "pron": "아셰르 브나할타 에트",
+      "lemmas": [
+        "אֲשֶׁר",
+        "נָחַל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "תִּתְנַחֲל֤וּ",
+          "lemma": "נָחַל",
+          "strong": "H5157",
+          "pron": "브나할타"
+        },
+        {
+          "word": "אֹתָהּ֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 34:13",
+        "numbers 34:17",
+        "joshua 14:1",
+        "jeremiah 3:18",
+        "jeremiah 12:14",
+        "ezekiel 47:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִתְנַחֵל֙ בְּנֵ֣י",
+      "pron": "브나할타 바님",
+      "lemmas": [
+        "נָחַל",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "הִתְנַחֵל֙",
+          "lemma": "נָחַל",
+          "strong": "H5157",
+          "pron": "브나할타"
+        },
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 32:18",
+        "joshua 14:1",
+        "joshua 16:4",
+        "joshua 19:9",
+        "chronicles1 28:8",
+        "proverbs 13:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנָחַלְתָּ֖ אֶת הָאָֽרֶץ",
+      "pron": "브나할타 에트 하아레츠",
+      "lemmas": [
+        "נָחַל",
+        "אֵת",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "וְנָחַלְתָּ֖",
+          "lemma": "נָחַל",
+          "strong": "H5157",
+          "pron": "브나할타"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הָאָֽרֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 23:30",
+        "numbers 33:54",
+        "numbers 34:17",
+        "numbers 34:18",
+        "joshua 19:49",
+        "ezekiel 47:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

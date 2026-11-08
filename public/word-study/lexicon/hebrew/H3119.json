@@ -12,13 +12,13 @@
     {
       "lemma": "יוֹם",
       "strong": "H3117",
-      "pron": "아욤",
+      "pron": "욤",
       "glossKo": "날"
     },
     {
       "lemma": "יוֹם",
       "strong": "H3118",
-      "pron": "",
+      "pron": "요마트",
       "glossKo": "날(아람)"
     },
     {
@@ -36,44 +36,188 @@
     {
       "lemma": "יְמִימָה",
       "strong": "H3224",
-      "pron": "",
+      "pron": "예미마",
       "glossKo": "여미마"
     }
   ],
   "defEn": "daily",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 51,
   "byBook": {
-    "psalms": 10
+    "psalms": 10,
+    "jeremiah": 7,
+    "isaiah": 6,
+    "exodus": 4,
+    "ezekiel": 4,
+    "nehemiah": 4,
+    "numbers": 3,
+    "deuteronomy": 2,
+    "job": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "joshua": 1,
+    "judges": 1,
+    "kings1": 1,
+    "lamentations": 1,
+    "leviticus": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "יוֹמָ֥ם וָלָֽיְלָה",
-      "pron": "요맘 바라엘라",
+      "hebrew": "יוֹמָ֣ם וָלַ֔יְלָה",
+      "pron": "요맘 라엘라",
       "lemmas": [
         "יוֹמָם",
         "לַיִל"
       ],
       "words": [
         {
-          "word": "יוֹמָ֥ם",
+          "word": "יוֹמָ֣ם",
           "lemma": "יוֹמָם",
           "strong": "H3119",
           "pron": "요맘"
         },
         {
-          "word": "וָלָֽיְלָה",
+          "word": "וָלַ֔יְלָה",
           "lemma": "לַיִל",
           "strong": "H3915",
-          "pron": "바라엘라"
+          "pron": "라엘라"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "exodus 13:21",
+        "leviticus 8:35",
+        "numbers 9:21",
+        "joshua 1:8",
+        "kings1 8:59",
+        "chronicles1 9:33",
+        "chronicles2 6:20",
+        "nehemiah 1:6",
+        "nehemiah 4:9",
+        "psalms 1:2",
+        "psalms 32:4",
+        "psalms 42:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֶֽעָנָן֙ יוֹמָ֔ם",
+      "pron": "베아난 요맘",
+      "lemmas": [
+        "עָנָן",
+        "יוֹמָם"
+      ],
+      "words": [
+        {
+          "word": "הֶֽעָנָן֙",
+          "lemma": "עָנָן",
+          "strong": "H6051",
+          "pron": "베아난"
+        },
+        {
+          "word": "יוֹמָ֔ם",
+          "lemma": "יוֹמָם",
+          "strong": "H3119",
+          "pron": "요맘"
         }
       ],
       "count": 4,
       "refs": [
-        "psalms 1:2",
-        "psalms 32:4",
-        "psalms 42:3",
-        "psalms 55:10"
+        "exodus 13:22",
+        "deuteronomy 1:33",
+        "psalms 78:14",
+        "isaiah 4:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יוֹמָ֜ם בְּעַמּ֤וּד",
+      "pron": "요맘 브암묻",
+      "lemmas": [
+        "יוֹמָם",
+        "עַמּוּד"
+      ],
+      "words": [
+        {
+          "word": "יוֹמָ֜ם",
+          "lemma": "יוֹמָם",
+          "strong": "H3119",
+          "pron": "요맘"
+        },
+        {
+          "word": "בְּעַמּ֤וּד",
+          "lemma": "עַמּוּד",
+          "strong": "H5982",
+          "pron": "브암묻"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 13:21",
+        "exodus 13:22",
+        "numbers 14:14",
+        "nehemiah 9:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲלֵיהֶ֖ם יוֹמָ֑ם",
+      "pron": "알 요맘",
+      "lemmas": [
+        "עַל",
+        "יוֹמָם"
+      ],
+      "words": [
+        {
+          "word": "עֲלֵיהֶ֖ם",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "יוֹמָ֑ם",
+          "lemma": "יוֹמָם",
+          "strong": "H3119",
+          "pron": "요맘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 10:34",
+        "samuel2 21:10",
+        "nehemiah 4:9",
+        "nehemiah 9:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיוֹמָ֔ם וְלֹ֥א",
+      "pron": "요맘 로",
+      "lemmas": [
+        "יוֹמָם",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "וְיוֹמָ֔ם",
+          "lemma": "יוֹמָם",
+          "strong": "H3119",
+          "pron": "요맘"
+        },
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 28:66",
+        "psalms 22:2",
+        "isaiah 34:10"
       ],
       "glossKo": ""
     }

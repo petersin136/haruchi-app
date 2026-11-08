@@ -1,6 +1,6 @@
 {
   "lemma": "מָשַׁל",
-  "pron": "탐실레후",
+  "pron": "브리메숄",
   "strong": "H4910",
   "posKo": "동사",
   "root": null,
@@ -8,122 +8,201 @@
     {
       "lemma": "מִמְשָׁל",
       "strong": "H4474",
-      "pron": "",
-      "glossKo": "통치자"
+      "pron": "멤샬토",
+      "glossKo": "그의 통치자"
     },
     {
       "lemma": "מָשָׁל",
       "strong": "H4912",
-      "pron": "마샬",
-      "glossKo": "잠언"
+      "pron": "메샬로",
+      "glossKo": "그의 잠언"
     },
     {
       "lemma": "מֹשֶׁל",
       "strong": "H4915",
-      "pron": "",
-      "glossKo": "다스림"
+      "pron": "마셸로",
+      "glossKo": "그의 다스림"
     }
   ],
   "defEn": "rule",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 82,
   "byBook": {
+    "isaiah": 11,
+    "proverbs": 11,
     "psalms": 10,
-    "genesis": 8
+    "genesis": 8,
+    "judges": 8,
+    "daniel": 5,
+    "jeremiah": 5,
+    "chronicles2": 4,
+    "deuteronomy": 2,
+    "ecclesiastes": 2,
+    "ezekiel": 2,
+    "joshua": 2,
+    "samuel2": 2,
+    "chronicles1": 1,
+    "exodus": 1,
+    "habakkuk": 1,
+    "job": 1,
+    "joel": 1,
+    "kings1": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "nehemiah": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "וּ֝מֹשֵׁ֗ל בְּכָל",
-      "pron": "탐실레후 브콜",
+      "hebrew": "הַמֹּשֵׁ֖ל בְּכָל",
+      "pron": "브리메숄 칼",
       "lemmas": [
         "מָשַׁל",
         "כֹּל"
       ],
       "words": [
         {
-          "word": "וּ֝מֹשֵׁ֗ל",
+          "word": "הַמֹּשֵׁ֖ל",
           "lemma": "מָשַׁל",
           "strong": "H4910",
-          "pron": "탐실레후"
+          "pron": "브리메숄"
         },
         {
           "word": "בְּכָל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         }
       ],
-      "count": 4,
+      "count": 8,
       "refs": [
-        "psalms 105:21",
         "genesis 24:2",
         "genesis 45:8",
-        "genesis 45:26"
+        "genesis 45:26",
+        "kings1 4:21",
+        "chronicles1 29:12",
+        "chronicles2 9:26",
+        "chronicles2 20:6",
+        "psalms 105:21"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לְבֵית֑וֹ וּ֝מֹשֵׁ֗ל",
-      "pron": "베테카 탐실레후",
+      "hebrew": "לֹא יִמְשֹׁ֥ל",
+      "pron": "로 브리메숄",
       "lemmas": [
-        "בַּיִת",
+        "לֹא",
         "מָשַׁל"
       ],
       "words": [
         {
-          "word": "לְבֵית֑וֹ",
-          "lemma": "בַּיִת",
-          "strong": "H1004",
-          "pron": "베테카"
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
         },
         {
-          "word": "וּ֝מֹשֵׁ֗ל",
+          "word": "יִמְשֹׁ֥ל",
           "lemma": "מָשַׁל",
           "strong": "H4910",
-          "pron": "탐실레후"
+          "pron": "브리메숄"
         }
       ],
-      "count": 3,
+      "count": 6,
       "refs": [
-        "psalms 105:21",
-        "genesis 24:2",
-        "genesis 45:8"
+        "exodus 21:8",
+        "deuteronomy 15:6",
+        "judges 8:23",
+        "isaiah 63:19",
+        "habakkuk 1:14"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לְבֵית֑וֹ וּ֝מֹשֵׁ֗ל בְּכָל",
-      "pron": "베테카 탐실레후 브콜",
+      "hebrew": "הַמּֽוֹשְׁלִ֨ים בָּעָ֜ם",
+      "pron": "브리메숄 암",
       "lemmas": [
-        "בַּיִת",
         "מָשַׁל",
-        "כֹּל"
+        "עַם"
       ],
       "words": [
         {
-          "word": "לְבֵית֑וֹ",
-          "lemma": "בַּיִת",
-          "strong": "H1004",
-          "pron": "베테카"
-        },
-        {
-          "word": "וּ֝מֹשֵׁ֗ל",
+          "word": "הַמּֽוֹשְׁלִ֨ים",
           "lemma": "מָשַׁל",
           "strong": "H4910",
-          "pron": "탐실레후"
+          "pron": "브리메숄"
         },
         {
-          "word": "בְּכָל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
+          "word": "בָּעָ֜ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
-        "psalms 105:21",
-        "genesis 24:2",
-        "genesis 45:8"
+        "chronicles2 23:20",
+        "psalms 105:20",
+        "isaiah 3:12",
+        "isaiah 28:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאַתָּ֖ה תִּמְשָׁל",
+      "pron": "앗타 브리메숄",
+      "lemmas": [
+        "אַתָּה",
+        "מָשַׁל"
+      ],
+      "words": [
+        {
+          "word": "וְאַתָּ֖ה",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
+        },
+        {
+          "word": "תִּמְשָׁל",
+          "lemma": "מָשַׁל",
+          "strong": "H4910",
+          "pron": "브리메숄"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 4:7",
+        "chronicles1 29:12",
+        "chronicles2 20:6",
+        "psalms 89:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָשׁ֥וֹל תִּמְשֹׁ֖ל",
+      "pron": "브리메숄 브리메숄",
+      "lemmas": [
+        "מָשַׁל",
+        "מָשַׁל"
+      ],
+      "words": [
+        {
+          "word": "מָשׁ֥וֹל",
+          "lemma": "מָשַׁל",
+          "strong": "H4910",
+          "pron": "브리메숄"
+        },
+        {
+          "word": "תִּמְשֹׁ֖ל",
+          "lemma": "מָשַׁל",
+          "strong": "H4910",
+          "pron": "브리메숄"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 37:8",
+        "isaiah 52:5"
       ],
       "glossKo": ""
     }

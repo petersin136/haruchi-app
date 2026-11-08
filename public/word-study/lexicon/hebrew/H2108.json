@@ -1,6 +1,6 @@
 {
   "lemma": "זוּלָה",
-  "pron": "줄라티위",
+  "pron": "줄라티",
   "strong": "H2108",
   "posKo": "접미대명사",
   "root": {
@@ -12,21 +12,62 @@
     {
       "lemma": "זוּל",
       "strong": "H2107",
-      "pron": "",
+      "pron": "아잘림",
       "glossKo": "흔들다"
     },
     {
       "lemma": "זָלַל",
       "strong": "H2151",
-      "pron": "",
-      "glossKo": "낭비하다"
+      "pron": "졸렐",
+      "glossKo": "낭비하는 이"
     }
   ],
   "defEn": "scattering; removal; except",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 16,
   "byBook": {
-    "psalms": 1
+    "isaiah": 4,
+    "deuteronomy": 2,
+    "kings1": 2,
+    "chronicles1": 1,
+    "hosea": 1,
+    "joshua": 1,
+    "kings2": 1,
+    "psalms": 1,
+    "ruth": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֱלֹהִים֙ זֽוּלָתֶ֔ךָ",
+      "pron": "엘로힘 줄라티",
+      "lemmas": [
+        "אֱלֹהִים",
+        "זוּלָה"
+      ],
+      "words": [
+        {
+          "word": "אֱלֹהִים֙",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "זֽוּלָתֶ֔ךָ",
+          "lemma": "זוּלָה",
+          "strong": "H2108",
+          "pron": "줄라티"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 7:22",
+        "chronicles1 17:20",
+        "isaiah 64:4",
+        "hosea 13:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "זָמַר",
-  "pron": "바아잠메라",
+  "pron": "아잠메르",
   "strong": "H2167",
   "posKo": "동사",
   "root": {
@@ -12,50 +12,87 @@
     {
       "lemma": "זְמוֹרָה",
       "strong": "H2156",
-      "pron": "",
+      "pron": "제모라",
       "glossKo": "포도나무 가지"
     },
     {
       "lemma": "זָמִיר",
       "strong": "H2158",
-      "pron": "비제미로트",
+      "pron": "제미로트",
       "glossKo": "노래"
     },
     {
       "lemma": "זָמִיר",
       "strong": "H2159",
-      "pron": "",
+      "pron": "아자미르",
       "glossKo": "가지"
     },
     {
       "lemma": "זָמַר",
       "strong": "H2168",
-      "pron": "",
+      "pron": "팃모르",
       "glossKo": "노래하다"
     },
     {
       "lemma": "זֶמֶר",
       "strong": "H2169",
-      "pron": "",
+      "pron": "바자메르",
       "glossKo": "노래"
     },
     {
       "lemma": "זְמָר",
       "strong": "H2170",
-      "pron": "",
+      "pron": "제마라",
       "glossKo": "음악(아람)"
     }
   ],
   "defEn": "touch; play; music; celebrate",
   "defKo": "",
-  "countOT": 41,
+  "countOT": 45,
   "byBook": {
-    "psalms": 41
+    "psalms": 41,
+    "chronicles1": 1,
+    "isaiah": 1,
+    "judges": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
+      "hebrew": "אָשִׁ֥ירָה וַ֝אֲזַמְּרָ֗ה",
+      "pron": "야시르 아잠메르",
+      "lemmas": [
+        "שִׁיר",
+        "זָמַר"
+      ],
+      "words": [
+        {
+          "word": "אָשִׁ֥ירָה",
+          "lemma": "שִׁיר",
+          "strong": "H7891",
+          "pron": "야시르"
+        },
+        {
+          "word": "וַ֝אֲזַמְּרָ֗ה",
+          "lemma": "זָמַר",
+          "strong": "H2167",
+          "pron": "아잠메르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "judges 5:3",
+        "chronicles1 16:9",
+        "psalms 21:13",
+        "psalms 27:6",
+        "psalms 57:7",
+        "psalms 105:2",
+        "psalms 108:1"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וַ֝אֲזַמְּרָ֗ה שֵֽׁם",
-      "pron": "바아잠메라 셰메카",
+      "pron": "아잠메르 솀",
       "lemmas": [
         "זָמַר",
         "שֵׁם"
@@ -65,13 +102,13 @@
           "word": "וַ֝אֲזַמְּרָ֗ה",
           "lemma": "זָמַר",
           "strong": "H2167",
-          "pron": "바아잠메라"
+          "pron": "아잠메르"
         },
         {
           "word": "שֵֽׁם",
           "lemma": "שֵׁם",
           "strong": "H8034",
-          "pron": "셰메카"
+          "pron": "솀"
         }
       ],
       "count": 7,
@@ -88,7 +125,7 @@
     },
     {
       "hebrew": "אֱלֹהִ֣ים זַמֵּ֑רוּ",
-      "pron": "베엘로힘 바아잠메라",
+      "pron": "엘로힘 아잠메르",
       "lemmas": [
         "אֱלֹהִים",
         "זָמַר"
@@ -98,13 +135,13 @@
           "word": "אֱלֹהִ֣ים",
           "lemma": "אֱלֹהִים",
           "strong": "H430",
-          "pron": "베엘로힘"
+          "pron": "엘로힘"
         },
         {
           "word": "זַמֵּ֑רוּ",
           "lemma": "זָמַר",
           "strong": "H2167",
-          "pron": "바아잠메라"
+          "pron": "아잠메르"
         }
       ],
       "count": 6,
@@ -120,7 +157,7 @@
     },
     {
       "hebrew": "זַמְּר֣וּ אֱלֹהִ֣ים",
-      "pron": "바아잠메라 베엘로힘",
+      "pron": "아잠메르 엘로힘",
       "lemmas": [
         "זָמַר",
         "אֱלֹהִים"
@@ -130,13 +167,13 @@
           "word": "זַמְּר֣וּ",
           "lemma": "זָמַר",
           "strong": "H2167",
-          "pron": "바아잠메라"
+          "pron": "아잠메르"
         },
         {
           "word": "אֱלֹהִ֣ים",
           "lemma": "אֱלֹהִים",
           "strong": "H430",
-          "pron": "베엘로힘"
+          "pron": "엘로힘"
         }
       ],
       "count": 6,
@@ -151,61 +188,34 @@
       "glossKo": ""
     },
     {
-      "hebrew": "אָשִׁ֥ירָה וַ֝אֲזַמְּרָ֗ה",
-      "pron": "샤르 바아잠메라",
-      "lemmas": [
-        "שִׁיר",
-        "זָמַר"
-      ],
-      "words": [
-        {
-          "word": "אָשִׁ֥ירָה",
-          "lemma": "שִׁיר",
-          "strong": "H7891",
-          "pron": "샤르"
-        },
-        {
-          "word": "וַ֝אֲזַמְּרָ֗ה",
-          "lemma": "זָמַר",
-          "strong": "H2167",
-          "pron": "바아잠메라"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 21:13",
-        "psalms 27:6",
-        "psalms 57:7",
-        "psalms 105:2",
-        "psalms 108:1"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "זַמֵּ֑רוּ זַמְּר֖וּ",
-      "pron": "바아잠메라 바아잠메라",
+      "hebrew": "זַמְּר֣וּ לַיהוָ֣ה",
+      "pron": "아잠메르 여호와",
       "lemmas": [
         "זָמַר",
-        "זָמַר"
+        "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "זַמֵּ֑רוּ",
+          "word": "זַמְּר֣וּ",
           "lemma": "זָמַר",
           "strong": "H2167",
-          "pron": "바아잠메라"
+          "pron": "아잠메르"
         },
         {
-          "word": "זַמְּר֖וּ",
-          "lemma": "זָמַר",
-          "strong": "H2167",
-          "pron": "바아잠메라"
+          "word": "לַיהוָ֣ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         }
       ],
-      "count": 4,
+      "count": 6,
       "refs": [
-        "psalms 47:6",
-        "psalms 66:4"
+        "judges 5:3",
+        "psalms 9:11",
+        "psalms 27:6",
+        "psalms 30:4",
+        "psalms 98:5",
+        "isaiah 12:5"
       ],
       "glossKo": ""
     }

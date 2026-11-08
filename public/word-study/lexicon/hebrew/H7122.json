@@ -1,6 +1,6 @@
 {
   "lemma": "קָרָא",
-  "pron": "이케라에누",
+  "pron": "이케라엔누",
   "strong": "H7122",
   "posKo": "동사",
   "root": null,
@@ -8,21 +8,150 @@
     {
       "lemma": "קָרָא",
       "strong": "H7121",
-      "pron": "에케라",
+      "pron": "바이케라",
       "glossKo": "부르다"
     },
     {
       "lemma": "קִרְאָה",
       "strong": "H7125",
-      "pron": "리케라트",
-      "glossKo": "만남"
+      "pron": "리케라토",
+      "glossKo": "그에게 만남"
     }
   ],
   "defEn": "encounter",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 37,
   "byBook": {
-    "genesis": 3
+    "samuel1": 20,
+    "samuel2": 4,
+    "genesis": 3,
+    "jeremiah": 3,
+    "deuteronomy": 2,
+    "exodus": 2,
+    "isaiah": 1,
+    "job": 1,
+    "leviticus": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יִקְרָ֥א אֶתְכֶ֖ם",
+      "pron": "이케라엔누 에트",
+      "lemmas": [
+        "קָרָא",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "יִקְרָ֥א",
+          "lemma": "קָרָא",
+          "strong": "H7122",
+          "pron": "이케라엔누"
+        },
+        {
+          "word": "אֶתְכֶ֖ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 49:1",
+        "leviticus 10:19",
+        "deuteronomy 31:29",
+        "jeremiah 32:23",
+        "jeremiah 44:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִקְרַ֨את פְּלִשְׁתִּ֜ים",
+      "pron": "이케라엔누 펠리솃팀",
+      "lemmas": [
+        "קָרָא",
+        "פְּלִשְׁתִּי"
+      ],
+      "words": [
+        {
+          "word": "לִקְרַ֨את",
+          "lemma": "קָרָא",
+          "strong": "H7122",
+          "pron": "이케라엔누"
+        },
+        {
+          "word": "פְּלִשְׁתִּ֜ים",
+          "lemma": "פְּלִשְׁתִּי",
+          "strong": "H6430",
+          "pron": "펠리솃팀"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 4:1",
+        "samuel1 17:2",
+        "samuel1 17:48",
+        "samuel1 17:55",
+        "samuel1 23:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יֹצֵ֣א לִקְרָאתָ֔ם",
+      "pron": "바토체 이케라엔누",
+      "lemmas": [
+        "יָצָא",
+        "קָרָא"
+      ],
+      "words": [
+        {
+          "word": "יֹצֵ֣א",
+          "lemma": "יָצָא",
+          "strong": "H3318",
+          "pron": "바토체"
+        },
+        {
+          "word": "לִקְרָאתָ֔ם",
+          "lemma": "קָרָא",
+          "strong": "H7122",
+          "pron": "이케라엔누"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 9:14",
+        "samuel1 17:55",
+        "samuel1 30:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִקְרַ֣את דָּוִ֑ד",
+      "pron": "이케라엔누 다윗",
+      "lemmas": [
+        "קָרָא",
+        "דָּוִד"
+      ],
+      "words": [
+        {
+          "word": "לִקְרַ֣את",
+          "lemma": "קָרָא",
+          "strong": "H7122",
+          "pron": "이케라엔누"
+        },
+        {
+          "word": "דָּוִ֑ד",
+          "lemma": "דָּוִד",
+          "strong": "H1732",
+          "pron": "다윗"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 17:48",
+        "samuel1 21:1",
+        "samuel1 30:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

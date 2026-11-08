@@ -1,6 +1,6 @@
 {
   "lemma": "קֶשֶׁת",
-  "pron": "카솃트오",
+  "pron": "카솃티",
   "strong": "H7198",
   "posKo": "명사",
   "root": {
@@ -12,25 +12,25 @@
     {
       "lemma": "מִקְשֶׁה",
       "strong": "H4748",
-      "pron": "",
+      "pron": "미케셰",
       "glossKo": "두들겨 만든 것"
     },
     {
       "lemma": "קָשָׁה",
       "strong": "H7185",
-      "pron": "타케슈",
+      "pron": "바테카쉬",
       "glossKo": "굳어지다"
     },
     {
       "lemma": "קָשֶׁה",
       "strong": "H7186",
-      "pron": "카샤",
+      "pron": "카쇼트",
       "glossKo": "굳은"
     },
     {
       "lemma": "קְשִׁי",
       "strong": "H7190",
-      "pron": "",
+      "pron": "케시",
       "glossKo": "완고"
     },
     {
@@ -42,10 +42,180 @@
   ],
   "defEn": "bow; strength; iris",
   "defKo": "",
-  "countOT": 17,
+  "countOT": 76,
   "byBook": {
+    "jeremiah": 10,
     "psalms": 10,
-    "genesis": 7
+    "isaiah": 8,
+    "genesis": 7,
+    "chronicles1": 5,
+    "kings2": 5,
+    "chronicles2": 4,
+    "hosea": 4,
+    "ezekiel": 3,
+    "job": 3,
+    "samuel1": 3,
+    "samuel2": 3,
+    "zechariah": 3,
+    "lamentations": 2,
+    "nehemiah": 2,
+    "amos": 1,
+    "habakkuk": 1,
+    "joshua": 1,
+    "kings1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְדֹ֣רְכֵי קֶ֔שֶׁת",
+      "pron": "다라크 카솃티",
+      "lemmas": [
+        "דָּרַךְ",
+        "קֶשֶׁת"
+      ],
+      "words": [
+        {
+          "word": "וְדֹ֣רְכֵי",
+          "lemma": "דָּרַךְ",
+          "strong": "H1869",
+          "pron": "다라크"
+        },
+        {
+          "word": "קֶ֔שֶׁת",
+          "lemma": "קֶשֶׁת",
+          "strong": "H7198",
+          "pron": "카솃티"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "chronicles1 5:18",
+        "chronicles1 8:40",
+        "chronicles2 14:8",
+        "psalms 11:2",
+        "psalms 37:14",
+        "jeremiah 46:9",
+        "jeremiah 50:14",
+        "jeremiah 50:29",
+        "jeremiah 51:3",
+        "lamentations 2:4",
+        "lamentations 3:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת קֶ֣שֶׁת",
+      "pron": "에트 카솃티",
+      "lemmas": [
+        "אֵת",
+        "קֶשֶׁת"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "קֶ֣שֶׁת",
+          "lemma": "קֶשֶׁת",
+          "strong": "H7198",
+          "pron": "카솃티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 9:13",
+        "jeremiah 49:35",
+        "hosea 1:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָשַׁ֤ךְ בַּקֶּ֨שֶׁת֙",
+      "pron": "바임셰쿠 카솃티",
+      "lemmas": [
+        "מָשַׁךְ",
+        "קֶשֶׁת"
+      ],
+      "words": [
+        {
+          "word": "מָשַׁ֤ךְ",
+          "lemma": "מָשַׁךְ",
+          "strong": "H4900",
+          "pron": "바임셰쿠"
+        },
+        {
+          "word": "בַּקֶּ֨שֶׁת֙",
+          "lemma": "קֶשֶׁת",
+          "strong": "H7198",
+          "pron": "카솃티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 22:34",
+        "chronicles2 18:33",
+        "isaiah 66:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קֶ֣שֶׁת וְחִצִּ֑ים",
+      "pron": "카솃티 힛침",
+      "lemmas": [
+        "קֶשֶׁת",
+        "חֵץ"
+      ],
+      "words": [
+        {
+          "word": "קֶ֣שֶׁת",
+          "lemma": "קֶשֶׁת",
+          "strong": "H7198",
+          "pron": "카솃티"
+        },
+        {
+          "word": "וְחִצִּ֑ים",
+          "lemma": "חֵץ",
+          "strong": "H2671",
+          "pron": "힛침"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 13:15",
+        "ezekiel 39:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קֶֽשֶׁת נְחוּשָׁ֖ה",
+      "pron": "카솃티 카네후샤",
+      "lemmas": [
+        "קֶשֶׁת",
+        "נְחוּשָׁה"
+      ],
+      "words": [
+        {
+          "word": "קֶֽשֶׁת",
+          "lemma": "קֶשֶׁת",
+          "strong": "H7198",
+          "pron": "카솃티"
+        },
+        {
+          "word": "נְחוּשָׁ֖ה",
+          "lemma": "נְחוּשָׁה",
+          "strong": "H5154",
+          "pron": "카네후샤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:35",
+        "job 20:24",
+        "psalms 18:34"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

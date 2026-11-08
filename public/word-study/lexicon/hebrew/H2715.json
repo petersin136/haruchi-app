@@ -1,8 +1,8 @@
 {
   "lemma": "חֹר",
-  "pron": "호르",
+  "pron": "아호림",
   "strong": "H2715",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָרַר",
     "strong": "H2787",
@@ -12,31 +12,109 @@
     {
       "lemma": "חָרָה",
       "strong": "H2734",
-      "pron": "하라",
+      "pron": "바이하르",
       "glossKo": "노하다"
     },
     {
       "lemma": "חַרְחֻר",
       "strong": "H2746",
-      "pron": "",
+      "pron": "우바하레후르",
       "glossKo": "열병"
     },
     {
       "lemma": "חֲרַךְ",
       "strong": "H2761",
-      "pron": "",
+      "pron": "히테하라크",
       "glossKo": "그슬리다(아람)"
+    },
+    {
+      "lemma": "חָרָן",
+      "strong": "H2771",
+      "pron": "하란",
+      "glossKo": "하란"
     },
     {
       "lemma": "חָרַר",
       "strong": "H2787",
-      "pron": "니하르",
+      "pron": "하라",
       "glossKo": "타다"
+    },
+    {
+      "lemma": "חָרֵר",
+      "strong": "H2788",
+      "pron": "하레림",
+      "glossKo": "마른"
     }
   ],
   "defEn": "white; pure; cleansing; shining; noble",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "nehemiah": 7,
+    "jeremiah": 2,
+    "kings1": 2,
+    "ecclesiastes": 1,
+    "isaiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "חֹרֵ֤י יְהוּדָה֙",
+      "pron": "아호림 예후다",
+      "lemmas": [
+        "חֹר",
+        "יְהוּדָה"
+      ],
+      "words": [
+        {
+          "word": "חֹרֵ֤י",
+          "lemma": "חֹר",
+          "strong": "H2715",
+          "pron": "아호림"
+        },
+        {
+          "word": "יְהוּדָה֙",
+          "lemma": "יְהוּדָה",
+          "strong": "H3063",
+          "pron": "예후다"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "nehemiah 6:17",
+        "nehemiah 13:17",
+        "jeremiah 27:20",
+        "jeremiah 39:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל הַחֹרִ֤ים",
+      "pron": "엘 아호림",
+      "lemmas": [
+        "אֵל",
+        "חֹר"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "הַחֹרִ֤ים",
+          "lemma": "חֹר",
+          "strong": "H2715",
+          "pron": "아호림"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 21:8",
+        "nehemiah 4:14",
+        "nehemiah 4:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

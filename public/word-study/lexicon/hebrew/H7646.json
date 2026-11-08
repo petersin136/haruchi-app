@@ -1,6 +1,6 @@
 {
   "lemma": "שָׂבַע",
-  "pron": "이셉베우",
+  "pron": "리셉보아",
   "strong": "H7646",
   "posKo": "동사",
   "root": null,
@@ -14,7 +14,7 @@
     {
       "lemma": "שֹׂבַע",
       "strong": "H7648",
-      "pron": "소바",
+      "pron": "라소바",
       "glossKo": "포만"
     },
     {
@@ -26,37 +26,197 @@
   ],
   "defEn": "sate; fill",
   "defKo": "",
-  "countOT": 23,
+  "countOT": 97,
   "byBook": {
-    "psalms": 23
+    "psalms": 23,
+    "proverbs": 18,
+    "deuteronomy": 7,
+    "isaiah": 7,
+    "ezekiel": 6,
+    "jeremiah": 6,
+    "job": 6,
+    "ecclesiastes": 4,
+    "hosea": 3,
+    "lamentations": 3,
+    "chronicles2": 2,
+    "exodus": 2,
+    "habakkuk": 2,
+    "joel": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "leviticus": 1,
+    "micah": 1,
+    "nehemiah": 1,
+    "ruth": 1
   },
   "phrases": [
     {
-      "hebrew": "תִּשְׂבַּ֣ע נַפְשִׁ֑י",
-      "pron": "이셉베우 르납시위",
+      "hebrew": "לֹ֣א תִשְׂבַּ֑עְנָה",
+      "pron": "로 리셉보아",
       "lemmas": [
-        "שָׂבַע",
-        "נֶפֶשׁ"
+        "לֹא",
+        "שָׂבַע"
       ],
       "words": [
         {
-          "word": "תִּשְׂבַּ֣ע",
-          "lemma": "שָׂבַע",
-          "strong": "H7646",
-          "pron": "이셉베우"
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
         },
         {
-          "word": "נַפְשִׁ֑י",
-          "lemma": "נֶפֶשׁ",
-          "strong": "H5315",
-          "pron": "르납시위"
+          "word": "תִשְׂבַּ֑עְנָה",
+          "lemma": "שָׂבַע",
+          "strong": "H7646",
+          "pron": "리셉보아"
         }
       ],
-      "count": 3,
+      "count": 21,
       "refs": [
-        "psalms 63:5",
+        "leviticus 26:26",
+        "job 19:22",
+        "job 27:14",
+        "job 31:31",
+        "psalms 59:15",
+        "proverbs 27:20",
+        "proverbs 30:15",
+        "proverbs 30:16",
+        "ecclesiastes 1:8",
+        "ecclesiastes 4:8",
+        "ecclesiastes 5:10",
+        "ecclesiastes 6:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאָכַלְתָּ֖ וְשָׂבָֽעְתָּ",
+      "pron": "아콜 리셉보아",
+      "lemmas": [
+        "אָכַל",
+        "שָׂבַע"
+      ],
+      "words": [
+        {
+          "word": "וְאָכַלְתָּ֖",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "아콜"
+        },
+        {
+          "word": "וְשָׂבָֽעְתָּ",
+          "lemma": "שָׂבַע",
+          "strong": "H7646",
+          "pron": "리셉보아"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "deuteronomy 6:11",
+        "deuteronomy 8:10",
+        "deuteronomy 8:12",
+        "deuteronomy 11:15",
+        "deuteronomy 14:29",
+        "deuteronomy 31:20",
+        "ruth 2:14",
+        "chronicles2 31:10",
+        "nehemiah 9:25",
+        "psalms 78:29",
+        "joel 2:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִֽשְׂבַּֽע לָ֑חֶם",
+      "pron": "리셉보아 레헴",
+      "lemmas": [
+        "שָׂבַע",
+        "לֶחֶם"
+      ],
+      "words": [
+        {
+          "word": "יִֽשְׂבַּֽע",
+          "lemma": "שָׂבַע",
+          "strong": "H7646",
+          "pron": "리셉보아"
+        },
+        {
+          "word": "לָ֑חֶם",
+          "lemma": "לֶחֶם",
+          "strong": "H3899",
+          "pron": "레헴"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 16:12",
+        "job 27:14",
+        "psalms 132:15",
+        "proverbs 12:11",
+        "proverbs 20:13",
+        "proverbs 28:19",
+        "proverbs 30:22",
+        "jeremiah 44:17",
+        "lamentations 5:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֥י יַ֝שְׂבִּעַ֗נִי",
+      "pron": "키 리셉보아",
+      "lemmas": [
+        "כִּי",
+        "שָׂבַע"
+      ],
+      "words": [
+        {
+          "word": "כִּ֥י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "יַ֝שְׂבִּעַ֗נִי",
+          "lemma": "שָׂבַע",
+          "strong": "H7646",
+          "pron": "리셉보아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 9:18",
+        "psalms 88:3",
         "psalms 107:9",
-        "psalms 123:4"
+        "proverbs 30:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פֶּֽן יִשְׂבְּע֣וּ",
+      "pron": "펜 리셉보아",
+      "lemmas": [
+        "פֵּן",
+        "שָׂבַע"
+      ],
+      "words": [
+        {
+          "word": "פֶּֽן",
+          "lemma": "פֵּן",
+          "strong": "H6435",
+          "pron": "펜"
+        },
+        {
+          "word": "יִשְׂבְּע֣וּ",
+          "lemma": "שָׂבַע",
+          "strong": "H7646",
+          "pron": "리셉보아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "proverbs 5:10",
+        "proverbs 25:16",
+        "proverbs 25:17",
+        "proverbs 30:9"
       ],
       "glossKo": ""
     }

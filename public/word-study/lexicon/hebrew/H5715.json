@@ -1,6 +1,6 @@
 {
   "lemma": "עֵדוּת",
-  "pron": "에두트",
+  "pron": "하에두트",
   "strong": "H5715",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,213 @@
     {
       "lemma": "עֵד",
       "strong": "H5707",
-      "pron": "에데",
+      "pron": "르엗",
       "glossKo": "증인"
     },
     {
       "lemma": "עֵדָה",
       "strong": "H5712",
-      "pron": "바아다트",
+      "pron": "아다트",
       "glossKo": "회중"
     },
     {
       "lemma": "עֵדָה",
       "strong": "H5713",
-      "pron": "브에도타이브",
-      "glossKo": "그의 증거"
+      "pron": "르에다",
+      "glossKo": "증거"
     }
   ],
   "defEn": "testimony",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 59,
   "byBook": {
-    "psalms": 13
+    "exodus": 21,
+    "psalms": 13,
+    "numbers": 12,
+    "chronicles2": 3,
+    "kings2": 3,
+    "leviticus": 2,
+    "chronicles1": 1,
+    "jeremiah": 1,
+    "joshua": 1,
+    "kings1": 1,
+    "nehemiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲר֣וֹן הָעֵד֑וּת",
+      "pron": "바아론 하에두트",
+      "lemmas": [
+        "אָרוֹן",
+        "עֵדוּת"
+      ],
+      "words": [
+        {
+          "word": "אֲר֣וֹן",
+          "lemma": "אָרוֹן",
+          "strong": "H727",
+          "pron": "바아론"
+        },
+        {
+          "word": "הָעֵד֑וּת",
+          "lemma": "עֵדוּת",
+          "strong": "H5715",
+          "pron": "하에두트"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 25:22",
+        "exodus 26:33",
+        "exodus 26:34",
+        "exodus 30:6",
+        "exodus 30:26",
+        "exodus 31:7",
+        "exodus 39:35",
+        "exodus 40:3",
+        "exodus 40:5",
+        "exodus 40:21",
+        "numbers 4:5",
+        "numbers 7:89"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָעֵדֻ֔ת אֲשֶׁ֥ר",
+      "pron": "하에두트 아셰르",
+      "lemmas": [
+        "עֵדוּת",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הָעֵדֻ֔ת",
+          "lemma": "עֵדוּת",
+          "strong": "H5715",
+          "pron": "하에두트"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 25:16",
+        "exodus 25:21",
+        "exodus 30:6",
+        "exodus 38:21",
+        "exodus 40:21",
+        "numbers 17:4",
+        "kings2 17:15",
+        "nehemiah 9:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת הָ֣עֵד֔וּת",
+      "pron": "에트 하에두트",
+      "lemmas": [
+        "אֵת",
+        "עֵדוּת"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הָ֣עֵד֔וּת",
+          "lemma": "עֵדוּת",
+          "strong": "H5715",
+          "pron": "하에두트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 25:16",
+        "exodus 25:21",
+        "exodus 40:20",
+        "kings2 11:12",
+        "kings2 17:15",
+        "kings2 23:3",
+        "chronicles2 23:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֖ת אֲר֣וֹן הָעֵד֑וּת",
+      "pron": "에트 바아론 하에두트",
+      "lemmas": [
+        "אֵת",
+        "אָרוֹן",
+        "עֵדוּת"
+      ],
+      "words": [
+        {
+          "word": "אֵ֖ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "אֲר֣וֹן",
+          "lemma": "אָרוֹן",
+          "strong": "H727",
+          "pron": "바아론"
+        },
+        {
+          "word": "הָעֵד֑וּת",
+          "lemma": "עֵדוּת",
+          "strong": "H5715",
+          "pron": "하에두트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 26:33",
+        "exodus 30:26",
+        "exodus 31:7",
+        "exodus 39:35",
+        "exodus 40:3",
+        "numbers 4:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְאֹ֖הֶל הָעֵדֻ֑ת",
+      "pron": "오헬 하에두트",
+      "lemmas": [
+        "אֹהֶל",
+        "עֵדוּת"
+      ],
+      "words": [
+        {
+          "word": "לְאֹ֖הֶל",
+          "lemma": "אֹהֶל",
+          "strong": "H168",
+          "pron": "오헬"
+        },
+        {
+          "word": "הָעֵדֻ֑ת",
+          "lemma": "עֵדוּת",
+          "strong": "H5715",
+          "pron": "하에두트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 9:15",
+        "numbers 17:7",
+        "numbers 17:8",
+        "numbers 18:2",
+        "chronicles2 24:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

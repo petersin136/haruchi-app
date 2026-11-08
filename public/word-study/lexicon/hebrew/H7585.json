@@ -1,6 +1,6 @@
 {
   "lemma": "שְׁאוֹל",
-  "pron": "비셰올",
+  "pron": "셰올라",
   "strong": "H7585",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "אֶשְׁתָּאֹל",
       "strong": "H847",
-      "pron": "",
+      "pron": "에솃타올",
       "glossKo": "에스다올"
     },
     {
       "lemma": "מִשְׁאָל",
       "strong": "H4861",
-      "pron": "",
+      "pron": "우미셰알",
       "glossKo": "미살"
     },
     {
@@ -36,22 +36,187 @@
     {
       "lemma": "שָׁאַל",
       "strong": "H7592",
-      "pron": "셰알",
+      "pron": "바에셰알",
       "glossKo": "묻다"
     },
     {
       "lemma": "שְׁאֵל",
       "strong": "H7593",
-      "pron": "",
+      "pron": "셰엘나",
       "glossKo": "묻다(아람)"
     }
   ],
   "defEn": "hades; retreat",
   "defKo": "",
-  "countOT": 20,
+  "countOT": 66,
   "byBook": {
     "psalms": 16,
-    "genesis": 4
+    "isaiah": 10,
+    "proverbs": 9,
+    "job": 8,
+    "ezekiel": 5,
+    "genesis": 4,
+    "hosea": 2,
+    "kings1": 2,
+    "numbers": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "habakkuk": 1,
+    "jonah": 1,
+    "samuel1": 1,
+    "samuel2": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מוֹרִ֥יד שְׁא֖וֹל",
+      "pron": "바예렏 셰올라",
+      "lemmas": [
+        "יָרַד",
+        "שְׁאוֹל"
+      ],
+      "words": [
+        {
+          "word": "מוֹרִ֥יד",
+          "lemma": "יָרַד",
+          "strong": "H3381",
+          "pron": "바예렏"
+        },
+        {
+          "word": "שְׁא֖וֹל",
+          "lemma": "שְׁאוֹל",
+          "strong": "H7585",
+          "pron": "셰올라"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel1 2:6",
+        "job 7:9",
+        "psalms 55:15",
+        "isaiah 14:11",
+        "ezekiel 31:15",
+        "ezekiel 31:17",
+        "ezekiel 32:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חַיִּ֖ים שְׁאֹ֑לָה",
+      "pron": "하아 셰올라",
+      "lemmas": [
+        "חַי",
+        "שְׁאוֹל"
+      ],
+      "words": [
+        {
+          "word": "חַיִּ֖ים",
+          "lemma": "חַי",
+          "strong": "H2416",
+          "pron": "하아"
+        },
+        {
+          "word": "שְׁאֹ֑לָה",
+          "lemma": "שְׁאוֹל",
+          "strong": "H7585",
+          "pron": "셰올라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 16:30",
+        "numbers 16:33",
+        "psalms 88:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִֽיַּד שְׁא֑וֹל",
+      "pron": "야도 셰올라",
+      "lemmas": [
+        "יָד",
+        "שְׁאוֹל"
+      ],
+      "words": [
+        {
+          "word": "מִֽיַּד",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        },
+        {
+          "word": "שְׁא֑וֹל",
+          "lemma": "שְׁאוֹל",
+          "strong": "H7585",
+          "pron": "셰올라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 49:15",
+        "psalms 89:48",
+        "hosea 13:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נַפְשִׁ֣י לִשְׁא֑וֹל",
+      "pron": "네페쉬 셰올라",
+      "lemmas": [
+        "נֶפֶשׁ",
+        "שְׁאוֹל"
+      ],
+      "words": [
+        {
+          "word": "נַפְשִׁ֣י",
+          "lemma": "נֶפֶשׁ",
+          "strong": "H5315",
+          "pron": "네페쉬"
+        },
+        {
+          "word": "לִשְׁא֑וֹל",
+          "lemma": "שְׁאוֹל",
+          "strong": "H7585",
+          "pron": "셰올라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 16:10",
+        "psalms 86:13",
+        "proverbs 23:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁ֝א֗וֹל לֹ֣א",
+      "pron": "셰올라 로",
+      "lemmas": [
+        "שְׁאוֹל",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "שְׁ֝א֗וֹל",
+          "lemma": "שְׁאוֹל",
+          "strong": "H7585",
+          "pron": "셰올라"
+        },
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 7:9",
+        "psalms 16:10",
+        "isaiah 28:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "כֶּסֶף",
-  "pron": "케셉",
+  "pron": "바케셉",
   "strong": "H3701",
   "posKo": "명사",
   "root": {
@@ -12,33 +12,105 @@
     {
       "lemma": "כָּסַף",
       "strong": "H3700",
-      "pron": "이케솝",
+      "pron": "니케솝",
       "glossKo": "갈망하다"
     },
     {
       "lemma": "כְּסַף",
       "strong": "H3702",
-      "pron": "",
+      "pron": "브캇파",
       "glossKo": "은(아람)"
     },
     {
       "lemma": "כָּסִפְיָא",
       "strong": "H3703",
-      "pron": "",
+      "pron": "브카십아",
       "glossKo": "가시뱌"
     }
   ],
   "defEn": "silver; pale",
   "defKo": "",
-  "countOT": 50,
+  "countOT": 403,
   "byBook": {
+    "exodus": 41,
     "genesis": 41,
-    "psalms": 9
+    "kings2": 40,
+    "numbers": 37,
+    "chronicles2": 28,
+    "chronicles1": 19,
+    "isaiah": 18,
+    "kings1": 17,
+    "deuteronomy": 15,
+    "ezra": 13,
+    "proverbs": 13,
+    "leviticus": 12,
+    "judges": 11,
+    "ezekiel": 10,
+    "jeremiah": 10,
+    "psalms": 9,
+    "job": 7,
+    "joshua": 7,
+    "ecclesiastes": 6,
+    "nehemiah": 6,
+    "samuel2": 6,
+    "zechariah": 6,
+    "esther": 5,
+    "hosea": 5,
+    "songofsolomon": 4,
+    "daniel": 3,
+    "amos": 2,
+    "malachi": 2,
+    "samuel1": 2,
+    "zephaniah": 2,
+    "habakkuk": 1,
+    "haggai": 1,
+    "joel": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "nahum": 1
   },
   "phrases": [
     {
-      "hebrew": "אֶת הַכֶּ֕סֶף",
-      "pron": "에트 케셉",
+      "hebrew": "כֶּ֣סֶף וְזָהָ֔ב",
+      "pron": "바케셉 아자합",
+      "lemmas": [
+        "כֶּסֶף",
+        "זָהָב"
+      ],
+      "words": [
+        {
+          "word": "כֶּ֣סֶף",
+          "lemma": "כֶּסֶף",
+          "strong": "H3701",
+          "pron": "바케셉"
+        },
+        {
+          "word": "וְזָהָ֔ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        }
+      ],
+      "count": 47,
+      "refs": [
+        "genesis 13:2",
+        "genesis 24:35",
+        "numbers 22:18",
+        "numbers 24:13",
+        "deuteronomy 7:25",
+        "deuteronomy 8:13",
+        "deuteronomy 17:17",
+        "deuteronomy 29:17",
+        "joshua 6:19",
+        "joshua 6:24",
+        "joshua 22:8",
+        "samuel2 8:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הַכֶּ֖סֶף",
+      "pron": "에트 바케셉",
       "lemmas": [
         "אֵת",
         "כֶּסֶף"
@@ -51,146 +123,140 @@
           "pron": "에트"
         },
         {
-          "word": "הַכֶּ֕סֶף",
+          "word": "הַכֶּ֖סֶף",
           "lemma": "כֶּסֶף",
           "strong": "H3701",
-          "pron": "케셉"
+          "pron": "바케셉"
         }
       ],
-      "count": 6,
+      "count": 40,
       "refs": [
         "genesis 23:16",
         "genesis 31:15",
         "genesis 42:27",
         "genesis 43:12",
         "genesis 44:2",
-        "genesis 47:14"
+        "genesis 47:14",
+        "exodus 21:35",
+        "exodus 30:16",
+        "leviticus 25:37",
+        "leviticus 27:18",
+        "numbers 3:49",
+        "numbers 3:50"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כֶּ֣סֶף וְזָהָ֑ב",
-      "pron": "케셉 미자합",
+      "hebrew": "זָהָ֥ב וָכֶ֖סֶף",
+      "pron": "아자합 바케셉",
       "lemmas": [
-        "כֶּסֶף",
-        "זָהָב"
+        "זָהָב",
+        "כֶּסֶף"
       ],
       "words": [
         {
-          "word": "כֶּ֣סֶף",
-          "lemma": "כֶּסֶף",
-          "strong": "H3701",
-          "pron": "케셉"
-        },
-        {
-          "word": "וְזָהָ֑ב",
+          "word": "זָהָ֥ב",
           "lemma": "זָהָב",
           "strong": "H2091",
-          "pron": "미자합"
+          "pron": "아자합"
+        },
+        {
+          "word": "וָכֶ֖סֶף",
+          "lemma": "כֶּסֶף",
+          "strong": "H3701",
+          "pron": "바케셉"
         }
       ],
-      "count": 5,
+      "count": 28,
       "refs": [
-        "psalms 105:37",
-        "psalms 115:4",
-        "psalms 135:15",
-        "genesis 13:2",
-        "genesis 24:35"
+        "exodus 25:3",
+        "exodus 31:4",
+        "exodus 35:5",
+        "exodus 35:32",
+        "kings1 10:22",
+        "kings2 14:14",
+        "chronicles1 18:10",
+        "chronicles1 22:16",
+        "chronicles1 29:2",
+        "chronicles1 29:3",
+        "chronicles1 29:5",
+        "chronicles2 2:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וּמִקְנַת כֶּ֨סֶף֙",
-      "pron": "우미케나트 케셉",
+      "hebrew": "כִכַּר כֶּ֖סֶף",
+      "pron": "킥카르 바케셉",
       "lemmas": [
-        "מִקְנָה",
+        "כִּכָּר",
         "כֶּסֶף"
       ],
       "words": [
         {
-          "word": "וּמִקְנַת",
-          "lemma": "מִקְנָה",
-          "strong": "H4736",
-          "pron": "우미케나트"
+          "word": "כִכַּר",
+          "lemma": "כִּכָּר",
+          "strong": "H3603",
+          "pron": "킥카르"
         },
         {
-          "word": "כֶּ֨סֶף֙",
+          "word": "כֶּ֖סֶף",
           "lemma": "כֶּסֶף",
           "strong": "H3701",
-          "pron": "케셉"
+          "pron": "바케셉"
         }
       ],
-      "count": 4,
+      "count": 15,
       "refs": [
-        "genesis 17:12",
-        "genesis 17:13",
-        "genesis 17:23",
-        "genesis 17:27"
+        "exodus 38:27",
+        "kings1 16:24",
+        "kings1 20:39",
+        "kings2 5:5",
+        "kings2 5:22",
+        "kings2 5:23",
+        "kings2 15:19",
+        "kings2 18:14",
+        "kings2 23:33",
+        "chronicles1 19:6",
+        "chronicles1 29:4",
+        "chronicles2 25:6"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בָּ֔יִת וּמִקְנַת כֶּ֨סֶף֙",
-      "pron": "베테카 우미케나트 케셉",
-      "lemmas": [
-        "בַּיִת",
-        "מִקְנָה",
-        "כֶּסֶף"
-      ],
-      "words": [
-        {
-          "word": "בָּ֔יִת",
-          "lemma": "בַּיִת",
-          "strong": "H1004",
-          "pron": "베테카"
-        },
-        {
-          "word": "וּמִקְנַת",
-          "lemma": "מִקְנָה",
-          "strong": "H4736",
-          "pron": "우미케나트"
-        },
-        {
-          "word": "כֶּ֨סֶף֙",
-          "lemma": "כֶּסֶף",
-          "strong": "H3701",
-          "pron": "케셉"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 17:12",
-        "genesis 17:13",
-        "genesis 17:27"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "כַּסְפֵּיהֶם֙ אִ֣ישׁ",
-      "pron": "케셉 하이쉬",
+      "hebrew": "הַכֶּ֤סֶף וְאֶת",
+      "pron": "바케셉 에트",
       "lemmas": [
         "כֶּסֶף",
-        "אִישׁ"
+        "אֵת"
       ],
       "words": [
         {
-          "word": "כַּסְפֵּיהֶם֙",
+          "word": "הַכֶּ֤סֶף",
           "lemma": "כֶּסֶף",
           "strong": "H3701",
-          "pron": "케셉"
+          "pron": "바케셉"
         },
         {
-          "word": "אִ֣ישׁ",
-          "lemma": "אִישׁ",
-          "strong": "H376",
-          "pron": "하이쉬"
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         }
       ],
-      "count": 3,
+      "count": 14,
       "refs": [
-        "genesis 42:25",
-        "genesis 43:21",
-        "genesis 44:1"
+        "numbers 31:22",
+        "joshua 7:24",
+        "kings1 7:51",
+        "kings2 14:14",
+        "kings2 16:8",
+        "kings2 20:13",
+        "kings2 23:35",
+        "chronicles2 1:15",
+        "chronicles2 5:1",
+        "chronicles2 25:24",
+        "ezra 8:25",
+        "isaiah 2:20"
       ],
       "glossKo": ""
     }

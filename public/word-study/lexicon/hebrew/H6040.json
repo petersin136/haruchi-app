@@ -1,6 +1,6 @@
 {
   "lemma": "עֳנִי",
-  "pron": "안이위",
+  "pron": "안에크",
   "strong": "H6040",
   "posKo": "명사",
   "root": {
@@ -12,25 +12,25 @@
     {
       "lemma": "בַּעֲנָה",
       "strong": "H1196",
-      "pron": "",
+      "pron": "바아나",
       "glossKo": "바아나"
     },
     {
       "lemma": "מַעֲנָה",
       "strong": "H4618",
-      "pron": "르믄브트므",
-      "glossKo": "그들의 고랑"
+      "pron": "마아나",
+      "glossKo": "고랑"
     },
     {
       "lemma": "עָנָה",
       "strong": "H6031",
-      "pron": "인네티",
+      "pron": "브인누",
       "glossKo": "괴롭히다"
     },
     {
       "lemma": "עֲנָה",
       "strong": "H6033",
-      "pron": "",
+      "pron": "아나인",
       "glossKo": "대답하다(아람)"
     },
     {
@@ -42,21 +42,66 @@
     {
       "lemma": "עָנִי",
       "strong": "H6041",
-      "pron": "님",
+      "pron": "헤아니",
       "glossKo": "가난한"
     }
   ],
   "defEn": "depression; misery",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 36,
   "byBook": {
     "psalms": 10,
-    "genesis": 4
+    "job": 6,
+    "lamentations": 5,
+    "genesis": 4,
+    "exodus": 3,
+    "deuteronomy": 2,
+    "chronicles1": 1,
+    "isaiah": 1,
+    "kings2": 1,
+    "nehemiah": 1,
+    "proverbs": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
+      "hebrew": "אֶת עֳנִ֥י",
+      "pron": "에트 안에크",
+      "lemmas": [
+        "אֵת",
+        "עֳנִי"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "עֳנִ֥י",
+          "lemma": "עֳנִי",
+          "strong": "H6040",
+          "pron": "안에크"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "genesis 31:42",
+        "exodus 3:7",
+        "exodus 3:17",
+        "exodus 4:31",
+        "deuteronomy 26:7",
+        "kings2 14:26",
+        "nehemiah 9:9",
+        "psalms 31:7",
+        "lamentations 1:9"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "רְאֵ֣ה עָ֭נְיִי",
-      "pron": "야레에누 안이위",
+      "pron": "바야레 안에크",
       "lemmas": [
         "רָאָה",
         "עֳנִי"
@@ -66,20 +111,119 @@
           "word": "רְאֵ֣ה",
           "lemma": "רָאָה",
           "strong": "H7200",
-          "pron": "야레에누"
+          "pron": "바야레"
         },
         {
           "word": "עָ֭נְיִי",
           "lemma": "עֳנִי",
           "strong": "H6040",
-          "pron": "안이위"
+          "pron": "안에크"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 1:11",
+        "psalms 9:13",
+        "psalms 25:18",
+        "psalms 119:153",
+        "lamentations 3:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רָאִ֛יתִי אֶת עֳנִ֥י",
+      "pron": "바야레 에트 안에크",
+      "lemmas": [
+        "רָאָה",
+        "אֵת",
+        "עֳנִי"
+      ],
+      "words": [
+        {
+          "word": "רָאִ֛יתִי",
+          "lemma": "רָאָה",
+          "strong": "H7200",
+          "pron": "바야레"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "עֳנִ֥י",
+          "lemma": "עֳנִי",
+          "strong": "H6040",
+          "pron": "안에크"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 3:7",
+        "exodus 4:31",
+        "deuteronomy 26:7",
+        "nehemiah 9:9",
+        "psalms 31:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּעָנְיִ֔י כִּ֥י",
+      "pron": "안에크 키",
+      "lemmas": [
+        "עֳנִי",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "בְּעָנְיִ֔י",
+          "lemma": "עֳנִי",
+          "strong": "H6040",
+          "pron": "안에크"
+        },
+        {
+          "word": "כִּ֥י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 29:32",
+        "deuteronomy 16:3",
+        "psalms 119:50",
+        "lamentations 1:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְמֵי עֹֽנִי",
+      "pron": "욤 안에크",
+      "lemmas": [
+        "יוֹם",
+        "עֳנִי"
+      ],
+      "words": [
+        {
+          "word": "יְמֵי",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "עֹֽנִי",
+          "lemma": "עֳנִי",
+          "strong": "H6040",
+          "pron": "안에크"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 9:13",
-        "psalms 25:18",
-        "psalms 119:153"
+        "job 30:16",
+        "job 30:27",
+        "lamentations 1:7"
       ],
       "glossKo": ""
     }

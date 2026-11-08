@@ -14,10 +14,78 @@
   ],
   "defEn": "if",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 25,
   "byBook": {
     "genesis": 4,
-    "psalms": 1
+    "numbers": 4,
+    "samuel2": 4,
+    "job": 3,
+    "isaiah": 2,
+    "judges": 2,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "joshua": 1,
+    "micah": 1,
+    "psalms": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "ולא וְל֨וּא",
+      "pron": "루 루",
+      "lemmas": [
+        "לוּא",
+        "לוּא"
+      ],
+      "words": [
+        {
+          "word": "ולא",
+          "lemma": "לוּא",
+          "strong": "H3863",
+          "pron": "루"
+        },
+        {
+          "word": "וְל֨וּא",
+          "lemma": "לוּא",
+          "strong": "H3863",
+          "pron": "루"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 18:12",
+        "samuel2 19:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ל֤וּ יֶשׁ",
+      "pron": "루 예쉬",
+      "lemmas": [
+        "לוּא",
+        "יֵשׁ"
+      ],
+      "words": [
+        {
+          "word": "ל֤וּ",
+          "lemma": "לוּא",
+          "strong": "H3863",
+          "pron": "루"
+        },
+        {
+          "word": "יֶשׁ",
+          "lemma": "יֵשׁ",
+          "strong": "H3426",
+          "pron": "예쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 22:29",
+        "job 9:33",
+        "job 16:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

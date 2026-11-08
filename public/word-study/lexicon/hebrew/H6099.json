@@ -1,6 +1,6 @@
 {
   "lemma": "עָצוּם",
-  "pron": "바아추마이브",
+  "pron": "브아춤",
   "strong": "H6099",
   "posKo": "형용사",
   "root": {
@@ -12,26 +12,26 @@
     {
       "lemma": "עָצַם",
       "strong": "H6105",
-      "pron": "아체무",
+      "pron": "아참타",
       "glossKo": "강성해지다"
     },
     {
       "lemma": "עֶצֶם",
       "strong": "H6106",
-      "pron": "아차마위",
-      "glossKo": "나의 뼈"
+      "pron": "에쳄",
+      "glossKo": "뼈"
     },
     {
       "lemma": "עֹצֶם",
       "strong": "H6108",
-      "pron": "아체미위",
-      "glossKo": "나의 힘"
+      "pron": "브오쳄",
+      "glossKo": "힘"
     },
     {
       "lemma": "עַצֻּמָה",
       "strong": "H6110",
-      "pron": "",
-      "glossKo": "보루"
+      "pron": "아추모테켐",
+      "glossKo": "너희의 보루"
     },
     {
       "lemma": "תַּעֲצֻמָה",
@@ -42,10 +42,194 @@
   ],
   "defEn": "powerful",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 31,
   "byBook": {
+    "deuteronomy": 6,
+    "joel": 4,
+    "isaiah": 3,
+    "numbers": 3,
+    "proverbs": 3,
     "psalms": 3,
-    "genesis": 1
+    "daniel": 2,
+    "micah": 2,
+    "amos": 1,
+    "exodus": 1,
+    "genesis": 1,
+    "joshua": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "גָּד֥וֹל וְעָצ֖וּם",
+      "pron": "아게돌림 브아춤",
+      "lemmas": [
+        "גָּדוֹל",
+        "עָצוּם"
+      ],
+      "words": [
+        {
+          "word": "גָּד֥וֹל",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        },
+        {
+          "word": "וְעָצ֖וּם",
+          "lemma": "עָצוּם",
+          "strong": "H6099",
+          "pron": "브아춤"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 18:18",
+        "numbers 14:12",
+        "deuteronomy 4:38",
+        "deuteronomy 9:1",
+        "deuteronomy 11:23",
+        "deuteronomy 26:5",
+        "joshua 23:9",
+        "daniel 11:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גּוֹיִ֔ם גְּדֹלִ֥ים וַעֲצֻמִ֖ים",
+      "pron": "아고임 아게돌림 브아춤",
+      "lemmas": [
+        "גּוֹי",
+        "גָּדוֹל",
+        "עָצוּם"
+      ],
+      "words": [
+        {
+          "word": "גּוֹיִ֔ם",
+          "lemma": "גּוֹי",
+          "strong": "H1471",
+          "pron": "아고임"
+        },
+        {
+          "word": "גְּדֹלִ֥ים",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        },
+        {
+          "word": "וַעֲצֻמִ֖ים",
+          "lemma": "עָצוּם",
+          "strong": "H6099",
+          "pron": "브아춤"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 18:18",
+        "numbers 14:12",
+        "deuteronomy 4:38",
+        "deuteronomy 9:1",
+        "deuteronomy 11:23",
+        "deuteronomy 26:5",
+        "joshua 23:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעָצ֖וּם מִמֶּֽנּוּ",
+      "pron": "브아춤 민",
+      "lemmas": [
+        "עָצוּם",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "וְעָצ֖וּם",
+          "lemma": "עָצוּם",
+          "strong": "H6099",
+          "pron": "브아춤"
+        },
+        {
+          "word": "מִמֶּֽנּוּ",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 1:9",
+        "numbers 14:12",
+        "deuteronomy 4:38",
+        "deuteronomy 7:1",
+        "deuteronomy 9:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְג֣וֹי עָצ֑וּם",
+      "pron": "아고임 브아춤",
+      "lemmas": [
+        "גּוֹי",
+        "עָצוּם"
+      ],
+      "words": [
+        {
+          "word": "לְג֣וֹי",
+          "lemma": "גּוֹי",
+          "strong": "H1471",
+          "pron": "아고임"
+        },
+        {
+          "word": "עָצ֑וּם",
+          "lemma": "עָצוּם",
+          "strong": "H6099",
+          "pron": "브아춤"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 9:14",
+        "isaiah 60:22",
+        "micah 4:3",
+        "micah 4:7",
+        "zechariah 8:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גָּד֥וֹל וְעָצ֖וּם מִמֶּֽנּוּ",
+      "pron": "아게돌림 브아춤 민",
+      "lemmas": [
+        "גָּדוֹל",
+        "עָצוּם",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "גָּד֥וֹל",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        },
+        {
+          "word": "וְעָצ֖וּם",
+          "lemma": "עָצוּם",
+          "strong": "H6099",
+          "pron": "브아춤"
+        },
+        {
+          "word": "מִמֶּֽנּוּ",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 14:12",
+        "deuteronomy 4:38",
+        "deuteronomy 9:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

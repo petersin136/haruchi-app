@@ -1,6 +1,6 @@
 {
   "lemma": "דָּגָה",
-  "pron": "데가타므",
+  "pron": "비데가트",
   "strong": "H1710",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "דָּג",
       "strong": "H1709",
-      "pron": "우데게",
+      "pron": "데게",
       "glossKo": "물고기"
     },
     {
@@ -24,28 +24,151 @@
     {
       "lemma": "דָּגוֹן",
       "strong": "H1712",
-      "pron": "",
+      "pron": "르다곤",
       "glossKo": "다곤"
     },
     {
       "lemma": "דַּוָּג",
       "strong": "H1728",
-      "pron": "",
+      "pron": "르드브김",
       "glossKo": "어부"
     },
     {
       "lemma": "דִּיג",
       "strong": "H1770",
-      "pron": "",
-      "glossKo": "고기를 잡다"
+      "pron": "베디굼",
+      "glossKo": "그들에게 고기를 잡다"
     }
   ],
   "defEn": "fish.",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 15,
   "byBook": {
+    "ezekiel": 6,
+    "exodus": 2,
     "genesis": 2,
+    "deuteronomy": 1,
+    "isaiah": 1,
+    "jonah": 1,
+    "numbers": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְהַדָּגָ֧ה אֲשֶׁר",
+      "pron": "비데가트 아셰르",
+      "lemmas": [
+        "דָּגָה",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "וְהַדָּגָ֧ה",
+          "lemma": "דָּגָה",
+          "strong": "H1710",
+          "pron": "비데가트"
+        },
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 7:18",
+        "exodus 7:21",
+        "numbers 11:5",
+        "deuteronomy 4:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִדְגַ֨ת הַיָּ֜ם",
+      "pron": "비데가트 얌밈",
+      "lemmas": [
+        "דָּגָה",
+        "יָם"
+      ],
+      "words": [
+        {
+          "word": "בִדְגַ֨ת",
+          "lemma": "דָּגָה",
+          "strong": "H1710",
+          "pron": "비데가트"
+        },
+        {
+          "word": "הַיָּ֜ם",
+          "lemma": "יָם",
+          "strong": "H3220",
+          "pron": "얌밈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 1:26",
+        "genesis 1:28",
+        "ezekiel 47:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דְּגַ֣ת יְאֹרֶ֔יךָ",
+      "pron": "비데가트 아예오르",
+      "lemmas": [
+        "דָּגָה",
+        "יְאֹר"
+      ],
+      "words": [
+        {
+          "word": "דְּגַ֣ת",
+          "lemma": "דָּגָה",
+          "strong": "H1710",
+          "pron": "비데가트"
+        },
+        {
+          "word": "יְאֹרֶ֔יךָ",
+          "lemma": "יְאֹר",
+          "strong": "H2975",
+          "pron": "아예오르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 29:4",
+        "ezekiel 29:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל דְּגַ֣ת",
+      "pron": "칼 비데가트",
+      "lemmas": [
+        "כֹּל",
+        "דָּגָה"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "דְּגַ֣ת",
+          "lemma": "דָּגָה",
+          "strong": "H1710",
+          "pron": "비데가트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 4:18",
+        "ezekiel 29:4",
+        "ezekiel 29:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

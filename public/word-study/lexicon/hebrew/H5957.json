@@ -1,8 +1,8 @@
 {
   "lemma": "עָלַם",
-  "pron": "알람",
+  "pron": "알마",
   "strong": "H5957",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עוֹלָם",
     "strong": "H5769",
@@ -18,13 +18,180 @@
     {
       "lemma": "עֵילוֹם",
       "strong": "H5865",
-      "pron": "",
+      "pron": "르엘롬",
       "glossKo": "어린아이 시절"
     }
   ],
   "defEn": "remote time; future; past; forever",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 20,
+  "byBook": {
+    "daniel": 18,
+    "ezra": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "לְעָלְמִ֥ין חֱיִֽי",
+      "pron": "알마 헤이",
+      "lemmas": [
+        "עָלַם",
+        "חֲיָא"
+      ],
+      "words": [
+        {
+          "word": "לְעָלְמִ֥ין",
+          "lemma": "עָלַם",
+          "strong": "H5957",
+          "pron": "알마"
+        },
+        {
+          "word": "חֱיִֽי",
+          "lemma": "חֲיָא",
+          "strong": "H2418",
+          "pron": "헤이"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 2:4",
+        "daniel 3:9",
+        "daniel 5:10",
+        "daniel 6:6",
+        "daniel 6:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַלְכָּ֖א לְעָלְמִ֥ין",
+      "pron": "말카 알마",
+      "lemmas": [
+        "מֶלֶךְ",
+        "עָלַם"
+      ],
+      "words": [
+        {
+          "word": "מַלְכָּ֖א",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4430",
+          "pron": "말카"
+        },
+        {
+          "word": "לְעָלְמִ֥ין",
+          "lemma": "עָלַם",
+          "strong": "H5957",
+          "pron": "알마"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 2:4",
+        "daniel 3:9",
+        "daniel 5:10",
+        "daniel 6:6",
+        "daniel 6:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַלְכָּ֖א לְעָלְמִ֥ין חֱיִֽי",
+      "pron": "말카 알마 헤이",
+      "lemmas": [
+        "מֶלֶךְ",
+        "עָלַם",
+        "חֲיָא"
+      ],
+      "words": [
+        {
+          "word": "מַלְכָּ֖א",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4430",
+          "pron": "말카"
+        },
+        {
+          "word": "לְעָלְמִ֥ין",
+          "lemma": "עָלַם",
+          "strong": "H5957",
+          "pron": "알마"
+        },
+        {
+          "word": "חֱיִֽי",
+          "lemma": "חֲיָא",
+          "strong": "H2418",
+          "pron": "헤이"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 2:4",
+        "daniel 3:9",
+        "daniel 5:10",
+        "daniel 6:6",
+        "daniel 6:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָלְמָ֖א וְעַ֣ד עָלְמָ֑א",
+      "pron": "알마 앋 알마",
+      "lemmas": [
+        "עָלַם",
+        "עַד",
+        "עָלַם"
+      ],
+      "words": [
+        {
+          "word": "עָלְמָ֖א",
+          "lemma": "עָלַם",
+          "strong": "H5957",
+          "pron": "알마"
+        },
+        {
+          "word": "וְעַ֣ד",
+          "lemma": "עַד",
+          "strong": "H5705",
+          "pron": "앋"
+        },
+        {
+          "word": "עָלְמָ֑א",
+          "lemma": "עָלַם",
+          "strong": "H5957",
+          "pron": "알마"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 2:20",
+        "daniel 7:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעַ֣ד עָלְמָ֑א",
+      "pron": "앋 알마",
+      "lemmas": [
+        "עַד",
+        "עָלַם"
+      ],
+      "words": [
+        {
+          "word": "וְעַ֣ד",
+          "lemma": "עַד",
+          "strong": "H5705",
+          "pron": "앋"
+        },
+        {
+          "word": "עָלְמָ֑א",
+          "lemma": "עָלַם",
+          "strong": "H5957",
+          "pron": "알마"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:20",
+        "daniel 7:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

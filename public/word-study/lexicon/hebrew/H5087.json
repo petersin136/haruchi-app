@@ -1,6 +1,6 @@
 {
   "lemma": "נָדַר",
-  "pron": "니다루",
+  "pron": "바읻다르",
   "strong": "H5087",
   "posKo": "동사",
   "root": null,
@@ -8,16 +8,210 @@
     {
       "lemma": "נֶדֶר",
       "strong": "H5088",
-      "pron": "네다라위",
-      "glossKo": "나의 서원"
+      "pron": "네데르",
+      "glossKo": "서원"
     }
   ],
   "defEn": "promise",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 31,
   "byBook": {
+    "numbers": 7,
+    "deuteronomy": 5,
+    "ecclesiastes": 4,
     "genesis": 2,
-    "psalms": 2
+    "jonah": 2,
+    "judges": 2,
+    "psalms": 2,
+    "samuel2": 2,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "leviticus": 1,
+    "malachi": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲשֶׁ֨ר נָדַ֥רְתָּ",
+      "pron": "아셰르 바읻다르",
+      "lemmas": [
+        "אֲשֶׁר",
+        "נָדַר"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "נָדַ֥רְתָּ",
+          "lemma": "נָדַר",
+          "strong": "H5087",
+          "pron": "바읻다르"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "genesis 31:13",
+        "numbers 6:21",
+        "deuteronomy 12:11",
+        "deuteronomy 12:17",
+        "deuteronomy 23:23",
+        "judges 11:39",
+        "samuel2 15:7",
+        "ecclesiastes 5:4",
+        "jeremiah 44:25",
+        "jonah 2:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִנְדֹּר֙ נֶ֣דֶר",
+      "pron": "바읻다르 네데르",
+      "lemmas": [
+        "נָדַר",
+        "נֶדֶר"
+      ],
+      "words": [
+        {
+          "word": "לִנְדֹּר֙",
+          "lemma": "נָדַר",
+          "strong": "H5087",
+          "pron": "바읻다르"
+        },
+        {
+          "word": "נֶ֣דֶר",
+          "lemma": "נֶדֶר",
+          "strong": "H5088",
+          "pron": "네데르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "numbers 6:2",
+        "numbers 30:2",
+        "numbers 30:3",
+        "deuteronomy 23:21",
+        "samuel1 1:11",
+        "ecclesiastes 5:4",
+        "isaiah 19:21",
+        "jonah 1:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נִדְרוֹ֙ אֲשֶׁ֣ר יִדֹּ֔ר",
+      "pron": "네데르 아셰르 바읻다르",
+      "lemmas": [
+        "נֶדֶר",
+        "אֲשֶׁר",
+        "נָדַר"
+      ],
+      "words": [
+        {
+          "word": "נִדְרוֹ֙",
+          "lemma": "נֶדֶר",
+          "strong": "H5088",
+          "pron": "네데르"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יִדֹּ֔ר",
+          "lemma": "נָדַר",
+          "strong": "H5087",
+          "pron": "바읻다르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 6:21",
+        "deuteronomy 12:11",
+        "deuteronomy 12:17",
+        "judges 11:39",
+        "samuel2 15:7",
+        "jeremiah 44:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִדֹּ֨ר נֶ֜דֶר לַֽיהוָ֗ה",
+      "pron": "바읻다르 네데르 여호와",
+      "lemmas": [
+        "נָדַר",
+        "נֶדֶר",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "יִדֹּ֨ר",
+          "lemma": "נָדַר",
+          "strong": "H5087",
+          "pron": "바읻다르"
+        },
+        {
+          "word": "נֶ֜דֶר",
+          "lemma": "נֶדֶר",
+          "strong": "H5088",
+          "pron": "네데르"
+        },
+        {
+          "word": "לַֽיהוָ֗ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 30:2",
+        "numbers 30:3",
+        "deuteronomy 23:21",
+        "isaiah 19:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֥ר תִּדְּר֖וּ לַֽיהוָֽה",
+      "pron": "아셰르 바읻다르 여호와",
+      "lemmas": [
+        "אֲשֶׁר",
+        "נָדַר",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "תִּדְּר֖וּ",
+          "lemma": "נָדַר",
+          "strong": "H5087",
+          "pron": "바읻다르"
+        },
+        {
+          "word": "לַֽיהוָֽה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 12:11",
+        "deuteronomy 23:23",
+        "samuel2 15:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

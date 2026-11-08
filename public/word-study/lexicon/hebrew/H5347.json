@@ -12,13 +12,13 @@
     {
       "lemma": "מַקָּבָה",
       "strong": "H4717",
-      "pron": "",
+      "pron": "우막카보트",
       "glossKo": "큰 망치"
     },
     {
       "lemma": "מַקֶּבֶת",
       "strong": "H4718",
-      "pron": "",
+      "pron": "아막케베트",
       "glossKo": "쇠망치"
     },
     {
@@ -30,9 +30,13 @@
   ],
   "defEn": "female",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 22,
   "byBook": {
-    "genesis": 6
+    "leviticus": 12,
+    "genesis": 6,
+    "numbers": 2,
+    "deuteronomy": 1,
+    "jeremiah": 1
   },
   "phrases": [
     {
@@ -56,14 +60,138 @@
           "pron": "우네케바"
         }
       ],
-      "count": 6,
+      "count": 7,
       "refs": [
         "genesis 1:27",
         "genesis 5:2",
         "genesis 6:19",
         "genesis 7:3",
         "genesis 7:9",
-        "genesis 7:16"
+        "genesis 7:16",
+        "leviticus 15:33"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "א֣וֹ נְקֵבָ֔ה",
+      "pron": "오 우네케바",
+      "lemmas": [
+        "אוֹ",
+        "נְקֵבָה"
+      ],
+      "words": [
+        {
+          "word": "א֣וֹ",
+          "lemma": "אוֹ",
+          "strong": "H176",
+          "pron": "오"
+        },
+        {
+          "word": "נְקֵבָ֔ה",
+          "lemma": "נְקֵבָה",
+          "strong": "H5347",
+          "pron": "우네케바"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 3:6",
+        "leviticus 12:7",
+        "deuteronomy 4:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִם נְקֵבָ֔ה",
+      "pron": "임 우네케바",
+      "lemmas": [
+        "אִם",
+        "נְקֵבָה"
+      ],
+      "words": [
+        {
+          "word": "אִם",
+          "lemma": "אִם",
+          "strong": "H518",
+          "pron": "임"
+        },
+        {
+          "word": "נְקֵבָ֔ה",
+          "lemma": "נְקֵבָה",
+          "strong": "H5347",
+          "pron": "우네케바"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 3:1",
+        "leviticus 12:5",
+        "leviticus 27:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זָכָר֙ א֣וֹ נְקֵבָ֔ה",
+      "pron": "자카르 오 우네케바",
+      "lemmas": [
+        "זָכָר",
+        "אוֹ",
+        "נְקֵבָה"
+      ],
+      "words": [
+        {
+          "word": "זָכָר֙",
+          "lemma": "זָכָר",
+          "strong": "H2145",
+          "pron": "자카르"
+        },
+        {
+          "word": "א֣וֹ",
+          "lemma": "אוֹ",
+          "strong": "H176",
+          "pron": "오"
+        },
+        {
+          "word": "נְקֵבָ֔ה",
+          "lemma": "נְקֵבָה",
+          "strong": "H5347",
+          "pron": "우네케바"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 3:6",
+        "leviticus 12:7",
+        "deuteronomy 4:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְקֵבָ֔ה תָּמִ֥ים",
+      "pron": "우네케바 타밈",
+      "lemmas": [
+        "נְקֵבָה",
+        "תָּמִים"
+      ],
+      "words": [
+        {
+          "word": "נְקֵבָ֔ה",
+          "lemma": "נְקֵבָה",
+          "strong": "H5347",
+          "pron": "우네케바"
+        },
+        {
+          "word": "תָּמִ֥ים",
+          "lemma": "תָּמִים",
+          "strong": "H8549",
+          "pron": "타밈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 3:1",
+        "leviticus 3:6",
+        "leviticus 4:32"
       ],
       "glossKo": ""
     }

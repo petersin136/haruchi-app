@@ -12,21 +12,25 @@
     {
       "lemma": "וְדָן",
       "strong": "H2051",
-      "pron": "",
+      "pron": "베단",
       "glossKo": "브단"
     },
     {
       "lemma": "עֵדֶן",
       "strong": "H5730",
-      "pron": "아다네카",
-      "glossKo": "너의 기쁨"
+      "pron": "엗나",
+      "glossKo": "기쁨"
     }
   ],
   "defEn": "Eden",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 16,
   "byBook": {
-    "genesis": 6
+    "ezekiel": 6,
+    "genesis": 6,
+    "chronicles2": 2,
+    "isaiah": 1,
+    "joel": 1
   },
   "phrases": [
     {
@@ -50,12 +54,43 @@
           "pron": "브에덴"
         }
       ],
-      "count": 4,
+      "count": 6,
       "refs": [
         "genesis 2:8",
         "genesis 2:15",
         "genesis 3:23",
-        "genesis 3:24"
+        "genesis 3:24",
+        "ezekiel 36:35",
+        "joel 2:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲצֵי עֵ֔דֶן",
+      "pron": "에츠 브에덴",
+      "lemmas": [
+        "עֵץ",
+        "עֵדֶן"
+      ],
+      "words": [
+        {
+          "word": "עֲצֵי",
+          "lemma": "עֵץ",
+          "strong": "H6086",
+          "pron": "에츠"
+        },
+        {
+          "word": "עֵ֔דֶן",
+          "lemma": "עֵדֶן",
+          "strong": "H5731",
+          "pron": "브에덴"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 31:9",
+        "ezekiel 31:16",
+        "ezekiel 31:18"
       ],
       "glossKo": ""
     }

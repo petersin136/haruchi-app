@@ -1,8 +1,8 @@
 {
   "lemma": "יְכׇנְיָה",
-  "pron": "옉네아",
+  "pron": "예칸아",
   "strong": "H3204",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "כּוּן",
     "strong": "H3559",
@@ -24,31 +24,167 @@
     {
       "lemma": "כּוּן",
       "strong": "H3559",
-      "pron": "네코나",
+      "pron": "나콘",
       "glossKo": "굳게 하는 이"
     },
     {
       "lemma": "כּוּן",
       "strong": "H3560",
-      "pron": "",
+      "pron": "우미쿤",
       "glossKo": "군"
     },
     {
       "lemma": "כַּוָּן",
       "strong": "H3561",
-      "pron": "",
+      "pron": "카바님",
       "glossKo": "준비된 것"
     },
     {
       "lemma": "כּוֹנַנְיָהוּ",
       "strong": "H3562",
-      "pron": "",
+      "pron": "크븐니흐브",
       "glossKo": "고나냐"
     }
   ],
   "defEn": "Jekonjah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "jeremiah": 4,
+    "chronicles1": 2,
+    "esther": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "יְכָנְיָ֥ה בְנ֖וֹ",
+      "pron": "예칸아 바님",
+      "lemmas": [
+        "יְכׇנְיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "יְכָנְיָ֥ה",
+          "lemma": "יְכׇנְיָה",
+          "strong": "H3204",
+          "pron": "예칸아"
+        },
+        {
+          "word": "בְנ֖וֹ",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles1 3:16",
+        "jeremiah 24:1",
+        "jeremiah 27:20",
+        "jeremiah 28:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת יְכָנְיָ֣הוּ",
+      "pron": "에트 예칸아",
+      "lemmas": [
+        "אֵת",
+        "יְכׇנְיָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יְכָנְיָ֣הוּ",
+          "lemma": "יְכׇנְיָה",
+          "strong": "H3204",
+          "pron": "예칸아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 24:1",
+        "jeremiah 27:20",
+        "jeremiah 28:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת יְכָנְיָ֣הוּ בֶן",
+      "pron": "에트 예칸아 바님",
+      "lemmas": [
+        "אֵת",
+        "יְכׇנְיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יְכָנְיָ֣הוּ",
+          "lemma": "יְכׇנְיָה",
+          "strong": "H3204",
+          "pron": "예칸아"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 24:1",
+        "jeremiah 27:20",
+        "jeremiah 28:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְכָנְיָ֣הוּ בֶן יְהוֹיָקִ֣ים",
+      "pron": "예칸아 바님 예호아킴",
+      "lemmas": [
+        "יְכׇנְיָה",
+        "בֵּן",
+        "יְהוֹיָקִים"
+      ],
+      "words": [
+        {
+          "word": "יְכָנְיָ֣הוּ",
+          "lemma": "יְכׇנְיָה",
+          "strong": "H3204",
+          "pron": "예칸아"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יְהוֹיָקִ֣ים",
+          "lemma": "יְהוֹיָקִים",
+          "strong": "H3079",
+          "pron": "예호아킴"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 24:1",
+        "jeremiah 27:20",
+        "jeremiah 28:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

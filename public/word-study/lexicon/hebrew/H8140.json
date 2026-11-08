@@ -1,8 +1,8 @@
 {
   "lemma": "שְׁנָה",
-  "pron": "셰나",
+  "pron": "셰나트",
   "strong": "H8140",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁנֶה",
     "strong": "H8141",
@@ -12,13 +12,46 @@
     {
       "lemma": "שָׁנֶה",
       "strong": "H8141",
-      "pron": "우셰노타위",
-      "glossKo": "나의 해(年)"
+      "pron": "브샤님",
+      "glossKo": "해(年)"
     }
   ],
   "defEn": "year.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "ezra": 5,
+    "daniel": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "בִּשְׁנַ֣ת חֲדָ֔ה",
+      "pron": "셰나트 하다",
+      "lemmas": [
+        "שְׁנָה",
+        "חַד"
+      ],
+      "words": [
+        {
+          "word": "בִּשְׁנַ֣ת",
+          "lemma": "שְׁנָה",
+          "strong": "H8140",
+          "pron": "셰나트"
+        },
+        {
+          "word": "חֲדָ֔ה",
+          "lemma": "חַד",
+          "strong": "H2298",
+          "pron": "하다"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 5:13",
+        "ezra 6:3",
+        "daniel 7:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

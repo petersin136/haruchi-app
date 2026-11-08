@@ -1,6 +1,6 @@
 {
   "lemma": "רִבּוֹ",
-  "pron": "립보타임",
+  "pron": "립보",
   "strong": "H7239",
   "posKo": "형용사",
   "root": {
@@ -12,45 +12,111 @@
     {
       "lemma": "מֵרָב",
       "strong": "H4764",
-      "pron": "",
+      "pron": "메랍",
       "glossKo": "메랍"
     },
     {
       "lemma": "רַב",
       "strong": "H7227",
-      "pron": "랍빔",
+      "pron": "랍바",
       "glossKo": "많은"
     },
     {
       "lemma": "רֹב",
       "strong": "H7230",
-      "pron": "브롭",
+      "pron": "메롭",
       "glossKo": "많음"
     },
     {
       "lemma": "רָבַב",
       "strong": "H7231",
-      "pron": "랍부",
+      "pron": "라롭",
       "glossKo": "많다"
     },
     {
       "lemma": "רָבַב",
       "strong": "H7232",
-      "pron": "랍",
+      "pron": "바롭부",
       "glossKo": "활을 쏘다"
     },
     {
       "lemma": "רְבָבָה",
       "strong": "H7233",
-      "pron": "메립보트",
+      "pron": "레바바",
       "glossKo": "만(萬)"
     }
   ],
   "defEn": "myriad; large number",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 11,
   "byBook": {
+    "nehemiah": 3,
+    "chronicles1": 2,
+    "ezra": 2,
+    "daniel": 1,
+    "hosea": 1,
+    "jonah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "רִבּ֔וֹא אַלְפַּ֖יִם",
+      "pron": "립보 엘렙",
+      "lemmas": [
+        "רִבּוֹ",
+        "אֶלֶף"
+      ],
+      "words": [
+        {
+          "word": "רִבּ֔וֹא",
+          "lemma": "רִבּוֹ",
+          "strong": "H7239",
+          "pron": "립보"
+        },
+        {
+          "word": "אַלְפַּ֖יִם",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 2:64",
+        "ezra 2:69",
+        "nehemiah 7:66",
+        "psalms 68:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רִבּוֹ֒ וְכֶ֗סֶף",
+      "pron": "립보 바케셉",
+      "lemmas": [
+        "רִבּוֹ",
+        "כֶּסֶף"
+      ],
+      "words": [
+        {
+          "word": "רִבּוֹ֒",
+          "lemma": "רִבּוֹ",
+          "strong": "H7239",
+          "pron": "립보"
+        },
+        {
+          "word": "וְכֶ֗סֶף",
+          "lemma": "כֶּסֶף",
+          "strong": "H3701",
+          "pron": "바케셉"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 29:7",
+        "nehemiah 7:71",
+        "nehemiah 7:72"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

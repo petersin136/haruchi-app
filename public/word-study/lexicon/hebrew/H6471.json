@@ -1,6 +1,6 @@
 {
   "lemma": "פַּעַם",
-  "pron": "페아마위",
+  "pron": "아파암",
   "strong": "H6471",
   "posKo": "명사",
   "root": {
@@ -12,22 +12,218 @@
     {
       "lemma": "פָּעַם",
       "strong": "H6470",
-      "pron": "닙암티",
+      "pron": "바팁파엠",
       "glossKo": "두근거리다"
     },
     {
       "lemma": "פַּעֲמֹן",
       "strong": "H6472",
-      "pron": "",
+      "pron": "우파아모네",
       "glossKo": "방울"
     }
   ],
   "defEn": "stroke",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 118,
   "byBook": {
+    "judges": 13,
     "genesis": 10,
-    "psalms": 8
+    "leviticus": 10,
+    "exodus": 9,
+    "joshua": 8,
+    "kings1": 8,
+    "kings2": 8,
+    "psalms": 8,
+    "samuel1": 7,
+    "numbers": 6,
+    "deuteronomy": 4,
+    "isaiah": 4,
+    "nehemiah": 4,
+    "proverbs": 3,
+    "samuel2": 3,
+    "chronicles1": 2,
+    "chronicles2": 2,
+    "ecclesiastes": 2,
+    "jeremiah": 2,
+    "job": 2,
+    "ezekiel": 1,
+    "nahum": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "שֶׁ֣בַע פְּעָמִ֑ים",
+      "pron": "브십아 아파암",
+      "lemmas": [
+        "שֶׁבַע",
+        "פַּעַם"
+      ],
+      "words": [
+        {
+          "word": "שֶׁ֣בַע",
+          "lemma": "שֶׁבַע",
+          "strong": "H7651",
+          "pron": "브십아"
+        },
+        {
+          "word": "פְּעָמִ֑ים",
+          "lemma": "פַּעַם",
+          "strong": "H6471",
+          "pron": "아파암"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "genesis 33:3",
+        "leviticus 4:6",
+        "leviticus 4:17",
+        "leviticus 8:11",
+        "leviticus 14:7",
+        "leviticus 14:16",
+        "leviticus 14:27",
+        "leviticus 14:51",
+        "leviticus 16:14",
+        "leviticus 16:19",
+        "leviticus 25:8",
+        "numbers 19:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁלֹ֥שׁ פְּעָמִ֖ים",
+      "pron": "셸로쉬 아파암",
+      "lemmas": [
+        "שָׁלוֹשׁ",
+        "פַּעַם"
+      ],
+      "words": [
+        {
+          "word": "שָׁלֹ֥שׁ",
+          "lemma": "שָׁלוֹשׁ",
+          "strong": "H7969",
+          "pron": "셸로쉬"
+        },
+        {
+          "word": "פְּעָמִ֖ים",
+          "lemma": "פַּעַם",
+          "strong": "H6471",
+          "pron": "아파암"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "exodus 23:17",
+        "exodus 34:23",
+        "exodus 34:24",
+        "numbers 24:10",
+        "deuteronomy 16:16",
+        "judges 16:15",
+        "samuel1 20:41",
+        "kings1 7:4",
+        "kings1 7:5",
+        "kings1 9:25",
+        "kings1 17:21",
+        "kings2 13:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כְּפַ֣עַם בְּפַ֗עַם",
+      "pron": "아파암 아파암",
+      "lemmas": [
+        "פַּעַם",
+        "פַּעַם"
+      ],
+      "words": [
+        {
+          "word": "כְּפַ֣עַם",
+          "lemma": "פַּעַם",
+          "strong": "H6471",
+          "pron": "아파암"
+        },
+        {
+          "word": "בְּפַ֗עַם",
+          "lemma": "פַּעַם",
+          "strong": "H6471",
+          "pron": "아파암"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 24:1",
+        "judges 16:20",
+        "judges 20:30",
+        "judges 20:31",
+        "samuel1 3:10",
+        "samuel1 20:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פַּ֣עַם אֶחָ֑ת",
+      "pron": "아파암 에핟",
+      "lemmas": [
+        "פַּעַם",
+        "אֶחָד"
+      ],
+      "words": [
+        {
+          "word": "פַּ֣עַם",
+          "lemma": "פַּעַם",
+          "strong": "H6471",
+          "pron": "아파암"
+        },
+        {
+          "word": "אֶחָ֑ת",
+          "lemma": "אֶחָד",
+          "strong": "H259",
+          "pron": "에핟"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "joshua 6:3",
+        "joshua 6:11",
+        "joshua 6:14",
+        "joshua 10:42",
+        "samuel1 26:8",
+        "samuel2 23:8",
+        "chronicles1 11:11",
+        "isaiah 66:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פְּעָמִ֖ים בַּשָּׁנָ֑ה",
+      "pron": "아파암 브샤님",
+      "lemmas": [
+        "פַּעַם",
+        "שָׁנֶה"
+      ],
+      "words": [
+        {
+          "word": "פְּעָמִ֖ים",
+          "lemma": "פַּעַם",
+          "strong": "H6471",
+          "pron": "아파암"
+        },
+        {
+          "word": "בַּשָּׁנָ֑ה",
+          "lemma": "שָׁנֶה",
+          "strong": "H8141",
+          "pron": "브샤님"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 23:17",
+        "exodus 34:23",
+        "exodus 34:24",
+        "deuteronomy 16:16",
+        "kings1 9:25",
+        "chronicles2 8:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

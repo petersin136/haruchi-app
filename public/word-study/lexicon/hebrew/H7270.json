@@ -1,6 +1,6 @@
 {
   "lemma": "רָגַל",
-  "pron": "라갈",
+  "pron": "메락겔림",
   "strong": "H7270",
   "posKo": "동사",
   "root": {
@@ -12,51 +12,134 @@
     {
       "lemma": "מַרְגְלָה",
       "strong": "H4772",
-      "pron": "",
-      "glossKo": "발치"
+      "pron": "마렉겔로타으브",
+      "glossKo": "그의 발치"
     },
     {
       "lemma": "רְגַל",
       "strong": "H7271",
-      "pron": "",
-      "glossKo": "발(아람)"
+      "pron": "락로히",
+      "glossKo": "그의 발(아람)"
     },
     {
       "lemma": "רֶגֶל",
       "strong": "H7272",
-      "pron": "락라이브",
-      "glossKo": "그의 발"
+      "pron": "락라흐",
+      "glossKo": "그녀의 발"
     },
     {
       "lemma": "רַגְלִי",
       "strong": "H7273",
-      "pron": "",
+      "pron": "락리",
       "glossKo": "보병"
     },
     {
       "lemma": "רֹגְלִים",
       "strong": "H7274",
-      "pron": "",
+      "pron": "메록림",
       "glossKo": "로글림"
     },
     {
       "lemma": "תִּרְגַּל",
       "strong": "H8637",
-      "pron": "",
+      "pron": "티렉갈티",
       "glossKo": "걷게 하다"
     }
   ],
   "defEn": "walk along; reconnoiter; be a tale-bearer; lead about",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 25,
   "byBook": {
     "genesis": 7,
-    "psalms": 1
+    "joshua": 7,
+    "judges": 3,
+    "samuel2": 3,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "numbers": 1,
+    "psalms": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
+      "hebrew": "לְרַגֵּ֣ל אֶת",
+      "pron": "메락겔림 에트",
+      "lemmas": [
+        "רָגַל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "לְרַגֵּ֣ל",
+          "lemma": "רָגַל",
+          "strong": "H7270",
+          "pron": "메락겔림"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 42:30",
+        "numbers 21:32",
+        "deuteronomy 1:24",
+        "joshua 6:22",
+        "joshua 6:25",
+        "joshua 7:2",
+        "joshua 14:7",
+        "judges 18:2",
+        "judges 18:14",
+        "judges 18:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽמְרַגְּלִ֖ים אֶת הָאָֽרֶץ",
+      "pron": "메락겔림 에트 하아레츠",
+      "lemmas": [
+        "רָגַל",
+        "אֵת",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "כִּֽמְרַגְּלִ֖ים",
+          "lemma": "רָגַל",
+          "strong": "H7270",
+          "pron": "메락겔림"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הָאָֽרֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 42:30",
+        "joshua 6:22",
+        "joshua 7:2",
+        "joshua 14:7",
+        "judges 18:2",
+        "judges 18:14",
+        "judges 18:17"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "מְרַגְּלִ֣ים אַתֶּ֔ם",
-      "pron": "라갈 앗타",
+      "pron": "메락겔림 앗타",
       "lemmas": [
         "רָגַל",
         "אַתָּה"
@@ -66,7 +149,7 @@
           "word": "מְרַגְּלִ֣ים",
           "lemma": "רָגַל",
           "strong": "H7270",
-          "pron": "라갈"
+          "pron": "메락겔림"
         },
         {
           "word": "אַתֶּ֔ם",
@@ -81,6 +164,35 @@
         "genesis 42:14",
         "genesis 42:16",
         "genesis 42:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲנָשִׁ֤ים מְרַגְּלִים֙",
+      "pron": "메이쉬 메락겔림",
+      "lemmas": [
+        "אִישׁ",
+        "רָגַל"
+      ],
+      "words": [
+        {
+          "word": "אֲנָשִׁ֤ים",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "מְרַגְּלִים֙",
+          "lemma": "רָגַל",
+          "strong": "H7270",
+          "pron": "메락겔림"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 2:1",
+        "joshua 6:22",
+        "joshua 7:2"
       ],
       "glossKo": ""
     }

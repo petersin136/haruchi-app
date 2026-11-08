@@ -8,156 +8,79 @@
     {
       "lemma": "אַל",
       "strong": "H408",
-      "pron": "브엘",
+      "pron": "엘",
       "glossKo": "(말라)"
     },
     {
       "lemma": "לָא",
       "strong": "H3809",
-      "pron": "",
+      "pron": "라",
       "glossKo": "아니(아람)"
     },
     {
       "lemma": "לֹא דְבַר",
       "strong": "H3810",
-      "pron": "",
+      "pron": "브로",
       "glossKo": "로드발"
     },
     {
       "lemma": "לֹא עַמִּי",
       "strong": "H3818",
-      "pron": "",
+      "pron": "로",
       "glossKo": "로암미"
     },
     {
       "lemma": "לֹא רֻחָמָה",
       "strong": "H3819",
-      "pron": "",
+      "pron": "로",
       "glossKo": "로루하마"
     }
   ],
   "defEn": "not",
   "defKo": "",
-  "countOT": 550,
+  "countOT": 5190,
   "byBook": {
+    "jeremiah": 513,
+    "isaiah": 446,
+    "deuteronomy": 412,
+    "ezekiel": 344,
     "psalms": 337,
-    "genesis": 213
+    "job": 317,
+    "leviticus": 284,
+    "exodus": 245,
+    "genesis": 213,
+    "samuel1": 199,
+    "numbers": 190,
+    "kings1": 180,
+    "kings2": 179,
+    "chronicles2": 158,
+    "judges": 134,
+    "samuel2": 134,
+    "proverbs": 133,
+    "joshua": 103,
+    "amos": 72,
+    "hosea": 66,
+    "ecclesiastes": 65,
+    "nehemiah": 64,
+    "chronicles1": 55,
+    "zechariah": 52,
+    "daniel": 46,
+    "lamentations": 41,
+    "micah": 30,
+    "esther": 29,
+    "zephaniah": 25,
+    "habakkuk": 21,
+    "malachi": 19,
+    "ruth": 18,
+    "ezra": 16,
+    "joel": 12,
+    "songofsolomon": 11,
+    "jonah": 9,
+    "nahum": 9,
+    "obadiah": 5,
+    "haggai": 4
   },
   "phrases": [
-    {
-      "hebrew": "הֲלֹ֥א יָדְעוּ֮",
-      "pron": "로 요데아",
-      "lemmas": [
-        "לֹא",
-        "יָדַע"
-      ],
-      "words": [
-        {
-          "word": "הֲלֹ֥א",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        },
-        {
-          "word": "יָדְעוּ֮",
-          "lemma": "יָדַע",
-          "strong": "H3045",
-          "pron": "요데아"
-        }
-      ],
-      "count": 34,
-      "refs": [
-        "psalms 14:4",
-        "psalms 18:43",
-        "psalms 35:8",
-        "psalms 35:11",
-        "psalms 35:15",
-        "psalms 39:6",
-        "psalms 53:4",
-        "psalms 71:15",
-        "psalms 73:22",
-        "psalms 77:19",
-        "psalms 79:6",
-        "psalms 81:5"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "כִּ֤י לֹֽא",
-      "pron": "키 로",
-      "lemmas": [
-        "כִּי",
-        "לֹא"
-      ],
-      "words": [
-        {
-          "word": "כִּ֤י",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
-        },
-        {
-          "word": "לֹֽא",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        }
-      ],
-      "count": 33,
-      "refs": [
-        "psalms 5:4",
-        "psalms 9:10",
-        "psalms 9:18",
-        "psalms 16:10",
-        "psalms 22:24",
-        "psalms 28:5",
-        "psalms 35:20",
-        "psalms 41:11",
-        "psalms 44:3",
-        "psalms 44:6",
-        "psalms 49:17",
-        "psalms 51:16"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיֹּ֨אמֶר֙ לֹ֣א",
-      "pron": "아마르 로",
-      "lemmas": [
-        "אָמַר",
-        "לֹא"
-      ],
-      "words": [
-        {
-          "word": "וַיֹּ֨אמֶר֙",
-          "lemma": "אָמַר",
-          "strong": "H559",
-          "pron": "아마르"
-        },
-        {
-          "word": "לֹ֣א",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        }
-      ],
-      "count": 30,
-      "refs": [
-        "psalms 40:10",
-        "psalms 94:7",
-        "genesis 3:17",
-        "genesis 4:9",
-        "genesis 15:4",
-        "genesis 18:15",
-        "genesis 18:28",
-        "genesis 18:29",
-        "genesis 18:30",
-        "genesis 18:31",
-        "genesis 18:32",
-        "genesis 19:2"
-      ],
-      "glossKo": ""
-    },
     {
       "hebrew": "אֲשֶׁ֥ר לֹא",
       "pron": "아셰르 로",
@@ -179,58 +102,172 @@
           "pron": "로"
         }
       ],
-      "count": 23,
+      "count": 303,
       "refs": [
-        "psalms 1:1",
-        "psalms 10:6",
-        "psalms 24:4",
-        "psalms 35:11",
-        "psalms 38:14",
-        "psalms 58:5",
-        "psalms 66:20",
-        "psalms 69:4",
-        "psalms 79:6",
-        "psalms 88:5",
-        "psalms 109:16",
-        "psalms 119:85"
+        "genesis 7:2",
+        "genesis 11:7",
+        "genesis 14:23",
+        "genesis 17:12",
+        "genesis 17:14",
+        "genesis 19:8",
+        "genesis 20:9",
+        "genesis 24:3",
+        "genesis 24:27",
+        "genesis 26:29",
+        "genesis 32:12",
+        "exodus 1:8"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לֹ֤א אוּכַל֙",
-      "pron": "로 예칼티브",
+      "hebrew": "כִּ֣י לֹ֤א",
+      "pron": "키 로",
       "lemmas": [
-        "לֹא",
-        "יָכֹל"
+        "כִּי",
+        "לֹא"
       ],
       "words": [
+        {
+          "word": "כִּ֣י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
         {
           "word": "לֹ֤א",
           "lemma": "לֹא",
           "strong": "H3808",
           "pron": "로"
-        },
-        {
-          "word": "אוּכַל֙",
-          "lemma": "יָכֹל",
-          "strong": "H3201",
-          "pron": "예칼티브"
         }
       ],
-      "count": 23,
+      "count": 252,
       "refs": [
-        "psalms 18:38",
-        "psalms 36:12",
-        "psalms 40:12",
-        "psalms 101:5",
-        "psalms 129:2",
-        "psalms 139:6",
-        "genesis 13:6",
-        "genesis 19:19",
+        "genesis 2:5",
+        "genesis 15:16",
         "genesis 19:22",
-        "genesis 24:50",
-        "genesis 29:8",
-        "genesis 31:35"
+        "genesis 21:10",
+        "genesis 28:15",
+        "genesis 30:1",
+        "genesis 31:35",
+        "genesis 32:25",
+        "genesis 38:9",
+        "genesis 38:16",
+        "genesis 42:34",
+        "genesis 43:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹא הָ֥יָה",
+      "pron": "로 하에타",
+      "lemmas": [
+        "לֹא",
+        "הָיָה"
+      ],
+      "words": [
+        {
+          "word": "וְלֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "הָ֥יָה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        }
+      ],
+      "count": 229,
+      "refs": [
+        "genesis 9:11",
+        "genesis 9:15",
+        "genesis 38:9",
+        "genesis 38:21",
+        "genesis 38:22",
+        "genesis 42:11",
+        "genesis 42:31",
+        "genesis 47:26",
+        "exodus 9:18",
+        "exodus 9:24",
+        "exodus 9:26",
+        "exodus 9:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֣א יָדַ֔עְתִּי",
+      "pron": "로 요데아",
+      "lemmas": [
+        "לֹא",
+        "יָדַע"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יָדַ֔עְתִּי",
+          "lemma": "יָדַע",
+          "strong": "H3045",
+          "pron": "요데아"
+        }
+      ],
+      "count": 222,
+      "refs": [
+        "genesis 4:9",
+        "genesis 18:21",
+        "genesis 19:8",
+        "genesis 19:33",
+        "genesis 19:35",
+        "genesis 21:26",
+        "genesis 24:16",
+        "genesis 27:2",
+        "genesis 28:16",
+        "genesis 31:32",
+        "genesis 38:16",
+        "genesis 39:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֥א שָׁמַ֖ע",
+      "pron": "로 바이솀우",
+      "lemmas": [
+        "לֹא",
+        "שָׁמַע"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "שָׁמַ֖ע",
+          "lemma": "שָׁמַע",
+          "strong": "H8085",
+          "pron": "바이솀우"
+        }
+      ],
+      "count": 181,
+      "refs": [
+        "genesis 11:7",
+        "genesis 21:26",
+        "genesis 34:17",
+        "genesis 39:10",
+        "genesis 42:21",
+        "genesis 42:22",
+        "exodus 4:1",
+        "exodus 4:8",
+        "exodus 4:9",
+        "exodus 6:9",
+        "exodus 6:12",
+        "exodus 7:4"
       ],
       "glossKo": ""
     }

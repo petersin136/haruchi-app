@@ -12,7 +12,7 @@
     {
       "lemma": "בַּר",
       "strong": "H1249",
-      "pron": "바라",
+      "pron": "우바르",
       "glossKo": "맑은"
     },
     {
@@ -24,7 +24,7 @@
     {
       "lemma": "בֹּר",
       "strong": "H1253",
-      "pron": "",
+      "pron": "브보르",
       "glossKo": "잿물"
     },
     {
@@ -36,9 +36,41 @@
   ],
   "defEn": "purity",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 5,
   "byBook": {
-    "psalms": 2
+    "psalms": 2,
+    "samuel2": 2,
+    "job": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כְּבֹ֥ר יָ֝דַ֗י",
+      "pron": "크보르 야도",
+      "lemmas": [
+        "בֹּר",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "כְּבֹ֥ר",
+          "lemma": "בֹּר",
+          "strong": "H1252",
+          "pron": "크보르"
+        },
+        {
+          "word": "יָ֝דַ֗י",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:21",
+        "psalms 18:20",
+        "psalms 18:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

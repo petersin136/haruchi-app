@@ -1,6 +1,6 @@
 {
   "lemma": "עֶבְרָה",
-  "pron": "브압로트",
+  "pron": "베엡라탐",
   "strong": "H5678",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "עֲבַר",
       "strong": "H5675",
-      "pron": "",
+      "pron": "아바르",
       "glossKo": "건너편(아람)"
     },
     {
@@ -30,22 +30,153 @@
     {
       "lemma": "עֲבָרִים",
       "strong": "H5682",
-      "pron": "",
+      "pron": "하아바림",
       "glossKo": "아바림"
     },
     {
       "lemma": "עֶבְרֹן",
       "strong": "H5683",
-      "pron": "",
+      "pron": "브엡론",
       "glossKo": "에브론"
     }
   ],
   "defEn": "outburst",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 34,
   "byBook": {
+    "isaiah": 6,
+    "ezekiel": 5,
+    "proverbs": 5,
     "psalms": 5,
-    "genesis": 1
+    "hosea": 2,
+    "jeremiah": 2,
+    "job": 2,
+    "lamentations": 2,
+    "zephaniah": 2,
+    "amos": 1,
+    "genesis": 1,
+    "habakkuk": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּיוֹם֙ עֶבְרַ֣ת",
+      "pron": "욤 베엡라탐",
+      "lemmas": [
+        "יוֹם",
+        "עֶבְרָה"
+      ],
+      "words": [
+        {
+          "word": "בְּיוֹם֙",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "עֶבְרַ֣ת",
+          "lemma": "עֶבְרָה",
+          "strong": "H5678",
+          "pron": "베엡라탐"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "job 21:30",
+        "proverbs 11:4",
+        "ezekiel 7:19",
+        "zephaniah 1:15",
+        "zephaniah 1:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּאֵ֥שׁ עֶבְרָתִ֖י",
+      "pron": "에쉬 베엡라탐",
+      "lemmas": [
+        "אֵשׁ",
+        "עֶבְרָה"
+      ],
+      "words": [
+        {
+          "word": "בְּאֵ֥שׁ",
+          "lemma": "אֵשׁ",
+          "strong": "H784",
+          "pron": "에쉬"
+        },
+        {
+          "word": "עֶבְרָתִ֖י",
+          "lemma": "עֶבְרָה",
+          "strong": "H5678",
+          "pron": "베엡라탐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 21:31",
+        "ezekiel 22:21",
+        "ezekiel 22:31",
+        "ezekiel 38:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֶבְרַ֣ת יְהוָ֔ה",
+      "pron": "베엡라탐 여호와",
+      "lemmas": [
+        "עֶבְרָה",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "עֶבְרַ֣ת",
+          "lemma": "עֶבְרָה",
+          "strong": "H5678",
+          "pron": "베엡라탐"
+        },
+        {
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 9:19",
+        "isaiah 13:13",
+        "ezekiel 7:19",
+        "zephaniah 1:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְעֶבְרָתֶ֑ךָ כִּלִּ֖ינוּ",
+      "pron": "베엡라탐 바예쿨루",
+      "lemmas": [
+        "עֶבְרָה",
+        "כָּלָה"
+      ],
+      "words": [
+        {
+          "word": "בְעֶבְרָתֶ֑ךָ",
+          "lemma": "עֶבְרָה",
+          "strong": "H5678",
+          "pron": "베엡라탐"
+        },
+        {
+          "word": "כִּלִּ֖ינוּ",
+          "lemma": "כָּלָה",
+          "strong": "H3615",
+          "pron": "바예쿨루"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 90:9",
+        "proverbs 22:8",
+        "ezekiel 22:31"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

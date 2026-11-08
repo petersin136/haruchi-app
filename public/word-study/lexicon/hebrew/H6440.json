@@ -1,6 +1,6 @@
 {
   "lemma": "פָּנִים",
-  "pron": "미페네",
+  "pron": "페네",
   "strong": "H6440",
   "posKo": "명사",
   "root": {
@@ -12,14 +12,14 @@
     {
       "lemma": "יְפֻנֶּה",
       "strong": "H3312",
-      "pron": "",
+      "pron": "예푼네",
       "glossKo": "여분네"
     },
     {
       "lemma": "לִפְנַי",
       "strong": "H3942",
-      "pron": "",
-      "glossKo": "앞"
+      "pron": "립나이",
+      "glossKo": "나의 앞"
     },
     {
       "lemma": "פֵּן",
@@ -30,7 +30,7 @@
     {
       "lemma": "פָּנָה",
       "strong": "H6437",
-      "pron": "페네",
+      "pron": "바입누",
       "glossKo": "돌이키다"
     },
     {
@@ -48,15 +48,89 @@
   ],
   "defEn": "face",
   "defKo": "",
-  "countOT": 274,
+  "countOT": 2127,
   "byBook": {
+    "ezekiel": 155,
     "genesis": 141,
-    "psalms": 133
+    "psalms": 133,
+    "deuteronomy": 132,
+    "exodus": 128,
+    "jeremiah": 128,
+    "chronicles2": 119,
+    "numbers": 119,
+    "leviticus": 107,
+    "kings1": 100,
+    "samuel1": 98,
+    "joshua": 91,
+    "isaiah": 89,
+    "kings2": 73,
+    "samuel2": 73,
+    "job": 70,
+    "chronicles1": 63,
+    "judges": 46,
+    "proverbs": 43,
+    "esther": 37,
+    "daniel": 33,
+    "nehemiah": 31,
+    "ecclesiastes": 21,
+    "zechariah": 16,
+    "lamentations": 11,
+    "ezra": 10,
+    "malachi": 10,
+    "hosea": 9,
+    "joel": 8,
+    "amos": 7,
+    "micah": 5,
+    "nahum": 5,
+    "jonah": 4,
+    "habakkuk": 3,
+    "zephaniah": 3,
+    "haggai": 2,
+    "ruth": 2,
+    "songofsolomon": 2
   },
   "phrases": [
     {
-      "hebrew": "עַל פְּנֵ֣י",
-      "pron": "알 미페네",
+      "hebrew": "לִפְנֵ֣י יְהוָ֑ה",
+      "pron": "페네 여호와",
+      "lemmas": [
+        "פָּנִים",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "לִפְנֵ֣י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "יְהוָ֑ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 286,
+      "refs": [
+        "genesis 3:8",
+        "genesis 4:16",
+        "genesis 10:9",
+        "genesis 18:22",
+        "genesis 19:13",
+        "genesis 19:27",
+        "genesis 27:7",
+        "exodus 6:12",
+        "exodus 6:30",
+        "exodus 9:30",
+        "exodus 16:9",
+        "exodus 16:33"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל פְּנֵ֥י",
+      "pron": "알 페네",
       "lemmas": [
         "עַל",
         "פָּנִים"
@@ -69,17 +143,14 @@
           "pron": "알"
         },
         {
-          "word": "פְּנֵ֣י",
+          "word": "פְּנֵ֥י",
           "lemma": "פָּנִים",
           "strong": "H6440",
-          "pron": "미페네"
+          "pron": "페네"
         }
       ],
-      "count": 34,
+      "count": 212,
       "refs": [
-        "psalms 9:19",
-        "psalms 18:42",
-        "psalms 21:12",
         "genesis 1:2",
         "genesis 1:20",
         "genesis 1:29",
@@ -88,155 +159,124 @@
         "genesis 6:7",
         "genesis 7:3",
         "genesis 7:4",
-        "genesis 7:18"
+        "genesis 7:18",
+        "genesis 7:23",
+        "genesis 8:8",
+        "genesis 8:9"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "מִלִּפְנֵ֣י יְהוָ֑ה",
-      "pron": "미페네 여호와",
+      "hebrew": "אֶת פְּנֵ֣י",
+      "pron": "에트 페네",
       "lemmas": [
-        "פָּנִים",
-        "יְהֹוָה"
-      ],
-      "words": [
-        {
-          "word": "מִלִּפְנֵ֣י",
-          "lemma": "פָּנִים",
-          "strong": "H6440",
-          "pron": "미페네"
-        },
-        {
-          "word": "יְהוָ֑ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        }
-      ],
-      "count": 20,
-      "refs": [
-        "psalms 4:6",
-        "psalms 19:14",
-        "psalms 21:9",
-        "psalms 27:8",
-        "psalms 34:16",
-        "psalms 95:6",
-        "psalms 96:13",
-        "psalms 97:5",
-        "psalms 98:9",
-        "psalms 102:1",
-        "psalms 116:9",
-        "psalms 119:169"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "פְּנֵ֥י כָל",
-      "pron": "미페네 브콜",
-      "lemmas": [
-        "פָּנִים",
-        "כֹּל"
-      ],
-      "words": [
-        {
-          "word": "פְּנֵ֥י",
-          "lemma": "פָּנִים",
-          "strong": "H6440",
-          "pron": "미페네"
-        },
-        {
-          "word": "כָל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
-        }
-      ],
-      "count": 14,
-      "refs": [
-        "psalms 22:27",
-        "psalms 96:9",
-        "psalms 106:46",
-        "psalms 119:58",
-        "psalms 143:2",
-        "genesis 1:29",
-        "genesis 7:3",
-        "genesis 8:9",
-        "genesis 11:4",
-        "genesis 11:8",
-        "genesis 11:9",
-        "genesis 16:12"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "פָּ֝נַ֗י וֵֽאלֹהָֽי",
-      "pron": "미페네 베엘로힘",
-      "lemmas": [
-        "פָּנִים",
-        "אֱלֹהִים"
-      ],
-      "words": [
-        {
-          "word": "פָּ֝נַ֗י",
-          "lemma": "פָּנִים",
-          "strong": "H6440",
-          "pron": "미페네"
-        },
-        {
-          "word": "וֵֽאלֹהָֽי",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        }
-      ],
-      "count": 11,
-      "refs": [
-        "psalms 42:2",
-        "psalms 42:11",
-        "psalms 43:5",
-        "psalms 56:13",
-        "psalms 61:7",
-        "psalms 68:2",
-        "psalms 68:3",
-        "psalms 68:8",
-        "genesis 6:11",
-        "genesis 33:10"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "תַּסְתֵּ֬ר פָּנֶ֨יךָ",
-      "pron": "힛티르 미페네",
-      "lemmas": [
-        "סָתַר",
+        "אֵת",
         "פָּנִים"
       ],
       "words": [
         {
-          "word": "תַּסְתֵּ֬ר",
-          "lemma": "סָתַר",
-          "strong": "H5641",
-          "pron": "힛티르"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         },
         {
-          "word": "פָּנֶ֨יךָ",
+          "word": "פְּנֵ֣י",
           "lemma": "פָּנִים",
           "strong": "H6440",
-          "pron": "미페네"
+          "pron": "페네"
         }
       ],
-      "count": 10,
+      "count": 80,
       "refs": [
-        "psalms 10:11",
-        "psalms 22:24",
-        "psalms 27:9",
-        "psalms 30:7",
-        "psalms 51:9",
-        "psalms 69:17",
-        "psalms 88:14",
-        "psalms 102:2",
-        "psalms 104:29",
-        "psalms 143:7"
+        "genesis 31:2",
+        "genesis 31:5",
+        "genesis 31:21",
+        "genesis 36:7",
+        "genesis 46:30",
+        "exodus 16:33",
+        "exodus 30:6",
+        "exodus 32:11",
+        "exodus 33:20",
+        "exodus 34:23",
+        "exodus 34:24",
+        "exodus 34:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיַּֽעַמְד֖וּ לִפְנֵ֥י",
+      "pron": "오멛 페네",
+      "lemmas": [
+        "עָמַד",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "וַיַּֽעַמְד֖וּ",
+          "lemma": "עָמַד",
+          "strong": "H5975",
+          "pron": "오멛"
+        },
+        {
+          "word": "לִפְנֵ֥י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 75,
+      "refs": [
+        "genesis 18:22",
+        "genesis 41:46",
+        "genesis 43:15",
+        "genesis 47:7",
+        "exodus 9:10",
+        "exodus 9:11",
+        "exodus 17:6",
+        "leviticus 9:5",
+        "leviticus 18:23",
+        "leviticus 27:8",
+        "numbers 5:16",
+        "numbers 16:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִפְנֵ֥י הַמֶּֽלֶךְ",
+      "pron": "페네 멜레크",
+      "lemmas": [
+        "פָּנִים",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "לִפְנֵ֥י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "הַמֶּֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 65,
+      "refs": [
+        "samuel1 8:18",
+        "samuel1 22:4",
+        "samuel2 14:24",
+        "samuel2 14:28",
+        "samuel2 14:32",
+        "samuel2 14:33",
+        "samuel2 15:18",
+        "samuel2 19:8",
+        "samuel2 19:17",
+        "samuel2 19:18",
+        "samuel2 24:4",
+        "kings1 1:2"
       ],
       "glossKo": ""
     }

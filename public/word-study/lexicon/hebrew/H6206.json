@@ -1,6 +1,6 @@
 {
   "lemma": "עָרַץ",
-  "pron": "라아로츠",
+  "pron": "타아레춘",
   "strong": "H6206",
   "posKo": "동사",
   "root": null,
@@ -8,27 +8,119 @@
     {
       "lemma": "מַעֲרָצָה",
       "strong": "H4637",
-      "pron": "",
+      "pron": "브마아라차",
       "glossKo": "공포"
     },
     {
       "lemma": "עָרוּץ",
       "strong": "H6178",
-      "pron": "",
+      "pron": "바아루츠",
       "glossKo": "두려운"
     },
     {
       "lemma": "עָרִיץ",
       "strong": "H6184",
-      "pron": "아리츠",
+      "pron": "아리침",
       "glossKo": "강포한"
     }
   ],
   "defEn": "awe; dread; harass",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 15,
   "byBook": {
-    "psalms": 2
+    "isaiah": 6,
+    "deuteronomy": 4,
+    "job": 2,
+    "psalms": 2,
+    "joshua": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְאַל תַּֽעַרְצ֖וּ",
+      "pron": "엘 타아레춘",
+      "lemmas": [
+        "אַל",
+        "עָרַץ"
+      ],
+      "words": [
+        {
+          "word": "וְאַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "תַּֽעַרְצ֖וּ",
+          "lemma": "עָרַץ",
+          "strong": "H6206",
+          "pron": "타아레춘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 20:3",
+        "deuteronomy 31:6",
+        "joshua 1:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹא תַֽעַרְצ֥וּן",
+      "pron": "로 타아레춘",
+      "lemmas": [
+        "לֹא",
+        "עָרַץ"
+      ],
+      "words": [
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תַֽעַרְצ֥וּן",
+          "lemma": "עָרַץ",
+          "strong": "H6206",
+          "pron": "타아레춘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 1:29",
+        "deuteronomy 7:21",
+        "isaiah 8:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תַעֲרֹ֖ץ מִפְּנֵיהֶ֑ם",
+      "pron": "타아레춘 페네",
+      "lemmas": [
+        "עָרַץ",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "תַעֲרֹ֖ץ",
+          "lemma": "עָרַץ",
+          "strong": "H6206",
+          "pron": "타아레춘"
+        },
+        {
+          "word": "מִפְּנֵיהֶ֑ם",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 7:21",
+        "deuteronomy 20:3",
+        "deuteronomy 31:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

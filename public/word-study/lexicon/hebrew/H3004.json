@@ -1,6 +1,6 @@
 {
   "lemma": "יַבָּשָׁה",
-  "pron": "르얍바샤",
+  "pron": "아얍바샤",
   "strong": "H3004",
   "posKo": "명사",
   "root": {
@@ -12,28 +12,100 @@
     {
       "lemma": "יָבֵשׁ",
       "strong": "H3001",
-      "pron": "야베쉬",
+      "pron": "예보셰트",
       "glossKo": "마르다"
     },
     {
       "lemma": "יָבֵשׁ",
       "strong": "H3002",
-      "pron": "",
+      "pron": "비위베심",
       "glossKo": "마른"
     },
     {
       "lemma": "יַבֶּשֶׁת",
       "strong": "H3006",
-      "pron": "브얍베셰트",
+      "pron": "바얍바셰트",
       "glossKo": "마른 땅"
     }
   ],
   "defEn": "dry ground",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 14,
   "byBook": {
+    "exodus": 5,
+    "jonah": 3,
     "genesis": 2,
+    "isaiah": 1,
+    "joshua": 1,
+    "nehemiah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הַיָּ֖ם בַּיַּבָּשָׁ֑ה",
+      "pron": "얌밈 아얍바샤",
+      "lemmas": [
+        "יָם",
+        "יַבָּשָׁה"
+      ],
+      "words": [
+        {
+          "word": "הַיָּ֖ם",
+          "lemma": "יָם",
+          "strong": "H3220",
+          "pron": "얌밈"
+        },
+        {
+          "word": "בַּיַּבָּשָׁ֑ה",
+          "lemma": "יַבָּשָׁה",
+          "strong": "H3004",
+          "pron": "아얍바샤"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 14:16",
+        "exodus 14:22",
+        "nehemiah 9:11",
+        "psalms 66:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּת֥וֹךְ הַיָּ֖ם בַּיַּבָּשָֽׁה",
+      "pron": "브토크 얌밈 아얍바샤",
+      "lemmas": [
+        "תָּוֶךְ",
+        "יָם",
+        "יַבָּשָׁה"
+      ],
+      "words": [
+        {
+          "word": "בְּת֥וֹךְ",
+          "lemma": "תָּוֶךְ",
+          "strong": "H8432",
+          "pron": "브토크"
+        },
+        {
+          "word": "הַיָּ֖ם",
+          "lemma": "יָם",
+          "strong": "H3220",
+          "pron": "얌밈"
+        },
+        {
+          "word": "בַּיַּבָּשָֽׁה",
+          "lemma": "יַבָּשָׁה",
+          "strong": "H3004",
+          "pron": "아얍바샤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 14:16",
+        "exodus 14:22",
+        "nehemiah 9:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

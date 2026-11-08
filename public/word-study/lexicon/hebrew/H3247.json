@@ -1,6 +1,6 @@
 {
   "lemma": "יְסוֹד",
-  "pron": "아예솓",
+  "pron": "예솓",
   "strong": "H3247",
   "posKo": "명사",
   "root": {
@@ -12,19 +12,19 @@
     {
       "lemma": "יָסַד",
       "strong": "H3245",
-      "pron": "놋두",
-      "glossKo": "기초를 놓다"
+      "pron": "히밧다",
+      "glossKo": "그녀에게 기초를 놓다"
     },
     {
       "lemma": "יְסֻד",
       "strong": "H3246",
-      "pron": "",
+      "pron": "예숟",
       "glossKo": "기초(아람)"
     },
     {
       "lemma": "מוּסָד",
       "strong": "H4143",
-      "pron": "",
+      "pron": "무삳",
       "glossKo": "기초"
     },
     {
@@ -36,21 +36,218 @@
     {
       "lemma": "מְיֻסָּדָה",
       "strong": "H4328",
-      "pron": "",
+      "pron": "밋드브트",
       "glossKo": "터를 닦은 것"
     },
     {
       "lemma": "מַסַּד",
       "strong": "H4527",
-      "pron": "",
+      "pron": "우미맛삳",
       "glossKo": "기초"
     }
   ],
   "defEn": "foundation",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 20,
   "byBook": {
+    "leviticus": 8,
+    "chronicles2": 2,
+    "ezekiel": 2,
+    "job": 2,
+    "exodus": 1,
+    "habakkuk": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "proverbs": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶל יְס֖וֹד",
+      "pron": "엘 예솓",
+      "lemmas": [
+        "אֵל",
+        "יְסוֹד"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "יְס֖וֹד",
+          "lemma": "יְסוֹד",
+          "strong": "H3247",
+          "pron": "예솓"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 29:12",
+        "leviticus 4:7",
+        "leviticus 4:18",
+        "leviticus 4:25",
+        "leviticus 4:30",
+        "leviticus 4:34",
+        "leviticus 5:9",
+        "leviticus 8:15",
+        "leviticus 9:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל יְס֖וֹד הַמִּזְבֵּֽחַ",
+      "pron": "엘 예솓 밋베아흐",
+      "lemmas": [
+        "אֵל",
+        "יְסוֹד",
+        "מִזְבֵּחַ"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "יְס֖וֹד",
+          "lemma": "יְסוֹד",
+          "strong": "H3247",
+          "pron": "예솓"
+        },
+        {
+          "word": "הַמִּזְבֵּֽחַ",
+          "lemma": "מִזְבֵּחַ",
+          "strong": "H4196",
+          "pron": "밋베아흐"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 29:12",
+        "leviticus 4:7",
+        "leviticus 4:18",
+        "leviticus 4:25",
+        "leviticus 4:30",
+        "leviticus 4:34",
+        "leviticus 5:9",
+        "leviticus 8:15",
+        "leviticus 9:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְס֖וֹד הַמִּזְבֵּֽחַ",
+      "pron": "예솓 밋베아흐",
+      "lemmas": [
+        "יְסוֹד",
+        "מִזְבֵּחַ"
+      ],
+      "words": [
+        {
+          "word": "יְס֖וֹד",
+          "lemma": "יְסוֹד",
+          "strong": "H3247",
+          "pron": "예솓"
+        },
+        {
+          "word": "הַמִּזְבֵּֽחַ",
+          "lemma": "מִזְבֵּחַ",
+          "strong": "H4196",
+          "pron": "밋베아흐"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 29:12",
+        "leviticus 4:7",
+        "leviticus 4:18",
+        "leviticus 4:25",
+        "leviticus 4:30",
+        "leviticus 4:34",
+        "leviticus 5:9",
+        "leviticus 8:15",
+        "leviticus 9:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִשְׁפֹּ֔ךְ אֶל יְס֖וֹד",
+      "pron": "쇼페크 엘 예솓",
+      "lemmas": [
+        "שָׁפַךְ",
+        "אֵל",
+        "יְסוֹד"
+      ],
+      "words": [
+        {
+          "word": "יִשְׁפֹּ֔ךְ",
+          "lemma": "שָׁפַךְ",
+          "strong": "H8210",
+          "pron": "쇼페크"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "יְס֖וֹד",
+          "lemma": "יְסוֹד",
+          "strong": "H3247",
+          "pron": "예솓"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 29:12",
+        "leviticus 4:7",
+        "leviticus 4:18",
+        "leviticus 4:25",
+        "leviticus 4:30",
+        "leviticus 4:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְסוֹד֙ מִזְבַּ֣ח הָעֹלָ֔ה",
+      "pron": "예솓 밋베아흐 올로트",
+      "lemmas": [
+        "יְסוֹד",
+        "מִזְבֵּחַ",
+        "עֹלָה"
+      ],
+      "words": [
+        {
+          "word": "יְסוֹד֙",
+          "lemma": "יְסוֹד",
+          "strong": "H3247",
+          "pron": "예솓"
+        },
+        {
+          "word": "מִזְבַּ֣ח",
+          "lemma": "מִזְבֵּחַ",
+          "strong": "H4196",
+          "pron": "밋베아흐"
+        },
+        {
+          "word": "הָעֹלָ֔ה",
+          "lemma": "עֹלָה",
+          "strong": "H5930",
+          "pron": "올로트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 4:7",
+        "leviticus 4:18",
+        "leviticus 4:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

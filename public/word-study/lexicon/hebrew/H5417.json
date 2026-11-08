@@ -2,7 +2,7 @@
   "lemma": "נְתַנְאֵל",
   "pron": "네탄엘",
   "strong": "H5417",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נָתַן",
     "strong": "H5414",
@@ -18,37 +18,178 @@
     {
       "lemma": "נָתִין",
       "strong": "H5411",
-      "pron": "",
+      "pron": "브아네티님",
       "glossKo": "느디님 사람"
     },
     {
       "lemma": "נָתַן",
       "strong": "H5414",
-      "pron": "잇텐",
+      "pron": "바잇텐",
       "glossKo": "주다"
     },
     {
       "lemma": "נְתַן",
       "strong": "H5415",
-      "pron": "",
+      "pron": "인테눈",
       "glossKo": "주다(아람)"
     },
     {
       "lemma": "נָתָן",
       "strong": "H5416",
-      "pron": "나탄",
+      "pron": "브나탄",
       "glossKo": "나단"
     },
     {
       "lemma": "נְתַנְיָה",
       "strong": "H5418",
-      "pron": "",
+      "pron": "네탄아",
       "glossKo": "느다냐"
     }
   ],
   "defEn": "Nethanel",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "numbers": 5,
+    "chronicles1": 4,
+    "chronicles2": 2,
+    "nehemiah": 2,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "נְתַנְאֵ֖ל בֶּן",
+      "pron": "네탄엘 바님",
+      "lemmas": [
+        "נְתַנְאֵל",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "נְתַנְאֵ֖ל",
+          "lemma": "נְתַנְאֵל",
+          "strong": "H5417",
+          "pron": "네탄엘"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 1:8",
+        "numbers 2:5",
+        "numbers 7:18",
+        "numbers 7:23",
+        "numbers 10:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְתַנְאֵ֖ל בֶּן צוּעָֽר",
+      "pron": "네탄엘 바님 추아르",
+      "lemmas": [
+        "נְתַנְאֵל",
+        "בֵּן",
+        "צוּעָר"
+      ],
+      "words": [
+        {
+          "word": "נְתַנְאֵ֖ל",
+          "lemma": "נְתַנְאֵל",
+          "strong": "H5417",
+          "pron": "네탄엘"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "צוּעָֽר",
+          "lemma": "צוּעָר",
+          "strong": "H6686",
+          "pron": "추아르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 1:8",
+        "numbers 2:5",
+        "numbers 7:18",
+        "numbers 7:23",
+        "numbers 10:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְיִ֨שָּׂשכָ֔ר נְתַנְאֵ֖ל",
+      "pron": "잇삿카르 네탄엘",
+      "lemmas": [
+        "יִשָּׂשכָר",
+        "נְתַנְאֵל"
+      ],
+      "words": [
+        {
+          "word": "לְיִ֨שָּׂשכָ֔ר",
+          "lemma": "יִשָּׂשכָר",
+          "strong": "H3485",
+          "pron": "잇삿카르"
+        },
+        {
+          "word": "נְתַנְאֵ֖ל",
+          "lemma": "נְתַנְאֵל",
+          "strong": "H5417",
+          "pron": "네탄엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 1:8",
+        "numbers 2:5",
+        "numbers 10:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְיִ֨שָּׂשכָ֔ר נְתַנְאֵ֖ל בֶּן",
+      "pron": "잇삿카르 네탄엘 바님",
+      "lemmas": [
+        "יִשָּׂשכָר",
+        "נְתַנְאֵל",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "לְיִ֨שָּׂשכָ֔ר",
+          "lemma": "יִשָּׂשכָר",
+          "strong": "H3485",
+          "pron": "잇삿카르"
+        },
+        {
+          "word": "נְתַנְאֵ֖ל",
+          "lemma": "נְתַנְאֵל",
+          "strong": "H5417",
+          "pron": "네탄엘"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 1:8",
+        "numbers 2:5",
+        "numbers 10:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

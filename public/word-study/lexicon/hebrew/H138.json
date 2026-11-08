@@ -2,7 +2,7 @@
   "lemma": "אֲדֹנִיָּה",
   "pron": "아도니아",
   "strong": "H138",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אָדוֹן",
     "strong": "H113",
@@ -12,43 +12,148 @@
     {
       "lemma": "אָדוֹן",
       "strong": "H113",
-      "pron": "아도나이누",
-      "glossKo": "우리의 주인"
+      "pron": "아도나이",
+      "glossKo": "나의 주인"
     },
     {
       "lemma": "אַדּוֹן",
       "strong": "H114",
-      "pron": "",
+      "pron": "앋돈",
       "glossKo": "아도람"
     },
     {
       "lemma": "אֶדֶן",
       "strong": "H134",
-      "pron": "",
+      "pron": "아도나이",
       "glossKo": "받침"
     },
     {
       "lemma": "אֲדֹנָי",
       "strong": "H136",
-      "pron": "아도나위",
+      "pron": "아도나이",
       "glossKo": "나의 주"
     },
     {
       "lemma": "אֲדֹנִי־בֶזֶק",
       "strong": "H137",
-      "pron": "",
+      "pron": "아도나이",
       "glossKo": "아도니베섹"
     },
     {
       "lemma": "אֲדֹנִי־צֶדֶק",
       "strong": "H139",
-      "pron": "",
+      "pron": "아도나이",
       "glossKo": "아도니세덱"
     }
   ],
   "defEn": "Adonijah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 26,
+  "byBook": {
+    "kings1": 22,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "nehemiah": 1,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֲדֹנִיָּ֣ה בֶן חַגִּ֑ית",
+      "pron": "아도니아 바님 학기트",
+      "lemmas": [
+        "אֲדֹנִיָּה",
+        "בֵּן",
+        "חַגִּית"
+      ],
+      "words": [
+        {
+          "word": "אֲדֹנִיָּ֣ה",
+          "lemma": "אֲדֹנִיָּה",
+          "strong": "H138",
+          "pron": "아도니아"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "חַגִּ֑ית",
+          "lemma": "חַגִּית",
+          "strong": "H2294",
+          "pron": "학기트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 3:4",
+        "kings1 1:5",
+        "kings1 1:11",
+        "kings1 2:13",
+        "chronicles1 3:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲדֹנִיָּ֣הוּ בֶן",
+      "pron": "아도니아 바님",
+      "lemmas": [
+        "אֲדֹנִיָּה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "אֲדֹנִיָּ֣הוּ",
+          "lemma": "אֲדֹנִיָּה",
+          "strong": "H138",
+          "pron": "아도니아"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 3:4",
+        "kings1 1:5",
+        "kings1 1:11",
+        "kings1 2:13",
+        "chronicles1 3:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָמַ֔רְתָּ אֲדֹנִיָּ֖הוּ",
+      "pron": "바요메르 아도니아",
+      "lemmas": [
+        "אָמַר",
+        "אֲדֹנִיָּה"
+      ],
+      "words": [
+        {
+          "word": "אָמַ֔רְתָּ",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "אֲדֹנִיָּ֖הוּ",
+          "lemma": "אֲדֹנִיָּה",
+          "strong": "H138",
+          "pron": "아도니아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 1:24",
+        "kings1 1:42",
+        "kings1 1:43"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

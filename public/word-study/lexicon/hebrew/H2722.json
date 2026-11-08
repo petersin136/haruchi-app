@@ -1,6 +1,6 @@
 {
   "lemma": "חֹרֵב",
-  "pron": "브호렙",
+  "pron": "호레바",
   "strong": "H2722",
   "posKo": "명사",
   "root": {
@@ -12,25 +12,25 @@
     {
       "lemma": "חָרַב",
       "strong": "H2717",
-      "pron": "바예헤랍",
+      "pron": "하레부",
       "glossKo": "마르다"
     },
     {
       "lemma": "חֲרַב",
       "strong": "H2718",
-      "pron": "",
+      "pron": "하하레바트",
       "glossKo": "황폐하게 하다(아람)"
     },
     {
       "lemma": "חֶרֶב",
       "strong": "H2719",
-      "pron": "하렙오",
-      "glossKo": "그의 칼"
+      "pron": "아헤렙",
+      "glossKo": "칼"
     },
     {
       "lemma": "חָרֵב",
       "strong": "H2720",
-      "pron": "",
+      "pron": "바하레바",
       "glossKo": "마른"
     },
     {
@@ -42,9 +42,45 @@
   ],
   "defEn": "Choreb",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 17,
   "byBook": {
+    "deuteronomy": 9,
+    "exodus": 3,
+    "kings1": 2,
+    "chronicles2": 1,
+    "malachi": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הָאֱלֹהִ֖ים חֹרֵֽבָה",
+      "pron": "엘로힘 호레바",
+      "lemmas": [
+        "אֱלֹהִים",
+        "חֹרֵב"
+      ],
+      "words": [
+        {
+          "word": "הָאֱלֹהִ֖ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "חֹרֵֽבָה",
+          "lemma": "חֹרֵב",
+          "strong": "H2722",
+          "pron": "호레바"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 3:1",
+        "deuteronomy 4:10",
+        "deuteronomy 18:16",
+        "kings1 19:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

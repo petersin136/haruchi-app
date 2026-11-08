@@ -1,6 +1,6 @@
 {
   "lemma": "חַנּוּן",
-  "pron": "브한눈",
+  "pron": "한눈",
   "strong": "H2587",
   "posKo": "형용사",
   "root": {
@@ -18,19 +18,19 @@
     {
       "lemma": "חָנָה",
       "strong": "H2583",
-      "pron": "타하네",
+      "pron": "바이한",
       "glossKo": "진치다"
     },
     {
       "lemma": "חַנָּה",
       "strong": "H2584",
-      "pron": "",
+      "pron": "한나",
       "glossKo": "한나"
     },
     {
       "lemma": "חָנוּן",
       "strong": "H2586",
-      "pron": "",
+      "pron": "하눈",
       "glossKo": "하눈"
     },
     {
@@ -38,41 +38,151 @@
       "strong": "H2589",
       "pron": "한노트",
       "glossKo": "간구"
+    },
+    {
+      "lemma": "חַנִּיאֵל",
+      "strong": "H2592",
+      "pron": "한니엘",
+      "glossKo": "한니엘"
     }
   ],
   "defEn": "gracious",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 13,
   "byBook": {
-    "psalms": 6
+    "psalms": 6,
+    "exodus": 2,
+    "nehemiah": 2,
+    "chronicles2": 1,
+    "joel": 1,
+    "jonah": 1
   },
   "phrases": [
     {
-      "hebrew": "חַנּ֖וּן וְרַח֣וּם",
-      "pron": "브한눈 라훔",
+      "hebrew": "חַנּ֤וּן וְרַחוּם֙",
+      "pron": "한눈 라훔",
       "lemmas": [
         "חַנּוּן",
         "רַחוּם"
       ],
       "words": [
         {
-          "word": "חַנּ֖וּן",
+          "word": "חַנּ֤וּן",
           "lemma": "חַנּוּן",
           "strong": "H2587",
-          "pron": "브한눈"
+          "pron": "한눈"
         },
         {
-          "word": "וְרַח֣וּם",
+          "word": "וְרַחוּם֙",
           "lemma": "רַחוּם",
           "strong": "H7349",
           "pron": "라훔"
         }
       ],
-      "count": 3,
+      "count": 8,
       "refs": [
+        "chronicles2 30:9",
+        "nehemiah 9:17",
+        "nehemiah 9:31",
         "psalms 111:4",
         "psalms 112:4",
+        "psalms 145:8",
+        "joel 2:13",
+        "jonah 4:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חַנּ֤וּן וְרַחוּם֙ יְהוָ֣ה",
+      "pron": "한눈 라훔 여호와",
+      "lemmas": [
+        "חַנּוּן",
+        "רַחוּם",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "חַנּ֤וּן",
+          "lemma": "חַנּוּן",
+          "strong": "H2587",
+          "pron": "한눈"
+        },
+        {
+          "word": "וְרַחוּם֙",
+          "lemma": "רַחוּם",
+          "strong": "H7349",
+          "pron": "라훔"
+        },
+        {
+          "word": "יְהוָ֣ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles2 30:9",
+        "psalms 111:4",
         "psalms 145:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי חַנּ֤וּן",
+      "pron": "키 한눈",
+      "lemmas": [
+        "כִּי",
+        "חַנּוּן"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "חַנּ֤וּן",
+          "lemma": "חַנּוּן",
+          "strong": "H2587",
+          "pron": "한눈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 22:27",
+        "chronicles2 30:9",
+        "joel 2:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רַח֖וּם וְחַנּ֑וּן",
+      "pron": "라훔 한눈",
+      "lemmas": [
+        "רַחוּם",
+        "חַנּוּן"
+      ],
+      "words": [
+        {
+          "word": "רַח֖וּם",
+          "lemma": "רַחוּם",
+          "strong": "H7349",
+          "pron": "라훔"
+        },
+        {
+          "word": "וְחַנּ֑וּן",
+          "lemma": "חַנּוּן",
+          "strong": "H2587",
+          "pron": "한눈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 34:6",
+        "psalms 86:15",
+        "psalms 103:8"
       ],
       "glossKo": ""
     }

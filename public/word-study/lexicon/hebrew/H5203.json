@@ -1,6 +1,6 @@
 {
   "lemma": "נָטַשׁ",
-  "pron": "틷데셰니",
+  "pron": "네다솃타니",
   "strong": "H5203",
   "posKo": "동사",
   "root": null,
@@ -8,16 +8,183 @@
     {
       "lemma": "נְטִישָׁה",
       "strong": "H5189",
-      "pron": "",
+      "pron": "아네디쇼트",
       "glossKo": "가지"
     }
   ],
   "defEn": "pound; smite",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 40,
   "byBook": {
+    "samuel1": 7,
+    "isaiah": 5,
+    "jeremiah": 5,
+    "ezekiel": 4,
+    "proverbs": 3,
     "psalms": 3,
-    "genesis": 1
+    "judges": 2,
+    "samuel2": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "genesis": 1,
+    "hosea": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "nehemiah": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיִּטֹּ֤שׁ אֶת",
+      "pron": "네다솃타니 에트",
+      "lemmas": [
+        "נָטַשׁ",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיִּטֹּ֤שׁ",
+          "lemma": "נָטַשׁ",
+          "strong": "H5203",
+          "pron": "네다솃타니"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "samuel1 17:20",
+        "kings2 21:14",
+        "nehemiah 10:31",
+        "jeremiah 7:29",
+        "jeremiah 12:7",
+        "jeremiah 15:6",
+        "jeremiah 23:33",
+        "jeremiah 23:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאַל תִּ֝טֹּ֗שׁ",
+      "pron": "엘 네다솃타니",
+      "lemmas": [
+        "אַל",
+        "נָטַשׁ"
+      ],
+      "words": [
+        {
+          "word": "וְאַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "תִּ֝טֹּ֗שׁ",
+          "lemma": "נָטַשׁ",
+          "strong": "H5203",
+          "pron": "네다솃타니"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 8:57",
+        "psalms 27:9",
+        "proverbs 1:8",
+        "proverbs 6:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּטֹּ֨שׁ עַל",
+      "pron": "네다솃타니 알",
+      "lemmas": [
+        "נָטַשׁ",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "וַיִּטֹּ֨שׁ",
+          "lemma": "נָטַשׁ",
+          "strong": "H5203",
+          "pron": "네다솃타니"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 11:31",
+        "samuel1 30:16",
+        "amos 5:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֣א נְטַשְׁתַּ֔נִי",
+      "pron": "로 네다솃타니",
+      "lemmas": [
+        "לֹא",
+        "נָטַשׁ"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "נְטַשְׁתַּ֔נִי",
+          "lemma": "נָטַשׁ",
+          "strong": "H5203",
+          "pron": "네다솃타니"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 31:28",
+        "samuel1 12:22",
+        "psalms 94:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְטָשָׁ֣נוּ יְהוָ֔ה",
+      "pron": "네다솃타니 여호와",
+      "lemmas": [
+        "נָטַשׁ",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "נְטָשָׁ֣נוּ",
+          "lemma": "נָטַשׁ",
+          "strong": "H5203",
+          "pron": "네다솃타니"
+        },
+        {
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 6:13",
+        "samuel1 12:22",
+        "psalms 94:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

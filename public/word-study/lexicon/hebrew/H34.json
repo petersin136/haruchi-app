@@ -1,6 +1,6 @@
 {
   "lemma": "אֶבְיוֹן",
-  "pron": "엡온",
+  "pron": "엡온카",
   "strong": "H34",
   "posKo": "형용사",
   "root": {
@@ -12,44 +12,54 @@
     {
       "lemma": "אָבָה",
       "strong": "H14",
-      "pron": "아바",
+      "pron": "토베",
       "glossKo": "원하다"
     },
     {
       "lemma": "אָבֶה",
       "strong": "H15",
-      "pron": "",
+      "pron": "아비",
       "glossKo": "갈망하는"
     },
     {
       "lemma": "אֵבֶה",
       "strong": "H16",
-      "pron": "",
+      "pron": "에베",
       "glossKo": "갈대"
     },
     {
       "lemma": "אֲבוֹי",
       "strong": "H17",
-      "pron": "",
+      "pron": "아보이",
       "glossKo": "필요"
     },
     {
       "lemma": "אֲבִיּוֹנָה",
       "strong": "H35",
-      "pron": "",
+      "pron": "하아비오나",
       "glossKo": "갈망"
     }
   ],
   "defEn": "destitute",
   "defKo": "",
-  "countOT": 23,
+  "countOT": 61,
   "byBook": {
-    "psalms": 23
+    "psalms": 23,
+    "deuteronomy": 7,
+    "job": 6,
+    "amos": 5,
+    "isaiah": 5,
+    "jeremiah": 4,
+    "proverbs": 4,
+    "ezekiel": 3,
+    "exodus": 2,
+    "esther": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
-      "hebrew": "עָנִ֣י וְאֶבְיוֹן֮",
-      "pron": "님 엡온",
+      "hebrew": "עָנִ֣י וְאֶבְי֑וֹן",
+      "pron": "헤아니 엡온카",
       "lemmas": [
         "עָנִי",
         "אֶבְיוֹן"
@@ -59,17 +69,20 @@
           "word": "עָנִ֣י",
           "lemma": "עָנִי",
           "strong": "H6041",
-          "pron": "님"
+          "pron": "헤아니"
         },
         {
-          "word": "וְאֶבְיוֹן֮",
+          "word": "וְאֶבְי֑וֹן",
           "lemma": "אֶבְיוֹן",
           "strong": "H34",
-          "pron": "엡온"
+          "pron": "엡온카"
         }
       ],
-      "count": 8,
+      "count": 17,
       "refs": [
+        "deuteronomy 15:11",
+        "deuteronomy 24:14",
+        "job 24:14",
         "psalms 35:10",
         "psalms 37:14",
         "psalms 40:17",
@@ -77,7 +90,126 @@
         "psalms 74:21",
         "psalms 86:1",
         "psalms 109:16",
-        "psalms 109:22"
+        "psalms 109:22",
+        "proverbs 31:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דַּ֣ל וְאֶבְי֑וֹן",
+      "pron": "브달 엡온카",
+      "lemmas": [
+        "דַּל",
+        "אֶבְיוֹן"
+      ],
+      "words": [
+        {
+          "word": "דַּ֣ל",
+          "lemma": "דַּל",
+          "strong": "H1800",
+          "pron": "브달"
+        },
+        {
+          "word": "וְאֶבְי֑וֹן",
+          "lemma": "אֶבְיוֹן",
+          "strong": "H34",
+          "pron": "엡온카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 72:13",
+        "psalms 82:4",
+        "isaiah 14:30",
+        "amos 8:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נַ֝פְשִׁ֗י לָאֶבְיֽוֹן",
+      "pron": "네페쉬 엡온카",
+      "lemmas": [
+        "נֶפֶשׁ",
+        "אֶבְיוֹן"
+      ],
+      "words": [
+        {
+          "word": "נַ֝פְשִׁ֗י",
+          "lemma": "נֶפֶשׁ",
+          "strong": "H5315",
+          "pron": "네페쉬"
+        },
+        {
+          "word": "לָאֶבְיֽוֹן",
+          "lemma": "אֶבְיוֹן",
+          "strong": "H34",
+          "pron": "엡온카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 30:25",
+        "psalms 72:13",
+        "jeremiah 2:34",
+        "jeremiah 20:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָֽאֶבְי֔וֹן וְלֹ֥א",
+      "pron": "엡온카 로",
+      "lemmas": [
+        "אֶבְיוֹן",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "הָֽאֶבְי֔וֹן",
+          "lemma": "אֶבְיוֹן",
+          "strong": "H34",
+          "pron": "엡온카"
+        },
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 15:9",
+        "jeremiah 5:28",
+        "ezekiel 16:49"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִשְׁפַּ֥ט אֶבְיֹנְךָ֖",
+      "pron": "우미솁팓 엡온카",
+      "lemmas": [
+        "מִשְׁפָּט",
+        "אֶבְיוֹן"
+      ],
+      "words": [
+        {
+          "word": "מִשְׁפַּ֥ט",
+          "lemma": "מִשְׁפָּט",
+          "strong": "H4941",
+          "pron": "우미솁팓"
+        },
+        {
+          "word": "אֶבְיֹנְךָ֖",
+          "lemma": "אֶבְיוֹן",
+          "strong": "H34",
+          "pron": "엡온카"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 23:6",
+        "psalms 140:12",
+        "jeremiah 5:28"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "יַעַר",
-  "pron": "예아로트",
+  "pron": "바야아르",
   "strong": "H3293",
   "posKo": "명사",
   "root": null,
@@ -14,33 +14,216 @@
     {
       "lemma": "יָעוּר",
       "strong": "H3265",
-      "pron": "",
+      "pron": "위브르",
       "glossKo": "야울"
     },
     {
       "lemma": "יַעֲרָה",
       "strong": "H3295",
-      "pron": "",
+      "pron": "브야에라트",
       "glossKo": "벌집"
     },
     {
       "lemma": "יַעֲרֵי אֹרְגִים",
       "strong": "H3296",
-      "pron": "",
+      "pron": "야에레",
       "glossKo": "야레오르김"
     },
     {
       "lemma": "יְעָרִים",
       "strong": "H3297",
-      "pron": "",
+      "pron": "예아림",
       "glossKo": "여아림"
     }
   ],
   "defEn": "copse of bushes; forest; honey in the comb",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 59,
   "byBook": {
-    "psalms": 7
+    "isaiah": 14,
+    "psalms": 7,
+    "ezekiel": 6,
+    "jeremiah": 6,
+    "kings1": 3,
+    "micah": 3,
+    "samuel1": 3,
+    "samuel2": 3,
+    "chronicles2": 2,
+    "joshua": 2,
+    "kings2": 2,
+    "songofsolomon": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "hosea": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עֲצֵ֣י הַיָּ֑עַר",
+      "pron": "에츠 바야아르",
+      "lemmas": [
+        "עֵץ",
+        "יַעַר"
+      ],
+      "words": [
+        {
+          "word": "עֲצֵ֣י",
+          "lemma": "עֵץ",
+          "strong": "H6086",
+          "pron": "에츠"
+        },
+        {
+          "word": "הַיָּ֑עַר",
+          "lemma": "יַעַר",
+          "strong": "H3293",
+          "pron": "바야아르"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "chronicles1 16:33",
+        "psalms 96:12",
+        "songofsolomon 2:3",
+        "isaiah 7:2",
+        "isaiah 10:19",
+        "isaiah 44:14",
+        "jeremiah 10:3",
+        "ezekiel 15:2",
+        "ezekiel 15:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּֽית יַ֥עַר",
+      "pron": "미바이트 바야아르",
+      "lemmas": [
+        "בַּיִת",
+        "יַעַר"
+      ],
+      "words": [
+        {
+          "word": "בֵּֽית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "יַ֥עַר",
+          "lemma": "יַעַר",
+          "strong": "H3293",
+          "pron": "바야아르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 7:2",
+        "kings1 10:17",
+        "kings1 10:21",
+        "chronicles2 9:16",
+        "chronicles2 9:20",
+        "isaiah 22:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּֽית יַ֥עַר הַלְּבָנ֖וֹן",
+      "pron": "미바이트 바야아르 브아레바논",
+      "lemmas": [
+        "בַּיִת",
+        "יַעַר",
+        "לְבָנוֹן"
+      ],
+      "words": [
+        {
+          "word": "בֵּֽית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "יַ֥עַר",
+          "lemma": "יַעַר",
+          "strong": "H3293",
+          "pron": "바야아르"
+        },
+        {
+          "word": "הַלְּבָנ֖וֹן",
+          "lemma": "לְבָנוֹן",
+          "strong": "H3844",
+          "pron": "브아레바논"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 7:2",
+        "kings1 10:17",
+        "kings1 10:21",
+        "chronicles2 9:16",
+        "chronicles2 9:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יַ֥עַר הַלְּבָנֽוֹן",
+      "pron": "바야아르 브아레바논",
+      "lemmas": [
+        "יַעַר",
+        "לְבָנוֹן"
+      ],
+      "words": [
+        {
+          "word": "יַ֥עַר",
+          "lemma": "יַעַר",
+          "strong": "H3293",
+          "pron": "바야아르"
+        },
+        {
+          "word": "הַלְּבָנֽוֹן",
+          "lemma": "לְבָנוֹן",
+          "strong": "H3844",
+          "pron": "브아레바논"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 7:2",
+        "kings1 10:17",
+        "kings1 10:21",
+        "chronicles2 9:16",
+        "chronicles2 9:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַרְיֵ֜ה מִיַּ֗עַר",
+      "pron": "아레에 바야아르",
+      "lemmas": [
+        "אֲרִי",
+        "יַעַר"
+      ],
+      "words": [
+        {
+          "word": "אַרְיֵ֜ה",
+          "lemma": "אֲרִי",
+          "strong": "H738",
+          "pron": "아레에"
+        },
+        {
+          "word": "מִיַּ֗עַר",
+          "lemma": "יַעַר",
+          "strong": "H3293",
+          "pron": "바야아르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 5:6",
+        "jeremiah 12:8",
+        "amos 3:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

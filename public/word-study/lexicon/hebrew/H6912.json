@@ -1,6 +1,6 @@
 {
   "lemma": "קָבַר",
-  "pron": "코베르",
+  "pron": "틱카베르",
   "strong": "H6912",
   "posKo": "동사",
   "root": null,
@@ -20,34 +20,50 @@
   ],
   "defEn": "inter",
   "defKo": "",
-  "countOT": 29,
+  "countOT": 133,
   "byBook": {
     "genesis": 28,
-    "psalms": 1
+    "kings2": 19,
+    "kings1": 18,
+    "chronicles2": 17,
+    "jeremiah": 10,
+    "judges": 9,
+    "samuel2": 7,
+    "ezekiel": 6,
+    "deuteronomy": 4,
+    "joshua": 3,
+    "numbers": 3,
+    "samuel1": 3,
+    "chronicles1": 1,
+    "ecclesiastes": 1,
+    "hosea": 1,
+    "job": 1,
+    "psalms": 1,
+    "ruth": 1
   },
   "phrases": [
     {
-      "hebrew": "וְאֶקְבְּרָ֥ה אֶת",
-      "pron": "코베르 에트",
+      "hebrew": "וַיִּקְבְּר֥וּ אֹת֛וֹ",
+      "pron": "틱카베르 에트",
       "lemmas": [
         "קָבַר",
         "אֵת"
       ],
       "words": [
         {
-          "word": "וְאֶקְבְּרָ֥ה",
+          "word": "וַיִּקְבְּר֥וּ",
           "lemma": "קָבַר",
           "strong": "H6912",
-          "pron": "코베르"
+          "pron": "틱카베르"
         },
         {
-          "word": "אֶת",
+          "word": "אֹת֛וֹ",
           "lemma": "אֵת",
           "strong": "H853",
           "pron": "에트"
         }
       ],
-      "count": 15,
+      "count": 45,
       "refs": [
         "genesis 23:6",
         "genesis 23:8",
@@ -65,133 +81,156 @@
       "glossKo": ""
     },
     {
-      "hebrew": "לִקְבֹּ֣ר אֶת אָבִ֑יו",
-      "pron": "코베르 에트 아보테누",
+      "hebrew": "אֲבֹתָ֔יו וַיִּקְבְּר֥וּ",
+      "pron": "아비브 틱카베르",
       "lemmas": [
-        "קָבַר",
-        "אֵת",
-        "אָב"
-      ],
-      "words": [
-        {
-          "word": "לִקְבֹּ֣ר",
-          "lemma": "קָבַר",
-          "strong": "H6912",
-          "pron": "코베르"
-        },
-        {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        },
-        {
-          "word": "אָבִ֑יו",
-          "lemma": "אָב",
-          "strong": "H1",
-          "pron": "아보테누"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "genesis 50:5",
-        "genesis 50:6",
-        "genesis 50:7",
-        "genesis 50:14"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "שָׁ֛מָּה קֻבַּ֥ר",
-      "pron": "샴 코베르",
-      "lemmas": [
-        "שָׁם",
+        "אָב",
         "קָבַר"
       ],
       "words": [
         {
-          "word": "שָׁ֛מָּה",
-          "lemma": "שָׁם",
-          "strong": "H8033",
-          "pron": "샴"
+          "word": "אֲבֹתָ֔יו",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
         },
         {
-          "word": "קֻבַּ֥ר",
+          "word": "וַיִּקְבְּר֥וּ",
           "lemma": "קָבַר",
           "strong": "H6912",
-          "pron": "코베르"
+          "pron": "틱카베르"
         }
       ],
-      "count": 5,
+      "count": 25,
       "refs": [
-        "genesis 25:10",
-        "genesis 49:31",
-        "genesis 50:5"
+        "kings1 2:10",
+        "kings1 11:43",
+        "kings1 14:31",
+        "kings1 15:8",
+        "kings1 15:24",
+        "kings1 16:6",
+        "kings1 16:28",
+        "kings1 22:50",
+        "kings2 8:24",
+        "kings2 10:35",
+        "kings2 13:9",
+        "kings2 14:16"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְאֶקְבְּרָ֥ה מֵתִ֖י",
-      "pron": "코베르 크메트",
+      "hebrew": "עִם אֲבֹתָ֔יו וַיִּקְבְּר֥וּ",
+      "pron": "임마흐 아비브 틱카베르",
       "lemmas": [
-        "קָבַר",
-        "מוּת"
+        "עִם",
+        "אָב",
+        "קָבַר"
       ],
       "words": [
         {
-          "word": "וְאֶקְבְּרָ֥ה",
-          "lemma": "קָבַר",
-          "strong": "H6912",
-          "pron": "코베르"
+          "word": "עִם",
+          "lemma": "עִם",
+          "strong": "H5973",
+          "pron": "임마흐"
         },
         {
-          "word": "מֵתִ֖י",
-          "lemma": "מוּת",
-          "strong": "H4191",
-          "pron": "크메트"
+          "word": "אֲבֹתָ֔יו",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        },
+        {
+          "word": "וַיִּקְבְּר֥וּ",
+          "lemma": "קָבַר",
+          "strong": "H6912",
+          "pron": "틱카베르"
         }
       ],
-      "count": 3,
+      "count": 25,
       "refs": [
-        "genesis 23:4",
-        "genesis 23:6",
-        "genesis 23:11"
+        "kings1 2:10",
+        "kings1 11:43",
+        "kings1 14:31",
+        "kings1 15:8",
+        "kings1 15:24",
+        "kings1 16:6",
+        "kings1 16:28",
+        "kings1 22:50",
+        "kings2 8:24",
+        "kings2 10:35",
+        "kings2 13:9",
+        "kings2 14:16"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "קְבֹ֖ר אֶת מֵתֶ֑ךָ",
-      "pron": "코베르 에트 크메트",
+      "hebrew": "וַיָּ֕מָת וַיִּקָּבֵ֖ר",
+      "pron": "모트 틱카베르",
       "lemmas": [
-        "קָבַר",
-        "אֵת",
-        "מוּת"
+        "מוּת",
+        "קָבַר"
       ],
       "words": [
         {
-          "word": "קְבֹ֖ר",
-          "lemma": "קָבַר",
-          "strong": "H6912",
-          "pron": "코베르"
-        },
-        {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        },
-        {
-          "word": "מֵתֶ֑ךָ",
+          "word": "וַיָּ֕מָת",
           "lemma": "מוּת",
           "strong": "H4191",
-          "pron": "크메트"
+          "pron": "모트"
+        },
+        {
+          "word": "וַיִּקָּבֵ֖ר",
+          "lemma": "קָבַר",
+          "strong": "H6912",
+          "pron": "틱카베르"
         }
       ],
-      "count": 3,
+      "count": 10,
       "refs": [
-        "genesis 23:6",
-        "genesis 23:8",
-        "genesis 23:13"
+        "genesis 23:15",
+        "joshua 24:33",
+        "judges 10:2",
+        "samuel2 17:23",
+        "kings1 2:34",
+        "kings1 13:31",
+        "kings2 12:21",
+        "chronicles2 22:9",
+        "chronicles2 24:25",
+        "chronicles2 35:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽיִּקְבְּרֻ֨הוּ֙ בְּעִ֣יר",
+      "pron": "틱카베르 이르",
+      "lemmas": [
+        "קָבַר",
+        "עִיר"
+      ],
+      "words": [
+        {
+          "word": "וַֽיִּקְבְּרֻ֨הוּ֙",
+          "lemma": "קָבַר",
+          "strong": "H6912",
+          "pron": "틱카베르"
+        },
+        {
+          "word": "בְּעִ֣יר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "judges 12:7",
+        "kings1 2:10",
+        "kings1 11:43",
+        "chronicles2 9:31",
+        "chronicles2 12:16",
+        "chronicles2 21:20",
+        "chronicles2 24:16",
+        "chronicles2 24:25",
+        "chronicles2 28:27"
       ],
       "glossKo": ""
     }

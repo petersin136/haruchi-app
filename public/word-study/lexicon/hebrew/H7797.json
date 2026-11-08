@@ -1,6 +1,6 @@
 {
   "lemma": "שׂוּשׂ",
-  "pron": "야시스",
+  "pron": "사스",
   "strong": "H7797",
   "posKo": "동사",
   "root": null,
@@ -14,13 +14,13 @@
     {
       "lemma": "שַׁוְשָׁא",
       "strong": "H7798",
-      "pron": "",
+      "pron": "브샤베샤",
       "glossKo": "사브사"
     },
     {
       "lemma": "שׁוּשַׁן",
       "strong": "H7799",
-      "pron": "쇼샨님",
+      "pron": "슈샨",
       "glossKo": "백합"
     },
     {
@@ -32,15 +32,111 @@
     {
       "lemma": "שָׂשׂוֹן",
       "strong": "H8342",
-      "pron": "사손",
+      "pron": "브사손",
       "glossKo": "기쁨"
     }
   ],
   "defEn": "be bright; cheerful",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 27,
   "byBook": {
-    "psalms": 7
+    "isaiah": 9,
+    "psalms": 7,
+    "deuteronomy": 4,
+    "job": 2,
+    "lamentations": 2,
+    "ezekiel": 1,
+    "jeremiah": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לָשׂ֤וּשׂ עָלֶ֨יךָ֙",
+      "pron": "사스 알",
+      "lemmas": [
+        "שׂוּשׂ",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "לָשׂ֤וּשׂ",
+          "lemma": "שׂוּשׂ",
+          "strong": "H7797",
+          "pron": "사스"
+        },
+        {
+          "word": "עָלֶ֨יךָ֙",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 30:9",
+        "psalms 119:14",
+        "isaiah 62:5",
+        "jeremiah 32:41",
+        "zephaniah 3:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָ֘שִׂ֤ישׂוּ וְיִשְׂמְח֨וּ",
+      "pron": "사스 브사마흐",
+      "lemmas": [
+        "שׂוּשׂ",
+        "שָׂמַח"
+      ],
+      "words": [
+        {
+          "word": "יָ֘שִׂ֤ישׂוּ",
+          "lemma": "שׂוּשׂ",
+          "strong": "H7797",
+          "pron": "사스"
+        },
+        {
+          "word": "וְיִשְׂמְח֨וּ",
+          "lemma": "שָׂמַח",
+          "strong": "H8055",
+          "pron": "브사마흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 40:16",
+        "psalms 70:4",
+        "lamentations 4:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׂ֨שׂ יְהוָ֜ה",
+      "pron": "사스 여호와",
+      "lemmas": [
+        "שׂוּשׂ",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "שָׂ֨שׂ",
+          "lemma": "שׂוּשׂ",
+          "strong": "H7797",
+          "pron": "사스"
+        },
+        {
+          "word": "יְהוָ֜ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 28:63",
+        "isaiah 61:10"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "מִקְדָּשׁ",
-  "pron": "미미켇다셰이카",
+  "pron": "믹케다쉬",
   "strong": "H4720",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "קָדוֹשׁ",
       "strong": "H6918",
-      "pron": "리케도심",
+      "pron": "카도쉬",
       "glossKo": "거룩한"
     },
     {
@@ -24,27 +24,215 @@
     {
       "lemma": "קֶדֶשׁ",
       "strong": "H6943",
-      "pron": "",
+      "pron": "케데쉬",
       "glossKo": "게데스"
     },
     {
       "lemma": "קֹדֶשׁ",
       "strong": "H6944",
-      "pron": "칻시위",
-      "glossKo": "나의 거룩"
+      "pron": "코데쉬",
+      "glossKo": "거룩"
     },
     {
       "lemma": "קָדֵשׁ",
       "strong": "H6945",
-      "pron": "",
+      "pron": "카데쉬",
       "glossKo": "신전 창기"
     }
   ],
   "defEn": "consecrated; palace; sanctuary; asylum",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 74,
   "byBook": {
-    "psalms": 5
+    "ezekiel": 30,
+    "leviticus": 9,
+    "chronicles2": 5,
+    "numbers": 5,
+    "psalms": 5,
+    "isaiah": 4,
+    "daniel": 3,
+    "lamentations": 3,
+    "amos": 2,
+    "chronicles1": 2,
+    "exodus": 2,
+    "jeremiah": 2,
+    "joshua": 1,
+    "nehemiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת מִקְדָּשִׁי֙",
+      "pron": "에트 믹케다쉬",
+      "lemmas": [
+        "אֵת",
+        "מִקְדָּשׁ"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מִקְדָּשִׁי֙",
+          "lemma": "מִקְדָּשׁ",
+          "strong": "H4720",
+          "pron": "믹케다쉬"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "leviticus 16:33",
+        "leviticus 20:3",
+        "leviticus 21:12",
+        "leviticus 21:23",
+        "leviticus 26:31",
+        "numbers 18:29",
+        "numbers 19:20",
+        "chronicles1 22:19",
+        "ezekiel 5:11",
+        "ezekiel 23:38",
+        "ezekiel 24:21",
+        "ezekiel 37:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶל הַמִּקְדָּשׁ֙",
+      "pron": "엘 믹케다쉬",
+      "lemmas": [
+        "אֵל",
+        "מִקְדָּשׁ"
+      ],
+      "words": [
+        {
+          "word": "וְאֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "הַמִּקְדָּשׁ֙",
+          "lemma": "מִקְדָּשׁ",
+          "strong": "H4720",
+          "pron": "믹케다쉬"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "leviticus 12:4",
+        "psalms 73:17",
+        "isaiah 16:12",
+        "ezekiel 21:2",
+        "ezekiel 23:39",
+        "ezekiel 25:3",
+        "ezekiel 44:9",
+        "ezekiel 44:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָיָ֖ה לְמִקְדָּ֑שׁ",
+      "pron": "하에타 믹케다쉬",
+      "lemmas": [
+        "הָיָה",
+        "מִקְדָּשׁ"
+      ],
+      "words": [
+        {
+          "word": "וְהָיָ֖ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "לְמִקְדָּ֑שׁ",
+          "lemma": "מִקְדָּשׁ",
+          "strong": "H4720",
+          "pron": "믹케다쉬"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "isaiah 8:14",
+        "ezekiel 11:16",
+        "ezekiel 37:28",
+        "ezekiel 44:7",
+        "ezekiel 44:11",
+        "ezekiel 45:3",
+        "ezekiel 48:8",
+        "ezekiel 48:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָ֭בוֹא אֶל מִקְדְּשֵׁי",
+      "pron": "바야베 엘 믹케다쉬",
+      "lemmas": [
+        "בּוֹא",
+        "אֵל",
+        "מִקְדָּשׁ"
+      ],
+      "words": [
+        {
+          "word": "אָ֭בוֹא",
+          "lemma": "בּוֹא",
+          "strong": "H935",
+          "pron": "바야베"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "מִקְדְּשֵׁי",
+          "lemma": "מִקְדָּשׁ",
+          "strong": "H4720",
+          "pron": "믹케다쉬"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 73:17",
+        "isaiah 16:12",
+        "ezekiel 23:39",
+        "ezekiel 44:9",
+        "ezekiel 44:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַמִּקְדָּשׁ֙ לֹ֣א",
+      "pron": "믹케다쉬 로",
+      "lemmas": [
+        "מִקְדָּשׁ",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "הַמִּקְדָּשׁ֙",
+          "lemma": "מִקְדָּשׁ",
+          "strong": "H4720",
+          "pron": "믹케다쉬"
+        },
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 12:4",
+        "leviticus 21:12",
+        "leviticus 26:31",
+        "chronicles2 36:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

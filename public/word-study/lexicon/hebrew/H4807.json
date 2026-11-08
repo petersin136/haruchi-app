@@ -1,8 +1,8 @@
 {
   "lemma": "מְרִיב בַּעַל",
-  "pron": "메립바알",
+  "pron": "메립",
   "strong": "H4807",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רִיב",
     "strong": "H7378",
@@ -12,37 +12,143 @@
     {
       "lemma": "יָרֵב",
       "strong": "H3377",
-      "pron": "",
+      "pron": "야렙",
       "glossKo": "야렙"
     },
     {
       "lemma": "יְרֻבַּעַל",
       "strong": "H3378",
-      "pron": "",
+      "pron": "예룹바알",
       "glossKo": "여룹바알"
     },
     {
       "lemma": "יָרׇבְעָם",
       "strong": "H3379",
-      "pron": "",
+      "pron": "브야랍암",
       "glossKo": "여로보암"
     },
     {
       "lemma": "יְרֻבֶּשֶׁת",
       "strong": "H3380",
-      "pron": "",
+      "pron": "예룹베셰트",
       "glossKo": "여룹베셋"
     },
     {
       "lemma": "יָרִיב",
       "strong": "H3401",
-      "pron": "예리바위",
+      "pron": "예리바이",
       "glossKo": "나의 다투는 자"
+    },
+    {
+      "lemma": "מְרִיבָה",
+      "strong": "H4808",
+      "pron": "메리바",
+      "glossKo": "다툼"
     }
   ],
   "defEn": "quarreller of Baal; Merib-Baal",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "chronicles1": 6
+  },
+  "phrases": [
+    {
+      "hebrew": "מְרִ֣יב בָּ֑עַל",
+      "pron": "메립 메립",
+      "lemmas": [
+        "מְרִיב בַּעַל",
+        "מְרִיב בַּעַל"
+      ],
+      "words": [
+        {
+          "word": "מְרִ֣יב",
+          "lemma": "מְרִיב בַּעַל",
+          "strong": "H4807",
+          "pron": "메립"
+        },
+        {
+          "word": "בָּ֑עַל",
+          "lemma": "מְרִיב בַּעַל",
+          "strong": "H4807",
+          "pron": "메립"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "chronicles1 8:34",
+        "chronicles1 9:40"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְרִ֣יב בָּ֑עַל וּמְרִ֥יב",
+      "pron": "메립 메립 메립",
+      "lemmas": [
+        "מְרִיב בַּעַל",
+        "מְרִיב בַּעַל",
+        "מְרִיב בַּעַל"
+      ],
+      "words": [
+        {
+          "word": "מְרִ֣יב",
+          "lemma": "מְרִיב בַּעַל",
+          "strong": "H4807",
+          "pron": "메립"
+        },
+        {
+          "word": "בָּ֑עַל",
+          "lemma": "מְרִיב בַּעַל",
+          "strong": "H4807",
+          "pron": "메립"
+        },
+        {
+          "word": "וּמְרִ֥יב",
+          "lemma": "מְרִיב בַּעַל",
+          "strong": "H4807",
+          "pron": "메립"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "chronicles1 8:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוֹנָתָ֖ן מְרִ֣יב בָּ֑עַל",
+      "pron": "예호나탄 메립 메립",
+      "lemmas": [
+        "יְהוֹנָתָן",
+        "מְרִיב בַּעַל",
+        "מְרִיב בַּעַל"
+      ],
+      "words": [
+        {
+          "word": "יְהוֹנָתָ֖ן",
+          "lemma": "יְהוֹנָתָן",
+          "strong": "H3083",
+          "pron": "예호나탄"
+        },
+        {
+          "word": "מְרִ֣יב",
+          "lemma": "מְרִיב בַּעַל",
+          "strong": "H4807",
+          "pron": "메립"
+        },
+        {
+          "word": "בָּ֑עַל",
+          "lemma": "מְרִיב בַּעַל",
+          "strong": "H4807",
+          "pron": "메립"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles1 8:34",
+        "chronicles1 9:40"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

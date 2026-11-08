@@ -1,6 +1,6 @@
 {
   "lemma": "בְּהֵמָה",
-  "pron": "바하모트",
+  "pron": "베헤마",
   "strong": "H929",
   "posKo": "명사",
   "root": null,
@@ -8,21 +8,46 @@
     {
       "lemma": "בְּהֵמוֹת",
       "strong": "H930",
-      "pron": "",
+      "pron": "베헤모트",
       "glossKo": "베헤못"
     }
   ],
   "defEn": "dumb; animal",
   "defKo": "",
-  "countOT": 32,
+  "countOT": 190,
   "byBook": {
+    "leviticus": 31,
     "genesis": 21,
-    "psalms": 11
+    "deuteronomy": 18,
+    "exodus": 18,
+    "jeremiah": 18,
+    "numbers": 15,
+    "ezekiel": 12,
+    "psalms": 11,
+    "isaiah": 5,
+    "nehemiah": 5,
+    "ecclesiastes": 4,
+    "joshua": 4,
+    "job": 3,
+    "joel": 3,
+    "jonah": 3,
+    "zechariah": 3,
+    "chronicles2": 2,
+    "ezra": 2,
+    "kings1": 2,
+    "kings2": 2,
+    "proverbs": 2,
+    "habakkuk": 1,
+    "haggai": 1,
+    "judges": 1,
+    "micah": 1,
+    "samuel1": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
       "hebrew": "מִכֹּ֣ל הַבְּהֵמָ֣ה",
-      "pron": "브콜 바하모트",
+      "pron": "칼 베헤마",
       "lemmas": [
         "כֹּל",
         "בְּהֵמָה"
@@ -32,18 +57,17 @@
           "word": "מִכֹּ֣ל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
           "word": "הַבְּהֵמָ֣ה",
           "lemma": "בְּהֵמָה",
           "strong": "H929",
-          "pron": "바하모트"
+          "pron": "베헤마"
         }
       ],
-      "count": 9,
+      "count": 27,
       "refs": [
-        "psalms 148:10",
         "genesis 2:20",
         "genesis 3:14",
         "genesis 7:2",
@@ -51,124 +75,162 @@
         "genesis 8:1",
         "genesis 8:20",
         "genesis 34:23",
-        "genesis 36:6"
+        "genesis 36:6",
+        "exodus 22:10",
+        "leviticus 11:2",
+        "leviticus 11:26",
+        "leviticus 18:23"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וּבַבְּהֵמָה֙ וּבְכָל",
-      "pron": "바하모트 브콜",
+      "hebrew": "אָדָ֥ם וּבְהֵמָֽה",
+      "pron": "아담 베헤마",
       "lemmas": [
-        "בְּהֵמָה",
-        "כֹּל"
-      ],
-      "words": [
-        {
-          "word": "וּבַבְּהֵמָה֙",
-          "lemma": "בְּהֵמָה",
-          "strong": "H929",
-          "pron": "바하모트"
-        },
-        {
-          "word": "וּבְכָל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 1:26",
-        "genesis 3:14",
-        "genesis 8:17",
-        "genesis 9:10"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וּמִן הַבְּהֵמָה֙",
-      "pron": "밈메누 바하모트",
-      "lemmas": [
-        "מִן",
+        "אָדָם",
         "בְּהֵמָה"
       ],
       "words": [
         {
-          "word": "וּמִן",
-          "lemma": "מִן",
-          "strong": "H4480",
-          "pron": "밈메누"
+          "word": "אָדָ֥ם",
+          "lemma": "אָדָם",
+          "strong": "H120",
+          "pron": "아담"
         },
         {
-          "word": "הַבְּהֵמָה֙",
+          "word": "וּבְהֵמָֽה",
           "lemma": "בְּהֵמָה",
           "strong": "H929",
-          "pron": "바하모트"
+          "pron": "베헤마"
         }
       ],
-      "count": 4,
+      "count": 24,
       "refs": [
-        "genesis 6:20",
-        "genesis 7:2",
-        "genesis 7:8"
+        "exodus 8:17",
+        "exodus 8:18",
+        "exodus 9:10",
+        "exodus 9:19",
+        "exodus 13:2",
+        "leviticus 27:28",
+        "numbers 8:17",
+        "numbers 18:15",
+        "numbers 31:11",
+        "numbers 31:26",
+        "psalms 36:6",
+        "jeremiah 32:43"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בָּע֤וֹף וּבַבְּהֵמָה֙",
-      "pron": "옵 바하모트",
-      "lemmas": [
-        "עוֹף",
-        "בְּהֵמָה"
-      ],
-      "words": [
-        {
-          "word": "בָּע֤וֹף",
-          "lemma": "עוֹף",
-          "strong": "H5775",
-          "pron": "옵"
-        },
-        {
-          "word": "וּבַבְּהֵמָה֙",
-          "lemma": "בְּהֵמָה",
-          "strong": "H929",
-          "pron": "바하모트"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 7:21",
-        "genesis 8:17",
-        "genesis 9:10"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "הַבְּהֵמָ֡ה אֲ֠שֶׁר",
-      "pron": "바하모트 아셰르",
+      "hebrew": "הַבְּהֵמָ֔ה אֲשֶׁ֥ר",
+      "pron": "베헤마 아셰르",
       "lemmas": [
         "בְּהֵמָה",
         "אֲשֶׁר"
       ],
       "words": [
         {
-          "word": "הַבְּהֵמָ֡ה",
+          "word": "הַבְּהֵמָ֔ה",
           "lemma": "בְּהֵמָה",
           "strong": "H929",
-          "pron": "바하모트"
+          "pron": "베헤마"
         },
         {
-          "word": "אֲ֠שֶׁר",
+          "word": "אֲשֶׁ֥ר",
           "lemma": "אֲשֶׁר",
           "strong": "H834",
           "pron": "아셰르"
         }
       ],
-      "count": 3,
+      "count": 16,
       "refs": [
         "genesis 7:2",
         "genesis 7:8",
-        "genesis 8:1"
+        "genesis 8:1",
+        "exodus 9:19",
+        "exodus 13:12",
+        "leviticus 7:25",
+        "leviticus 11:2",
+        "leviticus 11:26",
+        "leviticus 11:39",
+        "leviticus 27:9",
+        "deuteronomy 4:17",
+        "deuteronomy 14:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעַד בְּהֵמָ֑ה",
+      "pron": "앋 베헤마",
+      "lemmas": [
+        "עַד",
+        "בְּהֵמָה"
+      ],
+      "words": [
+        {
+          "word": "וְעַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "בְּהֵמָ֑ה",
+          "lemma": "בְּהֵמָה",
+          "strong": "H929",
+          "pron": "베헤마"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "genesis 6:7",
+        "genesis 7:23",
+        "exodus 9:25",
+        "exodus 11:7",
+        "exodus 12:12",
+        "numbers 3:13",
+        "judges 20:48",
+        "psalms 135:8",
+        "jeremiah 9:10",
+        "jeremiah 33:12",
+        "jeremiah 50:3",
+        "jeremiah 51:62"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת הַבְּהֵמָה֙",
+      "pron": "에트 베헤마",
+      "lemmas": [
+        "אֵת",
+        "בְּהֵמָה"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַבְּהֵמָה֙",
+          "lemma": "בְּהֵמָה",
+          "strong": "H929",
+          "pron": "베헤마"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 1:25",
+        "leviticus 20:15",
+        "leviticus 20:16",
+        "leviticus 26:22",
+        "leviticus 27:11",
+        "numbers 3:41",
+        "numbers 3:45",
+        "deuteronomy 13:15",
+        "jeremiah 15:3",
+        "jeremiah 21:6",
+        "jeremiah 27:5"
       ],
       "glossKo": ""
     }

@@ -1,8 +1,8 @@
 {
   "lemma": "גְּמַרְיָה",
-  "pron": "게마레아",
+  "pron": "우게마레아",
   "strong": "H1587",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גָּמַר",
     "strong": "H1584",
@@ -18,7 +18,7 @@
     {
       "lemma": "גְּמַר",
       "strong": "H1585",
-      "pron": "",
+      "pron": "게미르",
       "glossKo": "완성하다(아람)"
     },
     {
@@ -30,7 +30,76 @@
   ],
   "defEn": "Gemarjah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "jeremiah": 5
+  },
+  "phrases": [
+    {
+      "hebrew": "וּגְמַרְיָ֖ה בֶּן",
+      "pron": "우게마레아 바님",
+      "lemmas": [
+        "גְּמַרְיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "וּגְמַרְיָ֖ה",
+          "lemma": "גְּמַרְיָה",
+          "strong": "H1587",
+          "pron": "우게마레아"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 29:3",
+        "jeremiah 36:10",
+        "jeremiah 36:11",
+        "jeremiah 36:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גְּמַרְיָהוּ֩ בֶן שָׁפָ֨ן",
+      "pron": "우게마레아 바님 아샤판",
+      "lemmas": [
+        "גְּמַרְיָה",
+        "בֵּן",
+        "שָׁפָן"
+      ],
+      "words": [
+        {
+          "word": "גְּמַרְיָהוּ֩",
+          "lemma": "גְּמַרְיָה",
+          "strong": "H1587",
+          "pron": "우게마레아"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "שָׁפָ֨ן",
+          "lemma": "שָׁפָן",
+          "strong": "H8227",
+          "pron": "아샤판"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 36:10",
+        "jeremiah 36:11",
+        "jeremiah 36:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "עַיִן",
-  "pron": "아인",
+  "pron": "라아인",
   "strong": "H5871",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עַיִן",
     "strong": "H5869",
@@ -12,43 +12,77 @@
     {
       "lemma": "מַעְיָן",
       "strong": "H4599",
-      "pron": "마에안",
+      "pron": "마에에노트",
       "glossKo": "샘"
     },
     {
       "lemma": "עָוַן",
       "strong": "H5770",
-      "pron": "",
+      "pron": "오엔",
       "glossKo": "엿보다"
     },
     {
       "lemma": "עַיִן",
       "strong": "H5869",
-      "pron": "에네카",
-      "glossKo": "너의 눈"
+      "pron": "에네켐",
+      "glossKo": "너희의 눈"
     },
     {
       "lemma": "עַיִן",
       "strong": "H5870",
-      "pron": "",
+      "pron": "브엔",
       "glossKo": "눈(아람)"
     },
     {
       "lemma": "עֵין גֶּדִי",
       "strong": "H5872",
-      "pron": "",
+      "pron": "브엔",
       "glossKo": "엔게디"
     },
     {
       "lemma": "עֵין גַּנִּים",
       "strong": "H5873",
-      "pron": "",
+      "pron": "브엔",
       "glossKo": "엔간님"
     }
   ],
   "defEn": "Ajin",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "joshua": 3,
+    "chronicles1": 1,
+    "numbers": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְעַ֣יִן וְרִמּ֑וֹן",
+      "pron": "라아인 브림몬",
+      "lemmas": [
+        "עַיִן",
+        "רִמּוֹן"
+      ],
+      "words": [
+        {
+          "word": "וְעַ֣יִן",
+          "lemma": "עַיִן",
+          "strong": "H5871",
+          "pron": "라아인"
+        },
+        {
+          "word": "וְרִמּ֑וֹן",
+          "lemma": "רִמּוֹן",
+          "strong": "H7417",
+          "pron": "브림몬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 15:32",
+        "joshua 19:7",
+        "chronicles1 4:32"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

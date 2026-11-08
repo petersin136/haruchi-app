@@ -12,13 +12,13 @@
     {
       "lemma": "אוֹת",
       "strong": "H226",
-      "pron": "메오토테카",
-      "glossKo": "너의 표징"
+      "pron": "르오토트",
+      "glossKo": "표징"
     },
     {
       "lemma": "אָת",
       "strong": "H852",
-      "pron": "",
+      "pron": "아타아",
       "glossKo": "표적(아람)"
     },
     {
@@ -30,21 +30,58 @@
     {
       "lemma": "יַת",
       "strong": "H3487",
-      "pron": "",
-      "glossKo": "목적사(아람)"
+      "pron": "야테혼",
+      "glossKo": "그들에게 목적사(아람)"
     }
   ],
   "defEn": "self; even; namely",
   "defKo": "",
-  "countOT": 1157,
+  "countOT": 10979,
   "byBook": {
+    "exodus": 1026,
     "genesis": 1005,
-    "psalms": 152
+    "jeremiah": 863,
+    "leviticus": 762,
+    "numbers": 704,
+    "deuteronomy": 656,
+    "ezekiel": 648,
+    "kings2": 593,
+    "joshua": 564,
+    "kings1": 551,
+    "samuel1": 539,
+    "chronicles2": 531,
+    "judges": 466,
+    "chronicles1": 454,
+    "samuel2": 399,
+    "isaiah": 223,
+    "psalms": 152,
+    "nehemiah": 129,
+    "esther": 114,
+    "zechariah": 104,
+    "ecclesiastes": 74,
+    "amos": 45,
+    "hosea": 44,
+    "job": 44,
+    "daniel": 39,
+    "malachi": 34,
+    "ruth": 33,
+    "ezra": 30,
+    "songofsolomon": 24,
+    "zephaniah": 22,
+    "proverbs": 21,
+    "haggai": 18,
+    "joel": 17,
+    "micah": 17,
+    "jonah": 14,
+    "obadiah": 9,
+    "lamentations": 7,
+    "habakkuk": 3,
+    "nahum": 1
   },
   "phrases": [
     {
       "hebrew": "אֶת כָּל",
-      "pron": "에트 브콜",
+      "pron": "에트 칼",
       "lemmas": [
         "אֵת",
         "כֹּל"
@@ -60,77 +97,39 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         }
       ],
-      "count": 89,
+      "count": 885,
       "refs": [
-        "psalms 3:7",
-        "psalms 33:13",
-        "psalms 67:7",
-        "psalms 72:19",
-        "psalms 132:1",
-        "psalms 145:20",
-        "psalms 146:6",
         "genesis 1:21",
         "genesis 1:25",
         "genesis 1:29",
         "genesis 1:30",
-        "genesis 1:31"
+        "genesis 1:31",
+        "genesis 2:6",
+        "genesis 2:11",
+        "genesis 2:13",
+        "genesis 2:19",
+        "genesis 4:15",
+        "genesis 7:4",
+        "genesis 7:23"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הוֹלִיד֣וֹ אֶת",
-      "pron": "옐릳티카 에트",
-      "lemmas": [
-        "יָלַד",
-        "אֵת"
-      ],
-      "words": [
-        {
-          "word": "הוֹלִיד֣וֹ",
-          "lemma": "יָלַד",
-          "strong": "H3205",
-          "pron": "옐릳티카"
-        },
-        {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        }
-      ],
-      "count": 60,
-      "refs": [
-        "genesis 4:1",
-        "genesis 4:2",
-        "genesis 4:17",
-        "genesis 4:18",
-        "genesis 4:22",
-        "genesis 5:4",
-        "genesis 5:6",
-        "genesis 5:7",
-        "genesis 5:9",
-        "genesis 5:10",
-        "genesis 5:12",
-        "genesis 5:13"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיִּתֶּן אֶת",
-      "pron": "잇텐 에트",
+      "hebrew": "נָתַ֥תִּי אֶת",
+      "pron": "바잇텐 에트",
       "lemmas": [
         "נָתַן",
         "אֵת"
       ],
       "words": [
         {
-          "word": "וַיִּתֶּן",
+          "word": "נָתַ֥תִּי",
           "lemma": "נָתַן",
           "strong": "H5414",
-          "pron": "잇텐"
+          "pron": "바잇텐"
         },
         {
           "word": "אֶת",
@@ -139,12 +138,8 @@
           "pron": "에트"
         }
       ],
-      "count": 41,
+      "count": 356,
       "refs": [
-        "psalms 79:2",
-        "psalms 105:11",
-        "psalms 106:46",
-        "psalms 145:15",
         "genesis 1:17",
         "genesis 1:29",
         "genesis 9:3",
@@ -152,23 +147,27 @@
         "genesis 15:7",
         "genesis 15:18",
         "genesis 16:3",
-        "genesis 23:9"
+        "genesis 23:9",
+        "genesis 24:7",
+        "genesis 24:36",
+        "genesis 26:3",
+        "genesis 27:17"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בָּרֲכ֣וּ אֶת",
-      "pron": "테바레크 에트",
+      "hebrew": "יְהוָ֖ה אֶת",
+      "pron": "여호와 에트",
       "lemmas": [
-        "בָּרַךְ",
+        "יְהֹוָה",
         "אֵת"
       ],
       "words": [
         {
-          "word": "בָּרֲכ֣וּ",
-          "lemma": "בָּרַךְ",
-          "strong": "H1288",
-          "pron": "테바레크"
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         },
         {
           "word": "אֶת",
@@ -177,36 +176,36 @@
           "pron": "에트"
         }
       ],
-      "count": 34,
+      "count": 328,
       "refs": [
-        "psalms 16:7",
-        "psalms 28:9",
-        "psalms 29:11",
-        "psalms 34:1",
-        "psalms 115:12",
-        "psalms 129:8",
-        "psalms 134:1",
-        "psalms 134:2",
-        "psalms 135:19",
-        "psalms 135:20",
-        "genesis 1:22",
-        "genesis 1:28"
+        "genesis 8:21",
+        "genesis 11:8",
+        "genesis 12:17",
+        "genesis 13:10",
+        "genesis 19:14",
+        "genesis 30:30",
+        "genesis 39:5",
+        "exodus 4:31",
+        "exodus 7:6",
+        "exodus 7:25",
+        "exodus 9:6",
+        "exodus 9:12"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַיִּקַּ֞ח אֶת",
-      "pron": "익카흐 에트",
+      "hebrew": "וַיַּ֥עַשׂ אֶת",
+      "pron": "바야아스 에트",
       "lemmas": [
-        "לָקַח",
+        "עָשָׂה",
         "אֵת"
       ],
       "words": [
         {
-          "word": "וַיִּקַּ֞ח",
-          "lemma": "לָקַח",
-          "strong": "H3947",
-          "pron": "익카흐"
+          "word": "וַיַּ֥עַשׂ",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
         },
         {
           "word": "אֶת",
@@ -215,20 +214,58 @@
           "pron": "에트"
         }
       ],
-      "count": 34,
+      "count": 291,
       "refs": [
-        "genesis 4:11",
-        "genesis 5:24",
-        "genesis 12:19",
-        "genesis 14:11",
-        "genesis 14:12",
-        "genesis 15:10",
-        "genesis 19:15",
-        "genesis 20:2",
-        "genesis 22:3",
-        "genesis 22:10",
-        "genesis 22:13",
-        "genesis 24:48"
+        "genesis 5:1",
+        "genesis 6:6",
+        "genesis 6:15",
+        "genesis 9:6",
+        "genesis 18:7",
+        "genesis 20:10",
+        "genesis 21:26",
+        "genesis 22:16",
+        "genesis 27:9",
+        "genesis 28:15",
+        "genesis 31:1",
+        "genesis 34:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הָאָ֔רֶץ",
+      "pron": "에트 하아레츠",
+      "lemmas": [
+        "אֵת",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הָאָ֔רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 266,
+      "refs": [
+        "genesis 1:1",
+        "genesis 1:28",
+        "genesis 6:12",
+        "genesis 9:1",
+        "genesis 12:7",
+        "genesis 13:6",
+        "genesis 15:7",
+        "genesis 15:18",
+        "genesis 17:8",
+        "genesis 24:7",
+        "genesis 28:4",
+        "genesis 34:21"
       ],
       "glossKo": ""
     }

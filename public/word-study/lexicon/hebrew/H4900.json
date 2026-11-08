@@ -1,6 +1,6 @@
 {
   "lemma": "מָשַׁךְ",
-  "pron": "브마셰크오",
+  "pron": "바임셰쿠",
   "strong": "H4900",
   "posKo": "동사",
   "root": null,
@@ -8,22 +8,127 @@
     {
       "lemma": "מוֹשְׁכָה",
       "strong": "H4189",
-      "pron": "",
+      "pron": "모셰코트",
       "glossKo": "그림"
     },
     {
       "lemma": "מֶשֶׁךְ",
       "strong": "H4901",
-      "pron": "메셰크",
+      "pron": "우메셰크",
       "glossKo": "씨 뿌림"
     }
   ],
   "defEn": "draw; sow; sound; prolong; develop; march; remove; delay; be tall",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 36,
   "byBook": {
+    "isaiah": 5,
     "psalms": 5,
-    "genesis": 1
+    "judges": 4,
+    "ezekiel": 3,
+    "job": 3,
+    "exodus": 2,
+    "hosea": 2,
+    "jeremiah": 2,
+    "amos": 1,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "genesis": 1,
+    "joshua": 1,
+    "kings1": 1,
+    "nehemiah": 1,
+    "proverbs": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹא מָשְׁכָ֖ה",
+      "pron": "로 바임셰쿠",
+      "lemmas": [
+        "לֹא",
+        "מָשַׁךְ"
+      ],
+      "words": [
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "מָשְׁכָ֖ה",
+          "lemma": "מָשַׁךְ",
+          "strong": "H4900",
+          "pron": "바임셰쿠"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 21:3",
+        "isaiah 13:22",
+        "ezekiel 12:25",
+        "ezekiel 12:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָשַׁ֤ךְ בַּקֶּ֨שֶׁת֙",
+      "pron": "바임셰쿠 카솃티",
+      "lemmas": [
+        "מָשַׁךְ",
+        "קֶשֶׁת"
+      ],
+      "words": [
+        {
+          "word": "מָשַׁ֤ךְ",
+          "lemma": "מָשַׁךְ",
+          "strong": "H4900",
+          "pron": "바임셰쿠"
+        },
+        {
+          "word": "בַּקֶּ֨שֶׁת֙",
+          "lemma": "קֶשֶׁת",
+          "strong": "H7198",
+          "pron": "카솃티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 22:34",
+        "chronicles2 18:33",
+        "isaiah 66:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְשֹׁ֣ךְ חַ֭סְדְּךָ",
+      "pron": "바임셰쿠 핫데카",
+      "lemmas": [
+        "מָשַׁךְ",
+        "חֶסֶד"
+      ],
+      "words": [
+        {
+          "word": "מְשֹׁ֣ךְ",
+          "lemma": "מָשַׁךְ",
+          "strong": "H4900",
+          "pron": "바임셰쿠"
+        },
+        {
+          "word": "חַ֭סְדְּךָ",
+          "lemma": "חֶסֶד",
+          "strong": "H2617",
+          "pron": "핫데카"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 36:10",
+        "psalms 109:12",
+        "jeremiah 31:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

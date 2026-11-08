@@ -2,7 +2,7 @@
   "lemma": "חֶלֶץ",
   "pron": "헬레츠",
   "strong": "H2503",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָלַץ",
     "strong": "H2502",
@@ -10,9 +10,15 @@
   },
   "family": [
     {
+      "lemma": "חֲלִיצָה",
+      "strong": "H2488",
+      "pron": "할리초탐",
+      "glossKo": "그들의 약탈물"
+    },
+    {
       "lemma": "חָלַץ",
       "strong": "H2502",
-      "pron": "할레차",
+      "pron": "브힐레추",
       "glossKo": "벗기다"
     },
     {
@@ -24,13 +30,16 @@
     {
       "lemma": "מַחֲלָצָה",
       "strong": "H4254",
-      "pron": "",
+      "pron": "아마할라초트",
       "glossKo": "예복"
     }
   ],
   "defEn": "Chelets",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 5,
+  "byBook": {
+    "chronicles1": 4,
+    "samuel2": 1
+  },
   "phrases": []
 }

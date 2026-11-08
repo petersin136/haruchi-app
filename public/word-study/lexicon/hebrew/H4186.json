@@ -1,6 +1,6 @@
 {
   "lemma": "מוֹשָׁב",
-  "pron": "우브모샵",
+  "pron": "모샤밤",
   "strong": "H4186",
   "posKo": "명사",
   "root": {
@@ -12,74 +12,191 @@
     {
       "lemma": "יוֹשִׁבְיָה",
       "strong": "H3143",
-      "pron": "",
+      "pron": "요십아",
       "glossKo": "요시뱌"
     },
     {
       "lemma": "יָשַׁב",
       "strong": "H3427",
-      "pron": "야샵",
+      "pron": "바예솁",
       "glossKo": "앉다"
     },
     {
       "lemma": "יֶשֶׁבְאָב",
       "strong": "H3428",
-      "pron": "",
+      "pron": "르예솁압",
       "glossKo": "예세브압"
     },
     {
       "lemma": "יֹשֵׁב בַּשֶּׁבֶת",
       "strong": "H3429",
-      "pron": "",
+      "pron": "요솁",
       "glossKo": "요셉밧세벳"
     },
     {
       "lemma": "יִשְׁבּוֹ בְּנֹב",
       "strong": "H3430",
-      "pron": "",
+      "pron": "브윗브브",
       "glossKo": "이스비브놉"
     },
     {
       "lemma": "יׇשְׁבְּקָשָׁה",
       "strong": "H3436",
-      "pron": "",
+      "pron": "야솁베카샤",
       "glossKo": "요스브가사"
     }
   ],
   "defEn": "seat; site; session",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 44,
   "byBook": {
+    "leviticus": 9,
+    "ezekiel": 7,
     "psalms": 6,
-    "genesis": 3
+    "exodus": 4,
+    "numbers": 4,
+    "chronicles1": 3,
+    "genesis": 3,
+    "samuel1": 3,
+    "chronicles2": 1,
+    "job": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "עִ֥יר מ֝וֹשָׁ֗ב",
-      "pron": "브아림 우브모샵",
+      "hebrew": "בְּכֹל֙ מוֹשְׁבֹ֣תֵיכֶ֔ם",
+      "pron": "칼 모샤밤",
+      "lemmas": [
+        "כֹּל",
+        "מוֹשָׁב"
+      ],
+      "words": [
+        {
+          "word": "בְּכֹל֙",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מוֹשְׁבֹ֣תֵיכֶ֔ם",
+          "lemma": "מוֹשָׁב",
+          "strong": "H4186",
+          "pron": "모샤밤"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "exodus 12:20",
+        "exodus 35:3",
+        "leviticus 3:17",
+        "leviticus 7:26",
+        "leviticus 23:3",
+        "leviticus 23:14",
+        "leviticus 23:21",
+        "leviticus 23:31",
+        "numbers 35:29",
+        "samuel2 9:12",
+        "ezekiel 6:6",
+        "ezekiel 6:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָרֵיהֶם֙ בְּמ֣וֹשְׁבֹתָ֔ם",
+      "pron": "이르 모샤밤",
       "lemmas": [
         "עִיר",
         "מוֹשָׁב"
       ],
       "words": [
         {
-          "word": "עִ֥יר",
+          "word": "עָרֵיהֶם֙",
           "lemma": "עִיר",
           "strong": "H5892",
-          "pron": "브아림"
+          "pron": "이르"
         },
         {
-          "word": "מ֝וֹשָׁ֗ב",
+          "word": "בְּמ֣וֹשְׁבֹתָ֔ם",
           "lemma": "מוֹשָׁב",
           "strong": "H4186",
-          "pron": "우브모샵"
+          "pron": "모샤밤"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 31:10",
+        "psalms 107:4",
+        "psalms 107:7",
+        "psalms 107:36",
+        "ezekiel 48:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְדֹרֹ֣תֵיכֶ֔ם בְּכֹ֖ל מֽוֹשְׁבֹתֵיכֶ֑ם",
+      "pron": "베도로타으브 칼 모샤밤",
+      "lemmas": [
+        "דּוֹר",
+        "כֹּל",
+        "מוֹשָׁב"
+      ],
+      "words": [
+        {
+          "word": "לְדֹרֹ֣תֵיכֶ֔ם",
+          "lemma": "דּוֹר",
+          "strong": "H1755",
+          "pron": "베도로타으브"
+        },
+        {
+          "word": "בְּכֹ֖ל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מֽוֹשְׁבֹתֵיכֶ֑ם",
+          "lemma": "מוֹשָׁב",
+          "strong": "H4186",
+          "pron": "모샤밤"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 3:17",
+        "leviticus 23:14",
+        "leviticus 23:31",
+        "numbers 35:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מוֹשַׁב֙ עִ֣יר",
+      "pron": "모샤밤 이르",
+      "lemmas": [
+        "מוֹשָׁב",
+        "עִיר"
+      ],
+      "words": [
+        {
+          "word": "מוֹשַׁב֙",
+          "lemma": "מוֹשָׁב",
+          "strong": "H4186",
+          "pron": "모샤밤"
+        },
+        {
+          "word": "עִ֣יר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 107:4",
-        "psalms 107:7",
-        "psalms 107:36"
+        "leviticus 25:29",
+        "kings2 2:19",
+        "ezekiel 6:6"
       ],
       "glossKo": ""
     }

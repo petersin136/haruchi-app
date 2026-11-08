@@ -1,6 +1,6 @@
 {
   "lemma": "הָמָה",
-  "pron": "예헤마우느",
+  "pron": "호마",
   "strong": "H1993",
   "posKo": "동사",
   "root": {
@@ -12,32 +12,57 @@
     {
       "lemma": "הוּם",
       "strong": "H1949",
-      "pron": "브아히마",
+      "pron": "바테홈",
       "glossKo": "소동하다"
+    },
+    {
+      "lemma": "הֵם",
+      "strong": "H1991",
+      "pron": "메헤메헴",
+      "glossKo": "그들의 풍부"
+    },
+    {
+      "lemma": "הָמוֹן",
+      "strong": "H1995",
+      "pron": "하몬",
+      "glossKo": "무리"
+    },
+    {
+      "lemma": "הֶמְיָה",
+      "strong": "H1998",
+      "pron": "헴아트",
+      "glossKo": "소음"
     },
     {
       "lemma": "הָמַם",
       "strong": "H2000",
-      "pron": "바예훔메므",
-      "glossKo": "그들에게 혼란케 하다"
+      "pron": "바야함",
+      "glossKo": "혼란케 하다"
     },
     {
       "lemma": "מְהוּמָה",
       "strong": "H4103",
-      "pron": "",
+      "pron": "메후마",
       "glossKo": "혼란"
     }
   ],
   "defEn": "make a loud sound",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 34,
   "byBook": {
-    "psalms": 11
+    "psalms": 11,
+    "jeremiah": 9,
+    "isaiah": 6,
+    "proverbs": 4,
+    "ezekiel": 1,
+    "kings1": 1,
+    "songofsolomon": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
       "hebrew": "תֶּהֱמִ֪י עָ֫לָ֥י",
-      "pron": "예헤마우느 알",
+      "pron": "호마 알",
       "lemmas": [
         "הָמָה",
         "עַל"
@@ -47,7 +72,7 @@
           "word": "תֶּהֱמִ֪י",
           "lemma": "הָמָה",
           "strong": "H1993",
-          "pron": "예헤마우느"
+          "pron": "호마"
         },
         {
           "word": "עָ֫לָ֥י",
@@ -56,17 +81,82 @@
           "pron": "알"
         }
       ],
-      "count": 3,
+      "count": 7,
       "refs": [
         "psalms 42:5",
         "psalms 42:11",
-        "psalms 43:5"
+        "psalms 43:5",
+        "songofsolomon 5:4",
+        "jeremiah 6:23",
+        "jeremiah 48:36",
+        "jeremiah 50:42"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַּיָּ֣ם יֶהֱמֶ֔ה",
+      "pron": "얌밈 호마",
+      "lemmas": [
+        "יָם",
+        "הָמָה"
+      ],
+      "words": [
+        {
+          "word": "כַּיָּ֣ם",
+          "lemma": "יָם",
+          "strong": "H3220",
+          "pron": "얌밈"
+        },
+        {
+          "word": "יֶהֱמֶ֔ה",
+          "lemma": "הָמָה",
+          "strong": "H1993",
+          "pron": "호마"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "isaiah 17:12",
+        "isaiah 51:15",
+        "jeremiah 6:23",
+        "jeremiah 31:35",
+        "jeremiah 50:42"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֶּהֱמ֖וּ גַּלָּ֑יו",
+      "pron": "호마 갈",
+      "lemmas": [
+        "הָמָה",
+        "גַּל"
+      ],
+      "words": [
+        {
+          "word": "וַיֶּהֱמ֖וּ",
+          "lemma": "הָמָה",
+          "strong": "H1993",
+          "pron": "호마"
+        },
+        {
+          "word": "גַּלָּ֑יו",
+          "lemma": "גַּל",
+          "strong": "H1530",
+          "pron": "갈"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 51:15",
+        "jeremiah 5:22",
+        "jeremiah 31:35",
+        "jeremiah 51:55"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "תֶּהֱמִ֪י עָ֫לָ֥י הוֹחִ֣ילִי",
-      "pron": "예헤마우느 알 아메아할림",
+      "pron": "호마 알 바이아헬",
       "lemmas": [
         "הָמָה",
         "עַל",
@@ -77,7 +167,7 @@
           "word": "תֶּהֱמִ֪י",
           "lemma": "הָמָה",
           "strong": "H1993",
-          "pron": "예헤마우느"
+          "pron": "호마"
         },
         {
           "word": "עָ֫לָ֥י",
@@ -89,7 +179,7 @@
           "word": "הוֹחִ֣ילִי",
           "lemma": "יָחַל",
           "strong": "H3176",
-          "pron": "아메아할림"
+          "pron": "바이아헬"
         }
       ],
       "count": 3,

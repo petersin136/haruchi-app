@@ -1,6 +1,6 @@
 {
   "lemma": "מָצוּד",
-  "pron": "우메추다티위",
+  "pron": "바메추다",
   "strong": "H4686",
   "posKo": "명사",
   "root": {
@@ -12,20 +12,25 @@
     {
       "lemma": "מָצוֹד",
       "strong": "H4685",
-      "pron": "",
+      "pron": "메촏",
       "glossKo": "그물"
     }
   ],
   "defEn": "net; capture",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 23,
   "byBook": {
-    "psalms": 7
+    "psalms": 7,
+    "samuel2": 5,
+    "ezekiel": 4,
+    "samuel1": 3,
+    "chronicles1": 2,
+    "job": 2
   },
   "phrases": [
     {
-      "hebrew": "סַֽלְעִ֥י וּמְצוּדָתִ֗י",
-      "pron": "살이위 우메추다티위",
+      "hebrew": "סַֽלְעִ֥י וּמְצֻדָתִ֖י",
+      "pron": "아셀라 바메추다",
       "lemmas": [
         "סֶלַע",
         "מָצוּד"
@@ -35,17 +40,19 @@
           "word": "סַֽלְעִ֥י",
           "lemma": "סֶלַע",
           "strong": "H5553",
-          "pron": "살이위"
+          "pron": "아셀라"
         },
         {
-          "word": "וּמְצוּדָתִ֗י",
+          "word": "וּמְצֻדָתִ֖י",
           "lemma": "מָצוּד",
           "strong": "H4686",
-          "pron": "우메추다티위"
+          "pron": "바메추다"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
+        "samuel2 22:2",
+        "job 39:28",
         "psalms 18:2",
         "psalms 31:3",
         "psalms 71:3"

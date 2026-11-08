@@ -1,6 +1,6 @@
 {
   "lemma": "אָמַן",
-  "pron": "에무님",
+  "pron": "브헤에민",
   "strong": "H539",
   "posKo": "동사",
   "root": {
@@ -12,31 +12,31 @@
     {
       "lemma": "אָמוֹן",
       "strong": "H525",
-      "pron": "",
+      "pron": "아몬",
       "glossKo": "건축자"
     },
     {
       "lemma": "אֵמוּן",
       "strong": "H529",
-      "pron": "",
+      "pron": "에문",
       "glossKo": "신실함"
     },
     {
       "lemma": "אֲמַן",
       "strong": "H540",
-      "pron": "",
+      "pron": "우메헤만",
       "glossKo": "믿다(아람)"
     },
     {
       "lemma": "אָמַן",
       "strong": "H541",
-      "pron": "",
+      "pron": "타아미누",
       "glossKo": "오른편으로 가다"
     },
     {
       "lemma": "אָמָן",
       "strong": "H542",
-      "pron": "",
+      "pron": "암만",
       "glossKo": "장인"
     },
     {
@@ -48,70 +48,201 @@
   ],
   "defEn": "build up; support; foster; render; be; firm; trust; permanent; be true",
   "defKo": "",
-  "countOT": 20,
+  "countOT": 108,
   "byBook": {
     "psalms": 17,
-    "genesis": 3
+    "isaiah": 15,
+    "job": 10,
+    "exodus": 8,
+    "chronicles2": 7,
+    "deuteronomy": 6,
+    "samuel1": 6,
+    "proverbs": 5,
+    "jeremiah": 4,
+    "numbers": 4,
+    "genesis": 3,
+    "kings1": 3,
+    "kings2": 3,
+    "samuel2": 3,
+    "chronicles1": 2,
+    "hosea": 2,
+    "lamentations": 2,
+    "nehemiah": 2,
+    "esther": 1,
+    "habakkuk": 1,
+    "jonah": 1,
+    "judges": 1,
+    "micah": 1,
+    "ruth": 1
   },
   "phrases": [
     {
-      "hebrew": "וְלֹא נֶאֶמְנָ֖ה",
-      "pron": "로 에무님",
+      "hebrew": "וְלֹֽא הֶאֱמַ֣נְתִּי",
+      "pron": "로 브헤에민",
       "lemmas": [
         "לֹא",
         "אָמַן"
       ],
       "words": [
         {
-          "word": "וְלֹא",
+          "word": "וְלֹֽא",
           "lemma": "לֹא",
           "strong": "H3808",
           "pron": "로"
         },
         {
-          "word": "נֶאֶמְנָ֖ה",
+          "word": "הֶאֱמַ֣נְתִּי",
           "lemma": "אָמַן",
           "strong": "H539",
-          "pron": "에무님"
+          "pron": "브헤에민"
         }
       ],
-      "count": 6,
+      "count": 30,
       "refs": [
-        "psalms 78:8",
-        "psalms 78:22",
-        "psalms 78:32",
-        "psalms 78:37",
-        "psalms 106:24",
-        "genesis 45:26"
+        "genesis 45:26",
+        "exodus 4:1",
+        "exodus 4:8",
+        "exodus 4:9",
+        "numbers 14:11",
+        "numbers 20:12",
+        "deuteronomy 9:23",
+        "deuteronomy 28:66",
+        "judges 11:20",
+        "kings1 10:7",
+        "kings2 17:14",
+        "chronicles2 9:6"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַיַּאֲמִ֥ינוּ בִדְבָרָ֑יו",
-      "pron": "에무님 딥레",
+      "hebrew": "יַאֲמִ֔ינוּ כִּֽי",
+      "pron": "브헤에민 키",
+      "lemmas": [
+        "אָמַן",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "יַאֲמִ֔ינוּ",
+          "lemma": "אָמַן",
+          "strong": "H539",
+          "pron": "브헤에민"
+        },
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 4:5",
+        "samuel1 25:28",
+        "chronicles2 32:15",
+        "job 9:16",
+        "job 39:12",
+        "job 39:24",
+        "psalms 116:10",
+        "proverbs 26:25",
+        "isaiah 7:9",
+        "jeremiah 12:6",
+        "habakkuk 1:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יֵֽאָמֵן֙ דְּבָ֣רְךָ֔",
+      "pron": "브헤에민 우데바림",
       "lemmas": [
         "אָמַן",
         "דָּבָר"
       ],
       "words": [
         {
-          "word": "וַיַּאֲמִ֥ינוּ",
+          "word": "יֵֽאָמֵן֙",
           "lemma": "אָמַן",
           "strong": "H539",
-          "pron": "에무님"
+          "pron": "브헤에민"
         },
         {
-          "word": "בִדְבָרָ֑יו",
+          "word": "דְּבָ֣רְךָ֔",
           "lemma": "דָּבָר",
           "strong": "H1697",
-          "pron": "딥레"
+          "pron": "우데바림"
         }
       ],
-      "count": 3,
+      "count": 7,
       "refs": [
+        "genesis 42:20",
+        "kings1 10:7",
+        "chronicles2 1:9",
+        "chronicles2 6:17",
+        "chronicles2 9:6",
         "psalms 106:12",
-        "psalms 106:24",
-        "genesis 42:20"
+        "psalms 106:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּיתִ֖י נֶאֱמָ֥ן",
+      "pron": "미바이트 브헤에민",
+      "lemmas": [
+        "בַּיִת",
+        "אָמַן"
+      ],
+      "words": [
+        {
+          "word": "בֵּיתִ֖י",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "נֶאֱמָ֥ן",
+          "lemma": "אָמַן",
+          "strong": "H539",
+          "pron": "브헤에민"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 12:7",
+        "samuel1 2:35",
+        "samuel1 25:28",
+        "kings1 11:38",
+        "chronicles1 17:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאַל תַּאֲמִ֣ינוּ",
+      "pron": "엘 브헤에민",
+      "lemmas": [
+        "אַל",
+        "אָמַן"
+      ],
+      "words": [
+        {
+          "word": "וְאַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "תַּאֲמִ֣ינוּ",
+          "lemma": "אָמַן",
+          "strong": "H539",
+          "pron": "브헤에민"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "chronicles2 32:15",
+        "job 15:31",
+        "proverbs 26:25",
+        "jeremiah 12:6",
+        "micah 7:5"
       ],
       "glossKo": ""
     }

@@ -12,8 +12,8 @@
     {
       "lemma": "גּוּר",
       "strong": "H1481",
-      "pron": "예구르카",
-      "glossKo": "너에게 거류하다"
+      "pron": "라구르",
+      "glossKo": "거류하다"
     },
     {
       "lemma": "גּוּר",
@@ -24,19 +24,19 @@
     {
       "lemma": "גּוּר־בַּעַל",
       "strong": "H1485",
-      "pron": "",
+      "pron": "브구르",
       "glossKo": "구르바알"
     },
     {
       "lemma": "גֵּרוּת",
       "strong": "H1628",
-      "pron": "",
+      "pron": "브게루트",
       "glossKo": "거주"
     },
     {
       "lemma": "יָגוּר",
       "strong": "H3017",
-      "pron": "",
+      "pron": "브야구르",
       "glossKo": "야굴"
     },
     {
@@ -48,10 +48,228 @@
   ],
   "defEn": "guest",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 92,
   "byBook": {
+    "deuteronomy": 22,
+    "leviticus": 21,
+    "exodus": 12,
+    "numbers": 11,
+    "ezekiel": 5,
     "psalms": 4,
-    "genesis": 2
+    "jeremiah": 3,
+    "joshua": 3,
+    "chronicles1": 2,
+    "chronicles2": 2,
+    "genesis": 2,
+    "isaiah": 1,
+    "job": 1,
+    "malachi": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְלַגֵּ֖ר הַגָּ֥ר",
+      "pron": "게르 라구르",
+      "lemmas": [
+        "גֵּר",
+        "גּוּר"
+      ],
+      "words": [
+        {
+          "word": "וְלַגֵּ֖ר",
+          "lemma": "גֵּר",
+          "strong": "H1616",
+          "pron": "게르"
+        },
+        {
+          "word": "הַגָּ֥ר",
+          "lemma": "גּוּר",
+          "strong": "H1481",
+          "pron": "라구르"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "exodus 12:49",
+        "leviticus 16:29",
+        "leviticus 17:10",
+        "leviticus 17:12",
+        "leviticus 17:13",
+        "leviticus 18:26",
+        "leviticus 19:34",
+        "leviticus 20:2",
+        "numbers 15:15",
+        "numbers 15:16",
+        "numbers 15:26",
+        "numbers 15:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַגֵּ֛ר לַיָּת֥וֹם",
+      "pron": "게르 브야톰",
+      "lemmas": [
+        "גֵּר",
+        "יָתוֹם"
+      ],
+      "words": [
+        {
+          "word": "לַגֵּ֛ר",
+          "lemma": "גֵּר",
+          "strong": "H1616",
+          "pron": "게르"
+        },
+        {
+          "word": "לַיָּת֥וֹם",
+          "lemma": "יָתוֹם",
+          "strong": "H3490",
+          "pron": "브야톰"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "deuteronomy 14:29",
+        "deuteronomy 16:11",
+        "deuteronomy 16:14",
+        "deuteronomy 24:17",
+        "deuteronomy 24:19",
+        "deuteronomy 24:20",
+        "deuteronomy 24:21",
+        "deuteronomy 26:12",
+        "deuteronomy 26:13",
+        "deuteronomy 27:19",
+        "psalms 146:9",
+        "jeremiah 7:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְגֵרְךָ֖ אֲשֶׁ֥ר",
+      "pron": "게르 아셰르",
+      "lemmas": [
+        "גֵּר",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "וְגֵרְךָ֖",
+          "lemma": "גֵּר",
+          "strong": "H1616",
+          "pron": "게르"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 20:10",
+        "leviticus 17:8",
+        "deuteronomy 5:14",
+        "deuteronomy 14:21",
+        "deuteronomy 24:14",
+        "deuteronomy 26:11",
+        "deuteronomy 28:43",
+        "deuteronomy 29:11",
+        "deuteronomy 31:12",
+        "chronicles1 22:2",
+        "chronicles2 2:17",
+        "ezekiel 14:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַגֵּ֛ר לַיָּת֥וֹם וְלָאַלְמָנָ֖ה",
+      "pron": "게르 브야톰 알마나",
+      "lemmas": [
+        "גֵּר",
+        "יָתוֹם",
+        "אַלְמָנָה"
+      ],
+      "words": [
+        {
+          "word": "לַגֵּ֛ר",
+          "lemma": "גֵּר",
+          "strong": "H1616",
+          "pron": "게르"
+        },
+        {
+          "word": "לַיָּת֥וֹם",
+          "lemma": "יָתוֹם",
+          "strong": "H3490",
+          "pron": "브야톰"
+        },
+        {
+          "word": "וְלָאַלְמָנָ֖ה",
+          "lemma": "אַלְמָנָה",
+          "strong": "H490",
+          "pron": "알마나"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "deuteronomy 14:29",
+        "deuteronomy 16:11",
+        "deuteronomy 16:14",
+        "deuteronomy 24:19",
+        "deuteronomy 24:20",
+        "deuteronomy 24:21",
+        "deuteronomy 26:12",
+        "deuteronomy 26:13",
+        "deuteronomy 27:19",
+        "psalms 146:9",
+        "jeremiah 7:6",
+        "jeremiah 22:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהַגֵּ֖ר הַגָּ֥ר בְּתוֹכְכֶֽם",
+      "pron": "게르 라구르 브토크",
+      "lemmas": [
+        "גֵּר",
+        "גּוּר",
+        "תָּוֶךְ"
+      ],
+      "words": [
+        {
+          "word": "וְהַגֵּ֖ר",
+          "lemma": "גֵּר",
+          "strong": "H1616",
+          "pron": "게르"
+        },
+        {
+          "word": "הַגָּ֥ר",
+          "lemma": "גּוּר",
+          "strong": "H1481",
+          "pron": "라구르"
+        },
+        {
+          "word": "בְּתוֹכְכֶֽם",
+          "lemma": "תָּוֶךְ",
+          "strong": "H8432",
+          "pron": "브토크"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 12:49",
+        "leviticus 16:29",
+        "leviticus 17:10",
+        "leviticus 17:12",
+        "leviticus 17:13",
+        "leviticus 18:26",
+        "numbers 15:26",
+        "numbers 15:29",
+        "numbers 19:10",
+        "joshua 20:9",
+        "ezekiel 47:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

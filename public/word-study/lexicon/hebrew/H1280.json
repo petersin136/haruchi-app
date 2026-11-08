@@ -1,6 +1,6 @@
 {
   "lemma": "בְּרִיחַ",
-  "pron": "우베리헤",
+  "pron": "베리힘",
   "strong": "H1280",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,203 @@
     {
       "lemma": "בָּרַח",
       "strong": "H1272",
-      "pron": "브바레흐오",
-      "glossKo": "그에게 도망하다"
+      "pron": "바팁라흐",
+      "glossKo": "도망하다"
     },
     {
       "lemma": "בָּרִיחַ",
       "strong": "H1281",
-      "pron": "",
+      "pron": "바리아흐",
       "glossKo": "도망친"
     },
     {
       "lemma": "מִבְרָח",
       "strong": "H4015",
-      "pron": "",
-      "glossKo": "도망"
+      "pron": "믑릏브",
+      "glossKo": "그의 도망"
     }
   ],
   "defEn": "bolt",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 42,
   "byBook": {
-    "psalms": 2
+    "exodus": 16,
+    "nehemiah": 5,
+    "chronicles2": 2,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "numbers": 2,
+    "psalms": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "job": 1,
+    "jonah": 1,
+    "judges": 1,
+    "kings1": 1,
+    "lamentations": 1,
+    "nahum": 1,
+    "proverbs": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת הַבְּרִיחִ֖ם",
+      "pron": "에트 베리힘",
+      "lemmas": [
+        "אֵת",
+        "בְּרִיחַ"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַבְּרִיחִ֖ם",
+          "lemma": "בְּרִיחַ",
+          "strong": "H1280",
+          "pron": "베리힘"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 26:29",
+        "exodus 35:11",
+        "exodus 36:33",
+        "exodus 36:34",
+        "exodus 40:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דַּלְתֹתָ֔יו מַנְעֻלָ֖יו וּבְרִיחָ֑יו",
+      "pron": "브아델레트 만울라으브 베리힘",
+      "lemmas": [
+        "דֶּלֶת",
+        "מַנְעוּל",
+        "בְּרִיחַ"
+      ],
+      "words": [
+        {
+          "word": "דַּלְתֹתָ֔יו",
+          "lemma": "דֶּלֶת",
+          "strong": "H1817",
+          "pron": "브아델레트"
+        },
+        {
+          "word": "מַנְעֻלָ֖יו",
+          "lemma": "מַנְעוּל",
+          "strong": "H4514",
+          "pron": "만울라으브"
+        },
+        {
+          "word": "וּבְרִיחָ֑יו",
+          "lemma": "בְּרִיחַ",
+          "strong": "H1280",
+          "pron": "베리힘"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "nehemiah 3:3",
+        "nehemiah 3:6",
+        "nehemiah 3:13",
+        "nehemiah 3:14",
+        "nehemiah 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַנְעֻלָ֖יו וּבְרִיחָ֑יו",
+      "pron": "만울라으브 베리힘",
+      "lemmas": [
+        "מַנְעוּל",
+        "בְּרִיחַ"
+      ],
+      "words": [
+        {
+          "word": "מַנְעֻלָ֖יו",
+          "lemma": "מַנְעוּל",
+          "strong": "H4514",
+          "pron": "만울라으브"
+        },
+        {
+          "word": "וּבְרִיחָ֑יו",
+          "lemma": "בְּרִיחַ",
+          "strong": "H1280",
+          "pron": "베리힘"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "nehemiah 3:3",
+        "nehemiah 3:6",
+        "nehemiah 3:13",
+        "nehemiah 3:14",
+        "nehemiah 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשַׁבֵּ֔ר וּבְרִיחֵ֥י",
+      "pron": "리솁보르 베리힘",
+      "lemmas": [
+        "שָׁבַר",
+        "בְּרִיחַ"
+      ],
+      "words": [
+        {
+          "word": "אֲשַׁבֵּ֔ר",
+          "lemma": "שָׁבַר",
+          "strong": "H7665",
+          "pron": "리솁보르"
+        },
+        {
+          "word": "וּבְרִיחֵ֥י",
+          "lemma": "בְּרִיחַ",
+          "strong": "H1280",
+          "pron": "베리힘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 45:2",
+        "jeremiah 51:30",
+        "lamentations 2:9",
+        "amos 1:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְרִיחִ֔ם לְקַרְשֵׁ֥י",
+      "pron": "베리힘 아케라심",
+      "lemmas": [
+        "בְּרִיחַ",
+        "קֶרֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "בְרִיחִ֔ם",
+          "lemma": "בְּרִיחַ",
+          "strong": "H1280",
+          "pron": "베리힘"
+        },
+        {
+          "word": "לְקַרְשֵׁ֥י",
+          "lemma": "קֶרֶשׁ",
+          "strong": "H7175",
+          "pron": "아케라심"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 26:27",
+        "exodus 36:32"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

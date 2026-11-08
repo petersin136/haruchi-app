@@ -12,15 +12,118 @@
     {
       "lemma": "כַּעַס",
       "strong": "H3707",
-      "pron": "바야케이수후",
+      "pron": "레하케이소",
       "glossKo": "그에게 노하게 하다"
     }
   ],
   "defEn": "vexation",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 25,
   "byBook": {
-    "psalms": 4
+    "ecclesiastes": 5,
+    "job": 4,
+    "proverbs": 4,
+    "psalms": 4,
+    "deuteronomy": 2,
+    "kings1": 2,
+    "samuel1": 2,
+    "ezekiel": 1,
+    "kings2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּכַעְס֕וֹ אֲשֶׁ֣ר",
+      "pron": "미카앗 아셰르",
+      "lemmas": [
+        "כַּעַס",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "בְּכַעְס֕וֹ",
+          "lemma": "כַּעַס",
+          "strong": "H3708",
+          "pron": "미카앗"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 15:30",
+        "kings1 21:22",
+        "kings2 23:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכַעְס֕וֹ אֲשֶׁ֣ר הִכְעִ֔יס",
+      "pron": "미카앗 아셰르 레하케이소",
+      "lemmas": [
+        "כַּעַס",
+        "אֲשֶׁר",
+        "כַּעַס"
+      ],
+      "words": [
+        {
+          "word": "בְּכַעְס֕וֹ",
+          "lemma": "כַּעַס",
+          "strong": "H3708",
+          "pron": "미카앗"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הִכְעִ֔יס",
+          "lemma": "כַּעַס",
+          "strong": "H3707",
+          "pron": "레하케이소"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 15:30",
+        "kings1 21:22",
+        "kings2 23:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִכַּ֣עַשׂ עֵינִ֑י",
+      "pron": "미카앗 에네켐",
+      "lemmas": [
+        "כַּעַס",
+        "עַיִן"
+      ],
+      "words": [
+        {
+          "word": "מִכַּ֣עַשׂ",
+          "lemma": "כַּעַס",
+          "strong": "H3708",
+          "pron": "미카앗"
+        },
+        {
+          "word": "עֵינִ֑י",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 17:7",
+        "psalms 6:7",
+        "psalms 31:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

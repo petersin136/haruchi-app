@@ -1,6 +1,6 @@
 {
   "lemma": "קַיִץ",
-  "pron": "카이츠",
+  "pron": "브카이츠",
   "strong": "H7019",
   "posKo": "명사",
   "root": {
@@ -12,40 +12,83 @@
     {
       "lemma": "קוֹעַ",
       "strong": "H6970",
-      "pron": "",
+      "pron": "브코아",
       "glossKo": "고아"
     },
     {
       "lemma": "קוּץ",
       "strong": "H6972",
-      "pron": "",
+      "pron": "브카츠",
       "glossKo": "끊다"
     },
     {
       "lemma": "קוֹץ",
       "strong": "H6975",
-      "pron": "코침",
+      "pron": "브코츠",
       "glossKo": "가시"
     },
     {
       "lemma": "קְוֻצָּה",
       "strong": "H6977",
-      "pron": "",
-      "glossKo": "곱슬머리"
+      "pron": "케붓초타이",
+      "glossKo": "나의 곱슬머리"
+    },
+    {
+      "lemma": "קַיִט",
+      "strong": "H7007",
+      "pron": "카읻",
+      "glossKo": "여름(아람)"
     },
     {
       "lemma": "קִיצוֹן",
       "strong": "H7020",
-      "pron": "",
+      "pron": "아키초나",
       "glossKo": "끝"
     }
   ],
   "defEn": "harvest",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 20,
   "byBook": {
+    "jeremiah": 4,
+    "proverbs": 4,
+    "amos": 3,
+    "isaiah": 2,
     "psalms": 2,
-    "genesis": 1
+    "samuel2": 2,
+    "genesis": 1,
+    "micah": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְקַ֧יִץ וָחֹ֛רֶף",
+      "pron": "브카이츠 바호렙",
+      "lemmas": [
+        "קַיִץ",
+        "חֹרֶף"
+      ],
+      "words": [
+        {
+          "word": "וְקַ֧יִץ",
+          "lemma": "קַיִץ",
+          "strong": "H7019",
+          "pron": "브카이츠"
+        },
+        {
+          "word": "וָחֹ֛רֶף",
+          "lemma": "חֹרֶף",
+          "strong": "H2779",
+          "pron": "바호렙"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 8:22",
+        "psalms 74:17",
+        "zechariah 14:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

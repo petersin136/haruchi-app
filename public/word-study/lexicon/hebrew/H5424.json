@@ -2,7 +2,7 @@
   "lemma": "נֶתֶק",
   "pron": "네테크",
   "strong": "H5424",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נָתַק",
     "strong": "H5423",
@@ -12,19 +12,145 @@
     {
       "lemma": "אַתּוּק",
       "strong": "H862",
-      "pron": "",
-      "glossKo": "복도(아람)"
+      "pron": "븟브키흐",
+      "glossKo": "그녀의 복도(아람)"
     },
     {
       "lemma": "נָתַק",
       "strong": "H5423",
-      "pron": "네낫테카",
+      "pron": "브나투크",
       "glossKo": "끊어내다"
     }
   ],
   "defEn": "scurf",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "leviticus": 14
+  },
+  "phrases": [
+    {
+      "hebrew": "פָשָׂ֣ה הַנֶּ֔תֶק",
+      "pron": "파사 네테크",
+      "lemmas": [
+        "פָּשָׂה",
+        "נֶתֶק"
+      ],
+      "words": [
+        {
+          "word": "פָשָׂ֣ה",
+          "lemma": "פָּשָׂה",
+          "strong": "H6581",
+          "pron": "파사"
+        },
+        {
+          "word": "הַנֶּ֔תֶק",
+          "lemma": "נֶתֶק",
+          "strong": "H5424",
+          "pron": "네테크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 13:32",
+        "leviticus 13:34",
+        "leviticus 13:35",
+        "leviticus 13:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַנֶּ֖תֶק בָּע֑וֹר",
+      "pron": "네테크 오르",
+      "lemmas": [
+        "נֶתֶק",
+        "עוֹר"
+      ],
+      "words": [
+        {
+          "word": "הַנֶּ֖תֶק",
+          "lemma": "נֶתֶק",
+          "strong": "H5424",
+          "pron": "네테크"
+        },
+        {
+          "word": "בָּע֑וֹר",
+          "lemma": "עוֹר",
+          "strong": "H5785",
+          "pron": "오르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 13:34",
+        "leviticus 13:35",
+        "leviticus 13:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת הַנֶּ֖תֶק",
+      "pron": "에트 네테크",
+      "lemmas": [
+        "אֵת",
+        "נֶתֶק"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַנֶּ֖תֶק",
+          "lemma": "נֶתֶק",
+          "strong": "H5424",
+          "pron": "네테크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 13:33",
+        "leviticus 13:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פָשָׂ֤ה הַנֶּ֨תֶק֙ בָּע֔וֹר",
+      "pron": "파사 네테크 오르",
+      "lemmas": [
+        "פָּשָׂה",
+        "נֶתֶק",
+        "עוֹר"
+      ],
+      "words": [
+        {
+          "word": "פָשָׂ֤ה",
+          "lemma": "פָּשָׂה",
+          "strong": "H6581",
+          "pron": "파사"
+        },
+        {
+          "word": "הַנֶּ֨תֶק֙",
+          "lemma": "נֶתֶק",
+          "strong": "H5424",
+          "pron": "네테크"
+        },
+        {
+          "word": "בָּע֔וֹר",
+          "lemma": "עוֹר",
+          "strong": "H5785",
+          "pron": "오르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 13:34",
+        "leviticus 13:35",
+        "leviticus 13:36"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

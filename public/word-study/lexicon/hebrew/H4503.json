@@ -1,6 +1,6 @@
 {
   "lemma": "מִנְחָה",
-  "pron": "민호테카",
+  "pron": "민하",
   "strong": "H4503",
   "posKo": "명사",
   "root": null,
@@ -8,44 +8,233 @@
     {
       "lemma": "מִנְחָה",
       "strong": "H4504",
-      "pron": "",
-      "glossKo": "예물(아람)"
+      "pron": "우민하테혼",
+      "glossKo": "그들의 예물(아람)"
     }
   ],
   "defEn": "donation; tribute; sacrificial offering",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 211,
   "byBook": {
+    "numbers": 62,
+    "leviticus": 36,
+    "ezekiel": 15,
     "genesis": 12,
-    "psalms": 6
+    "kings2": 10,
+    "isaiah": 8,
+    "judges": 7,
+    "malachi": 7,
+    "chronicles2": 6,
+    "kings1": 6,
+    "psalms": 6,
+    "samuel1": 6,
+    "chronicles1": 5,
+    "jeremiah": 4,
+    "exodus": 3,
+    "joel": 3,
+    "nehemiah": 3,
+    "amos": 2,
+    "daniel": 2,
+    "ezra": 2,
+    "joshua": 2,
+    "samuel2": 2,
+    "hosea": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "אֶת הַמִּנְחָ֣ה",
-      "pron": "에트 민호테카",
+      "hebrew": "וְאֶת הַמִּנְחָ֔ה",
+      "pron": "에트 민하",
       "lemmas": [
         "אֵת",
         "מִנְחָה"
       ],
       "words": [
         {
-          "word": "אֶת",
+          "word": "וְאֶת",
           "lemma": "אֵת",
           "strong": "H853",
           "pron": "에트"
         },
         {
-          "word": "הַמִּנְחָ֣ה",
+          "word": "הַמִּנְחָ֔ה",
           "lemma": "מִנְחָה",
           "strong": "H4503",
-          "pron": "민호테카"
+          "pron": "민하"
         }
       ],
-      "count": 3,
+      "count": 30,
       "refs": [
         "genesis 43:15",
         "genesis 43:25",
-        "genesis 43:26"
+        "genesis 43:26",
+        "exodus 40:29",
+        "leviticus 2:8",
+        "leviticus 2:14",
+        "leviticus 9:17",
+        "leviticus 10:12",
+        "leviticus 14:20",
+        "numbers 5:18",
+        "numbers 5:25",
+        "numbers 6:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמִנְחָתָ֣ם וְנִסְכֵּיהֶ֡ם",
+      "pron": "민하 네세크",
+      "lemmas": [
+        "מִנְחָה",
+        "נֶסֶךְ"
+      ],
+      "words": [
+        {
+          "word": "וּמִנְחָתָ֣ם",
+          "lemma": "מִנְחָה",
+          "strong": "H4503",
+          "pron": "민하"
+        },
+        {
+          "word": "וְנִסְכֵּיהֶ֡ם",
+          "lemma": "נֶסֶךְ",
+          "strong": "H5262",
+          "pron": "네세크"
+        }
+      ],
+      "count": 27,
+      "refs": [
+        "exodus 30:9",
+        "leviticus 23:18",
+        "numbers 6:15",
+        "numbers 15:24",
+        "numbers 29:6",
+        "numbers 29:11",
+        "numbers 29:16",
+        "numbers 29:18",
+        "numbers 29:19",
+        "numbers 29:21",
+        "numbers 29:22",
+        "numbers 29:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַשֶּׁ֖מֶן לְמִנְחָֽה",
+      "pron": "셰멘 민하",
+      "lemmas": [
+        "שֶׁמֶן",
+        "מִנְחָה"
+      ],
+      "words": [
+        {
+          "word": "בַשֶּׁ֖מֶן",
+          "lemma": "שֶׁמֶן",
+          "strong": "H8081",
+          "pron": "셰멘"
+        },
+        {
+          "word": "לְמִנְחָֽה",
+          "lemma": "מִנְחָה",
+          "strong": "H4503",
+          "pron": "민하"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "leviticus 2:6",
+        "leviticus 14:21",
+        "numbers 6:15",
+        "numbers 7:13",
+        "numbers 7:19",
+        "numbers 7:25",
+        "numbers 7:31",
+        "numbers 7:37",
+        "numbers 7:43",
+        "numbers 7:49",
+        "numbers 7:55",
+        "numbers 7:61"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּלוּלָ֥ה בַשֶּׁ֖מֶן לְמִנְחָֽה",
+      "pron": "브납라 셰멘 민하",
+      "lemmas": [
+        "בָּלַל",
+        "שֶׁמֶן",
+        "מִנְחָה"
+      ],
+      "words": [
+        {
+          "word": "בְּלוּלָ֥ה",
+          "lemma": "בָּלַל",
+          "strong": "H1101",
+          "pron": "브납라"
+        },
+        {
+          "word": "בַשֶּׁ֖מֶן",
+          "lemma": "שֶׁמֶן",
+          "strong": "H8081",
+          "pron": "셰멘"
+        },
+        {
+          "word": "לְמִנְחָֽה",
+          "lemma": "מִנְחָה",
+          "strong": "H4503",
+          "pron": "민하"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "leviticus 14:21",
+        "numbers 7:13",
+        "numbers 7:19",
+        "numbers 7:25",
+        "numbers 7:31",
+        "numbers 7:37",
+        "numbers 7:43",
+        "numbers 7:49",
+        "numbers 7:55",
+        "numbers 7:61",
+        "numbers 7:67",
+        "numbers 7:73"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַתָּמִ֔יד וּמִנְחָתָ֖הּ",
+      "pron": "타믿 민하",
+      "lemmas": [
+        "תָּמִיד",
+        "מִנְחָה"
+      ],
+      "words": [
+        {
+          "word": "הַתָּמִ֔יד",
+          "lemma": "תָּמִיד",
+          "strong": "H8548",
+          "pron": "타믿"
+        },
+        {
+          "word": "וּמִנְחָתָ֖הּ",
+          "lemma": "מִנְחָה",
+          "strong": "H4503",
+          "pron": "민하"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "numbers 28:31",
+        "numbers 29:6",
+        "numbers 29:11",
+        "numbers 29:16",
+        "numbers 29:19",
+        "numbers 29:22",
+        "numbers 29:25",
+        "numbers 29:28",
+        "numbers 29:31",
+        "numbers 29:34",
+        "numbers 29:38"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "בֶּרֶךְ",
-  "pron": "비렉카위",
+  "pron": "비렉카이",
   "strong": "H1290",
   "posKo": "명사",
   "root": {
@@ -12,40 +12,164 @@
     {
       "lemma": "בָּרוּךְ",
       "strong": "H1263",
-      "pron": "",
+      "pron": "바루크",
       "glossKo": "바룩"
     },
     {
       "lemma": "בָּרַךְ",
       "strong": "H1288",
-      "pron": "테바레크",
+      "pron": "바예바레크",
       "glossKo": "축복하다"
     },
     {
       "lemma": "בְּרַךְ",
       "strong": "H1289",
-      "pron": "",
+      "pron": "바리크",
       "glossKo": "축복하다(아람)"
+    },
+    {
+      "lemma": "בֶּרֶךְ",
+      "strong": "H1291",
+      "pron": "비레코히",
+      "glossKo": "그의 무릎(아람)"
     },
     {
       "lemma": "בָּרַכְאֵל",
       "strong": "H1292",
-      "pron": "",
+      "pron": "바라케엘",
       "glossKo": "바라겔"
     },
     {
       "lemma": "בְּרָכָה",
       "strong": "H1293",
-      "pron": "비레카테카",
-      "glossKo": "너의 복"
+      "pron": "베라카",
+      "glossKo": "복"
     }
   ],
   "defEn": "knee",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 26,
   "byBook": {
+    "kings1": 4,
+    "ezekiel": 3,
     "genesis": 3,
+    "isaiah": 3,
+    "judges": 3,
+    "job": 2,
+    "kings2": 2,
+    "chronicles2": 1,
+    "daniel": 1,
+    "deuteronomy": 1,
+    "ezra": 1,
+    "nahum": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עַל בִּרְכַּ֔י",
+      "pron": "알 비렉카이",
+      "lemmas": [
+        "עַל",
+        "בֶּרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "בִּרְכַּ֔י",
+          "lemma": "בֶּרֶךְ",
+          "strong": "H1290",
+          "pron": "비렉카이"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "genesis 30:3",
+        "genesis 50:23",
+        "deuteronomy 28:35",
+        "judges 7:5",
+        "judges 7:6",
+        "judges 16:19",
+        "kings1 8:54",
+        "kings2 1:13",
+        "kings2 4:20",
+        "chronicles2 6:13",
+        "ezra 9:5",
+        "isaiah 66:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִכְרַ֥ע עַל בִּרְכָּ֖יו",
+      "pron": "카라 알 비렉카이",
+      "lemmas": [
+        "כָּרַע",
+        "עַל",
+        "בֶּרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "יִכְרַ֥ע",
+          "lemma": "כָּרַע",
+          "strong": "H3766",
+          "pron": "카라"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "בִּרְכָּ֖יו",
+          "lemma": "בֶּרֶךְ",
+          "strong": "H1290",
+          "pron": "비렉카이"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 7:5",
+        "judges 7:6",
+        "kings1 8:54",
+        "kings2 1:13",
+        "ezra 9:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל הַבִּרְכַּ֗יִם",
+      "pron": "칼 비렉카이",
+      "lemmas": [
+        "כֹּל",
+        "בֶּרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הַבִּרְכַּ֗יִם",
+          "lemma": "בֶּרֶךְ",
+          "strong": "H1290",
+          "pron": "비렉카이"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 19:18",
+        "isaiah 45:23",
+        "ezekiel 7:17",
+        "ezekiel 21:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

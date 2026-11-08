@@ -1,8 +1,8 @@
 {
   "lemma": "שׁוּר",
-  "pron": "슈르",
+  "pron": "브쉬브리",
   "strong": "H7792",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שׁוּר",
     "strong": "H7791",
@@ -24,13 +24,74 @@
     {
       "lemma": "שָׁרָה",
       "strong": "H8284",
-      "pron": "",
-      "glossKo": "스라"
+      "pron": "베샤로테하",
+      "glossKo": "그녀의 스라"
     }
   ],
   "defEn": "wall.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "ezra": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "וְשׁוּרַיָּ֖ה יִֽשְׁתַּכְלְל֑וּן",
+      "pron": "브쉬브리 쉭를브",
+      "lemmas": [
+        "שׁוּר",
+        "כְּלַל"
+      ],
+      "words": [
+        {
+          "word": "וְשׁוּרַיָּ֖ה",
+          "lemma": "שׁוּר",
+          "strong": "H7792",
+          "pron": "브쉬브리"
+        },
+        {
+          "word": "יִֽשְׁתַּכְלְל֑וּן",
+          "lemma": "כְּלַל",
+          "strong": "H3635",
+          "pron": "쉭를브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 4:12",
+        "ezra 4:13",
+        "ezra 4:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תִּתְבְּנֵ֔א וְשׁוּרַיָּ֖ה",
+      "pron": "바나인 브쉬브리",
+      "lemmas": [
+        "בְּנָא",
+        "שׁוּר"
+      ],
+      "words": [
+        {
+          "word": "תִּתְבְּנֵ֔א",
+          "lemma": "בְּנָא",
+          "strong": "H1124",
+          "pron": "바나인"
+        },
+        {
+          "word": "וְשׁוּרַיָּ֖ה",
+          "lemma": "שׁוּר",
+          "strong": "H7792",
+          "pron": "브쉬브리"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 4:12",
+        "ezra 4:13",
+        "ezra 4:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

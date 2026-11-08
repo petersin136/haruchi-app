@@ -2,7 +2,7 @@
   "lemma": "מוֹצָא",
   "pron": "모차",
   "strong": "H4162",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "מוֹצָא",
     "strong": "H4161",
@@ -12,19 +12,51 @@
     {
       "lemma": "מוֹצָא",
       "strong": "H4161",
-      "pron": "모차오",
-      "glossKo": "그의 나가는 것"
+      "pron": "모차",
+      "glossKo": "나가는 것"
     },
     {
       "lemma": "מוֹצָאָה",
       "strong": "H4163",
-      "pron": "",
+      "pron": "르모차오트",
       "glossKo": "혈통"
     }
   ],
   "defEn": "Motsa",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "chronicles1": 5
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶת מוֹצָֽא",
+      "pron": "에트 모차",
+      "lemmas": [
+        "אֵת",
+        "מוֹצָא"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מוֹצָֽא",
+          "lemma": "מוֹצָא",
+          "strong": "H4162",
+          "pron": "모차"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 2:46",
+        "chronicles1 8:36",
+        "chronicles1 9:42"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

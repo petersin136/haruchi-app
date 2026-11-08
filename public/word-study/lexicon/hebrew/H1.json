@@ -1,6 +1,6 @@
 {
   "lemma": "אָב",
-  "pron": "아보테누",
+  "pron": "아비브",
   "strong": "H1",
   "posKo": "명사",
   "root": null,
@@ -8,25 +8,25 @@
     {
       "lemma": "אַב",
       "strong": "H2",
-      "pron": "",
-      "glossKo": "아버지(아람)"
+      "pron": "아바하타크",
+      "glossKo": "너의 아버지(아람)"
     },
     {
       "lemma": "אֲבִי",
       "strong": "H21",
-      "pron": "",
+      "pron": "아비",
       "glossKo": "아비"
     },
     {
       "lemma": "אֲבִיאֵל",
       "strong": "H22",
-      "pron": "",
+      "pron": "아비엘",
       "glossKo": "아비엘"
     },
     {
       "lemma": "אֲבִיאָסָף",
       "strong": "H23",
-      "pron": "",
+      "pron": "바아비아삽",
       "glossKo": "아비아삽"
     },
     {
@@ -38,21 +38,202 @@
     {
       "lemma": "אֲבִיגַיִל",
       "strong": "H26",
-      "pron": "",
+      "pron": "아비가일",
       "glossKo": "아비가일"
     }
   ],
   "defEn": "father",
   "defKo": "",
-  "countOT": 227,
+  "countOT": 1213,
   "byBook": {
     "genesis": 208,
-    "psalms": 19
+    "chronicles2": 123,
+    "chronicles1": 106,
+    "kings1": 95,
+    "numbers": 85,
+    "deuteronomy": 71,
+    "kings2": 70,
+    "jeremiah": 63,
+    "judges": 54,
+    "samuel1": 54,
+    "joshua": 35,
+    "samuel2": 28,
+    "ezekiel": 27,
+    "proverbs": 26,
+    "leviticus": 25,
+    "exodus": 24,
+    "isaiah": 21,
+    "nehemiah": 20,
+    "psalms": 19,
+    "ezra": 14,
+    "job": 9,
+    "daniel": 8,
+    "malachi": 7,
+    "zechariah": 7,
+    "esther": 3,
+    "ruth": 3,
+    "amos": 2,
+    "lamentations": 2,
+    "micah": 2,
+    "hosea": 1,
+    "joel": 1
   },
   "phrases": [
     {
+      "hebrew": "לְבֵ֣ית אֲבֹתָ֑ם",
+      "pron": "미바이트 아비브",
+      "lemmas": [
+        "בַּיִת",
+        "אָב"
+      ],
+      "words": [
+        {
+          "word": "לְבֵ֣ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "אֲבֹתָ֑ם",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        }
+      ],
+      "count": 151,
+      "refs": [
+        "genesis 12:1",
+        "genesis 20:13",
+        "genesis 24:7",
+        "genesis 24:23",
+        "genesis 24:38",
+        "genesis 24:40",
+        "genesis 28:21",
+        "genesis 31:14",
+        "genesis 31:30",
+        "genesis 34:19",
+        "genesis 38:11",
+        "genesis 41:51"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דָּוִ֣ד אָבִ֑יו",
+      "pron": "다윗 아비브",
+      "lemmas": [
+        "דָּוִד",
+        "אָב"
+      ],
+      "words": [
+        {
+          "word": "דָּוִ֣ד",
+          "lemma": "דָּוִד",
+          "strong": "H1732",
+          "pron": "다윗"
+        },
+        {
+          "word": "אָבִ֑יו",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        }
+      ],
+      "count": 63,
+      "refs": [
+        "kings1 2:12",
+        "kings1 2:24",
+        "kings1 2:26",
+        "kings1 2:44",
+        "kings1 3:3",
+        "kings1 3:6",
+        "kings1 3:7",
+        "kings1 3:14",
+        "kings1 5:3",
+        "kings1 5:5",
+        "kings1 6:12",
+        "kings1 7:51"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֱלֹהֵ֥י אֲבוֹתֵיהֶֽם",
+      "pron": "엘로힘 아비브",
+      "lemmas": [
+        "אֱלֹהִים",
+        "אָב"
+      ],
+      "words": [
+        {
+          "word": "אֱלֹהֵ֥י",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "אֲבוֹתֵיהֶֽם",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        }
+      ],
+      "count": 61,
+      "refs": [
+        "genesis 31:5",
+        "genesis 31:16",
+        "genesis 31:29",
+        "genesis 31:42",
+        "genesis 31:53",
+        "genesis 32:9",
+        "genesis 43:23",
+        "genesis 46:1",
+        "genesis 46:3",
+        "genesis 50:17",
+        "exodus 3:6",
+        "exodus 3:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עִם אֲבֹתָ֔יו",
+      "pron": "임마흐 아비브",
+      "lemmas": [
+        "עִם",
+        "אָב"
+      ],
+      "words": [
+        {
+          "word": "עִם",
+          "lemma": "עִם",
+          "strong": "H5973",
+          "pron": "임마흐"
+        },
+        {
+          "word": "אֲבֹתָ֔יו",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        }
+      ],
+      "count": 61,
+      "refs": [
+        "genesis 44:32",
+        "genesis 47:30",
+        "deuteronomy 22:29",
+        "deuteronomy 31:16",
+        "samuel1 20:9",
+        "samuel1 20:13",
+        "samuel1 20:33",
+        "kings1 1:21",
+        "kings1 2:10",
+        "kings1 8:21",
+        "kings1 8:57",
+        "kings1 11:21"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "אֶת אָבִ֑יו",
-      "pron": "에트 아보테누",
+      "pron": "에트 아비브",
       "lemmas": [
         "אֵת",
         "אָב"
@@ -68,12 +249,11 @@
           "word": "אָבִ֑יו",
           "lemma": "אָב",
           "strong": "H1",
-          "pron": "아보테누"
+          "pron": "아비브"
         }
       ],
-      "count": 23,
+      "count": 56,
       "refs": [
-        "psalms 78:5",
         "genesis 2:24",
         "genesis 19:32",
         "genesis 19:33",
@@ -84,157 +264,8 @@
         "genesis 44:22",
         "genesis 44:34",
         "genesis 45:13",
-        "genesis 45:18"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֶל אָבִ֖יו",
-      "pron": "엘레모 아보테누",
-      "lemmas": [
-        "אֵל",
-        "אָב"
-      ],
-      "words": [
-        {
-          "word": "אֶל",
-          "lemma": "אֵל",
-          "strong": "H413",
-          "pron": "엘레모"
-        },
-        {
-          "word": "אָבִ֖יו",
-          "lemma": "אָב",
-          "strong": "H1",
-          "pron": "아보테누"
-        }
-      ],
-      "count": 19,
-      "refs": [
-        "genesis 15:15",
-        "genesis 27:18",
-        "genesis 27:19",
-        "genesis 27:38",
-        "genesis 28:7",
-        "genesis 31:35",
-        "genesis 34:11",
-        "genesis 37:2",
-        "genesis 37:10",
-        "genesis 37:22",
-        "genesis 37:32",
-        "genesis 42:37"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וּבֵ֣ית אָבִ֑יו",
-      "pron": "베테카 아보테누",
-      "lemmas": [
-        "בַּיִת",
-        "אָב"
-      ],
-      "words": [
-        {
-          "word": "וּבֵ֣ית",
-          "lemma": "בַּיִת",
-          "strong": "H1004",
-          "pron": "베테카"
-        },
-        {
-          "word": "אָבִ֑יו",
-          "lemma": "אָב",
-          "strong": "H1",
-          "pron": "아보테누"
-        }
-      ],
-      "count": 19,
-      "refs": [
-        "psalms 45:10",
-        "genesis 12:1",
-        "genesis 20:13",
-        "genesis 24:7",
-        "genesis 24:23",
-        "genesis 24:38",
-        "genesis 24:40",
-        "genesis 28:21",
-        "genesis 31:14",
-        "genesis 31:30",
-        "genesis 34:19",
-        "genesis 38:11"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אָבִ֖יו וַיֹּ֣אמֶר",
-      "pron": "아보테누 아마르",
-      "lemmas": [
-        "אָב",
-        "אָמַר"
-      ],
-      "words": [
-        {
-          "word": "אָבִ֖יו",
-          "lemma": "אָב",
-          "strong": "H1",
-          "pron": "아보테누"
-        },
-        {
-          "word": "וַיֹּ֣אמֶר",
-          "lemma": "אָמַר",
-          "strong": "H559",
-          "pron": "아마르"
-        }
-      ],
-      "count": 16,
-      "refs": [
-        "genesis 20:13",
-        "genesis 22:7",
-        "genesis 27:18",
-        "genesis 27:31",
-        "genesis 27:39",
-        "genesis 27:41",
-        "genesis 34:4",
-        "genesis 37:10",
-        "genesis 37:32",
-        "genesis 42:37",
-        "genesis 44:32",
-        "genesis 45:9"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֱלֹהֵ֣י אָבִ֑יךָ",
-      "pron": "베엘로힘 아보테누",
-      "lemmas": [
-        "אֱלֹהִים",
-        "אָב"
-      ],
-      "words": [
-        {
-          "word": "אֱלֹהֵ֣י",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        },
-        {
-          "word": "אָבִ֑יךָ",
-          "lemma": "אָב",
-          "strong": "H1",
-          "pron": "아보테누"
-        }
-      ],
-      "count": 11,
-      "refs": [
-        "genesis 31:5",
-        "genesis 31:16",
-        "genesis 31:29",
-        "genesis 31:42",
-        "genesis 31:53",
-        "genesis 32:9",
-        "genesis 43:23",
-        "genesis 46:1",
-        "genesis 46:3",
-        "genesis 50:17"
+        "genesis 45:18",
+        "genesis 45:19"
       ],
       "glossKo": ""
     }

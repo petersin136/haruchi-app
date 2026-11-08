@@ -12,7 +12,7 @@
     {
       "lemma": "אוּבָל",
       "strong": "H180",
-      "pron": "",
+      "pron": "우발",
       "glossKo": "강"
     },
     {
@@ -24,126 +24,198 @@
     {
       "lemma": "יָבַל",
       "strong": "H2986",
-      "pron": "투발",
+      "pron": "우발",
       "glossKo": "이끌다"
     },
     {
       "lemma": "יְבַל",
       "strong": "H2987",
-      "pron": "",
+      "pron": "브헤벨",
       "glossKo": "운반하다(아람)"
     },
     {
       "lemma": "יָבָל",
       "strong": "H2988",
-      "pron": "",
+      "pron": "입레",
       "glossKo": "물줄기"
     },
     {
       "lemma": "יַבֵּל",
       "strong": "H2990",
-      "pron": "",
+      "pron": "얍벨레트",
       "glossKo": "흐르는 종기"
     }
   ],
   "defEn": "earth; moist",
   "defKo": "",
-  "countOT": 15,
+  "countOT": 36,
   "byBook": {
-    "psalms": 15
+    "psalms": 15,
+    "isaiah": 9,
+    "job": 3,
+    "jeremiah": 2,
+    "proverbs": 2,
+    "chronicles1": 1,
+    "lamentations": 1,
+    "nahum": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "יִשְׁפֹּֽט תֵּבֵ֥ל",
-      "pron": "숍데 테벨",
+      "hebrew": "יֹשְׁבֵ֥י תֵבֵֽל",
+      "pron": "바예솁 테벨",
       "lemmas": [
-        "שָׁפַט",
+        "יָשַׁב",
         "תֵּבֵל"
       ],
       "words": [
         {
-          "word": "יִשְׁפֹּֽט",
-          "lemma": "שָׁפַט",
-          "strong": "H8199",
-          "pron": "숍데"
+          "word": "יֹשְׁבֵ֥י",
+          "lemma": "יָשַׁב",
+          "strong": "H3427",
+          "pron": "바예솁"
         },
         {
-          "word": "תֵּבֵ֥ל",
+          "word": "תֵבֵֽל",
           "lemma": "תֵּבֵל",
           "strong": "H8398",
           "pron": "테벨"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
-        "psalms 9:8",
-        "psalms 96:13",
-        "psalms 98:9"
+        "psalms 33:8",
+        "isaiah 18:3",
+        "isaiah 26:9",
+        "isaiah 26:18",
+        "lamentations 4:12"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "יִשְׁפֹּֽט תֵּבֵ֥ל בְּצֶ֑דֶק",
-      "pron": "숍데 테벨 칟키위",
+      "hebrew": "מֵכִ֥ין תֵּבֵ֖ל",
+      "pron": "나콘 테벨",
       "lemmas": [
-        "שָׁפַט",
-        "תֵּבֵל",
-        "צֶדֶק"
+        "כּוּן",
+        "תֵּבֵל"
       ],
       "words": [
         {
-          "word": "יִשְׁפֹּֽט",
-          "lemma": "שָׁפַט",
-          "strong": "H8199",
-          "pron": "숍데"
+          "word": "מֵכִ֥ין",
+          "lemma": "כּוּן",
+          "strong": "H3559",
+          "pron": "나콘"
         },
         {
-          "word": "תֵּבֵ֥ל",
+          "word": "תֵּבֵ֖ל",
           "lemma": "תֵּבֵל",
           "strong": "H8398",
           "pron": "테벨"
-        },
-        {
-          "word": "בְּצֶ֑דֶק",
-          "lemma": "צֶדֶק",
-          "strong": "H6664",
-          "pron": "칟키위"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
-        "psalms 9:8",
-        "psalms 96:13",
-        "psalms 98:9"
+        "chronicles1 16:30",
+        "psalms 93:1",
+        "psalms 96:10",
+        "jeremiah 10:12",
+        "jeremiah 51:15"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "תֵּבֵ֥ל בְּצֶ֑דֶק",
-      "pron": "테벨 칟키위",
+      "hebrew": "פְּנֵ֖י תֵבֵ֣ל",
+      "pron": "페네 테벨",
       "lemmas": [
-        "תֵּבֵל",
-        "צֶדֶק"
+        "פָּנִים",
+        "תֵּבֵל"
       ],
       "words": [
         {
-          "word": "תֵּבֵ֥ל",
+          "word": "פְּנֵ֖י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "תֵבֵ֣ל",
           "lemma": "תֵּבֵל",
           "strong": "H8398",
           "pron": "테벨"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 37:12",
+        "isaiah 14:21",
+        "isaiah 27:6",
+        "nahum 1:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַף תִּכּ֥וֹן תֵּבֵ֖ל",
+      "pron": "압 나콘 테벨",
+      "lemmas": [
+        "אַף",
+        "כּוּן",
+        "תֵּבֵל"
+      ],
+      "words": [
+        {
+          "word": "אַף",
+          "lemma": "אַף",
+          "strong": "H637",
+          "pron": "압"
         },
         {
-          "word": "בְּצֶ֑דֶק",
-          "lemma": "צֶדֶק",
-          "strong": "H6664",
-          "pron": "칟키위"
+          "word": "תִּכּ֥וֹן",
+          "lemma": "כּוּן",
+          "strong": "H3559",
+          "pron": "나콘"
+        },
+        {
+          "word": "תֵּבֵ֖ל",
+          "lemma": "תֵּבֵל",
+          "strong": "H8398",
+          "pron": "테벨"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 9:8",
-        "psalms 96:13",
-        "psalms 98:9"
+        "chronicles1 16:30",
+        "psalms 93:1",
+        "psalms 96:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמְלוֹאָ֑הּ תֵּ֝בֵ֗ל",
+      "pron": "멜로 테벨",
+      "lemmas": [
+        "מְלֹא",
+        "תֵּבֵל"
+      ],
+      "words": [
+        {
+          "word": "וּמְלוֹאָ֑הּ",
+          "lemma": "מְלֹא",
+          "strong": "H4393",
+          "pron": "멜로"
+        },
+        {
+          "word": "תֵּ֝בֵ֗ל",
+          "lemma": "תֵּבֵל",
+          "strong": "H8398",
+          "pron": "테벨"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 24:1",
+        "psalms 98:7",
+        "isaiah 34:1"
       ],
       "glossKo": ""
     }

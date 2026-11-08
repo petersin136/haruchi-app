@@ -2,7 +2,7 @@
   "lemma": "נְתַנְיָה",
   "pron": "네탄아",
   "strong": "H5418",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נָתַן",
     "strong": "H5414",
@@ -18,37 +18,192 @@
     {
       "lemma": "נָתִין",
       "strong": "H5411",
-      "pron": "",
+      "pron": "브아네티님",
       "glossKo": "느디님 사람"
     },
     {
       "lemma": "נָתַן",
       "strong": "H5414",
-      "pron": "잇텐",
+      "pron": "바잇텐",
       "glossKo": "주다"
     },
     {
       "lemma": "נְתַן",
       "strong": "H5415",
-      "pron": "",
+      "pron": "인테눈",
       "glossKo": "주다(아람)"
     },
     {
       "lemma": "נָתָן",
       "strong": "H5416",
-      "pron": "나탄",
+      "pron": "브나탄",
       "glossKo": "나단"
     },
     {
       "lemma": "נְתַנְאֵל",
       "strong": "H5417",
-      "pron": "",
+      "pron": "네탄엘",
       "glossKo": "느다넬"
     }
   ],
   "defEn": "Nethanjah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 20,
+  "byBook": {
+    "jeremiah": 15,
+    "chronicles1": 2,
+    "kings2": 2,
+    "chronicles2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶּן נְתַנְיָ֔ה",
+      "pron": "바님 네탄아",
+      "lemmas": [
+        "בֵּן",
+        "נְתַנְיָה"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נְתַנְיָ֔ה",
+          "lemma": "נְתַנְיָה",
+          "strong": "H5418",
+          "pron": "네탄아"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "kings2 25:23",
+        "kings2 25:25",
+        "jeremiah 36:14",
+        "jeremiah 40:8",
+        "jeremiah 40:14",
+        "jeremiah 40:15",
+        "jeremiah 41:1",
+        "jeremiah 41:2",
+        "jeremiah 41:6",
+        "jeremiah 41:7",
+        "jeremiah 41:9",
+        "jeremiah 41:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִשְׁמָעֵ֣אל בֶּן נְתַנְיָ֔ה",
+      "pron": "이셰마엘 바님 네탄아",
+      "lemmas": [
+        "יִשְׁמָעֵאל",
+        "בֵּן",
+        "נְתַנְיָה"
+      ],
+      "words": [
+        {
+          "word": "יִשְׁמָעֵ֣אל",
+          "lemma": "יִשְׁמָעֵאל",
+          "strong": "H3458",
+          "pron": "이셰마엘"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נְתַנְיָ֔ה",
+          "lemma": "נְתַנְיָה",
+          "strong": "H5418",
+          "pron": "네탄아"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "kings2 25:23",
+        "kings2 25:25",
+        "jeremiah 40:8",
+        "jeremiah 40:14",
+        "jeremiah 40:15",
+        "jeremiah 41:1",
+        "jeremiah 41:2",
+        "jeremiah 41:6",
+        "jeremiah 41:7",
+        "jeremiah 41:9",
+        "jeremiah 41:10",
+        "jeremiah 41:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְ֠תַנְיָה בֶּן",
+      "pron": "네탄아 바님",
+      "lemmas": [
+        "נְתַנְיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "נְ֠תַנְיָה",
+          "lemma": "נְתַנְיָה",
+          "strong": "H5418",
+          "pron": "네탄아"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 25:25",
+        "chronicles1 25:12",
+        "jeremiah 36:14",
+        "jeremiah 41:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן נְ֠תַנְיָה בֶּן",
+      "pron": "바님 네탄아 바님",
+      "lemmas": [
+        "בֵּן",
+        "נְתַנְיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נְ֠תַנְיָה",
+          "lemma": "נְתַנְיָה",
+          "strong": "H5418",
+          "pron": "네탄아"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 25:25",
+        "jeremiah 36:14",
+        "jeremiah 41:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

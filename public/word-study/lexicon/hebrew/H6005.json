@@ -1,8 +1,8 @@
 {
   "lemma": "עִמָּנוּאֵל",
-  "pron": "임마누엘",
+  "pron": "임마누",
   "strong": "H6005",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עִם",
     "strong": "H5973",
@@ -12,25 +12,56 @@
     {
       "lemma": "עִם",
       "strong": "H5973",
-      "pron": "임오",
-      "glossKo": "그에게 함께"
+      "pron": "임마흐",
+      "glossKo": "그녀에게 함께"
     },
     {
       "lemma": "עִם",
       "strong": "H5974",
-      "pron": "",
-      "glossKo": "함께(아람)"
+      "pron": "베임메혼",
+      "glossKo": "그들에게 함께(아람)"
     },
     {
       "lemma": "עִמָּד",
       "strong": "H5978",
-      "pron": "임마디위",
+      "pron": "임마디",
       "glossKo": "나를 함께"
     }
   ],
   "defEn": "Immanuel",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "isaiah": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "עִמָּ֥נוּ אֵֽל",
+      "pron": "임마누 임마누",
+      "lemmas": [
+        "עִמָּנוּאֵל",
+        "עִמָּנוּאֵל"
+      ],
+      "words": [
+        {
+          "word": "עִמָּ֥נוּ",
+          "lemma": "עִמָּנוּאֵל",
+          "strong": "H6005",
+          "pron": "임마누"
+        },
+        {
+          "word": "אֵֽל",
+          "lemma": "עִמָּנוּאֵל",
+          "strong": "H6005",
+          "pron": "임마누"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 7:14",
+        "isaiah 8:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

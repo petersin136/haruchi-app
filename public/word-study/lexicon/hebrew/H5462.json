@@ -1,6 +1,6 @@
 {
   "lemma": "סָגַר",
-  "pron": "삭루",
+  "pron": "바잇고르",
   "strong": "H5462",
   "posKo": "동사",
   "root": null,
@@ -8,46 +8,240 @@
     {
       "lemma": "מַסְגֵּר",
       "strong": "H4525",
-      "pron": "미맛게르",
+      "pron": "브아맛게르",
       "glossKo": "대장장이"
     },
     {
       "lemma": "מִסְגֶּרֶת",
       "strong": "H4526",
-      "pron": "미밋게로테헴",
-      "glossKo": "그들의 변두리"
+      "pron": "밋게레트",
+      "glossKo": "변두리"
     },
     {
       "lemma": "סְגוֹר",
       "strong": "H5458",
-      "pron": "",
+      "pron": "세고르",
       "glossKo": "정금"
     },
     {
       "lemma": "סְגַר",
       "strong": "H5463",
-      "pron": "",
+      "pron": "우사가르",
       "glossKo": "닫다(아람)"
     },
     {
       "lemma": "סַגְרִיד",
       "strong": "H5464",
-      "pron": "",
+      "pron": "삭리르",
       "glossKo": "퍼붓는 비"
     },
     {
       "lemma": "סוּגַר",
       "strong": "H5474",
-      "pron": "",
+      "pron": "바수가르",
       "glossKo": "감금"
     }
   ],
   "defEn": "shut; surrender",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 91,
   "byBook": {
+    "leviticus": 11,
+    "samuel1": 11,
+    "ezekiel": 7,
+    "isaiah": 7,
+    "kings1": 6,
     "psalms": 6,
-    "genesis": 4
+    "chronicles2": 5,
+    "job": 5,
+    "joshua": 5,
+    "kings2": 5,
+    "genesis": 4,
+    "amos": 3,
+    "judges": 3,
+    "deuteronomy": 2,
+    "nehemiah": 2,
+    "numbers": 2,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "jeremiah": 1,
+    "lamentations": 1,
+    "malachi": 1,
+    "obadiah": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיִּסְגֹּ֞ר דַּלְת֧וֹת",
+      "pron": "바잇고르 브아델레트",
+      "lemmas": [
+        "סָגַר",
+        "דֶּלֶת"
+      ],
+      "words": [
+        {
+          "word": "וַיִּסְגֹּ֞ר",
+          "lemma": "סָגַר",
+          "strong": "H5462",
+          "pron": "바잇고르"
+        },
+        {
+          "word": "דַּלְת֧וֹת",
+          "lemma": "דֶּלֶת",
+          "strong": "H1817",
+          "pron": "브아델레트"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "judges 3:23",
+        "kings2 4:4",
+        "kings2 4:5",
+        "kings2 4:33",
+        "kings2 6:32",
+        "chronicles2 29:7",
+        "nehemiah 6:10",
+        "nehemiah 13:19",
+        "job 3:10",
+        "ecclesiastes 12:4",
+        "isaiah 26:20",
+        "malachi 1:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהִסְגִּ֥יר אֶת",
+      "pron": "바잇고르 에트",
+      "lemmas": [
+        "סָגַר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְהִסְגִּ֥יר",
+          "lemma": "סָגַר",
+          "strong": "H5462",
+          "pron": "바잇고르"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "leviticus 13:50",
+        "leviticus 14:38",
+        "leviticus 14:46",
+        "joshua 20:5",
+        "samuel2 18:28",
+        "kings1 11:27",
+        "chronicles2 28:24",
+        "ezekiel 46:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זָהָ֣ב סָג֑וּר",
+      "pron": "아자합 바잇고르",
+      "lemmas": [
+        "זָהָב",
+        "סָגַר"
+      ],
+      "words": [
+        {
+          "word": "זָהָ֣ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        },
+        {
+          "word": "סָג֑וּר",
+          "lemma": "סָגַר",
+          "strong": "H5462",
+          "pron": "바잇고르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "kings1 6:20",
+        "kings1 6:21",
+        "kings1 7:49",
+        "kings1 7:50",
+        "kings1 10:21",
+        "chronicles2 4:20",
+        "chronicles2 4:22",
+        "chronicles2 9:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֣א יַסְגִּרֶ֔נּוּ",
+      "pron": "로 바잇고르",
+      "lemmas": [
+        "לֹא",
+        "סָגַר"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יַסְגִּרֶ֔נּוּ",
+          "lemma": "סָגַר",
+          "strong": "H5462",
+          "pron": "바잇고르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "leviticus 13:11",
+        "deuteronomy 23:15",
+        "joshua 20:5",
+        "job 3:10",
+        "psalms 31:8",
+        "isaiah 45:1",
+        "isaiah 60:11",
+        "ezekiel 46:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהִסְגִּ֧יר הַכֹּהֵ֛ן",
+      "pron": "바잇고르 코헨",
+      "lemmas": [
+        "סָגַר",
+        "כֹּהֵן"
+      ],
+      "words": [
+        {
+          "word": "וְהִסְגִּ֧יר",
+          "lemma": "סָגַר",
+          "strong": "H5462",
+          "pron": "바잇고르"
+        },
+        {
+          "word": "הַכֹּהֵ֛ן",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "leviticus 13:4",
+        "leviticus 13:5",
+        "leviticus 13:21",
+        "leviticus 13:26",
+        "leviticus 13:31",
+        "leviticus 13:33"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

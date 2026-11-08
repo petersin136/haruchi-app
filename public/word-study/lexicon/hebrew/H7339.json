@@ -1,6 +1,6 @@
 {
   "lemma": "רְחֹב",
-  "pron": "메레호바흐",
+  "pron": "바레홉",
   "strong": "H7339",
   "posKo": "명사",
   "root": {
@@ -18,14 +18,20 @@
     {
       "lemma": "רָחַב",
       "strong": "H7337",
-      "pron": "히레합타",
+      "pron": "히레힙",
       "glossKo": "넓어지다"
     },
     {
       "lemma": "רַחַב",
       "strong": "H7338",
-      "pron": "",
+      "pron": "라합",
       "glossKo": "넓은 곳"
+    },
+    {
+      "lemma": "רְחֹב",
+      "strong": "H7340",
+      "pron": "레홉",
+      "glossKo": "르홉"
     },
     {
       "lemma": "רֹחַב",
@@ -36,16 +42,185 @@
     {
       "lemma": "רָחָב",
       "strong": "H7342",
-      "pron": "우레합",
+      "pron": "라하바트",
       "glossKo": "넓은"
     }
   ],
   "defEn": "width; avenue; area",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 43,
   "byBook": {
+    "jeremiah": 5,
+    "proverbs": 5,
+    "nehemiah": 4,
+    "esther": 3,
+    "judges": 3,
+    "lamentations": 3,
+    "zechariah": 3,
+    "chronicles2": 2,
+    "ezekiel": 2,
+    "isaiah": 2,
     "psalms": 2,
-    "genesis": 1
+    "amos": 1,
+    "daniel": 1,
+    "deuteronomy": 1,
+    "ezra": 1,
+    "genesis": 1,
+    "job": 1,
+    "nahum": 1,
+    "samuel2": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בִּרְח֣וֹב הָעִ֔יר",
+      "pron": "바레홉 이르",
+      "lemmas": [
+        "רְחֹב",
+        "עִיר"
+      ],
+      "words": [
+        {
+          "word": "בִּרְח֣וֹב",
+          "lemma": "רְחֹב",
+          "strong": "H7339",
+          "pron": "바레홉"
+        },
+        {
+          "word": "הָעִ֔יר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "judges 19:15",
+        "judges 19:17",
+        "esther 4:6",
+        "esther 6:9",
+        "esther 6:11",
+        "lamentations 2:12",
+        "zechariah 8:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּרְחֹבֹתֶ֑יהָ וְכָל",
+      "pron": "바레홉 칼",
+      "lemmas": [
+        "רְחֹב",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "בִּרְחֹבֹתֶ֑יהָ",
+          "lemma": "רְחֹב",
+          "strong": "H7339",
+          "pron": "바레홉"
+        },
+        {
+          "word": "וְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 15:3",
+        "jeremiah 48:38",
+        "jeremiah 49:26",
+        "jeremiah 50:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל רְחוֹב֙",
+      "pron": "엘 바레홉",
+      "lemmas": [
+        "אֵל",
+        "רְחֹב"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "רְחוֹב֙",
+          "lemma": "רְחֹב",
+          "strong": "H7339",
+          "pron": "바레홉"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles2 32:6",
+        "nehemiah 8:1",
+        "esther 4:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַחוּרֶ֖יהָ בִּרְחֹבֹתֶ֑יהָ",
+      "pron": "바후르 바레홉",
+      "lemmas": [
+        "בָּחוּר",
+        "רְחֹב"
+      ],
+      "words": [
+        {
+          "word": "בַחוּרֶ֖יהָ",
+          "lemma": "בָּחוּר",
+          "strong": "H970",
+          "pron": "바후르"
+        },
+        {
+          "word": "בִּרְחֹבֹתֶ֑יהָ",
+          "lemma": "רְחֹב",
+          "strong": "H7339",
+          "pron": "바레홉"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 9:21",
+        "jeremiah 49:26",
+        "jeremiah 50:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכָל רְחֽוֹב",
+      "pron": "칼 바레홉",
+      "lemmas": [
+        "כֹּל",
+        "רְחֹב"
+      ],
+      "words": [
+        {
+          "word": "בְּכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "רְחֽוֹב",
+          "lemma": "רְחֹב",
+          "strong": "H7339",
+          "pron": "바레홉"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 16:24",
+        "ezekiel 16:31",
+        "amos 5:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

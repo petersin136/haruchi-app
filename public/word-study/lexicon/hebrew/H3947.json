@@ -1,6 +1,6 @@
 {
   "lemma": "לָקַח",
-  "pron": "익카흐",
+  "pron": "바익카흐",
   "strong": "H3947",
   "posKo": "동사",
   "root": null,
@@ -8,61 +8,91 @@
     {
       "lemma": "לֶקַח",
       "strong": "H3948",
-      "pron": "",
-      "glossKo": "교훈"
+      "pron": "리케히",
+      "glossKo": "나의 교훈"
     },
     {
       "lemma": "לִקְחִי",
       "strong": "H3949",
-      "pron": "",
+      "pron": "브리케히",
       "glossKo": "릭히"
     },
     {
       "lemma": "מַלְקוֹחַ",
       "strong": "H4455",
-      "pron": "말코하위",
-      "glossKo": "나의 탈취물"
+      "pron": "아말코아흐",
+      "glossKo": "탈취물"
     },
     {
       "lemma": "מֶלְקָח",
       "strong": "H4457",
-      "pron": "",
-      "glossKo": "심지 자르는 가위"
+      "pron": "우말카헤하",
+      "glossKo": "그녀의 심지 자르는 가위"
     },
     {
       "lemma": "מִקָּח",
       "strong": "H4727",
-      "pron": "",
+      "pron": "우믹카흐",
       "glossKo": "받음"
     },
     {
       "lemma": "מַקָּחָה",
       "strong": "H4728",
-      "pron": "",
+      "pron": "아막카호트",
       "glossKo": "거래"
     }
   ],
   "defEn": "take",
   "defKo": "",
-  "countOT": 155,
+  "countOT": 967,
   "byBook": {
     "genesis": 142,
-    "psalms": 13
+    "exodus": 80,
+    "samuel1": 80,
+    "kings2": 73,
+    "numbers": 70,
+    "ezekiel": 65,
+    "jeremiah": 65,
+    "leviticus": 56,
+    "deuteronomy": 45,
+    "judges": 44,
+    "samuel2": 39,
+    "kings1": 38,
+    "joshua": 22,
+    "isaiah": 21,
+    "proverbs": 19,
+    "job": 17,
+    "chronicles2": 16,
+    "chronicles1": 15,
+    "psalms": 13,
+    "hosea": 9,
+    "nehemiah": 7,
+    "zechariah": 7,
+    "amos": 6,
+    "esther": 6,
+    "ruth": 3,
+    "micah": 2,
+    "zephaniah": 2,
+    "ezra": 1,
+    "haggai": 1,
+    "joel": 1,
+    "jonah": 1,
+    "malachi": 1
   },
   "phrases": [
     {
-      "hebrew": "וַיִּקַּ֞ח אֶת",
-      "pron": "익카흐 에트",
+      "hebrew": "וַיִּקַּ֣ח אֶת",
+      "pron": "바익카흐 에트",
       "lemmas": [
         "לָקַח",
         "אֵת"
       ],
       "words": [
         {
-          "word": "וַיִּקַּ֞ח",
+          "word": "וַיִּקַּ֣ח",
           "lemma": "לָקַח",
           "strong": "H3947",
-          "pron": "익카흐"
+          "pron": "바익카흐"
         },
         {
           "word": "אֶת",
@@ -71,7 +101,7 @@
           "pron": "에트"
         }
       ],
-      "count": 34,
+      "count": 216,
       "refs": [
         "genesis 4:11",
         "genesis 5:24",
@@ -89,8 +119,46 @@
       "glossKo": ""
     },
     {
+      "hebrew": "לֹֽא תִקַּ֥ח",
+      "pron": "로 바익카흐",
+      "lemmas": [
+        "לֹא",
+        "לָקַח"
+      ],
+      "words": [
+        {
+          "word": "לֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תִקַּ֥ח",
+          "lemma": "לָקַח",
+          "strong": "H3947",
+          "pron": "바익카흐"
+        }
+      ],
+      "count": 44,
+      "refs": [
+        "genesis 24:3",
+        "genesis 24:37",
+        "genesis 28:1",
+        "genesis 28:6",
+        "exodus 23:8",
+        "leviticus 18:17",
+        "leviticus 18:18",
+        "leviticus 21:7",
+        "leviticus 21:14",
+        "numbers 35:31",
+        "numbers 35:32",
+        "deuteronomy 3:4"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "תִקַּ֤ח אִשָּׁה֙",
-      "pron": "익카흐 에셰트",
+      "pron": "바익카흐 르잇샤",
       "lemmas": [
         "לָקַח",
         "אִשָּׁה"
@@ -100,16 +168,16 @@
           "word": "תִקַּ֤ח",
           "lemma": "לָקַח",
           "strong": "H3947",
-          "pron": "익카흐"
+          "pron": "바익카흐"
         },
         {
           "word": "אִשָּׁה֙",
           "lemma": "אִשָּׁה",
           "strong": "H802",
-          "pron": "에셰트"
+          "pron": "르잇샤"
         }
       ],
-      "count": 14,
+      "count": 33,
       "refs": [
         "genesis 6:2",
         "genesis 12:15",
@@ -127,104 +195,78 @@
       "glossKo": ""
     },
     {
-      "hebrew": "לֹֽא תִקַּ֥ח",
-      "pron": "로 익카흐",
-      "lemmas": [
-        "לֹא",
-        "לָקַח"
-      ],
-      "words": [
-        {
-          "word": "לֹֽא",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        },
-        {
-          "word": "תִקַּ֥ח",
-          "lemma": "לָקַח",
-          "strong": "H3947",
-          "pron": "익카흐"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "psalms 15:5",
-        "psalms 50:9",
-        "genesis 24:3",
-        "genesis 24:37",
-        "genesis 28:1",
-        "genesis 28:6"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "תִקַּ֤ח אִשָּׁה֙ לִבְנִ֔י",
-      "pron": "익카흐 에셰트 베니위",
+      "hebrew": "וַיִּקַּ֣ח בְּיָד֔וֹ",
+      "pron": "바익카흐 야도",
       "lemmas": [
         "לָקַח",
-        "אִשָּׁה",
-        "בֵּן"
+        "יָד"
       ],
       "words": [
         {
-          "word": "תִקַּ֤ח",
+          "word": "וַיִּקַּ֣ח",
           "lemma": "לָקַח",
           "strong": "H3947",
-          "pron": "익카흐"
+          "pron": "바익카흐"
         },
         {
-          "word": "אִשָּׁה֙",
-          "lemma": "אִשָּׁה",
-          "strong": "H802",
-          "pron": "에셰트"
-        },
-        {
-          "word": "לִבְנִ֔י",
-          "lemma": "בֵּן",
-          "strong": "H1121",
-          "pron": "베니위"
+          "word": "בְּיָד֔וֹ",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
         }
       ],
-      "count": 6,
+      "count": 29,
       "refs": [
-        "genesis 24:3",
-        "genesis 24:4",
-        "genesis 24:7",
-        "genesis 24:37",
-        "genesis 24:38",
-        "genesis 24:40"
+        "genesis 21:30",
+        "genesis 22:6",
+        "genesis 43:12",
+        "genesis 43:15",
+        "genesis 48:22",
+        "exodus 4:17",
+        "exodus 7:15",
+        "exodus 17:5",
+        "exodus 32:4",
+        "exodus 34:4",
+        "deuteronomy 1:25",
+        "joshua 9:11"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֲשֶׁר לָקַ֥ח",
-      "pron": "아셰르 익카흐",
+      "hebrew": "אֲשֶׁ֥ר לָקְח֖וּ",
+      "pron": "아셰르 바익카흐",
       "lemmas": [
         "אֲשֶׁר",
         "לָקַח"
       ],
       "words": [
         {
-          "word": "אֲשֶׁר",
+          "word": "אֲשֶׁ֥ר",
           "lemma": "אֲשֶׁר",
           "strong": "H834",
           "pron": "아셰르"
         },
         {
-          "word": "לָקַ֥ח",
+          "word": "לָקְח֖וּ",
           "lemma": "לָקַח",
           "strong": "H3947",
-          "pron": "익카흐"
+          "pron": "바익카흐"
         }
       ],
-      "count": 5,
+      "count": 28,
       "refs": [
         "genesis 2:22",
         "genesis 3:23",
         "genesis 20:3",
         "genesis 24:7",
-        "genesis 48:22"
+        "genesis 48:22",
+        "exodus 4:9",
+        "exodus 25:3",
+        "leviticus 20:14",
+        "leviticus 20:17",
+        "leviticus 20:21",
+        "numbers 12:1",
+        "numbers 18:28"
       ],
       "glossKo": ""
     }

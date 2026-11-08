@@ -2,7 +2,7 @@
   "lemma": "עַמִּיאֵל",
   "pron": "암미엘",
   "strong": "H5988",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עַם",
     "strong": "H5971",
@@ -18,25 +18,208 @@
     {
       "lemma": "עַם",
       "strong": "H5972",
-      "pron": "",
+      "pron": "브암마",
       "glossKo": "백성(아람)"
     },
     {
       "lemma": "עַמּוֹן",
       "strong": "H5983",
-      "pron": "브암몬",
+      "pron": "암몬",
       "glossKo": "암몬 족속"
     },
     {
       "lemma": "עַמִּיהוּד",
       "strong": "H5989",
-      "pron": "",
+      "pron": "암미훋",
       "glossKo": "암미훗"
+    },
+    {
+      "lemma": "עַמִּיזָבָד",
+      "strong": "H5990",
+      "pron": "암미자받",
+      "glossKo": "암미사밧"
+    },
+    {
+      "lemma": "עַמִּיחוּר",
+      "strong": "H5991",
+      "pron": "밓브르",
+      "glossKo": "암미훌"
     }
   ],
   "defEn": "Ammiel",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "samuel2": 3,
+    "chronicles1": 2,
+    "numbers": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶּן עַמִּיאֵ֖ל",
+      "pron": "바님 암미엘",
+      "lemmas": [
+        "בֵּן",
+        "עַמִּיאֵל"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עַמִּיאֵ֖ל",
+          "lemma": "עַמִּיאֵל",
+          "strong": "H5988",
+          "pron": "암미엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 9:4",
+        "samuel2 9:5",
+        "samuel2 17:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן עַמִּיאֵ֖ל בְּל֥וֹ",
+      "pron": "바님 암미엘 브로",
+      "lemmas": [
+        "בֵּן",
+        "עַמִּיאֵל",
+        "לֹא דְבַר"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עַמִּיאֵ֖ל",
+          "lemma": "עַמִּיאֵל",
+          "strong": "H5988",
+          "pron": "암미엘"
+        },
+        {
+          "word": "בְּל֥וֹ",
+          "lemma": "לֹא דְבַר",
+          "strong": "H3810",
+          "pron": "브로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 9:4",
+        "samuel2 9:5",
+        "samuel2 17:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָכִ֥יר בֶּן עַמִּיאֵ֖ל",
+      "pron": "마키르 바님 암미엘",
+      "lemmas": [
+        "מָכִיר",
+        "בֵּן",
+        "עַמִּיאֵל"
+      ],
+      "words": [
+        {
+          "word": "מָכִ֥יר",
+          "lemma": "מָכִיר",
+          "strong": "H4353",
+          "pron": "마키르"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עַמִּיאֵ֖ל",
+          "lemma": "עַמִּיאֵל",
+          "strong": "H5988",
+          "pron": "암미엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 9:4",
+        "samuel2 9:5",
+        "samuel2 17:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַמִּיאֵ֖ל בְּל֥וֹ",
+      "pron": "암미엘 브로",
+      "lemmas": [
+        "עַמִּיאֵל",
+        "לֹא דְבַר"
+      ],
+      "words": [
+        {
+          "word": "עַמִּיאֵ֖ל",
+          "lemma": "עַמִּיאֵל",
+          "strong": "H5988",
+          "pron": "암미엘"
+        },
+        {
+          "word": "בְּל֥וֹ",
+          "lemma": "לֹא דְבַר",
+          "strong": "H3810",
+          "pron": "브로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 9:4",
+        "samuel2 9:5",
+        "samuel2 17:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַמִּיאֵ֖ל בְּל֥וֹ דְבָֽר",
+      "pron": "암미엘 브로 브로",
+      "lemmas": [
+        "עַמִּיאֵל",
+        "לֹא דְבַר",
+        "לֹא דְבַר"
+      ],
+      "words": [
+        {
+          "word": "עַמִּיאֵ֖ל",
+          "lemma": "עַמִּיאֵל",
+          "strong": "H5988",
+          "pron": "암미엘"
+        },
+        {
+          "word": "בְּל֥וֹ",
+          "lemma": "לֹא דְבַר",
+          "strong": "H3810",
+          "pron": "브로"
+        },
+        {
+          "word": "דְבָֽר",
+          "lemma": "לֹא דְבַר",
+          "strong": "H3810",
+          "pron": "브로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 9:4",
+        "samuel2 9:5",
+        "samuel2 17:27"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

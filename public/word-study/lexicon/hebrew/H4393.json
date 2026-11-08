@@ -1,6 +1,6 @@
 {
   "lemma": "מְלֹא",
-  "pron": "우멜로아흐",
+  "pron": "멜로",
   "strong": "H4393",
   "posKo": "명사",
   "root": {
@@ -12,19 +12,19 @@
     {
       "lemma": "יִמְלָא",
       "strong": "H3229",
-      "pron": "",
+      "pron": "임라",
       "glossKo": "임라"
     },
     {
       "lemma": "מָלֵא",
       "strong": "H4390",
-      "pron": "말레",
+      "pron": "우밀우",
       "glossKo": "가득하다"
     },
     {
       "lemma": "מְלָא",
       "strong": "H4391",
-      "pron": "",
+      "pron": "우멜라트",
       "glossKo": "채우다(아람)"
     },
     {
@@ -36,22 +36,199 @@
     {
       "lemma": "מִלֻּא",
       "strong": "H4394",
-      "pron": "",
+      "pron": "밀루임",
       "glossKo": "취임"
     },
     {
       "lemma": "מִלֵּאת",
       "strong": "H4402",
-      "pron": "",
+      "pron": "밀레트",
       "glossKo": "충만"
     }
   ],
   "defEn": "fulness",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 38,
   "byBook": {
+    "ezekiel": 5,
+    "isaiah": 5,
     "psalms": 5,
-    "genesis": 1
+    "leviticus": 4,
+    "exodus": 3,
+    "ecclesiastes": 2,
+    "jeremiah": 2,
+    "numbers": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "genesis": 1,
+    "judges": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "micah": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶ֣רֶץ וּמְלוֹאָ֔הּ",
+      "pron": "하아레츠 멜로",
+      "lemmas": [
+        "אֶרֶץ",
+        "מְלֹא"
+      ],
+      "words": [
+        {
+          "word": "אֶ֣רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "וּמְלוֹאָ֔הּ",
+          "lemma": "מְלֹא",
+          "strong": "H4393",
+          "pron": "멜로"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "deuteronomy 33:16",
+        "psalms 24:1",
+        "isaiah 34:1",
+        "jeremiah 8:16",
+        "jeremiah 47:2",
+        "ezekiel 12:19",
+        "ezekiel 19:7",
+        "ezekiel 30:12",
+        "ezekiel 32:15",
+        "micah 1:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַיָּם֙ וּמְלוֹא֔וֹ",
+      "pron": "얌밈 멜로",
+      "lemmas": [
+        "יָם",
+        "מְלֹא"
+      ],
+      "words": [
+        {
+          "word": "הַיָּם֙",
+          "lemma": "יָם",
+          "strong": "H3220",
+          "pron": "얌밈"
+        },
+        {
+          "word": "וּמְלוֹא֔וֹ",
+          "lemma": "מְלֹא",
+          "strong": "H4393",
+          "pron": "멜로"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles1 16:32",
+        "psalms 96:11",
+        "psalms 98:7",
+        "isaiah 42:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמְלוֹאָ֑הּ תֵּ֝בֵ֗ל",
+      "pron": "멜로 테벨",
+      "lemmas": [
+        "מְלֹא",
+        "תֵּבֵל"
+      ],
+      "words": [
+        {
+          "word": "וּמְלוֹאָ֑הּ",
+          "lemma": "מְלֹא",
+          "strong": "H4393",
+          "pron": "멜로"
+        },
+        {
+          "word": "תֵּ֝בֵ֗ל",
+          "lemma": "תֵּבֵל",
+          "strong": "H8398",
+          "pron": "테벨"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 24:1",
+        "psalms 98:7",
+        "isaiah 34:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִרְעַ֤ם הַיָּם֙ וּמְלוֹא֔וֹ",
+      "pron": "할레이마흐 얌밈 멜로",
+      "lemmas": [
+        "רָעַם",
+        "יָם",
+        "מְלֹא"
+      ],
+      "words": [
+        {
+          "word": "יִרְעַ֤ם",
+          "lemma": "רָעַם",
+          "strong": "H7481",
+          "pron": "할레이마흐"
+        },
+        {
+          "word": "הַיָּם֙",
+          "lemma": "יָם",
+          "strong": "H3220",
+          "pron": "얌밈"
+        },
+        {
+          "word": "וּמְלוֹא֔וֹ",
+          "lemma": "מְלֹא",
+          "strong": "H4393",
+          "pron": "멜로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 16:32",
+        "psalms 96:11",
+        "psalms 98:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְלֹ֣א חָפְנֵיכֶ֔ם",
+      "pron": "멜로 합네켐",
+      "lemmas": [
+        "מְלֹא",
+        "חֹפֶן"
+      ],
+      "words": [
+        {
+          "word": "מְלֹ֣א",
+          "lemma": "מְלֹא",
+          "strong": "H4393",
+          "pron": "멜로"
+        },
+        {
+          "word": "חָפְנֵיכֶ֔ם",
+          "lemma": "חֹפֶן",
+          "strong": "H2651",
+          "pron": "합네켐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 9:8",
+        "leviticus 16:12",
+        "ecclesiastes 4:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "גָּנַן",
-  "pron": "가난",
+  "pron": "브간노티",
   "strong": "H1598",
-  "posKo": "",
+  "posKo": "동사",
   "root": null,
   "family": [
     {
@@ -20,7 +20,7 @@
     {
       "lemma": "גִּנְּתוֹן",
       "strong": "H1599",
-      "pron": "",
+      "pron": "긴네톤",
       "glossKo": "긴느돈"
     },
     {
@@ -32,7 +32,78 @@
   ],
   "defEn": "hedge; protect",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 8,
+  "byBook": {
+    "isaiah": 4,
+    "kings2": 2,
+    "zechariah": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "וְגַנּוֹתִי֙ עַל",
+      "pron": "브간노티 알",
+      "lemmas": [
+        "גָּנַן",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "וְגַנּוֹתִי֙",
+          "lemma": "גָּנַן",
+          "strong": "H1598",
+          "pron": "브간노티"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 20:6",
+        "isaiah 37:35",
+        "isaiah 38:6",
+        "zechariah 9:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְגַנּוֹתִי֙ עַל הָעִ֣יר",
+      "pron": "브간노티 알 이르",
+      "lemmas": [
+        "גָּנַן",
+        "עַל",
+        "עִיר"
+      ],
+      "words": [
+        {
+          "word": "וְגַנּוֹתִי֙",
+          "lemma": "גָּנַן",
+          "strong": "H1598",
+          "pron": "브간노티"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הָעִ֣יר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 20:6",
+        "isaiah 37:35",
+        "isaiah 38:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,27 +12,66 @@
     {
       "lemma": "טוּא",
       "strong": "H2894",
-      "pron": "",
-      "glossKo": "쓸어버리다"
+      "pron": "베데데티하",
+      "glossKo": "그녀에게 쓸어버리다"
     },
     {
       "lemma": "טִין",
       "strong": "H2917",
-      "pron": "",
+      "pron": "디나",
       "glossKo": "진흙(아람)"
     },
     {
       "lemma": "מַטְאֲטֵא",
       "strong": "H4292",
-      "pron": "",
+      "pron": "브맏아데",
       "glossKo": "비"
     }
   ],
   "defEn": "mud; clay; calamity",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 13,
   "byBook": {
-    "psalms": 3
+    "psalms": 3,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "zechariah": 2,
+    "job": 1,
+    "micah": 1,
+    "nahum": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כְּטִ֥יט חוּצֽוֹת",
+      "pron": "크딛 우미후츠",
+      "lemmas": [
+        "טִיט",
+        "חוּץ"
+      ],
+      "words": [
+        {
+          "word": "כְּטִ֥יט",
+          "lemma": "טִיט",
+          "strong": "H2916",
+          "pron": "크딛"
+        },
+        {
+          "word": "חוּצֽוֹת",
+          "lemma": "חוּץ",
+          "strong": "H2351",
+          "pron": "우미후츠"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 22:43",
+        "psalms 18:42",
+        "micah 7:10",
+        "zechariah 9:3",
+        "zechariah 10:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

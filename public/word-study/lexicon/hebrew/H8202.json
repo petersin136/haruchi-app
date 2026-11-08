@@ -2,7 +2,7 @@
   "lemma": "שָׁפָט",
   "pron": "샤팓",
   "strong": "H8202",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁפַט",
     "strong": "H8199",
@@ -12,43 +12,116 @@
     {
       "lemma": "מִשְׁפָּט",
       "strong": "H4941",
-      "pron": "바미솁팓",
+      "pron": "우미솁팓",
       "glossKo": "공의"
     },
     {
       "lemma": "שְׁפוֹט",
       "strong": "H8196",
-      "pron": "",
+      "pron": "셰폳",
       "glossKo": "심판"
     },
     {
       "lemma": "שָׁפַט",
       "strong": "H8199",
-      "pron": "숍데",
-      "glossKo": "재판하는 이"
+      "pron": "이솁폳",
+      "glossKo": "재판하다"
     },
     {
       "lemma": "שְׁפַט",
       "strong": "H8200",
-      "pron": "",
+      "pron": "샵딘",
       "glossKo": "재판하다(아람)"
     },
     {
       "lemma": "שֶׁפֶט",
       "strong": "H8201",
-      "pron": "",
+      "pron": "우비셰파딤",
       "glossKo": "심판"
     },
     {
       "lemma": "שְׁפַטְיָה",
       "strong": "H8203",
-      "pron": "",
+      "pron": "셰팓아",
       "glossKo": "스바댜"
     }
   ],
   "defEn": "Shaphat",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 8,
+  "byBook": {
+    "chronicles1": 3,
+    "kings1": 2,
+    "kings2": 2,
+    "numbers": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֱלִישָׁ֤ע בֶּן שָׁפָט֙",
+      "pron": "엘리샤 바님 샤팓",
+      "lemmas": [
+        "אֱלִישָׁע",
+        "בֵּן",
+        "שָׁפָט"
+      ],
+      "words": [
+        {
+          "word": "אֱלִישָׁ֤ע",
+          "lemma": "אֱלִישָׁע",
+          "strong": "H477",
+          "pron": "엘리샤"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "שָׁפָט֙",
+          "lemma": "שָׁפָט",
+          "strong": "H8202",
+          "pron": "샤팓"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 19:16",
+        "kings1 19:19",
+        "kings2 3:11",
+        "kings2 6:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן שָׁפָט֙",
+      "pron": "바님 샤팓",
+      "lemmas": [
+        "בֵּן",
+        "שָׁפָט"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "שָׁפָט֙",
+          "lemma": "שָׁפָט",
+          "strong": "H8202",
+          "pron": "샤팓"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 19:16",
+        "kings1 19:19",
+        "kings2 3:11",
+        "kings2 6:31"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "עוֹפֶרֶת",
-  "pron": "오페레트",
+  "pron": "카오페레트",
   "strong": "H5777",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָפַר",
     "strong": "H6080",
@@ -12,25 +12,62 @@
     {
       "lemma": "עָפַר",
       "strong": "H6080",
-      "pron": "",
+      "pron": "브입파르",
       "glossKo": "흙먼지가 되다"
     },
     {
       "lemma": "עֹפֶר",
       "strong": "H6082",
-      "pron": "",
+      "pron": "르오페르",
       "glossKo": "어린 사슴"
     },
     {
       "lemma": "עָפָר",
       "strong": "H6083",
-      "pron": "레아파르",
+      "pron": "아파르",
       "glossKo": "흙"
     }
   ],
   "defEn": "lead; dusty",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "ezekiel": 3,
+    "zechariah": 2,
+    "exodus": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "numbers": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בַּרְזֶ֥ל וְעֹפָ֑רֶת",
+      "pron": "우바레젤 카오페레트",
+      "lemmas": [
+        "בַּרְזֶל",
+        "עוֹפֶרֶת"
+      ],
+      "words": [
+        {
+          "word": "בַּרְזֶ֥ל",
+          "lemma": "בַּרְזֶל",
+          "strong": "H1270",
+          "pron": "우바레젤"
+        },
+        {
+          "word": "וְעֹפָ֑רֶת",
+          "lemma": "עוֹפֶרֶת",
+          "strong": "H5777",
+          "pron": "카오페레트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 19:24",
+        "ezekiel 22:18",
+        "ezekiel 22:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

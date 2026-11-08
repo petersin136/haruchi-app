@@ -2,7 +2,7 @@
   "lemma": "יְרֹחָם",
   "pron": "예로함",
   "strong": "H3395",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רָחַם",
     "strong": "H7355",
@@ -12,7 +12,7 @@
     {
       "lemma": "יְרַחְמְאֵל",
       "strong": "H3396",
-      "pron": "",
+      "pron": "예라헴엘",
       "glossKo": "여라므엘"
     },
     {
@@ -24,31 +24,142 @@
     {
       "lemma": "רָחַם",
       "strong": "H7355",
-      "pron": "에레함카",
-      "glossKo": "너에게 긍휼히 여기다"
+      "pron": "브리함티",
+      "glossKo": "긍휼히 여기다"
     },
     {
       "lemma": "רַחַם",
       "strong": "H7356",
-      "pron": "라하메카",
-      "glossKo": "너의 긍휼"
+      "pron": "라하밈",
+      "glossKo": "긍휼"
     },
     {
       "lemma": "רֶחֶם",
       "strong": "H7358",
-      "pron": "메라헴",
+      "pron": "레헴",
       "glossKo": "태"
     },
     {
       "lemma": "רָחָם",
       "strong": "H7360",
-      "pron": "",
+      "pron": "하라함",
       "glossKo": "독수리의 일종"
     }
   ],
   "defEn": "Jerocham",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 10,
+  "byBook": {
+    "chronicles1": 7,
+    "chronicles2": 1,
+    "nehemiah": 1,
+    "samuel1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶּן יְרֹחָ֔ם",
+      "pron": "바님 예로함",
+      "lemmas": [
+        "בֵּן",
+        "יְרֹחָם"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יְרֹחָ֔ם",
+          "lemma": "יְרֹחָם",
+          "strong": "H3395",
+          "pron": "예로함"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "samuel1 1:1",
+        "chronicles1 6:27",
+        "chronicles1 6:34",
+        "chronicles1 8:27",
+        "chronicles1 9:8",
+        "chronicles1 9:12",
+        "chronicles1 12:7",
+        "chronicles1 27:22",
+        "chronicles2 23:1",
+        "nehemiah 11:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן יְרֹחָ֔ם בֶּן",
+      "pron": "바님 예로함 바님",
+      "lemmas": [
+        "בֵּן",
+        "יְרֹחָם",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יְרֹחָ֔ם",
+          "lemma": "יְרֹחָם",
+          "strong": "H3395",
+          "pron": "예로함"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 1:1",
+        "chronicles1 6:27",
+        "chronicles1 6:34",
+        "chronicles1 9:12",
+        "nehemiah 11:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְרֹחָ֔ם בֶּן",
+      "pron": "예로함 바님",
+      "lemmas": [
+        "יְרֹחָם",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "יְרֹחָ֔ם",
+          "lemma": "יְרֹחָם",
+          "strong": "H3395",
+          "pron": "예로함"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 1:1",
+        "chronicles1 6:27",
+        "chronicles1 6:34",
+        "chronicles1 9:12",
+        "nehemiah 11:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

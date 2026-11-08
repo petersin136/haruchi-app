@@ -1,8 +1,8 @@
 {
   "lemma": "הֵיכַל",
-  "pron": "헤칼",
+  "pron": "헤켈라",
   "strong": "H1965",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "הֵיכָל",
     "strong": "H1964",
@@ -18,7 +18,183 @@
   ],
   "defEn": "palace, temple.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "ezra": 7,
+    "daniel": 6
+  },
+  "phrases": [
+    {
+      "hebrew": "הֵֽיכְלָא֙ דִּ֣י",
+      "pron": "헤켈라 드흐브",
+      "lemmas": [
+        "הֵיכַל",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "הֵֽיכְלָא֙",
+          "lemma": "הֵיכַל",
+          "strong": "H1965",
+          "pron": "헤켈라"
+        },
+        {
+          "word": "דִּ֣י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "ezra 5:14",
+        "ezra 5:15",
+        "ezra 6:5",
+        "daniel 5:2",
+        "daniel 5:3",
+        "daniel 5:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֵֽיכְלָא֙ דִּ֣י בִֽירוּשְׁלֶ֔ם",
+      "pron": "헤켈라 드흐브 예루살렘",
+      "lemmas": [
+        "הֵיכַל",
+        "דִּי",
+        "יְרוּשָׁלֵם"
+      ],
+      "words": [
+        {
+          "word": "הֵֽיכְלָא֙",
+          "lemma": "הֵיכַל",
+          "strong": "H1965",
+          "pron": "헤켈라"
+        },
+        {
+          "word": "דִּ֣י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "בִֽירוּשְׁלֶ֔ם",
+          "lemma": "יְרוּשָׁלֵם",
+          "strong": "H3390",
+          "pron": "예루살렘"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezra 5:14",
+        "ezra 5:15",
+        "ezra 6:5",
+        "daniel 5:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִן הֵֽיכְלָא֙",
+      "pron": "민 헤켈라",
+      "lemmas": [
+        "מִן",
+        "הֵיכַל"
+      ],
+      "words": [
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4481",
+          "pron": "민"
+        },
+        {
+          "word": "הֵֽיכְלָא֙",
+          "lemma": "הֵיכַל",
+          "strong": "H1965",
+          "pron": "헤켈라"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezra 5:14",
+        "ezra 6:5",
+        "daniel 5:2",
+        "daniel 5:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִן הֵֽיכְלָא֙ דִּ֣י",
+      "pron": "민 헤켈라 드흐브",
+      "lemmas": [
+        "מִן",
+        "הֵיכַל",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4481",
+          "pron": "민"
+        },
+        {
+          "word": "הֵֽיכְלָא֙",
+          "lemma": "הֵיכַל",
+          "strong": "H1965",
+          "pron": "헤켈라"
+        },
+        {
+          "word": "דִּ֣י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezra 5:14",
+        "ezra 6:5",
+        "daniel 5:2",
+        "daniel 5:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַנְפֵּק֙ מִן הֵֽיכְלָא֙",
+      "pron": "한페크 민 헤켈라",
+      "lemmas": [
+        "נְפַק",
+        "מִן",
+        "הֵיכַל"
+      ],
+      "words": [
+        {
+          "word": "הַנְפֵּק֙",
+          "lemma": "נְפַק",
+          "strong": "H5312",
+          "pron": "한페크"
+        },
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4481",
+          "pron": "민"
+        },
+        {
+          "word": "הֵֽיכְלָא֙",
+          "lemma": "הֵיכַל",
+          "strong": "H1965",
+          "pron": "헤켈라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 5:14",
+        "ezra 6:5",
+        "daniel 5:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

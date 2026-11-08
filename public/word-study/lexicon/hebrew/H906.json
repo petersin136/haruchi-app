@@ -2,7 +2,7 @@
   "lemma": "בַּד",
   "pron": "받",
   "strong": "H906",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בָּדַד",
     "strong": "H909",
@@ -12,13 +12,13 @@
     {
       "lemma": "בַּד",
       "strong": "H905",
-      "pron": "르받드카",
-      "glossKo": "너의 부분"
+      "pron": "레받도",
+      "glossKo": "그의 부분"
     },
     {
       "lemma": "בָּדַד",
       "strong": "H909",
-      "pron": "보덷",
+      "pron": "바닫",
       "glossKo": "홀로 떨어지다"
     },
     {
@@ -36,7 +36,179 @@
   ],
   "defEn": "thread; linen",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 23,
+  "byBook": {
+    "leviticus": 8,
+    "ezekiel": 6,
+    "daniel": 3,
+    "exodus": 2,
+    "samuel1": 2,
+    "chronicles1": 1,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "לָבֻ֣שׁ בַּדִּ֔ים",
+      "pron": "바알비솀 받",
+      "lemmas": [
+        "לָבַשׁ",
+        "בַּד"
+      ],
+      "words": [
+        {
+          "word": "לָבֻ֣שׁ",
+          "lemma": "לָבַשׁ",
+          "strong": "H3847",
+          "pron": "바알비솀"
+        },
+        {
+          "word": "בַּדִּ֔ים",
+          "lemma": "בַּד",
+          "strong": "H906",
+          "pron": "받"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "ezekiel 9:2",
+        "ezekiel 9:3",
+        "ezekiel 10:2",
+        "ezekiel 10:6",
+        "ezekiel 10:7",
+        "daniel 10:5",
+        "daniel 12:6",
+        "daniel 12:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָאִישׁ֙ הַלָּבֻ֣שׁ הַבַּדִּ֔ים",
+      "pron": "메이쉬 바알비솀 받",
+      "lemmas": [
+        "אִישׁ",
+        "לָבַשׁ",
+        "בַּד"
+      ],
+      "words": [
+        {
+          "word": "הָאִישׁ֙",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "הַלָּבֻ֣שׁ",
+          "lemma": "לָבַשׁ",
+          "strong": "H3847",
+          "pron": "바알비솀"
+        },
+        {
+          "word": "הַבַּדִּ֔ים",
+          "lemma": "בַּד",
+          "strong": "H906",
+          "pron": "받"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezekiel 9:3",
+        "ezekiel 10:2",
+        "ezekiel 10:6",
+        "daniel 12:6",
+        "daniel 12:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַבָּ֔ד אֲשֶׁ֥ר",
+      "pron": "받 아셰르",
+      "lemmas": [
+        "בַּד",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הַבָּ֔ד",
+          "lemma": "בַּד",
+          "strong": "H906",
+          "pron": "받"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 16:23",
+        "ezekiel 9:3",
+        "ezekiel 9:11",
+        "daniel 12:6",
+        "daniel 12:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵפ֥וֹד בָּֽד",
+      "pron": "라에폳 받",
+      "lemmas": [
+        "אֵפוֹד",
+        "בַּד"
+      ],
+      "words": [
+        {
+          "word": "אֵפ֥וֹד",
+          "lemma": "אֵפוֹד",
+          "strong": "H646",
+          "pron": "라에폳"
+        },
+        {
+          "word": "בָּֽד",
+          "lemma": "בַּד",
+          "strong": "H906",
+          "pron": "받"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 2:18",
+        "samuel1 22:18",
+        "samuel2 6:14",
+        "chronicles1 15:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמִֽכְנְסֵי בַד֮",
+      "pron": "미켄세 받",
+      "lemmas": [
+        "מִכְנָס",
+        "בַּד"
+      ],
+      "words": [
+        {
+          "word": "וּמִֽכְנְסֵי",
+          "lemma": "מִכְנָס",
+          "strong": "H4370",
+          "pron": "미켄세"
+        },
+        {
+          "word": "בַד֮",
+          "lemma": "בַּד",
+          "strong": "H906",
+          "pron": "받"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 28:42",
+        "exodus 39:28",
+        "leviticus 6:10",
+        "leviticus 16:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

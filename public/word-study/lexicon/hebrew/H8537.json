@@ -1,6 +1,6 @@
 {
   "lemma": "תֹּם",
-  "pron": "우크툼미위",
+  "pron": "브탐",
   "strong": "H8537",
   "posKo": "명사",
   "root": {
@@ -24,8 +24,8 @@
     {
       "lemma": "תֻּמָּה",
       "strong": "H8538",
-      "pron": "",
-      "glossKo": "온전"
+      "pron": "베툼마토",
+      "glossKo": "그의 온전"
     },
     {
       "lemma": "תָּמִים",
@@ -36,57 +36,98 @@
     {
       "lemma": "תֻּמִּים",
       "strong": "H8550",
-      "pron": "",
+      "pron": "아툼밈",
       "glossKo": "둠밈"
     },
     {
       "lemma": "תָּמַם",
       "strong": "H8552",
-      "pron": "탐무",
+      "pron": "바잇톰",
       "glossKo": "끝나다"
     }
   ],
   "defEn": "completeness; prosperity; innocence",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 24,
   "byBook": {
+    "proverbs": 7,
     "psalms": 7,
-    "genesis": 2
+    "genesis": 2,
+    "job": 2,
+    "kings1": 2,
+    "chronicles2": 1,
+    "isaiah": 1,
+    "leviticus": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "כְּתֹ֣ם לְבָב֑וֹ",
-      "pron": "우크툼미위 비레밥켐",
+      "hebrew": "הוֹלֵ֣ךְ בְּתֻמּ֑וֹ",
+      "pron": "아홀레크 브탐",
+      "lemmas": [
+        "הָלַךְ",
+        "תֹּם"
+      ],
+      "words": [
+        {
+          "word": "הוֹלֵ֣ךְ",
+          "lemma": "הָלַךְ",
+          "strong": "H1980",
+          "pron": "아홀레크"
+        },
+        {
+          "word": "בְּתֻמּ֑וֹ",
+          "lemma": "תֹּם",
+          "strong": "H8537",
+          "pron": "브탐"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel2 15:11",
+        "psalms 101:2",
+        "proverbs 2:7",
+        "proverbs 10:9",
+        "proverbs 19:1",
+        "proverbs 20:7",
+        "proverbs 28:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּתָם לְבָבִ֛י",
+      "pron": "브탐 레바비",
       "lemmas": [
         "תֹּם",
         "לֵבָב"
       ],
       "words": [
         {
-          "word": "כְּתֹ֣ם",
+          "word": "בְּתָם",
           "lemma": "תֹּם",
           "strong": "H8537",
-          "pron": "우크툼미위"
+          "pron": "브탐"
         },
         {
-          "word": "לְבָב֑וֹ",
+          "word": "לְבָבִ֛י",
           "lemma": "לֵבָב",
           "strong": "H3824",
-          "pron": "비레밥켐"
+          "pron": "레바비"
         }
       ],
-      "count": 4,
+      "count": 5,
       "refs": [
-        "psalms 78:72",
-        "psalms 101:2",
         "genesis 20:5",
-        "genesis 20:6"
+        "genesis 20:6",
+        "kings1 9:4",
+        "psalms 78:72",
+        "psalms 101:2"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "אֲ֭נִי בְּתֻמִּ֣י",
-      "pron": "바아니 우크툼미위",
+      "pron": "바아니 브탐",
       "lemmas": [
         "אֲנִי",
         "תֹּם"
@@ -102,7 +143,7 @@
           "word": "בְּתֻמִּ֣י",
           "lemma": "תֹּם",
           "strong": "H8537",
-          "pron": "우크툼미위"
+          "pron": "브탐"
         }
       ],
       "count": 3,
@@ -110,6 +151,35 @@
         "psalms 26:1",
         "psalms 26:11",
         "psalms 41:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְתֹ֣ם דְּרָכֶֽיךָ",
+      "pron": "브탐 데레크",
+      "lemmas": [
+        "תֹּם",
+        "דֶּרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "וְתֹ֣ם",
+          "lemma": "תֹּם",
+          "strong": "H8537",
+          "pron": "브탐"
+        },
+        {
+          "word": "דְּרָכֶֽיךָ",
+          "lemma": "דֶּרֶךְ",
+          "strong": "H1870",
+          "pron": "데레크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 4:6",
+        "proverbs 10:29",
+        "proverbs 13:6"
       ],
       "glossKo": ""
     }

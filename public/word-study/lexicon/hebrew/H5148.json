@@ -1,16 +1,57 @@
 {
   "lemma": "נָחָה",
-  "pron": "네헤니",
+  "pron": "나하니",
   "strong": "H5148",
   "posKo": "동사",
   "root": null,
   "family": [],
   "defEn": "guide",
   "defKo": "",
-  "countOT": 20,
+  "countOT": 39,
   "byBook": {
     "psalms": 18,
-    "genesis": 2
+    "exodus": 4,
+    "job": 3,
+    "proverbs": 3,
+    "genesis": 2,
+    "isaiah": 2,
+    "nehemiah": 2,
+    "deuteronomy": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "numbers": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הִנְחַ֨נִי֙ בְּדֶ֣רֶךְ",
+      "pron": "나하니 데레크",
+      "lemmas": [
+        "נָחָה",
+        "דֶּרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "הִנְחַ֨נִי֙",
+          "lemma": "נָחָה",
+          "strong": "H5148",
+          "pron": "나하니"
+        },
+        {
+          "word": "בְּדֶ֣רֶךְ",
+          "lemma": "דֶּרֶךְ",
+          "strong": "H1870",
+          "pron": "데레크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 24:48",
+        "exodus 13:21",
+        "nehemiah 9:19",
+        "psalms 139:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

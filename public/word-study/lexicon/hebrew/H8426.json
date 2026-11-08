@@ -12,45 +12,190 @@
     {
       "lemma": "הָדָה",
       "strong": "H1911",
-      "pron": "",
+      "pron": "하다",
       "glossKo": "내밀다"
     },
     {
       "lemma": "יְדָא",
       "strong": "H3029",
-      "pron": "",
+      "pron": "메호데",
       "glossKo": "찬양하다(아람)"
     },
     {
       "lemma": "יָדַד",
       "strong": "H3032",
-      "pron": "",
+      "pron": "얃두",
       "glossKo": "제비뽑다"
     },
     {
       "lemma": "יָדָה",
       "strong": "H3034",
-      "pron": "요데",
+      "pron": "오데",
       "glossKo": "찬송하다"
     },
     {
       "lemma": "יִדּוֹ",
       "strong": "H3035",
-      "pron": "",
+      "pron": "읻도",
       "glossKo": "잇도"
     },
     {
       "lemma": "יָדוֹן",
       "strong": "H3036",
-      "pron": "",
+      "pron": "브야돈",
       "glossKo": "야돈"
     }
   ],
   "defEn": "extension; avowal; adoration; choir",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 32,
   "byBook": {
-    "psalms": 12
+    "psalms": 12,
+    "leviticus": 5,
+    "nehemiah": 4,
+    "chronicles2": 3,
+    "jeremiah": 3,
+    "amos": 1,
+    "ezra": 1,
+    "isaiah": 1,
+    "jonah": 1,
+    "joshua": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "זֶ֣בַח הַתּוֹדָ֗ה",
+      "pron": "제바흐 토다",
+      "lemmas": [
+        "זֶבַח",
+        "תּוֹדָה"
+      ],
+      "words": [
+        {
+          "word": "זֶ֣בַח",
+          "lemma": "זֶבַח",
+          "strong": "H2077",
+          "pron": "제바흐"
+        },
+        {
+          "word": "הַתּוֹדָ֗ה",
+          "lemma": "תּוֹדָה",
+          "strong": "H8426",
+          "pron": "토다"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "leviticus 7:12",
+        "leviticus 7:13",
+        "leviticus 7:15",
+        "leviticus 22:29",
+        "chronicles2 29:31",
+        "psalms 107:22",
+        "psalms 116:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְתוֹד֖וֹת לְבֵ֣ית",
+      "pron": "토다 미바이트",
+      "lemmas": [
+        "תּוֹדָה",
+        "בַּיִת"
+      ],
+      "words": [
+        {
+          "word": "וְתוֹד֖וֹת",
+          "lemma": "תּוֹדָה",
+          "strong": "H8426",
+          "pron": "토다"
+        },
+        {
+          "word": "לְבֵ֣ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles2 29:31",
+        "nehemiah 12:40",
+        "jeremiah 17:26",
+        "jeremiah 33:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְתוֹד֖וֹת לְבֵ֣ית יְהוָ֑ה",
+      "pron": "토다 미바이트 여호와",
+      "lemmas": [
+        "תּוֹדָה",
+        "בַּיִת",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וְתוֹד֖וֹת",
+          "lemma": "תּוֹדָה",
+          "strong": "H8426",
+          "pron": "토다"
+        },
+        {
+          "word": "לְבֵ֣ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "יְהוָ֑ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles2 29:31",
+        "jeremiah 17:26",
+        "jeremiah 33:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תִזְבְּח֥וּ זֶֽבַח תּוֹדָ֖ה",
+      "pron": "바잇바흐 제바흐 토다",
+      "lemmas": [
+        "זָבַח",
+        "זֶבַח",
+        "תּוֹדָה"
+      ],
+      "words": [
+        {
+          "word": "תִזְבְּח֥וּ",
+          "lemma": "זָבַח",
+          "strong": "H2076",
+          "pron": "바잇바흐"
+        },
+        {
+          "word": "זֶֽבַח",
+          "lemma": "זֶבַח",
+          "strong": "H2077",
+          "pron": "제바흐"
+        },
+        {
+          "word": "תּוֹדָ֖ה",
+          "lemma": "תּוֹדָה",
+          "strong": "H8426",
+          "pron": "토다"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 22:29",
+        "psalms 107:22",
+        "psalms 116:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "גְּמוּל",
-  "pron": "게물라므",
+  "pron": "키게물",
   "strong": "H1576",
   "posKo": "명사",
   "root": {
@@ -12,19 +12,19 @@
     {
       "lemma": "גָּמוּל",
       "strong": "H1577",
-      "pron": "",
+      "pron": "르가물",
       "glossKo": "가물"
     },
     {
       "lemma": "גְּמוּלָה",
       "strong": "H1578",
-      "pron": "",
+      "pron": "아게물라",
       "glossKo": "갚음"
     },
     {
       "lemma": "גָּמַל",
       "strong": "H1580",
-      "pron": "가말티",
+      "pron": "바익가말",
       "glossKo": "갚다"
     },
     {
@@ -36,7 +36,7 @@
     {
       "lemma": "גַּמְלִיאֵל",
       "strong": "H1583",
-      "pron": "",
+      "pron": "감리엘",
       "glossKo": "가말리엘"
     },
     {
@@ -48,9 +48,78 @@
   ],
   "defEn": "treatment; act",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 19,
   "byBook": {
-    "psalms": 4
+    "isaiah": 5,
+    "psalms": 4,
+    "joel": 3,
+    "proverbs": 2,
+    "chronicles2": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "lamentations": 1,
+    "obadiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הָשֵׁ֖ב גְּמוּלָ֣ם",
+      "pron": "슙카 키게물",
+      "lemmas": [
+        "שׁוּב",
+        "גְּמוּל"
+      ],
+      "words": [
+        {
+          "word": "הָשֵׁ֖ב",
+          "lemma": "שׁוּב",
+          "strong": "H7725",
+          "pron": "슙카"
+        },
+        {
+          "word": "גְּמוּלָ֣ם",
+          "lemma": "גְּמוּל",
+          "strong": "H1576",
+          "pron": "키게물"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 28:4",
+        "psalms 94:2",
+        "lamentations 3:64",
+        "joel 3:4",
+        "joel 3:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּגְמ֥וּל יָדָ֖יו",
+      "pron": "키게물 야도",
+      "lemmas": [
+        "גְּמוּל",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "כִּגְמ֥וּל",
+          "lemma": "גְּמוּל",
+          "strong": "H1576",
+          "pron": "키게물"
+        },
+        {
+          "word": "יָדָ֖יו",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 9:16",
+        "proverbs 12:14",
+        "isaiah 3:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

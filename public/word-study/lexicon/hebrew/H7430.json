@@ -1,6 +1,6 @@
 {
   "lemma": "רָמַשׂ",
-  "pron": "로메스",
+  "pron": "하로메세트",
   "strong": "H7430",
   "posKo": "동사",
   "root": null,
@@ -8,31 +8,34 @@
     {
       "lemma": "רֶמֶשׂ",
       "strong": "H7431",
-      "pron": "레메스",
+      "pron": "바레메스",
       "glossKo": "기는 것"
     }
   ],
   "defEn": "glide swiftly; crawl; move with short steps",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 17,
   "byBook": {
     "genesis": 10,
-    "psalms": 2
+    "leviticus": 3,
+    "psalms": 2,
+    "deuteronomy": 1,
+    "ezekiel": 1
   },
   "phrases": [
     {
-      "hebrew": "רוֹמֵ֣שׂ עַל",
-      "pron": "로메스 알",
+      "hebrew": "הָרֹמֵ֥שׂ עַל",
+      "pron": "하로메세트 알",
       "lemmas": [
         "רָמַשׂ",
         "עַל"
       ],
       "words": [
         {
-          "word": "רוֹמֵ֣שׂ",
+          "word": "הָרֹמֵ֥שׂ",
           "lemma": "רָמַשׂ",
           "strong": "H7430",
-          "pron": "로메스"
+          "pron": "하로메세트"
         },
         {
           "word": "עַל",
@@ -41,7 +44,7 @@
           "pron": "알"
         }
       ],
-      "count": 8,
+      "count": 10,
       "refs": [
         "genesis 1:26",
         "genesis 1:28",
@@ -50,13 +53,15 @@
         "genesis 7:14",
         "genesis 7:21",
         "genesis 8:17",
-        "genesis 8:19"
+        "genesis 8:19",
+        "leviticus 11:44",
+        "ezekiel 38:20"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "הָרֹמֵ֥שׂ עַל הָאָ֖רֶץ",
-      "pron": "로메스 알 에레츠",
+      "pron": "하로메세트 알 하아레츠",
       "lemmas": [
         "רָמַשׂ",
         "עַל",
@@ -67,7 +72,7 @@
           "word": "הָרֹמֵ֥שׂ",
           "lemma": "רָמַשׂ",
           "strong": "H7430",
-          "pron": "로메스"
+          "pron": "하로메세트"
         },
         {
           "word": "עַל",
@@ -79,10 +84,10 @@
           "word": "הָאָ֖רֶץ",
           "lemma": "אֶרֶץ",
           "strong": "H776",
-          "pron": "에레츠"
+          "pron": "하아레츠"
         }
       ],
-      "count": 7,
+      "count": 8,
       "refs": [
         "genesis 1:26",
         "genesis 1:28",
@@ -90,13 +95,14 @@
         "genesis 7:14",
         "genesis 7:21",
         "genesis 8:17",
-        "genesis 8:19"
+        "genesis 8:19",
+        "leviticus 11:44"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "הָרֶ֛מֶשׂ הָרֹמֵ֥שׂ",
-      "pron": "레메스 로메스",
+      "pron": "바레메스 하로메세트",
       "lemmas": [
         "רֶמֶשׂ",
         "רָמַשׂ"
@@ -106,26 +112,27 @@
           "word": "הָרֶ֛מֶשׂ",
           "lemma": "רֶמֶשׂ",
           "strong": "H7431",
-          "pron": "레메스"
+          "pron": "바레메스"
         },
         {
           "word": "הָרֹמֵ֥שׂ",
           "lemma": "רָמַשׂ",
           "strong": "H7430",
-          "pron": "로메스"
+          "pron": "하로메세트"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "genesis 1:26",
         "genesis 7:14",
-        "genesis 8:17"
+        "genesis 8:17",
+        "ezekiel 38:20"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "הָרֶ֛מֶשׂ הָרֹמֵ֥שׂ עַל",
-      "pron": "레메스 로메스 알",
+      "pron": "바레메스 하로메세트 알",
       "lemmas": [
         "רֶמֶשׂ",
         "רָמַשׂ",
@@ -136,13 +143,13 @@
           "word": "הָרֶ֛מֶשׂ",
           "lemma": "רֶמֶשׂ",
           "strong": "H7431",
-          "pron": "레메스"
+          "pron": "바레메스"
         },
         {
           "word": "הָרֹמֵ֥שׂ",
           "lemma": "רָמַשׂ",
           "strong": "H7430",
-          "pron": "로메스"
+          "pron": "하로메세트"
         },
         {
           "word": "עַל",
@@ -151,17 +158,18 @@
           "pron": "알"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "genesis 1:26",
         "genesis 7:14",
-        "genesis 8:17"
+        "genesis 8:17",
+        "ezekiel 38:20"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "וּבְכָל הָרֶ֖מֶשׂ הָֽרֹמֵ֥שׂ",
-      "pron": "브콜 레메스 로메스",
+      "pron": "칼 바레메스 하로메세트",
       "lemmas": [
         "כֹּל",
         "רֶמֶשׂ",
@@ -172,26 +180,27 @@
           "word": "וּבְכָל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
           "word": "הָרֶ֖מֶשׂ",
           "lemma": "רֶמֶשׂ",
           "strong": "H7431",
-          "pron": "레메스"
+          "pron": "바레메스"
         },
         {
           "word": "הָֽרֹמֵ֥שׂ",
           "lemma": "רָמַשׂ",
           "strong": "H7430",
-          "pron": "로메스"
+          "pron": "하로메세트"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "genesis 1:26",
         "genesis 7:14",
-        "genesis 8:17"
+        "genesis 8:17",
+        "ezekiel 38:20"
       ],
       "glossKo": ""
     }

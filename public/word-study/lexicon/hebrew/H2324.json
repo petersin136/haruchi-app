@@ -1,8 +1,8 @@
 {
   "lemma": "חֲוָא",
-  "pron": "하바",
+  "pron": "네하베",
   "strong": "H2324",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "חָוָה",
     "strong": "H2331",
@@ -12,14 +12,14 @@
     {
       "lemma": "אַחְוָה",
       "strong": "H262",
-      "pron": "",
-      "glossKo": "선언"
+      "pron": "베아하바티",
+      "glossKo": "나의 선언"
     },
     {
       "lemma": "חָוָה",
       "strong": "H2331",
-      "pron": "예하베",
-      "glossKo": "선포하다"
+      "pron": "아하베카",
+      "glossKo": "너에게 선포하다"
     },
     {
       "lemma": "חַוָּה",
@@ -30,13 +30,49 @@
     {
       "lemma": "חָיָה",
       "strong": "H2421",
-      "pron": "예히",
+      "pron": "바예히",
       "glossKo": "살다"
     }
   ],
   "defEn": "show",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "daniel": 14
+  },
+  "phrases": [
+    {
+      "hebrew": "וּפִשְׁרָ֥א נְחַוֵּֽא",
+      "pron": "우피셰라 네하베",
+      "lemmas": [
+        "פְּשַׁר",
+        "חֲוָא"
+      ],
+      "words": [
+        {
+          "word": "וּפִשְׁרָ֥א",
+          "lemma": "פְּשַׁר",
+          "strong": "H6591",
+          "pron": "우피셰라"
+        },
+        {
+          "word": "נְחַוֵּֽא",
+          "lemma": "חֲוָא",
+          "strong": "H2324",
+          "pron": "네하베"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "daniel 2:4",
+        "daniel 2:6",
+        "daniel 2:7",
+        "daniel 2:9",
+        "daniel 2:16",
+        "daniel 5:7",
+        "daniel 5:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,39 +12,235 @@
     {
       "lemma": "נָעוּר",
       "strong": "H5271",
-      "pron": "네우라위",
-      "glossKo": "나의 젊음"
+      "pron": "민네우라으브",
+      "glossKo": "그의 젊음"
     },
     {
       "lemma": "נַעַר",
       "strong": "H5288",
-      "pron": "나아르",
+      "pron": "아네아림",
       "glossKo": "소년"
+    },
+    {
+      "lemma": "נַעֲרָה",
+      "strong": "H5292",
+      "pron": "브나아라타",
+      "glossKo": "나아라"
     },
     {
       "lemma": "נַעֲרַי",
       "strong": "H5293",
-      "pron": "",
+      "pron": "나아라이",
       "glossKo": "나아래 사람"
     },
     {
       "lemma": "נְעַרְיָה",
       "strong": "H5294",
-      "pron": "",
+      "pron": "우네아레아",
       "glossKo": "느아랴"
     },
     {
       "lemma": "נַעֲרָן",
       "strong": "H5295",
-      "pron": "",
+      "pron": "나아란",
       "glossKo": "나아란"
     }
   ],
   "defEn": "girl",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 76,
   "byBook": {
-    "genesis": 9
+    "deuteronomy": 27,
+    "esther": 13,
+    "genesis": 9,
+    "judges": 7,
+    "ruth": 7,
+    "kings1": 3,
+    "proverbs": 3,
+    "kings2": 2,
+    "samuel1": 2,
+    "amos": 1,
+    "exodus": 1,
+    "job": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הנער הַֽנַּעֲרָ֖ה",
+      "pron": "아나아라 아나아라",
+      "lemmas": [
+        "נַעֲרָה",
+        "נַעֲרָה"
+      ],
+      "words": [
+        {
+          "word": "הנער",
+          "lemma": "נַעֲרָה",
+          "strong": "H5291",
+          "pron": "아나아라"
+        },
+        {
+          "word": "הַֽנַּעֲרָ֖ה",
+          "lemma": "נַעֲרָה",
+          "strong": "H5291",
+          "pron": "아나아라"
+        }
+      ],
+      "count": 28,
+      "refs": [
+        "deuteronomy 22:15",
+        "deuteronomy 22:16",
+        "deuteronomy 22:20",
+        "deuteronomy 22:21",
+        "deuteronomy 22:23",
+        "deuteronomy 22:24",
+        "deuteronomy 22:25",
+        "deuteronomy 22:26",
+        "deuteronomy 22:27",
+        "deuteronomy 22:28",
+        "deuteronomy 22:29",
+        "esther 2:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲבִ֥י הנער",
+      "pron": "아비브 아나아라",
+      "lemmas": [
+        "אָב",
+        "נַעֲרָה"
+      ],
+      "words": [
+        {
+          "word": "אֲבִ֥י",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        },
+        {
+          "word": "הנער",
+          "lemma": "נַעֲרָה",
+          "strong": "H5291",
+          "pron": "아나아라"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "deuteronomy 22:15",
+        "deuteronomy 22:16",
+        "deuteronomy 22:19",
+        "deuteronomy 22:29",
+        "judges 19:3",
+        "judges 19:4",
+        "judges 19:5",
+        "judges 19:6",
+        "judges 19:8",
+        "judges 19:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲבִ֥י הנער הַֽנַּעֲרָ֖ה",
+      "pron": "아비브 아나아라 아나아라",
+      "lemmas": [
+        "אָב",
+        "נַעֲרָה",
+        "נַעֲרָה"
+      ],
+      "words": [
+        {
+          "word": "אֲבִ֥י",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        },
+        {
+          "word": "הנער",
+          "lemma": "נַעֲרָה",
+          "strong": "H5291",
+          "pron": "아나아라"
+        },
+        {
+          "word": "הַֽנַּעֲרָ֖ה",
+          "lemma": "נַעֲרָה",
+          "strong": "H5291",
+          "pron": "아나아라"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 22:15",
+        "deuteronomy 22:16",
+        "deuteronomy 22:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הנער",
+      "pron": "에트 아나아라",
+      "lemmas": [
+        "אֵת",
+        "נַעֲרָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הנער",
+          "lemma": "נַעֲרָה",
+          "strong": "H5291",
+          "pron": "아나아라"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 34:3",
+        "genesis 34:12",
+        "deuteronomy 22:21",
+        "deuteronomy 22:24",
+        "deuteronomy 22:25",
+        "esther 2:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הנער הַֽנַּעֲרָ֜ה",
+      "pron": "에트 아나아라 아나아라",
+      "lemmas": [
+        "אֵת",
+        "נַעֲרָה",
+        "נַעֲרָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הנער",
+          "lemma": "נַעֲרָה",
+          "strong": "H5291",
+          "pron": "아나아라"
+        },
+        {
+          "word": "הַֽנַּעֲרָ֜ה",
+          "lemma": "נַעֲרָה",
+          "strong": "H5291",
+          "pron": "아나아라"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 22:21",
+        "deuteronomy 22:24",
+        "deuteronomy 22:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

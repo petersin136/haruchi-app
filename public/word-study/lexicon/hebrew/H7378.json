@@ -1,6 +1,6 @@
 {
   "lemma": "רִיב",
-  "pron": "리바",
+  "pron": "바야리부",
   "strong": "H7378",
   "posKo": "동사",
   "root": null,
@@ -8,51 +8,201 @@
     {
       "lemma": "יָרֵב",
       "strong": "H3377",
-      "pron": "",
+      "pron": "야렙",
       "glossKo": "야렙"
     },
     {
       "lemma": "יְרֻבַּעַל",
       "strong": "H3378",
-      "pron": "",
+      "pron": "예룹바알",
       "glossKo": "여룹바알"
     },
     {
       "lemma": "יָרׇבְעָם",
       "strong": "H3379",
-      "pron": "",
+      "pron": "브야랍암",
       "glossKo": "여로보암"
     },
     {
       "lemma": "יְרֻבֶּשֶׁת",
       "strong": "H3380",
-      "pron": "",
+      "pron": "예룹베셰트",
       "glossKo": "여룹베셋"
     },
     {
       "lemma": "יָרִיב",
       "strong": "H3401",
-      "pron": "예리바위",
+      "pron": "예리바이",
       "glossKo": "나의 다투는 자"
     },
     {
       "lemma": "מְרִיב בַּעַל",
       "strong": "H4807",
-      "pron": "",
+      "pron": "메립",
       "glossKo": "므립바알"
     }
   ],
   "defEn": "toss; grapple; wrangle; hold a controversy",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 70,
   "byBook": {
+    "judges": 9,
+    "isaiah": 8,
+    "job": 8,
+    "jeremiah": 7,
+    "proverbs": 6,
     "psalms": 5,
-    "genesis": 4
+    "samuel1": 5,
+    "genesis": 4,
+    "hosea": 4,
+    "nehemiah": 4,
+    "exodus": 3,
+    "micah": 2,
+    "numbers": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "lamentations": 1
   },
   "phrases": [
     {
+      "hebrew": "הֲר֥וֹב רָב֙",
+      "pron": "바야리부 바야리부",
+      "lemmas": [
+        "רִיב",
+        "רִיב"
+      ],
+      "words": [
+        {
+          "word": "הֲר֥וֹב",
+          "lemma": "רִיב",
+          "strong": "H7378",
+          "pron": "바야리부"
+        },
+        {
+          "word": "רָב֙",
+          "lemma": "רִיב",
+          "strong": "H7378",
+          "pron": "바야리부"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "judges 11:25",
+        "judges 21:22",
+        "samuel1 2:10",
+        "proverbs 3:30",
+        "jeremiah 50:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וָאָרִ֨יבָה֙ אֶת",
+      "pron": "바야리부 에트",
+      "lemmas": [
+        "רִיב",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וָאָרִ֨יבָה֙",
+          "lemma": "רִיב",
+          "strong": "H7378",
+          "pron": "바야리부"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H854",
+          "pron": "에트"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "judges 8:1",
+        "nehemiah 5:7",
+        "nehemiah 13:11",
+        "nehemiah 13:17",
+        "proverbs 25:9",
+        "isaiah 45:9",
+        "isaiah 50:8",
+        "jeremiah 2:9",
+        "micah 6:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָרִ֖יב אֶת",
+      "pron": "바야리부 에트",
+      "lemmas": [
+        "רִיב",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "יָרִ֖יב",
+          "lemma": "רִיב",
+          "strong": "H7378",
+          "pron": "바야리부"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel1 24:15",
+        "samuel1 25:39",
+        "proverbs 23:11",
+        "isaiah 49:25",
+        "jeremiah 50:34",
+        "jeremiah 51:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיָרֵ֣ב אֶת רִיבִ֔י",
+      "pron": "바야리부 에트 립",
+      "lemmas": [
+        "רִיב",
+        "אֵת",
+        "רִיב"
+      ],
+      "words": [
+        {
+          "word": "וְיָרֵ֣ב",
+          "lemma": "רִיב",
+          "strong": "H7378",
+          "pron": "바야리부"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "רִיבִ֔י",
+          "lemma": "רִיב",
+          "strong": "H7379",
+          "pron": "립"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 24:15",
+        "samuel1 25:39",
+        "proverbs 23:11",
+        "jeremiah 50:34",
+        "jeremiah 51:36"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וְרִ֘יבָ֤ה רִיבִ֗י",
-      "pron": "리바 메리베",
+      "pron": "바야리부 립",
       "lemmas": [
         "רִיב",
         "רִיב"
@@ -62,20 +212,22 @@
           "word": "וְרִ֘יבָ֤ה",
           "lemma": "רִיב",
           "strong": "H7378",
-          "pron": "리바"
+          "pron": "바야리부"
         },
         {
           "word": "רִיבִ֗י",
           "lemma": "רִיב",
           "strong": "H7379",
-          "pron": "메리베"
+          "pron": "립"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
         "psalms 43:1",
         "psalms 74:22",
-        "psalms 119:154"
+        "psalms 119:154",
+        "proverbs 22:23",
+        "micah 7:9"
       ],
       "glossKo": ""
     }

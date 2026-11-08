@@ -1,8 +1,8 @@
 {
   "lemma": "צֶאֱצָא",
-  "pron": "체에차",
+  "pron": "베체에차에카",
   "strong": "H6631",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "יָצָא",
     "strong": "H3318",
@@ -12,43 +12,76 @@
     {
       "lemma": "יָצָא",
       "strong": "H3318",
-      "pron": "예체",
+      "pron": "바토체",
       "glossKo": "나가다"
     },
     {
       "lemma": "יְצָא",
       "strong": "H3319",
-      "pron": "",
+      "pron": "브셰으치",
       "glossKo": "나오다(아람)"
     },
     {
       "lemma": "יָצִיא",
       "strong": "H3329",
-      "pron": "",
-      "glossKo": "발달"
+      "pron": "브미치브",
+      "glossKo": "그의 발달"
     },
     {
       "lemma": "מוֹצָא",
       "strong": "H4161",
-      "pron": "모차오",
-      "glossKo": "그의 나가는 것"
+      "pron": "모차",
+      "glossKo": "나가는 것"
     },
     {
       "lemma": "צָאָה",
       "strong": "H6627",
-      "pron": "",
-      "glossKo": "오물"
+      "pron": "체아테카",
+      "glossKo": "너의 오물"
     },
     {
       "lemma": "תּוֹצָאָה",
       "strong": "H8444",
-      "pron": "토차오트",
-      "glossKo": "출입구"
+      "pron": "토체오타으브",
+      "glossKo": "그의 출입구"
     }
   ],
   "defEn": "issue; produce; children",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 11,
+  "byBook": {
+    "isaiah": 7,
+    "job": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "זַרְעֶ֑ךָ וְ֝צֶאֱצָאֶ֗יךָ",
+      "pron": "제라 베체에차에카",
+      "lemmas": [
+        "זֶרַע",
+        "צֶאֱצָא"
+      ],
+      "words": [
+        {
+          "word": "זַרְעֶ֑ךָ",
+          "lemma": "זֶרַע",
+          "strong": "H2233",
+          "pron": "제라"
+        },
+        {
+          "word": "וְ֝צֶאֱצָאֶ֗יךָ",
+          "lemma": "צֶאֱצָא",
+          "strong": "H6631",
+          "pron": "베체에차에카"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 5:25",
+        "isaiah 48:19",
+        "isaiah 61:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

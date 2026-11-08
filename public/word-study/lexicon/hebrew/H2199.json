@@ -1,6 +1,6 @@
 {
   "lemma": "זָעַק",
-  "pron": "자아쿠",
+  "pron": "바잇아쿠",
   "strong": "H2199",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "זְעִק",
       "strong": "H2200",
-      "pron": "",
+      "pron": "제이크",
       "glossKo": "부르짖다"
     },
     {
@@ -20,14 +20,35 @@
   ],
   "defEn": "shriek",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 73,
   "byBook": {
-    "psalms": 5
+    "judges": 13,
+    "samuel1": 10,
+    "jeremiah": 9,
+    "isaiah": 5,
+    "psalms": 5,
+    "samuel2": 5,
+    "ezekiel": 4,
+    "chronicles2": 3,
+    "habakkuk": 2,
+    "hosea": 2,
+    "job": 2,
+    "jonah": 2,
+    "nehemiah": 2,
+    "chronicles1": 1,
+    "esther": 1,
+    "exodus": 1,
+    "joel": 1,
+    "joshua": 1,
+    "kings1": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
       "hebrew": "וַיִּזְעֲק֣וּ אֶל",
-      "pron": "자아쿠 엘레모",
+      "pron": "바잇아쿠 엘",
       "lemmas": [
         "זָעַק",
         "אֵל"
@@ -37,26 +58,35 @@
           "word": "וַיִּזְעֲק֣וּ",
           "lemma": "זָעַק",
           "strong": "H2199",
-          "pron": "자아쿠"
+          "pron": "바잇아쿠"
         },
         {
           "word": "אֶל",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
         }
       ],
-      "count": 3,
+      "count": 15,
       "refs": [
+        "judges 10:14",
+        "samuel1 7:8",
+        "samuel1 12:10",
+        "samuel1 15:11",
+        "chronicles2 20:9",
         "psalms 107:13",
         "psalms 107:19",
-        "psalms 142:5"
+        "psalms 142:5",
+        "jeremiah 11:11",
+        "jeremiah 11:12",
+        "jeremiah 48:31",
+        "hosea 7:14"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "וַיִּזְעֲק֣וּ אֶל יְ֭הוָה",
-      "pron": "자아쿠 엘레모 여호와",
+      "pron": "바잇아쿠 엘 여호와",
       "lemmas": [
         "זָעַק",
         "אֵל",
@@ -67,13 +97,13 @@
           "word": "וַיִּזְעֲק֣וּ",
           "lemma": "זָעַק",
           "strong": "H2199",
-          "pron": "자아쿠"
+          "pron": "바잇아쿠"
         },
         {
           "word": "אֶל",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
         },
         {
           "word": "יְ֭הוָה",
@@ -82,11 +112,115 @@
           "pron": "여호와"
         }
       ],
-      "count": 3,
+      "count": 8,
       "refs": [
+        "samuel1 7:8",
+        "samuel1 12:10",
+        "samuel1 15:11",
         "psalms 107:13",
         "psalms 107:19",
-        "psalms 142:5"
+        "psalms 142:5",
+        "joel 1:14",
+        "micah 3:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּזְעֲק֤וּ בְנֵֽי",
+      "pron": "바잇아쿠 바님",
+      "lemmas": [
+        "זָעַק",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "וַיִּזְעֲק֤וּ",
+          "lemma": "זָעַק",
+          "strong": "H2199",
+          "pron": "바잇아쿠"
+        },
+        {
+          "word": "בְנֵֽי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 3:9",
+        "judges 3:15",
+        "judges 6:6",
+        "judges 6:7",
+        "judges 10:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּזְעֲק֤וּ בְנֵֽי יִשְׂרָאֵל֙",
+      "pron": "바잇아쿠 바님 이스라엘",
+      "lemmas": [
+        "זָעַק",
+        "בֵּן",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "וַיִּזְעֲק֤וּ",
+          "lemma": "זָעַק",
+          "strong": "H2199",
+          "pron": "바잇아쿠"
+        },
+        {
+          "word": "בְנֵֽי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יִשְׂרָאֵל֙",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 3:9",
+        "judges 3:15",
+        "judges 6:6",
+        "judges 6:7",
+        "judges 10:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וָאֶזְעַ֣ק אֶתְכֶ֔ם",
+      "pron": "바잇아쿠 에트",
+      "lemmas": [
+        "זָעַק",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וָאֶזְעַ֣ק",
+          "lemma": "זָעַק",
+          "strong": "H2199",
+          "pron": "바잇아쿠"
+        },
+        {
+          "word": "אֶתְכֶ֔ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 12:2",
+        "samuel2 20:4",
+        "samuel2 20:5",
+        "zechariah 6:8"
       ],
       "glossKo": ""
     }

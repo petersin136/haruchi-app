@@ -1,6 +1,6 @@
 {
   "lemma": "דִּין",
-  "pron": "야딘",
+  "pron": "야돈",
   "strong": "H1777",
   "posKo": "동사",
   "root": null,
@@ -8,19 +8,19 @@
     {
       "lemma": "דִּין",
       "strong": "H1778",
-      "pron": "",
+      "pron": "드닌",
       "glossKo": "재판관(아람)"
     },
     {
       "lemma": "דִּין",
       "strong": "H1779",
-      "pron": "브디니위",
-      "glossKo": "나의 판결"
+      "pron": "딘",
+      "glossKo": "판결"
     },
     {
       "lemma": "דַּיָּן",
       "strong": "H1781",
-      "pron": "브다안",
+      "pron": "르다안",
       "glossKo": "재판관"
     },
     {
@@ -38,46 +38,144 @@
     {
       "lemma": "מְדִינָה",
       "strong": "H4082",
-      "pron": "",
+      "pron": "아메디노트",
       "glossKo": "지방"
     }
   ],
   "defEn": "rule",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 24,
   "byBook": {
     "psalms": 8,
-    "genesis": 4
+    "genesis": 4,
+    "jeremiah": 4,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "isaiah": 1,
+    "job": 1,
+    "proverbs": 1,
+    "samuel1": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "יָדִ֪ין עַ֫מִּ֥ים",
-      "pron": "야딘 암",
+      "hebrew": "יָדִ֣ין עַמּ֑וֹ",
+      "pron": "야돈 암",
       "lemmas": [
         "דִּין",
         "עַם"
       ],
       "words": [
         {
-          "word": "יָדִ֪ין",
+          "word": "יָדִ֣ין",
           "lemma": "דִּין",
           "strong": "H1777",
-          "pron": "야딘"
+          "pron": "야돈"
         },
         {
-          "word": "עַ֫מִּ֥ים",
+          "word": "עַמּ֑וֹ",
           "lemma": "עַם",
           "strong": "H5971",
           "pron": "암"
         }
       ],
-      "count": 5,
+      "count": 7,
       "refs": [
+        "genesis 49:16",
+        "job 36:31",
         "psalms 7:8",
         "psalms 50:4",
         "psalms 72:2",
         "psalms 96:10",
-        "genesis 49:16"
+        "isaiah 3:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דָ֔נוּ דִּ֥ין",
+      "pron": "야돈 딘",
+      "lemmas": [
+        "דִּין",
+        "דִּין"
+      ],
+      "words": [
+        {
+          "word": "דָ֔נוּ",
+          "lemma": "דִּין",
+          "strong": "H1777",
+          "pron": "야돈"
+        },
+        {
+          "word": "דִּ֥ין",
+          "lemma": "דִּין",
+          "strong": "H1779",
+          "pron": "딘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 5:28",
+        "jeremiah 22:16",
+        "jeremiah 30:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֖ה יָדִ֣ין",
+      "pron": "여호와 야돈",
+      "lemmas": [
+        "יְהֹוָה",
+        "דִּין"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "יָדִ֣ין",
+          "lemma": "דִּין",
+          "strong": "H1777",
+          "pron": "야돈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 2:10",
+        "psalms 7:8",
+        "jeremiah 21:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי יָדִ֤ין",
+      "pron": "키 야돈",
+      "lemmas": [
+        "כִּי",
+        "דִּין"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "יָדִ֤ין",
+          "lemma": "דִּין",
+          "strong": "H1777",
+          "pron": "야돈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 32:36",
+        "job 36:31",
+        "psalms 135:14"
       ],
       "glossKo": ""
     }

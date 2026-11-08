@@ -1,6 +1,6 @@
 {
   "lemma": "עָב",
-  "pron": "아베",
+  "pron": "브압",
   "strong": "H5645",
   "posKo": "명사",
   "root": {
@@ -12,21 +12,62 @@
     {
       "lemma": "עָב",
       "strong": "H5646",
-      "pron": "",
+      "pron": "브압",
       "glossKo": "처마"
     },
     {
       "lemma": "עוּב",
       "strong": "H5743",
-      "pron": "",
+      "pron": "야입",
       "glossKo": "두꺼워지다"
     }
   ],
   "defEn": "envelope; darkness; density; cloud",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 32,
   "byBook": {
-    "psalms": 5
+    "job": 8,
+    "isaiah": 7,
+    "psalms": 5,
+    "ecclesiastes": 3,
+    "kings1": 2,
+    "samuel2": 2,
+    "chronicles2": 1,
+    "exodus": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מַ֖יִם עָבֵ֥י",
+      "pron": "아마임 브압",
+      "lemmas": [
+        "מַיִם",
+        "עָב"
+      ],
+      "words": [
+        {
+          "word": "מַ֖יִם",
+          "lemma": "מַיִם",
+          "strong": "H4325",
+          "pron": "아마임"
+        },
+        {
+          "word": "עָבֵ֥י",
+          "lemma": "עָב",
+          "strong": "H5645",
+          "pron": "브압"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 22:12",
+        "job 26:8",
+        "psalms 18:11",
+        "psalms 77:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁלַח",
-  "pron": "바이셸라흐",
+  "pron": "이셸라흐",
   "strong": "H7971",
   "posKo": "동사",
   "root": null,
@@ -8,26 +8,26 @@
     {
       "lemma": "מִשְׁלוֹחַ",
       "strong": "H4916",
-      "pron": "",
+      "pron": "미셸라흐",
       "glossKo": "보냄"
     },
     {
       "lemma": "שִׁלּוּחַ",
       "strong": "H7964",
-      "pron": "",
-      "glossKo": "이혼"
+      "pron": "실루헤하",
+      "glossKo": "그녀의 이혼"
     },
     {
       "lemma": "שְׁלַח",
       "strong": "H7972",
-      "pron": "",
+      "pron": "셸라후",
       "glossKo": "보내다(아람)"
     },
     {
       "lemma": "שֶׁלַח",
       "strong": "H7973",
-      "pron": "",
-      "glossKo": "병기"
+      "pron": "실호",
+      "glossKo": "그의 병기"
     },
     {
       "lemma": "שֻׁלְחָן",
@@ -38,25 +38,57 @@
   ],
   "defEn": "send",
   "defKo": "",
-  "countOT": 99,
+  "countOT": 847,
   "byBook": {
+    "jeremiah": 89,
+    "exodus": 74,
+    "kings2": 71,
+    "samuel1": 67,
     "genesis": 66,
-    "psalms": 33
+    "samuel2": 62,
+    "kings1": 48,
+    "judges": 38,
+    "chronicles2": 37,
+    "isaiah": 33,
+    "psalms": 33,
+    "numbers": 29,
+    "ezekiel": 28,
+    "joshua": 23,
+    "deuteronomy": 22,
+    "job": 20,
+    "chronicles1": 17,
+    "esther": 15,
+    "nehemiah": 13,
+    "proverbs": 12,
+    "leviticus": 10,
+    "zechariah": 10,
+    "amos": 9,
+    "malachi": 5,
+    "joel": 3,
+    "obadiah": 3,
+    "daniel": 2,
+    "hosea": 2,
+    "ecclesiastes": 1,
+    "ezra": 1,
+    "haggai": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "וַיְשַׁלַּ֥ח אֶת",
-      "pron": "바이셸라흐 에트",
+      "hebrew": "שַׁלַּ֥ח אֶת",
+      "pron": "이셸라흐 에트",
       "lemmas": [
         "שָׁלַח",
         "אֵת"
       ],
       "words": [
         {
-          "word": "וַיְשַׁלַּ֥ח",
+          "word": "שַׁלַּ֥ח",
           "lemma": "שָׁלַח",
           "strong": "H7971",
-          "pron": "바이셸라흐"
+          "pron": "이셸라흐"
         },
         {
           "word": "אֶת",
@@ -65,7 +97,7 @@
           "pron": "에트"
         }
       ],
-      "count": 14,
+      "count": 123,
       "refs": [
         "genesis 8:7",
         "genesis 8:8",
@@ -83,129 +115,154 @@
       "glossKo": ""
     },
     {
-      "hebrew": "שָׁלַ֣ח יָ֭דָיו",
-      "pron": "바이셸라흐 야데카",
+      "hebrew": "שְׁלָחַ֣נִי אֲלֵיכֶ֑ם",
+      "pron": "이셸라흐 엘",
+      "lemmas": [
+        "שָׁלַח",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "שְׁלָחַ֣נִי",
+          "lemma": "שָׁלַח",
+          "strong": "H7971",
+          "pron": "이셸라흐"
+        },
+        {
+          "word": "אֲלֵיכֶ֑ם",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 77,
+      "refs": [
+        "genesis 37:13",
+        "genesis 38:25",
+        "exodus 3:10",
+        "exodus 3:13",
+        "exodus 3:14",
+        "exodus 3:15",
+        "exodus 7:16",
+        "numbers 5:3",
+        "numbers 22:10",
+        "numbers 22:37",
+        "numbers 24:12",
+        "joshua 11:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר שָׁלַ֥ח",
+      "pron": "아셰르 이셸라흐",
+      "lemmas": [
+        "אֲשֶׁר",
+        "שָׁלַח"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "שָׁלַ֥ח",
+          "lemma": "שָׁלַח",
+          "strong": "H7971",
+          "pron": "이셸라흐"
+        }
+      ],
+      "count": 66,
+      "refs": [
+        "genesis 45:27",
+        "genesis 46:5",
+        "exodus 4:28",
+        "exodus 10:10",
+        "exodus 33:12",
+        "numbers 13:16",
+        "numbers 13:27",
+        "numbers 14:36",
+        "numbers 24:12",
+        "deuteronomy 24:4",
+        "deuteronomy 28:48",
+        "deuteronomy 34:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּשְׁלַ֤ח יָדוֹ֙",
+      "pron": "이셸라흐 야도",
       "lemmas": [
         "שָׁלַח",
         "יָד"
       ],
       "words": [
         {
-          "word": "שָׁלַ֣ח",
+          "word": "וַיִּשְׁלַ֤ח",
           "lemma": "שָׁלַח",
           "strong": "H7971",
-          "pron": "바이셸라흐"
+          "pron": "이셸라흐"
         },
         {
-          "word": "יָ֭דָיו",
+          "word": "יָדוֹ֙",
           "lemma": "יָד",
           "strong": "H3027",
-          "pron": "야데카"
+          "pron": "야도"
         }
       ],
-      "count": 6,
+      "count": 40,
       "refs": [
-        "psalms 55:20",
-        "psalms 138:7",
-        "psalms 144:7",
         "genesis 3:22",
         "genesis 8:9",
-        "genesis 22:12"
+        "genesis 22:12",
+        "exodus 4:4",
+        "exodus 6:1",
+        "exodus 22:8",
+        "exodus 22:11",
+        "exodus 24:11",
+        "leviticus 16:21",
+        "deuteronomy 25:11",
+        "judges 15:15",
+        "samuel1 16:20"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הִ֑וא וַיִּשְׁלַ֗ח",
-      "pron": "브후 바이셸라흐",
-      "lemmas": [
-        "הוּא",
-        "שָׁלַח"
-      ],
-      "words": [
-        {
-          "word": "הִ֑וא",
-          "lemma": "הוּא",
-          "strong": "H1931",
-          "pron": "브후"
-        },
-        {
-          "word": "וַיִּשְׁלַ֗ח",
-          "lemma": "שָׁלַח",
-          "strong": "H7971",
-          "pron": "바이셸라흐"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 20:2",
-        "genesis 24:7",
-        "genesis 32:18",
-        "genesis 38:25"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֲנָשִׁ֑ים וַֽיְשַׁלְּח֥וּ",
-      "pron": "하이쉬 바이셸라흐",
-      "lemmas": [
-        "אִישׁ",
-        "שָׁלַח"
-      ],
-      "words": [
-        {
-          "word": "אֲנָשִׁ֑ים",
-          "lemma": "אִישׁ",
-          "strong": "H376",
-          "pron": "하이쉬"
-        },
-        {
-          "word": "וַֽיְשַׁלְּח֥וּ",
-          "lemma": "שָׁלַח",
-          "strong": "H7971",
-          "pron": "바이셸라흐"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 12:20",
-        "genesis 43:14",
-        "genesis 44:3"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיְשַׁלַּ֥ח אֶת הַיּוֹנָ֖ה",
-      "pron": "바이셸라흐 에트 카요나",
+      "hebrew": "וַיִּשְׁלַ֤ח יְהוָה֙",
+      "pron": "이셸라흐 여호와",
       "lemmas": [
         "שָׁלַח",
-        "אֵת",
-        "יוֹנָה"
+        "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "וַיְשַׁלַּ֥ח",
+          "word": "וַיִּשְׁלַ֤ח",
           "lemma": "שָׁלַח",
           "strong": "H7971",
-          "pron": "바이셸라흐"
+          "pron": "이셸라흐"
         },
         {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        },
-        {
-          "word": "הַיּוֹנָ֖ה",
-          "lemma": "יוֹנָה",
-          "strong": "H3123",
-          "pron": "카요나"
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         }
       ],
-      "count": 3,
+      "count": 34,
       "refs": [
-        "genesis 8:8",
-        "genesis 8:10",
-        "genesis 8:12"
+        "genesis 3:23",
+        "genesis 19:13",
+        "numbers 21:6",
+        "deuteronomy 7:20",
+        "deuteronomy 9:23",
+        "deuteronomy 28:20",
+        "deuteronomy 28:48",
+        "deuteronomy 34:11",
+        "judges 6:8",
+        "samuel1 12:8",
+        "samuel1 12:11",
+        "samuel1 15:1"
       ],
       "glossKo": ""
     }

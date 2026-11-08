@@ -2,7 +2,7 @@
   "lemma": "אַרְנוֹן",
   "pron": "아레논",
   "strong": "H769",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רָנַן",
     "strong": "H7442",
@@ -16,6 +16,12 @@
       "glossKo": "아란"
     },
     {
+      "lemma": "אַרְנָן",
+      "strong": "H770",
+      "pron": "아레난",
+      "glossKo": "아르난"
+    },
+    {
       "lemma": "רֹן",
       "strong": "H7438",
       "pron": "란네",
@@ -24,25 +30,207 @@
     {
       "lemma": "רִנָּה",
       "strong": "H7440",
-      "pron": "린나티위",
-      "glossKo": "나의 외침"
+      "pron": "하린나",
+      "glossKo": "외침"
     },
     {
       "lemma": "רָנַן",
       "strong": "H7442",
-      "pron": "예란네누",
+      "pron": "바야론누",
       "glossKo": "기뻐 외치다"
     },
     {
       "lemma": "רֶנֶן",
       "strong": "H7443",
-      "pron": "",
+      "pron": "레나님",
       "glossKo": "타조"
     }
   ],
   "defEn": "Arnon",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 25,
+  "byBook": {
+    "numbers": 7,
+    "deuteronomy": 6,
+    "judges": 5,
+    "joshua": 4,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "kings2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "נַ֨חַל אַרְנ֜וֹן",
+      "pron": "브나할 아레논",
+      "lemmas": [
+        "נַחַל",
+        "אַרְנוֹן"
+      ],
+      "words": [
+        {
+          "word": "נַ֨חַל",
+          "lemma": "נַחַל",
+          "strong": "H5158",
+          "pron": "브나할"
+        },
+        {
+          "word": "אַרְנ֜וֹן",
+          "lemma": "אַרְנוֹן",
+          "strong": "H769",
+          "pron": "아레논"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 21:14",
+        "deuteronomy 2:24",
+        "deuteronomy 2:36",
+        "deuteronomy 3:8",
+        "deuteronomy 3:12",
+        "deuteronomy 3:16",
+        "deuteronomy 4:48",
+        "joshua 12:1",
+        "joshua 12:2",
+        "joshua 13:9",
+        "joshua 13:16",
+        "kings2 10:33"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵֽאַרְנֹ֗ן עַד",
+      "pron": "아레논 앋",
+      "lemmas": [
+        "אַרְנוֹן",
+        "עַד"
+      ],
+      "words": [
+        {
+          "word": "מֵֽאַרְנֹ֗ן",
+          "lemma": "אַרְנוֹן",
+          "strong": "H769",
+          "pron": "아레논"
+        },
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 21:24",
+        "deuteronomy 3:8",
+        "deuteronomy 4:48",
+        "joshua 12:1",
+        "judges 11:13",
+        "judges 11:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׂפַת נַ֨חַל אַרְנ֜וֹן",
+      "pron": "사파 브나할 아레논",
+      "lemmas": [
+        "שָׂפָה",
+        "נַחַל",
+        "אַרְנוֹן"
+      ],
+      "words": [
+        {
+          "word": "שְׂפַת",
+          "lemma": "שָׂפָה",
+          "strong": "H8193",
+          "pron": "사파"
+        },
+        {
+          "word": "נַ֨חַל",
+          "lemma": "נַחַל",
+          "strong": "H5158",
+          "pron": "브나할"
+        },
+        {
+          "word": "אַרְנ֜וֹן",
+          "lemma": "אַרְנוֹן",
+          "strong": "H769",
+          "pron": "아레논"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 2:36",
+        "deuteronomy 4:48",
+        "joshua 12:2",
+        "joshua 13:9",
+        "joshua 13:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַרְנ֜וֹן וְהָעִ֨יר",
+      "pron": "아레논 이르",
+      "lemmas": [
+        "אַרְנוֹן",
+        "עִיר"
+      ],
+      "words": [
+        {
+          "word": "אַרְנ֜וֹן",
+          "lemma": "אַרְנוֹן",
+          "strong": "H769",
+          "pron": "아레논"
+        },
+        {
+          "word": "וְהָעִ֨יר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 2:36",
+        "joshua 13:9",
+        "joshua 13:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַרְנ֜וֹן וְהָעִ֨יר אֲשֶׁ֧ר",
+      "pron": "아레논 이르 아셰르",
+      "lemmas": [
+        "אַרְנוֹן",
+        "עִיר",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "אַרְנ֜וֹן",
+          "lemma": "אַרְנוֹן",
+          "strong": "H769",
+          "pron": "아레논"
+        },
+        {
+          "word": "וְהָעִ֨יר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        },
+        {
+          "word": "אֲשֶׁ֧ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 2:36",
+        "joshua 13:9",
+        "joshua 13:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,19 +12,19 @@
     {
       "lemma": "אֲרוּכָה",
       "strong": "H724",
-      "pron": "",
+      "pron": "아루카",
       "glossKo": "회복"
     },
     {
       "lemma": "אָרַךְ",
       "strong": "H748",
-      "pron": "헤에리쿠",
+      "pron": "아레쿠",
       "glossKo": "길게 하다"
     },
     {
       "lemma": "אֲרַךְ",
       "strong": "H749",
-      "pron": "",
+      "pron": "아리크",
       "glossKo": "적합하다(아람)"
     },
     {
@@ -42,45 +42,206 @@
     {
       "lemma": "אָרֹךְ",
       "strong": "H752",
-      "pron": "",
+      "pron": "아룩카",
       "glossKo": "긴"
     }
   ],
   "defEn": "length",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 95,
   "byBook": {
+    "ezekiel": 42,
+    "exodus": 24,
+    "chronicles2": 7,
+    "kings1": 6,
     "psalms": 4,
-    "genesis": 2
+    "proverbs": 3,
+    "deuteronomy": 2,
+    "genesis": 2,
+    "zechariah": 2,
+    "job": 1,
+    "judges": 1,
+    "lamentations": 1
   },
   "phrases": [
     {
-      "hebrew": "לְאֹ֣רֶךְ יָמִֽים",
-      "pron": "오레크 아욤",
+      "hebrew": "אַמָּה֙ אָרְכּ֔וֹ",
+      "pron": "암마 오레크",
+      "lemmas": [
+        "אַמָּה",
+        "אֹרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "אַמָּה֙",
+          "lemma": "אַמָּה",
+          "strong": "H520",
+          "pron": "암마"
+        },
+        {
+          "word": "אָרְכּ֔וֹ",
+          "lemma": "אֹרֶךְ",
+          "strong": "H753",
+          "pron": "오레크"
+        }
+      ],
+      "count": 24,
+      "refs": [
+        "genesis 6:15",
+        "exodus 25:23",
+        "exodus 26:16",
+        "exodus 27:1",
+        "exodus 27:9",
+        "exodus 30:2",
+        "exodus 36:21",
+        "exodus 37:10",
+        "exodus 37:25",
+        "exodus 38:1",
+        "exodus 38:18",
+        "deuteronomy 3:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָרְכּ֗וֹ וְאַמָּ֤ה",
+      "pron": "오레크 암마",
+      "lemmas": [
+        "אֹרֶךְ",
+        "אַמָּה"
+      ],
+      "words": [
+        {
+          "word": "אָרְכּ֗וֹ",
+          "lemma": "אֹרֶךְ",
+          "strong": "H753",
+          "pron": "오레크"
+        },
+        {
+          "word": "וְאַמָּ֤ה",
+          "lemma": "אַמָּה",
+          "strong": "H520",
+          "pron": "암마"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 25:10",
+        "exodus 25:17",
+        "exodus 25:23",
+        "exodus 30:2",
+        "exodus 37:1",
+        "exodus 37:6",
+        "exodus 37:10",
+        "exodus 37:25",
+        "chronicles2 3:3",
+        "chronicles2 3:11",
+        "ezekiel 40:42",
+        "ezekiel 42:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֹ֗רֶךְ חֲמִשָּׁ֤ה",
+      "pron": "오레크 하메쉬",
+      "lemmas": [
+        "אֹרֶךְ",
+        "חָמֵשׁ"
+      ],
+      "words": [
+        {
+          "word": "אֹ֗רֶךְ",
+          "lemma": "אֹרֶךְ",
+          "strong": "H753",
+          "pron": "오레크"
+        },
+        {
+          "word": "חֲמִשָּׁ֤ה",
+          "lemma": "חָמֵשׁ",
+          "strong": "H2568",
+          "pron": "하메쉬"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 27:1",
+        "exodus 38:1",
+        "chronicles2 6:13",
+        "ezekiel 40:30",
+        "ezekiel 42:20",
+        "ezekiel 45:1",
+        "ezekiel 45:3",
+        "ezekiel 45:6",
+        "ezekiel 48:9",
+        "ezekiel 48:10",
+        "ezekiel 48:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֹ֣רֶךְ יָ֭מִים",
+      "pron": "오레크 욤",
       "lemmas": [
         "אֹרֶךְ",
         "יוֹם"
       ],
       "words": [
         {
-          "word": "לְאֹ֣רֶךְ",
+          "word": "אֹ֣רֶךְ",
           "lemma": "אֹרֶךְ",
           "strong": "H753",
           "pron": "오레크"
         },
         {
-          "word": "יָמִֽים",
+          "word": "יָ֭מִים",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "아욤"
+          "pron": "욤"
         }
       ],
-      "count": 4,
+      "count": 9,
       "refs": [
+        "deuteronomy 30:20",
+        "job 12:12",
         "psalms 21:4",
         "psalms 23:6",
         "psalms 91:16",
-        "psalms 93:5"
+        "psalms 93:5",
+        "proverbs 3:2",
+        "proverbs 3:16",
+        "lamentations 5:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֹ֔רֶךְ וְרֹ֕חַב",
+      "pron": "오레크 라헵바흐",
+      "lemmas": [
+        "אֹרֶךְ",
+        "רֹחַב"
+      ],
+      "words": [
+        {
+          "word": "אֹ֔רֶךְ",
+          "lemma": "אֹרֶךְ",
+          "strong": "H753",
+          "pron": "오레크"
+        },
+        {
+          "word": "וְרֹ֕חַב",
+          "lemma": "רֹחַב",
+          "strong": "H7341",
+          "pron": "라헵바흐"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 13:17",
+        "ezekiel 40:20",
+        "ezekiel 40:21",
+        "ezekiel 40:25",
+        "ezekiel 40:29",
+        "ezekiel 45:1",
+        "ezekiel 48:13"
       ],
       "glossKo": ""
     }

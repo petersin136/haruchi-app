@@ -1,8 +1,8 @@
 {
   "lemma": "שָׁפָל",
-  "pron": "브샤팔",
+  "pron": "샤팔",
   "strong": "H8217",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "שָׁפֵל",
     "strong": "H8213",
@@ -12,39 +12,77 @@
     {
       "lemma": "שָׁפֵל",
       "strong": "H8213",
-      "pron": "타솁필",
+      "pron": "마솁필",
       "glossKo": "낮아지다"
     },
     {
       "lemma": "שְׁפַל",
       "strong": "H8214",
-      "pron": "",
+      "pron": "르하솁팔라",
       "glossKo": "낮아지다(아람)"
     },
     {
       "lemma": "שֶׁפֶל",
       "strong": "H8216",
-      "pron": "셰브십레누",
+      "pron": "솁베십레누",
       "glossKo": "우리의 낮은 자리"
     },
     {
       "lemma": "שְׁפֵלָה",
       "strong": "H8219",
-      "pron": "",
+      "pron": "우바셰펠라",
       "glossKo": "낮은 땅"
     },
     {
       "lemma": "שִׁפְלוּת",
       "strong": "H8220",
-      "pron": "",
+      "pron": "우브십루트",
       "glossKo": "낮은 위치"
     }
   ],
   "defEn": "depressed",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 19,
   "byBook": {
-    "psalms": 1
+    "ezekiel": 6,
+    "leviticus": 4,
+    "isaiah": 2,
+    "proverbs": 2,
+    "ecclesiastes": 1,
+    "job": 1,
+    "malachi": 1,
+    "psalms": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "שְׁפַל ר֭וּחַ",
+      "pron": "샤팔 브루아흐",
+      "lemmas": [
+        "שָׁפָל",
+        "רוּחַ"
+      ],
+      "words": [
+        {
+          "word": "שְׁפַל",
+          "lemma": "שָׁפָל",
+          "strong": "H8217",
+          "pron": "샤팔"
+        },
+        {
+          "word": "ר֭וּחַ",
+          "lemma": "רוּחַ",
+          "strong": "H7307",
+          "pron": "브루아흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 16:19",
+        "proverbs 29:23",
+        "isaiah 57:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

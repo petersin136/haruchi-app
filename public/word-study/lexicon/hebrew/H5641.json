@@ -1,6 +1,6 @@
 {
   "lemma": "סָתַר",
-  "pron": "힛티르",
+  "pron": "엣사테르",
   "strong": "H5641",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "מִסְתּוֹר",
       "strong": "H4563",
-      "pron": "",
+      "pron": "우르밋토르",
       "glossKo": "피난처"
     },
     {
       "lemma": "מַסְתֵּר",
       "strong": "H4564",
-      "pron": "",
+      "pron": "우크맛테르",
       "glossKo": "감추는 자"
     },
     {
@@ -26,33 +26,49 @@
     {
       "lemma": "סְתוּר",
       "strong": "H5639",
-      "pron": "",
+      "pron": "세투르",
       "glossKo": "스둘"
     },
     {
       "lemma": "סְתַר",
       "strong": "H5642",
-      "pron": "",
-      "glossKo": "숨기다(아람)"
+      "pron": "사테레흐",
+      "glossKo": "그에게 숨기다(아람)"
     },
     {
       "lemma": "סֵתֶר",
       "strong": "H5643",
-      "pron": "시테르오",
-      "glossKo": "그의 은밀한 곳"
+      "pron": "바세테르",
+      "glossKo": "은밀한 곳"
     }
   ],
   "defEn": "hide",
   "defKo": "",
-  "countOT": 25,
+  "countOT": 82,
   "byBook": {
     "psalms": 23,
-    "genesis": 2
+    "isaiah": 14,
+    "job": 8,
+    "deuteronomy": 6,
+    "proverbs": 6,
+    "samuel1": 6,
+    "jeremiah": 5,
+    "ezekiel": 3,
+    "genesis": 2,
+    "amos": 1,
+    "chronicles2": 1,
+    "exodus": 1,
+    "hosea": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "micah": 1,
+    "numbers": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
       "hebrew": "תַּסְתֵּ֬ר פָּנֶ֨יךָ",
-      "pron": "힛티르 미페네",
+      "pron": "엣사테르 페네",
       "lemmas": [
         "סָתַר",
         "פָּנִים"
@@ -62,33 +78,106 @@
           "word": "תַּסְתֵּ֬ר",
           "lemma": "סָתַר",
           "strong": "H5641",
-          "pron": "힛티르"
+          "pron": "엣사테르"
         },
         {
           "word": "פָּנֶ֨יךָ",
           "lemma": "פָּנִים",
           "strong": "H6440",
-          "pron": "미페네"
+          "pron": "페네"
         }
       ],
-      "count": 10,
+      "count": 24,
       "refs": [
+        "deuteronomy 7:20",
+        "deuteronomy 31:17",
+        "deuteronomy 31:18",
+        "deuteronomy 32:20",
+        "job 34:29",
         "psalms 10:11",
         "psalms 22:24",
         "psalms 27:9",
         "psalms 30:7",
         "psalms 51:9",
         "psalms 69:17",
+        "psalms 88:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֣א אֶסָּתֵֽר",
+      "pron": "로 엣사테르",
+      "lemmas": [
+        "לֹא",
+        "סָתַר"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "אֶסָּתֵֽר",
+          "lemma": "סָתַר",
+          "strong": "H5641",
+          "pron": "엣사테르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "job 13:20",
+        "psalms 22:24",
+        "psalms 38:9",
+        "isaiah 50:6",
+        "jeremiah 16:17",
+        "ezekiel 39:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תַּסְתֵּ֬ר פָּנֶ֨יךָ מִמֶּנִּי֮",
+      "pron": "엣사테르 페네 민",
+      "lemmas": [
+        "סָתַר",
+        "פָּנִים",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "תַּסְתֵּ֬ר",
+          "lemma": "סָתַר",
+          "strong": "H5641",
+          "pron": "엣사테르"
+        },
+        {
+          "word": "פָּנֶ֨יךָ",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "מִמֶּנִּי֮",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "psalms 22:24",
+        "psalms 27:9",
         "psalms 88:14",
         "psalms 102:2",
-        "psalms 104:29",
-        "psalms 143:7"
+        "psalms 143:7",
+        "isaiah 64:7"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "אַל תַּסְתֵּ֬ר",
-      "pron": "브엘 힛티르",
+      "pron": "엘 엣사테르",
       "lemmas": [
         "אַל",
         "סָתַר"
@@ -98,13 +187,13 @@
           "word": "אַל",
           "lemma": "אַל",
           "strong": "H408",
-          "pron": "브엘"
+          "pron": "엘"
         },
         {
           "word": "תַּסְתֵּ֬ר",
           "lemma": "סָתַר",
           "strong": "H5641",
-          "pron": "힛티르"
+          "pron": "엣사테르"
         }
       ],
       "count": 5,
@@ -118,46 +207,8 @@
       "glossKo": ""
     },
     {
-      "hebrew": "תַּסְתֵּ֬ר פָּנֶ֨יךָ מִמֶּנִּי֮",
-      "pron": "힛티르 미페네 밈메누",
-      "lemmas": [
-        "סָתַר",
-        "פָּנִים",
-        "מִן"
-      ],
-      "words": [
-        {
-          "word": "תַּסְתֵּ֬ר",
-          "lemma": "סָתַר",
-          "strong": "H5641",
-          "pron": "힛티르"
-        },
-        {
-          "word": "פָּנֶ֨יךָ",
-          "lemma": "פָּנִים",
-          "strong": "H6440",
-          "pron": "미페네"
-        },
-        {
-          "word": "מִמֶּנִּי֮",
-          "lemma": "מִן",
-          "strong": "H4480",
-          "pron": "밈메누"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 22:24",
-        "psalms 27:9",
-        "psalms 88:14",
-        "psalms 102:2",
-        "psalms 143:7"
-      ],
-      "glossKo": ""
-    },
-    {
       "hebrew": "אַל תַּסְתֵּ֬ר פָּנֶ֨יךָ",
-      "pron": "브엘 힛티르 미페네",
+      "pron": "엘 엣사테르 페네",
       "lemmas": [
         "אַל",
         "סָתַר",
@@ -168,19 +219,19 @@
           "word": "אַל",
           "lemma": "אַל",
           "strong": "H408",
-          "pron": "브엘"
+          "pron": "엘"
         },
         {
           "word": "תַּסְתֵּ֬ר",
           "lemma": "סָתַר",
           "strong": "H5641",
-          "pron": "힛티르"
+          "pron": "엣사테르"
         },
         {
           "word": "פָּנֶ֨יךָ",
           "lemma": "פָּנִים",
           "strong": "H6440",
-          "pron": "미페네"
+          "pron": "페네"
         }
       ],
       "count": 4,

@@ -1,6 +1,6 @@
 {
   "lemma": "שִׂמְחָה",
-  "pron": "심하",
+  "pron": "브심하",
   "strong": "H8057",
   "posKo": "명사",
   "root": {
@@ -12,16 +12,200 @@
     {
       "lemma": "שָׂמֵחַ",
       "strong": "H8056",
-      "pron": "세메헤",
+      "pron": "사메아흐",
       "glossKo": "기뻐하는"
     }
   ],
   "defEn": "blithesomeness; glee",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 94,
   "byBook": {
+    "isaiah": 15,
     "psalms": 13,
-    "genesis": 1
+    "ecclesiastes": 8,
+    "proverbs": 8,
+    "esther": 7,
+    "jeremiah": 7,
+    "chronicles1": 6,
+    "chronicles2": 6,
+    "nehemiah": 6,
+    "ezra": 3,
+    "ezekiel": 2,
+    "deuteronomy": 1,
+    "genesis": 1,
+    "job": 1,
+    "joel": 1,
+    "jonah": 1,
+    "judges": 1,
+    "kings1": 1,
+    "numbers": 1,
+    "samuel1": 1,
+    "samuel2": 1,
+    "songofsolomon": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "שִׂמְחָ֣ה גְדוֹלָ֑ה",
+      "pron": "브심하 아게돌림",
+      "lemmas": [
+        "שִׂמְחָה",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "שִׂמְחָ֣ה",
+          "lemma": "שִׂמְחָה",
+          "strong": "H8057",
+          "pron": "브심하"
+        },
+        {
+          "word": "גְדוֹלָ֑ה",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "kings1 1:40",
+        "chronicles1 29:9",
+        "chronicles1 29:22",
+        "chronicles2 30:21",
+        "chronicles2 30:26",
+        "nehemiah 8:12",
+        "nehemiah 8:17",
+        "nehemiah 12:43",
+        "jonah 4:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׂשׂ֤וֹן וְשִׂמְחָה֙",
+      "pron": "브사손 브심하",
+      "lemmas": [
+        "שָׂשׂוֹן",
+        "שִׂמְחָה"
+      ],
+      "words": [
+        {
+          "word": "שָׂשׂ֤וֹן",
+          "lemma": "שָׂשׂוֹן",
+          "strong": "H8342",
+          "pron": "브사손"
+        },
+        {
+          "word": "וְשִׂמְחָה֙",
+          "lemma": "שִׂמְחָה",
+          "strong": "H8057",
+          "pron": "브심하"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "psalms 51:8",
+        "isaiah 22:13",
+        "isaiah 35:10",
+        "isaiah 51:3",
+        "isaiah 51:11",
+        "jeremiah 15:16",
+        "zechariah 8:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבְי֨וֹם שִׂמְחַתְכֶ֥ם",
+      "pron": "욤 브심하",
+      "lemmas": [
+        "יוֹם",
+        "שִׂמְחָה"
+      ],
+      "words": [
+        {
+          "word": "וּבְי֨וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "שִׂמְחַתְכֶ֥ם",
+          "lemma": "שִׂמְחָה",
+          "strong": "H8057",
+          "pron": "브심하"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 10:10",
+        "chronicles2 30:21",
+        "chronicles2 30:23",
+        "ezra 6:22",
+        "songofsolomon 3:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְק֣וֹל שִׂמְחָ֔ה",
+      "pron": "콜 브심하",
+      "lemmas": [
+        "קוֹל",
+        "שִׂמְחָה"
+      ],
+      "words": [
+        {
+          "word": "וְק֣וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        },
+        {
+          "word": "שִׂמְחָ֔ה",
+          "lemma": "שִׂמְחָה",
+          "strong": "H8057",
+          "pron": "브심하"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "chronicles1 15:16",
+        "jeremiah 7:34",
+        "jeremiah 16:9",
+        "jeremiah 25:10",
+        "jeremiah 33:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שִׂמְחָ֔ה ק֥וֹל",
+      "pron": "브심하 콜",
+      "lemmas": [
+        "שִׂמְחָה",
+        "קוֹל"
+      ],
+      "words": [
+        {
+          "word": "שִׂמְחָ֔ה",
+          "lemma": "שִׂמְחָה",
+          "strong": "H8057",
+          "pron": "브심하"
+        },
+        {
+          "word": "ק֥וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezra 3:13",
+        "jeremiah 7:34",
+        "jeremiah 16:9",
+        "jeremiah 25:10",
+        "jeremiah 33:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

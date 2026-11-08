@@ -2,7 +2,7 @@
   "lemma": "כְּרִיתוּת",
   "pron": "케리투트",
   "strong": "H3748",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "כָּרַת",
     "strong": "H3772",
@@ -12,31 +12,66 @@
     {
       "lemma": "כְּרִית",
       "strong": "H3747",
-      "pron": "",
+      "pron": "케리트",
       "glossKo": "그릿"
     },
     {
       "lemma": "כָּרַת",
       "strong": "H3772",
-      "pron": "야케레트",
+      "pron": "익카레트",
       "glossKo": "끊다"
     },
     {
       "lemma": "כָּרֻתָה",
       "strong": "H3773",
-      "pron": "",
+      "pron": "케루토트",
       "glossKo": "잘려진 것"
     },
     {
       "lemma": "כְּרֵתִי",
       "strong": "H3774",
-      "pron": "",
+      "pron": "아케레티",
       "glossKo": "그렛 사람"
     }
   ],
   "defEn": "cutting; divorce",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "deuteronomy": 2,
+    "isaiah": 1,
+    "jeremiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "סֵ֤פֶר כְּרִיתֻת֙",
+      "pron": "세페르 케리투트",
+      "lemmas": [
+        "סֵפֶר",
+        "כְּרִיתוּת"
+      ],
+      "words": [
+        {
+          "word": "סֵ֤פֶר",
+          "lemma": "סֵפֶר",
+          "strong": "H5612",
+          "pron": "세페르"
+        },
+        {
+          "word": "כְּרִיתֻת֙",
+          "lemma": "כְּרִיתוּת",
+          "strong": "H3748",
+          "pron": "케리투트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 24:1",
+        "deuteronomy 24:3",
+        "isaiah 50:1",
+        "jeremiah 3:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

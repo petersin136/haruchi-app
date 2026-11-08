@@ -1,6 +1,6 @@
 {
   "lemma": "דַּל",
-  "pron": "달",
+  "pron": "브달",
   "strong": "H1800",
   "posKo": "형용사",
   "root": {
@@ -12,27 +12,129 @@
     {
       "lemma": "דָּלָה",
       "strong": "H1802",
-      "pron": "딜리타니",
-      "glossKo": "나를 긷다"
+      "pron": "바틷레나",
+      "glossKo": "긷다"
     },
     {
       "lemma": "דְּלִילָה",
       "strong": "H1807",
-      "pron": "",
+      "pron": "델릴라",
       "glossKo": "들릴라"
     },
     {
       "lemma": "דָּלַל",
       "strong": "H1809",
-      "pron": "달로누",
+      "pron": "바읻달",
       "glossKo": "쇠하다"
     }
   ],
   "defEn": "dangling; weak; thin",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 47,
   "byBook": {
-    "psalms": 5
+    "proverbs": 15,
+    "job": 6,
+    "isaiah": 5,
+    "psalms": 5,
+    "amos": 4,
+    "exodus": 2,
+    "jeremiah": 2,
+    "leviticus": 2,
+    "samuel2": 2,
+    "judges": 1,
+    "ruth": 1,
+    "samuel1": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "דַּ֣ל וְאֶבְי֑וֹן",
+      "pron": "브달 엡온카",
+      "lemmas": [
+        "דַּל",
+        "אֶבְיוֹן"
+      ],
+      "words": [
+        {
+          "word": "דַּ֣ל",
+          "lemma": "דַּל",
+          "strong": "H1800",
+          "pron": "브달"
+        },
+        {
+          "word": "וְאֶבְי֑וֹן",
+          "lemma": "אֶבְיוֹן",
+          "strong": "H34",
+          "pron": "엡온카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 72:13",
+        "psalms 82:4",
+        "isaiah 14:30",
+        "amos 8:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֹ֣שֵֽׁק דָּ֭ל",
+      "pron": "아샤크 브달",
+      "lemmas": [
+        "עָשַׁק",
+        "דַּל"
+      ],
+      "words": [
+        {
+          "word": "עֹ֣שֵֽׁק",
+          "lemma": "עָשַׁק",
+          "strong": "H6231",
+          "pron": "아샤크"
+        },
+        {
+          "word": "דָּ֭ל",
+          "lemma": "דַּל",
+          "strong": "H1800",
+          "pron": "브달"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "proverbs 14:31",
+        "proverbs 22:16",
+        "proverbs 28:3",
+        "amos 4:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְדָ֕ל לֹ֥א",
+      "pron": "브달 로",
+      "lemmas": [
+        "דַּל",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "וְדָ֕ל",
+          "lemma": "דַּל",
+          "strong": "H1800",
+          "pron": "브달"
+        },
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 23:3",
+        "exodus 30:15",
+        "leviticus 19:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

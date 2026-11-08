@@ -1,6 +1,6 @@
 {
   "lemma": "רָחַק",
-  "pron": "티레하크",
+  "pron": "하레헤크",
   "strong": "H7368",
   "posKo": "동사",
   "root": null,
@@ -14,7 +14,7 @@
     {
       "lemma": "רָחוֹק",
       "strong": "H7350",
-      "pron": "브라호크",
+      "pron": "메라호크",
       "glossKo": "먼"
     },
     {
@@ -26,15 +26,28 @@
   ],
   "defEn": "widen; recede; remove",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 58,
   "byBook": {
     "psalms": 12,
-    "genesis": 2
+    "isaiah": 8,
+    "job": 8,
+    "proverbs": 6,
+    "ezekiel": 5,
+    "exodus": 4,
+    "deuteronomy": 2,
+    "ecclesiastes": 2,
+    "genesis": 2,
+    "jeremiah": 2,
+    "joel": 2,
+    "joshua": 2,
+    "judges": 1,
+    "lamentations": 1,
+    "micah": 1
   },
   "phrases": [
     {
       "hebrew": "תִּרְחַ֥ק מִמֶּֽנִּי",
-      "pron": "티레하크 밈메누",
+      "pron": "하레헤크 민",
       "lemmas": [
         "רָחַק",
         "מִן"
@@ -44,30 +57,68 @@
           "word": "תִּרְחַ֥ק",
           "lemma": "רָחַק",
           "strong": "H7368",
-          "pron": "티레하크"
+          "pron": "하레헤크"
         },
         {
           "word": "מִמֶּֽנִּי",
           "lemma": "מִן",
           "strong": "H4480",
-          "pron": "밈메누"
+          "pron": "민"
         }
       ],
-      "count": 7,
+      "count": 18,
       "refs": [
+        "exodus 33:7",
+        "deuteronomy 12:21",
+        "deuteronomy 14:24",
+        "joshua 8:4",
         "psalms 22:11",
         "psalms 35:22",
         "psalms 38:21",
         "psalms 71:12",
         "psalms 88:18",
         "psalms 103:12",
-        "psalms 109:17"
+        "psalms 109:17",
+        "proverbs 4:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַרְחֵ֣ק מֵעָלֶ֣יהָ",
+      "pron": "하레헤크 알",
+      "lemmas": [
+        "רָחַק",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "הַרְחֵ֣ק",
+          "lemma": "רָחַק",
+          "strong": "H7368",
+          "pron": "하레헤크"
+        },
+        {
+          "word": "מֵעָלֶ֣יהָ",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "proverbs 5:8",
+        "jeremiah 2:5",
+        "ezekiel 8:6",
+        "ezekiel 11:15",
+        "ezekiel 44:10",
+        "joel 2:20",
+        "joel 3:6"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "אַל תִּרְחַ֣ק",
-      "pron": "브엘 티레하크",
+      "pron": "엘 하레헤크",
       "lemmas": [
         "אַל",
         "רָחַק"
@@ -77,17 +128,18 @@
           "word": "אַל",
           "lemma": "אַל",
           "strong": "H408",
-          "pron": "브엘"
+          "pron": "엘"
         },
         {
           "word": "תִּרְחַ֣ק",
           "lemma": "רָחַק",
           "strong": "H7368",
-          "pron": "티레하크"
+          "pron": "하레헤크"
         }
       ],
-      "count": 5,
+      "count": 6,
       "refs": [
+        "joshua 8:4",
         "psalms 22:11",
         "psalms 22:19",
         "psalms 35:22",
@@ -97,8 +149,8 @@
       "glossKo": ""
     },
     {
-      "hebrew": "אַל תִּרְחַ֣ק מִ֭מֶּנִּי",
-      "pron": "브엘 티레하크 밈메누",
+      "hebrew": "אַל תַּרְחִ֥יקוּ מִן",
+      "pron": "엘 하레헤크 민",
       "lemmas": [
         "אַל",
         "רָחַק",
@@ -109,27 +161,59 @@
           "word": "אַל",
           "lemma": "אַל",
           "strong": "H408",
-          "pron": "브엘"
+          "pron": "엘"
         },
         {
-          "word": "תִּרְחַ֣ק",
+          "word": "תַּרְחִ֥יקוּ",
           "lemma": "רָחַק",
           "strong": "H7368",
-          "pron": "티레하크"
+          "pron": "하레헤크"
         },
         {
-          "word": "מִ֭מֶּנִּי",
+          "word": "מִן",
           "lemma": "מִן",
           "strong": "H4480",
-          "pron": "밈메누"
+          "pron": "민"
         }
       ],
-      "count": 4,
+      "count": 5,
       "refs": [
+        "joshua 8:4",
         "psalms 22:11",
         "psalms 35:22",
         "psalms 38:21",
         "psalms 71:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי יִרְחַ֨ק",
+      "pron": "키 하레헤크",
+      "lemmas": [
+        "כִּי",
+        "רָחַק"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "יִרְחַ֨ק",
+          "lemma": "רָחַק",
+          "strong": "H7368",
+          "pron": "하레헤크"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 12:21",
+        "deuteronomy 14:24",
+        "jeremiah 2:5",
+        "lamentations 1:16",
+        "ezekiel 11:16"
       ],
       "glossKo": ""
     }

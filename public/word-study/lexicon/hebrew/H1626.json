@@ -2,7 +2,7 @@
   "lemma": "גֵּרָה",
   "pron": "게라",
   "strong": "H1626",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גָּרַר",
     "strong": "H1641",
@@ -10,39 +10,118 @@
   },
   "family": [
     {
+      "lemma": "גֵּרָא",
+      "strong": "H1617",
+      "pron": "게라",
+      "glossKo": "게라"
+    },
+    {
       "lemma": "גַּרְגַּר",
       "strong": "H1620",
-      "pron": "",
+      "pron": "가렉게림",
       "glossKo": "열매"
     },
     {
       "lemma": "גַּרְגְּרוֹת",
       "strong": "H1621",
-      "pron": "",
-      "glossKo": "목구멍"
+      "pron": "레가렉게로테카",
+      "glossKo": "너의 목구멍"
     },
     {
       "lemma": "גֵּרָה",
       "strong": "H1625",
-      "pron": "",
+      "pron": "게라",
       "glossKo": "되새김질"
     },
     {
       "lemma": "גָּרוֹן",
       "strong": "H1627",
-      "pron": "게로나므",
+      "pron": "게로남",
       "glossKo": "그들의 목구멍"
     },
     {
       "lemma": "גָּרַר",
       "strong": "H1641",
-      "pron": "",
+      "pron": "익가르",
       "glossKo": "되새김질하다"
     }
   ],
   "defEn": "gerah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "numbers": 2,
+    "exodus": 1,
+    "ezekiel": 1,
+    "leviticus": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "עֶשְׂרִ֥ים גֵּרָ֖ה",
+      "pron": "브에세림 게라",
+      "lemmas": [
+        "עֶשְׂרִים",
+        "גֵּרָה"
+      ],
+      "words": [
+        {
+          "word": "עֶשְׂרִ֥ים",
+          "lemma": "עֶשְׂרִים",
+          "strong": "H6242",
+          "pron": "브에세림"
+        },
+        {
+          "word": "גֵּרָ֖ה",
+          "lemma": "גֵּרָה",
+          "strong": "H1626",
+          "pron": "게라"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 30:13",
+        "leviticus 27:25",
+        "numbers 3:47",
+        "numbers 18:16",
+        "ezekiel 45:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַקֹּ֑דֶשׁ עֶשְׂרִ֥ים גֵּרָ֖ה",
+      "pron": "코데쉬 브에세림 게라",
+      "lemmas": [
+        "קֹדֶשׁ",
+        "עֶשְׂרִים",
+        "גֵּרָה"
+      ],
+      "words": [
+        {
+          "word": "הַקֹּ֑דֶשׁ",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        },
+        {
+          "word": "עֶשְׂרִ֥ים",
+          "lemma": "עֶשְׂרִים",
+          "strong": "H6242",
+          "pron": "브에세림"
+        },
+        {
+          "word": "גֵּרָ֖ה",
+          "lemma": "גֵּרָה",
+          "strong": "H1626",
+          "pron": "게라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 30:13",
+        "leviticus 27:25",
+        "numbers 18:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

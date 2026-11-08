@@ -12,33 +12,223 @@
     {
       "lemma": "גָּרַשׁ",
       "strong": "H1644",
-      "pron": "바예가라셰후",
-      "glossKo": "그에게 쫓아내다"
+      "pron": "바예가레쉬",
+      "glossKo": "쫓아내다"
     },
     {
       "lemma": "גֶּרֶשׁ",
       "strong": "H1645",
-      "pron": "",
+      "pron": "게레쉬",
       "glossKo": "산물"
     },
     {
       "lemma": "גְרֻשָׁה",
       "strong": "H1646",
-      "pron": "",
-      "glossKo": "쫓아냄"
+      "pron": "게루쇼테켐",
+      "glossKo": "너희의 쫓아냄"
+    },
+    {
+      "lemma": "גֵּרְשֹׁם",
+      "strong": "H1647",
+      "pron": "게레숌",
+      "glossKo": "게르솜"
+    },
+    {
+      "lemma": "גֵּרְשֻׁנִּי",
+      "strong": "H1649",
+      "pron": "아게레슌니",
+      "glossKo": "게르손 자손"
     },
     {
       "lemma": "מִגְרָשׁ",
       "strong": "H4054",
-      "pron": "",
+      "pron": "믹라쉬",
       "glossKo": "교외"
     }
   ],
   "defEn": "Gereshon; Gereshom",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 17,
   "byBook": {
+    "numbers": 10,
+    "chronicles1": 2,
+    "exodus": 2,
+    "joshua": 2,
     "genesis": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּנֵ֥י גֵרְשׁ֛וֹן",
+      "pron": "바님 게레숀",
+      "lemmas": [
+        "בֵּן",
+        "גֵּרְשׁוֹן"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵ֥י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "גֵרְשׁ֛וֹן",
+          "lemma": "גֵּרְשׁוֹן",
+          "strong": "H1648",
+          "pron": "게레숀"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 6:17",
+        "numbers 3:18",
+        "numbers 3:25",
+        "numbers 4:22",
+        "numbers 4:38",
+        "numbers 4:41",
+        "numbers 7:7",
+        "numbers 10:17",
+        "joshua 21:6",
+        "joshua 21:27",
+        "chronicles1 15:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גֵרְשׁ֖וֹן לְמִשְׁפְּחֹתָ֑ם",
+      "pron": "게레숀 레미솁페호테헴",
+      "lemmas": [
+        "גֵּרְשׁוֹן",
+        "מִשְׁפָּחָה"
+      ],
+      "words": [
+        {
+          "word": "גֵרְשׁ֖וֹן",
+          "lemma": "גֵּרְשׁוֹן",
+          "strong": "H1648",
+          "pron": "게레숀"
+        },
+        {
+          "word": "לְמִשְׁפְּחֹתָ֑ם",
+          "lemma": "מִשְׁפָּחָה",
+          "strong": "H4940",
+          "pron": "레미솁페호테헴"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 3:18",
+        "numbers 3:21",
+        "numbers 4:38",
+        "numbers 26:57",
+        "joshua 21:6",
+        "joshua 21:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּֽנֵי גֵרְשׁ֖וֹן לְמִשְׁפְּחֹתָ֑ם",
+      "pron": "바님 게레숀 레미솁페호테헴",
+      "lemmas": [
+        "בֵּן",
+        "גֵּרְשׁוֹן",
+        "מִשְׁפָּחָה"
+      ],
+      "words": [
+        {
+          "word": "בְּֽנֵי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "גֵרְשׁ֖וֹן",
+          "lemma": "גֵּרְשׁוֹן",
+          "strong": "H1648",
+          "pron": "게레숀"
+        },
+        {
+          "word": "לְמִשְׁפְּחֹתָ֑ם",
+          "lemma": "מִשְׁפָּחָה",
+          "strong": "H4940",
+          "pron": "레미솁페호테헴"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 3:18",
+        "numbers 4:38",
+        "joshua 21:6",
+        "joshua 21:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גֵּרְשׁ֕וֹן קְהָ֖ת",
+      "pron": "게레숀 케하트",
+      "lemmas": [
+        "גֵּרְשׁוֹן",
+        "קְהָת"
+      ],
+      "words": [
+        {
+          "word": "גֵּרְשׁ֕וֹן",
+          "lemma": "גֵּרְשׁוֹן",
+          "strong": "H1648",
+          "pron": "게레숀"
+        },
+        {
+          "word": "קְהָ֖ת",
+          "lemma": "קְהָת",
+          "strong": "H6955",
+          "pron": "케하트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 46:11",
+        "exodus 6:16",
+        "numbers 3:17",
+        "chronicles1 6:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גֵּרְשׁ֕וֹן קְהָ֖ת וּמְרָרִֽי",
+      "pron": "게레숀 케하트 우메라리",
+      "lemmas": [
+        "גֵּרְשׁוֹן",
+        "קְהָת",
+        "מְרָרִי"
+      ],
+      "words": [
+        {
+          "word": "גֵּרְשׁ֕וֹן",
+          "lemma": "גֵּרְשׁוֹן",
+          "strong": "H1648",
+          "pron": "게레숀"
+        },
+        {
+          "word": "קְהָ֖ת",
+          "lemma": "קְהָת",
+          "strong": "H6955",
+          "pron": "케하트"
+        },
+        {
+          "word": "וּמְרָרִֽי",
+          "lemma": "מְרָרִי",
+          "strong": "H4847",
+          "pron": "우메라리"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 46:11",
+        "exodus 6:16",
+        "numbers 3:17",
+        "chronicles1 6:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

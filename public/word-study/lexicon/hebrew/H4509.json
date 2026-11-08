@@ -1,8 +1,8 @@
 {
   "lemma": "מִנְיָמִין",
-  "pron": "민아민",
+  "pron": "우민아민",
   "strong": "H4509",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "מִן",
     "strong": "H4480",
@@ -10,21 +10,30 @@
   },
   "family": [
     {
+      "lemma": "מִיָּמִן",
+      "strong": "H4326",
+      "pron": "르미아민",
+      "glossKo": "미야민"
+    },
+    {
       "lemma": "מִן",
       "strong": "H4480",
-      "pron": "밈메누",
-      "glossKo": "우리를 ~로부터"
+      "pron": "민",
+      "glossKo": "~로부터"
     },
     {
       "lemma": "מִן",
       "strong": "H4481",
-      "pron": "",
+      "pron": "민",
       "glossKo": "~로부터(아람)"
     }
   ],
   "defEn": "Minjamin",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 3,
+  "byBook": {
+    "nehemiah": 2,
+    "chronicles2": 1
+  },
   "phrases": []
 }

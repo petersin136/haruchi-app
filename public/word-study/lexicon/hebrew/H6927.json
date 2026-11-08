@@ -12,7 +12,7 @@
     {
       "lemma": "קָדוּם",
       "strong": "H6917",
-      "pron": "",
+      "pron": "케두밈",
       "glossKo": "옛"
     },
     {
@@ -24,14 +24,20 @@
     {
       "lemma": "קָדַם",
       "strong": "H6923",
-      "pron": "칻데마",
+      "pron": "킫데무",
       "glossKo": "앞서 가다"
     },
     {
       "lemma": "קֶדֶם",
       "strong": "H6924",
-      "pron": "케뎀",
+      "pron": "미케뎀",
       "glossKo": "동방"
+    },
+    {
+      "lemma": "קַדְמָה",
+      "strong": "H6928",
+      "pron": "미칻마트",
+      "glossKo": "예전(아람)"
     },
     {
       "lemma": "קֵדְמָה",
@@ -42,9 +48,73 @@
   ],
   "defEn": "priority",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 6,
   "byBook": {
+    "ezekiel": 4,
+    "isaiah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּבְנוֹתֶ֨יהָ֙ תָּשֹׁ֣בְןָ לְקַדְמָתָ֔ן",
+      "pron": "우바노트 슙카 셰칻마트",
+      "lemmas": [
+        "בַּת",
+        "שׁוּב",
+        "קַדְמָה"
+      ],
+      "words": [
+        {
+          "word": "וּבְנוֹתֶ֨יהָ֙",
+          "lemma": "בַּת",
+          "strong": "H1323",
+          "pron": "우바노트"
+        },
+        {
+          "word": "תָּשֹׁ֣בְןָ",
+          "lemma": "שׁוּב",
+          "strong": "H7725",
+          "pron": "슙카"
+        },
+        {
+          "word": "לְקַדְמָתָ֔ן",
+          "lemma": "קַדְמָה",
+          "strong": "H6927",
+          "pron": "셰칻마트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 16:55"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תָּשֹׁ֣בְןָ לְקַדְמָתָ֔ן",
+      "pron": "슙카 셰칻마트",
+      "lemmas": [
+        "שׁוּב",
+        "קַדְמָה"
+      ],
+      "words": [
+        {
+          "word": "תָּשֹׁ֣בְןָ",
+          "lemma": "שׁוּב",
+          "strong": "H7725",
+          "pron": "슙카"
+        },
+        {
+          "word": "לְקַדְמָתָ֔ן",
+          "lemma": "קַדְמָה",
+          "strong": "H6927",
+          "pron": "셰칻마트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 16:55"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "אָפֵס",
-  "pron": "헤아펫",
+  "pron": "아펫",
   "strong": "H656",
   "posKo": "동사",
   "root": null,
@@ -8,16 +8,47 @@
     {
       "lemma": "אֶפֶס",
       "strong": "H657",
-      "pron": "압세",
+      "pron": "에펫",
       "glossKo": "없음"
     }
   ],
   "defEn": "disappear; cease",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 5,
   "byBook": {
     "genesis": 2,
+    "isaiah": 2,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כִּ֥י אָפֵ֖ס",
+      "pron": "키 아펫",
+      "lemmas": [
+        "כִּי",
+        "אָפֵס"
+      ],
+      "words": [
+        {
+          "word": "כִּ֥י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "אָפֵ֖ס",
+          "lemma": "אָפֵס",
+          "strong": "H656",
+          "pron": "아펫"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 47:15",
+        "isaiah 16:4",
+        "isaiah 29:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

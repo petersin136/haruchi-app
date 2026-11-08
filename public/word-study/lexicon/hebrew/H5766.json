@@ -12,7 +12,7 @@
     {
       "lemma": "עֲוִיל",
       "strong": "H5760",
-      "pron": "",
+      "pron": "아빌",
       "glossKo": "왜곡된"
     },
     {
@@ -24,21 +24,208 @@
     {
       "lemma": "עַוָּל",
       "strong": "H5767",
-      "pron": "",
+      "pron": "아발",
       "glossKo": "악행자"
     },
     {
       "lemma": "עַלְוָה",
       "strong": "H5932",
-      "pron": "",
+      "pron": "알바",
       "glossKo": "악행"
     }
   ],
   "defEn": "evil",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 54,
   "byBook": {
-    "psalms": 13
+    "psalms": 13,
+    "job": 12,
+    "ezekiel": 11,
+    "deuteronomy": 2,
+    "leviticus": 2,
+    "proverbs": 2,
+    "samuel2": 2,
+    "zephaniah": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "malachi": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְעָ֣שָׂה עָ֔וֶל",
+      "pron": "바야아스 아벨",
+      "lemmas": [
+        "עָשָׂה",
+        "עֶוֶל"
+      ],
+      "words": [
+        {
+          "word": "וְעָ֣שָׂה",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "עָ֔וֶל",
+          "lemma": "עֶוֶל",
+          "strong": "H5766",
+          "pron": "아벨"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "leviticus 19:15",
+        "leviticus 19:35",
+        "deuteronomy 25:16",
+        "psalms 37:1",
+        "ezekiel 3:20",
+        "ezekiel 18:24",
+        "ezekiel 18:26",
+        "ezekiel 33:13",
+        "ezekiel 33:15",
+        "ezekiel 33:18",
+        "zephaniah 3:5",
+        "zephaniah 3:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְנֵֽי עַוְלָ֖ה",
+      "pron": "바님 아벨",
+      "lemmas": [
+        "בֵּן",
+        "עֶוֶל"
+      ],
+      "words": [
+        {
+          "word": "בְנֵֽי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עַוְלָ֖ה",
+          "lemma": "עֶוֶל",
+          "strong": "H5766",
+          "pron": "아벨"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 3:34",
+        "samuel2 7:10",
+        "chronicles1 17:9",
+        "psalms 89:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹא תַעֲשׂ֥וּ עָ֨וֶל֙",
+      "pron": "로 바야아스 아벨",
+      "lemmas": [
+        "לֹא",
+        "עָשָׂה",
+        "עֶוֶל"
+      ],
+      "words": [
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תַעֲשׂ֥וּ",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "עָ֨וֶל֙",
+          "lemma": "עֶוֶל",
+          "strong": "H5766",
+          "pron": "아벨"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 19:15",
+        "leviticus 19:35",
+        "zephaniah 3:5",
+        "zephaniah 3:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִצִּדְקָתוֹ֙ וְעָ֣שָׂה עָ֔וֶל",
+      "pron": "체다카 바야아스 아벨",
+      "lemmas": [
+        "צְדָקָה",
+        "עָשָׂה",
+        "עֶוֶל"
+      ],
+      "words": [
+        {
+          "word": "מִצִּדְקָתוֹ֙",
+          "lemma": "צְדָקָה",
+          "strong": "H6666",
+          "pron": "체다카"
+        },
+        {
+          "word": "וְעָ֣שָׂה",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "עָ֔וֶל",
+          "lemma": "עֶוֶל",
+          "strong": "H5766",
+          "pron": "아벨"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 18:24",
+        "ezekiel 18:26",
+        "ezekiel 33:13",
+        "ezekiel 33:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַ֝וְלָ֗ה לֹ֣א",
+      "pron": "아벨 로",
+      "lemmas": [
+        "עֶוֶל",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "עַ֝וְלָ֗ה",
+          "lemma": "עֶוֶל",
+          "strong": "H5766",
+          "pron": "아벨"
+        },
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 89:22",
+        "zephaniah 3:13",
+        "malachi 2:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

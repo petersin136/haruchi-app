@@ -1,6 +1,6 @@
 {
   "lemma": "אֲדָמָה",
-  "pron": "아다모트",
+  "pron": "하아다마",
   "strong": "H127",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "אָדַם",
       "strong": "H119",
-      "pron": "",
+      "pron": "메앋다밈",
       "glossKo": "붉다"
     },
     {
@@ -30,13 +30,13 @@
     {
       "lemma": "אֹדֶם",
       "strong": "H124",
-      "pron": "",
+      "pron": "오뎀",
       "glossKo": "홍보석"
     },
     {
       "lemma": "אֲדַמְדָּם",
       "strong": "H125",
-      "pron": "",
+      "pron": "아담다메트",
       "glossKo": "발그스름한"
     },
     {
@@ -48,15 +48,117 @@
   ],
   "defEn": "soil",
   "defKo": "",
-  "countOT": 49,
+  "countOT": 225,
   "byBook": {
     "genesis": 43,
-    "psalms": 6
+    "deuteronomy": 37,
+    "ezekiel": 28,
+    "jeremiah": 18,
+    "isaiah": 16,
+    "amos": 10,
+    "exodus": 9,
+    "kings1": 8,
+    "chronicles2": 6,
+    "psalms": 6,
+    "numbers": 5,
+    "samuel2": 5,
+    "kings2": 4,
+    "nehemiah": 4,
+    "daniel": 3,
+    "samuel1": 3,
+    "zechariah": 3,
+    "job": 2,
+    "joel": 2,
+    "joshua": 2,
+    "leviticus": 2,
+    "proverbs": 2,
+    "zephaniah": 2,
+    "chronicles1": 1,
+    "haggai": 1,
+    "hosea": 1,
+    "jonah": 1,
+    "malachi": 1
   },
   "phrases": [
     {
-      "hebrew": "פְּנֵ֥י הָֽאֲדָמָֽה",
-      "pron": "미페네 아다모트",
+      "hebrew": "עַל הָ֣אֲדָמָ֔ה",
+      "pron": "알 하아다마",
+      "lemmas": [
+        "עַל",
+        "אֲדָמָה"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הָ֣אֲדָמָ֔ה",
+          "lemma": "אֲדָמָה",
+          "strong": "H127",
+          "pron": "하아다마"
+        }
+      ],
+      "count": 69,
+      "refs": [
+        "genesis 7:8",
+        "genesis 47:26",
+        "exodus 3:5",
+        "exodus 10:6",
+        "exodus 20:12",
+        "numbers 11:12",
+        "deuteronomy 4:10",
+        "deuteronomy 4:40",
+        "deuteronomy 5:16",
+        "deuteronomy 7:13",
+        "deuteronomy 11:9",
+        "deuteronomy 11:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָ֣אֲדָמָ֔ה אֲשֶׁ֥ר",
+      "pron": "하아다마 아셰르",
+      "lemmas": [
+        "אֲדָמָה",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הָ֣אֲדָמָ֔ה",
+          "lemma": "אֲדָמָה",
+          "strong": "H127",
+          "pron": "하아다마"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 44,
+      "refs": [
+        "genesis 3:23",
+        "genesis 4:11",
+        "genesis 5:29",
+        "exodus 8:21",
+        "exodus 20:12",
+        "leviticus 20:25",
+        "numbers 11:12",
+        "numbers 16:31",
+        "numbers 32:11",
+        "deuteronomy 4:40",
+        "deuteronomy 5:16",
+        "deuteronomy 7:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פְּנֵ֥י הָאֲדָמָֽה",
+      "pron": "페네 하아다마",
       "lemmas": [
         "פָּנִים",
         "אֲדָמָה"
@@ -66,18 +168,17 @@
           "word": "פְּנֵ֥י",
           "lemma": "פָּנִים",
           "strong": "H6440",
-          "pron": "미페네"
+          "pron": "페네"
         },
         {
-          "word": "הָֽאֲדָמָֽה",
+          "word": "הָאֲדָמָֽה",
           "lemma": "אֲדָמָה",
           "strong": "H127",
-          "pron": "아다모트"
+          "pron": "하아다마"
         }
       ],
-      "count": 9,
+      "count": 34,
       "refs": [
-        "psalms 104:30",
         "genesis 2:6",
         "genesis 4:14",
         "genesis 6:1",
@@ -85,78 +186,17 @@
         "genesis 7:4",
         "genesis 7:23",
         "genesis 8:8",
-        "genesis 8:13"
+        "genesis 8:13",
+        "exodus 32:12",
+        "exodus 33:16",
+        "numbers 12:3",
+        "deuteronomy 6:15"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֶת הָ֣אֲדָמָ֔ה",
-      "pron": "에트 아다모트",
-      "lemmas": [
-        "אֵת",
-        "אֲדָמָה"
-      ],
-      "words": [
-        {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        },
-        {
-          "word": "הָ֣אֲדָמָ֔ה",
-          "lemma": "אֲדָמָה",
-          "strong": "H127",
-          "pron": "아다모트"
-        }
-      ],
-      "count": 8,
-      "refs": [
-        "genesis 2:5",
-        "genesis 3:23",
-        "genesis 4:12",
-        "genesis 8:21",
-        "genesis 47:19",
-        "genesis 47:22",
-        "genesis 47:23"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "מִן הָ֣אֲדָמָ֔ה",
-      "pron": "밈메누 아다모트",
-      "lemmas": [
-        "מִן",
-        "אֲדָמָה"
-      ],
-      "words": [
-        {
-          "word": "מִן",
-          "lemma": "מִן",
-          "strong": "H4480",
-          "pron": "밈메누"
-        },
-        {
-          "word": "הָ֣אֲדָמָ֔ה",
-          "lemma": "אֲדָמָה",
-          "strong": "H127",
-          "pron": "아다모트"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "genesis 2:7",
-        "genesis 2:9",
-        "genesis 2:19",
-        "genesis 4:10",
-        "genesis 4:11",
-        "genesis 5:29"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "מֵעַל֙ פְּנֵ֣י הָֽאֲדָמָ֔ה",
-      "pron": "알 미페네 아다모트",
+      "hebrew": "עַל פְּנֵ֥י הָאֲדָמָֽה",
+      "pron": "알 페네 하아다마",
       "lemmas": [
         "עַל",
         "פָּנִים",
@@ -164,62 +204,83 @@
       ],
       "words": [
         {
-          "word": "מֵעַל֙",
+          "word": "עַל",
           "lemma": "עַל",
           "strong": "H5921",
           "pron": "알"
         },
         {
-          "word": "פְּנֵ֣י",
+          "word": "פְּנֵ֥י",
           "lemma": "פָּנִים",
           "strong": "H6440",
-          "pron": "미페네"
+          "pron": "페네"
         },
         {
-          "word": "הָֽאֲדָמָ֔ה",
+          "word": "הָאֲדָמָֽה",
           "lemma": "אֲדָמָה",
           "strong": "H127",
-          "pron": "아다모트"
+          "pron": "하아다마"
         }
       ],
-      "count": 6,
+      "count": 31,
       "refs": [
         "genesis 4:14",
         "genesis 6:1",
         "genesis 6:7",
         "genesis 7:4",
         "genesis 7:23",
-        "genesis 8:8"
+        "genesis 8:8",
+        "exodus 32:12",
+        "exodus 33:16",
+        "numbers 12:3",
+        "deuteronomy 6:15",
+        "deuteronomy 7:6",
+        "deuteronomy 14:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "עֲלֵ֣י אֲדָמֽוֹת",
-      "pron": "알 아다모트",
+      "hebrew": "עַל הָ֣אֲדָמָ֔ה אֲשֶׁ֨ר",
+      "pron": "알 하아다마 아셰르",
       "lemmas": [
         "עַל",
-        "אֲדָמָה"
+        "אֲדָמָה",
+        "אֲשֶׁר"
       ],
       "words": [
         {
-          "word": "עֲלֵ֣י",
+          "word": "עַל",
           "lemma": "עַל",
           "strong": "H5921",
           "pron": "알"
         },
         {
-          "word": "אֲדָמֽוֹת",
+          "word": "הָ֣אֲדָמָ֔ה",
           "lemma": "אֲדָמָה",
           "strong": "H127",
-          "pron": "아다모트"
+          "pron": "하아다마"
+        },
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
         }
       ],
-      "count": 4,
+      "count": 22,
       "refs": [
-        "psalms 49:11",
-        "psalms 137:4",
-        "genesis 7:8",
-        "genesis 47:26"
+        "exodus 20:12",
+        "numbers 11:12",
+        "deuteronomy 4:40",
+        "deuteronomy 5:16",
+        "deuteronomy 7:13",
+        "deuteronomy 11:9",
+        "deuteronomy 11:21",
+        "deuteronomy 25:15",
+        "deuteronomy 28:11",
+        "deuteronomy 28:21",
+        "deuteronomy 28:63",
+        "deuteronomy 30:18"
       ],
       "glossKo": ""
     }

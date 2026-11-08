@@ -1,8 +1,8 @@
 {
   "lemma": "דֵּעַ",
-  "pron": "데아",
+  "pron": "데이",
   "strong": "H1843",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "יָדַע",
     "strong": "H3045",
@@ -10,27 +10,33 @@
   },
   "family": [
     {
+      "lemma": "דֵּעָה",
+      "strong": "H1844",
+      "pron": "데오트",
+      "glossKo": "지식"
+    },
+    {
       "lemma": "דְּעוּאֵל",
       "strong": "H1845",
-      "pron": "",
+      "pron": "데우엘",
       "glossKo": "드우엘"
     },
     {
       "lemma": "דַּעַת",
       "strong": "H1847",
-      "pron": "다아트",
+      "pron": "아다아트",
       "glossKo": "지식"
     },
     {
       "lemma": "יַדּוּעַ",
       "strong": "H3037",
-      "pron": "",
+      "pron": "얃두아",
       "glossKo": "얏두아"
     },
     {
       "lemma": "יְדִיעֲאֵל",
       "strong": "H3043",
-      "pron": "",
+      "pron": "비위디아엘",
       "glossKo": "여디아엘"
     },
     {
@@ -42,7 +48,39 @@
   ],
   "defEn": "knowledge",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "job": 5
+  },
+  "phrases": [
+    {
+      "hebrew": "מֵחַוֺּ֖ת דֵּעִ֣י",
+      "pron": "아하베카 데이",
+      "lemmas": [
+        "חָוָה",
+        "דֵּעַ"
+      ],
+      "words": [
+        {
+          "word": "מֵחַוֺּ֖ת",
+          "lemma": "חָוָה",
+          "strong": "H2331",
+          "pron": "아하베카"
+        },
+        {
+          "word": "דֵּעִ֣י",
+          "lemma": "דֵּעַ",
+          "strong": "H1843",
+          "pron": "데이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 32:6",
+        "job 32:10",
+        "job 32:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

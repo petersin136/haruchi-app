@@ -1,8 +1,8 @@
 {
   "lemma": "דֶּגֶל",
-  "pron": "데겔",
+  "pron": "딕로",
   "strong": "H1714",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "דָּגַל",
     "strong": "H1713",
@@ -18,7 +18,149 @@
   ],
   "defEn": "flag",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "numbers": 13,
+    "songofsolomon": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "דֶּ֛גֶל מַחֲנֵ֥ה",
+      "pron": "딕로 마하네",
+      "lemmas": [
+        "דֶּגֶל",
+        "מַחֲנֶה"
+      ],
+      "words": [
+        {
+          "word": "דֶּ֛גֶל",
+          "lemma": "דֶּגֶל",
+          "strong": "H1714",
+          "pron": "딕로"
+        },
+        {
+          "word": "מַחֲנֵ֥ה",
+          "lemma": "מַחֲנֶה",
+          "strong": "H4264",
+          "pron": "마하네"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "numbers 2:3",
+        "numbers 2:10",
+        "numbers 2:18",
+        "numbers 2:25",
+        "numbers 10:14",
+        "numbers 10:18",
+        "numbers 10:22",
+        "numbers 10:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנָסַ֗ע דֶּ֛גֶל",
+      "pron": "베낫암 딕로",
+      "lemmas": [
+        "נָסַע",
+        "דֶּגֶל"
+      ],
+      "words": [
+        {
+          "word": "וְנָסַ֗ע",
+          "lemma": "נָסַע",
+          "strong": "H5265",
+          "pron": "베낫암"
+        },
+        {
+          "word": "דֶּ֛גֶל",
+          "lemma": "דֶּגֶל",
+          "strong": "H1714",
+          "pron": "딕로"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 2:31",
+        "numbers 10:14",
+        "numbers 10:18",
+        "numbers 10:22",
+        "numbers 10:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנָסַ֗ע דֶּ֛גֶל מַחֲנֵ֥ה",
+      "pron": "베낫암 딕로 마하네",
+      "lemmas": [
+        "נָסַע",
+        "דֶּגֶל",
+        "מַחֲנֶה"
+      ],
+      "words": [
+        {
+          "word": "וְנָסַ֗ע",
+          "lemma": "נָסַע",
+          "strong": "H5265",
+          "pron": "베낫암"
+        },
+        {
+          "word": "דֶּ֛גֶל",
+          "lemma": "דֶּגֶל",
+          "strong": "H1714",
+          "pron": "딕로"
+        },
+        {
+          "word": "מַחֲנֵ֥ה",
+          "lemma": "מַחֲנֶה",
+          "strong": "H4264",
+          "pron": "마하네"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 10:14",
+        "numbers 10:18",
+        "numbers 10:22",
+        "numbers 10:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דֶּ֣גֶל מַחֲנֵ֧ה בְנֵֽי",
+      "pron": "딕로 마하네 바님",
+      "lemmas": [
+        "דֶּגֶל",
+        "מַחֲנֶה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "דֶּ֣גֶל",
+          "lemma": "דֶּגֶל",
+          "strong": "H1714",
+          "pron": "딕로"
+        },
+        {
+          "word": "מַחֲנֵ֧ה",
+          "lemma": "מַחֲנֶה",
+          "strong": "H4264",
+          "pron": "마하네"
+        },
+        {
+          "word": "בְנֵֽי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 10:14",
+        "numbers 10:22",
+        "numbers 10:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

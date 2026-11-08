@@ -1,6 +1,6 @@
 {
   "lemma": "אֶשֶׁר",
-  "pron": "아셰레",
+  "pron": "아셰레카",
   "strong": "H835",
   "posKo": "명사",
   "root": {
@@ -18,8 +18,8 @@
     {
       "lemma": "אָשַׁר",
       "strong": "H833",
-      "pron": "윗르",
-      "glossKo": "복되다"
+      "pron": "잇셰루니",
+      "glossKo": "나를 복되다"
     },
     {
       "lemma": "אָשֵׁר",
@@ -30,32 +30,137 @@
     {
       "lemma": "אֹשֶׁר",
       "strong": "H837",
-      "pron": "브아셰리위",
+      "pron": "베아셰리",
       "glossKo": "나의 복"
     },
     {
       "lemma": "אָשֻׁר",
       "strong": "H838",
-      "pron": "아슈라위",
-      "glossKo": "나의 걸음"
+      "pron": "바아슈로",
+      "glossKo": "그의 걸음"
     },
     {
       "lemma": "אֲשַׂרְאֵל",
       "strong": "H840",
-      "pron": "",
+      "pron": "바아사레엘",
       "glossKo": "아사렐"
     }
   ],
   "defEn": "happiness; happy!",
   "defKo": "",
-  "countOT": 26,
+  "countOT": 45,
   "byBook": {
-    "psalms": 26
+    "psalms": 26,
+    "proverbs": 8,
+    "isaiah": 3,
+    "chronicles2": 2,
+    "kings1": 2,
+    "daniel": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "job": 1
   },
   "phrases": [
     {
+      "hebrew": "אַשְׁרֵ֣י אָ֭דָם",
+      "pron": "아셰레카 아담",
+      "lemmas": [
+        "אֶשֶׁר",
+        "אָדָם"
+      ],
+      "words": [
+        {
+          "word": "אַשְׁרֵ֣י",
+          "lemma": "אֶשֶׁר",
+          "strong": "H835",
+          "pron": "아셰레카"
+        },
+        {
+          "word": "אָ֭דָם",
+          "lemma": "אָדָם",
+          "strong": "H120",
+          "pron": "아담"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "psalms 32:2",
+        "psalms 84:5",
+        "psalms 84:12",
+        "proverbs 3:13",
+        "proverbs 8:34",
+        "proverbs 28:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַשְׁרֵ֣י אֲנָשֶׁ֔יךָ",
+      "pron": "아셰레카 메이쉬",
+      "lemmas": [
+        "אֶשֶׁר",
+        "אִישׁ"
+      ],
+      "words": [
+        {
+          "word": "אַשְׁרֵ֣י",
+          "lemma": "אֶשֶׁר",
+          "strong": "H835",
+          "pron": "아셰레카"
+        },
+        {
+          "word": "אֲנָשֶׁ֔יךָ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 10:8",
+        "chronicles2 9:7",
+        "psalms 1:1",
+        "psalms 112:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַשְׁרֵ֣י אֲנָשֶׁ֔יךָ אַשְׁרֵ֖י",
+      "pron": "아셰레카 메이쉬 아셰레카",
+      "lemmas": [
+        "אֶשֶׁר",
+        "אִישׁ",
+        "אֶשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "אַשְׁרֵ֣י",
+          "lemma": "אֶשֶׁר",
+          "strong": "H835",
+          "pron": "아셰레카"
+        },
+        {
+          "word": "אֲנָשֶׁ֔יךָ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "אַשְׁרֵ֖י",
+          "lemma": "אֶשֶׁר",
+          "strong": "H835",
+          "pron": "아셰레카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 10:8",
+        "chronicles2 9:7"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "אַֽשְׁרֵ֥י הַ֝גֶּ֗בֶר",
-      "pron": "아셰레 아게베르",
+      "pron": "아셰레카 아게바림",
       "lemmas": [
         "אֶשֶׁר",
         "גֶּבֶר"
@@ -65,13 +170,13 @@
           "word": "אַֽשְׁרֵ֥י",
           "lemma": "אֶשֶׁר",
           "strong": "H835",
-          "pron": "아셰레"
+          "pron": "아셰레카"
         },
         {
           "word": "הַ֝גֶּ֗בֶר",
           "lemma": "גֶּבֶר",
           "strong": "H1397",
-          "pron": "아게베르"
+          "pron": "아게바림"
         }
       ],
       "count": 4,
@@ -84,37 +189,8 @@
       "glossKo": ""
     },
     {
-      "hebrew": "אַ֥שְֽׁרֵי אָדָ֗ם",
-      "pron": "아셰레 아담",
-      "lemmas": [
-        "אֶשֶׁר",
-        "אָדָם"
-      ],
-      "words": [
-        {
-          "word": "אַ֥שְֽׁרֵי",
-          "lemma": "אֶשֶׁר",
-          "strong": "H835",
-          "pron": "아셰레"
-        },
-        {
-          "word": "אָדָ֗ם",
-          "lemma": "אָדָם",
-          "strong": "H120",
-          "pron": "아담"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 32:2",
-        "psalms 84:5",
-        "psalms 84:12"
-      ],
-      "glossKo": ""
-    },
-    {
       "hebrew": "אַ֥שְֽׁרֵי הַגֶּ֗בֶר אֲשֶׁר",
-      "pron": "아셰레 아게베르 아셰르",
+      "pron": "아셰레카 아게바림 아셰르",
       "lemmas": [
         "אֶשֶׁר",
         "גֶּבֶר",
@@ -125,13 +201,13 @@
           "word": "אַ֥שְֽׁרֵי",
           "lemma": "אֶשֶׁר",
           "strong": "H835",
-          "pron": "아셰레"
+          "pron": "아셰레카"
         },
         {
           "word": "הַגֶּ֗בֶר",
           "lemma": "גֶּבֶר",
           "strong": "H1397",
-          "pron": "아게베르"
+          "pron": "아게바림"
         },
         {
           "word": "אֲשֶׁר",
@@ -145,34 +221,6 @@
         "psalms 40:4",
         "psalms 94:12",
         "psalms 127:5"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אַשְׁרֵ֣י הָ֭עָם",
-      "pron": "아셰레 암",
-      "lemmas": [
-        "אֶשֶׁר",
-        "עַם"
-      ],
-      "words": [
-        {
-          "word": "אַשְׁרֵ֣י",
-          "lemma": "אֶשֶׁר",
-          "strong": "H835",
-          "pron": "아셰레"
-        },
-        {
-          "word": "הָ֭עָם",
-          "lemma": "עַם",
-          "strong": "H5971",
-          "pron": "암"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 89:15",
-        "psalms 144:15"
       ],
       "glossKo": ""
     }

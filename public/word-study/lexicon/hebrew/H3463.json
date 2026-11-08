@@ -1,8 +1,8 @@
 {
   "lemma": "יָשֵׁן",
-  "pron": "크야셴",
+  "pron": "야셴",
   "strong": "H3463",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "יָשֵׁן",
     "strong": "H3462",
@@ -12,20 +12,26 @@
     {
       "lemma": "יָשֵׁן",
       "strong": "H3462",
-      "pron": "바이샤나",
+      "pron": "바이샨",
       "glossKo": "잠자다"
+    },
+    {
+      "lemma": "יָשֵׁן",
+      "strong": "H3464",
+      "pron": "야셴",
+      "glossKo": "야센"
     },
     {
       "lemma": "יָשָׁן",
       "strong": "H3465",
-      "pron": "",
+      "pron": "야샨",
       "glossKo": "오래된"
     },
     {
       "lemma": "שֵׁנָה",
       "strong": "H8142",
-      "pron": "셰나타므",
-      "glossKo": "그들의 잠"
+      "pron": "밋셰나토",
+      "glossKo": "그의 잠"
     },
     {
       "lemma": "שְׁנָת",
@@ -36,9 +42,14 @@
   ],
   "defEn": "sleepy",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 7,
   "byBook": {
-    "psalms": 1
+    "kings1": 2,
+    "daniel": 1,
+    "hosea": 1,
+    "psalms": 1,
+    "samuel1": 1,
+    "songofsolomon": 1
   },
   "phrases": []
 }

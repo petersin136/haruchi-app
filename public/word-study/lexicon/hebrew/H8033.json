@@ -18,168 +18,223 @@
     {
       "lemma": "שֶׁל",
       "strong": "H7945",
-      "pron": "",
+      "pron": "브셰르",
       "glossKo": "(관계대명사)"
     },
     {
       "lemma": "תָּם",
       "strong": "H8536",
-      "pron": "",
+      "pron": "탐마",
       "glossKo": "거기(아람)"
     }
   ],
   "defEn": "there; then; thither; thence",
   "defKo": "",
-  "countOT": 123,
+  "countOT": 835,
   "byBook": {
     "genesis": 101,
-    "psalms": 22
+    "deuteronomy": 82,
+    "jeremiah": 77,
+    "ezekiel": 68,
+    "kings2": 58,
+    "samuel1": 50,
+    "kings1": 43,
+    "samuel2": 41,
+    "judges": 39,
+    "numbers": 39,
+    "isaiah": 34,
+    "exodus": 32,
+    "joshua": 26,
+    "chronicles2": 23,
+    "psalms": 22,
+    "chronicles1": 17,
+    "job": 10,
+    "nehemiah": 9,
+    "amos": 8,
+    "hosea": 8,
+    "ecclesiastes": 7,
+    "ezra": 6,
+    "ruth": 6,
+    "leviticus": 5,
+    "joel": 4,
+    "proverbs": 4,
+    "micah": 3,
+    "songofsolomon": 3,
+    "daniel": 2,
+    "nahum": 2,
+    "habakkuk": 1,
+    "haggai": 1,
+    "jonah": 1,
+    "obadiah": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "שָׁם֙ מִזְבֵּ֔חַ",
-      "pron": "샴 밋바하카",
+      "hebrew": "בָא שָׁ֖מָּה",
+      "pron": "바야베 샴",
       "lemmas": [
-        "שָׁם",
-        "מִזְבֵּחַ"
-      ],
-      "words": [
-        {
-          "word": "שָׁם֙",
-          "lemma": "שָׁם",
-          "strong": "H8033",
-          "pron": "샴"
-        },
-        {
-          "word": "מִזְבֵּ֔חַ",
-          "lemma": "מִזְבֵּחַ",
-          "strong": "H4196",
-          "pron": "밋바하카"
-        }
-      ],
-      "count": 8,
-      "refs": [
-        "genesis 12:7",
-        "genesis 12:8",
-        "genesis 13:18",
-        "genesis 26:25",
-        "genesis 33:20",
-        "genesis 35:1",
-        "genesis 35:3",
-        "genesis 35:7"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יִמָּצְא֥וּן שָׁ֖ם",
-      "pron": "팀차 샴",
-      "lemmas": [
-        "מָצָא",
+        "בּוֹא",
         "שָׁם"
       ],
       "words": [
         {
-          "word": "יִמָּצְא֥וּן",
-          "lemma": "מָצָא",
-          "strong": "H4672",
-          "pron": "팀차"
+          "word": "בָא",
+          "lemma": "בּוֹא",
+          "strong": "H935",
+          "pron": "바야베"
         },
         {
-          "word": "שָׁ֖ם",
+          "word": "שָׁ֖מָּה",
           "lemma": "שָׁם",
           "strong": "H8033",
           "pron": "샴"
         }
       ],
-      "count": 7,
+      "count": 43,
       "refs": [
-        "genesis 18:28",
-        "genesis 18:29",
-        "genesis 18:30",
-        "genesis 18:31",
-        "genesis 18:32",
-        "genesis 26:19"
+        "genesis 19:22",
+        "genesis 20:13",
+        "exodus 10:26",
+        "exodus 26:33",
+        "numbers 14:24",
+        "deuteronomy 1:37",
+        "deuteronomy 1:38",
+        "deuteronomy 1:39",
+        "deuteronomy 4:5",
+        "deuteronomy 7:1",
+        "deuteronomy 11:10",
+        "deuteronomy 11:29"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כִּ֤י שָׁ֨ם",
-      "pron": "키 샴",
-      "lemmas": [
-        "כִּי",
-        "שָׁם"
-      ],
-      "words": [
-        {
-          "word": "כִּ֤י",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
-        },
-        {
-          "word": "שָׁ֨ם",
-          "lemma": "שָׁם",
-          "strong": "H8033",
-          "pron": "샴"
-        }
-      ],
-      "count": 7,
-      "refs": [
-        "psalms 122:5",
-        "psalms 133:3",
-        "psalms 137:3",
-        "genesis 11:9",
-        "genesis 21:31",
-        "genesis 35:7",
-        "genesis 43:25"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיִּ֤בֶן שָׁם֙",
-      "pron": "입네므 샴",
-      "lemmas": [
-        "בָּנָה",
-        "שָׁם"
-      ],
-      "words": [
-        {
-          "word": "וַיִּ֤בֶן",
-          "lemma": "בָּנָה",
-          "strong": "H1129",
-          "pron": "입네므"
-        },
-        {
-          "word": "שָׁם֙",
-          "lemma": "שָׁם",
-          "strong": "H8033",
-          "pron": "샴"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "genesis 12:7",
-        "genesis 12:8",
-        "genesis 13:18",
-        "genesis 22:9",
-        "genesis 26:25",
-        "genesis 35:7"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיֵּ֥שְׁבוּ שָֽׁם",
-      "pron": "야샵 샴",
+      "hebrew": "וַיֵּ֤שְׁבוּ שָׁם֙",
+      "pron": "바예솁 샴",
       "lemmas": [
         "יָשַׁב",
         "שָׁם"
       ],
       "words": [
         {
-          "word": "וַיֵּ֥שְׁבוּ",
+          "word": "וַיֵּ֤שְׁבוּ",
           "lemma": "יָשַׁב",
           "strong": "H3427",
-          "pron": "야샵"
+          "pron": "바예솁"
+        },
+        {
+          "word": "שָׁם֙",
+          "lemma": "שָׁם",
+          "strong": "H8033",
+          "pron": "샴"
+        }
+      ],
+      "count": 40,
+      "refs": [
+        "genesis 11:2",
+        "genesis 11:31",
+        "genesis 26:17",
+        "genesis 35:1",
+        "deuteronomy 13:12",
+        "joshua 2:22",
+        "judges 9:21",
+        "judges 20:26",
+        "judges 21:2",
+        "ruth 1:4",
+        "ruth 4:1",
+        "samuel1 1:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּ֣הְיוּ שָׁ֔ם",
+      "pron": "하에타 샴",
+      "lemmas": [
+        "הָיָה",
+        "שָׁם"
+      ],
+      "words": [
+        {
+          "word": "וַיִּ֣הְיוּ",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "שָׁ֔ם",
+          "lemma": "שָׁם",
+          "strong": "H8033",
+          "pron": "샴"
+        }
+      ],
+      "count": 37,
+      "refs": [
+        "genesis 13:3",
+        "genesis 39:20",
+        "exodus 8:22",
+        "exodus 24:12",
+        "exodus 34:28",
+        "numbers 19:18",
+        "numbers 32:26",
+        "numbers 33:14",
+        "deuteronomy 10:5",
+        "deuteronomy 26:5",
+        "deuteronomy 31:26",
+        "joshua 4:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁ֖ם אֶת",
+      "pron": "샴 에트",
+      "lemmas": [
+        "שָׁם",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "שָׁ֖ם",
+          "lemma": "שָׁם",
+          "strong": "H8033",
+          "pron": "샴"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 37,
+      "refs": [
+        "genesis 2:8",
+        "exodus 40:3",
+        "deuteronomy 1:38",
+        "deuteronomy 4:29",
+        "deuteronomy 17:12",
+        "deuteronomy 21:4",
+        "joshua 6:22",
+        "joshua 7:3",
+        "joshua 18:1",
+        "judges 1:20",
+        "samuel1 4:4",
+        "samuel1 11:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיָּ֥מָת שָֽׁם",
+      "pron": "모트 샴",
+      "lemmas": [
+        "מוּת",
+        "שָׁם"
+      ],
+      "words": [
+        {
+          "word": "וַיָּ֥מָת",
+          "lemma": "מוּת",
+          "strong": "H4191",
+          "pron": "모트"
         },
         {
           "word": "שָֽׁם",
@@ -188,14 +243,20 @@
           "pron": "샴"
         }
       ],
-      "count": 6,
+      "count": 22,
       "refs": [
-        "psalms 69:35",
-        "psalms 107:36",
-        "genesis 11:2",
-        "genesis 11:31",
-        "genesis 26:17",
-        "genesis 35:1"
+        "genesis 23:13",
+        "numbers 20:1",
+        "numbers 20:4",
+        "numbers 20:26",
+        "numbers 33:38",
+        "deuteronomy 34:5",
+        "judges 1:7",
+        "ruth 1:17",
+        "samuel2 6:7",
+        "samuel2 10:18",
+        "kings2 7:4",
+        "kings2 9:27"
       ],
       "glossKo": ""
     }

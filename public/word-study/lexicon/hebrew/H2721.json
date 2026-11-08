@@ -12,21 +12,58 @@
     {
       "lemma": "חֶרֶב",
       "strong": "H2719",
-      "pron": "하렙오",
-      "glossKo": "그의 칼"
+      "pron": "아헤렙",
+      "glossKo": "칼"
     },
     {
       "lemma": "חׇרְבָּה",
       "strong": "H2723",
-      "pron": "호라보트",
+      "pron": "하렙바",
       "glossKo": "황무지"
     }
   ],
   "defEn": "drought; desolation",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 16,
   "byBook": {
-    "genesis": 1
+    "isaiah": 5,
+    "jeremiah": 3,
+    "judges": 3,
+    "ezekiel": 1,
+    "genesis": 1,
+    "haggai": 1,
+    "job": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "חֹ֤רֶב אֶל",
+      "pron": "호렙 엘",
+      "lemmas": [
+        "חֹרֶב",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "חֹ֤רֶב",
+          "lemma": "חֹרֶב",
+          "strong": "H2721",
+          "pron": "호렙"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 6:39",
+        "judges 6:40",
+        "jeremiah 50:38"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

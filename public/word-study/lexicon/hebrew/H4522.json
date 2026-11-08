@@ -12,27 +12,200 @@
     {
       "lemma": "מָס",
       "strong": "H4523",
-      "pron": "",
+      "pron": "라맛",
       "glossKo": "낙심한"
     },
     {
       "lemma": "מִסָּה",
       "strong": "H4530",
-      "pron": "",
+      "pron": "밋사트",
       "glossKo": "분량"
     },
     {
       "lemma": "מָסַס",
       "strong": "H4549",
-      "pron": "나멧",
+      "pron": "브나맛",
       "glossKo": "녹다"
     }
   ],
   "defEn": "burden",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 23,
   "byBook": {
-    "genesis": 1
+    "kings1": 7,
+    "judges": 4,
+    "chronicles2": 2,
+    "joshua": 2,
+    "deuteronomy": 1,
+    "esther": 1,
+    "exodus": 1,
+    "genesis": 1,
+    "isaiah": 1,
+    "lamentations": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיְהִ֖י לְמַס",
+      "pron": "하에타 르맛",
+      "lemmas": [
+        "הָיָה",
+        "מַס"
+      ],
+      "words": [
+        {
+          "word": "וַיְהִ֖י",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "לְמַס",
+          "lemma": "מַס",
+          "strong": "H4522",
+          "pron": "르맛"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "genesis 49:15",
+        "deuteronomy 20:11",
+        "joshua 16:10",
+        "judges 1:30",
+        "judges 1:33",
+        "judges 1:35",
+        "kings1 5:13",
+        "proverbs 12:24",
+        "lamentations 1:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל הַמַּֽס",
+      "pron": "알 르맛",
+      "lemmas": [
+        "עַל",
+        "מַס"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הַמַּֽס",
+          "lemma": "מַס",
+          "strong": "H4522",
+          "pron": "르맛"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 20:24",
+        "kings1 4:6",
+        "kings1 5:14",
+        "kings1 12:18",
+        "chronicles2 10:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְמַס עֹבֵֽד",
+      "pron": "르맛 라아볻",
+      "lemmas": [
+        "מַס",
+        "עָבַד"
+      ],
+      "words": [
+        {
+          "word": "לְמַס",
+          "lemma": "מַס",
+          "strong": "H4522",
+          "pron": "르맛"
+        },
+        {
+          "word": "עֹבֵֽד",
+          "lemma": "עָבַד",
+          "strong": "H5647",
+          "pron": "라아볻"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 49:15",
+        "deuteronomy 20:11",
+        "joshua 16:10",
+        "kings1 9:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיְהִ֖י לְמַס עֹבֵֽד",
+      "pron": "하에타 르맛 라아볻",
+      "lemmas": [
+        "הָיָה",
+        "מַס",
+        "עָבַד"
+      ],
+      "words": [
+        {
+          "word": "וַיְהִ֖י",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "לְמַס",
+          "lemma": "מַס",
+          "strong": "H4522",
+          "pron": "르맛"
+        },
+        {
+          "word": "עֹבֵֽד",
+          "lemma": "עָבַד",
+          "strong": "H5647",
+          "pron": "라아볻"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 49:15",
+        "deuteronomy 20:11",
+        "joshua 16:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁלֹמֹ֛ה מַ֖ס",
+      "pron": "우솔로몬 르맛",
+      "lemmas": [
+        "שְׁלֹמֹה",
+        "מַס"
+      ],
+      "words": [
+        {
+          "word": "שְׁלֹמֹ֛ה",
+          "lemma": "שְׁלֹמֹה",
+          "strong": "H8010",
+          "pron": "우솔로몬"
+        },
+        {
+          "word": "מַ֖ס",
+          "lemma": "מַס",
+          "strong": "H4522",
+          "pron": "르맛"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 5:13",
+        "kings1 9:21",
+        "chronicles2 8:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

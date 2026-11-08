@@ -1,6 +1,6 @@
 {
   "lemma": "קֶרֶן",
-  "pron": "브케렌",
+  "pron": "베카레나으브",
   "strong": "H7161",
   "posKo": "명사",
   "root": {
@@ -12,58 +12,238 @@
     {
       "lemma": "קָרַן",
       "strong": "H7160",
-      "pron": "마케린",
+      "pron": "카란",
       "glossKo": "비추다"
     },
     {
       "lemma": "קֶרֶן",
       "strong": "H7162",
-      "pron": "",
+      "pron": "카레나",
       "glossKo": "뿔(아람)"
     },
     {
       "lemma": "קֶרֶן הַפּוּךְ",
       "strong": "H7163",
-      "pron": "",
+      "pron": "케렌",
       "glossKo": "게렌합북"
     }
   ],
   "defEn": "horn",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 76,
   "byBook": {
     "psalms": 13,
-    "genesis": 1
+    "exodus": 10,
+    "daniel": 9,
+    "leviticus": 8,
+    "ezekiel": 5,
+    "kings1": 5,
+    "zechariah": 5,
+    "samuel1": 4,
+    "amos": 2,
+    "deuteronomy": 2,
+    "jeremiah": 2,
+    "lamentations": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "genesis": 1,
+    "habakkuk": 1,
+    "isaiah": 1,
+    "job": 1,
+    "joshua": 1,
+    "micah": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "תָּרִ֥ימוּ קָֽרֶן",
-      "pron": "우메림 브케렌",
+      "hebrew": "קַרְנֹ֖ת מִזְבַּ֣ח",
+      "pron": "베카레나으브 밋베아흐",
+      "lemmas": [
+        "קֶרֶן",
+        "מִזְבֵּחַ"
+      ],
+      "words": [
+        {
+          "word": "קַרְנֹ֖ת",
+          "lemma": "קֶרֶן",
+          "strong": "H7161",
+          "pron": "베카레나으브"
+        },
+        {
+          "word": "מִזְבַּ֣ח",
+          "lemma": "מִזְבֵּחַ",
+          "strong": "H4196",
+          "pron": "밋베아흐"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "exodus 29:12",
+        "leviticus 4:7",
+        "leviticus 4:18",
+        "leviticus 4:25",
+        "leviticus 4:30",
+        "leviticus 4:34",
+        "leviticus 8:15",
+        "leviticus 9:9",
+        "leviticus 16:18",
+        "kings1 1:50",
+        "kings1 1:51",
+        "kings1 2:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל קַרְנֹ֖ת",
+      "pron": "알 베카레나으브",
+      "lemmas": [
+        "עַל",
+        "קֶרֶן"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "קַרְנֹ֖ת",
+          "lemma": "קֶרֶן",
+          "strong": "H7161",
+          "pron": "베카레나으브"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 29:12",
+        "exodus 30:10",
+        "leviticus 4:7",
+        "leviticus 4:18",
+        "leviticus 4:25",
+        "leviticus 4:30",
+        "leviticus 4:34",
+        "leviticus 8:15",
+        "leviticus 9:9",
+        "leviticus 16:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל קַרְנֹ֖ת מִזְבַּ֣ח",
+      "pron": "알 베카레나으브 밋베아흐",
+      "lemmas": [
+        "עַל",
+        "קֶרֶן",
+        "מִזְבֵּחַ"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "קַרְנֹ֖ת",
+          "lemma": "קֶרֶן",
+          "strong": "H7161",
+          "pron": "베카레나으브"
+        },
+        {
+          "word": "מִזְבַּ֣ח",
+          "lemma": "מִזְבֵּחַ",
+          "strong": "H4196",
+          "pron": "밋베아흐"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 29:12",
+        "leviticus 4:7",
+        "leviticus 4:18",
+        "leviticus 4:25",
+        "leviticus 4:30",
+        "leviticus 4:34",
+        "leviticus 8:15",
+        "leviticus 9:9",
+        "leviticus 16:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רָ֥מָה קַרְנִ֖י",
+      "pron": "바타람 베카레나으브",
       "lemmas": [
         "רוּם",
         "קֶרֶן"
       ],
       "words": [
         {
-          "word": "תָּרִ֥ימוּ",
+          "word": "רָ֥מָה",
           "lemma": "רוּם",
           "strong": "H7311",
-          "pron": "우메림"
+          "pron": "바타람"
         },
         {
-          "word": "קָֽרֶן",
+          "word": "קַרְנִ֖י",
           "lemma": "קֶרֶן",
           "strong": "H7161",
-          "pron": "브케렌"
+          "pron": "베카레나으브"
         }
       ],
-      "count": 5,
+      "count": 9,
       "refs": [
+        "samuel1 2:1",
+        "samuel1 2:10",
+        "chronicles1 25:5",
         "psalms 75:4",
         "psalms 75:10",
         "psalms 89:17",
         "psalms 89:24",
-        "psalms 148:14"
+        "psalms 148:14",
+        "lamentations 2:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנָתַ֕ן עַל קַרְנֹ֖ת",
+      "pron": "바잇텐 알 베카레나으브",
+      "lemmas": [
+        "נָתַן",
+        "עַל",
+        "קֶרֶן"
+      ],
+      "words": [
+        {
+          "word": "וְנָתַ֕ן",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "קַרְנֹ֖ת",
+          "lemma": "קֶרֶן",
+          "strong": "H7161",
+          "pron": "베카레나으브"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 29:12",
+        "leviticus 4:18",
+        "leviticus 4:25",
+        "leviticus 4:30",
+        "leviticus 4:34",
+        "leviticus 8:15",
+        "leviticus 9:9",
+        "leviticus 16:18"
       ],
       "glossKo": ""
     }

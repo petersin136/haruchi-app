@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁוְא",
-  "pron": "샤베",
+  "pron": "라샤베",
   "strong": "H7723",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "מְשׁוֹאָה",
       "strong": "H4875",
-      "pron": "",
+      "pron": "우메쇼아",
       "glossKo": "황폐"
     },
     {
@@ -24,27 +24,193 @@
     {
       "lemma": "שְׁוָא",
       "strong": "H7724",
-      "pron": "",
+      "pron": "우셰바",
       "glossKo": "스와"
     },
     {
       "lemma": "שִׁיאוֹן",
       "strong": "H7866",
-      "pron": "",
+      "pron": "브시온",
       "glossKo": "시온"
     },
     {
       "lemma": "תְּשֻׁאָה",
       "strong": "H8663",
-      "pron": "",
+      "pron": "테슈오트",
       "glossKo": "황폐"
     }
   ],
   "defEn": "evil; destructive; ruin; guile; idolatry; uselessness",
   "defKo": "",
-  "countOT": 15,
+  "countOT": 54,
   "byBook": {
-    "psalms": 15
+    "psalms": 15,
+    "ezekiel": 9,
+    "job": 7,
+    "jeremiah": 5,
+    "isaiah": 4,
+    "deuteronomy": 3,
+    "exodus": 3,
+    "hosea": 2,
+    "lamentations": 2,
+    "jonah": 1,
+    "malachi": 1,
+    "proverbs": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "דִּבֶּר שָׁ֑וְא",
+      "pron": "바예답베르 라샤베",
+      "lemmas": [
+        "דָבַר",
+        "שָׁוְא"
+      ],
+      "words": [
+        {
+          "word": "דִּבֶּר",
+          "lemma": "דָבַר",
+          "strong": "H1696",
+          "pron": "바예답베르"
+        },
+        {
+          "word": "שָׁ֑וְא",
+          "lemma": "שָׁוְא",
+          "strong": "H7723",
+          "pron": "라샤베"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 144:8",
+        "psalms 144:11",
+        "isaiah 59:4",
+        "ezekiel 13:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָ֤זוּ שָׁ֣וְא",
+      "pron": "테헤제 라샤베",
+      "lemmas": [
+        "חָזָה",
+        "שָׁוְא"
+      ],
+      "words": [
+        {
+          "word": "חָ֤זוּ",
+          "lemma": "חָזָה",
+          "strong": "H2372",
+          "pron": "테헤제"
+        },
+        {
+          "word": "שָׁ֣וְא",
+          "lemma": "שָׁוְא",
+          "strong": "H7723",
+          "pron": "라샤베"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "lamentations 2:14",
+        "ezekiel 13:6",
+        "ezekiel 21:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁוְא֮ וְהַקֹּסְמִ֣ים",
+      "pron": "라샤베 케사밈",
+      "lemmas": [
+        "שָׁוְא",
+        "קָסַם"
+      ],
+      "words": [
+        {
+          "word": "שָׁוְא֮",
+          "lemma": "שָׁוְא",
+          "strong": "H7723",
+          "pron": "라샤베"
+        },
+        {
+          "word": "וְהַקֹּסְמִ֣ים",
+          "lemma": "קָסַם",
+          "strong": "H7080",
+          "pron": "케사밈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 13:9",
+        "ezekiel 21:29",
+        "ezekiel 22:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁוְא֮ וְהַקֹּסְמִ֣ים כָּזָב֒",
+      "pron": "라샤베 케사밈 카잡",
+      "lemmas": [
+        "שָׁוְא",
+        "קָסַם",
+        "כָּזָב"
+      ],
+      "words": [
+        {
+          "word": "שָׁוְא֮",
+          "lemma": "שָׁוְא",
+          "strong": "H7723",
+          "pron": "라샤베"
+        },
+        {
+          "word": "וְהַקֹּסְמִ֣ים",
+          "lemma": "קָסַם",
+          "strong": "H7080",
+          "pron": "케사밈"
+        },
+        {
+          "word": "כָּזָב֒",
+          "lemma": "כָּזָב",
+          "strong": "H3577",
+          "pron": "카잡"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 13:9",
+        "ezekiel 21:29",
+        "ezekiel 22:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁ֤וְא יְֽדַבְּרוּ֮",
+      "pron": "라샤베 바예답베르",
+      "lemmas": [
+        "שָׁוְא",
+        "דָבַר"
+      ],
+      "words": [
+        {
+          "word": "שָׁ֤וְא",
+          "lemma": "שָׁוְא",
+          "strong": "H7723",
+          "pron": "라샤베"
+        },
+        {
+          "word": "יְֽדַבְּרוּ֮",
+          "lemma": "דָבַר",
+          "strong": "H1696",
+          "pron": "바예답베르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 12:2",
+        "psalms 41:6",
+        "zechariah 10:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

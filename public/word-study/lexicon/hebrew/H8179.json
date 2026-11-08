@@ -1,6 +1,6 @@
 {
   "lemma": "שַׁעַר",
-  "pron": "미샤아레",
+  "pron": "브샤아르",
   "strong": "H8179",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "שׁוֹעֵר",
       "strong": "H7778",
-      "pron": "",
+      "pron": "아쇼에르",
       "glossKo": "문지기"
     },
     {
       "lemma": "שָׁעַר",
       "strong": "H8176",
-      "pron": "",
+      "pron": "샤아르",
       "glossKo": "쪼개다"
     },
     {
@@ -30,86 +30,244 @@
     {
       "lemma": "שֹׁעָר",
       "strong": "H8182",
-      "pron": "",
+      "pron": "아쇼아림",
       "glossKo": "혐오스러운"
     },
     {
       "lemma": "שַׁעֲרוּרָה",
       "strong": "H8186",
-      "pron": "",
+      "pron": "브샤아루라",
       "glossKo": "혐오"
     },
     {
       "lemma": "שְׁעַרְיָה",
       "strong": "H8187",
-      "pron": "",
+      "pron": "우셰아레아",
       "glossKo": "스아랴"
     }
   ],
   "defEn": "opening; door; gate",
   "defKo": "",
-  "countOT": 22,
+  "countOT": 375,
   "byBook": {
+    "ezekiel": 99,
+    "nehemiah": 41,
+    "deuteronomy": 34,
+    "jeremiah": 28,
+    "chronicles2": 19,
+    "kings2": 18,
     "psalms": 13,
-    "genesis": 9
+    "exodus": 12,
+    "isaiah": 12,
+    "samuel2": 12,
+    "esther": 11,
+    "chronicles1": 9,
+    "genesis": 9,
+    "judges": 9,
+    "proverbs": 7,
+    "job": 5,
+    "joshua": 5,
+    "lamentations": 4,
+    "ruth": 4,
+    "samuel1": 4,
+    "zechariah": 4,
+    "amos": 3,
+    "micah": 3,
+    "obadiah": 3,
+    "kings1": 2,
+    "nahum": 2,
+    "numbers": 1,
+    "songofsolomon": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "שַֽׁעַר עִיר֖וֹ",
-      "pron": "미샤아레 브아림",
+      "hebrew": "פֶּ֖תַח שַׁ֣עַר",
+      "pron": "라페타흐 브샤아르",
+      "lemmas": [
+        "פֶּתַח",
+        "שַׁעַר"
+      ],
+      "words": [
+        {
+          "word": "פֶּ֖תַח",
+          "lemma": "פֶּתַח",
+          "strong": "H6607",
+          "pron": "라페타흐"
+        },
+        {
+          "word": "שַׁ֣עַר",
+          "lemma": "שַׁעַר",
+          "strong": "H8179",
+          "pron": "브샤아르"
+        }
+      ],
+      "count": 27,
+      "refs": [
+        "numbers 4:26",
+        "joshua 8:29",
+        "joshua 20:4",
+        "judges 9:35",
+        "judges 9:40",
+        "judges 9:44",
+        "judges 18:16",
+        "judges 18:17",
+        "samuel2 10:8",
+        "samuel2 11:23",
+        "kings1 22:10",
+        "kings2 7:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֣ר בִּשְׁעָרֶ֔יךָ",
+      "pron": "아셰르 브샤아르",
+      "lemmas": [
+        "אֲשֶׁר",
+        "שַׁעַר"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "בִּשְׁעָרֶ֔יךָ",
+          "lemma": "שַׁעַר",
+          "strong": "H8179",
+          "pron": "브샤아르"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "exodus 20:10",
+        "deuteronomy 5:14",
+        "deuteronomy 12:12",
+        "deuteronomy 12:18",
+        "deuteronomy 14:21",
+        "deuteronomy 14:27",
+        "deuteronomy 14:29",
+        "deuteronomy 16:11",
+        "deuteronomy 16:14",
+        "deuteronomy 31:12",
+        "ruth 4:11",
+        "samuel2 23:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שַׁ֣עַר הָעִ֔יר",
+      "pron": "브샤아르 이르",
       "lemmas": [
         "שַׁעַר",
         "עִיר"
       ],
       "words": [
         {
-          "word": "שַֽׁעַר",
+          "word": "שַׁ֣עַר",
           "lemma": "שַׁעַר",
           "strong": "H8179",
-          "pron": "미샤아레"
+          "pron": "브샤아르"
         },
         {
-          "word": "עִיר֖וֹ",
+          "word": "הָעִ֔יר",
           "lemma": "עִיר",
           "strong": "H5892",
-          "pron": "브아림"
+          "pron": "이르"
         }
       ],
-      "count": 5,
+      "count": 18,
       "refs": [
         "genesis 23:10",
         "genesis 23:18",
         "genesis 34:20",
-        "genesis 34:24"
+        "genesis 34:24",
+        "deuteronomy 22:24",
+        "joshua 8:29",
+        "joshua 20:4",
+        "judges 9:35",
+        "judges 9:44",
+        "judges 16:2",
+        "judges 16:3",
+        "kings2 23:8"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בָּאֵ֥י שַֽׁעַר",
-      "pron": "아보 미샤아레",
+      "hebrew": "אֶל שַׁ֣עַר",
+      "pron": "엘 브샤아르",
       "lemmas": [
-        "בּוֹא",
+        "אֵל",
         "שַׁעַר"
       ],
       "words": [
         {
-          "word": "בָּאֵ֥י",
-          "lemma": "בּוֹא",
-          "strong": "H935",
-          "pron": "아보"
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
         },
         {
-          "word": "שַֽׁעַר",
+          "word": "שַׁ֣עַר",
           "lemma": "שַׁעַר",
           "strong": "H8179",
-          "pron": "미샤아레"
+          "pron": "브샤아르"
         }
       ],
-      "count": 3,
+      "count": 17,
       "refs": [
-        "psalms 100:4",
-        "genesis 23:10",
-        "genesis 23:18"
+        "genesis 34:20",
+        "deuteronomy 17:5",
+        "deuteronomy 21:19",
+        "deuteronomy 22:24",
+        "nehemiah 2:13",
+        "nehemiah 2:14",
+        "esther 4:2",
+        "esther 6:12",
+        "ezekiel 11:1",
+        "ezekiel 40:6",
+        "ezekiel 40:23",
+        "ezekiel 40:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֖ת שַׁ֥עַר",
+      "pron": "에트 브샤아르",
+      "lemmas": [
+        "אֵת",
+        "שַׁעַר"
+      ],
+      "words": [
+        {
+          "word": "אֵ֖ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שַׁ֥עַר",
+          "lemma": "שַׁעַר",
+          "strong": "H8179",
+          "pron": "브샤아르"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "genesis 22:17",
+        "genesis 24:60",
+        "kings2 15:35",
+        "chronicles2 27:3",
+        "nehemiah 2:8",
+        "nehemiah 3:1",
+        "nehemiah 3:3",
+        "nehemiah 3:6",
+        "nehemiah 3:13",
+        "nehemiah 3:14",
+        "nehemiah 3:15",
+        "nehemiah 12:30"
       ],
       "glossKo": ""
     }

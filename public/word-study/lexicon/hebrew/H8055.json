@@ -1,6 +1,6 @@
 {
   "lemma": "שָׂמַח",
-  "pron": "브이셈후",
+  "pron": "브사마흐",
   "strong": "H8055",
   "posKo": "동사",
   "root": null,
@@ -8,164 +8,219 @@
     {
       "lemma": "שָׂמֵחַ",
       "strong": "H8056",
-      "pron": "세메헤",
+      "pron": "사메아흐",
       "glossKo": "기뻐하는"
     }
   ],
   "defEn": "brighten; be; blithe; gleesome",
   "defKo": "",
-  "countOT": 52,
+  "countOT": 157,
   "byBook": {
-    "psalms": 52
+    "psalms": 52,
+    "proverbs": 17,
+    "deuteronomy": 10,
+    "isaiah": 9,
+    "ecclesiastes": 8,
+    "chronicles2": 7,
+    "jeremiah": 7,
+    "job": 5,
+    "samuel1": 5,
+    "judges": 4,
+    "zechariah": 4,
+    "chronicles1": 3,
+    "ezekiel": 3,
+    "nehemiah": 3,
+    "hosea": 2,
+    "joel": 2,
+    "lamentations": 2,
+    "amos": 1,
+    "esther": 1,
+    "exodus": 1,
+    "ezra": 1,
+    "habakkuk": 1,
+    "jonah": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "leviticus": 1,
+    "micah": 1,
+    "obadiah": 1,
+    "samuel2": 1,
+    "songofsolomon": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "וְיִשְׂמְח֨וּ כָּֽל",
-      "pron": "브이셈후 브콜",
+      "hebrew": "וַיִּשְׂמְח֥וּ כָל",
+      "pron": "브사마흐 칼",
       "lemmas": [
         "שָׂמַח",
         "כֹּל"
       ],
       "words": [
         {
-          "word": "וְיִשְׂמְח֨וּ",
+          "word": "וַיִּשְׂמְח֥וּ",
           "lemma": "שָׂמַח",
           "strong": "H8055",
-          "pron": "브이셈후"
+          "pron": "브사마흐"
         },
         {
-          "word": "כָּֽל",
+          "word": "כָל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         }
       ],
-      "count": 6,
+      "count": 15,
       "refs": [
+        "deuteronomy 12:7",
+        "deuteronomy 26:11",
+        "kings2 11:20",
+        "chronicles2 15:15",
+        "chronicles2 23:21",
+        "chronicles2 24:10",
+        "chronicles2 30:25",
         "psalms 5:11",
         "psalms 40:16",
         "psalms 70:4",
         "psalms 89:42",
-        "psalms 90:14",
-        "psalms 107:42"
+        "psalms 90:14"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שָׂמַ֣ח לִ֭בִּי",
-      "pron": "브이셈후 브립비위",
+      "hebrew": "יְשַׂמַּֽח לֵ֑ב",
+      "pron": "브사마흐 립보",
       "lemmas": [
         "שָׂמַח",
         "לֵב"
       ],
       "words": [
         {
-          "word": "שָׂמַ֣ח",
+          "word": "יְשַׂמַּֽח",
           "lemma": "שָׂמַח",
           "strong": "H8055",
-          "pron": "브이셈후"
+          "pron": "브사마흐"
         },
         {
-          "word": "לִ֭בִּי",
+          "word": "לֵ֑ב",
           "lemma": "לֵב",
           "strong": "H3820",
-          "pron": "브립비위"
+          "pron": "립보"
         }
       ],
-      "count": 4,
+      "count": 11,
       "refs": [
+        "exodus 4:14",
+        "chronicles1 16:10",
         "psalms 16:9",
         "psalms 19:8",
         "psalms 33:21",
-        "psalms 105:3"
+        "psalms 105:3",
+        "proverbs 15:30",
+        "proverbs 23:15",
+        "proverbs 27:9",
+        "proverbs 27:11",
+        "zechariah 10:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שִׂמְח֬וּ בַֽיהוָ֣ה",
-      "pron": "브이셈후 여호와",
+      "hebrew": "אַֽל תִּשְׂמְחִ֤י",
+      "pron": "엘 브사마흐",
+      "lemmas": [
+        "אַל",
+        "שָׂמַח"
+      ],
+      "words": [
+        {
+          "word": "אַֽל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "תִּשְׂמְחִ֤י",
+          "lemma": "שָׂמַח",
+          "strong": "H8055",
+          "pron": "브사마흐"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "psalms 35:19",
+        "psalms 35:24",
+        "proverbs 24:17",
+        "isaiah 14:29",
+        "ezekiel 7:12",
+        "hosea 9:1",
+        "obadiah 1:12",
+        "micah 7:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּשְׂמָ֗חוּ כִּ֤י",
+      "pron": "브사마흐 키",
+      "lemmas": [
+        "שָׂמַח",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "וַיִּשְׂמָ֗חוּ",
+          "lemma": "שָׂמַח",
+          "strong": "H8055",
+          "pron": "브사마흐"
+        },
+        {
+          "word": "כִּ֤י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "nehemiah 12:43",
+        "job 31:25",
+        "psalms 107:30",
+        "psalms 119:74",
+        "ecclesiastes 4:16",
+        "jeremiah 50:11",
+        "joel 2:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שִׂמְּחָ֥ם יְהוָ֖ה",
+      "pron": "브사마흐 여호와",
       "lemmas": [
         "שָׂמַח",
         "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "שִׂמְח֬וּ",
+          "word": "שִׂמְּחָ֥ם",
           "lemma": "שָׂמַח",
           "strong": "H8055",
-          "pron": "브이셈후"
+          "pron": "브사마흐"
         },
         {
-          "word": "בַֽיהוָ֣ה",
+          "word": "יְהוָ֖ה",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         }
       ],
-      "count": 4,
+      "count": 7,
       "refs": [
+        "chronicles2 20:27",
+        "ezra 6:22",
         "psalms 32:11",
         "psalms 92:4",
         "psalms 104:31",
-        "psalms 104:34"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יִשְׂמַ֥ח יִשְׂרָֽאֵל",
-      "pron": "브이셈후 이스라엘",
-      "lemmas": [
-        "שָׂמַח",
-        "יִשְׂרָאֵל"
-      ],
-      "words": [
-        {
-          "word": "יִשְׂמַ֥ח",
-          "lemma": "שָׂמַח",
-          "strong": "H8055",
-          "pron": "브이셈후"
-        },
-        {
-          "word": "יִשְׂרָֽאֵל",
-          "lemma": "יִשְׂרָאֵל",
-          "strong": "H3478",
-          "pron": "이스라엘"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 14:7",
-        "psalms 53:6",
-        "psalms 149:2"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יִשְׂמַ֣ח צַ֭דִּיק",
-      "pron": "브이셈후 찯디킴",
-      "lemmas": [
-        "שָׂמַח",
-        "צַדִּיק"
-      ],
-      "words": [
-        {
-          "word": "יִשְׂמַ֣ח",
-          "lemma": "שָׂמַח",
-          "strong": "H8055",
-          "pron": "브이셈후"
-        },
-        {
-          "word": "צַ֭דִּיק",
-          "lemma": "צַדִּיק",
-          "strong": "H6662",
-          "pron": "찯디킴"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 58:10",
-        "psalms 64:10",
-        "psalms 97:12"
+        "psalms 104:34",
+        "joel 2:23"
       ],
       "glossKo": ""
     }

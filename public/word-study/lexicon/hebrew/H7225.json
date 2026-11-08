@@ -1,6 +1,6 @@
 {
   "lemma": "רֵאשִׁית",
-  "pron": "레시트",
+  "pron": "브레시트",
   "strong": "H7225",
   "posKo": "명사",
   "root": {
@@ -12,20 +12,20 @@
     {
       "lemma": "מַרְאָשָׁה",
       "strong": "H4761",
-      "pron": "",
-      "glossKo": "베개 자리"
+      "pron": "마레아쇼테켐",
+      "glossKo": "너희의 베개 자리"
     },
     {
       "lemma": "רֵאשׁ",
       "strong": "H7217",
-      "pron": "",
-      "glossKo": "머리(아람)"
+      "pron": "베라셰으홈",
+      "glossKo": "그들의 머리(아람)"
     },
     {
       "lemma": "רֹאשׁ",
       "strong": "H7218",
-      "pron": "로시위",
-      "glossKo": "나의 머리"
+      "pron": "라심",
+      "glossKo": "머리"
     },
     {
       "lemma": "רֹאשׁ",
@@ -42,16 +42,182 @@
     {
       "lemma": "רִאשָׁה",
       "strong": "H7221",
-      "pron": "",
-      "glossKo": "시작"
+      "pron": "메리쇼테켐",
+      "glossKo": "너희의 시작"
     }
   ],
   "defEn": "first; firstfruit",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 51,
   "byBook": {
+    "deuteronomy": 7,
+    "jeremiah": 6,
+    "proverbs": 5,
+    "ezekiel": 4,
+    "numbers": 4,
     "genesis": 3,
-    "psalms": 3
+    "job": 3,
+    "psalms": 3,
+    "amos": 2,
+    "exodus": 2,
+    "leviticus": 2,
+    "nehemiah": 2,
+    "samuel1": 2,
+    "chronicles2": 1,
+    "daniel": 1,
+    "ecclesiastes": 1,
+    "hosea": 1,
+    "isaiah": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מֵרֵאשִׁ֣ית כָּל",
+      "pron": "브레시트 칼",
+      "lemmas": [
+        "רֵאשִׁית",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "מֵרֵאשִׁ֣ית",
+          "lemma": "רֵאשִׁית",
+          "strong": "H7225",
+          "pron": "브레시트"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 26:2",
+        "samuel1 2:29",
+        "psalms 105:36",
+        "proverbs 3:9",
+        "ezekiel 44:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רֵאשִׁית֙ עֲרִסֹ֣תֵכֶ֔ם",
+      "pron": "브레시트 아리소테켐",
+      "lemmas": [
+        "רֵאשִׁית",
+        "עֲרִיסָה"
+      ],
+      "words": [
+        {
+          "word": "רֵאשִׁית֙",
+          "lemma": "רֵאשִׁית",
+          "strong": "H7225",
+          "pron": "브레시트"
+        },
+        {
+          "word": "עֲרִסֹ֣תֵכֶ֔ם",
+          "lemma": "עֲרִיסָה",
+          "strong": "H6182",
+          "pron": "아리소테켐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 15:20",
+        "numbers 15:21",
+        "nehemiah 10:37",
+        "ezekiel 44:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת רֵאשִׁית֙",
+      "pron": "에트 브레시트",
+      "lemmas": [
+        "אֵת",
+        "רֵאשִׁית"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "רֵאשִׁית֙",
+          "lemma": "רֵאשִׁית",
+          "strong": "H7225",
+          "pron": "브레시트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 26:10",
+        "nehemiah 10:37",
+        "ezekiel 20:40"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הוּא֙ רֵאשִׁ֣ית",
+      "pron": "후 브레시트",
+      "lemmas": [
+        "הוּא",
+        "רֵאשִׁית"
+      ],
+      "words": [
+        {
+          "word": "הוּא֙",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        },
+        {
+          "word": "רֵאשִׁ֣ית",
+          "lemma": "רֵאשִׁית",
+          "strong": "H7225",
+          "pron": "브레시트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 21:17",
+        "job 40:19",
+        "jeremiah 28:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְרֵאשִׁ֣ית אוֹנִ֑י",
+      "pron": "브레시트 오니",
+      "lemmas": [
+        "רֵאשִׁית",
+        "אוֹן"
+      ],
+      "words": [
+        {
+          "word": "וְרֵאשִׁ֣ית",
+          "lemma": "רֵאשִׁית",
+          "strong": "H7225",
+          "pron": "브레시트"
+        },
+        {
+          "word": "אוֹנִ֑י",
+          "lemma": "אוֹן",
+          "strong": "H202",
+          "pron": "오니"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 49:3",
+        "deuteronomy 21:17",
+        "psalms 78:51"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

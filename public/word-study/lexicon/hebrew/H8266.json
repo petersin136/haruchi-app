@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁקַר",
-  "pron": "식카레누",
+  "pron": "티셰코르",
   "strong": "H8266",
   "posKo": "동사",
   "root": null,
@@ -14,10 +14,45 @@
   ],
   "defEn": "cheat; be untrue",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 6,
   "byBook": {
     "psalms": 2,
-    "genesis": 1
+    "genesis": 1,
+    "isaiah": 1,
+    "leviticus": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְלֹֽא תְשַׁקְּר֖וּ",
+      "pron": "로 티셰코르",
+      "lemmas": [
+        "לֹא",
+        "שָׁקַר"
+      ],
+      "words": [
+        {
+          "word": "וְלֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תְשַׁקְּר֖וּ",
+          "lemma": "שָׁקַר",
+          "strong": "H8266",
+          "pron": "티셰코르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 19:11",
+        "samuel1 15:29",
+        "psalms 44:17",
+        "psalms 89:33",
+        "isaiah 63:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "יִשְׂרְאֵלִי",
-  "pron": "이세레엘리",
+  "pron": "아이세레엘리",
   "strong": "H3481",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "יִשְׂרָאֵל",
     "strong": "H3478",
@@ -18,13 +18,22 @@
     {
       "lemma": "יִשְׂרָאֵל",
       "strong": "H3479",
-      "pron": "",
+      "pron": "이스라엘",
       "glossKo": "이스라엘(아람)"
+    },
+    {
+      "lemma": "יִשְׂרְאֵלִית",
+      "strong": "H3482",
+      "pron": "이세레엘리트",
+      "glossKo": "이스라엘 여인"
     }
   ],
   "defEn": "a Jisreelite",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 2,
+  "byBook": {
+    "leviticus": 1,
+    "samuel2": 1
+  },
   "phrases": []
 }

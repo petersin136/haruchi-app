@@ -1,8 +1,8 @@
 {
   "lemma": "יְדַע",
-  "pron": "예다",
+  "pron": "예디아",
   "strong": "H3046",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "יָדַע",
     "strong": "H3045",
@@ -12,31 +12,31 @@
     {
       "lemma": "דֵּעַ",
       "strong": "H1843",
-      "pron": "",
-      "glossKo": "지식"
+      "pron": "데이",
+      "glossKo": "나의 지식"
     },
     {
       "lemma": "דְּעוּאֵל",
       "strong": "H1845",
-      "pron": "",
+      "pron": "데우엘",
       "glossKo": "드우엘"
     },
     {
       "lemma": "דַּעַת",
       "strong": "H1847",
-      "pron": "다아트",
+      "pron": "아다아트",
       "glossKo": "지식"
     },
     {
       "lemma": "יַדּוּעַ",
       "strong": "H3037",
-      "pron": "",
+      "pron": "얃두아",
       "glossKo": "얏두아"
     },
     {
       "lemma": "יְדִיעֲאֵל",
       "strong": "H3043",
-      "pron": "",
+      "pron": "비위디아엘",
       "glossKo": "여디아엘"
     },
     {
@@ -48,7 +48,181 @@
   ],
   "defEn": "certify, know, make known, teach.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 47,
+  "byBook": {
+    "daniel": 36,
+    "ezra": 11
+  },
+  "phrases": [
+    {
+      "hebrew": "תִנְדַּ֗ע דִּֽי",
+      "pron": "예디아 드흐브",
+      "lemmas": [
+        "יְדַע",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "תִנְדַּ֗ע",
+          "lemma": "יְדַע",
+          "strong": "H3046",
+          "pron": "예디아"
+        },
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "ezra 4:15",
+        "ezra 5:10",
+        "ezra 7:24",
+        "daniel 2:9",
+        "daniel 2:23",
+        "daniel 4:9",
+        "daniel 4:25",
+        "daniel 4:26",
+        "daniel 4:32",
+        "daniel 5:21",
+        "daniel 6:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּֽי תִנְדַּ֗ע",
+      "pron": "드흐브 예디아",
+      "lemmas": [
+        "דִּי",
+        "יְדַע"
+      ],
+      "words": [
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "תִנְדַּ֗ע",
+          "lemma": "יְדַע",
+          "strong": "H3046",
+          "pron": "예디아"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "daniel 4:17",
+        "daniel 4:25",
+        "daniel 4:26",
+        "daniel 4:32",
+        "daniel 5:21",
+        "daniel 6:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָ֦א יָדַ֖ע",
+      "pron": "라 예디아",
+      "lemmas": [
+        "לָא",
+        "יְדַע"
+      ],
+      "words": [
+        {
+          "word": "לָ֦א",
+          "lemma": "לָא",
+          "strong": "H3809",
+          "pron": "라"
+        },
+        {
+          "word": "יָדַ֖ע",
+          "lemma": "יְדַע",
+          "strong": "H3046",
+          "pron": "예디아"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "ezra 7:25",
+        "daniel 2:5",
+        "daniel 2:9",
+        "daniel 3:18",
+        "daniel 4:7",
+        "daniel 5:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּֽי תִנְדַּ֗ע דִּֽי",
+      "pron": "드흐브 예디아 드흐브",
+      "lemmas": [
+        "דִּי",
+        "יְדַע",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "תִנְדַּ֗ע",
+          "lemma": "יְדַע",
+          "strong": "H3046",
+          "pron": "예디아"
+        },
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 4:25",
+        "daniel 4:26",
+        "daniel 4:32",
+        "daniel 5:21",
+        "daniel 6:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהוֹדַ֥עְנָא לְמַלְכָּֽא",
+      "pron": "예디아 말카",
+      "lemmas": [
+        "יְדַע",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "וְהוֹדַ֥עְנָא",
+          "lemma": "יְדַע",
+          "strong": "H3046",
+          "pron": "예디아"
+        },
+        {
+          "word": "לְמַלְכָּֽא",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4430",
+          "pron": "말카"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezra 4:14",
+        "daniel 2:28",
+        "daniel 2:45",
+        "daniel 5:8",
+        "daniel 6:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

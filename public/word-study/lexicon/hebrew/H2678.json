@@ -1,8 +1,8 @@
 {
   "lemma": "חִצִּי",
-  "pron": "힛치",
+  "pron": "아힛침",
   "strong": "H2678",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חֵץ",
     "strong": "H2671",
@@ -12,13 +12,77 @@
     {
       "lemma": "חֵץ",
       "strong": "H2671",
-      "pron": "힛차이브",
-      "glossKo": "그의 화살"
+      "pron": "힛침",
+      "glossKo": "화살"
     }
   ],
   "defEn": "arrow",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "samuel1": 10,
+    "kings2": 2,
+    "chronicles2": 1,
+    "isaiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶת הַחִצִּ֑ים",
+      "pron": "에트 아힛침",
+      "lemmas": [
+        "אֵת",
+        "חִצִּי"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַחִצִּ֑ים",
+          "lemma": "חִצִּי",
+          "strong": "H2678",
+          "pron": "아힛침"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 20:21",
+        "samuel1 20:36",
+        "samuel1 20:38"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַחִצִּ֣ים מִמְּךָ֣",
+      "pron": "아힛침 민",
+      "lemmas": [
+        "חִצִּי",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "הַחִצִּ֣ים",
+          "lemma": "חִצִּי",
+          "strong": "H2678",
+          "pron": "아힛침"
+        },
+        {
+          "word": "מִמְּךָ֣",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 20:21",
+        "samuel1 20:22",
+        "samuel1 20:37"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "הַר",
-  "pron": "하르",
+  "pron": "헤하림",
   "strong": "H2022",
   "posKo": "명사",
   "root": {
@@ -12,19 +12,19 @@
     {
       "lemma": "הֹר",
       "strong": "H2023",
-      "pron": "",
+      "pron": "호르",
       "glossKo": "호르 산"
     },
     {
       "lemma": "הָרָא",
       "strong": "H2024",
-      "pron": "",
+      "pron": "브하라",
       "glossKo": "하라"
     },
     {
       "lemma": "הַרְאֵל",
       "strong": "H2025",
-      "pron": "",
+      "pron": "브아하레엘",
       "glossKo": "아리엘"
     },
     {
@@ -36,177 +36,244 @@
     {
       "lemma": "הָרָר",
       "strong": "H2042",
-      "pron": "르하레리위",
-      "glossKo": "나의 산"
+      "pron": "메하레레",
+      "glossKo": "산"
     },
     {
       "lemma": "הֲרָרִי",
       "strong": "H2043",
-      "pron": "",
+      "pron": "하라리",
       "glossKo": "하랄 사람"
     }
   ],
   "defEn": "mountain; range",
   "defKo": "",
-  "countOT": 68,
+  "countOT": 547,
   "byBook": {
+    "isaiah": 57,
+    "joshua": 52,
+    "deuteronomy": 51,
+    "exodus": 48,
+    "ezekiel": 47,
     "psalms": 47,
-    "genesis": 21
+    "judges": 35,
+    "numbers": 26,
+    "genesis": 21,
+    "jeremiah": 20,
+    "chronicles2": 16,
+    "kings1": 15,
+    "samuel1": 14,
+    "kings2": 11,
+    "zechariah": 11,
+    "micah": 10,
+    "obadiah": 7,
+    "chronicles1": 6,
+    "job": 6,
+    "joel": 6,
+    "samuel2": 6,
+    "amos": 5,
+    "songofsolomon": 5,
+    "leviticus": 4,
+    "daniel": 3,
+    "nahum": 3,
+    "habakkuk": 2,
+    "haggai": 2,
+    "hosea": 2,
+    "lamentations": 2,
+    "nehemiah": 2,
+    "proverbs": 2,
+    "jonah": 1,
+    "malachi": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "הַר קָדְשִֽׁי",
-      "pron": "하르 칻시위",
+      "hebrew": "עַל הַ֣ר",
+      "pron": "알 헤하림",
       "lemmas": [
-        "הַר",
-        "קֹדֶשׁ"
-      ],
-      "words": [
-        {
-          "word": "הַר",
-          "lemma": "הַר",
-          "strong": "H2022",
-          "pron": "하르"
-        },
-        {
-          "word": "קָדְשִֽׁי",
-          "lemma": "קֹדֶשׁ",
-          "strong": "H6944",
-          "pron": "칻시위"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "psalms 2:6",
-        "psalms 3:4",
-        "psalms 15:1",
-        "psalms 43:3",
-        "psalms 48:1",
-        "psalms 99:9"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "הַר צִ֭יּוֹן",
-      "pron": "하르 치온",
-      "lemmas": [
-        "הַר",
-        "צִיּוֹן"
-      ],
-      "words": [
-        {
-          "word": "הַר",
-          "lemma": "הַר",
-          "strong": "H2022",
-          "pron": "하르"
-        },
-        {
-          "word": "צִ֭יּוֹן",
-          "lemma": "צִיּוֹן",
-          "strong": "H6726",
-          "pron": "치온"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 48:2",
-        "psalms 48:11",
-        "psalms 74:2",
-        "psalms 78:68",
-        "psalms 125:1"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "הַ֥ר גַּ֝בְנֻנִּ֗ים הַר",
-      "pron": "하르 갑눈님 하르",
-      "lemmas": [
-        "הַר",
-        "גַּבְנֹן",
+        "עַל",
         "הַר"
       ],
       "words": [
         {
-          "word": "הַ֥ר",
-          "lemma": "הַר",
-          "strong": "H2022",
-          "pron": "하르"
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
         },
         {
-          "word": "גַּ֝בְנֻנִּ֗ים",
-          "lemma": "גַּבְנֹן",
-          "strong": "H1386",
-          "pron": "갑눈님"
-        },
-        {
-          "word": "הַר",
+          "word": "הַ֣ר",
           "lemma": "הַר",
           "strong": "H2022",
-          "pron": "하르"
+          "pron": "헤하림"
         }
       ],
-      "count": 4,
+      "count": 53,
       "refs": [
-        "psalms 68:15",
-        "psalms 68:16"
+        "genesis 8:4",
+        "exodus 3:12",
+        "exodus 19:11",
+        "exodus 19:16",
+        "exodus 19:20",
+        "exodus 24:16",
+        "deuteronomy 11:29",
+        "deuteronomy 12:2",
+        "deuteronomy 27:12",
+        "joshua 18:13",
+        "judges 11:37",
+        "judges 11:38"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בְּהַ֥ר הַגִּלְעָֽד",
-      "pron": "하르 길앋",
+      "hebrew": "אֶל הַ֣ר",
+      "pron": "엘 헤하림",
       "lemmas": [
-        "הַר",
-        "גִּלְעָד"
+        "אֵל",
+        "הַר"
       ],
       "words": [
         {
-          "word": "בְּהַ֥ר",
-          "lemma": "הַר",
-          "strong": "H2022",
-          "pron": "하르"
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
         },
         {
-          "word": "הַגִּלְעָֽד",
-          "lemma": "גִּלְעָד",
-          "strong": "H1568",
-          "pron": "길앋"
+          "word": "הַ֣ר",
+          "lemma": "הַר",
+          "strong": "H2022",
+          "pron": "헤하림"
         }
       ],
-      "count": 3,
+      "count": 44,
       "refs": [
-        "genesis 31:21",
+        "exodus 3:1",
+        "exodus 19:23",
+        "exodus 24:12",
+        "exodus 24:13",
+        "exodus 24:15",
+        "exodus 24:18",
+        "exodus 34:2",
+        "exodus 34:4",
+        "numbers 27:12",
+        "deuteronomy 10:1",
+        "deuteronomy 10:4",
+        "deuteronomy 32:49"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּהַ֣ר אֶפְרָ֑יִם",
+      "pron": "헤하림 엡라임",
+      "lemmas": [
+        "הַר",
+        "אֶפְרַיִם"
+      ],
+      "words": [
+        {
+          "word": "בְּהַ֣ר",
+          "lemma": "הַר",
+          "strong": "H2022",
+          "pron": "헤하림"
+        },
+        {
+          "word": "אֶפְרָ֑יִם",
+          "lemma": "אֶפְרַיִם",
+          "strong": "H669",
+          "pron": "엡라임"
+        }
+      ],
+      "count": 32,
+      "refs": [
+        "joshua 17:15",
+        "joshua 19:50",
+        "joshua 20:7",
+        "joshua 21:21",
+        "joshua 24:30",
+        "joshua 24:33",
+        "judges 2:9",
+        "judges 3:27",
+        "judges 4:5",
+        "judges 7:24",
+        "judges 10:1",
+        "judges 17:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רֹ֣אשׁ הָהָ֔ר",
+      "pron": "라심 헤하림",
+      "lemmas": [
+        "רֹאשׁ",
+        "הַר"
+      ],
+      "words": [
+        {
+          "word": "רֹ֣אשׁ",
+          "lemma": "רֹאשׁ",
+          "strong": "H7218",
+          "pron": "라심"
+        },
+        {
+          "word": "הָהָ֔ר",
+          "lemma": "הַר",
+          "strong": "H2022",
+          "pron": "헤하림"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "genesis 8:5",
+        "exodus 19:20",
+        "exodus 24:17",
+        "exodus 34:2",
+        "numbers 14:40",
+        "numbers 14:44",
+        "numbers 20:28",
+        "joshua 15:8",
+        "joshua 15:9",
+        "judges 9:7",
+        "judges 9:25",
+        "judges 9:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הַ֣ר",
+      "pron": "에트 헤하림",
+      "lemmas": [
+        "אֵת",
+        "הַר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַ֣ר",
+          "lemma": "הַר",
+          "strong": "H2022",
+          "pron": "헤하림"
+        }
+      ],
+      "count": 24,
+      "refs": [
         "genesis 31:23",
-        "genesis 31:25"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "בְּהַרְרָ֣ם שֵׂעִ֑יר",
-      "pron": "하르 세이르",
-      "lemmas": [
-        "הַר",
-        "שֵׂעִיר"
-      ],
-      "words": [
-        {
-          "word": "בְּהַרְרָ֣ם",
-          "lemma": "הַר",
-          "strong": "H2022",
-          "pron": "하르"
-        },
-        {
-          "word": "שֵׂעִ֑יר",
-          "lemma": "שֵׂעִיר",
-          "strong": "H8165",
-          "pron": "세이르"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 14:6",
-        "genesis 36:8",
-        "genesis 36:9"
+        "exodus 19:23",
+        "exodus 20:18",
+        "exodus 24:15",
+        "exodus 27:8",
+        "exodus 32:12",
+        "numbers 13:17",
+        "deuteronomy 2:1",
+        "deuteronomy 2:3",
+        "deuteronomy 2:5",
+        "joshua 11:16",
+        "joshua 14:12"
       ],
       "glossKo": ""
     }

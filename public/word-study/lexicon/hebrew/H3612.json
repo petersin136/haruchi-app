@@ -2,7 +2,7 @@
   "lemma": "כָּלֵב",
   "pron": "칼렙",
   "strong": "H3612",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "כֶּלֶב",
     "strong": "H3611",
@@ -12,19 +12,220 @@
     {
       "lemma": "כֶּלֶב",
       "strong": "H3611",
-      "pron": "켈라빔",
+      "pron": "켈렙",
       "glossKo": "개"
+    },
+    {
+      "lemma": "כָּלֵב אֶפְרָתָה",
+      "strong": "H3613",
+      "pron": "브칼렙",
+      "glossKo": "갈렙에브라다"
+    },
+    {
+      "lemma": "כָּלִבּוֹ",
+      "strong": "H3614",
+      "pron": "칼립비",
+      "glossKo": "갈렙 사람"
     },
     {
       "lemma": "כְּלוּב",
       "strong": "H3619",
-      "pron": "",
+      "pron": "키켈룹",
       "glossKo": "조롱"
+    },
+    {
+      "lemma": "כְּלוּבַי",
+      "strong": "H3621",
+      "pron": "켈루바이",
+      "glossKo": "글루배"
     }
   ],
   "defEn": "Caleb",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 35,
+  "byBook": {
+    "chronicles1": 9,
+    "joshua": 9,
+    "numbers": 9,
+    "judges": 6,
+    "deuteronomy": 1,
+    "samuel1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "כָּלֵ֣ב בֶּן",
+      "pron": "칼렙 바님",
+      "lemmas": [
+        "כָּלֵב",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "כָּלֵ֣ב",
+          "lemma": "כָּלֵב",
+          "strong": "H3612",
+          "pron": "칼렙"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "numbers 13:6",
+        "numbers 14:6",
+        "numbers 14:30",
+        "numbers 14:38",
+        "numbers 26:65",
+        "numbers 32:12",
+        "numbers 34:19",
+        "deuteronomy 1:36",
+        "joshua 14:6",
+        "joshua 14:13",
+        "joshua 14:14",
+        "joshua 15:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּלֵ֣ב בֶּן יְפֻנֶּ֔ה",
+      "pron": "칼렙 바님 예푼네",
+      "lemmas": [
+        "כָּלֵב",
+        "בֵּן",
+        "יְפֻנֶּה"
+      ],
+      "words": [
+        {
+          "word": "כָּלֵ֣ב",
+          "lemma": "כָּלֵב",
+          "strong": "H3612",
+          "pron": "칼렙"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יְפֻנֶּ֔ה",
+          "lemma": "יְפֻנֶּה",
+          "strong": "H3312",
+          "pron": "예푼네"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "numbers 13:6",
+        "numbers 14:6",
+        "numbers 14:30",
+        "numbers 14:38",
+        "numbers 26:65",
+        "numbers 32:12",
+        "numbers 34:19",
+        "deuteronomy 1:36",
+        "joshua 14:6",
+        "joshua 14:13",
+        "joshua 14:14",
+        "joshua 15:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּלֵ֛ב אֶת",
+      "pron": "칼렙 에트",
+      "lemmas": [
+        "כָּלֵב",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "כָּלֵ֛ב",
+          "lemma": "כָּלֵב",
+          "strong": "H3612",
+          "pron": "칼렙"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 13:30",
+        "joshua 15:14",
+        "judges 1:15",
+        "judges 1:20",
+        "samuel1 30:14",
+        "chronicles1 2:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֣אמֶר כָּלֵ֔ב",
+      "pron": "바요메르 칼렙",
+      "lemmas": [
+        "אָמַר",
+        "כָּלֵב"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֣אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "כָּלֵ֔ב",
+          "lemma": "כָּלֵב",
+          "strong": "H3612",
+          "pron": "칼렙"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 15:16",
+        "joshua 15:18",
+        "judges 1:12",
+        "judges 1:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נָֽתְנ֛וּ לְכָלֵ֥ב",
+      "pron": "바잇텐 칼렙",
+      "lemmas": [
+        "נָתַן",
+        "כָּלֵב"
+      ],
+      "words": [
+        {
+          "word": "נָֽתְנ֛וּ",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "לְכָלֵ֥ב",
+          "lemma": "כָּלֵב",
+          "strong": "H3612",
+          "pron": "칼렙"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 21:12",
+        "judges 1:15",
+        "judges 1:20",
+        "chronicles1 6:56"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

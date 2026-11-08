@@ -12,147 +12,249 @@
     {
       "lemma": "אָחַד",
       "strong": "H258",
-      "pron": "",
+      "pron": "히테아하디",
       "glossKo": "하나가 되게 하다"
     },
     {
       "lemma": "אֵחוּד",
       "strong": "H261",
-      "pron": "",
+      "pron": "에훋",
       "glossKo": "에훗"
     },
     {
       "lemma": "חַד",
       "strong": "H2297",
-      "pron": "",
+      "pron": "핟",
       "glossKo": "하나(아람)"
     }
   ],
   "defEn": "united; one; first",
   "defKo": "",
-  "countOT": 56,
+  "countOT": 976,
   "byBook": {
+    "numbers": 179,
+    "ezekiel": 107,
+    "exodus": 99,
+    "kings1": 65,
+    "joshua": 60,
+    "leviticus": 49,
     "genesis": 47,
-    "psalms": 9
+    "samuel1": 43,
+    "samuel2": 37,
+    "kings2": 33,
+    "chronicles2": 29,
+    "judges": 27,
+    "deuteronomy": 26,
+    "isaiah": 21,
+    "daniel": 19,
+    "ecclesiastes": 19,
+    "jeremiah": 14,
+    "job": 14,
+    "chronicles1": 13,
+    "zechariah": 13,
+    "ezra": 12,
+    "nehemiah": 11,
+    "psalms": 9,
+    "amos": 5,
+    "esther": 5,
+    "songofsolomon": 5,
+    "malachi": 4,
+    "haggai": 3,
+    "proverbs": 2,
+    "ruth": 2,
+    "hosea": 1,
+    "jonah": 1,
+    "obadiah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "י֥וֹם אֶחָֽד",
-      "pron": "아욤 에핟",
+      "hebrew": "אִישׁ אֶחָ֖ד",
+      "pron": "메이쉬 에핟",
+      "lemmas": [
+        "אִישׁ",
+        "אֶחָד"
+      ],
+      "words": [
+        {
+          "word": "אִישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "אֶחָ֖ד",
+          "lemma": "אֶחָד",
+          "strong": "H259",
+          "pron": "에핟"
+        }
+      ],
+      "count": 37,
+      "refs": [
+        "genesis 42:11",
+        "genesis 42:13",
+        "numbers 1:44",
+        "numbers 13:2",
+        "numbers 14:15",
+        "numbers 16:22",
+        "deuteronomy 1:23",
+        "joshua 3:12",
+        "joshua 4:2",
+        "joshua 4:4",
+        "joshua 22:20",
+        "joshua 23:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶחָ֞ד בֶּן",
+      "pron": "에핟 바님",
+      "lemmas": [
+        "אֶחָד",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "אֶחָ֞ד",
+          "lemma": "אֶחָד",
+          "strong": "H259",
+          "pron": "에핟"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 34,
+      "refs": [
+        "exodus 29:1",
+        "leviticus 13:2",
+        "numbers 7:15",
+        "numbers 7:21",
+        "numbers 7:27",
+        "numbers 7:33",
+        "numbers 7:39",
+        "numbers 7:45",
+        "numbers 7:51",
+        "numbers 7:57",
+        "numbers 7:63",
+        "numbers 7:69"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּי֥וֹם אֶחָ֖ד",
+      "pron": "욤 에핟",
       "lemmas": [
         "יוֹם",
         "אֶחָד"
       ],
       "words": [
         {
-          "word": "י֥וֹם",
+          "word": "בְּי֥וֹם",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "아욤"
+          "pron": "욤"
         },
         {
-          "word": "אֶחָֽד",
+          "word": "אֶחָ֖ד",
           "lemma": "אֶחָד",
           "strong": "H259",
           "pron": "에핟"
         }
       ],
-      "count": 6,
+      "count": 32,
       "refs": [
         "genesis 1:5",
         "genesis 27:44",
         "genesis 27:45",
         "genesis 29:20",
         "genesis 33:13",
-        "genesis 42:13"
+        "genesis 42:13",
+        "exodus 12:18",
+        "leviticus 22:28",
+        "numbers 11:19",
+        "samuel1 2:34",
+        "samuel1 9:15",
+        "samuel1 27:1"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "עַ֤ם אֶחָד֙",
-      "pron": "암 에핟",
-      "lemmas": [
-        "עַם",
-        "אֶחָד"
-      ],
-      "words": [
-        {
-          "word": "עַ֤ם",
-          "lemma": "עַם",
-          "strong": "H5971",
-          "pron": "암"
-        },
-        {
-          "word": "אֶחָד֙",
-          "lemma": "אֶחָד",
-          "strong": "H259",
-          "pron": "에핟"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 11:6",
-        "genesis 34:16",
-        "genesis 34:22",
-        "genesis 49:16"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אַחַ֤ת הִֽוא",
-      "pron": "에핟 브후",
+      "hebrew": "אֶחָ֖ד לְחַטָּֽאת",
+      "pron": "에핟 핟다트",
       "lemmas": [
         "אֶחָד",
-        "הוּא"
+        "חַטָּאָה"
       ],
       "words": [
         {
-          "word": "אַחַ֤ת",
+          "word": "אֶחָ֖ד",
           "lemma": "אֶחָד",
           "strong": "H259",
           "pron": "에핟"
         },
         {
-          "word": "הִֽוא",
-          "lemma": "הוּא",
-          "strong": "H1931",
-          "pron": "브후"
+          "word": "לְחַטָּֽאת",
+          "lemma": "חַטָּאָה",
+          "strong": "H2403",
+          "pron": "핟다트"
         }
       ],
-      "count": 3,
+      "count": 28,
       "refs": [
-        "genesis 27:38",
-        "genesis 41:25",
-        "genesis 41:26"
+        "leviticus 5:7",
+        "leviticus 12:8",
+        "leviticus 14:22",
+        "leviticus 14:31",
+        "leviticus 15:15",
+        "leviticus 15:30",
+        "leviticus 23:19",
+        "numbers 6:11",
+        "numbers 7:16",
+        "numbers 7:22",
+        "numbers 7:28",
+        "numbers 7:34"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שֵׁ֥ם הָֽאֶחָ֖ד",
-      "pron": "셰메카 에핟",
+      "hebrew": "אַ֧יִל אֶחָ֛ד",
+      "pron": "브아일 에핟",
       "lemmas": [
-        "שֵׁם",
+        "אַיִל",
         "אֶחָד"
       ],
       "words": [
         {
-          "word": "שֵׁ֥ם",
-          "lemma": "שֵׁם",
-          "strong": "H8034",
-          "pron": "셰메카"
+          "word": "אַ֧יִל",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
         },
         {
-          "word": "הָֽאֶחָ֖ד",
+          "word": "אֶחָ֛ד",
           "lemma": "אֶחָד",
           "strong": "H259",
           "pron": "에핟"
         }
       ],
-      "count": 3,
+      "count": 28,
       "refs": [
-        "genesis 2:11",
-        "genesis 4:19",
-        "genesis 10:25"
+        "exodus 29:15",
+        "leviticus 16:5",
+        "numbers 6:14",
+        "numbers 7:15",
+        "numbers 7:21",
+        "numbers 7:27",
+        "numbers 7:33",
+        "numbers 7:39",
+        "numbers 7:45",
+        "numbers 7:51",
+        "numbers 7:57",
+        "numbers 7:63"
       ],
       "glossKo": ""
     }

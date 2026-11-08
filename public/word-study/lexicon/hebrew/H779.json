@@ -1,6 +1,6 @@
 {
   "lemma": "אָרַר",
-  "pron": "아루림",
+  "pron": "아루르",
   "strong": "H779",
   "posKo": "동사",
   "root": null,
@@ -8,16 +8,189 @@
     {
       "lemma": "מְאֵרָה",
       "strong": "H3994",
-      "pron": "",
+      "pron": "아메에라",
       "glossKo": "저주"
     }
   ],
   "defEn": "execrate",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 63,
   "byBook": {
+    "deuteronomy": 18,
+    "numbers": 13,
     "genesis": 9,
+    "jeremiah": 6,
+    "judges": 4,
+    "malachi": 4,
+    "samuel1": 3,
+    "joshua": 2,
+    "exodus": 1,
+    "job": 1,
+    "kings2": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֹרְרֶ֣יךָ אָר֔וּר",
+      "pron": "아루르 아루르",
+      "lemmas": [
+        "אָרַר",
+        "אָרַר"
+      ],
+      "words": [
+        {
+          "word": "אֹרְרֶ֣יךָ",
+          "lemma": "אָרַר",
+          "strong": "H779",
+          "pron": "아루르"
+        },
+        {
+          "word": "אָר֔וּר",
+          "lemma": "אָרַר",
+          "strong": "H779",
+          "pron": "아루르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 27:29",
+        "numbers 22:6",
+        "numbers 24:9",
+        "judges 5:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָר֥וּר אַתָּ֖ה",
+      "pron": "아루르 앗타",
+      "lemmas": [
+        "אָרַר",
+        "אַתָּה"
+      ],
+      "words": [
+        {
+          "word": "אָר֥וּר",
+          "lemma": "אָרַר",
+          "strong": "H779",
+          "pron": "아루르"
+        },
+        {
+          "word": "אַתָּ֖ה",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 3:14",
+        "genesis 4:11",
+        "deuteronomy 28:16",
+        "deuteronomy 28:19",
+        "joshua 9:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָר֣וּר הָאִ֡ישׁ",
+      "pron": "아루르 메이쉬",
+      "lemmas": [
+        "אָרַר",
+        "אִישׁ"
+      ],
+      "words": [
+        {
+          "word": "אָר֣וּר",
+          "lemma": "אָרַר",
+          "strong": "H779",
+          "pron": "아루르"
+        },
+        {
+          "word": "הָאִ֡ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 27:15",
+        "joshua 6:26",
+        "samuel1 14:24",
+        "samuel1 14:28",
+        "jeremiah 11:3",
+        "jeremiah 20:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָר֣וּר הָאִ֡ישׁ אֲשֶׁ֣ר",
+      "pron": "아루르 메이쉬 아셰르",
+      "lemmas": [
+        "אָרַר",
+        "אִישׁ",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "אָר֣וּר",
+          "lemma": "אָרַר",
+          "strong": "H779",
+          "pron": "아루르"
+        },
+        {
+          "word": "הָאִ֡ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 27:15",
+        "samuel1 14:24",
+        "samuel1 14:28",
+        "jeremiah 11:3",
+        "jeremiah 20:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֖אמֶר אָר֣וּר",
+      "pron": "바요메르 아루르",
+      "lemmas": [
+        "אָמַר",
+        "אָרַר"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֖אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "אָר֣וּר",
+          "lemma": "אָרַר",
+          "strong": "H779",
+          "pron": "아루르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 9:25",
+        "joshua 6:26",
+        "judges 21:18",
+        "samuel1 14:24",
+        "samuel1 14:28"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

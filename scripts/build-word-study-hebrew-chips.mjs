@@ -226,20 +226,13 @@ function skeleton(heb) {
 }
 
 /**
- * 유성 셰바: 자음+셰바 뒤에 모음 있는 음절이 오면 받침 흡수하지 않고 '으/에'로 읽기.
- * 기존 basePron 결과가 어색하면 조각별로 다시 조합.
+ * 전체 단어(접미 포함) 음역. 슬래시 조각 연결 금지 — רֹעִי = 로이 (로이위 아님).
  */
 export function pronFixed(raw) {
   if (!raw) return "";
   const full = String(raw).replace(/\//g, "");
   const sk = skeleton(full);
   if (PRON_OVERRIDE[sk]) return PRON_OVERRIDE[sk];
-
-  // 조각별 음역 후 연결 (접두/접미 분해 표시용)
-  const parts = String(raw).split("/").filter(Boolean);
-  if (parts.length > 1) {
-    return parts.map((p) => pronFixed(p)).join("");
-  }
 
   let p = basePron(full);
   // 밋모르 → 미즈모르 (זְ 유성 셰바)
@@ -256,11 +249,21 @@ export function pronFixed(raw) {
   return p;
 }
 
+/** 접미·접두 조각만 단독 음역 (분해 칸용) */
+function pronPart(raw) {
+  if (!raw) return "";
+  return basePron(String(raw).replace(/\//g, "")) || pronFixed(raw);
+}
+
 // ── OSHB 파서 + KJV 노트 매핑 ───────────────────────────────────────────────
+/**
+ * 절 본문을 문서 순서 이벤트(KJV 노트 / 단어)로 파싱.
+ * 단어별 KJV 표시(중절 노트)를 보존한다.
+ */
 function parseOshbXml(xmlPath) {
   const xml = fs.readFileSync(xmlPath, "utf8");
   const verseRe = /<verse osisID="([^"]+)">([\s\S]*?)<\/verse>/g;
-  /** @type {{wlcCh:number,wlcV:number,kjv:null|{book:string,ch:number,v:number},rows:object[]}[]} */
+  /** @type {{wlcCh:number,wlcV:number,events:object[]}[]} */
   const list = [];
   let m;
   while ((m = verseRe.exec(xml)) !== null) {
@@ -269,30 +272,32 @@ function parseOshbXml(xmlPath) {
     const wlcV = parseInt(parts[2], 10);
     if (!Number.isFinite(wlcCh) || !Number.isFinite(wlcV)) continue;
     const body = m[2];
-    const kjvM = body.match(
-      /<note[^>]*>\s*KJV:([A-Za-z0-9]+)\.(\d+)\.(\d+)\s*<\/note>/,
-    );
-    const rows = [];
-    const wRe = /<w\b([^>]*)>([\s\S]*?)<\/w>/g;
-    let wm;
-    while ((wm = wRe.exec(body)) !== null) {
-      const attrs = wm[1];
-      const inner = wm[2].replace(/<[^>]+>/g, "").trim();
-      if (!inner) continue;
-      rows.push({
-        word: inner,
-        lemma: attr(attrs, "lemma"),
-        morph: attr(attrs, "morph"),
-      });
+    /** @type {object[]} */
+    const events = [];
+    const tokRe =
+      /<note[^>]*>\s*KJV:([A-Za-z0-9]+)\.(\d+)\.(\d+)\s*<\/note>|<w\b([^>]*)>([\s\S]*?)<\/w>/g;
+    let tm;
+    while ((tm = tokRe.exec(body)) !== null) {
+      if (tm[1]) {
+        events.push({
+          type: "kjv",
+          book: tm[1],
+          ch: +tm[2],
+          v: +tm[3],
+        });
+      } else {
+        const attrs = tm[4] || "";
+        const inner = (tm[5] || "").replace(/<[^>]+>/g, "").trim();
+        if (!inner) continue;
+        events.push({
+          type: "w",
+          word: inner,
+          lemma: attr(attrs, "lemma"),
+          morph: attr(attrs, "morph"),
+        });
+      }
     }
-    list.push({
-      wlcCh,
-      wlcV,
-      kjv: kjvM
-        ? { book: kjvM[1], ch: +kjvM[2], v: +kjvM[3] }
-        : null,
-      rows,
-    });
+    list.push({ wlcCh, wlcV, events });
   }
   return list;
 }
@@ -304,63 +309,111 @@ function attr(a, n) {
  * OSHB KJV 노트만으로 KRV 좌표에 모은다. 손 목록 없음.
  *
  * 규칙:
- *  - KJV 노트 있으면 → 그 좌표
- *  - 같은 WLC 장에서 «첫 KJV 노트보다 앞선» 노트 없는 절 → 표제(다음 KJV 절에 병합)
- *  - 그 밖의 노트 없는 절 → WLC=KRV 1:1
+ *  - 기본: WLC ch.v = KRV ch.v (1:1)
+ *  - 단어 앞/사이 KJV 노트 → 이후 단어를 그 KRV 절로 (중절 분할·표제 병합 포함)
+ *  - 시 13.1(무노트)+13.2(KJV:13.1)처럼 노트만으로 표제가 1절에 합쳐짐
+ *
+ * 반환: Map<ch, Map<v, { rows, split?, splitWith?, wordSplit? }>>
  */
 function mapBookByKjvNotes(bookId, verseList) {
-  /** @type {Map<string, object[]>} key = `${ch}:${v}` */
+  /** @type {Map<string, {rows:object[], split:boolean, splitWith:number[], wordSplit:boolean}>} */
   const buckets = new Map();
   const ensure = (ch, v) => {
     const k = `${ch}:${v}`;
-    if (!buckets.has(k)) buckets.set(k, []);
+    if (!buckets.has(k)) {
+      buckets.set(k, { rows: [], split: false, splitWith: [], wordSplit: false });
+    }
     return buckets.get(k);
   };
 
-  /** 장 → 첫 KJV 노트 WLC 절 번호 */
-  const firstKjvWlcV = new Map();
-  for (const row of verseList) {
-    if (!row.kjv) continue;
-    if (!firstKjvWlcV.has(row.wlcCh) || row.wlcV < firstKjvWlcV.get(row.wlcCh)) {
-      firstKjvWlcV.set(row.wlcCh, row.wlcV);
-    }
-  }
+  for (const verse of verseList) {
+    /** @type {{book:string,ch:number,v:number}|null} */
+    let cur = null;
+    /** @type {number[]} */
+    const verseKjvTargets = [];
+    /** @type {number|null} */
+    let targetCh = null;
 
-  /** @type {object[]} */
-  let pending = [];
-  for (const row of verseList) {
-    if (row.kjv) {
-      const targetBook = KJV_BOOK[row.kjv.book] || bookId;
-      if (targetBook !== bookId) {
-        pending = [];
+    for (const ev of verse.events) {
+      if (ev.type === "kjv") {
+        const targetBook = KJV_BOOK[ev.book] || bookId;
+        if (targetBook !== bookId) {
+          cur = null;
+          continue;
+        }
+        cur = { book: ev.book, ch: ev.ch, v: ev.v };
+        targetCh = ev.ch;
+        if (!verseKjvTargets.includes(ev.v)) verseKjvTargets.push(ev.v);
         continue;
       }
-      const bag = ensure(row.kjv.ch, row.kjv.v);
-      for (const p of pending) bag.push(...p.rows);
-      bag.push(...row.rows);
-      pending = [];
-      continue;
+
+      // word: 노트가 켜져 있으면 그 좌표, 아니면 WLC 1:1
+      if (cur) {
+        ensure(cur.ch, cur.v).rows.push(ev);
+      } else {
+        ensure(verse.wlcCh, verse.wlcV).rows.push(ev);
+      }
     }
 
-    const first = firstKjvWlcV.get(row.wlcCh);
-    // 표제: 이 장에 KJV 노트가 있고, 아직 첫 노트 절에 도달하기 전
-    if (first != null && row.wlcV < first) {
-      pending.push(row);
-    } else {
-      // 1:1 (노트 없는 본문 절)
-      ensure(row.wlcCh, row.wlcV).push(...row.rows);
+    // 한 WLC 절 → 여러 KRV 절 단어 분할
+    if (verseKjvTargets.length > 1 && targetCh != null) {
+      for (const v of verseKjvTargets) {
+        const bag = ensure(targetCh, v);
+        bag.wordSplit = true;
+        bag.split = true;
+        bag.splitWith = [...verseKjvTargets].sort((a, b) => a - b);
+      }
     }
   }
-  if (pending.length) {
-    for (const p of pending) ensure(p.wlcCh, 1).push(...p.rows);
-  }
 
-  /** @type {Map<number, Map<number, object[]>>} */
+  /** @type {Map<number, Map<number, {rows:object[], split:boolean, splitWith:number[], wordSplit:boolean}>>} */
   const byCh = new Map();
-  for (const [k, rows] of buckets) {
+  for (const [k, cell] of buckets) {
     const [ch, v] = k.split(":").map(Number);
+    if (!cell.rows.length) continue;
     if (!byCh.has(ch)) byCh.set(ch, new Map());
-    byCh.get(ch).set(v, rows);
+    byCh.get(ch).set(v, cell);
+  }
+  return byCh;
+}
+
+/**
+ * KRV 절 번호가 비면(주 분할·이동) 인접 절 단어를 복제하고 split 표시.
+ * 단어별 KJV가 없을 때의 폴백.
+ */
+function applyKrvSplitFallback(byCh, bookId) {
+  for (const [ch, vmap] of byCh) {
+    const krv = krvVerseCount(bookId, ch);
+    if (krv == null) continue;
+
+    for (let v = 1; v <= krv; v++) {
+      if (vmap.has(v)) continue;
+      let src = null;
+      // 뒤 절 우선(느헤 7:68 ← 7:69 패턴), 없으면 앞 절
+      for (let d = 1; d < krv; d++) {
+        if (vmap.has(v + d)) {
+          src = v + d;
+          break;
+        }
+        if (vmap.has(v - d)) {
+          src = v - d;
+          break;
+        }
+      }
+      if (src == null) continue;
+      const srcCell = vmap.get(src);
+      const pair = [Math.min(src, v), Math.max(src, v)];
+      vmap.set(v, {
+        rows: srcCell.rows.map((r) => ({ ...r })),
+        split: true,
+        splitWith: pair,
+        wordSplit: false,
+      });
+      srcCell.split = true;
+      srcCell.splitWith = [...new Set([...(srcCell.splitWith || []), ...pair])].sort(
+        (a, b) => a - b,
+      );
+    }
   }
   return byCh;
 }
@@ -444,7 +497,7 @@ function buildChip(row, strongLex, notes) {
         role: "prefix",
         code: lemmaRaw,
         word: surface,
-        pron: pronFixed(surface),
+        pron: pronPart(surface),
         glossKo: px.gloss || "",
         strong: "",
         morph: morphRaw,
@@ -455,7 +508,7 @@ function buildChip(row, strongLex, notes) {
         role: "suffix",
         code,
         word: surface,
-        pron: pronFixed(surface),
+        pron: pronPart(surface),
         glossKo: "", // host 결정 후 채움
         strong: "",
         morph: morphRaw,
@@ -517,15 +570,40 @@ function buildChip(row, strongLex, notes) {
 
   const gStem = stemGloss(strong, morphAll, { note });
   stem.glossKo = gStem;
-  stem.pron = pronFixed(stem.word);
+  // 분해 칸 음역 = 사전형 (יַעַנְךָ → 아나, not 야아네)
+  const dictHeb =
+    note.lemmaHeb ||
+    (strong === "H7462" && host === "noun" ? "רֹעֶה" : "") ||
+    en?.word ||
+    "";
+  stem.pron =
+    note.pron ||
+    (dictHeb ? pronFixed(dictHeb) : "") ||
+    pronFixed(stem.word);
   stem.lemma = en?.word || stem.lemmaRaw || strong;
 
   for (const sx of suffixes) {
-    sx.glossKo = suffixGlossKo(sx.code, host);
+    let g = suffixGlossKo(sx.code, host);
+    // 동사 분해 칸: "너를/너에게" → "너에게"
+    if (host === "verb" && g.includes("/")) g = g.split("/")[1] || g;
+    sx.glossKo = g;
   }
 
   const fullWord = surfaces.join("").replace(/\//g, "");
-  const chipPron = pronFixed(surfaces.join("/")) || pronFixed(fullWord);
+  // 칩 음역: 접미 있으면 전체 단어 단위(로이). 접두만 있으면 조각 합성이 안정적(르다윗).
+  let chipPron = "";
+  if (suffixes.length) {
+    chipPron = pronFixed(fullWord);
+  } else if (prefixes.length) {
+    const stemPron = pronFixed(stem.word) || stem.pron;
+    chipPron =
+      prefixes.map((p) => p.pron || pronPart(p.word)).join("") + (stemPron || "");
+    // 전체 오버라이드가 있으면 우선 (למנצח 등)
+    const ov = pronFixed(fullWord);
+    if (PRON_OVERRIDE[skeleton(fullWord)]) chipPron = ov;
+  } else {
+    chipPron = pronFixed(fullWord);
+  }
   const suffixCode = suffixes[0]?.code || null;
   const glossKo = composeChipGloss({
     prefixes,
@@ -544,7 +622,7 @@ function buildChip(row, strongLex, notes) {
   const parts = [...prefixes, stem, ...suffixes].map((s) => ({
     role: s.role,
     word: s.word,
-    pron: s.pron || pronFixed(s.word),
+    pron: s.pron || pronPart(s.word),
     glossKo: s.glossKo || "",
     ...(s.strong ? { strong: s.strong } : {}),
     ...(s.code && s.role === "suffix" ? { suffix: s.code } : {}),
@@ -662,13 +740,31 @@ async function main() {
   for (const t of targets) {
     const meta = BOOKS.find((b) => b.id === t.id);
     const list = parseOshbXml(path.join(OSHB_DIR, `${meta.osis}.xml`));
-    const byCh = mapBookByKjvNotes(meta.id, list);
+    const byChRaw = mapBookByKjvNotes(meta.id, list);
+
+    // 단어 분할만 적용한 뒤의 KRV 불일치 (복제 전)
+    for (const ch of [...byChRaw.keys()].sort((a, b) => a - b)) {
+      const mapped = byChRaw.get(ch)?.size || 0;
+      const krv = krvVerseCount(meta.id, ch);
+      if (krv != null && mapped !== krv) {
+        mismatchChapters.push({
+          book: meta.id,
+          ch,
+          mappedVerses: mapped,
+          krvVerses: krv,
+          delta: mapped - krv,
+        });
+      }
+    }
+
+    const byCh = applyKrvSplitFallback(byChRaw, meta.id);
 
     // 스캔(집계): 매핑된 전체 장
     const scanChapters = [...byCh.keys()].sort((a, b) => a - b);
     for (const ch of scanChapters) {
       const vmap = byCh.get(ch);
-      for (const [v, rows] of vmap) {
+      for (const [v, cell] of vmap) {
+        const rows = cell.rows || cell;
         const ref = `${meta.id} ${ch}:${v}`;
         const chips = rows.map((r) => buildChip(r, strongLex, notes));
         const main = chips.filter((c) => c._mainChip);
@@ -702,21 +798,6 @@ async function main() {
       }
     }
 
-    // 불일치 장 자동 출력
-    for (const ch of scanChapters) {
-      const mapped = byCh.get(ch)?.size || 0;
-      const krv = krvVerseCount(meta.id, ch);
-      if (krv != null && mapped !== krv) {
-        mismatchChapters.push({
-          book: meta.id,
-          ch,
-          mappedVerses: mapped,
-          krvVerses: krv,
-          delta: mapped - krv,
-        });
-      }
-    }
-
     const outChapters = t.chapters || scanChapters;
     const outBook = path.join(OUT_ROOT, meta.id);
     fs.mkdirSync(outBook, { recursive: true });
@@ -729,7 +810,8 @@ async function main() {
       const vmap = byCh.get(ch);
       const verses = [];
       let wordCount = 0;
-      for (const [v, rows] of [...vmap.entries()].sort((a, b) => a[0] - b[0])) {
+      for (const [v, cell] of [...vmap.entries()].sort((a, b) => a[0] - b[0])) {
+        const rows = cell.rows || cell;
         const words = [];
         let i = 0;
         for (const row of rows) {
@@ -748,7 +830,14 @@ async function main() {
           i += 1;
           wordCount += 1;
         }
-        verses.push({ n: v, words });
+        /** @type {object} */
+        const verseObj = { n: v, words };
+        if (cell.split) {
+          verseObj.split = true;
+          verseObj.splitWith = cell.splitWith || [];
+          if (cell.wordSplit) verseObj.wordSplit = true;
+        }
+        verses.push(verseObj);
       }
       const out = {
         book: meta.id,
@@ -756,7 +845,7 @@ async function main() {
         sources: {
           wlc: "Westminster Leningrad Codex (Public Domain)",
           morphhb: "Open Scriptures Hebrew Bible morphhb (CC BY 4.0)",
-          verseMap: "OSHB inline <note>KJV:Book.ch.v</note>",
+          verseMap: "OSHB inline <note>KJV:Book.ch.v</note> (word-level when present)",
           lexicon: "OSHB HebrewLexicon / Strong's (Public Domain)",
         },
         verses,
@@ -862,56 +951,124 @@ async function main() {
     lexN += 1;
   }
 
-  // 연결 확인
-  const ps20 = JSON.parse(fs.readFileSync(path.join(OUT_ROOT, "psalms", "20.json"), "utf8"));
-  const ps23 = JSON.parse(fs.readFileSync(path.join(OUT_ROOT, "psalms", "23.json"), "utf8"));
-  const gen1 = JSON.parse(fs.readFileSync(path.join(OUT_ROOT, "genesis", "1.json"), "utf8"));
-
-  const link = {
-    "시20:1 응답하시고": findChipForKr(ps20, "응답", "H6030"),
-    "창1:1 창조하시니라": findChipForKr(gen1, "창조", "H1254"),
-    "시23:1 목자": findChipForKr(ps23, "목자", "H7462"),
+  // 연결·예시 확인
+  const readCh = (book, ch) => {
+    const p = path.join(OUT_ROOT, book, `${ch}.json`);
+    if (!fs.existsSync(p)) return null;
+    return JSON.parse(fs.readFileSync(p, "utf8"));
   };
+  const pickVerse = (j, n) => (j?.verses || []).find((v) => v.n === n) || null;
+  const sampleChips = (verse, pred, limit = 4) =>
+    (verse?.words || [])
+      .filter(pred)
+      .slice(0, limit)
+      .map((w) => ({
+        ref: w.ref,
+        i: w.i,
+        word: w.word,
+        pron: w.pron,
+        glossKo: w.glossKo,
+        strong: w.strong,
+        parts: w.parts,
+      }));
 
-  const ps20v1 = ps20.verses.find((v) => v.n === 1);
+  const gen1 = readCh("genesis", 1);
+  const ps13 = readCh("psalms", 13);
+  const ps23 = readCh("psalms", 23);
+  const isa53 = readCh("isaiah", 53);
+
+  const wordSplitVerses = [];
+  const dupSplitVerses = [];
+  for (const st of emitStats) {
+    const j = readCh(st.book, st.ch);
+    for (const v of j?.verses || []) {
+      if (!v.split) continue;
+      const row = { book: st.book, ch: st.ch, n: v.n, splitWith: v.splitWith || [] };
+      if (v.wordSplit) wordSplitVerses.push(row);
+      else dupSplitVerses.push(row);
+    }
+  }
+
+  const totalSize = dirSize(OUT_ROOT);
   const report = {
     mode: all ? "all" : "pilot",
-    verseMapSource: "OSHB <note>KJV:Book.ch.v</note> only (no hand list)",
+    verseMapSource:
+      "OSHB <note>KJV:Book.ch.v</note> word-level when present; else duplicate+split (no hand list)",
     mismatchVsKrv: mismatchChapters,
-    mismatchInPilotEmit: mismatchChapters.filter((m) =>
-      emitStats.some((e) => e.book === m.book && e.ch === m.ch),
-    ),
+    wordSplitVerses,
+    dupSplitVerses,
     emit: emitStats,
     lexiconFiles: lexN,
     sizes: {
-      psalms: dirSize(path.join(OUT_ROOT, "psalms")),
-      genesis: dirSize(path.join(OUT_ROOT, "genesis")),
+      total: totalSize,
       lexicon: dirSize(OUT_LEX),
+      byBook: Object.fromEntries(
+        BOOKS.map((b) => [b.id, dirSize(path.join(OUT_ROOT, b.id))]).filter(
+          ([, s]) => s.files > 0,
+        ),
+      ),
     },
     pronChecks: {
       מזמור: pronFixed("מִזְמ֥וֹר"),
-      ישגבך: pronFixed("יְ֝שַׂגֶּבְ/ךָ֗"),
-      מנצח: pronFixed("מְנַצֵּ֗חַ"),
-      למנצח: pronFixed("לַ/מְנַצֵּ֗חַ"),
-      יענך: pronFixed("יַֽעַנְ/ךָ֣"),
+      ישגבך: pronFixed("יְשַׂגֶּבְךָ"),
+      רעי: pronFixed("רֹעִי"),
+      מנצח: pronFixed("מְנַצֵּחַ"),
+      למנצח: pronFixed("לַמְנַצֵּחַ"),
+      יענך: pronFixed("יַעַנְךָ"),
+      ענה: pronFixed("עָנָה"),
     },
-    psalm20_1_sample: (ps20v1?.words || []).slice(0, 6).map((w) => ({
-      word: w.word,
-      pron: w.pron,
-      glossKo: w.glossKo,
-      parts: w.parts,
-    })),
-    krChipLinks: link,
+    psalm13_5_6: {
+      v5: {
+        n: 5,
+        split: pickVerse(ps13, 5)?.split || false,
+        wordSplit: pickVerse(ps13, 5)?.wordSplit || false,
+        splitWith: pickVerse(ps13, 5)?.splitWith || [],
+        words: (pickVerse(ps13, 5)?.words || []).map((w) => w.pron + "(" + w.glossKo + ")"),
+      },
+      v6: {
+        n: 6,
+        split: pickVerse(ps13, 6)?.split || false,
+        wordSplit: pickVerse(ps13, 6)?.wordSplit || false,
+        splitWith: pickVerse(ps13, 6)?.splitWith || [],
+        words: (pickVerse(ps13, 6)?.words || []).map((w) => w.pron + "(" + w.glossKo + ")"),
+      },
+    },
+    chipExamples: {
+      "창1:1": sampleChips(pickVerse(gen1, 1), () => true, 5),
+      "시23:1": sampleChips(pickVerse(ps23, 1), () => true, 5),
+      "사53:5": sampleChips(pickVerse(isa53, 5), () => true, 8),
+    },
   };
 
   const reportPath = path.join(OUT_ROOT, "_hebrew-chips-report.json");
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + "\n");
-  console.log("\n=== REPORT ===");
-  console.log(JSON.stringify(report, null, 2));
+  console.log("\n=== REPORT (summary) ===");
+  console.log(
+    JSON.stringify(
+      {
+        mode: report.mode,
+        mismatchVsKrv: report.mismatchVsKrv,
+        wordSplitVerses: report.wordSplitVerses,
+        dupSplitCount: report.dupSplitVerses.length,
+        lexiconFiles: report.lexiconFiles,
+        totalBytes: report.sizes.total.bytes,
+        pronChecks: report.pronChecks,
+        psalm13_5_6: report.psalm13_5_6,
+        chipExamples: report.chipExamples,
+      },
+      null,
+      2,
+    ),
+  );
   console.log(`[report] ${reportPath}`);
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+const isMain =
+  process.argv[1] &&
+  path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1]);
+if (isMain) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}

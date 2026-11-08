@@ -1,8 +1,8 @@
 {
   "lemma": "מָאן",
-  "pron": "만",
+  "pron": "마나아",
   "strong": "H3984",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אָנָה",
     "strong": "H579",
@@ -12,13 +12,13 @@
     {
       "lemma": "אָנָה",
       "strong": "H579",
-      "pron": "테운네",
+      "pron": "인나",
       "glossKo": "마주치다"
     },
     {
       "lemma": "אֳנִי",
       "strong": "H590",
-      "pron": "",
+      "pron": "바오니",
       "glossKo": "함대"
     },
     {
@@ -30,13 +30,46 @@
     {
       "lemma": "תַּאֲנָה",
       "strong": "H8385",
-      "pron": "",
+      "pron": "토아나",
       "glossKo": "다아낫"
     }
   ],
   "defEn": "utensil",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "ezra": 4,
+    "daniel": 3
+  },
+  "phrases": [
+    {
+      "hebrew": "מָאנַיָּ֣א דִֽי",
+      "pron": "마나아 드흐브",
+      "lemmas": [
+        "מָאן",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "מָאנַיָּ֣א",
+          "lemma": "מָאן",
+          "strong": "H3984",
+          "pron": "마나아"
+        },
+        {
+          "word": "דִֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 5:14",
+        "ezra 7:19",
+        "daniel 5:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

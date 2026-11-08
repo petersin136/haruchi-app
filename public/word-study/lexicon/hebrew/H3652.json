@@ -1,8 +1,8 @@
 {
   "lemma": "כֵּן",
-  "pron": "켄",
+  "pron": "브켄",
   "strong": "H3652",
-  "posKo": "",
+  "posKo": "부사",
   "root": {
     "lemma": "כֵּן",
     "strong": "H3651",
@@ -12,7 +12,7 @@
     {
       "lemma": "כְּמוֹ",
       "strong": "H3644",
-      "pron": "케모",
+      "pron": "우케모",
       "glossKo": "~처럼"
     },
     {
@@ -26,11 +26,54 @@
       "strong": "H3653",
       "pron": "칸네카",
       "glossKo": "너의 받침"
+    },
+    {
+      "lemma": "כְּעַן",
+      "strong": "H3705",
+      "pron": "케안",
+      "glossKo": "이제(아람)"
     }
   ],
   "defEn": "so",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 8,
+  "byBook": {
+    "daniel": 6,
+    "ezra": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "וְכֵן֙ אָמְרִ֣ין",
+      "pron": "브켄 암린",
+      "lemmas": [
+        "כֵּן",
+        "אֲמַר"
+      ],
+      "words": [
+        {
+          "word": "וְכֵן֙",
+          "lemma": "כֵּן",
+          "strong": "H3652",
+          "pron": "브켄"
+        },
+        {
+          "word": "אָמְרִ֣ין",
+          "lemma": "אֲמַר",
+          "strong": "H560",
+          "pron": "암린"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "ezra 5:3",
+        "daniel 2:24",
+        "daniel 2:25",
+        "daniel 4:14",
+        "daniel 6:6",
+        "daniel 7:5",
+        "daniel 7:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

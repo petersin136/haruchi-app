@@ -1,6 +1,6 @@
 {
   "lemma": "קָרַב",
-  "pron": "비케롭",
+  "pron": "히케립",
   "strong": "H7126",
   "posKo": "동사",
   "root": null,
@@ -8,25 +8,25 @@
     {
       "lemma": "קְרֵב",
       "strong": "H7127",
-      "pron": "",
+      "pron": "메하케레빈",
       "glossKo": "가까이 가다(아람)"
     },
     {
       "lemma": "קְרָב",
       "strong": "H7128",
-      "pron": "미카랍",
+      "pron": "바케랍",
       "glossKo": "전쟁"
     },
     {
       "lemma": "קֶרֶב",
       "strong": "H7130",
-      "pron": "키렙바므",
-      "glossKo": "그들의 속"
+      "pron": "베키렙바흐",
+      "glossKo": "그녀의 속"
     },
     {
       "lemma": "קָרֵב",
       "strong": "H7131",
-      "pron": "",
+      "pron": "아카렙",
       "glossKo": "가까운"
     },
     {
@@ -38,45 +38,230 @@
     {
       "lemma": "קׇרְבָּן",
       "strong": "H7133",
-      "pron": "",
+      "pron": "카렙반",
       "glossKo": "예물"
     }
   ],
   "defEn": "approach; bring near",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 283,
   "byBook": {
+    "leviticus": 102,
+    "numbers": 62,
+    "ezekiel": 17,
+    "exodus": 16,
+    "joshua": 14,
+    "deuteronomy": 13,
+    "isaiah": 13,
     "psalms": 8,
-    "genesis": 5
+    "genesis": 5,
+    "judges": 5,
+    "samuel1": 4,
+    "kings1": 3,
+    "samuel2": 3,
+    "job": 2,
+    "kings2": 2,
+    "lamentations": 2,
+    "malachi": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "esther": 1,
+    "ezra": 1,
+    "haggai": 1,
+    "hosea": 1,
+    "jeremiah": 1,
+    "jonah": 1,
+    "proverbs": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "קְרֹ֣ב אֵלֶֽיךָ",
-      "pron": "비케롭 엘레모",
+      "hebrew": "וַיַּקְרֵב֙ אֶת",
+      "pron": "히케립 에트",
+      "lemmas": [
+        "קָרַב",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיַּקְרֵב֙",
+          "lemma": "קָרַב",
+          "strong": "H7126",
+          "pron": "히케립"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 54,
+      "refs": [
+        "exodus 29:3",
+        "exodus 29:10",
+        "exodus 40:12",
+        "leviticus 1:2",
+        "leviticus 1:3",
+        "leviticus 2:12",
+        "leviticus 2:14",
+        "leviticus 3:7",
+        "leviticus 5:8",
+        "leviticus 6:14",
+        "leviticus 7:8",
+        "leviticus 7:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קָרַ֖ב אֵלֶ֑יהָ",
+      "pron": "히케립 엘",
       "lemmas": [
         "קָרַב",
         "אֵל"
       ],
       "words": [
         {
-          "word": "קְרֹ֣ב",
+          "word": "קָרַ֖ב",
           "lemma": "קָרַב",
           "strong": "H7126",
-          "pron": "비케롭"
+          "pron": "히케립"
         },
         {
-          "word": "אֵלֶֽיךָ",
+          "word": "אֵלֶ֑יהָ",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
         }
       ],
-      "count": 4,
+      "count": 38,
       "refs": [
-        "psalms 32:9",
-        "psalms 69:18",
         "genesis 20:4",
-        "genesis 37:18"
+        "genesis 37:18",
+        "exodus 28:1",
+        "exodus 29:4",
+        "exodus 32:19",
+        "exodus 36:2",
+        "exodus 40:32",
+        "leviticus 1:3",
+        "leviticus 2:8",
+        "leviticus 9:7",
+        "leviticus 20:16",
+        "numbers 16:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹא יִקְרַ֥ב",
+      "pron": "로 히케립",
+      "lemmas": [
+        "לֹא",
+        "קָרַב"
+      ],
+      "words": [
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִקְרַ֥ב",
+          "lemma": "קָרַב",
+          "strong": "H7126",
+          "pron": "히케립"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "genesis 20:4",
+        "exodus 14:20",
+        "leviticus 18:6",
+        "leviticus 18:14",
+        "leviticus 18:19",
+        "leviticus 21:17",
+        "leviticus 21:18",
+        "leviticus 22:20",
+        "leviticus 22:22",
+        "leviticus 22:24",
+        "leviticus 22:25",
+        "leviticus 27:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר יַקְרִ֥יבוּ",
+      "pron": "아셰르 히케립",
+      "lemmas": [
+        "אֲשֶׁר",
+        "קָרַב"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יַקְרִ֥יבוּ",
+          "lemma": "קָרַב",
+          "strong": "H7126",
+          "pron": "히케립"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "genesis 12:11",
+        "exodus 32:19",
+        "leviticus 2:11",
+        "leviticus 6:20",
+        "leviticus 7:8",
+        "leviticus 7:11",
+        "leviticus 7:25",
+        "leviticus 20:16",
+        "leviticus 22:3",
+        "leviticus 22:18",
+        "leviticus 27:9",
+        "numbers 5:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קִרְב֖וּ לִפְנֵ֣י",
+      "pron": "히케립 페네",
+      "lemmas": [
+        "קָרַב",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "קִרְב֖וּ",
+          "lemma": "קָרַב",
+          "strong": "H7126",
+          "pron": "히케립"
+        },
+        {
+          "word": "לִפְנֵ֣י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 16:9",
+        "leviticus 3:1",
+        "leviticus 3:12",
+        "leviticus 9:2",
+        "leviticus 10:1",
+        "leviticus 12:7",
+        "leviticus 16:1",
+        "numbers 9:6",
+        "numbers 16:17",
+        "numbers 16:38",
+        "joshua 17:4",
+        "ezekiel 43:24"
       ],
       "glossKo": ""
     }

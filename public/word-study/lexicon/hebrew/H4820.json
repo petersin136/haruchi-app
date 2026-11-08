@@ -1,6 +1,6 @@
 {
   "lemma": "מִרְמָה",
-  "pron": "우미레마",
+  "pron": "브미레마",
   "strong": "H4820",
   "posKo": "명사",
   "root": {
@@ -12,19 +12,19 @@
     {
       "lemma": "מִרְמָה",
       "strong": "H4821",
-      "pron": "",
+      "pron": "미레마",
       "glossKo": "미르마"
     },
     {
       "lemma": "רָמָה",
       "strong": "H7411",
-      "pron": "로메",
-      "glossKo": "속이다"
+      "pron": "림미타니",
+      "glossKo": "나를 속이다"
     },
     {
       "lemma": "רְמָה",
       "strong": "H7412",
-      "pron": "",
+      "pron": "르미레메",
       "glossKo": "던지다(아람)"
     },
     {
@@ -36,22 +36,63 @@
     {
       "lemma": "רֶמֶת",
       "strong": "H7432",
-      "pron": "",
+      "pron": "브레메트",
       "glossKo": "레멧"
     },
     {
       "lemma": "תׇּרְמָה",
       "strong": "H8649",
-      "pron": "타레미타므",
-      "glossKo": "그들의 속임수"
+      "pron": "브타레마",
+      "glossKo": "속임수"
     }
   ],
   "defEn": "fraud",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 39,
   "byBook": {
     "psalms": 14,
-    "genesis": 2
+    "proverbs": 8,
+    "jeremiah": 4,
+    "daniel": 2,
+    "genesis": 2,
+    "hosea": 2,
+    "job": 2,
+    "amos": 1,
+    "isaiah": 1,
+    "kings2": 1,
+    "micah": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מֹאזְנֵ֣י מִ֭רְמָה",
+      "pron": "못네 브미레마",
+      "lemmas": [
+        "מֹאזֵן",
+        "מִרְמָה"
+      ],
+      "words": [
+        {
+          "word": "מֹאזְנֵ֣י",
+          "lemma": "מֹאזֵן",
+          "strong": "H3976",
+          "pron": "못네"
+        },
+        {
+          "word": "מִ֭רְמָה",
+          "lemma": "מִרְמָה",
+          "strong": "H4820",
+          "pron": "브미레마"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "proverbs 11:1",
+        "proverbs 20:23",
+        "hosea 12:7",
+        "amos 8:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

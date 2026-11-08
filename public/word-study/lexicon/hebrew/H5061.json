@@ -1,6 +1,6 @@
 {
   "lemma": "נֶגַע",
-  "pron": "닉이위",
+  "pron": "네가임",
   "strong": "H5061",
   "posKo": "명사",
   "root": {
@@ -12,16 +12,208 @@
     {
       "lemma": "נָגַע",
       "strong": "H5060",
-      "pron": "약기우",
+      "pron": "틱게우",
       "glossKo": "닿다"
     }
   ],
   "defEn": "blow",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 78,
   "byBook": {
+    "leviticus": 61,
+    "deuteronomy": 4,
     "psalms": 4,
-    "genesis": 1
+    "chronicles2": 2,
+    "kings1": 2,
+    "exodus": 1,
+    "genesis": 1,
+    "isaiah": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת הַנֶּ֖גַע",
+      "pron": "에트 네가임",
+      "lemmas": [
+        "אֵת",
+        "נֶגַע"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַנֶּ֖גַע",
+          "lemma": "נֶגַע",
+          "strong": "H5061",
+          "pron": "네가임"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "leviticus 13:3",
+        "leviticus 13:4",
+        "leviticus 13:13",
+        "leviticus 13:17",
+        "leviticus 13:22",
+        "leviticus 13:27",
+        "leviticus 13:30",
+        "leviticus 13:31",
+        "leviticus 13:32",
+        "leviticus 13:50",
+        "leviticus 13:51",
+        "leviticus 13:55"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נֶ֥גַע צָרַ֖עַת",
+      "pron": "네가임 차라아트",
+      "lemmas": [
+        "נֶגַע",
+        "צָרַעַת"
+      ],
+      "words": [
+        {
+          "word": "נֶ֥גַע",
+          "lemma": "נֶגַע",
+          "strong": "H5061",
+          "pron": "네가임"
+        },
+        {
+          "word": "צָרַ֖עַת",
+          "lemma": "צָרַעַת",
+          "strong": "H6883",
+          "pron": "차라아트"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "leviticus 13:2",
+        "leviticus 13:3",
+        "leviticus 13:9",
+        "leviticus 13:20",
+        "leviticus 13:25",
+        "leviticus 13:27",
+        "leviticus 13:47",
+        "leviticus 13:49",
+        "leviticus 13:59",
+        "leviticus 14:3",
+        "leviticus 14:32",
+        "leviticus 14:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַכֹּהֵ֛ן אֶת הַנֶּ֖גַע",
+      "pron": "코헨 에트 네가임",
+      "lemmas": [
+        "כֹּהֵן",
+        "אֵת",
+        "נֶגַע"
+      ],
+      "words": [
+        {
+          "word": "הַכֹּהֵ֛ן",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַנֶּ֖גַע",
+          "lemma": "נֶגַע",
+          "strong": "H5061",
+          "pron": "네가임"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "leviticus 13:3",
+        "leviticus 13:4",
+        "leviticus 13:17",
+        "leviticus 13:22",
+        "leviticus 13:27",
+        "leviticus 13:30",
+        "leviticus 13:31",
+        "leviticus 13:32",
+        "leviticus 13:50"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פָשָׂ֥ה הַנֶּ֖גַע",
+      "pron": "파사 네가임",
+      "lemmas": [
+        "פָּשָׂה",
+        "נֶגַע"
+      ],
+      "words": [
+        {
+          "word": "פָשָׂ֥ה",
+          "lemma": "פָּשָׂה",
+          "strong": "H6581",
+          "pron": "파사"
+        },
+        {
+          "word": "הַנֶּ֖גַע",
+          "lemma": "נֶגַע",
+          "strong": "H5061",
+          "pron": "네가임"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 13:5",
+        "leviticus 13:6",
+        "leviticus 13:51",
+        "leviticus 13:53",
+        "leviticus 14:39",
+        "leviticus 14:44",
+        "leviticus 14:48"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר הַנֶּ֗גַע",
+      "pron": "아셰르 네가임",
+      "lemmas": [
+        "אֲשֶׁר",
+        "נֶגַע"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הַנֶּ֗גַע",
+          "lemma": "נֶגַע",
+          "strong": "H5061",
+          "pron": "네가임"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "leviticus 13:45",
+        "leviticus 13:46",
+        "leviticus 13:54",
+        "leviticus 13:57",
+        "leviticus 14:32",
+        "leviticus 14:40"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

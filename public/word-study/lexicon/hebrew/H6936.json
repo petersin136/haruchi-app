@@ -1,6 +1,6 @@
 {
   "lemma": "קׇדְקֹד",
-  "pron": "칻콛오",
+  "pron": "우르칻콛",
   "strong": "H6936",
   "posKo": "명사",
   "root": {
@@ -18,16 +18,51 @@
     {
       "lemma": "קִדָּה",
       "strong": "H6916",
-      "pron": "",
+      "pron": "브킫다",
       "glossKo": "엎드림"
     }
   ],
   "defEn": "crown; bowed",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 11,
   "byBook": {
+    "deuteronomy": 3,
+    "jeremiah": 2,
     "psalms": 2,
-    "genesis": 1
+    "genesis": 1,
+    "isaiah": 1,
+    "job": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְעַ֥ד קָדְקֳדֶֽךָ",
+      "pron": "앋 우르칻콛",
+      "lemmas": [
+        "עַד",
+        "קׇדְקֹד"
+      ],
+      "words": [
+        {
+          "word": "וְעַ֥ד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "קָדְקֳדֶֽךָ",
+          "lemma": "קׇדְקֹד",
+          "strong": "H6936",
+          "pron": "우르칻콛"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 28:35",
+        "samuel2 14:25",
+        "job 2:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

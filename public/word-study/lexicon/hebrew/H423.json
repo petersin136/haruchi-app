@@ -1,6 +1,6 @@
 {
   "lemma": "אָלָה",
-  "pron": "알라",
+  "pron": "메알라티",
   "strong": "H423",
   "posKo": "명사",
   "root": {
@@ -12,34 +12,196 @@
     {
       "lemma": "אָלָה",
       "strong": "H421",
-      "pron": "",
+      "pron": "엘리",
       "glossKo": "애곡하다"
     },
     {
       "lemma": "אָלָה",
       "strong": "H422",
-      "pron": "",
+      "pron": "알리트",
       "glossKo": "맹세하다"
     },
     {
       "lemma": "אַלְיָה",
       "strong": "H451",
-      "pron": "",
+      "pron": "브하알아",
       "glossKo": "기름진 꼬리"
     },
     {
       "lemma": "תַּאֲלָה",
       "strong": "H8381",
-      "pron": "",
-      "glossKo": "저주"
+      "pron": "타알라테카",
+      "glossKo": "너의 저주"
     }
   ],
   "defEn": "imprecation",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 36,
   "byBook": {
+    "deuteronomy": 6,
+    "ezekiel": 5,
+    "jeremiah": 4,
+    "numbers": 4,
+    "chronicles2": 3,
     "genesis": 3,
-    "psalms": 2
+    "kings1": 2,
+    "psalms": 2,
+    "daniel": 1,
+    "isaiah": 1,
+    "job": 1,
+    "leviticus": 1,
+    "nehemiah": 1,
+    "proverbs": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אוֹתָ֛ךְ לְאָלָ֥ה",
+      "pron": "에트 메알라티",
+      "lemmas": [
+        "אֵת",
+        "אָלָה"
+      ],
+      "words": [
+        {
+          "word": "אוֹתָ֛ךְ",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "לְאָלָ֥ה",
+          "lemma": "אָלָה",
+          "strong": "H423",
+          "pron": "메알라티"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 5:21",
+        "numbers 5:23",
+        "deuteronomy 29:14",
+        "ezekiel 17:13",
+        "ezekiel 17:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל הָ֣אָלָ֔ה",
+      "pron": "칼 메알라티",
+      "lemmas": [
+        "כֹּל",
+        "אָלָה"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הָ֣אָלָ֔ה",
+          "lemma": "אָלָה",
+          "strong": "H423",
+          "pron": "메알라티"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 29:20",
+        "deuteronomy 29:21",
+        "deuteronomy 30:7",
+        "chronicles2 34:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבָ֗א אָלָ֛ה",
+      "pron": "바야베 메알라티",
+      "lemmas": [
+        "בּוֹא",
+        "אָלָה"
+      ],
+      "words": [
+        {
+          "word": "וּבָ֗א",
+          "lemma": "בּוֹא",
+          "strong": "H935",
+          "pron": "바야베"
+        },
+        {
+          "word": "אָלָ֛ה",
+          "lemma": "אָלָה",
+          "strong": "H423",
+          "pron": "메알라티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 8:31",
+        "chronicles2 6:22",
+        "nehemiah 10:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבְאָלָת֑וֹ אֲשֶׁר֙",
+      "pron": "메알라티 아셰르",
+      "lemmas": [
+        "אָלָה",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "וּבְאָלָת֑וֹ",
+          "lemma": "אָלָה",
+          "strong": "H423",
+          "pron": "메알라티"
+        },
+        {
+          "word": "אֲשֶׁר֙",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 29:12",
+        "ezekiel 17:16",
+        "ezekiel 17:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְאָלָ֥ה וְלִשְׁבֻעָ֖ה",
+      "pron": "메알라티 밋셰부아티",
+      "lemmas": [
+        "אָלָה",
+        "שְׁבוּעָה"
+      ],
+      "words": [
+        {
+          "word": "לְאָלָ֥ה",
+          "lemma": "אָלָה",
+          "strong": "H423",
+          "pron": "메알라티"
+        },
+        {
+          "word": "וְלִשְׁבֻעָ֖ה",
+          "lemma": "שְׁבוּעָה",
+          "strong": "H7621",
+          "pron": "밋셰부아티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 5:21",
+        "nehemiah 10:29",
+        "daniel 9:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

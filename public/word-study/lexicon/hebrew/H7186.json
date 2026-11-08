@@ -1,6 +1,6 @@
 {
   "lemma": "קָשֶׁה",
-  "pron": "카샤",
+  "pron": "카쇼트",
   "strong": "H7186",
   "posKo": "형용사",
   "root": {
@@ -12,34 +12,210 @@
     {
       "lemma": "מִקְשֶׁה",
       "strong": "H4748",
-      "pron": "",
+      "pron": "미케셰",
       "glossKo": "두들겨 만든 것"
     },
     {
       "lemma": "קָשָׁה",
       "strong": "H7185",
-      "pron": "타케슈",
+      "pron": "바테카쉬",
       "glossKo": "굳어지다"
     },
     {
       "lemma": "קְשִׁי",
       "strong": "H7190",
-      "pron": "",
+      "pron": "케시",
       "glossKo": "완고"
     },
     {
       "lemma": "קֶשֶׁת",
       "strong": "H7198",
-      "pron": "카솃트오",
-      "glossKo": "그의 활"
+      "pron": "카솃티",
+      "glossKo": "나의 활"
     }
   ],
   "defEn": "severe",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 36,
   "byBook": {
+    "exodus": 7,
+    "isaiah": 6,
+    "deuteronomy": 4,
+    "kings1": 3,
+    "samuel1": 3,
+    "chronicles2": 2,
+    "ezekiel": 2,
     "genesis": 2,
-    "psalms": 1
+    "judges": 2,
+    "samuel2": 2,
+    "job": 1,
+    "psalms": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עַם קְשֵׁה",
+      "pron": "암 카쇼트",
+      "lemmas": [
+        "עַם",
+        "קָשֶׁה"
+      ],
+      "words": [
+        {
+          "word": "עַם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "קְשֵׁה",
+          "lemma": "קָשֶׁה",
+          "strong": "H7186",
+          "pron": "카쇼트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 32:9",
+        "exodus 33:3",
+        "exodus 33:5",
+        "exodus 34:9",
+        "deuteronomy 9:6",
+        "deuteronomy 9:13",
+        "kings1 12:13",
+        "psalms 60:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַם קְשֵׁה עֹ֖רֶף",
+      "pron": "암 카쇼트 브오렙",
+      "lemmas": [
+        "עַם",
+        "קָשֶׁה",
+        "עֹרֶף"
+      ],
+      "words": [
+        {
+          "word": "עַם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "קְשֵׁה",
+          "lemma": "קָשֶׁה",
+          "strong": "H7186",
+          "pron": "카쇼트"
+        },
+        {
+          "word": "עֹ֖רֶף",
+          "lemma": "עֹרֶף",
+          "strong": "H6203",
+          "pron": "브오렙"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 32:9",
+        "exodus 33:3",
+        "exodus 33:5",
+        "exodus 34:9",
+        "deuteronomy 9:6",
+        "deuteronomy 9:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קְשֵׁה עֹ֖רֶף",
+      "pron": "카쇼트 브오렙",
+      "lemmas": [
+        "קָשֶׁה",
+        "עֹרֶף"
+      ],
+      "words": [
+        {
+          "word": "קְשֵׁה",
+          "lemma": "קָשֶׁה",
+          "strong": "H7186",
+          "pron": "카쇼트"
+        },
+        {
+          "word": "עֹ֖רֶף",
+          "lemma": "עֹרֶף",
+          "strong": "H6203",
+          "pron": "브오렙"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 32:9",
+        "exodus 33:3",
+        "exodus 33:5",
+        "exodus 34:9",
+        "deuteronomy 9:6",
+        "deuteronomy 9:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּעֲבֹדָ֣ה קָשָׁ֗ה",
+      "pron": "바아보다 카쇼트",
+      "lemmas": [
+        "עֲבֹדָה",
+        "קָשֶׁה"
+      ],
+      "words": [
+        {
+          "word": "בַּעֲבֹדָ֣ה",
+          "lemma": "עֲבֹדָה",
+          "strong": "H5656",
+          "pron": "바아보다"
+        },
+        {
+          "word": "קָשָׁ֗ה",
+          "lemma": "קָשֶׁה",
+          "strong": "H7186",
+          "pron": "카쇼트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 1:14",
+        "exodus 6:9",
+        "deuteronomy 26:6",
+        "isaiah 14:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָבִ֜יךָ הַקָּשָׁ֗ה",
+      "pron": "아비브 카쇼트",
+      "lemmas": [
+        "אָב",
+        "קָשֶׁה"
+      ],
+      "words": [
+        {
+          "word": "אָבִ֜יךָ",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        },
+        {
+          "word": "הַקָּשָׁ֗ה",
+          "lemma": "קָשֶׁה",
+          "strong": "H7186",
+          "pron": "카쇼트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 20:10",
+        "kings1 12:4",
+        "chronicles2 10:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

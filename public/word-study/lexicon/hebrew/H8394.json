@@ -1,6 +1,6 @@
 {
   "lemma": "תָּבוּן",
-  "pron": "테부노트",
+  "pron": "우비테부나",
   "strong": "H8394",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "בּוּנָה",
       "strong": "H946",
-      "pron": "",
+      "pron": "우부나",
       "glossKo": "부나"
     },
     {
       "lemma": "בִּין",
       "strong": "H995",
-      "pron": "비나",
+      "pron": "나본",
       "glossKo": "깨닫다"
     },
     {
@@ -30,13 +30,13 @@
     {
       "lemma": "בִּינָה",
       "strong": "H998",
-      "pron": "",
-      "glossKo": "총명"
+      "pron": "우비나테켐",
+      "glossKo": "너희의 총명"
     },
     {
       "lemma": "יָבִין",
       "strong": "H2985",
-      "pron": "크야빈",
+      "pron": "야빈",
       "glossKo": "야빈"
     },
     {
@@ -48,9 +48,141 @@
   ],
   "defEn": "intelligence",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 43,
   "byBook": {
-    "psalms": 4
+    "proverbs": 19,
+    "job": 5,
+    "psalms": 4,
+    "exodus": 3,
+    "isaiah": 3,
+    "jeremiah": 2,
+    "kings1": 2,
+    "obadiah": 2,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "hosea": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּחָכְמָת֑וֹ וּבִתְבוּנָת֖וֹ",
+      "pron": "하케마 우비테부나",
+      "lemmas": [
+        "חׇכְמָה",
+        "תָּבוּן"
+      ],
+      "words": [
+        {
+          "word": "בְּחָכְמָת֑וֹ",
+          "lemma": "חׇכְמָה",
+          "strong": "H2451",
+          "pron": "하케마"
+        },
+        {
+          "word": "וּבִתְבוּנָת֖וֹ",
+          "lemma": "תָּבוּן",
+          "strong": "H8394",
+          "pron": "우비테부나"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 31:3",
+        "exodus 35:31",
+        "exodus 36:1",
+        "jeremiah 10:12",
+        "jeremiah 51:15",
+        "ezekiel 28:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְאִ֣ישׁ תְּבוּנָֽה",
+      "pron": "메이쉬 우비테부나",
+      "lemmas": [
+        "אִישׁ",
+        "תָּבוּן"
+      ],
+      "words": [
+        {
+          "word": "לְאִ֣ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "תְּבוּנָֽה",
+          "lemma": "תָּבוּן",
+          "strong": "H8394",
+          "pron": "우비테부나"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "proverbs 10:23",
+        "proverbs 11:12",
+        "proverbs 15:21",
+        "proverbs 17:27",
+        "proverbs 20:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֵ֥ין תְּבוּנָֽה",
+      "pron": "아인 우비테부나",
+      "lemmas": [
+        "אַיִן",
+        "תָּבוּן"
+      ],
+      "words": [
+        {
+          "word": "וְאֵ֥ין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
+        },
+        {
+          "word": "תְּבוּנָֽה",
+          "lemma": "תָּבוּן",
+          "strong": "H8394",
+          "pron": "우비테부나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 32:28",
+        "proverbs 21:30",
+        "obadiah 1:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבִתְבוּנָת֖וֹ נָטָ֥ה",
+      "pron": "우비테부나 바옏",
+      "lemmas": [
+        "תָּבוּן",
+        "נָטָה"
+      ],
+      "words": [
+        {
+          "word": "וּבִתְבוּנָת֖וֹ",
+          "lemma": "תָּבוּן",
+          "strong": "H8394",
+          "pron": "우비테부나"
+        },
+        {
+          "word": "נָטָ֥ה",
+          "lemma": "נָטָה",
+          "strong": "H5186",
+          "pron": "바옏"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 5:1",
+        "jeremiah 10:12",
+        "jeremiah 51:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

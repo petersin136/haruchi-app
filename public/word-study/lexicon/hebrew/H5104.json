@@ -1,6 +1,6 @@
 {
   "lemma": "נָהָר",
-  "pron": "네하로트",
+  "pron": "브나할르",
   "strong": "H5104",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "מִנְהָרָה",
       "strong": "H4492",
-      "pron": "",
+      "pron": "아민하로트",
       "glossKo": "굴"
     },
     {
@@ -24,48 +24,224 @@
     {
       "lemma": "נְהַר",
       "strong": "H5103",
-      "pron": "",
+      "pron": "나하라",
       "glossKo": "강(아람)"
     },
     {
       "lemma": "נְהָרָה",
       "strong": "H5105",
-      "pron": "",
+      "pron": "네하라",
       "glossKo": "낮의 빛"
     }
   ],
   "defEn": "stream; prosperity",
   "defKo": "",
-  "countOT": 24,
+  "countOT": 119,
   "byBook": {
+    "isaiah": 21,
     "psalms": 15,
-    "genesis": 9
+    "ezekiel": 13,
+    "genesis": 9,
+    "jeremiah": 6,
+    "joshua": 6,
+    "chronicles1": 5,
+    "job": 5,
+    "kings2": 5,
+    "deuteronomy": 4,
+    "ezra": 4,
+    "kings1": 4,
+    "exodus": 3,
+    "habakkuk": 3,
+    "nehemiah": 3,
+    "nahum": 2,
+    "numbers": 2,
+    "samuel2": 2,
+    "chronicles2": 1,
+    "daniel": 1,
+    "jonah": 1,
+    "micah": 1,
+    "songofsolomon": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "נָשְׂא֤וּ נְהָר֨וֹת",
-      "pron": "네사 네하로트",
+      "hebrew": "מֵעֵ֣בֶר הַנָּהָ֔ר",
+      "pron": "브에베르 브나할르",
       "lemmas": [
-        "נָשָׂא",
+        "עֵבֶר",
         "נָהָר"
       ],
       "words": [
         {
-          "word": "נָשְׂא֤וּ",
-          "lemma": "נָשָׂא",
-          "strong": "H5375",
-          "pron": "네사"
+          "word": "מֵעֵ֣בֶר",
+          "lemma": "עֵבֶר",
+          "strong": "H5676",
+          "pron": "브에베르"
         },
         {
-          "word": "נְהָר֨וֹת",
+          "word": "הַנָּהָ֔ר",
           "lemma": "נָהָר",
           "strong": "H5104",
-          "pron": "네하로트"
+          "pron": "브나할르"
         }
       ],
-      "count": 3,
+      "count": 16,
       "refs": [
-        "psalms 93:3"
+        "joshua 24:2",
+        "joshua 24:3",
+        "joshua 24:14",
+        "joshua 24:15",
+        "samuel2 10:16",
+        "kings1 4:24",
+        "kings1 14:15",
+        "chronicles1 19:16",
+        "ezra 8:36",
+        "nehemiah 2:7",
+        "nehemiah 2:9",
+        "nehemiah 3:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל נְהַר",
+      "pron": "알 브나할르",
+      "lemmas": [
+        "עַל",
+        "נָהָר"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "נְהַר",
+          "lemma": "נָהָר",
+          "strong": "H5104",
+          "pron": "브나할르"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "exodus 7:19",
+        "exodus 8:5",
+        "numbers 22:5",
+        "numbers 24:6",
+        "kings2 23:29",
+        "ezra 8:21",
+        "psalms 24:2",
+        "psalms 137:1",
+        "isaiah 11:15",
+        "jeremiah 46:2",
+        "ezekiel 1:1",
+        "ezekiel 1:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְהַר פְּרָֽת",
+      "pron": "브나할르 페라트",
+      "lemmas": [
+        "נָהָר",
+        "פְּרָת"
+      ],
+      "words": [
+        {
+          "word": "נְהַר",
+          "lemma": "נָהָר",
+          "strong": "H5104",
+          "pron": "브나할르"
+        },
+        {
+          "word": "פְּרָֽת",
+          "lemma": "פְּרָת",
+          "strong": "H6578",
+          "pron": "페라트"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "genesis 15:18",
+        "deuteronomy 1:7",
+        "deuteronomy 11:24",
+        "joshua 1:4",
+        "samuel2 8:3",
+        "kings2 23:29",
+        "kings2 24:7",
+        "chronicles1 5:9",
+        "chronicles1 18:3",
+        "jeremiah 46:2",
+        "jeremiah 46:6",
+        "jeremiah 46:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְהַר כְּבָ֑ר",
+      "pron": "브나할르 케바르",
+      "lemmas": [
+        "נָהָר",
+        "כְּבָר"
+      ],
+      "words": [
+        {
+          "word": "נְהַר",
+          "lemma": "נָהָר",
+          "strong": "H5104",
+          "pron": "브나할르"
+        },
+        {
+          "word": "כְּבָ֑ר",
+          "lemma": "כְּבָר",
+          "strong": "H3529",
+          "pron": "케바르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "ezekiel 1:1",
+        "ezekiel 1:3",
+        "ezekiel 3:15",
+        "ezekiel 3:23",
+        "ezekiel 10:15",
+        "ezekiel 10:20",
+        "ezekiel 10:22",
+        "ezekiel 43:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל נְהַר",
+      "pron": "엘 브나할르",
+      "lemmas": [
+        "אֵל",
+        "נָהָר"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "נְהַר",
+          "lemma": "נָהָר",
+          "strong": "H5104",
+          "pron": "브나할르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "ezra 8:15",
+        "psalms 80:11",
+        "isaiah 66:12",
+        "jeremiah 46:10",
+        "ezekiel 3:15",
+        "ezekiel 43:3"
       ],
       "glossKo": ""
     }

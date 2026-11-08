@@ -1,6 +1,6 @@
 {
   "lemma": "בּוּשׁ",
-  "pron": "예보슈",
+  "pron": "이텝보샤슈",
   "strong": "H954",
   "posKo": "동사",
   "root": null,
@@ -14,67 +14,47 @@
     {
       "lemma": "בׇּשְׁנָה",
       "strong": "H1317",
-      "pron": "",
+      "pron": "바셰나",
       "glossKo": "수치"
     },
     {
       "lemma": "בֹּשֶׁת",
       "strong": "H1322",
-      "pron": "보셰트",
-      "glossKo": "부끄러움"
+      "pron": "레바솃테카",
+      "glossKo": "너의 부끄러움"
     },
     {
       "lemma": "מָבֻשׁ",
       "strong": "H4016",
-      "pron": "",
-      "glossKo": "음부"
+      "pron": "빔부샤으브",
+      "glossKo": "그의 음부"
     }
   ],
   "defEn": "pale; be ashamed",
   "defKo": "",
-  "countOT": 35,
+  "countOT": 114,
   "byBook": {
     "psalms": 34,
-    "genesis": 1
+    "jeremiah": 26,
+    "isaiah": 22,
+    "proverbs": 6,
+    "ezekiel": 4,
+    "hosea": 3,
+    "joel": 3,
+    "kings2": 3,
+    "ezra": 2,
+    "job": 2,
+    "judges": 2,
+    "micah": 2,
+    "zechariah": 2,
+    "exodus": 1,
+    "genesis": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "אַל אֵב֑וֹשָׁה",
-      "pron": "브엘 예보슈",
-      "lemmas": [
-        "אַל",
-        "בּוּשׁ"
-      ],
-      "words": [
-        {
-          "word": "אַל",
-          "lemma": "אַל",
-          "strong": "H408",
-          "pron": "브엘"
-        },
-        {
-          "word": "אֵב֑וֹשָׁה",
-          "lemma": "בּוּשׁ",
-          "strong": "H954",
-          "pron": "예보슈"
-        }
-      ],
-      "count": 8,
-      "refs": [
-        "psalms 25:2",
-        "psalms 25:20",
-        "psalms 31:1",
-        "psalms 31:17",
-        "psalms 69:6",
-        "psalms 71:1",
-        "psalms 119:31",
-        "psalms 119:116"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וְלֹא בֽוֹשׁוּ",
-      "pron": "로 예보슈",
+      "hebrew": "וְלֹא יֵבֹ֥שׁוּ",
+      "pron": "로 이텝보샤슈",
       "lemmas": [
         "לֹא",
         "בּוּשׁ"
@@ -87,14 +67,16 @@
           "pron": "로"
         },
         {
-          "word": "בֽוֹשׁוּ",
+          "word": "יֵבֹ֥שׁוּ",
           "lemma": "בּוּשׁ",
           "strong": "H954",
-          "pron": "예보슈"
+          "pron": "이텝보샤슈"
         }
       ],
-      "count": 8,
+      "count": 18,
       "refs": [
+        "genesis 2:25",
+        "job 19:3",
         "psalms 22:5",
         "psalms 25:3",
         "psalms 37:19",
@@ -102,46 +84,118 @@
         "psalms 119:46",
         "psalms 119:80",
         "psalms 127:5",
-        "genesis 2:25"
+        "isaiah 45:17",
+        "isaiah 49:23",
+        "isaiah 50:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "תָבִ֑ישׁוּ כִּ֖י",
-      "pron": "예보슈 키",
+      "hebrew": "אַל אֵב֑וֹשָׁה",
+      "pron": "엘 이텝보샤슈",
+      "lemmas": [
+        "אַל",
+        "בּוּשׁ"
+      ],
+      "words": [
+        {
+          "word": "אַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "אֵב֑וֹשָׁה",
+          "lemma": "בּוּשׁ",
+          "strong": "H954",
+          "pron": "이텝보샤슈"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "psalms 25:2",
+        "psalms 25:20",
+        "psalms 31:1",
+        "psalms 31:17",
+        "psalms 69:6",
+        "psalms 71:1",
+        "psalms 119:31",
+        "psalms 119:116",
+        "jeremiah 17:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֹּ֥שׁוּ כִּֽי",
+      "pron": "이텝보샤슈 키",
       "lemmas": [
         "בּוּשׁ",
         "כִּי"
       ],
       "words": [
         {
-          "word": "תָבִ֑ישׁוּ",
+          "word": "בֹּ֥שׁוּ",
           "lemma": "בּוּשׁ",
           "strong": "H954",
-          "pron": "예보슈"
+          "pron": "이텝보샤슈"
         },
         {
-          "word": "כִּ֖י",
+          "word": "כִּֽי",
           "lemma": "כִּי",
           "strong": "H3588",
           "pron": "키"
         }
       ],
-      "count": 7,
+      "count": 9,
       "refs": [
+        "job 6:20",
         "psalms 14:6",
         "psalms 25:20",
         "psalms 31:17",
         "psalms 53:5",
         "psalms 71:24",
         "psalms 86:17",
-        "psalms 127:5"
+        "psalms 127:5",
+        "jeremiah 51:51"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֹּ֣שְׁתִּי וְנִכְלַ֔מְתִּי",
+      "pron": "이텝보샤슈 틱칼렘",
+      "lemmas": [
+        "בּוּשׁ",
+        "כָּלַם"
+      ],
+      "words": [
+        {
+          "word": "בֹּ֣שְׁתִּי",
+          "lemma": "בּוּשׁ",
+          "strong": "H954",
+          "pron": "이텝보샤슈"
+        },
+        {
+          "word": "וְנִכְלַ֔מְתִּי",
+          "lemma": "כָּלַם",
+          "strong": "H3637",
+          "pron": "틱칼렘"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "ezra 9:6",
+        "psalms 35:4",
+        "isaiah 41:11",
+        "jeremiah 8:12",
+        "jeremiah 14:3",
+        "jeremiah 22:22",
+        "ezekiel 36:32"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "יֵ֘בֹ֤שׁוּ וְיַחְפְּר֨וּ",
-      "pron": "예보슈 예헵파루",
+      "pron": "이텝보샤슈 바예헵파루",
       "lemmas": [
         "בּוּשׁ",
         "חָפֵר"
@@ -151,20 +205,22 @@
           "word": "יֵ֘בֹ֤שׁוּ",
           "lemma": "בּוּשׁ",
           "strong": "H954",
-          "pron": "예보슈"
+          "pron": "이텝보샤슈"
         },
         {
           "word": "וְיַחְפְּר֨וּ",
           "lemma": "חָפֵר",
           "strong": "H2659",
-          "pron": "예헵파루"
+          "pron": "바예헵파루"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
         "psalms 35:26",
         "psalms 40:14",
-        "psalms 70:2"
+        "psalms 70:2",
+        "proverbs 19:26",
+        "jeremiah 15:9"
       ],
       "glossKo": ""
     }

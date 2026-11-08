@@ -12,21 +12,51 @@
     {
       "lemma": "חֵץ",
       "strong": "H2671",
-      "pron": "힛차이브",
-      "glossKo": "그의 화살"
+      "pron": "힛침",
+      "glossKo": "화살"
     },
     {
       "lemma": "חָצַץ",
       "strong": "H2686",
-      "pron": "",
+      "pron": "메하체침",
       "glossKo": "활을 쏘다"
     }
   ],
   "defEn": "Chatsetson-tamar",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 4,
   "byBook": {
+    "chronicles2": 2,
     "genesis": 2
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּחַֽצְצֹ֥ן תָּמָֽר",
+      "pron": "브하체촌 브하체촌",
+      "lemmas": [
+        "חַצְצוֹן תָּמָר",
+        "חַצְצוֹן תָּמָר"
+      ],
+      "words": [
+        {
+          "word": "בְּחַֽצְצֹ֥ן",
+          "lemma": "חַצְצוֹן תָּמָר",
+          "strong": "H2688",
+          "pron": "브하체촌"
+        },
+        {
+          "word": "תָּמָֽר",
+          "lemma": "חַצְצוֹן תָּמָר",
+          "strong": "H2688",
+          "pron": "브하체촌"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 14:7",
+        "chronicles2 20:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

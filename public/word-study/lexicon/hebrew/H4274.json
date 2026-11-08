@@ -2,7 +2,7 @@
   "lemma": "מַחְצֵב",
   "pron": "마헤쳅",
   "strong": "H4274",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָצַב",
     "strong": "H2672",
@@ -12,13 +12,46 @@
     {
       "lemma": "חָצַב",
       "strong": "H2672",
-      "pron": "호쳅",
+      "pron": "하추빔",
       "glossKo": "쪼개다"
     }
   ],
   "defEn": "hewing; quarry",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 3,
+  "byBook": {
+    "kings2": 2,
+    "chronicles2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְאַבְנֵ֣י מַחְצֵ֔ב",
+      "pron": "브에벤 마헤쳅",
+      "lemmas": [
+        "אֶבֶן",
+        "מַחְצֵב"
+      ],
+      "words": [
+        {
+          "word": "וְאַבְנֵ֣י",
+          "lemma": "אֶבֶן",
+          "strong": "H68",
+          "pron": "브에벤"
+        },
+        {
+          "word": "מַחְצֵ֔ב",
+          "lemma": "מַחְצֵב",
+          "strong": "H4274",
+          "pron": "마헤쳅"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 12:12",
+        "kings2 22:6",
+        "chronicles2 34:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

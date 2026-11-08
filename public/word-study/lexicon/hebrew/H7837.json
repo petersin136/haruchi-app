@@ -18,40 +18,113 @@
     {
       "lemma": "שָׁחַר",
       "strong": "H7835",
-      "pron": "",
+      "pron": "샤하르",
       "glossKo": "검다"
     },
     {
       "lemma": "שָׁחַר",
       "strong": "H7836",
-      "pron": "아샤하레카",
-      "glossKo": "너에게 일찍 찾다"
+      "pron": "베시하렛타니",
+      "glossKo": "나를 일찍 찾다"
     },
     {
       "lemma": "שַׁחֲרוּת",
       "strong": "H7839",
-      "pron": "",
+      "pron": "브아샤하루트",
       "glossKo": "동틈"
     },
     {
       "lemma": "שְׁחַרְיָה",
       "strong": "H7841",
-      "pron": "",
+      "pron": "우셰하레아",
       "glossKo": "스하랴"
     },
     {
       "lemma": "שַׁחֲרַיִם",
       "strong": "H7842",
-      "pron": "",
+      "pron": "브샤하라임",
       "glossKo": "사하라임"
     }
   ],
   "defEn": "dawn",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 25,
   "byBook": {
+    "isaiah": 4,
+    "job": 4,
     "psalms": 4,
-    "genesis": 3
+    "genesis": 3,
+    "hosea": 2,
+    "amos": 1,
+    "joel": 1,
+    "jonah": 1,
+    "joshua": 1,
+    "judges": 1,
+    "nehemiah": 1,
+    "samuel1": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עֲל֥וֹת הַשָּֽׁחַר",
+      "pron": "야알레 아샤하르",
+      "lemmas": [
+        "עָלָה",
+        "שַׁחַר"
+      ],
+      "words": [
+        {
+          "word": "עֲל֥וֹת",
+          "lemma": "עָלָה",
+          "strong": "H5927",
+          "pron": "야알레"
+        },
+        {
+          "word": "הַשָּֽׁחַר",
+          "lemma": "שַׁחַר",
+          "strong": "H7837",
+          "pron": "아샤하르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 32:24",
+        "genesis 32:26",
+        "joshua 6:15",
+        "judges 19:25",
+        "samuel1 9:26",
+        "nehemiah 4:21",
+        "jonah 4:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ידעתה שחר",
+      "pron": "요데아 아샤하르",
+      "lemmas": [
+        "יָדַע",
+        "שַׁחַר"
+      ],
+      "words": [
+        {
+          "word": "ידעתה",
+          "lemma": "יָדַע",
+          "strong": "H3045",
+          "pron": "요데아"
+        },
+        {
+          "word": "שחר",
+          "lemma": "שַׁחַר",
+          "strong": "H7837",
+          "pron": "아샤하르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 38:12",
+        "isaiah 47:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

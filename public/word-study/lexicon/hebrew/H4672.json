@@ -1,6 +1,6 @@
 {
   "lemma": "מָצָא",
-  "pron": "팀차",
+  "pron": "마차",
   "strong": "H4672",
   "posKo": "동사",
   "root": null,
@@ -8,51 +8,79 @@
     {
       "lemma": "מְטָא",
       "strong": "H4291",
-      "pron": "",
+      "pron": "임데",
       "glossKo": "이르다(아람)"
     },
     {
       "lemma": "מְצֹבָיָה",
       "strong": "H4677",
-      "pron": "",
+      "pron": "아메초바아",
       "glossKo": "므소바야"
     }
   ],
   "defEn": "come; appear; exist; attain; find; acquire; occur; meet; be present",
   "defKo": "",
-  "countOT": 75,
+  "countOT": 457,
   "byBook": {
     "genesis": 56,
-    "psalms": 19
+    "samuel1": 39,
+    "chronicles2": 28,
+    "proverbs": 28,
+    "jeremiah": 27,
+    "deuteronomy": 25,
+    "kings2": 25,
+    "exodus": 22,
+    "job": 19,
+    "psalms": 19,
+    "isaiah": 18,
+    "ecclesiastes": 17,
+    "kings1": 16,
+    "judges": 14,
+    "chronicles1": 11,
+    "numbers": 11,
+    "samuel2": 10,
+    "songofsolomon": 9,
+    "esther": 8,
+    "hosea": 8,
+    "leviticus": 8,
+    "nehemiah": 8,
+    "daniel": 4,
+    "ezekiel": 4,
+    "ezra": 4,
+    "joshua": 4,
+    "lamentations": 4,
+    "ruth": 4,
+    "zechariah": 2,
+    "amos": 1,
+    "jonah": 1,
+    "malachi": 1,
+    "micah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "וְלֹ֣א נִמְצָֽא",
-      "pron": "로 팀차",
+      "hebrew": "וְלֹ֥א מָצָֽאוּ",
+      "pron": "로 마차",
       "lemmas": [
         "לֹא",
         "מָצָא"
       ],
       "words": [
         {
-          "word": "וְלֹ֣א",
+          "word": "וְלֹ֥א",
           "lemma": "לֹא",
           "strong": "H3808",
           "pron": "로"
         },
         {
-          "word": "נִמְצָֽא",
+          "word": "מָצָֽאוּ",
           "lemma": "מָצָא",
           "strong": "H4672",
-          "pron": "팀차"
+          "pron": "마차"
         }
       ],
-      "count": 12,
+      "count": 88,
       "refs": [
-        "psalms 37:36",
-        "psalms 69:20",
-        "psalms 76:5",
-        "psalms 107:4",
         "genesis 2:20",
         "genesis 8:9",
         "genesis 31:33",
@@ -60,94 +88,17 @@
         "genesis 31:35",
         "genesis 38:20",
         "genesis 38:22",
-        "genesis 38:23"
+        "genesis 38:23",
+        "exodus 12:19",
+        "exodus 15:22",
+        "exodus 16:25",
+        "exodus 16:27"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "מָצָ֤אתִי חֵן֙",
-      "pron": "팀차 헨",
-      "lemmas": [
-        "מָצָא",
-        "חֵן"
-      ],
-      "words": [
-        {
-          "word": "מָצָ֤אתִי",
-          "lemma": "מָצָא",
-          "strong": "H4672",
-          "pron": "팀차"
-        },
-        {
-          "word": "חֵן֙",
-          "lemma": "חֵן",
-          "strong": "H2580",
-          "pron": "헨"
-        }
-      ],
-      "count": 11,
-      "refs": [
-        "genesis 6:8",
-        "genesis 18:3",
-        "genesis 30:27",
-        "genesis 32:5",
-        "genesis 33:8",
-        "genesis 33:10",
-        "genesis 33:15",
-        "genesis 34:11",
-        "genesis 47:25",
-        "genesis 47:29",
-        "genesis 50:4"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "מָצָ֤אתִי חֵן֙ בְּעֵינֶ֔יךָ",
-      "pron": "팀차 헨 에네카",
-      "lemmas": [
-        "מָצָא",
-        "חֵן",
-        "עַיִן"
-      ],
-      "words": [
-        {
-          "word": "מָצָ֤אתִי",
-          "lemma": "מָצָא",
-          "strong": "H4672",
-          "pron": "팀차"
-        },
-        {
-          "word": "חֵן֙",
-          "lemma": "חֵן",
-          "strong": "H2580",
-          "pron": "헨"
-        },
-        {
-          "word": "בְּעֵינֶ֔יךָ",
-          "lemma": "עַיִן",
-          "strong": "H5869",
-          "pron": "에네카"
-        }
-      ],
-      "count": 11,
-      "refs": [
-        "genesis 6:8",
-        "genesis 18:3",
-        "genesis 30:27",
-        "genesis 32:5",
-        "genesis 33:8",
-        "genesis 33:10",
-        "genesis 33:15",
-        "genesis 34:11",
-        "genesis 47:25",
-        "genesis 47:29",
-        "genesis 50:4"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֲשֶׁ֨ר תִּמְצָ֣א",
-      "pron": "아셰르 팀차",
+      "hebrew": "אֲשֶׁ֨ר מָצָ֤א",
+      "pron": "아셰르 마차",
       "lemmas": [
         "אֲשֶׁר",
         "מָצָא"
@@ -160,13 +111,13 @@
           "pron": "아셰르"
         },
         {
-          "word": "תִּמְצָ֣א",
+          "word": "מָצָ֤א",
           "lemma": "מָצָא",
           "strong": "H4672",
-          "pron": "팀차"
+          "pron": "마차"
         }
       ],
-      "count": 8,
+      "count": 42,
       "refs": [
         "genesis 31:32",
         "genesis 36:24",
@@ -175,39 +126,132 @@
         "genesis 44:10",
         "genesis 44:16",
         "genesis 44:17",
-        "genesis 44:34"
+        "genesis 44:34",
+        "exodus 5:11",
+        "exodus 9:19",
+        "exodus 18:8",
+        "exodus 35:23"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "יִמָּצְא֥וּן שָׁ֖ם",
-      "pron": "팀차 샴",
+      "hebrew": "מָצָ֤אתִי חֵן֙",
+      "pron": "마차 헨",
       "lemmas": [
         "מָצָא",
-        "שָׁם"
+        "חֵן"
       ],
       "words": [
         {
-          "word": "יִמָּצְא֥וּן",
+          "word": "מָצָ֤אתִי",
           "lemma": "מָצָא",
           "strong": "H4672",
-          "pron": "팀차"
+          "pron": "마차"
         },
         {
-          "word": "שָׁ֖ם",
-          "lemma": "שָׁם",
-          "strong": "H8033",
-          "pron": "샴"
+          "word": "חֵן֙",
+          "lemma": "חֵן",
+          "strong": "H2580",
+          "pron": "헨"
         }
       ],
-      "count": 7,
+      "count": 37,
       "refs": [
-        "genesis 18:28",
-        "genesis 18:29",
-        "genesis 18:30",
-        "genesis 18:31",
-        "genesis 18:32",
-        "genesis 26:19"
+        "genesis 6:8",
+        "genesis 18:3",
+        "genesis 30:27",
+        "genesis 32:5",
+        "genesis 33:8",
+        "genesis 33:10",
+        "genesis 33:15",
+        "genesis 34:11",
+        "genesis 47:25",
+        "genesis 47:29",
+        "genesis 50:4",
+        "exodus 33:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָצָא֙ אֶת",
+      "pron": "마차 에트",
+      "lemmas": [
+        "מָצָא",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "מָצָא֙",
+          "lemma": "מָצָא",
+          "strong": "H4672",
+          "pron": "마차"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 36,
+      "refs": [
+        "genesis 31:32",
+        "genesis 31:35",
+        "genesis 32:19",
+        "genesis 36:24",
+        "genesis 44:16",
+        "genesis 44:34",
+        "numbers 15:33",
+        "numbers 32:23",
+        "numbers 35:27",
+        "deuteronomy 19:5",
+        "deuteronomy 31:21",
+        "joshua 2:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָצָ֨אתִי חֵ֤ן בְּעֵינֶ֨יךָ֙",
+      "pron": "마차 헨 에네켐",
+      "lemmas": [
+        "מָצָא",
+        "חֵן",
+        "עַיִן"
+      ],
+      "words": [
+        {
+          "word": "מָצָ֨אתִי",
+          "lemma": "מָצָא",
+          "strong": "H4672",
+          "pron": "마차"
+        },
+        {
+          "word": "חֵ֤ן",
+          "lemma": "חֵן",
+          "strong": "H2580",
+          "pron": "헨"
+        },
+        {
+          "word": "בְּעֵינֶ֨יךָ֙",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        }
+      ],
+      "count": 34,
+      "refs": [
+        "genesis 6:8",
+        "genesis 18:3",
+        "genesis 30:27",
+        "genesis 32:5",
+        "genesis 33:8",
+        "genesis 33:10",
+        "genesis 33:15",
+        "genesis 34:11",
+        "genesis 47:25",
+        "genesis 47:29",
+        "genesis 50:4",
+        "exodus 33:12"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁאַג",
-  "pron": "브쇼엑",
+  "pron": "쇼엑",
   "strong": "H7580",
   "posKo": "동사",
   "root": null,
@@ -8,15 +8,84 @@
     {
       "lemma": "שְׁאָגָה",
       "strong": "H7581",
-      "pron": "샤아가티위",
+      "pron": "샤아고타이",
       "glossKo": "나의 포효"
     }
   ],
   "defEn": "rumble; moan",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 21,
   "byBook": {
-    "psalms": 4
+    "jeremiah": 5,
+    "psalms": 4,
+    "amos": 3,
+    "hosea": 2,
+    "isaiah": 2,
+    "ezekiel": 1,
+    "job": 1,
+    "joel": 1,
+    "judges": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲרָי֔וֹת שֹׁאֵ֖ג",
+      "pron": "아레에 쇼엑",
+      "lemmas": [
+        "אֲרִי",
+        "שָׁאַג"
+      ],
+      "words": [
+        {
+          "word": "אֲרָי֔וֹת",
+          "lemma": "אֲרִי",
+          "strong": "H738",
+          "pron": "아레에"
+        },
+        {
+          "word": "שֹׁאֵ֖ג",
+          "lemma": "שָׁאַג",
+          "strong": "H7580",
+          "pron": "쇼엑"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 14:5",
+        "ezekiel 22:25",
+        "hosea 11:10",
+        "amos 3:8",
+        "zephaniah 3:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ושאג יִשְׁאַ֨ג",
+      "pron": "쇼엑 쇼엑",
+      "lemmas": [
+        "שָׁאַג",
+        "שָׁאַג"
+      ],
+      "words": [
+        {
+          "word": "ושאג",
+          "lemma": "שָׁאַג",
+          "strong": "H7580",
+          "pron": "쇼엑"
+        },
+        {
+          "word": "יִשְׁאַ֨ג",
+          "lemma": "שָׁאַג",
+          "strong": "H7580",
+          "pron": "쇼엑"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 5:29",
+        "jeremiah 25:30"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

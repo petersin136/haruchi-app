@@ -1,6 +1,6 @@
 {
   "lemma": "נֶסֶךְ",
-  "pron": "닛케헴",
+  "pron": "네세크",
   "strong": "H5262",
   "posKo": "명사",
   "root": {
@@ -12,46 +12,246 @@
     {
       "lemma": "מַסֵּכָה",
       "strong": "H4541",
-      "pron": "르맛세카",
+      "pron": "맛세카",
       "glossKo": "부어 만든 것"
     },
     {
       "lemma": "נְסִיךְ",
       "strong": "H5257",
-      "pron": "네시케모",
+      "pron": "네시캄",
       "glossKo": "그들의 전제로 부은 것"
     },
     {
       "lemma": "נָסַךְ",
       "strong": "H5258",
-      "pron": "나사켓티",
+      "pron": "바얏세크",
       "glossKo": "붓다"
     },
     {
       "lemma": "נָסַךְ",
       "strong": "H5259",
-      "pron": "",
+      "pron": "아네수카",
       "glossKo": "엮다"
     },
     {
       "lemma": "נְסַךְ",
       "strong": "H5260",
-      "pron": "",
+      "pron": "르낫사카",
       "glossKo": "관제하다(아람)"
     },
     {
       "lemma": "נְסַךְ",
       "strong": "H5261",
-      "pron": "",
-      "glossKo": "관제(아람)"
+      "pron": "베닛케혼",
+      "glossKo": "그들의 관제(아람)"
     }
   ],
   "defEn": "libation",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 64,
   "byBook": {
+    "numbers": 34,
+    "jeremiah": 10,
+    "exodus": 3,
+    "isaiah": 3,
+    "joel": 3,
+    "leviticus": 3,
+    "ezekiel": 2,
+    "kings2": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
     "genesis": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּמִנְחָתָ֣ם וְנִסְכֵּיהֶ֡ם",
+      "pron": "민하 네세크",
+      "lemmas": [
+        "מִנְחָה",
+        "נֶסֶךְ"
+      ],
+      "words": [
+        {
+          "word": "וּמִנְחָתָ֣ם",
+          "lemma": "מִנְחָה",
+          "strong": "H4503",
+          "pron": "민하"
+        },
+        {
+          "word": "וְנִסְכֵּיהֶ֡ם",
+          "lemma": "נֶסֶךְ",
+          "strong": "H5262",
+          "pron": "네세크"
+        }
+      ],
+      "count": 27,
+      "refs": [
+        "exodus 30:9",
+        "leviticus 23:18",
+        "numbers 6:15",
+        "numbers 15:24",
+        "numbers 29:6",
+        "numbers 29:11",
+        "numbers 29:16",
+        "numbers 29:18",
+        "numbers 29:19",
+        "numbers 29:21",
+        "numbers 29:22",
+        "numbers 29:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַתָּמִ֔יד מִנְחָתָ֖הּ וְנִסְכָּֽהּ",
+      "pron": "타믿 민하 네세크",
+      "lemmas": [
+        "תָּמִיד",
+        "מִנְחָה",
+        "נֶסֶךְ"
+      ],
+      "words": [
+        {
+          "word": "הַתָּמִ֔יד",
+          "lemma": "תָּמִיד",
+          "strong": "H8548",
+          "pron": "타믿"
+        },
+        {
+          "word": "מִנְחָתָ֖הּ",
+          "lemma": "מִנְחָה",
+          "strong": "H4503",
+          "pron": "민하"
+        },
+        {
+          "word": "וְנִסְכָּֽהּ",
+          "lemma": "נֶסֶךְ",
+          "strong": "H5262",
+          "pron": "네세크"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "numbers 29:6",
+        "numbers 29:11",
+        "numbers 29:16",
+        "numbers 29:19",
+        "numbers 29:22",
+        "numbers 29:25",
+        "numbers 29:28",
+        "numbers 29:31",
+        "numbers 29:34",
+        "numbers 29:38"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּלְהַסֵּ֥ךְ נְסָכִ֑ים",
+      "pron": "바얏세크 네세크",
+      "lemmas": [
+        "נָסַךְ",
+        "נֶסֶךְ"
+      ],
+      "words": [
+        {
+          "word": "וּלְהַסֵּ֥ךְ",
+          "lemma": "נָסַךְ",
+          "strong": "H5258",
+          "pron": "바얏세크"
+        },
+        {
+          "word": "נְסָכִ֑ים",
+          "lemma": "נֶסֶךְ",
+          "strong": "H5262",
+          "pron": "네세크"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "numbers 28:7",
+        "psalms 16:4",
+        "jeremiah 7:18",
+        "jeremiah 19:13",
+        "jeremiah 32:29",
+        "jeremiah 44:17",
+        "jeremiah 44:18",
+        "jeremiah 44:19",
+        "jeremiah 44:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמִנְחָתָ֣ם וְנִסְכֵּיהֶ֡ם לַ֠פָּרִים",
+      "pron": "민하 네세크 우파림",
+      "lemmas": [
+        "מִנְחָה",
+        "נֶסֶךְ",
+        "פַּר"
+      ],
+      "words": [
+        {
+          "word": "וּמִנְחָתָ֣ם",
+          "lemma": "מִנְחָה",
+          "strong": "H4503",
+          "pron": "민하"
+        },
+        {
+          "word": "וְנִסְכֵּיהֶ֡ם",
+          "lemma": "נֶסֶךְ",
+          "strong": "H5262",
+          "pron": "네세크"
+        },
+        {
+          "word": "לַ֠פָּרִים",
+          "lemma": "פַּר",
+          "strong": "H6499",
+          "pron": "우파림"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "numbers 29:18",
+        "numbers 29:21",
+        "numbers 29:24",
+        "numbers 29:27",
+        "numbers 29:30",
+        "numbers 29:33",
+        "numbers 29:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנִסְכֵּיהֶ֡ם לַ֠פָּרִים",
+      "pron": "네세크 우파림",
+      "lemmas": [
+        "נֶסֶךְ",
+        "פַּר"
+      ],
+      "words": [
+        {
+          "word": "וְנִסְכֵּיהֶ֡ם",
+          "lemma": "נֶסֶךְ",
+          "strong": "H5262",
+          "pron": "네세크"
+        },
+        {
+          "word": "לַ֠פָּרִים",
+          "lemma": "פַּר",
+          "strong": "H6499",
+          "pron": "우파림"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "numbers 29:18",
+        "numbers 29:21",
+        "numbers 29:24",
+        "numbers 29:27",
+        "numbers 29:30",
+        "numbers 29:33",
+        "numbers 29:37"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

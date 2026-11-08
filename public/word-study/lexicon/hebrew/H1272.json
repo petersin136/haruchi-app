@@ -1,6 +1,6 @@
 {
   "lemma": "בָּרַח",
-  "pron": "브바레흐오",
+  "pron": "바팁라흐",
   "strong": "H1272",
   "posKo": "동사",
   "root": null,
@@ -8,58 +8,197 @@
     {
       "lemma": "בְּרִיחַ",
       "strong": "H1280",
-      "pron": "우베리헤",
+      "pron": "베리힘",
       "glossKo": "빗장"
     },
     {
       "lemma": "בָּרִיחַ",
       "strong": "H1281",
-      "pron": "",
+      "pron": "바리아흐",
       "glossKo": "도망친"
     },
     {
       "lemma": "מִבְרָח",
       "strong": "H4015",
-      "pron": "",
-      "glossKo": "도망"
+      "pron": "믑릏브",
+      "glossKo": "그의 도망"
     }
   ],
   "defEn": "bolt; flee",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 65,
   "byBook": {
     "genesis": 9,
-    "psalms": 3
+    "samuel1": 8,
+    "job": 6,
+    "kings1": 6,
+    "samuel2": 6,
+    "exodus": 4,
+    "jeremiah": 4,
+    "jonah": 3,
+    "nehemiah": 3,
+    "psalms": 3,
+    "chronicles1": 2,
+    "isaiah": 2,
+    "judges": 2,
+    "amos": 1,
+    "chronicles2": 1,
+    "daniel": 1,
+    "hosea": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "בְּ֝בָרְח֗וֹ מִפְּנֵ֤י",
-      "pron": "브바레흐오 미페네",
+      "hebrew": "בָּרַ֔ח מִפְּנֵ֖י",
+      "pron": "바팁라흐 페네",
       "lemmas": [
         "בָּרַח",
         "פָּנִים"
       ],
       "words": [
         {
-          "word": "בְּ֝בָרְח֗וֹ",
+          "word": "בָּרַ֔ח",
           "lemma": "בָּרַח",
           "strong": "H1272",
-          "pron": "브바레흐오"
+          "pron": "바팁라흐"
         },
         {
-          "word": "מִפְּנֵ֤י",
+          "word": "מִפְּנֵ֖י",
           "lemma": "פָּנִים",
           "strong": "H6440",
-          "pron": "미페네"
+          "pron": "페네"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 16:6",
+        "genesis 35:1",
+        "genesis 35:7",
+        "kings1 2:7",
+        "kings1 12:2",
+        "chronicles2 10:2",
+        "psalms 3:1",
+        "psalms 57:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֥י בָרַ֖ח",
+      "pron": "키 바팁라흐",
+      "lemmas": [
+        "כִּי",
+        "בָּרַח"
+      ],
+      "words": [
+        {
+          "word": "כִּ֥י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "בָרַ֖ח",
+          "lemma": "בָּרַח",
+          "strong": "H1272",
+          "pron": "바팁라흐"
         }
       ],
       "count": 5,
       "refs": [
-        "psalms 3:1",
-        "psalms 57:1",
-        "genesis 16:6",
-        "genesis 35:1",
-        "genesis 35:7"
+        "genesis 31:20",
+        "genesis 31:22",
+        "exodus 14:5",
+        "samuel1 22:17",
+        "samuel1 27:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֣ר בָּרַ֔ח",
+      "pron": "아셰르 바팁라흐",
+      "lemmas": [
+        "אֲשֶׁר",
+        "בָּרַח"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "בָּרַ֔ח",
+          "lemma": "בָּרַח",
+          "strong": "H1272",
+          "pron": "바팁라흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 11:23",
+        "kings1 12:2",
+        "chronicles2 10:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּרַח אֶל",
+      "pron": "바팁라흐 엘",
+      "lemmas": [
+        "בָּרַח",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "בְּרַח",
+          "lemma": "בָּרַח",
+          "strong": "H1272",
+          "pron": "바팁라흐"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 27:43",
+        "numbers 24:11",
+        "amos 7:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֹרֵ֖חַ הֽוּא",
+      "pron": "바팁라흐 후",
+      "lemmas": [
+        "בָּרַח",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "בֹרֵ֖חַ",
+          "lemma": "בָּרַח",
+          "strong": "H1272",
+          "pron": "바팁라흐"
+        },
+        {
+          "word": "הֽוּא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 31:20",
+        "genesis 31:21",
+        "samuel1 22:17"
       ],
       "glossKo": ""
     }

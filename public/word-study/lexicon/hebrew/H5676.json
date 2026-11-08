@@ -18,19 +18,19 @@
     {
       "lemma": "עָבוּר",
       "strong": "H5668",
-      "pron": "바아부르",
-      "glossKo": "~때문에"
+      "pron": "바아부레카",
+      "glossKo": "너의 ~때문에"
     },
     {
       "lemma": "עָבַר",
       "strong": "H5674",
-      "pron": "오베르",
+      "pron": "바야아베르",
       "glossKo": "건너다"
     },
     {
       "lemma": "עֲבַר",
       "strong": "H5675",
-      "pron": "",
+      "pron": "아바르",
       "glossKo": "건너편(아람)"
     },
     {
@@ -42,15 +42,234 @@
     {
       "lemma": "עֶבְרָה",
       "strong": "H5678",
-      "pron": "브압로트",
-      "glossKo": "진노"
+      "pron": "베엡라탐",
+      "glossKo": "그들의 진노"
     }
   ],
   "defEn": "across; opposite; east",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 92,
   "byBook": {
-    "genesis": 2
+    "joshua": 26,
+    "deuteronomy": 12,
+    "samuel1": 8,
+    "kings1": 7,
+    "numbers": 7,
+    "chronicles1": 4,
+    "exodus": 4,
+    "isaiah": 4,
+    "judges": 4,
+    "ezekiel": 3,
+    "jeremiah": 3,
+    "nehemiah": 3,
+    "genesis": 2,
+    "chronicles2": 1,
+    "ezra": 1,
+    "job": 1,
+    "samuel2": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּעֵ֣בֶר הַיַּרְדֵּ֑ן",
+      "pron": "브에베르 아야렏덴",
+      "lemmas": [
+        "עֵבֶר",
+        "יַרְדֵּן"
+      ],
+      "words": [
+        {
+          "word": "בְּעֵ֣בֶר",
+          "lemma": "עֵבֶר",
+          "strong": "H5676",
+          "pron": "브에베르"
+        },
+        {
+          "word": "הַיַּרְדֵּ֑ן",
+          "lemma": "יַרְדֵּן",
+          "strong": "H3383",
+          "pron": "아야렏덴"
+        }
+      ],
+      "count": 45,
+      "refs": [
+        "genesis 50:10",
+        "genesis 50:11",
+        "numbers 22:1",
+        "numbers 32:19",
+        "numbers 32:32",
+        "numbers 34:15",
+        "numbers 35:14",
+        "deuteronomy 1:1",
+        "deuteronomy 1:5",
+        "deuteronomy 3:8",
+        "deuteronomy 3:20",
+        "deuteronomy 3:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֖ר בְּעֵ֣בֶר",
+      "pron": "아셰르 브에베르",
+      "lemmas": [
+        "אֲשֶׁר",
+        "עֵבֶר"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֖ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "בְּעֵ֣בֶר",
+          "lemma": "עֵבֶר",
+          "strong": "H5676",
+          "pron": "브에베르"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "genesis 50:10",
+        "genesis 50:11",
+        "deuteronomy 3:8",
+        "deuteronomy 3:25",
+        "deuteronomy 4:47",
+        "joshua 2:10",
+        "joshua 5:1",
+        "joshua 9:1",
+        "joshua 9:10",
+        "joshua 17:5",
+        "joshua 24:15",
+        "judges 10:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵעֵ֣בֶר הַנָּהָ֔ר",
+      "pron": "브에베르 브나할르",
+      "lemmas": [
+        "עֵבֶר",
+        "נָהָר"
+      ],
+      "words": [
+        {
+          "word": "מֵעֵ֣בֶר",
+          "lemma": "עֵבֶר",
+          "strong": "H5676",
+          "pron": "브에베르"
+        },
+        {
+          "word": "הַנָּהָ֔ר",
+          "lemma": "נָהָר",
+          "strong": "H5104",
+          "pron": "브나할르"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "joshua 24:2",
+        "joshua 24:3",
+        "joshua 24:14",
+        "joshua 24:15",
+        "samuel2 10:16",
+        "kings1 4:24",
+        "kings1 14:15",
+        "chronicles1 19:16",
+        "ezra 8:36",
+        "nehemiah 2:7",
+        "nehemiah 2:9",
+        "nehemiah 3:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֖ר בְּעֵ֣בֶר הַיַּרְדֵּ֑ן",
+      "pron": "아셰르 브에베르 아야렏덴",
+      "lemmas": [
+        "אֲשֶׁר",
+        "עֵבֶר",
+        "יַרְדֵּן"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֖ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "בְּעֵ֣בֶר",
+          "lemma": "עֵבֶר",
+          "strong": "H5676",
+          "pron": "브에베르"
+        },
+        {
+          "word": "הַיַּרְדֵּ֑ן",
+          "lemma": "יַרְדֵּן",
+          "strong": "H3383",
+          "pron": "아야렏덴"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "genesis 50:10",
+        "genesis 50:11",
+        "deuteronomy 3:8",
+        "deuteronomy 3:25",
+        "deuteronomy 4:47",
+        "joshua 2:10",
+        "joshua 5:1",
+        "joshua 9:1",
+        "joshua 9:10",
+        "joshua 17:5",
+        "judges 10:8",
+        "samuel1 31:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵעֵ֥בֶר הַיַּרְדֵּ֖ן מִזְרָֽחָה",
+      "pron": "브에베르 아야렏덴 밋라하",
+      "lemmas": [
+        "עֵבֶר",
+        "יַרְדֵּן",
+        "מִזְרָח"
+      ],
+      "words": [
+        {
+          "word": "מֵעֵ֥בֶר",
+          "lemma": "עֵבֶר",
+          "strong": "H5676",
+          "pron": "브에베르"
+        },
+        {
+          "word": "הַיַּרְדֵּ֖ן",
+          "lemma": "יַרְדֵּן",
+          "strong": "H3383",
+          "pron": "아야렏덴"
+        },
+        {
+          "word": "מִזְרָֽחָה",
+          "lemma": "מִזְרָח",
+          "strong": "H4217",
+          "pron": "밋라하"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "numbers 32:19",
+        "deuteronomy 4:41",
+        "deuteronomy 4:47",
+        "deuteronomy 4:49",
+        "joshua 1:15",
+        "joshua 12:1",
+        "joshua 13:8",
+        "joshua 13:27",
+        "joshua 18:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

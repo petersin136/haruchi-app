@@ -12,8 +12,8 @@
     {
       "lemma": "מַעֲרֹם",
       "strong": "H4636",
-      "pron": "",
-      "glossKo": "벌거벗음"
+      "pron": "마아룸메헴",
+      "glossKo": "그들의 벌거벗음"
     },
     {
       "lemma": "עָרוֹם",
@@ -30,14 +30,14 @@
     {
       "lemma": "עָרַם",
       "strong": "H6191",
-      "pron": "야아리무",
+      "pron": "아롬",
       "glossKo": "교활하다"
     },
     {
       "lemma": "עֹרֶם",
       "strong": "H6193",
-      "pron": "",
-      "glossKo": "교활"
+      "pron": "베아레맘",
+      "glossKo": "그들에게 교활"
     },
     {
       "lemma": "עַרְמוֹן",
@@ -48,11 +48,43 @@
   ],
   "defEn": "nudity",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 10,
   "byBook": {
-    "genesis": 3
+    "ezekiel": 6,
+    "genesis": 3,
+    "deuteronomy": 1
   },
   "phrases": [
+    {
+      "hebrew": "עֵרֹ֥ם וְעֶרְיָֽה",
+      "pron": "에룸밈 브에레아",
+      "lemmas": [
+        "עֵירֹם",
+        "עֶרְיָה"
+      ],
+      "words": [
+        {
+          "word": "עֵרֹ֥ם",
+          "lemma": "עֵירֹם",
+          "strong": "H5903",
+          "pron": "에룸밈"
+        },
+        {
+          "word": "וְעֶרְיָֽה",
+          "lemma": "עֶרְיָה",
+          "strong": "H6181",
+          "pron": "브에레아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 16:7",
+        "ezekiel 16:22",
+        "ezekiel 16:39",
+        "ezekiel 23:29"
+      ],
+      "glossKo": ""
+    },
     {
       "hebrew": "כִּ֥י עֵֽירֻמִּ֖ם",
       "pron": "키 에룸밈",

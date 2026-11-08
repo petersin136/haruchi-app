@@ -1,6 +1,6 @@
 {
   "lemma": "עַיִן",
-  "pron": "에네카",
+  "pron": "에네켐",
   "strong": "H5869",
   "posKo": "명사",
   "root": null,
@@ -8,51 +8,124 @@
     {
       "lemma": "מַעְיָן",
       "strong": "H4599",
-      "pron": "마에안",
+      "pron": "마에에노트",
       "glossKo": "샘"
     },
     {
       "lemma": "עָוַן",
       "strong": "H5770",
-      "pron": "",
+      "pron": "오엔",
       "glossKo": "엿보다"
     },
     {
       "lemma": "עַיִן",
       "strong": "H5870",
-      "pron": "",
+      "pron": "브엔",
       "glossKo": "눈(아람)"
     },
     {
       "lemma": "עַיִן",
       "strong": "H5871",
-      "pron": "",
+      "pron": "라아인",
       "glossKo": "아인"
     },
     {
       "lemma": "עֵין גֶּדִי",
       "strong": "H5872",
-      "pron": "",
+      "pron": "브엔",
       "glossKo": "엔게디"
     },
     {
       "lemma": "עֵין גַּנִּים",
       "strong": "H5873",
-      "pron": "",
+      "pron": "브엔",
       "glossKo": "엔간님"
     }
   ],
   "defEn": "eye",
   "defKo": "",
-  "countOT": 146,
+  "countOT": 897,
   "byBook": {
     "genesis": 80,
-    "psalms": 66
+    "ezekiel": 71,
+    "psalms": 66,
+    "deuteronomy": 60,
+    "jeremiah": 55,
+    "kings2": 49,
+    "proverbs": 48,
+    "job": 47,
+    "isaiah": 45,
+    "samuel1": 44,
+    "samuel2": 44,
+    "numbers": 40,
+    "exodus": 35,
+    "chronicles2": 31,
+    "kings1": 31,
+    "judges": 19,
+    "zechariah": 19,
+    "leviticus": 16,
+    "esther": 13,
+    "chronicles1": 11,
+    "joshua": 11,
+    "ecclesiastes": 10,
+    "lamentations": 10,
+    "daniel": 7,
+    "nehemiah": 7,
+    "songofsolomon": 7,
+    "ruth": 4,
+    "amos": 3,
+    "hosea": 3,
+    "ezra": 2,
+    "malachi": 2,
+    "micah": 2,
+    "habakkuk": 1,
+    "haggai": 1,
+    "joel": 1,
+    "jonah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
+      "hebrew": "בְּעֵינֵ֣י יְהוָ֑ה",
+      "pron": "에네켐 여호와",
+      "lemmas": [
+        "עַיִן",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "בְּעֵינֵ֣י",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        },
+        {
+          "word": "יְהוָ֑ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 101,
+      "refs": [
+        "genesis 6:8",
+        "genesis 38:7",
+        "genesis 38:10",
+        "leviticus 10:19",
+        "numbers 24:1",
+        "numbers 32:13",
+        "deuteronomy 4:25",
+        "deuteronomy 6:18",
+        "deuteronomy 9:18",
+        "deuteronomy 11:12",
+        "deuteronomy 12:25",
+        "deuteronomy 12:28"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "עֵינָ֗יו וַיַּרְא֙",
-      "pron": "에네카 야레에누",
+      "pron": "에네켐 바야레",
       "lemmas": [
         "עַיִן",
         "רָאָה"
@@ -62,19 +135,17 @@
           "word": "עֵינָ֗יו",
           "lemma": "עַיִן",
           "strong": "H5869",
-          "pron": "에네카"
+          "pron": "에네켐"
         },
         {
           "word": "וַיַּרְא֙",
           "lemma": "רָאָה",
           "strong": "H7200",
-          "pron": "야레에누"
+          "pron": "바야레"
         }
       ],
-      "count": 18,
+      "count": 73,
       "refs": [
-        "psalms 69:23",
-        "psalms 119:37",
         "genesis 13:10",
         "genesis 13:14",
         "genesis 18:2",
@@ -84,158 +155,137 @@
         "genesis 24:63",
         "genesis 24:64",
         "genesis 27:1",
-        "genesis 31:10"
+        "genesis 31:10",
+        "genesis 31:12",
+        "genesis 33:1"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "חֵ֖ן בְּעֵינֵ֥י",
-      "pron": "헨 에네카",
+      "hebrew": "הָרַ֖ע בְּעֵינֵ֣י",
+      "pron": "바라 에네켐",
       "lemmas": [
-        "חֵן",
+        "רַע",
         "עַיִן"
       ],
       "words": [
         {
-          "word": "חֵ֖ן",
-          "lemma": "חֵן",
-          "strong": "H2580",
-          "pron": "헨"
+          "word": "הָרַ֖ע",
+          "lemma": "רַע",
+          "strong": "H7451",
+          "pron": "바라"
         },
         {
-          "word": "בְּעֵינֵ֥י",
+          "word": "בְּעֵינֵ֣י",
           "lemma": "עַיִן",
           "strong": "H5869",
-          "pron": "에네카"
+          "pron": "에네켐"
         }
       ],
-      "count": 14,
+      "count": 69,
       "refs": [
-        "genesis 6:8",
-        "genesis 18:3",
-        "genesis 19:19",
-        "genesis 30:27",
-        "genesis 32:5",
-        "genesis 33:8",
-        "genesis 33:10",
-        "genesis 33:15",
-        "genesis 34:11",
-        "genesis 39:4",
-        "genesis 39:21",
-        "genesis 47:25"
+        "genesis 38:7",
+        "exodus 21:8",
+        "numbers 32:13",
+        "deuteronomy 4:25",
+        "deuteronomy 9:18",
+        "deuteronomy 17:2",
+        "deuteronomy 31:29",
+        "joshua 24:15",
+        "judges 2:11",
+        "judges 3:7",
+        "judges 3:12",
+        "judges 4:1"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "מָצָ֤אתִי חֵן֙ בְּעֵינֶ֔יךָ",
-      "pron": "팀차 헨 에네카",
+      "hebrew": "הָרַ֖ע בְּעֵינֵ֣י יְהוָ֑ה",
+      "pron": "바라 에네켐 여호와",
       "lemmas": [
-        "מָצָא",
-        "חֵן",
-        "עַיִן"
+        "רַע",
+        "עַיִן",
+        "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "מָצָ֤אתִי",
-          "lemma": "מָצָא",
-          "strong": "H4672",
-          "pron": "팀차"
+          "word": "הָרַ֖ע",
+          "lemma": "רַע",
+          "strong": "H7451",
+          "pron": "바라"
         },
         {
-          "word": "חֵן֙",
-          "lemma": "חֵן",
-          "strong": "H2580",
-          "pron": "헨"
-        },
-        {
-          "word": "בְּעֵינֶ֔יךָ",
+          "word": "בְּעֵינֵ֣י",
           "lemma": "עַיִן",
           "strong": "H5869",
-          "pron": "에네카"
+          "pron": "에네켐"
+        },
+        {
+          "word": "יְהוָ֑ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         }
       ],
-      "count": 11,
+      "count": 56,
       "refs": [
-        "genesis 6:8",
-        "genesis 18:3",
-        "genesis 30:27",
-        "genesis 32:5",
-        "genesis 33:8",
-        "genesis 33:10",
-        "genesis 33:15",
-        "genesis 34:11",
-        "genesis 47:25",
-        "genesis 47:29",
-        "genesis 50:4"
+        "genesis 38:7",
+        "numbers 32:13",
+        "deuteronomy 4:25",
+        "deuteronomy 9:18",
+        "deuteronomy 17:2",
+        "deuteronomy 31:29",
+        "judges 2:11",
+        "judges 3:7",
+        "judges 3:12",
+        "judges 4:1",
+        "judges 6:1",
+        "judges 10:6"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֶת עֵינָ֗יו",
-      "pron": "에트 에네카",
+      "hebrew": "וַיַּ֥עַשׂ הָרַ֖ע בְּעֵינֵ֣י",
+      "pron": "바야아스 바라 에네켐",
       "lemmas": [
-        "אֵת",
+        "עָשָׂה",
+        "רַע",
         "עַיִן"
       ],
       "words": [
         {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
+          "word": "וַיַּ֥עַשׂ",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
         },
         {
-          "word": "עֵינָ֗יו",
-          "lemma": "עַיִן",
-          "strong": "H5869",
-          "pron": "에네카"
-        }
-      ],
-      "count": 10,
-      "refs": [
-        "psalms 116:8",
-        "psalms 123:1",
-        "genesis 13:10",
-        "genesis 21:19",
-        "genesis 22:4",
-        "genesis 22:13",
-        "genesis 24:64",
-        "genesis 33:5",
-        "genesis 39:7",
-        "genesis 42:24"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "עַל עֵ֣ין",
-      "pron": "알 에네카",
-      "lemmas": [
-        "עַל",
-        "עַיִן"
-      ],
-      "words": [
-        {
-          "word": "עַל",
-          "lemma": "עַל",
-          "strong": "H5921",
-          "pron": "알"
+          "word": "הָרַ֖ע",
+          "lemma": "רַע",
+          "strong": "H7451",
+          "pron": "바라"
         },
         {
-          "word": "עֵ֣ין",
+          "word": "בְּעֵינֵ֣י",
           "lemma": "עַיִן",
           "strong": "H5869",
-          "pron": "에네카"
+          "pron": "에네켐"
         }
       ],
-      "count": 8,
+      "count": 49,
       "refs": [
-        "psalms 32:8",
-        "genesis 16:7",
-        "genesis 24:13",
-        "genesis 24:30",
-        "genesis 24:43",
-        "genesis 46:4",
-        "genesis 49:22"
+        "numbers 32:13",
+        "deuteronomy 4:25",
+        "deuteronomy 9:18",
+        "judges 3:12",
+        "judges 4:1",
+        "judges 10:6",
+        "judges 13:1",
+        "samuel1 15:19",
+        "samuel1 29:7",
+        "samuel2 12:9",
+        "kings1 15:26",
+        "kings1 15:34"
       ],
       "glossKo": ""
     }

@@ -12,45 +12,181 @@
     {
       "lemma": "כָּלָה",
       "strong": "H3615",
-      "pron": "칼로타므",
-      "glossKo": "그들에게 끝내다"
+      "pron": "바예쿨루",
+      "glossKo": "끝내다"
     },
     {
       "lemma": "כָּלֶה",
       "strong": "H3616",
-      "pron": "",
+      "pron": "브칼로트",
       "glossKo": "쇠약한"
     },
     {
       "lemma": "כְּלוּהַי",
       "strong": "H3622",
-      "pron": "",
+      "pron": "클히",
       "glossKo": "글루해"
     },
     {
       "lemma": "כְּלִי",
       "strong": "H3627",
-      "pron": "키켈리",
+      "pron": "켈레",
       "glossKo": "그릇"
     },
     {
       "lemma": "כִּלָּיוֹן",
       "strong": "H3631",
-      "pron": "",
+      "pron": "브킬온",
       "glossKo": "쇠약"
     },
     {
       "lemma": "מִכְלָה",
       "strong": "H4357",
-      "pron": "",
+      "pron": "미켈로트",
       "glossKo": "완성"
     }
   ],
   "defEn": "completion; completely",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 21,
   "byBook": {
-    "genesis": 1
+    "jeremiah": 7,
+    "ezekiel": 3,
+    "isaiah": 2,
+    "nahum": 2,
+    "chronicles2": 1,
+    "daniel": 1,
+    "exodus": 1,
+    "genesis": 1,
+    "nehemiah": 1,
+    "samuel1": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶעֱשֶׂ֨ה כָלָ֜ה",
+      "pron": "바야아스 칼라",
+      "lemmas": [
+        "עָשָׂה",
+        "כָּלָה"
+      ],
+      "words": [
+        {
+          "word": "אֶעֱשֶׂ֨ה",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "כָלָ֜ה",
+          "lemma": "כָּלָה",
+          "strong": "H3617",
+          "pron": "칼라"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 18:21",
+        "nehemiah 9:31",
+        "jeremiah 30:11",
+        "jeremiah 46:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי כָ֥לָה",
+      "pron": "키 칼라",
+      "lemmas": [
+        "כִּי",
+        "כָּלָה"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "כָ֥לָה",
+          "lemma": "כָּלָה",
+          "strong": "H3617",
+          "pron": "칼라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 20:33",
+        "isaiah 10:23",
+        "isaiah 28:22",
+        "zephaniah 1:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָלָ֖ה וְנֶחֱרָצָ֑ה",
+      "pron": "칼라 예헤라츠",
+      "lemmas": [
+        "כָּלָה",
+        "חָרַץ"
+      ],
+      "words": [
+        {
+          "word": "כָלָ֖ה",
+          "lemma": "כָּלָה",
+          "strong": "H3617",
+          "pron": "칼라"
+        },
+        {
+          "word": "וְנֶחֱרָצָ֑ה",
+          "lemma": "חָרַץ",
+          "strong": "H2782",
+          "pron": "예헤라츠"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 10:23",
+        "isaiah 28:22",
+        "daniel 9:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹֽא עֲשִׂיתָ֥ם כָּלָ֖ה",
+      "pron": "로 바야아스 칼라",
+      "lemmas": [
+        "לֹא",
+        "עָשָׂה",
+        "כָּלָה"
+      ],
+      "words": [
+        {
+          "word": "לֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "עֲשִׂיתָ֥ם",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "כָּלָ֖ה",
+          "lemma": "כָּלָה",
+          "strong": "H3617",
+          "pron": "칼라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "nehemiah 9:31",
+        "jeremiah 30:11",
+        "jeremiah 46:28"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

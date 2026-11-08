@@ -1,8 +1,8 @@
 {
   "lemma": "רוּחַ",
-  "pron": "루아흐",
+  "pron": "루하",
   "strong": "H7308",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רוּחַ",
     "strong": "H7307",
@@ -12,13 +12,155 @@
     {
       "lemma": "רוּחַ",
       "strong": "H7307",
-      "pron": "루아흐",
+      "pron": "브루아흐",
       "glossKo": "영"
     }
   ],
   "defEn": "mind, spirit, wind.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 11,
+  "byBook": {
+    "daniel": 11
+  },
+  "phrases": [
+    {
+      "hebrew": "דִּ֠י ר֣וּחַ",
+      "pron": "드흐브 루하",
+      "lemmas": [
+        "דִּי",
+        "רוּחַ"
+      ],
+      "words": [
+        {
+          "word": "דִּ֠י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "ר֣וּחַ",
+          "lemma": "רוּחַ",
+          "strong": "H7308",
+          "pron": "루하"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "daniel 4:8",
+        "daniel 4:9",
+        "daniel 4:18",
+        "daniel 5:11",
+        "daniel 5:12",
+        "daniel 5:14",
+        "daniel 6:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְדִ֛י רֽוּחַ אֱלָהִ֥ין",
+      "pron": "드흐브 루하 엘라하",
+      "lemmas": [
+        "דִּי",
+        "רוּחַ",
+        "אֱלָהּ"
+      ],
+      "words": [
+        {
+          "word": "וְדִ֛י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "רֽוּחַ",
+          "lemma": "רוּחַ",
+          "strong": "H7308",
+          "pron": "루하"
+        },
+        {
+          "word": "אֱלָהִ֥ין",
+          "lemma": "אֱלָהּ",
+          "strong": "H426",
+          "pron": "엘라하"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 4:8",
+        "daniel 4:9",
+        "daniel 4:18",
+        "daniel 5:11",
+        "daniel 5:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רֽוּחַ אֱלָהִ֥ין",
+      "pron": "루하 엘라하",
+      "lemmas": [
+        "רוּחַ",
+        "אֱלָהּ"
+      ],
+      "words": [
+        {
+          "word": "רֽוּחַ",
+          "lemma": "רוּחַ",
+          "strong": "H7308",
+          "pron": "루하"
+        },
+        {
+          "word": "אֱלָהִ֥ין",
+          "lemma": "אֱלָהּ",
+          "strong": "H426",
+          "pron": "엘라하"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 4:8",
+        "daniel 4:9",
+        "daniel 4:18",
+        "daniel 5:11",
+        "daniel 5:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רֽוּחַ אֱלָהִ֥ין קַדִּישִׁ֖ין",
+      "pron": "루하 엘라하 칻디신",
+      "lemmas": [
+        "רוּחַ",
+        "אֱלָהּ",
+        "קַדִּישׁ"
+      ],
+      "words": [
+        {
+          "word": "רֽוּחַ",
+          "lemma": "רוּחַ",
+          "strong": "H7308",
+          "pron": "루하"
+        },
+        {
+          "word": "אֱלָהִ֥ין",
+          "lemma": "אֱלָהּ",
+          "strong": "H426",
+          "pron": "엘라하"
+        },
+        {
+          "word": "קַדִּישִׁ֖ין",
+          "lemma": "קַדִּישׁ",
+          "strong": "H6922",
+          "pron": "칻디신"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:8",
+        "daniel 4:9",
+        "daniel 4:18",
+        "daniel 5:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

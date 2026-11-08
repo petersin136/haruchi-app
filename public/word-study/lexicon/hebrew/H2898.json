@@ -1,6 +1,6 @@
 {
   "lemma": "טוּב",
-  "pron": "둡카",
+  "pron": "둡",
   "strong": "H2898",
   "posKo": "명사",
   "root": {
@@ -12,19 +12,19 @@
     {
       "lemma": "טָבְאֵל",
       "strong": "H2870",
-      "pron": "",
+      "pron": "답엘",
       "glossKo": "다브엘"
     },
     {
       "lemma": "טַבְרִמּוֹן",
       "strong": "H2886",
-      "pron": "",
+      "pron": "답림몬",
       "glossKo": "다브림몬"
     },
     {
       "lemma": "טוֹב",
       "strong": "H2895",
-      "pron": "우메딥",
+      "pron": "돕",
       "glossKo": "좋다"
     },
     {
@@ -36,10 +36,170 @@
   ],
   "defEn": "good; goodness; best; beauty; gladness; welfare",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 32,
   "byBook": {
     "psalms": 7,
-    "genesis": 4
+    "genesis": 4,
+    "nehemiah": 4,
+    "isaiah": 3,
+    "jeremiah": 3,
+    "deuteronomy": 2,
+    "hosea": 2,
+    "job": 2,
+    "exodus": 1,
+    "ezra": 1,
+    "kings2": 1,
+    "proverbs": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְכָל ט֥וּב",
+      "pron": "칼 둡",
+      "lemmas": [
+        "כֹּל",
+        "טוּב"
+      ],
+      "words": [
+        {
+          "word": "וְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "ט֥וּב",
+          "lemma": "טוּב",
+          "strong": "H2898",
+          "pron": "둡"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 24:10",
+        "exodus 33:19",
+        "deuteronomy 6:11",
+        "kings2 8:9",
+        "nehemiah 9:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת טוּב֙",
+      "pron": "에트 둡",
+      "lemmas": [
+        "אֵת",
+        "טוּב"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "טוּב֙",
+          "lemma": "טוּב",
+          "strong": "H2898",
+          "pron": "둡"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 45:18",
+        "ezra 9:12",
+        "nehemiah 9:36",
+        "jeremiah 31:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "טוּב֙ אֶ֣רֶץ",
+      "pron": "둡 하아레츠",
+      "lemmas": [
+        "טוּב",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "טוּב֙",
+          "lemma": "טוּב",
+          "strong": "H2898",
+          "pron": "둡"
+        },
+        {
+          "word": "אֶ֣רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 45:18",
+        "ezra 9:12",
+        "isaiah 1:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "טוּבְךָ֣ יְהוָֽה",
+      "pron": "둡 여호와",
+      "lemmas": [
+        "טוּב",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "טוּבְךָ֣",
+          "lemma": "טוּב",
+          "strong": "H2898",
+          "pron": "둡"
+        },
+        {
+          "word": "יְהוָֽה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 25:7",
+        "psalms 27:13",
+        "jeremiah 31:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רַֽב טוּבְךָ֮",
+      "pron": "랍바 둡",
+      "lemmas": [
+        "רַב",
+        "טוּב"
+      ],
+      "words": [
+        {
+          "word": "רַֽב",
+          "lemma": "רַב",
+          "strong": "H7227",
+          "pron": "랍바"
+        },
+        {
+          "word": "טוּבְךָ֮",
+          "lemma": "טוּב",
+          "strong": "H2898",
+          "pron": "둡"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 31:19",
+        "psalms 145:7",
+        "isaiah 63:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

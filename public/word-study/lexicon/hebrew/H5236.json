@@ -12,65 +12,120 @@
     {
       "lemma": "הַכָּרָה",
       "strong": "H1971",
-      "pron": "",
+      "pron": "학카라트",
       "glossKo": "치우치지 않음"
     },
     {
       "lemma": "מַכָּר",
       "strong": "H4378",
-      "pron": "",
-      "glossKo": "친지"
+      "pron": "막카로",
+      "glossKo": "그의 친지"
     },
     {
       "lemma": "נָכַר",
       "strong": "H5234",
-      "pron": "약키레누",
+      "pron": "힉키로",
       "glossKo": "그에게 알아보다"
     },
     {
       "lemma": "נֶכֶר",
       "strong": "H5235",
-      "pron": "",
+      "pron": "브네케르",
       "glossKo": "이상한"
     }
   ],
   "defEn": "foreign; foreigner; heathendom",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 36,
   "byBook": {
     "psalms": 6,
-    "genesis": 4
+    "isaiah": 5,
+    "genesis": 4,
+    "ezekiel": 3,
+    "chronicles2": 2,
+    "deuteronomy": 2,
+    "jeremiah": 2,
+    "joshua": 2,
+    "nehemiah": 2,
+    "samuel2": 2,
+    "daniel": 1,
+    "exodus": 1,
+    "judges": 1,
+    "leviticus": 1,
+    "malachi": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
-      "hebrew": "בְּנֵֽי נֵ֝כָ֗ר",
-      "pron": "베니위 네카르",
+      "hebrew": "בֶּן נֵכָ֔ר",
+      "pron": "바님 네카르",
       "lemmas": [
         "בֵּן",
         "נֵכָר"
       ],
       "words": [
         {
-          "word": "בְּנֵֽי",
+          "word": "בֶּן",
           "lemma": "בֵּן",
           "strong": "H1121",
-          "pron": "베니위"
+          "pron": "바님"
         },
         {
-          "word": "נֵ֝כָ֗ר",
+          "word": "נֵכָ֔ר",
           "lemma": "נֵכָר",
           "strong": "H5236",
           "pron": "네카르"
         }
       ],
-      "count": 6,
+      "count": 19,
       "refs": [
+        "genesis 17:12",
+        "genesis 17:27",
+        "exodus 12:43",
+        "leviticus 22:25",
+        "samuel2 22:45",
+        "samuel2 22:46",
+        "nehemiah 9:2",
         "psalms 18:44",
         "psalms 18:45",
         "psalms 144:7",
         "psalms 144:11",
-        "genesis 17:12",
-        "genesis 17:27"
+        "isaiah 56:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֱלֹהֵ֤י הַנֵּכָר֙",
+      "pron": "엘로힘 네카르",
+      "lemmas": [
+        "אֱלֹהִים",
+        "נֵכָר"
+      ],
+      "words": [
+        {
+          "word": "אֱלֹהֵ֤י",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "הַנֵּכָר֙",
+          "lemma": "נֵכָר",
+          "strong": "H5236",
+          "pron": "네카르"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "genesis 35:2",
+        "genesis 35:4",
+        "deuteronomy 31:16",
+        "joshua 24:20",
+        "joshua 24:23",
+        "judges 10:16",
+        "samuel1 7:3",
+        "chronicles2 33:15",
+        "jeremiah 5:19"
       ],
       "glossKo": ""
     },
@@ -95,12 +150,90 @@
           "pron": "아셰르"
         }
       ],
-      "count": 4,
+      "count": 7,
       "refs": [
-        "psalms 144:11",
         "genesis 17:12",
         "genesis 35:2",
-        "genesis 35:4"
+        "genesis 35:4",
+        "joshua 24:23",
+        "psalms 144:11",
+        "ezekiel 44:9",
+        "daniel 11:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת אֱלֹהֵ֤י הַנֵּכָר֙",
+      "pron": "에트 엘로힘 네카르",
+      "lemmas": [
+        "אֵת",
+        "אֱלֹהִים",
+        "נֵכָר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "אֱלֹהֵ֤י",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "הַנֵּכָר֙",
+          "lemma": "נֵכָר",
+          "strong": "H5236",
+          "pron": "네카르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 35:2",
+        "joshua 24:23",
+        "judges 10:16",
+        "samuel1 7:3",
+        "chronicles2 33:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִכֹּ֣ל בֶּן נֵכָ֔ר",
+      "pron": "칼 바님 네카르",
+      "lemmas": [
+        "כֹּל",
+        "בֵּן",
+        "נֵכָר"
+      ],
+      "words": [
+        {
+          "word": "מִכֹּ֣ל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נֵכָ֔ר",
+          "lemma": "נֵכָר",
+          "strong": "H5236",
+          "pron": "네카르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 17:12",
+        "exodus 12:43",
+        "nehemiah 9:2",
+        "ezekiel 44:9"
       ],
       "glossKo": ""
     }

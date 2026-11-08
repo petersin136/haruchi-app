@@ -1,6 +1,6 @@
 {
   "lemma": "מִדְבָּר",
-  "pron": "믿바르",
+  "pron": "아믿바르",
   "strong": "H4057",
   "posKo": "명사",
   "root": {
@@ -12,46 +12,251 @@
     {
       "lemma": "דְּבוֹרָה",
       "strong": "H1682",
-      "pron": "키데보림",
+      "pron": "아데보림",
       "glossKo": "꿀벌"
     },
     {
       "lemma": "דְּבִיר",
       "strong": "H1687",
-      "pron": "데비르",
+      "pron": "브라데비르",
       "glossKo": "지성소"
     },
     {
       "lemma": "דָבַר",
       "strong": "H1696",
-      "pron": "예답베르",
+      "pron": "바예답베르",
       "glossKo": "이야기하다"
     },
     {
       "lemma": "דָּבָר",
       "strong": "H1697",
-      "pron": "딥레",
+      "pron": "우데바림",
       "glossKo": "말씀"
     },
     {
       "lemma": "דֶּבֶר",
       "strong": "H1698",
-      "pron": "라데베르",
+      "pron": "바데베르",
       "glossKo": "전염병"
     },
     {
       "lemma": "דֹּבֶר",
       "strong": "H1699",
-      "pron": "",
-      "glossKo": "초장"
+      "pron": "케답람",
+      "glossKo": "그들의 초장"
     }
   ],
   "defEn": "pasture",
   "defKo": "",
-  "countOT": 26,
+  "countOT": 271,
   "byBook": {
+    "numbers": 48,
+    "exodus": 27,
+    "isaiah": 21,
+    "jeremiah": 21,
+    "deuteronomy": 19,
     "psalms": 19,
-    "genesis": 7
+    "samuel1": 18,
+    "ezekiel": 15,
+    "joshua": 15,
+    "judges": 9,
+    "chronicles2": 7,
+    "genesis": 7,
+    "samuel2": 6,
+    "hosea": 5,
+    "joel": 5,
+    "chronicles1": 4,
+    "kings1": 4,
+    "leviticus": 4,
+    "job": 3,
+    "lamentations": 3,
+    "songofsolomon": 3,
+    "amos": 2,
+    "nehemiah": 2,
+    "kings2": 1,
+    "malachi": 1,
+    "proverbs": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּמִדְבַּ֥ר סִינָֽי",
+      "pron": "아믿바르 시나이",
+      "lemmas": [
+        "מִדְבָּר",
+        "סִינַי"
+      ],
+      "words": [
+        {
+          "word": "בְּמִדְבַּ֥ר",
+          "lemma": "מִדְבָּר",
+          "strong": "H4057",
+          "pron": "아믿바르"
+        },
+        {
+          "word": "סִינָֽי",
+          "lemma": "סִינַי",
+          "strong": "H5514",
+          "pron": "시나이"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 19:1",
+        "exodus 19:2",
+        "leviticus 7:38",
+        "numbers 1:1",
+        "numbers 1:19",
+        "numbers 3:4",
+        "numbers 3:14",
+        "numbers 9:1",
+        "numbers 9:5",
+        "numbers 10:12",
+        "numbers 26:64",
+        "numbers 33:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל מִדְבַּר",
+      "pron": "엘 아믿바르",
+      "lemmas": [
+        "אֵל",
+        "מִדְבָּר"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "מִדְבַּר",
+          "lemma": "מִדְבָּר",
+          "strong": "H4057",
+          "pron": "아믿바르"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 15:22",
+        "exodus 16:1",
+        "exodus 16:3",
+        "exodus 16:10",
+        "exodus 18:5",
+        "numbers 13:26",
+        "numbers 20:4",
+        "numbers 24:1",
+        "samuel1 25:1",
+        "samuel1 26:2",
+        "ezekiel 20:10",
+        "ezekiel 20:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִשְׂרָאֵ֖ל בַּמִּדְבָּ֑ר",
+      "pron": "이스라엘 아믿바르",
+      "lemmas": [
+        "יִשְׂרָאֵל",
+        "מִדְבָּר"
+      ],
+      "words": [
+        {
+          "word": "יִשְׂרָאֵ֖ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        },
+        {
+          "word": "בַּמִּדְבָּ֑ר",
+          "lemma": "מִדְבָּר",
+          "strong": "H4057",
+          "pron": "아믿바르"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 17:1",
+        "numbers 15:32",
+        "numbers 21:23",
+        "numbers 26:64",
+        "joshua 5:6",
+        "joshua 14:10",
+        "judges 11:16",
+        "chronicles2 24:9",
+        "ezekiel 20:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּמִּדְבָּ֛ר בְּאֶ֥רֶץ",
+      "pron": "아믿바르 하아레츠",
+      "lemmas": [
+        "מִדְבָּר",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "בַּמִּדְבָּ֛ר",
+          "lemma": "מִדְבָּר",
+          "strong": "H4057",
+          "pron": "아믿바르"
+        },
+        {
+          "word": "בְּאֶ֥רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "deuteronomy 4:43",
+        "kings1 9:18",
+        "jeremiah 2:2",
+        "jeremiah 2:6",
+        "jeremiah 17:6",
+        "ezekiel 19:13",
+        "ezekiel 20:36",
+        "hosea 13:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַמִּדְבָּ֖ר דֶּ֥רֶךְ",
+      "pron": "아믿바르 데레크",
+      "lemmas": [
+        "מִדְבָּר",
+        "דֶּרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "הַמִּדְבָּ֖ר",
+          "lemma": "מִדְבָּר",
+          "strong": "H4057",
+          "pron": "아믿바르"
+        },
+        {
+          "word": "דֶּ֥רֶךְ",
+          "lemma": "דֶּרֶךְ",
+          "strong": "H1870",
+          "pron": "데레크"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "numbers 14:25",
+        "deuteronomy 1:40",
+        "deuteronomy 2:1",
+        "joshua 5:4",
+        "joshua 5:5",
+        "kings1 19:4",
+        "isaiah 43:19",
+        "jeremiah 4:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

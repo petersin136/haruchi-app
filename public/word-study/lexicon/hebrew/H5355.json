@@ -12,34 +12,220 @@
     {
       "lemma": "מְנַקִּית",
       "strong": "H4518",
-      "pron": "",
-      "glossKo": "잔"
+      "pron": "움낙키오타으브",
+      "glossKo": "그의 잔"
     },
     {
       "lemma": "נְקֵא",
       "strong": "H5343",
-      "pron": "",
+      "pron": "네케",
       "glossKo": "깨끗한(아람)"
     },
     {
       "lemma": "נָקָה",
       "strong": "H5352",
-      "pron": "낙케니",
-      "glossKo": "나를 면제되다"
+      "pron": "브닉키타",
+      "glossKo": "면제되다"
     },
     {
       "lemma": "נִקָּיוֹן",
       "strong": "H5356",
-      "pron": "브닉카온",
+      "pron": "우브니케온",
       "glossKo": "결백"
     }
   ],
   "defEn": "innocent",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 43,
   "byBook": {
+    "deuteronomy": 6,
+    "jeremiah": 6,
+    "job": 6,
     "psalms": 5,
-    "genesis": 2
+    "joshua": 3,
+    "kings2": 3,
+    "exodus": 2,
+    "genesis": 2,
+    "proverbs": 2,
+    "samuel2": 2,
+    "isaiah": 1,
+    "joel": 1,
+    "jonah": 1,
+    "kings1": 1,
+    "numbers": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "דָּ֣ם נָקִ֑י",
+      "pron": "데메 나키",
+      "lemmas": [
+        "דָּם",
+        "נָקִי"
+      ],
+      "words": [
+        {
+          "word": "דָּ֣ם",
+          "lemma": "דָּם",
+          "strong": "H1818",
+          "pron": "데메"
+        },
+        {
+          "word": "נָקִ֑י",
+          "lemma": "נָקִי",
+          "strong": "H5355",
+          "pron": "나키"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "deuteronomy 19:10",
+        "deuteronomy 19:13",
+        "deuteronomy 21:8",
+        "deuteronomy 21:9",
+        "deuteronomy 27:25",
+        "samuel1 19:5",
+        "kings2 21:16",
+        "kings2 24:4",
+        "psalms 94:21",
+        "psalms 106:38",
+        "proverbs 6:17",
+        "isaiah 59:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִשָּׁפֵךְ֙ דָּ֣ם נָקִ֔י",
+      "pron": "쇼페크 데메 나키",
+      "lemmas": [
+        "שָׁפַךְ",
+        "דָּם",
+        "נָקִי"
+      ],
+      "words": [
+        {
+          "word": "יִשָּׁפֵךְ֙",
+          "lemma": "שָׁפַךְ",
+          "strong": "H8210",
+          "pron": "쇼페크"
+        },
+        {
+          "word": "דָּ֣ם",
+          "lemma": "דָּם",
+          "strong": "H1818",
+          "pron": "데메"
+        },
+        {
+          "word": "נָקִ֔י",
+          "lemma": "נָקִי",
+          "strong": "H5355",
+          "pron": "나키"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 19:10",
+        "psalms 106:38",
+        "proverbs 6:17",
+        "isaiah 59:7",
+        "joel 3:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָיִ֥יתָ נָקִ֖י",
+      "pron": "하에타 나키",
+      "lemmas": [
+        "הָיָה",
+        "נָקִי"
+      ],
+      "words": [
+        {
+          "word": "וְהָיִ֥יתָ",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "נָקִ֖י",
+          "lemma": "נָקִי",
+          "strong": "H5355",
+          "pron": "나키"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 24:41",
+        "genesis 44:10",
+        "numbers 32:22",
+        "joshua 2:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דָּ֣ם נָקִ֔י בְּקֶ֣רֶב",
+      "pron": "데메 나키 베키렙바흐",
+      "lemmas": [
+        "דָּם",
+        "נָקִי",
+        "קֶרֶב"
+      ],
+      "words": [
+        {
+          "word": "דָּ֣ם",
+          "lemma": "דָּם",
+          "strong": "H1818",
+          "pron": "데메"
+        },
+        {
+          "word": "נָקִ֔י",
+          "lemma": "נָקִי",
+          "strong": "H5355",
+          "pron": "나키"
+        },
+        {
+          "word": "בְּקֶ֣רֶב",
+          "lemma": "קֶרֶב",
+          "strong": "H7130",
+          "pron": "베키렙바흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 19:10",
+        "deuteronomy 21:8",
+        "deuteronomy 21:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נָקִ֔י בְּקֶ֣רֶב",
+      "pron": "나키 베키렙바흐",
+      "lemmas": [
+        "נָקִי",
+        "קֶרֶב"
+      ],
+      "words": [
+        {
+          "word": "נָקִ֔י",
+          "lemma": "נָקִי",
+          "strong": "H5355",
+          "pron": "나키"
+        },
+        {
+          "word": "בְּקֶ֣רֶב",
+          "lemma": "קֶרֶב",
+          "strong": "H7130",
+          "pron": "베키렙바흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 19:10",
+        "deuteronomy 21:8",
+        "deuteronomy 21:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

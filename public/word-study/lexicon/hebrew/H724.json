@@ -2,7 +2,7 @@
   "lemma": "אֲרוּכָה",
   "pron": "아루카",
   "strong": "H724",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אָרַךְ",
     "strong": "H748",
@@ -12,13 +12,13 @@
     {
       "lemma": "אָרַךְ",
       "strong": "H748",
-      "pron": "헤에리쿠",
+      "pron": "아레쿠",
       "glossKo": "길게 하다"
     },
     {
       "lemma": "אֲרַךְ",
       "strong": "H749",
-      "pron": "",
+      "pron": "아리크",
       "glossKo": "적합하다(아람)"
     },
     {
@@ -36,7 +36,7 @@
     {
       "lemma": "אָרֹךְ",
       "strong": "H752",
-      "pron": "",
+      "pron": "아룩카",
       "glossKo": "긴"
     },
     {
@@ -48,7 +48,44 @@
   ],
   "defEn": "wholeness",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "jeremiah": 3,
+    "chronicles2": 1,
+    "isaiah": 1,
+    "nehemiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וַתַּ֧עַל אֲרוּכָ֛ה",
+      "pron": "야알레 아루카",
+      "lemmas": [
+        "עָלָה",
+        "אֲרוּכָה"
+      ],
+      "words": [
+        {
+          "word": "וַתַּ֧עַל",
+          "lemma": "עָלָה",
+          "strong": "H5927",
+          "pron": "야알레"
+        },
+        {
+          "word": "אֲרוּכָ֛ה",
+          "lemma": "אֲרוּכָה",
+          "strong": "H724",
+          "pron": "아루카"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "chronicles2 24:13",
+        "nehemiah 4:7",
+        "jeremiah 8:22",
+        "jeremiah 30:17",
+        "jeremiah 33:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "גּוֹלָה",
-  "pron": "골라",
+  "pron": "골레",
   "strong": "H1473",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גָּלָה",
     "strong": "H1540",
@@ -10,39 +10,218 @@
   },
   "family": [
     {
+      "lemma": "גּוֹלָן",
+      "strong": "H1474",
+      "pron": "골란",
+      "glossKo": "골란"
+    },
+    {
       "lemma": "גָּלָה",
       "strong": "H1540",
-      "pron": "바익갈루",
+      "pron": "바이텍갈",
       "glossKo": "드러내다"
     },
     {
       "lemma": "גְּלָה",
       "strong": "H1541",
-      "pron": "",
+      "pron": "학리",
       "glossKo": "드러나다(아람)"
     },
     {
       "lemma": "גִּלֹה",
       "strong": "H1542",
-      "pron": "",
+      "pron": "브길로",
       "glossKo": "길로"
     },
     {
       "lemma": "גָּלוּת",
       "strong": "H1546",
-      "pron": "",
+      "pron": "르갈루트",
       "glossKo": "사로잡힘"
     },
     {
       "lemma": "גִּלָּיוֹן",
       "strong": "H1549",
-      "pron": "",
+      "pron": "브아길오님",
       "glossKo": "기록판"
     }
   ],
   "defEn": "exile; exiles",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 43,
+  "byBook": {
+    "ezra": 12,
+    "ezekiel": 11,
+    "jeremiah": 10,
+    "kings2": 3,
+    "zechariah": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "esther": 1,
+    "nahum": 1,
+    "nehemiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בְּנֵ֣י הַגּוֹלָ֔ה",
+      "pron": "바님 골레",
+      "lemmas": [
+        "בֵּן",
+        "גּוֹלָה"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "הַגּוֹלָ֔ה",
+          "lemma": "גּוֹלָה",
+          "strong": "H1473",
+          "pron": "골레"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "ezra 4:1",
+        "ezra 6:19",
+        "ezra 6:20",
+        "ezra 8:35",
+        "ezra 10:7",
+        "ezra 10:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַ֨גּוֹלָ֔ה אֲשֶׁר",
+      "pron": "골레 아셰르",
+      "lemmas": [
+        "גּוֹלָה",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הַ֨גּוֹלָ֔ה",
+          "lemma": "גּוֹלָה",
+          "strong": "H1473",
+          "pron": "골레"
+        },
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezra 2:1",
+        "nehemiah 7:6",
+        "esther 2:6",
+        "jeremiah 29:4",
+        "jeremiah 29:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כְּלֵ֤י גוֹלָה֙",
+      "pron": "켈레 골레",
+      "lemmas": [
+        "כְּלִי",
+        "גּוֹלָה"
+      ],
+      "words": [
+        {
+          "word": "כְּלֵ֤י",
+          "lemma": "כְּלִי",
+          "strong": "H3627",
+          "pron": "켈레"
+        },
+        {
+          "word": "גוֹלָה֙",
+          "lemma": "גּוֹלָה",
+          "strong": "H1473",
+          "pron": "골레"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "jeremiah 46:19",
+        "jeremiah 48:11",
+        "ezekiel 12:3",
+        "ezekiel 12:4",
+        "ezekiel 12:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל הַגּוֹלָה֙",
+      "pron": "엘 골레",
+      "lemmas": [
+        "אֵל",
+        "גּוֹלָה"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "הַגּוֹלָה֙",
+          "lemma": "גּוֹלָה",
+          "strong": "H1473",
+          "pron": "골레"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 3:11",
+        "ezekiel 3:15",
+        "ezekiel 11:24",
+        "ezekiel 11:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַגּוֹלָ֔ה אֲשֶׁ֥ר הֶגְלָ֛ה",
+      "pron": "골레 아셰르 바이텍갈",
+      "lemmas": [
+        "גּוֹלָה",
+        "אֲשֶׁר",
+        "גָּלָה"
+      ],
+      "words": [
+        {
+          "word": "הַגּוֹלָ֔ה",
+          "lemma": "גּוֹלָה",
+          "strong": "H1473",
+          "pron": "골레"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הֶגְלָ֛ה",
+          "lemma": "גָּלָה",
+          "strong": "H1540",
+          "pron": "바이텍갈"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 2:1",
+        "nehemiah 7:6",
+        "esther 2:6",
+        "jeremiah 29:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

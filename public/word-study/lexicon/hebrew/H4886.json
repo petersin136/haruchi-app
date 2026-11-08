@@ -1,6 +1,6 @@
 {
   "lemma": "מָשַׁח",
-  "pron": "메샤하카",
+  "pron": "마샤헷타",
   "strong": "H4886",
   "posKo": "동사",
   "root": null,
@@ -8,34 +8,215 @@
     {
       "lemma": "מִמְשַׁח",
       "strong": "H4473",
-      "pron": "",
+      "pron": "밈샤흐",
       "glossKo": "기름 부음"
     },
     {
       "lemma": "מְשַׁח",
       "strong": "H4887",
-      "pron": "",
+      "pron": "우메샤흐",
       "glossKo": "기름(아람)"
     },
     {
       "lemma": "מִשְׁחָה",
       "strong": "H4888",
-      "pron": "",
+      "pron": "아미셰하",
       "glossKo": "기름 부음"
     },
     {
       "lemma": "מָשִׁיחַ",
       "strong": "H4899",
-      "pron": "메시흐오",
-      "glossKo": "그의 기름 부음 받은 자"
+      "pron": "아마시아흐",
+      "glossKo": "기름 부음 받은 자"
     }
   ],
   "defEn": "rub with oil; anoint",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 69,
   "byBook": {
+    "exodus": 12,
+    "leviticus": 8,
+    "numbers": 8,
+    "kings1": 7,
+    "samuel1": 7,
+    "samuel2": 7,
+    "kings2": 5,
+    "chronicles1": 3,
+    "chronicles2": 2,
+    "isaiah": 2,
+    "judges": 2,
     "psalms": 2,
-    "genesis": 1
+    "amos": 1,
+    "daniel": 1,
+    "genesis": 1,
+    "jeremiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּמָשַׁחְתָּ֥ אֶת",
+      "pron": "마샤헷타 에트",
+      "lemmas": [
+        "מָשַׁח",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וּמָשַׁחְתָּ֥",
+          "lemma": "מָשַׁח",
+          "strong": "H4886",
+          "pron": "마샤헷타"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 32,
+      "refs": [
+        "exodus 28:41",
+        "exodus 29:7",
+        "exodus 29:36",
+        "exodus 30:26",
+        "exodus 40:9",
+        "exodus 40:10",
+        "exodus 40:11",
+        "exodus 40:13",
+        "exodus 40:15",
+        "leviticus 6:20",
+        "leviticus 7:36",
+        "leviticus 8:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְשַׁחְתִּ֥יךָֽ לְמֶ֖לֶךְ",
+      "pron": "마샤헷타 멜레크",
+      "lemmas": [
+        "מָשַׁח",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "מְשַׁחְתִּ֥יךָֽ",
+          "lemma": "מָשַׁח",
+          "strong": "H4886",
+          "pron": "마샤헷타"
+        },
+        {
+          "word": "לְמֶ֖לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "samuel1 15:1",
+        "samuel2 3:39",
+        "samuel2 12:7",
+        "kings1 5:1",
+        "kings1 19:16",
+        "kings2 9:3",
+        "kings2 9:6",
+        "kings2 9:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֨ר מָשַׁ֤חְתָּ",
+      "pron": "아셰르 마샤헷타",
+      "lemmas": [
+        "אֲשֶׁר",
+        "מָשַׁח"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "מָשַׁ֤חְתָּ",
+          "lemma": "מָשַׁח",
+          "strong": "H4886",
+          "pron": "마샤헷타"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 31:13",
+        "exodus 40:15",
+        "leviticus 16:32",
+        "numbers 35:25",
+        "samuel2 19:10",
+        "chronicles2 22:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֔ה מְשַׁחְתִּ֥יךָֽ",
+      "pron": "여호와 마샤헷타",
+      "lemmas": [
+        "יְהֹוָה",
+        "מָשַׁח"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "מְשַׁחְתִּ֥יךָֽ",
+          "lemma": "מָשַׁח",
+          "strong": "H4886",
+          "pron": "마샤헷타"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 15:1",
+        "samuel2 5:3",
+        "kings2 9:3",
+        "kings2 9:12",
+        "chronicles1 11:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְשָׁחֲךָ֧ יְהוָ֛ה",
+      "pron": "마샤헷타 여호와",
+      "lemmas": [
+        "מָשַׁח",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "מְשָׁחֲךָ֧",
+          "lemma": "מָשַׁח",
+          "strong": "H4886",
+          "pron": "마샤헷타"
+        },
+        {
+          "word": "יְהוָ֛ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 10:1",
+        "samuel1 15:17",
+        "chronicles1 29:22",
+        "chronicles2 22:7",
+        "isaiah 61:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

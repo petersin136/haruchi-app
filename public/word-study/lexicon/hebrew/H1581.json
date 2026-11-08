@@ -12,25 +12,31 @@
     {
       "lemma": "גְּמוּל",
       "strong": "H1576",
-      "pron": "게물라므",
-      "glossKo": "그들의 게라"
+      "pron": "키게물",
+      "glossKo": "게라"
     },
     {
       "lemma": "גָּמוּל",
       "strong": "H1577",
-      "pron": "",
+      "pron": "르가물",
       "glossKo": "가물"
     },
     {
       "lemma": "גָּמַל",
       "strong": "H1580",
-      "pron": "가말티",
+      "pron": "바익가말",
       "glossKo": "갚다"
+    },
+    {
+      "lemma": "גְּמַלִּי",
+      "strong": "H1582",
+      "pron": "게말리",
+      "glossKo": "그말리"
     },
     {
       "lemma": "גַּמְלִיאֵל",
       "strong": "H1583",
-      "pron": "",
+      "pron": "감리엘",
       "glossKo": "가말리엘"
     },
     {
@@ -42,41 +48,27 @@
   ],
   "defEn": "camel",
   "defKo": "",
-  "countOT": 25,
+  "countOT": 55,
   "byBook": {
-    "genesis": 25
+    "genesis": 25,
+    "judges": 4,
+    "chronicles1": 3,
+    "isaiah": 3,
+    "job": 3,
+    "samuel1": 3,
+    "chronicles2": 2,
+    "jeremiah": 2,
+    "nehemiah": 2,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "ezekiel": 1,
+    "ezra": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "leviticus": 1,
+    "zechariah": 1
   },
   "phrases": [
-    {
-      "hebrew": "וְגַם גְּמַלֶּ֖יךָ",
-      "pron": "브감 우게말림",
-      "lemmas": [
-        "גַּם",
-        "גָּמָל"
-      ],
-      "words": [
-        {
-          "word": "וְגַם",
-          "lemma": "גַּם",
-          "strong": "H1571",
-          "pron": "브감"
-        },
-        {
-          "word": "גְּמַלֶּ֖יךָ",
-          "lemma": "גָּמָל",
-          "strong": "H1581",
-          "pron": "우게말림"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "genesis 24:14",
-        "genesis 24:19",
-        "genesis 24:44",
-        "genesis 24:46"
-      ],
-      "glossKo": ""
-    },
     {
       "hebrew": "עַל הַגְּמַלִּ֖ים",
       "pron": "알 우게말림",
@@ -98,18 +90,81 @@
           "pron": "우게말림"
         }
       ],
-      "count": 4,
+      "count": 7,
       "refs": [
         "genesis 24:30",
         "genesis 24:61",
         "genesis 24:64",
-        "genesis 31:17"
+        "genesis 31:17",
+        "samuel1 30:17",
+        "chronicles1 27:30",
+        "job 1:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְגַם גְּמַלֶּ֖יךָ",
+      "pron": "감 우게말림",
+      "lemmas": [
+        "גַּם",
+        "גָּמָל"
+      ],
+      "words": [
+        {
+          "word": "וְגַם",
+          "lemma": "גַּם",
+          "strong": "H1571",
+          "pron": "감"
+        },
+        {
+          "word": "גְּמַלֶּ֖יךָ",
+          "lemma": "גָּמָל",
+          "strong": "H1581",
+          "pron": "우게말림"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 24:14",
+        "genesis 24:19",
+        "genesis 24:44",
+        "genesis 24:46"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּגְמַלֵּיהֶ֣ם נֹֽשְׂאִ֗ים",
+      "pron": "우게말림 미네소",
+      "lemmas": [
+        "גָּמָל",
+        "נָשָׂא"
+      ],
+      "words": [
+        {
+          "word": "וּגְמַלֵּיהֶ֣ם",
+          "lemma": "גָּמָל",
+          "strong": "H1581",
+          "pron": "우게말림"
+        },
+        {
+          "word": "נֹֽשְׂאִ֗ים",
+          "lemma": "נָשָׂא",
+          "strong": "H5375",
+          "pron": "미네소"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 37:25",
+        "kings1 10:2",
+        "chronicles2 9:1",
+        "jeremiah 49:29"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "שְׁתֵ֔ה וְגַם גְּמַלֶּ֖יךָ",
-      "pron": "에솃테 브감 우게말림",
+      "pron": "바예솃트 감 우게말림",
       "lemmas": [
         "שָׁתָה",
         "גַּם",
@@ -120,13 +175,13 @@
           "word": "שְׁתֵ֔ה",
           "lemma": "שָׁתָה",
           "strong": "H8354",
-          "pron": "에솃테"
+          "pron": "바예솃트"
         },
         {
           "word": "וְגַם",
           "lemma": "גַּם",
           "strong": "H1571",
-          "pron": "브감"
+          "pron": "감"
         },
         {
           "word": "גְּמַלֶּ֖יךָ",
@@ -144,65 +199,31 @@
       "glossKo": ""
     },
     {
-      "hebrew": "גְּמַלֶּ֖יךָ אַשְׁקֶ֑ה",
-      "pron": "우게말림 타셰케므",
+      "hebrew": "בַּֽחֲמֹרִים֙ בַּגְּמַלִּ֔ים",
+      "pron": "바하모림 우게말림",
       "lemmas": [
-        "גָּמָל",
-        "שָׁקָה"
+        "חֲמוֹר",
+        "גָּמָל"
       ],
       "words": [
         {
-          "word": "גְּמַלֶּ֖יךָ",
+          "word": "בַּֽחֲמֹרִים֙",
+          "lemma": "חֲמוֹר",
+          "strong": "H2543",
+          "pron": "바하모림"
+        },
+        {
+          "word": "בַּגְּמַלִּ֔ים",
           "lemma": "גָּמָל",
           "strong": "H1581",
           "pron": "우게말림"
-        },
-        {
-          "word": "אַשְׁקֶ֑ה",
-          "lemma": "שָׁקָה",
-          "strong": "H8248",
-          "pron": "타셰케므"
         }
       ],
       "count": 3,
       "refs": [
-        "genesis 24:14",
-        "genesis 24:46"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וְגַם גְּמַלֶּ֖יךָ אַשְׁקֶ֑ה",
-      "pron": "브감 우게말림 타셰케므",
-      "lemmas": [
-        "גַּם",
-        "גָּמָל",
-        "שָׁקָה"
-      ],
-      "words": [
-        {
-          "word": "וְגַם",
-          "lemma": "גַּם",
-          "strong": "H1571",
-          "pron": "브감"
-        },
-        {
-          "word": "גְּמַלֶּ֖יךָ",
-          "lemma": "גָּמָל",
-          "strong": "H1581",
-          "pron": "우게말림"
-        },
-        {
-          "word": "אַשְׁקֶ֑ה",
-          "lemma": "שָׁקָה",
-          "strong": "H8248",
-          "pron": "타셰케므"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 24:14",
-        "genesis 24:46"
+        "exodus 9:3",
+        "samuel1 27:9",
+        "chronicles1 12:40"
       ],
       "glossKo": ""
     }

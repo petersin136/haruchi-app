@@ -12,20 +12,20 @@
     {
       "lemma": "חֵךְ",
       "strong": "H2441",
-      "pron": "르힉키위",
+      "pron": "힉키",
       "glossKo": "나의 입천장"
     },
     {
       "lemma": "חָנִיךְ",
       "strong": "H2593",
-      "pron": "하니카이브",
+      "pron": "하니카으브",
       "glossKo": "그의 훈련된"
     },
     {
       "lemma": "חָנַךְ",
       "strong": "H2596",
-      "pron": "",
-      "glossKo": "헌신하다"
+      "pron": "하나코",
+      "glossKo": "그에게 헌신하다"
     },
     {
       "lemma": "חֲנֻכָּה",
@@ -34,17 +34,26 @@
       "glossKo": "봉헌"
     },
     {
+      "lemma": "חֲנֹכִי",
+      "strong": "H2599",
+      "pron": "아하노키",
+      "glossKo": "하녹 자손"
+    },
+    {
       "lemma": "חָנַק",
       "strong": "H2614",
-      "pron": "",
+      "pron": "바예하나크",
       "glossKo": "목을 매다"
     }
   ],
   "defEn": "Chanok",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 16,
   "byBook": {
-    "genesis": 11
+    "genesis": 11,
+    "chronicles1": 3,
+    "exodus": 1,
+    "numbers": 1
   },
   "phrases": [
     {
@@ -78,7 +87,7 @@
     },
     {
       "hebrew": "וַתֵּ֣לֶד אֶת חֲנ֑וֹךְ",
-      "pron": "옐릳티카 에트 하노크",
+      "pron": "텔디 에트 하노크",
       "lemmas": [
         "יָלַד",
         "אֵת",
@@ -89,7 +98,7 @@
           "word": "וַתֵּ֣לֶד",
           "lemma": "יָלַד",
           "strong": "H3205",
-          "pron": "옐릳티카"
+          "pron": "텔디"
         },
         {
           "word": "אֶת",
@@ -109,6 +118,71 @@
         "genesis 4:17",
         "genesis 5:18",
         "genesis 5:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲנ֥וֹךְ וּפַלּ֖וּא",
+      "pron": "하노크 우팔루",
+      "lemmas": [
+        "חֲנוֹךְ",
+        "פַּלּוּא"
+      ],
+      "words": [
+        {
+          "word": "חֲנ֥וֹךְ",
+          "lemma": "חֲנוֹךְ",
+          "strong": "H2585",
+          "pron": "하노크"
+        },
+        {
+          "word": "וּפַלּ֖וּא",
+          "lemma": "פַּלּוּא",
+          "strong": "H6396",
+          "pron": "우팔루"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 46:9",
+        "exodus 6:14",
+        "chronicles1 5:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲנ֥וֹךְ וּפַלּ֖וּא וְחֶצְר֥וֹן",
+      "pron": "하노크 우팔루 브헤체론",
+      "lemmas": [
+        "חֲנוֹךְ",
+        "פַּלּוּא",
+        "חֶצְרוֹן"
+      ],
+      "words": [
+        {
+          "word": "חֲנ֥וֹךְ",
+          "lemma": "חֲנוֹךְ",
+          "strong": "H2585",
+          "pron": "하노크"
+        },
+        {
+          "word": "וּפַלּ֖וּא",
+          "lemma": "פַּלּוּא",
+          "strong": "H6396",
+          "pron": "우팔루"
+        },
+        {
+          "word": "וְחֶצְר֥וֹן",
+          "lemma": "חֶצְרוֹן",
+          "strong": "H2696",
+          "pron": "브헤체론"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 46:9",
+        "exodus 6:14",
+        "chronicles1 5:3"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "אֲרִי",
-  "pron": "크아레에",
+  "pron": "아레에",
   "strong": "H738",
   "posKo": "명사",
   "root": {
@@ -12,19 +12,19 @@
     {
       "lemma": "אֲרָא",
       "strong": "H690",
-      "pron": "",
+      "pron": "바에라",
       "glossKo": "아라"
     },
     {
       "lemma": "אָרָה",
       "strong": "H717",
-      "pron": "브아루하",
+      "pron": "베아루하",
       "glossKo": "그녀에게 꺾다"
     },
     {
       "lemma": "אֻרְוָה",
       "strong": "H723",
-      "pron": "",
+      "pron": "우레보트",
       "glossKo": "마구간"
     },
     {
@@ -36,22 +36,209 @@
     {
       "lemma": "אֲרִיאֵל",
       "strong": "H739",
-      "pron": "",
+      "pron": "아리엘",
       "glossKo": "용사"
     },
     {
       "lemma": "אַרְיֵה",
       "strong": "H744",
-      "pron": "",
+      "pron": "아레아바타",
       "glossKo": "사자(아람)"
     }
   ],
   "defEn": "lion",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 81,
   "byBook": {
+    "kings1": 13,
+    "jeremiah": 8,
+    "isaiah": 7,
+    "ezekiel": 5,
+    "judges": 5,
     "psalms": 5,
-    "genesis": 2
+    "amos": 4,
+    "nahum": 4,
+    "samuel2": 4,
+    "proverbs": 3,
+    "samuel1": 3,
+    "chronicles1": 2,
+    "chronicles2": 2,
+    "genesis": 2,
+    "kings2": 2,
+    "lamentations": 2,
+    "numbers": 2,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "hosea": 1,
+    "job": 1,
+    "joel": 1,
+    "micah": 1,
+    "songofsolomon": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲרָי֔וֹת עֹמְדִ֖ים",
+      "pron": "아레에 오멛",
+      "lemmas": [
+        "אֲרִי",
+        "עָמַד"
+      ],
+      "words": [
+        {
+          "word": "אֲרָי֔וֹת",
+          "lemma": "אֲרִי",
+          "strong": "H738",
+          "pron": "아레에"
+        },
+        {
+          "word": "עֹמְדִ֖ים",
+          "lemma": "עָמַד",
+          "strong": "H5975",
+          "pron": "오멛"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "kings1 10:19",
+        "kings1 10:20",
+        "kings1 13:24",
+        "kings1 13:25",
+        "kings1 13:28",
+        "chronicles2 9:18",
+        "chronicles2 9:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶֽת הָאֲרִ֛י",
+      "pron": "에트 아레에",
+      "lemmas": [
+        "אֵת",
+        "אֲרִי"
+      ],
+      "words": [
+        {
+          "word": "אֶֽת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הָאֲרִ֛י",
+          "lemma": "אֲרִי",
+          "strong": "H738",
+          "pron": "아레에"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel1 17:36",
+        "samuel2 23:20",
+        "kings1 13:25",
+        "kings2 17:25",
+        "kings2 17:26",
+        "chronicles1 11:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲרָי֔וֹת עֹמְדִ֖ים אֵ֥צֶל",
+      "pron": "아레에 오멛 에첼라흐",
+      "lemmas": [
+        "אֲרִי",
+        "עָמַד",
+        "אֵצֶל"
+      ],
+      "words": [
+        {
+          "word": "אֲרָי֔וֹת",
+          "lemma": "אֲרִי",
+          "strong": "H738",
+          "pron": "아레에"
+        },
+        {
+          "word": "עֹמְדִ֖ים",
+          "lemma": "עָמַד",
+          "strong": "H5975",
+          "pron": "오멛"
+        },
+        {
+          "word": "אֵ֥צֶל",
+          "lemma": "אֵצֶל",
+          "strong": "H681",
+          "pron": "에첼라흐"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 10:19",
+        "kings1 13:24",
+        "kings1 13:25",
+        "kings1 13:28",
+        "chronicles2 9:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲרָי֔וֹת שֹׁאֵ֖ג",
+      "pron": "아레에 쇼엑",
+      "lemmas": [
+        "אֲרִי",
+        "שָׁאַג"
+      ],
+      "words": [
+        {
+          "word": "אֲרָי֔וֹת",
+          "lemma": "אֲרִי",
+          "strong": "H738",
+          "pron": "아레에"
+        },
+        {
+          "word": "שֹׁאֵ֖ג",
+          "lemma": "שָׁאַג",
+          "strong": "H7580",
+          "pron": "쇼엑"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 14:5",
+        "ezekiel 22:25",
+        "hosea 11:10",
+        "amos 3:8",
+        "zephaniah 3:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲרָי֤וֹת בָּקָר֙",
+      "pron": "아레에 우바카르",
+      "lemmas": [
+        "אֲרִי",
+        "בָּקָר"
+      ],
+      "words": [
+        {
+          "word": "אֲרָי֤וֹת",
+          "lemma": "אֲרִי",
+          "strong": "H738",
+          "pron": "아레에"
+        },
+        {
+          "word": "בָּקָר֙",
+          "lemma": "בָּקָר",
+          "strong": "H1241",
+          "pron": "우바카르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 7:29",
+        "isaiah 11:7",
+        "isaiah 65:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

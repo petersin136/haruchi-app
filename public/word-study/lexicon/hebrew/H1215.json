@@ -12,16 +12,154 @@
     {
       "lemma": "בָּצַע",
       "strong": "H1214",
-      "pron": "우보체아",
-      "glossKo": "취하는 이"
+      "pron": "비밧체에니",
+      "glossKo": "나를 취하다"
     }
   ],
   "defEn": "plunder",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 23,
   "byBook": {
+    "jeremiah": 4,
+    "ezekiel": 3,
+    "isaiah": 3,
+    "proverbs": 3,
     "psalms": 2,
-    "genesis": 1
+    "exodus": 1,
+    "genesis": 1,
+    "habakkuk": 1,
+    "job": 1,
+    "judges": 1,
+    "malachi": 1,
+    "micah": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בּוֹצֵ֣עַ בָּ֑צַע",
+      "pron": "비밧체에니 베차",
+      "lemmas": [
+        "בָּצַע",
+        "בֶּצַע"
+      ],
+      "words": [
+        {
+          "word": "בּוֹצֵ֣עַ",
+          "lemma": "בָּצַע",
+          "strong": "H1214",
+          "pron": "비밧체에니"
+        },
+        {
+          "word": "בָּ֑צַע",
+          "lemma": "בֶּצַע",
+          "strong": "H1215",
+          "pron": "베차"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "proverbs 1:19",
+        "proverbs 15:27",
+        "jeremiah 6:13",
+        "jeremiah 8:10",
+        "ezekiel 22:27",
+        "habakkuk 2:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּ֗צַע כִּ֤י",
+      "pron": "베차 키",
+      "lemmas": [
+        "בֶּצַע",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "בֶּ֗צַע",
+          "lemma": "בֶּצַע",
+          "strong": "H1215",
+          "pron": "베차"
+        },
+        {
+          "word": "כִּ֤י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 37:26",
+        "job 22:3",
+        "malachi 3:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל בֹּ֣צֵֽעַ בָּ֑צַע",
+      "pron": "칼 비밧체에니 베차",
+      "lemmas": [
+        "כֹּל",
+        "בָּצַע",
+        "בֶּצַע"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "בֹּ֣צֵֽעַ",
+          "lemma": "בָּצַע",
+          "strong": "H1214",
+          "pron": "비밧체에니"
+        },
+        {
+          "word": "בָּ֑צַע",
+          "lemma": "בֶּצַע",
+          "strong": "H1215",
+          "pron": "베차"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 1:19",
+        "jeremiah 6:13",
+        "jeremiah 8:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַה בֶּ֗צַע",
+      "pron": "마 베차",
+      "lemmas": [
+        "מָה",
+        "בֶּצַע"
+      ],
+      "words": [
+        {
+          "word": "מַה",
+          "lemma": "מָה",
+          "strong": "H4100",
+          "pron": "마"
+        },
+        {
+          "word": "בֶּ֗צַע",
+          "lemma": "בֶּצַע",
+          "strong": "H1215",
+          "pron": "베차"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 37:26",
+        "psalms 30:9",
+        "malachi 3:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

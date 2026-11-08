@@ -1,6 +1,6 @@
 {
   "lemma": "רָבַץ",
-  "pron": "야렙비체니",
+  "pron": "로베츠",
   "strong": "H7257",
   "posKo": "동사",
   "root": null,
@@ -8,22 +8,185 @@
     {
       "lemma": "מַרְבֵּץ",
       "strong": "H4769",
-      "pron": "",
+      "pron": "르미렙바츠",
       "glossKo": "엎드림"
     },
     {
       "lemma": "רֵבֶץ",
       "strong": "H7258",
-      "pron": "",
-      "glossKo": "눕는 자리"
+      "pron": "립초",
+      "glossKo": "그의 눕는 자리"
     }
   ],
   "defEn": "crouch",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 30,
   "byBook": {
+    "isaiah": 8,
     "genesis": 5,
-    "psalms": 2
+    "ezekiel": 4,
+    "deuteronomy": 3,
+    "zephaniah": 3,
+    "psalms": 2,
+    "exodus": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "numbers": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "רֹבֶ֣צֶת תָּ֑חַת",
+      "pron": "로베츠 미타하트",
+      "lemmas": [
+        "רָבַץ",
+        "תַּחַת"
+      ],
+      "words": [
+        {
+          "word": "רֹבֶ֣צֶת",
+          "lemma": "רָבַץ",
+          "strong": "H7257",
+          "pron": "로베츠"
+        },
+        {
+          "word": "תָּ֑חַת",
+          "lemma": "תַּחַת",
+          "strong": "H8478",
+          "pron": "미타하트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 49:25",
+        "exodus 23:5",
+        "numbers 22:27",
+        "deuteronomy 33:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְרָבְצ֖וּ וְאֵ֥ין",
+      "pron": "로베츠 아인",
+      "lemmas": [
+        "רָבַץ",
+        "אַיִן"
+      ],
+      "words": [
+        {
+          "word": "וְרָבְצ֖וּ",
+          "lemma": "רָבַץ",
+          "strong": "H7257",
+          "pron": "로베츠"
+        },
+        {
+          "word": "וְאֵ֥ין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 11:19",
+        "isaiah 17:2",
+        "zephaniah 3:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְרָבְצ֖וּ וְאֵ֥ין מַחֲרִֽיד",
+      "pron": "로베츠 아인 바예헤랃",
+      "lemmas": [
+        "רָבַץ",
+        "אַיִן",
+        "חָרַד"
+      ],
+      "words": [
+        {
+          "word": "וְרָבְצ֖וּ",
+          "lemma": "רָבַץ",
+          "strong": "H7257",
+          "pron": "로베츠"
+        },
+        {
+          "word": "וְאֵ֥ין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
+        },
+        {
+          "word": "מַחֲרִֽיד",
+          "lemma": "חָרַד",
+          "strong": "H2729",
+          "pron": "바예헤랃"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 11:19",
+        "isaiah 17:2",
+        "zephaniah 3:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רָבָ֑צָה בְּת֥וֹךְ",
+      "pron": "로베츠 브토크",
+      "lemmas": [
+        "רָבַץ",
+        "תָּוֶךְ"
+      ],
+      "words": [
+        {
+          "word": "רָבָ֑צָה",
+          "lemma": "רָבַץ",
+          "strong": "H7257",
+          "pron": "로베츠"
+        },
+        {
+          "word": "בְּת֥וֹךְ",
+          "lemma": "תָּוֶךְ",
+          "strong": "H8432",
+          "pron": "브토크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 19:2",
+        "ezekiel 29:3",
+        "zephaniah 2:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רֹבְצִ֣ים עָלֶ֔יהָ",
+      "pron": "로베츠 알",
+      "lemmas": [
+        "רָבַץ",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "רֹבְצִ֣ים",
+          "lemma": "רָבַץ",
+          "strong": "H7257",
+          "pron": "로베츠"
+        },
+        {
+          "word": "עָלֶ֔יהָ",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 29:2",
+        "deuteronomy 22:6",
+        "psalms 23:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "מָצוֹר",
-  "pron": "마초르",
+  "pron": "바마초르",
   "strong": "H4692",
   "posKo": "명사",
   "root": {
@@ -10,29 +10,194 @@
   },
   "family": [
     {
+      "lemma": "מָצוֹר",
+      "strong": "H4693",
+      "pron": "마초르",
+      "glossKo": "곤경"
+    },
+    {
+      "lemma": "מְצוּרָה",
+      "strong": "H4694",
+      "pron": "메추로트",
+      "glossKo": "요새"
+    },
+    {
       "lemma": "צַוָּאר",
       "strong": "H6677",
-      "pron": "브차바르",
-      "glossKo": "목"
+      "pron": "차바라으브",
+      "glossKo": "그의 목"
     },
     {
       "lemma": "צוּר",
       "strong": "H6696",
-      "pron": "차렛타니",
-      "glossKo": "나를 포위하다"
+      "pron": "브차렛티",
+      "glossKo": "포위하다"
     },
     {
       "lemma": "צוּר",
       "strong": "H6697",
-      "pron": "추리위",
-      "glossKo": "나의 반석"
+      "pron": "아추르",
+      "glossKo": "반석"
+    },
+    {
+      "lemma": "צִיר",
+      "strong": "H6735",
+      "pron": "치레하",
+      "glossKo": "그녀의 사자"
     }
   ],
   "defEn": "hemming in; mound; siege; distress; fastness",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 26,
   "byBook": {
-    "psalms": 2
+    "deuteronomy": 5,
+    "ezekiel": 5,
+    "chronicles2": 3,
+    "jeremiah": 3,
+    "kings2": 2,
+    "micah": 2,
+    "psalms": 2,
+    "zechariah": 2,
+    "habakkuk": 1,
+    "nahum": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הָעִ֖יר בַּמָּצ֑וֹר",
+      "pron": "이르 바마초르",
+      "lemmas": [
+        "עִיר",
+        "מָצוֹר"
+      ],
+      "words": [
+        {
+          "word": "הָעִ֖יר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        },
+        {
+          "word": "בַּמָּצ֑וֹר",
+          "lemma": "מָצוֹר",
+          "strong": "H4692",
+          "pron": "바마초르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "kings2 24:10",
+        "kings2 25:2",
+        "chronicles2 8:5",
+        "chronicles2 11:5",
+        "psalms 31:21",
+        "psalms 60:9",
+        "jeremiah 52:5",
+        "micah 7:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּמָצוֹר֙ וּבְמָצ֔וֹק",
+      "pron": "바마초르 우브마초크",
+      "lemmas": [
+        "מָצוֹר",
+        "מָצוֹק"
+      ],
+      "words": [
+        {
+          "word": "בְּמָצוֹר֙",
+          "lemma": "מָצוֹר",
+          "strong": "H4692",
+          "pron": "바마초르"
+        },
+        {
+          "word": "וּבְמָצ֔וֹק",
+          "lemma": "מָצוֹק",
+          "strong": "H4689",
+          "pron": "우브마초크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 28:53",
+        "deuteronomy 28:55",
+        "deuteronomy 28:57",
+        "jeremiah 19:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּמָצוֹר֙ וּבְמָצ֔וֹק אֲשֶׁ֨ר",
+      "pron": "바마초르 우브마초크 아셰르",
+      "lemmas": [
+        "מָצוֹר",
+        "מָצוֹק",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "בְּמָצוֹר֙",
+          "lemma": "מָצוֹר",
+          "strong": "H4692",
+          "pron": "바마초르"
+        },
+        {
+          "word": "וּבְמָצ֔וֹק",
+          "lemma": "מָצוֹק",
+          "strong": "H4689",
+          "pron": "우브마초크"
+        },
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 28:53",
+        "deuteronomy 28:55",
+        "deuteronomy 28:57",
+        "jeremiah 19:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתָּבֹ֥א הָעִ֖יר בַּמָּצ֑וֹר",
+      "pron": "바야베 이르 바마초르",
+      "lemmas": [
+        "בּוֹא",
+        "עִיר",
+        "מָצוֹר"
+      ],
+      "words": [
+        {
+          "word": "וַתָּבֹ֥א",
+          "lemma": "בּוֹא",
+          "strong": "H935",
+          "pron": "바야베"
+        },
+        {
+          "word": "הָעִ֖יר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        },
+        {
+          "word": "בַּמָּצ֑וֹר",
+          "lemma": "מָצוֹר",
+          "strong": "H4692",
+          "pron": "바마초르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 24:10",
+        "kings2 25:2",
+        "jeremiah 52:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "עֶזְרָה",
-  "pron": "르엣라티위",
+  "pron": "르엣라트",
   "strong": "H5833",
   "posKo": "명사",
   "root": {
@@ -12,50 +12,57 @@
     {
       "lemma": "עֵזֶר",
       "strong": "H5828",
-      "pron": "엣르카",
-      "glossKo": "너의 도움"
+      "pron": "에제르",
+      "glossKo": "도움"
     },
     {
       "lemma": "עֵזֶר",
       "strong": "H5829",
-      "pron": "",
+      "pron": "브에제르",
       "glossKo": "에셀"
     },
     {
       "lemma": "עֶזְרָא",
       "strong": "H5830",
-      "pron": "",
+      "pron": "엣라",
       "glossKo": "에스라"
     },
     {
       "lemma": "עֶזְרָה",
       "strong": "H5834",
-      "pron": "",
+      "pron": "엣라",
       "glossKo": "에스라"
     },
     {
       "lemma": "עֶזְרִי",
       "strong": "H5836",
-      "pron": "",
+      "pron": "엣리",
       "glossKo": "에스리"
     },
     {
       "lemma": "עַזְרִיאֵל",
       "strong": "H5837",
-      "pron": "",
+      "pron": "브앗리엘",
       "glossKo": "아스리엘"
     }
   ],
   "defEn": "aid",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 26,
   "byBook": {
-    "psalms": 14
+    "psalms": 14,
+    "isaiah": 4,
+    "job": 2,
+    "judges": 2,
+    "chronicles2": 1,
+    "jeremiah": 1,
+    "lamentations": 1,
+    "nahum": 1
   },
   "phrases": [
     {
       "hebrew": "יְ֝הוָ֗ה לְעֶזְרָ֥תִי",
-      "pron": "여호와 르엣라티위",
+      "pron": "여호와 르엣라트",
       "lemmas": [
         "יְהֹוָה",
         "עֶזְרָה"
@@ -71,11 +78,12 @@
           "word": "לְעֶזְרָ֥תִי",
           "lemma": "עֶזְרָה",
           "strong": "H5833",
-          "pron": "르엣라티위"
+          "pron": "르엣라트"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
+        "judges 5:23",
         "psalms 40:13",
         "psalms 70:1",
         "psalms 94:17"
@@ -84,7 +92,7 @@
     },
     {
       "hebrew": "לְעֶזְרָ֥תִי חֽוּשָׁה",
-      "pron": "르엣라티위 후샤",
+      "pron": "르엣라트 후심",
       "lemmas": [
         "עֶזְרָה",
         "חוּשׁ"
@@ -94,13 +102,13 @@
           "word": "לְעֶזְרָ֥תִי",
           "lemma": "עֶזְרָה",
           "strong": "H5833",
-          "pron": "르엣라티위"
+          "pron": "르엣라트"
         },
         {
           "word": "חֽוּשָׁה",
           "lemma": "חוּשׁ",
           "strong": "H2363",
-          "pron": "후샤"
+          "pron": "후심"
         }
       ],
       "count": 3,

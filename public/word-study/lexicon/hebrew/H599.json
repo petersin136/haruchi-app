@@ -1,6 +1,6 @@
 {
   "lemma": "אָנַף",
-  "pron": "예에납",
+  "pron": "히테안납",
   "strong": "H599",
   "posKo": "동사",
   "root": null,
@@ -8,21 +8,88 @@
     {
       "lemma": "אֲנָפָה",
       "strong": "H601",
-      "pron": "",
+      "pron": "하아나파",
       "glossKo": "오디새"
     },
     {
       "lemma": "אַף",
       "strong": "H639",
-      "pron": "브압오",
+      "pron": "베압파으브",
       "glossKo": "그의 코"
     }
   ],
   "defEn": "breathe; be enraged",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 14,
   "byBook": {
-    "psalms": 4
+    "deuteronomy": 4,
+    "psalms": 4,
+    "kings1": 2,
+    "chronicles2": 1,
+    "ezra": 1,
+    "isaiah": 1,
+    "kings2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הִתְאַנַּ֣ף יְהוָ֔ה",
+      "pron": "히테안납 여호와",
+      "lemmas": [
+        "אָנַף",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "הִתְאַנַּ֣ף",
+          "lemma": "אָנַף",
+          "strong": "H599",
+          "pron": "히테안납"
+        },
+        {
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 1:37",
+        "deuteronomy 9:8",
+        "deuteronomy 9:20",
+        "kings1 11:9",
+        "kings2 17:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽיהוָ֥ה הִתְאַנֶּף",
+      "pron": "여호와 히테안납",
+      "lemmas": [
+        "יְהֹוָה",
+        "אָנַף"
+      ],
+      "words": [
+        {
+          "word": "וַֽיהוָ֥ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "הִתְאַנֶּף",
+          "lemma": "אָנַף",
+          "strong": "H599",
+          "pron": "히테안납"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 4:21",
+        "deuteronomy 9:8",
+        "psalms 79:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

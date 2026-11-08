@@ -18,27 +18,168 @@
     {
       "lemma": "בָּרָק",
       "strong": "H1301",
-      "pron": "",
+      "pron": "르바라크",
       "glossKo": "바락"
     },
     {
       "lemma": "בַּרְקָן",
       "strong": "H1303",
-      "pron": "",
+      "pron": "아바레코님",
       "glossKo": "찔레"
     },
     {
       "lemma": "בָּרֶקֶת",
       "strong": "H1304",
-      "pron": "",
+      "pron": "우바레케트",
       "glossKo": "녹주옥"
     }
   ],
   "defEn": "lightning",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 21,
   "byBook": {
-    "psalms": 5
+    "psalms": 5,
+    "ezekiel": 4,
+    "jeremiah": 2,
+    "job": 2,
+    "nahum": 2,
+    "daniel": 1,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "habakkuk": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּרָקִ֤ים לַמָּטָר֙",
+      "pron": "우베라킴 우마다르",
+      "lemmas": [
+        "בָּרָק",
+        "מָטַר"
+      ],
+      "words": [
+        {
+          "word": "בְּרָקִ֤ים",
+          "lemma": "בָּרָק",
+          "strong": "H1300",
+          "pron": "우베라킴"
+        },
+        {
+          "word": "לַמָּטָר֙",
+          "lemma": "מָטַר",
+          "strong": "H4306",
+          "pron": "우마다르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 135:7",
+        "jeremiah 10:13",
+        "jeremiah 51:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּרָקִ֤ים לַמָּטָר֙ עָשָׂ֔ה",
+      "pron": "우베라킴 우마다르 바야아스",
+      "lemmas": [
+        "בָּרָק",
+        "מָטַר",
+        "עָשָׂה"
+      ],
+      "words": [
+        {
+          "word": "בְּרָקִ֤ים",
+          "lemma": "בָּרָק",
+          "strong": "H1300",
+          "pron": "우베라킴"
+        },
+        {
+          "word": "לַמָּטָר֙",
+          "lemma": "מָטַר",
+          "strong": "H4306",
+          "pron": "우마다르"
+        },
+        {
+          "word": "עָשָׂ֔ה",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 135:7",
+        "jeremiah 10:13",
+        "jeremiah 51:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָ֫אָ֥רֶץ בְּרָקִ֣ים",
+      "pron": "하아레츠 우베라킴",
+      "lemmas": [
+        "אֶרֶץ",
+        "בָּרָק"
+      ],
+      "words": [
+        {
+          "word": "הָ֫אָ֥רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "בְּרָקִ֣ים",
+          "lemma": "בָּרָק",
+          "strong": "H1300",
+          "pron": "우베라킴"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 135:7",
+        "jeremiah 10:13",
+        "jeremiah 51:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָ֫אָ֥רֶץ בְּרָקִ֣ים לַמָּטָ֣ר",
+      "pron": "하아레츠 우베라킴 우마다르",
+      "lemmas": [
+        "אֶרֶץ",
+        "בָּרָק",
+        "מָטַר"
+      ],
+      "words": [
+        {
+          "word": "הָ֫אָ֥רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "בְּרָקִ֣ים",
+          "lemma": "בָּרָק",
+          "strong": "H1300",
+          "pron": "우베라킴"
+        },
+        {
+          "word": "לַמָּטָ֣ר",
+          "lemma": "מָטַר",
+          "strong": "H4306",
+          "pron": "우마다르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 135:7",
+        "jeremiah 10:13",
+        "jeremiah 51:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "אַלְיָה",
-  "pron": "알아",
+  "pron": "브하알아",
   "strong": "H451",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אָלָה",
     "strong": "H422",
@@ -12,31 +12,64 @@
     {
       "lemma": "אָלָה",
       "strong": "H421",
-      "pron": "",
+      "pron": "엘리",
       "glossKo": "애곡하다"
     },
     {
       "lemma": "אָלָה",
       "strong": "H422",
-      "pron": "",
+      "pron": "알리트",
       "glossKo": "맹세하다"
     },
     {
       "lemma": "אָלָה",
       "strong": "H423",
-      "pron": "알라",
-      "glossKo": "맹세"
+      "pron": "메알라티",
+      "glossKo": "나의 맹세"
     },
     {
       "lemma": "תַּאֲלָה",
       "strong": "H8381",
-      "pron": "",
-      "glossKo": "저주"
+      "pron": "타알라테카",
+      "glossKo": "너의 저주"
     }
   ],
   "defEn": "stout; tail",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "leviticus": 4,
+    "exodus": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְהָֽאַלְיָ֜ה וְאֶת",
+      "pron": "브하알아 에트",
+      "lemmas": [
+        "אַלְיָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְהָֽאַלְיָ֜ה",
+          "lemma": "אַלְיָה",
+          "strong": "H451",
+          "pron": "브하알아"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 29:22",
+        "leviticus 7:3",
+        "leviticus 8:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

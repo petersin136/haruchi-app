@@ -1,6 +1,6 @@
 {
   "lemma": "כַּעַס",
-  "pron": "바야케이수후",
+  "pron": "레하케이소",
   "strong": "H3707",
   "posKo": "동사",
   "root": null,
@@ -14,9 +14,204 @@
   ],
   "defEn": "trouble",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 55,
   "byBook": {
-    "psalms": 3
+    "jeremiah": 12,
+    "kings1": 10,
+    "kings2": 7,
+    "deuteronomy": 6,
+    "chronicles2": 4,
+    "ezekiel": 4,
+    "psalms": 3,
+    "ecclesiastes": 2,
+    "nehemiah": 2,
+    "samuel1": 2,
+    "hosea": 1,
+    "isaiah": 1,
+    "judges": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לְהַכְעִ֗יס אֶת",
+      "pron": "레하케이소 에트",
+      "lemmas": [
+        "כַּעַס",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "לְהַכְעִ֗יס",
+          "lemma": "כַּעַס",
+          "strong": "H3707",
+          "pron": "레하케이소"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "judges 2:12",
+        "kings1 14:9",
+        "kings1 14:15",
+        "kings1 15:30",
+        "kings1 16:13",
+        "kings1 16:26",
+        "kings1 16:33",
+        "kings1 22:53",
+        "kings2 17:11",
+        "kings2 21:15",
+        "chronicles2 28:25",
+        "isaiah 65:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְהַכְעִ֗יס אֶת יְהוָ֛ה",
+      "pron": "레하케이소 에트 여호와",
+      "lemmas": [
+        "כַּעַס",
+        "אֵת",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "לְהַכְעִ֗יס",
+          "lemma": "כַּעַס",
+          "strong": "H3707",
+          "pron": "레하케이소"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יְהוָ֛ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "judges 2:12",
+        "kings1 14:15",
+        "kings1 15:30",
+        "kings1 16:13",
+        "kings1 16:26",
+        "kings1 16:33",
+        "kings1 22:53",
+        "kings2 17:11",
+        "chronicles2 28:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּעֵינֵ֥י יְהוָ֖ה לְהַכְעִיסֽוֹ",
+      "pron": "에네켐 여호와 레하케이소",
+      "lemmas": [
+        "עַיִן",
+        "יְהֹוָה",
+        "כַּעַס"
+      ],
+      "words": [
+        {
+          "word": "בְּעֵינֵ֥י",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        },
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "לְהַכְעִיסֽוֹ",
+          "lemma": "כַּעַס",
+          "strong": "H3707",
+          "pron": "레하케이소"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 9:18",
+        "deuteronomy 31:29",
+        "kings1 16:7",
+        "kings2 17:17",
+        "kings2 21:6",
+        "chronicles2 33:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֖ה לְהַכְעִיסֽוֹ",
+      "pron": "여호와 레하케이소",
+      "lemmas": [
+        "יְהֹוָה",
+        "כַּעַס"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "לְהַכְעִיסֽוֹ",
+          "lemma": "כַּעַס",
+          "strong": "H3707",
+          "pron": "레하케이소"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 9:18",
+        "deuteronomy 31:29",
+        "kings1 16:7",
+        "kings2 17:17",
+        "kings2 21:6",
+        "chronicles2 33:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְמַ֨עַן֙ הַכְעִיסֵ֔נִי",
+      "pron": "레마안 레하케이소",
+      "lemmas": [
+        "מַעַן",
+        "כַּעַס"
+      ],
+      "words": [
+        {
+          "word": "לְמַ֨עַן֙",
+          "lemma": "מַעַן",
+          "strong": "H4616",
+          "pron": "레마안"
+        },
+        {
+          "word": "הַכְעִיסֵ֔נִי",
+          "lemma": "כַּעַס",
+          "strong": "H3707",
+          "pron": "레하케이소"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings2 22:17",
+        "chronicles2 34:25",
+        "jeremiah 7:18",
+        "jeremiah 25:7",
+        "jeremiah 32:29"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

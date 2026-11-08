@@ -1,8 +1,8 @@
 {
   "lemma": "שֻׁם",
-  "pron": "슘",
+  "pron": "브슘",
   "strong": "H8036",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שֵׁם",
     "strong": "H8034",
@@ -12,8 +12,8 @@
     {
       "lemma": "שֵׁם",
       "strong": "H8034",
-      "pron": "셰메카",
-      "glossKo": "너의 이름"
+      "pron": "솀",
+      "glossKo": "이름"
     },
     {
       "lemma": "שֵׁם",
@@ -26,11 +26,158 @@
       "strong": "H8038",
       "pron": "브솀에베르",
       "glossKo": "세메벨"
+    },
+    {
+      "lemma": "שְׁמִידָע",
+      "strong": "H8061",
+      "pron": "우셰미다",
+      "glossKo": "스미다"
+    },
+    {
+      "lemma": "שְׁמִירָמוֹת",
+      "strong": "H8070",
+      "pron": "우셰미라모트",
+      "glossKo": "스미라못"
     }
   ],
   "defEn": "name.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 12,
+  "byBook": {
+    "daniel": 6,
+    "ezra": 6
+  },
+  "phrases": [
+    {
+      "hebrew": "שְׁמֵ֖הּ בֵּלְטְשַׁאצַּ֑ר",
+      "pron": "브슘 벨데샷차르",
+      "lemmas": [
+        "שֻׁם",
+        "בֵּלְטְשַׁאצַּר"
+      ],
+      "words": [
+        {
+          "word": "שְׁמֵ֖הּ",
+          "lemma": "שֻׁם",
+          "strong": "H8036",
+          "pron": "브슘"
+        },
+        {
+          "word": "בֵּלְטְשַׁאצַּ֑ר",
+          "lemma": "בֵּלְטְשַׁאצַּר",
+          "strong": "H1096",
+          "pron": "벨데샷차르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 2:26",
+        "daniel 4:8",
+        "daniel 4:19",
+        "daniel 5:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּ֥י שְׁמֵ֖הּ",
+      "pron": "드흐브 브슘",
+      "lemmas": [
+        "דִּי",
+        "שֻׁם"
+      ],
+      "words": [
+        {
+          "word": "דִּ֥י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "שְׁמֵ֖הּ",
+          "lemma": "שֻׁם",
+          "strong": "H8036",
+          "pron": "브슘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:26",
+        "daniel 4:8",
+        "daniel 4:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּ֥י שְׁמֵ֖הּ בֵּלְטְשַׁאצַּ֑ר",
+      "pron": "드흐브 브슘 벨데샷차르",
+      "lemmas": [
+        "דִּי",
+        "שֻׁם",
+        "בֵּלְטְשַׁאצַּר"
+      ],
+      "words": [
+        {
+          "word": "דִּ֥י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "שְׁמֵ֖הּ",
+          "lemma": "שֻׁם",
+          "strong": "H8036",
+          "pron": "브슘"
+        },
+        {
+          "word": "בֵּלְטְשַׁאצַּ֑ר",
+          "lemma": "בֵּלְטְשַׁאצַּר",
+          "strong": "H1096",
+          "pron": "벨데샷차르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:26",
+        "daniel 4:8",
+        "daniel 4:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְדָנִיֵּ֔אל דִּ֥י שְׁמֵ֖הּ",
+      "pron": "다니엘 드흐브 브슘",
+      "lemmas": [
+        "דָּנִיֵּאל",
+        "דִּי",
+        "שֻׁם"
+      ],
+      "words": [
+        {
+          "word": "לְדָנִיֵּ֔אל",
+          "lemma": "דָּנִיֵּאל",
+          "strong": "H1841",
+          "pron": "다니엘"
+        },
+        {
+          "word": "דִּ֥י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "שְׁמֵ֖הּ",
+          "lemma": "שֻׁם",
+          "strong": "H8036",
+          "pron": "브슘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:26",
+        "daniel 4:8",
+        "daniel 4:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

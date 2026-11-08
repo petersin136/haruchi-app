@@ -1,14 +1,20 @@
 {
   "lemma": "אַנְתָּה",
-  "pron": "안타",
+  "pron": "브안트",
   "strong": "H607",
-  "posKo": "",
+  "posKo": "대명사",
   "root": {
     "lemma": "אַתָּה",
     "strong": "H859",
     "glossKo": "너"
   },
   "family": [
+    {
+      "lemma": "אַנְתּוּן",
+      "strong": "H608",
+      "pron": "안툰",
+      "glossKo": "너희(아람)"
+    },
     {
       "lemma": "אַתָּה",
       "strong": "H859",
@@ -18,7 +24,182 @@
   ],
   "defEn": "thou",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 25,
+  "byBook": {
+    "daniel": 24,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "ואנתה וְאַ֨נְתְּ",
+      "pron": "브안트 브안트",
+      "lemmas": [
+        "אַנְתָּה",
+        "אַנְתָּה"
+      ],
+      "words": [
+        {
+          "word": "ואנתה",
+          "lemma": "אַנְתָּה",
+          "strong": "H607",
+          "pron": "브안트"
+        },
+        {
+          "word": "וְאַ֨נְתְּ",
+          "lemma": "אַנְתָּה",
+          "strong": "H607",
+          "pron": "브안트"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "daniel 3:10",
+        "daniel 4:18",
+        "daniel 4:22",
+        "daniel 5:13",
+        "daniel 5:18",
+        "daniel 5:22",
+        "daniel 5:23",
+        "daniel 6:16",
+        "daniel 6:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַ֣נְתְּה מַלְכָּ֗א",
+      "pron": "브안트 말카",
+      "lemmas": [
+        "אַנְתָּה",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "אַ֣נְתְּה",
+          "lemma": "אַנְתָּה",
+          "strong": "H607",
+          "pron": "브안트"
+        },
+        {
+          "word": "מַלְכָּ֗א",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4430",
+          "pron": "말카"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 2:29",
+        "daniel 2:31",
+        "daniel 2:37",
+        "daniel 3:10",
+        "daniel 5:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אנתה אַנְתְּ ה֣וּא",
+      "pron": "브안트 브안트 브후",
+      "lemmas": [
+        "אַנְתָּה",
+        "אַנְתָּה",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "אנתה",
+          "lemma": "אַנְתָּה",
+          "strong": "H607",
+          "pron": "브안트"
+        },
+        {
+          "word": "אַנְתְּ",
+          "lemma": "אַנְתָּה",
+          "strong": "H607",
+          "pron": "브안트"
+        },
+        {
+          "word": "ה֣וּא",
+          "lemma": "הוּא",
+          "strong": "H1932",
+          "pron": "브후"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:22",
+        "daniel 5:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אנתה אַ֣נְתְּ מַלְכָּא֮",
+      "pron": "브안트 브안트 말카",
+      "lemmas": [
+        "אַנְתָּה",
+        "אַנְתָּה",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "אנתה",
+          "lemma": "אַנְתָּה",
+          "strong": "H607",
+          "pron": "브안트"
+        },
+        {
+          "word": "אַ֣נְתְּ",
+          "lemma": "אַנְתָּה",
+          "strong": "H607",
+          "pron": "브안트"
+        },
+        {
+          "word": "מַלְכָּא֮",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4430",
+          "pron": "말카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 3:10",
+        "daniel 5:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אנתה אַ֤נְתְּ פָּֽלַֽח",
+      "pron": "브안트 브안트 우팔헤",
+      "lemmas": [
+        "אַנְתָּה",
+        "אַנְתָּה",
+        "פְּלַח"
+      ],
+      "words": [
+        {
+          "word": "אנתה",
+          "lemma": "אַנְתָּה",
+          "strong": "H607",
+          "pron": "브안트"
+        },
+        {
+          "word": "אַ֤נְתְּ",
+          "lemma": "אַנְתָּה",
+          "strong": "H607",
+          "pron": "브안트"
+        },
+        {
+          "word": "פָּֽלַֽח",
+          "lemma": "פְּלַח",
+          "strong": "H6399",
+          "pron": "우팔헤"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 6:16",
+        "daniel 6:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -8,28 +8,230 @@
     {
       "lemma": "סוּסָה",
       "strong": "H5484",
-      "pron": "",
-      "glossKo": "암말"
+      "pron": "레수사티",
+      "glossKo": "나의 암말"
     },
     {
       "lemma": "סוּסִי",
       "strong": "H5485",
-      "pron": "",
+      "pron": "수시",
       "glossKo": "수시"
     },
     {
       "lemma": "סָס",
       "strong": "H5580",
-      "pron": "",
+      "pron": "삿",
       "glossKo": "좀"
     }
   ],
   "defEn": "horse",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 141,
   "byBook": {
+    "kings2": 21,
+    "jeremiah": 17,
+    "zechariah": 14,
+    "kings1": 13,
+    "ezekiel": 12,
+    "isaiah": 10,
+    "chronicles2": 7,
+    "esther": 6,
+    "exodus": 6,
     "psalms": 5,
-    "genesis": 2
+    "deuteronomy": 4,
+    "amos": 3,
+    "habakkuk": 3,
+    "joshua": 3,
+    "genesis": 2,
+    "hosea": 2,
+    "job": 2,
+    "proverbs": 2,
+    "ecclesiastes": 1,
+    "ezra": 1,
+    "haggai": 1,
+    "joel": 1,
+    "judges": 1,
+    "micah": 1,
+    "nahum": 1,
+    "nehemiah": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְס֣וּס וָרָ֑כֶב",
+      "pron": "바수심 레켑",
+      "lemmas": [
+        "סוּס",
+        "רֶכֶב"
+      ],
+      "words": [
+        {
+          "word": "וְס֣וּס",
+          "lemma": "סוּס",
+          "strong": "H5483",
+          "pron": "바수심"
+        },
+        {
+          "word": "וָרָ֑כֶב",
+          "lemma": "רֶכֶב",
+          "strong": "H7393",
+          "pron": "레켑"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 14:9",
+        "deuteronomy 11:4",
+        "deuteronomy 20:1",
+        "joshua 11:4",
+        "kings1 20:1",
+        "kings1 20:25",
+        "kings2 5:9",
+        "kings2 6:14",
+        "kings2 6:15",
+        "kings2 6:17",
+        "isaiah 66:20",
+        "ezekiel 26:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל הַסּוּסִ֑ים",
+      "pron": "알 바수심",
+      "lemmas": [
+        "עַל",
+        "סוּס"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הַסּוּסִ֑ים",
+          "lemma": "סוּס",
+          "strong": "H5483",
+          "pron": "바수심"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "kings1 20:20",
+        "kings2 14:20",
+        "chronicles2 25:28",
+        "esther 6:9",
+        "ecclesiastes 10:7",
+        "isaiah 30:16",
+        "isaiah 31:1",
+        "jeremiah 6:23",
+        "jeremiah 50:42",
+        "hosea 14:3",
+        "habakkuk 3:8",
+        "zechariah 1:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כְּסוּסַ֥י כְּסוּסֶֽיךָ",
+      "pron": "바수심 바수심",
+      "lemmas": [
+        "סוּס",
+        "סוּס"
+      ],
+      "words": [
+        {
+          "word": "כְּסוּסַ֥י",
+          "lemma": "סוּס",
+          "strong": "H5483",
+          "pron": "바수심"
+        },
+        {
+          "word": "כְּסוּסֶֽיךָ",
+          "lemma": "סוּס",
+          "strong": "H5483",
+          "pron": "바수심"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "kings1 20:25",
+        "kings1 22:4",
+        "kings2 3:7",
+        "kings2 5:9",
+        "jeremiah 8:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת סוּסֵיהֶ֣ם",
+      "pron": "에트 바수심",
+      "lemmas": [
+        "אֵת",
+        "סוּס"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "סוּסֵיהֶ֣ם",
+          "lemma": "סוּס",
+          "strong": "H5483",
+          "pron": "바수심"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "joshua 11:6",
+        "joshua 11:9",
+        "kings1 20:21",
+        "kings1 20:25",
+        "kings2 7:7",
+        "kings2 23:11",
+        "esther 6:10",
+        "esther 6:11",
+        "zechariah 10:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ס֥וּס וְרֹכְב֖וֹ",
+      "pron": "바수심 바티렉캅나",
+      "lemmas": [
+        "סוּס",
+        "רָכַב"
+      ],
+      "words": [
+        {
+          "word": "ס֥וּס",
+          "lemma": "סוּס",
+          "strong": "H5483",
+          "pron": "바수심"
+        },
+        {
+          "word": "וְרֹכְב֖וֹ",
+          "lemma": "רָכַב",
+          "strong": "H7392",
+          "pron": "바티렉캅나"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 15:1",
+        "exodus 15:21",
+        "esther 8:10",
+        "job 39:18",
+        "jeremiah 6:23",
+        "jeremiah 50:42",
+        "jeremiah 51:21",
+        "haggai 2:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

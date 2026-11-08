@@ -1,6 +1,6 @@
 {
   "lemma": "אֹכֶל",
-  "pron": "오켈",
+  "pron": "아켈람",
   "strong": "H400",
   "posKo": "명사",
   "root": {
@@ -12,31 +12,31 @@
     {
       "lemma": "אֲכִילָה",
       "strong": "H396",
-      "pron": "",
+      "pron": "하아킬라",
       "glossKo": "음식"
     },
     {
       "lemma": "אָכַל",
       "strong": "H398",
-      "pron": "오켈레",
+      "pron": "아콜",
       "glossKo": "먹다"
     },
     {
       "lemma": "אֲכַל",
       "strong": "H399",
-      "pron": "",
+      "pron": "바아칼루",
       "glossKo": "먹다(아람)"
     },
     {
       "lemma": "אֻכָל",
       "strong": "H401",
-      "pron": "",
+      "pron": "브우칼",
       "glossKo": "우갈"
     },
     {
       "lemma": "מַאֲכָל",
       "strong": "H3978",
-      "pron": "마아칼",
+      "pron": "르마아칼",
       "glossKo": "양식"
     },
     {
@@ -48,15 +48,56 @@
   ],
   "defEn": "food",
   "defKo": "",
-  "countOT": 22,
+  "countOT": 44,
   "byBook": {
     "genesis": 16,
-    "psalms": 6
+    "job": 6,
+    "psalms": 6,
+    "exodus": 4,
+    "deuteronomy": 3,
+    "lamentations": 2,
+    "leviticus": 2,
+    "habakkuk": 1,
+    "joel": 1,
+    "malachi": 1,
+    "proverbs": 1,
+    "ruth": 1
   },
   "phrases": [
     {
+      "hebrew": "כָּל אָכְלָ֖ם",
+      "pron": "칼 아켈람",
+      "lemmas": [
+        "כֹּל",
+        "אֹכֶל"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "אָכְלָ֖ם",
+          "lemma": "אֹכֶל",
+          "strong": "H400",
+          "pron": "아켈람"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 14:11",
+        "genesis 41:35",
+        "genesis 41:48",
+        "leviticus 11:34",
+        "psalms 107:18"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "לִשְׁבָּר אֹֽכֶל",
-      "pron": "바이솁보르 오켈",
+      "pron": "바이솁보르 아켈람",
       "lemmas": [
         "שָׁבַר",
         "אֹכֶל"
@@ -72,7 +113,7 @@
           "word": "אֹֽכֶל",
           "lemma": "אֹכֶל",
           "strong": "H400",
-          "pron": "오켈"
+          "pron": "아켈람"
         }
       ],
       "count": 5,
@@ -86,68 +127,99 @@
       "glossKo": ""
     },
     {
-      "hebrew": "כָּל אֹ֭כֶל",
-      "pron": "브콜 오켈",
+      "hebrew": "אִ֚ישׁ לְפִ֣י אָכְל֔וֹ",
+      "pron": "메이쉬 피하 아켈람",
       "lemmas": [
-        "כֹּל",
+        "אִישׁ",
+        "פֶּה",
         "אֹכֶל"
       ],
       "words": [
         {
-          "word": "כָּל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
+          "word": "אִ֚ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
         },
         {
-          "word": "אֹ֭כֶל",
+          "word": "לְפִ֣י",
+          "lemma": "פֶּה",
+          "strong": "H6310",
+          "pron": "피하"
+        },
+        {
+          "word": "אָכְל֔וֹ",
           "lemma": "אֹכֶל",
           "strong": "H400",
-          "pron": "오켈"
+          "pron": "아켈람"
         }
       ],
       "count": 4,
       "refs": [
-        "psalms 107:18",
-        "genesis 14:11",
-        "genesis 41:35",
-        "genesis 41:48"
+        "exodus 12:4",
+        "exodus 16:16",
+        "exodus 16:18",
+        "exodus 16:21"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְאֶת כָּל אָכְלָ֖ם",
-      "pron": "에트 브콜 오켈",
+      "hebrew": "וַיִּתֶּן אֹ֖כֶל",
+      "pron": "바잇텐 아켈람",
       "lemmas": [
-        "אֵת",
-        "כֹּל",
+        "נָתַן",
         "אֹכֶל"
       ],
       "words": [
         {
-          "word": "וְאֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
+          "word": "וַיִּתֶּן",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
         },
         {
-          "word": "כָּל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
-        },
-        {
-          "word": "אָכְלָ֖ם",
+          "word": "אֹ֖כֶל",
           "lemma": "אֹכֶל",
           "strong": "H400",
-          "pron": "오켈"
+          "pron": "아켈람"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
-        "genesis 14:11",
-        "genesis 41:35",
-        "genesis 41:48"
+        "genesis 41:48",
+        "leviticus 25:37",
+        "job 36:31",
+        "psalms 104:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְפִ֣י אָכְל֔וֹ",
+      "pron": "피하 아켈람",
+      "lemmas": [
+        "פֶּה",
+        "אֹכֶל"
+      ],
+      "words": [
+        {
+          "word": "לְפִ֣י",
+          "lemma": "פֶּה",
+          "strong": "H6310",
+          "pron": "피하"
+        },
+        {
+          "word": "אָכְל֔וֹ",
+          "lemma": "אֹכֶל",
+          "strong": "H400",
+          "pron": "아켈람"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 12:4",
+        "exodus 16:16",
+        "exodus 16:18",
+        "exodus 16:21"
       ],
       "glossKo": ""
     }

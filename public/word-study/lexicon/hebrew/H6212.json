@@ -1,21 +1,31 @@
 {
   "lemma": "עֶשֶׂב",
-  "pron": "크에셉",
+  "pron": "에셉",
   "strong": "H6212",
   "posKo": "명사",
   "root": null,
   "family": [],
   "defEn": "grass",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 33,
   "byBook": {
     "genesis": 7,
-    "psalms": 7
+    "psalms": 7,
+    "exodus": 5,
+    "deuteronomy": 3,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "proverbs": 2,
+    "amos": 1,
+    "job": 1,
+    "kings2": 1,
+    "micah": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
       "hebrew": "כָּל עֵ֣שֶׂב",
-      "pron": "브콜 크에셉",
+      "pron": "칼 에셉",
       "lemmas": [
         "כֹּל",
         "עֶשֶׂב"
@@ -25,85 +35,166 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
           "word": "עֵ֣שֶׂב",
           "lemma": "עֶשֶׂב",
           "strong": "H6212",
-          "pron": "크에셉"
+          "pron": "에셉"
         }
       ],
-      "count": 3,
+      "count": 9,
       "refs": [
-        "psalms 105:35",
         "genesis 1:29",
-        "genesis 2:5"
+        "genesis 2:5",
+        "exodus 9:22",
+        "exodus 9:25",
+        "exodus 10:12",
+        "exodus 10:15",
+        "deuteronomy 29:23",
+        "psalms 105:35",
+        "isaiah 42:15"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "עֵ֚שֶׂב מַזְרִ֣יעַ",
-      "pron": "크에셉 자루아",
+      "hebrew": "עֵ֥שֶׂב הַשָּׂדֶ֖ה",
+      "pron": "에셉 아사데",
       "lemmas": [
         "עֶשֶׂב",
-        "זָרַע"
+        "שָׂדֶה"
       ],
       "words": [
         {
-          "word": "עֵ֚שֶׂב",
+          "word": "עֵ֥שֶׂב",
           "lemma": "עֶשֶׂב",
           "strong": "H6212",
-          "pron": "크에셉"
+          "pron": "에셉"
         },
         {
-          "word": "מַזְרִ֣יעַ",
-          "lemma": "זָרַע",
-          "strong": "H2232",
-          "pron": "자루아"
+          "word": "הַשָּׂדֶ֖ה",
+          "lemma": "שָׂדֶה",
+          "strong": "H7704",
+          "pron": "아사데"
         }
       ],
-      "count": 3,
+      "count": 9,
       "refs": [
-        "genesis 1:11",
-        "genesis 1:12",
-        "genesis 1:29"
+        "genesis 2:5",
+        "genesis 3:18",
+        "exodus 9:22",
+        "exodus 9:25",
+        "exodus 10:15",
+        "deuteronomy 11:15",
+        "kings2 19:26",
+        "isaiah 37:27",
+        "zechariah 10:1"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "עֵ֚שֶׂב מַזְרִ֣יעַ זֶ֔רַע",
-      "pron": "크에셉 자루아 우르자레오",
+      "hebrew": "עֵ֣שֶׂב הָאָ֔רֶץ",
+      "pron": "에셉 하아레츠",
       "lemmas": [
         "עֶשֶׂב",
-        "זָרַע",
-        "זֶרַע"
+        "אֶרֶץ"
       ],
       "words": [
         {
-          "word": "עֵ֚שֶׂב",
+          "word": "עֵ֣שֶׂב",
           "lemma": "עֶשֶׂב",
           "strong": "H6212",
-          "pron": "크에셉"
+          "pron": "에셉"
         },
         {
-          "word": "מַזְרִ֣יעַ",
-          "lemma": "זָרַע",
-          "strong": "H2232",
-          "pron": "자루아"
+          "word": "הָאָ֔רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 10:12",
+        "exodus 10:15",
+        "job 5:25",
+        "psalms 72:16",
+        "psalms 105:35",
+        "amos 7:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת כָּל עֵ֣שֶׂב",
+      "pron": "에트 칼 에셉",
+      "lemmas": [
+        "אֵת",
+        "כֹּל",
+        "עֶשֶׂב"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         },
         {
-          "word": "זֶ֔רַע",
-          "lemma": "זֶרַע",
-          "strong": "H2233",
-          "pron": "우르자레오"
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "עֵ֣שֶׂב",
+          "lemma": "עֶשֶׂב",
+          "strong": "H6212",
+          "pron": "에셉"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 1:29",
+        "exodus 9:25",
+        "exodus 10:12",
+        "exodus 10:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְכָל עֵ֥שֶׂב הַשָּׂדֶ֖ה",
+      "pron": "칼 에셉 아사데",
+      "lemmas": [
+        "כֹּל",
+        "עֶשֶׂב",
+        "שָׂדֶה"
+      ],
+      "words": [
+        {
+          "word": "וְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "עֵ֥שֶׂב",
+          "lemma": "עֶשֶׂב",
+          "strong": "H6212",
+          "pron": "에셉"
+        },
+        {
+          "word": "הַשָּׂדֶ֖ה",
+          "lemma": "שָׂדֶה",
+          "strong": "H7704",
+          "pron": "아사데"
         }
       ],
       "count": 3,
       "refs": [
-        "genesis 1:11",
-        "genesis 1:12",
-        "genesis 1:29"
+        "genesis 2:5",
+        "exodus 9:22",
+        "exodus 9:25"
       ],
       "glossKo": ""
     }

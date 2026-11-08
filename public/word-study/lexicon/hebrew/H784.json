@@ -8,74 +8,266 @@
     {
       "lemma": "אֵשׁ",
       "strong": "H785",
-      "pron": "",
+      "pron": "엣샤",
       "glossKo": "불(아람)"
     },
     {
       "lemma": "אִשׁ",
       "strong": "H786",
-      "pron": "",
+      "pron": "이쉬",
       "glossKo": "있다"
     },
     {
       "lemma": "אֶשְׁדָּת",
       "strong": "H799",
-      "pron": "",
+      "pron": "쉳트",
       "glossKo": "불의 법"
     },
     {
       "lemma": "אֶשָּׁה",
       "strong": "H800",
-      "pron": "",
-      "glossKo": "불"
+      "pron": "믓틈",
+      "glossKo": "그들의 불"
     },
     {
       "lemma": "אָשִׁישׁ",
       "strong": "H808",
-      "pron": "",
+      "pron": "라아시셰이",
       "glossKo": "건포도 떡"
     },
     {
       "lemma": "אַתּוּן",
       "strong": "H861",
-      "pron": "",
+      "pron": "앗툰",
       "glossKo": "풀무(아람)"
     }
   ],
   "defEn": "fire",
   "defKo": "",
-  "countOT": 32,
+  "countOT": 378,
   "byBook": {
+    "ezekiel": 47,
+    "jeremiah": 39,
+    "isaiah": 33,
+    "leviticus": 32,
+    "deuteronomy": 29,
     "psalms": 28,
-    "genesis": 4
+    "numbers": 21,
+    "exodus": 19,
+    "kings2": 17,
+    "judges": 15,
+    "kings1": 10,
+    "amos": 9,
+    "job": 8,
+    "joshua": 8,
+    "zechariah": 7,
+    "chronicles2": 6,
+    "nehemiah": 6,
+    "samuel2": 6,
+    "joel": 5,
+    "proverbs": 5,
+    "genesis": 4,
+    "lamentations": 4,
+    "nahum": 4,
+    "samuel1": 3,
+    "chronicles1": 2,
+    "hosea": 2,
+    "micah": 2,
+    "zephaniah": 2,
+    "daniel": 1,
+    "habakkuk": 1,
+    "malachi": 1,
+    "obadiah": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "וְגַֽחֲלֵי אֵֽשׁ",
-      "pron": "게할림 에쉬",
+      "hebrew": "שָׂרַ֥ף בָּאֵֽשׁ",
+      "pron": "브니세레파 에쉬",
       "lemmas": [
-        "גֶּחֶל",
+        "שָׂרַף",
         "אֵשׁ"
       ],
       "words": [
         {
-          "word": "וְגַֽחֲלֵי",
-          "lemma": "גֶּחֶל",
-          "strong": "H1513",
-          "pron": "게할림"
+          "word": "שָׂרַ֥ף",
+          "lemma": "שָׂרַף",
+          "strong": "H8313",
+          "pron": "브니세레파"
         },
         {
-          "word": "אֵֽשׁ",
+          "word": "בָּאֵֽשׁ",
           "lemma": "אֵשׁ",
           "strong": "H784",
           "pron": "에쉬"
         }
       ],
-      "count": 3,
+      "count": 39,
       "refs": [
-        "psalms 18:12",
-        "psalms 18:13",
-        "psalms 140:10"
+        "exodus 29:14",
+        "exodus 32:20",
+        "leviticus 8:17",
+        "leviticus 9:11",
+        "leviticus 16:27",
+        "numbers 31:10",
+        "deuteronomy 7:5",
+        "deuteronomy 7:25",
+        "deuteronomy 12:3",
+        "deuteronomy 12:31",
+        "deuteronomy 13:16",
+        "joshua 6:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֻכְּל֥וּ בָאֵֽשׁ",
+      "pron": "아콜 에쉬",
+      "lemmas": [
+        "אָכַל",
+        "אֵשׁ"
+      ],
+      "words": [
+        {
+          "word": "אֻכְּל֥וּ",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "아콜"
+        },
+        {
+          "word": "בָאֵֽשׁ",
+          "lemma": "אֵשׁ",
+          "strong": "H784",
+          "pron": "에쉬"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "leviticus 6:10",
+        "leviticus 6:30",
+        "leviticus 7:19",
+        "numbers 26:10",
+        "deuteronomy 5:25",
+        "nehemiah 2:3",
+        "nehemiah 2:13",
+        "job 20:26",
+        "job 22:20",
+        "psalms 21:9",
+        "psalms 78:63",
+        "ezekiel 15:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כְּאֵ֥שׁ אֹכֶ֖לֶת",
+      "pron": "에쉬 아콜",
+      "lemmas": [
+        "אֵשׁ",
+        "אָכַל"
+      ],
+      "words": [
+        {
+          "word": "כְּאֵ֥שׁ",
+          "lemma": "אֵשׁ",
+          "strong": "H784",
+          "pron": "에쉬"
+        },
+        {
+          "word": "אֹכֶ֖לֶת",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "아콜"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "exodus 24:17",
+        "deuteronomy 4:24",
+        "deuteronomy 9:3",
+        "job 15:34",
+        "isaiah 29:6",
+        "isaiah 30:27",
+        "isaiah 30:30",
+        "isaiah 33:11",
+        "isaiah 33:14",
+        "ezekiel 15:5",
+        "ezekiel 15:7",
+        "ezekiel 19:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בָּאֵ֖שׁ תִּשָּׂרֵֽף",
+      "pron": "에쉬 브니세레파",
+      "lemmas": [
+        "אֵשׁ",
+        "שָׂרַף"
+      ],
+      "words": [
+        {
+          "word": "בָּאֵ֖שׁ",
+          "lemma": "אֵשׁ",
+          "strong": "H784",
+          "pron": "에쉬"
+        },
+        {
+          "word": "תִּשָּׂרֵֽף",
+          "lemma": "שָׂרַף",
+          "strong": "H8313",
+          "pron": "브니세레파"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "exodus 12:10",
+        "leviticus 6:30",
+        "leviticus 7:17",
+        "leviticus 7:19",
+        "leviticus 8:32",
+        "leviticus 13:52",
+        "leviticus 13:55",
+        "leviticus 13:57",
+        "leviticus 19:6",
+        "leviticus 20:14",
+        "leviticus 21:9",
+        "samuel2 23:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֹּעֵ֣ר בָּאֵ֑שׁ",
+      "pron": "보에르 에쉬",
+      "lemmas": [
+        "בָּעַר",
+        "אֵשׁ"
+      ],
+      "words": [
+        {
+          "word": "בֹּעֵ֣ר",
+          "lemma": "בָּעַר",
+          "strong": "H1197",
+          "pron": "보에르"
+        },
+        {
+          "word": "בָּאֵ֑שׁ",
+          "lemma": "אֵשׁ",
+          "strong": "H784",
+          "pron": "에쉬"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "exodus 3:2",
+        "exodus 35:3",
+        "numbers 11:1",
+        "numbers 11:3",
+        "deuteronomy 4:11",
+        "deuteronomy 5:23",
+        "deuteronomy 9:15",
+        "judges 15:5",
+        "judges 15:14",
+        "psalms 39:3",
+        "psalms 106:18",
+        "isaiah 9:18"
       ],
       "glossKo": ""
     }

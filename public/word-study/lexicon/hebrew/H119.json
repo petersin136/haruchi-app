@@ -1,8 +1,8 @@
 {
   "lemma": "אָדַם",
-  "pron": "아담",
+  "pron": "메앋다밈",
   "strong": "H119",
-  "posKo": "",
+  "posKo": "동사",
   "root": null,
   "family": [
     {
@@ -20,25 +20,210 @@
     {
       "lemma": "אֹדֶם",
       "strong": "H124",
-      "pron": "",
+      "pron": "오뎀",
       "glossKo": "홍보석"
     },
     {
       "lemma": "אֲדַמְדָּם",
       "strong": "H125",
-      "pron": "",
+      "pron": "아담다메트",
       "glossKo": "발그스름한"
     },
     {
       "lemma": "אֲדָמָה",
       "strong": "H127",
-      "pron": "아다모트",
+      "pron": "하아다마",
       "glossKo": "땅"
+    },
+    {
+      "lemma": "אַדְמֹנִי",
+      "strong": "H132",
+      "pron": "앋모니",
+      "glossKo": "붉은"
     }
   ],
   "defEn": "show blood; flush",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 10,
+  "byBook": {
+    "exodus": 6,
+    "isaiah": 1,
+    "lamentations": 1,
+    "nahum": 1,
+    "proverbs": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֵילִ֧ם מְאָדָּמִ֛ים",
+      "pron": "브아일 메앋다밈",
+      "lemmas": [
+        "אַיִל",
+        "אָדַם"
+      ],
+      "words": [
+        {
+          "word": "אֵילִ֧ם",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
+        },
+        {
+          "word": "מְאָדָּמִ֛ים",
+          "lemma": "אָדַם",
+          "strong": "H119",
+          "pron": "메앋다밈"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 25:5",
+        "exodus 26:14",
+        "exodus 35:7",
+        "exodus 35:23",
+        "exodus 36:19",
+        "exodus 39:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעֹרֹ֨ת אֵילִ֧ם מְאָדָּמִ֛ים",
+      "pron": "오르 브아일 메앋다밈",
+      "lemmas": [
+        "עוֹר",
+        "אַיִל",
+        "אָדַם"
+      ],
+      "words": [
+        {
+          "word": "וְעֹרֹ֨ת",
+          "lemma": "עוֹר",
+          "strong": "H5785",
+          "pron": "오르"
+        },
+        {
+          "word": "אֵילִ֧ם",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
+        },
+        {
+          "word": "מְאָדָּמִ֛ים",
+          "lemma": "אָדַם",
+          "strong": "H119",
+          "pron": "메앋다밈"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 25:5",
+        "exodus 26:14",
+        "exodus 35:7",
+        "exodus 35:23",
+        "exodus 36:19",
+        "exodus 39:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵילִ֧ם מְאָדָּמִ֛ים וְעֹרֹ֥ת",
+      "pron": "브아일 메앋다밈 오르",
+      "lemmas": [
+        "אַיִל",
+        "אָדַם",
+        "עוֹר"
+      ],
+      "words": [
+        {
+          "word": "אֵילִ֧ם",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
+        },
+        {
+          "word": "מְאָדָּמִ֛ים",
+          "lemma": "אָדַם",
+          "strong": "H119",
+          "pron": "메앋다밈"
+        },
+        {
+          "word": "וְעֹרֹ֥ת",
+          "lemma": "עוֹר",
+          "strong": "H5785",
+          "pron": "오르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 25:5",
+        "exodus 35:7",
+        "exodus 35:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְאָדָּמִ֛ים וְעֹרֹ֥ת",
+      "pron": "메앋다밈 오르",
+      "lemmas": [
+        "אָדַם",
+        "עוֹר"
+      ],
+      "words": [
+        {
+          "word": "מְאָדָּמִ֛ים",
+          "lemma": "אָדַם",
+          "strong": "H119",
+          "pron": "메앋다밈"
+        },
+        {
+          "word": "וְעֹרֹ֥ת",
+          "lemma": "עוֹר",
+          "strong": "H5785",
+          "pron": "오르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 25:5",
+        "exodus 35:7",
+        "exodus 35:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְאָדָּמִ֛ים וְעֹרֹ֥ת תְּחָשִׁ֖ים",
+      "pron": "메앋다밈 오르 테하심",
+      "lemmas": [
+        "אָדַם",
+        "עוֹר",
+        "תַּחַשׁ"
+      ],
+      "words": [
+        {
+          "word": "מְאָדָּמִ֛ים",
+          "lemma": "אָדַם",
+          "strong": "H119",
+          "pron": "메앋다밈"
+        },
+        {
+          "word": "וְעֹרֹ֥ת",
+          "lemma": "עוֹר",
+          "strong": "H5785",
+          "pron": "오르"
+        },
+        {
+          "word": "תְּחָשִׁ֖ים",
+          "lemma": "תַּחַשׁ",
+          "strong": "H8476",
+          "pron": "테하심"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 25:5",
+        "exodus 35:7",
+        "exodus 35:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

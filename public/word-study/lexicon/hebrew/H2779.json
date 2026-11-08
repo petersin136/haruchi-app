@@ -12,34 +12,69 @@
     {
       "lemma": "חָרִיף",
       "strong": "H2756",
-      "pron": "",
+      "pron": "하립",
       "glossKo": "하립"
     },
     {
       "lemma": "חָרַף",
       "strong": "H2778",
-      "pron": "헤레푸니",
-      "glossKo": "나를 비방하다"
+      "pron": "네헤레페트",
+      "glossKo": "비방하는 이"
     },
     {
       "lemma": "חָרֵף",
       "strong": "H2780",
-      "pron": "",
+      "pron": "하렙",
       "glossKo": "하렙"
     },
     {
       "lemma": "חֶרְפָּה",
       "strong": "H2781",
-      "pron": "브헤렙파",
-      "glossKo": "비방"
+      "pron": "헤렙파티",
+      "glossKo": "나의 비방"
     }
   ],
   "defEn": "crop gathered; autumn; season; ripeness of age",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 7,
   "byBook": {
+    "amos": 1,
     "genesis": 1,
-    "psalms": 1
+    "jeremiah": 1,
+    "job": 1,
+    "proverbs": 1,
+    "psalms": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְקַ֧יִץ וָחֹ֛רֶף",
+      "pron": "브카이츠 바호렙",
+      "lemmas": [
+        "קַיִץ",
+        "חֹרֶף"
+      ],
+      "words": [
+        {
+          "word": "וְקַ֧יִץ",
+          "lemma": "קַיִץ",
+          "strong": "H7019",
+          "pron": "브카이츠"
+        },
+        {
+          "word": "וָחֹ֛רֶף",
+          "lemma": "חֹרֶף",
+          "strong": "H2779",
+          "pron": "바호렙"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 8:22",
+        "psalms 74:17",
+        "zechariah 14:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

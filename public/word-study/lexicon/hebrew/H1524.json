@@ -1,6 +1,6 @@
 {
   "lemma": "גִּיל",
-  "pron": "길리위",
+  "pron": "길",
   "strong": "H1524",
   "posKo": "명사",
   "root": {
@@ -12,15 +12,60 @@
     {
       "lemma": "גִּיל",
       "strong": "H1523",
-      "pron": "브길루",
+      "pron": "브타겔",
       "glossKo": "기뻐하다"
+    },
+    {
+      "lemma": "גִּילָה",
+      "strong": "H1525",
+      "pron": "길라트",
+      "glossKo": "기쁨"
     }
   ],
   "defEn": "revolution",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 11,
   "byBook": {
-    "psalms": 3
+    "psalms": 3,
+    "proverbs": 2,
+    "daniel": 1,
+    "hosea": 1,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "joel": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "שִׂמְחַ֪ת גִּ֫ילִ֥י",
+      "pron": "브심하 길",
+      "lemmas": [
+        "שִׂמְחָה",
+        "גִּיל"
+      ],
+      "words": [
+        {
+          "word": "שִׂמְחַ֪ת",
+          "lemma": "שִׂמְחָה",
+          "strong": "H8057",
+          "pron": "브심하"
+        },
+        {
+          "word": "גִּ֫ילִ֥י",
+          "lemma": "גִּיל",
+          "strong": "H1524",
+          "pron": "길"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 43:4",
+        "psalms 45:15",
+        "isaiah 16:10",
+        "jeremiah 48:33",
+        "joel 1:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

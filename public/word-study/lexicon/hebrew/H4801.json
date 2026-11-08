@@ -12,13 +12,13 @@
     {
       "lemma": "רָחוֹק",
       "strong": "H7350",
-      "pron": "브라호크",
+      "pron": "메라호크",
       "glossKo": "먼"
     },
     {
       "lemma": "רָחַק",
       "strong": "H7368",
-      "pron": "티레하크",
+      "pron": "하레헤크",
       "glossKo": "멀어지다"
     },
     {
@@ -30,9 +30,48 @@
   ],
   "defEn": "remoteness; distant; from afar",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 17,
   "byBook": {
-    "psalms": 1
+    "isaiah": 7,
+    "jeremiah": 5,
+    "proverbs": 2,
+    "ezekiel": 1,
+    "psalms": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מֵאֶ֥רֶץ מֶרְחָ֖ק",
+      "pron": "하아레츠 미메레하크",
+      "lemmas": [
+        "אֶרֶץ",
+        "מֶרְחָק"
+      ],
+      "words": [
+        {
+          "word": "מֵאֶ֥רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "מֶרְחָ֖ק",
+          "lemma": "מֶרְחָק",
+          "strong": "H4801",
+          "pron": "미메레하크"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "proverbs 25:25",
+        "isaiah 13:5",
+        "isaiah 33:17",
+        "isaiah 46:11",
+        "jeremiah 4:16",
+        "jeremiah 6:20",
+        "jeremiah 8:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

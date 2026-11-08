@@ -1,6 +1,6 @@
 {
   "lemma": "רָחוֹק",
-  "pron": "브라호크",
+  "pron": "메라호크",
   "strong": "H7350",
   "posKo": "형용사",
   "root": {
@@ -18,13 +18,13 @@
     {
       "lemma": "רַחִיק",
       "strong": "H7352",
-      "pron": "",
+      "pron": "라히킨",
       "glossKo": "먼(아람)"
     },
     {
       "lemma": "רָחַק",
       "strong": "H7368",
-      "pron": "티레하크",
+      "pron": "하레헤크",
       "glossKo": "멀어지다"
     },
     {
@@ -36,10 +36,195 @@
   ],
   "defEn": "remote; precious",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 85,
   "byBook": {
+    "isaiah": 18,
+    "jeremiah": 8,
     "psalms": 7,
-    "genesis": 2
+    "deuteronomy": 5,
+    "job": 5,
+    "exodus": 4,
+    "joshua": 4,
+    "proverbs": 4,
+    "chronicles2": 3,
+    "ezekiel": 3,
+    "kings2": 3,
+    "ecclesiastes": 2,
+    "genesis": 2,
+    "judges": 2,
+    "kings1": 2,
+    "nehemiah": 2,
+    "chronicles1": 1,
+    "daniel": 1,
+    "esther": 1,
+    "ezra": 1,
+    "habakkuk": 1,
+    "joel": 1,
+    "micah": 1,
+    "numbers": 1,
+    "samuel1": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מֵאֶ֧רֶץ רְחוֹקָ֛ה",
+      "pron": "하아레츠 메라호크",
+      "lemmas": [
+        "אֶרֶץ",
+        "רָחוֹק"
+      ],
+      "words": [
+        {
+          "word": "מֵאֶ֧רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "רְחוֹקָ֛ה",
+          "lemma": "רָחוֹק",
+          "strong": "H7350",
+          "pron": "메라호크"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "deuteronomy 29:22",
+        "joshua 9:6",
+        "joshua 9:9",
+        "kings1 8:41",
+        "kings2 20:14",
+        "chronicles2 6:32",
+        "chronicles2 6:36",
+        "isaiah 39:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵרָח֣וֹק יָבֹ֔אוּ",
+      "pron": "메라호크 바야베",
+      "lemmas": [
+        "רָחוֹק",
+        "בּוֹא"
+      ],
+      "words": [
+        {
+          "word": "מֵרָח֣וֹק",
+          "lemma": "רָחוֹק",
+          "strong": "H7350",
+          "pron": "메라호크"
+        },
+        {
+          "word": "יָבֹ֔אוּ",
+          "lemma": "בּוֹא",
+          "strong": "H935",
+          "pron": "바야베"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "joshua 9:6",
+        "kings2 20:14",
+        "isaiah 39:3",
+        "isaiah 49:12",
+        "isaiah 60:4",
+        "habakkuk 1:8",
+        "zechariah 6:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַקְּרוֹבִ֖ים וְהָרְחוֹקִֽים",
+      "pron": "케로바 메라호크",
+      "lemmas": [
+        "קָרוֹב",
+        "רָחוֹק"
+      ],
+      "words": [
+        {
+          "word": "הַקְּרוֹבִ֖ים",
+          "lemma": "קָרוֹב",
+          "strong": "H7138",
+          "pron": "케로바"
+        },
+        {
+          "word": "וְהָרְחוֹקִֽים",
+          "lemma": "רָחוֹק",
+          "strong": "H7350",
+          "pron": "메라호크"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "esther 9:20",
+        "psalms 38:11",
+        "jeremiah 25:26",
+        "ezekiel 22:5",
+        "daniel 9:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵֽרָח֔וֹק וְאֶֽת",
+      "pron": "메라호크 에트",
+      "lemmas": [
+        "רָחוֹק",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "מֵֽרָח֔וֹק",
+          "lemma": "רָחוֹק",
+          "strong": "H7350",
+          "pron": "메라호크"
+        },
+        {
+          "word": "וְאֶֽת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings2 19:25",
+        "isaiah 37:26",
+        "jeremiah 30:10",
+        "jeremiah 46:27",
+        "jeremiah 51:50"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָרְחֹקִ֣ים מִמֶּ֑ךָּ",
+      "pron": "메라호크 민",
+      "lemmas": [
+        "רָחוֹק",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "הָרְחֹקִ֣ים",
+          "lemma": "רָחוֹק",
+          "strong": "H7350",
+          "pron": "메라호크"
+        },
+        {
+          "word": "מִמֶּ֑ךָּ",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 13:7",
+        "deuteronomy 20:15",
+        "ecclesiastes 7:23",
+        "ezekiel 22:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

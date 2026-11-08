@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁבַת",
-  "pron": "르하솁비트",
+  "pron": "바이솁보트",
   "strong": "H7673",
   "posKo": "동사",
   "root": null,
@@ -8,28 +8,205 @@
     {
       "lemma": "מִשְׁבָּת",
       "strong": "H4868",
-      "pron": "",
-      "glossKo": "쉬는 곳"
+      "pron": "미솁밧테하",
+      "glossKo": "그녀의 쉬는 곳"
     },
     {
       "lemma": "שֶׁבֶת",
       "strong": "H7674",
-      "pron": "",
-      "glossKo": "안식"
+      "pron": "십토",
+      "glossKo": "그의 안식"
     },
     {
       "lemma": "שַׁבָּת",
       "strong": "H7676",
-      "pron": "아샵바트",
+      "pron": "샵바트",
       "glossKo": "안식일"
     }
   ],
   "defEn": "repose; desist from exertion",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 71,
   "byBook": {
+    "ezekiel": 13,
+    "isaiah": 10,
+    "exodus": 7,
+    "leviticus": 7,
+    "jeremiah": 6,
     "psalms": 4,
-    "genesis": 3
+    "genesis": 3,
+    "hosea": 3,
+    "chronicles2": 2,
+    "daniel": 2,
+    "joshua": 2,
+    "kings2": 2,
+    "lamentations": 2,
+    "nehemiah": 2,
+    "proverbs": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "job": 1,
+    "ruth": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְהִשְׁבַּתֶּ֥ם אֹתָ֖ם",
+      "pron": "바이솁보트 에트",
+      "lemmas": [
+        "שָׁבַת",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְהִשְׁבַּתֶּ֥ם",
+          "lemma": "שָׁבַת",
+          "strong": "H7673",
+          "pron": "바이솁보트"
+        },
+        {
+          "word": "אֹתָ֖ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 5:5",
+        "leviticus 26:35",
+        "kings2 23:5",
+        "kings2 23:11",
+        "chronicles2 16:5",
+        "nehemiah 4:11",
+        "ezekiel 12:23",
+        "ezekiel 30:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהִשְׁבַּתִּי֙ גְּא֣וֹן",
+      "pron": "바이솁보트 게온카",
+      "lemmas": [
+        "שָׁבַת",
+        "גָּאוֹן"
+      ],
+      "words": [
+        {
+          "word": "וְהִשְׁבַּתִּי֙",
+          "lemma": "שָׁבַת",
+          "strong": "H7673",
+          "pron": "바이솁보트"
+        },
+        {
+          "word": "גְּא֣וֹן",
+          "lemma": "גָּאוֹן",
+          "strong": "H1347",
+          "pron": "게온카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 13:11",
+        "ezekiel 7:24",
+        "ezekiel 30:18",
+        "ezekiel 33:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֥א יִשְׁבֹּֽתוּ",
+      "pron": "로 바이솁보트",
+      "lemmas": [
+        "לֹא",
+        "שָׁבַת"
+      ],
+      "words": [
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִשְׁבֹּֽתוּ",
+          "lemma": "שָׁבַת",
+          "strong": "H7673",
+          "pron": "바이솁보트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 8:22",
+        "leviticus 2:13",
+        "leviticus 26:35",
+        "ruth 4:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשְּׁבִיעִ֖י תִּשְׁבֹּ֑ת",
+      "pron": "아셰비이 바이솁보트",
+      "lemmas": [
+        "שְׁבִיעִי",
+        "שָׁבַת"
+      ],
+      "words": [
+        {
+          "word": "הַשְּׁבִיעִ֖י",
+          "lemma": "שְׁבִיעִי",
+          "strong": "H7637",
+          "pron": "아셰비이"
+        },
+        {
+          "word": "תִּשְׁבֹּ֑ת",
+          "lemma": "שָׁבַת",
+          "strong": "H7673",
+          "pron": "바이솁보트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 23:12",
+        "exodus 31:17",
+        "exodus 34:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבַיּ֥וֹם הַשְּׁבִיעִ֖י תִּשְׁבֹּ֑ת",
+      "pron": "욤 아셰비이 바이솁보트",
+      "lemmas": [
+        "יוֹם",
+        "שְׁבִיעִי",
+        "שָׁבַת"
+      ],
+      "words": [
+        {
+          "word": "וּבַיּ֥וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "הַשְּׁבִיעִ֖י",
+          "lemma": "שְׁבִיעִי",
+          "strong": "H7637",
+          "pron": "아셰비이"
+        },
+        {
+          "word": "תִּשְׁבֹּ֑ת",
+          "lemma": "שָׁבַת",
+          "strong": "H7673",
+          "pron": "바이솁보트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 23:12",
+        "exodus 31:17",
+        "exodus 34:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

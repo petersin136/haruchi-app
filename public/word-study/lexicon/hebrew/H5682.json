@@ -1,8 +1,8 @@
 {
   "lemma": "עֲבָרִים",
-  "pron": "아바림",
+  "pron": "하아바림",
   "strong": "H5682",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עֵבֶר",
     "strong": "H5676",
@@ -12,7 +12,7 @@
     {
       "lemma": "עֲבַר",
       "strong": "H5675",
-      "pron": "",
+      "pron": "아바르",
       "glossKo": "건너편(아람)"
     },
     {
@@ -30,19 +30,54 @@
     {
       "lemma": "עֶבְרָה",
       "strong": "H5678",
-      "pron": "브압로트",
-      "glossKo": "진노"
+      "pron": "베엡라탐",
+      "glossKo": "그들의 진노"
     },
     {
       "lemma": "עֶבְרֹן",
       "strong": "H5683",
-      "pron": "",
+      "pron": "브엡론",
       "glossKo": "에브론"
     }
   ],
   "defEn": "Abarim",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "numbers": 3,
+    "deuteronomy": 1,
+    "jeremiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "הַ֥ר הָעֲבָרִ֖ים",
+      "pron": "헤하림 하아바림",
+      "lemmas": [
+        "הַר",
+        "עֲבָרִים"
+      ],
+      "words": [
+        {
+          "word": "הַ֥ר",
+          "lemma": "הַר",
+          "strong": "H2022",
+          "pron": "헤하림"
+        },
+        {
+          "word": "הָעֲבָרִ֖ים",
+          "lemma": "עֲבָרִים",
+          "strong": "H5682",
+          "pron": "하아바림"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 27:12",
+        "numbers 33:47",
+        "numbers 33:48",
+        "deuteronomy 32:49"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -2,7 +2,7 @@
   "lemma": "צַו",
   "pron": "차브",
   "strong": "H6673",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "צָוָה",
     "strong": "H6680",
@@ -12,25 +12,127 @@
     {
       "lemma": "מִצְוָה",
       "strong": "H4687",
-      "pron": "미체바트",
-      "glossKo": "계명"
+      "pron": "미체보타이",
+      "glossKo": "나의 계명"
     },
     {
       "lemma": "צָוָה",
       "strong": "H6680",
-      "pron": "치비타",
+      "pron": "바예차브",
       "glossKo": "명령하다"
     },
     {
       "lemma": "צִי",
       "strong": "H6716",
-      "pron": "",
+      "pron": "브침",
       "glossKo": "배"
     }
   ],
   "defEn": "injunction",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "isaiah": 8,
+    "hosea": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "צַ֤ו לָצָו֙",
+      "pron": "차브 차브",
+      "lemmas": [
+        "צַו",
+        "צַו"
+      ],
+      "words": [
+        {
+          "word": "צַ֤ו",
+          "lemma": "צַו",
+          "strong": "H6673",
+          "pron": "차브"
+        },
+        {
+          "word": "לָצָו֙",
+          "lemma": "צַו",
+          "strong": "H6673",
+          "pron": "차브"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "isaiah 28:10",
+        "isaiah 28:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "צַ֤ו לָצָו֙ צַ֣ו",
+      "pron": "차브 차브 차브",
+      "lemmas": [
+        "צַו",
+        "צַו",
+        "צַו"
+      ],
+      "words": [
+        {
+          "word": "צַ֤ו",
+          "lemma": "צַו",
+          "strong": "H6673",
+          "pron": "차브"
+        },
+        {
+          "word": "לָצָו֙",
+          "lemma": "צַו",
+          "strong": "H6673",
+          "pron": "차브"
+        },
+        {
+          "word": "צַ֣ו",
+          "lemma": "צַו",
+          "strong": "H6673",
+          "pron": "차브"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "isaiah 28:10",
+        "isaiah 28:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "צַ֣ו לָצָ֔ו קַ֥ו",
+      "pron": "차브 차브 카브",
+      "lemmas": [
+        "צַו",
+        "צַו",
+        "קַו"
+      ],
+      "words": [
+        {
+          "word": "צַ֣ו",
+          "lemma": "צַו",
+          "strong": "H6673",
+          "pron": "차브"
+        },
+        {
+          "word": "לָצָ֔ו",
+          "lemma": "צַו",
+          "strong": "H6673",
+          "pron": "차브"
+        },
+        {
+          "word": "קַ֥ו",
+          "lemma": "קַו",
+          "strong": "H6957",
+          "pron": "카브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 28:10",
+        "isaiah 28:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

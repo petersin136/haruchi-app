@@ -1,6 +1,6 @@
 {
   "lemma": "רֶחֶם",
-  "pron": "메라헴",
+  "pron": "레헴",
   "strong": "H7358",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "יְרֹחָם",
       "strong": "H3395",
-      "pron": "",
+      "pron": "예로함",
       "glossKo": "여로함"
     },
     {
       "lemma": "יְרַחְמְאֵל",
       "strong": "H3396",
-      "pron": "",
+      "pron": "예라헴엘",
       "glossKo": "여라므엘"
     },
     {
@@ -30,28 +30,161 @@
     {
       "lemma": "רָחַם",
       "strong": "H7355",
-      "pron": "에레함카",
-      "glossKo": "너에게 긍휼히 여기다"
+      "pron": "브리함티",
+      "glossKo": "긍휼히 여기다"
     },
     {
       "lemma": "רַחַם",
       "strong": "H7356",
-      "pron": "라하메카",
-      "glossKo": "너의 긍휼"
+      "pron": "라하밈",
+      "glossKo": "긍휼"
     },
     {
       "lemma": "רָחָם",
       "strong": "H7360",
-      "pron": "",
+      "pron": "하라함",
       "glossKo": "독수리의 일종"
     }
   ],
   "defEn": "womb",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 26,
   "byBook": {
+    "job": 5,
+    "exodus": 4,
+    "jeremiah": 4,
+    "numbers": 4,
     "genesis": 3,
-    "psalms": 3
+    "psalms": 3,
+    "samuel1": 2,
+    "hosea": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "פֶּ֥טֶר רֶ֖חֶם",
+      "pron": "페데르 레헴",
+      "lemmas": [
+        "פֶּטֶר",
+        "רֶחֶם"
+      ],
+      "words": [
+        {
+          "word": "פֶּ֥טֶר",
+          "lemma": "פֶּטֶר",
+          "strong": "H6363",
+          "pron": "페데르"
+        },
+        {
+          "word": "רֶ֖חֶם",
+          "lemma": "רֶחֶם",
+          "strong": "H7358",
+          "pron": "레헴"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 13:12",
+        "exodus 13:15",
+        "exodus 34:19",
+        "numbers 3:12",
+        "numbers 18:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָל פֶּֽטֶר רֶ֖חֶם",
+      "pron": "칼 페데르 레헴",
+      "lemmas": [
+        "כֹּל",
+        "פֶּטֶר",
+        "רֶחֶם"
+      ],
+      "words": [
+        {
+          "word": "כָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "פֶּֽטֶר",
+          "lemma": "פֶּטֶר",
+          "strong": "H6363",
+          "pron": "페데르"
+        },
+        {
+          "word": "רֶ֖חֶם",
+          "lemma": "רֶחֶם",
+          "strong": "H7358",
+          "pron": "레헴"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 13:12",
+        "exodus 13:15",
+        "exodus 34:19",
+        "numbers 18:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל רֶ֖חֶם",
+      "pron": "칼 레헴",
+      "lemmas": [
+        "כֹּל",
+        "רֶחֶם"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "רֶ֖חֶם",
+          "lemma": "רֶחֶם",
+          "strong": "H7358",
+          "pron": "레헴"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 20:18",
+        "exodus 13:2",
+        "numbers 8:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵ֭רֶחֶם הֹצֵאתָ֑נִי",
+      "pron": "레헴 바토체",
+      "lemmas": [
+        "רֶחֶם",
+        "יָצָא"
+      ],
+      "words": [
+        {
+          "word": "מֵ֭רֶחֶם",
+          "lemma": "רֶחֶם",
+          "strong": "H7358",
+          "pron": "레헴"
+        },
+        {
+          "word": "הֹצֵאתָ֑נִי",
+          "lemma": "יָצָא",
+          "strong": "H3318",
+          "pron": "바토체"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 10:18",
+        "job 38:8",
+        "jeremiah 20:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

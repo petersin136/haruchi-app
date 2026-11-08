@@ -1,6 +1,6 @@
 {
   "lemma": "נָבַט",
-  "pron": "탑빋",
+  "pron": "합벧",
   "strong": "H5027",
   "posKo": "동사",
   "root": null,
@@ -8,22 +8,197 @@
     {
       "lemma": "מַבָּט",
       "strong": "H4007",
-      "pron": "",
-      "glossKo": "바라봄"
+      "pron": "맙바담",
+      "glossKo": "그들의 바라봄"
     },
     {
       "lemma": "נְבָט",
       "strong": "H5028",
-      "pron": "",
+      "pron": "네받",
       "glossKo": "느밧"
     }
   ],
   "defEn": "scan; look intently at",
   "defKo": "",
-  "countOT": 20,
+  "countOT": 70,
   "byBook": {
     "psalms": 17,
-    "genesis": 3
+    "isaiah": 15,
+    "lamentations": 7,
+    "habakkuk": 5,
+    "job": 5,
+    "samuel1": 4,
+    "genesis": 3,
+    "kings1": 3,
+    "numbers": 3,
+    "exodus": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "jonah": 1,
+    "kings2": 1,
+    "proverbs": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הַבִּ֨יטוּ֙ אֶל",
+      "pron": "합벧 엘",
+      "lemmas": [
+        "נָבַט",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "הַבִּ֨יטוּ֙",
+          "lemma": "נָבַט",
+          "strong": "H5027",
+          "pron": "합벧"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "exodus 3:6",
+        "numbers 21:9",
+        "samuel1 16:7",
+        "kings2 3:14",
+        "psalms 34:5",
+        "psalms 119:6",
+        "isaiah 22:11",
+        "isaiah 51:1",
+        "isaiah 51:2",
+        "isaiah 51:6",
+        "isaiah 66:2",
+        "jonah 2:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹֽא הִבִּ֥יט",
+      "pron": "로 합벧",
+      "lemmas": [
+        "לֹא",
+        "נָבַט"
+      ],
+      "words": [
+        {
+          "word": "לֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "הִבִּ֥יט",
+          "lemma": "נָבַט",
+          "strong": "H5027",
+          "pron": "합벧"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 23:21",
+        "psalms 94:9",
+        "isaiah 5:12",
+        "isaiah 22:11",
+        "isaiah 38:11",
+        "amos 5:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יַ֝בִּ֗יטוּ יִרְאוּ",
+      "pron": "합벧 바야레",
+      "lemmas": [
+        "נָבַט",
+        "רָאָה"
+      ],
+      "words": [
+        {
+          "word": "יַ֝בִּ֗יטוּ",
+          "lemma": "נָבַט",
+          "strong": "H5027",
+          "pron": "합벧"
+        },
+        {
+          "word": "יִרְאוּ",
+          "lemma": "רָאָה",
+          "strong": "H7200",
+          "pron": "바야레"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 22:17",
+        "isaiah 42:18",
+        "lamentations 1:12",
+        "lamentations 5:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָה֙ וְֽהַבִּ֔יטָה",
+      "pron": "여호와 합벧",
+      "lemmas": [
+        "יְהֹוָה",
+        "נָבַט"
+      ],
+      "words": [
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "וְֽהַבִּ֔יטָה",
+          "lemma": "נָבַט",
+          "strong": "H5027",
+          "pron": "합벧"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 12:8",
+        "isaiah 51:1",
+        "lamentations 1:11",
+        "lamentations 2:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֵינָ֥יו יַבִּֽיטוּ",
+      "pron": "에네켐 합벧",
+      "lemmas": [
+        "עַיִן",
+        "נָבַט"
+      ],
+      "words": [
+        {
+          "word": "עֵינָ֥יו",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        },
+        {
+          "word": "יַבִּֽיטוּ",
+          "lemma": "נָבַט",
+          "strong": "H5027",
+          "pron": "합벧"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 39:29",
+        "psalms 91:8",
+        "psalms 119:18",
+        "isaiah 51:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -18,7 +18,7 @@
     {
       "lemma": "עֵילוֹם",
       "strong": "H5865",
-      "pron": "",
+      "pron": "르엘롬",
       "glossKo": "어린아이 시절"
     },
     {
@@ -30,30 +30,100 @@
     {
       "lemma": "עָלוּם",
       "strong": "H5934",
-      "pron": "알루마이브",
+      "pron": "르븜브",
       "glossKo": "그의 청춘"
     },
     {
       "lemma": "עָלַם",
       "strong": "H5956",
-      "pron": "타엘림",
+      "pron": "브네엘람",
       "glossKo": "감추다"
     },
     {
       "lemma": "עָלַם",
       "strong": "H5957",
-      "pron": "",
+      "pron": "알마",
       "glossKo": "영원(아람)"
     }
   ],
   "defEn": "concealed; vanishing; out of mind; eternity; always",
   "defKo": "",
-  "countOT": 156,
+  "countOT": 438,
   "byBook": {
     "psalms": 143,
-    "genesis": 13
+    "isaiah": 46,
+    "jeremiah": 34,
+    "chronicles1": 25,
+    "leviticus": 21,
+    "ezekiel": 18,
+    "exodus": 17,
+    "genesis": 13,
+    "chronicles2": 12,
+    "deuteronomy": 12,
+    "samuel2": 12,
+    "numbers": 10,
+    "samuel1": 10,
+    "kings1": 8,
+    "ecclesiastes": 7,
+    "proverbs": 6,
+    "daniel": 5,
+    "micah": 5,
+    "joel": 4,
+    "joshua": 4,
+    "nehemiah": 4,
+    "ezra": 3,
+    "job": 3,
+    "lamentations": 3,
+    "habakkuk": 2,
+    "kings2": 2,
+    "malachi": 2,
+    "amos": 1,
+    "hosea": 1,
+    "jonah": 1,
+    "judges": 1,
+    "obadiah": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
   "phrases": [
+    {
+      "hebrew": "עַד עוֹלָֽם",
+      "pron": "앋 르올람",
+      "lemmas": [
+        "עַד",
+        "עוֹלָם"
+      ],
+      "words": [
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "עוֹלָֽם",
+          "lemma": "עוֹלָם",
+          "strong": "H5769",
+          "pron": "르올람"
+        }
+      ],
+      "count": 81,
+      "refs": [
+        "genesis 13:15",
+        "exodus 12:24",
+        "exodus 14:13",
+        "deuteronomy 12:28",
+        "deuteronomy 23:3",
+        "deuteronomy 28:46",
+        "deuteronomy 29:29",
+        "joshua 4:7",
+        "joshua 14:9",
+        "samuel1 1:22",
+        "samuel1 2:30",
+        "samuel1 3:13"
+      ],
+      "glossKo": ""
+    },
     {
       "hebrew": "כִּ֖י לְעוֹלָ֣ם",
       "pron": "키 르올람",
@@ -75,26 +145,26 @@
           "pron": "르올람"
         }
       ],
-      "count": 37,
+      "count": 46,
       "refs": [
+        "chronicles1 16:34",
+        "chronicles1 16:41",
+        "chronicles2 5:13",
+        "chronicles2 7:3",
+        "chronicles2 7:6",
+        "chronicles2 20:21",
+        "ezra 3:11",
         "psalms 25:6",
         "psalms 106:1",
         "psalms 107:1",
         "psalms 112:6",
-        "psalms 118:1",
-        "psalms 118:2",
-        "psalms 118:3",
-        "psalms 118:4",
-        "psalms 118:29",
-        "psalms 119:98",
-        "psalms 119:152",
-        "psalms 136:1"
+        "psalms 118:1"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "לְעוֹלָ֣ם חַסְדּֽוֹ",
-      "pron": "르올람 핫드카",
+      "pron": "르올람 핫데카",
       "lemmas": [
         "עוֹלָם",
         "חֶסֶד"
@@ -110,29 +180,29 @@
           "word": "חַסְדּֽוֹ",
           "lemma": "חֶסֶד",
           "strong": "H2617",
-          "pron": "핫드카"
+          "pron": "핫데카"
         }
       ],
-      "count": 35,
+      "count": 44,
       "refs": [
+        "chronicles1 16:34",
+        "chronicles1 16:41",
+        "chronicles2 5:13",
+        "chronicles2 7:3",
+        "chronicles2 7:6",
+        "chronicles2 20:21",
+        "ezra 3:11",
         "psalms 89:2",
         "psalms 100:5",
         "psalms 106:1",
         "psalms 107:1",
-        "psalms 118:1",
-        "psalms 118:2",
-        "psalms 118:3",
-        "psalms 118:4",
-        "psalms 118:29",
-        "psalms 136:1",
-        "psalms 136:2",
-        "psalms 136:3"
+        "psalms 118:1"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "כִּ֖י לְעוֹלָ֣ם חַסְדּֽוֹ",
-      "pron": "키 르올람 핫드카",
+      "pron": "키 르올람 핫데카",
       "lemmas": [
         "כִּי",
         "עוֹלָם",
@@ -155,99 +225,61 @@
           "word": "חַסְדּֽוֹ",
           "lemma": "חֶסֶד",
           "strong": "H2617",
-          "pron": "핫드카"
+          "pron": "핫데카"
         }
       ],
-      "count": 33,
+      "count": 41,
       "refs": [
+        "chronicles1 16:34",
+        "chronicles1 16:41",
+        "chronicles2 5:13",
+        "chronicles2 7:3",
+        "chronicles2 7:6",
+        "chronicles2 20:21",
+        "ezra 3:11",
         "psalms 106:1",
         "psalms 107:1",
         "psalms 118:1",
         "psalms 118:2",
-        "psalms 118:3",
-        "psalms 118:4",
-        "psalms 118:29",
-        "psalms 136:1",
-        "psalms 136:2",
-        "psalms 136:3",
-        "psalms 136:4",
-        "psalms 136:5"
+        "psalms 118:3"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְעַד עוֹלָֽם",
-      "pron": "앋 르올람",
+      "hebrew": "חֻקַּ֤ת עוֹלָם֙",
+      "pron": "훅코타이 르올람",
       "lemmas": [
-        "עַד",
+        "חֻקָּה",
         "עוֹלָם"
       ],
       "words": [
         {
-          "word": "וְעַד",
-          "lemma": "עַד",
-          "strong": "H5704",
-          "pron": "앋"
+          "word": "חֻקַּ֤ת",
+          "lemma": "חֻקָּה",
+          "strong": "H2708",
+          "pron": "훅코타이"
         },
         {
-          "word": "עוֹלָֽם",
+          "word": "עוֹלָם֙",
           "lemma": "עוֹלָם",
           "strong": "H5769",
           "pron": "르올람"
         }
       ],
-      "count": 16,
+      "count": 23,
       "refs": [
-        "psalms 18:50",
-        "psalms 28:9",
-        "psalms 41:13",
-        "psalms 48:8",
-        "psalms 89:4",
-        "psalms 90:2",
-        "psalms 103:17",
-        "psalms 106:31",
-        "psalms 106:48",
-        "psalms 113:2",
-        "psalms 115:18",
-        "psalms 121:8"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "לְעוֹלָ֥ם וָעֶֽד",
-      "pron": "르올람 바엗",
-      "lemmas": [
-        "עוֹלָם",
-        "עַד"
-      ],
-      "words": [
-        {
-          "word": "לְעוֹלָ֥ם",
-          "lemma": "עוֹלָם",
-          "strong": "H5769",
-          "pron": "르올람"
-        },
-        {
-          "word": "וָעֶֽד",
-          "lemma": "עַד",
-          "strong": "H5703",
-          "pron": "바엗"
-        }
-      ],
-      "count": 12,
-      "refs": [
-        "psalms 9:5",
-        "psalms 10:16",
-        "psalms 21:4",
-        "psalms 45:6",
-        "psalms 45:17",
-        "psalms 48:14",
-        "psalms 52:8",
-        "psalms 104:5",
-        "psalms 119:44",
-        "psalms 145:1",
-        "psalms 145:2",
-        "psalms 145:21"
+        "exodus 12:14",
+        "exodus 12:17",
+        "exodus 27:21",
+        "exodus 28:43",
+        "exodus 29:9",
+        "leviticus 3:17",
+        "leviticus 7:36",
+        "leviticus 10:9",
+        "leviticus 16:29",
+        "leviticus 16:31",
+        "leviticus 16:34",
+        "leviticus 17:7"
       ],
       "glossKo": ""
     }

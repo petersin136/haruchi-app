@@ -2,7 +2,7 @@
   "lemma": "יְרֻבַּעַל",
   "pron": "예룹바알",
   "strong": "H3378",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רִיב",
     "strong": "H7378",
@@ -12,37 +12,79 @@
     {
       "lemma": "יָרֵב",
       "strong": "H3377",
-      "pron": "",
+      "pron": "야렙",
       "glossKo": "야렙"
     },
     {
       "lemma": "יָרׇבְעָם",
       "strong": "H3379",
-      "pron": "",
+      "pron": "브야랍암",
       "glossKo": "여로보암"
     },
     {
       "lemma": "יְרֻבֶּשֶׁת",
       "strong": "H3380",
-      "pron": "",
+      "pron": "예룹베셰트",
       "glossKo": "여룹베셋"
     },
     {
       "lemma": "יָרִיב",
       "strong": "H3401",
-      "pron": "예리바위",
+      "pron": "예리바이",
       "glossKo": "나의 다투는 자"
     },
     {
       "lemma": "מְרִיב בַּעַל",
       "strong": "H4807",
-      "pron": "",
+      "pron": "메립",
       "glossKo": "므립바알"
+    },
+    {
+      "lemma": "מְרִיבָה",
+      "strong": "H4808",
+      "pron": "메리바",
+      "glossKo": "다툼"
     }
   ],
   "defEn": "Jerubbaal",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "judges": 13,
+    "samuel1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶּן יְרֻבַּ֨עַל֙",
+      "pron": "바님 예룹바알",
+      "lemmas": [
+        "בֵּן",
+        "יְרֻבַּעַל"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יְרֻבַּ֨עַל֙",
+          "lemma": "יְרֻבַּעַל",
+          "strong": "H3378",
+          "pron": "예룹바알"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "judges 9:1",
+        "judges 9:2",
+        "judges 9:5",
+        "judges 9:24",
+        "judges 9:28",
+        "judges 9:57"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "רָגַז",
-  "pron": "릭주",
+  "pron": "티렉게주",
   "strong": "H7264",
   "posKo": "동사",
   "root": null,
@@ -8,34 +8,141 @@
     {
       "lemma": "אַרְגָּז",
       "strong": "H712",
-      "pron": "",
+      "pron": "바아렉갓",
       "glossKo": "함"
     },
     {
       "lemma": "רְגַז",
       "strong": "H7265",
-      "pron": "",
+      "pron": "하렉기주",
       "glossKo": "노하게 하다(아람)"
     },
     {
       "lemma": "רֹגֶז",
       "strong": "H7267",
-      "pron": "",
+      "pron": "로겟",
       "glossKo": "동요"
     },
     {
       "lemma": "רַגָּז",
       "strong": "H7268",
-      "pron": "",
+      "pron": "락갓",
       "glossKo": "두려워하는"
     }
   ],
   "defEn": "quiver",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 41,
   "byBook": {
+    "isaiah": 11,
     "psalms": 5,
-    "genesis": 1
+    "habakkuk": 3,
+    "samuel2": 3,
+    "jeremiah": 2,
+    "job": 2,
+    "joel": 2,
+    "kings2": 2,
+    "proverbs": 2,
+    "samuel1": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "ezekiel": 1,
+    "genesis": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַתִּרְגַּ֣ז הָאָ֔רֶץ",
+      "pron": "티렉게주 하아레츠",
+      "lemmas": [
+        "רָגַז",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "וַתִּרְגַּ֣ז",
+          "lemma": "רָגַז",
+          "strong": "H7264",
+          "pron": "티렉게주"
+        },
+        {
+          "word": "הָאָ֔רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel1 14:15",
+        "job 9:6",
+        "proverbs 30:21",
+        "isaiah 14:16",
+        "joel 2:10",
+        "amos 8:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִֽתְרַגֶּזְךָ֥ אֵלָֽי",
+      "pron": "티렉게주 엘",
+      "lemmas": [
+        "רָגַז",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "הִֽתְרַגֶּזְךָ֥",
+          "lemma": "רָגַז",
+          "strong": "H7264",
+          "pron": "티렉게주"
+        },
+        {
+          "word": "אֵלָֽי",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 19:27",
+        "kings2 19:28",
+        "isaiah 37:28",
+        "isaiah 37:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֥א יִרְגַּ֖ז",
+      "pron": "로 티렉게주",
+      "lemmas": [
+        "לֹא",
+        "רָגַז"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִרְגַּ֖ז",
+          "lemma": "רָגַז",
+          "strong": "H7264",
+          "pron": "티렉게주"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 7:10",
+        "chronicles1 17:9",
+        "amos 8:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

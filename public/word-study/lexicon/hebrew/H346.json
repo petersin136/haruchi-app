@@ -10,21 +10,27 @@
   },
   "family": [
     {
+      "lemma": "אֱהִי",
+      "strong": "H165",
+      "pron": "에히",
+      "glossKo": "어디"
+    },
+    {
       "lemma": "אַי",
       "strong": "H335",
-      "pron": "아에카",
+      "pron": "아엑카",
       "glossKo": "너에게 어디"
     },
     {
       "lemma": "אִי",
       "strong": "H336",
-      "pron": "",
+      "pron": "이",
       "glossKo": "아니"
     },
     {
       "lemma": "אֵיךְ",
       "strong": "H349",
-      "pron": "에크",
+      "pron": "브에크",
       "glossKo": "어찌"
     },
     {
@@ -36,15 +42,29 @@
   ],
   "defEn": "where?",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 47,
   "byBook": {
+    "isaiah": 10,
+    "jeremiah": 6,
+    "job": 5,
     "psalms": 5,
-    "genesis": 4
+    "genesis": 4,
+    "kings2": 3,
+    "malachi": 3,
+    "judges": 2,
+    "samuel2": 2,
+    "exodus": 1,
+    "ezekiel": 1,
+    "joel": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "nahum": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
       "hebrew": "אַיֵּ֥ה אֱלֹהֶֽיךָ",
-      "pron": "아에 베엘로힘",
+      "pron": "아에 엘로힘",
       "lemmas": [
         "אַיֵּה",
         "אֱלֹהִים"
@@ -60,14 +80,150 @@
           "word": "אֱלֹהֶֽיךָ",
           "lemma": "אֱלֹהִים",
           "strong": "H430",
-          "pron": "베엘로힘"
+          "pron": "엘로힘"
         }
       ],
-      "count": 3,
+      "count": 10,
       "refs": [
+        "kings2 18:34",
         "psalms 42:3",
         "psalms 42:10",
-        "psalms 79:10"
+        "psalms 79:10",
+        "isaiah 36:19",
+        "jeremiah 2:28",
+        "joel 2:17",
+        "malachi 2:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֣אמְרוּ אַיֵּ֧ה",
+      "pron": "바요메르 아에",
+      "lemmas": [
+        "אָמַר",
+        "אַיֵּה"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֣אמְרוּ",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "אַיֵּ֧ה",
+          "lemma": "אַיֵּה",
+          "strong": "H346",
+          "pron": "아에"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 19:5",
+        "genesis 38:21",
+        "samuel2 17:20",
+        "kings2 2:14",
+        "job 21:28",
+        "jeremiah 2:6",
+        "jeremiah 2:8",
+        "lamentations 2:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַיֵּ֣ה יְהוָ֔ה",
+      "pron": "아에 여호와",
+      "lemmas": [
+        "אַיֵּה",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "אַיֵּ֣ה",
+          "lemma": "אַיֵּה",
+          "strong": "H346",
+          "pron": "아에"
+        },
+        {
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 2:14",
+        "jeremiah 2:6",
+        "jeremiah 2:8",
+        "micah 7:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵׄלָׄ֔יׄוׄ אַיֵּ֖ה",
+      "pron": "엘 아에",
+      "lemmas": [
+        "אֵל",
+        "אַיֵּה"
+      ],
+      "words": [
+        {
+          "word": "אֵׄלָׄ֔יׄוׄ",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "אַיֵּ֖ה",
+          "lemma": "אַיֵּה",
+          "strong": "H346",
+          "pron": "아에"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 18:9",
+        "jeremiah 17:15",
+        "ezekiel 13:12",
+        "micah 7:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּאמְר֣וּ אֵׄלָׄ֔יׄוׄ אַיֵּ֖ה",
+      "pron": "바요메르 엘 아에",
+      "lemmas": [
+        "אָמַר",
+        "אֵל",
+        "אַיֵּה"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּאמְר֣וּ",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "אֵׄלָׄ֔יׄוׄ",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "אַיֵּ֖ה",
+          "lemma": "אַיֵּה",
+          "strong": "H346",
+          "pron": "아에"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 18:9",
+        "jeremiah 17:15",
+        "ezekiel 13:12",
+        "micah 7:10"
       ],
       "glossKo": ""
     }

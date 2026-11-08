@@ -1,6 +1,6 @@
 {
   "lemma": "נִיר",
-  "pron": "네리위",
+  "pron": "네로테하",
   "strong": "H5216",
   "posKo": "명사",
   "root": {
@@ -12,45 +12,221 @@
     {
       "lemma": "מָנוֹר",
       "strong": "H4500",
-      "pron": "",
+      "pron": "키메노르",
       "glossKo": "베틀의 채"
     },
     {
       "lemma": "נוּר",
       "strong": "H5135",
-      "pron": "",
+      "pron": "누라",
       "glossKo": "불(아람)"
     },
     {
       "lemma": "נִיר",
       "strong": "H5214",
-      "pron": "",
+      "pron": "니루",
       "glossKo": "땅을 갈다"
     },
     {
       "lemma": "נִיר",
       "strong": "H5215",
-      "pron": "",
+      "pron": "니르",
       "glossKo": "경작지"
     },
     {
       "lemma": "נֵר",
       "strong": "H5369",
-      "pron": "",
+      "pron": "네르",
       "glossKo": "넬"
     },
     {
       "lemma": "נֵרִיָּה",
       "strong": "H5374",
-      "pron": "",
+      "pron": "네리아",
       "glossKo": "네리야"
     }
   ],
   "defEn": "lamp; light",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 48,
   "byBook": {
-    "psalms": 3
+    "exodus": 11,
+    "proverbs": 6,
+    "chronicles2": 5,
+    "numbers": 4,
+    "chronicles1": 3,
+    "job": 3,
+    "kings1": 3,
+    "psalms": 3,
+    "leviticus": 2,
+    "samuel2": 2,
+    "zechariah": 2,
+    "jeremiah": 1,
+    "kings2": 1,
+    "samuel1": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת נֵרֹתֶ֖יהָ",
+      "pron": "에트 네로테하",
+      "lemmas": [
+        "אֵת",
+        "נִיר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "נֵרֹתֶ֖יהָ",
+          "lemma": "נִיר",
+          "strong": "H5216",
+          "pron": "네로테하"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 25:37",
+        "exodus 30:7",
+        "exodus 30:8",
+        "exodus 35:14",
+        "exodus 37:23",
+        "exodus 39:37",
+        "exodus 40:4",
+        "leviticus 24:4",
+        "numbers 4:9",
+        "numbers 8:2",
+        "samuel2 21:17",
+        "chronicles2 29:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְהַעֲלֹ֥ת נֵ֖ר",
+      "pron": "야알레 네로테하",
+      "lemmas": [
+        "עָלָה",
+        "נִיר"
+      ],
+      "words": [
+        {
+          "word": "לְהַעֲלֹ֥ת",
+          "lemma": "עָלָה",
+          "strong": "H5927",
+          "pron": "야알레"
+        },
+        {
+          "word": "נֵ֖ר",
+          "lemma": "נִיר",
+          "strong": "H5216",
+          "pron": "네로테하"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 27:20",
+        "exodus 40:25",
+        "leviticus 24:2",
+        "numbers 8:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהֶֽעֱלָה֙ אֶת נֵ֣רֹתֶ֔יהָ",
+      "pron": "야알레 에트 네로테하",
+      "lemmas": [
+        "עָלָה",
+        "אֵת",
+        "נִיר"
+      ],
+      "words": [
+        {
+          "word": "וְהֶֽעֱלָה֙",
+          "lemma": "עָלָה",
+          "strong": "H5927",
+          "pron": "야알레"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "נֵ֣רֹתֶ֔יהָ",
+          "lemma": "נִיר",
+          "strong": "H5216",
+          "pron": "네로테하"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 25:37",
+        "exodus 40:4",
+        "numbers 8:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמְנוֹרָ֖ה וְנֵרֹתֶ֑יהָ",
+      "pron": "메노라트 네로테하",
+      "lemmas": [
+        "מְנוֹרָה",
+        "נִיר"
+      ],
+      "words": [
+        {
+          "word": "וּמְנוֹרָ֖ה",
+          "lemma": "מְנוֹרָה",
+          "strong": "H4501",
+          "pron": "메노라트"
+        },
+        {
+          "word": "וְנֵרֹתֶ֑יהָ",
+          "lemma": "נִיר",
+          "strong": "H5216",
+          "pron": "네로테하"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 28:15",
+        "chronicles2 4:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְ֝נֵר֗וֹ עָלָ֥יו",
+      "pron": "네로테하 알",
+      "lemmas": [
+        "נִיר",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "וְ֝נֵר֗וֹ",
+          "lemma": "נִיר",
+          "strong": "H5216",
+          "pron": "네로테하"
+        },
+        {
+          "word": "עָלָ֥יו",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 18:6",
+        "job 29:3",
+        "zechariah 4:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

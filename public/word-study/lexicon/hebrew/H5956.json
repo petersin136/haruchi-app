@@ -1,6 +1,6 @@
 {
   "lemma": "עָלַם",
-  "pron": "타엘림",
+  "pron": "브네엘람",
   "strong": "H5956",
   "posKo": "동사",
   "root": null,
@@ -26,27 +26,141 @@
     {
       "lemma": "עָלוּם",
       "strong": "H5934",
-      "pron": "알루마이브",
+      "pron": "르븜브",
       "glossKo": "그의 청춘"
     },
     {
       "lemma": "עֶלֶם",
       "strong": "H5958",
-      "pron": "",
+      "pron": "하알렘",
       "glossKo": "젊은이"
     },
     {
       "lemma": "עַלְמוֹן",
       "strong": "H5960",
-      "pron": "",
+      "pron": "알몬",
       "glossKo": "알레멧"
     }
   ],
   "defEn": "veil; conceal",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 28,
   "byBook": {
-    "psalms": 4
+    "leviticus": 6,
+    "psalms": 4,
+    "deuteronomy": 3,
+    "job": 3,
+    "isaiah": 2,
+    "chronicles2": 1,
+    "ecclesiastes": 1,
+    "ezekiel": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "lamentations": 1,
+    "nahum": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְנֶעְלַם֙ מֵעֵינֵ֣י",
+      "pron": "브네엘람 에네켐",
+      "lemmas": [
+        "עָלַם",
+        "עַיִן"
+      ],
+      "words": [
+        {
+          "word": "וְנֶעְלַם֙",
+          "lemma": "עָלַם",
+          "strong": "H5956",
+          "pron": "브네엘람"
+        },
+        {
+          "word": "מֵעֵינֵ֣י",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 5:13",
+        "samuel1 12:3",
+        "job 28:21",
+        "proverbs 28:27",
+        "isaiah 1:15",
+        "ezekiel 22:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנֶעְלַ֣ם מִמֶּ֔נּוּ",
+      "pron": "브네엘람 민",
+      "lemmas": [
+        "עָלַם",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "וְנֶעְלַ֣ם",
+          "lemma": "עָלַם",
+          "strong": "H5956",
+          "pron": "브네엘람"
+        },
+        {
+          "word": "מִמֶּ֔נּוּ",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 5:2",
+        "leviticus 5:3",
+        "leviticus 5:4",
+        "kings1 10:3",
+        "kings2 4:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנֶעְלַ֣ם מִמֶּ֔נּוּ וְה֥וּא",
+      "pron": "브네엘람 민 후",
+      "lemmas": [
+        "עָלַם",
+        "מִן",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "וְנֶעְלַ֣ם",
+          "lemma": "עָלַם",
+          "strong": "H5956",
+          "pron": "브네엘람"
+        },
+        {
+          "word": "מִמֶּ֔נּוּ",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        },
+        {
+          "word": "וְה֥וּא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 5:2",
+        "leviticus 5:3",
+        "leviticus 5:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

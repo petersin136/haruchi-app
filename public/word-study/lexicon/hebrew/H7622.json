@@ -1,6 +1,6 @@
 {
   "lemma": "שְׁבוּת",
-  "pron": "셰부트",
+  "pron": "셰부테카",
   "strong": "H7622",
   "posKo": "명사",
   "root": {
@@ -12,60 +12,230 @@
     {
       "lemma": "שָׁבָה",
       "strong": "H7617",
-      "pron": "샤비타",
+      "pron": "니솁바",
       "glossKo": "사로잡다"
     },
     {
       "lemma": "שְׁבוּ",
       "strong": "H7618",
-      "pron": "",
+      "pron": "셰보",
       "glossKo": "마노"
     },
     {
       "lemma": "שְׁבוּאֵל",
       "strong": "H7619",
-      "pron": "",
+      "pron": "셰부엘",
       "glossKo": "스바"
     },
     {
       "lemma": "שֹׁבִי",
       "strong": "H7629",
-      "pron": "",
+      "pron": "브쇼비",
       "glossKo": "소비"
     }
   ],
   "defEn": "exile; prisoners; former state of prosperity",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 41,
   "byBook": {
-    "psalms": 6
+    "jeremiah": 14,
+    "ezekiel": 10,
+    "psalms": 6,
+    "zephaniah": 3,
+    "job": 2,
+    "lamentations": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "hosea": 1,
+    "joel": 1
   },
   "phrases": [
     {
-      "hebrew": "שבות שְׁבִ֣ית",
-      "pron": "셰부트 셰부트",
+      "hebrew": "שבית שְׁב֣וּת",
+      "pron": "셰부테카 셰부테카",
       "lemmas": [
         "שְׁבוּת",
         "שְׁבוּת"
       ],
       "words": [
         {
+          "word": "שבית",
+          "lemma": "שְׁבוּת",
+          "strong": "H7622",
+          "pron": "셰부테카"
+        },
+        {
+          "word": "שְׁב֣וּת",
+          "lemma": "שְׁבוּת",
+          "strong": "H7622",
+          "pron": "셰부테카"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "job 42:10",
+        "psalms 85:1",
+        "psalms 126:4",
+        "jeremiah 29:14",
+        "jeremiah 49:39",
+        "lamentations 2:14",
+        "ezekiel 16:53",
+        "ezekiel 39:25",
+        "zephaniah 2:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת שבית",
+      "pron": "에트 셰부테카",
+      "lemmas": [
+        "אֵת",
+        "שְׁבוּת"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שבית",
+          "lemma": "שְׁבוּת",
+          "strong": "H7622",
+          "pron": "셰부테카"
+        }
+      ],
+      "count": 21,
+      "refs": [
+        "deuteronomy 30:3",
+        "job 42:10",
+        "psalms 126:4",
+        "jeremiah 29:14",
+        "jeremiah 30:3",
+        "jeremiah 31:23",
+        "jeremiah 32:44",
+        "jeremiah 33:7",
+        "jeremiah 33:11",
+        "jeremiah 33:26",
+        "jeremiah 49:6",
+        "jeremiah 49:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָשִׁ֥יב אֶת שְׁבוּתָ֖ם",
+      "pron": "슙카 에트 셰부테카",
+      "lemmas": [
+        "שׁוּב",
+        "אֵת",
+        "שְׁבוּת"
+      ],
+      "words": [
+        {
+          "word": "אָשִׁ֥יב",
+          "lemma": "שׁוּב",
+          "strong": "H7725",
+          "pron": "슙카"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שְׁבוּתָ֖ם",
+          "lemma": "שְׁבוּת",
+          "strong": "H7622",
+          "pron": "셰부테카"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "job 42:10",
+        "jeremiah 29:14",
+        "jeremiah 30:3",
+        "jeremiah 31:23",
+        "jeremiah 32:44",
+        "jeremiah 33:7",
+        "jeremiah 33:11",
+        "jeremiah 33:26",
+        "jeremiah 49:6",
+        "jeremiah 49:39",
+        "ezekiel 16:53",
+        "ezekiel 29:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת שבית שְׁב֣וּת",
+      "pron": "에트 셰부테카 셰부테카",
+      "lemmas": [
+        "אֵת",
+        "שְׁבוּת",
+        "שְׁבוּת"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שבית",
+          "lemma": "שְׁבוּת",
+          "strong": "H7622",
+          "pron": "셰부테카"
+        },
+        {
+          "word": "שְׁב֣וּת",
+          "lemma": "שְׁבוּת",
+          "strong": "H7622",
+          "pron": "셰부테카"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "job 42:10",
+        "psalms 126:4",
+        "jeremiah 29:14",
+        "jeremiah 49:39",
+        "ezekiel 16:53",
+        "ezekiel 39:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שַׁ֝֗בְתָּ שבות",
+      "pron": "슙카 셰부테카",
+      "lemmas": [
+        "שׁוּב",
+        "שְׁבוּת"
+      ],
+      "words": [
+        {
+          "word": "שַׁ֝֗בְתָּ",
+          "lemma": "שׁוּב",
+          "strong": "H7725",
+          "pron": "슙카"
+        },
+        {
           "word": "שבות",
           "lemma": "שְׁבוּת",
           "strong": "H7622",
-          "pron": "셰부트"
-        },
-        {
-          "word": "שְׁבִ֣ית",
-          "lemma": "שְׁבוּת",
-          "strong": "H7622",
-          "pron": "셰부트"
+          "pron": "셰부테카"
         }
       ],
-      "count": 4,
+      "count": 6,
       "refs": [
         "psalms 85:1",
-        "psalms 126:4"
+        "jeremiah 30:18",
+        "jeremiah 48:47",
+        "lamentations 2:14",
+        "hosea 6:11",
+        "zephaniah 2:7"
       ],
       "glossKo": ""
     }

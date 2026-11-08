@@ -1,8 +1,8 @@
 {
   "lemma": "לֶקַח",
-  "pron": "레카흐",
+  "pron": "리케히",
   "strong": "H3948",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "לָקַח",
     "strong": "H3947",
@@ -12,43 +12,79 @@
     {
       "lemma": "לָקַח",
       "strong": "H3947",
-      "pron": "익카흐",
+      "pron": "바익카흐",
       "glossKo": "잡다"
     },
     {
       "lemma": "לִקְחִי",
       "strong": "H3949",
-      "pron": "",
+      "pron": "브리케히",
       "glossKo": "릭히"
     },
     {
       "lemma": "מַלְקוֹחַ",
       "strong": "H4455",
-      "pron": "말코하위",
-      "glossKo": "나의 탈취물"
+      "pron": "아말코아흐",
+      "glossKo": "탈취물"
     },
     {
       "lemma": "מֶלְקָח",
       "strong": "H4457",
-      "pron": "",
-      "glossKo": "심지 자르는 가위"
+      "pron": "우말카헤하",
+      "glossKo": "그녀의 심지 자르는 가위"
     },
     {
       "lemma": "מִקָּח",
       "strong": "H4727",
-      "pron": "",
+      "pron": "우믹카흐",
       "glossKo": "받음"
     },
     {
       "lemma": "מַקָּחָה",
       "strong": "H4728",
-      "pron": "",
+      "pron": "아막카호트",
       "glossKo": "거래"
     }
   ],
   "defEn": "received; instruction",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "proverbs": 6,
+    "deuteronomy": 1,
+    "isaiah": 1,
+    "job": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "יֹסִ֥יף לֶֽקַח",
+      "pron": "바토셉 리케히",
+      "lemmas": [
+        "יָסַף",
+        "לֶקַח"
+      ],
+      "words": [
+        {
+          "word": "יֹסִ֥יף",
+          "lemma": "יָסַף",
+          "strong": "H3254",
+          "pron": "바토셉"
+        },
+        {
+          "word": "לֶֽקַח",
+          "lemma": "לֶקַח",
+          "strong": "H3948",
+          "pron": "리케히"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "proverbs 1:5",
+        "proverbs 9:9",
+        "proverbs 16:21",
+        "proverbs 16:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "עֲשָׂהאֵל",
-  "pron": "아사흐엘",
+  "pron": "바아사흐엘",
   "strong": "H6214",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָשָׂה",
     "strong": "H6213",
@@ -12,43 +12,185 @@
     {
       "lemma": "בַּעֲשֵׂיָה",
       "strong": "H1202",
-      "pron": "",
+      "pron": "바아세아",
       "glossKo": "바아세야"
     },
     {
       "lemma": "יַעֲשׂוּ",
       "strong": "H3299",
-      "pron": "",
+      "pron": "브윗브",
       "glossKo": "야아수"
     },
     {
       "lemma": "יַעֲשִׂיאֵל",
       "strong": "H3300",
-      "pron": "",
+      "pron": "브야아시엘",
       "glossKo": "야아시엘"
     },
     {
       "lemma": "מַעֲשֶׂה",
       "strong": "H4639",
-      "pron": "마아세",
-      "glossKo": "행위"
+      "pron": "밈마아세누",
+      "glossKo": "우리의 행위"
     },
     {
       "lemma": "מַעֲשַׂי",
       "strong": "H4640",
-      "pron": "",
+      "pron": "우마에사이",
       "glossKo": "마아새"
     },
     {
       "lemma": "עָשָׂה",
       "strong": "H6213",
-      "pron": "야아세",
+      "pron": "바야아스",
       "glossKo": "만들다"
     }
   ],
   "defEn": "Asahel",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 23,
+  "byBook": {
+    "samuel2": 14,
+    "chronicles1": 6,
+    "chronicles2": 2,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "עֲשָׂה אֵ֥ל",
+      "pron": "바아사흐엘 바아사흐엘",
+      "lemmas": [
+        "עֲשָׂהאֵל",
+        "עֲשָׂהאֵל"
+      ],
+      "words": [
+        {
+          "word": "עֲשָׂה",
+          "lemma": "עֲשָׂהאֵל",
+          "strong": "H6214",
+          "pron": "바아사흐엘"
+        },
+        {
+          "word": "אֵ֥ל",
+          "lemma": "עֲשָׂהאֵל",
+          "strong": "H6214",
+          "pron": "바아사흐엘"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "samuel2 2:18",
+        "samuel2 3:27",
+        "samuel2 23:24",
+        "chronicles1 2:16",
+        "chronicles1 11:26",
+        "chronicles1 27:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲשָׂה אֵל֙ אֲחִ֣י",
+      "pron": "바아사흐엘 바아사흐엘 아히브",
+      "lemmas": [
+        "עֲשָׂהאֵל",
+        "עֲשָׂהאֵל",
+        "אָח"
+      ],
+      "words": [
+        {
+          "word": "עֲשָׂה",
+          "lemma": "עֲשָׂהאֵל",
+          "strong": "H6214",
+          "pron": "바아사흐엘"
+        },
+        {
+          "word": "אֵל֙",
+          "lemma": "עֲשָׂהאֵל",
+          "strong": "H6214",
+          "pron": "바아사흐엘"
+        },
+        {
+          "word": "אֲחִ֣י",
+          "lemma": "אָח",
+          "strong": "H251",
+          "pron": "아히브"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "samuel2 3:27",
+        "samuel2 23:24",
+        "chronicles1 11:26",
+        "chronicles1 27:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵל֙ אֲחִ֣י",
+      "pron": "바아사흐엘 아히브",
+      "lemmas": [
+        "עֲשָׂהאֵל",
+        "אָח"
+      ],
+      "words": [
+        {
+          "word": "אֵל֙",
+          "lemma": "עֲשָׂהאֵל",
+          "strong": "H6214",
+          "pron": "바아사흐엘"
+        },
+        {
+          "word": "אֲחִ֣י",
+          "lemma": "אָח",
+          "strong": "H251",
+          "pron": "아히브"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 3:27",
+        "samuel2 3:30",
+        "samuel2 23:24",
+        "chronicles1 11:26",
+        "chronicles1 27:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵל֙ אֲחִ֣י יוֹאָ֔ב",
+      "pron": "바아사흐엘 아히브 요압",
+      "lemmas": [
+        "עֲשָׂהאֵל",
+        "אָח",
+        "יוֹאָב"
+      ],
+      "words": [
+        {
+          "word": "אֵל֙",
+          "lemma": "עֲשָׂהאֵל",
+          "strong": "H6214",
+          "pron": "바아사흐엘"
+        },
+        {
+          "word": "אֲחִ֣י",
+          "lemma": "אָח",
+          "strong": "H251",
+          "pron": "아히브"
+        },
+        {
+          "word": "יוֹאָ֔ב",
+          "lemma": "יוֹאָב",
+          "strong": "H3097",
+          "pron": "요압"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 23:24",
+        "chronicles1 11:26",
+        "chronicles1 27:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

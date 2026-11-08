@@ -1,6 +1,6 @@
 {
   "lemma": "אֶרֶז",
-  "pron": "아라짐",
+  "pron": "에렛",
   "strong": "H730",
   "posKo": "명사",
   "root": {
@@ -12,26 +12,80 @@
     {
       "lemma": "אָרַז",
       "strong": "H729",
-      "pron": "",
+      "pron": "바아루짐",
       "glossKo": "백향목으로 만든"
     },
     {
       "lemma": "אַרְזָה",
       "strong": "H731",
-      "pron": "",
+      "pron": "아레자",
       "glossKo": "백향목 판벽"
     }
   ],
   "defEn": "cedar",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 73,
   "byBook": {
-    "psalms": 6
+    "kings1": 20,
+    "ezekiel": 6,
+    "isaiah": 6,
+    "psalms": 6,
+    "chronicles1": 5,
+    "chronicles2": 5,
+    "leviticus": 5,
+    "jeremiah": 4,
+    "samuel2": 3,
+    "songofsolomon": 3,
+    "kings2": 2,
+    "numbers": 2,
+    "zechariah": 2,
+    "amos": 1,
+    "ezra": 1,
+    "job": 1,
+    "judges": 1
   },
   "phrases": [
     {
+      "hebrew": "וְעֵ֣ץ אֶ֔רֶז",
+      "pron": "에츠 에렛",
+      "lemmas": [
+        "עֵץ",
+        "אֶרֶז"
+      ],
+      "words": [
+        {
+          "word": "וְעֵ֣ץ",
+          "lemma": "עֵץ",
+          "strong": "H6086",
+          "pron": "에츠"
+        },
+        {
+          "word": "אֶ֔רֶז",
+          "lemma": "אֶרֶז",
+          "strong": "H730",
+          "pron": "에렛"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "leviticus 14:4",
+        "leviticus 14:6",
+        "leviticus 14:49",
+        "leviticus 14:51",
+        "leviticus 14:52",
+        "numbers 19:6",
+        "samuel2 5:11",
+        "kings1 5:8",
+        "kings1 5:10",
+        "kings1 6:10",
+        "kings1 9:11",
+        "chronicles1 14:1"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "אַרְזֵ֥י הַלְּבָנֽוֹן",
-      "pron": "아라짐 아레바논",
+      "pron": "에렛 브아레바논",
       "lemmas": [
         "אֶרֶז",
         "לְבָנוֹן"
@@ -41,20 +95,117 @@
           "word": "אַרְזֵ֥י",
           "lemma": "אֶרֶז",
           "strong": "H730",
-          "pron": "아라짐"
+          "pron": "에렛"
         },
         {
           "word": "הַלְּבָנֽוֹן",
           "lemma": "לְבָנוֹן",
           "strong": "H3844",
-          "pron": "아레바논"
+          "pron": "브아레바논"
         }
       ],
-      "count": 3,
+      "count": 8,
       "refs": [
+        "judges 9:15",
         "psalms 29:5",
         "psalms 92:12",
-        "psalms 104:16"
+        "psalms 104:16",
+        "isaiah 2:13",
+        "isaiah 14:8",
+        "ezekiel 27:5",
+        "ezekiel 31:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּ֥ית אֲרָזִֽים",
+      "pron": "미바이트 에렛",
+      "lemmas": [
+        "בַּיִת",
+        "אֶרֶז"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֥ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "אֲרָזִֽים",
+          "lemma": "אֶרֶז",
+          "strong": "H730",
+          "pron": "에렛"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 7:2",
+        "samuel2 7:7",
+        "chronicles1 17:1",
+        "chronicles1 17:6",
+        "songofsolomon 1:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֵ֣ת הָאֲרָזִ֗ים",
+      "pron": "에트 에렛",
+      "lemmas": [
+        "אֵת",
+        "אֶרֶז"
+      ],
+      "words": [
+        {
+          "word": "וְאֵ֣ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הָאֲרָזִ֗ים",
+          "lemma": "אֶרֶז",
+          "strong": "H730",
+          "pron": "에렛"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 9:15",
+        "kings1 10:27",
+        "chronicles2 1:15",
+        "chronicles2 9:27",
+        "psalms 29:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָאֶ֜רֶז אֲשֶׁ֤ר",
+      "pron": "에렛 아셰르",
+      "lemmas": [
+        "אֶרֶז",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הָאֶ֜רֶז",
+          "lemma": "אֶרֶז",
+          "strong": "H730",
+          "pron": "에렛"
+        },
+        {
+          "word": "אֲשֶׁ֤ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 4:33",
+        "kings2 14:9",
+        "chronicles2 25:18",
+        "zechariah 11:2"
       ],
       "glossKo": ""
     }

@@ -1,16 +1,177 @@
 {
   "lemma": "פָּצָה",
-  "pron": "파추",
+  "pron": "파체타",
   "strong": "H6475",
   "posKo": "동사",
   "root": null,
   "family": [],
   "defEn": "rend; open",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 15,
   "byBook": {
     "psalms": 5,
-    "genesis": 1
+    "judges": 2,
+    "lamentations": 2,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "genesis": 1,
+    "isaiah": 1,
+    "job": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "פָּצִ֤יתִי פִי֙",
+      "pron": "파체타 피하",
+      "lemmas": [
+        "פָּצָה",
+        "פֶּה"
+      ],
+      "words": [
+        {
+          "word": "פָּצִ֤יתִי",
+          "lemma": "פָּצָה",
+          "strong": "H6475",
+          "pron": "파체타"
+        },
+        {
+          "word": "פִי֙",
+          "lemma": "פֶּה",
+          "strong": "H6310",
+          "pron": "피하"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 11:35",
+        "job 35:16",
+        "isaiah 10:14",
+        "ezekiel 2:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֣ר פָּצְתָ֣ה",
+      "pron": "아셰르 파체타",
+      "lemmas": [
+        "אֲשֶׁר",
+        "פָּצָה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "פָּצְתָ֣ה",
+          "lemma": "פָּצָה",
+          "strong": "H6475",
+          "pron": "파체타"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 4:11",
+        "deuteronomy 11:6",
+        "psalms 66:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פָּצ֣וּ עָלַ֣י",
+      "pron": "파체타 알",
+      "lemmas": [
+        "פָּצָה",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "פָּצ֣וּ",
+          "lemma": "פָּצָה",
+          "strong": "H6475",
+          "pron": "파체타"
+        },
+        {
+          "word": "עָלַ֣י",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 22:13",
+        "lamentations 2:16",
+        "lamentations 3:46"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פָּצ֣וּ עָלַ֣י פִּיהֶ֑ם",
+      "pron": "파체타 알 피하",
+      "lemmas": [
+        "פָּצָה",
+        "עַל",
+        "פֶּה"
+      ],
+      "words": [
+        {
+          "word": "פָּצ֣וּ",
+          "lemma": "פָּצָה",
+          "strong": "H6475",
+          "pron": "파체타"
+        },
+        {
+          "word": "עָלַ֣י",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "פִּיהֶ֑ם",
+          "lemma": "פֶּה",
+          "strong": "H6310",
+          "pron": "피하"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 22:13",
+        "lamentations 2:16",
+        "lamentations 3:46"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פָּצְתָ֣ה אֶת",
+      "pron": "파체타 에트",
+      "lemmas": [
+        "פָּצָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "פָּצְתָ֣ה",
+          "lemma": "פָּצָה",
+          "strong": "H6475",
+          "pron": "파체타"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 4:11",
+        "judges 11:36",
+        "psalms 144:10"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

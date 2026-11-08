@@ -1,6 +1,6 @@
 {
   "lemma": "מָעוֹן",
-  "pron": "메온",
+  "pron": "미메온",
   "strong": "H4583",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,95 @@
     {
       "lemma": "מָעוֹן",
       "strong": "H4584",
-      "pron": "",
+      "pron": "마온",
       "glossKo": "마온"
     },
     {
       "lemma": "מְעוֹנָה",
       "strong": "H4585",
-      "pron": "우메오나트오",
-      "glossKo": "그의 거처"
+      "pron": "메오나",
+      "glossKo": "거처"
     },
     {
       "lemma": "עוֹנָה",
       "strong": "H5772",
-      "pron": "",
-      "glossKo": "동거"
+      "pron": "베오나타흐",
+      "glossKo": "그녀의 동거"
     }
   ],
   "defEn": "abode; retreat",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 17,
   "byBook": {
-    "psalms": 5
+    "jeremiah": 5,
+    "psalms": 5,
+    "chronicles2": 2,
+    "samuel1": 2,
+    "deuteronomy": 1,
+    "nahum": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מִמְּע֨וֹן קָדְשְׁךָ֜",
+      "pron": "미메온 코데쉬",
+      "lemmas": [
+        "מָעוֹן",
+        "קֹדֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "מִמְּע֨וֹן",
+          "lemma": "מָעוֹן",
+          "strong": "H4583",
+          "pron": "미메온"
+        },
+        {
+          "word": "קָדְשְׁךָ֜",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 26:15",
+        "chronicles2 30:27",
+        "psalms 68:5",
+        "jeremiah 25:30",
+        "zechariah 2:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְע֣וֹן תַּנִּ֑ים",
+      "pron": "미메온 아탄니님",
+      "lemmas": [
+        "מָעוֹן",
+        "תַּנִּין"
+      ],
+      "words": [
+        {
+          "word": "מְע֣וֹן",
+          "lemma": "מָעוֹן",
+          "strong": "H4583",
+          "pron": "미메온"
+        },
+        {
+          "word": "תַּנִּ֑ים",
+          "lemma": "תַּנִּין",
+          "strong": "H8577",
+          "pron": "아탄니님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 9:11",
+        "jeremiah 10:22",
+        "jeremiah 49:33",
+        "jeremiah 51:37"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

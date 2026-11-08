@@ -1,6 +1,6 @@
 {
   "lemma": "מוֹעֵצָה",
-  "pron": "미모아초테헴",
+  "pron": "밈모아초테헴",
   "strong": "H4156",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,61 @@
     {
       "lemma": "יְעַט",
       "strong": "H3272",
-      "pron": "",
-      "glossKo": "의논하다(아람)"
+      "pron": "야아도히",
+      "glossKo": "그의 의논하다(아람)"
     },
     {
       "lemma": "יָעַץ",
       "strong": "H3289",
-      "pron": "예아차니",
-      "glossKo": "나를 도모하다"
+      "pron": "이아체카",
+      "glossKo": "너에게 도모하다"
     },
     {
       "lemma": "עֵצָה",
       "strong": "H6098",
-      "pron": "바아차트",
+      "pron": "에초트",
       "glossKo": "꾀"
     }
   ],
   "defEn": "purpose",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 7,
   "byBook": {
-    "psalms": 2
+    "proverbs": 2,
+    "psalms": 2,
+    "hosea": 1,
+    "jeremiah": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יֵ֝לְכ֗וּ בְּֽמוֹעֲצוֹתֵיהֶֽם",
+      "pron": "텔레크 밈모아초테헴",
+      "lemmas": [
+        "יָלַךְ",
+        "מוֹעֵצָה"
+      ],
+      "words": [
+        {
+          "word": "יֵ֝לְכ֗וּ",
+          "lemma": "יָלַךְ",
+          "strong": "H3212",
+          "pron": "텔레크"
+        },
+        {
+          "word": "בְּֽמוֹעֲצוֹתֵיהֶֽם",
+          "lemma": "מוֹעֵצָה",
+          "strong": "H4156",
+          "pron": "밈모아초테헴"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 81:12",
+        "jeremiah 7:24",
+        "micah 6:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

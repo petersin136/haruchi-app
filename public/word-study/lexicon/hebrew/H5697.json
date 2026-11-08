@@ -16,17 +16,65 @@
       "glossKo": "송아지"
     },
     {
+      "lemma": "עֶגְלָה",
+      "strong": "H5698",
+      "pron": "르엑라",
+      "glossKo": "에글라"
+    },
+    {
       "lemma": "עֶגְלוֹן",
       "strong": "H5700",
-      "pron": "",
+      "pron": "엑론",
       "glossKo": "에글론"
+    },
+    {
+      "lemma": "עֵין עֶגְלַיִם",
+      "strong": "H5882",
+      "pron": "엔",
+      "glossKo": "엔에글라임"
     }
   ],
   "defEn": "calf; heifer",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 14,
   "byBook": {
-    "genesis": 1
+    "deuteronomy": 4,
+    "jeremiah": 3,
+    "hosea": 2,
+    "isaiah": 2,
+    "genesis": 1,
+    "judges": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עֶגְלַ֣ת בָּקָ֗ר",
+      "pron": "엑라 우바카르",
+      "lemmas": [
+        "עֶגְלָה",
+        "בָּקָר"
+      ],
+      "words": [
+        {
+          "word": "עֶגְלַ֣ת",
+          "lemma": "עֶגְלָה",
+          "strong": "H5697",
+          "pron": "엑라"
+        },
+        {
+          "word": "בָּקָ֗ר",
+          "lemma": "בָּקָר",
+          "strong": "H1241",
+          "pron": "우바카르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 21:3",
+        "samuel1 16:2",
+        "isaiah 7:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

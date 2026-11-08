@@ -1,6 +1,6 @@
 {
   "lemma": "חָשַׁב",
-  "pron": "하샤부",
+  "pron": "바아헤셰베하",
   "strong": "H2803",
   "posKo": "동사",
   "root": null,
@@ -8,74 +8,245 @@
     {
       "lemma": "חֲשַׁב",
       "strong": "H2804",
-      "pron": "",
+      "pron": "하시빈",
       "glossKo": "생각하다(아람)"
     },
     {
       "lemma": "חֵשֶׁב",
       "strong": "H2805",
-      "pron": "",
+      "pron": "브헤솁",
       "glossKo": "띠"
     },
     {
       "lemma": "חַשְׁבַּדָּנָה",
       "strong": "H2806",
-      "pron": "",
+      "pron": "브하솁받다나",
       "glossKo": "하스바다나"
     },
     {
       "lemma": "חֲשֻׁבָה",
       "strong": "H2807",
-      "pron": "",
+      "pron": "바하슈바",
       "glossKo": "하숩바"
     },
     {
       "lemma": "חֶשְׁבּוֹן",
       "strong": "H2808",
-      "pron": "",
+      "pron": "브헤솁본",
       "glossKo": "고안"
     },
     {
       "lemma": "חִשָּׁבוֹן",
       "strong": "H2810",
-      "pron": "",
+      "pron": "힛셰보노트",
       "glossKo": "고안한 것"
     }
   ],
   "defEn": "plait; interpenetrate; weave; fabricate; plot; contrive; think; regard; value; compute",
   "defKo": "",
-  "countOT": 23,
+  "countOT": 124,
   "byBook": {
     "psalms": 18,
-    "genesis": 5
+    "exodus": 13,
+    "isaiah": 12,
+    "jeremiah": 12,
+    "job": 10,
+    "leviticus": 8,
+    "genesis": 5,
+    "proverbs": 5,
+    "samuel2": 4,
+    "chronicles2": 3,
+    "esther": 3,
+    "nehemiah": 3,
+    "numbers": 3,
+    "daniel": 2,
+    "deuteronomy": 2,
+    "ezekiel": 2,
+    "hosea": 2,
+    "kings2": 2,
+    "lamentations": 2,
+    "micah": 2,
+    "nahum": 2,
+    "samuel1": 2,
+    "zechariah": 2,
+    "amos": 1,
+    "jonah": 1,
+    "joshua": 1,
+    "kings1": 1,
+    "malachi": 1
   },
   "phrases": [
     {
-      "hebrew": "חֹ֝שְׁבֵ֗י רָעָתִֽי",
-      "pron": "하샤부 라",
+      "hebrew": "חָשַׁ֥ב עַל",
+      "pron": "바아헤셰베하 알",
       "lemmas": [
         "חָשַׁב",
-        "רַע"
+        "עַל"
       ],
       "words": [
         {
-          "word": "חֹ֝שְׁבֵ֗י",
+          "word": "חָשַׁ֥ב",
           "lemma": "חָשַׁב",
           "strong": "H2803",
-          "pron": "하샤부"
+          "pron": "바아헤셰베하"
         },
         {
-          "word": "רָעָתִֽי",
-          "lemma": "רַע",
-          "strong": "H7451",
-          "pron": "라"
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
         }
       ],
-      "count": 3,
+      "count": 15,
       "refs": [
-        "psalms 35:4",
-        "psalms 41:7",
-        "psalms 140:2"
+        "genesis 50:20",
+        "samuel2 4:2",
+        "nehemiah 13:13",
+        "esther 8:3",
+        "esther 9:24",
+        "esther 9:25",
+        "psalms 36:4",
+        "jeremiah 18:11",
+        "jeremiah 18:18",
+        "jeremiah 29:11",
+        "jeremiah 48:2",
+        "jeremiah 49:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֧א יֵחָשֵׁ֛ב",
+      "pron": "로 바아헤셰베하",
+      "lemmas": [
+        "לֹא",
+        "חָשַׁב"
+      ],
+      "words": [
+        {
+          "word": "לֹ֧א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יֵחָשֵׁ֛ב",
+          "lemma": "חָשַׁב",
+          "strong": "H2803",
+          "pron": "바아헤셰베하"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "leviticus 7:18",
+        "numbers 23:9",
+        "kings1 10:21",
+        "kings2 12:15",
+        "kings2 22:7",
+        "psalms 32:2",
+        "isaiah 13:17",
+        "isaiah 33:8",
+        "isaiah 53:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֹשֵׁ֖ב תַּעֲשֶׂ֥ה",
+      "pron": "바아헤셰베하 바야아스",
+      "lemmas": [
+        "חָשַׁב",
+        "עָשָׂה"
+      ],
+      "words": [
+        {
+          "word": "חֹשֵׁ֖ב",
+          "lemma": "חָשַׁב",
+          "strong": "H2803",
+          "pron": "바아헤셰베하"
+        },
+        {
+          "word": "תַּעֲשֶׂ֥ה",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 26:1",
+        "exodus 26:31",
+        "exodus 36:8",
+        "exodus 36:35",
+        "nehemiah 6:2",
+        "jeremiah 18:8",
+        "jeremiah 26:3",
+        "jeremiah 36:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַעֲשֵׂ֥ה חֹשֵׁ֖ב",
+      "pron": "밈마아세누 바아헤셰베하",
+      "lemmas": [
+        "מַעֲשֶׂה",
+        "חָשַׁב"
+      ],
+      "words": [
+        {
+          "word": "מַעֲשֵׂ֥ה",
+          "lemma": "מַעֲשֶׂה",
+          "strong": "H4639",
+          "pron": "밈마아세누"
+        },
+        {
+          "word": "חֹשֵׁ֖ב",
+          "lemma": "חָשַׁב",
+          "strong": "H2803",
+          "pron": "바아헤셰베하"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 26:1",
+        "exodus 26:31",
+        "exodus 28:6",
+        "exodus 28:15",
+        "exodus 36:8",
+        "exodus 36:35",
+        "exodus 39:3",
+        "exodus 39:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֥ר חָשַׁ֖ב",
+      "pron": "아셰르 바아헤셰베하",
+      "lemmas": [
+        "אֲשֶׁר",
+        "חָשַׁב"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "חָשַׁ֖ב",
+          "lemma": "חָשַׁב",
+          "strong": "H2803",
+          "pron": "바아헤셰베하"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "esther 8:3",
+        "esther 9:25",
+        "psalms 140:2",
+        "psalms 140:4",
+        "jeremiah 18:8",
+        "jeremiah 49:20",
+        "jeremiah 50:45"
       ],
       "glossKo": ""
     }

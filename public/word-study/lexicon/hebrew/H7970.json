@@ -18,7 +18,7 @@
     {
       "lemma": "שָׁלִישׁ",
       "strong": "H7991",
-      "pron": "샬리쉬",
+      "pron": "브샬리심",
       "glossKo": "장군"
     },
     {
@@ -36,39 +36,58 @@
     {
       "lemma": "תְּלָת",
       "strong": "H8532",
-      "pron": "",
+      "pron": "텔라타",
       "glossKo": "셋(아람)"
     }
   ],
   "defEn": "thirty; thirtieth",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 176,
   "byBook": {
-    "genesis": 18
+    "numbers": 37,
+    "chronicles1": 19,
+    "genesis": 18,
+    "judges": 15,
+    "kings1": 14,
+    "chronicles2": 11,
+    "exodus": 9,
+    "kings2": 8,
+    "nehemiah": 8,
+    "samuel2": 8,
+    "ezra": 7,
+    "ezekiel": 4,
+    "samuel1": 4,
+    "jeremiah": 3,
+    "joshua": 3,
+    "deuteronomy": 2,
+    "leviticus": 2,
+    "zechariah": 2,
+    "daniel": 1,
+    "esther": 1
   },
   "phrases": [
     {
-      "hebrew": "וּשְׁלֹשִׁ֖ים שָׁנָ֑ה",
-      "pron": "셸로심 우셰노타위",
+      "hebrew": "שְׁלֹשִׁ֣ים שָׁנָ֔ה",
+      "pron": "셸로심 브샤님",
       "lemmas": [
         "שְׁלוֹשִׁים",
         "שָׁנֶה"
       ],
       "words": [
         {
-          "word": "וּשְׁלֹשִׁ֖ים",
+          "word": "שְׁלֹשִׁ֣ים",
           "lemma": "שְׁלוֹשִׁים",
           "strong": "H7970",
           "pron": "셸로심"
         },
         {
-          "word": "שָׁנָ֑ה",
+          "word": "שָׁנָ֔ה",
           "lemma": "שָׁנֶה",
           "strong": "H8141",
-          "pron": "우셰노타위"
+          "pron": "브샤님"
         }
       ],
-      "count": 11,
+      "count": 24,
       "refs": [
         "genesis 5:5",
         "genesis 5:16",
@@ -80,46 +99,160 @@
         "genesis 11:20",
         "genesis 11:22",
         "genesis 25:17",
-        "genesis 41:46"
+        "genesis 41:46",
+        "exodus 12:40"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וּשְׁלֹשִׁ֖ים שָׁנָ֑ה וַיּ֖וֹלֶד",
-      "pron": "셸로심 우셰노타위 옐릳티카",
+      "hebrew": "וּשְׁלֹשִׁ֛ים אֶ֖לֶף",
+      "pron": "셸로심 엘렙",
       "lemmas": [
         "שְׁלוֹשִׁים",
-        "שָׁנֶה",
-        "יָלַד"
+        "אֶלֶף"
       ],
       "words": [
         {
-          "word": "וּשְׁלֹשִׁ֖ים",
+          "word": "וּשְׁלֹשִׁ֛ים",
           "lemma": "שְׁלוֹשִׁים",
           "strong": "H7970",
           "pron": "셸로심"
         },
         {
-          "word": "שָׁנָ֑ה",
-          "lemma": "שָׁנֶה",
-          "strong": "H8141",
-          "pron": "우셰노타위"
-        },
-        {
-          "word": "וַיּ֖וֹלֶד",
-          "lemma": "יָלַד",
-          "strong": "H3205",
-          "pron": "옐릳티카"
+          "word": "אֶ֖לֶף",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
         }
       ],
-      "count": 6,
+      "count": 20,
       "refs": [
-        "genesis 11:12",
-        "genesis 11:14",
-        "genesis 11:16",
-        "genesis 11:18",
-        "genesis 11:20",
-        "genesis 11:22"
+        "numbers 1:35",
+        "numbers 1:37",
+        "numbers 2:21",
+        "numbers 2:23",
+        "numbers 26:37",
+        "numbers 31:35",
+        "numbers 31:36",
+        "numbers 31:38",
+        "numbers 31:39",
+        "numbers 31:43",
+        "numbers 31:44",
+        "numbers 31:45"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵא֖וֹת שְׁלֹשִׁ֣ים",
+      "pron": "우메아트 셸로심",
+      "lemmas": [
+        "מֵאָה",
+        "שְׁלוֹשִׁים"
+      ],
+      "words": [
+        {
+          "word": "מֵא֖וֹת",
+          "lemma": "מֵאָה",
+          "strong": "H3967",
+          "pron": "우메아트"
+        },
+        {
+          "word": "שְׁלֹשִׁ֣ים",
+          "lemma": "שְׁלוֹשִׁים",
+          "strong": "H7970",
+          "pron": "셸로심"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "exodus 38:24",
+        "numbers 4:40",
+        "numbers 26:7",
+        "numbers 26:51",
+        "chronicles1 15:7",
+        "chronicles2 24:15",
+        "ezra 2:35",
+        "ezra 2:42",
+        "ezra 2:65",
+        "ezra 2:66",
+        "ezra 2:67",
+        "nehemiah 7:38"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִבֶּ֨ן שְׁלֹשִׁ֤ים",
+      "pron": "바님 셸로심",
+      "lemmas": [
+        "בֵּן",
+        "שְׁלוֹשִׁים"
+      ],
+      "words": [
+        {
+          "word": "מִבֶּ֨ן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "שְׁלֹשִׁ֤ים",
+          "lemma": "שְׁלוֹשִׁים",
+          "strong": "H7970",
+          "pron": "셸로심"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "genesis 32:15",
+        "genesis 41:46",
+        "numbers 4:3",
+        "numbers 4:23",
+        "numbers 4:30",
+        "numbers 4:35",
+        "numbers 4:39",
+        "numbers 4:43",
+        "numbers 4:47",
+        "judges 12:9",
+        "judges 12:14",
+        "samuel2 5:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁלֹשִׁ֣ים וּמֵאָה֮",
+      "pron": "셸로심 우메아트",
+      "lemmas": [
+        "שְׁלוֹשִׁים",
+        "מֵאָה"
+      ],
+      "words": [
+        {
+          "word": "שְׁלֹשִׁ֣ים",
+          "lemma": "שְׁלוֹשִׁים",
+          "strong": "H7970",
+          "pron": "셸로심"
+        },
+        {
+          "word": "וּמֵאָה֮",
+          "lemma": "מֵאָה",
+          "strong": "H3967",
+          "pron": "우메아트"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "genesis 5:3",
+        "genesis 47:9",
+        "exodus 6:16",
+        "exodus 6:18",
+        "exodus 6:20",
+        "numbers 7:13",
+        "numbers 7:19",
+        "numbers 7:25",
+        "numbers 7:31",
+        "numbers 7:37",
+        "numbers 7:43",
+        "numbers 7:49"
       ],
       "glossKo": ""
     }

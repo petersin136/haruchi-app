@@ -24,9 +24,42 @@
   ],
   "defEn": "suitable; beautiful",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 10,
   "byBook": {
-    "psalms": 2
+    "songofsolomon": 4,
+    "proverbs": 3,
+    "psalms": 2,
+    "jeremiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹא נָאוָ֣ה",
+      "pron": "로 나바",
+      "lemmas": [
+        "לֹא",
+        "נָאוֶה"
+      ],
+      "words": [
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "נָאוָ֣ה",
+          "lemma": "נָאוֶה",
+          "strong": "H5000",
+          "pron": "나바"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 17:7",
+        "proverbs 19:10",
+        "proverbs 26:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

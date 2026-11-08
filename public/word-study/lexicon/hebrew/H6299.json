@@ -1,6 +1,6 @@
 {
   "lemma": "פָּדָה",
-  "pron": "페데",
+  "pron": "팁데",
   "strong": "H6299",
   "posKo": "동사",
   "root": null,
@@ -8,45 +8,224 @@
     {
       "lemma": "יִפְדְּיָה",
       "strong": "H3301",
-      "pron": "",
+      "pron": "브입데아",
       "glossKo": "이브드야"
     },
     {
       "lemma": "פְּדַהְאֵל",
       "strong": "H6300",
-      "pron": "",
+      "pron": "페다헤엘",
       "glossKo": "브다헬"
     },
     {
       "lemma": "פְּדָהצוּר",
       "strong": "H6301",
-      "pron": "",
+      "pron": "페다흐추르",
       "glossKo": "브다술"
     },
     {
       "lemma": "פָּדוּי",
       "strong": "H6302",
-      "pron": "",
+      "pron": "페두에",
       "glossKo": "속량된 자"
     },
     {
       "lemma": "פָּדוֹן",
       "strong": "H6303",
-      "pron": "",
+      "pron": "파돈",
       "glossKo": "바돈"
     },
     {
       "lemma": "פְּדָיָה",
       "strong": "H6305",
-      "pron": "",
+      "pron": "페다아",
       "glossKo": "브다야"
     }
   ],
   "defEn": "sever; ransom; release; preserve",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 59,
   "byBook": {
-    "psalms": 14
+    "psalms": 14,
+    "exodus": 8,
+    "deuteronomy": 6,
+    "numbers": 6,
+    "isaiah": 4,
+    "leviticus": 4,
+    "job": 3,
+    "samuel2": 3,
+    "chronicles1": 2,
+    "hosea": 2,
+    "jeremiah": 2,
+    "kings1": 1,
+    "micah": 1,
+    "nehemiah": 1,
+    "samuel1": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲשֶׁר פָּדָ֥ה",
+      "pron": "아셰르 팁데",
+      "lemmas": [
+        "אֲשֶׁר",
+        "פָּדָה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "פָּדָ֥ה",
+          "lemma": "פָּדָה",
+          "strong": "H6299",
+          "pron": "팁데"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "deuteronomy 9:26",
+        "deuteronomy 21:8",
+        "samuel2 4:9",
+        "samuel2 7:23",
+        "kings1 1:29",
+        "chronicles1 17:21",
+        "nehemiah 1:10",
+        "psalms 71:23",
+        "psalms 78:42",
+        "isaiah 29:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּפְדוּיֵ֨י יְהוָ֜ה",
+      "pron": "팁데 여호와",
+      "lemmas": [
+        "פָּדָה",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וּפְדוּיֵ֨י",
+          "lemma": "פָּדָה",
+          "strong": "H6299",
+          "pron": "팁데"
+        },
+        {
+          "word": "יְהוָ֜ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "deuteronomy 15:15",
+        "deuteronomy 21:8",
+        "deuteronomy 24:18",
+        "psalms 34:22",
+        "isaiah 35:10",
+        "isaiah 51:11",
+        "jeremiah 31:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֥א תִפְדֶּ֖ה",
+      "pron": "로 팁데",
+      "lemmas": [
+        "לֹא",
+        "פָּדָה"
+      ],
+      "words": [
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תִפְדֶּ֖ה",
+          "lemma": "פָּדָה",
+          "strong": "H6299",
+          "pron": "팁데"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 13:13",
+        "exodus 34:20",
+        "leviticus 19:20",
+        "leviticus 27:29",
+        "numbers 18:17",
+        "psalms 49:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פָּדָ֥ה אֶת",
+      "pron": "팁데 에트",
+      "lemmas": [
+        "פָּדָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "פָּדָ֥ה",
+          "lemma": "פָּדָה",
+          "strong": "H6299",
+          "pron": "팁데"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 18:15",
+        "samuel2 4:9",
+        "kings1 1:29",
+        "psalms 31:5",
+        "psalms 130:8",
+        "isaiah 29:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהֶפְדָּ֑הּ לְעַ֥ם",
+      "pron": "팁데 암",
+      "lemmas": [
+        "פָּדָה",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "וְהֶפְדָּ֑הּ",
+          "lemma": "פָּדָה",
+          "strong": "H6299",
+          "pron": "팁데"
+        },
+        {
+          "word": "לְעַ֥ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 21:8",
+        "samuel1 14:45",
+        "samuel2 7:23",
+        "chronicles1 17:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

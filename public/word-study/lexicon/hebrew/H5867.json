@@ -24,33 +24,131 @@
     {
       "lemma": "עָלוּם",
       "strong": "H5934",
-      "pron": "알루마이브",
+      "pron": "르븜브",
       "glossKo": "그의 청춘"
     },
     {
       "lemma": "עָלַם",
       "strong": "H5956",
-      "pron": "타엘림",
+      "pron": "브네엘람",
       "glossKo": "감추다"
     },
     {
       "lemma": "עֶלֶם",
       "strong": "H5958",
-      "pron": "",
+      "pron": "하알렘",
       "glossKo": "젊은이"
     },
     {
       "lemma": "עַלְמוֹן",
       "strong": "H5960",
-      "pron": "",
+      "pron": "알몬",
       "glossKo": "알레멧"
     }
   ],
   "defEn": "Elam",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 30,
   "byBook": {
-    "genesis": 3
+    "jeremiah": 9,
+    "ezra": 6,
+    "nehemiah": 4,
+    "chronicles1": 3,
+    "genesis": 3,
+    "isaiah": 3,
+    "daniel": 1,
+    "ezekiel": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּנֵ֣י עֵילָ֔ם",
+      "pron": "바님 엘람",
+      "lemmas": [
+        "בֵּן",
+        "עֵילָם"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עֵילָ֔ם",
+          "lemma": "עֵילָם",
+          "strong": "H5867",
+          "pron": "엘람"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "ezra 2:7",
+        "ezra 2:31",
+        "ezra 8:7",
+        "ezra 10:2",
+        "ezra 10:26",
+        "nehemiah 7:12",
+        "nehemiah 7:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עולם עֵילָם֙",
+      "pron": "엘람 엘람",
+      "lemmas": [
+        "עֵילָם",
+        "עֵילָם"
+      ],
+      "words": [
+        {
+          "word": "עולם",
+          "lemma": "עֵילָם",
+          "strong": "H5867",
+          "pron": "엘람"
+        },
+        {
+          "word": "עֵילָם֙",
+          "lemma": "עֵילָם",
+          "strong": "H5867",
+          "pron": "엘람"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 10:2",
+        "jeremiah 49:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֶ֣לֶךְ עֵילָ֔ם",
+      "pron": "멜레크 엘람",
+      "lemmas": [
+        "מֶלֶךְ",
+        "עֵילָם"
+      ],
+      "words": [
+        {
+          "word": "מֶ֣לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "עֵילָ֔ם",
+          "lemma": "עֵילָם",
+          "strong": "H5867",
+          "pron": "엘람"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 14:1",
+        "genesis 14:9",
+        "jeremiah 25:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "כְּמוֹ",
-  "pron": "케모",
+  "pron": "우케모",
   "strong": "H3644",
-  "posKo": "전치사",
+  "posKo": "접미대명사",
   "root": {
     "lemma": "כֵּן",
     "strong": "H3651",
@@ -18,7 +18,7 @@
     {
       "lemma": "כֵּן",
       "strong": "H3652",
-      "pron": "",
+      "pron": "브켄",
       "glossKo": "이렇게(아람)"
     },
     {
@@ -30,44 +30,212 @@
     {
       "lemma": "כְּנֵמָא",
       "strong": "H3660",
-      "pron": "",
+      "pron": "케네마",
       "glossKo": "이같이(아람)"
     }
   ],
   "defEn": "as; thus; so",
   "defKo": "",
-  "countOT": 33,
+  "countOT": 142,
   "byBook": {
     "psalms": 28,
-    "genesis": 5
+    "job": 18,
+    "exodus": 13,
+    "isaiah": 10,
+    "jeremiah": 8,
+    "deuteronomy": 7,
+    "kings1": 7,
+    "zechariah": 6,
+    "genesis": 5,
+    "kings2": 5,
+    "chronicles2": 4,
+    "nehemiah": 4,
+    "hosea": 3,
+    "judges": 3,
+    "samuel1": 3,
+    "samuel2": 3,
+    "ezekiel": 2,
+    "lamentations": 2,
+    "leviticus": 2,
+    "songofsolomon": 2,
+    "chronicles1": 1,
+    "habakkuk": 1,
+    "haggai": 1,
+    "joel": 1,
+    "micah": 1,
+    "numbers": 1,
+    "proverbs": 1
   },
   "phrases": [
     {
-      "hebrew": "מִ֥י כָ֫מ֥וֹךָ",
-      "pron": "미 케모",
+      "hebrew": "אֵין כָּמ֣וֹךָ",
+      "pron": "아인 우케모",
+      "lemmas": [
+        "אַיִן",
+        "כְּמוֹ"
+      ],
+      "words": [
+        {
+          "word": "אֵין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
+        },
+        {
+          "word": "כָּמ֣וֹךָ",
+          "lemma": "כְּמוֹ",
+          "strong": "H3644",
+          "pron": "우케모"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "exodus 9:14",
+        "samuel1 10:24",
+        "samuel1 21:9",
+        "samuel2 7:22",
+        "kings1 8:23",
+        "chronicles1 17:20",
+        "chronicles2 6:14",
+        "job 1:8",
+        "job 2:3",
+        "job 12:3",
+        "psalms 86:8",
+        "jeremiah 10:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִ֤י כָמ֨וֹנִי֙",
+      "pron": "미 우케모",
       "lemmas": [
         "מִי",
         "כְּמוֹ"
       ],
       "words": [
         {
-          "word": "מִ֥י",
+          "word": "מִ֤י",
           "lemma": "מִי",
           "strong": "H4310",
           "pron": "미"
         },
         {
-          "word": "כָ֫מ֥וֹךָ",
+          "word": "כָמ֨וֹנִי֙",
           "lemma": "כְּמוֹ",
           "strong": "H3644",
-          "pron": "케모"
+          "pron": "우케모"
         }
       ],
-      "count": 3,
+      "count": 12,
       "refs": [
+        "exodus 15:11",
+        "deuteronomy 33:29",
+        "samuel1 26:15",
+        "nehemiah 6:11",
+        "job 36:22",
         "psalms 35:10",
         "psalms 71:19",
-        "psalms 89:8"
+        "psalms 89:8",
+        "isaiah 44:7",
+        "jeremiah 49:19",
+        "jeremiah 50:44"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָיָ֤ה כָמֹ֨הוּ֙",
+      "pron": "하에타 우케모",
+      "lemmas": [
+        "הָיָה",
+        "כְּמוֹ"
+      ],
+      "words": [
+        {
+          "word": "הָיָ֤ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "כָמֹ֨הוּ֙",
+          "lemma": "כְּמוֹ",
+          "strong": "H3644",
+          "pron": "우케모"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "genesis 34:15",
+        "exodus 9:18",
+        "exodus 9:24",
+        "exodus 11:6",
+        "kings1 3:13",
+        "kings2 18:5",
+        "psalms 50:21",
+        "jeremiah 15:18",
+        "lamentations 1:21",
+        "hosea 13:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּמ֧וֹנִי כָמ֛וֹךָ",
+      "pron": "우케모 우케모",
+      "lemmas": [
+        "כְּמוֹ",
+        "כְּמוֹ"
+      ],
+      "words": [
+        {
+          "word": "כָּמ֧וֹנִי",
+          "lemma": "כְּמוֹ",
+          "strong": "H3644",
+          "pron": "우케모"
+        },
+        {
+          "word": "כָמ֛וֹךָ",
+          "lemma": "כְּמוֹ",
+          "strong": "H3644",
+          "pron": "우케모"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "judges 8:18",
+        "kings1 22:4",
+        "kings2 3:7",
+        "chronicles2 18:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּמֹ֨הוּ֙ לֹ֣א",
+      "pron": "우케모 로",
+      "lemmas": [
+        "כְּמוֹ",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "כָּמֹ֨הוּ֙",
+          "lemma": "כְּמוֹ",
+          "strong": "H3644",
+          "pron": "우케모"
+        },
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 11:6",
+        "kings1 3:12",
+        "kings2 23:25",
+        "job 12:3",
+        "joel 2:2"
       ],
       "glossKo": ""
     }

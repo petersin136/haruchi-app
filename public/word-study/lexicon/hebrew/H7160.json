@@ -1,6 +1,6 @@
 {
   "lemma": "קָרַן",
-  "pron": "마케린",
+  "pron": "카란",
   "strong": "H7160",
   "posKo": "동사",
   "root": {
@@ -12,27 +12,94 @@
     {
       "lemma": "קֶרֶן",
       "strong": "H7161",
-      "pron": "브케렌",
-      "glossKo": "뿔"
+      "pron": "베카레나으브",
+      "glossKo": "그의 뿔"
     },
     {
       "lemma": "קֶרֶן",
       "strong": "H7162",
-      "pron": "",
+      "pron": "카레나",
       "glossKo": "뿔(아람)"
     },
     {
       "lemma": "קֶרֶן הַפּוּךְ",
       "strong": "H7163",
-      "pron": "",
+      "pron": "케렌",
       "glossKo": "게렌합북"
     }
   ],
   "defEn": "shoot out horns; rays",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 4,
   "byBook": {
+    "exodus": 3,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "קָרַ֛ן ע֥וֹר",
+      "pron": "카란 오르",
+      "lemmas": [
+        "קָרַן",
+        "עוֹר"
+      ],
+      "words": [
+        {
+          "word": "קָרַ֛ן",
+          "lemma": "קָרַן",
+          "strong": "H7160",
+          "pron": "카란"
+        },
+        {
+          "word": "ע֥וֹר",
+          "lemma": "עוֹר",
+          "strong": "H5785",
+          "pron": "오르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 34:29",
+        "exodus 34:30",
+        "exodus 34:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קָרַ֛ן ע֥וֹר פָּנָ֖יו",
+      "pron": "카란 오르 페네",
+      "lemmas": [
+        "קָרַן",
+        "עוֹר",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "קָרַ֛ן",
+          "lemma": "קָרַן",
+          "strong": "H7160",
+          "pron": "카란"
+        },
+        {
+          "word": "ע֥וֹר",
+          "lemma": "עוֹר",
+          "strong": "H5785",
+          "pron": "오르"
+        },
+        {
+          "word": "פָּנָ֖יו",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 34:29",
+        "exodus 34:30",
+        "exodus 34:35"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

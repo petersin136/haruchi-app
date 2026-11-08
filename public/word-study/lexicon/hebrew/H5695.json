@@ -12,19 +12,19 @@
     {
       "lemma": "מַעְגָּל",
       "strong": "H4570",
-      "pron": "브마엑겔로테카",
-      "glossKo": "너의 행로"
+      "pron": "아마엑갈라",
+      "glossKo": "행로"
     },
     {
       "lemma": "עָגִיל",
       "strong": "H5694",
-      "pron": "",
+      "pron": "아길",
       "glossKo": "둥근 귀고리"
     },
     {
       "lemma": "עָגֹל",
       "strong": "H5696",
-      "pron": "",
+      "pron": "아골",
       "glossKo": "둥근"
     },
     {
@@ -42,15 +42,198 @@
     {
       "lemma": "עֶגְלוֹן",
       "strong": "H5700",
-      "pron": "",
+      "pron": "엑론",
       "glossKo": "에글론"
     }
   ],
   "defEn": "calf; frisking; steer",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 35,
   "byBook": {
-    "psalms": 3
+    "exodus": 6,
+    "jeremiah": 4,
+    "hosea": 3,
+    "leviticus": 3,
+    "psalms": 3,
+    "chronicles2": 2,
+    "deuteronomy": 2,
+    "isaiah": 2,
+    "kings1": 2,
+    "kings2": 2,
+    "amos": 1,
+    "ezekiel": 1,
+    "malachi": 1,
+    "micah": 1,
+    "nehemiah": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת הָעֵ֖גֶל",
+      "pron": "에트 에겔",
+      "lemmas": [
+        "אֵת",
+        "עֵגֶל"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הָעֵ֖גֶל",
+          "lemma": "עֵגֶל",
+          "strong": "H5695",
+          "pron": "에겔"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 32:19",
+        "exodus 32:20",
+        "exodus 32:35",
+        "leviticus 9:8",
+        "deuteronomy 9:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָעֵ֨גֶל אֲשֶׁ֤ר",
+      "pron": "에겔 아셰르",
+      "lemmas": [
+        "עֵגֶל",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הָעֵ֨גֶל",
+          "lemma": "עֵגֶל",
+          "strong": "H5695",
+          "pron": "에겔"
+        },
+        {
+          "word": "אֲשֶׁ֤ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 32:20",
+        "exodus 32:35",
+        "kings1 12:32",
+        "chronicles2 11:15",
+        "jeremiah 34:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽיַּעֲשֵׂ֖הוּ עֵ֣גֶל",
+      "pron": "바야아스 에겔",
+      "lemmas": [
+        "עָשָׂה",
+        "עֵגֶל"
+      ],
+      "words": [
+        {
+          "word": "וַֽיַּעֲשֵׂ֖הוּ",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "עֵ֣גֶל",
+          "lemma": "עֵגֶל",
+          "strong": "H5695",
+          "pron": "에겔"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 32:4",
+        "exodus 32:8",
+        "deuteronomy 9:16",
+        "nehemiah 9:18",
+        "psalms 106:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָעֵ֨גֶל אֲשֶׁ֤ר עָשׂוּ֙",
+      "pron": "에겔 아셰르 바야아스",
+      "lemmas": [
+        "עֵגֶל",
+        "אֲשֶׁר",
+        "עָשָׂה"
+      ],
+      "words": [
+        {
+          "word": "הָעֵ֨גֶל",
+          "lemma": "עֵגֶל",
+          "strong": "H5695",
+          "pron": "에겔"
+        },
+        {
+          "word": "אֲשֶׁ֤ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "עָשׂוּ֙",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 32:20",
+        "exodus 32:35",
+        "kings1 12:32",
+        "chronicles2 11:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽיַּעֲשֵׂ֖הוּ עֵ֣גֶל מַסֵּכָ֑ה",
+      "pron": "바야아스 에겔 맛세카",
+      "lemmas": [
+        "עָשָׂה",
+        "עֵגֶל",
+        "מַסֵּכָה"
+      ],
+      "words": [
+        {
+          "word": "וַֽיַּעֲשֵׂ֖הוּ",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "עֵ֣גֶל",
+          "lemma": "עֵגֶל",
+          "strong": "H5695",
+          "pron": "에겔"
+        },
+        {
+          "word": "מַסֵּכָ֑ה",
+          "lemma": "מַסֵּכָה",
+          "strong": "H4541",
+          "pron": "맛세카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 32:4",
+        "exodus 32:8",
+        "deuteronomy 9:16",
+        "nehemiah 9:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "חָלָה",
-  "pron": "바할로타므",
+  "pron": "홀레",
   "strong": "H2470",
   "posKo": "동사",
   "root": {
@@ -18,7 +18,7 @@
     {
       "lemma": "חוּל",
       "strong": "H2342",
-      "pron": "야힐루",
+      "pron": "바야헬",
       "glossKo": "산고"
     },
     {
@@ -30,7 +30,7 @@
     {
       "lemma": "חוֹל",
       "strong": "H2344",
-      "pron": "우크홀",
+      "pron": "브카홀",
       "glossKo": "모래"
     },
     {
@@ -42,16 +42,208 @@
     {
       "lemma": "חַיִל",
       "strong": "H2428",
-      "pron": "하일",
-      "glossKo": "힘"
+      "pron": "헬람",
+      "glossKo": "그들의 힘"
     }
   ],
   "defEn": "be rubbed; worn; be weak; sick; afflicted; grieve; make sick",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 75,
   "byBook": {
+    "isaiah": 8,
+    "kings1": 7,
+    "kings2": 7,
+    "jeremiah": 6,
+    "chronicles2": 5,
+    "ezekiel": 4,
     "psalms": 4,
-    "genesis": 1
+    "samuel1": 4,
+    "judges": 3,
+    "malachi": 3,
+    "proverbs": 3,
+    "samuel2": 3,
+    "zechariah": 3,
+    "daniel": 2,
+    "ecclesiastes": 2,
+    "songofsolomon": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "genesis": 1,
+    "hosea": 1,
+    "job": 1,
+    "micah": 1,
+    "nahum": 1,
+    "nehemiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כִּ֥י הָחֳלֵֽיתִי",
+      "pron": "키 홀레",
+      "lemmas": [
+        "כִּי",
+        "חָלָה"
+      ],
+      "words": [
+        {
+          "word": "כִּ֥י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "הָחֳלֵֽיתִי",
+          "lemma": "חָלָה",
+          "strong": "H2470",
+          "pron": "홀레"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "samuel1 30:13",
+        "kings1 14:5",
+        "kings1 22:34",
+        "kings2 8:29",
+        "kings2 20:12",
+        "chronicles2 18:33",
+        "chronicles2 22:6",
+        "chronicles2 35:23",
+        "songofsolomon 2:5",
+        "isaiah 39:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָלָ֣ה אֶת",
+      "pron": "홀레 에트",
+      "lemmas": [
+        "חָלָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "חָלָ֣ה",
+          "lemma": "חָלָה",
+          "strong": "H2470",
+          "pron": "홀레"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "kings2 13:14",
+        "chronicles2 33:12",
+        "jeremiah 26:19",
+        "daniel 9:13",
+        "zechariah 7:2",
+        "zechariah 8:21",
+        "zechariah 8:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חִלָּ֕ה אֶת פְּנֵ֖י",
+      "pron": "홀레 에트 페네",
+      "lemmas": [
+        "חָלָה",
+        "אֵת",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "חִלָּ֕ה",
+          "lemma": "חָלָה",
+          "strong": "H2470",
+          "pron": "홀레"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "פְּנֵ֖י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "chronicles2 33:12",
+        "jeremiah 26:19",
+        "daniel 9:13",
+        "zechariah 7:2",
+        "zechariah 8:21",
+        "zechariah 8:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֹלֶ֥ה הֽוּא",
+      "pron": "홀레 후",
+      "lemmas": [
+        "חָלָה",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "חֹלֶ֥ה",
+          "lemma": "חָלָה",
+          "strong": "H2470",
+          "pron": "홀레"
+        },
+        {
+          "word": "הֽוּא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 19:14",
+        "kings1 14:5",
+        "kings2 8:29",
+        "chronicles2 22:6",
+        "psalms 77:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶֽת הַנַּחְלוֹת֩",
+      "pron": "에트 홀레",
+      "lemmas": [
+        "אֵת",
+        "חָלָה"
+      ],
+      "words": [
+        {
+          "word": "אֶֽת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַנַּחְלוֹת֩",
+          "lemma": "חָלָה",
+          "strong": "H2470",
+          "pron": "홀레"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 34:4",
+        "ezekiel 34:16",
+        "malachi 1:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

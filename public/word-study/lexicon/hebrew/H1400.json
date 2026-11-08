@@ -1,8 +1,8 @@
 {
   "lemma": "גְּבַר",
-  "pron": "게바르",
+  "pron": "굽라아",
   "strong": "H1400",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גְּבַר",
     "strong": "H1399",
@@ -17,14 +17,168 @@
     },
     {
       "lemma": "גִּבָּר",
+      "strong": "H1401",
+      "pron": "깁바레",
+      "glossKo": "용맹한 자(아람)"
+    },
+    {
+      "lemma": "גִּבָּר",
       "strong": "H1402",
-      "pron": "",
+      "pron": "깁바르",
       "glossKo": "깁발"
     }
   ],
   "defEn": "certain, man.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 21,
+  "byBook": {
+    "daniel": 17,
+    "ezra": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "גֻּבְרַיָּ֣א אִלֵּ֗ךְ",
+      "pron": "굽라아 일레크",
+      "lemmas": [
+        "גְּבַר",
+        "אִלֵּךְ"
+      ],
+      "words": [
+        {
+          "word": "גֻּבְרַיָּ֣א",
+          "lemma": "גְּבַר",
+          "strong": "H1400",
+          "pron": "굽라아"
+        },
+        {
+          "word": "אִלֵּ֗ךְ",
+          "lemma": "אִלֵּךְ",
+          "strong": "H479",
+          "pron": "일레크"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "ezra 4:21",
+        "ezra 6:8",
+        "daniel 3:12",
+        "daniel 3:13",
+        "daniel 3:21",
+        "daniel 3:22",
+        "daniel 3:23",
+        "daniel 3:27",
+        "daniel 6:5",
+        "daniel 6:11",
+        "daniel 6:15",
+        "daniel 6:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּאדַ֨יִן֙ גֻּבְרַיָּ֣א",
+      "pron": "에다인 굽라아",
+      "lemmas": [
+        "אֱדַיִן",
+        "גְּבַר"
+      ],
+      "words": [
+        {
+          "word": "בֵּאדַ֨יִן֙",
+          "lemma": "אֱדַיִן",
+          "strong": "H116",
+          "pron": "에다인"
+        },
+        {
+          "word": "גֻּבְרַיָּ֣א",
+          "lemma": "גְּבַר",
+          "strong": "H1400",
+          "pron": "굽라아"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 3:13",
+        "daniel 3:21",
+        "daniel 6:5",
+        "daniel 6:11",
+        "daniel 6:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּאדַ֨יִן֙ גֻּבְרַיָּ֣א אִלֵּ֔ךְ",
+      "pron": "에다인 굽라아 일레크",
+      "lemmas": [
+        "אֱדַיִן",
+        "גְּבַר",
+        "אִלֵּךְ"
+      ],
+      "words": [
+        {
+          "word": "בֵּאדַ֨יִן֙",
+          "lemma": "אֱדַיִן",
+          "strong": "H116",
+          "pron": "에다인"
+        },
+        {
+          "word": "גֻּבְרַיָּ֣א",
+          "lemma": "גְּבַר",
+          "strong": "H1400",
+          "pron": "굽라아"
+        },
+        {
+          "word": "אִלֵּ֔ךְ",
+          "lemma": "אִלֵּךְ",
+          "strong": "H479",
+          "pron": "일레크"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 3:13",
+        "daniel 3:21",
+        "daniel 6:5",
+        "daniel 6:11",
+        "daniel 6:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְגֻבְרַיָּ֥א אִלֵּ֖ךְ דִּי",
+      "pron": "굽라아 일레크 드흐브",
+      "lemmas": [
+        "גְּבַר",
+        "אִלֵּךְ",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "לְגֻבְרַיָּ֥א",
+          "lemma": "גְּבַר",
+          "strong": "H1400",
+          "pron": "굽라아"
+        },
+        {
+          "word": "אִלֵּ֖ךְ",
+          "lemma": "אִלֵּךְ",
+          "strong": "H479",
+          "pron": "일레크"
+        },
+        {
+          "word": "דִּי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 6:8",
+        "daniel 3:22",
+        "daniel 3:27",
+        "daniel 6:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

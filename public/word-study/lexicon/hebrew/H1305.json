@@ -8,7 +8,7 @@
     {
       "lemma": "בַּר",
       "strong": "H1249",
-      "pron": "바라",
+      "pron": "우바르",
       "glossKo": "맑은"
     },
     {
@@ -26,9 +26,118 @@
   ],
   "defEn": "clarify; brighten; examine; select",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 18,
   "byBook": {
-    "psalms": 2
+    "chronicles1": 3,
+    "daniel": 2,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "psalms": 2,
+    "samuel2": 2,
+    "ecclesiastes": 1,
+    "ezekiel": 1,
+    "job": 1,
+    "nehemiah": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נָבָ֖ר תִּתָּבָ֑ר",
+      "pron": "나바르 나바르",
+      "lemmas": [
+        "בָּרַר",
+        "בָּרַר"
+      ],
+      "words": [
+        {
+          "word": "נָבָ֖ר",
+          "lemma": "בָּרַר",
+          "strong": "H1305",
+          "pron": "나바르"
+        },
+        {
+          "word": "תִּתָּבָ֑ר",
+          "lemma": "בָּרַר",
+          "strong": "H1305",
+          "pron": "나바르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 22:27",
+        "psalms 18:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נָבָ֖ר תִּתָּבָ֑ר וְעִם",
+      "pron": "나바르 나바르 임마흐",
+      "lemmas": [
+        "בָּרַר",
+        "בָּרַר",
+        "עִם"
+      ],
+      "words": [
+        {
+          "word": "נָבָ֖ר",
+          "lemma": "בָּרַר",
+          "strong": "H1305",
+          "pron": "나바르"
+        },
+        {
+          "word": "תִּתָּבָ֑ר",
+          "lemma": "בָּרַר",
+          "strong": "H1305",
+          "pron": "나바르"
+        },
+        {
+          "word": "וְעִם",
+          "lemma": "עִם",
+          "strong": "H5973",
+          "pron": "임마흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 22:27",
+        "psalms 18:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עִם נָבָ֖ר תִּתָּבָ֑ר",
+      "pron": "임마흐 나바르 나바르",
+      "lemmas": [
+        "עִם",
+        "בָּרַר",
+        "בָּרַר"
+      ],
+      "words": [
+        {
+          "word": "עִם",
+          "lemma": "עִם",
+          "strong": "H5973",
+          "pron": "임마흐"
+        },
+        {
+          "word": "נָבָ֖ר",
+          "lemma": "בָּרַר",
+          "strong": "H1305",
+          "pron": "나바르"
+        },
+        {
+          "word": "תִּתָּבָ֑ר",
+          "lemma": "בָּרַר",
+          "strong": "H1305",
+          "pron": "나바르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 22:27",
+        "psalms 18:26"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

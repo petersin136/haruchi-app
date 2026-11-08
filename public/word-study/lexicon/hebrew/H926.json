@@ -1,6 +1,6 @@
 {
   "lemma": "בָּהַל",
-  "pron": "예바할레모",
+  "pron": "닙할루",
   "strong": "H926",
   "posKo": "동사",
   "root": null,
@@ -8,28 +8,160 @@
     {
       "lemma": "בְּהַל",
       "strong": "H927",
-      "pron": "",
+      "pron": "브히텝베할라",
       "glossKo": "두렵게 하다(아람)"
     },
     {
       "lemma": "בֶּהָלָה",
       "strong": "H928",
-      "pron": "바베할라",
+      "pron": "베할라",
       "glossKo": "공포"
     },
     {
       "lemma": "בָּלַהּ",
       "strong": "H1089",
-      "pron": "",
+      "pron": "브믑르힘",
       "glossKo": "두근거리다"
     }
   ],
   "defEn": "tremble; palpitate; be; make; alarmed; agitated",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 39,
   "byBook": {
     "psalms": 10,
-    "genesis": 1
+    "job": 5,
+    "chronicles2": 3,
+    "ecclesiastes": 3,
+    "esther": 3,
+    "ezekiel": 2,
+    "isaiah": 2,
+    "proverbs": 2,
+    "daniel": 1,
+    "exodus": 1,
+    "ezra": 1,
+    "genesis": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "samuel1": 1,
+    "samuel2": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אַל תְּבַהֵ֨ל",
+      "pron": "엘 닙할루",
+      "lemmas": [
+        "אַל",
+        "בָּהַל"
+      ],
+      "words": [
+        {
+          "word": "אַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "תְּבַהֵ֨ל",
+          "lemma": "בָּהַל",
+          "strong": "H926",
+          "pron": "닙할루"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ecclesiastes 5:2",
+        "ecclesiastes 7:9",
+        "ecclesiastes 8:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֥י נִבְהֲל֖וּ",
+      "pron": "키 닙할루",
+      "lemmas": [
+        "כִּי",
+        "בָּהַל"
+      ],
+      "words": [
+        {
+          "word": "כִּ֥י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "נִבְהֲל֖וּ",
+          "lemma": "בָּהַל",
+          "strong": "H926",
+          "pron": "닙할루"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 45:3",
+        "samuel1 28:21",
+        "psalms 6:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְפָנָיו֒ וַ֠יְבַהֵל",
+      "pron": "페네 닙할루",
+      "lemmas": [
+        "פָּנִים",
+        "בָּהַל"
+      ],
+      "words": [
+        {
+          "word": "לְפָנָיו֒",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "וַ֠יְבַהֵל",
+          "lemma": "בָּהַל",
+          "strong": "H926",
+          "pron": "닙할루"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 2:9",
+        "job 23:15",
+        "psalms 104:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נִבְהַ֣ל מְאֹ֑ד",
+      "pron": "닙할루 메옫",
+      "lemmas": [
+        "בָּהַל",
+        "מְאֹד"
+      ],
+      "words": [
+        {
+          "word": "נִבְהַ֣ל",
+          "lemma": "בָּהַל",
+          "strong": "H926",
+          "pron": "닙할루"
+        },
+        {
+          "word": "מְאֹ֑ד",
+          "lemma": "מְאֹד",
+          "strong": "H3966",
+          "pron": "메옫"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 28:21",
+        "psalms 6:3",
+        "psalms 6:10"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

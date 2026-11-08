@@ -1,14 +1,14 @@
 {
   "lemma": "לַהַב",
-  "pron": "라합",
+  "pron": "아라합",
   "strong": "H3851",
-  "posKo": "",
+  "posKo": "명사",
   "root": null,
   "family": [
     {
       "lemma": "לֶהָבָה",
       "strong": "H3852",
-      "pron": "라하보트",
+      "pron": "레하바",
       "glossKo": "불꽃"
     },
     {
@@ -20,25 +20,98 @@
     {
       "lemma": "לַהַד",
       "strong": "H3855",
-      "pron": "",
+      "pron": "라핟",
       "glossKo": "라핫"
     },
     {
       "lemma": "שַׁלְהֶבֶת",
       "strong": "H7957",
-      "pron": "",
+      "pron": "샬하베트",
       "glossKo": "불꽃"
     },
     {
       "lemma": "תַּלְאוּבָה",
       "strong": "H8514",
-      "pron": "",
+      "pron": "탈우보트",
       "glossKo": "쇠약"
     }
   ],
   "defEn": "flash; blade",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 12,
+  "byBook": {
+    "isaiah": 4,
+    "judges": 4,
+    "job": 2,
+    "joel": 1,
+    "nahum": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְלַ֖הַב אֵ֥שׁ",
+      "pron": "아라합 에쉬",
+      "lemmas": [
+        "לַהַב",
+        "אֵשׁ"
+      ],
+      "words": [
+        {
+          "word": "וְלַ֖הַב",
+          "lemma": "לַהַב",
+          "strong": "H3851",
+          "pron": "아라합"
+        },
+        {
+          "word": "אֵ֥שׁ",
+          "lemma": "אֵשׁ",
+          "strong": "H784",
+          "pron": "에쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 29:6",
+        "isaiah 30:30",
+        "isaiah 66:15",
+        "joel 2:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלַ֖הַב אֵ֥שׁ אוֹכֵלָֽה",
+      "pron": "아라합 에쉬 아콜",
+      "lemmas": [
+        "לַהַב",
+        "אֵשׁ",
+        "אָכַל"
+      ],
+      "words": [
+        {
+          "word": "וְלַ֖הַב",
+          "lemma": "לַהַב",
+          "strong": "H3851",
+          "pron": "아라합"
+        },
+        {
+          "word": "אֵ֥שׁ",
+          "lemma": "אֵשׁ",
+          "strong": "H784",
+          "pron": "에쉬"
+        },
+        {
+          "word": "אוֹכֵלָֽה",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "아콜"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 29:6",
+        "isaiah 30:30",
+        "joel 2:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

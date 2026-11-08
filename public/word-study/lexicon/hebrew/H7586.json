@@ -12,13 +12,13 @@
     {
       "lemma": "אֶשְׁתָּאֹל",
       "strong": "H847",
-      "pron": "",
+      "pron": "에솃타올",
       "glossKo": "에스다올"
     },
     {
       "lemma": "מִשְׁאָל",
       "strong": "H4861",
-      "pron": "",
+      "pron": "우미셰알",
       "glossKo": "미살"
     },
     {
@@ -30,28 +30,225 @@
     {
       "lemma": "שְׁאוֹל",
       "strong": "H7585",
-      "pron": "비셰올",
+      "pron": "셰올라",
       "glossKo": "스올"
     },
     {
       "lemma": "שָׁאַל",
       "strong": "H7592",
-      "pron": "셰알",
+      "pron": "바에셰알",
       "glossKo": "묻다"
     },
     {
       "lemma": "שְׁאֵל",
       "strong": "H7593",
-      "pron": "",
+      "pron": "셰엘나",
       "glossKo": "묻다(아람)"
     }
   ],
   "defEn": "Shaul",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 406,
   "byBook": {
+    "samuel1": 297,
+    "samuel2": 66,
+    "chronicles1": 32,
     "psalms": 5,
-    "genesis": 3
+    "genesis": 3,
+    "exodus": 1,
+    "isaiah": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיֹּ֨אמֶר שָׁא֜וּל",
+      "pron": "바요메르 샤울",
+      "lemmas": [
+        "אָמַר",
+        "שָׁאוּל"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֨אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "שָׁא֜וּל",
+          "lemma": "שָׁאוּל",
+          "strong": "H7586",
+          "pron": "샤울"
+        }
+      ],
+      "count": 44,
+      "refs": [
+        "samuel1 9:7",
+        "samuel1 9:10",
+        "samuel1 10:16",
+        "samuel1 11:5",
+        "samuel1 11:12",
+        "samuel1 11:13",
+        "samuel1 13:9",
+        "samuel1 13:11",
+        "samuel1 14:17",
+        "samuel1 14:18",
+        "samuel1 14:19",
+        "samuel1 14:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל שָׁא֔וּל",
+      "pron": "엘 샤울",
+      "lemmas": [
+        "אֵל",
+        "שָׁאוּל"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "שָׁא֔וּל",
+          "lemma": "שָׁאוּל",
+          "strong": "H7586",
+          "pron": "샤울"
+        }
+      ],
+      "count": 40,
+      "refs": [
+        "samuel1 9:3",
+        "samuel1 9:26",
+        "samuel1 9:27",
+        "samuel1 13:13",
+        "samuel1 14:40",
+        "samuel1 14:45",
+        "samuel1 15:1",
+        "samuel1 15:13",
+        "samuel1 15:16",
+        "samuel1 15:26",
+        "samuel1 15:35",
+        "samuel1 16:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁאוּל֙ אֶת",
+      "pron": "샤울 에트",
+      "lemmas": [
+        "שָׁאוּל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "שָׁאוּל֙",
+          "lemma": "שָׁאוּל",
+          "strong": "H7586",
+          "pron": "샤울"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 32,
+      "refs": [
+        "samuel1 9:18",
+        "samuel1 9:22",
+        "samuel1 11:11",
+        "samuel1 13:4",
+        "samuel1 13:15",
+        "samuel1 14:24",
+        "samuel1 15:1",
+        "samuel1 15:4",
+        "samuel1 15:7",
+        "samuel1 17:38",
+        "samuel1 17:55",
+        "samuel1 18:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁאוּל֙ אֶל",
+      "pron": "샤울 엘",
+      "lemmas": [
+        "שָׁאוּל",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "שָׁאוּל֙",
+          "lemma": "שָׁאוּל",
+          "strong": "H7586",
+          "pron": "샤울"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 28,
+      "refs": [
+        "samuel1 10:14",
+        "samuel1 10:16",
+        "samuel1 14:1",
+        "samuel1 14:19",
+        "samuel1 14:41",
+        "samuel1 14:43",
+        "samuel1 15:6",
+        "samuel1 15:20",
+        "samuel1 15:24",
+        "samuel1 16:15",
+        "samuel1 16:17",
+        "samuel1 16:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁא֗וּל וַיֹּ֨אמֶר֙",
+      "pron": "샤울 바요메르",
+      "lemmas": [
+        "שָׁאוּל",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "שָׁא֗וּל",
+          "lemma": "שָׁאוּל",
+          "strong": "H7586",
+          "pron": "샤울"
+        },
+        {
+          "word": "וַיֹּ֨אמֶר֙",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "samuel1 9:3",
+        "samuel1 9:5",
+        "samuel1 9:8",
+        "samuel1 9:15",
+        "samuel1 9:19",
+        "samuel1 9:21",
+        "samuel1 9:24",
+        "samuel1 9:27",
+        "samuel1 14:33",
+        "samuel1 15:13",
+        "samuel1 18:17",
+        "samuel1 18:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

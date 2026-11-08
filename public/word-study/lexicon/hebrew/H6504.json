@@ -1,6 +1,6 @@
 {
   "lemma": "פָּרַד",
-  "pron": "브히텝파레두",
+  "pron": "입파렏",
   "strong": "H6504",
   "posKo": "동사",
   "root": null,
@@ -8,34 +8,104 @@
     {
       "lemma": "בְּדַר",
       "strong": "H921",
-      "pron": "",
+      "pron": "우받다루",
       "glossKo": "흩다(아람)"
     },
     {
       "lemma": "פֶּרֶד",
       "strong": "H6505",
-      "pron": "크페렏",
-      "glossKo": "노새"
+      "pron": "피렏도",
+      "glossKo": "그의 노새"
     },
     {
       "lemma": "פְּרֻדָה",
       "strong": "H6507",
-      "pron": "",
+      "pron": "페루도트",
       "glossKo": "분리된 것"
     },
     {
       "lemma": "פְּרוּדָא",
       "strong": "H6514",
-      "pron": "",
+      "pron": "페루다",
       "glossKo": "브루다"
     }
   ],
   "defEn": "break through; spread; separate",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 26,
   "byBook": {
     "genesis": 8,
-    "psalms": 2
+    "proverbs": 5,
+    "job": 2,
+    "psalms": 2,
+    "deuteronomy": 1,
+    "esther": 1,
+    "ezekiel": 1,
+    "hosea": 1,
+    "judges": 1,
+    "kings2": 1,
+    "nehemiah": 1,
+    "ruth": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְהִתְפָּֽרְד֗וּ כָּֽל",
+      "pron": "입파렏 칼",
+      "lemmas": [
+        "פָּרַד",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "וְהִתְפָּֽרְד֗וּ",
+          "lemma": "פָּרַד",
+          "strong": "H6504",
+          "pron": "입파렏"
+        },
+        {
+          "word": "כָּֽל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 22:14",
+        "psalms 92:9",
+        "proverbs 18:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יַפְרִ֖יד בֵּינִ֥י",
+      "pron": "입파렏 벤",
+      "lemmas": [
+        "פָּרַד",
+        "בֵּין"
+      ],
+      "words": [
+        {
+          "word": "יַפְרִ֖יד",
+          "lemma": "פָּרַד",
+          "strong": "H6504",
+          "pron": "입파렏"
+        },
+        {
+          "word": "בֵּינִ֥י",
+          "lemma": "בֵּין",
+          "strong": "H996",
+          "pron": "벤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ruth 1:17",
+        "kings2 2:11",
+        "esther 3:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

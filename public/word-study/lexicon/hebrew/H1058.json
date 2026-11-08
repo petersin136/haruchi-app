@@ -1,6 +1,6 @@
 {
   "lemma": "בָּכָה",
-  "pron": "바엡케",
+  "pron": "바텝크",
   "strong": "H1058",
   "posKo": "동사",
   "root": null,
@@ -14,69 +14,62 @@
     {
       "lemma": "בֶּכֶה",
       "strong": "H1059",
-      "pron": "",
+      "pron": "베케",
       "glossKo": "통곡"
     },
     {
       "lemma": "בְּכִי",
       "strong": "H1065",
-      "pron": "비케이위",
-      "glossKo": "나의 울음"
+      "pron": "비베키",
+      "glossKo": "울음"
     },
     {
       "lemma": "בֹּכִים",
       "strong": "H1066",
-      "pron": "",
+      "pron": "아보킴",
       "glossKo": "보김"
     },
     {
       "lemma": "בְּכִית",
       "strong": "H1068",
-      "pron": "베키트오",
+      "pron": "베키토",
       "glossKo": "그의 통곡"
     }
   ],
   "defEn": "weep; bemoan",
   "defKo": "",
-  "countOT": 20,
+  "countOT": 116,
   "byBook": {
     "genesis": 16,
-    "psalms": 4
+    "samuel2": 15,
+    "samuel1": 10,
+    "jeremiah": 9,
+    "judges": 8,
+    "numbers": 8,
+    "isaiah": 6,
+    "kings2": 6,
+    "job": 5,
+    "ezekiel": 4,
+    "psalms": 4,
+    "deuteronomy": 3,
+    "ezra": 3,
+    "lamentations": 3,
+    "nehemiah": 3,
+    "joel": 2,
+    "micah": 2,
+    "ruth": 2,
+    "chronicles2": 1,
+    "ecclesiastes": 1,
+    "esther": 1,
+    "exodus": 1,
+    "hosea": 1,
+    "leviticus": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "בָּכָ֖ה עַל",
-      "pron": "바엡케 알",
-      "lemmas": [
-        "בָּכָה",
-        "עַל"
-      ],
-      "words": [
-        {
-          "word": "בָּכָ֖ה",
-          "lemma": "בָּכָה",
-          "strong": "H1058",
-          "pron": "바엡케"
-        },
-        {
-          "word": "עַל",
-          "lemma": "עַל",
-          "strong": "H5921",
-          "pron": "알"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 45:14",
-        "genesis 45:15",
-        "genesis 46:29",
-        "genesis 50:1"
-      ],
-      "glossKo": ""
-    },
-    {
       "hebrew": "קֹל֖וֹ וַיֵּֽבְךְּ",
-      "pron": "콜리위 바엡케",
+      "pron": "콜 바텝크",
       "lemmas": [
         "קוֹל",
         "בָּכָה"
@@ -86,20 +79,167 @@
           "word": "קֹל֖וֹ",
           "lemma": "קוֹל",
           "strong": "H6963",
-          "pron": "콜리위"
+          "pron": "콜"
         },
         {
           "word": "וַיֵּֽבְךְּ",
           "lemma": "בָּכָה",
           "strong": "H1058",
-          "pron": "바엡케"
+          "pron": "바텝크"
         }
       ],
-      "count": 3,
+      "count": 15,
       "refs": [
         "genesis 21:16",
         "genesis 27:38",
-        "genesis 29:11"
+        "genesis 29:11",
+        "numbers 14:1",
+        "judges 2:4",
+        "judges 21:2",
+        "ruth 1:9",
+        "ruth 1:14",
+        "samuel1 11:4",
+        "samuel1 24:16",
+        "samuel1 30:4",
+        "samuel2 3:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בָּכָ֖ה עַל",
+      "pron": "바텝크 알",
+      "lemmas": [
+        "בָּכָה",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "בָּכָ֖ה",
+          "lemma": "בָּכָה",
+          "strong": "H1058",
+          "pron": "바텝크"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 45:14",
+        "genesis 45:15",
+        "genesis 46:29",
+        "genesis 50:1",
+        "numbers 11:13",
+        "judges 11:37",
+        "judges 11:38",
+        "judges 14:17",
+        "samuel2 3:34",
+        "kings2 13:14",
+        "jeremiah 31:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת קוֹלָ֖ם וַיִּבְכּֽוּ",
+      "pron": "에트 콜 바텝크",
+      "lemmas": [
+        "אֵת",
+        "קוֹל",
+        "בָּכָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "קוֹלָ֖ם",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        },
+        {
+          "word": "וַיִּבְכּֽוּ",
+          "lemma": "בָּכָה",
+          "strong": "H1058",
+          "pron": "바텝크"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 21:16",
+        "genesis 29:11",
+        "numbers 14:1",
+        "judges 2:4",
+        "samuel1 11:4",
+        "samuel1 30:4",
+        "samuel2 3:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבָכֹ֥ה תִבְכֶּֽה",
+      "pron": "바텝크 바텝크",
+      "lemmas": [
+        "בָּכָה",
+        "בָּכָה"
+      ],
+      "words": [
+        {
+          "word": "וּבָכֹ֥ה",
+          "lemma": "בָּכָה",
+          "strong": "H1058",
+          "pron": "바텝크"
+        },
+        {
+          "word": "תִבְכֶּֽה",
+          "lemma": "בָּכָה",
+          "strong": "H1058",
+          "pron": "바텝크"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel1 1:10",
+        "jeremiah 22:10",
+        "lamentations 1:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֵּ֥בְךְּ אֹת֖וֹ",
+      "pron": "바텝크 에트",
+      "lemmas": [
+        "בָּכָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיֵּ֥בְךְּ",
+          "lemma": "בָּכָה",
+          "strong": "H1058",
+          "pron": "바텝크"
+        },
+        {
+          "word": "אֹת֖וֹ",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 37:35",
+        "genesis 50:3",
+        "leviticus 10:6",
+        "numbers 20:29",
+        "deuteronomy 21:13",
+        "ezekiel 8:14"
       ],
       "glossKo": ""
     }

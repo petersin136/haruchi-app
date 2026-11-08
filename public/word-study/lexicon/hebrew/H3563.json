@@ -1,6 +1,6 @@
 {
   "lemma": "כּוֹס",
-  "pron": "코사므",
+  "pron": "브콧",
   "strong": "H3563",
   "posKo": "명사",
   "root": null,
@@ -8,27 +8,102 @@
     {
       "lemma": "כִּיס",
       "strong": "H3599",
-      "pron": "",
-      "glossKo": "주머니"
+      "pron": "베킷카",
+      "glossKo": "너의 주머니"
     },
     {
       "lemma": "קֶסֶת",
       "strong": "H7083",
-      "pron": "",
+      "pron": "브케세트",
       "glossKo": "잉크병"
     }
   ],
   "defEn": "cup; lot",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 34,
   "byBook": {
+    "jeremiah": 7,
     "psalms": 6,
-    "genesis": 5
+    "genesis": 5,
+    "ezekiel": 4,
+    "isaiah": 4,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "habakkuk": 1,
+    "kings1": 1,
+    "lamentations": 1,
+    "leviticus": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
+      "hebrew": "אֶת הַכּ֖וֹס",
+      "pron": "에트 브콧",
+      "lemmas": [
+        "אֵת",
+        "כּוֹס"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַכּ֖וֹס",
+          "lemma": "כּוֹס",
+          "strong": "H3563",
+          "pron": "브콧"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 40:11",
+        "leviticus 11:17",
+        "deuteronomy 14:16",
+        "isaiah 51:17",
+        "isaiah 51:22",
+        "jeremiah 16:7",
+        "jeremiah 25:15",
+        "jeremiah 25:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כ֪וֹס בְּֽיַד",
+      "pron": "브콧 야도",
+      "lemmas": [
+        "כּוֹס",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "כ֪וֹס",
+          "lemma": "כּוֹס",
+          "strong": "H3563",
+          "pron": "브콧"
+        },
+        {
+          "word": "בְּֽיַד",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 75:8",
+        "jeremiah 25:17",
+        "jeremiah 25:28",
+        "ezekiel 23:31"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וְכ֥וֹס פַּרְעֹ֖ה",
-      "pron": "코사므 브파레오",
+      "pron": "브콧 파레오",
       "lemmas": [
         "כּוֹס",
         "פַּרְעֹה"
@@ -38,19 +113,48 @@
           "word": "וְכ֥וֹס",
           "lemma": "כּוֹס",
           "strong": "H3563",
-          "pron": "코사므"
+          "pron": "브콧"
         },
         {
           "word": "פַּרְעֹ֖ה",
           "lemma": "פַּרְעֹה",
           "strong": "H6547",
-          "pron": "브파레오"
+          "pron": "파레오"
         }
       ],
       "count": 3,
       "refs": [
         "genesis 40:11",
         "genesis 40:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנָתַתָּ֤ כוֹס",
+      "pron": "바잇텐 브콧",
+      "lemmas": [
+        "נָתַן",
+        "כּוֹס"
+      ],
+      "words": [
+        {
+          "word": "וְנָתַתָּ֤",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "כוֹס",
+          "lemma": "כּוֹס",
+          "strong": "H3563",
+          "pron": "브콧"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 40:13",
+        "genesis 40:21",
+        "ezekiel 23:31"
       ],
       "glossKo": ""
     }

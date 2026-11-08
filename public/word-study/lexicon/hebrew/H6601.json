@@ -1,6 +1,6 @@
 {
   "lemma": "פָּתָה",
-  "pron": "바예팟투후",
+  "pron": "얍트",
   "strong": "H6601",
   "posKo": "동사",
   "root": null,
@@ -14,7 +14,7 @@
     {
       "lemma": "פְּתוּאֵל",
       "strong": "H6602",
-      "pron": "",
+      "pron": "페투엘",
       "glossKo": "브두엘"
     },
     {
@@ -26,16 +26,117 @@
     {
       "lemma": "פְּתַי",
       "strong": "H6613",
-      "pron": "",
-      "glossKo": "넓이(아람)"
+      "pron": "페타에흐",
+      "glossKo": "그의 넓이(아람)"
     }
   ],
   "defEn": "open; be; make; roomy; be; make; simple; delude",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 28,
   "byBook": {
+    "proverbs": 5,
+    "chronicles2": 3,
+    "jeremiah": 3,
+    "job": 3,
+    "kings1": 3,
+    "ezekiel": 2,
+    "hosea": 2,
+    "judges": 2,
+    "deuteronomy": 1,
+    "exodus": 1,
     "genesis": 1,
-    "psalms": 1
+    "psalms": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יְפַתֶּה֙ אֶת",
+      "pron": "얍트 에트",
+      "lemmas": [
+        "פָּתָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "יְפַתֶּה֙",
+          "lemma": "פָּתָה",
+          "strong": "H6601",
+          "pron": "얍트"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 14:15",
+        "judges 16:5",
+        "kings1 22:20",
+        "chronicles2 18:19",
+        "ezekiel 14:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֗אמֶר תְּפַתֶּה֙",
+      "pron": "바요메르 얍트",
+      "lemmas": [
+        "אָמַר",
+        "פָּתָה"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֗אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "תְּפַתֶּה֙",
+          "lemma": "פָּתָה",
+          "strong": "H6601",
+          "pron": "얍트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 16:5",
+        "kings1 22:22",
+        "chronicles2 18:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְכִֽי יְפַתֶּ֣ה",
+      "pron": "키 얍트",
+      "lemmas": [
+        "כִּי",
+        "פָּתָה"
+      ],
+      "words": [
+        {
+          "word": "וְכִֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "יְפַתֶּ֣ה",
+          "lemma": "פָּתָה",
+          "strong": "H6601",
+          "pron": "얍트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 22:16",
+        "samuel2 3:25",
+        "ezekiel 14:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

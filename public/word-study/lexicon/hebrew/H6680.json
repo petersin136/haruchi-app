@@ -1,6 +1,6 @@
 {
   "lemma": "צָוָה",
-  "pron": "치비타",
+  "pron": "바예차브",
   "strong": "H6680",
   "posKo": "동사",
   "root": null,
@@ -8,40 +8,65 @@
     {
       "lemma": "מִצְוָה",
       "strong": "H4687",
-      "pron": "미체바트",
-      "glossKo": "계명"
+      "pron": "미체보타이",
+      "glossKo": "나의 계명"
     },
     {
       "lemma": "צַו",
       "strong": "H6673",
-      "pron": "",
+      "pron": "차브",
       "glossKo": "명령"
     },
     {
       "lemma": "צִי",
       "strong": "H6716",
-      "pron": "",
+      "pron": "브침",
       "glossKo": "배"
     }
   ],
   "defEn": "constitute; enjoin",
   "defKo": "",
-  "countOT": 42,
+  "countOT": 496,
   "byBook": {
+    "deuteronomy": 88,
+    "exodus": 54,
+    "numbers": 48,
+    "joshua": 43,
+    "jeremiah": 39,
+    "leviticus": 35,
     "genesis": 27,
-    "psalms": 15
+    "kings2": 20,
+    "samuel2": 19,
+    "kings1": 18,
+    "psalms": 15,
+    "chronicles1": 12,
+    "isaiah": 10,
+    "samuel1": 10,
+    "esther": 9,
+    "chronicles2": 8,
+    "judges": 7,
+    "nehemiah": 7,
+    "ezekiel": 6,
+    "amos": 5,
+    "lamentations": 4,
+    "ezra": 3,
+    "job": 3,
+    "ruth": 3,
+    "malachi": 1,
+    "nahum": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "כַּֽאֲשֶׁ֛ר צִוָּ֥ה",
-      "pron": "아셰르 치비타",
+      "hebrew": "כַּאֲשֶׁ֛ר צִוָּ֥ה",
+      "pron": "아셰르 바예차브",
       "lemmas": [
         "אֲשֶׁר",
         "צָוָה"
       ],
       "words": [
         {
-          "word": "כַּֽאֲשֶׁ֛ר",
+          "word": "כַּאֲשֶׁ֛ר",
           "lemma": "אֲשֶׁר",
           "strong": "H834",
           "pron": "아셰르"
@@ -50,12 +75,11 @@
           "word": "צִוָּ֥ה",
           "lemma": "צָוָה",
           "strong": "H6680",
-          "pron": "치비타"
+          "pron": "바예차브"
         }
       ],
-      "count": 11,
+      "count": 258,
       "refs": [
-        "psalms 78:5",
         "genesis 3:11",
         "genesis 3:17",
         "genesis 6:22",
@@ -65,34 +89,118 @@
         "genesis 18:19",
         "genesis 21:4",
         "genesis 47:11",
-        "genesis 50:12"
+        "genesis 50:12",
+        "exodus 4:28",
+        "exodus 7:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "צִוָּ֥ה אֹת֖וֹ",
-      "pron": "치비타 에트",
+      "hebrew": "צִוָּ֥ה יְהוָ֖ה",
+      "pron": "바예차브 여호와",
       "lemmas": [
         "צָוָה",
-        "אֵת"
+        "יְהֹוָה"
       ],
       "words": [
         {
           "word": "צִוָּ֥ה",
           "lemma": "צָוָה",
           "strong": "H6680",
-          "pron": "치비타"
+          "pron": "바예차브"
         },
         {
-          "word": "אֹת֖וֹ",
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 144,
+      "refs": [
+        "genesis 2:16",
+        "genesis 7:5",
+        "exodus 7:6",
+        "exodus 7:10",
+        "exodus 7:20",
+        "exodus 12:28",
+        "exodus 12:50",
+        "exodus 16:16",
+        "exodus 16:32",
+        "exodus 16:34",
+        "exodus 19:7",
+        "exodus 34:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַּאֲשֶׁ֛ר צִוָּ֥ה יְהוָ֖ה",
+      "pron": "아셰르 바예차브 여호와",
+      "lemmas": [
+        "אֲשֶׁר",
+        "צָוָה",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "כַּאֲשֶׁ֛ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "צִוָּ֥ה",
+          "lemma": "צָוָה",
+          "strong": "H6680",
+          "pron": "바예차브"
+        },
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 130,
+      "refs": [
+        "genesis 7:5",
+        "exodus 7:6",
+        "exodus 7:10",
+        "exodus 7:20",
+        "exodus 12:28",
+        "exodus 12:50",
+        "exodus 16:16",
+        "exodus 16:32",
+        "exodus 16:34",
+        "exodus 19:7",
+        "exodus 34:4",
+        "exodus 35:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְצַוֶּ֥ה אֶתְכֶ֖ם",
+      "pron": "바예차브 에트",
+      "lemmas": [
+        "צָוָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "מְצַוֶּ֥ה",
+          "lemma": "צָוָה",
+          "strong": "H6680",
+          "pron": "바예차브"
+        },
+        {
+          "word": "אֶתְכֶ֖ם",
           "lemma": "אֵת",
           "strong": "H853",
           "pron": "에트"
         }
       ],
-      "count": 11,
+      "count": 96,
       "refs": [
-        "psalms 78:5",
         "genesis 6:22",
         "genesis 7:16",
         "genesis 18:19",
@@ -102,30 +210,32 @@
         "genesis 32:17",
         "genesis 44:1",
         "genesis 49:29",
-        "genesis 49:33"
+        "genesis 49:33",
+        "exodus 25:22",
+        "exodus 27:20"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֲשֶׁ֣ר צִ֭וָּה אֶת",
-      "pron": "아셰르 치비타 에트",
+      "hebrew": "צִוָּ֥ה יְהוָ֖ה אֶת",
+      "pron": "바예차브 여호와 에트",
       "lemmas": [
-        "אֲשֶׁר",
         "צָוָה",
+        "יְהֹוָה",
         "אֵת"
       ],
       "words": [
         {
-          "word": "אֲשֶׁ֣ר",
-          "lemma": "אֲשֶׁר",
-          "strong": "H834",
-          "pron": "아셰르"
-        },
-        {
-          "word": "צִ֭וָּה",
+          "word": "צִוָּ֥ה",
           "lemma": "צָוָה",
           "strong": "H6680",
-          "pron": "치비타"
+          "pron": "바예차브"
+        },
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         },
         {
           "word": "אֶת",
@@ -134,79 +244,20 @@
           "pron": "에트"
         }
       ],
-      "count": 5,
+      "count": 73,
       "refs": [
-        "psalms 78:5",
-        "genesis 6:22",
-        "genesis 7:16",
-        "genesis 18:19",
-        "genesis 21:4"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יְצַוֶּ֬ה יְהוָ֨ה",
-      "pron": "치비타 여호와",
-      "lemmas": [
-        "צָוָה",
-        "יְהֹוָה"
-      ],
-      "words": [
-        {
-          "word": "יְצַוֶּ֬ה",
-          "lemma": "צָוָה",
-          "strong": "H6680",
-          "pron": "치비타"
-        },
-        {
-          "word": "יְהוָ֨ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 42:8",
-        "psalms 133:3",
-        "genesis 2:16",
-        "genesis 7:5"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "צִוָּ֥ה אֹת֛וֹ אֱלֹהִ֖ים",
-      "pron": "치비타 에트 베엘로힘",
-      "lemmas": [
-        "צָוָה",
-        "אֵת",
-        "אֱלֹהִים"
-      ],
-      "words": [
-        {
-          "word": "צִוָּ֥ה",
-          "lemma": "צָוָה",
-          "strong": "H6680",
-          "pron": "치비타"
-        },
-        {
-          "word": "אֹת֛וֹ",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        },
-        {
-          "word": "אֱלֹהִ֖ים",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 6:22",
-        "genesis 7:16",
-        "genesis 21:4"
+        "exodus 7:6",
+        "exodus 12:28",
+        "exodus 12:50",
+        "exodus 34:4",
+        "exodus 38:22",
+        "exodus 39:1",
+        "exodus 39:5",
+        "exodus 39:7",
+        "exodus 39:21",
+        "exodus 39:26",
+        "exodus 39:29",
+        "exodus 39:31"
       ],
       "glossKo": ""
     }

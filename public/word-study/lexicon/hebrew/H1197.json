@@ -1,6 +1,6 @@
 {
   "lemma": "בָּעַר",
-  "pron": "입아르",
+  "pron": "보에르",
   "strong": "H1197",
   "posKo": "동사",
   "root": {
@@ -18,8 +18,8 @@
     {
       "lemma": "בְּעִיר",
       "strong": "H1165",
-      "pron": "베이라므",
-      "glossKo": "그들의 가축"
+      "pron": "베이레켐",
+      "glossKo": "너희의 가축"
     },
     {
       "lemma": "בַּעַר",
@@ -30,27 +30,223 @@
     {
       "lemma": "בָּעֲרָא",
       "strong": "H1199",
-      "pron": "",
+      "pron": "바아라",
       "glossKo": "바아라"
     },
     {
       "lemma": "בְּעֵרָה",
       "strong": "H1200",
-      "pron": "",
+      "pron": "아베에라",
       "glossKo": "타오름"
     },
     {
       "lemma": "תַּבְעֵרָה",
       "strong": "H8404",
-      "pron": "",
+      "pron": "탑에라",
       "glossKo": "다베라"
     }
   ],
   "defEn": "kindle; consume; be (-come) brutish",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 94,
   "byBook": {
-    "psalms": 8
+    "isaiah": 17,
+    "deuteronomy": 16,
+    "jeremiah": 11,
+    "psalms": 8,
+    "ezekiel": 7,
+    "exodus": 6,
+    "kings1": 5,
+    "chronicles2": 4,
+    "judges": 4,
+    "numbers": 3,
+    "samuel2": 3,
+    "hosea": 2,
+    "esther": 1,
+    "job": 1,
+    "kings2": 1,
+    "lamentations": 1,
+    "leviticus": 1,
+    "malachi": 1,
+    "nahum": 1,
+    "nehemiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בֹּעֵ֣ר בָּאֵ֑שׁ",
+      "pron": "보에르 에쉬",
+      "lemmas": [
+        "בָּעַר",
+        "אֵשׁ"
+      ],
+      "words": [
+        {
+          "word": "בֹּעֵ֣ר",
+          "lemma": "בָּעַר",
+          "strong": "H1197",
+          "pron": "보에르"
+        },
+        {
+          "word": "בָּאֵ֑שׁ",
+          "lemma": "אֵשׁ",
+          "strong": "H784",
+          "pron": "에쉬"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "exodus 3:2",
+        "exodus 35:3",
+        "numbers 11:1",
+        "numbers 11:3",
+        "deuteronomy 4:11",
+        "deuteronomy 5:23",
+        "deuteronomy 9:15",
+        "judges 15:5",
+        "judges 15:14",
+        "psalms 39:3",
+        "psalms 106:18",
+        "isaiah 9:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבִֽעַרְתָּ֥ הָרָ֖ע",
+      "pron": "보에르 바라",
+      "lemmas": [
+        "בָּעַר",
+        "רַע"
+      ],
+      "words": [
+        {
+          "word": "וּבִֽעַרְתָּ֥",
+          "lemma": "בָּעַר",
+          "strong": "H1197",
+          "pron": "보에르"
+        },
+        {
+          "word": "הָרָ֖ע",
+          "lemma": "רַע",
+          "strong": "H7451",
+          "pron": "바라"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "deuteronomy 13:5",
+        "deuteronomy 17:7",
+        "deuteronomy 17:12",
+        "deuteronomy 19:19",
+        "deuteronomy 21:21",
+        "deuteronomy 22:21",
+        "deuteronomy 22:22",
+        "deuteronomy 22:24",
+        "deuteronomy 24:7",
+        "judges 20:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבִֽעַרְתָּ֥ הָרָ֖ע מִקִּרְבֶּֽךָ",
+      "pron": "보에르 바라 베키렙바흐",
+      "lemmas": [
+        "בָּעַר",
+        "רַע",
+        "קֶרֶב"
+      ],
+      "words": [
+        {
+          "word": "וּבִֽעַרְתָּ֥",
+          "lemma": "בָּעַר",
+          "strong": "H1197",
+          "pron": "보에르"
+        },
+        {
+          "word": "הָרָ֖ע",
+          "lemma": "רַע",
+          "strong": "H7451",
+          "pron": "바라"
+        },
+        {
+          "word": "מִקִּרְבֶּֽךָ",
+          "lemma": "קֶרֶב",
+          "strong": "H7130",
+          "pron": "베키렙바흐"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "deuteronomy 13:5",
+        "deuteronomy 17:7",
+        "deuteronomy 19:19",
+        "deuteronomy 21:21",
+        "deuteronomy 22:21",
+        "deuteronomy 22:24",
+        "deuteronomy 24:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֤י יַבְעֶר",
+      "pron": "키 보에르",
+      "lemmas": [
+        "כִּי",
+        "בָּעַר"
+      ],
+      "words": [
+        {
+          "word": "כִּ֤י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "יַבְעֶר",
+          "lemma": "בָּעַר",
+          "strong": "H1197",
+          "pron": "보에르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 22:5",
+        "numbers 11:3",
+        "chronicles2 19:3",
+        "psalms 2:12",
+        "isaiah 9:18",
+        "jeremiah 10:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בָּעֲר֥וּ מִמֶּֽנּוּ",
+      "pron": "보에르 민",
+      "lemmas": [
+        "בָּעַר",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "בָּעֲר֥וּ",
+          "lemma": "בָּעַר",
+          "strong": "H1197",
+          "pron": "보에르"
+        },
+        {
+          "word": "מִמֶּֽנּוּ",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 26:14",
+        "samuel2 22:9",
+        "kings1 22:46",
+        "psalms 18:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

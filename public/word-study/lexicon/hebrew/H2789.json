@@ -1,6 +1,6 @@
 {
   "lemma": "חֶרֶשׂ",
-  "pron": "카헤레스",
+  "pron": "헤레스",
   "strong": "H2789",
   "posKo": "명사",
   "root": {
@@ -12,33 +12,140 @@
     {
       "lemma": "חַרְחַס",
       "strong": "H2745",
-      "pron": "",
+      "pron": "하레핫",
       "glossKo": "하르하스"
     },
     {
       "lemma": "חֶרֶס",
       "strong": "H2775",
-      "pron": "",
+      "pron": "우베하렛",
       "glossKo": "태양"
     },
     {
       "lemma": "חֶרֶס",
       "strong": "H2776",
-      "pron": "",
+      "pron": "헤렛",
       "glossKo": "헤레스"
     },
     {
       "lemma": "חַרְסוּת",
       "strong": "H2777",
-      "pron": "",
+      "pron": "흘스브트",
       "glossKo": "하르수"
     }
   ],
   "defEn": "pottery",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 17,
   "byBook": {
+    "leviticus": 5,
+    "isaiah": 3,
+    "jeremiah": 2,
+    "job": 2,
+    "ezekiel": 1,
+    "lamentations": 1,
+    "numbers": 1,
+    "proverbs": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּכְלִי חֶ֛רֶשׂ",
+      "pron": "켈레 헤레스",
+      "lemmas": [
+        "כְּלִי",
+        "חֶרֶשׂ"
+      ],
+      "words": [
+        {
+          "word": "וּכְלִי",
+          "lemma": "כְּלִי",
+          "strong": "H3627",
+          "pron": "켈레"
+        },
+        {
+          "word": "חֶ֛רֶשׂ",
+          "lemma": "חֶרֶשׂ",
+          "strong": "H2789",
+          "pron": "헤레스"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 6:28",
+        "leviticus 11:33",
+        "leviticus 14:5",
+        "leviticus 14:50",
+        "leviticus 15:12",
+        "numbers 5:17",
+        "jeremiah 32:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּכְלִי חֶ֛רֶשׂ אֲשֶׁ֥ר",
+      "pron": "켈레 헤레스 아셰르",
+      "lemmas": [
+        "כְּלִי",
+        "חֶרֶשׂ",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "וּכְלִי",
+          "lemma": "כְּלִי",
+          "strong": "H3627",
+          "pron": "켈레"
+        },
+        {
+          "word": "חֶ֛רֶשׂ",
+          "lemma": "חֶרֶשׂ",
+          "strong": "H2789",
+          "pron": "헤레스"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 6:28",
+        "leviticus 11:33",
+        "leviticus 15:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֶ֛רֶשׂ אֲשֶׁ֥ר",
+      "pron": "헤레스 아셰르",
+      "lemmas": [
+        "חֶרֶשׂ",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "חֶ֛רֶשׂ",
+          "lemma": "חֶרֶשׂ",
+          "strong": "H2789",
+          "pron": "헤레스"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 6:28",
+        "leviticus 11:33",
+        "leviticus 15:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

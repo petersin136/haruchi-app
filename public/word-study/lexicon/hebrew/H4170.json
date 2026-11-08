@@ -1,6 +1,6 @@
 {
   "lemma": "מוֹקֵשׁ",
-  "pron": "모케셰이",
+  "pron": "르모케쉬",
   "strong": "H4170",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "יָקוֹשׁ",
       "strong": "H3352",
-      "pron": "",
+      "pron": "야코쉬",
       "glossKo": "올무 놓는"
     },
     {
@@ -24,7 +24,7 @@
     {
       "lemma": "יָקֹשׁ",
       "strong": "H3369",
-      "pron": "요케심",
+      "pron": "티바케쉬",
       "glossKo": "올무로 잡다"
     },
     {
@@ -36,15 +36,87 @@
     {
       "lemma": "קוֹשׁ",
       "strong": "H6983",
-      "pron": "",
+      "pron": "예코슌",
       "glossKo": "올무를 놓다"
     }
   ],
   "defEn": "noose",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 27,
   "byBook": {
-    "psalms": 6
+    "proverbs": 8,
+    "psalms": 6,
+    "exodus": 3,
+    "job": 2,
+    "judges": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "isaiah": 1,
+    "joshua": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יִהְיֶ֥ה לְמוֹקֵֽשׁ",
+      "pron": "하에타 르모케쉬",
+      "lemmas": [
+        "הָיָה",
+        "מוֹקֵשׁ"
+      ],
+      "words": [
+        {
+          "word": "יִהְיֶ֥ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "לְמוֹקֵֽשׁ",
+          "lemma": "מוֹקֵשׁ",
+          "strong": "H4170",
+          "pron": "르모케쉬"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 23:33",
+        "exodus 34:12",
+        "judges 2:3",
+        "samuel1 18:21",
+        "psalms 106:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִמֹּ֥קְשֵׁי מָֽוֶת",
+      "pron": "르모케쉬 브모트",
+      "lemmas": [
+        "מוֹקֵשׁ",
+        "מָוֶת"
+      ],
+      "words": [
+        {
+          "word": "מִמֹּ֥קְשֵׁי",
+          "lemma": "מוֹקֵשׁ",
+          "strong": "H4170",
+          "pron": "르모케쉬"
+        },
+        {
+          "word": "מָֽוֶת",
+          "lemma": "מָוֶת",
+          "strong": "H4194",
+          "pron": "브모트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 22:6",
+        "psalms 18:5",
+        "proverbs 13:14",
+        "proverbs 14:27"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

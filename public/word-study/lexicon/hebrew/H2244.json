@@ -12,39 +12,204 @@
     {
       "lemma": "חֹב",
       "strong": "H2243",
-      "pron": "",
-      "glossKo": "품"
+      "pron": "베훕비",
+      "glossKo": "나의 품"
     },
     {
       "lemma": "חָבַב",
       "strong": "H2245",
-      "pron": "",
-      "glossKo": "사랑하다"
+      "pron": "호벱",
+      "glossKo": "사랑하는 이"
     },
     {
       "lemma": "חֹבָב",
       "strong": "H2246",
-      "pron": "",
+      "pron": "르호밥",
       "glossKo": "호밥"
     },
     {
       "lemma": "חָבָה",
       "strong": "H2247",
-      "pron": "",
+      "pron": "브나헵베템",
       "glossKo": "숨다"
     },
     {
       "lemma": "מַחֲבֵא",
       "strong": "H4224",
-      "pron": "",
+      "pron": "아마하보임",
       "glossKo": "은신처"
     }
   ],
   "defEn": "secrete",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 33,
   "byBook": {
-    "genesis": 3
+    "samuel1": 6,
+    "job": 5,
+    "joshua": 5,
+    "chronicles2": 3,
+    "genesis": 3,
+    "isaiah": 2,
+    "kings1": 2,
+    "kings2": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "daniel": 1,
+    "judges": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲשֶׁ֣ר נֶחְבְּאוּ",
+      "pron": "아셰르 바이테합베",
+      "lemmas": [
+        "אֲשֶׁר",
+        "חָבָא"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "נֶחְבְּאוּ",
+          "lemma": "חָבָא",
+          "strong": "H2244",
+          "pron": "바이테합베"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 10:27",
+        "samuel1 14:11",
+        "samuel1 23:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֣ר נֶחְבְּאוּ שָׁ֑ם",
+      "pron": "아셰르 바이테합베 샴",
+      "lemmas": [
+        "אֲשֶׁר",
+        "חָבָא",
+        "שָׁם"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "נֶחְבְּאוּ",
+          "lemma": "חָבָא",
+          "strong": "H2244",
+          "pron": "바이테합베"
+        },
+        {
+          "word": "שָׁ֑ם",
+          "lemma": "שָׁם",
+          "strong": "H8033",
+          "pron": "샴"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 10:27",
+        "samuel1 14:11",
+        "samuel1 23:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ה֥וּא נֶחְבָּ֖א",
+      "pron": "후 바이테합베",
+      "lemmas": [
+        "הוּא",
+        "חָבָא"
+      ],
+      "words": [
+        {
+          "word": "ה֥וּא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        },
+        {
+          "word": "נֶחְבָּ֖א",
+          "lemma": "חָבָא",
+          "strong": "H2244",
+          "pron": "바이테합베"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 10:22",
+        "samuel2 17:9",
+        "chronicles2 22:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֶחְבְּאַ֔תָה אֶת",
+      "pron": "바이테합베 에트",
+      "lemmas": [
+        "חָבָא",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הֶחְבְּאַ֔תָה",
+          "lemma": "חָבָא",
+          "strong": "H2244",
+          "pron": "바이테합베"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 6:17",
+        "joshua 6:25",
+        "kings2 6:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֣י הֶחְבְּאַ֔תָה",
+      "pron": "키 바이테합베",
+      "lemmas": [
+        "כִּי",
+        "חָבָא"
+      ],
+      "words": [
+        {
+          "word": "כִּ֣י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "הֶחְבְּאַ֔תָה",
+          "lemma": "חָבָא",
+          "strong": "H2244",
+          "pron": "바이테합베"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 6:17",
+        "joshua 6:25",
+        "judges 9:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

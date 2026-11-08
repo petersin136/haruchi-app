@@ -1,6 +1,6 @@
 {
   "lemma": "יָרָה",
-  "pron": "리위로트",
+  "pron": "야리티",
   "strong": "H3384",
   "posKo": "동사",
   "root": null,
@@ -8,107 +8,222 @@
     {
       "lemma": "יוֹרֶה",
       "strong": "H3138",
-      "pron": "",
+      "pron": "요레",
       "glossKo": "이른 비"
     },
     {
       "lemma": "יוֹרָה",
       "strong": "H3139",
-      "pron": "",
+      "pron": "요라",
       "glossKo": "요라"
     },
     {
       "lemma": "יוֹרַי",
       "strong": "H3140",
-      "pron": "",
+      "pron": "브요라이",
       "glossKo": "요래"
     },
     {
       "lemma": "יְרוּאֵל",
       "strong": "H3385",
-      "pron": "",
+      "pron": "예루엘",
       "glossKo": "여르엘"
     },
     {
       "lemma": "יְרִיאֵל",
       "strong": "H3400",
-      "pron": "",
+      "pron": "비위리엘",
       "glossKo": "여리엘"
     },
     {
       "lemma": "יְרִיָּה",
       "strong": "H3404",
-      "pron": "",
+      "pron": "예리아후",
       "glossKo": "여리야"
     }
   ],
   "defEn": "flow; lay; throw; shoot; point; aiming; teach",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 86,
   "byBook": {
     "psalms": 12,
-    "genesis": 2
+    "job": 9,
+    "exodus": 8,
+    "isaiah": 7,
+    "samuel1": 7,
+    "kings2": 6,
+    "proverbs": 6,
+    "chronicles2": 5,
+    "samuel2": 5,
+    "deuteronomy": 4,
+    "chronicles1": 2,
+    "genesis": 2,
+    "habakkuk": 2,
+    "hosea": 2,
+    "leviticus": 2,
+    "micah": 2,
+    "ezekiel": 1,
+    "joshua": 1,
+    "judges": 1,
+    "kings1": 1,
+    "numbers": 1
   },
   "phrases": [
     {
-      "hebrew": "ה֤וֹרֵ֥נִי יְהוָ֗ה",
-      "pron": "리위로트 여호와",
+      "hebrew": "יָרֹ֣ה יִיָּרֶ֔ה",
+      "pron": "야리티 야리티",
+      "lemmas": [
+        "יָרָה",
+        "יָרָה"
+      ],
+      "words": [
+        {
+          "word": "יָרֹ֣ה",
+          "lemma": "יָרָה",
+          "strong": "H3384",
+          "pron": "야리티"
+        },
+        {
+          "word": "יִיָּרֶ֔ה",
+          "lemma": "יָרָה",
+          "strong": "H3384",
+          "pron": "야리티"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 19:13",
+        "samuel2 11:24",
+        "kings2 13:17",
+        "chronicles2 35:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהוֹרֵיתִ֣י אֶתְכֶ֔ם",
+      "pron": "야리티 에트",
+      "lemmas": [
+        "יָרָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְהוֹרֵיתִ֣י",
+          "lemma": "יָרָה",
+          "strong": "H3384",
+          "pron": "야리티"
+        },
+        {
+          "word": "אֶתְכֶ֔ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 4:15",
+        "leviticus 10:11",
+        "deuteronomy 24:8",
+        "samuel1 12:23",
+        "kings1 8:36",
+        "kings2 17:27",
+        "kings2 17:28",
+        "job 27:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֥ר יָרִ֖יתִי",
+      "pron": "아셰르 야리티",
+      "lemmas": [
+        "אֲשֶׁר",
+        "יָרָה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יָרִ֖יתִי",
+          "lemma": "יָרָה",
+          "strong": "H3384",
+          "pron": "야리티"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 31:51",
+        "deuteronomy 17:10",
+        "deuteronomy 17:11",
+        "deuteronomy 24:8",
+        "samuel1 20:37",
+        "samuel2 11:20",
+        "kings2 12:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ויראו וַיֹּר֨וּ המוראים",
+      "pron": "야리티 야리티 야리티",
+      "lemmas": [
+        "יָרָה",
+        "יָרָה",
+        "יָרָה"
+      ],
+      "words": [
+        {
+          "word": "ויראו",
+          "lemma": "יָרָה",
+          "strong": "H3384",
+          "pron": "야리티"
+        },
+        {
+          "word": "וַיֹּר֨וּ",
+          "lemma": "יָרָה",
+          "strong": "H3384",
+          "pron": "야리티"
+        },
+        {
+          "word": "המוראים",
+          "lemma": "יָרָה",
+          "strong": "H3384",
+          "pron": "야리티"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel2 11:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיּוֹרֵ֤הוּ יְהוָה֙",
+      "pron": "야리티 여호와",
       "lemmas": [
         "יָרָה",
         "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "ה֤וֹרֵ֥נִי",
+          "word": "וַיּוֹרֵ֤הוּ",
           "lemma": "יָרָה",
           "strong": "H3384",
-          "pron": "리위로트"
+          "pron": "야리티"
         },
         {
-          "word": "יְהוָ֗ה",
+          "word": "יְהוָה֙",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
-        "psalms 27:11",
-        "psalms 86:11",
-        "psalms 119:33"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "ה֤וֹרֵ֥נִי יְהוָ֗ה דַּ֫רְכֶּ֥ךָ",
-      "pron": "리위로트 여호와 우브데레크",
-      "lemmas": [
-        "יָרָה",
-        "יְהֹוָה",
-        "דֶּרֶךְ"
-      ],
-      "words": [
-        {
-          "word": "ה֤וֹרֵ֥נִי",
-          "lemma": "יָרָה",
-          "strong": "H3384",
-          "pron": "리위로트"
-        },
-        {
-          "word": "יְהוָ֗ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        },
-        {
-          "word": "דַּ֫רְכֶּ֥ךָ",
-          "lemma": "דֶּרֶךְ",
-          "strong": "H1870",
-          "pron": "우브데레크"
-        }
-      ],
-      "count": 3,
-      "refs": [
+        "exodus 15:25",
         "psalms 27:11",
         "psalms 86:11",
         "psalms 119:33"

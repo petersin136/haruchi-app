@@ -1,6 +1,6 @@
 {
   "lemma": "חָגַר",
-  "pron": "하고르",
+  "pron": "하구림",
   "strong": "H2296",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "חָגוֹר",
       "strong": "H2289",
-      "pron": "",
+      "pron": "바하고르",
       "glossKo": "허리에 띤"
     },
     {
@@ -20,15 +20,200 @@
     {
       "lemma": "מַחֲגֹרֶת",
       "strong": "H4228",
-      "pron": "",
+      "pron": "마하고레트",
       "glossKo": "허리띠"
     }
   ],
   "defEn": "gird",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 44,
   "byBook": {
-    "psalms": 4
+    "samuel1": 5,
+    "samuel2": 5,
+    "judges": 4,
+    "leviticus": 4,
+    "psalms": 4,
+    "ezekiel": 3,
+    "isaiah": 3,
+    "jeremiah": 3,
+    "kings2": 3,
+    "exodus": 2,
+    "joel": 2,
+    "kings1": 2,
+    "daniel": 1,
+    "deuteronomy": 1,
+    "lamentations": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְחִגְר֣וּ שַׂקִּ֔ים",
+      "pron": "하구림 사크",
+      "lemmas": [
+        "חָגַר",
+        "שַׂק"
+      ],
+      "words": [
+        {
+          "word": "וְחִגְר֣וּ",
+          "lemma": "חָגַר",
+          "strong": "H2296",
+          "pron": "하구림"
+        },
+        {
+          "word": "שַׂקִּ֔ים",
+          "lemma": "שַׂק",
+          "strong": "H8242",
+          "pron": "사크"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "samuel2 3:31",
+        "kings1 20:32",
+        "isaiah 15:3",
+        "isaiah 22:12",
+        "jeremiah 4:8",
+        "jeremiah 6:26",
+        "jeremiah 49:3",
+        "lamentations 2:10",
+        "ezekiel 7:18",
+        "ezekiel 27:31",
+        "joel 1:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְחָגַרְתָּ֩ אֹתָ֨ם",
+      "pron": "하구림 에트",
+      "lemmas": [
+        "חָגַר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְחָגַרְתָּ֩",
+          "lemma": "חָגַר",
+          "strong": "H2296",
+          "pron": "하구림"
+        },
+        {
+          "word": "אֹתָ֨ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 29:9",
+        "leviticus 8:7",
+        "leviticus 8:13",
+        "judges 3:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִ֔ישׁ חָג֖וּר",
+      "pron": "메이쉬 하구림",
+      "lemmas": [
+        "אִישׁ",
+        "חָגַר"
+      ],
+      "words": [
+        {
+          "word": "אִ֔ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "חָג֖וּר",
+          "lemma": "חָגַר",
+          "strong": "H2296",
+          "pron": "하구림"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 18:11",
+        "judges 18:16",
+        "judges 18:17",
+        "samuel1 25:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִ֔ישׁ חָג֖וּר כְּלֵ֥י",
+      "pron": "메이쉬 하구림 켈레",
+      "lemmas": [
+        "אִישׁ",
+        "חָגַר",
+        "כְּלִי"
+      ],
+      "words": [
+        {
+          "word": "אִ֔ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "חָג֖וּר",
+          "lemma": "חָגַר",
+          "strong": "H2296",
+          "pron": "하구림"
+        },
+        {
+          "word": "כְּלֵ֥י",
+          "lemma": "כְּלִי",
+          "strong": "H3627",
+          "pron": "켈레"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 18:11",
+        "judges 18:16",
+        "judges 18:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְחִגְר֣וּ שַׂקִּ֔ים וְסִפְד֖וּ",
+      "pron": "하구림 사크 리셉폳",
+      "lemmas": [
+        "חָגַר",
+        "שַׂק",
+        "סָפַד"
+      ],
+      "words": [
+        {
+          "word": "וְחִגְר֣וּ",
+          "lemma": "חָגַר",
+          "strong": "H2296",
+          "pron": "하구림"
+        },
+        {
+          "word": "שַׂקִּ֔ים",
+          "lemma": "שַׂק",
+          "strong": "H8242",
+          "pron": "사크"
+        },
+        {
+          "word": "וְסִפְד֖וּ",
+          "lemma": "סָפַד",
+          "strong": "H5594",
+          "pron": "리셉폳"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 3:31",
+        "jeremiah 4:8",
+        "jeremiah 49:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

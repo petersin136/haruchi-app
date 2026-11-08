@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁקָה",
-  "pron": "타셰케므",
+  "pron": "브히셰카",
   "strong": "H8248",
   "posKo": "동사",
   "root": null,
@@ -14,13 +14,13 @@
     {
       "lemma": "שִׁקֻּו",
       "strong": "H8249",
-      "pron": "브식쿠바위",
+      "pron": "베식쿠바이",
       "glossKo": "나의 양수"
     },
     {
       "lemma": "שִׁקּוּי",
       "strong": "H8250",
-      "pron": "",
+      "pron": "브식쿠이",
       "glossKo": "음료"
     },
     {
@@ -32,34 +32,53 @@
   ],
   "defEn": "quaff; irrigate; furnish a potion to",
   "defKo": "",
-  "countOT": 26,
+  "countOT": 62,
   "byBook": {
     "genesis": 19,
-    "psalms": 7
+    "jeremiah": 7,
+    "psalms": 7,
+    "exodus": 4,
+    "numbers": 4,
+    "amos": 2,
+    "ezekiel": 2,
+    "isaiah": 2,
+    "job": 2,
+    "judges": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "esther": 1,
+    "habakkuk": 1,
+    "joel": 1,
+    "proverbs": 1,
+    "samuel1": 1,
+    "samuel2": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "וְהִשְׁקָ֖ה אֶֽת",
-      "pron": "타셰케므 에트",
+      "hebrew": "וַיַּ֖שְׁקְ אֶת",
+      "pron": "브히셰카 에트",
       "lemmas": [
         "שָׁקָה",
         "אֵת"
       ],
       "words": [
         {
-          "word": "וְהִשְׁקָ֖ה",
+          "word": "וַיַּ֖שְׁקְ",
           "lemma": "שָׁקָה",
           "strong": "H8248",
-          "pron": "타셰케므"
+          "pron": "브히셰카"
         },
         {
-          "word": "אֶֽת",
+          "word": "אֶת",
           "lemma": "אֵת",
           "strong": "H853",
           "pron": "에트"
         }
       ],
-      "count": 8,
+      "count": 22,
       "refs": [
         "genesis 2:6",
         "genesis 2:10",
@@ -68,135 +87,146 @@
         "genesis 21:19",
         "genesis 24:14",
         "genesis 29:3",
-        "genesis 29:10"
+        "genesis 29:10",
+        "exodus 2:17",
+        "exodus 2:19",
+        "exodus 32:20",
+        "numbers 5:24"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "גְּמַלֶּ֖יךָ אַשְׁקֶ֑ה",
-      "pron": "우게말림 타셰케므",
+      "hebrew": "יַשְׁקֵ֣נִי מַ֔יִם",
+      "pron": "브히셰카 아마임",
       "lemmas": [
-        "גָּמָל",
-        "שָׁקָה"
+        "שָׁקָה",
+        "מַיִם"
       ],
       "words": [
         {
-          "word": "גְּמַלֶּ֖יךָ",
-          "lemma": "גָּמָל",
-          "strong": "H1581",
-          "pron": "우게말림"
-        },
-        {
-          "word": "אַשְׁקֶ֑ה",
+          "word": "יַשְׁקֵ֣נִי",
           "lemma": "שָׁקָה",
           "strong": "H8248",
-          "pron": "타셰케므"
+          "pron": "브히셰카"
+        },
+        {
+          "word": "מַ֔יִם",
+          "lemma": "מַיִם",
+          "strong": "H4325",
+          "pron": "아마임"
         }
       ],
-      "count": 3,
+      "count": 7,
       "refs": [
-        "genesis 24:14",
-        "genesis 24:46"
+        "samuel1 30:11",
+        "samuel2 23:15",
+        "chronicles1 11:17",
+        "proverbs 25:21",
+        "jeremiah 8:14",
+        "jeremiah 9:15",
+        "jeremiah 23:15"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הַבְּאֵ֔ר וְהִשְׁק֖וּ",
-      "pron": "리베에르 타셰케므",
+      "hebrew": "וְהִשְׁק֖וּ אֶת הַצֹּ֑אן",
+      "pron": "브히셰카 에트 촌",
       "lemmas": [
-        "בְּאֵר",
-        "שָׁקָה"
+        "שָׁקָה",
+        "אֵת",
+        "צֹאן"
       ],
       "words": [
-        {
-          "word": "הַבְּאֵ֔ר",
-          "lemma": "בְּאֵר",
-          "strong": "H875",
-          "pron": "리베에르"
-        },
         {
           "word": "וְהִשְׁק֖וּ",
           "lemma": "שָׁקָה",
           "strong": "H8248",
-          "pron": "타셰케므"
+          "pron": "브히셰카"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַצֹּ֑אן",
+          "lemma": "צֹאן",
+          "strong": "H6629",
+          "pron": "촌"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "genesis 29:3",
-        "genesis 29:8",
-        "genesis 29:10"
+        "genesis 29:10",
+        "exodus 2:17",
+        "exodus 2:19"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְגַם גְּמַלֶּ֖יךָ אַשְׁקֶ֑ה",
-      "pron": "브감 우게말림 타셰케므",
+      "hebrew": "אֵלֶ֔יהָ הַשְׁקִֽינִי",
+      "pron": "엘 브히셰카",
       "lemmas": [
-        "גַּם",
-        "גָּמָל",
+        "אֵל",
         "שָׁקָה"
       ],
       "words": [
         {
-          "word": "וְגַם",
-          "lemma": "גַּם",
-          "strong": "H1571",
-          "pron": "브감"
+          "word": "אֵלֶ֔יהָ",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
         },
         {
-          "word": "גְּמַלֶּ֖יךָ",
-          "lemma": "גָּמָל",
-          "strong": "H1581",
-          "pron": "우게말림"
-        },
-        {
-          "word": "אַשְׁקֶ֑ה",
+          "word": "הַשְׁקִֽינִי",
           "lemma": "שָׁקָה",
           "strong": "H8248",
-          "pron": "타셰케므"
+          "pron": "브히셰카"
         }
       ],
       "count": 3,
       "refs": [
-        "genesis 24:14",
-        "genesis 24:46"
+        "genesis 24:43",
+        "genesis 24:45",
+        "judges 4:19"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "פִּ֣י הַבְּאֵ֔ר וְהִשְׁק֖וּ",
-      "pron": "브피후 리베에르 타셰케므",
+      "hebrew": "אֵלֶ֔יהָ הַשְׁקִֽינִי נָ֥א",
+      "pron": "엘 브히셰카 나",
       "lemmas": [
-        "פֶּה",
-        "בְּאֵר",
-        "שָׁקָה"
+        "אֵל",
+        "שָׁקָה",
+        "נָא"
       ],
       "words": [
         {
-          "word": "פִּ֣י",
-          "lemma": "פֶּה",
-          "strong": "H6310",
-          "pron": "브피후"
+          "word": "אֵלֶ֔יהָ",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
         },
         {
-          "word": "הַבְּאֵ֔ר",
-          "lemma": "בְּאֵר",
-          "strong": "H875",
-          "pron": "리베에르"
-        },
-        {
-          "word": "וְהִשְׁק֖וּ",
+          "word": "הַשְׁקִֽינִי",
           "lemma": "שָׁקָה",
           "strong": "H8248",
-          "pron": "타셰케므"
+          "pron": "브히셰카"
+        },
+        {
+          "word": "נָ֥א",
+          "lemma": "נָא",
+          "strong": "H4994",
+          "pron": "나"
         }
       ],
       "count": 3,
       "refs": [
-        "genesis 29:3",
-        "genesis 29:8",
-        "genesis 29:10"
+        "genesis 24:43",
+        "genesis 24:45",
+        "judges 4:19"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "עֵדָה",
-  "pron": "브에도타이브",
+  "pron": "르에다",
   "strong": "H5713",
   "posKo": "명사",
   "root": {
@@ -12,33 +12,95 @@
     {
       "lemma": "עֵד",
       "strong": "H5707",
-      "pron": "에데",
+      "pron": "르엗",
       "glossKo": "증인"
     },
     {
       "lemma": "עֵדָה",
       "strong": "H5712",
-      "pron": "바아다트",
+      "pron": "아다트",
       "glossKo": "회중"
     },
     {
       "lemma": "עֵדוּת",
       "strong": "H5715",
-      "pron": "에두트",
+      "pron": "하에두트",
       "glossKo": "증거"
     }
   ],
   "defEn": "testimony",
   "defKo": "",
-  "countOT": 21,
+  "countOT": 26,
   "byBook": {
     "psalms": 19,
-    "genesis": 2
+    "deuteronomy": 3,
+    "genesis": 2,
+    "joshua": 2
   },
   "phrases": [
     {
+      "hebrew": "הָֽעֵדֹ֔ת וְהַֽחֻקִּ֖ים",
+      "pron": "르에다 호크",
+      "lemmas": [
+        "עֵדָה",
+        "חֹק"
+      ],
+      "words": [
+        {
+          "word": "הָֽעֵדֹ֔ת",
+          "lemma": "עֵדָה",
+          "strong": "H5713",
+          "pron": "르에다"
+        },
+        {
+          "word": "וְהַֽחֻקִּ֖ים",
+          "lemma": "חֹק",
+          "strong": "H2706",
+          "pron": "호크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 4:45",
+        "deuteronomy 6:17",
+        "deuteronomy 6:20",
+        "psalms 99:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְעֵדָ֔ה כִּ֥י",
+      "pron": "르에다 키",
+      "lemmas": [
+        "עֵדָה",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "לְעֵדָ֔ה",
+          "lemma": "עֵדָה",
+          "strong": "H5713",
+          "pron": "르에다"
+        },
+        {
+          "word": "כִּ֥י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 21:30",
+        "joshua 24:27",
+        "psalms 119:152",
+        "psalms 119:168"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וְ֝יֹדְעֵ֗י עֵדֹתֶֽיךָ",
-      "pron": "요데아 브에도타이브",
+      "pron": "요데아 르에다",
       "lemmas": [
         "יָדַע",
         "עֵדָה"
@@ -54,7 +116,7 @@
           "word": "עֵדֹתֶֽיךָ",
           "lemma": "עֵדָה",
           "strong": "H5713",
-          "pron": "브에도타이브"
+          "pron": "르에다"
         }
       ],
       "count": 3,
@@ -66,31 +128,30 @@
       "glossKo": ""
     },
     {
-      "hebrew": "מֵעֵדֹתֶ֑יךָ כִּ֖י",
-      "pron": "브에도타이브 키",
+      "hebrew": "תִּֽהְיֶה לְעֵדָ֔ה",
+      "pron": "하에타 르에다",
       "lemmas": [
-        "עֵדָה",
-        "כִּי"
+        "הָיָה",
+        "עֵדָה"
       ],
       "words": [
         {
-          "word": "מֵעֵדֹתֶ֑יךָ",
-          "lemma": "עֵדָה",
-          "strong": "H5713",
-          "pron": "브에도타이브"
+          "word": "תִּֽהְיֶה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
         },
         {
-          "word": "כִּ֖י",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
+          "word": "לְעֵדָ֔ה",
+          "lemma": "עֵדָה",
+          "strong": "H5713",
+          "pron": "르에다"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 119:152",
-        "psalms 119:168",
-        "genesis 21:30"
+        "genesis 21:30",
+        "joshua 24:27"
       ],
       "glossKo": ""
     }

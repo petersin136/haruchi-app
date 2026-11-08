@@ -1,6 +1,6 @@
 {
   "lemma": "צַר",
-  "pron": "차라위",
+  "pron": "차레카",
   "strong": "H6862",
   "posKo": "명사",
   "root": {
@@ -12,14 +12,14 @@
     {
       "lemma": "צֵר",
       "strong": "H6863",
-      "pron": "",
+      "pron": "체르",
       "glossKo": "세르"
     },
     {
       "lemma": "צָרָה",
       "strong": "H6869",
-      "pron": "밧차라",
-      "glossKo": "고난"
+      "pron": "차라티",
+      "glossKo": "나의 고난"
     },
     {
       "lemma": "צְרוֹר",
@@ -30,21 +30,171 @@
     {
       "lemma": "צָרַר",
       "strong": "H6887",
-      "pron": "초레라위",
-      "glossKo": "나의 괴롭히다"
+      "pron": "체루로트",
+      "glossKo": "괴롭히다"
     }
   ],
   "defEn": "narrow",
   "defKo": "",
-  "countOT": 39,
+  "countOT": 110,
   "byBook": {
     "psalms": 38,
-    "genesis": 1
+    "isaiah": 15,
+    "lamentations": 9,
+    "job": 8,
+    "deuteronomy": 5,
+    "jeremiah": 4,
+    "chronicles1": 3,
+    "nehemiah": 3,
+    "numbers": 3,
+    "samuel2": 3,
+    "esther": 2,
+    "ezekiel": 2,
+    "proverbs": 2,
+    "samuel1": 2,
+    "amos": 1,
+    "chronicles2": 1,
+    "ezra": 1,
+    "genesis": 1,
+    "hosea": 1,
+    "joshua": 1,
+    "judges": 1,
+    "kings2": 1,
+    "micah": 1,
+    "nahum": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
+      "hebrew": "בְּיַ֣ד צָֽרֵיהֶ֔ם",
+      "pron": "야도 차레카",
+      "lemmas": [
+        "יָד",
+        "צַר"
+      ],
+      "words": [
+        {
+          "word": "בְּיַ֣ד",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        },
+        {
+          "word": "צָֽרֵיהֶ֔ם",
+          "lemma": "צַר",
+          "strong": "H6862",
+          "pron": "차레카"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "nehemiah 9:27",
+        "job 6:23",
+        "psalms 78:61",
+        "psalms 107:2",
+        "lamentations 1:7",
+        "ezekiel 39:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְ֭הוָה בַּצַּ֣ר",
+      "pron": "여호와 차레카",
+      "lemmas": [
+        "יְהֹוָה",
+        "צַר"
+      ],
+      "words": [
+        {
+          "word": "יְ֭הוָה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "בַּצַּ֣ר",
+          "lemma": "צַר",
+          "strong": "H6862",
+          "pron": "차레카"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "psalms 107:6",
+        "psalms 107:13",
+        "psalms 107:19",
+        "psalms 107:28",
+        "isaiah 26:16",
+        "nahum 1:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִפְנֵֽי צָרֶ֜יךָ",
+      "pron": "페네 차레카",
+      "lemmas": [
+        "פָּנִים",
+        "צַר"
+      ],
+      "words": [
+        {
+          "word": "לִפְנֵֽי",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "צָרֶ֜יךָ",
+          "lemma": "צַר",
+          "strong": "H6862",
+          "pron": "차레카"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel2 24:13",
+        "kings2 6:1",
+        "chronicles1 21:12",
+        "psalms 89:23",
+        "lamentations 1:5",
+        "hosea 5:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּצַּ֣ר מִ֝מְּצֻֽקוֹתֵיהֶ֗ם",
+      "pron": "차레카 우메추카",
+      "lemmas": [
+        "צַר",
+        "מְצוּקָה"
+      ],
+      "words": [
+        {
+          "word": "בַּצַּ֣ר",
+          "lemma": "צַר",
+          "strong": "H6862",
+          "pron": "차레카"
+        },
+        {
+          "word": "מִ֝מְּצֻֽקוֹתֵיהֶ֗ם",
+          "lemma": "מְצוּקָה",
+          "strong": "H4691",
+          "pron": "우메추카"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "job 15:24",
+        "psalms 107:6",
+        "psalms 107:13",
+        "psalms 107:19",
+        "psalms 107:28"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "אֶל יְ֭הוָה בַּצַּ֣ר",
-      "pron": "엘레모 여호와 차라위",
+      "pron": "엘 여호와 차레카",
       "lemmas": [
         "אֵל",
         "יְהֹוָה",
@@ -55,7 +205,7 @@
           "word": "אֶל",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
         },
         {
           "word": "יְ֭הוָה",
@@ -67,7 +217,7 @@
           "word": "בַּצַּ֣ר",
           "lemma": "צַר",
           "strong": "H6862",
-          "pron": "차라위"
+          "pron": "차레카"
         }
       ],
       "count": 4,
@@ -76,132 +226,6 @@
         "psalms 107:13",
         "psalms 107:19",
         "psalms 107:28"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "בַּצַּ֣ר מִ֝מְּצֻֽקוֹתֵיהֶ֗ם",
-      "pron": "차라위 미메추코타위",
-      "lemmas": [
-        "צַר",
-        "מְצוּקָה"
-      ],
-      "words": [
-        {
-          "word": "בַּצַּ֣ר",
-          "lemma": "צַר",
-          "strong": "H6862",
-          "pron": "차라위"
-        },
-        {
-          "word": "מִ֝מְּצֻֽקוֹתֵיהֶ֗ם",
-          "lemma": "מְצוּקָה",
-          "strong": "H4691",
-          "pron": "미메추코타위"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 107:6",
-        "psalms 107:13",
-        "psalms 107:19",
-        "psalms 107:28"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יְ֭הוָה בַּצַּ֣ר",
-      "pron": "여호와 차라위",
-      "lemmas": [
-        "יְהֹוָה",
-        "צַר"
-      ],
-      "words": [
-        {
-          "word": "יְ֭הוָה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        },
-        {
-          "word": "בַּצַּ֣ר",
-          "lemma": "צַר",
-          "strong": "H6862",
-          "pron": "차라위"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 107:6",
-        "psalms 107:13",
-        "psalms 107:19",
-        "psalms 107:28"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יְ֭הוָה בַּצַּ֣ר מִ֝מְּצֻֽקוֹתֵיהֶ֗ם",
-      "pron": "여호와 차라위 미메추코타위",
-      "lemmas": [
-        "יְהֹוָה",
-        "צַר",
-        "מְצוּקָה"
-      ],
-      "words": [
-        {
-          "word": "יְ֭הוָה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        },
-        {
-          "word": "בַּצַּ֣ר",
-          "lemma": "צַר",
-          "strong": "H6862",
-          "pron": "차라위"
-        },
-        {
-          "word": "מִ֝מְּצֻֽקוֹתֵיהֶ֗ם",
-          "lemma": "מְצוּקָה",
-          "strong": "H4691",
-          "pron": "미메추코타위"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 107:6",
-        "psalms 107:13",
-        "psalms 107:19",
-        "psalms 107:28"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "מִצָּרֵ֑ינוּ וּמְשַׂנְאֵ֥ינוּ",
-      "pron": "차라위 사네타",
-      "lemmas": [
-        "צַר",
-        "שָׂנֵא"
-      ],
-      "words": [
-        {
-          "word": "מִצָּרֵ֑ינוּ",
-          "lemma": "צַר",
-          "strong": "H6862",
-          "pron": "차라위"
-        },
-        {
-          "word": "וּמְשַׂנְאֵ֥ינוּ",
-          "lemma": "שָׂנֵא",
-          "strong": "H8130",
-          "pron": "사네타"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 44:7",
-        "psalms 44:10",
-        "psalms 89:23"
       ],
       "glossKo": ""
     }

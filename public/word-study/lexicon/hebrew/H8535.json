@@ -18,8 +18,8 @@
     {
       "lemma": "תֹּם",
       "strong": "H8537",
-      "pron": "우크툼미위",
-      "glossKo": "나의 완전함"
+      "pron": "브탐",
+      "glossKo": "완전함"
     },
     {
       "lemma": "תָּמִים",
@@ -30,16 +30,116 @@
     {
       "lemma": "תָּמַם",
       "strong": "H8552",
-      "pron": "탐무",
+      "pron": "바잇톰",
       "glossKo": "끝나다"
     }
   ],
   "defEn": "complete; pious; gentle; dear",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 14,
   "byBook": {
+    "job": 7,
     "psalms": 2,
-    "genesis": 1
+    "songofsolomon": 2,
+    "exodus": 1,
+    "genesis": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "תָּ֧ם וְיָשָׁ֛ר",
+      "pron": "탐 브아야샤르",
+      "lemmas": [
+        "תָּם",
+        "יָשָׁר"
+      ],
+      "words": [
+        {
+          "word": "תָּ֧ם",
+          "lemma": "תָּם",
+          "strong": "H8535",
+          "pron": "탐"
+        },
+        {
+          "word": "וְיָשָׁ֛ר",
+          "lemma": "יָשָׁר",
+          "strong": "H3477",
+          "pron": "브아야샤르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 1:1",
+        "job 1:8",
+        "job 2:3",
+        "proverbs 29:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִ֣ישׁ תָּ֧ם",
+      "pron": "메이쉬 탐",
+      "lemmas": [
+        "אִישׁ",
+        "תָּם"
+      ],
+      "words": [
+        {
+          "word": "אִ֣ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "תָּ֧ם",
+          "lemma": "תָּם",
+          "strong": "H8535",
+          "pron": "탐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 25:27",
+        "job 1:8",
+        "job 2:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תָּ֧ם וְיָשָׁ֛ר יְרֵ֥א",
+      "pron": "탐 브아야샤르 예레",
+      "lemmas": [
+        "תָּם",
+        "יָשָׁר",
+        "יָרֵא"
+      ],
+      "words": [
+        {
+          "word": "תָּ֧ם",
+          "lemma": "תָּם",
+          "strong": "H8535",
+          "pron": "탐"
+        },
+        {
+          "word": "וְיָשָׁ֛ר",
+          "lemma": "יָשָׁר",
+          "strong": "H3477",
+          "pron": "브아야샤르"
+        },
+        {
+          "word": "יְרֵ֥א",
+          "lemma": "יָרֵא",
+          "strong": "H3373",
+          "pron": "예레"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 1:1",
+        "job 1:8",
+        "job 2:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "חָוָה",
-  "pron": "예하베",
+  "pron": "아하베카",
   "strong": "H2331",
   "posKo": "동사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "אַחְוָה",
       "strong": "H262",
-      "pron": "",
-      "glossKo": "선언"
+      "pron": "베아하바티",
+      "glossKo": "나의 선언"
     },
     {
       "lemma": "חֲוָא",
       "strong": "H2324",
-      "pron": "",
+      "pron": "네하베",
       "glossKo": "알리다(아람)"
     },
     {
@@ -30,15 +30,46 @@
     {
       "lemma": "חָיָה",
       "strong": "H2421",
-      "pron": "예히",
+      "pron": "바예히",
       "glossKo": "살다"
     }
   ],
   "defEn": "live",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 6,
   "byBook": {
+    "job": 5,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מֵחַוֺּ֖ת דֵּעִ֣י",
+      "pron": "아하베카 데이",
+      "lemmas": [
+        "חָוָה",
+        "דֵּעַ"
+      ],
+      "words": [
+        {
+          "word": "מֵחַוֺּ֖ת",
+          "lemma": "חָוָה",
+          "strong": "H2331",
+          "pron": "아하베카"
+        },
+        {
+          "word": "דֵּעִ֣י",
+          "lemma": "דֵּעַ",
+          "strong": "H1843",
+          "pron": "데이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 32:6",
+        "job 32:10",
+        "job 32:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

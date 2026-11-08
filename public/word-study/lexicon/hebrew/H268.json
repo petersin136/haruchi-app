@@ -12,7 +12,7 @@
     {
       "lemma": "אֲחִירַע",
       "strong": "H299",
-      "pron": "",
+      "pron": "아히라",
       "glossKo": "아히라"
     },
     {
@@ -24,10 +24,21 @@
   ],
   "defEn": "hinder; behind; backward",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 41,
   "byBook": {
     "psalms": 12,
-    "genesis": 1
+    "isaiah": 9,
+    "jeremiah": 4,
+    "lamentations": 3,
+    "chronicles2": 2,
+    "exodus": 2,
+    "ezekiel": 2,
+    "samuel2": 2,
+    "chronicles1": 1,
+    "genesis": 1,
+    "job": 1,
+    "kings1": 1,
+    "proverbs": 1
   },
   "phrases": [
     {
@@ -51,13 +62,105 @@
           "pron": "아호르"
         }
       ],
-      "count": 5,
+      "count": 8,
       "refs": [
         "psalms 35:4",
         "psalms 40:14",
         "psalms 44:18",
         "psalms 70:2",
-        "psalms 129:5"
+        "psalms 129:5",
+        "isaiah 42:17",
+        "jeremiah 38:22",
+        "jeremiah 46:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פָּנִ֣ים וְאָח֑וֹר",
+      "pron": "페네 아호르",
+      "lemmas": [
+        "פָּנִים",
+        "אָחוֹר"
+      ],
+      "words": [
+        {
+          "word": "פָּנִ֣ים",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "וְאָח֑וֹר",
+          "lemma": "אָחוֹר",
+          "strong": "H268",
+          "pron": "아호르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 10:9",
+        "chronicles1 19:10",
+        "chronicles2 13:14",
+        "ezekiel 2:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּשִׁיבֵ֣נוּ אָ֭חוֹר",
+      "pron": "슙카 아호르",
+      "lemmas": [
+        "שׁוּב",
+        "אָחוֹר"
+      ],
+      "words": [
+        {
+          "word": "תְּשִׁיבֵ֣נוּ",
+          "lemma": "שׁוּב",
+          "strong": "H7725",
+          "pron": "슙카"
+        },
+        {
+          "word": "אָ֭חוֹר",
+          "lemma": "אָחוֹר",
+          "strong": "H268",
+          "pron": "아호르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 44:10",
+        "lamentations 1:8",
+        "lamentations 1:13",
+        "lamentations 2:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְ֝אָח֗וֹר וְֽלֹא",
+      "pron": "아호르 로",
+      "lemmas": [
+        "אָחוֹר",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "וְ֝אָח֗וֹר",
+          "lemma": "אָחוֹר",
+          "strong": "H268",
+          "pron": "아호르"
+        },
+        {
+          "word": "וְֽלֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 23:8",
+        "isaiah 50:5",
+        "jeremiah 7:24"
       ],
       "glossKo": ""
     }

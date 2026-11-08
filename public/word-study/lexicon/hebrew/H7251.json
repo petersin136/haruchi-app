@@ -1,8 +1,8 @@
 {
   "lemma": "רָבַע",
-  "pron": "라바",
+  "pron": "라부아",
   "strong": "H7251",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "רָבַע",
     "strong": "H7250",
@@ -22,21 +22,136 @@
       "glossKo": "넷째"
     },
     {
+      "lemma": "רָבַע",
+      "strong": "H7250",
+      "pron": "레립아흐",
+      "glossKo": "그녀에게 엎드리다"
+    },
+    {
+      "lemma": "רֶבַע",
+      "strong": "H7252",
+      "pron": "베립이",
+      "glossKo": "나를 엎드림"
+    },
+    {
       "lemma": "רֶבַע",
       "strong": "H7253",
-      "pron": "",
+      "pron": "레바",
       "glossKo": "넷째"
     },
     {
       "lemma": "רֹבַע",
       "strong": "H7255",
-      "pron": "",
+      "pron": "로바",
       "glossKo": "사 분의 일"
     }
   ],
   "defEn": "be quadrate",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 12,
+  "byBook": {
+    "exodus": 6,
+    "ezekiel": 4,
+    "kings1": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "רֹ֗חַב רָב֤וּעַ",
+      "pron": "라헵바흐 라부아",
+      "lemmas": [
+        "רֹחַב",
+        "רָבַע"
+      ],
+      "words": [
+        {
+          "word": "רֹ֗חַב",
+          "lemma": "רֹחַב",
+          "strong": "H7341",
+          "pron": "라헵바흐"
+        },
+        {
+          "word": "רָב֤וּעַ",
+          "lemma": "רָבַע",
+          "strong": "H7251",
+          "pron": "라부아"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 27:1",
+        "exodus 30:2",
+        "exodus 37:25",
+        "exodus 38:1",
+        "ezekiel 43:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַמּ֣וֹת רֹ֗חַב רָב֤וּעַ",
+      "pron": "암마 라헵바흐 라부아",
+      "lemmas": [
+        "אַמָּה",
+        "רֹחַב",
+        "רָבַע"
+      ],
+      "words": [
+        {
+          "word": "אַמּ֣וֹת",
+          "lemma": "אַמָּה",
+          "strong": "H520",
+          "pron": "암마"
+        },
+        {
+          "word": "רֹ֗חַב",
+          "lemma": "רֹחַב",
+          "strong": "H7341",
+          "pron": "라헵바흐"
+        },
+        {
+          "word": "רָב֤וּעַ",
+          "lemma": "רָבַע",
+          "strong": "H7251",
+          "pron": "라부아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 27:1",
+        "exodus 30:2",
+        "exodus 37:25",
+        "exodus 38:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רָב֤וּעַ יִהְיֶה֙",
+      "pron": "라부아 하에타",
+      "lemmas": [
+        "רָבַע",
+        "הָיָה"
+      ],
+      "words": [
+        {
+          "word": "רָב֤וּעַ",
+          "lemma": "רָבַע",
+          "strong": "H7251",
+          "pron": "라부아"
+        },
+        {
+          "word": "יִהְיֶה֙",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 27:1",
+        "exodus 28:16",
+        "exodus 30:2",
+        "exodus 39:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

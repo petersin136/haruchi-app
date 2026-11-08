@@ -1,6 +1,6 @@
 {
   "lemma": "בְּעִיר",
-  "pron": "베이라므",
+  "pron": "베이레켐",
   "strong": "H1165",
   "posKo": "명사",
   "root": {
@@ -18,7 +18,7 @@
     {
       "lemma": "בָּעַר",
       "strong": "H1197",
-      "pron": "입아르",
+      "pron": "보에르",
       "glossKo": "태우다"
     },
     {
@@ -30,22 +30,54 @@
     {
       "lemma": "בְּעֵרָה",
       "strong": "H1200",
-      "pron": "",
+      "pron": "아베에라",
       "glossKo": "타오름"
     },
     {
       "lemma": "תַּבְעֵרָה",
       "strong": "H8404",
-      "pron": "",
+      "pron": "탑에라",
       "glossKo": "다베라"
     }
   ],
   "defEn": "cattle",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 7,
   "byBook": {
+    "numbers": 3,
+    "exodus": 2,
     "genesis": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת בְּעִ֣ירְכֶ֔ם",
+      "pron": "에트 베이레켐",
+      "lemmas": [
+        "אֵת",
+        "בְּעִיר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "בְּעִ֣ירְכֶ֔ם",
+          "lemma": "בְּעִיר",
+          "strong": "H1165",
+          "pron": "베이레켐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 45:17",
+        "exodus 22:5",
+        "numbers 20:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

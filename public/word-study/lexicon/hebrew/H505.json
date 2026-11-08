@@ -1,6 +1,6 @@
 {
   "lemma": "אֶלֶף",
-  "pron": "알렙",
+  "pron": "엘렙",
   "strong": "H505",
   "posKo": "형용사",
   "root": {
@@ -10,18 +10,250 @@
   },
   "family": [
     {
+      "lemma": "אָלַף",
+      "strong": "H503",
+      "pron": "마알리포트",
+      "glossKo": "수천 배가 되게 하는 이"
+    },
+    {
       "lemma": "אֶלֶף",
       "strong": "H504",
-      "pron": "바알라핌",
-      "glossKo": "가축"
+      "pron": "알라페카",
+      "glossKo": "너의 가축"
+    },
+    {
+      "lemma": "אֲלַף",
+      "strong": "H506",
+      "pron": "알랍",
+      "glossKo": "천(아람)"
+    },
+    {
+      "lemma": "אֶלֶף",
+      "strong": "H507",
+      "pron": "하엘렙",
+      "glossKo": "엘렙"
     }
   ],
   "defEn": "thousand",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 508,
   "byBook": {
+    "numbers": 104,
+    "chronicles1": 81,
+    "chronicles2": 62,
+    "ezekiel": 40,
+    "judges": 34,
+    "samuel1": 30,
+    "kings1": 21,
+    "ezra": 19,
+    "samuel2": 19,
+    "nehemiah": 18,
+    "joshua": 12,
+    "exodus": 11,
+    "kings2": 11,
+    "job": 8,
     "psalms": 8,
-    "genesis": 2
+    "deuteronomy": 6,
+    "isaiah": 6,
+    "daniel": 3,
+    "jeremiah": 3,
+    "songofsolomon": 3,
+    "ecclesiastes": 2,
+    "esther": 2,
+    "genesis": 2,
+    "micah": 2,
+    "amos": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶ֛לֶף אִ֖ישׁ",
+      "pron": "엘렙 메이쉬",
+      "lemmas": [
+        "אֶלֶף",
+        "אִישׁ"
+      ],
+      "words": [
+        {
+          "word": "אֶ֛לֶף",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
+        },
+        {
+          "word": "אִ֖ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        }
+      ],
+      "count": 55,
+      "refs": [
+        "exodus 32:28",
+        "joshua 7:3",
+        "joshua 7:4",
+        "joshua 8:3",
+        "joshua 8:12",
+        "judges 1:4",
+        "judges 3:29",
+        "judges 4:6",
+        "judges 4:10",
+        "judges 4:14",
+        "judges 8:10",
+        "judges 9:49"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵא֥וֹת אֶ֨לֶף֙",
+      "pron": "우메아트 엘렙",
+      "lemmas": [
+        "מֵאָה",
+        "אֶלֶף"
+      ],
+      "words": [
+        {
+          "word": "מֵא֥וֹת",
+          "lemma": "מֵאָה",
+          "strong": "H3967",
+          "pron": "우메아트"
+        },
+        {
+          "word": "אֶ֨לֶף֙",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
+        }
+      ],
+      "count": 41,
+      "refs": [
+        "exodus 12:37",
+        "exodus 38:26",
+        "numbers 1:46",
+        "numbers 2:9",
+        "numbers 2:16",
+        "numbers 2:24",
+        "numbers 2:31",
+        "numbers 2:32",
+        "numbers 3:50",
+        "numbers 11:21",
+        "numbers 26:51",
+        "numbers 31:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעֶשְׂרִים֙ אֶ֔לֶף",
+      "pron": "브에세림 엘렙",
+      "lemmas": [
+        "עֶשְׂרִים",
+        "אֶלֶף"
+      ],
+      "words": [
+        {
+          "word": "וְעֶשְׂרִים֙",
+          "lemma": "עֶשְׂרִים",
+          "strong": "H6242",
+          "pron": "브에세림"
+        },
+        {
+          "word": "אֶ֔לֶף",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
+        }
+      ],
+      "count": 37,
+      "refs": [
+        "numbers 3:39",
+        "numbers 3:43",
+        "numbers 25:9",
+        "numbers 26:14",
+        "numbers 26:62",
+        "judges 8:10",
+        "judges 20:21",
+        "samuel2 8:4",
+        "samuel2 10:6",
+        "samuel2 18:7",
+        "kings1 5:11",
+        "kings1 8:63"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֕לֶף מָאתַ֖יִם",
+      "pron": "엘렙 우메아트",
+      "lemmas": [
+        "אֶלֶף",
+        "מֵאָה"
+      ],
+      "words": [
+        {
+          "word": "אֶ֕לֶף",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
+        },
+        {
+          "word": "מָאתַ֖יִם",
+          "lemma": "מֵאָה",
+          "strong": "H3967",
+          "pron": "우메아트"
+        }
+      ],
+      "count": 32,
+      "refs": [
+        "numbers 1:35",
+        "numbers 2:21",
+        "numbers 2:24",
+        "numbers 3:34",
+        "numbers 4:44",
+        "numbers 26:14",
+        "numbers 31:54",
+        "judges 16:5",
+        "judges 17:2",
+        "judges 17:3",
+        "judges 20:35",
+        "chronicles1 7:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַעֲשֶׂ֥רֶת אֲלָפִ֖ים",
+      "pron": "에세르 엘렙",
+      "lemmas": [
+        "עֶשֶׂר",
+        "אֶלֶף"
+      ],
+      "words": [
+        {
+          "word": "וַעֲשֶׂ֥רֶת",
+          "lemma": "עֶשֶׂר",
+          "strong": "H6235",
+          "pron": "에세르"
+        },
+        {
+          "word": "אֲלָפִ֖ים",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
+        }
+      ],
+      "count": 30,
+      "refs": [
+        "judges 1:4",
+        "judges 3:29",
+        "judges 4:6",
+        "judges 4:10",
+        "judges 4:14",
+        "judges 7:3",
+        "judges 20:34",
+        "samuel1 15:4",
+        "samuel2 18:3",
+        "kings1 5:14",
+        "kings2 13:7",
+        "kings2 14:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "רָמָה",
-  "pron": "로메",
+  "pron": "림미타니",
   "strong": "H7411",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "מִרְמָה",
       "strong": "H4820",
-      "pron": "우미레마",
+      "pron": "브미레마",
       "glossKo": "속임수"
     },
     {
       "lemma": "רְמָה",
       "strong": "H7412",
-      "pron": "",
+      "pron": "르미레메",
       "glossKo": "던지다(아람)"
     },
     {
@@ -26,22 +26,61 @@
     {
       "lemma": "רֶמֶת",
       "strong": "H7432",
-      "pron": "",
+      "pron": "브레메트",
       "glossKo": "레멧"
     },
     {
       "lemma": "תׇּרְמָה",
       "strong": "H8649",
-      "pron": "타레미타므",
-      "glossKo": "그들의 속임수"
+      "pron": "브타레마",
+      "glossKo": "속임수"
     }
   ],
   "defEn": "hurl; shoot; delude; betray",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 13,
   "byBook": {
+    "exodus": 2,
+    "samuel1": 2,
+    "chronicles1": 1,
     "genesis": 1,
-    "psalms": 1
+    "jeremiah": 1,
+    "joshua": 1,
+    "lamentations": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "psalms": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְלָ֖מָּה רִמִּיתָֽנִי",
+      "pron": "마 림미타니",
+      "lemmas": [
+        "מָה",
+        "רָמָה"
+      ],
+      "words": [
+        {
+          "word": "וְלָ֖מָּה",
+          "lemma": "מָה",
+          "strong": "H4100",
+          "pron": "마"
+        },
+        {
+          "word": "רִמִּיתָֽנִי",
+          "lemma": "רָמָה",
+          "strong": "H7411",
+          "pron": "림미타니"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 29:25",
+        "joshua 9:22",
+        "samuel1 28:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

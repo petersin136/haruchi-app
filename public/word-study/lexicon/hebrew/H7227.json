@@ -1,6 +1,6 @@
 {
   "lemma": "רַב",
-  "pron": "랍빔",
+  "pron": "랍바",
   "strong": "H7227",
   "posKo": "형용사",
   "root": {
@@ -12,198 +12,268 @@
     {
       "lemma": "מֵרָב",
       "strong": "H4764",
-      "pron": "",
+      "pron": "메랍",
       "glossKo": "메랍"
     },
     {
       "lemma": "רַב",
       "strong": "H7229",
-      "pron": "",
+      "pron": "랍바",
       "glossKo": "큰(아람)"
     },
     {
       "lemma": "רֹב",
       "strong": "H7230",
-      "pron": "브롭",
+      "pron": "메롭",
       "glossKo": "많음"
     },
     {
       "lemma": "רָבַב",
       "strong": "H7231",
-      "pron": "랍부",
+      "pron": "라롭",
       "glossKo": "많다"
     },
     {
       "lemma": "רָבַב",
       "strong": "H7232",
-      "pron": "랍",
+      "pron": "바롭부",
       "glossKo": "활을 쏘다"
     },
     {
       "lemma": "רְבָבָה",
       "strong": "H7233",
-      "pron": "메립보트",
+      "pron": "레바바",
       "glossKo": "만(萬)"
     }
   ],
   "defEn": "abundant",
   "defKo": "",
-  "countOT": 71,
+  "countOT": 461,
   "byBook": {
     "psalms": 57,
-    "genesis": 14
+    "ezekiel": 47,
+    "jeremiah": 41,
+    "chronicles2": 30,
+    "isaiah": 26,
+    "daniel": 24,
+    "deuteronomy": 23,
+    "proverbs": 20,
+    "job": 17,
+    "numbers": 17,
+    "joshua": 15,
+    "genesis": 14,
+    "kings1": 12,
+    "nehemiah": 11,
+    "chronicles1": 10,
+    "exodus": 10,
+    "kings2": 10,
+    "ecclesiastes": 9,
+    "samuel2": 8,
+    "esther": 7,
+    "amos": 6,
+    "micah": 6,
+    "judges": 5,
+    "samuel1": 5,
+    "ezra": 4,
+    "joel": 4,
+    "lamentations": 4,
+    "zechariah": 4,
+    "habakkuk": 3,
+    "hosea": 3,
+    "jonah": 3,
+    "leviticus": 2,
+    "malachi": 2,
+    "nahum": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "מִמַּ֥יִם רַבִּֽים",
-      "pron": "마임 랍빔",
+      "hebrew": "עַמִּ֣ים רַבִּ֔ים",
+      "pron": "암 랍바",
+      "lemmas": [
+        "עַם",
+        "רַב"
+      ],
+      "words": [
+        {
+          "word": "עַמִּ֣ים",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "רַבִּ֔ים",
+          "lemma": "רַב",
+          "strong": "H7227",
+          "pron": "랍바"
+        }
+      ],
+      "count": 41,
+      "refs": [
+        "genesis 50:20",
+        "numbers 21:6",
+        "deuteronomy 20:1",
+        "joshua 11:4",
+        "joshua 17:14",
+        "joshua 17:15",
+        "joshua 17:17",
+        "judges 7:4",
+        "samuel2 13:34",
+        "samuel2 24:16",
+        "kings1 3:8",
+        "kings1 5:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָמִ֥ים רַבִּֽים",
+      "pron": "욤 랍바",
+      "lemmas": [
+        "יוֹם",
+        "רַב"
+      ],
+      "words": [
+        {
+          "word": "יָמִ֥ים",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "רַבִּֽים",
+          "lemma": "רַב",
+          "strong": "H7227",
+          "pron": "랍바"
+        }
+      ],
+      "count": 31,
+      "refs": [
+        "genesis 21:34",
+        "genesis 37:34",
+        "exodus 2:23",
+        "leviticus 15:25",
+        "numbers 9:19",
+        "numbers 20:15",
+        "deuteronomy 1:46",
+        "deuteronomy 2:1",
+        "deuteronomy 20:19",
+        "joshua 11:18",
+        "joshua 22:3",
+        "joshua 23:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַ֣יִם רַבִּ֔ים",
+      "pron": "아마임 랍바",
       "lemmas": [
         "מַיִם",
         "רַב"
       ],
       "words": [
         {
-          "word": "מִמַּ֥יִם",
+          "word": "מַ֣יִם",
           "lemma": "מַיִם",
           "strong": "H4325",
-          "pron": "마임"
+          "pron": "아마임"
         },
         {
-          "word": "רַבִּֽים",
+          "word": "רַבִּ֔ים",
           "lemma": "רַב",
           "strong": "H7227",
-          "pron": "랍빔"
+          "pron": "랍바"
         }
       ],
-      "count": 7,
+      "count": 29,
       "refs": [
+        "numbers 20:11",
+        "numbers 24:7",
+        "samuel2 22:17",
+        "chronicles2 32:4",
         "psalms 18:16",
         "psalms 29:3",
         "psalms 32:6",
         "psalms 77:19",
         "psalms 93:4",
         "psalms 107:23",
-        "psalms 144:7"
+        "psalms 144:7",
+        "songofsolomon 8:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כִּ֣י רַב",
-      "pron": "키 랍빔",
+      "hebrew": "כִּי רַ֣ב",
+      "pron": "키 랍바",
       "lemmas": [
         "כִּי",
         "רַב"
       ],
       "words": [
         {
-          "word": "כִּ֣י",
+          "word": "כִּי",
           "lemma": "כִּי",
           "strong": "H3588",
           "pron": "키"
         },
         {
+          "word": "רַ֣ב",
+          "lemma": "רַב",
+          "strong": "H7227",
+          "pron": "랍바"
+        }
+      ],
+      "count": 28,
+      "refs": [
+        "genesis 6:5",
+        "genesis 18:20",
+        "numbers 22:3",
+        "samuel2 24:14",
+        "kings1 19:7",
+        "kings2 6:16",
+        "kings2 12:10",
+        "chronicles1 21:13",
+        "chronicles1 28:5",
+        "chronicles2 20:25",
+        "chronicles2 24:11",
+        "chronicles2 28:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רַב טַבָּחִֽים",
+      "pron": "랍바 아답바힘",
+      "lemmas": [
+        "רַב",
+        "טַבָּח"
+      ],
+      "words": [
+        {
           "word": "רַב",
           "lemma": "רַב",
           "strong": "H7227",
-          "pron": "랍빔"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "psalms 25:11",
-        "psalms 55:18",
-        "psalms 56:2",
-        "psalms 123:3",
-        "genesis 6:5",
-        "genesis 18:20"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "בְּקָהָ֥ל רָ֑ב",
-      "pron": "카할 랍빔",
-      "lemmas": [
-        "קָהָל",
-        "רַב"
-      ],
-      "words": [
-        {
-          "word": "בְּקָהָ֥ל",
-          "lemma": "קָהָל",
-          "strong": "H6951",
-          "pron": "카할"
+          "pron": "랍바"
         },
         {
-          "word": "רָ֑ב",
-          "lemma": "רַב",
-          "strong": "H7227",
-          "pron": "랍빔"
+          "word": "טַבָּחִֽים",
+          "lemma": "טַבָּח",
+          "strong": "H2876",
+          "pron": "아답바힘"
         }
       ],
-      "count": 4,
+      "count": 24,
       "refs": [
-        "psalms 22:25",
-        "psalms 35:18",
-        "psalms 40:9",
-        "psalms 40:10"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וְרַב חֶ֝֗סֶד",
-      "pron": "랍빔 핫드카",
-      "lemmas": [
-        "רַב",
-        "חֶסֶד"
-      ],
-      "words": [
-        {
-          "word": "וְרַב",
-          "lemma": "רַב",
-          "strong": "H7227",
-          "pron": "랍빔"
-        },
-        {
-          "word": "חֶ֝֗סֶד",
-          "lemma": "חֶסֶד",
-          "strong": "H2617",
-          "pron": "핫드카"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 86:5",
-        "psalms 86:15",
-        "psalms 103:8"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "רַ֭בּוֹת רָע֣וֹת",
-      "pron": "랍빔 라",
-      "lemmas": [
-        "רַב",
-        "רַע"
-      ],
-      "words": [
-        {
-          "word": "רַ֭בּוֹת",
-          "lemma": "רַב",
-          "strong": "H7227",
-          "pron": "랍빔"
-        },
-        {
-          "word": "רָע֣וֹת",
-          "lemma": "רַע",
-          "strong": "H7451",
-          "pron": "라"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 34:19",
-        "psalms 71:20",
-        "genesis 6:5"
+        "kings2 25:8",
+        "kings2 25:10",
+        "kings2 25:11",
+        "kings2 25:12",
+        "kings2 25:15",
+        "kings2 25:18",
+        "kings2 25:20",
+        "jeremiah 39:9",
+        "jeremiah 39:10",
+        "jeremiah 39:11",
+        "jeremiah 39:13",
+        "jeremiah 40:1"
       ],
       "glossKo": ""
     }

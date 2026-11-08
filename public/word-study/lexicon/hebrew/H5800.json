@@ -1,6 +1,6 @@
 {
   "lemma": "עָזַב",
-  "pron": "아잡타",
+  "pron": "야아잡",
   "strong": "H5800",
   "posKo": "동사",
   "root": null,
@@ -8,138 +8,70 @@
     {
       "lemma": "עִזָּבוֹן",
       "strong": "H5801",
-      "pron": "",
-      "glossKo": "상품"
+      "pron": "잇보나이크",
+      "glossKo": "너의 상품"
     },
     {
       "lemma": "עֲזוּבָה",
       "strong": "H5805",
-      "pron": "",
+      "pron": "하아주바",
       "glossKo": "버림"
     },
     {
       "lemma": "שְׁזַב",
       "strong": "H7804",
-      "pron": "",
-      "glossKo": "구원하다(아람)"
+      "pron": "예셰읏빈콘",
+      "glossKo": "너희에게 구원하다(아람)"
     }
   ],
   "defEn": "loosen; relinquish; permit",
   "defKo": "",
-  "countOT": 33,
+  "countOT": 215,
   "byBook": {
+    "jeremiah": 25,
+    "chronicles2": 23,
+    "isaiah": 22,
     "psalms": 22,
-    "genesis": 11
+    "kings1": 12,
+    "genesis": 11,
+    "kings2": 11,
+    "proverbs": 11,
+    "deuteronomy": 9,
+    "nehemiah": 9,
+    "job": 8,
+    "ezekiel": 7,
+    "judges": 6,
+    "chronicles1": 5,
+    "exodus": 5,
+    "joshua": 5,
+    "ruth": 4,
+    "samuel1": 4,
+    "ezra": 3,
+    "leviticus": 3,
+    "samuel2": 2,
+    "daniel": 1,
+    "hosea": 1,
+    "jonah": 1,
+    "lamentations": 1,
+    "malachi": 1,
+    "numbers": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "לֹֽא עָזַ֖בְתָּ",
-      "pron": "로 아잡타",
-      "lemmas": [
-        "לֹא",
-        "עָזַב"
-      ],
-      "words": [
-        {
-          "word": "לֹֽא",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        },
-        {
-          "word": "עָזַ֖בְתָּ",
-          "lemma": "עָזַב",
-          "strong": "H5800",
-          "pron": "아잡타"
-        }
-      ],
-      "count": 8,
-      "refs": [
-        "psalms 9:10",
-        "psalms 16:10",
-        "psalms 37:28",
-        "psalms 37:33",
-        "psalms 94:14",
-        "psalms 119:87",
-        "genesis 24:27",
-        "genesis 28:15"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וְאַל תַּֽ֝עַזְבֵ֗נִי",
-      "pron": "브엘 아잡타",
-      "lemmas": [
-        "אַל",
-        "עָזַב"
-      ],
-      "words": [
-        {
-          "word": "וְאַל",
-          "lemma": "אַל",
-          "strong": "H408",
-          "pron": "브엘"
-        },
-        {
-          "word": "תַּֽ֝עַזְבֵ֗נִי",
-          "lemma": "עָזַב",
-          "strong": "H5800",
-          "pron": "아잡타"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 27:9",
-        "psalms 38:21",
-        "psalms 71:9",
-        "psalms 71:18",
-        "psalms 119:8"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיַּעֲזֹ֤ב בִּגְדוֹ֙",
-      "pron": "아잡타 베가다위",
-      "lemmas": [
-        "עָזַב",
-        "בֶּגֶד"
-      ],
-      "words": [
-        {
-          "word": "וַיַּעֲזֹ֤ב",
-          "lemma": "עָזַב",
-          "strong": "H5800",
-          "pron": "아잡타"
-        },
-        {
-          "word": "בִּגְדוֹ֙",
-          "lemma": "בֶּגֶד",
-          "strong": "H899",
-          "pron": "베가다위"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 39:12",
-        "genesis 39:13",
-        "genesis 39:15",
-        "genesis 39:18"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יַעֲזֹ֣ב אֶת",
-      "pron": "아잡타 에트",
+      "hebrew": "וַֽיַּעֲזֹ֛ב אֶת",
+      "pron": "야아잡 에트",
       "lemmas": [
         "עָזַב",
         "אֵת"
       ],
       "words": [
         {
-          "word": "יַעֲזֹ֣ב",
+          "word": "וַֽיַּעֲזֹ֛ב",
           "lemma": "עָזַב",
           "strong": "H5800",
-          "pron": "아잡타"
+          "pron": "야아잡"
         },
         {
           "word": "אֶת",
@@ -148,28 +80,31 @@
           "pron": "에트"
         }
       ],
-      "count": 3,
+      "count": 55,
       "refs": [
-        "psalms 37:28",
-        "genesis 44:22"
+        "genesis 44:22",
+        "exodus 2:20",
+        "exodus 9:21",
+        "leviticus 19:10",
+        "leviticus 23:22",
+        "numbers 10:31",
+        "deuteronomy 12:19",
+        "deuteronomy 29:25",
+        "joshua 8:17",
+        "joshua 22:3",
+        "joshua 24:16",
+        "joshua 24:20"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כִּ֤י לֹֽא עָזַ֖בְתָּ",
-      "pron": "키 로 아잡타",
+      "hebrew": "לֹֽא עָזַ֥ב",
+      "pron": "로 야아잡",
       "lemmas": [
-        "כִּי",
         "לֹא",
         "עָזַב"
       ],
       "words": [
-        {
-          "word": "כִּ֤י",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
-        },
         {
           "word": "לֹֽא",
           "lemma": "לֹא",
@@ -177,17 +112,147 @@
           "pron": "로"
         },
         {
-          "word": "עָזַ֖בְתָּ",
+          "word": "עָזַ֥ב",
           "lemma": "עָזַב",
           "strong": "H5800",
-          "pron": "아잡타"
+          "pron": "야아잡"
         }
       ],
-      "count": 3,
+      "count": 31,
       "refs": [
-        "psalms 9:10",
-        "psalms 16:10",
-        "genesis 28:15"
+        "genesis 24:27",
+        "genesis 28:15",
+        "deuteronomy 14:27",
+        "deuteronomy 31:6",
+        "deuteronomy 31:8",
+        "joshua 1:5",
+        "joshua 22:3",
+        "ruth 2:20",
+        "kings1 6:13",
+        "chronicles1 28:20",
+        "chronicles2 13:10",
+        "ezra 9:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵעֲזֹ֖ב אֶת יְהוָ֑ה",
+      "pron": "야아잡 에트 여호와",
+      "lemmas": [
+        "עָזַב",
+        "אֵת",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "מֵעֲזֹ֖ב",
+          "lemma": "עָזַב",
+          "strong": "H5800",
+          "pron": "야아잡"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יְהוָ֑ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "joshua 24:16",
+        "joshua 24:20",
+        "judges 2:12",
+        "judges 2:13",
+        "judges 10:6",
+        "samuel1 12:10",
+        "kings1 9:9",
+        "kings2 21:22",
+        "chronicles2 7:22",
+        "chronicles2 21:10",
+        "chronicles2 24:20",
+        "chronicles2 24:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֣ר עֲזָב֗וּנִי",
+      "pron": "아셰르 야아잡",
+      "lemmas": [
+        "אֲשֶׁר",
+        "עָזַב"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "עֲזָב֗וּנִי",
+          "lemma": "עָזַב",
+          "strong": "H5800",
+          "pron": "야아잡"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "deuteronomy 28:20",
+        "deuteronomy 29:25",
+        "judges 2:21",
+        "kings1 9:9",
+        "kings1 11:33",
+        "kings2 22:17",
+        "chronicles2 7:22",
+        "chronicles2 34:25",
+        "isaiah 17:9",
+        "jeremiah 1:16",
+        "jeremiah 5:19",
+        "jeremiah 16:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי עָזְב֤וּ",
+      "pron": "키 야아잡",
+      "lemmas": [
+        "כִּי",
+        "עָזַב"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "עָזְב֤וּ",
+          "lemma": "עָזַב",
+          "strong": "H5800",
+          "pron": "야아잡"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "genesis 39:13",
+        "joshua 24:20",
+        "judges 10:10",
+        "samuel1 12:10",
+        "kings1 19:10",
+        "kings1 19:14",
+        "chronicles2 11:14",
+        "chronicles2 21:10",
+        "chronicles2 24:20",
+        "chronicles2 24:24",
+        "chronicles2 24:25",
+        "ezra 9:10"
       ],
       "glossKo": ""
     }

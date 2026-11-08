@@ -12,13 +12,13 @@
     {
       "lemma": "מַעְגָּל",
       "strong": "H4570",
-      "pron": "브마엑겔로테카",
-      "glossKo": "너의 행로"
+      "pron": "아마엑갈라",
+      "glossKo": "행로"
     },
     {
       "lemma": "עָגִיל",
       "strong": "H5694",
-      "pron": "",
+      "pron": "아길",
       "glossKo": "둥근 귀고리"
     },
     {
@@ -30,16 +30,172 @@
     {
       "lemma": "עָגֹל",
       "strong": "H5696",
-      "pron": "",
+      "pron": "아골",
       "glossKo": "둥근"
     }
   ],
   "defEn": "revolving; vehicle",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 25,
   "byBook": {
+    "samuel1": 7,
+    "numbers": 5,
     "genesis": 4,
+    "isaiah": 3,
+    "chronicles1": 2,
+    "samuel2": 2,
+    "amos": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הָעֲגָלֹ֗ת וְאֵת֙",
+      "pron": "아갈로트 에트",
+      "lemmas": [
+        "עֲגָלָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הָעֲגָלֹ֗ת",
+          "lemma": "עֲגָלָה",
+          "strong": "H5699",
+          "pron": "아갈로트"
+        },
+        {
+          "word": "וְאֵת֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "numbers 7:6",
+        "numbers 7:7",
+        "numbers 7:8",
+        "samuel1 6:8",
+        "samuel1 6:10",
+        "samuel1 6:11",
+        "samuel1 6:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲגָלָ֣ה חֲדָשָׁ֔ה",
+      "pron": "아갈로트 하다쉬",
+      "lemmas": [
+        "עֲגָלָה",
+        "חָדָשׁ"
+      ],
+      "words": [
+        {
+          "word": "עֲגָלָ֣ה",
+          "lemma": "עֲגָלָה",
+          "strong": "H5699",
+          "pron": "아갈로트"
+        },
+        {
+          "word": "חֲדָשָׁ֔ה",
+          "lemma": "חָדָשׁ",
+          "strong": "H2319",
+          "pron": "하다쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 6:7",
+        "samuel2 6:3",
+        "chronicles1 13:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל הָ֣עֲגָלָ֔ה",
+      "pron": "엘 아갈로트",
+      "lemmas": [
+        "אֵל",
+        "עֲגָלָה"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "הָ֣עֲגָלָ֔ה",
+          "lemma": "עֲגָלָה",
+          "strong": "H5699",
+          "pron": "아갈로트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 6:8",
+        "samuel1 6:11",
+        "samuel2 6:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הָ֣עֲגָל֔וֹת",
+      "pron": "에트 아갈로트",
+      "lemmas": [
+        "אֵת",
+        "עֲגָלָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הָ֣עֲגָל֔וֹת",
+          "lemma": "עֲגָלָה",
+          "strong": "H5699",
+          "pron": "아갈로트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 45:27",
+        "numbers 7:6",
+        "samuel2 6:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲגָל֖וֹת עַל",
+      "pron": "아갈로트 알",
+      "lemmas": [
+        "עֲגָלָה",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "עֲגָל֖וֹת",
+          "lemma": "עֲגָלָה",
+          "strong": "H5699",
+          "pron": "아갈로트"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 45:21",
+        "numbers 7:3",
+        "isaiah 28:27"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

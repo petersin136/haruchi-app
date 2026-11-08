@@ -1,6 +1,6 @@
 {
   "lemma": "זָכַר",
-  "pron": "팃케레누",
+  "pron": "바잇코르",
   "strong": "H2142",
   "posKo": "동사",
   "root": {
@@ -12,32 +12,32 @@
     {
       "lemma": "אַזְכָּרָה",
       "strong": "H234",
-      "pron": "",
-      "glossKo": "기념물"
+      "pron": "앗카라타흐",
+      "glossKo": "그녀의 기념물"
     },
     {
       "lemma": "דְּכַר",
       "strong": "H1798",
-      "pron": "",
+      "pron": "브디케린",
       "glossKo": "수컷(아람)"
     },
     {
       "lemma": "זָכוּר",
       "strong": "H2138",
-      "pron": "",
-      "glossKo": "남자"
+      "pron": "제쿠레카",
+      "glossKo": "너의 남자"
     },
     {
       "lemma": "זַכּוּר",
       "strong": "H2139",
-      "pron": "",
+      "pron": "작쿠르",
       "glossKo": "사굴"
     },
     {
       "lemma": "זֵכֶר",
       "strong": "H2143",
-      "pron": "지케레카",
-      "glossKo": "너의 기억"
+      "pron": "지케리",
+      "glossKo": "나의 기억"
     },
     {
       "lemma": "זָכָר",
@@ -48,89 +48,93 @@
   ],
   "defEn": "mark; remember",
   "defKo": "",
-  "countOT": 64,
+  "countOT": 235,
   "byBook": {
     "psalms": 54,
-    "genesis": 10
+    "isaiah": 26,
+    "ezekiel": 23,
+    "jeremiah": 16,
+    "deuteronomy": 15,
+    "genesis": 10,
+    "job": 10,
+    "nehemiah": 9,
+    "exodus": 8,
+    "lamentations": 7,
+    "numbers": 5,
+    "samuel2": 5,
+    "chronicles1": 4,
+    "ecclesiastes": 4,
+    "hosea": 4,
+    "kings2": 4,
+    "leviticus": 4,
+    "samuel1": 4,
+    "chronicles2": 3,
+    "judges": 3,
+    "amos": 2,
+    "esther": 2,
+    "joshua": 2,
+    "kings1": 2,
+    "zechariah": 2,
+    "habakkuk": 1,
+    "jonah": 1,
+    "malachi": 1,
+    "micah": 1,
+    "nahum": 1,
+    "proverbs": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "לֹא זָכְר֥וּ",
-      "pron": "로 팃케레누",
+      "hebrew": "לֹ֥א תִזְכְּרִי",
+      "pron": "로 바잇코르",
       "lemmas": [
         "לֹא",
         "זָכַר"
       ],
       "words": [
         {
-          "word": "לֹא",
+          "word": "לֹ֥א",
           "lemma": "לֹא",
           "strong": "H3808",
           "pron": "로"
         },
         {
-          "word": "זָכְר֥וּ",
+          "word": "תִזְכְּרִי",
           "lemma": "זָכַר",
           "strong": "H2142",
-          "pron": "팃케레누"
+          "pron": "바잇코르"
         }
       ],
-      "count": 7,
+      "count": 43,
       "refs": [
+        "genesis 40:23",
+        "exodus 23:13",
+        "joshua 23:7",
+        "judges 8:34",
+        "chronicles2 24:22",
+        "nehemiah 9:17",
+        "job 24:20",
+        "job 28:18",
         "psalms 78:42",
         "psalms 83:4",
         "psalms 88:5",
-        "psalms 106:7",
-        "psalms 109:16",
-        "psalms 137:6",
-        "genesis 40:23"
+        "psalms 106:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַיִּזְכֹּ֥ר אֱלֹהִ֖ים",
-      "pron": "팃케레누 베엘로힘",
-      "lemmas": [
-        "זָכַר",
-        "אֱלֹהִים"
-      ],
-      "words": [
-        {
-          "word": "וַיִּזְכֹּ֥ר",
-          "lemma": "זָכַר",
-          "strong": "H2142",
-          "pron": "팃케레누"
-        },
-        {
-          "word": "אֱלֹהִ֖ים",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 70:1",
-        "psalms 77:3",
-        "genesis 8:1",
-        "genesis 19:29",
-        "genesis 30:22"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "זָכְר֥וּ אֶת",
-      "pron": "팃케레누 에트",
+      "hebrew": "וּזְכַרְתֶּם֙ אֶת",
+      "pron": "바잇코르 에트",
       "lemmas": [
         "זָכַר",
         "אֵת"
       ],
       "words": [
         {
-          "word": "זָכְר֥וּ",
+          "word": "וּזְכַרְתֶּם֙",
           "lemma": "זָכַר",
           "strong": "H2142",
-          "pron": "팃케레누"
+          "pron": "바잇코르"
         },
         {
           "word": "אֶת",
@@ -139,39 +143,54 @@
           "pron": "에트"
         }
       ],
-      "count": 5,
+      "count": 35,
       "refs": [
-        "psalms 78:42",
-        "psalms 105:42",
-        "psalms 106:7",
-        "psalms 137:1",
-        "genesis 9:15"
+        "genesis 9:15",
+        "exodus 6:5",
+        "exodus 13:3",
+        "exodus 20:8",
+        "exodus 20:24",
+        "leviticus 26:42",
+        "numbers 11:5",
+        "numbers 15:39",
+        "deuteronomy 7:18",
+        "deuteronomy 8:2",
+        "deuteronomy 8:18",
+        "deuteronomy 16:3"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַֽ֭יִּזְכְּרוּ כִּֽי",
-      "pron": "팃케레누 키",
+      "hebrew": "וְזָכַרְתָּ֗ כִּ֣י",
+      "pron": "바잇코르 키",
       "lemmas": [
         "זָכַר",
         "כִּי"
       ],
       "words": [
         {
-          "word": "וַֽ֭יִּזְכְּרוּ",
+          "word": "וְזָכַרְתָּ֗",
           "lemma": "זָכַר",
           "strong": "H2142",
-          "pron": "팃케레누"
+          "pron": "바잇코르"
         },
         {
-          "word": "כִּֽי",
+          "word": "כִּ֣י",
           "lemma": "כִּי",
           "strong": "H3588",
           "pron": "키"
         }
       ],
-      "count": 4,
+      "count": 14,
       "refs": [
+        "deuteronomy 5:15",
+        "deuteronomy 15:15",
+        "deuteronomy 16:12",
+        "deuteronomy 24:18",
+        "deuteronomy 24:22",
+        "judges 9:2",
+        "job 7:7",
+        "job 36:24",
         "psalms 78:35",
         "psalms 78:39",
         "psalms 103:14",
@@ -180,32 +199,72 @@
       "glossKo": ""
     },
     {
-      "hebrew": "לְהַזְכִּֽיר יְֽהוָ֗ה",
-      "pron": "팃케레누 여호와",
+      "hebrew": "זָכֹ֣ר תִּזְכֹּ֗ר",
+      "pron": "바잇코르 바잇코르",
       "lemmas": [
         "זָכַר",
-        "יְהֹוָה"
+        "זָכַר"
       ],
       "words": [
         {
-          "word": "לְהַזְכִּֽיר",
+          "word": "זָכֹ֣ר",
           "lemma": "זָכַר",
           "strong": "H2142",
-          "pron": "팃케레누"
+          "pron": "바잇코르"
         },
         {
-          "word": "יְֽהוָ֗ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
+          "word": "תִּזְכֹּ֗ר",
+          "lemma": "זָכַר",
+          "strong": "H2142",
+          "pron": "바잇코르"
         }
       ],
-      "count": 4,
+      "count": 12,
       "refs": [
-        "psalms 38:1",
-        "psalms 106:4",
-        "psalms 132:1",
-        "psalms 137:7"
+        "deuteronomy 7:18",
+        "psalms 77:11",
+        "jeremiah 31:20",
+        "lamentations 3:20",
+        "ezekiel 16:22",
+        "ezekiel 16:43"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זָכְרָה אֱלֹהַ֖י",
+      "pron": "바잇코르 엘로힘",
+      "lemmas": [
+        "זָכַר",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "זָכְרָה",
+          "lemma": "זָכַר",
+          "strong": "H2142",
+          "pron": "바잇코르"
+        },
+        {
+          "word": "אֱלֹהַ֖י",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "genesis 8:1",
+        "genesis 19:29",
+        "genesis 30:22",
+        "exodus 2:24",
+        "nehemiah 5:19",
+        "nehemiah 6:14",
+        "nehemiah 13:14",
+        "nehemiah 13:22",
+        "nehemiah 13:29",
+        "nehemiah 13:31",
+        "psalms 70:1",
+        "psalms 77:3"
       ],
       "glossKo": ""
     }

@@ -2,7 +2,7 @@
   "lemma": "גֵּרָה",
   "pron": "게라",
   "strong": "H1625",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גָּרַר",
     "strong": "H1641",
@@ -12,31 +12,31 @@
     {
       "lemma": "גַּרְגַּר",
       "strong": "H1620",
-      "pron": "",
+      "pron": "가렉게림",
       "glossKo": "열매"
     },
     {
       "lemma": "גַּרְגְּרוֹת",
       "strong": "H1621",
-      "pron": "",
-      "glossKo": "목구멍"
+      "pron": "레가렉게로테카",
+      "glossKo": "너의 목구멍"
     },
     {
       "lemma": "גֵּרָה",
       "strong": "H1626",
-      "pron": "",
+      "pron": "게라",
       "glossKo": "그라"
     },
     {
       "lemma": "גָּרוֹן",
       "strong": "H1627",
-      "pron": "게로나므",
+      "pron": "게로남",
       "glossKo": "그들의 목구멍"
     },
     {
       "lemma": "גָּרַר",
       "strong": "H1641",
-      "pron": "",
+      "pron": "익가르",
       "glossKo": "되새김질하다"
     },
     {
@@ -48,7 +48,181 @@
   ],
   "defEn": "cud",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 11,
+  "byBook": {
+    "leviticus": 7,
+    "deuteronomy": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "מַעֲלַ֥ת גֵּרָ֖ה",
+      "pron": "야알레 게라",
+      "lemmas": [
+        "עָלָה",
+        "גֵּרָה"
+      ],
+      "words": [
+        {
+          "word": "מַעֲלַ֥ת",
+          "lemma": "עָלָה",
+          "strong": "H5927",
+          "pron": "야알레"
+        },
+        {
+          "word": "גֵּרָ֖ה",
+          "lemma": "גֵּרָה",
+          "strong": "H1625",
+          "pron": "게라"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "leviticus 11:3",
+        "leviticus 11:4",
+        "leviticus 11:5",
+        "leviticus 11:6",
+        "deuteronomy 14:6",
+        "deuteronomy 14:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי מַעֲלֵ֨ה גֵרָ֜ה",
+      "pron": "키 야알레 게라",
+      "lemmas": [
+        "כִּי",
+        "עָלָה",
+        "גֵּרָה"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "מַעֲלֵ֨ה",
+          "lemma": "עָלָה",
+          "strong": "H5927",
+          "pron": "야알레"
+        },
+        {
+          "word": "גֵרָ֜ה",
+          "lemma": "גֵּרָה",
+          "strong": "H1625",
+          "pron": "게라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 11:4",
+        "leviticus 11:5",
+        "leviticus 11:6",
+        "deuteronomy 14:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גֵרָ֜ה ה֗וּא",
+      "pron": "게라 후",
+      "lemmas": [
+        "גֵּרָה",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "גֵרָ֜ה",
+          "lemma": "גֵּרָה",
+          "strong": "H1625",
+          "pron": "게라"
+        },
+        {
+          "word": "ה֗וּא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 11:4",
+        "leviticus 11:5",
+        "leviticus 11:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גֵרָ֜ה ה֗וּא וּפַרְסָה֙",
+      "pron": "게라 후 파레사",
+      "lemmas": [
+        "גֵּרָה",
+        "הוּא",
+        "פַּרְסָה"
+      ],
+      "words": [
+        {
+          "word": "גֵרָ֜ה",
+          "lemma": "גֵּרָה",
+          "strong": "H1625",
+          "pron": "게라"
+        },
+        {
+          "word": "ה֗וּא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        },
+        {
+          "word": "וּפַרְסָה֙",
+          "lemma": "פַּרְסָה",
+          "strong": "H6541",
+          "pron": "파레사"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 11:4",
+        "leviticus 11:5",
+        "leviticus 11:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַעֲלֵ֨ה גֵרָ֜ה ה֗וּא",
+      "pron": "야알레 게라 후",
+      "lemmas": [
+        "עָלָה",
+        "גֵּרָה",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "מַעֲלֵ֨ה",
+          "lemma": "עָלָה",
+          "strong": "H5927",
+          "pron": "야알레"
+        },
+        {
+          "word": "גֵרָ֜ה",
+          "lemma": "גֵּרָה",
+          "strong": "H1625",
+          "pron": "게라"
+        },
+        {
+          "word": "ה֗וּא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 11:4",
+        "leviticus 11:5",
+        "leviticus 11:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

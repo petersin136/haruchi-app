@@ -1,6 +1,6 @@
 {
   "lemma": "חָצַב",
-  "pron": "호쳅",
+  "pron": "하추빔",
   "strong": "H2672",
   "posKo": "동사",
   "root": null,
@@ -8,15 +8,86 @@
     {
       "lemma": "מַחְצֵב",
       "strong": "H4274",
-      "pron": "",
+      "pron": "마헤쳅",
       "glossKo": "채석장"
     }
   ],
   "defEn": "cut",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 25,
   "byBook": {
+    "isaiah": 6,
+    "chronicles2": 4,
+    "chronicles1": 3,
+    "deuteronomy": 3,
+    "ezra": 1,
+    "hosea": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "nehemiah": 1,
+    "proverbs": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "חֹצֵ֣ב בָּהָ֑ר",
+      "pron": "하추빔 헤하림",
+      "lemmas": [
+        "חָצַב",
+        "הַר"
+      ],
+      "words": [
+        {
+          "word": "חֹצֵ֣ב",
+          "lemma": "חָצַב",
+          "strong": "H2672",
+          "pron": "하추빔"
+        },
+        {
+          "word": "בָּהָ֑ר",
+          "lemma": "הַר",
+          "strong": "H2022",
+          "pron": "헤하림"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 5:15",
+        "chronicles2 2:2",
+        "chronicles2 2:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֹצְבִ֕ים וְחָרָשֵׁ֥י",
+      "pron": "하추빔 하라쉬",
+      "lemmas": [
+        "חָצַב",
+        "חָרָשׁ"
+      ],
+      "words": [
+        {
+          "word": "חֹצְבִ֕ים",
+          "lemma": "חָצַב",
+          "strong": "H2672",
+          "pron": "하추빔"
+        },
+        {
+          "word": "וְחָרָשֵׁ֥י",
+          "lemma": "חָרָשׁ",
+          "strong": "H2796",
+          "pron": "하라쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 22:15",
+        "chronicles2 24:12",
+        "ezra 3:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

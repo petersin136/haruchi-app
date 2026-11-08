@@ -1,6 +1,6 @@
 {
   "lemma": "בִּין",
-  "pron": "비나",
+  "pron": "나본",
   "strong": "H995",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "בּוּנָה",
       "strong": "H946",
-      "pron": "",
+      "pron": "우부나",
       "glossKo": "부나"
     },
     {
@@ -20,13 +20,13 @@
     {
       "lemma": "בִּינָה",
       "strong": "H998",
-      "pron": "",
-      "glossKo": "총명"
+      "pron": "우비나테켐",
+      "glossKo": "너희의 총명"
     },
     {
       "lemma": "יָבִין",
       "strong": "H2985",
-      "pron": "크야빈",
+      "pron": "야빈",
       "glossKo": "야빈"
     },
     {
@@ -38,46 +38,193 @@
     {
       "lemma": "תָּבוּן",
       "strong": "H8394",
-      "pron": "테부노트",
+      "pron": "우비테부나",
       "glossKo": "이해"
     }
   ],
   "defEn": "separate; distinguish; understand",
   "defKo": "",
-  "countOT": 28,
+  "countOT": 171,
   "byBook": {
+    "proverbs": 34,
     "psalms": 26,
-    "genesis": 2
+    "job": 23,
+    "daniel": 22,
+    "isaiah": 20,
+    "nehemiah": 8,
+    "jeremiah": 7,
+    "chronicles1": 5,
+    "chronicles2": 5,
+    "deuteronomy": 5,
+    "kings1": 4,
+    "hosea": 3,
+    "ezra": 2,
+    "genesis": 2,
+    "samuel1": 2,
+    "ecclesiastes": 1,
+    "micah": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "לֹ֤א יָבִ֡ינוּ",
-      "pron": "로 비나",
+      "hebrew": "לֹא יָבִ֥ין",
+      "pron": "로 나본",
       "lemmas": [
         "לֹא",
         "בִּין"
       ],
       "words": [
         {
-          "word": "לֹ֤א",
+          "word": "לֹא",
           "lemma": "לֹא",
           "strong": "H3808",
           "pron": "로"
         },
         {
-          "word": "יָבִ֡ינוּ",
+          "word": "יָבִ֥ין",
           "lemma": "בִּין",
           "strong": "H995",
-          "pron": "비나"
+          "pron": "나본"
         }
       ],
-      "count": 5,
+      "count": 25,
       "refs": [
+        "job 6:30",
+        "job 9:11",
+        "job 11:11",
+        "job 14:21",
+        "job 23:8",
+        "job 42:3",
         "psalms 28:5",
         "psalms 49:20",
         "psalms 82:5",
         "psalms 92:6",
-        "psalms 94:7"
+        "psalms 94:7",
+        "proverbs 28:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְבִינִ֥ים אֶת",
+      "pron": "나본 에트",
+      "lemmas": [
+        "בִּין",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "מְבִינִ֥ים",
+          "lemma": "בִּין",
+          "strong": "H995",
+          "pron": "나본"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "nehemiah 8:7",
+        "nehemiah 8:9",
+        "psalms 92:6",
+        "proverbs 23:1",
+        "jeremiah 9:12",
+        "daniel 10:1",
+        "daniel 10:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "המבונים הַמְּבִינִ֨ים",
+      "pron": "나본 나본",
+      "lemmas": [
+        "בִּין",
+        "בִּין"
+      ],
+      "words": [
+        {
+          "word": "המבונים",
+          "lemma": "בִּין",
+          "strong": "H995",
+          "pron": "나본"
+        },
+        {
+          "word": "הַמְּבִינִ֨ים",
+          "lemma": "בִּין",
+          "strong": "H995",
+          "pron": "나본"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "chronicles2 35:3",
+        "proverbs 19:25",
+        "proverbs 23:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶתְבּוֹנָ֑ן כִּ֖י",
+      "pron": "나본 키",
+      "lemmas": [
+        "בִּין",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "אֶתְבּוֹנָ֑ן",
+          "lemma": "בִּין",
+          "strong": "H995",
+          "pron": "나본"
+        },
+        {
+          "word": "כִּ֖י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 119:100",
+        "isaiah 43:10",
+        "isaiah 44:18",
+        "isaiah 57:1",
+        "daniel 11:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֝תְבּוֹנֵ֗ן עַל",
+      "pron": "나본 알",
+      "lemmas": [
+        "בִּין",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "אֶ֝תְבּוֹנֵ֗ן",
+          "lemma": "בִּין",
+          "strong": "H995",
+          "pron": "나본"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "job 31:1",
+        "psalms 37:10",
+        "psalms 119:104",
+        "daniel 11:30",
+        "daniel 11:37"
       ],
       "glossKo": ""
     }

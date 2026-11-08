@@ -1,6 +1,6 @@
 {
   "lemma": "שָׂגַב",
-  "pron": "예삭게브카",
+  "pron": "삭바",
   "strong": "H7682",
   "posKo": "동사",
   "root": null,
@@ -8,21 +8,85 @@
     {
       "lemma": "מִשְׂגָּב",
       "strong": "H4869",
-      "pron": "미섹갑",
-      "glossKo": "산성"
+      "pron": "미섹갑비",
+      "glossKo": "나의 산성"
     },
     {
       "lemma": "שְׂגוּב",
       "strong": "H7687",
-      "pron": "",
+      "pron": "브브쉬깁",
       "glossKo": "스굽"
     }
   ],
   "defEn": "be; make; lofty; inaccessible",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 20,
   "byBook": {
-    "psalms": 7
+    "isaiah": 7,
+    "psalms": 7,
+    "proverbs": 3,
+    "job": 2,
+    "deuteronomy": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְנִשְׂגַּ֧ב יְהוָ֛ה",
+      "pron": "삭바 여호와",
+      "lemmas": [
+        "שָׂגַב",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וְנִשְׂגַּ֧ב",
+          "lemma": "שָׂגַב",
+          "strong": "H7682",
+          "pron": "삭바"
+        },
+        {
+          "word": "יְהוָ֛ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 2:11",
+        "isaiah 2:17",
+        "isaiah 9:11",
+        "isaiah 33:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְ֝שַׂגֶּבְךָ֗ שֵׁ֤ם",
+      "pron": "삭바 솀",
+      "lemmas": [
+        "שָׂגַב",
+        "שֵׁם"
+      ],
+      "words": [
+        {
+          "word": "יְ֝שַׂגֶּבְךָ֗",
+          "lemma": "שָׂגַב",
+          "strong": "H7682",
+          "pron": "삭바"
+        },
+        {
+          "word": "שֵׁ֤ם",
+          "lemma": "שֵׁם",
+          "strong": "H8034",
+          "pron": "솀"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 20:1",
+        "psalms 148:13",
+        "isaiah 12:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

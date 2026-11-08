@@ -1,6 +1,6 @@
 {
   "lemma": "נָקַם",
-  "pron": "우미테낙켐",
+  "pron": "육캄",
   "strong": "H5358",
   "posKo": "동사",
   "root": null,
@@ -8,16 +8,187 @@
     {
       "lemma": "נָקָם",
       "strong": "H5359",
-      "pron": "나캄",
+      "pron": "네캄",
       "glossKo": "복수"
     }
   ],
   "defEn": "grudge; avenge; punish",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 35,
   "byBook": {
+    "jeremiah": 7,
+    "ezekiel": 4,
+    "exodus": 3,
+    "nahum": 3,
     "psalms": 3,
-    "genesis": 2
+    "samuel1": 3,
+    "genesis": 2,
+    "judges": 2,
+    "leviticus": 2,
+    "deuteronomy": 1,
+    "esther": 1,
+    "isaiah": 1,
+    "joshua": 1,
+    "kings2": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נֹקֶ֨מֶת֙ נְקַם",
+      "pron": "육캄 네캄",
+      "lemmas": [
+        "נָקַם",
+        "נָקָם"
+      ],
+      "words": [
+        {
+          "word": "נֹקֶ֨מֶת֙",
+          "lemma": "נָקַם",
+          "strong": "H5358",
+          "pron": "육캄"
+        },
+        {
+          "word": "נְקַם",
+          "lemma": "נָקָם",
+          "strong": "H5359",
+          "pron": "네캄"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "leviticus 26:25",
+        "deuteronomy 32:43",
+        "judges 16:28",
+        "ezekiel 24:8",
+        "ezekiel 25:12",
+        "ezekiel 25:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֥א תִתְנַקֵּ֖ם",
+      "pron": "로 육캄",
+      "lemmas": [
+        "לֹא",
+        "נָקַם"
+      ],
+      "words": [
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תִתְנַקֵּ֖ם",
+          "lemma": "נָקַם",
+          "strong": "H5358",
+          "pron": "육캄"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 21:21",
+        "leviticus 19:18",
+        "jeremiah 5:9",
+        "jeremiah 5:29",
+        "jeremiah 9:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּנְקָמַ֥נִי יְהוָ֖ה",
+      "pron": "육캄 여호와",
+      "lemmas": [
+        "נָקַם",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וּנְקָמַ֥נִי",
+          "lemma": "נָקַם",
+          "strong": "H5358",
+          "pron": "육캄"
+        },
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 24:12",
+        "nahum 1:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנִקַּמְתִּי֙ מֵאֹ֣יְבַ֔י",
+      "pron": "육캄 오에바으브",
+      "lemmas": [
+        "נָקַם",
+        "אֹיֵב"
+      ],
+      "words": [
+        {
+          "word": "וְנִקַּמְתִּי֙",
+          "lemma": "נָקַם",
+          "strong": "H5358",
+          "pron": "육캄"
+        },
+        {
+          "word": "מֵאֹ֣יְבַ֔י",
+          "lemma": "אֹיֵב",
+          "strong": "H341",
+          "pron": "오에바으브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 14:24",
+        "samuel1 18:25",
+        "esther 8:13",
+        "isaiah 1:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּזֶ֔ה לֹ֥א תִתְנַקֵּ֖ם",
+      "pron": "제 로 육캄",
+      "lemmas": [
+        "זֶה",
+        "לֹא",
+        "נָקַם"
+      ],
+      "words": [
+        {
+          "word": "כָּזֶ֔ה",
+          "lemma": "זֶה",
+          "strong": "H2088",
+          "pron": "제"
+        },
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תִתְנַקֵּ֖ם",
+          "lemma": "נָקַם",
+          "strong": "H5358",
+          "pron": "육캄"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 5:9",
+        "jeremiah 5:29",
+        "jeremiah 9:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

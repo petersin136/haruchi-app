@@ -1,6 +1,6 @@
 {
   "lemma": "רָנַן",
-  "pron": "예란네누",
+  "pron": "바야론누",
   "strong": "H7442",
   "posKo": "동사",
   "root": null,
@@ -14,7 +14,7 @@
     {
       "lemma": "אַרְנוֹן",
       "strong": "H769",
-      "pron": "",
+      "pron": "아레논",
       "glossKo": "아르논"
     },
     {
@@ -26,13 +26,13 @@
     {
       "lemma": "רִנָּה",
       "strong": "H7440",
-      "pron": "린나티위",
-      "glossKo": "나의 외침"
+      "pron": "하린나",
+      "glossKo": "외침"
     },
     {
       "lemma": "רֶנֶן",
       "strong": "H7443",
-      "pron": "",
+      "pron": "레나님",
       "glossKo": "타조"
     },
     {
@@ -44,9 +44,50 @@
   ],
   "defEn": "creak; shout",
   "defKo": "",
-  "countOT": 25,
+  "countOT": 53,
   "byBook": {
-    "psalms": 25
+    "psalms": 25,
+    "isaiah": 14,
+    "jeremiah": 3,
+    "proverbs": 3,
+    "job": 2,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "lamentations": 1,
+    "leviticus": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יָרֹ֣נּוּ וְיִשְׂמְחוּ֮",
+      "pron": "바야론누 브사마흐",
+      "lemmas": [
+        "רָנַן",
+        "שָׂמַח"
+      ],
+      "words": [
+        {
+          "word": "יָרֹ֣נּוּ",
+          "lemma": "רָנַן",
+          "strong": "H7442",
+          "pron": "바야론누"
+        },
+        {
+          "word": "וְיִשְׂמְחוּ֮",
+          "lemma": "שָׂמַח",
+          "strong": "H8055",
+          "pron": "브사마흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 35:27",
+        "psalms 90:14",
+        "proverbs 29:6",
+        "zechariah 2:10"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "שֵׁן",
-  "pron": "신네",
+  "pron": "신나임",
   "strong": "H8127",
   "posKo": "명사",
   "root": {
@@ -12,40 +12,216 @@
     {
       "lemma": "שֵׁן",
       "strong": "H8128",
-      "pron": "",
+      "pron": "쉬니",
       "glossKo": "이(아람)"
     },
     {
       "lemma": "שֵׁן",
       "strong": "H8129",
-      "pron": "",
+      "pron": "아셴",
       "glossKo": "센"
     },
     {
       "lemma": "שֶׁנְהַבִּים",
       "strong": "H8143",
-      "pron": "",
+      "pron": "셴합빔",
       "glossKo": "상아"
     },
     {
       "lemma": "שְׁנִינָה",
       "strong": "H8148",
-      "pron": "",
+      "pron": "브리셰니나",
       "glossKo": "비웃음거리"
     },
     {
       "lemma": "שָׁנַן",
       "strong": "H8150",
-      "pron": "셰누님",
-      "glossKo": "갈다"
+      "pron": "베신난탐",
+      "glossKo": "그들에게 갈다"
     }
   ],
   "defEn": "tooth; sharp; ivory; cliff",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 55,
   "byBook": {
     "psalms": 8,
-    "genesis": 1
+    "job": 7,
+    "exodus": 5,
+    "samuel1": 4,
+    "songofsolomon": 4,
+    "amos": 3,
+    "deuteronomy": 3,
+    "ezekiel": 3,
+    "proverbs": 3,
+    "jeremiah": 2,
+    "joel": 2,
+    "kings1": 2,
+    "lamentations": 2,
+    "leviticus": 2,
+    "chronicles2": 1,
+    "genesis": 1,
+    "micah": 1,
+    "numbers": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עָלַ֣י בְּשִׁנָּ֑יו",
+      "pron": "알 신나임",
+      "lemmas": [
+        "עַל",
+        "שֵׁן"
+      ],
+      "words": [
+        {
+          "word": "עָלַ֣י",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "בְּשִׁנָּ֑יו",
+          "lemma": "שֵׁן",
+          "strong": "H8127",
+          "pron": "신나임"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 16:9",
+        "job 39:28",
+        "psalms 35:16",
+        "psalms 37:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שֵׁ֣ן בְּשֵׁ֔ן",
+      "pron": "신나임 신나임",
+      "lemmas": [
+        "שֵׁן",
+        "שֵׁן"
+      ],
+      "words": [
+        {
+          "word": "שֵׁ֣ן",
+          "lemma": "שֵׁן",
+          "strong": "H8127",
+          "pron": "신나임"
+        },
+        {
+          "word": "בְּשֵׁ֔ן",
+          "lemma": "שֵׁן",
+          "strong": "H8127",
+          "pron": "신나임"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 19:21",
+        "joel 1:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שֵׁ֖ן תַּ֣חַת שֵׁ֑ן",
+      "pron": "신나임 미타하트 신나임",
+      "lemmas": [
+        "שֵׁן",
+        "תַּחַת",
+        "שֵׁן"
+      ],
+      "words": [
+        {
+          "word": "שֵׁ֖ן",
+          "lemma": "שֵׁן",
+          "strong": "H8127",
+          "pron": "신나임"
+        },
+        {
+          "word": "תַּ֣חַת",
+          "lemma": "תַּחַת",
+          "strong": "H8478",
+          "pron": "미타하트"
+        },
+        {
+          "word": "שֵׁ֑ן",
+          "lemma": "שֵׁן",
+          "strong": "H8127",
+          "pron": "신나임"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 21:24",
+        "leviticus 24:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָרַ֣ק עָלַ֣י בְּשִׁנָּ֑יו",
+      "pron": "하라크 알 신나임",
+      "lemmas": [
+        "חָרַק",
+        "עַל",
+        "שֵׁן"
+      ],
+      "words": [
+        {
+          "word": "חָרַ֣ק",
+          "lemma": "חָרַק",
+          "strong": "H2786",
+          "pron": "하라크"
+        },
+        {
+          "word": "עָלַ֣י",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "בְּשִׁנָּ֑יו",
+          "lemma": "שֵׁן",
+          "strong": "H8127",
+          "pron": "신나임"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 16:9",
+        "psalms 35:16",
+        "psalms 37:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַ֔יִן שֵׁ֖ן",
+      "pron": "에네켐 신나임",
+      "lemmas": [
+        "עַיִן",
+        "שֵׁן"
+      ],
+      "words": [
+        {
+          "word": "עַ֔יִן",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        },
+        {
+          "word": "שֵׁ֖ן",
+          "lemma": "שֵׁן",
+          "strong": "H8127",
+          "pron": "신나임"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 21:24",
+        "leviticus 24:20",
+        "deuteronomy 19:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

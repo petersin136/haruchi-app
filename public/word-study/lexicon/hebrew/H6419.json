@@ -1,6 +1,6 @@
 {
   "lemma": "פָּלַל",
-  "pron": "에텝팔랄",
+  "pron": "브이텝팔렐",
   "strong": "H6419",
   "posKo": "동사",
   "root": null,
@@ -8,40 +8,242 @@
     {
       "lemma": "אֶפְלָל",
       "strong": "H654",
-      "pron": "",
+      "pron": "엡랄",
       "glossKo": "에블랄"
     },
     {
       "lemma": "פָּלִיל",
       "strong": "H6414",
-      "pron": "",
+      "pron": "비펠릴림",
       "glossKo": "재판관"
     },
     {
       "lemma": "פָּלָל",
       "strong": "H6420",
-      "pron": "",
+      "pron": "팔랄",
       "glossKo": "발랄"
     },
     {
       "lemma": "פְּלַלְיָה",
       "strong": "H6421",
-      "pron": "",
+      "pron": "펠랄아",
       "glossKo": "블랄랴"
     },
     {
       "lemma": "תְּפִלָּה",
       "strong": "H8605",
-      "pron": "테필라티위",
-      "glossKo": "나의 기도"
+      "pron": "아테필라",
+      "glossKo": "기도"
     }
   ],
   "defEn": "judge",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 84,
   "byBook": {
+    "chronicles2": 14,
+    "samuel1": 11,
+    "jeremiah": 10,
+    "kings1": 10,
+    "isaiah": 7,
+    "kings2": 6,
+    "nehemiah": 4,
     "psalms": 4,
-    "genesis": 3
+    "genesis": 3,
+    "numbers": 3,
+    "daniel": 2,
+    "deuteronomy": 2,
+    "job": 2,
+    "jonah": 2,
+    "chronicles1": 1,
+    "ezekiel": 1,
+    "ezra": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יִֽתְפַּֽלְל֖וּ אֶל",
+      "pron": "브이텝팔렐 엘",
+      "lemmas": [
+        "פָּלַל",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "יִֽתְפַּֽלְל֖וּ",
+          "lemma": "פָּלַל",
+          "strong": "H6419",
+          "pron": "브이텝팔렐"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 29,
+      "refs": [
+        "numbers 21:7",
+        "deuteronomy 9:26",
+        "samuel1 1:26",
+        "samuel2 7:27",
+        "kings1 8:30",
+        "kings1 8:35",
+        "kings1 8:42",
+        "kings1 8:44",
+        "kings1 8:48",
+        "kings1 8:54",
+        "kings2 4:33",
+        "kings2 19:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּתְפַּלֵּ֖ל אֶל יְהוָֽה",
+      "pron": "브이텝팔렐 엘 여호와",
+      "lemmas": [
+        "פָּלַל",
+        "אֵל",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וַיִּתְפַּלֵּ֖ל",
+          "lemma": "פָּלַל",
+          "strong": "H6419",
+          "pron": "브이텝팔렐"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "יְהוָֽה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 21:7",
+        "deuteronomy 9:26",
+        "samuel1 1:26",
+        "kings1 8:44",
+        "kings1 8:54",
+        "kings2 4:33",
+        "kings2 20:2",
+        "chronicles2 32:24",
+        "isaiah 38:2",
+        "jeremiah 32:16",
+        "jeremiah 42:4",
+        "jonah 4:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיִתְפַּלֵּ֥ל בַּֽעַדְךָ֖",
+      "pron": "브이텝팔렐 바아도",
+      "lemmas": [
+        "פָּלַל",
+        "בְּעַד"
+      ],
+      "words": [
+        {
+          "word": "וְיִתְפַּלֵּ֥ל",
+          "lemma": "פָּלַל",
+          "strong": "H6419",
+          "pron": "브이텝팔렐"
+        },
+        {
+          "word": "בַּֽעַדְךָ֖",
+          "lemma": "בְּעַד",
+          "strong": "H1157",
+          "pron": "바아도"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 20:7",
+        "samuel1 7:5",
+        "samuel1 12:19",
+        "samuel1 12:23",
+        "kings1 13:6",
+        "job 42:10",
+        "psalms 72:15",
+        "jeremiah 7:16",
+        "jeremiah 11:14",
+        "jeremiah 14:11",
+        "jeremiah 29:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֣ר יִתְפַּלֵּ֣ל",
+      "pron": "아셰르 브이텝팔렐",
+      "lemmas": [
+        "אֲשֶׁר",
+        "פָּלַל"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יִתְפַּלֵּ֣ל",
+          "lemma": "פָּלַל",
+          "strong": "H6419",
+          "pron": "브이텝팔렐"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "kings1 8:29",
+        "kings1 8:30",
+        "kings2 19:20",
+        "chronicles2 6:20",
+        "chronicles2 6:21",
+        "isaiah 37:21",
+        "ezekiel 16:52"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְהִתְפַּלֵּ֖ל לִפְנֵ֣י",
+      "pron": "브이텝팔렐 페네",
+      "lemmas": [
+        "פָּלַל",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "לְהִתְפַּלֵּ֖ל",
+          "lemma": "פָּלַל",
+          "strong": "H6419",
+          "pron": "브이텝팔렐"
+        },
+        {
+          "word": "לִפְנֵ֣י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel1 1:12",
+        "kings1 8:28",
+        "chronicles1 17:25",
+        "chronicles2 6:19",
+        "nehemiah 1:4",
+        "nehemiah 1:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

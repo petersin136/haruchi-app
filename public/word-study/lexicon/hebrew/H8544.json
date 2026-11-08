@@ -1,6 +1,6 @@
 {
   "lemma": "תְּמוּנָה",
-  "pron": "테무나테카",
+  "pron": "테무나",
   "strong": "H8544",
   "posKo": "명사",
   "root": {
@@ -12,15 +12,179 @@
     {
       "lemma": "מִין",
       "strong": "H4327",
-      "pron": "르민오",
+      "pron": "레미노",
       "glossKo": "그의 종류"
     }
   ],
   "defEn": "portioned; fashioned; shape; phantom; embodiment; manifestation",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 10,
   "byBook": {
+    "deuteronomy": 6,
+    "exodus": 1,
+    "job": 1,
+    "numbers": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַעֲשִׂיתֶ֥ם פֶּ֖סֶל תְּמוּנַ֣ת",
+      "pron": "바야아스 페셀 테무나",
+      "lemmas": [
+        "עָשָׂה",
+        "פֶּסֶל",
+        "תְּמוּנָה"
+      ],
+      "words": [
+        {
+          "word": "וַעֲשִׂיתֶ֥ם",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "פֶּ֖סֶל",
+          "lemma": "פֶּסֶל",
+          "strong": "H6459",
+          "pron": "페셀"
+        },
+        {
+          "word": "תְּמוּנַ֣ת",
+          "lemma": "תְּמוּנָה",
+          "strong": "H8544",
+          "pron": "테무나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 4:16",
+        "deuteronomy 4:23",
+        "deuteronomy 4:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל תְּמוּנָ֔ה",
+      "pron": "칼 테무나",
+      "lemmas": [
+        "כֹּל",
+        "תְּמוּנָה"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "תְּמוּנָ֔ה",
+          "lemma": "תְּמוּנָה",
+          "strong": "H8544",
+          "pron": "테무나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 20:4",
+        "deuteronomy 4:15",
+        "deuteronomy 5:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פֶּ֨סֶל֙ תְּמ֣וּנַת",
+      "pron": "페셀 테무나",
+      "lemmas": [
+        "פֶּסֶל",
+        "תְּמוּנָה"
+      ],
+      "words": [
+        {
+          "word": "פֶּ֨סֶל֙",
+          "lemma": "פֶּסֶל",
+          "strong": "H6459",
+          "pron": "페셀"
+        },
+        {
+          "word": "תְּמ֣וּנַת",
+          "lemma": "תְּמוּנָה",
+          "strong": "H8544",
+          "pron": "테무나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 4:16",
+        "deuteronomy 4:23",
+        "deuteronomy 4:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פֶּ֨סֶל֙ תְּמ֣וּנַת כֹּ֔ל",
+      "pron": "페셀 테무나 칼",
+      "lemmas": [
+        "פֶּסֶל",
+        "תְּמוּנָה",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "פֶּ֨סֶל֙",
+          "lemma": "פֶּסֶל",
+          "strong": "H6459",
+          "pron": "페셀"
+        },
+        {
+          "word": "תְּמ֣וּנַת",
+          "lemma": "תְּמוּנָה",
+          "strong": "H8544",
+          "pron": "테무나"
+        },
+        {
+          "word": "כֹּ֔ל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 4:16",
+        "deuteronomy 4:23",
+        "deuteronomy 4:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּמ֣וּנַת כֹּ֔ל",
+      "pron": "테무나 칼",
+      "lemmas": [
+        "תְּמוּנָה",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "תְּמ֣וּנַת",
+          "lemma": "תְּמוּנָה",
+          "strong": "H8544",
+          "pron": "테무나"
+        },
+        {
+          "word": "כֹּ֔ל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 4:16",
+        "deuteronomy 4:23",
+        "deuteronomy 4:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

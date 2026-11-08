@@ -1,6 +1,6 @@
 {
   "lemma": "רֹאשׁ",
-  "pron": "로시위",
+  "pron": "라심",
   "strong": "H7218",
   "posKo": "명사",
   "root": null,
@@ -8,14 +8,14 @@
     {
       "lemma": "מַרְאָשָׁה",
       "strong": "H4761",
-      "pron": "",
-      "glossKo": "베개 자리"
+      "pron": "마레아쇼테켐",
+      "glossKo": "너희의 베개 자리"
     },
     {
       "lemma": "רֵאשׁ",
       "strong": "H7217",
-      "pron": "",
-      "glossKo": "머리(아람)"
+      "pron": "베라셰으홈",
+      "glossKo": "그들의 머리(아람)"
     },
     {
       "lemma": "רֹאשׁ",
@@ -32,27 +32,60 @@
     {
       "lemma": "רִאשָׁה",
       "strong": "H7221",
-      "pron": "",
-      "glossKo": "시작"
+      "pron": "메리쇼테켐",
+      "glossKo": "너희의 시작"
     },
     {
       "lemma": "רֹאשָׁה",
       "strong": "H7222",
-      "pron": "",
+      "pron": "하로샤",
       "glossKo": "꼭대기"
     }
   ],
   "defEn": "head",
   "defKo": "",
-  "countOT": 53,
+  "countOT": 600,
   "byBook": {
+    "chronicles1": 73,
+    "numbers": 41,
+    "ezekiel": 40,
+    "leviticus": 40,
     "psalms": 33,
-    "genesis": 20
+    "samuel2": 32,
+    "isaiah": 28,
+    "judges": 28,
+    "exodus": 26,
+    "kings1": 23,
+    "samuel1": 23,
+    "chronicles2": 22,
+    "genesis": 20,
+    "deuteronomy": 17,
+    "kings2": 17,
+    "nehemiah": 17,
+    "joshua": 15,
+    "ezra": 13,
+    "jeremiah": 13,
+    "job": 13,
+    "proverbs": 10,
+    "lamentations": 9,
+    "songofsolomon": 9,
+    "amos": 6,
+    "zechariah": 6,
+    "esther": 5,
+    "micah": 5,
+    "ecclesiastes": 3,
+    "joel": 3,
+    "jonah": 3,
+    "habakkuk": 2,
+    "hosea": 2,
+    "daniel": 1,
+    "nahum": 1,
+    "obadiah": 1
   },
   "phrases": [
     {
-      "hebrew": "עַל רֹ֥אשׁ",
-      "pron": "알 로시위",
+      "hebrew": "עַל רֹ֣אשׁ",
+      "pron": "알 라심",
       "lemmas": [
         "עַל",
         "רֹאשׁ"
@@ -65,29 +98,32 @@
           "pron": "알"
         },
         {
-          "word": "רֹ֥אשׁ",
+          "word": "רֹ֣אשׁ",
           "lemma": "רֹאשׁ",
           "strong": "H7218",
-          "pron": "로시위"
+          "pron": "라심"
         }
       ],
-      "count": 12,
+      "count": 123,
       "refs": [
-        "psalms 133:2",
-        "psalms 137:6",
         "genesis 28:18",
         "genesis 40:16",
         "genesis 40:17",
         "genesis 47:31",
         "genesis 48:14",
         "genesis 48:17",
-        "genesis 48:18"
+        "genesis 48:18",
+        "exodus 17:9",
+        "exodus 26:24",
+        "exodus 29:6",
+        "exodus 29:7",
+        "exodus 29:10"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֶת רֹאשֶׁ֔ךָ",
-      "pron": "에트 로시위",
+      "hebrew": "אֶת רֹ֣אשׁ",
+      "pron": "에트 라심",
       "lemmas": [
         "אֵת",
         "רֹאשׁ"
@@ -100,88 +136,120 @@
           "pron": "에트"
         },
         {
-          "word": "רֹאשֶׁ֔ךָ",
+          "word": "רֹ֣אשׁ",
           "lemma": "רֹאשׁ",
           "strong": "H7218",
-          "pron": "로시위"
+          "pron": "라심"
         }
       ],
-      "count": 4,
+      "count": 53,
       "refs": [
         "genesis 40:13",
         "genesis 40:19",
-        "genesis 40:20"
+        "genesis 40:20",
+        "exodus 18:25",
+        "exodus 30:12",
+        "leviticus 1:8",
+        "leviticus 1:12",
+        "leviticus 1:15",
+        "leviticus 5:8",
+        "leviticus 6:5",
+        "leviticus 8:20",
+        "leviticus 9:13"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בְרֹאשׁ֑וֹ וְעַ֥ל",
-      "pron": "로시위 알",
+      "hebrew": "רָאשֵׁ֛י אֲב֥וֹת",
+      "pron": "라심 아비브",
       "lemmas": [
         "רֹאשׁ",
-        "עַל"
+        "אָב"
       ],
       "words": [
         {
-          "word": "בְרֹאשׁ֑וֹ",
+          "word": "רָאשֵׁ֛י",
           "lemma": "רֹאשׁ",
           "strong": "H7218",
-          "pron": "로시위"
+          "pron": "라심"
         },
         {
-          "word": "וְעַ֥ל",
-          "lemma": "עַל",
-          "strong": "H5921",
-          "pron": "알"
+          "word": "אֲב֥וֹת",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
         }
       ],
-      "count": 4,
+      "count": 44,
       "refs": [
-        "psalms 7:16",
-        "psalms 27:6",
-        "psalms 110:6",
-        "genesis 40:19"
+        "exodus 6:25",
+        "numbers 31:26",
+        "numbers 32:28",
+        "numbers 36:1",
+        "joshua 14:1",
+        "joshua 19:51",
+        "joshua 21:1",
+        "chronicles1 7:11",
+        "chronicles1 8:6",
+        "chronicles1 8:10",
+        "chronicles1 8:13",
+        "chronicles1 8:28"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וּמֵרִ֥ים רֹאשִֽׁי",
-      "pron": "우메림 로시위",
+      "hebrew": "רֹ֣אשׁ הָהָ֔ר",
+      "pron": "라심 헤하림",
       "lemmas": [
-        "רוּם",
+        "רֹאשׁ",
+        "הַר"
+      ],
+      "words": [
+        {
+          "word": "רֹ֣אשׁ",
+          "lemma": "רֹאשׁ",
+          "strong": "H7218",
+          "pron": "라심"
+        },
+        {
+          "word": "הָהָ֔ר",
+          "lemma": "הַר",
+          "strong": "H2022",
+          "pron": "헤하림"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "genesis 8:5",
+        "exodus 19:20",
+        "exodus 24:17",
+        "exodus 34:2",
+        "numbers 14:40",
+        "numbers 14:44",
+        "numbers 20:28",
+        "joshua 15:8",
+        "joshua 15:9",
+        "judges 9:7",
+        "judges 9:25",
+        "judges 9:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְדֵיהֶ֖ם עַל רֹ֥אשׁ",
+      "pron": "야도 알 라심",
+      "lemmas": [
+        "יָד",
+        "עַל",
         "רֹאשׁ"
       ],
       "words": [
         {
-          "word": "וּמֵרִ֥ים",
-          "lemma": "רוּם",
-          "strong": "H7311",
-          "pron": "우메림"
+          "word": "יְדֵיהֶ֖ם",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
         },
-        {
-          "word": "רֹאשִֽׁי",
-          "lemma": "רֹאשׁ",
-          "strong": "H7218",
-          "pron": "로시위"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 3:3",
-        "psalms 27:6",
-        "psalms 110:7"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "עַל רֹ֤אשׁ אֶפְרַ֨יִם֙",
-      "pron": "알 로시위 브엡라임",
-      "lemmas": [
-        "עַל",
-        "רֹאשׁ",
-        "אֶפְרַיִם"
-      ],
-      "words": [
         {
           "word": "עַל",
           "lemma": "עַל",
@@ -189,22 +257,26 @@
           "pron": "알"
         },
         {
-          "word": "רֹ֤אשׁ",
+          "word": "רֹ֥אשׁ",
           "lemma": "רֹאשׁ",
           "strong": "H7218",
-          "pron": "로시위"
-        },
-        {
-          "word": "אֶפְרַ֨יִם֙",
-          "lemma": "אֶפְרַיִם",
-          "strong": "H669",
-          "pron": "브엡라임"
+          "pron": "라심"
         }
       ],
-      "count": 3,
+      "count": 20,
       "refs": [
-        "genesis 48:14",
-        "genesis 48:17"
+        "exodus 29:10",
+        "exodus 29:15",
+        "exodus 29:19",
+        "leviticus 1:4",
+        "leviticus 3:2",
+        "leviticus 3:8",
+        "leviticus 3:13",
+        "leviticus 4:4",
+        "leviticus 4:15",
+        "leviticus 4:24",
+        "leviticus 4:29",
+        "leviticus 4:33"
       ],
       "glossKo": ""
     }

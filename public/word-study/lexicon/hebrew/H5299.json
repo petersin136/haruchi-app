@@ -1,8 +1,8 @@
 {
   "lemma": "נָפָה",
-  "pron": "나파",
+  "pron": "우브나포트",
   "strong": "H5299",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נוּף",
     "strong": "H5130",
@@ -18,7 +18,7 @@
     {
       "lemma": "נוּף",
       "strong": "H5130",
-      "pron": "타닙",
+      "pron": "헤납타",
       "glossKo": "흔들다"
     },
     {
@@ -26,6 +26,12 @@
       "strong": "H5131",
       "pron": "놉",
       "glossKo": "높이"
+    },
+    {
+      "lemma": "נֶפֶת",
+      "strong": "H5316",
+      "pron": "아나페트",
+      "glossKo": "구릉"
     },
     {
       "lemma": "נֹפֶת",
@@ -36,13 +42,47 @@
     {
       "lemma": "תְּנוּפָה",
       "strong": "H8573",
-      "pron": "",
+      "pron": "테누파",
       "glossKo": "요제"
     }
   ],
   "defEn": "sieve",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "joshua": 2,
+    "isaiah": 1,
+    "kings1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וּבְנָפ֥וֹת דּ֖וֹר",
+      "pron": "우브나포트 도르",
+      "lemmas": [
+        "נָפָה",
+        "דּוֹר"
+      ],
+      "words": [
+        {
+          "word": "וּבְנָפ֥וֹת",
+          "lemma": "נָפָה",
+          "strong": "H5299",
+          "pron": "우브나포트"
+        },
+        {
+          "word": "דּ֖וֹר",
+          "lemma": "דּוֹר",
+          "strong": "H1756",
+          "pron": "도르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 11:2",
+        "joshua 12:23",
+        "kings1 4:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

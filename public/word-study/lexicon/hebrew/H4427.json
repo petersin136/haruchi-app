@@ -1,6 +1,6 @@
 {
   "lemma": "מָלַךְ",
-  "pron": "말라크",
+  "pron": "말쿠",
   "strong": "H4427",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "יַמְלֵךְ",
       "strong": "H3230",
-      "pron": "",
+      "pron": "브얌레크",
       "glossKo": "야믈렉"
     },
     {
       "lemma": "מַלּוּךְ",
       "strong": "H4409",
-      "pron": "",
+      "pron": "말루크",
       "glossKo": "말룩"
     },
     {
@@ -26,33 +26,212 @@
     {
       "lemma": "מֶלֶךְ",
       "strong": "H4428",
-      "pron": "말케",
+      "pron": "멜레크",
       "glossKo": "왕"
     },
     {
       "lemma": "מְלַךְ",
       "strong": "H4431",
-      "pron": "",
-      "glossKo": "조언(아람)"
+      "pron": "밀키",
+      "glossKo": "나의 조언(아람)"
     },
     {
       "lemma": "מֹלֶךְ",
       "strong": "H4432",
-      "pron": "",
+      "pron": "라몰레크",
       "glossKo": "몰렉"
     }
   ],
   "defEn": "reign; ascend the throne; induct; take counsel",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 351,
   "byBook": {
+    "kings2": 91,
+    "chronicles2": 79,
+    "kings1": 62,
+    "chronicles1": 27,
+    "samuel1": 17,
     "genesis": 12,
-    "psalms": 6
+    "samuel2": 12,
+    "jeremiah": 11,
+    "judges": 10,
+    "psalms": 6,
+    "isaiah": 5,
+    "esther": 4,
+    "joshua": 3,
+    "daniel": 2,
+    "ezekiel": 2,
+    "proverbs": 2,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "hosea": 1,
+    "job": 1,
+    "micah": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
+      "hebrew": "שָׁנָ֔ה מָלַ֖ךְ",
+      "pron": "브샤님 말쿠",
+      "lemmas": [
+        "שָׁנֶה",
+        "מָלַךְ"
+      ],
+      "words": [
+        {
+          "word": "שָׁנָ֔ה",
+          "lemma": "שָׁנֶה",
+          "strong": "H8141",
+          "pron": "브샤님"
+        },
+        {
+          "word": "מָלַ֖ךְ",
+          "lemma": "מָלַךְ",
+          "strong": "H4427",
+          "pron": "말쿠"
+        }
+      ],
+      "count": 46,
+      "refs": [
+        "samuel1 13:1",
+        "samuel2 2:10",
+        "samuel2 5:4",
+        "kings1 14:21",
+        "kings1 15:2",
+        "kings1 15:10",
+        "kings1 22:42",
+        "kings2 8:17",
+        "kings2 12:1",
+        "kings2 14:2",
+        "kings2 14:21",
+        "kings2 15:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָלַ֖ךְ בִּירוּשָׁלִָ֑ם",
+      "pron": "말쿠 예루살렘",
+      "lemmas": [
+        "מָלַךְ",
+        "יְרוּשָׁלִַ͏ם"
+      ],
+      "words": [
+        {
+          "word": "מָלַ֖ךְ",
+          "lemma": "מָלַךְ",
+          "strong": "H4427",
+          "pron": "말쿠"
+        },
+        {
+          "word": "בִּירוּשָׁלִָ֑ם",
+          "lemma": "יְרוּשָׁלִַ͏ם",
+          "strong": "H3389",
+          "pron": "예루살렘"
+        }
+      ],
+      "count": 42,
+      "refs": [
+        "kings1 14:21",
+        "kings1 15:2",
+        "kings1 15:10",
+        "kings1 22:42",
+        "kings2 8:17",
+        "kings2 8:26",
+        "kings2 12:1",
+        "kings2 14:2",
+        "kings2 15:2",
+        "kings2 15:33",
+        "kings2 16:2",
+        "kings2 18:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָלַ֖ךְ עַל",
+      "pron": "말쿠 알",
+      "lemmas": [
+        "מָלַךְ",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "מָלַ֖ךְ",
+          "lemma": "מָלַךְ",
+          "strong": "H4427",
+          "pron": "말쿠"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 40,
+      "refs": [
+        "genesis 37:8",
+        "judges 9:8",
+        "judges 9:10",
+        "judges 9:12",
+        "judges 9:14",
+        "samuel1 8:7",
+        "samuel1 8:9",
+        "samuel1 8:11",
+        "samuel1 11:12",
+        "samuel1 12:1",
+        "samuel1 12:12",
+        "samuel1 12:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁנָ֔ה מָלַ֖ךְ בִּירוּשָׁלִָ֑ם",
+      "pron": "브샤님 말쿠 예루살렘",
+      "lemmas": [
+        "שָׁנֶה",
+        "מָלַךְ",
+        "יְרוּשָׁלִַ͏ם"
+      ],
+      "words": [
+        {
+          "word": "שָׁנָ֔ה",
+          "lemma": "שָׁנֶה",
+          "strong": "H8141",
+          "pron": "브샤님"
+        },
+        {
+          "word": "מָלַ֖ךְ",
+          "lemma": "מָלַךְ",
+          "strong": "H4427",
+          "pron": "말쿠"
+        },
+        {
+          "word": "בִּירוּשָׁלִָ֑ם",
+          "lemma": "יְרוּשָׁלִַ͏ם",
+          "strong": "H3389",
+          "pron": "예루살렘"
+        }
+      ],
+      "count": 35,
+      "refs": [
+        "kings1 14:21",
+        "kings1 15:2",
+        "kings1 15:10",
+        "kings1 22:42",
+        "kings2 8:17",
+        "kings2 12:1",
+        "kings2 14:2",
+        "kings2 15:2",
+        "kings2 15:33",
+        "kings2 16:2",
+        "kings2 18:2",
+        "kings2 21:1"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וַיִּמְלֹ֣ךְ תַּחְתָּ֔יו",
-      "pron": "말라크 타하트",
+      "pron": "말쿠 미타하트",
       "lemmas": [
         "מָלַךְ",
         "תַּחַת"
@@ -62,16 +241,16 @@
           "word": "וַיִּמְלֹ֣ךְ",
           "lemma": "מָלַךְ",
           "strong": "H4427",
-          "pron": "말라크"
+          "pron": "말쿠"
         },
         {
           "word": "תַּחְתָּ֔יו",
           "lemma": "תַּחַת",
           "strong": "H8478",
-          "pron": "타하트"
+          "pron": "미타하트"
         }
       ],
-      "count": 7,
+      "count": 28,
       "refs": [
         "genesis 36:33",
         "genesis 36:34",
@@ -79,37 +258,12 @@
         "genesis 36:36",
         "genesis 36:37",
         "genesis 36:38",
-        "genesis 36:39"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יְהוָ֣ה מָ֭לָךְ",
-      "pron": "여호와 말라크",
-      "lemmas": [
-        "יְהֹוָה",
-        "מָלַךְ"
-      ],
-      "words": [
-        {
-          "word": "יְהוָ֣ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        },
-        {
-          "word": "מָ֭לָךְ",
-          "lemma": "מָלַךְ",
-          "strong": "H4427",
-          "pron": "말라크"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 93:1",
-        "psalms 96:10",
-        "psalms 97:1",
-        "psalms 99:1"
+        "genesis 36:39",
+        "samuel2 16:8",
+        "kings1 1:35",
+        "kings1 15:28",
+        "kings1 16:10",
+        "kings2 3:27"
       ],
       "glossKo": ""
     }

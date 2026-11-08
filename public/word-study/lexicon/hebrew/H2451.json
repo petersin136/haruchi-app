@@ -12,33 +12,228 @@
     {
       "lemma": "חַכִּים",
       "strong": "H2445",
-      "pron": "",
+      "pron": "학키메",
       "glossKo": "지혜로운(아람)"
     },
     {
       "lemma": "חָכַם",
       "strong": "H2449",
-      "pron": "마헥키마트",
+      "pron": "니테학케마",
       "glossKo": "지혜롭다"
     },
     {
       "lemma": "חָכָם",
       "strong": "H2450",
-      "pron": "하카밈",
-      "glossKo": "지혜로운"
+      "pron": "하카메하",
+      "glossKo": "그녀의 지혜로운"
+    },
+    {
+      "lemma": "חׇכְמָה",
+      "strong": "H2452",
+      "pron": "크하케마트",
+      "glossKo": "지혜(아람)"
     },
     {
       "lemma": "חַכְמוֹנִי",
       "strong": "H2453",
-      "pron": "",
+      "pron": "하케모니",
       "glossKo": "학모니"
+    },
+    {
+      "lemma": "חׇכְמוֹת",
+      "strong": "H2454",
+      "pron": "하케모트",
+      "glossKo": "지혜"
     }
   ],
   "defEn": "wisdom",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 149,
   "byBook": {
-    "psalms": 6
+    "proverbs": 39,
+    "ecclesiastes": 28,
+    "job": 18,
+    "kings1": 17,
+    "chronicles2": 9,
+    "exodus": 8,
+    "jeremiah": 6,
+    "psalms": 6,
+    "ezekiel": 5,
+    "isaiah": 5,
+    "daniel": 3,
+    "deuteronomy": 2,
+    "samuel2": 2,
+    "chronicles1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֵ֖ת חָכְמַ֣ת",
+      "pron": "에트 하케마",
+      "lemmas": [
+        "אֵת",
+        "חׇכְמָה"
+      ],
+      "words": [
+        {
+          "word": "אֵ֖ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "חָכְמַ֣ת",
+          "lemma": "חׇכְמָה",
+          "strong": "H2451",
+          "pron": "하케마"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 35:26",
+        "exodus 35:35",
+        "kings1 4:34",
+        "kings1 7:14",
+        "kings1 10:8",
+        "kings1 10:24",
+        "chronicles2 9:3",
+        "chronicles2 9:7",
+        "chronicles2 9:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּחָכְמָת֑וֹ וּבִתְבוּנָת֖וֹ",
+      "pron": "하케마 우비테부나",
+      "lemmas": [
+        "חׇכְמָה",
+        "תָּבוּן"
+      ],
+      "words": [
+        {
+          "word": "בְּחָכְמָת֑וֹ",
+          "lemma": "חׇכְמָה",
+          "strong": "H2451",
+          "pron": "하케마"
+        },
+        {
+          "word": "וּבִתְבוּנָת֖וֹ",
+          "lemma": "תָּבוּן",
+          "strong": "H8394",
+          "pron": "우비테부나"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 31:3",
+        "exodus 35:31",
+        "exodus 36:1",
+        "jeremiah 10:12",
+        "jeremiah 51:15",
+        "ezekiel 28:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָכְמָ֑ה וְדַ֖עַת",
+      "pron": "하케마 아다아트",
+      "lemmas": [
+        "חׇכְמָה",
+        "דַּעַת"
+      ],
+      "words": [
+        {
+          "word": "חָכְמָ֑ה",
+          "lemma": "חׇכְמָה",
+          "strong": "H2451",
+          "pron": "하케마"
+        },
+        {
+          "word": "וְדַ֖עַת",
+          "lemma": "דַּעַת",
+          "strong": "H1847",
+          "pron": "아다아트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "proverbs 30:3",
+        "ecclesiastes 1:16",
+        "ecclesiastes 2:21",
+        "ecclesiastes 2:26",
+        "isaiah 33:6",
+        "isaiah 47:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָכְמַ֣ת שְׁלֹמֹ֑ה",
+      "pron": "하케마 우솔로몬",
+      "lemmas": [
+        "חׇכְמָה",
+        "שְׁלֹמֹה"
+      ],
+      "words": [
+        {
+          "word": "חָכְמַ֣ת",
+          "lemma": "חׇכְמָה",
+          "strong": "H2451",
+          "pron": "하케마"
+        },
+        {
+          "word": "שְׁלֹמֹ֑ה",
+          "lemma": "שְׁלֹמֹה",
+          "strong": "H8010",
+          "pron": "우솔로몬"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 4:29",
+        "kings1 4:30",
+        "kings1 4:34",
+        "kings1 5:12",
+        "kings1 10:4",
+        "chronicles2 9:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִשְׁמֹ֨עַ֙ אֶת חָכְמָת֔וֹ",
+      "pron": "바이솀우 에트 하케마",
+      "lemmas": [
+        "שָׁמַע",
+        "אֵת",
+        "חׇכְמָה"
+      ],
+      "words": [
+        {
+          "word": "לִשְׁמֹ֨עַ֙",
+          "lemma": "שָׁמַע",
+          "strong": "H8085",
+          "pron": "바이솀우"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "חָכְמָת֔וֹ",
+          "lemma": "חׇכְמָה",
+          "strong": "H2451",
+          "pron": "하케마"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 4:34",
+        "kings1 10:8",
+        "kings1 10:24",
+        "chronicles2 9:7",
+        "chronicles2 9:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

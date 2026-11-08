@@ -1,6 +1,6 @@
 {
   "lemma": "רָכַב",
-  "pron": "바이렉캅",
+  "pron": "바티렉캅나",
   "strong": "H7392",
   "posKo": "동사",
   "root": null,
@@ -8,61 +8,83 @@
     {
       "lemma": "אַרְכֻבָה",
       "strong": "H755",
-      "pron": "",
-      "glossKo": "무릎(아람)"
+      "pron": "베아레쿱바테흐",
+      "glossKo": "그의 무릎(아람)"
     },
     {
       "lemma": "מֶרְכָּב",
       "strong": "H4817",
-      "pron": "",
+      "pron": "아메렉캅",
       "glossKo": "수레"
     },
     {
       "lemma": "רֶכֶב",
       "strong": "H7393",
-      "pron": "바레켑",
+      "pron": "레켑",
       "glossKo": "병거"
     },
     {
       "lemma": "רֵכָב",
       "strong": "H7394",
-      "pron": "",
+      "pron": "레캅",
       "glossKo": "레갑"
     },
     {
       "lemma": "רַכָּב",
       "strong": "H7395",
-      "pron": "",
-      "glossKo": "마부"
+      "pron": "레락카보",
+      "glossKo": "그의 마부"
     },
     {
       "lemma": "רְכוּב",
       "strong": "H7398",
-      "pron": "레쿱오",
+      "pron": "레쿠보",
       "glossKo": "그의 맷돌"
     }
   ],
   "defEn": "ride; place upon; despatch",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 78,
   "byBook": {
+    "kings2": 11,
+    "jeremiah": 6,
+    "samuel2": 6,
+    "esther": 5,
+    "kings1": 5,
     "psalms": 5,
-    "genesis": 3
+    "ezekiel": 4,
+    "isaiah": 4,
+    "zechariah": 4,
+    "exodus": 3,
+    "genesis": 3,
+    "judges": 3,
+    "samuel1": 3,
+    "deuteronomy": 2,
+    "haggai": 2,
+    "hosea": 2,
+    "job": 2,
+    "numbers": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "habakkuk": 1,
+    "leviticus": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
-      "hebrew": "וַיִּרְכַּ֣ב עַל",
-      "pron": "바이렉캅 알",
+      "hebrew": "רֹכֵ֣ב עַל",
+      "pron": "바티렉캅나 알",
       "lemmas": [
         "רָכַב",
         "עַל"
       ],
       "words": [
         {
-          "word": "וַיִּרְכַּ֣ב",
+          "word": "רֹכֵ֣ב",
           "lemma": "רָכַב",
           "strong": "H7392",
-          "pron": "바이렉캅"
+          "pron": "바티렉캅나"
         },
         {
           "word": "עַל",
@@ -71,11 +93,152 @@
           "pron": "알"
         }
       ],
-      "count": 3,
+      "count": 28,
       "refs": [
-        "psalms 18:10",
-        "psalms 45:4",
-        "genesis 24:61"
+        "genesis 24:61",
+        "exodus 4:20",
+        "leviticus 15:9",
+        "numbers 22:22",
+        "numbers 22:30",
+        "deuteronomy 32:13",
+        "judges 10:4",
+        "judges 12:14",
+        "samuel1 25:20",
+        "samuel1 25:42",
+        "samuel1 30:17",
+        "samuel2 18:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיַּרְכֵּ֣ב אֹת֗וֹ",
+      "pron": "바티렉캅나 에트",
+      "lemmas": [
+        "רָכַב",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיַּרְכֵּ֣ב",
+          "lemma": "רָכַב",
+          "strong": "H7392",
+          "pron": "바티렉캅나"
+        },
+        {
+          "word": "אֹת֗וֹ",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 41:43",
+        "samuel2 6:3",
+        "kings1 1:33",
+        "kings1 1:38",
+        "kings1 1:44",
+        "kings2 9:28",
+        "kings2 10:16",
+        "chronicles1 13:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ס֥וּס וְרֹכְב֖וֹ",
+      "pron": "바수심 바티렉캅나",
+      "lemmas": [
+        "סוּס",
+        "רָכַב"
+      ],
+      "words": [
+        {
+          "word": "ס֥וּס",
+          "lemma": "סוּס",
+          "strong": "H5483",
+          "pron": "바수심"
+        },
+        {
+          "word": "וְרֹכְב֖וֹ",
+          "lemma": "רָכַב",
+          "strong": "H7392",
+          "pron": "바티렉캅나"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 15:1",
+        "exodus 15:21",
+        "esther 8:10",
+        "job 39:18",
+        "jeremiah 6:23",
+        "jeremiah 50:42",
+        "jeremiah 51:21",
+        "haggai 2:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רֹכֵ֨ב הַסּ֜וּס",
+      "pron": "바티렉캅나 바수심",
+      "lemmas": [
+        "רָכַב",
+        "סוּס"
+      ],
+      "words": [
+        {
+          "word": "רֹכֵ֨ב",
+          "lemma": "רָכַב",
+          "strong": "H7392",
+          "pron": "바티렉캅나"
+        },
+        {
+          "word": "הַסּ֜וּס",
+          "lemma": "סוּס",
+          "strong": "H5483",
+          "pron": "바수심"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "kings2 9:18",
+        "kings2 9:19",
+        "ezekiel 23:6",
+        "ezekiel 23:12",
+        "ezekiel 23:23",
+        "ezekiel 38:15",
+        "amos 2:15",
+        "zechariah 10:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֨ר יִרְכַּ֥ב",
+      "pron": "아셰르 바티렉캅나",
+      "lemmas": [
+        "אֲשֶׁר",
+        "רָכַב"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יִרְכַּ֥ב",
+          "lemma": "רָכַב",
+          "strong": "H7392",
+          "pron": "바티렉캅나"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 15:9",
+        "numbers 22:30",
+        "samuel1 30:17",
+        "esther 6:8"
       ],
       "glossKo": ""
     }

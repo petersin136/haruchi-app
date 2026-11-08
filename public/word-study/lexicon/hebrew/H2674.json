@@ -2,7 +2,7 @@
   "lemma": "חָצוֹר",
   "pron": "하초르",
   "strong": "H2674",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָצֵר",
     "strong": "H2691",
@@ -10,33 +10,179 @@
   },
   "family": [
     {
+      "lemma": "חָצוֹר חֲדַתָּה",
+      "strong": "H2675",
+      "pron": "브하초르",
+      "glossKo": "하솔하닷다"
+    },
+    {
       "lemma": "חָצִיר",
       "strong": "H2681",
-      "pron": "",
+      "pron": "하치르",
       "glossKo": "초장"
     },
     {
       "lemma": "חָצֵר",
       "strong": "H2691",
-      "pron": "하체림",
-      "glossKo": "뜰"
+      "pron": "베하체레헴",
+      "glossKo": "그들의 뜰"
     },
     {
       "lemma": "חֲצַר אַדָּר",
       "strong": "H2692",
-      "pron": "",
+      "pron": "하차르",
       "glossKo": "하살아달"
     },
     {
       "lemma": "חֲצַר גַּדָּה",
       "strong": "H2693",
-      "pron": "",
+      "pron": "바하차르",
       "glossKo": "하살갓다"
+    },
+    {
+      "lemma": "חֲצַר הַתִּיכוֹן",
+      "strong": "H2694",
+      "pron": "하체르",
+      "glossKo": "하살핫디곤"
     }
   ],
   "defEn": "Chatsor",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 18,
+  "byBook": {
+    "joshua": 9,
+    "jeremiah": 3,
+    "judges": 2,
+    "kings1": 1,
+    "kings2": 1,
+    "nehemiah": 1,
+    "samuel1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶת חָצ֔וֹר",
+      "pron": "에트 하초르",
+      "lemmas": [
+        "אֵת",
+        "חָצוֹר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "חָצ֔וֹר",
+          "lemma": "חָצוֹר",
+          "strong": "H2674",
+          "pron": "하초르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "joshua 11:10",
+        "joshua 11:11",
+        "joshua 11:13",
+        "kings1 9:15",
+        "kings2 15:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת חָצ֔וֹר וְאֶת",
+      "pron": "에트 하초르 에트",
+      "lemmas": [
+        "אֵת",
+        "חָצוֹר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "חָצ֔וֹר",
+          "lemma": "חָצוֹר",
+          "strong": "H2674",
+          "pron": "하초르"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 11:10",
+        "kings1 9:15",
+        "kings2 15:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָצ֔וֹר וְאֶת",
+      "pron": "하초르 에트",
+      "lemmas": [
+        "חָצוֹר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "חָצ֔וֹר",
+          "lemma": "חָצוֹר",
+          "strong": "H2674",
+          "pron": "하초르"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 11:10",
+        "kings1 9:15",
+        "kings2 15:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֶֽלֶךְ חָצ֑וֹר",
+      "pron": "멜레크 하초르",
+      "lemmas": [
+        "מֶלֶךְ",
+        "חָצוֹר"
+      ],
+      "words": [
+        {
+          "word": "מֶֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "חָצ֑וֹר",
+          "lemma": "חָצוֹר",
+          "strong": "H2674",
+          "pron": "하초르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 11:1",
+        "joshua 12:19",
+        "judges 4:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

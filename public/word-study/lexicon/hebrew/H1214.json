@@ -1,6 +1,6 @@
 {
   "lemma": "בָּצַע",
-  "pron": "우보체아",
+  "pron": "비밧체에니",
   "strong": "H1214",
   "posKo": "동사",
   "root": null,
@@ -14,9 +14,117 @@
   ],
   "defEn": "break; plunder; finish; stop",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 16,
   "byBook": {
-    "psalms": 1
+    "ezekiel": 2,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "job": 2,
+    "proverbs": 2,
+    "amos": 1,
+    "habakkuk": 1,
+    "joel": 1,
+    "lamentations": 1,
+    "psalms": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בּוֹצֵ֣עַ בָּ֑צַע",
+      "pron": "비밧체에니 베차",
+      "lemmas": [
+        "בָּצַע",
+        "בֶּצַע"
+      ],
+      "words": [
+        {
+          "word": "בּוֹצֵ֣עַ",
+          "lemma": "בָּצַע",
+          "strong": "H1214",
+          "pron": "비밧체에니"
+        },
+        {
+          "word": "בָּ֑צַע",
+          "lemma": "בֶּצַע",
+          "strong": "H1215",
+          "pron": "베차"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "proverbs 1:19",
+        "proverbs 15:27",
+        "jeremiah 6:13",
+        "jeremiah 8:10",
+        "ezekiel 22:27",
+        "habakkuk 2:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל בֹּ֣צֵֽעַ",
+      "pron": "칼 비밧체에니",
+      "lemmas": [
+        "כֹּל",
+        "בָּצַע"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "בֹּ֣צֵֽעַ",
+          "lemma": "בָּצַע",
+          "strong": "H1214",
+          "pron": "비밧체에니"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 1:19",
+        "jeremiah 6:13",
+        "jeremiah 8:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל בֹּ֣צֵֽעַ בָּ֑צַע",
+      "pron": "칼 비밧체에니 베차",
+      "lemmas": [
+        "כֹּל",
+        "בָּצַע",
+        "בֶּצַע"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "בֹּ֣צֵֽעַ",
+          "lemma": "בָּצַע",
+          "strong": "H1214",
+          "pron": "비밧체에니"
+        },
+        {
+          "word": "בָּ֑צַע",
+          "lemma": "בֶּצַע",
+          "strong": "H1215",
+          "pron": "베차"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 1:19",
+        "jeremiah 6:13",
+        "jeremiah 8:10"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

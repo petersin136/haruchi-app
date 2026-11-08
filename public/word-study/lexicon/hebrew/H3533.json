@@ -1,6 +1,6 @@
 {
   "lemma": "כָּבַשׁ",
-  "pron": "브킵슈하",
+  "pron": "베킵슈하",
   "strong": "H3533",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "כֶּבֶשׁ",
       "strong": "H3534",
-      "pron": "",
+      "pron": "브케베쉬",
       "glossKo": "발받침"
     },
     {
@@ -20,9 +20,143 @@
   ],
   "defEn": "tread down; disregard; conquer; subjugate; violate",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 15,
   "byBook": {
-    "genesis": 1
+    "jeremiah": 3,
+    "nehemiah": 2,
+    "numbers": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "esther": 1,
+    "genesis": 1,
+    "joshua": 1,
+    "micah": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הָאָ֖רֶץ וְכִבְשֻׁ֑הָ",
+      "pron": "하아레츠 베킵슈하",
+      "lemmas": [
+        "אֶרֶץ",
+        "כָּבַשׁ"
+      ],
+      "words": [
+        {
+          "word": "הָאָ֖רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "וְכִבְשֻׁ֑הָ",
+          "lemma": "כָּבַשׁ",
+          "strong": "H3533",
+          "pron": "베킵슈하"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 1:28",
+        "joshua 18:1",
+        "chronicles1 22:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנִכְבְּשָׁ֨ה הָאָ֜רֶץ",
+      "pron": "베킵슈하 하아레츠",
+      "lemmas": [
+        "כָּבַשׁ",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "וְנִכְבְּשָׁ֨ה",
+          "lemma": "כָּבַשׁ",
+          "strong": "H3533",
+          "pron": "베킵슈하"
+        },
+        {
+          "word": "הָאָ֜רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 32:22",
+        "numbers 32:29",
+        "chronicles1 22:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנִכְבְּשָׁ֨ה הָאָ֜רֶץ לִפְנֵ֤י",
+      "pron": "베킵슈하 하아레츠 페네",
+      "lemmas": [
+        "כָּבַשׁ",
+        "אֶרֶץ",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "וְנִכְבְּשָׁ֨ה",
+          "lemma": "כָּבַשׁ",
+          "strong": "H3533",
+          "pron": "베킵슈하"
+        },
+        {
+          "word": "הָאָ֜רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "לִפְנֵ֤י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 32:22",
+        "numbers 32:29",
+        "chronicles1 22:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כֹ֠בְשִׁים אֶת",
+      "pron": "베킵슈하 에트",
+      "lemmas": [
+        "כָּבַשׁ",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "כֹ֠בְשִׁים",
+          "lemma": "כָּבַשׁ",
+          "strong": "H3533",
+          "pron": "베킵슈하"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "nehemiah 5:5",
+        "esther 7:8",
+        "jeremiah 34:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

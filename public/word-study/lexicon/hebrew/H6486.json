@@ -1,6 +1,6 @@
 {
   "lemma": "פְּקֻדָּה",
-  "pron": "페쿧다트오",
+  "pron": "페쿧다트",
   "strong": "H6486",
   "posKo": "명사",
   "root": {
@@ -12,14 +12,14 @@
     {
       "lemma": "מִפְקָד",
       "strong": "H4662",
-      "pron": "",
+      "pron": "밉칻",
       "glossKo": "지정된 일"
     },
     {
       "lemma": "פָּקַד",
       "strong": "H6485",
-      "pron": "팁케데누",
-      "glossKo": "그에게 돌아보다"
+      "pron": "파칻",
+      "glossKo": "돌아보다"
     },
     {
       "lemma": "פִּקָּדוֹן",
@@ -30,7 +30,7 @@
     {
       "lemma": "פְּקוֹד",
       "strong": "H6489",
-      "pron": "",
+      "pron": "페콛",
       "glossKo": "브곳"
     },
     {
@@ -48,9 +48,109 @@
   ],
   "defEn": "visitation",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 32,
   "byBook": {
+    "jeremiah": 9,
+    "numbers": 5,
+    "chronicles1": 4,
+    "chronicles2": 4,
+    "isaiah": 3,
+    "ezekiel": 2,
+    "hosea": 1,
+    "job": 1,
+    "kings2": 1,
+    "micah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּעֵ֥ת פְּקֻדָּתָ֖ם",
+      "pron": "르에트 페쿧다트",
+      "lemmas": [
+        "עֵת",
+        "פְּקֻדָּה"
+      ],
+      "words": [
+        {
+          "word": "בְּעֵ֥ת",
+          "lemma": "עֵת",
+          "strong": "H6256",
+          "pron": "르에트"
+        },
+        {
+          "word": "פְּקֻדָּתָ֖ם",
+          "lemma": "פְּקֻדָּה",
+          "strong": "H6486",
+          "pron": "페쿧다트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "jeremiah 8:12",
+        "jeremiah 10:15",
+        "jeremiah 46:21",
+        "jeremiah 50:27",
+        "jeremiah 51:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֔לֶּה וּפְקֻדַּת֙",
+      "pron": "엘레 페쿧다트",
+      "lemmas": [
+        "אֵלֶּה",
+        "פְּקֻדָּה"
+      ],
+      "words": [
+        {
+          "word": "אֵ֔לֶּה",
+          "lemma": "אֵלֶּה",
+          "strong": "H428",
+          "pron": "엘레"
+        },
+        {
+          "word": "וּפְקֻדַּת֙",
+          "lemma": "פְּקֻדָּה",
+          "strong": "H6486",
+          "pron": "페쿧다트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 16:29",
+        "chronicles1 24:19",
+        "chronicles2 17:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁנַ֥ת פְּקֻדָּתָ֖ם",
+      "pron": "브샤님 페쿧다트",
+      "lemmas": [
+        "שָׁנֶה",
+        "פְּקֻדָּה"
+      ],
+      "words": [
+        {
+          "word": "שְׁנַ֥ת",
+          "lemma": "שָׁנֶה",
+          "strong": "H8141",
+          "pron": "브샤님"
+        },
+        {
+          "word": "פְּקֻדָּתָ֖ם",
+          "lemma": "פְּקֻדָּה",
+          "strong": "H6486",
+          "pron": "페쿧다트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 11:23",
+        "jeremiah 23:12",
+        "jeremiah 48:44"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

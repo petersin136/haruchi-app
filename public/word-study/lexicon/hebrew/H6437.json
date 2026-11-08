@@ -1,6 +1,6 @@
 {
   "lemma": "פָּנָה",
-  "pron": "페네",
+  "pron": "바입누",
   "strong": "H6437",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "יְפֻנֶּה",
       "strong": "H3312",
-      "pron": "",
+      "pron": "예푼네",
       "glossKo": "여분네"
     },
     {
@@ -26,83 +26,202 @@
     {
       "lemma": "פָּנִים",
       "strong": "H6440",
-      "pron": "미페네",
+      "pron": "페네",
       "glossKo": "얼굴"
     }
   ],
   "defEn": "turn",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 135,
   "byBook": {
+    "deuteronomy": 16,
+    "ezekiel": 14,
+    "jeremiah": 10,
+    "chronicles2": 9,
+    "judges": 9,
     "psalms": 9,
-    "genesis": 4
+    "isaiah": 8,
+    "kings1": 8,
+    "exodus": 6,
+    "job": 5,
+    "joshua": 5,
+    "leviticus": 5,
+    "numbers": 5,
+    "samuel1": 5,
+    "genesis": 4,
+    "kings2": 4,
+    "samuel2": 3,
+    "ecclesiastes": 2,
+    "malachi": 2,
+    "haggai": 1,
+    "hosea": 1,
+    "nahum": 1,
+    "proverbs": 1,
+    "songofsolomon": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "פְּנֵה אֵלַ֥י",
-      "pron": "페네 엘레모",
+      "hebrew": "וּפָנִ֣יתִי אֲלֵיכֶ֔ם",
+      "pron": "바입누 엘",
       "lemmas": [
         "פָּנָה",
         "אֵל"
       ],
       "words": [
         {
-          "word": "פְּנֵה",
+          "word": "וּפָנִ֣יתִי",
           "lemma": "פָּנָה",
           "strong": "H6437",
-          "pron": "페네"
+          "pron": "바입누"
         },
         {
-          "word": "אֵלַ֥י",
+          "word": "אֲלֵיכֶ֔ם",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
         }
       ],
-      "count": 6,
+      "count": 34,
       "refs": [
-        "psalms 25:16",
-        "psalms 40:4",
-        "psalms 69:16",
-        "psalms 86:16",
-        "psalms 102:17",
-        "psalms 119:132"
+        "exodus 16:10",
+        "leviticus 19:4",
+        "leviticus 19:31",
+        "leviticus 20:6",
+        "leviticus 26:9",
+        "numbers 16:15",
+        "numbers 16:42",
+        "deuteronomy 9:27",
+        "deuteronomy 31:18",
+        "deuteronomy 31:20",
+        "joshua 15:7",
+        "judges 6:14"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "פְּנֵה אֵלַ֥י וְחָנֵּ֑נִי",
-      "pron": "페네 엘레모 한네니",
+      "hebrew": "פַּנּ֖וּ דֶּ֣רֶךְ",
+      "pron": "바입누 데레크",
       "lemmas": [
         "פָּנָה",
-        "אֵל",
-        "חָנַן"
+        "דֶּרֶךְ"
       ],
       "words": [
         {
-          "word": "פְּנֵה",
+          "word": "פַּנּ֖וּ",
           "lemma": "פָּנָה",
           "strong": "H6437",
-          "pron": "페네"
+          "pron": "바입누"
         },
         {
-          "word": "אֵלַ֥י",
-          "lemma": "אֵל",
-          "strong": "H413",
-          "pron": "엘레모"
-        },
-        {
-          "word": "וְחָנֵּ֑נִי",
-          "lemma": "חָנַן",
-          "strong": "H2603",
-          "pron": "한네니"
+          "word": "דֶּ֣רֶךְ",
+          "lemma": "דֶּרֶךְ",
+          "strong": "H1870",
+          "pron": "데레크"
         }
       ],
-      "count": 3,
+      "count": 8,
       "refs": [
-        "psalms 25:16",
-        "psalms 86:16",
-        "psalms 119:132"
+        "samuel1 13:18",
+        "job 24:18",
+        "isaiah 40:3",
+        "isaiah 57:14",
+        "isaiah 62:10",
+        "ezekiel 43:1",
+        "malachi 3:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁלֹשָׁ֣ה פֹנִ֣ים",
+      "pron": "셸로쉬 바입누",
+      "lemmas": [
+        "שָׁלוֹשׁ",
+        "פָּנָה"
+      ],
+      "words": [
+        {
+          "word": "שְׁלֹשָׁ֣ה",
+          "lemma": "שָׁלוֹשׁ",
+          "strong": "H7969",
+          "pron": "셸로쉬"
+        },
+        {
+          "word": "פֹנִ֣ים",
+          "lemma": "פָּנָה",
+          "strong": "H6437",
+          "pron": "바입누"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "kings1 7:25",
+        "chronicles2 4:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֨ר תִּפְנֶ֤ה",
+      "pron": "아셰르 바입누",
+      "lemmas": [
+        "אֲשֶׁר",
+        "פָּנָה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "תִּפְנֶ֤ה",
+          "lemma": "פָּנָה",
+          "strong": "H6437",
+          "pron": "바입누"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 20:6",
+        "samuel1 14:47",
+        "kings1 2:3",
+        "proverbs 17:8",
+        "ezekiel 9:2",
+        "ezekiel 10:11",
+        "ezekiel 43:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַפֹּנֶ֣ה קָדִ֔ים",
+      "pron": "바입누 카딤",
+      "lemmas": [
+        "פָּנָה",
+        "קָדִים"
+      ],
+      "words": [
+        {
+          "word": "הַפֹּנֶ֣ה",
+          "lemma": "פָּנָה",
+          "strong": "H6437",
+          "pron": "바입누"
+        },
+        {
+          "word": "קָדִ֔ים",
+          "lemma": "קָדִים",
+          "strong": "H6921",
+          "pron": "카딤"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "ezekiel 11:1",
+        "ezekiel 43:17",
+        "ezekiel 44:1",
+        "ezekiel 46:1",
+        "ezekiel 46:12",
+        "ezekiel 47:2"
       ],
       "glossKo": ""
     }

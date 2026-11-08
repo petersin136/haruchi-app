@@ -1,6 +1,6 @@
 {
   "lemma": "עֹז",
-  "pron": "옷",
+  "pron": "앗지",
   "strong": "H5797",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "מָעוֹז",
       "strong": "H4581",
-      "pron": "마옷",
+      "pron": "아마옷",
       "glossKo": "산성"
     },
     {
@@ -30,13 +30,13 @@
     {
       "lemma": "עֻזָּא",
       "strong": "H5798",
-      "pron": "",
+      "pron": "브웃자",
       "glossKo": "웃사"
     },
     {
       "lemma": "עֱזוּז",
       "strong": "H5807",
-      "pron": "베에줏오",
+      "pron": "베에주조",
       "glossKo": "그의 힘"
     },
     {
@@ -48,67 +48,179 @@
   ],
   "defEn": "strength; force; security; majesty; praise",
   "defKo": "",
-  "countOT": 44,
+  "countOT": 92,
   "byBook": {
-    "psalms": 44
+    "psalms": 44,
+    "proverbs": 9,
+    "ezekiel": 8,
+    "isaiah": 6,
+    "chronicles1": 4,
+    "job": 4,
+    "jeremiah": 3,
+    "chronicles2": 2,
+    "exodus": 2,
+    "judges": 2,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "ezra": 1,
+    "habakkuk": 1,
+    "leviticus": 1,
+    "micah": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "יְֽהוָ֗ה בְּעָזְּךָ֥",
-      "pron": "여호와 옷",
+      "hebrew": "יְהוָה֙ וְעֻזּ֔וֹ",
+      "pron": "여호와 앗지",
       "lemmas": [
         "יְהֹוָה",
         "עֹז"
       ],
       "words": [
         {
-          "word": "יְֽהוָ֗ה",
+          "word": "יְהוָה֙",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         },
         {
-          "word": "בְּעָזְּךָ֥",
+          "word": "וְעֻזּ֔וֹ",
           "lemma": "עֹז",
           "strong": "H5797",
-          "pron": "옷"
+          "pron": "앗지"
         }
       ],
-      "count": 7,
+      "count": 9,
       "refs": [
+        "chronicles1 16:11",
         "psalms 21:1",
         "psalms 21:13",
         "psalms 28:7",
         "psalms 28:8",
         "psalms 29:11",
         "psalms 93:1",
-        "psalms 105:4"
+        "psalms 105:4",
+        "jeremiah 16:19"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "תְּנ֥וּ עֹ֗ז",
-      "pron": "잇텐 옷",
+      "hebrew": "גְּא֣וֹן עֻזָּ֑הּ",
+      "pron": "게온카 앗지",
+      "lemmas": [
+        "גָּאוֹן",
+        "עֹז"
+      ],
+      "words": [
+        {
+          "word": "גְּא֣וֹן",
+          "lemma": "גָּאוֹן",
+          "strong": "H1347",
+          "pron": "게온카"
+        },
+        {
+          "word": "עֻזָּ֑הּ",
+          "lemma": "עֹז",
+          "strong": "H5797",
+          "pron": "앗지"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 26:19",
+        "ezekiel 24:21",
+        "ezekiel 30:6",
+        "ezekiel 30:18",
+        "ezekiel 33:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַטֵּֽה עֻזְּךָ֗",
+      "pron": "우맏데카 앗지",
+      "lemmas": [
+        "מַטֶּה",
+        "עֹז"
+      ],
+      "words": [
+        {
+          "word": "מַטֵּֽה",
+          "lemma": "מַטֶּה",
+          "strong": "H4294",
+          "pron": "우맏데카"
+        },
+        {
+          "word": "עֻזְּךָ֗",
+          "lemma": "עֹז",
+          "strong": "H5797",
+          "pron": "앗지"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 110:2",
+        "jeremiah 48:17",
+        "ezekiel 19:11",
+        "ezekiel 19:12",
+        "ezekiel 19:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְעָזְּךָ֖ אֶל",
+      "pron": "앗지 엘",
+      "lemmas": [
+        "עֹז",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "בְעָזְּךָ֖",
+          "lemma": "עֹז",
+          "strong": "H5797",
+          "pron": "앗지"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 15:13",
+        "psalms 59:9",
+        "psalms 59:17",
+        "ezekiel 19:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיִתֶּן עֹ֣ז",
+      "pron": "바잇텐 앗지",
       "lemmas": [
         "נָתַן",
         "עֹז"
       ],
       "words": [
         {
-          "word": "תְּנ֥וּ",
+          "word": "וְיִתֶּן",
           "lemma": "נָתַן",
           "strong": "H5414",
-          "pron": "잇텐"
+          "pron": "바잇텐"
         },
         {
-          "word": "עֹ֗ז",
+          "word": "עֹ֣ז",
           "lemma": "עֹז",
           "strong": "H5797",
-          "pron": "옷"
+          "pron": "앗지"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
+        "samuel1 2:10",
         "psalms 68:34",
         "psalms 68:35",
         "psalms 86:16"

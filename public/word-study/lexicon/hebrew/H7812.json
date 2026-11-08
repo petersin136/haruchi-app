@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁחָה",
-  "pron": "에솃타하베",
+  "pron": "바이솃타후",
   "strong": "H7812",
   "posKo": "동사",
   "root": null,
@@ -8,175 +8,235 @@
     {
       "lemma": "שְׁחוּת",
       "strong": "H7816",
-      "pron": "",
-      "glossKo": "구덩이"
+      "pron": "비셰후토",
+      "glossKo": "그의 구덩이"
     },
     {
       "lemma": "שְׁחִית",
       "strong": "H7825",
-      "pron": "미셰히토타므",
+      "pron": "밋셰히토탐",
       "glossKo": "그들의 구덩이"
     }
   ],
   "defEn": "depress; prostrate",
   "defKo": "",
-  "countOT": 42,
+  "countOT": 175,
   "byBook": {
     "genesis": 25,
-    "psalms": 17
+    "psalms": 17,
+    "isaiah": 14,
+    "samuel2": 13,
+    "kings1": 12,
+    "kings2": 12,
+    "samuel1": 12,
+    "chronicles2": 11,
+    "exodus": 11,
+    "deuteronomy": 8,
+    "jeremiah": 8,
+    "ezekiel": 4,
+    "judges": 4,
+    "chronicles1": 3,
+    "esther": 3,
+    "joshua": 3,
+    "nehemiah": 3,
+    "zephaniah": 3,
+    "numbers": 2,
+    "zechariah": 2,
+    "job": 1,
+    "leviticus": 1,
+    "micah": 1,
+    "proverbs": 1,
+    "ruth": 1
   },
   "phrases": [
     {
-      "hebrew": "וַיִּשְׁתַּ֖חוּ אָֽרְצָה",
-      "pron": "에솃타하베 에레츠",
+      "hebrew": "אַ֖רְצָה וַיִּשְׁתָּֽחוּ",
+      "pron": "하아레츠 바이솃타후",
       "lemmas": [
-        "שָׁחָה",
-        "אֶרֶץ"
+        "אֶרֶץ",
+        "שָׁחָה"
       ],
       "words": [
         {
-          "word": "וַיִּשְׁתַּ֖חוּ",
-          "lemma": "שָׁחָה",
-          "strong": "H7812",
-          "pron": "에솃타하베"
-        },
-        {
-          "word": "אָֽרְצָה",
+          "word": "אַ֖רְצָה",
           "lemma": "אֶרֶץ",
           "strong": "H776",
-          "pron": "에레츠"
+          "pron": "하아레츠"
+        },
+        {
+          "word": "וַיִּשְׁתָּֽחוּ",
+          "lemma": "שָׁחָה",
+          "strong": "H7812",
+          "pron": "바이솃타후"
         }
       ],
-      "count": 5,
+      "count": 15,
       "refs": [
-        "genesis 18:2",
-        "genesis 24:52",
-        "genesis 33:3",
-        "genesis 37:10",
-        "genesis 43:26"
+        "exodus 34:8",
+        "leviticus 26:1",
+        "joshua 5:14",
+        "samuel1 20:41",
+        "samuel1 24:8",
+        "samuel1 28:14",
+        "samuel2 1:2",
+        "samuel2 14:4",
+        "samuel2 14:22",
+        "kings1 1:31",
+        "job 1:20",
+        "psalms 22:27"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הִשְׁתַּחֲו֥וּ לַ֝יהוָ֗ה",
-      "pron": "에솃타하베 여호와",
+      "hebrew": "לְהִֽשְׁתַּחֲוֺ֖ת לַיהוָֽה",
+      "pron": "바이솃타후 여호와",
       "lemmas": [
         "שָׁחָה",
         "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "הִשְׁתַּחֲו֥וּ",
+          "word": "לְהִֽשְׁתַּחֲוֺ֖ת",
           "lemma": "שָׁחָה",
           "strong": "H7812",
-          "pron": "에솃타하베"
+          "pron": "바이솃타후"
         },
         {
-          "word": "לַ֝יהוָ֗ה",
+          "word": "לַיהוָֽה",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         }
       ],
-      "count": 4,
+      "count": 13,
       "refs": [
+        "genesis 24:26",
+        "genesis 24:48",
+        "samuel1 15:25",
+        "samuel1 15:30",
+        "chronicles1 16:29",
+        "chronicles1 29:20",
+        "chronicles2 20:18",
+        "nehemiah 8:6",
+        "nehemiah 9:3",
         "psalms 29:2",
         "psalms 96:9",
-        "genesis 24:26",
-        "genesis 24:48"
+        "isaiah 27:13"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וישתחו וְיִֽשְׁתַּחֲו֤וּ",
-      "pron": "에솃타하베 에솃타하베",
+      "hebrew": "אֲחֵרִ֔ים וְהִשְׁתַּחֲוִיתֶ֖ם",
+      "pron": "아헤르 바이솃타후",
       "lemmas": [
-        "שָׁחָה",
+        "אַחֵר",
         "שָׁחָה"
       ],
       "words": [
         {
-          "word": "וישתחו",
-          "lemma": "שָׁחָה",
-          "strong": "H7812",
-          "pron": "에솃타하베"
+          "word": "אֲחֵרִ֔ים",
+          "lemma": "אַחֵר",
+          "strong": "H312",
+          "pron": "아헤르"
         },
         {
-          "word": "וְיִֽשְׁתַּחֲו֤וּ",
+          "word": "וְהִשְׁתַּחֲוִיתֶ֖ם",
           "lemma": "שָׁחָה",
           "strong": "H7812",
-          "pron": "에솃타하베"
+          "pron": "바이솃타후"
         }
       ],
-      "count": 4,
+      "count": 10,
       "refs": [
-        "genesis 27:29",
-        "genesis 43:28"
+        "deuteronomy 11:16",
+        "deuteronomy 17:3",
+        "deuteronomy 29:26",
+        "joshua 23:16",
+        "judges 2:17",
+        "kings1 9:6",
+        "kings1 9:9",
+        "chronicles2 7:19",
+        "chronicles2 7:22",
+        "jeremiah 1:16"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַיִּשְׁתַּ֥חוּ אַפַּ֖יִם",
-      "pron": "에솃타하베 브압오",
+      "hebrew": "אֱלֹהִ֣ים אֲחֵרִ֔ים וְהִשְׁתַּחֲוִיתֶ֖ם",
+      "pron": "엘로힘 아헤르 바이솃타후",
       "lemmas": [
-        "שָׁחָה",
-        "אַף"
+        "אֱלֹהִים",
+        "אַחֵר",
+        "שָׁחָה"
       ],
       "words": [
         {
-          "word": "וַיִּשְׁתַּ֥חוּ",
-          "lemma": "שָׁחָה",
-          "strong": "H7812",
-          "pron": "에솃타하베"
+          "word": "אֱלֹהִ֣ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
         },
         {
-          "word": "אַפַּ֖יִם",
-          "lemma": "אַף",
-          "strong": "H639",
-          "pron": "브압오"
+          "word": "אֲחֵרִ֔ים",
+          "lemma": "אַחֵר",
+          "strong": "H312",
+          "pron": "아헤르"
+        },
+        {
+          "word": "וְהִשְׁתַּחֲוִיתֶ֖ם",
+          "lemma": "שָׁחָה",
+          "strong": "H7812",
+          "pron": "바이솃타후"
         }
       ],
-      "count": 3,
+      "count": 10,
       "refs": [
-        "genesis 19:1",
-        "genesis 42:6",
-        "genesis 48:12"
+        "deuteronomy 11:16",
+        "deuteronomy 17:3",
+        "deuteronomy 29:26",
+        "joshua 23:16",
+        "judges 2:17",
+        "kings1 9:6",
+        "kings1 9:9",
+        "chronicles2 7:19",
+        "chronicles2 7:22",
+        "jeremiah 1:16"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַיִּשְׁתַּ֥חוּ אַפַּ֖יִם אָֽרְצָה",
-      "pron": "에솃타하베 브압오 에레츠",
+      "hebrew": "וַיִּשְׁתַּ֧חוּ לַמֶּ֛לֶךְ",
+      "pron": "바이솃타후 멜레크",
       "lemmas": [
         "שָׁחָה",
-        "אַף",
-        "אֶרֶץ"
+        "מֶלֶךְ"
       ],
       "words": [
         {
-          "word": "וַיִּשְׁתַּ֥חוּ",
+          "word": "וַיִּשְׁתַּ֧חוּ",
           "lemma": "שָׁחָה",
           "strong": "H7812",
-          "pron": "에솃타하베"
+          "pron": "바이솃타후"
         },
         {
-          "word": "אַפַּ֖יִם",
-          "lemma": "אַף",
-          "strong": "H639",
-          "pron": "브압오"
-        },
-        {
-          "word": "אָֽרְצָה",
-          "lemma": "אֶרֶץ",
-          "strong": "H776",
-          "pron": "에레츠"
+          "word": "לַמֶּ֛לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
         }
       ],
-      "count": 3,
+      "count": 10,
       "refs": [
-        "genesis 19:1",
-        "genesis 42:6",
-        "genesis 48:12"
+        "samuel2 18:28",
+        "samuel2 24:20",
+        "kings1 1:16",
+        "kings1 1:23",
+        "kings1 1:31",
+        "kings1 1:47",
+        "kings1 1:53",
+        "chronicles2 24:17",
+        "zechariah 14:16",
+        "zechariah 14:17"
       ],
       "glossKo": ""
     }

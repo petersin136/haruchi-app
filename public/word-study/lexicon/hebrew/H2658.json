@@ -1,6 +1,6 @@
 {
   "lemma": "חָפַר",
-  "pron": "바야헵페레후",
+  "pron": "하파렛티",
   "strong": "H2658",
   "posKo": "동사",
   "root": null,
@@ -8,33 +8,71 @@
     {
       "lemma": "חָפֵר",
       "strong": "H2659",
-      "pron": "예헵파루",
+      "pron": "바예헵파루",
       "glossKo": "수치를 당하다"
     },
     {
       "lemma": "חֵפֶר",
       "strong": "H2660",
-      "pron": "",
+      "pron": "브헤페르",
       "glossKo": "헤벨"
     },
     {
       "lemma": "חֲפֹר",
       "strong": "H2661",
-      "pron": "",
+      "pron": "라헵포르",
       "glossKo": "쥐구멍"
     }
   ],
   "defEn": "pry into",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 22,
   "byBook": {
     "genesis": 8,
-    "psalms": 2
+    "job": 4,
+    "deuteronomy": 2,
+    "joshua": 2,
+    "psalms": 2,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "jeremiah": 1,
+    "numbers": 1
   },
   "phrases": [
     {
+      "hebrew": "לַחְפֹּ֥ר אֶת",
+      "pron": "하파렛티 에트",
+      "lemmas": [
+        "חָפַר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "לַחְפֹּ֥ר",
+          "lemma": "חָפַר",
+          "strong": "H2658",
+          "pron": "하파렛티"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 21:30",
+        "genesis 26:18",
+        "deuteronomy 1:22",
+        "joshua 2:2",
+        "joshua 2:3"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "אֲשֶׁ֤ר חָֽפְרוּ֙",
-      "pron": "아셰르 바야헵페레후",
+      "pron": "아셰르 하파렛티",
       "lemmas": [
         "אֲשֶׁר",
         "חָפַר"
@@ -50,7 +88,7 @@
           "word": "חָֽפְרוּ֙",
           "lemma": "חָפַר",
           "strong": "H2658",
-          "pron": "바야헵페레후"
+          "pron": "하파렛티"
         }
       ],
       "count": 3,

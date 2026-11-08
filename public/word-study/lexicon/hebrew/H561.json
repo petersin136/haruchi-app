@@ -1,6 +1,6 @@
 {
   "lemma": "אֵמֶר",
-  "pron": "아마라위",
+  "pron": "임레",
   "strong": "H561",
   "posKo": "명사",
   "root": {
@@ -18,20 +18,20 @@
     {
       "lemma": "אָמִיר",
       "strong": "H534",
-      "pron": "",
+      "pron": "아미르",
       "glossKo": "꼭대기"
     },
     {
       "lemma": "אָמַר",
       "strong": "H559",
-      "pron": "아마르",
+      "pron": "바요메르",
       "glossKo": "말하다"
     },
     {
       "lemma": "אֲמַר",
       "strong": "H560",
-      "pron": "",
-      "glossKo": "말하다"
+      "pron": "암린",
+      "glossKo": "말하는 이"
     },
     {
       "lemma": "אֹמֶר",
@@ -42,21 +42,29 @@
     {
       "lemma": "אִמֵּר",
       "strong": "H564",
-      "pron": "",
+      "pron": "임메르",
       "glossKo": "임멜"
     }
   ],
   "defEn": "something said",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 49,
   "byBook": {
+    "proverbs": 22,
+    "job": 11,
     "psalms": 7,
-    "genesis": 1
+    "isaiah": 2,
+    "numbers": 2,
+    "deuteronomy": 1,
+    "genesis": 1,
+    "hosea": 1,
+    "joshua": 1,
+    "judges": 1
   },
   "phrases": [
     {
       "hebrew": "לְאִמְרֵי פִֽי",
-      "pron": "아마라위 브피후",
+      "pron": "임레 피하",
       "lemmas": [
         "אֵמֶר",
         "פֶּה"
@@ -66,21 +74,120 @@
           "word": "לְאִמְרֵי",
           "lemma": "אֵמֶר",
           "strong": "H561",
-          "pron": "아마라위"
+          "pron": "임레"
         },
         {
           "word": "פִֽי",
           "lemma": "פֶּה",
           "strong": "H6310",
-          "pron": "브피후"
+          "pron": "피하"
         }
       ],
-      "count": 4,
+      "count": 14,
       "refs": [
+        "deuteronomy 32:1",
+        "job 8:2",
+        "job 23:12",
         "psalms 19:14",
         "psalms 54:2",
         "psalms 78:1",
-        "psalms 138:4"
+        "psalms 138:4",
+        "proverbs 4:5",
+        "proverbs 5:7",
+        "proverbs 6:2",
+        "proverbs 7:24",
+        "proverbs 8:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִמְרֵי אֵ֑ל",
+      "pron": "임레 르엘",
+      "lemmas": [
+        "אֵמֶר",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "אִמְרֵי",
+          "lemma": "אֵמֶר",
+          "strong": "H561",
+          "pron": "임레"
+        },
+        {
+          "word": "אֵ֑ל",
+          "lemma": "אֵל",
+          "strong": "H410",
+          "pron": "르엘"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 24:4",
+        "numbers 24:16",
+        "job 20:29",
+        "job 34:37",
+        "psalms 107:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שֹׁמֵ֖עַ אִמְרֵי",
+      "pron": "바이솀우 임레",
+      "lemmas": [
+        "שָׁמַע",
+        "אֵמֶר"
+      ],
+      "words": [
+        {
+          "word": "שֹׁמֵ֖עַ",
+          "lemma": "שָׁמַע",
+          "strong": "H8085",
+          "pron": "바이솀우"
+        },
+        {
+          "word": "אִמְרֵי",
+          "lemma": "אֵמֶר",
+          "strong": "H561",
+          "pron": "임레"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 24:4",
+        "numbers 24:16",
+        "psalms 138:4",
+        "psalms 141:6",
+        "isaiah 41:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲמָרָ֑י וְדַ֥עַת",
+      "pron": "임레 아다아트",
+      "lemmas": [
+        "אֵמֶר",
+        "דַּעַת"
+      ],
+      "words": [
+        {
+          "word": "אֲמָרָ֑י",
+          "lemma": "אֵמֶר",
+          "strong": "H561",
+          "pron": "임레"
+        },
+        {
+          "word": "וְדַ֥עַת",
+          "lemma": "דַּעַת",
+          "strong": "H1847",
+          "pron": "아다아트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 33:3",
+        "proverbs 19:27",
+        "proverbs 23:12"
       ],
       "glossKo": ""
     }

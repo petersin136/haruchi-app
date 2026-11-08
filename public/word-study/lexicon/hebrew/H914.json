@@ -8,13 +8,13 @@
     {
       "lemma": "בְּדִיל",
       "strong": "H913",
-      "pron": "",
+      "pron": "아베딜",
       "glossKo": "주석"
     },
     {
       "lemma": "בָּדָל",
       "strong": "H915",
-      "pron": "",
+      "pron": "베달",
       "glossKo": "조각"
     },
     {
@@ -26,19 +26,30 @@
     {
       "lemma": "מִבְדָּלָה",
       "strong": "H3995",
-      "pron": "",
+      "pron": "아밉달로트",
       "glossKo": "분리된 곳"
     }
   ],
   "defEn": "divide",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 42,
   "byBook": {
-    "genesis": 5
+    "leviticus": 8,
+    "ezra": 6,
+    "deuteronomy": 5,
+    "genesis": 5,
+    "chronicles1": 3,
+    "ezekiel": 3,
+    "isaiah": 3,
+    "nehemiah": 3,
+    "numbers": 3,
+    "chronicles2": 1,
+    "exodus": 1,
+    "kings1": 1
   },
   "phrases": [
     {
-      "hebrew": "מַבְדִּ֔יל בֵּ֥ין",
+      "hebrew": "לְהַבְדִּ֕יל בֵּ֥ין",
       "pron": "바얍델 벤",
       "lemmas": [
         "בָּדַל",
@@ -46,7 +57,7 @@
       ],
       "words": [
         {
-          "word": "מַבְדִּ֔יל",
+          "word": "לְהַבְדִּ֕יל",
           "lemma": "בָּדַל",
           "strong": "H914",
           "pron": "바얍델"
@@ -58,12 +69,135 @@
           "pron": "벤"
         }
       ],
-      "count": 4,
+      "count": 10,
       "refs": [
         "genesis 1:6",
         "genesis 1:7",
         "genesis 1:14",
-        "genesis 1:18"
+        "genesis 1:18",
+        "leviticus 10:10",
+        "leviticus 11:47",
+        "leviticus 20:25",
+        "isaiah 59:2",
+        "ezekiel 22:26",
+        "ezekiel 42:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֣א יַבְדִּיל֒",
+      "pron": "로 바얍델",
+      "lemmas": [
+        "לֹא",
+        "בָּדַל"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יַבְדִּיל֒",
+          "lemma": "בָּדַל",
+          "strong": "H914",
+          "pron": "바얍델"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 1:17",
+        "leviticus 5:8",
+        "ezra 9:1",
+        "ezekiel 22:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִבְדִּ֤יל יְהוָה֙",
+      "pron": "바얍델 여호와",
+      "lemmas": [
+        "בָּדַל",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "הִבְדִּ֤יל",
+          "lemma": "בָּדַל",
+          "strong": "H914",
+          "pron": "바얍델"
+        },
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 10:8",
+        "deuteronomy 29:21",
+        "isaiah 56:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִבְדַּ֥לְתִּי אֶתְכֶ֖ם",
+      "pron": "바얍델 에트",
+      "lemmas": [
+        "בָּדַל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הִבְדַּ֥לְתִּי",
+          "lemma": "בָּדַל",
+          "strong": "H914",
+          "pron": "바얍델"
+        },
+        {
+          "word": "אֶתְכֶ֖ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 20:24",
+        "leviticus 20:26",
+        "numbers 8:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נִבְדְּל֞וּ הָעָ֤ם",
+      "pron": "바얍델 암",
+      "lemmas": [
+        "בָּדַל",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "נִבְדְּל֞וּ",
+          "lemma": "בָּדַל",
+          "strong": "H914",
+          "pron": "바얍델"
+        },
+        {
+          "word": "הָעָ֤ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 9:1",
+        "ezra 10:11",
+        "nehemiah 10:28"
       ],
       "glossKo": ""
     }

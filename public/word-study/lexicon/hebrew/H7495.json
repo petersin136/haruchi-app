@@ -1,6 +1,6 @@
 {
   "lemma": "רָפָא",
-  "pron": "레파에니",
+  "pron": "바이렙파",
   "strong": "H7495",
   "posKo": "동사",
   "root": null,
@@ -8,19 +8,19 @@
     {
       "lemma": "יִרְפְּאֵל",
       "strong": "H3416",
-      "pron": "",
+      "pron": "브이렙페엘",
       "glossKo": "이르브엘"
     },
     {
       "lemma": "מַרְפֵּא",
       "strong": "H4832",
-      "pron": "",
+      "pron": "마렙페",
       "glossKo": "치유"
     },
     {
       "lemma": "רָפָא",
       "strong": "H7496",
-      "pron": "레파임",
+      "pron": "하레파임",
       "glossKo": "유령"
     },
     {
@@ -32,22 +32,191 @@
     {
       "lemma": "רְפֻאָה",
       "strong": "H7499",
-      "pron": "",
+      "pron": "레푸오트",
       "glossKo": "치유"
     },
     {
       "lemma": "רִפְאוּת",
       "strong": "H7500",
-      "pron": "",
+      "pron": "립우트",
       "glossKo": "치유"
     }
   ],
   "defEn": "mend; cure",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 69,
   "byBook": {
+    "jeremiah": 14,
+    "isaiah": 7,
     "psalms": 7,
-    "genesis": 3
+    "kings2": 6,
+    "ezekiel": 5,
+    "hosea": 5,
+    "chronicles2": 4,
+    "leviticus": 4,
+    "deuteronomy": 3,
+    "exodus": 3,
+    "genesis": 3,
+    "job": 2,
+    "ecclesiastes": 1,
+    "kings1": 1,
+    "lamentations": 1,
+    "numbers": 1,
+    "samuel1": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הָרֹפְאִ֖ים אֶת",
+      "pron": "바이렙파 에트",
+      "lemmas": [
+        "רָפָא",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הָרֹפְאִ֖ים",
+          "lemma": "רָפָא",
+          "strong": "H7495",
+          "pron": "바이렙파"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 50:2",
+        "kings1 18:30",
+        "chronicles2 7:14",
+        "chronicles2 30:20",
+        "jeremiah 6:14",
+        "jeremiah 8:11",
+        "jeremiah 51:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְרַפֹּ֥א יְרַפֵּֽא",
+      "pron": "바이렙파 바이렙파",
+      "lemmas": [
+        "רָפָא",
+        "רָפָא"
+      ],
+      "words": [
+        {
+          "word": "וְרַפֹּ֥א",
+          "lemma": "רָפָא",
+          "strong": "H7495",
+          "pron": "바이렙파"
+        },
+        {
+          "word": "יְרַפֵּֽא",
+          "lemma": "רָפָא",
+          "strong": "H7495",
+          "pron": "바이렙파"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 21:19",
+        "jeremiah 51:9",
+        "ezekiel 47:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֣א נִרְפָּ֔תָה",
+      "pron": "로 바이렙파",
+      "lemmas": [
+        "לֹא",
+        "רָפָא"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "נִרְפָּ֔תָה",
+          "lemma": "רָפָא",
+          "strong": "H7495",
+          "pron": "바이렙파"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 51:9",
+        "ezekiel 34:4",
+        "ezekiel 47:11",
+        "zechariah 11:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֖ה רֹפְאֶֽךָ",
+      "pron": "여호와 바이렙파",
+      "lemmas": [
+        "יְהֹוָה",
+        "רָפָא"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "רֹפְאֶֽךָ",
+          "lemma": "רָפָא",
+          "strong": "H7495",
+          "pron": "바이렙파"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 15:26",
+        "kings2 2:21",
+        "isaiah 57:19",
+        "jeremiah 17:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֥י נִרְפָּ֖א",
+      "pron": "키 바이렙파",
+      "lemmas": [
+        "כִּי",
+        "רָפָא"
+      ],
+      "words": [
+        {
+          "word": "כִּ֥י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "נִרְפָּ֖א",
+          "lemma": "רָפָא",
+          "strong": "H7495",
+          "pron": "바이렙파"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 14:48",
+        "kings2 20:8",
+        "chronicles2 16:12",
+        "hosea 11:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

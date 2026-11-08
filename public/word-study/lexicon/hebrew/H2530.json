@@ -1,6 +1,6 @@
 {
   "lemma": "חָמַד",
-  "pron": "아네헤마딤",
+  "pron": "네헤맏",
   "strong": "H2530",
   "posKo": "동사",
   "root": null,
@@ -8,28 +8,69 @@
     {
       "lemma": "חֶמֶד",
       "strong": "H2531",
-      "pron": "",
+      "pron": "헤멛",
       "glossKo": "소망"
     },
     {
       "lemma": "מַחְמָד",
       "strong": "H4261",
-      "pron": "",
+      "pron": "마헤맏",
       "glossKo": "사랑스러운 것"
     },
     {
       "lemma": "מַחְמֻד",
       "strong": "H4262",
-      "pron": "",
-      "glossKo": "값진 것"
+      "pron": "마하무데하",
+      "glossKo": "그녀의 값진 것"
     }
   ],
   "defEn": "delight in",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 28,
   "byBook": {
+    "daniel": 6,
+    "proverbs": 4,
+    "exodus": 3,
+    "isaiah": 3,
     "psalms": 3,
-    "genesis": 2
+    "deuteronomy": 2,
+    "genesis": 2,
+    "chronicles2": 1,
+    "job": 1,
+    "joshua": 1,
+    "micah": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹ֥א תַחְמֹ֖ד",
+      "pron": "로 네헤맏",
+      "lemmas": [
+        "לֹא",
+        "חָמַד"
+      ],
+      "words": [
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תַחְמֹ֖ד",
+          "lemma": "חָמַד",
+          "strong": "H2530",
+          "pron": "네헤맏"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 20:17",
+        "exodus 34:24",
+        "deuteronomy 5:21",
+        "deuteronomy 7:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

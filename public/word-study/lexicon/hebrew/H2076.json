@@ -1,6 +1,6 @@
 {
   "lemma": "זָבַח",
-  "pron": "집후",
+  "pron": "바잇바흐",
   "strong": "H2076",
   "posKo": "동사",
   "root": null,
@@ -8,57 +8,238 @@
     {
       "lemma": "דְּבַח",
       "strong": "H1684",
-      "pron": "",
+      "pron": "답힌",
       "glossKo": "제물을 드리다(아람)"
     },
     {
       "lemma": "זֶבַח",
       "strong": "H2077",
-      "pron": "집헤",
+      "pron": "제바흐",
       "glossKo": "제물"
     },
     {
       "lemma": "מִזְבֵּחַ",
       "strong": "H4196",
-      "pron": "밋바하카",
-      "glossKo": "너의 제단"
+      "pron": "밋베아흐",
+      "glossKo": "제단"
     }
   ],
   "defEn": "slaughter",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 134,
   "byBook": {
+    "exodus": 18,
+    "kings1": 15,
+    "chronicles2": 14,
+    "samuel1": 14,
+    "deuteronomy": 12,
     "psalms": 9,
-    "genesis": 2
+    "kings2": 8,
+    "leviticus": 8,
+    "hosea": 6,
+    "ezekiel": 5,
+    "chronicles1": 3,
+    "isaiah": 3,
+    "ecclesiastes": 2,
+    "genesis": 2,
+    "jonah": 2,
+    "judges": 2,
+    "malachi": 2,
+    "nehemiah": 2,
+    "samuel2": 2,
+    "ezra": 1,
+    "habakkuk": 1,
+    "joshua": 1,
+    "numbers": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "זִבְח֥וּ זִבְחֵי",
-      "pron": "집후 집헤",
+      "hebrew": "וְנִזְבְּחָ֖ה לַֽיהוָ֥ה",
+      "pron": "바잇바흐 여호와",
+      "lemmas": [
+        "זָבַח",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וְנִזְבְּחָ֖ה",
+          "lemma": "זָבַח",
+          "strong": "H2076",
+          "pron": "바잇바흐"
+        },
+        {
+          "word": "לַֽיהוָ֥ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 21,
+      "refs": [
+        "exodus 3:18",
+        "exodus 5:3",
+        "exodus 5:17",
+        "exodus 8:8",
+        "exodus 8:26",
+        "exodus 8:27",
+        "exodus 8:28",
+        "exodus 8:29",
+        "exodus 13:15",
+        "deuteronomy 15:21",
+        "deuteronomy 17:1",
+        "samuel1 1:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זֹבְחִ֥ים זֶ֖בַח",
+      "pron": "바잇바흐 제바흐",
       "lemmas": [
         "זָבַח",
         "זֶבַח"
       ],
       "words": [
         {
-          "word": "זִבְח֥וּ",
+          "word": "זֹבְחִ֥ים",
           "lemma": "זָבַח",
           "strong": "H2076",
-          "pron": "집후"
+          "pron": "바잇바흐"
         },
         {
-          "word": "זִבְחֵי",
+          "word": "זֶ֖בַח",
           "lemma": "זֶבַח",
           "strong": "H2077",
-          "pron": "집헤"
+          "pron": "제바흐"
         }
       ],
-      "count": 4,
+      "count": 20,
       "refs": [
-        "psalms 4:5",
-        "psalms 107:22",
-        "psalms 116:17",
-        "genesis 46:1"
+        "genesis 46:1",
+        "exodus 24:5",
+        "leviticus 17:5",
+        "leviticus 19:5",
+        "leviticus 22:29",
+        "deuteronomy 18:3",
+        "deuteronomy 33:19",
+        "judges 16:23",
+        "samuel1 2:13",
+        "samuel1 6:15",
+        "samuel1 10:8",
+        "kings1 8:62"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָעָ֛ם מְזַבְּחִ֥ים",
+      "pron": "암 바잇바흐",
+      "lemmas": [
+        "עַם",
+        "זָבַח"
+      ],
+      "words": [
+        {
+          "word": "הָעָ֛ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "מְזַבְּחִ֥ים",
+          "lemma": "זָבַח",
+          "strong": "H2076",
+          "pron": "바잇바흐"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 8:8",
+        "exodus 8:29",
+        "kings1 3:2",
+        "kings1 22:44",
+        "kings2 12:3",
+        "kings2 14:4",
+        "kings2 15:4",
+        "kings2 15:35",
+        "chronicles2 7:4",
+        "chronicles2 33:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנִזְבְּחָ֖ה לַֽיהוָ֥ה אֱלֹהֵֽינוּ",
+      "pron": "바잇바흐 여호와 엘로힘",
+      "lemmas": [
+        "זָבַח",
+        "יְהֹוָה",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "וְנִזְבְּחָ֖ה",
+          "lemma": "זָבַח",
+          "strong": "H2076",
+          "pron": "바잇바흐"
+        },
+        {
+          "word": "לַֽיהוָ֥ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "אֱלֹהֵֽינוּ",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 3:18",
+        "exodus 5:3",
+        "exodus 8:26",
+        "exodus 8:27",
+        "exodus 8:28",
+        "deuteronomy 15:21",
+        "deuteronomy 17:1",
+        "samuel1 15:15",
+        "samuel1 15:21",
+        "chronicles2 11:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְזַבְּחִ֥ים וּֽמְקַטְּרִ֖ים",
+      "pron": "바잇바흐 브히케다렛타",
+      "lemmas": [
+        "זָבַח",
+        "קָטַר"
+      ],
+      "words": [
+        {
+          "word": "מְזַבְּחִ֥ים",
+          "lemma": "זָבַח",
+          "strong": "H2076",
+          "pron": "바잇바흐"
+        },
+        {
+          "word": "וּֽמְקַטְּרִ֖ים",
+          "lemma": "קָטַר",
+          "strong": "H6999",
+          "pron": "브히케다렛타"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "kings1 3:3",
+        "kings1 22:44",
+        "kings2 12:3",
+        "kings2 14:4",
+        "kings2 15:4",
+        "kings2 15:35",
+        "kings2 16:4",
+        "chronicles2 28:4"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "מָסַס",
-  "pron": "나멧",
+  "pron": "브나맛",
   "strong": "H4549",
   "posKo": "동사",
   "root": null,
@@ -14,21 +14,90 @@
     {
       "lemma": "מָס",
       "strong": "H4523",
-      "pron": "",
+      "pron": "라맛",
       "glossKo": "낙심한"
     },
     {
       "lemma": "מִסָּה",
       "strong": "H4530",
-      "pron": "",
+      "pron": "밋사트",
       "glossKo": "분량"
     }
   ],
   "defEn": "liquefy; waste; faint",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 21,
   "byBook": {
-    "psalms": 4
+    "isaiah": 4,
+    "psalms": 4,
+    "joshua": 3,
+    "deuteronomy": 2,
+    "samuel2": 2,
+    "exodus": 1,
+    "ezekiel": 1,
+    "judges": 1,
+    "micah": 1,
+    "nahum": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הֵמַ֨סּוּ אֶת",
+      "pron": "브나맛 에트",
+      "lemmas": [
+        "מָסַס",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הֵמַ֨סּוּ",
+          "lemma": "מָסַס",
+          "strong": "H4549",
+          "pron": "브나맛"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 1:28",
+        "deuteronomy 20:8",
+        "samuel1 15:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּמַּ֣ס לְבָבֵ֔נוּ",
+      "pron": "브나맛 레바비",
+      "lemmas": [
+        "מָסַס",
+        "לֵבָב"
+      ],
+      "words": [
+        {
+          "word": "וַיִּמַּ֣ס",
+          "lemma": "מָסַס",
+          "strong": "H4549",
+          "pron": "브나맛"
+        },
+        {
+          "word": "לְבָבֵ֔נוּ",
+          "lemma": "לֵבָב",
+          "strong": "H3824",
+          "pron": "레바비"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 2:11",
+        "joshua 5:1",
+        "joshua 7:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

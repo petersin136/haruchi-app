@@ -1,8 +1,8 @@
 {
   "lemma": "לֻלָאָה",
-  "pron": "룰라아",
+  "pron": "룰오트",
   "strong": "H3924",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "לוּל",
     "strong": "H3883",
@@ -12,19 +12,146 @@
     {
       "lemma": "לוּל",
       "strong": "H3883",
-      "pron": "",
+      "pron": "우브룰림",
       "glossKo": "나선 계단"
     },
     {
       "lemma": "לַיִל",
       "strong": "H3915",
-      "pron": "바라엘라",
+      "pron": "라엘라",
       "glossKo": "밤"
     }
   ],
   "defEn": "loop",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "exodus": 13
+  },
+  "phrases": [
+    {
+      "hebrew": "חֲמִשִּׁ֣ים לֻֽלָאֹ֗ת",
+      "pron": "하밋심 룰오트",
+      "lemmas": [
+        "חֲמִשִּׁים",
+        "לֻלָאָה"
+      ],
+      "words": [
+        {
+          "word": "חֲמִשִּׁ֣ים",
+          "lemma": "חֲמִשִּׁים",
+          "strong": "H2572",
+          "pron": "하밋심"
+        },
+        {
+          "word": "לֻֽלָאֹ֗ת",
+          "lemma": "לֻלָאָה",
+          "strong": "H3924",
+          "pron": "룰오트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 26:5",
+        "exodus 26:10",
+        "exodus 36:12",
+        "exodus 36:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַחֲמִשִּׁ֣ים לֻלָאֹ֗ת עָשָׂה֙",
+      "pron": "하밋심 룰오트 바야아스",
+      "lemmas": [
+        "חֲמִשִּׁים",
+        "לֻלָאָה",
+        "עָשָׂה"
+      ],
+      "words": [
+        {
+          "word": "וַחֲמִשִּׁ֣ים",
+          "lemma": "חֲמִשִּׁים",
+          "strong": "H2572",
+          "pron": "하밋심"
+        },
+        {
+          "word": "לֻלָאֹ֗ת",
+          "lemma": "לֻלָאָה",
+          "strong": "H3924",
+          "pron": "룰오트"
+        },
+        {
+          "word": "עָשָׂה֙",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 26:5",
+        "exodus 36:12",
+        "exodus 36:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֻלָאֹ֗ת עָשָׂה֙",
+      "pron": "룰오트 바야아스",
+      "lemmas": [
+        "לֻלָאָה",
+        "עָשָׂה"
+      ],
+      "words": [
+        {
+          "word": "לֻלָאֹ֗ת",
+          "lemma": "לֻלָאָה",
+          "strong": "H3924",
+          "pron": "룰오트"
+        },
+        {
+          "word": "עָשָׂה֙",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 26:5",
+        "exodus 36:12",
+        "exodus 36:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעָשִׂ֜יתָ לֻֽלְאֹ֣ת",
+      "pron": "바야아스 룰오트",
+      "lemmas": [
+        "עָשָׂה",
+        "לֻלָאָה"
+      ],
+      "words": [
+        {
+          "word": "וְעָשִׂ֜יתָ",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "לֻֽלְאֹ֣ת",
+          "lemma": "לֻלָאָה",
+          "strong": "H3924",
+          "pron": "룰오트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 26:4",
+        "exodus 36:11",
+        "exodus 36:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

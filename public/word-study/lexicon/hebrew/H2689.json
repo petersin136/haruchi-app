@@ -1,6 +1,6 @@
 {
   "lemma": "חֲצֹצְרָה",
-  "pron": "바하초체로트",
+  "pron": "하초체로트",
   "strong": "H2689",
   "posKo": "명사",
   "root": {
@@ -12,21 +12,183 @@
     {
       "lemma": "חָצַר",
       "strong": "H2690",
-      "pron": "",
+      "pron": "믛츳림",
       "glossKo": "나팔을 불다"
     },
     {
       "lemma": "חָצֵר",
       "strong": "H2691",
-      "pron": "하체림",
-      "glossKo": "뜰"
+      "pron": "베하체레헴",
+      "glossKo": "그들의 뜰"
     }
   ],
   "defEn": "trumpet; sundered",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 29,
   "byBook": {
+    "chronicles2": 11,
+    "chronicles1": 5,
+    "numbers": 5,
+    "kings2": 3,
+    "nehemiah": 2,
+    "ezra": 1,
+    "hosea": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הַכֹּהֲנִ֑ים בַּחֲצֹצְר֣וֹת",
+      "pron": "코헨 하초체로트",
+      "lemmas": [
+        "כֹּהֵן",
+        "חֲצֹצְרָה"
+      ],
+      "words": [
+        {
+          "word": "הַכֹּהֲנִ֑ים",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        },
+        {
+          "word": "בַּחֲצֹצְר֣וֹת",
+          "lemma": "חֲצֹצְרָה",
+          "strong": "H2689",
+          "pron": "하초체로트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles1 16:6",
+        "chronicles2 13:12",
+        "chronicles2 29:26",
+        "nehemiah 12:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִתְקְע֖וּ בַּֽחֲצֹצְר֑וֹת",
+      "pron": "타카 하초체로트",
+      "lemmas": [
+        "תָּקַע",
+        "חֲצֹצְרָה"
+      ],
+      "words": [
+        {
+          "word": "יִתְקְע֖וּ",
+          "lemma": "תָּקַע",
+          "strong": "H8628",
+          "pron": "타카"
+        },
+        {
+          "word": "בַּֽחֲצֹצְר֑וֹת",
+          "lemma": "חֲצֹצְרָה",
+          "strong": "H2689",
+          "pron": "하초체로트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 10:8",
+        "numbers 10:10",
+        "kings2 11:14",
+        "chronicles2 23:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּחֲצֹֽצְרֹ֗ת עַ֚ל",
+      "pron": "하초체로트 알",
+      "lemmas": [
+        "חֲצֹצְרָה",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "בַּחֲצֹֽצְרֹ֗ת",
+          "lemma": "חֲצֹצְרָה",
+          "strong": "H2689",
+          "pron": "하초체로트"
+        },
+        {
+          "word": "עַ֚ל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 10:10",
+        "chronicles2 23:13",
+        "chronicles2 29:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבַחֲצֹצְר֖וֹת וּבִמְצִלְתָּ֑יִם",
+      "pron": "하초체로트 우비메칠타임",
+      "lemmas": [
+        "חֲצֹצְרָה",
+        "מְצֵלֶת"
+      ],
+      "words": [
+        {
+          "word": "וּבַחֲצֹצְר֖וֹת",
+          "lemma": "חֲצֹצְרָה",
+          "strong": "H2689",
+          "pron": "하초체로트"
+        },
+        {
+          "word": "וּבִמְצִלְתָּ֑יִם",
+          "lemma": "מְצֵלֶת",
+          "strong": "H4700",
+          "pron": "우비메칠타임"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 15:28",
+        "chronicles1 16:42",
+        "chronicles2 5:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מחצצרים מַחְצְרִים֙ בַּחֲצֹ֣צְר֔וֹת",
+      "pron": "믛츳림 믛츳림 하초체로트",
+      "lemmas": [
+        "חָצַר",
+        "חָצַר",
+        "חֲצֹצְרָה"
+      ],
+      "words": [
+        {
+          "word": "מחצצרים",
+          "lemma": "חָצַר",
+          "strong": "H2690",
+          "pron": "믛츳림"
+        },
+        {
+          "word": "מַחְצְרִים֙",
+          "lemma": "חָצַר",
+          "strong": "H2690",
+          "pron": "믛츳림"
+        },
+        {
+          "word": "בַּחֲצֹ֣צְר֔וֹת",
+          "lemma": "חֲצֹצְרָה",
+          "strong": "H2689",
+          "pron": "하초체로트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 15:24",
+        "chronicles2 5:12",
+        "chronicles2 13:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

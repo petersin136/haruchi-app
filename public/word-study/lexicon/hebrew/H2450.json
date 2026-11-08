@@ -1,6 +1,6 @@
 {
   "lemma": "חָכָם",
-  "pron": "하카밈",
+  "pron": "하카메하",
   "strong": "H2450",
   "posKo": "형용사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "חַכִּים",
       "strong": "H2445",
-      "pron": "",
+      "pron": "학키메",
       "glossKo": "지혜로운(아람)"
     },
     {
       "lemma": "חָכַם",
       "strong": "H2449",
-      "pron": "마헥키마트",
+      "pron": "니테학케마",
       "glossKo": "지혜롭다"
     },
     {
@@ -30,16 +30,208 @@
     {
       "lemma": "חַכְמוֹנִי",
       "strong": "H2453",
-      "pron": "",
+      "pron": "하케모니",
       "glossKo": "학모니"
     }
   ],
   "defEn": "wise",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 137,
   "byBook": {
+    "proverbs": 46,
+    "ecclesiastes": 21,
+    "jeremiah": 11,
+    "exodus": 9,
+    "isaiah": 9,
+    "job": 8,
+    "chronicles2": 6,
+    "deuteronomy": 5,
+    "samuel2": 4,
+    "ezekiel": 3,
     "genesis": 3,
-    "psalms": 2
+    "kings1": 3,
+    "esther": 2,
+    "hosea": 2,
+    "psalms": 2,
+    "chronicles1": 1,
+    "judges": 1,
+    "obadiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אִ֣ישׁ חֲכַם",
+      "pron": "메이쉬 하카메하",
+      "lemmas": [
+        "אִישׁ",
+        "חָכָם"
+      ],
+      "words": [
+        {
+          "word": "אִ֣ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "חֲכַם",
+          "lemma": "חָכָם",
+          "strong": "H2450",
+          "pron": "하카메하"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 36:1",
+        "exodus 36:2",
+        "deuteronomy 1:13",
+        "deuteronomy 1:15",
+        "samuel2 13:3",
+        "kings1 2:9",
+        "chronicles2 2:7",
+        "chronicles2 2:13",
+        "proverbs 16:14",
+        "proverbs 26:12",
+        "proverbs 29:9",
+        "jeremiah 9:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲכַם לֵ֖ב",
+      "pron": "하카메하 립보",
+      "lemmas": [
+        "חָכָם",
+        "לֵב"
+      ],
+      "words": [
+        {
+          "word": "חֲכַם",
+          "lemma": "חָכָם",
+          "strong": "H2450",
+          "pron": "하카메하"
+        },
+        {
+          "word": "לֵ֖ב",
+          "lemma": "לֵב",
+          "strong": "H3820",
+          "pron": "립보"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 28:3",
+        "exodus 31:6",
+        "exodus 35:10",
+        "exodus 35:25",
+        "exodus 36:1",
+        "exodus 36:2",
+        "exodus 36:8",
+        "job 37:24",
+        "proverbs 10:8",
+        "proverbs 11:29",
+        "proverbs 16:21",
+        "proverbs 22:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל חַכְמֵי",
+      "pron": "칼 하카메하",
+      "lemmas": [
+        "כֹּל",
+        "חָכָם"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "חַכְמֵי",
+          "lemma": "חָכָם",
+          "strong": "H2450",
+          "pron": "하카메하"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "genesis 41:8",
+        "exodus 28:3",
+        "exodus 31:6",
+        "exodus 35:10",
+        "exodus 36:4",
+        "exodus 36:8",
+        "chronicles1 22:15",
+        "job 37:24",
+        "jeremiah 10:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּ֣ן חָ֭כָם",
+      "pron": "바님 하카메하",
+      "lemmas": [
+        "בֵּן",
+        "חָכָם"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֣ן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "חָ֭כָם",
+          "lemma": "חָכָם",
+          "strong": "H2450",
+          "pron": "하카메하"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 5:7",
+        "chronicles2 2:12",
+        "proverbs 10:1",
+        "proverbs 13:1",
+        "proverbs 15:20",
+        "isaiah 19:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָכָ֣ם בְּעֵינֶ֑יךָ",
+      "pron": "하카메하 에네켐",
+      "lemmas": [
+        "חָכָם",
+        "עַיִן"
+      ],
+      "words": [
+        {
+          "word": "חָכָ֣ם",
+          "lemma": "חָכָם",
+          "strong": "H2450",
+          "pron": "하카메하"
+        },
+        {
+          "word": "בְּעֵינֶ֑יךָ",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "proverbs 3:7",
+        "proverbs 26:5",
+        "proverbs 26:12",
+        "proverbs 28:11",
+        "ecclesiastes 2:14",
+        "isaiah 5:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

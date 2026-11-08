@@ -1,6 +1,6 @@
 {
   "lemma": "אֶפְרָת",
-  "pron": "브엡라타",
+  "pron": "엡라타",
   "strong": "H672",
   "posKo": "명사",
   "root": {
@@ -10,24 +10,39 @@
   },
   "family": [
     {
+      "lemma": "אֶפְרַיִם",
+      "strong": "H669",
+      "pron": "엡라임",
+      "glossKo": "에브라임"
+    },
+    {
+      "lemma": "אֶפְרָתִי",
+      "strong": "H673",
+      "pron": "아엡라티",
+      "glossKo": "에브랏 사람"
+    },
+    {
       "lemma": "פָּרָה",
       "strong": "H6509",
-      "pron": "바예페르",
+      "pron": "페루",
       "glossKo": "열매 맺다"
     },
     {
       "lemma": "פְּרִי",
       "strong": "H6529",
-      "pron": "피레오",
-      "glossKo": "그의 열매"
+      "pron": "페리",
+      "glossKo": "열매"
     }
   ],
   "defEn": "Ephrath; Bethlehem",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 10,
   "byBook": {
     "genesis": 4,
-    "psalms": 1
+    "chronicles1": 3,
+    "micah": 1,
+    "psalms": 1,
+    "ruth": 1
   },
   "phrases": []
 }

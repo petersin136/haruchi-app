@@ -1,6 +1,6 @@
 {
   "lemma": "שָׂנֵא",
-  "pron": "사네타",
+  "pron": "손아으브",
   "strong": "H8130",
   "posKo": "동사",
   "root": null,
@@ -8,33 +8,84 @@
     {
       "lemma": "שְׂנֵא",
       "strong": "H8131",
-      "pron": "",
-      "glossKo": "미워하다(아람)"
+      "pron": "릇느으크",
+      "glossKo": "미워하다(아람)를 따라"
     },
     {
       "lemma": "שִׂנְאָה",
       "strong": "H8135",
-      "pron": "브신아트",
+      "pron": "브신아",
       "glossKo": "미워하다"
     },
     {
       "lemma": "שָׂנִיא",
       "strong": "H8146",
-      "pron": "",
+      "pron": "라세니아",
       "glossKo": "미움받는"
     }
   ],
   "defEn": "hate",
   "defKo": "",
-  "countOT": 48,
+  "countOT": 148,
   "byBook": {
     "psalms": 41,
-    "genesis": 7
+    "proverbs": 27,
+    "deuteronomy": 20,
+    "samuel2": 9,
+    "genesis": 7,
+    "amos": 4,
+    "exodus": 4,
+    "ezekiel": 4,
+    "isaiah": 4,
+    "judges": 4,
+    "chronicles2": 3,
+    "ecclesiastes": 3,
+    "esther": 3,
+    "job": 3,
+    "jeremiah": 2,
+    "leviticus": 2,
+    "malachi": 2,
+    "hosea": 1,
+    "joshua": 1,
+    "kings1": 1,
+    "micah": 1,
+    "numbers": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
+      "hebrew": "שָׂנֹ֣א שְׂנֵאתָ֔הּ",
+      "pron": "손아으브 손아으브",
+      "lemmas": [
+        "שָׂנֵא",
+        "שָׂנֵא"
+      ],
+      "words": [
+        {
+          "word": "שָׂנֹ֣א",
+          "lemma": "שָׂנֵא",
+          "strong": "H8130",
+          "pron": "손아으브"
+        },
+        {
+          "word": "שְׂנֵאתָ֔הּ",
+          "lemma": "שָׂנֵא",
+          "strong": "H8130",
+          "pron": "손아으브"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "judges 15:2",
+        "samuel2 5:8",
+        "samuel2 19:6",
+        "proverbs 28:16"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "שְׂנֵאתֶ֣ם אֹתִ֔י",
-      "pron": "사네타 에트",
+      "pron": "손아으브 에트",
       "lemmas": [
         "שָׂנֵא",
         "אֵת"
@@ -44,7 +95,7 @@
           "word": "שְׂנֵאתֶ֣ם",
           "lemma": "שָׂנֵא",
           "strong": "H8130",
-          "pron": "사네타"
+          "pron": "손아으브"
         },
         {
           "word": "אֹתִ֔י",
@@ -53,70 +104,114 @@
           "pron": "에트"
         }
       ],
-      "count": 4,
+      "count": 8,
       "refs": [
         "genesis 26:27",
         "genesis 37:4",
         "genesis 37:5",
-        "genesis 37:8"
+        "genesis 37:8",
+        "leviticus 19:17",
+        "judges 11:7",
+        "samuel2 19:6",
+        "ecclesiastes 2:17"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "מִצָּרֵ֑ינוּ וּמְשַׂנְאֵ֥ינוּ",
-      "pron": "차라위 사네타",
+      "hebrew": "אֲשֶׁ֣ר שָׂנֵ֑את",
+      "pron": "아셰르 손아으브",
       "lemmas": [
-        "צַר",
+        "אֲשֶׁר",
         "שָׂנֵא"
       ],
       "words": [
         {
-          "word": "מִצָּרֵ֑ינוּ",
-          "lemma": "צַר",
-          "strong": "H6862",
-          "pron": "차라위"
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
         },
         {
-          "word": "וּמְשַׂנְאֵ֥ינוּ",
+          "word": "שָׂנֵ֑את",
           "lemma": "שָׂנֵא",
           "strong": "H8130",
-          "pron": "사네타"
+          "pron": "손아으브"
         }
       ],
-      "count": 3,
+      "count": 7,
       "refs": [
-        "psalms 44:7",
-        "psalms 44:10",
-        "psalms 89:23"
+        "deuteronomy 12:31",
+        "deuteronomy 16:22",
+        "samuel2 13:15",
+        "jeremiah 44:4",
+        "ezekiel 16:37",
+        "ezekiel 23:28",
+        "zechariah 8:17"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שֶׁ֑קֶר שֹׂנְאַ֥י",
-      "pron": "샤케르 사네타",
+      "hebrew": "לֹא שֹׂנֵ֥א",
+      "pron": "로 손아으브",
       "lemmas": [
-        "שֶׁקֶר",
+        "לֹא",
         "שָׂנֵא"
       ],
       "words": [
         {
-          "word": "שֶׁ֑קֶר",
-          "lemma": "שֶׁקֶר",
-          "strong": "H8267",
-          "pron": "샤케르"
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
         },
         {
-          "word": "שֹׂנְאַ֥י",
+          "word": "שֹׂנֵ֥א",
           "lemma": "שָׂנֵא",
           "strong": "H8130",
-          "pron": "사네타"
+          "pron": "손아으브"
         }
       ],
-      "count": 3,
+      "count": 7,
       "refs": [
-        "psalms 35:19",
-        "psalms 119:128",
-        "psalms 119:163"
+        "leviticus 19:17",
+        "deuteronomy 4:42",
+        "deuteronomy 19:4",
+        "deuteronomy 19:6",
+        "joshua 20:5",
+        "psalms 55:12",
+        "psalms 139:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי שְׂנוּאָ֣ה",
+      "pron": "키 손아으브",
+      "lemmas": [
+        "כִּי",
+        "שָׂנֵא"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "שְׂנוּאָ֣ה",
+          "lemma": "שָׂנֵא",
+          "strong": "H8130",
+          "pron": "손아으브"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 29:31",
+        "genesis 29:33",
+        "judges 15:2",
+        "samuel2 13:22",
+        "proverbs 1:29",
+        "malachi 2:16"
       ],
       "glossKo": ""
     }

@@ -12,7 +12,7 @@
     {
       "lemma": "שָׁכַם",
       "strong": "H7925",
-      "pron": "마셱키메",
+      "pron": "브히셱캄템",
       "glossKo": "일찍 일어나다"
     },
     {
@@ -24,27 +24,104 @@
     {
       "lemma": "שֶׁכֶם",
       "strong": "H7928",
-      "pron": "",
+      "pron": "브셰켐",
       "glossKo": "세겜"
     },
     {
       "lemma": "שִׁכְמָה",
       "strong": "H7929",
-      "pron": "",
-      "glossKo": "어깨"
+      "pron": "밋시케마",
+      "glossKo": "그녀의 어깨"
     }
   ],
   "defEn": "Shekem",
   "defKo": "",
-  "countOT": 20,
+  "countOT": 63,
   "byBook": {
+    "judges": 27,
     "genesis": 18,
-    "psalms": 2
+    "joshua": 7,
+    "kings1": 3,
+    "chronicles1": 2,
+    "chronicles2": 2,
+    "psalms": 2,
+    "hosea": 1,
+    "jeremiah": 1
   },
   "phrases": [
     {
+      "hebrew": "בַּעֲלֵ֣י שְׁכֶ֔ם",
+      "pron": "바알레 셰켐",
+      "lemmas": [
+        "בַּעַל",
+        "שְׁכֶם"
+      ],
+      "words": [
+        {
+          "word": "בַּעֲלֵ֣י",
+          "lemma": "בַּעַל",
+          "strong": "H1167",
+          "pron": "바알레"
+        },
+        {
+          "word": "שְׁכֶ֔ם",
+          "lemma": "שְׁכֶם",
+          "strong": "H7927",
+          "pron": "셰켐"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "judges 9:2",
+        "judges 9:3",
+        "judges 9:6",
+        "judges 9:7",
+        "judges 9:18",
+        "judges 9:20",
+        "judges 9:23",
+        "judges 9:24",
+        "judges 9:25",
+        "judges 9:26",
+        "judges 9:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת שְׁכֶ֥ם",
+      "pron": "에트 셰켐",
+      "lemmas": [
+        "אֵת",
+        "שְׁכֶם"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שְׁכֶ֥ם",
+          "lemma": "שְׁכֶם",
+          "strong": "H7927",
+          "pron": "셰켐"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 34:2",
+        "genesis 34:13",
+        "genesis 34:26",
+        "joshua 20:7",
+        "joshua 21:21",
+        "kings1 12:25",
+        "chronicles1 6:67"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "שְׁכֶ֣ם בְּנ֔וֹ",
-      "pron": "셰켐 베니위",
+      "pron": "셰켐 바님",
       "lemmas": [
         "שְׁכֶם",
         "בֵּן"
@@ -60,7 +137,7 @@
           "word": "בְּנ֔וֹ",
           "lemma": "בֵּן",
           "strong": "H1121",
-          "pron": "베니위"
+          "pron": "바님"
         }
       ],
       "count": 6,
@@ -75,118 +152,64 @@
       "glossKo": ""
     },
     {
-      "hebrew": "אֲבִ֣י שְׁכֶ֑ם",
-      "pron": "아보테누 셰켐",
+      "hebrew": "אֲבִֽי שְׁכֶ֖ם",
+      "pron": "아비브 셰켐",
       "lemmas": [
         "אָב",
         "שְׁכֶם"
       ],
       "words": [
         {
-          "word": "אֲבִ֣י",
+          "word": "אֲבִֽי",
           "lemma": "אָב",
           "strong": "H1",
-          "pron": "아보테누"
+          "pron": "아비브"
         },
         {
-          "word": "שְׁכֶ֑ם",
+          "word": "שְׁכֶ֖ם",
           "lemma": "שְׁכֶם",
           "strong": "H7927",
           "pron": "셰켐"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
         "genesis 33:19",
         "genesis 34:6",
-        "genesis 37:12"
+        "genesis 37:12",
+        "joshua 24:32",
+        "judges 9:28"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֹתָ֜הּ שְׁכֶ֧ם",
-      "pron": "에트 셰켐",
+      "hebrew": "שְׁכֶ֥ם וְאֶת",
+      "pron": "셰켐 에트",
       "lemmas": [
-        "אֵת",
-        "שְׁכֶם"
+        "שְׁכֶם",
+        "אֵת"
       ],
       "words": [
         {
-          "word": "אֹתָ֜הּ",
+          "word": "שְׁכֶ֥ם",
+          "lemma": "שְׁכֶם",
+          "strong": "H7927",
+          "pron": "셰켐"
+        },
+        {
+          "word": "וְאֶת",
           "lemma": "אֵת",
           "strong": "H853",
           "pron": "에트"
-        },
-        {
-          "word": "שְׁכֶ֧ם",
-          "lemma": "שְׁכֶם",
-          "strong": "H7927",
-          "pron": "셰켐"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
-        "genesis 34:2",
         "genesis 34:13",
-        "genesis 34:26"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיֹּ֣אמֶר שְׁכֶ֔ם",
-      "pron": "아마르 셰켐",
-      "lemmas": [
-        "אָמַר",
-        "שְׁכֶם"
-      ],
-      "words": [
-        {
-          "word": "וַיֹּ֣אמֶר",
-          "lemma": "אָמַר",
-          "strong": "H559",
-          "pron": "아마르"
-        },
-        {
-          "word": "שְׁכֶ֔ם",
-          "lemma": "שְׁכֶם",
-          "strong": "H7927",
-          "pron": "셰켐"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 34:4",
-        "genesis 34:8",
-        "genesis 34:11"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "שְׁכֶ֔ם אֶל",
-      "pron": "셰켐 엘레모",
-      "lemmas": [
-        "שְׁכֶם",
-        "אֵל"
-      ],
-      "words": [
-        {
-          "word": "שְׁכֶ֔ם",
-          "lemma": "שְׁכֶם",
-          "strong": "H7927",
-          "pron": "셰켐"
-        },
-        {
-          "word": "אֶל",
-          "lemma": "אֵל",
-          "strong": "H413",
-          "pron": "엘레모"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 34:4",
-        "genesis 34:6",
-        "genesis 34:11"
+        "joshua 21:21",
+        "judges 9:3",
+        "judges 9:20",
+        "chronicles1 6:67"
       ],
       "glossKo": ""
     }

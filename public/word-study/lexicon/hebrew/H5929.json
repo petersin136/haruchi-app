@@ -1,6 +1,6 @@
 {
   "lemma": "עָלֶה",
-  "pron": "브알레후",
+  "pron": "알레",
   "strong": "H5929",
   "posKo": "명사",
   "root": {
@@ -12,46 +12,84 @@
     {
       "lemma": "מַעַל",
       "strong": "H4605",
-      "pron": "르마엘라",
+      "pron": "미르마엘라",
       "glossKo": "위"
     },
     {
       "lemma": "מֹעַל",
       "strong": "H4607",
-      "pron": "",
+      "pron": "브모알",
       "glossKo": "올림"
     },
     {
       "lemma": "מַעֲלֶה",
       "strong": "H4608",
-      "pron": "",
+      "pron": "르마알레",
       "glossKo": "오르막"
     },
     {
       "lemma": "עִילַי",
       "strong": "H5866",
-      "pron": "",
+      "pron": "일라이",
       "glossKo": "일래"
     },
     {
       "lemma": "עַל",
       "strong": "H5920",
-      "pron": "메알",
+      "pron": "알",
       "glossKo": "위"
     },
     {
       "lemma": "עָלָה",
       "strong": "H5927",
-      "pron": "알라",
+      "pron": "야알레",
       "glossKo": "올라가다"
     }
   ],
   "defEn": "leaf; foliage",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 18,
   "byBook": {
+    "nehemiah": 5,
+    "isaiah": 3,
+    "ezekiel": 2,
     "genesis": 2,
+    "jeremiah": 2,
+    "job": 1,
+    "leviticus": 1,
+    "proverbs": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נֹבֶ֣לֶת עָלֶ֑הָ",
+      "pron": "나볼 알레",
+      "lemmas": [
+        "נָבֵל",
+        "עָלֶה"
+      ],
+      "words": [
+        {
+          "word": "נֹבֶ֣לֶת",
+          "lemma": "נָבֵל",
+          "strong": "H5034",
+          "pron": "나볼"
+        },
+        {
+          "word": "עָלֶ֑הָ",
+          "lemma": "עָלֶה",
+          "strong": "H5929",
+          "pron": "알레"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 1:30",
+        "isaiah 34:4",
+        "isaiah 64:6",
+        "ezekiel 47:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

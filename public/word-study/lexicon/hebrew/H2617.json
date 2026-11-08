@@ -1,6 +1,6 @@
 {
   "lemma": "חֶסֶד",
-  "pron": "핫드카",
+  "pron": "핫데카",
   "strong": "H2617",
   "posKo": "명사",
   "root": {
@@ -24,27 +24,53 @@
     {
       "lemma": "חֲסַדְיָה",
       "strong": "H2619",
-      "pron": "",
+      "pron": "바하삳아",
       "glossKo": "하사댜"
     },
     {
       "lemma": "חָסִיד",
       "strong": "H2623",
-      "pron": "하싣",
-      "glossKo": "경건한 자"
+      "pron": "하시데카",
+      "glossKo": "너의 경건한 자"
     }
   ],
   "defEn": "kindness",
   "defKo": "",
-  "countOT": 140,
+  "countOT": 251,
   "byBook": {
     "psalms": 129,
-    "genesis": 11
+    "samuel2": 12,
+    "genesis": 11,
+    "proverbs": 11,
+    "chronicles2": 10,
+    "isaiah": 8,
+    "hosea": 6,
+    "jeremiah": 6,
+    "nehemiah": 6,
+    "chronicles1": 5,
+    "kings1": 5,
+    "exodus": 4,
+    "samuel1": 4,
+    "deuteronomy": 3,
+    "ezra": 3,
+    "job": 3,
+    "joshua": 3,
+    "lamentations": 3,
+    "micah": 3,
+    "ruth": 3,
+    "daniel": 2,
+    "esther": 2,
+    "jonah": 2,
+    "judges": 2,
+    "numbers": 2,
+    "joel": 1,
+    "leviticus": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
       "hebrew": "לְעוֹלָ֣ם חַסְדּֽוֹ",
-      "pron": "르올람 핫드카",
+      "pron": "르올람 핫데카",
       "lemmas": [
         "עוֹלָם",
         "חֶסֶד"
@@ -60,29 +86,29 @@
           "word": "חַסְדּֽוֹ",
           "lemma": "חֶסֶד",
           "strong": "H2617",
-          "pron": "핫드카"
+          "pron": "핫데카"
         }
       ],
-      "count": 35,
+      "count": 44,
       "refs": [
+        "chronicles1 16:34",
+        "chronicles1 16:41",
+        "chronicles2 5:13",
+        "chronicles2 7:3",
+        "chronicles2 7:6",
+        "chronicles2 20:21",
+        "ezra 3:11",
         "psalms 89:2",
         "psalms 100:5",
         "psalms 106:1",
         "psalms 107:1",
-        "psalms 118:1",
-        "psalms 118:2",
-        "psalms 118:3",
-        "psalms 118:4",
-        "psalms 118:29",
-        "psalms 136:1",
-        "psalms 136:2",
-        "psalms 136:3"
+        "psalms 118:1"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "כִּ֖י לְעוֹלָ֣ם חַסְדּֽוֹ",
-      "pron": "키 르올람 핫드카",
+      "pron": "키 르올람 핫데카",
       "lemmas": [
         "כִּי",
         "עוֹלָם",
@@ -105,29 +131,105 @@
           "word": "חַסְדּֽוֹ",
           "lemma": "חֶסֶד",
           "strong": "H2617",
-          "pron": "핫드카"
+          "pron": "핫데카"
         }
       ],
-      "count": 33,
+      "count": 41,
       "refs": [
+        "chronicles1 16:34",
+        "chronicles1 16:41",
+        "chronicles2 5:13",
+        "chronicles2 7:3",
+        "chronicles2 7:6",
+        "chronicles2 20:21",
+        "ezra 3:11",
         "psalms 106:1",
         "psalms 107:1",
         "psalms 118:1",
         "psalms 118:2",
-        "psalms 118:3",
-        "psalms 118:4",
-        "psalms 118:29",
-        "psalms 136:1",
-        "psalms 136:2",
-        "psalms 136:3",
-        "psalms 136:4",
-        "psalms 136:5"
+        "psalms 118:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֶ֥סֶד וֶאֱמֶֽת",
+      "pron": "핫데카 바아밋토",
+      "lemmas": [
+        "חֶסֶד",
+        "אֶמֶת"
+      ],
+      "words": [
+        {
+          "word": "חֶ֥סֶד",
+          "lemma": "חֶסֶד",
+          "strong": "H2617",
+          "pron": "핫데카"
+        },
+        {
+          "word": "וֶאֱמֶֽת",
+          "lemma": "אֶמֶת",
+          "strong": "H571",
+          "pron": "바아밋토"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "genesis 24:27",
+        "genesis 24:49",
+        "genesis 47:29",
+        "exodus 34:6",
+        "joshua 2:14",
+        "samuel2 2:6",
+        "samuel2 15:20",
+        "psalms 25:10",
+        "psalms 40:10",
+        "psalms 40:11",
+        "psalms 57:3",
+        "psalms 61:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעֹ֥שֶׂה חֶ֖סֶד",
+      "pron": "바야아스 핫데카",
+      "lemmas": [
+        "עָשָׂה",
+        "חֶסֶד"
+      ],
+      "words": [
+        {
+          "word": "וְעֹ֥שֶׂה",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "חֶ֖סֶד",
+          "lemma": "חֶסֶד",
+          "strong": "H2617",
+          "pron": "핫데카"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "genesis 24:12",
+        "genesis 24:14",
+        "genesis 24:49",
+        "exodus 20:6",
+        "deuteronomy 5:10",
+        "judges 8:35",
+        "samuel1 15:6",
+        "samuel1 20:8",
+        "samuel2 2:5",
+        "samuel2 3:8",
+        "samuel2 10:2",
+        "samuel2 22:51"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "לַיהוָ֣ה חַסְדּ֑וֹ",
-      "pron": "여호와 핫드카",
+      "pron": "여호와 핫데카",
       "lemmas": [
         "יְהֹוָה",
         "חֶסֶד"
@@ -143,7 +245,7 @@
           "word": "חַסְדּ֑וֹ",
           "lemma": "חֶסֶד",
           "strong": "H2617",
-          "pron": "핫드카"
+          "pron": "핫데카"
         }
       ],
       "count": 13,
@@ -160,79 +262,6 @@
         "psalms 107:31",
         "psalms 119:159",
         "psalms 130:7"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "חַסְדְּךָ֥ וַ֝אֲמִתְּךָ֗",
-      "pron": "핫드카 에메트",
-      "lemmas": [
-        "חֶסֶד",
-        "אֶמֶת"
-      ],
-      "words": [
-        {
-          "word": "חַסְדְּךָ֥",
-          "lemma": "חֶסֶד",
-          "strong": "H2617",
-          "pron": "핫드카"
-        },
-        {
-          "word": "וַ֝אֲמִתְּךָ֗",
-          "lemma": "אֶמֶת",
-          "strong": "H571",
-          "pron": "에메트"
-        }
-      ],
-      "count": 12,
-      "refs": [
-        "psalms 25:10",
-        "psalms 40:10",
-        "psalms 40:11",
-        "psalms 57:3",
-        "psalms 61:7",
-        "psalms 85:10",
-        "psalms 86:15",
-        "psalms 89:14",
-        "psalms 117:2",
-        "genesis 24:27",
-        "genesis 24:49",
-        "genesis 47:29"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "חֶ֥סֶד יְ֝הוָ֗ה",
-      "pron": "핫드카 여호와",
-      "lemmas": [
-        "חֶסֶד",
-        "יְהֹוָה"
-      ],
-      "words": [
-        {
-          "word": "חֶ֥סֶד",
-          "lemma": "חֶסֶד",
-          "strong": "H2617",
-          "pron": "핫드카"
-        },
-        {
-          "word": "יְ֝הוָ֗ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        }
-      ],
-      "count": 9,
-      "refs": [
-        "psalms 33:5",
-        "psalms 33:22",
-        "psalms 89:1",
-        "psalms 94:18",
-        "psalms 103:17",
-        "psalms 107:43",
-        "psalms 119:41",
-        "psalms 119:64",
-        "psalms 119:149"
       ],
       "glossKo": ""
     }

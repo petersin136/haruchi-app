@@ -2,7 +2,7 @@
   "lemma": "בַּעֲנָה",
   "pron": "바아나",
   "strong": "H1196",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָנָה",
     "strong": "H6031",
@@ -10,21 +10,27 @@
   },
   "family": [
     {
+      "lemma": "בַּעֲנָא",
+      "strong": "H1195",
+      "pron": "바아나",
+      "glossKo": "바아나"
+    },
+    {
       "lemma": "מַעֲנָה",
       "strong": "H4618",
-      "pron": "르믄브트므",
-      "glossKo": "그들의 고랑"
+      "pron": "마아나",
+      "glossKo": "고랑"
     },
     {
       "lemma": "עָנָה",
       "strong": "H6031",
-      "pron": "인네티",
+      "pron": "브인누",
       "glossKo": "괴롭히다"
     },
     {
       "lemma": "עֲנָה",
       "strong": "H6033",
-      "pron": "",
+      "pron": "아나인",
       "glossKo": "대답하다(아람)"
     },
     {
@@ -36,13 +42,18 @@
     {
       "lemma": "עֳנִי",
       "strong": "H6040",
-      "pron": "안이위",
-      "glossKo": "나의 고통"
+      "pron": "안에크",
+      "glossKo": "너의 고통"
     }
   ],
   "defEn": "Baanah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 9,
+  "byBook": {
+    "samuel2": 5,
+    "nehemiah": 2,
+    "chronicles1": 1,
+    "ezra": 1
+  },
   "phrases": []
 }

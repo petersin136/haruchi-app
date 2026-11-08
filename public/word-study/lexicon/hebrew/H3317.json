@@ -1,8 +1,8 @@
 {
   "lemma": "יִפְתַּח־אֵל",
-  "pron": "입탛엘",
+  "pron": "입타흐",
   "strong": "H3317",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "פָּתַח",
     "strong": "H6605",
@@ -12,43 +12,109 @@
     {
       "lemma": "יִפְתָּח",
       "strong": "H3316",
-      "pron": "",
+      "pron": "브입타흐",
       "glossKo": "입다"
     },
     {
       "lemma": "מַפְתֵּחַ",
       "strong": "H4668",
-      "pron": "",
+      "pron": "아맙테아흐",
       "glossKo": "열쇠"
     },
     {
       "lemma": "מִפְתָּח",
       "strong": "H4669",
-      "pron": "",
+      "pron": "아맙테아흐",
       "glossKo": "트인 곳"
     },
     {
       "lemma": "נֶפְתּוֹחַ",
       "strong": "H5318",
-      "pron": "",
+      "pron": "넵토아흐",
       "glossKo": "넵도아"
     },
     {
       "lemma": "פִּתּוּחַ",
       "strong": "H6603",
-      "pron": "핏투헤하",
-      "glossKo": "그녀의 새김"
+      "pron": "핏투헤",
+      "glossKo": "새김"
     },
     {
       "lemma": "פָּתַח",
       "strong": "H6605",
-      "pron": "파투아흐",
+      "pron": "닙타후",
       "glossKo": "열다"
     }
   ],
   "defEn": "Jiphtach-el",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "joshua": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "גֵּ֖י יִפְתַּח אֵֽל",
+      "pron": "아가에 입타흐 입타흐",
+      "lemmas": [
+        "גַּיְא",
+        "יִפְתַּח־אֵל",
+        "יִפְתַּח־אֵל"
+      ],
+      "words": [
+        {
+          "word": "גֵּ֖י",
+          "lemma": "גַּיְא",
+          "strong": "H1516",
+          "pron": "아가에"
+        },
+        {
+          "word": "יִפְתַּח",
+          "lemma": "יִפְתַּח־אֵל",
+          "strong": "H3317",
+          "pron": "입타흐"
+        },
+        {
+          "word": "אֵֽל",
+          "lemma": "יִפְתַּח־אֵל",
+          "strong": "H3317",
+          "pron": "입타흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 19:14",
+        "joshua 19:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִפְתַּח אֵֽל",
+      "pron": "입타흐 입타흐",
+      "lemmas": [
+        "יִפְתַּח־אֵל",
+        "יִפְתַּח־אֵל"
+      ],
+      "words": [
+        {
+          "word": "יִפְתַּח",
+          "lemma": "יִפְתַּח־אֵל",
+          "strong": "H3317",
+          "pron": "입타흐"
+        },
+        {
+          "word": "אֵֽל",
+          "lemma": "יִפְתַּח־אֵל",
+          "strong": "H3317",
+          "pron": "입타흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 19:14",
+        "joshua 19:27"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "בְּשׂוֹר",
-  "pron": "베소르",
+  "pron": "아베소르",
   "strong": "H1308",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בָּשַׂר",
     "strong": "H1319",
@@ -12,25 +12,57 @@
     {
       "lemma": "בְּשׂוֹרָה",
       "strong": "H1309",
-      "pron": "",
+      "pron": "베소라",
       "glossKo": "기쁜 소식"
     },
     {
       "lemma": "בָּשַׂר",
       "strong": "H1319",
-      "pron": "빗사렛티",
-      "glossKo": "기쁜 소식을 전하다"
+      "pron": "아메밧세르",
+      "glossKo": "기쁜 소식을 전하는 이"
     },
     {
       "lemma": "בָּשָׂר",
       "strong": "H1320",
-      "pron": "베사리위",
-      "glossKo": "나의 몸"
+      "pron": "바사르",
+      "glossKo": "몸"
     }
   ],
   "defEn": "Besor",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 3,
+  "byBook": {
+    "samuel1": 3
+  },
+  "phrases": [
+    {
+      "hebrew": "נַ֣חַל הַבְּשׂ֑וֹר",
+      "pron": "브나할 아베소르",
+      "lemmas": [
+        "נַחַל",
+        "בְּשׂוֹר"
+      ],
+      "words": [
+        {
+          "word": "נַ֣חַל",
+          "lemma": "נַחַל",
+          "strong": "H5158",
+          "pron": "브나할"
+        },
+        {
+          "word": "הַבְּשׂ֑וֹר",
+          "lemma": "בְּשׂוֹר",
+          "strong": "H1308",
+          "pron": "아베소르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 30:9",
+        "samuel1 30:10",
+        "samuel1 30:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

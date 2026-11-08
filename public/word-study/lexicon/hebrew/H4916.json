@@ -1,8 +1,8 @@
 {
   "lemma": "מִשְׁלוֹחַ",
-  "pron": "미셸로아흐",
+  "pron": "미셸라흐",
   "strong": "H4916",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁלַח",
     "strong": "H7971",
@@ -10,28 +10,34 @@
   },
   "family": [
     {
+      "lemma": "מִשְׁלַחַת",
+      "strong": "H4917",
+      "pron": "미셸라하트",
+      "glossKo": "보냄"
+    },
+    {
       "lemma": "שִׁלּוּחַ",
       "strong": "H7964",
-      "pron": "",
-      "glossKo": "이혼"
+      "pron": "실루헤하",
+      "glossKo": "그녀의 이혼"
     },
     {
       "lemma": "שָׁלַח",
       "strong": "H7971",
-      "pron": "바이셸라흐",
+      "pron": "이셸라흐",
       "glossKo": "보내다"
     },
     {
       "lemma": "שְׁלַח",
       "strong": "H7972",
-      "pron": "",
+      "pron": "셸라후",
       "glossKo": "보내다(아람)"
     },
     {
       "lemma": "שֶׁלַח",
       "strong": "H7973",
-      "pron": "",
-      "glossKo": "병기"
+      "pron": "실호",
+      "glossKo": "그의 병기"
     },
     {
       "lemma": "שֻׁלְחָן",
@@ -42,7 +48,116 @@
   ],
   "defEn": "sending; presentation; seizure",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 10,
+  "byBook": {
+    "deuteronomy": 6,
+    "esther": 2,
+    "isaiah": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "מִשְׁלַ֥ח יָדֶֽךָ",
+      "pron": "미셸라흐 야도",
+      "lemmas": [
+        "מִשְׁלוֹחַ",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "מִשְׁלַ֥ח",
+          "lemma": "מִשְׁלוֹחַ",
+          "strong": "H4916",
+          "pron": "미셸라흐"
+        },
+        {
+          "word": "יָדֶֽךָ",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "deuteronomy 12:7",
+        "deuteronomy 12:18",
+        "deuteronomy 15:10",
+        "deuteronomy 23:20",
+        "deuteronomy 28:8",
+        "deuteronomy 28:20",
+        "isaiah 11:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכֹל֙ מִשְׁלַ֣ח",
+      "pron": "칼 미셸라흐",
+      "lemmas": [
+        "כֹּל",
+        "מִשְׁלוֹחַ"
+      ],
+      "words": [
+        {
+          "word": "בְּכֹל֙",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מִשְׁלַ֣ח",
+          "lemma": "מִשְׁלוֹחַ",
+          "strong": "H4916",
+          "pron": "미셸라흐"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 12:7",
+        "deuteronomy 12:18",
+        "deuteronomy 15:10",
+        "deuteronomy 23:20",
+        "deuteronomy 28:8",
+        "deuteronomy 28:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכֹל֙ מִשְׁלַ֣ח יֶדְכֶ֔ם",
+      "pron": "칼 미셸라흐 야도",
+      "lemmas": [
+        "כֹּל",
+        "מִשְׁלוֹחַ",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "בְּכֹל֙",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מִשְׁלַ֣ח",
+          "lemma": "מִשְׁלוֹחַ",
+          "strong": "H4916",
+          "pron": "미셸라흐"
+        },
+        {
+          "word": "יֶדְכֶ֔ם",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 12:7",
+        "deuteronomy 12:18",
+        "deuteronomy 15:10",
+        "deuteronomy 23:20",
+        "deuteronomy 28:8",
+        "deuteronomy 28:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

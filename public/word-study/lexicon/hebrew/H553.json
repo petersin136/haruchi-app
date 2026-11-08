@@ -1,6 +1,6 @@
 {
   "lemma": "אָמַץ",
-  "pron": "암추",
+  "pron": "예에마츠",
   "strong": "H553",
   "posKo": "동사",
   "root": null,
@@ -8,46 +8,226 @@
     {
       "lemma": "אָמוֹץ",
       "strong": "H531",
-      "pron": "",
+      "pron": "아모츠",
       "glossKo": "아모스(부친 이름)"
     },
     {
       "lemma": "אַמִּיץ",
       "strong": "H533",
-      "pron": "",
+      "pron": "암미츠",
       "glossKo": "강한"
     },
     {
       "lemma": "אָמֹץ",
       "strong": "H554",
-      "pron": "",
+      "pron": "아뭇침",
       "glossKo": "강한"
     },
     {
       "lemma": "אֹמֶץ",
       "strong": "H555",
-      "pron": "",
+      "pron": "오메츠",
       "glossKo": "용기"
     },
     {
       "lemma": "אַמְצָה",
       "strong": "H556",
-      "pron": "",
+      "pron": "암차",
       "glossKo": "강함"
     },
     {
       "lemma": "אַמְצִי",
       "strong": "H557",
-      "pron": "",
+      "pron": "암치",
       "glossKo": "암시"
     }
   ],
   "defEn": "be alert",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 41,
   "byBook": {
+    "chronicles2": 7,
     "psalms": 7,
-    "genesis": 1
+    "deuteronomy": 6,
+    "joshua": 5,
+    "isaiah": 3,
+    "proverbs": 3,
+    "chronicles1": 2,
+    "job": 2,
+    "amos": 1,
+    "genesis": 1,
+    "kings1": 1,
+    "nahum": 1,
+    "ruth": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "חִזְק֣וּ וְאִמְצ֔וּ",
+      "pron": "바야하지쿠 예에마츠",
+      "lemmas": [
+        "חָזַק",
+        "אָמַץ"
+      ],
+      "words": [
+        {
+          "word": "חִזְק֣וּ",
+          "lemma": "חָזַק",
+          "strong": "H2388",
+          "pron": "바야하지쿠"
+        },
+        {
+          "word": "וְאִמְצ֔וּ",
+          "lemma": "אָמַץ",
+          "strong": "H553",
+          "pron": "예에마츠"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "deuteronomy 3:28",
+        "deuteronomy 31:6",
+        "deuteronomy 31:7",
+        "deuteronomy 31:23",
+        "joshua 1:6",
+        "joshua 1:7",
+        "joshua 1:9",
+        "joshua 1:18",
+        "joshua 10:25",
+        "chronicles1 22:13",
+        "chronicles1 28:20",
+        "chronicles2 32:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאַמְּצֵ֑הוּ כִּי",
+      "pron": "예에마츠 키",
+      "lemmas": [
+        "אָמַץ",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "וְאַמְּצֵ֑הוּ",
+          "lemma": "אָמַץ",
+          "strong": "H553",
+          "pron": "예에마츠"
+        },
+        {
+          "word": "כִּי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 3:28",
+        "deuteronomy 31:7",
+        "deuteronomy 31:23",
+        "joshua 1:6",
+        "joshua 10:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְחַזְּקֵ֣הוּ וְאַמְּצֵ֑הוּ כִּי",
+      "pron": "바야하지쿠 예에마츠 키",
+      "lemmas": [
+        "חָזַק",
+        "אָמַץ",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "וְחַזְּקֵ֣הוּ",
+          "lemma": "חָזַק",
+          "strong": "H2388",
+          "pron": "바야하지쿠"
+        },
+        {
+          "word": "וְאַמְּצֵ֑הוּ",
+          "lemma": "אָמַץ",
+          "strong": "H553",
+          "pron": "예에마츠"
+        },
+        {
+          "word": "כִּי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 3:28",
+        "deuteronomy 31:7",
+        "deuteronomy 31:23",
+        "joshua 1:6",
+        "joshua 10:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאִמֵּץ֙ אֶת",
+      "pron": "예에마츠 에트",
+      "lemmas": [
+        "אָמַץ",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְאִמֵּץ֙",
+          "lemma": "אָמַץ",
+          "strong": "H553",
+          "pron": "예에마츠"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 2:30",
+        "deuteronomy 15:7",
+        "chronicles2 11:17",
+        "chronicles2 36:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאִמְצ֔וּ אַל",
+      "pron": "예에마츠 엘",
+      "lemmas": [
+        "אָמַץ",
+        "אַל"
+      ],
+      "words": [
+        {
+          "word": "וְאִמְצ֔וּ",
+          "lemma": "אָמַץ",
+          "strong": "H553",
+          "pron": "예에마츠"
+        },
+        {
+          "word": "אַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 31:6",
+        "joshua 1:9",
+        "chronicles1 22:13",
+        "chronicles2 32:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

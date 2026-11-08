@@ -1,6 +1,6 @@
 {
   "lemma": "רָצוֹן",
-  "pron": "라촌",
+  "pron": "우비레초남",
   "strong": "H7522",
   "posKo": "명사",
   "root": {
@@ -12,62 +12,207 @@
     {
       "lemma": "רָצָה",
       "strong": "H7521",
-      "pron": "레체",
-      "glossKo": "기쁘게 받다"
+      "pron": "밧티레체니",
+      "glossKo": "나를 기쁘게 받다"
     },
     {
       "lemma": "רִצְיָא",
       "strong": "H7525",
-      "pron": "",
+      "pron": "브리체아",
       "glossKo": "리시아"
     },
     {
       "lemma": "רְצִין",
       "strong": "H7526",
-      "pron": "",
+      "pron": "레친",
       "glossKo": "르신"
     },
     {
       "lemma": "תִּרְצָה",
       "strong": "H8656",
-      "pron": "",
+      "pron": "브티레차",
       "glossKo": "디르사"
     }
   ],
   "defEn": "delight",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 56,
   "byBook": {
+    "proverbs": 14,
     "psalms": 13,
-    "genesis": 1
+    "leviticus": 7,
+    "isaiah": 6,
+    "daniel": 4,
+    "deuteronomy": 2,
+    "esther": 2,
+    "nehemiah": 2,
+    "chronicles2": 1,
+    "exodus": 1,
+    "ezra": 1,
+    "genesis": 1,
+    "jeremiah": 1,
+    "malachi": 1
   },
   "phrases": [
     {
-      "hebrew": "לַֽעֲשֽׂוֹת רְצוֹנְךָ֣",
-      "pron": "야아세 라촌",
+      "hebrew": "וַעֲשׂ֣וּ רְצוֹנ֑וֹ",
+      "pron": "바야아스 우비레초남",
       "lemmas": [
         "עָשָׂה",
         "רָצוֹן"
       ],
       "words": [
         {
-          "word": "לַֽעֲשֽׂוֹת",
+          "word": "וַעֲשׂ֣וּ",
           "lemma": "עָשָׂה",
           "strong": "H6213",
-          "pron": "야아세"
+          "pron": "바야아스"
         },
         {
-          "word": "רְצוֹנְךָ֣",
+          "word": "רְצוֹנ֑וֹ",
           "lemma": "רָצוֹן",
           "strong": "H7522",
-          "pron": "라촌"
+          "pron": "우비레초남"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "ezra 10:11",
+        "nehemiah 9:24",
+        "esther 1:8",
+        "psalms 40:8",
+        "psalms 103:21",
+        "psalms 143:10",
+        "daniel 8:4",
+        "daniel 11:3",
+        "daniel 11:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַיהוָ֑ה לִֽרְצֹנְכֶ֖ם",
+      "pron": "여호와 우비레초남",
+      "lemmas": [
+        "יְהֹוָה",
+        "רָצוֹן"
+      ],
+      "words": [
+        {
+          "word": "לַיהוָ֑ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "לִֽרְצֹנְכֶ֖ם",
+          "lemma": "רָצוֹן",
+          "strong": "H7522",
+          "pron": "우비레초남"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 19:5",
+        "leviticus 22:29",
+        "leviticus 23:11",
+        "psalms 30:7",
+        "psalms 106:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רָ֝צ֗וֹן מֵיְהוָֽה",
+      "pron": "우비레초남 여호와",
+      "lemmas": [
+        "רָצוֹן",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "רָ֝צ֗וֹן",
+          "lemma": "רָצוֹן",
+          "strong": "H7522",
+          "pron": "우비레초남"
+        },
+        {
+          "word": "מֵיְהוָֽה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "proverbs 8:35",
+        "proverbs 12:2",
+        "proverbs 18:22",
+        "isaiah 58:5",
+        "isaiah 61:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיָּ֥פֶק רָ֝צ֗וֹן",
+      "pron": "타페크 우비레초남",
+      "lemmas": [
+        "פּוּק",
+        "רָצוֹן"
+      ],
+      "words": [
+        {
+          "word": "וַיָּ֥פֶק",
+          "lemma": "פּוּק",
+          "strong": "H6329",
+          "pron": "타페크"
+        },
+        {
+          "word": "רָ֝צ֗וֹן",
+          "lemma": "רָצוֹן",
+          "strong": "H7522",
+          "pron": "우비레초남"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 40:8",
-        "psalms 103:21",
-        "psalms 143:10"
+        "proverbs 8:35",
+        "proverbs 12:2",
+        "proverbs 18:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיָּ֥פֶק רָ֝צ֗וֹן מֵיְהוָֽה",
+      "pron": "타페크 우비레초남 여호와",
+      "lemmas": [
+        "פּוּק",
+        "רָצוֹן",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וַיָּ֥פֶק",
+          "lemma": "פּוּק",
+          "strong": "H6329",
+          "pron": "타페크"
+        },
+        {
+          "word": "רָ֝צ֗וֹן",
+          "lemma": "רָצוֹן",
+          "strong": "H7522",
+          "pron": "우비레초남"
+        },
+        {
+          "word": "מֵיְהוָֽה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 8:35",
+        "proverbs 12:2",
+        "proverbs 18:22"
       ],
       "glossKo": ""
     }

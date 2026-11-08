@@ -2,7 +2,7 @@
   "lemma": "פֶּקַח",
   "pron": "페카흐",
   "strong": "H6492",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "פָּקַח",
     "strong": "H6491",
@@ -12,31 +12,113 @@
     {
       "lemma": "פָּקַח",
       "strong": "H6491",
-      "pron": "포케아흐",
+      "pron": "브닙케후",
       "glossKo": "눈을 열다"
     },
     {
       "lemma": "פִּקֵּחַ",
       "strong": "H6493",
-      "pron": "",
+      "pron": "픽케아흐",
       "glossKo": "눈이 밝은"
     },
     {
       "lemma": "פְּקַחְיָה",
       "strong": "H6494",
-      "pron": "",
+      "pron": "페카헤아",
       "glossKo": "브가히야"
     },
     {
       "lemma": "פְּקַח־קוֹחַ",
       "strong": "H6495",
-      "pron": "",
+      "pron": "페카흐",
       "glossKo": "열림"
     }
   ],
   "defEn": "Pekach",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 11,
+  "byBook": {
+    "kings2": 9,
+    "chronicles2": 1,
+    "isaiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "פֶּ֨קַח בֶּן",
+      "pron": "페카흐 바님",
+      "lemmas": [
+        "פֶּקַח",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "פֶּ֨קַח",
+          "lemma": "פֶּקַח",
+          "strong": "H6492",
+          "pron": "페카흐"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "kings2 15:25",
+        "kings2 15:27",
+        "kings2 15:30",
+        "kings2 15:32",
+        "kings2 15:37",
+        "kings2 16:1",
+        "kings2 16:5",
+        "chronicles2 28:6",
+        "isaiah 7:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פֶּ֨קַח בֶּן רְמַלְיָ֜הוּ",
+      "pron": "페카흐 바님 레말아후",
+      "lemmas": [
+        "פֶּקַח",
+        "בֵּן",
+        "רְמַלְיָהוּ"
+      ],
+      "words": [
+        {
+          "word": "פֶּ֨קַח",
+          "lemma": "פֶּקַח",
+          "strong": "H6492",
+          "pron": "페카흐"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "רְמַלְיָ֜הוּ",
+          "lemma": "רְמַלְיָהוּ",
+          "strong": "H7425",
+          "pron": "레말아후"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "kings2 15:25",
+        "kings2 15:27",
+        "kings2 15:30",
+        "kings2 15:32",
+        "kings2 15:37",
+        "kings2 16:1",
+        "kings2 16:5",
+        "chronicles2 28:6",
+        "isaiah 7:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "מָרוֹם",
-  "pron": "라마롬",
+  "pron": "메로메",
   "strong": "H4791",
   "posKo": "명사",
   "root": {
@@ -12,45 +12,218 @@
     {
       "lemma": "יְרִימוֹת",
       "strong": "H3406",
-      "pron": "",
+      "pron": "비위리모트",
       "glossKo": "여리못"
     },
     {
       "lemma": "יַרְמוּת",
       "strong": "H3412",
-      "pron": "",
+      "pron": "야레무트",
       "glossKo": "야르뭇"
     },
     {
       "lemma": "יְרֵמַי",
       "strong": "H3413",
-      "pron": "",
+      "pron": "예레마이",
       "glossKo": "여레매"
     },
     {
       "lemma": "יִרְמְיָה",
       "strong": "H3414",
-      "pron": "",
+      "pron": "이렘아후",
       "glossKo": "예레미야"
     },
     {
       "lemma": "מֵרוֹם",
       "strong": "H4792",
-      "pron": "",
+      "pron": "메롬",
       "glossKo": "메롬"
     },
     {
       "lemma": "מְרֵמוֹת",
       "strong": "H4822",
-      "pron": "",
+      "pron": "메레모트",
       "glossKo": "므레못"
     }
   ],
   "defEn": "altitude; elevated place; elevation; elation; aloft",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 54,
   "byBook": {
-    "psalms": 13
+    "isaiah": 16,
+    "psalms": 13,
+    "jeremiah": 5,
+    "job": 5,
+    "ezekiel": 3,
+    "proverbs": 3,
+    "kings2": 2,
+    "ecclesiastes": 1,
+    "habakkuk": 1,
+    "judges": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "obadiah": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּהַ֨ר מְר֤וֹם",
+      "pron": "헤하림 메로메",
+      "lemmas": [
+        "הַר",
+        "מָרוֹם"
+      ],
+      "words": [
+        {
+          "word": "בְּהַ֨ר",
+          "lemma": "הַר",
+          "strong": "H2022",
+          "pron": "헤하림"
+        },
+        {
+          "word": "מְר֤וֹם",
+          "lemma": "מָרוֹם",
+          "strong": "H4791",
+          "pron": "메로메"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 17:23",
+        "ezekiel 20:40",
+        "ezekiel 34:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּהַ֨ר מְר֤וֹם יִשְׂרָאֵל֙",
+      "pron": "헤하림 메로메 이스라엘",
+      "lemmas": [
+        "הַר",
+        "מָרוֹם",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "בְּהַ֨ר",
+          "lemma": "הַר",
+          "strong": "H2022",
+          "pron": "헤하림"
+        },
+        {
+          "word": "מְר֤וֹם",
+          "lemma": "מָרוֹם",
+          "strong": "H4791",
+          "pron": "메로메"
+        },
+        {
+          "word": "יִשְׂרָאֵל֙",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 17:23",
+        "ezekiel 20:40",
+        "ezekiel 34:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתִּשָּׂ֥א מָר֛וֹם",
+      "pron": "미네소 메로메",
+      "lemmas": [
+        "נָשָׂא",
+        "מָרוֹם"
+      ],
+      "words": [
+        {
+          "word": "וַתִּשָּׂ֥א",
+          "lemma": "נָשָׂא",
+          "strong": "H5375",
+          "pron": "미네소"
+        },
+        {
+          "word": "מָר֛וֹם",
+          "lemma": "מָרוֹם",
+          "strong": "H4791",
+          "pron": "메로메"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 19:22",
+        "isaiah 37:23",
+        "isaiah 40:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתִּשָּׂ֥א מָר֛וֹם עֵינֶ֖יךָ",
+      "pron": "미네소 메로메 에네켐",
+      "lemmas": [
+        "נָשָׂא",
+        "מָרוֹם",
+        "עַיִן"
+      ],
+      "words": [
+        {
+          "word": "וַתִּשָּׂ֥א",
+          "lemma": "נָשָׂא",
+          "strong": "H5375",
+          "pron": "미네소"
+        },
+        {
+          "word": "מָר֛וֹם",
+          "lemma": "מָרוֹם",
+          "strong": "H4791",
+          "pron": "메로메"
+        },
+        {
+          "word": "עֵינֶ֖יךָ",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 19:22",
+        "isaiah 37:23",
+        "isaiah 40:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְר֤וֹם יִשְׂרָאֵל֙",
+      "pron": "메로메 이스라엘",
+      "lemmas": [
+        "מָרוֹם",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "מְר֤וֹם",
+          "lemma": "מָרוֹם",
+          "strong": "H4791",
+          "pron": "메로메"
+        },
+        {
+          "word": "יִשְׂרָאֵל֙",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 17:23",
+        "ezekiel 20:40",
+        "ezekiel 34:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

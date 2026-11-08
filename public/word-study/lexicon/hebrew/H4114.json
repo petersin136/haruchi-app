@@ -1,8 +1,8 @@
 {
   "lemma": "מַהְפֵּכָה",
-  "pron": "마헵페카",
+  "pron": "크마헵페카트",
   "strong": "H4114",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "הָפַךְ",
     "strong": "H2015",
@@ -12,43 +12,114 @@
     {
       "lemma": "הָפַךְ",
       "strong": "H2015",
-      "pron": "하파켓타",
+      "pron": "아미테합페케트",
       "glossKo": "엎다"
     },
     {
       "lemma": "הֶפֶךְ",
       "strong": "H2016",
-      "pron": "",
+      "pron": "헤페크",
       "glossKo": "전복"
     },
     {
       "lemma": "הֹפֶךְ",
       "strong": "H2017",
-      "pron": "",
-      "glossKo": "뒤집힘"
+      "pron": "합케켐",
+      "glossKo": "너희의 뒤집힘"
     },
     {
       "lemma": "הֲפַכְפַּךְ",
       "strong": "H2019",
-      "pron": "",
+      "pron": "하파켑파크",
       "glossKo": "매우 굽은"
     },
     {
       "lemma": "מַהְפֶּכֶת",
       "strong": "H4115",
-      "pron": "",
+      "pron": "아마헵페케트",
       "glossKo": "착고"
     },
     {
       "lemma": "תַּהְפֻּכָה",
       "strong": "H8419",
-      "pron": "",
+      "pron": "타헵푸코트",
       "glossKo": "패역"
     }
   ],
   "defEn": "destruction",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "isaiah": 2,
+    "jeremiah": 2,
+    "amos": 1,
+    "deuteronomy": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "כְּמַהְפֵּכַ֣ת אֱלֹהִ֔ים",
+      "pron": "크마헵페카트 엘로힘",
+      "lemmas": [
+        "מַהְפֵּכָה",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "כְּמַהְפֵּכַ֣ת",
+          "lemma": "מַהְפֵּכָה",
+          "strong": "H4114",
+          "pron": "크마헵페카트"
+        },
+        {
+          "word": "אֱלֹהִ֔ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 13:19",
+        "jeremiah 50:40",
+        "amos 4:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כְּמַהְפֵּכַ֣ת אֱלֹהִ֔ים אֶת",
+      "pron": "크마헵페카트 엘로힘 에트",
+      "lemmas": [
+        "מַהְפֵּכָה",
+        "אֱלֹהִים",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "כְּמַהְפֵּכַ֣ת",
+          "lemma": "מַהְפֵּכָה",
+          "strong": "H4114",
+          "pron": "크마헵페카트"
+        },
+        {
+          "word": "אֱלֹהִ֔ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 13:19",
+        "jeremiah 50:40",
+        "amos 4:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

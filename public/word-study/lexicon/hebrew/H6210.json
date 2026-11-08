@@ -1,15 +1,50 @@
 {
   "lemma": "עֶרֶשׂ",
-  "pron": "아레시위",
+  "pron": "아레소",
   "strong": "H6210",
   "posKo": "명사",
   "root": null,
   "family": [],
   "defEn": "couch",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 10,
   "byBook": {
-    "psalms": 3
+    "psalms": 3,
+    "amos": 2,
+    "deuteronomy": 2,
+    "job": 1,
+    "proverbs": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עַל עֶ֣רֶשׂ",
+      "pron": "알 아레소",
+      "lemmas": [
+        "עַל",
+        "עֶרֶשׂ"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "עֶ֣רֶשׂ",
+          "lemma": "עֶרֶשׂ",
+          "strong": "H6210",
+          "pron": "아레소"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 41:3",
+        "psalms 132:3",
+        "amos 6:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

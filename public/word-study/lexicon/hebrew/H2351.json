@@ -1,6 +1,6 @@
 {
   "lemma": "חוּץ",
-  "pron": "후초트",
+  "pron": "우미후츠",
   "strong": "H2351",
   "posKo": "명사",
   "root": null,
@@ -8,44 +8,237 @@
     {
       "lemma": "חַיִץ",
       "strong": "H2434",
-      "pron": "",
+      "pron": "하이츠",
       "glossKo": "벽"
     }
   ],
   "defEn": "separate by a wall; outside; outdoors",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 164,
   "byBook": {
+    "leviticus": 20,
+    "ezekiel": 18,
+    "jeremiah": 16,
+    "numbers": 13,
     "genesis": 12,
-    "psalms": 4
+    "exodus": 10,
+    "deuteronomy": 8,
+    "isaiah": 8,
+    "lamentations": 7,
+    "chronicles2": 6,
+    "kings1": 6,
+    "proverbs": 6,
+    "kings2": 4,
+    "psalms": 4,
+    "samuel2": 4,
+    "job": 3,
+    "judges": 3,
+    "joshua": 2,
+    "nahum": 2,
+    "nehemiah": 2,
+    "zechariah": 2,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "ezra": 1,
+    "hosea": 1,
+    "micah": 1,
+    "samuel1": 1,
+    "songofsolomon": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "וַיֵּצֵ֥א הַחֽוּצָה",
-      "pron": "예체 후초트",
+      "hebrew": "מִח֖וּץ לַֽמַּחֲנֶ֑ה",
+      "pron": "우미후츠 마하네",
       "lemmas": [
-        "יָצָא",
+        "חוּץ",
+        "מַחֲנֶה"
+      ],
+      "words": [
+        {
+          "word": "מִח֖וּץ",
+          "lemma": "חוּץ",
+          "strong": "H2351",
+          "pron": "우미후츠"
+        },
+        {
+          "word": "לַֽמַּחֲנֶ֑ה",
+          "lemma": "מַחֲנֶה",
+          "strong": "H4264",
+          "pron": "마하네"
+        }
+      ],
+      "count": 29,
+      "refs": [
+        "exodus 29:14",
+        "exodus 33:7",
+        "leviticus 4:12",
+        "leviticus 4:21",
+        "leviticus 6:11",
+        "leviticus 8:17",
+        "leviticus 9:11",
+        "leviticus 10:4",
+        "leviticus 10:5",
+        "leviticus 13:46",
+        "leviticus 14:3",
+        "leviticus 16:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל מִח֣וּץ",
+      "pron": "엘 우미후츠",
+      "lemmas": [
+        "אֵל",
         "חוּץ"
       ],
       "words": [
         {
-          "word": "וַיֵּצֵ֥א",
-          "lemma": "יָצָא",
-          "strong": "H3318",
-          "pron": "예체"
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
         },
         {
-          "word": "הַחֽוּצָה",
+          "word": "מִח֣וּץ",
           "lemma": "חוּץ",
           "strong": "H2351",
-          "pron": "후초트"
+          "pron": "우미후츠"
         }
       ],
-      "count": 3,
+      "count": 22,
       "refs": [
-        "psalms 41:6",
-        "genesis 39:12",
-        "genesis 39:15"
+        "leviticus 4:12",
+        "leviticus 4:21",
+        "leviticus 6:11",
+        "leviticus 10:4",
+        "leviticus 10:5",
+        "leviticus 14:3",
+        "leviticus 14:40",
+        "leviticus 14:41",
+        "leviticus 14:45",
+        "leviticus 14:53",
+        "leviticus 16:27",
+        "leviticus 24:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל מִחוּץ֙ לַֽמַּחֲנֶ֔ה",
+      "pron": "엘 우미후츠 마하네",
+      "lemmas": [
+        "אֵל",
+        "חוּץ",
+        "מַחֲנֶה"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "מִחוּץ֙",
+          "lemma": "חוּץ",
+          "strong": "H2351",
+          "pron": "우미후츠"
+        },
+        {
+          "word": "לַֽמַּחֲנֶ֔ה",
+          "lemma": "מַחֲנֶה",
+          "strong": "H4264",
+          "pron": "마하네"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "leviticus 4:12",
+        "leviticus 4:21",
+        "leviticus 6:11",
+        "leviticus 10:4",
+        "leviticus 10:5",
+        "leviticus 14:3",
+        "leviticus 16:27",
+        "leviticus 24:14",
+        "leviticus 24:23",
+        "numbers 5:3",
+        "numbers 5:4",
+        "numbers 15:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִח֤וּץ לִירוּשָׁלִַ֨ם֙",
+      "pron": "우미후츠 예루살렘",
+      "lemmas": [
+        "חוּץ",
+        "יְרוּשָׁלִַ͏ם"
+      ],
+      "words": [
+        {
+          "word": "מִח֤וּץ",
+          "lemma": "חוּץ",
+          "strong": "H2351",
+          "pron": "우미후츠"
+        },
+        {
+          "word": "לִירוּשָׁלִַ֨ם֙",
+          "lemma": "יְרוּשָׁלִַ͏ם",
+          "strong": "H3389",
+          "pron": "예루살렘"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "kings2 23:4",
+        "kings2 23:6",
+        "nehemiah 13:20",
+        "jeremiah 5:1",
+        "jeremiah 7:17",
+        "jeremiah 7:34",
+        "jeremiah 11:6",
+        "jeremiah 11:13",
+        "jeremiah 14:16",
+        "jeremiah 33:10",
+        "jeremiah 44:6",
+        "jeremiah 44:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִח֣וּץ לָעִ֔יר",
+      "pron": "우미후츠 이르",
+      "lemmas": [
+        "חוּץ",
+        "עִיר"
+      ],
+      "words": [
+        {
+          "word": "מִח֣וּץ",
+          "lemma": "חוּץ",
+          "strong": "H2351",
+          "pron": "우미후츠"
+        },
+        {
+          "word": "לָעִ֔יר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "genesis 19:16",
+        "genesis 24:11",
+        "leviticus 14:40",
+        "leviticus 14:41",
+        "leviticus 14:45",
+        "leviticus 14:53",
+        "numbers 35:5",
+        "kings1 21:13",
+        "chronicles2 32:3",
+        "chronicles2 33:15"
       ],
       "glossKo": ""
     }

@@ -1,8 +1,8 @@
 {
   "lemma": "נְתַן",
-  "pron": "네탄",
+  "pron": "인테눈",
   "strong": "H5415",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "נָתַן",
     "strong": "H5414",
@@ -18,37 +18,106 @@
     {
       "lemma": "נָתִין",
       "strong": "H5411",
-      "pron": "",
+      "pron": "브아네티님",
       "glossKo": "느디님 사람"
     },
     {
       "lemma": "נָתַן",
       "strong": "H5414",
-      "pron": "잇텐",
+      "pron": "바잇텐",
       "glossKo": "주다"
     },
     {
       "lemma": "נָתָן",
       "strong": "H5416",
-      "pron": "나탄",
+      "pron": "브나탄",
       "glossKo": "나단"
     },
     {
       "lemma": "נְתַנְאֵל",
       "strong": "H5417",
-      "pron": "",
+      "pron": "네탄엘",
       "glossKo": "느다넬"
     },
     {
       "lemma": "נְתַנְיָה",
       "strong": "H5418",
-      "pron": "",
+      "pron": "네탄아",
       "glossKo": "느다냐"
     }
   ],
   "defEn": "give",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "daniel": 4,
+    "ezra": 3
+  },
+  "phrases": [
+    {
+      "hebrew": "דִּ֥י יִצְבֵּ֖א יִתְּנִנַּֽהּ",
+      "pron": "드흐브 이쳅베 인테눈",
+      "lemmas": [
+        "דִּי",
+        "צְבָא",
+        "נְתַן"
+      ],
+      "words": [
+        {
+          "word": "דִּ֥י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "יִצְבֵּ֖א",
+          "lemma": "צְבָא",
+          "strong": "H6634",
+          "pron": "이쳅베"
+        },
+        {
+          "word": "יִתְּנִנַּֽהּ",
+          "lemma": "נְתַן",
+          "strong": "H5415",
+          "pron": "인테눈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 4:17",
+        "daniel 4:25",
+        "daniel 4:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִצְבֵּ֖א יִתְּנִנַּֽהּ",
+      "pron": "이쳅베 인테눈",
+      "lemmas": [
+        "צְבָא",
+        "נְתַן"
+      ],
+      "words": [
+        {
+          "word": "יִצְבֵּ֖א",
+          "lemma": "צְבָא",
+          "strong": "H6634",
+          "pron": "이쳅베"
+        },
+        {
+          "word": "יִתְּנִנַּֽהּ",
+          "lemma": "נְתַן",
+          "strong": "H5415",
+          "pron": "인테눈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 4:17",
+        "daniel 4:25",
+        "daniel 4:32"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

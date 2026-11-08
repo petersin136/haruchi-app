@@ -1,6 +1,6 @@
 {
   "lemma": "פַּר",
-  "pron": "파림",
+  "pron": "우파림",
   "strong": "H6499",
   "posKo": "명사",
   "root": {
@@ -18,28 +18,240 @@
     {
       "lemma": "פָּרוּר",
       "strong": "H6517",
-      "pron": "",
+      "pron": "바파루르",
       "glossKo": "솥"
     },
     {
       "lemma": "פַּרְפַּר",
       "strong": "H6554",
-      "pron": "",
+      "pron": "우파렙파르",
       "glossKo": "바르발"
     },
     {
       "lemma": "פָּרַר",
       "strong": "H6565",
-      "pron": "포라렛타",
+      "pron": "헤파르",
       "glossKo": "깨뜨리다"
     }
   ],
   "defEn": "bullock; breaking; dividing",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 133,
   "byBook": {
+    "numbers": 52,
+    "leviticus": 30,
+    "ezekiel": 13,
+    "exodus": 9,
+    "kings1": 6,
+    "chronicles2": 4,
+    "judges": 4,
     "psalms": 4,
-    "genesis": 1
+    "chronicles1": 2,
+    "isaiah": 2,
+    "samuel1": 2,
+    "ezra": 1,
+    "genesis": 1,
+    "hosea": 1,
+    "jeremiah": 1,
+    "job": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת הַפָּ֖ר",
+      "pron": "에트 우파림",
+      "lemmas": [
+        "אֵת",
+        "פַּר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַפָּ֖ר",
+          "lemma": "פַּר",
+          "strong": "H6499",
+          "pron": "우파림"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "exodus 29:3",
+        "exodus 29:10",
+        "exodus 29:11",
+        "leviticus 4:4",
+        "leviticus 4:15",
+        "leviticus 4:21",
+        "leviticus 8:2",
+        "leviticus 8:14",
+        "leviticus 8:17",
+        "leviticus 16:6",
+        "leviticus 16:11",
+        "leviticus 16:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פַּ֣ר אֶחָ֞ד",
+      "pron": "우파림 에핟",
+      "lemmas": [
+        "פַּר",
+        "אֶחָד"
+      ],
+      "words": [
+        {
+          "word": "פַּ֣ר",
+          "lemma": "פַּר",
+          "strong": "H6499",
+          "pron": "우파림"
+        },
+        {
+          "word": "אֶחָ֞ד",
+          "lemma": "אֶחָד",
+          "strong": "H259",
+          "pron": "에핟"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "exodus 29:1",
+        "numbers 7:15",
+        "numbers 7:21",
+        "numbers 7:27",
+        "numbers 7:33",
+        "numbers 7:39",
+        "numbers 7:45",
+        "numbers 7:51",
+        "numbers 7:57",
+        "numbers 7:63",
+        "numbers 7:69",
+        "numbers 7:75"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פַּ֣ר בֶּן",
+      "pron": "우파림 바님",
+      "lemmas": [
+        "פַּר",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "פַּ֣ר",
+          "lemma": "פַּר",
+          "strong": "H6499",
+          "pron": "우파림"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "leviticus 4:3",
+        "leviticus 4:14",
+        "leviticus 16:3",
+        "leviticus 23:18",
+        "numbers 8:8",
+        "numbers 15:24",
+        "numbers 28:11",
+        "numbers 28:19",
+        "numbers 28:27",
+        "numbers 29:2",
+        "numbers 29:8",
+        "numbers 29:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פָּרִ֧ים בְּנֵי בָקָ֛ר",
+      "pron": "우파림 바님 우바카르",
+      "lemmas": [
+        "פַּר",
+        "בֵּן",
+        "בָּקָר"
+      ],
+      "words": [
+        {
+          "word": "פָּרִ֧ים",
+          "lemma": "פַּר",
+          "strong": "H6499",
+          "pron": "우파림"
+        },
+        {
+          "word": "בְּנֵי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "בָקָ֛ר",
+          "lemma": "בָּקָר",
+          "strong": "H1241",
+          "pron": "우바카르"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "leviticus 4:3",
+        "leviticus 4:14",
+        "leviticus 16:3",
+        "leviticus 23:18",
+        "numbers 8:8",
+        "numbers 15:24",
+        "numbers 28:11",
+        "numbers 28:19",
+        "numbers 28:27",
+        "numbers 29:2",
+        "numbers 29:8",
+        "numbers 29:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַ֠פָּרִים לָאֵילִ֧ם",
+      "pron": "우파림 브아일",
+      "lemmas": [
+        "פַּר",
+        "אַיִל"
+      ],
+      "words": [
+        {
+          "word": "לַ֠פָּרִים",
+          "lemma": "פַּר",
+          "strong": "H6499",
+          "pron": "우파림"
+        },
+        {
+          "word": "לָאֵילִ֧ם",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "numbers 7:87",
+        "numbers 7:88",
+        "numbers 23:2",
+        "numbers 23:4",
+        "numbers 23:14",
+        "numbers 23:30",
+        "numbers 29:18",
+        "numbers 29:21",
+        "numbers 29:24",
+        "numbers 29:27",
+        "numbers 29:30",
+        "numbers 29:33"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

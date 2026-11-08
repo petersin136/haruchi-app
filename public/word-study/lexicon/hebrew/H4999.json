@@ -24,9 +24,46 @@
   ],
   "defEn": "home; pasture",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 12,
   "byBook": {
-    "psalms": 4
+    "psalms": 4,
+    "jeremiah": 3,
+    "joel": 3,
+    "amos": 1,
+    "lamentations": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נְא֣וֹת מִדְבָּ֑ר",
+      "pron": "비네오트 아믿바르",
+      "lemmas": [
+        "נָאָה",
+        "מִדְבָּר"
+      ],
+      "words": [
+        {
+          "word": "נְא֣וֹת",
+          "lemma": "נָאָה",
+          "strong": "H4999",
+          "pron": "비네오트"
+        },
+        {
+          "word": "מִדְבָּ֑ר",
+          "lemma": "מִדְבָּר",
+          "strong": "H4057",
+          "pron": "아믿바르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "psalms 65:12",
+        "jeremiah 9:10",
+        "jeremiah 23:10",
+        "joel 1:19",
+        "joel 1:20",
+        "joel 2:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

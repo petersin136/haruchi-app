@@ -1,6 +1,6 @@
 {
   "lemma": "מָעוֹז",
-  "pron": "마옷",
+  "pron": "아마옷",
   "strong": "H4581",
   "posKo": "명사",
   "root": {
@@ -24,13 +24,13 @@
     {
       "lemma": "עֹז",
       "strong": "H5797",
-      "pron": "옷",
-      "glossKo": "힘"
+      "pron": "앗지",
+      "glossKo": "나의 힘"
     },
     {
       "lemma": "עֱזוּז",
       "strong": "H5807",
-      "pron": "베에줏오",
+      "pron": "베에주조",
       "glossKo": "그의 힘"
     },
     {
@@ -42,15 +42,55 @@
     {
       "lemma": "עָזַז",
       "strong": "H5810",
-      "pron": "야옷",
+      "pron": "바타앗",
       "glossKo": "강하다"
     }
   ],
   "defEn": "fortified; defence",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 37,
   "byBook": {
-    "psalms": 9
+    "isaiah": 10,
+    "psalms": 9,
+    "daniel": 8,
+    "ezekiel": 2,
+    "nahum": 2,
+    "jeremiah": 1,
+    "joel": 1,
+    "judges": 1,
+    "nehemiah": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יְהוָ֥ה מָֽעוֹז",
+      "pron": "여호와 아마옷",
+      "lemmas": [
+        "יְהֹוָה",
+        "מָעוֹז"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֥ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "מָֽעוֹז",
+          "lemma": "מָעוֹז",
+          "strong": "H4581",
+          "pron": "아마옷"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 27:1",
+        "psalms 37:39",
+        "nahum 1:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

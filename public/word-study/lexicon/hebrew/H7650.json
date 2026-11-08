@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁבַע",
-  "pron": "니솁바",
+  "pron": "힛샵아",
   "strong": "H7650",
   "posKo": "동사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "אַשְׁבֵּעַ",
       "strong": "H791",
-      "pron": "",
+      "pron": "아솁베아",
       "glossKo": "아스베아"
     },
     {
@@ -24,42 +24,182 @@
     {
       "lemma": "שְׁבוּעָה",
       "strong": "H7621",
-      "pron": "우셰부아트오",
-      "glossKo": "그의 맹세"
+      "pron": "밋셰부아티",
+      "glossKo": "나의 맹세"
     },
     {
       "lemma": "שֶׁבַע",
       "strong": "H7651",
-      "pron": "셰바",
+      "pron": "브십아",
       "glossKo": "일곱"
     },
     {
       "lemma": "שֶׁבַע",
       "strong": "H7652",
-      "pron": "",
+      "pron": "브셰바",
       "glossKo": "일곱"
     },
     {
       "lemma": "שִׁבְעָה",
       "strong": "H7655",
-      "pron": "",
+      "pron": "브십아트",
       "glossKo": "일곱(아람)"
     }
   ],
   "defEn": "seven; swear",
   "defKo": "",
-  "countOT": 31,
+  "countOT": 186,
   "byBook": {
+    "deuteronomy": 33,
     "genesis": 19,
-    "psalms": 12
+    "joshua": 16,
+    "jeremiah": 14,
+    "psalms": 12,
+    "samuel1": 12,
+    "isaiah": 10,
+    "kings1": 10,
+    "numbers": 8,
+    "exodus": 6,
+    "judges": 6,
+    "samuel2": 6,
+    "songofsolomon": 5,
+    "amos": 4,
+    "chronicles2": 4,
+    "leviticus": 4,
+    "ezekiel": 2,
+    "ezra": 2,
+    "kings2": 2,
+    "nehemiah": 2,
+    "zechariah": 2,
+    "zephaniah": 2,
+    "daniel": 1,
+    "ecclesiastes": 1,
+    "hosea": 1,
+    "malachi": 1,
+    "micah": 1
   },
   "phrases": [
     {
-      "hebrew": "אֲשֶׁר נִשְׁבַּ֥עְתִּי",
-      "pron": "아셰르 니솁바",
+      "hebrew": "אֲשֶׁ֨ר נִשְׁבַּ֧ע",
+      "pron": "아셰르 힛샵아",
       "lemmas": [
         "אֲשֶׁר",
         "שָׁבַע"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "נִשְׁבַּ֧ע",
+          "lemma": "שָׁבַע",
+          "strong": "H7650",
+          "pron": "힛샵아"
+        }
+      ],
+      "count": 63,
+      "refs": [
+        "genesis 24:7",
+        "genesis 26:3",
+        "genesis 50:6",
+        "genesis 50:24",
+        "exodus 13:5",
+        "exodus 13:11",
+        "exodus 32:13",
+        "exodus 33:1",
+        "leviticus 6:5",
+        "numbers 11:12",
+        "numbers 14:16",
+        "numbers 14:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נִשְׁבַּ֥ע יְהוָ֖ה",
+      "pron": "힛샵아 여호와",
+      "lemmas": [
+        "שָׁבַע",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "נִשְׁבַּ֥ע",
+          "lemma": "שָׁבַע",
+          "strong": "H7650",
+          "pron": "힛샵아"
+        },
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 33,
+      "refs": [
+        "genesis 24:3",
+        "deuteronomy 1:8",
+        "deuteronomy 2:14",
+        "deuteronomy 6:18",
+        "deuteronomy 8:1",
+        "deuteronomy 9:5",
+        "deuteronomy 11:9",
+        "deuteronomy 11:21",
+        "deuteronomy 26:3",
+        "deuteronomy 28:11",
+        "deuteronomy 30:20",
+        "deuteronomy 31:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נִשְׁבַּ֖ע לַאֲבֹתֶֽיךָ",
+      "pron": "힛샵아 아비브",
+      "lemmas": [
+        "שָׁבַע",
+        "אָב"
+      ],
+      "words": [
+        {
+          "word": "נִשְׁבַּ֖ע",
+          "lemma": "שָׁבַע",
+          "strong": "H7650",
+          "pron": "힛샵아"
+        },
+        {
+          "word": "לַאֲבֹתֶֽיךָ",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        }
+      ],
+      "count": 24,
+      "refs": [
+        "exodus 13:5",
+        "exodus 13:11",
+        "numbers 11:12",
+        "numbers 14:23",
+        "deuteronomy 6:10",
+        "deuteronomy 6:23",
+        "deuteronomy 7:8",
+        "deuteronomy 7:12",
+        "deuteronomy 7:13",
+        "deuteronomy 8:18",
+        "deuteronomy 10:11",
+        "deuteronomy 13:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר נִשְׁבַּ֥ע לַאֲבֹתֶ֖יךָ",
+      "pron": "아셰르 힛샵아 아비브",
+      "lemmas": [
+        "אֲשֶׁר",
+        "שָׁבַע",
+        "אָב"
       ],
       "words": [
         {
@@ -69,50 +209,77 @@
           "pron": "아셰르"
         },
         {
-          "word": "נִשְׁבַּ֥עְתִּי",
+          "word": "נִשְׁבַּ֥ע",
           "lemma": "שָׁבַע",
           "strong": "H7650",
-          "pron": "니솁바"
+          "pron": "힛샵아"
+        },
+        {
+          "word": "לַאֲבֹתֶ֖יךָ",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
         }
       ],
-      "count": 6,
+      "count": 22,
       "refs": [
-        "psalms 95:11",
-        "psalms 132:2",
-        "genesis 24:7",
-        "genesis 26:3",
-        "genesis 50:6",
-        "genesis 50:24"
+        "exodus 13:5",
+        "exodus 13:11",
+        "numbers 11:12",
+        "numbers 14:23",
+        "deuteronomy 6:10",
+        "deuteronomy 6:23",
+        "deuteronomy 7:8",
+        "deuteronomy 7:12",
+        "deuteronomy 7:13",
+        "deuteronomy 8:18",
+        "deuteronomy 10:11",
+        "deuteronomy 13:17"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "נִשְׁבַּ֤ע יְהוָ֨ה",
-      "pron": "니솁바 여호와",
+      "hebrew": "הָאָ֔רֶץ אֲשֶׁ֥ר נִשְׁבַּ֖ע",
+      "pron": "하아레츠 아셰르 힛샵아",
       "lemmas": [
-        "שָׁבַע",
-        "יְהֹוָה"
+        "אֶרֶץ",
+        "אֲשֶׁר",
+        "שָׁבַע"
       ],
       "words": [
         {
-          "word": "נִשְׁבַּ֤ע",
-          "lemma": "שָׁבַע",
-          "strong": "H7650",
-          "pron": "니솁바"
+          "word": "הָאָ֔רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
         },
         {
-          "word": "יְהוָ֨ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "נִשְׁבַּ֖ע",
+          "lemma": "שָׁבַע",
+          "strong": "H7650",
+          "pron": "힛샵아"
         }
       ],
-      "count": 4,
+      "count": 18,
       "refs": [
-        "psalms 110:4",
-        "psalms 132:2",
-        "psalms 132:11",
-        "genesis 24:3"
+        "genesis 50:24",
+        "exodus 33:1",
+        "numbers 14:16",
+        "numbers 14:23",
+        "deuteronomy 1:8",
+        "deuteronomy 6:10",
+        "deuteronomy 6:23",
+        "deuteronomy 8:1",
+        "deuteronomy 10:11",
+        "deuteronomy 26:3",
+        "deuteronomy 31:7",
+        "deuteronomy 31:21"
       ],
       "glossKo": ""
     }

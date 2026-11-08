@@ -12,19 +12,19 @@
     {
       "lemma": "מִפְלַגָּה",
       "strong": "H4653",
-      "pron": "",
+      "pron": "르밉락고트",
       "glossKo": "분반"
     },
     {
       "lemma": "פָּלַג",
       "strong": "H6385",
-      "pron": "팔락",
+      "pron": "닙레가",
       "glossKo": "나뉘다"
     },
     {
       "lemma": "פְּלַג",
       "strong": "H6386",
-      "pron": "",
+      "pron": "펠리가",
       "glossKo": "나뉘다(아람)"
     },
     {
@@ -36,21 +36,58 @@
     {
       "lemma": "פְּלַגָּה",
       "strong": "H6390",
-      "pron": "",
+      "pron": "비펠락고트",
       "glossKo": "작은 시내"
     },
     {
       "lemma": "פְּלֻגָּה",
       "strong": "H6391",
-      "pron": "",
+      "pron": "비펠락고트",
       "glossKo": "구획"
     }
   ],
   "defEn": "rill",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 10,
   "byBook": {
-    "psalms": 4
+    "psalms": 4,
+    "isaiah": 2,
+    "proverbs": 2,
+    "job": 1,
+    "lamentations": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "פַּלְגֵ֫י מָ֥יִם",
+      "pron": "팔게 아마임",
+      "lemmas": [
+        "פֶּלֶג",
+        "מַיִם"
+      ],
+      "words": [
+        {
+          "word": "פַּלְגֵ֫י",
+          "lemma": "פֶּלֶג",
+          "strong": "H6388",
+          "pron": "팔게"
+        },
+        {
+          "word": "מָ֥יִם",
+          "lemma": "מַיִם",
+          "strong": "H4325",
+          "pron": "아마임"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "psalms 1:3",
+        "psalms 119:136",
+        "proverbs 5:16",
+        "proverbs 21:1",
+        "isaiah 32:2",
+        "lamentations 3:48"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

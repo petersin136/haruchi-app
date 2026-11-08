@@ -1,8 +1,8 @@
 {
   "lemma": "מִשְׁחָה",
-  "pron": "미셰하",
+  "pron": "아미셰하",
   "strong": "H4888",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "מָשַׁח",
     "strong": "H4886",
@@ -12,31 +12,212 @@
     {
       "lemma": "מִמְשַׁח",
       "strong": "H4473",
-      "pron": "",
+      "pron": "밈샤흐",
       "glossKo": "기름 부음"
     },
     {
       "lemma": "מָשַׁח",
       "strong": "H4886",
-      "pron": "메샤하카",
-      "glossKo": "너에게 기름 붓다"
+      "pron": "마샤헷타",
+      "glossKo": "기름 붓다"
     },
     {
       "lemma": "מְשַׁח",
       "strong": "H4887",
-      "pron": "",
+      "pron": "우메샤흐",
       "glossKo": "기름(아람)"
     },
     {
       "lemma": "מָשִׁיחַ",
       "strong": "H4899",
-      "pron": "메시흐오",
-      "glossKo": "그의 기름 부음 받은 자"
+      "pron": "아마시아흐",
+      "glossKo": "기름 부음 받은 자"
     }
   ],
   "defEn": "unction",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 26,
+  "byBook": {
+    "exodus": 15,
+    "leviticus": 9,
+    "numbers": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "שֶׁ֣מֶן הַמִּשְׁחָ֔ה",
+      "pron": "셰멘 아미셰하",
+      "lemmas": [
+        "שֶׁמֶן",
+        "מִשְׁחָה"
+      ],
+      "words": [
+        {
+          "word": "שֶׁ֣מֶן",
+          "lemma": "שֶׁמֶן",
+          "strong": "H8081",
+          "pron": "셰멘"
+        },
+        {
+          "word": "הַמִּשְׁחָ֔ה",
+          "lemma": "מִשְׁחָה",
+          "strong": "H4888",
+          "pron": "아미셰하"
+        }
+      ],
+      "count": 21,
+      "refs": [
+        "exodus 25:6",
+        "exodus 29:7",
+        "exodus 29:21",
+        "exodus 30:25",
+        "exodus 30:31",
+        "exodus 31:11",
+        "exodus 35:8",
+        "exodus 35:15",
+        "exodus 35:28",
+        "exodus 37:29",
+        "exodus 39:38",
+        "exodus 40:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת שֶׁ֣מֶן הַמִּשְׁחָ֔ה",
+      "pron": "에트 셰멘 아미셰하",
+      "lemmas": [
+        "אֵת",
+        "שֶׁמֶן",
+        "מִשְׁחָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שֶׁ֣מֶן",
+          "lemma": "שֶׁמֶן",
+          "strong": "H8081",
+          "pron": "셰멘"
+        },
+        {
+          "word": "הַמִּשְׁחָ֔ה",
+          "lemma": "מִשְׁחָה",
+          "strong": "H4888",
+          "pron": "아미셰하"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 29:7",
+        "exodus 30:25",
+        "exodus 31:11",
+        "exodus 35:15",
+        "exodus 37:29",
+        "exodus 39:38",
+        "exodus 40:9",
+        "leviticus 8:2",
+        "leviticus 8:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַמִּשְׁחָ֔ה וְאֵ֖ת",
+      "pron": "아미셰하 에트",
+      "lemmas": [
+        "מִשְׁחָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הַמִּשְׁחָ֔ה",
+          "lemma": "מִשְׁחָה",
+          "strong": "H4888",
+          "pron": "아미셰하"
+        },
+        {
+          "word": "וְאֵ֖ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 31:11",
+        "exodus 35:15",
+        "exodus 39:38",
+        "leviticus 8:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִשְׁחַת קֹ֔דֶשׁ",
+      "pron": "아미셰하 코데쉬",
+      "lemmas": [
+        "מִשְׁחָה",
+        "קֹדֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "מִשְׁחַת",
+          "lemma": "מִשְׁחָה",
+          "strong": "H4888",
+          "pron": "아미셰하"
+        },
+        {
+          "word": "קֹ֔דֶשׁ",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 30:25",
+        "exodus 30:31",
+        "exodus 37:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שֶׁ֣מֶן הַמִּשְׁחָ֔ה וְאֵ֖ת",
+      "pron": "셰멘 아미셰하 에트",
+      "lemmas": [
+        "שֶׁמֶן",
+        "מִשְׁחָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "שֶׁ֣מֶן",
+          "lemma": "שֶׁמֶן",
+          "strong": "H8081",
+          "pron": "셰멘"
+        },
+        {
+          "word": "הַמִּשְׁחָ֔ה",
+          "lemma": "מִשְׁחָה",
+          "strong": "H4888",
+          "pron": "아미셰하"
+        },
+        {
+          "word": "וְאֵ֖ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 31:11",
+        "exodus 35:15",
+        "exodus 39:38",
+        "leviticus 8:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

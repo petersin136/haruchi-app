@@ -14,7 +14,7 @@
     {
       "lemma": "שָׁלִישׁ",
       "strong": "H7991",
-      "pron": "샬리쉬",
+      "pron": "브샬리심",
       "glossKo": "장군"
     },
     {
@@ -32,15 +32,39 @@
     {
       "lemma": "תְּלָת",
       "strong": "H8532",
-      "pron": "",
+      "pron": "텔라타",
       "glossKo": "셋(아람)"
     }
   ],
   "defEn": "three; third; thrice",
   "defKo": "",
-  "countOT": 29,
+  "countOT": 431,
   "byBook": {
-    "genesis": 29
+    "chronicles1": 40,
+    "numbers": 37,
+    "exodus": 35,
+    "chronicles2": 33,
+    "genesis": 29,
+    "kings1": 27,
+    "samuel1": 25,
+    "samuel2": 24,
+    "ezekiel": 20,
+    "ezra": 20,
+    "judges": 19,
+    "kings2": 19,
+    "joshua": 16,
+    "nehemiah": 14,
+    "amos": 11,
+    "esther": 10,
+    "job": 10,
+    "daniel": 9,
+    "deuteronomy": 9,
+    "jeremiah": 8,
+    "leviticus": 5,
+    "proverbs": 4,
+    "isaiah": 3,
+    "jonah": 3,
+    "zechariah": 1
   },
   "phrases": [
     {
@@ -64,23 +88,67 @@
           "pron": "우메아트"
         }
       ],
-      "count": 6,
+      "count": 60,
       "refs": [
         "genesis 5:22",
         "genesis 5:23",
         "genesis 6:15",
         "genesis 9:28",
         "genesis 14:14",
-        "genesis 45:22"
+        "genesis 45:22",
+        "numbers 1:23",
+        "numbers 2:13",
+        "numbers 3:50",
+        "numbers 26:25",
+        "numbers 31:36",
+        "numbers 31:43"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שְׁלֹ֥שֶׁת יָמִ֖ים",
-      "pron": "셸로쉬 아욤",
+      "hebrew": "שְׁלֹ֣שֶׁת יָמִ֔ים",
+      "pron": "셸로쉬 욤",
       "lemmas": [
         "שָׁלוֹשׁ",
         "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "שְׁלֹ֣שֶׁת",
+          "lemma": "שָׁלוֹשׁ",
+          "strong": "H7969",
+          "pron": "셸로쉬"
+        },
+        {
+          "word": "יָמִ֔ים",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 38,
+      "refs": [
+        "genesis 30:36",
+        "genesis 40:12",
+        "genesis 40:13",
+        "genesis 40:18",
+        "genesis 40:19",
+        "genesis 42:17",
+        "exodus 3:18",
+        "exodus 5:3",
+        "exodus 8:27",
+        "exodus 10:22",
+        "exodus 10:23",
+        "exodus 15:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁלֹ֥שֶׁת אֲלָפִ֖ים",
+      "pron": "셸로쉬 엘렙",
+      "lemmas": [
+        "שָׁלוֹשׁ",
+        "אֶלֶף"
       ],
       "words": [
         {
@@ -90,30 +158,73 @@
           "pron": "셸로쉬"
         },
         {
-          "word": "יָמִ֖ים",
-          "lemma": "יוֹם",
-          "strong": "H3117",
-          "pron": "아욤"
+          "word": "אֲלָפִ֖ים",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
         }
       ],
-      "count": 6,
+      "count": 29,
       "refs": [
-        "genesis 30:36",
-        "genesis 40:12",
-        "genesis 40:13",
-        "genesis 40:18",
-        "genesis 40:19",
-        "genesis 42:17"
+        "exodus 32:28",
+        "exodus 38:26",
+        "numbers 1:46",
+        "numbers 2:32",
+        "numbers 4:44",
+        "joshua 7:3",
+        "joshua 7:4",
+        "judges 15:11",
+        "judges 16:27",
+        "samuel1 13:2",
+        "samuel1 24:2",
+        "samuel1 25:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שְׁלֹ֥שׁ מֵא֖וֹת שָׁנָ֑ה",
-      "pron": "셸로쉬 우메아트 우셰노타위",
+      "hebrew": "שָׁלֹ֣שׁ שָׁנִ֔ים",
+      "pron": "셸로쉬 브샤님",
       "lemmas": [
         "שָׁלוֹשׁ",
-        "מֵאָה",
         "שָׁנֶה"
+      ],
+      "words": [
+        {
+          "word": "שָׁלֹ֣שׁ",
+          "lemma": "שָׁלוֹשׁ",
+          "strong": "H7969",
+          "pron": "셸로쉬"
+        },
+        {
+          "word": "שָׁנִ֔ים",
+          "lemma": "שָׁנֶה",
+          "strong": "H8141",
+          "pron": "브샤님"
+        }
+      ],
+      "count": 28,
+      "refs": [
+        "genesis 11:13",
+        "genesis 11:15",
+        "leviticus 19:23",
+        "leviticus 25:21",
+        "deuteronomy 14:28",
+        "judges 9:22",
+        "judges 10:2",
+        "samuel2 5:5",
+        "samuel2 13:38",
+        "samuel2 21:1",
+        "kings1 2:11",
+        "kings1 2:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁלֹ֥שׁ עֶשְׂרֵֽה",
+      "pron": "셸로쉬 에세레",
+      "lemmas": [
+        "שָׁלוֹשׁ",
+        "עָשָׂר"
       ],
       "words": [
         {
@@ -123,23 +234,26 @@
           "pron": "셸로쉬"
         },
         {
-          "word": "מֵא֖וֹת",
-          "lemma": "מֵאָה",
-          "strong": "H3967",
-          "pron": "우메아트"
-        },
-        {
-          "word": "שָׁנָ֑ה",
-          "lemma": "שָׁנֶה",
-          "strong": "H8141",
-          "pron": "우셰노타위"
+          "word": "עֶשְׂרֵֽה",
+          "lemma": "עָשָׂר",
+          "strong": "H6240",
+          "pron": "에세레"
         }
       ],
-      "count": 3,
+      "count": 24,
       "refs": [
-        "genesis 5:22",
-        "genesis 5:23",
-        "genesis 9:28"
+        "genesis 14:4",
+        "genesis 17:25",
+        "numbers 29:13",
+        "numbers 29:14",
+        "joshua 19:6",
+        "joshua 21:4",
+        "joshua 21:6",
+        "joshua 21:19",
+        "joshua 21:33",
+        "kings1 7:1",
+        "chronicles1 6:60",
+        "chronicles1 6:62"
       ],
       "glossKo": ""
     }

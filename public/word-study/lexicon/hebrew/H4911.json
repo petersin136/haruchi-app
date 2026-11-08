@@ -1,6 +1,6 @@
 {
   "lemma": "מָשַׁל",
-  "pron": "브님샬티",
+  "pron": "아모셸림",
   "strong": "H4911",
   "posKo": "동사",
   "root": {
@@ -12,21 +12,55 @@
     {
       "lemma": "מָשָׁל",
       "strong": "H4912",
-      "pron": "마샬",
-      "glossKo": "잠언"
+      "pron": "메샬로",
+      "glossKo": "그의 잠언"
     },
     {
       "lemma": "מְשֹׁל",
       "strong": "H4914",
-      "pron": "",
+      "pron": "리메숄",
       "glossKo": "비유"
     }
   ],
   "defEn": "liken; resemble",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 16,
   "byBook": {
-    "psalms": 4
+    "ezekiel": 8,
+    "psalms": 4,
+    "isaiah": 2,
+    "job": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּמְשֹׁ֣ל מָשָׁ֑ל",
+      "pron": "아모셸림 메샬로",
+      "lemmas": [
+        "מָשַׁל",
+        "מָשָׁל"
+      ],
+      "words": [
+        {
+          "word": "וּמְשֹׁ֣ל",
+          "lemma": "מָשַׁל",
+          "strong": "H4911",
+          "pron": "아모셸림"
+        },
+        {
+          "word": "מָשָׁ֑ל",
+          "lemma": "מָשָׁל",
+          "strong": "H4912",
+          "pron": "메샬로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 17:2",
+        "ezekiel 18:3",
+        "ezekiel 20:49"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

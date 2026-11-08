@@ -1,6 +1,6 @@
 {
   "lemma": "אָזַן",
-  "pron": "하아지나",
+  "pron": "하에젠나",
   "strong": "H238",
   "posKo": "동사",
   "root": {
@@ -12,71 +12,115 @@
     {
       "lemma": "אָזַן",
       "strong": "H239",
-      "pron": "",
+      "pron": "브잇젠",
       "glossKo": "달다"
     },
     {
       "lemma": "אָזֵן",
       "strong": "H240",
-      "pron": "",
-      "glossKo": "삽"
+      "pron": "아제네카",
+      "glossKo": "너의 삽"
     },
     {
       "lemma": "אֹזֶן",
       "strong": "H241",
-      "pron": "앗네카",
-      "glossKo": "너의 귀"
+      "pron": "베앗네헴",
+      "glossKo": "그들의 귀"
     },
     {
       "lemma": "אֻזֵּן שֶׁאֱרָה",
       "strong": "H242",
-      "pron": "",
+      "pron": "웃젠",
       "glossKo": "우센세에라"
     },
     {
       "lemma": "אַזְנוֹת תָּבוֹר",
       "strong": "H243",
-      "pron": "",
+      "pron": "앗노트",
       "glossKo": "아스놋다볼"
     },
     {
       "lemma": "אׇזְנִי",
       "strong": "H244",
-      "pron": "",
+      "pron": "르앗니",
       "glossKo": "오스니 자손"
     }
   ],
   "defEn": "broaden out the ear; listen",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 41,
   "byBook": {
     "psalms": 15,
-    "genesis": 1
+    "isaiah": 8,
+    "job": 6,
+    "deuteronomy": 2,
+    "chronicles2": 1,
+    "exodus": 1,
+    "genesis": 1,
+    "hosea": 1,
+    "jeremiah": 1,
+    "joel": 1,
+    "judges": 1,
+    "nehemiah": 1,
+    "numbers": 1,
+    "proverbs": 1
   },
   "phrases": [
     {
-      "hebrew": "הַאֲזִינָה֮ אֶֽל",
-      "pron": "하아지나 엘레모",
+      "hebrew": "וְלֹ֥א הֶאֱזִ֖ין",
+      "pron": "로 하에젠나",
+      "lemmas": [
+        "לֹא",
+        "אָזַן"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "הֶאֱזִ֖ין",
+          "lemma": "אָזַן",
+          "strong": "H238",
+          "pron": "하에젠나"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 1:45",
+        "chronicles2 24:19",
+        "nehemiah 9:30",
+        "psalms 135:17",
+        "isaiah 64:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֶאֱזִ֖ין אֲלֵיכֶֽם",
+      "pron": "하에젠나 엘",
       "lemmas": [
         "אָזַן",
         "אֵל"
       ],
       "words": [
         {
-          "word": "הַאֲזִינָה֮",
+          "word": "הֶאֱזִ֖ין",
           "lemma": "אָזַן",
           "strong": "H238",
-          "pron": "하아지나"
+          "pron": "하에젠나"
         },
         {
-          "word": "אֶֽל",
+          "word": "אֲלֵיכֶֽם",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
+        "deuteronomy 1:45",
         "psalms 39:12",
         "psalms 77:1",
         "psalms 143:1"
@@ -85,7 +129,7 @@
     },
     {
       "hebrew": "הַאֲזִ֥ינָה יְהוָ֗ה",
-      "pron": "하아지나 여호와",
+      "pron": "하에젠나 여호와",
       "lemmas": [
         "אָזַן",
         "יְהֹוָה"
@@ -95,7 +139,7 @@
           "word": "הַאֲזִ֥ינָה",
           "lemma": "אָזַן",
           "strong": "H238",
-          "pron": "하아지나"
+          "pron": "하에젠나"
         },
         {
           "word": "יְהוָ֗ה",
@@ -113,67 +157,60 @@
       "glossKo": ""
     },
     {
-      "hebrew": "שְׁמַ֣ע תְּפִלָּתִ֑י הַ֝אֲזִ֗ינָה",
-      "pron": "우셰마 테필라티위 하아지나",
+      "hebrew": "וְהַֽאֲזִ֔ינוּ כֹּ֖ל",
+      "pron": "하에젠나 칼",
       "lemmas": [
-        "שָׁמַע",
-        "תְּפִלָּה",
-        "אָזַן"
+        "אָזַן",
+        "כֹּל"
       ],
       "words": [
         {
-          "word": "שְׁמַ֣ע",
-          "lemma": "שָׁמַע",
-          "strong": "H8085",
-          "pron": "우셰마"
-        },
-        {
-          "word": "תְּפִלָּתִ֑י",
-          "lemma": "תְּפִלָּה",
-          "strong": "H8605",
-          "pron": "테필라티위"
-        },
-        {
-          "word": "הַ֝אֲזִ֗ינָה",
+          "word": "וְהַֽאֲזִ֔ינוּ",
           "lemma": "אָזַן",
           "strong": "H238",
-          "pron": "하아지나"
+          "pron": "하에젠나"
+        },
+        {
+          "word": "כֹּ֖ל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 54:2",
-        "psalms 84:8",
-        "psalms 143:1"
+        "psalms 49:1",
+        "isaiah 8:9",
+        "joel 1:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "תְּפִלָּתִ֑י הַ֝אֲזִ֗ינָה",
-      "pron": "테필라티위 하아지나",
+      "hebrew": "יַאֲזִ֥ין קוֹלִֽי",
+      "pron": "하에젠나 콜",
       "lemmas": [
-        "תְּפִלָּה",
-        "אָזַן"
+        "אָזַן",
+        "קוֹל"
       ],
       "words": [
         {
-          "word": "תְּפִלָּתִ֑י",
-          "lemma": "תְּפִלָּה",
-          "strong": "H8605",
-          "pron": "테필라티위"
-        },
-        {
-          "word": "הַ֝אֲזִ֗ינָה",
+          "word": "יַאֲזִ֥ין",
           "lemma": "אָזַן",
           "strong": "H238",
-          "pron": "하아지나"
+          "pron": "하에젠나"
+        },
+        {
+          "word": "קוֹלִֽי",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 54:2",
-        "psalms 84:8",
-        "psalms 143:1"
+        "job 9:16",
+        "job 34:16",
+        "psalms 141:1"
       ],
       "glossKo": ""
     }

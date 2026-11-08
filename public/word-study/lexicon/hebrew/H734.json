@@ -1,6 +1,6 @@
 {
   "lemma": "אֹרַח",
-  "pron": "아레호트",
+  "pron": "오라흐",
   "strong": "H734",
   "posKo": "명사",
   "root": {
@@ -12,20 +12,20 @@
     {
       "lemma": "אָרַח",
       "strong": "H732",
-      "pron": "",
-      "glossKo": "여행하다"
+      "pron": "하오레아흐",
+      "glossKo": "여행하는 이"
     },
     {
       "lemma": "אָרַח",
       "strong": "H733",
-      "pron": "",
+      "pron": "아라흐",
       "glossKo": "아라"
     },
     {
       "lemma": "אֹרַח",
       "strong": "H735",
-      "pron": "",
-      "glossKo": "길(아람)"
+      "pron": "베오레하테흐",
+      "glossKo": "그의 길(아람)"
     },
     {
       "lemma": "אֹרְחָה",
@@ -36,21 +36,27 @@
     {
       "lemma": "אֲרֻחָה",
       "strong": "H737",
-      "pron": "",
-      "glossKo": "여행 양식"
+      "pron": "바아루하토",
+      "glossKo": "그의 여행 양식"
     }
   ],
   "defEn": "road",
   "defKo": "",
-  "countOT": 17,
+  "countOT": 60,
   "byBook": {
+    "proverbs": 20,
     "psalms": 15,
-    "genesis": 2
+    "job": 11,
+    "isaiah": 8,
+    "genesis": 2,
+    "judges": 2,
+    "joel": 1,
+    "micah": 1
   },
   "phrases": [
     {
-      "hebrew": "כָּל אָרְח֣וֹת",
-      "pron": "브콜 아레호트",
+      "hebrew": "כָּל אָרְחוֹתָ֑י",
+      "pron": "칼 오라흐",
       "lemmas": [
         "כֹּל",
         "אֹרַח"
@@ -60,21 +66,142 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
-          "word": "אָרְח֣וֹת",
+          "word": "אָרְחוֹתָ֑י",
           "lemma": "אֹרַח",
           "strong": "H734",
-          "pron": "아레호트"
+          "pron": "오라흐"
         }
       ],
-      "count": 4,
+      "count": 6,
       "refs": [
+        "job 13:27",
+        "job 33:11",
         "psalms 25:10",
         "psalms 119:101",
         "psalms 119:104",
         "psalms 119:128"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֹ֣רַח חַ֭יִּים",
+      "pron": "오라흐 하아",
+      "lemmas": [
+        "אֹרַח",
+        "חַי"
+      ],
+      "words": [
+        {
+          "word": "אֹ֣רַח",
+          "lemma": "אֹרַח",
+          "strong": "H734",
+          "pron": "오라흐"
+        },
+        {
+          "word": "חַ֭יִּים",
+          "lemma": "חַי",
+          "strong": "H2416",
+          "pron": "하아"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 16:11",
+        "proverbs 2:19",
+        "proverbs 5:6",
+        "proverbs 10:17",
+        "proverbs 15:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָרְח֣וֹת מִשְׁפָּ֑ט",
+      "pron": "오라흐 우미솁팓",
+      "lemmas": [
+        "אֹרַח",
+        "מִשְׁפָּט"
+      ],
+      "words": [
+        {
+          "word": "אָרְח֣וֹת",
+          "lemma": "אֹרַח",
+          "strong": "H734",
+          "pron": "오라흐"
+        },
+        {
+          "word": "מִשְׁפָּ֑ט",
+          "lemma": "מִשְׁפָּט",
+          "strong": "H4941",
+          "pron": "우미솁팓"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "proverbs 2:8",
+        "proverbs 17:23",
+        "isaiah 26:8",
+        "isaiah 40:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאָרְח֖וֹת צַדִּיקִ֣ים",
+      "pron": "오라흐 찯디크",
+      "lemmas": [
+        "אֹרַח",
+        "צַדִּיק"
+      ],
+      "words": [
+        {
+          "word": "וְאָרְח֖וֹת",
+          "lemma": "אֹרַח",
+          "strong": "H734",
+          "pron": "오라흐"
+        },
+        {
+          "word": "צַדִּיקִ֣ים",
+          "lemma": "צַדִּיק",
+          "strong": "H6662",
+          "pron": "찯디크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 2:20",
+        "proverbs 4:18",
+        "isaiah 26:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יֵלְכ֕וּ אֳרָח֖וֹת",
+      "pron": "텔레크 오라흐",
+      "lemmas": [
+        "יָלַךְ",
+        "אֹרַח"
+      ],
+      "words": [
+        {
+          "word": "יֵלְכ֕וּ",
+          "lemma": "יָלַךְ",
+          "strong": "H3212",
+          "pron": "텔레크"
+        },
+        {
+          "word": "אֳרָח֖וֹת",
+          "lemma": "אֹרַח",
+          "strong": "H734",
+          "pron": "오라흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 5:6",
+        "isaiah 2:3",
+        "micah 4:2"
       ],
       "glossKo": ""
     }

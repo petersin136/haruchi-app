@@ -12,21 +12,161 @@
     {
       "lemma": "רוּעַ",
       "strong": "H7321",
-      "pron": "야리아",
+      "pron": "타리우",
       "glossKo": "외치다"
     },
     {
       "lemma": "רֵעַ",
       "strong": "H7452",
-      "pron": "",
-      "glossKo": "소리"
+      "pron": "베레오",
+      "glossKo": "그의 소리"
     }
   ],
   "defEn": "clamor; acclamation; battle-cry; clangor; alarum",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 36,
   "byBook": {
-    "psalms": 5
+    "numbers": 6,
+    "psalms": 5,
+    "ezra": 4,
+    "jeremiah": 3,
+    "job": 3,
+    "samuel1": 3,
+    "amos": 2,
+    "chronicles2": 2,
+    "joshua": 2,
+    "leviticus": 2,
+    "chronicles1": 1,
+    "ezekiel": 1,
+    "samuel2": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "תְּרוּעָ֣ה גְדוֹלָ֑ה",
+      "pron": "테루아 아게돌림",
+      "lemmas": [
+        "תְּרוּעָה",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "תְּרוּעָ֣ה",
+          "lemma": "תְּרוּעָה",
+          "strong": "H8643",
+          "pron": "테루아"
+        },
+        {
+          "word": "גְדוֹלָ֑ה",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "joshua 6:5",
+        "joshua 6:20",
+        "samuel1 4:5",
+        "samuel1 4:6",
+        "ezra 3:11",
+        "ezra 3:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ק֣וֹל הַתְּרוּעָ֔ה",
+      "pron": "콜 테루아",
+      "lemmas": [
+        "קוֹל",
+        "תְּרוּעָה"
+      ],
+      "words": [
+        {
+          "word": "ק֣וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        },
+        {
+          "word": "הַתְּרוּעָ֔ה",
+          "lemma": "תְּרוּעָה",
+          "strong": "H8643",
+          "pron": "테루아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 4:6",
+        "ezra 3:13",
+        "ezekiel 21:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּתְרוּעָ֖ה וּבְק֥וֹל",
+      "pron": "테루아 콜",
+      "lemmas": [
+        "תְּרוּעָה",
+        "קוֹל"
+      ],
+      "words": [
+        {
+          "word": "בִּתְרוּעָ֖ה",
+          "lemma": "תְּרוּעָה",
+          "strong": "H8643",
+          "pron": "테루아"
+        },
+        {
+          "word": "וּבְק֥וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 6:15",
+        "chronicles1 15:28",
+        "amos 2:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּתְרוּעָ֖ה וּבְק֥וֹל שׁוֹפָֽר",
+      "pron": "테루아 콜 쇼파르",
+      "lemmas": [
+        "תְּרוּעָה",
+        "קוֹל",
+        "שׁוֹפָר"
+      ],
+      "words": [
+        {
+          "word": "בִּתְרוּעָ֖ה",
+          "lemma": "תְּרוּעָה",
+          "strong": "H8643",
+          "pron": "테루아"
+        },
+        {
+          "word": "וּבְק֥וֹל",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        },
+        {
+          "word": "שׁוֹפָֽר",
+          "lemma": "שׁוֹפָר",
+          "strong": "H7782",
+          "pron": "쇼파르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 6:15",
+        "chronicles1 15:28",
+        "amos 2:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

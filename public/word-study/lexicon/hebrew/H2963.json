@@ -1,6 +1,6 @@
 {
   "lemma": "טָרַף",
-  "pron": "읻롭",
+  "pron": "다롭",
   "strong": "H2963",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "טֶרֶף",
       "strong": "H2964",
-      "pron": "다렙",
+      "pron": "미데렙",
       "glossKo": "찢긴 것"
     },
     {
@@ -20,15 +20,25 @@
   ],
   "defEn": "pluck off; pull to pieces; supply",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 25,
   "byBook": {
     "genesis": 5,
-    "psalms": 4
+    "ezekiel": 4,
+    "psalms": 4,
+    "exodus": 2,
+    "hosea": 2,
+    "job": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "jeremiah": 1,
+    "micah": 1,
+    "nahum": 1,
+    "proverbs": 1
   },
   "phrases": [
     {
       "hebrew": "טָרֹ֥ף טֹרַ֖ף",
-      "pron": "읻롭 읻롭",
+      "pron": "다롭 다롭",
       "lemmas": [
         "טָרַף",
         "טָרַף"
@@ -38,19 +48,50 @@
           "word": "טָרֹ֥ף",
           "lemma": "טָרַף",
           "strong": "H2963",
-          "pron": "읻롭"
+          "pron": "다롭"
         },
         {
           "word": "טֹרַ֖ף",
           "lemma": "טָרַף",
           "strong": "H2963",
-          "pron": "읻롭"
+          "pron": "다롭"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 37:33",
+        "genesis 44:28",
+        "exodus 22:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִטְרָף טֶ֖רֶף",
+      "pron": "다롭 미데렙",
+      "lemmas": [
+        "טָרַף",
+        "טֶרֶף"
+      ],
+      "words": [
+        {
+          "word": "לִטְרָף",
+          "lemma": "טָרַף",
+          "strong": "H2963",
+          "pron": "다롭"
+        },
+        {
+          "word": "טֶ֖רֶף",
+          "lemma": "טֶרֶף",
+          "strong": "H2964",
+          "pron": "미데렙"
         }
       ],
       "count": 4,
       "refs": [
-        "genesis 37:33",
-        "genesis 44:28"
+        "ezekiel 19:3",
+        "ezekiel 19:6",
+        "ezekiel 22:25",
+        "ezekiel 22:27"
       ],
       "glossKo": ""
     }

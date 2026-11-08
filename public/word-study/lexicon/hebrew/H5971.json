@@ -12,122 +12,125 @@
     {
       "lemma": "עַם",
       "strong": "H5972",
-      "pron": "",
+      "pron": "브암마",
       "glossKo": "백성(아람)"
     },
     {
       "lemma": "עִם",
       "strong": "H5973",
-      "pron": "임오",
-      "glossKo": "그에게 함께"
+      "pron": "임마흐",
+      "glossKo": "그녀에게 함께"
     },
     {
       "lemma": "עֻמָּה",
       "strong": "H5980",
-      "pron": "",
+      "pron": "르움마트",
       "glossKo": "맞은편"
     },
     {
       "lemma": "עַמּוֹן",
       "strong": "H5983",
-      "pron": "브암몬",
+      "pron": "암몬",
       "glossKo": "암몬 족속"
     },
     {
       "lemma": "עַמִּיאֵל",
       "strong": "H5988",
-      "pron": "",
+      "pron": "암미엘",
       "glossKo": "암미엘"
     },
     {
       "lemma": "עַמִּיהוּד",
       "strong": "H5989",
-      "pron": "",
+      "pron": "암미훋",
       "glossKo": "암미훗"
     }
   ],
   "defEn": "people; tribe; troops; attendants; flock",
   "defKo": "",
-  "countOT": 153,
+  "countOT": 1870,
   "byBook": {
+    "exodus": 175,
+    "jeremiah": 166,
+    "isaiah": 130,
     "psalms": 120,
-    "genesis": 33
+    "chronicles2": 112,
+    "samuel1": 110,
+    "deuteronomy": 107,
+    "samuel2": 103,
+    "ezekiel": 98,
+    "numbers": 87,
+    "kings1": 83,
+    "joshua": 70,
+    "judges": 67,
+    "kings2": 53,
+    "nehemiah": 53,
+    "chronicles1": 45,
+    "leviticus": 43,
+    "genesis": 33,
+    "esther": 31,
+    "ezra": 23,
+    "micah": 19,
+    "zechariah": 19,
+    "hosea": 18,
+    "daniel": 16,
+    "joel": 13,
+    "lamentations": 12,
+    "ruth": 10,
+    "proverbs": 9,
+    "haggai": 8,
+    "job": 8,
+    "amos": 7,
+    "zephaniah": 7,
+    "habakkuk": 6,
+    "ecclesiastes": 2,
+    "malachi": 2,
+    "nahum": 2,
+    "jonah": 1,
+    "obadiah": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "לְכָל עַמּֽוֹ",
-      "pron": "브콜 암",
+      "hebrew": "כָּל הָעָ֖ם",
+      "pron": "칼 암",
       "lemmas": [
         "כֹּל",
         "עַם"
       ],
       "words": [
         {
-          "word": "לְכָל",
+          "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
-          "word": "עַמּֽוֹ",
+          "word": "הָעָ֖ם",
           "lemma": "עַם",
           "strong": "H5971",
           "pron": "암"
         }
       ],
-      "count": 13,
+      "count": 325,
       "refs": [
-        "psalms 47:1",
-        "psalms 49:1",
-        "psalms 96:3",
-        "psalms 97:6",
-        "psalms 99:2",
-        "psalms 106:48",
-        "psalms 116:14",
-        "psalms 116:18",
         "genesis 19:4",
         "genesis 26:11",
         "genesis 35:6",
-        "genesis 41:40"
+        "genesis 41:40",
+        "genesis 42:6",
+        "exodus 1:22",
+        "exodus 11:8",
+        "exodus 18:14",
+        "exodus 18:21",
+        "exodus 18:23",
+        "exodus 19:5",
+        "exodus 19:8"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֶל עַמָּֽיו",
-      "pron": "엘레모 암",
-      "lemmas": [
-        "אֵל",
-        "עַם"
-      ],
-      "words": [
-        {
-          "word": "אֶל",
-          "lemma": "אֵל",
-          "strong": "H413",
-          "pron": "엘레모"
-        },
-        {
-          "word": "עַמָּֽיו",
-          "lemma": "עַם",
-          "strong": "H5971",
-          "pron": "암"
-        }
-      ],
-      "count": 8,
-      "refs": [
-        "psalms 85:8",
-        "psalms 105:13",
-        "genesis 25:8",
-        "genesis 25:17",
-        "genesis 35:29",
-        "genesis 47:23",
-        "genesis 49:29",
-        "genesis 49:33"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֶת עַמּ֣וֹ",
+      "hebrew": "אֶת הָעָ֔ם",
       "pron": "에트 암",
       "lemmas": [
         "אֵת",
@@ -141,89 +144,140 @@
           "pron": "에트"
         },
         {
-          "word": "עַמּ֣וֹ",
+          "word": "הָעָ֔ם",
           "lemma": "עַם",
           "strong": "H5971",
           "pron": "암"
         }
       ],
-      "count": 7,
+      "count": 205,
       "refs": [
-        "psalms 28:9",
-        "psalms 29:11",
-        "psalms 105:24",
-        "psalms 106:34",
         "genesis 14:16",
         "genesis 32:7",
-        "genesis 47:21"
+        "genesis 47:21",
+        "exodus 3:10",
+        "exodus 3:12",
+        "exodus 4:21",
+        "exodus 5:1",
+        "exodus 5:4",
+        "exodus 5:23",
+        "exodus 6:7",
+        "exodus 7:4",
+        "exodus 7:16"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אוֹדְךָ֖ בָעַמִּ֥ים",
-      "pron": "요데 암",
+      "hebrew": "הָעָם֙ אֲשֶׁ֣ר",
+      "pron": "암 아셰르",
       "lemmas": [
-        "יָדָה",
-        "עַם"
+        "עַם",
+        "אֲשֶׁר"
       ],
       "words": [
         {
-          "word": "אוֹדְךָ֖",
-          "lemma": "יָדָה",
-          "strong": "H3034",
-          "pron": "요데"
-        },
-        {
-          "word": "בָעַמִּ֥ים",
+          "word": "הָעָם֙",
           "lemma": "עַם",
           "strong": "H5971",
           "pron": "암"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
         }
       ],
-      "count": 6,
+      "count": 111,
       "refs": [
-        "psalms 57:9",
-        "psalms 67:3",
-        "psalms 67:5",
-        "psalms 108:3"
+        "genesis 32:7",
+        "genesis 33:15",
+        "genesis 35:6",
+        "exodus 3:7",
+        "exodus 11:8",
+        "exodus 19:16",
+        "exodus 23:27",
+        "exodus 32:7",
+        "exodus 32:11",
+        "exodus 33:1",
+        "exodus 33:16",
+        "exodus 34:10"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַיֵּאָ֖סֶף אֶל עַמָּֽיו",
-      "pron": "테에솝 엘레모 암",
+      "hebrew": "הָעָ֣ם הַזֶּ֔ה",
+      "pron": "암 제",
       "lemmas": [
-        "אָסַף",
+        "עַם",
+        "זֶה"
+      ],
+      "words": [
+        {
+          "word": "הָעָ֣ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "הַזֶּ֔ה",
+          "lemma": "זֶה",
+          "strong": "H2088",
+          "pron": "제"
+        }
+      ],
+      "count": 101,
+      "refs": [
+        "exodus 3:21",
+        "exodus 5:22",
+        "exodus 5:23",
+        "exodus 17:4",
+        "exodus 18:18",
+        "exodus 18:23",
+        "exodus 32:9",
+        "exodus 32:21",
+        "exodus 32:31",
+        "exodus 33:12",
+        "numbers 11:11",
+        "numbers 11:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל הָעָ֔ם",
+      "pron": "엘 암",
+      "lemmas": [
         "אֵל",
         "עַם"
       ],
       "words": [
         {
-          "word": "וַיֵּאָ֖סֶף",
-          "lemma": "אָסַף",
-          "strong": "H622",
-          "pron": "테에솝"
-        },
-        {
           "word": "אֶל",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
         },
         {
-          "word": "עַמָּֽיו",
+          "word": "הָעָ֔ם",
           "lemma": "עַם",
           "strong": "H5971",
           "pron": "암"
         }
       ],
-      "count": 5,
+      "count": 93,
       "refs": [
         "genesis 25:8",
         "genesis 25:17",
         "genesis 35:29",
+        "genesis 47:23",
         "genesis 49:29",
-        "genesis 49:33"
+        "genesis 49:33",
+        "exodus 1:9",
+        "exodus 4:16",
+        "exodus 5:10",
+        "exodus 13:3",
+        "exodus 14:5",
+        "exodus 14:13"
       ],
       "glossKo": ""
     }

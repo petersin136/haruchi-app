@@ -1,8 +1,8 @@
 {
   "lemma": "מִרְמָס",
-  "pron": "미레맛",
+  "pron": "르미레맛",
   "strong": "H4823",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רָמַס",
     "strong": "H7429",
@@ -12,13 +12,48 @@
     {
       "lemma": "רָמַס",
       "strong": "H7429",
-      "pron": "브이레못",
-      "glossKo": "밟다"
+      "pron": "바이렘수후",
+      "glossKo": "그에게 밟다"
     }
   ],
   "defEn": "abasement",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "isaiah": 4,
+    "daniel": 1,
+    "ezekiel": 1,
+    "micah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְהָיָ֥ה לְמִרְמָֽס",
+      "pron": "하에타 르미레맛",
+      "lemmas": [
+        "הָיָה",
+        "מִרְמָס"
+      ],
+      "words": [
+        {
+          "word": "וְהָיָ֥ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "לְמִרְמָֽס",
+          "lemma": "מִרְמָס",
+          "strong": "H4823",
+          "pron": "르미레맛"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 5:5",
+        "isaiah 28:18",
+        "micah 7:10"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

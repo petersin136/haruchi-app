@@ -12,19 +12,19 @@
     {
       "lemma": "שׂוּשׂ",
       "strong": "H7797",
-      "pron": "야시스",
+      "pron": "사스",
       "glossKo": "기뻐하다"
     },
     {
       "lemma": "שַׁוְשָׁא",
       "strong": "H7798",
-      "pron": "",
+      "pron": "브샤베샤",
       "glossKo": "사브사"
     },
     {
       "lemma": "שׁוּשַׁן",
       "strong": "H7799",
-      "pron": "쇼샨님",
+      "pron": "슈샨",
       "glossKo": "백합"
     },
     {
@@ -36,15 +36,79 @@
     {
       "lemma": "שָׂשׂוֹן",
       "strong": "H8342",
-      "pron": "사손",
+      "pron": "브사손",
       "glossKo": "기쁨"
     }
   ],
   "defEn": "delight",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 17,
   "byBook": {
+    "isaiah": 10,
+    "lamentations": 2,
+    "ezekiel": 1,
+    "hosea": 1,
+    "jeremiah": 1,
+    "job": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מְשׂ֪וֹשׂ כָּל",
+      "pron": "메소스 칼",
+      "lemmas": [
+        "מָשׂוֹשׂ",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "מְשׂ֪וֹשׂ",
+          "lemma": "מָשׂוֹשׂ",
+          "strong": "H4885",
+          "pron": "메소스"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 48:2",
+        "isaiah 66:10",
+        "lamentations 2:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁבַת֙ מְשׂ֣וֹשׂ",
+      "pron": "바이솁보트 메소스",
+      "lemmas": [
+        "שָׁבַת",
+        "מָשׂוֹשׂ"
+      ],
+      "words": [
+        {
+          "word": "שָׁבַת֙",
+          "lemma": "שָׁבַת",
+          "strong": "H7673",
+          "pron": "바이솁보트"
+        },
+        {
+          "word": "מְשׂ֣וֹשׂ",
+          "lemma": "מָשׂוֹשׂ",
+          "strong": "H4885",
+          "pron": "메소스"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 24:8",
+        "lamentations 5:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

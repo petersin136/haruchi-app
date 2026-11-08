@@ -1,6 +1,6 @@
 {
   "lemma": "בָּשָׂר",
-  "pron": "베사리위",
+  "pron": "바사르",
   "strong": "H1320",
   "posKo": "명사",
   "root": {
@@ -12,39 +12,64 @@
     {
       "lemma": "בְּשׂוֹר",
       "strong": "H1308",
-      "pron": "",
+      "pron": "아베소르",
       "glossKo": "브솔"
     },
     {
       "lemma": "בְּשׂוֹרָה",
       "strong": "H1309",
-      "pron": "",
+      "pron": "베소라",
       "glossKo": "기쁜 소식"
     },
     {
       "lemma": "בָּשַׂר",
       "strong": "H1319",
-      "pron": "빗사렛티",
-      "glossKo": "기쁜 소식을 전하다"
+      "pron": "아메밧세르",
+      "glossKo": "기쁜 소식을 전하는 이"
     },
     {
       "lemma": "בְּשַׁר",
       "strong": "H1321",
-      "pron": "",
+      "pron": "비세라",
       "glossKo": "육신(아람)"
     }
   ],
   "defEn": "flesh; freshness",
   "defKo": "",
-  "countOT": 49,
+  "countOT": 270,
   "byBook": {
+    "leviticus": 61,
     "genesis": 33,
-    "psalms": 16
+    "ezekiel": 24,
+    "job": 18,
+    "isaiah": 17,
+    "numbers": 17,
+    "psalms": 16,
+    "exodus": 14,
+    "deuteronomy": 13,
+    "jeremiah": 10,
+    "judges": 6,
+    "kings2": 6,
+    "ecclesiastes": 5,
+    "kings1": 4,
+    "proverbs": 4,
+    "samuel1": 4,
+    "zechariah": 4,
+    "samuel2": 3,
+    "daniel": 2,
+    "nehemiah": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "haggai": 1,
+    "hosea": 1,
+    "joel": 1,
+    "lamentations": 1,
+    "micah": 1
   },
   "phrases": [
     {
-      "hebrew": "כָּל בָּשָׂ֛ר",
-      "pron": "브콜 베사리위",
+      "hebrew": "כָּל בָּשָׂ֖ר",
+      "pron": "칼 바사르",
       "lemmas": [
         "כֹּל",
         "בָּשָׂר"
@@ -54,20 +79,17 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
-          "word": "בָּשָׂ֛ר",
+          "word": "בָּשָׂ֖ר",
           "lemma": "בָּשָׂר",
           "strong": "H1320",
-          "pron": "베사리위"
+          "pron": "바사르"
         }
       ],
-      "count": 16,
+      "count": 46,
       "refs": [
-        "psalms 65:2",
-        "psalms 136:25",
-        "psalms 145:21",
         "genesis 6:12",
         "genesis 6:13",
         "genesis 6:17",
@@ -76,13 +98,16 @@
         "genesis 7:16",
         "genesis 7:21",
         "genesis 8:17",
-        "genesis 9:11"
+        "genesis 9:11",
+        "genesis 9:15",
+        "genesis 9:16",
+        "genesis 9:17"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "אֶת בְּשַׂ֣ר",
-      "pron": "에트 베사리위",
+      "pron": "에트 바사르",
       "lemmas": [
         "אֵת",
         "בָּשָׂר"
@@ -98,115 +123,134 @@
           "word": "בְּשַׂ֣ר",
           "lemma": "בָּשָׂר",
           "strong": "H1320",
-          "pron": "베사리위"
+          "pron": "바사르"
         }
       ],
-      "count": 6,
+      "count": 35,
       "refs": [
-        "psalms 27:2",
         "genesis 17:11",
         "genesis 17:14",
         "genesis 17:23",
         "genesis 17:25",
-        "genesis 40:19"
+        "genesis 40:19",
+        "exodus 12:8",
+        "exodus 21:28",
+        "exodus 29:14",
+        "exodus 29:31",
+        "exodus 29:32",
+        "leviticus 8:17",
+        "leviticus 8:31"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בְּשַׂ֥ר עָרְלָתֽוֹ",
-      "pron": "베사리위 아렐라트켐",
+      "hebrew": "תֹּאכְל֣וּ בָשָׂ֔ר",
+      "pron": "아콜 바사르",
       "lemmas": [
-        "בָּשָׂר",
-        "עׇרְלָה"
+        "אָכַל",
+        "בָּשָׂר"
       ],
       "words": [
         {
-          "word": "בְּשַׂ֥ר",
-          "lemma": "בָּשָׂר",
-          "strong": "H1320",
-          "pron": "베사리위"
+          "word": "תֹּאכְל֣וּ",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "아콜"
         },
         {
-          "word": "עָרְלָתֽוֹ",
-          "lemma": "עׇרְלָה",
-          "strong": "H6190",
-          "pron": "아렐라트켐"
+          "word": "בָשָׂ֔ר",
+          "lemma": "בָּשָׂר",
+          "strong": "H1320",
+          "pron": "바사르"
         }
       ],
-      "count": 5,
+      "count": 21,
       "refs": [
-        "genesis 17:11",
-        "genesis 17:14",
-        "genesis 17:23",
-        "genesis 17:24",
-        "genesis 17:25"
+        "exodus 16:12",
+        "leviticus 7:18",
+        "leviticus 7:19",
+        "leviticus 7:20",
+        "leviticus 7:21",
+        "leviticus 26:29",
+        "numbers 11:4",
+        "numbers 11:18",
+        "deuteronomy 12:15",
+        "deuteronomy 12:20",
+        "deuteronomy 32:42",
+        "psalms 50:13"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֵ֖ת בְּשַׂ֣ר עָרְלַתְכֶ֑ם",
-      "pron": "에트 베사리위 아렐라트켐",
+      "hebrew": "מִבְּשָׂרָם֙ לֹ֣א",
+      "pron": "바사르 로",
       "lemmas": [
-        "אֵת",
         "בָּשָׂר",
-        "עׇרְלָה"
+        "לֹא"
       ],
       "words": [
         {
-          "word": "אֵ֖ת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        },
-        {
-          "word": "בְּשַׂ֣ר",
+          "word": "מִבְּשָׂרָם֙",
           "lemma": "בָּשָׂר",
           "strong": "H1320",
-          "pron": "베사리위"
+          "pron": "바사르"
         },
         {
-          "word": "עָרְלַתְכֶ֑ם",
-          "lemma": "עׇרְלָה",
-          "strong": "H6190",
-          "pron": "아렐라트켐"
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
         }
       ],
-      "count": 4,
+      "count": 14,
       "refs": [
-        "genesis 17:11",
-        "genesis 17:14",
-        "genesis 17:23",
-        "genesis 17:25"
+        "genesis 9:15",
+        "genesis 41:19",
+        "leviticus 11:8",
+        "leviticus 11:11",
+        "leviticus 17:14",
+        "leviticus 17:16",
+        "leviticus 18:6",
+        "leviticus 21:5",
+        "deuteronomy 14:8",
+        "job 19:22",
+        "job 31:31",
+        "isaiah 31:3"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בָּשָׂ֖ר אֲשֶׁ֥ר",
-      "pron": "베사리위 아셰르",
+      "hebrew": "בְעוֹר בְּשָׂרוֹ֙",
+      "pron": "오르 바사르",
       "lemmas": [
-        "בָּשָׂר",
-        "אֲשֶׁר"
+        "עוֹר",
+        "בָּשָׂר"
       ],
       "words": [
         {
-          "word": "בָּשָׂ֖ר",
-          "lemma": "בָּשָׂר",
-          "strong": "H1320",
-          "pron": "베사리위"
+          "word": "בְעוֹר",
+          "lemma": "עוֹר",
+          "strong": "H5785",
+          "pron": "오르"
         },
         {
-          "word": "אֲשֶׁ֥ר",
-          "lemma": "אֲשֶׁר",
-          "strong": "H834",
-          "pron": "아셰르"
+          "word": "בְּשָׂרוֹ֙",
+          "lemma": "בָּשָׂר",
+          "strong": "H1320",
+          "pron": "바사르"
         }
       ],
-      "count": 4,
+      "count": 11,
       "refs": [
-        "genesis 6:17",
-        "genesis 7:15",
-        "genesis 9:16",
-        "genesis 9:17"
+        "leviticus 13:2",
+        "leviticus 13:3",
+        "leviticus 13:4",
+        "leviticus 13:11",
+        "leviticus 13:38",
+        "leviticus 13:39",
+        "leviticus 13:43",
+        "job 10:11",
+        "job 19:20"
       ],
       "glossKo": ""
     }

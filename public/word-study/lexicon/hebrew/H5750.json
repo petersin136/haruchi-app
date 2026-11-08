@@ -12,200 +12,277 @@
     {
       "lemma": "עֵד",
       "strong": "H5707",
-      "pron": "에데",
+      "pron": "르엗",
       "glossKo": "증인"
     },
     {
       "lemma": "עוּד",
       "strong": "H5749",
-      "pron": "바니테오닫",
-      "glossKo": "증거하는 이"
+      "pron": "하엗",
+      "glossKo": "증거하다"
     },
     {
       "lemma": "עוֹד",
       "strong": "H5751",
-      "pron": "",
+      "pron": "옫",
       "glossKo": "여전히(아람)"
     },
     {
       "lemma": "עוֹדֵד",
       "strong": "H5752",
-      "pron": "",
+      "pron": "오덷",
       "glossKo": "오뎃"
     },
     {
       "lemma": "תְּעוּדָה",
       "strong": "H8584",
-      "pron": "",
+      "pron": "아테우다",
       "glossKo": "찰싹 붙다"
     }
   ],
   "defEn": "iteration; continuance; again; repeatedly; still; more",
   "defKo": "",
-  "countOT": 75,
+  "countOT": 489,
   "byBook": {
+    "ezekiel": 58,
     "genesis": 54,
-    "psalms": 21
+    "jeremiah": 54,
+    "isaiah": 47,
+    "samuel2": 35,
+    "psalms": 21,
+    "job": 18,
+    "samuel1": 17,
+    "deuteronomy": 15,
+    "zechariah": 15,
+    "chronicles2": 14,
+    "exodus": 13,
+    "kings2": 13,
+    "judges": 12,
+    "kings1": 12,
+    "chronicles1": 11,
+    "hosea": 10,
+    "numbers": 9,
+    "amos": 7,
+    "daniel": 6,
+    "ecclesiastes": 6,
+    "proverbs": 6,
+    "joshua": 5,
+    "leviticus": 4,
+    "micah": 4,
+    "nahum": 4,
+    "esther": 3,
+    "joel": 3,
+    "zephaniah": 3,
+    "haggai": 2,
+    "lamentations": 2,
+    "ruth": 2,
+    "habakkuk": 1,
+    "jonah": 1,
+    "malachi": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
-      "hebrew": "יוֹסִ֥יף ע֑וֹד",
-      "pron": "요십 옫",
+      "hebrew": "וַיֹּ֨סֶף ע֜וֹד",
+      "pron": "바토셉 옫",
       "lemmas": [
         "יָסַף",
         "עוֹד"
       ],
       "words": [
         {
-          "word": "יוֹסִ֥יף",
+          "word": "וַיֹּ֨סֶף",
           "lemma": "יָסַף",
           "strong": "H3254",
-          "pron": "요십"
+          "pron": "바토셉"
         },
         {
-          "word": "ע֑וֹד",
+          "word": "ע֜וֹד",
           "lemma": "עוֹד",
           "strong": "H5750",
           "pron": "옫"
         }
       ],
-      "count": 8,
+      "count": 38,
       "refs": [
-        "psalms 10:18",
-        "psalms 78:17",
         "genesis 8:21",
         "genesis 18:29",
         "genesis 37:5",
         "genesis 37:8",
         "genesis 38:5",
-        "genesis 38:26"
+        "genesis 38:26",
+        "exodus 10:29",
+        "numbers 22:15",
+        "numbers 32:15",
+        "deuteronomy 19:9",
+        "deuteronomy 28:68",
+        "judges 9:37"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַתַּ֣הַר עוֹד֮",
-      "pron": "브하라 옫",
+      "hebrew": "וַתְּהִי ע֧וֹד",
+      "pron": "하에타 옫",
       "lemmas": [
-        "הָרָה",
+        "הָיָה",
         "עוֹד"
       ],
       "words": [
         {
-          "word": "וַתַּ֣הַר",
-          "lemma": "הָרָה",
-          "strong": "H2029",
-          "pron": "브하라"
+          "word": "וַתְּהִי",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
         },
         {
-          "word": "עוֹד֮",
+          "word": "ע֧וֹד",
           "lemma": "עוֹד",
           "strong": "H5750",
           "pron": "옫"
         }
       ],
-      "count": 6,
+      "count": 34,
       "refs": [
-        "genesis 29:33",
-        "genesis 29:34",
-        "genesis 29:35",
-        "genesis 30:7",
-        "genesis 30:19",
-        "genesis 38:4"
+        "genesis 9:11",
+        "genesis 9:15",
+        "genesis 35:16",
+        "exodus 9:29",
+        "numbers 18:5",
+        "numbers 19:13",
+        "joshua 5:1",
+        "joshua 5:12",
+        "samuel1 1:18",
+        "samuel2 21:15",
+        "samuel2 21:18",
+        "samuel2 21:19"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כִּי ע֥וֹד",
-      "pron": "키 옫",
+      "hebrew": "וְלֹֽא יִהְיֶ֥ה ע֛וֹד",
+      "pron": "로 하에타 옫",
       "lemmas": [
-        "כִּי",
+        "לֹא",
+        "הָיָה",
         "עוֹד"
       ],
       "words": [
         {
-          "word": "כִּי",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
+          "word": "וְלֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
         },
         {
-          "word": "ע֥וֹד",
+          "word": "יִהְיֶ֥ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "ע֛וֹד",
           "lemma": "עוֹד",
           "strong": "H5750",
           "pron": "옫"
         }
       ],
-      "count": 6,
+      "count": 21,
       "refs": [
-        "psalms 42:5",
-        "psalms 42:11",
-        "psalms 43:5",
-        "psalms 141:5",
-        "genesis 45:11",
-        "genesis 46:30"
+        "genesis 9:11",
+        "genesis 9:15",
+        "exodus 9:29",
+        "numbers 18:5",
+        "joshua 5:1",
+        "joshua 5:12",
+        "samuel1 1:18",
+        "kings1 10:5",
+        "chronicles2 9:4",
+        "nehemiah 2:17",
+        "isaiah 60:19",
+        "ezekiel 12:24"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "עוֹד֮ וַתֵּ֣לֶד",
-      "pron": "옫 옐릳티카",
+      "hebrew": "וְאֵ֥ין עֽוֹד",
+      "pron": "아인 옫",
       "lemmas": [
-        "עוֹד",
-        "יָלַד"
-      ],
-      "words": [
-        {
-          "word": "עוֹד֮",
-          "lemma": "עוֹד",
-          "strong": "H5750",
-          "pron": "옫"
-        },
-        {
-          "word": "וַתֵּ֣לֶד",
-          "lemma": "יָלַד",
-          "strong": "H3205",
-          "pron": "옐릳티카"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "genesis 29:33",
-        "genesis 29:34",
-        "genesis 29:35",
-        "genesis 30:7",
-        "genesis 38:4",
-        "genesis 38:5"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַתֹּאמַ֖רְנָה הַע֥וֹד",
-      "pron": "아마르 옫",
-      "lemmas": [
-        "אָמַר",
+        "אַיִן",
         "עוֹד"
       ],
       "words": [
         {
-          "word": "וַתֹּאמַ֖רְנָה",
-          "lemma": "אָמַר",
-          "strong": "H559",
-          "pron": "아마르"
+          "word": "וְאֵ֥ין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
         },
         {
-          "word": "הַע֥וֹד",
+          "word": "עֽוֹד",
           "lemma": "עוֹד",
           "strong": "H5750",
           "pron": "옫"
         }
       ],
-      "count": 5,
+      "count": 18,
       "refs": [
-        "genesis 31:14",
-        "genesis 32:28",
-        "genesis 43:7",
-        "genesis 43:27",
-        "genesis 45:26"
+        "deuteronomy 4:35",
+        "deuteronomy 4:39",
+        "kings1 8:60",
+        "kings2 4:6",
+        "psalms 74:9",
+        "ecclesiastes 9:5",
+        "ecclesiastes 9:6",
+        "isaiah 45:5",
+        "isaiah 45:6",
+        "isaiah 45:14",
+        "isaiah 45:18",
+        "isaiah 45:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹֽא אֹסִ֥ף ע֛וֹד",
+      "pron": "로 바토셉 옫",
+      "lemmas": [
+        "לֹא",
+        "יָסַף",
+        "עוֹד"
+      ],
+      "words": [
+        {
+          "word": "וְלֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "אֹסִ֥ף",
+          "lemma": "יָסַף",
+          "strong": "H3254",
+          "pron": "바토셉"
+        },
+        {
+          "word": "ע֛וֹד",
+          "lemma": "עוֹד",
+          "strong": "H5750",
+          "pron": "옫"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "genesis 8:21",
+        "genesis 38:26",
+        "exodus 10:29",
+        "deuteronomy 28:68",
+        "judges 13:21",
+        "samuel1 7:13",
+        "samuel2 2:28",
+        "samuel2 14:10",
+        "kings2 6:23",
+        "kings2 24:7",
+        "isaiah 10:20",
+        "isaiah 23:12"
       ],
       "glossKo": ""
     }

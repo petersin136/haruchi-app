@@ -1,6 +1,6 @@
 {
   "lemma": "רָשָׁע",
-  "pron": "레샤임",
+  "pron": "라샤",
   "strong": "H7563",
   "posKo": "형용사",
   "root": {
@@ -12,178 +12,214 @@
     {
       "lemma": "מִרְשַׁעַת",
       "strong": "H4849",
-      "pron": "",
+      "pron": "아미레샤아트",
       "glossKo": "악녀"
     },
     {
       "lemma": "רָשַׁע",
       "strong": "H7561",
-      "pron": "라샤엣티",
+      "pron": "야레시운",
       "glossKo": "악하다"
     },
     {
       "lemma": "רֶשַׁע",
       "strong": "H7562",
-      "pron": "레샤",
-      "glossKo": "악함"
+      "pron": "리셰오",
+      "glossKo": "그의 악함"
     }
   ],
   "defEn": "wrong; bad",
   "defKo": "",
-  "countOT": 85,
+  "countOT": 263,
   "byBook": {
     "psalms": 82,
-    "genesis": 3
+    "proverbs": 78,
+    "ezekiel": 29,
+    "job": 26,
+    "isaiah": 11,
+    "ecclesiastes": 7,
+    "jeremiah": 5,
+    "exodus": 4,
+    "genesis": 3,
+    "habakkuk": 3,
+    "chronicles2": 2,
+    "daniel": 2,
+    "deuteronomy": 2,
+    "malachi": 2,
+    "numbers": 2,
+    "kings1": 1,
+    "micah": 1,
+    "samuel1": 1,
+    "samuel2": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "וְיַד רְ֝שָׁעִ֗ים",
-      "pron": "야데카 레샤임",
+      "hebrew": "רְ֝שָׁעִ֗ים לֹ֣א",
+      "pron": "라샤 로",
+      "lemmas": [
+        "רָשָׁע",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "רְ֝שָׁעִ֗ים",
+          "lemma": "רָשָׁע",
+          "strong": "H7563",
+          "pron": "라샤"
+        },
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "psalms 26:5",
+        "psalms 37:21",
+        "proverbs 10:30",
+        "proverbs 18:5",
+        "proverbs 29:7",
+        "ecclesiastes 8:13",
+        "ezekiel 3:19",
+        "ezekiel 33:12",
+        "daniel 12:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְֽיַד רָשָׁ֗ע",
+      "pron": "야도 라샤",
       "lemmas": [
         "יָד",
         "רָשָׁע"
       ],
       "words": [
         {
-          "word": "וְיַד",
+          "word": "בְֽיַד",
           "lemma": "יָד",
           "strong": "H3027",
-          "pron": "야데카"
+          "pron": "야도"
         },
         {
-          "word": "רְ֝שָׁעִ֗ים",
+          "word": "רָשָׁ֗ע",
           "lemma": "רָשָׁע",
           "strong": "H7563",
-          "pron": "레샤임"
+          "pron": "라샤"
         }
       ],
-      "count": 5,
+      "count": 8,
       "refs": [
+        "job 9:24",
+        "job 16:11",
         "psalms 36:11",
         "psalms 71:4",
         "psalms 82:4",
         "psalms 97:10",
-        "psalms 140:4"
+        "psalms 140:4",
+        "ezekiel 13:22"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְעִם רְ֝שָׁעִ֗ים",
-      "pron": "임오 레샤임",
+      "hebrew": "וְדֶ֖רֶךְ רְשָׁעִ֣ים",
+      "pron": "데레크 라샤",
       "lemmas": [
-        "עִם",
+        "דֶּרֶךְ",
         "רָשָׁע"
       ],
       "words": [
         {
-          "word": "וְעִם",
-          "lemma": "עִם",
-          "strong": "H5973",
-          "pron": "임오"
+          "word": "וְדֶ֖רֶךְ",
+          "lemma": "דֶּרֶךְ",
+          "strong": "H1870",
+          "pron": "데레크"
+        },
+        {
+          "word": "רְשָׁעִ֣ים",
+          "lemma": "רָשָׁע",
+          "strong": "H7563",
+          "pron": "라샤"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "psalms 1:6",
+        "psalms 146:9",
+        "proverbs 4:19",
+        "proverbs 12:26",
+        "proverbs 15:9",
+        "jeremiah 12:1",
+        "ezekiel 3:18",
+        "ezekiel 3:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּפִ֥י רְ֝שָׁעִ֗ים",
+      "pron": "피하 라샤",
+      "lemmas": [
+        "פֶּה",
+        "רָשָׁע"
+      ],
+      "words": [
+        {
+          "word": "וּפִ֥י",
+          "lemma": "פֶּה",
+          "strong": "H6310",
+          "pron": "피하"
         },
         {
           "word": "רְ֝שָׁעִ֗ים",
           "lemma": "רָשָׁע",
           "strong": "H7563",
-          "pron": "레샤임"
+          "pron": "라샤"
         }
       ],
-      "count": 4,
+      "count": 7,
       "refs": [
-        "psalms 26:5",
-        "psalms 28:3",
-        "genesis 18:23",
-        "genesis 18:25"
+        "psalms 109:2",
+        "proverbs 10:6",
+        "proverbs 10:11",
+        "proverbs 10:32",
+        "proverbs 11:11",
+        "proverbs 15:28",
+        "proverbs 19:28"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כֹּ֝֗ל רִשְׁעֵי",
-      "pron": "브콜 레샤임",
+      "hebrew": "כַצַּדִּ֖יק כָּרָשָׁ֑ע",
+      "pron": "찯디크 라샤",
       "lemmas": [
-        "כֹּל",
+        "צַדִּיק",
         "רָשָׁע"
       ],
       "words": [
         {
-          "word": "כֹּ֝֗ל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
+          "word": "כַצַּדִּ֖יק",
+          "lemma": "צַדִּיק",
+          "strong": "H6662",
+          "pron": "찯디크"
         },
         {
-          "word": "רִשְׁעֵי",
+          "word": "כָּרָשָׁ֑ע",
           "lemma": "רָשָׁע",
           "strong": "H7563",
-          "pron": "레샤임"
+          "pron": "라샤"
         }
       ],
-      "count": 4,
+      "count": 7,
       "refs": [
-        "psalms 75:8",
-        "psalms 101:8",
-        "psalms 119:119",
-        "psalms 145:20"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "רְשָׁעִ֣ים תֹּאבֵֽד",
-      "pron": "레샤임 토벧",
-      "lemmas": [
-        "רָשָׁע",
-        "אָבַד"
-      ],
-      "words": [
-        {
-          "word": "רְשָׁעִ֣ים",
-          "lemma": "רָשָׁע",
-          "strong": "H7563",
-          "pron": "레샤임"
-        },
-        {
-          "word": "תֹּאבֵֽד",
-          "lemma": "אָבַד",
-          "strong": "H6",
-          "pron": "토벧"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 1:6",
-        "psalms 37:20",
-        "psalms 112:10",
-        "psalms 119:95"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "רְשָׁעִ֣ים תִּרְאֶֽה",
-      "pron": "레샤임 야레에누",
-      "lemmas": [
-        "רָשָׁע",
-        "רָאָה"
-      ],
-      "words": [
-        {
-          "word": "רְשָׁעִ֣ים",
-          "lemma": "רָשָׁע",
-          "strong": "H7563",
-          "pron": "레샤임"
-        },
-        {
-          "word": "תִּרְאֶֽה",
-          "lemma": "רָאָה",
-          "strong": "H7200",
-          "pron": "야레에누"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 37:34",
-        "psalms 73:3",
-        "psalms 91:8",
-        "psalms 112:10"
+        "genesis 18:25",
+        "proverbs 13:5",
+        "proverbs 21:18",
+        "ecclesiastes 9:2",
+        "ezekiel 21:3",
+        "ezekiel 21:4",
+        "malachi 3:18"
       ],
       "glossKo": ""
     }

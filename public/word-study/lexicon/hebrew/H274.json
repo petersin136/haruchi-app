@@ -1,8 +1,8 @@
 {
   "lemma": "אֲחַזְיָה",
-  "pron": "아핫아",
+  "pron": "아핫아후",
   "strong": "H274",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אָחַז",
     "strong": "H270",
@@ -12,37 +12,209 @@
     {
       "lemma": "אָחַז",
       "strong": "H270",
-      "pron": "아하자타므",
-      "glossKo": "그들에게 잡다"
+      "pron": "네에핫",
+      "glossKo": "잡다"
     },
     {
       "lemma": "אָחָז",
       "strong": "H271",
-      "pron": "",
+      "pron": "아핫",
       "glossKo": "아하스"
     },
     {
       "lemma": "אֲחֻזָּה",
       "strong": "H272",
-      "pron": "바아훗자트카",
-      "glossKo": "너의 소유"
+      "pron": "라아훗자트",
+      "glossKo": "소유"
     },
     {
       "lemma": "אַחְזַי",
       "strong": "H273",
-      "pron": "",
+      "pron": "아헤자이",
       "glossKo": "아하시야"
     },
     {
       "lemma": "אֲחֻזָּם",
       "strong": "H275",
-      "pron": "",
+      "pron": "아훗잠",
       "glossKo": "아하시야(왕)"
     }
   ],
   "defEn": "Achazjah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 37,
+  "byBook": {
+    "kings2": 20,
+    "chronicles2": 13,
+    "kings1": 3,
+    "chronicles1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֲחַזְיָ֥הוּ בְנ֖וֹ",
+      "pron": "아핫아후 바님",
+      "lemmas": [
+        "אֲחַזְיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "אֲחַזְיָ֥הוּ",
+          "lemma": "אֲחַזְיָה",
+          "strong": "H274",
+          "pron": "아핫아후"
+        },
+        {
+          "word": "בְנ֖וֹ",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "kings1 22:40",
+        "kings1 22:49",
+        "kings1 22:51",
+        "kings2 8:24",
+        "kings2 8:25",
+        "kings2 8:29",
+        "chronicles1 3:11",
+        "chronicles2 22:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽאֲחַזְיָה֙ מֶ֣לֶךְ",
+      "pron": "아핫아후 멜레크",
+      "lemmas": [
+        "אֲחַזְיָה",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "וַֽאֲחַזְיָה֙",
+          "lemma": "אֲחַזְיָה",
+          "strong": "H274",
+          "pron": "아핫아후"
+        },
+        {
+          "word": "מֶ֣לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings2 9:16",
+        "kings2 9:21",
+        "kings2 9:27",
+        "kings2 10:13",
+        "kings2 13:1",
+        "chronicles2 20:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן אֲחַזְיָ֗הוּ",
+      "pron": "바님 아핫아후",
+      "lemmas": [
+        "בֵּן",
+        "אֲחַזְיָה"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "אֲחַזְיָ֗הוּ",
+          "lemma": "אֲחַזְיָה",
+          "strong": "H274",
+          "pron": "아핫아후"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings2 11:2",
+        "kings2 13:1",
+        "kings2 14:13",
+        "chronicles1 3:11",
+        "chronicles2 22:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽאֲחַזְיָה֙ מֶ֣לֶךְ יְהוּדָ֔ה",
+      "pron": "아핫아후 멜레크 예후다",
+      "lemmas": [
+        "אֲחַזְיָה",
+        "מֶלֶךְ",
+        "יְהוּדָה"
+      ],
+      "words": [
+        {
+          "word": "וַֽאֲחַזְיָה֙",
+          "lemma": "אֲחַזְיָה",
+          "strong": "H274",
+          "pron": "아핫아후"
+        },
+        {
+          "word": "מֶ֣לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "יְהוּדָ֔ה",
+          "lemma": "יְהוּדָה",
+          "strong": "H3063",
+          "pron": "예후다"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings2 9:16",
+        "kings2 9:21",
+        "kings2 9:27",
+        "kings2 10:13",
+        "kings2 13:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּמְלֹ֛ךְ אֲחַזְיָ֥הוּ",
+      "pron": "말쿠 아핫아후",
+      "lemmas": [
+        "מָלַךְ",
+        "אֲחַזְיָה"
+      ],
+      "words": [
+        {
+          "word": "וַיִּמְלֹ֛ךְ",
+          "lemma": "מָלַךְ",
+          "strong": "H4427",
+          "pron": "말쿠"
+        },
+        {
+          "word": "אֲחַזְיָ֥הוּ",
+          "lemma": "אֲחַזְיָה",
+          "strong": "H274",
+          "pron": "아핫아후"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 22:40",
+        "kings2 8:24",
+        "kings2 8:25",
+        "kings2 9:29",
+        "chronicles2 22:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

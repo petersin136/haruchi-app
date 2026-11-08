@@ -1,6 +1,6 @@
 {
   "lemma": "נוּד",
-  "pron": "느븓브",
+  "pron": "바낟",
   "strong": "H5110",
   "posKo": "동사",
   "root": null,
@@ -14,28 +14,94 @@
     {
       "lemma": "נֵד",
       "strong": "H5067",
-      "pron": "카넫",
+      "pron": "넫",
       "glossKo": "쌓아 올린 더미"
     },
     {
       "lemma": "נוֹד",
       "strong": "H5112",
-      "pron": "노디위",
+      "pron": "노디",
       "glossKo": "나의 유랑"
     },
     {
       "lemma": "נִיד",
       "strong": "H5205",
-      "pron": "",
+      "pron": "브닏",
       "glossKo": "흔들림"
     }
   ],
   "defEn": "nod; waver; wander; flee; disappear",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 25,
   "byBook": {
+    "jeremiah": 11,
     "psalms": 4,
-    "genesis": 2
+    "genesis": 2,
+    "isaiah": 2,
+    "job": 2,
+    "kings1": 1,
+    "kings2": 1,
+    "nahum": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אַל תְּנִדֵֽנִי",
+      "pron": "엘 바낟",
+      "lemmas": [
+        "אַל",
+        "נוּד"
+      ],
+      "words": [
+        {
+          "word": "אַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "תְּנִדֵֽנִי",
+          "lemma": "נוּד",
+          "strong": "H5110",
+          "pron": "바낟"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 36:11",
+        "jeremiah 16:5",
+        "jeremiah 22:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִ֖י יָנ֣וּד",
+      "pron": "미 바낟",
+      "lemmas": [
+        "מִי",
+        "נוּד"
+      ],
+      "words": [
+        {
+          "word": "מִ֖י",
+          "lemma": "מִי",
+          "strong": "H4310",
+          "pron": "미"
+        },
+        {
+          "word": "יָנ֣וּד",
+          "lemma": "נוּד",
+          "strong": "H5110",
+          "pron": "바낟"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 51:19",
+        "jeremiah 15:5",
+        "nahum 3:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

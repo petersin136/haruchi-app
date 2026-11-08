@@ -18,44 +18,180 @@
     {
       "lemma": "אָמִיר",
       "strong": "H534",
-      "pron": "",
+      "pron": "아미르",
       "glossKo": "꼭대기"
     },
     {
       "lemma": "אָמַר",
       "strong": "H559",
-      "pron": "아마르",
+      "pron": "바요메르",
       "glossKo": "말하다"
     },
     {
       "lemma": "אֲמַר",
       "strong": "H560",
-      "pron": "",
-      "glossKo": "말하다"
+      "pron": "암린",
+      "glossKo": "말하는 이"
     },
     {
       "lemma": "אֵמֶר",
       "strong": "H561",
-      "pron": "아마라위",
-      "glossKo": "나의 말"
+      "pron": "임레",
+      "glossKo": "말"
     },
     {
       "lemma": "אִמֵּר",
       "strong": "H564",
-      "pron": "",
+      "pron": "임메르",
       "glossKo": "임멜"
     }
   ],
   "defEn": "Emorite",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 87,
   "byBook": {
+    "joshua": 20,
+    "deuteronomy": 15,
+    "numbers": 13,
+    "judges": 11,
+    "exodus": 6,
     "genesis": 6,
-    "psalms": 2
+    "kings1": 3,
+    "amos": 2,
+    "ezekiel": 2,
+    "psalms": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "ezra": 1,
+    "kings2": 1,
+    "nehemiah": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "וְאֶת הָ֣אֱמֹרִ֔י",
+      "hebrew": "מֶ֣לֶךְ הָֽאֱמֹרִ֔י",
+      "pron": "멜레크 하에모리",
+      "lemmas": [
+        "מֶלֶךְ",
+        "אֱמֹרִי"
+      ],
+      "words": [
+        {
+          "word": "מֶ֣לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "הָֽאֱמֹרִ֔י",
+          "lemma": "אֱמֹרִי",
+          "strong": "H567",
+          "pron": "하에모리"
+        }
+      ],
+      "count": 24,
+      "refs": [
+        "numbers 21:21",
+        "numbers 21:26",
+        "numbers 21:29",
+        "numbers 21:34",
+        "numbers 32:33",
+        "deuteronomy 1:4",
+        "deuteronomy 3:2",
+        "deuteronomy 3:8",
+        "deuteronomy 4:46",
+        "deuteronomy 4:47",
+        "deuteronomy 31:4",
+        "joshua 2:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָֽאֱמֹרִ֔י אֲשֶׁ֥ר",
+      "pron": "하에모리 아셰르",
+      "lemmas": [
+        "אֱמֹרִי",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הָֽאֱמֹרִ֔י",
+          "lemma": "אֱמֹרִי",
+          "strong": "H567",
+          "pron": "하에모리"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "numbers 21:32",
+        "numbers 21:34",
+        "numbers 32:39",
+        "deuteronomy 1:4",
+        "deuteronomy 1:19",
+        "deuteronomy 1:20",
+        "deuteronomy 3:2",
+        "deuteronomy 3:8",
+        "deuteronomy 4:46",
+        "deuteronomy 4:47",
+        "joshua 2:10",
+        "joshua 5:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "סִיחֹן֙ מֶ֣לֶךְ הָֽאֱמֹרִ֔י",
+      "pron": "시혼 멜레크 하에모리",
+      "lemmas": [
+        "סִיחוֹן",
+        "מֶלֶךְ",
+        "אֱמֹרִי"
+      ],
+      "words": [
+        {
+          "word": "סִיחֹן֙",
+          "lemma": "סִיחוֹן",
+          "strong": "H5511",
+          "pron": "시혼"
+        },
+        {
+          "word": "מֶ֣לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "הָֽאֱמֹרִ֔י",
+          "lemma": "אֱמֹרִי",
+          "strong": "H567",
+          "pron": "하에모리"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "numbers 21:21",
+        "numbers 21:26",
+        "numbers 21:34",
+        "numbers 32:33",
+        "deuteronomy 1:4",
+        "deuteronomy 3:2",
+        "deuteronomy 4:46",
+        "joshua 12:2",
+        "joshua 13:10",
+        "joshua 13:21",
+        "judges 11:19",
+        "kings1 4:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הָ֣אֱמֹרִ֔י",
       "pron": "에트 하에모리",
       "lemmas": [
         "אֵת",
@@ -63,7 +199,7 @@
       ],
       "words": [
         {
-          "word": "וְאֶת",
+          "word": "אֶת",
           "lemma": "אֵת",
           "strong": "H853",
           "pron": "에트"
@@ -75,11 +211,63 @@
           "pron": "하에모리"
         }
       ],
-      "count": 3,
+      "count": 11,
       "refs": [
         "genesis 10:16",
         "genesis 14:7",
-        "genesis 15:21"
+        "genesis 15:21",
+        "exodus 34:11",
+        "numbers 21:32",
+        "numbers 32:39",
+        "joshua 10:12",
+        "joshua 24:18",
+        "judges 11:23",
+        "chronicles1 1:14",
+        "amos 2:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֶ֣לֶךְ הָֽאֱמֹרִ֔י אֲשֶׁ֥ר",
+      "pron": "멜레크 하에모리 아셰르",
+      "lemmas": [
+        "מֶלֶךְ",
+        "אֱמֹרִי",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "מֶ֣לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "הָֽאֱמֹרִ֔י",
+          "lemma": "אֱמֹרִי",
+          "strong": "H567",
+          "pron": "하에모리"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "numbers 21:34",
+        "deuteronomy 1:4",
+        "deuteronomy 3:2",
+        "deuteronomy 3:8",
+        "deuteronomy 4:46",
+        "deuteronomy 4:47",
+        "joshua 2:10",
+        "joshua 5:1",
+        "joshua 9:10",
+        "joshua 13:10",
+        "joshua 13:21"
       ],
       "glossKo": ""
     }

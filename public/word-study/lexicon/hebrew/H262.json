@@ -1,8 +1,8 @@
 {
   "lemma": "אַחְוָה",
-  "pron": "아헤바",
+  "pron": "베아하바티",
   "strong": "H262",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָוָה",
     "strong": "H2331",
@@ -10,16 +10,22 @@
   },
   "family": [
     {
+      "lemma": "אַחֲוָה",
+      "strong": "H263",
+      "pron": "바아하바아트",
+      "glossKo": "해석(아람)"
+    },
+    {
       "lemma": "חֲוָא",
       "strong": "H2324",
-      "pron": "",
+      "pron": "네하베",
       "glossKo": "알리다(아람)"
     },
     {
       "lemma": "חָוָה",
       "strong": "H2331",
-      "pron": "예하베",
-      "glossKo": "선포하다"
+      "pron": "아하베카",
+      "glossKo": "너에게 선포하다"
     },
     {
       "lemma": "חַוָּה",
@@ -30,13 +36,15 @@
     {
       "lemma": "חָיָה",
       "strong": "H2421",
-      "pron": "예히",
+      "pron": "바예히",
       "glossKo": "살다"
     }
   ],
   "defEn": "utterance",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 1,
+  "byBook": {
+    "job": 1
+  },
   "phrases": []
 }

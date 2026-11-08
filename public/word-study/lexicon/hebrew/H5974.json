@@ -1,8 +1,8 @@
 {
   "lemma": "עִם",
-  "pron": "임",
+  "pron": "베임메혼",
   "strong": "H5974",
-  "posKo": "",
+  "posKo": "전치사",
   "root": {
     "lemma": "עִם",
     "strong": "H5973",
@@ -12,25 +12,96 @@
     {
       "lemma": "עִם",
       "strong": "H5973",
-      "pron": "임오",
-      "glossKo": "그에게 함께"
+      "pron": "임마흐",
+      "glossKo": "그녀에게 함께"
     },
     {
       "lemma": "עִמָּד",
       "strong": "H5978",
-      "pron": "임마디위",
+      "pron": "임마디",
       "glossKo": "나를 함께"
     },
     {
       "lemma": "עִמָּנוּאֵל",
       "strong": "H6005",
-      "pron": "",
+      "pron": "임마누",
       "glossKo": "임마누엘"
     }
   ],
   "defEn": "by, from, like, to(-ward), with.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 22,
+  "byBook": {
+    "daniel": 18,
+    "ezra": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "וְעִם חֵיוְתָ֥א",
+      "pron": "베임메혼 헤바트",
+      "lemmas": [
+        "עִם",
+        "חֵיוָא"
+      ],
+      "words": [
+        {
+          "word": "וְעִם",
+          "lemma": "עִם",
+          "strong": "H5974",
+          "pron": "베임메혼"
+        },
+        {
+          "word": "חֵיוְתָ֥א",
+          "lemma": "חֵיוָא",
+          "strong": "H2423",
+          "pron": "헤바트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 4:15",
+        "daniel 4:23",
+        "daniel 4:25",
+        "daniel 4:32",
+        "daniel 5:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעִם חֵיוַ֤ת בָּרָא֙",
+      "pron": "베임메혼 헤바트 바라",
+      "lemmas": [
+        "עִם",
+        "חֵיוָא",
+        "בַּר"
+      ],
+      "words": [
+        {
+          "word": "וְעִם",
+          "lemma": "עִם",
+          "strong": "H5974",
+          "pron": "베임메혼"
+        },
+        {
+          "word": "חֵיוַ֤ת",
+          "lemma": "חֵיוָא",
+          "strong": "H2423",
+          "pron": "헤바트"
+        },
+        {
+          "word": "בָּרָא֙",
+          "lemma": "בַּר",
+          "strong": "H1251",
+          "pron": "바라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 4:23",
+        "daniel 4:25",
+        "daniel 4:32"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

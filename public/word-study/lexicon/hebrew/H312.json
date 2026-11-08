@@ -12,25 +12,25 @@
     {
       "lemma": "אָחַר",
       "strong": "H309",
-      "pron": "테아하르",
+      "pron": "테아하루",
       "glossKo": "지체하다"
     },
     {
       "lemma": "אַחַר",
       "strong": "H310",
-      "pron": "아하레하",
-      "glossKo": "그녀에게 뒤에"
+      "pron": "아하레",
+      "glossKo": "뒤에"
     },
     {
       "lemma": "אַחֵר",
       "strong": "H313",
-      "pron": "",
+      "pron": "아헤르",
       "glossKo": "아헬"
     },
     {
       "lemma": "אַחֲרוֹן",
       "strong": "H314",
-      "pron": "아하론",
+      "pron": "아하로님",
       "glossKo": "뒤의"
     },
     {
@@ -42,38 +42,239 @@
   ],
   "defEn": "hinder; next; other",
   "defKo": "",
-  "countOT": 20,
+  "countOT": 166,
   "byBook": {
+    "deuteronomy": 25,
+    "jeremiah": 25,
     "genesis": 15,
-    "psalms": 5
+    "chronicles2": 10,
+    "kings1": 9,
+    "kings2": 9,
+    "samuel1": 8,
+    "isaiah": 6,
+    "judges": 6,
+    "exodus": 5,
+    "ezekiel": 5,
+    "job": 5,
+    "psalms": 5,
+    "leviticus": 4,
+    "numbers": 4,
+    "chronicles1": 3,
+    "joshua": 3,
+    "nehemiah": 3,
+    "samuel2": 3,
+    "daniel": 2,
+    "ezra": 2,
+    "proverbs": 2,
+    "ruth": 2,
+    "ecclesiastes": 1,
+    "esther": 1,
+    "hosea": 1,
+    "joel": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "שָׁנִ֥ים אֲחֵרֽוֹת",
-      "pron": "우셰노타위 아헤르",
+      "hebrew": "אֱלֹהִ֣ים אֲחֵרִ֔ים",
+      "pron": "엘로힘 아헤르",
       "lemmas": [
-        "שָׁנֶה",
+        "אֱלֹהִים",
         "אַחֵר"
       ],
       "words": [
         {
-          "word": "שָׁנִ֥ים",
-          "lemma": "שָׁנֶה",
-          "strong": "H8141",
-          "pron": "우셰노타위"
+          "word": "אֱלֹהִ֣ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
         },
         {
-          "word": "אֲחֵרֽוֹת",
+          "word": "אֲחֵרִ֔ים",
           "lemma": "אַחֵר",
           "strong": "H312",
           "pron": "아헤르"
         }
       ],
-      "count": 3,
+      "count": 63,
       "refs": [
-        "genesis 17:21",
-        "genesis 29:27",
-        "genesis 29:30"
+        "exodus 20:3",
+        "exodus 23:13",
+        "deuteronomy 5:7",
+        "deuteronomy 6:14",
+        "deuteronomy 7:4",
+        "deuteronomy 8:19",
+        "deuteronomy 11:16",
+        "deuteronomy 11:28",
+        "deuteronomy 13:2",
+        "deuteronomy 13:6",
+        "deuteronomy 13:13",
+        "deuteronomy 17:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַחֲרֵ֛י אֱלֹהִ֥ים אֲחֵרִ֖ים",
+      "pron": "아하레 엘로힘 아헤르",
+      "lemmas": [
+        "אַחַר",
+        "אֱלֹהִים",
+        "אַחֵר"
+      ],
+      "words": [
+        {
+          "word": "אַחֲרֵ֛י",
+          "lemma": "אַחַר",
+          "strong": "H310",
+          "pron": "아하레"
+        },
+        {
+          "word": "אֱלֹהִ֥ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "אֲחֵרִ֖ים",
+          "lemma": "אַחֵר",
+          "strong": "H312",
+          "pron": "아헤르"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "deuteronomy 6:14",
+        "deuteronomy 8:19",
+        "deuteronomy 11:28",
+        "deuteronomy 13:2",
+        "deuteronomy 28:14",
+        "judges 2:12",
+        "judges 2:17",
+        "judges 2:19",
+        "kings1 11:4",
+        "kings1 11:10",
+        "jeremiah 7:6",
+        "jeremiah 7:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַעֲבַדְתֶּם֙ אֱלֹהִ֣ים אֲחֵרִ֔ים",
+      "pron": "라아볻 엘로힘 아헤르",
+      "lemmas": [
+        "עָבַד",
+        "אֱלֹהִים",
+        "אַחֵר"
+      ],
+      "words": [
+        {
+          "word": "וַעֲבַדְתֶּם֙",
+          "lemma": "עָבַד",
+          "strong": "H5647",
+          "pron": "라아볻"
+        },
+        {
+          "word": "אֱלֹהִ֣ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "אֲחֵרִ֔ים",
+          "lemma": "אַחֵר",
+          "strong": "H312",
+          "pron": "아헤르"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "deuteronomy 7:4",
+        "deuteronomy 11:16",
+        "deuteronomy 13:6",
+        "deuteronomy 13:13",
+        "deuteronomy 17:3",
+        "deuteronomy 29:26",
+        "joshua 23:16",
+        "joshua 24:2",
+        "joshua 24:16",
+        "judges 10:13",
+        "samuel1 8:8",
+        "samuel1 26:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲחֵרִ֖ים אֲשֶׁ֥ר",
+      "pron": "아헤르 아셰르",
+      "lemmas": [
+        "אַחֵר",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "אֲחֵרִ֖ים",
+          "lemma": "אַחֵר",
+          "strong": "H312",
+          "pron": "아헤르"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "numbers 23:13",
+        "deuteronomy 11:28",
+        "deuteronomy 13:2",
+        "deuteronomy 13:6",
+        "deuteronomy 13:13",
+        "deuteronomy 28:64",
+        "samuel2 13:16",
+        "jeremiah 7:9",
+        "jeremiah 18:4",
+        "jeremiah 19:4",
+        "jeremiah 22:26",
+        "jeremiah 44:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲחֵרִ֑ים וְלֹא",
+      "pron": "아헤르 로",
+      "lemmas": [
+        "אַחֵר",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "אֲחֵרִ֑ים",
+          "lemma": "אַחֵר",
+          "strong": "H312",
+          "pron": "아헤르"
+        },
+        {
+          "word": "וְלֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "genesis 26:22",
+        "exodus 23:13",
+        "leviticus 27:20",
+        "kings1 3:22",
+        "kings1 11:4",
+        "kings1 11:10",
+        "kings1 13:10",
+        "kings2 17:35",
+        "isaiah 42:8",
+        "isaiah 48:11",
+        "jeremiah 7:6",
+        "ezekiel 44:19"
       ],
       "glossKo": ""
     }

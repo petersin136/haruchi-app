@@ -18,19 +18,19 @@
     {
       "lemma": "גַּנָּה",
       "strong": "H1593",
-      "pron": "",
+      "pron": "크간노트",
       "glossKo": "정원"
     },
     {
       "lemma": "גָּנַן",
       "strong": "H1598",
-      "pron": "",
+      "pron": "브간노티",
       "glossKo": "보호하다"
     },
     {
       "lemma": "גִּנְּתוֹן",
       "strong": "H1599",
-      "pron": "",
+      "pron": "긴네톤",
       "glossKo": "긴느돈"
     },
     {
@@ -42,9 +42,19 @@
   ],
   "defEn": "garden",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 42,
   "byBook": {
-    "genesis": 14
+    "genesis": 14,
+    "songofsolomon": 8,
+    "ezekiel": 5,
+    "kings2": 5,
+    "jeremiah": 3,
+    "isaiah": 2,
+    "deuteronomy": 1,
+    "joel": 1,
+    "kings1": 1,
+    "lamentations": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
@@ -68,18 +78,20 @@
           "pron": "브에덴"
         }
       ],
-      "count": 4,
+      "count": 6,
       "refs": [
         "genesis 2:8",
         "genesis 2:15",
         "genesis 3:23",
-        "genesis 3:24"
+        "genesis 3:24",
+        "ezekiel 36:35",
+        "joel 2:3"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "עֵֽץ הַגָּ֖ן",
-      "pron": "크에츠 간",
+      "pron": "에츠 간",
       "lemmas": [
         "עֵץ",
         "גַּן"
@@ -89,7 +101,7 @@
           "word": "עֵֽץ",
           "lemma": "עֵץ",
           "strong": "H6086",
-          "pron": "크에츠"
+          "pron": "에츠"
         },
         {
           "word": "הַגָּ֖ן",
@@ -98,12 +110,101 @@
           "pron": "간"
         }
       ],
-      "count": 4,
+      "count": 5,
       "refs": [
         "genesis 2:16",
         "genesis 3:1",
         "genesis 3:2",
-        "genesis 3:8"
+        "genesis 3:8",
+        "ezekiel 31:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גַּן אֱלֹהִ֜ים",
+      "pron": "간 엘로힘",
+      "lemmas": [
+        "גַּן",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "גַּן",
+          "lemma": "גַּן",
+          "strong": "H1588",
+          "pron": "간"
+        },
+        {
+          "word": "אֱלֹהִ֜ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 28:13",
+        "ezekiel 31:8",
+        "ezekiel 31:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גַּ֣ן הַמֶּ֔לֶךְ",
+      "pron": "간 멜레크",
+      "lemmas": [
+        "גַּן",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "גַּ֣ן",
+          "lemma": "גַּן",
+          "strong": "H1588",
+          "pron": "간"
+        },
+        {
+          "word": "הַמֶּ֔לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 25:4",
+        "nehemiah 3:15",
+        "jeremiah 39:4",
+        "jeremiah 52:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַגָּ֖ן אָכֹ֥ל",
+      "pron": "간 아콜",
+      "lemmas": [
+        "גַּן",
+        "אָכַל"
+      ],
+      "words": [
+        {
+          "word": "הַגָּ֖ן",
+          "lemma": "גַּן",
+          "strong": "H1588",
+          "pron": "간"
+        },
+        {
+          "word": "אָכֹ֥ל",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "아콜"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 2:16",
+        "genesis 3:2",
+        "songofsolomon 4:16"
       ],
       "glossKo": ""
     }

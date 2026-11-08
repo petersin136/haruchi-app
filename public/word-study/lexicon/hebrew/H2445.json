@@ -1,8 +1,8 @@
 {
   "lemma": "חַכִּים",
-  "pron": "학킴",
+  "pron": "학키메",
   "strong": "H2445",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָכַם",
     "strong": "H2449",
@@ -12,14 +12,14 @@
     {
       "lemma": "חָכַם",
       "strong": "H2449",
-      "pron": "마헥키마트",
+      "pron": "니테학케마",
       "glossKo": "지혜롭다"
     },
     {
       "lemma": "חָכָם",
       "strong": "H2450",
-      "pron": "하카밈",
-      "glossKo": "지혜로운"
+      "pron": "하카메하",
+      "glossKo": "그녀의 지혜로운"
     },
     {
       "lemma": "חׇכְמָה",
@@ -30,13 +30,116 @@
     {
       "lemma": "חַכְמוֹנִי",
       "strong": "H2453",
-      "pron": "",
+      "pron": "하케모니",
       "glossKo": "학모니"
     }
   ],
   "defEn": "wise; Magian",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "daniel": 14
+  },
+  "phrases": [
+    {
+      "hebrew": "חַכִּימֵ֥י בָבֶֽל",
+      "pron": "학키메 바벨",
+      "lemmas": [
+        "חַכִּים",
+        "בַּבֶל"
+      ],
+      "words": [
+        {
+          "word": "חַכִּימֵ֥י",
+          "lemma": "חַכִּים",
+          "strong": "H2445",
+          "pron": "학키메"
+        },
+        {
+          "word": "בָבֶֽל",
+          "lemma": "בַּבֶל",
+          "strong": "H895",
+          "pron": "바벨"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "daniel 2:12",
+        "daniel 2:14",
+        "daniel 2:18",
+        "daniel 2:24",
+        "daniel 2:48",
+        "daniel 4:6",
+        "daniel 5:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְכֹ֖ל חַכִּימֵ֥י",
+      "pron": "카르 학키메",
+      "lemmas": [
+        "כֹּל",
+        "חַכִּים"
+      ],
+      "words": [
+        {
+          "word": "לְכֹ֖ל",
+          "lemma": "כֹּל",
+          "strong": "H3606",
+          "pron": "카르"
+        },
+        {
+          "word": "חַכִּימֵ֥י",
+          "lemma": "חַכִּים",
+          "strong": "H2445",
+          "pron": "학키메"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 2:12",
+        "daniel 2:48",
+        "daniel 4:6",
+        "daniel 4:18",
+        "daniel 5:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְכֹ֖ל חַכִּימֵ֥י בָבֶֽל",
+      "pron": "카르 학키메 바벨",
+      "lemmas": [
+        "כֹּל",
+        "חַכִּים",
+        "בַּבֶל"
+      ],
+      "words": [
+        {
+          "word": "לְכֹ֖ל",
+          "lemma": "כֹּל",
+          "strong": "H3606",
+          "pron": "카르"
+        },
+        {
+          "word": "חַכִּימֵ֥י",
+          "lemma": "חַכִּים",
+          "strong": "H2445",
+          "pron": "학키메"
+        },
+        {
+          "word": "בָבֶֽל",
+          "lemma": "בַּבֶל",
+          "strong": "H895",
+          "pron": "바벨"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:12",
+        "daniel 2:48",
+        "daniel 4:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

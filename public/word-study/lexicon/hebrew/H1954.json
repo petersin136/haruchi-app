@@ -2,7 +2,7 @@
   "lemma": "הוֹשֵׁעַ",
   "pron": "호셰아",
   "strong": "H1954",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "יָשַׁע",
     "strong": "H3467",
@@ -12,43 +12,159 @@
     {
       "lemma": "הוֹשַׁעְיָה",
       "strong": "H1955",
-      "pron": "",
+      "pron": "호샤에아",
       "glossKo": "호사야"
     },
     {
       "lemma": "יְשׁוּעָה",
       "strong": "H3444",
-      "pron": "예슈아타",
-      "glossKo": "구원"
+      "pron": "리슈아테카",
+      "glossKo": "너의 구원"
     },
     {
       "lemma": "יָשַׁע",
       "strong": "H3467",
-      "pron": "호시에니",
-      "glossKo": "나를 구원하다"
+      "pron": "바오시안",
+      "glossKo": "그들에게 구원하다"
     },
     {
       "lemma": "יֶשַׁע",
       "strong": "H3468",
-      "pron": "브예샤",
-      "glossKo": "구원"
+      "pron": "이셰이",
+      "glossKo": "나의 구원"
     },
     {
       "lemma": "יִשְׁעִי",
       "strong": "H3469",
-      "pron": "",
+      "pron": "이셰이",
       "glossKo": "이시"
     },
     {
       "lemma": "יְשַׁעְיָה",
       "strong": "H3470",
-      "pron": "",
+      "pron": "예샤에아후",
       "glossKo": "이사야"
     }
   ],
   "defEn": "Hoshea",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 16,
+  "byBook": {
+    "kings2": 8,
+    "hosea": 3,
+    "numbers": 2,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "nehemiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "לְהוֹשֵׁ֥עַ בֶּן",
+      "pron": "호셰아 바님",
+      "lemmas": [
+        "הוֹשֵׁעַ",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "לְהוֹשֵׁ֥עַ",
+          "lemma": "הוֹשֵׁעַ",
+          "strong": "H1954",
+          "pron": "호셰아"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "numbers 13:8",
+        "numbers 13:16",
+        "deuteronomy 32:44",
+        "kings2 15:30",
+        "kings2 17:1",
+        "kings2 18:1",
+        "kings2 18:9",
+        "chronicles1 27:20",
+        "hosea 1:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְהוֹשֵׁ֥עַ בֶּן אֵלָ֖ה",
+      "pron": "호셰아 바님 엘라",
+      "lemmas": [
+        "הוֹשֵׁעַ",
+        "בֵּן",
+        "אֵלָה"
+      ],
+      "words": [
+        {
+          "word": "לְהוֹשֵׁ֥עַ",
+          "lemma": "הוֹשֵׁעַ",
+          "strong": "H1954",
+          "pron": "호셰아"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "אֵלָ֖ה",
+          "lemma": "אֵלָה",
+          "strong": "H425",
+          "pron": "엘라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 15:30",
+        "kings2 17:1",
+        "kings2 18:1",
+        "kings2 18:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הוֹשֵׁ֥עַ בִּן נֽוּן",
+      "pron": "호셰아 바님 눈",
+      "lemmas": [
+        "הוֹשֵׁעַ",
+        "בֵּן",
+        "נוּן"
+      ],
+      "words": [
+        {
+          "word": "הוֹשֵׁ֥עַ",
+          "lemma": "הוֹשֵׁעַ",
+          "strong": "H1954",
+          "pron": "호셰아"
+        },
+        {
+          "word": "בִּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נֽוּן",
+          "lemma": "נוּן",
+          "strong": "H5126",
+          "pron": "눈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 13:8",
+        "numbers 13:16",
+        "deuteronomy 32:44"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

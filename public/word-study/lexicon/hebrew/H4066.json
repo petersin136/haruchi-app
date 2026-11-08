@@ -12,25 +12,25 @@
     {
       "lemma": "דִּין",
       "strong": "H1777",
-      "pron": "야딘",
+      "pron": "야돈",
       "glossKo": "재판하다"
     },
     {
       "lemma": "דִּין",
       "strong": "H1778",
-      "pron": "",
+      "pron": "드닌",
       "glossKo": "재판관(아람)"
     },
     {
       "lemma": "דִּין",
       "strong": "H1779",
-      "pron": "브디니위",
-      "glossKo": "나의 판결"
+      "pron": "딘",
+      "glossKo": "판결"
     },
     {
       "lemma": "דַּיָּן",
       "strong": "H1781",
-      "pron": "브다안",
+      "pron": "르다안",
       "glossKo": "재판관"
     },
     {
@@ -38,13 +38,149 @@
       "strong": "H1835",
       "pron": "단",
       "glossKo": "단"
+    },
+    {
+      "lemma": "מִדְיָן",
+      "strong": "H4079",
+      "pron": "믿아님",
+      "glossKo": "미디안"
     }
   ],
   "defEn": "contest; quarrel",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 17,
   "byBook": {
+    "proverbs": 14,
+    "habakkuk": 1,
+    "jeremiah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מדונים מִ֝דְיָנִ֗ים",
+      "pron": "마돈 믿아님",
+      "lemmas": [
+        "מָדוֹן",
+        "מִדְיָן"
+      ],
+      "words": [
+        {
+          "word": "מדונים",
+          "lemma": "מָדוֹן",
+          "strong": "H4066",
+          "pron": "마돈"
+        },
+        {
+          "word": "מִ֝דְיָנִ֗ים",
+          "lemma": "מִדְיָן",
+          "strong": "H4079",
+          "pron": "믿아님"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "proverbs 18:19",
+        "proverbs 21:19",
+        "proverbs 23:29",
+        "proverbs 25:24",
+        "proverbs 26:21",
+        "proverbs 27:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְגָרֶ֣ה מָד֑וֹן",
+      "pron": "티텍가루 마돈",
+      "lemmas": [
+        "גָּרָה",
+        "מָדוֹן"
+      ],
+      "words": [
+        {
+          "word": "יְגָרֶ֣ה",
+          "lemma": "גָּרָה",
+          "strong": "H1624",
+          "pron": "티텍가루"
+        },
+        {
+          "word": "מָד֑וֹן",
+          "lemma": "מָדוֹן",
+          "strong": "H4066",
+          "pron": "마돈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 15:18",
+        "proverbs 28:25",
+        "proverbs 29:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵאֵ֖שֶׁת מדונים",
+      "pron": "르잇샤 마돈",
+      "lemmas": [
+        "אִשָּׁה",
+        "מָדוֹן"
+      ],
+      "words": [
+        {
+          "word": "מֵאֵ֖שֶׁת",
+          "lemma": "אִשָּׁה",
+          "strong": "H802",
+          "pron": "르잇샤"
+        },
+        {
+          "word": "מדונים",
+          "lemma": "מָדוֹן",
+          "strong": "H4066",
+          "pron": "마돈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 21:19",
+        "proverbs 25:24",
+        "proverbs 27:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵאֵ֖שֶׁת מדונים מִדְיָנִ֣ים",
+      "pron": "르잇샤 마돈 믿아님",
+      "lemmas": [
+        "אִשָּׁה",
+        "מָדוֹן",
+        "מִדְיָן"
+      ],
+      "words": [
+        {
+          "word": "מֵאֵ֖שֶׁת",
+          "lemma": "אִשָּׁה",
+          "strong": "H802",
+          "pron": "르잇샤"
+        },
+        {
+          "word": "מדונים",
+          "lemma": "מָדוֹן",
+          "strong": "H4066",
+          "pron": "마돈"
+        },
+        {
+          "word": "מִדְיָנִ֣ים",
+          "lemma": "מִדְיָן",
+          "strong": "H4079",
+          "pron": "믿아님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 21:19",
+        "proverbs 25:24",
+        "proverbs 27:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

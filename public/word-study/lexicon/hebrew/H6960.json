@@ -1,6 +1,6 @@
 {
   "lemma": "קָוָה",
-  "pron": "코베카",
+  "pron": "익카부",
   "strong": "H6960",
   "posKo": "동사",
   "root": null,
@@ -14,13 +14,13 @@
     {
       "lemma": "קַו",
       "strong": "H6957",
-      "pron": "카바므",
-      "glossKo": "그들의 줄"
+      "pron": "카브",
+      "glossKo": "줄"
     },
     {
       "lemma": "קָוֶה",
       "strong": "H6961",
-      "pron": "",
+      "pron": "브크브",
       "glossKo": "줄"
     },
     {
@@ -32,45 +32,22 @@
   ],
   "defEn": "bind; collect",
   "defKo": "",
-  "countOT": 19,
+  "countOT": 49,
   "byBook": {
     "psalms": 17,
-    "genesis": 2
+    "isaiah": 15,
+    "jeremiah": 5,
+    "job": 5,
+    "genesis": 2,
+    "lamentations": 2,
+    "hosea": 1,
+    "micah": 1,
+    "proverbs": 1
   },
   "phrases": [
     {
-      "hebrew": "וְקֹוֵ֥י יְ֝הוָ֗ה",
-      "pron": "코베카 여호와",
-      "lemmas": [
-        "קָוָה",
-        "יְהֹוָה"
-      ],
-      "words": [
-        {
-          "word": "וְקֹוֵ֥י",
-          "lemma": "קָוָה",
-          "strong": "H6960",
-          "pron": "코베카"
-        },
-        {
-          "word": "יְ֝הוָ֗ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 37:9",
-        "psalms 40:1",
-        "psalms 130:5",
-        "genesis 49:18"
-      ],
-      "glossKo": ""
-    },
-    {
       "hebrew": "קַוֵּ֗ה אֶל",
-      "pron": "코베카 엘레모",
+      "pron": "익카부 엘",
       "lemmas": [
         "קָוָה",
         "אֵל"
@@ -80,25 +57,120 @@
           "word": "קַוֵּ֗ה",
           "lemma": "קָוָה",
           "strong": "H6960",
-          "pron": "코베카"
+          "pron": "익카부"
         },
         {
           "word": "אֶל",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "psalms 27:14",
+        "psalms 37:34",
+        "isaiah 51:5",
+        "jeremiah 3:17",
+        "hosea 12:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קִוִּ֥יתִי יְהוָֽה",
+      "pron": "익카부 여호와",
+      "lemmas": [
+        "קָוָה",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "קִוִּ֥יתִי",
+          "lemma": "קָוָה",
+          "strong": "H6960",
+          "pron": "익카부"
+        },
+        {
+          "word": "יְהוָֽה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 49:18",
+        "psalms 37:9",
+        "psalms 40:1",
+        "psalms 130:5",
+        "proverbs 20:22",
+        "isaiah 40:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְ֭הוָה קִוְּתָ֣ה",
+      "pron": "여호와 익카부",
+      "lemmas": [
+        "יְהֹוָה",
+        "קָוָה"
+      ],
+      "words": [
+        {
+          "word": "יְ֭הוָה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "קִוְּתָ֣ה",
+          "lemma": "קָוָה",
+          "strong": "H6960",
+          "pron": "익카부"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 130:5",
+        "isaiah 25:9",
+        "isaiah 26:8",
+        "jeremiah 3:17",
+        "lamentations 3:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְקַו לְא֥וֹר",
+      "pron": "익카부 오르",
+      "lemmas": [
+        "קָוָה",
+        "אוֹר"
+      ],
+      "words": [
+        {
+          "word": "יְקַו",
+          "lemma": "קָוָה",
+          "strong": "H6960",
+          "pron": "익카부"
+        },
+        {
+          "word": "לְא֥וֹר",
+          "lemma": "אוֹר",
+          "strong": "H216",
+          "pron": "오르"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 27:14",
-        "psalms 37:34"
+        "job 3:9",
+        "isaiah 59:9",
+        "jeremiah 13:16"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "קַוֵּ֗ה אֶל יְה֫וָ֥ה",
-      "pron": "코베카 엘레모 여호와",
+      "pron": "익카부 엘 여호와",
       "lemmas": [
         "קָוָה",
         "אֵל",
@@ -109,13 +181,13 @@
           "word": "קַוֵּ֗ה",
           "lemma": "קָוָה",
           "strong": "H6960",
-          "pron": "코베카"
+          "pron": "익카부"
         },
         {
           "word": "אֶל",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
         },
         {
           "word": "יְה֫וָ֥ה",

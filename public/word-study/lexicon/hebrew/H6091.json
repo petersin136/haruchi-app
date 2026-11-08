@@ -12,32 +12,32 @@
     {
       "lemma": "מַעֲצֵבָה",
       "strong": "H4620",
-      "pron": "",
+      "pron": "르마아체바",
       "glossKo": "고통"
     },
     {
       "lemma": "עָצַב",
       "strong": "H6087",
-      "pron": "예앗체부",
+      "pron": "바이테앗쳅",
       "glossKo": "괴롭다"
     },
     {
       "lemma": "עֲצַב",
       "strong": "H6088",
-      "pron": "",
+      "pron": "아칩",
       "glossKo": "괴롭히다(아람)"
     },
     {
       "lemma": "עֶצֶב",
       "strong": "H6089",
-      "pron": "하아차빔",
+      "pron": "브에쳅",
       "glossKo": "수고"
     },
     {
       "lemma": "עָצֵב",
       "strong": "H6092",
-      "pron": "",
-      "glossKo": "일꾼"
+      "pron": "앗체베켐",
+      "glossKo": "너희의 일꾼"
     },
     {
       "lemma": "עִצָּבוֹן",
@@ -48,9 +48,49 @@
   ],
   "defEn": "image",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 17,
   "byBook": {
-    "psalms": 4
+    "hosea": 4,
+    "psalms": 4,
+    "isaiah": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "jeremiah": 1,
+    "micah": 1,
+    "samuel1": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת עֲצַבֵּיהֶ֑ם",
+      "pron": "에트 아찹베헴",
+      "lemmas": [
+        "אֵת",
+        "עָצָב"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "עֲצַבֵּיהֶ֑ם",
+          "lemma": "עָצָב",
+          "strong": "H6091",
+          "pron": "아찹베헴"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 5:21",
+        "chronicles1 10:9",
+        "chronicles2 24:18",
+        "psalms 106:36"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

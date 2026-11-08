@@ -1,6 +1,6 @@
 {
   "lemma": "סֶלַע",
-  "pron": "살이위",
+  "pron": "아셀라",
   "strong": "H5553",
   "posKo": "명사",
   "root": null,
@@ -8,32 +8,79 @@
     {
       "lemma": "סֶלַע",
       "strong": "H5554",
-      "pron": "",
+      "pron": "아셀라",
       "glossKo": "셀라"
     },
     {
       "lemma": "סֶלַע הַמַּחְלְקוֹת",
       "strong": "H5555",
-      "pron": "",
+      "pron": "셀라",
       "glossKo": "셀라함마느곳"
     },
     {
       "lemma": "סׇלְעָם",
       "strong": "H5556",
-      "pron": "",
+      "pron": "아살암",
       "glossKo": "메뚜기 종류"
     }
   ],
   "defEn": "rock; fortress",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 59,
   "byBook": {
-    "psalms": 9
+    "judges": 9,
+    "psalms": 9,
+    "isaiah": 7,
+    "jeremiah": 7,
+    "numbers": 6,
+    "ezekiel": 4,
+    "samuel1": 4,
+    "job": 3,
+    "chronicles2": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "kings1": 1,
+    "nehemiah": 1,
+    "obadiah": 1,
+    "proverbs": 1,
+    "samuel2": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "סַֽלְעִ֥י וּמְצוּדָתִ֗י",
-      "pron": "살이위 우메추다티위",
+      "hebrew": "אֶל סֶ֣לַע",
+      "pron": "엘 아셀라",
+      "lemmas": [
+        "אֵל",
+        "סֶלַע"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "סֶ֣לַע",
+          "lemma": "סֶלַע",
+          "strong": "H5553",
+          "pron": "아셀라"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 20:8",
+        "judges 6:20",
+        "judges 20:45",
+        "judges 20:47",
+        "psalms 137:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "סַֽלְעִ֥י וּמְצֻדָתִ֖י",
+      "pron": "아셀라 바메추다",
       "lemmas": [
         "סֶלַע",
         "מָצוּד"
@@ -43,20 +90,111 @@
           "word": "סַֽלְעִ֥י",
           "lemma": "סֶלַע",
           "strong": "H5553",
-          "pron": "살이위"
+          "pron": "아셀라"
         },
         {
-          "word": "וּמְצוּדָתִ֗י",
+          "word": "וּמְצֻדָתִ֖י",
           "lemma": "מָצוּד",
           "strong": "H4686",
-          "pron": "우메추다티위"
+          "pron": "바메추다"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
+        "samuel2 22:2",
+        "job 39:28",
         "psalms 18:2",
         "psalms 31:3",
         "psalms 71:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּסְעִ֖יף סֶ֥לַע",
+      "pron": "비세입 아셀라",
+      "lemmas": [
+        "סָעִיף",
+        "סֶלַע"
+      ],
+      "words": [
+        {
+          "word": "בִּסְעִ֖יף",
+          "lemma": "סָעִיף",
+          "strong": "H5585",
+          "pron": "비세입"
+        },
+        {
+          "word": "סֶ֥לַע",
+          "lemma": "סֶלַע",
+          "strong": "H5553",
+          "pron": "아셀라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 15:8",
+        "judges 15:11",
+        "isaiah 2:21",
+        "isaiah 57:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִן הַסֶּ֔לַע",
+      "pron": "민 아셀라",
+      "lemmas": [
+        "מִן",
+        "סֶלַע"
+      ],
+      "words": [
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        },
+        {
+          "word": "הַסֶּ֔לַע",
+          "lemma": "סֶלַע",
+          "strong": "H5553",
+          "pron": "아셀라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 20:8",
+        "numbers 20:10",
+        "judges 15:13",
+        "jeremiah 51:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "סֶ֣לַע הָֽרִמּ֔וֹן",
+      "pron": "아셀라 브림몬",
+      "lemmas": [
+        "סֶלַע",
+        "רִמּוֹן"
+      ],
+      "words": [
+        {
+          "word": "סֶ֣לַע",
+          "lemma": "סֶלַע",
+          "strong": "H5553",
+          "pron": "아셀라"
+        },
+        {
+          "word": "הָֽרִמּ֔וֹן",
+          "lemma": "רִמּוֹן",
+          "strong": "H7417",
+          "pron": "브림몬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 20:45",
+        "judges 20:47",
+        "judges 21:13"
       ],
       "glossKo": ""
     }

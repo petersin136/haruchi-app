@@ -12,139 +12,260 @@
     {
       "lemma": "לָחוּם",
       "strong": "H3894",
-      "pron": "",
-      "glossKo": "음식"
+      "pron": "빌후모",
+      "glossKo": "그의 음식"
     },
     {
       "lemma": "לָחַם",
       "strong": "H3898",
-      "pron": "레함",
+      "pron": "브닐함",
       "glossKo": "싸우다"
     },
     {
       "lemma": "לְחֶם",
       "strong": "H3900",
-      "pron": "",
+      "pron": "레헴",
       "glossKo": "잔치(아람)"
     },
     {
       "lemma": "לָחֶם",
       "strong": "H3901",
-      "pron": "",
+      "pron": "라헴",
       "glossKo": "전투"
     },
     {
       "lemma": "לַחְמִי",
       "strong": "H3902",
-      "pron": "",
+      "pron": "라헤미",
       "glossKo": "라흐미"
     },
     {
       "lemma": "לַחְמָס",
       "strong": "H3903",
-      "pron": "",
+      "pron": "브라헤맛",
       "glossKo": "라맘"
     }
   ],
   "defEn": "food; bread; grain",
   "defKo": "",
-  "countOT": 43,
+  "countOT": 299,
   "byBook": {
+    "samuel1": 27,
     "genesis": 24,
-    "psalms": 19
+    "kings1": 24,
+    "leviticus": 24,
+    "proverbs": 23,
+    "exodus": 21,
+    "ezekiel": 20,
+    "psalms": 19,
+    "isaiah": 16,
+    "samuel2": 14,
+    "job": 11,
+    "jeremiah": 10,
+    "deuteronomy": 8,
+    "kings2": 8,
+    "judges": 7,
+    "numbers": 7,
+    "nehemiah": 6,
+    "chronicles1": 4,
+    "ecclesiastes": 4,
+    "lamentations": 4,
+    "amos": 3,
+    "chronicles2": 3,
+    "hosea": 3,
+    "joshua": 2,
+    "ruth": 2,
+    "daniel": 1,
+    "ezra": 1,
+    "haggai": 1,
+    "malachi": 1,
+    "obadiah": 1
   },
   "phrases": [
     {
-      "hebrew": "אָ֣כְלוּ לֶ֑חֶם",
-      "pron": "오켈레 레헴",
+      "hebrew": "לֶאֱכָל לָ֑חֶם",
+      "pron": "아콜 레헴",
       "lemmas": [
         "אָכַל",
         "לֶחֶם"
       ],
       "words": [
         {
-          "word": "אָ֣כְלוּ",
+          "word": "לֶאֱכָל",
           "lemma": "אָכַל",
           "strong": "H398",
-          "pron": "오켈레"
+          "pron": "아콜"
         },
         {
-          "word": "לֶ֑חֶם",
+          "word": "לָ֑חֶם",
           "lemma": "לֶחֶם",
           "strong": "H3899",
           "pron": "레헴"
         }
       ],
-      "count": 11,
+      "count": 48,
       "refs": [
-        "psalms 14:4",
-        "psalms 41:9",
-        "psalms 53:4",
-        "psalms 80:5",
-        "psalms 102:4",
-        "psalms 127:2",
         "genesis 3:19",
         "genesis 31:54",
         "genesis 37:25",
-        "genesis 43:25"
+        "genesis 43:25",
+        "exodus 2:20",
+        "exodus 16:3",
+        "exodus 16:8",
+        "exodus 18:12",
+        "leviticus 22:11",
+        "leviticus 26:5",
+        "numbers 15:19",
+        "deuteronomy 8:9"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כַּלֶּ֣חֶם אָכָ֑לְתִּי",
-      "pron": "레헴 오켈레",
+      "hebrew": "וְאֶת הַלֶּ֖חֶם",
+      "pron": "에트 레헴",
+      "lemmas": [
+        "אֵת",
+        "לֶחֶם"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַלֶּ֖חֶם",
+          "lemma": "לֶחֶם",
+          "strong": "H3899",
+          "pron": "레헴"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "genesis 27:17",
+        "exodus 16:32",
+        "exodus 23:25",
+        "exodus 29:32",
+        "exodus 35:13",
+        "exodus 39:36",
+        "leviticus 8:31",
+        "leviticus 21:8",
+        "leviticus 21:21",
+        "leviticus 22:25",
+        "deuteronomy 23:4",
+        "samuel1 25:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֶ֚חֶם לֹ֣א",
+      "pron": "레헴 로",
+      "lemmas": [
+        "לֶחֶם",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "לֶ֚חֶם",
+          "lemma": "לֶחֶם",
+          "strong": "H3899",
+          "pron": "레헴"
+        },
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "exodus 34:28",
+        "deuteronomy 8:9",
+        "deuteronomy 9:9",
+        "deuteronomy 9:18",
+        "deuteronomy 29:6",
+        "samuel1 30:12",
+        "kings1 13:8",
+        "kings1 13:9",
+        "kings1 13:16",
+        "kings1 13:17",
+        "ezra 10:6",
+        "isaiah 65:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֶ֛חֶם לֶאֱכֹ֖ל",
+      "pron": "레헴 아콜",
       "lemmas": [
         "לֶחֶם",
         "אָכַל"
       ],
       "words": [
         {
-          "word": "כַּלֶּ֣חֶם",
+          "word": "לֶ֛חֶם",
           "lemma": "לֶחֶם",
           "strong": "H3899",
           "pron": "레헴"
         },
         {
-          "word": "אָכָ֑לְתִּי",
+          "word": "לֶאֱכֹ֖ל",
           "lemma": "אָכַל",
           "strong": "H398",
-          "pron": "오켈레"
+          "pron": "아콜"
         }
       ],
-      "count": 3,
+      "count": 11,
       "refs": [
-        "psalms 102:9",
         "genesis 28:20",
-        "genesis 31:54"
+        "genesis 31:54",
+        "samuel1 20:24",
+        "samuel1 28:22",
+        "samuel1 30:11",
+        "samuel2 9:10",
+        "samuel2 12:20",
+        "psalms 102:9",
+        "isaiah 4:1",
+        "isaiah 55:10",
+        "jeremiah 5:17"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "נֹתֵ֣ן לֶ֭חֶם",
-      "pron": "잇텐 레헴",
+      "hebrew": "לֶ֥חֶם הַפָּנִֽים",
+      "pron": "레헴 페네",
       "lemmas": [
-        "נָתַן",
-        "לֶחֶם"
+        "לֶחֶם",
+        "פָּנִים"
       ],
       "words": [
         {
-          "word": "נֹתֵ֣ן",
-          "lemma": "נָתַן",
-          "strong": "H5414",
-          "pron": "잇텐"
-        },
-        {
-          "word": "לֶ֭חֶם",
+          "word": "לֶ֥חֶם",
           "lemma": "לֶחֶם",
           "strong": "H3899",
           "pron": "레헴"
+        },
+        {
+          "word": "הַפָּנִֽים",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
         }
       ],
-      "count": 3,
+      "count": 10,
       "refs": [
-        "psalms 136:25",
-        "psalms 146:7",
-        "genesis 28:20"
+        "exodus 25:30",
+        "exodus 35:13",
+        "exodus 39:36",
+        "exodus 40:23",
+        "samuel1 21:6",
+        "kings1 7:48",
+        "chronicles2 4:19",
+        "jeremiah 52:33",
+        "lamentations 5:9",
+        "ezekiel 44:3"
       ],
       "glossKo": ""
     }

@@ -12,22 +12,237 @@
     {
       "lemma": "נְחוּשָׁה",
       "strong": "H5154",
-      "pron": "네후샤",
+      "pron": "카네후샤",
       "glossKo": "놋"
     },
     {
       "lemma": "נְחָשׁ",
       "strong": "H5174",
-      "pron": "",
+      "pron": "네하쉬",
       "glossKo": "놋(아람)"
+    },
+    {
+      "lemma": "נְחֻשְׁתָּא",
+      "strong": "H5179",
+      "pron": "네후솃타",
+      "glossKo": "느후스다"
+    },
+    {
+      "lemma": "נְחֻשְׁתָּן",
+      "strong": "H5180",
+      "pron": "네후솃탄",
+      "glossKo": "느후스단"
     }
   ],
   "defEn": "copper; coin; fetter; base",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 140,
   "byBook": {
+    "exodus": 39,
+    "chronicles2": 14,
+    "jeremiah": 14,
+    "kings1": 13,
+    "kings2": 12,
+    "chronicles1": 11,
+    "ezekiel": 8,
+    "samuel1": 5,
+    "numbers": 4,
+    "samuel2": 4,
+    "deuteronomy": 3,
+    "joshua": 3,
+    "isaiah": 2,
+    "daniel": 1,
+    "ezra": 1,
     "genesis": 1,
-    "psalms": 1
+    "judges": 1,
+    "lamentations": 1,
+    "leviticus": 1,
+    "psalms": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הַנְּחֹ֛שֶׁת אֲשֶׁ֥ר",
+      "pron": "네호셰트 아셰르",
+      "lemmas": [
+        "נְחֹשֶׁת",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הַנְּחֹ֛שֶׁת",
+          "lemma": "נְחֹשֶׁת",
+          "strong": "H5178",
+          "pron": "네호셰트"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "exodus 35:16",
+        "exodus 38:30",
+        "exodus 39:39",
+        "numbers 16:39",
+        "kings1 8:64",
+        "kings2 16:14",
+        "kings2 16:17",
+        "kings2 18:4",
+        "kings2 25:13",
+        "kings2 25:14",
+        "chronicles2 1:5",
+        "chronicles2 7:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וָכֶ֖סֶף וּנְחֹֽשֶׁת",
+      "pron": "바케셉 네호셰트",
+      "lemmas": [
+        "כֶּסֶף",
+        "נְחֹשֶׁת"
+      ],
+      "words": [
+        {
+          "word": "וָכֶ֖סֶף",
+          "lemma": "כֶּסֶף",
+          "strong": "H3701",
+          "pron": "바케셉"
+        },
+        {
+          "word": "וּנְחֹֽשֶׁת",
+          "lemma": "נְחֹשֶׁת",
+          "strong": "H5178",
+          "pron": "네호셰트"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 25:3",
+        "exodus 31:4",
+        "exodus 35:5",
+        "exodus 35:24",
+        "exodus 35:32",
+        "chronicles1 18:10",
+        "chronicles1 22:16",
+        "chronicles1 29:2",
+        "chronicles2 2:7",
+        "chronicles2 2:14",
+        "ezekiel 22:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְחֹ֖שֶׁת וּבַרְזֶ֑ל",
+      "pron": "네호셰트 우바레젤",
+      "lemmas": [
+        "נְחֹשֶׁת",
+        "בַּרְזֶל"
+      ],
+      "words": [
+        {
+          "word": "נְחֹ֖שֶׁת",
+          "lemma": "נְחֹשֶׁת",
+          "strong": "H5178",
+          "pron": "네호셰트"
+        },
+        {
+          "word": "וּבַרְזֶ֑ל",
+          "lemma": "בַּרְזֶל",
+          "strong": "H1270",
+          "pron": "우바레젤"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 4:22",
+        "joshua 6:19",
+        "joshua 6:24",
+        "joshua 22:8",
+        "chronicles1 22:14",
+        "chronicles1 22:16",
+        "chronicles1 29:2",
+        "chronicles2 2:7",
+        "chronicles2 2:14",
+        "jeremiah 6:28",
+        "ezekiel 22:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִזְבַּ֤ח הַנְּחֹ֨שֶׁת֙",
+      "pron": "밋베아흐 네호셰트",
+      "lemmas": [
+        "מִזְבֵּחַ",
+        "נְחֹשֶׁת"
+      ],
+      "words": [
+        {
+          "word": "מִזְבַּ֤ח",
+          "lemma": "מִזְבֵּחַ",
+          "strong": "H4196",
+          "pron": "밋베아흐"
+        },
+        {
+          "word": "הַנְּחֹ֨שֶׁת֙",
+          "lemma": "נְחֹשֶׁת",
+          "strong": "H5178",
+          "pron": "네호셰트"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 38:30",
+        "exodus 39:39",
+        "kings1 8:64",
+        "kings2 16:14",
+        "kings2 16:15",
+        "chronicles2 1:5",
+        "chronicles2 1:6",
+        "chronicles2 4:1",
+        "chronicles2 7:7",
+        "ezekiel 9:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כְּלֵ֧י הַנְּחֹ֛שֶׁת",
+      "pron": "켈레 네호셰트",
+      "lemmas": [
+        "כְּלִי",
+        "נְחֹשֶׁת"
+      ],
+      "words": [
+        {
+          "word": "כְּלֵ֧י",
+          "lemma": "כְּלִי",
+          "strong": "H3627",
+          "pron": "켈레"
+        },
+        {
+          "word": "הַנְּחֹ֛שֶׁת",
+          "lemma": "נְחֹשֶׁת",
+          "strong": "H5178",
+          "pron": "네호셰트"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "leviticus 6:28",
+        "joshua 6:19",
+        "joshua 6:24",
+        "samuel2 8:10",
+        "kings2 25:14",
+        "chronicles1 18:8",
+        "ezra 8:27",
+        "jeremiah 52:18",
+        "ezekiel 27:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

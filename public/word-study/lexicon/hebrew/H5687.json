@@ -2,7 +2,7 @@
   "lemma": "עָבֹת",
   "pron": "아보트",
   "strong": "H5687",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "עָבַת",
     "strong": "H5686",
@@ -10,15 +10,55 @@
   },
   "family": [
     {
+      "lemma": "עָבַת",
+      "strong": "H5686",
+      "pron": "바에압베투하",
+      "glossKo": "그녀에게 엮다"
+    },
+    {
       "lemma": "עֲבֹת",
       "strong": "H5688",
-      "pron": "아보테모",
-      "glossKo": "그들의 꼰 줄"
+      "pron": "아보트",
+      "glossKo": "꼰 줄"
     }
   ],
   "defEn": "intwined; dense",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "ezekiel": 2,
+    "leviticus": 1,
+    "nehemiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "עֵץ עָבֹ֖ת",
+      "pron": "에츠 아보트",
+      "lemmas": [
+        "עֵץ",
+        "עָבֹת"
+      ],
+      "words": [
+        {
+          "word": "עֵץ",
+          "lemma": "עֵץ",
+          "strong": "H6086",
+          "pron": "에츠"
+        },
+        {
+          "word": "עָבֹ֖ת",
+          "lemma": "עָבֹת",
+          "strong": "H5687",
+          "pron": "아보트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 23:40",
+        "nehemiah 8:15",
+        "ezekiel 20:28"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

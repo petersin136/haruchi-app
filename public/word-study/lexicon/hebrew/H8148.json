@@ -1,8 +1,8 @@
 {
   "lemma": "שְׁנִינָה",
-  "pron": "셰니나",
+  "pron": "브리셰니나",
   "strong": "H8148",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁנַן",
     "strong": "H8150",
@@ -12,19 +12,156 @@
     {
       "lemma": "שֵׁן",
       "strong": "H8127",
-      "pron": "신네",
+      "pron": "신나임",
       "glossKo": "이"
     },
     {
       "lemma": "שָׁנַן",
       "strong": "H8150",
-      "pron": "셰누님",
-      "glossKo": "갈다"
+      "pron": "베신난탐",
+      "glossKo": "그들에게 갈다"
     }
   ],
   "defEn": "pointed; gibe",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "jeremiah": 1,
+    "kings1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "לְמָשָׁ֥ל וְלִשְׁנִינָ֖ה",
+      "pron": "메샬로 브리셰니나",
+      "lemmas": [
+        "מָשָׁל",
+        "שְׁנִינָה"
+      ],
+      "words": [
+        {
+          "word": "לְמָשָׁ֥ל",
+          "lemma": "מָשָׁל",
+          "strong": "H4912",
+          "pron": "메샬로"
+        },
+        {
+          "word": "וְלִשְׁנִינָ֖ה",
+          "lemma": "שְׁנִינָה",
+          "strong": "H8148",
+          "pron": "브리셰니나"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 28:37",
+        "kings1 9:7",
+        "chronicles2 7:20",
+        "jeremiah 24:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלִשְׁנִינָ֖ה בְּכָל",
+      "pron": "브리셰니나 칼",
+      "lemmas": [
+        "שְׁנִינָה",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "וְלִשְׁנִינָ֖ה",
+          "lemma": "שְׁנִינָה",
+          "strong": "H8148",
+          "pron": "브리셰니나"
+        },
+        {
+          "word": "בְּכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 28:37",
+        "kings1 9:7",
+        "chronicles2 7:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלִשְׁנִינָ֖ה בְּכָל הָעַמִּֽים",
+      "pron": "브리셰니나 칼 암",
+      "lemmas": [
+        "שְׁנִינָה",
+        "כֹּל",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "וְלִשְׁנִינָ֖ה",
+          "lemma": "שְׁנִינָה",
+          "strong": "H8148",
+          "pron": "브리셰니나"
+        },
+        {
+          "word": "בְּכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הָעַמִּֽים",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 28:37",
+        "kings1 9:7",
+        "chronicles2 7:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְמָשָׁ֥ל וְלִשְׁנִינָ֖ה בְּכָל",
+      "pron": "메샬로 브리셰니나 칼",
+      "lemmas": [
+        "מָשָׁל",
+        "שְׁנִינָה",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "לְמָשָׁ֥ל",
+          "lemma": "מָשָׁל",
+          "strong": "H4912",
+          "pron": "메샬로"
+        },
+        {
+          "word": "וְלִשְׁנִינָ֖ה",
+          "lemma": "שְׁנִינָה",
+          "strong": "H8148",
+          "pron": "브리셰니나"
+        },
+        {
+          "word": "בְּכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 28:37",
+        "kings1 9:7",
+        "chronicles2 7:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,39 +12,135 @@
     {
       "lemma": "זִמָּה",
       "strong": "H2155",
-      "pron": "",
+      "pron": "짐마",
       "glossKo": "심마"
     },
     {
       "lemma": "זַמְזֹם",
       "strong": "H2157",
-      "pron": "",
+      "pron": "잠줌밈",
       "glossKo": "삼숨밈"
     },
     {
       "lemma": "זָמַם",
       "strong": "H2161",
-      "pron": "잠모티",
+      "pron": "얏무",
       "glossKo": "꾀하다"
     },
     {
       "lemma": "זָמָם",
       "strong": "H2162",
-      "pron": "제맘오",
+      "pron": "제마모",
       "glossKo": "그의 음모"
     },
     {
       "lemma": "מְזִמָּה",
       "strong": "H4209",
-      "pron": "비메짐모트",
+      "pron": "우메짐모트",
       "glossKo": "계략"
     }
   ],
   "defEn": "plan; bad one",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 29,
   "byBook": {
-    "psalms": 2
+    "ezekiel": 14,
+    "leviticus": 4,
+    "proverbs": 3,
+    "job": 2,
+    "psalms": 2,
+    "hosea": 1,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "judges": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת הַזִּמָּ֔ה",
+      "pron": "에트 짐마",
+      "lemmas": [
+        "אֵת",
+        "זִמָּה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַזִּמָּ֔ה",
+          "lemma": "זִמָּה",
+          "strong": "H2154",
+          "pron": "짐마"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 16:43",
+        "ezekiel 16:58",
+        "ezekiel 23:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זִמָּ֥ה הִֽוא",
+      "pron": "짐마 후",
+      "lemmas": [
+        "זִמָּה",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "זִמָּ֥ה",
+          "lemma": "זִמָּה",
+          "strong": "H2154",
+          "pron": "짐마"
+        },
+        {
+          "word": "הִֽוא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 18:17",
+        "leviticus 20:14",
+        "job 31:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָשׂ֛וּ זִמָּ֥ה",
+      "pron": "바야아스 짐마",
+      "lemmas": [
+        "עָשָׂה",
+        "זִמָּה"
+      ],
+      "words": [
+        {
+          "word": "עָשׂ֛וּ",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "זִמָּ֥ה",
+          "lemma": "זִמָּה",
+          "strong": "H2154",
+          "pron": "짐마"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 20:6",
+        "proverbs 10:23",
+        "ezekiel 23:48"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

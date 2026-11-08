@@ -18,14 +18,14 @@
     {
       "lemma": "אוּד",
       "strong": "H181",
-      "pron": "",
+      "pron": "하우딤",
       "glossKo": "타다 남은 나무"
     },
     {
       "lemma": "אֵיד",
       "strong": "H343",
-      "pron": "에디위",
-      "glossKo": "나의 재앙"
+      "pron": "에담",
+      "glossKo": "그들의 재앙"
     },
     {
       "lemma": "מְאֹד",
@@ -36,9 +36,15 @@
   ],
   "defEn": "turnings; occasions",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 11,
   "byBook": {
-    "genesis": 3
+    "genesis": 3,
+    "joshua": 2,
+    "numbers": 2,
+    "exodus": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
@@ -62,11 +68,16 @@
           "pron": "오도트"
         }
       ],
-      "count": 3,
+      "count": 9,
       "refs": [
         "genesis 21:11",
         "genesis 21:25",
-        "genesis 26:32"
+        "genesis 26:32",
+        "exodus 18:8",
+        "numbers 12:1",
+        "numbers 13:24",
+        "joshua 14:6",
+        "judges 6:7"
       ],
       "glossKo": ""
     }

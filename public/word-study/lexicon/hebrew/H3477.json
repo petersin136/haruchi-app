@@ -1,6 +1,6 @@
 {
   "lemma": "יָשָׁר",
-  "pron": "이셰레",
+  "pron": "브아야샤르",
   "strong": "H3477",
   "posKo": "형용사",
   "root": {
@@ -12,171 +12,266 @@
     {
       "lemma": "יָשַׁר",
       "strong": "H3474",
-      "pron": "흐븟르",
+      "pron": "이샤르",
       "glossKo": "곧다"
     },
     {
       "lemma": "יֵשֶׁר",
       "strong": "H3475",
-      "pron": "",
+      "pron": "예셰르",
       "glossKo": "예셀"
     },
     {
       "lemma": "יֹשֶׁר",
       "strong": "H3476",
-      "pron": "바요셰르",
+      "pron": "우브요셰르",
       "glossKo": "정직"
     },
     {
       "lemma": "יְשַׂרְאֵלָה",
       "strong": "H3480",
-      "pron": "",
+      "pron": "예사레엘라",
       "glossKo": "여사렐라"
     },
     {
       "lemma": "יִשְׁרָה",
       "strong": "H3483",
-      "pron": "",
+      "pron": "우브이셰라트",
       "glossKo": "정직함"
     },
     {
       "lemma": "יְשֻׁרוּן",
       "strong": "H3484",
-      "pron": "",
+      "pron": "예슈룬",
       "glossKo": "여수룬"
     }
   ],
   "defEn": "straight",
   "defKo": "",
-  "countOT": 25,
+  "countOT": 119,
   "byBook": {
-    "psalms": 25
+    "proverbs": 25,
+    "psalms": 25,
+    "chronicles2": 11,
+    "kings2": 10,
+    "job": 8,
+    "deuteronomy": 7,
+    "kings1": 6,
+    "jeremiah": 5,
+    "micah": 4,
+    "ezekiel": 2,
+    "joshua": 2,
+    "judges": 2,
+    "samuel1": 2,
+    "samuel2": 2,
+    "daniel": 1,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "ezra": 1,
+    "hosea": 1,
+    "isaiah": 1,
+    "nehemiah": 1,
+    "numbers": 1
   },
   "phrases": [
     {
-      "hebrew": "יִשְׁרֵי לֵֽב",
-      "pron": "이셰레 브립비위",
+      "hebrew": "הַיָּשָׁ֖ר בְּעֵינֵ֣י",
+      "pron": "브아야샤르 에네켐",
       "lemmas": [
         "יָשָׁר",
-        "לֵב"
+        "עַיִן"
       ],
       "words": [
         {
-          "word": "יִשְׁרֵי",
+          "word": "הַיָּשָׁ֖ר",
           "lemma": "יָשָׁר",
           "strong": "H3477",
-          "pron": "이셰레"
+          "pron": "브아야샤르"
         },
         {
-          "word": "לֵֽב",
-          "lemma": "לֵב",
-          "strong": "H3820",
-          "pron": "브립비위"
+          "word": "בְּעֵינֵ֣י",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
         }
       ],
-      "count": 7,
+      "count": 39,
       "refs": [
-        "psalms 7:10",
-        "psalms 11:2",
-        "psalms 32:11",
-        "psalms 36:10",
-        "psalms 64:10",
-        "psalms 94:15",
-        "psalms 97:11"
+        "exodus 15:26",
+        "deuteronomy 12:8",
+        "deuteronomy 12:25",
+        "deuteronomy 12:28",
+        "deuteronomy 13:18",
+        "deuteronomy 21:9",
+        "joshua 9:25",
+        "judges 17:6",
+        "judges 21:25",
+        "samuel2 19:6",
+        "kings1 11:33",
+        "kings1 11:38"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "יְהוָ֣ה יְ֭שָׁרִים",
-      "pron": "여호와 이셰레",
+      "hebrew": "הַיָּשָׁ֖ר בְּעֵינֵ֣י יְהוָ֑ה",
+      "pron": "브아야샤르 에네켐 여호와",
       "lemmas": [
-        "יְהֹוָה",
-        "יָשָׁר"
+        "יָשָׁר",
+        "עַיִן",
+        "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "יְהוָ֣ה",
+          "word": "הַיָּשָׁ֖ר",
+          "lemma": "יָשָׁר",
+          "strong": "H3477",
+          "pron": "브아야샤르"
+        },
+        {
+          "word": "בְּעֵינֵ֣י",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        },
+        {
+          "word": "יְהוָ֑ה",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
-        },
-        {
-          "word": "יְ֭שָׁרִים",
-          "lemma": "יָשָׁר",
-          "strong": "H3477",
-          "pron": "이셰레"
         }
       ],
-      "count": 3,
+      "count": 23,
       "refs": [
-        "psalms 19:8",
-        "psalms 33:1",
-        "psalms 119:137"
+        "deuteronomy 12:25",
+        "deuteronomy 12:28",
+        "deuteronomy 13:18",
+        "deuteronomy 21:9",
+        "kings1 15:5",
+        "kings1 15:11",
+        "kings1 22:43",
+        "kings2 12:2",
+        "kings2 14:3",
+        "kings2 15:3",
+        "kings2 15:34",
+        "kings2 16:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כָּל יִשְׁרֵי",
-      "pron": "브콜 이셰레",
+      "hebrew": "וַיַּ֥עַשׂ הַיָּשָׁ֖ר",
+      "pron": "바야아스 브아야샤르",
       "lemmas": [
-        "כֹּל",
+        "עָשָׂה",
         "יָשָׁר"
       ],
       "words": [
         {
-          "word": "כָּל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
+          "word": "וַיַּ֥עַשׂ",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
         },
         {
-          "word": "יִשְׁרֵי",
+          "word": "הַיָּשָׁ֖ר",
           "lemma": "יָשָׁר",
           "strong": "H3477",
-          "pron": "이셰레"
+          "pron": "브아야샤르"
         }
       ],
-      "count": 3,
+      "count": 21,
       "refs": [
-        "psalms 32:11",
-        "psalms 64:10",
-        "psalms 94:15"
+        "deuteronomy 6:18",
+        "deuteronomy 12:25",
+        "deuteronomy 13:18",
+        "deuteronomy 21:9",
+        "kings1 11:33",
+        "kings1 11:38",
+        "kings1 22:43",
+        "kings2 10:30",
+        "kings2 14:3",
+        "kings2 15:3",
+        "kings2 15:34",
+        "kings2 16:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כָּל יִשְׁרֵי לֵֽב",
-      "pron": "브콜 이셰레 브립비위",
+      "hebrew": "וַיַּ֥עַשׂ הַיָּשָׁ֖ר בְּעֵינֵ֣י",
+      "pron": "바야아스 브아야샤르 에네켐",
       "lemmas": [
-        "כֹּל",
+        "עָשָׂה",
         "יָשָׁר",
-        "לֵב"
+        "עַיִן"
       ],
       "words": [
         {
-          "word": "כָּל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
+          "word": "וַיַּ֥עַשׂ",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
         },
         {
-          "word": "יִשְׁרֵי",
+          "word": "הַיָּשָׁ֖ר",
           "lemma": "יָשָׁר",
           "strong": "H3477",
-          "pron": "이셰레"
+          "pron": "브아야샤르"
         },
         {
-          "word": "לֵֽב",
-          "lemma": "לֵב",
-          "strong": "H3820",
-          "pron": "브립비위"
+          "word": "בְּעֵינֵ֣י",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
         }
       ],
-      "count": 3,
+      "count": 20,
       "refs": [
-        "psalms 32:11",
-        "psalms 64:10",
-        "psalms 94:15"
+        "deuteronomy 12:25",
+        "deuteronomy 13:18",
+        "deuteronomy 21:9",
+        "kings1 11:33",
+        "kings1 11:38",
+        "kings1 22:43",
+        "kings2 10:30",
+        "kings2 14:3",
+        "kings2 15:3",
+        "kings2 15:34",
+        "kings2 16:2",
+        "kings2 18:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַטּ֣וֹב וְהַיָּשָׁ֔ר",
+      "pron": "돕 브아야샤르",
+      "lemmas": [
+        "טוֹב",
+        "יָשָׁר"
+      ],
+      "words": [
+        {
+          "word": "הַטּ֣וֹב",
+          "lemma": "טוֹב",
+          "strong": "H2896",
+          "pron": "돕"
+        },
+        {
+          "word": "וְהַיָּשָׁ֔ר",
+          "lemma": "יָשָׁר",
+          "strong": "H3477",
+          "pron": "브아야샤르"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "deuteronomy 12:28",
+        "joshua 9:25",
+        "samuel1 12:23",
+        "kings2 10:3",
+        "chronicles2 14:2",
+        "chronicles2 31:20",
+        "psalms 25:8",
+        "psalms 125:4",
+        "jeremiah 26:14"
       ],
       "glossKo": ""
     }

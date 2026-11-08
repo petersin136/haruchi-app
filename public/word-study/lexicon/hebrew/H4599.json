@@ -1,6 +1,6 @@
 {
   "lemma": "מַעְיָן",
-  "pron": "마에안",
+  "pron": "마에에노트",
   "strong": "H4599",
   "posKo": "명사",
   "root": {
@@ -12,46 +12,157 @@
     {
       "lemma": "עָוַן",
       "strong": "H5770",
-      "pron": "",
+      "pron": "오엔",
       "glossKo": "엿보다"
     },
     {
       "lemma": "עַיִן",
       "strong": "H5869",
-      "pron": "에네카",
-      "glossKo": "너의 눈"
+      "pron": "에네켐",
+      "glossKo": "너희의 눈"
     },
     {
       "lemma": "עַיִן",
       "strong": "H5870",
-      "pron": "",
+      "pron": "브엔",
       "glossKo": "눈(아람)"
     },
     {
       "lemma": "עַיִן",
       "strong": "H5871",
-      "pron": "",
+      "pron": "라아인",
       "glossKo": "아인"
     },
     {
       "lemma": "עֵין גֶּדִי",
       "strong": "H5872",
-      "pron": "",
+      "pron": "브엔",
       "glossKo": "엔게디"
     },
     {
       "lemma": "עֵין גַּנִּים",
       "strong": "H5873",
-      "pron": "",
+      "pron": "브엔",
       "glossKo": "엔간님"
     }
   ],
   "defEn": "fountain; source",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 23,
   "byBook": {
     "psalms": 5,
-    "genesis": 2
+    "proverbs": 3,
+    "genesis": 2,
+    "isaiah": 2,
+    "joshua": 2,
+    "kings2": 2,
+    "songofsolomon": 2,
+    "chronicles2": 1,
+    "hosea": 1,
+    "joel": 1,
+    "kings1": 1,
+    "leviticus": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כָּֽל מַעְיְנֹת֙",
+      "pron": "칼 마에에노트",
+      "lemmas": [
+        "כֹּל",
+        "מַעְיָן"
+      ],
+      "words": [
+        {
+          "word": "כָּֽל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מַעְיְנֹת֙",
+          "lemma": "מַעְיָן",
+          "strong": "H4599",
+          "pron": "마에에노트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 7:11",
+        "kings1 18:5",
+        "kings2 3:19",
+        "kings2 3:25",
+        "chronicles2 32:4",
+        "psalms 87:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַעְיַן֙ מֵ֣י",
+      "pron": "마에에노트 아마임",
+      "lemmas": [
+        "מַעְיָן",
+        "מַיִם"
+      ],
+      "words": [
+        {
+          "word": "מַעְיַן֙",
+          "lemma": "מַעְיָן",
+          "strong": "H4599",
+          "pron": "마에에노트"
+        },
+        {
+          "word": "מֵ֣י",
+          "lemma": "מַיִם",
+          "strong": "H4325",
+          "pron": "아마임"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "joshua 15:9",
+        "joshua 18:15",
+        "kings1 18:5",
+        "kings2 3:19",
+        "kings2 3:25",
+        "psalms 114:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל מַעְיְנֵ֣י הַמַּ֔יִם",
+      "pron": "칼 마에에노트 아마임",
+      "lemmas": [
+        "כֹּל",
+        "מַעְיָן",
+        "מַיִם"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מַעְיְנֵ֣י",
+          "lemma": "מַעְיָן",
+          "strong": "H4599",
+          "pron": "마에에노트"
+        },
+        {
+          "word": "הַמַּ֔יִם",
+          "lemma": "מַיִם",
+          "strong": "H4325",
+          "pron": "아마임"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 18:5",
+        "kings2 3:19",
+        "kings2 3:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

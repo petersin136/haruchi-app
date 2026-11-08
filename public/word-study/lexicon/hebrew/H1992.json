@@ -1,6 +1,6 @@
 {
   "lemma": "הֵם",
-  "pron": "헴마",
+  "pron": "헴",
   "strong": "H1992",
   "posKo": "대명사",
   "root": {
@@ -12,25 +12,25 @@
     {
       "lemma": "אִנּוּן",
       "strong": "H581",
-      "pron": "",
+      "pron": "인눈",
       "glossKo": "그들(아람)"
     },
     {
       "lemma": "הוּא",
       "strong": "H1931",
-      "pron": "브후",
+      "pron": "후",
       "glossKo": "그"
     },
     {
       "lemma": "הוּא",
       "strong": "H1932",
-      "pron": "",
+      "pron": "브후",
       "glossKo": "그(아람)"
     },
     {
       "lemma": "הִמּוֹ",
       "strong": "H1994",
-      "pron": "",
+      "pron": "힘모",
       "glossKo": "그들(아람)"
     },
     {
@@ -48,67 +48,239 @@
   ],
   "defEn": "they",
   "defKo": "",
-  "countOT": 50,
+  "countOT": 564,
   "byBook": {
+    "jeremiah": 68,
+    "ezekiel": 64,
+    "kings2": 39,
+    "numbers": 33,
     "psalms": 28,
-    "genesis": 22
+    "chronicles1": 25,
+    "exodus": 24,
+    "judges": 24,
+    "kings1": 24,
+    "samuel1": 23,
+    "deuteronomy": 22,
+    "genesis": 22,
+    "isaiah": 21,
+    "chronicles2": 20,
+    "leviticus": 19,
+    "nehemiah": 18,
+    "hosea": 13,
+    "joshua": 13,
+    "samuel2": 12,
+    "zechariah": 12,
+    "proverbs": 10,
+    "ecclesiastes": 7,
+    "esther": 4,
+    "job": 4,
+    "daniel": 2,
+    "joel": 2,
+    "lamentations": 2,
+    "zephaniah": 2,
+    "ezra": 1,
+    "habakkuk": 1,
+    "malachi": 1,
+    "micah": 1,
+    "nahum": 1,
+    "ruth": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "וְ֝הֵ֗ם לֹא",
-      "pron": "헴마 로",
-      "lemmas": [
-        "הֵם",
-        "לֹא"
-      ],
-      "words": [
-        {
-          "word": "וְ֝הֵ֗ם",
-          "lemma": "הֵם",
-          "strong": "H1992",
-          "pron": "헴마"
-        },
-        {
-          "word": "לֹא",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 95:10",
-        "genesis 42:8",
-        "genesis 42:23"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יָמִ֖ים הֵֽם",
-      "pron": "아욤 헴마",
+      "hebrew": "בַּיָּמִ֣ים הָהֵ֔ם",
+      "pron": "욤 헴",
       "lemmas": [
         "יוֹם",
         "הֵם"
       ],
       "words": [
         {
-          "word": "יָמִ֖ים",
+          "word": "בַּיָּמִ֣ים",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "아욤"
+          "pron": "욤"
         },
         {
-          "word": "הֵֽם",
+          "word": "הָהֵ֔ם",
           "lemma": "הֵם",
           "strong": "H1992",
-          "pron": "헴마"
+          "pron": "헴"
         }
       ],
-      "count": 3,
+      "count": 46,
       "refs": [
         "genesis 6:4",
         "genesis 40:12",
-        "genesis 40:18"
+        "genesis 40:18",
+        "exodus 2:11",
+        "deuteronomy 17:9",
+        "deuteronomy 19:17",
+        "deuteronomy 26:3",
+        "joshua 20:6",
+        "judges 17:6",
+        "judges 18:1",
+        "judges 19:1",
+        "judges 20:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֲלֹא הֵ֣ם",
+      "pron": "로 헴",
+      "lemmas": [
+        "לֹא",
+        "הֵם"
+      ],
+      "words": [
+        {
+          "word": "הֲלֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "הֵ֣ם",
+          "lemma": "הֵם",
+          "strong": "H1992",
+          "pron": "헴"
+        }
+      ],
+      "count": 36,
+      "refs": [
+        "genesis 34:23",
+        "deuteronomy 11:30",
+        "kings1 11:41",
+        "kings1 14:29",
+        "kings1 15:7",
+        "kings1 15:23",
+        "kings1 15:31",
+        "kings1 16:5",
+        "kings1 16:14",
+        "kings1 16:20",
+        "kings1 16:27",
+        "kings1 22:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֵ֣ם כְּתוּבִ֗ים",
+      "pron": "헴 케톱",
+      "lemmas": [
+        "הֵם",
+        "כָּתַב"
+      ],
+      "words": [
+        {
+          "word": "הֵ֣ם",
+          "lemma": "הֵם",
+          "strong": "H1992",
+          "pron": "헴"
+        },
+        {
+          "word": "כְּתוּבִ֗ים",
+          "lemma": "כָּתַב",
+          "strong": "H3789",
+          "pron": "케톱"
+        }
+      ],
+      "count": 34,
+      "refs": [
+        "exodus 32:15",
+        "numbers 11:26",
+        "kings1 11:41",
+        "kings1 14:29",
+        "kings1 15:7",
+        "kings1 15:23",
+        "kings1 15:31",
+        "kings1 16:5",
+        "kings1 16:14",
+        "kings1 16:20",
+        "kings1 16:27",
+        "kings1 22:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֛ר הֵ֥ם",
+      "pron": "아셰르 헴",
+      "lemmas": [
+        "אֲשֶׁר",
+        "הֵם"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֛ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הֵ֥ם",
+          "lemma": "הֵם",
+          "strong": "H1992",
+          "pron": "헴"
+        }
+      ],
+      "count": 32,
+      "refs": [
+        "genesis 34:22",
+        "genesis 47:14",
+        "exodus 5:8",
+        "exodus 8:21",
+        "exodus 36:4",
+        "leviticus 17:5",
+        "leviticus 17:7",
+        "leviticus 22:2",
+        "numbers 1:50",
+        "numbers 14:27",
+        "numbers 17:5",
+        "numbers 18:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֲלֹא הֵ֣ם כְּתוּבִ֗ים",
+      "pron": "로 헴 케톱",
+      "lemmas": [
+        "לֹא",
+        "הֵם",
+        "כָּתַב"
+      ],
+      "words": [
+        {
+          "word": "הֲלֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "הֵ֣ם",
+          "lemma": "הֵם",
+          "strong": "H1992",
+          "pron": "헴"
+        },
+        {
+          "word": "כְּתוּבִ֗ים",
+          "lemma": "כָּתַב",
+          "strong": "H3789",
+          "pron": "케톱"
+        }
+      ],
+      "count": 32,
+      "refs": [
+        "kings1 11:41",
+        "kings1 14:29",
+        "kings1 15:7",
+        "kings1 15:23",
+        "kings1 15:31",
+        "kings1 16:5",
+        "kings1 16:14",
+        "kings1 16:20",
+        "kings1 16:27",
+        "kings1 22:39",
+        "kings1 22:45",
+        "kings2 1:18"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "מַכָּה",
-  "pron": "막코타므",
+  "pron": "막카",
   "strong": "H4347",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "נָכָה",
       "strong": "H5221",
-      "pron": "힉키타",
+      "pron": "학코트",
       "glossKo": "치다"
     },
     {
@@ -24,9 +24,193 @@
   ],
   "defEn": "blow",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 48,
   "byBook": {
-    "psalms": 1
+    "jeremiah": 10,
+    "samuel1": 7,
+    "deuteronomy": 6,
+    "isaiah": 5,
+    "chronicles2": 4,
+    "joshua": 2,
+    "judges": 2,
+    "kings1": 2,
+    "kings2": 2,
+    "esther": 1,
+    "leviticus": 1,
+    "micah": 1,
+    "nahum": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "psalms": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מַכָּ֥ה גְדוֹלָֽה",
+      "pron": "막카 아게돌림",
+      "lemmas": [
+        "מַכָּה",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "מַכָּ֥ה",
+          "lemma": "מַכָּה",
+          "strong": "H4347",
+          "pron": "막카"
+        },
+        {
+          "word": "גְדוֹלָֽה",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "deuteronomy 28:59",
+        "joshua 10:10",
+        "joshua 10:20",
+        "judges 11:33",
+        "judges 15:8",
+        "samuel1 4:10",
+        "samuel1 6:19",
+        "samuel1 19:8",
+        "samuel1 23:5",
+        "kings1 20:21",
+        "chronicles2 28:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיַּכֵּ֥ם מַכָּֽה",
+      "pron": "학코트 막카",
+      "lemmas": [
+        "נָכָה",
+        "מַכָּה"
+      ],
+      "words": [
+        {
+          "word": "וַיַּכֵּ֥ם",
+          "lemma": "נָכָה",
+          "strong": "H5221",
+          "pron": "학코트"
+        },
+        {
+          "word": "מַכָּֽה",
+          "lemma": "מַכָּה",
+          "strong": "H4347",
+          "pron": "막카"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "joshua 10:10",
+        "joshua 10:20",
+        "samuel1 19:8",
+        "samuel1 23:5",
+        "chronicles2 28:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיַּכֵּ֥ם מַכָּֽה גְדוֹלָ֖ה",
+      "pron": "학코트 막카 아게돌림",
+      "lemmas": [
+        "נָכָה",
+        "מַכָּה",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "וַיַּכֵּ֥ם",
+          "lemma": "נָכָה",
+          "strong": "H5221",
+          "pron": "학코트"
+        },
+        {
+          "word": "מַכָּֽה",
+          "lemma": "מַכָּה",
+          "strong": "H4347",
+          "pron": "막카"
+        },
+        {
+          "word": "גְדוֹלָ֖ה",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "joshua 10:10",
+        "joshua 10:20",
+        "samuel1 19:8",
+        "samuel1 23:5",
+        "chronicles2 28:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְכָל מַכָּ֔ה",
+      "pron": "칼 막카",
+      "lemmas": [
+        "כֹּל",
+        "מַכָּה"
+      ],
+      "words": [
+        {
+          "word": "וְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "מַכָּ֔ה",
+          "lemma": "מַכָּה",
+          "strong": "H4347",
+          "pron": "막카"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 28:61",
+        "samuel1 4:8",
+        "jeremiah 19:8",
+        "jeremiah 49:17",
+        "jeremiah 50:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בָּעָ֔ם מַכָּ֖ה",
+      "pron": "암 막카",
+      "lemmas": [
+        "עַם",
+        "מַכָּה"
+      ],
+      "words": [
+        {
+          "word": "בָּעָ֔ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "מַכָּ֖ה",
+          "lemma": "מַכָּה",
+          "strong": "H4347",
+          "pron": "막카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 11:33",
+        "samuel1 6:19",
+        "chronicles2 13:17",
+        "jeremiah 14:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

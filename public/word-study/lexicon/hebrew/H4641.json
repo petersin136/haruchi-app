@@ -1,8 +1,8 @@
 {
   "lemma": "מַעֲשֵׂיָה",
-  "pron": "마아세아",
+  "pron": "우마아세아후",
   "strong": "H4641",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "מַעֲשֶׂה",
     "strong": "H4639",
@@ -12,13 +12,178 @@
     {
       "lemma": "מַעֲשֶׂה",
       "strong": "H4639",
-      "pron": "마아세",
-      "glossKo": "행위"
+      "pron": "밈마아세누",
+      "glossKo": "우리의 행위"
     }
   ],
   "defEn": "Maasejah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 23,
+  "byBook": {
+    "nehemiah": 8,
+    "jeremiah": 5,
+    "chronicles2": 4,
+    "ezra": 4,
+    "chronicles1": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶן מַעֲשֵׂיָ֛ה",
+      "pron": "바님 우마아세아후",
+      "lemmas": [
+        "בֵּן",
+        "מַעֲשֵׂיָה"
+      ],
+      "words": [
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "מַעֲשֵׂיָ֛ה",
+          "lemma": "מַעֲשֵׂיָה",
+          "strong": "H4641",
+          "pron": "우마아세아후"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "nehemiah 3:23",
+        "nehemiah 11:7",
+        "jeremiah 21:1",
+        "jeremiah 29:21",
+        "jeremiah 29:25",
+        "jeremiah 37:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַעֲשֵׂיָ֛ה בֶּן",
+      "pron": "우마아세아후 바님",
+      "lemmas": [
+        "מַעֲשֵׂיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "מַעֲשֵׂיָ֛ה",
+          "lemma": "מַעֲשֵׂיָה",
+          "strong": "H4641",
+          "pron": "우마아세아후"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "chronicles2 23:1",
+        "chronicles2 28:7",
+        "nehemiah 3:23",
+        "nehemiah 11:5",
+        "nehemiah 11:7",
+        "jeremiah 35:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶן מַֽעֲשֵׂיָה֙ הַכֹּהֵ֔ן",
+      "pron": "바님 우마아세아후 코헨",
+      "lemmas": [
+        "בֵּן",
+        "מַעֲשֵׂיָה",
+        "כֹּהֵן"
+      ],
+      "words": [
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "מַֽעֲשֵׂיָה֙",
+          "lemma": "מַעֲשֵׂיָה",
+          "strong": "H4641",
+          "pron": "우마아세아후"
+        },
+        {
+          "word": "הַכֹּהֵ֔ן",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 21:1",
+        "jeremiah 29:25",
+        "jeremiah 37:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת מַעֲשֵׂיָ֧הוּ",
+      "pron": "에트 우마아세아후",
+      "lemmas": [
+        "אֵת",
+        "מַעֲשֵׂיָה"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מַעֲשֵׂיָ֧הוּ",
+          "lemma": "מַעֲשֵׂיָה",
+          "strong": "H4641",
+          "pron": "우마아세아후"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles2 23:1",
+        "chronicles2 28:7",
+        "chronicles2 34:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַֽעֲשֵׂיָה֙ הַכֹּהֵ֔ן",
+      "pron": "우마아세아후 코헨",
+      "lemmas": [
+        "מַעֲשֵׂיָה",
+        "כֹּהֵן"
+      ],
+      "words": [
+        {
+          "word": "מַֽעֲשֵׂיָה֙",
+          "lemma": "מַעֲשֵׂיָה",
+          "strong": "H4641",
+          "pron": "우마아세아후"
+        },
+        {
+          "word": "הַכֹּהֵ֔ן",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 21:1",
+        "jeremiah 29:25",
+        "jeremiah 37:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

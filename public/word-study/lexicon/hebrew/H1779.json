@@ -1,6 +1,6 @@
 {
   "lemma": "דִּין",
-  "pron": "브디니위",
+  "pron": "딘",
   "strong": "H1779",
   "posKo": "명사",
   "root": {
@@ -12,25 +12,25 @@
     {
       "lemma": "דִּין",
       "strong": "H1777",
-      "pron": "야딘",
+      "pron": "야돈",
       "glossKo": "재판하다"
     },
     {
       "lemma": "דִּין",
       "strong": "H1778",
-      "pron": "",
+      "pron": "드닌",
       "glossKo": "재판관(아람)"
     },
     {
       "lemma": "דִּין",
       "strong": "H1780",
-      "pron": "",
+      "pron": "디나",
       "glossKo": "재판(아람)"
     },
     {
       "lemma": "דַּיָּן",
       "strong": "H1781",
-      "pron": "브다안",
+      "pron": "르다안",
       "glossKo": "재판관"
     },
     {
@@ -48,9 +48,73 @@
   ],
   "defEn": "judgement",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 21,
   "byBook": {
-    "psalms": 3
+    "job": 5,
+    "proverbs": 5,
+    "jeremiah": 4,
+    "psalms": 3,
+    "deuteronomy": 2,
+    "esther": 1,
+    "isaiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "דִּ֣ין לְדִ֗ין",
+      "pron": "딘 딘",
+      "lemmas": [
+        "דִּין",
+        "דִּין"
+      ],
+      "words": [
+        {
+          "word": "דִּ֣ין",
+          "lemma": "דִּין",
+          "strong": "H1779",
+          "pron": "딘"
+        },
+        {
+          "word": "לְדִ֗ין",
+          "lemma": "דִּין",
+          "strong": "H1779",
+          "pron": "딘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 17:8",
+        "job 19:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דָ֔נוּ דִּ֥ין",
+      "pron": "야돈 딘",
+      "lemmas": [
+        "דִּין",
+        "דִּין"
+      ],
+      "words": [
+        {
+          "word": "דָ֔נוּ",
+          "lemma": "דִּין",
+          "strong": "H1777",
+          "pron": "야돈"
+        },
+        {
+          "word": "דִּ֥ין",
+          "lemma": "דִּין",
+          "strong": "H1779",
+          "pron": "딘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 5:28",
+        "jeremiah 22:16",
+        "jeremiah 30:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

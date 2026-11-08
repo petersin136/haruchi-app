@@ -1,8 +1,8 @@
 {
   "lemma": "מוֹרָה",
-  "pron": "모라",
+  "pron": "우모라",
   "strong": "H4177",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "מוּר",
     "strong": "H4171",
@@ -18,13 +18,82 @@
     {
       "lemma": "תְּמוּרָה",
       "strong": "H8545",
-      "pron": "",
-      "glossKo": "교환"
+      "pron": "우테무라토",
+      "glossKo": "그의 교환"
     }
   ],
   "defEn": "razor",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 3,
+  "byBook": {
+    "judges": 2,
+    "samuel1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וּמוֹרָה֙ לֹא",
+      "pron": "우모라 로",
+      "lemmas": [
+        "מוֹרָה",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "וּמוֹרָה֙",
+          "lemma": "מוֹרָה",
+          "strong": "H4177",
+          "pron": "우모라"
+        },
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 13:5",
+        "judges 16:17",
+        "samuel1 1:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמוֹרָה֙ לֹא יַעֲלֶ֣ה",
+      "pron": "우모라 로 야알레",
+      "lemmas": [
+        "מוֹרָה",
+        "לֹא",
+        "עָלָה"
+      ],
+      "words": [
+        {
+          "word": "וּמוֹרָה֙",
+          "lemma": "מוֹרָה",
+          "strong": "H4177",
+          "pron": "우모라"
+        },
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יַעֲלֶ֣ה",
+          "lemma": "עָלָה",
+          "strong": "H5927",
+          "pron": "야알레"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 13:5",
+        "judges 16:17",
+        "samuel1 1:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

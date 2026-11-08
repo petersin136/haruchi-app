@@ -1,6 +1,6 @@
 {
   "lemma": "אֹזֶן",
-  "pron": "앗네카",
+  "pron": "베앗네헴",
   "strong": "H241",
   "posKo": "명사",
   "root": {
@@ -12,199 +12,260 @@
     {
       "lemma": "אָזַן",
       "strong": "H238",
-      "pron": "하아지나",
+      "pron": "하에젠나",
       "glossKo": "귀 기울이다"
     },
     {
       "lemma": "אָזַן",
       "strong": "H239",
-      "pron": "",
+      "pron": "브잇젠",
       "glossKo": "달다"
     },
     {
       "lemma": "אָזֵן",
       "strong": "H240",
-      "pron": "",
-      "glossKo": "삽"
+      "pron": "아제네카",
+      "glossKo": "너의 삽"
     },
     {
       "lemma": "אֻזֵּן שֶׁאֱרָה",
       "strong": "H242",
-      "pron": "",
+      "pron": "웃젠",
       "glossKo": "우센세에라"
     },
     {
       "lemma": "אַזְנוֹת תָּבוֹר",
       "strong": "H243",
-      "pron": "",
+      "pron": "앗노트",
       "glossKo": "아스놋다볼"
     },
     {
       "lemma": "אׇזְנִי",
       "strong": "H244",
-      "pron": "",
+      "pron": "르앗니",
       "glossKo": "오스니 자손"
     }
   ],
   "defEn": "broadness; ear",
   "defKo": "",
-  "countOT": 29,
+  "countOT": 188,
   "byBook": {
+    "jeremiah": 28,
     "psalms": 22,
-    "genesis": 7
+    "isaiah": 20,
+    "proverbs": 14,
+    "samuel1": 14,
+    "job": 13,
+    "ezekiel": 11,
+    "exodus": 9,
+    "deuteronomy": 7,
+    "genesis": 7,
+    "samuel2": 7,
+    "leviticus": 6,
+    "kings2": 5,
+    "judges": 4,
+    "nehemiah": 4,
+    "chronicles1": 3,
+    "chronicles2": 3,
+    "numbers": 3,
+    "amos": 1,
+    "daniel": 1,
+    "ecclesiastes": 1,
+    "joshua": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "ruth": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "הַֽט אָזְנְךָ֥",
-      "pron": "핟 앗네카",
-      "lemmas": [
-        "נָטָה",
-        "אֹזֶן"
-      ],
-      "words": [
-        {
-          "word": "הַֽט",
-          "lemma": "נָטָה",
-          "strong": "H5186",
-          "pron": "핟"
-        },
-        {
-          "word": "אָזְנְךָ֥",
-          "lemma": "אֹזֶן",
-          "strong": "H241",
-          "pron": "앗네카"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 17:6",
-        "psalms 45:10",
-        "psalms 78:1",
-        "psalms 88:2",
-        "psalms 116:2"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אָזְנַ֣יִם וְלֹ֣א",
-      "pron": "앗네카 로",
-      "lemmas": [
-        "אֹזֶן",
-        "לֹא"
-      ],
-      "words": [
-        {
-          "word": "אָזְנַ֣יִם",
-          "lemma": "אֹזֶן",
-          "strong": "H241",
-          "pron": "앗네카"
-        },
-        {
-          "word": "וְלֹ֣א",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 94:9",
-        "psalms 115:6",
-        "psalms 135:17"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אָזְנְךָ֥ שְׁמַ֣ע",
-      "pron": "앗네카 우셰마",
+      "hebrew": "וְאָזְנַ֣יִם לִשְׁמֹ֑עַ",
+      "pron": "베앗네헴 바이솀우",
       "lemmas": [
         "אֹזֶן",
         "שָׁמַע"
       ],
       "words": [
         {
-          "word": "אָזְנְךָ֥",
+          "word": "וְאָזְנַ֣יִם",
           "lemma": "אֹזֶן",
           "strong": "H241",
-          "pron": "앗네카"
+          "pron": "베앗네헴"
         },
         {
-          "word": "שְׁמַ֣ע",
+          "word": "לִשְׁמֹ֑עַ",
           "lemma": "שָׁמַע",
           "strong": "H8085",
-          "pron": "우셰마"
+          "pron": "바이솀우"
         }
       ],
-      "count": 3,
+      "count": 29,
       "refs": [
+        "deuteronomy 29:4",
+        "samuel1 25:24",
+        "samuel2 22:45",
+        "kings2 19:16",
+        "job 28:22",
+        "job 29:11",
+        "job 42:5",
         "psalms 17:6",
         "psalms 18:44",
-        "psalms 44:1"
+        "psalms 44:1",
+        "proverbs 15:31",
+        "proverbs 20:12"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֵלַ֨י אָזְנְךָ֮",
-      "pron": "엘레모 앗네카",
+      "hebrew": "אֶת אָזְנָ֔ם",
+      "pron": "에트 베앗네헴",
       "lemmas": [
-        "אֵל",
+        "אֵת",
         "אֹזֶן"
       ],
       "words": [
         {
-          "word": "אֵלַ֨י",
-          "lemma": "אֵל",
-          "strong": "H413",
-          "pron": "엘레모"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         },
         {
-          "word": "אָזְנְךָ֮",
+          "word": "אָזְנָ֔ם",
           "lemma": "אֹזֶן",
           "strong": "H241",
-          "pron": "앗네카"
+          "pron": "베앗네헴"
         }
       ],
-      "count": 3,
+      "count": 18,
       "refs": [
-        "psalms 31:2",
-        "psalms 71:2",
-        "psalms 102:2"
+        "exodus 21:6",
+        "samuel1 9:15",
+        "samuel1 20:2",
+        "samuel1 20:12",
+        "samuel1 20:13",
+        "samuel1 22:8",
+        "samuel1 22:17",
+        "samuel2 7:27",
+        "chronicles1 17:25",
+        "jeremiah 7:24",
+        "jeremiah 7:26",
+        "jeremiah 11:8"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הַטֵּ֤ה אֵלַ֨י אָזְנְךָ֮",
-      "pron": "핟 엘레모 앗네카",
+      "hebrew": "בְּאָזְנֵ֣י הָעָ֑ם",
+      "pron": "베앗네헴 암",
+      "lemmas": [
+        "אֹזֶן",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "בְּאָזְנֵ֣י",
+          "lemma": "אֹזֶן",
+          "strong": "H241",
+          "pron": "베앗네헴"
+        },
+        {
+          "word": "הָעָ֑ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "genesis 23:13",
+        "exodus 11:2",
+        "exodus 24:7",
+        "deuteronomy 32:44",
+        "judges 7:3",
+        "samuel1 11:4",
+        "kings2 18:26",
+        "nehemiah 13:1",
+        "isaiah 36:11",
+        "jeremiah 36:6",
+        "jeremiah 36:13",
+        "jeremiah 36:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַט אָזְנֶֽךָ",
+      "pron": "바옏 베앗네헴",
       "lemmas": [
         "נָטָה",
-        "אֵל",
         "אֹזֶן"
       ],
       "words": [
         {
-          "word": "הַטֵּ֤ה",
+          "word": "הַט",
           "lemma": "נָטָה",
           "strong": "H5186",
-          "pron": "핟"
+          "pron": "바옏"
         },
         {
-          "word": "אֵלַ֨י",
-          "lemma": "אֵל",
-          "strong": "H413",
-          "pron": "엘레모"
-        },
-        {
-          "word": "אָזְנְךָ֮",
+          "word": "אָזְנֶֽךָ",
           "lemma": "אֹזֶן",
           "strong": "H241",
-          "pron": "앗네카"
+          "pron": "베앗네헴"
         }
       ],
-      "count": 3,
+      "count": 10,
       "refs": [
-        "psalms 31:2",
-        "psalms 71:2",
-        "psalms 102:2"
+        "psalms 17:6",
+        "psalms 45:10",
+        "psalms 78:1",
+        "psalms 88:2",
+        "psalms 116:2",
+        "proverbs 4:20",
+        "proverbs 5:1",
+        "proverbs 5:13",
+        "proverbs 22:17",
+        "isaiah 55:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גָּלָ֖ה אֶת אֹ֣זֶן",
+      "pron": "바이텍갈 에트 베앗네헴",
+      "lemmas": [
+        "גָּלָה",
+        "אֵת",
+        "אֹזֶן"
+      ],
+      "words": [
+        {
+          "word": "גָּלָ֖ה",
+          "lemma": "גָּלָה",
+          "strong": "H1540",
+          "pron": "바이텍갈"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "אֹ֣זֶן",
+          "lemma": "אֹזֶן",
+          "strong": "H241",
+          "pron": "베앗네헴"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "samuel1 9:15",
+        "samuel1 20:2",
+        "samuel1 20:12",
+        "samuel1 20:13",
+        "samuel1 22:8",
+        "samuel1 22:17",
+        "samuel2 7:27",
+        "chronicles1 17:25"
       ],
       "glossKo": ""
     }

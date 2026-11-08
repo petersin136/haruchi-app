@@ -2,7 +2,7 @@
   "lemma": "גַּמְלִיאֵל",
   "pron": "감리엘",
   "strong": "H1583",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גָּמַל",
     "strong": "H1580",
@@ -12,19 +12,19 @@
     {
       "lemma": "גְּמוּל",
       "strong": "H1576",
-      "pron": "게물라므",
-      "glossKo": "그들의 게라"
+      "pron": "키게물",
+      "glossKo": "게라"
     },
     {
       "lemma": "גָּמוּל",
       "strong": "H1577",
-      "pron": "",
+      "pron": "르가물",
       "glossKo": "가물"
     },
     {
       "lemma": "גָּמַל",
       "strong": "H1580",
-      "pron": "가말티",
+      "pron": "바익가말",
       "glossKo": "갚다"
     },
     {
@@ -42,7 +42,182 @@
   ],
   "defEn": "Gamliel",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "numbers": 5
+  },
+  "phrases": [
+    {
+      "hebrew": "גַּמְלִיאֵ֖ל בֶּן",
+      "pron": "감리엘 바님",
+      "lemmas": [
+        "גַּמְלִיאֵל",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "גַּמְלִיאֵ֖ל",
+          "lemma": "גַּמְלִיאֵל",
+          "strong": "H1583",
+          "pron": "감리엘"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 1:10",
+        "numbers 2:20",
+        "numbers 7:54",
+        "numbers 7:59",
+        "numbers 10:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גַּמְלִיאֵ֖ל בֶּן פְּדָה",
+      "pron": "감리엘 바님 페다흐추르",
+      "lemmas": [
+        "גַּמְלִיאֵל",
+        "בֵּן",
+        "פְּדָהצוּר"
+      ],
+      "words": [
+        {
+          "word": "גַּמְלִיאֵ֖ל",
+          "lemma": "גַּמְלִיאֵל",
+          "strong": "H1583",
+          "pron": "감리엘"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "פְּדָה",
+          "lemma": "פְּדָהצוּר",
+          "strong": "H6301",
+          "pron": "페다흐추르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 1:10",
+        "numbers 2:20",
+        "numbers 7:54",
+        "numbers 7:59",
+        "numbers 10:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְנַשֶּׁ֑ה גַּמְלִיאֵ֖ל",
+      "pron": "메낫셰 감리엘",
+      "lemmas": [
+        "מְנַשֶּׁה",
+        "גַּמְלִיאֵל"
+      ],
+      "words": [
+        {
+          "word": "מְנַשֶּׁ֑ה",
+          "lemma": "מְנַשֶּׁה",
+          "strong": "H4519",
+          "pron": "메낫셰"
+        },
+        {
+          "word": "גַּמְלִיאֵ֖ל",
+          "lemma": "גַּמְלִיאֵל",
+          "strong": "H1583",
+          "pron": "감리엘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 1:10",
+        "numbers 2:20",
+        "numbers 7:54",
+        "numbers 10:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְנַשֶּׁ֑ה גַּמְלִיאֵ֖ל בֶּן",
+      "pron": "메낫셰 감리엘 바님",
+      "lemmas": [
+        "מְנַשֶּׁה",
+        "גַּמְלִיאֵל",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "מְנַשֶּׁ֑ה",
+          "lemma": "מְנַשֶּׁה",
+          "strong": "H4519",
+          "pron": "메낫셰"
+        },
+        {
+          "word": "גַּמְלִיאֵ֖ל",
+          "lemma": "גַּמְלִיאֵל",
+          "strong": "H1583",
+          "pron": "감리엘"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 1:10",
+        "numbers 2:20",
+        "numbers 7:54",
+        "numbers 10:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִבְנֵ֣י מְנַשֶּׁ֔ה גַּמְלִיאֵ֖ל",
+      "pron": "바님 메낫셰 감리엘",
+      "lemmas": [
+        "בֵּן",
+        "מְנַשֶּׁה",
+        "גַּמְלִיאֵל"
+      ],
+      "words": [
+        {
+          "word": "לִבְנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "מְנַשֶּׁ֔ה",
+          "lemma": "מְנַשֶּׁה",
+          "strong": "H4519",
+          "pron": "메낫셰"
+        },
+        {
+          "word": "גַּמְלִיאֵ֖ל",
+          "lemma": "גַּמְלִיאֵל",
+          "strong": "H1583",
+          "pron": "감리엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 2:20",
+        "numbers 7:54",
+        "numbers 10:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

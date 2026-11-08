@@ -2,7 +2,7 @@
   "lemma": "אֱנָשׁ",
   "pron": "에나쉬",
   "strong": "H606",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אֱנוֹשׁ",
     "strong": "H582",
@@ -12,13 +12,13 @@
     {
       "lemma": "אִישׁ",
       "strong": "H376",
-      "pron": "하이쉬",
+      "pron": "메이쉬",
       "glossKo": "사람"
     },
     {
       "lemma": "אֱנוֹשׁ",
       "strong": "H582",
-      "pron": "에노쉬",
+      "pron": "메에노쉬",
       "glossKo": "사람"
     },
     {
@@ -26,11 +26,176 @@
       "strong": "H583",
       "pron": "에노쉬",
       "glossKo": "에노스"
+    },
+    {
+      "lemma": "נָשִׁין",
+      "strong": "H5389",
+      "pron": "운셰으혼",
+      "glossKo": "그들의 아내(아람)"
     }
   ],
   "defEn": "man",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 27,
+  "byBook": {
+    "daniel": 25,
+    "ezra": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "אנושא אֲנָשָׁ֣א",
+      "pron": "에나쉬 에나쉬",
+      "lemmas": [
+        "אֱנָשׁ",
+        "אֱנָשׁ"
+      ],
+      "words": [
+        {
+          "word": "אנושא",
+          "lemma": "אֱנָשׁ",
+          "strong": "H606",
+          "pron": "에나쉬"
+        },
+        {
+          "word": "אֲנָשָׁ֣א",
+          "lemma": "אֱנָשׁ",
+          "strong": "H606",
+          "pron": "에나쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:16",
+        "daniel 4:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֱנָ֡שׁ דִּֽי",
+      "pron": "에나쉬 드흐브",
+      "lemmas": [
+        "אֱנָשׁ",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "אֱנָ֡שׁ",
+          "lemma": "אֱנָשׁ",
+          "strong": "H606",
+          "pron": "에나쉬"
+        },
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 6:11",
+        "daniel 3:10",
+        "daniel 5:7",
+        "daniel 6:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲנָשָׁ֔א וּלְמַן",
+      "pron": "에나쉬 만",
+      "lemmas": [
+        "אֱנָשׁ",
+        "מָן"
+      ],
+      "words": [
+        {
+          "word": "אֲנָשָׁ֔א",
+          "lemma": "אֱנָשׁ",
+          "strong": "H606",
+          "pron": "에나쉬"
+        },
+        {
+          "word": "וּלְמַן",
+          "lemma": "מָן",
+          "strong": "H4479",
+          "pron": "만"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:17",
+        "daniel 4:25",
+        "daniel 4:32",
+        "daniel 5:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲנָשָׁ֔א וּלְמַן דִּ֥י",
+      "pron": "에나쉬 만 드흐브",
+      "lemmas": [
+        "אֱנָשׁ",
+        "מָן",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "אֲנָשָׁ֔א",
+          "lemma": "אֱנָשׁ",
+          "strong": "H606",
+          "pron": "에나쉬"
+        },
+        {
+          "word": "וּלְמַן",
+          "lemma": "מָן",
+          "strong": "H4479",
+          "pron": "만"
+        },
+        {
+          "word": "דִּ֥י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:17",
+        "daniel 4:25",
+        "daniel 4:32",
+        "daniel 5:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּמַלְכ֣וּת אֲנָשָׁ֔א",
+      "pron": "르말쿠트 에나쉬",
+      "lemmas": [
+        "מַלְכוּ",
+        "אֱנָשׁ"
+      ],
+      "words": [
+        {
+          "word": "בְּמַלְכ֣וּת",
+          "lemma": "מַלְכוּ",
+          "strong": "H4437",
+          "pron": "르말쿠트"
+        },
+        {
+          "word": "אֲנָשָׁ֔א",
+          "lemma": "אֱנָשׁ",
+          "strong": "H606",
+          "pron": "에나쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:17",
+        "daniel 4:25",
+        "daniel 4:32",
+        "daniel 5:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

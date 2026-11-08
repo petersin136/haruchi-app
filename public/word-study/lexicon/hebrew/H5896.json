@@ -2,7 +2,7 @@
   "lemma": "עִירָא",
   "pron": "이라",
   "strong": "H5896",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עוּר",
     "strong": "H5782",
@@ -12,19 +12,19 @@
     {
       "lemma": "עוּר",
       "strong": "H5782",
-      "pron": "브우라",
+      "pron": "야이르",
       "glossKo": "깨다"
     },
     {
       "lemma": "עִיר",
       "strong": "H5892",
-      "pron": "브아림",
+      "pron": "이르",
       "glossKo": "성읍"
     },
     {
       "lemma": "עִיר",
       "strong": "H5894",
-      "pron": "",
+      "pron": "이르",
       "glossKo": "감시자(아람)"
     },
     {
@@ -48,7 +48,76 @@
   ],
   "defEn": "Ira",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "chronicles1": 3,
+    "samuel2": 3
+  },
+  "phrases": [
+    {
+      "hebrew": "עִירָ֥א בֶן",
+      "pron": "이라 바님",
+      "lemmas": [
+        "עִירָא",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "עִירָ֥א",
+          "lemma": "עִירָא",
+          "strong": "H5896",
+          "pron": "이라"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 23:26",
+        "chronicles1 11:28",
+        "chronicles1 27:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עִירָ֥א בֶן עִקֵּ֖שׁ",
+      "pron": "이라 바님 익케쉬",
+      "lemmas": [
+        "עִירָא",
+        "בֵּן",
+        "עִקֵּשׁ"
+      ],
+      "words": [
+        {
+          "word": "עִירָ֥א",
+          "lemma": "עִירָא",
+          "strong": "H5896",
+          "pron": "이라"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עִקֵּ֖שׁ",
+          "lemma": "עִקֵּשׁ",
+          "strong": "H6142",
+          "pron": "익케쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 23:26",
+        "chronicles1 11:28",
+        "chronicles1 27:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

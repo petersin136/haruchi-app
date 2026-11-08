@@ -18,7 +18,7 @@
     {
       "lemma": "אוּד",
       "strong": "H181",
-      "pron": "",
+      "pron": "하우딤",
       "glossKo": "타다 남은 나무"
     },
     {
@@ -30,20 +30,84 @@
     {
       "lemma": "אֵיד",
       "strong": "H343",
-      "pron": "에디위",
-      "glossKo": "나의 재앙"
+      "pron": "에담",
+      "glossKo": "그들의 재앙"
     }
   ],
   "defEn": "vehemence; vehemently",
   "defKo": "",
-  "countOT": 73,
+  "countOT": 300,
   "byBook": {
     "genesis": 38,
-    "psalms": 35
+    "psalms": 35,
+    "samuel1": 31,
+    "samuel2": 20,
+    "chronicles2": 16,
+    "jeremiah": 16,
+    "joshua": 16,
+    "kings1": 16,
+    "exodus": 14,
+    "ezekiel": 14,
+    "deuteronomy": 12,
+    "numbers": 11,
+    "judges": 10,
+    "chronicles1": 9,
+    "isaiah": 8,
+    "kings2": 6,
+    "nehemiah": 6,
+    "zechariah": 5,
+    "job": 4,
+    "daniel": 2,
+    "esther": 2,
+    "joel": 2,
+    "ruth": 2,
+    "ezra": 1,
+    "lamentations": 1,
+    "nahum": 1,
+    "obadiah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "מְאֹ֥ד מְאֹ֖ד",
+      "hebrew": "הַרְבֵּ֥ה מְאֹֽד",
+      "pron": "우레부 메옫",
+      "lemmas": [
+        "רָבָה",
+        "מְאֹד"
+      ],
+      "words": [
+        {
+          "word": "הַרְבֵּ֥ה",
+          "lemma": "רָבָה",
+          "strong": "H7235",
+          "pron": "우레부"
+        },
+        {
+          "word": "מְאֹֽד",
+          "lemma": "מְאֹד",
+          "strong": "H3966",
+          "pron": "메옫"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "genesis 7:18",
+        "genesis 15:1",
+        "genesis 41:49",
+        "genesis 47:27",
+        "deuteronomy 3:5",
+        "deuteronomy 6:3",
+        "deuteronomy 17:17",
+        "joshua 13:1",
+        "joshua 22:8",
+        "samuel1 26:21",
+        "samuel2 8:8",
+        "samuel2 12:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּמְאֹ֣ד מְאֹ֔ד",
       "pron": "메옫 메옫",
       "lemmas": [
         "מְאֹד",
@@ -51,25 +115,32 @@
       ],
       "words": [
         {
-          "word": "מְאֹ֥ד",
+          "word": "בִּמְאֹ֣ד",
           "lemma": "מְאֹד",
           "strong": "H3966",
           "pron": "메옫"
         },
         {
-          "word": "מְאֹ֖ד",
+          "word": "מְאֹ֔ד",
           "lemma": "מְאֹד",
           "strong": "H3966",
           "pron": "메옫"
         }
       ],
-      "count": 10,
+      "count": 24,
       "refs": [
         "genesis 7:19",
         "genesis 17:2",
         "genesis 17:6",
         "genesis 17:20",
-        "genesis 30:43"
+        "genesis 30:43",
+        "exodus 1:7",
+        "numbers 14:7",
+        "kings1 7:47",
+        "kings2 10:4",
+        "ezekiel 9:9",
+        "ezekiel 16:13",
+        "ezekiel 37:10"
       ],
       "glossKo": ""
     },
@@ -94,68 +165,36 @@
           "pron": "메옫"
         }
       ],
-      "count": 8,
+      "count": 18,
       "refs": [
+        "genesis 27:33",
+        "genesis 27:34",
+        "samuel1 11:15",
+        "samuel1 25:36",
+        "samuel2 2:17",
+        "kings1 1:4",
+        "chronicles2 16:14",
         "psalms 38:6",
         "psalms 38:8",
         "psalms 119:8",
         "psalms 119:43",
-        "psalms 119:51",
-        "psalms 119:107",
-        "genesis 27:33",
-        "genesis 27:34"
+        "psalms 119:51"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אוֹתְךָ֖ בִּמְאֹ֥ד מְאֹֽד",
-      "pron": "에트 메옫 메옫",
+      "hebrew": "גְּדוֹלָ֣ה מְאֹ֑ד",
+      "pron": "아게돌림 메옫",
       "lemmas": [
-        "אֵת",
-        "מְאֹד",
+        "גָּדוֹל",
         "מְאֹד"
       ],
       "words": [
         {
-          "word": "אוֹתְךָ֖",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        },
-        {
-          "word": "בִּמְאֹ֥ד",
-          "lemma": "מְאֹד",
-          "strong": "H3966",
-          "pron": "메옫"
-        },
-        {
-          "word": "מְאֹֽד",
-          "lemma": "מְאֹד",
-          "strong": "H3966",
-          "pron": "메옫"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "genesis 17:2",
-        "genesis 17:6",
-        "genesis 17:20"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיִּרְבּ֣וּ מְאֹ֑ד",
-      "pron": "이렙부 메옫",
-      "lemmas": [
-        "רָבָה",
-        "מְאֹד"
-      ],
-      "words": [
-        {
-          "word": "וַיִּרְבּ֣וּ",
-          "lemma": "רָבָה",
-          "strong": "H7235",
-          "pron": "이렙부"
+          "word": "גְּדוֹלָ֣ה",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
         },
         {
           "word": "מְאֹ֑ד",
@@ -164,42 +203,58 @@
           "pron": "메옫"
         }
       ],
-      "count": 5,
+      "count": 17,
       "refs": [
-        "psalms 107:38",
-        "genesis 7:18",
-        "genesis 15:1",
-        "genesis 41:49",
-        "genesis 47:27"
+        "exodus 11:3",
+        "numbers 13:28",
+        "joshua 10:20",
+        "judges 11:33",
+        "samuel1 2:17",
+        "samuel1 4:10",
+        "samuel1 5:9",
+        "samuel1 14:20",
+        "samuel1 25:2",
+        "samuel2 13:15",
+        "samuel2 13:36",
+        "samuel2 18:17"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אוֹתְךָ֖ בִּמְאֹ֥ד",
-      "pron": "에트 메옫",
+      "hebrew": "רַבָּ֣ה מְאֹ֑ד",
+      "pron": "랍바 메옫",
       "lemmas": [
-        "אֵת",
+        "רַב",
         "מְאֹד"
       ],
       "words": [
         {
-          "word": "אוֹתְךָ֖",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
+          "word": "רַבָּ֣ה",
+          "lemma": "רַב",
+          "strong": "H7227",
+          "pron": "랍바"
         },
         {
-          "word": "בִּמְאֹ֥ד",
+          "word": "מְאֹ֑ד",
           "lemma": "מְאֹד",
           "strong": "H3966",
           "pron": "메옫"
         }
       ],
-      "count": 3,
+      "count": 13,
       "refs": [
-        "genesis 17:2",
-        "genesis 17:6",
-        "genesis 17:20"
+        "numbers 11:33",
+        "joshua 11:4",
+        "joshua 22:8",
+        "kings1 10:2",
+        "chronicles1 18:8",
+        "chronicles2 32:29",
+        "ezra 10:1",
+        "job 1:3",
+        "ezekiel 37:2",
+        "ezekiel 47:7",
+        "ezekiel 47:9",
+        "ezekiel 47:10"
       ],
       "glossKo": ""
     }

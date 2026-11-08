@@ -12,46 +12,220 @@
     {
       "lemma": "טְפַר",
       "strong": "H2953",
-      "pron": "",
-      "glossKo": "손톱(아람)"
+      "pron": "베딥로히",
+      "glossKo": "그의 손톱(아람)"
     },
     {
       "lemma": "צוֹפַר",
       "strong": "H6691",
-      "pron": "",
+      "pron": "브초파르",
       "glossKo": "소발"
     },
     {
       "lemma": "צִפּוֹר",
       "strong": "H6834",
-      "pron": "",
+      "pron": "칩포르",
       "glossKo": "십볼"
     },
     {
       "lemma": "צָפִיר",
       "strong": "H6842",
-      "pron": "",
+      "pron": "우체피레",
       "glossKo": "숫염소"
     },
     {
       "lemma": "צָפַר",
       "strong": "H6852",
-      "pron": "",
+      "pron": "브이쳅포르",
       "glossKo": "일찍 떠나다"
     },
     {
       "lemma": "צְפַר",
       "strong": "H6853",
-      "pron": "",
+      "pron": "칩파레",
       "glossKo": "새(아람)"
     }
   ],
   "defEn": "little bird",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 40,
   "byBook": {
+    "leviticus": 13,
     "psalms": 7,
-    "genesis": 2
+    "proverbs": 4,
+    "deuteronomy": 3,
+    "ezekiel": 3,
+    "ecclesiastes": 2,
+    "genesis": 2,
+    "amos": 1,
+    "hosea": 1,
+    "isaiah": 1,
+    "job": 1,
+    "lamentations": 1,
+    "nehemiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְאֶת הַצִפֹּ֖ר",
+      "pron": "에트 칩포르",
+      "lemmas": [
+        "אֵת",
+        "צִפּוֹר"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַצִפֹּ֖ר",
+          "lemma": "צִפּוֹר",
+          "strong": "H6833",
+          "pron": "칩포르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 15:10",
+        "leviticus 14:5",
+        "leviticus 14:6",
+        "leviticus 14:7",
+        "leviticus 14:50",
+        "leviticus 14:51",
+        "leviticus 14:53"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "צִפֳּרִ֥ים חַיּ֖וֹת",
+      "pron": "칩포르 하아",
+      "lemmas": [
+        "צִפּוֹר",
+        "חַי"
+      ],
+      "words": [
+        {
+          "word": "צִפֳּרִ֥ים",
+          "lemma": "צִפּוֹר",
+          "strong": "H6833",
+          "pron": "칩포르"
+        },
+        {
+          "word": "חַיּ֖וֹת",
+          "lemma": "חַי",
+          "strong": "H2416",
+          "pron": "하아"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 14:4",
+        "leviticus 14:6",
+        "leviticus 14:7",
+        "leviticus 14:51",
+        "leviticus 14:52",
+        "leviticus 14:53"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הַצִּפֹּ֤ר הַֽחַיָּה֙",
+      "pron": "에트 칩포르 하아",
+      "lemmas": [
+        "אֵת",
+        "צִפּוֹר",
+        "חַי"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַצִּפֹּ֤ר",
+          "lemma": "צִפּוֹר",
+          "strong": "H6833",
+          "pron": "칩포르"
+        },
+        {
+          "word": "הַֽחַיָּה֙",
+          "lemma": "חַי",
+          "strong": "H2416",
+          "pron": "하아"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 14:6",
+        "leviticus 14:7",
+        "leviticus 14:51",
+        "leviticus 14:53"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כֹּ֖ל צִפּ֥וֹר",
+      "pron": "칼 칩포르",
+      "lemmas": [
+        "כֹּל",
+        "צִפּוֹר"
+      ],
+      "words": [
+        {
+          "word": "כֹּ֖ל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "צִפּ֥וֹר",
+          "lemma": "צִפּוֹר",
+          "strong": "H6833",
+          "pron": "칩포르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 7:14",
+        "deuteronomy 4:17",
+        "deuteronomy 14:11",
+        "ezekiel 17:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "צִפּ֥וֹר כָּל",
+      "pron": "칩포르 칼",
+      "lemmas": [
+        "צִפּוֹר",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "צִפּ֥וֹר",
+          "lemma": "צִפּוֹר",
+          "strong": "H6833",
+          "pron": "칩포르"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 7:14",
+        "ezekiel 17:23",
+        "ezekiel 39:4",
+        "ezekiel 39:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

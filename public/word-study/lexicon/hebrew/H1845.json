@@ -2,7 +2,7 @@
   "lemma": "דְּעוּאֵל",
   "pron": "데우엘",
   "strong": "H1845",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "יָדַע",
     "strong": "H3045",
@@ -12,25 +12,25 @@
     {
       "lemma": "דֵּעַ",
       "strong": "H1843",
-      "pron": "",
-      "glossKo": "지식"
+      "pron": "데이",
+      "glossKo": "나의 지식"
     },
     {
       "lemma": "דַּעַת",
       "strong": "H1847",
-      "pron": "다아트",
+      "pron": "아다아트",
       "glossKo": "지식"
     },
     {
       "lemma": "יַדּוּעַ",
       "strong": "H3037",
-      "pron": "",
+      "pron": "얃두아",
       "glossKo": "얏두아"
     },
     {
       "lemma": "יְדִיעֲאֵל",
       "strong": "H3043",
-      "pron": "",
+      "pron": "비위디아엘",
       "glossKo": "여디아엘"
     },
     {
@@ -42,13 +42,83 @@
     {
       "lemma": "יְדַע",
       "strong": "H3046",
-      "pron": "",
+      "pron": "예디아",
       "glossKo": "알다(아람)"
     }
   ],
   "defEn": "Deuel",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "numbers": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶלְיָסָ֖ף בֶּן דְּעוּאֵֽל",
+      "pron": "엘아삽 바님 데우엘",
+      "lemmas": [
+        "אֶלְיָסָף",
+        "בֵּן",
+        "דְּעוּאֵל"
+      ],
+      "words": [
+        {
+          "word": "אֶלְיָסָ֖ף",
+          "lemma": "אֶלְיָסָף",
+          "strong": "H460",
+          "pron": "엘아삽"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "דְּעוּאֵֽל",
+          "lemma": "דְּעוּאֵל",
+          "strong": "H1845",
+          "pron": "데우엘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 1:14",
+        "numbers 7:42",
+        "numbers 7:47",
+        "numbers 10:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן דְּעוּאֵֽל",
+      "pron": "바님 데우엘",
+      "lemmas": [
+        "בֵּן",
+        "דְּעוּאֵל"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "דְּעוּאֵֽל",
+          "lemma": "דְּעוּאֵל",
+          "strong": "H1845",
+          "pron": "데우엘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 1:14",
+        "numbers 7:42",
+        "numbers 7:47",
+        "numbers 10:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

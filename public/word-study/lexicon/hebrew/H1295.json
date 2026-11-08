@@ -1,8 +1,8 @@
 {
   "lemma": "בְּרֵכָה",
-  "pron": "베레카",
+  "pron": "베레카트",
   "strong": "H1295",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בָּרַךְ",
     "strong": "H1288",
@@ -12,43 +12,176 @@
     {
       "lemma": "בָּרוּךְ",
       "strong": "H1263",
-      "pron": "",
+      "pron": "바루크",
       "glossKo": "바룩"
     },
     {
       "lemma": "בָּרַךְ",
       "strong": "H1288",
-      "pron": "테바레크",
+      "pron": "바예바레크",
       "glossKo": "축복하다"
     },
     {
       "lemma": "בְּרַךְ",
       "strong": "H1289",
-      "pron": "",
+      "pron": "바리크",
       "glossKo": "축복하다(아람)"
     },
     {
       "lemma": "בֶּרֶךְ",
       "strong": "H1290",
-      "pron": "비렉카위",
+      "pron": "비렉카이",
       "glossKo": "나의 무릎"
     },
     {
       "lemma": "בָּרַכְאֵל",
       "strong": "H1292",
-      "pron": "",
+      "pron": "바라케엘",
       "glossKo": "바라겔"
     },
     {
       "lemma": "בְּרָכָה",
       "strong": "H1293",
-      "pron": "비레카테카",
-      "glossKo": "너의 복"
+      "pron": "베라카",
+      "glossKo": "복"
     }
   ],
   "defEn": "reservoir; kneel",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 17,
+  "byBook": {
+    "isaiah": 4,
+    "samuel2": 4,
+    "nehemiah": 3,
+    "kings2": 2,
+    "ecclesiastes": 1,
+    "kings1": 1,
+    "nahum": 1,
+    "songofsolomon": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "עַל הַבְּרֵכָ֖ה",
+      "pron": "알 베레카트",
+      "lemmas": [
+        "עַל",
+        "בְּרֵכָה"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הַבְּרֵכָ֖ה",
+          "lemma": "בְּרֵכָה",
+          "strong": "H1295",
+          "pron": "베레카트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 2:13",
+        "samuel2 4:12",
+        "kings1 22:38"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּתְעָלַת֙ הַבְּרֵכָ֣ה",
+      "pron": "테알라 베레카트",
+      "lemmas": [
+        "תְּעָלָה",
+        "בְּרֵכָה"
+      ],
+      "words": [
+        {
+          "word": "בִּתְעָלַת֙",
+          "lemma": "תְּעָלָה",
+          "strong": "H8585",
+          "pron": "테알라"
+        },
+        {
+          "word": "הַבְּרֵכָ֣ה",
+          "lemma": "בְּרֵכָה",
+          "strong": "H1295",
+          "pron": "베레카트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 18:17",
+        "isaiah 7:3",
+        "isaiah 36:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּתְעָלַת֙ הַבְּרֵכָ֣ה הָֽעֶלְיוֹנָ֔ה",
+      "pron": "테알라 베레카트 엘온",
+      "lemmas": [
+        "תְּעָלָה",
+        "בְּרֵכָה",
+        "עֶלְיוֹן"
+      ],
+      "words": [
+        {
+          "word": "בִּתְעָלַת֙",
+          "lemma": "תְּעָלָה",
+          "strong": "H8585",
+          "pron": "테알라"
+        },
+        {
+          "word": "הַבְּרֵכָ֣ה",
+          "lemma": "בְּרֵכָה",
+          "strong": "H1295",
+          "pron": "베레카트"
+        },
+        {
+          "word": "הָֽעֶלְיוֹנָ֔ה",
+          "lemma": "עֶלְיוֹן",
+          "strong": "H5945",
+          "pron": "엘온"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 18:17",
+        "isaiah 7:3",
+        "isaiah 36:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַבְּרֵכָ֣ה הָעֶלְיוֹנָ֔ה",
+      "pron": "베레카트 엘온",
+      "lemmas": [
+        "בְּרֵכָה",
+        "עֶלְיוֹן"
+      ],
+      "words": [
+        {
+          "word": "הַבְּרֵכָ֣ה",
+          "lemma": "בְּרֵכָה",
+          "strong": "H1295",
+          "pron": "베레카트"
+        },
+        {
+          "word": "הָעֶלְיוֹנָ֔ה",
+          "lemma": "עֶלְיוֹן",
+          "strong": "H5945",
+          "pron": "엘온"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 18:17",
+        "isaiah 7:3",
+        "isaiah 36:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

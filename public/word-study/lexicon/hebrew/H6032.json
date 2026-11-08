@@ -1,6 +1,6 @@
 {
   "lemma": "עֲנָה",
-  "pron": "브느느브",
+  "pron": "븐느브",
   "strong": "H6032",
   "posKo": "동사",
   "root": {
@@ -18,19 +18,19 @@
     {
       "lemma": "מַעֲנֶה",
       "strong": "H4617",
-      "pron": "",
+      "pron": "마아네",
       "glossKo": "응답"
     },
     {
       "lemma": "עָנָה",
       "strong": "H6030",
-      "pron": "바야아네니",
-      "glossKo": "나를 응답하다"
+      "pron": "바야안",
+      "glossKo": "응답하다"
     },
     {
       "lemma": "עָנָה",
       "strong": "H6031",
-      "pron": "인네티",
+      "pron": "브인누",
       "glossKo": "괴롭히다"
     },
     {
@@ -42,15 +42,188 @@
     {
       "lemma": "עֲנָיָה",
       "strong": "H6043",
-      "pron": "",
+      "pron": "바아나아",
       "glossKo": "아나야"
     }
   ],
   "defEn": "answer, speak.",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 32,
   "byBook": {
+    "daniel": 30,
     "psalms": 2
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עָנֵ֤ה מַלְכָּא֙",
+      "pron": "븐느브 말카",
+      "lemmas": [
+        "עֲנָה",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "עָנֵ֤ה",
+          "lemma": "עֲנָה",
+          "strong": "H6032",
+          "pron": "븐느브"
+        },
+        {
+          "word": "מַלְכָּא֙",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4430",
+          "pron": "말카"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "daniel 2:5",
+        "daniel 2:8",
+        "daniel 2:26",
+        "daniel 2:47",
+        "daniel 4:19",
+        "daniel 4:30",
+        "daniel 5:7",
+        "daniel 5:13",
+        "daniel 6:12",
+        "daniel 6:16",
+        "daniel 6:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָנֵ֤ה מַלְכָּא֙ וְאָמַ֣ר",
+      "pron": "븐느브 말카 암린",
+      "lemmas": [
+        "עֲנָה",
+        "מֶלֶךְ",
+        "אֲמַר"
+      ],
+      "words": [
+        {
+          "word": "עָנֵ֤ה",
+          "lemma": "עֲנָה",
+          "strong": "H6032",
+          "pron": "븐느브"
+        },
+        {
+          "word": "מַלְכָּא֙",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4430",
+          "pron": "말카"
+        },
+        {
+          "word": "וְאָמַ֣ר",
+          "lemma": "אֲמַר",
+          "strong": "H560",
+          "pron": "암린"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "daniel 2:5",
+        "daniel 2:8",
+        "daniel 2:26",
+        "daniel 4:19",
+        "daniel 4:30",
+        "daniel 5:7",
+        "daniel 5:13",
+        "daniel 6:12",
+        "daniel 6:16",
+        "daniel 6:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָנֵ֣ה וְאָמַ֗ר",
+      "pron": "븐느브 암린",
+      "lemmas": [
+        "עֲנָה",
+        "אֲמַר"
+      ],
+      "words": [
+        {
+          "word": "עָנֵ֣ה",
+          "lemma": "עֲנָה",
+          "strong": "H6032",
+          "pron": "븐느브"
+        },
+        {
+          "word": "וְאָמַ֗ר",
+          "lemma": "אֲמַר",
+          "strong": "H560",
+          "pron": "암린"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "daniel 2:15",
+        "daniel 3:9",
+        "daniel 3:19",
+        "daniel 3:24",
+        "daniel 3:25",
+        "daniel 3:26",
+        "daniel 6:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָנֵ֤ה דָֽנִיֵּאל֙",
+      "pron": "븐느브 다니엘",
+      "lemmas": [
+        "עֲנָה",
+        "דָּנִיֵּאל"
+      ],
+      "words": [
+        {
+          "word": "עָנֵ֤ה",
+          "lemma": "עֲנָה",
+          "strong": "H6032",
+          "pron": "븐느브"
+        },
+        {
+          "word": "דָֽנִיֵּאל֙",
+          "lemma": "דָּנִיֵּאל",
+          "strong": "H1841",
+          "pron": "다니엘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 2:20",
+        "daniel 2:27",
+        "daniel 5:17",
+        "daniel 7:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּהִתְבְּהָלָ֑ה עָנֵ֨ה",
+      "pron": "브히텝베할라 븐느브",
+      "lemmas": [
+        "בְּהַל",
+        "עֲנָה"
+      ],
+      "words": [
+        {
+          "word": "בְּהִתְבְּהָלָ֑ה",
+          "lemma": "בְּהַל",
+          "strong": "H927",
+          "pron": "브히텝베할라"
+        },
+        {
+          "word": "עָנֵ֨ה",
+          "lemma": "עֲנָה",
+          "strong": "H6032",
+          "pron": "븐느브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 3:24",
+        "daniel 4:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

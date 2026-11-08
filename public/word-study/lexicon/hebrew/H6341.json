@@ -1,6 +1,6 @@
 {
   "lemma": "פַּח",
-  "pron": "파힘",
+  "pron": "파헤",
   "strong": "H6341",
   "posKo": "명사",
   "root": {
@@ -12,15 +12,55 @@
     {
       "lemma": "פָּחַח",
       "strong": "H6351",
-      "pron": "",
+      "pron": "하페아흐",
       "glossKo": "그물을 펴다"
     }
   ],
   "defEn": "sheet",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 27,
   "byBook": {
-    "psalms": 9
+    "psalms": 9,
+    "isaiah": 3,
+    "jeremiah": 3,
+    "amos": 2,
+    "hosea": 2,
+    "job": 2,
+    "proverbs": 2,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "joshua": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יִלָּכֵ֖ד בַּפָּ֑ח",
+      "pron": "바일케두 파헤",
+      "lemmas": [
+        "לָכַד",
+        "פַּח"
+      ],
+      "words": [
+        {
+          "word": "יִלָּכֵ֖ד",
+          "lemma": "לָכַד",
+          "strong": "H3920",
+          "pron": "바일케두"
+        },
+        {
+          "word": "בַּפָּ֑ח",
+          "lemma": "פַּח",
+          "strong": "H6341",
+          "pron": "파헤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 24:18",
+        "jeremiah 18:22",
+        "jeremiah 48:44"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

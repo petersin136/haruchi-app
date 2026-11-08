@@ -1,6 +1,6 @@
 {
   "lemma": "פָּעַל",
-  "pron": "포알레",
+  "pron": "파알타",
   "strong": "H6466",
   "posKo": "동사",
   "root": null,
@@ -14,26 +14,36 @@
     {
       "lemma": "פֹּעַל",
       "strong": "H6467",
-      "pron": "브포알",
-      "glossKo": "행위"
+      "pron": "파올로",
+      "glossKo": "그의 행위"
     },
     {
       "lemma": "פְּעֻלָּה",
       "strong": "H6468",
-      "pron": "리페울로트",
+      "pron": "페울라트",
       "glossKo": "보응"
     }
   ],
   "defEn": "do; make; practise",
   "defKo": "",
-  "countOT": 26,
+  "countOT": 56,
   "byBook": {
-    "psalms": 26
+    "psalms": 26,
+    "job": 11,
+    "isaiah": 7,
+    "proverbs": 4,
+    "hosea": 2,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "habakkuk": 1,
+    "micah": 1,
+    "numbers": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
       "hebrew": "פֹּ֥עֲלֵי אָֽוֶן",
-      "pron": "포알레 아벤",
+      "pron": "파알타 아벤",
       "lemmas": [
         "פָּעַל",
         "אָוֶן"
@@ -43,7 +53,7 @@
           "word": "פֹּ֥עֲלֵי",
           "lemma": "פָּעַל",
           "strong": "H6466",
-          "pron": "포알레"
+          "pron": "파알타"
         },
         {
           "word": "אָֽוֶן",
@@ -52,8 +62,11 @@
           "pron": "아벤"
         }
       ],
-      "count": 16,
+      "count": 24,
       "refs": [
+        "job 31:3",
+        "job 34:8",
+        "job 34:22",
         "psalms 5:5",
         "psalms 6:8",
         "psalms 14:4",
@@ -62,16 +75,13 @@
         "psalms 53:4",
         "psalms 59:2",
         "psalms 64:2",
-        "psalms 92:7",
-        "psalms 92:9",
-        "psalms 94:4",
-        "psalms 94:16"
+        "psalms 92:7"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "כָּל פֹּ֥עֲלֵי",
-      "pron": "브콜 포알레",
+      "pron": "칼 파알타",
       "lemmas": [
         "כֹּל",
         "פָּעַל"
@@ -81,16 +91,16 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
           "word": "פֹּ֥עֲלֵי",
           "lemma": "פָּעַל",
           "strong": "H6466",
-          "pron": "포알레"
+          "pron": "파알타"
         }
       ],
-      "count": 7,
+      "count": 8,
       "refs": [
         "psalms 5:5",
         "psalms 6:8",
@@ -98,13 +108,14 @@
         "psalms 92:7",
         "psalms 92:9",
         "psalms 94:4",
-        "psalms 101:8"
+        "psalms 101:8",
+        "proverbs 16:4"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "כָּל פֹּ֥עֲלֵי אָֽוֶן",
-      "pron": "브콜 포알레 아벤",
+      "pron": "칼 파알타 아벤",
       "lemmas": [
         "כֹּל",
         "פָּעַל",
@@ -115,13 +126,13 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
           "word": "פֹּ֥עֲלֵי",
           "lemma": "פָּעַל",
           "strong": "H6466",
-          "pron": "포알레"
+          "pron": "파알타"
         },
         {
           "word": "אָֽוֶן",
@@ -139,6 +150,67 @@
         "psalms 92:9",
         "psalms 94:4",
         "psalms 101:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַה פָּ֖עַל",
+      "pron": "마 파알타",
+      "lemmas": [
+        "מָה",
+        "פָּעַל"
+      ],
+      "words": [
+        {
+          "word": "מַה",
+          "lemma": "מָה",
+          "strong": "H4100",
+          "pron": "마"
+        },
+        {
+          "word": "פָּ֖עַל",
+          "lemma": "פָּעַל",
+          "strong": "H6466",
+          "pron": "파알타"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 23:23",
+        "job 7:20",
+        "job 11:8",
+        "job 22:17",
+        "job 35:6",
+        "psalms 11:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עִם פֹּ֣עֲלֵי",
+      "pron": "임마흐 파알타",
+      "lemmas": [
+        "עִם",
+        "פָּעַל"
+      ],
+      "words": [
+        {
+          "word": "עִם",
+          "lemma": "עִם",
+          "strong": "H5973",
+          "pron": "임마흐"
+        },
+        {
+          "word": "פֹּ֣עֲלֵי",
+          "lemma": "פָּעַל",
+          "strong": "H6466",
+          "pron": "파알타"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 34:8",
+        "psalms 28:3",
+        "psalms 94:16"
       ],
       "glossKo": ""
     }

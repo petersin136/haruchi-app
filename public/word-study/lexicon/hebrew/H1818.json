@@ -1,6 +1,6 @@
 {
   "lemma": "דָּם",
-  "pron": "다밈",
+  "pron": "데메",
   "strong": "H1818",
   "posKo": "명사",
   "root": {
@@ -12,94 +12,59 @@
     {
       "lemma": "דּוּמָם",
       "strong": "H1748",
-      "pron": "",
+      "pron": "두맘",
       "glossKo": "잠잠히"
     },
     {
       "lemma": "דָּמַם",
       "strong": "H1826",
-      "pron": "브돔무",
+      "pron": "읻데무",
       "glossKo": "잠잠하다"
     },
     {
       "lemma": "דְּמָמָה",
       "strong": "H1827",
-      "pron": "리데마마",
+      "pron": "데마마",
       "glossKo": "고요"
     }
   ],
   "defEn": "blood",
   "defKo": "",
-  "countOT": 32,
+  "countOT": 361,
   "byBook": {
+    "leviticus": 88,
+    "ezekiel": 55,
+    "exodus": 29,
+    "deuteronomy": 23,
     "psalms": 21,
-    "genesis": 11
+    "isaiah": 15,
+    "numbers": 15,
+    "kings2": 13,
+    "samuel2": 13,
+    "kings1": 12,
+    "genesis": 11,
+    "jeremiah": 9,
+    "chronicles2": 8,
+    "proverbs": 8,
+    "samuel1": 8,
+    "hosea": 5,
+    "joshua": 5,
+    "chronicles1": 4,
+    "joel": 4,
+    "habakkuk": 3,
+    "job": 2,
+    "lamentations": 2,
+    "micah": 2,
+    "zechariah": 2,
+    "jonah": 1,
+    "judges": 1,
+    "nahum": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "אִישׁ דָּמִ֥ים",
-      "pron": "하이쉬 다밈",
-      "lemmas": [
-        "אִישׁ",
-        "דָּם"
-      ],
-      "words": [
-        {
-          "word": "אִישׁ",
-          "lemma": "אִישׁ",
-          "strong": "H376",
-          "pron": "하이쉬"
-        },
-        {
-          "word": "דָּמִ֥ים",
-          "lemma": "דָּם",
-          "strong": "H1818",
-          "pron": "다밈"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 5:6",
-        "psalms 26:9",
-        "psalms 55:23",
-        "psalms 59:2",
-        "psalms 139:19"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "שָׁפְכ֬וּ דָמָ֨ם",
-      "pron": "니솁파켓티 다밈",
-      "lemmas": [
-        "שָׁפַךְ",
-        "דָּם"
-      ],
-      "words": [
-        {
-          "word": "שָׁפְכ֬וּ",
-          "lemma": "שָׁפַךְ",
-          "strong": "H8210",
-          "pron": "니솁파켓티"
-        },
-        {
-          "word": "דָמָ֨ם",
-          "lemma": "דָּם",
-          "strong": "H1818",
-          "pron": "다밈"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 79:3",
-        "psalms 106:38",
-        "genesis 9:6",
-        "genesis 37:22"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֶת דְּמֵ֥י",
-      "pron": "에트 다밈",
+      "hebrew": "אֶת הַדָּ֔ם",
+      "pron": "에트 데메",
       "lemmas": [
         "אֵת",
         "דָּם"
@@ -112,17 +77,178 @@
           "pron": "에트"
         },
         {
-          "word": "דְּמֵ֥י",
+          "word": "הַדָּ֔ם",
           "lemma": "דָּם",
           "strong": "H1818",
-          "pron": "다밈"
+          "pron": "데메"
         }
       ],
-      "count": 3,
+      "count": 54,
       "refs": [
         "genesis 4:11",
         "genesis 9:5",
-        "genesis 37:26"
+        "genesis 37:26",
+        "exodus 12:13",
+        "exodus 12:23",
+        "exodus 24:8",
+        "exodus 29:16",
+        "exodus 29:20",
+        "leviticus 1:5",
+        "leviticus 1:11",
+        "leviticus 3:2",
+        "leviticus 3:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַדָּ֛ם עַל",
+      "pron": "데메 알",
+      "lemmas": [
+        "דָּם",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "הַדָּ֛ם",
+          "lemma": "דָּם",
+          "strong": "H1818",
+          "pron": "데메"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "exodus 12:23",
+        "exodus 29:20",
+        "leviticus 1:5",
+        "leviticus 1:11",
+        "leviticus 1:15",
+        "leviticus 3:2",
+        "leviticus 3:8",
+        "leviticus 3:13",
+        "leviticus 4:7",
+        "leviticus 6:27",
+        "leviticus 8:19",
+        "leviticus 8:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דָּ֣ם נָקִ֑י",
+      "pron": "데메 나키",
+      "lemmas": [
+        "דָּם",
+        "נָקִי"
+      ],
+      "words": [
+        {
+          "word": "דָּ֣ם",
+          "lemma": "דָּם",
+          "strong": "H1818",
+          "pron": "데메"
+        },
+        {
+          "word": "נָקִ֑י",
+          "lemma": "נָקִי",
+          "strong": "H5355",
+          "pron": "나키"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "deuteronomy 19:10",
+        "deuteronomy 19:13",
+        "deuteronomy 21:8",
+        "deuteronomy 21:9",
+        "deuteronomy 27:25",
+        "samuel1 19:5",
+        "kings2 21:16",
+        "kings2 24:4",
+        "psalms 94:21",
+        "psalms 106:38",
+        "proverbs 6:17",
+        "isaiah 59:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁפָךְ דָּ֑ם",
+      "pron": "쇼페크 데메",
+      "lemmas": [
+        "שָׁפַךְ",
+        "דָּם"
+      ],
+      "words": [
+        {
+          "word": "שְׁפָךְ",
+          "lemma": "שָׁפַךְ",
+          "strong": "H8210",
+          "pron": "쇼페크"
+        },
+        {
+          "word": "דָּ֑ם",
+          "lemma": "דָּם",
+          "strong": "H1818",
+          "pron": "데메"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "genesis 9:6",
+        "genesis 37:22",
+        "deuteronomy 19:10",
+        "samuel1 25:31",
+        "kings1 18:28",
+        "psalms 79:3",
+        "psalms 106:38",
+        "proverbs 1:16",
+        "proverbs 6:17",
+        "isaiah 59:7",
+        "ezekiel 16:38",
+        "ezekiel 18:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל הַדָּ֑ם",
+      "pron": "알 데메",
+      "lemmas": [
+        "עַל",
+        "דָּם"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הַדָּ֑ם",
+          "lemma": "דָּם",
+          "strong": "H1818",
+          "pron": "데메"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "exodus 22:3",
+        "leviticus 12:5",
+        "leviticus 14:17",
+        "leviticus 19:16",
+        "leviticus 19:26",
+        "deuteronomy 19:10",
+        "samuel1 14:32",
+        "samuel1 14:33",
+        "jeremiah 22:17",
+        "ezekiel 14:19",
+        "ezekiel 22:13",
+        "ezekiel 33:25"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "אָרַךְ",
-  "pron": "헤에리쿠",
+  "pron": "아레쿠",
   "strong": "H748",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "אֲרוּכָה",
       "strong": "H724",
-      "pron": "",
+      "pron": "아루카",
       "glossKo": "회복"
     },
     {
       "lemma": "אֲרַךְ",
       "strong": "H749",
-      "pron": "",
+      "pron": "아리크",
       "glossKo": "적합하다(아람)"
     },
     {
@@ -32,7 +32,7 @@
     {
       "lemma": "אָרֹךְ",
       "strong": "H752",
-      "pron": "",
+      "pron": "아룩카",
       "glossKo": "긴"
     },
     {
@@ -44,10 +44,204 @@
   ],
   "defEn": "be; make; long",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 34,
   "byBook": {
+    "deuteronomy": 11,
+    "isaiah": 4,
+    "ecclesiastes": 3,
+    "proverbs": 3,
+    "ezekiel": 2,
+    "kings1": 2,
+    "numbers": 2,
+    "chronicles2": 1,
+    "exodus": 1,
     "genesis": 1,
+    "job": 1,
+    "joshua": 1,
+    "judges": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "תַאֲרִיכֻ֤ן יָמִים֙",
+      "pron": "아레쿠 욤",
+      "lemmas": [
+        "אָרַךְ",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "תַאֲרִיכֻ֤ן",
+          "lemma": "אָרַךְ",
+          "strong": "H748",
+          "pron": "아레쿠"
+        },
+        {
+          "word": "יָמִים֙",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "exodus 20:12",
+        "deuteronomy 4:26",
+        "deuteronomy 4:40",
+        "deuteronomy 5:16",
+        "deuteronomy 5:33",
+        "deuteronomy 6:2",
+        "deuteronomy 11:9",
+        "deuteronomy 17:20",
+        "deuteronomy 22:7",
+        "deuteronomy 25:15",
+        "deuteronomy 30:18",
+        "deuteronomy 32:47"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תַּאֲרִ֤יכוּ יָמִים֙ עַל",
+      "pron": "아레쿠 욤 알",
+      "lemmas": [
+        "אָרַךְ",
+        "יוֹם",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "תַּאֲרִ֤יכוּ",
+          "lemma": "אָרַךְ",
+          "strong": "H748",
+          "pron": "아레쿠"
+        },
+        {
+          "word": "יָמִים֙",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 20:12",
+        "deuteronomy 4:26",
+        "deuteronomy 4:40",
+        "deuteronomy 11:9",
+        "deuteronomy 17:20",
+        "deuteronomy 25:15",
+        "deuteronomy 30:18",
+        "deuteronomy 32:47"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְמַ֨עַן֙ יַאֲרִכ֣וּן",
+      "pron": "레마안 아레쿠",
+      "lemmas": [
+        "מַעַן",
+        "אָרַךְ"
+      ],
+      "words": [
+        {
+          "word": "לְמַ֨עַן֙",
+          "lemma": "מַעַן",
+          "strong": "H4616",
+          "pron": "레마안"
+        },
+        {
+          "word": "יַאֲרִכ֣וּן",
+          "lemma": "אָרַךְ",
+          "strong": "H748",
+          "pron": "아레쿠"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 20:12",
+        "deuteronomy 4:40",
+        "deuteronomy 5:16",
+        "deuteronomy 6:2",
+        "deuteronomy 11:9",
+        "deuteronomy 17:20",
+        "deuteronomy 25:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְמַ֨עַן֙ יַאֲרִכ֣וּן יָמֶ֔יךָ",
+      "pron": "레마안 아레쿠 욤",
+      "lemmas": [
+        "מַעַן",
+        "אָרַךְ",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "לְמַ֨עַן֙",
+          "lemma": "מַעַן",
+          "strong": "H4616",
+          "pron": "레마안"
+        },
+        {
+          "word": "יַאֲרִכ֣וּן",
+          "lemma": "אָרַךְ",
+          "strong": "H748",
+          "pron": "아레쿠"
+        },
+        {
+          "word": "יָמֶ֔יךָ",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 20:12",
+        "deuteronomy 4:40",
+        "deuteronomy 5:16",
+        "deuteronomy 6:2",
+        "deuteronomy 11:9",
+        "deuteronomy 17:20",
+        "deuteronomy 25:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹֽא תַאֲרִיכֻ֤ן",
+      "pron": "로 아레쿠",
+      "lemmas": [
+        "לֹא",
+        "אָרַךְ"
+      ],
+      "words": [
+        {
+          "word": "לֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תַאֲרִיכֻ֤ן",
+          "lemma": "אָרַךְ",
+          "strong": "H748",
+          "pron": "아레쿠"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 4:26",
+        "deuteronomy 30:18",
+        "ecclesiastes 8:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "אֵיךְ",
-  "pron": "에크",
+  "pron": "브에크",
   "strong": "H349",
   "posKo": "소사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "אַי",
       "strong": "H335",
-      "pron": "아에카",
+      "pron": "아엑카",
       "glossKo": "너에게 어디"
     },
     {
       "lemma": "אִי",
       "strong": "H336",
-      "pron": "",
+      "pron": "이",
       "glossKo": "아니"
     },
     {
@@ -30,7 +30,7 @@
     {
       "lemma": "אֵיכֹה",
       "strong": "H351",
-      "pron": "",
+      "pron": "에코",
       "glossKo": "어디"
     },
     {
@@ -42,16 +42,210 @@
     {
       "lemma": "הֵיךְ",
       "strong": "H1963",
-      "pron": "",
+      "pron": "헤크",
       "glossKo": "어떻게"
     }
   ],
   "defEn": "how?; how!",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 82,
   "byBook": {
+    "jeremiah": 19,
+    "samuel2": 8,
+    "isaiah": 7,
+    "deuteronomy": 5,
     "genesis": 4,
-    "psalms": 4
+    "kings2": 4,
+    "lamentations": 4,
+    "psalms": 4,
+    "songofsolomon": 4,
+    "ecclesiastes": 2,
+    "esther": 2,
+    "exodus": 2,
+    "ezekiel": 2,
+    "hosea": 2,
+    "judges": 2,
+    "obadiah": 2,
+    "chronicles2": 1,
+    "job": 1,
+    "joshua": 1,
+    "kings1": 1,
+    "micah": 1,
+    "proverbs": 1,
+    "ruth": 1,
+    "samuel1": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֵאמֹ֑ר אֵ֚יךְ",
+      "pron": "바요메르 브에크",
+      "lemmas": [
+        "אָמַר",
+        "אֵיךְ"
+      ],
+      "words": [
+        {
+          "word": "לֵאמֹ֑ר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "אֵ֚יךְ",
+          "lemma": "אֵיךְ",
+          "strong": "H349",
+          "pron": "브에크"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "deuteronomy 12:30",
+        "samuel2 6:9",
+        "kings1 12:6",
+        "chronicles2 10:6",
+        "psalms 73:11",
+        "proverbs 5:12",
+        "isaiah 14:4",
+        "jeremiah 3:19",
+        "jeremiah 48:17",
+        "ezekiel 26:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֵ֥יךְ אָמַ֖רְתָּ",
+      "pron": "브에크 바요메르",
+      "lemmas": [
+        "אֵיךְ",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "וְאֵ֥יךְ",
+          "lemma": "אֵיךְ",
+          "strong": "H349",
+          "pron": "브에크"
+        },
+        {
+          "word": "אָמַ֖רְתָּ",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 26:9",
+        "judges 16:15",
+        "samuel2 12:18",
+        "psalms 11:1",
+        "isaiah 19:11",
+        "jeremiah 2:23",
+        "jeremiah 8:8",
+        "jeremiah 48:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֣יךְ הָיְתָ֧ה",
+      "pron": "브에크 하에타",
+      "lemmas": [
+        "אֵיךְ",
+        "הָיָה"
+      ],
+      "words": [
+        {
+          "word": "אֵ֣יךְ",
+          "lemma": "אֵיךְ",
+          "strong": "H349",
+          "pron": "브에크"
+        },
+        {
+          "word": "הָיְתָ֧ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "judges 20:3",
+        "psalms 73:19",
+        "isaiah 1:21",
+        "jeremiah 50:23",
+        "jeremiah 51:41",
+        "zephaniah 2:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֚יךְ נָפְל֣וּ",
+      "pron": "브에크 바얍펠",
+      "lemmas": [
+        "אֵיךְ",
+        "נָפַל"
+      ],
+      "words": [
+        {
+          "word": "אֵ֚יךְ",
+          "lemma": "אֵיךְ",
+          "strong": "H349",
+          "pron": "브에크"
+        },
+        {
+          "word": "נָפְל֣וּ",
+          "lemma": "נָפַל",
+          "strong": "H5307",
+          "pron": "바얍펠"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ruth 3:18",
+        "samuel2 1:19",
+        "samuel2 1:25",
+        "samuel2 1:27",
+        "isaiah 14:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֣יךְ הָיְתָ֧ה לְשַׁמָּ֛ה",
+      "pron": "브에크 하에타 르샴마",
+      "lemmas": [
+        "אֵיךְ",
+        "הָיָה",
+        "שַׁמָּה"
+      ],
+      "words": [
+        {
+          "word": "אֵ֣יךְ",
+          "lemma": "אֵיךְ",
+          "strong": "H349",
+          "pron": "브에크"
+        },
+        {
+          "word": "הָיְתָ֧ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "לְשַׁמָּ֛ה",
+          "lemma": "שַׁמָּה",
+          "strong": "H8047",
+          "pron": "르샴마"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 73:19",
+        "jeremiah 50:23",
+        "jeremiah 51:41",
+        "zephaniah 2:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

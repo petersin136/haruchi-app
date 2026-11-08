@@ -1,6 +1,6 @@
 {
   "lemma": "נָגַד",
-  "pron": "학기두",
+  "pron": "힉긷",
   "strong": "H5046",
   "posKo": "동사",
   "root": null,
@@ -8,63 +8,62 @@
     {
       "lemma": "נְגַד",
       "strong": "H5047",
-      "pron": "",
+      "pron": "나겓",
       "glossKo": "흐르다(아람)"
     },
     {
       "lemma": "נֶגֶד",
       "strong": "H5048",
-      "pron": "미넥드오",
+      "pron": "케넥도",
       "glossKo": "그에게 앞에"
     },
     {
       "lemma": "נָגִיד",
       "strong": "H5057",
-      "pron": "네기딤",
+      "pron": "르나긷",
       "glossKo": "지도자"
     }
   ],
   "defEn": "front",
   "defKo": "",
-  "countOT": 56,
+  "countOT": 371,
   "byBook": {
+    "samuel1": 52,
+    "samuel2": 37,
     "genesis": 36,
-    "psalms": 20
+    "isaiah": 32,
+    "jeremiah": 28,
+    "judges": 28,
+    "kings2": 23,
+    "psalms": 20,
+    "job": 17,
+    "kings1": 15,
+    "esther": 14,
+    "deuteronomy": 9,
+    "exodus": 6,
+    "joshua": 6,
+    "ruth": 6,
+    "chronicles2": 5,
+    "ezekiel": 5,
+    "daniel": 4,
+    "ecclesiastes": 4,
+    "nehemiah": 4,
+    "chronicles1": 3,
+    "micah": 3,
+    "jonah": 2,
+    "leviticus": 2,
+    "numbers": 2,
+    "proverbs": 2,
+    "songofsolomon": 2,
+    "amos": 1,
+    "ezra": 1,
+    "hosea": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "הִגִּ֣יד כִּ֥י",
-      "pron": "학기두 키",
-      "lemmas": [
-        "נָגַד",
-        "כִּי"
-      ],
-      "words": [
-        {
-          "word": "הִגִּ֣יד",
-          "lemma": "נָגַד",
-          "strong": "H5046",
-          "pron": "학기두"
-        },
-        {
-          "word": "כִּ֥י",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 92:15",
-        "genesis 3:11",
-        "genesis 12:18",
-        "genesis 31:20"
-      ],
-      "glossKo": ""
-    },
-    {
       "hebrew": "לֹא הִגַּ֣דְתָּ",
-      "pron": "로 학기두",
+      "pron": "로 힉긷",
       "lemmas": [
         "לֹא",
         "נָגַד"
@@ -80,50 +79,103 @@
           "word": "הִגַּ֣דְתָּ",
           "lemma": "נָגַד",
           "strong": "H5046",
-          "pron": "학기두"
+          "pron": "힉긷"
         }
       ],
-      "count": 4,
+      "count": 33,
       "refs": [
         "genesis 12:18",
         "genesis 21:26",
         "genesis 24:49",
-        "genesis 31:27"
+        "genesis 31:27",
+        "leviticus 5:1",
+        "joshua 2:14",
+        "judges 13:6",
+        "judges 14:6",
+        "judges 14:9",
+        "judges 14:16",
+        "judges 16:15",
+        "samuel1 10:16"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הִגִּ֥יד לְפַרְעֹֽה",
-      "pron": "학기두 브파레오",
+      "hebrew": "הִגִּ֣יד אֶת",
+      "pron": "힉긷 에트",
       "lemmas": [
         "נָגַד",
-        "פַּרְעֹה"
+        "אֵת"
       ],
       "words": [
         {
-          "word": "הִגִּ֥יד",
+          "word": "הִגִּ֣יד",
           "lemma": "נָגַד",
           "strong": "H5046",
-          "pron": "학기두"
+          "pron": "힉긷"
         },
         {
-          "word": "לְפַרְעֹֽה",
-          "lemma": "פַּרְעֹה",
-          "strong": "H6547",
-          "pron": "브파레오"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         }
       ],
-      "count": 3,
+      "count": 30,
       "refs": [
-        "genesis 41:25",
-        "genesis 46:31",
-        "genesis 47:1"
+        "genesis 42:29",
+        "genesis 44:24",
+        "genesis 49:1",
+        "deuteronomy 4:13",
+        "deuteronomy 5:5",
+        "deuteronomy 17:9",
+        "joshua 2:14",
+        "joshua 2:20",
+        "judges 14:12",
+        "judges 14:15",
+        "judges 16:17",
+        "judges 16:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֻגֵּ֨ד הֻגַּ֤ד",
+      "pron": "힉긷 힉긷",
+      "lemmas": [
+        "נָגַד",
+        "נָגַד"
+      ],
+      "words": [
+        {
+          "word": "הֻגֵּ֨ד",
+          "lemma": "נָגַד",
+          "strong": "H5046",
+          "pron": "힉긷"
+        },
+        {
+          "word": "הֻגַּ֤ד",
+          "lemma": "נָגַד",
+          "strong": "H5046",
+          "pron": "힉긷"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "joshua 9:24",
+        "judges 14:12",
+        "judges 14:16",
+        "ruth 2:11",
+        "samuel1 10:16",
+        "samuel1 22:22",
+        "kings2 9:15",
+        "jeremiah 20:10",
+        "jeremiah 36:16",
+        "jeremiah 51:31"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "הַגִּֽידָה נָּ֣א",
-      "pron": "학기두 나",
+      "pron": "힉긷 나",
       "lemmas": [
         "נָגַד",
         "נָא"
@@ -133,7 +185,7 @@
           "word": "הַגִּֽידָה",
           "lemma": "נָגַד",
           "strong": "H5046",
-          "pron": "학기두"
+          "pron": "힉긷"
         },
         {
           "word": "נָּ֣א",
@@ -142,40 +194,58 @@
           "pron": "나"
         }
       ],
-      "count": 3,
+      "count": 16,
       "refs": [
         "genesis 24:23",
         "genesis 32:29",
-        "genesis 37:16"
+        "genesis 37:16",
+        "joshua 7:19",
+        "judges 16:6",
+        "judges 16:10",
+        "samuel1 9:18",
+        "samuel1 10:15",
+        "samuel1 23:11",
+        "samuel2 1:4",
+        "kings2 7:12",
+        "kings2 9:12"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַיַּגִּ֣ידוּ אֵ֛ת",
-      "pron": "학기두 에트",
+      "hebrew": "וַיַּגִּ֤ידוּ לֵאמֹ֔ר",
+      "pron": "힉긷 바요메르",
       "lemmas": [
         "נָגַד",
-        "אֵת"
+        "אָמַר"
       ],
       "words": [
         {
-          "word": "וַיַּגִּ֣ידוּ",
+          "word": "וַיַּגִּ֤ידוּ",
           "lemma": "נָגַד",
           "strong": "H5046",
-          "pron": "학기두"
+          "pron": "힉긷"
         },
         {
-          "word": "אֵ֛ת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
+          "word": "לֵאמֹ֔ר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
         }
       ],
-      "count": 3,
+      "count": 15,
       "refs": [
-        "genesis 42:29",
-        "genesis 44:24",
-        "genesis 49:1"
+        "genesis 45:26",
+        "judges 14:16",
+        "samuel1 24:1",
+        "samuel2 4:10",
+        "samuel2 13:4",
+        "samuel2 15:31",
+        "samuel2 19:8",
+        "samuel2 24:13",
+        "kings1 20:17",
+        "kings2 4:31",
+        "kings2 6:13",
+        "kings2 7:10"
       ],
       "glossKo": ""
     }

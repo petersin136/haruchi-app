@@ -1,6 +1,6 @@
 {
   "lemma": "פֶּתַח",
-  "pron": "피테헤",
+  "pron": "라페타흐",
   "strong": "H6607",
   "posKo": "명사",
   "root": {
@@ -12,74 +12,271 @@
     {
       "lemma": "יִפְתָּח",
       "strong": "H3316",
-      "pron": "",
+      "pron": "브입타흐",
       "glossKo": "입다"
     },
     {
       "lemma": "יִפְתַּח־אֵל",
       "strong": "H3317",
-      "pron": "",
+      "pron": "입타흐",
       "glossKo": "입다엘"
     },
     {
       "lemma": "מַפְתֵּחַ",
       "strong": "H4668",
-      "pron": "",
+      "pron": "아맙테아흐",
       "glossKo": "열쇠"
     },
     {
       "lemma": "מִפְתָּח",
       "strong": "H4669",
-      "pron": "",
+      "pron": "아맙테아흐",
       "glossKo": "트인 곳"
     },
     {
       "lemma": "נֶפְתּוֹחַ",
       "strong": "H5318",
-      "pron": "",
+      "pron": "넵토아흐",
       "glossKo": "넵도아"
     },
     {
       "lemma": "פִּתּוּחַ",
       "strong": "H6603",
-      "pron": "핏투헤하",
-      "glossKo": "그녀의 새김"
+      "pron": "핏투헤",
+      "glossKo": "새김"
     }
   ],
   "defEn": "opening; door; entrance way",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 164,
   "byBook": {
+    "ezekiel": 30,
+    "leviticus": 24,
+    "exodus": 22,
+    "numbers": 17,
     "genesis": 10,
-    "psalms": 2
+    "judges": 9,
+    "kings1": 9,
+    "proverbs": 6,
+    "jeremiah": 5,
+    "kings2": 5,
+    "chronicles2": 3,
+    "joshua": 3,
+    "samuel2": 3,
+    "chronicles1": 2,
+    "deuteronomy": 2,
+    "isaiah": 2,
+    "job": 2,
+    "micah": 2,
+    "nehemiah": 2,
+    "psalms": 2,
+    "esther": 1,
+    "hosea": 1,
+    "samuel1": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "פֶּֽתַח הָאֹ֖הֶל",
-      "pron": "피테헤 브아홀레카",
+      "hebrew": "פֶּ֖תַח אֹ֥הֶל",
+      "pron": "라페타흐 오헬",
       "lemmas": [
         "פֶּתַח",
         "אֹהֶל"
       ],
       "words": [
         {
-          "word": "פֶּֽתַח",
+          "word": "פֶּ֖תַח",
           "lemma": "פֶּתַח",
           "strong": "H6607",
-          "pron": "피테헤"
+          "pron": "라페타흐"
         },
         {
-          "word": "הָאֹ֖הֶל",
+          "word": "אֹ֥הֶל",
           "lemma": "אֹהֶל",
           "strong": "H168",
-          "pron": "브아홀레카"
+          "pron": "오헬"
         }
       ],
-      "count": 3,
+      "count": 60,
       "refs": [
         "genesis 18:1",
         "genesis 18:2",
-        "genesis 18:10"
+        "genesis 18:10",
+        "exodus 26:36",
+        "exodus 29:4",
+        "exodus 29:11",
+        "exodus 29:32",
+        "exodus 29:42",
+        "exodus 33:8",
+        "exodus 33:9",
+        "exodus 33:10",
+        "exodus 36:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פֶּ֖תַח אֹ֥הֶל מוֹעֵֽד",
+      "pron": "라페타흐 오헬 우르모아딤",
+      "lemmas": [
+        "פֶּתַח",
+        "אֹהֶל",
+        "מוֹעֵד"
+      ],
+      "words": [
+        {
+          "word": "פֶּ֖תַח",
+          "lemma": "פֶּתַח",
+          "strong": "H6607",
+          "pron": "라페타흐"
+        },
+        {
+          "word": "אֹ֥הֶל",
+          "lemma": "אֹהֶל",
+          "strong": "H168",
+          "pron": "오헬"
+        },
+        {
+          "word": "מוֹעֵֽד",
+          "lemma": "מוֹעֵד",
+          "strong": "H4150",
+          "pron": "우르모아딤"
+        }
+      ],
+      "count": 45,
+      "refs": [
+        "exodus 29:4",
+        "exodus 29:11",
+        "exodus 29:32",
+        "exodus 29:42",
+        "exodus 38:8",
+        "exodus 38:30",
+        "exodus 40:12",
+        "leviticus 1:3",
+        "leviticus 1:5",
+        "leviticus 3:2",
+        "leviticus 4:4",
+        "leviticus 4:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל פֶּ֖תַח",
+      "pron": "엘 라페타흐",
+      "lemmas": [
+        "אֵל",
+        "פֶּתַח"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "פֶּ֖תַח",
+          "lemma": "פֶּתַח",
+          "strong": "H6607",
+          "pron": "라페타흐"
+        }
+      ],
+      "count": 30,
+      "refs": [
+        "genesis 43:19",
+        "exodus 29:4",
+        "exodus 40:12",
+        "leviticus 1:3",
+        "leviticus 4:4",
+        "leviticus 8:3",
+        "leviticus 8:4",
+        "leviticus 12:6",
+        "leviticus 14:23",
+        "leviticus 14:38",
+        "leviticus 15:14",
+        "leviticus 15:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פֶּ֖תַח שַׁ֣עַר",
+      "pron": "라페타흐 브샤아르",
+      "lemmas": [
+        "פֶּתַח",
+        "שַׁעַר"
+      ],
+      "words": [
+        {
+          "word": "פֶּ֖תַח",
+          "lemma": "פֶּתַח",
+          "strong": "H6607",
+          "pron": "라페타흐"
+        },
+        {
+          "word": "שַׁ֣עַר",
+          "lemma": "שַׁעַר",
+          "strong": "H8179",
+          "pron": "브샤아르"
+        }
+      ],
+      "count": 27,
+      "refs": [
+        "numbers 4:26",
+        "joshua 8:29",
+        "joshua 20:4",
+        "judges 9:35",
+        "judges 9:40",
+        "judges 9:44",
+        "judges 18:16",
+        "judges 18:17",
+        "samuel2 10:8",
+        "samuel2 11:23",
+        "kings1 22:10",
+        "kings2 7:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל פֶּ֖תַח אֹ֥הֶל",
+      "pron": "엘 라페타흐 오헬",
+      "lemmas": [
+        "אֵל",
+        "פֶּתַח",
+        "אֹהֶל"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "פֶּ֖תַח",
+          "lemma": "פֶּתַח",
+          "strong": "H6607",
+          "pron": "라페타흐"
+        },
+        {
+          "word": "אֹ֥הֶל",
+          "lemma": "אֹהֶל",
+          "strong": "H168",
+          "pron": "오헬"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "exodus 29:4",
+        "exodus 40:12",
+        "leviticus 1:3",
+        "leviticus 4:4",
+        "leviticus 8:3",
+        "leviticus 8:4",
+        "leviticus 12:6",
+        "leviticus 14:23",
+        "leviticus 15:14",
+        "leviticus 15:29",
+        "leviticus 17:4",
+        "leviticus 17:5"
       ],
       "glossKo": ""
     }

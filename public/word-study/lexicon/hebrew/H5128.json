@@ -1,6 +1,6 @@
 {
   "lemma": "נוּעַ",
-  "pron": "야니우",
+  "pron": "나",
   "strong": "H5128",
   "posKo": "동사",
   "root": null,
@@ -8,61 +8,203 @@
     {
       "lemma": "מְנַעְנַע",
       "strong": "H4517",
-      "pron": "",
+      "pron": "우비메나안임",
       "glossKo": "삼각 손풍금"
     },
     {
       "lemma": "נֵעָה",
       "strong": "H5269",
-      "pron": "",
+      "pron": "아네아",
       "glossKo": "느아"
     },
     {
       "lemma": "נֹעָה",
       "strong": "H5270",
-      "pron": "",
+      "pron": "브노아",
       "glossKo": "노아"
     },
     {
       "lemma": "נְעִיאֵל",
       "strong": "H5272",
-      "pron": "",
+      "pron": "우네이엘",
       "glossKo": "느이엘"
     }
   ],
   "defEn": "waver",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 42,
   "byBook": {
+    "isaiah": 8,
     "psalms": 8,
-    "genesis": 2
+    "amos": 4,
+    "judges": 3,
+    "lamentations": 3,
+    "genesis": 2,
+    "job": 2,
+    "kings2": 2,
+    "samuel2": 2,
+    "daniel": 1,
+    "exodus": 1,
+    "jeremiah": 1,
+    "nahum": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "samuel1": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "ינועון יְנִיע֣וּן",
-      "pron": "야니우 야니우",
+      "hebrew": "אנועך אֲנִֽיעֲךָ֤",
+      "pron": "나 나",
       "lemmas": [
         "נוּעַ",
         "נוּעַ"
       ],
       "words": [
         {
-          "word": "ינועון",
+          "word": "אנועך",
           "lemma": "נוּעַ",
           "strong": "H5128",
-          "pron": "야니우"
+          "pron": "나"
         },
         {
-          "word": "יְנִיע֣וּן",
+          "word": "אֲנִֽיעֲךָ֤",
           "lemma": "נוּעַ",
           "strong": "H5128",
-          "pron": "야니우"
+          "pron": "나"
         }
       ],
-      "count": 4,
+      "count": 8,
       "refs": [
+        "samuel2 15:20",
         "psalms 59:15",
-        "psalms 109:10"
+        "psalms 109:10",
+        "isaiah 24:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָנ֖וּעַ עַל",
+      "pron": "나 알",
+      "lemmas": [
+        "נוּעַ",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "לָנ֖וּעַ",
+          "lemma": "נוּעַ",
+          "strong": "H5128",
+          "pron": "나"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 9:9",
+        "judges 9:11",
+        "judges 9:13",
+        "job 16:4",
+        "daniel 10:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָעָם֙ וַיָּנֻ֔עוּ",
+      "pron": "암 나",
+      "lemmas": [
+        "עַם",
+        "נוּעַ"
+      ],
+      "words": [
+        {
+          "word": "הָעָם֙",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "וַיָּנֻ֔עוּ",
+          "lemma": "נוּעַ",
+          "strong": "H5128",
+          "pron": "나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 20:18",
+        "psalms 59:11",
+        "isaiah 7:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָ֣לַכְתִּ֔י לָנ֖וּעַ",
+      "pron": "아홀레크 나",
+      "lemmas": [
+        "הָלַךְ",
+        "נוּעַ"
+      ],
+      "words": [
+        {
+          "word": "וְהָ֣לַכְתִּ֔י",
+          "lemma": "הָלַךְ",
+          "strong": "H1980",
+          "pron": "아홀레크"
+        },
+        {
+          "word": "לָנ֖וּעַ",
+          "lemma": "נוּעַ",
+          "strong": "H5128",
+          "pron": "나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 9:9",
+        "judges 9:11",
+        "judges 9:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָ֣לַכְתִּ֔י לָנ֖וּעַ עַל",
+      "pron": "아홀레크 나 알",
+      "lemmas": [
+        "הָלַךְ",
+        "נוּעַ",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "וְהָ֣לַכְתִּ֔י",
+          "lemma": "הָלַךְ",
+          "strong": "H1980",
+          "pron": "아홀레크"
+        },
+        {
+          "word": "לָנ֖וּעַ",
+          "lemma": "נוּעַ",
+          "strong": "H5128",
+          "pron": "나"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 9:9",
+        "judges 9:11",
+        "judges 9:13"
       ],
       "glossKo": ""
     }

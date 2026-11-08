@@ -1,6 +1,6 @@
 {
   "lemma": "דֶּבֶר",
-  "pron": "라데베르",
+  "pron": "바데베르",
   "strong": "H1698",
   "posKo": "명사",
   "root": {
@@ -12,45 +12,231 @@
     {
       "lemma": "דְּבוֹרָה",
       "strong": "H1682",
-      "pron": "키데보림",
+      "pron": "아데보림",
       "glossKo": "꿀벌"
     },
     {
       "lemma": "דְּבִיר",
       "strong": "H1687",
-      "pron": "데비르",
+      "pron": "브라데비르",
       "glossKo": "지성소"
     },
     {
       "lemma": "דָבַר",
       "strong": "H1696",
-      "pron": "예답베르",
+      "pron": "바예답베르",
       "glossKo": "이야기하다"
     },
     {
       "lemma": "דָּבָר",
       "strong": "H1697",
-      "pron": "딥레",
+      "pron": "우데바림",
       "glossKo": "말씀"
     },
     {
       "lemma": "דֹּבֶר",
       "strong": "H1699",
-      "pron": "",
-      "glossKo": "초장"
+      "pron": "케답람",
+      "glossKo": "그들의 초장"
     },
     {
       "lemma": "דֹּבְרָה",
       "strong": "H1702",
-      "pron": "",
+      "pron": "돕로트",
       "glossKo": "뗏목"
     }
   ],
   "defEn": "pestilence",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 49,
   "byBook": {
-    "psalms": 3
+    "jeremiah": 17,
+    "ezekiel": 12,
+    "chronicles2": 3,
+    "exodus": 3,
+    "psalms": 3,
+    "chronicles1": 2,
+    "samuel2": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "kings1": 1,
+    "leviticus": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בָּרָעָ֣ב וּבַדָּ֑בֶר",
+      "pron": "라압 바데베르",
+      "lemmas": [
+        "רָעָב",
+        "דֶּבֶר"
+      ],
+      "words": [
+        {
+          "word": "בָּרָעָ֣ב",
+          "lemma": "רָעָב",
+          "strong": "H7458",
+          "pron": "라압"
+        },
+        {
+          "word": "וּבַדָּ֑בֶר",
+          "lemma": "דֶּבֶר",
+          "strong": "H1698",
+          "pron": "바데베르"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "jeremiah 14:12",
+        "jeremiah 21:9",
+        "jeremiah 27:8",
+        "jeremiah 27:13",
+        "jeremiah 29:18",
+        "jeremiah 32:24",
+        "jeremiah 32:36",
+        "jeremiah 38:2",
+        "jeremiah 42:17",
+        "jeremiah 42:22",
+        "jeremiah 44:13",
+        "ezekiel 6:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּחֶ֖רֶב בָּרָעָ֣ב וּבַדָּ֑בֶר",
+      "pron": "아헤렙 라압 바데베르",
+      "lemmas": [
+        "חֶרֶב",
+        "רָעָב",
+        "דֶּבֶר"
+      ],
+      "words": [
+        {
+          "word": "בַּחֶ֖רֶב",
+          "lemma": "חֶרֶב",
+          "strong": "H2719",
+          "pron": "아헤렙"
+        },
+        {
+          "word": "בָּרָעָ֣ב",
+          "lemma": "רָעָב",
+          "strong": "H7458",
+          "pron": "라압"
+        },
+        {
+          "word": "וּבַדָּ֑בֶר",
+          "lemma": "דֶּבֶר",
+          "strong": "H1698",
+          "pron": "바데베르"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "jeremiah 14:12",
+        "jeremiah 21:9",
+        "jeremiah 27:8",
+        "jeremiah 27:13",
+        "jeremiah 29:18",
+        "jeremiah 32:24",
+        "jeremiah 32:36",
+        "jeremiah 38:2",
+        "jeremiah 42:17",
+        "jeremiah 42:22",
+        "jeremiah 44:13",
+        "ezekiel 6:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבַדֶּ֖בֶר תָּמ֑וּתוּ",
+      "pron": "바데베르 모트",
+      "lemmas": [
+        "דֶּבֶר",
+        "מוּת"
+      ],
+      "words": [
+        {
+          "word": "וּבַדֶּ֖בֶר",
+          "lemma": "דֶּבֶר",
+          "strong": "H1698",
+          "pron": "바데베르"
+        },
+        {
+          "word": "תָּמ֑וּתוּ",
+          "lemma": "מוּת",
+          "strong": "H4191",
+          "pron": "모트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 42:22",
+        "ezekiel 5:12",
+        "ezekiel 6:12",
+        "ezekiel 33:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְשִׁלַּ֤חְתִּי דֶ֨בֶר֙",
+      "pron": "이셸라흐 바데베르",
+      "lemmas": [
+        "שָׁלַח",
+        "דֶּבֶר"
+      ],
+      "words": [
+        {
+          "word": "וְשִׁלַּ֤חְתִּי",
+          "lemma": "שָׁלַח",
+          "strong": "H7971",
+          "pron": "이셸라흐"
+        },
+        {
+          "word": "דֶ֨בֶר֙",
+          "lemma": "דֶּבֶר",
+          "strong": "H1698",
+          "pron": "바데베르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 26:25",
+        "chronicles2 7:13",
+        "ezekiel 28:23",
+        "amos 4:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת הַדָּ֑בֶר",
+      "pron": "에트 바데베르",
+      "lemmas": [
+        "אֵת",
+        "דֶּבֶר"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַדָּ֑בֶר",
+          "lemma": "דֶּבֶר",
+          "strong": "H1698",
+          "pron": "바데베르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 28:21",
+        "jeremiah 24:10",
+        "jeremiah 29:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

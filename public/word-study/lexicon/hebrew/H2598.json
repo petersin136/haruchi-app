@@ -12,7 +12,7 @@
     {
       "lemma": "חֵךְ",
       "strong": "H2441",
-      "pron": "르힉키위",
+      "pron": "힉키",
       "glossKo": "나의 입천장"
     },
     {
@@ -24,33 +24,68 @@
     {
       "lemma": "חָנִיךְ",
       "strong": "H2593",
-      "pron": "하니카이브",
+      "pron": "하니카으브",
       "glossKo": "그의 훈련된"
     },
     {
       "lemma": "חָנַךְ",
       "strong": "H2596",
-      "pron": "",
-      "glossKo": "헌신하다"
+      "pron": "하나코",
+      "glossKo": "그에게 헌신하다"
     },
     {
       "lemma": "חֲנֻכָּא",
       "strong": "H2597",
-      "pron": "",
+      "pron": "하눅카트",
       "glossKo": "봉헌(아람)"
     },
     {
       "lemma": "חָנַק",
       "strong": "H2614",
-      "pron": "",
+      "pron": "바예하나크",
       "glossKo": "목을 매다"
     }
   ],
   "defEn": "initiation; consecration",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 8,
   "byBook": {
+    "numbers": 4,
+    "nehemiah": 2,
+    "chronicles2": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "חֲנֻכַּ֣ת הַמִּזְבֵּ֔חַ",
+      "pron": "하눅카트 밋베아흐",
+      "lemmas": [
+        "חֲנֻכָּה",
+        "מִזְבֵּחַ"
+      ],
+      "words": [
+        {
+          "word": "חֲנֻכַּ֣ת",
+          "lemma": "חֲנֻכָּה",
+          "strong": "H2598",
+          "pron": "하눅카트"
+        },
+        {
+          "word": "הַמִּזְבֵּ֔חַ",
+          "lemma": "מִזְבֵּחַ",
+          "strong": "H4196",
+          "pron": "밋베아흐"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 7:10",
+        "numbers 7:11",
+        "numbers 7:84",
+        "numbers 7:88",
+        "chronicles2 7:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

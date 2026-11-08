@@ -1,8 +1,8 @@
 {
   "lemma": "נֹעָה",
-  "pron": "노아",
+  "pron": "브노아",
   "strong": "H5270",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נוּעַ",
     "strong": "H5128",
@@ -12,31 +12,165 @@
     {
       "lemma": "מְנַעְנַע",
       "strong": "H4517",
-      "pron": "",
+      "pron": "우비메나안임",
       "glossKo": "삼각 손풍금"
     },
     {
       "lemma": "נוּעַ",
       "strong": "H5128",
-      "pron": "야니우",
+      "pron": "나",
       "glossKo": "흔들다"
     },
     {
       "lemma": "נֵעָה",
       "strong": "H5269",
-      "pron": "",
+      "pron": "아네아",
       "glossKo": "느아"
     },
     {
       "lemma": "נְעִיאֵל",
       "strong": "H5272",
-      "pron": "",
+      "pron": "우네이엘",
       "glossKo": "느이엘"
     }
   ],
   "defEn": "Noah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "numbers": 3,
+    "joshua": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְנֹעָ֔ה חָגְלָ֥ה",
+      "pron": "브노아 학라",
+      "lemmas": [
+        "נֹעָה",
+        "חׇגְלָה"
+      ],
+      "words": [
+        {
+          "word": "וְנֹעָ֔ה",
+          "lemma": "נֹעָה",
+          "strong": "H5270",
+          "pron": "브노아"
+        },
+        {
+          "word": "חָגְלָ֥ה",
+          "lemma": "חׇגְלָה",
+          "strong": "H2295",
+          "pron": "학라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 26:33",
+        "numbers 27:1",
+        "joshua 17:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנֹעָ֔ה חָגְלָ֥ה מִלְכָּ֖ה",
+      "pron": "브노아 학라 밀카",
+      "lemmas": [
+        "נֹעָה",
+        "חׇגְלָה",
+        "מִלְכָּה"
+      ],
+      "words": [
+        {
+          "word": "וְנֹעָ֔ה",
+          "lemma": "נֹעָה",
+          "strong": "H5270",
+          "pron": "브노아"
+        },
+        {
+          "word": "חָגְלָ֥ה",
+          "lemma": "חׇגְלָה",
+          "strong": "H2295",
+          "pron": "학라"
+        },
+        {
+          "word": "מִלְכָּ֖ה",
+          "lemma": "מִלְכָּה",
+          "strong": "H4435",
+          "pron": "밀카"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 26:33",
+        "numbers 27:1",
+        "joshua 17:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַחְלָ֣ה וְנֹעָ֔ה",
+      "pron": "마헬라 브노아",
+      "lemmas": [
+        "מַחְלָה",
+        "נֹעָה"
+      ],
+      "words": [
+        {
+          "word": "מַחְלָ֣ה",
+          "lemma": "מַחְלָה",
+          "strong": "H4244",
+          "pron": "마헬라"
+        },
+        {
+          "word": "וְנֹעָ֔ה",
+          "lemma": "נֹעָה",
+          "strong": "H5270",
+          "pron": "브노아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 26:33",
+        "numbers 27:1",
+        "joshua 17:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַחְלָ֣ה וְנֹעָ֔ה חָגְלָ֥ה",
+      "pron": "마헬라 브노아 학라",
+      "lemmas": [
+        "מַחְלָה",
+        "נֹעָה",
+        "חׇגְלָה"
+      ],
+      "words": [
+        {
+          "word": "מַחְלָ֣ה",
+          "lemma": "מַחְלָה",
+          "strong": "H4244",
+          "pron": "마헬라"
+        },
+        {
+          "word": "וְנֹעָ֔ה",
+          "lemma": "נֹעָה",
+          "strong": "H5270",
+          "pron": "브노아"
+        },
+        {
+          "word": "חָגְלָ֥ה",
+          "lemma": "חׇגְלָה",
+          "strong": "H2295",
+          "pron": "학라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 26:33",
+        "numbers 27:1",
+        "joshua 17:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

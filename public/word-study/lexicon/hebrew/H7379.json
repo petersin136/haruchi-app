@@ -1,6 +1,6 @@
 {
   "lemma": "רִיב",
-  "pron": "메리베",
+  "pron": "립",
   "strong": "H7379",
   "posKo": "명사",
   "root": {
@@ -12,51 +12,169 @@
     {
       "lemma": "יָרֵב",
       "strong": "H3377",
-      "pron": "",
+      "pron": "야렙",
       "glossKo": "야렙"
     },
     {
       "lemma": "יְרֻבַּעַל",
       "strong": "H3378",
-      "pron": "",
+      "pron": "예룹바알",
       "glossKo": "여룹바알"
     },
     {
       "lemma": "יָרׇבְעָם",
       "strong": "H3379",
-      "pron": "",
+      "pron": "브야랍암",
       "glossKo": "여로보암"
     },
     {
       "lemma": "יְרֻבֶּשֶׁת",
       "strong": "H3380",
-      "pron": "",
+      "pron": "예룹베셰트",
       "glossKo": "여룹베셋"
     },
     {
       "lemma": "יָרִיב",
       "strong": "H3401",
-      "pron": "예리바위",
+      "pron": "예리바이",
       "glossKo": "나의 다투는 자"
     },
     {
       "lemma": "מְרִיב בַּעַל",
       "strong": "H4807",
-      "pron": "",
+      "pron": "메립",
       "glossKo": "므립바알"
     }
   ],
   "defEn": "contest",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 61,
   "byBook": {
+    "proverbs": 12,
     "psalms": 7,
-    "genesis": 1
+    "jeremiah": 6,
+    "deuteronomy": 5,
+    "isaiah": 5,
+    "exodus": 4,
+    "job": 4,
+    "micah": 3,
+    "samuel2": 3,
+    "chronicles2": 2,
+    "hosea": 2,
+    "lamentations": 2,
+    "samuel1": 2,
+    "ezekiel": 1,
+    "genesis": 1,
+    "habakkuk": 1,
+    "judges": 1
   },
   "phrases": [
     {
+      "hebrew": "אֶת רִיבִֽי",
+      "pron": "에트 립",
+      "lemmas": [
+        "אֵת",
+        "רִיב"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "רִיבִֽי",
+          "lemma": "רִיב",
+          "strong": "H7379",
+          "pron": "립"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "samuel1 24:15",
+        "samuel1 25:39",
+        "proverbs 23:11",
+        "jeremiah 11:20",
+        "jeremiah 20:12",
+        "jeremiah 50:34",
+        "jeremiah 51:36",
+        "micah 6:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽיְהִי רִ֗יב",
+      "pron": "하에타 립",
+      "lemmas": [
+        "הָיָה",
+        "רִיב"
+      ],
+      "words": [
+        {
+          "word": "וַֽיְהִי",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "רִ֗יב",
+          "lemma": "רִיב",
+          "strong": "H7379",
+          "pron": "립"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 13:7",
+        "deuteronomy 25:1",
+        "samuel2 15:2",
+        "samuel2 15:4",
+        "habakkuk 1:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיָרֵ֣ב אֶת רִיבִ֔י",
+      "pron": "바야리부 에트 립",
+      "lemmas": [
+        "רִיב",
+        "אֵת",
+        "רִיב"
+      ],
+      "words": [
+        {
+          "word": "וְיָרֵ֣ב",
+          "lemma": "רִיב",
+          "strong": "H7378",
+          "pron": "바야리부"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "רִיבִ֔י",
+          "lemma": "רִיב",
+          "strong": "H7379",
+          "pron": "립"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 24:15",
+        "samuel1 25:39",
+        "proverbs 23:11",
+        "jeremiah 50:34",
+        "jeremiah 51:36"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וְרִ֘יבָ֤ה רִיבִ֗י",
-      "pron": "리바 메리베",
+      "pron": "바야리부 립",
       "lemmas": [
         "רִיב",
         "רִיב"
@@ -66,20 +184,52 @@
           "word": "וְרִ֘יבָ֤ה",
           "lemma": "רִיב",
           "strong": "H7378",
-          "pron": "리바"
+          "pron": "바야리부"
         },
         {
           "word": "רִיבִ֗י",
           "lemma": "רִיב",
           "strong": "H7379",
-          "pron": "메리베"
+          "pron": "립"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
         "psalms 43:1",
         "psalms 74:22",
-        "psalms 119:154"
+        "psalms 119:154",
+        "proverbs 22:23",
+        "micah 7:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רִ֤יב לַֽיהוָה֙",
+      "pron": "립 여호와",
+      "lemmas": [
+        "רִיב",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "רִ֤יב",
+          "lemma": "רִיב",
+          "strong": "H7379",
+          "pron": "립"
+        },
+        {
+          "word": "לַֽיהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "jeremiah 25:31",
+        "hosea 4:1",
+        "hosea 12:2",
+        "micah 6:2"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "אָבַד",
-  "pron": "토벧",
+  "pron": "압다",
   "strong": "H6",
   "posKo": "동사",
   "root": null,
@@ -8,74 +8,241 @@
     {
       "lemma": "אֲבַד",
       "strong": "H7",
-      "pron": "",
+      "pron": "예바두",
       "glossKo": "멸망(아람)"
     },
     {
       "lemma": "אֹבֵד",
       "strong": "H8",
-      "pron": "",
+      "pron": "오벧",
       "glossKo": "멸망하는 자"
     },
     {
       "lemma": "אֲבֵדָה",
       "strong": "H9",
-      "pron": "",
+      "pron": "아베다",
       "glossKo": "잃은 것"
     },
     {
       "lemma": "אֲבַדּוֹן",
       "strong": "H11",
-      "pron": "바아받돈",
+      "pron": "라아받돈",
       "glossKo": "멸망"
     },
     {
       "lemma": "אַבְדָן",
       "strong": "H12",
-      "pron": "",
+      "pron": "브압단",
       "glossKo": "멸망"
     },
     {
       "lemma": "אׇבְדַן",
       "strong": "H13",
-      "pron": "",
+      "pron": "브압단",
       "glossKo": "멸망"
     }
   ],
   "defEn": "wander; lose",
   "defKo": "",
-  "countOT": 26,
+  "countOT": 185,
   "byBook": {
-    "psalms": 26
+    "jeremiah": 27,
+    "psalms": 26,
+    "deuteronomy": 24,
+    "job": 15,
+    "ezekiel": 14,
+    "esther": 13,
+    "proverbs": 10,
+    "numbers": 8,
+    "isaiah": 7,
+    "kings2": 7,
+    "ecclesiastes": 6,
+    "jonah": 4,
+    "amos": 3,
+    "joshua": 3,
+    "micah": 3,
+    "lamentations": 2,
+    "leviticus": 2,
+    "obadiah": 2,
+    "samuel1": 2,
+    "zephaniah": 2,
+    "exodus": 1,
+    "joel": 1,
+    "judges": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "רְשָׁעִ֣ים תֹּאבֵֽד",
-      "pron": "레샤임 토벧",
+      "hebrew": "וְהַֽאֲבַדְתִּ֛י אֶת",
+      "pron": "압다 에트",
       "lemmas": [
-        "רָשָׁע",
+        "אָבַד",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְהַֽאֲבַדְתִּ֛י",
+          "lemma": "אָבַד",
+          "strong": "H6",
+          "pron": "압다"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "leviticus 23:30",
+        "numbers 33:52",
+        "deuteronomy 7:24",
+        "deuteronomy 12:2",
+        "deuteronomy 12:3",
+        "deuteronomy 28:51",
+        "deuteronomy 28:63",
+        "kings2 10:19",
+        "kings2 11:1",
+        "esther 3:13",
+        "esther 8:5",
+        "esther 8:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָבֹ֣ד תֹּאבֵדוּן֮",
+      "pron": "압다 압다",
+      "lemmas": [
+        "אָבַד",
         "אָבַד"
       ],
       "words": [
         {
-          "word": "רְשָׁעִ֣ים",
-          "lemma": "רָשָׁע",
-          "strong": "H7563",
-          "pron": "레샤임"
-        },
-        {
-          "word": "תֹּאבֵֽד",
+          "word": "אָבֹ֣ד",
           "lemma": "אָבַד",
           "strong": "H6",
-          "pron": "토벧"
+          "pron": "압다"
+        },
+        {
+          "word": "תֹּאבֵדוּן֮",
+          "lemma": "אָבַד",
+          "strong": "H6",
+          "pron": "압다"
         }
       ],
-      "count": 4,
+      "count": 12,
       "refs": [
-        "psalms 1:6",
-        "psalms 37:20",
-        "psalms 112:10",
-        "psalms 119:95"
+        "deuteronomy 4:26",
+        "deuteronomy 8:19",
+        "deuteronomy 12:2",
+        "deuteronomy 30:18",
+        "esther 4:16",
+        "jeremiah 6:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאִ֨בַּדְתֶּ֔ם אֵ֖ת כָּל",
+      "pron": "압다 에트 칼",
+      "lemmas": [
+        "אָבַד",
+        "אֵת",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "וְאִ֨בַּדְתֶּ֔ם",
+          "lemma": "אָבַד",
+          "strong": "H6",
+          "pron": "압다"
+        },
+        {
+          "word": "אֵ֖ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "numbers 33:52",
+        "deuteronomy 12:2",
+        "kings2 11:1",
+        "esther 3:13",
+        "esther 8:11",
+        "ezekiel 32:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאָבַ֖ד כָּל",
+      "pron": "압다 칼",
+      "lemmas": [
+        "אָבַד",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "וְאָבַ֖ד",
+          "lemma": "אָבַד",
+          "strong": "H6",
+          "pron": "압다"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 17:12",
+        "judges 5:31",
+        "kings2 9:8",
+        "psalms 143:12",
+        "isaiah 26:14",
+        "ezekiel 12:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֥י אָבֹ֖ד",
+      "pron": "키 압다",
+      "lemmas": [
+        "כִּי",
+        "אָבַד"
+      ],
+      "words": [
+        {
+          "word": "כִּ֥י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "אָבֹ֖ד",
+          "lemma": "אָבַד",
+          "strong": "H6",
+          "pron": "압다"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 10:7",
+        "deuteronomy 4:26",
+        "deuteronomy 8:19",
+        "deuteronomy 30:18",
+        "kings2 13:7",
+        "joel 1:11"
       ],
       "glossKo": ""
     }

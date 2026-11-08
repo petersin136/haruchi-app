@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁכַם",
-  "pron": "마셱키메",
+  "pron": "브히셱캄템",
   "strong": "H7925",
   "posKo": "동사",
   "root": {
@@ -24,86 +24,204 @@
     {
       "lemma": "שֶׁכֶם",
       "strong": "H7928",
-      "pron": "",
+      "pron": "브셰켐",
       "glossKo": "세겜"
     },
     {
       "lemma": "שִׁכְמָה",
       "strong": "H7929",
-      "pron": "",
-      "glossKo": "어깨"
+      "pron": "밋시케마",
+      "glossKo": "그녀의 어깨"
     }
   ],
   "defEn": "load up; start early in the morning",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 65,
   "byBook": {
+    "jeremiah": 11,
+    "samuel1": 10,
     "genesis": 8,
-    "psalms": 1
+    "judges": 8,
+    "joshua": 6,
+    "exodus": 5,
+    "chronicles2": 3,
+    "kings2": 3,
+    "hosea": 2,
+    "isaiah": 2,
+    "job": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "psalms": 1,
+    "samuel2": 1,
+    "songofsolomon": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "וַיַּשְׁכֵּ֥ם אַבְרָהָ֖ם",
-      "pron": "마셱키메 아브라함",
+      "hebrew": "וַיַּשְׁכִּ֣ימוּ בַבֹּ֔קֶר",
+      "pron": "브히셱캄템 보케르",
       "lemmas": [
         "שָׁכַם",
-        "אַבְרָהָם"
-      ],
-      "words": [
-        {
-          "word": "וַיַּשְׁכֵּ֥ם",
-          "lemma": "שָׁכַם",
-          "strong": "H7925",
-          "pron": "마셱키메"
-        },
-        {
-          "word": "אַבְרָהָ֖ם",
-          "lemma": "אַבְרָהָם",
-          "strong": "H85",
-          "pron": "아브라함"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 19:27",
-        "genesis 21:14",
-        "genesis 22:3"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיַּשְׁכֵּ֥ם אַבְרָהָ֖ם בַּבֹּ֑קֶר",
-      "pron": "마셱키메 아브라함 보케르",
-      "lemmas": [
-        "שָׁכַם",
-        "אַבְרָהָם",
         "בֹּקֶר"
       ],
       "words": [
         {
-          "word": "וַיַּשְׁכֵּ֥ם",
+          "word": "וַיַּשְׁכִּ֣ימוּ",
           "lemma": "שָׁכַם",
           "strong": "H7925",
-          "pron": "마셱키메"
+          "pron": "브히셱캄템"
         },
         {
-          "word": "אַבְרָהָ֖ם",
-          "lemma": "אַבְרָהָם",
-          "strong": "H85",
-          "pron": "아브라함"
-        },
-        {
-          "word": "בַּבֹּ֑קֶר",
+          "word": "בַבֹּ֔קֶר",
           "lemma": "בֹּקֶר",
           "strong": "H1242",
           "pron": "보케르"
         }
       ],
-      "count": 3,
+      "count": 17,
       "refs": [
-        "genesis 19:27",
-        "genesis 21:14",
-        "genesis 22:3"
+        "genesis 26:31",
+        "exodus 8:20",
+        "exodus 9:13",
+        "exodus 24:4",
+        "numbers 14:40",
+        "judges 19:5",
+        "judges 19:8",
+        "samuel1 1:19",
+        "samuel1 5:4",
+        "samuel1 29:10",
+        "kings2 3:22",
+        "kings2 19:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשְׁכֵּ֣ם וְשָׁל֑וֹחַ",
+      "pron": "브히셱캄템 이셸라흐",
+      "lemmas": [
+        "שָׁכַם",
+        "שָׁלַח"
+      ],
+      "words": [
+        {
+          "word": "הַשְׁכֵּ֣ם",
+          "lemma": "שָׁכַם",
+          "strong": "H7925",
+          "pron": "브히셱캄템"
+        },
+        {
+          "word": "וְשָׁל֑וֹחַ",
+          "lemma": "שָׁלַח",
+          "strong": "H7971",
+          "pron": "이셸라흐"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "chronicles2 36:15",
+        "jeremiah 7:25",
+        "jeremiah 25:4",
+        "jeremiah 26:5",
+        "jeremiah 29:19",
+        "jeremiah 35:15",
+        "jeremiah 44:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲלֵיכֶ֜ם הַשְׁכֵּ֤ם",
+      "pron": "엘 브히셱캄템",
+      "lemmas": [
+        "אֵל",
+        "שָׁכַם"
+      ],
+      "words": [
+        {
+          "word": "אֲלֵיכֶ֜ם",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "הַשְׁכֵּ֤ם",
+          "lemma": "שָׁכַם",
+          "strong": "H7925",
+          "pron": "브히셱캄템"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 7:13",
+        "jeremiah 25:3",
+        "jeremiah 26:5",
+        "jeremiah 35:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַנְּבִאִ֛ים הַשְׁכֵּ֥ם",
+      "pron": "나비 브히셱캄템",
+      "lemmas": [
+        "נָבִיא",
+        "שָׁכַם"
+      ],
+      "words": [
+        {
+          "word": "הַנְּבִאִ֛ים",
+          "lemma": "נָבִיא",
+          "strong": "H5030",
+          "pron": "나비"
+        },
+        {
+          "word": "הַשְׁכֵּ֥ם",
+          "lemma": "שָׁכַם",
+          "strong": "H7925",
+          "pron": "브히셱캄템"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 25:4",
+        "jeremiah 29:19",
+        "jeremiah 35:15",
+        "jeremiah 44:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַנְּבִאִ֛ים הַשְׁכֵּ֥ם וְשָׁלֹ֖חַ",
+      "pron": "나비 브히셱캄템 이셸라흐",
+      "lemmas": [
+        "נָבִיא",
+        "שָׁכַם",
+        "שָׁלַח"
+      ],
+      "words": [
+        {
+          "word": "הַנְּבִאִ֛ים",
+          "lemma": "נָבִיא",
+          "strong": "H5030",
+          "pron": "나비"
+        },
+        {
+          "word": "הַשְׁכֵּ֥ם",
+          "lemma": "שָׁכַם",
+          "strong": "H7925",
+          "pron": "브히셱캄템"
+        },
+        {
+          "word": "וְשָׁלֹ֖חַ",
+          "lemma": "שָׁלַח",
+          "strong": "H7971",
+          "pron": "이셸라흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 25:4",
+        "jeremiah 29:19",
+        "jeremiah 35:15",
+        "jeremiah 44:4"
       ],
       "glossKo": ""
     }

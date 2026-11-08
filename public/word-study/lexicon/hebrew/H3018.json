@@ -1,6 +1,6 @@
 {
   "lemma": "יְגִיעַ",
-  "pron": "비위기아므",
+  "pron": "예기아",
   "strong": "H3018",
   "posKo": "명사",
   "root": {
@@ -12,34 +12,104 @@
     {
       "lemma": "יָגִיעַ",
       "strong": "H3019",
-      "pron": "",
+      "pron": "예기에",
       "glossKo": "지친"
     },
     {
       "lemma": "יָגַע",
       "strong": "H3021",
-      "pron": "야가엣티",
+      "pron": "테악가",
       "glossKo": "수고하다"
     },
     {
       "lemma": "יָגָע",
       "strong": "H3022",
-      "pron": "",
+      "pron": "야가",
       "glossKo": "수고의 산물"
     },
     {
       "lemma": "יָגֵעַ",
       "strong": "H3023",
-      "pron": "",
+      "pron": "브야게아",
       "glossKo": "지친"
     }
   ],
   "defEn": "toil; work; produce; property",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 16,
   "byBook": {
+    "job": 3,
     "psalms": 3,
-    "genesis": 1
+    "isaiah": 2,
+    "jeremiah": 2,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "genesis": 1,
+    "haggai": 1,
+    "hosea": 1,
+    "nehemiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְכָל יְגִ֣יעֲךָ֔",
+      "pron": "칼 예기아",
+      "lemmas": [
+        "כֹּל",
+        "יְגִיעַ"
+      ],
+      "words": [
+        {
+          "word": "וְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "יְגִ֣יעֲךָ֔",
+          "lemma": "יְגִיעַ",
+          "strong": "H3018",
+          "pron": "예기아"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 28:33",
+        "jeremiah 20:5",
+        "ezekiel 23:29",
+        "hosea 12:8",
+        "haggai 1:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְגִ֧יעַ כַּפַּ֛י",
+      "pron": "예기아 르캅",
+      "lemmas": [
+        "יְגִיעַ",
+        "כַּף"
+      ],
+      "words": [
+        {
+          "word": "יְגִ֧יעַ",
+          "lemma": "יְגִיעַ",
+          "strong": "H3018",
+          "pron": "예기아"
+        },
+        {
+          "word": "כַּפַּ֛י",
+          "lemma": "כַּף",
+          "strong": "H3709",
+          "pron": "르캅"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 31:42",
+        "job 10:3",
+        "psalms 128:2",
+        "haggai 1:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

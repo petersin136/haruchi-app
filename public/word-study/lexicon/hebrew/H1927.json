@@ -18,15 +18,150 @@
     {
       "lemma": "הָדָר",
       "strong": "H1926",
-      "pron": "브하다르",
+      "pron": "하다르",
       "glossKo": "영광"
     }
   ],
   "defEn": "decoration",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 5,
   "byBook": {
-    "psalms": 2
+    "psalms": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּהַדְרַת קֹֽדֶשׁ",
+      "pron": "브핟라트 코데쉬",
+      "lemmas": [
+        "הֲדָרָה",
+        "קֹדֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "בְּהַדְרַת",
+          "lemma": "הֲדָרָה",
+          "strong": "H1927",
+          "pron": "브핟라트"
+        },
+        {
+          "word": "קֹֽדֶשׁ",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles1 16:29",
+        "chronicles2 20:21",
+        "psalms 29:2",
+        "psalms 96:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִשְׁתַּחֲו֥וּ לַיהוָ֖ה בְּהַדְרַת",
+      "pron": "바이솃타후 여호와 브핟라트",
+      "lemmas": [
+        "שָׁחָה",
+        "יְהֹוָה",
+        "הֲדָרָה"
+      ],
+      "words": [
+        {
+          "word": "הִשְׁתַּחֲו֥וּ",
+          "lemma": "שָׁחָה",
+          "strong": "H7812",
+          "pron": "바이솃타후"
+        },
+        {
+          "word": "לַיהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "בְּהַדְרַת",
+          "lemma": "הֲדָרָה",
+          "strong": "H1927",
+          "pron": "브핟라트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 16:29",
+        "psalms 29:2",
+        "psalms 96:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַיהוָ֖ה בְּהַדְרַת",
+      "pron": "여호와 브핟라트",
+      "lemmas": [
+        "יְהֹוָה",
+        "הֲדָרָה"
+      ],
+      "words": [
+        {
+          "word": "לַיהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "בְּהַדְרַת",
+          "lemma": "הֲדָרָה",
+          "strong": "H1927",
+          "pron": "브핟라트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 16:29",
+        "psalms 29:2",
+        "psalms 96:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַיהוָ֖ה בְּהַדְרַת קֹֽדֶשׁ",
+      "pron": "여호와 브핟라트 코데쉬",
+      "lemmas": [
+        "יְהֹוָה",
+        "הֲדָרָה",
+        "קֹדֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "לַיהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "בְּהַדְרַת",
+          "lemma": "הֲדָרָה",
+          "strong": "H1927",
+          "pron": "브핟라트"
+        },
+        {
+          "word": "קֹֽדֶשׁ",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 16:29",
+        "psalms 29:2",
+        "psalms 96:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

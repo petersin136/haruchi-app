@@ -1,6 +1,6 @@
 {
   "lemma": "אֲחֻזָּה",
-  "pron": "바아훗자트카",
+  "pron": "라아훗자트",
   "strong": "H272",
   "posKo": "명사",
   "root": {
@@ -12,31 +12,31 @@
     {
       "lemma": "אָחַז",
       "strong": "H270",
-      "pron": "아하자타므",
-      "glossKo": "그들에게 잡다"
+      "pron": "네에핫",
+      "glossKo": "잡다"
     },
     {
       "lemma": "אָחָז",
       "strong": "H271",
-      "pron": "",
+      "pron": "아핫",
       "glossKo": "아하스"
     },
     {
       "lemma": "אַחְזַי",
       "strong": "H273",
-      "pron": "",
+      "pron": "아헤자이",
       "glossKo": "아하시야"
     },
     {
       "lemma": "אֲחַזְיָה",
       "strong": "H274",
-      "pron": "",
+      "pron": "아핫아후",
       "glossKo": "아하스(왕)"
     },
     {
       "lemma": "אֲחֻזָּם",
       "strong": "H275",
-      "pron": "",
+      "pron": "아훗잠",
       "glossKo": "아하시야(왕)"
     },
     {
@@ -48,15 +48,123 @@
   ],
   "defEn": "seized; possession",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 66,
   "byBook": {
+    "leviticus": 20,
+    "ezekiel": 15,
     "genesis": 9,
+    "numbers": 9,
+    "joshua": 6,
+    "chronicles1": 2,
+    "chronicles2": 2,
+    "deuteronomy": 1,
+    "nehemiah": 1,
     "psalms": 1
   },
   "phrases": [
     {
+      "hebrew": "אֲחֻזָּתָ֖ם עָרִ֣ים",
+      "pron": "라아훗자트 이르",
+      "lemmas": [
+        "אֲחֻזָּה",
+        "עִיר"
+      ],
+      "words": [
+        {
+          "word": "אֲחֻזָּתָ֖ם",
+          "lemma": "אֲחֻזָּה",
+          "strong": "H272",
+          "pron": "라아훗자트"
+        },
+        {
+          "word": "עָרִ֣ים",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "numbers 35:2",
+        "chronicles1 9:2",
+        "chronicles2 31:1",
+        "nehemiah 11:3",
+        "ezekiel 45:6",
+        "ezekiel 45:7",
+        "ezekiel 48:20",
+        "ezekiel 48:21",
+        "ezekiel 48:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּאֶ֣רֶץ אֲחֻזָּתָ֔ם",
+      "pron": "하아레츠 라아훗자트",
+      "lemmas": [
+        "אֶרֶץ",
+        "אֲחֻזָּה"
+      ],
+      "words": [
+        {
+          "word": "בְּאֶ֣רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "אֲחֻזָּתָ֔ם",
+          "lemma": "אֲחֻזָּה",
+          "strong": "H272",
+          "pron": "라아훗자트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 36:43",
+        "leviticus 14:34",
+        "leviticus 25:24",
+        "numbers 35:28",
+        "joshua 22:4",
+        "joshua 22:9",
+        "joshua 22:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּנ֨וּ אֲחֻזַּת",
+      "pron": "바잇텐 라아훗자트",
+      "lemmas": [
+        "נָתַן",
+        "אֲחֻזָּה"
+      ],
+      "words": [
+        {
+          "word": "תְּנ֨וּ",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "אֲחֻזַּת",
+          "lemma": "אֲחֻזָּה",
+          "strong": "H272",
+          "pron": "라아훗자트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 23:4",
+        "genesis 47:11",
+        "leviticus 14:34",
+        "numbers 27:4",
+        "numbers 27:7",
+        "numbers 35:8"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "לַאֲחֻזַּת קָֽבֶר",
-      "pron": "바아훗자트카 케베르",
+      "pron": "라아훗자트 케베르",
       "lemmas": [
         "אֲחֻזָּה",
         "קֶבֶר"
@@ -66,7 +174,7 @@
           "word": "לַאֲחֻזַּת",
           "lemma": "אֲחֻזָּה",
           "strong": "H272",
-          "pron": "바아훗자트카"
+          "pron": "라아훗자트"
         },
         {
           "word": "קָֽבֶר",
@@ -82,6 +190,36 @@
         "genesis 23:20",
         "genesis 49:30",
         "genesis 50:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל אֲחֻזָּת֔וֹ",
+      "pron": "엘 라아훗자트",
+      "lemmas": [
+        "אֵל",
+        "אֲחֻזָּה"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "אֲחֻזָּת֔וֹ",
+          "lemma": "אֲחֻזָּה",
+          "strong": "H272",
+          "pron": "라아훗자트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 25:10",
+        "leviticus 25:13",
+        "leviticus 25:41",
+        "ezekiel 48:20"
       ],
       "glossKo": ""
     }

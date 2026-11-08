@@ -1,6 +1,6 @@
 {
   "lemma": "אוֹר",
-  "pron": "하이라",
+  "pron": "르하이르",
   "strong": "H215",
   "posKo": "동사",
   "root": null,
@@ -14,39 +14,52 @@
     {
       "lemma": "אוּר",
       "strong": "H217",
-      "pron": "",
+      "pron": "바우림",
       "glossKo": "불꽃"
     },
     {
       "lemma": "יָאִיר",
       "strong": "H2971",
-      "pron": "",
+      "pron": "브야이르",
       "glossKo": "야일"
     },
     {
       "lemma": "מָאוֹר",
       "strong": "H3974",
-      "pron": "마오르",
+      "pron": "메오로트",
       "glossKo": "광명체"
     },
     {
       "lemma": "מְאוּרָה",
       "strong": "H3975",
-      "pron": "",
+      "pron": "메우라트",
       "glossKo": "밝혀진 곳"
     }
   ],
   "defEn": "be; make; luminous",
   "defKo": "",
-  "countOT": 19,
+  "countOT": 43,
   "byBook": {
     "psalms": 16,
-    "genesis": 3
+    "exodus": 3,
+    "genesis": 3,
+    "isaiah": 3,
+    "samuel1": 3,
+    "ezekiel": 2,
+    "job": 2,
+    "nehemiah": 2,
+    "numbers": 2,
+    "proverbs": 2,
+    "daniel": 1,
+    "ecclesiastes": 1,
+    "ezra": 1,
+    "malachi": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
       "hebrew": "וְהָאֵ֥ר פָּ֝נֶ֗יךָ",
-      "pron": "하이라 미페네",
+      "pron": "르하이르 페네",
       "lemmas": [
         "אוֹר",
         "פָּנִים"
@@ -56,28 +69,92 @@
           "word": "וְהָאֵ֥ר",
           "lemma": "אוֹר",
           "strong": "H215",
-          "pron": "하이라"
+          "pron": "르하이르"
         },
         {
           "word": "פָּ֝נֶ֗יךָ",
           "lemma": "פָּנִים",
           "strong": "H6440",
-          "pron": "미페네"
+          "pron": "페네"
         }
       ],
-      "count": 5,
+      "count": 7,
       "refs": [
         "psalms 31:16",
         "psalms 67:1",
         "psalms 80:3",
         "psalms 80:7",
-        "psalms 80:19"
+        "psalms 80:19",
+        "ecclesiastes 8:1",
+        "daniel 9:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתָּאֹ֖רְנָה עֵינָֽיו",
+      "pron": "르하이르 에네켐",
+      "lemmas": [
+        "אוֹר",
+        "עַיִן"
+      ],
+      "words": [
+        {
+          "word": "וַתָּאֹ֖רְנָה",
+          "lemma": "אוֹר",
+          "strong": "H215",
+          "pron": "르하이르"
+        },
+        {
+          "word": "עֵינָֽיו",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel1 14:27",
+        "samuel1 14:29",
+        "ezra 9:8",
+        "psalms 13:3",
+        "psalms 19:8",
+        "proverbs 29:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיָּ֖אֶר אֶת",
+      "pron": "르하이르 에트",
+      "lemmas": [
+        "אוֹר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיָּ֖אֶר",
+          "lemma": "אוֹר",
+          "strong": "H215",
+          "pron": "르하이르"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 14:20",
+        "nehemiah 9:12",
+        "nehemiah 9:19",
+        "isaiah 27:11"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "הֲשִׁיבֵ֑נוּ וְהָאֵ֥ר",
-      "pron": "슈바 하이라",
+      "pron": "슙카 르하이르",
       "lemmas": [
         "שׁוּב",
         "אוֹר"
@@ -87,13 +164,13 @@
           "word": "הֲשִׁיבֵ֑נוּ",
           "lemma": "שׁוּב",
           "strong": "H7725",
-          "pron": "슈바"
+          "pron": "슙카"
         },
         {
           "word": "וְהָאֵ֥ר",
           "lemma": "אוֹר",
           "strong": "H215",
-          "pron": "하이라"
+          "pron": "르하이르"
         }
       ],
       "count": 3,
@@ -106,7 +183,7 @@
     },
     {
       "hebrew": "הֲשִׁיבֵ֑נוּ וְהָאֵ֥ר פָּ֝נֶ֗יךָ",
-      "pron": "슈바 하이라 미페네",
+      "pron": "슙카 르하이르 페네",
       "lemmas": [
         "שׁוּב",
         "אוֹר",
@@ -117,55 +194,19 @@
           "word": "הֲשִׁיבֵ֑נוּ",
           "lemma": "שׁוּב",
           "strong": "H7725",
-          "pron": "슈바"
+          "pron": "슙카"
         },
         {
           "word": "וְהָאֵ֥ר",
           "lemma": "אוֹר",
           "strong": "H215",
-          "pron": "하이라"
+          "pron": "르하이르"
         },
         {
           "word": "פָּ֝נֶ֗יךָ",
           "lemma": "פָּנִים",
           "strong": "H6440",
-          "pron": "미페네"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 80:3",
-        "psalms 80:7",
-        "psalms 80:19"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וְהָאֵ֥ר פָּ֝נֶ֗יךָ וְנִוָּשֵֽׁעָה",
-      "pron": "하이라 미페네 호시에니",
-      "lemmas": [
-        "אוֹר",
-        "פָּנִים",
-        "יָשַׁע"
-      ],
-      "words": [
-        {
-          "word": "וְהָאֵ֥ר",
-          "lemma": "אוֹר",
-          "strong": "H215",
-          "pron": "하이라"
-        },
-        {
-          "word": "פָּ֝נֶ֗יךָ",
-          "lemma": "פָּנִים",
-          "strong": "H6440",
-          "pron": "미페네"
-        },
-        {
-          "word": "וְנִוָּשֵֽׁעָה",
-          "lemma": "יָשַׁע",
-          "strong": "H3467",
-          "pron": "호시에니"
+          "pron": "페네"
         }
       ],
       "count": 3,

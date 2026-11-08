@@ -1,6 +1,6 @@
 {
   "lemma": "קָשָׁה",
-  "pron": "타케슈",
+  "pron": "바테카쉬",
   "strong": "H7185",
   "posKo": "동사",
   "root": null,
@@ -8,34 +8,154 @@
     {
       "lemma": "מִקְשֶׁה",
       "strong": "H4748",
-      "pron": "",
+      "pron": "미케셰",
       "glossKo": "두들겨 만든 것"
     },
     {
       "lemma": "קָשֶׁה",
       "strong": "H7186",
-      "pron": "카샤",
+      "pron": "카쇼트",
       "glossKo": "굳은"
     },
     {
       "lemma": "קְשִׁי",
       "strong": "H7190",
-      "pron": "",
+      "pron": "케시",
       "glossKo": "완고"
     },
     {
       "lemma": "קֶשֶׁת",
       "strong": "H7198",
-      "pron": "카솃트오",
-      "glossKo": "그의 활"
+      "pron": "카솃티",
+      "glossKo": "나의 활"
     }
   ],
   "defEn": "be dense; severe",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 28,
   "byBook": {
+    "deuteronomy": 4,
+    "chronicles2": 3,
     "genesis": 3,
-    "psalms": 1
+    "jeremiah": 3,
+    "nehemiah": 3,
+    "exodus": 2,
+    "kings2": 2,
+    "proverbs": 2,
+    "isaiah": 1,
+    "job": 1,
+    "kings1": 1,
+    "psalms": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיַּקְשׁוּ֙ אֶת",
+      "pron": "바테카쉬 에트",
+      "lemmas": [
+        "קָשָׁה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיַּקְשׁוּ֙",
+          "lemma": "קָשָׁה",
+          "strong": "H7185",
+          "pron": "바테카쉬"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 7:3",
+        "kings1 12:4",
+        "kings2 17:14",
+        "chronicles2 10:4",
+        "chronicles2 36:13",
+        "nehemiah 9:16",
+        "nehemiah 9:17",
+        "jeremiah 7:26",
+        "jeremiah 17:23",
+        "jeremiah 19:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיַּקְשׁוּ֙ אֶת עָרְפָּ֔ם",
+      "pron": "바테카쉬 에트 브오렙",
+      "lemmas": [
+        "קָשָׁה",
+        "אֵת",
+        "עֹרֶף"
+      ],
+      "words": [
+        {
+          "word": "וַיַּקְשׁוּ֙",
+          "lemma": "קָשָׁה",
+          "strong": "H7185",
+          "pron": "바테카쉬"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "עָרְפָּ֔ם",
+          "lemma": "עֹרֶף",
+          "strong": "H6203",
+          "pron": "브오렙"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "kings2 17:14",
+        "chronicles2 36:13",
+        "nehemiah 9:16",
+        "nehemiah 9:17",
+        "jeremiah 7:26",
+        "jeremiah 17:23",
+        "jeremiah 19:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֣י קָשָׁ֑תָה",
+      "pron": "키 바테카쉬",
+      "lemmas": [
+        "כִּי",
+        "קָשָׁה"
+      ],
+      "words": [
+        {
+          "word": "כִּ֣י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "קָשָׁ֑תָה",
+          "lemma": "קָשָׁה",
+          "strong": "H7185",
+          "pron": "바테카쉬"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 49:7",
+        "exodus 13:15",
+        "deuteronomy 2:30",
+        "samuel1 5:7",
+        "jeremiah 19:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,7 +12,7 @@
     {
       "lemma": "שָׁכַם",
       "strong": "H7925",
-      "pron": "마셱키메",
+      "pron": "브히셱캄템",
       "glossKo": "일찍 일어나다"
     },
     {
@@ -24,26 +24,33 @@
     {
       "lemma": "שֶׁכֶם",
       "strong": "H7928",
-      "pron": "",
+      "pron": "브셰켐",
       "glossKo": "세겜"
     },
     {
       "lemma": "שִׁכְמָה",
       "strong": "H7929",
-      "pron": "",
-      "glossKo": "어깨"
+      "pron": "밋시케마",
+      "glossKo": "그녀의 어깨"
     }
   ],
   "defEn": "neck; spur",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 21,
   "byBook": {
     "genesis": 6,
-    "psalms": 2
+    "isaiah": 5,
+    "samuel1": 3,
+    "psalms": 2,
+    "exodus": 1,
+    "job": 1,
+    "joshua": 1,
+    "judges": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "עַל שְׁכֶ֣ם",
+      "hebrew": "עַל שִׁכְמ֑וֹ",
       "pron": "알 셰켐",
       "lemmas": [
         "עַל",
@@ -57,18 +64,62 @@
           "pron": "알"
         },
         {
+          "word": "שִׁכְמ֑וֹ",
+          "lemma": "שְׁכֶם",
+          "strong": "H7926",
+          "pron": "셰켐"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "genesis 9:23",
+        "genesis 21:14",
+        "genesis 24:15",
+        "genesis 24:45",
+        "exodus 12:34",
+        "joshua 4:5",
+        "judges 9:48",
+        "job 31:36",
+        "isaiah 9:6",
+        "isaiah 10:27",
+        "isaiah 14:25",
+        "isaiah 22:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיָּשִׂ֨ימוּ֙ עַל שְׁכֶ֣ם",
+      "pron": "바야셈 알 셰켐",
+      "lemmas": [
+        "שׂוּם",
+        "עַל",
+        "שְׁכֶם"
+      ],
+      "words": [
+        {
+          "word": "וַיָּשִׂ֨ימוּ֙",
+          "lemma": "שׂוּם",
+          "strong": "H7760",
+          "pron": "바야셈"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
           "word": "שְׁכֶ֣ם",
           "lemma": "שְׁכֶם",
           "strong": "H7926",
           "pron": "셰켐"
         }
       ],
-      "count": 4,
+      "count": 3,
       "refs": [
         "genesis 9:23",
         "genesis 21:14",
-        "genesis 24:15",
-        "genesis 24:45"
+        "judges 9:48"
       ],
       "glossKo": ""
     }

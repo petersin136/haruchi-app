@@ -12,19 +12,19 @@
     {
       "lemma": "שָׁקָה",
       "strong": "H8248",
-      "pron": "타셰케므",
-      "glossKo": "그들에게 마시게 하다"
+      "pron": "브히셰카",
+      "glossKo": "마시게 하다"
     },
     {
       "lemma": "שִׁקֻּו",
       "strong": "H8249",
-      "pron": "브식쿠바위",
+      "pron": "베식쿠바이",
       "glossKo": "나의 양수"
     },
     {
       "lemma": "שִׁקּוּי",
       "strong": "H8250",
-      "pron": "",
+      "pron": "브식쿠이",
       "glossKo": "음료"
     },
     {
@@ -36,14 +36,20 @@
   ],
   "defEn": "causing to drink; butler",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 19,
   "byBook": {
-    "genesis": 11
+    "genesis": 11,
+    "chronicles2": 2,
+    "kings1": 2,
+    "ezekiel": 1,
+    "isaiah": 1,
+    "leviticus": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
       "hebrew": "שַׂ֣ר הַמַּשְׁקִ֔ים",
-      "pron": "르사림 마셰케",
+      "pron": "사레 마셰케",
       "lemmas": [
         "שַׂר",
         "מַשְׁקֶה"
@@ -53,7 +59,7 @@
           "word": "שַׂ֣ר",
           "lemma": "שַׂר",
           "strong": "H8269",
-          "pron": "르사림"
+          "pron": "사레"
         },
         {
           "word": "הַמַּשְׁקִ֔ים",
@@ -70,6 +76,36 @@
         "genesis 40:21",
         "genesis 40:23",
         "genesis 41:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַשְׁקֵ֨ה הַמֶּ֤לֶךְ",
+      "pron": "마셰케 멜레크",
+      "lemmas": [
+        "מַשְׁקֶה",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "מַשְׁקֵ֨ה",
+          "lemma": "מַשְׁקֶה",
+          "strong": "H4945",
+          "pron": "마셰케"
+        },
+        {
+          "word": "הַמֶּ֤לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 40:1",
+        "kings1 10:21",
+        "chronicles2 9:20",
+        "nehemiah 1:11"
       ],
       "glossKo": ""
     },
@@ -104,7 +140,7 @@
     },
     {
       "hebrew": "שַֽׂר הַמַּשְׁקִ֛ים אֶת",
-      "pron": "르사림 마셰케 에트",
+      "pron": "사레 마셰케 에트",
       "lemmas": [
         "שַׂר",
         "מַשְׁקֶה",
@@ -115,7 +151,7 @@
           "word": "שַֽׂר",
           "lemma": "שַׂר",
           "strong": "H8269",
-          "pron": "르사림"
+          "pron": "사레"
         },
         {
           "word": "הַמַּשְׁקִ֛ים",

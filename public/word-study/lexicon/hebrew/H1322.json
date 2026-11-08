@@ -1,6 +1,6 @@
 {
   "lemma": "בֹּשֶׁת",
-  "pron": "보셰트",
+  "pron": "레바솃테카",
   "strong": "H1322",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "בּוּשׁ",
       "strong": "H954",
-      "pron": "예보슈",
+      "pron": "이텝보샤슈",
       "glossKo": "수치를 당하다"
     },
     {
@@ -24,21 +24,95 @@
     {
       "lemma": "בׇּשְׁנָה",
       "strong": "H1317",
-      "pron": "",
+      "pron": "바셰나",
       "glossKo": "수치"
     },
     {
       "lemma": "מָבֻשׁ",
       "strong": "H4016",
-      "pron": "",
-      "glossKo": "음부"
+      "pron": "빔부샤으브",
+      "glossKo": "그의 음부"
     }
   ],
   "defEn": "shame",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 31,
   "byBook": {
-    "psalms": 7
+    "psalms": 7,
+    "jeremiah": 6,
+    "isaiah": 5,
+    "daniel": 2,
+    "samuel1": 2,
+    "zephaniah": 2,
+    "chronicles2": 1,
+    "ezra": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "job": 1,
+    "micah": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּבֹ֨שֶׁת פָּנִ֜ים",
+      "pron": "레바솃테카 페네",
+      "lemmas": [
+        "בֹּשֶׁת",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "בְּבֹ֨שֶׁת",
+          "lemma": "בֹּשֶׁת",
+          "strong": "H1322",
+          "pron": "레바솃테카"
+        },
+        {
+          "word": "פָּנִ֜ים",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "chronicles2 32:21",
+        "ezra 9:7",
+        "psalms 44:15",
+        "jeremiah 7:19",
+        "daniel 9:7",
+        "daniel 9:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִלְבְּשׁוּ בֹ֑שֶׁת",
+      "pron": "바알비솀 레바솃테카",
+      "lemmas": [
+        "לָבַשׁ",
+        "בֹּשֶׁת"
+      ],
+      "words": [
+        {
+          "word": "יִלְבְּשׁוּ",
+          "lemma": "לָבַשׁ",
+          "strong": "H3847",
+          "pron": "바알비솀"
+        },
+        {
+          "word": "בֹ֑שֶׁת",
+          "lemma": "בֹּשֶׁת",
+          "strong": "H1322",
+          "pron": "레바솃테카"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 8:22",
+        "psalms 35:26",
+        "psalms 132:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

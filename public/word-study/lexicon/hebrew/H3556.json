@@ -1,6 +1,6 @@
 {
   "lemma": "כּוֹכָב",
-  "pron": "브코카빔",
+  "pron": "아코카빔",
   "strong": "H3556",
   "posKo": "명사",
   "root": {
@@ -12,28 +12,205 @@
     {
       "lemma": "כַּבּוֹן",
       "strong": "H3522",
-      "pron": "",
+      "pron": "브캅본",
       "glossKo": "갑본"
     },
     {
       "lemma": "כַּרְכֹּב",
       "strong": "H3749",
-      "pron": "",
+      "pron": "카렉콥",
       "glossKo": "관"
     },
     {
       "lemma": "מַכְבֵּנָא",
       "strong": "H4343",
-      "pron": "",
+      "pron": "마켑베나",
       "glossKo": "막베나"
     }
   ],
   "defEn": "star; prince",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 37,
   "byBook": {
     "genesis": 5,
-    "psalms": 4
+    "job": 5,
+    "deuteronomy": 4,
+    "psalms": 4,
+    "isaiah": 3,
+    "daniel": 2,
+    "joel": 2,
+    "nehemiah": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "ezekiel": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "nahum": 1,
+    "numbers": 1,
+    "obadiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כְּכוֹכְבֵ֥י הַשָּׁמַ֖יִם",
+      "pron": "아코카빔 샤마임",
+      "lemmas": [
+        "כּוֹכָב",
+        "שָׁמַיִם"
+      ],
+      "words": [
+        {
+          "word": "כְּכוֹכְבֵ֥י",
+          "lemma": "כּוֹכָב",
+          "strong": "H3556",
+          "pron": "아코카빔"
+        },
+        {
+          "word": "הַשָּׁמַ֖יִם",
+          "lemma": "שָׁמַיִם",
+          "strong": "H8064",
+          "pron": "샤마임"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "genesis 22:17",
+        "genesis 26:4",
+        "exodus 32:13",
+        "deuteronomy 1:10",
+        "deuteronomy 10:22",
+        "deuteronomy 28:62",
+        "chronicles1 27:23",
+        "nehemiah 9:23",
+        "isaiah 13:10",
+        "nahum 3:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָרֵ֥חַ וְ֝כוֹכָבִ֗ים",
+      "pron": "브아야레아흐 아코카빔",
+      "lemmas": [
+        "יָרֵחַ",
+        "כּוֹכָב"
+      ],
+      "words": [
+        {
+          "word": "יָרֵ֥חַ",
+          "lemma": "יָרֵחַ",
+          "strong": "H3394",
+          "pron": "브아야레아흐"
+        },
+        {
+          "word": "וְ֝כוֹכָבִ֗ים",
+          "lemma": "כּוֹכָב",
+          "strong": "H3556",
+          "pron": "아코카빔"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 8:3",
+        "psalms 136:9",
+        "ecclesiastes 12:2",
+        "jeremiah 31:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶֽת זַרְעֲךָ֙ כְּכוֹכְבֵ֣י",
+      "pron": "에트 제라 아코카빔",
+      "lemmas": [
+        "אֵת",
+        "זֶרַע",
+        "כּוֹכָב"
+      ],
+      "words": [
+        {
+          "word": "אֶֽת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "זַרְעֲךָ֙",
+          "lemma": "זֶרַע",
+          "strong": "H2233",
+          "pron": "제라"
+        },
+        {
+          "word": "כְּכוֹכְבֵ֣י",
+          "lemma": "כּוֹכָב",
+          "strong": "H3556",
+          "pron": "아코카빔"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 22:17",
+        "genesis 26:4",
+        "exodus 32:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֵ֖ת הַכּוֹכָבִֽים",
+      "pron": "에트 아코카빔",
+      "lemmas": [
+        "אֵת",
+        "כּוֹכָב"
+      ],
+      "words": [
+        {
+          "word": "וְאֵ֖ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַכּוֹכָבִֽים",
+          "lemma": "כּוֹכָב",
+          "strong": "H3556",
+          "pron": "아코카빔"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 1:16",
+        "deuteronomy 4:19",
+        "ezekiel 32:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זַרְעֲךָ֙ כְּכוֹכְבֵ֣י",
+      "pron": "제라 아코카빔",
+      "lemmas": [
+        "זֶרַע",
+        "כּוֹכָב"
+      ],
+      "words": [
+        {
+          "word": "זַרְעֲךָ֙",
+          "lemma": "זֶרַע",
+          "strong": "H2233",
+          "pron": "제라"
+        },
+        {
+          "word": "כְּכוֹכְבֵ֣י",
+          "lemma": "כּוֹכָב",
+          "strong": "H3556",
+          "pron": "아코카빔"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 22:17",
+        "genesis 26:4",
+        "exodus 32:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

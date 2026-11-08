@@ -20,7 +20,7 @@
     {
       "lemma": "דֻּמָּה",
       "strong": "H1822",
-      "pron": "",
+      "pron": "크두마",
       "glossKo": "황폐"
     },
     {
@@ -32,9 +32,45 @@
   ],
   "defEn": "be dumb; silent; fail; perish; trans; destroy",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 16,
   "byBook": {
-    "psalms": 2
+    "hosea": 5,
+    "isaiah": 3,
+    "jeremiah": 3,
+    "psalms": 2,
+    "lamentations": 1,
+    "obadiah": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נִדְמֵ֗יתִי כִּ֣י",
+      "pron": "닏무 키",
+      "lemmas": [
+        "דָּמָה",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "נִדְמֵ֗יתִי",
+          "lemma": "דָּמָה",
+          "strong": "H1820",
+          "pron": "닏무"
+        },
+        {
+          "word": "כִּ֣י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 6:5",
+        "isaiah 15:1",
+        "jeremiah 14:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

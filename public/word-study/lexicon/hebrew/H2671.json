@@ -1,6 +1,6 @@
 {
   "lemma": "חֵץ",
-  "pron": "힛차이브",
+  "pron": "힛침",
   "strong": "H2671",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "חִצִּי",
       "strong": "H2678",
-      "pron": "",
+      "pron": "아힛침",
       "glossKo": "화살"
     },
     {
       "lemma": "חָצַץ",
       "strong": "H2686",
-      "pron": "",
+      "pron": "메하체침",
       "glossKo": "활을 쏘다"
     },
     {
@@ -30,10 +30,111 @@
   ],
   "defEn": "piercer; arrow",
   "defKo": "",
-  "countOT": 15,
+  "countOT": 45,
   "byBook": {
     "psalms": 14,
-    "genesis": 1
+    "kings2": 5,
+    "ezekiel": 4,
+    "jeremiah": 4,
+    "isaiah": 3,
+    "proverbs": 3,
+    "deuteronomy": 2,
+    "job": 2,
+    "chronicles1": 1,
+    "genesis": 1,
+    "habakkuk": 1,
+    "lamentations": 1,
+    "numbers": 1,
+    "samuel1": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיִּשְׁלַ֥ח חִצִּ֖ים",
+      "pron": "이셸라흐 힛침",
+      "lemmas": [
+        "שָׁלַח",
+        "חֵץ"
+      ],
+      "words": [
+        {
+          "word": "וַיִּשְׁלַ֥ח",
+          "lemma": "שָׁלַח",
+          "strong": "H7971",
+          "pron": "이셸라흐"
+        },
+        {
+          "word": "חִצִּ֖ים",
+          "lemma": "חֵץ",
+          "strong": "H2671",
+          "pron": "힛침"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:15",
+        "psalms 18:14",
+        "psalms 144:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חִצֶּ֗יךָ שְׁנ֫וּנִ֥ים",
+      "pron": "힛침 베신난탐",
+      "lemmas": [
+        "חֵץ",
+        "שָׁנַן"
+      ],
+      "words": [
+        {
+          "word": "חִצֶּ֗יךָ",
+          "lemma": "חֵץ",
+          "strong": "H2671",
+          "pron": "힛침"
+        },
+        {
+          "word": "שְׁנ֫וּנִ֥ים",
+          "lemma": "שָׁנַן",
+          "strong": "H8150",
+          "pron": "베신난탐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 45:5",
+        "proverbs 25:18",
+        "isaiah 5:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קֶ֣שֶׁת וְחִצִּ֑ים",
+      "pron": "카솃티 힛침",
+      "lemmas": [
+        "קֶשֶׁת",
+        "חֵץ"
+      ],
+      "words": [
+        {
+          "word": "קֶ֣שֶׁת",
+          "lemma": "קֶשֶׁת",
+          "strong": "H7198",
+          "pron": "카솃티"
+        },
+        {
+          "word": "וְחִצִּ֑ים",
+          "lemma": "חֵץ",
+          "strong": "H2671",
+          "pron": "힛침"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 13:15",
+        "ezekiel 39:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

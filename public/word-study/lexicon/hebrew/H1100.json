@@ -18,15 +18,129 @@
     {
       "lemma": "בְּלִימָה",
       "strong": "H1099",
-      "pron": "",
+      "pron": "벨리",
       "glossKo": "허무"
     }
   ],
   "defEn": "without profit; worthlessness",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 27,
   "byBook": {
-    "psalms": 3
+    "samuel1": 6,
+    "samuel2": 4,
+    "kings1": 3,
+    "proverbs": 3,
+    "psalms": 3,
+    "deuteronomy": 2,
+    "judges": 2,
+    "nahum": 2,
+    "chronicles2": 1,
+    "job": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּנֵֽי בְלִיַּעַל֮",
+      "pron": "바님 벨리아알",
+      "lemmas": [
+        "בֵּן",
+        "בְּלִיַּעַל"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵֽי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "בְלִיַּעַל֮",
+          "lemma": "בְּלִיַּעַל",
+          "strong": "H1100",
+          "pron": "벨리아알"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "deuteronomy 13:13",
+        "judges 19:22",
+        "judges 20:13",
+        "samuel1 2:12",
+        "samuel1 10:27",
+        "samuel1 25:17",
+        "kings1 21:10",
+        "kings1 21:13",
+        "chronicles2 13:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִישׁ֩ הַבְּלִיַּ֨עַל",
+      "pron": "메이쉬 벨리아알",
+      "lemmas": [
+        "אִישׁ",
+        "בְּלִיַּעַל"
+      ],
+      "words": [
+        {
+          "word": "אִישׁ֩",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "הַבְּלִיַּ֨עַל",
+          "lemma": "בְּלִיַּעַל",
+          "strong": "H1100",
+          "pron": "벨리아알"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 25:25",
+        "samuel2 16:7",
+        "samuel2 20:1",
+        "kings1 21:13",
+        "proverbs 16:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲנָשִׁ֤ים בְּנֵֽי בְלִיַּ֨עַל֙",
+      "pron": "메이쉬 바님 벨리아알",
+      "lemmas": [
+        "אִישׁ",
+        "בֵּן",
+        "בְּלִיַּעַל"
+      ],
+      "words": [
+        {
+          "word": "אֲנָשִׁ֤ים",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "בְּנֵֽי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "בְלִיַּ֨עַל֙",
+          "lemma": "בְּלִיַּעַל",
+          "strong": "H1100",
+          "pron": "벨리아알"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 13:13",
+        "judges 19:22",
+        "judges 20:13",
+        "kings1 21:10",
+        "kings1 21:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

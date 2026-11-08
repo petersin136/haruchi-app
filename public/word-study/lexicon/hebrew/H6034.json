@@ -18,44 +18,45 @@
     {
       "lemma": "מַעֲנֶה",
       "strong": "H4617",
-      "pron": "",
+      "pron": "마아네",
       "glossKo": "응답"
     },
     {
       "lemma": "עָנָה",
       "strong": "H6030",
-      "pron": "바야아네니",
-      "glossKo": "나를 응답하다"
+      "pron": "바야안",
+      "glossKo": "응답하다"
     },
     {
       "lemma": "עָנָה",
       "strong": "H6031",
-      "pron": "인네티",
+      "pron": "브인누",
       "glossKo": "괴롭히다"
     },
     {
       "lemma": "עֲנָה",
       "strong": "H6032",
-      "pron": "브느느브",
+      "pron": "븐느브",
       "glossKo": "우리를 응답하다"
     },
     {
       "lemma": "עֲנָיָה",
       "strong": "H6043",
-      "pron": "",
+      "pron": "바아나아",
       "glossKo": "아나야"
     }
   ],
   "defEn": "Anah",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 12,
   "byBook": {
-    "genesis": 9
+    "genesis": 9,
+    "chronicles1": 3
   },
   "phrases": [
     {
       "hebrew": "אָהֳלִֽיבָמָה֙ בַּת עֲנָ֔ה",
-      "pron": "아홀리바마 바트 아나",
+      "pron": "아홀리바마 우바노트 아나",
       "lemmas": [
         "אׇהֳלִיבָמָה",
         "בַּת",
@@ -72,7 +73,7 @@
           "word": "בַּת",
           "lemma": "בַּת",
           "strong": "H1323",
-          "pron": "바트"
+          "pron": "우바노트"
         },
         {
           "word": "עֲנָ֔ה",
@@ -92,7 +93,7 @@
     },
     {
       "hebrew": "בַּת עֲנָ֔ה",
-      "pron": "바트 아나",
+      "pron": "우바노트 아나",
       "lemmas": [
         "בַּת",
         "עֲנָה"
@@ -102,7 +103,7 @@
           "word": "בַּת",
           "lemma": "בַּת",
           "strong": "H1323",
-          "pron": "바트"
+          "pron": "우바노트"
         },
         {
           "word": "עֲנָ֔ה",
@@ -117,6 +118,35 @@
         "genesis 36:14",
         "genesis 36:18",
         "genesis 36:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲנָ֖ה דִּשֹׁ֑ן",
+      "pron": "아나 브디숀",
+      "lemmas": [
+        "עֲנָה",
+        "דִּישׁוֹן"
+      ],
+      "words": [
+        {
+          "word": "עֲנָ֖ה",
+          "lemma": "עֲנָה",
+          "strong": "H6034",
+          "pron": "아나"
+        },
+        {
+          "word": "דִּשֹׁ֑ן",
+          "lemma": "דִּישׁוֹן",
+          "strong": "H1787",
+          "pron": "브디숀"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 36:25",
+        "chronicles1 1:38",
+        "chronicles1 1:41"
       ],
       "glossKo": ""
     }

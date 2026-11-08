@@ -1,6 +1,6 @@
 {
   "lemma": "יָעַד",
-  "pron": "노아두",
+  "pron": "예아다흐",
   "strong": "H3259",
   "posKo": "동사",
   "root": null,
@@ -8,45 +8,219 @@
     {
       "lemma": "יוֹעֵד",
       "strong": "H3133",
-      "pron": "",
+      "pron": "요엗",
       "glossKo": "요엣"
     },
     {
       "lemma": "יֶעְדִּי",
       "strong": "H3260",
-      "pron": "",
+      "pron": "위디",
       "glossKo": "이디"
     },
     {
       "lemma": "מוֹעֵד",
       "strong": "H4150",
-      "pron": "모아데카",
-      "glossKo": "너의 정한 때"
+      "pron": "우르모아딤",
+      "glossKo": "정한 때"
     },
     {
       "lemma": "מוֹעָד",
       "strong": "H4151",
-      "pron": "",
-      "glossKo": "회집"
+      "pron": "베모아다으브",
+      "glossKo": "그의 회집"
     },
     {
       "lemma": "מוּעָדָה",
       "strong": "H4152",
-      "pron": "",
+      "pron": "아무아다",
       "glossKo": "므아라"
     },
     {
       "lemma": "נוֹעַדְיָה",
       "strong": "H5129",
-      "pron": "",
+      "pron": "브노앋아",
       "glossKo": "노아댜"
     }
   ],
   "defEn": "fix",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 29,
   "byBook": {
-    "psalms": 1
+    "exodus": 7,
+    "numbers": 6,
+    "jeremiah": 4,
+    "job": 2,
+    "nehemiah": 2,
+    "amos": 1,
+    "chronicles2": 1,
+    "ezekiel": 1,
+    "joshua": 1,
+    "kings1": 1,
+    "micah": 1,
+    "psalms": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אִוָּעֵ֥ד שָֽׁמָּה",
+      "pron": "예아다흐 샴",
+      "lemmas": [
+        "יָעַד",
+        "שָׁם"
+      ],
+      "words": [
+        {
+          "word": "אִוָּעֵ֥ד",
+          "lemma": "יָעַד",
+          "strong": "H3259",
+          "pron": "예아다흐"
+        },
+        {
+          "word": "שָֽׁמָּה",
+          "lemma": "שָׁם",
+          "strong": "H8033",
+          "pron": "샴"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 25:22",
+        "exodus 29:42",
+        "exodus 29:43",
+        "exodus 30:6",
+        "exodus 30:36",
+        "numbers 17:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֛ר אִוָּעֵ֥ד",
+      "pron": "아셰르 예아다흐",
+      "lemmas": [
+        "אֲשֶׁר",
+        "יָעַד"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֛ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "אִוָּעֵ֥ד",
+          "lemma": "יָעַד",
+          "strong": "H3259",
+          "pron": "예아다흐"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 29:42",
+        "exodus 30:6",
+        "exodus 30:36",
+        "numbers 17:4",
+        "samuel2 20:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַנּוֹעָדִ֖ים עָלָ֑י",
+      "pron": "예아다흐 알",
+      "lemmas": [
+        "יָעַד",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "הַנּוֹעָדִ֖ים",
+          "lemma": "יָעַד",
+          "strong": "H3259",
+          "pron": "예아다흐"
+        },
+        {
+          "word": "עָלָ֑י",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 14:35",
+        "numbers 16:11",
+        "numbers 27:3",
+        "kings1 8:5",
+        "chronicles2 5:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֛ר אִוָּעֵ֥ד שָֽׁמָּה",
+      "pron": "아셰르 예아다흐 샴",
+      "lemmas": [
+        "אֲשֶׁר",
+        "יָעַד",
+        "שָׁם"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֛ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "אִוָּעֵ֥ד",
+          "lemma": "יָעַד",
+          "strong": "H3259",
+          "pron": "예아다흐"
+        },
+        {
+          "word": "שָֽׁמָּה",
+          "lemma": "שָׁם",
+          "strong": "H8033",
+          "pron": "샴"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 29:42",
+        "exodus 30:6",
+        "exodus 30:36",
+        "numbers 17:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִ֣י יוֹעִידֵֽנִי",
+      "pron": "미 예아다흐",
+      "lemmas": [
+        "מִי",
+        "יָעַד"
+      ],
+      "words": [
+        {
+          "word": "מִ֣י",
+          "lemma": "מִי",
+          "strong": "H4310",
+          "pron": "미"
+        },
+        {
+          "word": "יוֹעִידֵֽנִי",
+          "lemma": "יָעַד",
+          "strong": "H3259",
+          "pron": "예아다흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 9:19",
+        "jeremiah 49:19",
+        "jeremiah 50:44",
+        "micah 6:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

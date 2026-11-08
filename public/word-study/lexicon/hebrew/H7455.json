@@ -1,6 +1,6 @@
 {
   "lemma": "רֹעַ",
-  "pron": "우크로아",
+  "pron": "라로아",
   "strong": "H7455",
   "posKo": "명사",
   "root": {
@@ -12,40 +12,221 @@
     {
       "lemma": "מֵרַע",
       "strong": "H4827",
-      "pron": "",
+      "pron": "르메라",
       "glossKo": "악행"
     },
     {
       "lemma": "רַע",
       "strong": "H7451",
-      "pron": "라",
+      "pron": "바라",
       "glossKo": "악한"
     },
     {
       "lemma": "רֹעָה",
       "strong": "H7465",
-      "pron": "",
+      "pron": "로아",
       "glossKo": "깨어짐"
     },
     {
       "lemma": "רָעַע",
       "strong": "H7489",
-      "pron": "테로에므",
-      "glossKo": "그들에게 악하다"
+      "pron": "타레우",
+      "glossKo": "악하다"
     },
     {
       "lemma": "רְעַע",
       "strong": "H7490",
-      "pron": "",
+      "pron": "메라아",
       "glossKo": "부수다(아람)"
     }
   ],
   "defEn": "badness; marring",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 19,
   "byBook": {
+    "jeremiah": 11,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
     "genesis": 1,
-    "psalms": 1
+    "hosea": 1,
+    "isaiah": 1,
+    "nehemiah": 1,
+    "psalms": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "רֹ֥עַ מַעַלְלֵיכֶ֖ם",
+      "pron": "라로아 마알랄레카",
+      "lemmas": [
+        "רֹעַ",
+        "מַעֲלָל"
+      ],
+      "words": [
+        {
+          "word": "רֹ֥עַ",
+          "lemma": "רֹעַ",
+          "strong": "H7455",
+          "pron": "라로아"
+        },
+        {
+          "word": "מַעַלְלֵיכֶ֖ם",
+          "lemma": "מַעֲלָל",
+          "strong": "H4611",
+          "pron": "마알랄레카"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "deuteronomy 28:20",
+        "psalms 28:4",
+        "isaiah 1:16",
+        "jeremiah 4:4",
+        "jeremiah 21:12",
+        "jeremiah 23:2",
+        "jeremiah 23:22",
+        "jeremiah 25:5",
+        "jeremiah 26:3",
+        "jeremiah 44:22",
+        "hosea 9:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִפְּנֵ֖י רֹ֥עַ",
+      "pron": "페네 라로아",
+      "lemmas": [
+        "פָּנִים",
+        "רֹעַ"
+      ],
+      "words": [
+        {
+          "word": "מִפְּנֵ֖י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "רֹ֥עַ",
+          "lemma": "רֹעַ",
+          "strong": "H7455",
+          "pron": "라로아"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 28:20",
+        "jeremiah 4:4",
+        "jeremiah 21:12",
+        "jeremiah 26:3",
+        "jeremiah 44:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִפְּנֵ֛י רֹ֥עַ מַֽעֲלָלֶ֖יךָ",
+      "pron": "페네 라로아 마알랄레카",
+      "lemmas": [
+        "פָּנִים",
+        "רֹעַ",
+        "מַעֲלָל"
+      ],
+      "words": [
+        {
+          "word": "מִפְּנֵ֛י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "רֹ֥עַ",
+          "lemma": "רֹעַ",
+          "strong": "H7455",
+          "pron": "라로아"
+        },
+        {
+          "word": "מַֽעֲלָלֶ֖יךָ",
+          "lemma": "מַעֲלָל",
+          "strong": "H4611",
+          "pron": "마알랄레카"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 28:20",
+        "jeremiah 4:4",
+        "jeremiah 21:12",
+        "jeremiah 26:3",
+        "jeremiah 44:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹא תֵאָכַ֖לְנָה מֵרֹֽעַ",
+      "pron": "로 아콜 라로아",
+      "lemmas": [
+        "לֹא",
+        "אָכַל",
+        "רֹעַ"
+      ],
+      "words": [
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תֵאָכַ֖לְנָה",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "아콜"
+        },
+        {
+          "word": "מֵרֹֽעַ",
+          "lemma": "רֹעַ",
+          "strong": "H7455",
+          "pron": "라로아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 24:2",
+        "jeremiah 24:3",
+        "jeremiah 24:8",
+        "jeremiah 29:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תֵאָכַ֖לְנָה מֵרֹֽעַ",
+      "pron": "아콜 라로아",
+      "lemmas": [
+        "אָכַל",
+        "רֹעַ"
+      ],
+      "words": [
+        {
+          "word": "תֵאָכַ֖לְנָה",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "아콜"
+        },
+        {
+          "word": "מֵרֹֽעַ",
+          "lemma": "רֹעַ",
+          "strong": "H7455",
+          "pron": "라로아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 24:2",
+        "jeremiah 24:3",
+        "jeremiah 24:8",
+        "jeremiah 29:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

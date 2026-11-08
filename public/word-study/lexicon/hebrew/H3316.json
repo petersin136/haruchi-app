@@ -1,8 +1,8 @@
 {
   "lemma": "יִפְתָּח",
-  "pron": "입타흐",
+  "pron": "브입타흐",
   "strong": "H3316",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "פָּתַח",
     "strong": "H6605",
@@ -12,43 +12,198 @@
     {
       "lemma": "יִפְתַּח־אֵל",
       "strong": "H3317",
-      "pron": "",
+      "pron": "입타흐",
       "glossKo": "입다엘"
     },
     {
       "lemma": "מַפְתֵּחַ",
       "strong": "H4668",
-      "pron": "",
+      "pron": "아맙테아흐",
       "glossKo": "열쇠"
     },
     {
       "lemma": "מִפְתָּח",
       "strong": "H4669",
-      "pron": "",
+      "pron": "아맙테아흐",
       "glossKo": "트인 곳"
     },
     {
       "lemma": "נֶפְתּוֹחַ",
       "strong": "H5318",
-      "pron": "",
+      "pron": "넵토아흐",
       "glossKo": "넵도아"
     },
     {
       "lemma": "פִּתּוּחַ",
       "strong": "H6603",
-      "pron": "핏투헤하",
-      "glossKo": "그녀의 새김"
+      "pron": "핏투헤",
+      "glossKo": "새김"
     },
     {
       "lemma": "פָּתַח",
       "strong": "H6605",
-      "pron": "파투아흐",
+      "pron": "닙타후",
       "glossKo": "열다"
     }
   ],
   "defEn": "Jiphtach",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 30,
+  "byBook": {
+    "judges": 28,
+    "joshua": 1,
+    "samuel1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וַיֹּ֤אמֶר יִפְתָּח֙",
+      "pron": "바요메르 브입타흐",
+      "lemmas": [
+        "אָמַר",
+        "יִפְתָּח"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֤אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "יִפְתָּח֙",
+          "lemma": "יִפְתָּח",
+          "strong": "H3316",
+          "pron": "브입타흐"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "judges 11:6",
+        "judges 11:7",
+        "judges 11:9",
+        "judges 11:15",
+        "judges 12:1",
+        "judges 12:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת יִפְתָּֽח",
+      "pron": "에트 브입타흐",
+      "lemmas": [
+        "אֵת",
+        "יִפְתָּח"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יִפְתָּֽח",
+          "lemma": "יִפְתָּח",
+          "strong": "H3316",
+          "pron": "브입타흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 11:1",
+        "judges 11:2",
+        "judges 11:5",
+        "samuel1 12:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִפְתָּ֧ח אֶת",
+      "pron": "브입타흐 에트",
+      "lemmas": [
+        "יִפְתָּח",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "יִפְתָּ֧ח",
+          "lemma": "יִפְתָּח",
+          "strong": "H3316",
+          "pron": "브입타흐"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 11:11",
+        "judges 12:4",
+        "judges 12:7",
+        "samuel1 12:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל יִפְתָּח֙",
+      "pron": "엘 브입타흐",
+      "lemmas": [
+        "אֵל",
+        "יִפְתָּח"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "יִפְתָּח֙",
+          "lemma": "יִפְתָּח",
+          "strong": "H3316",
+          "pron": "브입타흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 11:3",
+        "judges 11:8",
+        "judges 11:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיִפְתָּ֣ח הַגִּלְעָדִ֗י",
+      "pron": "브입타흐 아길아디",
+      "lemmas": [
+        "יִפְתָּח",
+        "גִּלְעָדִי"
+      ],
+      "words": [
+        {
+          "word": "וְיִפְתָּ֣ח",
+          "lemma": "יִפְתָּח",
+          "strong": "H3316",
+          "pron": "브입타흐"
+        },
+        {
+          "word": "הַגִּלְעָדִ֗י",
+          "lemma": "גִּלְעָדִי",
+          "strong": "H1569",
+          "pron": "아길아디"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 11:1",
+        "judges 11:40",
+        "judges 12:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

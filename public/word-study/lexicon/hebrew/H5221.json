@@ -1,6 +1,6 @@
 {
   "lemma": "נָכָה",
-  "pron": "힉키타",
+  "pron": "학코트",
   "strong": "H5221",
   "posKo": "동사",
   "root": null,
@@ -8,8 +8,8 @@
     {
       "lemma": "מַכָּה",
       "strong": "H4347",
-      "pron": "막코타므",
-      "glossKo": "그들의 타격"
+      "pron": "막카",
+      "glossKo": "타격"
     },
     {
       "lemma": "נֵכֶה",
@@ -20,25 +20,54 @@
   ],
   "defEn": "strike",
   "defKo": "",
-  "countOT": 26,
+  "countOT": 501,
   "byBook": {
+    "kings2": 56,
+    "samuel1": 53,
+    "samuel2": 47,
+    "joshua": 38,
+    "jeremiah": 30,
+    "numbers": 30,
+    "judges": 29,
+    "exodus": 28,
+    "chronicles1": 25,
+    "deuteronomy": 24,
+    "kings1": 22,
+    "isaiah": 21,
+    "chronicles2": 20,
     "psalms": 14,
-    "genesis": 12
+    "ezekiel": 13,
+    "genesis": 12,
+    "proverbs": 6,
+    "zechariah": 6,
+    "leviticus": 5,
+    "amos": 4,
+    "job": 4,
+    "hosea": 3,
+    "jonah": 2,
+    "micah": 2,
+    "daniel": 1,
+    "esther": 1,
+    "haggai": 1,
+    "lamentations": 1,
+    "malachi": 1,
+    "nehemiah": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "הִכִּ֣יתָ אֶת",
-      "pron": "힉키타 에트",
+      "hebrew": "וַיַּךְ֙ אֶת",
+      "pron": "학코트 에트",
       "lemmas": [
         "נָכָה",
         "אֵת"
       ],
       "words": [
         {
-          "word": "הִכִּ֣יתָ",
+          "word": "וַיַּךְ֙",
           "lemma": "נָכָה",
           "strong": "H5221",
-          "pron": "힉키타"
+          "pron": "학코트"
         },
         {
           "word": "אֶת",
@@ -47,22 +76,147 @@
           "pron": "에트"
         }
       ],
-      "count": 8,
+      "count": 148,
       "refs": [
-        "psalms 3:7",
-        "psalms 60:1",
         "genesis 4:15",
         "genesis 8:21",
         "genesis 14:5",
         "genesis 14:7",
         "genesis 14:17",
-        "genesis 36:35"
+        "genesis 36:35",
+        "exodus 2:12",
+        "exodus 3:20",
+        "exodus 7:20",
+        "exodus 8:16",
+        "exodus 8:17",
+        "exodus 9:15"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הִכִּ֣יתָ אֶת כָּל",
-      "pron": "힉키타 에트 브콜",
+      "hebrew": "אֲשֶׁ֨ר הִכָּ֤ה",
+      "pron": "아셰르 학코트",
+      "lemmas": [
+        "אֲשֶׁר",
+        "נָכָה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הִכָּ֤ה",
+          "lemma": "נָכָה",
+          "strong": "H5221",
+          "pron": "학코트"
+        }
+      ],
+      "count": 27,
+      "refs": [
+        "exodus 17:5",
+        "numbers 25:14",
+        "numbers 32:4",
+        "numbers 33:4",
+        "deuteronomy 4:46",
+        "deuteronomy 19:4",
+        "joshua 12:1",
+        "joshua 12:7",
+        "joshua 13:21",
+        "joshua 15:16",
+        "judges 1:12",
+        "samuel1 14:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיַּכֶּ֣הָ לְפִי",
+      "pron": "학코트 피하",
+      "lemmas": [
+        "נָכָה",
+        "פֶּה"
+      ],
+      "words": [
+        {
+          "word": "וַיַּכֶּ֣הָ",
+          "lemma": "נָכָה",
+          "strong": "H5221",
+          "pron": "학코트"
+        },
+        {
+          "word": "לְפִי",
+          "lemma": "פֶּה",
+          "strong": "H6310",
+          "pron": "피하"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "joshua 10:28",
+        "joshua 10:30",
+        "joshua 10:32",
+        "joshua 10:35",
+        "joshua 10:37",
+        "joshua 10:39",
+        "joshua 11:12",
+        "joshua 11:14",
+        "judges 1:8",
+        "judges 20:48",
+        "samuel1 22:19",
+        "kings2 10:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיַּכּ֣וּם לְפִי חֶ֔רֶב",
+      "pron": "학코트 피하 아헤렙",
+      "lemmas": [
+        "נָכָה",
+        "פֶּה",
+        "חֶרֶב"
+      ],
+      "words": [
+        {
+          "word": "וַיַּכּ֣וּם",
+          "lemma": "נָכָה",
+          "strong": "H5221",
+          "pron": "학코트"
+        },
+        {
+          "word": "לְפִי",
+          "lemma": "פֶּה",
+          "strong": "H6310",
+          "pron": "피하"
+        },
+        {
+          "word": "חֶ֔רֶב",
+          "lemma": "חֶרֶב",
+          "strong": "H2719",
+          "pron": "아헤렙"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "joshua 10:28",
+        "joshua 10:30",
+        "joshua 10:32",
+        "joshua 10:35",
+        "joshua 10:37",
+        "joshua 10:39",
+        "joshua 11:12",
+        "joshua 11:14",
+        "judges 1:8",
+        "judges 20:48",
+        "samuel1 22:19",
+        "kings2 10:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִכָּה֙ אֶת כָּל",
+      "pron": "학코트 에트 칼",
       "lemmas": [
         "נָכָה",
         "אֵת",
@@ -70,10 +224,10 @@
       ],
       "words": [
         {
-          "word": "הִכִּ֣יתָ",
+          "word": "הִכָּה֙",
           "lemma": "נָכָה",
           "strong": "H5221",
-          "pron": "힉키타"
+          "pron": "학코트"
         },
         {
           "word": "אֶת",
@@ -85,15 +239,23 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         }
       ],
-      "count": 4,
+      "count": 14,
       "refs": [
-        "psalms 3:7",
         "genesis 4:15",
         "genesis 8:21",
-        "genesis 14:7"
+        "genesis 14:7",
+        "deuteronomy 20:13",
+        "joshua 11:11",
+        "judges 20:37",
+        "kings1 15:29",
+        "kings1 16:11",
+        "kings2 10:9",
+        "kings2 10:17",
+        "kings2 15:16",
+        "chronicles2 14:14"
       ],
       "glossKo": ""
     }

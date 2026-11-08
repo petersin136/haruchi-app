@@ -1,8 +1,8 @@
 {
   "lemma": "מָנוֹר",
-  "pron": "마노르",
+  "pron": "키메노르",
   "strong": "H4500",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נִיר",
     "strong": "H5214",
@@ -10,27 +10,171 @@
   },
   "family": [
     {
+      "lemma": "מְנוֹרָה",
+      "strong": "H4501",
+      "pron": "메노라트",
+      "glossKo": "등잔대"
+    },
+    {
       "lemma": "נִיר",
       "strong": "H5214",
-      "pron": "",
+      "pron": "니루",
       "glossKo": "땅을 갈다"
     },
     {
       "lemma": "נִיר",
       "strong": "H5215",
-      "pron": "",
+      "pron": "니르",
       "glossKo": "경작지"
     },
     {
       "lemma": "נִיר",
       "strong": "H5216",
-      "pron": "네리위",
-      "glossKo": "나의 등불"
+      "pron": "네로테하",
+      "glossKo": "그녀의 등불"
     }
   ],
   "defEn": "yoke; frame of a loom",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "chronicles1": 2,
+    "samuel1": 1,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "חֲנִית֔וֹ כִּמְנ֖וֹר",
+      "pron": "하니트 키메노르",
+      "lemmas": [
+        "חֲנִית",
+        "מָנוֹר"
+      ],
+      "words": [
+        {
+          "word": "חֲנִית֔וֹ",
+          "lemma": "חֲנִית",
+          "strong": "H2595",
+          "pron": "하니트"
+        },
+        {
+          "word": "כִּמְנ֖וֹר",
+          "lemma": "מָנוֹר",
+          "strong": "H4500",
+          "pron": "키메노르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 17:7",
+        "samuel2 21:19",
+        "chronicles1 11:23",
+        "chronicles1 20:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲנִית֔וֹ כִּמְנ֖וֹר אֹרְגִֽים",
+      "pron": "하니트 키메노르 오렉",
+      "lemmas": [
+        "חֲנִית",
+        "מָנוֹר",
+        "אָרַג"
+      ],
+      "words": [
+        {
+          "word": "חֲנִית֔וֹ",
+          "lemma": "חֲנִית",
+          "strong": "H2595",
+          "pron": "하니트"
+        },
+        {
+          "word": "כִּמְנ֖וֹר",
+          "lemma": "מָנוֹר",
+          "strong": "H4500",
+          "pron": "키메노르"
+        },
+        {
+          "word": "אֹרְגִֽים",
+          "lemma": "אָרַג",
+          "strong": "H707",
+          "pron": "오렉"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 17:7",
+        "samuel2 21:19",
+        "chronicles1 11:23",
+        "chronicles1 20:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּמְנ֖וֹר אֹרְגִֽים",
+      "pron": "키메노르 오렉",
+      "lemmas": [
+        "מָנוֹר",
+        "אָרַג"
+      ],
+      "words": [
+        {
+          "word": "כִּמְנ֖וֹר",
+          "lemma": "מָנוֹר",
+          "strong": "H4500",
+          "pron": "키메노르"
+        },
+        {
+          "word": "אֹרְגִֽים",
+          "lemma": "אָרַג",
+          "strong": "H707",
+          "pron": "오렉"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 17:7",
+        "samuel2 21:19",
+        "chronicles1 11:23",
+        "chronicles1 20:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעֵ֣ץ חֲנִית֔וֹ כִּמְנ֖וֹר",
+      "pron": "에츠 하니트 키메노르",
+      "lemmas": [
+        "עֵץ",
+        "חֲנִית",
+        "מָנוֹר"
+      ],
+      "words": [
+        {
+          "word": "וְעֵ֣ץ",
+          "lemma": "עֵץ",
+          "strong": "H6086",
+          "pron": "에츠"
+        },
+        {
+          "word": "חֲנִית֔וֹ",
+          "lemma": "חֲנִית",
+          "strong": "H2595",
+          "pron": "하니트"
+        },
+        {
+          "word": "כִּמְנ֖וֹר",
+          "lemma": "מָנוֹר",
+          "strong": "H4500",
+          "pron": "키메노르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 17:7",
+        "samuel2 21:19",
+        "chronicles1 20:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

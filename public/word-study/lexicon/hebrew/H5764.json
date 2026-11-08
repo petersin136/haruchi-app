@@ -1,14 +1,20 @@
 {
   "lemma": "עוּל",
-  "pron": "울",
+  "pron": "브알",
   "strong": "H5764",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עוּל",
     "strong": "H5763",
     "glossKo": "젖을 먹이다"
   },
   "family": [
+    {
+      "lemma": "עֲוִיל",
+      "strong": "H5759",
+      "pron": "아빌림",
+      "glossKo": "젖먹이"
+    },
     {
       "lemma": "עוּל",
       "strong": "H5763",
@@ -18,13 +24,16 @@
     {
       "lemma": "עוֹלֵל",
       "strong": "H5768",
-      "pron": "올림",
+      "pron": "메올렐",
       "glossKo": "젖먹이"
     }
   ],
   "defEn": "babe",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 3,
+  "byBook": {
+    "isaiah": 2,
+    "job": 1
+  },
   "phrases": []
 }

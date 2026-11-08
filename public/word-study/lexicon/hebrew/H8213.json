@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁפֵל",
-  "pron": "타솁필",
+  "pron": "마솁필",
   "strong": "H8213",
   "posKo": "동사",
   "root": null,
@@ -8,39 +8,107 @@
     {
       "lemma": "שְׁפַל",
       "strong": "H8214",
-      "pron": "",
+      "pron": "르하솁팔라",
       "glossKo": "낮아지다(아람)"
     },
     {
       "lemma": "שֶׁפֶל",
       "strong": "H8216",
-      "pron": "셰브십레누",
+      "pron": "솁베십레누",
       "glossKo": "우리의 낮은 자리"
     },
     {
       "lemma": "שָׁפָל",
       "strong": "H8217",
-      "pron": "브샤팔",
+      "pron": "샤팔",
       "glossKo": "낮은"
     },
     {
       "lemma": "שְׁפֵלָה",
       "strong": "H8219",
-      "pron": "",
+      "pron": "우바셰펠라",
       "glossKo": "낮은 땅"
     },
     {
       "lemma": "שִׁפְלוּת",
       "strong": "H8220",
-      "pron": "",
+      "pron": "우브십루트",
       "glossKo": "낮은 위치"
     }
   ],
   "defEn": "depress; sink; humiliate",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 29,
   "byBook": {
-    "psalms": 4
+    "isaiah": 16,
+    "psalms": 4,
+    "ezekiel": 2,
+    "job": 2,
+    "proverbs": 2,
+    "jeremiah": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אָדָ֖ם וַיִּשְׁפַּל",
+      "pron": "아담 마솁필",
+      "lemmas": [
+        "אָדָם",
+        "שָׁפֵל"
+      ],
+      "words": [
+        {
+          "word": "אָדָ֖ם",
+          "lemma": "אָדָם",
+          "strong": "H120",
+          "pron": "아담"
+        },
+        {
+          "word": "וַיִּשְׁפַּל",
+          "lemma": "שָׁפֵל",
+          "strong": "H8213",
+          "pron": "마솁필"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "proverbs 29:23",
+        "isaiah 2:9",
+        "isaiah 2:11",
+        "isaiah 2:17",
+        "isaiah 5:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גְבֹהִ֖ים תִּשְׁפַּֽלְנָה",
+      "pron": "아게보힘 마솁필",
+      "lemmas": [
+        "גָּבֹהַּ",
+        "שָׁפֵל"
+      ],
+      "words": [
+        {
+          "word": "גְבֹהִ֖ים",
+          "lemma": "גָּבֹהַּ",
+          "strong": "H1364",
+          "pron": "아게보힘"
+        },
+        {
+          "word": "תִּשְׁפַּֽלְנָה",
+          "lemma": "שָׁפֵל",
+          "strong": "H8213",
+          "pron": "마솁필"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 5:15",
+        "isaiah 10:33",
+        "ezekiel 21:26"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

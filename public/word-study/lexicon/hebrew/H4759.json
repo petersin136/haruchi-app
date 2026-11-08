@@ -18,9 +18,73 @@
   ],
   "defEn": "vision",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 11,
   "byBook": {
-    "genesis": 1
+    "daniel": 4,
+    "ezekiel": 3,
+    "exodus": 1,
+    "genesis": 1,
+    "numbers": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת הַמַּרְאָ֖ה",
+      "pron": "에트 브마레오트",
+      "lemmas": [
+        "אֵת",
+        "מַרְאָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַמַּרְאָ֖ה",
+          "lemma": "מַרְאָה",
+          "strong": "H4759",
+          "pron": "브마레오트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 3:15",
+        "daniel 10:7",
+        "daniel 10:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַרְא֥וֹת אֱלֹהִֽים",
+      "pron": "브마레오트 엘로힘",
+      "lemmas": [
+        "מַרְאָה",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "מַרְא֥וֹת",
+          "lemma": "מַרְאָה",
+          "strong": "H4759",
+          "pron": "브마레오트"
+        },
+        {
+          "word": "אֱלֹהִֽים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 1:1",
+        "ezekiel 8:3",
+        "ezekiel 40:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "גֻּלָּה",
-  "pron": "굴라",
+  "pron": "굴로트",
   "strong": "H1543",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גָּלַל",
     "strong": "H1556",
@@ -12,8 +12,8 @@
     {
       "lemma": "גַּל",
       "strong": "H1530",
-      "pron": "브갈레카",
-      "glossKo": "너의 무더기"
+      "pron": "갈",
+      "glossKo": "무더기"
     },
     {
       "lemma": "גֹּל",
@@ -30,19 +30,195 @@
     {
       "lemma": "גֻּלְגֹּלֶת",
       "strong": "H1538",
-      "pron": "",
+      "pron": "라굴골레트",
       "glossKo": "해골"
     },
     {
       "lemma": "גִּלּוּל",
       "strong": "H1544",
-      "pron": "",
-      "glossKo": "우상"
+      "pron": "길룰레켐",
+      "glossKo": "너희의 우상"
+    },
+    {
+      "lemma": "גָּלִיל",
+      "strong": "H1550",
+      "pron": "겔릴림",
+      "glossKo": "두루마리"
     }
   ],
   "defEn": "fountain; bowl; globe; round",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 15,
+  "byBook": {
+    "chronicles2": 3,
+    "joshua": 3,
+    "judges": 3,
+    "kings1": 3,
+    "zechariah": 2,
+    "ecclesiastes": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "גֻּלֹּ֣ת הַכֹּֽתָרֹ֔ת",
+      "pron": "굴로트 코타로트",
+      "lemmas": [
+        "גֻּלָּה",
+        "כֹתֶרֶת"
+      ],
+      "words": [
+        {
+          "word": "גֻּלֹּ֣ת",
+          "lemma": "גֻּלָּה",
+          "strong": "H1543",
+          "pron": "굴로트"
+        },
+        {
+          "word": "הַכֹּֽתָרֹ֔ת",
+          "lemma": "כֹתֶרֶת",
+          "strong": "H3805",
+          "pron": "코타로트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 7:41",
+        "kings1 7:42",
+        "chronicles2 4:12",
+        "chronicles2 4:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁתֵּי֙ גֻּלֹּ֣ת",
+      "pron": "셰네 굴로트",
+      "lemmas": [
+        "שְׁנַיִם",
+        "גֻּלָּה"
+      ],
+      "words": [
+        {
+          "word": "שְׁתֵּי֙",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        },
+        {
+          "word": "גֻּלֹּ֣ת",
+          "lemma": "גֻּלָּה",
+          "strong": "H1543",
+          "pron": "굴로트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 7:41",
+        "kings1 7:42",
+        "chronicles2 4:12",
+        "chronicles2 4:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁתֵּי֙ גֻּלֹּ֣ת הַכֹּֽתָרֹ֔ת",
+      "pron": "셰네 굴로트 코타로트",
+      "lemmas": [
+        "שְׁנַיִם",
+        "גֻּלָּה",
+        "כֹתֶרֶת"
+      ],
+      "words": [
+        {
+          "word": "שְׁתֵּי֙",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        },
+        {
+          "word": "גֻּלֹּ֣ת",
+          "lemma": "גֻּלָּה",
+          "strong": "H1543",
+          "pron": "굴로트"
+        },
+        {
+          "word": "הַכֹּֽתָרֹ֔ת",
+          "lemma": "כֹתֶרֶת",
+          "strong": "H3805",
+          "pron": "코타로트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 7:41",
+        "kings1 7:42",
+        "chronicles2 4:12",
+        "chronicles2 4:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גֻּלֹּ֣ת הַכֹּֽתָרֹ֔ת אֲשֶׁ֖ר",
+      "pron": "굴로트 코타로트 아셰르",
+      "lemmas": [
+        "גֻּלָּה",
+        "כֹתֶרֶת",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "גֻּלֹּ֣ת",
+          "lemma": "גֻּלָּה",
+          "strong": "H1543",
+          "pron": "굴로트"
+        },
+        {
+          "word": "הַכֹּֽתָרֹ֔ת",
+          "lemma": "כֹתֶרֶת",
+          "strong": "H3805",
+          "pron": "코타로트"
+        },
+        {
+          "word": "אֲשֶׁ֖ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 7:41",
+        "kings1 7:42",
+        "chronicles2 4:12",
+        "chronicles2 4:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֚ת גֻּלֹּ֣ת",
+      "pron": "에트 굴로트",
+      "lemmas": [
+        "אֵת",
+        "גֻּלָּה"
+      ],
+      "words": [
+        {
+          "word": "אֵ֚ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "גֻּלֹּ֣ת",
+          "lemma": "גֻּלָּה",
+          "strong": "H1543",
+          "pron": "굴로트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 15:19",
+        "judges 1:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

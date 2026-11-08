@@ -1,6 +1,6 @@
 {
   "lemma": "הָלַךְ",
-  "pron": "할라크",
+  "pron": "아홀레크",
   "strong": "H1980",
   "posKo": "동사",
   "root": {
@@ -12,82 +12,83 @@
     {
       "lemma": "הָלִיךְ",
       "strong": "H1978",
-      "pron": "",
-      "glossKo": "보행자"
+      "pron": "할리카이",
+      "glossKo": "나의 보행자"
     },
     {
       "lemma": "הֲלַךְ",
       "strong": "H1981",
-      "pron": "",
+      "pron": "마헬킨",
       "glossKo": "걷다(아람)"
     },
     {
       "lemma": "הֵלֶךְ",
       "strong": "H1982",
-      "pron": "",
+      "pron": "헬레크",
       "glossKo": "방울"
     },
     {
       "lemma": "יָלַךְ",
       "strong": "H3212",
-      "pron": "엘레크",
+      "pron": "텔레크",
       "glossKo": "가다"
     },
     {
       "lemma": "לֵכָה",
       "strong": "H3922",
-      "pron": "",
+      "pron": "레카",
       "glossKo": "레가"
     },
     {
       "lemma": "מַהְלֵךְ",
       "strong": "H4108",
-      "pron": "",
+      "pron": "마헬킴",
       "glossKo": "지나가는 자"
     }
   ],
   "defEn": "walk",
   "defKo": "",
-  "countOT": 75,
+  "countOT": 511,
   "byBook": {
+    "jeremiah": 46,
     "psalms": 42,
-    "genesis": 33
+    "samuel1": 40,
+    "samuel2": 34,
+    "genesis": 33,
+    "isaiah": 26,
+    "judges": 26,
+    "kings1": 24,
+    "joshua": 23,
+    "ezekiel": 22,
+    "proverbs": 22,
+    "job": 18,
+    "ecclesiastes": 17,
+    "chronicles2": 15,
+    "deuteronomy": 15,
+    "kings2": 15,
+    "numbers": 13,
+    "exodus": 12,
+    "leviticus": 12,
+    "chronicles1": 11,
+    "zechariah": 10,
+    "hosea": 6,
+    "esther": 3,
+    "lamentations": 3,
+    "micah": 3,
+    "nehemiah": 3,
+    "ruth": 3,
+    "songofsolomon": 3,
+    "amos": 2,
+    "habakkuk": 2,
+    "jonah": 2,
+    "malachi": 2,
+    "nahum": 2,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "לְ֭הִֽתְהַלֵּךְ לִפְנֵ֣י",
-      "pron": "할라크 미페네",
-      "lemmas": [
-        "הָלַךְ",
-        "פָּנִים"
-      ],
-      "words": [
-        {
-          "word": "לְ֭הִֽתְהַלֵּךְ",
-          "lemma": "הָלַךְ",
-          "strong": "H1980",
-          "pron": "할라크"
-        },
-        {
-          "word": "לִפְנֵ֣י",
-          "lemma": "פָּנִים",
-          "strong": "H6440",
-          "pron": "미페네"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 56:13",
-        "psalms 116:9",
-        "genesis 17:1",
-        "genesis 24:40",
-        "genesis 32:20"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֲשֶׁ֥ר הָלְכ֖וּ",
-      "pron": "아셰르 할라크",
+      "hebrew": "אֲשֶׁ֥ר הָלָֽךְ",
+      "pron": "아셰르 아홀레크",
       "lemmas": [
         "אֲשֶׁר",
         "הָלַךְ"
@@ -100,108 +101,175 @@
           "pron": "아셰르"
         },
         {
-          "word": "הָלְכ֖וּ",
+          "word": "הָלָֽךְ",
           "lemma": "הָלַךְ",
           "strong": "H1980",
-          "pron": "할라크"
+          "pron": "아홀레크"
         }
       ],
-      "count": 4,
+      "count": 49,
       "refs": [
         "genesis 14:24",
         "genesis 24:40",
         "genesis 35:3",
-        "genesis 48:15"
+        "genesis 48:15",
+        "leviticus 26:40",
+        "deuteronomy 1:31",
+        "deuteronomy 2:14",
+        "deuteronomy 4:3",
+        "joshua 14:10",
+        "joshua 24:17",
+        "judges 2:17",
+        "samuel1 9:6"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בִּדְרָכַ֥י יְהַלֵּֽכוּ",
-      "pron": "우브데레크 할라크",
+      "hebrew": "הַהֹלְכִ֥ים לְפָנֶ֖יךָ",
+      "pron": "아홀레크 페네",
       "lemmas": [
-        "דֶּרֶךְ",
+        "הָלַךְ",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "הַהֹלְכִ֥ים",
+          "lemma": "הָלַךְ",
+          "strong": "H1980",
+          "pron": "아홀레크"
+        },
+        {
+          "word": "לְפָנֶ֖יךָ",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 30,
+      "refs": [
+        "genesis 17:1",
+        "genesis 24:40",
+        "genesis 32:20",
+        "exodus 13:21",
+        "exodus 14:19",
+        "numbers 14:14",
+        "deuteronomy 1:30",
+        "deuteronomy 1:33",
+        "deuteronomy 31:8",
+        "joshua 6:9",
+        "joshua 6:13",
+        "samuel1 2:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹֽא הָלְכ֤וּ",
+      "pron": "로 아홀레크",
+      "lemmas": [
+        "לֹא",
         "הָלַךְ"
       ],
       "words": [
         {
-          "word": "בִּדְרָכַ֥י",
-          "lemma": "דֶּרֶךְ",
-          "strong": "H1870",
-          "pron": "우브데레크"
+          "word": "וְלֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
         },
         {
-          "word": "יְהַלֵּֽכוּ",
+          "word": "הָלְכ֤וּ",
           "lemma": "הָלַךְ",
           "strong": "H1980",
-          "pron": "할라크"
+          "pron": "아홀레크"
         }
       ],
-      "count": 4,
+      "count": 27,
       "refs": [
-        "psalms 81:13",
-        "psalms 86:11",
-        "psalms 119:1",
-        "psalms 119:3"
+        "numbers 22:37",
+        "numbers 24:1",
+        "samuel1 8:3",
+        "samuel1 8:5",
+        "samuel1 30:22",
+        "samuel2 16:17",
+        "samuel2 19:25",
+        "kings1 11:33",
+        "kings1 22:48",
+        "kings2 5:25",
+        "kings2 21:22",
+        "chronicles2 21:12"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הֹ֭לֵךְ בְּדֶ֣רֶךְ",
-      "pron": "할라크 우브데레크",
+      "hebrew": "וַהֲלַכְתֶּ֣ם לְדַרְכְּכֶ֑ם",
+      "pron": "아홀레크 데레크",
       "lemmas": [
         "הָלַךְ",
         "דֶּרֶךְ"
       ],
       "words": [
         {
-          "word": "הֹ֭לֵךְ",
+          "word": "וַהֲלַכְתֶּ֣ם",
           "lemma": "הָלַךְ",
           "strong": "H1980",
-          "pron": "할라크"
+          "pron": "아홀레크"
         },
         {
-          "word": "בְּדֶ֣רֶךְ",
+          "word": "לְדַרְכְּכֶ֑ם",
           "lemma": "דֶּרֶךְ",
           "strong": "H1870",
-          "pron": "우브데레크"
+          "pron": "데레크"
         }
       ],
-      "count": 4,
+      "count": 23,
       "refs": [
-        "psalms 101:6",
-        "psalms 128:1",
         "genesis 19:2",
-        "genesis 32:1"
+        "genesis 32:1",
+        "numbers 24:25",
+        "deuteronomy 28:9",
+        "samuel1 8:5",
+        "samuel2 13:34",
+        "kings1 2:2",
+        "kings1 11:33",
+        "kings1 11:38",
+        "kings1 18:6",
+        "kings2 21:22",
+        "chronicles2 11:17"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְאָנֹכִ֖י הוֹלֵ֣ךְ",
-      "pron": "브아노키 할라크",
+      "hebrew": "הָלֹ֣ךְ הָלַ֔כְתָּ",
+      "pron": "아홀레크 아홀레크",
       "lemmas": [
-        "אָנֹכִי",
+        "הָלַךְ",
         "הָלַךְ"
       ],
       "words": [
         {
-          "word": "וְאָנֹכִ֖י",
-          "lemma": "אָנֹכִי",
-          "strong": "H595",
-          "pron": "브아노키"
-        },
-        {
-          "word": "הוֹלֵ֣ךְ",
+          "word": "הָלֹ֣ךְ",
           "lemma": "הָלַךְ",
           "strong": "H1980",
-          "pron": "할라크"
+          "pron": "아홀레크"
+        },
+        {
+          "word": "הָלַ֔כְתָּ",
+          "lemma": "הָלַךְ",
+          "strong": "H1980",
+          "pron": "아홀레크"
         }
       ],
-      "count": 4,
+      "count": 20,
       "refs": [
-        "genesis 15:2",
-        "genesis 24:42",
-        "genesis 25:32",
-        "genesis 28:20"
+        "genesis 31:30",
+        "joshua 6:13",
+        "judges 9:8",
+        "samuel1 6:12",
+        "kings2 2:11",
+        "kings2 4:23",
+        "proverbs 13:20",
+        "jeremiah 31:21",
+        "jeremiah 41:6"
       ],
       "glossKo": ""
     }

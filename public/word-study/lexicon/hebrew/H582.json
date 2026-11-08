@@ -1,6 +1,6 @@
 {
   "lemma": "אֱנוֹשׁ",
-  "pron": "에노쉬",
+  "pron": "메에노쉬",
   "strong": "H582",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "אִישׁ",
       "strong": "H376",
-      "pron": "하이쉬",
+      "pron": "메이쉬",
       "glossKo": "사람"
     },
     {
@@ -24,21 +24,149 @@
     {
       "lemma": "אָנַשׁ",
       "strong": "H605",
-      "pron": "",
+      "pron": "바예아나쉬",
       "glossKo": "쇠약하다"
     },
     {
       "lemma": "אֱנָשׁ",
       "strong": "H606",
-      "pron": "",
+      "pron": "에나쉬",
       "glossKo": "사람(아람)"
     }
   ],
   "defEn": "mortal; man",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 42,
   "byBook": {
-    "psalms": 13
+    "job": 18,
+    "psalms": 13,
+    "isaiah": 8,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "jeremiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֱנ֥וֹשׁ כִּֽי",
+      "pron": "메에노쉬 키",
+      "lemmas": [
+        "אֱנוֹשׁ",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "אֱנ֥וֹשׁ",
+          "lemma": "אֱנוֹשׁ",
+          "strong": "H582",
+          "pron": "메에노쉬"
+        },
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 7:17",
+        "job 15:14",
+        "psalms 8:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְֽבַב אֱנ֗וֹשׁ",
+      "pron": "레바비 메에노쉬",
+      "lemmas": [
+        "לֵבָב",
+        "אֱנוֹשׁ"
+      ],
+      "words": [
+        {
+          "word": "לְֽבַב",
+          "lemma": "לֵבָב",
+          "strong": "H3824",
+          "pron": "레바비"
+        },
+        {
+          "word": "אֱנ֗וֹשׁ",
+          "lemma": "אֱנוֹשׁ",
+          "strong": "H582",
+          "pron": "메에노쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 104:15",
+        "isaiah 13:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָֽה אֱנ֥וֹשׁ",
+      "pron": "마 메에노쉬",
+      "lemmas": [
+        "מָה",
+        "אֱנוֹשׁ"
+      ],
+      "words": [
+        {
+          "word": "מָֽה",
+          "lemma": "מָה",
+          "strong": "H4100",
+          "pron": "마"
+        },
+        {
+          "word": "אֱנ֥וֹשׁ",
+          "lemma": "אֱנוֹשׁ",
+          "strong": "H582",
+          "pron": "메에노쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 7:17",
+        "job 15:14",
+        "psalms 8:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָֽה אֱנ֥וֹשׁ כִּֽי",
+      "pron": "마 메에노쉬 키",
+      "lemmas": [
+        "מָה",
+        "אֱנוֹשׁ",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "מָֽה",
+          "lemma": "מָה",
+          "strong": "H4100",
+          "pron": "마"
+        },
+        {
+          "word": "אֱנ֥וֹשׁ",
+          "lemma": "אֱנוֹשׁ",
+          "strong": "H582",
+          "pron": "메에노쉬"
+        },
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 7:17",
+        "job 15:14",
+        "psalms 8:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

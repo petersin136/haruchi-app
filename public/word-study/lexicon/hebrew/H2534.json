@@ -1,6 +1,6 @@
 {
   "lemma": "חֵמָה",
-  "pron": "바하마트카",
+  "pron": "하마트",
   "strong": "H2534",
   "posKo": "명사",
   "root": {
@@ -12,28 +12,235 @@
     {
       "lemma": "חֱמָא",
       "strong": "H2528",
-      "pron": "",
+      "pron": "바하마",
       "glossKo": "분노(아람)"
     },
     {
       "lemma": "יָחַם",
       "strong": "H3179",
-      "pron": "예헤마트니",
-      "glossKo": "나를 짝짓다"
+      "pron": "바예함나",
+      "glossKo": "짝짓다"
     },
     {
       "lemma": "יַחְמַי",
       "strong": "H3181",
-      "pron": "",
+      "pron": "브야헤마이",
       "glossKo": "야매"
     }
   ],
   "defEn": "heat; anger; poison",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 124,
   "byBook": {
+    "ezekiel": 33,
+    "jeremiah": 17,
     "psalms": 15,
-    "genesis": 1
+    "isaiah": 13,
+    "proverbs": 9,
+    "esther": 6,
+    "chronicles2": 5,
+    "deuteronomy": 5,
+    "job": 4,
+    "daniel": 3,
+    "kings2": 3,
+    "lamentations": 2,
+    "nahum": 2,
+    "genesis": 1,
+    "hosea": 1,
+    "leviticus": 1,
+    "micah": 1,
+    "numbers": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הָאַף֙ וְהַ֣חֵמָ֔ה",
+      "pron": "베압파으브 하마트",
+      "lemmas": [
+        "אַף",
+        "חֵמָה"
+      ],
+      "words": [
+        {
+          "word": "הָאַף֙",
+          "lemma": "אַף",
+          "strong": "H639",
+          "pron": "베압파으브"
+        },
+        {
+          "word": "וְהַ֣חֵמָ֔ה",
+          "lemma": "חֵמָה",
+          "strong": "H2534",
+          "pron": "하마트"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "deuteronomy 9:19",
+        "deuteronomy 29:23",
+        "deuteronomy 29:28",
+        "psalms 90:7",
+        "jeremiah 7:20",
+        "jeremiah 21:5",
+        "jeremiah 32:37",
+        "jeremiah 33:5",
+        "jeremiah 36:7",
+        "jeremiah 42:18",
+        "ezekiel 5:15",
+        "ezekiel 22:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲמָתִ֣י עֲלֵיהֶ֗ם",
+      "pron": "하마트 알",
+      "lemmas": [
+        "חֵמָה",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "חֲמָתִ֣י",
+          "lemma": "חֵמָה",
+          "strong": "H2534",
+          "pron": "하마트"
+        },
+        {
+          "word": "עֲלֵיהֶ֗ם",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "numbers 25:11",
+        "isaiah 34:2",
+        "jeremiah 10:25",
+        "jeremiah 42:18",
+        "ezekiel 7:8",
+        "ezekiel 9:8",
+        "ezekiel 14:19",
+        "ezekiel 20:8",
+        "ezekiel 20:13",
+        "ezekiel 20:21",
+        "ezekiel 22:22",
+        "ezekiel 30:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִשְׁפֹּ֧ךְ חֲמָתִ֣י",
+      "pron": "쇼페크 하마트",
+      "lemmas": [
+        "שָׁפַךְ",
+        "חֵמָה"
+      ],
+      "words": [
+        {
+          "word": "לִשְׁפֹּ֧ךְ",
+          "lemma": "שָׁפַךְ",
+          "strong": "H8210",
+          "pron": "쇼페크"
+        },
+        {
+          "word": "חֲמָתִ֣י",
+          "lemma": "חֵמָה",
+          "strong": "H2534",
+          "pron": "하마트"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "psalms 79:6",
+        "jeremiah 10:25",
+        "ezekiel 7:8",
+        "ezekiel 14:19",
+        "ezekiel 20:8",
+        "ezekiel 20:13",
+        "ezekiel 20:21",
+        "ezekiel 22:22",
+        "ezekiel 30:15",
+        "ezekiel 36:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִשְׁפֹּ֧ךְ חֲמָתִ֣י עֲלֵיהֶ֗ם",
+      "pron": "쇼페크 하마트 알",
+      "lemmas": [
+        "שָׁפַךְ",
+        "חֵמָה",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "לִשְׁפֹּ֧ךְ",
+          "lemma": "שָׁפַךְ",
+          "strong": "H8210",
+          "pron": "쇼페크"
+        },
+        {
+          "word": "חֲמָתִ֣י",
+          "lemma": "חֵמָה",
+          "strong": "H2534",
+          "pron": "하마트"
+        },
+        {
+          "word": "עֲלֵיהֶ֗ם",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "jeremiah 10:25",
+        "ezekiel 7:8",
+        "ezekiel 14:19",
+        "ezekiel 20:8",
+        "ezekiel 20:13",
+        "ezekiel 20:21",
+        "ezekiel 22:22",
+        "ezekiel 30:15",
+        "ezekiel 36:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת חֲמָתִי֙",
+      "pron": "에트 하마트",
+      "lemmas": [
+        "אֵת",
+        "חֵמָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "חֲמָתִי֙",
+          "lemma": "חֵמָה",
+          "strong": "H2534",
+          "pron": "하마트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "numbers 25:11",
+        "jeremiah 6:11",
+        "jeremiah 18:20",
+        "lamentations 4:11",
+        "ezekiel 9:8",
+        "ezekiel 13:15",
+        "ezekiel 23:25",
+        "ezekiel 24:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

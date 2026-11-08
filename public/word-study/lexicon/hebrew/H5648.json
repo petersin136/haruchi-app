@@ -1,8 +1,8 @@
 {
   "lemma": "עֲבַד",
-  "pron": "아받",
+  "pron": "압딘",
   "strong": "H5648",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "עָבַד",
     "strong": "H5647",
@@ -12,37 +12,135 @@
     {
       "lemma": "מַעְבָּד",
       "strong": "H4566",
-      "pron": "",
-      "glossKo": "행위"
+      "pron": "마엡바데헴",
+      "glossKo": "그들의 행위"
     },
     {
       "lemma": "עָבַד",
       "strong": "H5647",
-      "pron": "입두",
+      "pron": "라아볻",
       "glossKo": "섬기다"
+    },
+    {
+      "lemma": "עֲבַד",
+      "strong": "H5649",
+      "pron": "압다으크",
+      "glossKo": "너의 종(아람)"
     },
     {
       "lemma": "עֶבֶד",
       "strong": "H5650",
-      "pron": "르에벧",
+      "pron": "에벧",
       "glossKo": "종"
     },
     {
       "lemma": "עֲבָד",
       "strong": "H5652",
-      "pron": "",
-      "glossKo": "행위"
+      "pron": "바아바데헴",
+      "glossKo": "그들의 행위"
     },
     {
       "lemma": "עַבְדָּא",
       "strong": "H5653",
-      "pron": "",
+      "pron": "압다",
       "glossKo": "압다"
     }
   ],
   "defEn": "do; make; prepare; keep",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 28,
+  "byBook": {
+    "ezra": 15,
+    "daniel": 12,
+    "jeremiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אָסְפַּ֖רְנָא יִתְעֲבִֽד",
+      "pron": "앗파레나 압딘",
+      "lemmas": [
+        "אׇסְפַּרְנָא",
+        "עֲבַד"
+      ],
+      "words": [
+        {
+          "word": "אָסְפַּ֖רְנָא",
+          "lemma": "אׇסְפַּרְנָא",
+          "strong": "H629",
+          "pron": "앗파레나"
+        },
+        {
+          "word": "יִתְעֲבִֽד",
+          "lemma": "עֲבַד",
+          "strong": "H5648",
+          "pron": "압딘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 5:8",
+        "ezra 6:12",
+        "ezra 6:13",
+        "ezra 7:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִֽי תַֽעַבְד֗וּן",
+      "pron": "드흐브 압딘",
+      "lemmas": [
+        "דִּי",
+        "עֲבַד"
+      ],
+      "words": [
+        {
+          "word": "דִֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "תַֽעַבְד֗וּן",
+          "lemma": "עֲבַד",
+          "strong": "H5648",
+          "pron": "압딘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 6:8",
+        "daniel 3:15",
+        "daniel 4:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֶהֱוֵ֨א עָבֵ֜ד",
+      "pron": "레헤베 압딘",
+      "lemmas": [
+        "הָוָא",
+        "עֲבַד"
+      ],
+      "words": [
+        {
+          "word": "לֶהֱוֵ֨א",
+          "lemma": "הָוָא",
+          "strong": "H1934",
+          "pron": "레헤베"
+        },
+        {
+          "word": "עָבֵ֜ד",
+          "lemma": "עֲבַד",
+          "strong": "H5648",
+          "pron": "압딘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 7:26",
+        "daniel 6:10"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

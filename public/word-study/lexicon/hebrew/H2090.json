@@ -1,6 +1,6 @@
 {
   "lemma": "זֹה",
-  "pron": "조",
+  "pron": "카조",
   "strong": "H2090",
   "posKo": "대명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "גֵּה",
       "strong": "H1454",
-      "pron": "",
+      "pron": "게",
       "glossKo": "이것"
     },
     {
       "lemma": "דָּא",
       "strong": "H1668",
-      "pron": "",
+      "pron": "다",
       "glossKo": "이(아람)"
     },
     {
@@ -36,7 +36,7 @@
     {
       "lemma": "זוֹ",
       "strong": "H2097",
-      "pron": "",
+      "pron": "조",
       "glossKo": "이것"
     },
     {
@@ -48,9 +48,74 @@
   ],
   "defEn": "this; that",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 12,
   "byBook": {
-    "psalms": 1
+    "ecclesiastes": 6,
+    "ezekiel": 1,
+    "judges": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "psalms": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "גַּם זֹה֙",
+      "pron": "감 카조",
+      "lemmas": [
+        "גַּם",
+        "זֹה"
+      ],
+      "words": [
+        {
+          "word": "גַּם",
+          "lemma": "גַּם",
+          "strong": "H1571",
+          "pron": "감"
+        },
+        {
+          "word": "זֹה֙",
+          "lemma": "זֹה",
+          "strong": "H2090",
+          "pron": "카조"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ecclesiastes 2:24",
+        "ecclesiastes 5:16",
+        "ecclesiastes 9:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּזֹ֣ה וְכָזֶ֔ה",
+      "pron": "카조 제",
+      "lemmas": [
+        "זֹה",
+        "זֶה"
+      ],
+      "words": [
+        {
+          "word": "כָּזֹ֣ה",
+          "lemma": "זֹה",
+          "strong": "H2090",
+          "pron": "카조"
+        },
+        {
+          "word": "וְכָזֶ֔ה",
+          "lemma": "זֶה",
+          "strong": "H2088",
+          "pron": "제"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 18:4",
+        "samuel2 11:25",
+        "kings1 14:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

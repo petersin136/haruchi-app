@@ -1,6 +1,6 @@
 {
   "lemma": "זָמַם",
-  "pron": "잠모티",
+  "pron": "얏무",
   "strong": "H2161",
   "posKo": "동사",
   "root": null,
@@ -14,28 +14,65 @@
     {
       "lemma": "זַמְזֹם",
       "strong": "H2157",
-      "pron": "",
+      "pron": "잠줌밈",
       "glossKo": "삼숨밈"
     },
     {
       "lemma": "זָמָם",
       "strong": "H2162",
-      "pron": "제맘오",
+      "pron": "제마모",
       "glossKo": "그의 음모"
     },
     {
       "lemma": "מְזִמָּה",
       "strong": "H4209",
-      "pron": "비메짐모트",
+      "pron": "우메짐모트",
       "glossKo": "계략"
     }
   ],
   "defEn": "plan",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 13,
   "byBook": {
     "psalms": 3,
-    "genesis": 1
+    "zechariah": 3,
+    "jeremiah": 2,
+    "proverbs": 2,
+    "deuteronomy": 1,
+    "genesis": 1,
+    "lamentations": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲשֶׁ֥ר יָזְמ֖וּ",
+      "pron": "아셰르 얏무",
+      "lemmas": [
+        "אֲשֶׁר",
+        "זָמַם"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יָזְמ֖וּ",
+          "lemma": "זָמַם",
+          "strong": "H2161",
+          "pron": "얏무"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 11:6",
+        "deuteronomy 19:19",
+        "lamentations 2:17",
+        "zechariah 1:6",
+        "zechariah 8:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

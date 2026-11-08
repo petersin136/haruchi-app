@@ -1,6 +1,6 @@
 {
   "lemma": "הָרָה",
-  "pron": "브하라",
+  "pron": "바타하르",
   "strong": "H2029",
   "posKo": "동사",
   "root": null,
@@ -14,27 +14,38 @@
     {
       "lemma": "הַרְהֹר",
       "strong": "H2031",
-      "pron": "",
+      "pron": "브하레호린",
       "glossKo": "생각(아람)"
     },
     {
       "lemma": "הֵרוֹן",
       "strong": "H2032",
-      "pron": "브헤로네크",
+      "pron": "베헤로네크",
       "glossKo": "너의 임신"
     }
   ],
   "defEn": "be; become; pregnant; conceive",
   "defKo": "",
-  "countOT": 22,
+  "countOT": 43,
   "byBook": {
     "genesis": 21,
-    "psalms": 1
+    "isaiah": 5,
+    "hosea": 4,
+    "chronicles1": 2,
+    "job": 2,
+    "samuel1": 2,
+    "exodus": 1,
+    "judges": 1,
+    "kings2": 1,
+    "numbers": 1,
+    "psalms": 1,
+    "samuel2": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
       "hebrew": "וַתַּ֖הַר וַתֵּ֣לֶד",
-      "pron": "브하라 옐릳티카",
+      "pron": "바타하르 텔디",
       "lemmas": [
         "הָרָה",
         "יָלַד"
@@ -44,29 +55,75 @@
           "word": "וַתַּ֖הַר",
           "lemma": "הָרָה",
           "strong": "H2029",
-          "pron": "브하라"
+          "pron": "바타하르"
         },
         {
           "word": "וַתֵּ֣לֶד",
           "lemma": "יָלַד",
           "strong": "H3205",
-          "pron": "옐릳티카"
+          "pron": "텔디"
         }
       ],
-      "count": 6,
+      "count": 12,
       "refs": [
         "genesis 4:1",
         "genesis 4:17",
         "genesis 21:2",
         "genesis 30:17",
         "genesis 30:23",
-        "genesis 38:3"
+        "genesis 38:3",
+        "judges 13:3",
+        "samuel1 2:21",
+        "chronicles1 7:23",
+        "isaiah 8:3",
+        "hosea 1:3",
+        "hosea 1:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתַּ֖הַר וַתֵּ֣לֶד בֵּ֑ן",
+      "pron": "바타하르 텔디 바님",
+      "lemmas": [
+        "הָרָה",
+        "יָלַד",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "וַתַּ֖הַר",
+          "lemma": "הָרָה",
+          "strong": "H2029",
+          "pron": "바타하르"
+        },
+        {
+          "word": "וַתֵּ֣לֶד",
+          "lemma": "יָלַד",
+          "strong": "H3205",
+          "pron": "텔디"
+        },
+        {
+          "word": "בֵּ֑ן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 30:23",
+        "genesis 38:3",
+        "judges 13:3",
+        "chronicles1 7:23",
+        "isaiah 8:3",
+        "hosea 1:3",
+        "hosea 1:8"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "וַתַּ֣הַר עוֹד֮",
-      "pron": "브하라 옫",
+      "pron": "바타하르 옫",
       "lemmas": [
         "הָרָה",
         "עוֹד"
@@ -76,7 +133,7 @@
           "word": "וַתַּ֣הַר",
           "lemma": "הָרָה",
           "strong": "H2029",
-          "pron": "브하라"
+          "pron": "바타하르"
         },
         {
           "word": "עוֹד֮",
@@ -85,20 +142,21 @@
           "pron": "옫"
         }
       ],
-      "count": 6,
+      "count": 7,
       "refs": [
         "genesis 29:33",
         "genesis 29:34",
         "genesis 29:35",
         "genesis 30:7",
         "genesis 30:19",
-        "genesis 38:4"
+        "genesis 38:4",
+        "hosea 1:6"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "וַתַּ֣הַר עוֹד֮ וַתֵּ֣לֶד",
-      "pron": "브하라 옫 옐릳티카",
+      "pron": "바타하르 옫 텔디",
       "lemmas": [
         "הָרָה",
         "עוֹד",
@@ -109,7 +167,7 @@
           "word": "וַתַּ֣הַר",
           "lemma": "הָרָה",
           "strong": "H2029",
-          "pron": "브하라"
+          "pron": "바타하르"
         },
         {
           "word": "עוֹד֮",
@@ -121,16 +179,46 @@
           "word": "וַתֵּ֣לֶד",
           "lemma": "יָלַד",
           "strong": "H3205",
-          "pron": "옐릳티카"
+          "pron": "텔디"
         }
       ],
-      "count": 5,
+      "count": 6,
       "refs": [
         "genesis 29:33",
         "genesis 29:34",
         "genesis 29:35",
         "genesis 30:7",
-        "genesis 38:4"
+        "genesis 38:4",
+        "hosea 1:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִשְׁתּ֔וֹ וַתַּ֖הַר",
+      "pron": "르잇샤 바타하르",
+      "lemmas": [
+        "אִשָּׁה",
+        "הָרָה"
+      ],
+      "words": [
+        {
+          "word": "אִשְׁתּ֔וֹ",
+          "lemma": "אִשָּׁה",
+          "strong": "H802",
+          "pron": "르잇샤"
+        },
+        {
+          "word": "וַתַּ֖הַר",
+          "lemma": "הָרָה",
+          "strong": "H2029",
+          "pron": "바타하르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 4:1",
+        "genesis 4:17",
+        "chronicles1 7:23"
       ],
       "glossKo": ""
     }

@@ -1,8 +1,8 @@
 {
   "lemma": "עֲדָא",
-  "pron": "아다",
+  "pron": "메하엗데",
   "strong": "H5709",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "עָדָה",
     "strong": "H5710",
@@ -12,13 +12,13 @@
     {
       "lemma": "מַעֲדַי",
       "strong": "H4572",
-      "pron": "",
+      "pron": "마아다이",
       "glossKo": "마아대"
     },
     {
       "lemma": "מַעֲדְיָה",
       "strong": "H4573",
-      "pron": "",
+      "pron": "마앋아",
       "glossKo": "마아댜"
     },
     {
@@ -30,19 +30,94 @@
     {
       "lemma": "עֵד",
       "strong": "H5708",
-      "pron": "",
+      "pron": "읻딤",
       "glossKo": "월경포"
     },
     {
       "lemma": "עָדָה",
       "strong": "H5710",
-      "pron": "",
+      "pron": "아다",
       "glossKo": "치장하다"
+    },
+    {
+      "lemma": "עָדָה",
+      "strong": "H5711",
+      "pron": "아다",
+      "glossKo": "아다"
     }
   ],
   "defEn": "alter, depart, pass (away), remove, take (away).",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "daniel": 9
+  },
+  "phrases": [
+    {
+      "hebrew": "לָ֥א תֶעְדֵּֽא",
+      "pron": "라 메하엗데",
+      "lemmas": [
+        "לָא",
+        "עֲדָא"
+      ],
+      "words": [
+        {
+          "word": "לָ֥א",
+          "lemma": "לָא",
+          "strong": "H3809",
+          "pron": "라"
+        },
+        {
+          "word": "תֶעְדֵּֽא",
+          "lemma": "עֲדָא",
+          "strong": "H5709",
+          "pron": "메하엗데"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 3:27",
+        "daniel 6:8",
+        "daniel 6:12",
+        "daniel 7:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּי לָ֥א תֶעְדֵּֽא",
+      "pron": "드흐브 라 메하엗데",
+      "lemmas": [
+        "דִּי",
+        "לָא",
+        "עֲדָא"
+      ],
+      "words": [
+        {
+          "word": "דִּי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "לָ֥א",
+          "lemma": "לָא",
+          "strong": "H3809",
+          "pron": "라"
+        },
+        {
+          "word": "תֶעְדֵּֽא",
+          "lemma": "עֲדָא",
+          "strong": "H5709",
+          "pron": "메하엗데"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 6:8",
+        "daniel 6:12",
+        "daniel 7:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

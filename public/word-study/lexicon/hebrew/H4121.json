@@ -1,8 +1,8 @@
 {
   "lemma": "מַהֲרַי",
-  "pron": "마하라이",
+  "pron": "마헤라이",
   "strong": "H4121",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "מָהַר",
     "strong": "H4116",
@@ -18,13 +18,13 @@
     {
       "lemma": "מָהַר",
       "strong": "H4116",
-      "pron": "마하루",
+      "pron": "바예마헤르",
       "glossKo": "서두르다"
     },
     {
       "lemma": "מָהַר",
       "strong": "H4117",
-      "pron": "",
+      "pron": "마호르",
       "glossKo": "신부값을 치르다"
     },
     {
@@ -36,7 +36,40 @@
   ],
   "defEn": "Maharai",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 3,
+  "byBook": {
+    "chronicles1": 2,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "מַהְרַ֖י הַנְּטֹפָתִֽי",
+      "pron": "마헤라이 아네도파티",
+      "lemmas": [
+        "מַהֲרַי",
+        "נְטֹפָתִי"
+      ],
+      "words": [
+        {
+          "word": "מַהְרַ֖י",
+          "lemma": "מַהֲרַי",
+          "strong": "H4121",
+          "pron": "마헤라이"
+        },
+        {
+          "word": "הַנְּטֹפָתִֽי",
+          "lemma": "נְטֹפָתִי",
+          "strong": "H5200",
+          "pron": "아네도파티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 23:28",
+        "chronicles1 11:30",
+        "chronicles1 27:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

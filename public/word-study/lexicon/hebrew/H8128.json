@@ -1,8 +1,8 @@
 {
   "lemma": "שֵׁן",
-  "pron": "셴",
+  "pron": "쉬니",
   "strong": "H8128",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שֵׁן",
     "strong": "H8127",
@@ -12,25 +12,56 @@
     {
       "lemma": "שֵׁן",
       "strong": "H8127",
-      "pron": "신네",
+      "pron": "신나임",
       "glossKo": "이"
     },
     {
       "lemma": "שֵׁן",
       "strong": "H8129",
-      "pron": "",
+      "pron": "아셴",
       "glossKo": "센"
     },
     {
       "lemma": "שֶׁנְהַבִּים",
       "strong": "H8143",
-      "pron": "",
+      "pron": "셴합빔",
       "glossKo": "상아"
     }
   ],
   "defEn": "tooth",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "daniel": 5
+  },
+  "phrases": [
+    {
+      "hebrew": "שניה שִׁנַּ֑הּ",
+      "pron": "쉬니 쉬니",
+      "lemmas": [
+        "שֵׁן",
+        "שֵׁן"
+      ],
+      "words": [
+        {
+          "word": "שניה",
+          "lemma": "שֵׁן",
+          "strong": "H8128",
+          "pron": "쉬니"
+        },
+        {
+          "word": "שִׁנַּ֑הּ",
+          "lemma": "שֵׁן",
+          "strong": "H8128",
+          "pron": "쉬니"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 7:5",
+        "daniel 7:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

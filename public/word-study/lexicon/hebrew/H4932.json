@@ -12,14 +12,14 @@
     {
       "lemma": "שָׁנָה",
       "strong": "H8138",
-      "pron": "브샨노트오",
-      "glossKo": "그에게 되풀이하다"
+      "pron": "힛샤노트",
+      "glossKo": "되풀이하다"
     },
     {
       "lemma": "שָׁנֶה",
       "strong": "H8141",
-      "pron": "우셰노타위",
-      "glossKo": "나의 해(年)"
+      "pron": "브샤님",
+      "glossKo": "해(年)"
     },
     {
       "lemma": "שֵׁנִי",
@@ -30,9 +30,120 @@
   ],
   "defEn": "repetition; duplicate; copy; double",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 35,
   "byBook": {
-    "genesis": 3
+    "chronicles2": 4,
+    "samuel1": 4,
+    "chronicles1": 3,
+    "genesis": 3,
+    "jeremiah": 3,
+    "kings2": 3,
+    "deuteronomy": 2,
+    "exodus": 2,
+    "isaiah": 2,
+    "nehemiah": 2,
+    "esther": 1,
+    "ezra": 1,
+    "job": 1,
+    "joshua": 1,
+    "samuel2": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הַמִּשְׁנֶה֮ וְאֶת",
+      "pron": "아미셰네 에트",
+      "lemmas": [
+        "מִשְׁנֶה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הַמִּשְׁנֶה֮",
+          "lemma": "מִשְׁנֶה",
+          "strong": "H4932",
+          "pron": "아미셰네"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 23:4",
+        "kings2 25:18",
+        "jeremiah 52:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כֹּהֲנֵ֣י הַמִּשְׁנֶה֮",
+      "pron": "코헨 아미셰네",
+      "lemmas": [
+        "כֹּהֵן",
+        "מִשְׁנֶה"
+      ],
+      "words": [
+        {
+          "word": "כֹּהֲנֵ֣י",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        },
+        {
+          "word": "הַמִּשְׁנֶה֮",
+          "lemma": "מִשְׁנֶה",
+          "strong": "H4932",
+          "pron": "아미셰네"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 23:4",
+        "kings2 25:18",
+        "jeremiah 52:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כֹּהֲנֵ֣י הַמִּשְׁנֶה֮ וְאֶת",
+      "pron": "코헨 아미셰네 에트",
+      "lemmas": [
+        "כֹּהֵן",
+        "מִשְׁנֶה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "כֹּהֲנֵ֣י",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        },
+        {
+          "word": "הַמִּשְׁנֶה֮",
+          "lemma": "מִשְׁנֶה",
+          "strong": "H4932",
+          "pron": "아미셰네"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 23:4",
+        "kings2 25:18",
+        "jeremiah 52:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -18,27 +18,130 @@
     {
       "lemma": "כָּשַׁל",
       "strong": "H3782",
-      "pron": "익카셸루",
+      "pron": "브카셸루",
       "glossKo": "넘어지다"
     },
     {
       "lemma": "כִּשָּׁלוֹן",
       "strong": "H3783",
-      "pron": "",
+      "pron": "킷샬론",
       "glossKo": "넘어짐"
     },
     {
       "lemma": "מַכְשֵׁלָה",
       "strong": "H4384",
-      "pron": "",
+      "pron": "브아마케셸라",
       "glossKo": "걸려 넘어지는 것"
     }
   ],
   "defEn": "stumbling-block; obstacle; enticement; scruple",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 14,
   "byBook": {
-    "psalms": 1
+    "ezekiel": 8,
+    "isaiah": 2,
+    "jeremiah": 1,
+    "leviticus": 1,
+    "psalms": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מִכְשׁ֥וֹל עֲוֺנָ֖ם",
+      "pron": "미케숄 아보니",
+      "lemmas": [
+        "מִכְשׁוֹל",
+        "עָוֺן"
+      ],
+      "words": [
+        {
+          "word": "מִכְשׁ֥וֹל",
+          "lemma": "מִכְשׁוֹל",
+          "strong": "H4383",
+          "pron": "미케숄"
+        },
+        {
+          "word": "עֲוֺנָ֖ם",
+          "lemma": "עָוֺן",
+          "strong": "H5771",
+          "pron": "아보니"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "ezekiel 7:19",
+        "ezekiel 14:3",
+        "ezekiel 14:4",
+        "ezekiel 14:7",
+        "ezekiel 18:30",
+        "ezekiel 44:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִבָּ֔ם וּמִכְשׁ֣וֹל",
+      "pron": "립보 미케숄",
+      "lemmas": [
+        "לֵב",
+        "מִכְשׁוֹל"
+      ],
+      "words": [
+        {
+          "word": "לִבָּ֔ם",
+          "lemma": "לֵב",
+          "strong": "H3820",
+          "pron": "립보"
+        },
+        {
+          "word": "וּמִכְשׁ֣וֹל",
+          "lemma": "מִכְשׁוֹל",
+          "strong": "H4383",
+          "pron": "미케숄"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 14:3",
+        "ezekiel 14:4",
+        "ezekiel 14:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִבָּ֔ם וּמִכְשׁ֣וֹל עֲוֺנָ֔ם",
+      "pron": "립보 미케숄 아보니",
+      "lemmas": [
+        "לֵב",
+        "מִכְשׁוֹל",
+        "עָוֺן"
+      ],
+      "words": [
+        {
+          "word": "לִבָּ֔ם",
+          "lemma": "לֵב",
+          "strong": "H3820",
+          "pron": "립보"
+        },
+        {
+          "word": "וּמִכְשׁ֣וֹל",
+          "lemma": "מִכְשׁוֹל",
+          "strong": "H4383",
+          "pron": "미케숄"
+        },
+        {
+          "word": "עֲוֺנָ֔ם",
+          "lemma": "עָוֺן",
+          "strong": "H5771",
+          "pron": "아보니"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 14:3",
+        "ezekiel 14:4",
+        "ezekiel 14:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

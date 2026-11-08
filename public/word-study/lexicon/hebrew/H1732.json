@@ -1,6 +1,6 @@
 {
   "lemma": "דָּוִד",
-  "pron": "르다윗",
+  "pron": "다윗",
   "strong": "H1732",
   "posKo": "명사",
   "root": {
@@ -12,236 +12,252 @@
     {
       "lemma": "דַּד",
       "strong": "H1717",
-      "pron": "",
-      "glossKo": "유방"
+      "pron": "닫데하",
+      "glossKo": "그녀의 유방"
     },
     {
       "lemma": "דּוֹד",
       "strong": "H1730",
-      "pron": "",
+      "pron": "돋",
       "glossKo": "사랑"
     },
     {
       "lemma": "דּוּד",
       "strong": "H1731",
-      "pron": "미다윗",
+      "pron": "바다윗",
       "glossKo": "도단(지명)"
     },
     {
       "lemma": "דּוֹדָה",
       "strong": "H1733",
-      "pron": "",
-      "glossKo": "도단"
+      "pron": "도다토",
+      "glossKo": "그의 도단"
     },
     {
       "lemma": "דּוֹדוֹ",
       "strong": "H1734",
-      "pron": "",
+      "pron": "도도",
       "glossKo": "도도"
     },
     {
       "lemma": "דּוֹדָוָהוּ",
       "strong": "H1735",
-      "pron": "",
+      "pron": "도다바후",
       "glossKo": "도다와후"
     }
   ],
   "defEn": "David",
   "defKo": "",
-  "countOT": 88,
+  "countOT": 1075,
   "byBook": {
-    "psalms": 88
+    "samuel1": 291,
+    "samuel2": 285,
+    "chronicles1": 187,
+    "psalms": 88,
+    "kings1": 78,
+    "chronicles2": 74,
+    "kings2": 18,
+    "jeremiah": 15,
+    "isaiah": 10,
+    "nehemiah": 8,
+    "zechariah": 6,
+    "ezekiel": 4,
+    "ezra": 3,
+    "amos": 2,
+    "ruth": 2,
+    "ecclesiastes": 1,
+    "hosea": 1,
+    "proverbs": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "מִזְמ֥וֹר לְדָוִֽד",
-      "pron": "미즈모르 르다윗",
+      "hebrew": "וַיֹּ֨אמֶר דָּוִ֜ד",
+      "pron": "바요메르 다윗",
       "lemmas": [
-        "מִזְמוֹר",
+        "אָמַר",
         "דָּוִד"
       ],
       "words": [
         {
-          "word": "מִזְמ֥וֹר",
-          "lemma": "מִזְמוֹר",
-          "strong": "H4210",
-          "pron": "미즈모르"
+          "word": "וַיֹּ֨אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
         },
         {
-          "word": "לְדָוִֽד",
+          "word": "דָּוִ֜ד",
           "lemma": "דָּוִד",
           "strong": "H1732",
-          "pron": "르다윗"
+          "pron": "다윗"
         }
       ],
-      "count": 28,
+      "count": 89,
       "refs": [
-        "psalms 3:1",
-        "psalms 4:1",
-        "psalms 5:1",
-        "psalms 6:1",
-        "psalms 8:1",
-        "psalms 9:1",
-        "psalms 12:1",
-        "psalms 13:1",
-        "psalms 15:1",
-        "psalms 19:1",
-        "psalms 20:1",
-        "psalms 21:1"
+        "samuel1 17:26",
+        "samuel1 17:29",
+        "samuel1 17:32",
+        "samuel1 17:34",
+        "samuel1 17:37",
+        "samuel1 17:39",
+        "samuel1 17:45",
+        "samuel1 17:58",
+        "samuel1 18:18",
+        "samuel1 18:23",
+        "samuel1 18:25",
+        "samuel1 20:5"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לְדָוִֽד יְֽהוָ֗ה",
-      "pron": "르다윗 여호와",
+      "hebrew": "אֶל דָּוִ֔ד",
+      "pron": "엘 다윗",
       "lemmas": [
-        "דָּוִד",
-        "יְהֹוָה"
-      ],
-      "words": [
-        {
-          "word": "לְדָוִֽד",
-          "lemma": "דָּוִד",
-          "strong": "H1732",
-          "pron": "르다윗"
-        },
-        {
-          "word": "יְֽהוָ֗ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        }
-      ],
-      "count": 11,
-      "refs": [
-        "psalms 6:1",
-        "psalms 8:1",
-        "psalms 11:1",
-        "psalms 15:1",
-        "psalms 21:1",
-        "psalms 23:1",
-        "psalms 27:1",
-        "psalms 31:1",
-        "psalms 131:1",
-        "psalms 141:1",
-        "psalms 143:1"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "לַמְנַצֵּ֗חַ מִזְמ֥וֹר לְדָוִֽד",
-      "pron": "라메낫체아흐 미즈모르 르다윗",
-      "lemmas": [
-        "נָצַח",
-        "מִזְמוֹר",
+        "אֵל",
         "דָּוִד"
       ],
       "words": [
         {
-          "word": "לַמְנַצֵּ֗חַ",
-          "lemma": "נָצַח",
-          "strong": "H5329",
-          "pron": "라메낫체아흐"
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
         },
         {
-          "word": "מִזְמ֥וֹר",
-          "lemma": "מִזְמוֹר",
-          "strong": "H4210",
-          "pron": "미즈모르"
-        },
-        {
-          "word": "לְדָוִֽד",
+          "word": "דָּוִ֔ד",
           "lemma": "דָּוִד",
           "strong": "H1732",
-          "pron": "르다윗"
+          "pron": "다윗"
         }
       ],
-      "count": 10,
+      "count": 81,
       "refs": [
-        "psalms 13:1",
-        "psalms 19:1",
-        "psalms 20:1",
-        "psalms 21:1",
-        "psalms 31:1",
-        "psalms 41:1",
-        "psalms 51:1",
-        "psalms 64:1",
-        "psalms 65:1",
-        "psalms 140:1"
+        "samuel1 16:13",
+        "samuel1 17:33",
+        "samuel1 17:37",
+        "samuel1 17:41",
+        "samuel1 17:43",
+        "samuel1 17:44",
+        "samuel1 18:17",
+        "samuel1 18:21",
+        "samuel1 18:22",
+        "samuel1 20:4",
+        "samuel1 20:11",
+        "samuel1 20:12"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "מִזְמ֥וֹר לְדָוִֽד יְֽהוָ֗ה",
-      "pron": "미즈모르 르다윗 여호와",
+      "hebrew": "דָּוִ֛ד אֶת",
+      "pron": "다윗 에트",
       "lemmas": [
-        "מִזְמוֹר",
         "דָּוִד",
-        "יְהֹוָה"
+        "אֵת"
       ],
       "words": [
         {
-          "word": "מִזְמ֥וֹר",
-          "lemma": "מִזְמוֹר",
-          "strong": "H4210",
-          "pron": "미즈모르"
-        },
-        {
-          "word": "לְדָוִֽד",
+          "word": "דָּוִ֛ד",
           "lemma": "דָּוִד",
           "strong": "H1732",
-          "pron": "르다윗"
+          "pron": "다윗"
         },
         {
-          "word": "יְֽהוָ֗ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         }
       ],
-      "count": 8,
+      "count": 67,
       "refs": [
-        "psalms 6:1",
-        "psalms 8:1",
-        "psalms 15:1",
-        "psalms 21:1",
-        "psalms 23:1",
-        "psalms 31:1",
-        "psalms 141:1",
-        "psalms 143:1"
+        "samuel1 16:23",
+        "samuel1 17:22",
+        "samuel1 17:39",
+        "samuel1 17:49",
+        "samuel1 17:54",
+        "samuel1 18:23",
+        "samuel1 18:26",
+        "samuel1 18:27",
+        "samuel1 21:5",
+        "samuel1 21:12",
+        "samuel1 23:5",
+        "samuel1 24:5"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לְדָוִ֗ד מִ֫זְמ֥וֹר",
-      "pron": "르다윗 미즈모르",
+      "hebrew": "דָּוִ֣ד אָבִ֑יו",
+      "pron": "다윗 아비브",
       "lemmas": [
         "דָּוִד",
-        "מִזְמוֹר"
+        "אָב"
       ],
       "words": [
         {
-          "word": "לְדָוִ֗ד",
+          "word": "דָּוִ֣ד",
           "lemma": "דָּוִד",
           "strong": "H1732",
-          "pron": "르다윗"
+          "pron": "다윗"
         },
         {
-          "word": "מִ֫זְמ֥וֹר",
-          "lemma": "מִזְמוֹר",
-          "strong": "H4210",
-          "pron": "미즈모르"
+          "word": "אָבִ֑יו",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
         }
       ],
-      "count": 7,
+      "count": 63,
       "refs": [
-        "psalms 24:1",
-        "psalms 40:1",
-        "psalms 68:1",
-        "psalms 101:1",
-        "psalms 109:1",
-        "psalms 110:1",
-        "psalms 139:1"
+        "kings1 2:12",
+        "kings1 2:24",
+        "kings1 2:26",
+        "kings1 2:44",
+        "kings1 3:3",
+        "kings1 3:6",
+        "kings1 3:7",
+        "kings1 3:14",
+        "kings1 5:3",
+        "kings1 5:5",
+        "kings1 6:12",
+        "kings1 7:51"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דָּוִד֙ אֶל",
+      "pron": "다윗 엘",
+      "lemmas": [
+        "דָּוִד",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "דָּוִד֙",
+          "lemma": "דָּוִד",
+          "strong": "H1732",
+          "pron": "다윗"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 63,
+      "refs": [
+        "samuel1 16:21",
+        "samuel1 17:26",
+        "samuel1 17:32",
+        "samuel1 17:34",
+        "samuel1 17:39",
+        "samuel1 17:45",
+        "samuel1 18:18",
+        "samuel1 19:7",
+        "samuel1 20:5",
+        "samuel1 20:10",
+        "samuel1 23:3",
+        "samuel1 23:8"
       ],
       "glossKo": ""
     }

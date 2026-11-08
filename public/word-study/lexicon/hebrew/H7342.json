@@ -1,6 +1,6 @@
 {
   "lemma": "רָחָב",
-  "pron": "우레합",
+  "pron": "라하바트",
   "strong": "H7342",
   "posKo": "형용사",
   "root": {
@@ -18,34 +18,149 @@
     {
       "lemma": "רָחַב",
       "strong": "H7337",
-      "pron": "히레합타",
+      "pron": "히레힙",
       "glossKo": "넓어지다"
     },
     {
       "lemma": "רַחַב",
       "strong": "H7338",
-      "pron": "",
+      "pron": "라합",
       "glossKo": "넓은 곳"
     },
     {
       "lemma": "רְחֹב",
       "strong": "H7339",
-      "pron": "메레호바흐",
-      "glossKo": "그녀의 광장"
+      "pron": "바레홉",
+      "glossKo": "광장"
     },
     {
       "lemma": "רֹחַב",
       "strong": "H7341",
       "pron": "라헵바흐",
       "glossKo": "그녀의 너비"
+    },
+    {
+      "lemma": "רָחָב",
+      "strong": "H7343",
+      "pron": "라합",
+      "glossKo": "라합"
     }
   ],
   "defEn": "roomy",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 21,
   "byBook": {
+    "nehemiah": 5,
     "psalms": 4,
-    "genesis": 1
+    "isaiah": 2,
+    "job": 2,
+    "proverbs": 2,
+    "chronicles1": 1,
+    "exodus": 1,
+    "ezekiel": 1,
+    "genesis": 1,
+    "jeremiah": 1,
+    "judges": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "רַחֲבַ֣ת יָדַ֔יִם",
+      "pron": "라하바트 야도",
+      "lemmas": [
+        "רָחָב",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "רַחֲבַ֣ת",
+          "lemma": "רָחָב",
+          "strong": "H7342",
+          "pron": "라하바트"
+        },
+        {
+          "word": "יָדַ֔יִם",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 34:21",
+        "judges 18:10",
+        "chronicles1 4:40",
+        "nehemiah 7:4",
+        "psalms 104:25",
+        "isaiah 22:18",
+        "isaiah 33:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָאָ֨רֶץ֙ רַחֲבַ֣ת",
+      "pron": "하아레츠 라하바트",
+      "lemmas": [
+        "אֶרֶץ",
+        "רָחָב"
+      ],
+      "words": [
+        {
+          "word": "וְהָאָ֨רֶץ֙",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "רַחֲבַ֣ת",
+          "lemma": "רָחָב",
+          "strong": "H7342",
+          "pron": "라하바트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 18:10",
+        "chronicles1 4:40",
+        "nehemiah 9:35",
+        "isaiah 22:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָאָ֨רֶץ֙ רַחֲבַ֣ת יָדַ֔יִם",
+      "pron": "하아레츠 라하바트 야도",
+      "lemmas": [
+        "אֶרֶץ",
+        "רָחָב",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "וְהָאָ֨רֶץ֙",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "רַחֲבַ֣ת",
+          "lemma": "רָחָב",
+          "strong": "H7342",
+          "pron": "라하바트"
+        },
+        {
+          "word": "יָדַ֔יִם",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 18:10",
+        "chronicles1 4:40",
+        "isaiah 22:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "מָחָה",
-  "pron": "마히타",
+  "pron": "엠헤",
   "strong": "H4229",
   "posKo": "동사",
   "root": null,
@@ -20,27 +20,37 @@
     {
       "lemma": "מְחִי",
       "strong": "H4239",
-      "pron": "",
+      "pron": "우메히",
       "glossKo": "타격"
     },
     {
       "lemma": "מַחַת",
       "strong": "H4287",
-      "pron": "",
+      "pron": "마하트",
       "glossKo": "마핫"
     }
   ],
   "defEn": "stroke; rub",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 36,
   "byBook": {
     "psalms": 6,
-    "genesis": 4
+    "deuteronomy": 4,
+    "exodus": 4,
+    "genesis": 4,
+    "isaiah": 4,
+    "kings2": 4,
+    "proverbs": 3,
+    "nehemiah": 2,
+    "numbers": 2,
+    "ezekiel": 1,
+    "jeremiah": 1,
+    "judges": 1
   },
   "phrases": [
     {
       "hebrew": "אֶמְחֶ֨ה אֶת",
-      "pron": "마히타 에트",
+      "pron": "엠헤 에트",
       "lemmas": [
         "מָחָה",
         "אֵת"
@@ -50,7 +60,7 @@
           "word": "אֶמְחֶ֨ה",
           "lemma": "מָחָה",
           "strong": "H4229",
-          "pron": "마히타"
+          "pron": "엠헤"
         },
         {
           "word": "אֶת",
@@ -59,11 +69,75 @@
           "pron": "에트"
         }
       ],
-      "count": 3,
+      "count": 9,
       "refs": [
         "genesis 6:7",
         "genesis 7:4",
-        "genesis 7:23"
+        "genesis 7:23",
+        "exodus 17:14",
+        "deuteronomy 9:14",
+        "deuteronomy 25:19",
+        "kings2 14:27",
+        "kings2 21:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַל תִּמָּחֶ֑ה",
+      "pron": "엘 엠헤",
+      "lemmas": [
+        "אַל",
+        "מָחָה"
+      ],
+      "words": [
+        {
+          "word": "אַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "תִּמָּחֶ֑ה",
+          "lemma": "מָחָה",
+          "strong": "H4229",
+          "pron": "엠헤"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "nehemiah 4:5",
+        "nehemiah 13:14",
+        "psalms 109:14",
+        "jeremiah 18:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹֽא יִמָּחֶ֥ה",
+      "pron": "로 엠헤",
+      "lemmas": [
+        "לֹא",
+        "מָחָה"
+      ],
+      "words": [
+        {
+          "word": "וְלֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִמָּחֶ֥ה",
+          "lemma": "מָחָה",
+          "strong": "H4229",
+          "pron": "엠헤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 25:6",
+        "judges 21:17",
+        "proverbs 6:33"
       ],
       "glossKo": ""
     }

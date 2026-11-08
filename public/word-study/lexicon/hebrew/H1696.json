@@ -1,6 +1,6 @@
 {
   "lemma": "דָבַר",
-  "pron": "예답베르",
+  "pron": "바예답베르",
   "strong": "H1696",
   "posKo": "동사",
   "root": null,
@@ -8,73 +8,105 @@
     {
       "lemma": "דְּבוֹרָה",
       "strong": "H1682",
-      "pron": "키데보림",
+      "pron": "아데보림",
       "glossKo": "꿀벌"
     },
     {
       "lemma": "דְּבִיר",
       "strong": "H1687",
-      "pron": "데비르",
+      "pron": "브라데비르",
       "glossKo": "지성소"
     },
     {
       "lemma": "דָּבָר",
       "strong": "H1697",
-      "pron": "딥레",
+      "pron": "우데바림",
       "glossKo": "말씀"
     },
     {
       "lemma": "דֶּבֶר",
       "strong": "H1698",
-      "pron": "라데베르",
+      "pron": "바데베르",
       "glossKo": "전염병"
     },
     {
       "lemma": "דֹּבֶר",
       "strong": "H1699",
-      "pron": "",
-      "glossKo": "초장"
+      "pron": "케답람",
+      "glossKo": "그들의 초장"
     },
     {
       "lemma": "דֹּבְרָה",
       "strong": "H1702",
-      "pron": "",
+      "pron": "돕로트",
       "glossKo": "뗏목"
     }
   ],
   "defEn": "arrange; speak; subdue",
   "defKo": "",
-  "countOT": 132,
+  "countOT": 1144,
   "byBook": {
+    "numbers": 119,
+    "jeremiah": 115,
+    "exodus": 87,
+    "kings1": 78,
     "genesis": 73,
-    "psalms": 59
+    "deuteronomy": 70,
+    "ezekiel": 67,
+    "leviticus": 66,
+    "psalms": 59,
+    "kings2": 50,
+    "isaiah": 49,
+    "samuel1": 41,
+    "job": 39,
+    "samuel2": 38,
+    "chronicles2": 34,
+    "joshua": 32,
+    "judges": 27,
+    "daniel": 19,
+    "zechariah": 18,
+    "chronicles1": 10,
+    "proverbs": 10,
+    "esther": 7,
+    "hosea": 7,
+    "ecclesiastes": 5,
+    "nehemiah": 4,
+    "amos": 3,
+    "micah": 3,
+    "ruth": 3,
+    "jonah": 2,
+    "malachi": 2,
+    "songofsolomon": 2,
+    "ezra": 1,
+    "habakkuk": 1,
+    "joel": 1,
+    "obadiah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "לְדַבֵּ֣ר אֶל",
-      "pron": "예답베르 엘레모",
+      "hebrew": "דַּבֵּ֞ר אֶל",
+      "pron": "바예답베르 엘",
       "lemmas": [
         "דָבַר",
         "אֵל"
       ],
       "words": [
         {
-          "word": "לְדַבֵּ֣ר",
+          "word": "דַּבֵּ֞ר",
           "lemma": "דָבַר",
           "strong": "H1696",
-          "pron": "예답베르"
+          "pron": "바예답베르"
         },
         {
           "word": "אֶל",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
         }
       ],
-      "count": 30,
+      "count": 274,
       "refs": [
-        "psalms 2:5",
-        "psalms 99:7",
         "genesis 12:4",
         "genesis 16:13",
         "genesis 18:27",
@@ -84,13 +116,15 @@
         "genesis 19:14",
         "genesis 23:3",
         "genesis 23:13",
-        "genesis 24:30"
+        "genesis 24:30",
+        "genesis 24:45",
+        "genesis 24:50"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "אֲשֶׁר דִּבֶּ֥ר",
-      "pron": "아셰르 예답베르",
+      "pron": "아셰르 바예답베르",
       "lemmas": [
         "אֲשֶׁר",
         "דָבַר"
@@ -106,12 +140,11 @@
           "word": "דִּבֶּ֥ר",
           "lemma": "דָבַר",
           "strong": "H1696",
-          "pron": "예답베르"
+          "pron": "바예답베르"
         }
       ],
-      "count": 22,
+      "count": 248,
       "refs": [
-        "psalms 18:1",
         "genesis 12:4",
         "genesis 17:23",
         "genesis 18:5",
@@ -122,115 +155,136 @@
         "genesis 23:16",
         "genesis 24:7",
         "genesis 24:51",
-        "genesis 27:19"
+        "genesis 27:19",
+        "genesis 28:15"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "דִּבֶּ֥ר אִתּ֖וֹ",
-      "pron": "예답베르 에트",
+      "hebrew": "וַיְדַבֵּ֥ר יְהוָ֖ה",
+      "pron": "바예답베르 여호와",
       "lemmas": [
         "דָבַר",
-        "אֵת"
+        "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "דִּבֶּ֥ר",
+          "word": "וַיְדַבֵּ֥ר",
           "lemma": "דָבַר",
           "strong": "H1696",
-          "pron": "예답베르"
+          "pron": "바예답베르"
         },
         {
-          "word": "אִתּ֖וֹ",
-          "lemma": "אֵת",
-          "strong": "H854",
-          "pron": "에트"
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         }
       ],
-      "count": 11,
+      "count": 191,
       "refs": [
-        "psalms 109:2",
-        "psalms 127:5",
-        "genesis 17:3",
-        "genesis 17:22",
-        "genesis 17:23",
-        "genesis 23:8",
-        "genesis 34:6",
-        "genesis 35:13",
-        "genesis 35:14",
-        "genesis 35:15",
-        "genesis 42:7"
+        "genesis 24:51",
+        "exodus 4:30",
+        "exodus 6:10",
+        "exodus 6:13",
+        "exodus 6:28",
+        "exodus 6:29",
+        "exodus 7:13",
+        "exodus 7:22",
+        "exodus 8:15",
+        "exodus 8:19",
+        "exodus 9:12",
+        "exodus 9:35"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כַּאֲשֶׁ֨ר דִּבֶּ֤ר אֵלָיו֙",
-      "pron": "아셰르 예답베르 엘레모",
+      "hebrew": "וַיְדַבֵּ֥ר יְהוָ֖ה אֶל",
+      "pron": "바예답베르 여호와 엘",
       "lemmas": [
-        "אֲשֶׁר",
         "דָבַר",
+        "יְהֹוָה",
         "אֵל"
       ],
       "words": [
         {
-          "word": "כַּאֲשֶׁ֨ר",
+          "word": "וַיְדַבֵּ֥ר",
+          "lemma": "דָבַר",
+          "strong": "H1696",
+          "pron": "바예답베르"
+        },
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 124,
+      "refs": [
+        "exodus 4:30",
+        "exodus 6:10",
+        "exodus 6:13",
+        "exodus 6:28",
+        "exodus 6:29",
+        "exodus 9:12",
+        "exodus 13:1",
+        "exodus 14:1",
+        "exodus 16:11",
+        "exodus 25:1",
+        "exodus 30:11",
+        "exodus 30:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר דִּבֶּ֥ר יְהוָ֖ה",
+      "pron": "아셰르 바예답베르 여호와",
+      "lemmas": [
+        "אֲשֶׁר",
+        "דָבַר",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
           "lemma": "אֲשֶׁר",
           "strong": "H834",
           "pron": "아셰르"
         },
         {
-          "word": "דִּבֶּ֤ר",
+          "word": "דִּבֶּ֥ר",
           "lemma": "דָבַר",
           "strong": "H1696",
-          "pron": "예답베르"
+          "pron": "바예답베르"
         },
         {
-          "word": "אֵלָיו֙",
-          "lemma": "אֵל",
-          "strong": "H413",
-          "pron": "엘레모"
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         }
       ],
-      "count": 6,
+      "count": 65,
       "refs": [
-        "genesis 12:4",
-        "genesis 27:19",
-        "genesis 39:19",
-        "genesis 41:28",
-        "genesis 42:14",
-        "genesis 45:27"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "פִּ֭יהֶם דִּבֶּר",
-      "pron": "브피후 예답베르",
-      "lemmas": [
-        "פֶּה",
-        "דָבַר"
-      ],
-      "words": [
-        {
-          "word": "פִּ֭יהֶם",
-          "lemma": "פֶּה",
-          "strong": "H6310",
-          "pron": "브피후"
-        },
-        {
-          "word": "דִּבֶּר",
-          "lemma": "דָבַר",
-          "strong": "H1696",
-          "pron": "예답베르"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "psalms 17:10",
-        "psalms 49:3",
-        "psalms 63:11",
-        "psalms 144:8",
-        "psalms 144:11",
-        "genesis 45:12"
+        "genesis 24:51",
+        "exodus 4:30",
+        "exodus 7:13",
+        "exodus 7:22",
+        "exodus 8:15",
+        "exodus 8:19",
+        "exodus 9:12",
+        "exodus 9:35",
+        "exodus 16:23",
+        "exodus 19:8",
+        "exodus 24:3",
+        "exodus 24:7"
       ],
       "glossKo": ""
     }

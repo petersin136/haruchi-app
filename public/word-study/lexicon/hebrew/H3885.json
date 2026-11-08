@@ -1,6 +1,6 @@
 {
   "lemma": "לוּן",
-  "pron": "탈린",
+  "pron": "브리누",
   "strong": "H3885",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "יָלוֹן",
       "strong": "H3210",
-      "pron": "",
+      "pron": "브얄론",
       "glossKo": "야론"
     },
     {
@@ -20,50 +20,208 @@
     {
       "lemma": "מְלוּנָה",
       "strong": "H4412",
-      "pron": "",
+      "pron": "키멜루나",
       "glossKo": "오두막"
     },
     {
       "lemma": "תְּלוּנָה",
       "strong": "H8519",
-      "pron": "",
-      "glossKo": "원망"
+      "pron": "텔룬노테켐",
+      "glossKo": "너희의 원망"
     }
   ],
   "defEn": "stop",
   "defKo": "",
-  "countOT": 15,
+  "countOT": 87,
   "byBook": {
+    "judges": 13,
+    "numbers": 11,
     "genesis": 9,
-    "psalms": 6
+    "exodus": 8,
+    "job": 8,
+    "psalms": 6,
+    "joshua": 5,
+    "samuel2": 4,
+    "isaiah": 3,
+    "nehemiah": 3,
+    "ruth": 3,
+    "deuteronomy": 2,
+    "jeremiah": 2,
+    "proverbs": 2,
+    "songofsolomon": 2,
+    "chronicles1": 1,
+    "joel": 1,
+    "kings1": 1,
+    "leviticus": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "מָק֥וֹם לָלִֽין",
-      "pron": "비메콤 탈린",
+      "hebrew": "תלונו תַלִּ֖ינוּ",
+      "pron": "브리누 브리누",
       "lemmas": [
-        "מָקוֹם",
+        "לוּן",
         "לוּן"
       ],
       "words": [
         {
-          "word": "מָק֥וֹם",
-          "lemma": "מָקוֹם",
-          "strong": "H4725",
-          "pron": "비메콤"
-        },
-        {
-          "word": "לָלִֽין",
+          "word": "תלונו",
           "lemma": "לוּן",
           "strong": "H3885",
-          "pron": "탈린"
+          "pron": "브리누"
+        },
+        {
+          "word": "תַלִּ֖ינוּ",
+          "lemma": "לוּן",
+          "strong": "H3885",
+          "pron": "브리누"
         }
       ],
-      "count": 3,
+      "count": 10,
       "refs": [
-        "genesis 24:23",
-        "genesis 24:25",
-        "genesis 28:11"
+        "exodus 16:2",
+        "exodus 16:7",
+        "numbers 14:36",
+        "numbers 16:11",
+        "ruth 1:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תַלִּ֖ינוּ עָלֵֽינוּ",
+      "pron": "브리누 알",
+      "lemmas": [
+        "לוּן",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "תַלִּ֖ינוּ",
+          "lemma": "לוּן",
+          "strong": "H3885",
+          "pron": "브리누"
+        },
+        {
+          "word": "עָלֵֽינוּ",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 16:7",
+        "numbers 14:2",
+        "numbers 14:27",
+        "numbers 14:29",
+        "numbers 14:36",
+        "numbers 16:11",
+        "numbers 17:5",
+        "job 39:9",
+        "job 39:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיָּלִ֖ינוּ שָֽׁם",
+      "pron": "브리누 샴",
+      "lemmas": [
+        "לוּן",
+        "שָׁם"
+      ],
+      "words": [
+        {
+          "word": "וַיָּלִ֖ינוּ",
+          "lemma": "לוּן",
+          "strong": "H3885",
+          "pron": "브리누"
+        },
+        {
+          "word": "שָֽׁם",
+          "lemma": "שָׁם",
+          "strong": "H8033",
+          "pron": "샴"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 28:11",
+        "genesis 32:13",
+        "joshua 3:1",
+        "judges 18:2",
+        "judges 19:4",
+        "judges 19:7",
+        "kings1 19:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹא יָלִ֣ין",
+      "pron": "로 브리누",
+      "lemmas": [
+        "לֹא",
+        "לוּן"
+      ],
+      "words": [
+        {
+          "word": "וְלֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יָלִ֣ין",
+          "lemma": "לוּן",
+          "strong": "H3885",
+          "pron": "브리누"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 23:18",
+        "exodus 34:25",
+        "leviticus 19:13",
+        "deuteronomy 16:4",
+        "deuteronomy 21:23",
+        "samuel2 17:8",
+        "job 31:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תלונו תַלִּ֖ינוּ עָלֵֽינוּ",
+      "pron": "브리누 브리누 알",
+      "lemmas": [
+        "לוּן",
+        "לוּן",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "תלונו",
+          "lemma": "לוּן",
+          "strong": "H3885",
+          "pron": "브리누"
+        },
+        {
+          "word": "תַלִּ֖ינוּ",
+          "lemma": "לוּן",
+          "strong": "H3885",
+          "pron": "브리누"
+        },
+        {
+          "word": "עָלֵֽינוּ",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 16:7",
+        "numbers 14:36",
+        "numbers 16:11"
       ],
       "glossKo": ""
     }

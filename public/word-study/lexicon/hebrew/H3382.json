@@ -12,27 +12,94 @@
     {
       "lemma": "יָרַד",
       "strong": "H3381",
-      "pron": "예렏",
+      "pron": "바예렏",
       "glossKo": "내려가다"
     },
     {
       "lemma": "יַרְדֵּן",
       "strong": "H3383",
-      "pron": "야렏덴",
+      "pron": "아야렏덴",
       "glossKo": "요단"
     },
     {
       "lemma": "מוֹרָד",
       "strong": "H4174",
-      "pron": "",
+      "pron": "바모랃",
       "glossKo": "내리막"
     }
   ],
   "defEn": "Jered",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 7,
   "byBook": {
-    "genesis": 5
+    "genesis": 5,
+    "chronicles1": 2
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת יָֽרֶד",
+      "pron": "에트 야렏",
+      "lemmas": [
+        "אֵת",
+        "יֶרֶד"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יָֽרֶד",
+          "lemma": "יֶרֶד",
+          "strong": "H3382",
+          "pron": "야렏"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 5:15",
+        "genesis 5:16",
+        "chronicles1 4:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיּ֖וֹלֶד אֶת יָֽרֶד",
+      "pron": "텔디 에트 야렏",
+      "lemmas": [
+        "יָלַד",
+        "אֵת",
+        "יֶרֶד"
+      ],
+      "words": [
+        {
+          "word": "וַיּ֖וֹלֶד",
+          "lemma": "יָלַד",
+          "strong": "H3205",
+          "pron": "텔디"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יָֽרֶד",
+          "lemma": "יֶרֶד",
+          "strong": "H3382",
+          "pron": "야렏"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 5:15",
+        "genesis 5:16",
+        "chronicles1 4:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

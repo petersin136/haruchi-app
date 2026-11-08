@@ -1,8 +1,8 @@
 {
   "lemma": "חָסֵר",
-  "pron": "하세르",
+  "pron": "하사르",
   "strong": "H2638",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "חָסֵר",
     "strong": "H2637",
@@ -12,43 +12,87 @@
     {
       "lemma": "חַסִּיר",
       "strong": "H2627",
-      "pron": "",
+      "pron": "핫시르",
       "glossKo": "부족한(아람)"
     },
     {
       "lemma": "חָסֵר",
       "strong": "H2637",
-      "pron": "바테핫세레후",
-      "glossKo": "그에게 부족하다"
+      "pron": "바야헷루",
+      "glossKo": "부족하다"
     },
     {
       "lemma": "חֶסֶר",
       "strong": "H2639",
-      "pron": "",
+      "pron": "브헤세르",
       "glossKo": "부족"
     },
     {
       "lemma": "חֹסֶר",
       "strong": "H2640",
-      "pron": "",
+      "pron": "우브호세르",
       "glossKo": "결핍"
     },
     {
       "lemma": "חַסְרָה",
       "strong": "H2641",
-      "pron": "",
+      "pron": "핫라",
       "glossKo": "하스라"
     },
     {
       "lemma": "חֶסְרוֹן",
       "strong": "H2642",
-      "pron": "",
+      "pron": "브헷론",
       "glossKo": "결핍"
     }
   ],
   "defEn": "lacking; without",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 19,
+  "byBook": {
+    "proverbs": 13,
+    "ecclesiastes": 2,
+    "kings1": 2,
+    "samuel1": 1,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "חֲסַר לֵֽב",
+      "pron": "하사르 립보",
+      "lemmas": [
+        "חָסֵר",
+        "לֵב"
+      ],
+      "words": [
+        {
+          "word": "חֲסַר",
+          "lemma": "חָסֵר",
+          "strong": "H2638",
+          "pron": "하사르"
+        },
+        {
+          "word": "לֵֽב",
+          "lemma": "לֵב",
+          "strong": "H3820",
+          "pron": "립보"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "proverbs 6:32",
+        "proverbs 7:7",
+        "proverbs 9:4",
+        "proverbs 9:16",
+        "proverbs 10:13",
+        "proverbs 10:21",
+        "proverbs 11:12",
+        "proverbs 12:11",
+        "proverbs 15:21",
+        "proverbs 17:18",
+        "proverbs 24:30"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

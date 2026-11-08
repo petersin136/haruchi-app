@@ -1,8 +1,8 @@
 {
   "lemma": "לִשָּׁן",
-  "pron": "릿샨",
+  "pron": "브릿샤나아",
   "strong": "H3961",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "לָשׁוֹן",
     "strong": "H3956",
@@ -12,8 +12,8 @@
     {
       "lemma": "לָשׁוֹן",
       "strong": "H3956",
-      "pron": "레쇼나므",
-      "glossKo": "그들의 혀"
+      "pron": "릴쇼노",
+      "glossKo": "그의 혀"
     },
     {
       "lemma": "לָשַׁן",
@@ -24,7 +24,148 @@
   ],
   "defEn": "speech; nation",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "daniel": 7
+  },
+  "phrases": [
+    {
+      "hebrew": "אֻמַיָּ֧א וְלִשָּׁנַיָּ֛א",
+      "pron": "움마아 브릿샤나아",
+      "lemmas": [
+        "אֻמָּה",
+        "לִשָּׁן"
+      ],
+      "words": [
+        {
+          "word": "אֻמַיָּ֧א",
+          "lemma": "אֻמָּה",
+          "strong": "H524",
+          "pron": "움마아"
+        },
+        {
+          "word": "וְלִשָּׁנַיָּ֛א",
+          "lemma": "לִשָּׁן",
+          "strong": "H3961",
+          "pron": "브릿샤나아"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "daniel 3:4",
+        "daniel 3:7",
+        "daniel 3:29",
+        "daniel 4:1",
+        "daniel 5:19",
+        "daniel 6:25",
+        "daniel 7:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַֽמְמַיָּ֞א אֻמַיָּ֧א וְלִשָּׁנַיָּ֛א",
+      "pron": "브암마 움마아 브릿샤나아",
+      "lemmas": [
+        "עַם",
+        "אֻמָּה",
+        "לִשָּׁן"
+      ],
+      "words": [
+        {
+          "word": "עַֽמְמַיָּ֞א",
+          "lemma": "עַם",
+          "strong": "H5972",
+          "pron": "브암마"
+        },
+        {
+          "word": "אֻמַיָּ֧א",
+          "lemma": "אֻמָּה",
+          "strong": "H524",
+          "pron": "움마아"
+        },
+        {
+          "word": "וְלִשָּׁנַיָּ֛א",
+          "lemma": "לִשָּׁן",
+          "strong": "H3961",
+          "pron": "브릿샤나아"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "daniel 3:4",
+        "daniel 3:7",
+        "daniel 3:29",
+        "daniel 4:1",
+        "daniel 5:19",
+        "daniel 6:25",
+        "daniel 7:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֻמַיָּ֧א וְלִשָּׁנַיָּ֛א דִּֽי",
+      "pron": "움마아 브릿샤나아 드흐브",
+      "lemmas": [
+        "אֻמָּה",
+        "לִשָּׁן",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "אֻמַיָּ֧א",
+          "lemma": "אֻמָּה",
+          "strong": "H524",
+          "pron": "움마아"
+        },
+        {
+          "word": "וְלִשָּׁנַיָּ֛א",
+          "lemma": "לִשָּׁן",
+          "strong": "H3961",
+          "pron": "브릿샤나아"
+        },
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 3:29",
+        "daniel 4:1",
+        "daniel 6:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלִשָּׁנַיָּ֛א דִּֽי",
+      "pron": "브릿샤나아 드흐브",
+      "lemmas": [
+        "לִשָּׁן",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "וְלִשָּׁנַיָּ֛א",
+          "lemma": "לִשָּׁן",
+          "strong": "H3961",
+          "pron": "브릿샤나아"
+        },
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 3:29",
+        "daniel 4:1",
+        "daniel 6:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

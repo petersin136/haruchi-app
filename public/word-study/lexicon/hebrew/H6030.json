@@ -1,6 +1,6 @@
 {
   "lemma": "עָנָה",
-  "pron": "바야아네니",
+  "pron": "바야안",
   "strong": "H6030",
   "posKo": "동사",
   "root": null,
@@ -14,19 +14,19 @@
     {
       "lemma": "מַעֲנֶה",
       "strong": "H4617",
-      "pron": "",
+      "pron": "마아네",
       "glossKo": "응답"
     },
     {
       "lemma": "עָנָה",
       "strong": "H6031",
-      "pron": "인네티",
+      "pron": "브인누",
       "glossKo": "괴롭히다"
     },
     {
       "lemma": "עֲנָה",
       "strong": "H6032",
-      "pron": "브느느브",
+      "pron": "븐느브",
       "glossKo": "우리를 응답하다"
     },
     {
@@ -38,31 +38,138 @@
     {
       "lemma": "עֲנָיָה",
       "strong": "H6043",
-      "pron": "",
+      "pron": "바아나아",
       "glossKo": "아나야"
     }
   ],
   "defEn": "eye; heed; pay attention",
   "defKo": "",
-  "countOT": 56,
+  "countOT": 329,
   "byBook": {
+    "job": 60,
+    "samuel1": 38,
     "psalms": 37,
-    "genesis": 19
+    "genesis": 19,
+    "isaiah": 19,
+    "kings1": 19,
+    "zechariah": 14,
+    "jeremiah": 13,
+    "deuteronomy": 12,
+    "samuel2": 11,
+    "exodus": 10,
+    "kings2": 10,
+    "hosea": 9,
+    "judges": 7,
+    "numbers": 7,
+    "proverbs": 7,
+    "joshua": 5,
+    "chronicles1": 3,
+    "chronicles2": 3,
+    "ezra": 3,
+    "haggai": 3,
+    "micah": 3,
+    "ruth": 3,
+    "esther": 2,
+    "ezekiel": 2,
+    "habakkuk": 2,
+    "songofsolomon": 2,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "joel": 1,
+    "jonah": 1,
+    "malachi": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
-      "hebrew": "עֲ֭נֵנִי יְהוָ֣ה",
-      "pron": "바야아네니 여호와",
+      "hebrew": "וְלֹֽא עָנ֥וּ",
+      "pron": "로 바야안",
+      "lemmas": [
+        "לֹא",
+        "עָנָה"
+      ],
+      "words": [
+        {
+          "word": "וְלֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "עָנ֥וּ",
+          "lemma": "עָנָה",
+          "strong": "H6030",
+          "pron": "바야안"
+        }
+      ],
+      "count": 39,
+      "refs": [
+        "exodus 20:16",
+        "exodus 23:2",
+        "numbers 35:30",
+        "deuteronomy 5:20",
+        "samuel1 4:20",
+        "samuel1 8:18",
+        "samuel1 14:37",
+        "samuel1 26:14",
+        "samuel1 28:6",
+        "samuel1 28:15",
+        "samuel2 22:42",
+        "kings1 18:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָנ֥וּ אֹת֖וֹ",
+      "pron": "바야안 에트",
+      "lemmas": [
+        "עָנָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "עָנ֥וּ",
+          "lemma": "עָנָה",
+          "strong": "H6030",
+          "pron": "바야안"
+        },
+        {
+          "word": "אֹת֖וֹ",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "genesis 35:3",
+        "genesis 41:16",
+        "genesis 45:3",
+        "deuteronomy 1:14",
+        "joshua 1:16",
+        "joshua 9:24",
+        "judges 8:8",
+        "samuel1 9:8",
+        "samuel1 9:12",
+        "kings2 18:36",
+        "job 32:1",
+        "ecclesiastes 10:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיַּֽעַן יְהוָ֣ה",
+      "pron": "바야안 여호와",
       "lemmas": [
         "עָנָה",
         "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "עֲ֭נֵנִי",
+          "word": "וַיַּֽעַן",
           "lemma": "עָנָה",
           "strong": "H6030",
-          "pron": "바야아네니"
+          "pron": "바야안"
         },
         {
           "word": "יְהוָ֣ה",
@@ -71,132 +178,96 @@
           "pron": "여호와"
         }
       ],
-      "count": 6,
+      "count": 22,
       "refs": [
+        "samuel1 7:9",
+        "samuel1 8:18",
+        "samuel1 23:4",
+        "samuel1 28:6",
+        "kings1 18:37",
+        "chronicles1 21:28",
+        "job 38:1",
+        "job 40:1",
+        "job 40:6",
         "psalms 13:3",
         "psalms 20:1",
-        "psalms 69:16",
-        "psalms 119:145",
-        "psalms 143:7",
-        "psalms 147:7"
+        "psalms 69:16"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֶקְרָ֑א וַיַּֽעֲנֵ֨נִי",
-      "pron": "에케라 바야아네니",
-      "lemmas": [
-        "קָרָא",
-        "עָנָה"
-      ],
-      "words": [
-        {
-          "word": "אֶקְרָ֑א",
-          "lemma": "קָרָא",
-          "strong": "H7121",
-          "pron": "에케라"
-        },
-        {
-          "word": "וַיַּֽעֲנֵ֨נִי",
-          "lemma": "עָנָה",
-          "strong": "H6030",
-          "pron": "바야아네니"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 3:4",
-        "psalms 4:1",
-        "psalms 91:15",
-        "psalms 120:1",
-        "psalms 138:3"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "הָעֹנֶ֤ה אֹתִי֙",
-      "pron": "바야아네니 에트",
+      "hebrew": "וַיַּ֣עַן וַיֹּ֗אמֶר",
+      "pron": "바야안 바요메르",
       "lemmas": [
         "עָנָה",
-        "אֵת"
+        "אָמַר"
       ],
       "words": [
         {
-          "word": "הָעֹנֶ֤ה",
+          "word": "וַיַּ֣עַן",
           "lemma": "עָנָה",
           "strong": "H6030",
-          "pron": "바야아네니"
+          "pron": "바야안"
         },
         {
-          "word": "אֹתִי֙",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
+          "word": "וַיֹּ֗אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
         }
       ],
-      "count": 3,
+      "count": 15,
       "refs": [
-        "genesis 35:3",
-        "genesis 41:16",
-        "genesis 45:3"
+        "numbers 23:12",
+        "deuteronomy 1:41",
+        "deuteronomy 21:7",
+        "deuteronomy 25:9",
+        "deuteronomy 26:5",
+        "samuel2 1:16",
+        "chronicles1 12:17",
+        "isaiah 14:10",
+        "isaiah 21:9",
+        "jeremiah 11:5",
+        "zechariah 3:4",
+        "zechariah 4:4"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כִֽי תַעֲנֵ֣נִי",
-      "pron": "키 바야아네니",
+      "hebrew": "וַֽיהוָה֙ עָ֣נָה",
+      "pron": "여호와 바야안",
       "lemmas": [
-        "כִּי",
+        "יְהֹוָה",
         "עָנָה"
       ],
       "words": [
         {
-          "word": "כִֽי",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
+          "word": "וַֽיהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         },
         {
-          "word": "תַעֲנֵ֣נִי",
+          "word": "עָ֣נָה",
           "lemma": "עָנָה",
           "strong": "H6030",
-          "pron": "바야아네니"
+          "pron": "바야안"
         }
       ],
-      "count": 3,
+      "count": 12,
       "refs": [
-        "psalms 17:6",
-        "psalms 86:7",
-        "psalms 118:21"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "מַהֵ֥ר עֲנֵֽנִי",
-      "pron": "마헤르 바야아네니",
-      "lemmas": [
-        "מַהֵר",
-        "עָנָה"
-      ],
-      "words": [
-        {
-          "word": "מַהֵ֥ר",
-          "lemma": "מַהֵר",
-          "strong": "H4118",
-          "pron": "마헤르"
-        },
-        {
-          "word": "עֲנֵֽנִי",
-          "lemma": "עָנָה",
-          "strong": "H6030",
-          "pron": "바야아네니"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 69:17",
-        "psalms 102:2",
-        "psalms 143:7"
+        "ruth 1:21",
+        "samuel1 9:17",
+        "samuel1 23:4",
+        "kings1 18:37",
+        "chronicles1 21:26",
+        "psalms 34:4",
+        "isaiah 41:17",
+        "isaiah 58:9",
+        "ezekiel 14:4",
+        "ezekiel 14:7",
+        "hosea 2:21",
+        "jonah 2:2"
       ],
       "glossKo": ""
     }

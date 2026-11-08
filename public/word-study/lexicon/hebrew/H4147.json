@@ -1,6 +1,6 @@
 {
   "lemma": "מוֹסֵר",
-  "pron": "못로테모",
+  "pron": "우못로트",
   "strong": "H4147",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "יִסּוֹר",
       "strong": "H3250",
-      "pron": "",
+      "pron": "잇소르",
       "glossKo": "징계자"
     },
     {
       "lemma": "יָסַר",
       "strong": "H3256",
-      "pron": "히밧루",
+      "pron": "르얏세라",
       "glossKo": "징계하다"
     },
     {
@@ -30,21 +30,55 @@
     {
       "lemma": "מוֹסֵרָה",
       "strong": "H4149",
-      "pron": "",
+      "pron": "브모세로트",
       "glossKo": "모세라"
     },
     {
       "lemma": "מֹסָר",
       "strong": "H4561",
-      "pron": "",
-      "glossKo": "훈계"
+      "pron": "웁모사람",
+      "glossKo": "그들의 훈계"
     }
   ],
   "defEn": "chastisement; halter; restraint",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 11,
   "byBook": {
-    "psalms": 3
+    "jeremiah": 4,
+    "psalms": 3,
+    "isaiah": 2,
+    "job": 1,
+    "nahum": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּמוֹסְר֖וֹתֵיהֶ֣ם יְנַתֵּֽק",
+      "pron": "우못로트 브나투크",
+      "lemmas": [
+        "מוֹסֵר",
+        "נָתַק"
+      ],
+      "words": [
+        {
+          "word": "וּמוֹסְר֖וֹתֵיהֶ֣ם",
+          "lemma": "מוֹסֵר",
+          "strong": "H4147",
+          "pron": "우못로트"
+        },
+        {
+          "word": "יְנַתֵּֽק",
+          "lemma": "נָתַק",
+          "strong": "H5423",
+          "pron": "브나투크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 107:14",
+        "jeremiah 30:8",
+        "nahum 1:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

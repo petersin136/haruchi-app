@@ -2,7 +2,7 @@
   "lemma": "פֶּטֶר",
   "pron": "페데르",
   "strong": "H6363",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "פָּטַר",
     "strong": "H6362",
@@ -12,25 +12,130 @@
     {
       "lemma": "פָּטוּר",
       "strong": "H6358",
-      "pron": "",
+      "pron": "우페두레",
       "glossKo": "활짝 핀"
     },
     {
       "lemma": "פָּטִיר",
       "strong": "H6359",
-      "pron": "",
+      "pron": "프디림",
       "glossKo": "벌어진"
     },
     {
       "lemma": "פָּטַר",
       "strong": "H6362",
-      "pron": "얍디루",
+      "pron": "바입다르",
       "glossKo": "벗어나게 하다"
     }
   ],
   "defEn": "fissure; firstling",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 12,
+  "byBook": {
+    "exodus": 8,
+    "numbers": 3,
+    "ezekiel": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "כָּל פֶּ֣טֶר",
+      "pron": "칼 페데르",
+      "lemmas": [
+        "כֹּל",
+        "פֶּטֶר"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "פֶּ֣טֶר",
+          "lemma": "פֶּטֶר",
+          "strong": "H6363",
+          "pron": "페데르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 13:12",
+        "exodus 13:13",
+        "exodus 13:15",
+        "exodus 34:19",
+        "numbers 18:15",
+        "ezekiel 20:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פֶּ֥טֶר רֶ֖חֶם",
+      "pron": "페데르 레헴",
+      "lemmas": [
+        "פֶּטֶר",
+        "רֶחֶם"
+      ],
+      "words": [
+        {
+          "word": "פֶּ֥טֶר",
+          "lemma": "פֶּטֶר",
+          "strong": "H6363",
+          "pron": "페데르"
+        },
+        {
+          "word": "רֶ֖חֶם",
+          "lemma": "רֶחֶם",
+          "strong": "H7358",
+          "pron": "레헴"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 13:12",
+        "exodus 13:15",
+        "exodus 34:19",
+        "numbers 3:12",
+        "numbers 18:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָל פֶּֽטֶר רֶ֖חֶם",
+      "pron": "칼 페데르 레헴",
+      "lemmas": [
+        "כֹּל",
+        "פֶּטֶר",
+        "רֶחֶם"
+      ],
+      "words": [
+        {
+          "word": "כָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "פֶּֽטֶר",
+          "lemma": "פֶּטֶר",
+          "strong": "H6363",
+          "pron": "페데르"
+        },
+        {
+          "word": "רֶ֖חֶם",
+          "lemma": "רֶחֶם",
+          "strong": "H7358",
+          "pron": "레헴"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 13:12",
+        "exodus 13:15",
+        "exodus 34:19",
+        "numbers 18:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "חֶפְצִי בָּהּ",
-  "pron": "헵칩바흐",
+  "pron": "헵치",
   "strong": "H2657",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חֵפֶץ",
     "strong": "H2656",
@@ -12,13 +12,45 @@
     {
       "lemma": "חֵפֶץ",
       "strong": "H2656",
-      "pron": "헵츠오",
-      "glossKo": "그의 기쁨"
+      "pron": "아헤페츠",
+      "glossKo": "기쁨"
     }
   ],
   "defEn": "Cheptsi-bah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "isaiah": 2,
+    "kings2": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "חֶפְצִי בָֽהּ",
+      "pron": "헵치 헵치",
+      "lemmas": [
+        "חֶפְצִי בָּהּ",
+        "חֶפְצִי בָּהּ"
+      ],
+      "words": [
+        {
+          "word": "חֶפְצִי",
+          "lemma": "חֶפְצִי בָּהּ",
+          "strong": "H2657",
+          "pron": "헵치"
+        },
+        {
+          "word": "בָֽהּ",
+          "lemma": "חֶפְצִי בָּהּ",
+          "strong": "H2657",
+          "pron": "헵치"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 21:1",
+        "isaiah 62:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

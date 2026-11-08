@@ -1,6 +1,6 @@
 {
   "lemma": "שֵׁנָה",
-  "pron": "셰나타므",
+  "pron": "밋셰나토",
   "strong": "H8142",
   "posKo": "명사",
   "root": {
@@ -12,20 +12,26 @@
     {
       "lemma": "יָשֵׁן",
       "strong": "H3462",
-      "pron": "바이샤나",
+      "pron": "바이샨",
       "glossKo": "잠자다"
     },
     {
       "lemma": "יָשֵׁן",
       "strong": "H3463",
-      "pron": "크야셴",
+      "pron": "야셴",
       "glossKo": "잠자는"
     },
     {
       "lemma": "יָשָׁן",
       "strong": "H3465",
-      "pron": "",
+      "pron": "야샨",
       "glossKo": "오래된"
+    },
+    {
+      "lemma": "שְׁנָה",
+      "strong": "H8139",
+      "pron": "베신테흐",
+      "glossKo": "그의 잠(아람)"
     },
     {
       "lemma": "שְׁנָת",
@@ -36,10 +42,48 @@
   ],
   "defEn": "sleep",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 23,
   "byBook": {
+    "proverbs": 7,
+    "jeremiah": 3,
     "psalms": 3,
-    "genesis": 2
+    "ecclesiastes": 2,
+    "genesis": 2,
+    "judges": 2,
+    "daniel": 1,
+    "esther": 1,
+    "job": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "שְׁנָתִ֖י מֵֽעֵינָֽי",
+      "pron": "밋셰나토 에네켐",
+      "lemmas": [
+        "שֵׁנָה",
+        "עַיִן"
+      ],
+      "words": [
+        {
+          "word": "שְׁנָתִ֖י",
+          "lemma": "שֵׁנָה",
+          "strong": "H8142",
+          "pron": "밋셰나토"
+        },
+        {
+          "word": "מֵֽעֵינָֽי",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 31:40",
+        "proverbs 6:4",
+        "ecclesiastes 8:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

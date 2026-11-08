@@ -2,7 +2,7 @@
   "lemma": "יֶתֶר",
   "pron": "예테르",
   "strong": "H3500",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "יֶתֶר",
     "strong": "H3499",
@@ -14,11 +14,70 @@
       "strong": "H3499",
       "pron": "예테르",
       "glossKo": "남은 것"
+    },
+    {
+      "lemma": "יִתְרָה",
+      "strong": "H3502",
+      "pron": "이테라",
+      "glossKo": "탁월함"
+    },
+    {
+      "lemma": "יִתְרוֹ",
+      "strong": "H3503",
+      "pron": "이테로",
+      "glossKo": "이드로"
+    },
+    {
+      "lemma": "יִתְרִי",
+      "strong": "H3505",
+      "pron": "아이테리",
+      "glossKo": "이델 사람"
+    },
+    {
+      "lemma": "יִתְרְעָם",
+      "strong": "H3507",
+      "pron": "이테레암",
+      "glossKo": "이드르암"
     }
   ],
   "defEn": "Jether",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "chronicles1": 5,
+    "kings1": 2,
+    "exodus": 1,
+    "judges": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶן יֶ֨תֶר֙",
+      "pron": "바님 예테르",
+      "lemmas": [
+        "בֵּן",
+        "יֶתֶר"
+      ],
+      "words": [
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יֶ֨תֶר֙",
+          "lemma": "יֶתֶר",
+          "strong": "H3500",
+          "pron": "예테르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 2:5",
+        "kings1 2:32",
+        "chronicles1 7:38"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

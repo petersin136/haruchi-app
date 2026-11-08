@@ -1,6 +1,6 @@
 {
   "lemma": "פָּלָה",
-  "pron": "힙라",
+  "pron": "브힙레티",
   "strong": "H6395",
   "posKo": "동사",
   "root": null,
@@ -14,21 +14,52 @@
     {
       "lemma": "פְּלוֹנִי",
       "strong": "H6397",
-      "pron": "",
+      "pron": "아펠로니",
       "glossKo": "불론 사람"
     },
     {
       "lemma": "פְּלֹנִי",
       "strong": "H6423",
-      "pron": "",
+      "pron": "펠로니",
       "glossKo": "어떤"
     }
   ],
   "defEn": "distinguish",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 7,
   "byBook": {
+    "exodus": 4,
     "psalms": 3
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְהִפְלָ֣ה יְהוָ֔ה",
+      "pron": "브힙레티 여호와",
+      "lemmas": [
+        "פָּלָה",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וְהִפְלָ֣ה",
+          "lemma": "פָּלָה",
+          "strong": "H6395",
+          "pron": "브힙레티"
+        },
+        {
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 9:4",
+        "exodus 11:7",
+        "psalms 4:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

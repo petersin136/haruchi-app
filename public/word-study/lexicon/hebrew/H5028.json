@@ -2,7 +2,7 @@
   "lemma": "נְבָט",
   "pron": "네받",
   "strong": "H5028",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נָבַט",
     "strong": "H5027",
@@ -12,19 +12,232 @@
     {
       "lemma": "מַבָּט",
       "strong": "H4007",
-      "pron": "",
-      "glossKo": "바라봄"
+      "pron": "맙바담",
+      "glossKo": "그들의 바라봄"
     },
     {
       "lemma": "נָבַט",
       "strong": "H5027",
-      "pron": "탑빋",
+      "pron": "합벧",
       "glossKo": "바라보다"
     }
   ],
   "defEn": "Nebat",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 25,
+  "byBook": {
+    "kings2": 12,
+    "kings1": 9,
+    "chronicles2": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶּן נְבָ֔ט",
+      "pron": "바님 네받",
+      "lemmas": [
+        "בֵּן",
+        "נְבָט"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נְבָ֔ט",
+          "lemma": "נְבָט",
+          "strong": "H5028",
+          "pron": "네받"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "kings1 11:26",
+        "kings1 12:2",
+        "kings1 12:15",
+        "kings1 15:1",
+        "kings1 16:3",
+        "kings1 16:26",
+        "kings1 16:31",
+        "kings1 21:22",
+        "kings1 22:52",
+        "kings2 3:3",
+        "kings2 9:9",
+        "kings2 10:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָרָבְעָ֣ם בֶּן נְבָ֔ט",
+      "pron": "브야랍암 바님 네받",
+      "lemmas": [
+        "יָרׇבְעָם",
+        "בֵּן",
+        "נְבָט"
+      ],
+      "words": [
+        {
+          "word": "יָרָבְעָ֣ם",
+          "lemma": "יָרׇבְעָם",
+          "strong": "H3379",
+          "pron": "브야랍암"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נְבָ֔ט",
+          "lemma": "נְבָט",
+          "strong": "H5028",
+          "pron": "네받"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "kings1 11:26",
+        "kings1 12:2",
+        "kings1 12:15",
+        "kings1 15:1",
+        "kings1 16:3",
+        "kings1 16:26",
+        "kings1 16:31",
+        "kings1 21:22",
+        "kings1 22:52",
+        "kings2 3:3",
+        "kings2 9:9",
+        "kings2 10:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן נְבָ֔ט אֲשֶׁ֥ר",
+      "pron": "바님 네받 아셰르",
+      "lemmas": [
+        "בֵּן",
+        "נְבָט",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נְבָ֔ט",
+          "lemma": "נְבָט",
+          "strong": "H5028",
+          "pron": "네받"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "kings1 22:52",
+        "kings2 3:3",
+        "kings2 10:29",
+        "kings2 13:2",
+        "kings2 13:11",
+        "kings2 14:24",
+        "kings2 15:9",
+        "kings2 15:18",
+        "kings2 15:24",
+        "kings2 15:28",
+        "kings2 23:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְבָ֔ט אֲשֶׁ֥ר",
+      "pron": "네받 아셰르",
+      "lemmas": [
+        "נְבָט",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "נְבָ֔ט",
+          "lemma": "נְבָט",
+          "strong": "H5028",
+          "pron": "네받"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "kings1 22:52",
+        "kings2 3:3",
+        "kings2 10:29",
+        "kings2 13:2",
+        "kings2 13:11",
+        "kings2 14:24",
+        "kings2 15:9",
+        "kings2 15:18",
+        "kings2 15:24",
+        "kings2 15:28",
+        "kings2 23:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְבָ֔ט אֲשֶׁ֥ר הֶחֱטִ֖יא",
+      "pron": "네받 아셰르 메하도",
+      "lemmas": [
+        "נְבָט",
+        "אֲשֶׁר",
+        "חָטָא"
+      ],
+      "words": [
+        {
+          "word": "נְבָ֔ט",
+          "lemma": "נְבָט",
+          "strong": "H5028",
+          "pron": "네받"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הֶחֱטִ֖יא",
+          "lemma": "חָטָא",
+          "strong": "H2398",
+          "pron": "메하도"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "kings1 22:52",
+        "kings2 3:3",
+        "kings2 10:29",
+        "kings2 13:2",
+        "kings2 13:11",
+        "kings2 14:24",
+        "kings2 15:9",
+        "kings2 15:18",
+        "kings2 15:24",
+        "kings2 15:28",
+        "kings2 23:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

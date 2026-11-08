@@ -1,6 +1,6 @@
 {
   "lemma": "אָבִיר",
-  "pron": "라아비르",
+  "pron": "아비르",
   "strong": "H46",
   "posKo": "형용사",
   "root": {
@@ -12,21 +12,34 @@
     {
       "lemma": "אַבִּיר",
       "strong": "H47",
-      "pron": "압비레",
-      "glossKo": "아비람"
+      "pron": "압비라으브",
+      "glossKo": "그의 아비람"
+    },
+    {
+      "lemma": "אָבַר",
+      "strong": "H82",
+      "pron": "야아베르",
+      "glossKo": "솟다"
+    },
+    {
+      "lemma": "אֵבֶר",
+      "strong": "H83",
+      "pron": "에베르",
+      "glossKo": "날개"
     }
   ],
   "defEn": "mighty",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 6,
   "byBook": {
+    "isaiah": 3,
     "psalms": 2,
     "genesis": 1
   },
   "phrases": [
     {
       "hebrew": "לַאֲבִ֥יר יַעֲקֹֽב",
-      "pron": "라아비르 야곱",
+      "pron": "아비르 야곱",
       "lemmas": [
         "אָבִיר",
         "יַעֲקֹב"
@@ -36,7 +49,7 @@
           "word": "לַאֲבִ֥יר",
           "lemma": "אָבִיר",
           "strong": "H46",
-          "pron": "라아비르"
+          "pron": "아비르"
         },
         {
           "word": "יַעֲקֹֽב",
@@ -45,11 +58,13 @@
           "pron": "야곱"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
+        "genesis 49:24",
         "psalms 132:2",
         "psalms 132:5",
-        "genesis 49:24"
+        "isaiah 49:26",
+        "isaiah 60:16"
       ],
       "glossKo": ""
     }

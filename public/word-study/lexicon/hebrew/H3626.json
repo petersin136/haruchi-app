@@ -1,8 +1,8 @@
 {
   "lemma": "כׇּל־חֹזֶה",
-  "pron": "클호제",
+  "pron": "칼",
   "strong": "H3626",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "כֹּל",
     "strong": "H3605",
@@ -12,19 +12,85 @@
     {
       "lemma": "כֹּל",
       "strong": "H3605",
-      "pron": "브콜",
+      "pron": "칼",
       "glossKo": "모든"
     },
     {
       "lemma": "כֹּל",
       "strong": "H3606",
-      "pron": "",
+      "pron": "카르",
       "glossKo": "모든(아람)"
     }
   ],
   "defEn": "Col-Chozeh",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "nehemiah": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶּן כָּל חֹזֶה֮",
+      "pron": "바님 칼 칼",
+      "lemmas": [
+        "בֵּן",
+        "כׇּל־חֹזֶה",
+        "כׇּל־חֹזֶה"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כׇּל־חֹזֶה",
+          "strong": "H3626",
+          "pron": "칼"
+        },
+        {
+          "word": "חֹזֶה֮",
+          "lemma": "כׇּל־חֹזֶה",
+          "strong": "H3626",
+          "pron": "칼"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "nehemiah 3:15",
+        "nehemiah 11:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל חֹזֶה֮",
+      "pron": "칼 칼",
+      "lemmas": [
+        "כׇּל־חֹזֶה",
+        "כׇּל־חֹזֶה"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כׇּל־חֹזֶה",
+          "strong": "H3626",
+          "pron": "칼"
+        },
+        {
+          "word": "חֹזֶה֮",
+          "lemma": "כׇּל־חֹזֶה",
+          "strong": "H3626",
+          "pron": "칼"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "nehemiah 3:15",
+        "nehemiah 11:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

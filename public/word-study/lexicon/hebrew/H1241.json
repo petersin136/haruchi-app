@@ -1,6 +1,6 @@
 {
   "lemma": "בָּקָר",
-  "pron": "바카르",
+  "pron": "우바카르",
   "strong": "H1241",
   "posKo": "명사",
   "root": {
@@ -12,25 +12,25 @@
     {
       "lemma": "בּוֹקֵר",
       "strong": "H951",
-      "pron": "",
+      "pron": "보케르",
       "glossKo": "목자"
     },
     {
       "lemma": "בַּקְבַּקַּר",
       "strong": "H1230",
-      "pron": "",
+      "pron": "우바켑박카르",
       "glossKo": "박박갈"
     },
     {
       "lemma": "בָּקַר",
       "strong": "H1239",
-      "pron": "우르박케르",
+      "pron": "예박케르",
       "glossKo": "살피다"
     },
     {
       "lemma": "בְּקַר",
       "strong": "H1240",
-      "pron": "",
+      "pron": "예박카르",
       "glossKo": "찾다(아람)"
     },
     {
@@ -42,40 +42,100 @@
     {
       "lemma": "בַּקָּרָה",
       "strong": "H1243",
-      "pron": "",
+      "pron": "크박카라트",
       "glossKo": "돌봄"
     }
   ],
   "defEn": "beeve; plowing; herd",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 183,
   "byBook": {
+    "numbers": 50,
+    "chronicles2": 18,
     "genesis": 17,
+    "kings1": 12,
+    "leviticus": 12,
+    "samuel1": 12,
+    "deuteronomy": 10,
+    "exodus": 9,
+    "samuel2": 7,
+    "chronicles1": 6,
+    "ezekiel": 6,
+    "isaiah": 5,
+    "jeremiah": 4,
+    "job": 4,
+    "kings2": 2,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "joel": 1,
+    "jonah": 1,
+    "judges": 1,
+    "nehemiah": 1,
     "psalms": 1
   },
   "phrases": [
     {
-      "hebrew": "צֹאן וּבָקָר֙",
-      "pron": "크촌 바카르",
+      "hebrew": "בֶּן בָּקָ֗ר",
+      "pron": "바님 우바카르",
+      "lemmas": [
+        "בֵּן",
+        "בָּקָר"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "בָּקָ֗ר",
+          "lemma": "בָּקָר",
+          "strong": "H1241",
+          "pron": "우바카르"
+        }
+      ],
+      "count": 40,
+      "refs": [
+        "genesis 18:7",
+        "genesis 18:8",
+        "exodus 29:1",
+        "leviticus 1:5",
+        "leviticus 4:3",
+        "leviticus 4:14",
+        "leviticus 9:2",
+        "leviticus 16:3",
+        "leviticus 23:18",
+        "numbers 7:15",
+        "numbers 7:21",
+        "numbers 7:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "צֹ֣אן וּבָקָ֔ר",
+      "pron": "촌 우바카르",
       "lemmas": [
         "צֹאן",
         "בָּקָר"
       ],
       "words": [
         {
-          "word": "צֹאן",
+          "word": "צֹ֣אן",
           "lemma": "צֹאן",
           "strong": "H6629",
-          "pron": "크촌"
+          "pron": "촌"
         },
         {
-          "word": "וּבָקָר֙",
+          "word": "וּבָקָ֔ר",
           "lemma": "בָּקָר",
           "strong": "H1241",
-          "pron": "바카르"
+          "pron": "우바카르"
         }
       ],
-      "count": 10,
+      "count": 33,
       "refs": [
         "genesis 12:16",
         "genesis 13:5",
@@ -86,144 +146,137 @@
         "genesis 45:10",
         "genesis 46:32",
         "genesis 47:1",
-        "genesis 50:8"
+        "genesis 50:8",
+        "exodus 10:9",
+        "exodus 10:24"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וּבְקָרְךָ֖ וְכָל",
-      "pron": "바카르 브콜",
+      "hebrew": "בָּקָ֣ר שְׁנַיִם֒",
+      "pron": "우바카르 셰네",
       "lemmas": [
         "בָּקָר",
-        "כֹּל"
+        "שְׁנַיִם"
       ],
       "words": [
         {
-          "word": "וּבְקָרְךָ֖",
+          "word": "בָּקָ֣ר",
           "lemma": "בָּקָר",
           "strong": "H1241",
-          "pron": "바카르"
+          "pron": "우바카르"
         },
         {
-          "word": "וְכָל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
+          "word": "שְׁנַיִם֒",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
         }
       ],
-      "count": 3,
+      "count": 21,
       "refs": [
-        "genesis 45:10",
-        "genesis 46:32",
-        "genesis 47:1"
+        "numbers 7:17",
+        "numbers 7:23",
+        "numbers 7:29",
+        "numbers 7:35",
+        "numbers 7:41",
+        "numbers 7:47",
+        "numbers 7:53",
+        "numbers 7:59",
+        "numbers 7:65",
+        "numbers 7:71",
+        "numbers 7:77",
+        "numbers 7:83"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וּבְקָרְךָ֖ וְכָל אֲשֶׁר",
-      "pron": "바카르 브콜 아셰르",
+      "hebrew": "פָּרִ֧ים בְּנֵי בָקָ֛ר",
+      "pron": "우파림 바님 우바카르",
       "lemmas": [
-        "בָּקָר",
-        "כֹּל",
-        "אֲשֶׁר"
-      ],
-      "words": [
-        {
-          "word": "וּבְקָרְךָ֖",
-          "lemma": "בָּקָר",
-          "strong": "H1241",
-          "pron": "바카르"
-        },
-        {
-          "word": "וְכָל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
-        },
-        {
-          "word": "אֲשֶׁר",
-          "lemma": "אֲשֶׁר",
-          "strong": "H834",
-          "pron": "아셰르"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 45:10",
-        "genesis 46:32",
-        "genesis 47:1"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַֽיְהִי צֹאן וּבָקָר֙",
-      "pron": "브하아 크촌 바카르",
-      "lemmas": [
-        "הָיָה",
-        "צֹאן",
+        "פַּר",
+        "בֵּן",
         "בָּקָר"
       ],
       "words": [
         {
-          "word": "וַֽיְהִי",
-          "lemma": "הָיָה",
-          "strong": "H1961",
-          "pron": "브하아"
+          "word": "פָּרִ֧ים",
+          "lemma": "פַּר",
+          "strong": "H6499",
+          "pron": "우파림"
         },
         {
-          "word": "צֹאן",
-          "lemma": "צֹאן",
-          "strong": "H6629",
-          "pron": "크촌"
+          "word": "בְּנֵי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
         },
         {
-          "word": "וּבָקָר֙",
+          "word": "בָקָ֛ר",
           "lemma": "בָּקָר",
           "strong": "H1241",
-          "pron": "바카르"
+          "pron": "우바카르"
         }
       ],
-      "count": 3,
+      "count": 19,
       "refs": [
-        "genesis 12:16",
-        "genesis 13:5",
-        "genesis 46:32"
+        "leviticus 4:3",
+        "leviticus 4:14",
+        "leviticus 16:3",
+        "leviticus 23:18",
+        "numbers 8:8",
+        "numbers 15:24",
+        "numbers 28:11",
+        "numbers 28:19",
+        "numbers 28:27",
+        "numbers 29:2",
+        "numbers 29:8",
+        "numbers 29:13"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְצֹאנְךָ֥ וּבְקָרְךָ֖ וְכָל",
-      "pron": "크촌 바카르 브콜",
+      "hebrew": "בֶּן בָּקָ֗ר אַ֧יִל",
+      "pron": "바님 우바카르 브아일",
       "lemmas": [
-        "צֹאן",
+        "בֵּן",
         "בָּקָר",
-        "כֹּל"
+        "אַיִל"
       ],
       "words": [
         {
-          "word": "וְצֹאנְךָ֥",
-          "lemma": "צֹאן",
-          "strong": "H6629",
-          "pron": "크촌"
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
         },
         {
-          "word": "וּבְקָרְךָ֖",
+          "word": "בָּקָ֗ר",
           "lemma": "בָּקָר",
           "strong": "H1241",
-          "pron": "바카르"
+          "pron": "우바카르"
         },
         {
-          "word": "וְכָל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
+          "word": "אַ֧יִל",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
         }
       ],
-      "count": 3,
+      "count": 15,
       "refs": [
-        "genesis 45:10",
-        "genesis 46:32",
-        "genesis 47:1"
+        "exodus 29:1",
+        "numbers 7:15",
+        "numbers 7:21",
+        "numbers 7:27",
+        "numbers 7:33",
+        "numbers 7:39",
+        "numbers 7:45",
+        "numbers 7:51",
+        "numbers 7:57",
+        "numbers 7:63",
+        "numbers 7:69",
+        "numbers 7:75"
       ],
       "glossKo": ""
     }

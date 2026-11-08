@@ -1,6 +1,6 @@
 {
   "lemma": "חָכַם",
-  "pron": "마헥키마트",
+  "pron": "니테학케마",
   "strong": "H2449",
   "posKo": "동사",
   "root": null,
@@ -8,14 +8,14 @@
     {
       "lemma": "חַכִּים",
       "strong": "H2445",
-      "pron": "",
+      "pron": "학키메",
       "glossKo": "지혜로운(아람)"
     },
     {
       "lemma": "חָכָם",
       "strong": "H2450",
-      "pron": "하카밈",
-      "glossKo": "지혜로운"
+      "pron": "하카메하",
+      "glossKo": "그녀의 지혜로운"
     },
     {
       "lemma": "חׇכְמָה",
@@ -26,15 +26,80 @@
     {
       "lemma": "חַכְמוֹנִי",
       "strong": "H2453",
-      "pron": "",
+      "pron": "하케모니",
       "glossKo": "학모니"
     }
   ],
   "defEn": "be wise",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 28,
   "byBook": {
-    "psalms": 4
+    "proverbs": 14,
+    "ecclesiastes": 4,
+    "psalms": 4,
+    "job": 2,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "kings1": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "חָ֭כַמְתָּ חָכַ֣מְתָּ",
+      "pron": "니테학케마 니테학케마",
+      "lemmas": [
+        "חָכַם",
+        "חָכַם"
+      ],
+      "words": [
+        {
+          "word": "חָ֭כַמְתָּ",
+          "lemma": "חָכַם",
+          "strong": "H2449",
+          "pron": "니테학케마"
+        },
+        {
+          "word": "חָכַ֣מְתָּ",
+          "lemma": "חָכַם",
+          "strong": "H2449",
+          "pron": "니테학케마"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "proverbs 9:12",
+        "proverbs 13:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְ֭חָכָם וְיֶחְכַּם",
+      "pron": "하카메하 니테학케마",
+      "lemmas": [
+        "חָכָם",
+        "חָכַם"
+      ],
+      "words": [
+        {
+          "word": "לְ֭חָכָם",
+          "lemma": "חָכָם",
+          "strong": "H2450",
+          "pron": "하카메하"
+        },
+        {
+          "word": "וְיֶחְכַּם",
+          "lemma": "חָכַם",
+          "strong": "H2449",
+          "pron": "니테학케마"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 9:9",
+        "proverbs 13:20",
+        "proverbs 30:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

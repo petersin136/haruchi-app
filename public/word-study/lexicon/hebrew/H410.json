@@ -1,6 +1,6 @@
 {
   "lemma": "אֵל",
-  "pron": "엘",
+  "pron": "르엘",
   "strong": "H410",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "אַיִל",
       "strong": "H352",
-      "pron": "엘림",
+      "pron": "브아일",
       "glossKo": "수양"
     },
     {
@@ -24,7 +24,7 @@
     {
       "lemma": "אַיָּל",
       "strong": "H354",
-      "pron": "크아알",
+      "pron": "브카아알",
       "glossKo": "사슴"
     },
     {
@@ -36,90 +36,120 @@
     {
       "lemma": "אֵילוֹת",
       "strong": "H359",
-      "pron": "",
+      "pron": "메엘라트",
       "glossKo": "엘롯"
     },
     {
       "lemma": "אֵילָם",
       "strong": "H361",
-      "pron": "",
+      "pron": "라엘람모트",
       "glossKo": "현관"
     }
   ],
   "defEn": "strength; mighty; Almighty; deity",
   "defKo": "",
-  "countOT": 96,
+  "countOT": 245,
   "byBook": {
     "psalms": 77,
-    "genesis": 19
+    "job": 56,
+    "isaiah": 23,
+    "genesis": 19,
+    "deuteronomy": 14,
+    "numbers": 10,
+    "exodus": 7,
+    "samuel2": 6,
+    "ezekiel": 5,
+    "daniel": 4,
+    "joshua": 4,
+    "nehemiah": 4,
+    "hosea": 3,
+    "malachi": 3,
+    "jeremiah": 2,
+    "micah": 2,
+    "jonah": 1,
+    "judges": 1,
+    "lamentations": 1,
+    "nahum": 1,
+    "proverbs": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
-      "hebrew": "יְהוָ֗ה אֵ֭ל",
-      "pron": "여호와 엘",
+      "hebrew": "אֶל אֵ֣ל",
+      "pron": "엘 르엘",
       "lemmas": [
-        "יְהֹוָה",
+        "אֵל",
         "אֵל"
       ],
       "words": [
         {
-          "word": "יְהוָ֗ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        },
-        {
-          "word": "אֵ֭ל",
+          "word": "אֶל",
           "lemma": "אֵל",
-          "strong": "H410",
+          "strong": "H413",
           "pron": "엘"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "psalms 10:12",
-        "psalms 31:5",
-        "psalms 94:1",
-        "psalms 140:6",
-        "genesis 14:22",
-        "genesis 21:33"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֵ֣ל עֶלְי֔וֹן",
-      "pron": "엘 엘온",
-      "lemmas": [
-        "אֵל",
-        "עֶלְיוֹן"
-      ],
-      "words": [
+        },
         {
           "word": "אֵ֣ל",
           "lemma": "אֵל",
           "strong": "H410",
-          "pron": "엘"
-        },
-        {
-          "word": "עֶלְי֔וֹן",
-          "lemma": "עֶלְיוֹן",
-          "strong": "H5945",
-          "pron": "엘온"
+          "pron": "르엘"
         }
       ],
-      "count": 5,
+      "count": 13,
       "refs": [
-        "psalms 78:35",
-        "genesis 14:18",
-        "genesis 14:19",
-        "genesis 14:20",
-        "genesis 14:22"
+        "job 5:8",
+        "job 8:5",
+        "job 13:3",
+        "job 15:13",
+        "job 15:25",
+        "job 34:23",
+        "job 34:31",
+        "job 38:41",
+        "psalms 43:4",
+        "psalms 84:2",
+        "isaiah 10:21",
+        "isaiah 45:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֣י אֵ֤ל",
+      "pron": "키 르엘",
+      "lemmas": [
+        "כִּי",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "כִּ֣י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "אֵ֤ל",
+          "lemma": "אֵל",
+          "strong": "H410",
+          "pron": "르엘"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "deuteronomy 4:31",
+        "deuteronomy 6:15",
+        "joshua 3:10",
+        "samuel1 2:3",
+        "nehemiah 9:31",
+        "psalms 95:3",
+        "isaiah 44:17",
+        "jeremiah 51:56",
+        "hosea 11:9"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "אֵ֣ל שַׁדַּ֔י",
-      "pron": "엘 샫다이",
+      "pron": "르엘 샫다이",
       "lemmas": [
         "אֵל",
         "שַׁדַּי"
@@ -129,7 +159,7 @@
           "word": "אֵ֣ל",
           "lemma": "אֵל",
           "strong": "H410",
-          "pron": "엘"
+          "pron": "르엘"
         },
         {
           "word": "שַׁדַּ֔י",
@@ -138,70 +168,83 @@
           "pron": "샫다이"
         }
       ],
-      "count": 5,
+      "count": 8,
       "refs": [
         "genesis 17:1",
         "genesis 28:3",
         "genesis 35:11",
         "genesis 43:14",
-        "genesis 48:3"
+        "genesis 48:3",
+        "exodus 6:3",
+        "job 35:13",
+        "ezekiel 10:5"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֵלִ֣י אֵ֭לִי",
-      "pron": "엘 엘",
+      "hebrew": "הָאֵ֤ל הַגָּדוֹל֙",
+      "pron": "르엘 아게돌림",
       "lemmas": [
         "אֵל",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "הָאֵ֤ל",
+          "lemma": "אֵל",
+          "strong": "H410",
+          "pron": "르엘"
+        },
+        {
+          "word": "הַגָּדוֹל֙",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "deuteronomy 7:21",
+        "deuteronomy 10:17",
+        "nehemiah 1:5",
+        "nehemiah 9:32",
+        "psalms 77:13",
+        "psalms 95:3",
+        "jeremiah 32:18",
+        "daniel 9:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָה֙ אֵ֣ל",
+      "pron": "여호와 르엘",
+      "lemmas": [
+        "יְהֹוָה",
         "אֵל"
       ],
       "words": [
         {
-          "word": "אֵלִ֣י",
-          "lemma": "אֵל",
-          "strong": "H410",
-          "pron": "엘"
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         },
         {
-          "word": "אֵ֭לִי",
+          "word": "אֵ֣ל",
           "lemma": "אֵל",
           "strong": "H410",
-          "pron": "엘"
+          "pron": "르엘"
         }
       ],
-      "count": 4,
+      "count": 8,
       "refs": [
-        "psalms 22:1",
-        "psalms 68:20"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֵ֣לִי אָֽתָּה",
-      "pron": "엘 앗타",
-      "lemmas": [
-        "אֵל",
-        "אַתָּה"
-      ],
-      "words": [
-        {
-          "word": "אֵ֣לִי",
-          "lemma": "אֵל",
-          "strong": "H410",
-          "pron": "엘"
-        },
-        {
-          "word": "אָֽתָּה",
-          "lemma": "אַתָּה",
-          "strong": "H859",
-          "pron": "앗타"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 22:10",
-        "psalms 63:1",
-        "psalms 118:28",
+        "genesis 14:22",
+        "genesis 21:33",
+        "exodus 34:6",
+        "joshua 22:22",
+        "psalms 10:12",
+        "psalms 31:5",
+        "psalms 94:1",
         "psalms 140:6"
       ],
       "glossKo": ""

@@ -1,6 +1,6 @@
 {
   "lemma": "יָנַח",
-  "pron": "브힌니후",
+  "pron": "바안니헤후",
   "strong": "H3240",
   "posKo": "동사",
   "root": null,
@@ -8,16 +8,198 @@
     {
       "lemma": "יָנוֹחַ",
       "strong": "H3239",
-      "pron": "",
+      "pron": "야노하",
       "glossKo": "야노아"
     }
   ],
   "defEn": "deposit",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 75,
   "byBook": {
+    "ezekiel": 10,
+    "ecclesiastes": 6,
+    "kings1": 6,
+    "exodus": 5,
+    "judges": 5,
+    "numbers": 5,
     "genesis": 4,
-    "psalms": 3
+    "isaiah": 4,
+    "chronicles2": 3,
+    "deuteronomy": 3,
+    "jeremiah": 3,
+    "joshua": 3,
+    "leviticus": 3,
+    "psalms": 3,
+    "samuel2": 3,
+    "kings2": 2,
+    "samuel1": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "esther": 1,
+    "hosea": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיַּנִּ֤יחוּ אֹתוֹ֙",
+      "pron": "바안니헤후 에트",
+      "lemmas": [
+        "יָנַח",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיַּנִּ֤יחוּ",
+          "lemma": "יָנַח",
+          "strong": "H3240",
+          "pron": "바안니헤후"
+        },
+        {
+          "word": "אֹתוֹ֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 16:24",
+        "exodus 16:33",
+        "numbers 15:34",
+        "joshua 4:3",
+        "judges 16:26",
+        "kings1 13:30",
+        "kings1 13:31",
+        "kings1 19:3",
+        "ecclesiastes 7:18",
+        "ezekiel 37:14",
+        "ezekiel 40:42",
+        "ezekiel 44:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֣ר הִנִּ֣יחַ",
+      "pron": "아셰르 바안니헤후",
+      "lemmas": [
+        "אֲשֶׁר",
+        "יָנַח"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הִנִּ֣יחַ",
+          "lemma": "יָנַח",
+          "strong": "H3240",
+          "pron": "바안니헤후"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "judges 3:1",
+        "samuel1 6:18",
+        "samuel2 16:21",
+        "samuel2 20:3",
+        "kings1 8:9",
+        "jeremiah 43:6",
+        "ezekiel 41:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַל תַּנַּ֣ח",
+      "pron": "엘 바안니헤후",
+      "lemmas": [
+        "אַל",
+        "יָנַח"
+      ],
+      "words": [
+        {
+          "word": "אַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "תַּנַּ֣ח",
+          "lemma": "יָנַח",
+          "strong": "H3240",
+          "pron": "바안니헤후"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ecclesiastes 7:18",
+        "ecclesiastes 10:4",
+        "ecclesiastes 11:6",
+        "jeremiah 14:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהִ֨נִּיח֔וֹ לִפְנֵ֕י",
+      "pron": "바안니헤후 페네",
+      "lemmas": [
+        "יָנַח",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "וְהִ֨נִּיח֔וֹ",
+          "lemma": "יָנַח",
+          "strong": "H3240",
+          "pron": "바안니헤후"
+        },
+        {
+          "word": "לִפְנֵ֕י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 26:4",
+        "deuteronomy 26:10",
+        "judges 6:18",
+        "samuel1 10:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהִנִּיחָ֖ם שָֽׁם",
+      "pron": "바안니헤후 샴",
+      "lemmas": [
+        "יָנַח",
+        "שָׁם"
+      ],
+      "words": [
+        {
+          "word": "וְהִנִּיחָ֖ם",
+          "lemma": "יָנַח",
+          "strong": "H3240",
+          "pron": "바안니헤후"
+        },
+        {
+          "word": "שָֽׁם",
+          "lemma": "שָׁם",
+          "strong": "H8033",
+          "pron": "샴"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 16:23",
+        "joshua 4:8",
+        "kings1 8:9",
+        "zechariah 5:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

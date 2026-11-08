@@ -1,6 +1,6 @@
 {
   "lemma": "תִּירוֹשׁ",
-  "pron": "브티로샤므",
+  "pron": "브티로쉬",
   "strong": "H8492",
   "posKo": "명사",
   "root": {
@@ -12,74 +12,253 @@
     {
       "lemma": "יְרוּשָׁא",
       "strong": "H3388",
-      "pron": "",
+      "pron": "예루샤",
       "glossKo": "여루사"
     },
     {
       "lemma": "יָרַשׁ",
       "strong": "H3423",
-      "pron": "이라쉬",
-      "glossKo": "차지하다"
+      "pron": "요레쉬",
+      "glossKo": "차지하는 이"
     },
     {
       "lemma": "יְרֵשָׁה",
       "strong": "H3424",
-      "pron": "",
+      "pron": "예레샤",
       "glossKo": "소유"
     },
     {
       "lemma": "יְרֻשָּׁה",
       "strong": "H3425",
-      "pron": "예룻샤트",
+      "pron": "예룻샤",
       "glossKo": "기업"
     },
     {
       "lemma": "מוֹרָשׁ",
       "strong": "H4180",
-      "pron": "",
+      "pron": "모라셰이",
       "glossKo": "소유물"
     },
     {
       "lemma": "מוֹרֶשֶׁת גַּת",
       "strong": "H4182",
-      "pron": "",
+      "pron": "모레셰트",
       "glossKo": "모레셋가드"
     }
   ],
   "defEn": "must; fresh grape-juice",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 38,
   "byBook": {
+    "deuteronomy": 7,
+    "hosea": 6,
+    "nehemiah": 5,
+    "isaiah": 4,
+    "joel": 3,
+    "chronicles2": 2,
     "genesis": 2,
-    "psalms": 1
+    "haggai": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "kings2": 1,
+    "micah": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "psalms": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "דְּגָנָ֖ם וְתִֽירוֹשָׁ֣ם",
-      "pron": "데가나므 브티로샤므",
+      "hebrew": "דָּגָ֖ן וְתִירֹֽשׁ",
+      "pron": "다간 브티로쉬",
       "lemmas": [
         "דָּגָן",
         "תִּירוֹשׁ"
       ],
       "words": [
         {
-          "word": "דְּגָנָ֖ם",
+          "word": "דָּגָ֖ן",
           "lemma": "דָּגָן",
           "strong": "H1715",
-          "pron": "데가나므"
+          "pron": "다간"
         },
         {
-          "word": "וְתִֽירוֹשָׁ֣ם",
+          "word": "וְתִירֹֽשׁ",
           "lemma": "תִּירוֹשׁ",
           "strong": "H8492",
-          "pron": "브티로샤므"
+          "pron": "브티로쉬"
+        }
+      ],
+      "count": 21,
+      "refs": [
+        "genesis 27:28",
+        "genesis 27:37",
+        "deuteronomy 7:13",
+        "deuteronomy 11:14",
+        "deuteronomy 12:17",
+        "deuteronomy 14:23",
+        "deuteronomy 18:4",
+        "deuteronomy 28:51",
+        "deuteronomy 33:28",
+        "kings2 18:32",
+        "chronicles2 31:5",
+        "chronicles2 32:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַתִּיר֣וֹשׁ וְהַיִּצְהָ֔ר",
+      "pron": "브티로쉬 이체하르",
+      "lemmas": [
+        "תִּירוֹשׁ",
+        "יִצְהָר"
+      ],
+      "words": [
+        {
+          "word": "הַתִּיר֣וֹשׁ",
+          "lemma": "תִּירוֹשׁ",
+          "strong": "H8492",
+          "pron": "브티로쉬"
+        },
+        {
+          "word": "וְהַיִּצְהָ֔ר",
+          "lemma": "יִצְהָר",
+          "strong": "H3323",
+          "pron": "이체하르"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "deuteronomy 7:13",
+        "deuteronomy 11:14",
+        "deuteronomy 12:17",
+        "deuteronomy 14:23",
+        "deuteronomy 18:4",
+        "deuteronomy 28:51",
+        "chronicles2 31:5",
+        "chronicles2 32:28",
+        "nehemiah 5:11",
+        "nehemiah 10:37",
+        "nehemiah 10:39",
+        "nehemiah 13:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דְּגָ֨נְךָ֜ וְתִֽירֹשְׁךָ֣ וְיִצְהָרֶ֗ךָ",
+      "pron": "다간 브티로쉬 이체하르",
+      "lemmas": [
+        "דָּגָן",
+        "תִּירוֹשׁ",
+        "יִצְהָר"
+      ],
+      "words": [
+        {
+          "word": "דְּגָ֨נְךָ֜",
+          "lemma": "דָּגָן",
+          "strong": "H1715",
+          "pron": "다간"
+        },
+        {
+          "word": "וְתִֽירֹשְׁךָ֣",
+          "lemma": "תִּירוֹשׁ",
+          "strong": "H8492",
+          "pron": "브티로쉬"
+        },
+        {
+          "word": "וְיִצְהָרֶ֗ךָ",
+          "lemma": "יִצְהָר",
+          "strong": "H3323",
+          "pron": "이체하르"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "deuteronomy 7:13",
+        "deuteronomy 11:14",
+        "deuteronomy 12:17",
+        "deuteronomy 14:23",
+        "deuteronomy 18:4",
+        "deuteronomy 28:51",
+        "chronicles2 31:5",
+        "chronicles2 32:28",
+        "nehemiah 5:11",
+        "nehemiah 10:39",
+        "nehemiah 13:5",
+        "nehemiah 13:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַעְשַׂ֤ר דְּגָֽנְךָ֙ וְתִֽירֹשְׁךָ֣",
+      "pron": "마아세르 다간 브티로쉬",
+      "lemmas": [
+        "מַעֲשֵׂר",
+        "דָּגָן",
+        "תִּירוֹשׁ"
+      ],
+      "words": [
+        {
+          "word": "מַעְשַׂ֤ר",
+          "lemma": "מַעֲשֵׂר",
+          "strong": "H4643",
+          "pron": "마아세르"
+        },
+        {
+          "word": "דְּגָֽנְךָ֙",
+          "lemma": "דָּגָן",
+          "strong": "H1715",
+          "pron": "다간"
+        },
+        {
+          "word": "וְתִֽירֹשְׁךָ֣",
+          "lemma": "תִּירוֹשׁ",
+          "strong": "H8492",
+          "pron": "브티로쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 12:17",
+        "deuteronomy 14:23",
+        "nehemiah 13:5",
+        "nehemiah 13:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֖רֶץ דָּגָ֣ן וְתִיר֑וֹשׁ",
+      "pron": "하아레츠 다간 브티로쉬",
+      "lemmas": [
+        "אֶרֶץ",
+        "דָּגָן",
+        "תִּירוֹשׁ"
+      ],
+      "words": [
+        {
+          "word": "אֶ֖רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "דָּגָ֣ן",
+          "lemma": "דָּגָן",
+          "strong": "H1715",
+          "pron": "다간"
+        },
+        {
+          "word": "וְתִיר֑וֹשׁ",
+          "lemma": "תִּירוֹשׁ",
+          "strong": "H8492",
+          "pron": "브티로쉬"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 4:7",
-        "genesis 27:28",
-        "genesis 27:37"
+        "deuteronomy 33:28",
+        "kings2 18:32",
+        "isaiah 36:17"
       ],
       "glossKo": ""
     }

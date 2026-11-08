@@ -1,8 +1,8 @@
 {
   "lemma": "גַּנָּה",
-  "pron": "간나",
+  "pron": "크간노트",
   "strong": "H1593",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גַּן",
     "strong": "H1588",
@@ -14,11 +14,90 @@
       "strong": "H1588",
       "pron": "간",
       "glossKo": "동산"
+    },
+    {
+      "lemma": "גִּנָּה",
+      "strong": "H1594",
+      "pron": "긴나트",
+      "glossKo": "정원"
     }
   ],
   "defEn": "garden",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 12,
+  "byBook": {
+    "isaiah": 5,
+    "amos": 2,
+    "jeremiah": 2,
+    "ecclesiastes": 1,
+    "job": 1,
+    "numbers": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "גַנּ֔וֹת וְאִכְל֖וּ",
+      "pron": "크간노트 아콜",
+      "lemmas": [
+        "גַּנָּה",
+        "אָכַל"
+      ],
+      "words": [
+        {
+          "word": "גַנּ֔וֹת",
+          "lemma": "גַּנָּה",
+          "strong": "H1593",
+          "pron": "크간노트"
+        },
+        {
+          "word": "וְאִכְל֖וּ",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "아콜"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 29:5",
+        "jeremiah 29:28",
+        "amos 9:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גַנּ֔וֹת וְאִכְל֖וּ אֶת",
+      "pron": "크간노트 아콜 에트",
+      "lemmas": [
+        "גַּנָּה",
+        "אָכַל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "גַנּ֔וֹת",
+          "lemma": "גַּנָּה",
+          "strong": "H1593",
+          "pron": "크간노트"
+        },
+        {
+          "word": "וְאִכְל֖וּ",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "아콜"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 29:5",
+        "jeremiah 29:28",
+        "amos 9:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

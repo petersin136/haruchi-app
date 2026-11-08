@@ -2,7 +2,7 @@
   "lemma": "מָעוֹן",
   "pron": "마온",
   "strong": "H4584",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "מָעוֹן",
     "strong": "H4583",
@@ -12,19 +12,59 @@
     {
       "lemma": "מָעוֹן",
       "strong": "H4583",
-      "pron": "메온",
+      "pron": "미메온",
       "glossKo": "거처"
     },
     {
       "lemma": "מְעוֹנָה",
       "strong": "H4585",
-      "pron": "우메오나트오",
-      "glossKo": "그의 거처"
+      "pron": "메오나",
+      "glossKo": "거처"
+    },
+    {
+      "lemma": "מְעוּנִי",
+      "strong": "H4586",
+      "pron": "므으님",
+      "glossKo": "므운 사람"
     }
   ],
   "defEn": "Maon",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 8,
+  "byBook": {
+    "samuel1": 4,
+    "chronicles1": 2,
+    "joshua": 1,
+    "judges": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בְּמִדְבַּ֤ר מָעוֹן֙",
+      "pron": "아믿바르 마온",
+      "lemmas": [
+        "מִדְבָּר",
+        "מָעוֹן"
+      ],
+      "words": [
+        {
+          "word": "בְּמִדְבַּ֤ר",
+          "lemma": "מִדְבָּר",
+          "strong": "H4057",
+          "pron": "아믿바르"
+        },
+        {
+          "word": "מָעוֹן֙",
+          "lemma": "מָעוֹן",
+          "strong": "H4584",
+          "pron": "마온"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 23:24",
+        "samuel1 23:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

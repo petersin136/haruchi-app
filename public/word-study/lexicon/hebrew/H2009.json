@@ -18,48 +18,80 @@
     {
       "lemma": "הֵן",
       "strong": "H2006",
-      "pron": "",
+      "pron": "헨",
       "glossKo": "보라(아람)"
     },
     {
       "lemma": "לָהֵן",
       "strong": "H3860",
-      "pron": "",
+      "pron": "하라헨",
       "glossKo": "그러므로"
     }
   ],
   "defEn": "lo!",
   "defKo": "",
-  "countOT": 146,
+  "countOT": 843,
   "byBook": {
     "genesis": 118,
-    "psalms": 28
+    "ezekiel": 78,
+    "samuel1": 74,
+    "jeremiah": 73,
+    "isaiah": 61,
+    "kings2": 47,
+    "kings1": 45,
+    "judges": 44,
+    "samuel2": 41,
+    "exodus": 34,
+    "psalms": 28,
+    "leviticus": 26,
+    "numbers": 25,
+    "chronicles2": 22,
+    "zechariah": 18,
+    "job": 15,
+    "joshua": 14,
+    "amos": 13,
+    "daniel": 10,
+    "deuteronomy": 10,
+    "chronicles1": 7,
+    "ecclesiastes": 6,
+    "ruth": 5,
+    "malachi": 4,
+    "nehemiah": 4,
+    "songofsolomon": 4,
+    "esther": 3,
+    "habakkuk": 3,
+    "proverbs": 3,
+    "hosea": 2,
+    "nahum": 2,
+    "haggai": 1,
+    "joel": 1,
+    "micah": 1,
+    "obadiah": 1
   },
   "phrases": [
     {
-      "hebrew": "וַיֹּ֥אמֶר הִנֵּֽנִי",
-      "pron": "아마르 힌네",
+      "hebrew": "לֵאמֹ֑ר הִנֵּ֣ה",
+      "pron": "바요메르 힌네",
       "lemmas": [
         "אָמַר",
         "הִנֵּה"
       ],
       "words": [
         {
-          "word": "וַיֹּ֥אמֶר",
+          "word": "לֵאמֹ֑ר",
           "lemma": "אָמַר",
           "strong": "H559",
-          "pron": "아마르"
+          "pron": "바요메르"
         },
         {
-          "word": "הִנֵּֽנִי",
+          "word": "הִנֵּ֣ה",
           "lemma": "הִנֵּה",
           "strong": "H2009",
           "pron": "힌네"
         }
       ],
-      "count": 25,
+      "count": 87,
       "refs": [
-        "psalms 40:7",
         "genesis 18:9",
         "genesis 18:27",
         "genesis 18:31",
@@ -70,48 +102,14 @@
         "genesis 22:7",
         "genesis 22:11",
         "genesis 22:20",
-        "genesis 27:2"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "הִנֵּה נָ֠א",
-      "pron": "힌네 나",
-      "lemmas": [
-        "הִנֵּה",
-        "נָא"
-      ],
-      "words": [
-        {
-          "word": "הִנֵּה",
-          "lemma": "הִנֵּה",
-          "strong": "H2009",
-          "pron": "힌네"
-        },
-        {
-          "word": "נָ֠א",
-          "lemma": "נָא",
-          "strong": "H4994",
-          "pron": "나"
-        }
-      ],
-      "count": 9,
-      "refs": [
-        "genesis 12:11",
-        "genesis 16:2",
-        "genesis 18:27",
-        "genesis 18:31",
-        "genesis 19:2",
-        "genesis 19:8",
-        "genesis 19:19",
-        "genesis 19:20",
-        "genesis 27:2"
+        "genesis 27:2",
+        "genesis 27:6"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "וַיַּ֗רְא וְהִנֵּ֤ה",
-      "pron": "야레에누 힌네",
+      "pron": "바야레 힌네",
       "lemmas": [
         "רָאָה",
         "הִנֵּה"
@@ -121,7 +119,7 @@
           "word": "וַיַּ֗רְא",
           "lemma": "רָאָה",
           "strong": "H7200",
-          "pron": "야레에누"
+          "pron": "바야레"
         },
         {
           "word": "וְהִנֵּ֤ה",
@@ -130,7 +128,7 @@
           "pron": "힌네"
         }
       ],
-      "count": 9,
+      "count": 47,
       "refs": [
         "genesis 8:13",
         "genesis 18:2",
@@ -140,45 +138,91 @@
         "genesis 26:8",
         "genesis 29:2",
         "genesis 33:1",
-        "genesis 37:25"
+        "genesis 37:25",
+        "exodus 3:2",
+        "leviticus 14:39",
+        "leviticus 14:44"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְהִנֵּ֣ה שֶׁ֣בַע",
-      "pron": "힌네 셰바",
+      "hebrew": "הִנֵּ֨ה אָנֹכִ֜י",
+      "pron": "힌네 아노키",
       "lemmas": [
         "הִנֵּה",
-        "שֶׁבַע"
+        "אָנֹכִי"
       ],
       "words": [
         {
-          "word": "וְהִנֵּ֣ה",
+          "word": "הִנֵּ֨ה",
           "lemma": "הִנֵּה",
           "strong": "H2009",
           "pron": "힌네"
         },
         {
-          "word": "שֶׁ֣בַע",
-          "lemma": "שֶׁבַע",
-          "strong": "H7651",
-          "pron": "셰바"
+          "word": "אָנֹכִ֜י",
+          "lemma": "אָנֹכִי",
+          "strong": "H595",
+          "pron": "아노키"
         }
       ],
-      "count": 7,
+      "count": 36,
       "refs": [
-        "genesis 41:3",
-        "genesis 41:5",
-        "genesis 41:6",
-        "genesis 41:19",
-        "genesis 41:22",
-        "genesis 41:23",
-        "genesis 41:29"
+        "genesis 24:13",
+        "genesis 24:43",
+        "genesis 25:32",
+        "genesis 28:15",
+        "genesis 48:21",
+        "genesis 50:5",
+        "exodus 3:13",
+        "exodus 4:23",
+        "exodus 7:17",
+        "exodus 8:2",
+        "exodus 8:29",
+        "exodus 19:9"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כִּֽי הִנֵּ֣ה",
+      "hebrew": "הִנֵּ֛ה יָמִ֥ים",
+      "pron": "힌네 욤",
+      "lemmas": [
+        "הִנֵּה",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "הִנֵּ֛ה",
+          "lemma": "הִנֵּה",
+          "strong": "H2009",
+          "pron": "힌네"
+        },
+        {
+          "word": "יָמִ֥ים",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 29,
+      "refs": [
+        "deuteronomy 1:10",
+        "samuel1 2:31",
+        "samuel1 24:4",
+        "samuel1 24:10",
+        "kings2 20:17",
+        "isaiah 13:9",
+        "isaiah 39:6",
+        "jeremiah 7:32",
+        "jeremiah 9:25",
+        "jeremiah 16:14",
+        "jeremiah 19:6",
+        "jeremiah 23:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי הִנֵּ֤ה",
       "pron": "키 힌네",
       "lemmas": [
         "כִּי",
@@ -192,20 +236,26 @@
           "pron": "키"
         },
         {
-          "word": "הִנֵּ֣ה",
+          "word": "הִנֵּ֤ה",
           "lemma": "הִנֵּה",
           "strong": "H2009",
           "pron": "힌네"
         }
       ],
-      "count": 7,
+      "count": 28,
       "refs": [
+        "judges 13:5",
         "psalms 11:2",
         "psalms 48:4",
         "psalms 59:3",
         "psalms 73:27",
         "psalms 83:2",
-        "psalms 92:9"
+        "psalms 92:9",
+        "songofsolomon 2:11",
+        "isaiah 3:1",
+        "isaiah 26:21",
+        "isaiah 60:2",
+        "isaiah 66:15"
       ],
       "glossKo": ""
     }

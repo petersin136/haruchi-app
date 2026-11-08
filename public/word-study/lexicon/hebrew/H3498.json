@@ -1,6 +1,6 @@
 {
   "lemma": "יָתַר",
-  "pron": "호테르",
+  "pron": "아노타로트",
   "strong": "H3498",
   "posKo": "동사",
   "root": null,
@@ -8,25 +8,25 @@
     {
       "lemma": "הוֹתִיר",
       "strong": "H1956",
-      "pron": "",
+      "pron": "호티르",
       "glossKo": "호딜"
     },
     {
       "lemma": "יוֹתֵר",
       "strong": "H3148",
-      "pron": "",
+      "pron": "요테르",
       "glossKo": "넘침"
     },
     {
       "lemma": "יָתוּר",
       "strong": "H3491",
-      "pron": "",
+      "pron": "예투르",
       "glossKo": "남은 것"
     },
     {
       "lemma": "יַתִּיר",
       "strong": "H3492",
-      "pron": "",
+      "pron": "브얏티르",
       "glossKo": "얏딜"
     },
     {
@@ -34,14 +34,213 @@
       "strong": "H3499",
       "pron": "예테르",
       "glossKo": "남은 것"
+    },
+    {
+      "lemma": "יִתְרוֹן",
+      "strong": "H3504",
+      "pron": "이테론",
+      "glossKo": "탁월함"
     }
   ],
   "defEn": "jut; exceed",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 107,
   "byBook": {
+    "leviticus": 14,
+    "exodus": 10,
+    "joshua": 10,
+    "ezekiel": 9,
+    "kings1": 9,
+    "isaiah": 6,
+    "chronicles1": 5,
+    "jeremiah": 5,
+    "chronicles2": 4,
     "genesis": 4,
-    "psalms": 2
+    "judges": 4,
+    "kings2": 4,
+    "samuel1": 4,
+    "samuel2": 4,
+    "deuteronomy": 3,
+    "numbers": 2,
+    "psalms": 2,
+    "ruth": 2,
+    "zechariah": 2,
+    "amos": 1,
+    "daniel": 1,
+    "nehemiah": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹֽא יִוָּתֵ֥ר",
+      "pron": "로 아노타로트",
+      "lemmas": [
+        "לֹא",
+        "יָתַר"
+      ],
+      "words": [
+        {
+          "word": "לֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִוָּתֵ֥ר",
+          "lemma": "יָתַר",
+          "strong": "H3498",
+          "pron": "아노타로트"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "exodus 10:15",
+        "exodus 12:10",
+        "leviticus 22:30",
+        "numbers 26:65",
+        "joshua 11:11",
+        "joshua 11:22",
+        "samuel2 13:30",
+        "samuel2 17:12",
+        "kings1 17:17",
+        "kings2 20:17",
+        "nehemiah 6:1",
+        "psalms 106:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תוֹתִ֥ירוּ מִמֶּ֖נּוּ",
+      "pron": "아노타로트 민",
+      "lemmas": [
+        "יָתַר",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "תוֹתִ֥ירוּ",
+          "lemma": "יָתַר",
+          "strong": "H3498",
+          "pron": "아노타로트"
+        },
+        {
+          "word": "מִמֶּ֖נּוּ",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 12:10",
+        "exodus 16:19",
+        "leviticus 2:3",
+        "leviticus 2:10",
+        "leviticus 6:16",
+        "leviticus 7:16",
+        "leviticus 14:29",
+        "leviticus 22:30",
+        "samuel2 8:4",
+        "kings1 9:20",
+        "chronicles1 18:4",
+        "chronicles2 8:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֥ר הוֹתִ֖יר",
+      "pron": "아셰르 아노타로트",
+      "lemmas": [
+        "אֲשֶׁר",
+        "יָתַר"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הוֹתִ֖יר",
+          "lemma": "יָתַר",
+          "strong": "H3498",
+          "pron": "아노타로트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 10:15",
+        "numbers 33:55",
+        "deuteronomy 28:54",
+        "ruth 2:18",
+        "samuel2 9:1",
+        "kings1 9:21",
+        "chronicles2 8:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הַנּוֹתָר֙",
+      "pron": "에트 아노타로트",
+      "lemmas": [
+        "אֵת",
+        "יָתַר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַנּוֹתָר֙",
+          "lemma": "יָתַר",
+          "strong": "H3498",
+          "pron": "아노타로트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 29:34",
+        "exodus 36:7",
+        "samuel1 15:15",
+        "ezekiel 34:18",
+        "ezekiel 39:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נוֹתַ֨ר כָּל",
+      "pron": "아노타로트 칼",
+      "lemmas": [
+        "יָתַר",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "נוֹתַ֨ר",
+          "lemma": "יָתַר",
+          "strong": "H3498",
+          "pron": "아노타로트"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 10:15",
+        "joshua 11:11",
+        "judges 8:10",
+        "samuel2 17:12",
+        "zechariah 14:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

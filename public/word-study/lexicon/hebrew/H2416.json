@@ -1,6 +1,6 @@
 {
   "lemma": "חַי",
-  "pron": "하아위",
+  "pron": "하아",
   "strong": "H2416",
   "posKo": "명사",
   "root": {
@@ -12,31 +12,31 @@
     {
       "lemma": "חֲיָא",
       "strong": "H2418",
-      "pron": "",
+      "pron": "헤이",
       "glossKo": "살다(아람)"
     },
     {
       "lemma": "חִיאֵל",
       "strong": "H2419",
-      "pron": "",
+      "pron": "히엘",
       "glossKo": "히엘"
     },
     {
       "lemma": "חָיָה",
       "strong": "H2421",
-      "pron": "예히",
+      "pron": "바예히",
       "glossKo": "살다"
     },
     {
       "lemma": "חָיֶה",
       "strong": "H2422",
-      "pron": "",
+      "pron": "하오트",
       "glossKo": "활기 있는"
     },
     {
       "lemma": "חַיּוּת",
       "strong": "H2424",
-      "pron": "",
+      "pron": "하우트",
       "glossKo": "생명"
     },
     {
@@ -48,182 +48,233 @@
   ],
   "defEn": "alive; raw; fresh; strong",
   "defKo": "",
-  "countOT": 117,
+  "countOT": 503,
   "byBook": {
     "genesis": 66,
-    "psalms": 51
+    "ezekiel": 59,
+    "psalms": 51,
+    "proverbs": 34,
+    "leviticus": 33,
+    "kings1": 26,
+    "samuel1": 26,
+    "job": 25,
+    "samuel2": 25,
+    "jeremiah": 23,
+    "ecclesiastes": 22,
+    "deuteronomy": 21,
+    "kings2": 21,
+    "isaiah": 19,
+    "exodus": 9,
+    "numbers": 7,
+    "hosea": 6,
+    "chronicles2": 5,
+    "joshua": 4,
+    "daniel": 3,
+    "jonah": 3,
+    "lamentations": 3,
+    "zephaniah": 3,
+    "amos": 2,
+    "judges": 2,
+    "ruth": 2,
+    "malachi": 1,
+    "songofsolomon": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "כָל חַיְתוֹ",
-      "pron": "브콜 하아위",
+      "hebrew": "חַי יְהוָ֗ה",
+      "pron": "하아 여호와",
+      "lemmas": [
+        "חַי",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "חַי",
+          "lemma": "חַי",
+          "strong": "H2416",
+          "pron": "하아"
+        },
+        {
+          "word": "יְהוָ֗ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 45,
+      "refs": [
+        "judges 8:19",
+        "ruth 3:13",
+        "samuel1 14:39",
+        "samuel1 14:45",
+        "samuel1 19:6",
+        "samuel1 20:3",
+        "samuel1 20:21",
+        "samuel1 25:26",
+        "samuel1 25:34",
+        "samuel1 26:10",
+        "samuel1 26:16",
+        "samuel1 28:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל חַיְתוֹ",
+      "pron": "칼 하아",
       "lemmas": [
         "כֹּל",
         "חַי"
       ],
       "words": [
         {
-          "word": "כָל",
+          "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
           "word": "חַיְתוֹ",
           "lemma": "חַי",
           "strong": "H2416",
-          "pron": "하아위"
+          "pron": "하아"
         }
       ],
-      "count": 22,
+      "count": 42,
       "refs": [
-        "psalms 50:10",
-        "psalms 104:11",
-        "psalms 104:20",
-        "psalms 143:2",
-        "psalms 145:16",
         "genesis 1:28",
         "genesis 1:30",
         "genesis 2:19",
         "genesis 2:20",
         "genesis 3:1",
         "genesis 3:14",
-        "genesis 3:20"
+        "genesis 3:20",
+        "genesis 6:19",
+        "genesis 7:14",
+        "genesis 8:1",
+        "genesis 8:17",
+        "genesis 8:19"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "נֶ֥פֶשׁ חַיָּ֖ה",
-      "pron": "르납시위 하아위",
+      "hebrew": "חַיַּ֤ת הַשָּׂדֶה֙",
+      "pron": "하아 아사데",
       "lemmas": [
-        "נֶפֶשׁ",
-        "חַי"
+        "חַי",
+        "שָׂדֶה"
       ],
       "words": [
         {
-          "word": "נֶ֥פֶשׁ",
-          "lemma": "נֶפֶשׁ",
-          "strong": "H5315",
-          "pron": "르납시위"
-        },
-        {
-          "word": "חַיָּ֖ה",
+          "word": "חַיַּ֤ת",
           "lemma": "חַי",
           "strong": "H2416",
-          "pron": "하아위"
+          "pron": "하아"
+        },
+        {
+          "word": "הַשָּׂדֶה֙",
+          "lemma": "שָׂדֶה",
+          "strong": "H7704",
+          "pron": "아사데"
         }
       ],
-      "count": 14,
+      "count": 31,
       "refs": [
-        "psalms 49:18",
-        "psalms 66:9",
-        "psalms 78:50",
-        "psalms 88:3",
-        "genesis 1:20",
-        "genesis 1:21",
-        "genesis 1:24",
-        "genesis 1:30",
-        "genesis 2:7",
         "genesis 2:19",
-        "genesis 9:10",
-        "genesis 9:12"
+        "genesis 2:20",
+        "genesis 3:1",
+        "genesis 3:14",
+        "exodus 23:11",
+        "exodus 23:29",
+        "leviticus 26:22",
+        "deuteronomy 7:22",
+        "samuel2 21:10",
+        "kings2 14:9",
+        "chronicles2 25:18",
+        "job 5:23"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שְׁנֵי֙ חַיֵּ֣י",
-      "pron": "우셰노타위 하아위",
+      "hebrew": "יְמֵ֥י חַיָּֽיו",
+      "pron": "욤 하아",
       "lemmas": [
-        "שָׁנֶה",
+        "יוֹם",
         "חַי"
       ],
       "words": [
         {
-          "word": "שְׁנֵי֙",
-          "lemma": "שָׁנֶה",
-          "strong": "H8141",
-          "pron": "우셰노타위"
+          "word": "יְמֵ֥י",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
         },
         {
-          "word": "חַיֵּ֣י",
+          "word": "חַיָּֽיו",
           "lemma": "חַי",
           "strong": "H2416",
-          "pron": "하아위"
+          "pron": "하아"
         }
       ],
-      "count": 8,
+      "count": 29,
       "refs": [
-        "genesis 7:11",
-        "genesis 23:1",
-        "genesis 25:7",
-        "genesis 25:17",
-        "genesis 47:8",
-        "genesis 47:9",
-        "genesis 47:28"
+        "genesis 3:14",
+        "genesis 3:17",
+        "deuteronomy 4:9",
+        "deuteronomy 6:2",
+        "deuteronomy 16:3",
+        "deuteronomy 17:19",
+        "joshua 1:5",
+        "joshua 4:14",
+        "samuel1 1:11",
+        "samuel1 7:15",
+        "kings1 4:21",
+        "kings1 11:34"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לְחַיְתוֹ אָֽרֶץ",
-      "pron": "하아위 에레츠",
+      "hebrew": "כָּל יְמֵ֥י חַיָּֽיו",
+      "pron": "칼 욤 하아",
       "lemmas": [
-        "חַי",
-        "אֶרֶץ"
+        "כֹּל",
+        "יוֹם",
+        "חַי"
       ],
       "words": [
         {
-          "word": "לְחַיְתוֹ",
-          "lemma": "חַי",
-          "strong": "H2416",
-          "pron": "하아위"
-        },
-        {
-          "word": "אָֽרֶץ",
-          "lemma": "אֶרֶץ",
-          "strong": "H776",
-          "pron": "에레츠"
-        }
-      ],
-      "count": 7,
-      "refs": [
-        "psalms 79:2",
-        "genesis 1:24",
-        "genesis 1:25",
-        "genesis 1:30",
-        "genesis 9:2",
-        "genesis 9:10"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "הַֽחַיָּ֥ה וְכָל",
-      "pron": "하아위 브콜",
-      "lemmas": [
-        "חַי",
-        "כֹּל"
-      ],
-      "words": [
-        {
-          "word": "הַֽחַיָּ֥ה",
-          "lemma": "חַי",
-          "strong": "H2416",
-          "pron": "하아위"
-        },
-        {
-          "word": "וְכָל",
+          "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
+        },
+        {
+          "word": "יְמֵ֥י",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "חַיָּֽיו",
+          "lemma": "חַי",
+          "strong": "H2416",
+          "pron": "하아"
         }
       ],
-      "count": 6,
+      "count": 24,
       "refs": [
-        "psalms 148:10",
-        "genesis 6:19",
-        "genesis 7:21",
-        "genesis 8:19",
-        "genesis 9:15",
-        "genesis 9:16"
+        "genesis 3:14",
+        "genesis 3:17",
+        "deuteronomy 4:9",
+        "deuteronomy 6:2",
+        "deuteronomy 16:3",
+        "deuteronomy 17:19",
+        "joshua 1:5",
+        "joshua 4:14",
+        "samuel1 1:11",
+        "samuel1 7:15",
+        "kings1 4:21",
+        "kings1 11:34"
       ],
       "glossKo": ""
     }

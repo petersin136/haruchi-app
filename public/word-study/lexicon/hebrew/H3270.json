@@ -1,8 +1,8 @@
 {
   "lemma": "יַעֲזֵיר",
-  "pron": "야아제르",
+  "pron": "야에제르",
   "strong": "H3270",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָזַר",
     "strong": "H5826",
@@ -12,43 +12,110 @@
     {
       "lemma": "עַזּוּר",
       "strong": "H5809",
-      "pron": "",
+      "pron": "앗주르",
       "glossKo": "앗술"
     },
     {
       "lemma": "עָזַר",
       "strong": "H5826",
-      "pron": "오제르",
-      "glossKo": "돕다"
+      "pron": "베아엣렉카",
+      "glossKo": "너에게 돕다"
     },
     {
       "lemma": "עֶזֶר",
       "strong": "H5827",
-      "pron": "",
+      "pron": "브에제르",
       "glossKo": "에셀"
     },
     {
       "lemma": "עֵזֶר",
       "strong": "H5828",
-      "pron": "엣르카",
-      "glossKo": "너의 도움"
+      "pron": "에제르",
+      "glossKo": "도움"
     },
     {
       "lemma": "עֲזַרְאֵל",
       "strong": "H5832",
-      "pron": "",
+      "pron": "바아자레엘",
       "glossKo": "아사렐"
     },
     {
       "lemma": "עֲזָרָה",
       "strong": "H5835",
-      "pron": "",
+      "pron": "브하아자라",
       "glossKo": "뜰"
     }
   ],
   "defEn": "Jaazer; Jazer",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "numbers": 4,
+    "chronicles1": 2,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "joshua": 2,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶת יַעְזֵ֔ר",
+      "pron": "에트 야에제르",
+      "lemmas": [
+        "אֵת",
+        "יַעֲזֵיר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יַעְזֵ֔ר",
+          "lemma": "יַעֲזֵיר",
+          "strong": "H3270",
+          "pron": "야에제르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 21:32",
+        "numbers 32:35",
+        "joshua 21:39",
+        "chronicles1 6:81"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יַעְזֵר֙ וְאֶת",
+      "pron": "야에제르 에트",
+      "lemmas": [
+        "יַעֲזֵיר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "יַעְזֵר֙",
+          "lemma": "יַעֲזֵיר",
+          "strong": "H3270",
+          "pron": "야에제르"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 32:1",
+        "joshua 21:39",
+        "chronicles1 6:81"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

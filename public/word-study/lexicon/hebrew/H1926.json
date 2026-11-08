@@ -1,6 +1,6 @@
 {
   "lemma": "הָדָר",
-  "pron": "브하다르",
+  "pron": "하다르",
   "strong": "H1926",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "הָדַר",
       "strong": "H1921",
-      "pron": "",
+      "pron": "테헫다르",
       "glossKo": "영광스럽게 하다"
     },
     {
       "lemma": "הֲדַר",
       "strong": "H1922",
-      "pron": "",
+      "pron": "브핟데레트",
       "glossKo": "영광스럽게 하다(아람)"
     },
     {
@@ -30,7 +30,7 @@
     {
       "lemma": "הֶדֶר",
       "strong": "H1925",
-      "pron": "",
+      "pron": "헤데르",
       "glossKo": "영예"
     },
     {
@@ -42,14 +42,23 @@
   ],
   "defEn": "magnificence",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 30,
   "byBook": {
-    "psalms": 13
+    "psalms": 13,
+    "isaiah": 7,
+    "ezekiel": 2,
+    "proverbs": 2,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "job": 1,
+    "lamentations": 1,
+    "leviticus": 1,
+    "micah": 1
   },
   "phrases": [
     {
       "hebrew": "הוֹד וְהָדָ֥ר",
-      "pron": "혿카 브하다르",
+      "pron": "메혿카 하다르",
       "lemmas": [
         "הוֹד",
         "הָדָר"
@@ -59,22 +68,156 @@
           "word": "הוֹד",
           "lemma": "הוֹד",
           "strong": "H1935",
-          "pron": "혿카"
+          "pron": "메혿카"
         },
         {
           "word": "וְהָדָ֥ר",
           "lemma": "הָדָר",
           "strong": "H1926",
-          "pron": "브하다르"
+          "pron": "하다르"
         }
       ],
-      "count": 5,
+      "count": 7,
       "refs": [
+        "chronicles1 16:27",
+        "job 40:10",
         "psalms 21:5",
         "psalms 45:3",
         "psalms 96:6",
         "psalms 104:1",
         "psalms 111:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָה֙ וּמֵהֲדַ֣ר",
+      "pron": "여호와 하다르",
+      "lemmas": [
+        "יְהֹוָה",
+        "הָדָר"
+      ],
+      "words": [
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "וּמֵהֲדַ֣ר",
+          "lemma": "הָדָר",
+          "strong": "H1926",
+          "pron": "하다르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 29:4",
+        "isaiah 2:10",
+        "isaiah 2:19",
+        "isaiah 2:21",
+        "isaiah 35:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמֵהֲדַ֣ר גְּאוֹנ֔וֹ",
+      "pron": "하다르 게온카",
+      "lemmas": [
+        "הָדָר",
+        "גָּאוֹן"
+      ],
+      "words": [
+        {
+          "word": "וּמֵהֲדַ֣ר",
+          "lemma": "הָדָר",
+          "strong": "H1926",
+          "pron": "하다르"
+        },
+        {
+          "word": "גְּאוֹנ֔וֹ",
+          "lemma": "גָּאוֹן",
+          "strong": "H1347",
+          "pron": "게온카"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 2:10",
+        "isaiah 2:19",
+        "isaiah 2:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָה֙ וּמֵהֲדַ֣ר גְּאוֹנ֔וֹ",
+      "pron": "여호와 하다르 게온카",
+      "lemmas": [
+        "יְהֹוָה",
+        "הָדָר",
+        "גָּאוֹן"
+      ],
+      "words": [
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "וּמֵהֲדַ֣ר",
+          "lemma": "הָדָר",
+          "strong": "H1926",
+          "pron": "하다르"
+        },
+        {
+          "word": "גְּאוֹנ֔וֹ",
+          "lemma": "גָּאוֹן",
+          "strong": "H1347",
+          "pron": "게온카"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 2:10",
+        "isaiah 2:19",
+        "isaiah 2:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פַּ֤חַד יְהוָה֙ וּמֵהֲדַ֣ר",
+      "pron": "우파핟 여호와 하다르",
+      "lemmas": [
+        "פַּחַד",
+        "יְהֹוָה",
+        "הָדָר"
+      ],
+      "words": [
+        {
+          "word": "פַּ֤חַד",
+          "lemma": "פַּחַד",
+          "strong": "H6343",
+          "pron": "우파핟"
+        },
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "וּמֵהֲדַ֣ר",
+          "lemma": "הָדָר",
+          "strong": "H1926",
+          "pron": "하다르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 2:10",
+        "isaiah 2:19",
+        "isaiah 2:21"
       ],
       "glossKo": ""
     }

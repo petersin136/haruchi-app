@@ -1,8 +1,8 @@
 {
   "lemma": "תַּחַת",
-  "pron": "타하트",
+  "pron": "브타하트",
   "strong": "H8480",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "תַּחַת",
     "strong": "H8478",
@@ -12,37 +12,133 @@
     {
       "lemma": "תְּחוֹת",
       "strong": "H8460",
-      "pron": "",
+      "pron": "테호트",
       "glossKo": "아래(아람)"
     },
     {
       "lemma": "תַּחַת",
       "strong": "H8478",
-      "pron": "타하트",
+      "pron": "미타하트",
       "glossKo": "아래"
     },
     {
       "lemma": "תַּחַת",
       "strong": "H8479",
-      "pron": "",
-      "glossKo": "아래(아람)"
+      "pron": "타헷토히",
+      "glossKo": "그에게 아래(아람)"
     },
     {
       "lemma": "תַּחְתּוֹן",
       "strong": "H8481",
-      "pron": "",
+      "pron": "타헷톤",
       "glossKo": "아래의"
     },
     {
       "lemma": "תַּחְתִּי",
       "strong": "H8482",
-      "pron": "브타헷티오트",
+      "pron": "타헷티임",
       "glossKo": "아래의"
     }
   ],
   "defEn": "Tachath",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "chronicles1": 4,
+    "numbers": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "תַּ֤חַת בְּנוֹ֙",
+      "pron": "브타하트 바님",
+      "lemmas": [
+        "תַּחַת",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "תַּ֤חַת",
+          "lemma": "תַּחַת",
+          "strong": "H8480",
+          "pron": "브타하트"
+        },
+        {
+          "word": "בְּנוֹ֙",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles1 6:24",
+        "chronicles1 6:37",
+        "chronicles1 7:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן תַּ֨חַת֙",
+      "pron": "바님 브타하트",
+      "lemmas": [
+        "בֵּן",
+        "תַּחַת"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "תַּ֨חַת֙",
+          "lemma": "תַּחַת",
+          "strong": "H8480",
+          "pron": "브타하트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 6:37",
+        "chronicles1 7:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן תַּ֨חַת֙ בֶּן",
+      "pron": "바님 브타하트 바님",
+      "lemmas": [
+        "בֵּן",
+        "תַּחַת",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "תַּ֨חַת֙",
+          "lemma": "תַּחַת",
+          "strong": "H8480",
+          "pron": "브타하트"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 6:37",
+        "chronicles1 7:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

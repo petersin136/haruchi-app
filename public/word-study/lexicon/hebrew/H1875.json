@@ -1,6 +1,6 @@
 {
   "lemma": "דָּרַשׁ",
-  "pron": "도레셰이카",
+  "pron": "엗로쉬",
   "strong": "H1875",
   "posKo": "동사",
   "root": null,
@@ -8,31 +8,54 @@
     {
       "lemma": "מִדְרָשׁ",
       "strong": "H4097",
-      "pron": "",
+      "pron": "브믿라쉬",
       "glossKo": "주석서"
     }
   ],
   "defEn": "tread; frequent; follow",
   "defKo": "",
-  "countOT": 30,
+  "countOT": 165,
   "byBook": {
+    "chronicles2": 30,
     "psalms": 25,
-    "genesis": 5
+    "ezekiel": 16,
+    "deuteronomy": 14,
+    "isaiah": 14,
+    "chronicles1": 11,
+    "jeremiah": 9,
+    "kings2": 9,
+    "ezra": 5,
+    "genesis": 5,
+    "amos": 4,
+    "job": 4,
+    "kings1": 4,
+    "leviticus": 2,
+    "proverbs": 2,
+    "samuel1": 2,
+    "ecclesiastes": 1,
+    "esther": 1,
+    "exodus": 1,
+    "hosea": 1,
+    "judges": 1,
+    "lamentations": 1,
+    "micah": 1,
+    "samuel2": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "דֹּ֝רֵשׁ אֶת",
-      "pron": "도레셰이카 에트",
+      "hebrew": "דִרְשׁ֨וּ אֶת",
+      "pron": "엗로쉬 에트",
       "lemmas": [
         "דָּרַשׁ",
         "אֵת"
       ],
       "words": [
         {
-          "word": "דֹּ֝רֵשׁ",
+          "word": "דִרְשׁ֨וּ",
           "lemma": "דָּרַשׁ",
           "strong": "H1875",
-          "pron": "도레셰이카"
+          "pron": "엗로쉬"
         },
         {
           "word": "אֶת",
@@ -41,39 +64,138 @@
           "pron": "에트"
         }
       ],
-      "count": 5,
+      "count": 33,
       "refs": [
-        "psalms 14:2",
-        "psalms 34:4",
-        "psalms 53:2",
         "genesis 9:5",
-        "genesis 25:22"
+        "genesis 25:22",
+        "deuteronomy 11:12",
+        "kings1 22:7",
+        "kings1 22:8",
+        "kings2 3:11",
+        "kings2 8:8",
+        "kings2 22:13",
+        "kings2 22:18",
+        "chronicles2 12:14",
+        "chronicles2 14:4",
+        "chronicles2 14:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "דֹרְשֶׁ֣יךָ יְהוָֽה",
-      "pron": "도레셰이카 여호와",
+      "hebrew": "דִרְשׁ֨וּ אֶת יְהוָ֜ה",
+      "pron": "엗로쉬 에트 여호와",
+      "lemmas": [
+        "דָּרַשׁ",
+        "אֵת",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "דִרְשׁ֨וּ",
+          "lemma": "דָּרַשׁ",
+          "strong": "H1875",
+          "pron": "엗로쉬"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יְהוָ֜ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "genesis 25:22",
+        "kings1 22:8",
+        "kings2 3:11",
+        "kings2 8:8",
+        "kings2 22:13",
+        "kings2 22:18",
+        "chronicles2 12:14",
+        "chronicles2 14:4",
+        "chronicles2 14:7",
+        "chronicles2 15:12",
+        "chronicles2 16:12",
+        "chronicles2 18:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֥א דְרַשְׁנֻ֖הוּ",
+      "pron": "로 엗로쉬",
+      "lemmas": [
+        "לֹא",
+        "דָּרַשׁ"
+      ],
+      "words": [
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "דְרַשְׁנֻ֖הוּ",
+          "lemma": "דָּרַשׁ",
+          "strong": "H1875",
+          "pron": "엗로쉬"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "deuteronomy 23:6",
+        "chronicles1 10:14",
+        "chronicles1 13:3",
+        "chronicles1 15:13",
+        "chronicles2 15:13",
+        "chronicles2 16:12",
+        "chronicles2 17:3",
+        "chronicles2 24:6",
+        "ezra 9:12",
+        "psalms 10:13",
+        "psalms 119:155",
+        "isaiah 9:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִדְרְשֶׁ֜נּוּ יְהוָ֤ה",
+      "pron": "엗로쉬 여호와",
       "lemmas": [
         "דָּרַשׁ",
         "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "דֹרְשֶׁ֣יךָ",
+          "word": "יִדְרְשֶׁ֜נּוּ",
           "lemma": "דָּרַשׁ",
           "strong": "H1875",
-          "pron": "도레셰이카"
+          "pron": "엗로쉬"
         },
         {
-          "word": "יְהוָֽה",
+          "word": "יְהוָ֤ה",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         }
       ],
-      "count": 3,
+      "count": 13,
       "refs": [
+        "deuteronomy 23:21",
+        "chronicles1 10:14",
+        "chronicles1 16:11",
+        "chronicles1 22:19",
+        "chronicles1 28:9",
+        "chronicles2 15:13",
+        "chronicles2 20:3",
+        "chronicles2 34:26",
+        "ezra 6:21",
         "psalms 9:10",
         "psalms 34:10",
         "psalms 105:4"
@@ -81,30 +203,39 @@
       "glossKo": ""
     },
     {
-      "hebrew": "דָּ֫רָ֥שְׁתִּי יָדִ֤י",
-      "pron": "도레셰이카 야데카",
+      "hebrew": "לִדְרֹ֥שׁ אֱלֹהִֽים",
+      "pron": "엗로쉬 엘로힘",
       "lemmas": [
         "דָּרַשׁ",
-        "יָד"
+        "אֱלֹהִים"
       ],
       "words": [
         {
-          "word": "דָּ֫רָ֥שְׁתִּי",
+          "word": "לִדְרֹ֥שׁ",
           "lemma": "דָּרַשׁ",
           "strong": "H1875",
-          "pron": "도레셰이카"
+          "pron": "엗로쉬"
         },
         {
-          "word": "יָדִ֤י",
-          "lemma": "יָד",
-          "strong": "H3027",
-          "pron": "야데카"
+          "word": "אֱלֹהִֽים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
         }
       ],
-      "count": 3,
+      "count": 11,
       "refs": [
-        "psalms 77:2",
-        "genesis 9:5"
+        "exodus 18:15",
+        "deuteronomy 12:30",
+        "samuel1 9:9",
+        "chronicles1 21:30",
+        "chronicles2 19:3",
+        "chronicles2 26:5",
+        "chronicles2 30:19",
+        "chronicles2 31:21",
+        "chronicles2 34:3",
+        "ezra 4:2",
+        "psalms 69:32"
       ],
       "glossKo": ""
     }

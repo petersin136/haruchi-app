@@ -8,32 +8,45 @@
     {
       "lemma": "אוֹן",
       "strong": "H202",
-      "pron": "오님",
-      "glossKo": "능력"
+      "pron": "오니",
+      "glossKo": "나의 능력"
     },
     {
       "lemma": "אָוֶן",
       "strong": "H206",
-      "pron": "",
+      "pron": "아벤",
       "glossKo": "아웬"
     },
     {
       "lemma": "תְּאֻן",
       "strong": "H8383",
-      "pron": "",
+      "pron": "테우님",
       "glossKo": "악행"
     }
   ],
   "defEn": "nothingness",
   "defKo": "",
-  "countOT": 29,
+  "countOT": 79,
   "byBook": {
-    "psalms": 29
+    "psalms": 29,
+    "job": 13,
+    "isaiah": 12,
+    "proverbs": 10,
+    "hosea": 4,
+    "habakkuk": 2,
+    "jeremiah": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "micah": 1,
+    "numbers": 1,
+    "samuel1": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
       "hebrew": "פֹּ֥עֲלֵי אָֽוֶן",
-      "pron": "포알레 아벤",
+      "pron": "파알타 아벤",
       "lemmas": [
         "פָּעַל",
         "אָוֶן"
@@ -43,7 +56,7 @@
           "word": "פֹּ֥עֲלֵי",
           "lemma": "פָּעַל",
           "strong": "H6466",
-          "pron": "포알레"
+          "pron": "파알타"
         },
         {
           "word": "אָֽוֶן",
@@ -52,8 +65,11 @@
           "pron": "아벤"
         }
       ],
-      "count": 16,
+      "count": 24,
       "refs": [
+        "job 31:3",
+        "job 34:8",
+        "job 34:22",
         "psalms 5:5",
         "psalms 6:8",
         "psalms 14:4",
@@ -62,16 +78,13 @@
         "psalms 53:4",
         "psalms 59:2",
         "psalms 64:2",
-        "psalms 92:7",
-        "psalms 92:9",
-        "psalms 94:4",
-        "psalms 94:16"
+        "psalms 92:7"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "כָּל פֹּ֥עֲלֵי אָֽוֶן",
-      "pron": "브콜 포알레 아벤",
+      "pron": "칼 파알타 아벤",
       "lemmas": [
         "כֹּל",
         "פָּעַל",
@@ -82,13 +95,13 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
           "word": "פֹּ֥עֲלֵי",
           "lemma": "פָּעַל",
           "strong": "H6466",
-          "pron": "포알레"
+          "pron": "파알타"
         },
         {
           "word": "אָֽוֶן",
@@ -106,6 +119,93 @@
         "psalms 92:9",
         "psalms 94:4",
         "psalms 101:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָ֑וֶן כִּֽי",
+      "pron": "아벤 키",
+      "lemmas": [
+        "אָוֶן",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "אָ֑וֶן",
+          "lemma": "אָוֶן",
+          "strong": "H205",
+          "pron": "아벤"
+        },
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 36:21",
+        "psalms 6:8",
+        "psalms 90:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּאַנְשֵׁי אָֽוֶן",
+      "pron": "메이쉬 아벤",
+      "lemmas": [
+        "אִישׁ",
+        "אָוֶן"
+      ],
+      "words": [
+        {
+          "word": "בְּאַנְשֵׁי",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "אָֽוֶן",
+          "lemma": "אָוֶן",
+          "strong": "H205",
+          "pron": "아벤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 34:36",
+        "proverbs 6:12",
+        "isaiah 55:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָל אָֽוֶן",
+      "pron": "칼 아벤",
+      "lemmas": [
+        "כֹּל",
+        "אָוֶן"
+      ],
+      "words": [
+        {
+          "word": "כָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "אָֽוֶן",
+          "lemma": "אָוֶן",
+          "strong": "H205",
+          "pron": "아벤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 119:133",
+        "proverbs 12:21",
+        "isaiah 41:29"
       ],
       "glossKo": ""
     }

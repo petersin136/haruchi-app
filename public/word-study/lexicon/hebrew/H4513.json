@@ -1,6 +1,6 @@
 {
   "lemma": "מָנַע",
-  "pron": "마나엣타",
+  "pron": "마나",
   "strong": "H4513",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "יִמְנָע",
       "strong": "H3234",
-      "pron": "",
+      "pron": "브임나",
       "glossKo": "임나"
     },
     {
@@ -20,10 +20,172 @@
   ],
   "defEn": "debar",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 29,
   "byBook": {
+    "jeremiah": 6,
+    "proverbs": 5,
+    "job": 4,
+    "numbers": 2,
     "psalms": 2,
-    "genesis": 1
+    "samuel1": 2,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "ezekiel": 1,
+    "genesis": 1,
+    "joel": 1,
+    "kings1": 1,
+    "nehemiah": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹ֥א יִמְנָעֵ֖נִי",
+      "pron": "로 마나",
+      "lemmas": [
+        "לֹא",
+        "מָנַע"
+      ],
+      "words": [
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִמְנָעֵ֖נִי",
+          "lemma": "מָנַע",
+          "strong": "H4513",
+          "pron": "마나"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel2 13:13",
+        "kings1 20:7",
+        "nehemiah 9:20",
+        "psalms 84:11",
+        "ecclesiastes 2:10",
+        "jeremiah 42:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָנַ֥ע מִמֵּ֖ךְ",
+      "pron": "마나 민",
+      "lemmas": [
+        "מָנַע",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "מָנַ֥ע",
+          "lemma": "מָנַע",
+          "strong": "H4513",
+          "pron": "마나"
+        },
+        {
+          "word": "מִמֵּ֖ךְ",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 30:2",
+        "samuel2 13:13",
+        "kings1 20:7",
+        "proverbs 30:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַל תִּמְנַע",
+      "pron": "엘 마나",
+      "lemmas": [
+        "אַל",
+        "מָנַע"
+      ],
+      "words": [
+        {
+          "word": "אַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "תִּמְנַע",
+          "lemma": "מָנַע",
+          "strong": "H4513",
+          "pron": "마나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 3:27",
+        "proverbs 23:13",
+        "proverbs 30:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר מָנַ֥ע",
+      "pron": "아셰르 마나",
+      "lemmas": [
+        "אֲשֶׁר",
+        "מָנַע"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "מָנַ֥ע",
+          "lemma": "מָנַע",
+          "strong": "H4513",
+          "pron": "마나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 30:2",
+        "samuel1 25:26",
+        "samuel1 25:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִמְנַע ט֝֗וֹב",
+      "pron": "마나 돕",
+      "lemmas": [
+        "מָנַע",
+        "טוֹב"
+      ],
+      "words": [
+        {
+          "word": "יִמְנַע",
+          "lemma": "מָנַע",
+          "strong": "H4513",
+          "pron": "마나"
+        },
+        {
+          "word": "ט֝֗וֹב",
+          "lemma": "טוֹב",
+          "strong": "H2896",
+          "pron": "돕"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 84:11",
+        "proverbs 3:27",
+        "jeremiah 5:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

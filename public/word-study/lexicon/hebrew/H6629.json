@@ -1,6 +1,6 @@
 {
   "lemma": "צֹאן",
-  "pron": "크촌",
+  "pron": "촌",
   "strong": "H6629",
   "posKo": "명사",
   "root": null,
@@ -8,46 +8,74 @@
     {
       "lemma": "צַאֲנָן",
       "strong": "H6630",
-      "pron": "",
+      "pron": "차아난",
       "glossKo": "사아난"
     },
     {
       "lemma": "צֹנֵא",
       "strong": "H6792",
-      "pron": "초네",
-      "glossKo": "양 떼"
+      "pron": "레초나아켐",
+      "glossKo": "너희의 양 떼"
     }
   ],
   "defEn": "flock",
   "defKo": "",
-  "countOT": 79,
+  "countOT": 274,
   "byBook": {
     "genesis": 63,
-    "psalms": 16
+    "ezekiel": 29,
+    "samuel1": 20,
+    "jeremiah": 18,
+    "deuteronomy": 17,
+    "psalms": 16,
+    "exodus": 15,
+    "chronicles2": 13,
+    "numbers": 12,
+    "leviticus": 9,
+    "zechariah": 9,
+    "isaiah": 8,
+    "chronicles1": 7,
+    "kings1": 7,
+    "job": 5,
+    "nehemiah": 5,
+    "samuel2": 5,
+    "micah": 3,
+    "amos": 2,
+    "ecclesiastes": 1,
+    "ezra": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "joel": 1,
+    "jonah": 1,
+    "joshua": 1,
+    "kings2": 1,
+    "proverbs": 1,
+    "songofsolomon": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "צֹאן וּבָקָר֙",
-      "pron": "크촌 바카르",
+      "hebrew": "צֹ֣אן וּבָקָ֔ר",
+      "pron": "촌 우바카르",
       "lemmas": [
         "צֹאן",
         "בָּקָר"
       ],
       "words": [
         {
-          "word": "צֹאן",
+          "word": "צֹ֣אן",
           "lemma": "צֹאן",
           "strong": "H6629",
-          "pron": "크촌"
+          "pron": "촌"
         },
         {
-          "word": "וּבָקָר֙",
+          "word": "וּבָקָ֔ר",
           "lemma": "בָּקָר",
           "strong": "H1241",
-          "pron": "바카르"
+          "pron": "우바카르"
         }
       ],
-      "count": 10,
+      "count": 33,
       "refs": [
         "genesis 12:16",
         "genesis 13:5",
@@ -58,13 +86,15 @@
         "genesis 45:10",
         "genesis 46:32",
         "genesis 47:1",
-        "genesis 50:8"
+        "genesis 50:8",
+        "exodus 10:9",
+        "exodus 10:24"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "אֶת צֹ֥אן",
-      "pron": "에트 크촌",
+      "pron": "에트 촌",
       "lemmas": [
         "אֵת",
         "צֹאן"
@@ -80,10 +110,10 @@
           "word": "צֹ֥אן",
           "lemma": "צֹאן",
           "strong": "H6629",
-          "pron": "크촌"
+          "pron": "촌"
         }
       ],
-      "count": 8,
+      "count": 30,
       "refs": [
         "genesis 29:3",
         "genesis 29:10",
@@ -91,42 +121,94 @@
         "genesis 31:19",
         "genesis 32:7",
         "genesis 34:28",
-        "genesis 37:12"
+        "genesis 37:12",
+        "exodus 2:17",
+        "exodus 2:19",
+        "exodus 3:1",
+        "exodus 20:24",
+        "joshua 7:24"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "צֹ֥אן לָבָ֖ן",
-      "pron": "크촌 라반",
+      "hebrew": "מִן הַצֹּ֑אן",
+      "pron": "민 촌",
       "lemmas": [
-        "צֹאן",
-        "לָבָן"
+        "מִן",
+        "צֹאן"
       ],
       "words": [
         {
-          "word": "צֹ֥אן",
-          "lemma": "צֹאן",
-          "strong": "H6629",
-          "pron": "크촌"
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
         },
         {
-          "word": "לָבָ֖ן",
-          "lemma": "לָבָן",
-          "strong": "H3837",
-          "pron": "라반"
+          "word": "הַצֹּ֑אן",
+          "lemma": "צֹאן",
+          "strong": "H6629",
+          "pron": "촌"
         }
       ],
-      "count": 5,
+      "count": 16,
       "refs": [
-        "genesis 29:10",
-        "genesis 30:36",
-        "genesis 30:40"
+        "genesis 38:17",
+        "leviticus 1:2",
+        "leviticus 1:10",
+        "leviticus 3:6",
+        "leviticus 5:6",
+        "leviticus 5:15",
+        "leviticus 5:18",
+        "leviticus 6:6",
+        "numbers 15:3",
+        "numbers 31:28",
+        "numbers 31:30",
+        "numbers 31:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בָּקָר֙ וָצֹ֔אן",
+      "pron": "우바카르 촌",
+      "lemmas": [
+        "בָּקָר",
+        "צֹאן"
+      ],
+      "words": [
+        {
+          "word": "בָּקָר֙",
+          "lemma": "בָּקָר",
+          "strong": "H1241",
+          "pron": "우바카르"
+        },
+        {
+          "word": "וָצֹ֔אן",
+          "lemma": "צֹאן",
+          "strong": "H6629",
+          "pron": "촌"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "exodus 9:3",
+        "leviticus 27:32",
+        "numbers 22:40",
+        "deuteronomy 8:13",
+        "deuteronomy 12:6",
+        "deuteronomy 12:17",
+        "deuteronomy 12:21",
+        "deuteronomy 14:23",
+        "deuteronomy 14:26",
+        "deuteronomy 15:19",
+        "chronicles1 12:40",
+        "chronicles2 31:6"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "רֹ֣עֵה צֹ֔אן",
-      "pron": "로이위 크촌",
+      "pron": "로에 촌",
       "lemmas": [
         "רָעָה",
         "צֹאן"
@@ -136,52 +218,28 @@
           "word": "רֹ֣עֵה",
           "lemma": "רָעָה",
           "strong": "H7462",
-          "pron": "로이위"
+          "pron": "로에"
         },
         {
           "word": "צֹ֔אן",
           "lemma": "צֹאן",
           "strong": "H6629",
-          "pron": "크촌"
+          "pron": "촌"
         }
       ],
-      "count": 5,
+      "count": 11,
       "refs": [
         "genesis 4:2",
         "genesis 30:31",
         "genesis 46:32",
         "genesis 46:34",
-        "genesis 47:3"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "הַצֹּ֔אן עֲקֻדִּ֥ים",
-      "pron": "크촌 하아쿧딤",
-      "lemmas": [
-        "צֹאן",
-        "עָקֹד"
-      ],
-      "words": [
-        {
-          "word": "הַצֹּ֔אן",
-          "lemma": "צֹאן",
-          "strong": "H6629",
-          "pron": "크촌"
-        },
-        {
-          "word": "עֲקֻדִּ֥ים",
-          "lemma": "עָקֹד",
-          "strong": "H6124",
-          "pron": "하아쿧딤"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 30:39",
-        "genesis 31:8",
-        "genesis 31:10",
-        "genesis 31:12"
+        "genesis 47:3",
+        "samuel1 16:11",
+        "samuel1 25:16",
+        "isaiah 61:5",
+        "isaiah 63:11",
+        "ezekiel 34:10",
+        "ezekiel 34:15"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "מִצְוָה",
-  "pron": "미체바트",
+  "pron": "미체보타이",
   "strong": "H4687",
   "posKo": "명사",
   "root": {
@@ -12,33 +12,54 @@
     {
       "lemma": "צַו",
       "strong": "H6673",
-      "pron": "",
+      "pron": "차브",
       "glossKo": "명령"
     },
     {
       "lemma": "צָוָה",
       "strong": "H6680",
-      "pron": "치비타",
+      "pron": "바예차브",
       "glossKo": "명령하다"
     },
     {
       "lemma": "צִי",
       "strong": "H6716",
-      "pron": "",
+      "pron": "브침",
       "glossKo": "배"
     }
   ],
   "defEn": "command; Law",
   "defKo": "",
-  "countOT": 27,
+  "countOT": 184,
   "byBook": {
+    "deuteronomy": 46,
     "psalms": 26,
-    "genesis": 1
+    "chronicles2": 19,
+    "nehemiah": 14,
+    "kings1": 12,
+    "leviticus": 10,
+    "proverbs": 10,
+    "kings2": 8,
+    "jeremiah": 5,
+    "numbers": 5,
+    "exodus": 4,
+    "ezra": 4,
+    "chronicles1": 3,
+    "isaiah": 3,
+    "joshua": 3,
+    "daniel": 2,
+    "ecclesiastes": 2,
+    "judges": 2,
+    "malachi": 2,
+    "esther": 1,
+    "genesis": 1,
+    "job": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
-      "hebrew": "כָּל מִצְוֺתֶֽיךָ",
-      "pron": "브콜 미체바트",
+      "hebrew": "כָּל מִצְוֺתָ֔יו",
+      "pron": "칼 미체보타이",
       "lemmas": [
         "כֹּל",
         "מִצְוָה"
@@ -48,50 +69,181 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
-          "word": "מִצְוֺתֶֽיךָ",
+          "word": "מִצְוֺתָ֔יו",
           "lemma": "מִצְוָה",
           "strong": "H4687",
-          "pron": "미체바트"
+          "pron": "미체보타이"
         }
       ],
-      "count": 4,
+      "count": 34,
       "refs": [
-        "psalms 119:6",
-        "psalms 119:86",
-        "psalms 119:151",
-        "psalms 119:172"
+        "leviticus 4:2",
+        "leviticus 4:13",
+        "leviticus 4:22",
+        "leviticus 5:17",
+        "leviticus 26:14",
+        "leviticus 26:15",
+        "numbers 15:22",
+        "numbers 15:39",
+        "numbers 15:40",
+        "deuteronomy 5:29",
+        "deuteronomy 5:31",
+        "deuteronomy 6:25"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כִּ֖י בְמִצְוֺתֶ֣יךָ",
-      "pron": "키 미체바트",
+      "hebrew": "וּשְׁמַרְתֶּם֙ מִצְוֺתַ֔י",
+      "pron": "울샴라흐 미체보타이",
       "lemmas": [
-        "כִּי",
+        "שָׁמַר",
         "מִצְוָה"
       ],
       "words": [
         {
-          "word": "כִּ֖י",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
+          "word": "וּשְׁמַרְתֶּם֙",
+          "lemma": "שָׁמַר",
+          "strong": "H8104",
+          "pron": "울샴라흐"
         },
         {
-          "word": "בְמִצְוֺתֶ֣יךָ",
+          "word": "מִצְוֺתַ֔י",
           "lemma": "מִצְוָה",
           "strong": "H4687",
-          "pron": "미체바트"
+          "pron": "미체보타이"
         }
       ],
-      "count": 3,
+      "count": 28,
       "refs": [
-        "psalms 119:66",
-        "psalms 119:131",
-        "psalms 119:176"
+        "exodus 16:28",
+        "exodus 20:6",
+        "leviticus 22:31",
+        "deuteronomy 5:10",
+        "deuteronomy 7:9",
+        "deuteronomy 8:2",
+        "deuteronomy 8:11",
+        "deuteronomy 28:45",
+        "deuteronomy 30:10",
+        "deuteronomy 30:16",
+        "joshua 22:5",
+        "kings1 8:58"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת מִצְוֺ֖ת",
+      "pron": "에트 미체보타이",
+      "lemmas": [
+        "אֵת",
+        "מִצְוָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מִצְוֺ֖ת",
+          "lemma": "מִצְוָה",
+          "strong": "H4687",
+          "pron": "미체보타이"
+        }
+      ],
+      "count": 27,
+      "refs": [
+        "leviticus 26:3",
+        "numbers 15:31",
+        "deuteronomy 4:2",
+        "deuteronomy 4:40",
+        "deuteronomy 6:17",
+        "deuteronomy 7:11",
+        "deuteronomy 8:6",
+        "deuteronomy 10:13",
+        "deuteronomy 13:4",
+        "deuteronomy 27:10",
+        "deuteronomy 28:9",
+        "joshua 22:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִצְוֺת֙ יְהוָ֣ה",
+      "pron": "미체보타이 여호와",
+      "lemmas": [
+        "מִצְוָה",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "מִצְוֺת֙",
+          "lemma": "מִצְוָה",
+          "strong": "H4687",
+          "pron": "미체보타이"
+        },
+        {
+          "word": "יְהוָ֣ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 26,
+      "refs": [
+        "leviticus 4:2",
+        "leviticus 4:13",
+        "leviticus 4:22",
+        "leviticus 4:27",
+        "leviticus 5:17",
+        "numbers 15:39",
+        "deuteronomy 4:2",
+        "deuteronomy 6:17",
+        "deuteronomy 8:6",
+        "deuteronomy 10:13",
+        "deuteronomy 11:27",
+        "deuteronomy 11:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִצְוֺתָ֔יו אֲשֶׁ֛ר",
+      "pron": "미체보타이 아셰르",
+      "lemmas": [
+        "מִצְוָה",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "מִצְוֺתָ֔יו",
+          "lemma": "מִצְוָה",
+          "strong": "H4687",
+          "pron": "미체보타이"
+        },
+        {
+          "word": "אֲשֶׁ֛ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 24,
+      "refs": [
+        "exodus 24:12",
+        "leviticus 27:34",
+        "deuteronomy 4:40",
+        "deuteronomy 6:2",
+        "deuteronomy 8:1",
+        "deuteronomy 11:8",
+        "deuteronomy 11:13",
+        "deuteronomy 13:18",
+        "deuteronomy 26:13",
+        "deuteronomy 27:1",
+        "deuteronomy 28:1",
+        "deuteronomy 30:8"
       ],
       "glossKo": ""
     }

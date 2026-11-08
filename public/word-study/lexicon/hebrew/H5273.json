@@ -1,6 +1,6 @@
 {
   "lemma": "נָעִים",
-  "pron": "바네이밈",
+  "pron": "브아네이밈",
   "strong": "H5273",
   "posKo": "형용사",
   "root": {
@@ -12,19 +12,19 @@
     {
       "lemma": "מַנְעַם",
       "strong": "H4516",
-      "pron": "브만암메헴",
+      "pron": "베만암메헴",
       "glossKo": "그들의 맛난 음식"
     },
     {
       "lemma": "נָעֵם",
       "strong": "H5276",
-      "pron": "나에무",
+      "pron": "나에마",
       "glossKo": "유쾌하다"
     },
     {
       "lemma": "נַעַם",
       "strong": "H5277",
-      "pron": "",
+      "pron": "바나암",
       "glossKo": "나암"
     },
     {
@@ -36,15 +36,49 @@
     {
       "lemma": "נַעֲמָן",
       "strong": "H5282",
-      "pron": "",
+      "pron": "나아마님",
       "glossKo": "기쁨"
     }
   ],
   "defEn": "delightful",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 13,
   "byBook": {
-    "psalms": 6
+    "psalms": 6,
+    "proverbs": 3,
+    "samuel2": 2,
+    "job": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כִּ֣י נָעִֽים",
+      "pron": "키 브아네이밈",
+      "lemmas": [
+        "כִּי",
+        "נָעִים"
+      ],
+      "words": [
+        {
+          "word": "כִּ֣י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "נָעִֽים",
+          "lemma": "נָעִים",
+          "strong": "H5273",
+          "pron": "브아네이밈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 135:3",
+        "psalms 147:1",
+        "proverbs 22:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -2,7 +2,7 @@
   "lemma": "תְּנוּפָה",
   "pron": "테누파",
   "strong": "H8573",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נוּף",
     "strong": "H5130",
@@ -18,7 +18,7 @@
     {
       "lemma": "נוּף",
       "strong": "H5130",
-      "pron": "타닙",
+      "pron": "헤납타",
       "glossKo": "흔들다"
     },
     {
@@ -30,7 +30,7 @@
     {
       "lemma": "נָפָה",
       "strong": "H5299",
-      "pron": "",
+      "pron": "우브나포트",
       "glossKo": "산비탈"
     },
     {
@@ -42,7 +42,209 @@
   ],
   "defEn": "brandishing",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 30,
+  "byBook": {
+    "leviticus": 14,
+    "numbers": 8,
+    "exodus": 6,
+    "isaiah": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "תְּנוּפָ֖ה לִפְנֵ֥י",
+      "pron": "테누파 페네",
+      "lemmas": [
+        "תְּנוּפָה",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "תְּנוּפָ֖ה",
+          "lemma": "תְּנוּפָה",
+          "strong": "H8573",
+          "pron": "테누파"
+        },
+        {
+          "word": "לִפְנֵ֥י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 29:24",
+        "exodus 29:26",
+        "leviticus 7:30",
+        "leviticus 8:27",
+        "leviticus 8:29",
+        "leviticus 9:21",
+        "leviticus 10:15",
+        "leviticus 14:12",
+        "leviticus 14:24",
+        "leviticus 23:20",
+        "numbers 6:20",
+        "numbers 8:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּנוּפָ֖ה לִפְנֵ֥י יְהוָֽה",
+      "pron": "테누파 페네 여호와",
+      "lemmas": [
+        "תְּנוּפָה",
+        "פָּנִים",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "תְּנוּפָ֖ה",
+          "lemma": "תְּנוּפָה",
+          "strong": "H8573",
+          "pron": "테누파"
+        },
+        {
+          "word": "לִפְנֵ֥י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "יְהוָֽה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 29:24",
+        "exodus 29:26",
+        "leviticus 7:30",
+        "leviticus 8:27",
+        "leviticus 8:29",
+        "leviticus 9:21",
+        "leviticus 10:15",
+        "leviticus 14:12",
+        "leviticus 14:24",
+        "leviticus 23:20",
+        "numbers 6:20",
+        "numbers 8:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֹתָ֛ם תְּנוּפָ֖ה",
+      "pron": "에트 테누파",
+      "lemmas": [
+        "אֵת",
+        "תְּנוּפָה"
+      ],
+      "words": [
+        {
+          "word": "אֹתָ֛ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "תְּנוּפָ֖ה",
+          "lemma": "תְּנוּפָה",
+          "strong": "H8573",
+          "pron": "테누파"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 29:24",
+        "exodus 29:26",
+        "leviticus 7:30",
+        "leviticus 8:27",
+        "leviticus 14:12",
+        "numbers 8:13",
+        "numbers 8:15",
+        "numbers 8:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהֵנַפְתָּ֥ אֹתָ֛ם תְּנוּפָ֖ה",
+      "pron": "헤납타 에트 테누파",
+      "lemmas": [
+        "נוּף",
+        "אֵת",
+        "תְּנוּפָה"
+      ],
+      "words": [
+        {
+          "word": "וְהֵנַפְתָּ֥",
+          "lemma": "נוּף",
+          "strong": "H5130",
+          "pron": "헤납타"
+        },
+        {
+          "word": "אֹתָ֛ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "תְּנוּפָ֖ה",
+          "lemma": "תְּנוּפָה",
+          "strong": "H8573",
+          "pron": "테누파"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 29:24",
+        "exodus 29:26",
+        "leviticus 7:30",
+        "leviticus 8:27",
+        "leviticus 14:12",
+        "numbers 8:13",
+        "numbers 8:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֹתָ֛ם תְּנוּפָ֖ה לִפְנֵ֥י",
+      "pron": "에트 테누파 페네",
+      "lemmas": [
+        "אֵת",
+        "תְּנוּפָה",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "אֹתָ֛ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "תְּנוּפָ֖ה",
+          "lemma": "תְּנוּפָה",
+          "strong": "H8573",
+          "pron": "테누파"
+        },
+        {
+          "word": "לִפְנֵ֥י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 29:24",
+        "exodus 29:26",
+        "leviticus 7:30",
+        "leviticus 8:27",
+        "leviticus 14:12",
+        "numbers 8:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

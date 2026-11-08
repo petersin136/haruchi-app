@@ -1,6 +1,6 @@
 {
   "lemma": "אָח",
-  "pron": "르에하위",
+  "pron": "아히브",
   "strong": "H251",
   "posKo": "명사",
   "root": null,
@@ -8,51 +8,82 @@
     {
       "lemma": "אַח",
       "strong": "H252",
-      "pron": "",
-      "glossKo": "형제(아람)"
+      "pron": "히크",
+      "glossKo": "너의 형제(아람)"
     },
     {
       "lemma": "אַחְאָב",
       "strong": "H256",
-      "pron": "",
+      "pron": "아헤압",
       "glossKo": "아합"
     },
     {
       "lemma": "אַחְבָן",
       "strong": "H257",
-      "pron": "",
+      "pron": "아헵반",
       "glossKo": "아반"
     },
     {
       "lemma": "אַחֲוָה",
       "strong": "H264",
-      "pron": "",
+      "pron": "하아하바",
       "glossKo": "형제 됨"
     },
     {
       "lemma": "אֲחוֹחַ",
       "strong": "H265",
-      "pron": "",
+      "pron": "바아호아흐",
       "glossKo": "아호아"
     },
     {
       "lemma": "אֲחוּמַי",
       "strong": "H267",
-      "pron": "",
+      "pron": "아후마이",
       "glossKo": "아후매"
     }
   ],
   "defEn": "brother",
   "defKo": "",
-  "countOT": 185,
+  "countOT": 630,
   "byBook": {
     "genesis": 178,
-    "psalms": 7
+    "chronicles1": 99,
+    "deuteronomy": 48,
+    "samuel2": 34,
+    "judges": 29,
+    "nehemiah": 28,
+    "chronicles2": 26,
+    "leviticus": 23,
+    "numbers": 19,
+    "exodus": 17,
+    "jeremiah": 16,
+    "joshua": 13,
+    "samuel1": 12,
+    "ezra": 11,
+    "kings1": 11,
+    "ezekiel": 10,
+    "job": 9,
+    "proverbs": 9,
+    "psalms": 7,
+    "isaiah": 6,
+    "kings2": 5,
+    "hosea": 3,
+    "amos": 2,
+    "malachi": 2,
+    "micah": 2,
+    "obadiah": 2,
+    "ruth": 2,
+    "zechariah": 2,
+    "ecclesiastes": 1,
+    "esther": 1,
+    "haggai": 1,
+    "joel": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
       "hebrew": "אֶת אֶחָ֖יו",
-      "pron": "에트 르에하위",
+      "pron": "에트 아히브",
       "lemmas": [
         "אֵת",
         "אָח"
@@ -68,10 +99,10 @@
           "word": "אֶחָ֖יו",
           "lemma": "אָח",
           "strong": "H251",
-          "pron": "르에하위"
+          "pron": "아히브"
         }
       ],
-      "count": 20,
+      "count": 51,
       "refs": [
         "genesis 4:2",
         "genesis 27:40",
@@ -89,8 +120,8 @@
       "glossKo": ""
     },
     {
-      "hebrew": "אֶל אֶחָיו֙",
-      "pron": "엘레모 르에하위",
+      "hebrew": "אֶל אָחִ֑יו",
+      "pron": "엘 아히브",
       "lemmas": [
         "אֵל",
         "אָח"
@@ -100,16 +131,16 @@
           "word": "אֶל",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
         },
         {
-          "word": "אֶחָיו֙",
+          "word": "אָחִ֑יו",
           "lemma": "אָח",
           "strong": "H251",
-          "pron": "르에하위"
+          "pron": "아히브"
         }
       ],
-      "count": 19,
+      "count": 37,
       "refs": [
         "genesis 32:6",
         "genesis 34:11",
@@ -127,102 +158,123 @@
       "glossKo": ""
     },
     {
-      "hebrew": "עֵשָׂ֥ו אָחִ֖יךָ",
-      "pron": "에사브 르에하위",
+      "hebrew": "בָּנָ֥יו וְאֶחָ֖יו",
+      "pron": "바님 아히브",
       "lemmas": [
-        "עֵשָׂו",
+        "בֵּן",
         "אָח"
       ],
       "words": [
         {
-          "word": "עֵשָׂ֥ו",
-          "lemma": "עֵשָׂו",
-          "strong": "H6215",
-          "pron": "에사브"
+          "word": "בָּנָ֥יו",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
         },
         {
-          "word": "אָחִ֖יךָ",
+          "word": "וְאֶחָ֖יו",
           "lemma": "אָח",
           "strong": "H251",
-          "pron": "르에하위"
+          "pron": "아히브"
         }
       ],
-      "count": 9,
+      "count": 34,
       "refs": [
-        "genesis 27:6",
-        "genesis 27:11",
-        "genesis 27:23",
-        "genesis 27:30",
-        "genesis 27:42",
-        "genesis 32:3",
-        "genesis 32:13",
-        "genesis 32:17",
-        "genesis 35:1"
+        "genesis 12:5",
+        "genesis 14:12",
+        "exodus 32:29",
+        "chronicles1 25:10",
+        "chronicles1 25:11",
+        "chronicles1 25:12",
+        "chronicles1 25:13",
+        "chronicles1 25:14",
+        "chronicles1 25:15",
+        "chronicles1 25:16",
+        "chronicles1 25:17",
+        "chronicles1 25:18"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֲחִיכֶ֥ם הַקָּטֹ֖ן",
-      "pron": "르에하위 케단노트",
+      "hebrew": "אַחִ֖ים בְּנֵ֣י",
+      "pron": "아히브 바님",
       "lemmas": [
         "אָח",
-        "קָטָן"
+        "בֵּן"
       ],
       "words": [
         {
-          "word": "אֲחִיכֶ֥ם",
+          "word": "אַחִ֖ים",
           "lemma": "אָח",
           "strong": "H251",
-          "pron": "르에하위"
+          "pron": "아히브"
         },
         {
-          "word": "הַקָּטֹ֖ן",
-          "lemma": "קָטָן",
-          "strong": "H6996",
-          "pron": "케단노트"
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
         }
       ],
-      "count": 8,
+      "count": 27,
       "refs": [
-        "genesis 42:15",
-        "genesis 42:20",
-        "genesis 42:34",
+        "genesis 42:32",
         "genesis 43:29",
-        "genesis 44:23",
-        "genesis 44:26",
-        "genesis 48:19"
+        "exodus 28:4",
+        "leviticus 25:46",
+        "numbers 16:10",
+        "deuteronomy 2:4",
+        "deuteronomy 2:8",
+        "deuteronomy 3:18",
+        "deuteronomy 13:6",
+        "deuteronomy 24:7",
+        "judges 8:19",
+        "judges 9:5"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אָחִ֑יךָ וַיֹּ֨אמֶר֙",
-      "pron": "르에하위 아마르",
+      "hebrew": "בָּנָ֥יו וְאֶחָ֖יו שְׁנֵ֥ים",
+      "pron": "바님 아히브 셰네",
       "lemmas": [
+        "בֵּן",
         "אָח",
-        "אָמַר"
+        "שְׁנַיִם"
       ],
       "words": [
         {
-          "word": "אָחִ֑יךָ",
-          "lemma": "אָח",
-          "strong": "H251",
-          "pron": "르에하위"
+          "word": "בָּנָ֥יו",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
         },
         {
-          "word": "וַיֹּ֨אמֶר֙",
-          "lemma": "אָמַר",
-          "strong": "H559",
-          "pron": "아마르"
+          "word": "וְאֶחָ֖יו",
+          "lemma": "אָח",
+          "strong": "H251",
+          "pron": "아히브"
+        },
+        {
+          "word": "שְׁנֵ֥ים",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
         }
       ],
-      "count": 6,
+      "count": 22,
       "refs": [
-        "genesis 4:9",
-        "genesis 27:6",
-        "genesis 37:9",
-        "genesis 37:30",
-        "genesis 38:29",
-        "genesis 42:28"
+        "chronicles1 25:10",
+        "chronicles1 25:11",
+        "chronicles1 25:12",
+        "chronicles1 25:13",
+        "chronicles1 25:14",
+        "chronicles1 25:15",
+        "chronicles1 25:16",
+        "chronicles1 25:17",
+        "chronicles1 25:18",
+        "chronicles1 25:19",
+        "chronicles1 25:20",
+        "chronicles1 25:21"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "גָּאוֹן",
-  "pron": "게온",
+  "pron": "게온카",
   "strong": "H1347",
   "posKo": "명사",
   "root": {
@@ -12,32 +12,32 @@
     {
       "lemma": "גָּאָה",
       "strong": "H1342",
-      "pron": "",
+      "pron": "가오",
       "glossKo": "솟아나다"
     },
     {
       "lemma": "גֵּאֶה",
       "strong": "H1343",
-      "pron": "게임",
+      "pron": "게에",
       "glossKo": "교만한"
     },
     {
       "lemma": "גֵּאָה",
       "strong": "H1344",
-      "pron": "",
+      "pron": "게아",
       "glossKo": "교만"
     },
     {
       "lemma": "גְּאוּאֵל",
       "strong": "H1345",
-      "pron": "",
+      "pron": "게우엘",
       "glossKo": "그우엘"
     },
     {
       "lemma": "גַּאֲוָה",
       "strong": "H1346",
-      "pron": "브가아바트",
-      "glossKo": "교만"
+      "pron": "웁가아바토",
+      "glossKo": "그의 교만"
     },
     {
       "lemma": "גֵּאוּת",
@@ -48,9 +48,176 @@
   ],
   "defEn": "same as 1346",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 49,
   "byBook": {
-    "psalms": 2
+    "isaiah": 12,
+    "ezekiel": 9,
+    "jeremiah": 7,
+    "job": 4,
+    "zechariah": 3,
+    "amos": 2,
+    "hosea": 2,
+    "nahum": 2,
+    "proverbs": 2,
+    "psalms": 2,
+    "exodus": 1,
+    "leviticus": 1,
+    "micah": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת גְּא֣וֹן",
+      "pron": "에트 게온카",
+      "lemmas": [
+        "אֵת",
+        "גָּאוֹן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "גְּא֣וֹן",
+          "lemma": "גָּאוֹן",
+          "strong": "H1347",
+          "pron": "게온카"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 26:19",
+        "psalms 47:4",
+        "jeremiah 13:9",
+        "ezekiel 32:12",
+        "amos 6:8",
+        "nahum 2:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גְּא֣וֹן עֻזָּ֑הּ",
+      "pron": "게온카 앗지",
+      "lemmas": [
+        "גָּאוֹן",
+        "עֹז"
+      ],
+      "words": [
+        {
+          "word": "גְּא֣וֹן",
+          "lemma": "גָּאוֹן",
+          "strong": "H1347",
+          "pron": "게온카"
+        },
+        {
+          "word": "עֻזָּ֑הּ",
+          "lemma": "עֹז",
+          "strong": "H5797",
+          "pron": "앗지"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 26:19",
+        "ezekiel 24:21",
+        "ezekiel 30:6",
+        "ezekiel 30:18",
+        "ezekiel 33:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גְּא֨וֹן יַעֲקֹ֖ב",
+      "pron": "게온카 야곱",
+      "lemmas": [
+        "גָּאוֹן",
+        "יַעֲקֹב"
+      ],
+      "words": [
+        {
+          "word": "גְּא֨וֹן",
+          "lemma": "גָּאוֹן",
+          "strong": "H1347",
+          "pron": "게온카"
+        },
+        {
+          "word": "יַעֲקֹ֖ב",
+          "lemma": "יַעֲקֹב",
+          "strong": "H3290",
+          "pron": "야곱"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 47:4",
+        "amos 6:8",
+        "amos 8:7",
+        "nahum 2:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהִשְׁבַּתִּי֙ גְּא֣וֹן",
+      "pron": "바이솁보트 게온카",
+      "lemmas": [
+        "שָׁבַת",
+        "גָּאוֹן"
+      ],
+      "words": [
+        {
+          "word": "וְהִשְׁבַּתִּי֙",
+          "lemma": "שָׁבַת",
+          "strong": "H7673",
+          "pron": "바이솁보트"
+        },
+        {
+          "word": "גְּא֣וֹן",
+          "lemma": "גָּאוֹן",
+          "strong": "H1347",
+          "pron": "게온카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 13:11",
+        "ezekiel 7:24",
+        "ezekiel 30:18",
+        "ezekiel 33:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִגְּא֣וֹן הַיַּרְדֵּן֮",
+      "pron": "게온카 아야렏덴",
+      "lemmas": [
+        "גָּאוֹן",
+        "יַרְדֵּן"
+      ],
+      "words": [
+        {
+          "word": "מִגְּא֣וֹן",
+          "lemma": "גָּאוֹן",
+          "strong": "H1347",
+          "pron": "게온카"
+        },
+        {
+          "word": "הַיַּרְדֵּן֮",
+          "lemma": "יַרְדֵּן",
+          "strong": "H3383",
+          "pron": "아야렏덴"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 12:5",
+        "jeremiah 49:19",
+        "jeremiah 50:44",
+        "zechariah 11:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

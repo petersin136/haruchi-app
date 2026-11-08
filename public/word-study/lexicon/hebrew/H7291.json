@@ -1,6 +1,6 @@
 {
   "lemma": "רָדַף",
-  "pron": "롣파위",
+  "pron": "바이렏돕",
   "strong": "H7291",
   "posKo": "동사",
   "root": null,
@@ -8,73 +8,199 @@
     {
       "lemma": "מֻרְדָּף",
       "strong": "H4783",
-      "pron": "",
+      "pron": "무렏답",
       "glossKo": "추격당한"
     }
   ],
   "defEn": "run after; gone by",
   "defKo": "",
-  "countOT": 26,
+  "countOT": 144,
   "byBook": {
     "psalms": 21,
-    "genesis": 5
+    "joshua": 19,
+    "judges": 11,
+    "samuel1": 11,
+    "samuel2": 11,
+    "deuteronomy": 8,
+    "proverbs": 8,
+    "leviticus": 7,
+    "isaiah": 6,
+    "jeremiah": 6,
+    "lamentations": 6,
+    "exodus": 5,
+    "genesis": 5,
+    "hosea": 4,
+    "job": 4,
+    "kings2": 3,
+    "chronicles2": 2,
+    "ezekiel": 2,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "kings1": 1,
+    "nahum": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
-      "hebrew": "וַיִּרְדֹּ֣ף אַחֲרָ֔יו",
-      "pron": "롣파위 아하레하",
+      "hebrew": "וַֽיִּרְדְּפ֖וּ אַחֲרֵ֥י",
+      "pron": "바이렏돕 아하레",
       "lemmas": [
         "רָדַף",
         "אַחַר"
       ],
       "words": [
         {
-          "word": "וַיִּרְדֹּ֣ף",
+          "word": "וַֽיִּרְדְּפ֖וּ",
           "lemma": "רָדַף",
           "strong": "H7291",
-          "pron": "롣파위"
+          "pron": "바이렏돕"
         },
         {
-          "word": "אַחֲרָ֔יו",
+          "word": "אַחֲרֵ֥י",
           "lemma": "אַחַר",
           "strong": "H310",
-          "pron": "아하레하"
+          "pron": "아하레"
         }
       ],
-      "count": 3,
+      "count": 32,
       "refs": [
         "genesis 31:23",
         "genesis 35:5",
-        "genesis 44:4"
+        "genesis 44:4",
+        "exodus 14:4",
+        "exodus 14:8",
+        "deuteronomy 11:4",
+        "joshua 2:7",
+        "joshua 2:16",
+        "joshua 8:16",
+        "joshua 8:17",
+        "joshua 10:19",
+        "judges 1:6"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "יִֽרַדֹּ֥ף אוֹיֵ֨ב",
-      "pron": "롣파위 오에바위",
+      "hebrew": "וּרְדַפְתֶּ֖ם אֶת",
+      "pron": "바이렏돕 에트",
+      "lemmas": [
+        "רָדַף",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וּרְדַפְתֶּ֖ם",
+          "lemma": "רָדַף",
+          "strong": "H7291",
+          "pron": "바이렏돕"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "leviticus 26:7",
+        "leviticus 26:17",
+        "leviticus 26:36",
+        "deuteronomy 1:44",
+        "judges 4:22",
+        "samuel1 7:11",
+        "samuel1 17:52",
+        "hosea 2:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אוֹיֵ֛ב אֶרְדֹּ֥ף",
+      "pron": "오에바으브 바이렏돕",
+      "lemmas": [
+        "אֹיֵב",
+        "רָדַף"
+      ],
+      "words": [
+        {
+          "word": "אוֹיֵ֛ב",
+          "lemma": "אֹיֵב",
+          "strong": "H341",
+          "pron": "오에바으브"
+        },
+        {
+          "word": "אֶרְדֹּ֥ף",
+          "lemma": "רָדַף",
+          "strong": "H7291",
+          "pron": "바이렏돕"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 15:9",
+        "leviticus 26:36",
+        "psalms 31:15",
+        "hosea 8:3",
+        "nahum 1:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶרְדְּפָ֥ה אֹיְבַ֖י",
+      "pron": "바이렏돕 오에바으브",
       "lemmas": [
         "רָדַף",
         "אֹיֵב"
       ],
       "words": [
         {
-          "word": "יִֽרַדֹּ֥ף",
+          "word": "אֶרְדְּפָ֥ה",
           "lemma": "רָדַף",
           "strong": "H7291",
-          "pron": "롣파위"
+          "pron": "바이렏돕"
         },
         {
-          "word": "אוֹיֵ֨ב",
+          "word": "אֹיְבַ֖י",
           "lemma": "אֹיֵב",
           "strong": "H341",
-          "pron": "오에바위"
+          "pron": "오에바으브"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
+        "samuel2 22:38",
         "psalms 7:5",
         "psalms 18:37",
         "psalms 143:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּרְדֹּ֖ף עַד",
+      "pron": "바이렏돕 앋",
+      "lemmas": [
+        "רָדַף",
+        "עַד"
+      ],
+      "words": [
+        {
+          "word": "וַיִּרְדֹּ֖ף",
+          "lemma": "רָדַף",
+          "strong": "H7291",
+          "pron": "바이렏돕"
+        },
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 14:14",
+        "genesis 14:15",
+        "deuteronomy 28:22",
+        "joshua 11:8"
       ],
       "glossKo": ""
     }

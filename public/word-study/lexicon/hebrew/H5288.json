@@ -1,6 +1,6 @@
 {
   "lemma": "נַעַר",
-  "pron": "나아르",
+  "pron": "아네아림",
   "strong": "H5288",
   "posKo": "명사",
   "root": {
@@ -12,8 +12,26 @@
     {
       "lemma": "נָעוּר",
       "strong": "H5271",
-      "pron": "네우라위",
-      "glossKo": "나의 젊음"
+      "pron": "민네우라으브",
+      "glossKo": "그의 젊음"
+    },
+    {
+      "lemma": "נָעַר",
+      "strong": "H5287",
+      "pron": "바예나에르",
+      "glossKo": "흔들다"
+    },
+    {
+      "lemma": "נַעַר",
+      "strong": "H5289",
+      "pron": "아나아르",
+      "glossKo": "흔들림"
+    },
+    {
+      "lemma": "נֹעַר",
+      "strong": "H5290",
+      "pron": "미노아르",
+      "glossKo": "어린 시절"
     },
     {
       "lemma": "נַעֲרָה",
@@ -24,51 +42,43 @@
     {
       "lemma": "נַעֲרַי",
       "strong": "H5293",
-      "pron": "",
+      "pron": "나아라이",
       "glossKo": "나아래 사람"
     }
   ],
   "defEn": "boy",
   "defKo": "",
-  "countOT": 30,
+  "countOT": 239,
   "byBook": {
+    "samuel1": 60,
     "genesis": 27,
-    "psalms": 3
+    "samuel2": 26,
+    "kings2": 24,
+    "judges": 23,
+    "isaiah": 11,
+    "kings1": 11,
+    "nehemiah": 8,
+    "job": 7,
+    "proverbs": 7,
+    "ruth": 6,
+    "esther": 4,
+    "exodus": 4,
+    "chronicles1": 3,
+    "jeremiah": 3,
+    "psalms": 3,
+    "chronicles2": 2,
+    "joshua": 2,
+    "lamentations": 2,
+    "numbers": 2,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "hosea": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "אֶל הַנַּ֔עַר",
-      "pron": "엘레모 나아르",
-      "lemmas": [
-        "אֵל",
-        "נַעַר"
-      ],
-      "words": [
-        {
-          "word": "אֶל",
-          "lemma": "אֵל",
-          "strong": "H413",
-          "pron": "엘레모"
-        },
-        {
-          "word": "הַנַּ֔עַר",
-          "lemma": "נַעַר",
-          "strong": "H5288",
-          "pron": "나아르"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 18:7",
-        "genesis 22:5",
-        "genesis 22:12",
-        "genesis 22:19"
-      ],
-      "glossKo": ""
-    },
-    {
       "hebrew": "אֶת הַנַּ֔עַר",
-      "pron": "에트 나아르",
+      "pron": "에트 아네아림",
       "lemmas": [
         "אֵת",
         "נַעַר"
@@ -84,44 +94,171 @@
           "word": "הַנַּ֔עַר",
           "lemma": "נַעַר",
           "strong": "H5288",
-          "pron": "나아르"
+          "pron": "아네아림"
         }
       ],
-      "count": 4,
+      "count": 24,
       "refs": [
         "genesis 21:18",
         "genesis 21:19",
         "genesis 44:32",
-        "genesis 48:16"
+        "genesis 48:16",
+        "exodus 24:5",
+        "ruth 2:9",
+        "ruth 2:15",
+        "samuel1 1:25",
+        "samuel1 9:22",
+        "samuel1 20:21",
+        "samuel1 21:2",
+        "samuel1 25:8"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "נְעָרָיו֙ אִתּ֔וֹ",
-      "pron": "나아르 에트",
+      "hebrew": "אֶל הַנַּ֔עַר",
+      "pron": "엘 아네아림",
       "lemmas": [
-        "נַעַר",
-        "אֵת"
+        "אֵל",
+        "נַעַר"
       ],
       "words": [
         {
-          "word": "נְעָרָיו֙",
-          "lemma": "נַעַר",
-          "strong": "H5288",
-          "pron": "나아르"
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
         },
         {
-          "word": "אִתּ֔וֹ",
-          "lemma": "אֵת",
-          "strong": "H854",
-          "pron": "에트"
+          "word": "הַנַּ֔עַר",
+          "lemma": "נַעַר",
+          "strong": "H5288",
+          "pron": "아네아림"
         }
       ],
-      "count": 3,
+      "count": 17,
       "refs": [
-        "genesis 22:3",
-        "genesis 37:2",
-        "genesis 43:8"
+        "genesis 18:7",
+        "genesis 22:5",
+        "genesis 22:12",
+        "genesis 22:19",
+        "judges 9:54",
+        "judges 16:26",
+        "samuel1 1:27",
+        "samuel1 10:14",
+        "samuel1 14:1",
+        "samuel1 14:6",
+        "samuel1 20:40",
+        "samuel2 1:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֣אמֶר לְנַעֲר֔וֹ",
+      "pron": "바요메르 아네아림",
+      "lemmas": [
+        "אָמַר",
+        "נַעַר"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֣אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "לְנַעֲר֔וֹ",
+          "lemma": "נַעַר",
+          "strong": "H5288",
+          "pron": "아네아림"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "judges 19:11",
+        "judges 19:13",
+        "samuel1 9:5",
+        "samuel1 9:27",
+        "samuel1 20:21",
+        "samuel1 20:36",
+        "samuel1 25:19",
+        "samuel1 30:13",
+        "samuel2 1:6",
+        "kings2 4:38",
+        "kings2 6:15",
+        "esther 2:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִהְיֶ֥ה הַנַּ֖עַר",
+      "pron": "하에타 아네아림",
+      "lemmas": [
+        "הָיָה",
+        "נַעַר"
+      ],
+      "words": [
+        {
+          "word": "יִהְיֶ֥ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "הַנַּ֖עַר",
+          "lemma": "נַעַר",
+          "strong": "H5288",
+          "pron": "아네아림"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "judges 13:5",
+        "judges 13:7",
+        "judges 17:7",
+        "judges 17:11",
+        "judges 17:12",
+        "samuel1 17:42",
+        "samuel2 18:32",
+        "kings1 14:3",
+        "chronicles2 13:7",
+        "isaiah 10:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְעָרָ֜יו לֵאמֹ֗ר",
+      "pron": "아네아림 바요메르",
+      "lemmas": [
+        "נַעַר",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "נְעָרָ֜יו",
+          "lemma": "נַעַר",
+          "strong": "H5288",
+          "pron": "아네아림"
+        },
+        {
+          "word": "לֵאמֹ֗ר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "judges 19:9",
+        "ruth 2:15",
+        "samuel1 16:11",
+        "samuel1 16:18",
+        "samuel1 17:58",
+        "samuel1 20:37",
+        "samuel1 25:5",
+        "samuel1 25:14",
+        "samuel2 1:15",
+        "samuel2 13:28"
       ],
       "glossKo": ""
     }

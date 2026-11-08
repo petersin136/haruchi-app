@@ -24,38 +24,121 @@
     {
       "lemma": "מֻרְאָה",
       "strong": "H4760",
-      "pron": "",
-      "glossKo": "큰가슴살"
+      "pron": "무레아토",
+      "glossKo": "그의 큰가슴살"
     },
     {
       "lemma": "רָאָה",
       "strong": "H7200",
-      "pron": "야레에누",
-      "glossKo": "우리를 보다"
+      "pron": "바야레",
+      "glossKo": "보다"
     },
     {
       "lemma": "רָאָה",
       "strong": "H7201",
-      "pron": "",
+      "pron": "브하라아",
       "glossKo": "검은소리개"
     },
     {
       "lemma": "רָאֶה",
       "strong": "H7202",
-      "pron": "",
+      "pron": "우레에",
       "glossKo": "보는"
     }
   ],
   "defEn": "view",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 104,
   "byBook": {
-    "genesis": 11
+    "ezekiel": 37,
+    "daniel": 12,
+    "genesis": 11,
+    "leviticus": 11,
+    "esther": 4,
+    "numbers": 4,
+    "isaiah": 3,
+    "samuel2": 3,
+    "songofsolomon": 3,
+    "deuteronomy": 2,
+    "ecclesiastes": 2,
+    "exodus": 2,
+    "job": 2,
+    "joel": 2,
+    "judges": 2,
+    "samuel1": 2,
+    "joshua": 1,
+    "nahum": 1
   },
   "phrases": [
     {
+      "hebrew": "וּמַרְאֵ֕הוּ כְּמַרְאֵ֛ה",
+      "pron": "르마레에 르마레에",
+      "lemmas": [
+        "מַרְאֶה",
+        "מַרְאֶה"
+      ],
+      "words": [
+        {
+          "word": "וּמַרְאֵ֕הוּ",
+          "lemma": "מַרְאֶה",
+          "strong": "H4758",
+          "pron": "르마레에"
+        },
+        {
+          "word": "כְּמַרְאֵ֛ה",
+          "lemma": "מַרְאֶה",
+          "strong": "H4758",
+          "pron": "르마레에"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "judges 13:6",
+        "ezekiel 40:3",
+        "ezekiel 41:21",
+        "ezekiel 43:3",
+        "daniel 1:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "טוֹבַ֥ת מַרְאֶ֖ה",
+      "pron": "돕 르마레에",
+      "lemmas": [
+        "טוֹב",
+        "מַרְאֶה"
+      ],
+      "words": [
+        {
+          "word": "טוֹבַ֥ת",
+          "lemma": "טוֹב",
+          "strong": "H2896",
+          "pron": "돕"
+        },
+        {
+          "word": "מַרְאֶ֖ה",
+          "lemma": "מַרְאֶה",
+          "strong": "H4758",
+          "pron": "르마레에"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "genesis 24:16",
+        "genesis 26:7",
+        "samuel2 11:2",
+        "esther 1:11",
+        "esther 2:2",
+        "esther 2:3",
+        "esther 2:7",
+        "ecclesiastes 6:9",
+        "daniel 1:4"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "יְפַת מַרְאֶ֖ה",
-      "pron": "예페 르마레에",
+      "pron": "예파트 르마레에",
       "lemmas": [
         "יָפֶה",
         "מַרְאֶה"
@@ -65,7 +148,7 @@
           "word": "יְפַת",
           "lemma": "יָפֶה",
           "strong": "H3303",
-          "pron": "예페"
+          "pron": "예파트"
         },
         {
           "word": "מַרְאֶ֖ה",
@@ -74,13 +157,78 @@
           "pron": "르마레에"
         }
       ],
-      "count": 5,
+      "count": 7,
       "refs": [
         "genesis 12:11",
         "genesis 29:17",
         "genesis 39:6",
         "genesis 41:2",
-        "genesis 41:4"
+        "genesis 41:4",
+        "samuel1 17:42",
+        "samuel2 14:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַרְאֵ֖ה עֵינֵ֥י",
+      "pron": "르마레에 에네켐",
+      "lemmas": [
+        "מַרְאֶה",
+        "עַיִן"
+      ],
+      "words": [
+        {
+          "word": "מַרְאֵ֖ה",
+          "lemma": "מַרְאֶה",
+          "strong": "H4758",
+          "pron": "르마레에"
+        },
+        {
+          "word": "עֵינֵ֥י",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 13:12",
+        "deuteronomy 28:34",
+        "deuteronomy 28:67",
+        "ecclesiastes 6:9",
+        "ecclesiastes 11:9",
+        "isaiah 11:3",
+        "ezekiel 23:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַּמַּרְאֶ֕ה אֲשֶׁ֥ר",
+      "pron": "르마레에 아셰르",
+      "lemmas": [
+        "מַרְאֶה",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "כַּמַּרְאֶ֕ה",
+          "lemma": "מַרְאֶה",
+          "strong": "H4758",
+          "pron": "르마레에"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 8:4",
+        "ezekiel 8:4",
+        "ezekiel 11:24",
+        "ezekiel 43:3"
       ],
       "glossKo": ""
     }

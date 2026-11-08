@@ -1,8 +1,8 @@
 {
   "lemma": "חִזְקִיָּה",
-  "pron": "힛키아",
+  "pron": "힛키아후",
   "strong": "H2396",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָזַק",
     "strong": "H2388",
@@ -12,43 +12,252 @@
     {
       "lemma": "חָזַק",
       "strong": "H2388",
-      "pron": "하자크",
+      "pron": "바야하지쿠",
       "glossKo": "강하게 하다"
     },
     {
       "lemma": "חָזָק",
       "strong": "H2389",
-      "pron": "메하자크",
+      "pron": "하자카",
       "glossKo": "강한"
     },
     {
       "lemma": "חָזֵק",
       "strong": "H2390",
-      "pron": "",
+      "pron": "브하제크",
       "glossKo": "강한"
     },
     {
       "lemma": "חֵזֶק",
       "strong": "H2391",
-      "pron": "힛키위",
+      "pron": "힛키",
       "glossKo": "나의 도움"
     },
     {
       "lemma": "חֹזֶק",
       "strong": "H2392",
-      "pron": "",
+      "pron": "브호제크",
       "glossKo": "권능"
     },
     {
       "lemma": "חִזְקִי",
       "strong": "H2395",
-      "pron": "",
+      "pron": "브힛키",
       "glossKo": "히스기"
     }
   ],
   "defEn": "Chizkijah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 130,
+  "byBook": {
+    "kings2": 44,
+    "chronicles2": 40,
+    "isaiah": 33,
+    "chronicles1": 3,
+    "jeremiah": 3,
+    "nehemiah": 2,
+    "ezra": 1,
+    "hosea": 1,
+    "micah": 1,
+    "proverbs": 1,
+    "zephaniah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "חִזְקִיָּ֣ה מֶֽלֶךְ",
+      "pron": "힛키아후 멜레크",
+      "lemmas": [
+        "חִזְקִיָּה",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "חִזְקִיָּ֣ה",
+          "lemma": "חִזְקִיָּה",
+          "strong": "H2396",
+          "pron": "힛키아후"
+        },
+        {
+          "word": "מֶֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "kings2 18:14",
+        "kings2 18:16",
+        "kings2 19:10",
+        "chronicles1 4:41",
+        "chronicles2 29:18",
+        "chronicles2 29:20",
+        "chronicles2 29:30",
+        "chronicles2 30:24",
+        "chronicles2 31:13",
+        "chronicles2 32:8",
+        "chronicles2 32:9",
+        "chronicles2 32:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל חִזְקִיָּ֑הוּ",
+      "pron": "엘 힛키아후",
+      "lemmas": [
+        "אֵל",
+        "חִזְקִיָּה"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "חִזְקִיָּ֑הוּ",
+          "lemma": "חִזְקִיָּה",
+          "strong": "H2396",
+          "pron": "힛키아후"
+        }
+      ],
+      "count": 21,
+      "refs": [
+        "kings2 18:19",
+        "kings2 18:31",
+        "kings2 18:32",
+        "kings2 18:37",
+        "kings2 19:9",
+        "kings2 19:10",
+        "kings2 19:20",
+        "kings2 20:5",
+        "kings2 20:12",
+        "kings2 20:16",
+        "chronicles2 29:18",
+        "chronicles2 30:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חִזְקִיָּ֤הוּ מֶֽלֶךְ יְהוּדָה֙",
+      "pron": "힛키아후 멜레크 예후다",
+      "lemmas": [
+        "חִזְקִיָּה",
+        "מֶלֶךְ",
+        "יְהוּדָה"
+      ],
+      "words": [
+        {
+          "word": "חִזְקִיָּ֤הוּ",
+          "lemma": "חִזְקִיָּה",
+          "strong": "H2396",
+          "pron": "힛키아후"
+        },
+        {
+          "word": "מֶֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "יְהוּדָה֙",
+          "lemma": "יְהוּדָה",
+          "strong": "H3063",
+          "pron": "예후다"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "kings2 18:14",
+        "kings2 18:16",
+        "kings2 19:10",
+        "chronicles1 4:41",
+        "chronicles2 30:24",
+        "chronicles2 32:8",
+        "chronicles2 32:9",
+        "chronicles2 32:23",
+        "proverbs 25:1",
+        "isaiah 1:1",
+        "isaiah 37:10",
+        "isaiah 38:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֤אמֶר חִזְקִיָּ֨הוּ֙",
+      "pron": "바요메르 힛키아후",
+      "lemmas": [
+        "אָמַר",
+        "חִזְקִיָּה"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֤אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "חִזְקִיָּ֨הוּ֙",
+          "lemma": "חִזְקִיָּה",
+          "strong": "H2396",
+          "pron": "힛키아후"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "kings2 19:3",
+        "kings2 20:8",
+        "kings2 20:10",
+        "kings2 20:14",
+        "kings2 20:15",
+        "kings2 20:19",
+        "chronicles2 29:27",
+        "chronicles2 29:30",
+        "chronicles2 31:11",
+        "isaiah 37:3",
+        "isaiah 38:22",
+        "isaiah 39:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַמֶּ֥לֶךְ חִזְקִיָּ֖הוּ",
+      "pron": "멜레크 힛키아후",
+      "lemmas": [
+        "מֶלֶךְ",
+        "חִזְקִיָּה"
+      ],
+      "words": [
+        {
+          "word": "הַמֶּ֥לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "חִזְקִיָּ֖הוּ",
+          "lemma": "חִזְקִיָּה",
+          "strong": "H2396",
+          "pron": "힛키아후"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "kings2 18:9",
+        "kings2 18:13",
+        "kings2 18:17",
+        "kings2 19:1",
+        "kings2 19:5",
+        "kings2 20:14",
+        "isaiah 36:1",
+        "isaiah 36:2",
+        "isaiah 37:1",
+        "isaiah 37:5",
+        "isaiah 39:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

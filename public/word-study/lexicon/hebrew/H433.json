@@ -12,7 +12,7 @@
     {
       "lemma": "אֵל",
       "strong": "H410",
-      "pron": "엘",
+      "pron": "르엘",
       "glossKo": "하나님"
     },
     {
@@ -30,13 +30,13 @@
     {
       "lemma": "אֶלְגָּבִישׁ",
       "strong": "H417",
-      "pron": "",
+      "pron": "엘가비쉬",
       "glossKo": "큰 우박"
     },
     {
       "lemma": "אֶלְדָּד",
       "strong": "H419",
-      "pron": "",
+      "pron": "엘닫",
       "glossKo": "엘닷"
     },
     {
@@ -48,9 +48,107 @@
   ],
   "defEn": "deity; Deity",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 60,
   "byBook": {
-    "psalms": 7
+    "job": 41,
+    "psalms": 7,
+    "daniel": 4,
+    "deuteronomy": 2,
+    "chronicles2": 1,
+    "habakkuk": 1,
+    "isaiah": 1,
+    "kings2": 1,
+    "nehemiah": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶל אֱ֭לוֹהַּ",
+      "pron": "엘 엘로아",
+      "lemmas": [
+        "אֵל",
+        "אֱלוֹהַּ"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "אֱ֭לוֹהַּ",
+          "lemma": "אֱלוֹהַּ",
+          "strong": "H433",
+          "pron": "엘로아"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 10:2",
+        "job 16:20",
+        "job 22:26",
+        "job 33:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֱ֭לוֹהַּ לֹא",
+      "pron": "엘로아 로",
+      "lemmas": [
+        "אֱלוֹהַּ",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "אֱ֭לוֹהַּ",
+          "lemma": "אֱלוֹהַּ",
+          "strong": "H433",
+          "pron": "엘로아"
+        },
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 9:13",
+        "job 24:12",
+        "daniel 11:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֱל֣וֹהַּ עֲלֵיהֶֽם",
+      "pron": "엘로아 알",
+      "lemmas": [
+        "אֱלוֹהַּ",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "אֱל֣וֹהַּ",
+          "lemma": "אֱלוֹהַּ",
+          "strong": "H433",
+          "pron": "엘로아"
+        },
+        {
+          "word": "עֲלֵיהֶֽם",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 21:9",
+        "job 29:4",
+        "job 37:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

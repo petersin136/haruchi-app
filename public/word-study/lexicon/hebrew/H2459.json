@@ -1,6 +1,6 @@
 {
   "lemma": "חֶלֶב",
-  "pron": "헬바모",
+  "pron": "우메헬베헨",
   "strong": "H2459",
   "posKo": "명사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "אַחְלָב",
       "strong": "H303",
-      "pron": "",
+      "pron": "아헬랍",
       "glossKo": "알랍"
     },
     {
       "lemma": "חֵלֶב",
       "strong": "H2460",
-      "pron": "",
+      "pron": "헬렙",
       "glossKo": "헬렙"
     },
     {
@@ -26,28 +26,245 @@
     {
       "lemma": "חֶלְבָּה",
       "strong": "H2462",
-      "pron": "",
+      "pron": "헬바",
       "glossKo": "헬바"
     },
     {
       "lemma": "חֶלְבּוֹן",
       "strong": "H2463",
-      "pron": "",
+      "pron": "헬본",
       "glossKo": "헬본"
     },
     {
       "lemma": "חֶלְבְּנָה",
       "strong": "H2464",
-      "pron": "",
+      "pron": "브헬베나",
       "glossKo": "갈바눔"
     }
   ],
   "defEn": "fat; richest; choice",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 92,
   "byBook": {
+    "leviticus": 48,
+    "exodus": 6,
+    "numbers": 6,
     "psalms": 6,
-    "genesis": 2
+    "isaiah": 5,
+    "chronicles2": 4,
+    "ezekiel": 4,
+    "deuteronomy": 3,
+    "samuel1": 3,
+    "genesis": 2,
+    "kings1": 2,
+    "job": 1,
+    "judges": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְאֶת הַחֵ֨לֶב֙",
+      "pron": "에트 우메헬베헨",
+      "lemmas": [
+        "אֵת",
+        "חֶלֶב"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַחֵ֨לֶב֙",
+          "lemma": "חֶלֶב",
+          "strong": "H2459",
+          "pron": "우메헬베헨"
+        }
+      ],
+      "count": 34,
+      "refs": [
+        "genesis 45:18",
+        "exodus 29:13",
+        "exodus 29:22",
+        "leviticus 3:3",
+        "leviticus 3:4",
+        "leviticus 3:9",
+        "leviticus 3:10",
+        "leviticus 3:14",
+        "leviticus 3:15",
+        "leviticus 4:8",
+        "leviticus 4:9",
+        "leviticus 7:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל הַחֵ֔לֶב",
+      "pron": "칼 우메헬베헨",
+      "lemmas": [
+        "כֹּל",
+        "חֶלֶב"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הַחֵ֔לֶב",
+          "lemma": "חֶלֶב",
+          "strong": "H2459",
+          "pron": "우메헬베헨"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "exodus 29:13",
+        "leviticus 3:3",
+        "leviticus 3:9",
+        "leviticus 3:14",
+        "leviticus 3:16",
+        "leviticus 3:17",
+        "leviticus 4:8",
+        "leviticus 4:19",
+        "leviticus 4:26",
+        "leviticus 4:31",
+        "leviticus 4:35",
+        "leviticus 7:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַחֵ֨לֶב֙ אֲשֶׁ֣ר",
+      "pron": "우메헬베헨 아셰르",
+      "lemmas": [
+        "חֶלֶב",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הַחֵ֨לֶב֙",
+          "lemma": "חֶלֶב",
+          "strong": "H2459",
+          "pron": "우메헬베헨"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 29:13",
+        "exodus 29:22",
+        "leviticus 3:3",
+        "leviticus 3:4",
+        "leviticus 3:9",
+        "leviticus 3:10",
+        "leviticus 3:14",
+        "leviticus 3:15",
+        "leviticus 4:8",
+        "leviticus 4:9",
+        "leviticus 7:4",
+        "leviticus 8:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַחֵ֨לֶב֙ אֲשֶׁ֣ר עֲלֵהֶ֔ן",
+      "pron": "우메헬베헨 아셰르 알",
+      "lemmas": [
+        "חֶלֶב",
+        "אֲשֶׁר",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "הַחֵ֨לֶב֙",
+          "lemma": "חֶלֶב",
+          "strong": "H2459",
+          "pron": "우메헬베헨"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "עֲלֵהֶ֔ן",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 29:13",
+        "exodus 29:22",
+        "leviticus 3:3",
+        "leviticus 3:4",
+        "leviticus 3:9",
+        "leviticus 3:10",
+        "leviticus 3:14",
+        "leviticus 3:15",
+        "leviticus 4:8",
+        "leviticus 4:9",
+        "leviticus 7:4",
+        "leviticus 8:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֵת֙ כָּל הַחֵ֔לֶב",
+      "pron": "에트 칼 우메헬베헨",
+      "lemmas": [
+        "אֵת",
+        "כֹּל",
+        "חֶלֶב"
+      ],
+      "words": [
+        {
+          "word": "וְאֵת֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הַחֵ֔לֶב",
+          "lemma": "חֶלֶב",
+          "strong": "H2459",
+          "pron": "우메헬베헨"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 29:13",
+        "leviticus 3:3",
+        "leviticus 3:9",
+        "leviticus 3:14",
+        "leviticus 4:8",
+        "leviticus 4:19",
+        "leviticus 4:26",
+        "leviticus 4:31",
+        "leviticus 4:35",
+        "leviticus 7:3",
+        "leviticus 8:16",
+        "leviticus 8:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "עָצַם",
-  "pron": "아체무",
+  "pron": "아참타",
   "strong": "H6105",
   "posKo": "동사",
   "root": {
@@ -12,26 +12,26 @@
     {
       "lemma": "עָצוּם",
       "strong": "H6099",
-      "pron": "바아추마이브",
-      "glossKo": "그에게 강한"
+      "pron": "브아춤",
+      "glossKo": "강한"
     },
     {
       "lemma": "עֶצֶם",
       "strong": "H6106",
-      "pron": "아차마위",
-      "glossKo": "나의 뼈"
+      "pron": "에쳄",
+      "glossKo": "뼈"
     },
     {
       "lemma": "עֶצֶם",
       "strong": "H6107",
-      "pron": "",
+      "pron": "바아쳄",
       "glossKo": "에셈"
     },
     {
       "lemma": "עֹצֶם",
       "strong": "H6108",
-      "pron": "아체미위",
-      "glossKo": "나의 힘"
+      "pron": "브오쳄",
+      "glossKo": "힘"
     },
     {
       "lemma": "תַּעֲצֻמָה",
@@ -42,10 +42,44 @@
   ],
   "defEn": "bind fast; close; powerful; numerous; crunch the bones",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 20,
   "byBook": {
     "psalms": 6,
+    "jeremiah": 5,
+    "daniel": 3,
+    "isaiah": 3,
+    "exodus": 2,
     "genesis": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיַּֽעַצְמ֖וּ בִּמְאֹ֣ד",
+      "pron": "아참타 메옫",
+      "lemmas": [
+        "עָצַם",
+        "מְאֹד"
+      ],
+      "words": [
+        {
+          "word": "וַיַּֽעַצְמ֖וּ",
+          "lemma": "עָצַם",
+          "strong": "H6105",
+          "pron": "아참타"
+        },
+        {
+          "word": "בִּמְאֹ֣ד",
+          "lemma": "מְאֹד",
+          "strong": "H3966",
+          "pron": "메옫"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 1:7",
+        "exodus 1:20",
+        "isaiah 31:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

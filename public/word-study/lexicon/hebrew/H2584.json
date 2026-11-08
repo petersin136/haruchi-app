@@ -2,7 +2,7 @@
   "lemma": "חַנָּה",
   "pron": "한나",
   "strong": "H2584",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָנַן",
     "strong": "H2603",
@@ -18,19 +18,19 @@
     {
       "lemma": "חָנָה",
       "strong": "H2583",
-      "pron": "타하네",
+      "pron": "바이한",
       "glossKo": "진치다"
     },
     {
       "lemma": "חָנוּן",
       "strong": "H2586",
-      "pron": "",
+      "pron": "하눈",
       "glossKo": "하눈"
     },
     {
       "lemma": "חַנּוּן",
       "strong": "H2587",
-      "pron": "브한눈",
+      "pron": "한눈",
       "glossKo": "은혜로운"
     },
     {
@@ -38,11 +38,49 @@
       "strong": "H2589",
       "pron": "한노트",
       "glossKo": "간구"
+    },
+    {
+      "lemma": "חַנִּיאֵל",
+      "strong": "H2592",
+      "pron": "한니엘",
+      "glossKo": "한니엘"
     }
   ],
   "defEn": "Channah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "samuel1": 13
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶת חַנָּה֙",
+      "pron": "에트 한나",
+      "lemmas": [
+        "אֵת",
+        "חַנָּה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "חַנָּה֙",
+          "lemma": "חַנָּה",
+          "strong": "H2584",
+          "pron": "한나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 1:5",
+        "samuel1 1:19",
+        "samuel1 2:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

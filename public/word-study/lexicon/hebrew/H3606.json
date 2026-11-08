@@ -1,8 +1,8 @@
 {
   "lemma": "כֹּל",
-  "pron": "콜",
+  "pron": "카르",
   "strong": "H3606",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "כֹּל",
     "strong": "H3605",
@@ -12,19 +12,210 @@
     {
       "lemma": "כֹּל",
       "strong": "H3605",
-      "pron": "브콜",
+      "pron": "칼",
       "glossKo": "모든"
     },
     {
       "lemma": "כׇּל־חֹזֶה",
       "strong": "H3626",
-      "pron": "",
+      "pron": "칼",
       "glossKo": "골호세"
     }
   ],
   "defEn": "all, any, (forasmuch) as, be-(for this) cause, every, no (manner, -ne), there (where) -fore, though, what (where, who…",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 103,
+  "byBook": {
+    "daniel": 85,
+    "ezra": 18
+  },
+  "phrases": [
+    {
+      "hebrew": "כָּל קֳבֵל֙",
+      "pron": "카르 코벨",
+      "lemmas": [
+        "כֹּל",
+        "קְבֵל"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3606",
+          "pron": "카르"
+        },
+        {
+          "word": "קֳבֵל֙",
+          "lemma": "קְבֵל",
+          "strong": "H6903",
+          "pron": "코벨"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "ezra 4:14",
+        "ezra 7:14",
+        "ezra 7:17",
+        "daniel 2:8",
+        "daniel 2:10",
+        "daniel 2:12",
+        "daniel 2:24",
+        "daniel 2:40",
+        "daniel 2:41",
+        "daniel 2:45",
+        "daniel 3:7",
+        "daniel 3:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּ֣י כָל",
+      "pron": "드흐브 카르",
+      "lemmas": [
+        "דִּי",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "דִּ֣י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "כָל",
+          "lemma": "כֹּל",
+          "strong": "H3606",
+          "pron": "카르"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "ezra 6:11",
+        "ezra 7:13",
+        "ezra 7:21",
+        "ezra 7:24",
+        "daniel 2:10",
+        "daniel 3:10",
+        "daniel 3:29",
+        "daniel 4:18",
+        "daniel 4:37",
+        "daniel 5:7",
+        "daniel 5:22",
+        "daniel 6:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל קֳבֵל֙ דִּֽי",
+      "pron": "카르 코벨 드흐브",
+      "lemmas": [
+        "כֹּל",
+        "קְבֵל",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3606",
+          "pron": "카르"
+        },
+        {
+          "word": "קֳבֵל֙",
+          "lemma": "קְבֵל",
+          "strong": "H6903",
+          "pron": "코벨"
+        },
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "ezra 4:14",
+        "ezra 7:14",
+        "daniel 2:8",
+        "daniel 2:10",
+        "daniel 2:40",
+        "daniel 2:41",
+        "daniel 2:45",
+        "daniel 3:29",
+        "daniel 4:18",
+        "daniel 5:12",
+        "daniel 5:22",
+        "daniel 6:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְֽכָל עַֽמְמַיָּ֞א",
+      "pron": "카르 브암마",
+      "lemmas": [
+        "כֹּל",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "לְֽכָל",
+          "lemma": "כֹּל",
+          "strong": "H3606",
+          "pron": "카르"
+        },
+        {
+          "word": "עַֽמְמַיָּ֞א",
+          "lemma": "עַם",
+          "strong": "H5972",
+          "pron": "브암마"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "ezra 7:25",
+        "daniel 3:7",
+        "daniel 3:29",
+        "daniel 4:1",
+        "daniel 5:19",
+        "daniel 6:25",
+        "daniel 7:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל אַרְעָֽא",
+      "pron": "카르 브아레아",
+      "lemmas": [
+        "כֹּל",
+        "אֲרַע"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3606",
+          "pron": "카르"
+        },
+        {
+          "word": "אַרְעָֽא",
+          "lemma": "אֲרַע",
+          "strong": "H772",
+          "pron": "브아레아"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "daniel 2:35",
+        "daniel 2:39",
+        "daniel 4:1",
+        "daniel 4:11",
+        "daniel 4:20",
+        "daniel 6:25",
+        "daniel 7:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "שְׁתִי",
-  "pron": "셰티",
+  "pron": "비셰티",
   "strong": "H8359",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שִׁית",
     "strong": "H7896",
@@ -12,7 +12,7 @@
     {
       "lemma": "שִׁית",
       "strong": "H7896",
-      "pron": "샤투",
+      "pron": "아시트",
       "glossKo": "두다"
     },
     {
@@ -24,7 +24,7 @@
     {
       "lemma": "שַׁיִת",
       "strong": "H7898",
-      "pron": "",
+      "pron": "바샤이트",
       "glossKo": "가시"
     },
     {
@@ -42,13 +42,201 @@
     {
       "lemma": "שֵׁתָה",
       "strong": "H8357",
-      "pron": "",
-      "glossKo": "엉덩이"
+      "pron": "셰토테헴",
+      "glossKo": "그들의 엉덩이"
     }
   ],
   "defEn": "fixture; warp",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "leviticus": 9
+  },
+  "phrases": [
+    {
+      "hebrew": "בַשְּׁתִ֤י אֽוֹ",
+      "pron": "비셰티 오",
+      "lemmas": [
+        "שְׁתִי",
+        "אוֹ"
+      ],
+      "words": [
+        {
+          "word": "בַשְּׁתִ֤י",
+          "lemma": "שְׁתִי",
+          "strong": "H8359",
+          "pron": "비셰티"
+        },
+        {
+          "word": "אֽוֹ",
+          "lemma": "אוֹ",
+          "strong": "H176",
+          "pron": "오"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "leviticus 13:48",
+        "leviticus 13:49",
+        "leviticus 13:51",
+        "leviticus 13:52",
+        "leviticus 13:53",
+        "leviticus 13:56",
+        "leviticus 13:57",
+        "leviticus 13:58",
+        "leviticus 13:59"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֽוֹ בַשְּׁתִ֤י",
+      "pron": "오 비셰티",
+      "lemmas": [
+        "אוֹ",
+        "שְׁתִי"
+      ],
+      "words": [
+        {
+          "word": "אֽוֹ",
+          "lemma": "אוֹ",
+          "strong": "H176",
+          "pron": "오"
+        },
+        {
+          "word": "בַשְּׁתִ֤י",
+          "lemma": "שְׁתִי",
+          "strong": "H8359",
+          "pron": "비셰티"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 13:48",
+        "leviticus 13:49",
+        "leviticus 13:51",
+        "leviticus 13:53",
+        "leviticus 13:57",
+        "leviticus 13:58",
+        "leviticus 13:59"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֽוֹ בַשְּׁתִ֤י אֽוֹ",
+      "pron": "오 비셰티 오",
+      "lemmas": [
+        "אוֹ",
+        "שְׁתִי",
+        "אוֹ"
+      ],
+      "words": [
+        {
+          "word": "אֽוֹ",
+          "lemma": "אוֹ",
+          "strong": "H176",
+          "pron": "오"
+        },
+        {
+          "word": "בַשְּׁתִ֤י",
+          "lemma": "שְׁתִי",
+          "strong": "H8359",
+          "pron": "비셰티"
+        },
+        {
+          "word": "אֽוֹ",
+          "lemma": "אוֹ",
+          "strong": "H176",
+          "pron": "오"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 13:48",
+        "leviticus 13:49",
+        "leviticus 13:51",
+        "leviticus 13:53",
+        "leviticus 13:57",
+        "leviticus 13:58",
+        "leviticus 13:59"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַשְּׁתִ֤י אֽוֹ בָעֵ֨רֶב֙",
+      "pron": "비셰티 오 에렙",
+      "lemmas": [
+        "שְׁתִי",
+        "אוֹ",
+        "עֵרֶב"
+      ],
+      "words": [
+        {
+          "word": "בַשְּׁתִ֤י",
+          "lemma": "שְׁתִי",
+          "strong": "H8359",
+          "pron": "비셰티"
+        },
+        {
+          "word": "אֽוֹ",
+          "lemma": "אוֹ",
+          "strong": "H176",
+          "pron": "오"
+        },
+        {
+          "word": "בָעֵ֨רֶב֙",
+          "lemma": "עֵרֶב",
+          "strong": "H6154",
+          "pron": "에렙"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 13:48",
+        "leviticus 13:49",
+        "leviticus 13:51",
+        "leviticus 13:53",
+        "leviticus 13:57",
+        "leviticus 13:58",
+        "leviticus 13:59"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּ֠בֶּגֶד אֽוֹ בַשְּׁתִ֤י",
+      "pron": "우베가딤 오 비셰티",
+      "lemmas": [
+        "בֶּגֶד",
+        "אוֹ",
+        "שְׁתִי"
+      ],
+      "words": [
+        {
+          "word": "בַּ֠בֶּגֶד",
+          "lemma": "בֶּגֶד",
+          "strong": "H899",
+          "pron": "우베가딤"
+        },
+        {
+          "word": "אֽוֹ",
+          "lemma": "אוֹ",
+          "strong": "H176",
+          "pron": "오"
+        },
+        {
+          "word": "בַשְּׁתִ֤י",
+          "lemma": "שְׁתִי",
+          "strong": "H8359",
+          "pron": "비셰티"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 13:51",
+        "leviticus 13:53",
+        "leviticus 13:57",
+        "leviticus 13:58"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

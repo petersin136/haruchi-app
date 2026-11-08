@@ -1,6 +1,6 @@
 {
   "lemma": "מָסָךְ",
-  "pron": "르마사크",
+  "pron": "마사크",
   "strong": "H4539",
   "posKo": "명사",
   "root": {
@@ -12,14 +12,14 @@
     {
       "lemma": "מֵיסָךְ",
       "strong": "H4329",
-      "pron": "",
+      "pron": "밋크",
       "glossKo": "기둥회랑"
     },
     {
       "lemma": "מְסֻכָּה",
       "strong": "H4540",
-      "pron": "",
-      "glossKo": "덮개"
+      "pron": "메수카테카",
+      "glossKo": "너의 덮개"
     },
     {
       "lemma": "סָךְ",
@@ -30,27 +30,215 @@
     {
       "lemma": "סֹךְ",
       "strong": "H5520",
-      "pron": "브숙코",
+      "pron": "베숙코",
       "glossKo": "그의 장막"
     },
     {
       "lemma": "סָכַךְ",
       "strong": "H5526",
-      "pron": "브타세크",
+      "pron": "소케킴",
       "glossKo": "덮다"
     },
     {
       "lemma": "סְכָכָה",
       "strong": "H5527",
-      "pron": "",
+      "pron": "우세카카",
       "glossKo": "스가가"
     }
   ],
   "defEn": "cover; veil",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 25,
   "byBook": {
-    "psalms": 1
+    "exodus": 16,
+    "numbers": 6,
+    "isaiah": 1,
+    "psalms": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְאֵ֕ת מָסַ֖ךְ",
+      "pron": "에트 마사크",
+      "lemmas": [
+        "אֵת",
+        "מָסָךְ"
+      ],
+      "words": [
+        {
+          "word": "וְאֵ֕ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מָסַ֖ךְ",
+          "lemma": "מָסָךְ",
+          "strong": "H4539",
+          "pron": "마사크"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 35:15",
+        "exodus 35:17",
+        "exodus 39:38",
+        "exodus 39:40",
+        "exodus 40:5",
+        "exodus 40:8",
+        "exodus 40:28",
+        "exodus 40:33",
+        "numbers 3:26",
+        "numbers 4:25",
+        "numbers 4:26",
+        "samuel2 17:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָסַ֥ךְ הַפֶּ֖תַח",
+      "pron": "마사크 라페타흐",
+      "lemmas": [
+        "מָסָךְ",
+        "פֶּתַח"
+      ],
+      "words": [
+        {
+          "word": "מָסַ֥ךְ",
+          "lemma": "מָסָךְ",
+          "strong": "H4539",
+          "pron": "마사크"
+        },
+        {
+          "word": "הַפֶּ֖תַח",
+          "lemma": "פֶּתַח",
+          "strong": "H6607",
+          "pron": "라페타흐"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 26:36",
+        "exodus 35:15",
+        "exodus 36:37",
+        "exodus 39:38",
+        "exodus 40:5",
+        "exodus 40:28",
+        "numbers 3:25",
+        "numbers 3:26",
+        "numbers 4:25",
+        "numbers 4:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת מָסַ֥ךְ הַפֶּ֖תַח",
+      "pron": "에트 마사크 라페타흐",
+      "lemmas": [
+        "אֵת",
+        "מָסָךְ",
+        "פֶּתַח"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מָסַ֥ךְ",
+          "lemma": "מָסָךְ",
+          "strong": "H4539",
+          "pron": "마사크"
+        },
+        {
+          "word": "הַפֶּ֖תַח",
+          "lemma": "פֶּתַח",
+          "strong": "H6607",
+          "pron": "라페타흐"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 35:15",
+        "exodus 39:38",
+        "exodus 40:5",
+        "exodus 40:28",
+        "numbers 3:26",
+        "numbers 4:25",
+        "numbers 4:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָסָךְ֙ לְפֶ֣תַח הָאֹ֔הֶל",
+      "pron": "마사크 라페타흐 오헬",
+      "lemmas": [
+        "מָסָךְ",
+        "פֶּתַח",
+        "אֹהֶל"
+      ],
+      "words": [
+        {
+          "word": "מָסָךְ֙",
+          "lemma": "מָסָךְ",
+          "strong": "H4539",
+          "pron": "마사크"
+        },
+        {
+          "word": "לְפֶ֣תַח",
+          "lemma": "פֶּתַח",
+          "strong": "H6607",
+          "pron": "라페타흐"
+        },
+        {
+          "word": "הָאֹ֔הֶל",
+          "lemma": "אֹהֶל",
+          "strong": "H168",
+          "pron": "오헬"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 26:36",
+        "exodus 36:37",
+        "exodus 39:38",
+        "numbers 3:25",
+        "numbers 4:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מָסַ֖ךְ שַׁ֥עַר",
+      "pron": "마사크 브샤아르",
+      "lemmas": [
+        "מָסָךְ",
+        "שַׁעַר"
+      ],
+      "words": [
+        {
+          "word": "מָסַ֖ךְ",
+          "lemma": "מָסָךְ",
+          "strong": "H4539",
+          "pron": "마사크"
+        },
+        {
+          "word": "שַׁ֥עַר",
+          "lemma": "שַׁעַר",
+          "strong": "H8179",
+          "pron": "브샤아르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 35:17",
+        "exodus 38:18",
+        "exodus 39:40",
+        "exodus 40:8",
+        "exodus 40:33"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

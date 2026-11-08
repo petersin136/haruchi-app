@@ -12,27 +12,63 @@
     {
       "lemma": "צַר",
       "strong": "H6862",
-      "pron": "차라위",
-      "glossKo": "나의 대적"
+      "pron": "차레카",
+      "glossKo": "너의 대적"
     },
     {
       "lemma": "צֵר",
       "strong": "H6863",
-      "pron": "",
+      "pron": "체르",
       "glossKo": "세르"
     },
     {
       "lemma": "צָרַר",
       "strong": "H6887",
-      "pron": "초레라위",
-      "glossKo": "나의 괴롭히다"
+      "pron": "체루로트",
+      "glossKo": "괴롭히다"
     }
   ],
   "defEn": "parcel; packed",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 10,
   "byBook": {
-    "genesis": 2
+    "genesis": 2,
+    "samuel1": 2,
+    "amos": 1,
+    "haggai": 1,
+    "job": 1,
+    "proverbs": 1,
+    "samuel2": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "צְרוֹר כַּסְפּ֖וֹ",
+      "pron": "체로르 바케셉",
+      "lemmas": [
+        "צְרוֹר",
+        "כֶּסֶף"
+      ],
+      "words": [
+        {
+          "word": "צְרוֹר",
+          "lemma": "צְרוֹר",
+          "strong": "H6872",
+          "pron": "체로르"
+        },
+        {
+          "word": "כַּסְפּ֖וֹ",
+          "lemma": "כֶּסֶף",
+          "strong": "H3701",
+          "pron": "바케셉"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 42:35",
+        "proverbs 7:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

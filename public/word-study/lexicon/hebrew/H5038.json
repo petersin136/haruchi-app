@@ -1,6 +1,6 @@
 {
   "lemma": "נְבֵלָה",
-  "pron": "닙라트",
+  "pron": "브닙라트",
   "strong": "H5038",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "נָבֵל",
       "strong": "H5034",
-      "pron": "입볼",
+      "pron": "나볼",
       "glossKo": "쇠하다"
     },
     {
@@ -30,9 +30,185 @@
   ],
   "defEn": "flabby; carcase; carrion; idol",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 48,
   "byBook": {
+    "leviticus": 19,
+    "kings1": 10,
+    "jeremiah": 8,
+    "deuteronomy": 4,
+    "ezekiel": 2,
+    "isaiah": 2,
+    "joshua": 1,
+    "kings2": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְאֶת נִבְלָתָ֖ם",
+      "pron": "에트 브닙라트",
+      "lemmas": [
+        "אֵת",
+        "נְבֵלָה"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "נִבְלָתָ֖ם",
+          "lemma": "נְבֵלָה",
+          "strong": "H5038",
+          "pron": "브닙라트"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "leviticus 11:11",
+        "leviticus 11:28",
+        "leviticus 11:40",
+        "joshua 8:29",
+        "kings1 13:25",
+        "kings1 13:28",
+        "kings1 13:29",
+        "kings1 13:30",
+        "psalms 79:2",
+        "jeremiah 19:7",
+        "jeremiah 26:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָיְתָ֤ה נִבְלָתָם֙",
+      "pron": "하에타 브닙라트",
+      "lemmas": [
+        "הָיָה",
+        "נְבֵלָה"
+      ],
+      "words": [
+        {
+          "word": "וְהָיְתָ֤ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "נִבְלָתָם֙",
+          "lemma": "נְבֵלָה",
+          "strong": "H5038",
+          "pron": "브닙라트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "deuteronomy 28:26",
+        "kings1 13:24",
+        "kings2 9:37",
+        "isaiah 5:25",
+        "jeremiah 7:33",
+        "jeremiah 16:4",
+        "jeremiah 34:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּנִבְלָתָ֖ם יִטְמָ֥א",
+      "pron": "브닙라트 딤메",
+      "lemmas": [
+        "נְבֵלָה",
+        "טָמֵא"
+      ],
+      "words": [
+        {
+          "word": "בְּנִבְלָתָ֖ם",
+          "lemma": "נְבֵלָה",
+          "strong": "H5038",
+          "pron": "브닙라트"
+        },
+        {
+          "word": "יִטְמָ֥א",
+          "lemma": "טָמֵא",
+          "strong": "H2930",
+          "pron": "딤메"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 11:24",
+        "leviticus 11:27",
+        "leviticus 11:36",
+        "leviticus 11:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַנֹּגֵ֥עַ בְּנִבְלָתָ֖ם",
+      "pron": "틱게우 브닙라트",
+      "lemmas": [
+        "נָגַע",
+        "נְבֵלָה"
+      ],
+      "words": [
+        {
+          "word": "הַנֹּגֵ֥עַ",
+          "lemma": "נָגַע",
+          "strong": "H5060",
+          "pron": "틱게우"
+        },
+        {
+          "word": "בְּנִבְלָתָ֖ם",
+          "lemma": "נְבֵלָה",
+          "strong": "H5038",
+          "pron": "브닙라트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 11:24",
+        "leviticus 11:27",
+        "leviticus 11:36",
+        "leviticus 11:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַנֹּגֵ֥עַ בְּנִבְלָתָ֖ם יִטְמָ֥א",
+      "pron": "틱게우 브닙라트 딤메",
+      "lemmas": [
+        "נָגַע",
+        "נְבֵלָה",
+        "טָמֵא"
+      ],
+      "words": [
+        {
+          "word": "הַנֹּגֵ֥עַ",
+          "lemma": "נָגַע",
+          "strong": "H5060",
+          "pron": "틱게우"
+        },
+        {
+          "word": "בְּנִבְלָתָ֖ם",
+          "lemma": "נְבֵלָה",
+          "strong": "H5038",
+          "pron": "브닙라트"
+        },
+        {
+          "word": "יִטְמָ֥א",
+          "lemma": "טָמֵא",
+          "strong": "H2930",
+          "pron": "딤메"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 11:24",
+        "leviticus 11:27",
+        "leviticus 11:36",
+        "leviticus 11:39"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

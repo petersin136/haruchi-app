@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁבַר",
-  "pron": "십바렛타",
+  "pron": "리솁보르",
   "strong": "H7665",
   "posKo": "동사",
   "root": null,
@@ -8,45 +8,138 @@
     {
       "lemma": "מִשְׁבֵּר",
       "strong": "H4866",
-      "pron": "",
+      "pron": "마솁베르",
       "glossKo": "구멍"
     },
     {
       "lemma": "מִשְׁבָּר",
       "strong": "H4867",
-      "pron": "미솁바레카",
-      "glossKo": "너의 큰 파도"
+      "pron": "미솁베레",
+      "glossKo": "큰 파도"
     },
     {
       "lemma": "שֶׁבֶר",
       "strong": "H7667",
-      "pron": "셰바레하",
-      "glossKo": "그녀의 파괴"
+      "pron": "셰베르",
+      "glossKo": "파괴"
     },
     {
       "lemma": "שִׁבְרוֹן",
       "strong": "H7670",
-      "pron": "",
+      "pron": "십바론",
       "glossKo": "파괴"
     },
     {
       "lemma": "תְּבַר",
       "strong": "H8406",
-      "pron": "",
+      "pron": "테비라",
       "glossKo": "깨다(아람)"
     }
   ],
   "defEn": "burst",
   "defKo": "",
-  "countOT": 22,
+  "countOT": 149,
   "byBook": {
+    "jeremiah": 28,
+    "ezekiel": 21,
     "psalms": 21,
-    "genesis": 1
+    "isaiah": 14,
+    "exodus": 9,
+    "daniel": 8,
+    "leviticus": 7,
+    "chronicles2": 6,
+    "job": 5,
+    "kings1": 5,
+    "deuteronomy": 4,
+    "kings2": 4,
+    "lamentations": 3,
+    "proverbs": 3,
+    "hosea": 2,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "genesis": 1,
+    "jonah": 1,
+    "judges": 1,
+    "nahum": 1,
+    "numbers": 1,
+    "samuel1": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
+      "hebrew": "וְשִׁבַּר֙ אֶת",
+      "pron": "리솁보르 에트",
+      "lemmas": [
+        "שָׁבַר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְשִׁבַּר֙",
+          "lemma": "שָׁבַר",
+          "strong": "H7665",
+          "pron": "리솁보르"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "exodus 32:19",
+        "exodus 34:13",
+        "leviticus 26:19",
+        "deuteronomy 12:3",
+        "kings1 13:28",
+        "kings2 18:4",
+        "kings2 23:14",
+        "chronicles2 14:3",
+        "chronicles2 23:17",
+        "jeremiah 19:11",
+        "jeremiah 28:2",
+        "jeremiah 28:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי נשברה",
+      "pron": "키 리솁보르",
+      "lemmas": [
+        "כִּי",
+        "שָׁבַר"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "נשברה",
+          "lemma": "שָׁבַר",
+          "strong": "H7665",
+          "pron": "리솁보르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "kings1 22:48",
+        "chronicles2 14:13",
+        "psalms 107:16",
+        "isaiah 14:29",
+        "jeremiah 22:20",
+        "jeremiah 28:4",
+        "jeremiah 48:38"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "לְנִשְׁבְּרֵי לֵ֑ב",
-      "pron": "십바렛타 브립비위",
+      "pron": "리솁보르 립보",
       "lemmas": [
         "שָׁבַר",
         "לֵב"
@@ -56,21 +149,93 @@
           "word": "לְנִשְׁבְּרֵי",
           "lemma": "שָׁבַר",
           "strong": "H7665",
-          "pron": "십바렛타"
+          "pron": "리솁보르"
         },
         {
           "word": "לֵ֑ב",
           "lemma": "לֵב",
           "strong": "H3820",
-          "pron": "브립비위"
+          "pron": "립보"
         }
       ],
-      "count": 4,
+      "count": 7,
       "refs": [
         "psalms 34:18",
         "psalms 51:17",
         "psalms 69:20",
-        "psalms 147:3"
+        "psalms 147:3",
+        "isaiah 61:1",
+        "jeremiah 23:9",
+        "ezekiel 27:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּשִׁבְרִ֣י מַטֵּה",
+      "pron": "리솁보르 우맏데카",
+      "lemmas": [
+        "שָׁבַר",
+        "מַטֶּה"
+      ],
+      "words": [
+        {
+          "word": "בְּשִׁבְרִ֣י",
+          "lemma": "שָׁבַר",
+          "strong": "H7665",
+          "pron": "리솁보르"
+        },
+        {
+          "word": "מַטֵּה",
+          "lemma": "מַטֶּה",
+          "strong": "H4294",
+          "pron": "우맏데카"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 26:26",
+        "jeremiah 48:17",
+        "ezekiel 4:16",
+        "ezekiel 5:16",
+        "ezekiel 14:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְשִׁבַּרְתֶּם֙ אֶת מַצֵּ֣בֹתָ֔ם",
+      "pron": "리솁보르 에트 맛체바",
+      "lemmas": [
+        "שָׁבַר",
+        "אֵת",
+        "מַצֵּבָה"
+      ],
+      "words": [
+        {
+          "word": "וְשִׁבַּרְתֶּם֙",
+          "lemma": "שָׁבַר",
+          "strong": "H7665",
+          "pron": "리솁보르"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מַצֵּ֣בֹתָ֔ם",
+          "lemma": "מַצֵּבָה",
+          "strong": "H4676",
+          "pron": "맛체바"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 12:3",
+        "kings2 18:4",
+        "kings2 23:14",
+        "chronicles2 14:3",
+        "jeremiah 43:13"
       ],
       "glossKo": ""
     }

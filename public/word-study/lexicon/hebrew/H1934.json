@@ -1,8 +1,8 @@
 {
   "lemma": "הָוָא",
-  "pron": "하바",
+  "pron": "레헤베",
   "strong": "H1934",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "הָוָא",
     "strong": "H1933",
@@ -18,19 +18,191 @@
     {
       "lemma": "הַוָּה",
       "strong": "H1942",
-      "pron": "하우오트",
-      "glossKo": "재앙"
+      "pron": "베하바티",
+      "glossKo": "나의 재앙"
     },
     {
       "lemma": "הָיָה",
       "strong": "H1961",
-      "pron": "브하아",
+      "pron": "하에타",
       "glossKo": "되다"
     }
   ],
   "defEn": "exist",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 71,
+  "byBook": {
+    "daniel": 55,
+    "ezra": 16
+  },
+  "phrases": [
+    {
+      "hebrew": "דִּ֥י לֶהֱוֵ֖א",
+      "pron": "드흐브 레헤베",
+      "lemmas": [
+        "דִּי",
+        "הָוָא"
+      ],
+      "words": [
+        {
+          "word": "דִּ֥י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "לֶהֱוֵ֖א",
+          "lemma": "הָוָא",
+          "strong": "H1934",
+          "pron": "레헤베"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "ezra 5:11",
+        "ezra 6:10",
+        "ezra 7:25",
+        "daniel 2:28",
+        "daniel 2:29",
+        "daniel 2:45",
+        "daniel 5:19",
+        "daniel 5:29",
+        "daniel 6:1",
+        "daniel 6:2",
+        "daniel 6:10",
+        "daniel 7:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָזֵ֣ה הֲוֵ֔ית",
+      "pron": "르메헤제 레헤베",
+      "lemmas": [
+        "חֲזָא",
+        "הָוָא"
+      ],
+      "words": [
+        {
+          "word": "חָזֵ֣ה",
+          "lemma": "חֲזָא",
+          "strong": "H2370",
+          "pron": "르메헤제"
+        },
+        {
+          "word": "הֲוֵ֔ית",
+          "lemma": "הָוָא",
+          "strong": "H1934",
+          "pron": "레헤베"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "daniel 2:31",
+        "daniel 2:34",
+        "daniel 4:10",
+        "daniel 4:13",
+        "daniel 7:2",
+        "daniel 7:4",
+        "daniel 7:6",
+        "daniel 7:7",
+        "daniel 7:9",
+        "daniel 7:11",
+        "daniel 7:13",
+        "daniel 7:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֲוָ֤ה צָבֵא֙ הֲוָ֣ה",
+      "pron": "레헤베 이쳅베 레헤베",
+      "lemmas": [
+        "הָוָא",
+        "צְבָא",
+        "הָוָא"
+      ],
+      "words": [
+        {
+          "word": "הֲוָ֤ה",
+          "lemma": "הָוָא",
+          "strong": "H1934",
+          "pron": "레헤베"
+        },
+        {
+          "word": "צָבֵא֙",
+          "lemma": "צְבָא",
+          "strong": "H6634",
+          "pron": "이쳅베"
+        },
+        {
+          "word": "הֲוָ֣ה",
+          "lemma": "הָוָא",
+          "strong": "H1934",
+          "pron": "레헤베"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "daniel 5:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֲוֵ֡ית עַד֩",
+      "pron": "레헤베 앋",
+      "lemmas": [
+        "הָוָא",
+        "עַד"
+      ],
+      "words": [
+        {
+          "word": "הֲוֵ֡ית",
+          "lemma": "הָוָא",
+          "strong": "H1934",
+          "pron": "레헤베"
+        },
+        {
+          "word": "עַד֩",
+          "lemma": "עַד",
+          "strong": "H5705",
+          "pron": "앋"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 2:34",
+        "daniel 7:4",
+        "daniel 7:9",
+        "daniel 7:11",
+        "daniel 7:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֲוָ֤ה צָבֵא֙",
+      "pron": "레헤베 이쳅베",
+      "lemmas": [
+        "הָוָא",
+        "צְבָא"
+      ],
+      "words": [
+        {
+          "word": "הֲוָ֤ה",
+          "lemma": "הָוָא",
+          "strong": "H1934",
+          "pron": "레헤베"
+        },
+        {
+          "word": "צָבֵא֙",
+          "lemma": "צְבָא",
+          "strong": "H6634",
+          "pron": "이쳅베"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 5:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

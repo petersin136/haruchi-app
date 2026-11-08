@@ -1,6 +1,6 @@
 {
   "lemma": "מָלֵא",
-  "pron": "말레",
+  "pron": "우밀우",
   "strong": "H4390",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "יִמְלָא",
       "strong": "H3229",
-      "pron": "",
+      "pron": "임라",
       "glossKo": "임라"
     },
     {
       "lemma": "מְלָא",
       "strong": "H4391",
-      "pron": "",
+      "pron": "우멜라트",
       "glossKo": "채우다(아람)"
     },
     {
@@ -26,43 +26,73 @@
     {
       "lemma": "מְלֹא",
       "strong": "H4393",
-      "pron": "우멜로아흐",
-      "glossKo": "그녀의 충만"
+      "pron": "멜로",
+      "glossKo": "충만"
     },
     {
       "lemma": "מִלֻּא",
       "strong": "H4394",
-      "pron": "",
+      "pron": "밀루임",
       "glossKo": "취임"
     },
     {
       "lemma": "מִלֵּאת",
       "strong": "H4402",
-      "pron": "",
+      "pron": "밀레트",
       "glossKo": "충만"
     }
   ],
   "defEn": "fill; be full of",
   "defKo": "",
-  "countOT": 38,
+  "countOT": 250,
   "byBook": {
+    "ezekiel": 26,
+    "exodus": 23,
+    "isaiah": 22,
+    "jeremiah": 22,
     "psalms": 22,
-    "genesis": 16
+    "job": 17,
+    "genesis": 16,
+    "kings1": 12,
+    "chronicles2": 11,
+    "kings2": 10,
+    "leviticus": 9,
+    "numbers": 7,
+    "proverbs": 7,
+    "ecclesiastes": 5,
+    "esther": 5,
+    "joshua": 5,
+    "chronicles1": 3,
+    "judges": 3,
+    "samuel1": 3,
+    "zechariah": 3,
+    "daniel": 2,
+    "deuteronomy": 2,
+    "habakkuk": 2,
+    "joel": 2,
+    "micah": 2,
+    "samuel2": 2,
+    "songofsolomon": 2,
+    "ezra": 1,
+    "haggai": 1,
+    "lamentations": 1,
+    "nahum": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "וּמִלְא֥וּ אֶת",
-      "pron": "말레 에트",
+      "hebrew": "מָלֵ֖א אֶת",
+      "pron": "우밀우 에트",
       "lemmas": [
         "מָלֵא",
         "אֵת"
       ],
       "words": [
         {
-          "word": "וּמִלְא֥וּ",
+          "word": "מָלֵ֖א",
           "lemma": "מָלֵא",
           "strong": "H4390",
-          "pron": "말레"
+          "pron": "우밀우"
         },
         {
           "word": "אֶת",
@@ -71,141 +101,171 @@
           "pron": "에트"
         }
       ],
-      "count": 7,
+      "count": 42,
       "refs": [
-        "psalms 127:5",
         "genesis 1:22",
         "genesis 1:28",
         "genesis 9:1",
         "genesis 21:19",
         "genesis 42:25",
-        "genesis 44:1"
+        "genesis 44:1",
+        "exodus 2:16",
+        "exodus 28:41",
+        "exodus 29:29",
+        "exodus 29:33",
+        "exodus 31:3",
+        "exodus 35:31"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "מָלְאָ֥ה הָאָֽרֶץ",
-      "pron": "말레 에레츠",
-      "lemmas": [
-        "מָלֵא",
-        "אֶרֶץ"
-      ],
-      "words": [
-        {
-          "word": "מָלְאָ֥ה",
-          "lemma": "מָלֵא",
-          "strong": "H4390",
-          "pron": "말레"
-        },
-        {
-          "word": "הָאָֽרֶץ",
-          "lemma": "אֶרֶץ",
-          "strong": "H776",
-          "pron": "에레츠"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "psalms 33:5",
-        "psalms 80:9",
-        "psalms 104:24",
-        "psalms 119:64",
-        "genesis 6:11",
-        "genesis 6:13"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיִּמְלְא֥וּ יָמֶ֖יהָ",
-      "pron": "말레 아욤",
+      "hebrew": "יִמְלְא֖וּ יְמֵ֣י",
+      "pron": "우밀우 욤",
       "lemmas": [
         "מָלֵא",
         "יוֹם"
       ],
       "words": [
         {
-          "word": "וַיִּמְלְא֥וּ",
+          "word": "יִמְלְא֖וּ",
           "lemma": "מָלֵא",
           "strong": "H4390",
-          "pron": "말레"
+          "pron": "우밀우"
         },
         {
-          "word": "יָמֶ֖יהָ",
+          "word": "יְמֵ֣י",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "아욤"
+          "pron": "욤"
         }
       ],
-      "count": 3,
+      "count": 19,
       "refs": [
         "genesis 25:24",
         "genesis 29:21",
-        "genesis 50:3"
+        "genesis 50:3",
+        "leviticus 8:33",
+        "leviticus 12:4",
+        "leviticus 12:6",
+        "numbers 6:5",
+        "numbers 6:13",
+        "samuel1 18:26",
+        "samuel2 7:12",
+        "kings1 8:24",
+        "chronicles1 17:11"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וּרְב֗וּ וּמִלְא֤וּ",
-      "pron": "이렙부 말레",
+      "hebrew": "וַתִּמָּלֵ֥א הָאָ֖רֶץ",
+      "pron": "우밀우 하아레츠",
       "lemmas": [
-        "רָבָה",
+        "מָלֵא",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "וַתִּמָּלֵ֥א",
+          "lemma": "מָלֵא",
+          "strong": "H4390",
+          "pron": "우밀우"
+        },
+        {
+          "word": "הָאָ֖רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "genesis 6:11",
+        "genesis 6:13",
+        "exodus 1:7",
+        "leviticus 19:29",
+        "kings2 3:20",
+        "psalms 33:5",
+        "psalms 80:9",
+        "psalms 104:24",
+        "psalms 119:64",
+        "isaiah 2:7",
+        "isaiah 2:8",
+        "isaiah 11:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי מָלֵ֥א",
+      "pron": "키 우밀우",
+      "lemmas": [
+        "כִּי",
         "מָלֵא"
       ],
       "words": [
         {
-          "word": "וּרְב֗וּ",
-          "lemma": "רָבָה",
-          "strong": "H7235",
-          "pron": "이렙부"
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
         },
         {
-          "word": "וּמִלְא֤וּ",
+          "word": "מָלֵ֥א",
           "lemma": "מָלֵא",
           "strong": "H4390",
-          "pron": "말레"
+          "pron": "우밀우"
         }
       ],
-      "count": 3,
+      "count": 18,
       "refs": [
-        "genesis 1:22",
-        "genesis 1:28",
-        "genesis 9:1"
+        "genesis 6:13",
+        "genesis 29:21",
+        "numbers 32:12",
+        "joshua 14:9",
+        "samuel2 7:12",
+        "kings1 8:11",
+        "chronicles1 17:11",
+        "chronicles2 5:14",
+        "chronicles2 7:2",
+        "job 32:18",
+        "psalms 74:20",
+        "isaiah 2:6"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וּרְב֗וּ וּמִלְא֤וּ אֶת",
-      "pron": "이렙부 말레 에트",
+      "hebrew": "אֲשֶׁר מִלֵּ֥א",
+      "pron": "아셰르 우밀우",
       "lemmas": [
-        "רָבָה",
-        "מָלֵא",
-        "אֵת"
+        "אֲשֶׁר",
+        "מָלֵא"
       ],
       "words": [
         {
-          "word": "וּרְב֗וּ",
-          "lemma": "רָבָה",
-          "strong": "H7235",
-          "pron": "이렙부"
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
         },
         {
-          "word": "וּמִלְא֤וּ",
+          "word": "מִלֵּ֥א",
           "lemma": "מָלֵא",
           "strong": "H4390",
-          "pron": "말레"
-        },
-        {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
+          "pron": "우밀우"
         }
       ],
-      "count": 3,
+      "count": 11,
       "refs": [
-        "genesis 1:22",
-        "genesis 1:28",
-        "genesis 9:1"
+        "exodus 28:3",
+        "leviticus 16:32",
+        "numbers 3:3",
+        "deuteronomy 1:36",
+        "joshua 9:13",
+        "joshua 14:14",
+        "kings2 21:16",
+        "chronicles2 16:14",
+        "ezra 9:11",
+        "esther 7:5",
+        "psalms 127:5"
       ],
       "glossKo": ""
     }

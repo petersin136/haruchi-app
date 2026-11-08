@@ -1,6 +1,6 @@
 {
   "lemma": "יָמִין",
-  "pron": "미위미니위",
+  "pron": "아야민",
   "strong": "H3225",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "אָמַן",
       "strong": "H541",
-      "pron": "",
+      "pron": "타아미누",
       "glossKo": "오른편으로 가다"
     },
     {
@@ -24,7 +24,7 @@
     {
       "lemma": "יְמִינִי",
       "strong": "H3227",
-      "pron": "",
+      "pron": "예미니",
       "glossKo": "오른쪽의"
     },
     {
@@ -42,168 +42,218 @@
     {
       "lemma": "יְמָנִי",
       "strong": "H3233",
-      "pron": "",
+      "pron": "아예마니트",
       "glossKo": "오른쪽"
     }
   ],
   "defEn": "right; stronger; south",
   "defKo": "",
-  "countOT": 49,
+  "countOT": 141,
   "byBook": {
     "psalms": 42,
-    "genesis": 7
+    "isaiah": 9,
+    "genesis": 7,
+    "judges": 7,
+    "chronicles2": 6,
+    "deuteronomy": 6,
+    "exodus": 6,
+    "zechariah": 6,
+    "ezekiel": 5,
+    "leviticus": 5,
+    "samuel1": 5,
+    "samuel2": 5,
+    "kings1": 4,
+    "kings2": 4,
+    "job": 3,
+    "joshua": 3,
+    "numbers": 3,
+    "proverbs": 3,
+    "lamentations": 2,
+    "nehemiah": 2,
+    "songofsolomon": 2,
+    "chronicles1": 1,
+    "daniel": 1,
+    "ecclesiastes": 1,
+    "habakkuk": 1,
+    "jeremiah": 1,
+    "jonah": 1
   },
   "phrases": [
     {
-      "hebrew": "בְּיַד יְמִינִֽי",
-      "pron": "야데카 미위미니위",
+      "hebrew": "יָמִ֥ין וּשְׂמֹֽאול",
+      "pron": "아야민 아세몰",
+      "lemmas": [
+        "יָמִין",
+        "שְׂמֹאול"
+      ],
+      "words": [
+        {
+          "word": "יָמִ֥ין",
+          "lemma": "יָמִין",
+          "strong": "H3225",
+          "pron": "아야민"
+        },
+        {
+          "word": "וּשְׂמֹֽאול",
+          "lemma": "שְׂמֹאול",
+          "strong": "H8040",
+          "pron": "아세몰"
+        }
+      ],
+      "count": 24,
+      "refs": [
+        "genesis 48:13",
+        "exodus 14:22",
+        "exodus 14:29",
+        "numbers 20:17",
+        "numbers 22:26",
+        "deuteronomy 2:27",
+        "deuteronomy 5:32",
+        "deuteronomy 17:11",
+        "deuteronomy 17:20",
+        "deuteronomy 28:14",
+        "joshua 1:7",
+        "joshua 23:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל יְמִינ֑וֹ",
+      "pron": "알 아야민",
+      "lemmas": [
+        "עַל",
+        "יָמִין"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "יְמִינ֑וֹ",
+          "lemma": "יָמִין",
+          "strong": "H3225",
+          "pron": "아야민"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "genesis 24:49",
+        "samuel2 2:19",
+        "samuel2 2:21",
+        "kings1 22:19",
+        "chronicles1 6:39",
+        "chronicles2 18:18",
+        "nehemiah 8:4",
+        "job 30:12",
+        "psalms 109:6",
+        "psalms 110:5",
+        "isaiah 9:20",
+        "zechariah 3:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יַד יְמִינ֑וֹ",
+      "pron": "야도 아야민",
       "lemmas": [
         "יָד",
         "יָמִין"
       ],
       "words": [
         {
-          "word": "בְּיַד",
+          "word": "יַד",
           "lemma": "יָד",
           "strong": "H3027",
-          "pron": "야데카"
+          "pron": "야도"
         },
         {
-          "word": "יְמִינִֽי",
+          "word": "יְמִינ֑וֹ",
           "lemma": "יָמִין",
           "strong": "H3225",
-          "pron": "미위미니위"
+          "pron": "아야민"
         }
       ],
-      "count": 4,
+      "count": 10,
       "refs": [
+        "genesis 48:17",
+        "judges 3:15",
+        "judges 7:20",
+        "judges 20:16",
+        "samuel2 20:9",
         "psalms 73:23",
         "psalms 74:11",
         "psalms 121:5",
-        "genesis 48:17"
+        "jeremiah 22:24",
+        "ezekiel 39:3"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הוֹשִׁ֖יעָה יְמִֽינְךָ֣",
-      "pron": "호시에니 미위미니위",
-      "lemmas": [
-        "יָשַׁע",
-        "יָמִין"
-      ],
-      "words": [
-        {
-          "word": "הוֹשִׁ֖יעָה",
-          "lemma": "יָשַׁע",
-          "strong": "H3467",
-          "pron": "호시에니"
-        },
-        {
-          "word": "יְמִֽינְךָ֣",
-          "lemma": "יָמִין",
-          "strong": "H3225",
-          "pron": "미위미니위"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 60:5",
-        "psalms 98:1",
-        "psalms 108:6",
-        "psalms 138:7"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וִֽ֝ימִינָ֗ם יְמִ֣ין",
-      "pron": "미위미니위 미위미니위",
-      "lemmas": [
-        "יָמִין",
-        "יָמִין"
-      ],
-      "words": [
-        {
-          "word": "וִֽ֝ימִינָ֗ם",
-          "lemma": "יָמִין",
-          "strong": "H3225",
-          "pron": "미위미니위"
-        },
-        {
-          "word": "יְמִ֣ין",
-          "lemma": "יָמִין",
-          "strong": "H3225",
-          "pron": "미위미니위"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 144:8",
-        "psalms 144:11"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וִֽ֝ימִינָ֗ם יְמִ֣ין שָֽׁקֶר",
-      "pron": "미위미니위 미위미니위 샤케르",
-      "lemmas": [
-        "יָמִין",
-        "יָמִין",
-        "שֶׁקֶר"
-      ],
-      "words": [
-        {
-          "word": "וִֽ֝ימִינָ֗ם",
-          "lemma": "יָמִין",
-          "strong": "H3225",
-          "pron": "미위미니위"
-        },
-        {
-          "word": "יְמִ֣ין",
-          "lemma": "יָמִין",
-          "strong": "H3225",
-          "pron": "미위미니위"
-        },
-        {
-          "word": "שָֽׁקֶר",
-          "lemma": "שֶׁקֶר",
-          "strong": "H8267",
-          "pron": "샤케르"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 144:8",
-        "psalms 144:11"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יְמִינֶ֑ךָ וְעַל",
-      "pron": "미위미니위 알",
+      "hebrew": "יְמִינ֛וֹ עַל",
+      "pron": "아야민 알",
       "lemmas": [
         "יָמִין",
         "עַל"
       ],
       "words": [
         {
-          "word": "יְמִינֶ֑ךָ",
+          "word": "יְמִינ֛וֹ",
           "lemma": "יָמִין",
           "strong": "H3225",
-          "pron": "미위미니위"
+          "pron": "아야민"
         },
         {
-          "word": "וְעַל",
+          "word": "עַל",
           "lemma": "עַל",
           "strong": "H5921",
           "pron": "알"
         }
       ],
-      "count": 4,
+      "count": 7,
       "refs": [
+        "genesis 48:17",
+        "genesis 48:18",
+        "samuel2 2:19",
+        "nehemiah 12:31",
         "psalms 80:15",
         "psalms 80:17",
-        "genesis 48:17",
-        "genesis 48:18"
+        "zechariah 12:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שׁ֣וֹק הַיָּמִ֔ין",
+      "pron": "쇼크 아야민",
+      "lemmas": [
+        "שׁוֹק",
+        "יָמִין"
+      ],
+      "words": [
+        {
+          "word": "שׁ֣וֹק",
+          "lemma": "שׁוֹק",
+          "strong": "H7785",
+          "pron": "쇼크"
+        },
+        {
+          "word": "הַיָּמִ֔ין",
+          "lemma": "יָמִין",
+          "strong": "H3225",
+          "pron": "아야민"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 29:22",
+        "leviticus 7:32",
+        "leviticus 7:33",
+        "leviticus 8:25",
+        "leviticus 8:26",
+        "leviticus 9:21",
+        "numbers 18:18"
       ],
       "glossKo": ""
     }

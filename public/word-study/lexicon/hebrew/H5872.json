@@ -1,8 +1,8 @@
 {
   "lemma": "עֵין גֶּדִי",
-  "pron": "엔게디",
+  "pron": "브엔",
   "strong": "H5872",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עַיִן",
     "strong": "H5869",
@@ -12,43 +12,82 @@
     {
       "lemma": "מַעְיָן",
       "strong": "H4599",
-      "pron": "마에안",
+      "pron": "마에에노트",
       "glossKo": "샘"
     },
     {
       "lemma": "עָוַן",
       "strong": "H5770",
-      "pron": "",
+      "pron": "오엔",
       "glossKo": "엿보다"
     },
     {
       "lemma": "עַיִן",
       "strong": "H5869",
-      "pron": "에네카",
-      "glossKo": "너의 눈"
+      "pron": "에네켐",
+      "glossKo": "너희의 눈"
     },
     {
       "lemma": "עַיִן",
       "strong": "H5870",
-      "pron": "",
+      "pron": "브엔",
       "glossKo": "눈(아람)"
     },
     {
       "lemma": "עַיִן",
       "strong": "H5871",
-      "pron": "",
+      "pron": "라아인",
       "glossKo": "아인"
     },
     {
       "lemma": "עֵין גַּנִּים",
       "strong": "H5873",
-      "pron": "",
+      "pron": "브엔",
       "glossKo": "엔간님"
     }
   ],
   "defEn": "En-Gedi",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 12,
+  "byBook": {
+    "samuel1": 4,
+    "chronicles2": 2,
+    "ezekiel": 2,
+    "joshua": 2,
+    "songofsolomon": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "עֵ֥ין גֶּֽדִי",
+      "pron": "브엔 브엔",
+      "lemmas": [
+        "עֵין גֶּדִי",
+        "עֵין גֶּדִי"
+      ],
+      "words": [
+        {
+          "word": "עֵ֥ין",
+          "lemma": "עֵין גֶּדִי",
+          "strong": "H5872",
+          "pron": "브엔"
+        },
+        {
+          "word": "גֶּֽדִי",
+          "lemma": "עֵין גֶּדִי",
+          "strong": "H5872",
+          "pron": "브엔"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "joshua 15:62",
+        "samuel1 23:29",
+        "samuel1 24:1",
+        "chronicles2 20:2",
+        "songofsolomon 1:14",
+        "ezekiel 47:10"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

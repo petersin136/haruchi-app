@@ -1,32 +1,97 @@
 {
   "lemma": "הָדַר",
-  "pron": "하다르",
+  "pron": "테헫다르",
   "strong": "H1921",
-  "posKo": "",
+  "posKo": "동사",
   "root": null,
   "family": [
     {
       "lemma": "הֲדַר",
       "strong": "H1922",
-      "pron": "",
+      "pron": "브핟데레트",
       "glossKo": "영광스럽게 하다(아람)"
     },
     {
       "lemma": "הֶדֶר",
       "strong": "H1925",
-      "pron": "",
+      "pron": "헤데르",
       "glossKo": "영예"
     },
     {
       "lemma": "הָדָר",
       "strong": "H1926",
-      "pron": "브하다르",
+      "pron": "하다르",
       "glossKo": "영광"
     }
   ],
   "defEn": "swell",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "isaiah": 2,
+    "leviticus": 2,
+    "exodus": 1,
+    "lamentations": 1,
+    "proverbs": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "לֹ֥א תֶהְדַּ֖ר",
+      "pron": "로 테헫다르",
+      "lemmas": [
+        "לֹא",
+        "הָדַר"
+      ],
+      "words": [
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תֶהְדַּ֖ר",
+          "lemma": "הָדַר",
+          "strong": "H1921",
+          "pron": "테헫다르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 23:3",
+        "leviticus 19:15",
+        "lamentations 5:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תֶהְדַּ֖ר פְּנֵ֣י",
+      "pron": "테헫다르 페네",
+      "lemmas": [
+        "הָדַר",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "תֶהְדַּ֖ר",
+          "lemma": "הָדַר",
+          "strong": "H1921",
+          "pron": "테헫다르"
+        },
+        {
+          "word": "פְּנֵ֣י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 19:15",
+        "leviticus 19:32",
+        "proverbs 25:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

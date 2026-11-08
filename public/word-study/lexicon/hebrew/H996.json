@@ -12,46 +12,76 @@
     {
       "lemma": "בּוּנָה",
       "strong": "H946",
-      "pron": "",
+      "pron": "우부나",
       "glossKo": "부나"
     },
     {
       "lemma": "בִּין",
       "strong": "H995",
-      "pron": "비나",
+      "pron": "나본",
       "glossKo": "깨닫다"
     },
     {
       "lemma": "בֵּין",
       "strong": "H997",
-      "pron": "",
+      "pron": "벤",
       "glossKo": "사이에(아람)"
     },
     {
       "lemma": "בִּינָה",
       "strong": "H998",
-      "pron": "",
-      "glossKo": "총명"
+      "pron": "우비나테켐",
+      "glossKo": "너희의 총명"
     },
     {
       "lemma": "בֵּנַיִם",
       "strong": "H1143",
-      "pron": "",
+      "pron": "아베나임",
       "glossKo": "사잇 공간"
     },
     {
       "lemma": "יָבִין",
       "strong": "H2985",
-      "pron": "크야빈",
+      "pron": "야빈",
       "glossKo": "야빈"
     }
   ],
   "defEn": "between",
   "defKo": "",
-  "countOT": 79,
+  "countOT": 410,
   "byBook": {
     "genesis": 76,
-    "psalms": 3
+    "ezekiel": 46,
+    "exodus": 35,
+    "kings1": 26,
+    "samuel1": 24,
+    "joshua": 22,
+    "judges": 19,
+    "numbers": 19,
+    "leviticus": 18,
+    "deuteronomy": 17,
+    "chronicles2": 16,
+    "samuel2": 12,
+    "zechariah": 12,
+    "kings2": 10,
+    "jeremiah": 9,
+    "isaiah": 7,
+    "job": 7,
+    "daniel": 4,
+    "malachi": 4,
+    "proverbs": 4,
+    "songofsolomon": 4,
+    "psalms": 3,
+    "ruth": 3,
+    "chronicles1": 2,
+    "hosea": 2,
+    "lamentations": 2,
+    "nehemiah": 2,
+    "esther": 1,
+    "joel": 1,
+    "jonah": 1,
+    "micah": 1,
+    "obadiah": 1
   },
   "phrases": [
     {
@@ -75,7 +105,7 @@
           "pron": "벤"
         }
       ],
-      "count": 50,
+      "count": 116,
       "refs": [
         "genesis 3:15",
         "genesis 9:12",
@@ -120,20 +150,26 @@
           "pron": "벤"
         }
       ],
-      "count": 18,
+      "count": 36,
       "refs": [
         "genesis 9:12",
         "genesis 9:15",
         "genesis 13:8",
         "genesis 17:7",
         "genesis 17:10",
-        "genesis 26:28"
+        "genesis 26:28",
+        "joshua 3:4",
+        "joshua 8:11",
+        "joshua 22:27",
+        "samuel1 20:42",
+        "kings1 15:19",
+        "chronicles2 16:3"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בְּרִ֔ית בֵּינִ֖י וּבֵ֥ין",
-      "pron": "베리트오 벤 벤",
+      "hebrew": "בְּרִית֙ בֵּינִ֣י וּבֵינֶ֔ךָ",
+      "pron": "베리티 벤 벤",
       "lemmas": [
         "בְּרִית",
         "בֵּין",
@@ -141,83 +177,87 @@
       ],
       "words": [
         {
-          "word": "בְּרִ֔ית",
+          "word": "בְּרִית֙",
           "lemma": "בְּרִית",
           "strong": "H1285",
-          "pron": "베리트오"
+          "pron": "베리티"
         },
         {
-          "word": "בֵּינִ֖י",
+          "word": "בֵּינִ֣י",
           "lemma": "בֵּין",
           "strong": "H996",
           "pron": "벤"
         },
         {
-          "word": "וּבֵ֥ין",
+          "word": "וּבֵינֶ֔ךָ",
           "lemma": "בֵּין",
           "strong": "H996",
           "pron": "벤"
         }
       ],
-      "count": 8,
+      "count": 14,
       "refs": [
         "genesis 9:13",
         "genesis 17:2",
         "genesis 17:7",
-        "genesis 17:11"
+        "genesis 17:11",
+        "kings1 15:19",
+        "chronicles2 16:3",
+        "chronicles2 23:16"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וּבֵ֣ינֵיכֶ֔ם וּבֵ֛ין כָּל",
-      "pron": "벤 벤 브콜",
+      "hebrew": "יְהוָ֖ה בֵּינִ֥י",
+      "pron": "여호와 벤",
       "lemmas": [
-        "בֵּין",
-        "בֵּין",
-        "כֹּל"
+        "יְהֹוָה",
+        "בֵּין"
       ],
       "words": [
         {
-          "word": "וּבֵ֣ינֵיכֶ֔ם",
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "בֵּינִ֥י",
           "lemma": "בֵּין",
           "strong": "H996",
           "pron": "벤"
-        },
-        {
-          "word": "וּבֵ֛ין",
-          "lemma": "בֵּין",
-          "strong": "H996",
-          "pron": "벤"
-        },
-        {
-          "word": "כָּל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
         }
       ],
-      "count": 6,
+      "count": 12,
       "refs": [
-        "genesis 9:12",
-        "genesis 9:15",
-        "genesis 9:17"
+        "genesis 16:5",
+        "genesis 31:49",
+        "exodus 9:4",
+        "exodus 11:7",
+        "leviticus 26:46",
+        "deuteronomy 5:5",
+        "joshua 22:25",
+        "samuel1 20:23",
+        "samuel1 24:12",
+        "kings2 11:17",
+        "ezekiel 8:16"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לְעֵ֖ד בֵּינִ֥י וּבֵינֶֽךָ",
-      "pron": "에데 벤 벤",
+      "hebrew": "יְהוָ֖ה בֵּינִ֥י וּבֵינֶֽיׄךָ",
+      "pron": "여호와 벤 벤",
       "lemmas": [
-        "עֵד",
+        "יְהֹוָה",
         "בֵּין",
         "בֵּין"
       ],
       "words": [
         {
-          "word": "לְעֵ֖ד",
-          "lemma": "עֵד",
-          "strong": "H5707",
-          "pron": "에데"
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         },
         {
           "word": "בֵּינִ֥י",
@@ -226,17 +266,20 @@
           "pron": "벤"
         },
         {
-          "word": "וּבֵינֶֽךָ",
+          "word": "וּבֵינֶֽיׄךָ",
           "lemma": "בֵּין",
           "strong": "H996",
           "pron": "벤"
         }
       ],
-      "count": 6,
+      "count": 12,
       "refs": [
-        "genesis 31:44",
-        "genesis 31:48",
-        "genesis 31:50"
+        "genesis 16:5",
+        "genesis 31:49",
+        "leviticus 26:46",
+        "joshua 22:25",
+        "samuel1 20:23",
+        "samuel1 24:12"
       ],
       "glossKo": ""
     }

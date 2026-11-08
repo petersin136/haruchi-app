@@ -18,7 +18,7 @@
     {
       "lemma": "חוּל",
       "strong": "H2342",
-      "pron": "야힐루",
+      "pron": "바야헬",
       "glossKo": "산고"
     },
     {
@@ -30,27 +30,128 @@
     {
       "lemma": "חוֹל",
       "strong": "H2344",
-      "pron": "우크홀",
+      "pron": "브카홀",
       "glossKo": "모래"
     },
     {
       "lemma": "חַיִל",
       "strong": "H2428",
-      "pron": "하일",
-      "glossKo": "힘"
+      "pron": "헬람",
+      "glossKo": "그들의 힘"
     },
     {
       "lemma": "חָלָה",
       "strong": "H2470",
-      "pron": "바할로타므",
-      "glossKo": "그들에게 병들다"
+      "pron": "홀레",
+      "glossKo": "병들다"
     }
   ],
   "defEn": "throe",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 7,
   "byBook": {
+    "jeremiah": 3,
+    "exodus": 1,
+    "job": 1,
+    "micah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "חִ֖יל כַּיּוֹלֵדָֽה",
+      "pron": "힐 텔디",
+      "lemmas": [
+        "חִיל",
+        "יָלַד"
+      ],
+      "words": [
+        {
+          "word": "חִ֖יל",
+          "lemma": "חִיל",
+          "strong": "H2427",
+          "pron": "힐"
+        },
+        {
+          "word": "כַּיּוֹלֵדָֽה",
+          "lemma": "יָלַד",
+          "strong": "H3205",
+          "pron": "텔디"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 48:6",
+        "jeremiah 6:24",
+        "jeremiah 22:23",
+        "jeremiah 50:43",
+        "micah 4:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֶחֱזִיקַ֔תְנוּ חִ֖יל",
+      "pron": "바야하지쿠 힐",
+      "lemmas": [
+        "חָזַק",
+        "חִיל"
+      ],
+      "words": [
+        {
+          "word": "הֶחֱזִיקַ֔תְנוּ",
+          "lemma": "חָזַק",
+          "strong": "H2388",
+          "pron": "바야하지쿠"
+        },
+        {
+          "word": "חִ֖יל",
+          "lemma": "חִיל",
+          "strong": "H2427",
+          "pron": "힐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 6:24",
+        "jeremiah 50:43",
+        "micah 4:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֶחֱזִיקַ֔תְנוּ חִ֖יל כַּיּוֹלֵדָֽה",
+      "pron": "바야하지쿠 힐 텔디",
+      "lemmas": [
+        "חָזַק",
+        "חִיל",
+        "יָלַד"
+      ],
+      "words": [
+        {
+          "word": "הֶחֱזִיקַ֔תְנוּ",
+          "lemma": "חָזַק",
+          "strong": "H2388",
+          "pron": "바야하지쿠"
+        },
+        {
+          "word": "חִ֖יל",
+          "lemma": "חִיל",
+          "strong": "H2427",
+          "pron": "힐"
+        },
+        {
+          "word": "כַּיּוֹלֵדָֽה",
+          "lemma": "יָלַד",
+          "strong": "H3205",
+          "pron": "텔디"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 6:24",
+        "jeremiah 50:43",
+        "micah 4:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "טָהוֹר",
-  "pron": "데호로트",
+  "pron": "아데호라",
   "strong": "H2889",
   "posKo": "형용사",
   "root": {
@@ -12,56 +12,224 @@
     {
       "lemma": "טְהוֹר",
       "strong": "H2890",
-      "pron": "",
+      "pron": "데호르",
       "glossKo": "정결"
     },
     {
       "lemma": "טָהֵר",
       "strong": "H2891",
-      "pron": "다하레니",
-      "glossKo": "나를 정결하다"
+      "pron": "브힏다하루",
+      "glossKo": "정결하다"
     },
     {
       "lemma": "טֹהַר",
       "strong": "H2892",
-      "pron": "미데하르오",
-      "glossKo": "그의 맑음"
+      "pron": "라도하르",
+      "glossKo": "맑음"
     }
   ],
   "defEn": "pure",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 94,
   "byBook": {
+    "exodus": 28,
+    "leviticus": 21,
+    "numbers": 8,
+    "deuteronomy": 6,
     "genesis": 6,
-    "psalms": 3
+    "chronicles2": 4,
+    "proverbs": 4,
+    "ezekiel": 3,
+    "psalms": 3,
+    "job": 2,
+    "samuel1": 2,
+    "zechariah": 2,
+    "chronicles1": 1,
+    "ecclesiastes": 1,
+    "ezra": 1,
+    "isaiah": 1,
+    "malachi": 1
   },
   "phrases": [
     {
-      "hebrew": "הַבְּהֵמָ֣ה הַטְּהוֹרָ֗ה",
-      "pron": "바하모트 데호로트",
+      "hebrew": "זָהָ֣ב טָה֑וֹר",
+      "pron": "아자합 아데호라",
       "lemmas": [
-        "בְּהֵמָה",
+        "זָהָב",
         "טָהוֹר"
       ],
       "words": [
         {
-          "word": "הַבְּהֵמָ֣ה",
-          "lemma": "בְּהֵמָה",
-          "strong": "H929",
-          "pron": "바하모트"
+          "word": "זָהָ֣ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
         },
         {
-          "word": "הַטְּהוֹרָ֗ה",
+          "word": "טָה֑וֹר",
           "lemma": "טָהוֹר",
           "strong": "H2889",
-          "pron": "데호로트"
+          "pron": "아데호라"
         }
       ],
-      "count": 3,
+      "count": 27,
+      "refs": [
+        "exodus 25:11",
+        "exodus 25:17",
+        "exodus 25:24",
+        "exodus 25:29",
+        "exodus 25:31",
+        "exodus 25:36",
+        "exodus 25:38",
+        "exodus 25:39",
+        "exodus 28:14",
+        "exodus 28:22",
+        "exodus 28:36",
+        "exodus 30:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "טָה֥וֹר הֽוּא",
+      "pron": "아데호라 후",
+      "lemmas": [
+        "טָהוֹר",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "טָה֥וֹר",
+          "lemma": "טָהוֹר",
+          "strong": "H2889",
+          "pron": "아데호라"
+        },
+        {
+          "word": "הֽוּא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        }
+      ],
+      "count": 10,
       "refs": [
         "genesis 7:2",
-        "genesis 7:8",
-        "genesis 8:20"
+        "leviticus 11:37",
+        "leviticus 13:13",
+        "leviticus 13:17",
+        "leviticus 13:37",
+        "leviticus 13:39",
+        "leviticus 13:40",
+        "leviticus 13:41",
+        "numbers 5:28",
+        "samuel1 20:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַטָּמֵ֤א וְהַטָּהוֹר֙",
+      "pron": "다메 아데호라",
+      "lemmas": [
+        "טָמֵא",
+        "טָהוֹר"
+      ],
+      "words": [
+        {
+          "word": "הַטָּמֵ֤א",
+          "lemma": "טָמֵא",
+          "strong": "H2931",
+          "pron": "다메"
+        },
+        {
+          "word": "וְהַטָּהוֹר֙",
+          "lemma": "טָהוֹר",
+          "strong": "H2889",
+          "pron": "아데호라"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "leviticus 20:25",
+        "deuteronomy 12:15",
+        "deuteronomy 12:22",
+        "deuteronomy 15:22",
+        "ezekiel 22:26",
+        "ezekiel 44:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֹת֖וֹ זָהָ֣ב טָה֑וֹר",
+      "pron": "에트 아자합 아데호라",
+      "lemmas": [
+        "אֵת",
+        "זָהָב",
+        "טָהוֹר"
+      ],
+      "words": [
+        {
+          "word": "אֹת֖וֹ",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "זָהָ֣ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        },
+        {
+          "word": "טָה֑וֹר",
+          "lemma": "טָהוֹר",
+          "strong": "H2889",
+          "pron": "아데호라"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 25:11",
+        "exodus 25:24",
+        "exodus 30:3",
+        "exodus 37:11",
+        "exodus 37:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זָהָ֣ב טָה֑וֹר וְעָשִׂ֥יתָ",
+      "pron": "아자합 아데호라 바야아스",
+      "lemmas": [
+        "זָהָב",
+        "טָהוֹר",
+        "עָשָׂה"
+      ],
+      "words": [
+        {
+          "word": "זָהָ֣ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        },
+        {
+          "word": "טָה֑וֹר",
+          "lemma": "טָהוֹר",
+          "strong": "H2889",
+          "pron": "아데호라"
+        },
+        {
+          "word": "וְעָשִׂ֥יתָ",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 25:24",
+        "exodus 25:29",
+        "exodus 25:39",
+        "exodus 37:11",
+        "exodus 37:24"
       ],
       "glossKo": ""
     }

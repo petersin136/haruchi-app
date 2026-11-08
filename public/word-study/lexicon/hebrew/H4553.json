@@ -1,6 +1,6 @@
 {
   "lemma": "מִסְפֵּד",
-  "pron": "밋페디위",
+  "pron": "밋펟",
   "strong": "H4553",
   "posKo": "명사",
   "root": {
@@ -18,10 +18,48 @@
   ],
   "defEn": "lamentation",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 14,
   "byBook": {
+    "amos": 3,
+    "jeremiah": 2,
+    "zechariah": 2,
+    "esther": 1,
+    "ezekiel": 1,
     "genesis": 1,
+    "isaiah": 1,
+    "joel": 1,
+    "micah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּבְכִ֖י וּמִסְפֵּ֑ד",
+      "pron": "비베키 밋펟",
+      "lemmas": [
+        "בְּכִי",
+        "מִסְפֵּד"
+      ],
+      "words": [
+        {
+          "word": "וּבְכִ֖י",
+          "lemma": "בְּכִי",
+          "strong": "H1065",
+          "pron": "비베키"
+        },
+        {
+          "word": "וּמִסְפֵּ֑ד",
+          "lemma": "מִסְפֵּד",
+          "strong": "H4553",
+          "pron": "밋펟"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 4:3",
+        "isaiah 22:12",
+        "joel 2:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

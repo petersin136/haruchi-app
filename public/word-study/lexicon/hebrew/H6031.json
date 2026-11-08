@@ -1,6 +1,6 @@
 {
   "lemma": "עָנָה",
-  "pron": "인네티",
+  "pron": "브인누",
   "strong": "H6031",
   "posKo": "동사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "בַּעֲנָה",
       "strong": "H1196",
-      "pron": "",
+      "pron": "바아나",
       "glossKo": "바아나"
     },
     {
@@ -24,34 +24,225 @@
     {
       "lemma": "מַעֲנֶה",
       "strong": "H4617",
-      "pron": "",
+      "pron": "마아네",
       "glossKo": "응답"
     },
     {
       "lemma": "מַעֲנָה",
       "strong": "H4618",
-      "pron": "르믄브트므",
-      "glossKo": "그들의 고랑"
+      "pron": "마아나",
+      "glossKo": "고랑"
     },
     {
       "lemma": "עָנָה",
       "strong": "H6030",
-      "pron": "바야아네니",
-      "glossKo": "나를 응답하다"
+      "pron": "바야안",
+      "glossKo": "응답하다"
     },
     {
       "lemma": "עֲנָה",
       "strong": "H6032",
-      "pron": "브느느브",
+      "pron": "븐느브",
       "glossKo": "우리를 응답하다"
     }
   ],
   "defEn": "depress",
   "defKo": "",
-  "countOT": 21,
+  "countOT": 83,
   "byBook": {
     "psalms": 16,
-    "genesis": 5
+    "isaiah": 8,
+    "deuteronomy": 7,
+    "exodus": 6,
+    "samuel2": 6,
+    "genesis": 5,
+    "judges": 5,
+    "leviticus": 5,
+    "kings1": 4,
+    "numbers": 4,
+    "ecclesiastes": 3,
+    "ezekiel": 2,
+    "job": 2,
+    "lamentations": 2,
+    "nahum": 2,
+    "chronicles2": 1,
+    "daniel": 1,
+    "ezra": 1,
+    "kings2": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְעִנִּיתֶ֖ם אֶת",
+      "pron": "브인누 에트",
+      "lemmas": [
+        "עָנָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְעִנִּיתֶ֖ם",
+          "lemma": "עָנָה",
+          "strong": "H6031",
+          "pron": "브인누"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "genesis 15:13",
+        "genesis 31:50",
+        "exodus 1:12",
+        "exodus 22:23",
+        "leviticus 16:29",
+        "leviticus 16:31",
+        "leviticus 23:27",
+        "leviticus 23:32",
+        "numbers 29:7",
+        "deuteronomy 22:24",
+        "judges 19:24",
+        "samuel2 13:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֥א תְעַנּֽוּן",
+      "pron": "로 브인누",
+      "lemmas": [
+        "לֹא",
+        "עָנָה"
+      ],
+      "words": [
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תְעַנּֽוּן",
+          "lemma": "עָנָה",
+          "strong": "H6031",
+          "pron": "브인누"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 22:22",
+        "leviticus 23:29",
+        "job 37:23",
+        "psalms 89:22",
+        "isaiah 31:4",
+        "lamentations 3:33",
+        "nahum 1:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְכַאֲשֶׁר֙ יְעַנּ֣וּ",
+      "pron": "아셰르 브인누",
+      "lemmas": [
+        "אֲשֶׁר",
+        "עָנָה"
+      ],
+      "words": [
+        {
+          "word": "וְכַאֲשֶׁר֙",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יְעַנּ֣וּ",
+          "lemma": "עָנָה",
+          "strong": "H6031",
+          "pron": "브인누"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 1:12",
+        "deuteronomy 21:14",
+        "deuteronomy 22:24",
+        "deuteronomy 22:29",
+        "samuel2 13:22",
+        "kings1 2:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעִנִּיתֶ֖ם אֶת נַפְשֹׁתֵיכֶ֑ם",
+      "pron": "브인누 에트 네페쉬",
+      "lemmas": [
+        "עָנָה",
+        "אֵת",
+        "נֶפֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "וְעִנִּיתֶ֖ם",
+          "lemma": "עָנָה",
+          "strong": "H6031",
+          "pron": "브인누"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "נַפְשֹׁתֵיכֶ֑ם",
+          "lemma": "נֶפֶשׁ",
+          "strong": "H5315",
+          "pron": "네페쉬"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 16:29",
+        "leviticus 16:31",
+        "leviticus 23:27",
+        "leviticus 23:32",
+        "numbers 29:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֥י תַעֲנֵֽם",
+      "pron": "키 브인누",
+      "lemmas": [
+        "כִּי",
+        "עָנָה"
+      ],
+      "words": [
+        {
+          "word": "כִּ֥י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "תַעֲנֵֽם",
+          "lemma": "עָנָה",
+          "strong": "H6031",
+          "pron": "브인누"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 2:26",
+        "kings1 8:35",
+        "chronicles2 6:26",
+        "psalms 119:71"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

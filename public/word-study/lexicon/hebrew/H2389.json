@@ -1,6 +1,6 @@
 {
   "lemma": "חָזָק",
-  "pron": "메하자크",
+  "pron": "하자카",
   "strong": "H2389",
   "posKo": "형용사",
   "root": {
@@ -12,45 +12,254 @@
     {
       "lemma": "חָזַק",
       "strong": "H2388",
-      "pron": "하자크",
+      "pron": "바야하지쿠",
       "glossKo": "강하게 하다"
     },
     {
       "lemma": "חָזֵק",
       "strong": "H2390",
-      "pron": "",
+      "pron": "브하제크",
       "glossKo": "강한"
     },
     {
       "lemma": "חֵזֶק",
       "strong": "H2391",
-      "pron": "힛키위",
+      "pron": "힛키",
       "glossKo": "나의 도움"
     },
     {
       "lemma": "חֹזֶק",
       "strong": "H2392",
-      "pron": "",
+      "pron": "브호제크",
       "glossKo": "권능"
     },
     {
       "lemma": "חִזְקִי",
       "strong": "H2395",
-      "pron": "",
+      "pron": "브힛키",
       "glossKo": "히스기"
     },
     {
       "lemma": "חִזְקִיָּה",
       "strong": "H2396",
-      "pron": "",
+      "pron": "힛키아후",
       "glossKo": "히스기야"
     }
   ],
   "defEn": "strong; hard; bold; violent",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 56,
   "byBook": {
-    "psalms": 2
+    "deuteronomy": 10,
+    "ezekiel": 10,
+    "exodus": 7,
+    "jeremiah": 4,
+    "kings1": 4,
+    "isaiah": 3,
+    "joshua": 3,
+    "numbers": 3,
+    "job": 2,
+    "psalms": 2,
+    "amos": 1,
+    "chronicles2": 1,
+    "daniel": 1,
+    "judges": 1,
+    "nehemiah": 1,
+    "proverbs": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּיָ֥ד חֲזָקָֽה",
+      "pron": "야도 하자카",
+      "lemmas": [
+        "יָד",
+        "חָזָק"
+      ],
+      "words": [
+        {
+          "word": "בְּיָ֥ד",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        },
+        {
+          "word": "חֲזָקָֽה",
+          "lemma": "חָזָק",
+          "strong": "H2389",
+          "pron": "하자카"
+        }
+      ],
+      "count": 26,
+      "refs": [
+        "exodus 3:19",
+        "exodus 6:1",
+        "exodus 13:9",
+        "exodus 32:11",
+        "numbers 20:20",
+        "deuteronomy 3:24",
+        "deuteronomy 4:34",
+        "deuteronomy 5:15",
+        "deuteronomy 6:21",
+        "deuteronomy 7:8",
+        "deuteronomy 7:19",
+        "deuteronomy 9:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבְיָ֤ד חֲזָקָה֙ וּבִזְר֣וֹעַ",
+      "pron": "야도 하자카 제로에",
+      "lemmas": [
+        "יָד",
+        "חָזָק",
+        "זְרוֹעַ"
+      ],
+      "words": [
+        {
+          "word": "וּבְיָ֤ד",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        },
+        {
+          "word": "חֲזָקָה֙",
+          "lemma": "חָזָק",
+          "strong": "H2389",
+          "pron": "하자카"
+        },
+        {
+          "word": "וּבִזְר֣וֹעַ",
+          "lemma": "זְרוֹעַ",
+          "strong": "H2220",
+          "pron": "제로에"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "deuteronomy 4:34",
+        "deuteronomy 5:15",
+        "deuteronomy 7:19",
+        "deuteronomy 11:2",
+        "deuteronomy 26:8",
+        "kings1 8:42",
+        "chronicles2 6:32",
+        "psalms 136:12",
+        "ezekiel 20:33",
+        "ezekiel 20:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲזָקָה֙ וּבִזְר֣וֹעַ",
+      "pron": "하자카 제로에",
+      "lemmas": [
+        "חָזָק",
+        "זְרוֹעַ"
+      ],
+      "words": [
+        {
+          "word": "חֲזָקָה֙",
+          "lemma": "חָזָק",
+          "strong": "H2389",
+          "pron": "하자카"
+        },
+        {
+          "word": "וּבִזְר֣וֹעַ",
+          "lemma": "זְרוֹעַ",
+          "strong": "H2220",
+          "pron": "제로에"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "deuteronomy 4:34",
+        "deuteronomy 5:15",
+        "deuteronomy 7:19",
+        "deuteronomy 11:2",
+        "deuteronomy 26:8",
+        "kings1 8:42",
+        "chronicles2 6:32",
+        "psalms 136:12",
+        "ezekiel 20:33",
+        "ezekiel 20:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲזָקָה֙ וּבִזְר֣וֹעַ נְטוּיָ֔ה",
+      "pron": "하자카 제로에 바옏",
+      "lemmas": [
+        "חָזָק",
+        "זְרוֹעַ",
+        "נָטָה"
+      ],
+      "words": [
+        {
+          "word": "חֲזָקָה֙",
+          "lemma": "חָזָק",
+          "strong": "H2389",
+          "pron": "하자카"
+        },
+        {
+          "word": "וּבִזְר֣וֹעַ",
+          "lemma": "זְרוֹעַ",
+          "strong": "H2220",
+          "pron": "제로에"
+        },
+        {
+          "word": "נְטוּיָ֔ה",
+          "lemma": "נָטָה",
+          "strong": "H5186",
+          "pron": "바옏"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "deuteronomy 4:34",
+        "deuteronomy 5:15",
+        "deuteronomy 7:19",
+        "deuteronomy 11:2",
+        "deuteronomy 26:8",
+        "kings1 8:42",
+        "chronicles2 6:32",
+        "psalms 136:12",
+        "ezekiel 20:33",
+        "ezekiel 20:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֶחָזָ֥ק הוּא֙",
+      "pron": "하자카 후",
+      "lemmas": [
+        "חָזָק",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "הֶחָזָ֥ק",
+          "lemma": "חָזָק",
+          "strong": "H2389",
+          "pron": "하자카"
+        },
+        {
+          "word": "הוּא֙",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 13:18",
+        "numbers 13:31",
+        "joshua 4:24",
+        "joshua 17:18",
+        "proverbs 23:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

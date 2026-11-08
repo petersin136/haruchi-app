@@ -1,6 +1,6 @@
 {
   "lemma": "גִּבּוֹר",
-  "pron": "크깁보르",
+  "pron": "아깁보림",
   "strong": "H1368",
   "posKo": "형용사",
   "root": {
@@ -12,34 +12,235 @@
     {
       "lemma": "גְּבוּרָה",
       "strong": "H1369",
-      "pron": "비게부로트",
+      "pron": "게부라",
       "glossKo": "능력"
     },
     {
       "lemma": "גֶּבֶר",
       "strong": "H1397",
-      "pron": "아게베르",
+      "pron": "아게바림",
       "glossKo": "장정"
     },
     {
       "lemma": "גֶּבֶר",
       "strong": "H1398",
-      "pron": "",
+      "pron": "게베르",
       "glossKo": "게벨"
     },
     {
       "lemma": "גַּבְרִיאֵל",
       "strong": "H1403",
-      "pron": "",
+      "pron": "갑리엘",
       "glossKo": "가브리엘"
     }
   ],
   "defEn": "powerful",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 160,
   "byBook": {
+    "chronicles1": 31,
+    "jeremiah": 19,
+    "samuel2": 17,
+    "chronicles2": 12,
     "psalms": 12,
-    "genesis": 4
+    "isaiah": 9,
+    "ezekiel": 6,
+    "joshua": 5,
+    "samuel1": 5,
+    "genesis": 4,
+    "joel": 4,
+    "judges": 4,
+    "kings2": 4,
+    "kings1": 3,
+    "nehemiah": 3,
+    "proverbs": 3,
+    "songofsolomon": 3,
+    "zechariah": 3,
+    "amos": 2,
+    "zephaniah": 2,
+    "daniel": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "ezra": 1,
+    "hosea": 1,
+    "job": 1,
+    "nahum": 1,
+    "obadiah": 1,
+    "ruth": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "גִּבּ֣וֹרֵי חַ֔יִל",
+      "pron": "아깁보림 헬람",
+      "lemmas": [
+        "גִּבּוֹר",
+        "חַיִל"
+      ],
+      "words": [
+        {
+          "word": "גִּבּ֣וֹרֵי",
+          "lemma": "גִּבּוֹר",
+          "strong": "H1368",
+          "pron": "아깁보림"
+        },
+        {
+          "word": "חַ֔יִל",
+          "lemma": "חַיִל",
+          "strong": "H2428",
+          "pron": "헬람"
+        }
+      ],
+      "count": 41,
+      "refs": [
+        "joshua 1:14",
+        "joshua 6:2",
+        "joshua 8:3",
+        "joshua 10:7",
+        "judges 6:12",
+        "judges 11:1",
+        "ruth 2:1",
+        "samuel1 9:1",
+        "samuel1 16:18",
+        "kings1 11:28",
+        "kings2 5:1",
+        "kings2 15:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל גִּבּוֹרֵ֣י",
+      "pron": "칼 아깁보림",
+      "lemmas": [
+        "כֹּל",
+        "גִּבּוֹר"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "גִּבּוֹרֵ֣י",
+          "lemma": "גִּבּוֹר",
+          "strong": "H1368",
+          "pron": "아깁보림"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "joshua 1:14",
+        "joshua 10:7",
+        "samuel2 16:6",
+        "samuel2 20:7",
+        "kings2 15:20",
+        "kings2 24:14",
+        "kings2 24:16",
+        "chronicles1 28:1",
+        "chronicles2 32:21",
+        "jeremiah 5:16",
+        "jeremiah 26:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּשְׁלוֹשָׁ֥ה הַגִּבֹּרִֽים",
+      "pron": "셸로쉬 아깁보림",
+      "lemmas": [
+        "שָׁלוֹשׁ",
+        "גִּבּוֹר"
+      ],
+      "words": [
+        {
+          "word": "בִּשְׁלוֹשָׁ֥ה",
+          "lemma": "שָׁלוֹשׁ",
+          "strong": "H7969",
+          "pron": "셸로쉬"
+        },
+        {
+          "word": "הַגִּבֹּרִֽים",
+          "lemma": "גִּבּוֹר",
+          "strong": "H1368",
+          "pron": "아깁보림"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel2 23:9",
+        "samuel2 23:16",
+        "samuel2 23:17",
+        "samuel2 23:22",
+        "chronicles1 11:12",
+        "chronicles1 11:19",
+        "chronicles1 11:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִֽהְי֥וֹת גִּבֹּ֖ר",
+      "pron": "하에타 아깁보림",
+      "lemmas": [
+        "הָיָה",
+        "גִּבּוֹר"
+      ],
+      "words": [
+        {
+          "word": "לִֽהְי֥וֹת",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "גִּבֹּ֖ר",
+          "lemma": "גִּבּוֹר",
+          "strong": "H1368",
+          "pron": "아깁보림"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 10:8",
+        "genesis 10:9",
+        "judges 11:1",
+        "kings2 5:1",
+        "chronicles1 1:10",
+        "zechariah 10:5",
+        "zechariah 10:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִישׁ֙ גִּבּוֹרֵ֣י",
+      "pron": "메이쉬 아깁보림",
+      "lemmas": [
+        "אִישׁ",
+        "גִּבּוֹר"
+      ],
+      "words": [
+        {
+          "word": "אִישׁ֙",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "גִּבּוֹרֵ֣י",
+          "lemma": "גִּבּוֹר",
+          "strong": "H1368",
+          "pron": "아깁보림"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "joshua 8:3",
+        "joshua 10:2",
+        "ruth 2:1",
+        "samuel1 14:52",
+        "chronicles1 5:24",
+        "chronicles1 8:40"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

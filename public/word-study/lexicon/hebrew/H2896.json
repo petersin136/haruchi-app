@@ -12,50 +12,83 @@
     {
       "lemma": "טָב",
       "strong": "H2869",
-      "pron": "",
+      "pron": "답",
       "glossKo": "좋은(아람)"
     },
     {
       "lemma": "טָבְאֵל",
       "strong": "H2870",
-      "pron": "",
+      "pron": "답엘",
       "glossKo": "다브엘"
     },
     {
       "lemma": "טַבְרִמּוֹן",
       "strong": "H2886",
-      "pron": "",
+      "pron": "답림몬",
       "glossKo": "다브림몬"
     },
     {
       "lemma": "טוֹב",
       "strong": "H2895",
-      "pron": "우메딥",
+      "pron": "돕",
       "glossKo": "좋다"
     },
     {
       "lemma": "טוֹב",
       "strong": "H2897",
-      "pron": "",
+      "pron": "돕",
       "glossKo": "돕"
     },
     {
       "lemma": "טוּב",
       "strong": "H2898",
-      "pron": "둡카",
-      "glossKo": "너의 선함"
+      "pron": "둡",
+      "glossKo": "선함"
     }
   ],
   "defEn": "good",
   "defKo": "",
-  "countOT": 110,
+  "countOT": 565,
   "byBook": {
     "psalms": 69,
-    "genesis": 41
+    "proverbs": 62,
+    "ecclesiastes": 52,
+    "genesis": 41,
+    "jeremiah": 37,
+    "samuel1": 37,
+    "deuteronomy": 28,
+    "samuel2": 26,
+    "kings1": 24,
+    "chronicles2": 23,
+    "esther": 18,
+    "judges": 15,
+    "isaiah": 14,
+    "job": 12,
+    "kings2": 12,
+    "nehemiah": 10,
+    "ezekiel": 9,
+    "joshua": 8,
+    "chronicles1": 7,
+    "lamentations": 7,
+    "numbers": 7,
+    "ezra": 6,
+    "exodus": 5,
+    "hosea": 5,
+    "leviticus": 5,
+    "amos": 4,
+    "micah": 4,
+    "zechariah": 4,
+    "ruth": 3,
+    "songofsolomon": 3,
+    "daniel": 2,
+    "jonah": 2,
+    "nahum": 2,
+    "joel": 1,
+    "malachi": 1
   },
   "phrases": [
     {
-      "hebrew": "כִּי טֽוֹב",
+      "hebrew": "כִּי ט֑וֹב",
       "pron": "키 돕",
       "lemmas": [
         "כִּי",
@@ -69,84 +102,118 @@
           "pron": "키"
         },
         {
-          "word": "טֽוֹב",
+          "word": "ט֑וֹב",
           "lemma": "טוֹב",
           "strong": "H2896",
           "pron": "돕"
         }
       ],
-      "count": 26,
+      "count": 47,
       "refs": [
-        "psalms 34:8",
-        "psalms 52:9",
-        "psalms 54:6",
-        "psalms 63:3",
-        "psalms 69:16",
-        "psalms 84:10",
-        "psalms 100:5",
-        "psalms 106:1",
-        "psalms 107:1",
-        "psalms 109:21",
-        "psalms 118:1",
-        "psalms 118:29"
+        "genesis 1:4",
+        "genesis 1:10",
+        "genesis 1:12",
+        "genesis 1:18",
+        "genesis 1:21",
+        "genesis 1:25",
+        "genesis 3:6",
+        "genesis 6:2",
+        "genesis 26:7",
+        "genesis 40:16",
+        "genesis 49:15",
+        "exodus 2:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "עֹֽשֵׂה טֽוֹב",
-      "pron": "야아세 돕",
+      "hebrew": "הַטּ֥וֹב בְּעֵינֶ֖יךָ",
+      "pron": "돕 에네켐",
       "lemmas": [
-        "עָשָׂה",
-        "טוֹב"
+        "טוֹב",
+        "עַיִן"
       ],
       "words": [
         {
-          "word": "עֹֽשֵׂה",
-          "lemma": "עָשָׂה",
-          "strong": "H6213",
-          "pron": "야아세"
-        },
-        {
-          "word": "טֽוֹב",
+          "word": "הַטּ֥וֹב",
           "lemma": "טוֹב",
           "strong": "H2896",
           "pron": "돕"
+        },
+        {
+          "word": "בְּעֵינֶ֖יךָ",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
         }
       ],
-      "count": 9,
+      "count": 35,
       "refs": [
-        "psalms 14:1",
-        "psalms 14:3",
-        "psalms 34:14",
-        "psalms 37:3",
-        "psalms 37:27",
-        "psalms 53:1",
-        "psalms 53:3",
         "genesis 16:6",
-        "genesis 19:8"
+        "genesis 19:8",
+        "genesis 20:15",
+        "numbers 36:6",
+        "deuteronomy 6:18",
+        "judges 10:15",
+        "judges 19:24",
+        "samuel1 1:23",
+        "samuel1 3:18",
+        "samuel1 11:10",
+        "samuel1 14:36",
+        "samuel1 14:40"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לַיהוָ֣ה כִּי ט֑וֹב",
-      "pron": "여호와 키 돕",
+      "hebrew": "הַטּוֹבָ֔ה אֲשֶׁ֥ר",
+      "pron": "돕 아셰르",
       "lemmas": [
-        "יְהֹוָה",
-        "כִּי",
+        "טוֹב",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הַטּוֹבָ֔ה",
+          "lemma": "טוֹב",
+          "strong": "H2896",
+          "pron": "돕"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 30,
+      "refs": [
+        "exodus 18:9",
+        "deuteronomy 1:35",
+        "deuteronomy 3:25",
+        "deuteronomy 4:21",
+        "deuteronomy 6:10",
+        "deuteronomy 6:18",
+        "deuteronomy 8:10",
+        "deuteronomy 11:17",
+        "deuteronomy 26:11",
+        "deuteronomy 30:9",
+        "joshua 21:45",
+        "joshua 23:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹא ט֑וֹב",
+      "pron": "로 돕",
+      "lemmas": [
+        "לֹא",
         "טוֹב"
       ],
       "words": [
         {
-          "word": "לַיהוָ֣ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        },
-        {
-          "word": "כִּי",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
         },
         {
           "word": "ט֑וֹב",
@@ -155,15 +222,20 @@
           "pron": "돕"
         }
       ],
-      "count": 7,
+      "count": 27,
       "refs": [
-        "psalms 54:6",
-        "psalms 69:16",
-        "psalms 106:1",
-        "psalms 107:1",
-        "psalms 118:1",
-        "psalms 118:29",
-        "psalms 136:1"
+        "genesis 2:18",
+        "exodus 18:17",
+        "numbers 14:3",
+        "judges 8:2",
+        "samuel1 2:24",
+        "samuel1 26:16",
+        "samuel1 29:6",
+        "samuel2 17:7",
+        "kings1 19:4",
+        "kings2 5:12",
+        "nehemiah 5:9",
+        "psalms 36:4"
       ],
       "glossKo": ""
     },
@@ -188,52 +260,20 @@
           "pron": "키"
         }
       ],
-      "count": 6,
+      "count": 22,
       "refs": [
-        "psalms 106:1",
-        "psalms 107:1",
-        "psalms 118:1",
-        "psalms 118:29",
-        "psalms 119:71",
-        "psalms 136:1"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֱלֹהִ֖ים כִּי טֽוֹב",
-      "pron": "베엘로힘 키 돕",
-      "lemmas": [
-        "אֱלֹהִים",
-        "כִּי",
-        "טוֹב"
-      ],
-      "words": [
-        {
-          "word": "אֱלֹהִ֖ים",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        },
-        {
-          "word": "כִּי",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
-        },
-        {
-          "word": "טֽוֹב",
-          "lemma": "טוֹב",
-          "strong": "H2896",
-          "pron": "돕"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "genesis 1:10",
-        "genesis 1:12",
-        "genesis 1:18",
-        "genesis 1:21",
-        "genesis 1:25"
+        "deuteronomy 30:9",
+        "samuel1 27:1",
+        "samuel2 13:22",
+        "samuel2 18:3",
+        "kings1 22:8",
+        "kings1 22:18",
+        "chronicles1 16:34",
+        "chronicles2 5:13",
+        "chronicles2 7:3",
+        "chronicles2 18:7",
+        "chronicles2 18:17",
+        "ezra 3:11"
       ],
       "glossKo": ""
     }

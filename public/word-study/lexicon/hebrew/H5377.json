@@ -1,6 +1,6 @@
 {
   "lemma": "נָשָׁא",
-  "pron": "얏시",
+  "pron": "힛시아니",
   "strong": "H5377",
   "posKo": "동사",
   "root": null,
@@ -8,22 +8,61 @@
     {
       "lemma": "מַשָּׁאוֹן",
       "strong": "H4860",
-      "pron": "",
+      "pron": "브맛샤온",
       "glossKo": "위장"
     },
     {
       "lemma": "נָשָׁא",
       "strong": "H5378",
-      "pron": "얏시",
+      "pron": "노셰",
       "glossKo": "빌려주다"
     }
   ],
   "defEn": "lead astray; delude; seduce",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 16,
   "byBook": {
+    "jeremiah": 6,
+    "isaiah": 3,
+    "kings2": 2,
+    "obadiah": 2,
+    "chronicles2": 1,
     "genesis": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אַל יַשִּׁ֥יא",
+      "pron": "엘 힛시아니",
+      "lemmas": [
+        "אַל",
+        "נָשָׁא"
+      ],
+      "words": [
+        {
+          "word": "אַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "יַשִּׁ֥יא",
+          "lemma": "נָשָׁא",
+          "strong": "H5377",
+          "pron": "힛시아니"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "kings2 18:29",
+        "kings2 19:10",
+        "chronicles2 32:15",
+        "isaiah 36:14",
+        "isaiah 37:10",
+        "jeremiah 29:8",
+        "jeremiah 37:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

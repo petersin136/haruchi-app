@@ -2,7 +2,7 @@
   "lemma": "עֲבַר",
   "pron": "아바르",
   "strong": "H5675",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עֵבֶר",
     "strong": "H5676",
@@ -24,25 +24,200 @@
     {
       "lemma": "עֶבְרָה",
       "strong": "H5678",
-      "pron": "브압로트",
-      "glossKo": "진노"
+      "pron": "베엡라탐",
+      "glossKo": "그들의 진노"
     },
     {
       "lemma": "עֲבָרִים",
       "strong": "H5682",
-      "pron": "",
+      "pron": "하아바림",
       "glossKo": "아바림"
     },
     {
       "lemma": "עֶבְרֹן",
       "strong": "H5683",
-      "pron": "",
+      "pron": "브엡론",
       "glossKo": "에브론"
     }
   ],
   "defEn": "beyond, this side.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "ezra": 14
+  },
+  "phrases": [
+    {
+      "hebrew": "עֲבַֽר נַהֲרָ֛ה",
+      "pron": "아바르 나하라",
+      "lemmas": [
+        "עֲבַר",
+        "נְהַר"
+      ],
+      "words": [
+        {
+          "word": "עֲבַֽר",
+          "lemma": "עֲבַר",
+          "strong": "H5675",
+          "pron": "아바르"
+        },
+        {
+          "word": "נַהֲרָ֛ה",
+          "lemma": "נְהַר",
+          "strong": "H5103",
+          "pron": "나하라"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "ezra 4:10",
+        "ezra 4:11",
+        "ezra 4:16",
+        "ezra 4:17",
+        "ezra 4:20",
+        "ezra 5:3",
+        "ezra 5:6",
+        "ezra 6:6",
+        "ezra 6:8",
+        "ezra 6:13",
+        "ezra 7:21",
+        "ezra 7:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּ֖י בַּעֲבַ֣ר",
+      "pron": "드흐브 아바르",
+      "lemmas": [
+        "דִּי",
+        "עֲבַר"
+      ],
+      "words": [
+        {
+          "word": "דִּ֖י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "בַּעֲבַ֣ר",
+          "lemma": "עֲבַר",
+          "strong": "H5675",
+          "pron": "아바르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 5:6",
+        "ezra 6:6",
+        "ezra 7:21",
+        "ezra 7:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּ֖י בַּעֲבַ֣ר נַהֲרָ֑ה",
+      "pron": "드흐브 아바르 나하라",
+      "lemmas": [
+        "דִּי",
+        "עֲבַר",
+        "נְהַר"
+      ],
+      "words": [
+        {
+          "word": "דִּ֖י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "בַּעֲבַ֣ר",
+          "lemma": "עֲבַר",
+          "strong": "H5675",
+          "pron": "아바르"
+        },
+        {
+          "word": "נַהֲרָ֑ה",
+          "lemma": "נְהַר",
+          "strong": "H5103",
+          "pron": "나하라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 5:6",
+        "ezra 6:6",
+        "ezra 7:21",
+        "ezra 7:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲבַֽר נַהֲרָ֛ה וּשְׁתַ֥ר",
+      "pron": "아바르 나하라 우셰타르",
+      "lemmas": [
+        "עֲבַר",
+        "נְהַר",
+        "שְׁתַר בּוֹזְנַי"
+      ],
+      "words": [
+        {
+          "word": "עֲבַֽר",
+          "lemma": "עֲבַר",
+          "strong": "H5675",
+          "pron": "아바르"
+        },
+        {
+          "word": "נַהֲרָ֛ה",
+          "lemma": "נְהַר",
+          "strong": "H5103",
+          "pron": "나하라"
+        },
+        {
+          "word": "וּשְׁתַ֥ר",
+          "lemma": "שְׁתַר בּוֹזְנַי",
+          "strong": "H8370",
+          "pron": "우셰타르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 5:3",
+        "ezra 5:6",
+        "ezra 6:6",
+        "ezra 6:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פַּחַ֧ת עֲבַֽר",
+      "pron": "파하트 아바르",
+      "lemmas": [
+        "פֶּחָה",
+        "עֲבַר"
+      ],
+      "words": [
+        {
+          "word": "פַּחַ֧ת",
+          "lemma": "פֶּחָה",
+          "strong": "H6347",
+          "pron": "파하트"
+        },
+        {
+          "word": "עֲבַֽר",
+          "lemma": "עֲבַר",
+          "strong": "H5675",
+          "pron": "아바르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 5:3",
+        "ezra 5:6",
+        "ezra 6:6",
+        "ezra 6:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

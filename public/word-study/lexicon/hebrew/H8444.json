@@ -1,6 +1,6 @@
 {
   "lemma": "תּוֹצָאָה",
-  "pron": "토차오트",
+  "pron": "토체오타으브",
   "strong": "H8444",
   "posKo": "명사",
   "root": {
@@ -12,45 +12,229 @@
     {
       "lemma": "יָצָא",
       "strong": "H3318",
-      "pron": "예체",
+      "pron": "바토체",
       "glossKo": "나가다"
     },
     {
       "lemma": "יְצָא",
       "strong": "H3319",
-      "pron": "",
+      "pron": "브셰으치",
       "glossKo": "나오다(아람)"
     },
     {
       "lemma": "יָצִיא",
       "strong": "H3329",
-      "pron": "",
-      "glossKo": "발달"
+      "pron": "브미치브",
+      "glossKo": "그의 발달"
     },
     {
       "lemma": "מוֹצָא",
       "strong": "H4161",
-      "pron": "모차오",
-      "glossKo": "그의 나가는 것"
+      "pron": "모차",
+      "glossKo": "나가는 것"
     },
     {
       "lemma": "צָאָה",
       "strong": "H6627",
-      "pron": "",
-      "glossKo": "오물"
+      "pron": "체아테카",
+      "glossKo": "너의 오물"
     },
     {
       "lemma": "צֶאֱצָא",
       "strong": "H6631",
-      "pron": "",
-      "glossKo": "후손"
+      "pron": "베체에차에카",
+      "glossKo": "너의 후손"
     }
   ],
   "defEn": "exit; boundary; deliverance; source",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 25,
   "byBook": {
+    "joshua": 16,
+    "numbers": 5,
+    "chronicles1": 1,
+    "ezekiel": 1,
+    "proverbs": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְהָי֥וּ תוֹצְאֹתָ֖יו",
+      "pron": "하에타 토체오타으브",
+      "lemmas": [
+        "הָיָה",
+        "תּוֹצָאָה"
+      ],
+      "words": [
+        {
+          "word": "וְהָי֥וּ",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "תוֹצְאֹתָ֖יו",
+          "lemma": "תּוֹצָאָה",
+          "strong": "H8444",
+          "pron": "토체오타으브"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "numbers 34:4",
+        "numbers 34:5",
+        "numbers 34:8",
+        "numbers 34:9",
+        "numbers 34:12",
+        "joshua 15:4",
+        "joshua 15:7",
+        "joshua 15:11",
+        "joshua 16:3",
+        "joshua 16:8",
+        "joshua 17:9",
+        "joshua 17:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "והיה וְהָיוּ֙ תּֽוֹצְאֹתָ֔יו",
+      "pron": "하에타 하에타 토체오타으브",
+      "lemmas": [
+        "הָיָה",
+        "הָיָה",
+        "תּוֹצָאָה"
+      ],
+      "words": [
+        {
+          "word": "והיה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "וְהָיוּ֙",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "תּֽוֹצְאֹתָ֔יו",
+          "lemma": "תּוֹצָאָה",
+          "strong": "H8444",
+          "pron": "토체오타으브"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 34:4",
+        "joshua 15:4",
+        "joshua 18:12",
+        "joshua 18:14",
+        "joshua 18:19",
+        "joshua 19:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תוֹצְאֹתָ֖יו הַיָּֽמָּה",
+      "pron": "토체오타으브 얌밈",
+      "lemmas": [
+        "תּוֹצָאָה",
+        "יָם"
+      ],
+      "words": [
+        {
+          "word": "תוֹצְאֹתָ֖יו",
+          "lemma": "תּוֹצָאָה",
+          "strong": "H8444",
+          "pron": "토체오타으브"
+        },
+        {
+          "word": "הַיָּֽמָּה",
+          "lemma": "יָם",
+          "strong": "H3220",
+          "pron": "얌밈"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 34:5",
+        "numbers 34:12",
+        "joshua 16:3",
+        "joshua 16:8",
+        "joshua 17:9",
+        "joshua 19:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָי֥וּ תוֹצְאֹתָ֖יו הַיָּֽמָּה",
+      "pron": "하에타 토체오타으브 얌밈",
+      "lemmas": [
+        "הָיָה",
+        "תּוֹצָאָה",
+        "יָם"
+      ],
+      "words": [
+        {
+          "word": "וְהָי֥וּ",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "תוֹצְאֹתָ֖יו",
+          "lemma": "תּוֹצָאָה",
+          "strong": "H8444",
+          "pron": "토체오타으브"
+        },
+        {
+          "word": "הַיָּֽמָּה",
+          "lemma": "יָם",
+          "strong": "H3220",
+          "pron": "얌밈"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 34:5",
+        "numbers 34:12",
+        "joshua 16:8",
+        "joshua 17:9",
+        "joshua 19:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תֹּצְא֥וֹת הַגְּב֖וּל",
+      "pron": "토체오타으브 게불",
+      "lemmas": [
+        "תּוֹצָאָה",
+        "גְּבוּל"
+      ],
+      "words": [
+        {
+          "word": "תֹּצְא֥וֹת",
+          "lemma": "תּוֹצָאָה",
+          "strong": "H8444",
+          "pron": "토체오타으브"
+        },
+        {
+          "word": "הַגְּב֖וּל",
+          "lemma": "גְּבוּל",
+          "strong": "H1366",
+          "pron": "게불"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 34:8",
+        "joshua 15:4",
+        "joshua 15:11",
+        "joshua 18:19",
+        "joshua 19:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

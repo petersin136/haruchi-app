@@ -1,8 +1,8 @@
 {
   "lemma": "אַזְכָּרָה",
-  "pron": "앗카라",
+  "pron": "앗카라타흐",
   "strong": "H234",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "זָכַר",
     "strong": "H2142",
@@ -12,37 +12,179 @@
     {
       "lemma": "זָכוּר",
       "strong": "H2138",
-      "pron": "",
-      "glossKo": "남자"
+      "pron": "제쿠레카",
+      "glossKo": "너의 남자"
     },
     {
       "lemma": "זַכּוּר",
       "strong": "H2139",
-      "pron": "",
+      "pron": "작쿠르",
       "glossKo": "사굴"
     },
     {
       "lemma": "זָכַר",
       "strong": "H2142",
-      "pron": "팃케레누",
-      "glossKo": "그에게 기억하다"
+      "pron": "바잇코르",
+      "glossKo": "기억하다"
     },
     {
       "lemma": "זֵכֶר",
       "strong": "H2143",
-      "pron": "지케레카",
-      "glossKo": "너의 기억"
+      "pron": "지케리",
+      "glossKo": "나의 기억"
     },
     {
       "lemma": "זָכָר",
       "strong": "H2145",
       "pron": "자카르",
       "glossKo": "남자"
+    },
+    {
+      "lemma": "זִכְרוֹן",
+      "strong": "H2146",
+      "pron": "르직카론",
+      "glossKo": "기념물"
     }
   ],
   "defEn": "reminder; remembrance-offering",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "leviticus": 6,
+    "numbers": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶת אַזְכָּ֣רָתָ֔הּ",
+      "pron": "에트 앗카라타흐",
+      "lemmas": [
+        "אֵת",
+        "אַזְכָּרָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "אַזְכָּ֣רָתָ֔הּ",
+          "lemma": "אַזְכָּרָה",
+          "strong": "H234",
+          "pron": "앗카라타흐"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 2:2",
+        "leviticus 2:9",
+        "leviticus 2:16",
+        "leviticus 5:12",
+        "numbers 5:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַזְכָּ֣רָתָ֔הּ וְהִקְטִ֖יר",
+      "pron": "앗카라타흐 브히케다렛타",
+      "lemmas": [
+        "אַזְכָּרָה",
+        "קָטַר"
+      ],
+      "words": [
+        {
+          "word": "אַזְכָּ֣רָתָ֔הּ",
+          "lemma": "אַזְכָּרָה",
+          "strong": "H234",
+          "pron": "앗카라타흐"
+        },
+        {
+          "word": "וְהִקְטִ֖יר",
+          "lemma": "קָטַר",
+          "strong": "H6999",
+          "pron": "브히케다렛타"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 2:9",
+        "leviticus 5:12",
+        "numbers 5:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַזְכָּ֣רָתָ֔הּ וְהִקְטִ֖יר הַמִּזְבֵּ֑חָה",
+      "pron": "앗카라타흐 브히케다렛타 밋베아흐",
+      "lemmas": [
+        "אַזְכָּרָה",
+        "קָטַר",
+        "מִזְבֵּחַ"
+      ],
+      "words": [
+        {
+          "word": "אַזְכָּ֣רָתָ֔הּ",
+          "lemma": "אַזְכָּרָה",
+          "strong": "H234",
+          "pron": "앗카라타흐"
+        },
+        {
+          "word": "וְהִקְטִ֖יר",
+          "lemma": "קָטַר",
+          "strong": "H6999",
+          "pron": "브히케다렛타"
+        },
+        {
+          "word": "הַמִּזְבֵּ֑חָה",
+          "lemma": "מִזְבֵּחַ",
+          "strong": "H4196",
+          "pron": "밋베아흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 2:9",
+        "leviticus 5:12",
+        "numbers 5:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת אַזְכָּ֣רָתָ֔הּ וְהִקְטִ֖יר",
+      "pron": "에트 앗카라타흐 브히케다렛타",
+      "lemmas": [
+        "אֵת",
+        "אַזְכָּרָה",
+        "קָטַר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "אַזְכָּ֣רָתָ֔הּ",
+          "lemma": "אַזְכָּרָה",
+          "strong": "H234",
+          "pron": "앗카라타흐"
+        },
+        {
+          "word": "וְהִקְטִ֖יר",
+          "lemma": "קָטַר",
+          "strong": "H6999",
+          "pron": "브히케다렛타"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 2:9",
+        "leviticus 5:12",
+        "numbers 5:26"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

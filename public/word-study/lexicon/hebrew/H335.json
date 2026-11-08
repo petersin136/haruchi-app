@@ -1,6 +1,6 @@
 {
   "lemma": "אַי",
-  "pron": "아에카",
+  "pron": "아엑카",
   "strong": "H335",
   "posKo": "소사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "אִי",
       "strong": "H336",
-      "pron": "",
+      "pron": "이",
       "glossKo": "아니"
     },
     {
@@ -24,7 +24,7 @@
     {
       "lemma": "אֵיךְ",
       "strong": "H349",
-      "pron": "에크",
+      "pron": "브에크",
       "glossKo": "어찌"
     },
     {
@@ -42,15 +42,216 @@
     {
       "lemma": "אָן",
       "strong": "H575",
-      "pron": "아나",
+      "pron": "브아나",
       "glossKo": "어디"
     }
   ],
   "defEn": "where?; how?",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 38,
   "byBook": {
-    "genesis": 3
+    "job": 8,
+    "isaiah": 4,
+    "samuel1": 4,
+    "genesis": 3,
+    "jeremiah": 3,
+    "samuel2": 3,
+    "ecclesiastes": 2,
+    "kings1": 2,
+    "kings2": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "esther": 1,
+    "jonah": 1,
+    "judges": 1,
+    "nahum": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֵ֥י מִזֶּ֖ה",
+      "pron": "아엑카 제",
+      "lemmas": [
+        "אַי",
+        "זֶה"
+      ],
+      "words": [
+        {
+          "word": "אֵ֥י",
+          "lemma": "אַי",
+          "strong": "H335",
+          "pron": "아엑카"
+        },
+        {
+          "word": "מִזֶּ֖ה",
+          "lemma": "זֶה",
+          "strong": "H2088",
+          "pron": "제"
+        }
+      ],
+      "count": 26,
+      "refs": [
+        "genesis 16:8",
+        "judges 13:6",
+        "samuel1 9:18",
+        "samuel1 25:11",
+        "samuel1 30:13",
+        "samuel2 1:3",
+        "samuel2 1:13",
+        "samuel2 15:2",
+        "kings1 13:12",
+        "kings1 22:24",
+        "kings2 3:8",
+        "chronicles2 18:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֕אמֶר אֵי",
+      "pron": "바요메르 아엑카",
+      "lemmas": [
+        "אָמַר",
+        "אַי"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֕אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "אֵי",
+          "lemma": "אַי",
+          "strong": "H335",
+          "pron": "아엑카"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 3:9",
+        "deuteronomy 32:37",
+        "samuel2 15:2",
+        "kings1 22:24",
+        "kings2 3:8",
+        "chronicles2 18:23",
+        "job 20:7",
+        "job 35:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵי זֶ֣ה הַ֭דֶּרֶךְ",
+      "pron": "아엑카 제 데레크",
+      "lemmas": [
+        "אַי",
+        "זֶה",
+        "דֶּרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "אֵי",
+          "lemma": "אַי",
+          "strong": "H335",
+          "pron": "아엑카"
+        },
+        {
+          "word": "זֶ֣ה",
+          "lemma": "זֶה",
+          "strong": "H2088",
+          "pron": "제"
+        },
+        {
+          "word": "הַ֭דֶּרֶךְ",
+          "lemma": "דֶּרֶךְ",
+          "strong": "H1870",
+          "pron": "데레크"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 13:12",
+        "kings2 3:8",
+        "chronicles2 18:23",
+        "job 38:19",
+        "job 38:24",
+        "jeremiah 6:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֵ֥י זֶ֝ה מְק֣וֹם",
+      "pron": "아엑카 제 마콤",
+      "lemmas": [
+        "אַי",
+        "זֶה",
+        "מָקוֹם"
+      ],
+      "words": [
+        {
+          "word": "וְאֵ֥י",
+          "lemma": "אַי",
+          "strong": "H335",
+          "pron": "아엑카"
+        },
+        {
+          "word": "זֶ֝ה",
+          "lemma": "זֶה",
+          "strong": "H2088",
+          "pron": "제"
+        },
+        {
+          "word": "מְק֣וֹם",
+          "lemma": "מָקוֹם",
+          "strong": "H4725",
+          "pron": "마콤"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 28:12",
+        "job 28:20",
+        "job 38:19",
+        "isaiah 66:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֗אמֶר אֵֽי מִזֶּ֥ה",
+      "pron": "바요메르 아엑카 제",
+      "lemmas": [
+        "אָמַר",
+        "אַי",
+        "זֶה"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֗אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "אֵֽי",
+          "lemma": "אַי",
+          "strong": "H335",
+          "pron": "아엑카"
+        },
+        {
+          "word": "מִזֶּ֥ה",
+          "lemma": "זֶה",
+          "strong": "H2088",
+          "pron": "제"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 15:2",
+        "kings1 22:24",
+        "kings2 3:8",
+        "chronicles2 18:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

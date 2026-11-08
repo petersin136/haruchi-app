@@ -12,19 +12,19 @@
     {
       "lemma": "יׇרְקְעָם",
       "strong": "H3421",
-      "pron": "",
+      "pron": "야레코암",
       "glossKo": "욜그암"
     },
     {
       "lemma": "רוּק",
       "strong": "H7324",
-      "pron": "아리케므",
-      "glossKo": "그들에게 쏟다"
+      "pron": "바야레크",
+      "glossKo": "쏟다"
     },
     {
       "lemma": "רִיק",
       "strong": "H7385",
-      "pron": "리크",
+      "pron": "라리크",
       "glossKo": "공허"
     },
     {
@@ -36,9 +36,48 @@
   ],
   "defEn": "empty; worthless",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 14,
   "byBook": {
-    "genesis": 2
+    "judges": 3,
+    "genesis": 2,
+    "proverbs": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "isaiah": 1,
+    "kings2": 1,
+    "nehemiah": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲנָשִׁ֤ים רֵיקִים֙",
+      "pron": "메이쉬 레크",
+      "lemmas": [
+        "אִישׁ",
+        "רֵיק"
+      ],
+      "words": [
+        {
+          "word": "אֲנָשִׁ֤ים",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "רֵיקִים֙",
+          "lemma": "רֵיק",
+          "strong": "H7386",
+          "pron": "레크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 9:4",
+        "judges 11:3",
+        "chronicles2 13:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,15 +1,51 @@
 {
   "lemma": "רָקַד",
-  "pron": "바야레키데므",
+  "pron": "메락켇",
   "strong": "H7540",
   "posKo": "동사",
   "root": null,
   "family": [],
   "defEn": "stamp; spring",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 9,
   "byBook": {
-    "psalms": 3
+    "psalms": 3,
+    "chronicles1": 1,
+    "ecclesiastes": 1,
+    "isaiah": 1,
+    "job": 1,
+    "joel": 1,
+    "nahum": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הֶֽ֭הָרִים רָקְד֣וּ",
+      "pron": "헤하림 메락켇",
+      "lemmas": [
+        "הַר",
+        "רָקַד"
+      ],
+      "words": [
+        {
+          "word": "הֶֽ֭הָרִים",
+          "lemma": "הַר",
+          "strong": "H2022",
+          "pron": "헤하림"
+        },
+        {
+          "word": "רָקְד֣וּ",
+          "lemma": "רָקַד",
+          "strong": "H7540",
+          "pron": "메락켇"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 114:4",
+        "psalms 114:6",
+        "joel 2:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "בָּלַע",
-  "pron": "예발레에므",
+  "pron": "바팁라에나",
   "strong": "H1104",
   "posKo": "동사",
   "root": null,
@@ -14,16 +14,202 @@
     {
       "lemma": "יִבְלְעָם",
       "strong": "H2991",
-      "pron": "",
+      "pron": "브입레암",
       "glossKo": "이블르암"
     }
   ],
   "defEn": "make away with; swallowing; destroy",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 50,
   "byBook": {
+    "isaiah": 8,
+    "job": 7,
     "psalms": 7,
-    "genesis": 2
+    "lamentations": 5,
+    "numbers": 5,
+    "proverbs": 3,
+    "samuel2": 3,
+    "exodus": 2,
+    "genesis": 2,
+    "hosea": 2,
+    "jeremiah": 2,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "habakkuk": 1,
+    "jonah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כְּבַלַּ֥ע אֶת",
+      "pron": "바팁라에나 에트",
+      "lemmas": [
+        "בָּלַע",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "כְּבַלַּ֥ע",
+          "lemma": "בָּלַע",
+          "strong": "H1104",
+          "pron": "바팁라에나"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 4:20",
+        "numbers 16:30",
+        "numbers 16:32",
+        "numbers 26:10",
+        "deuteronomy 11:6",
+        "jonah 1:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת פִּ֨יהָ֙ וּבָלְעָ֤ה",
+      "pron": "에트 피하 바팁라에나",
+      "lemmas": [
+        "אֵת",
+        "פֶּה",
+        "בָּלַע"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "פִּ֨יהָ֙",
+          "lemma": "פֶּה",
+          "strong": "H6310",
+          "pron": "피하"
+        },
+        {
+          "word": "וּבָלְעָ֤ה",
+          "lemma": "בָּלַע",
+          "strong": "H1104",
+          "pron": "바팁라에나"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 16:30",
+        "numbers 16:32",
+        "numbers 26:10",
+        "deuteronomy 11:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פִּ֨יהָ֙ וּבָלְעָ֤ה",
+      "pron": "피하 바팁라에나",
+      "lemmas": [
+        "פֶּה",
+        "בָּלַע"
+      ],
+      "words": [
+        {
+          "word": "פִּ֨יהָ֙",
+          "lemma": "פֶּה",
+          "strong": "H6310",
+          "pron": "피하"
+        },
+        {
+          "word": "וּבָלְעָ֤ה",
+          "lemma": "בָּלַע",
+          "strong": "H1104",
+          "pron": "바팁라에나"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 16:30",
+        "numbers 16:32",
+        "numbers 26:10",
+        "deuteronomy 11:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פִּ֨יהָ֙ וּבָלְעָ֤ה אֹתָם֙",
+      "pron": "피하 바팁라에나 에트",
+      "lemmas": [
+        "פֶּה",
+        "בָּלַע",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "פִּ֨יהָ֙",
+          "lemma": "פֶּה",
+          "strong": "H6310",
+          "pron": "피하"
+        },
+        {
+          "word": "וּבָלְעָ֤ה",
+          "lemma": "בָּלַע",
+          "strong": "H1104",
+          "pron": "바팁라에나"
+        },
+        {
+          "word": "אֹתָם֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 16:30",
+        "numbers 16:32",
+        "numbers 26:10",
+        "deuteronomy 11:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבָלְעָ֤ה אֹתָם֙ וְאֶת",
+      "pron": "바팁라에나 에트 에트",
+      "lemmas": [
+        "בָּלַע",
+        "אֵת",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וּבָלְעָ֤ה",
+          "lemma": "בָּלַע",
+          "strong": "H1104",
+          "pron": "바팁라에나"
+        },
+        {
+          "word": "אֹתָם֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 16:30",
+        "numbers 16:32",
+        "numbers 26:10"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "יָעַץ",
-  "pron": "예아차니",
+  "pron": "이아체카",
   "strong": "H3289",
   "posKo": "동사",
   "root": null,
@@ -8,27 +8,208 @@
     {
       "lemma": "יְעַט",
       "strong": "H3272",
-      "pron": "",
-      "glossKo": "의논하다(아람)"
+      "pron": "야아도히",
+      "glossKo": "그의 의논하다(아람)"
     },
     {
       "lemma": "מוֹעֵצָה",
       "strong": "H4156",
-      "pron": "미모아초테헴",
+      "pron": "밈모아초테헴",
       "glossKo": "그들의 도모"
     },
     {
       "lemma": "עֵצָה",
       "strong": "H6098",
-      "pron": "바아차트",
+      "pron": "에초트",
       "glossKo": "꾀"
     }
   ],
   "defEn": "advise; deliberate; resolve",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 79,
   "byBook": {
-    "psalms": 6
+    "isaiah": 16,
+    "chronicles2": 14,
+    "kings1": 8,
+    "samuel2": 7,
+    "psalms": 6,
+    "proverbs": 5,
+    "chronicles1": 4,
+    "jeremiah": 4,
+    "ezra": 3,
+    "job": 3,
+    "micah": 2,
+    "exodus": 1,
+    "ezekiel": 1,
+    "habakkuk": 1,
+    "kings2": 1,
+    "nahum": 1,
+    "nehemiah": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲשֶׁ֤ר יָעַץ֙",
+      "pron": "아셰르 이아체카",
+      "lemmas": [
+        "אֲשֶׁר",
+        "יָעַץ"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֤ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יָעַץ֙",
+          "lemma": "יָעַץ",
+          "strong": "H3289",
+          "pron": "이아체카"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "samuel2 16:23",
+        "samuel2 17:7",
+        "kings1 12:8",
+        "kings1 12:13",
+        "chronicles2 10:8",
+        "psalms 16:7",
+        "isaiah 14:24",
+        "jeremiah 49:20",
+        "jeremiah 50:45"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָעַ֥ץ עֲלֵיכֶ֖ם",
+      "pron": "이아체카 알",
+      "lemmas": [
+        "יָעַץ",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "יָעַ֥ץ",
+          "lemma": "יָעַץ",
+          "strong": "H3289",
+          "pron": "이아체카"
+        },
+        {
+          "word": "עֲלֵיכֶ֖ם",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel2 17:21",
+        "psalms 32:8",
+        "psalms 83:3",
+        "isaiah 7:5",
+        "isaiah 14:26",
+        "isaiah 19:17",
+        "jeremiah 49:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּוָּעַ֞ץ הַמֶּ֣לֶךְ",
+      "pron": "이아체카 멜레크",
+      "lemmas": [
+        "יָעַץ",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "וַיִּוָּעַ֞ץ",
+          "lemma": "יָעַץ",
+          "strong": "H3289",
+          "pron": "이아체카"
+        },
+        {
+          "word": "הַמֶּ֣לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 12:6",
+        "kings1 12:28",
+        "chronicles1 27:33",
+        "chronicles2 10:6",
+        "chronicles2 25:16",
+        "chronicles2 30:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֣י יָעַ֗צְתִּי",
+      "pron": "키 이아체카",
+      "lemmas": [
+        "כִּי",
+        "יָעַץ"
+      ],
+      "words": [
+        {
+          "word": "כִּ֣י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "יָעַ֗צְתִּי",
+          "lemma": "יָעַץ",
+          "strong": "H3289",
+          "pron": "이아체카"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel2 17:11",
+        "chronicles2 25:16",
+        "psalms 83:5",
+        "isaiah 7:5",
+        "jeremiah 38:15",
+        "jeremiah 49:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְכָה֙ אִיעָ֣צְךָ֔",
+      "pron": "텔레크 이아체카",
+      "lemmas": [
+        "יָלַךְ",
+        "יָעַץ"
+      ],
+      "words": [
+        {
+          "word": "לְכָה֙",
+          "lemma": "יָלַךְ",
+          "strong": "H3212",
+          "pron": "텔레크"
+        },
+        {
+          "word": "אִיעָ֣צְךָ֔",
+          "lemma": "יָעַץ",
+          "strong": "H3289",
+          "pron": "이아체카"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 24:14",
+        "kings1 1:12",
+        "nehemiah 6:7",
+        "job 12:17",
+        "psalms 32:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

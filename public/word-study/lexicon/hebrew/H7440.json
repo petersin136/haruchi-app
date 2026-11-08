@@ -1,6 +1,6 @@
 {
   "lemma": "רִנָּה",
-  "pron": "린나티위",
+  "pron": "하린나",
   "strong": "H7440",
   "posKo": "명사",
   "root": {
@@ -18,7 +18,7 @@
     {
       "lemma": "אַרְנוֹן",
       "strong": "H769",
-      "pron": "",
+      "pron": "아레논",
       "glossKo": "아르논"
     },
     {
@@ -30,32 +30,68 @@
     {
       "lemma": "רִנָּה",
       "strong": "H7441",
-      "pron": "",
+      "pron": "브린나",
       "glossKo": "린나"
     },
     {
       "lemma": "רָנַן",
       "strong": "H7442",
-      "pron": "예란네누",
+      "pron": "바야론누",
       "glossKo": "기뻐 외치다"
     },
     {
       "lemma": "רֶנֶן",
       "strong": "H7443",
-      "pron": "",
+      "pron": "레나님",
       "glossKo": "타조"
     }
   ],
   "defEn": "creaking; shout",
   "defKo": "",
-  "countOT": 15,
+  "countOT": 33,
   "byBook": {
-    "psalms": 15
+    "psalms": 15,
+    "isaiah": 9,
+    "jeremiah": 3,
+    "chronicles2": 2,
+    "kings1": 2,
+    "proverbs": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
+      "hebrew": "אֶל הָֽרִנָּה֙",
+      "pron": "엘 하린나",
+      "lemmas": [
+        "אֵל",
+        "רִנָּה"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "הָֽרִנָּה֙",
+          "lemma": "רִנָּה",
+          "strong": "H7440",
+          "pron": "하린나"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 8:28",
+        "chronicles2 6:19",
+        "psalms 142:6",
+        "jeremiah 14:12"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "בְּקוֹל רִנָּ֥ה",
-      "pron": "콜리위 린나티위",
+      "pron": "콜 하린나",
       "lemmas": [
         "קוֹל",
         "רִנָּה"
@@ -65,20 +101,86 @@
           "word": "בְּקוֹל",
           "lemma": "קוֹל",
           "strong": "H6963",
-          "pron": "콜리위"
+          "pron": "콜"
         },
         {
           "word": "רִנָּ֥ה",
           "lemma": "רִנָּה",
           "strong": "H7440",
-          "pron": "린나티위"
+          "pron": "하린나"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 42:4",
+        "psalms 47:1",
+        "psalms 118:15",
+        "isaiah 48:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִשְׁמֹ֤עַ אֶל הָֽרִנָּה֙",
+      "pron": "바이솀우 엘 하린나",
+      "lemmas": [
+        "שָׁמַע",
+        "אֵל",
+        "רִנָּה"
+      ],
+      "words": [
+        {
+          "word": "לִשְׁמֹ֤עַ",
+          "lemma": "שָׁמַע",
+          "strong": "H8085",
+          "pron": "바이솀우"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "הָֽרִנָּה֙",
+          "lemma": "רִנָּה",
+          "strong": "H7440",
+          "pron": "하린나"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 42:4",
-        "psalms 47:1",
-        "psalms 118:15"
+        "kings1 8:28",
+        "chronicles2 6:19",
+        "jeremiah 14:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רִנָּתִי֮ כִּֽי",
+      "pron": "하린나 키",
+      "lemmas": [
+        "רִנָּה",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "רִנָּתִי֮",
+          "lemma": "רִנָּה",
+          "strong": "H7440",
+          "pron": "하린나"
+        },
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 142:6",
+        "isaiah 49:13",
+        "jeremiah 14:12"
       ],
       "glossKo": ""
     }

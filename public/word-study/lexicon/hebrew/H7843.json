@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁחַת",
-  "pron": "히셰히투",
+  "pron": "바팃샤헤트",
   "strong": "H7843",
   "posKo": "동사",
   "root": null,
@@ -8,33 +8,94 @@
     {
       "lemma": "מַשְׁחִית",
       "strong": "H4889",
-      "pron": "",
+      "pron": "르마셰히트",
       "glossKo": "멸망"
     },
     {
       "lemma": "מִשְׁחָת",
       "strong": "H4893",
-      "pron": "",
-      "glossKo": "흠"
+      "pron": "마셰하탐",
+      "glossKo": "그들의 흠"
     },
     {
       "lemma": "שְׁחַת",
       "strong": "H7844",
-      "pron": "",
+      "pron": "우셰히타",
       "glossKo": "파괴되다(아람)"
     }
   ],
   "defEn": "decay; ruin",
   "defKo": "",
-  "countOT": 22,
+  "countOT": 147,
   "byBook": {
+    "jeremiah": 21,
     "genesis": 17,
-    "psalms": 5
+    "deuteronomy": 11,
+    "ezekiel": 11,
+    "isaiah": 11,
+    "chronicles2": 10,
+    "judges": 7,
+    "samuel2": 7,
+    "proverbs": 6,
+    "samuel1": 6,
+    "chronicles1": 5,
+    "daniel": 5,
+    "kings2": 5,
+    "psalms": 5,
+    "exodus": 4,
+    "hosea": 3,
+    "lamentations": 3,
+    "malachi": 3,
+    "amos": 1,
+    "joshua": 1,
+    "leviticus": 1,
+    "nahum": 1,
+    "numbers": 1,
+    "ruth": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
+      "hebrew": "תַשְׁחִ֔ית אֵ֖ת",
+      "pron": "바팃샤헤트 에트",
+      "lemmas": [
+        "שָׁחַת",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "תַשְׁחִ֔ית",
+          "lemma": "שָׁחַת",
+          "strong": "H7843",
+          "pron": "바팃샤헤트"
+        },
+        {
+          "word": "אֵ֖ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "leviticus 19:27",
+        "deuteronomy 20:19",
+        "joshua 22:33",
+        "judges 6:4",
+        "judges 20:42",
+        "ruth 4:6",
+        "samuel1 6:5",
+        "samuel1 26:15",
+        "samuel2 1:14",
+        "samuel2 11:1",
+        "kings2 8:19",
+        "chronicles1 20:1"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "לֹ֣א אַשְׁחִ֔ית",
-      "pron": "로 히셰히투",
+      "pron": "로 바팃샤헤트",
       "lemmas": [
         "לֹא",
         "שָׁחַת"
@@ -50,21 +111,29 @@
           "word": "אַשְׁחִ֔ית",
           "lemma": "שָׁחַת",
           "strong": "H7843",
-          "pron": "히셰히투"
+          "pron": "바팃샤헤트"
         }
       ],
-      "count": 4,
+      "count": 12,
       "refs": [
-        "psalms 78:38",
         "genesis 18:28",
         "genesis 18:31",
-        "genesis 18:32"
+        "genesis 18:32",
+        "leviticus 19:27",
+        "deuteronomy 4:31",
+        "deuteronomy 20:19",
+        "chronicles2 12:7",
+        "chronicles2 12:12",
+        "psalms 78:38",
+        "isaiah 11:9",
+        "isaiah 65:25",
+        "malachi 3:11"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "הִשְׁחִ֧ית כָּל",
-      "pron": "히셰히투 브콜",
+      "pron": "바팃샤헤트 칼",
       "lemmas": [
         "שָׁחַת",
         "כֹּל"
@@ -74,121 +143,93 @@
           "word": "הִשְׁחִ֧ית",
           "lemma": "שָׁחַת",
           "strong": "H7843",
-          "pron": "히셰히투"
+          "pron": "바팃샤헤트"
         },
         {
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         }
       ],
-      "count": 3,
+      "count": 10,
       "refs": [
         "genesis 6:12",
         "genesis 6:17",
-        "genesis 9:15"
+        "genesis 9:15",
+        "numbers 32:15",
+        "chronicles1 21:12",
+        "isaiah 11:9",
+        "isaiah 65:8",
+        "isaiah 65:25",
+        "ezekiel 16:47",
+        "zephaniah 3:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הִשְׁחִ֧ית כָּל בָּשָׂ֛ר",
-      "pron": "히셰히투 브콜 베사리위",
+      "hebrew": "יְהוָ֖ה לְשַׁחֲתָֽהּ",
+      "pron": "여호와 바팃샤헤트",
       "lemmas": [
-        "שָׁחַת",
-        "כֹּל",
-        "בָּשָׂר"
-      ],
-      "words": [
-        {
-          "word": "הִשְׁחִ֧ית",
-          "lemma": "שָׁחַת",
-          "strong": "H7843",
-          "pron": "히셰히투"
-        },
-        {
-          "word": "כָּל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
-        },
-        {
-          "word": "בָּשָׂ֛ר",
-          "lemma": "בָּשָׂר",
-          "strong": "H1320",
-          "pron": "베사리위"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 6:12",
-        "genesis 6:17",
-        "genesis 9:15"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיֹּ֨אמֶר֙ לֹ֣א אַשְׁחִ֔ית",
-      "pron": "아마르 로 히셰히투",
-      "lemmas": [
-        "אָמַר",
-        "לֹא",
+        "יְהֹוָה",
         "שָׁחַת"
       ],
       "words": [
         {
-          "word": "וַיֹּ֨אמֶר֙",
-          "lemma": "אָמַר",
-          "strong": "H559",
-          "pron": "아마르"
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         },
         {
-          "word": "לֹ֣א",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        },
-        {
-          "word": "אַשְׁחִ֔ית",
+          "word": "לְשַׁחֲתָֽהּ",
           "lemma": "שָׁחַת",
           "strong": "H7843",
-          "pron": "히셰히투"
+          "pron": "바팃샤헤트"
         }
       ],
-      "count": 3,
+      "count": 7,
       "refs": [
-        "genesis 18:28",
-        "genesis 18:31",
-        "genesis 18:32"
+        "genesis 19:13",
+        "deuteronomy 10:10",
+        "kings2 8:19",
+        "chronicles1 21:12",
+        "chronicles2 21:7",
+        "jeremiah 51:25",
+        "lamentations 2:8"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַתִּשָּׁחֵ֥ת הָאָ֖רֶץ",
-      "pron": "히셰히투 에레츠",
+      "hebrew": "יַשְׁחִיתֶ֑ךָ וְלֹ֤א",
+      "pron": "바팃샤헤트 로",
       "lemmas": [
         "שָׁחַת",
-        "אֶרֶץ"
+        "לֹא"
       ],
       "words": [
         {
-          "word": "וַתִּשָּׁחֵ֥ת",
+          "word": "יַשְׁחִיתֶ֑ךָ",
           "lemma": "שָׁחַת",
           "strong": "H7843",
-          "pron": "히셰히투"
+          "pron": "바팃샤헤트"
         },
         {
-          "word": "הָאָ֖רֶץ",
-          "lemma": "אֶרֶץ",
-          "strong": "H776",
-          "pron": "에레츠"
+          "word": "וְלֹ֤א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
         }
       ],
-      "count": 3,
+      "count": 7,
       "refs": [
-        "genesis 6:11",
-        "genesis 9:11",
-        "genesis 38:9"
+        "deuteronomy 4:31",
+        "deuteronomy 32:5",
+        "samuel2 14:11",
+        "kings2 13:23",
+        "ezekiel 20:17",
+        "ezekiel 22:30",
+        "daniel 11:17"
       ],
       "glossKo": ""
     }

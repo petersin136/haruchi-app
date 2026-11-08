@@ -1,6 +1,6 @@
 {
   "lemma": "גָּדַל",
-  "pron": "믁들",
+  "pron": "바아갇델라",
   "strong": "H1431",
   "posKo": "동사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "גָּדוֹל",
       "strong": "H1419",
-      "pron": "게돌로트",
+      "pron": "아게돌림",
       "glossKo": "큰"
     },
     {
@@ -30,33 +30,97 @@
     {
       "lemma": "גְּדִל",
       "strong": "H1434",
-      "pron": "",
+      "pron": "게딜림",
       "glossKo": "옷단 술"
     },
     {
       "lemma": "גִּדֵּל",
       "strong": "H1435",
-      "pron": "",
+      "pron": "긷델",
       "glossKo": "깃델"
     },
     {
       "lemma": "גְּדַּלְיָה",
       "strong": "H1436",
-      "pron": "",
+      "pron": "게달아후",
       "glossKo": "그달리야"
     }
   ],
   "defEn": "be; make; large",
   "defKo": "",
-  "countOT": 31,
+  "countOT": 116,
   "byBook": {
     "psalms": 17,
-    "genesis": 14
+    "genesis": 14,
+    "daniel": 9,
+    "isaiah": 9,
+    "samuel1": 6,
+    "ezekiel": 5,
+    "kings1": 5,
+    "chronicles1": 4,
+    "chronicles2": 4,
+    "job": 4,
+    "samuel2": 4,
+    "ecclesiastes": 3,
+    "esther": 3,
+    "jeremiah": 3,
+    "exodus": 2,
+    "joel": 2,
+    "joshua": 2,
+    "judges": 2,
+    "kings2": 2,
+    "lamentations": 2,
+    "numbers": 2,
+    "zechariah": 2,
+    "zephaniah": 2,
+    "amos": 1,
+    "ezra": 1,
+    "hosea": 1,
+    "jonah": 1,
+    "malachi": 1,
+    "micah": 1,
+    "obadiah": 1,
+    "ruth": 1
   },
   "phrases": [
     {
+      "hebrew": "אֲשֶׁ֣ר גָּדְל֣וּ",
+      "pron": "아셰르 바아갇델라",
+      "lemmas": [
+        "אֲשֶׁר",
+        "גָּדַל"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "גָּדְל֣וּ",
+          "lemma": "גָּדַל",
+          "strong": "H1431",
+          "pron": "바아갇델라"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "ruth 1:13",
+        "samuel1 12:24",
+        "samuel1 26:24",
+        "kings1 12:8",
+        "kings1 12:10",
+        "chronicles2 10:8",
+        "chronicles2 10:10",
+        "esther 5:11",
+        "esther 10:2"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "יִגְדַּ֣ל יְהוָ֑ה",
-      "pron": "믁들 여호와",
+      "pron": "바아갇델라 여호와",
       "lemmas": [
         "גָּדַל",
         "יְהֹוָה"
@@ -66,7 +130,7 @@
           "word": "יִגְדַּ֣ל",
           "lemma": "גָּדַל",
           "strong": "H1431",
-          "pron": "믁들"
+          "pron": "바아갇델라"
         },
         {
           "word": "יְהוָ֑ה",
@@ -75,49 +139,58 @@
           "pron": "여호와"
         }
       ],
-      "count": 5,
+      "count": 9,
       "refs": [
+        "joshua 4:14",
+        "chronicles1 29:25",
         "psalms 34:3",
         "psalms 35:27",
         "psalms 40:16",
         "psalms 126:2",
-        "psalms 126:3"
+        "psalms 126:3",
+        "joel 2:21",
+        "malachi 1:5"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כִּֽי הִגְדַּ֥לְתָּ",
-      "pron": "키 믁들",
+      "hebrew": "כִּ֥י הִגְדִּ֖יל",
+      "pron": "키 바아갇델라",
       "lemmas": [
         "כִּי",
         "גָּדַל"
       ],
       "words": [
         {
-          "word": "כִּֽי",
+          "word": "כִּ֥י",
           "lemma": "כִּי",
           "strong": "H3588",
           "pron": "키"
         },
         {
-          "word": "הִגְדַּ֥לְתָּ",
+          "word": "הִגְדִּ֖יל",
           "lemma": "גָּדַל",
           "strong": "H1431",
-          "pron": "믁들"
+          "pron": "바아갇델라"
         }
       ],
-      "count": 4,
+      "count": 9,
       "refs": [
-        "psalms 138:2",
         "genesis 19:13",
         "genesis 26:13",
-        "genesis 38:14"
+        "genesis 38:14",
+        "job 2:13",
+        "job 7:17",
+        "psalms 138:2",
+        "lamentations 1:9",
+        "joel 2:20",
+        "joel 2:21"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "הַֽמַּגְדִּילִ֥ים עָלָֽי",
-      "pron": "믁들 알",
+      "pron": "바아갇델라 알",
       "lemmas": [
         "גָּדַל",
         "עַל"
@@ -127,7 +200,7 @@
           "word": "הַֽמַּגְדִּילִ֥ים",
           "lemma": "גָּדַל",
           "strong": "H1431",
-          "pron": "믁들"
+          "pron": "바아갇델라"
         },
         {
           "word": "עָלָֽי",
@@ -136,76 +209,46 @@
           "pron": "알"
         }
       ],
-      "count": 3,
+      "count": 7,
       "refs": [
         "psalms 35:26",
         "psalms 41:9",
-        "psalms 138:2"
+        "psalms 138:2",
+        "ezekiel 35:13",
+        "daniel 11:36",
+        "zephaniah 2:8",
+        "zephaniah 2:10"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְיֹאמְר֣וּ תָ֭מִיד יִגְדַּ֣ל",
-      "pron": "아마르 타믿 믁들",
+      "hebrew": "וַיִּגְדַּל֙ הַמֶּ֣לֶךְ",
+      "pron": "바아갇델라 멜레크",
       "lemmas": [
-        "אָמַר",
-        "תָּמִיד",
-        "גָּדַל"
+        "גָּדַל",
+        "מֶלֶךְ"
       ],
       "words": [
         {
-          "word": "וְיֹאמְר֣וּ",
-          "lemma": "אָמַר",
-          "strong": "H559",
-          "pron": "아마르"
-        },
-        {
-          "word": "תָ֭מִיד",
-          "lemma": "תָּמִיד",
-          "strong": "H8548",
-          "pron": "타믿"
-        },
-        {
-          "word": "יִגְדַּ֣ל",
+          "word": "וַיִּגְדַּל֙",
           "lemma": "גָּדַל",
           "strong": "H1431",
-          "pron": "믁들"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 35:27",
-        "psalms 40:16",
-        "psalms 70:4"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "תָ֭מִיד יִגְדַּ֣ל",
-      "pron": "타믿 믁들",
-      "lemmas": [
-        "תָּמִיד",
-        "גָּדַל"
-      ],
-      "words": [
-        {
-          "word": "תָ֭מִיד",
-          "lemma": "תָּמִיד",
-          "strong": "H8548",
-          "pron": "타믿"
+          "pron": "바아갇델라"
         },
         {
-          "word": "יִגְדַּ֣ל",
-          "lemma": "גָּדַל",
-          "strong": "H1431",
-          "pron": "믁들"
+          "word": "הַמֶּ֣לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
-        "psalms 35:27",
-        "psalms 40:16",
-        "psalms 70:4"
+        "kings1 10:23",
+        "chronicles2 9:22",
+        "esther 3:1",
+        "esther 5:11",
+        "esther 10:2"
       ],
       "glossKo": ""
     }

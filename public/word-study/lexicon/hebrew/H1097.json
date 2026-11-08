@@ -18,40 +18,215 @@
     {
       "lemma": "בְּלָא",
       "strong": "H1080",
-      "pron": "",
+      "pron": "예발레",
       "glossKo": "쇠퇴시키다(아람)"
     },
     {
       "lemma": "בָּלָה",
       "strong": "H1086",
-      "pron": "발루",
-      "glossKo": "쇠하다"
+      "pron": "벨로티",
+      "glossKo": "나를 쇠하다"
     },
     {
       "lemma": "בָּלֶה",
       "strong": "H1087",
-      "pron": "",
+      "pron": "발림",
       "glossKo": "낡은"
     },
     {
       "lemma": "בְּלוֹ",
       "strong": "H1093",
-      "pron": "",
+      "pron": "벨로",
       "glossKo": "공물(아람)"
     },
     {
       "lemma": "בְּלוֹא",
       "strong": "H1094",
-      "pron": "",
+      "pron": "벨로에",
       "glossKo": "헌 옷"
     }
   ],
   "defEn": "failure; nothing; destruction; without; not yet; because not; as long as",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 58,
   "byBook": {
+    "job": 21,
+    "isaiah": 6,
+    "deuteronomy": 4,
+    "hosea": 4,
+    "jeremiah": 4,
     "psalms": 4,
-    "genesis": 1
+    "kings2": 3,
+    "ezekiel": 2,
+    "joshua": 2,
+    "zephaniah": 2,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "genesis": 1,
+    "lamentations": 1,
+    "malachi": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בִּבְלִי דַ֔עַת",
+      "pron": "벨리 아다아트",
+      "lemmas": [
+        "בְּלִי",
+        "דַּעַת"
+      ],
+      "words": [
+        {
+          "word": "בִּבְלִי",
+          "lemma": "בְּלִי",
+          "strong": "H1097",
+          "pron": "벨리"
+        },
+        {
+          "word": "דַ֔עַת",
+          "lemma": "דַּעַת",
+          "strong": "H1847",
+          "pron": "아다아트"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "deuteronomy 4:42",
+        "deuteronomy 19:4",
+        "joshua 20:3",
+        "joshua 20:5",
+        "job 35:16",
+        "job 36:12",
+        "job 38:2",
+        "job 42:3",
+        "isaiah 5:13",
+        "hosea 4:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַֽמִבְּלִ֤י אֵין",
+      "pron": "벨리 아인",
+      "lemmas": [
+        "בְּלִי",
+        "אַיִן"
+      ],
+      "words": [
+        {
+          "word": "הַֽמִבְּלִ֤י",
+          "lemma": "בְּלִי",
+          "strong": "H1097",
+          "pron": "벨리"
+        },
+        {
+          "word": "אֵין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 14:11",
+        "kings2 1:3",
+        "kings2 1:6",
+        "kings2 1:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַֽמִבְּלִ֤י אֵין אֱלֹהִים֙",
+      "pron": "벨리 아인 엘로힘",
+      "lemmas": [
+        "בְּלִי",
+        "אַיִן",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "הַֽמִבְּלִ֤י",
+          "lemma": "בְּלִי",
+          "strong": "H1097",
+          "pron": "벨리"
+        },
+        {
+          "word": "אֵין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
+        },
+        {
+          "word": "אֱלֹהִים֙",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 1:3",
+        "kings2 1:6",
+        "kings2 1:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִבְּלִ֣י לְב֑וּשׁ",
+      "pron": "벨리 레부쇼",
+      "lemmas": [
+        "בְּלִי",
+        "לְבוּשׁ"
+      ],
+      "words": [
+        {
+          "word": "מִבְּלִ֣י",
+          "lemma": "בְּלִי",
+          "strong": "H1097",
+          "pron": "벨리"
+        },
+        {
+          "word": "לְב֑וּשׁ",
+          "lemma": "לְבוּשׁ",
+          "strong": "H3830",
+          "pron": "레부쇼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 24:7",
+        "job 24:10",
+        "job 31:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִבְּלִ֖י עֹבֵֽר",
+      "pron": "벨리 바야아베르",
+      "lemmas": [
+        "בְּלִי",
+        "עָבַר"
+      ],
+      "words": [
+        {
+          "word": "מִבְּלִ֖י",
+          "lemma": "בְּלִי",
+          "strong": "H1097",
+          "pron": "벨리"
+        },
+        {
+          "word": "עֹבֵֽר",
+          "lemma": "עָבַר",
+          "strong": "H5674",
+          "pron": "바야아베르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 9:12",
+        "ezekiel 14:15",
+        "zephaniah 3:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

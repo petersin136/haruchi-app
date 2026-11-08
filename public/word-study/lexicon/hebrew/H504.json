@@ -1,6 +1,6 @@
 {
   "lemma": "אֶלֶף",
-  "pron": "바알라핌",
+  "pron": "알라페카",
   "strong": "H504",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,166 @@
     {
       "lemma": "אַלּוּף",
       "strong": "H441",
-      "pron": "알루피위",
-      "glossKo": "나의 족장"
+      "pron": "알루페",
+      "glossKo": "족장"
     },
     {
       "lemma": "אָלַף",
       "strong": "H502",
-      "pron": "",
+      "pron": "예알렙",
       "glossKo": "익히다"
     },
     {
       "lemma": "אֶלֶף",
       "strong": "H505",
-      "pron": "알렙",
+      "pron": "엘렙",
       "glossKo": "천"
     }
   ],
   "defEn": "family",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 8,
   "byBook": {
+    "deuteronomy": 4,
+    "isaiah": 1,
+    "judges": 1,
+    "proverbs": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲלָפֶ֖יךָ וְעַשְׁתְּר֥וֹת",
+      "pron": "알라페카 브아솃테로트",
+      "lemmas": [
+        "אֶלֶף",
+        "עַשְׁתְּרָה"
+      ],
+      "words": [
+        {
+          "word": "אֲלָפֶ֖יךָ",
+          "lemma": "אֶלֶף",
+          "strong": "H504",
+          "pron": "알라페카"
+        },
+        {
+          "word": "וְעַשְׁתְּר֥וֹת",
+          "lemma": "עַשְׁתְּרָה",
+          "strong": "H6251",
+          "pron": "브아솃테로트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 7:13",
+        "deuteronomy 28:4",
+        "deuteronomy 28:18",
+        "deuteronomy 28:51"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲלָפֶ֖יךָ וְעַשְׁתְּר֥וֹת צֹאנֶֽךָ",
+      "pron": "알라페카 브아솃테로트 촌",
+      "lemmas": [
+        "אֶלֶף",
+        "עַשְׁתְּרָה",
+        "צֹאן"
+      ],
+      "words": [
+        {
+          "word": "אֲלָפֶ֖יךָ",
+          "lemma": "אֶלֶף",
+          "strong": "H504",
+          "pron": "알라페카"
+        },
+        {
+          "word": "וְעַשְׁתְּר֥וֹת",
+          "lemma": "עַשְׁתְּרָה",
+          "strong": "H6251",
+          "pron": "브아솃테로트"
+        },
+        {
+          "word": "צֹאנֶֽךָ",
+          "lemma": "צֹאן",
+          "strong": "H6629",
+          "pron": "촌"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 7:13",
+        "deuteronomy 28:4",
+        "deuteronomy 28:18",
+        "deuteronomy 28:51"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁגַ֥ר אֲלָפֶ֖יךָ",
+      "pron": "셰게르 알라페카",
+      "lemmas": [
+        "שֶׁגֶר",
+        "אֶלֶף"
+      ],
+      "words": [
+        {
+          "word": "שְׁגַ֥ר",
+          "lemma": "שֶׁגֶר",
+          "strong": "H7698",
+          "pron": "셰게르"
+        },
+        {
+          "word": "אֲלָפֶ֖יךָ",
+          "lemma": "אֶלֶף",
+          "strong": "H504",
+          "pron": "알라페카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 7:13",
+        "deuteronomy 28:4",
+        "deuteronomy 28:18",
+        "deuteronomy 28:51"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁגַ֥ר אֲלָפֶ֖יךָ וְעַשְׁתְּר֥וֹת",
+      "pron": "셰게르 알라페카 브아솃테로트",
+      "lemmas": [
+        "שֶׁגֶר",
+        "אֶלֶף",
+        "עַשְׁתְּרָה"
+      ],
+      "words": [
+        {
+          "word": "שְׁגַ֥ר",
+          "lemma": "שֶׁגֶר",
+          "strong": "H7698",
+          "pron": "셰게르"
+        },
+        {
+          "word": "אֲלָפֶ֖יךָ",
+          "lemma": "אֶלֶף",
+          "strong": "H504",
+          "pron": "알라페카"
+        },
+        {
+          "word": "וְעַשְׁתְּר֥וֹת",
+          "lemma": "עַשְׁתְּרָה",
+          "strong": "H6251",
+          "pron": "브아솃테로트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 7:13",
+        "deuteronomy 28:4",
+        "deuteronomy 28:18",
+        "deuteronomy 28:51"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

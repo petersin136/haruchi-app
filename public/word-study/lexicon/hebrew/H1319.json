@@ -1,6 +1,6 @@
 {
   "lemma": "בָּשַׂר",
-  "pron": "빗사렛티",
+  "pron": "아메밧세르",
   "strong": "H1319",
   "posKo": "동사",
   "root": null,
@@ -8,27 +8,93 @@
     {
       "lemma": "בְּשׂוֹר",
       "strong": "H1308",
-      "pron": "",
+      "pron": "아베소르",
       "glossKo": "브솔"
     },
     {
       "lemma": "בְּשׂוֹרָה",
       "strong": "H1309",
-      "pron": "",
+      "pron": "베소라",
       "glossKo": "기쁜 소식"
     },
     {
       "lemma": "בָּשָׂר",
       "strong": "H1320",
-      "pron": "베사리위",
-      "glossKo": "나의 몸"
+      "pron": "바사르",
+      "glossKo": "몸"
     }
   ],
   "defEn": "be fresh; full; rosy; cheerful; to announce",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 24,
   "byBook": {
-    "psalms": 3
+    "isaiah": 7,
+    "samuel2": 7,
+    "psalms": 3,
+    "chronicles1": 2,
+    "samuel1": 2,
+    "jeremiah": 1,
+    "kings1": 1,
+    "nahum": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בַּשְּׂר֥וּ מִיּֽוֹם",
+      "pron": "아메밧세르 욤",
+      "lemmas": [
+        "בָּשַׂר",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "בַּשְּׂר֥וּ",
+          "lemma": "בָּשַׂר",
+          "strong": "H1319",
+          "pron": "아메밧세르"
+        },
+        {
+          "word": "מִיּֽוֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 18:20",
+        "chronicles1 16:23",
+        "psalms 96:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַאֲבַשְּׂרָ֖ה אֶת",
+      "pron": "아메밧세르 에트",
+      "lemmas": [
+        "בָּשַׂר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַאֲבַשְּׂרָ֖ה",
+          "lemma": "בָּשַׂר",
+          "strong": "H1319",
+          "pron": "아메밧세르"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 18:19",
+        "chronicles1 10:9",
+        "jeremiah 20:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

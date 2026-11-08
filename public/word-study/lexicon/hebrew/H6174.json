@@ -12,8 +12,8 @@
     {
       "lemma": "מַעֲרֹם",
       "strong": "H4636",
-      "pron": "",
-      "glossKo": "벌거벗음"
+      "pron": "마아룸메헴",
+      "glossKo": "그들의 벌거벗음"
     },
     {
       "lemma": "עֵירֹם",
@@ -30,14 +30,14 @@
     {
       "lemma": "עָרַם",
       "strong": "H6191",
-      "pron": "야아리무",
+      "pron": "아롬",
       "glossKo": "교활하다"
     },
     {
       "lemma": "עֹרֶם",
       "strong": "H6193",
-      "pron": "",
-      "glossKo": "교활"
+      "pron": "베아레맘",
+      "glossKo": "그들에게 교활"
     },
     {
       "lemma": "עַרְמוֹן",
@@ -48,9 +48,46 @@
   ],
   "defEn": "nude",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 16,
   "byBook": {
-    "genesis": 1
+    "job": 6,
+    "isaiah": 4,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "genesis": 1,
+    "hosea": 1,
+    "micah": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עָר֣וֹם וְיָחֵ֑ף",
+      "pron": "아룸밈 야헵",
+      "lemmas": [
+        "עָרוֹם",
+        "יָחֵף"
+      ],
+      "words": [
+        {
+          "word": "עָר֣וֹם",
+          "lemma": "עָרוֹם",
+          "strong": "H6174",
+          "pron": "아룸밈"
+        },
+        {
+          "word": "וְיָחֵ֑ף",
+          "lemma": "יָחֵף",
+          "strong": "H3182",
+          "pron": "야헵"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 20:2",
+        "isaiah 20:3",
+        "isaiah 20:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

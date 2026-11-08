@@ -12,36 +12,92 @@
     {
       "lemma": "כָּבַד",
       "strong": "H3513",
-      "pron": "예캅벧",
+      "pron": "카벧",
       "glossKo": "영광스럽게 하다"
     },
     {
       "lemma": "כֹּבֶד",
       "strong": "H3514",
-      "pron": "",
+      "pron": "코벧",
       "glossKo": "무거움"
+    },
+    {
+      "lemma": "כָּבֵד",
+      "strong": "H3516",
+      "pron": "아카벧",
+      "glossKo": "간"
+    },
+    {
+      "lemma": "כְּבֵדֻת",
+      "strong": "H3517",
+      "pron": "비케베두트",
+      "glossKo": "어려움"
     },
     {
       "lemma": "כָּבוֹד",
       "strong": "H3519",
-      "pron": "케보디위",
-      "glossKo": "나의 영광"
+      "pron": "아카볻",
+      "glossKo": "영광"
     },
     {
       "lemma": "כְּבוּדָּה",
       "strong": "H3520",
-      "pron": "케붇다",
+      "pron": "아케붇다",
       "glossKo": "귀중한 것"
     }
   ],
   "defEn": "heavy; numerous; severe; difficult; stupid",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 39,
   "byBook": {
+    "exodus": 12,
     "genesis": 8,
-    "psalms": 1
+    "kings1": 4,
+    "chronicles2": 3,
+    "isaiah": 3,
+    "ezekiel": 2,
+    "kings2": 2,
+    "numbers": 2,
+    "proverbs": 1,
+    "psalms": 1,
+    "samuel1": 1
   },
   "phrases": [
+    {
+      "hebrew": "כָּבֵ֥ד מְאֹֽד",
+      "pron": "카벧 메옫",
+      "lemmas": [
+        "כָּבֵד",
+        "מְאֹד"
+      ],
+      "words": [
+        {
+          "word": "כָּבֵ֥ד",
+          "lemma": "כָּבֵד",
+          "strong": "H3515",
+          "pron": "카벧"
+        },
+        {
+          "word": "מְאֹֽד",
+          "lemma": "מְאֹד",
+          "strong": "H3966",
+          "pron": "메옫"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "genesis 50:9",
+        "genesis 50:10",
+        "exodus 9:3",
+        "exodus 9:18",
+        "exodus 9:24",
+        "exodus 10:14",
+        "exodus 12:38",
+        "kings1 10:2",
+        "chronicles2 9:1"
+      ],
+      "glossKo": ""
+    },
     {
       "hebrew": "כִּֽי כָבֵ֥ד",
       "pron": "키 카벧",
@@ -63,77 +119,103 @@
           "pron": "카벧"
         }
       ],
-      "count": 4,
+      "count": 7,
       "refs": [
         "genesis 12:10",
         "genesis 41:31",
         "genesis 47:4",
-        "genesis 47:13"
+        "genesis 47:13",
+        "exodus 4:10",
+        "exodus 18:18",
+        "numbers 11:14"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כָבֵ֥ד הָרָעָ֖ב",
-      "pron": "카벧 바라압",
+      "hebrew": "וּמֵעֻלּ֧וֹ הַכָּבֵ֛ד",
+      "pron": "울로 카벧",
       "lemmas": [
-        "כָּבֵד",
-        "רָעָב"
+        "עֹל",
+        "כָּבֵד"
       ],
       "words": [
         {
-          "word": "כָבֵ֥ד",
+          "word": "וּמֵעֻלּ֧וֹ",
+          "lemma": "עֹל",
+          "strong": "H5923",
+          "pron": "울로"
+        },
+        {
+          "word": "הַכָּבֵ֛ד",
           "lemma": "כָּבֵד",
           "strong": "H3515",
           "pron": "카벧"
-        },
-        {
-          "word": "הָרָעָ֖ב",
-          "lemma": "רָעָב",
-          "strong": "H7458",
-          "pron": "바라압"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
-        "genesis 12:10",
-        "genesis 47:4",
-        "genesis 47:13"
+        "kings1 12:4",
+        "kings1 12:11",
+        "chronicles2 10:4",
+        "chronicles2 10:11"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כִּֽי כָבֵ֥ד הָרָעָ֖ב",
-      "pron": "키 카벧 바라압",
+      "hebrew": "בְּחַיִל֮ כָּבֵ֣ד",
+      "pron": "헬람 카벧",
       "lemmas": [
-        "כִּי",
-        "כָּבֵד",
-        "רָעָב"
+        "חַיִל",
+        "כָּבֵד"
       ],
       "words": [
         {
-          "word": "כִּֽי",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
+          "word": "בְּחַיִל֮",
+          "lemma": "חַיִל",
+          "strong": "H2428",
+          "pron": "헬람"
         },
         {
-          "word": "כָבֵ֥ד",
+          "word": "כָּבֵ֣ד",
           "lemma": "כָּבֵד",
           "strong": "H3515",
           "pron": "카벧"
-        },
-        {
-          "word": "הָרָעָ֖ב",
-          "lemma": "רָעָב",
-          "strong": "H7458",
-          "pron": "바라압"
         }
       ],
       "count": 3,
       "refs": [
-        "genesis 12:10",
-        "genesis 47:4",
-        "genesis 47:13"
+        "kings1 10:2",
+        "kings2 6:14",
+        "chronicles2 9:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּעַ֥ם כָּבֵ֖ד",
+      "pron": "암 카벧",
+      "lemmas": [
+        "עַם",
+        "כָּבֵד"
+      ],
+      "words": [
+        {
+          "word": "בְּעַ֥ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "כָּבֵ֖ד",
+          "lemma": "כָּבֵד",
+          "strong": "H3515",
+          "pron": "카벧"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 20:20",
+        "kings1 3:9",
+        "isaiah 1:4"
       ],
       "glossKo": ""
     }

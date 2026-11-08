@@ -1,6 +1,6 @@
 {
   "lemma": "מַחֲסֶה",
-  "pron": "마헤세후",
+  "pron": "마헤세",
   "strong": "H4268",
   "posKo": "명사",
   "root": {
@@ -12,38 +12,43 @@
     {
       "lemma": "חָסָה",
       "strong": "H2620",
-      "pron": "호세",
-      "glossKo": "피하는 이"
+      "pron": "하사우",
+      "glossKo": "피하다"
     },
     {
       "lemma": "חֹסָה",
       "strong": "H2621",
-      "pron": "",
+      "pron": "호사",
       "glossKo": "호사"
     },
     {
       "lemma": "חָסוּת",
       "strong": "H2622",
-      "pron": "",
+      "pron": "브헤하수트",
       "glossKo": "피난처"
     },
     {
       "lemma": "מַחְסֵיָה",
       "strong": "H4271",
-      "pron": "",
+      "pron": "마헤세아",
       "glossKo": "마세야"
     }
   ],
   "defEn": "shelter",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 20,
   "byBook": {
-    "psalms": 12
+    "psalms": 12,
+    "isaiah": 4,
+    "jeremiah": 1,
+    "job": 1,
+    "joel": 1,
+    "proverbs": 1
   },
   "phrases": [
     {
       "hebrew": "יְהוָ֣ה מַחְסֵֽהוּ",
-      "pron": "여호와 마헤세후",
+      "pron": "여호와 마헤세",
       "lemmas": [
         "יְהֹוָה",
         "מַחֲסֶה"
@@ -59,14 +64,15 @@
           "word": "מַחְסֵֽהוּ",
           "lemma": "מַחֲסֶה",
           "strong": "H4268",
-          "pron": "마헤세후"
+          "pron": "마헤세"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "psalms 14:6",
         "psalms 91:2",
-        "psalms 91:9"
+        "psalms 91:9",
+        "joel 3:16"
       ],
       "glossKo": ""
     }

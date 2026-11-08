@@ -1,6 +1,6 @@
 {
   "lemma": "שָׂדֶה",
-  "pron": "사다이",
+  "pron": "아사데",
   "strong": "H7704",
   "posKo": "명사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "שְׁדֵיאוּר",
       "strong": "H7707",
-      "pron": "",
+      "pron": "셰데우르",
       "glossKo": "스데울"
     },
     {
@@ -20,121 +20,125 @@
     {
       "lemma": "שְׁדֵמָה",
       "strong": "H7709",
-      "pron": "",
+      "pron": "우미샫모트",
       "glossKo": "들밭"
     }
   ],
   "defEn": "field",
   "defKo": "",
-  "countOT": 58,
+  "countOT": 334,
   "byBook": {
     "genesis": 48,
-    "psalms": 10
+    "jeremiah": 27,
+    "ezekiel": 26,
+    "leviticus": 25,
+    "exodus": 22,
+    "samuel1": 22,
+    "ruth": 16,
+    "deuteronomy": 14,
+    "kings2": 13,
+    "samuel2": 13,
+    "judges": 12,
+    "isaiah": 10,
+    "nehemiah": 10,
+    "psalms": 10,
+    "chronicles1": 8,
+    "numbers": 8,
+    "hosea": 7,
+    "joel": 6,
+    "job": 5,
+    "kings1": 5,
+    "micah": 5,
+    "proverbs": 5,
+    "chronicles2": 4,
+    "joshua": 4,
+    "songofsolomon": 3,
+    "obadiah": 2,
+    "ecclesiastes": 1,
+    "lamentations": 1,
+    "malachi": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "הַשָּׂדֶ֔ה אֲשֶׁ֥ר",
-      "pron": "사다이 아셰르",
+      "hebrew": "חַיַּ֤ת הַשָּׂדֶה֙",
+      "pron": "하아 아사데",
       "lemmas": [
-        "שָׂדֶה",
-        "אֲשֶׁר"
+        "חַי",
+        "שָׂדֶה"
       ],
       "words": [
+        {
+          "word": "חַיַּ֤ת",
+          "lemma": "חַי",
+          "strong": "H2416",
+          "pron": "하아"
+        },
+        {
+          "word": "הַשָּׂדֶה֙",
+          "lemma": "שָׂדֶה",
+          "strong": "H7704",
+          "pron": "아사데"
+        }
+      ],
+      "count": 31,
+      "refs": [
+        "genesis 2:19",
+        "genesis 2:20",
+        "genesis 3:1",
+        "genesis 3:14",
+        "exodus 23:11",
+        "exodus 23:29",
+        "leviticus 26:22",
+        "deuteronomy 7:22",
+        "samuel2 21:10",
+        "kings2 14:9",
+        "chronicles2 25:18",
+        "job 5:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הַשָּׂדֶ֔ה",
+      "pron": "에트 아사데",
+      "lemmas": [
+        "אֵת",
+        "שָׂדֶה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
         {
           "word": "הַשָּׂדֶ֔ה",
           "lemma": "שָׂדֶה",
           "strong": "H7704",
-          "pron": "사다이"
-        },
-        {
-          "word": "אֲשֶׁ֥ר",
-          "lemma": "אֲשֶׁר",
-          "strong": "H834",
-          "pron": "아셰르"
+          "pron": "아사데"
         }
       ],
-      "count": 5,
+      "count": 15,
       "refs": [
-        "genesis 3:1",
-        "genesis 23:17",
-        "genesis 25:10",
-        "genesis 27:27",
-        "genesis 33:19"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "חַיַּ֣ת הַשָּׂדֶ֑ה",
-      "pron": "하아위 사다이",
-      "lemmas": [
-        "חַי",
-        "שָׂדֶה"
-      ],
-      "words": [
-        {
-          "word": "חַיַּ֣ת",
-          "lemma": "חַי",
-          "strong": "H2416",
-          "pron": "하아위"
-        },
-        {
-          "word": "הַשָּׂדֶ֑ה",
-          "lemma": "שָׂדֶה",
-          "strong": "H7704",
-          "pron": "사다이"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 104:11",
-        "genesis 2:19",
-        "genesis 2:20",
-        "genesis 3:1",
-        "genesis 3:14"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "כָּל חַיְת֣וֹ שָׂדָ֑י",
-      "pron": "브콜 하아위 사다이",
-      "lemmas": [
-        "כֹּל",
-        "חַי",
-        "שָׂדֶה"
-      ],
-      "words": [
-        {
-          "word": "כָּל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
-        },
-        {
-          "word": "חַיְת֣וֹ",
-          "lemma": "חַי",
-          "strong": "H2416",
-          "pron": "하아위"
-        },
-        {
-          "word": "שָׂדָ֑י",
-          "lemma": "שָׂדֶה",
-          "strong": "H7704",
-          "pron": "사다이"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 104:11",
-        "genesis 2:19",
-        "genesis 2:20",
-        "genesis 3:1",
-        "genesis 3:14"
+        "genesis 49:30",
+        "genesis 50:13",
+        "leviticus 27:19",
+        "leviticus 27:20",
+        "leviticus 27:22",
+        "joshua 21:12",
+        "samuel1 8:14",
+        "samuel2 19:29",
+        "chronicles1 6:56",
+        "jeremiah 32:7",
+        "jeremiah 32:8",
+        "jeremiah 32:9"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "אֲשֶׁ֣ר בַּשָּׂדֶ֔ה",
-      "pron": "아셰르 사다이",
+      "pron": "아셰르 아사데",
       "lemmas": [
         "אֲשֶׁר",
         "שָׂדֶה"
@@ -150,44 +154,106 @@
           "word": "בַּשָּׂדֶ֔ה",
           "lemma": "שָׂדֶה",
           "strong": "H7704",
-          "pron": "사다이"
+          "pron": "아사데"
         }
       ],
-      "count": 4,
+      "count": 14,
       "refs": [
         "genesis 23:17",
         "genesis 34:28",
         "genesis 49:29",
-        "genesis 49:30"
+        "genesis 49:30",
+        "exodus 9:3",
+        "exodus 9:19",
+        "exodus 9:25",
+        "numbers 21:20",
+        "judges 9:44",
+        "samuel2 2:18",
+        "jeremiah 40:7",
+        "jeremiah 40:13"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הַשָּׂדֶה֙ וְהַמְּעָרָ֣ה",
-      "pron": "사다이 바메아라",
+      "hebrew": "הַשָּׂדֶ֔ה אֲשֶׁ֥ר",
+      "pron": "아사데 아셰르",
       "lemmas": [
         "שָׂדֶה",
-        "מְעָרָה"
+        "אֲשֶׁר"
       ],
       "words": [
+        {
+          "word": "הַשָּׂדֶ֔ה",
+          "lemma": "שָׂדֶה",
+          "strong": "H7704",
+          "pron": "아사데"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "genesis 3:1",
+        "genesis 23:17",
+        "genesis 25:10",
+        "genesis 27:27",
+        "genesis 33:19",
+        "leviticus 27:24",
+        "joshua 24:32",
+        "ruth 2:9",
+        "ruth 4:3",
+        "samuel1 19:3",
+        "kings2 14:9",
+        "chronicles2 25:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל חַיַּ֤ת הַשָּׂדֶה֙",
+      "pron": "칼 하아 아사데",
+      "lemmas": [
+        "כֹּל",
+        "חַי",
+        "שָׂדֶה"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "חַיַּ֤ת",
+          "lemma": "חַי",
+          "strong": "H2416",
+          "pron": "하아"
+        },
         {
           "word": "הַשָּׂדֶה֙",
           "lemma": "שָׂדֶה",
           "strong": "H7704",
-          "pron": "사다이"
-        },
-        {
-          "word": "וְהַמְּעָרָ֣ה",
-          "lemma": "מְעָרָה",
-          "strong": "H4631",
-          "pron": "바메아라"
+          "pron": "아사데"
         }
       ],
-      "count": 3,
+      "count": 13,
       "refs": [
-        "genesis 23:17",
-        "genesis 23:20",
-        "genesis 49:32"
+        "genesis 2:19",
+        "genesis 2:20",
+        "genesis 3:1",
+        "genesis 3:14",
+        "job 40:20",
+        "psalms 104:11",
+        "isaiah 56:9",
+        "jeremiah 12:9",
+        "ezekiel 31:6",
+        "ezekiel 31:13",
+        "ezekiel 34:5",
+        "ezekiel 34:8"
       ],
       "glossKo": ""
     }

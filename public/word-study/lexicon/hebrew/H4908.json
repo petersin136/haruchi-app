@@ -1,6 +1,6 @@
 {
   "lemma": "מִשְׁכָּן",
-  "pron": "미셱칸",
+  "pron": "아미셱칸",
   "strong": "H4908",
   "posKo": "명사",
   "root": {
@@ -12,45 +12,243 @@
     {
       "lemma": "מִשְׁכַּן",
       "strong": "H4907",
-      "pron": "",
-      "glossKo": "거처(아람)"
+      "pron": "미셱케네흐",
+      "glossKo": "그의 거처(아람)"
     },
     {
       "lemma": "שָׁכַן",
       "strong": "H7931",
-      "pron": "야셱켄",
+      "pron": "바야셱켄",
       "glossKo": "거주하다"
     },
     {
       "lemma": "שְׁכַן",
       "strong": "H7932",
-      "pron": "",
+      "pron": "샥킨",
       "glossKo": "거하다(아람)"
     },
     {
       "lemma": "שֶׁכֶן",
       "strong": "H7933",
-      "pron": "",
-      "glossKo": "거주"
+      "pron": "레시케노",
+      "glossKo": "그에게 거주"
     },
     {
       "lemma": "שָׁכֵן",
       "strong": "H7934",
-      "pron": "브리샤케나위",
-      "glossKo": "나를 이웃"
+      "pron": "밋셰켄타흐",
+      "glossKo": "그녀에게 이웃"
     },
     {
       "lemma": "שְׁכַנְיָה",
       "strong": "H7935",
-      "pron": "",
+      "pron": "셰칸아",
       "glossKo": "스가냐"
     }
   ],
   "defEn": "residence; hut; lair; grave",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 139,
   "byBook": {
-    "psalms": 11
+    "exodus": 58,
+    "numbers": 42,
+    "psalms": 11,
+    "chronicles1": 6,
+    "leviticus": 4,
+    "isaiah": 3,
+    "jeremiah": 3,
+    "job": 3,
+    "chronicles2": 2,
+    "ezekiel": 2,
+    "joshua": 2,
+    "habakkuk": 1,
+    "samuel2": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת הַמִּשְׁכָּ֖ן",
+      "pron": "에트 아미셱칸",
+      "lemmas": [
+        "אֵת",
+        "מִשְׁכָּן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַמִּשְׁכָּ֖ן",
+          "lemma": "מִשְׁכָּן",
+          "strong": "H4908",
+          "pron": "아미셱칸"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "exodus 26:1",
+        "exodus 26:30",
+        "exodus 35:11",
+        "exodus 36:8",
+        "exodus 39:33",
+        "exodus 40:2",
+        "exodus 40:9",
+        "exodus 40:18",
+        "exodus 40:34",
+        "exodus 40:35",
+        "leviticus 8:10",
+        "leviticus 15:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל הַמִּשְׁכָּ֑ן",
+      "pron": "알 아미셱칸",
+      "lemmas": [
+        "עַל",
+        "מִשְׁכָּן"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הַמִּשְׁכָּ֑ן",
+          "lemma": "מִשְׁכָּן",
+          "strong": "H4908",
+          "pron": "아미셱칸"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "exodus 26:7",
+        "exodus 36:14",
+        "exodus 40:19",
+        "exodus 40:36",
+        "exodus 40:38",
+        "numbers 1:50",
+        "numbers 3:26",
+        "numbers 4:26",
+        "numbers 9:15",
+        "numbers 9:18",
+        "numbers 9:19",
+        "numbers 9:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִשְׁכַּ֣ן יְהוָ֑ה",
+      "pron": "아미셱칸 여호와",
+      "lemmas": [
+        "מִשְׁכָּן",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "מִשְׁכַּ֣ן",
+          "lemma": "מִשְׁכָּן",
+          "strong": "H4908",
+          "pron": "아미셱칸"
+        },
+        {
+          "word": "יְהוָ֑ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "leviticus 17:4",
+        "numbers 16:9",
+        "numbers 17:13",
+        "numbers 19:13",
+        "numbers 31:30",
+        "numbers 31:47",
+        "joshua 22:19",
+        "chronicles1 16:39",
+        "chronicles1 21:29",
+        "chronicles2 1:5",
+        "chronicles2 29:6",
+        "psalms 84:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַמִּשְׁכָּ֛ן וְאֶת",
+      "pron": "아미셱칸 에트",
+      "lemmas": [
+        "מִשְׁכָּן",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הַמִּשְׁכָּ֛ן",
+          "lemma": "מִשְׁכָּן",
+          "strong": "H4908",
+          "pron": "아미셱칸"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 25:9",
+        "exodus 35:11",
+        "exodus 35:18",
+        "exodus 38:31",
+        "exodus 40:9",
+        "leviticus 8:10",
+        "numbers 1:50",
+        "numbers 4:25",
+        "chronicles1 23:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַקְּרָשִׁ֖ים לַמִּשְׁכָּ֑ן",
+      "pron": "아케라심 아미셱칸",
+      "lemmas": [
+        "קֶרֶשׁ",
+        "מִשְׁכָּן"
+      ],
+      "words": [
+        {
+          "word": "הַקְּרָשִׁ֖ים",
+          "lemma": "קֶרֶשׁ",
+          "strong": "H7175",
+          "pron": "아케라심"
+        },
+        {
+          "word": "לַמִּשְׁכָּ֑ן",
+          "lemma": "מִשְׁכָּן",
+          "strong": "H4908",
+          "pron": "아미셱칸"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 26:15",
+        "exodus 26:17",
+        "exodus 26:18",
+        "exodus 36:20",
+        "exodus 36:22",
+        "exodus 36:23",
+        "exodus 36:32",
+        "numbers 3:36",
+        "numbers 4:31"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

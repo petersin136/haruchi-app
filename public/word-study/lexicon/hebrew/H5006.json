@@ -1,6 +1,6 @@
 {
   "lemma": "נָאַץ",
-  "pron": "니에츠",
+  "pron": "예나아추니",
   "strong": "H5006",
   "posKo": "동사",
   "root": null,
@@ -8,15 +8,54 @@
     {
       "lemma": "נְאָצָה",
       "strong": "H5007",
-      "pron": "",
+      "pron": "우네아차",
       "glossKo": "능멸"
     }
   ],
   "defEn": "scorn; bloom",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 25,
   "byBook": {
-    "psalms": 5
+    "psalms": 5,
+    "isaiah": 4,
+    "jeremiah": 3,
+    "numbers": 3,
+    "proverbs": 3,
+    "deuteronomy": 2,
+    "samuel2": 2,
+    "ecclesiastes": 1,
+    "lamentations": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כִּ֧י נִֽאֲצ֛וּ",
+      "pron": "키 예나아추니",
+      "lemmas": [
+        "כִּי",
+        "נָאַץ"
+      ],
+      "words": [
+        {
+          "word": "כִּ֧י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "נִֽאֲצ֛וּ",
+          "lemma": "נָאַץ",
+          "strong": "H5006",
+          "pron": "예나아추니"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 16:30",
+        "samuel1 2:17",
+        "samuel2 12:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

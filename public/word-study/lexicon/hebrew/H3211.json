@@ -12,8 +12,8 @@
     {
       "lemma": "יָלַד",
       "strong": "H3205",
-      "pron": "옐릳티카",
-      "glossKo": "너에게 낳다"
+      "pron": "텔디",
+      "glossKo": "낳다"
     },
     {
       "lemma": "יֶלֶד",
@@ -24,38 +24,44 @@
     {
       "lemma": "יִלּוֹד",
       "strong": "H3209",
-      "pron": "",
+      "pron": "아일롣",
       "glossKo": "갓난 아이"
     },
     {
       "lemma": "מוֹלָדָה",
       "strong": "H4137",
-      "pron": "",
+      "pron": "우몰라다",
       "glossKo": "몰라다"
     },
     {
       "lemma": "מוֹלֶדֶת",
       "strong": "H4138",
-      "pron": "몰랃트오",
+      "pron": "몰랃토",
       "glossKo": "그의 친족"
     },
     {
       "lemma": "מוֹלִיד",
       "strong": "H4140",
-      "pron": "",
+      "pron": "몰릳",
       "glossKo": "몰릿"
     }
   ],
   "defEn": "born",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 13,
   "byBook": {
-    "genesis": 5
+    "genesis": 5,
+    "numbers": 2,
+    "samuel2": 2,
+    "chronicles1": 1,
+    "jeremiah": 1,
+    "joshua": 1,
+    "leviticus": 1
   },
   "phrases": [
     {
       "hebrew": "יְלִ֣יד בָּ֔יִת",
-      "pron": "옐리데 베테카",
+      "pron": "옐리데 미바이트",
       "lemmas": [
         "יָלִיד",
         "בַּיִת"
@@ -71,22 +77,53 @@
           "word": "בָּ֔יִת",
           "lemma": "בַּיִת",
           "strong": "H1004",
-          "pron": "베테카"
+          "pron": "미바이트"
         }
       ],
-      "count": 5,
+      "count": 7,
       "refs": [
         "genesis 14:14",
         "genesis 17:12",
         "genesis 17:13",
         "genesis 17:23",
-        "genesis 17:27"
+        "genesis 17:27",
+        "leviticus 22:11",
+        "jeremiah 2:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בִּילִידֵ֣י הָרָפָ֗ה",
+      "pron": "옐리데 레파임",
+      "lemmas": [
+        "יָלִיד",
+        "רָפָא"
+      ],
+      "words": [
+        {
+          "word": "בִּילִידֵ֣י",
+          "lemma": "יָלִיד",
+          "strong": "H3211",
+          "pron": "옐리데"
+        },
+        {
+          "word": "הָרָפָ֗ה",
+          "lemma": "רָפָא",
+          "strong": "H7497",
+          "pron": "레파임"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 21:16",
+        "samuel2 21:18",
+        "chronicles1 20:4"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "יְלִ֣יד בָּ֔יִת וּמִקְנַת",
-      "pron": "옐리데 베테카 우미케나트",
+      "pron": "옐리데 미바이트 우미케나트",
       "lemmas": [
         "יָלִיד",
         "בַּיִת",
@@ -103,7 +140,7 @@
           "word": "בָּ֔יִת",
           "lemma": "בַּיִת",
           "strong": "H1004",
-          "pron": "베테카"
+          "pron": "미바이트"
         },
         {
           "word": "וּמִקְנַת",
@@ -117,6 +154,35 @@
         "genesis 17:12",
         "genesis 17:13",
         "genesis 17:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְלִידֵ֖י הָעֲנָ֑ק",
+      "pron": "옐리데 하아나크",
+      "lemmas": [
+        "יָלִיד",
+        "עָנָק"
+      ],
+      "words": [
+        {
+          "word": "יְלִידֵ֖י",
+          "lemma": "יָלִיד",
+          "strong": "H3211",
+          "pron": "옐리데"
+        },
+        {
+          "word": "הָעֲנָ֑ק",
+          "lemma": "עָנָק",
+          "strong": "H6061",
+          "pron": "하아나크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 13:22",
+        "numbers 13:28",
+        "joshua 15:14"
       ],
       "glossKo": ""
     }

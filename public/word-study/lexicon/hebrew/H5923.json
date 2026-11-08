@@ -1,6 +1,6 @@
 {
   "lemma": "עֹל",
-  "pron": "울오",
+  "pron": "울로",
   "strong": "H5923",
   "posKo": "명사",
   "root": {
@@ -12,8 +12,14 @@
     {
       "lemma": "מַעֲלָל",
       "strong": "H4611",
-      "pron": "마알레헴",
-      "glossKo": "그들의 행위"
+      "pron": "마알랄레카",
+      "glossKo": "너의 행위"
+    },
+    {
+      "lemma": "עֻלָּא",
+      "strong": "H5925",
+      "pron": "울라",
+      "glossKo": "울라"
     },
     {
       "lemma": "עֲלִיל",
@@ -24,27 +30,213 @@
     {
       "lemma": "עֲלִילָה",
       "strong": "H5949",
-      "pron": "알릴로타이브",
-      "glossKo": "그의 행적"
+      "pron": "알릴로트",
+      "glossKo": "행적"
     },
     {
       "lemma": "עָלַל",
       "strong": "H5953",
-      "pron": "르히테올렐",
-      "glossKo": "이삭을 줍다를 따라"
+      "pron": "히테알랄티",
+      "glossKo": "이삭을 줍다"
     },
     {
       "lemma": "עֲלַל",
       "strong": "H5954",
-      "pron": "",
+      "pron": "알",
       "glossKo": "들어가다(아람)"
     }
   ],
   "defEn": "yoke",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 40,
   "byBook": {
-    "genesis": 1
+    "jeremiah": 10,
+    "kings1": 8,
+    "chronicles2": 7,
+    "isaiah": 5,
+    "deuteronomy": 2,
+    "lamentations": 2,
+    "ezekiel": 1,
+    "genesis": 1,
+    "hosea": 1,
+    "leviticus": 1,
+    "numbers": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת עֻלֵּ֑נוּ",
+      "pron": "에트 울로",
+      "lemmas": [
+        "אֵת",
+        "עֹל"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "עֻלֵּ֑נוּ",
+          "lemma": "עֹל",
+          "strong": "H5923",
+          "pron": "울로"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "kings1 12:4",
+        "kings1 12:10",
+        "kings1 12:14",
+        "chronicles2 10:4",
+        "chronicles2 10:10",
+        "chronicles2 10:14",
+        "isaiah 9:4",
+        "jeremiah 28:2",
+        "jeremiah 28:4",
+        "jeremiah 28:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַֽל עֻלְּכֶ֑ם",
+      "pron": "알 울로",
+      "lemmas": [
+        "עַל",
+        "עֹל"
+      ],
+      "words": [
+        {
+          "word": "עַֽל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "עֻלְּכֶ֑ם",
+          "lemma": "עֹל",
+          "strong": "H5923",
+          "pron": "울로"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "numbers 19:2",
+        "samuel1 6:7",
+        "kings1 12:11",
+        "kings1 12:14",
+        "chronicles2 10:11",
+        "isaiah 14:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֹ֖ל מֶ֥לֶךְ",
+      "pron": "울로 멜레크",
+      "lemmas": [
+        "עֹל",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "עֹ֖ל",
+          "lemma": "עֹל",
+          "strong": "H5923",
+          "pron": "울로"
+        },
+        {
+          "word": "מֶ֥לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "jeremiah 27:8",
+        "jeremiah 27:11",
+        "jeremiah 27:12",
+        "jeremiah 28:2",
+        "jeremiah 28:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֹ֖ל מֶ֥לֶךְ בָּבֶֽל",
+      "pron": "울로 멜레크 바벨",
+      "lemmas": [
+        "עֹל",
+        "מֶלֶךְ",
+        "בָּבֶל"
+      ],
+      "words": [
+        {
+          "word": "עֹ֖ל",
+          "lemma": "עֹל",
+          "strong": "H5923",
+          "pron": "울로"
+        },
+        {
+          "word": "מֶ֥לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "בָּבֶֽל",
+          "lemma": "בָּבֶל",
+          "strong": "H894",
+          "pron": "바벨"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "jeremiah 27:8",
+        "jeremiah 27:11",
+        "jeremiah 27:12",
+        "jeremiah 28:2",
+        "jeremiah 28:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִכְבִּ֣יד אֶת עֻלֵּ֔נוּ",
+      "pron": "카벧 에트 울로",
+      "lemmas": [
+        "כָּבַד",
+        "אֵת",
+        "עֹל"
+      ],
+      "words": [
+        {
+          "word": "הִכְבִּ֣יד",
+          "lemma": "כָּבַד",
+          "strong": "H3513",
+          "pron": "카벧"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "עֻלֵּ֔נוּ",
+          "lemma": "עֹל",
+          "strong": "H5923",
+          "pron": "울로"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 12:10",
+        "kings1 12:14",
+        "chronicles2 10:10",
+        "chronicles2 10:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

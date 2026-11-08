@@ -1,6 +1,6 @@
 {
   "lemma": "נֶשֶׁךְ",
-  "pron": "브네셰크",
+  "pron": "네셰크",
   "strong": "H5392",
   "posKo": "명사",
   "root": {
@@ -18,9 +18,45 @@
   ],
   "defEn": "interest",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 12,
   "byBook": {
+    "ezekiel": 4,
+    "deuteronomy": 3,
+    "leviticus": 2,
+    "exodus": 1,
+    "proverbs": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נֶ֣שֶׁךְ וְתַרְבִּ֔ית",
+      "pron": "네셰크 브타렙비트",
+      "lemmas": [
+        "נֶשֶׁךְ",
+        "תַּרְבִּית"
+      ],
+      "words": [
+        {
+          "word": "נֶ֣שֶׁךְ",
+          "lemma": "נֶשֶׁךְ",
+          "strong": "H5392",
+          "pron": "네셰크"
+        },
+        {
+          "word": "וְתַרְבִּ֔ית",
+          "lemma": "תַּרְבִּית",
+          "strong": "H8636",
+          "pron": "브타렙비트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 25:36",
+        "proverbs 28:8",
+        "ezekiel 18:17",
+        "ezekiel 22:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

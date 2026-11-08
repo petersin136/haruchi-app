@@ -1,6 +1,6 @@
 {
   "lemma": "דֶּשֶׁן",
-  "pron": "미데셴",
+  "pron": "아다셴",
   "strong": "H1880",
   "posKo": "명사",
   "root": {
@@ -12,8 +12,8 @@
     {
       "lemma": "דָּשֵׁן",
       "strong": "H1878",
-      "pron": "예닷셰네",
-      "glossKo": "기름지다"
+      "pron": "레닷셰노",
+      "glossKo": "그에게 기름지다"
     },
     {
       "lemma": "דָּשֵׁן",
@@ -24,9 +24,74 @@
   ],
   "defEn": "fat; fatness; abundance; ashes",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 15,
   "byBook": {
-    "psalms": 3
+    "leviticus": 5,
+    "psalms": 3,
+    "jeremiah": 2,
+    "kings1": 2,
+    "isaiah": 1,
+    "job": 1,
+    "judges": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת הַדֶּ֗שֶׁן",
+      "pron": "에트 아다셴",
+      "lemmas": [
+        "אֵת",
+        "דֶּשֶׁן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַדֶּ֗שֶׁן",
+          "lemma": "דֶּשֶׁן",
+          "strong": "H1880",
+          "pron": "아다셴"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 6:10",
+        "leviticus 6:11",
+        "judges 9:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַדֶּ֗שֶׁן אֲשֶׁ֨ר",
+      "pron": "아다셴 아셰르",
+      "lemmas": [
+        "דֶּשֶׁן",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הַדֶּ֗שֶׁן",
+          "lemma": "דֶּשֶׁן",
+          "strong": "H1880",
+          "pron": "아다셴"
+        },
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 6:10",
+        "judges 9:9",
+        "kings1 13:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

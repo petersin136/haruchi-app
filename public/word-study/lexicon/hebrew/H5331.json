@@ -1,6 +1,6 @@
 {
   "lemma": "נֶצַח",
-  "pron": "라네차흐",
+  "pron": "네차흐",
   "strong": "H5331",
   "posKo": "명사",
   "root": {
@@ -12,33 +12,162 @@
     {
       "lemma": "נָצַח",
       "strong": "H5329",
-      "pron": "라메낫체아흐",
-      "glossKo": "지휘자를 따라"
+      "pron": "르낫체아흐",
+      "glossKo": "지휘하다"
     },
     {
       "lemma": "נְצַח",
       "strong": "H5330",
-      "pron": "",
+      "pron": "미테낫차흐",
       "glossKo": "뛰어나다(아람)"
     },
     {
       "lemma": "נֵצַח",
       "strong": "H5332",
-      "pron": "",
-      "glossKo": "광채"
+      "pron": "니체함",
+      "glossKo": "그들의 광채"
     },
     {
       "lemma": "נְצִיחַ",
       "strong": "H5335",
-      "pron": "",
+      "pron": "네치아흐",
       "glossKo": "느시아"
     }
   ],
   "defEn": "goal; splendor; truthfulness; confidence; continually",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 43,
   "byBook": {
-    "psalms": 18
+    "psalms": 18,
+    "isaiah": 7,
+    "job": 6,
+    "jeremiah": 3,
+    "amos": 2,
+    "lamentations": 2,
+    "chronicles1": 1,
+    "habakkuk": 1,
+    "proverbs": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹ֣א לָ֭נֶצַח",
+      "pron": "로 네차흐",
+      "lemmas": [
+        "לֹא",
+        "נֶצַח"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "לָ֭נֶצַח",
+          "lemma": "נֶצַח",
+          "strong": "H5331",
+          "pron": "네차흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 9:18",
+        "psalms 103:9",
+        "isaiah 28:28",
+        "isaiah 57:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָנֶ֔צַח וְלֹ֥א",
+      "pron": "네차흐 로",
+      "lemmas": [
+        "נֶצַח",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "לָנֶ֔צַח",
+          "lemma": "נֶצַח",
+          "strong": "H5331",
+          "pron": "네차흐"
+        },
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 49:9",
+        "psalms 49:19",
+        "isaiah 13:20",
+        "jeremiah 50:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נֶ֑צַח כָּל",
+      "pron": "네차흐 칼",
+      "lemmas": [
+        "נֶצַח",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "נֶ֑צַח",
+          "lemma": "נֶצַח",
+          "strong": "H5331",
+          "pron": "네차흐"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 74:3",
+        "isaiah 33:20",
+        "amos 8:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תִּשְׁכָּחֵ֣נִי נֶ֑צַח",
+      "pron": "브샤카흐 네차흐",
+      "lemmas": [
+        "שָׁכַח",
+        "נֶצַח"
+      ],
+      "words": [
+        {
+          "word": "תִּשְׁכָּחֵ֣נִי",
+          "lemma": "שָׁכַח",
+          "strong": "H7911",
+          "pron": "브샤카흐"
+        },
+        {
+          "word": "נֶ֑צַח",
+          "lemma": "נֶצַח",
+          "strong": "H5331",
+          "pron": "네차흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 13:1",
+        "psalms 74:19",
+        "amos 8:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

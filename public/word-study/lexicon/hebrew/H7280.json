@@ -1,26 +1,26 @@
 {
   "lemma": "רָגַע",
-  "pron": "라가",
+  "pron": "타렉기아",
   "strong": "H7280",
-  "posKo": "",
+  "posKo": "동사",
   "root": null,
   "family": [
     {
       "lemma": "מַרְגּוֹעַ",
       "strong": "H4771",
-      "pron": "",
+      "pron": "마렉고아",
       "glossKo": "안식처"
     },
     {
       "lemma": "מַרְגֵּעָה",
       "strong": "H4774",
-      "pron": "",
+      "pron": "아마렉게아",
       "glossKo": "안식"
     },
     {
       "lemma": "רֶגַע",
       "strong": "H7281",
-      "pron": "라가",
+      "pron": "레가",
       "glossKo": "순간"
     },
     {
@@ -32,7 +32,43 @@
   ],
   "defEn": "toss; settle; wink",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "jeremiah": 6,
+    "isaiah": 3,
+    "job": 2,
+    "deuteronomy": 1,
+    "proverbs": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "רָגַ֣ע הַיָּ֑ם",
+      "pron": "타렉기아 얌밈",
+      "lemmas": [
+        "רָגַע",
+        "יָם"
+      ],
+      "words": [
+        {
+          "word": "רָגַ֣ע",
+          "lemma": "רָגַע",
+          "strong": "H7280",
+          "pron": "타렉기아"
+        },
+        {
+          "word": "הַיָּ֑ם",
+          "lemma": "יָם",
+          "strong": "H3220",
+          "pron": "얌밈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 26:12",
+        "isaiah 51:15",
+        "jeremiah 31:35"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

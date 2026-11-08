@@ -1,6 +1,6 @@
 {
   "lemma": "מָבוֹא",
-  "pron": "메보오",
+  "pron": "메보",
   "strong": "H3996",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,197 @@
     {
       "lemma": "בְּאָה",
       "strong": "H872",
-      "pron": "",
+      "pron": "바비아",
       "glossKo": "들어옴"
     },
     {
       "lemma": "בּוֹא",
       "strong": "H935",
-      "pron": "아보",
+      "pron": "바야베",
       "glossKo": "오다"
+    },
+    {
+      "lemma": "מְבוֹאָה",
+      "strong": "H3997",
+      "pron": "메보오트",
+      "glossKo": "항구"
+    },
+    {
+      "lemma": "מוֹבָא",
+      "strong": "H4126",
+      "pron": "믑브크",
+      "glossKo": "너의 입구"
     },
     {
       "lemma": "תְּבוּאָה",
       "strong": "H8393",
-      "pron": "테부아",
+      "pron": "바테부오트",
       "glossKo": "소산"
     }
   ],
   "defEn": "entrance; sunset; west",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 23,
   "byBook": {
-    "psalms": 3
+    "ezekiel": 5,
+    "psalms": 3,
+    "chronicles1": 2,
+    "chronicles2": 2,
+    "joshua": 2,
+    "judges": 2,
+    "kings2": 2,
+    "deuteronomy": 1,
+    "jeremiah": 1,
+    "malachi": 1,
+    "proverbs": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מְב֥וֹא הַשָּֽׁמֶשׁ",
+      "pron": "메보 아셰메쉬",
+      "lemmas": [
+        "מָבוֹא",
+        "שֶׁמֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "מְב֥וֹא",
+          "lemma": "מָבוֹא",
+          "strong": "H3996",
+          "pron": "메보"
+        },
+        {
+          "word": "הַשָּֽׁמֶשׁ",
+          "lemma": "שֶׁמֶשׁ",
+          "strong": "H8121",
+          "pron": "아셰메쉬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 11:30",
+        "joshua 1:4",
+        "joshua 23:4",
+        "zechariah 8:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל מְב֥וֹא",
+      "pron": "엘 메보",
+      "lemmas": [
+        "אֵל",
+        "מָבוֹא"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "מְב֥וֹא",
+          "lemma": "מָבוֹא",
+          "strong": "H3996",
+          "pron": "메보"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles2 23:15",
+        "jeremiah 38:14",
+        "ezekiel 33:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת מְב֣וֹא",
+      "pron": "에트 메보",
+      "lemmas": [
+        "אֵת",
+        "מָבוֹא"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מְב֣וֹא",
+          "lemma": "מָבוֹא",
+          "strong": "H3996",
+          "pron": "메보"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 1:24",
+        "judges 1:25",
+        "kings2 16:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְב֣וֹא הָעִ֔יר",
+      "pron": "메보 이르",
+      "lemmas": [
+        "מָבוֹא",
+        "עִיר"
+      ],
+      "words": [
+        {
+          "word": "מְב֣וֹא",
+          "lemma": "מָבוֹא",
+          "strong": "H3996",
+          "pron": "메보"
+        },
+        {
+          "word": "הָעִ֔יר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 1:24",
+        "judges 1:25",
+        "ezekiel 26:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַד מְבֹאֽוֹ",
+      "pron": "앋 메보",
+      "lemmas": [
+        "עַד",
+        "מָבוֹא"
+      ],
+      "words": [
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "מְבֹאֽוֹ",
+          "lemma": "מָבוֹא",
+          "strong": "H3996",
+          "pron": "메보"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 50:1",
+        "psalms 113:3",
+        "malachi 1:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

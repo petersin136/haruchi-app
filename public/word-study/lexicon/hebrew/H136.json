@@ -1,6 +1,6 @@
 {
   "lemma": "אֲדֹנָי",
-  "pron": "아도나위",
+  "pron": "아도나이",
   "strong": "H136",
   "posKo": "명사",
   "root": {
@@ -12,195 +12,272 @@
     {
       "lemma": "אָדוֹן",
       "strong": "H113",
-      "pron": "아도나이누",
-      "glossKo": "우리의 주인"
+      "pron": "아도나이",
+      "glossKo": "나의 주인"
     },
     {
       "lemma": "אַדּוֹן",
       "strong": "H114",
-      "pron": "",
+      "pron": "앋돈",
       "glossKo": "아도람"
     },
     {
       "lemma": "אֶדֶן",
       "strong": "H134",
-      "pron": "",
+      "pron": "아도나이",
       "glossKo": "받침"
     },
     {
       "lemma": "אֲדֹנִי־בֶזֶק",
       "strong": "H137",
-      "pron": "",
+      "pron": "아도나이",
       "glossKo": "아도니베섹"
     },
     {
       "lemma": "אֲדֹנִיָּה",
       "strong": "H138",
-      "pron": "",
+      "pron": "아도니아",
       "glossKo": "아도니야"
     },
     {
       "lemma": "אֲדֹנִי־צֶדֶק",
       "strong": "H139",
-      "pron": "",
+      "pron": "아도나이",
       "glossKo": "아도니세덱"
     }
   ],
   "defEn": "Lord",
   "defKo": "",
-  "countOT": 63,
+  "countOT": 445,
   "byBook": {
+    "ezekiel": 222,
     "psalms": 55,
-    "genesis": 8
+    "isaiah": 48,
+    "amos": 25,
+    "jeremiah": 14,
+    "lamentations": 14,
+    "daniel": 11,
+    "genesis": 8,
+    "samuel2": 7,
+    "exodus": 6,
+    "joshua": 5,
+    "kings1": 5,
+    "judges": 4,
+    "nehemiah": 4,
+    "deuteronomy": 3,
+    "kings2": 2,
+    "malachi": 2,
+    "micah": 2,
+    "zechariah": 2,
+    "habakkuk": 1,
+    "hosea": 1,
+    "job": 1,
+    "numbers": 1,
+    "obadiah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "אֲדֹנָ֥י יְהוִ֗ה",
-      "pron": "아도나위 브레여호와",
+      "hebrew": "אֲדֹנָ֣י יְהוִ֔ה",
+      "pron": "아도나이 여호와",
       "lemmas": [
         "אֲדֹנָי",
         "יְהֹוִה"
       ],
       "words": [
         {
-          "word": "אֲדֹנָ֥י",
+          "word": "אֲדֹנָ֣י",
           "lemma": "אֲדֹנָי",
           "strong": "H136",
-          "pron": "아도나위"
+          "pron": "아도나이"
         },
         {
-          "word": "יְהוִ֗ה",
+          "word": "יְהוִ֔ה",
           "lemma": "יְהֹוִה",
           "strong": "H3069",
-          "pron": "브레여호와"
+          "pron": "여호와"
         }
       ],
-      "count": 6,
+      "count": 301,
       "refs": [
-        "psalms 69:6",
-        "psalms 71:5",
-        "psalms 71:16",
-        "psalms 73:28",
         "genesis 15:2",
-        "genesis 15:8"
+        "genesis 15:8",
+        "deuteronomy 3:24",
+        "deuteronomy 9:26",
+        "joshua 7:7",
+        "judges 6:22",
+        "judges 16:28",
+        "samuel2 7:18",
+        "samuel2 7:19",
+        "samuel2 7:20",
+        "samuel2 7:22",
+        "samuel2 7:28"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֶל אֲדֹנָ֔י",
-      "pron": "엘레모 아도나위",
+      "hebrew": "אָמַר֙ אֲדֹנָ֣י",
+      "pron": "바요메르 아도나이",
       "lemmas": [
-        "אֵל",
+        "אָמַר",
         "אֲדֹנָי"
       ],
       "words": [
         {
-          "word": "אֶל",
-          "lemma": "אֵל",
-          "strong": "H413",
-          "pron": "엘레모"
+          "word": "אָמַר֙",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
         },
         {
-          "word": "אֲדֹנָ֔י",
+          "word": "אֲדֹנָ֣י",
           "lemma": "אֲדֹנָי",
           "strong": "H136",
-          "pron": "아도나위"
+          "pron": "아도나이"
         }
       ],
-      "count": 4,
+      "count": 150,
       "refs": [
-        "psalms 30:8",
-        "psalms 86:4",
-        "genesis 18:27",
-        "genesis 18:31"
+        "genesis 15:8",
+        "genesis 20:4",
+        "exodus 5:22",
+        "deuteronomy 9:26",
+        "judges 16:28",
+        "psalms 68:22",
+        "isaiah 7:7",
+        "isaiah 10:24",
+        "isaiah 21:16",
+        "isaiah 22:14",
+        "isaiah 22:15",
+        "isaiah 28:16"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְלֵיהוִ֥ה אֲדֹנָ֑י",
-      "pron": "브레여호와 아도나위",
+      "hebrew": "אָמַר֙ אֲדֹנָ֣י יְהוִ֔ה",
+      "pron": "바요메르 아도나이 여호와",
       "lemmas": [
-        "יְהֹוִה",
-        "אֲדֹנָי"
+        "אָמַר",
+        "אֲדֹנָי",
+        "יְהֹוִה"
       ],
       "words": [
         {
-          "word": "וְלֵיהוִ֥ה",
+          "word": "אָמַר֙",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "אֲדֹנָ֣י",
+          "lemma": "אֲדֹנָי",
+          "strong": "H136",
+          "pron": "아도나이"
+        },
+        {
+          "word": "יְהוִ֔ה",
           "lemma": "יְהֹוִה",
           "strong": "H3069",
-          "pron": "브레여호와"
-        },
-        {
-          "word": "אֲדֹנָ֑י",
-          "lemma": "אֲדֹנָי",
-          "strong": "H136",
-          "pron": "아도나위"
+          "pron": "여호와"
         }
       ],
-      "count": 4,
+      "count": 143,
       "refs": [
-        "psalms 68:20",
-        "psalms 109:21",
-        "psalms 140:7",
-        "psalms 141:8"
+        "genesis 15:8",
+        "deuteronomy 9:26",
+        "judges 16:28",
+        "isaiah 7:7",
+        "isaiah 10:24",
+        "isaiah 22:14",
+        "isaiah 22:15",
+        "isaiah 28:16",
+        "isaiah 30:15",
+        "isaiah 49:22",
+        "isaiah 52:4",
+        "isaiah 65:13"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֲדֹנָ֥י אֱלֹהָֽי",
-      "pron": "아도나위 베엘로힘",
+      "hebrew": "כֹּ֤ה אָמַר֙ אֲדֹנָ֣י",
+      "pron": "코 바요메르 아도나이",
       "lemmas": [
-        "אֲדֹנָי",
-        "אֱלֹהִים"
+        "כֹּה",
+        "אָמַר",
+        "אֲדֹנָי"
       ],
       "words": [
+        {
+          "word": "כֹּ֤ה",
+          "lemma": "כֹּה",
+          "strong": "H3541",
+          "pron": "코"
+        },
+        {
+          "word": "אָמַר֙",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "אֲדֹנָ֣י",
+          "lemma": "אֲדֹנָי",
+          "strong": "H136",
+          "pron": "아도나이"
+        }
+      ],
+      "count": 136,
+      "refs": [
+        "isaiah 7:7",
+        "isaiah 10:24",
+        "isaiah 21:16",
+        "isaiah 22:15",
+        "isaiah 28:16",
+        "isaiah 30:15",
+        "isaiah 49:22",
+        "isaiah 52:4",
+        "isaiah 65:13",
+        "jeremiah 7:20",
+        "ezekiel 2:4",
+        "ezekiel 3:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְאֻ֖ם אֲדֹנָ֥י",
+      "pron": "네움 아도나이",
+      "lemmas": [
+        "נְאֻם",
+        "אֲדֹנָי"
+      ],
+      "words": [
+        {
+          "word": "נְאֻ֖ם",
+          "lemma": "נְאֻם",
+          "strong": "H5002",
+          "pron": "네움"
+        },
         {
           "word": "אֲדֹנָ֥י",
           "lemma": "אֲדֹנָי",
           "strong": "H136",
-          "pron": "아도나위"
-        },
-        {
-          "word": "אֱלֹהָֽי",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
+          "pron": "아도나이"
         }
       ],
-      "count": 3,
+      "count": 92,
       "refs": [
-        "psalms 38:15",
-        "psalms 86:12",
-        "psalms 90:17"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֱלֹהַ֖י וַֽאדֹנָ֣י",
-      "pron": "베엘로힘 아도나위",
-      "lemmas": [
-        "אֱלֹהִים",
-        "אֲדֹנָי"
-      ],
-      "words": [
-        {
-          "word": "אֱלֹהַ֖י",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        },
-        {
-          "word": "וַֽאדֹנָ֣י",
-          "lemma": "אֲדֹנָי",
-          "strong": "H136",
-          "pron": "아도나위"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 35:23",
-        "psalms 86:8",
-        "psalms 90:1"
+        "isaiah 3:15",
+        "isaiah 56:8",
+        "jeremiah 2:19",
+        "jeremiah 2:22",
+        "jeremiah 49:5",
+        "jeremiah 50:31",
+        "ezekiel 5:11",
+        "ezekiel 11:8",
+        "ezekiel 11:21",
+        "ezekiel 12:25",
+        "ezekiel 12:28",
+        "ezekiel 13:8"
       ],
       "glossKo": ""
     }

@@ -2,7 +2,7 @@
   "lemma": "שָׂבֵעַ",
   "pron": "브사베아",
   "strong": "H7649",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "שָׂבַע",
     "strong": "H7646",
@@ -12,7 +12,7 @@
     {
       "lemma": "שָׂבַע",
       "strong": "H7646",
-      "pron": "이셉베우",
+      "pron": "리셉보아",
       "glossKo": "만족하다"
     },
     {
@@ -24,15 +24,79 @@
     {
       "lemma": "שֹׂבַע",
       "strong": "H7648",
-      "pron": "소바",
+      "pron": "라소바",
       "glossKo": "포만"
     }
   ],
   "defEn": "satiated",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 10,
   "byBook": {
-    "genesis": 2
+    "job": 3,
+    "genesis": 2,
+    "proverbs": 2,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּשְׂבַ֣ע יָמִ֑ים",
+      "pron": "브사베아 욤",
+      "lemmas": [
+        "שָׂבֵעַ",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "וּשְׂבַ֣ע",
+          "lemma": "שָׂבֵעַ",
+          "strong": "H7649",
+          "pron": "브사베아"
+        },
+        {
+          "word": "יָמִ֑ים",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 35:29",
+        "chronicles1 29:28",
+        "job 42:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זָקֵ֣ן וְשָׂבֵ֑עַ",
+      "pron": "제케님 브사베아",
+      "lemmas": [
+        "זָקֵן",
+        "שָׂבֵעַ"
+      ],
+      "words": [
+        {
+          "word": "זָקֵ֣ן",
+          "lemma": "זָקֵן",
+          "strong": "H2205",
+          "pron": "제케님"
+        },
+        {
+          "word": "וְשָׂבֵ֑עַ",
+          "lemma": "שָׂבֵעַ",
+          "strong": "H7649",
+          "pron": "브사베아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 25:8",
+        "genesis 35:29",
+        "job 42:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

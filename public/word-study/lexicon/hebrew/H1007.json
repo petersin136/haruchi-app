@@ -1,8 +1,8 @@
 {
   "lemma": "בֵּית אָוֶן",
-  "pron": "벳아벤",
+  "pron": "베트",
   "strong": "H1007",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בַּיִת",
     "strong": "H1004",
@@ -12,19 +12,19 @@
     {
       "lemma": "בַּיִת",
       "strong": "H1004",
-      "pron": "베테카",
-      "glossKo": "너의 집"
+      "pron": "미바이트",
+      "glossKo": "집"
     },
     {
       "lemma": "בַּיִת",
       "strong": "H1005",
-      "pron": "",
+      "pron": "베트",
       "glossKo": "집(아람)"
     },
     {
       "lemma": "בַּיִת",
       "strong": "H1006",
-      "pron": "",
+      "pron": "아바이트",
       "glossKo": "벧엘"
     },
     {
@@ -36,13 +36,57 @@
     {
       "lemma": "בֵּית אַרְבֵּאל",
       "strong": "H1009",
-      "pron": "",
+      "pron": "베트",
       "glossKo": "벧아벨"
+    },
+    {
+      "lemma": "בֵּית בַּעַל מְעוֹן",
+      "strong": "H1010",
+      "pron": "우베트",
+      "glossKo": "벧바알므온"
     }
   ],
   "defEn": "Beth-Aven",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "hosea": 6,
+    "joshua": 4,
+    "samuel1": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "בֵּ֥ית אָֽוֶן",
+      "pron": "베트 베트",
+      "lemmas": [
+        "בֵּית אָוֶן",
+        "בֵּית אָוֶן"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֥ית",
+          "lemma": "בֵּית אָוֶן",
+          "strong": "H1007",
+          "pron": "베트"
+        },
+        {
+          "word": "אָֽוֶן",
+          "lemma": "בֵּית אָוֶן",
+          "strong": "H1007",
+          "pron": "베트"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "joshua 7:2",
+        "joshua 18:12",
+        "samuel1 13:5",
+        "samuel1 14:23",
+        "hosea 4:15",
+        "hosea 5:8",
+        "hosea 10:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

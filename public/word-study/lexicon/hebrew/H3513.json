@@ -1,6 +1,6 @@
 {
   "lemma": "כָּבַד",
-  "pron": "예캅벧",
+  "pron": "카벧",
   "strong": "H3513",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "כֹּבֶד",
       "strong": "H3514",
-      "pron": "",
+      "pron": "코벧",
       "glossKo": "무거움"
     },
     {
@@ -20,22 +20,212 @@
     {
       "lemma": "כָּבוֹד",
       "strong": "H3519",
-      "pron": "케보디위",
-      "glossKo": "나의 영광"
+      "pron": "아카볻",
+      "glossKo": "영광"
     },
     {
       "lemma": "כְּבוּדָּה",
       "strong": "H3520",
-      "pron": "케붇다",
+      "pron": "아케붇다",
       "glossKo": "귀중한 것"
     }
   ],
   "defEn": "be heavy; burdensome; severe; dull; numerous; rich; honorable; make weighty",
   "defKo": "",
-  "countOT": 15,
+  "countOT": 116,
   "byBook": {
+    "isaiah": 20,
     "psalms": 11,
-    "genesis": 4
+    "samuel1": 11,
+    "exodus": 10,
+    "proverbs": 7,
+    "samuel2": 7,
+    "numbers": 6,
+    "chronicles1": 5,
+    "genesis": 4,
+    "job": 4,
+    "judges": 4,
+    "chronicles2": 3,
+    "ezekiel": 3,
+    "nahum": 3,
+    "daniel": 2,
+    "deuteronomy": 2,
+    "haggai": 2,
+    "kings1": 2,
+    "lamentations": 2,
+    "nehemiah": 2,
+    "habakkuk": 1,
+    "jeremiah": 1,
+    "kings2": 1,
+    "leviticus": 1,
+    "malachi": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הִכְבִּ֣יד אֶת",
+      "pron": "카벧 에트",
+      "lemmas": [
+        "כָּבַד",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הִכְבִּ֣יד",
+          "lemma": "כָּבַד",
+          "strong": "H3513",
+          "pron": "카벧"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 8:15",
+        "exodus 10:1",
+        "exodus 20:12",
+        "deuteronomy 5:16",
+        "samuel1 2:29",
+        "samuel1 6:6",
+        "kings1 12:10",
+        "kings1 12:14",
+        "chronicles2 10:10",
+        "chronicles2 10:14",
+        "proverbs 3:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַבֵּ֤ד אֲכַבֶּדְךָ֙",
+      "pron": "카벧 카벧",
+      "lemmas": [
+        "כָּבַד",
+        "כָּבַד"
+      ],
+      "words": [
+        {
+          "word": "כַבֵּ֤ד",
+          "lemma": "כָּבַד",
+          "strong": "H3513",
+          "pron": "카벧"
+        },
+        {
+          "word": "אֲכַבֶּדְךָ֙",
+          "lemma": "כָּבַד",
+          "strong": "H3513",
+          "pron": "카벧"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "numbers 22:17",
+        "numbers 24:11",
+        "samuel1 2:30",
+        "isaiah 58:13",
+        "haggai 1:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נִכְבַּ֖ד עָלֶ֑יךָ",
+      "pron": "카벧 알",
+      "lemmas": [
+        "כָּבַד",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "נִכְבַּ֖ד",
+          "lemma": "כָּבַד",
+          "strong": "H3513",
+          "pron": "카벧"
+        },
+        {
+          "word": "עָלֶ֑יךָ",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "samuel2 13:25",
+        "samuel2 14:26",
+        "nehemiah 5:15",
+        "job 6:3",
+        "job 23:2",
+        "psalms 32:4",
+        "isaiah 24:20",
+        "habakkuk 2:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֥י כָבְדָ֖ה",
+      "pron": "키 카벧",
+      "lemmas": [
+        "כִּי",
+        "כָּבַד"
+      ],
+      "words": [
+        {
+          "word": "כִּ֥י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "כָבְדָ֖ה",
+          "lemma": "כָּבַד",
+          "strong": "H3513",
+          "pron": "카벧"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 18:20",
+        "numbers 22:17",
+        "samuel1 2:30",
+        "samuel2 14:26",
+        "samuel2 23:19",
+        "nehemiah 5:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּבֵ֣ד מְאֹ֑ד",
+      "pron": "카벧 메옫",
+      "lemmas": [
+        "כָּבַד",
+        "מְאֹד"
+      ],
+      "words": [
+        {
+          "word": "כָּבֵ֣ד",
+          "lemma": "כָּבַד",
+          "strong": "H3513",
+          "pron": "카벧"
+        },
+        {
+          "word": "מְאֹ֑ד",
+          "lemma": "מְאֹד",
+          "strong": "H3966",
+          "pron": "메옫"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 13:2",
+        "genesis 18:20",
+        "numbers 22:17",
+        "samuel1 5:11",
+        "ezekiel 27:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

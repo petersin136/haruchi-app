@@ -1,8 +1,8 @@
 {
   "lemma": "חֳרִי",
-  "pron": "호리",
+  "pron": "바호리",
   "strong": "H2750",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָרָה",
     "strong": "H2734",
@@ -12,37 +12,77 @@
     {
       "lemma": "חָרָה",
       "strong": "H2734",
-      "pron": "하라",
+      "pron": "바이하르",
       "glossKo": "노하다"
     },
     {
       "lemma": "חַרְהֲיָה",
       "strong": "H2736",
-      "pron": "",
+      "pron": "하레하아",
       "glossKo": "하르하야"
     },
     {
       "lemma": "חָרוֹן",
       "strong": "H2740",
-      "pron": "우바하론오",
-      "glossKo": "그의 맹렬한 노"
+      "pron": "하론카",
+      "glossKo": "너의 맹렬한 노"
     },
     {
       "lemma": "תַּחֲרָא",
       "strong": "H8473",
-      "pron": "",
+      "pron": "타헤라",
       "glossKo": "갑옷"
     },
     {
       "lemma": "תַּחָרָה",
       "strong": "H8474",
-      "pron": "",
+      "pron": "테타하레",
       "glossKo": "경쟁하다"
     }
   ],
   "defEn": "burning",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "isaiah": 1,
+    "lamentations": 1,
+    "samuel1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בָּחֳרִי אָֽף",
+      "pron": "바호리 베압파으브",
+      "lemmas": [
+        "חֳרִי",
+        "אַף"
+      ],
+      "words": [
+        {
+          "word": "בָּחֳרִי",
+          "lemma": "חֳרִי",
+          "strong": "H2750",
+          "pron": "바호리"
+        },
+        {
+          "word": "אָֽף",
+          "lemma": "אַף",
+          "strong": "H639",
+          "pron": "베압파으브"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 11:8",
+        "deuteronomy 29:24",
+        "samuel1 20:34",
+        "chronicles2 25:10",
+        "isaiah 7:4",
+        "lamentations 2:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

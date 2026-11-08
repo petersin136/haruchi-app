@@ -1,6 +1,6 @@
 {
   "lemma": "מְעַט",
-  "pron": "키메앋",
+  "pron": "메앋",
   "strong": "H4592",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,85 @@
     {
       "lemma": "מָעַט",
       "strong": "H4591",
-      "pron": "얌읻",
+      "pron": "임앋",
       "glossKo": "적어지다"
     },
     {
       "lemma": "מָעֹט",
       "strong": "H4593",
-      "pron": "",
+      "pron": "메욷다",
       "glossKo": "얇은"
     }
   ],
   "defEn": "little; few",
   "defKo": "",
-  "countOT": 21,
+  "countOT": 101,
   "byBook": {
     "genesis": 11,
-    "psalms": 10
+    "proverbs": 10,
+    "psalms": 10,
+    "isaiah": 7,
+    "numbers": 7,
+    "deuteronomy": 6,
+    "ezekiel": 5,
+    "job": 5,
+    "ecclesiastes": 4,
+    "samuel1": 4,
+    "exodus": 3,
+    "haggai": 3,
+    "samuel2": 3,
+    "chronicles2": 2,
+    "daniel": 2,
+    "ezra": 2,
+    "hosea": 2,
+    "jeremiah": 2,
+    "joshua": 2,
+    "kings1": 2,
+    "nehemiah": 2,
+    "chronicles1": 1,
+    "judges": 1,
+    "kings2": 1,
+    "leviticus": 1,
+    "ruth": 1,
+    "songofsolomon": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
+      "hebrew": "ע֥וֹד מְעַ֖ט",
+      "pron": "옫 메앋",
+      "lemmas": [
+        "עוֹד",
+        "מְעַט"
+      ],
+      "words": [
+        {
+          "word": "ע֥וֹד",
+          "lemma": "עוֹד",
+          "strong": "H5750",
+          "pron": "옫"
+        },
+        {
+          "word": "מְעַ֖ט",
+          "lemma": "מְעַט",
+          "strong": "H4592",
+          "pron": "메앋"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 17:4",
+        "psalms 37:10",
+        "isaiah 10:25",
+        "isaiah 29:17",
+        "jeremiah 51:33",
+        "hosea 1:4"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "מְעַט מַ֖יִם",
-      "pron": "키메앋 마임",
+      "pron": "메앋 아마임",
       "lemmas": [
         "מְעַט",
         "מַיִם"
@@ -42,33 +100,35 @@
           "word": "מְעַט",
           "lemma": "מְעַט",
           "strong": "H4592",
-          "pron": "키메앋"
+          "pron": "메앋"
         },
         {
           "word": "מַ֖יִם",
           "lemma": "מַיִם",
           "strong": "H4325",
-          "pron": "마임"
+          "pron": "아마임"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
         "genesis 18:4",
         "genesis 24:17",
-        "genesis 24:43"
+        "genesis 24:43",
+        "judges 4:19",
+        "kings1 17:10"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "נָ֣א מְעַט",
-      "pron": "나 키메앋",
+      "hebrew": "נָ֥א מְעַט",
+      "pron": "나 메앋",
       "lemmas": [
         "נָא",
         "מְעַט"
       ],
       "words": [
         {
-          "word": "נָ֣א",
+          "word": "נָ֥א",
           "lemma": "נָא",
           "strong": "H4994",
           "pron": "나"
@@ -77,20 +137,22 @@
           "word": "מְעַט",
           "lemma": "מְעַט",
           "strong": "H4592",
-          "pron": "키메앋"
+          "pron": "메앋"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
         "genesis 18:4",
         "genesis 24:17",
-        "genesis 24:43"
+        "genesis 24:43",
+        "judges 4:19",
+        "kings1 17:10"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "נָ֣א מְעַט מַ֔יִם",
-      "pron": "나 키메앋 마임",
+      "hebrew": "נָ֥א מְעַט מַ֖יִם",
+      "pron": "나 메앋 아마임",
       "lemmas": [
         "נָא",
         "מְעַט",
@@ -98,7 +160,7 @@
       ],
       "words": [
         {
-          "word": "נָ֣א",
+          "word": "נָ֥א",
           "lemma": "נָא",
           "strong": "H4994",
           "pron": "나"
@@ -107,20 +169,50 @@
           "word": "מְעַט",
           "lemma": "מְעַט",
           "strong": "H4592",
-          "pron": "키메앋"
+          "pron": "메앋"
         },
         {
-          "word": "מַ֔יִם",
+          "word": "מַ֖יִם",
           "lemma": "מַיִם",
           "strong": "H4325",
-          "pron": "마임"
+          "pron": "아마임"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
         "genesis 18:4",
         "genesis 24:17",
-        "genesis 24:43"
+        "genesis 24:43",
+        "judges 4:19",
+        "kings1 17:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְעַ֥ט מְעַ֛ט",
+      "pron": "메앋 메앋",
+      "lemmas": [
+        "מְעַט",
+        "מְעַט"
+      ],
+      "words": [
+        {
+          "word": "מְעַ֥ט",
+          "lemma": "מְעַט",
+          "strong": "H4592",
+          "pron": "메앋"
+        },
+        {
+          "word": "מְעַ֛ט",
+          "lemma": "מְעַט",
+          "strong": "H4592",
+          "pron": "메앋"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 23:30",
+        "deuteronomy 7:22"
       ],
       "glossKo": ""
     }

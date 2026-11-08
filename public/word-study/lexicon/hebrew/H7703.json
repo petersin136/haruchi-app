@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁדַד",
-  "pron": "샫두니",
+  "pron": "샤둗",
   "strong": "H7703",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "אַשְׁדּוֹד",
       "strong": "H795",
-      "pron": "",
+      "pron": "우브아셷돋",
       "glossKo": "아스돗"
     },
     {
       "lemma": "שִׁדָּה",
       "strong": "H7705",
-      "pron": "",
+      "pron": "싣다",
       "glossKo": "처첩"
     },
     {
@@ -26,9 +26,193 @@
   ],
   "defEn": "be burly; powerful; impregnable",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 58,
   "byBook": {
-    "psalms": 2
+    "jeremiah": 26,
+    "isaiah": 11,
+    "proverbs": 4,
+    "zechariah": 3,
+    "hosea": 2,
+    "job": 2,
+    "joel": 2,
+    "micah": 2,
+    "psalms": 2,
+    "ezekiel": 1,
+    "judges": 1,
+    "nahum": 1,
+    "obadiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כִּ֥י שֻׁדַּ֖ד",
+      "pron": "키 샤둗",
+      "lemmas": [
+        "כִּי",
+        "שָׁדַד"
+      ],
+      "words": [
+        {
+          "word": "כִּ֥י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "שֻׁדַּ֖ד",
+          "lemma": "שָׁדַד",
+          "strong": "H7703",
+          "pron": "샤둗"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "isaiah 23:1",
+        "isaiah 23:14",
+        "jeremiah 4:13",
+        "jeremiah 4:20",
+        "jeremiah 25:36",
+        "jeremiah 47:4",
+        "jeremiah 48:1",
+        "jeremiah 48:18",
+        "jeremiah 48:20",
+        "jeremiah 49:3",
+        "jeremiah 51:55",
+        "joel 1:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ושדם יְשָׁדֵּֽם",
+      "pron": "샤둗 샤둗",
+      "lemmas": [
+        "שָׁדַד",
+        "שָׁדַד"
+      ],
+      "words": [
+        {
+          "word": "ושדם",
+          "lemma": "שָׁדַד",
+          "strong": "H7703",
+          "pron": "샤둗"
+        },
+        {
+          "word": "יְשָׁדֵּֽם",
+          "lemma": "שָׁדַד",
+          "strong": "H7703",
+          "pron": "샤둗"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "proverbs 11:3",
+        "isaiah 21:2",
+        "isaiah 33:1",
+        "micah 2:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָבֹ֥א הַשֹּׁדֵ֖ד",
+      "pron": "바야베 샤둗",
+      "lemmas": [
+        "בּוֹא",
+        "שָׁדַד"
+      ],
+      "words": [
+        {
+          "word": "יָבֹ֥א",
+          "lemma": "בּוֹא",
+          "strong": "H935",
+          "pron": "바야베"
+        },
+        {
+          "word": "הַשֹּׁדֵ֖ד",
+          "lemma": "שָׁדַד",
+          "strong": "H7703",
+          "pron": "샤둗"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "jeremiah 6:26",
+        "jeremiah 12:12",
+        "jeremiah 47:4",
+        "jeremiah 48:8",
+        "jeremiah 51:48",
+        "jeremiah 51:53"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בּוֹגְדִ֣ים ושדם יְשָׁדֵּֽם",
+      "pron": "베빅도 샤둗 샤둗",
+      "lemmas": [
+        "בָּגַד",
+        "שָׁדַד",
+        "שָׁדַד"
+      ],
+      "words": [
+        {
+          "word": "בּוֹגְדִ֣ים",
+          "lemma": "בָּגַד",
+          "strong": "H898",
+          "pron": "베빅도"
+        },
+        {
+          "word": "ושדם",
+          "lemma": "שָׁדַד",
+          "strong": "H7703",
+          "pron": "샤둗"
+        },
+        {
+          "word": "יְשָׁדֵּֽם",
+          "lemma": "שָׁדַד",
+          "strong": "H7703",
+          "pron": "샤둗"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "proverbs 11:3",
+        "isaiah 21:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי שֹׁדֵ֤ד יְהוָה֙",
+      "pron": "키 샤둗 여호와",
+      "lemmas": [
+        "כִּי",
+        "שָׁדַד",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "שֹׁדֵ֤ד",
+          "lemma": "שָׁדַד",
+          "strong": "H7703",
+          "pron": "샤둗"
+        },
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 25:36",
+        "jeremiah 47:4",
+        "jeremiah 51:55"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

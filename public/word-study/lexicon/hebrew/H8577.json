@@ -1,6 +1,6 @@
 {
   "lemma": "תַּנִּין",
-  "pron": "탄님",
+  "pron": "아탄니님",
   "strong": "H8577",
   "posKo": "명사",
   "root": {
@@ -12,28 +12,97 @@
     {
       "lemma": "יִתְנָן",
       "strong": "H3497",
-      "pron": "",
+      "pron": "브이테난",
       "glossKo": "이드난"
     },
     {
       "lemma": "תַּן",
       "strong": "H8565",
-      "pron": "",
+      "pron": "카탄님",
       "glossKo": "들개"
     },
     {
       "lemma": "תַּנָּה",
       "strong": "H8568",
-      "pron": "",
+      "pron": "트닌",
       "glossKo": "들개"
     }
   ],
   "defEn": "monster; sea-serpent; jackal",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 26,
   "byBook": {
+    "isaiah": 6,
+    "jeremiah": 6,
     "psalms": 4,
-    "genesis": 1
+    "exodus": 3,
+    "job": 2,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "genesis": 1,
+    "micah": 1,
+    "nehemiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יְהִ֥י לְתַנִּֽין",
+      "pron": "하에타 아탄니님",
+      "lemmas": [
+        "הָיָה",
+        "תַּנִּין"
+      ],
+      "words": [
+        {
+          "word": "יְהִ֥י",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "לְתַנִּֽין",
+          "lemma": "תַּנִּין",
+          "strong": "H8577",
+          "pron": "아탄니님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 7:9",
+        "exodus 7:10",
+        "exodus 7:12",
+        "job 30:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְע֣וֹן תַּנִּ֑ים",
+      "pron": "미메온 아탄니님",
+      "lemmas": [
+        "מָעוֹן",
+        "תַּנִּין"
+      ],
+      "words": [
+        {
+          "word": "מְע֣וֹן",
+          "lemma": "מָעוֹן",
+          "strong": "H4583",
+          "pron": "미메온"
+        },
+        {
+          "word": "תַּנִּ֑ים",
+          "lemma": "תַּנִּין",
+          "strong": "H8577",
+          "pron": "아탄니님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 9:11",
+        "jeremiah 10:22",
+        "jeremiah 49:33",
+        "jeremiah 51:37"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

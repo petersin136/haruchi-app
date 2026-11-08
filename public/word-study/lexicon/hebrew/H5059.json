@@ -1,6 +1,6 @@
 {
   "lemma": "נָגַן",
-  "pron": "낙겐",
+  "pron": "메낙겐",
   "strong": "H5059",
   "posKo": "동사",
   "root": null,
@@ -8,33 +8,97 @@
     {
       "lemma": "אַגָּן",
       "strong": "H101",
-      "pron": "",
+      "pron": "바악가노트",
       "glossKo": "잔"
     },
     {
       "lemma": "גַּת",
       "strong": "H1660",
-      "pron": "",
+      "pron": "바가트",
       "glossKo": "포도 짜는 곳"
     },
     {
       "lemma": "מַנְגִּינָה",
       "strong": "H4485",
-      "pron": "",
-      "glossKo": "조롱 노래"
+      "pron": "만기나탐",
+      "glossKo": "그들의 조롱 노래"
     },
     {
       "lemma": "נְגִינָה",
       "strong": "H5058",
-      "pron": "비네기노트",
-      "glossKo": "노래"
+      "pron": "네기나탐",
+      "glossKo": "그들의 노래"
     }
   ],
   "defEn": "thrum; beat; play; make music",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 15,
   "byBook": {
-    "psalms": 2
+    "samuel1": 7,
+    "kings2": 3,
+    "isaiah": 2,
+    "psalms": 2,
+    "ezekiel": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְנִגֵּ֥ן בְּיָד֖וֹ",
+      "pron": "메낙겐 야도",
+      "lemmas": [
+        "נָגַן",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "וְנִגֵּ֥ן",
+          "lemma": "נָגַן",
+          "strong": "H5059",
+          "pron": "메낙겐"
+        },
+        {
+          "word": "בְּיָד֖וֹ",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 16:16",
+        "samuel1 16:23",
+        "samuel1 18:10",
+        "samuel1 19:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֵיטִ֣יב לְנַגֵּ֔ן",
+      "pron": "테딥 메낙겐",
+      "lemmas": [
+        "יָטַב",
+        "נָגַן"
+      ],
+      "words": [
+        {
+          "word": "מֵיטִ֣יב",
+          "lemma": "יָטַב",
+          "strong": "H3190",
+          "pron": "테딥"
+        },
+        {
+          "word": "לְנַגֵּ֔ן",
+          "lemma": "נָגַן",
+          "strong": "H5059",
+          "pron": "메낙겐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 16:17",
+        "psalms 33:3",
+        "isaiah 23:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

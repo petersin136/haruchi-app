@@ -1,8 +1,8 @@
 {
   "lemma": "בִּינָה",
-  "pron": "비나",
+  "pron": "우비나테켐",
   "strong": "H998",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בִּין",
     "strong": "H995",
@@ -12,13 +12,13 @@
     {
       "lemma": "בּוּנָה",
       "strong": "H946",
-      "pron": "",
+      "pron": "우부나",
       "glossKo": "부나"
     },
     {
       "lemma": "בִּין",
       "strong": "H995",
-      "pron": "비나",
+      "pron": "나본",
       "glossKo": "깨닫다"
     },
     {
@@ -28,9 +28,15 @@
       "glossKo": "사이"
     },
     {
+      "lemma": "בִּינָה",
+      "strong": "H999",
+      "pron": "비나",
+      "glossKo": "총명(아람)"
+    },
+    {
       "lemma": "יָבִין",
       "strong": "H2985",
-      "pron": "크야빈",
+      "pron": "야빈",
       "glossKo": "야빈"
     },
     {
@@ -42,7 +48,105 @@
   ],
   "defEn": "understanding",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 38,
+  "byBook": {
+    "proverbs": 14,
+    "job": 9,
+    "isaiah": 5,
+    "daniel": 4,
+    "chronicles1": 2,
+    "chronicles2": 2,
+    "deuteronomy": 1,
+    "jeremiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "יוֹדְעֵ֤י בִינָה֙",
+      "pron": "요데아 우비나테켐",
+      "lemmas": [
+        "יָדַע",
+        "בִּינָה"
+      ],
+      "words": [
+        {
+          "word": "יוֹדְעֵ֤י",
+          "lemma": "יָדַע",
+          "strong": "H3045",
+          "pron": "요데아"
+        },
+        {
+          "word": "בִינָה֙",
+          "lemma": "בִּינָה",
+          "strong": "H998",
+          "pron": "우비나테켐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles1 12:32",
+        "chronicles2 2:13",
+        "job 38:4",
+        "proverbs 4:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָכְמַתְכֶם֙ וּבִ֣ינַתְכֶ֔ם",
+      "pron": "하케마 우비나테켐",
+      "lemmas": [
+        "חׇכְמָה",
+        "בִּינָה"
+      ],
+      "words": [
+        {
+          "word": "חָכְמַתְכֶם֙",
+          "lemma": "חׇכְמָה",
+          "strong": "H2451",
+          "pron": "하케마"
+        },
+        {
+          "word": "וּבִ֣ינַתְכֶ֔ם",
+          "lemma": "בִּינָה",
+          "strong": "H998",
+          "pron": "우비나테켐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 4:6",
+        "isaiah 11:2",
+        "daniel 1:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קְנֵ֣ה בִינָ֑ה",
+      "pron": "카니티 우비나테켐",
+      "lemmas": [
+        "קָנָה",
+        "בִּינָה"
+      ],
+      "words": [
+        {
+          "word": "קְנֵ֣ה",
+          "lemma": "קָנָה",
+          "strong": "H7069",
+          "pron": "카니티"
+        },
+        {
+          "word": "בִינָ֑ה",
+          "lemma": "בִּינָה",
+          "strong": "H998",
+          "pron": "우비나테켐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 4:5",
+        "proverbs 4:7",
+        "proverbs 16:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

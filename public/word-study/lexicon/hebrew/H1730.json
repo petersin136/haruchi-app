@@ -1,50 +1,221 @@
 {
   "lemma": "דּוֹד",
-  "pron": "다윗",
+  "pron": "돋",
   "strong": "H1730",
-  "posKo": "",
+  "posKo": "명사",
   "root": null,
   "family": [
     {
       "lemma": "דַּד",
       "strong": "H1717",
-      "pron": "",
-      "glossKo": "유방"
+      "pron": "닫데하",
+      "glossKo": "그녀의 유방"
     },
     {
       "lemma": "דּוּד",
       "strong": "H1731",
-      "pron": "미다윗",
+      "pron": "바다윗",
       "glossKo": "도단(지명)"
     },
     {
       "lemma": "דָּוִד",
       "strong": "H1732",
-      "pron": "르다윗",
+      "pron": "다윗",
       "glossKo": "다윗"
     },
     {
       "lemma": "דּוֹדָה",
       "strong": "H1733",
-      "pron": "",
-      "glossKo": "도단"
+      "pron": "도다토",
+      "glossKo": "그의 도단"
     },
     {
       "lemma": "דּוֹדוֹ",
       "strong": "H1734",
-      "pron": "",
+      "pron": "도도",
       "glossKo": "도도"
     },
     {
       "lemma": "דּוֹדָוָהוּ",
       "strong": "H1735",
-      "pron": "",
+      "pron": "도다바후",
       "glossKo": "도다와후"
     }
   ],
   "defEn": "love",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 61,
+  "byBook": {
+    "songofsolomon": 39,
+    "jeremiah": 4,
+    "leviticus": 4,
+    "samuel1": 4,
+    "esther": 2,
+    "ezekiel": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "isaiah": 1,
+    "kings2": 1,
+    "numbers": 1,
+    "proverbs": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "דּוֹדֵ֣ךְ מִדּ֔וֹד",
+      "pron": "돋 돋",
+      "lemmas": [
+        "דּוֹד",
+        "דּוֹד"
+      ],
+      "words": [
+        {
+          "word": "דּוֹדֵ֣ךְ",
+          "lemma": "דּוֹד",
+          "strong": "H1730",
+          "pron": "돋"
+        },
+        {
+          "word": "מִדּ֔וֹד",
+          "lemma": "דּוֹד",
+          "strong": "H1730",
+          "pron": "돋"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "songofsolomon 5:6",
+        "songofsolomon 5:9",
+        "songofsolomon 6:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲנִי֙ לְדוֹדִ֔י וְדוֹדִ֖י",
+      "pron": "바아니 돋 돋",
+      "lemmas": [
+        "אֲנִי",
+        "דּוֹד",
+        "דּוֹד"
+      ],
+      "words": [
+        {
+          "word": "אֲנִי֙",
+          "lemma": "אֲנִי",
+          "strong": "H589",
+          "pron": "바아니"
+        },
+        {
+          "word": "לְדוֹדִ֔י",
+          "lemma": "דּוֹד",
+          "strong": "H1730",
+          "pron": "돋"
+        },
+        {
+          "word": "וְדוֹדִ֖י",
+          "lemma": "דּוֹד",
+          "strong": "H1730",
+          "pron": "돋"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "songofsolomon 5:6",
+        "songofsolomon 6:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶן דֹּדוֹ֙",
+      "pron": "바님 돋",
+      "lemmas": [
+        "בֵּן",
+        "דּוֹד"
+      ],
+      "words": [
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "דֹּדוֹ֙",
+          "lemma": "דּוֹד",
+          "strong": "H1730",
+          "pron": "돋"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 25:49",
+        "numbers 36:11",
+        "jeremiah 32:8",
+        "jeremiah 32:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַה דּוֹדֵ֣ךְ מִדּ֔וֹד",
+      "pron": "마 돋 돋",
+      "lemmas": [
+        "מָה",
+        "דּוֹד",
+        "דּוֹד"
+      ],
+      "words": [
+        {
+          "word": "מַה",
+          "lemma": "מָה",
+          "strong": "H4100",
+          "pron": "마"
+        },
+        {
+          "word": "דּוֹדֵ֣ךְ",
+          "lemma": "דּוֹד",
+          "strong": "H1730",
+          "pron": "돋"
+        },
+        {
+          "word": "מִדּ֔וֹד",
+          "lemma": "דּוֹד",
+          "strong": "H1730",
+          "pron": "돋"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "songofsolomon 5:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲנִי֙ לְדוֹדִ֔י",
+      "pron": "바아니 돋",
+      "lemmas": [
+        "אֲנִי",
+        "דּוֹד"
+      ],
+      "words": [
+        {
+          "word": "אֲנִי֙",
+          "lemma": "אֲנִי",
+          "strong": "H589",
+          "pron": "바아니"
+        },
+        {
+          "word": "לְדוֹדִ֔י",
+          "lemma": "דּוֹד",
+          "strong": "H1730",
+          "pron": "돋"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "songofsolomon 5:6",
+        "songofsolomon 6:3",
+        "songofsolomon 7:10"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -8,15 +8,193 @@
     {
       "lemma": "מִסְפֵּד",
       "strong": "H4553",
-      "pron": "밋페디위",
-      "glossKo": "나의 애곡"
+      "pron": "밋펟",
+      "glossKo": "애곡"
     }
   ],
   "defEn": "lament",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 32,
   "byBook": {
-    "genesis": 2
+    "jeremiah": 9,
+    "kings1": 4,
+    "zechariah": 4,
+    "samuel2": 3,
+    "ecclesiastes": 2,
+    "ezekiel": 2,
+    "genesis": 2,
+    "micah": 2,
+    "samuel1": 2,
+    "isaiah": 1,
+    "joel": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹא יִסְפְּד֣וּ",
+      "pron": "로 리셉폳",
+      "lemmas": [
+        "לֹא",
+        "סָפַד"
+      ],
+      "words": [
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִסְפְּד֣וּ",
+          "lemma": "סָפַד",
+          "strong": "H5594",
+          "pron": "리셉폳"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "jeremiah 16:4",
+        "jeremiah 16:6",
+        "jeremiah 22:18",
+        "jeremiah 25:33",
+        "ezekiel 24:16",
+        "ezekiel 24:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתִּסְפֹּ֖ד עַל",
+      "pron": "리셉폳 알",
+      "lemmas": [
+        "סָפַד",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "וַתִּסְפֹּ֖ד",
+          "lemma": "סָפַד",
+          "strong": "H5594",
+          "pron": "리셉폳"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 11:26",
+        "kings1 13:30",
+        "isaiah 32:12",
+        "zechariah 12:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִסָּֽפְדוּ֙ וְלֹ֣א",
+      "pron": "리셉폳 로",
+      "lemmas": [
+        "סָפַד",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "יִסָּֽפְדוּ֙",
+          "lemma": "סָפַד",
+          "strong": "H5594",
+          "pron": "리셉폳"
+        },
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "jeremiah 16:4",
+        "jeremiah 16:6",
+        "jeremiah 25:33",
+        "ezekiel 24:16",
+        "ezekiel 24:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֤א יִסָּֽפְדוּ֙ וְלֹ֣א",
+      "pron": "로 리셉폳 로",
+      "lemmas": [
+        "לֹא",
+        "סָפַד",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "לֹ֤א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִסָּֽפְדוּ֙",
+          "lemma": "סָפַד",
+          "strong": "H5594",
+          "pron": "리셉폳"
+        },
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "jeremiah 16:4",
+        "jeremiah 16:6",
+        "jeremiah 25:33",
+        "ezekiel 24:16",
+        "ezekiel 24:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְחִגְר֣וּ שַׂקִּ֔ים וְסִפְד֖וּ",
+      "pron": "하구림 사크 리셉폳",
+      "lemmas": [
+        "חָגַר",
+        "שַׂק",
+        "סָפַד"
+      ],
+      "words": [
+        {
+          "word": "וְחִגְר֣וּ",
+          "lemma": "חָגַר",
+          "strong": "H2296",
+          "pron": "하구림"
+        },
+        {
+          "word": "שַׂקִּ֔ים",
+          "lemma": "שַׂק",
+          "strong": "H8242",
+          "pron": "사크"
+        },
+        {
+          "word": "וְסִפְד֖וּ",
+          "lemma": "סָפַד",
+          "strong": "H5594",
+          "pron": "리셉폳"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 3:31",
+        "jeremiah 4:8",
+        "jeremiah 49:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

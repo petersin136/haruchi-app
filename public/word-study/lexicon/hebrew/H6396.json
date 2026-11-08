@@ -10,29 +10,169 @@
   },
   "family": [
     {
+      "lemma": "פַּלֻּאִי",
+      "strong": "H6384",
+      "pron": "아팔루이",
+      "glossKo": "발루 자손"
+    },
+    {
       "lemma": "פָּלָה",
       "strong": "H6395",
-      "pron": "힙라",
+      "pron": "브힙레티",
       "glossKo": "구별하다"
     },
     {
       "lemma": "פְּלוֹנִי",
       "strong": "H6397",
-      "pron": "",
+      "pron": "아펠로니",
       "glossKo": "불론 사람"
     },
     {
       "lemma": "פְּלֹנִי",
       "strong": "H6423",
-      "pron": "",
+      "pron": "펠로니",
       "glossKo": "어떤"
     }
   ],
   "defEn": "Pallu",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 5,
   "byBook": {
+    "numbers": 2,
+    "chronicles1": 1,
+    "exodus": 1,
     "genesis": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּפַלּ֖וּא וְחֶצְר֥וֹן",
+      "pron": "우팔루 브헤체론",
+      "lemmas": [
+        "פַּלּוּא",
+        "חֶצְרוֹן"
+      ],
+      "words": [
+        {
+          "word": "וּפַלּ֖וּא",
+          "lemma": "פַּלּוּא",
+          "strong": "H6396",
+          "pron": "우팔루"
+        },
+        {
+          "word": "וְחֶצְר֥וֹן",
+          "lemma": "חֶצְרוֹן",
+          "strong": "H2696",
+          "pron": "브헤체론"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 46:9",
+        "exodus 6:14",
+        "chronicles1 5:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּפַלּ֖וּא וְחֶצְר֥וֹן וְכַרְמִֽי",
+      "pron": "우팔루 브헤체론 브카레미",
+      "lemmas": [
+        "פַּלּוּא",
+        "חֶצְרוֹן",
+        "כַּרְמִי"
+      ],
+      "words": [
+        {
+          "word": "וּפַלּ֖וּא",
+          "lemma": "פַּלּוּא",
+          "strong": "H6396",
+          "pron": "우팔루"
+        },
+        {
+          "word": "וְחֶצְר֥וֹן",
+          "lemma": "חֶצְרוֹן",
+          "strong": "H2696",
+          "pron": "브헤체론"
+        },
+        {
+          "word": "וְכַרְמִֽי",
+          "lemma": "כַּרְמִי",
+          "strong": "H3756",
+          "pron": "브카레미"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 46:9",
+        "exodus 6:14",
+        "chronicles1 5:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲנ֥וֹךְ וּפַלּ֖וּא",
+      "pron": "하노크 우팔루",
+      "lemmas": [
+        "חֲנוֹךְ",
+        "פַּלּוּא"
+      ],
+      "words": [
+        {
+          "word": "חֲנ֥וֹךְ",
+          "lemma": "חֲנוֹךְ",
+          "strong": "H2585",
+          "pron": "하노크"
+        },
+        {
+          "word": "וּפַלּ֖וּא",
+          "lemma": "פַּלּוּא",
+          "strong": "H6396",
+          "pron": "우팔루"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 46:9",
+        "exodus 6:14",
+        "chronicles1 5:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲנ֥וֹךְ וּפַלּ֖וּא וְחֶצְר֥וֹן",
+      "pron": "하노크 우팔루 브헤체론",
+      "lemmas": [
+        "חֲנוֹךְ",
+        "פַּלּוּא",
+        "חֶצְרוֹן"
+      ],
+      "words": [
+        {
+          "word": "חֲנ֥וֹךְ",
+          "lemma": "חֲנוֹךְ",
+          "strong": "H2585",
+          "pron": "하노크"
+        },
+        {
+          "word": "וּפַלּ֖וּא",
+          "lemma": "פַּלּוּא",
+          "strong": "H6396",
+          "pron": "우팔루"
+        },
+        {
+          "word": "וְחֶצְר֥וֹן",
+          "lemma": "חֶצְרוֹן",
+          "strong": "H2696",
+          "pron": "브헤체론"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 46:9",
+        "exodus 6:14",
+        "chronicles1 5:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

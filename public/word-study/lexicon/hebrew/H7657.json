@@ -18,25 +18,25 @@
     {
       "lemma": "שָׁבַע",
       "strong": "H7650",
-      "pron": "니솁바",
+      "pron": "힛샵아",
       "glossKo": "맹세하다"
     },
     {
       "lemma": "שֶׁבַע",
       "strong": "H7651",
-      "pron": "셰바",
+      "pron": "브십아",
       "glossKo": "일곱"
     },
     {
       "lemma": "שֶׁבַע",
       "strong": "H7652",
-      "pron": "",
+      "pron": "브셰바",
       "glossKo": "일곱"
     },
     {
       "lemma": "שִׁבְעָה",
       "strong": "H7655",
-      "pron": "",
+      "pron": "브십아트",
       "glossKo": "일곱(아람)"
     },
     {
@@ -48,106 +48,231 @@
   ],
   "defEn": "seventy",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 91,
   "byBook": {
+    "numbers": 26,
+    "judges": 10,
+    "ezra": 8,
     "genesis": 8,
-    "psalms": 1
+    "exodus": 7,
+    "nehemiah": 5,
+    "chronicles2": 4,
+    "isaiah": 3,
+    "jeremiah": 3,
+    "kings2": 3,
+    "chronicles1": 2,
+    "daniel": 2,
+    "ezekiel": 2,
+    "zechariah": 2,
+    "deuteronomy": 1,
+    "esther": 1,
+    "kings1": 1,
+    "psalms": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "שִׁבְעִ֣ים שָׁנָ֑ה",
-      "pron": "십임 우셰노타위",
+      "hebrew": "שִׁבְעִ֥ים שָׁנָֽה",
+      "pron": "십임 브샤님",
       "lemmas": [
         "שִׁבְעִים",
         "שָׁנֶה"
       ],
       "words": [
         {
-          "word": "שִׁבְעִ֣ים",
+          "word": "שִׁבְעִ֥ים",
           "lemma": "שִׁבְעִים",
           "strong": "H7657",
           "pron": "십임"
         },
         {
-          "word": "שָׁנָ֑ה",
+          "word": "שָׁנָֽה",
           "lemma": "שָׁנֶה",
           "strong": "H8141",
-          "pron": "우셰노타위"
+          "pron": "브샤님"
         }
       ],
-      "count": 6,
+      "count": 16,
       "refs": [
-        "psalms 90:10",
         "genesis 5:12",
         "genesis 5:31",
         "genesis 11:26",
         "genesis 12:4",
-        "genesis 25:7"
+        "genesis 25:7",
+        "chronicles2 36:21",
+        "psalms 90:10",
+        "isaiah 23:15",
+        "isaiah 23:17",
+        "jeremiah 25:11",
+        "jeremiah 25:12",
+        "jeremiah 29:10"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שְׁנוֹתֵ֨ינוּ שִׁבְעִ֪ים",
-      "pron": "우셰노타위 십임",
+      "hebrew": "אֶחָד֙ כֶּ֔סֶף שִׁבְעִ֥ים",
+      "pron": "에핟 바케셉 십임",
       "lemmas": [
-        "שָׁנֶה",
+        "אֶחָד",
+        "כֶּסֶף",
         "שִׁבְעִים"
       ],
       "words": [
         {
-          "word": "שְׁנוֹתֵ֨ינוּ",
-          "lemma": "שָׁנֶה",
-          "strong": "H8141",
-          "pron": "우셰노타위"
+          "word": "אֶחָד֙",
+          "lemma": "אֶחָד",
+          "strong": "H259",
+          "pron": "에핟"
         },
         {
-          "word": "שִׁבְעִ֪ים",
+          "word": "כֶּ֔סֶף",
+          "lemma": "כֶּסֶף",
+          "strong": "H3701",
+          "pron": "바케셉"
+        },
+        {
+          "word": "שִׁבְעִ֥ים",
           "lemma": "שִׁבְעִים",
           "strong": "H7657",
           "pron": "십임"
         }
       ],
-      "count": 3,
+      "count": 13,
       "refs": [
-        "psalms 90:10",
-        "genesis 12:4",
-        "genesis 25:7"
+        "numbers 7:13",
+        "numbers 7:19",
+        "numbers 7:25",
+        "numbers 7:31",
+        "numbers 7:37",
+        "numbers 7:43",
+        "numbers 7:49",
+        "numbers 7:55",
+        "numbers 7:61",
+        "numbers 7:67",
+        "numbers 7:73",
+        "numbers 7:79"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שְׁנוֹתֵ֨ינוּ שִׁבְעִ֪ים שָׁנָ֡ה",
-      "pron": "우셰노타위 십임 우셰노타위",
+      "hebrew": "כֶּ֔סֶף שִׁבְעִ֥ים",
+      "pron": "바케셉 십임",
       "lemmas": [
-        "שָׁנֶה",
-        "שִׁבְעִים",
-        "שָׁנֶה"
+        "כֶּסֶף",
+        "שִׁבְעִים"
       ],
       "words": [
         {
-          "word": "שְׁנוֹתֵ֨ינוּ",
-          "lemma": "שָׁנֶה",
-          "strong": "H8141",
-          "pron": "우셰노타위"
+          "word": "כֶּ֔סֶף",
+          "lemma": "כֶּסֶף",
+          "strong": "H3701",
+          "pron": "바케셉"
         },
         {
-          "word": "שִׁבְעִ֪ים",
+          "word": "שִׁבְעִ֥ים",
+          "lemma": "שִׁבְעִים",
+          "strong": "H7657",
+          "pron": "십임"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "numbers 7:13",
+        "numbers 7:19",
+        "numbers 7:25",
+        "numbers 7:31",
+        "numbers 7:37",
+        "numbers 7:43",
+        "numbers 7:49",
+        "numbers 7:55",
+        "numbers 7:61",
+        "numbers 7:67",
+        "numbers 7:73",
+        "numbers 7:79"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שִׁבְעִ֥ים שֶׁ֖קֶל",
+      "pron": "십임 셰켈",
+      "lemmas": [
+        "שִׁבְעִים",
+        "שֶׁקֶל"
+      ],
+      "words": [
+        {
+          "word": "שִׁבְעִ֥ים",
           "lemma": "שִׁבְעִים",
           "strong": "H7657",
           "pron": "십임"
         },
         {
-          "word": "שָׁנָ֡ה",
-          "lemma": "שָׁנֶה",
-          "strong": "H8141",
-          "pron": "우셰노타위"
+          "word": "שֶׁ֖קֶל",
+          "lemma": "שֶׁקֶל",
+          "strong": "H8255",
+          "pron": "셰켈"
         }
       ],
-      "count": 3,
+      "count": 13,
       "refs": [
-        "psalms 90:10",
-        "genesis 12:4",
-        "genesis 25:7"
+        "exodus 38:25",
+        "numbers 7:13",
+        "numbers 7:19",
+        "numbers 7:25",
+        "numbers 7:31",
+        "numbers 7:37",
+        "numbers 7:43",
+        "numbers 7:49",
+        "numbers 7:55",
+        "numbers 7:61",
+        "numbers 7:67",
+        "numbers 7:73"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שִׁבְעִ֥ים שֶׁ֖קֶל בְּשֶׁ֣קֶל",
+      "pron": "십임 셰켈 셰켈",
+      "lemmas": [
+        "שִׁבְעִים",
+        "שֶׁקֶל",
+        "שֶׁקֶל"
+      ],
+      "words": [
+        {
+          "word": "שִׁבְעִ֥ים",
+          "lemma": "שִׁבְעִים",
+          "strong": "H7657",
+          "pron": "십임"
+        },
+        {
+          "word": "שֶׁ֖קֶל",
+          "lemma": "שֶׁקֶל",
+          "strong": "H8255",
+          "pron": "셰켈"
+        },
+        {
+          "word": "בְּשֶׁ֣קֶל",
+          "lemma": "שֶׁקֶל",
+          "strong": "H8255",
+          "pron": "셰켈"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 38:25",
+        "numbers 7:13",
+        "numbers 7:19",
+        "numbers 7:25",
+        "numbers 7:31",
+        "numbers 7:37",
+        "numbers 7:43",
+        "numbers 7:49",
+        "numbers 7:55",
+        "numbers 7:61",
+        "numbers 7:67",
+        "numbers 7:73"
       ],
       "glossKo": ""
     }

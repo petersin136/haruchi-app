@@ -12,8 +12,8 @@
     {
       "lemma": "מָעוֹר",
       "strong": "H4589",
-      "pron": "",
-      "glossKo": "벌거벗음"
+      "pron": "메오레헴",
+      "glossKo": "그들의 벌거벗음"
     },
     {
       "lemma": "מְעָרָה",
@@ -24,21 +24,213 @@
     {
       "lemma": "עוּר",
       "strong": "H5783",
-      "pron": "",
+      "pron": "테오르",
       "glossKo": "벗기다"
     },
     {
       "lemma": "עָוַר",
       "strong": "H5786",
-      "pron": "",
+      "pron": "예아베르",
       "glossKo": "눈멀게 하다"
     }
   ],
   "defEn": "skin",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 99,
   "byBook": {
-    "genesis": 2
+    "leviticus": 53,
+    "exodus": 17,
+    "job": 10,
+    "numbers": 8,
+    "lamentations": 3,
+    "ezekiel": 2,
+    "genesis": 2,
+    "micah": 2,
+    "jeremiah": 1,
+    "kings2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "ע֣וֹר תָּ֑חַשׁ",
+      "pron": "오르 테하심",
+      "lemmas": [
+        "עוֹר",
+        "תַּחַשׁ"
+      ],
+      "words": [
+        {
+          "word": "ע֣וֹר",
+          "lemma": "עוֹר",
+          "strong": "H5785",
+          "pron": "오르"
+        },
+        {
+          "word": "תָּ֑חַשׁ",
+          "lemma": "תַּחַשׁ",
+          "strong": "H8476",
+          "pron": "테하심"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 25:5",
+        "exodus 26:14",
+        "exodus 35:7",
+        "exodus 35:23",
+        "exodus 36:19",
+        "exodus 39:34",
+        "numbers 4:6",
+        "numbers 4:8",
+        "numbers 4:10",
+        "numbers 4:11",
+        "numbers 4:12",
+        "numbers 4:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְעוֹר בְּשָׂרוֹ֙",
+      "pron": "오르 바사르",
+      "lemmas": [
+        "עוֹר",
+        "בָּשָׂר"
+      ],
+      "words": [
+        {
+          "word": "בְעוֹר",
+          "lemma": "עוֹר",
+          "strong": "H5785",
+          "pron": "오르"
+        },
+        {
+          "word": "בְּשָׂרוֹ֙",
+          "lemma": "בָּשָׂר",
+          "strong": "H1320",
+          "pron": "바사르"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "leviticus 13:2",
+        "leviticus 13:3",
+        "leviticus 13:4",
+        "leviticus 13:11",
+        "leviticus 13:38",
+        "leviticus 13:39",
+        "leviticus 13:43",
+        "job 10:11",
+        "job 19:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִן הָע֔וֹר",
+      "pron": "민 오르",
+      "lemmas": [
+        "מִן",
+        "עוֹר"
+      ],
+      "words": [
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        },
+        {
+          "word": "הָע֔וֹר",
+          "lemma": "עוֹר",
+          "strong": "H5785",
+          "pron": "오르"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "leviticus 13:4",
+        "leviticus 13:20",
+        "leviticus 13:21",
+        "leviticus 13:25",
+        "leviticus 13:26",
+        "leviticus 13:30",
+        "leviticus 13:31",
+        "leviticus 13:32",
+        "leviticus 13:34",
+        "leviticus 13:56"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּמִכְסֵ֖ה ע֣וֹר",
+      "pron": "미케세 오르",
+      "lemmas": [
+        "מִכְסֶה",
+        "עוֹר"
+      ],
+      "words": [
+        {
+          "word": "בְּמִכְסֵ֖ה",
+          "lemma": "מִכְסֶה",
+          "strong": "H4372",
+          "pron": "미케세"
+        },
+        {
+          "word": "ע֣וֹר",
+          "lemma": "עוֹר",
+          "strong": "H5785",
+          "pron": "오르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 26:14",
+        "exodus 36:19",
+        "exodus 39:34",
+        "numbers 4:8",
+        "numbers 4:10",
+        "numbers 4:11",
+        "numbers 4:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְכָל כְּלִי ע֔וֹר",
+      "pron": "칼 켈레 오르",
+      "lemmas": [
+        "כֹּל",
+        "כְּלִי",
+        "עוֹר"
+      ],
+      "words": [
+        {
+          "word": "בְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "כְּלִי",
+          "lemma": "כְּלִי",
+          "strong": "H3627",
+          "pron": "켈레"
+        },
+        {
+          "word": "ע֔וֹר",
+          "lemma": "עוֹר",
+          "strong": "H5785",
+          "pron": "오르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 13:49",
+        "leviticus 13:52",
+        "leviticus 13:53",
+        "leviticus 13:57",
+        "leviticus 13:58",
+        "leviticus 13:59",
+        "numbers 31:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

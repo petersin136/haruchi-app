@@ -1,6 +1,6 @@
 {
   "lemma": "סָפַר",
-  "pron": "아삽페라",
+  "pron": "우세포르",
   "strong": "H5608",
   "posKo": "동사",
   "root": null,
@@ -14,19 +14,19 @@
     {
       "lemma": "סַפִּיר",
       "strong": "H5601",
-      "pron": "",
+      "pron": "아삽피르",
       "glossKo": "청옥"
     },
     {
       "lemma": "סְפַר",
       "strong": "H5609",
-      "pron": "",
+      "pron": "비세파르",
       "glossKo": "책(아람)"
     },
     {
       "lemma": "סְפָר",
       "strong": "H5610",
-      "pron": "",
+      "pron": "아세파르",
       "glossKo": "수"
     },
     {
@@ -38,21 +38,149 @@
     {
       "lemma": "סֹפֶרֶת",
       "strong": "H5618",
-      "pron": "",
+      "pron": "아소페레트",
       "glossKo": "소베렛"
     }
   ],
   "defEn": "score; inscribe; enumerate; recount; celebrate",
   "defKo": "",
-  "countOT": 50,
+  "countOT": 161,
   "byBook": {
     "psalms": 37,
-    "genesis": 13
+    "jeremiah": 17,
+    "genesis": 13,
+    "kings2": 13,
+    "chronicles2": 10,
+    "isaiah": 9,
+    "job": 8,
+    "chronicles1": 7,
+    "nehemiah": 7,
+    "kings1": 5,
+    "leviticus": 5,
+    "esther": 4,
+    "exodus": 4,
+    "ezekiel": 4,
+    "ezra": 4,
+    "judges": 3,
+    "samuel2": 3,
+    "deuteronomy": 2,
+    "habakkuk": 1,
+    "hosea": 1,
+    "joel": 1,
+    "joshua": 1,
+    "numbers": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
+      "hebrew": "לִסְפֹּ֣ר אֹתָ֑ם",
+      "pron": "우세포르 에트",
+      "lemmas": [
+        "סָפַר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "לִסְפֹּ֣ר",
+          "lemma": "סָפַר",
+          "strong": "H5608",
+          "pron": "우세포르"
+        },
+        {
+          "word": "אֹתָ֑ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "genesis 15:5",
+        "genesis 37:9",
+        "joshua 2:23",
+        "samuel1 11:5",
+        "samuel2 24:10",
+        "kings1 13:11",
+        "kings2 19:2",
+        "kings2 22:12",
+        "chronicles1 21:2",
+        "chronicles2 34:20",
+        "isaiah 33:18",
+        "isaiah 37:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֥א יִסָּפֵ֖ר",
+      "pron": "로 우세포르",
+      "lemmas": [
+        "לֹא",
+        "סָפַר"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִסָּפֵ֖ר",
+          "lemma": "סָפַר",
+          "strong": "H5608",
+          "pron": "우세포르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 16:10",
+        "genesis 32:12",
+        "kings1 3:8",
+        "kings1 8:5",
+        "chronicles2 5:6",
+        "isaiah 52:15",
+        "jeremiah 33:22",
+        "hosea 1:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁפָ֤ן הַסֹּפֵר֙",
+      "pron": "아샤판 우세포르",
+      "lemmas": [
+        "שָׁפָן",
+        "סָפַר"
+      ],
+      "words": [
+        {
+          "word": "שָׁפָ֤ן",
+          "lemma": "שָׁפָן",
+          "strong": "H8227",
+          "pron": "아샤판"
+        },
+        {
+          "word": "הַסֹּפֵר֙",
+          "lemma": "סָפַר",
+          "strong": "H5608",
+          "pron": "우세포르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "kings2 22:8",
+        "kings2 22:9",
+        "kings2 22:10",
+        "kings2 22:12",
+        "chronicles2 34:15",
+        "chronicles2 34:18",
+        "chronicles2 34:20",
+        "jeremiah 36:10"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "אֲ֝סַפְּרָ֗ה כָּל",
-      "pron": "아삽페라 브콜",
+      "pron": "우세포르 칼",
       "lemmas": [
         "סָפַר",
         "כֹּל"
@@ -62,13 +190,13 @@
           "word": "אֲ֝סַפְּרָ֗ה",
           "lemma": "סָפַר",
           "strong": "H5608",
-          "pron": "아삽페라"
+          "pron": "우세포르"
         },
         {
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         }
       ],
       "count": 7,
@@ -80,6 +208,39 @@
         "psalms 66:16",
         "psalms 73:28",
         "psalms 119:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְסַפֵּ֣ר לַמֶּלֶךְ֮",
+      "pron": "우세포르 멜레크",
+      "lemmas": [
+        "סָפַר",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "מְסַפֵּ֣ר",
+          "lemma": "סָפַר",
+          "strong": "H5608",
+          "pron": "우세포르"
+        },
+        {
+          "word": "לַמֶּלֶךְ֮",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "kings2 8:5",
+        "kings2 12:10",
+        "kings2 22:10",
+        "chronicles2 24:11",
+        "chronicles2 34:18",
+        "esther 3:12",
+        "esther 8:9"
       ],
       "glossKo": ""
     }

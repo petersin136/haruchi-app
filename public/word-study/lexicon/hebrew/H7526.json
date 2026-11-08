@@ -2,7 +2,7 @@
   "lemma": "רְצִין",
   "pron": "레친",
   "strong": "H7526",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רָצוֹן",
     "strong": "H7522",
@@ -12,13 +12,115 @@
     {
       "lemma": "רָצוֹן",
       "strong": "H7522",
-      "pron": "라촌",
-      "glossKo": "기쁨"
+      "pron": "우비레초남",
+      "glossKo": "그들의 기쁨"
     }
   ],
   "defEn": "Retsin",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 11,
+  "byBook": {
+    "isaiah": 5,
+    "kings2": 4,
+    "ezra": 1,
+    "nehemiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "רְצִ֣ין מֶֽלֶךְ",
+      "pron": "레친 멜레크",
+      "lemmas": [
+        "רְצִין",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "רְצִ֣ין",
+          "lemma": "רְצִין",
+          "strong": "H7526",
+          "pron": "레친"
+        },
+        {
+          "word": "מֶֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 15:37",
+        "kings2 16:5",
+        "kings2 16:6",
+        "isaiah 7:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רְצִ֣ין מֶֽלֶךְ אֲ֠רָם",
+      "pron": "레친 멜레크 바아람",
+      "lemmas": [
+        "רְצִין",
+        "מֶלֶךְ",
+        "אֲרָם"
+      ],
+      "words": [
+        {
+          "word": "רְצִ֣ין",
+          "lemma": "רְצִין",
+          "strong": "H7526",
+          "pron": "레친"
+        },
+        {
+          "word": "מֶֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "אֲ֠רָם",
+          "lemma": "אֲרָם",
+          "strong": "H758",
+          "pron": "바아람"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 15:37",
+        "kings2 16:5",
+        "kings2 16:6",
+        "isaiah 7:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רְצִ֥ין בְּנֵי",
+      "pron": "레친 바님",
+      "lemmas": [
+        "רְצִין",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "רְצִ֥ין",
+          "lemma": "רְצִין",
+          "strong": "H7526",
+          "pron": "레친"
+        },
+        {
+          "word": "בְּנֵי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 2:48",
+        "nehemiah 7:50",
+        "isaiah 8:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

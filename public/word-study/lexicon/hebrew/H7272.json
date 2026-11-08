@@ -1,6 +1,6 @@
 {
   "lemma": "רֶגֶל",
-  "pron": "락라이브",
+  "pron": "락라흐",
   "strong": "H7272",
   "posKo": "명사",
   "root": {
@@ -12,191 +12,258 @@
     {
       "lemma": "מַרְגְלָה",
       "strong": "H4772",
-      "pron": "",
-      "glossKo": "발치"
+      "pron": "마렉겔로타으브",
+      "glossKo": "그의 발치"
     },
     {
       "lemma": "רָגַל",
       "strong": "H7270",
-      "pron": "라갈",
-      "glossKo": "정탐하다"
+      "pron": "메락겔림",
+      "glossKo": "정탐하는 이"
     },
     {
       "lemma": "רְגַל",
       "strong": "H7271",
-      "pron": "",
-      "glossKo": "발(아람)"
+      "pron": "락로히",
+      "glossKo": "그의 발(아람)"
     },
     {
       "lemma": "רַגְלִי",
       "strong": "H7273",
-      "pron": "",
+      "pron": "락리",
       "glossKo": "보병"
     },
     {
       "lemma": "רֹגְלִים",
       "strong": "H7274",
-      "pron": "",
+      "pron": "메록림",
       "glossKo": "로글림"
     },
     {
       "lemma": "תִּרְגַּל",
       "strong": "H8637",
-      "pron": "",
+      "pron": "티렉갈티",
       "glossKo": "걷게 하다"
     }
   ],
   "defEn": "foot",
   "defKo": "",
-  "countOT": 45,
+  "countOT": 251,
   "byBook": {
     "psalms": 32,
-    "genesis": 13
+    "ezekiel": 22,
+    "isaiah": 20,
+    "deuteronomy": 17,
+    "samuel2": 17,
+    "proverbs": 15,
+    "exodus": 14,
+    "genesis": 13,
+    "job": 13,
+    "joshua": 11,
+    "judges": 11,
+    "leviticus": 11,
+    "samuel1": 9,
+    "kings2": 8,
+    "kings1": 7,
+    "jeremiah": 5,
+    "numbers": 5,
+    "chronicles2": 3,
+    "lamentations": 3,
+    "chronicles1": 2,
+    "ecclesiastes": 2,
+    "habakkuk": 2,
+    "nahum": 2,
+    "zechariah": 2,
+    "amos": 1,
+    "esther": 1,
+    "malachi": 1,
+    "nehemiah": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "וְרַחֲצ֖וּ רַגְלֵיכֶ֑ם",
-      "pron": "에레하츠 락라이브",
+      "hebrew": "כַּֽף רַגְלְכֶ֛ם",
+      "pron": "르캅 락라흐",
       "lemmas": [
-        "רָחַץ",
+        "כַּף",
         "רֶגֶל"
       ],
       "words": [
         {
-          "word": "וְרַחֲצ֖וּ",
-          "lemma": "רָחַץ",
-          "strong": "H7364",
-          "pron": "에레하츠"
+          "word": "כַּֽף",
+          "lemma": "כַּף",
+          "strong": "H3709",
+          "pron": "르캅"
         },
         {
-          "word": "רַגְלֵיכֶ֑ם",
+          "word": "רַגְלְכֶ֛ם",
           "lemma": "רֶגֶל",
           "strong": "H7272",
-          "pron": "락라이브"
+          "pron": "락라흐"
         }
       ],
-      "count": 4,
+      "count": 18,
       "refs": [
-        "genesis 18:4",
-        "genesis 19:2",
-        "genesis 24:32",
-        "genesis 43:24"
+        "genesis 8:9",
+        "deuteronomy 2:5",
+        "deuteronomy 11:24",
+        "deuteronomy 28:35",
+        "deuteronomy 28:56",
+        "deuteronomy 28:65",
+        "joshua 1:3",
+        "joshua 3:13",
+        "joshua 4:18",
+        "samuel2 14:25",
+        "kings1 5:3",
+        "job 2:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "רגליו רַגְל֑וֹ",
-      "pron": "락라이브 락라이브",
+      "hebrew": "עַל רַגְלָ֔יו",
+      "pron": "알 락라흐",
+      "lemmas": [
+        "עַל",
+        "רֶגֶל"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "רַגְלָ֔יו",
+          "lemma": "רֶגֶל",
+          "strong": "H7272",
+          "pron": "락라흐"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "exodus 3:5",
+        "deuteronomy 8:4",
+        "deuteronomy 25:9",
+        "deuteronomy 29:5",
+        "joshua 5:15",
+        "samuel1 14:13",
+        "samuel1 17:6",
+        "samuel1 25:24",
+        "kings2 4:37",
+        "kings2 13:21",
+        "chronicles1 28:2",
+        "chronicles2 3:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רַגְלָ֔יו וְרַגְלֵ֥י",
+      "pron": "락라흐 락라흐",
       "lemmas": [
         "רֶגֶל",
         "רֶגֶל"
       ],
       "words": [
         {
-          "word": "רגליו",
+          "word": "רַגְלָ֔יו",
           "lemma": "רֶגֶל",
           "strong": "H7272",
-          "pron": "락라이브"
+          "pron": "락라흐"
         },
         {
-          "word": "רַגְל֑וֹ",
+          "word": "וְרַגְלֵ֥י",
           "lemma": "רֶגֶל",
           "strong": "H7272",
-          "pron": "락라이브"
+          "pron": "락라흐"
         }
       ],
-      "count": 4,
+      "count": 16,
       "refs": [
+        "genesis 24:32",
+        "deuteronomy 19:21",
+        "samuel2 22:34",
+        "kings1 5:3",
         "psalms 105:18",
-        "genesis 24:32"
+        "ecclesiastes 5:1",
+        "isaiah 26:6",
+        "ezekiel 1:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "תַֽחַת רַגְלָֽיו",
-      "pron": "타하트 락라이브",
-      "lemmas": [
-        "תַּחַת",
-        "רֶגֶל"
-      ],
-      "words": [
-        {
-          "word": "תַֽחַת",
-          "lemma": "תַּחַת",
-          "strong": "H8478",
-          "pron": "타하트"
-        },
-        {
-          "word": "רַגְלָֽיו",
-          "lemma": "רֶגֶל",
-          "strong": "H7272",
-          "pron": "락라이브"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 8:6",
-        "psalms 18:9",
-        "psalms 18:38",
-        "psalms 47:3"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֶת רַגְלִ֥י",
-      "pron": "에트 락라이브",
+      "hebrew": "וְאֶת רַגְלֵיהֶֽם",
+      "pron": "에트 락라흐",
       "lemmas": [
         "אֵת",
         "רֶגֶל"
       ],
       "words": [
         {
-          "word": "אֶת",
+          "word": "וְאֶת",
           "lemma": "אֵת",
           "strong": "H853",
           "pron": "에트"
         },
         {
-          "word": "רַגְלִ֥י",
+          "word": "רַגְלֵיהֶֽם",
           "lemma": "רֶגֶל",
           "strong": "H7272",
-          "pron": "락라이브"
+          "pron": "락라흐"
         }
       ],
-      "count": 3,
+      "count": 14,
       "refs": [
-        "psalms 116:8",
         "genesis 30:30",
-        "genesis 41:44"
+        "genesis 41:44",
+        "exodus 30:19",
+        "exodus 40:31",
+        "numbers 22:25",
+        "joshua 10:24",
+        "judges 3:24",
+        "samuel1 24:3",
+        "samuel2 4:12",
+        "chronicles2 33:8",
+        "psalms 116:8",
+        "songofsolomon 5:3"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לַהֲדֹ֥ם רַגְלָ֗יו",
-      "pron": "라하돔 락라이브",
+      "hebrew": "וְרַגְלֵיהֶ֖ם וְלֹ֣א",
+      "pron": "락라흐 로",
       "lemmas": [
-        "הֲדֹם",
-        "רֶגֶל"
+        "רֶגֶל",
+        "לֹא"
       ],
       "words": [
         {
-          "word": "לַהֲדֹ֥ם",
-          "lemma": "הֲדֹם",
-          "strong": "H1916",
-          "pron": "라하돔"
-        },
-        {
-          "word": "רַגְלָ֗יו",
+          "word": "וְרַגְלֵיהֶ֖ם",
           "lemma": "רֶגֶל",
           "strong": "H7272",
-          "pron": "락라이브"
+          "pron": "락라흐"
+        },
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
         }
       ],
-      "count": 3,
+      "count": 13,
       "refs": [
-        "psalms 99:5",
-        "psalms 110:1",
-        "psalms 132:7"
+        "exodus 30:21",
+        "deuteronomy 8:4",
+        "samuel2 3:34",
+        "samuel2 19:24",
+        "nehemiah 9:21",
+        "psalms 115:7",
+        "proverbs 3:23",
+        "proverbs 6:28",
+        "isaiah 41:3",
+        "jeremiah 14:10",
+        "ezekiel 24:17",
+        "ezekiel 24:23"
       ],
       "glossKo": ""
     }

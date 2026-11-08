@@ -1,6 +1,6 @@
 {
   "lemma": "נָטַע",
-  "pron": "바틷다에므",
+  "pron": "바읻다",
   "strong": "H5193",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "מַטָּע",
       "strong": "H4302",
-      "pron": "",
-      "glossKo": "심은 것"
+      "pron": "믇브",
+      "glossKo": "그의 심은 것"
     },
     {
       "lemma": "נֶטַע",
       "strong": "H5194",
-      "pron": "",
+      "pron": "나다",
       "glossKo": "심은 것"
     },
     {
@@ -26,10 +26,185 @@
   ],
   "defEn": "strike; fix; plant",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 59,
   "byBook": {
+    "jeremiah": 16,
+    "isaiah": 8,
     "psalms": 6,
-    "genesis": 3
+    "deuteronomy": 5,
+    "ecclesiastes": 5,
+    "amos": 3,
+    "genesis": 3,
+    "ezekiel": 2,
+    "proverbs": 2,
+    "chronicles1": 1,
+    "daniel": 1,
+    "exodus": 1,
+    "joshua": 1,
+    "kings2": 1,
+    "leviticus": 1,
+    "numbers": 1,
+    "samuel2": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְנָטְע֣וּ כְרָמִ֔ים",
+      "pron": "바읻다 카렘",
+      "lemmas": [
+        "נָטַע",
+        "כֶּרֶם"
+      ],
+      "words": [
+        {
+          "word": "וְנָטְע֣וּ",
+          "lemma": "נָטַע",
+          "strong": "H5193",
+          "pron": "바읻다"
+        },
+        {
+          "word": "כְרָמִ֔ים",
+          "lemma": "כֶּרֶם",
+          "strong": "H3754",
+          "pron": "카렘"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "genesis 9:20",
+        "deuteronomy 20:6",
+        "kings2 19:29",
+        "psalms 107:37",
+        "proverbs 31:16",
+        "ecclesiastes 2:4",
+        "isaiah 37:30",
+        "isaiah 65:21",
+        "jeremiah 31:5",
+        "ezekiel 28:26",
+        "amos 9:14",
+        "zephaniah 1:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיָשָׁ֑בוּ וְנָטְע֣וּ",
+      "pron": "바예솁 바읻다",
+      "lemmas": [
+        "יָשַׁב",
+        "נָטַע"
+      ],
+      "words": [
+        {
+          "word": "וְיָשָׁ֑בוּ",
+          "lemma": "יָשַׁב",
+          "strong": "H3427",
+          "pron": "바예솁"
+        },
+        {
+          "word": "וְנָטְע֣וּ",
+          "lemma": "נָטַע",
+          "strong": "H5193",
+          "pron": "바읻다"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "isaiah 65:21",
+        "jeremiah 29:5",
+        "jeremiah 29:28",
+        "amos 9:14",
+        "zephaniah 1:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹא נָטָ֑עְתָּ",
+      "pron": "로 바읻다",
+      "lemmas": [
+        "לֹא",
+        "נָטַע"
+      ],
+      "words": [
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "נָטָ֑עְתָּ",
+          "lemma": "נָטַע",
+          "strong": "H5193",
+          "pron": "바읻다"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 6:11",
+        "deuteronomy 16:21",
+        "joshua 24:13",
+        "isaiah 65:22",
+        "jeremiah 35:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר נָטַ֥ע",
+      "pron": "아셰르 바읻다",
+      "lemmas": [
+        "אֲשֶׁר",
+        "נָטַע"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "נָטַ֥ע",
+          "lemma": "נָטַע",
+          "strong": "H5193",
+          "pron": "바읻다"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 20:6",
+        "psalms 80:15",
+        "psalms 104:16",
+        "jeremiah 45:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נטע נָ֣טְעָה",
+      "pron": "바읻다 바읻다",
+      "lemmas": [
+        "נָטַע",
+        "נָטַע"
+      ],
+      "words": [
+        {
+          "word": "נטע",
+          "lemma": "נָטַע",
+          "strong": "H5193",
+          "pron": "바읻다"
+        },
+        {
+          "word": "נָ֣טְעָה",
+          "lemma": "נָטַע",
+          "strong": "H5193",
+          "pron": "바읻다"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "proverbs 31:16",
+        "jeremiah 31:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

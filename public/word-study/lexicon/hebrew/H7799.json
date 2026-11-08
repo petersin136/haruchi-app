@@ -1,6 +1,6 @@
 {
   "lemma": "שׁוּשַׁן",
-  "pron": "쇼샨님",
+  "pron": "슈샨",
   "strong": "H7799",
   "posKo": "명사",
   "root": {
@@ -18,14 +18,26 @@
     {
       "lemma": "שׂוּשׂ",
       "strong": "H7797",
-      "pron": "야시스",
+      "pron": "사스",
       "glossKo": "기뻐하다"
     },
     {
       "lemma": "שַׁוְשָׁא",
       "strong": "H7798",
-      "pron": "",
+      "pron": "브샤베샤",
       "glossKo": "사브사"
+    },
+    {
+      "lemma": "שׁוּשַׁן",
+      "strong": "H7800",
+      "pron": "브슈샨",
+      "glossKo": "수산"
+    },
+    {
+      "lemma": "שׁוּשַׁן עֵדוּת",
+      "strong": "H7802",
+      "pron": "슈샨",
+      "glossKo": "수산에둣"
     },
     {
       "lemma": "שֵׁשׁ",
@@ -36,9 +48,43 @@
   ],
   "defEn": "a lily; as a flower of architectural ornament",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 15,
   "byBook": {
-    "psalms": 2
+    "songofsolomon": 8,
+    "kings1": 3,
+    "psalms": 2,
+    "chronicles2": 1,
+    "hosea": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הָרֹעֶ֖ה בַּשּׁוֹשַׁנִּֽים",
+      "pron": "로에 슈샨",
+      "lemmas": [
+        "רָעָה",
+        "שׁוּשַׁן"
+      ],
+      "words": [
+        {
+          "word": "הָרֹעֶ֖ה",
+          "lemma": "רָעָה",
+          "strong": "H7462",
+          "pron": "로에"
+        },
+        {
+          "word": "בַּשּׁוֹשַׁנִּֽים",
+          "lemma": "שׁוּשַׁן",
+          "strong": "H7799",
+          "pron": "슈샨"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "songofsolomon 2:16",
+        "songofsolomon 4:5",
+        "songofsolomon 6:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

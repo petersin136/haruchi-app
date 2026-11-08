@@ -1,6 +1,6 @@
 {
   "lemma": "דּוֹר",
-  "pron": "르도르",
+  "pron": "베도로타으브",
   "strong": "H1755",
   "posKo": "명사",
   "root": {
@@ -18,65 +18,84 @@
     {
       "lemma": "דּוּר",
       "strong": "H1753",
-      "pron": "",
+      "pron": "드린",
       "glossKo": "거주하다(아람)"
     },
     {
       "lemma": "דּוּר",
       "strong": "H1754",
-      "pron": "",
+      "pron": "칻두르",
       "glossKo": "원"
     },
     {
       "lemma": "דּוֹר",
       "strong": "H1756",
-      "pron": "",
+      "pron": "도르",
       "glossKo": "돌"
     },
     {
       "lemma": "דָּר",
       "strong": "H1859",
-      "pron": "",
+      "pron": "다르",
       "glossKo": "세대(아람)"
     },
     {
       "lemma": "מְדוּרָה",
       "strong": "H4071",
-      "pron": "",
-      "glossKo": "장작더미"
+      "pron": "메두라타흐",
+      "glossKo": "그녀의 장작더미"
     }
   ],
   "defEn": "revolution; age",
   "defKo": "",
-  "countOT": 66,
+  "countOT": 168,
   "byBook": {
     "psalms": 59,
-    "genesis": 7
+    "exodus": 19,
+    "isaiah": 18,
+    "leviticus": 14,
+    "deuteronomy": 11,
+    "numbers": 10,
+    "genesis": 7,
+    "proverbs": 7,
+    "joel": 5,
+    "jeremiah": 4,
+    "judges": 3,
+    "ecclesiastes": 2,
+    "esther": 2,
+    "job": 2,
+    "joshua": 2,
+    "lamentations": 2,
+    "chronicles1": 1
   },
   "phrases": [
     {
-      "hebrew": "לְדֹ֣ר וָדֹֽר",
-      "pron": "르도르 르도르",
+      "hebrew": "דּ֥וֹר וָדֽוֹר",
+      "pron": "베도로타으브 베도로타으브",
       "lemmas": [
         "דּוֹר",
         "דּוֹר"
       ],
       "words": [
         {
-          "word": "לְדֹ֣ר",
+          "word": "דּ֥וֹר",
           "lemma": "דּוֹר",
           "strong": "H1755",
-          "pron": "르도르"
+          "pron": "베도로타으브"
         },
         {
-          "word": "וָדֹֽר",
+          "word": "וָדֽוֹר",
           "lemma": "דּוֹר",
           "strong": "H1755",
-          "pron": "르도르"
+          "pron": "베도로타으브"
         }
       ],
-      "count": 42,
+      "count": 76,
       "refs": [
+        "exodus 3:15",
+        "exodus 17:16",
+        "deuteronomy 32:7",
+        "esther 9:28",
         "psalms 10:6",
         "psalms 33:11",
         "psalms 45:17",
@@ -84,17 +103,128 @@
         "psalms 61:6",
         "psalms 72:5",
         "psalms 77:8",
-        "psalms 79:13",
-        "psalms 85:5",
-        "psalms 89:1",
-        "psalms 89:4",
-        "psalms 90:1"
+        "psalms 79:13"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בְּכָל דֹּ֣ר וָדֹ֑ר",
-      "pron": "브콜 르도르 르도르",
+      "hebrew": "עוֹלָם֙ לְדֹרֹ֣תֵיכֶ֔ם",
+      "pron": "르올람 베도로타으브",
+      "lemmas": [
+        "עוֹלָם",
+        "דּוֹר"
+      ],
+      "words": [
+        {
+          "word": "עוֹלָם֙",
+          "lemma": "עוֹלָם",
+          "strong": "H5769",
+          "pron": "르올람"
+        },
+        {
+          "word": "לְדֹרֹ֣תֵיכֶ֔ם",
+          "lemma": "דּוֹר",
+          "strong": "H1755",
+          "pron": "베도로타으브"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "exodus 27:21",
+        "exodus 40:15",
+        "leviticus 3:17",
+        "leviticus 6:18",
+        "leviticus 7:36",
+        "leviticus 10:9",
+        "leviticus 23:14",
+        "leviticus 23:31",
+        "leviticus 23:41",
+        "leviticus 24:3",
+        "numbers 10:8",
+        "numbers 15:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֻקַּ֤ת עוֹלָם֙ לְדֹרֹ֣תֵיכֶ֔ם",
+      "pron": "훅코타이 르올람 베도로타으브",
+      "lemmas": [
+        "חֻקָּה",
+        "עוֹלָם",
+        "דּוֹר"
+      ],
+      "words": [
+        {
+          "word": "חֻקַּ֤ת",
+          "lemma": "חֻקָּה",
+          "strong": "H2708",
+          "pron": "훅코타이"
+        },
+        {
+          "word": "עוֹלָם֙",
+          "lemma": "עוֹלָם",
+          "strong": "H5769",
+          "pron": "르올람"
+        },
+        {
+          "word": "לְדֹרֹ֣תֵיכֶ֔ם",
+          "lemma": "דּוֹר",
+          "strong": "H1755",
+          "pron": "베도로타으브"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 27:21",
+        "leviticus 3:17",
+        "leviticus 7:36",
+        "leviticus 10:9",
+        "leviticus 23:14",
+        "leviticus 23:31",
+        "leviticus 23:41",
+        "leviticus 24:3",
+        "numbers 10:8",
+        "numbers 15:15",
+        "numbers 18:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְכֹ֖ל הַדּ֥וֹר",
+      "pron": "칼 베도로타으브",
+      "lemmas": [
+        "כֹּל",
+        "דּוֹר"
+      ],
+      "words": [
+        {
+          "word": "וְכֹ֖ל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הַדּ֥וֹר",
+          "lemma": "דּוֹר",
+          "strong": "H1755",
+          "pron": "베도로타으브"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 1:6",
+        "numbers 32:13",
+        "deuteronomy 2:14",
+        "judges 2:10",
+        "esther 9:28",
+        "psalms 45:17",
+        "psalms 145:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכָל דּ֣וֹר וָד֗וֹר",
+      "pron": "칼 베도로타으브 베도로타으브",
       "lemmas": [
         "כֹּל",
         "דּוֹר",
@@ -105,125 +235,26 @@
           "word": "בְּכָל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
-          "word": "דֹּ֣ר",
+          "word": "דּ֣וֹר",
           "lemma": "דּוֹר",
           "strong": "H1755",
-          "pron": "르도르"
+          "pron": "베도로타으브"
         },
         {
-          "word": "וָדֹ֑ר",
+          "word": "וָד֗וֹר",
           "lemma": "דּוֹר",
           "strong": "H1755",
-          "pron": "르도르"
+          "pron": "베도로타으브"
         }
       ],
-      "count": 4,
+      "count": 6,
       "refs": [
+        "esther 9:28",
         "psalms 45:17",
         "psalms 145:13"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "דֹּ֥ר וָ֝דֹ֗ר אֱמוּנָתֽוֹ",
-      "pron": "르도르 르도르 베에무나",
-      "lemmas": [
-        "דּוֹר",
-        "דּוֹר",
-        "אֱמוּנָה"
-      ],
-      "words": [
-        {
-          "word": "דֹּ֥ר",
-          "lemma": "דּוֹר",
-          "strong": "H1755",
-          "pron": "르도르"
-        },
-        {
-          "word": "וָ֝דֹ֗ר",
-          "lemma": "דּוֹר",
-          "strong": "H1755",
-          "pron": "르도르"
-        },
-        {
-          "word": "אֱמוּנָתֽוֹ",
-          "lemma": "אֱמוּנָה",
-          "strong": "H530",
-          "pron": "베에무나"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 100:5",
-        "psalms 119:90"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וְ֝זִכְרְךָ֗ לְדֹ֣ר וָדֹֽר",
-      "pron": "지케레카 르도르 르도르",
-      "lemmas": [
-        "זֵכֶר",
-        "דּוֹר",
-        "דּוֹר"
-      ],
-      "words": [
-        {
-          "word": "וְ֝זִכְרְךָ֗",
-          "lemma": "זֵכֶר",
-          "strong": "H2143",
-          "pron": "지케레카"
-        },
-        {
-          "word": "לְדֹ֣ר",
-          "lemma": "דּוֹר",
-          "strong": "H1755",
-          "pron": "르도르"
-        },
-        {
-          "word": "וָדֹֽר",
-          "lemma": "דּוֹר",
-          "strong": "H1755",
-          "pron": "르도르"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 102:12",
-        "psalms 135:13"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "לְד֣וֹר אַחֲרֽוֹן",
-      "pron": "르도르 아하론",
-      "lemmas": [
-        "דּוֹר",
-        "אַחֲרוֹן"
-      ],
-      "words": [
-        {
-          "word": "לְד֣וֹר",
-          "lemma": "דּוֹר",
-          "strong": "H1755",
-          "pron": "르도르"
-        },
-        {
-          "word": "אַחֲרֽוֹן",
-          "lemma": "אַחֲרוֹן",
-          "strong": "H314",
-          "pron": "아하론"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 48:13",
-        "psalms 78:4",
-        "psalms 78:6",
-        "psalms 102:18"
       ],
       "glossKo": ""
     }

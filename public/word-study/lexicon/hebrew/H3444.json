@@ -1,6 +1,6 @@
 {
   "lemma": "יְשׁוּעָה",
-  "pron": "예슈아타",
+  "pron": "리슈아테카",
   "strong": "H3444",
   "posKo": "명사",
   "root": {
@@ -12,204 +12,208 @@
     {
       "lemma": "הוֹשֵׁעַ",
       "strong": "H1954",
-      "pron": "",
+      "pron": "호셰아",
       "glossKo": "호세아"
     },
     {
       "lemma": "הוֹשַׁעְיָה",
       "strong": "H1955",
-      "pron": "",
+      "pron": "호샤에아",
       "glossKo": "호사야"
     },
     {
       "lemma": "יָשַׁע",
       "strong": "H3467",
-      "pron": "호시에니",
-      "glossKo": "나를 구원하다"
+      "pron": "바오시안",
+      "glossKo": "그들에게 구원하다"
     },
     {
       "lemma": "יֶשַׁע",
       "strong": "H3468",
-      "pron": "브예샤",
-      "glossKo": "구원"
+      "pron": "이셰이",
+      "glossKo": "나의 구원"
     },
     {
       "lemma": "יִשְׁעִי",
       "strong": "H3469",
-      "pron": "",
+      "pron": "이셰이",
       "glossKo": "이시"
     },
     {
       "lemma": "יְשַׁעְיָה",
       "strong": "H3470",
-      "pron": "",
+      "pron": "예샤에아후",
       "glossKo": "이사야"
     }
   ],
   "defEn": "saved; deliverance; aid; victory; prosperity",
   "defKo": "",
-  "countOT": 46,
+  "countOT": 77,
   "byBook": {
     "psalms": 45,
-    "genesis": 1
+    "isaiah": 19,
+    "exodus": 2,
+    "job": 2,
+    "samuel1": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "genesis": 1,
+    "habakkuk": 1,
+    "jonah": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "אוֹדֶ֑נּוּ יְשׁוּעֹ֥ת",
-      "pron": "요데 예슈아타",
+      "hebrew": "וַֽיְהִי לִֽישׁוּעָֽה",
+      "pron": "하에타 리슈아테카",
       "lemmas": [
-        "יָדָה",
+        "הָיָה",
         "יְשׁוּעָה"
       ],
       "words": [
         {
-          "word": "אוֹדֶ֑נּוּ",
-          "lemma": "יָדָה",
-          "strong": "H3034",
-          "pron": "요데"
+          "word": "וַֽיְהִי",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
         },
         {
-          "word": "יְשׁוּעֹ֥ת",
+          "word": "לִֽישׁוּעָֽה",
           "lemma": "יְשׁוּעָה",
           "strong": "H3444",
-          "pron": "예슈아타"
+          "pron": "리슈아테카"
         }
       ],
-      "count": 3,
+      "count": 6,
       "refs": [
-        "psalms 42:5",
-        "psalms 42:11",
-        "psalms 43:5"
+        "exodus 15:2",
+        "psalms 118:14",
+        "psalms 118:21",
+        "isaiah 12:2",
+        "isaiah 49:6",
+        "isaiah 51:8"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אוֹדֶ֑נּוּ יְשׁוּעֹ֥ת פָּ֝נַ֗י",
-      "pron": "요데 예슈아타 미페네",
+      "hebrew": "לִֽישׁוּעָתְךָ֣ יְהוָ֑ה",
+      "pron": "리슈아테카 여호와",
       "lemmas": [
-        "יָדָה",
         "יְשׁוּעָה",
-        "פָּנִים"
+        "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "אוֹדֶ֑נּוּ",
-          "lemma": "יָדָה",
-          "strong": "H3034",
-          "pron": "요데"
-        },
-        {
-          "word": "יְשׁוּעֹ֥ת",
+          "word": "לִֽישׁוּעָתְךָ֣",
           "lemma": "יְשׁוּעָה",
           "strong": "H3444",
-          "pron": "예슈아타"
+          "pron": "리슈아테카"
         },
         {
-          "word": "פָּ֝נַ֗י",
-          "lemma": "פָּנִים",
-          "strong": "H6440",
-          "pron": "미페네"
+          "word": "יְהוָ֑ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
-        "psalms 42:5",
-        "psalms 42:11",
-        "psalms 43:5"
+        "exodus 14:13",
+        "chronicles2 20:17",
+        "psalms 119:166",
+        "psalms 119:174",
+        "jonah 2:9"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "יְשׁוּעֹ֥ת פָּ֝נַ֗י",
-      "pron": "예슈아타 미페네",
+      "hebrew": "אֶת יְשׁוּעַ֣ת",
+      "pron": "에트 리슈아테카",
       "lemmas": [
-        "יְשׁוּעָה",
-        "פָּנִים"
+        "אֵת",
+        "יְשׁוּעָה"
       ],
       "words": [
         {
-          "word": "יְשׁוּעֹ֥ת",
-          "lemma": "יְשׁוּעָה",
-          "strong": "H3444",
-          "pron": "예슈아타"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         },
         {
-          "word": "פָּ֝נַ֗י",
-          "lemma": "פָּנִים",
-          "strong": "H6440",
-          "pron": "미페네"
+          "word": "יְשׁוּעַ֣ת",
+          "lemma": "יְשׁוּעָה",
+          "strong": "H3444",
+          "pron": "리슈아테카"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
-        "psalms 42:5",
-        "psalms 42:11",
-        "psalms 43:5"
+        "exodus 14:13",
+        "chronicles2 20:17",
+        "psalms 98:3",
+        "isaiah 52:10"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "יְֽשׁוּעָ֓תָה בֵֽאלֹהִ֬ים",
-      "pron": "예슈아타 베엘로힘",
+      "hebrew": "יְשׁוּעַ֥ת אֱלֹהֵֽינוּ",
+      "pron": "리슈아테카 엘로힘",
       "lemmas": [
         "יְשׁוּעָה",
         "אֱלֹהִים"
       ],
       "words": [
         {
-          "word": "יְֽשׁוּעָ֓תָה",
+          "word": "יְשׁוּעַ֥ת",
           "lemma": "יְשׁוּעָה",
           "strong": "H3444",
-          "pron": "예슈아타"
+          "pron": "리슈아테카"
         },
         {
-          "word": "בֵֽאלֹהִ֬ים",
+          "word": "אֱלֹהֵֽינוּ",
           "lemma": "אֱלֹהִים",
           "strong": "H430",
-          "pron": "베엘로힘"
+          "pron": "엘로힘"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "psalms 3:2",
         "psalms 69:29",
-        "psalms 98:3"
+        "psalms 98:3",
+        "isaiah 52:10"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "ע֣וֹד אוֹדֶ֑נּוּ יְשׁוּעֹ֥ת",
-      "pron": "옫 요데 예슈아타",
+      "hebrew": "צ֭וּרִי וִֽישׁוּעָתִ֑י",
+      "pron": "아추르 리슈아테카",
       "lemmas": [
-        "עוֹד",
-        "יָדָה",
+        "צוּר",
         "יְשׁוּעָה"
       ],
       "words": [
         {
-          "word": "ע֣וֹד",
-          "lemma": "עוֹד",
-          "strong": "H5750",
-          "pron": "옫"
+          "word": "צ֭וּרִי",
+          "lemma": "צוּר",
+          "strong": "H6697",
+          "pron": "아추르"
         },
         {
-          "word": "אוֹדֶ֑נּוּ",
-          "lemma": "יָדָה",
-          "strong": "H3034",
-          "pron": "요데"
-        },
-        {
-          "word": "יְשׁוּעֹ֥ת",
+          "word": "וִֽישׁוּעָתִ֑י",
           "lemma": "יְשׁוּעָה",
           "strong": "H3444",
-          "pron": "예슈아타"
+          "pron": "리슈아테카"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
-        "psalms 42:5",
-        "psalms 42:11",
-        "psalms 43:5"
+        "deuteronomy 32:15",
+        "psalms 62:2",
+        "psalms 62:6",
+        "psalms 89:26"
       ],
       "glossKo": ""
     }

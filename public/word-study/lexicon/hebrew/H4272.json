@@ -1,6 +1,6 @@
 {
   "lemma": "מָחַץ",
-  "pron": "엠하체므",
+  "pron": "임하츠",
   "strong": "H4272",
   "posKo": "동사",
   "root": null,
@@ -8,15 +8,51 @@
     {
       "lemma": "מַחַץ",
       "strong": "H4273",
-      "pron": "",
+      "pron": "우마하츠",
       "glossKo": "타박상"
     }
   ],
   "defEn": "dash",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 14,
   "byBook": {
-    "psalms": 5
+    "psalms": 5,
+    "deuteronomy": 2,
+    "job": 2,
+    "numbers": 2,
+    "habakkuk": 1,
+    "judges": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יִמְחַץ֮ רֹ֤אשׁ",
+      "pron": "임하츠 라심",
+      "lemmas": [
+        "מָחַץ",
+        "רֹאשׁ"
+      ],
+      "words": [
+        {
+          "word": "יִמְחַץ֮",
+          "lemma": "מָחַץ",
+          "strong": "H4272",
+          "pron": "임하츠"
+        },
+        {
+          "word": "רֹ֤אשׁ",
+          "lemma": "רֹאשׁ",
+          "strong": "H7218",
+          "pron": "라심"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 68:21",
+        "psalms 110:6",
+        "habakkuk 3:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

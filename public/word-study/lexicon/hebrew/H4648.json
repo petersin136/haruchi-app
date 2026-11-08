@@ -2,7 +2,7 @@
   "lemma": "מְפִיבֹשֶׁת",
   "pron": "메피보셰트",
   "strong": "H4648",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "פָּאָה",
     "strong": "H6284",
@@ -12,14 +12,14 @@
     {
       "lemma": "פָּאָה",
       "strong": "H6284",
-      "pron": "",
-      "glossKo": "조각으로 베다"
+      "pron": "압에헴",
+      "glossKo": "그들에게 조각으로 베다"
     },
     {
       "lemma": "פֶּה",
       "strong": "H6310",
-      "pron": "브피후",
-      "glossKo": "그의 입"
+      "pron": "피하",
+      "glossKo": "그녀의 입"
     },
     {
       "lemma": "פּוּאָה",
@@ -30,7 +30,68 @@
   ],
   "defEn": "Mephibosheth",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 17,
+  "byBook": {
+    "samuel2": 17
+  },
+  "phrases": [
+    {
+      "hebrew": "מְפִי בֹ֖שֶׁת",
+      "pron": "메피보셰트 메피보셰트",
+      "lemmas": [
+        "מְפִיבֹשֶׁת",
+        "מְפִיבֹשֶׁת"
+      ],
+      "words": [
+        {
+          "word": "מְפִי",
+          "lemma": "מְפִיבֹשֶׁת",
+          "strong": "H4648",
+          "pron": "메피보셰트"
+        },
+        {
+          "word": "בֹ֖שֶׁת",
+          "lemma": "מְפִיבֹשֶׁת",
+          "strong": "H4648",
+          "pron": "메피보셰트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 16:1",
+        "samuel2 16:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְפִיבֹ֨שֶׁת בֶּן",
+      "pron": "메피보셰트 바님",
+      "lemmas": [
+        "מְפִיבֹשֶׁת",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "מְפִיבֹ֨שֶׁת",
+          "lemma": "מְפִיבֹשֶׁת",
+          "strong": "H4648",
+          "pron": "메피보셰트"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 9:6",
+        "samuel2 9:10",
+        "samuel2 9:12",
+        "samuel2 19:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

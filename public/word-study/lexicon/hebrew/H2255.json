@@ -1,8 +1,8 @@
 {
   "lemma": "חֲבַל",
-  "pron": "하발",
+  "pron": "르합발라",
   "strong": "H2255",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "חָבַל",
     "strong": "H2254",
@@ -10,33 +10,79 @@
   },
   "family": [
     {
+      "lemma": "חֲבוּלָה",
+      "strong": "H2248",
+      "pron": "하불라",
+      "glossKo": "친절"
+    },
+    {
       "lemma": "חָבַל",
       "strong": "H2254",
-      "pron": "예합벨",
+      "pron": "하볼",
       "glossKo": "묶다"
     },
     {
       "lemma": "חֶבֶל",
       "strong": "H2256",
-      "pron": "하발림",
+      "pron": "헤벨",
       "glossKo": "줄"
+    },
+    {
+      "lemma": "חֲבַל",
+      "strong": "H2257",
+      "pron": "하발라",
+      "glossKo": "해(아람)"
     },
     {
       "lemma": "חֲבֹל",
       "strong": "H2258",
-      "pron": "",
-      "glossKo": "전당물"
+      "pron": "하볼라토",
+      "glossKo": "그의 전당물"
     },
     {
       "lemma": "חֹבֵל",
       "strong": "H2259",
-      "pron": "",
-      "glossKo": "선원"
+      "pron": "홉라이크",
+      "glossKo": "너의 선원"
     }
   ],
   "defEn": "ruin",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "daniel": 5,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "לָ֣א תִתְחַבַּ֔ל",
+      "pron": "라 르합발라",
+      "lemmas": [
+        "לָא",
+        "חֲבַל"
+      ],
+      "words": [
+        {
+          "word": "לָ֣א",
+          "lemma": "לָא",
+          "strong": "H3809",
+          "pron": "라"
+        },
+        {
+          "word": "תִתְחַבַּ֔ל",
+          "lemma": "חֲבַל",
+          "strong": "H2255",
+          "pron": "르합발라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 2:44",
+        "daniel 6:22",
+        "daniel 6:26",
+        "daniel 7:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

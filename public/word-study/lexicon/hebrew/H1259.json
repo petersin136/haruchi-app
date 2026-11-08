@@ -12,7 +12,7 @@
     {
       "lemma": "בָּרַד",
       "strong": "H1258",
-      "pron": "",
+      "pron": "우바랃",
       "glossKo": "우박이 오다"
     },
     {
@@ -30,9 +30,73 @@
   ],
   "defEn": "hail",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 29,
   "byBook": {
-    "psalms": 6
+    "exodus": 17,
+    "psalms": 6,
+    "isaiah": 3,
+    "haggai": 1,
+    "job": 1,
+    "joshua": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וִיהִ֥י בָרָ֖ד",
+      "pron": "하에타 바랃",
+      "lemmas": [
+        "הָיָה",
+        "בָּרָד"
+      ],
+      "words": [
+        {
+          "word": "וִיהִ֥י",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "בָרָ֖ד",
+          "lemma": "בָּרָד",
+          "strong": "H1259",
+          "pron": "바랃"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 9:22",
+        "exodus 9:24",
+        "exodus 9:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קֹלֹת֙ וּבָרָ֔ד",
+      "pron": "콜 바랃",
+      "lemmas": [
+        "קוֹל",
+        "בָּרָד"
+      ],
+      "words": [
+        {
+          "word": "קֹלֹת֙",
+          "lemma": "קוֹל",
+          "strong": "H6963",
+          "pron": "콜"
+        },
+        {
+          "word": "וּבָרָ֔ד",
+          "lemma": "בָּרָד",
+          "strong": "H1259",
+          "pron": "바랃"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 9:23",
+        "exodus 9:33",
+        "psalms 18:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

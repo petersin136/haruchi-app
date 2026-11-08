@@ -1,8 +1,8 @@
 {
   "lemma": "מִצְפֶּה",
-  "pron": "미쳅페",
+  "pron": "아미쳅페",
   "strong": "H4707",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "צָפָה",
     "strong": "H6822",
@@ -10,15 +10,21 @@
   },
   "family": [
     {
+      "lemma": "מִצְפֶּה",
+      "strong": "H4708",
+      "pron": "미쳅페",
+      "glossKo": "미스베"
+    },
+    {
       "lemma": "צָפָה",
       "strong": "H6822",
-      "pron": "바아찹페",
+      "pron": "이쳅",
       "glossKo": "지키다"
     },
     {
       "lemma": "צָפָה",
       "strong": "H6823",
-      "pron": "",
+      "pron": "브칩피타",
       "glossKo": "입히다"
     },
     {
@@ -30,8 +36,8 @@
     {
       "lemma": "צְפִיָּה",
       "strong": "H6836",
-      "pron": "",
-      "glossKo": "감시"
+      "pron": "베칩피아테누",
+      "glossKo": "우리의 감시"
     },
     {
       "lemma": "צִפְיוֹן",
@@ -42,7 +48,10 @@
   ],
   "defEn": "observatory",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 2,
+  "byBook": {
+    "chronicles2": 1,
+    "isaiah": 1
+  },
   "phrases": []
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "צָרַף",
-  "pron": "차룹",
+  "pron": "베에체레펜누",
   "strong": "H6884",
   "posKo": "동사",
   "root": null,
@@ -8,32 +8,41 @@
     {
       "lemma": "מִצְרֵף",
       "strong": "H4715",
-      "pron": "",
+      "pron": "마체렙",
       "glossKo": "용광로"
     },
     {
       "lemma": "צֹרְפִי",
       "strong": "H6885",
-      "pron": "",
+      "pron": "아초레피",
       "glossKo": "스로비 사람"
     },
     {
       "lemma": "צָרְפַת",
       "strong": "H6886",
-      "pron": "",
+      "pron": "차레파타",
       "glossKo": "사르밧"
     }
   ],
   "defEn": "fuse; refine",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 34,
   "byBook": {
-    "psalms": 9
+    "psalms": 9,
+    "isaiah": 6,
+    "jeremiah": 6,
+    "daniel": 2,
+    "judges": 2,
+    "malachi": 2,
+    "nehemiah": 2,
+    "proverbs": 2,
+    "zechariah": 2,
+    "samuel2": 1
   },
   "phrases": [
     {
       "hebrew": "צרופה צָרְפָ֖ה",
-      "pron": "차룹 차룹",
+      "pron": "베에체레펜누 베에체레펜누",
       "lemmas": [
         "צָרַף",
         "צָרַף"
@@ -43,19 +52,151 @@
           "word": "צרופה",
           "lemma": "צָרַף",
           "strong": "H6884",
-          "pron": "차룹"
+          "pron": "베에체레펜누"
         },
         {
           "word": "צָרְפָ֖ה",
           "lemma": "צָרַף",
           "strong": "H6884",
-          "pron": "차룹"
+          "pron": "베에체레펜누"
         }
       ],
-      "count": 4,
+      "count": 8,
       "refs": [
         "psalms 26:2",
-        "psalms 66:10"
+        "psalms 66:10",
+        "jeremiah 6:29",
+        "zechariah 13:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִמְרַ֤ת יְהוָה֙ צְרוּפָ֔ה",
+      "pron": "임라티 여호와 베에체레펜누",
+      "lemmas": [
+        "אִמְרָה",
+        "יְהֹוָה",
+        "צָרַף"
+      ],
+      "words": [
+        {
+          "word": "אִמְרַ֤ת",
+          "lemma": "אִמְרָה",
+          "strong": "H565",
+          "pron": "임라티"
+        },
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "צְרוּפָ֔ה",
+          "lemma": "צָרַף",
+          "strong": "H6884",
+          "pron": "베에체레펜누"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:31",
+        "psalms 18:30",
+        "psalms 105:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָה֙ צְרוּפָ֔ה",
+      "pron": "여호와 베에체레펜누",
+      "lemmas": [
+        "יְהֹוָה",
+        "צָרַף"
+      ],
+      "words": [
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "צְרוּפָ֔ה",
+          "lemma": "צָרַף",
+          "strong": "H6884",
+          "pron": "베에체레펜누"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:31",
+        "psalms 18:30",
+        "psalms 105:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "צְרוּפָ֑ה מָגֵ֥ן",
+      "pron": "베에체레펜누 마겐",
+      "lemmas": [
+        "צָרַף",
+        "מָגֵן"
+      ],
+      "words": [
+        {
+          "word": "צְרוּפָ֑ה",
+          "lemma": "צָרַף",
+          "strong": "H6884",
+          "pron": "베에체레펜누"
+        },
+        {
+          "word": "מָגֵ֥ן",
+          "lemma": "מָגֵן",
+          "strong": "H4043",
+          "pron": "마겐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:31",
+        "psalms 18:30",
+        "proverbs 30:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "צְרוּפָ֑ה מָגֵ֥ן ה֝֗וּא",
+      "pron": "베에체레펜누 마겐 후",
+      "lemmas": [
+        "צָרַף",
+        "מָגֵן",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "צְרוּפָ֑ה",
+          "lemma": "צָרַף",
+          "strong": "H6884",
+          "pron": "베에체레펜누"
+        },
+        {
+          "word": "מָגֵ֥ן",
+          "lemma": "מָגֵן",
+          "strong": "H4043",
+          "pron": "마겐"
+        },
+        {
+          "word": "ה֝֗וּא",
+          "lemma": "הוּא",
+          "strong": "H1931",
+          "pron": "후"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:31",
+        "psalms 18:30",
+        "proverbs 30:5"
       ],
       "glossKo": ""
     }

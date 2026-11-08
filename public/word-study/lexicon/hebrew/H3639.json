@@ -1,6 +1,6 @@
 {
   "lemma": "כְּלִמָּה",
-  "pron": "리켈림마",
+  "pron": "켈림마티",
   "strong": "H3639",
   "posKo": "명사",
   "root": {
@@ -12,21 +12,190 @@
     {
       "lemma": "כָּלַם",
       "strong": "H3637",
-      "pron": "브익칼무",
+      "pron": "틱칼렘",
       "glossKo": "수치를 당하다"
     },
     {
       "lemma": "כְּלִמּוּת",
       "strong": "H3640",
-      "pron": "",
+      "pron": "우켈림무트",
       "glossKo": "수치"
     }
   ],
   "defEn": "disgrace",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 30,
   "byBook": {
-    "psalms": 7
+    "ezekiel": 13,
+    "psalms": 7,
+    "isaiah": 4,
+    "jeremiah": 3,
+    "job": 1,
+    "micah": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיִּשְׂא֥וּ כְלִמָּתָ֖ם",
+      "pron": "미네소 켈림마티",
+      "lemmas": [
+        "נָשָׂא",
+        "כְּלִמָּה"
+      ],
+      "words": [
+        {
+          "word": "וַיִּשְׂא֥וּ",
+          "lemma": "נָשָׂא",
+          "strong": "H5375",
+          "pron": "미네소"
+        },
+        {
+          "word": "כְלִמָּתָ֖ם",
+          "lemma": "כְּלִמָּה",
+          "strong": "H3639",
+          "pron": "켈림마티"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "ezekiel 16:52",
+        "ezekiel 16:54",
+        "ezekiel 32:24",
+        "ezekiel 32:25",
+        "ezekiel 32:30",
+        "ezekiel 44:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּשְׂא֥וּ כְלִמָּתָ֖ם אֶת",
+      "pron": "미네소 켈림마티 에트",
+      "lemmas": [
+        "נָשָׂא",
+        "כְּלִמָּה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיִּשְׂא֥וּ",
+          "lemma": "נָשָׂא",
+          "strong": "H5375",
+          "pron": "미네소"
+        },
+        {
+          "word": "כְלִמָּתָ֖ם",
+          "lemma": "כְּלִמָּה",
+          "strong": "H3639",
+          "pron": "켈림마티"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H854",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 32:24",
+        "ezekiel 32:25",
+        "ezekiel 32:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כְּלִמַּ֥ת הַגּוֹיִֽם",
+      "pron": "켈림마티 아고임",
+      "lemmas": [
+        "כְּלִמָּה",
+        "גּוֹי"
+      ],
+      "words": [
+        {
+          "word": "כְּלִמַּ֥ת",
+          "lemma": "כְּלִמָּה",
+          "strong": "H3639",
+          "pron": "켈림마티"
+        },
+        {
+          "word": "הַגּוֹיִֽם",
+          "lemma": "גּוֹי",
+          "strong": "H1471",
+          "pron": "아고임"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 34:29",
+        "ezekiel 36:6",
+        "ezekiel 36:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כְלִמָּתָ֖ם אֶת",
+      "pron": "켈림마티 에트",
+      "lemmas": [
+        "כְּלִמָּה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "כְלִמָּתָ֖ם",
+          "lemma": "כְּלִמָּה",
+          "strong": "H3639",
+          "pron": "켈림마티"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H854",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 32:24",
+        "ezekiel 32:25",
+        "ezekiel 32:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כְלִמָּתָ֖ם אֶת י֥וֹרְדֵי",
+      "pron": "켈림마티 에트 바예렏",
+      "lemmas": [
+        "כְּלִמָּה",
+        "אֵת",
+        "יָרַד"
+      ],
+      "words": [
+        {
+          "word": "כְלִמָּתָ֖ם",
+          "lemma": "כְּלִמָּה",
+          "strong": "H3639",
+          "pron": "켈림마티"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H854",
+          "pron": "에트"
+        },
+        {
+          "word": "י֥וֹרְדֵי",
+          "lemma": "יָרַד",
+          "strong": "H3381",
+          "pron": "바예렏"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 32:24",
+        "ezekiel 32:25",
+        "ezekiel 32:30"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "מָשָׁל",
-  "pron": "마샬",
+  "pron": "메샬로",
   "strong": "H4912",
   "posKo": "명사",
   "root": {
@@ -12,33 +12,222 @@
     {
       "lemma": "מִמְשָׁל",
       "strong": "H4474",
-      "pron": "",
-      "glossKo": "통치자"
+      "pron": "멤샬토",
+      "glossKo": "그의 통치자"
     },
     {
       "lemma": "מָשַׁל",
       "strong": "H4910",
-      "pron": "탐실레후",
-      "glossKo": "그에게 다스리다"
+      "pron": "브리메숄",
+      "glossKo": "다스리다"
     },
     {
       "lemma": "מָשַׁל",
       "strong": "H4911",
-      "pron": "브님샬티",
-      "glossKo": "비유하다"
+      "pron": "아모셸림",
+      "glossKo": "비유하는 이"
     },
     {
       "lemma": "מֹשֶׁל",
       "strong": "H4915",
-      "pron": "",
-      "glossKo": "다스림"
+      "pron": "마셸로",
+      "glossKo": "그의 다스림"
     }
   ],
   "defEn": "pithy; simile",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 39,
   "byBook": {
-    "psalms": 4
+    "ezekiel": 8,
+    "numbers": 7,
+    "proverbs": 6,
+    "psalms": 4,
+    "job": 3,
+    "kings1": 2,
+    "samuel1": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "habakkuk": 1,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיִּשָּׂ֥א מְשָׁל֖וֹ",
+      "pron": "미네소 메샬로",
+      "lemmas": [
+        "נָשָׂא",
+        "מָשָׁל"
+      ],
+      "words": [
+        {
+          "word": "וַיִּשָּׂ֥א",
+          "lemma": "נָשָׂא",
+          "strong": "H5375",
+          "pron": "미네소"
+        },
+        {
+          "word": "מְשָׁל֖וֹ",
+          "lemma": "מָשָׁל",
+          "strong": "H4912",
+          "pron": "메샬로"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "numbers 23:7",
+        "numbers 23:18",
+        "numbers 24:3",
+        "numbers 24:15",
+        "numbers 24:20",
+        "numbers 24:21",
+        "numbers 24:23",
+        "job 27:1",
+        "job 29:1",
+        "isaiah 14:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְשָׁל֖וֹ וַיֹּאמַ֑ר",
+      "pron": "메샬로 바요메르",
+      "lemmas": [
+        "מָשָׁל",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "מְשָׁל֖וֹ",
+          "lemma": "מָשָׁל",
+          "strong": "H4912",
+          "pron": "메샬로"
+        },
+        {
+          "word": "וַיֹּאמַ֑ר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "numbers 23:7",
+        "numbers 23:18",
+        "numbers 24:3",
+        "numbers 24:15",
+        "numbers 24:20",
+        "numbers 24:21",
+        "numbers 24:23",
+        "job 27:1",
+        "job 29:1",
+        "ezekiel 24:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּשָּׂ֥א מְשָׁל֖וֹ וַיֹּאמַ֑ר",
+      "pron": "미네소 메샬로 바요메르",
+      "lemmas": [
+        "נָשָׂא",
+        "מָשָׁל",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "וַיִּשָּׂ֥א",
+          "lemma": "נָשָׂא",
+          "strong": "H5375",
+          "pron": "미네소"
+        },
+        {
+          "word": "מְשָׁל֖וֹ",
+          "lemma": "מָשָׁל",
+          "strong": "H4912",
+          "pron": "메샬로"
+        },
+        {
+          "word": "וַיֹּאמַ֑ר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "numbers 23:7",
+        "numbers 23:18",
+        "numbers 24:3",
+        "numbers 24:15",
+        "numbers 24:20",
+        "numbers 24:21",
+        "numbers 24:23",
+        "job 27:1",
+        "job 29:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַמָּשָׁ֣ל הַזֶּ֔ה",
+      "pron": "메샬로 제",
+      "lemmas": [
+        "מָשָׁל",
+        "זֶה"
+      ],
+      "words": [
+        {
+          "word": "הַמָּשָׁ֣ל",
+          "lemma": "מָשָׁל",
+          "strong": "H4912",
+          "pron": "메샬로"
+        },
+        {
+          "word": "הַזֶּ֔ה",
+          "lemma": "זֶה",
+          "strong": "H2088",
+          "pron": "제"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "isaiah 14:4",
+        "ezekiel 12:22",
+        "ezekiel 12:23",
+        "ezekiel 18:2",
+        "ezekiel 18:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְמָשָׁ֥ל וְלִשְׁנִינָ֖ה",
+      "pron": "메샬로 브리셰니나",
+      "lemmas": [
+        "מָשָׁל",
+        "שְׁנִינָה"
+      ],
+      "words": [
+        {
+          "word": "לְמָשָׁ֥ל",
+          "lemma": "מָשָׁל",
+          "strong": "H4912",
+          "pron": "메샬로"
+        },
+        {
+          "word": "וְלִשְׁנִינָ֖ה",
+          "lemma": "שְׁנִינָה",
+          "strong": "H8148",
+          "pron": "브리셰니나"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 28:37",
+        "kings1 9:7",
+        "chronicles2 7:20",
+        "jeremiah 24:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

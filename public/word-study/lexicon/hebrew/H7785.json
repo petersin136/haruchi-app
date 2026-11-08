@@ -1,6 +1,6 @@
 {
   "lemma": "שׁוֹק",
-  "pron": "브쇼케",
+  "pron": "쇼크",
   "strong": "H7785",
   "posKo": "명사",
   "root": {
@@ -12,14 +12,26 @@
     {
       "lemma": "שׁוּק",
       "strong": "H7783",
-      "pron": "바테쇼케케하",
+      "pron": "밧테쇼케케하",
       "glossKo": "그녀에게 갈망하다"
     },
     {
       "lemma": "שׁוּק",
       "strong": "H7784",
-      "pron": "",
+      "pron": "바슈크",
       "glossKo": "거리"
+    },
+    {
+      "lemma": "שָׁק",
+      "strong": "H8243",
+      "pron": "샤코히",
+      "glossKo": "그의 다리(아람)"
+    },
+    {
+      "lemma": "שָׁשַׁק",
+      "strong": "H8349",
+      "pron": "샤샤크",
+      "glossKo": "사삭"
     },
     {
       "lemma": "תְּשׁוּקָה",
@@ -30,9 +42,191 @@
   ],
   "defEn": "leg; runner",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 19,
   "byBook": {
-    "psalms": 1
+    "leviticus": 8,
+    "exodus": 2,
+    "numbers": 2,
+    "deuteronomy": 1,
+    "isaiah": 1,
+    "judges": 1,
+    "proverbs": 1,
+    "psalms": 1,
+    "samuel1": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְאֵת֙ שׁ֣וֹק",
+      "pron": "에트 쇼크",
+      "lemmas": [
+        "אֵת",
+        "שׁוֹק"
+      ],
+      "words": [
+        {
+          "word": "וְאֵת֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שׁ֣וֹק",
+          "lemma": "שׁוֹק",
+          "strong": "H7785",
+          "pron": "쇼크"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 29:22",
+        "exodus 29:27",
+        "leviticus 7:32",
+        "leviticus 7:34",
+        "leviticus 8:25",
+        "leviticus 9:21",
+        "leviticus 10:14",
+        "judges 15:8",
+        "samuel1 9:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שׁ֣וֹק הַיָּמִ֔ין",
+      "pron": "쇼크 아야민",
+      "lemmas": [
+        "שׁוֹק",
+        "יָמִין"
+      ],
+      "words": [
+        {
+          "word": "שׁ֣וֹק",
+          "lemma": "שׁוֹק",
+          "strong": "H7785",
+          "pron": "쇼크"
+        },
+        {
+          "word": "הַיָּמִ֔ין",
+          "lemma": "יָמִין",
+          "strong": "H3225",
+          "pron": "아야민"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 29:22",
+        "leviticus 7:32",
+        "leviticus 7:33",
+        "leviticus 8:25",
+        "leviticus 8:26",
+        "leviticus 9:21",
+        "numbers 18:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שׁ֣וֹק הַתְּרוּמָ֗ה",
+      "pron": "쇼크 테루마",
+      "lemmas": [
+        "שׁוֹק",
+        "תְּרוּמָה"
+      ],
+      "words": [
+        {
+          "word": "שׁ֣וֹק",
+          "lemma": "שׁוֹק",
+          "strong": "H7785",
+          "pron": "쇼크"
+        },
+        {
+          "word": "הַתְּרוּמָ֗ה",
+          "lemma": "תְּרוּמָה",
+          "strong": "H8641",
+          "pron": "테루마"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 29:27",
+        "leviticus 7:34",
+        "leviticus 10:14",
+        "leviticus 10:15",
+        "numbers 6:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֵת֙ שׁ֣וֹק הַיָּמִ֔ין",
+      "pron": "에트 쇼크 아야민",
+      "lemmas": [
+        "אֵת",
+        "שׁוֹק",
+        "יָמִין"
+      ],
+      "words": [
+        {
+          "word": "וְאֵת֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שׁ֣וֹק",
+          "lemma": "שׁוֹק",
+          "strong": "H7785",
+          "pron": "쇼크"
+        },
+        {
+          "word": "הַיָּמִ֔ין",
+          "lemma": "יָמִין",
+          "strong": "H3225",
+          "pron": "아야민"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 29:22",
+        "leviticus 7:32",
+        "leviticus 8:25",
+        "leviticus 9:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַתְּנוּפָ֜ה וְאֵ֣ת שׁ֣וֹק",
+      "pron": "테누파 에트 쇼크",
+      "lemmas": [
+        "תְּנוּפָה",
+        "אֵת",
+        "שׁוֹק"
+      ],
+      "words": [
+        {
+          "word": "הַתְּנוּפָ֜ה",
+          "lemma": "תְּנוּפָה",
+          "strong": "H8573",
+          "pron": "테누파"
+        },
+        {
+          "word": "וְאֵ֣ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שׁ֣וֹק",
+          "lemma": "שׁוֹק",
+          "strong": "H7785",
+          "pron": "쇼크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 29:27",
+        "leviticus 7:34",
+        "leviticus 10:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

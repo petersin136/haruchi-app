@@ -1,6 +1,6 @@
 {
   "lemma": "נְשָׁמָה",
-  "pron": "미니셰마트",
+  "pron": "니셰마트",
   "strong": "H5397",
   "posKo": "명사",
   "root": {
@@ -12,28 +12,128 @@
     {
       "lemma": "נָשַׁם",
       "strong": "H5395",
-      "pron": "",
+      "pron": "엣숌",
       "glossKo": "불다"
     },
     {
       "lemma": "נִשְׁמָא",
       "strong": "H5396",
-      "pron": "",
-      "glossKo": "숨(아람)"
+      "pron": "니솀타크",
+      "glossKo": "너의 숨(아람)"
     },
     {
       "lemma": "תַּנְשֶׁמֶת",
       "strong": "H8580",
-      "pron": "",
+      "pron": "아틴셰메트",
       "glossKo": "올빼미의 일종"
     }
   ],
   "defEn": "puff; wind; angry; vital breath; divine inspiration; intellect; animal",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 24,
   "byBook": {
+    "job": 7,
+    "isaiah": 4,
+    "joshua": 3,
     "genesis": 2,
-    "psalms": 2
+    "kings1": 2,
+    "psalms": 2,
+    "daniel": 1,
+    "deuteronomy": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כָּל נְשָׁמָֽה",
+      "pron": "칼 니셰마트",
+      "lemmas": [
+        "כֹּל",
+        "נְשָׁמָה"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "נְשָׁמָֽה",
+          "lemma": "נְשָׁמָה",
+          "strong": "H5397",
+          "pron": "니셰마트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 20:16",
+        "joshua 10:40",
+        "joshua 11:11",
+        "joshua 11:14",
+        "kings1 15:29",
+        "psalms 150:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נִשְׁמַת ר֨וּחַ",
+      "pron": "니셰마트 브루아흐",
+      "lemmas": [
+        "נְשָׁמָה",
+        "רוּחַ"
+      ],
+      "words": [
+        {
+          "word": "נִשְׁמַת",
+          "lemma": "נְשָׁמָה",
+          "strong": "H5397",
+          "pron": "니셰마트"
+        },
+        {
+          "word": "ר֨וּחַ",
+          "lemma": "רוּחַ",
+          "strong": "H7307",
+          "pron": "브루아흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 7:22",
+        "samuel2 22:16",
+        "job 27:3",
+        "psalms 18:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֔ה מִנִּשְׁמַ֖ת",
+      "pron": "여호와 니셰마트",
+      "lemmas": [
+        "יְהֹוָה",
+        "נְשָׁמָה"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "מִנִּשְׁמַ֖ת",
+          "lemma": "נְשָׁמָה",
+          "strong": "H5397",
+          "pron": "니셰마트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:16",
+        "psalms 18:15",
+        "proverbs 20:27"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

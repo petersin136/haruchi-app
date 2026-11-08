@@ -1,8 +1,8 @@
 {
   "lemma": "רָוַח",
-  "pron": "라바흐",
+  "pron": "브라바흐",
   "strong": "H7304",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "רוּחַ",
     "strong": "H7306",
@@ -10,21 +10,27 @@
   },
   "family": [
     {
+      "lemma": "רֶוַח",
+      "strong": "H7305",
+      "pron": "브레바흐",
+      "glossKo": "공간"
+    },
+    {
       "lemma": "רוּחַ",
       "strong": "H7306",
-      "pron": "예리후느",
+      "pron": "바야라흐",
       "glossKo": "냄새 맡다"
     },
     {
       "lemma": "רוּחַ",
       "strong": "H7307",
-      "pron": "루아흐",
+      "pron": "브루아흐",
       "glossKo": "영"
     },
     {
       "lemma": "רַחַת",
       "strong": "H7371",
-      "pron": "",
+      "pron": "바라하트",
       "glossKo": "키"
     },
     {
@@ -36,7 +42,11 @@
   ],
   "defEn": "breathe; revive",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 3,
+  "byBook": {
+    "jeremiah": 1,
+    "job": 1,
+    "samuel1": 1
+  },
   "phrases": []
 }

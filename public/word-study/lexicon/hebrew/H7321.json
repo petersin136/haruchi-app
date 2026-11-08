@@ -1,6 +1,6 @@
 {
   "lemma": "רוּעַ",
-  "pron": "야리아",
+  "pron": "타리우",
   "strong": "H7321",
   "posKo": "동사",
   "root": null,
@@ -8,8 +8,8 @@
     {
       "lemma": "רֵעַ",
       "strong": "H7452",
-      "pron": "",
-      "glossKo": "소리"
+      "pron": "베레오",
+      "glossKo": "그의 소리"
     },
     {
       "lemma": "תְּרוּעָה",
@@ -20,14 +20,147 @@
   ],
   "defEn": "mar; split; shout",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 44,
   "byBook": {
-    "psalms": 12
+    "psalms": 12,
+    "joshua": 7,
+    "isaiah": 4,
+    "samuel1": 4,
+    "chronicles2": 3,
+    "ezra": 2,
+    "job": 2,
+    "judges": 2,
+    "numbers": 2,
+    "hosea": 1,
+    "jeremiah": 1,
+    "joel": 1,
+    "micah": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
+      "hebrew": "הָעָם֙ הָרִ֔יעוּ",
+      "pron": "암 타리우",
+      "lemmas": [
+        "עַם",
+        "רוּעַ"
+      ],
+      "words": [
+        {
+          "word": "הָעָם֙",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "הָרִ֔יעוּ",
+          "lemma": "רוּעַ",
+          "strong": "H7321",
+          "pron": "타리우"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 6:16",
+        "samuel1 10:24",
+        "ezra 3:11",
+        "ezra 3:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֥א תָרִֽיעוּ",
+      "pron": "로 타리우",
+      "lemmas": [
+        "לֹא",
+        "רוּעַ"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תָרִֽיעוּ",
+          "lemma": "רוּעַ",
+          "strong": "H7321",
+          "pron": "타리우"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 10:7",
+        "joshua 6:10",
+        "psalms 41:11",
+        "isaiah 16:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָרִ֥יעוּ כָל",
+      "pron": "타리우 칼",
+      "lemmas": [
+        "רוּעַ",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "יָרִ֥יעוּ",
+          "lemma": "רוּעַ",
+          "strong": "H7321",
+          "pron": "타리우"
+        },
+        {
+          "word": "כָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 6:5",
+        "samuel1 4:5",
+        "samuel1 10:24",
+        "job 38:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּצִיּ֗וֹן וְהָרִ֨יעוּ֙",
+      "pron": "치온 타리우",
+      "lemmas": [
+        "צִיּוֹן",
+        "רוּעַ"
+      ],
+      "words": [
+        {
+          "word": "בְּצִיּ֗וֹן",
+          "lemma": "צִיּוֹן",
+          "strong": "H6726",
+          "pron": "치온"
+        },
+        {
+          "word": "וְהָרִ֨יעוּ֙",
+          "lemma": "רוּעַ",
+          "strong": "H7321",
+          "pron": "타리우"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joel 2:1",
+        "zephaniah 3:14",
+        "zechariah 9:9"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "הָרִ֥יעוּ לֵ֝אלֹהִ֗ים",
-      "pron": "야리아 베엘로힘",
+      "pron": "타리우 엘로힘",
       "lemmas": [
         "רוּעַ",
         "אֱלֹהִים"
@@ -37,13 +170,13 @@
           "word": "הָרִ֥יעוּ",
           "lemma": "רוּעַ",
           "strong": "H7321",
-          "pron": "야리아"
+          "pron": "타리우"
         },
         {
           "word": "לֵ֝אלֹהִ֗ים",
           "lemma": "אֱלֹהִים",
           "strong": "H430",
-          "pron": "베엘로힘"
+          "pron": "엘로힘"
         }
       ],
       "count": 3,

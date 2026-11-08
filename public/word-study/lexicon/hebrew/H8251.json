@@ -1,8 +1,8 @@
 {
   "lemma": "שִׁקּוּץ",
-  "pron": "식쿠츠",
+  "pron": "식쿠체헴",
   "strong": "H8251",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁקַץ",
     "strong": "H8262",
@@ -12,19 +12,119 @@
     {
       "lemma": "שָׁקַץ",
       "strong": "H8262",
-      "pron": "식카츠",
+      "pron": "테샥케추",
       "glossKo": "가증히 여기다"
     },
     {
       "lemma": "שֶׁקֶץ",
       "strong": "H8263",
-      "pron": "",
+      "pron": "셰케츠",
       "glossKo": "혐오스러운 것"
     }
   ],
   "defEn": "disgusting; filthy; idolatrous; idol",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 28,
+  "byBook": {
+    "ezekiel": 8,
+    "jeremiah": 5,
+    "daniel": 3,
+    "kings1": 3,
+    "kings2": 3,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "hosea": 1,
+    "isaiah": 1,
+    "nahum": 1,
+    "zechariah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "הַשִּׁקּוּצִים֙ מִכָּל",
+      "pron": "식쿠체헴 칼",
+      "lemmas": [
+        "שִׁקּוּץ",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "הַשִּׁקּוּצִים֙",
+          "lemma": "שִׁקּוּץ",
+          "strong": "H8251",
+          "pron": "식쿠체헴"
+        },
+        {
+          "word": "מִכָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles2 15:8",
+        "ezekiel 5:11",
+        "ezekiel 37:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל הַשִּׁקֻּצִ֗ים",
+      "pron": "칼 식쿠체헴",
+      "lemmas": [
+        "כֹּל",
+        "שִׁקּוּץ"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הַשִּׁקֻּצִ֗ים",
+          "lemma": "שִׁקּוּץ",
+          "strong": "H8251",
+          "pron": "식쿠체헴"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 23:24",
+        "ezekiel 5:11",
+        "ezekiel 11:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שִׁקּוּצִים֙ מְשֹׁמֵ֔ם",
+      "pron": "식쿠체헴 브나샴무",
+      "lemmas": [
+        "שִׁקּוּץ",
+        "שָׁמֵם"
+      ],
+      "words": [
+        {
+          "word": "שִׁקּוּצִים֙",
+          "lemma": "שִׁקּוּץ",
+          "strong": "H8251",
+          "pron": "식쿠체헴"
+        },
+        {
+          "word": "מְשֹׁמֵ֔ם",
+          "lemma": "שָׁמֵם",
+          "strong": "H8074",
+          "pron": "브나샴무"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 9:27",
+        "daniel 11:31",
+        "daniel 12:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

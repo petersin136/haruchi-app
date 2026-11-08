@@ -1,6 +1,6 @@
 {
   "lemma": "נָקַף",
-  "pron": "약키푸",
+  "pron": "탁키푸",
   "strong": "H5362",
   "posKo": "동사",
   "root": null,
@@ -8,27 +8,95 @@
     {
       "lemma": "נֹקֶף",
       "strong": "H5363",
-      "pron": "",
+      "pron": "크노켑",
       "glossKo": "타작"
     },
     {
       "lemma": "נִקְפָּה",
       "strong": "H5364",
-      "pron": "",
+      "pron": "니켑파",
       "glossKo": "끈"
     },
     {
       "lemma": "תְּקוּפָה",
       "strong": "H8622",
-      "pron": "우테쿠파트오",
-      "glossKo": "그의 주기"
+      "pron": "테쿠파트",
+      "glossKo": "주기"
     }
   ],
   "defEn": "strike; beat; fell; corrode",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 19,
   "byBook": {
-    "psalms": 4
+    "psalms": 4,
+    "isaiah": 3,
+    "job": 3,
+    "chronicles2": 2,
+    "joshua": 2,
+    "kings2": 2,
+    "kings1": 1,
+    "lamentations": 1,
+    "leviticus": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיַּקִּ֖פוּ עַל",
+      "pron": "탁키푸 알",
+      "lemmas": [
+        "נָקַף",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "וַיַּקִּ֖פוּ",
+          "lemma": "נָקַף",
+          "strong": "H5362",
+          "pron": "탁키푸"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 6:14",
+        "kings2 11:8",
+        "psalms 17:9",
+        "psalms 88:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַקֵּ֥יף אֶת",
+      "pron": "탁키푸 에트",
+      "lemmas": [
+        "נָקַף",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הַקֵּ֥יף",
+          "lemma": "נָקַף",
+          "strong": "H5362",
+          "pron": "탁키푸"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 6:3",
+        "kings1 7:24",
+        "chronicles2 4:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

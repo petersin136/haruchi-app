@@ -1,6 +1,6 @@
 {
   "lemma": "רָעַע",
-  "pron": "테로에므",
+  "pron": "타레우",
   "strong": "H7489",
   "posKo": "동사",
   "root": null,
@@ -8,39 +8,60 @@
     {
       "lemma": "מֵרַע",
       "strong": "H4827",
-      "pron": "",
+      "pron": "르메라",
       "glossKo": "악행"
     },
     {
       "lemma": "רַע",
       "strong": "H7451",
-      "pron": "라",
+      "pron": "바라",
       "glossKo": "악한"
     },
     {
       "lemma": "רֹעַ",
       "strong": "H7455",
-      "pron": "우크로아",
+      "pron": "라로아",
       "glossKo": "악"
     },
     {
       "lemma": "רְעַע",
       "strong": "H7490",
-      "pron": "",
+      "pron": "메라아",
       "glossKo": "부수다(아람)"
     }
   ],
   "defEn": "spoil; make; be; good for nothing; bad",
   "defKo": "",
-  "countOT": 25,
+  "countOT": 102,
   "byBook": {
     "psalms": 16,
-    "genesis": 9
+    "jeremiah": 14,
+    "isaiah": 12,
+    "genesis": 9,
+    "proverbs": 8,
+    "samuel1": 6,
+    "deuteronomy": 5,
+    "numbers": 5,
+    "chronicles1": 4,
+    "kings1": 3,
+    "nehemiah": 3,
+    "samuel2": 3,
+    "exodus": 2,
+    "job": 2,
+    "micah": 2,
+    "jonah": 1,
+    "joshua": 1,
+    "judges": 1,
+    "kings2": 1,
+    "leviticus": 1,
+    "ruth": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
       "hebrew": "יֵרַ֤ע בְּעֵינֶ֨יךָ֙",
-      "pron": "테로에므 에네카",
+      "pron": "타레우 에네켐",
       "lemmas": [
         "רָעַע",
         "עַיִן"
@@ -50,20 +71,154 @@
           "word": "יֵרַ֤ע",
           "lemma": "רָעַע",
           "strong": "H7489",
-          "pron": "테로에므"
+          "pron": "타레우"
         },
         {
           "word": "בְּעֵינֶ֨יךָ֙",
           "lemma": "עַיִן",
           "strong": "H5869",
-          "pron": "에네카"
+          "pron": "에네켐"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "genesis 21:12",
+        "genesis 38:10",
+        "genesis 48:17",
+        "numbers 22:34",
+        "deuteronomy 15:9",
+        "deuteronomy 28:54",
+        "deuteronomy 28:56",
+        "samuel1 18:8",
+        "samuel2 11:25",
+        "chronicles1 21:7",
+        "proverbs 24:18",
+        "isaiah 59:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֥א הֲרֵעֹ֖תִי",
+      "pron": "로 타레우",
+      "lemmas": [
+        "לֹא",
+        "רָעַע"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "הֲרֵעֹ֖תִי",
+          "lemma": "רָעַע",
+          "strong": "H7489",
+          "pron": "타레우"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "numbers 16:15",
+        "deuteronomy 15:10",
+        "samuel1 26:21",
+        "nehemiah 2:3",
+        "proverbs 4:16",
+        "isaiah 11:9",
+        "isaiah 65:25",
+        "jeremiah 10:5",
+        "jeremiah 25:6",
+        "zephaniah 1:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָרֵ֖עַ תָּרֵ֑עוּ",
+      "pron": "타레우 타레우",
+      "lemmas": [
+        "רָעַע",
+        "רָעַע"
+      ],
+      "words": [
+        {
+          "word": "הָרֵ֖עַ",
+          "lemma": "רָעַע",
+          "strong": "H7489",
+          "pron": "타레우"
+        },
+        {
+          "word": "תָּרֵ֑עוּ",
+          "lemma": "רָעַע",
+          "strong": "H7489",
+          "pron": "타레우"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel1 12:25",
+        "chronicles1 21:17",
+        "isaiah 24:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַל יֵרַ֤ע",
+      "pron": "엘 타레우",
+      "lemmas": [
+        "אַל",
+        "רָעַע"
+      ],
+      "words": [
+        {
+          "word": "אַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "יֵרַ֤ע",
+          "lemma": "רָעַע",
+          "strong": "H7489",
+          "pron": "타레우"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 21:12",
+        "judges 19:23",
+        "samuel2 11:25",
+        "chronicles1 16:22",
+        "psalms 105:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִם רַ֥ע",
+      "pron": "임 타레우",
+      "lemmas": [
+        "אִם",
+        "רָעַע"
+      ],
+      "words": [
+        {
+          "word": "אִם",
+          "lemma": "אִם",
+          "strong": "H518",
+          "pron": "임"
+        },
+        {
+          "word": "רַ֥ע",
+          "lemma": "רָעַע",
+          "strong": "H7489",
+          "pron": "타레우"
         }
       ],
       "count": 3,
       "refs": [
-        "genesis 21:12",
-        "genesis 38:10",
-        "genesis 48:17"
+        "numbers 22:34",
+        "samuel1 12:25",
+        "jeremiah 40:4"
       ],
       "glossKo": ""
     }

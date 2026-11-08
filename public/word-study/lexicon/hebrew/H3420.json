@@ -1,8 +1,8 @@
 {
   "lemma": "יֵרָקוֹן",
-  "pron": "예라콘",
+  "pron": "우바예라콘",
   "strong": "H3420",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "יֶרֶק",
     "strong": "H3418",
@@ -12,25 +12,64 @@
     {
       "lemma": "יֶרֶק",
       "strong": "H3418",
-      "pron": "우크예레크",
+      "pron": "예레크",
       "glossKo": "푸른"
     },
     {
       "lemma": "יָרָק",
       "strong": "H3419",
-      "pron": "",
+      "pron": "아야라크",
       "glossKo": "푸성귀"
     },
     {
       "lemma": "יְרַקְרַק",
       "strong": "H3422",
-      "pron": "비위라케라크",
+      "pron": "예라케라크",
       "glossKo": "황녹색"
     }
   ],
   "defEn": "paleness",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "amos": 1,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "haggai": 1,
+    "jeremiah": 1,
+    "kings1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וּבַשִּׁדָּפ֖וֹן וּבַיֵּרָק֑וֹן",
+      "pron": "우바싣다폰 우바예라콘",
+      "lemmas": [
+        "שְׁדֵפָה",
+        "יֵרָקוֹן"
+      ],
+      "words": [
+        {
+          "word": "וּבַשִּׁדָּפ֖וֹן",
+          "lemma": "שְׁדֵפָה",
+          "strong": "H7711",
+          "pron": "우바싣다폰"
+        },
+        {
+          "word": "וּבַיֵּרָק֑וֹן",
+          "lemma": "יֵרָקוֹן",
+          "strong": "H3420",
+          "pron": "우바예라콘"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 28:22",
+        "kings1 8:37",
+        "chronicles2 6:28",
+        "amos 4:9",
+        "haggai 2:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,0 +1,119 @@
+{
+  "lemma": "עָקָר",
+  "pron": "아카라",
+  "strong": "H6135",
+  "posKo": "형용사",
+  "root": {
+    "lemma": "עָקַר",
+    "strong": "H6131",
+    "glossKo": "뽑다"
+  },
+  "family": [
+    {
+      "lemma": "עָקַר",
+      "strong": "H6131",
+      "pron": "익케루",
+      "glossKo": "뽑다"
+    },
+    {
+      "lemma": "עֲקַר",
+      "strong": "H6132",
+      "pron": "특르브",
+      "glossKo": "뿌리 뽑다(아람)"
+    },
+    {
+      "lemma": "עֵקֶר",
+      "strong": "H6133",
+      "pron": "르에케르",
+      "glossKo": "이주민"
+    },
+    {
+      "lemma": "עֶקְרוֹן",
+      "strong": "H6138",
+      "pron": "에케론",
+      "glossKo": "에그론"
+    }
+  ],
+  "defEn": "sterile",
+  "defKo": "",
+  "countOT": 12,
+  "byBook": {
+    "genesis": 3,
+    "deuteronomy": 2,
+    "judges": 2,
+    "exodus": 1,
+    "isaiah": 1,
+    "job": 1,
+    "psalms": 1,
+    "samuel1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "עֲקָרָ֖ה וְלֹ֥א",
+      "pron": "아카라 로",
+      "lemmas": [
+        "עָקָר",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "עֲקָרָ֖ה",
+          "lemma": "עָקָר",
+          "strong": "H6135",
+          "pron": "아카라"
+        },
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 13:2",
+        "judges 13:3",
+        "job 24:21",
+        "isaiah 54:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲקָרָ֖ה וְלֹ֥א יָלָֽדָה",
+      "pron": "아카라 로 텔디",
+      "lemmas": [
+        "עָקָר",
+        "לֹא",
+        "יָלַד"
+      ],
+      "words": [
+        {
+          "word": "עֲקָרָ֖ה",
+          "lemma": "עָקָר",
+          "strong": "H6135",
+          "pron": "아카라"
+        },
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יָלָֽדָה",
+          "lemma": "יָלַד",
+          "strong": "H3205",
+          "pron": "텔디"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 13:2",
+        "judges 13:3",
+        "job 24:21",
+        "isaiah 54:1"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

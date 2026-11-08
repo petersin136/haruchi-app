@@ -1,6 +1,6 @@
 {
   "lemma": "סָמַךְ",
-  "pron": "잇메케니",
+  "pron": "세마켓티브",
   "strong": "H5564",
   "posKo": "동사",
   "root": null,
@@ -8,28 +8,219 @@
     {
       "lemma": "יִסְמַכְיָהוּ",
       "strong": "H3253",
-      "pron": "",
+      "pron": "브잇마케아후",
       "glossKo": "이스막야후"
     },
     {
       "lemma": "סְמַכְיָהוּ",
       "strong": "H5565",
-      "pron": "",
+      "pron": "우세마케아후",
       "glossKo": "스마갸"
     },
     {
       "lemma": "שְׂמִיכָה",
       "strong": "H8063",
-      "pron": "",
+      "pron": "바세미카",
       "glossKo": "요"
     }
   ],
   "defEn": "prop; lean upon; take hold of",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 48,
   "byBook": {
+    "leviticus": 14,
     "psalms": 11,
-    "genesis": 1
+    "isaiah": 6,
+    "numbers": 4,
+    "exodus": 3,
+    "chronicles2": 2,
+    "ezekiel": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "genesis": 1,
+    "judges": 1,
+    "kings2": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְסָמַ֤ךְ אֶת",
+      "pron": "세마켓티브 에트",
+      "lemmas": [
+        "סָמַךְ",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְסָמַ֤ךְ",
+          "lemma": "סָמַךְ",
+          "strong": "H5564",
+          "pron": "세마켓티브"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "leviticus 3:8",
+        "leviticus 3:13",
+        "leviticus 4:4",
+        "leviticus 4:29",
+        "leviticus 4:33",
+        "numbers 8:12",
+        "numbers 27:18",
+        "numbers 27:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְסָמַ֤ךְ אֶת יָדוֹ֙",
+      "pron": "세마켓티브 에트 야도",
+      "lemmas": [
+        "סָמַךְ",
+        "אֵת",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "וְסָמַ֤ךְ",
+          "lemma": "סָמַךְ",
+          "strong": "H5564",
+          "pron": "세마켓티브"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יָדוֹ֙",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "leviticus 3:8",
+        "leviticus 3:13",
+        "leviticus 4:4",
+        "leviticus 4:29",
+        "leviticus 4:33",
+        "numbers 8:12",
+        "numbers 27:18",
+        "numbers 27:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְסָמַ֨ךְ אַהֲרֹ֧ן",
+      "pron": "세마켓티브 아론",
+      "lemmas": [
+        "סָמַךְ",
+        "אַהֲרוֹן"
+      ],
+      "words": [
+        {
+          "word": "וְסָמַ֨ךְ",
+          "lemma": "סָמַךְ",
+          "strong": "H5564",
+          "pron": "세마켓티브"
+        },
+        {
+          "word": "אַהֲרֹ֧ן",
+          "lemma": "אַהֲרוֹן",
+          "strong": "H175",
+          "pron": "아론"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 29:10",
+        "exodus 29:15",
+        "exodus 29:19",
+        "leviticus 8:14",
+        "leviticus 8:18",
+        "leviticus 8:22",
+        "leviticus 16:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְסָמַ֨ךְ אַהֲרֹ֧ן וּבָנָ֛יו",
+      "pron": "세마켓티브 아론 바님",
+      "lemmas": [
+        "סָמַךְ",
+        "אַהֲרוֹן",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "וְסָמַ֨ךְ",
+          "lemma": "סָמַךְ",
+          "strong": "H5564",
+          "pron": "세마켓티브"
+        },
+        {
+          "word": "אַהֲרֹ֧ן",
+          "lemma": "אַהֲרוֹן",
+          "strong": "H175",
+          "pron": "아론"
+        },
+        {
+          "word": "וּבָנָ֛יו",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 29:10",
+        "exodus 29:15",
+        "exodus 29:19",
+        "leviticus 8:14",
+        "leviticus 8:18",
+        "leviticus 8:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְסָמַ֤ךְ יָדוֹ֙",
+      "pron": "세마켓티브 야도",
+      "lemmas": [
+        "סָמַךְ",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "וְסָמַ֤ךְ",
+          "lemma": "סָמַךְ",
+          "strong": "H5564",
+          "pron": "세마켓티브"
+        },
+        {
+          "word": "יָדוֹ֙",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "leviticus 1:4",
+        "leviticus 3:2",
+        "leviticus 4:24",
+        "chronicles2 29:23",
+        "psalms 37:24",
+        "amos 5:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

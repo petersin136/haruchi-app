@@ -1,6 +1,6 @@
 {
   "lemma": "יָגַע",
-  "pron": "야가엣티",
+  "pron": "테악가",
   "strong": "H3021",
   "posKo": "동사",
   "root": null,
@@ -8,33 +8,104 @@
     {
       "lemma": "יְגִיעַ",
       "strong": "H3018",
-      "pron": "비위기아므",
-      "glossKo": "그들의 수고"
+      "pron": "예기아",
+      "glossKo": "수고"
     },
     {
       "lemma": "יָגִיעַ",
       "strong": "H3019",
-      "pron": "",
+      "pron": "예기에",
       "glossKo": "지친"
     },
     {
       "lemma": "יָגָע",
       "strong": "H3022",
-      "pron": "",
+      "pron": "야가",
       "glossKo": "수고의 산물"
     },
     {
       "lemma": "יָגֵעַ",
       "strong": "H3023",
-      "pron": "",
+      "pron": "브야게아",
       "glossKo": "지친"
     }
   ],
   "defEn": "gasp; be exhausted; tire; toil",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 26,
   "byBook": {
-    "psalms": 2
+    "isaiah": 12,
+    "jeremiah": 2,
+    "joshua": 2,
+    "malachi": 2,
+    "psalms": 2,
+    "ecclesiastes": 1,
+    "habakkuk": 1,
+    "job": 1,
+    "lamentations": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹֽא יָגַ֣עְתָּ",
+      "pron": "로 테악가",
+      "lemmas": [
+        "לֹא",
+        "יָגַע"
+      ],
+      "words": [
+        {
+          "word": "לֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יָגַ֣עְתָּ",
+          "lemma": "יָגַע",
+          "strong": "H3021",
+          "pron": "테악가"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "joshua 24:13",
+        "isaiah 40:28",
+        "isaiah 40:31",
+        "isaiah 43:23",
+        "isaiah 65:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּאֲשֶׁ֥ר יָגַ֖עַתְּ",
+      "pron": "아셰르 테악가",
+      "lemmas": [
+        "אֲשֶׁר",
+        "יָגַע"
+      ],
+      "words": [
+        {
+          "word": "בַּאֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "יָגַ֖עַתְּ",
+          "lemma": "יָגַע",
+          "strong": "H3021",
+          "pron": "테악가"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 47:12",
+        "isaiah 47:15",
+        "isaiah 62:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

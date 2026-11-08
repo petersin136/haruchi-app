@@ -1,6 +1,6 @@
 {
   "lemma": "יָבִין",
-  "pron": "크야빈",
+  "pron": "야빈",
   "strong": "H2985",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "בּוּנָה",
       "strong": "H946",
-      "pron": "",
+      "pron": "우부나",
       "glossKo": "부나"
     },
     {
       "lemma": "בִּין",
       "strong": "H995",
-      "pron": "비나",
+      "pron": "나본",
       "glossKo": "깨닫다"
     },
     {
@@ -30,8 +30,8 @@
     {
       "lemma": "בִּינָה",
       "strong": "H998",
-      "pron": "",
-      "glossKo": "총명"
+      "pron": "우비나테켐",
+      "glossKo": "너희의 총명"
     },
     {
       "lemma": "מָבוֹן",
@@ -42,15 +42,85 @@
     {
       "lemma": "תָּבוּן",
       "strong": "H8394",
-      "pron": "테부노트",
+      "pron": "우비테부나",
       "glossKo": "이해"
     }
   ],
   "defEn": "Jabin",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 8,
   "byBook": {
+    "judges": 6,
+    "joshua": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יָבִ֣ין מֶֽלֶךְ",
+      "pron": "야빈 멜레크",
+      "lemmas": [
+        "יָבִין",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "יָבִ֣ין",
+          "lemma": "יָבִין",
+          "strong": "H2985",
+          "pron": "야빈"
+        },
+        {
+          "word": "מֶֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "joshua 11:1",
+        "judges 4:2",
+        "judges 4:17",
+        "judges 4:23",
+        "judges 4:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָבִ֣ין מֶֽלֶךְ כְּנָ֑עַן",
+      "pron": "야빈 멜레크 케나안",
+      "lemmas": [
+        "יָבִין",
+        "מֶלֶךְ",
+        "כְּנַעַן"
+      ],
+      "words": [
+        {
+          "word": "יָבִ֣ין",
+          "lemma": "יָבִין",
+          "strong": "H2985",
+          "pron": "야빈"
+        },
+        {
+          "word": "מֶֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "כְּנָ֑עַן",
+          "lemma": "כְּנַעַן",
+          "strong": "H3667",
+          "pron": "케나안"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "judges 4:2",
+        "judges 4:23",
+        "judges 4:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

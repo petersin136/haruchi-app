@@ -2,7 +2,7 @@
   "lemma": "עִקֵּשׁ",
   "pron": "익케쉬",
   "strong": "H6142",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עִקֵּשׁ",
     "strong": "H6141",
@@ -18,13 +18,147 @@
     {
       "lemma": "עִקְּשׁוּת",
       "strong": "H6143",
-      "pron": "",
+      "pron": "익케슈트",
       "glossKo": "사악함"
     }
   ],
   "defEn": "Ikkesh",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 3,
+  "byBook": {
+    "chronicles1": 2,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶן עִקֵּ֖שׁ",
+      "pron": "바님 익케쉬",
+      "lemmas": [
+        "בֵּן",
+        "עִקֵּשׁ"
+      ],
+      "words": [
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עִקֵּ֖שׁ",
+          "lemma": "עִקֵּשׁ",
+          "strong": "H6142",
+          "pron": "익케쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 23:26",
+        "chronicles1 11:28",
+        "chronicles1 27:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶן עִקֵּ֖שׁ הַתְּקוֹעִֽי",
+      "pron": "바님 익케쉬 아테코이트",
+      "lemmas": [
+        "בֵּן",
+        "עִקֵּשׁ",
+        "תְּקוֹעִי"
+      ],
+      "words": [
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עִקֵּ֖שׁ",
+          "lemma": "עִקֵּשׁ",
+          "strong": "H6142",
+          "pron": "익케쉬"
+        },
+        {
+          "word": "הַתְּקוֹעִֽי",
+          "lemma": "תְּקוֹעִי",
+          "strong": "H8621",
+          "pron": "아테코이트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 23:26",
+        "chronicles1 11:28",
+        "chronicles1 27:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עִירָ֥א בֶן עִקֵּ֖שׁ",
+      "pron": "이라 바님 익케쉬",
+      "lemmas": [
+        "עִירָא",
+        "בֵּן",
+        "עִקֵּשׁ"
+      ],
+      "words": [
+        {
+          "word": "עִירָ֥א",
+          "lemma": "עִירָא",
+          "strong": "H5896",
+          "pron": "이라"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עִקֵּ֖שׁ",
+          "lemma": "עִקֵּשׁ",
+          "strong": "H6142",
+          "pron": "익케쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 23:26",
+        "chronicles1 11:28",
+        "chronicles1 27:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עִקֵּ֖שׁ הַתְּקוֹעִֽי",
+      "pron": "익케쉬 아테코이트",
+      "lemmas": [
+        "עִקֵּשׁ",
+        "תְּקוֹעִי"
+      ],
+      "words": [
+        {
+          "word": "עִקֵּ֖שׁ",
+          "lemma": "עִקֵּשׁ",
+          "strong": "H6142",
+          "pron": "익케쉬"
+        },
+        {
+          "word": "הַתְּקוֹעִֽי",
+          "lemma": "תְּקוֹעִי",
+          "strong": "H8621",
+          "pron": "아테코이트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 23:26",
+        "chronicles1 11:28",
+        "chronicles1 27:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

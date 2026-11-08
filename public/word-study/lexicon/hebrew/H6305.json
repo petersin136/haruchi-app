@@ -2,7 +2,7 @@
   "lemma": "פְּדָיָה",
   "pron": "페다아",
   "strong": "H6305",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "פָּדָה",
     "strong": "H6299",
@@ -12,43 +12,77 @@
     {
       "lemma": "יִפְדְּיָה",
       "strong": "H3301",
-      "pron": "",
+      "pron": "브입데아",
       "glossKo": "이브드야"
     },
     {
       "lemma": "פָּדָה",
       "strong": "H6299",
-      "pron": "페데",
+      "pron": "팁데",
       "glossKo": "구속하다"
     },
     {
       "lemma": "פְּדַהְאֵל",
       "strong": "H6300",
-      "pron": "",
+      "pron": "페다헤엘",
       "glossKo": "브다헬"
     },
     {
       "lemma": "פְּדָהצוּר",
       "strong": "H6301",
-      "pron": "",
+      "pron": "페다흐추르",
       "glossKo": "브다술"
     },
     {
       "lemma": "פָּדוּי",
       "strong": "H6302",
-      "pron": "",
+      "pron": "페두에",
       "glossKo": "속량된 자"
     },
     {
       "lemma": "פָּדוֹן",
       "strong": "H6303",
-      "pron": "",
+      "pron": "파돈",
       "glossKo": "바돈"
     }
   ],
   "defEn": "Pedajah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 8,
+  "byBook": {
+    "nehemiah": 4,
+    "chronicles1": 3,
+    "kings2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וּבְנֵ֣י פְדָיָ֔ה",
+      "pron": "바님 페다아",
+      "lemmas": [
+        "בֵּן",
+        "פְּדָיָה"
+      ],
+      "words": [
+        {
+          "word": "וּבְנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "פְדָיָ֔ה",
+          "lemma": "פְּדָיָה",
+          "strong": "H6305",
+          "pron": "페다아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 3:19",
+        "chronicles1 27:20",
+        "nehemiah 11:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

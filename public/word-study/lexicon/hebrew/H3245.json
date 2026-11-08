@@ -1,6 +1,6 @@
 {
   "lemma": "יָסַד",
-  "pron": "놋두",
+  "pron": "히밧다",
   "strong": "H3245",
   "posKo": "동사",
   "root": null,
@@ -8,19 +8,19 @@
     {
       "lemma": "יְסֻד",
       "strong": "H3246",
-      "pron": "",
+      "pron": "예숟",
       "glossKo": "기초(아람)"
     },
     {
       "lemma": "יְסוֹד",
       "strong": "H3247",
-      "pron": "아예솓",
+      "pron": "예솓",
       "glossKo": "기초"
     },
     {
       "lemma": "מוּסָד",
       "strong": "H4143",
-      "pron": "",
+      "pron": "무삳",
       "glossKo": "기초"
     },
     {
@@ -32,21 +32,195 @@
     {
       "lemma": "מְיֻסָּדָה",
       "strong": "H4328",
-      "pron": "",
+      "pron": "밋드브트",
       "glossKo": "터를 닦은 것"
     },
     {
       "lemma": "מַסַּד",
       "strong": "H4527",
-      "pron": "",
+      "pron": "우미맛삳",
       "glossKo": "기초"
     }
   ],
   "defEn": "set; found; sit; settle; consult",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 42,
   "byBook": {
-    "psalms": 10
+    "psalms": 10,
+    "isaiah": 9,
+    "ezra": 4,
+    "kings1": 4,
+    "zechariah": 3,
+    "chronicles2": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "esther": 1,
+    "exodus": 1,
+    "habakkuk": 1,
+    "haggai": 1,
+    "job": 1,
+    "joshua": 1,
+    "proverbs": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּיָסְדִי אָ֑רֶץ",
+      "pron": "히밧다 하아레츠",
+      "lemmas": [
+        "יָסַד",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "בְּיָסְדִי",
+          "lemma": "יָסַד",
+          "strong": "H3245",
+          "pron": "히밧다"
+        },
+        {
+          "word": "אָ֑רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "job 38:4",
+        "psalms 104:5",
+        "proverbs 3:19",
+        "isaiah 48:13",
+        "isaiah 51:13",
+        "isaiah 51:16",
+        "zechariah 12:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְיַסֵּ֥ד הַבָּ֖יִת",
+      "pron": "히밧다 미바이트",
+      "lemmas": [
+        "יָסַד",
+        "בַּיִת"
+      ],
+      "words": [
+        {
+          "word": "לְיַסֵּ֥ד",
+          "lemma": "יָסַד",
+          "strong": "H3245",
+          "pron": "히밧다"
+        },
+        {
+          "word": "הַבָּ֖יִת",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 5:17",
+        "kings1 6:37",
+        "ezra 3:11",
+        "zechariah 4:9",
+        "zechariah 8:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יֻסַּ֖ד בֵּ֣ית יְהוָ֑ה",
+      "pron": "히밧다 미바이트 여호와",
+      "lemmas": [
+        "יָסַד",
+        "בַּיִת",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "יֻסַּ֖ד",
+          "lemma": "יָסַד",
+          "strong": "H3245",
+          "pron": "히밧다"
+        },
+        {
+          "word": "בֵּ֣ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "יְהוָ֑ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 6:37",
+        "ezra 3:11",
+        "zechariah 8:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כְּ֝אֶ֗רֶץ יְסָדָ֥הּ",
+      "pron": "하아레츠 히밧다",
+      "lemmas": [
+        "אֶרֶץ",
+        "יָסַד"
+      ],
+      "words": [
+        {
+          "word": "כְּ֝אֶ֗רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "יְסָדָ֥הּ",
+          "lemma": "יָסַד",
+          "strong": "H3245",
+          "pron": "히밧다"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 78:69",
+        "psalms 102:25",
+        "amos 9:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁמַיִם֮ וְיֹסֵ֣ד",
+      "pron": "샤마임 히밧다",
+      "lemmas": [
+        "שָׁמַיִם",
+        "יָסַד"
+      ],
+      "words": [
+        {
+          "word": "שָׁמַיִם֮",
+          "lemma": "שָׁמַיִם",
+          "strong": "H8064",
+          "pron": "샤마임"
+        },
+        {
+          "word": "וְיֹסֵ֣ד",
+          "lemma": "יָסַד",
+          "strong": "H3245",
+          "pron": "히밧다"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 51:13",
+        "isaiah 51:16",
+        "zechariah 12:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

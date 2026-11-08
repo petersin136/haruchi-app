@@ -2,7 +2,7 @@
   "lemma": "דַּלָּה",
   "pron": "달로트",
   "strong": "H1803",
-  "posKo": "형용사",
+  "posKo": "명사",
   "root": {
     "lemma": "דָּלָה",
     "strong": "H1802",
@@ -12,39 +12,79 @@
     {
       "lemma": "דָּלָה",
       "strong": "H1802",
-      "pron": "딜리타니",
-      "glossKo": "나를 긷다"
+      "pron": "바틷레나",
+      "glossKo": "긷다"
     },
     {
       "lemma": "דְּלִי",
       "strong": "H1805",
-      "pron": "",
-      "glossKo": "물통"
+      "pron": "믿달아브",
+      "glossKo": "그의 물통"
     },
     {
       "lemma": "דְּלָיָה",
       "strong": "H1806",
-      "pron": "",
+      "pron": "우델라아",
       "glossKo": "들라야"
     },
     {
       "lemma": "דָּלִיָּה",
       "strong": "H1808",
-      "pron": "",
-      "glossKo": "가지"
+      "pron": "달리오타으브",
+      "glossKo": "그의 가지"
     },
     {
       "lemma": "דָּלַל",
       "strong": "H1809",
-      "pron": "달로누",
+      "pron": "바읻달",
       "glossKo": "쇠하다"
+    },
+    {
+      "lemma": "דֶּלֶת",
+      "strong": "H1817",
+      "pron": "브아델레트",
+      "glossKo": "문"
     }
   ],
   "defEn": "dangling; loose thread; hair; indigent",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 8,
   "byBook": {
-    "genesis": 1
+    "jeremiah": 3,
+    "kings2": 2,
+    "genesis": 1,
+    "isaiah": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּמִדַּלַּ֣ת הָאָ֔רֶץ",
+      "pron": "달로트 하아레츠",
+      "lemmas": [
+        "דַּלָּה",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "וּמִדַּלַּ֣ת",
+          "lemma": "דַּלָּה",
+          "strong": "H1803",
+          "pron": "달로트"
+        },
+        {
+          "word": "הָאָ֔רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 25:12",
+        "jeremiah 40:7",
+        "jeremiah 52:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

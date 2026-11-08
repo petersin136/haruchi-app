@@ -1,6 +1,6 @@
 {
   "lemma": "פָּרַר",
-  "pron": "포라렛타",
+  "pron": "헤파르",
   "strong": "H6565",
   "posKo": "동사",
   "root": null,
@@ -8,28 +8,224 @@
     {
       "lemma": "פַּר",
       "strong": "H6499",
-      "pron": "파림",
+      "pron": "우파림",
       "glossKo": "수송아지"
     },
     {
       "lemma": "פָּרוּר",
       "strong": "H6517",
-      "pron": "",
+      "pron": "바파루르",
       "glossKo": "솥"
     },
     {
       "lemma": "פַּרְפַּר",
       "strong": "H6554",
-      "pron": "",
+      "pron": "우파렙파르",
       "glossKo": "바르발"
     }
   ],
   "defEn": "break up; violate; frustrate",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 50,
   "byBook": {
+    "numbers": 8,
+    "isaiah": 7,
+    "ezekiel": 5,
+    "jeremiah": 5,
+    "job": 4,
     "psalms": 3,
-    "genesis": 1
+    "zechariah": 3,
+    "deuteronomy": 2,
+    "ezra": 2,
+    "leviticus": 2,
+    "samuel2": 2,
+    "chronicles2": 1,
+    "ecclesiastes": 1,
+    "genesis": 1,
+    "judges": 1,
+    "kings1": 1,
+    "nehemiah": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לְהַפְרְכֶ֖ם אֶת",
+      "pron": "헤파르 에트",
+      "lemmas": [
+        "פָּרַר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "לְהַפְרְכֶ֖ם",
+          "lemma": "פָּרַר",
+          "strong": "H6565",
+          "pron": "헤파르"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "leviticus 26:15",
+        "numbers 30:8",
+        "numbers 30:12",
+        "numbers 30:15",
+        "deuteronomy 31:16",
+        "deuteronomy 31:20",
+        "samuel2 15:34",
+        "samuel2 17:14",
+        "kings1 15:19",
+        "jeremiah 31:32",
+        "jeremiah 33:20",
+        "ezekiel 17:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְהָפֵ֥ר בְּרִיתִ֖י",
+      "pron": "헤파르 베리티",
+      "lemmas": [
+        "פָּרַר",
+        "בְּרִית"
+      ],
+      "words": [
+        {
+          "word": "לְהָפֵ֥ר",
+          "lemma": "פָּרַר",
+          "strong": "H6565",
+          "pron": "헤파르"
+        },
+        {
+          "word": "בְּרִיתִ֖י",
+          "lemma": "בְּרִית",
+          "strong": "H1285",
+          "pron": "베리티"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "leviticus 26:44",
+        "judges 2:1",
+        "chronicles2 16:3",
+        "isaiah 24:5",
+        "isaiah 33:8",
+        "jeremiah 14:21",
+        "ezekiel 16:59",
+        "ezekiel 17:15",
+        "ezekiel 17:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְהַפְרְכֶ֖ם אֶת בְּרִיתִֽי",
+      "pron": "헤파르 에트 베리티",
+      "lemmas": [
+        "פָּרַר",
+        "אֵת",
+        "בְּרִית"
+      ],
+      "words": [
+        {
+          "word": "לְהַפְרְכֶ֖ם",
+          "lemma": "פָּרַר",
+          "strong": "H6565",
+          "pron": "헤파르"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "בְּרִיתִֽי",
+          "lemma": "בְּרִית",
+          "strong": "H1285",
+          "pron": "베리티"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "leviticus 26:15",
+        "deuteronomy 31:16",
+        "deuteronomy 31:20",
+        "kings1 15:19",
+        "jeremiah 31:32",
+        "jeremiah 33:20",
+        "ezekiel 17:16",
+        "ezekiel 44:7",
+        "zechariah 11:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָפֵר֩ יָפֵ֨ר",
+      "pron": "헤파르 헤파르",
+      "lemmas": [
+        "פָּרַר",
+        "פָּרַר"
+      ],
+      "words": [
+        {
+          "word": "הָפֵר֩",
+          "lemma": "פָּרַר",
+          "strong": "H6565",
+          "pron": "헤파르"
+        },
+        {
+          "word": "יָפֵ֨ר",
+          "lemma": "פָּרַר",
+          "strong": "H6565",
+          "pron": "헤파르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 30:12",
+        "numbers 30:15",
+        "isaiah 24:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָפֵר֩ יָפֵ֨ר אֹתָ֥ם",
+      "pron": "헤파르 헤파르 에트",
+      "lemmas": [
+        "פָּרַר",
+        "פָּרַר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הָפֵר֩",
+          "lemma": "פָּרַר",
+          "strong": "H6565",
+          "pron": "헤파르"
+        },
+        {
+          "word": "יָפֵ֨ר",
+          "lemma": "פָּרַר",
+          "strong": "H6565",
+          "pron": "헤파르"
+        },
+        {
+          "word": "אֹתָ֥ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 30:12",
+        "numbers 30:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

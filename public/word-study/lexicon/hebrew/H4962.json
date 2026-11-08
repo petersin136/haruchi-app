@@ -1,6 +1,6 @@
 {
   "lemma": "מַת",
-  "pron": "미메팀",
+  "pron": "메테",
   "strong": "H4962",
   "posKo": "명사",
   "root": {
@@ -30,10 +30,142 @@
   ],
   "defEn": "adult",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 22,
   "byBook": {
+    "deuteronomy": 6,
+    "job": 6,
     "psalms": 4,
-    "genesis": 1
+    "isaiah": 3,
+    "chronicles1": 1,
+    "genesis": 1,
+    "jeremiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מְתֵ֣י מִסְפָּ֔ר",
+      "pron": "메테 밋파르",
+      "lemmas": [
+        "מַת",
+        "מִסְפָּר"
+      ],
+      "words": [
+        {
+          "word": "מְתֵ֣י",
+          "lemma": "מַת",
+          "strong": "H4962",
+          "pron": "메테"
+        },
+        {
+          "word": "מִסְפָּ֔ר",
+          "lemma": "מִסְפָּר",
+          "strong": "H4557",
+          "pron": "밋파르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 34:30",
+        "deuteronomy 4:27",
+        "deuteronomy 33:6",
+        "chronicles1 16:19",
+        "psalms 105:12",
+        "jeremiah 44:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וִיהִ֥י מְתָ֖יו",
+      "pron": "하에타 메테",
+      "lemmas": [
+        "הָיָה",
+        "מַת"
+      ],
+      "words": [
+        {
+          "word": "וִיהִ֥י",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "מְתָ֖יו",
+          "lemma": "מַת",
+          "strong": "H4962",
+          "pron": "메테"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 33:6",
+        "chronicles1 16:19",
+        "psalms 105:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וִיהִ֥י מְתָ֖יו מִסְפָּֽר",
+      "pron": "하에타 메테 밋파르",
+      "lemmas": [
+        "הָיָה",
+        "מַת",
+        "מִסְפָּר"
+      ],
+      "words": [
+        {
+          "word": "וִיהִ֥י",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "מְתָ֖יו",
+          "lemma": "מַת",
+          "strong": "H4962",
+          "pron": "메테"
+        },
+        {
+          "word": "מִסְפָּֽר",
+          "lemma": "מִסְפָּר",
+          "strong": "H4557",
+          "pron": "밋파르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 33:6",
+        "chronicles1 16:19",
+        "psalms 105:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עִ֣יר מְתִ֔ם",
+      "pron": "이르 메테",
+      "lemmas": [
+        "עִיר",
+        "מַת"
+      ],
+      "words": [
+        {
+          "word": "עִ֣יר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        },
+        {
+          "word": "מְתִ֔ם",
+          "lemma": "מַת",
+          "strong": "H4962",
+          "pron": "메테"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 2:34",
+        "deuteronomy 3:6",
+        "job 24:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

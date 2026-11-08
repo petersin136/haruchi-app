@@ -12,15 +12,50 @@
     {
       "lemma": "שָׂחַק",
       "strong": "H7832",
-      "pron": "이세하크",
+      "pron": "비위사헤크",
       "glossKo": "웃다"
     }
   ],
   "defEn": "laughter",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 15,
   "byBook": {
+    "ecclesiastes": 4,
+    "jeremiah": 4,
+    "job": 3,
+    "proverbs": 2,
+    "lamentations": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הָיִ֤יתִי לִשְׂחוֹק֙",
+      "pron": "하에타 세호크",
+      "lemmas": [
+        "הָיָה",
+        "שְׂחוֹק"
+      ],
+      "words": [
+        {
+          "word": "הָיִ֤יתִי",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "לִשְׂחוֹק֙",
+          "lemma": "שְׂחוֹק",
+          "strong": "H7814",
+          "pron": "세호크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 20:7",
+        "jeremiah 48:26",
+        "lamentations 3:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

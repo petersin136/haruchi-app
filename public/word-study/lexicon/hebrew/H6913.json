@@ -18,52 +18,195 @@
     {
       "lemma": "קָבַר",
       "strong": "H6912",
-      "pron": "코베르",
-      "glossKo": "장사하는 이"
+      "pron": "틱카베르",
+      "glossKo": "장사하다"
     },
     {
       "lemma": "קִבְרוֹת הַתַּאֲוָה",
       "strong": "H6914",
-      "pron": "",
+      "pron": "킵로트",
       "glossKo": "기브롯 핫다아와"
     }
   ],
   "defEn": "sepulchre",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 67,
   "byBook": {
+    "ezekiel": 9,
+    "chronicles2": 8,
     "genesis": 8,
-    "psalms": 3
+    "kings2": 6,
+    "samuel2": 6,
+    "isaiah": 5,
+    "job": 5,
+    "jeremiah": 4,
+    "kings1": 4,
+    "nehemiah": 3,
+    "psalms": 3,
+    "judges": 2,
+    "numbers": 2,
+    "exodus": 1,
+    "nahum": 1
   },
   "phrases": [
     {
-      "hebrew": "לַאֲחֻזַּת קָֽבֶר",
-      "pron": "바아훗자트카 케베르",
+      "hebrew": "אֶל קִבְרֹתֶיךָ֮",
+      "pron": "엘 케베르",
       "lemmas": [
-        "אֲחֻזָּה",
+        "אֵל",
         "קֶבֶר"
       ],
       "words": [
         {
-          "word": "לַאֲחֻזַּת",
-          "lemma": "אֲחֻזָּה",
-          "strong": "H272",
-          "pron": "바아훗자트카"
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
         },
         {
-          "word": "קָֽבֶר",
+          "word": "קִבְרֹתֶיךָ֮",
           "lemma": "קֶבֶר",
           "strong": "H6913",
           "pron": "케베르"
         }
       ],
+      "count": 7,
+      "refs": [
+        "samuel2 3:32",
+        "kings1 13:22",
+        "kings1 14:13",
+        "kings2 22:20",
+        "chronicles2 34:28",
+        "job 5:26",
+        "jeremiah 26:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת קִבְרֽוֹתֵיכֶ֗ם",
+      "pron": "에트 케베르",
+      "lemmas": [
+        "אֵת",
+        "קֶבֶר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "קִבְרֽוֹתֵיכֶ֗ם",
+          "lemma": "קֶבֶר",
+          "strong": "H6913",
+          "pron": "케베르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 23:6",
+        "kings1 13:31",
+        "kings2 23:16",
+        "ezekiel 37:12",
+        "ezekiel 37:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּקֶ֣בֶר אָבִ֔יו",
+      "pron": "케베르 아비브",
+      "lemmas": [
+        "קֶבֶר",
+        "אָב"
+      ],
+      "words": [
+        {
+          "word": "בְּקֶ֣בֶר",
+          "lemma": "קֶבֶר",
+          "strong": "H6913",
+          "pron": "케베르"
+        },
+        {
+          "word": "אָבִ֔יו",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel2 2:32",
+        "samuel2 17:23",
+        "samuel2 19:37",
+        "kings1 13:22",
+        "chronicles2 35:24",
+        "nehemiah 2:3",
+        "nehemiah 2:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּקָּבֵ֗ר בְּקֶ֨בֶר֙",
+      "pron": "틱카베르 케베르",
+      "lemmas": [
+        "קָבַר",
+        "קֶבֶר"
+      ],
+      "words": [
+        {
+          "word": "וַיִּקָּבֵ֗ר",
+          "lemma": "קָבַר",
+          "strong": "H6912",
+          "pron": "틱카베르"
+        },
+        {
+          "word": "בְּקֶ֨בֶר֙",
+          "lemma": "קֶבֶר",
+          "strong": "H6913",
+          "pron": "케베르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "judges 8:32",
+        "samuel2 2:32",
+        "samuel2 4:12",
+        "samuel2 17:23",
+        "chronicles2 16:14",
+        "chronicles2 24:25",
+        "chronicles2 35:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּקִבְרִ֗י אֲשֶׁ֨ר",
+      "pron": "케베르 아셰르",
+      "lemmas": [
+        "קֶבֶר",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "בְּקִבְרִ֗י",
+          "lemma": "קֶבֶר",
+          "strong": "H6913",
+          "pron": "케베르"
+        },
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
       "count": 5,
       "refs": [
-        "genesis 23:4",
-        "genesis 23:9",
-        "genesis 23:20",
-        "genesis 49:30",
-        "genesis 50:13"
+        "genesis 50:5",
+        "kings1 13:31",
+        "kings2 23:16",
+        "chronicles2 16:14",
+        "psalms 88:5"
       ],
       "glossKo": ""
     }

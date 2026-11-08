@@ -1,16 +1,152 @@
 {
   "lemma": "תְּאֵן",
-  "pron": "우테에나타므",
+  "pron": "테에나",
   "strong": "H8384",
   "posKo": "명사",
   "root": null,
   "family": [],
   "defEn": "fig",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 39,
   "byBook": {
+    "jeremiah": 12,
+    "isaiah": 3,
+    "joel": 3,
+    "hosea": 2,
+    "judges": 2,
+    "kings2": 2,
+    "numbers": 2,
+    "amos": 1,
+    "deuteronomy": 1,
     "genesis": 1,
-    "psalms": 1
+    "habakkuk": 1,
+    "haggai": 1,
+    "kings1": 1,
+    "micah": 1,
+    "nahum": 1,
+    "nehemiah": 1,
+    "proverbs": 1,
+    "psalms": 1,
+    "songofsolomon": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְגֶ֥פֶן וּתְאֵנָ֖ה",
+      "pron": "게펜 테에나",
+      "lemmas": [
+        "גֶּפֶן",
+        "תְּאֵן"
+      ],
+      "words": [
+        {
+          "word": "וְגֶ֥פֶן",
+          "lemma": "גֶּפֶן",
+          "strong": "H1612",
+          "pron": "게펜"
+        },
+        {
+          "word": "וּתְאֵנָ֖ה",
+          "lemma": "תְּאֵן",
+          "strong": "H8384",
+          "pron": "테에나"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 8:8",
+        "psalms 105:33",
+        "jeremiah 5:17",
+        "hosea 2:12",
+        "haggai 2:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּאֵנִ֣ים בַּתְּאֵנָ֗ה",
+      "pron": "테에나 테에나",
+      "lemmas": [
+        "תְּאֵן",
+        "תְּאֵן"
+      ],
+      "words": [
+        {
+          "word": "תְּאֵנִ֣ים",
+          "lemma": "תְּאֵן",
+          "strong": "H8384",
+          "pron": "테에나"
+        },
+        {
+          "word": "בַּתְּאֵנָ֗ה",
+          "lemma": "תְּאֵן",
+          "strong": "H8384",
+          "pron": "테에나"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 8:13",
+        "jeremiah 24:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְתַ֣חַת תְּאֵֽנָת֔וֹ",
+      "pron": "미타하트 테에나",
+      "lemmas": [
+        "תַּחַת",
+        "תְּאֵן"
+      ],
+      "words": [
+        {
+          "word": "וְתַ֣חַת",
+          "lemma": "תַּחַת",
+          "strong": "H8478",
+          "pron": "미타하트"
+        },
+        {
+          "word": "תְּאֵֽנָת֔וֹ",
+          "lemma": "תְּאֵן",
+          "strong": "H8384",
+          "pron": "테에나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 4:25",
+        "micah 4:4",
+        "zechariah 3:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּאֵנִים֙ טֹב֣וֹת",
+      "pron": "테에나 돕",
+      "lemmas": [
+        "תְּאֵן",
+        "טוֹב"
+      ],
+      "words": [
+        {
+          "word": "תְּאֵנִים֙",
+          "lemma": "תְּאֵן",
+          "strong": "H8384",
+          "pron": "테에나"
+        },
+        {
+          "word": "טֹב֣וֹת",
+          "lemma": "טוֹב",
+          "strong": "H2896",
+          "pron": "돕"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 24:2",
+        "jeremiah 24:3",
+        "jeremiah 24:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

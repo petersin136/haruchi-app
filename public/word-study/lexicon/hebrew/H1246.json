@@ -1,8 +1,8 @@
 {
   "lemma": "בַּקָּשָׁה",
-  "pron": "박카샤",
+  "pron": "박카샤토",
   "strong": "H1246",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בָּקַשׁ",
     "strong": "H1245",
@@ -12,13 +12,184 @@
     {
       "lemma": "בָּקַשׁ",
       "strong": "H1245",
-      "pron": "테바케슈",
-      "glossKo": "찾다"
+      "pron": "테바케셴나",
+      "glossKo": "그녀에게 찾다"
     }
   ],
   "defEn": "petition",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 8,
+  "byBook": {
+    "esther": 7,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וּמַה בַּקָּשָׁתֵ֛ךְ",
+      "pron": "마 박카샤토",
+      "lemmas": [
+        "מָה",
+        "בַּקָּשָׁה"
+      ],
+      "words": [
+        {
+          "word": "וּמַה",
+          "lemma": "מָה",
+          "strong": "H4100",
+          "pron": "마"
+        },
+        {
+          "word": "בַּקָּשָׁתֵ֛ךְ",
+          "lemma": "בַּקָּשָׁה",
+          "strong": "H1246",
+          "pron": "박카샤토"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "esther 5:3",
+        "esther 5:6",
+        "esther 7:2",
+        "esther 9:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּקָּשָׁתֵ֛ךְ עַד",
+      "pron": "박카샤토 앋",
+      "lemmas": [
+        "בַּקָּשָׁה",
+        "עַד"
+      ],
+      "words": [
+        {
+          "word": "בַּקָּשָׁתֵ֛ךְ",
+          "lemma": "בַּקָּשָׁה",
+          "strong": "H1246",
+          "pron": "박카샤토"
+        },
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 5:3",
+        "esther 5:6",
+        "esther 7:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּקָּשָׁתֵ֛ךְ עַד חֲצִ֥י",
+      "pron": "박카샤토 앋 바하치",
+      "lemmas": [
+        "בַּקָּשָׁה",
+        "עַד",
+        "חֵצִי"
+      ],
+      "words": [
+        {
+          "word": "בַּקָּשָׁתֵ֛ךְ",
+          "lemma": "בַּקָּשָׁה",
+          "strong": "H1246",
+          "pron": "박카샤토"
+        },
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "חֲצִ֥י",
+          "lemma": "חֵצִי",
+          "strong": "H2677",
+          "pron": "바하치"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 5:3",
+        "esther 5:6",
+        "esther 7:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיִנָּ֣תֵֽן וּמַה בַּקָּשָׁתֵ֛ךְ",
+      "pron": "바잇텐 마 박카샤토",
+      "lemmas": [
+        "נָתַן",
+        "מָה",
+        "בַּקָּשָׁה"
+      ],
+      "words": [
+        {
+          "word": "וְיִנָּ֣תֵֽן",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "וּמַה",
+          "lemma": "מָה",
+          "strong": "H4100",
+          "pron": "마"
+        },
+        {
+          "word": "בַּקָּשָׁתֵ֛ךְ",
+          "lemma": "בַּקָּשָׁה",
+          "strong": "H1246",
+          "pron": "박카샤토"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 5:6",
+        "esther 7:2",
+        "esther 9:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמַה בַּקָּשָׁתֵ֛ךְ עַד",
+      "pron": "마 박카샤토 앋",
+      "lemmas": [
+        "מָה",
+        "בַּקָּשָׁה",
+        "עַד"
+      ],
+      "words": [
+        {
+          "word": "וּמַה",
+          "lemma": "מָה",
+          "strong": "H4100",
+          "pron": "마"
+        },
+        {
+          "word": "בַּקָּשָׁתֵ֛ךְ",
+          "lemma": "בַּקָּשָׁה",
+          "strong": "H1246",
+          "pron": "박카샤토"
+        },
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 5:3",
+        "esther 5:6",
+        "esther 7:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

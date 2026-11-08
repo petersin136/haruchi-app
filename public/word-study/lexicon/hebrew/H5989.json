@@ -2,7 +2,7 @@
   "lemma": "עַמִּיהוּד",
   "pron": "암미훋",
   "strong": "H5989",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עַם",
     "strong": "H5971",
@@ -18,25 +18,115 @@
     {
       "lemma": "עַם",
       "strong": "H5972",
-      "pron": "",
+      "pron": "브암마",
       "glossKo": "백성(아람)"
     },
     {
       "lemma": "עַמּוֹן",
       "strong": "H5983",
-      "pron": "브암몬",
+      "pron": "암몬",
       "glossKo": "암몬 족속"
     },
     {
       "lemma": "עַמִּיאֵל",
       "strong": "H5988",
-      "pron": "",
+      "pron": "암미엘",
       "glossKo": "암미엘"
+    },
+    {
+      "lemma": "עַמִּיזָבָד",
+      "strong": "H5990",
+      "pron": "암미자받",
+      "glossKo": "암미사밧"
+    },
+    {
+      "lemma": "עַמִּיחוּר",
+      "strong": "H5991",
+      "pron": "밓브르",
+      "glossKo": "암미훌"
     }
   ],
   "defEn": "Ammihud",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 10,
+  "byBook": {
+    "numbers": 7,
+    "chronicles1": 2,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶּן עַמִּיהֽוּד",
+      "pron": "바님 암미훋",
+      "lemmas": [
+        "בֵּן",
+        "עַמִּיהוּד"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עַמִּיהֽוּד",
+          "lemma": "עַמִּיהוּד",
+          "strong": "H5989",
+          "pron": "암미훋"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "numbers 1:10",
+        "numbers 2:18",
+        "numbers 7:48",
+        "numbers 7:53",
+        "numbers 10:22",
+        "numbers 34:20",
+        "numbers 34:28",
+        "chronicles1 7:26",
+        "chronicles1 9:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֱלִישָׁמָ֖ע בֶּן עַמִּיהֽוּד",
+      "pron": "엘리샤마 바님 암미훋",
+      "lemmas": [
+        "אֱלִישָׁמָע",
+        "בֵּן",
+        "עַמִּיהוּד"
+      ],
+      "words": [
+        {
+          "word": "אֱלִישָׁמָ֖ע",
+          "lemma": "אֱלִישָׁמָע",
+          "strong": "H476",
+          "pron": "엘리샤마"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עַמִּיהֽוּד",
+          "lemma": "עַמִּיהוּד",
+          "strong": "H5989",
+          "pron": "암미훋"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 1:10",
+        "numbers 2:18",
+        "numbers 7:48",
+        "numbers 7:53",
+        "numbers 10:22"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

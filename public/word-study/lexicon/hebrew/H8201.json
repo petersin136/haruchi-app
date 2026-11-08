@@ -1,8 +1,8 @@
 {
   "lemma": "שֶׁפֶט",
-  "pron": "셰펟",
+  "pron": "우비셰파딤",
   "strong": "H8201",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁפַט",
     "strong": "H8199",
@@ -12,43 +12,87 @@
     {
       "lemma": "מִשְׁפָּט",
       "strong": "H4941",
-      "pron": "바미솁팓",
+      "pron": "우미솁팓",
       "glossKo": "공의"
     },
     {
       "lemma": "שְׁפוֹט",
       "strong": "H8196",
-      "pron": "",
+      "pron": "셰폳",
       "glossKo": "심판"
     },
     {
       "lemma": "שָׁפַט",
       "strong": "H8199",
-      "pron": "숍데",
-      "glossKo": "재판하는 이"
+      "pron": "이솁폳",
+      "glossKo": "재판하다"
     },
     {
       "lemma": "שְׁפַט",
       "strong": "H8200",
-      "pron": "",
+      "pron": "샵딘",
       "glossKo": "재판하다(아람)"
     },
     {
       "lemma": "שָׁפָט",
       "strong": "H8202",
-      "pron": "",
+      "pron": "샤팓",
       "glossKo": "사밧"
     },
     {
       "lemma": "שְׁפַטְיָה",
       "strong": "H8203",
-      "pron": "",
+      "pron": "셰팓아",
       "glossKo": "스바댜"
     }
   ],
   "defEn": "sentence; infliction",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 16,
+  "byBook": {
+    "ezekiel": 10,
+    "exodus": 3,
+    "chronicles2": 1,
+    "numbers": 1,
+    "proverbs": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְעָשִׂ֥יתִי שְׁפָטִ֖ים",
+      "pron": "바야아스 우비셰파딤",
+      "lemmas": [
+        "עָשָׂה",
+        "שֶׁפֶט"
+      ],
+      "words": [
+        {
+          "word": "וְעָשִׂ֥יתִי",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "שְׁפָטִ֖ים",
+          "lemma": "שֶׁפֶט",
+          "strong": "H8201",
+          "pron": "우비셰파딤"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 12:12",
+        "chronicles2 24:24",
+        "ezekiel 5:10",
+        "ezekiel 5:15",
+        "ezekiel 11:9",
+        "ezekiel 16:41",
+        "ezekiel 25:11",
+        "ezekiel 28:22",
+        "ezekiel 28:26",
+        "ezekiel 30:14",
+        "ezekiel 30:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

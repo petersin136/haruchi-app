@@ -1,6 +1,6 @@
 {
   "lemma": "דָּמָה",
-  "pron": "딤미누",
+  "pron": "딤미티",
   "strong": "H1819",
   "posKo": "동사",
   "root": null,
@@ -8,27 +8,134 @@
     {
       "lemma": "דְּמָה",
       "strong": "H1821",
-      "pron": "",
+      "pron": "다메",
       "glossKo": "닮다(아람)"
     },
     {
       "lemma": "דְּמוּת",
       "strong": "H1823",
-      "pron": "키데무트",
-      "glossKo": "모양"
+      "pron": "킫무테누",
+      "glossKo": "우리의 모양"
     },
     {
       "lemma": "דִּמְיוֹן",
       "strong": "H1825",
-      "pron": "딤온오",
+      "pron": "딤오노",
       "glossKo": "그의 모양"
     }
   ],
   "defEn": "compare",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 29,
   "byBook": {
-    "psalms": 5
+    "isaiah": 8,
+    "ezekiel": 5,
+    "psalms": 5,
+    "songofsolomon": 5,
+    "esther": 1,
+    "hosea": 1,
+    "judges": 1,
+    "lamentations": 1,
+    "numbers": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מִ֖י תְּדַמְּי֣וּן",
+      "pron": "미 딤미티",
+      "lemmas": [
+        "מִי",
+        "דָּמָה"
+      ],
+      "words": [
+        {
+          "word": "מִ֖י",
+          "lemma": "מִי",
+          "strong": "H4310",
+          "pron": "미"
+        },
+        {
+          "word": "תְּדַמְּי֣וּן",
+          "lemma": "דָּמָה",
+          "strong": "H1819",
+          "pron": "딤미티"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "isaiah 40:18",
+        "isaiah 40:25",
+        "isaiah 46:5",
+        "ezekiel 31:2",
+        "ezekiel 31:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶל מִ֖י תְּדַמְּי֣וּן",
+      "pron": "엘 미 딤미티",
+      "lemmas": [
+        "אֵל",
+        "מִי",
+        "דָּמָה"
+      ],
+      "words": [
+        {
+          "word": "וְאֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "מִ֖י",
+          "lemma": "מִי",
+          "strong": "H4310",
+          "pron": "미"
+        },
+        {
+          "word": "תְּדַמְּי֣וּן",
+          "lemma": "דָּמָה",
+          "strong": "H1819",
+          "pron": "딤미티"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 40:18",
+        "isaiah 40:25",
+        "ezekiel 31:2",
+        "ezekiel 31:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַּאֲשֶׁ֥ר דִּמִּ֛יתִי",
+      "pron": "아셰르 딤미티",
+      "lemmas": [
+        "אֲשֶׁר",
+        "דָּמָה"
+      ],
+      "words": [
+        {
+          "word": "כַּאֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "דִּמִּ֛יתִי",
+          "lemma": "דָּמָה",
+          "strong": "H1819",
+          "pron": "딤미티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 33:56",
+        "samuel2 21:5",
+        "isaiah 14:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

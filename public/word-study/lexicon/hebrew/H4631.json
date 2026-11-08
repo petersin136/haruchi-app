@@ -12,13 +12,19 @@
     {
       "lemma": "מָעוֹר",
       "strong": "H4589",
-      "pron": "",
-      "glossKo": "벌거벗음"
+      "pron": "메오레헴",
+      "glossKo": "그들의 벌거벗음"
+    },
+    {
+      "lemma": "מְעָרָה",
+      "strong": "H4632",
+      "pron": "우메아라",
+      "glossKo": "므아라"
     },
     {
       "lemma": "עוּר",
       "strong": "H5783",
-      "pron": "",
+      "pron": "테오르",
       "glossKo": "벗기다"
     },
     {
@@ -30,12 +36,55 @@
   ],
   "defEn": "cavern",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 40,
   "byBook": {
     "genesis": 11,
-    "psalms": 2
+    "joshua": 8,
+    "samuel1": 8,
+    "kings1": 4,
+    "isaiah": 2,
+    "psalms": 2,
+    "chronicles1": 1,
+    "ezekiel": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "samuel2": 1
   },
   "phrases": [
+    {
+      "hebrew": "אֶל מְעָרַ֖ת",
+      "pron": "엘 바메아라",
+      "lemmas": [
+        "אֵל",
+        "מְעָרָה"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "מְעָרַ֖ת",
+          "lemma": "מְעָרָה",
+          "strong": "H4631",
+          "pron": "바메아라"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 23:19",
+        "genesis 25:9",
+        "genesis 49:29",
+        "joshua 10:27",
+        "samuel1 22:1",
+        "samuel2 23:13",
+        "kings1 19:9",
+        "chronicles1 11:15"
+      ],
+      "glossKo": ""
+    },
     {
       "hebrew": "וְהַמְּעָרָ֥ה אֲשֶׁר",
       "pron": "바메아라 아셰르",
@@ -57,33 +106,70 @@
           "pron": "아셰르"
         }
       ],
-      "count": 6,
+      "count": 7,
       "refs": [
         "genesis 23:11",
         "genesis 23:17",
         "genesis 23:20",
         "genesis 49:29",
         "genesis 49:30",
-        "genesis 49:32"
+        "genesis 49:32",
+        "joshua 10:27"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֶל מְעָרַ֞ת",
-      "pron": "엘레모 바메아라",
+      "hebrew": "אֶל מְעָרַ֖ת עֲדֻלָּ֑ם",
+      "pron": "엘 바메아라 아둘람",
       "lemmas": [
         "אֵל",
-        "מְעָרָה"
+        "מְעָרָה",
+        "עֲדֻלָּם"
       ],
       "words": [
         {
           "word": "אֶל",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
         },
         {
-          "word": "מְעָרַ֞ת",
+          "word": "מְעָרַ֖ת",
+          "lemma": "מְעָרָה",
+          "strong": "H4631",
+          "pron": "바메아라"
+        },
+        {
+          "word": "עֲדֻלָּ֑ם",
+          "lemma": "עֲדֻלָּם",
+          "strong": "H5725",
+          "pron": "아둘람"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 22:1",
+        "samuel2 23:13",
+        "chronicles1 11:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת מְעָרַ֤ת",
+      "pron": "에트 바메아라",
+      "lemmas": [
+        "אֵת",
+        "מְעָרָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מְעָרַ֤ת",
           "lemma": "מְעָרָה",
           "strong": "H4631",
           "pron": "바메아라"
@@ -91,15 +177,15 @@
       ],
       "count": 3,
       "refs": [
-        "genesis 23:19",
-        "genesis 25:9",
-        "genesis 49:29"
+        "genesis 23:9",
+        "genesis 50:13",
+        "judges 6:2"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "הַשָּׂדֶה֙ וְהַמְּעָרָ֣ה",
-      "pron": "사다이 바메아라",
+      "pron": "아사데 바메아라",
       "lemmas": [
         "שָׂדֶה",
         "מְעָרָה"
@@ -109,49 +195,13 @@
           "word": "הַשָּׂדֶה֙",
           "lemma": "שָׂדֶה",
           "strong": "H7704",
-          "pron": "사다이"
+          "pron": "아사데"
         },
         {
           "word": "וְהַמְּעָרָ֣ה",
           "lemma": "מְעָרָה",
           "strong": "H4631",
           "pron": "바메아라"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 23:17",
-        "genesis 23:20",
-        "genesis 49:32"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "הַשָּׂדֶה֙ וְהַמְּעָרָ֣ה אֲשֶׁר",
-      "pron": "사다이 바메아라 아셰르",
-      "lemmas": [
-        "שָׂדֶה",
-        "מְעָרָה",
-        "אֲשֶׁר"
-      ],
-      "words": [
-        {
-          "word": "הַשָּׂדֶה֙",
-          "lemma": "שָׂדֶה",
-          "strong": "H7704",
-          "pron": "사다이"
-        },
-        {
-          "word": "וְהַמְּעָרָ֣ה",
-          "lemma": "מְעָרָה",
-          "strong": "H4631",
-          "pron": "바메아라"
-        },
-        {
-          "word": "אֲשֶׁר",
-          "lemma": "אֲשֶׁר",
-          "strong": "H834",
-          "pron": "아셰르"
         }
       ],
       "count": 3,

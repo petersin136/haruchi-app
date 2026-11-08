@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁכַח",
-  "pron": "샤카흐",
+  "pron": "브샤카흐",
   "strong": "H7911",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "שְׁכַח",
       "strong": "H7912",
-      "pron": "",
+      "pron": "우테하셱카흐",
       "glossKo": "찾다(아람)"
     },
     {
@@ -20,15 +20,28 @@
   ],
   "defEn": "mislay; be oblivious",
   "defKo": "",
-  "countOT": 36,
+  "countOT": 102,
   "byBook": {
     "psalms": 33,
-    "genesis": 3
+    "deuteronomy": 14,
+    "jeremiah": 13,
+    "isaiah": 10,
+    "job": 7,
+    "hosea": 5,
+    "proverbs": 5,
+    "ecclesiastes": 3,
+    "genesis": 3,
+    "ezekiel": 2,
+    "lamentations": 2,
+    "samuel1": 2,
+    "amos": 1,
+    "judges": 1,
+    "kings2": 1
   },
   "phrases": [
     {
       "hebrew": "לֹ֣א שָׁכָֽחְתִּי",
-      "pron": "로 샤카흐",
+      "pron": "로 브샤카흐",
       "lemmas": [
         "לֹא",
         "שָׁכַח"
@@ -44,28 +57,67 @@
           "word": "שָׁכָֽחְתִּי",
           "lemma": "שָׁכַח",
           "strong": "H7911",
-          "pron": "샤카흐"
+          "pron": "브샤카흐"
         }
       ],
-      "count": 11,
+      "count": 21,
       "refs": [
+        "deuteronomy 4:31",
+        "deuteronomy 25:19",
+        "deuteronomy 26:13",
+        "deuteronomy 31:21",
+        "samuel1 1:11",
+        "kings2 17:38",
         "psalms 9:12",
         "psalms 44:17",
         "psalms 78:7",
         "psalms 119:16",
         "psalms 119:61",
-        "psalms 119:83",
-        "psalms 119:93",
-        "psalms 119:109",
-        "psalms 119:141",
-        "psalms 119:153",
-        "psalms 119:176"
+        "psalms 119:83"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תִּשְׁכַּ֖ח אֶת",
+      "pron": "브샤카흐 에트",
+      "lemmas": [
+        "שָׁכַח",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "תִּשְׁכַּ֖ח",
+          "lemma": "שָׁכַח",
+          "strong": "H7911",
+          "pron": "브샤카흐"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "genesis 27:45",
+        "deuteronomy 4:9",
+        "deuteronomy 4:23",
+        "deuteronomy 4:31",
+        "deuteronomy 6:12",
+        "deuteronomy 8:11",
+        "deuteronomy 8:14",
+        "deuteronomy 8:19",
+        "deuteronomy 9:7",
+        "judges 3:7",
+        "samuel1 1:11",
+        "samuel1 12:9"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "אַל תִּשְׁכַּ֥ח",
-      "pron": "브엘 샤카흐",
+      "pron": "엘 브샤카흐",
       "lemmas": [
         "אַל",
         "שָׁכַח"
@@ -75,57 +127,96 @@
           "word": "אַל",
           "lemma": "אַל",
           "strong": "H408",
-          "pron": "브엘"
+          "pron": "엘"
         },
         {
           "word": "תִּשְׁכַּ֥ח",
           "lemma": "שָׁכַח",
           "strong": "H7911",
-          "pron": "샤카흐"
+          "pron": "브샤카흐"
         }
       ],
-      "count": 4,
+      "count": 7,
       "refs": [
+        "deuteronomy 9:7",
         "psalms 10:12",
         "psalms 74:19",
         "psalms 74:23",
-        "psalms 103:2"
+        "psalms 103:2",
+        "proverbs 3:1",
+        "proverbs 4:5"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "תּֽ֝וֹרָתְךָ֗ לֹ֣א שָׁכָֽחְתִּי",
-      "pron": "브토라트 로 샤카흐",
+      "hebrew": "וַֽיִּשְׁכְּח֖וּ אֶת יְהוָ֣ה",
+      "pron": "브샤카흐 에트 여호와",
       "lemmas": [
-        "תּוֹרָה",
-        "לֹא",
+        "שָׁכַח",
+        "אֵת",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וַֽיִּשְׁכְּח֖וּ",
+          "lemma": "שָׁכַח",
+          "strong": "H7911",
+          "pron": "브샤카흐"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יְהוָ֣ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "deuteronomy 6:12",
+        "deuteronomy 8:11",
+        "deuteronomy 8:14",
+        "deuteronomy 8:19",
+        "judges 3:7",
+        "samuel1 12:9",
+        "jeremiah 3:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי שָׁ֝כַ֗חְתִּי",
+      "pron": "키 브샤카흐",
+      "lemmas": [
+        "כִּי",
         "שָׁכַח"
       ],
       "words": [
         {
-          "word": "תּֽ֝וֹרָתְךָ֗",
-          "lemma": "תּוֹרָה",
-          "strong": "H8451",
-          "pron": "브토라트"
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
         },
         {
-          "word": "לֹ֣א",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        },
-        {
-          "word": "שָׁכָֽחְתִּי",
+          "word": "שָׁ֝כַ֗חְתִּי",
           "lemma": "שָׁכַח",
           "strong": "H7911",
-          "pron": "샤카흐"
+          "pron": "브샤카흐"
         }
       ],
-      "count": 3,
+      "count": 6,
       "refs": [
-        "psalms 119:61",
-        "psalms 119:109",
-        "psalms 119:153"
+        "psalms 102:4",
+        "psalms 119:139",
+        "ecclesiastes 9:5",
+        "isaiah 17:10",
+        "isaiah 65:16",
+        "jeremiah 18:15"
       ],
       "glossKo": ""
     }

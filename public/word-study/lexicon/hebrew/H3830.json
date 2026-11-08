@@ -1,6 +1,6 @@
 {
   "lemma": "לְבוּשׁ",
-  "pron": "레부시위",
+  "pron": "레부쇼",
   "strong": "H3830",
   "posKo": "명사",
   "root": {
@@ -12,40 +12,138 @@
     {
       "lemma": "לְבוּשׁ",
       "strong": "H3831",
-      "pron": "",
-      "glossKo": "옷(아람)"
+      "pron": "울부셰으혼",
+      "glossKo": "그들의 옷(아람)"
     },
     {
       "lemma": "לָבַשׁ",
       "strong": "H3847",
-      "pron": "일베슈",
-      "glossKo": "옷 입다"
+      "pron": "바알비솀",
+      "glossKo": "그들에게 옷 입다"
     },
     {
       "lemma": "לְבַשׁ",
       "strong": "H3848",
-      "pron": "",
+      "pron": "일바쉬",
       "glossKo": "입다(아람)"
     },
     {
       "lemma": "מַלְבּוּשׁ",
       "strong": "H4403",
-      "pron": "",
-      "glossKo": "의복"
+      "pron": "우말부셰으헴",
+      "glossKo": "그들의 의복"
     },
     {
       "lemma": "תַּלְבֹּשֶׁת",
       "strong": "H8516",
-      "pron": "",
+      "pron": "틸보셰트",
       "glossKo": "의복"
     }
   ],
   "defEn": "garment",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 33,
   "byBook": {
+    "job": 7,
+    "esther": 6,
     "psalms": 6,
-    "genesis": 1
+    "isaiah": 3,
+    "proverbs": 3,
+    "samuel2": 2,
+    "ezekiel": 1,
+    "genesis": 1,
+    "jeremiah": 1,
+    "kings2": 1,
+    "lamentations": 1,
+    "malachi": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בִּלְב֥וּשׁ שָֽׂק",
+      "pron": "레부쇼 사크",
+      "lemmas": [
+        "לְבוּשׁ",
+        "שַׂק"
+      ],
+      "words": [
+        {
+          "word": "בִּלְב֥וּשׁ",
+          "lemma": "לְבוּשׁ",
+          "strong": "H3830",
+          "pron": "레부쇼"
+        },
+        {
+          "word": "שָֽׂק",
+          "lemma": "שַׂק",
+          "strong": "H8242",
+          "pron": "사크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 4:2",
+        "psalms 35:13",
+        "psalms 69:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִבְּלִ֣י לְב֑וּשׁ",
+      "pron": "벨리 레부쇼",
+      "lemmas": [
+        "בְּלִי",
+        "לְבוּשׁ"
+      ],
+      "words": [
+        {
+          "word": "מִבְּלִ֣י",
+          "lemma": "בְּלִי",
+          "strong": "H1097",
+          "pron": "벨리"
+        },
+        {
+          "word": "לְב֑וּשׁ",
+          "lemma": "לְבוּשׁ",
+          "strong": "H3830",
+          "pron": "레부쇼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 24:7",
+        "job 24:10",
+        "job 31:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַ֖ל לְבוּשְׁכֶֽן",
+      "pron": "알 레부쇼",
+      "lemmas": [
+        "עַל",
+        "לְבוּשׁ"
+      ],
+      "words": [
+        {
+          "word": "עַ֖ל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "לְבוּשְׁכֶֽן",
+          "lemma": "לְבוּשׁ",
+          "strong": "H3830",
+          "pron": "레부쇼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 1:24",
+        "psalms 22:18",
+        "malachi 2:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "שִׂיחַ",
-  "pron": "브시히위",
+  "pron": "시히",
   "strong": "H7879",
   "posKo": "명사",
   "root": {
@@ -10,9 +10,15 @@
   },
   "family": [
     {
+      "lemma": "שֵׂחַ",
+      "strong": "H7808",
+      "pron": "세호",
+      "glossKo": "그의 묵상"
+    },
+    {
       "lemma": "שִׂיחַ",
       "strong": "H7878",
-      "pron": "아시하",
+      "pron": "시후",
       "glossKo": "묵상하다"
     },
     {
@@ -20,13 +26,24 @@
       "strong": "H7880",
       "pron": "시아흐",
       "glossKo": "관목"
+    },
+    {
+      "lemma": "שִׂיחָה",
+      "strong": "H7881",
+      "pron": "시하",
+      "glossKo": "묵상"
     }
   ],
   "defEn": "contemplation",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 14,
   "byBook": {
-    "psalms": 5
+    "job": 5,
+    "psalms": 5,
+    "kings1": 1,
+    "kings2": 1,
+    "proverbs": 1,
+    "samuel1": 1
   },
   "phrases": []
 }

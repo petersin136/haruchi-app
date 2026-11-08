@@ -8,21 +8,98 @@
     {
       "lemma": "קִדָּה",
       "strong": "H6916",
-      "pron": "",
+      "pron": "브킫다",
       "glossKo": "엎드림"
     },
     {
       "lemma": "קׇדְקֹד",
       "strong": "H6936",
-      "pron": "칻콛오",
-      "glossKo": "그의 정수리"
+      "pron": "우르칻콛",
+      "glossKo": "정수리"
     }
   ],
   "defEn": "shrivel up; contract; bend the body; in deference",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 15,
   "byBook": {
-    "genesis": 3
+    "exodus": 3,
+    "genesis": 3,
+    "chronicles2": 2,
+    "kings1": 2,
+    "samuel1": 2,
+    "chronicles1": 1,
+    "nehemiah": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וָאֶקֹּ֥ד וָֽאֶשְׁתַּחֲוֶ֖ה",
+      "pron": "바익콛 바이솃타후",
+      "lemmas": [
+        "קָדַד",
+        "שָׁחָה"
+      ],
+      "words": [
+        {
+          "word": "וָאֶקֹּ֥ד",
+          "lemma": "קָדַד",
+          "strong": "H6915",
+          "pron": "바익콛"
+        },
+        {
+          "word": "וָֽאֶשְׁתַּחֲוֶ֖ה",
+          "lemma": "שָׁחָה",
+          "strong": "H7812",
+          "pron": "바이솃타후"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 24:48",
+        "genesis 43:28",
+        "exodus 4:31",
+        "numbers 22:31",
+        "chronicles1 29:20",
+        "chronicles2 29:30",
+        "nehemiah 8:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וָאֶקֹּ֥ד וָֽאֶשְׁתַּחֲוֶ֖ה לַיהוָ֑ה",
+      "pron": "바익콛 바이솃타후 여호와",
+      "lemmas": [
+        "קָדַד",
+        "שָׁחָה",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וָאֶקֹּ֥ד",
+          "lemma": "קָדַד",
+          "strong": "H6915",
+          "pron": "바익콛"
+        },
+        {
+          "word": "וָֽאֶשְׁתַּחֲוֶ֖ה",
+          "lemma": "שָׁחָה",
+          "strong": "H7812",
+          "pron": "바이솃타후"
+        },
+        {
+          "word": "לַיהוָ֑ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 24:48",
+        "chronicles1 29:20",
+        "nehemiah 8:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

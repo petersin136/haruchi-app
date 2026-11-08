@@ -1,6 +1,6 @@
 {
   "lemma": "אֲנַחְנוּ",
-  "pron": "바아나헤누",
+  "pron": "아나헤누",
   "strong": "H587",
   "posKo": "대명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "אֲנוּ",
       "strong": "H580",
-      "pron": "",
+      "pron": "느브",
       "glossKo": "우리"
     },
     {
       "lemma": "אֲנַחְנָא",
       "strong": "H586",
-      "pron": "",
+      "pron": "아나헤나",
       "glossKo": "우리(아람)"
     },
     {
@@ -30,7 +30,7 @@
     {
       "lemma": "אָנֹכִי",
       "strong": "H595",
-      "pron": "브아노키",
+      "pron": "아노키",
       "glossKo": "나"
     },
     {
@@ -42,15 +42,70 @@
   ],
   "defEn": "we",
   "defKo": "",
-  "countOT": 25,
+  "countOT": 121,
   "byBook": {
     "genesis": 17,
-    "psalms": 8
+    "nehemiah": 16,
+    "jeremiah": 10,
+    "kings2": 9,
+    "joshua": 8,
+    "psalms": 8,
+    "ezra": 7,
+    "judges": 6,
+    "deuteronomy": 5,
+    "numbers": 5,
+    "samuel1": 5,
+    "chronicles2": 4,
+    "isaiah": 4,
+    "chronicles1": 3,
+    "ezekiel": 3,
+    "kings1": 3,
+    "lamentations": 2,
+    "daniel": 1,
+    "exodus": 1,
+    "job": 1,
+    "malachi": 1,
+    "micah": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
+      "hebrew": "אֲנַ֔חְנוּ לֹא",
+      "pron": "아나헤누 로",
+      "lemmas": [
+        "אֲנַחְנוּ",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "אֲנַ֔חְנוּ",
+          "lemma": "אֲנַחְנוּ",
+          "strong": "H587",
+          "pron": "아나헤누"
+        },
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 42:11",
+        "genesis 42:31",
+        "exodus 10:26",
+        "judges 21:18",
+        "chronicles2 20:12",
+        "nehemiah 4:10",
+        "job 8:9",
+        "jeremiah 8:20"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "גַּם אֲנַ֖חְנוּ",
-      "pron": "브감 바아나헤누",
+      "pron": "감 아나헤누",
       "lemmas": [
         "גַּם",
         "אֲנַחְנוּ"
@@ -60,29 +115,64 @@
           "word": "גַּם",
           "lemma": "גַּם",
           "strong": "H1571",
-          "pron": "브감"
+          "pron": "감"
         },
         {
           "word": "אֲנַ֖חְנוּ",
           "lemma": "אֲנַחְנוּ",
           "strong": "H587",
-          "pron": "바아나헤누"
+          "pron": "아나헤누"
         }
       ],
-      "count": 6,
+      "count": 8,
       "refs": [
         "genesis 43:8",
         "genesis 44:9",
         "genesis 44:16",
         "genesis 46:34",
         "genesis 47:3",
-        "genesis 47:19"
+        "genesis 47:19",
+        "joshua 24:18",
+        "samuel1 8:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִנֵּ֛ה אֲנַ֥חְנוּ",
+      "pron": "힌네 아나헤누",
+      "lemmas": [
+        "הִנֵּה",
+        "אֲנַחְנוּ"
+      ],
+      "words": [
+        {
+          "word": "הִנֵּ֛ה",
+          "lemma": "הִנֵּה",
+          "strong": "H2009",
+          "pron": "힌네"
+        },
+        {
+          "word": "אֲנַ֥חְנוּ",
+          "lemma": "אֲנַחְנוּ",
+          "strong": "H587",
+          "pron": "아나헤누"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 37:7",
+        "numbers 20:16",
+        "joshua 2:18",
+        "samuel1 14:8",
+        "samuel1 23:3",
+        "nehemiah 5:5",
+        "nehemiah 9:36"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "אֲנַ֖חְנוּ גַּם",
-      "pron": "바아나헤누 브감",
+      "pron": "아나헤누 감",
       "lemmas": [
         "אֲנַחְנוּ",
         "גַּם"
@@ -92,13 +182,13 @@
           "word": "אֲנַ֖חְנוּ",
           "lemma": "אֲנַחְנוּ",
           "strong": "H587",
-          "pron": "바아나헤누"
+          "pron": "아나헤누"
         },
         {
           "word": "גַּם",
           "lemma": "גַּם",
           "strong": "H1571",
-          "pron": "브감"
+          "pron": "감"
         }
       ],
       "count": 5,
@@ -113,7 +203,7 @@
     },
     {
       "hebrew": "גַּם אֲנַ֖חְנוּ גַּם",
-      "pron": "브감 바아나헤누 브감",
+      "pron": "감 아나헤누 감",
       "lemmas": [
         "גַּם",
         "אֲנַחְנוּ",
@@ -124,19 +214,19 @@
           "word": "גַּם",
           "lemma": "גַּם",
           "strong": "H1571",
-          "pron": "브감"
+          "pron": "감"
         },
         {
           "word": "אֲנַ֖חְנוּ",
           "lemma": "אֲנַחְנוּ",
           "strong": "H587",
-          "pron": "바아나헤누"
+          "pron": "아나헤누"
         },
         {
           "word": "גַּם",
           "lemma": "גַּם",
           "strong": "H1571",
-          "pron": "브감"
+          "pron": "감"
         }
       ],
       "count": 5,
@@ -146,35 +236,6 @@
         "genesis 46:34",
         "genesis 47:3",
         "genesis 47:19"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַאֲנַ֤חְנוּ עַמְּךָ֨",
-      "pron": "바아나헤누 암",
-      "lemmas": [
-        "אֲנַחְנוּ",
-        "עַם"
-      ],
-      "words": [
-        {
-          "word": "וַאֲנַ֤חְנוּ",
-          "lemma": "אֲנַחְנוּ",
-          "strong": "H587",
-          "pron": "바아나헤누"
-        },
-        {
-          "word": "עַמְּךָ֨",
-          "lemma": "עַם",
-          "strong": "H5971",
-          "pron": "암"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 79:13",
-        "psalms 95:7",
-        "psalms 100:3"
       ],
       "glossKo": ""
     }

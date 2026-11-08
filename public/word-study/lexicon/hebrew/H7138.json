@@ -1,6 +1,6 @@
 {
   "lemma": "קָרוֹב",
-  "pron": "케롭오",
+  "pron": "케로바",
   "strong": "H7138",
   "posKo": "형용사",
   "root": {
@@ -12,31 +12,31 @@
     {
       "lemma": "קָרַב",
       "strong": "H7126",
-      "pron": "비케롭",
+      "pron": "히케립",
       "glossKo": "가까이 오다"
     },
     {
       "lemma": "קְרֵב",
       "strong": "H7127",
-      "pron": "",
+      "pron": "메하케레빈",
       "glossKo": "가까이 가다(아람)"
     },
     {
       "lemma": "קְרָב",
       "strong": "H7128",
-      "pron": "미카랍",
+      "pron": "바케랍",
       "glossKo": "전쟁"
     },
     {
       "lemma": "קֶרֶב",
       "strong": "H7130",
-      "pron": "키렙바므",
-      "glossKo": "그들의 속"
+      "pron": "베키렙바흐",
+      "glossKo": "그녀의 속"
     },
     {
       "lemma": "קָרֵב",
       "strong": "H7131",
-      "pron": "",
+      "pron": "아카렙",
       "glossKo": "가까운"
     },
     {
@@ -48,10 +48,224 @@
   ],
   "defEn": "near",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 78,
   "byBook": {
+    "ezekiel": 11,
     "psalms": 9,
-    "genesis": 2
+    "deuteronomy": 8,
+    "isaiah": 8,
+    "jeremiah": 5,
+    "leviticus": 4,
+    "exodus": 3,
+    "job": 3,
+    "joel": 3,
+    "kings1": 3,
+    "zephaniah": 3,
+    "esther": 2,
+    "genesis": 2,
+    "numbers": 2,
+    "proverbs": 2,
+    "ruth": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "daniel": 1,
+    "ecclesiastes": 1,
+    "joshua": 1,
+    "nehemiah": 1,
+    "obadiah": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "קָרוֹב֙ אֵלַ֔י",
+      "pron": "케로바 엘",
+      "lemmas": [
+        "קָרוֹב",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "קָרוֹב֙",
+          "lemma": "קָרוֹב",
+          "strong": "H7138",
+          "pron": "케로바"
+        },
+        {
+          "word": "אֵלַ֔י",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "genesis 45:10",
+        "exodus 12:4",
+        "leviticus 21:2",
+        "leviticus 21:3",
+        "leviticus 25:25",
+        "numbers 27:11",
+        "deuteronomy 4:7",
+        "deuteronomy 13:7",
+        "deuteronomy 21:3",
+        "deuteronomy 21:6",
+        "deuteronomy 30:14",
+        "kings1 8:59"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֤י קָרוֹב֙",
+      "pron": "키 케로바",
+      "lemmas": [
+        "כִּי",
+        "קָרוֹב"
+      ],
+      "words": [
+        {
+          "word": "כִּ֤י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "קָרוֹב֙",
+          "lemma": "קָרוֹב",
+          "strong": "H7138",
+          "pron": "케로바"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 13:17",
+        "deuteronomy 30:14",
+        "deuteronomy 32:35",
+        "joshua 9:16",
+        "samuel2 19:42",
+        "isaiah 13:6",
+        "isaiah 56:1",
+        "ezekiel 30:3",
+        "joel 1:15",
+        "joel 2:1",
+        "joel 3:14",
+        "obadiah 1:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קָרוֹב֙ י֣וֹם",
+      "pron": "케로바 욤",
+      "lemmas": [
+        "קָרוֹב",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "קָרוֹב֙",
+          "lemma": "קָרוֹב",
+          "strong": "H7138",
+          "pron": "케로바"
+        },
+        {
+          "word": "י֣וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "deuteronomy 32:35",
+        "isaiah 13:6",
+        "ezekiel 7:7",
+        "ezekiel 30:3",
+        "joel 1:15",
+        "joel 3:14",
+        "obadiah 1:15",
+        "zephaniah 1:7",
+        "zephaniah 1:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּ֤י קָרוֹב֙ י֣וֹם",
+      "pron": "키 케로바 욤",
+      "lemmas": [
+        "כִּי",
+        "קָרוֹב",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "כִּ֤י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "קָרוֹב֙",
+          "lemma": "קָרוֹב",
+          "strong": "H7138",
+          "pron": "케로바"
+        },
+        {
+          "word": "י֣וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "deuteronomy 32:35",
+        "isaiah 13:6",
+        "ezekiel 30:3",
+        "joel 1:15",
+        "joel 3:14",
+        "obadiah 1:15",
+        "zephaniah 1:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קָרוֹב֙ י֣וֹם יְהוָ֔ה",
+      "pron": "케로바 욤 여호와",
+      "lemmas": [
+        "קָרוֹב",
+        "יוֹם",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "קָרוֹב֙",
+          "lemma": "קָרוֹב",
+          "strong": "H7138",
+          "pron": "케로바"
+        },
+        {
+          "word": "י֣וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "isaiah 13:6",
+        "ezekiel 30:3",
+        "joel 1:15",
+        "joel 3:14",
+        "obadiah 1:15",
+        "zephaniah 1:7",
+        "zephaniah 1:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

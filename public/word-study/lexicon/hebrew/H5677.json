@@ -12,7 +12,7 @@
     {
       "lemma": "עֲבַר",
       "strong": "H5675",
-      "pron": "",
+      "pron": "아바르",
       "glossKo": "건너편(아람)"
     },
     {
@@ -24,27 +24,36 @@
     {
       "lemma": "עֶבְרָה",
       "strong": "H5678",
-      "pron": "브압로트",
-      "glossKo": "진노"
+      "pron": "베엡라탐",
+      "glossKo": "그들의 진노"
+    },
+    {
+      "lemma": "עִבְרִי",
+      "strong": "H5680",
+      "pron": "하입리",
+      "glossKo": "히브리 사람"
     },
     {
       "lemma": "עֲבָרִים",
       "strong": "H5682",
-      "pron": "",
+      "pron": "하아바림",
       "glossKo": "아바림"
     },
     {
       "lemma": "עֶבְרֹן",
       "strong": "H5683",
-      "pron": "",
+      "pron": "브엡론",
       "glossKo": "에브론"
     }
   ],
   "defEn": "Eber",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 15,
   "byBook": {
-    "genesis": 7
+    "genesis": 7,
+    "chronicles1": 6,
+    "nehemiah": 1,
+    "numbers": 1
   },
   "phrases": [
     {
@@ -68,17 +77,18 @@
           "pron": "에베르"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "genesis 10:24",
         "genesis 11:14",
-        "genesis 11:15"
+        "genesis 11:15",
+        "chronicles1 1:18"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "יָלַ֥ד אֶת עֵֽבֶר",
-      "pron": "옐릳티카 에트 에베르",
+      "pron": "텔디 에트 에베르",
       "lemmas": [
         "יָלַד",
         "אֵת",
@@ -89,7 +99,7 @@
           "word": "יָלַ֥ד",
           "lemma": "יָלַד",
           "strong": "H3205",
-          "pron": "옐릳티카"
+          "pron": "텔디"
         },
         {
           "word": "אֶת",
@@ -104,11 +114,12 @@
           "pron": "에베르"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "genesis 10:24",
         "genesis 11:14",
-        "genesis 11:15"
+        "genesis 11:15",
+        "chronicles1 1:18"
       ],
       "glossKo": ""
     }

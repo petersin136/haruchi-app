@@ -18,14 +18,32 @@
   ],
   "defEn": "seventh",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 98,
   "byBook": {
-    "genesis": 4
+    "leviticus": 20,
+    "exodus": 17,
+    "numbers": 13,
+    "chronicles1": 8,
+    "chronicles2": 4,
+    "genesis": 4,
+    "joshua": 4,
+    "nehemiah": 4,
+    "deuteronomy": 3,
+    "ezra": 3,
+    "judges": 3,
+    "kings1": 3,
+    "kings2": 3,
+    "ezekiel": 2,
+    "jeremiah": 2,
+    "zechariah": 2,
+    "esther": 1,
+    "haggai": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "בַּיּ֣וֹם הַשְּׁבִיעִ֔י",
-      "pron": "아욤 아셰비이",
+      "hebrew": "בַּיּ֣וֹם הַשְּׁבִיעִ֗י",
+      "pron": "욤 아셰비이",
       "lemmas": [
         "יוֹם",
         "שְׁבִיעִי"
@@ -35,7 +53,45 @@
           "word": "בַּיּ֣וֹם",
           "lemma": "יוֹם",
           "strong": "H3117",
-          "pron": "아욤"
+          "pron": "욤"
+        },
+        {
+          "word": "הַשְּׁבִיעִ֗י",
+          "lemma": "שְׁבִיעִי",
+          "strong": "H7637",
+          "pron": "아셰비이"
+        }
+      ],
+      "count": 48,
+      "refs": [
+        "genesis 2:2",
+        "genesis 2:3",
+        "exodus 12:15",
+        "exodus 12:16",
+        "exodus 13:6",
+        "exodus 16:26",
+        "exodus 16:27",
+        "exodus 16:29",
+        "exodus 16:30",
+        "exodus 20:10",
+        "exodus 20:11",
+        "exodus 23:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַחֹ֣דֶשׁ הַשְּׁבִיעִ֔י",
+      "pron": "바호데쉬 아셰비이",
+      "lemmas": [
+        "חֹדֶשׁ",
+        "שְׁבִיעִי"
+      ],
+      "words": [
+        {
+          "word": "לַחֹ֣דֶשׁ",
+          "lemma": "חֹדֶשׁ",
+          "strong": "H2320",
+          "pron": "바호데쉬"
         },
         {
           "word": "הַשְּׁבִיעִ֔י",
@@ -44,10 +100,127 @@
           "pron": "아셰비이"
         }
       ],
-      "count": 3,
+      "count": 24,
       "refs": [
-        "genesis 2:2",
-        "genesis 2:3"
+        "genesis 8:4",
+        "leviticus 16:29",
+        "leviticus 23:24",
+        "leviticus 23:27",
+        "leviticus 23:34",
+        "leviticus 23:39",
+        "leviticus 23:41",
+        "leviticus 25:9",
+        "numbers 29:1",
+        "numbers 29:7",
+        "numbers 29:12",
+        "kings1 8:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבַשָּׁנָ֣ה הַשְּׁבִיעִ֗ת",
+      "pron": "브샤님 아셰비이",
+      "lemmas": [
+        "שָׁנֶה",
+        "שְׁבִיעִי"
+      ],
+      "words": [
+        {
+          "word": "וּבַשָּׁנָ֣ה",
+          "lemma": "שָׁנֶה",
+          "strong": "H8141",
+          "pron": "브샤님"
+        },
+        {
+          "word": "הַשְּׁבִיעִ֗ת",
+          "lemma": "שְׁבִיעִי",
+          "strong": "H7637",
+          "pron": "아셰비이"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "leviticus 25:4",
+        "leviticus 25:20",
+        "deuteronomy 15:12",
+        "kings2 11:4",
+        "kings2 18:9",
+        "chronicles2 23:1",
+        "ezra 7:8",
+        "nehemiah 10:31",
+        "ezekiel 20:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיְהִ֣י בַּיּ֣וֹם הַשְּׁבִיעִ֗י",
+      "pron": "하에타 욤 아셰비이",
+      "lemmas": [
+        "הָיָה",
+        "יוֹם",
+        "שְׁבִיעִי"
+      ],
+      "words": [
+        {
+          "word": "וַיְהִ֣י",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "בַּיּ֣וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "הַשְּׁבִיעִ֗י",
+          "lemma": "שְׁבִיעִי",
+          "strong": "H7637",
+          "pron": "아셰비이"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 16:27",
+        "leviticus 14:9",
+        "joshua 6:15",
+        "judges 14:15",
+        "judges 14:17",
+        "samuel2 12:18",
+        "kings1 20:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשְּׁבִיעִ֔י שַׁבָּ֖ת",
+      "pron": "아셰비이 샵바트",
+      "lemmas": [
+        "שְׁבִיעִי",
+        "שַׁבָּת"
+      ],
+      "words": [
+        {
+          "word": "הַשְּׁבִיעִ֔י",
+          "lemma": "שְׁבִיעִי",
+          "strong": "H7637",
+          "pron": "아셰비이"
+        },
+        {
+          "word": "שַׁבָּ֖ת",
+          "lemma": "שַׁבָּת",
+          "strong": "H7676",
+          "pron": "샵바트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 16:26",
+        "exodus 20:10",
+        "exodus 31:15",
+        "leviticus 23:3",
+        "leviticus 25:4",
+        "deuteronomy 5:14"
       ],
       "glossKo": ""
     }

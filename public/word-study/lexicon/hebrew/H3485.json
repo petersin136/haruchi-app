@@ -12,45 +12,220 @@
     {
       "lemma": "מַשָּׂא",
       "strong": "H4853",
-      "pron": "크맛사",
-      "glossKo": "짐"
+      "pron": "맛사오",
+      "glossKo": "그의 짐"
     },
     {
       "lemma": "מַשֹּׂא",
       "strong": "H4856",
-      "pron": "",
+      "pron": "우맛소",
       "glossKo": "편애"
     },
     {
       "lemma": "מַשָּׂאָה",
       "strong": "H4858",
-      "pron": "",
+      "pron": "맛사아",
       "glossKo": "타오름"
     },
     {
       "lemma": "מַשְׂאֵת",
       "strong": "H4864",
-      "pron": "마세아트",
+      "pron": "마세오트",
       "glossKo": "들어 올림"
     },
     {
       "lemma": "מִתְנַשֵּׂא",
       "strong": "H4984",
-      "pron": "",
+      "pron": "미테낫세",
       "glossKo": "지극히 높이심"
     },
     {
       "lemma": "נָשָׂא",
       "strong": "H5375",
-      "pron": "네사",
+      "pron": "미네소",
       "glossKo": "들다"
     }
   ],
   "defEn": "Jissaskar",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 43,
   "byBook": {
-    "genesis": 4
+    "numbers": 11,
+    "chronicles1": 9,
+    "joshua": 7,
+    "genesis": 4,
+    "ezekiel": 3,
+    "judges": 3,
+    "deuteronomy": 2,
+    "kings1": 2,
+    "chronicles2": 1,
+    "exodus": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לִבְנֵ֣י יִשָּׂשכָ֔ר",
+      "pron": "바님 잇삿카르",
+      "lemmas": [
+        "בֵּן",
+        "יִשָּׂשכָר"
+      ],
+      "words": [
+        {
+          "word": "לִבְנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יִשָּׂשכָ֔ר",
+          "lemma": "יִשָּׂשכָר",
+          "strong": "H3485",
+          "pron": "잇삿카르"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "genesis 46:13",
+        "numbers 1:28",
+        "numbers 2:5",
+        "numbers 10:15",
+        "numbers 26:23",
+        "numbers 34:26",
+        "joshua 19:17",
+        "joshua 19:23",
+        "chronicles1 7:1",
+        "chronicles1 12:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְמַטֵּ֣ה יִשָּׂשכָ֑ר",
+      "pron": "우맏데카 잇삿카르",
+      "lemmas": [
+        "מַטֶּה",
+        "יִשָּׂשכָר"
+      ],
+      "words": [
+        {
+          "word": "לְמַטֵּ֣ה",
+          "lemma": "מַטֶּה",
+          "strong": "H4294",
+          "pron": "우맏데카"
+        },
+        {
+          "word": "יִשָּׂשכָ֑ר",
+          "lemma": "יִשָּׂשכָר",
+          "strong": "H3485",
+          "pron": "잇삿카르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "numbers 1:29",
+        "numbers 2:5",
+        "numbers 13:7",
+        "joshua 21:6",
+        "joshua 21:28",
+        "chronicles1 6:62",
+        "chronicles1 6:72"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיִשָּׂשכָ֖ר וּזְבוּלֻֽן",
+      "pron": "잇삿카르 제불룬",
+      "lemmas": [
+        "יִשָּׂשכָר",
+        "זְבוּלוּן"
+      ],
+      "words": [
+        {
+          "word": "וְיִשָּׂשכָ֖ר",
+          "lemma": "יִשָּׂשכָר",
+          "strong": "H3485",
+          "pron": "잇삿카르"
+        },
+        {
+          "word": "וּזְבוּלֻֽן",
+          "lemma": "זְבוּלוּן",
+          "strong": "H2074",
+          "pron": "제불룬"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 35:23",
+        "exodus 1:3",
+        "chronicles1 2:1",
+        "chronicles1 12:40",
+        "chronicles2 30:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּנֵ֤י יִשָּׂשכָר֙ לְמִשְׁפְּחֹתָ֔ם",
+      "pron": "바님 잇삿카르 레미솁페호테헴",
+      "lemmas": [
+        "בֵּן",
+        "יִשָּׂשכָר",
+        "מִשְׁפָּחָה"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵ֤י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יִשָּׂשכָר֙",
+          "lemma": "יִשָּׂשכָר",
+          "strong": "H3485",
+          "pron": "잇삿카르"
+        },
+        {
+          "word": "לְמִשְׁפְּחֹתָ֔ם",
+          "lemma": "מִשְׁפָּחָה",
+          "strong": "H4940",
+          "pron": "레미솁페호테헴"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 26:23",
+        "joshua 19:17",
+        "joshua 19:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וִֽיהוּדָ֔ה וְיִשָּׂשכָ֖ר",
+      "pron": "예후다 잇삿카르",
+      "lemmas": [
+        "יְהוּדָה",
+        "יִשָּׂשכָר"
+      ],
+      "words": [
+        {
+          "word": "וִֽיהוּדָ֔ה",
+          "lemma": "יְהוּדָה",
+          "strong": "H3063",
+          "pron": "예후다"
+        },
+        {
+          "word": "וְיִשָּׂשכָ֖ר",
+          "lemma": "יִשָּׂשכָר",
+          "strong": "H3485",
+          "pron": "잇삿카르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 35:23",
+        "deuteronomy 27:12",
+        "chronicles1 2:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

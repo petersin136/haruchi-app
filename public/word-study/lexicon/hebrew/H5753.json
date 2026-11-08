@@ -1,6 +1,6 @@
 {
   "lemma": "עָוָה",
-  "pron": "나아베티",
+  "pron": "나아바트",
   "strong": "H5753",
   "posKo": "동사",
   "root": null,
@@ -8,31 +8,31 @@
     {
       "lemma": "מְעִי",
       "strong": "H4596",
-      "pron": "",
+      "pron": "메이",
       "glossKo": "더미"
     },
     {
       "lemma": "עַוָּה",
       "strong": "H5754",
-      "pron": "",
+      "pron": "아바",
       "glossKo": "패망"
     },
     {
       "lemma": "עִוְיָא",
       "strong": "H5758",
-      "pron": "",
-      "glossKo": "사악함(아람)"
+      "pron": "바아바아타크",
+      "glossKo": "너의 사악함(아람)"
     },
     {
       "lemma": "עָוֺן",
       "strong": "H5771",
-      "pron": "메아보니위",
+      "pron": "아보니",
       "glossKo": "나의 죄악"
     },
     {
       "lemma": "עַוְעֶה",
       "strong": "H5773",
-      "pron": "",
+      "pron": "이베임",
       "glossKo": "왜곡"
     },
     {
@@ -44,9 +44,116 @@
   ],
   "defEn": "crook",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 17,
   "byBook": {
-    "psalms": 2
+    "samuel2": 3,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "psalms": 2,
+    "chronicles2": 1,
+    "daniel": 1,
+    "esther": 1,
+    "job": 1,
+    "kings1": 1,
+    "lamentations": 1,
+    "proverbs": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְהֶעֱוִ֖ינוּ רָשָֽׁעְנוּ",
+      "pron": "나아바트 야레시운",
+      "lemmas": [
+        "עָוָה",
+        "רָשַׁע"
+      ],
+      "words": [
+        {
+          "word": "וְהֶעֱוִ֖ינוּ",
+          "lemma": "עָוָה",
+          "strong": "H5753",
+          "pron": "나아바트"
+        },
+        {
+          "word": "רָשָֽׁעְנוּ",
+          "lemma": "רָשַׁע",
+          "strong": "H7561",
+          "pron": "야레시운"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 8:47",
+        "chronicles2 6:37",
+        "psalms 106:6",
+        "daniel 9:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָטָ֥אנוּ וְהֶעֱוִ֖ינוּ",
+      "pron": "메하도 나아바트",
+      "lemmas": [
+        "חָטָא",
+        "עָוָה"
+      ],
+      "words": [
+        {
+          "word": "חָטָ֥אנוּ",
+          "lemma": "חָטָא",
+          "strong": "H2398",
+          "pron": "메하도"
+        },
+        {
+          "word": "וְהֶעֱוִ֖ינוּ",
+          "lemma": "עָוָה",
+          "strong": "H5753",
+          "pron": "나아바트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 8:47",
+        "chronicles2 6:37",
+        "daniel 9:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָטָ֥אנוּ וְהֶעֱוִ֖ינוּ רָשָֽׁעְנוּ",
+      "pron": "메하도 나아바트 야레시운",
+      "lemmas": [
+        "חָטָא",
+        "עָוָה",
+        "רָשַׁע"
+      ],
+      "words": [
+        {
+          "word": "חָטָ֥אנוּ",
+          "lemma": "חָטָא",
+          "strong": "H2398",
+          "pron": "메하도"
+        },
+        {
+          "word": "וְהֶעֱוִ֖ינוּ",
+          "lemma": "עָוָה",
+          "strong": "H5753",
+          "pron": "나아바트"
+        },
+        {
+          "word": "רָשָֽׁעְנוּ",
+          "lemma": "רָשַׁע",
+          "strong": "H7561",
+          "pron": "야레시운"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 8:47",
+        "chronicles2 6:37",
+        "daniel 9:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

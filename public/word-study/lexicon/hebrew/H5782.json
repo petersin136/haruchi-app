@@ -1,6 +1,6 @@
 {
   "lemma": "עוּר",
-  "pron": "브우라",
+  "pron": "야이르",
   "strong": "H5782",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "עִיר",
       "strong": "H5892",
-      "pron": "브아림",
+      "pron": "이르",
       "glossKo": "성읍"
     },
     {
       "lemma": "עִיר",
       "strong": "H5894",
-      "pron": "",
+      "pron": "이르",
       "glossKo": "감시자(아람)"
     },
     {
@@ -26,7 +26,7 @@
     {
       "lemma": "עִירָא",
       "strong": "H5896",
-      "pron": "",
+      "pron": "이라",
       "glossKo": "이라"
     },
     {
@@ -44,9 +44,183 @@
   ],
   "defEn": "wake",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 80,
   "byBook": {
-    "psalms": 12
+    "isaiah": 18,
+    "psalms": 12,
+    "songofsolomon": 9,
+    "jeremiah": 6,
+    "job": 6,
+    "zechariah": 5,
+    "judges": 4,
+    "chronicles1": 3,
+    "joel": 3,
+    "chronicles2": 2,
+    "daniel": 2,
+    "ezra": 2,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "habakkuk": 1,
+    "haggai": 1,
+    "hosea": 1,
+    "malachi": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עוּרִ֤י עוּרִי֙",
+      "pron": "야이르 야이르",
+      "lemmas": [
+        "עוּר",
+        "עוּר"
+      ],
+      "words": [
+        {
+          "word": "עוּרִ֤י",
+          "lemma": "עוּר",
+          "strong": "H5782",
+          "pron": "야이르"
+        },
+        {
+          "word": "עוּרִי֙",
+          "lemma": "עוּר",
+          "strong": "H5782",
+          "pron": "야이르"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "judges 5:12",
+        "isaiah 51:9",
+        "isaiah 51:17",
+        "isaiah 52:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עוֹרֵ֣ר אֶת",
+      "pron": "야이르 에트",
+      "lemmas": [
+        "עוּר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "עוֹרֵ֣ר",
+          "lemma": "עוּר",
+          "strong": "H5782",
+          "pron": "야이르"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "samuel2 23:18",
+        "chronicles1 11:11",
+        "chronicles1 11:20",
+        "psalms 80:2",
+        "songofsolomon 2:7",
+        "songofsolomon 3:5",
+        "songofsolomon 8:4",
+        "ezekiel 23:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֵעִ֣יר יְהוָ֗ה",
+      "pron": "야이르 여호와",
+      "lemmas": [
+        "עוּר",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "הֵעִ֣יר",
+          "lemma": "עוּר",
+          "strong": "H5782",
+          "pron": "야이르"
+        },
+        {
+          "word": "יְהוָ֗ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "chronicles2 21:16",
+        "chronicles2 36:22",
+        "ezra 1:1",
+        "jeremiah 51:11",
+        "haggai 1:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָעִ֣יר עָלֶ֑יךָ",
+      "pron": "야이르 알",
+      "lemmas": [
+        "עוּר",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "יָעִ֣יר",
+          "lemma": "עוּר",
+          "strong": "H5782",
+          "pron": "야이르"
+        },
+        {
+          "word": "עָלֶ֑יךָ",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "job 8:6",
+        "isaiah 10:26",
+        "isaiah 13:17",
+        "jeremiah 51:1",
+        "zechariah 13:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִם תָּעִ֧ירוּ",
+      "pron": "임 야이르",
+      "lemmas": [
+        "אִם",
+        "עוּר"
+      ],
+      "words": [
+        {
+          "word": "אִם",
+          "lemma": "אִם",
+          "strong": "H518",
+          "pron": "임"
+        },
+        {
+          "word": "תָּעִ֧ירוּ",
+          "lemma": "עוּר",
+          "strong": "H5782",
+          "pron": "야이르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "songofsolomon 2:7",
+        "songofsolomon 3:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

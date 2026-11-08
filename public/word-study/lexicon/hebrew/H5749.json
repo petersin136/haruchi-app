@@ -1,6 +1,6 @@
 {
   "lemma": "עוּד",
-  "pron": "바니테오닫",
+  "pron": "하엗",
   "strong": "H5749",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "עֵד",
       "strong": "H5707",
-      "pron": "에데",
+      "pron": "르엗",
       "glossKo": "증인"
     },
     {
@@ -20,22 +20,194 @@
     {
       "lemma": "עוֹדֵד",
       "strong": "H5752",
-      "pron": "",
+      "pron": "오덷",
       "glossKo": "오뎃"
     },
     {
       "lemma": "תְּעוּדָה",
       "strong": "H8584",
-      "pron": "",
+      "pron": "아테우다",
       "glossKo": "찰싹 붙다"
     }
   ],
   "defEn": "duplicate; repeat",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 44,
   "byBook": {
+    "jeremiah": 8,
+    "nehemiah": 6,
     "psalms": 6,
-    "genesis": 2
+    "deuteronomy": 5,
+    "exodus": 3,
+    "kings1": 3,
+    "genesis": 2,
+    "kings2": 2,
+    "samuel1": 2,
+    "amos": 1,
+    "chronicles2": 1,
+    "isaiah": 1,
+    "job": 1,
+    "lamentations": 1,
+    "malachi": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הָעֵ֣ד הֵעִד֩",
+      "pron": "하엗 하엗",
+      "lemmas": [
+        "עוּד",
+        "עוּד"
+      ],
+      "words": [
+        {
+          "word": "הָעֵ֣ד",
+          "lemma": "עוּד",
+          "strong": "H5749",
+          "pron": "하엗"
+        },
+        {
+          "word": "הֵעִד֩",
+          "lemma": "עוּד",
+          "strong": "H5749",
+          "pron": "하엗"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 43:3",
+        "samuel1 8:9",
+        "jeremiah 11:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַעִידֹתִי֩ הַיּ֜וֹם",
+      "pron": "하엗 욤",
+      "lemmas": [
+        "עוּד",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "הַעִידֹתִי֩",
+          "lemma": "עוּד",
+          "strong": "H5749",
+          "pron": "하엗"
+        },
+        {
+          "word": "הַיּ֜וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 4:26",
+        "deuteronomy 8:19",
+        "deuteronomy 30:19",
+        "deuteronomy 32:46",
+        "nehemiah 13:15",
+        "jeremiah 42:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַעֵדֹ֤תָה לֵאמֹ֔ר",
+      "pron": "하엗 바요메르",
+      "lemmas": [
+        "עוּד",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "הַעֵדֹ֤תָה",
+          "lemma": "עוּד",
+          "strong": "H5749",
+          "pron": "하엗"
+        },
+        {
+          "word": "לֵאמֹ֔ר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 19:23",
+        "kings1 2:42",
+        "kings1 21:10",
+        "nehemiah 13:21",
+        "jeremiah 11:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאָעִ֣ידָה עֵדִ֖ים",
+      "pron": "하엗 르엗",
+      "lemmas": [
+        "עוּד",
+        "עֵד"
+      ],
+      "words": [
+        {
+          "word": "וְאָעִ֣ידָה",
+          "lemma": "עוּד",
+          "strong": "H5749",
+          "pron": "하엗"
+        },
+        {
+          "word": "עֵדִ֖ים",
+          "lemma": "עֵד",
+          "strong": "H5707",
+          "pron": "르엗"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 8:2",
+        "jeremiah 32:10",
+        "jeremiah 32:25",
+        "jeremiah 32:44"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי הָעֵ֤ד תָּעִיד֙",
+      "pron": "키 하엗 하엗",
+      "lemmas": [
+        "כִּי",
+        "עוּד",
+        "עוּד"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "הָעֵ֤ד",
+          "lemma": "עוּד",
+          "strong": "H5749",
+          "pron": "하엗"
+        },
+        {
+          "word": "תָּעִיד֙",
+          "lemma": "עוּד",
+          "strong": "H5749",
+          "pron": "하엗"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 8:9",
+        "jeremiah 11:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

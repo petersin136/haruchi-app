@@ -2,7 +2,7 @@
   "lemma": "שָׁמִיר",
   "pron": "샤미르",
   "strong": "H8068",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁמַר",
     "strong": "H8104",
@@ -12,13 +12,13 @@
     {
       "lemma": "אַשְׁמֻרָה",
       "strong": "H821",
-      "pron": "브아셰무로트",
+      "pron": "브아셰모레트",
       "glossKo": "야경"
     },
     {
       "lemma": "יִשְׁמְרַי",
       "strong": "H3461",
-      "pron": "",
+      "pron": "브이솀라이",
       "glossKo": "이스므래"
     },
     {
@@ -30,19 +30,99 @@
     {
       "lemma": "שׁוֹמֵר",
       "strong": "H7763",
-      "pron": "",
+      "pron": "쇼메르",
       "glossKo": "소멜"
+    },
+    {
+      "lemma": "שָׁמִיר",
+      "strong": "H8069",
+      "pron": "샤미르",
+      "glossKo": "사밀"
     },
     {
       "lemma": "שָׁמַר",
       "strong": "H8104",
-      "pron": "티솀레므",
-      "glossKo": "그들에게 지키다"
+      "pron": "울샴라흐",
+      "glossKo": "그녀에게 지키다"
     }
   ],
   "defEn": "thorn",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 11,
+  "byBook": {
+    "isaiah": 8,
+    "ezekiel": 1,
+    "jeremiah": 1,
+    "zechariah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "שָׁמִ֥יר וָשַׁ֖יִת",
+      "pron": "샤미르 바샤이트",
+      "lemmas": [
+        "שָׁמִיר",
+        "שַׁיִת"
+      ],
+      "words": [
+        {
+          "word": "שָׁמִ֥יר",
+          "lemma": "שָׁמִיר",
+          "strong": "H8068",
+          "pron": "샤미르"
+        },
+        {
+          "word": "וָשַׁ֖יִת",
+          "lemma": "שַׁיִת",
+          "strong": "H7898",
+          "pron": "바샤이트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "isaiah 5:6",
+        "isaiah 7:23",
+        "isaiah 7:24",
+        "isaiah 7:25",
+        "isaiah 9:18",
+        "isaiah 27:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַשָּׁמִ֥יר וְלַשַּׁ֖יִת יִֽהְיֶֽה",
+      "pron": "샤미르 바샤이트 하에타",
+      "lemmas": [
+        "שָׁמִיר",
+        "שַׁיִת",
+        "הָיָה"
+      ],
+      "words": [
+        {
+          "word": "לַשָּׁמִ֥יר",
+          "lemma": "שָׁמִיר",
+          "strong": "H8068",
+          "pron": "샤미르"
+        },
+        {
+          "word": "וְלַשַּׁ֖יִת",
+          "lemma": "שַׁיִת",
+          "strong": "H7898",
+          "pron": "바샤이트"
+        },
+        {
+          "word": "יִֽהְיֶֽה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 7:23",
+        "isaiah 7:24",
+        "isaiah 7:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,13 +12,13 @@
     {
       "lemma": "עָבוּר",
       "strong": "H5668",
-      "pron": "바아부르",
-      "glossKo": "~때문에"
+      "pron": "바아부레카",
+      "glossKo": "너의 ~때문에"
     },
     {
       "lemma": "עָבַר",
       "strong": "H5674",
-      "pron": "오베르",
+      "pron": "바야아베르",
       "glossKo": "건너다"
     },
     {
@@ -30,15 +30,79 @@
     {
       "lemma": "עֲבָרָה",
       "strong": "H5679",
-      "pron": "",
+      "pron": "브블브트",
       "glossKo": "건넘"
     }
   ],
   "defEn": "crossing; ford; pass; transit; overwhelming",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 11,
   "byBook": {
-    "genesis": 1
+    "isaiah": 3,
+    "judges": 3,
+    "samuel1": 2,
+    "genesis": 1,
+    "jeremiah": 1,
+    "joshua": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֵ֖ת מַעֲבַ֥ר",
+      "pron": "에트 마아바르",
+      "lemmas": [
+        "אֵת",
+        "מַעֲבָר"
+      ],
+      "words": [
+        {
+          "word": "אֵ֖ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מַעֲבַ֥ר",
+          "lemma": "מַעֲבָר",
+          "strong": "H4569",
+          "pron": "마아바르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 32:22",
+        "judges 3:28",
+        "judges 12:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַעְבְּר֤וֹת הַיַּרְדֵּן֙",
+      "pron": "마아바르 아야렏덴",
+      "lemmas": [
+        "מַעֲבָר",
+        "יַרְדֵּן"
+      ],
+      "words": [
+        {
+          "word": "מַעְבְּר֤וֹת",
+          "lemma": "מַעֲבָר",
+          "strong": "H4569",
+          "pron": "마아바르"
+        },
+        {
+          "word": "הַיַּרְדֵּן֙",
+          "lemma": "יַרְדֵּן",
+          "strong": "H3383",
+          "pron": "아야렏덴"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 3:28",
+        "judges 12:5",
+        "judges 12:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

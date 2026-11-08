@@ -1,6 +1,6 @@
 {
   "lemma": "צָרַר",
-  "pron": "초레라위",
+  "pron": "체루로트",
   "strong": "H6887",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "צַר",
       "strong": "H6862",
-      "pron": "차라위",
-      "glossKo": "나의 대적"
+      "pron": "차레카",
+      "glossKo": "너의 대적"
     },
     {
       "lemma": "צֵר",
       "strong": "H6863",
-      "pron": "",
+      "pron": "체르",
       "glossKo": "세르"
     },
     {
@@ -26,14 +26,33 @@
   ],
   "defEn": "cramp",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 53,
   "byBook": {
-    "psalms": 16
+    "psalms": 16,
+    "esther": 4,
+    "numbers": 4,
+    "deuteronomy": 3,
+    "isaiah": 3,
+    "jeremiah": 3,
+    "chronicles2": 2,
+    "exodus": 2,
+    "hosea": 2,
+    "proverbs": 2,
+    "samuel1": 2,
+    "samuel2": 2,
+    "amos": 1,
+    "job": 1,
+    "joshua": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "lamentations": 1,
+    "leviticus": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
       "hebrew": "בְּכָל צוֹרְרָֽי",
-      "pron": "브콜 초레라위",
+      "pron": "칼 체루로트",
       "lemmas": [
         "כֹּל",
         "צָרַר"
@@ -43,13 +62,13 @@
           "word": "בְּכָל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
           "word": "צוֹרְרָֽי",
           "lemma": "צָרַר",
           "strong": "H6887",
-          "pron": "초레라위"
+          "pron": "체루로트"
         }
       ],
       "count": 5,
@@ -59,6 +78,124 @@
         "psalms 31:11",
         "psalms 69:19",
         "psalms 143:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי צַר",
+      "pron": "키 체루로트",
+      "lemmas": [
+        "כִּי",
+        "צָרַר"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "צַר",
+          "lemma": "צָרַר",
+          "strong": "H6887",
+          "pron": "체루로트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 25:18",
+        "kings1 8:37",
+        "psalms 31:9",
+        "psalms 69:17",
+        "lamentations 1:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַצֹּרֵ֣ר אֶתְכֶ֔ם",
+      "pron": "체루로트 에트",
+      "lemmas": [
+        "צָרַר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הַצֹּרֵ֣ר",
+          "lemma": "צָרַר",
+          "strong": "H6887",
+          "pron": "체루로트"
+        },
+        {
+          "word": "אֶתְכֶ֔ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 10:9",
+        "numbers 25:17",
+        "numbers 33:55",
+        "isaiah 11:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהֵצַ֨ר בְּכָל",
+      "pron": "체루로트 칼",
+      "lemmas": [
+        "צָרַר",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "וְהֵצַ֨ר",
+          "lemma": "צָרַר",
+          "strong": "H6887",
+          "pron": "체루로트"
+        },
+        {
+          "word": "בְּכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 28:52",
+        "esther 9:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "צֹרֵ֥ר הַיְּהוּדִֽים",
+      "pron": "체루로트 아예후딤",
+      "lemmas": [
+        "צָרַר",
+        "יְהוּדִי"
+      ],
+      "words": [
+        {
+          "word": "צֹרֵ֥ר",
+          "lemma": "צָרַר",
+          "strong": "H6887",
+          "pron": "체루로트"
+        },
+        {
+          "word": "הַיְּהוּדִֽים",
+          "lemma": "יְהוּדִי",
+          "strong": "H3064",
+          "pron": "아예후딤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 3:10",
+        "esther 8:1",
+        "esther 9:10"
       ],
       "glossKo": ""
     }

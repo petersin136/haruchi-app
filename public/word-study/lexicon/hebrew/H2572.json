@@ -30,37 +30,214 @@
   ],
   "defEn": "fifty",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 163,
   "byBook": {
-    "genesis": 9
+    "numbers": 33,
+    "kings2": 25,
+    "exodus": 23,
+    "ezekiel": 14,
+    "ezra": 12,
+    "kings1": 10,
+    "genesis": 9,
+    "nehemiah": 9,
+    "chronicles2": 7,
+    "chronicles1": 5,
+    "leviticus": 5,
+    "deuteronomy": 2,
+    "esther": 2,
+    "samuel1": 2,
+    "samuel2": 2,
+    "haggai": 1,
+    "isaiah": 1,
+    "joshua": 1
   },
   "phrases": [
     {
-      "hebrew": "חֲמִשִּׁ֥ים צַדִּיקִ֖ם",
-      "pron": "하밋심 찯디킴",
+      "hebrew": "מֵא֖וֹת וַחֲמִשִּֽׁים",
+      "pron": "우메아트 하밋심",
       "lemmas": [
-        "חֲמִשִּׁים",
-        "צַדִּיק"
+        "מֵאָה",
+        "חֲמִשִּׁים"
       ],
       "words": [
         {
-          "word": "חֲמִשִּׁ֥ים",
+          "word": "מֵא֖וֹת",
+          "lemma": "מֵאָה",
+          "strong": "H3967",
+          "pron": "우메아트"
+        },
+        {
+          "word": "וַחֲמִשִּֽׁים",
+          "lemma": "חֲמִשִּׁים",
+          "strong": "H2572",
+          "pron": "하밋심"
+        }
+      ],
+      "count": 27,
+      "refs": [
+        "exodus 38:26",
+        "numbers 1:25",
+        "numbers 1:46",
+        "numbers 2:15",
+        "numbers 2:16",
+        "numbers 2:32",
+        "numbers 4:36",
+        "numbers 31:52",
+        "kings1 18:19",
+        "kings1 18:22",
+        "chronicles1 5:21",
+        "chronicles1 8:40"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲמִשִּׁ֤ים אַמָּה֙",
+      "pron": "하밋심 암마",
+      "lemmas": [
+        "חֲמִשִּׁים",
+        "אַמָּה"
+      ],
+      "words": [
+        {
+          "word": "חֲמִשִּׁ֤ים",
           "lemma": "חֲמִשִּׁים",
           "strong": "H2572",
           "pron": "하밋심"
         },
         {
-          "word": "צַדִּיקִ֖ם",
-          "lemma": "צַדִּיק",
-          "strong": "H6662",
-          "pron": "찯디킴"
+          "word": "אַמָּה֙",
+          "lemma": "אַמָּה",
+          "strong": "H520",
+          "pron": "암마"
         }
       ],
-      "count": 4,
+      "count": 19,
       "refs": [
-        "genesis 18:24",
-        "genesis 18:26",
-        "genesis 18:28"
+        "genesis 6:15",
+        "exodus 27:12",
+        "exodus 27:13",
+        "exodus 38:12",
+        "exodus 38:13",
+        "kings1 7:2",
+        "kings1 7:6",
+        "esther 5:14",
+        "esther 7:9",
+        "ezekiel 40:15",
+        "ezekiel 40:21",
+        "ezekiel 40:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַחֲמִשִּׁ֛ים אֶ֖לֶף",
+      "pron": "하밋심 엘렙",
+      "lemmas": [
+        "חֲמִשִּׁים",
+        "אֶלֶף"
+      ],
+      "words": [
+        {
+          "word": "וַחֲמִשִּׁ֛ים",
+          "lemma": "חֲמִשִּׁים",
+          "strong": "H2572",
+          "pron": "하밋심"
+        },
+        {
+          "word": "אֶ֖לֶף",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "numbers 1:23",
+        "numbers 1:29",
+        "numbers 1:31",
+        "numbers 1:43",
+        "numbers 2:6",
+        "numbers 2:8",
+        "numbers 2:13",
+        "numbers 2:16",
+        "numbers 2:30",
+        "numbers 2:31",
+        "numbers 26:34",
+        "numbers 26:47"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲמִשִּׁ֣ים וּמָאתָ֑יִם",
+      "pron": "하밋심 우메아트",
+      "lemmas": [
+        "חֲמִשִּׁים",
+        "מֵאָה"
+      ],
+      "words": [
+        {
+          "word": "חֲמִשִּׁ֣ים",
+          "lemma": "חֲמִשִּׁים",
+          "strong": "H2572",
+          "pron": "하밋심"
+        },
+        {
+          "word": "וּמָאתָ֑יִם",
+          "lemma": "מֵאָה",
+          "strong": "H3967",
+          "pron": "우메아트"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "genesis 7:24",
+        "genesis 8:3",
+        "exodus 30:23",
+        "numbers 16:2",
+        "numbers 16:17",
+        "numbers 16:35",
+        "numbers 26:10",
+        "kings1 10:29",
+        "chronicles2 1:17",
+        "chronicles2 8:10",
+        "ezekiel 48:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲמִשִּׁ֣ים שָׁנָ֑ה",
+      "pron": "하밋심 브샤님",
+      "lemmas": [
+        "חֲמִשִּׁים",
+        "שָׁנֶה"
+      ],
+      "words": [
+        {
+          "word": "חֲמִשִּׁ֣ים",
+          "lemma": "חֲמִשִּׁים",
+          "strong": "H2572",
+          "pron": "하밋심"
+        },
+        {
+          "word": "שָׁנָ֑ה",
+          "lemma": "שָׁנֶה",
+          "strong": "H8141",
+          "pron": "브샤님"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "genesis 9:28",
+        "genesis 9:29",
+        "leviticus 25:10",
+        "leviticus 25:11",
+        "numbers 4:3",
+        "numbers 4:23",
+        "numbers 4:30",
+        "numbers 4:35",
+        "numbers 4:39",
+        "numbers 4:43",
+        "numbers 4:47",
+        "numbers 8:25"
       ],
       "glossKo": ""
     }

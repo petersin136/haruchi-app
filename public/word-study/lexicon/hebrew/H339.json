@@ -1,6 +1,6 @@
 {
   "lemma": "אִי",
-  "pron": "브이임",
+  "pron": "이에",
   "strong": "H339",
   "posKo": "명사",
   "root": {
@@ -12,26 +12,32 @@
     {
       "lemma": "אָוָה",
       "strong": "H183",
-      "pron": "브이테아브",
+      "pron": "히테아우우",
       "glossKo": "사모하다"
     },
     {
       "lemma": "אַוָּה",
       "strong": "H185",
-      "pron": "",
+      "pron": "아바트",
       "glossKo": "탐심"
     },
     {
       "lemma": "אוֹי",
       "strong": "H188",
-      "pron": "",
+      "pron": "오이",
       "glossKo": "오호라"
     },
     {
       "lemma": "אֱוִי",
       "strong": "H189",
-      "pron": "",
+      "pron": "에비",
       "glossKo": "에위"
+    },
+    {
+      "lemma": "אִיתָמָר",
+      "strong": "H385",
+      "pron": "이타마르",
+      "glossKo": "이다말"
     },
     {
       "lemma": "הָוָא",
@@ -42,10 +48,135 @@
   ],
   "defEn": "habitable spot; dry land; coast; island",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 36,
   "byBook": {
+    "isaiah": 17,
+    "ezekiel": 9,
+    "jeremiah": 4,
     "psalms": 2,
-    "genesis": 1
+    "daniel": 1,
+    "esther": 1,
+    "genesis": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יֹשֵׁ֨ב הָאִ֣י",
+      "pron": "바예솁 이에",
+      "lemmas": [
+        "יָשַׁב",
+        "אִי"
+      ],
+      "words": [
+        {
+          "word": "יֹשֵׁ֨ב",
+          "lemma": "יָשַׁב",
+          "strong": "H3427",
+          "pron": "바예솁"
+        },
+        {
+          "word": "הָאִ֣י",
+          "lemma": "אִי",
+          "strong": "H339",
+          "pron": "이에"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "isaiah 20:6",
+        "isaiah 23:2",
+        "isaiah 23:6",
+        "ezekiel 27:35",
+        "ezekiel 39:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִיִּ֥ים רַבִּֽים",
+      "pron": "이에 랍바",
+      "lemmas": [
+        "אִי",
+        "רַב"
+      ],
+      "words": [
+        {
+          "word": "אִיִּ֥ים",
+          "lemma": "אִי",
+          "strong": "H339",
+          "pron": "이에"
+        },
+        {
+          "word": "רַבִּֽים",
+          "lemma": "רַב",
+          "strong": "H7227",
+          "pron": "랍바"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 97:1",
+        "ezekiel 27:3",
+        "ezekiel 27:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵלַי֙ אִיִּ֔ים",
+      "pron": "엘 이에",
+      "lemmas": [
+        "אֵל",
+        "אִי"
+      ],
+      "words": [
+        {
+          "word": "אֵלַי֙",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "אִיִּ֔ים",
+          "lemma": "אִי",
+          "strong": "H339",
+          "pron": "이에"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 41:1",
+        "isaiah 51:5",
+        "ezekiel 27:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאִיֵּ֥י הַיָּֽם",
+      "pron": "이에 얌밈",
+      "lemmas": [
+        "אִי",
+        "יָם"
+      ],
+      "words": [
+        {
+          "word": "וְאִיֵּ֥י",
+          "lemma": "אִי",
+          "strong": "H339",
+          "pron": "이에"
+        },
+        {
+          "word": "הַיָּֽם",
+          "lemma": "יָם",
+          "strong": "H3220",
+          "pron": "얌밈"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 10:1",
+        "isaiah 11:11",
+        "isaiah 24:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

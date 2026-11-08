@@ -1,6 +1,6 @@
 {
   "lemma": "יָרֵא",
-  "pron": "이레에",
+  "pron": "예레",
   "strong": "H3373",
   "posKo": "형용사",
   "root": {
@@ -12,51 +12,63 @@
     {
       "lemma": "יָרֵא",
       "strong": "H3372",
-      "pron": "이라",
+      "pron": "바이라",
       "glossKo": "두려워하다"
     },
     {
       "lemma": "יִרְאָה",
       "strong": "H3374",
-      "pron": "브이레아",
+      "pron": "이레아트",
       "glossKo": "두려움"
     },
     {
       "lemma": "יִרְאוֹן",
       "strong": "H3375",
-      "pron": "",
+      "pron": "브이레온",
       "glossKo": "이론"
     },
     {
       "lemma": "יִרְאִיָּיה",
       "strong": "H3376",
-      "pron": "",
+      "pron": "이레이아으",
       "glossKo": "이리야"
     },
     {
       "lemma": "מוֹרָא",
       "strong": "H4172",
-      "pron": "모라",
-      "glossKo": "두려움"
+      "pron": "우모라아켐",
+      "glossKo": "너희의 두려움"
     },
     {
       "lemma": "תִּירְיָא",
       "strong": "H8493",
-      "pron": "",
+      "pron": "티레아",
       "glossKo": "디르야"
     }
   ],
   "defEn": "fearing; reverent",
   "defKo": "",
-  "countOT": 29,
+  "countOT": 54,
   "byBook": {
     "psalms": 27,
-    "genesis": 2
+    "proverbs": 4,
+    "deuteronomy": 3,
+    "job": 3,
+    "jonah": 3,
+    "ecclesiastes": 2,
+    "genesis": 2,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "judges": 2,
+    "daniel": 1,
+    "exodus": 1,
+    "kings1": 1,
+    "malachi": 1
   },
   "phrases": [
     {
       "hebrew": "יְרֵ֣א יְהוָ֑ה",
-      "pron": "이레에 여호와",
+      "pron": "예레 여호와",
       "lemmas": [
         "יָרֵא",
         "יְהֹוָה"
@@ -66,7 +78,7 @@
           "word": "יְרֵ֣א",
           "lemma": "יָרֵא",
           "strong": "H3373",
-          "pron": "이레에"
+          "pron": "예레"
         },
         {
           "word": "יְהוָ֑ה",
@@ -75,7 +87,7 @@
           "pron": "여호와"
         }
       ],
-      "count": 9,
+      "count": 12,
       "refs": [
         "psalms 15:4",
         "psalms 22:23",
@@ -85,36 +97,139 @@
         "psalms 118:4",
         "psalms 128:1",
         "psalms 128:4",
-        "psalms 135:20"
+        "psalms 135:20",
+        "proverbs 14:2",
+        "proverbs 31:30",
+        "isaiah 50:10"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "עַל יְרֵאָֽיו",
-      "pron": "알 이레에",
+      "hebrew": "יְרֵ֥א אֱלֹהִ֖ים",
+      "pron": "예레 엘로힘",
       "lemmas": [
-        "עַל",
+        "יָרֵא",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "יְרֵ֥א",
+          "lemma": "יָרֵא",
+          "strong": "H3373",
+          "pron": "예레"
+        },
+        {
+          "word": "אֱלֹהִ֖ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 22:12",
+        "exodus 18:21",
+        "deuteronomy 25:18",
+        "job 1:1",
+        "job 1:8",
+        "job 2:3",
+        "psalms 66:16",
+        "ecclesiastes 7:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָאִ֤ישׁ הַיָּרֵא֙",
+      "pron": "메이쉬 예레",
+      "lemmas": [
+        "אִישׁ",
         "יָרֵא"
       ],
       "words": [
         {
-          "word": "עַל",
-          "lemma": "עַל",
-          "strong": "H5921",
-          "pron": "알"
+          "word": "הָאִ֤ישׁ",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
         },
         {
-          "word": "יְרֵאָֽיו",
+          "word": "הַיָּרֵא֙",
           "lemma": "יָרֵא",
           "strong": "H3373",
-          "pron": "이레에"
+          "pron": "예레"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 20:8",
+        "psalms 25:12",
+        "jonah 1:10",
+        "jonah 1:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וִירֵ֥א אֱלֹהִ֖ים וְסָ֥ר",
+      "pron": "예레 엘로힘 바야사르",
+      "lemmas": [
+        "יָרֵא",
+        "אֱלֹהִים",
+        "סוּר"
+      ],
+      "words": [
+        {
+          "word": "וִירֵ֥א",
+          "lemma": "יָרֵא",
+          "strong": "H3373",
+          "pron": "예레"
+        },
+        {
+          "word": "אֱלֹהִ֖ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "וְסָ֥ר",
+          "lemma": "סוּר",
+          "strong": "H5493",
+          "pron": "바야사르"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 103:11",
-        "psalms 103:13",
-        "psalms 103:17"
+        "job 1:1",
+        "job 1:8",
+        "job 2:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיָשָׁ֛ר יְרֵ֥א",
+      "pron": "브아야샤르 예레",
+      "lemmas": [
+        "יָשָׁר",
+        "יָרֵא"
+      ],
+      "words": [
+        {
+          "word": "וְיָשָׁ֛ר",
+          "lemma": "יָשָׁר",
+          "strong": "H3477",
+          "pron": "브아야샤르"
+        },
+        {
+          "word": "יְרֵ֥א",
+          "lemma": "יָרֵא",
+          "strong": "H3373",
+          "pron": "예레"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 1:1",
+        "job 1:8",
+        "job 2:3"
       ],
       "glossKo": ""
     }

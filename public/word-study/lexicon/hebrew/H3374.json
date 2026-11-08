@@ -1,6 +1,6 @@
 {
   "lemma": "יִרְאָה",
-  "pron": "브이레아",
+  "pron": "이레아트",
   "strong": "H3374",
   "posKo": "명사",
   "root": {
@@ -12,40 +12,154 @@
     {
       "lemma": "יָרֵא",
       "strong": "H3373",
-      "pron": "이레에",
+      "pron": "예레",
       "glossKo": "두려워하는"
     },
     {
       "lemma": "יִרְאִיָּיה",
       "strong": "H3376",
-      "pron": "",
+      "pron": "이레이아으",
       "glossKo": "이리야"
     }
   ],
   "defEn": "fear; reverence",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 42,
   "byBook": {
+    "proverbs": 14,
     "psalms": 8,
-    "genesis": 1
+    "isaiah": 5,
+    "job": 5,
+    "ezekiel": 2,
+    "nehemiah": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "genesis": 1,
+    "jeremiah": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "יִרְאַ֤ת יְהוָ֨ה",
-      "pron": "브이레아 여호와",
+      "hebrew": "יִרְאַ֣ת יְ֭הוָה",
+      "pron": "이레아트 여호와",
       "lemmas": [
         "יִרְאָה",
         "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "יִרְאַ֤ת",
+          "word": "יִרְאַ֣ת",
           "lemma": "יִרְאָה",
           "strong": "H3374",
-          "pron": "브이레아"
+          "pron": "이레아트"
         },
         {
-          "word": "יְהוָ֨ה",
+          "word": "יְ֭הוָה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 21,
+      "refs": [
+        "chronicles2 19:9",
+        "psalms 19:9",
+        "psalms 34:11",
+        "psalms 111:10",
+        "proverbs 1:7",
+        "proverbs 1:29",
+        "proverbs 2:5",
+        "proverbs 8:13",
+        "proverbs 9:10",
+        "proverbs 10:27",
+        "proverbs 14:26",
+        "proverbs 14:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִרְאַ֥ת אֱלֹהִֽים",
+      "pron": "이레아트 엘로힘",
+      "lemmas": [
+        "יִרְאָה",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "יִרְאַ֥ת",
+          "lemma": "יִרְאָה",
+          "strong": "H3374",
+          "pron": "이레아트"
+        },
+        {
+          "word": "אֱלֹהִֽים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 20:11",
+        "samuel2 23:3",
+        "nehemiah 5:9",
+        "nehemiah 5:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דָ֑עַת וְיִרְאַ֥ת",
+      "pron": "아다아트 이레아트",
+      "lemmas": [
+        "דַּעַת",
+        "יִרְאָה"
+      ],
+      "words": [
+        {
+          "word": "דָ֑עַת",
+          "lemma": "דַּעַת",
+          "strong": "H1847",
+          "pron": "아다아트"
+        },
+        {
+          "word": "וְיִרְאַ֥ת",
+          "lemma": "יִרְאָה",
+          "strong": "H3374",
+          "pron": "이레아트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 1:29",
+        "isaiah 11:2",
+        "isaiah 33:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דָ֑עַת וְיִרְאַ֥ת יְ֝הֹוָ֗ה",
+      "pron": "아다아트 이레아트 여호와",
+      "lemmas": [
+        "דַּעַת",
+        "יִרְאָה",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "דָ֑עַת",
+          "lemma": "דַּעַת",
+          "strong": "H1847",
+          "pron": "아다아트"
+        },
+        {
+          "word": "וְיִרְאַ֥ת",
+          "lemma": "יִרְאָה",
+          "strong": "H3374",
+          "pron": "이레아트"
+        },
+        {
+          "word": "יְ֝הֹוָ֗ה",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
@@ -53,9 +167,9 @@
       ],
       "count": 3,
       "refs": [
-        "psalms 19:9",
-        "psalms 34:11",
-        "psalms 111:10"
+        "proverbs 1:29",
+        "isaiah 11:2",
+        "isaiah 33:6"
       ],
       "glossKo": ""
     }

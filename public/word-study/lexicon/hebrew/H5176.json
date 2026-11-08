@@ -2,7 +2,7 @@
   "lemma": "נָחָשׁ",
   "pron": "나하쉬",
   "strong": "H5176",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נָחָשׁ",
     "strong": "H5175",
@@ -12,13 +12,47 @@
     {
       "lemma": "נָחָשׁ",
       "strong": "H5175",
-      "pron": "나하쉬",
+      "pron": "브아나하쉬",
       "glossKo": "뱀"
     }
   ],
   "defEn": "Nachash",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "samuel1": 4,
+    "samuel2": 3,
+    "chronicles1": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶּן נָחָ֗שׁ",
+      "pron": "바님 나하쉬",
+      "lemmas": [
+        "בֵּן",
+        "נָחָשׁ"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נָחָ֗שׁ",
+          "lemma": "נָחָשׁ",
+          "strong": "H5176",
+          "pron": "나하쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 10:2",
+        "samuel2 17:27",
+        "chronicles1 19:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

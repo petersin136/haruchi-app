@@ -1,6 +1,6 @@
 {
   "lemma": "גְּעָרָה",
-  "pron": "미가아라트카",
+  "pron": "브가아라트",
   "strong": "H1606",
   "posKo": "명사",
   "root": {
@@ -12,21 +12,56 @@
     {
       "lemma": "גָּעַר",
       "strong": "H1605",
-      "pron": "가아렛타",
+      "pron": "바익아르",
       "glossKo": "꾸짖다"
     },
     {
       "lemma": "מִגְעֶרֶת",
       "strong": "H4045",
-      "pron": "",
+      "pron": "아믹에레트",
       "glossKo": "꾸짖음"
     }
   ],
   "defEn": "chiding",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 15,
   "byBook": {
-    "psalms": 4
+    "isaiah": 5,
+    "psalms": 4,
+    "proverbs": 3,
+    "ecclesiastes": 1,
+    "job": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "שָׁמַ֥ע גְּעָרָֽה",
+      "pron": "바이솀우 브가아라트",
+      "lemmas": [
+        "שָׁמַע",
+        "גְּעָרָה"
+      ],
+      "words": [
+        {
+          "word": "שָׁמַ֥ע",
+          "lemma": "שָׁמַע",
+          "strong": "H8085",
+          "pron": "바이솀우"
+        },
+        {
+          "word": "גְּעָרָֽה",
+          "lemma": "גְּעָרָה",
+          "strong": "H1606",
+          "pron": "브가아라트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 13:1",
+        "proverbs 13:8",
+        "ecclesiastes 7:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

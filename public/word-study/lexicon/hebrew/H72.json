@@ -1,8 +1,8 @@
 {
   "lemma": "אֶבֶן הָעֵזֶר",
-  "pron": "에벤하에제르",
+  "pron": "하에벤",
   "strong": "H72",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אֶבֶן",
     "strong": "H68",
@@ -12,31 +12,63 @@
     {
       "lemma": "אֶבֶן",
       "strong": "H68",
-      "pron": "바에벤",
+      "pron": "브에벤",
       "glossKo": "돌"
     },
     {
       "lemma": "אֶבֶן",
       "strong": "H69",
-      "pron": "",
+      "pron": "에벤",
       "glossKo": "돌(아람)"
     },
     {
       "lemma": "אֹבֶן",
       "strong": "H70",
-      "pron": "",
+      "pron": "하압나임",
       "glossKo": "녹로"
     },
     {
       "lemma": "אֲבָנָה",
       "strong": "H71",
-      "pron": "",
+      "pron": "븐",
       "glossKo": "아바나"
     }
   ],
   "defEn": "Eben-ha-Ezer",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "samuel1": 6
+  },
+  "phrases": [
+    {
+      "hebrew": "הָאֶ֣בֶן הָעֵ֔זֶר",
+      "pron": "하에벤 하에벤",
+      "lemmas": [
+        "אֶבֶן הָעֵזֶר",
+        "אֶבֶן הָעֵזֶר"
+      ],
+      "words": [
+        {
+          "word": "הָאֶ֣בֶן",
+          "lemma": "אֶבֶן הָעֵזֶר",
+          "strong": "H72",
+          "pron": "하에벤"
+        },
+        {
+          "word": "הָעֵ֔זֶר",
+          "lemma": "אֶבֶן הָעֵזֶר",
+          "strong": "H72",
+          "pron": "하에벤"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel1 4:1",
+        "samuel1 5:1",
+        "samuel1 7:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

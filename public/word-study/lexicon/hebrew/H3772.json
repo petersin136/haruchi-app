@@ -1,6 +1,6 @@
 {
   "lemma": "כָּרַת",
-  "pron": "야케레트",
+  "pron": "익카레트",
   "strong": "H3772",
   "posKo": "동사",
   "root": null,
@@ -8,93 +8,254 @@
     {
       "lemma": "כְּרִית",
       "strong": "H3747",
-      "pron": "",
+      "pron": "케리트",
       "glossKo": "그릿"
     },
     {
       "lemma": "כְּרִיתוּת",
       "strong": "H3748",
-      "pron": "",
+      "pron": "케리투트",
       "glossKo": "이혼"
     },
     {
       "lemma": "כָּרֻתָה",
       "strong": "H3773",
-      "pron": "",
+      "pron": "케루토트",
       "glossKo": "잘려진 것"
     },
     {
       "lemma": "כְּרֵתִי",
       "strong": "H3774",
-      "pron": "",
+      "pron": "아케레티",
       "glossKo": "그렛 사람"
     }
   ],
   "defEn": "cut",
   "defKo": "",
-  "countOT": 22,
+  "countOT": 289,
   "byBook": {
+    "jeremiah": 27,
+    "leviticus": 20,
+    "ezekiel": 19,
+    "isaiah": 18,
+    "deuteronomy": 17,
+    "kings1": 17,
+    "samuel1": 17,
+    "chronicles2": 15,
+    "joshua": 15,
+    "exodus": 14,
     "psalms": 14,
-    "genesis": 8
+    "kings2": 10,
+    "numbers": 10,
+    "genesis": 8,
+    "judges": 8,
+    "samuel2": 8,
+    "zechariah": 7,
+    "micah": 5,
+    "zephaniah": 5,
+    "chronicles1": 4,
+    "hosea": 4,
+    "nahum": 4,
+    "proverbs": 4,
+    "amos": 3,
+    "job": 3,
+    "joel": 3,
+    "obadiah": 3,
+    "nehemiah": 2,
+    "daniel": 1,
+    "ezra": 1,
+    "haggai": 1,
+    "malachi": 1,
+    "ruth": 1
   },
   "phrases": [
     {
-      "hebrew": "כֹּרְתֵ֖י בְרִיתִ֣י",
-      "pron": "야케레트 베리트오",
+      "hebrew": "וְהִכְרַתִּ֥י אֹת֖וֹ",
+      "pron": "익카레트 에트",
+      "lemmas": [
+        "כָּרַת",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְהִכְרַתִּ֥י",
+          "lemma": "כָּרַת",
+          "strong": "H3772",
+          "pron": "익카레트"
+        },
+        {
+          "word": "אֹת֖וֹ",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 39,
+      "refs": [
+        "exodus 4:25",
+        "leviticus 17:10",
+        "leviticus 20:3",
+        "leviticus 20:5",
+        "leviticus 20:6",
+        "leviticus 26:22",
+        "leviticus 26:30",
+        "numbers 4:18",
+        "deuteronomy 29:14",
+        "joshua 7:9",
+        "joshua 11:21",
+        "judges 4:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֨ר כָּרַ֤ת",
+      "pron": "아셰르 익카레트",
+      "lemmas": [
+        "אֲשֶׁר",
+        "כָּרַת"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֨ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "כָּרַ֤ת",
+          "lemma": "כָּרַת",
+          "strong": "H3772",
+          "pron": "익카레트"
+        }
+      ],
+      "count": 33,
+      "refs": [
+        "exodus 24:8",
+        "numbers 13:24",
+        "deuteronomy 4:23",
+        "deuteronomy 9:9",
+        "deuteronomy 29:1",
+        "deuteronomy 29:25",
+        "deuteronomy 31:16",
+        "joshua 4:7",
+        "joshua 9:16",
+        "joshua 23:4",
+        "judges 4:24",
+        "judges 6:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְכָרַתִּ֤י בְּרִ֣ית",
+      "pron": "익카레트 베리티",
       "lemmas": [
         "כָּרַת",
         "בְּרִית"
       ],
       "words": [
         {
-          "word": "כֹּרְתֵ֖י",
+          "word": "וְכָרַתִּ֤י",
           "lemma": "כָּרַת",
           "strong": "H3772",
-          "pron": "야케레트"
+          "pron": "익카레트"
         },
         {
-          "word": "בְרִיתִ֣י",
+          "word": "בְּרִ֣ית",
           "lemma": "בְּרִית",
           "strong": "H1285",
-          "pron": "베리트오"
+          "pron": "베리티"
         }
       ],
-      "count": 5,
+      "count": 32,
       "refs": [
-        "psalms 50:5",
-        "psalms 89:3",
         "genesis 21:32",
         "genesis 26:28",
-        "genesis 31:44"
+        "genesis 31:44",
+        "exodus 34:10",
+        "exodus 34:12",
+        "exodus 34:15",
+        "deuteronomy 7:2",
+        "joshua 9:6",
+        "joshua 9:7",
+        "joshua 9:11",
+        "joshua 9:15",
+        "joshua 9:16"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לְהַכְרִ֖ית מֵאֶ֣רֶץ",
-      "pron": "야케레트 에레츠",
+      "hebrew": "לֹֽא יִכָּרֵ֤ת",
+      "pron": "로 익카레트",
       "lemmas": [
-        "כָּרַת",
-        "אֶרֶץ"
+        "לֹא",
+        "כָּרַת"
       ],
       "words": [
         {
-          "word": "לְהַכְרִ֖ית",
-          "lemma": "כָּרַת",
-          "strong": "H3772",
-          "pron": "야케레트"
+          "word": "לֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
         },
         {
-          "word": "מֵאֶ֣רֶץ",
-          "lemma": "אֶרֶץ",
-          "strong": "H776",
-          "pron": "에레츠"
+          "word": "יִכָּרֵ֤ת",
+          "lemma": "כָּרַת",
+          "strong": "H3772",
+          "pron": "익카레트"
         }
       ],
-      "count": 3,
+      "count": 28,
       "refs": [
-        "psalms 34:16",
-        "psalms 109:15",
-        "genesis 41:36"
+        "genesis 9:11",
+        "genesis 41:36",
+        "exodus 23:32",
+        "deuteronomy 7:2",
+        "deuteronomy 20:19",
+        "joshua 9:23",
+        "judges 2:2",
+        "ruth 4:10",
+        "samuel1 2:33",
+        "samuel1 20:15",
+        "kings1 2:4",
+        "kings1 8:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנִכְרְתָ֛ה הַנֶּ֥פֶשׁ",
+      "pron": "익카레트 네페쉬",
+      "lemmas": [
+        "כָּרַת",
+        "נֶפֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "וְנִכְרְתָ֛ה",
+          "lemma": "כָּרַת",
+          "strong": "H3772",
+          "pron": "익카레트"
+        },
+        {
+          "word": "הַנֶּ֥פֶשׁ",
+          "lemma": "נֶפֶשׁ",
+          "strong": "H5315",
+          "pron": "네페쉬"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "genesis 17:14",
+        "exodus 12:15",
+        "exodus 12:19",
+        "exodus 31:14",
+        "leviticus 7:20",
+        "leviticus 7:21",
+        "leviticus 7:25",
+        "leviticus 7:27",
+        "leviticus 18:29",
+        "leviticus 19:8",
+        "leviticus 22:3",
+        "numbers 9:13"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "שֵׁמַע",
-  "pron": "르셰마",
+  "pron": "셰마",
   "strong": "H8088",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "אֶשְׁתְּמֹעַ",
       "strong": "H851",
-      "pron": "",
+      "pron": "브에솃테모",
       "glossKo": "에스드모아"
     },
     {
       "lemma": "הַשְׁמָעוּת",
       "strong": "H2045",
-      "pron": "",
+      "pron": "르하셰마우트",
       "glossKo": "선포"
     },
     {
@@ -30,28 +30,140 @@
     {
       "lemma": "יִשְׁמַעְיָה",
       "strong": "H3460",
-      "pron": "",
+      "pron": "브이셰마에아",
       "glossKo": "이스마야"
     },
     {
       "lemma": "מִשְׁמָע",
       "strong": "H4926",
-      "pron": "",
+      "pron": "르미셰마",
       "glossKo": "보고"
     },
     {
       "lemma": "שְׁמוּאֵל",
       "strong": "H8050",
-      "pron": "우셰무엘",
+      "pron": "셰무엘",
       "glossKo": "사무엘"
     }
   ],
   "defEn": "heard; sound; rumor; announcement; audience",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 18,
   "byBook": {
+    "isaiah": 3,
+    "jeremiah": 2,
+    "job": 2,
     "psalms": 2,
-    "genesis": 1
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "genesis": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "kings1": 1,
+    "nahum": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת שֵׁ֣מַע",
+      "pron": "에트 셰마",
+      "lemmas": [
+        "אֵת",
+        "שֵׁמַע"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שֵׁ֣מַע",
+          "lemma": "שֵׁמַע",
+          "strong": "H8088",
+          "pron": "셰마"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 29:13",
+        "numbers 14:15",
+        "kings1 10:1",
+        "chronicles2 9:1",
+        "isaiah 66:19",
+        "jeremiah 37:5",
+        "jeremiah 50:43"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִשְׁמְעוּן֙ שִׁמְעֲךָ֔",
+      "pron": "바이솀우 셰마",
+      "lemmas": [
+        "שָׁמַע",
+        "שֵׁמַע"
+      ],
+      "words": [
+        {
+          "word": "יִשְׁמְעוּן֙",
+          "lemma": "שָׁמַע",
+          "strong": "H8085",
+          "pron": "바이솀우"
+        },
+        {
+          "word": "שִׁמְעֲךָ֔",
+          "lemma": "שֵׁמַע",
+          "strong": "H8088",
+          "pron": "셰마"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 2:25",
+        "job 28:22",
+        "nahum 3:19",
+        "habakkuk 3:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׁמְע֥וּ אֶֽת שִׁמְעֲךָ֖",
+      "pron": "바이솀우 에트 셰마",
+      "lemmas": [
+        "שָׁמַע",
+        "אֵת",
+        "שֵׁמַע"
+      ],
+      "words": [
+        {
+          "word": "שָׁמְע֥וּ",
+          "lemma": "שָׁמַע",
+          "strong": "H8085",
+          "pron": "바이솀우"
+        },
+        {
+          "word": "אֶֽת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שִׁמְעֲךָ֖",
+          "lemma": "שֵׁמַע",
+          "strong": "H8088",
+          "pron": "셰마"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 14:15",
+        "kings1 10:1",
+        "chronicles2 9:1",
+        "isaiah 66:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

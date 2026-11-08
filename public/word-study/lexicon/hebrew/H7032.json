@@ -2,7 +2,7 @@
   "lemma": "קָל",
   "pron": "칼",
   "strong": "H7032",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "קוֹל",
     "strong": "H6963",
@@ -12,19 +12,190 @@
     {
       "lemma": "קוֹל",
       "strong": "H6963",
-      "pron": "콜리위",
-      "glossKo": "나의 소리"
+      "pron": "콜",
+      "glossKo": "소리"
     },
     {
       "lemma": "קוֹלָיָה",
       "strong": "H6964",
-      "pron": "",
+      "pron": "콜라아",
       "glossKo": "골라야"
     }
   ],
   "defEn": "sound, voice.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "daniel": 7
+  },
+  "phrases": [
+    {
+      "hebrew": "קָ֣ל קַרְנָ֣א",
+      "pron": "칼 카레나",
+      "lemmas": [
+        "קָל",
+        "קֶרֶן"
+      ],
+      "words": [
+        {
+          "word": "קָ֣ל",
+          "lemma": "קָל",
+          "strong": "H7032",
+          "pron": "칼"
+        },
+        {
+          "word": "קַרְנָ֣א",
+          "lemma": "קֶרֶן",
+          "strong": "H7162",
+          "pron": "카레나"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קָ֣ל קַרְנָ֣א מַ֠שְׁרוֹקִיתָא",
+      "pron": "칼 카레나 마셰로키타",
+      "lemmas": [
+        "קָל",
+        "קֶרֶן",
+        "מַשְׁרוֹקִי"
+      ],
+      "words": [
+        {
+          "word": "קָ֣ל",
+          "lemma": "קָל",
+          "strong": "H7032",
+          "pron": "칼"
+        },
+        {
+          "word": "קַרְנָ֣א",
+          "lemma": "קֶרֶן",
+          "strong": "H7162",
+          "pron": "카레나"
+        },
+        {
+          "word": "מַ֠שְׁרוֹקִיתָא",
+          "lemma": "מַשְׁרוֹקִי",
+          "strong": "H4953",
+          "pron": "마셰로키타"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּֽי תִשְׁמְע֡וּן קָ֣ל",
+      "pron": "드흐브 티솀운 칼",
+      "lemmas": [
+        "דִּי",
+        "שְׁמַע",
+        "קָל"
+      ],
+      "words": [
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "תִשְׁמְע֡וּן",
+          "lemma": "שְׁמַע",
+          "strong": "H8086",
+          "pron": "티솀운"
+        },
+        {
+          "word": "קָ֣ל",
+          "lemma": "קָל",
+          "strong": "H7032",
+          "pron": "칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 3:5",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תִשְׁמְע֡וּן קָ֣ל",
+      "pron": "티솀운 칼",
+      "lemmas": [
+        "שְׁמַע",
+        "קָל"
+      ],
+      "words": [
+        {
+          "word": "תִשְׁמְע֡וּן",
+          "lemma": "שְׁמַע",
+          "strong": "H8086",
+          "pron": "티솀운"
+        },
+        {
+          "word": "קָ֣ל",
+          "lemma": "קָל",
+          "strong": "H7032",
+          "pron": "칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 3:5",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תִשְׁמְע֡וּן קָ֣ל קַרְנָ֣א",
+      "pron": "티솀운 칼 카레나",
+      "lemmas": [
+        "שְׁמַע",
+        "קָל",
+        "קֶרֶן"
+      ],
+      "words": [
+        {
+          "word": "תִשְׁמְע֡וּן",
+          "lemma": "שְׁמַע",
+          "strong": "H8086",
+          "pron": "티솀운"
+        },
+        {
+          "word": "קָ֣ל",
+          "lemma": "קָל",
+          "strong": "H7032",
+          "pron": "칼"
+        },
+        {
+          "word": "קַרְנָ֣א",
+          "lemma": "קֶרֶן",
+          "strong": "H7162",
+          "pron": "카레나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 3:5",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

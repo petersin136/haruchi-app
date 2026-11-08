@@ -12,69 +12,99 @@
     {
       "lemma": "חֻקָּה",
       "strong": "H2708",
-      "pron": "브훅코타이브",
-      "glossKo": "그의 규례"
+      "pron": "훅코타이",
+      "glossKo": "나의 규례"
     },
     {
       "lemma": "חָקַק",
       "strong": "H2710",
-      "pron": "메호케키위",
-      "glossKo": "나의 새기다"
+      "pron": "우메호케크",
+      "glossKo": "새기다"
     },
     {
       "lemma": "חֵקֶק",
       "strong": "H2711",
-      "pron": "",
+      "pron": "히케케",
       "glossKo": "규례"
     },
     {
       "lemma": "חֻקֹּק",
       "strong": "H2712",
-      "pron": "",
+      "pron": "후코카",
       "glossKo": "훅곡"
     }
   ],
   "defEn": "enactment; appointment",
   "defKo": "",
-  "countOT": 34,
+  "countOT": 128,
   "byBook": {
     "psalms": 31,
-    "genesis": 3
+    "deuteronomy": 21,
+    "leviticus": 11,
+    "exodus": 8,
+    "job": 8,
+    "ezekiel": 6,
+    "chronicles2": 5,
+    "kings1": 4,
+    "nehemiah": 4,
+    "numbers": 4,
+    "genesis": 3,
+    "jeremiah": 3,
+    "proverbs": 3,
+    "chronicles1": 2,
+    "ezra": 2,
+    "isaiah": 2,
+    "kings2": 2,
+    "malachi": 2,
+    "amos": 1,
+    "joshua": 1,
+    "judges": 1,
+    "micah": 1,
+    "samuel1": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "לַמְּדֵ֥נִי חֻקֶּֽיךָ",
-      "pron": "멜람멛 호크",
+      "hebrew": "חֹ֥ק וּמִשְׁפָּ֖ט",
+      "pron": "호크 우미솁팓",
       "lemmas": [
-        "לָמַד",
-        "חֹק"
+        "חֹק",
+        "מִשְׁפָּט"
       ],
       "words": [
         {
-          "word": "לַמְּדֵ֥נִי",
-          "lemma": "לָמַד",
-          "strong": "H3925",
-          "pron": "멜람멛"
-        },
-        {
-          "word": "חֻקֶּֽיךָ",
+          "word": "חֹ֥ק",
           "lemma": "חֹק",
           "strong": "H2706",
           "pron": "호크"
+        },
+        {
+          "word": "וּמִשְׁפָּ֖ט",
+          "lemma": "מִשְׁפָּט",
+          "strong": "H4941",
+          "pron": "우미솁팓"
         }
       ],
-      "count": 5,
+      "count": 20,
       "refs": [
-        "psalms 119:12",
-        "psalms 119:26",
-        "psalms 119:68",
-        "psalms 119:71",
-        "psalms 119:171"
+        "exodus 15:25",
+        "leviticus 26:46",
+        "deuteronomy 4:5",
+        "deuteronomy 4:8",
+        "deuteronomy 4:14",
+        "deuteronomy 4:45",
+        "deuteronomy 5:31",
+        "deuteronomy 6:1",
+        "deuteronomy 6:20",
+        "deuteronomy 12:1",
+        "joshua 24:25",
+        "samuel1 30:25"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֶת חֻקֶּ֥יךָ",
+      "hebrew": "אֶת חֻקָּם֙",
       "pron": "에트 호크",
       "lemmas": [
         "אֵת",
@@ -88,46 +118,141 @@
           "pron": "에트"
         },
         {
-          "word": "חֻקֶּ֥יךָ",
+          "word": "חֻקָּם֙",
           "lemma": "חֹק",
           "strong": "H2706",
           "pron": "호크"
         }
       ],
-      "count": 3,
+      "count": 19,
       "refs": [
-        "psalms 119:8",
-        "psalms 119:135",
-        "genesis 47:22"
+        "genesis 47:22",
+        "exodus 18:16",
+        "exodus 18:20",
+        "leviticus 6:22",
+        "deuteronomy 4:5",
+        "deuteronomy 4:14",
+        "deuteronomy 4:40",
+        "deuteronomy 5:1",
+        "deuteronomy 7:11",
+        "deuteronomy 16:12",
+        "deuteronomy 17:19",
+        "deuteronomy 26:16"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "כִּ֤י חֹ֣ק",
-      "pron": "키 호크",
+      "hebrew": "לְחָק עוֹלָ֔ם",
+      "pron": "호크 르올람",
       "lemmas": [
-        "כִּי",
-        "חֹק"
+        "חֹק",
+        "עוֹלָם"
       ],
       "words": [
         {
-          "word": "כִּ֤י",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
-        },
-        {
-          "word": "חֹ֣ק",
+          "word": "לְחָק",
           "lemma": "חֹק",
           "strong": "H2706",
           "pron": "호크"
+        },
+        {
+          "word": "עוֹלָ֔ם",
+          "lemma": "עוֹלָם",
+          "strong": "H5769",
+          "pron": "르올람"
         }
       ],
-      "count": 3,
+      "count": 12,
       "refs": [
-        "psalms 81:4",
-        "psalms 119:155",
-        "genesis 47:22"
+        "exodus 29:28",
+        "exodus 30:21",
+        "leviticus 6:18",
+        "leviticus 6:22",
+        "leviticus 7:34",
+        "leviticus 10:15",
+        "leviticus 24:9",
+        "numbers 18:8",
+        "numbers 18:11",
+        "numbers 18:19",
+        "psalms 119:112",
+        "jeremiah 5:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַחֻקִּ֖ים וְאֶת",
+      "pron": "호크 에트",
+      "lemmas": [
+        "חֹק",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הַחֻקִּ֖ים",
+          "lemma": "חֹק",
+          "strong": "H2706",
+          "pron": "호크"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "exodus 18:20",
+        "deuteronomy 4:40",
+        "deuteronomy 5:1",
+        "deuteronomy 7:11",
+        "deuteronomy 11:32",
+        "kings2 17:15",
+        "kings2 17:37",
+        "chronicles1 22:13",
+        "nehemiah 1:7",
+        "jeremiah 32:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הַחֻקִּ֖ים וְאֶת",
+      "pron": "에트 호크 에트",
+      "lemmas": [
+        "אֵת",
+        "חֹק",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַחֻקִּ֖ים",
+          "lemma": "חֹק",
+          "strong": "H2706",
+          "pron": "호크"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 18:20",
+        "deuteronomy 4:40",
+        "deuteronomy 5:1",
+        "deuteronomy 7:11",
+        "kings2 17:15",
+        "kings2 17:37",
+        "chronicles1 22:13",
+        "nehemiah 1:7"
       ],
       "glossKo": ""
     }

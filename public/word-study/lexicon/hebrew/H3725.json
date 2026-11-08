@@ -1,8 +1,8 @@
 {
   "lemma": "כִּפֻּר",
-  "pron": "킵푸르",
+  "pron": "아킵푸림",
   "strong": "H3725",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "כָּפַר",
     "strong": "H3722",
@@ -12,37 +12,77 @@
     {
       "lemma": "כְּפוֹר",
       "strong": "H3713",
-      "pron": "케포르",
+      "pron": "카케포르",
       "glossKo": "잔"
     },
     {
       "lemma": "כְּפִיר",
       "strong": "H3715",
-      "pron": "브키케피르",
+      "pron": "케피르",
       "glossKo": "젊은 사자"
     },
     {
       "lemma": "כָּפַר",
       "strong": "H3722",
-      "pron": "테캅페레므",
-      "glossKo": "그들에게 속죄하다"
+      "pron": "브카파렛타",
+      "glossKo": "속죄하다"
     },
     {
       "lemma": "כָּפָר",
       "strong": "H3723",
-      "pron": "",
+      "pron": "우바케파림",
       "glossKo": "마을"
     },
     {
       "lemma": "כֹּפֶר",
       "strong": "H3724",
-      "pron": "캅르오",
-      "glossKo": "그의 속전"
+      "pron": "바코페르",
+      "glossKo": "속전"
+    },
+    {
+      "lemma": "כַּפֹּרֶת",
+      "strong": "H3727",
+      "pron": "캅포레트",
+      "glossKo": "속죄소"
     }
   ],
   "defEn": "expiation",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "leviticus": 3,
+    "exodus": 2,
+    "numbers": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "י֧וֹם הַכִּפֻּרִ֣ים",
+      "pron": "욤 아킵푸림",
+      "lemmas": [
+        "יוֹם",
+        "כִּפֻּר"
+      ],
+      "words": [
+        {
+          "word": "י֧וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "הַכִּפֻּרִ֣ים",
+          "lemma": "כִּפֻּר",
+          "strong": "H3725",
+          "pron": "아킵푸림"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 23:27",
+        "leviticus 23:28",
+        "leviticus 25:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

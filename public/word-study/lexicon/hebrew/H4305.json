@@ -1,6 +1,6 @@
 {
   "lemma": "מָטַר",
-  "pron": "얌데르",
+  "pron": "힘디르",
   "strong": "H4305",
   "posKo": "동사",
   "root": null,
@@ -8,27 +8,32 @@
     {
       "lemma": "מָטַר",
       "strong": "H4306",
-      "pron": "크마다르",
+      "pron": "우마다르",
       "glossKo": "비"
     },
     {
       "lemma": "מַטְרִי",
       "strong": "H4309",
-      "pron": "",
+      "pron": "아맏리",
       "glossKo": "마드리 자손"
     }
   ],
   "defEn": "rain",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 17,
   "byBook": {
+    "amos": 4,
+    "exodus": 3,
     "genesis": 3,
-    "psalms": 3
+    "psalms": 3,
+    "job": 2,
+    "ezekiel": 1,
+    "isaiah": 1
   },
   "phrases": [
     {
       "hebrew": "וַיַּמְטֵ֬ר עֲלֵיהֶ֣ם",
-      "pron": "얌데르 알",
+      "pron": "힘디르 알",
       "lemmas": [
         "מָטַר",
         "עַל"
@@ -38,7 +43,7 @@
           "word": "וַיַּמְטֵ֬ר",
           "lemma": "מָטַר",
           "strong": "H4305",
-          "pron": "얌데르"
+          "pron": "힘디르"
         },
         {
           "word": "עֲלֵיהֶ֣ם",
@@ -47,13 +52,46 @@
           "pron": "알"
         }
       ],
-      "count": 5,
+      "count": 11,
       "refs": [
+        "genesis 7:4",
+        "genesis 19:24",
+        "job 20:23",
+        "job 38:26",
         "psalms 11:6",
         "psalms 78:24",
         "psalms 78:27",
-        "genesis 7:4",
-        "genesis 19:24"
+        "isaiah 5:6",
+        "ezekiel 38:22",
+        "amos 4:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֨א הִמְטִ֜יר",
+      "pron": "로 힘디르",
+      "lemmas": [
+        "לֹא",
+        "מָטַר"
+      ],
+      "words": [
+        {
+          "word": "לֹ֨א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "הִמְטִ֜יר",
+          "lemma": "מָטַר",
+          "strong": "H4305",
+          "pron": "힘디르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 2:5",
+        "amos 4:7"
       ],
       "glossKo": ""
     }

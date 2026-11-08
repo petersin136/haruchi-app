@@ -12,25 +12,25 @@
     {
       "lemma": "מַעֲנֶה",
       "strong": "H4617",
-      "pron": "",
+      "pron": "마아네",
       "glossKo": "응답"
     },
     {
       "lemma": "עָנָה",
       "strong": "H6030",
-      "pron": "바야아네니",
-      "glossKo": "나를 응답하다"
+      "pron": "바야안",
+      "glossKo": "응답하다"
     },
     {
       "lemma": "עָנָה",
       "strong": "H6031",
-      "pron": "인네티",
+      "pron": "브인누",
       "glossKo": "괴롭히다"
     },
     {
       "lemma": "עֲנָה",
       "strong": "H6032",
-      "pron": "브느느브",
+      "pron": "븐느브",
       "glossKo": "우리를 응답하다"
     },
     {
@@ -42,21 +42,86 @@
     {
       "lemma": "עֲנָיָה",
       "strong": "H6043",
-      "pron": "",
+      "pron": "바아나아",
       "glossKo": "아나야"
     }
   ],
   "defEn": "heed; purpose; on account of; in order that",
   "defKo": "",
-  "countOT": 39,
+  "countOT": 272,
   "byBook": {
+    "deuteronomy": 48,
+    "ezekiel": 37,
     "psalms": 32,
-    "genesis": 7
+    "isaiah": 28,
+    "jeremiah": 24,
+    "exodus": 16,
+    "kings1": 16,
+    "chronicles2": 9,
+    "kings2": 9,
+    "joshua": 8,
+    "genesis": 7,
+    "amos": 4,
+    "numbers": 4,
+    "job": 3,
+    "leviticus": 3,
+    "nehemiah": 3,
+    "proverbs": 3,
+    "daniel": 2,
+    "habakkuk": 2,
+    "judges": 2,
+    "micah": 2,
+    "samuel1": 2,
+    "zechariah": 2,
+    "chronicles1": 1,
+    "ezra": 1,
+    "hosea": 1,
+    "joel": 1,
+    "obadiah": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "לְמַ֣עַן שְׁמֽוֹ",
-      "pron": "레마안 셰메카",
+      "hebrew": "לְמַ֣עַן תֵּדַ֔ע",
+      "pron": "레마안 요데아",
+      "lemmas": [
+        "מַעַן",
+        "יָדַע"
+      ],
+      "words": [
+        {
+          "word": "לְמַ֣עַן",
+          "lemma": "מַעַן",
+          "strong": "H4616",
+          "pron": "레마안"
+        },
+        {
+          "word": "תֵּדַ֔ע",
+          "lemma": "יָדַע",
+          "strong": "H3045",
+          "pron": "요데아"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "exodus 8:10",
+        "exodus 8:22",
+        "exodus 9:29",
+        "exodus 11:7",
+        "leviticus 23:43",
+        "deuteronomy 8:3",
+        "deuteronomy 29:6",
+        "joshua 4:24",
+        "kings1 8:43",
+        "kings1 8:60",
+        "chronicles2 6:33",
+        "job 19:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְמַ֣עַן שְׁמִ֑י",
+      "pron": "레마안 솀",
       "lemmas": [
         "מַעַן",
         "שֵׁם"
@@ -69,50 +134,100 @@
           "pron": "레마안"
         },
         {
-          "word": "שְׁמֽוֹ",
+          "word": "שְׁמִ֑י",
           "lemma": "שֵׁם",
           "strong": "H8034",
-          "pron": "셰메카"
+          "pron": "솀"
         }
       ],
-      "count": 7,
+      "count": 17,
       "refs": [
+        "kings1 8:41",
+        "chronicles2 6:32",
         "psalms 23:3",
         "psalms 25:11",
         "psalms 31:3",
         "psalms 79:9",
         "psalms 106:8",
         "psalms 109:21",
-        "psalms 143:11"
+        "psalms 143:11",
+        "isaiah 48:9",
+        "isaiah 66:5",
+        "jeremiah 14:7"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אַ֑תָּה לְמַ֖עַן",
-      "pron": "앗타 레마안",
+      "hebrew": "לְמַ֨עַן֙ אֲשֶׁ֣ר",
+      "pron": "레마안 아셰르",
       "lemmas": [
-        "אַתָּה",
+        "מַעַן",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "לְמַ֨עַן֙",
+          "lemma": "מַעַן",
+          "strong": "H4616",
+          "pron": "레마안"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "genesis 18:19",
+        "leviticus 17:5",
+        "numbers 16:40",
+        "deuteronomy 20:18",
+        "deuteronomy 27:3",
+        "joshua 3:4",
+        "samuel2 13:5",
+        "jeremiah 42:6",
+        "ezekiel 20:26",
+        "ezekiel 31:14",
+        "ezekiel 36:30",
+        "ezekiel 46:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַעֲשׂ֑וֹת לְמַ֣עַן",
+      "pron": "바야아스 레마안",
+      "lemmas": [
+        "עָשָׂה",
         "מַעַן"
       ],
       "words": [
         {
-          "word": "אַ֑תָּה",
-          "lemma": "אַתָּה",
-          "strong": "H859",
-          "pron": "앗타"
+          "word": "לַעֲשׂ֑וֹת",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
         },
         {
-          "word": "לְמַ֖עַן",
+          "word": "לְמַ֣עַן",
           "lemma": "מַעַן",
           "strong": "H4616",
           "pron": "레마안"
         }
       ],
-      "count": 3,
+      "count": 10,
       "refs": [
-        "psalms 25:7",
-        "psalms 31:3",
-        "genesis 12:13"
+        "deuteronomy 4:1",
+        "deuteronomy 8:1",
+        "kings1 11:12",
+        "psalms 51:4",
+        "isaiah 65:8",
+        "jeremiah 14:7",
+        "jeremiah 36:3",
+        "ezekiel 20:9",
+        "ezekiel 20:14",
+        "ezekiel 20:22"
       ],
       "glossKo": ""
     },
@@ -137,11 +252,17 @@
           "pron": "로"
         }
       ],
-      "count": 3,
+      "count": 9,
       "refs": [
+        "deuteronomy 3:26",
         "psalms 119:11",
         "psalms 119:80",
-        "psalms 125:3"
+        "psalms 125:3",
+        "ezekiel 14:11",
+        "ezekiel 19:9",
+        "ezekiel 25:10",
+        "ezekiel 26:20",
+        "zechariah 12:7"
       ],
       "glossKo": ""
     }

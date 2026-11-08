@@ -1,8 +1,8 @@
 {
   "lemma": "מִלָּה",
-  "pron": "밀라",
+  "pron": "밀레타",
   "strong": "H4406",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "מִלָּה",
     "strong": "H4405",
@@ -12,13 +12,172 @@
     {
       "lemma": "מִלָּה",
       "strong": "H4405",
-      "pron": "밀레헴",
-      "glossKo": "그들의 말"
+      "pron": "우밀라토",
+      "glossKo": "그의 말"
     }
   ],
   "defEn": "word; command; discourse; subject",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 24,
+  "byBook": {
+    "daniel": 24
+  },
+  "phrases": [
+    {
+      "hebrew": "דִּ֚י מִלַּ֣ת",
+      "pron": "드흐브 밀레타",
+      "lemmas": [
+        "דִּי",
+        "מִלָּה"
+      ],
+      "words": [
+        {
+          "word": "דִּ֚י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "מִלַּ֣ת",
+          "lemma": "מִלָּה",
+          "strong": "H4406",
+          "pron": "밀레타"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 2:10",
+        "daniel 2:23",
+        "daniel 3:22",
+        "daniel 6:14",
+        "daniel 7:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִלַּ֣ת מַלְכָּ֔א",
+      "pron": "밀레타 말카",
+      "lemmas": [
+        "מִלָּה",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "מִלַּ֣ת",
+          "lemma": "מִלָּה",
+          "strong": "H4406",
+          "pron": "밀레타"
+        },
+        {
+          "word": "מַלְכָּ֔א",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4430",
+          "pron": "말카"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 2:10",
+        "daniel 2:23",
+        "daniel 3:22",
+        "daniel 3:28",
+        "daniel 5:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּ֚י מִלַּ֣ת מַלְכָּ֔א",
+      "pron": "드흐브 밀레타 말카",
+      "lemmas": [
+        "דִּי",
+        "מִלָּה",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "דִּ֚י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "מִלַּ֣ת",
+          "lemma": "מִלָּה",
+          "strong": "H4406",
+          "pron": "밀레타"
+        },
+        {
+          "word": "מַלְכָּ֔א",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4430",
+          "pron": "말카"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:10",
+        "daniel 2:23",
+        "daniel 3:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִלְּתָ֔א הוֹדַ֥ע",
+      "pron": "밀레타 예디아",
+      "lemmas": [
+        "מִלָּה",
+        "יְדַע"
+      ],
+      "words": [
+        {
+          "word": "מִלְּתָ֔א",
+          "lemma": "מִלָּה",
+          "strong": "H4406",
+          "pron": "밀레타"
+        },
+        {
+          "word": "הוֹדַ֥ע",
+          "lemma": "יְדַע",
+          "strong": "H3046",
+          "pron": "예디아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:15",
+        "daniel 2:17",
+        "daniel 7:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פְּשַֽׁר מִלְּתָ֖א",
+      "pron": "우피셰라 밀레타",
+      "lemmas": [
+        "פְּשַׁר",
+        "מִלָּה"
+      ],
+      "words": [
+        {
+          "word": "פְּשַֽׁר",
+          "lemma": "פְּשַׁר",
+          "strong": "H6591",
+          "pron": "우피셰라"
+        },
+        {
+          "word": "מִלְּתָ֖א",
+          "lemma": "מִלָּה",
+          "strong": "H4406",
+          "pron": "밀레타"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 5:15",
+        "daniel 5:26",
+        "daniel 7:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

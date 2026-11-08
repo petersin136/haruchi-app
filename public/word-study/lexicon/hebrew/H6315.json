@@ -8,21 +8,57 @@
     {
       "lemma": "אֲפִיחַ",
       "strong": "H647",
-      "pron": "",
+      "pron": "아피아흐",
       "glossKo": "아비아"
     },
     {
       "lemma": "פִּיחַ",
       "strong": "H6368",
-      "pron": "",
+      "pron": "피아흐",
       "glossKo": "가루"
     }
   ],
   "defEn": "puff; blow with the breath; air; fan; utter; kindle; scoff",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 14,
   "byBook": {
-    "psalms": 2
+    "proverbs": 7,
+    "songofsolomon": 3,
+    "psalms": 2,
+    "ezekiel": 1,
+    "habakkuk": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְיָפִ֥יחַ כְּ֝זָבִ֗ים",
+      "pron": "야피아흐 카잡",
+      "lemmas": [
+        "פּוּחַ",
+        "כָּזָב"
+      ],
+      "words": [
+        {
+          "word": "וְיָפִ֥יחַ",
+          "lemma": "פּוּחַ",
+          "strong": "H6315",
+          "pron": "야피아흐"
+        },
+        {
+          "word": "כְּ֝זָבִ֗ים",
+          "lemma": "כָּזָב",
+          "strong": "H3577",
+          "pron": "카잡"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "proverbs 6:19",
+        "proverbs 14:5",
+        "proverbs 14:25",
+        "proverbs 19:5",
+        "proverbs 19:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

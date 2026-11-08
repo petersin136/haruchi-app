@@ -1,6 +1,6 @@
 {
   "lemma": "רָחַץ",
-  "pron": "에레하츠",
+  "pron": "브라하추",
   "strong": "H7364",
   "posKo": "동사",
   "root": null,
@@ -8,116 +8,246 @@
     {
       "lemma": "רְחַץ",
       "strong": "H7365",
-      "pron": "",
+      "pron": "히테레히추",
       "glossKo": "씻다(아람)"
     },
     {
       "lemma": "רַחַץ",
       "strong": "H7366",
-      "pron": "라헤치위",
+      "pron": "라헤치",
       "glossKo": "나의 씻을 그릇"
     }
   ],
   "defEn": "lave",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 72,
   "byBook": {
+    "leviticus": 26,
+    "exodus": 11,
     "genesis": 5,
-    "psalms": 3
+    "ezekiel": 3,
+    "kings2": 3,
+    "numbers": 3,
+    "psalms": 3,
+    "samuel2": 3,
+    "chronicles2": 2,
+    "deuteronomy": 2,
+    "isaiah": 2,
+    "job": 2,
+    "songofsolomon": 2,
+    "judges": 1,
+    "kings1": 1,
+    "proverbs": 1,
+    "ruth": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
-      "hebrew": "וְרַחֲצ֖וּ רַגְלֵיכֶ֑ם",
-      "pron": "에레하츠 락라이브",
+      "hebrew": "וְרָחַ֥ץ בַּמַּ֖יִם",
+      "pron": "브라하추 아마임",
       "lemmas": [
         "רָחַץ",
-        "רֶגֶל"
+        "מַיִם"
       ],
       "words": [
         {
-          "word": "וְרַחֲצ֖וּ",
+          "word": "וְרָחַ֥ץ",
           "lemma": "רָחַץ",
           "strong": "H7364",
-          "pron": "에레하츠"
+          "pron": "브라하추"
         },
         {
-          "word": "רַגְלֵיכֶ֑ם",
-          "lemma": "רֶגֶל",
-          "strong": "H7272",
-          "pron": "락라이브"
+          "word": "בַּמַּ֖יִם",
+          "lemma": "מַיִם",
+          "strong": "H4325",
+          "pron": "아마임"
         }
       ],
-      "count": 4,
+      "count": 21,
       "refs": [
-        "genesis 18:4",
-        "genesis 19:2",
-        "genesis 24:32",
-        "genesis 43:24"
+        "exodus 30:20",
+        "leviticus 1:9",
+        "leviticus 1:13",
+        "leviticus 8:21",
+        "leviticus 14:8",
+        "leviticus 15:5",
+        "leviticus 15:6",
+        "leviticus 15:7",
+        "leviticus 15:8",
+        "leviticus 15:10",
+        "leviticus 15:11",
+        "leviticus 15:16"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "מַ֔יִם וְרַחֲצ֖וּ",
-      "pron": "마임 에레하츠",
+      "hebrew": "בְּגָדָ֛יו וְרָחַ֥ץ",
+      "pron": "우베가딤 브라하추",
       "lemmas": [
-        "מַיִם",
+        "בֶּגֶד",
         "רָחַץ"
       ],
       "words": [
         {
-          "word": "מַ֔יִם",
-          "lemma": "מַיִם",
-          "strong": "H4325",
-          "pron": "마임"
+          "word": "בְּגָדָ֛יו",
+          "lemma": "בֶּגֶד",
+          "strong": "H899",
+          "pron": "우베가딤"
         },
         {
-          "word": "וְרַחֲצ֖וּ",
+          "word": "וְרָחַ֥ץ",
           "lemma": "רָחַץ",
           "strong": "H7364",
-          "pron": "에레하츠"
+          "pron": "브라하추"
         }
       ],
-      "count": 3,
+      "count": 15,
       "refs": [
-        "genesis 18:4",
-        "genesis 24:32",
-        "genesis 43:24"
+        "leviticus 14:9",
+        "leviticus 15:5",
+        "leviticus 15:6",
+        "leviticus 15:7",
+        "leviticus 15:8",
+        "leviticus 15:10",
+        "leviticus 15:11",
+        "leviticus 15:13",
+        "leviticus 15:21",
+        "leviticus 15:22",
+        "leviticus 15:27",
+        "leviticus 16:26"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "מַ֔יִם וְרַחֲצ֖וּ רַגְלֵיכֶ֑ם",
-      "pron": "마임 에레하츠 락라이브",
+      "hebrew": "יְכַבֵּ֧ס בְּגָדָ֛יו וְרָחַ֥ץ",
+      "pron": "킵벳 우베가딤 브라하추",
       "lemmas": [
-        "מַיִם",
-        "רָחַץ",
-        "רֶגֶל"
+        "כָּבַס",
+        "בֶּגֶד",
+        "רָחַץ"
       ],
       "words": [
         {
-          "word": "מַ֔יִם",
-          "lemma": "מַיִם",
-          "strong": "H4325",
-          "pron": "마임"
+          "word": "יְכַבֵּ֧ס",
+          "lemma": "כָּבַס",
+          "strong": "H3526",
+          "pron": "킵벳"
         },
         {
-          "word": "וְרַחֲצ֖וּ",
+          "word": "בְּגָדָ֛יו",
+          "lemma": "בֶּגֶד",
+          "strong": "H899",
+          "pron": "우베가딤"
+        },
+        {
+          "word": "וְרָחַ֥ץ",
           "lemma": "רָחַץ",
           "strong": "H7364",
-          "pron": "에레하츠"
-        },
-        {
-          "word": "רַגְלֵיכֶ֑ם",
-          "lemma": "רֶגֶל",
-          "strong": "H7272",
-          "pron": "락라이브"
+          "pron": "브라하추"
         }
       ],
-      "count": 3,
+      "count": 14,
       "refs": [
-        "genesis 18:4",
-        "genesis 24:32",
-        "genesis 43:24"
+        "leviticus 15:5",
+        "leviticus 15:6",
+        "leviticus 15:7",
+        "leviticus 15:8",
+        "leviticus 15:10",
+        "leviticus 15:11",
+        "leviticus 15:13",
+        "leviticus 15:21",
+        "leviticus 15:22",
+        "leviticus 15:27",
+        "leviticus 16:26",
+        "leviticus 16:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּגָדָ֛יו וְרָחַ֥ץ בַּמַּ֖יִם",
+      "pron": "우베가딤 브라하추 아마임",
+      "lemmas": [
+        "בֶּגֶד",
+        "רָחַץ",
+        "מַיִם"
+      ],
+      "words": [
+        {
+          "word": "בְּגָדָ֛יו",
+          "lemma": "בֶּגֶד",
+          "strong": "H899",
+          "pron": "우베가딤"
+        },
+        {
+          "word": "וְרָחַ֥ץ",
+          "lemma": "רָחַץ",
+          "strong": "H7364",
+          "pron": "브라하추"
+        },
+        {
+          "word": "בַּמַּ֖יִם",
+          "lemma": "מַיִם",
+          "strong": "H4325",
+          "pron": "아마임"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "leviticus 15:5",
+        "leviticus 15:6",
+        "leviticus 15:7",
+        "leviticus 15:8",
+        "leviticus 15:10",
+        "leviticus 15:11",
+        "leviticus 15:21",
+        "leviticus 15:22",
+        "leviticus 15:27",
+        "leviticus 17:15",
+        "numbers 19:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְרָחַ֥ץ בַּמַּ֖יִם וְטָמֵ֥א",
+      "pron": "브라하추 아마임 딤메",
+      "lemmas": [
+        "רָחַץ",
+        "מַיִם",
+        "טָמֵא"
+      ],
+      "words": [
+        {
+          "word": "וְרָחַ֥ץ",
+          "lemma": "רָחַץ",
+          "strong": "H7364",
+          "pron": "브라하추"
+        },
+        {
+          "word": "בַּמַּ֖יִם",
+          "lemma": "מַיִם",
+          "strong": "H4325",
+          "pron": "아마임"
+        },
+        {
+          "word": "וְטָמֵ֥א",
+          "lemma": "טָמֵא",
+          "strong": "H2930",
+          "pron": "딤메"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "leviticus 15:5",
+        "leviticus 15:6",
+        "leviticus 15:7",
+        "leviticus 15:8",
+        "leviticus 15:10",
+        "leviticus 15:11",
+        "leviticus 15:18",
+        "leviticus 15:21",
+        "leviticus 15:22",
+        "leviticus 15:27",
+        "leviticus 17:15"
       ],
       "glossKo": ""
     }

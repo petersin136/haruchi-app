@@ -1,8 +1,8 @@
 {
   "lemma": "גֻּלְגֹּלֶת",
-  "pron": "굴골레트",
+  "pron": "라굴골레트",
   "strong": "H1538",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גָּלַל",
     "strong": "H1556",
@@ -12,8 +12,8 @@
     {
       "lemma": "גַּל",
       "strong": "H1530",
-      "pron": "브갈레카",
-      "glossKo": "너의 무더기"
+      "pron": "갈",
+      "glossKo": "무더기"
     },
     {
       "lemma": "גֹּל",
@@ -30,19 +30,97 @@
     {
       "lemma": "גֻּלָּה",
       "strong": "H1543",
-      "pron": "",
+      "pron": "굴로트",
       "glossKo": "기름병"
     },
     {
       "lemma": "גִּלּוּל",
       "strong": "H1544",
-      "pron": "",
-      "glossKo": "우상"
+      "pron": "길룰레켐",
+      "glossKo": "너희의 우상"
+    },
+    {
+      "lemma": "גָּלִיל",
+      "strong": "H1550",
+      "pron": "겔릴림",
+      "glossKo": "두루마리"
     }
   ],
   "defEn": "skull; round",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 12,
+  "byBook": {
+    "numbers": 5,
+    "chronicles1": 3,
+    "exodus": 2,
+    "judges": 1,
+    "kings2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בְּמִסְפַּ֤ר שֵׁמוֹת֙ לְגֻלְגְּלֹתָ֔ם",
+      "pron": "밋파르 솀 라굴골레트",
+      "lemmas": [
+        "מִסְפָּר",
+        "שֵׁם",
+        "גֻּלְגֹּלֶת"
+      ],
+      "words": [
+        {
+          "word": "בְּמִסְפַּ֤ר",
+          "lemma": "מִסְפָּר",
+          "strong": "H4557",
+          "pron": "밋파르"
+        },
+        {
+          "word": "שֵׁמוֹת֙",
+          "lemma": "שֵׁם",
+          "strong": "H8034",
+          "pron": "솀"
+        },
+        {
+          "word": "לְגֻלְגְּלֹתָ֔ם",
+          "lemma": "גֻּלְגֹּלֶת",
+          "strong": "H1538",
+          "pron": "라굴골레트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 1:20",
+        "numbers 1:22",
+        "chronicles1 23:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שֵׁמוֹת֙ לְגֻלְגְּלֹתָ֔ם",
+      "pron": "솀 라굴골레트",
+      "lemmas": [
+        "שֵׁם",
+        "גֻּלְגֹּלֶת"
+      ],
+      "words": [
+        {
+          "word": "שֵׁמוֹת֙",
+          "lemma": "שֵׁם",
+          "strong": "H8034",
+          "pron": "솀"
+        },
+        {
+          "word": "לְגֻלְגְּלֹתָ֔ם",
+          "lemma": "גֻּלְגֹּלֶת",
+          "strong": "H1538",
+          "pron": "라굴골레트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 1:20",
+        "numbers 1:22",
+        "chronicles1 23:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

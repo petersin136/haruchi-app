@@ -1,6 +1,6 @@
 {
   "lemma": "עֵד",
-  "pron": "에데",
+  "pron": "르엗",
   "strong": "H5707",
   "posKo": "명사",
   "root": {
@@ -12,26 +12,26 @@
     {
       "lemma": "עֵדָה",
       "strong": "H5712",
-      "pron": "바아다트",
+      "pron": "아다트",
       "glossKo": "회중"
     },
     {
       "lemma": "עֵדָה",
       "strong": "H5713",
-      "pron": "브에도타이브",
-      "glossKo": "그의 증거"
+      "pron": "르에다",
+      "glossKo": "증거"
     },
     {
       "lemma": "עֵדוּת",
       "strong": "H5715",
-      "pron": "에두트",
+      "pron": "하에두트",
       "glossKo": "증거"
     },
     {
       "lemma": "עוּד",
       "strong": "H5749",
-      "pron": "바니테오닫",
-      "glossKo": "증거하는 이"
+      "pron": "하엗",
+      "glossKo": "증거하다"
     },
     {
       "lemma": "עוֹד",
@@ -42,80 +42,182 @@
     {
       "lemma": "עוֹדֵד",
       "strong": "H5752",
-      "pron": "",
+      "pron": "오덷",
       "glossKo": "오뎃"
     }
   ],
   "defEn": "witness; testimony; recorder; prince",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 70,
   "byBook": {
+    "deuteronomy": 14,
+    "proverbs": 11,
+    "isaiah": 9,
+    "jeremiah": 6,
+    "joshua": 5,
     "genesis": 4,
-    "psalms": 3
+    "exodus": 3,
+    "job": 3,
+    "numbers": 3,
+    "psalms": 3,
+    "ruth": 3,
+    "samuel1": 3,
+    "leviticus": 1,
+    "malachi": 1,
+    "micah": 1
   },
   "phrases": [
     {
-      "hebrew": "לְעֵ֖ד בֵּינִ֥י",
-      "pron": "에데 벤",
+      "hebrew": "עֵ֣ד שָֽׁקֶר",
+      "pron": "르엗 샤케르",
       "lemmas": [
         "עֵד",
-        "בֵּין"
+        "שֶׁקֶר"
       ],
       "words": [
         {
-          "word": "לְעֵ֖ד",
+          "word": "עֵ֣ד",
           "lemma": "עֵד",
           "strong": "H5707",
-          "pron": "에데"
+          "pron": "르엗"
         },
         {
-          "word": "בֵּינִ֥י",
-          "lemma": "בֵּין",
-          "strong": "H996",
-          "pron": "벤"
+          "word": "שָֽׁקֶר",
+          "lemma": "שֶׁקֶר",
+          "strong": "H8267",
+          "pron": "샤케르"
         }
       ],
-      "count": 3,
+      "count": 10,
       "refs": [
-        "genesis 31:44",
-        "genesis 31:48",
-        "genesis 31:50"
+        "exodus 20:16",
+        "deuteronomy 19:18",
+        "psalms 27:12",
+        "proverbs 6:19",
+        "proverbs 12:17",
+        "proverbs 14:5",
+        "proverbs 19:5",
+        "proverbs 19:9",
+        "proverbs 25:18"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לְעֵ֖ד בֵּינִ֥י וּבֵינֶֽךָ",
-      "pron": "에데 벤 벤",
+      "hebrew": "וְאָעִ֣ידָה עֵדִ֖ים",
+      "pron": "하엗 르엗",
       "lemmas": [
-        "עֵד",
-        "בֵּין",
-        "בֵּין"
+        "עוּד",
+        "עֵד"
       ],
       "words": [
+        {
+          "word": "וְאָעִ֣ידָה",
+          "lemma": "עוּד",
+          "strong": "H5749",
+          "pron": "하엗"
+        },
+        {
+          "word": "עֵדִ֖ים",
+          "lemma": "עֵד",
+          "strong": "H5707",
+          "pron": "르엗"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 8:2",
+        "jeremiah 32:10",
+        "jeremiah 32:25",
+        "jeremiah 32:44"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָיָ֥ה לְעֵ֖ד",
+      "pron": "하에타 르엗",
+      "lemmas": [
+        "הָיָה",
+        "עֵד"
+      ],
+      "words": [
+        {
+          "word": "וְהָיָ֥ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
         {
           "word": "לְעֵ֖ד",
           "lemma": "עֵד",
           "strong": "H5707",
-          "pron": "에데"
+          "pron": "르엗"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 31:44",
+        "exodus 23:1",
+        "proverbs 24:28",
+        "malachi 3:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָקוּם֩ עֵ֨ד",
+      "pron": "바야캄 르엗",
+      "lemmas": [
+        "קוּם",
+        "עֵד"
+      ],
+      "words": [
+        {
+          "word": "יָקוּם֩",
+          "lemma": "קוּם",
+          "strong": "H6965",
+          "pron": "바야캄"
         },
         {
-          "word": "בֵּינִ֥י",
-          "lemma": "בֵּין",
-          "strong": "H996",
-          "pron": "벤"
+          "word": "עֵ֨ד",
+          "lemma": "עֵד",
+          "strong": "H5707",
+          "pron": "르엗"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 19:15",
+        "deuteronomy 19:16",
+        "psalms 27:12",
+        "psalms 35:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַתֶּ֤ם עֵדַי֙",
+      "pron": "앗타 르엗",
+      "lemmas": [
+        "אַתָּה",
+        "עֵד"
+      ],
+      "words": [
+        {
+          "word": "אַתֶּ֤ם",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
         },
         {
-          "word": "וּבֵינֶֽךָ",
-          "lemma": "בֵּין",
-          "strong": "H996",
-          "pron": "벤"
+          "word": "עֵדַי֙",
+          "lemma": "עֵד",
+          "strong": "H5707",
+          "pron": "르엗"
         }
       ],
       "count": 3,
       "refs": [
-        "genesis 31:44",
-        "genesis 31:48",
-        "genesis 31:50"
+        "isaiah 43:10",
+        "isaiah 43:12",
+        "isaiah 44:8"
       ],
       "glossKo": ""
     }

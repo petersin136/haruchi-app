@@ -2,7 +2,7 @@
   "lemma": "חוּשַׁי",
   "pron": "후샤이",
   "strong": "H2365",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חוּשׁ",
     "strong": "H2363",
@@ -12,13 +12,13 @@
     {
       "lemma": "חוּשׁ",
       "strong": "H2363",
-      "pron": "후샤",
+      "pron": "후심",
       "glossKo": "서두르다"
     },
     {
       "lemma": "חוּשָׁה",
       "strong": "H2364",
-      "pron": "",
+      "pron": "후샤",
       "glossKo": "후사"
     },
     {
@@ -36,19 +36,191 @@
     {
       "lemma": "חִישׁ",
       "strong": "H2439",
-      "pron": "히쉬",
+      "pron": "힛",
       "glossKo": "서둘러"
     },
     {
       "lemma": "חֲשַׁח",
       "strong": "H2818",
-      "pron": "",
+      "pron": "하셰한",
       "glossKo": "필요하다(아람)"
     }
   ],
   "defEn": "Chushai",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "samuel2": 12,
+    "chronicles1": 1,
+    "kings1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וַיֹּ֣אמֶר חוּשַׁ֗י",
+      "pron": "바요메르 후샤이",
+      "lemmas": [
+        "אָמַר",
+        "חוּשַׁי"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֣אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "חוּשַׁ֗י",
+          "lemma": "חוּשַׁי",
+          "strong": "H2365",
+          "pron": "후샤이"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 16:16",
+        "samuel2 16:18",
+        "samuel2 17:7",
+        "samuel2 17:8",
+        "samuel2 17:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חוּשַׁי֮ אֶל",
+      "pron": "후샤이 엘",
+      "lemmas": [
+        "חוּשַׁי",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "חוּשַׁי֮",
+          "lemma": "חוּשַׁי",
+          "strong": "H2365",
+          "pron": "후샤이"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 16:16",
+        "samuel2 16:18",
+        "samuel2 17:6",
+        "samuel2 17:7",
+        "samuel2 17:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חוּשַׁ֣י הָאַרְכִּ֔י",
+      "pron": "후샤이 하아렉키",
+      "lemmas": [
+        "חוּשַׁי",
+        "אַרְכִּי"
+      ],
+      "words": [
+        {
+          "word": "חוּשַׁ֣י",
+          "lemma": "חוּשַׁי",
+          "strong": "H2365",
+          "pron": "후샤이"
+        },
+        {
+          "word": "הָאַרְכִּ֔י",
+          "lemma": "אַרְכִּי",
+          "strong": "H757",
+          "pron": "하아렉키"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 15:32",
+        "samuel2 16:16",
+        "samuel2 17:5",
+        "samuel2 17:14",
+        "chronicles1 27:33"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֤אמֶר חוּשַׁי֙ אֶל",
+      "pron": "바요메르 후샤이 엘",
+      "lemmas": [
+        "אָמַר",
+        "חוּשַׁי",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֤אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "חוּשַׁי֙",
+          "lemma": "חוּשַׁי",
+          "strong": "H2365",
+          "pron": "후샤이"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 16:16",
+        "samuel2 16:18",
+        "samuel2 17:7",
+        "samuel2 17:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חוּשַׁי֙ אֶל אַבְשָׁלֹ֔ם",
+      "pron": "후샤이 엘 압샬롬",
+      "lemmas": [
+        "חוּשַׁי",
+        "אֵל",
+        "אֲבִישָׁלוֹם"
+      ],
+      "words": [
+        {
+          "word": "חוּשַׁי֙",
+          "lemma": "חוּשַׁי",
+          "strong": "H2365",
+          "pron": "후샤이"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "אַבְשָׁלֹ֔ם",
+          "lemma": "אֲבִישָׁלוֹם",
+          "strong": "H53",
+          "pron": "압샬롬"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 16:16",
+        "samuel2 16:18",
+        "samuel2 17:6",
+        "samuel2 17:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

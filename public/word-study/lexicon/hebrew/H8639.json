@@ -18,9 +18,72 @@
   ],
   "defEn": "lethargy; trance",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 7,
   "byBook": {
-    "genesis": 2
+    "genesis": 2,
+    "job": 2,
+    "isaiah": 1,
+    "proverbs": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בִּנְפֹ֥ל תַּ֝רְדֵּמָ֗ה",
+      "pron": "바얍펠 타렏데마",
+      "lemmas": [
+        "נָפַל",
+        "תַּרְדֵּמָה"
+      ],
+      "words": [
+        {
+          "word": "בִּנְפֹ֥ל",
+          "lemma": "נָפַל",
+          "strong": "H5307",
+          "pron": "바얍펠"
+        },
+        {
+          "word": "תַּ֝רְדֵּמָ֗ה",
+          "lemma": "תַּרְדֵּמָה",
+          "strong": "H8639",
+          "pron": "타렏데마"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 4:13",
+        "job 33:15",
+        "proverbs 19:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תַּרְדֵּמָ֛ה עַל",
+      "pron": "타렏데마 알",
+      "lemmas": [
+        "תַּרְדֵּמָה",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "תַּרְדֵּמָ֛ה",
+          "lemma": "תַּרְדֵּמָה",
+          "strong": "H8639",
+          "pron": "타렏데마"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 2:21",
+        "job 4:13",
+        "job 33:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

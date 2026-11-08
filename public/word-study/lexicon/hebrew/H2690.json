@@ -1,8 +1,8 @@
 {
   "lemma": "חָצַר",
-  "pron": "하차르",
+  "pron": "믛츳림",
   "strong": "H2690",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "חֲצֹצְרָה",
     "strong": "H2689",
@@ -12,19 +12,185 @@
     {
       "lemma": "חֲצֹצְרָה",
       "strong": "H2689",
-      "pron": "바하초체로트",
+      "pron": "하초체로트",
       "glossKo": "나팔"
     },
     {
       "lemma": "חָצֵר",
       "strong": "H2691",
-      "pron": "하체림",
-      "glossKo": "뜰"
+      "pron": "베하체레헴",
+      "glossKo": "그들의 뜰"
     }
   ],
   "defEn": "trumpet; blow on that instrument",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 12,
+  "byBook": {
+    "chronicles2": 10,
+    "chronicles1": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "מחצצרים מַחְצְרִים֙",
+      "pron": "믛츳림 믛츳림",
+      "lemmas": [
+        "חָצַר",
+        "חָצַר"
+      ],
+      "words": [
+        {
+          "word": "מחצצרים",
+          "lemma": "חָצַר",
+          "strong": "H2690",
+          "pron": "믛츳림"
+        },
+        {
+          "word": "מַחְצְרִים֙",
+          "lemma": "חָצַר",
+          "strong": "H2690",
+          "pron": "믛츳림"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "chronicles1 15:24",
+        "chronicles2 5:12",
+        "chronicles2 5:13",
+        "chronicles2 7:6",
+        "chronicles2 13:14",
+        "chronicles2 29:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַכֹּ֣הֲנִ֔ים מחצצרים מַחְצְרִים֙",
+      "pron": "코헨 믛츳림 믛츳림",
+      "lemmas": [
+        "כֹּהֵן",
+        "חָצַר",
+        "חָצַר"
+      ],
+      "words": [
+        {
+          "word": "הַכֹּ֣הֲנִ֔ים",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        },
+        {
+          "word": "מחצצרים",
+          "lemma": "חָצַר",
+          "strong": "H2690",
+          "pron": "믛츳림"
+        },
+        {
+          "word": "מַחְצְרִים֙",
+          "lemma": "חָצַר",
+          "strong": "H2690",
+          "pron": "믛츳림"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "chronicles1 15:24",
+        "chronicles2 7:6",
+        "chronicles2 13:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מחצצרים מַחְצְרִים֙ בַּחֲצֹ֣צְר֔וֹת",
+      "pron": "믛츳림 믛츳림 하초체로트",
+      "lemmas": [
+        "חָצַר",
+        "חָצַר",
+        "חֲצֹצְרָה"
+      ],
+      "words": [
+        {
+          "word": "מחצצרים",
+          "lemma": "חָצַר",
+          "strong": "H2690",
+          "pron": "믛츳림"
+        },
+        {
+          "word": "מַחְצְרִים֙",
+          "lemma": "חָצַר",
+          "strong": "H2690",
+          "pron": "믛츳림"
+        },
+        {
+          "word": "בַּחֲצֹ֣צְר֔וֹת",
+          "lemma": "חֲצֹצְרָה",
+          "strong": "H2689",
+          "pron": "하초체로트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "chronicles1 15:24",
+        "chronicles2 5:12",
+        "chronicles2 13:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַכֹּ֣הֲנִ֔ים מחצצרים",
+      "pron": "코헨 믛츳림",
+      "lemmas": [
+        "כֹּהֵן",
+        "חָצַר"
+      ],
+      "words": [
+        {
+          "word": "הַכֹּ֣הֲנִ֔ים",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        },
+        {
+          "word": "מחצצרים",
+          "lemma": "חָצַר",
+          "strong": "H2690",
+          "pron": "믛츳림"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 15:24",
+        "chronicles2 7:6",
+        "chronicles2 13:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַחְצְרִים֙ בַּחֲצֹ֣צְר֔וֹת",
+      "pron": "믛츳림 하초체로트",
+      "lemmas": [
+        "חָצַר",
+        "חֲצֹצְרָה"
+      ],
+      "words": [
+        {
+          "word": "מַחְצְרִים֙",
+          "lemma": "חָצַר",
+          "strong": "H2690",
+          "pron": "믛츳림"
+        },
+        {
+          "word": "בַּחֲצֹ֣צְר֔וֹת",
+          "lemma": "חֲצֹצְרָה",
+          "strong": "H2689",
+          "pron": "하초체로트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 15:24",
+        "chronicles2 5:12",
+        "chronicles2 13:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

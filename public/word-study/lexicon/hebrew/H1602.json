@@ -1,0 +1,93 @@
+{
+  "lemma": "גָּעַל",
+  "pron": "틱알",
+  "strong": "H1602",
+  "posKo": "동사",
+  "root": null,
+  "family": [
+    {
+      "lemma": "גַּעַל",
+      "strong": "H1603",
+      "pron": "가알",
+      "glossKo": "가알"
+    },
+    {
+      "lemma": "גֹּעַל",
+      "strong": "H1604",
+      "pron": "브고알",
+      "glossKo": "혐오"
+    }
+  ],
+  "defEn": "detest",
+  "defKo": "",
+  "countOT": 10,
+  "byBook": {
+    "leviticus": 5,
+    "ezekiel": 2,
+    "jeremiah": 1,
+    "job": 1,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "תִגְעַ֥ל נַפְשִׁ֖י",
+      "pron": "틱알 네페쉬",
+      "lemmas": [
+        "גָּעַל",
+        "נֶפֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "תִגְעַ֥ל",
+          "lemma": "גָּעַל",
+          "strong": "H1602",
+          "pron": "틱알"
+        },
+        {
+          "word": "נַפְשִׁ֖י",
+          "lemma": "נֶפֶשׁ",
+          "strong": "H5315",
+          "pron": "네페쉬"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "leviticus 26:11",
+        "leviticus 26:15",
+        "leviticus 26:30",
+        "leviticus 26:43",
+        "jeremiah 14:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹֽא תִגְעַ֥ל",
+      "pron": "로 틱알",
+      "lemmas": [
+        "לֹא",
+        "גָּעַל"
+      ],
+      "words": [
+        {
+          "word": "וְלֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תִגְעַ֥ל",
+          "lemma": "גָּעַל",
+          "strong": "H1602",
+          "pron": "틱알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 26:11",
+        "leviticus 26:44",
+        "job 21:10"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

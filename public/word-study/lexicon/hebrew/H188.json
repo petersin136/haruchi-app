@@ -2,7 +2,7 @@
   "lemma": "אוֹי",
   "pron": "오이",
   "strong": "H188",
-  "posKo": "",
+  "posKo": "소사",
   "root": {
     "lemma": "אָוָה",
     "strong": "H183",
@@ -12,31 +12,208 @@
     {
       "lemma": "אָוָה",
       "strong": "H183",
-      "pron": "브이테아브",
+      "pron": "히테아우우",
       "glossKo": "사모하다"
     },
     {
       "lemma": "אַוָּה",
       "strong": "H185",
-      "pron": "",
+      "pron": "아바트",
       "glossKo": "탐심"
     },
     {
       "lemma": "אֱוִי",
       "strong": "H189",
-      "pron": "",
+      "pron": "에비",
       "glossKo": "에위"
+    },
+    {
+      "lemma": "אוֹיָה",
+      "strong": "H190",
+      "pron": "오아",
+      "glossKo": "오호라"
+    },
+    {
+      "lemma": "אִי",
+      "strong": "H337",
+      "pron": "베일로",
+      "glossKo": "그에게 오호"
     },
     {
       "lemma": "אִי",
       "strong": "H339",
-      "pron": "브이임",
+      "pron": "이에",
       "glossKo": "섬"
     }
   ],
   "defEn": "lamentation",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 24,
+  "byBook": {
+    "jeremiah": 8,
+    "ezekiel": 4,
+    "isaiah": 4,
+    "hosea": 2,
+    "numbers": 2,
+    "samuel1": 2,
+    "lamentations": 1,
+    "proverbs": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "א֣וֹי כִּ֣י",
+      "pron": "오이 키",
+      "lemmas": [
+        "אוֹי",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "א֣וֹי",
+          "lemma": "אוֹי",
+          "strong": "H188",
+          "pron": "오이"
+        },
+        {
+          "word": "כִּ֣י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 4:7",
+        "isaiah 6:5",
+        "jeremiah 4:13",
+        "jeremiah 6:4",
+        "hosea 7:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּאמַ֑ר א֕וֹי",
+      "pron": "바요메르 오이",
+      "lemmas": [
+        "אָמַר",
+        "אוֹי"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּאמַ֑ר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "א֕וֹי",
+          "lemma": "אוֹי",
+          "strong": "H188",
+          "pron": "오이"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 24:23",
+        "samuel1 4:7",
+        "isaiah 6:5",
+        "jeremiah 45:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "א֕וֹי מִ֥י",
+      "pron": "오이 미",
+      "lemmas": [
+        "אוֹי",
+        "מִי"
+      ],
+      "words": [
+        {
+          "word": "א֕וֹי",
+          "lemma": "אוֹי",
+          "strong": "H188",
+          "pron": "오이"
+        },
+        {
+          "word": "מִ֥י",
+          "lemma": "מִי",
+          "strong": "H4310",
+          "pron": "미"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 24:23",
+        "samuel1 4:8",
+        "proverbs 23:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֽוֹי נָ֣א",
+      "pron": "오이 나",
+      "lemmas": [
+        "אוֹי",
+        "נָא"
+      ],
+      "words": [
+        {
+          "word": "אֽוֹי",
+          "lemma": "אוֹי",
+          "strong": "H188",
+          "pron": "오이"
+        },
+        {
+          "word": "נָ֣א",
+          "lemma": "נָא",
+          "strong": "H4994",
+          "pron": "나"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 4:31",
+        "jeremiah 45:3",
+        "lamentations 5:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֽוֹי נָ֣א כִּֽי",
+      "pron": "오이 나 키",
+      "lemmas": [
+        "אוֹי",
+        "נָא",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "אֽוֹי",
+          "lemma": "אוֹי",
+          "strong": "H188",
+          "pron": "오이"
+        },
+        {
+          "word": "נָ֣א",
+          "lemma": "נָא",
+          "strong": "H4994",
+          "pron": "나"
+        },
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 4:31",
+        "jeremiah 45:3",
+        "lamentations 5:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

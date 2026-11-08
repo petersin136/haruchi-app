@@ -1,6 +1,6 @@
 {
   "lemma": "מָהַר",
-  "pron": "마하루",
+  "pron": "바예마헤르",
   "strong": "H4116",
   "posKo": "동사",
   "root": null,
@@ -14,7 +14,7 @@
     {
       "lemma": "מָהַר",
       "strong": "H4117",
-      "pron": "",
+      "pron": "마호르",
       "glossKo": "신부값을 치르다"
     },
     {
@@ -26,21 +26,71 @@
     {
       "lemma": "מַהֲרַי",
       "strong": "H4121",
-      "pron": "",
+      "pron": "마헤라이",
       "glossKo": "마하래"
     }
   ],
   "defEn": "be liquid; flow; hurry; promptly",
   "defKo": "",
-  "countOT": 15,
+  "countOT": 64,
   "byBook": {
     "genesis": 13,
-    "psalms": 2
+    "samuel1": 10,
+    "isaiah": 7,
+    "exodus": 4,
+    "chronicles2": 3,
+    "joshua": 3,
+    "kings1": 3,
+    "proverbs": 3,
+    "samuel2": 3,
+    "esther": 2,
+    "jeremiah": 2,
+    "judges": 2,
+    "psalms": 2,
+    "chronicles1": 1,
+    "ecclesiastes": 1,
+    "habakkuk": 1,
+    "job": 1,
+    "kings2": 1,
+    "malachi": 1,
+    "nahum": 1
   },
   "phrases": [
     {
+      "hebrew": "וַיֹּ֗אמֶר מַהֲרִ֞י",
+      "pron": "바요메르 바예마헤르",
+      "lemmas": [
+        "אָמַר",
+        "מָהַר"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֗אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "מַהֲרִ֞י",
+          "lemma": "מָהַר",
+          "strong": "H4116",
+          "pron": "바예마헤르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 18:6",
+        "samuel1 23:27",
+        "kings1 22:9",
+        "chronicles2 18:8",
+        "isaiah 5:19",
+        "isaiah 35:4"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "וַתְּמַהֵ֗ר וַתֹּ֧רֶד",
-      "pron": "마하루 예렏",
+      "pron": "바예마헤르 바예렏",
       "lemmas": [
         "מָהַר",
         "יָרַד"
@@ -50,21 +100,51 @@
           "word": "וַתְּמַהֵ֗ר",
           "lemma": "מָהַר",
           "strong": "H4116",
-          "pron": "마하루"
+          "pron": "바예마헤르"
         },
         {
           "word": "וַתֹּ֧רֶד",
           "lemma": "יָרַד",
           "strong": "H3381",
-          "pron": "예렏"
+          "pron": "바예렏"
         }
       ],
-      "count": 4,
+      "count": 5,
       "refs": [
         "genesis 24:18",
         "genesis 24:46",
         "genesis 44:11",
-        "genesis 45:13"
+        "genesis 45:13",
+        "samuel1 25:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִהַרְתֶּ֥ן בֹּ֖א",
+      "pron": "바예마헤르 바야베",
+      "lemmas": [
+        "מָהַר",
+        "בּוֹא"
+      ],
+      "words": [
+        {
+          "word": "מִהַרְתֶּ֥ן",
+          "lemma": "מָהַר",
+          "strong": "H4116",
+          "pron": "바예마헤르"
+        },
+        {
+          "word": "בֹּ֖א",
+          "lemma": "בּוֹא",
+          "strong": "H935",
+          "pron": "바야베"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 2:18",
+        "samuel1 4:14",
+        "samuel1 25:34"
       ],
       "glossKo": ""
     }

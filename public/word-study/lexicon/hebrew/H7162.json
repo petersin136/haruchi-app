@@ -1,8 +1,8 @@
 {
   "lemma": "קֶרֶן",
-  "pron": "케렌",
+  "pron": "카레나",
   "strong": "H7162",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "קֶרֶן",
     "strong": "H7161",
@@ -12,25 +12,191 @@
     {
       "lemma": "קָרַן",
       "strong": "H7160",
-      "pron": "마케린",
+      "pron": "카란",
       "glossKo": "비추다"
     },
     {
       "lemma": "קֶרֶן",
       "strong": "H7161",
-      "pron": "브케렌",
-      "glossKo": "뿔"
+      "pron": "베카레나으브",
+      "glossKo": "그의 뿔"
     },
     {
       "lemma": "קֶרֶן הַפּוּךְ",
       "strong": "H7163",
-      "pron": "",
+      "pron": "케렌",
       "glossKo": "게렌합북"
     }
   ],
   "defEn": "horn",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "daniel": 14
+  },
+  "phrases": [
+    {
+      "hebrew": "קָ֣ל קַרְנָ֣א",
+      "pron": "칼 카레나",
+      "lemmas": [
+        "קָל",
+        "קֶרֶן"
+      ],
+      "words": [
+        {
+          "word": "קָ֣ל",
+          "lemma": "קָל",
+          "strong": "H7032",
+          "pron": "칼"
+        },
+        {
+          "word": "קַרְנָ֣א",
+          "lemma": "קֶרֶן",
+          "strong": "H7162",
+          "pron": "카레나"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קָ֣ל קַרְנָ֣א מַ֠שְׁרוֹקִיתָא",
+      "pron": "칼 카레나 마셰로키타",
+      "lemmas": [
+        "קָל",
+        "קֶרֶן",
+        "מַשְׁרוֹקִי"
+      ],
+      "words": [
+        {
+          "word": "קָ֣ל",
+          "lemma": "קָל",
+          "strong": "H7032",
+          "pron": "칼"
+        },
+        {
+          "word": "קַרְנָ֣א",
+          "lemma": "קֶרֶן",
+          "strong": "H7162",
+          "pron": "카레나"
+        },
+        {
+          "word": "מַ֠שְׁרוֹקִיתָא",
+          "lemma": "מַשְׁרוֹקִי",
+          "strong": "H4953",
+          "pron": "마셰로키타"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קַרְנָ֣א מַ֠שְׁרוֹקִיתָא",
+      "pron": "카레나 마셰로키타",
+      "lemmas": [
+        "קֶרֶן",
+        "מַשְׁרוֹקִי"
+      ],
+      "words": [
+        {
+          "word": "קַרְנָ֣א",
+          "lemma": "קֶרֶן",
+          "strong": "H7162",
+          "pron": "카레나"
+        },
+        {
+          "word": "מַ֠שְׁרוֹקִיתָא",
+          "lemma": "מַשְׁרוֹקִי",
+          "strong": "H4953",
+          "pron": "마셰로키타"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קַרְנָ֣א מַ֠שְׁרוֹקִיתָא קיתרוס",
+      "pron": "카레나 마셰로키타 킷르븟",
+      "lemmas": [
+        "קֶרֶן",
+        "מַשְׁרוֹקִי",
+        "קִיתָרֹס"
+      ],
+      "words": [
+        {
+          "word": "קַרְנָ֣א",
+          "lemma": "קֶרֶן",
+          "strong": "H7162",
+          "pron": "카레나"
+        },
+        {
+          "word": "מַ֠שְׁרוֹקִיתָא",
+          "lemma": "מַשְׁרוֹקִי",
+          "strong": "H4953",
+          "pron": "마셰로키타"
+        },
+        {
+          "word": "קיתרוס",
+          "lemma": "קִיתָרֹס",
+          "strong": "H7030",
+          "pron": "킷르븟"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 3:5",
+        "daniel 3:7",
+        "daniel 3:10",
+        "daniel 3:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְקַרְנַ֥יִן עֲשַׂ֖ר",
+      "pron": "카레나 아사르",
+      "lemmas": [
+        "קֶרֶן",
+        "עֲשַׂר"
+      ],
+      "words": [
+        {
+          "word": "וְקַרְנַ֥יִן",
+          "lemma": "קֶרֶן",
+          "strong": "H7162",
+          "pron": "카레나"
+        },
+        {
+          "word": "עֲשַׂ֖ר",
+          "lemma": "עֲשַׂר",
+          "strong": "H6236",
+          "pron": "아사르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 7:7",
+        "daniel 7:20",
+        "daniel 7:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

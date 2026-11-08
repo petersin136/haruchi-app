@@ -1,8 +1,8 @@
 {
   "lemma": "חֲזָא",
-  "pron": "하자",
+  "pron": "르메헤제",
   "strong": "H2370",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "חָזָה",
     "strong": "H2372",
@@ -12,31 +12,31 @@
     {
       "lemma": "הָזָה",
       "strong": "H1957",
-      "pron": "",
+      "pron": "호짐",
       "glossKo": "꿈을 꾸다"
     },
     {
       "lemma": "חֲזָאֵל",
       "strong": "H2371",
-      "pron": "",
+      "pron": "하자엘",
       "glossKo": "하사엘"
     },
     {
       "lemma": "חָזָה",
       "strong": "H2372",
-      "pron": "예헤주",
+      "pron": "테헤제",
       "glossKo": "보다"
     },
     {
       "lemma": "חָזֶה",
       "strong": "H2373",
-      "pron": "",
+      "pron": "헤하제",
       "glossKo": "가슴"
     },
     {
       "lemma": "חֹזֶה",
       "strong": "H2374",
-      "pron": "",
+      "pron": "호제",
       "glossKo": "선견자"
     },
     {
@@ -48,7 +48,194 @@
   ],
   "defEn": "gaze upon; dream; be usual",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 31,
+  "byBook": {
+    "daniel": 30,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "חָזֵ֣ה הֲוֵ֔ית",
+      "pron": "르메헤제 레헤베",
+      "lemmas": [
+        "חֲזָא",
+        "הָוָא"
+      ],
+      "words": [
+        {
+          "word": "חָזֵ֣ה",
+          "lemma": "חֲזָא",
+          "strong": "H2370",
+          "pron": "르메헤제"
+        },
+        {
+          "word": "הֲוֵ֔ית",
+          "lemma": "הָוָא",
+          "strong": "H1934",
+          "pron": "레헤베"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "daniel 2:31",
+        "daniel 2:34",
+        "daniel 4:10",
+        "daniel 4:13",
+        "daniel 7:2",
+        "daniel 7:4",
+        "daniel 7:6",
+        "daniel 7:7",
+        "daniel 7:9",
+        "daniel 7:11",
+        "daniel 7:13",
+        "daniel 7:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּ֣י חֲזֵית֔וֹן",
+      "pron": "드흐브 르메헤제",
+      "lemmas": [
+        "דִּי",
+        "חֲזָא"
+      ],
+      "words": [
+        {
+          "word": "דִּ֣י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "חֲזֵית֔וֹן",
+          "lemma": "חֲזָא",
+          "strong": "H2370",
+          "pron": "르메헤제"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "daniel 2:8",
+        "daniel 2:26",
+        "daniel 2:41",
+        "daniel 2:43",
+        "daniel 2:45",
+        "daniel 3:19",
+        "daniel 4:9",
+        "daniel 4:20",
+        "daniel 4:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָזֵ֥ה הֲוֵ֛ית בְּחֶזְוֵ֥י",
+      "pron": "르메헤제 레헤베 브헷바",
+      "lemmas": [
+        "חֲזָא",
+        "הָוָא",
+        "חֵזֵו"
+      ],
+      "words": [
+        {
+          "word": "חָזֵ֥ה",
+          "lemma": "חֲזָא",
+          "strong": "H2370",
+          "pron": "르메헤제"
+        },
+        {
+          "word": "הֲוֵ֛ית",
+          "lemma": "הָוָא",
+          "strong": "H1934",
+          "pron": "레헤베"
+        },
+        {
+          "word": "בְּחֶזְוֵ֥י",
+          "lemma": "חֵזֵו",
+          "strong": "H2376",
+          "pron": "브헷바"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:13",
+        "daniel 7:2",
+        "daniel 7:7",
+        "daniel 7:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָזֵ֣ה הֲוֵ֡ית עַד֩",
+      "pron": "르메헤제 레헤베 앋",
+      "lemmas": [
+        "חֲזָא",
+        "הָוָא",
+        "עַד"
+      ],
+      "words": [
+        {
+          "word": "חָזֵ֣ה",
+          "lemma": "חֲזָא",
+          "strong": "H2370",
+          "pron": "르메헤제"
+        },
+        {
+          "word": "הֲוֵ֡ית",
+          "lemma": "הָוָא",
+          "strong": "H1934",
+          "pron": "레헤베"
+        },
+        {
+          "word": "עַד֩",
+          "lemma": "עַד",
+          "strong": "H5705",
+          "pron": "앋"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 2:34",
+        "daniel 7:4",
+        "daniel 7:9",
+        "daniel 7:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּ֣י חֲזֵית֔וֹן דִּ֥י",
+      "pron": "드흐브 르메헤제 드흐브",
+      "lemmas": [
+        "דִּי",
+        "חֲזָא",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "דִּ֣י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "חֲזֵית֔וֹן",
+          "lemma": "חֲזָא",
+          "strong": "H2370",
+          "pron": "르메헤제"
+        },
+        {
+          "word": "דִּ֥י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:8",
+        "daniel 2:45",
+        "daniel 4:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

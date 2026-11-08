@@ -2,7 +2,7 @@
   "lemma": "דְּלִילָה",
   "pron": "델릴라",
   "strong": "H1807",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "דָּלַל",
     "strong": "H1809",
@@ -12,25 +12,158 @@
     {
       "lemma": "דַּל",
       "strong": "H1800",
-      "pron": "달",
+      "pron": "브달",
       "glossKo": "비천한"
     },
     {
       "lemma": "דָּלָה",
       "strong": "H1802",
-      "pron": "딜리타니",
-      "glossKo": "나를 긷다"
+      "pron": "바틷레나",
+      "glossKo": "긷다"
     },
     {
       "lemma": "דָּלַל",
       "strong": "H1809",
-      "pron": "달로누",
+      "pron": "바읻달",
       "glossKo": "쇠하다"
     }
   ],
   "defEn": "Delilah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "judges": 6
+  },
+  "phrases": [
+    {
+      "hebrew": "דְּלִילָה֙ אֶל",
+      "pron": "델릴라 엘",
+      "lemmas": [
+        "דְּלִילָה",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "דְּלִילָה֙",
+          "lemma": "דְּלִילָה",
+          "strong": "H1807",
+          "pron": "델릴라"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 16:6",
+        "judges 16:10",
+        "judges 16:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דְּלִילָה֙ אֶל שִׁמְשׁ֔וֹן",
+      "pron": "델릴라 엘 심숀",
+      "lemmas": [
+        "דְּלִילָה",
+        "אֵל",
+        "שִׁמְשׁוֹן"
+      ],
+      "words": [
+        {
+          "word": "דְּלִילָה֙",
+          "lemma": "דְּלִילָה",
+          "strong": "H1807",
+          "pron": "델릴라"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "שִׁמְשׁ֔וֹן",
+          "lemma": "שִׁמְשׁוֹן",
+          "strong": "H8123",
+          "pron": "심숀"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 16:6",
+        "judges 16:10",
+        "judges 16:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתֹּ֤אמֶר דְּלִילָה֙",
+      "pron": "바요메르 델릴라",
+      "lemmas": [
+        "אָמַר",
+        "דְּלִילָה"
+      ],
+      "words": [
+        {
+          "word": "וַתֹּ֤אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "דְּלִילָה֙",
+          "lemma": "דְּלִילָה",
+          "strong": "H1807",
+          "pron": "델릴라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 16:6",
+        "judges 16:10",
+        "judges 16:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתֹּ֤אמֶר דְּלִילָה֙ אֶל",
+      "pron": "바요메르 델릴라 엘",
+      "lemmas": [
+        "אָמַר",
+        "דְּלִילָה",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "וַתֹּ֤אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "דְּלִילָה֙",
+          "lemma": "דְּלִילָה",
+          "strong": "H1807",
+          "pron": "델릴라"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "judges 16:6",
+        "judges 16:10",
+        "judges 16:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

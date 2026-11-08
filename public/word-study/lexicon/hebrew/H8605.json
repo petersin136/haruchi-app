@@ -1,6 +1,6 @@
 {
   "lemma": "תְּפִלָּה",
-  "pron": "테필라티위",
+  "pron": "아테필라",
   "strong": "H8605",
   "posKo": "명사",
   "root": {
@@ -12,44 +12,128 @@
     {
       "lemma": "אֶפְלָל",
       "strong": "H654",
-      "pron": "",
+      "pron": "엡랄",
       "glossKo": "에블랄"
     },
     {
       "lemma": "פָּלִיל",
       "strong": "H6414",
-      "pron": "",
+      "pron": "비펠릴림",
       "glossKo": "재판관"
     },
     {
       "lemma": "פָּלַל",
       "strong": "H6419",
-      "pron": "에텝팔랄",
+      "pron": "브이텝팔렐",
       "glossKo": "기도하다"
     },
     {
       "lemma": "פָּלָל",
       "strong": "H6420",
-      "pron": "",
+      "pron": "팔랄",
       "glossKo": "발랄"
     },
     {
       "lemma": "פְּלַלְיָה",
       "strong": "H6421",
-      "pron": "",
+      "pron": "펠랄아",
       "glossKo": "블랄랴"
     }
   ],
   "defEn": "intercession; supplication",
   "defKo": "",
-  "countOT": 32,
+  "countOT": 77,
   "byBook": {
-    "psalms": 32
+    "psalms": 32,
+    "chronicles2": 12,
+    "kings1": 8,
+    "isaiah": 5,
+    "nehemiah": 4,
+    "daniel": 3,
+    "proverbs": 3,
+    "jeremiah": 2,
+    "kings2": 2,
+    "lamentations": 2,
+    "habakkuk": 1,
+    "job": 1,
+    "jonah": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
+      "hebrew": "אֶל תְּפִלַּ֧ת",
+      "pron": "엘 아테필라",
+      "lemmas": [
+        "אֵל",
+        "תְּפִלָּה"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "תְּפִלַּ֧ת",
+          "lemma": "תְּפִלָּה",
+          "strong": "H8605",
+          "pron": "아테필라"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "kings1 8:28",
+        "kings1 8:29",
+        "chronicles2 6:19",
+        "chronicles2 6:20",
+        "nehemiah 1:6",
+        "nehemiah 1:11",
+        "psalms 102:17",
+        "daniel 9:17",
+        "jonah 2:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת תְּפִלָּתָ֖ם",
+      "pron": "에트 아테필라",
+      "lemmas": [
+        "אֵת",
+        "תְּפִלָּה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "תְּפִלָּתָ֖ם",
+          "lemma": "תְּפִלָּה",
+          "strong": "H8605",
+          "pron": "아테필라"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "samuel2 7:27",
+        "kings1 8:45",
+        "kings1 8:49",
+        "kings1 9:3",
+        "kings2 20:5",
+        "chronicles2 6:35",
+        "chronicles2 6:39",
+        "chronicles2 7:12",
+        "psalms 102:17",
+        "isaiah 38:5"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "שִׁמְעָ֣ה תְפִלָּתִ֑י",
-      "pron": "우셰마 테필라티위",
+      "pron": "바이솀우 아테필라",
       "lemmas": [
         "שָׁמַע",
         "תְּפִלָּה"
@@ -59,13 +143,13 @@
           "word": "שִׁמְעָ֣ה",
           "lemma": "שָׁמַע",
           "strong": "H8085",
-          "pron": "우셰마"
+          "pron": "바이솀우"
         },
         {
           "word": "תְפִלָּתִ֑י",
           "lemma": "תְּפִלָּה",
           "strong": "H8605",
-          "pron": "테필라티위"
+          "pron": "아테필라"
         }
       ],
       "count": 7,
@@ -81,96 +165,71 @@
       "glossKo": ""
     },
     {
-      "hebrew": "שְׁמַ֣ע תְּפִלָּתִ֑י הַ֝אֲזִ֗ינָה",
-      "pron": "우셰마 테필라티위 하아지나",
+      "hebrew": "אֶל תְּפִלַּ֧ת עַבְדְּךָ֛",
+      "pron": "엘 아테필라 에벧",
       "lemmas": [
-        "שָׁמַע",
+        "אֵל",
         "תְּפִלָּה",
-        "אָזַן"
+        "עֶבֶד"
       ],
       "words": [
         {
-          "word": "שְׁמַ֣ע",
-          "lemma": "שָׁמַע",
-          "strong": "H8085",
-          "pron": "우셰마"
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
         },
         {
-          "word": "תְּפִלָּתִ֑י",
+          "word": "תְּפִלַּ֧ת",
           "lemma": "תְּפִלָּה",
           "strong": "H8605",
-          "pron": "테필라티위"
+          "pron": "아테필라"
         },
         {
-          "word": "הַ֝אֲזִ֗ינָה",
-          "lemma": "אָזַן",
-          "strong": "H238",
-          "pron": "하아지나"
+          "word": "עַבְדְּךָ֛",
+          "lemma": "עֶבֶד",
+          "strong": "H5650",
+          "pron": "에벧"
         }
       ],
-      "count": 3,
+      "count": 6,
       "refs": [
-        "psalms 54:2",
-        "psalms 84:8",
-        "psalms 143:1"
+        "kings1 8:28",
+        "chronicles2 6:19",
+        "nehemiah 1:6",
+        "nehemiah 1:11",
+        "daniel 9:17"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "תְּפִלָּ֗ה לְדָ֫וִ֥ד",
-      "pron": "테필라티위 르다윗",
+      "hebrew": "תְּפִלַּ֧ת עַבְדְּךָ֛",
+      "pron": "아테필라 에벧",
       "lemmas": [
         "תְּפִלָּה",
-        "דָּוִד"
+        "עֶבֶד"
       ],
       "words": [
         {
-          "word": "תְּפִלָּ֗ה",
+          "word": "תְּפִלַּ֧ת",
           "lemma": "תְּפִלָּה",
           "strong": "H8605",
-          "pron": "테필라티위"
+          "pron": "아테필라"
         },
         {
-          "word": "לְדָ֫וִ֥ד",
-          "lemma": "דָּוִד",
-          "strong": "H1732",
-          "pron": "르다윗"
+          "word": "עַבְדְּךָ֛",
+          "lemma": "עֶבֶד",
+          "strong": "H5650",
+          "pron": "에벧"
         }
       ],
-      "count": 3,
+      "count": 6,
       "refs": [
-        "psalms 17:1",
-        "psalms 72:20",
-        "psalms 86:1"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "תְּפִלָּתִ֑י הַ֝אֲזִ֗ינָה",
-      "pron": "테필라티위 하아지나",
-      "lemmas": [
-        "תְּפִלָּה",
-        "אָזַן"
-      ],
-      "words": [
-        {
-          "word": "תְּפִלָּתִ֑י",
-          "lemma": "תְּפִלָּה",
-          "strong": "H8605",
-          "pron": "테필라티위"
-        },
-        {
-          "word": "הַ֝אֲזִ֗ינָה",
-          "lemma": "אָזַן",
-          "strong": "H238",
-          "pron": "하아지나"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 54:2",
-        "psalms 84:8",
-        "psalms 143:1"
+        "kings1 8:28",
+        "chronicles2 6:19",
+        "nehemiah 1:6",
+        "nehemiah 1:11",
+        "daniel 9:17"
       ],
       "glossKo": ""
     }

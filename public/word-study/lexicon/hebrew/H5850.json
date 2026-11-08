@@ -12,27 +12,71 @@
     {
       "lemma": "עָטַר",
       "strong": "H5849",
-      "pron": "타엗레누",
-      "glossKo": "그에게 관을 씌우다"
+      "pron": "옫림",
+      "glossKo": "관을 씌우다"
     },
     {
       "lemma": "עֲטָרָה",
       "strong": "H5851",
-      "pron": "",
+      "pron": "아다라",
       "glossKo": "아다라"
     },
     {
       "lemma": "עֲטָרוֹת",
       "strong": "H5852",
-      "pron": "",
+      "pron": "아다로트",
       "glossKo": "아다롯"
     }
   ],
   "defEn": "crown",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 23,
   "byBook": {
-    "psalms": 1
+    "proverbs": 5,
+    "isaiah": 4,
+    "ezekiel": 3,
+    "job": 2,
+    "zechariah": 2,
+    "chronicles1": 1,
+    "esther": 1,
+    "jeremiah": 1,
+    "lamentations": 1,
+    "psalms": 1,
+    "samuel2": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַעֲטֶ֥רֶת תִּפְאֶ֖רֶת",
+      "pron": "아데레트 우르팁아레트",
+      "lemmas": [
+        "עֲטָרָה",
+        "תִּפְאָרָה"
+      ],
+      "words": [
+        {
+          "word": "וַעֲטֶ֥רֶת",
+          "lemma": "עֲטָרָה",
+          "strong": "H5850",
+          "pron": "아데레트"
+        },
+        {
+          "word": "תִּפְאֶ֖רֶת",
+          "lemma": "תִּפְאָרָה",
+          "strong": "H8597",
+          "pron": "우르팁아레트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "proverbs 4:9",
+        "proverbs 16:31",
+        "isaiah 62:3",
+        "jeremiah 13:18",
+        "ezekiel 16:12",
+        "ezekiel 23:42"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -24,50 +24,207 @@
     {
       "lemma": "תֹּם",
       "strong": "H8537",
-      "pron": "우크툼미위",
-      "glossKo": "나의 완전함"
+      "pron": "브탐",
+      "glossKo": "완전함"
     },
     {
       "lemma": "תָּמַם",
       "strong": "H8552",
-      "pron": "탐무",
+      "pron": "바잇톰",
       "glossKo": "끝나다"
     }
   ],
   "defEn": "entire",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 91,
   "byBook": {
+    "leviticus": 22,
+    "numbers": 19,
+    "ezekiel": 13,
     "psalms": 12,
-    "genesis": 2
+    "proverbs": 6,
+    "samuel2": 4,
+    "job": 3,
+    "deuteronomy": 2,
+    "exodus": 2,
+    "genesis": 2,
+    "joshua": 2,
+    "judges": 2,
+    "amos": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
-      "hebrew": "תָּמִ֪ים דַּ֫רְכּ֥וֹ",
-      "pron": "타밈 우브데레크",
+      "hebrew": "שָׁנָ֛ה תְּמִימִ֖ם",
+      "pron": "브샤님 타밈",
       "lemmas": [
-        "תָּמִים",
-        "דֶּרֶךְ"
+        "שָׁנֶה",
+        "תָּמִים"
       ],
       "words": [
         {
-          "word": "תָּמִ֪ים",
+          "word": "שָׁנָ֛ה",
+          "lemma": "שָׁנֶה",
+          "strong": "H8141",
+          "pron": "브샤님"
+        },
+        {
+          "word": "תְּמִימִ֖ם",
+          "lemma": "תָּמִים",
+          "strong": "H8549",
+          "pron": "타밈"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "leviticus 9:3",
+        "leviticus 14:10",
+        "leviticus 25:30",
+        "numbers 6:14",
+        "numbers 28:3",
+        "numbers 28:9",
+        "numbers 28:19",
+        "ezekiel 46:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּמִימִ֖ם יִהְי֥וּ",
+      "pron": "타밈 하에타",
+      "lemmas": [
+        "תָּמִים",
+        "הָיָה"
+      ],
+      "words": [
+        {
+          "word": "תְּמִימִ֖ם",
           "lemma": "תָּמִים",
           "strong": "H8549",
           "pron": "타밈"
         },
         {
-          "word": "דַּ֫רְכּ֥וֹ",
-          "lemma": "דֶּרֶךְ",
-          "strong": "H1870",
-          "pron": "우브데레크"
+          "word": "יִהְי֥וּ",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
         }
       ],
-      "count": 3,
+      "count": 9,
       "refs": [
-        "psalms 18:30",
-        "psalms 18:32",
-        "psalms 119:1"
+        "genesis 6:9",
+        "leviticus 22:21",
+        "leviticus 23:15",
+        "numbers 28:19",
+        "numbers 28:31",
+        "numbers 29:8",
+        "numbers 29:13",
+        "deuteronomy 18:13",
+        "ezekiel 46:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַרְבָּעָ֥ה עָשָׂ֖ר תְּמִימִֽם",
+      "pron": "르아렙바아 에세레 타밈",
+      "lemmas": [
+        "אַרְבַּע",
+        "עָשָׂר",
+        "תָּמִים"
+      ],
+      "words": [
+        {
+          "word": "אַרְבָּעָ֥ה",
+          "lemma": "אַרְבַּע",
+          "strong": "H702",
+          "pron": "르아렙바아"
+        },
+        {
+          "word": "עָשָׂ֖ר",
+          "lemma": "עָשָׂר",
+          "strong": "H6240",
+          "pron": "에세레"
+        },
+        {
+          "word": "תְּמִימִֽם",
+          "lemma": "תָּמִים",
+          "strong": "H8549",
+          "pron": "타밈"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "numbers 29:13",
+        "numbers 29:17",
+        "numbers 29:20",
+        "numbers 29:23",
+        "numbers 29:26",
+        "numbers 29:29",
+        "numbers 29:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָשָׂ֖ר תְּמִימִֽם",
+      "pron": "에세레 타밈",
+      "lemmas": [
+        "עָשָׂר",
+        "תָּמִים"
+      ],
+      "words": [
+        {
+          "word": "עָשָׂ֖ר",
+          "lemma": "עָשָׂר",
+          "strong": "H6240",
+          "pron": "에세레"
+        },
+        {
+          "word": "תְּמִימִֽם",
+          "lemma": "תָּמִים",
+          "strong": "H8549",
+          "pron": "타밈"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "numbers 29:13",
+        "numbers 29:17",
+        "numbers 29:20",
+        "numbers 29:23",
+        "numbers 29:26",
+        "numbers 29:29",
+        "numbers 29:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַ֣יִל תָּמִ֧ים",
+      "pron": "브아일 타밈",
+      "lemmas": [
+        "אַיִל",
+        "תָּמִים"
+      ],
+      "words": [
+        {
+          "word": "אַ֣יִל",
+          "lemma": "אַיִל",
+          "strong": "H352",
+          "pron": "브아일"
+        },
+        {
+          "word": "תָּמִ֧ים",
+          "lemma": "תָּמִים",
+          "strong": "H8549",
+          "pron": "타밈"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "leviticus 5:15",
+        "leviticus 5:18",
+        "leviticus 6:6",
+        "ezekiel 45:23",
+        "ezekiel 46:4",
+        "ezekiel 46:6"
       ],
       "glossKo": ""
     }

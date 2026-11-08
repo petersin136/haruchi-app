@@ -2,7 +2,7 @@
   "lemma": "פְּלֹנִי",
   "pron": "펠로니",
   "strong": "H6423",
-  "posKo": "",
+  "posKo": "대명사",
   "root": {
     "lemma": "פָּלָה",
     "strong": "H6395",
@@ -12,7 +12,7 @@
     {
       "lemma": "פָּלָה",
       "strong": "H6395",
-      "pron": "힙라",
+      "pron": "브힙레티",
       "glossKo": "구별하다"
     },
     {
@@ -24,13 +24,53 @@
     {
       "lemma": "פְּלוֹנִי",
       "strong": "H6397",
-      "pron": "",
+      "pron": "아펠로니",
       "glossKo": "불론 사람"
+    },
+    {
+      "lemma": "פַּלְמוֹנִי",
+      "strong": "H6422",
+      "pron": "라팔모니",
+      "glossKo": "어떤 사람"
     }
   ],
   "defEn": "such; person",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 3,
+  "byBook": {
+    "kings2": 1,
+    "ruth": 1,
+    "samuel1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "פְּלֹנִ֣י אַלְמֹנִ֑י",
+      "pron": "펠로니 알모니",
+      "lemmas": [
+        "פְּלֹנִי",
+        "אַלְמֹנִי"
+      ],
+      "words": [
+        {
+          "word": "פְּלֹנִ֣י",
+          "lemma": "פְּלֹנִי",
+          "strong": "H6423",
+          "pron": "펠로니"
+        },
+        {
+          "word": "אַלְמֹנִ֑י",
+          "lemma": "אַלְמֹנִי",
+          "strong": "H492",
+          "pron": "알모니"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ruth 4:1",
+        "samuel1 21:2",
+        "kings2 6:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

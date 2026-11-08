@@ -1,6 +1,6 @@
 {
   "lemma": "קֶרֶב",
-  "pron": "키렙바므",
+  "pron": "베키렙바흐",
   "strong": "H7130",
   "posKo": "명사",
   "root": {
@@ -12,25 +12,25 @@
     {
       "lemma": "קָרַב",
       "strong": "H7126",
-      "pron": "비케롭",
+      "pron": "히케립",
       "glossKo": "가까이 오다"
     },
     {
       "lemma": "קְרֵב",
       "strong": "H7127",
-      "pron": "",
+      "pron": "메하케레빈",
       "glossKo": "가까이 가다(아람)"
     },
     {
       "lemma": "קְרָב",
       "strong": "H7128",
-      "pron": "미카랍",
+      "pron": "바케랍",
       "glossKo": "전쟁"
     },
     {
       "lemma": "קָרֵב",
       "strong": "H7131",
-      "pron": "",
+      "pron": "아카렙",
       "glossKo": "가까운"
     },
     {
@@ -42,73 +42,225 @@
     {
       "lemma": "קׇרְבָּן",
       "strong": "H7133",
-      "pron": "",
+      "pron": "카렙반",
       "glossKo": "예물"
     }
   ],
   "defEn": "nearest; center",
   "defKo": "",
-  "countOT": 35,
+  "countOT": 227,
   "byBook": {
+    "deuteronomy": 41,
     "psalms": 27,
-    "genesis": 8
+    "leviticus": 24,
+    "joshua": 20,
+    "isaiah": 17,
+    "exodus": 16,
+    "jeremiah": 10,
+    "numbers": 10,
+    "genesis": 8,
+    "judges": 8,
+    "micah": 7,
+    "zephaniah": 6,
+    "amos": 5,
+    "ezekiel": 4,
+    "kings1": 4,
+    "lamentations": 4,
+    "habakkuk": 3,
+    "proverbs": 3,
+    "samuel1": 3,
+    "hosea": 2,
+    "zechariah": 2,
+    "job": 1,
+    "joel": 1,
+    "nahum": 1
   },
   "phrases": [
     {
-      "hebrew": "בְּקֶ֣רֶב הָאָֽרֶץ",
-      "pron": "키렙바므 에레츠",
+      "hebrew": "מִקֶּ֥רֶב עַמָּֽהּ",
+      "pron": "베키렙바흐 암",
+      "lemmas": [
+        "קֶרֶב",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "מִקֶּ֥רֶב",
+          "lemma": "קֶרֶב",
+          "strong": "H7130",
+          "pron": "베키렙바흐"
+        },
+        {
+          "word": "עַמָּֽהּ",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "exodus 31:14",
+        "leviticus 17:4",
+        "leviticus 17:10",
+        "leviticus 18:29",
+        "leviticus 20:3",
+        "leviticus 20:5",
+        "leviticus 20:6",
+        "leviticus 20:18",
+        "leviticus 23:30",
+        "numbers 5:27",
+        "numbers 14:14",
+        "numbers 15:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַקֶּ֔רֶב וְאֵת֙",
+      "pron": "베키렙바흐 에트",
+      "lemmas": [
+        "קֶרֶב",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הַקֶּ֔רֶב",
+          "lemma": "קֶרֶב",
+          "strong": "H7130",
+          "pron": "베키렙바흐"
+        },
+        {
+          "word": "וְאֵת֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "exodus 29:13",
+        "exodus 29:22",
+        "exodus 34:10",
+        "leviticus 3:3",
+        "leviticus 3:9",
+        "leviticus 3:14",
+        "leviticus 4:8",
+        "leviticus 8:16",
+        "leviticus 8:21",
+        "leviticus 8:25",
+        "leviticus 9:14",
+        "psalms 103:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הַקֶּ֔רֶב",
+      "pron": "에트 베키렙바흐",
+      "lemmas": [
+        "אֵת",
+        "קֶרֶב"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַקֶּ֔רֶב",
+          "lemma": "קֶרֶב",
+          "strong": "H7130",
+          "pron": "베키렙바흐"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 29:13",
+        "exodus 29:22",
+        "leviticus 3:3",
+        "leviticus 3:9",
+        "leviticus 3:14",
+        "leviticus 7:3",
+        "leviticus 8:21",
+        "leviticus 9:14",
+        "leviticus 17:10",
+        "leviticus 20:3",
+        "leviticus 20:6",
+        "samuel1 16:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּקֶ֥רֶב הָאָֽרֶץ",
+      "pron": "베키렙바흐 하아레츠",
       "lemmas": [
         "קֶרֶב",
         "אֶרֶץ"
       ],
       "words": [
         {
-          "word": "בְּקֶ֣רֶב",
+          "word": "בְּקֶ֥רֶב",
           "lemma": "קֶרֶב",
           "strong": "H7130",
-          "pron": "키렙바므"
+          "pron": "베키렙바흐"
         },
         {
           "word": "הָאָֽרֶץ",
           "lemma": "אֶרֶץ",
           "strong": "H776",
-          "pron": "에레츠"
+          "pron": "하아레츠"
         }
       ],
-      "count": 3,
+      "count": 12,
       "refs": [
-        "psalms 74:12",
         "genesis 45:6",
-        "genesis 48:16"
+        "genesis 48:16",
+        "exodus 8:22",
+        "deuteronomy 4:5",
+        "deuteronomy 15:11",
+        "deuteronomy 19:10",
+        "psalms 74:12",
+        "isaiah 5:8",
+        "isaiah 6:12",
+        "isaiah 7:22",
+        "isaiah 19:24",
+        "isaiah 24:13"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "קִרְבָּ֤ם בָּתֵּ֨ימוֹ",
-      "pron": "키렙바므 베테카",
+      "hebrew": "אֲשֶׁ֥ר בְּקִרְבָּֽהּ",
+      "pron": "아셰르 베키렙바흐",
       "lemmas": [
-        "קֶרֶב",
-        "בַּיִת"
+        "אֲשֶׁר",
+        "קֶרֶב"
       ],
       "words": [
         {
-          "word": "קִרְבָּ֤ם",
-          "lemma": "קֶרֶב",
-          "strong": "H7130",
-          "pron": "키렙바므"
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
         },
         {
-          "word": "בָּתֵּ֨ימוֹ",
-          "lemma": "בַּיִת",
-          "strong": "H1004",
-          "pron": "베테카"
+          "word": "בְּקִרְבָּֽהּ",
+          "lemma": "קֶרֶב",
+          "strong": "H7130",
+          "pron": "베키렙바흐"
         }
       ],
-      "count": 3,
+      "count": 10,
       "refs": [
-        "psalms 49:11",
-        "psalms 101:2",
-        "psalms 101:7"
+        "genesis 18:24",
+        "numbers 11:4",
+        "numbers 11:20",
+        "deuteronomy 16:11",
+        "deuteronomy 26:11",
+        "deuteronomy 28:43",
+        "deuteronomy 29:11",
+        "joshua 24:23",
+        "judges 18:7",
+        "jeremiah 29:8"
       ],
       "glossKo": ""
     }

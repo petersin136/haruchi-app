@@ -14,15 +14,46 @@
     {
       "lemma": "קָטָן",
       "strong": "H6996",
-      "pron": "케단노트",
+      "pron": "아카돈",
       "glossKo": "작은"
     }
   ],
   "defEn": "cut off; detest",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 6,
   "byBook": {
+    "ezekiel": 3,
     "psalms": 3
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּנְקֹֽטֹתֶם֙ בִּפְנֵיכֶ֔ם",
+      "pron": "아쿧 페네",
+      "lemmas": [
+        "קוּט",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "וּנְקֹֽטֹתֶם֙",
+          "lemma": "קוּט",
+          "strong": "H6962",
+          "pron": "아쿧"
+        },
+        {
+          "word": "בִּפְנֵיכֶ֔ם",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 6:9",
+        "ezekiel 20:43",
+        "ezekiel 36:31"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

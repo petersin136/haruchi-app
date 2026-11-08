@@ -10,15 +10,33 @@
   },
   "family": [
     {
+      "lemma": "וָלָד",
+      "strong": "H2056",
+      "pron": "발랃",
+      "glossKo": "아들"
+    },
+    {
       "lemma": "יָלַד",
       "strong": "H3205",
-      "pron": "옐릳티카",
-      "glossKo": "너에게 낳다"
+      "pron": "텔디",
+      "glossKo": "낳다"
+    },
+    {
+      "lemma": "יַלְדָּה",
+      "strong": "H3207",
+      "pron": "아얄다",
+      "glossKo": "소녀"
+    },
+    {
+      "lemma": "יַלְדוּת",
+      "strong": "H3208",
+      "pron": "얄두테카",
+      "glossKo": "너의 유년"
     },
     {
       "lemma": "יִלּוֹד",
       "strong": "H3209",
-      "pron": "",
+      "pron": "아일롣",
       "glossKo": "갓난 아이"
     },
     {
@@ -30,13 +48,31 @@
   ],
   "defEn": "something born; lad; offspring",
   "defKo": "",
-  "countOT": 19,
+  "countOT": 90,
   "byBook": {
-    "genesis": 19
+    "genesis": 19,
+    "exodus": 12,
+    "samuel2": 12,
+    "kings1": 9,
+    "isaiah": 7,
+    "kings2": 6,
+    "daniel": 5,
+    "job": 4,
+    "chronicles2": 3,
+    "ecclesiastes": 2,
+    "ruth": 2,
+    "samuel1": 2,
+    "ezra": 1,
+    "hosea": 1,
+    "jeremiah": 1,
+    "joel": 1,
+    "lamentations": 1,
+    "nehemiah": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "וְאֶת הַיֶּ֖לֶד",
+      "hebrew": "אֶת הַיֶּ֔לֶד",
       "pron": "에트 브옐렏",
       "lemmas": [
         "אֵת",
@@ -44,10 +80,145 @@
       ],
       "words": [
         {
-          "word": "וְאֶת",
+          "word": "אֶת",
           "lemma": "אֵת",
           "strong": "H853",
           "pron": "에트"
+        },
+        {
+          "word": "הַיֶּ֔לֶד",
+          "lemma": "יֶלֶד",
+          "strong": "H3206",
+          "pron": "브옐렏"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "genesis 21:14",
+        "genesis 21:15",
+        "genesis 30:26",
+        "genesis 33:1",
+        "genesis 33:2",
+        "genesis 33:5",
+        "exodus 1:17",
+        "exodus 1:18",
+        "exodus 2:3",
+        "exodus 2:6",
+        "exodus 2:7",
+        "exodus 2:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַיְלָדִים֙ אֲשֶׁ֣ר",
+      "pron": "브옐렏 아셰르",
+      "lemmas": [
+        "יֶלֶד",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הַיְלָדִים֙",
+          "lemma": "יֶלֶד",
+          "strong": "H3206",
+          "pron": "브옐렏"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "genesis 30:26",
+        "genesis 33:5",
+        "samuel2 12:15",
+        "kings1 12:8",
+        "kings1 12:10",
+        "chronicles2 10:8",
+        "chronicles2 10:10",
+        "isaiah 8:18",
+        "daniel 1:4",
+        "daniel 1:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיָּ֣מָת הַיָּ֑לֶד",
+      "pron": "모트 브옐렏",
+      "lemmas": [
+        "מוּת",
+        "יֶלֶד"
+      ],
+      "words": [
+        {
+          "word": "וַיָּ֣מָת",
+          "lemma": "מוּת",
+          "strong": "H4191",
+          "pron": "모트"
+        },
+        {
+          "word": "הַיָּ֑לֶד",
+          "lemma": "יֶלֶד",
+          "strong": "H3206",
+          "pron": "브옐렏"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel2 12:18",
+        "samuel2 12:19",
+        "samuel2 12:21",
+        "kings1 14:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַיְלָדִים֙ לֵאמֹ֔ר",
+      "pron": "브옐렏 바요메르",
+      "lemmas": [
+        "יֶלֶד",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "הַיְלָדִים֙",
+          "lemma": "יֶלֶד",
+          "strong": "H3206",
+          "pron": "브옐렏"
+        },
+        {
+          "word": "לֵאמֹ֔ר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 33:5",
+        "samuel2 12:19",
+        "kings1 12:14",
+        "kings2 4:26",
+        "chronicles2 10:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָאִשָּׁ֛ה הַיֶּ֖לֶד",
+      "pron": "르잇샤 브옐렏",
+      "lemmas": [
+        "אִשָּׁה",
+        "יֶלֶד"
+      ],
+      "words": [
+        {
+          "word": "הָאִשָּׁ֛ה",
+          "lemma": "אִשָּׁה",
+          "strong": "H802",
+          "pron": "르잇샤"
         },
         {
           "word": "הַיֶּ֖לֶד",
@@ -56,14 +227,12 @@
           "pron": "브옐렏"
         }
       ],
-      "count": 6,
+      "count": 4,
       "refs": [
-        "genesis 21:14",
-        "genesis 21:15",
-        "genesis 30:26",
-        "genesis 33:1",
-        "genesis 33:2",
-        "genesis 33:5"
+        "exodus 2:9",
+        "exodus 21:4",
+        "ezra 10:1",
+        "nehemiah 12:43"
       ],
       "glossKo": ""
     }

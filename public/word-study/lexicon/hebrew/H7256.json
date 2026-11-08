@@ -1,8 +1,8 @@
 {
   "lemma": "רִבֵּעַ",
-  "pron": "립베아",
+  "pron": "립베임",
   "strong": "H7256",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רָבַע",
     "strong": "H7251",
@@ -24,25 +24,97 @@
     {
       "lemma": "רָבַע",
       "strong": "H7251",
-      "pron": "",
+      "pron": "라부아",
       "glossKo": "사각형"
     },
     {
       "lemma": "רֶבַע",
       "strong": "H7253",
-      "pron": "",
+      "pron": "레바",
       "glossKo": "넷째"
     },
     {
       "lemma": "רֹבַע",
       "strong": "H7255",
-      "pron": "",
+      "pron": "로바",
       "glossKo": "사 분의 일"
     }
   ],
   "defEn": "fourth; great great grandchild",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "exodus": 2,
+    "deuteronomy": 1,
+    "numbers": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְעַל רִבֵּעִ֖ים",
+      "pron": "알 립베임",
+      "lemmas": [
+        "עַל",
+        "רִבֵּעַ"
+      ],
+      "words": [
+        {
+          "word": "וְעַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "רִבֵּעִ֖ים",
+          "lemma": "רִבֵּעַ",
+          "strong": "H7256",
+          "pron": "립베임"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 20:5",
+        "exodus 34:7",
+        "numbers 14:18",
+        "deuteronomy 5:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שִׁלֵּשִׁ֥ים וְעַל רִבֵּעִ֖ים",
+      "pron": "실레심 알 립베임",
+      "lemmas": [
+        "שִׁלֵּשׁ",
+        "עַל",
+        "רִבֵּעַ"
+      ],
+      "words": [
+        {
+          "word": "שִׁלֵּשִׁ֥ים",
+          "lemma": "שִׁלֵּשׁ",
+          "strong": "H8029",
+          "pron": "실레심"
+        },
+        {
+          "word": "וְעַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "רִבֵּעִ֖ים",
+          "lemma": "רִבֵּעַ",
+          "strong": "H7256",
+          "pron": "립베임"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 20:5",
+        "exodus 34:7",
+        "numbers 14:18",
+        "deuteronomy 5:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

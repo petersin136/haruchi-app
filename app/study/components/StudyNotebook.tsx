@@ -56,9 +56,13 @@ import {
 import WordStudySheet from "./WordStudySheet";
 import {
   STUDY_SPREAD_ANIM_MS,
+  STUDY_SPREAD_BAR_H,
   STUDY_SPREAD_EDGE,
-  STUDY_SPREAD_GAP,
+  STUDY_SPREAD_OUTER,
+  STUDY_SPREAD_PGNUM_H,
   STUDY_SPREAD_SWIPE_PX,
+  STUDY_SPREAD_TOPBAR,
+  calcSpreadGeometry,
   chapterLabel,
   subscribeStudySpread,
 } from "../lib/studySpread";
@@ -193,17 +197,21 @@ function StudyNotebook({
   const bookMeta = BOOKS[bookId];
   const total = bookMeta.totalChapters;
   const [spreadOn, setSpreadOn] = useState(false);
-  const [spreadPage, setSpreadPage] = useState(0);
+  /** 펼침 번호(0-based). 한 번에 두 쪽 */
+  const [spreadIndex, setSpreadIndex] = useState(0);
+  const [pageCount, setPageCount] = useState(1);
   const [spreadCount, setSpreadCount] = useState(1);
-  const [spreadStride, setSpreadStride] = useState(360);
+  const [spreadStride, setSpreadStride] = useState(720);
+  const [spreadBoxStyle, setSpreadBoxStyle] = useState<CSSProperties>({});
   const [spreadDragging, setSpreadDragging] = useState(false);
   const [spreadDragDx, setSpreadDragDx] = useState(0);
   const [spreadNextBookUi, setSpreadNextBookUi] = useState(false);
   const spreadVpRef = useRef<HTMLDivElement | null>(null);
   const spreadFlowRef = useRef<HTMLElement | null>(null);
-  const spreadPageRef = useRef(0);
+  const spreadIndexRef = useRef(0);
   const spreadCountRef = useRef(1);
-  const spreadStrideRef = useRef(360);
+  const spreadStrideRef = useRef(720);
+  const pageCountRef = useRef(1);
   const spreadSwipeRef = useRef<{
     id: number;
     x: number;
@@ -211,9 +219,10 @@ function StudyNotebook({
     armed: boolean;
   } | null>(null);
   const spreadAnchorVerseRef = useRef<number | null>(null);
-  spreadPageRef.current = spreadPage;
+  spreadIndexRef.current = spreadIndex;
   spreadCountRef.current = spreadCount;
   spreadStrideRef.current = spreadStride;
+  pageCountRef.current = pageCount;
   const [verses, setVerses] = useState<{ n: number; t: string }[] | null>(null);
   const [title, setTitle] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -1169,7 +1178,7 @@ function StudyNotebook({
   }, [spreadOn]);
 
   useEffect(() => {
-    setSpreadPage(0);
+    setSpreadIndex(0);
     setSpreadNextBookUi(false);
     setSpreadDragDx(0);
     spreadAnchorVerseRef.current = null;
@@ -1179,21 +1188,57 @@ function StudyNotebook({
     const vp = spreadVpRef.current;
     const flow = spreadFlowRef.current;
     if (!vp || !flow || !spreadOn) return;
-    const gap = STUDY_SPREAD_GAP;
-    const w = vp.clientWidth;
-    const h = vp.clientHeight;
-    if (w < 80 || h < 80) return;
-    const pageW = Math.max(120, (w - gap) / 2);
-    const stride = pageW + gap;
-    flow.style.setProperty("--study-page-w", `${pageW}px`);
-    flow.style.setProperty("--study-spread-gap", `${gap}px`);
-    flow.style.height = `${h}px`;
-    // 컬럼 재계산
+
+    const topbar = STUDY_SPREAD_TOPBAR;
+    const barH = STUDY_SPREAD_BAR_H;
+    const pgnumH = STUDY_SPREAD_PGNUM_H;
+    const outer = STUDY_SPREAD_OUTER;
+    const spreadH = Math.max(
+      120,
+      window.innerHeight - topbar - barH - pgnumH,
+    );
+    const spreadW = Math.max(
+      200,
+      Math.min(window.innerWidth - outer * 2, window.innerWidth - outer * 2),
+    );
+    const g = calcSpreadGeometry(spreadW, spreadH);
+
+    setSpreadBoxStyle({
+      width: `${g.spreadW}px`,
+      height: `${g.spreadH}px`,
+      ["--study-spread-w" as string]: `${g.spreadW}px`,
+    });
+
+    // 열 본문: 쪽 안여백을 column-width/gap 으로 반영
+    // width:max-content 는 WebKit에서 scrollWidth가 비정상적으로 커져 쓰지 않음
+    flow.style.width = "";
+    flow.style.minWidth = `${g.spreadW}px`;
+    flow.style.height = `${g.spreadH}px`;
+    flow.style.maxHeight = `${g.spreadH}px`;
+    flow.style.columnWidth = `${g.colW}px`;
+    flow.style.columnGap = `${g.colGap}px`;
+    flow.style.columnFill = "auto";
+    flow.style.paddingLeft = `${g.padOuter}px`;
+    flow.style.paddingRight = `${g.padOuter}px`;
+    flow.style.paddingTop = "16px";
+    flow.style.paddingBottom = "12px";
+    flow.style.boxSizing = "border-box";
+
     void flow.offsetHeight;
-    const totalW = flow.scrollWidth;
-    const count = Math.max(1, Math.round(totalW / stride));
-    setSpreadStride(stride);
-    setSpreadCount(count);
+    // 쪽 수: 본문(열 컨테이너) 실측 폭 기준
+    const body = flow.querySelector(".study-body") as HTMLElement | null;
+    const measureW = Math.max(
+      body?.offsetWidth ?? 0,
+      flow.scrollWidth - g.padOuter * 2,
+    );
+    const pages = Math.max(
+      1,
+      Math.ceil((measureW + g.colGap) / (g.colW + g.colGap)),
+    );
+    const spreads = Math.max(1, Math.ceil(pages / 2));
+    setPageCount(pages);
+    setSpreadCount(spreads);
+    setSpreadStride(g.spreadStride);
 
     const anchor = spreadAnchorVerseRef.current;
     if (anchor != null) {
@@ -1201,43 +1246,44 @@ function StudyNotebook({
         `[data-verse-num="${anchor}"]`,
       );
       if (el) {
-        const p = (() => {
-          const vr = vp.getBoundingClientRect();
-          const er = el.getBoundingClientRect();
-          const contentX = spreadPageRef.current * stride + (er.left - vr.left);
-          return Math.max(0, Math.min(count - 1, Math.floor((contentX + 1) / stride)));
-        })();
-        setSpreadPage(p);
+        const vr = vp.getBoundingClientRect();
+        const er = el.getBoundingClientRect();
+        const contentX =
+          spreadIndexRef.current * g.spreadStride + (er.left - vr.left);
+        const page = Math.max(
+          0,
+          Math.min(pages - 1, Math.floor(contentX / g.pageStride)),
+        );
+        const si = Math.floor(page / 2);
+        setSpreadIndex(si);
         spreadAnchorVerseRef.current = null;
         return;
       }
     }
-    setSpreadPage((p) => Math.min(p, Math.max(0, count - 1)));
+    setSpreadIndex((i) => Math.min(i, Math.max(0, spreads - 1)));
   }, [spreadOn]);
 
   useLayoutEffect(() => {
     if (!spreadOn || !verses) return;
     measureSpread();
-    const vp = spreadVpRef.current;
-    if (!vp) return;
-    const ro = new ResizeObserver(() => measureSpread());
-    ro.observe(vp);
-    const reader = vp.closest(".brp-reader");
-    if (reader) ro.observe(reader);
-    // 글씨 배수(--reader-size-scale) 변경 감지
+    const onResize = () => measureSpread();
+    window.addEventListener("resize", onResize);
     const mo = new MutationObserver(() => measureSpread());
     mo.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["style", "class"],
     });
+    const reader = document.querySelector(".brp-reader");
     if (reader) {
       mo.observe(reader, { attributes: true, attributeFilter: ["style", "class"] });
     }
-    const t = window.setTimeout(measureSpread, 80);
+    const t0 = window.setTimeout(measureSpread, 50);
+    const t1 = window.setTimeout(measureSpread, 200);
     return () => {
-      ro.disconnect();
+      window.removeEventListener("resize", onResize);
       mo.disconnect();
-      window.clearTimeout(t);
+      window.clearTimeout(t0);
+      window.clearTimeout(t1);
     };
   }, [spreadOn, verses, title, chapter, bookId, data.marks.length, measureSpread]);
 
@@ -1245,7 +1291,7 @@ function StudyNotebook({
     (delta: number) => {
       if (document.documentElement.dataset.studySelecting === "1") return;
       setSpreadNextBookUi(false);
-      setSpreadPage((p) => {
+      setSpreadIndex((p) => {
         const next = p + delta;
         if (next < 0) {
           if (chapter > 1) {
@@ -1277,16 +1323,13 @@ function StudyNotebook({
     [bookId, chapter, embedded, onMoveChapter, total],
   );
 
-  // 마지막 페이지가 보이면 장 완료(센티널 대체)
+  // 마지막 펼침(마지막 쪽 포함)이 보이면 장 완료
   useEffect(() => {
     if (!spreadOn || !onEndVisibilityChange) return;
-    const lastVisible = Math.min(
-      spreadCount - 1,
-      spreadPage + 1,
-    );
-    const viewingLast = spreadCount > 0 && lastVisible >= spreadCount - 1;
+    const viewingLast =
+      spreadCount > 0 && spreadIndex >= spreadCount - 1;
     onEndVisibilityChange(viewingLast);
-  }, [spreadOn, spreadPage, spreadCount, onEndVisibilityChange]);
+  }, [spreadOn, spreadIndex, spreadCount, onEndVisibilityChange]);
 
   useEffect(() => {
     if (!spreadOn) return;
@@ -1949,10 +1992,10 @@ function StudyNotebook({
 
   const spreadTx =
     spreadOn
-      ? -(spreadPage * spreadStride) + (spreadDragging ? spreadDragDx : 0)
+      ? -(spreadIndex * spreadStride) + (spreadDragging ? spreadDragDx : 0)
       : 0;
-  const leftPageNum = spreadPage + 1;
-  const rightPageNum = spreadPage + 2;
+  const leftPageNum = spreadIndex * 2 + 1;
+  const rightPageNum = spreadIndex * 2 + 2;
   const nextBookId =
     BOOK_ORDER.indexOf(bookId) >= 0 &&
     BOOK_ORDER.indexOf(bookId) < BOOK_ORDER.length - 1
@@ -1993,14 +2036,15 @@ function StudyNotebook({
         {spreadOn ? (
           <div className="study-spread-bar" aria-live="polite">
             {chapterLabel(bookMeta.name, chapter, bookId)} · {leftPageNum} /{" "}
-            {spreadCount}쪽
+            {pageCount}쪽
           </div>
         ) : null}
         <div className="study-layout">
           {spreadOn ? (
             <div
-              className="study-spread-viewport"
+              className="study-spread spread"
               ref={spreadVpRef}
+              style={spreadBoxStyle}
               onPointerDown={onSpreadPointerDown}
               onPointerMove={onSpreadPointerMove}
               onPointerUp={finishSpreadSwipe}
@@ -2019,7 +2063,7 @@ function StudyNotebook({
               >
                 <article
                   ref={spreadFlowRef}
-                  className="study-page"
+                  className="study-page study-spread-flow"
                   data-study-chapter-inner={chapter}
                 >
                   <span
@@ -2205,12 +2249,6 @@ function StudyNotebook({
                 </article>
               </div>
               <div className="study-spread-fold" aria-hidden />
-              <span className="study-spread-pgnum is-left">{leftPageNum}</span>
-              {rightPageNum <= spreadCount ? (
-                <span className="study-spread-pgnum is-right">
-                  {rightPageNum}
-                </span>
-              ) : null}
               <button
                 type="button"
                 className="study-spread-edge is-prev"
@@ -2427,6 +2465,22 @@ function StudyNotebook({
             ) : null}
           </article>
           )}
+          {spreadOn ? (
+            <div
+              className="study-spread-pgnum-row"
+              style={{ width: spreadBoxStyle.width }}
+              aria-hidden
+            >
+              <span className="study-spread-pgnum is-left">{leftPageNum}</span>
+              {rightPageNum <= pageCount ? (
+                <span className="study-spread-pgnum is-right">
+                  {rightPageNum}
+                </span>
+              ) : (
+                <span className="study-spread-pgnum is-right is-blank" />
+              )}
+            </div>
+          ) : null}
         </div>
 
         {!embedded ? (

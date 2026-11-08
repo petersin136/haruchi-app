@@ -1,8 +1,8 @@
 {
   "lemma": "שְׁכֹבֶת",
-  "pron": "셰코베트",
+  "pron": "셰캅테카",
   "strong": "H7903",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁכַב",
     "strong": "H7901",
@@ -12,31 +12,64 @@
     {
       "lemma": "מִשְׁכָּב",
       "strong": "H4904",
-      "pron": "미셱캅켐",
-      "glossKo": "너희의 침상"
+      "pron": "미셱케베",
+      "glossKo": "침상"
     },
     {
       "lemma": "שָׁכַב",
       "strong": "H7901",
-      "pron": "샤캅티",
+      "pron": "이셱카부",
       "glossKo": "눕다"
     },
     {
       "lemma": "שְׁכָבָה",
       "strong": "H7902",
-      "pron": "",
+      "pron": "시케바트",
       "glossKo": "동침"
     },
     {
       "lemma": "שָׁכַן",
       "strong": "H7931",
-      "pron": "야셱켄",
+      "pron": "바야셱켄",
       "glossKo": "거주하다"
     }
   ],
   "defEn": "lying",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "leviticus": 3,
+    "numbers": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "תִתֵּ֥ן שְׁכָבְתְּךָ֖",
+      "pron": "바잇텐 셰캅테카",
+      "lemmas": [
+        "נָתַן",
+        "שְׁכֹבֶת"
+      ],
+      "words": [
+        {
+          "word": "תִתֵּ֥ן",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "שְׁכָבְתְּךָ֖",
+          "lemma": "שְׁכֹבֶת",
+          "strong": "H7903",
+          "pron": "셰캅테카"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 18:20",
+        "leviticus 18:23",
+        "leviticus 20:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,39 +1,39 @@
 {
   "lemma": "גָּאָה",
-  "pron": "가아",
+  "pron": "가오",
   "strong": "H1342",
-  "posKo": "",
+  "posKo": "동사",
   "root": null,
   "family": [
     {
       "lemma": "גֵּאֶה",
       "strong": "H1343",
-      "pron": "게임",
+      "pron": "게에",
       "glossKo": "교만한"
     },
     {
       "lemma": "גֵּאָה",
       "strong": "H1344",
-      "pron": "",
+      "pron": "게아",
       "glossKo": "교만"
     },
     {
       "lemma": "גְּאוּאֵל",
       "strong": "H1345",
-      "pron": "",
+      "pron": "게우엘",
       "glossKo": "그우엘"
     },
     {
       "lemma": "גַּאֲוָה",
       "strong": "H1346",
-      "pron": "브가아바트",
-      "glossKo": "교만"
+      "pron": "웁가아바토",
+      "glossKo": "그의 교만"
     },
     {
       "lemma": "גָּאוֹן",
       "strong": "H1347",
-      "pron": "게온",
-      "glossKo": "교만"
+      "pron": "게온카",
+      "glossKo": "너의 교만"
     },
     {
       "lemma": "גֵּאוּת",
@@ -44,7 +44,139 @@
   ],
   "defEn": "mount; rise; majestic",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "exodus": 4,
+    "job": 2,
+    "ezekiel": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "גָאֹ֣ה גָּאָ֔ה",
+      "pron": "가오 가오",
+      "lemmas": [
+        "גָּאָה",
+        "גָּאָה"
+      ],
+      "words": [
+        {
+          "word": "גָאֹ֣ה",
+          "lemma": "גָּאָה",
+          "strong": "H1342",
+          "pron": "가오"
+        },
+        {
+          "word": "גָּאָ֔ה",
+          "lemma": "גָּאָה",
+          "strong": "H1342",
+          "pron": "가오"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 15:1",
+        "exodus 15:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גָאֹ֣ה גָּאָ֔ה ס֥וּס",
+      "pron": "가오 가오 바수심",
+      "lemmas": [
+        "גָּאָה",
+        "גָּאָה",
+        "סוּס"
+      ],
+      "words": [
+        {
+          "word": "גָאֹ֣ה",
+          "lemma": "גָּאָה",
+          "strong": "H1342",
+          "pron": "가오"
+        },
+        {
+          "word": "גָּאָ֔ה",
+          "lemma": "גָּאָה",
+          "strong": "H1342",
+          "pron": "가오"
+        },
+        {
+          "word": "ס֥וּס",
+          "lemma": "סוּס",
+          "strong": "H5483",
+          "pron": "바수심"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 15:1",
+        "exodus 15:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי גָאֹ֣ה גָּאָ֔ה",
+      "pron": "키 가오 가오",
+      "lemmas": [
+        "כִּי",
+        "גָּאָה",
+        "גָּאָה"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "גָאֹ֣ה",
+          "lemma": "גָּאָה",
+          "strong": "H1342",
+          "pron": "가오"
+        },
+        {
+          "word": "גָּאָ֔ה",
+          "lemma": "גָּאָה",
+          "strong": "H1342",
+          "pron": "가오"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 15:1",
+        "exodus 15:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי גָאֹ֣ה",
+      "pron": "키 가오",
+      "lemmas": [
+        "כִּי",
+        "גָּאָה"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "גָאֹ֣ה",
+          "lemma": "גָּאָה",
+          "strong": "H1342",
+          "pron": "가오"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 15:1",
+        "exodus 15:21",
+        "ezekiel 47:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

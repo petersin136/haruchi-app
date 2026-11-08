@@ -1,8 +1,8 @@
 {
   "lemma": "אֻרְוָה",
-  "pron": "우레바",
+  "pron": "우레보트",
   "strong": "H723",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אָרָה",
     "strong": "H717",
@@ -10,9 +10,15 @@
   },
   "family": [
     {
+      "lemma": "אֲוֵרָה",
+      "strong": "H220",
+      "pron": "라아베로트",
+      "glossKo": "외양간"
+    },
+    {
       "lemma": "אָרָה",
       "strong": "H717",
-      "pron": "브아루하",
+      "pron": "베아루하",
       "glossKo": "그녀에게 꺾다"
     },
     {
@@ -24,13 +30,16 @@
     {
       "lemma": "אֲרִי",
       "strong": "H738",
-      "pron": "크아레에",
+      "pron": "아레에",
       "glossKo": "사자"
     }
   ],
   "defEn": "herding-place",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 3,
+  "byBook": {
+    "chronicles2": 2,
+    "kings1": 1
+  },
   "phrases": []
 }

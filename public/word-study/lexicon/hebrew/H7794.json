@@ -1,6 +1,6 @@
 {
   "lemma": "שׁוֹר",
-  "pron": "미쇼르",
+  "pron": "쇼르",
   "strong": "H7794",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "שׁוּר",
       "strong": "H7788",
-      "pron": "",
+      "pron": "바타슈리",
       "glossKo": "여행하다"
     },
     {
@@ -24,22 +24,205 @@
     {
       "lemma": "שִׁיר",
       "strong": "H7891",
-      "pron": "샤르",
+      "pron": "야시르",
       "glossKo": "노래하다"
+    },
+    {
+      "lemma": "תּוֹר",
+      "strong": "H8450",
+      "pron": "토린",
+      "glossKo": "황소(아람)"
     },
     {
       "lemma": "תְּשׁוּרָה",
       "strong": "H8670",
-      "pron": "",
+      "pron": "우테슈라",
       "glossKo": "예물"
     }
   ],
   "defEn": "bullock; traveller",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 79,
   "byBook": {
+    "exodus": 24,
+    "deuteronomy": 12,
+    "leviticus": 10,
+    "samuel1": 5,
+    "isaiah": 4,
+    "numbers": 4,
+    "job": 3,
+    "proverbs": 3,
     "genesis": 2,
-    "psalms": 2
+    "joshua": 2,
+    "judges": 2,
+    "kings1": 2,
+    "psalms": 2,
+    "ezekiel": 1,
+    "hosea": 1,
+    "nehemiah": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "שׁ֣וֹר וַחֲמ֔וֹר",
+      "pron": "쇼르 바하모림",
+      "lemmas": [
+        "שׁוֹר",
+        "חֲמוֹר"
+      ],
+      "words": [
+        {
+          "word": "שׁ֣וֹר",
+          "lemma": "שׁוֹר",
+          "strong": "H7794",
+          "pron": "쇼르"
+        },
+        {
+          "word": "וַחֲמ֔וֹר",
+          "lemma": "חֲמוֹר",
+          "strong": "H2543",
+          "pron": "바하모림"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "genesis 32:5",
+        "exodus 20:17",
+        "exodus 23:12",
+        "deuteronomy 5:14",
+        "deuteronomy 5:21",
+        "deuteronomy 22:10",
+        "judges 6:4",
+        "samuel1 22:19",
+        "isaiah 32:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שׁ֣וֹר אוֹ",
+      "pron": "쇼르 오",
+      "lemmas": [
+        "שׁוֹר",
+        "אוֹ"
+      ],
+      "words": [
+        {
+          "word": "שׁ֣וֹר",
+          "lemma": "שׁוֹר",
+          "strong": "H7794",
+          "pron": "쇼르"
+        },
+        {
+          "word": "אוֹ",
+          "lemma": "אוֹ",
+          "strong": "H176",
+          "pron": "오"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 21:32",
+        "exodus 21:33",
+        "exodus 22:1",
+        "exodus 22:10",
+        "leviticus 17:3",
+        "leviticus 22:27",
+        "leviticus 22:28",
+        "numbers 18:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת שׁ֥וֹר",
+      "pron": "에트 쇼르",
+      "lemmas": [
+        "אֵת",
+        "שׁוֹר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שׁ֥וֹר",
+          "lemma": "שׁוֹר",
+          "strong": "H7794",
+          "pron": "쇼르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 21:35",
+        "leviticus 9:18",
+        "deuteronomy 22:1",
+        "joshua 7:24",
+        "samuel1 12:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שׁ֥וֹר וָשֶֽׂה",
+      "pron": "쇼르 아세",
+      "lemmas": [
+        "שׁוֹר",
+        "שֶׂה"
+      ],
+      "words": [
+        {
+          "word": "שׁ֥וֹר",
+          "lemma": "שׁוֹר",
+          "strong": "H7794",
+          "pron": "쇼르"
+        },
+        {
+          "word": "וָשֶֽׂה",
+          "lemma": "שֶׂה",
+          "strong": "H7716",
+          "pron": "아세"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 34:19",
+        "leviticus 22:23",
+        "deuteronomy 14:4",
+        "deuteronomy 17:1",
+        "joshua 6:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שׁ֥וֹר אֶת",
+      "pron": "쇼르 에트",
+      "lemmas": [
+        "שׁוֹר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "שׁ֥וֹר",
+          "lemma": "שׁוֹר",
+          "strong": "H7794",
+          "pron": "쇼르"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 21:28",
+        "leviticus 9:18",
+        "numbers 22:4",
+        "joshua 7:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

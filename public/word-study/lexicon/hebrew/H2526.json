@@ -12,53 +12,25 @@
     {
       "lemma": "חָם",
       "strong": "H2525",
-      "pron": "",
+      "pron": "함",
       "glossKo": "더운"
     },
     {
       "lemma": "חַמָּה",
       "strong": "H2535",
-      "pron": "메함마트오",
-      "glossKo": "그의 태양"
+      "pron": "함마",
+      "glossKo": "태양"
     }
   ],
   "defEn": "Cham",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 16,
   "byBook": {
     "genesis": 9,
-    "psalms": 4
+    "psalms": 4,
+    "chronicles1": 3
   },
   "phrases": [
-    {
-      "hebrew": "בְּאֶֽרֶץ חָֽם",
-      "pron": "에레츠 함",
-      "lemmas": [
-        "אֶרֶץ",
-        "חָם"
-      ],
-      "words": [
-        {
-          "word": "בְּאֶֽרֶץ",
-          "lemma": "אֶרֶץ",
-          "strong": "H776",
-          "pron": "에레츠"
-        },
-        {
-          "word": "חָֽם",
-          "lemma": "חָם",
-          "strong": "H2526",
-          "pron": "함"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 105:23",
-        "psalms 105:27",
-        "psalms 106:22"
-      ],
-      "glossKo": ""
-    },
     {
       "hebrew": "וְחָ֥ם וָיֶ֖פֶת",
       "pron": "함 야페트",
@@ -80,11 +52,12 @@
           "pron": "야페트"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "genesis 7:13",
         "genesis 9:18",
-        "genesis 10:1"
+        "genesis 10:1",
+        "chronicles1 1:4"
       ],
       "glossKo": ""
     },
@@ -109,11 +82,12 @@
           "pron": "함"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "genesis 7:13",
         "genesis 9:18",
-        "genesis 10:1"
+        "genesis 10:1",
+        "chronicles1 1:4"
       ],
       "glossKo": ""
     },
@@ -145,11 +119,70 @@
           "pron": "야페트"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "genesis 7:13",
         "genesis 9:18",
-        "genesis 10:1"
+        "genesis 10:1",
+        "chronicles1 1:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּאֶֽרֶץ חָֽם",
+      "pron": "하아레츠 함",
+      "lemmas": [
+        "אֶרֶץ",
+        "חָם"
+      ],
+      "words": [
+        {
+          "word": "בְּאֶֽרֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "חָֽם",
+          "lemma": "חָם",
+          "strong": "H2526",
+          "pron": "함"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 105:23",
+        "psalms 105:27",
+        "psalms 106:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבְנֵ֖י חָ֑ם",
+      "pron": "바님 함",
+      "lemmas": [
+        "בֵּן",
+        "חָם"
+      ],
+      "words": [
+        {
+          "word": "וּבְנֵ֖י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "חָ֑ם",
+          "lemma": "חָם",
+          "strong": "H2526",
+          "pron": "함"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 10:6",
+        "genesis 10:20",
+        "chronicles1 1:8"
       ],
       "glossKo": ""
     }

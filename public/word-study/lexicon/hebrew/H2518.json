@@ -1,8 +1,8 @@
 {
   "lemma": "חִלְקִיָּה",
-  "pron": "힐키아",
+  "pron": "힐키아후",
   "strong": "H2518",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חֵלֶק",
     "strong": "H2506",
@@ -12,25 +12,217 @@
     {
       "lemma": "חֵלֶק",
       "strong": "H2506",
-      "pron": "헬키위",
-      "glossKo": "나의 분깃"
+      "pron": "브헬레크",
+      "glossKo": "분깃"
     },
     {
       "lemma": "חֵלֶק",
       "strong": "H2507",
-      "pron": "",
+      "pron": "르헬레크",
       "glossKo": "헬렉"
     },
     {
       "lemma": "חֶלְקָה",
       "strong": "H2513",
-      "pron": "할라코트",
+      "pron": "헬카트",
       "glossKo": "분깃"
     }
   ],
   "defEn": "Chilhijah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 34,
+  "byBook": {
+    "kings2": 11,
+    "chronicles2": 8,
+    "chronicles1": 5,
+    "nehemiah": 4,
+    "isaiah": 3,
+    "jeremiah": 2,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶּן חִלְקִיָּ֖הוּ",
+      "pron": "바님 힐키아후",
+      "lemmas": [
+        "בֵּן",
+        "חִלְקִיָּה"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "חִלְקִיָּ֖הוּ",
+          "lemma": "חִלְקִיָּה",
+          "strong": "H2518",
+          "pron": "힐키아후"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "kings2 18:18",
+        "kings2 18:26",
+        "kings2 18:37",
+        "chronicles1 6:45",
+        "chronicles1 9:11",
+        "ezra 7:1",
+        "nehemiah 11:11",
+        "isaiah 22:20",
+        "isaiah 36:3",
+        "isaiah 36:22",
+        "jeremiah 1:1",
+        "jeremiah 29:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חִלְקִיָּ֨הוּ֙ הַכֹּהֵ֣ן",
+      "pron": "힐키아후 코헨",
+      "lemmas": [
+        "חִלְקִיָּה",
+        "כֹּהֵן"
+      ],
+      "words": [
+        {
+          "word": "חִלְקִיָּ֨הוּ֙",
+          "lemma": "חִלְקִיָּה",
+          "strong": "H2518",
+          "pron": "힐키아후"
+        },
+        {
+          "word": "הַכֹּהֵ֣ן",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "kings2 22:4",
+        "kings2 22:8",
+        "kings2 22:10",
+        "kings2 22:12",
+        "kings2 22:14",
+        "kings2 23:4",
+        "kings2 23:24",
+        "chronicles2 34:9",
+        "chronicles2 34:14",
+        "chronicles2 34:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶלְיָקִ֥ים בֶּן חִלְקִיָּ֖הוּ",
+      "pron": "엘아킴 바님 힐키아후",
+      "lemmas": [
+        "אֶלְיָקִים",
+        "בֵּן",
+        "חִלְקִיָּה"
+      ],
+      "words": [
+        {
+          "word": "אֶלְיָקִ֥ים",
+          "lemma": "אֶלְיָקִים",
+          "strong": "H471",
+          "pron": "엘아킴"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "חִלְקִיָּ֖הוּ",
+          "lemma": "חִלְקִיָּה",
+          "strong": "H2518",
+          "pron": "힐키아후"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings2 18:18",
+        "kings2 18:26",
+        "kings2 18:37",
+        "isaiah 22:20",
+        "isaiah 36:3",
+        "isaiah 36:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חִלְקִיָּ֖הוּ אֲשֶׁ֣ר",
+      "pron": "힐키아후 아셰르",
+      "lemmas": [
+        "חִלְקִיָּה",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "חִלְקִיָּ֖הוּ",
+          "lemma": "חִלְקִיָּה",
+          "strong": "H2518",
+          "pron": "힐키아후"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings2 18:18",
+        "kings2 18:37",
+        "chronicles2 34:22",
+        "isaiah 36:3",
+        "isaiah 36:22",
+        "jeremiah 29:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן חִלְקִיָּ֖הוּ אֲשֶׁ֣ר",
+      "pron": "바님 힐키아후 아셰르",
+      "lemmas": [
+        "בֵּן",
+        "חִלְקִיָּה",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "חִלְקִיָּ֖הוּ",
+          "lemma": "חִלְקִיָּה",
+          "strong": "H2518",
+          "pron": "힐키아후"
+        },
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings2 18:18",
+        "kings2 18:37",
+        "isaiah 36:3",
+        "isaiah 36:22",
+        "jeremiah 29:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -8,21 +8,143 @@
     {
       "lemma": "אֶשְׁעָן",
       "strong": "H824",
-      "pron": "",
+      "pron": "브에셰안",
       "glossKo": "에산"
     },
     {
       "lemma": "מִשְׁעֵן",
       "strong": "H4937",
-      "pron": "르미셰안",
+      "pron": "미셰안",
       "glossKo": "지팡이"
     }
   ],
   "defEn": "support",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 22,
   "byBook": {
-    "genesis": 1
+    "chronicles2": 5,
+    "isaiah": 5,
+    "kings2": 3,
+    "job": 2,
+    "ezekiel": 1,
+    "genesis": 1,
+    "judges": 1,
+    "micah": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "נִשְׁעָ֣ן עַל",
+      "pron": "브힛샤아누 알",
+      "lemmas": [
+        "שָׁעַן",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "נִשְׁעָ֣ן",
+          "lemma": "שָׁעַן",
+          "strong": "H8172",
+          "pron": "브힛샤아누"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "judges 16:26",
+        "samuel2 1:6",
+        "kings2 5:18",
+        "kings2 7:2",
+        "kings2 7:17",
+        "chronicles2 13:18",
+        "chronicles2 16:7",
+        "chronicles2 16:8",
+        "job 8:15",
+        "isaiah 10:20",
+        "isaiah 30:12",
+        "ezekiel 29:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נִשְׁעֲנ֔וּ עַל יְהוָ֖ה",
+      "pron": "브힛샤아누 알 여호와",
+      "lemmas": [
+        "שָׁעַן",
+        "עַל",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "נִשְׁעֲנ֔וּ",
+          "lemma": "שָׁעַן",
+          "strong": "H8172",
+          "pron": "브힛샤아누"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles2 13:18",
+        "chronicles2 16:7",
+        "chronicles2 16:8",
+        "isaiah 10:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נִשְׁעָ֣ן עַל יָדִ֗י",
+      "pron": "브힛샤아누 알 야도",
+      "lemmas": [
+        "שָׁעַן",
+        "עַל",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "נִשְׁעָ֣ן",
+          "lemma": "שָׁעַן",
+          "strong": "H8172",
+          "pron": "브힛샤아누"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "יָדִ֗י",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 5:18",
+        "kings2 7:2",
+        "kings2 7:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

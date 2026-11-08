@@ -12,15 +12,66 @@
     {
       "lemma": "דָּבָר",
       "strong": "H1697",
-      "pron": "딥레",
+      "pron": "우데바림",
       "glossKo": "말씀"
+    },
+    {
+      "lemma": "דִּבְרָה",
+      "strong": "H1701",
+      "pron": "딥라트",
+      "glossKo": "이유(아람)"
+    },
+    {
+      "lemma": "דִּבְרִי",
+      "strong": "H1704",
+      "pron": "딥리",
+      "glossKo": "디브리"
+    },
+    {
+      "lemma": "דֲּבְרַת",
+      "strong": "H1705",
+      "pron": "아답라트",
+      "glossKo": "다브랏"
     }
   ],
   "defEn": "reason; suit; style",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 5,
   "byBook": {
+    "ecclesiastes": 3,
+    "job": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עַל דִּ֝בְרָתִ֗י",
+      "pron": "알 딥라티",
+      "lemmas": [
+        "עַל",
+        "דִּבְרָה"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "דִּ֝בְרָתִ֗י",
+          "lemma": "דִּבְרָה",
+          "strong": "H1700",
+          "pron": "딥라티"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 110:4",
+        "ecclesiastes 3:18",
+        "ecclesiastes 7:14",
+        "ecclesiastes 8:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

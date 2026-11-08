@@ -1,8 +1,8 @@
 {
   "lemma": "בַּיִת",
-  "pron": "바이트",
+  "pron": "베트",
   "strong": "H1005",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בַּיִת",
     "strong": "H1004",
@@ -10,21 +10,27 @@
   },
   "family": [
     {
+      "lemma": "בּוּת",
+      "strong": "H956",
+      "pron": "우바트",
+      "glossKo": "묵다(아람)"
+    },
+    {
       "lemma": "בַּיִת",
       "strong": "H1004",
-      "pron": "베테카",
-      "glossKo": "너의 집"
+      "pron": "미바이트",
+      "glossKo": "집"
     },
     {
       "lemma": "בַּיִת",
       "strong": "H1006",
-      "pron": "",
+      "pron": "아바이트",
       "glossKo": "벧엘"
     },
     {
       "lemma": "בֵּית אָוֶן",
       "strong": "H1007",
-      "pron": "",
+      "pron": "베트",
       "glossKo": "벧아웬"
     },
     {
@@ -36,13 +42,196 @@
     {
       "lemma": "בֵּית אַרְבֵּאל",
       "strong": "H1009",
-      "pron": "",
+      "pron": "베트",
       "glossKo": "벧아벨"
     }
   ],
   "defEn": "house.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 44,
+  "byBook": {
+    "ezra": 35,
+    "daniel": 9
+  },
+  "phrases": [
+    {
+      "hebrew": "בֵּית אֱלָהָ֥א",
+      "pron": "베트 엘라하",
+      "lemmas": [
+        "בַּיִת",
+        "אֱלָהּ"
+      ],
+      "words": [
+        {
+          "word": "בֵּית",
+          "lemma": "בַּיִת",
+          "strong": "H1005",
+          "pron": "베트"
+        },
+        {
+          "word": "אֱלָהָ֥א",
+          "lemma": "אֱלָהּ",
+          "strong": "H426",
+          "pron": "엘라하"
+        }
+      ],
+      "count": 24,
+      "refs": [
+        "ezra 4:24",
+        "ezra 5:2",
+        "ezra 5:8",
+        "ezra 5:13",
+        "ezra 5:14",
+        "ezra 5:15",
+        "ezra 5:16",
+        "ezra 5:17",
+        "ezra 6:3",
+        "ezra 6:5",
+        "ezra 6:7",
+        "ezra 6:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵית אֱלָהָא֮ דִּ֣י",
+      "pron": "베트 엘라하 드흐브",
+      "lemmas": [
+        "בַּיִת",
+        "אֱלָהּ",
+        "דִּי"
+      ],
+      "words": [
+        {
+          "word": "בֵית",
+          "lemma": "בַּיִת",
+          "strong": "H1005",
+          "pron": "베트"
+        },
+        {
+          "word": "אֱלָהָא֮",
+          "lemma": "אֱלָהּ",
+          "strong": "H426",
+          "pron": "엘라하"
+        },
+        {
+          "word": "דִּ֣י",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "ezra 4:24",
+        "ezra 5:2",
+        "ezra 5:14",
+        "ezra 5:16",
+        "ezra 6:5",
+        "ezra 7:16",
+        "ezra 7:17",
+        "ezra 7:20",
+        "daniel 5:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּית אֱלָהָ֥א דֵ֖ךְ",
+      "pron": "베트 엘라하 다크",
+      "lemmas": [
+        "בַּיִת",
+        "אֱלָהּ",
+        "דֵּךְ"
+      ],
+      "words": [
+        {
+          "word": "בֵּית",
+          "lemma": "בַּיִת",
+          "strong": "H1005",
+          "pron": "베트"
+        },
+        {
+          "word": "אֱלָהָ֥א",
+          "lemma": "אֱלָהּ",
+          "strong": "H426",
+          "pron": "엘라하"
+        },
+        {
+          "word": "דֵ֖ךְ",
+          "lemma": "דֵּךְ",
+          "strong": "H1791",
+          "pron": "다크"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezra 5:17",
+        "ezra 6:7",
+        "ezra 6:8",
+        "ezra 6:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִֽי בֵית",
+      "pron": "드흐브 베트",
+      "lemmas": [
+        "דִּי",
+        "בַּיִת"
+      ],
+      "words": [
+        {
+          "word": "דִֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "בֵית",
+          "lemma": "בַּיִת",
+          "strong": "H1005",
+          "pron": "베트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezra 5:14",
+        "ezra 5:16",
+        "ezra 7:17",
+        "daniel 5:3",
+        "daniel 5:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְמִבְנֵ֔א בֵּ֥ית",
+      "pron": "바나인 베트",
+      "lemmas": [
+        "בְּנָא",
+        "בַּיִת"
+      ],
+      "words": [
+        {
+          "word": "לְמִבְנֵ֔א",
+          "lemma": "בְּנָא",
+          "strong": "H1124",
+          "pron": "바나인"
+        },
+        {
+          "word": "בֵּ֥ית",
+          "lemma": "בַּיִת",
+          "strong": "H1005",
+          "pron": "베트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezra 5:2",
+        "ezra 5:11",
+        "ezra 5:17",
+        "ezra 6:8",
+        "daniel 4:30"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

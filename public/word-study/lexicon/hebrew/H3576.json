@@ -1,6 +1,6 @@
 {
   "lemma": "כָּזַב",
-  "pron": "예캇제부",
+  "pron": "비위캇젭",
   "strong": "H3576",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "אַכְזָב",
       "strong": "H391",
-      "pron": "",
+      "pron": "아케잡",
       "glossKo": "거짓의"
     },
     {
       "lemma": "כְּדַב",
       "strong": "H3538",
-      "pron": "",
+      "pron": "킫바",
       "glossKo": "거짓된(아람)"
     },
     {
@@ -26,13 +26,13 @@
     {
       "lemma": "כֹּזְבָא",
       "strong": "H3578",
-      "pron": "",
+      "pron": "코제바",
       "glossKo": "고세바"
     },
     {
       "lemma": "כֹּזְבִי",
       "strong": "H3579",
-      "pron": "",
+      "pron": "캇비",
       "glossKo": "고스비"
     },
     {
@@ -44,9 +44,48 @@
   ],
   "defEn": "lie; deceive",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 18,
   "byBook": {
-    "psalms": 3
+    "job": 4,
+    "psalms": 3,
+    "isaiah": 2,
+    "judges": 2,
+    "proverbs": 2,
+    "ezekiel": 1,
+    "habakkuk": 1,
+    "kings2": 1,
+    "micah": 1,
+    "numbers": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹ֣א יְכַזֵּ֑ב",
+      "pron": "로 비위캇젭",
+      "lemmas": [
+        "לֹא",
+        "כָּזַב"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יְכַזֵּ֑ב",
+          "lemma": "כָּזַב",
+          "strong": "H3576",
+          "pron": "비위캇젭"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 14:5",
+        "isaiah 58:11",
+        "habakkuk 2:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

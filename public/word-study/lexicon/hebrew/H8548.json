@@ -7,132 +7,225 @@
   "family": [],
   "defEn": "continuance; extension; constant; constantly; regular",
   "defKo": "",
-  "countOT": 23,
+  "countOT": 104,
   "byBook": {
-    "psalms": 23
+    "psalms": 23,
+    "numbers": 20,
+    "exodus": 8,
+    "isaiah": 8,
+    "leviticus": 6,
+    "chronicles1": 5,
+    "daniel": 5,
+    "ezekiel": 4,
+    "proverbs": 4,
+    "chronicles2": 3,
+    "jeremiah": 3,
+    "kings2": 3,
+    "samuel2": 3,
+    "nehemiah": 2,
+    "deuteronomy": 1,
+    "ezra": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "kings1": 1,
+    "nahum": 1,
+    "obadiah": 1
   },
   "phrases": [
     {
-      "hebrew": "נֶגְדִּ֣י תָמִֽיד",
-      "pron": "미넥드오 타믿",
+      "hebrew": "עֹלַ֣ת הַתָּמִ֔יד",
+      "pron": "올로트 타믿",
       "lemmas": [
-        "נֶגֶד",
+        "עֹלָה",
         "תָּמִיד"
       ],
       "words": [
         {
-          "word": "נֶגְדִּ֣י",
-          "lemma": "נֶגֶד",
-          "strong": "H5048",
-          "pron": "미넥드오"
+          "word": "עֹלַ֣ת",
+          "lemma": "עֹלָה",
+          "strong": "H5930",
+          "pron": "올로트"
         },
         {
-          "word": "תָמִֽיד",
+          "word": "הַתָּמִ֔יד",
           "lemma": "תָּמִיד",
           "strong": "H8548",
           "pron": "타믿"
         }
       ],
-      "count": 4,
+      "count": 22,
       "refs": [
-        "psalms 16:8",
-        "psalms 38:17",
-        "psalms 50:8",
-        "psalms 51:3"
+        "exodus 29:42",
+        "numbers 28:3",
+        "numbers 28:6",
+        "numbers 28:10",
+        "numbers 28:15",
+        "numbers 28:23",
+        "numbers 28:24",
+        "numbers 28:31",
+        "numbers 29:6",
+        "numbers 29:11",
+        "numbers 29:16",
+        "numbers 29:19"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְיֹאמְר֣וּ תָ֭מִיד",
-      "pron": "아마르 타믿",
+      "hebrew": "הַתָּמִ֔יד וּמִנְחָתָ֖הּ",
+      "pron": "타믿 민하",
       "lemmas": [
-        "אָמַר",
+        "תָּמִיד",
+        "מִנְחָה"
+      ],
+      "words": [
+        {
+          "word": "הַתָּמִ֔יד",
+          "lemma": "תָּמִיד",
+          "strong": "H8548",
+          "pron": "타믿"
+        },
+        {
+          "word": "וּמִנְחָתָ֖הּ",
+          "lemma": "מִנְחָה",
+          "strong": "H4503",
+          "pron": "민하"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "numbers 28:31",
+        "numbers 29:6",
+        "numbers 29:11",
+        "numbers 29:16",
+        "numbers 29:19",
+        "numbers 29:22",
+        "numbers 29:25",
+        "numbers 29:28",
+        "numbers 29:31",
+        "numbers 29:34",
+        "numbers 29:38"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֹלַ֣ת הַתָּמִ֔יד מִנְחָתָ֖הּ",
+      "pron": "올로트 타믿 민하",
+      "lemmas": [
+        "עֹלָה",
+        "תָּמִיד",
+        "מִנְחָה"
+      ],
+      "words": [
+        {
+          "word": "עֹלַ֣ת",
+          "lemma": "עֹלָה",
+          "strong": "H5930",
+          "pron": "올로트"
+        },
+        {
+          "word": "הַתָּמִ֔יד",
+          "lemma": "תָּמִיד",
+          "strong": "H8548",
+          "pron": "타믿"
+        },
+        {
+          "word": "מִנְחָתָ֖הּ",
+          "lemma": "מִנְחָה",
+          "strong": "H4503",
+          "pron": "민하"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "numbers 28:31",
+        "numbers 29:6",
+        "numbers 29:11",
+        "numbers 29:16",
+        "numbers 29:19",
+        "numbers 29:22",
+        "numbers 29:25",
+        "numbers 29:28",
+        "numbers 29:31",
+        "numbers 29:34",
+        "numbers 29:38"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַתָּמִ֔יד מִנְחָתָ֖הּ וְנִסְכָּֽהּ",
+      "pron": "타믿 민하 네세크",
+      "lemmas": [
+        "תָּמִיד",
+        "מִנְחָה",
+        "נֶסֶךְ"
+      ],
+      "words": [
+        {
+          "word": "הַתָּמִ֔יד",
+          "lemma": "תָּמִיד",
+          "strong": "H8548",
+          "pron": "타믿"
+        },
+        {
+          "word": "מִנְחָתָ֖הּ",
+          "lemma": "מִנְחָה",
+          "strong": "H4503",
+          "pron": "민하"
+        },
+        {
+          "word": "וְנִסְכָּֽהּ",
+          "lemma": "נֶסֶךְ",
+          "strong": "H5262",
+          "pron": "네세크"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "numbers 29:6",
+        "numbers 29:11",
+        "numbers 29:16",
+        "numbers 29:19",
+        "numbers 29:22",
+        "numbers 29:25",
+        "numbers 29:28",
+        "numbers 29:31",
+        "numbers 29:34",
+        "numbers 29:38"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֖ה תָּמִֽיד",
+      "pron": "여호와 타믿",
+      "lemmas": [
+        "יְהֹוָה",
         "תָּמִיד"
       ],
       "words": [
         {
-          "word": "וְיֹאמְר֣וּ",
-          "lemma": "אָמַר",
-          "strong": "H559",
-          "pron": "아마르"
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         },
         {
-          "word": "תָ֭מִיד",
+          "word": "תָּמִֽיד",
           "lemma": "תָּמִיד",
           "strong": "H8548",
           "pron": "타믿"
         }
       ],
-      "count": 3,
+      "count": 9,
       "refs": [
-        "psalms 35:27",
-        "psalms 40:16",
-        "psalms 70:4"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וְיֹאמְר֣וּ תָ֭מִיד יִגְדַּ֣ל",
-      "pron": "아마르 타믿 믁들",
-      "lemmas": [
-        "אָמַר",
-        "תָּמִיד",
-        "גָּדַל"
-      ],
-      "words": [
-        {
-          "word": "וְיֹאמְר֣וּ",
-          "lemma": "אָמַר",
-          "strong": "H559",
-          "pron": "아마르"
-        },
-        {
-          "word": "תָ֭מִיד",
-          "lemma": "תָּמִיד",
-          "strong": "H8548",
-          "pron": "타믿"
-        },
-        {
-          "word": "יִגְדַּ֣ל",
-          "lemma": "גָּדַל",
-          "strong": "H1431",
-          "pron": "믁들"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 35:27",
-        "psalms 40:16",
-        "psalms 70:4"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "תָ֭מִיד יִגְדַּ֣ל",
-      "pron": "타믿 믁들",
-      "lemmas": [
-        "תָּמִיד",
-        "גָּדַל"
-      ],
-      "words": [
-        {
-          "word": "תָ֭מִיד",
-          "lemma": "תָּמִיד",
-          "strong": "H8548",
-          "pron": "타믿"
-        },
-        {
-          "word": "יִגְדַּ֣ל",
-          "lemma": "גָּדַל",
-          "strong": "H1431",
-          "pron": "믁들"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 35:27",
-        "psalms 40:16",
-        "psalms 70:4"
+        "exodus 28:29",
+        "exodus 28:30",
+        "leviticus 24:3",
+        "leviticus 24:4",
+        "leviticus 24:8",
+        "chronicles2 24:14",
+        "psalms 109:15",
+        "isaiah 52:5",
+        "isaiah 58:11"
       ],
       "glossKo": ""
     }

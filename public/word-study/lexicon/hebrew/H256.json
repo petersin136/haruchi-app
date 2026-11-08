@@ -2,7 +2,7 @@
   "lemma": "אַחְאָב",
   "pron": "아헤압",
   "strong": "H256",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אָח",
     "strong": "H251",
@@ -12,43 +12,241 @@
     {
       "lemma": "אָח",
       "strong": "H251",
-      "pron": "르에하위",
-      "glossKo": "나의 형제"
+      "pron": "아히브",
+      "glossKo": "그의 형제"
     },
     {
       "lemma": "אַח",
       "strong": "H252",
-      "pron": "",
-      "glossKo": "형제(아람)"
+      "pron": "히크",
+      "glossKo": "너의 형제(아람)"
     },
     {
       "lemma": "אַחְבָן",
       "strong": "H257",
-      "pron": "",
+      "pron": "아헵반",
       "glossKo": "아반"
     },
     {
       "lemma": "אַחֲוָה",
       "strong": "H264",
-      "pron": "",
+      "pron": "하아하바",
       "glossKo": "형제 됨"
     },
     {
       "lemma": "אֲחוֹחַ",
       "strong": "H265",
-      "pron": "",
+      "pron": "바아호아흐",
       "glossKo": "아호아"
     },
     {
       "lemma": "אֲחוּמַי",
       "strong": "H267",
-      "pron": "",
+      "pron": "아후마이",
       "glossKo": "아후매"
     }
   ],
   "defEn": "Achab",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 93,
+  "byBook": {
+    "kings1": 49,
+    "kings2": 27,
+    "chronicles2": 14,
+    "jeremiah": 2,
+    "micah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֵּ֣ית אַחְאָ֑ב",
+      "pron": "미바이트 아헤압",
+      "lemmas": [
+        "בַּיִת",
+        "אַחְאָב"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֣ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "אַחְאָ֑ב",
+          "lemma": "אַחְאָב",
+          "strong": "H256",
+          "pron": "아헤압"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "kings2 8:18",
+        "kings2 8:27",
+        "kings2 9:7",
+        "kings2 9:8",
+        "kings2 9:9",
+        "kings2 10:10",
+        "kings2 10:11",
+        "kings2 10:30",
+        "kings2 21:13",
+        "chronicles2 21:6",
+        "chronicles2 21:13",
+        "chronicles2 22:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַחְאָ֣ב מֶֽלֶךְ",
+      "pron": "아헤압 멜레크",
+      "lemmas": [
+        "אַחְאָב",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "אַחְאָ֣ב",
+          "lemma": "אַחְאָב",
+          "strong": "H256",
+          "pron": "아헤압"
+        },
+        {
+          "word": "מֶֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "kings1 20:2",
+        "kings1 20:13",
+        "kings1 21:1",
+        "kings1 21:18",
+        "kings1 22:41",
+        "kings2 8:16",
+        "kings2 8:25",
+        "kings2 21:3",
+        "chronicles2 18:3",
+        "chronicles2 18:19",
+        "chronicles2 22:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל אַחְאָ֑ב",
+      "pron": "엘 아헤압",
+      "lemmas": [
+        "אֵל",
+        "אַחְאָב"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "אַחְאָ֑ב",
+          "lemma": "אַחְאָב",
+          "strong": "H256",
+          "pron": "아헤압"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "kings1 17:1",
+        "kings1 18:1",
+        "kings1 18:2",
+        "kings1 18:44",
+        "kings1 20:2",
+        "kings1 20:13",
+        "kings1 21:3",
+        "kings1 21:15",
+        "kings2 10:18",
+        "chronicles2 18:2",
+        "jeremiah 29:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַחְאָ֥ב מֶֽלֶךְ יִשְׂרָאֵ֖ל",
+      "pron": "아헤압 멜레크 이스라엘",
+      "lemmas": [
+        "אַחְאָב",
+        "מֶלֶךְ",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "אַחְאָ֥ב",
+          "lemma": "אַחְאָב",
+          "strong": "H256",
+          "pron": "아헤압"
+        },
+        {
+          "word": "מֶֽלֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "יִשְׂרָאֵ֖ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "kings1 20:2",
+        "kings1 20:13",
+        "kings1 21:18",
+        "kings1 22:41",
+        "kings2 8:16",
+        "kings2 8:25",
+        "kings2 21:3",
+        "chronicles2 18:3",
+        "chronicles2 18:19",
+        "chronicles2 22:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן אַחְאָ֗ב",
+      "pron": "바님 아헤압",
+      "lemmas": [
+        "בֵּן",
+        "אַחְאָב"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "אַחְאָ֗ב",
+          "lemma": "אַחְאָב",
+          "strong": "H256",
+          "pron": "아헤압"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "kings1 22:49",
+        "kings1 22:51",
+        "kings2 3:1",
+        "kings2 8:16",
+        "kings2 8:25",
+        "kings2 8:28",
+        "kings2 8:29",
+        "kings2 9:29",
+        "chronicles2 22:5",
+        "chronicles2 22:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

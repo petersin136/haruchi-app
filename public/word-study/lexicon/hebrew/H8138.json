@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁנָה",
-  "pron": "브샨노트오",
+  "pron": "힛샤노트",
   "strong": "H8138",
   "posKo": "동사",
   "root": null,
@@ -14,8 +14,8 @@
     {
       "lemma": "שָׁנֶה",
       "strong": "H8141",
-      "pron": "우셰노타위",
-      "glossKo": "나의 해(年)"
+      "pron": "브샤님",
+      "glossKo": "해(年)"
     },
     {
       "lemma": "שֵׁנִי",
@@ -26,10 +26,82 @@
   ],
   "defEn": "fold; duplicate",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 22,
   "byBook": {
+    "proverbs": 4,
+    "esther": 3,
+    "kings1": 3,
+    "jeremiah": 2,
+    "job": 2,
     "psalms": 2,
-    "genesis": 1
+    "samuel1": 2,
+    "genesis": 1,
+    "malachi": 1,
+    "nehemiah": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיְשַׁנּ֤וֹ אֶת",
+      "pron": "힛샤노트 에트",
+      "lemmas": [
+        "שָׁנָה",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיְשַׁנּ֤וֹ",
+          "lemma": "שָׁנָה",
+          "strong": "H8138",
+          "pron": "힛샤노트"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 21:13",
+        "esther 2:9",
+        "psalms 34:1",
+        "jeremiah 2:36",
+        "jeremiah 52:33"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֥א אֶשְׁנֶ֖ה",
+      "pron": "로 힛샤노트",
+      "lemmas": [
+        "לֹא",
+        "שָׁנָה"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "אֶשְׁנֶ֖ה",
+          "lemma": "שָׁנָה",
+          "strong": "H8138",
+          "pron": "힛샤노트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 26:8",
+        "samuel2 20:10",
+        "job 29:22",
+        "psalms 89:34",
+        "malachi 3:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

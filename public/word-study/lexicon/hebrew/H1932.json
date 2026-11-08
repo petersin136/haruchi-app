@@ -1,8 +1,8 @@
 {
   "lemma": "הוּא",
-  "pron": "후",
+  "pron": "브후",
   "strong": "H1932",
-  "posKo": "",
+  "posKo": "대명사",
   "root": {
     "lemma": "הוּא",
     "strong": "H1931",
@@ -12,13 +12,13 @@
     {
       "lemma": "הוּא",
       "strong": "H1931",
-      "pron": "브후",
+      "pron": "후",
       "glossKo": "그"
     },
     {
       "lemma": "הֵם",
       "strong": "H1992",
-      "pron": "헴마",
+      "pron": "헴",
       "glossKo": "그들"
     },
     {
@@ -42,7 +42,127 @@
   ],
   "defEn": "× are, it, this.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 22,
+  "byBook": {
+    "daniel": 20,
+    "ezra": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "אַנְתְּה ה֔וּא",
+      "pron": "브안트 브후",
+      "lemmas": [
+        "אַנְתָּה",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "אַנְתְּה",
+          "lemma": "אַנְתָּה",
+          "strong": "H607",
+          "pron": "브안트"
+        },
+        {
+          "word": "ה֔וּא",
+          "lemma": "הוּא",
+          "strong": "H1932",
+          "pron": "브후"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:38",
+        "daniel 4:22",
+        "daniel 5:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דִּי הִ֣יא",
+      "pron": "드흐브 브후",
+      "lemmas": [
+        "דִּי",
+        "הוּא"
+      ],
+      "words": [
+        {
+          "word": "דִּי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "הִ֣יא",
+          "lemma": "הוּא",
+          "strong": "H1932",
+          "pron": "브후"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 6:15",
+        "daniel 2:20",
+        "daniel 6:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "ה֣וּא אֱלָ֧הּ",
+      "pron": "브후 엘라하",
+      "lemmas": [
+        "הוּא",
+        "אֱלָהּ"
+      ],
+      "words": [
+        {
+          "word": "ה֣וּא",
+          "lemma": "הוּא",
+          "strong": "H1932",
+          "pron": "브후"
+        },
+        {
+          "word": "אֱלָ֧הּ",
+          "lemma": "אֱלָהּ",
+          "strong": "H426",
+          "pron": "엘라하"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:47",
+        "daniel 3:15",
+        "daniel 6:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְ֠הוּא מְהַשְׁנֵ֤א",
+      "pron": "브후 예하셰네",
+      "lemmas": [
+        "הוּא",
+        "שְׁנָא"
+      ],
+      "words": [
+        {
+          "word": "וְ֠הוּא",
+          "lemma": "הוּא",
+          "strong": "H1932",
+          "pron": "브후"
+        },
+        {
+          "word": "מְהַשְׁנֵ֤א",
+          "lemma": "שְׁנָא",
+          "strong": "H8133",
+          "pron": "예하셰네"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:21",
+        "daniel 7:7",
+        "daniel 7:24"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

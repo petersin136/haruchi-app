@@ -1,6 +1,6 @@
 {
   "lemma": "מָשִׁיחַ",
-  "pron": "메시흐오",
+  "pron": "아마시아흐",
   "strong": "H4899",
   "posKo": "명사",
   "root": {
@@ -12,33 +12,204 @@
     {
       "lemma": "מִמְשַׁח",
       "strong": "H4473",
-      "pron": "",
+      "pron": "밈샤흐",
       "glossKo": "기름 부음"
     },
     {
       "lemma": "מָשַׁח",
       "strong": "H4886",
-      "pron": "메샤하카",
-      "glossKo": "너에게 기름 붓다"
+      "pron": "마샤헷타",
+      "glossKo": "기름 붓다"
     },
     {
       "lemma": "מְשַׁח",
       "strong": "H4887",
-      "pron": "",
+      "pron": "우메샤흐",
       "glossKo": "기름(아람)"
     },
     {
       "lemma": "מִשְׁחָה",
       "strong": "H4888",
-      "pron": "",
+      "pron": "아미셰하",
       "glossKo": "기름 부음"
     }
   ],
   "defEn": "anointed; consecrated; Messiah",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 39,
   "byBook": {
-    "psalms": 10
+    "samuel1": 12,
+    "psalms": 10,
+    "samuel2": 6,
+    "leviticus": 4,
+    "daniel": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "habakkuk": 1,
+    "isaiah": 1,
+    "lamentations": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מְשִׁ֥יחַ יְהוָֽה",
+      "pron": "아마시아흐 여호와",
+      "lemmas": [
+        "מָשִׁיחַ",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "מְשִׁ֥יחַ",
+          "lemma": "מָשִׁיחַ",
+          "strong": "H4899",
+          "pron": "아마시아흐"
+        },
+        {
+          "word": "יְהוָֽה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "samuel1 24:6",
+        "samuel1 24:10",
+        "samuel1 26:9",
+        "samuel1 26:11",
+        "samuel1 26:16",
+        "samuel1 26:23",
+        "samuel2 1:14",
+        "samuel2 1:16",
+        "samuel2 19:21",
+        "lamentations 4:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַכֹּהֵ֥ן הַמָּשִׁ֖יחַ",
+      "pron": "코헨 아마시아흐",
+      "lemmas": [
+        "כֹּהֵן",
+        "מָשִׁיחַ"
+      ],
+      "words": [
+        {
+          "word": "הַכֹּהֵ֥ן",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        },
+        {
+          "word": "הַמָּשִׁ֖יחַ",
+          "lemma": "מָשִׁיחַ",
+          "strong": "H4899",
+          "pron": "아마시아흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 4:3",
+        "leviticus 4:5",
+        "leviticus 4:16",
+        "leviticus 6:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פְּנֵ֣י מְשִׁיחֶֽךָ",
+      "pron": "페네 아마시아흐",
+      "lemmas": [
+        "פָּנִים",
+        "מָשִׁיחַ"
+      ],
+      "words": [
+        {
+          "word": "פְּנֵ֣י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "מְשִׁיחֶֽךָ",
+          "lemma": "מָשִׁיחַ",
+          "strong": "H4899",
+          "pron": "아마시아흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 2:35",
+        "chronicles2 6:42",
+        "psalms 84:9",
+        "psalms 132:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת מְשִׁ֥יחַ",
+      "pron": "에트 아마시아흐",
+      "lemmas": [
+        "אֵת",
+        "מָשִׁיחַ"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מְשִׁ֥יחַ",
+          "lemma": "מָשִׁיחַ",
+          "strong": "H4899",
+          "pron": "아마시아흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 1:14",
+        "samuel2 1:16",
+        "samuel2 19:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת מְשִׁ֥יחַ יְהוָֽה",
+      "pron": "에트 아마시아흐 여호와",
+      "lemmas": [
+        "אֵת",
+        "מָשִׁיחַ",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מְשִׁ֥יחַ",
+          "lemma": "מָשִׁיחַ",
+          "strong": "H4899",
+          "pron": "아마시아흐"
+        },
+        {
+          "word": "יְהוָֽה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 1:14",
+        "samuel2 1:16",
+        "samuel2 19:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

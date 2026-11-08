@@ -1,6 +1,6 @@
 {
   "lemma": "גַּם",
-  "pron": "브감",
+  "pron": "감",
   "strong": "H1571",
   "posKo": "소사",
   "root": null,
@@ -8,31 +8,66 @@
     {
       "lemma": "מְגַמָּה",
       "strong": "H4041",
-      "pron": "",
+      "pron": "메감마트",
       "glossKo": "갈망"
     }
   ],
   "defEn": "assemblage; also; even; yea; though; both; and",
   "defKo": "",
-  "countOT": 129,
+  "countOT": 769,
   "byBook": {
     "genesis": 94,
-    "psalms": 35
+    "samuel1": 62,
+    "ecclesiastes": 58,
+    "jeremiah": 58,
+    "samuel2": 43,
+    "exodus": 40,
+    "psalms": 35,
+    "chronicles2": 33,
+    "isaiah": 31,
+    "ezekiel": 29,
+    "kings1": 29,
+    "judges": 28,
+    "job": 23,
+    "proverbs": 23,
+    "deuteronomy": 21,
+    "numbers": 19,
+    "kings2": 17,
+    "nehemiah": 17,
+    "chronicles1": 14,
+    "hosea": 12,
+    "joshua": 12,
+    "zechariah": 12,
+    "ruth": 9,
+    "esther": 8,
+    "joel": 7,
+    "lamentations": 6,
+    "malachi": 5,
+    "zephaniah": 5,
+    "nahum": 4,
+    "amos": 3,
+    "leviticus": 3,
+    "daniel": 2,
+    "obadiah": 2,
+    "songofsolomon": 2,
+    "ezra": 1,
+    "habakkuk": 1,
+    "micah": 1
   },
   "phrases": [
     {
-      "hebrew": "גַּם אֶת",
-      "pron": "브감 에트",
+      "hebrew": "גַּ֣ם אֶת",
+      "pron": "감 에트",
       "lemmas": [
         "גַּם",
         "אֵת"
       ],
       "words": [
         {
-          "word": "גַּם",
+          "word": "גַּ֣ם",
           "lemma": "גַּם",
           "strong": "H1571",
-          "pron": "브감"
+          "pron": "감"
         },
         {
           "word": "אֶת",
@@ -41,7 +76,7 @@
           "pron": "에트"
         }
       ],
-      "count": 15,
+      "count": 60,
       "refs": [
         "genesis 14:7",
         "genesis 14:16",
@@ -59,8 +94,8 @@
       "glossKo": ""
     },
     {
-      "hebrew": "גַּם הוּא֙",
-      "pron": "브감 브후",
+      "hebrew": "גַּם ה֖וּא",
+      "pron": "감 후",
       "lemmas": [
         "גַּם",
         "הוּא"
@@ -70,16 +105,16 @@
           "word": "גַּם",
           "lemma": "גַּם",
           "strong": "H1571",
-          "pron": "브감"
+          "pron": "감"
         },
         {
-          "word": "הוּא֙",
+          "word": "ה֖וּא",
           "lemma": "הוּא",
           "strong": "H1931",
-          "pron": "브후"
+          "pron": "후"
         }
       ],
-      "count": 14,
+      "count": 48,
       "refs": [
         "genesis 4:4",
         "genesis 4:22",
@@ -97,103 +132,116 @@
       "glossKo": ""
     },
     {
-      "hebrew": "גַּם אֲנַ֖חְנוּ גַּם",
-      "pron": "브감 바아나헤누 브감",
+      "hebrew": "גַם אָ֖נִי",
+      "pron": "감 바아니",
       "lemmas": [
         "גַּם",
-        "אֲנַחְנוּ",
-        "גַּם"
+        "אֲנִי"
       ],
       "words": [
         {
-          "word": "גַּם",
+          "word": "גַם",
           "lemma": "גַּם",
           "strong": "H1571",
-          "pron": "브감"
+          "pron": "감"
         },
         {
-          "word": "אֲנַ֖חְנוּ",
-          "lemma": "אֲנַחְנוּ",
-          "strong": "H587",
-          "pron": "바아나헤누"
-        },
-        {
-          "word": "גַּם",
-          "lemma": "גַּם",
-          "strong": "H1571",
-          "pron": "브감"
+          "word": "אָ֖נִי",
+          "lemma": "אֲנִי",
+          "strong": "H589",
+          "pron": "바아니"
         }
       ],
-      "count": 10,
+      "count": 45,
       "refs": [
-        "genesis 43:8",
-        "genesis 44:16",
-        "genesis 46:34",
-        "genesis 47:3",
-        "genesis 47:19"
+        "genesis 27:34",
+        "genesis 27:38",
+        "exodus 6:5",
+        "leviticus 26:24",
+        "deuteronomy 12:30",
+        "judges 1:3",
+        "judges 2:21",
+        "samuel2 18:2",
+        "samuel2 18:22",
+        "kings1 13:18",
+        "kings2 2:3",
+        "kings2 2:5"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "גַּם אֲנַ֖חְנוּ",
-      "pron": "브감 바아나헤누",
+      "hebrew": "גַּם אַתָּ֖ה",
+      "pron": "감 앗타",
       "lemmas": [
         "גַּם",
-        "אֲנַחְנוּ"
+        "אַתָּה"
       ],
       "words": [
         {
           "word": "גַּם",
           "lemma": "גַּם",
           "strong": "H1571",
-          "pron": "브감"
+          "pron": "감"
         },
         {
-          "word": "אֲנַ֖חְנוּ",
-          "lemma": "אֲנַחְנוּ",
-          "strong": "H587",
-          "pron": "바아나헤누"
+          "word": "אַתָּ֖ה",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
         }
       ],
-      "count": 6,
+      "count": 37,
       "refs": [
+        "genesis 21:26",
+        "genesis 24:44",
         "genesis 43:8",
-        "genesis 44:9",
-        "genesis 44:16",
-        "genesis 46:34",
-        "genesis 47:3",
-        "genesis 47:19"
+        "exodus 10:25",
+        "exodus 12:31",
+        "exodus 18:18",
+        "numbers 18:3",
+        "numbers 18:28",
+        "numbers 22:19",
+        "numbers 27:13",
+        "deuteronomy 1:37",
+        "joshua 2:12"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֲנַ֖חְנוּ גַּם",
-      "pron": "바아나헤누 브감",
+      "hebrew": "גַּם הֵ֖ם",
+      "pron": "감 헴",
       "lemmas": [
-        "אֲנַחְנוּ",
-        "גַּם"
+        "גַּם",
+        "הֵם"
       ],
       "words": [
-        {
-          "word": "אֲנַ֖חְנוּ",
-          "lemma": "אֲנַחְנוּ",
-          "strong": "H587",
-          "pron": "바아나헤누"
-        },
         {
           "word": "גַּם",
           "lemma": "גַּם",
           "strong": "H1571",
-          "pron": "브감"
+          "pron": "감"
+        },
+        {
+          "word": "הֵ֖ם",
+          "lemma": "הֵם",
+          "strong": "H1992",
+          "pron": "헴"
         }
       ],
-      "count": 5,
+      "count": 25,
       "refs": [
-        "genesis 43:8",
-        "genesis 44:16",
-        "genesis 46:34",
-        "genesis 47:3",
-        "genesis 47:19"
+        "exodus 7:11",
+        "numbers 4:22",
+        "numbers 18:3",
+        "deuteronomy 3:20",
+        "joshua 1:15",
+        "joshua 9:4",
+        "judges 1:22",
+        "samuel1 14:15",
+        "samuel1 14:21",
+        "samuel1 14:22",
+        "samuel1 19:20",
+        "samuel1 19:21"
       ],
       "glossKo": ""
     }

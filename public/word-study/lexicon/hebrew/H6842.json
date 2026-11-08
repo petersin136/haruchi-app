@@ -1,8 +1,8 @@
 {
   "lemma": "צָפִיר",
-  "pron": "차피르",
+  "pron": "우체피레",
   "strong": "H6842",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "צָפַר",
     "strong": "H6852",
@@ -12,13 +12,13 @@
     {
       "lemma": "טְפַר",
       "strong": "H2953",
-      "pron": "",
-      "glossKo": "손톱(아람)"
+      "pron": "베딥로히",
+      "glossKo": "그의 손톱(아람)"
     },
     {
       "lemma": "צוֹפַר",
       "strong": "H6691",
-      "pron": "",
+      "pron": "브초파르",
       "glossKo": "소발"
     },
     {
@@ -28,15 +28,61 @@
       "glossKo": "작은 새"
     },
     {
+      "lemma": "צְפִיר",
+      "strong": "H6841",
+      "pron": "우체피레",
+      "glossKo": "숫염소(아람)"
+    },
+    {
+      "lemma": "צְפִירָה",
+      "strong": "H6843",
+      "pron": "브리체피라트",
+      "glossKo": "면류관"
+    },
+    {
       "lemma": "צָפַר",
       "strong": "H6852",
-      "pron": "",
+      "pron": "브이쳅포르",
       "glossKo": "일찍 떠나다"
     }
   ],
   "defEn": "male goat",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "daniel": 4,
+    "chronicles2": 1,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וּצְפִירֵ֨י עִזִּ֤ים",
+      "pron": "우체피레 브엣",
+      "lemmas": [
+        "צָפִיר",
+        "עֵז"
+      ],
+      "words": [
+        {
+          "word": "וּצְפִירֵ֨י",
+          "lemma": "צָפִיר",
+          "strong": "H6842",
+          "pron": "우체피레"
+        },
+        {
+          "word": "עִזִּ֤ים",
+          "lemma": "עֵז",
+          "strong": "H5795",
+          "pron": "브엣"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles2 29:21",
+        "daniel 8:5",
+        "daniel 8:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

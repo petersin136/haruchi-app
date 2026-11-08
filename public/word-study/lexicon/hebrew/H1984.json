@@ -1,6 +1,6 @@
 {
   "lemma": "הָלַל",
-  "pron": "홀림",
+  "pron": "바예할루",
   "strong": "H1984",
   "posKo": "동사",
   "root": null,
@@ -8,51 +8,68 @@
     {
       "lemma": "הוֹלֵלָה",
       "strong": "H1947",
-      "pron": "",
+      "pron": "홀렐로트",
       "glossKo": "어리석음"
     },
     {
       "lemma": "הוֹלֵלוּת",
       "strong": "H1948",
-      "pron": "",
+      "pron": "홀렐루트",
       "glossKo": "어리석음"
     },
     {
       "lemma": "הֵילֵל",
       "strong": "H1966",
-      "pron": "",
+      "pron": "헬렐",
       "glossKo": "샛별"
     },
     {
       "lemma": "הִלּוּל",
       "strong": "H1974",
-      "pron": "",
+      "pron": "힐룰림",
       "glossKo": "찬양"
     },
     {
       "lemma": "הִלֵּל",
       "strong": "H1985",
-      "pron": "",
+      "pron": "힐렐",
       "glossKo": "힐렐"
     },
     {
       "lemma": "יְהַלֶּלְאֵל",
       "strong": "H3094",
-      "pron": "",
+      "pron": "예할렐엘",
       "glossKo": "여할렐렐"
     }
   ],
   "defEn": "be clear; shine; to make a show; boast; be; foolish; to rave; celebrate",
   "defKo": "",
-  "countOT": 95,
+  "countOT": 165,
   "byBook": {
     "psalms": 94,
-    "genesis": 1
+    "jeremiah": 13,
+    "chronicles2": 12,
+    "chronicles1": 9,
+    "proverbs": 9,
+    "isaiah": 7,
+    "job": 4,
+    "ezra": 3,
+    "ecclesiastes": 2,
+    "nehemiah": 2,
+    "samuel2": 2,
+    "ezekiel": 1,
+    "genesis": 1,
+    "joel": 1,
+    "judges": 1,
+    "kings1": 1,
+    "nahum": 1,
+    "samuel1": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
       "hebrew": "הַֽלְלוּ יָֽהּ",
-      "pron": "홀림 브야흐",
+      "pron": "바예할루 야흐",
       "lemmas": [
         "הָלַל",
         "יָהּ"
@@ -62,13 +79,13 @@
           "word": "הַֽלְלוּ",
           "lemma": "הָלַל",
           "strong": "H1984",
-          "pron": "홀림"
+          "pron": "바예할루"
         },
         {
           "word": "יָֽהּ",
           "lemma": "יָהּ",
           "strong": "H3050",
-          "pron": "브야흐"
+          "pron": "야흐"
         }
       ],
       "count": 27,
@@ -89,47 +106,46 @@
       "glossKo": ""
     },
     {
-      "hebrew": "הַ֥לְלוּ יָ֨הּ הַ֭לְלוּ",
-      "pron": "홀림 브야흐 홀림",
+      "hebrew": "הַֽלְל֣וּ אֶת",
+      "pron": "바예할루 에트",
       "lemmas": [
         "הָלַל",
-        "יָהּ",
-        "הָלַל"
+        "אֵת"
       ],
       "words": [
         {
-          "word": "הַ֥לְלוּ",
+          "word": "הַֽלְל֣וּ",
           "lemma": "הָלַל",
           "strong": "H1984",
-          "pron": "홀림"
+          "pron": "바예할루"
         },
         {
-          "word": "יָ֨הּ",
-          "lemma": "יָהּ",
-          "strong": "H3050",
-          "pron": "브야흐"
-        },
-        {
-          "word": "הַ֭לְלוּ",
-          "lemma": "הָלַל",
-          "strong": "H1984",
-          "pron": "홀림"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         }
       ],
-      "count": 12,
+      "count": 15,
       "refs": [
+        "genesis 12:15",
+        "judges 16:24",
+        "chronicles2 23:12",
+        "ezra 3:10",
+        "nehemiah 5:13",
         "psalms 113:1",
+        "psalms 117:1",
         "psalms 135:1",
-        "psalms 146:1",
         "psalms 148:1",
-        "psalms 150:1",
-        "psalms 150:6"
+        "psalms 148:5",
+        "psalms 148:7",
+        "psalms 148:13"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "יְהוָ֣ה וּמְהֻלָּ֣ל",
-      "pron": "여호와 홀림",
+      "pron": "여호와 바예할루",
       "lemmas": [
         "יְהֹוָה",
         "הָלַל"
@@ -145,11 +161,13 @@
           "word": "וּמְהֻלָּ֣ל",
           "lemma": "הָלַל",
           "strong": "H1984",
-          "pron": "홀림"
+          "pron": "바예할루"
         }
       ],
-      "count": 10,
+      "count": 13,
       "refs": [
+        "chronicles1 16:25",
+        "chronicles2 20:21",
         "psalms 22:23",
         "psalms 34:2",
         "psalms 48:1",
@@ -164,68 +182,79 @@
       "glossKo": ""
     },
     {
-      "hebrew": "הַֽלְל֣וּ אֶת",
-      "pron": "홀림 에트",
+      "hebrew": "הַ֥לְלוּ יָ֨הּ הַ֭לְלוּ",
+      "pron": "바예할루 야흐 바예할루",
       "lemmas": [
         "הָלַל",
-        "אֵת"
+        "יָהּ",
+        "הָלַל"
       ],
       "words": [
         {
-          "word": "הַֽלְל֣וּ",
+          "word": "הַ֥לְלוּ",
           "lemma": "הָלַל",
           "strong": "H1984",
-          "pron": "홀림"
+          "pron": "바예할루"
         },
         {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
+          "word": "יָ֨הּ",
+          "lemma": "יָהּ",
+          "strong": "H3050",
+          "pron": "야흐"
+        },
+        {
+          "word": "הַ֭לְלוּ",
+          "lemma": "הָלַל",
+          "strong": "H1984",
+          "pron": "바예할루"
         }
       ],
-      "count": 8,
+      "count": 12,
       "refs": [
         "psalms 113:1",
-        "psalms 117:1",
         "psalms 135:1",
+        "psalms 146:1",
         "psalms 148:1",
-        "psalms 148:5",
-        "psalms 148:7",
-        "psalms 148:13",
-        "genesis 12:15"
+        "psalms 150:1",
+        "psalms 150:6"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הַֽלְל֗וּהוּ כָּל",
-      "pron": "홀림 브콜",
+      "hebrew": "וּלְהַלֵּ֔ל לַיהוָ֖ה",
+      "pron": "바예할루 여호와",
       "lemmas": [
         "הָלַל",
-        "כֹּל"
+        "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "הַֽלְל֗וּהוּ",
+          "word": "וּלְהַלֵּ֔ל",
           "lemma": "הָלַל",
           "strong": "H1984",
-          "pron": "홀림"
+          "pron": "바예할루"
         },
         {
-          "word": "כָּל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
+          "word": "לַיהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
         }
       ],
-      "count": 7,
+      "count": 12,
       "refs": [
-        "psalms 22:23",
-        "psalms 44:8",
-        "psalms 63:11",
-        "psalms 64:10",
-        "psalms 148:2",
-        "psalms 148:3"
+        "chronicles1 16:4",
+        "chronicles1 16:36",
+        "chronicles1 23:5",
+        "chronicles1 23:30",
+        "chronicles1 25:3",
+        "chronicles2 5:13",
+        "chronicles2 20:19",
+        "chronicles2 29:30",
+        "chronicles2 30:21",
+        "ezra 3:11",
+        "psalms 22:26",
+        "psalms 146:2"
       ],
       "glossKo": ""
     }

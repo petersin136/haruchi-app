@@ -2,7 +2,7 @@
   "lemma": "חָנוּן",
   "pron": "하눈",
   "strong": "H2586",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָנַן",
     "strong": "H2603",
@@ -18,19 +18,19 @@
     {
       "lemma": "חָנָה",
       "strong": "H2583",
-      "pron": "타하네",
+      "pron": "바이한",
       "glossKo": "진치다"
     },
     {
       "lemma": "חַנָּה",
       "strong": "H2584",
-      "pron": "",
+      "pron": "한나",
       "glossKo": "한나"
     },
     {
       "lemma": "חַנּוּן",
       "strong": "H2587",
-      "pron": "브한눈",
+      "pron": "한눈",
       "glossKo": "은혜로운"
     },
     {
@@ -38,11 +38,53 @@
       "strong": "H2589",
       "pron": "한노트",
       "glossKo": "간구"
+    },
+    {
+      "lemma": "חַנִּיאֵל",
+      "strong": "H2592",
+      "pron": "한니엘",
+      "glossKo": "한니엘"
     }
   ],
   "defEn": "Chanun",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 11,
+  "byBook": {
+    "chronicles1": 5,
+    "samuel2": 4,
+    "nehemiah": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "חָנ֣וּן בֶּן",
+      "pron": "하눈 바님",
+      "lemmas": [
+        "חָנוּן",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "חָנ֣וּן",
+          "lemma": "חָנוּן",
+          "strong": "H2586",
+          "pron": "하눈"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 10:1",
+        "samuel2 10:2",
+        "chronicles1 19:2",
+        "chronicles1 19:6",
+        "nehemiah 3:30"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

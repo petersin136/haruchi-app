@@ -1,6 +1,6 @@
 {
   "lemma": "אֶבֶן",
-  "pron": "바에벤",
+  "pron": "브에벤",
   "strong": "H68",
   "posKo": "명사",
   "root": {
@@ -12,51 +12,76 @@
     {
       "lemma": "אֶבֶן",
       "strong": "H69",
-      "pron": "",
+      "pron": "에벤",
       "glossKo": "돌(아람)"
     },
     {
       "lemma": "אֹבֶן",
       "strong": "H70",
-      "pron": "",
+      "pron": "하압나임",
       "glossKo": "녹로"
     },
     {
       "lemma": "אֲבָנָה",
       "strong": "H71",
-      "pron": "",
+      "pron": "븐",
       "glossKo": "아바나"
     },
     {
       "lemma": "אֶבֶן הָעֵזֶר",
       "strong": "H72",
-      "pron": "",
+      "pron": "하에벤",
       "glossKo": "에벤에셀"
     },
     {
       "lemma": "בַּיִת",
       "strong": "H1004",
-      "pron": "베테카",
-      "glossKo": "너의 집"
+      "pron": "미바이트",
+      "glossKo": "집"
     },
     {
       "lemma": "בֵּן",
       "strong": "H1121",
-      "pron": "베니위",
-      "glossKo": "나의 아들"
+      "pron": "바님",
+      "glossKo": "아들"
     }
   ],
   "defEn": "stone",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 273,
   "byBook": {
+    "exodus": 33,
+    "deuteronomy": 25,
+    "kings1": 24,
+    "joshua": 22,
+    "ezekiel": 17,
     "genesis": 15,
-    "psalms": 3
+    "chronicles2": 14,
+    "isaiah": 14,
+    "job": 11,
+    "proverbs": 11,
+    "chronicles1": 10,
+    "leviticus": 10,
+    "samuel1": 10,
+    "zechariah": 9,
+    "kings2": 8,
+    "jeremiah": 7,
+    "samuel2": 7,
+    "numbers": 5,
+    "ecclesiastes": 3,
+    "judges": 3,
+    "nehemiah": 3,
+    "psalms": 3,
+    "habakkuk": 2,
+    "haggai": 2,
+    "lamentations": 2,
+    "micah": 2,
+    "daniel": 1
   },
   "phrases": [
     {
       "hebrew": "אֶת הָאֶ֨בֶן֙",
-      "pron": "에트 바에벤",
+      "pron": "에트 브에벤",
       "lemmas": [
         "אֵת",
         "אֶבֶן"
@@ -72,153 +97,175 @@
           "word": "הָאֶ֨בֶן֙",
           "lemma": "אֶבֶן",
           "strong": "H68",
-          "pron": "바에벤"
+          "pron": "브에벤"
         }
       ],
-      "count": 6,
+      "count": 30,
       "refs": [
-        "psalms 102:14",
         "genesis 28:18",
         "genesis 29:3",
         "genesis 29:8",
-        "genesis 29:10"
+        "genesis 29:10",
+        "exodus 35:27",
+        "exodus 39:6",
+        "leviticus 14:40",
+        "leviticus 14:43",
+        "leviticus 14:45",
+        "leviticus 24:23",
+        "numbers 14:10",
+        "numbers 15:35"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֶת הָאֶ֨בֶן֙ מֵעַל֙",
-      "pron": "에트 바에벤 알",
+      "hebrew": "וְאֶ֣בֶן יְקָרָ֑ה",
+      "pron": "브에벤 야카르",
       "lemmas": [
-        "אֵת",
         "אֶבֶן",
-        "עַל"
+        "יָקָר"
       ],
       "words": [
         {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        },
-        {
-          "word": "הָאֶ֨בֶן֙",
+          "word": "וְאֶ֣בֶן",
           "lemma": "אֶבֶן",
           "strong": "H68",
-          "pron": "바에벤"
+          "pron": "브에벤"
         },
         {
-          "word": "מֵעַל֙",
-          "lemma": "עַל",
-          "strong": "H5921",
-          "pron": "알"
+          "word": "יְקָרָ֑ה",
+          "lemma": "יָקָר",
+          "strong": "H3368",
+          "pron": "야카르"
         }
       ],
-      "count": 4,
+      "count": 18,
       "refs": [
-        "genesis 29:3",
-        "genesis 29:8",
-        "genesis 29:10"
+        "samuel2 12:30",
+        "kings1 5:17",
+        "kings1 7:9",
+        "kings1 7:10",
+        "kings1 7:11",
+        "kings1 10:2",
+        "kings1 10:10",
+        "kings1 10:11",
+        "chronicles1 20:2",
+        "chronicles1 29:2",
+        "chronicles2 3:6",
+        "chronicles2 9:1"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הָאֶ֨בֶן֙ מֵעַל֙",
-      "pron": "바에벤 알",
+      "hebrew": "וְהָאֶ֥בֶן גְּדֹלָ֖ה",
+      "pron": "브에벤 아게돌림",
       "lemmas": [
         "אֶבֶן",
-        "עַל"
+        "גָּדוֹל"
       ],
       "words": [
         {
-          "word": "הָאֶ֨בֶן֙",
+          "word": "וְהָאֶ֥בֶן",
           "lemma": "אֶבֶן",
           "strong": "H68",
-          "pron": "바에벤"
+          "pron": "브에벤"
         },
         {
-          "word": "מֵעַל֙",
-          "lemma": "עַל",
-          "strong": "H5921",
-          "pron": "알"
+          "word": "גְּדֹלָ֖ה",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
         }
       ],
-      "count": 4,
+      "count": 18,
       "refs": [
-        "genesis 29:3",
-        "genesis 29:8",
-        "genesis 29:10"
+        "genesis 29:2",
+        "deuteronomy 25:13",
+        "deuteronomy 27:2",
+        "joshua 7:26",
+        "joshua 8:29",
+        "joshua 10:11",
+        "joshua 10:18",
+        "joshua 10:27",
+        "joshua 24:26",
+        "samuel1 6:14",
+        "samuel1 6:15",
+        "samuel1 14:33"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הָאֶ֨בֶן֙ מֵעַל֙ פִּ֣י",
-      "pron": "바에벤 알 브피후",
+      "hebrew": "לֻחֹ֥ת אֲבָנִ֖ים",
+      "pron": "루호트 브에벤",
       "lemmas": [
-        "אֶבֶן",
-        "עַל",
-        "פֶּה"
-      ],
-      "words": [
-        {
-          "word": "הָאֶ֨בֶן֙",
-          "lemma": "אֶבֶן",
-          "strong": "H68",
-          "pron": "바에벤"
-        },
-        {
-          "word": "מֵעַל֙",
-          "lemma": "עַל",
-          "strong": "H5921",
-          "pron": "알"
-        },
-        {
-          "word": "פִּ֣י",
-          "lemma": "פֶּה",
-          "strong": "H6310",
-          "pron": "브피후"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 29:3",
-        "genesis 29:8",
-        "genesis 29:10"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וְגָלֲל֤וּ אֶת הָאֶ֨בֶן֙",
-      "pron": "골 에트 바에벤",
-      "lemmas": [
-        "גָּלַל",
-        "אֵת",
+        "לוּחַ",
         "אֶבֶן"
       ],
       "words": [
         {
-          "word": "וְגָלֲל֤וּ",
-          "lemma": "גָּלַל",
-          "strong": "H1556",
-          "pron": "골"
+          "word": "לֻחֹ֥ת",
+          "lemma": "לוּחַ",
+          "strong": "H3871",
+          "pron": "루호트"
         },
         {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
-        },
-        {
-          "word": "הָאֶ֨בֶן֙",
+          "word": "אֲבָנִ֖ים",
           "lemma": "אֶבֶן",
           "strong": "H68",
-          "pron": "바에벤"
+          "pron": "브에벤"
         }
       ],
-      "count": 3,
+      "count": 13,
       "refs": [
-        "genesis 29:3",
-        "genesis 29:8",
-        "genesis 29:10"
+        "exodus 24:12",
+        "exodus 31:18",
+        "exodus 34:1",
+        "exodus 34:4",
+        "deuteronomy 4:13",
+        "deuteronomy 5:22",
+        "deuteronomy 9:9",
+        "deuteronomy 9:10",
+        "deuteronomy 9:11",
+        "deuteronomy 10:1",
+        "deuteronomy 10:3",
+        "kings1 8:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֵ֥ץ וָאָֽבֶן",
+      "pron": "에츠 브에벤",
+      "lemmas": [
+        "עֵץ",
+        "אֶבֶן"
+      ],
+      "words": [
+        {
+          "word": "עֵ֥ץ",
+          "lemma": "עֵץ",
+          "strong": "H6086",
+          "pron": "에츠"
+        },
+        {
+          "word": "וָאָֽבֶן",
+          "lemma": "אֶבֶן",
+          "strong": "H68",
+          "pron": "브에벤"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 7:19",
+        "deuteronomy 4:28",
+        "deuteronomy 28:36",
+        "deuteronomy 28:64",
+        "deuteronomy 29:17",
+        "kings1 5:18",
+        "kings2 12:12",
+        "kings2 19:18",
+        "kings2 22:6",
+        "chronicles1 22:14",
+        "chronicles1 29:2",
+        "isaiah 37:19"
       ],
       "glossKo": ""
     }

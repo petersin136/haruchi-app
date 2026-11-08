@@ -18,39 +18,217 @@
     {
       "lemma": "אָשַׁר",
       "strong": "H833",
-      "pron": "윗르",
-      "glossKo": "복되다"
+      "pron": "잇셰루니",
+      "glossKo": "나를 복되다"
     },
     {
       "lemma": "אֶשֶׁר",
       "strong": "H835",
-      "pron": "아셰레",
-      "glossKo": "복"
+      "pron": "아셰레카",
+      "glossKo": "너의 복"
     },
     {
       "lemma": "אֹשֶׁר",
       "strong": "H837",
-      "pron": "브아셰리위",
+      "pron": "베아셰리",
       "glossKo": "나의 복"
     },
     {
       "lemma": "אָשֻׁר",
       "strong": "H838",
-      "pron": "아슈라위",
-      "glossKo": "나의 걸음"
+      "pron": "바아슈로",
+      "glossKo": "그의 걸음"
     },
     {
       "lemma": "אֲשַׂרְאֵל",
       "strong": "H840",
-      "pron": "",
+      "pron": "바아사레엘",
       "glossKo": "아사렐"
     }
   ],
   "defEn": "Asher",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 43,
   "byBook": {
-    "genesis": 4
+    "numbers": 12,
+    "joshua": 8,
+    "chronicles1": 6,
+    "genesis": 4,
+    "judges": 4,
+    "deuteronomy": 3,
+    "ezekiel": 3,
+    "chronicles2": 1,
+    "exodus": 1,
+    "kings1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לִבְנֵ֣י אָשֵׁ֔ר",
+      "pron": "바님 아셰르",
+      "lemmas": [
+        "בֵּן",
+        "אָשֵׁר"
+      ],
+      "words": [
+        {
+          "word": "לִבְנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "אָשֵׁ֔ר",
+          "lemma": "אָשֵׁר",
+          "strong": "H836",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "genesis 46:17",
+        "numbers 1:40",
+        "numbers 2:27",
+        "numbers 7:72",
+        "numbers 10:26",
+        "numbers 26:44",
+        "numbers 26:47",
+        "numbers 34:27",
+        "deuteronomy 33:24",
+        "joshua 19:24",
+        "joshua 19:31",
+        "chronicles1 7:30"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמִמַּטֵּ֣ה אָשֵׁ֔ר",
+      "pron": "우맏데카 아셰르",
+      "lemmas": [
+        "מַטֶּה",
+        "אָשֵׁר"
+      ],
+      "words": [
+        {
+          "word": "וּמִמַּטֵּ֣ה",
+          "lemma": "מַטֶּה",
+          "strong": "H4294",
+          "pron": "우맏데카"
+        },
+        {
+          "word": "אָשֵׁ֔ר",
+          "lemma": "אָשֵׁר",
+          "strong": "H836",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "numbers 1:41",
+        "numbers 2:27",
+        "numbers 13:13",
+        "joshua 21:6",
+        "joshua 21:30",
+        "chronicles1 6:62",
+        "chronicles1 6:74"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָשֵׁ֑ר פַּגְעִיאֵ֖ל",
+      "pron": "아셰르 팍이엘",
+      "lemmas": [
+        "אָשֵׁר",
+        "פַּגְעִיאֵל"
+      ],
+      "words": [
+        {
+          "word": "אָשֵׁ֑ר",
+          "lemma": "אָשֵׁר",
+          "strong": "H836",
+          "pron": "아셰르"
+        },
+        {
+          "word": "פַּגְעִיאֵ֖ל",
+          "lemma": "פַּגְעִיאֵל",
+          "strong": "H6295",
+          "pron": "팍이엘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 1:13",
+        "numbers 2:27",
+        "numbers 7:72",
+        "numbers 10:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָשֵׁ֑ר פַּגְעִיאֵ֖ל בֶּן",
+      "pron": "아셰르 팍이엘 바님",
+      "lemmas": [
+        "אָשֵׁר",
+        "פַּגְעִיאֵל",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "אָשֵׁ֑ר",
+          "lemma": "אָשֵׁר",
+          "strong": "H836",
+          "pron": "아셰르"
+        },
+        {
+          "word": "פַּגְעִיאֵ֖ל",
+          "lemma": "פַּגְעִיאֵל",
+          "strong": "H6295",
+          "pron": "팍이엘"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 1:13",
+        "numbers 2:27",
+        "numbers 7:72",
+        "numbers 10:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גָּ֥ד וְאָשֵֽׁר",
+      "pron": "갇 아셰르",
+      "lemmas": [
+        "גָּד",
+        "אָשֵׁר"
+      ],
+      "words": [
+        {
+          "word": "גָּ֥ד",
+          "lemma": "גָּד",
+          "strong": "H1410",
+          "pron": "갇"
+        },
+        {
+          "word": "וְאָשֵֽׁר",
+          "lemma": "אָשֵׁר",
+          "strong": "H836",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 35:26",
+        "exodus 1:4",
+        "deuteronomy 27:13",
+        "chronicles1 2:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

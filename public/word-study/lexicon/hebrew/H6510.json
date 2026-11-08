@@ -12,20 +12,32 @@
     {
       "lemma": "פַּר",
       "strong": "H6499",
-      "pron": "파림",
+      "pron": "우파림",
       "glossKo": "수송아지"
+    },
+    {
+      "lemma": "פָּרָה",
+      "strong": "H6511",
+      "pron": "브아파라",
+      "glossKo": "바라"
     }
   ],
   "defEn": "heifer",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 26,
   "byBook": {
-    "genesis": 12
+    "genesis": 12,
+    "numbers": 5,
+    "samuel1": 5,
+    "amos": 1,
+    "hosea": 1,
+    "isaiah": 1,
+    "job": 1
   },
   "phrases": [
     {
       "hebrew": "שֶׁ֣בַע פָּר֔וֹת",
-      "pron": "셰바 파로트",
+      "pron": "브십아 파로트",
       "lemmas": [
         "שֶׁבַע",
         "פָּרָה"
@@ -35,7 +47,7 @@
           "word": "שֶׁ֣בַע",
           "lemma": "שֶׁבַע",
           "strong": "H7651",
-          "pron": "셰바"
+          "pron": "브십아"
         },
         {
           "word": "פָּר֔וֹת",
@@ -54,6 +66,35 @@
         "genesis 41:20",
         "genesis 41:26",
         "genesis 41:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הַפָּרָ֖ה",
+      "pron": "에트 파로트",
+      "lemmas": [
+        "אֵת",
+        "פָּרָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַפָּרָ֖ה",
+          "lemma": "פָּרָה",
+          "strong": "H6510",
+          "pron": "파로트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 19:5",
+        "samuel1 6:7",
+        "samuel1 6:14"
       ],
       "glossKo": ""
     }

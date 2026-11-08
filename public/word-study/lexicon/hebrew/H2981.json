@@ -12,39 +12,149 @@
     {
       "lemma": "אוּבָל",
       "strong": "H180",
-      "pron": "",
+      "pron": "우발",
       "glossKo": "강"
+    },
+    {
+      "lemma": "בּוּל",
+      "strong": "H944",
+      "pron": "불",
+      "glossKo": "산물"
     },
     {
       "lemma": "יָבַל",
       "strong": "H2986",
-      "pron": "투발",
+      "pron": "우발",
       "glossKo": "이끌다"
     },
     {
       "lemma": "יְבַל",
       "strong": "H2987",
-      "pron": "",
+      "pron": "브헤벨",
       "glossKo": "운반하다(아람)"
     },
     {
       "lemma": "יָבָל",
       "strong": "H2988",
-      "pron": "",
+      "pron": "입레",
       "glossKo": "물줄기"
     },
     {
       "lemma": "יַבֵּל",
       "strong": "H2990",
-      "pron": "",
+      "pron": "얍벨레트",
       "glossKo": "흐르는 종기"
     }
   ],
   "defEn": "produce; crop; wealth",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 13,
   "byBook": {
-    "psalms": 3
+    "psalms": 3,
+    "deuteronomy": 2,
+    "leviticus": 2,
+    "ezekiel": 1,
+    "habakkuk": 1,
+    "haggai": 1,
+    "job": 1,
+    "judges": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת יְבוּלָ֔הּ",
+      "pron": "에트 예불라흐",
+      "lemmas": [
+        "אֵת",
+        "יְבוּל"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יְבוּלָ֔הּ",
+          "lemma": "יְבוּל",
+          "strong": "H2981",
+          "pron": "예불라흐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 26:20",
+        "deuteronomy 11:17",
+        "judges 6:4",
+        "zechariah 8:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֭רֶץ נָתְנָ֣ה יְבוּלָ֑הּ",
+      "pron": "하아레츠 바잇텐 예불라흐",
+      "lemmas": [
+        "אֶרֶץ",
+        "נָתַן",
+        "יְבוּל"
+      ],
+      "words": [
+        {
+          "word": "אֶ֭רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "נָתְנָ֣ה",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "יְבוּלָ֑הּ",
+          "lemma": "יְבוּל",
+          "strong": "H2981",
+          "pron": "예불라흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 67:6",
+        "psalms 85:12",
+        "ezekiel 34:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נָתְנָ֣ה יְבוּלָ֑הּ",
+      "pron": "바잇텐 예불라흐",
+      "lemmas": [
+        "נָתַן",
+        "יְבוּל"
+      ],
+      "words": [
+        {
+          "word": "נָתְנָ֣ה",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "יְבוּלָ֑הּ",
+          "lemma": "יְבוּל",
+          "strong": "H2981",
+          "pron": "예불라흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 67:6",
+        "psalms 85:12",
+        "ezekiel 34:27"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

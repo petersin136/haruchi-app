@@ -12,13 +12,13 @@
     {
       "lemma": "שֵׁם",
       "strong": "H8034",
-      "pron": "셰메카",
-      "glossKo": "너의 이름"
+      "pron": "솀",
+      "glossKo": "이름"
     },
     {
       "lemma": "שֻׁם",
       "strong": "H8036",
-      "pron": "",
+      "pron": "브슘",
       "glossKo": "이름(아람)"
     },
     {
@@ -26,13 +26,26 @@
       "strong": "H8038",
       "pron": "브솀에베르",
       "glossKo": "세메벨"
+    },
+    {
+      "lemma": "שְׁמִידָע",
+      "strong": "H8061",
+      "pron": "우셰미다",
+      "glossKo": "스미다"
+    },
+    {
+      "lemma": "שְׁמִירָמוֹת",
+      "strong": "H8070",
+      "pron": "우셰미라모트",
+      "glossKo": "스미라못"
     }
   ],
   "defEn": "Shem",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 17,
   "byBook": {
-    "genesis": 14
+    "genesis": 14,
+    "chronicles1": 3
   },
   "phrases": [
     {
@@ -56,11 +69,12 @@
           "pron": "함"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "genesis 7:13",
         "genesis 9:18",
-        "genesis 10:1"
+        "genesis 10:1",
+        "chronicles1 1:4"
       ],
       "glossKo": ""
     },
@@ -92,11 +106,106 @@
           "pron": "야페트"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "genesis 7:13",
         "genesis 9:18",
-        "genesis 10:1"
+        "genesis 10:1",
+        "chronicles1 1:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּנֵ֥י שֵׁ֖ם",
+      "pron": "바님 솀",
+      "lemmas": [
+        "בֵּן",
+        "שֵׁם"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵ֥י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "שֵׁ֖ם",
+          "lemma": "שֵׁם",
+          "strong": "H8035",
+          "pron": "솀"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 10:22",
+        "genesis 10:31",
+        "chronicles1 1:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נֹ֔חַ וְשֵׁם",
+      "pron": "노아흐 솀",
+      "lemmas": [
+        "נֹחַ",
+        "שֵׁם"
+      ],
+      "words": [
+        {
+          "word": "נֹ֔חַ",
+          "lemma": "נֹחַ",
+          "strong": "H5146",
+          "pron": "노아흐"
+        },
+        {
+          "word": "וְשֵׁם",
+          "lemma": "שֵׁם",
+          "strong": "H8035",
+          "pron": "솀"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 7:13",
+        "genesis 10:1",
+        "chronicles1 1:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נֹ֔חַ וְשֵׁם וְחָ֥ם",
+      "pron": "노아흐 솀 함",
+      "lemmas": [
+        "נֹחַ",
+        "שֵׁם",
+        "חָם"
+      ],
+      "words": [
+        {
+          "word": "נֹ֔חַ",
+          "lemma": "נֹחַ",
+          "strong": "H5146",
+          "pron": "노아흐"
+        },
+        {
+          "word": "וְשֵׁם",
+          "lemma": "שֵׁם",
+          "strong": "H8035",
+          "pron": "솀"
+        },
+        {
+          "word": "וְחָ֥ם",
+          "lemma": "חָם",
+          "strong": "H2526",
+          "pron": "함"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 7:13",
+        "genesis 10:1",
+        "chronicles1 1:4"
       ],
       "glossKo": ""
     }

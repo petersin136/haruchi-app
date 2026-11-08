@@ -1,6 +1,6 @@
 {
   "lemma": "כּוּן",
-  "pron": "네코나",
+  "pron": "나콘",
   "strong": "H3559",
   "posKo": "동사",
   "root": null,
@@ -20,59 +20,196 @@
     {
       "lemma": "יְכׇנְיָה",
       "strong": "H3204",
-      "pron": "",
+      "pron": "예칸아",
       "glossKo": "여고냐"
     },
     {
       "lemma": "כּוּן",
       "strong": "H3560",
-      "pron": "",
+      "pron": "우미쿤",
       "glossKo": "군"
     },
     {
       "lemma": "כַּוָּן",
       "strong": "H3561",
-      "pron": "",
+      "pron": "카바님",
       "glossKo": "준비된 것"
     },
     {
       "lemma": "כּוֹנַנְיָהוּ",
       "strong": "H3562",
-      "pron": "",
+      "pron": "크븐니흐브",
       "glossKo": "고나냐"
     }
   ],
   "defEn": "be erect; set up; establish; fix; prepare; apply; appoint; render sure; proper; prosperous",
   "defKo": "",
-  "countOT": 55,
+  "countOT": 219,
   "byBook": {
     "psalms": 52,
-    "genesis": 3
+    "chronicles2": 27,
+    "chronicles1": 24,
+    "proverbs": 20,
+    "job": 15,
+    "isaiah": 10,
+    "ezekiel": 8,
+    "exodus": 7,
+    "jeremiah": 7,
+    "kings1": 6,
+    "samuel1": 6,
+    "samuel2": 6,
+    "joshua": 5,
+    "deuteronomy": 4,
+    "genesis": 3,
+    "judges": 3,
+    "numbers": 3,
+    "esther": 2,
+    "ezra": 2,
+    "nahum": 2,
+    "amos": 1,
+    "habakkuk": 1,
+    "hosea": 1,
+    "micah": 1,
+    "nehemiah": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "תָּכִ֥ין לִ֝בָּ֗ם",
-      "pron": "네코나 브립비위",
+      "hebrew": "אֲשֶׁ֥ר הֵכִ֖ין",
+      "pron": "아셰르 나콘",
+      "lemmas": [
+        "אֲשֶׁר",
+        "כּוּן"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הֵכִ֖ין",
+          "lemma": "כּוּן",
+          "strong": "H3559",
+          "pron": "나콘"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "exodus 23:20",
+        "joshua 4:4",
+        "kings1 2:24",
+        "chronicles1 15:3",
+        "chronicles1 29:16",
+        "chronicles1 29:19",
+        "chronicles2 2:7",
+        "chronicles2 3:1",
+        "chronicles2 35:20",
+        "esther 6:4",
+        "esther 7:10",
+        "psalms 8:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיָּכִ֨ינוּ֙ אֶת",
+      "pron": "나콘 에트",
+      "lemmas": [
+        "כּוּן",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיָּכִ֨ינוּ֙",
+          "lemma": "כּוּן",
+          "strong": "H3559",
+          "pron": "나콘"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 43:25",
+        "exodus 16:5",
+        "samuel2 7:12",
+        "samuel2 7:13",
+        "samuel2 7:24",
+        "chronicles1 17:11",
+        "chronicles1 17:12",
+        "chronicles1 28:7",
+        "isaiah 9:7",
+        "jeremiah 10:23",
+        "ezekiel 4:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֤א נָכוֹן֙",
+      "pron": "로 나콘",
+      "lemmas": [
+        "לֹא",
+        "כּוּן"
+      ],
+      "words": [
+        {
+          "word": "לֹ֤א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "נָכוֹן֙",
+          "lemma": "כּוּן",
+          "strong": "H3559",
+          "pron": "나콘"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "exodus 8:26",
+        "judges 12:6",
+        "samuel1 20:31",
+        "chronicles2 12:14",
+        "chronicles2 20:33",
+        "psalms 78:8",
+        "psalms 78:37",
+        "psalms 101:7",
+        "proverbs 12:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֵכִין֙ לִבּ֔וֹ",
+      "pron": "나콘 립보",
       "lemmas": [
         "כּוּן",
         "לֵב"
       ],
       "words": [
         {
-          "word": "תָּכִ֥ין",
+          "word": "הֵכִין֙",
           "lemma": "כּוּן",
           "strong": "H3559",
-          "pron": "네코나"
+          "pron": "나콘"
         },
         {
-          "word": "לִ֝בָּ֗ם",
+          "word": "לִבּ֔וֹ",
           "lemma": "לֵב",
           "strong": "H3820",
-          "pron": "브립비위"
+          "pron": "립보"
         }
       ],
-      "count": 6,
+      "count": 8,
       "refs": [
+        "chronicles2 12:14",
+        "job 11:13",
         "psalms 10:17",
         "psalms 57:7",
         "psalms 78:8",
@@ -82,117 +219,36 @@
       "glossKo": ""
     },
     {
-      "hebrew": "אַתָּ֥ה כֽוֹנַנְתָּֽהּ",
-      "pron": "앗타 네코나",
+      "hebrew": "יִהְיֶ֥ה נָכ֖וֹן",
+      "pron": "하에타 나콘",
       "lemmas": [
-        "אַתָּה",
+        "הָיָה",
         "כּוּן"
       ],
       "words": [
         {
-          "word": "אַתָּ֥ה",
-          "lemma": "אַתָּה",
-          "strong": "H859",
-          "pron": "앗타"
+          "word": "יִהְיֶ֥ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
         },
         {
-          "word": "כֽוֹנַנְתָּֽהּ",
+          "word": "נָכ֖וֹן",
           "lemma": "כּוּן",
           "strong": "H3559",
-          "pron": "네코나"
+          "pron": "나콘"
         }
       ],
-      "count": 3,
+      "count": 8,
       "refs": [
-        "psalms 68:9",
-        "psalms 74:16",
-        "psalms 99:4"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יָ֭דִי תִּכּ֣וֹן",
-      "pron": "야데카 네코나",
-      "lemmas": [
-        "יָד",
-        "כּוּן"
-      ],
-      "words": [
-        {
-          "word": "יָ֭דִי",
-          "lemma": "יָד",
-          "strong": "H3027",
-          "pron": "야데카"
-        },
-        {
-          "word": "תִּכּ֣וֹן",
-          "lemma": "כּוּן",
-          "strong": "H3559",
-          "pron": "네코나"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 89:21",
-        "psalms 90:17"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "כּוֹנַ֥נְתָּ אֶ֝֗רֶץ",
-      "pron": "네코나 에레츠",
-      "lemmas": [
-        "כּוּן",
-        "אֶרֶץ"
-      ],
-      "words": [
-        {
-          "word": "כּוֹנַ֥נְתָּ",
-          "lemma": "כּוּן",
-          "strong": "H3559",
-          "pron": "네코나"
-        },
-        {
-          "word": "אֶ֝֗רֶץ",
-          "lemma": "אֶרֶץ",
-          "strong": "H776",
-          "pron": "에레츠"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 119:90",
-        "psalms 140:11",
-        "psalms 147:8"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "לֹא הֵכִ֣ין",
-      "pron": "로 네코나",
-      "lemmas": [
-        "לֹא",
-        "כּוּן"
-      ],
-      "words": [
-        {
-          "word": "לֹא",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
-        },
-        {
-          "word": "הֵכִ֣ין",
-          "lemma": "כּוּן",
-          "strong": "H3559",
-          "pron": "네코나"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 78:8",
-        "psalms 78:37",
-        "psalms 101:7"
+        "exodus 19:11",
+        "exodus 19:15",
+        "exodus 34:2",
+        "samuel2 7:16",
+        "samuel2 7:26",
+        "kings1 2:45",
+        "chronicles1 17:14",
+        "chronicles2 12:1"
       ],
       "glossKo": ""
     }

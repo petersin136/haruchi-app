@@ -1,8 +1,8 @@
 {
   "lemma": "עֹמֶד",
-  "pron": "오멛",
+  "pron": "암담",
   "strong": "H5977",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָמַד",
     "strong": "H5975",
@@ -12,7 +12,7 @@
     {
       "lemma": "מַעֲמָד",
       "strong": "H4612",
-      "pron": "",
+      "pron": "우마아맏",
       "glossKo": "직위"
     },
     {
@@ -24,25 +24,61 @@
     {
       "lemma": "עָמַד",
       "strong": "H5975",
-      "pron": "아맏",
+      "pron": "오멛",
       "glossKo": "서다"
     },
     {
       "lemma": "עֶמְדָּה",
       "strong": "H5979",
-      "pron": "",
-      "glossKo": "자리"
+      "pron": "엠다토",
+      "glossKo": "그의 자리"
     },
     {
       "lemma": "עַמּוּד",
       "strong": "H5982",
-      "pron": "암무데하",
-      "glossKo": "그녀의 기둥"
+      "pron": "브암묻",
+      "glossKo": "기둥"
     }
   ],
   "defEn": "spot",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "chronicles2": 3,
+    "nehemiah": 3
+  },
+  "phrases": [
+    {
+      "hebrew": "עַל עָמְדָֽם",
+      "pron": "알 암담",
+      "lemmas": [
+        "עַל",
+        "עֹמֶד"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "עָמְדָֽם",
+          "lemma": "עֹמֶד",
+          "strong": "H5977",
+          "pron": "암담"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "chronicles2 30:16",
+        "chronicles2 34:31",
+        "chronicles2 35:10",
+        "nehemiah 8:7",
+        "nehemiah 9:3",
+        "nehemiah 13:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

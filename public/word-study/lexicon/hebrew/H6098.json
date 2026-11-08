@@ -1,6 +1,6 @@
 {
   "lemma": "עֵצָה",
-  "pron": "바아차트",
+  "pron": "에초트",
   "strong": "H6098",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,203 @@
     {
       "lemma": "יְעַט",
       "strong": "H3272",
-      "pron": "",
-      "glossKo": "의논하다(아람)"
+      "pron": "야아도히",
+      "glossKo": "그의 의논하다(아람)"
     },
     {
       "lemma": "יָעַץ",
       "strong": "H3289",
-      "pron": "예아차니",
-      "glossKo": "나를 도모하다"
+      "pron": "이아체카",
+      "glossKo": "너에게 도모하다"
     },
     {
       "lemma": "מוֹעֵצָה",
       "strong": "H4156",
-      "pron": "미모아초테헴",
+      "pron": "밈모아초테헴",
       "glossKo": "그들의 도모"
     }
   ],
   "defEn": "advice",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 90,
   "byBook": {
-    "psalms": 11
+    "isaiah": 20,
+    "psalms": 11,
+    "proverbs": 10,
+    "samuel2": 10,
+    "job": 9,
+    "jeremiah": 8,
+    "chronicles2": 5,
+    "kings1": 4,
+    "ezra": 3,
+    "ezekiel": 2,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "hosea": 1,
+    "judges": 1,
+    "kings2": 1,
+    "micah": 1,
+    "nehemiah": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת עֲצַ֥ת",
+      "pron": "에트 에초트",
+      "lemmas": [
+        "אֵת",
+        "עֵצָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "עֲצַ֥ת",
+          "lemma": "עֵצָה",
+          "strong": "H6098",
+          "pron": "에초트"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "samuel2 15:31",
+        "samuel2 15:34",
+        "samuel2 17:14",
+        "kings1 12:8",
+        "kings1 12:13",
+        "chronicles2 10:8",
+        "chronicles2 10:13",
+        "nehemiah 4:15",
+        "jeremiah 19:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲצַ֥ת אֲחִיתֹ֖פֶל",
+      "pron": "에초트 아히토펠",
+      "lemmas": [
+        "עֵצָה",
+        "אֲחִיתֹפֶל"
+      ],
+      "words": [
+        {
+          "word": "עֲצַ֥ת",
+          "lemma": "עֵצָה",
+          "strong": "H6098",
+          "pron": "에초트"
+        },
+        {
+          "word": "אֲחִיתֹ֖פֶל",
+          "lemma": "אֲחִיתֹפֶל",
+          "strong": "H302",
+          "pron": "아히토펠"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel2 15:31",
+        "samuel2 15:34",
+        "samuel2 16:23",
+        "samuel2 17:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲצַ֥ת הַזְּקֵנִ֖ים",
+      "pron": "에초트 제케님",
+      "lemmas": [
+        "עֵצָה",
+        "זָקֵן"
+      ],
+      "words": [
+        {
+          "word": "עֲצַ֥ת",
+          "lemma": "עֵצָה",
+          "strong": "H6098",
+          "pron": "에초트"
+        },
+        {
+          "word": "הַזְּקֵנִ֖ים",
+          "lemma": "זָקֵן",
+          "strong": "H2205",
+          "pron": "제케님"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 12:8",
+        "kings1 12:13",
+        "chronicles2 10:8",
+        "chronicles2 10:13",
+        "ezekiel 7:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲצַת יְהוָ֗ה",
+      "pron": "에초트 여호와",
+      "lemmas": [
+        "עֵצָה",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "עֲצַת",
+          "lemma": "עֵצָה",
+          "strong": "H6098",
+          "pron": "에초트"
+        },
+        {
+          "word": "יְהוָ֗ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 33:11",
+        "proverbs 19:21",
+        "isaiah 19:17",
+        "jeremiah 49:20",
+        "jeremiah 50:45"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שִׁמְע֣וּ עֲצַת",
+      "pron": "바이솀우 에초트",
+      "lemmas": [
+        "שָׁמַע",
+        "עֵצָה"
+      ],
+      "words": [
+        {
+          "word": "שִׁמְע֣וּ",
+          "lemma": "שָׁמַע",
+          "strong": "H8085",
+          "pron": "바이솀우"
+        },
+        {
+          "word": "עֲצַת",
+          "lemma": "עֵצָה",
+          "strong": "H6098",
+          "pron": "에초트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "chronicles2 25:16",
+        "proverbs 12:15",
+        "proverbs 19:20",
+        "jeremiah 49:20",
+        "jeremiah 50:45"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

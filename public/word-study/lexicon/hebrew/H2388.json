@@ -1,6 +1,6 @@
 {
   "lemma": "חָזַק",
-  "pron": "하자크",
+  "pron": "바야하지쿠",
   "strong": "H2388",
   "posKo": "동사",
   "root": null,
@@ -8,74 +8,260 @@
     {
       "lemma": "חָזָק",
       "strong": "H2389",
-      "pron": "메하자크",
+      "pron": "하자카",
       "glossKo": "강한"
     },
     {
       "lemma": "חָזֵק",
       "strong": "H2390",
-      "pron": "",
+      "pron": "브하제크",
       "glossKo": "강한"
     },
     {
       "lemma": "חֵזֶק",
       "strong": "H2391",
-      "pron": "힛키위",
+      "pron": "힛키",
       "glossKo": "나의 도움"
     },
     {
       "lemma": "חֹזֶק",
       "strong": "H2392",
-      "pron": "",
+      "pron": "브호제크",
       "glossKo": "권능"
     },
     {
       "lemma": "חִזְקִי",
       "strong": "H2395",
-      "pron": "",
+      "pron": "브힛키",
       "glossKo": "히스기"
     },
     {
       "lemma": "חִזְקִיָּה",
       "strong": "H2396",
-      "pron": "",
+      "pron": "힛키아후",
       "glossKo": "히스기야"
     }
   ],
   "defEn": "fasten; seize; be strong; courageous; strengthen; cure; help; repair; fortify; obstinate; bind; restrain; conquer",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 290,
   "byBook": {
+    "nehemiah": 42,
+    "chronicles2": 39,
+    "isaiah": 21,
+    "samuel2": 18,
+    "exodus": 15,
+    "jeremiah": 15,
+    "kings2": 15,
+    "daniel": 13,
+    "chronicles1": 12,
+    "ezekiel": 12,
+    "judges": 12,
+    "deuteronomy": 9,
+    "kings1": 9,
+    "joshua": 8,
+    "job": 7,
     "genesis": 6,
-    "psalms": 5
+    "samuel1": 6,
+    "ezra": 5,
+    "psalms": 5,
+    "zechariah": 5,
+    "proverbs": 4,
+    "haggai": 3,
+    "nahum": 3,
+    "micah": 2,
+    "hosea": 1,
+    "leviticus": 1,
+    "malachi": 1,
+    "numbers": 1
   },
   "phrases": [
     {
-      "hebrew": "כִּֽי חָזַ֥ק",
-      "pron": "키 하자크",
+      "hebrew": "לְחַזֵּ֖ק אֶת",
+      "pron": "바야하지쿠 에트",
       "lemmas": [
-        "כִּי",
+        "חָזַק",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "לְחַזֵּ֖ק",
+          "lemma": "חָזַק",
+          "strong": "H2388",
+          "pron": "바야하지쿠"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 24,
+      "refs": [
+        "genesis 21:18",
+        "exodus 4:21",
+        "exodus 14:4",
+        "exodus 14:17",
+        "joshua 11:20",
+        "judges 9:24",
+        "samuel1 23:16",
+        "kings2 12:5",
+        "kings2 12:7",
+        "kings2 12:8",
+        "kings2 12:12",
+        "kings2 12:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תֶּחֱזַ֣קְנָה יָדֶ֔יךָ",
+      "pron": "바야하지쿠 야도",
+      "lemmas": [
+        "חָזַק",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "תֶּחֱזַ֣קְנָה",
+          "lemma": "חָזַק",
+          "strong": "H2388",
+          "pron": "바야하지쿠"
+        },
+        {
+          "word": "יָדֶ֔יךָ",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "judges 7:11",
+        "judges 7:20",
+        "judges 16:26",
+        "samuel2 2:7",
+        "samuel2 16:21",
+        "ezra 1:6",
+        "ezra 6:22",
+        "ezra 7:28",
+        "nehemiah 2:18",
+        "job 8:20",
+        "isaiah 35:3",
+        "isaiah 42:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַחֲרָ֣יו הֶחֱזִ֗יק",
+      "pron": "아하레 바야하지쿠",
+      "lemmas": [
+        "אַחַר",
         "חָזַק"
       ],
       "words": [
         {
-          "word": "כִּֽי",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
+          "word": "אַחֲרָ֣יו",
+          "lemma": "אַחַר",
+          "strong": "H310",
+          "pron": "아하레"
         },
         {
-          "word": "חָזַ֥ק",
+          "word": "הֶחֱזִ֗יק",
           "lemma": "חָזַק",
           "strong": "H2388",
-          "pron": "하자크"
+          "pron": "바야하지쿠"
         }
       ],
-      "count": 3,
+      "count": 15,
       "refs": [
-        "psalms 147:13",
-        "genesis 41:57",
-        "genesis 47:20"
+        "judges 7:11",
+        "nehemiah 3:16",
+        "nehemiah 3:17",
+        "nehemiah 3:18",
+        "nehemiah 3:21",
+        "nehemiah 3:22",
+        "nehemiah 3:23",
+        "nehemiah 3:24",
+        "nehemiah 3:27",
+        "nehemiah 3:29",
+        "nehemiah 3:30",
+        "nehemiah 3:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יָד֣וֹ הֶחֱזִ֗יק",
+      "pron": "야도 바야하지쿠",
+      "lemmas": [
+        "יָד",
+        "חָזַק"
+      ],
+      "words": [
+        {
+          "word": "יָד֣וֹ",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        },
+        {
+          "word": "הֶחֱזִ֗יק",
+          "lemma": "חָזַק",
+          "strong": "H2388",
+          "pron": "바야하지쿠"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "exodus 4:4",
+        "deuteronomy 25:11",
+        "samuel2 15:5",
+        "nehemiah 3:4",
+        "nehemiah 3:5",
+        "nehemiah 3:7",
+        "nehemiah 3:8",
+        "nehemiah 3:9",
+        "nehemiah 3:10",
+        "nehemiah 3:12",
+        "nehemiah 3:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חִזְק֣וּ וְאִמְצ֔וּ",
+      "pron": "바야하지쿠 예에마츠",
+      "lemmas": [
+        "חָזַק",
+        "אָמַץ"
+      ],
+      "words": [
+        {
+          "word": "חִזְק֣וּ",
+          "lemma": "חָזַק",
+          "strong": "H2388",
+          "pron": "바야하지쿠"
+        },
+        {
+          "word": "וְאִמְצ֔וּ",
+          "lemma": "אָמַץ",
+          "strong": "H553",
+          "pron": "예에마츠"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "deuteronomy 3:28",
+        "deuteronomy 31:6",
+        "deuteronomy 31:7",
+        "deuteronomy 31:23",
+        "joshua 1:6",
+        "joshua 1:7",
+        "joshua 1:9",
+        "joshua 1:18",
+        "joshua 10:25",
+        "chronicles1 22:13",
+        "chronicles1 28:20",
+        "chronicles2 32:7"
       ],
       "glossKo": ""
     }

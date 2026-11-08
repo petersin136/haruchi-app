@@ -1,15 +1,52 @@
 {
   "lemma": "אָזַר",
-  "pron": "아메앗제레니",
+  "pron": "앗루",
   "strong": "H247",
   "posKo": "동사",
   "root": null,
   "family": [],
   "defEn": "belt",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 16,
   "byBook": {
-    "psalms": 5
+    "psalms": 5,
+    "isaiah": 4,
+    "job": 3,
+    "jeremiah": 1,
+    "kings2": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אָ֥זְרוּ חָֽיִל",
+      "pron": "앗루 헬람",
+      "lemmas": [
+        "אָזַר",
+        "חַיִל"
+      ],
+      "words": [
+        {
+          "word": "אָ֥זְרוּ",
+          "lemma": "אָזַר",
+          "strong": "H247",
+          "pron": "앗루"
+        },
+        {
+          "word": "חָֽיִל",
+          "lemma": "חַיִל",
+          "strong": "H2428",
+          "pron": "헬람"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 2:4",
+        "samuel2 22:40",
+        "psalms 18:32",
+        "psalms 18:39"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "שֶׁמֶשׁ",
-  "pron": "라셰메쉬",
+  "pron": "아셰메쉬",
   "strong": "H8121",
   "posKo": "명사",
   "root": null,
@@ -8,34 +8,250 @@
     {
       "lemma": "שְׁמַשׁ",
       "strong": "H8120",
-      "pron": "",
-      "glossKo": "섬기다(아람)"
+      "pron": "예샴메슌네흐",
+      "glossKo": "그에게 섬기다(아람)"
     },
     {
       "lemma": "שֶׁמֶשׁ",
       "strong": "H8122",
-      "pron": "",
+      "pron": "심샤",
       "glossKo": "해(아람)"
     },
     {
       "lemma": "שִׁמְשׁוֹן",
       "strong": "H8123",
-      "pron": "",
+      "pron": "심숀",
       "glossKo": "삼손"
     },
     {
       "lemma": "שַׁמְשְׁרַי",
       "strong": "H8125",
-      "pron": "",
+      "pron": "브샴셰라이",
       "glossKo": "삼스래"
     }
   ],
   "defEn": "sun",
   "defKo": "",
-  "countOT": 20,
+  "countOT": 134,
   "byBook": {
+    "ecclesiastes": 35,
     "psalms": 14,
-    "genesis": 6
+    "joshua": 13,
+    "deuteronomy": 10,
+    "isaiah": 10,
+    "genesis": 6,
+    "judges": 6,
+    "kings2": 5,
+    "samuel2": 5,
+    "exodus": 4,
+    "jeremiah": 3,
+    "joel": 3,
+    "ezekiel": 2,
+    "jonah": 2,
+    "malachi": 2,
+    "numbers": 2,
+    "amos": 1,
+    "chronicles2": 1,
+    "habakkuk": 1,
+    "job": 1,
+    "kings1": 1,
+    "leviticus": 1,
+    "micah": 1,
+    "nahum": 1,
+    "nehemiah": 1,
+    "samuel1": 1,
+    "songofsolomon": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "תַּ֣חַת הַשָּׁ֑מֶשׁ",
+      "pron": "미타하트 아셰메쉬",
+      "lemmas": [
+        "תַּחַת",
+        "שֶׁמֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "תַּ֣חַת",
+          "lemma": "תַּחַת",
+          "strong": "H8478",
+          "pron": "미타하트"
+        },
+        {
+          "word": "הַשָּׁ֑מֶשׁ",
+          "lemma": "שֶׁמֶשׁ",
+          "strong": "H8121",
+          "pron": "아셰메쉬"
+        }
+      ],
+      "count": 29,
+      "refs": [
+        "ecclesiastes 1:3",
+        "ecclesiastes 1:9",
+        "ecclesiastes 1:14",
+        "ecclesiastes 2:11",
+        "ecclesiastes 2:17",
+        "ecclesiastes 2:18",
+        "ecclesiastes 2:19",
+        "ecclesiastes 2:20",
+        "ecclesiastes 2:22",
+        "ecclesiastes 3:16",
+        "ecclesiastes 4:1",
+        "ecclesiastes 4:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִזְרַ֣ח הַשֶּׁ֔מֶשׁ",
+      "pron": "밋라하 아셰메쉬",
+      "lemmas": [
+        "מִזְרָח",
+        "שֶׁמֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "מִזְרַ֣ח",
+          "lemma": "מִזְרָח",
+          "strong": "H4217",
+          "pron": "밋라하"
+        },
+        {
+          "word": "הַשֶּׁ֔מֶשׁ",
+          "lemma": "שֶׁמֶשׁ",
+          "strong": "H8121",
+          "pron": "아셰메쉬"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "numbers 21:11",
+        "deuteronomy 4:41",
+        "deuteronomy 4:47",
+        "joshua 1:15",
+        "joshua 12:1",
+        "joshua 13:5",
+        "joshua 19:12",
+        "joshua 19:27",
+        "joshua 19:34",
+        "judges 11:18",
+        "judges 20:43",
+        "judges 21:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בָ֣א הַשֶּׁ֔מֶשׁ",
+      "pron": "바야베 아셰메쉬",
+      "lemmas": [
+        "בּוֹא",
+        "שֶׁמֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "בָ֣א",
+          "lemma": "בּוֹא",
+          "strong": "H935",
+          "pron": "바야베"
+        },
+        {
+          "word": "הַשֶּׁ֔מֶשׁ",
+          "lemma": "שֶׁמֶשׁ",
+          "strong": "H8121",
+          "pron": "아셰메쉬"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "genesis 28:11",
+        "exodus 17:12",
+        "exodus 22:26",
+        "leviticus 22:7",
+        "deuteronomy 16:6",
+        "deuteronomy 23:11",
+        "deuteronomy 24:13",
+        "joshua 8:29",
+        "joshua 10:27",
+        "judges 19:14",
+        "samuel2 3:35",
+        "kings1 22:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשֶּׁ֣מֶשׁ וְהַיָּרֵ֗חַ",
+      "pron": "아셰메쉬 브아야레아흐",
+      "lemmas": [
+        "שֶׁמֶשׁ",
+        "יָרֵחַ"
+      ],
+      "words": [
+        {
+          "word": "הַשֶּׁ֣מֶשׁ",
+          "lemma": "שֶׁמֶשׁ",
+          "strong": "H8121",
+          "pron": "아셰메쉬"
+        },
+        {
+          "word": "וְהַיָּרֵ֗חַ",
+          "lemma": "יָרֵחַ",
+          "strong": "H3394",
+          "pron": "브아야레아흐"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 37:9",
+        "joshua 10:13",
+        "kings2 23:5",
+        "psalms 148:3",
+        "jeremiah 8:2",
+        "joel 2:10",
+        "joel 3:15",
+        "habakkuk 3:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נַעֲשָׂ֖ה תַּ֥חַת הַשָּֽׁמֶשׁ",
+      "pron": "바야아스 미타하트 아셰메쉬",
+      "lemmas": [
+        "עָשָׂה",
+        "תַּחַת",
+        "שֶׁמֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "נַעֲשָׂ֖ה",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "תַּ֥חַת",
+          "lemma": "תַּחַת",
+          "strong": "H8478",
+          "pron": "미타하트"
+        },
+        {
+          "word": "הַשָּֽׁמֶשׁ",
+          "lemma": "שֶׁמֶשׁ",
+          "strong": "H8121",
+          "pron": "아셰메쉬"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "ecclesiastes 1:14",
+        "ecclesiastes 2:17",
+        "ecclesiastes 4:1",
+        "ecclesiastes 4:3",
+        "ecclesiastes 8:9",
+        "ecclesiastes 8:17",
+        "ecclesiastes 9:3",
+        "ecclesiastes 9:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

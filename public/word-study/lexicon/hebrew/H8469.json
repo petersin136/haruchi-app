@@ -1,6 +1,6 @@
 {
   "lemma": "תַּחֲנוּן",
-  "pron": "타하누나위",
+  "pron": "타하누네",
   "strong": "H8469",
   "posKo": "명사",
   "root": {
@@ -18,25 +18,25 @@
     {
       "lemma": "חָנָה",
       "strong": "H2583",
-      "pron": "타하네",
+      "pron": "바이한",
       "glossKo": "진치다"
     },
     {
       "lemma": "חַנָּה",
       "strong": "H2584",
-      "pron": "",
+      "pron": "한나",
       "glossKo": "한나"
     },
     {
       "lemma": "חָנוּן",
       "strong": "H2586",
-      "pron": "",
+      "pron": "하눈",
       "glossKo": "하눈"
     },
     {
       "lemma": "חַנּוּן",
       "strong": "H2587",
-      "pron": "브한눈",
+      "pron": "한눈",
       "glossKo": "은혜로운"
     },
     {
@@ -48,14 +48,20 @@
   ],
   "defEn": "prayer",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 18,
   "byBook": {
-    "psalms": 8
+    "psalms": 8,
+    "daniel": 4,
+    "jeremiah": 2,
+    "chronicles2": 1,
+    "job": 1,
+    "proverbs": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
       "hebrew": "ק֣וֹל תַּחֲנוּנָֽי",
-      "pron": "콜리위 타하누나위",
+      "pron": "콜 타하누네",
       "lemmas": [
         "קוֹל",
         "תַּחֲנוּן"
@@ -65,13 +71,13 @@
           "word": "ק֣וֹל",
           "lemma": "קוֹל",
           "strong": "H6963",
-          "pron": "콜리위"
+          "pron": "콜"
         },
         {
           "word": "תַּחֲנוּנָֽי",
           "lemma": "תַּחֲנוּן",
           "strong": "H8469",
-          "pron": "타하누나위"
+          "pron": "타하누네"
         }
       ],
       "count": 7,
@@ -87,8 +93,38 @@
       "glossKo": ""
     },
     {
+      "hebrew": "אֶל תַּחֲנוּנֵ֤י",
+      "pron": "엘 타하누네",
+      "lemmas": [
+        "אֵל",
+        "תַּחֲנוּן"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "תַּחֲנוּנֵ֤י",
+          "lemma": "תַּחֲנוּן",
+          "strong": "H8469",
+          "pron": "타하누네"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles2 6:21",
+        "job 41:3",
+        "psalms 143:1",
+        "daniel 9:17"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "שְׁמַ֤ע ק֣וֹל תַּ֭חֲנוּנַי",
-      "pron": "우셰마 콜리위 타하누나위",
+      "pron": "바이솀우 콜 타하누네",
       "lemmas": [
         "שָׁמַע",
         "קוֹל",
@@ -99,19 +135,19 @@
           "word": "שְׁמַ֤ע",
           "lemma": "שָׁמַע",
           "strong": "H8085",
-          "pron": "우셰마"
+          "pron": "바이솀우"
         },
         {
           "word": "ק֣וֹל",
           "lemma": "קוֹל",
           "strong": "H6963",
-          "pron": "콜리위"
+          "pron": "콜"
         },
         {
           "word": "תַּ֭חֲנוּנַי",
           "lemma": "תַּחֲנוּן",
           "strong": "H8469",
-          "pron": "타하누나위"
+          "pron": "타하누네"
         }
       ],
       "count": 3,

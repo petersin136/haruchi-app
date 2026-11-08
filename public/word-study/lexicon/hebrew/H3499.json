@@ -12,46 +12,256 @@
     {
       "lemma": "הוֹתִיר",
       "strong": "H1956",
-      "pron": "",
+      "pron": "호티르",
       "glossKo": "호딜"
     },
     {
       "lemma": "יוֹתֵר",
       "strong": "H3148",
-      "pron": "",
+      "pron": "요테르",
       "glossKo": "넘침"
     },
     {
       "lemma": "יָתוּר",
       "strong": "H3491",
-      "pron": "",
+      "pron": "예투르",
       "glossKo": "남은 것"
     },
     {
       "lemma": "יַתִּיר",
       "strong": "H3492",
-      "pron": "",
+      "pron": "브얏티르",
       "glossKo": "얏딜"
     },
     {
       "lemma": "יָתַר",
       "strong": "H3498",
-      "pron": "호테르",
+      "pron": "아노타로트",
       "glossKo": "남기다"
     },
     {
       "lemma": "יֶתֶר",
       "strong": "H3500",
-      "pron": "",
+      "pron": "예테르",
       "glossKo": "예델"
     }
   ],
   "defEn": "overhanging; excess; superiority; remainder",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 102,
   "byBook": {
+    "kings2": 24,
+    "kings1": 14,
+    "chronicles2": 10,
+    "jeremiah": 6,
+    "nehemiah": 5,
+    "job": 4,
+    "joshua": 4,
+    "judges": 4,
+    "deuteronomy": 3,
+    "isaiah": 3,
+    "joel": 3,
     "psalms": 3,
-    "genesis": 2
+    "samuel2": 3,
+    "exodus": 2,
+    "ezekiel": 2,
+    "genesis": 2,
+    "chronicles1": 1,
+    "daniel": 1,
+    "habakkuk": 1,
+    "leviticus": 1,
+    "micah": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "samuel1": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְיֶ֛תֶר דִּבְרֵ֥י",
+      "pron": "예테르 우데바림",
+      "lemmas": [
+        "יֶתֶר",
+        "דָּבָר"
+      ],
+      "words": [
+        {
+          "word": "וְיֶ֛תֶר",
+          "lemma": "יֶתֶר",
+          "strong": "H3499",
+          "pron": "예테르"
+        },
+        {
+          "word": "דִּבְרֵ֥י",
+          "lemma": "דָּבָר",
+          "strong": "H1697",
+          "pron": "우데바림"
+        }
+      ],
+      "count": 43,
+      "refs": [
+        "kings1 11:41",
+        "kings1 14:19",
+        "kings1 14:29",
+        "kings1 15:7",
+        "kings1 15:31",
+        "kings1 16:5",
+        "kings1 16:14",
+        "kings1 16:20",
+        "kings1 16:27",
+        "kings1 22:39",
+        "kings1 22:45",
+        "kings2 1:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יֶ֣תֶר הָעָ֔ם",
+      "pron": "예테르 암",
+      "lemmas": [
+        "יֶתֶר",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "יֶ֣תֶר",
+          "lemma": "יֶתֶר",
+          "strong": "H3499",
+          "pron": "예테르"
+        },
+        {
+          "word": "הָעָ֔ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "judges 7:6",
+        "samuel1 13:2",
+        "samuel2 10:10",
+        "samuel2 12:28",
+        "kings1 12:23",
+        "kings2 25:11",
+        "chronicles1 19:11",
+        "nehemiah 4:14",
+        "nehemiah 4:19",
+        "jeremiah 39:9",
+        "jeremiah 52:15",
+        "habakkuk 2:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת יֶ֣תֶר",
+      "pron": "에트 예테르",
+      "lemmas": [
+        "אֵת",
+        "יֶתֶר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יֶ֣תֶר",
+          "lemma": "יֶתֶר",
+          "strong": "H3499",
+          "pron": "예테르"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 10:5",
+        "judges 16:9",
+        "samuel2 10:10",
+        "samuel2 12:28",
+        "kings2 25:11",
+        "chronicles1 19:11",
+        "jeremiah 39:9",
+        "jeremiah 52:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֵת֙ יֶ֣תֶר הָעָ֔ם",
+      "pron": "에트 예테르 암",
+      "lemmas": [
+        "אֵת",
+        "יֶתֶר",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "וְאֵת֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יֶ֣תֶר",
+          "lemma": "יֶתֶר",
+          "strong": "H3499",
+          "pron": "예테르"
+        },
+        {
+          "word": "הָעָ֔ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel2 10:10",
+        "samuel2 12:28",
+        "kings2 25:11",
+        "chronicles1 19:11",
+        "jeremiah 39:9",
+        "jeremiah 52:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יֶ֨תֶר הָעָ֜ם הַנִּשְׁאָרִ֣ים",
+      "pron": "예테르 암 바잇샤에르",
+      "lemmas": [
+        "יֶתֶר",
+        "עַם",
+        "שָׁאַר"
+      ],
+      "words": [
+        {
+          "word": "יֶ֨תֶר",
+          "lemma": "יֶתֶר",
+          "strong": "H3499",
+          "pron": "예테르"
+        },
+        {
+          "word": "הָעָ֜ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "הַנִּשְׁאָרִ֣ים",
+          "lemma": "שָׁאַר",
+          "strong": "H7604",
+          "pron": "바잇샤에르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 25:11",
+        "jeremiah 39:9",
+        "jeremiah 52:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

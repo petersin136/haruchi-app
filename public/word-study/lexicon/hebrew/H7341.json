@@ -18,39 +18,229 @@
     {
       "lemma": "רָחַב",
       "strong": "H7337",
-      "pron": "히레합타",
+      "pron": "히레힙",
       "glossKo": "넓어지다"
     },
     {
       "lemma": "רַחַב",
       "strong": "H7338",
-      "pron": "",
+      "pron": "라합",
       "glossKo": "넓은 곳"
     },
     {
       "lemma": "רְחֹב",
       "strong": "H7339",
-      "pron": "메레호바흐",
-      "glossKo": "그녀의 광장"
+      "pron": "바레홉",
+      "glossKo": "광장"
     },
     {
       "lemma": "רָחָב",
       "strong": "H7342",
-      "pron": "우레합",
+      "pron": "라하바트",
       "glossKo": "넓은"
     },
     {
       "lemma": "רְחַבְיָה",
       "strong": "H7345",
-      "pron": "",
+      "pron": "레합아",
       "glossKo": "르하뱌"
     }
   ],
   "defEn": "width",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 101,
   "byBook": {
-    "genesis": 2
+    "ezekiel": 55,
+    "exodus": 22,
+    "kings1": 11,
+    "chronicles2": 6,
+    "genesis": 2,
+    "zechariah": 2,
+    "deuteronomy": 1,
+    "isaiah": 1,
+    "job": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בָּֽאַמָּ֔ה וְרֹ֨חַב֙",
+      "pron": "암마 라헵바흐",
+      "lemmas": [
+        "אַמָּה",
+        "רֹחַב"
+      ],
+      "words": [
+        {
+          "word": "בָּֽאַמָּ֔ה",
+          "lemma": "אַמָּה",
+          "strong": "H520",
+          "pron": "암마"
+        },
+        {
+          "word": "וְרֹ֨חַב֙",
+          "lemma": "רֹחַב",
+          "strong": "H7341",
+          "pron": "라헵바흐"
+        }
+      ],
+      "count": 42,
+      "refs": [
+        "genesis 6:15",
+        "exodus 25:23",
+        "exodus 26:2",
+        "exodus 26:8",
+        "exodus 26:16",
+        "exodus 27:1",
+        "exodus 27:18",
+        "exodus 30:2",
+        "exodus 36:9",
+        "exodus 36:15",
+        "exodus 36:21",
+        "exodus 37:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רָחְבּ֔וֹ וְאַמָּ֥ה",
+      "pron": "라헵바흐 암마",
+      "lemmas": [
+        "רֹחַב",
+        "אַמָּה"
+      ],
+      "words": [
+        {
+          "word": "רָחְבּ֔וֹ",
+          "lemma": "רֹחַב",
+          "strong": "H7341",
+          "pron": "라헵바흐"
+        },
+        {
+          "word": "וְאַמָּ֥ה",
+          "lemma": "אַמָּה",
+          "strong": "H520",
+          "pron": "암마"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "exodus 25:10",
+        "exodus 25:23",
+        "exodus 37:1",
+        "exodus 37:10",
+        "deuteronomy 3:11",
+        "chronicles2 3:3",
+        "chronicles2 3:8",
+        "chronicles2 6:13",
+        "ezekiel 40:42",
+        "ezekiel 43:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְרֹ֖חַב עֲשֶׂ֣רֶת",
+      "pron": "라헵바흐 에세르",
+      "lemmas": [
+        "רֹחַב",
+        "עֶשֶׂר"
+      ],
+      "words": [
+        {
+          "word": "וְרֹ֖חַב",
+          "lemma": "רֹחַב",
+          "strong": "H7341",
+          "pron": "라헵바흐"
+        },
+        {
+          "word": "עֲשֶׂ֣רֶת",
+          "lemma": "עֶשֶׂר",
+          "strong": "H6235",
+          "pron": "에세르"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "chronicles2 4:1",
+        "ezekiel 45:1",
+        "ezekiel 45:3",
+        "ezekiel 48:9",
+        "ezekiel 48:10",
+        "ezekiel 48:13",
+        "zechariah 5:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעֶשְׂרִים֙ בָּֽאַמָּ֔ה וְרֹ֨חַב֙",
+      "pron": "브에세림 암마 라헵바흐",
+      "lemmas": [
+        "עֶשְׂרִים",
+        "אַמָּה",
+        "רֹחַב"
+      ],
+      "words": [
+        {
+          "word": "וְעֶשְׂרִים֙",
+          "lemma": "עֶשְׂרִים",
+          "strong": "H6242",
+          "pron": "브에세림"
+        },
+        {
+          "word": "בָּֽאַמָּ֔ה",
+          "lemma": "אַמָּה",
+          "strong": "H520",
+          "pron": "암마"
+        },
+        {
+          "word": "וְרֹ֨חַב֙",
+          "lemma": "רֹחַב",
+          "strong": "H7341",
+          "pron": "라헵바흐"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "exodus 26:2",
+        "exodus 36:9",
+        "kings1 6:20",
+        "chronicles2 4:1",
+        "ezekiel 40:30",
+        "ezekiel 40:49",
+        "ezekiel 41:4",
+        "zechariah 5:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֹ֔רֶךְ וְרֹ֕חַב",
+      "pron": "오레크 라헵바흐",
+      "lemmas": [
+        "אֹרֶךְ",
+        "רֹחַב"
+      ],
+      "words": [
+        {
+          "word": "אֹ֔רֶךְ",
+          "lemma": "אֹרֶךְ",
+          "strong": "H753",
+          "pron": "오레크"
+        },
+        {
+          "word": "וְרֹ֕חַב",
+          "lemma": "רֹחַב",
+          "strong": "H7341",
+          "pron": "라헵바흐"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 13:17",
+        "ezekiel 40:20",
+        "ezekiel 40:21",
+        "ezekiel 40:25",
+        "ezekiel 40:29",
+        "ezekiel 45:1",
+        "ezekiel 48:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

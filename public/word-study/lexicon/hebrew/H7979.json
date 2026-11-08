@@ -12,39 +12,232 @@
     {
       "lemma": "מִשְׁלוֹחַ",
       "strong": "H4916",
-      "pron": "",
+      "pron": "미셸라흐",
       "glossKo": "보냄"
     },
     {
       "lemma": "שִׁלּוּחַ",
       "strong": "H7964",
-      "pron": "",
-      "glossKo": "이혼"
+      "pron": "실루헤하",
+      "glossKo": "그녀의 이혼"
     },
     {
       "lemma": "שָׁלַח",
       "strong": "H7971",
-      "pron": "바이셸라흐",
+      "pron": "이셸라흐",
       "glossKo": "보내다"
     },
     {
       "lemma": "שְׁלַח",
       "strong": "H7972",
-      "pron": "",
+      "pron": "셸라후",
       "glossKo": "보내다(아람)"
     },
     {
       "lemma": "שֶׁלַח",
       "strong": "H7973",
-      "pron": "",
-      "glossKo": "병기"
+      "pron": "실호",
+      "glossKo": "그의 병기"
     }
   ],
   "defEn": "table; spread",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 71,
   "byBook": {
-    "psalms": 4
+    "exodus": 18,
+    "ezekiel": 13,
+    "kings1": 6,
+    "chronicles2": 5,
+    "samuel2": 5,
+    "chronicles1": 4,
+    "psalms": 4,
+    "isaiah": 3,
+    "malachi": 2,
+    "numbers": 2,
+    "samuel1": 2,
+    "daniel": 1,
+    "job": 1,
+    "judges": 1,
+    "kings2": 1,
+    "leviticus": 1,
+    "nehemiah": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת הַשֻּׁלְחָֽן",
+      "pron": "에트 슐한",
+      "lemmas": [
+        "אֵת",
+        "שֻׁלְחָן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַשֻּׁלְחָֽן",
+          "lemma": "שֻׁלְחָן",
+          "strong": "H7979",
+          "pron": "슐한"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "exodus 25:27",
+        "exodus 25:28",
+        "exodus 26:35",
+        "exodus 30:27",
+        "exodus 31:8",
+        "exodus 35:13",
+        "exodus 37:10",
+        "exodus 37:14",
+        "exodus 37:15",
+        "exodus 39:36",
+        "exodus 40:4",
+        "exodus 40:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַֽל הַשֻּׁלְחָ֛ן",
+      "pron": "알 슐한",
+      "lemmas": [
+        "עַל",
+        "שֻׁלְחָן"
+      ],
+      "words": [
+        {
+          "word": "עַֽל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הַשֻּׁלְחָ֛ן",
+          "lemma": "שֻׁלְחָן",
+          "strong": "H7979",
+          "pron": "슐한"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 25:30",
+        "exodus 37:16",
+        "leviticus 24:6",
+        "numbers 4:7",
+        "samuel2 9:7",
+        "samuel2 9:10",
+        "samuel2 9:11",
+        "samuel2 9:13",
+        "chronicles2 13:11",
+        "nehemiah 5:17",
+        "ezekiel 39:20",
+        "daniel 11:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל שֻׁלְחַ֖ן",
+      "pron": "엘 슐한",
+      "lemmas": [
+        "אֵל",
+        "שֻׁלְחָן"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "שֻׁלְחַ֖ן",
+          "lemma": "שֻׁלְחָן",
+          "strong": "H7979",
+          "pron": "슐한"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 20:29",
+        "kings1 4:27",
+        "kings1 13:20",
+        "ezekiel 40:43",
+        "ezekiel 44:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשֻּׁלְחָן֙ וְאֶת",
+      "pron": "슐한 에트",
+      "lemmas": [
+        "שֻׁלְחָן",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הַשֻּׁלְחָן֙",
+          "lemma": "שֻׁלְחָן",
+          "strong": "H7979",
+          "pron": "슐한"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 30:27",
+        "exodus 31:8",
+        "exodus 35:13",
+        "exodus 37:16",
+        "exodus 39:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת הַשֻּׁלְחָן֙ וְאֶת",
+      "pron": "에트 슐한 에트",
+      "lemmas": [
+        "אֵת",
+        "שֻׁלְחָן",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַשֻּׁלְחָן֙",
+          "lemma": "שֻׁלְחָן",
+          "strong": "H7979",
+          "pron": "슐한"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 30:27",
+        "exodus 31:8",
+        "exodus 35:13",
+        "exodus 39:36"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

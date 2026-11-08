@@ -2,7 +2,7 @@
   "lemma": "נֵר",
   "pron": "네르",
   "strong": "H5369",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נִיר",
     "strong": "H5216",
@@ -12,37 +12,227 @@
     {
       "lemma": "נוּר",
       "strong": "H5135",
-      "pron": "",
+      "pron": "누라",
       "glossKo": "불(아람)"
     },
     {
       "lemma": "נִיר",
       "strong": "H5214",
-      "pron": "",
+      "pron": "니루",
       "glossKo": "땅을 갈다"
     },
     {
       "lemma": "נִיר",
       "strong": "H5216",
-      "pron": "네리위",
-      "glossKo": "나의 등불"
+      "pron": "네로테하",
+      "glossKo": "그녀의 등불"
     },
     {
       "lemma": "נֵרִיָּה",
       "strong": "H5374",
-      "pron": "",
+      "pron": "네리아",
       "glossKo": "네리야"
     },
     {
       "lemma": "תַּנּוּר",
       "strong": "H8574",
-      "pron": "크탄누르",
+      "pron": "탄누르",
       "glossKo": "화로"
     }
   ],
   "defEn": "Ner",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 16,
+  "byBook": {
+    "samuel2": 6,
+    "chronicles1": 4,
+    "samuel1": 4,
+    "kings1": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "אַבְנֵ֤ר בֶּן נֵר֙",
+      "pron": "아비네르 바님 네르",
+      "lemmas": [
+        "אַבְנֵר",
+        "בֵּן",
+        "נֵר"
+      ],
+      "words": [
+        {
+          "word": "אַבְנֵ֤ר",
+          "lemma": "אַבְנֵר",
+          "strong": "H74",
+          "pron": "아비네르"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נֵר֙",
+          "lemma": "נֵר",
+          "strong": "H5369",
+          "pron": "네르"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "samuel1 14:50",
+        "samuel1 26:5",
+        "samuel1 26:14",
+        "samuel2 2:8",
+        "samuel2 2:12",
+        "samuel2 3:23",
+        "samuel2 3:25",
+        "samuel2 3:28",
+        "samuel2 3:37",
+        "kings1 2:5",
+        "kings1 2:32",
+        "chronicles1 26:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן נֵ֔ר",
+      "pron": "바님 네르",
+      "lemmas": [
+        "בֵּן",
+        "נֵר"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נֵ֔ר",
+          "lemma": "נֵר",
+          "strong": "H5369",
+          "pron": "네르"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "samuel1 14:50",
+        "samuel1 26:5",
+        "samuel1 26:14",
+        "samuel2 2:8",
+        "samuel2 2:12",
+        "samuel2 3:23",
+        "samuel2 3:25",
+        "samuel2 3:28",
+        "samuel2 3:37",
+        "kings1 2:5",
+        "kings1 2:32",
+        "chronicles1 26:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶּן נֵ֖ר שַׂר",
+      "pron": "바님 네르 사레",
+      "lemmas": [
+        "בֵּן",
+        "נֵר",
+        "שַׂר"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נֵ֖ר",
+          "lemma": "נֵר",
+          "strong": "H5369",
+          "pron": "네르"
+        },
+        {
+          "word": "שַׂר",
+          "lemma": "שַׂר",
+          "strong": "H8269",
+          "pron": "사레"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 26:5",
+        "samuel2 2:8",
+        "kings1 2:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נֵ֖ר שַׂר",
+      "pron": "네르 사레",
+      "lemmas": [
+        "נֵר",
+        "שַׂר"
+      ],
+      "words": [
+        {
+          "word": "נֵ֖ר",
+          "lemma": "נֵר",
+          "strong": "H5369",
+          "pron": "네르"
+        },
+        {
+          "word": "שַׂר",
+          "lemma": "שַׂר",
+          "strong": "H8269",
+          "pron": "사레"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 26:5",
+        "samuel2 2:8",
+        "kings1 2:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נֵ֖ר שַׂר צְבָא֑וֹ",
+      "pron": "네르 사레 체바암",
+      "lemmas": [
+        "נֵר",
+        "שַׂר",
+        "צָבָא"
+      ],
+      "words": [
+        {
+          "word": "נֵ֖ר",
+          "lemma": "נֵר",
+          "strong": "H5369",
+          "pron": "네르"
+        },
+        {
+          "word": "שַׂר",
+          "lemma": "שַׂר",
+          "strong": "H8269",
+          "pron": "사레"
+        },
+        {
+          "word": "צְבָא֑וֹ",
+          "lemma": "צָבָא",
+          "strong": "H6635",
+          "pron": "체바암"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 26:5",
+        "samuel2 2:8",
+        "kings1 2:32"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

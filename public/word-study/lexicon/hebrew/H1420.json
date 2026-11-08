@@ -1,6 +1,6 @@
 {
   "lemma": "גְּדוּלָה",
-  "pron": "게둘라티위",
+  "pron": "아게둘라",
   "strong": "H1420",
   "posKo": "명사",
   "root": {
@@ -12,15 +12,82 @@
     {
       "lemma": "גָּדוֹל",
       "strong": "H1419",
-      "pron": "게돌로트",
+      "pron": "아게돌림",
       "glossKo": "큰"
     }
   ],
   "defEn": "greatness",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 13,
   "byBook": {
-    "psalms": 4
+    "chronicles1": 4,
+    "psalms": 4,
+    "esther": 3,
+    "samuel2": 2
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֵ֥ת כָּל הַגְּדוּלָּ֖ה",
+      "pron": "에트 칼 아게둘라",
+      "lemmas": [
+        "אֵת",
+        "כֹּל",
+        "גְּדוּלָה"
+      ],
+      "words": [
+        {
+          "word": "אֵ֥ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הַגְּדוּלָּ֖ה",
+          "lemma": "גְּדוּלָה",
+          "strong": "H1420",
+          "pron": "아게둘라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 7:21",
+        "chronicles1 17:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל הַגְּדוּלָּ֖ה",
+      "pron": "칼 아게둘라",
+      "lemmas": [
+        "כֹּל",
+        "גְּדוּלָה"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הַגְּדוּלָּ֖ה",
+          "lemma": "גְּדוּלָה",
+          "strong": "H1420",
+          "pron": "아게둘라"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 7:21",
+        "chronicles1 17:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

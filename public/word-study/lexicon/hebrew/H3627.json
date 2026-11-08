@@ -1,6 +1,6 @@
 {
   "lemma": "כְּלִי",
-  "pron": "키켈리",
+  "pron": "켈레",
   "strong": "H3627",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "כָּלָה",
       "strong": "H3615",
-      "pron": "칼로타므",
-      "glossKo": "그들에게 끝내다"
+      "pron": "바예쿨루",
+      "glossKo": "끝내다"
     },
     {
       "lemma": "כָּלֶה",
       "strong": "H3616",
-      "pron": "",
+      "pron": "브칼로트",
       "glossKo": "쇠약한"
     },
     {
@@ -30,28 +30,254 @@
     {
       "lemma": "כְּלוּהַי",
       "strong": "H3622",
-      "pron": "",
+      "pron": "클히",
       "glossKo": "글루해"
     },
     {
       "lemma": "כְּלִיא",
       "strong": "H3628",
-      "pron": "",
+      "pron": "클리",
       "glossKo": "옥(아람)"
     },
     {
       "lemma": "כִּלְיָה",
       "strong": "H3629",
-      "pron": "우켈라오트",
+      "pron": "아켈라오트",
       "glossKo": "콩팥"
     }
   ],
   "defEn": "prepared; apparatus",
   "defKo": "",
-  "countOT": 13,
+  "countOT": 325,
   "byBook": {
+    "exodus": 34,
+    "chronicles2": 33,
+    "samuel1": 33,
+    "numbers": 31,
+    "jeremiah": 27,
+    "chronicles1": 23,
+    "leviticus": 22,
+    "kings2": 17,
+    "ezekiel": 15,
+    "isaiah": 14,
+    "kings1": 13,
+    "ezra": 10,
     "genesis": 9,
-    "psalms": 4
+    "samuel2": 8,
+    "nehemiah": 5,
+    "judges": 4,
+    "psalms": 4,
+    "daniel": 3,
+    "deuteronomy": 3,
+    "esther": 3,
+    "joshua": 3,
+    "hosea": 2,
+    "proverbs": 2,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "job": 1,
+    "jonah": 1,
+    "nahum": 1,
+    "ruth": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כָּל כֵּלָ֑יו",
+      "pron": "칼 켈레",
+      "lemmas": [
+        "כֹּל",
+        "כְּלִי"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "כֵּלָ֑יו",
+          "lemma": "כְּלִי",
+          "strong": "H3627",
+          "pron": "켈레"
+        }
+      ],
+      "count": 109,
+      "refs": [
+        "genesis 31:37",
+        "exodus 25:9",
+        "exodus 25:39",
+        "exodus 27:3",
+        "exodus 27:19",
+        "exodus 30:27",
+        "exodus 30:28",
+        "exodus 31:7",
+        "exodus 31:8",
+        "exodus 31:9",
+        "exodus 35:13",
+        "exodus 35:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת כָּל כֵּלָ֑יו",
+      "pron": "에트 칼 켈레",
+      "lemmas": [
+        "אֵת",
+        "כֹּל",
+        "כְּלִי"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "כֵּלָ֑יו",
+          "lemma": "כְּלִי",
+          "strong": "H3627",
+          "pron": "켈레"
+        }
+      ],
+      "count": 50,
+      "refs": [
+        "genesis 31:37",
+        "exodus 30:27",
+        "exodus 30:28",
+        "exodus 31:7",
+        "exodus 31:8",
+        "exodus 31:9",
+        "exodus 35:13",
+        "exodus 35:16",
+        "exodus 37:24",
+        "exodus 38:3",
+        "exodus 38:30",
+        "exodus 39:33"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת כְּלֵ֣י",
+      "pron": "에트 켈레",
+      "lemmas": [
+        "אֵת",
+        "כְּלִי"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "כְּלֵ֣י",
+          "lemma": "כְּלִי",
+          "strong": "H3627",
+          "pron": "켈레"
+        }
+      ],
+      "count": 29,
+      "refs": [
+        "genesis 42:25",
+        "exodus 30:27",
+        "exodus 31:8",
+        "exodus 35:14",
+        "exodus 37:16",
+        "numbers 4:32",
+        "deuteronomy 1:41",
+        "samuel1 6:8",
+        "samuel1 17:22",
+        "samuel1 17:40",
+        "samuel1 17:54",
+        "samuel1 20:40"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נֹשֵׂ֣א כֵלָ֔יו",
+      "pron": "미네소 켈레",
+      "lemmas": [
+        "נָשָׂא",
+        "כְּלִי"
+      ],
+      "words": [
+        {
+          "word": "נֹשֵׂ֣א",
+          "lemma": "נָשָׂא",
+          "strong": "H5375",
+          "pron": "미네소"
+        },
+        {
+          "word": "כֵלָ֔יו",
+          "lemma": "כְּלִי",
+          "strong": "H3627",
+          "pron": "켈레"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "judges 9:54",
+        "samuel1 14:1",
+        "samuel1 14:6",
+        "samuel1 14:7",
+        "samuel1 14:12",
+        "samuel1 14:13",
+        "samuel1 14:14",
+        "samuel1 14:17",
+        "samuel1 16:21",
+        "samuel1 31:4",
+        "samuel1 31:5",
+        "samuel1 31:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כְּלֵ֣י בֵית",
+      "pron": "켈레 미바이트",
+      "lemmas": [
+        "כְּלִי",
+        "בַּיִת"
+      ],
+      "words": [
+        {
+          "word": "כְּלֵ֣י",
+          "lemma": "כְּלִי",
+          "strong": "H3627",
+          "pron": "켈레"
+        },
+        {
+          "word": "בֵית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "genesis 31:37",
+        "samuel1 31:10",
+        "kings1 10:21",
+        "chronicles1 10:10",
+        "chronicles2 9:20",
+        "chronicles2 24:14",
+        "chronicles2 28:24",
+        "chronicles2 36:7",
+        "chronicles2 36:18",
+        "ezra 1:7",
+        "ezra 8:33",
+        "nehemiah 13:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

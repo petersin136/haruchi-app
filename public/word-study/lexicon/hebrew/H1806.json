@@ -1,8 +1,8 @@
 {
   "lemma": "דְּלָיָה",
-  "pron": "델라아",
+  "pron": "우델라아",
   "strong": "H1806",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "דָּלָה",
     "strong": "H1802",
@@ -12,8 +12,8 @@
     {
       "lemma": "דָּלָה",
       "strong": "H1802",
-      "pron": "딜리타니",
-      "glossKo": "나를 긷다"
+      "pron": "바틷레나",
+      "glossKo": "긷다"
     },
     {
       "lemma": "דַּלָּה",
@@ -24,25 +24,132 @@
     {
       "lemma": "דְּלִי",
       "strong": "H1805",
-      "pron": "",
-      "glossKo": "물통"
+      "pron": "믿달아브",
+      "glossKo": "그의 물통"
     },
     {
       "lemma": "דָּלִיָּה",
       "strong": "H1808",
-      "pron": "",
-      "glossKo": "가지"
+      "pron": "달리오타으브",
+      "glossKo": "그의 가지"
     },
     {
       "lemma": "דָּלַל",
       "strong": "H1809",
-      "pron": "달로누",
+      "pron": "바읻달",
       "glossKo": "쇠하다"
+    },
+    {
+      "lemma": "דֶּלֶת",
+      "strong": "H1817",
+      "pron": "브아델레트",
+      "glossKo": "문"
     }
   ],
   "defEn": "Delajah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "chronicles1": 2,
+    "jeremiah": 2,
+    "nehemiah": 2,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "דְלָיָ֥ה בְנֵי",
+      "pron": "우델라아 바님",
+      "lemmas": [
+        "דְּלָיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "דְלָיָ֥ה",
+          "lemma": "דְּלָיָה",
+          "strong": "H1806",
+          "pron": "우델라아"
+        },
+        {
+          "word": "בְנֵי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 2:60",
+        "nehemiah 6:10",
+        "nehemiah 7:62",
+        "jeremiah 36:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּנֵי דְלָיָ֥ה",
+      "pron": "바님 우델라아",
+      "lemmas": [
+        "בֵּן",
+        "דְּלָיָה"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "דְלָיָ֥ה",
+          "lemma": "דְּלָיָה",
+          "strong": "H1806",
+          "pron": "우델라아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 2:60",
+        "nehemiah 6:10",
+        "nehemiah 7:62"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּנֵי דְלָיָ֥ה בְנֵי",
+      "pron": "바님 우델라아 바님",
+      "lemmas": [
+        "בֵּן",
+        "דְּלָיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "דְלָיָ֥ה",
+          "lemma": "דְּלָיָה",
+          "strong": "H1806",
+          "pron": "우델라아"
+        },
+        {
+          "word": "בְנֵי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 2:60",
+        "nehemiah 6:10",
+        "nehemiah 7:62"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

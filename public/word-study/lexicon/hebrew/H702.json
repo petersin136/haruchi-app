@@ -12,7 +12,7 @@
     {
       "lemma": "אַרְבַּע",
       "strong": "H703",
-      "pron": "",
+      "pron": "아렙바",
       "glossKo": "넷(아람)"
     },
     {
@@ -30,7 +30,7 @@
     {
       "lemma": "אַרְבַּעְתַּיִם",
       "strong": "H706",
-      "pron": "",
+      "pron": "아렙바엣타임",
       "glossKo": "사 배"
     },
     {
@@ -42,19 +42,43 @@
     {
       "lemma": "רָבַע",
       "strong": "H7251",
-      "pron": "",
+      "pron": "라부아",
       "glossKo": "사각형"
     }
   ],
   "defEn": "four",
   "defKo": "",
-  "countOT": 15,
+  "countOT": 321,
   "byBook": {
-    "genesis": 15
+    "ezekiel": 53,
+    "exodus": 38,
+    "numbers": 37,
+    "chronicles1": 36,
+    "kings1": 22,
+    "genesis": 15,
+    "joshua": 12,
+    "chronicles2": 11,
+    "nehemiah": 11,
+    "ezra": 10,
+    "amos": 8,
+    "zechariah": 8,
+    "daniel": 7,
+    "judges": 7,
+    "jeremiah": 6,
+    "leviticus": 6,
+    "proverbs": 6,
+    "samuel1": 6,
+    "esther": 5,
+    "haggai": 4,
+    "isaiah": 3,
+    "job": 3,
+    "kings2": 3,
+    "deuteronomy": 2,
+    "samuel2": 2
   },
   "phrases": [
     {
-      "hebrew": "וְאַרְבַּ֥ע מֵא֖וֹת",
+      "hebrew": "אַרְבַּ֥ע מֵא֖וֹת",
       "pron": "르아렙바아 우메아트",
       "lemmas": [
         "אַרְבַּע",
@@ -62,7 +86,7 @@
       ],
       "words": [
         {
-          "word": "וְאַרְבַּ֥ע",
+          "word": "אַרְבַּ֥ע",
           "lemma": "אַרְבַּע",
           "strong": "H702",
           "pron": "르아렙바아"
@@ -74,7 +98,7 @@
           "pron": "우메아트"
         }
       ],
-      "count": 8,
+      "count": 55,
       "refs": [
         "genesis 11:13",
         "genesis 11:15",
@@ -83,138 +107,163 @@
         "genesis 23:15",
         "genesis 23:16",
         "genesis 32:6",
-        "genesis 33:1"
+        "genesis 33:1",
+        "exodus 12:40",
+        "exodus 12:41",
+        "exodus 38:29",
+        "numbers 1:29"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְאַרְבַּ֥ע מֵא֖וֹת שָׁנָ֑ה",
-      "pron": "르아렙바아 우메아트 우셰노타위",
-      "lemmas": [
-        "אַרְבַּע",
-        "מֵאָה",
-        "שָׁנֶה"
-      ],
-      "words": [
-        {
-          "word": "וְאַרְבַּ֥ע",
-          "lemma": "אַרְבַּע",
-          "strong": "H702",
-          "pron": "르아렙바아"
-        },
-        {
-          "word": "מֵא֖וֹת",
-          "lemma": "מֵאָה",
-          "strong": "H3967",
-          "pron": "우메아트"
-        },
-        {
-          "word": "שָׁנָ֑ה",
-          "lemma": "שָׁנֶה",
-          "strong": "H8141",
-          "pron": "우셰노타위"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 11:13",
-        "genesis 11:15",
-        "genesis 11:17",
-        "genesis 15:13"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וּבְאַרְבַּע֩ עֶשְׂרֵ֨ה",
-      "pron": "르아렙바아 아사르",
+      "hebrew": "אַרְבָּעָ֥ה עָשָׂ֖ר",
+      "pron": "르아렙바아 에세레",
       "lemmas": [
         "אַרְבַּע",
         "עָשָׂר"
       ],
       "words": [
         {
-          "word": "וּבְאַרְבַּע֩",
+          "word": "אַרְבָּעָ֥ה",
           "lemma": "אַרְבַּע",
           "strong": "H702",
           "pron": "르아렙바아"
         },
         {
-          "word": "עֶשְׂרֵ֨ה",
+          "word": "עָשָׂ֖ר",
           "lemma": "עָשָׂר",
           "strong": "H6240",
-          "pron": "아사르"
+          "pron": "에세레"
         }
       ],
-      "count": 3,
+      "count": 42,
       "refs": [
         "genesis 14:5",
         "genesis 31:41",
-        "genesis 46:22"
+        "genesis 46:22",
+        "exodus 12:6",
+        "exodus 12:18",
+        "leviticus 23:5",
+        "numbers 9:3",
+        "numbers 9:5",
+        "numbers 9:11",
+        "numbers 16:49",
+        "numbers 28:16",
+        "numbers 29:13"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שָׁנִ֔ים וְאַרְבַּ֥ע",
-      "pron": "우셰노타위 르아렙바아",
+      "hebrew": "וְאַרְבָּעָ֖ה אָֽלֶף",
+      "pron": "르아렙바아 엘렙",
       "lemmas": [
-        "שָׁנֶה",
+        "אַרְבַּע",
+        "אֶלֶף"
+      ],
+      "words": [
+        {
+          "word": "וְאַרְבָּעָ֖ה",
+          "lemma": "אַרְבַּע",
+          "strong": "H702",
+          "pron": "르아렙바아"
+        },
+        {
+          "word": "אָֽלֶף",
+          "lemma": "אֶלֶף",
+          "strong": "H505",
+          "pron": "엘렙"
+        }
+      ],
+      "count": 29,
+      "refs": [
+        "samuel1 4:2",
+        "chronicles1 5:18",
+        "chronicles1 12:26",
+        "chronicles1 23:4",
+        "chronicles1 23:5",
+        "chronicles1 27:1",
+        "chronicles1 27:2",
+        "chronicles1 27:4",
+        "chronicles1 27:5",
+        "chronicles1 27:7",
+        "chronicles1 27:8",
+        "chronicles1 27:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְעַל אַרְבָּעָ֖ה",
+      "pron": "알 르아렙바아",
+      "lemmas": [
+        "עַל",
         "אַרְבַּע"
       ],
       "words": [
         {
-          "word": "שָׁנִ֔ים",
-          "lemma": "שָׁנֶה",
-          "strong": "H8141",
-          "pron": "우셰노타위"
+          "word": "וְעַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
         },
         {
-          "word": "וְאַרְבַּ֥ע",
+          "word": "אַרְבָּעָ֖ה",
           "lemma": "אַרְבַּע",
           "strong": "H702",
           "pron": "르아렙바아"
         }
       ],
-      "count": 3,
+      "count": 28,
       "refs": [
-        "genesis 11:13",
-        "genesis 11:15",
-        "genesis 11:17"
+        "exodus 25:12",
+        "exodus 25:26",
+        "exodus 26:32",
+        "exodus 27:2",
+        "exodus 27:4",
+        "exodus 37:3",
+        "exodus 37:13",
+        "exodus 38:2",
+        "leviticus 11:20",
+        "leviticus 11:21",
+        "leviticus 11:27",
+        "leviticus 11:42"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "שָׁנִ֔ים וְאַרְבַּ֥ע מֵא֖וֹת",
-      "pron": "우셰노타위 르아렙바아 우메아트",
+      "hebrew": "עֶשְׂרִ֥ים וְאַרְבָּעָ֖ה",
+      "pron": "브에세림 르아렙바아",
       "lemmas": [
-        "שָׁנֶה",
-        "אַרְבַּע",
-        "מֵאָה"
+        "עֶשְׂרִים",
+        "אַרְבַּע"
       ],
       "words": [
         {
-          "word": "שָׁנִ֔ים",
-          "lemma": "שָׁנֶה",
-          "strong": "H8141",
-          "pron": "우셰노타위"
+          "word": "עֶשְׂרִ֥ים",
+          "lemma": "עֶשְׂרִים",
+          "strong": "H6242",
+          "pron": "브에세림"
         },
         {
-          "word": "וְאַרְבַּ֥ע",
+          "word": "וְאַרְבָּעָ֖ה",
           "lemma": "אַרְבַּע",
           "strong": "H702",
           "pron": "르아렙바아"
-        },
-        {
-          "word": "מֵא֖וֹת",
-          "lemma": "מֵאָה",
-          "strong": "H3967",
-          "pron": "우메아트"
         }
       ],
-      "count": 3,
+      "count": 26,
       "refs": [
-        "genesis 11:13",
-        "genesis 11:15",
-        "genesis 11:17"
+        "numbers 7:88",
+        "samuel2 21:20",
+        "kings1 15:33",
+        "chronicles1 20:6",
+        "chronicles1 23:4",
+        "chronicles1 27:1",
+        "chronicles1 27:2",
+        "chronicles1 27:4",
+        "chronicles1 27:5",
+        "chronicles1 27:7",
+        "chronicles1 27:8",
+        "chronicles1 27:9"
       ],
       "glossKo": ""
     }

@@ -12,13 +12,13 @@
     {
       "lemma": "יְפֻנֶּה",
       "strong": "H3312",
-      "pron": "",
+      "pron": "예푼네",
       "glossKo": "여분네"
     },
     {
       "lemma": "פָּנָה",
       "strong": "H6437",
-      "pron": "페네",
+      "pron": "바입누",
       "glossKo": "돌이키다"
     },
     {
@@ -30,21 +30,110 @@
     {
       "lemma": "פָּנִים",
       "strong": "H6440",
-      "pron": "미페네",
+      "pron": "페네",
       "glossKo": "얼굴"
     }
   ],
   "defEn": "removal; lest",
   "defKo": "",
-  "countOT": 26,
+  "countOT": 133,
   "byBook": {
+    "deuteronomy": 28,
+    "proverbs": 18,
     "genesis": 17,
-    "psalms": 9
+    "exodus": 13,
+    "psalms": 9,
+    "jeremiah": 8,
+    "samuel1": 7,
+    "isaiah": 6,
+    "samuel2": 6,
+    "judges": 5,
+    "joshua": 3,
+    "numbers": 3,
+    "job": 2,
+    "kings2": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "hosea": 1,
+    "leviticus": 1,
+    "malachi": 1,
+    "ruth": 1
   },
   "phrases": [
     {
+      "hebrew": "הִשָּׁ֣מֶר פֶּן",
+      "pron": "울샴라흐 펜",
+      "lemmas": [
+        "שָׁמַר",
+        "פֵּן"
+      ],
+      "words": [
+        {
+          "word": "הִשָּׁ֣מֶר",
+          "lemma": "שָׁמַר",
+          "strong": "H8104",
+          "pron": "울샴라흐"
+        },
+        {
+          "word": "פֶּן",
+          "lemma": "פֵּן",
+          "strong": "H6435",
+          "pron": "펜"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 24:6",
+        "genesis 31:24",
+        "exodus 34:12",
+        "deuteronomy 4:23",
+        "deuteronomy 6:12",
+        "deuteronomy 8:11",
+        "deuteronomy 11:16",
+        "deuteronomy 12:13",
+        "deuteronomy 12:19",
+        "deuteronomy 12:30",
+        "deuteronomy 15:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פֶּן יָמוּת֙",
+      "pron": "펜 모트",
+      "lemmas": [
+        "פֵּן",
+        "מוּת"
+      ],
+      "words": [
+        {
+          "word": "פֶּן",
+          "lemma": "פֵּן",
+          "strong": "H6435",
+          "pron": "펜"
+        },
+        {
+          "word": "יָמוּת֙",
+          "lemma": "מוּת",
+          "strong": "H4191",
+          "pron": "모트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 3:3",
+        "genesis 26:9",
+        "genesis 38:11",
+        "exodus 20:19",
+        "leviticus 10:7",
+        "deuteronomy 20:5",
+        "deuteronomy 20:6",
+        "deuteronomy 20:7"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "אָמַ֔רְתִּי פֶּן",
-      "pron": "아마르 펜",
+      "pron": "바요메르 펜",
       "lemmas": [
         "אָמַר",
         "פֵּן"
@@ -54,7 +143,7 @@
           "word": "אָמַ֔רְתִּי",
           "lemma": "אָמַר",
           "strong": "H559",
-          "pron": "아마르"
+          "pron": "바요메르"
         },
         {
           "word": "פֶּן",
@@ -63,19 +152,54 @@
           "pron": "펜"
         }
       ],
-      "count": 5,
+      "count": 7,
       "refs": [
-        "psalms 38:16",
         "genesis 26:9",
         "genesis 31:31",
         "genesis 38:11",
-        "genesis 42:4"
+        "genesis 42:4",
+        "numbers 16:34",
+        "samuel1 27:11",
+        "psalms 38:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פֶּן יֹאמְר֗וּ",
+      "pron": "펜 바요메르",
+      "lemmas": [
+        "פֵּן",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "פֶּן",
+          "lemma": "פֵּן",
+          "strong": "H6435",
+          "pron": "펜"
+        },
+        {
+          "word": "יֹאמְר֗וּ",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "deuteronomy 9:28",
+        "deuteronomy 32:27",
+        "judges 9:54",
+        "job 32:13",
+        "psalms 13:4",
+        "isaiah 48:5",
+        "isaiah 48:7"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "כִּ֣י אָמַ֔רְתִּי פֶּן",
-      "pron": "키 아마르 펜",
+      "pron": "키 바요메르 펜",
       "lemmas": [
         "כִּי",
         "אָמַר",
@@ -92,7 +216,7 @@
           "word": "אָמַ֔רְתִּי",
           "lemma": "אָמַר",
           "strong": "H559",
-          "pron": "아마르"
+          "pron": "바요메르"
         },
         {
           "word": "פֶּן",
@@ -101,42 +225,14 @@
           "pron": "펜"
         }
       ],
-      "count": 5,
+      "count": 6,
       "refs": [
-        "psalms 38:16",
         "genesis 26:9",
         "genesis 31:31",
         "genesis 38:11",
-        "genesis 42:4"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "פֶּן תְּמֻתֽוּן",
-      "pron": "펜 크메트",
-      "lemmas": [
-        "פֵּן",
-        "מוּת"
-      ],
-      "words": [
-        {
-          "word": "פֶּן",
-          "lemma": "פֵּן",
-          "strong": "H6435",
-          "pron": "펜"
-        },
-        {
-          "word": "תְּמֻתֽוּן",
-          "lemma": "מוּת",
-          "strong": "H4191",
-          "pron": "크메트"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 3:3",
-        "genesis 26:9",
-        "genesis 38:11"
+        "genesis 42:4",
+        "numbers 16:34",
+        "psalms 38:16"
       ],
       "glossKo": ""
     }

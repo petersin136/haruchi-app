@@ -1,6 +1,6 @@
 {
   "lemma": "סֻכָּה",
-  "pron": "숙카트오",
+  "pron": "숙코트",
   "strong": "H5521",
   "posKo": "명사",
   "root": {
@@ -12,28 +12,202 @@
     {
       "lemma": "סֹךְ",
       "strong": "H5520",
-      "pron": "브숙코",
+      "pron": "베숙코",
       "glossKo": "그의 장막"
     },
     {
       "lemma": "סֻכּוֹת",
       "strong": "H5523",
-      "pron": "숙코트",
+      "pron": "숙코타",
       "glossKo": "숙곳"
     },
     {
       "lemma": "סֻכִּי",
       "strong": "H5525",
-      "pron": "",
+      "pron": "숙키임",
       "glossKo": "숙 사람"
     }
   ],
   "defEn": "hut; lair",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 31,
   "byBook": {
+    "nehemiah": 5,
+    "leviticus": 4,
+    "deuteronomy": 3,
+    "job": 3,
+    "zechariah": 3,
+    "isaiah": 2,
+    "kings1": 2,
     "psalms": 2,
-    "genesis": 1
+    "samuel2": 2,
+    "amos": 1,
+    "chronicles2": 1,
+    "ezra": 1,
+    "genesis": 1,
+    "jonah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "חַ֥ג הַסֻּכּֽוֹת",
+      "pron": "학 숙코트",
+      "lemmas": [
+        "חַג",
+        "סֻכָּה"
+      ],
+      "words": [
+        {
+          "word": "חַ֥ג",
+          "lemma": "חַג",
+          "strong": "H2282",
+          "pron": "학"
+        },
+        {
+          "word": "הַסֻּכּֽוֹת",
+          "lemma": "סֻכָּה",
+          "strong": "H5521",
+          "pron": "숙코트"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "leviticus 23:34",
+        "deuteronomy 16:13",
+        "deuteronomy 16:16",
+        "deuteronomy 31:10",
+        "chronicles2 8:13",
+        "ezra 3:4",
+        "zechariah 14:16",
+        "zechariah 14:18",
+        "zechariah 14:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת חַ֥ג הַסֻּכּֽוֹת",
+      "pron": "에트 학 숙코트",
+      "lemmas": [
+        "אֵת",
+        "חַג",
+        "סֻכָּה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "חַ֥ג",
+          "lemma": "חַג",
+          "strong": "H2282",
+          "pron": "학"
+        },
+        {
+          "word": "הַסֻּכּֽוֹת",
+          "lemma": "סֻכָּה",
+          "strong": "H5521",
+          "pron": "숙코트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezra 3:4",
+        "zechariah 14:16",
+        "zechariah 14:18",
+        "zechariah 14:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּסֻּכֹּ֥ת תֵּשְׁב֖וּ",
+      "pron": "숙코트 바예솁",
+      "lemmas": [
+        "סֻכָּה",
+        "יָשַׁב"
+      ],
+      "words": [
+        {
+          "word": "בַּסֻּכֹּ֥ת",
+          "lemma": "סֻכָּה",
+          "strong": "H5521",
+          "pron": "숙코트"
+        },
+        {
+          "word": "תֵּשְׁב֖וּ",
+          "lemma": "יָשַׁב",
+          "strong": "H3427",
+          "pron": "바예솁"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 23:42",
+        "leviticus 23:43",
+        "nehemiah 8:17",
+        "jonah 4:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יֵשְׁב֖וּ בַּסֻּכֹּֽת",
+      "pron": "바예솁 숙코트",
+      "lemmas": [
+        "יָשַׁב",
+        "סֻכָּה"
+      ],
+      "words": [
+        {
+          "word": "יֵשְׁב֖וּ",
+          "lemma": "יָשַׁב",
+          "strong": "H3427",
+          "pron": "바예솁"
+        },
+        {
+          "word": "בַּסֻּכֹּֽת",
+          "lemma": "סֻכָּה",
+          "strong": "H5521",
+          "pron": "숙코트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 23:42",
+        "samuel2 11:11",
+        "nehemiah 8:17",
+        "job 38:40"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עָשָׂ֣ה סֻכֹּ֔ת",
+      "pron": "바야아스 숙코트",
+      "lemmas": [
+        "עָשָׂה",
+        "סֻכָּה"
+      ],
+      "words": [
+        {
+          "word": "עָשָׂ֣ה",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        },
+        {
+          "word": "סֻכֹּ֔ת",
+          "lemma": "סֻכָּה",
+          "strong": "H5521",
+          "pron": "숙코트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 33:17",
+        "nehemiah 8:15",
+        "nehemiah 8:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,19 +12,19 @@
     {
       "lemma": "עוּר",
       "strong": "H5782",
-      "pron": "브우라",
+      "pron": "야이르",
       "glossKo": "깨다"
     },
     {
       "lemma": "עִיר",
       "strong": "H5892",
-      "pron": "브아림",
+      "pron": "이르",
       "glossKo": "성읍"
     },
     {
       "lemma": "עִיר",
       "strong": "H5894",
-      "pron": "",
+      "pron": "이르",
       "glossKo": "감시자(아람)"
     },
     {
@@ -36,7 +36,7 @@
     {
       "lemma": "עִירָא",
       "strong": "H5896",
-      "pron": "",
+      "pron": "이라",
       "glossKo": "이라"
     },
     {
@@ -48,9 +48,173 @@
   ],
   "defEn": "Er",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 10,
   "byBook": {
-    "genesis": 5
+    "genesis": 5,
+    "chronicles1": 3,
+    "numbers": 2
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עֵ֤ר וְאוֹנָן֙",
+      "pron": "에르 오난",
+      "lemmas": [
+        "עֵר",
+        "אוֹנָן"
+      ],
+      "words": [
+        {
+          "word": "עֵ֤ר",
+          "lemma": "עֵר",
+          "strong": "H6147",
+          "pron": "에르"
+        },
+        {
+          "word": "וְאוֹנָן֙",
+          "lemma": "אוֹנָן",
+          "strong": "H209",
+          "pron": "오난"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 46:12",
+        "numbers 26:19",
+        "chronicles1 2:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּבְנֵ֣י יְהוּדָ֗ה עֵ֧ר",
+      "pron": "바님 예후다 에르",
+      "lemmas": [
+        "בֵּן",
+        "יְהוּדָה",
+        "עֵר"
+      ],
+      "words": [
+        {
+          "word": "וּבְנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יְהוּדָ֗ה",
+          "lemma": "יְהוּדָה",
+          "strong": "H3063",
+          "pron": "예후다"
+        },
+        {
+          "word": "עֵ֧ר",
+          "lemma": "עֵר",
+          "strong": "H6147",
+          "pron": "에르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 46:12",
+        "numbers 26:19",
+        "chronicles1 2:3",
+        "chronicles1 4:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוּדָ֗ה עֵ֧ר",
+      "pron": "예후다 에르",
+      "lemmas": [
+        "יְהוּדָה",
+        "עֵר"
+      ],
+      "words": [
+        {
+          "word": "יְהוּדָ֗ה",
+          "lemma": "יְהוּדָה",
+          "strong": "H3063",
+          "pron": "예후다"
+        },
+        {
+          "word": "עֵ֧ר",
+          "lemma": "עֵר",
+          "strong": "H6147",
+          "pron": "에르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 46:12",
+        "numbers 26:19",
+        "chronicles1 2:3",
+        "chronicles1 4:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוּדָ֗ה עֵ֧ר וְאוֹנָ֛ן",
+      "pron": "예후다 에르 오난",
+      "lemmas": [
+        "יְהוּדָה",
+        "עֵר",
+        "אוֹנָן"
+      ],
+      "words": [
+        {
+          "word": "יְהוּדָ֗ה",
+          "lemma": "יְהוּדָה",
+          "strong": "H3063",
+          "pron": "예후다"
+        },
+        {
+          "word": "עֵ֧ר",
+          "lemma": "עֵר",
+          "strong": "H6147",
+          "pron": "에르"
+        },
+        {
+          "word": "וְאוֹנָ֛ן",
+          "lemma": "אוֹנָן",
+          "strong": "H209",
+          "pron": "오난"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 46:12",
+        "numbers 26:19",
+        "chronicles1 2:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְעֵ֣ר בְּכוֹר֑וֹ",
+      "pron": "에르 베코로",
+      "lemmas": [
+        "עֵר",
+        "בְּכוֹר"
+      ],
+      "words": [
+        {
+          "word": "לְעֵ֣ר",
+          "lemma": "עֵר",
+          "strong": "H6147",
+          "pron": "에르"
+        },
+        {
+          "word": "בְּכוֹר֑וֹ",
+          "lemma": "בְּכוֹר",
+          "strong": "H1060",
+          "pron": "베코로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 38:6",
+        "genesis 38:7",
+        "chronicles1 2:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

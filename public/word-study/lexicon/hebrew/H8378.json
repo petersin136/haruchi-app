@@ -1,6 +1,6 @@
 {
   "lemma": "תַּאֲוָה",
-  "pron": "타아바트",
+  "pron": "타아바",
   "strong": "H8378",
   "posKo": "명사",
   "root": {
@@ -12,31 +12,31 @@
     {
       "lemma": "אָוָה",
       "strong": "H183",
-      "pron": "브이테아브",
+      "pron": "히테아우우",
       "glossKo": "사모하다"
     },
     {
       "lemma": "אַוָּה",
       "strong": "H185",
-      "pron": "",
+      "pron": "아바트",
       "glossKo": "탐심"
     },
     {
       "lemma": "אוֹי",
       "strong": "H188",
-      "pron": "",
+      "pron": "오이",
       "glossKo": "오호라"
     },
     {
       "lemma": "אֱוִי",
       "strong": "H189",
-      "pron": "",
+      "pron": "에비",
       "glossKo": "에위"
     },
     {
       "lemma": "אִי",
       "strong": "H339",
-      "pron": "브이임",
+      "pron": "이에",
       "glossKo": "섬"
     },
     {
@@ -48,10 +48,103 @@
   ],
   "defEn": "longing",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 21,
   "byBook": {
+    "proverbs": 8,
     "psalms": 8,
-    "genesis": 1
+    "genesis": 1,
+    "isaiah": 1,
+    "job": 1,
+    "numbers": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הִתְאַוּ֖וּ תַּאֲוָ֑ה",
+      "pron": "히테아우우 타아바",
+      "lemmas": [
+        "אָוָה",
+        "תַּאֲוָה"
+      ],
+      "words": [
+        {
+          "word": "הִתְאַוּ֖וּ",
+          "lemma": "אָוָה",
+          "strong": "H183",
+          "pron": "히테아우우"
+        },
+        {
+          "word": "תַּאֲוָ֑ה",
+          "lemma": "תַּאֲוָה",
+          "strong": "H8378",
+          "pron": "타아바"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 11:4",
+        "psalms 106:14",
+        "proverbs 21:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְתַאֲוַ֖ת צַדִּיקִ֣ים",
+      "pron": "타아바 찯디크",
+      "lemmas": [
+        "תַּאֲוָה",
+        "צַדִּיק"
+      ],
+      "words": [
+        {
+          "word": "וְתַאֲוַ֖ת",
+          "lemma": "תַּאֲוָה",
+          "strong": "H8378",
+          "pron": "타아바"
+        },
+        {
+          "word": "צַדִּיקִ֣ים",
+          "lemma": "צַדִּיק",
+          "strong": "H6662",
+          "pron": "찯디크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 10:24",
+        "proverbs 11:23",
+        "proverbs 21:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּאַוֶּ֖ה נַפְשֶׁ֑ךָ",
+      "pron": "타아바 네페쉬",
+      "lemmas": [
+        "תַּאֲוָה",
+        "נֶפֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "תְּאַוֶּ֖ה",
+          "lemma": "תַּאֲוָה",
+          "strong": "H8378",
+          "pron": "타아바"
+        },
+        {
+          "word": "נַפְשֶׁ֑ךָ",
+          "lemma": "נֶפֶשׁ",
+          "strong": "H5315",
+          "pron": "네페쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 2:16",
+        "psalms 10:3",
+        "isaiah 26:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "רְמָה",
-  "pron": "레마",
+  "pron": "르미레메",
   "strong": "H7412",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "רָמָה",
     "strong": "H7411",
@@ -12,14 +12,14 @@
     {
       "lemma": "מִרְמָה",
       "strong": "H4820",
-      "pron": "우미레마",
+      "pron": "브미레마",
       "glossKo": "속임수"
     },
     {
       "lemma": "רָמָה",
       "strong": "H7411",
-      "pron": "로메",
-      "glossKo": "속이다"
+      "pron": "림미타니",
+      "glossKo": "나를 속이다"
     },
     {
       "lemma": "רְמִיָּה",
@@ -30,19 +30,120 @@
     {
       "lemma": "רֶמֶת",
       "strong": "H7432",
-      "pron": "",
+      "pron": "브레메트",
       "glossKo": "레멧"
     },
     {
       "lemma": "תׇּרְמָה",
       "strong": "H8649",
-      "pron": "타레미타므",
-      "glossKo": "그들의 속임수"
+      "pron": "브타레마",
+      "glossKo": "속임수"
     }
   ],
   "defEn": "throw; set; assess",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 12,
+  "byBook": {
+    "daniel": 11,
+    "ezra": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "יִתְרְמֵ֔א לְגֽוֹא",
+      "pron": "르미레메 베가바흐",
+      "lemmas": [
+        "רְמָה",
+        "גַּו"
+      ],
+      "words": [
+        {
+          "word": "יִתְרְמֵ֔א",
+          "lemma": "רְמָה",
+          "strong": "H7412",
+          "pron": "르미레메"
+        },
+        {
+          "word": "לְגֽוֹא",
+          "lemma": "גַּו",
+          "strong": "H1459",
+          "pron": "베가바흐"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 3:6",
+        "daniel 3:11",
+        "daniel 3:15",
+        "daniel 3:21",
+        "daniel 3:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִתְרְמֵ֔א לְגֽוֹא אַתּ֥וּן",
+      "pron": "르미레메 베가바흐 앗툰",
+      "lemmas": [
+        "רְמָה",
+        "גַּו",
+        "אַתּוּן"
+      ],
+      "words": [
+        {
+          "word": "יִתְרְמֵ֔א",
+          "lemma": "רְמָה",
+          "strong": "H7412",
+          "pron": "르미레메"
+        },
+        {
+          "word": "לְגֽוֹא",
+          "lemma": "גַּו",
+          "strong": "H1459",
+          "pron": "베가바흐"
+        },
+        {
+          "word": "אַתּ֥וּן",
+          "lemma": "אַתּוּן",
+          "strong": "H861",
+          "pron": "앗툰"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 3:6",
+        "daniel 3:11",
+        "daniel 3:15",
+        "daniel 3:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִתְרְמֵ֕א לְגֹ֖ב",
+      "pron": "르미레메 르곱",
+      "lemmas": [
+        "רְמָה",
+        "גֹּב"
+      ],
+      "words": [
+        {
+          "word": "יִתְרְמֵ֕א",
+          "lemma": "רְמָה",
+          "strong": "H7412",
+          "pron": "르미레메"
+        },
+        {
+          "word": "לְגֹ֖ב",
+          "lemma": "גֹּב",
+          "strong": "H1358",
+          "pron": "르곱"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 6:7",
+        "daniel 6:12",
+        "daniel 6:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

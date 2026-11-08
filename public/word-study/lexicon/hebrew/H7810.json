@@ -12,15 +12,57 @@
     {
       "lemma": "שָׁחַד",
       "strong": "H7809",
-      "pron": "",
+      "pron": "시하두",
       "glossKo": "선물로 주다"
     }
   ],
   "defEn": "donation",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 23,
   "byBook": {
-    "psalms": 2
+    "deuteronomy": 4,
+    "isaiah": 4,
+    "proverbs": 4,
+    "exodus": 2,
+    "psalms": 2,
+    "chronicles2": 1,
+    "ezekiel": 1,
+    "job": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "micah": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יִקַּ֖ח שֹֽׁחַד",
+      "pron": "바익카흐 브쇼핟",
+      "lemmas": [
+        "לָקַח",
+        "שַׁחַד"
+      ],
+      "words": [
+        {
+          "word": "יִקַּ֖ח",
+          "lemma": "לָקַח",
+          "strong": "H3947",
+          "pron": "바익카흐"
+        },
+        {
+          "word": "שֹֽׁחַד",
+          "lemma": "שַׁחַד",
+          "strong": "H7810",
+          "pron": "브쇼핟"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 10:17",
+        "deuteronomy 16:19",
+        "deuteronomy 27:25",
+        "samuel1 8:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

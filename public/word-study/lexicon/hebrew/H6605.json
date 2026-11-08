@@ -1,6 +1,6 @@
 {
   "lemma": "פָּתַח",
-  "pron": "파투아흐",
+  "pron": "닙타후",
   "strong": "H6605",
   "posKo": "동사",
   "root": null,
@@ -8,51 +8,72 @@
     {
       "lemma": "יִפְתָּח",
       "strong": "H3316",
-      "pron": "",
+      "pron": "브입타흐",
       "glossKo": "입다"
     },
     {
       "lemma": "יִפְתַּח־אֵל",
       "strong": "H3317",
-      "pron": "",
+      "pron": "입타흐",
       "glossKo": "입다엘"
     },
     {
       "lemma": "מַפְתֵּחַ",
       "strong": "H4668",
-      "pron": "",
+      "pron": "아맙테아흐",
       "glossKo": "열쇠"
     },
     {
       "lemma": "מִפְתָּח",
       "strong": "H4669",
-      "pron": "",
+      "pron": "아맙테아흐",
       "glossKo": "트인 곳"
     },
     {
       "lemma": "נֶפְתּוֹחַ",
       "strong": "H5318",
-      "pron": "",
+      "pron": "넵토아흐",
       "glossKo": "넵도아"
     },
     {
       "lemma": "פִּתּוּחַ",
       "strong": "H6603",
-      "pron": "핏투헤하",
-      "glossKo": "그녀의 새김"
+      "pron": "핏투헤",
+      "glossKo": "새김"
     }
   ],
   "defEn": "open wide; loosen; begin; plough; carve",
   "defKo": "",
-  "countOT": 27,
+  "countOT": 145,
   "byBook": {
+    "isaiah": 22,
     "psalms": 18,
-    "genesis": 9
+    "ezekiel": 15,
+    "job": 13,
+    "genesis": 9,
+    "chronicles2": 7,
+    "deuteronomy": 6,
+    "exodus": 6,
+    "jeremiah": 6,
+    "nehemiah": 6,
+    "kings2": 5,
+    "judges": 4,
+    "kings1": 4,
+    "numbers": 4,
+    "proverbs": 4,
+    "songofsolomon": 4,
+    "nahum": 3,
+    "zechariah": 3,
+    "joshua": 2,
+    "amos": 1,
+    "daniel": 1,
+    "malachi": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
       "hebrew": "וַיִּפְתַּ֖ח אֶת",
-      "pron": "파투아흐 에트",
+      "pron": "닙타후 에트",
       "lemmas": [
         "פָּתַח",
         "אֵת"
@@ -62,7 +83,7 @@
           "word": "וַיִּפְתַּ֖ח",
           "lemma": "פָּתַח",
           "strong": "H6605",
-          "pron": "파투아흐"
+          "pron": "닙타후"
         },
         {
           "word": "אֶת",
@@ -71,41 +92,158 @@
           "pron": "에트"
         }
       ],
-      "count": 4,
+      "count": 19,
       "refs": [
-        "psalms 145:16",
         "genesis 29:31",
         "genesis 30:22",
-        "genesis 43:21"
+        "genesis 43:21",
+        "exodus 28:11",
+        "deuteronomy 15:8",
+        "deuteronomy 15:11",
+        "joshua 10:22",
+        "judges 4:19",
+        "samuel1 3:15",
+        "chronicles2 29:3",
+        "psalms 145:16",
+        "ezekiel 3:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "יִפְתַּח פִּֽיו",
-      "pron": "파투아흐 브피후",
+      "hebrew": "לֹ֣א יִפְתַּח",
+      "pron": "로 닙타후",
+      "lemmas": [
+        "לֹא",
+        "פָּתַח"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִפְתַּח",
+          "lemma": "פָּתַח",
+          "strong": "H6605",
+          "pron": "닙타후"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "kings2 15:16",
+        "nehemiah 7:3",
+        "nehemiah 13:19",
+        "job 12:14",
+        "job 32:19",
+        "psalms 38:13",
+        "psalms 39:9",
+        "proverbs 24:7",
+        "isaiah 5:27",
+        "isaiah 14:17",
+        "isaiah 48:8",
+        "isaiah 53:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פְּתַח פִּ֥יךָ",
+      "pron": "닙타후 피하",
       "lemmas": [
         "פָּתַח",
         "פֶּה"
       ],
       "words": [
         {
-          "word": "יִפְתַּח",
+          "word": "פְּתַח",
           "lemma": "פָּתַח",
           "strong": "H6605",
-          "pron": "파투아흐"
+          "pron": "닙타후"
         },
         {
-          "word": "פִּֽיו",
+          "word": "פִּ֥יךָ",
           "lemma": "פֶּה",
           "strong": "H6310",
-          "pron": "브피후"
+          "pron": "피하"
         }
       ],
-      "count": 3,
+      "count": 13,
       "refs": [
+        "job 33:2",
         "psalms 38:13",
         "psalms 39:9",
-        "psalms 51:15"
+        "psalms 51:15",
+        "proverbs 24:7",
+        "proverbs 31:8",
+        "proverbs 31:9",
+        "isaiah 53:7",
+        "ezekiel 21:22",
+        "ezekiel 24:27",
+        "ezekiel 33:22",
+        "daniel 10:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פָתֹ֧חַ תִּפְתַּ֛ח",
+      "pron": "닙타후 닙타후",
+      "lemmas": [
+        "פָּתַח",
+        "פָּתַח"
+      ],
+      "words": [
+        {
+          "word": "פָתֹ֧חַ",
+          "lemma": "פָּתַח",
+          "strong": "H6605",
+          "pron": "닙타후"
+        },
+        {
+          "word": "תִּפְתַּ֛ח",
+          "lemma": "פָּתַח",
+          "strong": "H6605",
+          "pron": "닙타후"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "deuteronomy 15:8",
+        "deuteronomy 15:11",
+        "isaiah 45:1",
+        "isaiah 52:2",
+        "nahum 3:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִפָּֽתְח֞וּ שַׁעֲרֵ֤י",
+      "pron": "닙타후 브샤아르",
+      "lemmas": [
+        "פָּתַח",
+        "שַׁעַר"
+      ],
+      "words": [
+        {
+          "word": "יִפָּֽתְח֞וּ",
+          "lemma": "פָּתַח",
+          "strong": "H6605",
+          "pron": "닙타후"
+        },
+        {
+          "word": "שַׁעֲרֵ֤י",
+          "lemma": "שַׁעַר",
+          "strong": "H8179",
+          "pron": "브샤아르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "nehemiah 7:3",
+        "psalms 118:19",
+        "isaiah 26:2",
+        "isaiah 60:11",
+        "nahum 3:13"
       ],
       "glossKo": ""
     }

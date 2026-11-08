@@ -1,6 +1,6 @@
 {
   "lemma": "בָּגַד",
-  "pron": "아복딤",
+  "pron": "베빅도",
   "strong": "H898",
   "posKo": "동사",
   "root": null,
@@ -8,27 +8,99 @@
     {
       "lemma": "בֶּגֶד",
       "strong": "H899",
-      "pron": "베가다위",
-      "glossKo": "나의 옷"
+      "pron": "우베가딤",
+      "glossKo": "옷"
     },
     {
       "lemma": "בֹּגְדוֹת",
       "strong": "H900",
-      "pron": "",
+      "pron": "복도트",
       "glossKo": "배반들"
     },
     {
       "lemma": "בָּגוֹד",
       "strong": "H901",
-      "pron": "",
+      "pron": "바고다",
       "glossKo": "배신자"
     }
   ],
   "defEn": "cover; act covertly",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 49,
   "byBook": {
-    "psalms": 5
+    "isaiah": 12,
+    "jeremiah": 9,
+    "proverbs": 9,
+    "malachi": 5,
+    "psalms": 5,
+    "habakkuk": 2,
+    "hosea": 2,
+    "exodus": 1,
+    "job": 1,
+    "judges": 1,
+    "lamentations": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הַבּוֹגֵ֤ד בּוֹגֵד֙",
+      "pron": "베빅도 베빅도",
+      "lemmas": [
+        "בָּגַד",
+        "בָּגַד"
+      ],
+      "words": [
+        {
+          "word": "הַבּוֹגֵ֤ד",
+          "lemma": "בָּגַד",
+          "strong": "H898",
+          "pron": "베빅도"
+        },
+        {
+          "word": "בּוֹגֵד֙",
+          "lemma": "בָּגַד",
+          "strong": "H898",
+          "pron": "베빅도"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "isaiah 21:2",
+        "isaiah 24:16",
+        "isaiah 33:1",
+        "isaiah 48:8",
+        "jeremiah 5:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֹּֽגֵדָ֤ה יְהוּדָה֙",
+      "pron": "베빅도 예후다",
+      "lemmas": [
+        "בָּגַד",
+        "יְהוּדָה"
+      ],
+      "words": [
+        {
+          "word": "בֹּֽגֵדָ֤ה",
+          "lemma": "בָּגַד",
+          "strong": "H898",
+          "pron": "베빅도"
+        },
+        {
+          "word": "יְהוּדָה֙",
+          "lemma": "יְהוּדָה",
+          "strong": "H3063",
+          "pron": "예후다"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 3:8",
+        "jeremiah 3:11",
+        "malachi 2:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

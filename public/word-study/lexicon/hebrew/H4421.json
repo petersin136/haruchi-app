@@ -1,6 +1,6 @@
 {
   "lemma": "מִלְחָמָה",
-  "pron": "라밀하마",
+  "pron": "밀하마",
   "strong": "H4421",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "לָחוּם",
       "strong": "H3894",
-      "pron": "",
-      "glossKo": "음식"
+      "pron": "빌후모",
+      "glossKo": "그의 음식"
     },
     {
       "lemma": "לָחַם",
       "strong": "H3898",
-      "pron": "레함",
+      "pron": "브닐함",
       "glossKo": "싸우다"
     },
     {
@@ -30,16 +30,236 @@
     {
       "lemma": "לָחֶם",
       "strong": "H3901",
-      "pron": "",
+      "pron": "라헴",
       "glossKo": "전투"
     }
   ],
   "defEn": "battle; engagement; war; war-fare",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 319,
   "byBook": {
+    "chronicles1": 32,
+    "chronicles2": 32,
+    "samuel1": 31,
+    "samuel2": 29,
+    "jeremiah": 24,
+    "kings1": 23,
+    "judges": 20,
+    "deuteronomy": 18,
+    "joshua": 18,
+    "isaiah": 14,
+    "numbers": 12,
+    "kings2": 10,
     "psalms": 10,
-    "genesis": 2
+    "ezekiel": 7,
+    "exodus": 5,
+    "zechariah": 5,
+    "hosea": 4,
+    "job": 4,
+    "joel": 4,
+    "daniel": 3,
+    "ecclesiastes": 3,
+    "micah": 3,
+    "proverbs": 3,
+    "genesis": 2,
+    "amos": 1,
+    "obadiah": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אַנְשֵׁ֣י הַמִּלְחָמָ֗ה",
+      "pron": "메이쉬 밀하마",
+      "lemmas": [
+        "אִישׁ",
+        "מִלְחָמָה"
+      ],
+      "words": [
+        {
+          "word": "אַנְשֵׁ֣י",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "הַמִּלְחָמָ֗ה",
+          "lemma": "מִלְחָמָה",
+          "strong": "H4421",
+          "pron": "밀하마"
+        }
+      ],
+      "count": 43,
+      "refs": [
+        "exodus 15:3",
+        "numbers 31:28",
+        "numbers 31:49",
+        "deuteronomy 2:14",
+        "deuteronomy 2:16",
+        "joshua 5:4",
+        "joshua 5:6",
+        "joshua 6:3",
+        "joshua 10:24",
+        "joshua 17:1",
+        "judges 20:17",
+        "samuel1 16:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַמִּלְחָמָ֖ה עַל",
+      "pron": "밀하마 알",
+      "lemmas": [
+        "מִלְחָמָה",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "לַמִּלְחָמָ֖ה",
+          "lemma": "מִלְחָמָה",
+          "strong": "H4421",
+          "pron": "밀하마"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "deuteronomy 20:1",
+        "deuteronomy 20:3",
+        "deuteronomy 21:10",
+        "kings1 8:44",
+        "chronicles1 10:3",
+        "chronicles2 6:34",
+        "chronicles2 22:5",
+        "chronicles2 32:2",
+        "chronicles2 32:6",
+        "isaiah 7:1",
+        "jeremiah 6:23",
+        "jeremiah 50:42"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְכָל אַנְשֵׁ֨י הַמִּלְחָמָ֤ה",
+      "pron": "칼 메이쉬 밀하마",
+      "lemmas": [
+        "כֹּל",
+        "אִישׁ",
+        "מִלְחָמָה"
+      ],
+      "words": [
+        {
+          "word": "וְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "אַנְשֵׁ֨י",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "הַמִּלְחָמָ֤ה",
+          "lemma": "מִלְחָמָה",
+          "strong": "H4421",
+          "pron": "밀하마"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "deuteronomy 2:16",
+        "joshua 5:4",
+        "joshua 6:3",
+        "kings2 25:4",
+        "jeremiah 39:4",
+        "jeremiah 49:26",
+        "jeremiah 50:30",
+        "jeremiah 52:7",
+        "ezekiel 27:27",
+        "ezekiel 39:20",
+        "joel 3:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַמִּלְחָמָ֖ה עִם",
+      "pron": "밀하마 임마흐",
+      "lemmas": [
+        "מִלְחָמָה",
+        "עִם"
+      ],
+      "words": [
+        {
+          "word": "לַמִּלְחָמָ֖ה",
+          "lemma": "מִלְחָמָה",
+          "strong": "H4421",
+          "pron": "밀하마"
+        },
+        {
+          "word": "עִם",
+          "lemma": "עִם",
+          "strong": "H5973",
+          "pron": "임마흐"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "joshua 10:7",
+        "joshua 11:7",
+        "judges 20:14",
+        "judges 20:18",
+        "judges 20:20",
+        "judges 20:23",
+        "judges 20:28",
+        "kings1 20:26",
+        "kings2 8:28",
+        "chronicles1 5:10",
+        "chronicles1 5:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַמּ֛וֹ לַמִּלְחָמָ֖ה",
+      "pron": "암 밀하마",
+      "lemmas": [
+        "עַם",
+        "מִלְחָמָה"
+      ],
+      "words": [
+        {
+          "word": "עַמּ֛וֹ",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "לַמִּלְחָמָ֖ה",
+          "lemma": "מִלְחָמָה",
+          "strong": "H4421",
+          "pron": "밀하마"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "numbers 21:33",
+        "deuteronomy 2:32",
+        "deuteronomy 3:1",
+        "joshua 8:1",
+        "joshua 8:3",
+        "joshua 8:11",
+        "joshua 10:7",
+        "joshua 11:7",
+        "samuel1 23:8",
+        "kings1 8:44",
+        "chronicles2 6:34"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

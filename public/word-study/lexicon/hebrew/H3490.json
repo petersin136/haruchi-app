@@ -1,6 +1,6 @@
 {
   "lemma": "יָתוֹם",
-  "pron": "야톰",
+  "pron": "브야톰",
   "strong": "H3490",
   "posKo": "명사",
   "root": null,
@@ -8,15 +8,207 @@
     {
       "lemma": "יִתְמָה",
       "strong": "H3495",
-      "pron": "",
+      "pron": "브이테마",
       "glossKo": "이드마"
     }
   ],
   "defEn": "bereaved",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 42,
   "byBook": {
-    "psalms": 8
+    "deuteronomy": 11,
+    "psalms": 8,
+    "job": 7,
+    "isaiah": 4,
+    "jeremiah": 4,
+    "exodus": 2,
+    "ezekiel": 1,
+    "hosea": 1,
+    "lamentations": 1,
+    "malachi": 1,
+    "proverbs": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לַיָּת֥וֹם וְלָאַלְמָנָ֖ה",
+      "pron": "브야톰 알마나",
+      "lemmas": [
+        "יָתוֹם",
+        "אַלְמָנָה"
+      ],
+      "words": [
+        {
+          "word": "לַיָּת֥וֹם",
+          "lemma": "יָתוֹם",
+          "strong": "H3490",
+          "pron": "브야톰"
+        },
+        {
+          "word": "וְלָאַלְמָנָ֖ה",
+          "lemma": "אַלְמָנָה",
+          "strong": "H490",
+          "pron": "알마나"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "deuteronomy 10:18",
+        "deuteronomy 14:29",
+        "deuteronomy 16:11",
+        "deuteronomy 16:14",
+        "deuteronomy 24:19",
+        "deuteronomy 24:20",
+        "deuteronomy 24:21",
+        "deuteronomy 26:12",
+        "deuteronomy 26:13",
+        "deuteronomy 27:19",
+        "psalms 146:9",
+        "jeremiah 7:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַגֵּ֛ר לַיָּת֥וֹם",
+      "pron": "게르 브야톰",
+      "lemmas": [
+        "גֵּר",
+        "יָתוֹם"
+      ],
+      "words": [
+        {
+          "word": "לַגֵּ֛ר",
+          "lemma": "גֵּר",
+          "strong": "H1616",
+          "pron": "게르"
+        },
+        {
+          "word": "לַיָּת֥וֹם",
+          "lemma": "יָתוֹם",
+          "strong": "H3490",
+          "pron": "브야톰"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "deuteronomy 14:29",
+        "deuteronomy 16:11",
+        "deuteronomy 16:14",
+        "deuteronomy 24:17",
+        "deuteronomy 24:19",
+        "deuteronomy 24:20",
+        "deuteronomy 24:21",
+        "deuteronomy 26:12",
+        "deuteronomy 26:13",
+        "deuteronomy 27:19",
+        "psalms 146:9",
+        "jeremiah 7:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַגֵּ֛ר לַיָּת֥וֹם וְלָאַלְמָנָ֖ה",
+      "pron": "게르 브야톰 알마나",
+      "lemmas": [
+        "גֵּר",
+        "יָתוֹם",
+        "אַלְמָנָה"
+      ],
+      "words": [
+        {
+          "word": "לַגֵּ֛ר",
+          "lemma": "גֵּר",
+          "strong": "H1616",
+          "pron": "게르"
+        },
+        {
+          "word": "לַיָּת֥וֹם",
+          "lemma": "יָתוֹם",
+          "strong": "H3490",
+          "pron": "브야톰"
+        },
+        {
+          "word": "וְלָאַלְמָנָ֖ה",
+          "lemma": "אַלְמָנָה",
+          "strong": "H490",
+          "pron": "알마나"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "deuteronomy 14:29",
+        "deuteronomy 16:11",
+        "deuteronomy 16:14",
+        "deuteronomy 24:19",
+        "deuteronomy 24:20",
+        "deuteronomy 24:21",
+        "deuteronomy 26:12",
+        "deuteronomy 26:13",
+        "deuteronomy 27:19",
+        "psalms 146:9",
+        "jeremiah 7:6",
+        "jeremiah 22:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיָת֖וֹם לֹ֥א",
+      "pron": "브야톰 로",
+      "lemmas": [
+        "יָתוֹם",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "וְיָת֖וֹם",
+          "lemma": "יָתוֹם",
+          "strong": "H3490",
+          "pron": "브야톰"
+        },
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 22:22",
+        "deuteronomy 24:17",
+        "job 29:12",
+        "isaiah 1:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַלְמָנָ֥ה וְיָת֖וֹם",
+      "pron": "알마나 브야톰",
+      "lemmas": [
+        "אַלְמָנָה",
+        "יָתוֹם"
+      ],
+      "words": [
+        {
+          "word": "אַלְמָנָ֥ה",
+          "lemma": "אַלְמָנָה",
+          "strong": "H490",
+          "pron": "알마나"
+        },
+        {
+          "word": "וְיָת֖וֹם",
+          "lemma": "יָתוֹם",
+          "strong": "H3490",
+          "pron": "브야톰"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 22:22",
+        "zechariah 7:10",
+        "malachi 3:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

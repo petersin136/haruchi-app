@@ -1,8 +1,8 @@
 {
   "lemma": "אֵילוֹת",
-  "pron": "엘로트",
+  "pron": "메엘라트",
   "strong": "H359",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אַיִל",
     "strong": "H352",
@@ -12,7 +12,7 @@
     {
       "lemma": "אַיִל",
       "strong": "H352",
-      "pron": "엘림",
+      "pron": "브아일",
       "glossKo": "수양"
     },
     {
@@ -24,7 +24,7 @@
     {
       "lemma": "אַיָּל",
       "strong": "H354",
-      "pron": "크아알",
+      "pron": "브카아알",
       "glossKo": "사슴"
     },
     {
@@ -36,13 +36,54 @@
     {
       "lemma": "אֵילָם",
       "strong": "H361",
-      "pron": "",
+      "pron": "라엘람모트",
       "glossKo": "현관"
+    },
+    {
+      "lemma": "אֵילִם",
+      "strong": "H362",
+      "pron": "엘리마",
+      "glossKo": "엘림"
     }
   ],
   "defEn": "Eloth; Elath",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 8,
+  "byBook": {
+    "kings2": 4,
+    "chronicles2": 2,
+    "deuteronomy": 1,
+    "kings1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶת אֵילַ֔ת",
+      "pron": "에트 메엘라트",
+      "lemmas": [
+        "אֵת",
+        "אֵילוֹת"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "אֵילַ֔ת",
+          "lemma": "אֵילוֹת",
+          "strong": "H359",
+          "pron": "메엘라트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 14:22",
+        "kings2 16:6",
+        "chronicles2 26:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

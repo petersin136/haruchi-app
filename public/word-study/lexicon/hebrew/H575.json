@@ -1,6 +1,6 @@
 {
   "lemma": "אָן",
-  "pron": "아나",
+  "pron": "브아나",
   "strong": "H575",
   "posKo": "부사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "אַי",
       "strong": "H335",
-      "pron": "아에카",
+      "pron": "아엑카",
       "glossKo": "너에게 어디"
     },
     {
@@ -24,15 +24,33 @@
   ],
   "defEn": "where?; whither?; when?",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 43,
   "byBook": {
     "psalms": 7,
-    "genesis": 3
+    "kings2": 5,
+    "kings1": 4,
+    "genesis": 3,
+    "job": 3,
+    "jeremiah": 2,
+    "joshua": 2,
+    "numbers": 2,
+    "samuel2": 2,
+    "songofsolomon": 2,
+    "zechariah": 2,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "ezekiel": 1,
+    "habakkuk": 1,
+    "isaiah": 1,
+    "judges": 1,
+    "nehemiah": 1,
+    "ruth": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
-      "hebrew": "עַד אָ֓נָה",
-      "pron": "앋 아나",
+      "hebrew": "עַד אָ֨נָה֙",
+      "pron": "앋 브아나",
       "lemmas": [
         "עַד",
         "אָן"
@@ -45,46 +63,115 @@
           "pron": "앋"
         },
         {
-          "word": "אָ֓נָה",
+          "word": "אָ֨נָה֙",
           "lemma": "אָן",
           "strong": "H575",
-          "pron": "아나"
+          "pron": "브아나"
         }
       ],
-      "count": 5,
+      "count": 14,
       "refs": [
+        "exodus 16:28",
+        "numbers 14:11",
+        "joshua 18:3",
+        "job 8:2",
+        "job 18:2",
+        "job 19:2",
         "psalms 13:1",
         "psalms 13:2",
-        "psalms 62:3"
+        "psalms 62:3",
+        "jeremiah 47:6",
+        "habakkuk 1:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אָ֭נָ֥ה אֵלֵ֣ךְ",
-      "pron": "아나 엘레크",
+      "hebrew": "אָ֥נֶה וָאָֽנָה",
+      "pron": "브아나 브아나",
+      "lemmas": [
+        "אָן",
+        "אָן"
+      ],
+      "words": [
+        {
+          "word": "אָ֥נֶה",
+          "lemma": "אָן",
+          "strong": "H575",
+          "pron": "브아나"
+        },
+        {
+          "word": "וָאָֽנָה",
+          "lemma": "אָן",
+          "strong": "H575",
+          "pron": "브아나"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "kings1 2:36",
+        "kings1 2:42",
+        "kings2 5:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאָ֣נָה תֵלֵ֑כִי",
+      "pron": "브아나 텔레크",
       "lemmas": [
         "אָן",
         "יָלַךְ"
       ],
       "words": [
         {
-          "word": "אָ֭נָ֥ה",
+          "word": "וְאָ֣נָה",
           "lemma": "אָן",
           "strong": "H575",
-          "pron": "아나"
+          "pron": "브아나"
         },
         {
-          "word": "אֵלֵ֣ךְ",
+          "word": "תֵלֵ֑כִי",
           "lemma": "יָלַךְ",
           "strong": "H3212",
-          "pron": "엘레크"
+          "pron": "텔레크"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
-        "psalms 139:7",
         "genesis 16:8",
-        "genesis 32:17"
+        "genesis 32:17",
+        "judges 19:17",
+        "samuel2 13:13",
+        "psalms 139:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָ֥נָה הָלְכ֖וּ",
+      "pron": "브아나 아홀레크",
+      "lemmas": [
+        "אָן",
+        "הָלַךְ"
+      ],
+      "words": [
+        {
+          "word": "אָ֥נָה",
+          "lemma": "אָן",
+          "strong": "H575",
+          "pron": "브아나"
+        },
+        {
+          "word": "הָלְכ֖וּ",
+          "lemma": "הָלַךְ",
+          "strong": "H1980",
+          "pron": "아홀레크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 2:5",
+        "samuel1 10:14",
+        "nehemiah 2:16",
+        "songofsolomon 6:1"
       ],
       "glossKo": ""
     }

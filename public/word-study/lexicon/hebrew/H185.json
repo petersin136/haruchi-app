@@ -1,8 +1,8 @@
 {
   "lemma": "אַוָּה",
-  "pron": "아바",
+  "pron": "아바트",
   "strong": "H185",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אָוָה",
     "strong": "H183",
@@ -10,27 +10,33 @@
   },
   "family": [
     {
+      "lemma": "אוֹ",
+      "strong": "H176",
+      "pron": "오",
+      "glossKo": "또는"
+    },
+    {
       "lemma": "אָוָה",
       "strong": "H183",
-      "pron": "브이테아브",
+      "pron": "히테아우우",
       "glossKo": "사모하다"
     },
     {
       "lemma": "אוֹי",
       "strong": "H188",
-      "pron": "",
+      "pron": "오이",
       "glossKo": "오호라"
     },
     {
       "lemma": "אֱוִי",
       "strong": "H189",
-      "pron": "",
+      "pron": "에비",
       "glossKo": "에위"
     },
     {
       "lemma": "אִי",
       "strong": "H339",
-      "pron": "브이임",
+      "pron": "이에",
       "glossKo": "섬"
     },
     {
@@ -42,7 +48,114 @@
   ],
   "defEn": "longing",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "deuteronomy": 4,
+    "hosea": 1,
+    "jeremiah": 1,
+    "samuel1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אַוַּ֨ת נַפְשְׁךָ֜",
+      "pron": "아바트 네페쉬",
+      "lemmas": [
+        "אַוָּה",
+        "נֶפֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "אַוַּ֨ת",
+          "lemma": "אַוָּה",
+          "strong": "H185",
+          "pron": "아바트"
+        },
+        {
+          "word": "נַפְשְׁךָ֜",
+          "lemma": "נֶפֶשׁ",
+          "strong": "H5315",
+          "pron": "네페쉬"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 12:15",
+        "deuteronomy 12:20",
+        "deuteronomy 12:21",
+        "deuteronomy 18:6",
+        "samuel1 23:20",
+        "jeremiah 2:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכָל אַוַּ֨ת",
+      "pron": "칼 아바트",
+      "lemmas": [
+        "כֹּל",
+        "אַוָּה"
+      ],
+      "words": [
+        {
+          "word": "בְּכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "אַוַּ֨ת",
+          "lemma": "אַוָּה",
+          "strong": "H185",
+          "pron": "아바트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 12:15",
+        "deuteronomy 12:20",
+        "deuteronomy 12:21",
+        "deuteronomy 18:6",
+        "samuel1 23:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכָל אַוַּ֨ת נַפְשְׁךָ֜",
+      "pron": "칼 아바트 네페쉬",
+      "lemmas": [
+        "כֹּל",
+        "אַוָּה",
+        "נֶפֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "בְּכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "אַוַּ֨ת",
+          "lemma": "אַוָּה",
+          "strong": "H185",
+          "pron": "아바트"
+        },
+        {
+          "word": "נַפְשְׁךָ֜",
+          "lemma": "נֶפֶשׁ",
+          "strong": "H5315",
+          "pron": "네페쉬"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 12:15",
+        "deuteronomy 12:20",
+        "deuteronomy 12:21",
+        "deuteronomy 18:6",
+        "samuel1 23:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

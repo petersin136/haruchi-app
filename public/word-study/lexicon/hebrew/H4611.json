@@ -1,6 +1,6 @@
 {
   "lemma": "מַעֲלָל",
-  "pron": "마알레헴",
+  "pron": "마알랄레카",
   "strong": "H4611",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "עֹל",
       "strong": "H5923",
-      "pron": "울오",
+      "pron": "울로",
       "glossKo": "그의 멍에"
     },
     {
@@ -24,33 +24,212 @@
     {
       "lemma": "עֲלִילָה",
       "strong": "H5949",
-      "pron": "알릴로타이브",
-      "glossKo": "그의 행적"
+      "pron": "알릴로트",
+      "glossKo": "행적"
     },
     {
       "lemma": "עָלַל",
       "strong": "H5953",
-      "pron": "르히테올렐",
-      "glossKo": "이삭을 줍다를 따라"
+      "pron": "히테알랄티",
+      "glossKo": "이삭을 줍다"
     },
     {
       "lemma": "עֲלַל",
       "strong": "H5954",
-      "pron": "",
+      "pron": "알",
       "glossKo": "들어가다(아람)"
     },
     {
       "lemma": "עֹלֵלָה",
       "strong": "H5955",
-      "pron": "",
+      "pron": "올로트",
       "glossKo": "이삭 줍기"
     }
   ],
   "defEn": "act",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 43,
   "byBook": {
-    "psalms": 5
+    "jeremiah": 18,
+    "hosea": 5,
+    "psalms": 5,
+    "isaiah": 3,
+    "micah": 3,
+    "zechariah": 3,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "judges": 1,
+    "nehemiah": 1,
+    "proverbs": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "רֹ֥עַ מַעַלְלֵיכֶ֖ם",
+      "pron": "라로아 마알랄레카",
+      "lemmas": [
+        "רֹעַ",
+        "מַעֲלָל"
+      ],
+      "words": [
+        {
+          "word": "רֹ֥עַ",
+          "lemma": "רֹעַ",
+          "strong": "H7455",
+          "pron": "라로아"
+        },
+        {
+          "word": "מַעַלְלֵיכֶ֖ם",
+          "lemma": "מַעֲלָל",
+          "strong": "H4611",
+          "pron": "마알랄레카"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "deuteronomy 28:20",
+        "psalms 28:4",
+        "isaiah 1:16",
+        "jeremiah 4:4",
+        "jeremiah 21:12",
+        "jeremiah 23:2",
+        "jeremiah 23:22",
+        "jeremiah 25:5",
+        "jeremiah 26:3",
+        "jeremiah 44:22",
+        "hosea 9:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דַּרְכֵּךְ֙ וּמַ֣עֲלָלַ֔יִךְ",
+      "pron": "데레크 마알랄레카",
+      "lemmas": [
+        "דֶּרֶךְ",
+        "מַעֲלָל"
+      ],
+      "words": [
+        {
+          "word": "דַּרְכֵּךְ֙",
+          "lemma": "דֶּרֶךְ",
+          "strong": "H1870",
+          "pron": "데레크"
+        },
+        {
+          "word": "וּמַ֣עֲלָלַ֔יִךְ",
+          "lemma": "מַעֲלָל",
+          "strong": "H4611",
+          "pron": "마알랄레카"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "jeremiah 4:18",
+        "jeremiah 7:3",
+        "jeremiah 18:11",
+        "jeremiah 26:13",
+        "hosea 4:9",
+        "hosea 12:2",
+        "zechariah 1:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִפְּנֵ֛י רֹ֥עַ מַֽעֲלָלֶ֖יךָ",
+      "pron": "페네 라로아 마알랄레카",
+      "lemmas": [
+        "פָּנִים",
+        "רֹעַ",
+        "מַעֲלָל"
+      ],
+      "words": [
+        {
+          "word": "מִפְּנֵ֛י",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        },
+        {
+          "word": "רֹ֥עַ",
+          "lemma": "רֹעַ",
+          "strong": "H7455",
+          "pron": "라로아"
+        },
+        {
+          "word": "מַֽעֲלָלֶ֖יךָ",
+          "lemma": "מַעֲלָל",
+          "strong": "H4611",
+          "pron": "마알랄레카"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 28:20",
+        "jeremiah 4:4",
+        "jeremiah 21:12",
+        "jeremiah 26:3",
+        "jeremiah 44:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פְרִ֥י מַעַלְלֵיהֶ֖ם",
+      "pron": "페리 마알랄레카",
+      "lemmas": [
+        "פְּרִי",
+        "מַעֲלָל"
+      ],
+      "words": [
+        {
+          "word": "פְרִ֥י",
+          "lemma": "פְּרִי",
+          "strong": "H6529",
+          "pron": "페리"
+        },
+        {
+          "word": "מַעַלְלֵיהֶ֖ם",
+          "lemma": "מַעֲלָל",
+          "strong": "H4611",
+          "pron": "마알랄레카"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "isaiah 3:10",
+        "jeremiah 17:10",
+        "jeremiah 21:14",
+        "jeremiah 32:19",
+        "micah 7:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מעלליהם מַעַלְלֵיכֶֽם",
+      "pron": "마알랄레카 마알랄레카",
+      "lemmas": [
+        "מַעֲלָל",
+        "מַעֲלָל"
+      ],
+      "words": [
+        {
+          "word": "מעלליהם",
+          "lemma": "מַעֲלָל",
+          "strong": "H4611",
+          "pron": "마알랄레카"
+        },
+        {
+          "word": "מַעַלְלֵיכֶֽם",
+          "lemma": "מַעֲלָל",
+          "strong": "H4611",
+          "pron": "마알랄레카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 21:12",
+        "zechariah 1:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

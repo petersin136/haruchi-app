@@ -12,7 +12,7 @@
     {
       "lemma": "אִיתַי",
       "strong": "H383",
-      "pron": "",
+      "pron": "이타이",
       "glossKo": "있다(아람)"
     },
     {
@@ -24,9 +24,181 @@
   ],
   "defEn": "Jishai",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 42,
   "byBook": {
+    "samuel1": 26,
+    "chronicles1": 5,
+    "ruth": 3,
+    "chronicles2": 2,
+    "isaiah": 2,
+    "samuel2": 2,
+    "kings1": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בֶּן יִשָֽׁי",
+      "pron": "바님 이샤이",
+      "lemmas": [
+        "בֵּן",
+        "יִשַׁי"
+      ],
+      "words": [
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יִשָֽׁי",
+          "lemma": "יִשַׁי",
+          "strong": "H3448",
+          "pron": "이샤이"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "samuel1 16:18",
+        "samuel1 17:13",
+        "samuel1 20:27",
+        "samuel1 20:30",
+        "samuel1 20:31",
+        "samuel1 22:7",
+        "samuel1 22:8",
+        "samuel1 22:9",
+        "samuel1 22:13",
+        "samuel1 25:10",
+        "samuel2 20:1",
+        "samuel2 23:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל יִשַׁ֣י",
+      "pron": "엘 이샤이",
+      "lemmas": [
+        "אֵל",
+        "יִשַׁי"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "יִשַׁ֣י",
+          "lemma": "יִשַׁי",
+          "strong": "H3448",
+          "pron": "이샤이"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel1 16:1",
+        "samuel1 16:10",
+        "samuel1 16:11",
+        "samuel1 16:19",
+        "samuel1 16:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דָּוִ֣ד בֶּן יִשַׁ֗י",
+      "pron": "다윗 바님 이샤이",
+      "lemmas": [
+        "דָּוִד",
+        "בֵּן",
+        "יִשַׁי"
+      ],
+      "words": [
+        {
+          "word": "דָּוִ֣ד",
+          "lemma": "דָּוִד",
+          "strong": "H1732",
+          "pron": "다윗"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יִשַׁ֗י",
+          "lemma": "יִשַׁי",
+          "strong": "H3448",
+          "pron": "이샤이"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 23:1",
+        "chronicles1 10:14",
+        "chronicles1 29:26",
+        "psalms 72:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת יִשָׁ֔י",
+      "pron": "에트 이샤이",
+      "lemmas": [
+        "אֵת",
+        "יִשַׁי"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יִשָׁ֔י",
+          "lemma": "יִשַׁי",
+          "strong": "H3448",
+          "pron": "이샤이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ruth 4:22",
+        "samuel1 16:5",
+        "chronicles1 2:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִשַׁ֣י בֵּֽית",
+      "pron": "이샤이 베트",
+      "lemmas": [
+        "יִשַׁי",
+        "בֵּית הַלַּחְמִי"
+      ],
+      "words": [
+        {
+          "word": "יִשַׁ֣י",
+          "lemma": "יִשַׁי",
+          "strong": "H3448",
+          "pron": "이샤이"
+        },
+        {
+          "word": "בֵּֽית",
+          "lemma": "בֵּית הַלַּחְמִי",
+          "strong": "H1022",
+          "pron": "베트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel1 16:1",
+        "samuel1 16:18",
+        "samuel1 17:58"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

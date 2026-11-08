@@ -1,6 +1,6 @@
 {
   "lemma": "אֶפֶס",
-  "pron": "압세",
+  "pron": "에펫",
   "strong": "H657",
   "posKo": "명사",
   "root": {
@@ -12,26 +12,42 @@
     {
       "lemma": "אָפֵס",
       "strong": "H656",
-      "pron": "헤아펫",
+      "pron": "아펫",
       "glossKo": "끝나다"
     },
     {
       "lemma": "אֶפֶס דַּמִּים",
       "strong": "H658",
-      "pron": "",
+      "pron": "브에펫",
       "glossKo": "에베스담밈"
     }
   ],
   "defEn": "cessation; an end; no further",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 44,
   "byBook": {
-    "psalms": 6
+    "isaiah": 14,
+    "psalms": 6,
+    "deuteronomy": 3,
+    "numbers": 3,
+    "proverbs": 3,
+    "amos": 2,
+    "kings2": 2,
+    "samuel2": 2,
+    "daniel": 1,
+    "ezekiel": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "judges": 1,
+    "micah": 1,
+    "samuel1": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "אַפְסֵי אָֽרֶץ",
-      "pron": "압세 에레츠",
+      "hebrew": "אַפְסֵי אָ֑רֶץ",
+      "pron": "에펫 하아레츠",
       "lemmas": [
         "אֶפֶס",
         "אֶרֶץ"
@@ -41,29 +57,35 @@
           "word": "אַפְסֵי",
           "lemma": "אֶפֶס",
           "strong": "H657",
-          "pron": "압세"
+          "pron": "에펫"
         },
         {
-          "word": "אָֽרֶץ",
+          "word": "אָ֑רֶץ",
           "lemma": "אֶרֶץ",
           "strong": "H776",
-          "pron": "에레츠"
+          "pron": "하아레츠"
         }
       ],
-      "count": 6,
+      "count": 14,
       "refs": [
+        "deuteronomy 33:17",
+        "samuel1 2:10",
         "psalms 2:8",
         "psalms 22:27",
         "psalms 59:13",
         "psalms 67:7",
         "psalms 72:8",
-        "psalms 98:3"
+        "psalms 98:3",
+        "proverbs 30:4",
+        "isaiah 45:22",
+        "isaiah 52:10",
+        "jeremiah 16:19"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "כָּל אַפְסֵי",
-      "pron": "브콜 압세",
+      "pron": "칼 에펫",
       "lemmas": [
         "כֹּל",
         "אֶפֶס"
@@ -73,26 +95,29 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
           "word": "אַפְסֵי",
           "lemma": "אֶפֶס",
           "strong": "H657",
-          "pron": "압세"
+          "pron": "에펫"
         }
       ],
-      "count": 3,
+      "count": 6,
       "refs": [
         "psalms 22:27",
         "psalms 67:7",
-        "psalms 98:3"
+        "psalms 98:3",
+        "proverbs 30:4",
+        "isaiah 45:22",
+        "isaiah 52:10"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "כָּל אַפְסֵי אָ֑רֶץ",
-      "pron": "브콜 압세 에레츠",
+      "pron": "칼 에펫 하아레츠",
       "lemmas": [
         "כֹּל",
         "אֶפֶס",
@@ -103,26 +128,90 @@
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
           "word": "אַפְסֵי",
           "lemma": "אֶפֶס",
           "strong": "H657",
-          "pron": "압세"
+          "pron": "에펫"
         },
         {
           "word": "אָ֑רֶץ",
           "lemma": "אֶרֶץ",
           "strong": "H776",
-          "pron": "에레츠"
+          "pron": "하아레츠"
         }
       ],
-      "count": 3,
+      "count": 6,
       "refs": [
         "psalms 22:27",
         "psalms 67:7",
-        "psalms 98:3"
+        "psalms 98:3",
+        "proverbs 30:4",
+        "isaiah 45:22",
+        "isaiah 52:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֚פֶס כִּֽי",
+      "pron": "에펫 키",
+      "lemmas": [
+        "אֶפֶס",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "אֶ֚פֶס",
+          "lemma": "אֶפֶס",
+          "strong": "H657",
+          "pron": "에펫"
+        },
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 13:28",
+        "deuteronomy 15:4",
+        "judges 4:9",
+        "samuel2 12:14",
+        "amos 9:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאַפְסִ֣י ע֑וֹד",
+      "pron": "에펫 옫",
+      "lemmas": [
+        "אֶפֶס",
+        "עוֹד"
+      ],
+      "words": [
+        {
+          "word": "וְאַפְסִ֣י",
+          "lemma": "אֶפֶס",
+          "strong": "H657",
+          "pron": "에펫"
+        },
+        {
+          "word": "ע֑וֹד",
+          "lemma": "עוֹד",
+          "strong": "H5750",
+          "pron": "옫"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 9:3",
+        "isaiah 47:8",
+        "isaiah 47:10",
+        "zephaniah 2:15"
       ],
       "glossKo": ""
     }

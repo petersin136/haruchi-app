@@ -1593,6 +1593,11 @@ html[data-study-spread="1"] .brp-page .brp-reader {
   max-width: none !important;
 }
 
+/* 큰 책 제목(히어로) 숨김 — 스프레드 상태줄만 */
+html[data-study-spread="1"] .brp-reader-hero {
+  display: none !important;
+}
+
 html[data-study-spread="1"] .brp-tabbar {
   display: none !important;
 }
@@ -1622,11 +1627,14 @@ html[data-study-spread="1"] .brp-tabbar {
   padding: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .study-spread-bar {
   flex-shrink: 0;
-  padding: 8px 16px 6px;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 8px 16px 4px;
   text-align: center;
   font-size: 12px;
   font-weight: 500;
@@ -1636,35 +1644,34 @@ html[data-study-spread="1"] .brp-tabbar {
   text-box-edge: cap alphabetic;
 }
 
-.study-spread-viewport {
+/* 펼침 상자 — 높이·폭은 JS style(px) */
+.study-spread.spread {
   position: relative;
-  flex: 1;
-  min-height: 0;
-  margin: 0 auto 12px;
-  width: min(1120px, calc(100% - 24px));
+  flex-shrink: 0;
+  margin: 0 auto;
   background: #fbf7ee;
-  box-shadow: 0 2px 18px rgba(40, 30, 20, 0.07);
+  box-shadow: 0 2px 16px rgba(40, 30, 20, 0.06);
   overflow: hidden;
   touch-action: pan-y;
-  border-radius: 2px;
 }
 
+/* 접힘선: 가운데 여백(48px) 안에만 — 글자 위 금지 */
 .study-spread-fold {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
   z-index: 3;
-  width: 24px;
-  transform: translateX(-50%);
+  width: 48px;
+  margin-left: -24px;
   pointer-events: none;
   background: linear-gradient(
     90deg,
-    rgba(40, 28, 16, 0.1) 0%,
-    rgba(40, 28, 16, 0.02) 45%,
-    rgba(255, 255, 255, 0.35) 50%,
-    rgba(40, 28, 16, 0.02) 55%,
-    rgba(40, 28, 16, 0.1) 100%
+    rgba(40, 28, 16, 0.09) 0%,
+    rgba(40, 28, 16, 0.02) 40%,
+    rgba(255, 255, 255, 0.28) 50%,
+    rgba(40, 28, 16, 0.02) 60%,
+    rgba(40, 28, 16, 0.09) 100%
   );
 }
 
@@ -1678,46 +1685,63 @@ html[data-study-spread="1"] .brp-tabbar {
   transition: none;
 }
 
-.study-root.is-spread .study-page {
-  height: 100%;
+/* 안쪽 흐름 — column-width/gap/height 는 JS가 px로 지정 */
+.study-root.is-spread .study-page.study-spread-flow {
   margin: 0;
-  padding: 20px 22px 36px;
   box-sizing: border-box;
-  column-width: var(--study-page-w, 320px);
-  column-gap: var(--study-spread-gap, 48px);
   column-fill: auto;
   overflow: visible;
   background: #fbf7ee;
+  /* width/minWidth/height/columnWidth/columnGap/padding → inline */
+}
+
+.study-root.is-spread .study-drop,
+.study-root.is-spread .study-chapter-title {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
 }
 
 .study-root.is-spread .study-body {
-  /* 컬럼 안에서 절 흐름 유지 */
   min-height: 0;
 }
 
 .study-root.is-spread .study-note-layer {
-  /* 컬럼 좌표계 — 메모가 페이지 밖으로 잘리지 않게 레이어는 본문과 함께 흐름 */
   overflow: visible;
 }
 
+.study-spread-pgnum-row {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: var(--study-spread-w, 100%);
+  max-width: 100%;
+  height: 28px;
+  box-sizing: border-box;
+  padding: 0 8px;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
 .study-spread-pgnum {
-  position: absolute;
-  bottom: 10px;
-  z-index: 4;
   font-size: 11px;
   font-variant-numeric: tabular-nums;
   color: #9a8f82;
-  pointer-events: none;
   text-box-trim: trim-both;
   text-box-edge: text alphabetic;
 }
 
 .study-spread-pgnum.is-left {
-  left: 14px;
+  margin-left: 12px;
 }
 
 .study-spread-pgnum.is-right {
-  right: 14px;
+  margin-right: 12px;
+}
+
+.study-spread-pgnum.is-blank {
+  visibility: hidden;
 }
 
 .study-spread-edge {

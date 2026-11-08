@@ -1,6 +1,6 @@
 {
   "lemma": "מִישׁוֹר",
-  "pron": "브미쇼르",
+  "pron": "아미쇼르",
   "strong": "H4334",
   "posKo": "명사",
   "root": {
@@ -12,45 +12,83 @@
     {
       "lemma": "יָשַׁר",
       "strong": "H3474",
-      "pron": "흐븟르",
+      "pron": "이샤르",
       "glossKo": "곧다"
     },
     {
       "lemma": "יֵשֶׁר",
       "strong": "H3475",
-      "pron": "",
+      "pron": "예셰르",
       "glossKo": "예셀"
     },
     {
       "lemma": "יֹשֶׁר",
       "strong": "H3476",
-      "pron": "바요셰르",
+      "pron": "우브요셰르",
       "glossKo": "정직"
     },
     {
       "lemma": "יָשָׁר",
       "strong": "H3477",
-      "pron": "이셰레",
+      "pron": "브아야샤르",
       "glossKo": "옳은"
     },
     {
       "lemma": "יְשֻׁרוּן",
       "strong": "H3484",
-      "pron": "",
+      "pron": "예슈룬",
       "glossKo": "여수룬"
     },
     {
       "lemma": "מֵישָׁר",
       "strong": "H4339",
-      "pron": "브메샤림",
+      "pron": "우메샤림",
       "glossKo": "정직"
     }
   ],
   "defEn": "level; plain; concord",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 23,
   "byBook": {
-    "psalms": 5
+    "joshua": 5,
+    "psalms": 5,
+    "isaiah": 3,
+    "jeremiah": 3,
+    "deuteronomy": 2,
+    "kings1": 2,
+    "chronicles2": 1,
+    "malachi": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּאֶ֥רֶץ הַמִּישֹׁ֖ר",
+      "pron": "하아레츠 아미쇼르",
+      "lemmas": [
+        "אֶרֶץ",
+        "מִישׁוֹר"
+      ],
+      "words": [
+        {
+          "word": "בְּאֶ֥רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "הַמִּישֹׁ֖ר",
+          "lemma": "מִישׁוֹר",
+          "strong": "H4334",
+          "pron": "아미쇼르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 4:43",
+        "psalms 143:10",
+        "jeremiah 48:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

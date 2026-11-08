@@ -1,6 +1,6 @@
 {
   "lemma": "בֶּגֶד",
-  "pron": "베가다위",
+  "pron": "우베가딤",
   "strong": "H899",
   "posKo": "명사",
   "root": {
@@ -12,63 +12,56 @@
     {
       "lemma": "בָּגַד",
       "strong": "H898",
-      "pron": "아복딤",
-      "glossKo": "신실치 못하게 행하는 이"
+      "pron": "베빅도",
+      "glossKo": "그에게 신실치 못하게 행하다"
     },
     {
       "lemma": "בֹּגְדוֹת",
       "strong": "H900",
-      "pron": "",
+      "pron": "복도트",
       "glossKo": "배반들"
     },
     {
       "lemma": "בָּגוֹד",
       "strong": "H901",
-      "pron": "",
+      "pron": "바고다",
       "glossKo": "배신자"
     }
   ],
   "defEn": "covering; clothing",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 218,
   "byBook": {
+    "leviticus": 55,
+    "exodus": 23,
+    "kings2": 20,
+    "numbers": 20,
+    "ezekiel": 14,
     "genesis": 14,
-    "psalms": 4
+    "isaiah": 14,
+    "samuel2": 9,
+    "chronicles2": 6,
+    "jeremiah": 5,
+    "judges": 5,
+    "kings1": 4,
+    "proverbs": 4,
+    "psalms": 4,
+    "samuel1": 4,
+    "zechariah": 4,
+    "job": 3,
+    "esther": 2,
+    "ezra": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "haggai": 1,
+    "joel": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
-      "hebrew": "וַיַּעֲזֹ֤ב בִּגְדוֹ֙",
-      "pron": "아잡타 베가다위",
-      "lemmas": [
-        "עָזַב",
-        "בֶּגֶד"
-      ],
-      "words": [
-        {
-          "word": "וַיַּעֲזֹ֤ב",
-          "lemma": "עָזַב",
-          "strong": "H5800",
-          "pron": "아잡타"
-        },
-        {
-          "word": "בִּגְדוֹ֙",
-          "lemma": "בֶּגֶד",
-          "strong": "H899",
-          "pron": "베가다위"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 39:12",
-        "genesis 39:13",
-        "genesis 39:15",
-        "genesis 39:18"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֶת בִּגְדֵ֨י",
-      "pron": "에트 베가다위",
+      "hebrew": "אֶת בְּגָדָ֔יו",
+      "pron": "에트 우베가딤",
       "lemmas": [
         "אֵת",
         "בֶּגֶד"
@@ -81,46 +74,185 @@
           "pron": "에트"
         },
         {
-          "word": "בִּגְדֵ֨י",
+          "word": "בְּגָדָ֔יו",
           "lemma": "בֶּגֶד",
           "strong": "H899",
-          "pron": "베가다위"
+          "pron": "우베가딤"
         }
       ],
-      "count": 3,
+      "count": 55,
       "refs": [
         "genesis 27:15",
         "genesis 37:29",
-        "genesis 41:42"
+        "genesis 41:42",
+        "exodus 28:3",
+        "exodus 29:5",
+        "exodus 31:10",
+        "exodus 35:19",
+        "exodus 39:1",
+        "exodus 39:41",
+        "leviticus 6:11",
+        "leviticus 8:2",
+        "leviticus 8:30"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בִּגְדוֹ֙ אֶצְלִ֔י",
-      "pron": "베가다위 에첼라흐",
+      "hebrew": "יְכַבֵּ֧ס בְּגָדָ֛יו",
+      "pron": "킵벳 우베가딤",
       "lemmas": [
-        "בֶּגֶד",
-        "אֵצֶל"
+        "כָּבַס",
+        "בֶּגֶד"
       ],
       "words": [
         {
-          "word": "בִּגְדוֹ֙",
-          "lemma": "בֶּגֶד",
-          "strong": "H899",
-          "pron": "베가다위"
+          "word": "יְכַבֵּ֧ס",
+          "lemma": "כָּבַס",
+          "strong": "H3526",
+          "pron": "킵벳"
         },
         {
-          "word": "אֶצְלִ֔י",
-          "lemma": "אֵצֶל",
-          "strong": "H681",
-          "pron": "에첼라흐"
+          "word": "בְּגָדָ֛יו",
+          "lemma": "בֶּגֶד",
+          "strong": "H899",
+          "pron": "우베가딤"
         }
       ],
-      "count": 3,
+      "count": 26,
       "refs": [
-        "genesis 39:15",
-        "genesis 39:16",
-        "genesis 39:18"
+        "leviticus 11:25",
+        "leviticus 11:28",
+        "leviticus 11:40",
+        "leviticus 13:6",
+        "leviticus 13:34",
+        "leviticus 15:5",
+        "leviticus 15:6",
+        "leviticus 15:7",
+        "leviticus 15:8",
+        "leviticus 15:10",
+        "leviticus 15:11",
+        "leviticus 15:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּגָדָ֛יו וְרָחַ֥ץ",
+      "pron": "우베가딤 브라하추",
+      "lemmas": [
+        "בֶּגֶד",
+        "רָחַץ"
+      ],
+      "words": [
+        {
+          "word": "בְּגָדָ֛יו",
+          "lemma": "בֶּגֶד",
+          "strong": "H899",
+          "pron": "우베가딤"
+        },
+        {
+          "word": "וְרָחַ֥ץ",
+          "lemma": "רָחַץ",
+          "strong": "H7364",
+          "pron": "브라하추"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "leviticus 14:9",
+        "leviticus 15:5",
+        "leviticus 15:6",
+        "leviticus 15:7",
+        "leviticus 15:8",
+        "leviticus 15:10",
+        "leviticus 15:11",
+        "leviticus 15:13",
+        "leviticus 15:21",
+        "leviticus 15:22",
+        "leviticus 15:27",
+        "leviticus 16:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְכַבֵּ֧ס בְּגָדָ֛יו וְרָחַ֥ץ",
+      "pron": "킵벳 우베가딤 브라하추",
+      "lemmas": [
+        "כָּבַס",
+        "בֶּגֶד",
+        "רָחַץ"
+      ],
+      "words": [
+        {
+          "word": "יְכַבֵּ֧ס",
+          "lemma": "כָּבַס",
+          "strong": "H3526",
+          "pron": "킵벳"
+        },
+        {
+          "word": "בְּגָדָ֛יו",
+          "lemma": "בֶּגֶד",
+          "strong": "H899",
+          "pron": "우베가딤"
+        },
+        {
+          "word": "וְרָחַ֥ץ",
+          "lemma": "רָחַץ",
+          "strong": "H7364",
+          "pron": "브라하추"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "leviticus 15:5",
+        "leviticus 15:6",
+        "leviticus 15:7",
+        "leviticus 15:8",
+        "leviticus 15:10",
+        "leviticus 15:11",
+        "leviticus 15:13",
+        "leviticus 15:21",
+        "leviticus 15:22",
+        "leviticus 15:27",
+        "leviticus 16:26",
+        "leviticus 16:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְלֻבָּשִׁ֤ים בְּגָדִים֙",
+      "pron": "바알비솀 우베가딤",
+      "lemmas": [
+        "לָבַשׁ",
+        "בֶּגֶד"
+      ],
+      "words": [
+        {
+          "word": "מְלֻבָּשִׁ֤ים",
+          "lemma": "לָבַשׁ",
+          "strong": "H3847",
+          "pron": "바알비솀"
+        },
+        {
+          "word": "בְּגָדִים֙",
+          "lemma": "בֶּגֶד",
+          "strong": "H899",
+          "pron": "우베가딤"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "genesis 38:19",
+        "leviticus 6:11",
+        "samuel1 28:8",
+        "kings1 22:10",
+        "kings1 22:30",
+        "chronicles2 18:9",
+        "chronicles2 18:29",
+        "isaiah 52:1",
+        "isaiah 59:17",
+        "isaiah 61:10",
+        "ezekiel 42:14",
+        "ezekiel 44:19"
       ],
       "glossKo": ""
     }

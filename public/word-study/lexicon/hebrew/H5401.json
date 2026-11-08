@@ -1,6 +1,6 @@
 {
   "lemma": "נָשַׁק",
-  "pron": "낫셰쿠",
+  "pron": "우셰카",
   "strong": "H5401",
   "posKo": "동사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "נְשִׁיקָה",
       "strong": "H5390",
-      "pron": "",
+      "pron": "네시코트",
       "glossKo": "입맞춤"
     },
     {
@@ -24,21 +24,33 @@
     {
       "lemma": "נֶשֶׁק",
       "strong": "H5402",
-      "pron": "나셰크",
+      "pron": "브네셰크",
       "glossKo": "무기"
     }
   ],
   "defEn": "kiss; touch",
   "defKo": "",
-  "countOT": 14,
+  "countOT": 35,
   "byBook": {
     "genesis": 11,
-    "psalms": 3
+    "samuel2": 4,
+    "psalms": 3,
+    "exodus": 2,
+    "kings1": 2,
+    "proverbs": 2,
+    "ruth": 2,
+    "samuel1": 2,
+    "songofsolomon": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "ezekiel": 1,
+    "hosea": 1,
+    "job": 1
   },
   "phrases": [
     {
       "hebrew": "וּשְׁקָה בְּנִֽי",
-      "pron": "낫셰쿠 베니위",
+      "pron": "우셰카 바님",
       "lemmas": [
         "נָשַׁק",
         "בֵּן"
@@ -48,13 +60,13 @@
           "word": "וּשְׁקָה",
           "lemma": "נָשַׁק",
           "strong": "H5401",
-          "pron": "낫셰쿠"
+          "pron": "우셰카"
         },
         {
           "word": "בְּנִֽי",
           "lemma": "בֵּן",
           "strong": "H1121",
-          "pron": "베니위"
+          "pron": "바님"
         }
       ],
       "count": 3,

@@ -1,6 +1,6 @@
 {
   "lemma": "מוֹסָדָה",
-  "pron": "우못데",
+  "pron": "못데",
   "strong": "H4146",
   "posKo": "명사",
   "root": {
@@ -18,9 +18,45 @@
   ],
   "defEn": "foundation",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 11,
   "byBook": {
-    "psalms": 2
+    "isaiah": 3,
+    "jeremiah": 2,
+    "psalms": 2,
+    "samuel2": 2,
+    "deuteronomy": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מ֥וֹסְדֵי אָֽרֶץ",
+      "pron": "못데 하아레츠",
+      "lemmas": [
+        "מוֹסָדָה",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "מ֥וֹסְדֵי",
+          "lemma": "מוֹסָדָה",
+          "strong": "H4146",
+          "pron": "못데"
+        },
+        {
+          "word": "אָֽרֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 24:18",
+        "isaiah 40:21",
+        "jeremiah 31:37",
+        "micah 6:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

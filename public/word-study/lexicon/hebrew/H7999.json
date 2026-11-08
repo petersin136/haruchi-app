@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁלַם",
-  "pron": "숄미위",
+  "pron": "실람템",
   "strong": "H7999",
   "posKo": "동사",
   "root": null,
@@ -8,31 +8,31 @@
     {
       "lemma": "מְשֻׁלָּם",
       "strong": "H4918",
-      "pron": "",
+      "pron": "메슐람",
       "glossKo": "므술람"
     },
     {
       "lemma": "מְשִׁלֵּמוֹת",
       "strong": "H4919",
-      "pron": "",
+      "pron": "메실레모트",
       "glossKo": "므실레못"
     },
     {
       "lemma": "מְשֶׁלֶמְיָה",
       "strong": "H4920",
-      "pron": "",
+      "pron": "메셸렘아",
       "glossKo": "므셀레먀"
     },
     {
       "lemma": "מְשִׁלֵּמִית",
       "strong": "H4921",
-      "pron": "",
+      "pron": "메실레미트",
       "glossKo": "므실레밋"
     },
     {
       "lemma": "שׁוּלַמִּית",
       "strong": "H7759",
-      "pron": "",
+      "pron": "아슐람미트",
       "glossKo": "술람미 여인"
     },
     {
@@ -44,110 +44,70 @@
   ],
   "defEn": "be safe; be; make; completed",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 116,
   "byBook": {
+    "exodus": 18,
     "psalms": 17,
-    "genesis": 1
+    "isaiah": 13,
+    "job": 11,
+    "proverbs": 10,
+    "jeremiah": 9,
+    "deuteronomy": 5,
+    "samuel2": 5,
+    "leviticus": 4,
+    "ecclesiastes": 3,
+    "joshua": 3,
+    "kings1": 3,
+    "joel": 2,
+    "kings2": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "ezekiel": 1,
+    "genesis": 1,
+    "hosea": 1,
+    "jonah": 1,
+    "judges": 1,
+    "nahum": 1,
+    "nehemiah": 1,
+    "ruth": 1,
+    "samuel1": 1
   },
   "phrases": [
     {
-      "hebrew": "שֽׁוֹלְמִ֥י רָ֑ע",
-      "pron": "숄미위 라",
+      "hebrew": "שַׁלֵּ֣ם יְשַׁלֵּ֔ם",
+      "pron": "실람템 실람템",
       "lemmas": [
         "שָׁלַם",
-        "רַע"
+        "שָׁלַם"
       ],
       "words": [
         {
-          "word": "שֽׁוֹלְמִ֥י",
+          "word": "שַׁלֵּ֣ם",
           "lemma": "שָׁלַם",
           "strong": "H7999",
-          "pron": "숄미위"
+          "pron": "실람템"
         },
         {
-          "word": "רָ֑ע",
-          "lemma": "רַע",
-          "strong": "H7451",
-          "pron": "라"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 7:4",
-        "psalms 35:12",
-        "psalms 38:20",
-        "genesis 44:4"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֲשַׁלֵּ֑ם נֶגְדָה",
-      "pron": "숄미위 미넥드오",
-      "lemmas": [
-        "שָׁלַם",
-        "נֶגֶד"
-      ],
-      "words": [
-        {
-          "word": "אֲשַׁלֵּ֑ם",
+          "word": "יְשַׁלֵּ֔ם",
           "lemma": "שָׁלַם",
           "strong": "H7999",
-          "pron": "숄미위"
-        },
-        {
-          "word": "נֶגְדָה",
-          "lemma": "נֶגֶד",
-          "strong": "H5048",
-          "pron": "미넥드오"
+          "pron": "실람템"
         }
       ],
-      "count": 3,
+      "count": 12,
       "refs": [
-        "psalms 22:25",
-        "psalms 116:14",
-        "psalms 116:18"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יְשַׁלְּמ֣וּנִי רָ֭עָה תַּ֥חַת",
-      "pron": "숄미위 라 타하트",
-      "lemmas": [
-        "שָׁלַם",
-        "רַע",
-        "תַּחַת"
-      ],
-      "words": [
-        {
-          "word": "יְשַׁלְּמ֣וּנִי",
-          "lemma": "שָׁלַם",
-          "strong": "H7999",
-          "pron": "숄미위"
-        },
-        {
-          "word": "רָ֭עָה",
-          "lemma": "רַע",
-          "strong": "H7451",
-          "pron": "라"
-        },
-        {
-          "word": "תַּ֥חַת",
-          "lemma": "תַּחַת",
-          "strong": "H8478",
-          "pron": "타하트"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 35:12",
-        "psalms 38:20",
-        "genesis 44:4"
+        "exodus 21:36",
+        "exodus 22:3",
+        "exodus 22:6",
+        "exodus 22:14",
+        "isaiah 65:6",
+        "jeremiah 51:56"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "לַיהוָ֣ה אֲשַׁלֵּ֑ם",
-      "pron": "여호와 숄미위",
+      "pron": "여호와 실람템",
       "lemmas": [
         "יְהֹוָה",
         "שָׁלַם"
@@ -163,20 +123,92 @@
           "word": "אֲשַׁלֵּ֑ם",
           "lemma": "שָׁלַם",
           "strong": "H7999",
-          "pron": "숄미위"
+          "pron": "실람템"
         }
       ],
-      "count": 3,
+      "count": 10,
       "refs": [
+        "samuel1 24:19",
+        "kings1 9:25",
+        "kings2 9:26",
         "psalms 31:23",
         "psalms 116:14",
-        "psalms 116:18"
+        "psalms 116:18",
+        "proverbs 25:22",
+        "isaiah 19:21",
+        "isaiah 66:6",
+        "jeremiah 51:56"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְשַׁלֵּ֗ם וְאֶת",
+      "pron": "실람템 에트",
+      "lemmas": [
+        "שָׁלַם",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "יְשַׁלֵּ֗ם",
+          "lemma": "שָׁלַם",
+          "strong": "H7999",
+          "pron": "실람템"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 5:16",
+        "leviticus 6:5",
+        "samuel2 15:7",
+        "kings1 9:25",
+        "kings2 4:7",
+        "psalms 137:8",
+        "joel 2:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֥א יְשַׁלֵּֽם",
+      "pron": "로 실람템",
+      "lemmas": [
+        "לֹא",
+        "שָׁלַם"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יְשַׁלֵּֽם",
+          "lemma": "שָׁלַם",
+          "strong": "H7999",
+          "pron": "실람템"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 22:11",
+        "exodus 22:13",
+        "exodus 22:15",
+        "deuteronomy 20:12",
+        "psalms 37:21",
+        "ecclesiastes 5:5"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "לְֽשַׁלְּמִ֥י נְדָרַ֗י",
-      "pron": "숄미위 네다라위",
+      "pron": "실람템 네데르",
       "lemmas": [
         "שָׁלַם",
         "נֶדֶר"
@@ -186,20 +218,22 @@
           "word": "לְֽשַׁלְּמִ֥י",
           "lemma": "שָׁלַם",
           "strong": "H7999",
-          "pron": "숄미위"
+          "pron": "실람템"
         },
         {
           "word": "נְדָרַ֗י",
           "lemma": "נֶדֶר",
           "strong": "H5088",
-          "pron": "네다라위"
+          "pron": "네데르"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
         "psalms 61:8",
         "psalms 65:1",
-        "psalms 66:13"
+        "psalms 66:13",
+        "proverbs 7:14",
+        "nahum 1:15"
       ],
       "glossKo": ""
     }

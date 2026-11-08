@@ -14,15 +14,200 @@
     {
       "lemma": "סְלִיחָה",
       "strong": "H5547",
-      "pron": "아셀리하",
+      "pron": "셀리호트",
       "glossKo": "사죄"
     }
   ],
   "defEn": "forgive",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 47,
   "byBook": {
-    "psalms": 2
+    "leviticus": 10,
+    "numbers": 8,
+    "jeremiah": 7,
+    "chronicles2": 6,
+    "kings1": 5,
+    "kings2": 3,
+    "psalms": 2,
+    "amos": 1,
+    "daniel": 1,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "isaiah": 1,
+    "lamentations": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיהוָ֖ה יִֽסְלַֽח",
+      "pron": "여호와 브살라헷타",
+      "lemmas": [
+        "יְהֹוָה",
+        "סָלַח"
+      ],
+      "words": [
+        {
+          "word": "וַיהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "יִֽסְלַֽח",
+          "lemma": "סָלַח",
+          "strong": "H5545",
+          "pron": "브살라헷타"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "leviticus 6:7",
+        "numbers 14:20",
+        "numbers 30:5",
+        "numbers 30:8",
+        "numbers 30:12",
+        "deuteronomy 29:20",
+        "kings2 24:4",
+        "psalms 25:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְסָ֣לַחְתָּ֔ לְחַטַּ֖את",
+      "pron": "브살라헷타 핟다트",
+      "lemmas": [
+        "סָלַח",
+        "חַטָּאָה"
+      ],
+      "words": [
+        {
+          "word": "וְסָ֣לַחְתָּ֔",
+          "lemma": "סָלַח",
+          "strong": "H5545",
+          "pron": "브살라헷타"
+        },
+        {
+          "word": "לְחַטַּ֖את",
+          "lemma": "חַטָּאָה",
+          "strong": "H2403",
+          "pron": "핟다트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "leviticus 19:22",
+        "kings1 8:34",
+        "kings1 8:36",
+        "chronicles2 6:25",
+        "chronicles2 6:27",
+        "chronicles2 7:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשָּׁמַ֔יִם וְסָ֣לַחְתָּ֔",
+      "pron": "샤마임 브살라헷타",
+      "lemmas": [
+        "שָׁמַיִם",
+        "סָלַח"
+      ],
+      "words": [
+        {
+          "word": "הַשָּׁמַ֔יִם",
+          "lemma": "שָׁמַיִם",
+          "strong": "H8064",
+          "pron": "샤마임"
+        },
+        {
+          "word": "וְסָ֣לַחְתָּ֔",
+          "lemma": "סָלַח",
+          "strong": "H5545",
+          "pron": "브살라헷타"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 8:34",
+        "kings1 8:36",
+        "chronicles2 6:25",
+        "chronicles2 6:27",
+        "chronicles2 7:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשָּׁמַ֔יִם וְסָ֣לַחְתָּ֔ לְחַטַּ֖את",
+      "pron": "샤마임 브살라헷타 핟다트",
+      "lemmas": [
+        "שָׁמַיִם",
+        "סָלַח",
+        "חַטָּאָה"
+      ],
+      "words": [
+        {
+          "word": "הַשָּׁמַ֔יִם",
+          "lemma": "שָׁמַיִם",
+          "strong": "H8064",
+          "pron": "샤마임"
+        },
+        {
+          "word": "וְסָ֣לַחְתָּ֔",
+          "lemma": "סָלַח",
+          "strong": "H5545",
+          "pron": "브살라헷타"
+        },
+        {
+          "word": "לְחַטַּ֖את",
+          "lemma": "חַטָּאָה",
+          "strong": "H2403",
+          "pron": "핟다트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 8:34",
+        "kings1 8:36",
+        "chronicles2 6:25",
+        "chronicles2 6:27",
+        "chronicles2 7:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר חָטָ֖א וְנִסְלַ֥ח",
+      "pron": "아셰르 메하도 브살라헷타",
+      "lemmas": [
+        "אֲשֶׁר",
+        "חָטָא",
+        "סָלַח"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "חָטָ֖א",
+          "lemma": "חָטָא",
+          "strong": "H2398",
+          "pron": "메하도"
+        },
+        {
+          "word": "וְנִסְלַ֥ח",
+          "lemma": "סָלַח",
+          "strong": "H5545",
+          "pron": "브살라헷타"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 4:35",
+        "leviticus 5:10",
+        "leviticus 19:22",
+        "jeremiah 33:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

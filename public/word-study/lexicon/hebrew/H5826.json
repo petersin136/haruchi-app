@@ -1,6 +1,6 @@
 {
   "lemma": "עָזַר",
-  "pron": "오제르",
+  "pron": "베아엣렉카",
   "strong": "H5826",
   "posKo": "동사",
   "root": null,
@@ -8,103 +8,216 @@
     {
       "lemma": "יַעֲזֵיר",
       "strong": "H3270",
-      "pron": "",
+      "pron": "야에제르",
       "glossKo": "야셀"
     },
     {
       "lemma": "עַזּוּר",
       "strong": "H5809",
-      "pron": "",
+      "pron": "앗주르",
       "glossKo": "앗술"
     },
     {
       "lemma": "עֶזֶר",
       "strong": "H5827",
-      "pron": "",
+      "pron": "브에제르",
       "glossKo": "에셀"
     },
     {
       "lemma": "עֵזֶר",
       "strong": "H5828",
-      "pron": "엣르카",
-      "glossKo": "너의 도움"
+      "pron": "에제르",
+      "glossKo": "도움"
     },
     {
       "lemma": "עֲזַרְאֵל",
       "strong": "H5832",
-      "pron": "",
+      "pron": "바아자레엘",
       "glossKo": "아사렐"
     },
     {
       "lemma": "עֲזָרָה",
       "strong": "H5835",
-      "pron": "",
+      "pron": "브하아자라",
       "glossKo": "뜰"
     }
   ],
   "defEn": "surround; protect; aid",
   "defKo": "",
-  "countOT": 18,
+  "countOT": 82,
   "byBook": {
     "psalms": 17,
-    "genesis": 1
+    "chronicles2": 14,
+    "isaiah": 12,
+    "chronicles1": 11,
+    "job": 4,
+    "joshua": 4,
+    "samuel2": 4,
+    "daniel": 3,
+    "ezekiel": 2,
+    "ezra": 2,
+    "kings1": 2,
+    "deuteronomy": 1,
+    "genesis": 1,
+    "jeremiah": 1,
+    "kings2": 1,
+    "lamentations": 1,
+    "samuel1": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "אֵ֥ין עוֹזֵֽר",
-      "pron": "엔 오제르",
+      "hebrew": "וְאֵ֥ין עֹזֵ֖ר",
+      "pron": "아인 베아엣렉카",
       "lemmas": [
         "אַיִן",
         "עָזַר"
       ],
       "words": [
         {
-          "word": "אֵ֥ין",
+          "word": "וְאֵ֥ין",
           "lemma": "אַיִן",
           "strong": "H369",
-          "pron": "엔"
+          "pron": "아인"
         },
         {
-          "word": "עוֹזֵֽר",
+          "word": "עֹזֵ֖ר",
           "lemma": "עָזַר",
           "strong": "H5826",
-          "pron": "오제르"
+          "pron": "베아엣렉카"
         }
       ],
-      "count": 3,
+      "count": 7,
       "refs": [
+        "kings2 14:26",
         "psalms 22:11",
         "psalms 72:12",
-        "psalms 107:12"
+        "psalms 107:12",
+        "isaiah 63:5",
+        "lamentations 1:7",
+        "daniel 11:45"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "יְ֝הוָ֗ה עֲזַרְתַּ֥נִי",
-      "pron": "여호와 오제르",
+      "hebrew": "וְעָזְרֵ֔נוּ כִּ֚י",
+      "pron": "베아엣렉카 키",
+      "lemmas": [
+        "עָזַר",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "וְעָזְרֵ֔נוּ",
+          "lemma": "עָזַר",
+          "strong": "H5826",
+          "pron": "베아엣렉카"
+        },
+        {
+          "word": "כִּ֚י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "joshua 10:6",
+        "chronicles1 12:18",
+        "chronicles1 12:19",
+        "psalms 119:173",
+        "jeremiah 47:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲזָרְךָ֖ אֱלֹהֶ֑יךָ",
+      "pron": "베아엣렉카 엘로힘",
+      "lemmas": [
+        "עָזַר",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "עֲזָרְךָ֖",
+          "lemma": "עָזַר",
+          "strong": "H5826",
+          "pron": "베아엣렉카"
+        },
+        {
+          "word": "אֱלֹהֶ֑יךָ",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "chronicles1 12:18",
+        "chronicles1 15:26",
+        "chronicles2 26:7",
+        "psalms 46:5",
+        "psalms 79:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽיהוָ֣ה עֲזָר֔וֹ",
+      "pron": "여호와 베아엣렉카",
       "lemmas": [
         "יְהֹוָה",
         "עָזַר"
       ],
       "words": [
         {
-          "word": "יְ֝הוָ֗ה",
+          "word": "וַֽיהוָ֣ה",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         },
         {
-          "word": "עֲזַרְתַּ֥נִי",
+          "word": "עֲזָר֔וֹ",
           "lemma": "עָזַר",
           "strong": "H5826",
-          "pron": "오제르"
+          "pron": "베아엣렉카"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
+        "chronicles2 18:31",
         "psalms 86:17",
         "psalms 118:7",
         "psalms 118:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַעֲזַרְתֶּ֖ם אוֹתָֽם",
+      "pron": "베아엣렉카 에트",
+      "lemmas": [
+        "עָזַר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַעֲזַרְתֶּ֖ם",
+          "lemma": "עָזַר",
+          "strong": "H5826",
+          "pron": "베아엣렉카"
+        },
+        {
+          "word": "אוֹתָֽם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 1:14",
+        "joshua 10:33",
+        "kings1 20:16",
+        "chronicles2 28:23"
       ],
       "glossKo": ""
     }

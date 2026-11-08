@@ -1,6 +1,6 @@
 {
   "lemma": "אִמְרָה",
-  "pron": "이마로트",
+  "pron": "임라티",
   "strong": "H565",
   "posKo": "명사",
   "root": {
@@ -12,8 +12,8 @@
     {
       "lemma": "אֵמֶר",
       "strong": "H561",
-      "pron": "아마라위",
-      "glossKo": "나의 말"
+      "pron": "임레",
+      "glossKo": "말"
     },
     {
       "lemma": "אֹמֶר",
@@ -24,35 +24,41 @@
   ],
   "defEn": "commandment, speech, word.",
   "defKo": "",
-  "countOT": 27,
+  "countOT": 37,
   "byBook": {
     "psalms": 26,
-    "genesis": 1
+    "isaiah": 5,
+    "deuteronomy": 2,
+    "genesis": 1,
+    "lamentations": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "אִֽמֲר֣וֹת יְהוָה֮",
-      "pron": "이마로트 여호와",
+      "hebrew": "אִמְרַ֤ת יְהוָה֙",
+      "pron": "임라티 여호와",
       "lemmas": [
         "אִמְרָה",
         "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "אִֽמֲר֣וֹת",
+          "word": "אִמְרַ֤ת",
           "lemma": "אִמְרָה",
           "strong": "H565",
-          "pron": "이마로트"
+          "pron": "임라티"
         },
         {
-          "word": "יְהוָה֮",
+          "word": "יְהוָה֙",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
+        "samuel2 22:31",
         "psalms 12:6",
         "psalms 18:30",
         "psalms 105:19"
@@ -60,8 +66,44 @@
       "glossKo": ""
     },
     {
+      "hebrew": "אִמְרַ֤ת יְהוָה֙ צְרוּפָ֔ה",
+      "pron": "임라티 여호와 베에체레펜누",
+      "lemmas": [
+        "אִמְרָה",
+        "יְהֹוָה",
+        "צָרַף"
+      ],
+      "words": [
+        {
+          "word": "אִמְרַ֤ת",
+          "lemma": "אִמְרָה",
+          "strong": "H565",
+          "pron": "임라티"
+        },
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "צְרוּפָ֔ה",
+          "lemma": "צָרַף",
+          "strong": "H6884",
+          "pron": "베에체레펜누"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:31",
+        "psalms 18:30",
+        "psalms 105:19"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "אִמְרָתְךָ֣ חִיָּֽתְנִי",
-      "pron": "이마로트 예히",
+      "pron": "임라티 바예히",
       "lemmas": [
         "אִמְרָה",
         "חָיָה"
@@ -71,13 +113,13 @@
           "word": "אִמְרָתְךָ֣",
           "lemma": "אִמְרָה",
           "strong": "H565",
-          "pron": "이마로트"
+          "pron": "임라티"
         },
         {
           "word": "חִיָּֽתְנִי",
           "lemma": "חָיָה",
           "strong": "H2421",
-          "pron": "예히"
+          "pron": "바예히"
         }
       ],
       "count": 3,

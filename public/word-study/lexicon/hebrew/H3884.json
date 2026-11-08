@@ -18,12 +18,48 @@
   ],
   "defEn": "if not",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 14,
   "byBook": {
     "psalms": 6,
-    "genesis": 2
+    "genesis": 2,
+    "deuteronomy": 1,
+    "isaiah": 1,
+    "judges": 1,
+    "kings2": 1,
+    "samuel1": 1,
+    "samuel2": 1
   },
   "phrases": [
+    {
+      "hebrew": "כִּ֖י לוּלֵ֣א",
+      "pron": "키 룰레",
+      "lemmas": [
+        "כִּי",
+        "לוּלֵא"
+      ],
+      "words": [
+        {
+          "word": "כִּ֖י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "לוּלֵ֣א",
+          "lemma": "לוּלֵא",
+          "strong": "H3884",
+          "pron": "룰레"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 43:10",
+        "samuel1 25:34",
+        "samuel2 2:27",
+        "kings2 3:14"
+      ],
+      "glossKo": ""
+    },
     {
       "hebrew": "לוּלֵ֣י יְ֭הוָה",
       "pron": "룰레 여호와",
@@ -45,11 +81,12 @@
           "pron": "여호와"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
         "psalms 94:17",
         "psalms 124:1",
-        "psalms 124:2"
+        "psalms 124:2",
+        "isaiah 1:9"
       ],
       "glossKo": ""
     }

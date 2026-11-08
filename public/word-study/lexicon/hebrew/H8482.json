@@ -1,6 +1,6 @@
 {
   "lemma": "תַּחְתִּי",
-  "pron": "브타헷티오트",
+  "pron": "타헷티임",
   "strong": "H8482",
   "posKo": "형용사",
   "root": {
@@ -12,40 +12,154 @@
     {
       "lemma": "תְּחוֹת",
       "strong": "H8460",
-      "pron": "",
+      "pron": "테호트",
       "glossKo": "아래(아람)"
     },
     {
       "lemma": "תַּחַת",
       "strong": "H8478",
-      "pron": "타하트",
+      "pron": "미타하트",
       "glossKo": "아래"
     },
     {
       "lemma": "תַּחַת",
       "strong": "H8479",
-      "pron": "",
-      "glossKo": "아래(아람)"
+      "pron": "타헷토히",
+      "glossKo": "그에게 아래(아람)"
     },
     {
       "lemma": "תַּחַת",
       "strong": "H8480",
-      "pron": "",
+      "pron": "브타하트",
       "glossKo": "다핫"
     },
     {
       "lemma": "תַּחְתּוֹן",
       "strong": "H8481",
-      "pron": "",
+      "pron": "타헷톤",
       "glossKo": "아래의"
+    },
+    {
+      "lemma": "תַּחְתִּים חׇדְשִׁי",
+      "strong": "H8483",
+      "pron": "타헷팀",
+      "glossKo": "닷딤홋시"
     }
   ],
   "defEn": "lowermost; depths; pit; womb",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 19,
   "byBook": {
+    "ezekiel": 6,
     "psalms": 4,
-    "genesis": 1
+    "deuteronomy": 1,
+    "exodus": 1,
+    "genesis": 1,
+    "isaiah": 1,
+    "job": 1,
+    "joshua": 1,
+    "judges": 1,
+    "lamentations": 1,
+    "nehemiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶ֣רֶץ תַּחְתִּ֗ית",
+      "pron": "하아레츠 타헷티임",
+      "lemmas": [
+        "אֶרֶץ",
+        "תַּחְתִּי"
+      ],
+      "words": [
+        {
+          "word": "אֶ֣רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "תַּחְתִּ֗ית",
+          "lemma": "תַּחְתִּי",
+          "strong": "H8482",
+          "pron": "타헷티임"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "ezekiel 26:20",
+        "ezekiel 31:14",
+        "ezekiel 31:16",
+        "ezekiel 31:18",
+        "ezekiel 32:18",
+        "ezekiel 32:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל אֶ֣רֶץ תַּחְתִּ֗ית",
+      "pron": "엘 하아레츠 타헷티임",
+      "lemmas": [
+        "אֵל",
+        "אֶרֶץ",
+        "תַּחְתִּי"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "אֶ֣רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "תַּחְתִּ֗ית",
+          "lemma": "תַּחְתִּי",
+          "strong": "H8482",
+          "pron": "타헷티임"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 31:14",
+        "ezekiel 31:18",
+        "ezekiel 32:18",
+        "ezekiel 32:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּֽתַחְתִּיּ֥וֹת הָאָֽרֶץ",
+      "pron": "타헷티임 하아레츠",
+      "lemmas": [
+        "תַּחְתִּי",
+        "אֶרֶץ"
+      ],
+      "words": [
+        {
+          "word": "בְּֽתַחְתִּיּ֥וֹת",
+          "lemma": "תַּחְתִּי",
+          "strong": "H8482",
+          "pron": "타헷티임"
+        },
+        {
+          "word": "הָאָֽרֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 63:9",
+        "psalms 139:15",
+        "isaiah 44:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

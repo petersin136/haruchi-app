@@ -1,6 +1,6 @@
 {
   "lemma": "כָּלַם",
-  "pron": "브익칼무",
+  "pron": "틱칼렘",
   "strong": "H3637",
   "posKo": "동사",
   "root": null,
@@ -8,15 +8,193 @@
     {
       "lemma": "כְּלִמָּה",
       "strong": "H3639",
-      "pron": "리켈림마",
-      "glossKo": "수치"
+      "pron": "켈림마티",
+      "glossKo": "나의 수치"
     }
   ],
   "defEn": "wound; taunt; insult",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 38,
   "byBook": {
-    "psalms": 6
+    "ezekiel": 6,
+    "jeremiah": 6,
+    "psalms": 6,
+    "isaiah": 5,
+    "samuel1": 3,
+    "job": 2,
+    "proverbs": 2,
+    "samuel2": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "ezra": 1,
+    "judges": 1,
+    "numbers": 1,
+    "ruth": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בֹּ֣שְׁתִּי וְנִכְלַ֔מְתִּי",
+      "pron": "이텝보샤슈 틱칼렘",
+      "lemmas": [
+        "בּוּשׁ",
+        "כָּלַם"
+      ],
+      "words": [
+        {
+          "word": "בֹּ֣שְׁתִּי",
+          "lemma": "בּוּשׁ",
+          "strong": "H954",
+          "pron": "이텝보샤슈"
+        },
+        {
+          "word": "וְנִכְלַ֔מְתִּי",
+          "lemma": "כָּלַם",
+          "strong": "H3637",
+          "pron": "틱칼렘"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "ezra 9:6",
+        "psalms 35:4",
+        "isaiah 41:11",
+        "jeremiah 8:12",
+        "jeremiah 14:3",
+        "jeremiah 22:22",
+        "ezekiel 36:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֶכְלַמְנ֗וּם וְלֹֽא",
+      "pron": "틱칼렘 로",
+      "lemmas": [
+        "כָּלַם",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "הֶכְלַמְנ֗וּם",
+          "lemma": "כָּלַם",
+          "strong": "H3637",
+          "pron": "틱칼렘"
+        },
+        {
+          "word": "וְלֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "samuel1 25:7",
+        "samuel1 25:15",
+        "job 19:3",
+        "psalms 44:9",
+        "jeremiah 6:15",
+        "jeremiah 8:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֲלֹ֥א תִכָּלֵ֖ם",
+      "pron": "로 틱칼렘",
+      "lemmas": [
+        "לֹא",
+        "כָּלַם"
+      ],
+      "words": [
+        {
+          "word": "הֲלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תִכָּלֵ֖ם",
+          "lemma": "כָּלַם",
+          "strong": "H3637",
+          "pron": "틱칼렘"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 12:14",
+        "ruth 2:15",
+        "samuel1 25:7",
+        "samuel1 25:15",
+        "isaiah 45:17",
+        "isaiah 50:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיִכָּ֣לְמ֔וּ כֹּ֖ל",
+      "pron": "틱칼렘 칼",
+      "lemmas": [
+        "כָּלַם",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "וְיִכָּ֣לְמ֔וּ",
+          "lemma": "כָּלַם",
+          "strong": "H3637",
+          "pron": "틱칼렘"
+        },
+        {
+          "word": "כֹּ֖ל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "isaiah 41:11",
+        "isaiah 45:16",
+        "jeremiah 22:22",
+        "ezekiel 16:54",
+        "ezekiel 43:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בּ֥וֹשׁוּ וְגַֽם נִכְלְמ֖וּ",
+      "pron": "이텝보샤슈 감 틱칼렘",
+      "lemmas": [
+        "בּוּשׁ",
+        "גַּם",
+        "כָּלַם"
+      ],
+      "words": [
+        {
+          "word": "בּ֥וֹשׁוּ",
+          "lemma": "בּוּשׁ",
+          "strong": "H954",
+          "pron": "이텝보샤슈"
+        },
+        {
+          "word": "וְגַֽם",
+          "lemma": "גַּם",
+          "strong": "H1571",
+          "pron": "감"
+        },
+        {
+          "word": "נִכְלְמ֖וּ",
+          "lemma": "כָּלַם",
+          "strong": "H3637",
+          "pron": "틱칼렘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 45:16",
+        "jeremiah 6:15",
+        "jeremiah 31:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

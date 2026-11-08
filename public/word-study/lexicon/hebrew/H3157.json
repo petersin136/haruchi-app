@@ -1,8 +1,8 @@
 {
   "lemma": "יִזְרְעֵאל",
-  "pron": "잇레엘",
+  "pron": "브잇레엘",
   "strong": "H3157",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "זָרַע",
     "strong": "H2232",
@@ -12,37 +12,200 @@
     {
       "lemma": "זְרוֹעַ",
       "strong": "H2220",
-      "pron": "제로아",
+      "pron": "제로에",
       "glossKo": "팔"
     },
     {
       "lemma": "זֵרוּעַ",
       "strong": "H2221",
-      "pron": "",
+      "pron": "제루아",
       "glossKo": "씨 뿌리는"
     },
     {
       "lemma": "זָרַע",
       "strong": "H2232",
-      "pron": "자루아",
+      "pron": "맛리아",
       "glossKo": "씨 뿌리다"
     },
     {
       "lemma": "זֶרַע",
       "strong": "H2233",
-      "pron": "우르자레오",
-      "glossKo": "그의 씨"
+      "pron": "제라",
+      "glossKo": "씨"
     },
     {
       "lemma": "זֵרֹעַ",
       "strong": "H2235",
-      "pron": "",
+      "pron": "아제로임",
       "glossKo": "씨앗"
+    },
+    {
+      "lemma": "יִזְרְעֵאלִי",
+      "strong": "H3158",
+      "pron": "아잇레엘리",
+      "glossKo": "이스르엘 사람"
     }
   ],
   "defEn": "Jizreel",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 36,
+  "byBook": {
+    "kings2": 14,
+    "hosea": 5,
+    "kings1": 5,
+    "joshua": 3,
+    "samuel1": 3,
+    "chronicles2": 2,
+    "samuel2": 2,
+    "chronicles1": 1,
+    "judges": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בְּיִזְרְעֶ֖אל כִּֽי",
+      "pron": "브잇레엘 키",
+      "lemmas": [
+        "יִזְרְעֵאל",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "בְּיִזְרְעֶ֖אל",
+          "lemma": "יִזְרְעֵאל",
+          "strong": "H3157",
+          "pron": "브잇레엘"
+        },
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings2 8:29",
+        "kings2 9:16",
+        "chronicles2 22:6",
+        "hosea 1:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַחְאָ֛ב בְּיִזְרְעֶ֖אל",
+      "pron": "아헤압 브잇레엘",
+      "lemmas": [
+        "אַחְאָב",
+        "יִזְרְעֵאל"
+      ],
+      "words": [
+        {
+          "word": "אַחְאָ֛ב",
+          "lemma": "אַחְאָב",
+          "strong": "H256",
+          "pron": "아헤압"
+        },
+        {
+          "word": "בְּיִזְרְעֶ֖אל",
+          "lemma": "יִזְרְעֵאל",
+          "strong": "H3157",
+          "pron": "브잇레엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 8:29",
+        "kings2 10:11",
+        "chronicles2 22:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּחֵ֥לֶק יִזְרְעֶ֖אל",
+      "pron": "브헬레크 브잇레엘",
+      "lemmas": [
+        "חֵלֶק",
+        "יִזְרְעֵאל"
+      ],
+      "words": [
+        {
+          "word": "בְּחֵ֥לֶק",
+          "lemma": "חֵלֶק",
+          "strong": "H2506",
+          "pron": "브헬레크"
+        },
+        {
+          "word": "יִזְרְעֶ֖אל",
+          "lemma": "יִזְרְעֵאל",
+          "strong": "H3157",
+          "pron": "브잇레엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 9:10",
+        "kings2 9:36",
+        "kings2 9:37"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּעֵ֥מֶק יִזְרְעֶֽאל",
+      "pron": "에메크 브잇레엘",
+      "lemmas": [
+        "עֵמֶק",
+        "יִזְרְעֵאל"
+      ],
+      "words": [
+        {
+          "word": "בְּעֵ֥מֶק",
+          "lemma": "עֵמֶק",
+          "strong": "H6010",
+          "pron": "에메크"
+        },
+        {
+          "word": "יִזְרְעֶֽאל",
+          "lemma": "יִזְרְעֵאל",
+          "strong": "H3157",
+          "pron": "브잇레엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 17:16",
+        "judges 6:33",
+        "hosea 1:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְהִתְרַפֵּ֣א בְיִזְרְעֶ֗אל",
+      "pron": "바이렙파 브잇레엘",
+      "lemmas": [
+        "רָפָא",
+        "יִזְרְעֵאל"
+      ],
+      "words": [
+        {
+          "word": "לְהִתְרַפֵּ֣א",
+          "lemma": "רָפָא",
+          "strong": "H7495",
+          "pron": "바이렙파"
+        },
+        {
+          "word": "בְיִזְרְעֶ֗אל",
+          "lemma": "יִזְרְעֵאל",
+          "strong": "H3157",
+          "pron": "브잇레엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 8:29",
+        "kings2 9:15",
+        "chronicles2 22:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

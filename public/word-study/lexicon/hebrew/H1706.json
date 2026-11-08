@@ -1,6 +1,6 @@
 {
   "lemma": "דְּבַשׁ",
-  "pron": "미데바쉬",
+  "pron": "데바쉬",
   "strong": "H1706",
   "posKo": "명사",
   "root": null,
@@ -8,22 +8,211 @@
     {
       "lemma": "דַּבֶּשֶׁת",
       "strong": "H1707",
-      "pron": "",
+      "pron": "답베셰트",
       "glossKo": "혹"
     },
     {
       "lemma": "יִדְבָּשׁ",
       "strong": "H3031",
-      "pron": "",
+      "pron": "브읻바쉬",
       "glossKo": "이드바스"
     }
   ],
   "defEn": "honey; stickiness",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 54,
   "byBook": {
+    "deuteronomy": 8,
+    "ezekiel": 6,
+    "exodus": 5,
+    "samuel1": 5,
+    "numbers": 4,
+    "proverbs": 4,
+    "jeremiah": 3,
+    "judges": 3,
     "psalms": 3,
-    "genesis": 1
+    "isaiah": 2,
+    "leviticus": 2,
+    "songofsolomon": 2,
+    "chronicles2": 1,
+    "genesis": 1,
+    "job": 1,
+    "joshua": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "זָבַ֥ת חָלָ֖ב וּדְבָֽשׁ",
+      "pron": "자바트 브할랍 데바쉬",
+      "lemmas": [
+        "זוּב",
+        "חָלָב",
+        "דְּבַשׁ"
+      ],
+      "words": [
+        {
+          "word": "זָבַ֥ת",
+          "lemma": "זוּב",
+          "strong": "H2100",
+          "pron": "자바트"
+        },
+        {
+          "word": "חָלָ֖ב",
+          "lemma": "חָלָב",
+          "strong": "H2461",
+          "pron": "브할랍"
+        },
+        {
+          "word": "וּדְבָֽשׁ",
+          "lemma": "דְּבַשׁ",
+          "strong": "H1706",
+          "pron": "데바쉬"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "exodus 3:8",
+        "exodus 3:17",
+        "exodus 13:5",
+        "exodus 33:3",
+        "leviticus 20:24",
+        "numbers 13:27",
+        "numbers 14:8",
+        "numbers 16:13",
+        "numbers 16:14",
+        "deuteronomy 6:3",
+        "deuteronomy 11:9",
+        "deuteronomy 26:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָלָ֖ב וּדְבָֽשׁ",
+      "pron": "브할랍 데바쉬",
+      "lemmas": [
+        "חָלָב",
+        "דְּבַשׁ"
+      ],
+      "words": [
+        {
+          "word": "חָלָ֖ב",
+          "lemma": "חָלָב",
+          "strong": "H2461",
+          "pron": "브할랍"
+        },
+        {
+          "word": "וּדְבָֽשׁ",
+          "lemma": "דְּבַשׁ",
+          "strong": "H1706",
+          "pron": "데바쉬"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "exodus 3:8",
+        "exodus 3:17",
+        "exodus 13:5",
+        "exodus 33:3",
+        "leviticus 20:24",
+        "numbers 13:27",
+        "numbers 14:8",
+        "numbers 16:13",
+        "numbers 16:14",
+        "deuteronomy 6:3",
+        "deuteronomy 11:9",
+        "deuteronomy 26:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּדְבַ֔שׁ וְאָכַ֥ל",
+      "pron": "데바쉬 아콜",
+      "lemmas": [
+        "דְּבַשׁ",
+        "אָכַל"
+      ],
+      "words": [
+        {
+          "word": "וּדְבַ֔שׁ",
+          "lemma": "דְּבַשׁ",
+          "strong": "H1706",
+          "pron": "데바쉬"
+        },
+        {
+          "word": "וְאָכַ֥ל",
+          "lemma": "אָכַל",
+          "strong": "H398",
+          "pron": "아콜"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 31:20",
+        "isaiah 7:15",
+        "isaiah 7:22",
+        "ezekiel 16:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמְעַ֣ט דְּבַ֔שׁ",
+      "pron": "메앋 데바쉬",
+      "lemmas": [
+        "מְעַט",
+        "דְּבַשׁ"
+      ],
+      "words": [
+        {
+          "word": "וּמְעַ֣ט",
+          "lemma": "מְעַט",
+          "strong": "H4592",
+          "pron": "메앋"
+        },
+        {
+          "word": "דְּבַ֔שׁ",
+          "lemma": "דְּבַשׁ",
+          "strong": "H1706",
+          "pron": "데바쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 43:11",
+        "samuel1 14:29",
+        "samuel1 14:43"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שֶׁ֖מֶן וּדְבָֽשׁ",
+      "pron": "셰멘 데바쉬",
+      "lemmas": [
+        "שֶׁמֶן",
+        "דְּבַשׁ"
+      ],
+      "words": [
+        {
+          "word": "שֶׁ֖מֶן",
+          "lemma": "שֶׁמֶן",
+          "strong": "H8081",
+          "pron": "셰멘"
+        },
+        {
+          "word": "וּדְבָֽשׁ",
+          "lemma": "דְּבַשׁ",
+          "strong": "H1706",
+          "pron": "데바쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 8:8",
+        "jeremiah 41:8",
+        "ezekiel 16:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

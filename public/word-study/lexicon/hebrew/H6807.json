@@ -2,7 +2,7 @@
   "lemma": "צְעָדָה",
   "pron": "체아다",
   "strong": "H6807",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "צַעַד",
     "strong": "H6806",
@@ -10,15 +10,25 @@
   },
   "family": [
     {
+      "lemma": "אֶצְעָדָה",
+      "strong": "H685",
+      "pron": "에체아다",
+      "glossKo": "발찌"
+    },
+    {
       "lemma": "צַעַד",
       "strong": "H6806",
-      "pron": "차아디위",
-      "glossKo": "나의 걸음"
+      "pron": "체아딤",
+      "glossKo": "걸음"
     }
   ],
   "defEn": "march",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 3,
+  "byBook": {
+    "chronicles1": 1,
+    "isaiah": 1,
+    "samuel2": 1
+  },
   "phrases": []
 }

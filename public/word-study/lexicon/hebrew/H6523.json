@@ -2,7 +2,7 @@
   "lemma": "פַּרְזֶל",
   "pron": "파레젤",
   "strong": "H6523",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בַּרְזֶל",
     "strong": "H1270",
@@ -12,19 +12,86 @@
     {
       "lemma": "בַּרְזֶל",
       "strong": "H1270",
-      "pron": "바레젤",
+      "pron": "우바레젤",
       "glossKo": "철"
     },
     {
       "lemma": "בַּרְזִלַּי",
       "strong": "H1271",
-      "pron": "",
+      "pron": "우바레질라이",
       "glossKo": "바르실래"
     }
   ],
   "defEn": "iron",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 20,
+  "byBook": {
+    "daniel": 20
+  },
+  "phrases": [
+    {
+      "hebrew": "דִּֽי פַרְזֶ֣ל",
+      "pron": "드흐브 파레젤",
+      "lemmas": [
+        "דִּי",
+        "פַּרְזֶל"
+      ],
+      "words": [
+        {
+          "word": "דִּֽי",
+          "lemma": "דִּי",
+          "strong": "H1768",
+          "pron": "드흐브"
+        },
+        {
+          "word": "פַרְזֶ֣ל",
+          "lemma": "פַּרְזֶל",
+          "strong": "H6523",
+          "pron": "파레젤"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "daniel 2:33",
+        "daniel 2:34",
+        "daniel 2:40",
+        "daniel 2:41",
+        "daniel 2:43",
+        "daniel 4:15",
+        "daniel 4:23",
+        "daniel 7:7",
+        "daniel 7:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "פַרְזֶ֣ל וּנְחָ֔שׁ",
+      "pron": "파레젤 네하쉬",
+      "lemmas": [
+        "פַּרְזֶל",
+        "נְחָשׁ"
+      ],
+      "words": [
+        {
+          "word": "פַרְזֶ֣ל",
+          "lemma": "פַּרְזֶל",
+          "strong": "H6523",
+          "pron": "파레젤"
+        },
+        {
+          "word": "וּנְחָ֔שׁ",
+          "lemma": "נְחָשׁ",
+          "strong": "H5174",
+          "pron": "네하쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 2:45",
+        "daniel 4:15",
+        "daniel 4:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

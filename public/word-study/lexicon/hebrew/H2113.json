@@ -1,8 +1,8 @@
 {
   "lemma": "זְוָעָה",
-  "pron": "제바아",
+  "pron": "르즈브",
   "strong": "H2113",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "זוּעַ",
     "strong": "H2111",
@@ -12,19 +12,19 @@
     {
       "lemma": "זוּעַ",
       "strong": "H2111",
-      "pron": "",
+      "pron": "자",
       "glossKo": "두려워하다"
     },
     {
       "lemma": "זוּעַ",
       "strong": "H2112",
-      "pron": "",
+      "pron": "즈은",
       "glossKo": "떨다(아람)"
     },
     {
       "lemma": "זִיעַ",
       "strong": "H2127",
-      "pron": "",
+      "pron": "브지아",
       "glossKo": "시아"
     },
     {
@@ -32,6 +32,12 @@
       "strong": "H2188",
       "pron": "브제아트",
       "glossKo": "땀"
+    },
+    {
+      "lemma": "זַעֲוָה",
+      "strong": "H2189",
+      "pron": "르자아바",
+      "glossKo": "공포"
     },
     {
       "lemma": "זַעֲוָן",
@@ -42,7 +48,144 @@
   ],
   "defEn": "agitation; fear",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "jeremiah": 5,
+    "chronicles2": 1,
+    "isaiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וַיִּתְּנֵ֤ם לזועה",
+      "pron": "바잇텐 르즈브",
+      "lemmas": [
+        "נָתַן",
+        "זְוָעָה"
+      ],
+      "words": [
+        {
+          "word": "וַיִּתְּנֵ֤ם",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "לזועה",
+          "lemma": "זְוָעָה",
+          "strong": "H2113",
+          "pron": "르즈브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles2 29:8",
+        "jeremiah 15:4",
+        "jeremiah 24:9",
+        "jeremiah 29:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לזועה לְזַֽעֲוָה֙",
+      "pron": "르즈브 르자아바",
+      "lemmas": [
+        "זְוָעָה",
+        "זַעֲוָה"
+      ],
+      "words": [
+        {
+          "word": "לזועה",
+          "lemma": "זְוָעָה",
+          "strong": "H2113",
+          "pron": "르즈브"
+        },
+        {
+          "word": "לְזַֽעֲוָה֙",
+          "lemma": "זַעֲוָה",
+          "strong": "H2189",
+          "pron": "르자아바"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles2 29:8",
+        "jeremiah 15:4",
+        "jeremiah 29:18",
+        "jeremiah 34:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּתְּנֵ֤ם לזועה לְזַֽעֲוָה֙",
+      "pron": "바잇텐 르즈브 르자아바",
+      "lemmas": [
+        "נָתַן",
+        "זְוָעָה",
+        "זַעֲוָה"
+      ],
+      "words": [
+        {
+          "word": "וַיִּתְּנֵ֤ם",
+          "lemma": "נָתַן",
+          "strong": "H5414",
+          "pron": "바잇텐"
+        },
+        {
+          "word": "לזועה",
+          "lemma": "זְוָעָה",
+          "strong": "H2113",
+          "pron": "르즈브"
+        },
+        {
+          "word": "לְזַֽעֲוָה֙",
+          "lemma": "זַעֲוָה",
+          "strong": "H2189",
+          "pron": "르자아바"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles2 29:8",
+        "jeremiah 15:4",
+        "jeremiah 29:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לזועה לְזַֽעֲוָ֔ה לְכֹ֖ל",
+      "pron": "르즈브 르자아바 칼",
+      "lemmas": [
+        "זְוָעָה",
+        "זַעֲוָה",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "לזועה",
+          "lemma": "זְוָעָה",
+          "strong": "H2113",
+          "pron": "르즈브"
+        },
+        {
+          "word": "לְזַֽעֲוָ֔ה",
+          "lemma": "זַעֲוָה",
+          "strong": "H2189",
+          "pron": "르자아바"
+        },
+        {
+          "word": "לְכֹ֖ל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 15:4",
+        "jeremiah 29:18",
+        "jeremiah 34:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

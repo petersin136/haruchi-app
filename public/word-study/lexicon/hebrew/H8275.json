@@ -2,7 +2,7 @@
   "lemma": "שַׁרְבִיט",
   "pron": "샤레빋",
   "strong": "H8275",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שֵׁבֶט",
     "strong": "H7626",
@@ -12,19 +12,116 @@
     {
       "lemma": "שְׁבַט",
       "strong": "H7625",
-      "pron": "",
+      "pron": "십데",
       "glossKo": "지파(아람)"
     },
     {
       "lemma": "שֵׁבֶט",
       "strong": "H7626",
-      "pron": "브셰벧",
+      "pron": "셰벧",
       "glossKo": "지팡이"
     }
   ],
   "defEn": "rod of empire",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "esther": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶת שַׁרְבִ֥יט",
+      "pron": "에트 샤레빋",
+      "lemmas": [
+        "אֵת",
+        "שַׁרְבִיט"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שַׁרְבִ֥יט",
+          "lemma": "שַׁרְבִיט",
+          "strong": "H8275",
+          "pron": "샤레빋"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 4:11",
+        "esther 5:2",
+        "esther 8:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת שַׁרְבִ֥יט הַזָּהָ֖ב",
+      "pron": "에트 샤레빋 아자합",
+      "lemmas": [
+        "אֵת",
+        "שַׁרְבִיט",
+        "זָהָב"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "שַׁרְבִ֥יט",
+          "lemma": "שַׁרְבִיט",
+          "strong": "H8275",
+          "pron": "샤레빋"
+        },
+        {
+          "word": "הַזָּהָ֖ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 4:11",
+        "esther 5:2",
+        "esther 8:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שַׁרְבִ֥יט הַזָּהָ֖ב",
+      "pron": "샤레빋 아자합",
+      "lemmas": [
+        "שַׁרְבִיט",
+        "זָהָב"
+      ],
+      "words": [
+        {
+          "word": "שַׁרְבִ֥יט",
+          "lemma": "שַׁרְבִיט",
+          "strong": "H8275",
+          "pron": "샤레빋"
+        },
+        {
+          "word": "הַזָּהָ֖ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "esther 4:11",
+        "esther 5:2",
+        "esther 8:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

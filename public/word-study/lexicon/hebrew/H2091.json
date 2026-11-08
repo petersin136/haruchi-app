@@ -1,6 +1,6 @@
 {
   "lemma": "זָהָב",
-  "pron": "미자합",
+  "pron": "아자합",
   "strong": "H2091",
   "posKo": "명사",
   "root": null,
@@ -8,21 +8,53 @@
     {
       "lemma": "דְּהַב",
       "strong": "H1722",
-      "pron": "",
+      "pron": "다하바",
       "glossKo": "금(아람)"
     }
   ],
   "defEn": "gold; something gold-colored; oil; clear sky",
   "defKo": "",
-  "countOT": 17,
+  "countOT": 389,
   "byBook": {
+    "exodus": 105,
+    "chronicles2": 49,
+    "kings1": 44,
+    "chronicles1": 24,
+    "numbers": 24,
+    "kings2": 15,
+    "ezra": 13,
+    "isaiah": 11,
     "genesis": 9,
-    "psalms": 8
+    "ezekiel": 8,
+    "job": 8,
+    "psalms": 8,
+    "proverbs": 7,
+    "samuel1": 7,
+    "esther": 6,
+    "jeremiah": 6,
+    "samuel2": 6,
+    "zechariah": 6,
+    "joshua": 5,
+    "deuteronomy": 4,
+    "daniel": 3,
+    "judges": 3,
+    "nehemiah": 3,
+    "songofsolomon": 3,
+    "ecclesiastes": 2,
+    "hosea": 2,
+    "habakkuk": 1,
+    "haggai": 1,
+    "joel": 1,
+    "lamentations": 1,
+    "leviticus": 1,
+    "malachi": 1,
+    "nahum": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "כֶּ֣סֶף וְזָהָ֑ב",
-      "pron": "케셉 미자합",
+      "hebrew": "כֶּ֣סֶף וְזָהָ֔ב",
+      "pron": "바케셉 아자합",
       "lemmas": [
         "כֶּסֶף",
         "זָהָב"
@@ -32,22 +64,181 @@
           "word": "כֶּ֣סֶף",
           "lemma": "כֶּסֶף",
           "strong": "H3701",
-          "pron": "케셉"
+          "pron": "바케셉"
         },
         {
-          "word": "וְזָהָ֑ב",
+          "word": "וְזָהָ֔ב",
           "lemma": "זָהָב",
           "strong": "H2091",
-          "pron": "미자합"
+          "pron": "아자합"
         }
       ],
-      "count": 5,
+      "count": 47,
       "refs": [
-        "psalms 105:37",
-        "psalms 115:4",
-        "psalms 135:15",
         "genesis 13:2",
-        "genesis 24:35"
+        "genesis 24:35",
+        "numbers 22:18",
+        "numbers 24:13",
+        "deuteronomy 7:25",
+        "deuteronomy 8:13",
+        "deuteronomy 17:17",
+        "deuteronomy 29:17",
+        "joshua 6:19",
+        "joshua 6:24",
+        "joshua 22:8",
+        "samuel2 8:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֹתָ֖ם זָהָֽב",
+      "pron": "에트 아자합",
+      "lemmas": [
+        "אֵת",
+        "זָהָב"
+      ],
+      "words": [
+        {
+          "word": "אֹתָ֖ם",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "זָהָֽב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        }
+      ],
+      "count": 29,
+      "refs": [
+        "exodus 25:11",
+        "exodus 25:13",
+        "exodus 25:24",
+        "exodus 25:28",
+        "exodus 26:37",
+        "exodus 28:5",
+        "exodus 30:3",
+        "exodus 30:5",
+        "exodus 37:4",
+        "exodus 37:11",
+        "exodus 37:15",
+        "exodus 37:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זָהָ֥ב וָכֶ֖סֶף",
+      "pron": "아자합 바케셉",
+      "lemmas": [
+        "זָהָב",
+        "כֶּסֶף"
+      ],
+      "words": [
+        {
+          "word": "זָהָ֥ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        },
+        {
+          "word": "וָכֶ֖סֶף",
+          "lemma": "כֶּסֶף",
+          "strong": "H3701",
+          "pron": "바케셉"
+        }
+      ],
+      "count": 28,
+      "refs": [
+        "exodus 25:3",
+        "exodus 31:4",
+        "exodus 35:5",
+        "exodus 35:32",
+        "kings1 10:22",
+        "kings2 14:14",
+        "chronicles1 18:10",
+        "chronicles1 22:16",
+        "chronicles1 29:2",
+        "chronicles1 29:3",
+        "chronicles1 29:5",
+        "chronicles2 2:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זָהָ֣ב טָה֑וֹר",
+      "pron": "아자합 아데호라",
+      "lemmas": [
+        "זָהָב",
+        "טָהוֹר"
+      ],
+      "words": [
+        {
+          "word": "זָהָ֣ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        },
+        {
+          "word": "טָה֑וֹר",
+          "lemma": "טָהוֹר",
+          "strong": "H2889",
+          "pron": "아데호라"
+        }
+      ],
+      "count": 27,
+      "refs": [
+        "exodus 25:11",
+        "exodus 25:17",
+        "exodus 25:24",
+        "exodus 25:29",
+        "exodus 25:31",
+        "exodus 25:36",
+        "exodus 25:38",
+        "exodus 25:39",
+        "exodus 28:14",
+        "exodus 28:22",
+        "exodus 28:36",
+        "exodus 30:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַזָּהָ֔ב אֲשֶׁ֥ר",
+      "pron": "아자합 아셰르",
+      "lemmas": [
+        "זָהָב",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הַזָּהָ֔ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "exodus 32:2",
+        "exodus 32:3",
+        "deuteronomy 29:17",
+        "judges 8:26",
+        "samuel1 6:8",
+        "samuel1 6:17",
+        "samuel2 8:7",
+        "samuel2 8:11",
+        "kings1 10:14",
+        "kings1 14:26",
+        "kings2 10:29",
+        "kings2 24:13"
       ],
       "glossKo": ""
     }

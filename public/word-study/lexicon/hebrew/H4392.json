@@ -12,40 +12,263 @@
     {
       "lemma": "יִמְלָא",
       "strong": "H3229",
-      "pron": "",
+      "pron": "임라",
       "glossKo": "임라"
     },
     {
       "lemma": "מָלֵא",
       "strong": "H4390",
-      "pron": "말레",
+      "pron": "우밀우",
       "glossKo": "가득하다"
     },
     {
       "lemma": "מְלָא",
       "strong": "H4391",
-      "pron": "",
+      "pron": "우멜라트",
       "glossKo": "채우다(아람)"
     },
     {
       "lemma": "מְלֹא",
       "strong": "H4393",
-      "pron": "우멜로아흐",
-      "glossKo": "그녀의 충만"
+      "pron": "멜로",
+      "glossKo": "충만"
     },
     {
       "lemma": "מִלֻּא",
       "strong": "H4394",
-      "pron": "",
+      "pron": "밀루임",
       "glossKo": "취임"
+    },
+    {
+      "lemma": "מְלֵאָה",
+      "strong": "H4395",
+      "pron": "멜레아테카",
+      "glossKo": "너의 충만함"
     }
   ],
   "defEn": "full; filling",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 58,
   "byBook": {
+    "numbers": 25,
+    "ezekiel": 6,
+    "jeremiah": 6,
+    "chronicles1": 3,
+    "deuteronomy": 3,
     "genesis": 3,
-    "psalms": 3
+    "psalms": 3,
+    "ecclesiastes": 2,
+    "kings2": 2,
+    "isaiah": 1,
+    "nahum": 1,
+    "nehemiah": 1,
+    "proverbs": 1,
+    "ruth": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מְלֵאָ֥ה קְטֹֽרֶת",
+      "pron": "말레 브리케도레트",
+      "lemmas": [
+        "מָלֵא",
+        "קְטֹרֶת"
+      ],
+      "words": [
+        {
+          "word": "מְלֵאָ֥ה",
+          "lemma": "מָלֵא",
+          "strong": "H4392",
+          "pron": "말레"
+        },
+        {
+          "word": "קְטֹֽרֶת",
+          "lemma": "קְטֹרֶת",
+          "strong": "H7004",
+          "pron": "브리케도레트"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "numbers 7:14",
+        "numbers 7:20",
+        "numbers 7:26",
+        "numbers 7:32",
+        "numbers 7:38",
+        "numbers 7:44",
+        "numbers 7:50",
+        "numbers 7:56",
+        "numbers 7:62",
+        "numbers 7:68",
+        "numbers 7:74",
+        "numbers 7:80"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַקֹּ֑דֶשׁ שְׁנֵיהֶ֣ם מְלֵאִ֗ים",
+      "pron": "코데쉬 셰네 말레",
+      "lemmas": [
+        "קֹדֶשׁ",
+        "שְׁנַיִם",
+        "מָלֵא"
+      ],
+      "words": [
+        {
+          "word": "הַקֹּ֑דֶשׁ",
+          "lemma": "קֹדֶשׁ",
+          "strong": "H6944",
+          "pron": "코데쉬"
+        },
+        {
+          "word": "שְׁנֵיהֶ֣ם",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        },
+        {
+          "word": "מְלֵאִ֗ים",
+          "lemma": "מָלֵא",
+          "strong": "H4392",
+          "pron": "말레"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 7:13",
+        "numbers 7:19",
+        "numbers 7:25",
+        "numbers 7:31",
+        "numbers 7:37",
+        "numbers 7:43",
+        "numbers 7:49",
+        "numbers 7:55",
+        "numbers 7:61",
+        "numbers 7:67",
+        "numbers 7:73",
+        "numbers 7:79"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זָהָ֖ב מְלֵאָ֥ה",
+      "pron": "아자합 말레",
+      "lemmas": [
+        "זָהָב",
+        "מָלֵא"
+      ],
+      "words": [
+        {
+          "word": "זָהָ֖ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        },
+        {
+          "word": "מְלֵאָ֥ה",
+          "lemma": "מָלֵא",
+          "strong": "H4392",
+          "pron": "말레"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 7:14",
+        "numbers 7:20",
+        "numbers 7:26",
+        "numbers 7:32",
+        "numbers 7:38",
+        "numbers 7:44",
+        "numbers 7:50",
+        "numbers 7:56",
+        "numbers 7:62",
+        "numbers 7:68",
+        "numbers 7:74",
+        "numbers 7:80"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זָהָ֖ב מְלֵאָ֥ה קְטֹֽרֶת",
+      "pron": "아자합 말레 브리케도레트",
+      "lemmas": [
+        "זָהָב",
+        "מָלֵא",
+        "קְטֹרֶת"
+      ],
+      "words": [
+        {
+          "word": "זָהָ֖ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        },
+        {
+          "word": "מְלֵאָ֥ה",
+          "lemma": "מָלֵא",
+          "strong": "H4392",
+          "pron": "말레"
+        },
+        {
+          "word": "קְטֹֽרֶת",
+          "lemma": "קְטֹרֶת",
+          "strong": "H7004",
+          "pron": "브리케도레트"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 7:14",
+        "numbers 7:20",
+        "numbers 7:26",
+        "numbers 7:32",
+        "numbers 7:38",
+        "numbers 7:44",
+        "numbers 7:50",
+        "numbers 7:56",
+        "numbers 7:62",
+        "numbers 7:68",
+        "numbers 7:74",
+        "numbers 7:80"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מְלֵאִ֗ים סֹ֛לֶת",
+      "pron": "말레 솔레트",
+      "lemmas": [
+        "מָלֵא",
+        "סֹלֶת"
+      ],
+      "words": [
+        {
+          "word": "מְלֵאִ֗ים",
+          "lemma": "מָלֵא",
+          "strong": "H4392",
+          "pron": "말레"
+        },
+        {
+          "word": "סֹ֛לֶת",
+          "lemma": "סֹלֶת",
+          "strong": "H5560",
+          "pron": "솔레트"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 7:13",
+        "numbers 7:19",
+        "numbers 7:25",
+        "numbers 7:31",
+        "numbers 7:37",
+        "numbers 7:43",
+        "numbers 7:49",
+        "numbers 7:55",
+        "numbers 7:61",
+        "numbers 7:67",
+        "numbers 7:73",
+        "numbers 7:79"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

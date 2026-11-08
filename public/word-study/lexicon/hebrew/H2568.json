@@ -26,17 +26,113 @@
   ],
   "defEn": "five",
   "defKo": "",
-  "countOT": 25,
+  "countOT": 346,
   "byBook": {
-    "genesis": 25
+    "numbers": 73,
+    "ezekiel": 62,
+    "exodus": 33,
+    "chronicles2": 30,
+    "genesis": 25,
+    "kings1": 19,
+    "kings2": 14,
+    "chronicles1": 11,
+    "samuel1": 11,
+    "joshua": 10,
+    "ezra": 9,
+    "judges": 9,
+    "nehemiah": 9,
+    "leviticus": 8,
+    "isaiah": 6,
+    "esther": 5,
+    "samuel2": 5,
+    "jeremiah": 3,
+    "job": 2,
+    "daniel": 1,
+    "hosea": 1
   },
   "phrases": [
     {
-      "hebrew": "חָמֵ֥שׁ שָׁנִ֖ים",
-      "pron": "하메쉬 우셰노타위",
+      "hebrew": "וַחֲמֵ֥שׁ מֵאֽוֹת",
+      "pron": "하메쉬 우메아트",
       "lemmas": [
         "חָמֵשׁ",
-        "שָׁנֶה"
+        "מֵאָה"
+      ],
+      "words": [
+        {
+          "word": "וַחֲמֵ֥שׁ",
+          "lemma": "חָמֵשׁ",
+          "strong": "H2568",
+          "pron": "하메쉬"
+        },
+        {
+          "word": "מֵאֽוֹת",
+          "lemma": "מֵאָה",
+          "strong": "H3967",
+          "pron": "우메아트"
+        }
+      ],
+      "count": 52,
+      "refs": [
+        "genesis 5:30",
+        "genesis 5:32",
+        "genesis 11:11",
+        "exodus 30:23",
+        "exodus 30:24",
+        "exodus 38:26",
+        "leviticus 26:8",
+        "numbers 1:21",
+        "numbers 1:33",
+        "numbers 1:41",
+        "numbers 1:46",
+        "numbers 2:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲמֵ֥שׁ עֶשְׂרֵ֖ה",
+      "pron": "하메쉬 에세레",
+      "lemmas": [
+        "חָמֵשׁ",
+        "עָשָׂר"
+      ],
+      "words": [
+        {
+          "word": "חֲמֵ֥שׁ",
+          "lemma": "חָמֵשׁ",
+          "strong": "H2568",
+          "pron": "하메쉬"
+        },
+        {
+          "word": "עֶשְׂרֵ֖ה",
+          "lemma": "עָשָׂר",
+          "strong": "H6240",
+          "pron": "에세레"
+        }
+      ],
+      "count": 33,
+      "refs": [
+        "genesis 5:10",
+        "genesis 7:20",
+        "exodus 16:1",
+        "exodus 27:14",
+        "exodus 27:15",
+        "exodus 38:14",
+        "exodus 38:15",
+        "leviticus 23:6",
+        "leviticus 23:34",
+        "leviticus 23:39",
+        "leviticus 27:7",
+        "numbers 28:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָמֵ֥שׁ אַמּ֖וֹת",
+      "pron": "하메쉬 암마",
+      "lemmas": [
+        "חָמֵשׁ",
+        "אַמָּה"
       ],
       "words": [
         {
@@ -46,13 +142,51 @@
           "pron": "하메쉬"
         },
         {
-          "word": "שָׁנִ֖ים",
-          "lemma": "שָׁנֶה",
-          "strong": "H8141",
-          "pron": "우셰노타위"
+          "word": "אַמּ֖וֹת",
+          "lemma": "אַמָּה",
+          "strong": "H520",
+          "pron": "암마"
         }
       ],
-      "count": 8,
+      "count": 30,
+      "refs": [
+        "exodus 27:1",
+        "exodus 27:18",
+        "exodus 38:1",
+        "exodus 38:18",
+        "kings1 6:6",
+        "kings1 6:10",
+        "kings1 6:24",
+        "kings1 7:16",
+        "kings1 7:23",
+        "chronicles1 11:23",
+        "chronicles2 4:2",
+        "chronicles2 6:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְחָמֵ֤שׁ שָׁנָה֙",
+      "pron": "하메쉬 브샤님",
+      "lemmas": [
+        "חָמֵשׁ",
+        "שָׁנֶה"
+      ],
+      "words": [
+        {
+          "word": "וְחָמֵ֤שׁ",
+          "lemma": "חָמֵשׁ",
+          "strong": "H2568",
+          "pron": "하메쉬"
+        },
+        {
+          "word": "שָׁנָה֙",
+          "lemma": "שָׁנֶה",
+          "strong": "H8141",
+          "pron": "브샤님"
+        }
+      ],
+      "count": 29,
       "refs": [
         "genesis 5:6",
         "genesis 5:11",
@@ -61,72 +195,56 @@
         "genesis 12:4",
         "genesis 25:7",
         "genesis 45:6",
-        "genesis 45:11"
+        "genesis 45:11",
+        "leviticus 27:5",
+        "leviticus 27:6",
+        "joshua 14:10",
+        "samuel2 4:4"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "חֲמֵ֥שׁ מֵא֖וֹת",
-      "pron": "하메쉬 우메아트",
+      "hebrew": "חֲמִשָּׁה֙ עַתֻּדִ֣ים חֲמִשָּׁ֔ה",
+      "pron": "하메쉬 하앗투딤 하메쉬",
       "lemmas": [
         "חָמֵשׁ",
-        "מֵאָה"
+        "עַתּוּד",
+        "חָמֵשׁ"
       ],
       "words": [
         {
-          "word": "חֲמֵ֥שׁ",
+          "word": "חֲמִשָּׁה֙",
           "lemma": "חָמֵשׁ",
           "strong": "H2568",
           "pron": "하메쉬"
         },
         {
-          "word": "מֵא֖וֹת",
-          "lemma": "מֵאָה",
-          "strong": "H3967",
-          "pron": "우메아트"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 5:30",
-        "genesis 5:32",
-        "genesis 11:11"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "חֲמֵ֥שׁ מֵא֖וֹת שָׁנָ֑ה",
-      "pron": "하메쉬 우메아트 우셰노타위",
-      "lemmas": [
-        "חָמֵשׁ",
-        "מֵאָה",
-        "שָׁנֶה"
-      ],
-      "words": [
+          "word": "עַתֻּדִ֣ים",
+          "lemma": "עַתּוּד",
+          "strong": "H6260",
+          "pron": "하앗투딤"
+        },
         {
-          "word": "חֲמֵ֥שׁ",
+          "word": "חֲמִשָּׁ֔ה",
           "lemma": "חָמֵשׁ",
           "strong": "H2568",
           "pron": "하메쉬"
-        },
-        {
-          "word": "מֵא֖וֹת",
-          "lemma": "מֵאָה",
-          "strong": "H3967",
-          "pron": "우메아트"
-        },
-        {
-          "word": "שָׁנָ֑ה",
-          "lemma": "שָׁנֶה",
-          "strong": "H8141",
-          "pron": "우셰노타위"
         }
       ],
-      "count": 3,
+      "count": 24,
       "refs": [
-        "genesis 5:30",
-        "genesis 5:32",
-        "genesis 11:11"
+        "numbers 7:17",
+        "numbers 7:23",
+        "numbers 7:29",
+        "numbers 7:35",
+        "numbers 7:41",
+        "numbers 7:47",
+        "numbers 7:53",
+        "numbers 7:59",
+        "numbers 7:65",
+        "numbers 7:71",
+        "numbers 7:77",
+        "numbers 7:83"
       ],
       "glossKo": ""
     }

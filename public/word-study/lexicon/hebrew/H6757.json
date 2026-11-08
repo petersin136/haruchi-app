@@ -1,6 +1,6 @@
 {
   "lemma": "צַלְמָוֶת",
-  "pron": "찰마베트",
+  "pron": "브찰마베트",
   "strong": "H6757",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "בְּצַלְאֵל",
       "strong": "H1212",
-      "pron": "",
+      "pron": "베찰엘",
       "glossKo": "브살렐"
     },
     {
@@ -30,27 +30,62 @@
     {
       "lemma": "צַלְמֹנָה",
       "strong": "H6758",
-      "pron": "",
+      "pron": "브찰모나",
       "glossKo": "살모나"
     },
     {
       "lemma": "צַלְמֻנָּע",
       "strong": "H6759",
-      "pron": "우크찰문나",
+      "pron": "브찰문나",
       "glossKo": "살문나"
     },
     {
       "lemma": "צֶלְצַח",
       "strong": "H6766",
-      "pron": "",
+      "pron": "브첼차흐",
       "glossKo": "셀세라"
     }
   ],
   "defEn": "shade of death; grave; calamity",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 18,
   "byBook": {
-    "psalms": 4
+    "job": 10,
+    "psalms": 4,
+    "jeremiah": 2,
+    "amos": 1,
+    "isaiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "חֹ֣שֶׁךְ וְ֭צַלְמָוֶת",
+      "pron": "브호셰크 브찰마베트",
+      "lemmas": [
+        "חֹשֶׁךְ",
+        "צַלְמָוֶת"
+      ],
+      "words": [
+        {
+          "word": "חֹ֣שֶׁךְ",
+          "lemma": "חֹשֶׁךְ",
+          "strong": "H2822",
+          "pron": "브호셰크"
+        },
+        {
+          "word": "וְ֭צַלְמָוֶת",
+          "lemma": "צַלְמָוֶת",
+          "strong": "H6757",
+          "pron": "브찰마베트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 3:5",
+        "job 10:21",
+        "psalms 107:10",
+        "psalms 107:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

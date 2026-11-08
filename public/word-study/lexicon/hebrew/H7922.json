@@ -18,21 +18,60 @@
     {
       "lemma": "שָׂכַל",
       "strong": "H7919",
-      "pron": "하섹킬루",
+      "pron": "르하섹킬",
       "glossKo": "통찰하다"
     },
     {
       "lemma": "שְׂכַל",
       "strong": "H7920",
-      "pron": "",
+      "pron": "미셋탁칼",
       "glossKo": "쉬다(아람)"
     }
   ],
   "defEn": "intelligence",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 16,
   "byBook": {
-    "psalms": 1
+    "proverbs": 6,
+    "chronicles1": 2,
+    "chronicles2": 2,
+    "daniel": 1,
+    "ezra": 1,
+    "job": 1,
+    "nehemiah": 1,
+    "psalms": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "שֵֽׂכֶל ט֖וֹב",
+      "pron": "세켈 돕",
+      "lemmas": [
+        "שֶׂכֶל",
+        "טוֹב"
+      ],
+      "words": [
+        {
+          "word": "שֵֽׂכֶל",
+          "lemma": "שֶׂכֶל",
+          "strong": "H7922",
+          "pron": "세켈"
+        },
+        {
+          "word": "ט֖וֹב",
+          "lemma": "טוֹב",
+          "strong": "H2896",
+          "pron": "돕"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles2 30:22",
+        "psalms 111:10",
+        "proverbs 3:4",
+        "proverbs 13:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

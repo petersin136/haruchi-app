@@ -1,6 +1,6 @@
 {
   "lemma": "פָּרָה",
-  "pron": "바예페르",
+  "pron": "페루",
   "strong": "H6509",
   "posKo": "동사",
   "root": null,
@@ -8,27 +8,33 @@
     {
       "lemma": "אֶפְרָת",
       "strong": "H672",
-      "pron": "브엡라타",
+      "pron": "엡라타",
       "glossKo": "에브랏"
     },
     {
       "lemma": "פְּרִי",
       "strong": "H6529",
-      "pron": "피레오",
-      "glossKo": "그의 열매"
+      "pron": "페리",
+      "glossKo": "열매"
     }
   ],
   "defEn": "bear fruit",
   "defKo": "",
-  "countOT": 17,
+  "countOT": 29,
   "byBook": {
     "genesis": 15,
-    "psalms": 2
+    "isaiah": 4,
+    "exodus": 2,
+    "ezekiel": 2,
+    "jeremiah": 2,
+    "psalms": 2,
+    "deuteronomy": 1,
+    "leviticus": 1
   },
   "phrases": [
     {
       "hebrew": "פְּר֣וּ וּרְב֗וּ",
-      "pron": "바예페르 이렙부",
+      "pron": "페루 우레부",
       "lemmas": [
         "פָּרָה",
         "רָבָה"
@@ -38,16 +44,16 @@
           "word": "פְּר֣וּ",
           "lemma": "פָּרָה",
           "strong": "H6509",
-          "pron": "바예페르"
+          "pron": "페루"
         },
         {
           "word": "וּרְב֗וּ",
           "lemma": "רָבָה",
           "strong": "H7235",
-          "pron": "이렙부"
+          "pron": "우레부"
         }
       ],
-      "count": 9,
+      "count": 10,
       "refs": [
         "genesis 1:22",
         "genesis 1:28",
@@ -57,42 +63,44 @@
         "genesis 28:3",
         "genesis 35:11",
         "genesis 47:27",
-        "genesis 48:4"
+        "genesis 48:4",
+        "jeremiah 23:3"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַיֶּ֣פֶר אֶת",
-      "pron": "바예페르 에트",
+      "hebrew": "וְהִפְרֵתִ֤י אֹֽתְךָ֙",
+      "pron": "페루 에트",
       "lemmas": [
         "פָּרָה",
         "אֵת"
       ],
       "words": [
         {
-          "word": "וַיֶּ֣פֶר",
+          "word": "וְהִפְרֵתִ֤י",
           "lemma": "פָּרָה",
           "strong": "H6509",
-          "pron": "바예페르"
+          "pron": "페루"
         },
         {
-          "word": "אֶת",
+          "word": "אֹֽתְךָ֙",
           "lemma": "אֵת",
           "strong": "H853",
           "pron": "에트"
         }
       ],
-      "count": 3,
+      "count": 4,
       "refs": [
-        "psalms 105:24",
         "genesis 17:6",
-        "genesis 17:20"
+        "genesis 17:20",
+        "leviticus 26:9",
+        "psalms 105:24"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "פְּר֣וּ וּרְב֗וּ וּמִלְא֤וּ",
-      "pron": "바예페르 이렙부 말레",
+      "pron": "페루 우레부 우밀우",
       "lemmas": [
         "פָּרָה",
         "רָבָה",
@@ -103,19 +111,19 @@
           "word": "פְּר֣וּ",
           "lemma": "פָּרָה",
           "strong": "H6509",
-          "pron": "바예페르"
+          "pron": "페루"
         },
         {
           "word": "וּרְב֗וּ",
           "lemma": "רָבָה",
           "strong": "H7235",
-          "pron": "이렙부"
+          "pron": "우레부"
         },
         {
           "word": "וּמִלְא֤וּ",
           "lemma": "מָלֵא",
           "strong": "H4390",
-          "pron": "말레"
+          "pron": "우밀우"
         }
       ],
       "count": 3,

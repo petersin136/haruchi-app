@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁכֵן",
-  "pron": "브리샤케나위",
+  "pron": "밋셰켄타흐",
   "strong": "H7934",
   "posKo": "접미대명사",
   "root": {
@@ -12,44 +12,53 @@
     {
       "lemma": "מִשְׁכָּן",
       "strong": "H4908",
-      "pron": "미셱칸",
+      "pron": "아미셱칸",
       "glossKo": "성막"
     },
     {
       "lemma": "שָׁכַן",
       "strong": "H7931",
-      "pron": "야셱켄",
+      "pron": "바야셱켄",
       "glossKo": "거주하다"
     },
     {
       "lemma": "שְׁכַן",
       "strong": "H7932",
-      "pron": "",
+      "pron": "샥킨",
       "glossKo": "거하다(아람)"
     },
     {
       "lemma": "שֶׁכֶן",
       "strong": "H7933",
-      "pron": "",
-      "glossKo": "거주"
+      "pron": "레시케노",
+      "glossKo": "그에게 거주"
     },
     {
       "lemma": "שְׁכַנְיָה",
       "strong": "H7935",
-      "pron": "",
+      "pron": "셰칸아",
       "glossKo": "스가냐"
     }
   ],
   "defEn": "resident",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 21,
   "byBook": {
-    "psalms": 6
+    "psalms": 6,
+    "jeremiah": 5,
+    "exodus": 2,
+    "kings2": 2,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "hosea": 1,
+    "isaiah": 1,
+    "proverbs": 1,
+    "ruth": 1
   },
   "phrases": [
     {
       "hebrew": "חֶ֭רְפָּה לִשְׁכֵנֵ֑ינוּ",
-      "pron": "브헤렙파 브리샤케나위",
+      "pron": "헤렙파티 밋셰켄타흐",
       "lemmas": [
         "חֶרְפָּה",
         "שָׁכֵן"
@@ -59,13 +68,13 @@
           "word": "חֶ֭רְפָּה",
           "lemma": "חֶרְפָּה",
           "strong": "H2781",
-          "pron": "브헤렙파"
+          "pron": "헤렙파티"
         },
         {
           "word": "לִשְׁכֵנֵ֑ינוּ",
           "lemma": "שָׁכֵן",
           "strong": "H7934",
-          "pron": "브리샤케나위"
+          "pron": "밋셰켄타흐"
         }
       ],
       "count": 4,
@@ -79,7 +88,7 @@
     },
     {
       "hebrew": "הָיִ֪יתִי חֶרְפָּ֡ה וְלִשֲׁכֵנַ֨י",
-      "pron": "브하아 브헤렙파 브리샤케나위",
+      "pron": "하에타 헤렙파티 밋셰켄타흐",
       "lemmas": [
         "הָיָה",
         "חֶרְפָּה",
@@ -90,19 +99,19 @@
           "word": "הָיִ֪יתִי",
           "lemma": "הָיָה",
           "strong": "H1961",
-          "pron": "브하아"
+          "pron": "하에타"
         },
         {
           "word": "חֶרְפָּ֡ה",
           "lemma": "חֶרְפָּה",
           "strong": "H2781",
-          "pron": "브헤렙파"
+          "pron": "헤렙파티"
         },
         {
           "word": "וְלִשֲׁכֵנַ֨י",
           "lemma": "שָׁכֵן",
           "strong": "H7934",
-          "pron": "브리샤케나위"
+          "pron": "밋셰켄타흐"
         }
       ],
       "count": 3,
@@ -110,6 +119,35 @@
         "psalms 31:11",
         "psalms 79:4",
         "psalms 89:41"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל שְׁכֵנָיו֒",
+      "pron": "칼 밋셰켄타흐",
+      "lemmas": [
+        "כֹּל",
+        "שָׁכֵן"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "שְׁכֵנָיו֒",
+          "lemma": "שָׁכֵן",
+          "strong": "H7934",
+          "pron": "밋셰켄타흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 1:7",
+        "kings2 4:3",
+        "jeremiah 12:14"
       ],
       "glossKo": ""
     }

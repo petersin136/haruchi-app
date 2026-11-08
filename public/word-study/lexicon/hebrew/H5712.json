@@ -1,6 +1,6 @@
 {
   "lemma": "עֵדָה",
-  "pron": "바아다트",
+  "pron": "아다트",
   "strong": "H5712",
   "posKo": "명사",
   "root": {
@@ -12,33 +12,256 @@
     {
       "lemma": "עֵד",
       "strong": "H5707",
-      "pron": "에데",
+      "pron": "르엗",
       "glossKo": "증인"
     },
     {
       "lemma": "עֵדָה",
       "strong": "H5713",
-      "pron": "브에도타이브",
-      "glossKo": "그의 증거"
+      "pron": "르에다",
+      "glossKo": "증거"
     },
     {
       "lemma": "עֵדוּת",
       "strong": "H5715",
-      "pron": "에두트",
+      "pron": "하에두트",
       "glossKo": "증거"
     },
     {
       "lemma": "עֲדְעָדָה",
       "strong": "H5735",
-      "pron": "",
+      "pron": "브앋아다",
       "glossKo": "아다다"
     }
   ],
   "defEn": "assemblage; concourse; family; crowd",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 149,
   "byBook": {
-    "psalms": 10
+    "numbers": 83,
+    "exodus": 15,
+    "joshua": 15,
+    "leviticus": 12,
+    "psalms": 10,
+    "judges": 5,
+    "jeremiah": 2,
+    "job": 2,
+    "kings1": 2,
+    "chronicles2": 1,
+    "hosea": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "כָּל הָ֣עֵדָ֔ה",
+      "pron": "칼 아다트",
+      "lemmas": [
+        "כֹּל",
+        "עֵדָה"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הָ֣עֵדָ֔ה",
+          "lemma": "עֵדָה",
+          "strong": "H5712",
+          "pron": "아다트"
+        }
+      ],
+      "count": 70,
+      "refs": [
+        "exodus 12:3",
+        "exodus 12:47",
+        "exodus 16:1",
+        "exodus 16:2",
+        "exodus 16:9",
+        "exodus 16:10",
+        "exodus 17:1",
+        "exodus 35:1",
+        "exodus 35:4",
+        "exodus 35:20",
+        "leviticus 4:13",
+        "leviticus 8:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲדַ֤ת בְּנֵֽי",
+      "pron": "아다트 바님",
+      "lemmas": [
+        "עֵדָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "עֲדַ֤ת",
+          "lemma": "עֵדָה",
+          "strong": "H5712",
+          "pron": "아다트"
+        },
+        {
+          "word": "בְּנֵֽי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 27,
+      "refs": [
+        "exodus 16:1",
+        "exodus 16:2",
+        "exodus 16:9",
+        "exodus 16:10",
+        "exodus 17:1",
+        "exodus 35:1",
+        "exodus 35:4",
+        "exodus 35:20",
+        "leviticus 16:5",
+        "leviticus 19:2",
+        "numbers 1:2",
+        "numbers 1:53"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲדַ֤ת בְּנֵֽי יִשְׂרָאֵל֙",
+      "pron": "아다트 바님 이스라엘",
+      "lemmas": [
+        "עֵדָה",
+        "בֵּן",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "עֲדַ֤ת",
+          "lemma": "עֵדָה",
+          "strong": "H5712",
+          "pron": "아다트"
+        },
+        {
+          "word": "בְּנֵֽי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יִשְׂרָאֵל֙",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 27,
+      "refs": [
+        "exodus 16:1",
+        "exodus 16:2",
+        "exodus 16:9",
+        "exodus 16:10",
+        "exodus 17:1",
+        "exodus 35:1",
+        "exodus 35:4",
+        "exodus 35:20",
+        "leviticus 16:5",
+        "leviticus 19:2",
+        "numbers 1:2",
+        "numbers 1:53"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל עֲדַ֤ת בְּנֵֽי",
+      "pron": "칼 아다트 바님",
+      "lemmas": [
+        "כֹּל",
+        "עֵדָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "עֲדַ֤ת",
+          "lemma": "עֵדָה",
+          "strong": "H5712",
+          "pron": "아다트"
+        },
+        {
+          "word": "בְּנֵֽי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "exodus 16:1",
+        "exodus 16:2",
+        "exodus 16:9",
+        "exodus 16:10",
+        "exodus 17:1",
+        "exodus 35:1",
+        "exodus 35:4",
+        "exodus 35:20",
+        "leviticus 19:2",
+        "numbers 1:2",
+        "numbers 8:9",
+        "numbers 8:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל כָּל עֲדַ֥ת",
+      "pron": "엘 칼 아다트",
+      "lemmas": [
+        "אֵל",
+        "כֹּל",
+        "עֵדָה"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "עֲדַ֥ת",
+          "lemma": "עֵדָה",
+          "strong": "H5712",
+          "pron": "아다트"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "exodus 12:3",
+        "exodus 16:9",
+        "exodus 16:10",
+        "exodus 35:4",
+        "leviticus 19:2",
+        "numbers 10:3",
+        "numbers 13:26",
+        "numbers 14:2",
+        "numbers 14:7",
+        "numbers 15:33",
+        "numbers 16:5",
+        "numbers 16:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "גַּיְא",
-  "pron": "브게",
+  "pron": "아가에",
   "strong": "H1516",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,209 @@
     {
       "lemma": "גֵּוָה",
       "strong": "H1466",
-      "pron": "",
+      "pron": "게바",
       "glossKo": "교만"
     },
     {
       "lemma": "גֵּוָה",
       "strong": "H1467",
-      "pron": "",
+      "pron": "브게바",
       "glossKo": "교만(아람)"
     },
     {
       "lemma": "גֵּיחֲזִי",
       "strong": "H1522",
-      "pron": "",
+      "pron": "게하지",
       "glossKo": "게하시"
     }
   ],
   "defEn": "gorge; lofty",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 62,
   "byBook": {
-    "psalms": 2
+    "ezekiel": 11,
+    "jeremiah": 8,
+    "joshua": 7,
+    "chronicles2": 5,
+    "isaiah": 5,
+    "nehemiah": 5,
+    "kings2": 4,
+    "chronicles1": 3,
+    "deuteronomy": 3,
+    "samuel1": 3,
+    "zechariah": 3,
+    "psalms": 2,
+    "micah": 1,
+    "numbers": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּגֵ֣יא בֶן",
+      "pron": "아가에 바님",
+      "lemmas": [
+        "גַּיְא",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "בְּגֵ֣יא",
+          "lemma": "גַּיְא",
+          "strong": "H1516",
+          "pron": "아가에"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "joshua 15:8",
+        "joshua 18:16",
+        "kings2 23:10",
+        "chronicles2 28:3",
+        "chronicles2 33:6",
+        "jeremiah 7:31",
+        "jeremiah 7:32",
+        "jeremiah 19:2",
+        "jeremiah 19:6",
+        "jeremiah 32:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גֵּ֣י בֶן הִנֹּ֗ם",
+      "pron": "아가에 바님 힌놈",
+      "lemmas": [
+        "גַּיְא",
+        "בֵּן",
+        "הִנֹּם"
+      ],
+      "words": [
+        {
+          "word": "גֵּ֣י",
+          "lemma": "גַּיְא",
+          "strong": "H1516",
+          "pron": "아가에"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "הִנֹּ֗ם",
+          "lemma": "הִנֹּם",
+          "strong": "H2011",
+          "pron": "힌놈"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "joshua 15:8",
+        "joshua 18:16",
+        "chronicles2 28:3",
+        "chronicles2 33:6",
+        "jeremiah 7:31",
+        "jeremiah 7:32",
+        "jeremiah 19:2",
+        "jeremiah 19:6",
+        "jeremiah 32:35"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּגֵיא מֶ֑לַח",
+      "pron": "아가에 아멜라흐",
+      "lemmas": [
+        "גַּיְא",
+        "מֶלַח"
+      ],
+      "words": [
+        {
+          "word": "בְּגֵיא",
+          "lemma": "גַּיְא",
+          "strong": "H1516",
+          "pron": "아가에"
+        },
+        {
+          "word": "מֶ֑לַח",
+          "lemma": "מֶלַח",
+          "strong": "H4417",
+          "pron": "아멜라흐"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel2 8:13",
+        "kings2 14:7",
+        "chronicles1 18:12",
+        "chronicles2 25:11",
+        "psalms 60:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הגיאות הַגֵּאָי֑וֹת",
+      "pron": "아가에 아가에",
+      "lemmas": [
+        "גַּיְא",
+        "גַּיְא"
+      ],
+      "words": [
+        {
+          "word": "הגיאות",
+          "lemma": "גַּיְא",
+          "strong": "H1516",
+          "pron": "아가에"
+        },
+        {
+          "word": "הַגֵּאָי֑וֹת",
+          "lemma": "גַּיְא",
+          "strong": "H1516",
+          "pron": "아가에"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 2:16",
+        "ezekiel 6:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שַׁ֥עַר הַגַּ֖יְא",
+      "pron": "브샤아르 아가에",
+      "lemmas": [
+        "שַׁעַר",
+        "גַּיְא"
+      ],
+      "words": [
+        {
+          "word": "שַׁ֥עַר",
+          "lemma": "שַׁעַר",
+          "strong": "H8179",
+          "pron": "브샤아르"
+        },
+        {
+          "word": "הַגַּ֖יְא",
+          "lemma": "גַּיְא",
+          "strong": "H1516",
+          "pron": "아가에"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles2 26:9",
+        "nehemiah 2:13",
+        "nehemiah 2:15",
+        "nehemiah 3:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

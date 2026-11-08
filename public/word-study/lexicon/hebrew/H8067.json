@@ -12,15 +12,46 @@
     {
       "lemma": "שְׁמִינִי",
       "strong": "H8066",
-      "pron": "",
+      "pron": "아셰미니",
       "glossKo": "여덟째"
     }
   ],
   "defEn": "eight-stringed lyre",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 3,
   "byBook": {
-    "psalms": 2
+    "psalms": 2,
+    "chronicles1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עַֽל הַשְּׁמִינִ֗ית",
+      "pron": "알 아셰미니트",
+      "lemmas": [
+        "עַל",
+        "שְׁמִינִית"
+      ],
+      "words": [
+        {
+          "word": "עַֽל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הַשְּׁמִינִ֗ית",
+          "lemma": "שְׁמִינִית",
+          "strong": "H8067",
+          "pron": "아셰미니트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 15:21",
+        "psalms 6:1",
+        "psalms 12:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

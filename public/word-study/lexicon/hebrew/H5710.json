@@ -2,19 +2,19 @@
   "lemma": "עָדָה",
   "pron": "아다",
   "strong": "H5710",
-  "posKo": "",
+  "posKo": "동사",
   "root": null,
   "family": [
     {
       "lemma": "מַעֲדַי",
       "strong": "H4572",
-      "pron": "",
+      "pron": "마아다이",
       "glossKo": "마아대"
     },
     {
       "lemma": "מַעֲדְיָה",
       "strong": "H4573",
-      "pron": "",
+      "pron": "마앋아",
       "glossKo": "마아댜"
     },
     {
@@ -26,19 +26,62 @@
     {
       "lemma": "עֵד",
       "strong": "H5708",
-      "pron": "",
+      "pron": "읻딤",
       "glossKo": "월경포"
     },
     {
       "lemma": "עֲדָא",
       "strong": "H5709",
-      "pron": "",
+      "pron": "메하엗데",
       "glossKo": "가다(아람)"
+    },
+    {
+      "lemma": "עָדָה",
+      "strong": "H5711",
+      "pron": "아다",
+      "glossKo": "아다"
     }
   ],
   "defEn": "advance; pass; continue; remove; bedeck",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 10,
+  "byBook": {
+    "ezekiel": 3,
+    "jeremiah": 2,
+    "job": 2,
+    "hosea": 1,
+    "isaiah": 1,
+    "proverbs": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "תַעְדִּ֣י עֲדִי",
+      "pron": "아다 엗오",
+      "lemmas": [
+        "עָדָה",
+        "עֲדִי"
+      ],
+      "words": [
+        {
+          "word": "תַעְדִּ֣י",
+          "lemma": "עָדָה",
+          "strong": "H5710",
+          "pron": "아다"
+        },
+        {
+          "word": "עֲדִי",
+          "lemma": "עֲדִי",
+          "strong": "H5716",
+          "pron": "엗오"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 4:30",
+        "ezekiel 16:11",
+        "ezekiel 23:40"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

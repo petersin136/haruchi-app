@@ -1,6 +1,6 @@
 {
   "lemma": "קָשַׁב",
-  "pron": "하케시바",
+  "pron": "르하케십",
   "strong": "H7181",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "קֶשֶׁב",
       "strong": "H7182",
-      "pron": "",
+      "pron": "카솁",
       "glossKo": "귀 기울임"
     },
     {
@@ -20,14 +20,27 @@
   ],
   "defEn": "prick up; hearken",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 46,
   "byBook": {
-    "psalms": 8
+    "isaiah": 9,
+    "jeremiah": 8,
+    "proverbs": 8,
+    "psalms": 8,
+    "chronicles2": 2,
+    "job": 2,
+    "zechariah": 2,
+    "daniel": 1,
+    "hosea": 1,
+    "malachi": 1,
+    "micah": 1,
+    "nehemiah": 1,
+    "samuel1": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
       "hebrew": "הַקְשִׁ֤יבָה לְק֬וֹל",
-      "pron": "하케시바 콜리위",
+      "pron": "르하케십 콜",
       "lemmas": [
         "קָשַׁב",
         "קוֹל"
@@ -37,20 +50,114 @@
           "word": "הַקְשִׁ֤יבָה",
           "lemma": "קָשַׁב",
           "strong": "H7181",
-          "pron": "하케시바"
+          "pron": "르하케십"
         },
         {
           "word": "לְק֬וֹל",
           "lemma": "קוֹל",
           "strong": "H6963",
-          "pron": "콜리위"
+          "pron": "콜"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
         "psalms 5:2",
         "psalms 66:19",
-        "psalms 86:6"
+        "psalms 86:6",
+        "songofsolomon 8:13",
+        "jeremiah 6:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִקְשִׁ֨יבוּ֙ אֶל",
+      "pron": "르하케십 엘",
+      "lemmas": [
+        "קָשַׁב",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "הִקְשִׁ֨יבוּ֙",
+          "lemma": "קָשַׁב",
+          "strong": "H7181",
+          "pron": "르하케십"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "nehemiah 9:34",
+        "psalms 142:6",
+        "isaiah 51:4",
+        "jeremiah 18:18",
+        "zechariah 1:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֥א הִקְשִֽׁיבוּ",
+      "pron": "로 르하케십",
+      "lemmas": [
+        "לֹא",
+        "קָשַׁב"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "הִקְשִֽׁיבוּ",
+          "lemma": "קָשַׁב",
+          "strong": "H7181",
+          "pron": "르하케십"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "chronicles2 33:10",
+        "nehemiah 9:34",
+        "jeremiah 6:17",
+        "jeremiah 6:19",
+        "zechariah 1:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַקְשִׁ֥יבוּ וְשִׁמְע֖וּ",
+      "pron": "르하케십 바이솀우",
+      "lemmas": [
+        "קָשַׁב",
+        "שָׁמַע"
+      ],
+      "words": [
+        {
+          "word": "הַקְשִׁ֥יבוּ",
+          "lemma": "קָשַׁב",
+          "strong": "H7181",
+          "pron": "르하케십"
+        },
+        {
+          "word": "וְשִׁמְע֖וּ",
+          "lemma": "שָׁמַע",
+          "strong": "H8085",
+          "pron": "바이솀우"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 28:23",
+        "isaiah 34:1",
+        "isaiah 42:23",
+        "jeremiah 8:6"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "פֶּרֶד",
-  "pron": "크페렏",
+  "pron": "피렏도",
   "strong": "H6505",
   "posKo": "명사",
   "root": {
@@ -12,33 +12,80 @@
     {
       "lemma": "בְּדַר",
       "strong": "H921",
-      "pron": "",
+      "pron": "우받다루",
       "glossKo": "흩다(아람)"
     },
     {
       "lemma": "פָּרַד",
       "strong": "H6504",
-      "pron": "브히텝파레두",
+      "pron": "입파렏",
       "glossKo": "분리되다"
+    },
+    {
+      "lemma": "פִּרְדָּה",
+      "strong": "H6506",
+      "pron": "아피렏다",
+      "glossKo": "암노새"
     },
     {
       "lemma": "פְּרֻדָה",
       "strong": "H6507",
-      "pron": "",
+      "pron": "페루도트",
       "glossKo": "분리된 것"
     },
     {
       "lemma": "פְּרוּדָא",
       "strong": "H6514",
-      "pron": "",
+      "pron": "페루다",
       "glossKo": "브루다"
     }
   ],
   "defEn": "mule; lonely",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 14,
   "byBook": {
-    "psalms": 1
+    "samuel2": 4,
+    "kings1": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "ezekiel": 1,
+    "ezra": 1,
+    "isaiah": 1,
+    "kings2": 1,
+    "psalms": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "סוּסִ֖ים וּפְרָדִ֑ים",
+      "pron": "바수심 피렏도",
+      "lemmas": [
+        "סוּס",
+        "פֶּרֶד"
+      ],
+      "words": [
+        {
+          "word": "סוּסִ֖ים",
+          "lemma": "סוּס",
+          "strong": "H5483",
+          "pron": "바수심"
+        },
+        {
+          "word": "וּפְרָדִ֑ים",
+          "lemma": "פֶּרֶד",
+          "strong": "H6505",
+          "pron": "피렏도"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 10:25",
+        "kings1 18:5",
+        "chronicles2 9:24",
+        "psalms 32:9",
+        "zechariah 14:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -2,7 +2,7 @@
   "lemma": "חֹזֶה",
   "pron": "호제",
   "strong": "H2374",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָזָה",
     "strong": "H2372",
@@ -12,37 +12,111 @@
     {
       "lemma": "הָזָה",
       "strong": "H1957",
-      "pron": "",
+      "pron": "호짐",
       "glossKo": "꿈을 꾸다"
+    },
+    {
+      "lemma": "חוֹזַי",
+      "strong": "H2335",
+      "pron": "호자이",
+      "glossKo": "호새"
     },
     {
       "lemma": "חֲזָא",
       "strong": "H2370",
-      "pron": "",
+      "pron": "르메헤제",
       "glossKo": "보다(아람)"
     },
     {
       "lemma": "חֲזָאֵל",
       "strong": "H2371",
-      "pron": "",
+      "pron": "하자엘",
       "glossKo": "하사엘"
     },
     {
       "lemma": "חָזָה",
       "strong": "H2372",
-      "pron": "예헤주",
+      "pron": "테헤제",
       "glossKo": "보다"
     },
     {
       "lemma": "חָזֶה",
       "strong": "H2373",
-      "pron": "",
+      "pron": "헤하제",
       "glossKo": "가슴"
     }
   ],
   "defEn": "beholder",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 21,
+  "byBook": {
+    "chronicles2": 7,
+    "isaiah": 4,
+    "chronicles1": 3,
+    "ezekiel": 3,
+    "amos": 1,
+    "kings2": 1,
+    "micah": 1,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "גָּ֔ד חֹזֵ֥ה",
+      "pron": "갇 호제",
+      "lemmas": [
+        "גָּד",
+        "חֹזֶה"
+      ],
+      "words": [
+        {
+          "word": "גָּ֔ד",
+          "lemma": "גָּד",
+          "strong": "H1410",
+          "pron": "갇"
+        },
+        {
+          "word": "חֹזֵ֥ה",
+          "lemma": "חֹזֶה",
+          "strong": "H2374",
+          "pron": "호제"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 21:9",
+        "chronicles1 29:29",
+        "chronicles2 29:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֹזֵ֥ה הַמֶּ֛לֶךְ",
+      "pron": "호제 멜레크",
+      "lemmas": [
+        "חֹזֶה",
+        "מֶלֶךְ"
+      ],
+      "words": [
+        {
+          "word": "חֹזֵ֥ה",
+          "lemma": "חֹזֶה",
+          "strong": "H2374",
+          "pron": "호제"
+        },
+        {
+          "word": "הַמֶּ֛לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 25:5",
+        "chronicles2 29:25",
+        "chronicles2 35:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

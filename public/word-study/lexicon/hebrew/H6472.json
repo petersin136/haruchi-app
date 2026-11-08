@@ -1,8 +1,8 @@
 {
   "lemma": "פַּעֲמֹן",
-  "pron": "파아몬",
+  "pron": "우파아모네",
   "strong": "H6472",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "פַּעַם",
     "strong": "H6471",
@@ -12,13 +12,45 @@
     {
       "lemma": "פַּעַם",
       "strong": "H6471",
-      "pron": "페아마위",
-      "glossKo": "나의 걸음"
+      "pron": "아파암",
+      "glossKo": "걸음"
     }
   ],
   "defEn": "bell; struck",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "exodus": 7
+  },
+  "phrases": [
+    {
+      "hebrew": "וּפַעֲמֹנֵ֥י זָהָ֛ב",
+      "pron": "우파아모네 아자합",
+      "lemmas": [
+        "פַּעֲמֹן",
+        "זָהָב"
+      ],
+      "words": [
+        {
+          "word": "וּפַעֲמֹנֵ֥י",
+          "lemma": "פַּעֲמֹן",
+          "strong": "H6472",
+          "pron": "우파아모네"
+        },
+        {
+          "word": "זָהָ֛ב",
+          "lemma": "זָהָב",
+          "strong": "H2091",
+          "pron": "아자합"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 28:33",
+        "exodus 28:34",
+        "exodus 39:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

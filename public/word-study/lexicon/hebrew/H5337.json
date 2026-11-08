@@ -1,6 +1,6 @@
 {
   "lemma": "נָצַל",
-  "pron": "브핫칠레니",
+  "pron": "바얏첼",
   "strong": "H5337",
   "posKo": "동사",
   "root": null,
@@ -8,169 +8,241 @@
     {
       "lemma": "הַצָּלָה",
       "strong": "H2020",
-      "pron": "",
+      "pron": "브핫찰라",
       "glossKo": "구원"
     },
     {
       "lemma": "נְצַל",
       "strong": "H5338",
-      "pron": "",
+      "pron": "르핫찰라",
       "glossKo": "건지다(아람)"
     }
   ],
   "defEn": "snatch",
   "defKo": "",
-  "countOT": 51,
+  "countOT": 213,
   "byBook": {
     "psalms": 45,
-    "genesis": 6
+    "isaiah": 22,
+    "ezekiel": 17,
+    "samuel1": 17,
+    "exodus": 14,
+    "kings2": 13,
+    "proverbs": 12,
+    "chronicles2": 10,
+    "jeremiah": 10,
+    "samuel2": 9,
+    "genesis": 6,
+    "judges": 6,
+    "deuteronomy": 4,
+    "joshua": 4,
+    "amos": 3,
+    "hosea": 3,
+    "job": 3,
+    "micah": 3,
+    "chronicles1": 2,
+    "daniel": 2,
+    "zechariah": 2,
+    "ezra": 1,
+    "habakkuk": 1,
+    "jonah": 1,
+    "nehemiah": 1,
+    "numbers": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "הַצִּילֵ֖נִי מֵאֹיְבַ֥י",
-      "pron": "브핫칠레니 오에바위",
+      "hebrew": "הִצִּ֥ילוּ אֶת",
+      "pron": "바얏첼 에트",
       "lemmas": [
         "נָצַל",
-        "אֹיֵב"
+        "אֵת"
       ],
       "words": [
         {
-          "word": "הַצִּילֵ֖נִי",
+          "word": "הִצִּ֥ילוּ",
           "lemma": "נָצַל",
           "strong": "H5337",
-          "pron": "브핫칠레니"
+          "pron": "바얏첼"
         },
         {
-          "word": "מֵאֹיְבַ֥י",
-          "lemma": "אֹיֵב",
-          "strong": "H341",
-          "pron": "오에바위"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         }
       ],
-      "count": 4,
+      "count": 43,
       "refs": [
-        "psalms 18:17",
-        "psalms 54:7",
-        "psalms 59:1",
-        "psalms 143:9"
+        "genesis 37:22",
+        "exodus 3:22",
+        "exodus 5:23",
+        "exodus 6:6",
+        "exodus 12:36",
+        "exodus 18:10",
+        "deuteronomy 25:11",
+        "joshua 2:13",
+        "joshua 9:26",
+        "joshua 22:31",
+        "joshua 24:10",
+        "judges 6:9"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הִצַּ֪לְתָּ נַפְשִׁ֡י",
-      "pron": "브핫칠레니 르납시위",
-      "lemmas": [
-        "נָצַל",
-        "נֶפֶשׁ"
-      ],
-      "words": [
-        {
-          "word": "הִצַּ֪לְתָּ",
-          "lemma": "נָצַל",
-          "strong": "H5337",
-          "pron": "브핫칠레니"
-        },
-        {
-          "word": "נַפְשִׁ֡י",
-          "lemma": "נֶפֶשׁ",
-          "strong": "H5315",
-          "pron": "르납시위"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 56:13",
-        "psalms 86:13",
-        "psalms 120:2",
-        "genesis 32:30"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "לְהַצִּילֵ֑נִי יְ֝הוָ֗ה",
-      "pron": "브핫칠레니 여호와",
-      "lemmas": [
-        "נָצַל",
-        "יְהֹוָה"
-      ],
-      "words": [
-        {
-          "word": "לְהַצִּילֵ֑נִי",
-          "lemma": "נָצַל",
-          "strong": "H5337",
-          "pron": "브핫칠레니"
-        },
-        {
-          "word": "יְ֝הוָ֗ה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 18:1",
-        "psalms 34:19",
-        "psalms 40:13",
-        "psalms 70:1"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "הַצִּ֘ילֵ֤נִי מִיַּד",
-      "pron": "브핫칠레니 야데카",
+      "hebrew": "וַיַּצִּלֵ֖הוּ מִיָּדָ֑ם",
+      "pron": "바얏첼 야도",
       "lemmas": [
         "נָצַל",
         "יָד"
       ],
       "words": [
         {
-          "word": "הַצִּ֘ילֵ֤נִי",
+          "word": "וַיַּצִּלֵ֖הוּ",
           "lemma": "נָצַל",
           "strong": "H5337",
-          "pron": "브핫칠레니"
+          "pron": "바얏첼"
         },
         {
-          "word": "מִיַּד",
+          "word": "מִיָּדָ֑ם",
           "lemma": "יָד",
           "strong": "H3027",
-          "pron": "야데카"
+          "pron": "야도"
         }
       ],
-      "count": 3,
+      "count": 16,
       "refs": [
+        "genesis 37:21",
+        "exodus 2:19",
+        "exodus 3:8",
+        "exodus 18:9",
+        "samuel1 4:8",
+        "samuel1 12:10",
+        "samuel1 17:37",
+        "samuel2 12:7",
         "psalms 31:15",
         "psalms 144:11",
-        "genesis 37:21"
+        "jeremiah 15:21",
+        "ezekiel 34:27"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְאֵ֣ין מַצִּֽיל",
-      "pron": "엔 브핫칠레니",
+      "hebrew": "הַצִּ֤יל אֹתוֹ֙ מִיָּדָ֔ם",
+      "pron": "바얏첼 에트 야도",
       "lemmas": [
-        "אַיִן",
+        "נָצַל",
+        "אֵת",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "הַצִּ֤יל",
+          "lemma": "נָצַל",
+          "strong": "H5337",
+          "pron": "바얏첼"
+        },
+        {
+          "word": "אֹתוֹ֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מִיָּדָ֔ם",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "genesis 37:22",
+        "exodus 18:10",
+        "joshua 9:26",
+        "joshua 24:10",
+        "judges 6:9",
+        "judges 8:34",
+        "judges 9:17",
+        "samuel1 7:3",
+        "samuel1 10:18",
+        "samuel1 12:11",
+        "kings2 17:39",
+        "kings2 18:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹא הִצַּ֖לְתָּ",
+      "pron": "로 바얏첼",
+      "lemmas": [
+        "לֹא",
         "נָצַל"
       ],
       "words": [
         {
-          "word": "וְאֵ֣ין",
-          "lemma": "אַיִן",
-          "strong": "H369",
-          "pron": "엔"
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
         },
         {
-          "word": "מַצִּֽיל",
+          "word": "הִצַּ֖לְתָּ",
           "lemma": "נָצַל",
           "strong": "H5337",
-          "pron": "브핫칠레니"
+          "pron": "바얏첼"
         }
       ],
-      "count": 3,
+      "count": 14,
       "refs": [
-        "psalms 7:2",
-        "psalms 50:22",
-        "psalms 71:11"
+        "exodus 5:23",
+        "judges 11:26",
+        "samuel1 12:21",
+        "chronicles2 25:15",
+        "chronicles2 32:15",
+        "chronicles2 32:17",
+        "psalms 33:16",
+        "isaiah 44:20",
+        "isaiah 47:14",
+        "ezekiel 14:18",
+        "ezekiel 33:12",
+        "hosea 2:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר הִצִּ֥ילוּ",
+      "pron": "아셰르 바얏첼",
+      "lemmas": [
+        "אֲשֶׁר",
+        "נָצַל"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הִצִּ֥ילוּ",
+          "lemma": "נָצַל",
+          "strong": "H5337",
+          "pron": "바얏첼"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 31:16",
+        "exodus 18:9",
+        "exodus 18:10",
+        "deuteronomy 23:15",
+        "joshua 2:13",
+        "samuel1 17:37",
+        "samuel1 30:22",
+        "kings2 18:35",
+        "isaiah 36:20",
+        "amos 3:12"
       ],
       "glossKo": ""
     }

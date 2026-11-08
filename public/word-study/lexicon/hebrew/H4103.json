@@ -2,7 +2,7 @@
   "lemma": "מְהוּמָה",
   "pron": "메후마",
   "strong": "H4103",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "הוּם",
     "strong": "H1949",
@@ -12,31 +12,70 @@
     {
       "lemma": "הוּם",
       "strong": "H1949",
-      "pron": "브아히마",
+      "pron": "바테홈",
       "glossKo": "소동하다"
     },
     {
       "lemma": "הָמָה",
       "strong": "H1993",
-      "pron": "예헤마우느",
+      "pron": "호마",
       "glossKo": "떠들다"
     },
     {
       "lemma": "הָמַם",
       "strong": "H2000",
-      "pron": "바예훔메므",
-      "glossKo": "그들에게 혼란케 하다"
+      "pron": "바야함",
+      "glossKo": "혼란케 하다"
     },
     {
       "lemma": "תְּהוֹם",
       "strong": "H8415",
-      "pron": "테호모트",
+      "pron": "테홈",
       "glossKo": "깊음"
     }
   ],
   "defEn": "confusion",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 12,
+  "byBook": {
+    "samuel1": 3,
+    "deuteronomy": 2,
+    "ezekiel": 2,
+    "amos": 1,
+    "chronicles2": 1,
+    "isaiah": 1,
+    "proverbs": 1,
+    "zechariah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "מְהוּמָ֣ה גְדֹלָ֔ה",
+      "pron": "메후마 아게돌림",
+      "lemmas": [
+        "מְהוּמָה",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "מְהוּמָ֣ה",
+          "lemma": "מְהוּמָה",
+          "strong": "H4103",
+          "pron": "메후마"
+        },
+        {
+          "word": "גְדֹלָ֔ה",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 7:23",
+        "samuel1 5:9",
+        "samuel1 14:20"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

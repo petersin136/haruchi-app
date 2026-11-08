@@ -1,6 +1,6 @@
 {
   "lemma": "נָכַר",
-  "pron": "약키레누",
+  "pron": "힉키로",
   "strong": "H5234",
   "posKo": "동사",
   "root": null,
@@ -8,19 +8,19 @@
     {
       "lemma": "הַכָּרָה",
       "strong": "H1971",
-      "pron": "",
+      "pron": "학카라트",
       "glossKo": "치우치지 않음"
     },
     {
       "lemma": "מַכָּר",
       "strong": "H4378",
-      "pron": "",
-      "glossKo": "친지"
+      "pron": "막카로",
+      "glossKo": "그의 친지"
     },
     {
       "lemma": "נֶכֶר",
       "strong": "H5235",
-      "pron": "",
+      "pron": "브네케르",
       "glossKo": "이상한"
     },
     {
@@ -32,15 +32,29 @@
   ],
   "defEn": "scrutinize; recognition; acknowledge; be acquainted with; care for; respect; revere; disregard; ignore; be strange; r…",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 50,
   "byBook": {
     "genesis": 10,
-    "psalms": 2
+    "job": 8,
+    "deuteronomy": 5,
+    "kings1": 4,
+    "proverbs": 4,
+    "ruth": 3,
+    "daniel": 2,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "nehemiah": 2,
+    "psalms": 2,
+    "samuel1": 2,
+    "ezra": 1,
+    "judges": 1,
+    "lamentations": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
       "hebrew": "וְלֹא יַכִּירֶ֖נּוּ",
-      "pron": "로 약키레누",
+      "pron": "로 힉키로",
       "lemmas": [
         "לֹא",
         "נָכַר"
@@ -56,14 +70,113 @@
           "word": "יַכִּירֶ֖נּוּ",
           "lemma": "נָכַר",
           "strong": "H5234",
-          "pron": "약키레누"
+          "pron": "힉키로"
         }
       ],
-      "count": 3,
+      "count": 14,
       "refs": [
-        "psalms 103:16",
         "genesis 27:23",
-        "genesis 42:8"
+        "genesis 42:8",
+        "deuteronomy 1:17",
+        "deuteronomy 16:19",
+        "deuteronomy 33:9",
+        "job 2:12",
+        "job 4:16",
+        "job 7:10",
+        "job 21:29",
+        "job 24:13",
+        "job 34:19",
+        "psalms 103:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הִכִּ֔יר וְאֶת",
+      "pron": "힉키로 에트",
+      "lemmas": [
+        "נָכַר",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הִכִּ֔יר",
+          "lemma": "נָכַר",
+          "strong": "H5234",
+          "pron": "힉키로"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 33:9",
+        "judges 18:3",
+        "samuel1 23:7",
+        "kings1 20:41",
+        "jeremiah 19:4",
+        "jeremiah 24:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיַּכִּרֵ֑ם וַיִּתְנַכֵּ֨ר",
+      "pron": "힉키로 힉키로",
+      "lemmas": [
+        "נָכַר",
+        "נָכַר"
+      ],
+      "words": [
+        {
+          "word": "וַיַּכִּרֵ֑ם",
+          "lemma": "נָכַר",
+          "strong": "H5234",
+          "pron": "힉키로"
+        },
+        {
+          "word": "וַיִּתְנַכֵּ֨ר",
+          "lemma": "נָכַר",
+          "strong": "H5234",
+          "pron": "힉키로"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 42:7",
+        "daniel 11:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תַכִּ֨ירוּ פָנִ֜ים",
+      "pron": "힉키로 페네",
+      "lemmas": [
+        "נָכַר",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "תַכִּ֨ירוּ",
+          "lemma": "נָכַר",
+          "strong": "H5234",
+          "pron": "힉키로"
+        },
+        {
+          "word": "פָנִ֜ים",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 1:17",
+        "deuteronomy 16:19",
+        "proverbs 24:23",
+        "proverbs 28:21"
       ],
       "glossKo": ""
     }

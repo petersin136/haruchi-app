@@ -1,8 +1,8 @@
 {
   "lemma": "תְּלוּנָה",
-  "pron": "텔루나",
+  "pron": "텔룬노테켐",
   "strong": "H8519",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "לוּן",
     "strong": "H3885",
@@ -12,13 +12,13 @@
     {
       "lemma": "יָלוֹן",
       "strong": "H3210",
-      "pron": "",
+      "pron": "브얄론",
       "glossKo": "야론"
     },
     {
       "lemma": "לוּן",
       "strong": "H3885",
-      "pron": "탈린",
+      "pron": "브리누",
       "glossKo": "유숙하다"
     },
     {
@@ -30,13 +30,186 @@
     {
       "lemma": "מְלוּנָה",
       "strong": "H4412",
-      "pron": "",
+      "pron": "키멜루나",
       "glossKo": "오두막"
     }
   ],
   "defEn": "grumbling",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "exodus": 6,
+    "numbers": 3
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶת תְּלֻנֹּתֵיכֶ֖ם",
+      "pron": "에트 텔룬노테켐",
+      "lemmas": [
+        "אֵת",
+        "תְּלוּנָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "תְּלֻנֹּתֵיכֶ֖ם",
+          "lemma": "תְּלוּנָה",
+          "strong": "H8519",
+          "pron": "텔룬노테켐"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 16:7",
+        "exodus 16:8",
+        "exodus 16:9",
+        "exodus 16:12",
+        "numbers 14:27",
+        "numbers 17:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת תְּלוּנֹּת֮ בְּנֵ֣י",
+      "pron": "에트 텔룬노테켐 바님",
+      "lemmas": [
+        "אֵת",
+        "תְּלוּנָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "תְּלוּנֹּת֮",
+          "lemma": "תְּלוּנָה",
+          "strong": "H8519",
+          "pron": "텔룬노테켐"
+        },
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 16:12",
+        "numbers 14:27",
+        "numbers 17:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּשָׁמְע֥וֹ אֶת תְּלֻנֹּתֵיכֶ֖ם",
+      "pron": "바이솀우 에트 텔룬노테켐",
+      "lemmas": [
+        "שָׁמַע",
+        "אֵת",
+        "תְּלוּנָה"
+      ],
+      "words": [
+        {
+          "word": "בְּשָׁמְע֥וֹ",
+          "lemma": "שָׁמַע",
+          "strong": "H8085",
+          "pron": "바이솀우"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "תְּלֻנֹּתֵיכֶ֖ם",
+          "lemma": "תְּלוּנָה",
+          "strong": "H8519",
+          "pron": "텔룬노테켐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 16:7",
+        "exodus 16:9",
+        "exodus 16:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּלוּנֹּת֮ בְּנֵ֣י",
+      "pron": "텔룬노테켐 바님",
+      "lemmas": [
+        "תְּלוּנָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "תְּלוּנֹּת֮",
+          "lemma": "תְּלוּנָה",
+          "strong": "H8519",
+          "pron": "텔룬노테켐"
+        },
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 16:12",
+        "numbers 14:27",
+        "numbers 17:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּלוּנֹּת֮ בְּנֵ֣י יִשְׂרָאֵל֒",
+      "pron": "텔룬노테켐 바님 이스라엘",
+      "lemmas": [
+        "תְּלוּנָה",
+        "בֵּן",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "תְּלוּנֹּת֮",
+          "lemma": "תְּלוּנָה",
+          "strong": "H8519",
+          "pron": "텔룬노테켐"
+        },
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יִשְׂרָאֵל֒",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 16:12",
+        "numbers 14:27",
+        "numbers 17:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

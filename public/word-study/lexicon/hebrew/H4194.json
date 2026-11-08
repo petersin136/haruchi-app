@@ -1,6 +1,6 @@
 {
   "lemma": "מָוֶת",
-  "pron": "바마베트",
+  "pron": "브모트",
   "strong": "H4194",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "מוּת",
       "strong": "H4191",
-      "pron": "크메트",
+      "pron": "모트",
       "glossKo": "죽다"
     },
     {
@@ -24,13 +24,13 @@
     {
       "lemma": "מוֹת",
       "strong": "H4193",
-      "pron": "",
+      "pron": "르모트",
       "glossKo": "사형(아람)"
     },
     {
       "lemma": "מָמוֹת",
       "strong": "H4463",
-      "pron": "",
+      "pron": "믐븟팀",
       "glossKo": "치명적인 질병"
     },
     {
@@ -42,38 +42,214 @@
   ],
   "defEn": "death; dead; pestilence; ruin",
   "defKo": "",
-  "countOT": 29,
+  "countOT": 158,
   "byBook": {
     "psalms": 22,
-    "genesis": 7
+    "proverbs": 19,
+    "jeremiah": 13,
+    "samuel2": 10,
+    "deuteronomy": 9,
+    "numbers": 9,
+    "isaiah": 8,
+    "job": 8,
+    "genesis": 7,
+    "chronicles2": 6,
+    "ecclesiastes": 6,
+    "kings2": 6,
+    "samuel1": 6,
+    "ezekiel": 5,
+    "joshua": 3,
+    "judges": 3,
+    "leviticus": 3,
+    "chronicles1": 2,
+    "hosea": 2,
+    "jonah": 2,
+    "kings1": 2,
+    "ruth": 2,
+    "esther": 1,
+    "exodus": 1,
+    "habakkuk": 1,
+    "lamentations": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "לִפְנֵ֥י מוֹתִֽי",
-      "pron": "미페네 바마베트",
+      "hebrew": "אַחֲרֵי֙ מ֣וֹת",
+      "pron": "아하레 브모트",
       "lemmas": [
-        "פָּנִים",
+        "אַחַר",
         "מָוֶת"
       ],
       "words": [
         {
-          "word": "לִפְנֵ֥י",
-          "lemma": "פָּנִים",
-          "strong": "H6440",
-          "pron": "미페네"
+          "word": "אַחֲרֵי֙",
+          "lemma": "אַחַר",
+          "strong": "H310",
+          "pron": "아하레"
         },
         {
-          "word": "מוֹתִֽי",
+          "word": "מ֣וֹת",
           "lemma": "מָוֶת",
           "strong": "H4194",
-          "pron": "바마베트"
+          "pron": "브모트"
         }
       ],
-      "count": 3,
+      "count": 16,
       "refs": [
-        "genesis 27:7",
-        "genesis 27:10",
-        "genesis 50:16"
+        "genesis 25:11",
+        "genesis 26:18",
+        "leviticus 16:1",
+        "numbers 35:28",
+        "deuteronomy 31:27",
+        "deuteronomy 31:29",
+        "joshua 1:1",
+        "judges 1:1",
+        "ruth 2:11",
+        "samuel2 1:1",
+        "kings2 1:1",
+        "kings2 14:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "י֥וֹם מוֹתֽוֹ",
+      "pron": "욤 브모트",
+      "lemmas": [
+        "יוֹם",
+        "מָוֶת"
+      ],
+      "words": [
+        {
+          "word": "י֥וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "מוֹתֽוֹ",
+          "lemma": "מָוֶת",
+          "strong": "H4194",
+          "pron": "브모트"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 27:2",
+        "judges 13:7",
+        "samuel1 15:35",
+        "samuel2 6:23",
+        "samuel2 20:3",
+        "kings2 15:5",
+        "chronicles2 26:21",
+        "ecclesiastes 7:1",
+        "ecclesiastes 8:8",
+        "jeremiah 52:11",
+        "jeremiah 52:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַד י֥וֹם מוֹתֽוֹ",
+      "pron": "앋 욤 브모트",
+      "lemmas": [
+        "עַד",
+        "יוֹם",
+        "מָוֶת"
+      ],
+      "words": [
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "י֥וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "מוֹתֽוֹ",
+          "lemma": "מָוֶת",
+          "strong": "H4194",
+          "pron": "브모트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "judges 13:7",
+        "samuel1 15:35",
+        "samuel2 6:23",
+        "samuel2 20:3",
+        "kings2 15:5",
+        "chronicles2 26:21",
+        "jeremiah 52:11",
+        "jeremiah 52:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּמֹתָ֑ם כִּ֛י",
+      "pron": "브모트 키",
+      "lemmas": [
+        "מָוֶת",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "בְּמֹתָ֑ם",
+          "lemma": "מָוֶת",
+          "strong": "H4194",
+          "pron": "브모트"
+        },
+        {
+          "word": "כִּ֛י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 6:7",
+        "deuteronomy 19:6",
+        "deuteronomy 22:26",
+        "deuteronomy 31:29",
+        "samuel1 15:35",
+        "jeremiah 26:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַד מוֹת֙",
+      "pron": "앋 브모트",
+      "lemmas": [
+        "עַד",
+        "מָוֶת"
+      ],
+      "words": [
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "מוֹת֙",
+          "lemma": "מָוֶת",
+          "strong": "H4194",
+          "pron": "브모트"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 35:25",
+        "numbers 35:28",
+        "numbers 35:32",
+        "joshua 20:6",
+        "kings1 11:40",
+        "jonah 4:9"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "עַפְעַף",
-  "pron": "압압파이브",
+  "pron": "브압압페",
   "strong": "H6079",
   "posKo": "명사",
   "root": {
@@ -12,39 +12,72 @@
     {
       "lemma": "מוּעָף",
       "strong": "H4155",
-      "pron": "",
+      "pron": "무압",
       "glossKo": "어둠"
     },
     {
       "lemma": "מָעוּף",
       "strong": "H4588",
-      "pron": "",
+      "pron": "메웁",
       "glossKo": "덮개"
     },
     {
       "lemma": "עוּף",
       "strong": "H5774",
-      "pron": "바야옵",
+      "pron": "예오펩",
       "glossKo": "날다"
     },
     {
       "lemma": "עוֹף",
       "strong": "H5775",
-      "pron": "옵",
+      "pron": "브옵",
       "glossKo": "새"
     },
     {
       "lemma": "עֵיפָה",
       "strong": "H5890",
-      "pron": "",
+      "pron": "에파타",
       "glossKo": "어두움"
     }
   ],
   "defEn": "eyelash; morning ray",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 10,
   "byBook": {
-    "psalms": 2
+    "proverbs": 4,
+    "job": 3,
+    "psalms": 2,
+    "jeremiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְ֝עֵינָ֗יו כְּעַפְעַפֵּי",
+      "pron": "에네켐 브압압페",
+      "lemmas": [
+        "עַיִן",
+        "עַפְעַף"
+      ],
+      "words": [
+        {
+          "word": "וְ֝עֵינָ֗יו",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        },
+        {
+          "word": "כְּעַפְעַפֵּי",
+          "lemma": "עַפְעַף",
+          "strong": "H6079",
+          "pron": "브압압페"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 41:18",
+        "psalms 132:4",
+        "proverbs 30:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

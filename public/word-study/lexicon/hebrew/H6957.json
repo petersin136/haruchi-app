@@ -1,6 +1,6 @@
 {
   "lemma": "קַו",
-  "pron": "카바므",
+  "pron": "카브",
   "strong": "H6957",
   "posKo": "명사",
   "root": {
@@ -18,19 +18,19 @@
     {
       "lemma": "קָוָה",
       "strong": "H6960",
-      "pron": "코베카",
-      "glossKo": "너의 모이다"
+      "pron": "익카부",
+      "glossKo": "모이다"
     },
     {
       "lemma": "קָוֶה",
       "strong": "H6961",
-      "pron": "",
+      "pron": "브크브",
       "glossKo": "줄"
     },
     {
       "lemma": "קַו־קַו",
       "strong": "H6978",
-      "pron": "",
+      "pron": "카브",
       "glossKo": "줄과 줄"
     },
     {
@@ -42,9 +42,151 @@
   ],
   "defEn": "cord; measuring; rule",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 20,
   "byBook": {
-    "psalms": 1
+    "isaiah": 12,
+    "chronicles2": 1,
+    "ezekiel": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "kings2": 1,
+    "lamentations": 1,
+    "psalms": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "קַ֥ו לָקָ֖ו",
+      "pron": "카브 카브",
+      "lemmas": [
+        "קַו",
+        "קַו"
+      ],
+      "words": [
+        {
+          "word": "קַ֥ו",
+          "lemma": "קַו",
+          "strong": "H6957",
+          "pron": "카브"
+        },
+        {
+          "word": "לָקָ֖ו",
+          "lemma": "קַו",
+          "strong": "H6957",
+          "pron": "카브"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "isaiah 28:10",
+        "isaiah 28:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קַ֥ו לָקָ֖ו קַ֣ו",
+      "pron": "카브 카브 카브",
+      "lemmas": [
+        "קַו",
+        "קַו",
+        "קַו"
+      ],
+      "words": [
+        {
+          "word": "קַ֥ו",
+          "lemma": "קַו",
+          "strong": "H6957",
+          "pron": "카브"
+        },
+        {
+          "word": "לָקָ֖ו",
+          "lemma": "קַו",
+          "strong": "H6957",
+          "pron": "카브"
+        },
+        {
+          "word": "קַ֣ו",
+          "lemma": "קַו",
+          "strong": "H6957",
+          "pron": "카브"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "isaiah 28:10",
+        "isaiah 28:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָצָ֔ו קַ֥ו לָקָ֖ו",
+      "pron": "차브 카브 카브",
+      "lemmas": [
+        "צַו",
+        "קַו",
+        "קַו"
+      ],
+      "words": [
+        {
+          "word": "לָצָ֔ו",
+          "lemma": "צַו",
+          "strong": "H6673",
+          "pron": "차브"
+        },
+        {
+          "word": "קַ֥ו",
+          "lemma": "קַו",
+          "strong": "H6957",
+          "pron": "카브"
+        },
+        {
+          "word": "לָקָ֖ו",
+          "lemma": "קַו",
+          "strong": "H6957",
+          "pron": "카브"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 28:10",
+        "isaiah 28:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קַ֣ו לָקָ֑ו זְעֵ֥יר",
+      "pron": "카브 카브 제에르",
+      "lemmas": [
+        "קַו",
+        "קַו",
+        "זְעֵיר"
+      ],
+      "words": [
+        {
+          "word": "קַ֣ו",
+          "lemma": "קַו",
+          "strong": "H6957",
+          "pron": "카브"
+        },
+        {
+          "word": "לָקָ֑ו",
+          "lemma": "קַו",
+          "strong": "H6957",
+          "pron": "카브"
+        },
+        {
+          "word": "זְעֵ֥יר",
+          "lemma": "זְעֵיר",
+          "strong": "H2191",
+          "pron": "제에르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 28:10",
+        "isaiah 28:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

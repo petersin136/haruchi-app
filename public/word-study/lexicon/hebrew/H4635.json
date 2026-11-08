@@ -1,8 +1,8 @@
 {
   "lemma": "מַעֲרֶכֶת",
-  "pron": "마아레케트",
+  "pron": "아마아라케트",
   "strong": "H4635",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָרַךְ",
     "strong": "H6186",
@@ -12,25 +12,60 @@
     {
       "lemma": "מַעֲרָךְ",
       "strong": "H4633",
-      "pron": "",
+      "pron": "마아레케",
       "glossKo": "정돈"
     },
     {
       "lemma": "עָרַךְ",
       "strong": "H6186",
-      "pron": "에에라크",
+      "pron": "바야아레쿠",
       "glossKo": "정렬하다"
     },
     {
       "lemma": "עֵרֶךְ",
       "strong": "H6187",
-      "pron": "크에렉키위",
-      "glossKo": "나의 값"
+      "pron": "에렉코",
+      "glossKo": "그의 값"
     }
   ],
   "defEn": "arrangement; pile",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "chronicles1": 3,
+    "chronicles2": 3,
+    "leviticus": 2,
+    "nehemiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "לֶ֣חֶם הַֽמַּעֲרָ֑כֶת",
+      "pron": "레헴 아마아라케트",
+      "lemmas": [
+        "לֶחֶם",
+        "מַעֲרֶכֶת"
+      ],
+      "words": [
+        {
+          "word": "לֶ֣חֶם",
+          "lemma": "לֶחֶם",
+          "strong": "H3899",
+          "pron": "레헴"
+        },
+        {
+          "word": "הַֽמַּעֲרָ֑כֶת",
+          "lemma": "מַעֲרֶכֶת",
+          "strong": "H4635",
+          "pron": "아마아라케트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 9:32",
+        "chronicles1 23:29",
+        "nehemiah 10:33"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

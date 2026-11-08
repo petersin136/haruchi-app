@@ -2,7 +2,7 @@
   "lemma": "מַעֲנֶה",
   "pron": "마아네",
   "strong": "H4617",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָנָה",
     "strong": "H6030",
@@ -18,19 +18,19 @@
     {
       "lemma": "עָנָה",
       "strong": "H6030",
-      "pron": "바야아네니",
-      "glossKo": "나를 응답하다"
+      "pron": "바야안",
+      "glossKo": "응답하다"
     },
     {
       "lemma": "עָנָה",
       "strong": "H6031",
-      "pron": "인네티",
+      "pron": "브인누",
       "glossKo": "괴롭히다"
     },
     {
       "lemma": "עֲנָה",
       "strong": "H6032",
-      "pron": "브느느브",
+      "pron": "븐느브",
       "glossKo": "우리를 응답하다"
     },
     {
@@ -42,13 +42,47 @@
     {
       "lemma": "עֲנָיָה",
       "strong": "H6043",
-      "pron": "",
+      "pron": "바아나아",
       "glossKo": "아나야"
     }
   ],
   "defEn": "reply",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 8,
+  "byBook": {
+    "proverbs": 5,
+    "job": 2,
+    "micah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֵ֤ין מַעֲנֶ֗ה",
+      "pron": "아인 마아네",
+      "lemmas": [
+        "אַיִן",
+        "מַעֲנֶה"
+      ],
+      "words": [
+        {
+          "word": "אֵ֤ין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
+        },
+        {
+          "word": "מַעֲנֶ֗ה",
+          "lemma": "מַעֲנֶה",
+          "strong": "H4617",
+          "pron": "마아네"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 32:5",
+        "proverbs 29:19",
+        "micah 3:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

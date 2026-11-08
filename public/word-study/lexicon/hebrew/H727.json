@@ -12,28 +12,239 @@
     {
       "lemma": "אָרָה",
       "strong": "H717",
-      "pron": "브아루하",
+      "pron": "베아루하",
       "glossKo": "그녀에게 꺾다"
     },
     {
       "lemma": "אֻרְוָה",
       "strong": "H723",
-      "pron": "",
+      "pron": "우레보트",
       "glossKo": "마구간"
     },
     {
       "lemma": "אֲרִי",
       "strong": "H738",
-      "pron": "크아레에",
+      "pron": "아레에",
       "glossKo": "사자"
     }
   ],
   "defEn": "box",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 202,
   "byBook": {
+    "samuel1": 40,
+    "chronicles1": 34,
+    "joshua": 30,
+    "exodus": 26,
+    "samuel2": 21,
+    "chronicles2": 18,
+    "kings1": 12,
+    "deuteronomy": 8,
+    "numbers": 6,
+    "kings2": 2,
     "genesis": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "leviticus": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֶת אֲר֣וֹן",
+      "pron": "에트 바아론",
+      "lemmas": [
+        "אֵת",
+        "אָרוֹן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "אֲר֣וֹן",
+          "lemma": "אָרוֹן",
+          "strong": "H727",
+          "pron": "바아론"
+        }
+      ],
+      "count": 78,
+      "refs": [
+        "exodus 25:14",
+        "exodus 26:33",
+        "exodus 30:26",
+        "exodus 31:7",
+        "exodus 35:12",
+        "exodus 37:1",
+        "exodus 37:5",
+        "exodus 39:35",
+        "exodus 40:3",
+        "exodus 40:21",
+        "numbers 4:5",
+        "deuteronomy 10:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲר֣וֹן הָאֱלֹהִ֔ים",
+      "pron": "바아론 엘로힘",
+      "lemmas": [
+        "אָרוֹן",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "אֲר֣וֹן",
+          "lemma": "אָרוֹן",
+          "strong": "H727",
+          "pron": "바아론"
+        },
+        {
+          "word": "הָאֱלֹהִ֔ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 44,
+      "refs": [
+        "samuel1 3:3",
+        "samuel1 4:11",
+        "samuel1 4:13",
+        "samuel1 4:17",
+        "samuel1 4:18",
+        "samuel1 4:19",
+        "samuel1 4:21",
+        "samuel1 4:22",
+        "samuel1 5:1",
+        "samuel1 5:2",
+        "samuel1 5:7",
+        "samuel1 5:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲר֣וֹן בְּרִית",
+      "pron": "바아론 베리티",
+      "lemmas": [
+        "אָרוֹן",
+        "בְּרִית"
+      ],
+      "words": [
+        {
+          "word": "אֲר֣וֹן",
+          "lemma": "אָרוֹן",
+          "strong": "H727",
+          "pron": "바아론"
+        },
+        {
+          "word": "בְּרִית",
+          "lemma": "בְּרִית",
+          "strong": "H1285",
+          "pron": "베리티"
+        }
+      ],
+      "count": 42,
+      "refs": [
+        "numbers 10:33",
+        "numbers 14:44",
+        "deuteronomy 10:8",
+        "deuteronomy 31:9",
+        "deuteronomy 31:25",
+        "deuteronomy 31:26",
+        "joshua 3:3",
+        "joshua 3:6",
+        "joshua 3:8",
+        "joshua 3:11",
+        "joshua 3:14",
+        "joshua 3:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲר֣וֹן יְהוָ֔ה",
+      "pron": "바아론 여호와",
+      "lemmas": [
+        "אָרוֹן",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "אֲר֣וֹן",
+          "lemma": "אָרוֹן",
+          "strong": "H727",
+          "pron": "바아론"
+        },
+        {
+          "word": "יְהוָ֔ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 37,
+      "refs": [
+        "joshua 3:13",
+        "joshua 4:5",
+        "joshua 4:11",
+        "joshua 6:6",
+        "joshua 6:7",
+        "joshua 6:11",
+        "joshua 6:12",
+        "joshua 6:13",
+        "joshua 7:6",
+        "samuel1 4:6",
+        "samuel1 5:3",
+        "samuel1 5:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲר֧וֹן בְּרִית יְהוָ֛ה",
+      "pron": "바아론 베리티 여호와",
+      "lemmas": [
+        "אָרוֹן",
+        "בְּרִית",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "אֲר֧וֹן",
+          "lemma": "אָרוֹן",
+          "strong": "H727",
+          "pron": "바아론"
+        },
+        {
+          "word": "בְּרִית",
+          "lemma": "בְּרִית",
+          "strong": "H1285",
+          "pron": "베리티"
+        },
+        {
+          "word": "יְהוָ֛ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 30,
+      "refs": [
+        "numbers 10:33",
+        "numbers 14:44",
+        "deuteronomy 10:8",
+        "deuteronomy 31:9",
+        "deuteronomy 31:25",
+        "deuteronomy 31:26",
+        "joshua 3:3",
+        "joshua 3:17",
+        "joshua 4:7",
+        "joshua 4:18",
+        "joshua 6:8",
+        "joshua 8:33"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

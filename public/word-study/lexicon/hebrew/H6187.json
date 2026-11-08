@@ -1,6 +1,6 @@
 {
   "lemma": "עֵרֶךְ",
-  "pron": "크에렉키위",
+  "pron": "에렉코",
   "strong": "H6187",
   "posKo": "명사",
   "root": {
@@ -12,27 +12,196 @@
     {
       "lemma": "מַעֲרָךְ",
       "strong": "H4633",
-      "pron": "",
+      "pron": "마아레케",
       "glossKo": "정돈"
     },
     {
       "lemma": "מַעֲרֶכֶת",
       "strong": "H4635",
-      "pron": "",
+      "pron": "아마아라케트",
       "glossKo": "진설"
     },
     {
       "lemma": "עָרַךְ",
       "strong": "H6186",
-      "pron": "에에라크",
+      "pron": "바야아레쿠",
       "glossKo": "정렬하다"
     }
   ],
   "defEn": "pile; equipment; estimate",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 33,
   "byBook": {
+    "leviticus": 24,
+    "exodus": 2,
+    "job": 2,
+    "kings2": 2,
+    "judges": 1,
+    "numbers": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְהָיָ֤ה עֶרְכְּךָ֙",
+      "pron": "하에타 에렉코",
+      "lemmas": [
+        "הָיָה",
+        "עֵרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "וְהָיָ֤ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "עֶרְכְּךָ֙",
+          "lemma": "עֵרֶךְ",
+          "strong": "H6187",
+          "pron": "에렉코"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "leviticus 27:3",
+        "leviticus 27:4",
+        "leviticus 27:5",
+        "leviticus 27:6",
+        "leviticus 27:7",
+        "leviticus 27:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַצֹּ֛אן בְּעֶרְכְּךָ֥",
+      "pron": "촌 에렉코",
+      "lemmas": [
+        "צֹאן",
+        "עֵרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "הַצֹּ֛אן",
+          "lemma": "צֹאן",
+          "strong": "H6629",
+          "pron": "촌"
+        },
+        {
+          "word": "בְּעֶרְכְּךָ֥",
+          "lemma": "עֵרֶךְ",
+          "strong": "H6187",
+          "pron": "에렉코"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 5:15",
+        "leviticus 5:18",
+        "leviticus 6:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָיָ֤ה עֶרְכְּךָ֙ הַזָּכָ֔ר",
+      "pron": "하에타 에렉코 자카르",
+      "lemmas": [
+        "הָיָה",
+        "עֵרֶךְ",
+        "זָכָר"
+      ],
+      "words": [
+        {
+          "word": "וְהָיָ֤ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "עֶרְכְּךָ֙",
+          "lemma": "עֵרֶךְ",
+          "strong": "H6187",
+          "pron": "에렉코"
+        },
+        {
+          "word": "הַזָּכָ֔ר",
+          "lemma": "זָכָר",
+          "strong": "H2145",
+          "pron": "자카르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 27:3",
+        "leviticus 27:5",
+        "leviticus 27:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִן הַצֹּ֛אן בְּעֶרְכְּךָ֥",
+      "pron": "민 촌 에렉코",
+      "lemmas": [
+        "מִן",
+        "צֹאן",
+        "עֵרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        },
+        {
+          "word": "הַצֹּ֛אן",
+          "lemma": "צֹאן",
+          "strong": "H6629",
+          "pron": "촌"
+        },
+        {
+          "word": "בְּעֶרְכְּךָ֥",
+          "lemma": "עֵרֶךְ",
+          "strong": "H6187",
+          "pron": "에렉코"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 5:15",
+        "leviticus 5:18",
+        "leviticus 6:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֶרְכְּךָ֙ הַזָּכָ֔ר",
+      "pron": "에렉코 자카르",
+      "lemmas": [
+        "עֵרֶךְ",
+        "זָכָר"
+      ],
+      "words": [
+        {
+          "word": "עֶרְכְּךָ֙",
+          "lemma": "עֵרֶךְ",
+          "strong": "H6187",
+          "pron": "에렉코"
+        },
+        {
+          "word": "הַזָּכָ֔ר",
+          "lemma": "זָכָר",
+          "strong": "H2145",
+          "pron": "자카르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 27:3",
+        "leviticus 27:5",
+        "leviticus 27:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

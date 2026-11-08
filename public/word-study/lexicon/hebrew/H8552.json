@@ -1,6 +1,6 @@
 {
   "lemma": "תָּמַם",
-  "pron": "탐무",
+  "pron": "바잇톰",
   "strong": "H8552",
   "posKo": "동사",
   "root": null,
@@ -20,8 +20,8 @@
     {
       "lemma": "תֹּם",
       "strong": "H8537",
-      "pron": "우크툼미위",
-      "glossKo": "나의 완전함"
+      "pron": "브탐",
+      "glossKo": "완전함"
     },
     {
       "lemma": "תָּמִים",
@@ -32,10 +32,212 @@
   ],
   "defEn": "complete",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 63,
   "byBook": {
+    "jeremiah": 11,
+    "joshua": 9,
     "psalms": 7,
-    "genesis": 3
+    "deuteronomy": 6,
+    "ezekiel": 4,
+    "numbers": 4,
+    "genesis": 3,
+    "isaiah": 3,
+    "kings1": 3,
+    "samuel2": 3,
+    "daniel": 2,
+    "job": 2,
+    "kings2": 2,
+    "lamentations": 2,
+    "leviticus": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עַד תֹּ֥ם",
+      "pron": "앋 바잇톰",
+      "lemmas": [
+        "עַד",
+        "תָּמַם"
+      ],
+      "words": [
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "תֹּ֥ם",
+          "lemma": "תָּמַם",
+          "strong": "H8552",
+          "pron": "바잇톰"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "numbers 14:33",
+        "numbers 32:13",
+        "deuteronomy 2:14",
+        "deuteronomy 2:15",
+        "deuteronomy 31:24",
+        "deuteronomy 31:30",
+        "joshua 4:10",
+        "joshua 5:6",
+        "joshua 8:24",
+        "joshua 10:20",
+        "samuel2 15:24",
+        "kings1 6:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תֹּם֙ כָּל",
+      "pron": "바잇톰 칼",
+      "lemmas": [
+        "תָּמַם",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "תֹּם֙",
+          "lemma": "תָּמַם",
+          "strong": "H8552",
+          "pron": "바잇톰"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "numbers 32:13",
+        "deuteronomy 2:14",
+        "deuteronomy 2:16",
+        "joshua 3:17",
+        "joshua 4:1",
+        "joshua 4:10",
+        "joshua 4:11",
+        "joshua 5:6",
+        "joshua 5:8",
+        "samuel2 15:24",
+        "kings1 6:22",
+        "jeremiah 36:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַד תֹּם֙ כָּל",
+      "pron": "앋 바잇톰 칼",
+      "lemmas": [
+        "עַד",
+        "תָּמַם",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "תֹּם֙",
+          "lemma": "תָּמַם",
+          "strong": "H8552",
+          "pron": "바잇톰"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "numbers 32:13",
+        "deuteronomy 2:14",
+        "joshua 4:10",
+        "joshua 5:6",
+        "samuel2 15:24",
+        "kings1 6:22",
+        "jeremiah 36:23",
+        "jeremiah 37:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַאֲשֶׁר תַּ֜מּוּ",
+      "pron": "아셰르 바잇톰",
+      "lemmas": [
+        "אֲשֶׁר",
+        "תָּמַם"
+      ],
+      "words": [
+        {
+          "word": "כַאֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "תַּ֜מּוּ",
+          "lemma": "תָּמַם",
+          "strong": "H8552",
+          "pron": "바잇톰"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "deuteronomy 2:16",
+        "joshua 3:17",
+        "joshua 4:1",
+        "joshua 4:11",
+        "joshua 5:8",
+        "kings2 7:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַאֲשֶׁר תַּ֜מּוּ כָּל",
+      "pron": "아셰르 바잇톰 칼",
+      "lemmas": [
+        "אֲשֶׁר",
+        "תָּמַם",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "כַאֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "תַּ֜מּוּ",
+          "lemma": "תָּמַם",
+          "strong": "H8552",
+          "pron": "바잇톰"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 2:16",
+        "joshua 3:17",
+        "joshua 4:1",
+        "joshua 4:11",
+        "joshua 5:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

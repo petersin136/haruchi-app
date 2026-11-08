@@ -1,8 +1,8 @@
 {
   "lemma": "מְנַקִּית",
-  "pron": "메낙키트",
+  "pron": "움낙키오타으브",
   "strong": "H4518",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "נָקָה",
     "strong": "H5352",
@@ -12,14 +12,14 @@
     {
       "lemma": "נְקֵא",
       "strong": "H5343",
-      "pron": "",
+      "pron": "네케",
       "glossKo": "깨끗한(아람)"
     },
     {
       "lemma": "נָקָה",
       "strong": "H5352",
-      "pron": "낙케니",
-      "glossKo": "나를 면제되다"
+      "pron": "브닉키타",
+      "glossKo": "면제되다"
     },
     {
       "lemma": "נָקִי",
@@ -30,13 +30,83 @@
     {
       "lemma": "נִקָּיוֹן",
       "strong": "H5356",
-      "pron": "브닉카온",
+      "pron": "우브니케온",
       "glossKo": "결백"
     }
   ],
   "defEn": "sacrificial basin",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "exodus": 2,
+    "jeremiah": 1,
+    "numbers": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְאֵת֙ מְנַקִּיֹּתָ֔יו",
+      "pron": "에트 움낙키오타으브",
+      "lemmas": [
+        "אֵת",
+        "מְנַקִּית"
+      ],
+      "words": [
+        {
+          "word": "וְאֵת֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מְנַקִּיֹּתָ֔יו",
+          "lemma": "מְנַקִּית",
+          "strong": "H4518",
+          "pron": "움낙키오타으브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 37:16",
+        "numbers 4:7",
+        "jeremiah 52:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כַּפֹּתָיו֙ וְאֵת֙ מְנַקִּיֹּתָ֔יו",
+      "pron": "르캅 에트 움낙키오타으브",
+      "lemmas": [
+        "כַּף",
+        "אֵת",
+        "מְנַקִּית"
+      ],
+      "words": [
+        {
+          "word": "כַּפֹּתָיו֙",
+          "lemma": "כַּף",
+          "strong": "H3709",
+          "pron": "르캅"
+        },
+        {
+          "word": "וְאֵת֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מְנַקִּיֹּתָ֔יו",
+          "lemma": "מְנַקִּית",
+          "strong": "H4518",
+          "pron": "움낙키오타으브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 37:16",
+        "numbers 4:7",
+        "jeremiah 52:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

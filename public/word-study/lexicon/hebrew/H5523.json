@@ -1,6 +1,6 @@
 {
   "lemma": "סֻכּוֹת",
-  "pron": "숙코트",
+  "pron": "숙코타",
   "strong": "H5523",
   "posKo": "명사",
   "root": {
@@ -12,16 +12,89 @@
     {
       "lemma": "סֻכָּה",
       "strong": "H5521",
-      "pron": "숙카트오",
-      "glossKo": "그의 초막"
+      "pron": "숙코트",
+      "glossKo": "초막"
+    },
+    {
+      "lemma": "סֻכּוֹת בְּנוֹת",
+      "strong": "H5524",
+      "pron": "숙코트",
+      "glossKo": "숙곳브놋"
     }
   ],
   "defEn": "Succoth",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 18,
   "byBook": {
+    "judges": 7,
+    "exodus": 2,
     "genesis": 2,
-    "psalms": 2
+    "numbers": 2,
+    "psalms": 2,
+    "chronicles2": 1,
+    "joshua": 1,
+    "kings1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אַנְשֵׁ֥י סֻכּֽוֹת",
+      "pron": "메이쉬 숙코타",
+      "lemmas": [
+        "אִישׁ",
+        "סֻכּוֹת"
+      ],
+      "words": [
+        {
+          "word": "אַנְשֵׁ֥י",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "סֻכּֽוֹת",
+          "lemma": "סֻכּוֹת",
+          "strong": "H5523",
+          "pron": "숙코타"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 8:5",
+        "judges 8:8",
+        "judges 8:14",
+        "judges 8:15",
+        "judges 8:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּסְע֖וּ מִסֻּכֹּ֑ת",
+      "pron": "베낫암 숙코타",
+      "lemmas": [
+        "נָסַע",
+        "סֻכּוֹת"
+      ],
+      "words": [
+        {
+          "word": "וַיִּסְע֖וּ",
+          "lemma": "נָסַע",
+          "strong": "H5265",
+          "pron": "베낫암"
+        },
+        {
+          "word": "מִסֻּכֹּ֑ת",
+          "lemma": "סֻכּוֹת",
+          "strong": "H5523",
+          "pron": "숙코타"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 33:17",
+        "exodus 13:20",
+        "numbers 33:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

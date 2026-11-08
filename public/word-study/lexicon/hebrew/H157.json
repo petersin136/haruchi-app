@@ -1,6 +1,6 @@
 {
   "lemma": "אָהַב",
-  "pron": "테에하부느",
+  "pron": "아합타",
   "strong": "H157",
   "posKo": "동사",
   "root": null,
@@ -8,21 +8,85 @@
     {
       "lemma": "אַהַב",
       "strong": "H158",
-      "pron": "",
+      "pron": "아하빔",
       "glossKo": "사랑"
     }
   ],
   "defEn": "have affection",
   "defKo": "",
-  "countOT": 54,
+  "countOT": 211,
   "byBook": {
     "psalms": 39,
-    "genesis": 15
+    "proverbs": 28,
+    "deuteronomy": 22,
+    "hosea": 16,
+    "genesis": 15,
+    "jeremiah": 10,
+    "isaiah": 9,
+    "samuel1": 9,
+    "ezekiel": 7,
+    "samuel2": 7,
+    "songofsolomon": 7,
+    "chronicles2": 4,
+    "ecclesiastes": 4,
+    "esther": 4,
+    "judges": 4,
+    "malachi": 4,
+    "kings1": 3,
+    "zechariah": 3,
+    "amos": 2,
+    "exodus": 2,
+    "joshua": 2,
+    "lamentations": 2,
+    "leviticus": 2,
+    "nehemiah": 2,
+    "daniel": 1,
+    "job": 1,
+    "micah": 1,
+    "ruth": 1
   },
   "phrases": [
     {
-      "hebrew": "אֲשֶׁר אָהֵ֣ב",
-      "pron": "아셰르 테에하부느",
+      "hebrew": "לְאַהֲבָ֞ה אֶת",
+      "pron": "아합타 에트",
+      "lemmas": [
+        "אָהַב",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "לְאַהֲבָ֞ה",
+          "lemma": "אָהַב",
+          "strong": "H157",
+          "pron": "아합타"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 32,
+      "refs": [
+        "genesis 22:2",
+        "genesis 25:28",
+        "genesis 29:20",
+        "genesis 34:3",
+        "genesis 37:3",
+        "exodus 21:5",
+        "deuteronomy 4:37",
+        "deuteronomy 6:5",
+        "deuteronomy 10:12",
+        "deuteronomy 10:15",
+        "deuteronomy 10:19",
+        "deuteronomy 11:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר אָהַ֨בְתָּ֙",
+      "pron": "아셰르 아합타",
       "lemmas": [
         "אֲשֶׁר",
         "אָהַב"
@@ -35,143 +99,147 @@
           "pron": "아셰르"
         },
         {
-          "word": "אָהֵ֣ב",
+          "word": "אָהַ֨בְתָּ֙",
           "lemma": "אָהַב",
           "strong": "H157",
-          "pron": "테에하부느"
+          "pron": "아합타"
         }
       ],
-      "count": 8,
+      "count": 15,
       "refs": [
+        "genesis 22:2",
+        "genesis 27:4",
+        "genesis 27:9",
+        "genesis 27:14",
+        "ruth 4:15",
+        "samuel2 13:15",
         "psalms 47:4",
         "psalms 78:68",
         "psalms 119:47",
         "psalms 119:48",
-        "genesis 22:2",
-        "genesis 27:4",
-        "genesis 27:9",
-        "genesis 27:14"
+        "proverbs 3:12",
+        "ecclesiastes 9:9"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֶֽהֱב֥וּ אֶת",
-      "pron": "테에하부느 에트",
+      "hebrew": "וְכָל אֹֽהֲבָ֗יו",
+      "pron": "칼 아합타",
       "lemmas": [
-        "אָהַב",
-        "אֵת"
+        "כֹּל",
+        "אָהַב"
       ],
       "words": [
         {
-          "word": "אֶֽהֱב֥וּ",
-          "lemma": "אָהַב",
-          "strong": "H157",
-          "pron": "테에하부느"
+          "word": "וְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
         },
         {
-          "word": "אֶת",
-          "lemma": "אֵת",
-          "strong": "H853",
-          "pron": "에트"
+          "word": "אֹֽהֲבָ֗יו",
+          "lemma": "אָהַב",
+          "strong": "H157",
+          "pron": "아합타"
         }
       ],
-      "count": 7,
+      "count": 12,
       "refs": [
-        "psalms 31:23",
+        "esther 5:14",
+        "esther 6:13",
         "psalms 145:20",
-        "genesis 22:2",
-        "genesis 25:28",
-        "genesis 29:20",
-        "genesis 34:3",
-        "genesis 37:3"
+        "isaiah 1:23",
+        "isaiah 66:10",
+        "jeremiah 20:4",
+        "jeremiah 20:6",
+        "jeremiah 22:20",
+        "jeremiah 30:14",
+        "lamentations 1:2",
+        "ezekiel 16:33",
+        "ezekiel 16:37"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "יְֽהוָ֗ה אָ֭הַבְתִּי",
-      "pron": "여호와 테에하부느",
+      "hebrew": "יְהוָ֖ה לְאַהֲבָ֣ה",
+      "pron": "여호와 아합타",
       "lemmas": [
         "יְהֹוָה",
         "אָהַב"
       ],
       "words": [
         {
-          "word": "יְֽהוָ֗ה",
+          "word": "יְהוָ֖ה",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         },
         {
-          "word": "אָ֭הַבְתִּי",
+          "word": "לְאַהֲבָ֣ה",
           "lemma": "אָהַב",
           "strong": "H157",
-          "pron": "테에하부느"
+          "pron": "아합타"
         }
       ],
-      "count": 4,
+      "count": 12,
       "refs": [
+        "deuteronomy 10:15",
+        "joshua 22:5",
+        "judges 5:31",
+        "samuel2 12:24",
+        "chronicles2 19:2",
         "psalms 26:8",
         "psalms 37:28",
         "psalms 40:16",
-        "psalms 146:8"
+        "psalms 146:8",
+        "isaiah 48:14",
+        "isaiah 61:8",
+        "malachi 1:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֹהֵ֣ב יְ֭הוָה",
-      "pron": "테에하부느 여호와",
+      "hebrew": "לְאַהֲבָ֞ה אֶת יְהוָ֧ה",
+      "pron": "아합타 에트 여호와",
       "lemmas": [
         "אָהַב",
+        "אֵת",
         "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "אֹהֵ֣ב",
+          "word": "לְאַהֲבָ֞ה",
           "lemma": "אָהַב",
           "strong": "H157",
-          "pron": "테에하부느"
+          "pron": "아합타"
         },
         {
-          "word": "יְ֭הוָה",
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "יְהוָ֧ה",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         }
       ],
-      "count": 3,
+      "count": 12,
       "refs": [
-        "psalms 87:2",
-        "psalms 97:10",
-        "psalms 119:159"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֹהֲבֵ֥י שְׁמֶֽךָ",
-      "pron": "테에하부느 셰메카",
-      "lemmas": [
-        "אָהַב",
-        "שֵׁם"
-      ],
-      "words": [
-        {
-          "word": "אֹהֲבֵ֥י",
-          "lemma": "אָהַב",
-          "strong": "H157",
-          "pron": "테에하부느"
-        },
-        {
-          "word": "שְׁמֶֽךָ",
-          "lemma": "שֵׁם",
-          "strong": "H8034",
-          "pron": "셰메카"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 5:11",
-        "psalms 69:36",
-        "psalms 119:132"
+        "deuteronomy 6:5",
+        "deuteronomy 11:1",
+        "deuteronomy 11:13",
+        "deuteronomy 11:22",
+        "deuteronomy 13:3",
+        "deuteronomy 19:9",
+        "deuteronomy 30:6",
+        "deuteronomy 30:16",
+        "deuteronomy 30:20",
+        "joshua 22:5",
+        "joshua 23:11",
+        "psalms 31:23"
       ],
       "glossKo": ""
     }

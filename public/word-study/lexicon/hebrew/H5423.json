@@ -1,6 +1,6 @@
 {
   "lemma": "נָתַק",
-  "pron": "네낫테카",
+  "pron": "브나투크",
   "strong": "H5423",
   "posKo": "동사",
   "root": null,
@@ -8,21 +8,155 @@
     {
       "lemma": "אַתּוּק",
       "strong": "H862",
-      "pron": "",
-      "glossKo": "복도(아람)"
+      "pron": "븟브키흐",
+      "glossKo": "그녀의 복도(아람)"
     },
     {
       "lemma": "נֶתֶק",
       "strong": "H5424",
-      "pron": "",
+      "pron": "네테크",
       "glossKo": "딱지"
     }
   ],
   "defEn": "tear",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 27,
   "byBook": {
-    "psalms": 2
+    "jeremiah": 7,
+    "judges": 5,
+    "isaiah": 3,
+    "joshua": 3,
+    "ezekiel": 2,
+    "job": 2,
+    "psalms": 2,
+    "ecclesiastes": 1,
+    "leviticus": 1,
+    "nahum": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הַתִּיקֵ֤נוּ אוֹתָם֙",
+      "pron": "브나투크 에트",
+      "lemmas": [
+        "נָתַק",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "הַתִּיקֵ֤נוּ",
+          "lemma": "נָתַק",
+          "strong": "H5423",
+          "pron": "브나투크"
+        },
+        {
+          "word": "אוֹתָם֙",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 8:6",
+        "judges 16:9",
+        "psalms 2:3",
+        "ezekiel 17:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּנָּתְק֖וּ מִן",
+      "pron": "브나투크 민",
+      "lemmas": [
+        "נָתַק",
+        "מִן"
+      ],
+      "words": [
+        {
+          "word": "וַיִּנָּתְק֖וּ",
+          "lemma": "נָתַק",
+          "strong": "H5423",
+          "pron": "브나투크"
+        },
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 8:16",
+        "judges 20:31",
+        "judges 20:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּנָּתְק֖וּ מִן הָעִֽיר",
+      "pron": "브나투크 민 이르",
+      "lemmas": [
+        "נָתַק",
+        "מִן",
+        "עִיר"
+      ],
+      "words": [
+        {
+          "word": "וַיִּנָּתְק֖וּ",
+          "lemma": "נָתַק",
+          "strong": "H5423",
+          "pron": "브나투크"
+        },
+        {
+          "word": "מִן",
+          "lemma": "מִן",
+          "strong": "H4480",
+          "pron": "민"
+        },
+        {
+          "word": "הָעִֽיר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 8:16",
+        "judges 20:31",
+        "judges 20:32"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמוֹסְר֖וֹתֵיהֶ֣ם יְנַתֵּֽק",
+      "pron": "우못로트 브나투크",
+      "lemmas": [
+        "מוֹסֵר",
+        "נָתַק"
+      ],
+      "words": [
+        {
+          "word": "וּמוֹסְר֖וֹתֵיהֶ֣ם",
+          "lemma": "מוֹסֵר",
+          "strong": "H4147",
+          "pron": "우못로트"
+        },
+        {
+          "word": "יְנַתֵּֽק",
+          "lemma": "נָתַק",
+          "strong": "H5423",
+          "pron": "브나투크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 107:14",
+        "jeremiah 30:8",
+        "nahum 1:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

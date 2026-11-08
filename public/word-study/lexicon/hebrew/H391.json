@@ -2,7 +2,7 @@
   "lemma": "אַכְזָב",
   "pron": "아케잡",
   "strong": "H391",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "כָּזַב",
     "strong": "H3576",
@@ -10,15 +10,21 @@
   },
   "family": [
     {
+      "lemma": "אַכְזִיב",
+      "strong": "H392",
+      "pron": "브아케집",
+      "glossKo": "악십"
+    },
+    {
       "lemma": "כְּדַב",
       "strong": "H3538",
-      "pron": "",
+      "pron": "킫바",
       "glossKo": "거짓된(아람)"
     },
     {
       "lemma": "כָּזַב",
       "strong": "H3576",
-      "pron": "예캇제부",
+      "pron": "비위캇젭",
       "glossKo": "거짓말하다"
     },
     {
@@ -30,19 +36,22 @@
     {
       "lemma": "כֹּזְבָא",
       "strong": "H3578",
-      "pron": "",
+      "pron": "코제바",
       "glossKo": "고세바"
     },
     {
       "lemma": "כֹּזְבִי",
       "strong": "H3579",
-      "pron": "",
+      "pron": "캇비",
       "glossKo": "고스비"
     }
   ],
   "defEn": "falsehood",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 2,
+  "byBook": {
+    "jeremiah": 1,
+    "micah": 1
+  },
   "phrases": []
 }

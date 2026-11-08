@@ -18,8 +18,8 @@
     {
       "lemma": "תֹּם",
       "strong": "H8537",
-      "pron": "우크툼미위",
-      "glossKo": "나의 완전함"
+      "pron": "브탐",
+      "glossKo": "완전함"
     },
     {
       "lemma": "תָּמִים",
@@ -30,15 +30,47 @@
     {
       "lemma": "תָּמַם",
       "strong": "H8552",
-      "pron": "탐무",
+      "pron": "바잇톰",
       "glossKo": "끝나다"
     }
   ],
   "defEn": "wholesomeness",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 4,
   "byBook": {
-    "psalms": 2
+    "psalms": 2,
+    "isaiah": 1,
+    "judges": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֵין מְתֹ֣ם",
+      "pron": "아인 메톰",
+      "lemmas": [
+        "אַיִן",
+        "מְתֹם"
+      ],
+      "words": [
+        {
+          "word": "אֵין",
+          "lemma": "אַיִן",
+          "strong": "H369",
+          "pron": "아인"
+        },
+        {
+          "word": "מְתֹ֣ם",
+          "lemma": "מְתֹם",
+          "strong": "H4974",
+          "pron": "메톰"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 38:3",
+        "psalms 38:7",
+        "isaiah 1:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -2,7 +2,7 @@
   "lemma": "נִמְשִׁי",
   "pron": "님시",
   "strong": "H5250",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "מָשָׁה",
     "strong": "H4871",
@@ -12,8 +12,8 @@
     {
       "lemma": "מָשָׁה",
       "strong": "H4871",
-      "pron": "얌셰니",
-      "glossKo": "나를 건져내다"
+      "pron": "메시티후",
+      "glossKo": "그에게 건져내다"
     },
     {
       "lemma": "מֹשֶׁה",
@@ -24,13 +24,85 @@
     {
       "lemma": "מֶשִׁי",
       "strong": "H4897",
-      "pron": "",
+      "pron": "메시",
       "glossKo": "비단"
     }
   ],
   "defEn": "Nimshi",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "kings2": 3,
+    "chronicles2": 1,
+    "kings1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶן נִמְשִׁ֔י",
+      "pron": "바님 님시",
+      "lemmas": [
+        "בֵּן",
+        "נִמְשִׁי"
+      ],
+      "words": [
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נִמְשִׁ֔י",
+          "lemma": "נִמְשִׁי",
+          "strong": "H5250",
+          "pron": "님시"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 19:16",
+        "kings2 9:2",
+        "kings2 9:14",
+        "kings2 9:20",
+        "chronicles2 22:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יֵה֣וּא בֶן נִמְשִׁ֔י",
+      "pron": "예후 바님 님시",
+      "lemmas": [
+        "יֵהוּא",
+        "בֵּן",
+        "נִמְשִׁי"
+      ],
+      "words": [
+        {
+          "word": "יֵה֣וּא",
+          "lemma": "יֵהוּא",
+          "strong": "H3058",
+          "pron": "예후"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נִמְשִׁ֔י",
+          "lemma": "נִמְשִׁי",
+          "strong": "H5250",
+          "pron": "님시"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 19:16",
+        "kings2 9:20",
+        "chronicles2 22:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

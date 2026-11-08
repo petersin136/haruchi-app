@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁפַךְ",
-  "pron": "니솁파켓티",
+  "pron": "쇼페크",
   "strong": "H8210",
   "posKo": "동사",
   "root": null,
@@ -8,57 +8,232 @@
     {
       "lemma": "שׁוֹפָךְ",
       "strong": "H7780",
-      "pron": "",
+      "pron": "브쇼파크",
       "glossKo": "소박"
     },
     {
       "lemma": "שֶׁפֶךְ",
       "strong": "H8211",
-      "pron": "",
+      "pron": "셰페크",
       "glossKo": "쏟는 곳"
     },
     {
       "lemma": "שׇׁפְכָה",
       "strong": "H8212",
-      "pron": "",
+      "pron": "샵카",
       "glossKo": "관"
     }
   ],
   "defEn": "spill forth",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 117,
   "byBook": {
+    "ezekiel": 33,
     "psalms": 13,
-    "genesis": 3
+    "leviticus": 8,
+    "deuteronomy": 7,
+    "jeremiah": 7,
+    "lamentations": 7,
+    "isaiah": 4,
+    "kings1": 4,
+    "chronicles1": 3,
+    "genesis": 3,
+    "job": 3,
+    "joel": 3,
+    "kings2": 3,
+    "samuel1": 3,
+    "amos": 2,
+    "exodus": 2,
+    "numbers": 2,
+    "proverbs": 2,
+    "samuel2": 2,
+    "zephaniah": 2,
+    "daniel": 1,
+    "hosea": 1,
+    "judges": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "שָׁפְכ֬וּ דָמָ֨ם",
-      "pron": "니솁파켓티 다밈",
+      "hebrew": "וַֽיִּשְׁפְּכֵ֛ם עַל",
+      "pron": "쇼페크 알",
+      "lemmas": [
+        "שָׁפַךְ",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "וַֽיִּשְׁפְּכֵ֛ם",
+          "lemma": "שָׁפַךְ",
+          "strong": "H8210",
+          "pron": "쇼페크"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "deuteronomy 12:27",
+        "kings2 19:32",
+        "psalms 42:4",
+        "psalms 69:24",
+        "isaiah 37:33",
+        "isaiah 42:25",
+        "jeremiah 6:6",
+        "jeremiah 6:11",
+        "jeremiah 14:16",
+        "jeremiah 22:17",
+        "ezekiel 4:2",
+        "ezekiel 21:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שְׁפָךְ דָּ֑ם",
+      "pron": "쇼페크 데메",
       "lemmas": [
         "שָׁפַךְ",
         "דָּם"
       ],
       "words": [
         {
-          "word": "שָׁפְכ֬וּ",
+          "word": "שְׁפָךְ",
           "lemma": "שָׁפַךְ",
           "strong": "H8210",
-          "pron": "니솁파켓티"
+          "pron": "쇼페크"
         },
         {
-          "word": "דָמָ֨ם",
+          "word": "דָּ֑ם",
           "lemma": "דָּם",
           "strong": "H1818",
-          "pron": "다밈"
+          "pron": "데메"
         }
       ],
-      "count": 4,
+      "count": 20,
       "refs": [
+        "genesis 9:6",
+        "genesis 37:22",
+        "deuteronomy 19:10",
+        "samuel1 25:31",
+        "kings1 18:28",
         "psalms 79:3",
         "psalms 106:38",
+        "proverbs 1:16",
+        "proverbs 6:17",
+        "isaiah 59:7",
+        "ezekiel 16:38",
+        "ezekiel 18:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דָּמָ֣הּ יִשְׁפֹּ֔ךְ",
+      "pron": "데메 쇼페크",
+      "lemmas": [
+        "דָּם",
+        "שָׁפַךְ"
+      ],
+      "words": [
+        {
+          "word": "דָּמָ֣הּ",
+          "lemma": "דָּם",
+          "strong": "H1818",
+          "pron": "데메"
+        },
+        {
+          "word": "יִשְׁפֹּ֔ךְ",
+          "lemma": "שָׁפַךְ",
+          "strong": "H8210",
+          "pron": "쇼페크"
+        }
+      ],
+      "count": 10,
+      "refs": [
         "genesis 9:6",
-        "genesis 37:22"
+        "exodus 29:12",
+        "leviticus 4:18",
+        "leviticus 4:25",
+        "leviticus 4:30",
+        "leviticus 4:34",
+        "leviticus 17:4",
+        "numbers 35:33",
+        "chronicles1 28:3",
+        "ezekiel 33:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לִשְׁפֹּ֧ךְ חֲמָתִ֣י",
+      "pron": "쇼페크 하마트",
+      "lemmas": [
+        "שָׁפַךְ",
+        "חֵמָה"
+      ],
+      "words": [
+        {
+          "word": "לִשְׁפֹּ֧ךְ",
+          "lemma": "שָׁפַךְ",
+          "strong": "H8210",
+          "pron": "쇼페크"
+        },
+        {
+          "word": "חֲמָתִ֣י",
+          "lemma": "חֵמָה",
+          "strong": "H2534",
+          "pron": "하마트"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "psalms 79:6",
+        "jeremiah 10:25",
+        "ezekiel 7:8",
+        "ezekiel 14:19",
+        "ezekiel 20:8",
+        "ezekiel 20:13",
+        "ezekiel 20:21",
+        "ezekiel 22:22",
+        "ezekiel 30:15",
+        "ezekiel 36:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְשָׁפְכ֗וּ אֶת",
+      "pron": "쇼페크 에트",
+      "lemmas": [
+        "שָׁפַךְ",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְשָׁפְכ֗וּ",
+          "lemma": "שָׁפַךְ",
+          "strong": "H8210",
+          "pron": "쇼페크"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "leviticus 14:41",
+        "leviticus 17:13",
+        "deuteronomy 21:7",
+        "samuel1 1:15",
+        "ezekiel 9:8",
+        "ezekiel 16:15",
+        "ezekiel 39:29",
+        "joel 2:28",
+        "joel 2:29"
       ],
       "glossKo": ""
     }

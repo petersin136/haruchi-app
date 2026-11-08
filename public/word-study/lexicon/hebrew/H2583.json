@@ -1,6 +1,6 @@
 {
   "lemma": "חָנָה",
-  "pron": "타하네",
+  "pron": "바이한",
   "strong": "H2583",
   "posKo": "동사",
   "root": {
@@ -18,25 +18,25 @@
     {
       "lemma": "חַנָּה",
       "strong": "H2584",
-      "pron": "",
+      "pron": "한나",
       "glossKo": "한나"
     },
     {
       "lemma": "חָנוּן",
       "strong": "H2586",
-      "pron": "",
+      "pron": "하눈",
       "glossKo": "하눈"
     },
     {
       "lemma": "חַנּוּן",
       "strong": "H2587",
-      "pron": "브한눈",
+      "pron": "한눈",
       "glossKo": "은혜로운"
     },
     {
       "lemma": "חָנוּת",
       "strong": "H2588",
-      "pron": "",
+      "pron": "아하누오트",
       "glossKo": "지하실"
     },
     {
@@ -48,10 +48,202 @@
   ],
   "defEn": "incline",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 143,
   "byBook": {
+    "numbers": 74,
+    "samuel1": 13,
+    "judges": 12,
+    "exodus": 9,
+    "joshua": 7,
+    "samuel2": 5,
+    "kings1": 4,
     "psalms": 3,
-    "genesis": 2
+    "chronicles1": 2,
+    "genesis": 2,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "ezra": 1,
+    "job": 1,
+    "kings2": 1,
+    "nahum": 1,
+    "nehemiah": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְהַחֹנִ֥ים עָלָ֖יו",
+      "pron": "바이한 알",
+      "lemmas": [
+        "חָנָה",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "וְהַחֹנִ֥ים",
+          "lemma": "חָנָה",
+          "strong": "H2583",
+          "pron": "바이한"
+        },
+        {
+          "word": "עָלָ֖יו",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 25,
+      "refs": [
+        "exodus 14:2",
+        "exodus 14:9",
+        "numbers 2:5",
+        "numbers 2:12",
+        "numbers 2:27",
+        "numbers 3:29",
+        "numbers 9:20",
+        "numbers 9:23",
+        "numbers 33:10",
+        "numbers 33:49",
+        "joshua 10:5",
+        "joshua 10:31"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְחָנ֖וּ בְּנֵ֣י",
+      "pron": "바이한 바님",
+      "lemmas": [
+        "חָנָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "וְחָנ֖וּ",
+          "lemma": "חָנָה",
+          "strong": "H2583",
+          "pron": "바이한"
+        },
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 1:52",
+        "numbers 2:2",
+        "numbers 9:17",
+        "numbers 9:22",
+        "joshua 5:10",
+        "kings1 20:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְחָנ֖וּ בְּנֵ֣י יִשְׂרָאֵ֑ל",
+      "pron": "바이한 바님 이스라엘",
+      "lemmas": [
+        "חָנָה",
+        "בֵּן",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "וְחָנ֖וּ",
+          "lemma": "חָנָה",
+          "strong": "H2583",
+          "pron": "바이한"
+        },
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "יִשְׂרָאֵ֑ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 1:52",
+        "numbers 2:2",
+        "numbers 9:17",
+        "numbers 9:22",
+        "joshua 5:10",
+        "kings1 20:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽיַּחֲנ֖וּ בְּמִדְבַּ֥ר",
+      "pron": "바이한 아믿바르",
+      "lemmas": [
+        "חָנָה",
+        "מִדְבָּר"
+      ],
+      "words": [
+        {
+          "word": "וַֽיַּחֲנ֖וּ",
+          "lemma": "חָנָה",
+          "strong": "H2583",
+          "pron": "바이한"
+        },
+        {
+          "word": "בְּמִדְבַּ֥ר",
+          "lemma": "מִדְבָּר",
+          "strong": "H4057",
+          "pron": "아믿바르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 19:2",
+        "numbers 10:31",
+        "numbers 12:16",
+        "numbers 33:11",
+        "numbers 33:15",
+        "numbers 33:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיַּחֲנוּ שָׁ֖ם",
+      "pron": "바이한 샴",
+      "lemmas": [
+        "חָנָה",
+        "שָׁם"
+      ],
+      "words": [
+        {
+          "word": "וַיַּחֲנוּ",
+          "lemma": "חָנָה",
+          "strong": "H2583",
+          "pron": "바이한"
+        },
+        {
+          "word": "שָׁ֖ם",
+          "lemma": "שָׁם",
+          "strong": "H8033",
+          "pron": "샴"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 15:27",
+        "exodus 18:5",
+        "exodus 19:2",
+        "numbers 33:9",
+        "samuel1 26:5",
+        "ezra 8:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

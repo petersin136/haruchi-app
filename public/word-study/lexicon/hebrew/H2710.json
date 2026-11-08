@@ -1,6 +1,6 @@
 {
   "lemma": "חָקַק",
-  "pron": "메호케키위",
+  "pron": "우메호케크",
   "strong": "H2710",
   "posKo": "동사",
   "root": null,
@@ -14,50 +14,57 @@
     {
       "lemma": "חֵקֶק",
       "strong": "H2711",
-      "pron": "",
+      "pron": "히케케",
       "glossKo": "규례"
     },
     {
       "lemma": "חֻקֹּק",
       "strong": "H2712",
-      "pron": "",
+      "pron": "후코카",
       "glossKo": "훅곡"
     }
   ],
   "defEn": "hack; engrave; be a scribe",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 19,
   "byBook": {
+    "isaiah": 5,
+    "proverbs": 4,
+    "ezekiel": 2,
+    "judges": 2,
     "psalms": 2,
-    "genesis": 1
+    "deuteronomy": 1,
+    "genesis": 1,
+    "job": 1,
+    "numbers": 1
   },
   "phrases": [
     {
-      "hebrew": "יְ֝הוּדָ֗ה מְחֹֽקְקִי",
-      "pron": "예후다 메호케키위",
+      "hebrew": "מִֽיהוּדָ֔ה וּמְחֹקֵ֖ק",
+      "pron": "예후다 우메호케크",
       "lemmas": [
         "יְהוּדָה",
         "חָקַק"
       ],
       "words": [
         {
-          "word": "יְ֝הוּדָ֗ה",
+          "word": "מִֽיהוּדָ֔ה",
           "lemma": "יְהוּדָה",
           "strong": "H3063",
           "pron": "예후다"
         },
         {
-          "word": "מְחֹֽקְקִי",
+          "word": "וּמְחֹקֵ֖ק",
           "lemma": "חָקַק",
           "strong": "H2710",
-          "pron": "메호케키위"
+          "pron": "우메호케크"
         }
       ],
       "count": 3,
       "refs": [
+        "genesis 49:10",
         "psalms 60:7",
-        "psalms 108:8",
-        "genesis 49:10"
+        "psalms 108:8"
       ],
       "glossKo": ""
     }

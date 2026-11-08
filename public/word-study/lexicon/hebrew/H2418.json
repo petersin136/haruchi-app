@@ -1,8 +1,8 @@
 {
   "lemma": "חֲיָא",
-  "pron": "하아",
+  "pron": "헤이",
   "strong": "H2418",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "חָיָה",
     "strong": "H2421",
@@ -12,31 +12,115 @@
     {
       "lemma": "חַי",
       "strong": "H2416",
-      "pron": "하아위",
-      "glossKo": "나의 산"
+      "pron": "하아",
+      "glossKo": "산"
+    },
+    {
+      "lemma": "חַי",
+      "strong": "H2417",
+      "pron": "르하에",
+      "glossKo": "산(아람)"
     },
     {
       "lemma": "חָיָה",
       "strong": "H2421",
-      "pron": "예히",
+      "pron": "바예히",
       "glossKo": "살다"
     },
     {
       "lemma": "חָיֶה",
       "strong": "H2422",
-      "pron": "",
+      "pron": "하오트",
       "glossKo": "활기 있는"
+    },
+    {
+      "lemma": "חֵיוָא",
+      "strong": "H2423",
+      "pron": "헤바트",
+      "glossKo": "짐승(아람)"
     },
     {
       "lemma": "חַיּוּת",
       "strong": "H2424",
-      "pron": "",
+      "pron": "하우트",
       "glossKo": "생명"
     }
   ],
   "defEn": "live",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "daniel": 6
+  },
+  "phrases": [
+    {
+      "hebrew": "לְעָלְמִ֥ין חֱיִֽי",
+      "pron": "알마 헤이",
+      "lemmas": [
+        "עָלַם",
+        "חֲיָא"
+      ],
+      "words": [
+        {
+          "word": "לְעָלְמִ֥ין",
+          "lemma": "עָלַם",
+          "strong": "H5957",
+          "pron": "알마"
+        },
+        {
+          "word": "חֱיִֽי",
+          "lemma": "חֲיָא",
+          "strong": "H2418",
+          "pron": "헤이"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 2:4",
+        "daniel 3:9",
+        "daniel 5:10",
+        "daniel 6:6",
+        "daniel 6:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַלְכָּ֖א לְעָלְמִ֥ין חֱיִֽי",
+      "pron": "말카 알마 헤이",
+      "lemmas": [
+        "מֶלֶךְ",
+        "עָלַם",
+        "חֲיָא"
+      ],
+      "words": [
+        {
+          "word": "מַלְכָּ֖א",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4430",
+          "pron": "말카"
+        },
+        {
+          "word": "לְעָלְמִ֥ין",
+          "lemma": "עָלַם",
+          "strong": "H5957",
+          "pron": "알마"
+        },
+        {
+          "word": "חֱיִֽי",
+          "lemma": "חֲיָא",
+          "strong": "H2418",
+          "pron": "헤이"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "daniel 2:4",
+        "daniel 3:9",
+        "daniel 5:10",
+        "daniel 6:6",
+        "daniel 6:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

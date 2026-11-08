@@ -1,8 +1,8 @@
 {
   "lemma": "יָאִיר",
-  "pron": "야이르",
+  "pron": "브야이르",
   "strong": "H2971",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אוֹר",
     "strong": "H215",
@@ -12,7 +12,7 @@
     {
       "lemma": "אוֹר",
       "strong": "H215",
-      "pron": "하이라",
+      "pron": "르하이르",
       "glossKo": "비추다"
     },
     {
@@ -24,25 +24,135 @@
     {
       "lemma": "אוּר",
       "strong": "H217",
-      "pron": "",
+      "pron": "바우림",
       "glossKo": "불꽃"
+    },
+    {
+      "lemma": "יָאִרִי",
+      "strong": "H2972",
+      "pron": "아야이리",
+      "glossKo": "야일 사람"
     },
     {
       "lemma": "מָאוֹר",
       "strong": "H3974",
-      "pron": "마오르",
+      "pron": "메오로트",
       "glossKo": "광명체"
     },
     {
       "lemma": "מְאוּרָה",
       "strong": "H3975",
-      "pron": "",
+      "pron": "메우라트",
       "glossKo": "밝혀진 곳"
     }
   ],
   "defEn": "Jair",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "chronicles1": 2,
+    "judges": 2,
+    "deuteronomy": 1,
+    "esther": 1,
+    "joshua": 1,
+    "kings1": 1,
+    "numbers": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְיָאִ֤יר בֶּן",
+      "pron": "브야이르 바님",
+      "lemmas": [
+        "יָאִיר",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "וְיָאִ֤יר",
+          "lemma": "יָאִיר",
+          "strong": "H2971",
+          "pron": "브야이르"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "numbers 32:41",
+        "deuteronomy 3:14",
+        "kings1 4:13",
+        "esther 2:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיָאִ֤יר בֶּן מְנַשֶּׁה֙",
+      "pron": "브야이르 바님 메낫셰",
+      "lemmas": [
+        "יָאִיר",
+        "בֵּן",
+        "מְנַשֶּׁה"
+      ],
+      "words": [
+        {
+          "word": "וְיָאִ֤יר",
+          "lemma": "יָאִיר",
+          "strong": "H2971",
+          "pron": "브야이르"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "מְנַשֶּׁה֙",
+          "lemma": "מְנַשֶּׁה",
+          "strong": "H4519",
+          "pron": "메낫셰"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 32:41",
+        "deuteronomy 3:14",
+        "kings1 4:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חַוֺּ֥ת יָאִ֛יר",
+      "pron": "하보테헴 브야이르",
+      "lemmas": [
+        "חַוָּה",
+        "יָאִיר"
+      ],
+      "words": [
+        {
+          "word": "חַוֺּ֥ת",
+          "lemma": "חַוָּה",
+          "strong": "H2333",
+          "pron": "하보테헴"
+        },
+        {
+          "word": "יָאִ֛יר",
+          "lemma": "יָאִיר",
+          "strong": "H2971",
+          "pron": "브야이르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 13:30",
+        "kings1 4:13",
+        "chronicles1 2:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

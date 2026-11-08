@@ -1,0 +1,91 @@
+{
+  "lemma": "גָּזִית",
+  "pron": "가지트",
+  "strong": "H1496",
+  "posKo": "명사",
+  "root": {
+    "lemma": "גָּזָה",
+    "strong": "H1491",
+    "glossKo": "끊다"
+  },
+  "family": [
+    {
+      "lemma": "גָּזָה",
+      "strong": "H1491",
+      "pron": "고지",
+      "glossKo": "나의 끊다"
+    }
+  ],
+  "defEn": "cut; dressed",
+  "defKo": "",
+  "countOT": 11,
+  "byBook": {
+    "kings1": 5,
+    "amos": 1,
+    "chronicles1": 1,
+    "exodus": 1,
+    "ezekiel": 1,
+    "isaiah": 1,
+    "lamentations": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אַבְנֵ֥י גָזִֽית",
+      "pron": "브에벤 가지트",
+      "lemmas": [
+        "אֶבֶן",
+        "גָּזִית"
+      ],
+      "words": [
+        {
+          "word": "אַבְנֵ֥י",
+          "lemma": "אֶבֶן",
+          "strong": "H68",
+          "pron": "브에벤"
+        },
+        {
+          "word": "גָזִֽית",
+          "lemma": "גָּזִית",
+          "strong": "H1496",
+          "pron": "가지트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 5:17",
+        "chronicles1 22:2",
+        "ezekiel 40:42"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גָזִ֔ית לִבְנ֖וֹת",
+      "pron": "가지트 바이벤",
+      "lemmas": [
+        "גָּזִית",
+        "בָּנָה"
+      ],
+      "words": [
+        {
+          "word": "גָזִ֔ית",
+          "lemma": "גָּזִית",
+          "strong": "H1496",
+          "pron": "가지트"
+        },
+        {
+          "word": "לִבְנ֖וֹת",
+          "lemma": "בָּנָה",
+          "strong": "H1129",
+          "pron": "바이벤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 22:2",
+        "isaiah 9:10",
+        "amos 5:11"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

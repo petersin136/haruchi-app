@@ -1,6 +1,6 @@
 {
   "lemma": "עָוֺן",
-  "pron": "메아보니위",
+  "pron": "아보니",
   "strong": "H5771",
   "posKo": "명사",
   "root": {
@@ -12,31 +12,31 @@
     {
       "lemma": "מְעִי",
       "strong": "H4596",
-      "pron": "",
+      "pron": "메이",
       "glossKo": "더미"
     },
     {
       "lemma": "עָוָה",
       "strong": "H5753",
-      "pron": "나아베티",
+      "pron": "나아바트",
       "glossKo": "굽다"
     },
     {
       "lemma": "עַוָּה",
       "strong": "H5754",
-      "pron": "",
+      "pron": "아바",
       "glossKo": "패망"
     },
     {
       "lemma": "עִוְיָא",
       "strong": "H5758",
-      "pron": "",
-      "glossKo": "사악함(아람)"
+      "pron": "바아바아타크",
+      "glossKo": "너의 사악함(아람)"
     },
     {
       "lemma": "עַוְעֶה",
       "strong": "H5773",
-      "pron": "",
+      "pron": "이베임",
       "glossKo": "왜곡"
     },
     {
@@ -48,67 +48,220 @@
   ],
   "defEn": "perversity; evil",
   "defKo": "",
-  "countOT": 35,
+  "countOT": 232,
   "byBook": {
+    "ezekiel": 44,
     "psalms": 31,
-    "genesis": 4
+    "isaiah": 25,
+    "jeremiah": 24,
+    "leviticus": 18,
+    "job": 15,
+    "numbers": 12,
+    "hosea": 10,
+    "samuel1": 7,
+    "samuel2": 7,
+    "exodus": 6,
+    "lamentations": 6,
+    "genesis": 4,
+    "daniel": 3,
+    "ezra": 3,
+    "deuteronomy": 2,
+    "joshua": 2,
+    "micah": 2,
+    "nehemiah": 2,
+    "proverbs": 2,
+    "zechariah": 2,
+    "amos": 1,
+    "chronicles1": 1,
+    "kings1": 1,
+    "kings2": 1,
+    "malachi": 1
   },
   "phrases": [
     {
-      "hebrew": "וְֽכָל עֲוֺ֖נֹתַ֣י",
-      "pron": "브콜 메아보니위",
+      "hebrew": "אֶת עֲוֺ֣ן",
+      "pron": "에트 아보니",
+      "lemmas": [
+        "אֵת",
+        "עָוֺן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "עֲוֺ֣ן",
+          "lemma": "עָוֺן",
+          "strong": "H5771",
+          "pron": "아보니"
+        }
+      ],
+      "count": 26,
+      "refs": [
+        "genesis 44:16",
+        "exodus 28:38",
+        "leviticus 10:17",
+        "leviticus 22:16",
+        "leviticus 26:40",
+        "leviticus 26:41",
+        "leviticus 26:43",
+        "numbers 5:31",
+        "numbers 14:34",
+        "numbers 18:1",
+        "numbers 30:15",
+        "joshua 22:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנָשָׂ֥א עֲוֺנֽוֹ",
+      "pron": "미네소 아보니",
+      "lemmas": [
+        "נָשָׂא",
+        "עָוֺן"
+      ],
+      "words": [
+        {
+          "word": "וְנָשָׂ֥א",
+          "lemma": "נָשָׂא",
+          "strong": "H5375",
+          "pron": "미네소"
+        },
+        {
+          "word": "עֲוֺנֽוֹ",
+          "lemma": "עָוֺן",
+          "strong": "H5771",
+          "pron": "아보니"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "exodus 28:43",
+        "exodus 34:7",
+        "leviticus 5:1",
+        "leviticus 5:17",
+        "leviticus 17:16",
+        "numbers 14:18",
+        "numbers 18:23",
+        "psalms 32:5",
+        "psalms 85:2",
+        "isaiah 33:24",
+        "ezekiel 4:5",
+        "ezekiel 14:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֲוֺ֨ן אָבֹ֧ת",
+      "pron": "아보니 아비브",
+      "lemmas": [
+        "עָוֺן",
+        "אָב"
+      ],
+      "words": [
+        {
+          "word": "עֲוֺ֨ן",
+          "lemma": "עָוֺן",
+          "strong": "H5771",
+          "pron": "아보니"
+        },
+        {
+          "word": "אָבֹ֧ת",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "exodus 20:5",
+        "exodus 34:7",
+        "leviticus 26:39",
+        "leviticus 26:40",
+        "numbers 14:18",
+        "deuteronomy 5:9",
+        "nehemiah 9:2",
+        "psalms 109:14",
+        "isaiah 14:21",
+        "isaiah 65:7",
+        "jeremiah 11:10",
+        "jeremiah 14:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל עֲוֺנֹת֙",
+      "pron": "칼 아보니",
       "lemmas": [
         "כֹּל",
         "עָוֺן"
       ],
       "words": [
         {
-          "word": "וְֽכָל",
+          "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         },
         {
-          "word": "עֲוֺ֖נֹתַ֣י",
+          "word": "עֲוֺנֹת֙",
           "lemma": "עָוֺן",
           "strong": "H5771",
-          "pron": "메아보니위"
+          "pron": "아보니"
         }
       ],
-      "count": 3,
+      "count": 11,
       "refs": [
+        "leviticus 16:21",
+        "leviticus 16:22",
+        "deuteronomy 19:15",
         "psalms 51:9",
         "psalms 103:3",
-        "psalms 130:8"
+        "psalms 130:8",
+        "isaiah 64:6",
+        "jeremiah 33:8",
+        "ezekiel 36:33",
+        "amos 3:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וַעֲוֺ֘נִ֤י לֹֽא",
-      "pron": "메아보니위 로",
+      "hebrew": "עֲוֺנָ֔ם וְחַטָּאתָ֖ם",
+      "pron": "아보니 핟다트",
       "lemmas": [
         "עָוֺן",
-        "לֹא"
+        "חַטָּאָה"
       ],
       "words": [
         {
-          "word": "וַעֲוֺ֘נִ֤י",
+          "word": "עֲוֺנָ֔ם",
           "lemma": "עָוֺן",
           "strong": "H5771",
-          "pron": "메아보니위"
+          "pron": "아보니"
         },
         {
-          "word": "לֹֽא",
-          "lemma": "לֹא",
-          "strong": "H3808",
-          "pron": "로"
+          "word": "וְחַטָּאתָ֖ם",
+          "lemma": "חַטָּאָה",
+          "strong": "H2403",
+          "pron": "핟다트"
         }
       ],
-      "count": 3,
+      "count": 11,
       "refs": [
+        "exodus 34:9",
+        "nehemiah 4:5",
+        "job 10:6",
+        "job 13:23",
         "psalms 32:5",
-        "psalms 40:12",
-        "psalms 78:38"
+        "psalms 51:2",
+        "isaiah 6:7",
+        "jeremiah 16:18",
+        "jeremiah 18:23",
+        "jeremiah 31:34",
+        "jeremiah 36:3"
       ],
       "glossKo": ""
     }

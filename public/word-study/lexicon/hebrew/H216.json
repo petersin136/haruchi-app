@@ -12,74 +12,235 @@
     {
       "lemma": "אוֹר",
       "strong": "H215",
-      "pron": "하이라",
+      "pron": "르하이르",
       "glossKo": "비추다"
     },
     {
       "lemma": "אוּר",
       "strong": "H217",
-      "pron": "",
+      "pron": "바우림",
       "glossKo": "불꽃"
     },
     {
       "lemma": "אוֹרָה",
       "strong": "H219",
-      "pron": "카오라",
+      "pron": "오로트",
       "glossKo": "광명"
     },
     {
       "lemma": "יָאִיר",
       "strong": "H2971",
-      "pron": "",
+      "pron": "브야이르",
       "glossKo": "야일"
     },
     {
       "lemma": "מָאוֹר",
       "strong": "H3974",
-      "pron": "마오르",
+      "pron": "메오로트",
       "glossKo": "광명체"
     },
     {
       "lemma": "מְאוּרָה",
       "strong": "H3975",
-      "pron": "",
+      "pron": "메우라트",
       "glossKo": "밝혀진 곳"
     }
   ],
   "defEn": "illumination; luminary",
   "defKo": "빛이에요. 하나님이 처음 말씀하셔서 생긴 것이 빛이에요(1:3). 해와 달은 넷째 날(1:14-16)에 생기지만 빛은 첫째 날에 먼저 있어요. 성경에서 빛은 하나님의 임재와 구원을 나타내는 말로도 쓰여요(시 27:1).",
-  "countOT": 25,
+  "countOT": 121,
   "byBook": {
+    "job": 32,
+    "isaiah": 27,
     "psalms": 19,
-    "genesis": 6
+    "genesis": 6,
+    "jeremiah": 5,
+    "proverbs": 4,
+    "amos": 3,
+    "ecclesiastes": 3,
+    "micah": 3,
+    "samuel1": 3,
+    "ezekiel": 2,
+    "habakkuk": 2,
+    "judges": 2,
+    "samuel2": 2,
+    "zechariah": 2,
+    "exodus": 1,
+    "hosea": 1,
+    "kings2": 1,
+    "lamentations": 1,
+    "nehemiah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "א֨וֹר פָּנֶ֬יךָ",
-      "pron": "오르 미페네",
+      "hebrew": "א֥וֹר הַבֹּ֖קֶר",
+      "pron": "오르 보케르",
       "lemmas": [
         "אוֹר",
-        "פָּנִים"
+        "בֹּקֶר"
       ],
       "words": [
         {
-          "word": "א֨וֹר",
+          "word": "א֥וֹר",
           "lemma": "אוֹר",
           "strong": "H216",
           "pron": "오르"
         },
         {
-          "word": "פָּנֶ֬יךָ",
-          "lemma": "פָּנִים",
-          "strong": "H6440",
-          "pron": "미페네"
+          "word": "הַבֹּ֖קֶר",
+          "lemma": "בֹּקֶר",
+          "strong": "H1242",
+          "pron": "보케르"
         }
       ],
-      "count": 3,
+      "count": 8,
       "refs": [
-        "psalms 4:6",
-        "psalms 44:3",
-        "psalms 89:15"
+        "judges 16:2",
+        "samuel1 14:36",
+        "samuel1 25:34",
+        "samuel1 25:36",
+        "samuel2 17:22",
+        "samuel2 23:4",
+        "kings2 7:9",
+        "micah 2:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהָיָ֤ה אֽוֹר",
+      "pron": "하에타 오르",
+      "lemmas": [
+        "הָיָה",
+        "אוֹר"
+      ],
+      "words": [
+        {
+          "word": "וְהָיָ֤ה",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "אֽוֹר",
+          "lemma": "אוֹר",
+          "strong": "H216",
+          "pron": "오르"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 1:3",
+        "exodus 10:23",
+        "isaiah 10:17",
+        "isaiah 30:26",
+        "isaiah 60:20",
+        "zechariah 14:6",
+        "zechariah 14:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַד א֥וֹר",
+      "pron": "앋 오르",
+      "lemmas": [
+        "עַד",
+        "אוֹר"
+      ],
+      "words": [
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "א֥וֹר",
+          "lemma": "אוֹר",
+          "strong": "H216",
+          "pron": "오르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "judges 16:2",
+        "judges 19:26",
+        "samuel1 14:36",
+        "samuel1 25:34",
+        "samuel1 25:36",
+        "samuel2 17:22",
+        "kings2 7:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַד א֥וֹר הַבֹּ֖קֶר",
+      "pron": "앋 오르 보케르",
+      "lemmas": [
+        "עַד",
+        "אוֹר",
+        "בֹּקֶר"
+      ],
+      "words": [
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "א֥וֹר",
+          "lemma": "אוֹר",
+          "strong": "H216",
+          "pron": "오르"
+        },
+        {
+          "word": "הַבֹּ֖קֶר",
+          "lemma": "בֹּקֶר",
+          "strong": "H1242",
+          "pron": "보케르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "judges 16:2",
+        "samuel1 14:36",
+        "samuel1 25:34",
+        "samuel1 25:36",
+        "samuel2 17:22",
+        "kings2 7:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רָ֥אוּ אֽוֹר",
+      "pron": "바야레 오르",
+      "lemmas": [
+        "רָאָה",
+        "אוֹר"
+      ],
+      "words": [
+        {
+          "word": "רָ֥אוּ",
+          "lemma": "רָאָה",
+          "strong": "H7200",
+          "pron": "바야레"
+        },
+        {
+          "word": "אֽוֹר",
+          "lemma": "אוֹר",
+          "strong": "H216",
+          "pron": "오르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "job 3:16",
+        "job 31:26",
+        "job 37:21",
+        "psalms 36:9",
+        "psalms 49:19",
+        "isaiah 9:2"
       ],
       "glossKo": ""
     }

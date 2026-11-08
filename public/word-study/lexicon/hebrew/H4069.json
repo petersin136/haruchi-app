@@ -12,7 +12,7 @@
     {
       "lemma": "מָא",
       "strong": "H3964",
-      "pron": "",
+      "pron": "바마",
       "glossKo": "무엇"
     },
     {
@@ -24,19 +24,19 @@
     {
       "lemma": "מָה",
       "strong": "H4100",
-      "pron": "라마",
+      "pron": "마",
       "glossKo": "무엇"
     },
     {
       "lemma": "מָה",
       "strong": "H4101",
-      "pron": "",
+      "pron": "르마",
       "glossKo": "무엇(아람)"
     },
     {
       "lemma": "מָהַהּ",
       "strong": "H4102",
-      "pron": "히테마헤마헷티",
+      "pron": "바이테마헤마흐",
       "glossKo": "지체하다"
     },
     {
@@ -48,9 +48,206 @@
   ],
   "defEn": "what; known?; why?",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 72,
   "byBook": {
-    "genesis": 2
+    "jeremiah": 16,
+    "samuel2": 10,
+    "job": 6,
+    "judges": 6,
+    "exodus": 5,
+    "kings1": 4,
+    "kings2": 4,
+    "nehemiah": 4,
+    "isaiah": 3,
+    "samuel1": 3,
+    "genesis": 2,
+    "numbers": 2,
+    "chronicles2": 1,
+    "esther": 1,
+    "ezekiel": 1,
+    "joshua": 1,
+    "leviticus": 1,
+    "malachi": 1,
+    "ruth": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֵאמֹ֑ר מַדּוּעַ֩",
+      "pron": "바요메르 맏두아",
+      "lemmas": [
+        "אָמַר",
+        "מַדּוּעַ"
+      ],
+      "words": [
+        {
+          "word": "לֵאמֹ֑ר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "מַדּוּעַ֩",
+          "lemma": "מַדּוּעַ",
+          "strong": "H4069",
+          "pron": "맏두아"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "genesis 40:7",
+        "exodus 1:18",
+        "exodus 2:18",
+        "exodus 5:14",
+        "joshua 17:14",
+        "samuel1 21:1",
+        "samuel2 11:20",
+        "samuel2 13:4",
+        "samuel2 16:10",
+        "kings1 1:6",
+        "kings1 1:41",
+        "kings2 4:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַדּ֜וּעַ לֹא",
+      "pron": "맏두아 로",
+      "lemmas": [
+        "מַדּוּעַ",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "מַדּ֜וּעַ",
+          "lemma": "מַדּוּעַ",
+          "strong": "H4069",
+          "pron": "맏두아"
+        },
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "exodus 3:3",
+        "exodus 5:14",
+        "leviticus 10:17",
+        "numbers 12:8",
+        "judges 11:26",
+        "samuel1 20:27",
+        "samuel2 11:10",
+        "samuel2 18:11",
+        "kings1 2:43",
+        "chronicles2 24:6",
+        "nehemiah 2:3",
+        "job 21:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַדּ֗וּעַ אַתָּ֤ה",
+      "pron": "맏두아 앗타",
+      "lemmas": [
+        "מַדּוּעַ",
+        "אַתָּה"
+      ],
+      "words": [
+        {
+          "word": "מַדּ֗וּעַ",
+          "lemma": "מַדּוּעַ",
+          "strong": "H4069",
+          "pron": "맏두아"
+        },
+        {
+          "word": "אַתָּ֤ה",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 18:14",
+        "samuel1 21:1",
+        "samuel2 13:4",
+        "kings2 4:23",
+        "nehemiah 13:21",
+        "esther 3:3",
+        "jeremiah 32:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מַדּ֖וּעַ בָּאתֶ֣ם",
+      "pron": "맏두아 바야베",
+      "lemmas": [
+        "מַדּוּעַ",
+        "בּוֹא"
+      ],
+      "words": [
+        {
+          "word": "מַדּ֖וּעַ",
+          "lemma": "מַדּוּעַ",
+          "strong": "H4069",
+          "pron": "맏두아"
+        },
+        {
+          "word": "בָּאתֶ֣ם",
+          "lemma": "בּוֹא",
+          "strong": "H935",
+          "pron": "바야베"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 26:27",
+        "judges 11:7",
+        "samuel2 3:7",
+        "samuel2 24:21",
+        "kings2 9:11",
+        "isaiah 50:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֤אמֶר מַדּ֤וּעַ אַתָּה֙",
+      "pron": "바요메르 맏두아 앗타",
+      "lemmas": [
+        "אָמַר",
+        "מַדּוּעַ",
+        "אַתָּה"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֤אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "מַדּ֤וּעַ",
+          "lemma": "מַדּוּעַ",
+          "strong": "H4069",
+          "pron": "맏두아"
+        },
+        {
+          "word": "אַתָּה֙",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel1 21:1",
+        "samuel2 13:4",
+        "kings2 4:23",
+        "jeremiah 32:3"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

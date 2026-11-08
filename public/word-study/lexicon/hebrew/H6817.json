@@ -1,6 +1,6 @@
 {
   "lemma": "צָעַק",
-  "pron": "차아쿠",
+  "pron": "초아킴",
   "strong": "H6817",
   "posKo": "동사",
   "root": null,
@@ -8,21 +8,35 @@
     {
       "lemma": "צַעֲקָה",
       "strong": "H6818",
-      "pron": "차아카트",
-      "glossKo": "부르짖음"
+      "pron": "학케차아카타흐",
+      "glossKo": "그녀의 부르짖음"
     }
   ],
   "defEn": "shriek",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 55,
   "byBook": {
+    "exodus": 10,
+    "kings2": 8,
+    "judges": 6,
+    "isaiah": 5,
     "psalms": 5,
-    "genesis": 3
+    "deuteronomy": 3,
+    "genesis": 3,
+    "jeremiah": 3,
+    "numbers": 3,
+    "job": 2,
+    "samuel1": 2,
+    "chronicles2": 1,
+    "joshua": 1,
+    "kings1": 1,
+    "lamentations": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
       "hebrew": "וַיִּצְעֲק֣וּ אֶל",
-      "pron": "차아쿠 엘레모",
+      "pron": "초아킴 엘",
       "lemmas": [
         "צָעַק",
         "אֵל"
@@ -32,20 +46,163 @@
           "word": "וַיִּצְעֲק֣וּ",
           "lemma": "צָעַק",
           "strong": "H6817",
-          "pron": "차아쿠"
+          "pron": "초아킴"
         },
         {
           "word": "אֶל",
           "lemma": "אֵל",
           "strong": "H413",
-          "pron": "엘레모"
+          "pron": "엘"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "genesis 4:10",
+        "exodus 5:15",
+        "exodus 14:15",
+        "exodus 15:25",
+        "exodus 22:23",
+        "exodus 22:27",
+        "numbers 20:16",
+        "deuteronomy 26:7",
+        "joshua 24:7",
+        "judges 10:12",
+        "kings1 20:39",
+        "kings2 4:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּצְעֲק֣וּ אֶל יְ֭הוָה",
+      "pron": "초아킴 엘 여호와",
+      "lemmas": [
+        "צָעַק",
+        "אֵל",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "וַיִּצְעֲק֣וּ",
+          "lemma": "צָעַק",
+          "strong": "H6817",
+          "pron": "초아킴"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "יְ֭הוָה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "exodus 15:25",
+        "numbers 20:16",
+        "deuteronomy 26:7",
+        "joshua 24:7",
+        "psalms 107:6",
+        "psalms 107:28",
+        "isaiah 19:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּצְעַ֥ק הָעָ֛ם",
+      "pron": "초아킴 암",
+      "lemmas": [
+        "צָעַק",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "וַיִּצְעַ֥ק",
+          "lemma": "צָעַק",
+          "strong": "H6817",
+          "pron": "초아킴"
+        },
+        {
+          "word": "הָעָ֛ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
         }
       ],
       "count": 3,
       "refs": [
-        "psalms 107:6",
-        "psalms 107:28",
-        "genesis 4:10"
+        "genesis 41:55",
+        "numbers 11:2",
+        "samuel1 13:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּצְעַ֤ק מֹשֶׁה֙",
+      "pron": "초아킴 모세",
+      "lemmas": [
+        "צָעַק",
+        "מֹשֶׁה"
+      ],
+      "words": [
+        {
+          "word": "וַיִּצְעַ֤ק",
+          "lemma": "צָעַק",
+          "strong": "H6817",
+          "pron": "초아킴"
+        },
+        {
+          "word": "מֹשֶׁה֙",
+          "lemma": "מֹשֶׁה",
+          "strong": "H4872",
+          "pron": "모세"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 8:12",
+        "exodus 17:4",
+        "numbers 12:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּצְעַ֤ק מֹשֶׁה֙ אֶל",
+      "pron": "초아킴 모세 엘",
+      "lemmas": [
+        "צָעַק",
+        "מֹשֶׁה",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "וַיִּצְעַ֤ק",
+          "lemma": "צָעַק",
+          "strong": "H6817",
+          "pron": "초아킴"
+        },
+        {
+          "word": "מֹשֶׁה֙",
+          "lemma": "מֹשֶׁה",
+          "strong": "H4872",
+          "pron": "모세"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 8:12",
+        "exodus 17:4",
+        "numbers 12:13"
       ],
       "glossKo": ""
     }

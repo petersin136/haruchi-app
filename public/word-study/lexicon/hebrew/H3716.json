@@ -1,8 +1,8 @@
 {
   "lemma": "כְּפִירָה",
-  "pron": "케피라",
+  "pron": "브아케피라",
   "strong": "H3716",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "כְּפִיר",
     "strong": "H3715",
@@ -12,13 +12,47 @@
     {
       "lemma": "כְּפִיר",
       "strong": "H3715",
-      "pron": "브키케피르",
+      "pron": "케피르",
       "glossKo": "젊은 사자"
     }
   ],
   "defEn": "Kephirah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "joshua": 2,
+    "ezra": 1,
+    "nehemiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "כְּפִירָ֣ה וּבְאֵר֔וֹת",
+      "pron": "브아케피라 우베에로트",
+      "lemmas": [
+        "כְּפִירָה",
+        "בְּאֵרוֹת"
+      ],
+      "words": [
+        {
+          "word": "כְּפִירָ֣ה",
+          "lemma": "כְּפִירָה",
+          "strong": "H3716",
+          "pron": "브아케피라"
+        },
+        {
+          "word": "וּבְאֵר֔וֹת",
+          "lemma": "בְּאֵרוֹת",
+          "strong": "H881",
+          "pron": "우베에로트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 9:17",
+        "ezra 2:25",
+        "nehemiah 7:29"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -12,13 +12,25 @@
     {
       "lemma": "גּוּר",
       "strong": "H1481",
-      "pron": "예구르카",
-      "glossKo": "너에게 거류하다"
+      "pron": "라구르",
+      "glossKo": "거류하다"
+    },
+    {
+      "lemma": "גּוּר",
+      "strong": "H1483",
+      "pron": "구르",
+      "glossKo": "구르"
+    },
+    {
+      "lemma": "גּוֹר",
+      "strong": "H1484",
+      "pron": "크고레",
+      "glossKo": "어린 사자"
     },
     {
       "lemma": "גּוּר־בַּעַל",
       "strong": "H1485",
-      "pron": "",
+      "pron": "브구르",
       "glossKo": "구르바알"
     },
     {
@@ -30,15 +42,49 @@
     {
       "lemma": "גֵּרוּת",
       "strong": "H1628",
-      "pron": "",
+      "pron": "브게루트",
       "glossKo": "거주"
     }
   ],
   "defEn": "cub; lion",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 7,
   "byBook": {
-    "genesis": 1
+    "ezekiel": 3,
+    "deuteronomy": 1,
+    "genesis": 1,
+    "lamentations": 1,
+    "nahum": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "גּ֤וּר אַרְיֵה֙",
+      "pron": "구르 아레에",
+      "lemmas": [
+        "גּוּר",
+        "אֲרִי"
+      ],
+      "words": [
+        {
+          "word": "גּ֤וּר",
+          "lemma": "גּוּר",
+          "strong": "H1482",
+          "pron": "구르"
+        },
+        {
+          "word": "אַרְיֵה֙",
+          "lemma": "אֲרִי",
+          "strong": "H738",
+          "pron": "아레에"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 49:9",
+        "deuteronomy 33:22",
+        "nahum 2:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

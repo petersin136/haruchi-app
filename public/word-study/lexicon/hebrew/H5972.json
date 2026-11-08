@@ -1,8 +1,8 @@
 {
   "lemma": "עַם",
-  "pron": "암",
+  "pron": "브암마",
   "strong": "H5972",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עַם",
     "strong": "H5971",
@@ -18,25 +18,186 @@
     {
       "lemma": "עַמּוֹן",
       "strong": "H5983",
-      "pron": "브암몬",
+      "pron": "암몬",
       "glossKo": "암몬 족속"
     },
     {
       "lemma": "עַמִּיאֵל",
       "strong": "H5988",
-      "pron": "",
+      "pron": "암미엘",
       "glossKo": "암미엘"
     },
     {
       "lemma": "עַמִּיהוּד",
       "strong": "H5989",
-      "pron": "",
+      "pron": "암미훋",
       "glossKo": "암미훗"
+    },
+    {
+      "lemma": "עַמִּיזָבָד",
+      "strong": "H5990",
+      "pron": "암미자받",
+      "glossKo": "암미사밧"
+    },
+    {
+      "lemma": "עַמִּיחוּר",
+      "strong": "H5991",
+      "pron": "밓브르",
+      "glossKo": "암미훌"
     }
   ],
   "defEn": "people.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 15,
+  "byBook": {
+    "daniel": 10,
+    "ezra": 5
+  },
+  "phrases": [
+    {
+      "hebrew": "לְֽכָל עַֽמְמַיָּ֞א",
+      "pron": "카르 브암마",
+      "lemmas": [
+        "כֹּל",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "לְֽכָל",
+          "lemma": "כֹּל",
+          "strong": "H3606",
+          "pron": "카르"
+        },
+        {
+          "word": "עַֽמְמַיָּ֞א",
+          "lemma": "עַם",
+          "strong": "H5972",
+          "pron": "브암마"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "ezra 7:25",
+        "daniel 3:7",
+        "daniel 3:29",
+        "daniel 4:1",
+        "daniel 5:19",
+        "daniel 6:25",
+        "daniel 7:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַֽמְמַיָּ֞א אֻמַיָּ֧א",
+      "pron": "브암마 움마아",
+      "lemmas": [
+        "עַם",
+        "אֻמָּה"
+      ],
+      "words": [
+        {
+          "word": "עַֽמְמַיָּ֞א",
+          "lemma": "עַם",
+          "strong": "H5972",
+          "pron": "브암마"
+        },
+        {
+          "word": "אֻמַיָּ֧א",
+          "lemma": "אֻמָּה",
+          "strong": "H524",
+          "pron": "움마아"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "daniel 3:4",
+        "daniel 3:7",
+        "daniel 3:29",
+        "daniel 4:1",
+        "daniel 5:19",
+        "daniel 6:25",
+        "daniel 7:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַֽמְמַיָּ֞א אֻמַיָּ֧א וְלִשָּׁנַיָּ֛א",
+      "pron": "브암마 움마아 브릿샤나아",
+      "lemmas": [
+        "עַם",
+        "אֻמָּה",
+        "לִשָּׁן"
+      ],
+      "words": [
+        {
+          "word": "עַֽמְמַיָּ֞א",
+          "lemma": "עַם",
+          "strong": "H5972",
+          "pron": "브암마"
+        },
+        {
+          "word": "אֻמַיָּ֧א",
+          "lemma": "אֻמָּה",
+          "strong": "H524",
+          "pron": "움마아"
+        },
+        {
+          "word": "וְלִשָּׁנַיָּ֛א",
+          "lemma": "לִשָּׁן",
+          "strong": "H3961",
+          "pron": "브릿샤나아"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "daniel 3:4",
+        "daniel 3:7",
+        "daniel 3:29",
+        "daniel 4:1",
+        "daniel 5:19",
+        "daniel 6:25",
+        "daniel 7:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְֽכָל עַֽמְמַיָּ֞א אֻמַיָּ֧א",
+      "pron": "카르 브암마 움마아",
+      "lemmas": [
+        "כֹּל",
+        "עַם",
+        "אֻמָּה"
+      ],
+      "words": [
+        {
+          "word": "לְֽכָל",
+          "lemma": "כֹּל",
+          "strong": "H3606",
+          "pron": "카르"
+        },
+        {
+          "word": "עַֽמְמַיָּ֞א",
+          "lemma": "עַם",
+          "strong": "H5972",
+          "pron": "브암마"
+        },
+        {
+          "word": "אֻמַיָּ֧א",
+          "lemma": "אֻמָּה",
+          "strong": "H524",
+          "pron": "움마아"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "daniel 3:7",
+        "daniel 3:29",
+        "daniel 4:1",
+        "daniel 5:19",
+        "daniel 6:25",
+        "daniel 7:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "יָהַב",
-  "pron": "하부",
+  "pron": "하바",
   "strong": "H3051",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "הַבְהָב",
       "strong": "H1890",
-      "pron": "",
-      "glossKo": "선물"
+      "pron": "합하바이",
+      "glossKo": "나의 선물"
     },
     {
       "lemma": "יְהַב",
       "strong": "H3052",
-      "pron": "",
+      "pron": "미테에헵",
       "glossKo": "주다(아람)"
     },
     {
@@ -26,15 +26,26 @@
   ],
   "defEn": "give; put; come",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 33,
   "byBook": {
     "genesis": 8,
-    "psalms": 8
+    "psalms": 8,
+    "chronicles1": 3,
+    "deuteronomy": 2,
+    "judges": 2,
+    "proverbs": 2,
+    "samuel2": 2,
+    "exodus": 1,
+    "job": 1,
+    "joshua": 1,
+    "ruth": 1,
+    "samuel1": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "הָב֥וּ לַ֝יהוָ֗ה",
-      "pron": "하부 여호와",
+      "hebrew": "הָב֥וּ לַיהוָ֖ה",
+      "pron": "하바 여호와",
       "lemmas": [
         "יָהַב",
         "יְהֹוָה"
@@ -44,17 +55,19 @@
           "word": "הָב֥וּ",
           "lemma": "יָהַב",
           "strong": "H3051",
-          "pron": "하부"
+          "pron": "하바"
         },
         {
-          "word": "לַ֝יהוָ֗ה",
+          "word": "לַיהוָ֖ה",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         }
       ],
-      "count": 6,
+      "count": 9,
       "refs": [
+        "chronicles1 16:28",
+        "chronicles1 16:29",
         "psalms 29:1",
         "psalms 29:2",
         "psalms 96:7",
@@ -63,8 +76,41 @@
       "glossKo": ""
     },
     {
+      "hebrew": "וַיֹּאמְר֞וּ הָ֣בָה",
+      "pron": "바요메르 하바",
+      "lemmas": [
+        "אָמַר",
+        "יָהַב"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּאמְר֞וּ",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "הָ֣בָה",
+          "lemma": "יָהַב",
+          "strong": "H3051",
+          "pron": "하바"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "genesis 11:4",
+        "genesis 38:16",
+        "genesis 47:15",
+        "judges 1:15",
+        "ruth 3:15",
+        "samuel2 11:15",
+        "job 6:22"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "הָב֥וּ לַ֝יהוָ֗ה כָּב֥וֹד",
-      "pron": "하부 여호와 케보디위",
+      "pron": "하바 여호와 아카볻",
       "lemmas": [
         "יָהַב",
         "יְהֹוָה",
@@ -75,7 +121,7 @@
           "word": "הָב֥וּ",
           "lemma": "יָהַב",
           "strong": "H3051",
-          "pron": "하부"
+          "pron": "하바"
         },
         {
           "word": "לַ֝יהוָ֗ה",
@@ -87,44 +133,17 @@
           "word": "כָּב֥וֹד",
           "lemma": "כָּבוֹד",
           "strong": "H3519",
-          "pron": "케보디위"
+          "pron": "아카볻"
         }
       ],
-      "count": 4,
+      "count": 6,
       "refs": [
+        "chronicles1 16:28",
+        "chronicles1 16:29",
         "psalms 29:1",
         "psalms 29:2",
         "psalms 96:7",
         "psalms 96:8"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "וַיֹּאמְר֞וּ הָ֣בָה",
-      "pron": "아마르 하부",
-      "lemmas": [
-        "אָמַר",
-        "יָהַב"
-      ],
-      "words": [
-        {
-          "word": "וַיֹּאמְר֞וּ",
-          "lemma": "אָמַר",
-          "strong": "H559",
-          "pron": "아마르"
-        },
-        {
-          "word": "הָ֣בָה",
-          "lemma": "יָהַב",
-          "strong": "H3051",
-          "pron": "하부"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "genesis 11:4",
-        "genesis 38:16",
-        "genesis 47:15"
       ],
       "glossKo": ""
     }

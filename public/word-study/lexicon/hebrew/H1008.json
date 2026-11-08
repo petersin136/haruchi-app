@@ -12,39 +12,58 @@
     {
       "lemma": "בַּיִת",
       "strong": "H1004",
-      "pron": "베테카",
-      "glossKo": "너의 집"
+      "pron": "미바이트",
+      "glossKo": "집"
     },
     {
       "lemma": "בַּיִת",
       "strong": "H1005",
-      "pron": "",
+      "pron": "베트",
       "glossKo": "집(아람)"
     },
     {
       "lemma": "בַּיִת",
       "strong": "H1006",
-      "pron": "",
+      "pron": "아바이트",
       "glossKo": "벧엘"
     },
     {
       "lemma": "בֵּית אָוֶן",
       "strong": "H1007",
-      "pron": "",
+      "pron": "베트",
       "glossKo": "벧아웬"
     },
     {
       "lemma": "בֵּית אַרְבֵּאל",
       "strong": "H1009",
-      "pron": "",
+      "pron": "베트",
       "glossKo": "벧아벨"
+    },
+    {
+      "lemma": "בֵּית בַּעַל מְעוֹן",
+      "strong": "H1010",
+      "pron": "우베트",
+      "glossKo": "벧바알므온"
     }
   ],
   "defEn": "Beth-El",
   "defKo": "",
-  "countOT": 26,
+  "countOT": 144,
   "byBook": {
-    "genesis": 26
+    "genesis": 26,
+    "joshua": 20,
+    "kings1": 20,
+    "kings2": 20,
+    "judges": 18,
+    "amos": 14,
+    "samuel1": 8,
+    "hosea": 4,
+    "nehemiah": 4,
+    "chronicles1": 2,
+    "chronicles2": 2,
+    "ezra": 2,
+    "jeremiah": 2,
+    "zechariah": 2
   },
   "phrases": [
     {
@@ -68,7 +87,7 @@
           "pron": "르베트"
         }
       ],
-      "count": 26,
+      "count": 144,
       "refs": [
         "genesis 12:8",
         "genesis 13:3",
@@ -80,83 +99,52 @@
         "genesis 35:7",
         "genesis 35:8",
         "genesis 35:15",
-        "genesis 35:16"
+        "genesis 35:16",
+        "joshua 7:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "הָאֵל֙ בֵּֽית אֵ֔ל",
-      "pron": "엘 르베트 르베트",
+      "hebrew": "לַאֲשֶׁ֧ר בְּבֵֽית אֵ֛ל",
+      "pron": "아셰르 르베트 르베트",
       "lemmas": [
-        "אֵל",
+        "אֲשֶׁר",
         "בֵּית־אֵל",
         "בֵּית־אֵל"
       ],
       "words": [
         {
-          "word": "הָאֵל֙",
-          "lemma": "אֵל",
-          "strong": "H410",
-          "pron": "엘"
+          "word": "לַאֲשֶׁ֧ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
         },
         {
-          "word": "בֵּֽית",
+          "word": "בְּבֵֽית",
           "lemma": "בֵּית־אֵל",
           "strong": "H1008",
           "pron": "르베트"
         },
         {
-          "word": "אֵ֔ל",
-          "lemma": "בֵּית־אֵל",
-          "strong": "H1008",
-          "pron": "르베트"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 31:13",
-        "genesis 35:7"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "הַה֖וּא בֵּֽית אֵ֑ל",
-      "pron": "브후 르베트 르베트",
-      "lemmas": [
-        "הוּא",
-        "בֵּית־אֵל",
-        "בֵּית־אֵל"
-      ],
-      "words": [
-        {
-          "word": "הַה֖וּא",
-          "lemma": "הוּא",
-          "strong": "H1931",
-          "pron": "브후"
-        },
-        {
-          "word": "בֵּֽית",
-          "lemma": "בֵּית־אֵל",
-          "strong": "H1008",
-          "pron": "르베트"
-        },
-        {
-          "word": "אֵ֑ל",
+          "word": "אֵ֛ל",
           "lemma": "בֵּית־אֵל",
           "strong": "H1008",
           "pron": "르베트"
         }
       ],
-      "count": 4,
+      "count": 10,
       "refs": [
-        "genesis 28:19",
-        "genesis 35:6"
+        "samuel1 30:27",
+        "kings1 13:32",
+        "kings2 2:3",
+        "kings2 10:29",
+        "kings2 23:15"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "עֲלֵ֥ה בֵֽית אֵ֖ל",
-      "pron": "알라 르베트 르베트",
+      "pron": "야알레 르베트 르베트",
       "lemmas": [
         "עָלָה",
         "בֵּית־אֵל",
@@ -167,7 +155,7 @@
           "word": "עֲלֵ֥ה",
           "lemma": "עָלָה",
           "strong": "H5927",
-          "pron": "알라"
+          "pron": "야알레"
         },
         {
           "word": "בֵֽית",
@@ -182,10 +170,87 @@
           "pron": "르베트"
         }
       ],
-      "count": 4,
+      "count": 10,
       "refs": [
         "genesis 35:1",
-        "genesis 35:3"
+        "genesis 35:3",
+        "judges 20:18",
+        "judges 20:31",
+        "judges 21:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּבֵֽית אֵ֑ל וְאֶת",
+      "pron": "르베트 르베트 에트",
+      "lemmas": [
+        "בֵּית־אֵל",
+        "בֵּית־אֵל",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "בְּבֵֽית",
+          "lemma": "בֵּית־אֵל",
+          "strong": "H1008",
+          "pron": "르베트"
+        },
+        {
+          "word": "אֵ֑ל",
+          "lemma": "בֵּית־אֵל",
+          "strong": "H1008",
+          "pron": "르베트"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "kings1 12:29",
+        "kings1 12:32",
+        "kings1 13:11",
+        "chronicles2 13:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֵּ֧ין בֵּֽית אֵ֛ל",
+      "pron": "벤 르베트 르베트",
+      "lemmas": [
+        "בֵּין",
+        "בֵּית־אֵל",
+        "בֵּית־אֵל"
+      ],
+      "words": [
+        {
+          "word": "בֵּ֧ין",
+          "lemma": "בֵּין",
+          "strong": "H996",
+          "pron": "벤"
+        },
+        {
+          "word": "בֵּֽית",
+          "lemma": "בֵּית־אֵל",
+          "strong": "H1008",
+          "pron": "르베트"
+        },
+        {
+          "word": "אֵ֛ל",
+          "lemma": "בֵּית־אֵל",
+          "strong": "H1008",
+          "pron": "르베트"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "genesis 13:3",
+        "joshua 8:9",
+        "joshua 8:12",
+        "judges 4:5"
       ],
       "glossKo": ""
     }

@@ -1,8 +1,8 @@
 {
   "lemma": "יוֹם",
-  "pron": "욤",
+  "pron": "요마트",
   "strong": "H3118",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "יוֹם",
     "strong": "H3117",
@@ -12,7 +12,7 @@
     {
       "lemma": "יוֹם",
       "strong": "H3117",
-      "pron": "아욤",
+      "pron": "욤",
       "glossKo": "날"
     },
     {
@@ -36,13 +36,75 @@
     {
       "lemma": "יְמִימָה",
       "strong": "H3224",
-      "pron": "",
+      "pron": "예미마",
       "glossKo": "여미마"
     }
   ],
   "defEn": "day",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 16,
+  "byBook": {
+    "daniel": 11,
+    "ezra": 5
+  },
+  "phrases": [
+    {
+      "hebrew": "וְעַתִּ֥יק יוֹמִ֖ין",
+      "pron": "브앗티크 요마트",
+      "lemmas": [
+        "עַתִּיק",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "וְעַתִּ֥יק",
+          "lemma": "עַתִּיק",
+          "strong": "H6268",
+          "pron": "브앗티크"
+        },
+        {
+          "word": "יוֹמִ֖ין",
+          "lemma": "יוֹם",
+          "strong": "H3118",
+          "pron": "요마트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "daniel 7:9",
+        "daniel 7:13",
+        "daniel 7:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַד יוֹמִ֣ין",
+      "pron": "앋 요마트",
+      "lemmas": [
+        "עַד",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5705",
+          "pron": "앋"
+        },
+        {
+          "word": "יוֹמִ֣ין",
+          "lemma": "יוֹם",
+          "strong": "H3118",
+          "pron": "요마트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 6:15",
+        "daniel 6:7",
+        "daniel 6:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

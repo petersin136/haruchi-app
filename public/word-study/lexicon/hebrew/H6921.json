@@ -12,19 +12,19 @@
     {
       "lemma": "קָדוּם",
       "strong": "H6917",
-      "pron": "",
+      "pron": "케두밈",
       "glossKo": "옛"
     },
     {
       "lemma": "קָדַם",
       "strong": "H6923",
-      "pron": "칻데마",
+      "pron": "킫데무",
       "glossKo": "앞서 가다"
     },
     {
       "lemma": "קֶדֶם",
       "strong": "H6924",
-      "pron": "케뎀",
+      "pron": "미케뎀",
       "glossKo": "동방"
     },
     {
@@ -42,44 +42,225 @@
     {
       "lemma": "קַדְמוֹן",
       "strong": "H6930",
-      "pron": "",
+      "pron": "아칻모나",
       "glossKo": "동쪽의"
     }
   ],
   "defEn": "fore; East; eastward; east wind",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 69,
   "byBook": {
+    "ezekiel": 52,
+    "exodus": 3,
     "genesis": 3,
-    "psalms": 2
+    "job": 3,
+    "hosea": 2,
+    "psalms": 2,
+    "habakkuk": 1,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "jonah": 1
   },
   "phrases": [
     {
-      "hebrew": "וּשְׁדוּפֹ֣ת קָדִ֑ים",
-      "pron": "우셰두포트 카딤",
+      "hebrew": "מִפְּאַ֥ת קָדִ֛ימָה",
+      "pron": "아페오트 카딤",
       "lemmas": [
-        "שָׁדַף",
+        "פֵּאָה",
         "קָדִים"
       ],
       "words": [
         {
-          "word": "וּשְׁדוּפֹ֣ת",
-          "lemma": "שָׁדַף",
-          "strong": "H7710",
-          "pron": "우셰두포트"
+          "word": "מִפְּאַ֥ת",
+          "lemma": "פֵּאָה",
+          "strong": "H6285",
+          "pron": "아페오트"
         },
         {
-          "word": "קָדִ֑ים",
+          "word": "קָדִ֛ימָה",
           "lemma": "קָדִים",
           "strong": "H6921",
           "pron": "카딤"
         }
       ],
-      "count": 3,
+      "count": 18,
       "refs": [
-        "genesis 41:6",
-        "genesis 41:23",
-        "genesis 41:27"
+        "ezekiel 47:18",
+        "ezekiel 48:1",
+        "ezekiel 48:2",
+        "ezekiel 48:3",
+        "ezekiel 48:4",
+        "ezekiel 48:5",
+        "ezekiel 48:6",
+        "ezekiel 48:7",
+        "ezekiel 48:8",
+        "ezekiel 48:16",
+        "ezekiel 48:23",
+        "ezekiel 48:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִפְּאַ֥ת קָדִ֛ימָה עַד",
+      "pron": "아페오트 카딤 앋",
+      "lemmas": [
+        "פֵּאָה",
+        "קָדִים",
+        "עַד"
+      ],
+      "words": [
+        {
+          "word": "מִפְּאַ֥ת",
+          "lemma": "פֵּאָה",
+          "strong": "H6285",
+          "pron": "아페오트"
+        },
+        {
+          "word": "קָדִ֛ימָה",
+          "lemma": "קָדִים",
+          "strong": "H6921",
+          "pron": "카딤"
+        },
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "ezekiel 48:2",
+        "ezekiel 48:3",
+        "ezekiel 48:4",
+        "ezekiel 48:5",
+        "ezekiel 48:6",
+        "ezekiel 48:7",
+        "ezekiel 48:8",
+        "ezekiel 48:23",
+        "ezekiel 48:24",
+        "ezekiel 48:25",
+        "ezekiel 48:26",
+        "ezekiel 48:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קָדִ֛ימָה עַד",
+      "pron": "카딤 앋",
+      "lemmas": [
+        "קָדִים",
+        "עַד"
+      ],
+      "words": [
+        {
+          "word": "קָדִ֛ימָה",
+          "lemma": "קָדִים",
+          "strong": "H6921",
+          "pron": "카딤"
+        },
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "ezekiel 48:2",
+        "ezekiel 48:3",
+        "ezekiel 48:4",
+        "ezekiel 48:5",
+        "ezekiel 48:6",
+        "ezekiel 48:7",
+        "ezekiel 48:8",
+        "ezekiel 48:23",
+        "ezekiel 48:24",
+        "ezekiel 48:25",
+        "ezekiel 48:26",
+        "ezekiel 48:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קָדִ֛ימָה עַד פְּאַת",
+      "pron": "카딤 앋 아페오트",
+      "lemmas": [
+        "קָדִים",
+        "עַד",
+        "פֵּאָה"
+      ],
+      "words": [
+        {
+          "word": "קָדִ֛ימָה",
+          "lemma": "קָדִים",
+          "strong": "H6921",
+          "pron": "카딤"
+        },
+        {
+          "word": "עַד",
+          "lemma": "עַד",
+          "strong": "H5704",
+          "pron": "앋"
+        },
+        {
+          "word": "פְּאַת",
+          "lemma": "פֵּאָה",
+          "strong": "H6285",
+          "pron": "아페오트"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "ezekiel 48:2",
+        "ezekiel 48:3",
+        "ezekiel 48:4",
+        "ezekiel 48:5",
+        "ezekiel 48:6",
+        "ezekiel 48:7",
+        "ezekiel 48:8",
+        "ezekiel 48:23",
+        "ezekiel 48:24",
+        "ezekiel 48:25",
+        "ezekiel 48:26",
+        "ezekiel 48:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "דֶּ֣רֶךְ הַקָּדִ֑ים",
+      "pron": "데레크 카딤",
+      "lemmas": [
+        "דֶּרֶךְ",
+        "קָדִים"
+      ],
+      "words": [
+        {
+          "word": "דֶּ֣רֶךְ",
+          "lemma": "דֶּרֶךְ",
+          "strong": "H1870",
+          "pron": "데레크"
+        },
+        {
+          "word": "הַקָּדִ֑ים",
+          "lemma": "קָדִים",
+          "strong": "H6921",
+          "pron": "카딤"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "ezekiel 40:6",
+        "ezekiel 40:10",
+        "ezekiel 40:22",
+        "ezekiel 40:32",
+        "ezekiel 42:10",
+        "ezekiel 42:12",
+        "ezekiel 42:15",
+        "ezekiel 43:1",
+        "ezekiel 43:2",
+        "ezekiel 43:4"
       ],
       "glossKo": ""
     }

@@ -1,6 +1,6 @@
 {
   "lemma": "שְׁבוּעָה",
-  "pron": "우셰부아트오",
+  "pron": "밋셰부아티",
   "strong": "H7621",
   "posKo": "명사",
   "root": {
@@ -12,7 +12,7 @@
     {
       "lemma": "אַשְׁבֵּעַ",
       "strong": "H791",
-      "pron": "",
+      "pron": "아솁베아",
       "glossKo": "아스베아"
     },
     {
@@ -24,22 +24,208 @@
     {
       "lemma": "שָׁבַע",
       "strong": "H7650",
-      "pron": "니솁바",
+      "pron": "힛샵아",
       "glossKo": "맹세하다"
     },
     {
       "lemma": "שֶׁבַע",
       "strong": "H7651",
-      "pron": "셰바",
+      "pron": "브십아",
       "glossKo": "일곱"
     }
   ],
   "defEn": "sworn; oath",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 30,
   "byBook": {
+    "numbers": 5,
+    "joshua": 3,
+    "ecclesiastes": 2,
     "genesis": 2,
-    "psalms": 1
+    "nehemiah": 2,
+    "chronicles1": 1,
+    "chronicles2": 1,
+    "daniel": 1,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "ezekiel": 1,
+    "habakkuk": 1,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "kings1": 1,
+    "leviticus": 1,
+    "psalms": 1,
+    "samuel1": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הַשְּׁבֻעָ֔ה אֲשֶׁ֥ר",
+      "pron": "밋셰부아티 아셰르",
+      "lemmas": [
+        "שְׁבוּעָה",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הַשְּׁבֻעָ֔ה",
+          "lemma": "שְׁבוּעָה",
+          "strong": "H7621",
+          "pron": "밋셰부아티"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 26:3",
+        "deuteronomy 7:8",
+        "joshua 2:20",
+        "joshua 9:20",
+        "jeremiah 11:5",
+        "daniel 9:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הַשְּׁבֻעָ֔ה",
+      "pron": "에트 밋셰부아티",
+      "lemmas": [
+        "אֵת",
+        "שְׁבוּעָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַשְּׁבֻעָ֔ה",
+          "lemma": "שְׁבוּעָה",
+          "strong": "H7621",
+          "pron": "밋셰부아티"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 26:3",
+        "deuteronomy 7:8",
+        "samuel1 14:26",
+        "kings1 2:43",
+        "jeremiah 11:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשְּׁבֻעָ֔ה אֲשֶׁ֥ר נִשְׁבַּ֖עְתִּי",
+      "pron": "밋셰부아티 아셰르 힛샵아",
+      "lemmas": [
+        "שְׁבוּעָה",
+        "אֲשֶׁר",
+        "שָׁבַע"
+      ],
+      "words": [
+        {
+          "word": "הַשְּׁבֻעָ֔ה",
+          "lemma": "שְׁבוּעָה",
+          "strong": "H7621",
+          "pron": "밋셰부아티"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "נִשְׁבַּ֖עְתִּי",
+          "lemma": "שָׁבַע",
+          "strong": "H7650",
+          "pron": "힛샵아"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 26:3",
+        "deuteronomy 7:8",
+        "joshua 2:20",
+        "joshua 9:20",
+        "jeremiah 11:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת הַשְּׁבֻעָ֔ה אֲשֶׁ֥ר",
+      "pron": "에트 밋셰부아티 아셰르",
+      "lemmas": [
+        "אֵת",
+        "שְׁבוּעָה",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַשְּׁבֻעָ֔ה",
+          "lemma": "שְׁבוּעָה",
+          "strong": "H7621",
+          "pron": "밋셰부아티"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 26:3",
+        "deuteronomy 7:8",
+        "jeremiah 11:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְאָלָ֥ה וְלִשְׁבֻעָ֖ה",
+      "pron": "메알라티 밋셰부아티",
+      "lemmas": [
+        "אָלָה",
+        "שְׁבוּעָה"
+      ],
+      "words": [
+        {
+          "word": "לְאָלָ֥ה",
+          "lemma": "אָלָה",
+          "strong": "H423",
+          "pron": "메알라티"
+        },
+        {
+          "word": "וְלִשְׁבֻעָ֖ה",
+          "lemma": "שְׁבוּעָה",
+          "strong": "H7621",
+          "pron": "밋셰부아티"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 5:21",
+        "nehemiah 10:29",
+        "daniel 9:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

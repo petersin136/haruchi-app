@@ -1,6 +1,6 @@
 {
   "lemma": "תְּחִנָּה",
-  "pron": "테힌나티위",
+  "pron": "테힌나",
   "strong": "H8467",
   "posKo": "명사",
   "root": {
@@ -18,25 +18,25 @@
     {
       "lemma": "חָנָה",
       "strong": "H2583",
-      "pron": "타하네",
+      "pron": "바이한",
       "glossKo": "진치다"
     },
     {
       "lemma": "חַנָּה",
       "strong": "H2584",
-      "pron": "",
+      "pron": "한나",
       "glossKo": "한나"
     },
     {
       "lemma": "חָנוּן",
       "strong": "H2586",
-      "pron": "",
+      "pron": "하눈",
       "glossKo": "하눈"
     },
     {
       "lemma": "חַנּוּן",
       "strong": "H2587",
-      "pron": "브한눈",
+      "pron": "한눈",
       "glossKo": "은혜로운"
     },
     {
@@ -48,9 +48,185 @@
   ],
   "defEn": "graciousness; entreaty",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 25,
   "byBook": {
-    "psalms": 3
+    "kings1": 9,
+    "chronicles2": 5,
+    "jeremiah": 5,
+    "psalms": 3,
+    "daniel": 1,
+    "ezra": 1,
+    "joshua": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "תְּחִנָּתִ֣י לְפָנֶ֑יךָ",
+      "pron": "테힌나 페네",
+      "lemmas": [
+        "תְּחִנָּה",
+        "פָּנִים"
+      ],
+      "words": [
+        {
+          "word": "תְּחִנָּתִ֣י",
+          "lemma": "תְּחִנָּה",
+          "strong": "H8467",
+          "pron": "테힌나"
+        },
+        {
+          "word": "לְפָנֶ֑יךָ",
+          "lemma": "פָּנִים",
+          "strong": "H6440",
+          "pron": "페네"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "psalms 119:170",
+        "jeremiah 36:7",
+        "jeremiah 37:20",
+        "jeremiah 38:26",
+        "jeremiah 42:2",
+        "jeremiah 42:9",
+        "daniel 9:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶל תְּחִנָּת֖וֹ",
+      "pron": "엘 테힌나",
+      "lemmas": [
+        "אֵל",
+        "תְּחִנָּה"
+      ],
+      "words": [
+        {
+          "word": "וְאֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "תְּחִנָּת֖וֹ",
+          "lemma": "תְּחִנָּה",
+          "strong": "H8467",
+          "pron": "테힌나"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 8:28",
+        "kings1 8:30",
+        "kings1 8:52",
+        "chronicles2 6:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת תְּחִנָּתָ֑ם",
+      "pron": "에트 테힌나",
+      "lemmas": [
+        "אֵת",
+        "תְּחִנָּה"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "תְּחִנָּתָ֑ם",
+          "lemma": "תְּחִנָּה",
+          "strong": "H8467",
+          "pron": "테힌나"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 8:45",
+        "kings1 8:49",
+        "kings1 9:3",
+        "chronicles2 6:35",
+        "chronicles2 6:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּפִלָּתָ֖ם וְאֶת תְּחִנָּתָ֑ם",
+      "pron": "아테필라 에트 테힌나",
+      "lemmas": [
+        "תְּפִלָּה",
+        "אֵת",
+        "תְּחִנָּה"
+      ],
+      "words": [
+        {
+          "word": "תְּפִלָּתָ֖ם",
+          "lemma": "תְּפִלָּה",
+          "strong": "H8605",
+          "pron": "아테필라"
+        },
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "תְּחִנָּתָ֑ם",
+          "lemma": "תְּחִנָּה",
+          "strong": "H8467",
+          "pron": "테힌나"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 8:45",
+        "kings1 8:49",
+        "kings1 9:3",
+        "chronicles2 6:35",
+        "chronicles2 6:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת תְּחִנָּתָ֑ם וְעָשִׂ֖יתָ",
+      "pron": "에트 테힌나 바야아스",
+      "lemmas": [
+        "אֵת",
+        "תְּחִנָּה",
+        "עָשָׂה"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "תְּחִנָּתָ֑ם",
+          "lemma": "תְּחִנָּה",
+          "strong": "H8467",
+          "pron": "테힌나"
+        },
+        {
+          "word": "וְעָשִׂ֖יתָ",
+          "lemma": "עָשָׂה",
+          "strong": "H6213",
+          "pron": "바야아스"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 8:45",
+        "kings1 8:49",
+        "chronicles2 6:35",
+        "chronicles2 6:39"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

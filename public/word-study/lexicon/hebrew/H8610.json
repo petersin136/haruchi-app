@@ -1,16 +1,97 @@
 {
   "lemma": "תָּפַשׂ",
-  "pron": "잇탑수",
+  "pron": "토페스",
   "strong": "H8610",
   "posKo": "동사",
   "root": null,
   "family": [],
   "defEn": "manipulate; seize; capture; wield; overlay; use unwarrantably",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 65,
   "byBook": {
+    "jeremiah": 18,
+    "ezekiel": 12,
+    "kings2": 8,
+    "kings1": 6,
+    "deuteronomy": 4,
     "genesis": 2,
-    "psalms": 2
+    "isaiah": 2,
+    "joshua": 2,
+    "numbers": 2,
+    "proverbs": 2,
+    "psalms": 2,
+    "samuel1": 2,
+    "amos": 1,
+    "chronicles2": 1,
+    "habakkuk": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַֽיִּתְפְּשׂוּ֙ אֶת",
+      "pron": "토페스 에트",
+      "lemmas": [
+        "תָּפַשׂ",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַֽיִּתְפְּשׂוּ֙",
+          "lemma": "תָּפַשׂ",
+          "strong": "H8610",
+          "pron": "토페스"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "joshua 8:8",
+        "samuel1 15:8",
+        "kings1 18:40",
+        "kings2 14:7",
+        "kings2 25:6",
+        "jeremiah 26:8",
+        "jeremiah 37:13",
+        "jeremiah 38:23",
+        "jeremiah 51:32",
+        "jeremiah 52:9",
+        "ezekiel 14:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תָּ֣פְשׂוּ חָ֑י",
+      "pron": "토페스 하아",
+      "lemmas": [
+        "תָּפַשׂ",
+        "חַי"
+      ],
+      "words": [
+        {
+          "word": "תָּ֣פְשׂוּ",
+          "lemma": "תָּפַשׂ",
+          "strong": "H8610",
+          "pron": "토페스"
+        },
+        {
+          "word": "חָ֑י",
+          "lemma": "חַי",
+          "strong": "H2416",
+          "pron": "하아"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "joshua 8:23",
+        "kings1 20:18",
+        "kings2 7:12",
+        "kings2 10:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

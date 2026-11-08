@@ -12,33 +12,40 @@
     {
       "lemma": "אַשְׁדּוֹד",
       "strong": "H795",
-      "pron": "",
+      "pron": "우브아셷돋",
       "glossKo": "아스돗"
     },
     {
       "lemma": "שָׁדַד",
       "strong": "H7703",
-      "pron": "샫두니",
-      "glossKo": "나를 약탈하다"
+      "pron": "샤둗",
+      "glossKo": "약탈하는 이"
     },
     {
       "lemma": "שִׁדָּה",
       "strong": "H7705",
-      "pron": "",
+      "pron": "싣다",
       "glossKo": "처첩"
     }
   ],
   "defEn": "Almighty",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 48,
   "byBook": {
+    "job": 31,
     "genesis": 6,
-    "psalms": 2
+    "ezekiel": 2,
+    "numbers": 2,
+    "psalms": 2,
+    "ruth": 2,
+    "exodus": 1,
+    "isaiah": 1,
+    "joel": 1
   },
   "phrases": [
     {
       "hebrew": "אֵ֣ל שַׁדַּ֔י",
-      "pron": "엘 샫다이",
+      "pron": "르엘 샫다이",
       "lemmas": [
         "אֵל",
         "שַׁדַּי"
@@ -48,7 +55,7 @@
           "word": "אֵ֣ל",
           "lemma": "אֵל",
           "strong": "H410",
-          "pron": "엘"
+          "pron": "르엘"
         },
         {
           "word": "שַׁדַּ֔י",
@@ -57,13 +64,76 @@
           "pron": "샫다이"
         }
       ],
-      "count": 5,
+      "count": 8,
       "refs": [
         "genesis 17:1",
         "genesis 28:3",
         "genesis 35:11",
         "genesis 43:14",
-        "genesis 48:3"
+        "genesis 48:3",
+        "exodus 6:3",
+        "job 35:13",
+        "ezekiel 10:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִ֭שַּׁדַּי לֹא",
+      "pron": "샫다이 로",
+      "lemmas": [
+        "שַׁדַּי",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "מִ֭שַּׁדַּי",
+          "lemma": "שַׁדַּי",
+          "strong": "H7706",
+          "pron": "샫다이"
+        },
+        {
+          "word": "לֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "job 24:1",
+        "job 27:11",
+        "job 34:12",
+        "job 35:13",
+        "job 37:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶל שַׁ֝דַּ֗י",
+      "pron": "엘 샫다이",
+      "lemmas": [
+        "אֵל",
+        "שַׁדַּי"
+      ],
+      "words": [
+        {
+          "word": "וְאֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "שַׁ֝דַּ֗י",
+          "lemma": "שַׁדַּי",
+          "strong": "H7706",
+          "pron": "샫다이"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 8:5",
+        "job 13:3",
+        "job 15:25"
       ],
       "glossKo": ""
     }

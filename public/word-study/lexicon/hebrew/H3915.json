@@ -1,6 +1,6 @@
 {
   "lemma": "לַיִל",
-  "pron": "바라엘라",
+  "pron": "라엘라",
   "strong": "H3915",
   "posKo": "명사",
   "root": {
@@ -12,52 +12,80 @@
     {
       "lemma": "לוּל",
       "strong": "H3883",
-      "pron": "",
+      "pron": "우브룰림",
       "glossKo": "나선 계단"
     },
     {
       "lemma": "לִילִית",
       "strong": "H3917",
-      "pron": "",
+      "pron": "릴리트",
       "glossKo": "야밤의 괴물"
     },
     {
       "lemma": "לֻלָאָה",
       "strong": "H3924",
-      "pron": "",
+      "pron": "룰오트",
       "glossKo": "고리"
     }
   ],
   "defEn": "twist; night; adversity",
   "defKo": "",
-  "countOT": 53,
+  "countOT": 235,
   "byBook": {
     "psalms": 28,
-    "genesis": 25
+    "genesis": 25,
+    "exodus": 18,
+    "isaiah": 18,
+    "job": 17,
+    "samuel1": 14,
+    "jeremiah": 12,
+    "judges": 12,
+    "deuteronomy": 9,
+    "nehemiah": 9,
+    "numbers": 9,
+    "samuel2": 8,
+    "joshua": 7,
+    "kings1": 6,
+    "chronicles2": 5,
+    "kings2": 5,
+    "lamentations": 4,
+    "proverbs": 4,
+    "ruth": 4,
+    "jonah": 3,
+    "songofsolomon": 3,
+    "chronicles1": 2,
+    "ecclesiastes": 2,
+    "esther": 2,
+    "hosea": 2,
+    "leviticus": 2,
+    "zechariah": 2,
+    "amos": 1,
+    "micah": 1,
+    "obadiah": 1
   },
   "phrases": [
     {
-      "hebrew": "לַ֛יְלָה ה֥וּא",
-      "pron": "바라엘라 브후",
+      "hebrew": "בַּלַּ֣יְלָה הַה֔וּא",
+      "pron": "라엘라 후",
       "lemmas": [
         "לַיִל",
         "הוּא"
       ],
       "words": [
         {
-          "word": "לַ֛יְלָה",
+          "word": "בַּלַּ֣יְלָה",
           "lemma": "לַיִל",
           "strong": "H3915",
-          "pron": "바라엘라"
+          "pron": "라엘라"
         },
         {
-          "word": "ה֥וּא",
+          "word": "הַה֔וּא",
           "lemma": "הוּא",
           "strong": "H1931",
-          "pron": "브후"
+          "pron": "후"
         }
       ],
-      "count": 8,
+      "count": 25,
       "refs": [
         "genesis 14:15",
         "genesis 19:33",
@@ -66,43 +94,93 @@
         "genesis 30:16",
         "genesis 32:13",
         "genesis 32:21",
-        "genesis 32:22"
+        "genesis 32:22",
+        "exodus 12:30",
+        "numbers 14:1",
+        "joshua 8:9",
+        "joshua 8:13"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בַּחֲל֣וֹם הַלָּ֑יְלָה",
-      "pron": "카할롬 바라엘라",
+      "hebrew": "כָּל הַלָּֽיְלָה",
+      "pron": "칼 라엘라",
       "lemmas": [
-        "חֲלוֹם",
+        "כֹּל",
         "לַיִל"
       ],
       "words": [
         {
-          "word": "בַּחֲל֣וֹם",
-          "lemma": "חֲלוֹם",
-          "strong": "H2472",
-          "pron": "카할롬"
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
         },
         {
-          "word": "הַלָּ֑יְלָה",
+          "word": "הַלָּֽיְלָה",
           "lemma": "לַיִל",
           "strong": "H3915",
-          "pron": "바라엘라"
+          "pron": "라엘라"
         }
       ],
-      "count": 4,
+      "count": 21,
       "refs": [
-        "genesis 20:3",
-        "genesis 31:24",
-        "genesis 40:5",
-        "genesis 41:11"
+        "exodus 10:13",
+        "exodus 14:20",
+        "exodus 14:21",
+        "leviticus 6:9",
+        "numbers 11:32",
+        "joshua 10:9",
+        "judges 16:2",
+        "judges 19:25",
+        "samuel1 15:11",
+        "samuel1 19:24",
+        "samuel1 28:20",
+        "samuel1 31:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יוֹמָ֣ם וָלַ֔יְלָה",
+      "pron": "요맘 라엘라",
+      "lemmas": [
+        "יוֹמָם",
+        "לַיִל"
+      ],
+      "words": [
+        {
+          "word": "יוֹמָ֣ם",
+          "lemma": "יוֹמָם",
+          "strong": "H3119",
+          "pron": "요맘"
+        },
+        {
+          "word": "וָלַ֔יְלָה",
+          "lemma": "לַיִל",
+          "strong": "H3915",
+          "pron": "라엘라"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "exodus 13:21",
+        "leviticus 8:35",
+        "numbers 9:21",
+        "joshua 1:8",
+        "kings1 8:59",
+        "chronicles1 9:33",
+        "chronicles2 6:20",
+        "nehemiah 1:6",
+        "nehemiah 4:9",
+        "psalms 1:2",
+        "psalms 32:4",
+        "psalms 42:3"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "הַלָּ֑יְלָה וַיֹּ֣אמֶר",
-      "pron": "바라엘라 아마르",
+      "pron": "라엘라 바요메르",
       "lemmas": [
         "לַיִל",
         "אָמַר"
@@ -112,51 +190,65 @@
           "word": "הַלָּ֑יְלָה",
           "lemma": "לַיִל",
           "strong": "H3915",
-          "pron": "바라엘라"
+          "pron": "라엘라"
         },
         {
           "word": "וַיֹּ֣אמֶר",
           "lemma": "אָמַר",
           "strong": "H559",
-          "pron": "아마르"
+          "pron": "바요메르"
         }
       ],
-      "count": 4,
+      "count": 13,
       "refs": [
-        "psalms 42:3",
         "genesis 20:3",
         "genesis 31:24",
-        "genesis 46:2"
+        "genesis 46:2",
+        "exodus 12:31",
+        "numbers 22:20",
+        "judges 16:2",
+        "samuel1 15:16",
+        "samuel1 28:8",
+        "kings1 3:5",
+        "kings2 7:12",
+        "chronicles2 7:12",
+        "job 3:3"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "יוֹמָ֥ם וָלָֽיְלָה",
-      "pron": "요맘 바라엘라",
+      "hebrew": "וְאַרְבָּעִ֣ים לַ֔יְלָה",
+      "pron": "아렙바임 라엘라",
       "lemmas": [
-        "יוֹמָם",
+        "אַרְבָּעִים",
         "לַיִל"
       ],
       "words": [
         {
-          "word": "יוֹמָ֥ם",
-          "lemma": "יוֹמָם",
-          "strong": "H3119",
-          "pron": "요맘"
+          "word": "וְאַרְבָּעִ֣ים",
+          "lemma": "אַרְבָּעִים",
+          "strong": "H705",
+          "pron": "아렙바임"
         },
         {
-          "word": "וָלָֽיְלָה",
+          "word": "לַ֔יְלָה",
           "lemma": "לַיִל",
           "strong": "H3915",
-          "pron": "바라엘라"
+          "pron": "라엘라"
         }
       ],
-      "count": 4,
+      "count": 10,
       "refs": [
-        "psalms 1:2",
-        "psalms 32:4",
-        "psalms 42:3",
-        "psalms 55:10"
+        "genesis 7:4",
+        "genesis 7:12",
+        "exodus 24:18",
+        "exodus 34:28",
+        "deuteronomy 9:9",
+        "deuteronomy 9:11",
+        "deuteronomy 9:18",
+        "deuteronomy 9:25",
+        "deuteronomy 10:10",
+        "kings1 19:8"
       ],
       "glossKo": ""
     }

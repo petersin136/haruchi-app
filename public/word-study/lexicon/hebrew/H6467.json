@@ -1,6 +1,6 @@
 {
   "lemma": "פֹּעַל",
-  "pron": "브포알",
+  "pron": "파올로",
   "strong": "H6467",
   "posKo": "명사",
   "root": {
@@ -18,21 +18,125 @@
     {
       "lemma": "פָּעַל",
       "strong": "H6466",
-      "pron": "포알레",
-      "glossKo": "행하는 이"
+      "pron": "파알타",
+      "glossKo": "행하다"
     },
     {
       "lemma": "פְּעֻלָּה",
       "strong": "H6468",
-      "pron": "리페울로트",
+      "pron": "페울라트",
       "glossKo": "보응"
     }
   ],
   "defEn": "act; work",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 38,
   "byBook": {
-    "psalms": 11
+    "psalms": 11,
+    "isaiah": 6,
+    "job": 6,
+    "proverbs": 5,
+    "jeremiah": 3,
+    "deuteronomy": 2,
+    "habakkuk": 2,
+    "chronicles1": 1,
+    "ruth": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּפָעֳלֶ֑ךָ בְּֽמַעֲשֵׂ֖י",
+      "pron": "파올로 밈마아세누",
+      "lemmas": [
+        "פֹּעַל",
+        "מַעֲשֶׂה"
+      ],
+      "words": [
+        {
+          "word": "בְּפָעֳלֶ֑ךָ",
+          "lemma": "פֹּעַל",
+          "strong": "H6467",
+          "pron": "파올로"
+        },
+        {
+          "word": "בְּֽמַעֲשֵׂ֖י",
+          "lemma": "מַעֲשֶׂה",
+          "strong": "H4639",
+          "pron": "밈마아세누"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 92:4",
+        "psalms 143:5",
+        "jeremiah 25:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּפָעֳלֶ֑ךָ בְּֽמַעֲשֵׂ֖י יָדֶ֣יךָ",
+      "pron": "파올로 밈마아세누 야도",
+      "lemmas": [
+        "פֹּעַל",
+        "מַעֲשֶׂה",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "בְּפָעֳלֶ֑ךָ",
+          "lemma": "פֹּעַל",
+          "strong": "H6467",
+          "pron": "파올로"
+        },
+        {
+          "word": "בְּֽמַעֲשֵׂ֖י",
+          "lemma": "מַעֲשֶׂה",
+          "strong": "H4639",
+          "pron": "밈마아세누"
+        },
+        {
+          "word": "יָדֶ֣יךָ",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 92:4",
+        "psalms 143:5",
+        "jeremiah 25:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְהוָ֖ה פָּעֳלֵ֑ךְ",
+      "pron": "여호와 파올로",
+      "lemmas": [
+        "יְהֹוָה",
+        "פֹּעַל"
+      ],
+      "words": [
+        {
+          "word": "יְהוָ֖ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "פָּעֳלֵ֑ךְ",
+          "lemma": "פֹּעַל",
+          "strong": "H6467",
+          "pron": "파올로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ruth 2:12",
+        "psalms 92:4",
+        "habakkuk 3:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

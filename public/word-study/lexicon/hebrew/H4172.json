@@ -1,6 +1,6 @@
 {
   "lemma": "מוֹרָא",
-  "pron": "모라",
+  "pron": "우모라아켐",
   "strong": "H4172",
   "posKo": "명사",
   "root": {
@@ -12,34 +12,134 @@
     {
       "lemma": "יָרֵא",
       "strong": "H3372",
-      "pron": "이라",
+      "pron": "바이라",
       "glossKo": "두려워하다"
     },
     {
       "lemma": "יָרֵא",
       "strong": "H3373",
-      "pron": "이레에",
+      "pron": "예레",
       "glossKo": "두려워하는"
     },
     {
       "lemma": "יִרְאוֹן",
       "strong": "H3375",
-      "pron": "",
+      "pron": "브이레온",
       "glossKo": "이론"
     },
     {
       "lemma": "תִּירְיָא",
       "strong": "H8493",
-      "pron": "",
+      "pron": "티레아",
       "glossKo": "디르야"
     }
   ],
   "defEn": "fear",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 12,
   "byBook": {
+    "deuteronomy": 4,
+    "isaiah": 2,
+    "malachi": 2,
     "psalms": 2,
-    "genesis": 1
+    "genesis": 1,
+    "jeremiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּבְמוֹרָאִ֖ים גְּדֹלִ֑ים",
+      "pron": "우모라아켐 아게돌림",
+      "lemmas": [
+        "מוֹרָא",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "וּבְמוֹרָאִ֖ים",
+          "lemma": "מוֹרָא",
+          "strong": "H4172",
+          "pron": "우모라아켐"
+        },
+        {
+          "word": "גְּדֹלִ֑ים",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 4:34",
+        "deuteronomy 26:8",
+        "deuteronomy 34:12",
+        "jeremiah 32:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְטוּיָ֔ה וּבְמוֹרָאִ֖ים",
+      "pron": "바옏 우모라아켐",
+      "lemmas": [
+        "נָטָה",
+        "מוֹרָא"
+      ],
+      "words": [
+        {
+          "word": "נְטוּיָ֔ה",
+          "lemma": "נָטָה",
+          "strong": "H5186",
+          "pron": "바옏"
+        },
+        {
+          "word": "וּבְמוֹרָאִ֖ים",
+          "lemma": "מוֹרָא",
+          "strong": "H4172",
+          "pron": "우모라아켐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 4:34",
+        "deuteronomy 26:8",
+        "jeremiah 32:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נְטוּיָ֔ה וּבְמוֹרָאִ֖ים גְּדֹלִ֑ים",
+      "pron": "바옏 우모라아켐 아게돌림",
+      "lemmas": [
+        "נָטָה",
+        "מוֹרָא",
+        "גָּדוֹל"
+      ],
+      "words": [
+        {
+          "word": "נְטוּיָ֔ה",
+          "lemma": "נָטָה",
+          "strong": "H5186",
+          "pron": "바옏"
+        },
+        {
+          "word": "וּבְמוֹרָאִ֖ים",
+          "lemma": "מוֹרָא",
+          "strong": "H4172",
+          "pron": "우모라아켐"
+        },
+        {
+          "word": "גְּדֹלִ֑ים",
+          "lemma": "גָּדוֹל",
+          "strong": "H1419",
+          "pron": "아게돌림"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 4:34",
+        "deuteronomy 26:8",
+        "jeremiah 32:21"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

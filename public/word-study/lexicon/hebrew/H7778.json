@@ -1,8 +1,8 @@
 {
   "lemma": "שׁוֹעֵר",
-  "pron": "쇼에르",
+  "pron": "아쇼에르",
   "strong": "H7778",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁעַר",
     "strong": "H8176",
@@ -12,13 +12,13 @@
     {
       "lemma": "שָׁעַר",
       "strong": "H8176",
-      "pron": "",
+      "pron": "샤아르",
       "glossKo": "쪼개다"
     },
     {
       "lemma": "שַׁעַר",
       "strong": "H8179",
-      "pron": "미샤아레",
+      "pron": "브샤아르",
       "glossKo": "성문"
     },
     {
@@ -30,25 +30,189 @@
     {
       "lemma": "שֹׁעָר",
       "strong": "H8182",
-      "pron": "",
+      "pron": "아쇼아림",
       "glossKo": "혐오스러운"
     },
     {
       "lemma": "שַׁעֲרוּרָה",
       "strong": "H8186",
-      "pron": "",
+      "pron": "브샤아루라",
       "glossKo": "혐오"
     },
     {
       "lemma": "שְׁעַרְיָה",
       "strong": "H8187",
-      "pron": "",
+      "pron": "우셰아레아",
       "glossKo": "스아랴"
     }
   ],
   "defEn": "janitor",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 37,
+  "byBook": {
+    "chronicles1": 14,
+    "nehemiah": 10,
+    "chronicles2": 6,
+    "ezra": 4,
+    "kings2": 2,
+    "samuel2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְהַמְשֹׁרְרִ֖ים וְהַשֹּׁעֲרִ֑ים",
+      "pron": "야시르 아쇼에르",
+      "lemmas": [
+        "שִׁיר",
+        "שׁוֹעֵר"
+      ],
+      "words": [
+        {
+          "word": "וְהַמְשֹׁרְרִ֖ים",
+          "lemma": "שִׁיר",
+          "strong": "H7891",
+          "pron": "야시르"
+        },
+        {
+          "word": "וְהַשֹּׁעֲרִ֑ים",
+          "lemma": "שׁוֹעֵר",
+          "strong": "H7778",
+          "pron": "아쇼에르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "ezra 2:70",
+        "ezra 7:7",
+        "nehemiah 12:45",
+        "nehemiah 12:47",
+        "nehemiah 13:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשּׁוֹעֲרִ֥ים וְהַמְשֹׁרְרִ֖ים",
+      "pron": "아쇼에르 야시르",
+      "lemmas": [
+        "שׁוֹעֵר",
+        "שִׁיר"
+      ],
+      "words": [
+        {
+          "word": "הַשּׁוֹעֲרִ֥ים",
+          "lemma": "שׁוֹעֵר",
+          "strong": "H7778",
+          "pron": "아쇼에르"
+        },
+        {
+          "word": "וְהַמְשֹׁרְרִ֖ים",
+          "lemma": "שִׁיר",
+          "strong": "H7891",
+          "pron": "야시르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "nehemiah 7:1",
+        "nehemiah 7:73",
+        "nehemiah 10:28",
+        "nehemiah 10:39"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלַלְוִיִּ֔ם לְשֹֽׁעֲרֵ֖י",
+      "pron": "아레비 아쇼에르",
+      "lemmas": [
+        "לֵוִיִּי",
+        "שׁוֹעֵר"
+      ],
+      "words": [
+        {
+          "word": "וְלַלְוִיִּ֔ם",
+          "lemma": "לֵוִיִּי",
+          "strong": "H3881",
+          "pron": "아레비"
+        },
+        {
+          "word": "לְשֹֽׁעֲרֵ֖י",
+          "lemma": "שׁוֹעֵר",
+          "strong": "H7778",
+          "pron": "아쇼에르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "chronicles2 23:4",
+        "chronicles2 31:14",
+        "nehemiah 7:73",
+        "nehemiah 10:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשֹּׁ֣עֲרִ֔ים לִבְנֵ֥י",
+      "pron": "아쇼에르 바님",
+      "lemmas": [
+        "שׁוֹעֵר",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "הַשֹּׁ֣עֲרִ֔ים",
+          "lemma": "שׁוֹעֵר",
+          "strong": "H7778",
+          "pron": "아쇼에르"
+        },
+        {
+          "word": "לִבְנֵ֥י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 26:19",
+        "ezra 2:42",
+        "nehemiah 7:45"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לַכֹּֽהֲנִים֙ וְלַלְוִיִּ֔ם לְשֹֽׁעֲרֵ֖י",
+      "pron": "코헨 아레비 아쇼에르",
+      "lemmas": [
+        "כֹּהֵן",
+        "לֵוִיִּי",
+        "שׁוֹעֵר"
+      ],
+      "words": [
+        {
+          "word": "לַכֹּֽהֲנִים֙",
+          "lemma": "כֹּהֵן",
+          "strong": "H3548",
+          "pron": "코헨"
+        },
+        {
+          "word": "וְלַלְוִיִּ֔ם",
+          "lemma": "לֵוִיִּי",
+          "strong": "H3881",
+          "pron": "아레비"
+        },
+        {
+          "word": "לְשֹֽׁעֲרֵ֖י",
+          "lemma": "שׁוֹעֵר",
+          "strong": "H7778",
+          "pron": "아쇼에르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles2 23:4",
+        "nehemiah 7:73",
+        "nehemiah 10:28"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

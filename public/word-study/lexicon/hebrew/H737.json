@@ -1,8 +1,8 @@
 {
   "lemma": "אֲרֻחָה",
-  "pron": "아루하",
+  "pron": "바아루하토",
   "strong": "H737",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אָרַח",
     "strong": "H732",
@@ -12,19 +12,19 @@
     {
       "lemma": "אָרַח",
       "strong": "H732",
-      "pron": "",
-      "glossKo": "여행하다"
+      "pron": "하오레아흐",
+      "glossKo": "여행하는 이"
     },
     {
       "lemma": "אָרַח",
       "strong": "H733",
-      "pron": "",
+      "pron": "아라흐",
       "glossKo": "아라"
     },
     {
       "lemma": "אֹרַח",
       "strong": "H734",
-      "pron": "아레호트",
+      "pron": "오라흐",
       "glossKo": "길"
     },
     {
@@ -36,7 +36,75 @@
   ],
   "defEn": "ration of food",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "jeremiah": 3,
+    "kings2": 2,
+    "proverbs": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וַאֲרֻחָת֗וֹ אֲרֻחַ֨ת",
+      "pron": "바아루하토 바아루하토",
+      "lemmas": [
+        "אֲרֻחָה",
+        "אֲרֻחָה"
+      ],
+      "words": [
+        {
+          "word": "וַאֲרֻחָת֗וֹ",
+          "lemma": "אֲרֻחָה",
+          "strong": "H737",
+          "pron": "바아루하토"
+        },
+        {
+          "word": "אֲרֻחַ֨ת",
+          "lemma": "אֲרֻחָה",
+          "strong": "H737",
+          "pron": "바아루하토"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 25:30",
+        "jeremiah 52:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַאֲרֻחָת֗וֹ אֲרֻחַ֨ת תָּמִ֧יד",
+      "pron": "바아루하토 바아루하토 타믿",
+      "lemmas": [
+        "אֲרֻחָה",
+        "אֲרֻחָה",
+        "תָּמִיד"
+      ],
+      "words": [
+        {
+          "word": "וַאֲרֻחָת֗וֹ",
+          "lemma": "אֲרֻחָה",
+          "strong": "H737",
+          "pron": "바아루하토"
+        },
+        {
+          "word": "אֲרֻחַ֨ת",
+          "lemma": "אֲרֻחָה",
+          "strong": "H737",
+          "pron": "바아루하토"
+        },
+        {
+          "word": "תָּמִ֧יד",
+          "lemma": "תָּמִיד",
+          "strong": "H8548",
+          "pron": "타믿"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings2 25:30",
+        "jeremiah 52:34"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

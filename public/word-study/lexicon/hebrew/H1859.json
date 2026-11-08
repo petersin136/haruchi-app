@@ -2,7 +2,7 @@
   "lemma": "דָּר",
   "pron": "다르",
   "strong": "H1859",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "דּוֹר",
     "strong": "H1755",
@@ -12,19 +12,85 @@
     {
       "lemma": "דּוֹר",
       "strong": "H1755",
-      "pron": "르도르",
-      "glossKo": "세대"
+      "pron": "베도로타으브",
+      "glossKo": "그의 세대"
     },
     {
       "lemma": "דּוֹר",
       "strong": "H1756",
-      "pron": "",
+      "pron": "도르",
       "glossKo": "돌"
     }
   ],
   "defEn": "age",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "daniel": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "דָּ֥ר וְדָֽר",
+      "pron": "다르 다르",
+      "lemmas": [
+        "דָּר",
+        "דָּר"
+      ],
+      "words": [
+        {
+          "word": "דָּ֥ר",
+          "lemma": "דָּר",
+          "strong": "H1859",
+          "pron": "다르"
+        },
+        {
+          "word": "וְדָֽר",
+          "lemma": "דָּר",
+          "strong": "H1859",
+          "pron": "다르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:3",
+        "daniel 4:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עִם דָּ֥ר וְדָֽר",
+      "pron": "베임메혼 다르 다르",
+      "lemmas": [
+        "עִם",
+        "דָּר",
+        "דָּר"
+      ],
+      "words": [
+        {
+          "word": "עִם",
+          "lemma": "עִם",
+          "strong": "H5974",
+          "pron": "베임메혼"
+        },
+        {
+          "word": "דָּ֥ר",
+          "lemma": "דָּר",
+          "strong": "H1859",
+          "pron": "다르"
+        },
+        {
+          "word": "וְדָֽר",
+          "lemma": "דָּר",
+          "strong": "H1859",
+          "pron": "다르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:3",
+        "daniel 4:34"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

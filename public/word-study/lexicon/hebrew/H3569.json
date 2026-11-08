@@ -1,8 +1,8 @@
 {
   "lemma": "כּוּשִׁי",
-  "pron": "쿠시",
+  "pron": "라쿠시",
   "strong": "H3569",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "כּוּשׁ",
     "strong": "H3568",
@@ -16,15 +16,131 @@
       "glossKo": "구스"
     },
     {
+      "lemma": "כּוּשִׁי",
+      "strong": "H3570",
+      "pron": "쿠시",
+      "glossKo": "구시"
+    },
+    {
+      "lemma": "כּוּשִׁית",
+      "strong": "H3571",
+      "pron": "아쿠시트",
+      "glossKo": "구스 여인"
+    },
+    {
       "lemma": "כּוּשָׁן",
       "strong": "H3572",
-      "pron": "",
+      "pron": "쿠샨",
       "glossKo": "구산"
     }
   ],
   "defEn": "Cushite",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 23,
+  "byBook": {
+    "samuel2": 8,
+    "chronicles2": 7,
+    "jeremiah": 5,
+    "amos": 1,
+    "daniel": 1,
+    "zephaniah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "מֶ֨לֶךְ הַכּוּשִׁ֜י",
+      "pron": "에벧 라쿠시",
+      "lemmas": [
+        "עֶבֶד מֶלֶךְ",
+        "כּוּשִׁי"
+      ],
+      "words": [
+        {
+          "word": "מֶ֨לֶךְ",
+          "lemma": "עֶבֶד מֶלֶךְ",
+          "strong": "H5663",
+          "pron": "에벧"
+        },
+        {
+          "word": "הַכּוּשִׁ֜י",
+          "lemma": "כּוּשִׁי",
+          "strong": "H3569",
+          "pron": "라쿠시"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 38:7",
+        "jeremiah 38:10",
+        "jeremiah 38:12",
+        "jeremiah 39:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֶֽבֶד מֶ֨לֶךְ הַכּוּשִׁ֜י",
+      "pron": "에벧 에벧 라쿠시",
+      "lemmas": [
+        "עֶבֶד מֶלֶךְ",
+        "עֶבֶד מֶלֶךְ",
+        "כּוּשִׁי"
+      ],
+      "words": [
+        {
+          "word": "עֶֽבֶד",
+          "lemma": "עֶבֶד מֶלֶךְ",
+          "strong": "H5663",
+          "pron": "에벧"
+        },
+        {
+          "word": "מֶ֨לֶךְ",
+          "lemma": "עֶבֶד מֶלֶךְ",
+          "strong": "H5663",
+          "pron": "에벧"
+        },
+        {
+          "word": "הַכּוּשִׁ֜י",
+          "lemma": "כּוּשִׁי",
+          "strong": "H3569",
+          "pron": "라쿠시"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 38:7",
+        "jeremiah 38:10",
+        "jeremiah 38:12",
+        "jeremiah 39:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַכּוּשִׁ֑י וַיֹּ֣אמֶר",
+      "pron": "라쿠시 바요메르",
+      "lemmas": [
+        "כּוּשִׁי",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "הַכּוּשִׁ֑י",
+          "lemma": "כּוּשִׁי",
+          "strong": "H3569",
+          "pron": "라쿠시"
+        },
+        {
+          "word": "וַיֹּ֣אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 18:22",
+        "jeremiah 38:10",
+        "jeremiah 39:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

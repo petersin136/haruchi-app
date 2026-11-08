@@ -1,6 +1,6 @@
 {
   "lemma": "מָעַט",
-  "pron": "얌읻",
+  "pron": "임앋",
   "strong": "H4591",
   "posKo": "동사",
   "root": null,
@@ -8,21 +8,119 @@
     {
       "lemma": "מְעַט",
       "strong": "H4592",
-      "pron": "키메앋",
+      "pron": "메앋",
       "glossKo": "적은"
     },
     {
       "lemma": "מָעֹט",
       "strong": "H4593",
-      "pron": "",
+      "pron": "메욷다",
       "glossKo": "얇은"
     }
   ],
   "defEn": "pare; lessen; be; make; small; few; ineffective",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 22,
   "byBook": {
-    "psalms": 2
+    "exodus": 4,
+    "numbers": 4,
+    "jeremiah": 3,
+    "leviticus": 3,
+    "psalms": 2,
+    "ecclesiastes": 1,
+    "ezekiel": 1,
+    "isaiah": 1,
+    "kings2": 1,
+    "nehemiah": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אַל תַּמְעִֽיטִי",
+      "pron": "엘 임앋",
+      "lemmas": [
+        "אַל",
+        "מָעַט"
+      ],
+      "words": [
+        {
+          "word": "אַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "תַּמְעִֽיטִי",
+          "lemma": "מָעַט",
+          "strong": "H4591",
+          "pron": "임앋"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 4:3",
+        "nehemiah 9:32",
+        "jeremiah 29:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלַמְעַ֕ט תַּמְעִ֖יט",
+      "pron": "메앋 임앋",
+      "lemmas": [
+        "מְעַט",
+        "מָעַט"
+      ],
+      "words": [
+        {
+          "word": "וְלַמְעַ֕ט",
+          "lemma": "מְעַט",
+          "strong": "H4592",
+          "pron": "메앋"
+        },
+        {
+          "word": "תַּמְעִ֖יט",
+          "lemma": "מָעַט",
+          "strong": "H4591",
+          "pron": "임앋"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 26:54",
+        "numbers 33:54",
+        "numbers 35:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לֹ֣א יַמְעִ֔יט",
+      "pron": "로 임앋",
+      "lemmas": [
+        "לֹא",
+        "מָעַט"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יַמְעִ֔יט",
+          "lemma": "מָעַט",
+          "strong": "H4591",
+          "pron": "임앋"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 30:15",
+        "psalms 107:38",
+        "jeremiah 30:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

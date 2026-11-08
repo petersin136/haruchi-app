@@ -1,6 +1,6 @@
 {
   "lemma": "צַדִּיק",
-  "pron": "찯디킴",
+  "pron": "찯디크",
   "strong": "H6662",
   "posKo": "형용사",
   "root": {
@@ -12,39 +12,62 @@
     {
       "lemma": "צָדוֹק",
       "strong": "H6659",
-      "pron": "",
+      "pron": "브차도크",
       "glossKo": "사독"
     },
     {
       "lemma": "צָדַק",
       "strong": "H6663",
-      "pron": "찯쿠",
+      "pron": "찯카",
       "glossKo": "의롭다"
     },
     {
       "lemma": "צֶדֶק",
       "strong": "H6664",
-      "pron": "칟키위",
-      "glossKo": "나의 의"
+      "pron": "브체데크",
+      "glossKo": "의"
     },
     {
       "lemma": "צְדָקָה",
       "strong": "H6666",
-      "pron": "브칟카테카",
-      "glossKo": "너의 의"
+      "pron": "체다카",
+      "glossKo": "의"
     }
   ],
   "defEn": "just",
   "defKo": "",
-  "countOT": 62,
+  "countOT": 206,
   "byBook": {
+    "proverbs": 66,
     "psalms": 52,
-    "genesis": 10
+    "ezekiel": 16,
+    "isaiah": 14,
+    "genesis": 10,
+    "ecclesiastes": 8,
+    "job": 7,
+    "deuteronomy": 4,
+    "exodus": 3,
+    "habakkuk": 3,
+    "jeremiah": 3,
+    "amos": 2,
+    "chronicles2": 2,
+    "kings1": 2,
+    "lamentations": 2,
+    "nehemiah": 2,
+    "samuel2": 2,
+    "daniel": 1,
+    "ezra": 1,
+    "hosea": 1,
+    "kings2": 1,
+    "malachi": 1,
+    "samuel1": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
       "hebrew": "צַדִּ֣יק יְ֭הוָה",
-      "pron": "찯디킴 여호와",
+      "pron": "찯디크 여호와",
       "lemmas": [
         "צַדִּיק",
         "יְהֹוָה"
@@ -54,7 +77,7 @@
           "word": "צַדִּ֣יק",
           "lemma": "צַדִּיק",
           "strong": "H6662",
-          "pron": "찯디킴"
+          "pron": "찯디크"
         },
         {
           "word": "יְ֭הוָה",
@@ -63,8 +86,9 @@
           "pron": "여호와"
         }
       ],
-      "count": 8,
+      "count": 10,
       "refs": [
+        "chronicles2 12:6",
         "psalms 5:12",
         "psalms 11:7",
         "psalms 33:1",
@@ -72,124 +96,139 @@
         "psalms 37:39",
         "psalms 64:10",
         "psalms 97:12",
-        "psalms 145:17"
+        "psalms 145:17",
+        "daniel 9:14"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "חֲמִשִּׁ֥ים צַדִּיקִ֖ם",
-      "pron": "하밋심 찯디킴",
-      "lemmas": [
-        "חֲמִשִּׁים",
-        "צַדִּיק"
-      ],
-      "words": [
-        {
-          "word": "חֲמִשִּׁ֥ים",
-          "lemma": "חֲמִשִּׁים",
-          "strong": "H2572",
-          "pron": "하밋심"
-        },
-        {
-          "word": "צַדִּיקִ֖ם",
-          "lemma": "צַדִּיק",
-          "strong": "H6662",
-          "pron": "찯디킴"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "genesis 18:24",
-        "genesis 18:26",
-        "genesis 18:28"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "יְהוָה֮ צַדִּ֪יק",
-      "pron": "여호와 찯디킴",
+      "hebrew": "יְהוָה֙ הַצַּדִּ֔יק",
+      "pron": "여호와 찯디크",
       "lemmas": [
         "יְהֹוָה",
         "צַדִּיק"
       ],
       "words": [
         {
-          "word": "יְהוָה֮",
+          "word": "יְהוָה֙",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         },
         {
-          "word": "צַדִּ֪יק",
+          "word": "הַצַּדִּ֔יק",
           "lemma": "צַדִּיק",
           "strong": "H6662",
-          "pron": "찯디킴"
+          "pron": "찯디크"
         }
       ],
-      "count": 4,
+      "count": 7,
       "refs": [
+        "exodus 9:27",
         "psalms 11:5",
         "psalms 116:5",
         "psalms 118:20",
-        "psalms 129:4"
+        "psalms 129:4",
+        "hosea 14:9",
+        "zephaniah 3:5"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "יִשְׂמַ֣ח צַ֭דִּיק",
-      "pron": "브이셈후 찯디킴",
+      "hebrew": "כַצַּדִּ֖יק כָּרָשָׁ֑ע",
+      "pron": "찯디크 라샤",
       "lemmas": [
-        "שָׂמַח",
-        "צַדִּיק"
+        "צַדִּיק",
+        "רָשָׁע"
       ],
       "words": [
         {
-          "word": "יִשְׂמַ֣ח",
-          "lemma": "שָׂמַח",
-          "strong": "H8055",
-          "pron": "브이셈후"
-        },
-        {
-          "word": "צַ֭דִּיק",
+          "word": "כַצַּדִּ֖יק",
           "lemma": "צַדִּיק",
           "strong": "H6662",
-          "pron": "찯디킴"
+          "pron": "찯디크"
+        },
+        {
+          "word": "כָּרָשָׁ֑ע",
+          "lemma": "רָשָׁע",
+          "strong": "H7563",
+          "pron": "라샤"
         }
       ],
-      "count": 3,
+      "count": 7,
       "refs": [
-        "psalms 58:10",
-        "psalms 64:10",
-        "psalms 97:12"
+        "genesis 18:25",
+        "proverbs 13:5",
+        "proverbs 21:18",
+        "ecclesiastes 9:2",
+        "ezekiel 21:3",
+        "ezekiel 21:4",
+        "malachi 3:18"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "רָ֭אִיתִי צַדִּ֣יק",
-      "pron": "야레에누 찯디킴",
+      "hebrew": "צַדִּ֥יק אַתָּ֖ה",
+      "pron": "찯디크 앗타",
       "lemmas": [
-        "רָאָה",
+        "צַדִּיק",
+        "אַתָּה"
+      ],
+      "words": [
+        {
+          "word": "צַדִּ֥יק",
+          "lemma": "צַדִּיק",
+          "strong": "H6662",
+          "pron": "찯디크"
+        },
+        {
+          "word": "אַתָּ֖ה",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "samuel1 24:17",
+        "kings2 10:9",
+        "ezra 9:15",
+        "nehemiah 9:8",
+        "psalms 119:137",
+        "proverbs 24:24",
+        "jeremiah 12:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רָ֭שָׁע לַצַּדִּ֑יק",
+      "pron": "라샤 찯디크",
+      "lemmas": [
+        "רָשָׁע",
         "צַדִּיק"
       ],
       "words": [
         {
-          "word": "רָ֭אִיתִי",
-          "lemma": "רָאָה",
-          "strong": "H7200",
-          "pron": "야레에누"
+          "word": "רָ֭שָׁע",
+          "lemma": "רָשָׁע",
+          "strong": "H7563",
+          "pron": "라샤"
         },
         {
-          "word": "צַדִּ֣יק",
+          "word": "לַצַּדִּ֑יק",
           "lemma": "צַדִּיק",
           "strong": "H6662",
-          "pron": "찯디킴"
+          "pron": "찯디크"
         }
       ],
-      "count": 3,
+      "count": 6,
       "refs": [
-        "psalms 37:25",
-        "psalms 52:6",
-        "genesis 7:1"
+        "psalms 37:12",
+        "psalms 37:32",
+        "proverbs 10:25",
+        "proverbs 24:24",
+        "proverbs 28:1",
+        "habakkuk 1:13"
       ],
       "glossKo": ""
     }

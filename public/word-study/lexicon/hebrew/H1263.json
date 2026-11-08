@@ -2,7 +2,7 @@
   "lemma": "בָּרוּךְ",
   "pron": "바루크",
   "strong": "H1263",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "בָּרַךְ",
     "strong": "H1288",
@@ -12,43 +12,228 @@
     {
       "lemma": "בָּרַךְ",
       "strong": "H1288",
-      "pron": "테바레크",
+      "pron": "바예바레크",
       "glossKo": "축복하다"
     },
     {
       "lemma": "בְּרַךְ",
       "strong": "H1289",
-      "pron": "",
+      "pron": "바리크",
       "glossKo": "축복하다(아람)"
     },
     {
       "lemma": "בֶּרֶךְ",
       "strong": "H1290",
-      "pron": "비렉카위",
+      "pron": "비렉카이",
       "glossKo": "나의 무릎"
     },
     {
       "lemma": "בָּרַכְאֵל",
       "strong": "H1292",
-      "pron": "",
+      "pron": "바라케엘",
       "glossKo": "바라겔"
     },
     {
       "lemma": "בְּרָכָה",
       "strong": "H1293",
-      "pron": "비레카테카",
-      "glossKo": "너의 복"
+      "pron": "베라카",
+      "glossKo": "복"
     },
     {
       "lemma": "בְּרֵכָה",
       "strong": "H1295",
-      "pron": "",
+      "pron": "베레카트",
       "glossKo": "못"
     }
   ],
   "defEn": "Baruk",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 26,
+  "byBook": {
+    "jeremiah": 23,
+    "nehemiah": 3
+  },
+  "phrases": [
+    {
+      "hebrew": "בָּר֣וּךְ בֶּן",
+      "pron": "바루크 바님",
+      "lemmas": [
+        "בָּרוּךְ",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "בָּר֣וּךְ",
+          "lemma": "בָּרוּךְ",
+          "strong": "H1263",
+          "pron": "바루크"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "nehemiah 3:20",
+        "nehemiah 11:5",
+        "jeremiah 32:12",
+        "jeremiah 32:16",
+        "jeremiah 36:4",
+        "jeremiah 36:8",
+        "jeremiah 36:14",
+        "jeremiah 36:32",
+        "jeremiah 43:3",
+        "jeremiah 43:6",
+        "jeremiah 45:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בָּרוּךְ֙ בֶּן נֵ֣רִיָּ֔ה",
+      "pron": "바루크 바님 네리아",
+      "lemmas": [
+        "בָּרוּךְ",
+        "בֵּן",
+        "נֵרִיָּה"
+      ],
+      "words": [
+        {
+          "word": "בָּרוּךְ֙",
+          "lemma": "בָּרוּךְ",
+          "strong": "H1263",
+          "pron": "바루크"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "נֵ֣רִיָּ֔ה",
+          "lemma": "נֵרִיָּה",
+          "strong": "H5374",
+          "pron": "네리아"
+        }
+      ],
+      "count": 9,
+      "refs": [
+        "jeremiah 32:12",
+        "jeremiah 32:16",
+        "jeremiah 36:4",
+        "jeremiah 36:8",
+        "jeremiah 36:14",
+        "jeremiah 36:32",
+        "jeremiah 43:3",
+        "jeremiah 43:6",
+        "jeremiah 45:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל בָּר֣וּךְ",
+      "pron": "엘 바루크",
+      "lemmas": [
+        "אֵל",
+        "בָּרוּךְ"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "בָּר֣וּךְ",
+          "lemma": "בָּרוּךְ",
+          "strong": "H1263",
+          "pron": "바루크"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "jeremiah 32:12",
+        "jeremiah 32:16",
+        "jeremiah 36:14",
+        "jeremiah 36:16",
+        "jeremiah 36:19",
+        "jeremiah 36:32",
+        "jeremiah 45:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת בָּר֖וּךְ",
+      "pron": "에트 바루크",
+      "lemmas": [
+        "אֵת",
+        "בָּרוּךְ"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "בָּר֖וּךְ",
+          "lemma": "בָּרוּךְ",
+          "strong": "H1263",
+          "pron": "바루크"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "jeremiah 32:13",
+        "jeremiah 36:4",
+        "jeremiah 36:5",
+        "jeremiah 36:17",
+        "jeremiah 36:26",
+        "jeremiah 43:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל בָּר֣וּךְ בֶּן",
+      "pron": "엘 바루크 바님",
+      "lemmas": [
+        "אֵל",
+        "בָּרוּךְ",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "בָּר֣וּךְ",
+          "lemma": "בָּרוּךְ",
+          "strong": "H1263",
+          "pron": "바루크"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 32:12",
+        "jeremiah 32:16",
+        "jeremiah 36:32",
+        "jeremiah 45:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

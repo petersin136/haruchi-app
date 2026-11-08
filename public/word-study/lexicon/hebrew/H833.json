@@ -1,6 +1,6 @@
 {
   "lemma": "אָשַׁר",
-  "pron": "윗르",
+  "pron": "잇셰루니",
   "strong": "H833",
   "posKo": "동사",
   "root": null,
@@ -14,8 +14,8 @@
     {
       "lemma": "אֶשֶׁר",
       "strong": "H835",
-      "pron": "아셰레",
-      "glossKo": "복"
+      "pron": "아셰레카",
+      "glossKo": "너의 복"
     },
     {
       "lemma": "אָשֵׁר",
@@ -26,28 +26,63 @@
     {
       "lemma": "אֹשֶׁר",
       "strong": "H837",
-      "pron": "브아셰리위",
+      "pron": "베아셰리",
       "glossKo": "나의 복"
     },
     {
       "lemma": "אָשֻׁר",
       "strong": "H838",
-      "pron": "아슈라위",
-      "glossKo": "나의 걸음"
+      "pron": "바아슈로",
+      "glossKo": "그의 걸음"
     },
     {
       "lemma": "אֲשַׂרְאֵל",
       "strong": "H840",
-      "pron": "",
+      "pron": "바아사레엘",
       "glossKo": "아사렐"
     }
   ],
   "defEn": "be straight; be level; right; happy; go forward; be honest; prosper",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 17,
   "byBook": {
+    "proverbs": 5,
+    "isaiah": 4,
     "psalms": 3,
-    "genesis": 1
+    "malachi": 2,
+    "genesis": 1,
+    "job": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "תְּ֝אַשֵּׁ֗ר בְּדֶ֣רֶךְ",
+      "pron": "잇셰루니 데레크",
+      "lemmas": [
+        "אָשַׁר",
+        "דֶּרֶךְ"
+      ],
+      "words": [
+        {
+          "word": "תְּ֝אַשֵּׁ֗ר",
+          "lemma": "אָשַׁר",
+          "strong": "H833",
+          "pron": "잇셰루니"
+        },
+        {
+          "word": "בְּדֶ֣רֶךְ",
+          "lemma": "דֶּרֶךְ",
+          "strong": "H1870",
+          "pron": "데레크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "proverbs 4:14",
+        "proverbs 9:6",
+        "proverbs 23:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

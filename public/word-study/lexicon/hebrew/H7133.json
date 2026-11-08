@@ -1,8 +1,8 @@
 {
   "lemma": "קׇרְבָּן",
-  "pron": "크렙반",
+  "pron": "카렙반",
   "strong": "H7133",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "קָרַב",
     "strong": "H7126",
@@ -12,31 +12,31 @@
     {
       "lemma": "קָרַב",
       "strong": "H7126",
-      "pron": "비케롭",
+      "pron": "히케립",
       "glossKo": "가까이 오다"
     },
     {
       "lemma": "קְרֵב",
       "strong": "H7127",
-      "pron": "",
+      "pron": "메하케레빈",
       "glossKo": "가까이 가다(아람)"
     },
     {
       "lemma": "קְרָב",
       "strong": "H7128",
-      "pron": "미카랍",
+      "pron": "바케랍",
       "glossKo": "전쟁"
     },
     {
       "lemma": "קֶרֶב",
       "strong": "H7130",
-      "pron": "키렙바므",
-      "glossKo": "그들의 속"
+      "pron": "베키렙바흐",
+      "glossKo": "그녀의 속"
     },
     {
       "lemma": "קָרֵב",
       "strong": "H7131",
-      "pron": "",
+      "pron": "아카렙",
       "glossKo": "가까운"
     },
     {
@@ -48,7 +48,210 @@
   ],
   "defEn": "brought near; present",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 82,
+  "byBook": {
+    "leviticus": 40,
+    "numbers": 38,
+    "ezekiel": 2,
+    "nehemiah": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶת קָרְבָּנ֑וֹ",
+      "pron": "에트 카렙반",
+      "lemmas": [
+        "אֵת",
+        "קׇרְבָּן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "קָרְבָּנ֑וֹ",
+          "lemma": "קׇרְבָּן",
+          "strong": "H7133",
+          "pron": "카렙반"
+        }
+      ],
+      "count": 21,
+      "refs": [
+        "leviticus 1:2",
+        "leviticus 1:14",
+        "leviticus 3:7",
+        "leviticus 4:23",
+        "leviticus 5:11",
+        "leviticus 7:29",
+        "leviticus 7:38",
+        "leviticus 9:7",
+        "leviticus 9:15",
+        "leviticus 23:14",
+        "numbers 5:15",
+        "numbers 6:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זֶ֛ה קָרְבַּ֥ן",
+      "pron": "제 카렙반",
+      "lemmas": [
+        "זֶה",
+        "קׇרְבָּן"
+      ],
+      "words": [
+        {
+          "word": "זֶ֛ה",
+          "lemma": "זֶה",
+          "strong": "H2088",
+          "pron": "제"
+        },
+        {
+          "word": "קָרְבַּ֥ן",
+          "lemma": "קׇרְבָּן",
+          "strong": "H7133",
+          "pron": "카렙반"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "leviticus 6:20",
+        "numbers 7:17",
+        "numbers 7:23",
+        "numbers 7:29",
+        "numbers 7:35",
+        "numbers 7:41",
+        "numbers 7:47",
+        "numbers 7:53",
+        "numbers 7:59",
+        "numbers 7:65",
+        "numbers 7:71",
+        "numbers 7:77"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קָרְבָּ֖ן לַֽיהוָ֑ה",
+      "pron": "카렙반 여호와",
+      "lemmas": [
+        "קׇרְבָּן",
+        "יְהֹוָה"
+      ],
+      "words": [
+        {
+          "word": "קָרְבָּ֖ן",
+          "lemma": "קׇרְבָּן",
+          "strong": "H7133",
+          "pron": "카렙반"
+        },
+        {
+          "word": "לַֽיהוָ֑ה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "leviticus 1:2",
+        "leviticus 1:14",
+        "leviticus 7:29",
+        "leviticus 7:38",
+        "leviticus 17:4",
+        "leviticus 27:9",
+        "leviticus 27:11",
+        "numbers 6:14",
+        "numbers 6:21",
+        "numbers 9:7",
+        "numbers 9:13",
+        "numbers 15:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חֲמִשָּׁ֑ה זֶ֛ה קָרְבַּ֥ן",
+      "pron": "하메쉬 제 카렙반",
+      "lemmas": [
+        "חָמֵשׁ",
+        "זֶה",
+        "קׇרְבָּן"
+      ],
+      "words": [
+        {
+          "word": "חֲמִשָּׁ֑ה",
+          "lemma": "חָמֵשׁ",
+          "strong": "H2568",
+          "pron": "하메쉬"
+        },
+        {
+          "word": "זֶ֛ה",
+          "lemma": "זֶה",
+          "strong": "H2088",
+          "pron": "제"
+        },
+        {
+          "word": "קָרְבַּ֥ן",
+          "lemma": "קׇרְבָּן",
+          "strong": "H7133",
+          "pron": "카렙반"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 7:17",
+        "numbers 7:23",
+        "numbers 7:29",
+        "numbers 7:35",
+        "numbers 7:41",
+        "numbers 7:47",
+        "numbers 7:53",
+        "numbers 7:59",
+        "numbers 7:65",
+        "numbers 7:71",
+        "numbers 7:77",
+        "numbers 7:83"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קָרְבָּנ֞וֹ קַֽעֲרַת",
+      "pron": "카렙반 케아로타으브",
+      "lemmas": [
+        "קׇרְבָּן",
+        "קְעָרָה"
+      ],
+      "words": [
+        {
+          "word": "קָרְבָּנ֞וֹ",
+          "lemma": "קׇרְבָּן",
+          "strong": "H7133",
+          "pron": "카렙반"
+        },
+        {
+          "word": "קַֽעֲרַת",
+          "lemma": "קְעָרָה",
+          "strong": "H7086",
+          "pron": "케아로타으브"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "numbers 7:13",
+        "numbers 7:19",
+        "numbers 7:25",
+        "numbers 7:31",
+        "numbers 7:37",
+        "numbers 7:43",
+        "numbers 7:49",
+        "numbers 7:55",
+        "numbers 7:61",
+        "numbers 7:67",
+        "numbers 7:73",
+        "numbers 7:79"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

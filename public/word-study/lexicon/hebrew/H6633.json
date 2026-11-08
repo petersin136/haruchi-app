@@ -1,20 +1,89 @@
 {
   "lemma": "צָבָא",
-  "pron": "차바",
+  "pron": "아촙오트",
   "strong": "H6633",
-  "posKo": "",
+  "posKo": "동사",
   "root": null,
   "family": [
     {
       "lemma": "צָבָא",
       "strong": "H6635",
-      "pron": "체바오트",
-      "glossKo": "군대"
+      "pron": "체바암",
+      "glossKo": "그들의 군대"
     }
   ],
   "defEn": "mass",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 14,
+  "byBook": {
+    "isaiah": 4,
+    "numbers": 4,
+    "exodus": 2,
+    "jeremiah": 1,
+    "kings2": 1,
+    "samuel1": 1,
+    "zechariah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "הַצֹּבְאִ֖ים עַל",
+      "pron": "아촙오트 알",
+      "lemmas": [
+        "צָבָא",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "הַצֹּבְאִ֖ים",
+          "lemma": "צָבָא",
+          "strong": "H6633",
+          "pron": "아촙오트"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 31:7",
+        "isaiah 29:7",
+        "isaiah 29:8",
+        "isaiah 31:4",
+        "zechariah 14:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַצָּבָ֔א הַמַּצְבִּ֖א",
+      "pron": "체바암 아촙오트",
+      "lemmas": [
+        "צָבָא",
+        "צָבָא"
+      ],
+      "words": [
+        {
+          "word": "הַצָּבָ֔א",
+          "lemma": "צָבָא",
+          "strong": "H6635",
+          "pron": "체바암"
+        },
+        {
+          "word": "הַמַּצְבִּ֖א",
+          "lemma": "צָבָא",
+          "strong": "H6633",
+          "pron": "아촙오트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings2 25:19",
+        "isaiah 31:4",
+        "jeremiah 52:25"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "lemma": "יְשַׁעְיָה",
-  "pron": "예샤에아",
+  "pron": "예샤에아후",
   "strong": "H3470",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "יָשַׁע",
     "strong": "H3467",
@@ -12,43 +12,242 @@
     {
       "lemma": "הוֹשֵׁעַ",
       "strong": "H1954",
-      "pron": "",
+      "pron": "호셰아",
       "glossKo": "호세아"
     },
     {
       "lemma": "הוֹשַׁעְיָה",
       "strong": "H1955",
-      "pron": "",
+      "pron": "호샤에아",
       "glossKo": "호사야"
     },
     {
       "lemma": "יְשׁוּעָה",
       "strong": "H3444",
-      "pron": "예슈아타",
-      "glossKo": "구원"
+      "pron": "리슈아테카",
+      "glossKo": "너의 구원"
     },
     {
       "lemma": "יָשַׁע",
       "strong": "H3467",
-      "pron": "호시에니",
-      "glossKo": "나를 구원하다"
+      "pron": "바오시안",
+      "glossKo": "그들에게 구원하다"
     },
     {
       "lemma": "יֶשַׁע",
       "strong": "H3468",
-      "pron": "브예샤",
-      "glossKo": "구원"
+      "pron": "이셰이",
+      "glossKo": "나의 구원"
     },
     {
       "lemma": "יִשְׁעִי",
       "strong": "H3469",
-      "pron": "",
+      "pron": "이셰이",
       "glossKo": "이시"
     }
   ],
   "defEn": "Jeshajah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 39,
+  "byBook": {
+    "isaiah": 16,
+    "kings2": 13,
+    "chronicles1": 4,
+    "chronicles2": 3,
+    "ezra": 2,
+    "nehemiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "יְשַֽׁעְיָ֣הוּ בֶן",
+      "pron": "예샤에아후 바님",
+      "lemmas": [
+        "יְשַׁעְיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "יְשַֽׁעְיָ֣הוּ",
+          "lemma": "יְשַׁעְיָה",
+          "strong": "H3470",
+          "pron": "예샤에아후"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "kings2 19:20",
+        "kings2 20:1",
+        "chronicles1 3:21",
+        "chronicles1 25:15",
+        "chronicles1 26:25",
+        "chronicles2 26:22",
+        "chronicles2 32:20",
+        "chronicles2 32:32",
+        "ezra 8:7",
+        "ezra 8:19",
+        "isaiah 1:1",
+        "isaiah 2:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל יְשַֽׁעְיָ֥הוּ",
+      "pron": "엘 예샤에아후",
+      "lemmas": [
+        "אֵל",
+        "יְשַׁעְיָה"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "יְשַֽׁעְיָ֥הוּ",
+          "lemma": "יְשַׁעְיָה",
+          "strong": "H3470",
+          "pron": "예샤에아후"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "kings2 19:2",
+        "kings2 19:5",
+        "kings2 20:1",
+        "kings2 20:8",
+        "kings2 20:19",
+        "isaiah 7:3",
+        "isaiah 37:2",
+        "isaiah 37:5",
+        "isaiah 37:6",
+        "isaiah 38:1",
+        "isaiah 38:4",
+        "isaiah 39:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְשַֽׁעְיָ֣הוּ בֶן אָמ֔וֹץ",
+      "pron": "예샤에아후 바님 아모츠",
+      "lemmas": [
+        "יְשַׁעְיָה",
+        "בֵּן",
+        "אָמוֹץ"
+      ],
+      "words": [
+        {
+          "word": "יְשַֽׁעְיָ֣הוּ",
+          "lemma": "יְשַׁעְיָה",
+          "strong": "H3470",
+          "pron": "예샤에아후"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "אָמ֔וֹץ",
+          "lemma": "אָמוֹץ",
+          "strong": "H531",
+          "pron": "아모츠"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "kings2 19:20",
+        "kings2 20:1",
+        "chronicles2 26:22",
+        "chronicles2 32:20",
+        "chronicles2 32:32",
+        "isaiah 1:1",
+        "isaiah 2:1",
+        "isaiah 13:1",
+        "isaiah 20:2",
+        "isaiah 37:2",
+        "isaiah 37:21",
+        "isaiah 38:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיֹּ֥אמֶר יְשַׁעְיָ֖הוּ",
+      "pron": "바요메르 예샤에아후",
+      "lemmas": [
+        "אָמַר",
+        "יְשַׁעְיָה"
+      ],
+      "words": [
+        {
+          "word": "וַיֹּ֥אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        },
+        {
+          "word": "יְשַׁעְיָ֖הוּ",
+          "lemma": "יְשַׁעְיָה",
+          "strong": "H3470",
+          "pron": "예샤에아후"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings2 19:6",
+        "kings2 20:7",
+        "kings2 20:9",
+        "kings2 20:16",
+        "isaiah 38:21",
+        "isaiah 39:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חִזְקִיָּ֨הוּ֙ אֶֽל יְשַׁעְיָ֔הוּ",
+      "pron": "힛키아후 엘 예샤에아후",
+      "lemmas": [
+        "חִזְקִיָּה",
+        "אֵל",
+        "יְשַׁעְיָה"
+      ],
+      "words": [
+        {
+          "word": "חִזְקִיָּ֨הוּ֙",
+          "lemma": "חִזְקִיָּה",
+          "strong": "H2396",
+          "pron": "힛키아후"
+        },
+        {
+          "word": "אֶֽל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "יְשַׁעְיָ֔הוּ",
+          "lemma": "יְשַׁעְיָה",
+          "strong": "H3470",
+          "pron": "예샤에아후"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings2 19:5",
+        "kings2 20:8",
+        "kings2 20:19",
+        "isaiah 37:5",
+        "isaiah 39:8"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

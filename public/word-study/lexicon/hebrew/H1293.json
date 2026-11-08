@@ -1,6 +1,6 @@
 {
   "lemma": "בְּרָכָה",
-  "pron": "비레카테카",
+  "pron": "베라카",
   "strong": "H1293",
   "posKo": "명사",
   "root": {
@@ -12,51 +12,67 @@
     {
       "lemma": "בָּרוּךְ",
       "strong": "H1263",
-      "pron": "",
+      "pron": "바루크",
       "glossKo": "바룩"
     },
     {
       "lemma": "בָּרַךְ",
       "strong": "H1288",
-      "pron": "테바레크",
+      "pron": "바예바레크",
       "glossKo": "축복하다"
     },
     {
       "lemma": "בְּרַךְ",
       "strong": "H1289",
-      "pron": "",
+      "pron": "바리크",
       "glossKo": "축복하다(아람)"
     },
     {
       "lemma": "בֶּרֶךְ",
       "strong": "H1290",
-      "pron": "비렉카위",
+      "pron": "비렉카이",
       "glossKo": "나의 무릎"
     },
     {
       "lemma": "בָּרַכְאֵל",
       "strong": "H1292",
-      "pron": "",
+      "pron": "바라케엘",
       "glossKo": "바라겔"
     },
     {
       "lemma": "בְּרָכָה",
       "strong": "H1294",
-      "pron": "",
+      "pron": "우베라카",
       "glossKo": "베라가"
     }
   ],
   "defEn": "benediction",
   "defKo": "",
-  "countOT": 25,
+  "countOT": 69,
   "byBook": {
     "genesis": 16,
-    "psalms": 9
+    "deuteronomy": 12,
+    "psalms": 9,
+    "proverbs": 8,
+    "isaiah": 4,
+    "ezekiel": 3,
+    "joshua": 2,
+    "kings2": 2,
+    "malachi": 2,
+    "nehemiah": 2,
+    "samuel1": 2,
+    "exodus": 1,
+    "job": 1,
+    "joel": 1,
+    "judges": 1,
+    "leviticus": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
-      "hebrew": "אֶת הַבְּרָכָ֑ה",
-      "pron": "에트 비레카테카",
+      "hebrew": "אֶת בִּרְכָתִי֙",
+      "pron": "에트 베라카",
       "lemmas": [
         "אֵת",
         "בְּרָכָה"
@@ -69,46 +85,143 @@
           "pron": "에트"
         },
         {
-          "word": "הַבְּרָכָ֑ה",
+          "word": "בִּרְכָתִי֙",
           "lemma": "בְּרָכָה",
           "strong": "H1293",
-          "pron": "비레카테카"
+          "pron": "베라카"
         }
       ],
-      "count": 3,
+      "count": 8,
       "refs": [
-        "psalms 133:3",
         "genesis 28:4",
-        "genesis 33:11"
+        "genesis 33:11",
+        "leviticus 25:21",
+        "deuteronomy 11:27",
+        "deuteronomy 11:29",
+        "deuteronomy 28:8",
+        "psalms 133:3",
+        "malachi 2:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "עַל הַ֨בְּרָכָ֔ה",
-      "pron": "알 비레카테카",
+      "hebrew": "בִּרְכַּ֤ת יְהוָה֙",
+      "pron": "베라카 여호와",
       "lemmas": [
-        "עַל",
-        "בְּרָכָה"
+        "בְּרָכָה",
+        "יְהֹוָה"
       ],
       "words": [
         {
-          "word": "עַל",
-          "lemma": "עַל",
-          "strong": "H5921",
-          "pron": "알"
+          "word": "בִּרְכַּ֤ת",
+          "lemma": "בְּרָכָה",
+          "strong": "H1293",
+          "pron": "베라카"
         },
+        {
+          "word": "יְהוָה֙",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "genesis 39:5",
+        "deuteronomy 12:15",
+        "deuteronomy 16:17",
+        "deuteronomy 33:23",
+        "psalms 129:8",
+        "proverbs 10:22"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַ֨בְּרָכָ֔ה אֲשֶׁ֥ר",
+      "pron": "베라카 아셰르",
+      "lemmas": [
+        "בְּרָכָה",
+        "אֲשֶׁר"
+      ],
+      "words": [
         {
           "word": "הַ֨בְּרָכָ֔ה",
           "lemma": "בְּרָכָה",
           "strong": "H1293",
-          "pron": "비레카테카"
+          "pron": "베라카"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 27:41",
+        "genesis 33:11",
+        "deuteronomy 11:27",
+        "deuteronomy 33:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַבְּרָכָ֖ה וְהַקְּלָלָ֑ה",
+      "pron": "베라카 켈랄라",
+      "lemmas": [
+        "בְּרָכָה",
+        "קְלָלָה"
+      ],
+      "words": [
+        {
+          "word": "הַבְּרָכָ֖ה",
+          "lemma": "בְּרָכָה",
+          "strong": "H1293",
+          "pron": "베라카"
+        },
+        {
+          "word": "וְהַקְּלָלָ֑ה",
+          "lemma": "קְלָלָה",
+          "strong": "H7045",
+          "pron": "켈랄라"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 11:26",
+        "deuteronomy 30:1",
+        "deuteronomy 30:19",
+        "joshua 8:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְרָכָ֗ה כִּ֣י",
+      "pron": "베라카 키",
+      "lemmas": [
+        "בְּרָכָה",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "בְרָכָ֗ה",
+          "lemma": "בְּרָכָה",
+          "strong": "H1293",
+          "pron": "베라카"
+        },
+        {
+          "word": "כִּ֣י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
         }
       ],
       "count": 3,
       "refs": [
-        "genesis 27:41",
-        "genesis 49:25",
-        "genesis 49:26"
+        "deuteronomy 23:5",
+        "joshua 15:19",
+        "judges 1:15"
       ],
       "glossKo": ""
     }

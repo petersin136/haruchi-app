@@ -1,6 +1,6 @@
 {
   "lemma": "חַיִל",
-  "pron": "하일",
+  "pron": "헬람",
   "strong": "H2428",
   "posKo": "명사",
   "root": {
@@ -18,7 +18,7 @@
     {
       "lemma": "חוּל",
       "strong": "H2342",
-      "pron": "야힐루",
+      "pron": "바야헬",
       "glossKo": "산고"
     },
     {
@@ -30,7 +30,7 @@
     {
       "lemma": "חוֹל",
       "strong": "H2344",
-      "pron": "우크홀",
+      "pron": "브카홀",
       "glossKo": "모래"
     },
     {
@@ -48,39 +48,228 @@
   ],
   "defEn": "force; army; wealth; virtue; valor; strength",
   "defKo": "",
-  "countOT": 20,
+  "countOT": 234,
   "byBook": {
+    "jeremiah": 32,
+    "chronicles1": 26,
+    "chronicles2": 23,
     "psalms": 18,
-    "genesis": 2
+    "kings2": 16,
+    "ezekiel": 14,
+    "samuel2": 12,
+    "kings1": 9,
+    "samuel1": 9,
+    "isaiah": 8,
+    "exodus": 7,
+    "judges": 7,
+    "daniel": 6,
+    "job": 6,
+    "deuteronomy": 5,
+    "proverbs": 5,
+    "joshua": 4,
+    "nehemiah": 3,
+    "numbers": 3,
+    "ruth": 3,
+    "zechariah": 3,
+    "ecclesiastes": 2,
+    "esther": 2,
+    "genesis": 2,
+    "joel": 2,
+    "obadiah": 2,
+    "ezra": 1,
+    "habakkuk": 1,
+    "micah": 1,
+    "nahum": 1,
+    "zephaniah": 1
   },
   "phrases": [
     {
-      "hebrew": "נַעֲשֶׂה חָ֑יִל",
-      "pron": "야아세 하일",
+      "hebrew": "גִּבּ֣וֹרֵי חַ֔יִל",
+      "pron": "아깁보림 헬람",
       "lemmas": [
-        "עָשָׂה",
+        "גִּבּוֹר",
         "חַיִל"
       ],
       "words": [
         {
-          "word": "נַעֲשֶׂה",
-          "lemma": "עָשָׂה",
-          "strong": "H6213",
-          "pron": "야아세"
+          "word": "גִּבּ֣וֹרֵי",
+          "lemma": "גִּבּוֹר",
+          "strong": "H1368",
+          "pron": "아깁보림"
         },
         {
-          "word": "חָ֑יִל",
+          "word": "חַ֔יִל",
           "lemma": "חַיִל",
           "strong": "H2428",
-          "pron": "하일"
+          "pron": "헬람"
         }
       ],
-      "count": 4,
+      "count": 41,
       "refs": [
-        "psalms 60:12",
-        "psalms 108:13",
-        "psalms 118:15",
-        "psalms 118:16"
+        "joshua 1:14",
+        "joshua 6:2",
+        "joshua 8:3",
+        "joshua 10:7",
+        "judges 6:12",
+        "judges 11:1",
+        "ruth 2:1",
+        "samuel1 9:1",
+        "samuel1 16:18",
+        "kings1 11:28",
+        "kings2 5:1",
+        "kings2 15:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַנְשֵׁי חָֽיִל",
+      "pron": "메이쉬 헬람",
+      "lemmas": [
+        "אִישׁ",
+        "חַיִל"
+      ],
+      "words": [
+        {
+          "word": "אַנְשֵׁי",
+          "lemma": "אִישׁ",
+          "strong": "H376",
+          "pron": "메이쉬"
+        },
+        {
+          "word": "חָֽיִל",
+          "lemma": "חַיִל",
+          "strong": "H2428",
+          "pron": "헬람"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "genesis 47:6",
+        "exodus 18:21",
+        "exodus 18:25",
+        "judges 3:29",
+        "judges 20:44",
+        "judges 20:46",
+        "samuel1 31:12",
+        "samuel2 11:16",
+        "samuel2 24:9",
+        "kings1 1:42",
+        "kings2 24:16",
+        "chronicles1 10:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שָׂרֵ֥י הַחֲיָלִ֖ים",
+      "pron": "사레 헬람",
+      "lemmas": [
+        "שַׂר",
+        "חַיִל"
+      ],
+      "words": [
+        {
+          "word": "שָׂרֵ֥י",
+          "lemma": "שַׂר",
+          "strong": "H8269",
+          "pron": "사레"
+        },
+        {
+          "word": "הַחֲיָלִ֖ים",
+          "lemma": "חַיִל",
+          "strong": "H2428",
+          "pron": "헬람"
+        }
+      ],
+      "count": 19,
+      "refs": [
+        "samuel2 24:2",
+        "samuel2 24:4",
+        "kings1 15:20",
+        "kings2 9:5",
+        "kings2 25:23",
+        "kings2 25:26",
+        "chronicles2 16:4",
+        "chronicles2 33:14",
+        "nehemiah 2:9",
+        "jeremiah 40:7",
+        "jeremiah 40:13",
+        "jeremiah 41:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּנֵי חָֽיִל",
+      "pron": "바님 헬람",
+      "lemmas": [
+        "בֵּן",
+        "חַיִל"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵי",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "חָֽיִל",
+          "lemma": "חַיִל",
+          "strong": "H2428",
+          "pron": "헬람"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "deuteronomy 3:18",
+        "judges 18:2",
+        "judges 21:10",
+        "samuel1 14:52",
+        "samuel1 18:17",
+        "samuel2 2:7",
+        "samuel2 13:28",
+        "samuel2 17:10",
+        "kings1 1:52",
+        "kings2 2:16",
+        "chronicles1 5:18",
+        "chronicles1 26:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְכָל חֵיל֔וֹ",
+      "pron": "칼 헬람",
+      "lemmas": [
+        "כֹּל",
+        "חַיִל"
+      ],
+      "words": [
+        {
+          "word": "וְכָל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "חֵיל֔וֹ",
+          "lemma": "חַיִל",
+          "strong": "H2428",
+          "pron": "헬람"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "genesis 34:29",
+        "exodus 14:4",
+        "exodus 14:17",
+        "exodus 14:28",
+        "numbers 31:9",
+        "kings1 20:1",
+        "kings2 25:1",
+        "kings2 25:5",
+        "kings2 25:10",
+        "esther 8:11",
+        "jeremiah 34:1",
+        "jeremiah 37:10"
       ],
       "glossKo": ""
     }

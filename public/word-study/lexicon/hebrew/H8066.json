@@ -1,6 +1,6 @@
 {
   "lemma": "שְׁמִינִי",
-  "pron": "셰미니",
+  "pron": "아셰미니",
   "strong": "H8066",
   "posKo": "",
   "root": {
@@ -14,11 +14,204 @@
       "strong": "H8067",
       "pron": "아셰미니트",
       "glossKo": "여덟 줄의 수금"
+    },
+    {
+      "lemma": "שְׁמֹנֶה",
+      "strong": "H8083",
+      "pron": "셰모네",
+      "glossKo": "여덟"
+    },
+    {
+      "lemma": "שְׁמֹנִים",
+      "strong": "H8084",
+      "pron": "우셰모님",
+      "glossKo": "여든"
     }
   ],
   "defEn": "eight",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 28,
+  "byBook": {
+    "leviticus": 10,
+    "chronicles1": 6,
+    "kings1": 4,
+    "numbers": 3,
+    "chronicles2": 1,
+    "exodus": 1,
+    "ezekiel": 1,
+    "nehemiah": 1,
+    "zechariah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וּבַיּ֣וֹם הַשְּׁמִינִ֗י",
+      "pron": "욤 아셰미니",
+      "lemmas": [
+        "יוֹם",
+        "שְׁמִינִי"
+      ],
+      "words": [
+        {
+          "word": "וּבַיּ֣וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "הַשְּׁמִינִ֗י",
+          "lemma": "שְׁמִינִי",
+          "strong": "H8066",
+          "pron": "아셰미니"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "exodus 22:30",
+        "leviticus 9:1",
+        "leviticus 12:3",
+        "leviticus 14:10",
+        "leviticus 14:23",
+        "leviticus 15:14",
+        "leviticus 15:29",
+        "leviticus 22:27",
+        "leviticus 23:36",
+        "leviticus 23:39",
+        "numbers 6:10",
+        "numbers 7:54"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַחֹ֣דֶשׁ הַשְּׁמִינִ֔י",
+      "pron": "바호데쉬 아셰미니",
+      "lemmas": [
+        "חֹדֶשׁ",
+        "שְׁמִינִי"
+      ],
+      "words": [
+        {
+          "word": "הַחֹ֣דֶשׁ",
+          "lemma": "חֹדֶשׁ",
+          "strong": "H2320",
+          "pron": "바호데쉬"
+        },
+        {
+          "word": "הַשְּׁמִינִ֔י",
+          "lemma": "שְׁמִינִי",
+          "strong": "H8066",
+          "pron": "아셰미니"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 6:38",
+        "kings1 12:32",
+        "kings1 12:33",
+        "chronicles1 27:11",
+        "zechariah 1:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בַּיּוֹם֙ הַשְּׁמִינִ֔י עֲצֶ֖רֶת",
+      "pron": "욤 아셰미니 아체레트",
+      "lemmas": [
+        "יוֹם",
+        "שְׁמִינִי",
+        "עֲצָרָה"
+      ],
+      "words": [
+        {
+          "word": "בַּיּוֹם֙",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "הַשְּׁמִינִ֔י",
+          "lemma": "שְׁמִינִי",
+          "strong": "H8066",
+          "pron": "아셰미니"
+        },
+        {
+          "word": "עֲצֶ֖רֶת",
+          "lemma": "עֲצָרָה",
+          "strong": "H6116",
+          "pron": "아체레트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "numbers 29:35",
+        "chronicles2 7:9",
+        "nehemiah 8:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשְּׁמִינִ֗י יִקַּ֤ח",
+      "pron": "아셰미니 바익카흐",
+      "lemmas": [
+        "שְׁמִינִי",
+        "לָקַח"
+      ],
+      "words": [
+        {
+          "word": "הַשְּׁמִינִ֗י",
+          "lemma": "שְׁמִינִי",
+          "strong": "H8066",
+          "pron": "아셰미니"
+        },
+        {
+          "word": "יִקַּ֤ח",
+          "lemma": "לָקַח",
+          "strong": "H3947",
+          "pron": "바익카흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 14:10",
+        "leviticus 15:14",
+        "leviticus 15:29"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַשְּׁמִינִ֗י יִקַּ֤ח שְׁנֵֽי",
+      "pron": "아셰미니 바익카흐 셰네",
+      "lemmas": [
+        "שְׁמִינִי",
+        "לָקַח",
+        "שְׁנַיִם"
+      ],
+      "words": [
+        {
+          "word": "הַשְּׁמִינִ֗י",
+          "lemma": "שְׁמִינִי",
+          "strong": "H8066",
+          "pron": "아셰미니"
+        },
+        {
+          "word": "יִקַּ֤ח",
+          "lemma": "לָקַח",
+          "strong": "H3947",
+          "pron": "바익카흐"
+        },
+        {
+          "word": "שְׁנֵֽי",
+          "lemma": "שְׁנַיִם",
+          "strong": "H8147",
+          "pron": "셰네"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "leviticus 14:10",
+        "leviticus 15:14",
+        "leviticus 15:29"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

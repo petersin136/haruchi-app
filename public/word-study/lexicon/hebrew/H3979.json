@@ -12,45 +12,77 @@
     {
       "lemma": "אֲכִילָה",
       "strong": "H396",
-      "pron": "",
+      "pron": "하아킬라",
       "glossKo": "음식"
     },
     {
       "lemma": "אָכַל",
       "strong": "H398",
-      "pron": "오켈레",
+      "pron": "아콜",
       "glossKo": "먹다"
     },
     {
       "lemma": "אֲכַל",
       "strong": "H399",
-      "pron": "",
+      "pron": "바아칼루",
       "glossKo": "먹다(아람)"
     },
     {
       "lemma": "אֹכֶל",
       "strong": "H400",
-      "pron": "오켈",
-      "glossKo": "양식"
+      "pron": "아켈람",
+      "glossKo": "그들의 양식"
     },
     {
       "lemma": "אֻכָל",
       "strong": "H401",
-      "pron": "",
+      "pron": "브우칼",
       "glossKo": "우갈"
     },
     {
       "lemma": "מַאֲכָל",
       "strong": "H3978",
-      "pron": "마아칼",
+      "pron": "르마아칼",
       "glossKo": "양식"
     }
   ],
   "defEn": "eat; knife",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 4,
   "byBook": {
-    "genesis": 2
+    "genesis": 2,
+    "judges": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְאֶת הַֽמַּאֲכֶ֑לֶת",
+      "pron": "에트 아마아켈레트",
+      "lemmas": [
+        "אֵת",
+        "מַאֲכֶלֶת"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הַֽמַּאֲכֶ֑לֶת",
+          "lemma": "מַאֲכֶלֶת",
+          "strong": "H3979",
+          "pron": "아마아켈레트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 22:6",
+        "genesis 22:10",
+        "judges 19:29"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

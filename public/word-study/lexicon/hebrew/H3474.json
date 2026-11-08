@@ -1,6 +1,6 @@
 {
   "lemma": "יָשַׁר",
-  "pron": "흐븟르",
+  "pron": "이샤르",
   "strong": "H3474",
   "posKo": "동사",
   "root": null,
@@ -8,45 +8,187 @@
     {
       "lemma": "יֵשֶׁר",
       "strong": "H3475",
-      "pron": "",
+      "pron": "예셰르",
       "glossKo": "예셀"
     },
     {
       "lemma": "יֹשֶׁר",
       "strong": "H3476",
-      "pron": "바요셰르",
+      "pron": "우브요셰르",
       "glossKo": "정직"
     },
     {
       "lemma": "יָשָׁר",
       "strong": "H3477",
-      "pron": "이셰레",
+      "pron": "브아야샤르",
       "glossKo": "옳은"
     },
     {
       "lemma": "יְשֻׁרוּן",
       "strong": "H3484",
-      "pron": "",
+      "pron": "예슈룬",
       "glossKo": "여수룬"
     },
     {
       "lemma": "מִישׁוֹר",
       "strong": "H4334",
-      "pron": "브미쇼르",
+      "pron": "아미쇼르",
       "glossKo": "평지"
     },
     {
       "lemma": "מֵישָׁר",
       "strong": "H4339",
-      "pron": "브메샤림",
+      "pron": "우메샤림",
       "glossKo": "정직"
     }
   ],
   "defEn": "be straight; even; be; make; right; pleasant; prosperous",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 28,
   "byBook": {
-    "psalms": 3
+    "proverbs": 5,
+    "isaiah": 4,
+    "psalms": 3,
+    "samuel1": 3,
+    "chronicles2": 2,
+    "jeremiah": 2,
+    "judges": 2,
+    "kings1": 2,
+    "chronicles1": 1,
+    "habakkuk": 1,
+    "job": 1,
+    "numbers": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יִישַׁר֙ בְּעֵינֵ֣י",
+      "pron": "이샤르 에네켐",
+      "lemmas": [
+        "יָשַׁר",
+        "עַיִן"
+      ],
+      "words": [
+        {
+          "word": "יִישַׁר֙",
+          "lemma": "יָשַׁר",
+          "strong": "H3474",
+          "pron": "이샤르"
+        },
+        {
+          "word": "בְּעֵינֵ֣י",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 23:27",
+        "judges 14:3",
+        "judges 14:7",
+        "kings1 9:12",
+        "jeremiah 18:4",
+        "jeremiah 27:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּישַׁ֥ר הַדָּבָ֖ר",
+      "pron": "이샤르 우데바림",
+      "lemmas": [
+        "יָשַׁר",
+        "דָּבָר"
+      ],
+      "words": [
+        {
+          "word": "וַיִּישַׁ֥ר",
+          "lemma": "יָשַׁר",
+          "strong": "H3474",
+          "pron": "이샤르"
+        },
+        {
+          "word": "הַדָּבָ֖ר",
+          "lemma": "דָּבָר",
+          "strong": "H1697",
+          "pron": "우데바림"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 18:20",
+        "samuel1 18:26",
+        "samuel2 17:4",
+        "chronicles1 13:4",
+        "chronicles2 30:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּישַׁ֥ר הַדָּבָ֖ר בְּעֵינֵ֣י",
+      "pron": "이샤르 우데바림 에네켐",
+      "lemmas": [
+        "יָשַׁר",
+        "דָּבָר",
+        "עַיִן"
+      ],
+      "words": [
+        {
+          "word": "וַיִּישַׁ֥ר",
+          "lemma": "יָשַׁר",
+          "strong": "H3474",
+          "pron": "이샤르"
+        },
+        {
+          "word": "הַדָּבָ֖ר",
+          "lemma": "דָּבָר",
+          "strong": "H1697",
+          "pron": "우데바림"
+        },
+        {
+          "word": "בְּעֵינֵ֣י",
+          "lemma": "עַיִן",
+          "strong": "H5869",
+          "pron": "에네켐"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "samuel1 18:20",
+        "samuel1 18:26",
+        "samuel2 17:4",
+        "chronicles1 13:4",
+        "chronicles2 30:4"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הושר הַיְשַׁ֖ר",
+      "pron": "이샤르 이샤르",
+      "lemmas": [
+        "יָשַׁר",
+        "יָשַׁר"
+      ],
+      "words": [
+        {
+          "word": "הושר",
+          "lemma": "יָשַׁר",
+          "strong": "H3474",
+          "pron": "이샤르"
+        },
+        {
+          "word": "הַיְשַׁ֖ר",
+          "lemma": "יָשַׁר",
+          "strong": "H3474",
+          "pron": "이샤르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 5:8",
+        "isaiah 45:2"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

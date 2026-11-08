@@ -1,6 +1,6 @@
 {
   "lemma": "יֶשַׁע",
-  "pron": "브예샤",
+  "pron": "이셰이",
   "strong": "H3468",
   "posKo": "명사",
   "root": {
@@ -12,50 +12,56 @@
     {
       "lemma": "הוֹשֵׁעַ",
       "strong": "H1954",
-      "pron": "",
+      "pron": "호셰아",
       "glossKo": "호세아"
     },
     {
       "lemma": "הוֹשַׁעְיָה",
       "strong": "H1955",
-      "pron": "",
+      "pron": "호샤에아",
       "glossKo": "호사야"
     },
     {
       "lemma": "יְשׁוּעָה",
       "strong": "H3444",
-      "pron": "예슈아타",
-      "glossKo": "구원"
+      "pron": "리슈아테카",
+      "glossKo": "너의 구원"
     },
     {
       "lemma": "יָשַׁע",
       "strong": "H3467",
-      "pron": "호시에니",
-      "glossKo": "나를 구원하다"
+      "pron": "바오시안",
+      "glossKo": "그들에게 구원하다"
     },
     {
       "lemma": "יִשְׁעִי",
       "strong": "H3469",
-      "pron": "",
+      "pron": "이셰이",
       "glossKo": "이시"
     },
     {
       "lemma": "יְשַׁעְיָה",
       "strong": "H3470",
-      "pron": "",
+      "pron": "예샤에아후",
       "glossKo": "이사야"
     }
   ],
   "defEn": "liberty; deliverance; prosperity",
   "defKo": "",
-  "countOT": 20,
+  "countOT": 36,
   "byBook": {
-    "psalms": 20
+    "psalms": 20,
+    "isaiah": 5,
+    "samuel2": 4,
+    "habakkuk": 3,
+    "job": 2,
+    "chronicles1": 1,
+    "micah": 1
   },
   "phrases": [
     {
       "hebrew": "אֱלֹהֵ֣י יִשְׁעֵ֑נוּ",
-      "pron": "베엘로힘 브예샤",
+      "pron": "엘로힘 이셰이",
       "lemmas": [
         "אֱלֹהִים",
         "יֶשַׁע"
@@ -65,24 +71,28 @@
           "word": "אֱלֹהֵ֣י",
           "lemma": "אֱלֹהִים",
           "strong": "H430",
-          "pron": "베엘로힘"
+          "pron": "엘로힘"
         },
         {
           "word": "יִשְׁעֵ֑נוּ",
           "lemma": "יֶשַׁע",
           "strong": "H3468",
-          "pron": "브예샤"
+          "pron": "이셰이"
         }
       ],
-      "count": 7,
+      "count": 11,
       "refs": [
+        "chronicles1 16:35",
         "psalms 24:5",
         "psalms 25:5",
         "psalms 27:9",
         "psalms 62:7",
         "psalms 65:5",
         "psalms 79:9",
-        "psalms 85:4"
+        "psalms 85:4",
+        "isaiah 17:10",
+        "micah 7:7",
+        "habakkuk 3:18"
       ],
       "glossKo": ""
     }

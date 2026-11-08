@@ -12,21 +12,52 @@
     {
       "lemma": "נָפַשׁ",
       "strong": "H5314",
-      "pron": "",
+      "pron": "브인나페쉬",
       "glossKo": "원기를 회복하다"
     },
     {
       "lemma": "נֶפֶשׁ",
       "strong": "H5315",
-      "pron": "르납시위",
-      "glossKo": "나의 혼"
+      "pron": "네페쉬",
+      "glossKo": "혼"
     }
   ],
   "defEn": "Naphish",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 3,
   "byBook": {
+    "chronicles1": 2,
     "genesis": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יְט֥וּר נָפִ֖ישׁ",
+      "pron": "예두르 나피쉬",
+      "lemmas": [
+        "יְטוּר",
+        "נָפִישׁ"
+      ],
+      "words": [
+        {
+          "word": "יְט֥וּר",
+          "lemma": "יְטוּר",
+          "strong": "H3195",
+          "pron": "예두르"
+        },
+        {
+          "word": "נָפִ֖ישׁ",
+          "lemma": "נָפִישׁ",
+          "strong": "H5305",
+          "pron": "나피쉬"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 25:15",
+        "chronicles1 1:31",
+        "chronicles1 5:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

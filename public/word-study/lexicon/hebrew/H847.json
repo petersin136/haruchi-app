@@ -2,7 +2,7 @@
   "lemma": "אֶשְׁתָּאֹל",
   "pron": "에솃타올",
   "strong": "H847",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁאַל",
     "strong": "H7592",
@@ -10,9 +10,15 @@
   },
   "family": [
     {
+      "lemma": "אֶשְׁתָּאֻלִי",
+      "strong": "H848",
+      "pron": "브하에솃타울리",
+      "glossKo": "에스다올 사람"
+    },
+    {
       "lemma": "מִשְׁאָל",
       "strong": "H4861",
-      "pron": "",
+      "pron": "우미셰알",
       "glossKo": "미살"
     },
     {
@@ -24,7 +30,7 @@
     {
       "lemma": "שְׁאוֹל",
       "strong": "H7585",
-      "pron": "비셰올",
+      "pron": "셰올라",
       "glossKo": "스올"
     },
     {
@@ -36,13 +42,47 @@
     {
       "lemma": "שָׁאַל",
       "strong": "H7592",
-      "pron": "셰알",
+      "pron": "바에셰알",
       "glossKo": "묻다"
     }
   ],
   "defEn": "Eshtaol",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "judges": 5,
+    "joshua": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "צָרְעָ֥ה וְאֶשְׁתָּא֖וֹל",
+      "pron": "브차레아 에솃타올",
+      "lemmas": [
+        "צׇרְעָה",
+        "אֶשְׁתָּאֹל"
+      ],
+      "words": [
+        {
+          "word": "צָרְעָ֥ה",
+          "lemma": "צׇרְעָה",
+          "strong": "H6881",
+          "pron": "브차레아"
+        },
+        {
+          "word": "וְאֶשְׁתָּא֖וֹל",
+          "lemma": "אֶשְׁתָּאֹל",
+          "strong": "H847",
+          "pron": "에솃타올"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 19:41",
+        "judges 18:2",
+        "judges 18:8",
+        "judges 18:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

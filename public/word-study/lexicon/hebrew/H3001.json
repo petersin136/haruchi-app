@@ -1,6 +1,6 @@
 {
   "lemma": "יָבֵשׁ",
-  "pron": "야베쉬",
+  "pron": "예보셰트",
   "strong": "H3001",
   "posKo": "동사",
   "root": null,
@@ -8,22 +8,186 @@
     {
       "lemma": "יָבֵשׁ",
       "strong": "H3002",
-      "pron": "",
+      "pron": "비위베심",
       "glossKo": "마른"
     },
     {
       "lemma": "יַבָּשָׁה",
       "strong": "H3004",
-      "pron": "르얍바샤",
+      "pron": "아얍바샤",
       "glossKo": "마른땅"
     }
   ],
   "defEn": "be ashamed; confused; disappointed",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 73,
   "byBook": {
+    "jeremiah": 14,
+    "isaiah": 10,
+    "ezekiel": 9,
+    "joel": 6,
+    "joshua": 6,
     "psalms": 6,
-    "genesis": 2
+    "job": 5,
+    "zechariah": 4,
+    "amos": 2,
+    "genesis": 2,
+    "hosea": 2,
+    "kings1": 2,
+    "jonah": 1,
+    "lamentations": 1,
+    "nahum": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "הֹבִ֥ישׁ כָּל",
+      "pron": "예보셰트 칼",
+      "lemmas": [
+        "יָבֵשׁ",
+        "כֹּל"
+      ],
+      "words": [
+        {
+          "word": "הֹבִ֥ישׁ",
+          "lemma": "יָבֵשׁ",
+          "strong": "H3001",
+          "pron": "예보셰트"
+        },
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "jeremiah 10:14",
+        "jeremiah 51:17",
+        "ezekiel 17:9",
+        "nahum 1:4",
+        "zechariah 10:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר הוֹבִ֨ישׁ",
+      "pron": "아셰르 예보셰트",
+      "lemmas": [
+        "אֲשֶׁר",
+        "יָבֵשׁ"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "הוֹבִ֨ישׁ",
+          "lemma": "יָבֵשׁ",
+          "strong": "H3001",
+          "pron": "예보셰트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "joshua 2:10",
+        "joshua 4:23",
+        "joshua 5:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֹבִ֕ישׁוּ כִּ֥י",
+      "pron": "예보셰트 키",
+      "lemmas": [
+        "יָבֵשׁ",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "הֹבִ֕ישׁוּ",
+          "lemma": "יָבֵשׁ",
+          "strong": "H3001",
+          "pron": "예보셰트"
+        },
+        {
+          "word": "כִּ֥י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "jeremiah 6:15",
+        "jeremiah 8:12",
+        "jeremiah 50:38",
+        "joel 1:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כִּֽי יָבֵ֤שׁ",
+      "pron": "키 예보셰트",
+      "lemmas": [
+        "כִּי",
+        "יָבֵשׁ"
+      ],
+      "words": [
+        {
+          "word": "כִּֽי",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        },
+        {
+          "word": "יָבֵ֤שׁ",
+          "lemma": "יָבֵשׁ",
+          "strong": "H3001",
+          "pron": "예보셰트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 15:6",
+        "joel 1:12",
+        "joel 1:17",
+        "joel 1:20"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תִּיבַ֣שׁ יָבֹ֔שׁ",
+      "pron": "예보셰트 예보셰트",
+      "lemmas": [
+        "יָבֵשׁ",
+        "יָבֵשׁ"
+      ],
+      "words": [
+        {
+          "word": "תִּיבַ֣שׁ",
+          "lemma": "יָבֵשׁ",
+          "strong": "H3001",
+          "pron": "예보셰트"
+        },
+        {
+          "word": "יָבֹ֔שׁ",
+          "lemma": "יָבֵשׁ",
+          "strong": "H3001",
+          "pron": "예보셰트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 17:10",
+        "zechariah 11:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

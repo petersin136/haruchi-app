@@ -1,6 +1,6 @@
 {
   "lemma": "צָלַח",
-  "pron": "야첼리아흐",
+  "pron": "아히첼리아흐",
   "strong": "H6743",
   "posKo": "동사",
   "root": null,
@@ -8,93 +8,219 @@
     {
       "lemma": "צְלַח",
       "strong": "H6744",
-      "pron": "",
+      "pron": "우마첼라흐",
       "glossKo": "형통하다(아람)"
     },
     {
       "lemma": "צֵלָחָה",
       "strong": "H6745",
-      "pron": "",
+      "pron": "우바첼라호트",
       "glossKo": "냄비"
     },
     {
       "lemma": "צְלֹחִית",
       "strong": "H6746",
-      "pron": "",
+      "pron": "첼로히트",
       "glossKo": "기름병"
     },
     {
       "lemma": "צַלַּחַת",
       "strong": "H6747",
-      "pron": "",
+      "pron": "아찰라하트",
       "glossKo": "냄비"
     }
   ],
   "defEn": "push",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 65,
   "byBook": {
+    "chronicles2": 10,
+    "jeremiah": 8,
     "genesis": 7,
-    "psalms": 4
+    "daniel": 5,
+    "ezekiel": 5,
+    "samuel1": 5,
+    "isaiah": 4,
+    "judges": 4,
+    "psalms": 4,
+    "chronicles1": 3,
+    "kings1": 2,
+    "nehemiah": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "joshua": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
   "phrases": [
     {
-      "hebrew": "בְּמַצְלִ֣יחַ דַּרְכּ֑וֹ",
-      "pron": "야첼리아흐 우브데레크",
+      "hebrew": "לֹ֥א תַצְלִֽיחוּ",
+      "pron": "로 아히첼리아흐",
+      "lemmas": [
+        "לֹא",
+        "צָלַח"
+      ],
+      "words": [
+        {
+          "word": "לֹ֥א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תַצְלִֽיחוּ",
+          "lemma": "צָלַח",
+          "strong": "H6743",
+          "pron": "아히첼리아흐"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "numbers 14:41",
+        "deuteronomy 28:29",
+        "chronicles2 13:12",
+        "chronicles2 24:20",
+        "proverbs 28:13",
+        "isaiah 54:17",
+        "jeremiah 2:37",
+        "jeremiah 13:7",
+        "jeremiah 13:10",
+        "jeremiah 22:30",
+        "jeremiah 32:5",
+        "daniel 11:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהִצְלִ֣יחַ דַּרְכֶּ֔ךָ",
+      "pron": "아히첼리아흐 데레크",
       "lemmas": [
         "צָלַח",
         "דֶּרֶךְ"
       ],
       "words": [
         {
-          "word": "בְּמַצְלִ֣יחַ",
+          "word": "וְהִצְלִ֣יחַ",
           "lemma": "צָלַח",
           "strong": "H6743",
-          "pron": "야첼리아흐"
+          "pron": "아히첼리아흐"
         },
         {
-          "word": "דַּרְכּ֑וֹ",
+          "word": "דַּרְכֶּ֔ךָ",
           "lemma": "דֶּרֶךְ",
           "strong": "H1870",
-          "pron": "우브데레크"
+          "pron": "데레크"
         }
       ],
-      "count": 4,
+      "count": 6,
       "refs": [
-        "psalms 37:7",
         "genesis 24:40",
         "genesis 24:42",
-        "genesis 24:56"
+        "genesis 24:56",
+        "judges 18:5",
+        "psalms 37:7",
+        "isaiah 48:15"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "יְ֝הוָ֗ה הַצְלִ֘יחָ֥ה",
-      "pron": "여호와 야첼리아흐",
+      "hebrew": "וַֽיהוָ֖ה הִצְלִ֣יחַ",
+      "pron": "여호와 아히첼리아흐",
       "lemmas": [
         "יְהֹוָה",
         "צָלַח"
       ],
       "words": [
         {
-          "word": "יְ֝הוָ֗ה",
+          "word": "וַֽיהוָ֖ה",
           "lemma": "יְהֹוָה",
           "strong": "H3068",
           "pron": "여호와"
         },
         {
-          "word": "הַצְלִ֘יחָ֥ה",
+          "word": "הִצְלִ֣יחַ",
           "lemma": "צָלַח",
           "strong": "H6743",
-          "pron": "야첼리아흐"
+          "pron": "아히첼리아흐"
         }
       ],
-      "count": 4,
+      "count": 5,
       "refs": [
-        "psalms 118:25",
         "genesis 24:56",
         "genesis 39:3",
-        "genesis 39:23"
+        "genesis 39:23",
+        "chronicles2 26:5",
+        "psalms 118:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתִּצְלַ֨ח עָלָ֜יו",
+      "pron": "아히첼리아흐 알",
+      "lemmas": [
+        "צָלַח",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "וַתִּצְלַ֨ח",
+          "lemma": "צָלַח",
+          "strong": "H6743",
+          "pron": "아히첼리아흐"
+        },
+        {
+          "word": "עָלָ֜יו",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 14:6",
+        "judges 14:19",
+        "judges 15:14",
+        "samuel1 10:6",
+        "samuel1 10:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתִּצְלַ֨ח עָלָ֜יו ר֣וּחַ",
+      "pron": "아히첼리아흐 알 브루아흐",
+      "lemmas": [
+        "צָלַח",
+        "עַל",
+        "רוּחַ"
+      ],
+      "words": [
+        {
+          "word": "וַתִּצְלַ֨ח",
+          "lemma": "צָלַח",
+          "strong": "H6743",
+          "pron": "아히첼리아흐"
+        },
+        {
+          "word": "עָלָ֜יו",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "ר֣וּחַ",
+          "lemma": "רוּחַ",
+          "strong": "H7307",
+          "pron": "브루아흐"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "judges 14:6",
+        "judges 14:19",
+        "judges 15:14",
+        "samuel1 10:6",
+        "samuel1 10:10"
       ],
       "glossKo": ""
     }

@@ -1,8 +1,8 @@
 {
   "lemma": "גִּלּוּל",
-  "pron": "길룰",
+  "pron": "길룰레켐",
   "strong": "H1544",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גָּלַל",
     "strong": "H1556",
@@ -12,8 +12,8 @@
     {
       "lemma": "גַּל",
       "strong": "H1530",
-      "pron": "브갈레카",
-      "glossKo": "너의 무더기"
+      "pron": "갈",
+      "glossKo": "무더기"
     },
     {
       "lemma": "גֹּל",
@@ -30,19 +30,188 @@
     {
       "lemma": "גֻּלְגֹּלֶת",
       "strong": "H1538",
-      "pron": "",
+      "pron": "라굴골레트",
       "glossKo": "해골"
     },
     {
       "lemma": "גֻּלָּה",
       "strong": "H1543",
-      "pron": "",
+      "pron": "굴로트",
       "glossKo": "기름병"
+    },
+    {
+      "lemma": "גָּלִיל",
+      "strong": "H1550",
+      "pron": "겔릴림",
+      "glossKo": "두루마리"
     }
   ],
   "defEn": "log",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 48,
+  "byBook": {
+    "ezekiel": 39,
+    "kings2": 4,
+    "kings1": 2,
+    "deuteronomy": 1,
+    "jeremiah": 1,
+    "leviticus": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "כָּל הַגִּלֻּלִ֔ים",
+      "pron": "칼 길룰레켐",
+      "lemmas": [
+        "כֹּל",
+        "גִּלּוּל"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הַגִּלֻּלִ֔ים",
+          "lemma": "גִּלּוּל",
+          "strong": "H1544",
+          "pron": "길룰레켐"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "kings1 15:12",
+        "ezekiel 6:13",
+        "ezekiel 8:10",
+        "ezekiel 16:36",
+        "ezekiel 20:31",
+        "ezekiel 23:7",
+        "ezekiel 36:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַחֲרֵ֖י גִּלּֽוּלֵיהֶ֑ם",
+      "pron": "아하레 길룰레켐",
+      "lemmas": [
+        "אַחַר",
+        "גִּלּוּל"
+      ],
+      "words": [
+        {
+          "word": "אַחֲרֵ֖י",
+          "lemma": "אַחַר",
+          "strong": "H310",
+          "pron": "아하레"
+        },
+        {
+          "word": "גִּלּֽוּלֵיהֶ֑ם",
+          "lemma": "גִּלּוּל",
+          "strong": "H1544",
+          "pron": "길룰레켐"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "kings1 21:26",
+        "ezekiel 6:9",
+        "ezekiel 20:16",
+        "ezekiel 20:24",
+        "ezekiel 44:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֵ֖ת גִּלֻּלֵיהֶ֑ם",
+      "pron": "에트 길룰레켐",
+      "lemmas": [
+        "אֵת",
+        "גִּלּוּל"
+      ],
+      "words": [
+        {
+          "word": "וְאֵ֖ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "גִּלֻּלֵיהֶ֑ם",
+          "lemma": "גִּלּוּל",
+          "strong": "H1544",
+          "pron": "길룰레켐"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 29:17",
+        "kings2 21:21",
+        "kings2 23:24",
+        "ezekiel 14:4",
+        "ezekiel 20:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל גִּלּוּלֵ֖י",
+      "pron": "엘 길룰레켐",
+      "lemmas": [
+        "אֵל",
+        "גִּלּוּל"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "גִּלּוּלֵ֖י",
+          "lemma": "גִּלּוּל",
+          "strong": "H1544",
+          "pron": "길룰레켐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "ezekiel 18:6",
+        "ezekiel 18:12",
+        "ezekiel 18:15",
+        "ezekiel 33:25"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הַגִּלֻּלִ֔ים אֲשֶׁ֥ר",
+      "pron": "길룰레켐 아셰르",
+      "lemmas": [
+        "גִּלּוּל",
+        "אֲשֶׁר"
+      ],
+      "words": [
+        {
+          "word": "הַגִּלֻּלִ֔ים",
+          "lemma": "גִּלּוּל",
+          "strong": "H1544",
+          "pron": "길룰레켐"
+        },
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 15:12",
+        "kings2 17:12",
+        "kings2 21:21",
+        "ezekiel 22:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

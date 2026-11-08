@@ -1,6 +1,6 @@
 {
   "lemma": "סָכַךְ",
-  "pron": "브타세크",
+  "pron": "소케킴",
   "strong": "H5526",
   "posKo": "동사",
   "root": null,
@@ -8,20 +8,20 @@
     {
       "lemma": "מֵיסָךְ",
       "strong": "H4329",
-      "pron": "",
+      "pron": "밋크",
       "glossKo": "기둥회랑"
     },
     {
       "lemma": "מָסָךְ",
       "strong": "H4539",
-      "pron": "르마사크",
+      "pron": "마사크",
       "glossKo": "휘장"
     },
     {
       "lemma": "מְסֻכָּה",
       "strong": "H4540",
-      "pron": "",
-      "glossKo": "덮개"
+      "pron": "메수카테카",
+      "glossKo": "너의 덮개"
     },
     {
       "lemma": "סָךְ",
@@ -32,21 +32,98 @@
     {
       "lemma": "סֹךְ",
       "strong": "H5520",
-      "pron": "브숙코",
+      "pron": "베숙코",
       "glossKo": "그의 장막"
     },
     {
       "lemma": "סְכָכָה",
       "strong": "H5527",
-      "pron": "",
+      "pron": "우세카카",
       "glossKo": "스가가"
     }
   ],
   "defEn": "entwine",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 24,
   "byBook": {
-    "psalms": 4
+    "exodus": 5,
+    "job": 4,
+    "psalms": 4,
+    "ezekiel": 2,
+    "isaiah": 2,
+    "lamentations": 2,
+    "chronicles1": 1,
+    "judges": 1,
+    "kings1": 1,
+    "nahum": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְסַכֹּתָ֥ עַל",
+      "pron": "소케킴 알",
+      "lemmas": [
+        "סָכַךְ",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "וְסַכֹּתָ֥",
+          "lemma": "סָכַךְ",
+          "strong": "H5526",
+          "pron": "소케킴"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 40:3",
+        "exodus 40:21",
+        "chronicles1 28:18",
+        "psalms 5:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְסַכֹּתָ֥ עַל הָאָרֹ֖ן",
+      "pron": "소케킴 알 바아론",
+      "lemmas": [
+        "סָכַךְ",
+        "עַל",
+        "אָרוֹן"
+      ],
+      "words": [
+        {
+          "word": "וְסַכֹּתָ֥",
+          "lemma": "סָכַךְ",
+          "strong": "H5526",
+          "pron": "소케킴"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הָאָרֹ֖ן",
+          "lemma": "אָרוֹן",
+          "strong": "H727",
+          "pron": "바아론"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 40:3",
+        "exodus 40:21",
+        "chronicles1 28:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

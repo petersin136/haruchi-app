@@ -1,6 +1,6 @@
 {
   "lemma": "מְנוּחָה",
-  "pron": "메누호트",
+  "pron": "메누하",
   "strong": "H4496",
   "posKo": "명사",
   "root": {
@@ -12,16 +12,87 @@
     {
       "lemma": "מָנוֹחַ",
       "strong": "H4495",
-      "pron": "",
+      "pron": "마노아흐",
       "glossKo": "마노아"
     }
   ],
   "defEn": "repose; peacefully; consolation; matrimony; abode",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 22,
   "byBook": {
     "psalms": 5,
-    "genesis": 1
+    "isaiah": 4,
+    "chronicles1": 2,
+    "jeremiah": 2,
+    "deuteronomy": 1,
+    "genesis": 1,
+    "judges": 1,
+    "kings1": 1,
+    "micah": 1,
+    "numbers": 1,
+    "ruth": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מְנֻחָה֙ כִּ֣י",
+      "pron": "메누하 키",
+      "lemmas": [
+        "מְנוּחָה",
+        "כִּי"
+      ],
+      "words": [
+        {
+          "word": "מְנֻחָה֙",
+          "lemma": "מְנוּחָה",
+          "strong": "H4496",
+          "pron": "메누하"
+        },
+        {
+          "word": "כִּ֣י",
+          "lemma": "כִּי",
+          "strong": "H3588",
+          "pron": "키"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "genesis 49:15",
+        "samuel2 14:17",
+        "psalms 116:7",
+        "zechariah 9:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זֹאת מְנוּחָתִ֥י",
+      "pron": "조트 메누하",
+      "lemmas": [
+        "זֹאת",
+        "מְנוּחָה"
+      ],
+      "words": [
+        {
+          "word": "זֹאת",
+          "lemma": "זֹאת",
+          "strong": "H2063",
+          "pron": "조트"
+        },
+        {
+          "word": "מְנוּחָתִ֥י",
+          "lemma": "מְנוּחָה",
+          "strong": "H4496",
+          "pron": "메누하"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 132:14",
+        "isaiah 28:12",
+        "micah 2:10"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

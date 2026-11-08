@@ -1,8 +1,8 @@
 {
   "lemma": "קַדִּישׁ",
-  "pron": "칻디쉬",
+  "pron": "칻디신",
   "strong": "H6922",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "קָדוֹשׁ",
     "strong": "H6918",
@@ -12,13 +12,113 @@
     {
       "lemma": "קָדוֹשׁ",
       "strong": "H6918",
-      "pron": "리케도심",
+      "pron": "카도쉬",
       "glossKo": "거룩한"
     }
   ],
   "defEn": "holy (One), saint.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "daniel": 13
+  },
+  "phrases": [
+    {
+      "hebrew": "אֱלָהִ֥ין קַדִּישִׁ֖ין",
+      "pron": "엘라하 칻디신",
+      "lemmas": [
+        "אֱלָהּ",
+        "קַדִּישׁ"
+      ],
+      "words": [
+        {
+          "word": "אֱלָהִ֥ין",
+          "lemma": "אֱלָהּ",
+          "strong": "H426",
+          "pron": "엘라하"
+        },
+        {
+          "word": "קַדִּישִׁ֖ין",
+          "lemma": "קַדִּישׁ",
+          "strong": "H6922",
+          "pron": "칻디신"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:8",
+        "daniel 4:9",
+        "daniel 4:18",
+        "daniel 5:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קַדִּישֵׁ֖י עֶלְיוֹנִ֑ין",
+      "pron": "칻디신 엘오닌",
+      "lemmas": [
+        "קַדִּישׁ",
+        "עֶלְיוֹן"
+      ],
+      "words": [
+        {
+          "word": "קַדִּישֵׁ֖י",
+          "lemma": "קַדִּישׁ",
+          "strong": "H6922",
+          "pron": "칻디신"
+        },
+        {
+          "word": "עֶלְיוֹנִ֑ין",
+          "lemma": "עֶלְיוֹן",
+          "strong": "H5946",
+          "pron": "엘오닌"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 7:18",
+        "daniel 7:22",
+        "daniel 7:25",
+        "daniel 7:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "רֽוּחַ אֱלָהִ֥ין קַדִּישִׁ֖ין",
+      "pron": "루하 엘라하 칻디신",
+      "lemmas": [
+        "רוּחַ",
+        "אֱלָהּ",
+        "קַדִּישׁ"
+      ],
+      "words": [
+        {
+          "word": "רֽוּחַ",
+          "lemma": "רוּחַ",
+          "strong": "H7308",
+          "pron": "루하"
+        },
+        {
+          "word": "אֱלָהִ֥ין",
+          "lemma": "אֱלָהּ",
+          "strong": "H426",
+          "pron": "엘라하"
+        },
+        {
+          "word": "קַדִּישִׁ֖ין",
+          "lemma": "קַדִּישׁ",
+          "strong": "H6922",
+          "pron": "칻디신"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 4:8",
+        "daniel 4:9",
+        "daniel 4:18",
+        "daniel 5:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

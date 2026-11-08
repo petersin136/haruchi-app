@@ -1,8 +1,8 @@
 {
   "lemma": "כְּלַל",
-  "pron": "켈랄",
+  "pron": "쉭를브",
   "strong": "H3635",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "כָּלַל",
     "strong": "H3634",
@@ -12,31 +12,75 @@
     {
       "lemma": "כֹּל",
       "strong": "H3605",
-      "pron": "브콜",
+      "pron": "칼",
       "glossKo": "모든"
     },
     {
       "lemma": "כַּלָּה",
       "strong": "H3618",
-      "pron": "칼라트오",
+      "pron": "칼라토",
       "glossKo": "그의 신부"
     },
     {
       "lemma": "כָּלִיל",
       "strong": "H3632",
-      "pron": "브칼릴",
+      "pron": "켈릴",
       "glossKo": "완전한"
     },
     {
       "lemma": "כָּלַל",
       "strong": "H3634",
-      "pron": "",
+      "pron": "칼루",
       "glossKo": "완성하다"
+    },
+    {
+      "lemma": "כְּלָל",
+      "strong": "H3636",
+      "pron": "우켈랄",
+      "glossKo": "글랄"
+    },
+    {
+      "lemma": "מִכְלוֹל",
+      "strong": "H4358",
+      "pron": "미켈롤",
+      "glossKo": "완전"
     }
   ],
   "defEn": "complete",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 8,
+  "byBook": {
+    "ezra": 8
+  },
+  "phrases": [
+    {
+      "hebrew": "וְשׁוּרַיָּ֖ה יִֽשְׁתַּכְלְל֑וּן",
+      "pron": "브쉬브리 쉭를브",
+      "lemmas": [
+        "שׁוּר",
+        "כְּלַל"
+      ],
+      "words": [
+        {
+          "word": "וְשׁוּרַיָּ֖ה",
+          "lemma": "שׁוּר",
+          "strong": "H7792",
+          "pron": "브쉬브리"
+        },
+        {
+          "word": "יִֽשְׁתַּכְלְל֑וּן",
+          "lemma": "כְּלַל",
+          "strong": "H3635",
+          "pron": "쉭를브"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 4:12",
+        "ezra 4:13",
+        "ezra 4:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

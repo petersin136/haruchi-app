@@ -12,41 +12,137 @@
     {
       "lemma": "אָמוֹן",
       "strong": "H525",
-      "pron": "",
+      "pron": "아몬",
       "glossKo": "건축자"
     },
     {
       "lemma": "אֵמוּן",
       "strong": "H529",
-      "pron": "",
+      "pron": "에문",
       "glossKo": "신실함"
     },
     {
       "lemma": "אָמַן",
       "strong": "H539",
-      "pron": "에무님",
+      "pron": "브헤에민",
       "glossKo": "믿다"
     },
     {
       "lemma": "אֲמַן",
       "strong": "H540",
-      "pron": "",
+      "pron": "우메헤만",
       "glossKo": "믿다(아람)"
     },
     {
       "lemma": "אָמָן",
       "strong": "H542",
-      "pron": "",
+      "pron": "암만",
       "glossKo": "장인"
+    },
+    {
+      "lemma": "אֹמֶן",
+      "strong": "H544",
+      "pron": "오멘",
+      "glossKo": "신실"
     }
   ],
   "defEn": "sure; faithfulness; truly",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 30,
   "byBook": {
-    "psalms": 7
+    "deuteronomy": 12,
+    "psalms": 7,
+    "nehemiah": 3,
+    "isaiah": 2,
+    "jeremiah": 2,
+    "numbers": 2,
+    "chronicles1": 1,
+    "kings1": 1
   },
   "phrases": [
+    {
+      "hebrew": "הָעָ֖ם אָמֵֽן",
+      "pron": "암 아멘",
+      "lemmas": [
+        "עַם",
+        "אָמֵן"
+      ],
+      "words": [
+        {
+          "word": "הָעָ֖ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "אָמֵֽן",
+          "lemma": "אָמֵן",
+          "strong": "H543",
+          "pron": "아멘"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "deuteronomy 27:16",
+        "deuteronomy 27:17",
+        "deuteronomy 27:18",
+        "deuteronomy 27:19",
+        "deuteronomy 27:20",
+        "deuteronomy 27:21",
+        "deuteronomy 27:22",
+        "deuteronomy 27:23",
+        "deuteronomy 27:24",
+        "deuteronomy 27:25",
+        "deuteronomy 27:26",
+        "chronicles1 16:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כָּל הָעָ֖ם אָמֵֽן",
+      "pron": "칼 암 아멘",
+      "lemmas": [
+        "כֹּל",
+        "עַם",
+        "אָמֵן"
+      ],
+      "words": [
+        {
+          "word": "כָּל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "הָעָ֖ם",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        },
+        {
+          "word": "אָמֵֽן",
+          "lemma": "אָמֵן",
+          "strong": "H543",
+          "pron": "아멘"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "deuteronomy 27:16",
+        "deuteronomy 27:17",
+        "deuteronomy 27:18",
+        "deuteronomy 27:19",
+        "deuteronomy 27:20",
+        "deuteronomy 27:21",
+        "deuteronomy 27:22",
+        "deuteronomy 27:23",
+        "deuteronomy 27:24",
+        "deuteronomy 27:25",
+        "deuteronomy 27:26",
+        "chronicles1 16:36"
+      ],
+      "glossKo": ""
+    },
     {
       "hebrew": "אָ֘מֵ֥ן וְאָמֵֽן",
       "pron": "아멘 아멘",
@@ -68,8 +164,10 @@
           "pron": "아멘"
         }
       ],
-      "count": 6,
+      "count": 10,
       "refs": [
+        "numbers 5:22",
+        "nehemiah 8:6",
         "psalms 41:13",
         "psalms 72:19",
         "psalms 89:52"
@@ -108,6 +206,35 @@
       "refs": [
         "psalms 41:13",
         "psalms 89:52"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָמֵ֔ן וְהַלֵּ֖ל",
+      "pron": "아멘 바예할루",
+      "lemmas": [
+        "אָמֵן",
+        "הָלַל"
+      ],
+      "words": [
+        {
+          "word": "אָמֵ֔ן",
+          "lemma": "אָמֵן",
+          "strong": "H543",
+          "pron": "아멘"
+        },
+        {
+          "word": "וְהַלֵּ֖ל",
+          "lemma": "הָלַל",
+          "strong": "H1984",
+          "pron": "바예할루"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 16:36",
+        "nehemiah 5:13",
+        "psalms 106:48"
       ],
       "glossKo": ""
     }

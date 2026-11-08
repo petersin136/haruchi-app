@@ -2,7 +2,7 @@
   "lemma": "חֶמֶד",
   "pron": "헤멛",
   "strong": "H2531",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָמַד",
     "strong": "H2530",
@@ -12,25 +12,71 @@
     {
       "lemma": "חָמַד",
       "strong": "H2530",
-      "pron": "아네헤마딤",
+      "pron": "네헤맏",
       "glossKo": "탐내다"
+    },
+    {
+      "lemma": "חֶמְדָּה",
+      "strong": "H2532",
+      "pron": "아하무도트",
+      "glossKo": "탐심"
+    },
+    {
+      "lemma": "חֶמְדָּן",
+      "strong": "H2533",
+      "pron": "헴단",
+      "glossKo": "헴단"
     },
     {
       "lemma": "מַחְמָד",
       "strong": "H4261",
-      "pron": "",
+      "pron": "마헤맏",
       "glossKo": "사랑스러운 것"
     },
     {
       "lemma": "מַחְמֻד",
       "strong": "H4262",
-      "pron": "",
-      "glossKo": "값진 것"
+      "pron": "마하무데하",
+      "glossKo": "그녀의 값진 것"
     }
   ],
   "defEn": "delight",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "ezekiel": 3,
+    "isaiah": 2,
+    "amos": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בַּח֥וּרֵי חֶ֖מֶד",
+      "pron": "바후르 헤멛",
+      "lemmas": [
+        "בָּחוּר",
+        "חֶמֶד"
+      ],
+      "words": [
+        {
+          "word": "בַּח֥וּרֵי",
+          "lemma": "בָּחוּר",
+          "strong": "H970",
+          "pron": "바후르"
+        },
+        {
+          "word": "חֶ֖מֶד",
+          "lemma": "חֶמֶד",
+          "strong": "H2531",
+          "pron": "헤멛"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 23:6",
+        "ezekiel 23:12",
+        "ezekiel 23:23"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

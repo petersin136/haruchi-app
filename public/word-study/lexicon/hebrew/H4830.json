@@ -30,55 +30,61 @@
     {
       "lemma": "רֵעַ",
       "strong": "H7454",
-      "pron": "르레이위",
+      "pron": "레레이",
       "glossKo": "나의 생각"
     },
     {
       "lemma": "רָעָה",
       "strong": "H7462",
-      "pron": "로이위",
-      "glossKo": "나의 목자"
+      "pron": "로에",
+      "glossKo": "목자"
     },
     {
       "lemma": "רֵעֶה",
       "strong": "H7463",
-      "pron": "",
+      "pron": "레에",
       "glossKo": "친구"
     }
   ],
   "defEn": "pasturage; flock",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 10,
   "byBook": {
-    "psalms": 4
+    "psalms": 4,
+    "jeremiah": 3,
+    "ezekiel": 1,
+    "hosea": 1,
+    "isaiah": 1
   },
   "phrases": [
     {
-      "hebrew": "בְּצֹ֣אן מַרְעִיתֶֽךָ",
-      "pron": "크촌 마레이테카",
+      "hebrew": "צֹ֥אן מַרְעִיתִ֖י",
+      "pron": "촌 마레이테카",
       "lemmas": [
         "צֹאן",
         "מִרְעִית"
       ],
       "words": [
         {
-          "word": "בְּצֹ֣אן",
+          "word": "צֹ֥אן",
           "lemma": "צֹאן",
           "strong": "H6629",
-          "pron": "크촌"
+          "pron": "촌"
         },
         {
-          "word": "מַרְעִיתֶֽךָ",
+          "word": "מַרְעִיתִ֖י",
           "lemma": "מִרְעִית",
           "strong": "H4830",
           "pron": "마레이테카"
         }
       ],
-      "count": 3,
+      "count": 5,
       "refs": [
         "psalms 74:1",
         "psalms 79:13",
-        "psalms 100:3"
+        "psalms 100:3",
+        "jeremiah 23:1",
+        "ezekiel 34:31"
       ],
       "glossKo": ""
     }

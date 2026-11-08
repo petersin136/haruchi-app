@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁנַן",
-  "pron": "셰누님",
+  "pron": "베신난탐",
   "strong": "H8150",
   "posKo": "동사",
   "root": null,
@@ -8,21 +8,54 @@
     {
       "lemma": "שֵׁן",
       "strong": "H8127",
-      "pron": "신네",
+      "pron": "신나임",
       "glossKo": "이"
     },
     {
       "lemma": "שְׁנִינָה",
       "strong": "H8148",
-      "pron": "",
+      "pron": "브리셰니나",
       "glossKo": "비웃음거리"
     }
   ],
   "defEn": "point; pierce; inculcate",
   "defKo": "",
-  "countOT": 5,
+  "countOT": 9,
   "byBook": {
-    "psalms": 5
+    "psalms": 5,
+    "deuteronomy": 2,
+    "isaiah": 1,
+    "proverbs": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "חִצֶּ֗יךָ שְׁנ֫וּנִ֥ים",
+      "pron": "힛침 베신난탐",
+      "lemmas": [
+        "חֵץ",
+        "שָׁנַן"
+      ],
+      "words": [
+        {
+          "word": "חִצֶּ֗יךָ",
+          "lemma": "חֵץ",
+          "strong": "H2671",
+          "pron": "힛침"
+        },
+        {
+          "word": "שְׁנ֫וּנִ֥ים",
+          "lemma": "שָׁנַן",
+          "strong": "H8150",
+          "pron": "베신난탐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 45:5",
+        "proverbs 25:18",
+        "isaiah 5:28"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

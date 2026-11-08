@@ -1,6 +1,6 @@
 {
   "lemma": "עַמּוֹן",
-  "pron": "브암몬",
+  "pron": "암몬",
   "strong": "H5983",
   "posKo": "명사",
   "root": {
@@ -18,28 +18,258 @@
     {
       "lemma": "עַם",
       "strong": "H5972",
-      "pron": "",
+      "pron": "브암마",
       "glossKo": "백성(아람)"
+    },
+    {
+      "lemma": "עַמּוֹנִי",
+      "strong": "H5984",
+      "pron": "브하암모님",
+      "glossKo": "암몬 사람"
     },
     {
       "lemma": "עַמִּיאֵל",
       "strong": "H5988",
-      "pron": "",
+      "pron": "암미엘",
       "glossKo": "암미엘"
     },
     {
       "lemma": "עַמִּיהוּד",
       "strong": "H5989",
-      "pron": "",
+      "pron": "암미훋",
       "glossKo": "암미훗"
+    },
+    {
+      "lemma": "עַמִּיזָבָד",
+      "strong": "H5990",
+      "pron": "암미자받",
+      "glossKo": "암미사밧"
     }
   ],
   "defEn": "Ammon",
   "defKo": "",
-  "countOT": 2,
+  "countOT": 106,
   "byBook": {
+    "judges": 27,
+    "samuel2": 17,
+    "chronicles1": 14,
+    "jeremiah": 10,
+    "chronicles2": 7,
+    "ezekiel": 7,
+    "deuteronomy": 5,
+    "joshua": 3,
+    "samuel1": 3,
+    "kings1": 2,
+    "kings2": 2,
+    "numbers": 2,
+    "zephaniah": 2,
+    "amos": 1,
+    "daniel": 1,
     "genesis": 1,
+    "isaiah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "בְּנֵ֥י עַמּֽוֹן",
+      "pron": "바님 암몬",
+      "lemmas": [
+        "בֵּן",
+        "עַמּוֹן"
+      ],
+      "words": [
+        {
+          "word": "בְּנֵ֥י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עַמּֽוֹן",
+          "lemma": "עַמּוֹן",
+          "strong": "H5983",
+          "pron": "암몬"
+        }
+      ],
+      "count": 104,
+      "refs": [
+        "genesis 19:38",
+        "numbers 21:24",
+        "deuteronomy 2:19",
+        "deuteronomy 2:37",
+        "deuteronomy 3:11",
+        "deuteronomy 3:16",
+        "joshua 12:2",
+        "joshua 13:10",
+        "joshua 13:25",
+        "judges 3:13",
+        "judges 10:6",
+        "judges 10:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מֶ֖לֶךְ בְּנֵ֣י עַמּ֑וֹן",
+      "pron": "멜레크 바님 암몬",
+      "lemmas": [
+        "מֶלֶךְ",
+        "בֵּן",
+        "עַמּוֹן"
+      ],
+      "words": [
+        {
+          "word": "מֶ֖לֶךְ",
+          "lemma": "מֶלֶךְ",
+          "strong": "H4428",
+          "pron": "멜레크"
+        },
+        {
+          "word": "בְּנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עַמּ֑וֹן",
+          "lemma": "עַמּוֹן",
+          "strong": "H5983",
+          "pron": "암몬"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "judges 11:12",
+        "judges 11:13",
+        "judges 11:14",
+        "judges 11:28",
+        "samuel1 12:12",
+        "samuel2 10:1",
+        "chronicles1 19:1",
+        "chronicles2 27:5",
+        "jeremiah 27:3",
+        "jeremiah 40:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶ֖רֶץ בְּנֵ֥י עַמּֽוֹן",
+      "pron": "하아레츠 바님 암몬",
+      "lemmas": [
+        "אֶרֶץ",
+        "בֵּן",
+        "עַמּוֹן"
+      ],
+      "words": [
+        {
+          "word": "אֶ֖רֶץ",
+          "lemma": "אֶרֶץ",
+          "strong": "H776",
+          "pron": "하아레츠"
+        },
+        {
+          "word": "בְּנֵ֥י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עַמּֽוֹן",
+          "lemma": "עַמּוֹן",
+          "strong": "H5983",
+          "pron": "암몬"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "deuteronomy 2:19",
+        "deuteronomy 2:37",
+        "joshua 13:25",
+        "judges 11:15",
+        "samuel2 10:2",
+        "chronicles1 19:2",
+        "chronicles1 20:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת בְּנֵ֥י עַמּ֖וֹן",
+      "pron": "에트 바님 암몬",
+      "lemmas": [
+        "אֵת",
+        "בֵּן",
+        "עַמּוֹן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "בְּנֵ֥י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עַמּ֖וֹן",
+          "lemma": "עַמּוֹן",
+          "strong": "H5983",
+          "pron": "암몬"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "judges 3:13",
+        "judges 11:30",
+        "samuel2 10:19",
+        "samuel2 11:1",
+        "chronicles1 19:19",
+        "jeremiah 25:21",
+        "ezekiel 25:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְהִלָּחֵ֖ם בִּבְנֵ֣י עַמּ֑וֹן",
+      "pron": "브닐함 바님 암몬",
+      "lemmas": [
+        "לָחַם",
+        "בֵּן",
+        "עַמּוֹן"
+      ],
+      "words": [
+        {
+          "word": "לְהִלָּחֵ֖ם",
+          "lemma": "לָחַם",
+          "strong": "H3898",
+          "pron": "브닐함"
+        },
+        {
+          "word": "בִּבְנֵ֣י",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "עַמּ֑וֹן",
+          "lemma": "עַמּוֹן",
+          "strong": "H5983",
+          "pron": "암몬"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "judges 10:18",
+        "judges 11:4",
+        "judges 11:5",
+        "judges 11:6",
+        "judges 11:8",
+        "judges 11:9",
+        "judges 12:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

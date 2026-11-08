@@ -2,7 +2,7 @@
   "lemma": "דּוֹר",
   "pron": "도르",
   "strong": "H1756",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "דּוֹר",
     "strong": "H1755",
@@ -12,19 +12,54 @@
     {
       "lemma": "דּוֹר",
       "strong": "H1755",
-      "pron": "르도르",
-      "glossKo": "세대"
+      "pron": "베도로타으브",
+      "glossKo": "그의 세대"
     },
     {
       "lemma": "דָּר",
       "strong": "H1859",
-      "pron": "",
+      "pron": "다르",
       "glossKo": "세대(아람)"
     }
   ],
   "defEn": "Dor",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "joshua": 4,
+    "chronicles1": 1,
+    "judges": 1,
+    "kings1": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וּבְנָפ֥וֹת דּ֖וֹר",
+      "pron": "우브나포트 도르",
+      "lemmas": [
+        "נָפָה",
+        "דּוֹר"
+      ],
+      "words": [
+        {
+          "word": "וּבְנָפ֥וֹת",
+          "lemma": "נָפָה",
+          "strong": "H5299",
+          "pron": "우브나포트"
+        },
+        {
+          "word": "דּ֖וֹר",
+          "lemma": "דּוֹר",
+          "strong": "H1756",
+          "pron": "도르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 11:2",
+        "joshua 12:23",
+        "kings1 4:11"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

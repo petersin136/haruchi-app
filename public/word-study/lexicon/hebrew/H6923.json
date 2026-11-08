@@ -1,6 +1,6 @@
 {
   "lemma": "קָדַם",
-  "pron": "칻데마",
+  "pron": "킫데무",
   "strong": "H6923",
   "posKo": "동사",
   "root": null,
@@ -8,7 +8,7 @@
     {
       "lemma": "קָדוּם",
       "strong": "H6917",
-      "pron": "",
+      "pron": "케두밈",
       "glossKo": "옛"
     },
     {
@@ -20,7 +20,7 @@
     {
       "lemma": "קֶדֶם",
       "strong": "H6924",
-      "pron": "케뎀",
+      "pron": "미케뎀",
       "glossKo": "동방"
     },
     {
@@ -38,20 +38,88 @@
     {
       "lemma": "קַדְמוֹן",
       "strong": "H6930",
-      "pron": "",
+      "pron": "아칻모나",
       "glossKo": "동쪽의"
     }
   ],
   "defEn": "project; precede; anticipate; hasten; meet",
   "defKo": "",
-  "countOT": 12,
+  "countOT": 26,
   "byBook": {
-    "psalms": 12
+    "psalms": 12,
+    "job": 3,
+    "isaiah": 2,
+    "micah": 2,
+    "samuel2": 2,
+    "amos": 1,
+    "deuteronomy": 1,
+    "jonah": 1,
+    "kings2": 1,
+    "nehemiah": 1
   },
   "phrases": [
     {
+      "hebrew": "וְלֹֽא יְקַדְּמֶ֣נָּה",
+      "pron": "로 킫데무",
+      "lemmas": [
+        "לֹא",
+        "קָדַם"
+      ],
+      "words": [
+        {
+          "word": "וְלֹֽא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יְקַדְּמֶ֣נָּה",
+          "lemma": "קָדַם",
+          "strong": "H6923",
+          "pron": "킫데무"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 23:4",
+        "kings2 19:32",
+        "nehemiah 13:2",
+        "isaiah 37:33"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְקַדְּמֻ֖נִי בְּי֣וֹם",
+      "pron": "킫데무 욤",
+      "lemmas": [
+        "קָדַם",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "יְקַדְּמֻ֖נִי",
+          "lemma": "קָדַם",
+          "strong": "H6923",
+          "pron": "킫데무"
+        },
+        {
+          "word": "בְּי֣וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "samuel2 22:19",
+        "job 30:27",
+        "psalms 18:18"
+      ],
+      "glossKo": ""
+    },
+    {
       "hebrew": "קַדְּמָ֣ה פָ֭נָיו",
-      "pron": "칻데마 미페네",
+      "pron": "킫데무 페네",
       "lemmas": [
         "קָדַם",
         "פָּנִים"
@@ -61,13 +129,13 @@
           "word": "קַדְּמָ֣ה",
           "lemma": "קָדַם",
           "strong": "H6923",
-          "pron": "칻데마"
+          "pron": "킫데무"
         },
         {
           "word": "פָ֭נָיו",
           "lemma": "פָּנִים",
           "strong": "H6440",
-          "pron": "미페네"
+          "pron": "페네"
         }
       ],
       "count": 3,

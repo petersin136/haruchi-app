@@ -1,8 +1,8 @@
 {
   "lemma": "גְּדַּלְיָה",
-  "pron": "겓달아",
+  "pron": "게달아후",
   "strong": "H1436",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "גָּדַל",
     "strong": "H1431",
@@ -12,13 +12,13 @@
     {
       "lemma": "גָּדוֹל",
       "strong": "H1419",
-      "pron": "게돌로트",
+      "pron": "아게돌림",
       "glossKo": "큰"
     },
     {
       "lemma": "גָּדַל",
       "strong": "H1431",
-      "pron": "믁들",
+      "pron": "바아갇델라",
       "glossKo": "자라다"
     },
     {
@@ -36,19 +36,221 @@
     {
       "lemma": "גְּדִל",
       "strong": "H1434",
-      "pron": "",
+      "pron": "게딜림",
       "glossKo": "옷단 술"
     },
     {
       "lemma": "גִּדֵּל",
       "strong": "H1435",
-      "pron": "",
+      "pron": "긷델",
       "glossKo": "깃델"
     }
   ],
   "defEn": "Gedaljah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 32,
+  "byBook": {
+    "jeremiah": 23,
+    "kings2": 5,
+    "chronicles1": 2,
+    "ezra": 1,
+    "zephaniah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "גְּדַלְיָ֖הוּ בֶּן",
+      "pron": "게달아후 바님",
+      "lemmas": [
+        "גְּדַּלְיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "גְּדַלְיָ֖הוּ",
+          "lemma": "גְּדַּלְיָה",
+          "strong": "H1436",
+          "pron": "게달아후"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "kings2 25:22",
+        "jeremiah 38:1",
+        "jeremiah 39:14",
+        "jeremiah 40:5",
+        "jeremiah 40:6",
+        "jeremiah 40:7",
+        "jeremiah 40:9",
+        "jeremiah 40:11",
+        "jeremiah 40:14",
+        "jeremiah 40:16",
+        "jeremiah 41:1",
+        "jeremiah 41:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "גְּדַלְיָ֖הוּ בֶּן אֲחִיקָ֥ם",
+      "pron": "게달아후 바님 아히캄",
+      "lemmas": [
+        "גְּדַּלְיָה",
+        "בֵּן",
+        "אֲחִיקָם"
+      ],
+      "words": [
+        {
+          "word": "גְּדַלְיָ֖הוּ",
+          "lemma": "גְּדַּלְיָה",
+          "strong": "H1436",
+          "pron": "게달아후"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "אֲחִיקָ֥ם",
+          "lemma": "אֲחִיקָם",
+          "strong": "H296",
+          "pron": "아히캄"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "kings2 25:22",
+        "jeremiah 39:14",
+        "jeremiah 40:5",
+        "jeremiah 40:6",
+        "jeremiah 40:7",
+        "jeremiah 40:9",
+        "jeremiah 40:11",
+        "jeremiah 40:14",
+        "jeremiah 40:16",
+        "jeremiah 41:1",
+        "jeremiah 41:2",
+        "jeremiah 41:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל גְּדַלְיָ֖הוּ",
+      "pron": "엘 게달아후",
+      "lemmas": [
+        "אֵל",
+        "גְּדַּלְיָה"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "גְּדַלְיָ֖הוּ",
+          "lemma": "גְּדַּלְיָה",
+          "strong": "H1436",
+          "pron": "게달아후"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "kings2 25:23",
+        "jeremiah 39:14",
+        "jeremiah 40:5",
+        "jeremiah 40:6",
+        "jeremiah 40:8",
+        "jeremiah 40:12",
+        "jeremiah 40:13",
+        "jeremiah 40:15",
+        "jeremiah 41:1",
+        "jeremiah 41:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת גְּדַלְיָ֖הוּ",
+      "pron": "에트 게달아후",
+      "lemmas": [
+        "אֵת",
+        "גְּדַּלְיָה"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "גְּדַלְיָ֖הוּ",
+          "lemma": "גְּדַּלְיָה",
+          "strong": "H1436",
+          "pron": "게달아후"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "kings2 25:22",
+        "kings2 25:23",
+        "kings2 25:25",
+        "jeremiah 40:7",
+        "jeremiah 40:11",
+        "jeremiah 41:2",
+        "jeremiah 41:4",
+        "jeremiah 41:10",
+        "jeremiah 41:16",
+        "jeremiah 41:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת גְּדַלְיָ֖הוּ בֶּן",
+      "pron": "에트 게달아후 바님",
+      "lemmas": [
+        "אֵת",
+        "גְּדַּלְיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "גְּדַלְיָ֖הוּ",
+          "lemma": "גְּדַּלְיָה",
+          "strong": "H1436",
+          "pron": "게달아후"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "kings2 25:22",
+        "jeremiah 40:7",
+        "jeremiah 40:11",
+        "jeremiah 41:2",
+        "jeremiah 41:10",
+        "jeremiah 41:16",
+        "jeremiah 41:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

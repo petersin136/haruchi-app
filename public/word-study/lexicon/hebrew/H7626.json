@@ -1,6 +1,6 @@
 {
   "lemma": "שֵׁבֶט",
-  "pron": "브셰벧",
+  "pron": "셰벧",
   "strong": "H7626",
   "posKo": "명사",
   "root": null,
@@ -8,50 +8,247 @@
     {
       "lemma": "שְׁבַט",
       "strong": "H7625",
-      "pron": "",
+      "pron": "십데",
       "glossKo": "지파(아람)"
     },
     {
       "lemma": "שַׁרְבִיט",
       "strong": "H8275",
-      "pron": "",
+      "pron": "샤레빋",
       "glossKo": "왕홀"
     }
   ],
   "defEn": "scion; stick; clan",
   "defKo": "",
-  "countOT": 16,
+  "countOT": 190,
   "byBook": {
+    "joshua": 33,
+    "deuteronomy": 18,
+    "ezekiel": 16,
+    "judges": 16,
     "psalms": 13,
-    "genesis": 3
+    "chronicles1": 12,
+    "isaiah": 12,
+    "kings1": 11,
+    "samuel2": 10,
+    "proverbs": 8,
+    "samuel1": 8,
+    "numbers": 6,
+    "chronicles2": 4,
+    "exodus": 4,
+    "genesis": 3,
+    "job": 3,
+    "amos": 2,
+    "jeremiah": 2,
+    "kings2": 2,
+    "micah": 2,
+    "zechariah": 2,
+    "hosea": 1,
+    "lamentations": 1,
+    "leviticus": 1
   },
   "phrases": [
     {
-      "hebrew": "שִׁבְטֵ֥י יִשְׂרָאֵֽל",
-      "pron": "브셰벧 이스라엘",
+      "hebrew": "שִׁבְטֵ֣י יִשְׂרָאֵ֔ל",
+      "pron": "셰벧 이스라엘",
       "lemmas": [
         "שֵׁבֶט",
         "יִשְׂרָאֵל"
       ],
       "words": [
         {
-          "word": "שִׁבְטֵ֥י",
+          "word": "שִׁבְטֵ֣י",
           "lemma": "שֵׁבֶט",
           "strong": "H7626",
-          "pron": "브셰벧"
+          "pron": "셰벧"
         },
         {
-          "word": "יִשְׂרָאֵֽל",
+          "word": "יִשְׂרָאֵ֔ל",
           "lemma": "יִשְׂרָאֵל",
           "strong": "H3478",
           "pron": "이스라엘"
         }
       ],
-      "count": 3,
+      "count": 49,
       "refs": [
-        "psalms 78:55",
         "genesis 49:16",
-        "genesis 49:28"
+        "genesis 49:28",
+        "exodus 24:4",
+        "numbers 24:17",
+        "deuteronomy 29:21",
+        "deuteronomy 33:5",
+        "joshua 3:12",
+        "joshua 12:7",
+        "joshua 24:1",
+        "judges 18:1",
+        "judges 20:2",
+        "judges 20:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִכֹּל֙ שִׁבְטֵ֣י",
+      "pron": "칼 셰벧",
+      "lemmas": [
+        "כֹּל",
+        "שֵׁבֶט"
+      ],
+      "words": [
+        {
+          "word": "מִכֹּל֙",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "שִׁבְטֵ֣י",
+          "lemma": "שֵׁבֶט",
+          "strong": "H7626",
+          "pron": "셰벧"
+        }
+      ],
+      "count": 26,
+      "refs": [
+        "deuteronomy 12:5",
+        "deuteronomy 18:1",
+        "deuteronomy 18:5",
+        "deuteronomy 29:21",
+        "joshua 24:1",
+        "judges 20:2",
+        "judges 20:10",
+        "judges 20:12",
+        "judges 21:5",
+        "samuel1 2:28",
+        "samuel1 10:20",
+        "samuel2 5:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלַחֲצִ֣י שֵׁ֣בֶט",
+      "pron": "바하치 셰벧",
+      "lemmas": [
+        "חֵצִי",
+        "שֵׁבֶט"
+      ],
+      "words": [
+        {
+          "word": "וְלַחֲצִ֣י",
+          "lemma": "חֵצִי",
+          "strong": "H2677",
+          "pron": "바하치"
+        },
+        {
+          "word": "שֵׁ֣בֶט",
+          "lemma": "שֵׁבֶט",
+          "strong": "H7626",
+          "pron": "셰벧"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "numbers 32:33",
+        "deuteronomy 3:13",
+        "deuteronomy 29:8",
+        "joshua 1:12",
+        "joshua 4:12",
+        "joshua 12:6",
+        "joshua 13:7",
+        "joshua 13:29",
+        "joshua 18:7",
+        "joshua 22:7",
+        "joshua 22:9",
+        "joshua 22:10"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִכֹּל֙ שִׁבְטֵ֣י יִשְׂרָאֵ֔ל",
+      "pron": "칼 셰벧 이스라엘",
+      "lemmas": [
+        "כֹּל",
+        "שֵׁבֶט",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "מִכֹּל֙",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "שִׁבְטֵ֣י",
+          "lemma": "שֵׁבֶט",
+          "strong": "H7626",
+          "pron": "셰벧"
+        },
+        {
+          "word": "יִשְׂרָאֵ֔ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 22,
+      "refs": [
+        "deuteronomy 29:21",
+        "joshua 24:1",
+        "judges 20:2",
+        "judges 20:10",
+        "judges 21:5",
+        "samuel1 2:28",
+        "samuel1 10:20",
+        "samuel2 5:1",
+        "samuel2 15:10",
+        "samuel2 19:9",
+        "samuel2 20:14",
+        "samuel2 24:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַחֲצִי֩ שֵׁ֨בֶט הַֽמְנַשֶּׁ֜ה",
+      "pron": "바하치 셰벧 메낫셰",
+      "lemmas": [
+        "חֵצִי",
+        "שֵׁבֶט",
+        "מְנַשֶּׁה"
+      ],
+      "words": [
+        {
+          "word": "וַחֲצִי֩",
+          "lemma": "חֵצִי",
+          "strong": "H2677",
+          "pron": "바하치"
+        },
+        {
+          "word": "שֵׁ֨בֶט",
+          "lemma": "שֵׁבֶט",
+          "strong": "H7626",
+          "pron": "셰벧"
+        },
+        {
+          "word": "הַֽמְנַשֶּׁ֜ה",
+          "lemma": "מְנַשֶּׁה",
+          "strong": "H4519",
+          "pron": "메낫셰"
+        }
+      ],
+      "count": 20,
+      "refs": [
+        "numbers 32:33",
+        "deuteronomy 3:13",
+        "joshua 1:12",
+        "joshua 4:12",
+        "joshua 12:6",
+        "joshua 13:7",
+        "joshua 13:29",
+        "joshua 18:7",
+        "joshua 22:7",
+        "joshua 22:9",
+        "joshua 22:10",
+        "joshua 22:11"
       ],
       "glossKo": ""
     }

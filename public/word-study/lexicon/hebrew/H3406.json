@@ -1,8 +1,8 @@
 {
   "lemma": "יְרִימוֹת",
-  "pron": "예리모트",
+  "pron": "비위리모트",
   "strong": "H3406",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "רוּם",
     "strong": "H7311",
@@ -12,43 +12,77 @@
     {
       "lemma": "יַרְמוּת",
       "strong": "H3412",
-      "pron": "",
+      "pron": "야레무트",
       "glossKo": "야르뭇"
     },
     {
       "lemma": "יְרֵמַי",
       "strong": "H3413",
-      "pron": "",
+      "pron": "예레마이",
       "glossKo": "여레매"
     },
     {
       "lemma": "יִרְמְיָה",
       "strong": "H3414",
-      "pron": "",
+      "pron": "이렘아후",
       "glossKo": "예레미야"
     },
     {
       "lemma": "מָרוֹם",
       "strong": "H4791",
-      "pron": "라마롬",
+      "pron": "메로메",
       "glossKo": "높은 곳"
     },
     {
       "lemma": "מְרֵמוֹת",
       "strong": "H4822",
-      "pron": "",
+      "pron": "메레모트",
       "glossKo": "므레못"
     },
     {
       "lemma": "רוּם",
       "strong": "H7311",
-      "pron": "우메림",
+      "pron": "바타람",
       "glossKo": "높이다"
     }
   ],
   "defEn": "Jerimoth; Jeremoth",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 15,
+  "byBook": {
+    "chronicles1": 9,
+    "ezra": 4,
+    "chronicles2": 2
+  },
+  "phrases": [
+    {
+      "hebrew": "יְרִימ֖וֹת בֶּן",
+      "pron": "비위리모트 바님",
+      "lemmas": [
+        "יְרִימוֹת",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "יְרִימ֖וֹת",
+          "lemma": "יְרִימוֹת",
+          "strong": "H3406",
+          "pron": "비위리모트"
+        },
+        {
+          "word": "בֶּן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 25:22",
+        "chronicles1 27:19",
+        "chronicles2 11:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

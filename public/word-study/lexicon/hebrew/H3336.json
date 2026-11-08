@@ -1,6 +1,6 @@
 {
   "lemma": "יֵצֶר",
-  "pron": "이체레누",
+  "pron": "예체르",
   "strong": "H3336",
   "posKo": "명사",
   "root": {
@@ -12,28 +12,68 @@
     {
       "lemma": "יָצַר",
       "strong": "H3335",
-      "pron": "요체르",
+      "pron": "바이체르",
       "glossKo": "빚다"
+    },
+    {
+      "lemma": "יֵצֶר",
+      "strong": "H3337",
+      "pron": "브예체르",
+      "glossKo": "예셀"
     },
     {
       "lemma": "יָצֻר",
       "strong": "H3338",
-      "pron": "",
-      "glossKo": "지체"
+      "pron": "비추라이",
+      "glossKo": "나의 지체"
     },
     {
       "lemma": "יִצְרִי",
       "strong": "H3339",
-      "pron": "",
+      "pron": "라이체리",
       "glossKo": "이스리"
     }
   ],
   "defEn": "form; conception",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 10,
   "byBook": {
+    "chronicles1": 2,
     "genesis": 2,
+    "habakkuk": 2,
+    "isaiah": 2,
+    "deuteronomy": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יֵ֨צֶר֙ מַחְשְׁבֹ֣ת",
+      "pron": "예체르 마헤셰보트",
+      "lemmas": [
+        "יֵצֶר",
+        "מַחֲשָׁבָה"
+      ],
+      "words": [
+        {
+          "word": "יֵ֨צֶר֙",
+          "lemma": "יֵצֶר",
+          "strong": "H3336",
+          "pron": "예체르"
+        },
+        {
+          "word": "מַחְשְׁבֹ֣ת",
+          "lemma": "מַחֲשָׁבָה",
+          "strong": "H4284",
+          "pron": "마헤셰보트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 6:5",
+        "chronicles1 28:9",
+        "chronicles1 29:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

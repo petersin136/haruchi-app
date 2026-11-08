@@ -1,8 +1,8 @@
 {
   "lemma": "חֹזֶק",
-  "pron": "호제크",
+  "pron": "브호제크",
   "strong": "H2392",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "חָזַק",
     "strong": "H2388",
@@ -12,37 +12,113 @@
     {
       "lemma": "חָזַק",
       "strong": "H2388",
-      "pron": "하자크",
+      "pron": "바야하지쿠",
       "glossKo": "강하게 하다"
     },
     {
       "lemma": "חָזָק",
       "strong": "H2389",
-      "pron": "메하자크",
+      "pron": "하자카",
       "glossKo": "강한"
     },
     {
       "lemma": "חָזֵק",
       "strong": "H2390",
-      "pron": "",
+      "pron": "브하제크",
       "glossKo": "강한"
     },
     {
       "lemma": "חֵזֶק",
       "strong": "H2391",
-      "pron": "힛키위",
+      "pron": "힛키",
       "glossKo": "나의 도움"
+    },
+    {
+      "lemma": "חׇזְקָה",
+      "strong": "H2394",
+      "pron": "브핫카",
+      "glossKo": "강성함"
     },
     {
       "lemma": "חִזְקִי",
       "strong": "H2395",
-      "pron": "",
+      "pron": "브힛키",
       "glossKo": "히스기"
     }
   ],
   "defEn": "power",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 5,
+  "byBook": {
+    "exodus": 3,
+    "amos": 1,
+    "haggai": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "בְּחֹ֣זֶק יָ֔ד",
+      "pron": "브호제크 야도",
+      "lemmas": [
+        "חֹזֶק",
+        "יָד"
+      ],
+      "words": [
+        {
+          "word": "בְּחֹ֣זֶק",
+          "lemma": "חֹזֶק",
+          "strong": "H2392",
+          "pron": "브호제크"
+        },
+        {
+          "word": "יָ֔ד",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 13:3",
+        "exodus 13:14",
+        "exodus 13:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּחֹ֣זֶק יָ֔ד הוֹצִ֧יא",
+      "pron": "브호제크 야도 바토체",
+      "lemmas": [
+        "חֹזֶק",
+        "יָד",
+        "יָצָא"
+      ],
+      "words": [
+        {
+          "word": "בְּחֹ֣זֶק",
+          "lemma": "חֹזֶק",
+          "strong": "H2392",
+          "pron": "브호제크"
+        },
+        {
+          "word": "יָ֔ד",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        },
+        {
+          "word": "הוֹצִ֧יא",
+          "lemma": "יָצָא",
+          "strong": "H3318",
+          "pron": "바토체"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 13:3",
+        "exodus 13:14",
+        "exodus 13:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

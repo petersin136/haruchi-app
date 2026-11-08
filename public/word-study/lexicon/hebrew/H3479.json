@@ -2,7 +2,7 @@
   "lemma": "יִשְׂרָאֵל",
   "pron": "이스라엘",
   "strong": "H3479",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "יִשְׂרָאֵל",
     "strong": "H3478",
@@ -18,13 +18,45 @@
     {
       "lemma": "יִשְׂרְאֵלִי",
       "strong": "H3481",
-      "pron": "",
+      "pron": "아이세레엘리",
       "glossKo": "이스라엘 사람"
     }
   ],
   "defEn": "Israel.",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 8,
+  "byBook": {
+    "ezra": 8
+  },
+  "phrases": [
+    {
+      "hebrew": "אֱלָ֥הּ יִשְׂרָאֵ֖ל",
+      "pron": "엘라하 이스라엘",
+      "lemmas": [
+        "אֱלָהּ",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "אֱלָ֥הּ",
+          "lemma": "אֱלָהּ",
+          "strong": "H426",
+          "pron": "엘라하"
+        },
+        {
+          "word": "יִשְׂרָאֵ֖ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3479",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 5:1",
+        "ezra 6:14",
+        "ezra 7:15"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

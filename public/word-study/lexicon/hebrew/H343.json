@@ -1,6 +1,6 @@
 {
   "lemma": "אֵיד",
-  "pron": "에디위",
+  "pron": "에담",
   "strong": "H343",
   "posKo": "명사",
   "root": {
@@ -18,7 +18,7 @@
     {
       "lemma": "אוּד",
       "strong": "H181",
-      "pron": "",
+      "pron": "하우딤",
       "glossKo": "타다 남은 나무"
     },
     {
@@ -36,9 +36,51 @@
   ],
   "defEn": "oppression",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 24,
   "byBook": {
-    "psalms": 1
+    "job": 6,
+    "proverbs": 6,
+    "jeremiah": 5,
+    "obadiah": 3,
+    "deuteronomy": 1,
+    "ezekiel": 1,
+    "psalms": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "י֣וֹם אֵידָ֔ם",
+      "pron": "욤 에담",
+      "lemmas": [
+        "יוֹם",
+        "אֵיד"
+      ],
+      "words": [
+        {
+          "word": "י֣וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        },
+        {
+          "word": "אֵידָ֔ם",
+          "lemma": "אֵיד",
+          "strong": "H343",
+          "pron": "에담"
+        }
+      ],
+      "count": 10,
+      "refs": [
+        "deuteronomy 32:35",
+        "samuel2 22:19",
+        "job 21:30",
+        "psalms 18:18",
+        "proverbs 27:10",
+        "jeremiah 18:17",
+        "jeremiah 46:21",
+        "obadiah 1:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

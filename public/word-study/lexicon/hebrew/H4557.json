@@ -12,25 +12,25 @@
     {
       "lemma": "סַפִּיר",
       "strong": "H5601",
-      "pron": "",
+      "pron": "아삽피르",
       "glossKo": "청옥"
     },
     {
       "lemma": "סָפַר",
       "strong": "H5608",
-      "pron": "아삽페라",
+      "pron": "우세포르",
       "glossKo": "세다"
     },
     {
       "lemma": "סְפַר",
       "strong": "H5609",
-      "pron": "",
+      "pron": "비세파르",
       "glossKo": "책(아람)"
     },
     {
       "lemma": "סְפָר",
       "strong": "H5610",
-      "pron": "",
+      "pron": "아세파르",
       "glossKo": "수"
     },
     {
@@ -42,46 +42,242 @@
     {
       "lemma": "סֹפֶרֶת",
       "strong": "H5618",
-      "pron": "",
+      "pron": "아소페레트",
       "glossKo": "소베렛"
     }
   ],
   "defEn": "number; innumerable; few",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 134,
   "byBook": {
+    "numbers": 34,
+    "chronicles1": 21,
+    "job": 13,
+    "jeremiah": 6,
     "psalms": 6,
-    "genesis": 2
+    "chronicles2": 5,
+    "ezekiel": 5,
+    "judges": 5,
+    "samuel2": 5,
+    "deuteronomy": 4,
+    "ezra": 4,
+    "leviticus": 4,
+    "ecclesiastes": 3,
+    "isaiah": 3,
+    "samuel1": 3,
+    "exodus": 2,
+    "genesis": 2,
+    "joshua": 2,
+    "daniel": 1,
+    "esther": 1,
+    "hosea": 1,
+    "joel": 1,
+    "kings1": 1,
+    "nehemiah": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "אֵ֬ין מִסְפָּ֗ר",
-      "pron": "엔 밋파르",
+      "hebrew": "בְּמִסְפַּ֣ר שֵׁמֹ֗ת",
+      "pron": "밋파르 솀",
+      "lemmas": [
+        "מִסְפָּר",
+        "שֵׁם"
+      ],
+      "words": [
+        {
+          "word": "בְּמִסְפַּ֣ר",
+          "lemma": "מִסְפָּר",
+          "strong": "H4557",
+          "pron": "밋파르"
+        },
+        {
+          "word": "שֵׁמֹ֗ת",
+          "lemma": "שֵׁם",
+          "strong": "H8034",
+          "pron": "솀"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "numbers 1:2",
+        "numbers 1:18",
+        "numbers 1:20",
+        "numbers 1:22",
+        "numbers 1:24",
+        "numbers 1:26",
+        "numbers 1:28",
+        "numbers 1:30",
+        "numbers 1:32",
+        "numbers 1:34",
+        "numbers 1:36",
+        "numbers 1:38"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵ֥ין מִסְפָּֽר",
+      "pron": "아인 밋파르",
       "lemmas": [
         "אַיִן",
         "מִסְפָּר"
       ],
       "words": [
         {
-          "word": "אֵ֬ין",
+          "word": "אֵ֥ין",
           "lemma": "אַיִן",
           "strong": "H369",
-          "pron": "엔"
+          "pron": "아인"
         },
         {
-          "word": "מִסְפָּ֗ר",
+          "word": "מִסְפָּֽר",
           "lemma": "מִסְפָּר",
           "strong": "H4557",
           "pron": "밋파르"
         }
       ],
-      "count": 5,
+      "count": 17,
       "refs": [
+        "genesis 41:49",
+        "judges 6:5",
+        "judges 7:12",
+        "chronicles1 22:4",
+        "chronicles1 22:16",
+        "chronicles2 12:3",
+        "job 5:9",
+        "job 9:10",
+        "job 21:33",
         "psalms 40:12",
         "psalms 104:25",
-        "psalms 105:34",
-        "psalms 147:5",
-        "genesis 41:49"
+        "psalms 105:34"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲבֹתָ֑ם בְּמִסְפַּ֣ר",
+      "pron": "아비브 밋파르",
+      "lemmas": [
+        "אָב",
+        "מִסְפָּר"
+      ],
+      "words": [
+        {
+          "word": "אֲבֹתָ֑ם",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        },
+        {
+          "word": "בְּמִסְפַּ֣ר",
+          "lemma": "מִסְפָּר",
+          "strong": "H4557",
+          "pron": "밋파르"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "numbers 1:2",
+        "numbers 1:18",
+        "numbers 1:20",
+        "numbers 1:24",
+        "numbers 1:26",
+        "numbers 1:28",
+        "numbers 1:30",
+        "numbers 1:32",
+        "numbers 1:34",
+        "numbers 1:36",
+        "numbers 1:38",
+        "numbers 1:40"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲבֹתָ֑ם בְּמִסְפַּ֣ר שֵׁמֹ֗ת",
+      "pron": "아비브 밋파르 솀",
+      "lemmas": [
+        "אָב",
+        "מִסְפָּר",
+        "שֵׁם"
+      ],
+      "words": [
+        {
+          "word": "אֲבֹתָ֑ם",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        },
+        {
+          "word": "בְּמִסְפַּ֣ר",
+          "lemma": "מִסְפָּר",
+          "strong": "H4557",
+          "pron": "밋파르"
+        },
+        {
+          "word": "שֵׁמֹ֗ת",
+          "lemma": "שֵׁם",
+          "strong": "H8034",
+          "pron": "솀"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "numbers 1:2",
+        "numbers 1:18",
+        "numbers 1:20",
+        "numbers 1:24",
+        "numbers 1:26",
+        "numbers 1:28",
+        "numbers 1:30",
+        "numbers 1:32",
+        "numbers 1:34",
+        "numbers 1:36",
+        "numbers 1:38",
+        "numbers 1:40"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְבֵ֣ית אֲבֹתָ֑ם בְּמִסְפַּ֣ר",
+      "pron": "미바이트 아비브 밋파르",
+      "lemmas": [
+        "בַּיִת",
+        "אָב",
+        "מִסְפָּר"
+      ],
+      "words": [
+        {
+          "word": "לְבֵ֣ית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        },
+        {
+          "word": "אֲבֹתָ֑ם",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
+        },
+        {
+          "word": "בְּמִסְפַּ֣ר",
+          "lemma": "מִסְפָּר",
+          "strong": "H4557",
+          "pron": "밋파르"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "numbers 1:2",
+        "numbers 1:18",
+        "numbers 1:20",
+        "numbers 1:24",
+        "numbers 1:26",
+        "numbers 1:28",
+        "numbers 1:30",
+        "numbers 1:32",
+        "numbers 1:34",
+        "numbers 1:36",
+        "numbers 1:38",
+        "numbers 1:40"
       ],
       "glossKo": ""
     }

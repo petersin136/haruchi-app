@@ -1,6 +1,6 @@
 {
   "lemma": "בֶּטַח",
-  "pron": "라베다흐",
+  "pron": "베다흐",
   "strong": "H983",
   "posKo": "명사",
   "root": {
@@ -12,46 +12,188 @@
     {
       "lemma": "בָּטַח",
       "strong": "H982",
-      "pron": "우빋후",
-      "glossKo": "신뢰하다"
+      "pron": "보데아흐",
+      "glossKo": "신뢰하는 이"
     },
     {
       "lemma": "בֶּטַח",
       "strong": "H984",
-      "pron": "",
+      "pron": "우미베다흐",
       "glossKo": "베다"
     },
     {
       "lemma": "בִּטָּחוֹן",
       "strong": "H986",
-      "pron": "",
+      "pron": "아빋다혼",
       "glossKo": "신뢰"
     },
     {
       "lemma": "בַּטֻּחוֹת",
       "strong": "H987",
-      "pron": "",
+      "pron": "우받두호트",
       "glossKo": "안전한 곳"
     },
     {
       "lemma": "חָסָה",
       "strong": "H2620",
-      "pron": "호세",
-      "glossKo": "피하는 이"
+      "pron": "하사우",
+      "glossKo": "피하다"
     },
     {
       "lemma": "מִבְטָח",
       "strong": "H4009",
-      "pron": "밉다흐오",
+      "pron": "밉다호",
       "glossKo": "그의 신뢰"
     }
   ],
   "defEn": "place of refuge; safety; safely",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 42,
   "byBook": {
+    "ezekiel": 11,
+    "jeremiah": 4,
+    "proverbs": 4,
+    "deuteronomy": 3,
+    "isaiah": 3,
+    "leviticus": 3,
     "psalms": 3,
-    "genesis": 1
+    "job": 2,
+    "judges": 2,
+    "genesis": 1,
+    "hosea": 1,
+    "kings1": 1,
+    "micah": 1,
+    "samuel1": 1,
+    "zechariah": 1,
+    "zephaniah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וִֽישַׁבְתֶּ֥ם לָבֶ֖טַח",
+      "pron": "바예솁 베다흐",
+      "lemmas": [
+        "יָשַׁב",
+        "בֶּטַח"
+      ],
+      "words": [
+        {
+          "word": "וִֽישַׁבְתֶּ֥ם",
+          "lemma": "יָשַׁב",
+          "strong": "H3427",
+          "pron": "바예솁"
+        },
+        {
+          "word": "לָבֶ֖טַח",
+          "lemma": "בֶּטַח",
+          "strong": "H983",
+          "pron": "베다흐"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "leviticus 25:19",
+        "leviticus 26:5",
+        "deuteronomy 12:10",
+        "judges 18:7",
+        "samuel1 12:11",
+        "proverbs 3:29",
+        "isaiah 47:8",
+        "jeremiah 32:37",
+        "jeremiah 49:31",
+        "ezekiel 28:26",
+        "ezekiel 34:28",
+        "ezekiel 38:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִשְׁכֹּ֥ן לָבֶ֖טַח",
+      "pron": "바야셱켄 베다흐",
+      "lemmas": [
+        "שָׁכַן",
+        "בֶּטַח"
+      ],
+      "words": [
+        {
+          "word": "יִשְׁכֹּ֥ן",
+          "lemma": "שָׁכַן",
+          "strong": "H7931",
+          "pron": "바야셱켄"
+        },
+        {
+          "word": "לָבֶ֖טַח",
+          "lemma": "בֶּטַח",
+          "strong": "H983",
+          "pron": "베다흐"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 33:12",
+        "psalms 16:9",
+        "proverbs 1:33",
+        "jeremiah 23:6",
+        "jeremiah 33:16"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִשְׂרָאֵ֨ל בֶּ֤טַח",
+      "pron": "이스라엘 베다흐",
+      "lemmas": [
+        "יִשְׂרָאֵל",
+        "בֶּטַח"
+      ],
+      "words": [
+        {
+          "word": "יִשְׂרָאֵ֨ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        },
+        {
+          "word": "בֶּ֤טַח",
+          "lemma": "בֶּטַח",
+          "strong": "H983",
+          "pron": "베다흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 33:28",
+        "kings1 4:25",
+        "ezekiel 38:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לָבֶ֑טַח וְֽיָדְע֞וּ",
+      "pron": "베다흐 요데아",
+      "lemmas": [
+        "בֶּטַח",
+        "יָדַע"
+      ],
+      "words": [
+        {
+          "word": "לָבֶ֑טַח",
+          "lemma": "בֶּטַח",
+          "strong": "H983",
+          "pron": "베다흐"
+        },
+        {
+          "word": "וְֽיָדְע֞וּ",
+          "lemma": "יָדַע",
+          "strong": "H3045",
+          "pron": "요데아"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 34:27",
+        "ezekiel 38:14",
+        "ezekiel 39:6"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

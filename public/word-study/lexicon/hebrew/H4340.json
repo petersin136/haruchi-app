@@ -1,6 +1,6 @@
 {
   "lemma": "מֵיתָר",
-  "pron": "브메타레카",
+  "pron": "메테레헴",
   "strong": "H4340",
   "posKo": "명사",
   "root": {
@@ -12,31 +12,31 @@
     {
       "lemma": "הוֹתִיר",
       "strong": "H1956",
-      "pron": "",
+      "pron": "호티르",
       "glossKo": "호딜"
     },
     {
       "lemma": "יוֹתֵר",
       "strong": "H3148",
-      "pron": "",
+      "pron": "요테르",
       "glossKo": "넘침"
     },
     {
       "lemma": "יָתוּר",
       "strong": "H3491",
-      "pron": "",
+      "pron": "예투르",
       "glossKo": "남은 것"
     },
     {
       "lemma": "יַתִּיר",
       "strong": "H3492",
-      "pron": "",
+      "pron": "브얏티르",
       "glossKo": "얏딜"
     },
     {
       "lemma": "יָתַר",
       "strong": "H3498",
-      "pron": "호테르",
+      "pron": "아노타로트",
       "glossKo": "남기다"
     },
     {
@@ -48,9 +48,44 @@
   ],
   "defEn": "cord; string",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 9,
   "byBook": {
+    "numbers": 4,
+    "exodus": 2,
+    "isaiah": 1,
+    "jeremiah": 1,
     "psalms": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְאֶת מֵיתְרֵיהֶֽם",
+      "pron": "에트 메테레헴",
+      "lemmas": [
+        "אֵת",
+        "מֵיתָר"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "מֵיתְרֵיהֶֽם",
+          "lemma": "מֵיתָר",
+          "strong": "H4340",
+          "pron": "메테레헴"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 35:18",
+        "exodus 39:40",
+        "numbers 3:26",
+        "numbers 4:26"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

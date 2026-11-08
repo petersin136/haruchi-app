@@ -1,6 +1,6 @@
 {
   "lemma": "חָזָה",
-  "pron": "예헤주",
+  "pron": "테헤제",
   "strong": "H2372",
   "posKo": "동사",
   "root": null,
@@ -8,31 +8,31 @@
     {
       "lemma": "הָזָה",
       "strong": "H1957",
-      "pron": "",
+      "pron": "호짐",
       "glossKo": "꿈을 꾸다"
     },
     {
       "lemma": "חֲזָא",
       "strong": "H2370",
-      "pron": "",
+      "pron": "르메헤제",
       "glossKo": "보다(아람)"
     },
     {
       "lemma": "חֲזָאֵל",
       "strong": "H2371",
-      "pron": "",
+      "pron": "하자엘",
       "glossKo": "하사엘"
     },
     {
       "lemma": "חָזֶה",
       "strong": "H2373",
-      "pron": "",
+      "pron": "헤하제",
       "glossKo": "가슴"
     },
     {
       "lemma": "חֹזֶה",
       "strong": "H2374",
-      "pron": "",
+      "pron": "호제",
       "glossKo": "선견자"
     },
     {
@@ -44,9 +44,178 @@
   ],
   "defEn": "gaze; perceive; contemplate; have a vision of",
   "defKo": "",
-  "countOT": 9,
+  "countOT": 51,
   "byBook": {
-    "psalms": 9
+    "isaiah": 11,
+    "job": 9,
+    "psalms": 9,
+    "ezekiel": 6,
+    "proverbs": 3,
+    "exodus": 2,
+    "lamentations": 2,
+    "micah": 2,
+    "numbers": 2,
+    "songofsolomon": 2,
+    "amos": 1,
+    "habakkuk": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲשֶׁ֣ר חָזָ֔ה",
+      "pron": "아셰르 테헤제",
+      "lemmas": [
+        "אֲשֶׁר",
+        "חָזָה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "חָזָ֔ה",
+          "lemma": "חָזָה",
+          "strong": "H2372",
+          "pron": "테헤제"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "isaiah 1:1",
+        "isaiah 2:1",
+        "isaiah 13:1",
+        "amos 1:1",
+        "micah 1:1",
+        "habakkuk 1:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹא אָ֑חַז",
+      "pron": "로 테헤제",
+      "lemmas": [
+        "לֹא",
+        "חָזָה"
+      ],
+      "words": [
+        {
+          "word": "וְלֹא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "אָ֑חַז",
+          "lemma": "חָזָה",
+          "strong": "H2372",
+          "pron": "테헤제"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 23:9",
+        "job 24:1",
+        "isaiah 30:10",
+        "ezekiel 13:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֣ר חָזָ֔ה עַל",
+      "pron": "아셰르 테헤제 알",
+      "lemmas": [
+        "אֲשֶׁר",
+        "חָזָה",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "חָזָ֔ה",
+          "lemma": "חָזָה",
+          "strong": "H2372",
+          "pron": "테헤제"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 1:1",
+        "amos 1:1",
+        "micah 1:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָזָ֔ה עַל",
+      "pron": "테헤제 알",
+      "lemmas": [
+        "חָזָה",
+        "עַל"
+      ],
+      "words": [
+        {
+          "word": "חָזָ֔ה",
+          "lemma": "חָזָה",
+          "strong": "H2372",
+          "pron": "테헤제"
+        },
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 1:1",
+        "amos 1:1",
+        "micah 1:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "חָ֤זוּ שָׁ֣וְא",
+      "pron": "테헤제 라샤베",
+      "lemmas": [
+        "חָזָה",
+        "שָׁוְא"
+      ],
+      "words": [
+        {
+          "word": "חָ֤זוּ",
+          "lemma": "חָזָה",
+          "strong": "H2372",
+          "pron": "테헤제"
+        },
+        {
+          "word": "שָׁ֣וְא",
+          "lemma": "שָׁוְא",
+          "strong": "H7723",
+          "pron": "라샤베"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "lamentations 2:14",
+        "ezekiel 13:6",
+        "ezekiel 21:29"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

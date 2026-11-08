@@ -1,6 +1,6 @@
 {
   "lemma": "יָשֵׁן",
-  "pron": "바이샤나",
+  "pron": "바이샨",
   "strong": "H3462",
   "posKo": "동사",
   "root": null,
@@ -8,20 +8,20 @@
     {
       "lemma": "יָשֵׁן",
       "strong": "H3463",
-      "pron": "크야셴",
+      "pron": "야셴",
       "glossKo": "잠자는"
     },
     {
       "lemma": "יָשָׁן",
       "strong": "H3465",
-      "pron": "",
+      "pron": "야샨",
       "glossKo": "오래된"
     },
     {
       "lemma": "שֵׁנָה",
       "strong": "H8142",
-      "pron": "셰나타므",
-      "glossKo": "그들의 잠"
+      "pron": "밋셰나토",
+      "glossKo": "그의 잠"
     },
     {
       "lemma": "שְׁנָת",
@@ -32,10 +32,81 @@
   ],
   "defEn": "be slack; languid; sleep; die",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 21,
   "byBook": {
     "psalms": 5,
-    "genesis": 2
+    "genesis": 2,
+    "jeremiah": 2,
+    "leviticus": 2,
+    "deuteronomy": 1,
+    "ecclesiastes": 1,
+    "ezekiel": 1,
+    "isaiah": 1,
+    "job": 1,
+    "judges": 1,
+    "kings1": 1,
+    "proverbs": 1,
+    "samuel1": 1,
+    "songofsolomon": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיִּשְׁכַּב֙ וַיִּישַׁ֔ן",
+      "pron": "이셱카부 바이샨",
+      "lemmas": [
+        "שָׁכַב",
+        "יָשֵׁן"
+      ],
+      "words": [
+        {
+          "word": "וַיִּשְׁכַּב֙",
+          "lemma": "שָׁכַב",
+          "strong": "H7901",
+          "pron": "이셱카부"
+        },
+        {
+          "word": "וַיִּישַׁ֔ן",
+          "lemma": "יָשֵׁן",
+          "strong": "H3462",
+          "pron": "바이샨"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 19:5",
+        "psalms 3:5",
+        "psalms 4:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְלֹ֣א יִישָׁ֑ן",
+      "pron": "로 바이샨",
+      "lemmas": [
+        "לֹא",
+        "יָשֵׁן"
+      ],
+      "words": [
+        {
+          "word": "וְלֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "יִישָׁ֑ן",
+          "lemma": "יָשֵׁן",
+          "strong": "H3462",
+          "pron": "바이샨"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 121:4",
+        "proverbs 4:16",
+        "isaiah 5:27"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

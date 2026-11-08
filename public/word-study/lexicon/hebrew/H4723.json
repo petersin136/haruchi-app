@@ -12,25 +12,25 @@
     {
       "lemma": "מִקְוָה",
       "strong": "H4724",
-      "pron": "",
+      "pron": "우미케바",
       "glossKo": "저수지"
     },
     {
       "lemma": "קַו",
       "strong": "H6957",
-      "pron": "카바므",
-      "glossKo": "그들의 줄"
+      "pron": "카브",
+      "glossKo": "줄"
     },
     {
       "lemma": "קָוָה",
       "strong": "H6960",
-      "pron": "코베카",
-      "glossKo": "너의 모이다"
+      "pron": "익카부",
+      "glossKo": "모이다"
     },
     {
       "lemma": "קָוֶה",
       "strong": "H6961",
-      "pron": "",
+      "pron": "브크브",
       "glossKo": "줄"
     },
     {
@@ -42,9 +42,75 @@
   ],
   "defEn": "waited; confidence",
   "defKo": "",
-  "countOT": 1,
+  "countOT": 12,
   "byBook": {
-    "genesis": 1
+    "jeremiah": 3,
+    "chronicles2": 2,
+    "kings1": 2,
+    "chronicles1": 1,
+    "exodus": 1,
+    "ezra": 1,
+    "genesis": 1,
+    "leviticus": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וּלְמִקְוֵ֥ה הַמַּ֖יִם",
+      "pron": "우르미케베 아마임",
+      "lemmas": [
+        "מִקְוֶה",
+        "מַיִם"
+      ],
+      "words": [
+        {
+          "word": "וּלְמִקְוֵ֥ה",
+          "lemma": "מִקְוֶה",
+          "strong": "H4723",
+          "pron": "우르미케베"
+        },
+        {
+          "word": "הַמַּ֖יִם",
+          "lemma": "מַיִם",
+          "strong": "H4325",
+          "pron": "아마임"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 1:10",
+        "exodus 7:19",
+        "leviticus 11:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "מִקְוֶ֥ה לְיִשְׂרָאֵ֖ל",
+      "pron": "우르미케베 이스라엘",
+      "lemmas": [
+        "מִקְוֶה",
+        "יִשְׂרָאֵל"
+      ],
+      "words": [
+        {
+          "word": "מִקְוֶ֥ה",
+          "lemma": "מִקְוֶה",
+          "strong": "H4723",
+          "pron": "우르미케베"
+        },
+        {
+          "word": "לְיִשְׂרָאֵ֖ל",
+          "lemma": "יִשְׂרָאֵל",
+          "strong": "H3478",
+          "pron": "이스라엘"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezra 10:2",
+        "jeremiah 14:8",
+        "jeremiah 17:13"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

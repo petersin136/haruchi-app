@@ -1,6 +1,6 @@
 {
   "lemma": "מִבְטָח",
-  "pron": "밉다흐오",
+  "pron": "밉다호",
   "strong": "H4009",
   "posKo": "명사",
   "root": {
@@ -12,39 +12,76 @@
     {
       "lemma": "בָּטַח",
       "strong": "H982",
-      "pron": "우빋후",
-      "glossKo": "신뢰하다"
+      "pron": "보데아흐",
+      "glossKo": "신뢰하는 이"
     },
     {
       "lemma": "בֶּטַח",
       "strong": "H983",
-      "pron": "라베다흐",
+      "pron": "베다흐",
       "glossKo": "안전"
     },
     {
       "lemma": "בִּטָּחוֹן",
       "strong": "H986",
-      "pron": "",
+      "pron": "아빋다혼",
       "glossKo": "신뢰"
     },
     {
       "lemma": "בַּטֻּחוֹת",
       "strong": "H987",
-      "pron": "",
+      "pron": "우받두호트",
       "glossKo": "안전한 곳"
     },
     {
       "lemma": "חָסָה",
       "strong": "H2620",
-      "pron": "호세",
-      "glossKo": "피하는 이"
+      "pron": "하사우",
+      "glossKo": "피하다"
     }
   ],
   "defEn": "refuge; security; assurance",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 15,
   "byBook": {
-    "psalms": 3
+    "proverbs": 4,
+    "jeremiah": 3,
+    "job": 3,
+    "psalms": 3,
+    "ezekiel": 1,
+    "isaiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "יְ֭הֹוָה מִבְטַח֑וֹ",
+      "pron": "여호와 밉다호",
+      "lemmas": [
+        "יְהֹוָה",
+        "מִבְטָח"
+      ],
+      "words": [
+        {
+          "word": "יְ֭הֹוָה",
+          "lemma": "יְהֹוָה",
+          "strong": "H3068",
+          "pron": "여호와"
+        },
+        {
+          "word": "מִבְטַח֑וֹ",
+          "lemma": "מִבְטָח",
+          "strong": "H4009",
+          "pron": "밉다호"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "psalms 40:4",
+        "proverbs 14:26",
+        "proverbs 22:19",
+        "jeremiah 2:37",
+        "jeremiah 17:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

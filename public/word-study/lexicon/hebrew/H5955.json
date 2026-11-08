@@ -1,8 +1,8 @@
 {
   "lemma": "עֹלֵלָה",
-  "pron": "올렐라",
+  "pron": "올로트",
   "strong": "H5955",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "עָלַל",
     "strong": "H5953",
@@ -12,13 +12,13 @@
     {
       "lemma": "מַעֲלָל",
       "strong": "H4611",
-      "pron": "마알레헴",
-      "glossKo": "그들의 행위"
+      "pron": "마알랄레카",
+      "glossKo": "너의 행위"
     },
     {
       "lemma": "עֹל",
       "strong": "H5923",
-      "pron": "울오",
+      "pron": "울로",
       "glossKo": "그의 멍에"
     },
     {
@@ -30,25 +30,61 @@
     {
       "lemma": "עֲלִילָה",
       "strong": "H5949",
-      "pron": "알릴로타이브",
-      "glossKo": "그의 행적"
+      "pron": "알릴로트",
+      "glossKo": "행적"
     },
     {
       "lemma": "עָלַל",
       "strong": "H5953",
-      "pron": "르히테올렐",
-      "glossKo": "이삭을 줍다를 따라"
+      "pron": "히테알랄티",
+      "glossKo": "이삭을 줍다"
     },
     {
       "lemma": "עֲלַל",
       "strong": "H5954",
-      "pron": "",
+      "pron": "알",
       "glossKo": "들어가다(아람)"
     }
   ],
   "defEn": "gleanings",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "isaiah": 2,
+    "jeremiah": 1,
+    "judges": 1,
+    "micah": 1,
+    "obadiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "וְנִשְׁאַר עֽוֹלֵלֹת֙",
+      "pron": "바잇샤에르 올로트",
+      "lemmas": [
+        "שָׁאַר",
+        "עֹלֵלָה"
+      ],
+      "words": [
+        {
+          "word": "וְנִשְׁאַר",
+          "lemma": "שָׁאַר",
+          "strong": "H7604",
+          "pron": "바잇샤에르"
+        },
+        {
+          "word": "עֽוֹלֵלֹת֙",
+          "lemma": "עֹלֵלָה",
+          "strong": "H5955",
+          "pron": "올로트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 17:6",
+        "jeremiah 49:9",
+        "obadiah 1:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

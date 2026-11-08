@@ -1,6 +1,6 @@
 {
   "lemma": "יָצַר",
-  "pron": "요체르",
+  "pron": "바이체르",
   "strong": "H3335",
   "posKo": "동사",
   "root": {
@@ -18,28 +18,188 @@
     {
       "lemma": "יֵצֶר",
       "strong": "H3336",
-      "pron": "이체레누",
-      "glossKo": "우리의 생각"
+      "pron": "예체르",
+      "glossKo": "생각"
     },
     {
       "lemma": "יָצֻר",
       "strong": "H3338",
-      "pron": "",
-      "glossKo": "지체"
+      "pron": "비추라이",
+      "glossKo": "나의 지체"
     },
     {
       "lemma": "יִצְרִי",
       "strong": "H3339",
-      "pron": "",
+      "pron": "라이체리",
       "glossKo": "이스리"
     }
   ],
   "defEn": "mould; potter; determine",
   "defKo": "",
-  "countOT": 11,
+  "countOT": 63,
   "byBook": {
+    "isaiah": 27,
+    "jeremiah": 14,
     "psalms": 8,
-    "genesis": 3
+    "genesis": 3,
+    "zechariah": 3,
+    "amos": 2,
+    "chronicles1": 1,
+    "exodus": 1,
+    "habakkuk": 1,
+    "kings2": 1,
+    "lamentations": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "מִיָּדָ֗ם וַיָּ֤צַר",
+      "pron": "야도 바이체르",
+      "lemmas": [
+        "יָד",
+        "יָצַר"
+      ],
+      "words": [
+        {
+          "word": "מִיָּדָ֗ם",
+          "lemma": "יָד",
+          "strong": "H3027",
+          "pron": "야도"
+        },
+        {
+          "word": "וַיָּ֤צַר",
+          "lemma": "יָצַר",
+          "strong": "H3335",
+          "pron": "바이체르"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "exodus 32:4",
+        "psalms 95:5",
+        "jeremiah 18:4",
+        "jeremiah 18:6",
+        "lamentations 4:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְיֹצֶרְךָ֥ מִבֶּ֖טֶן",
+      "pron": "바이체르 베빋네크",
+      "lemmas": [
+        "יָצַר",
+        "בֶּטֶן"
+      ],
+      "words": [
+        {
+          "word": "וְיֹצֶרְךָ֥",
+          "lemma": "יָצַר",
+          "strong": "H3335",
+          "pron": "바이체르"
+        },
+        {
+          "word": "מִבֶּ֖טֶן",
+          "lemma": "בֶּטֶן",
+          "strong": "H990",
+          "pron": "베빋네크"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "isaiah 44:2",
+        "isaiah 44:24",
+        "isaiah 49:5",
+        "jeremiah 1:5"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּכְלִ֣י יוֹצֵ֔ר",
+      "pron": "켈레 바이체르",
+      "lemmas": [
+        "כְּלִי",
+        "יָצַר"
+      ],
+      "words": [
+        {
+          "word": "וּכְלִ֣י",
+          "lemma": "כְּלִי",
+          "strong": "H3627",
+          "pron": "켈레"
+        },
+        {
+          "word": "יוֹצֵ֔ר",
+          "lemma": "יָצַר",
+          "strong": "H3335",
+          "pron": "바이체르"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 17:28",
+        "psalms 2:9",
+        "isaiah 54:17",
+        "jeremiah 19:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַתָּ֥ה יְצַרְתָּם",
+      "pron": "앗타 바이체르",
+      "lemmas": [
+        "אַתָּה",
+        "יָצַר"
+      ],
+      "words": [
+        {
+          "word": "אַתָּ֥ה",
+          "lemma": "אַתָּה",
+          "strong": "H859",
+          "pron": "앗타"
+        },
+        {
+          "word": "יְצַרְתָּם",
+          "lemma": "יָצַר",
+          "strong": "H3335",
+          "pron": "바이체르"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 74:17",
+        "isaiah 44:21",
+        "isaiah 64:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יֻצָּ֑רוּ ולא",
+      "pron": "바이체르 로",
+      "lemmas": [
+        "יָצַר",
+        "לֹא"
+      ],
+      "words": [
+        {
+          "word": "יֻצָּ֑רוּ",
+          "lemma": "יָצַר",
+          "strong": "H3335",
+          "pron": "바이체르"
+        },
+        {
+          "word": "ולא",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 139:16",
+        "isaiah 27:11",
+        "isaiah 29:16"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

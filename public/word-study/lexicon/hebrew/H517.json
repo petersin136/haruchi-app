@@ -1,6 +1,6 @@
 {
   "lemma": "אֵם",
-  "pron": "임미위",
+  "pron": "임모",
   "strong": "H517",
   "posKo": "명사",
   "root": null,
@@ -14,116 +14,242 @@
     {
       "lemma": "אֻמַּה",
       "strong": "H523",
-      "pron": "하움밈",
-      "glossKo": "백성"
+      "pron": "레움모탐",
+      "glossKo": "그들의 백성"
     },
     {
       "lemma": "אֲמָם",
       "strong": "H538",
-      "pron": "",
+      "pron": "아맘",
       "glossKo": "아맘"
     }
   ],
   "defEn": "mother",
   "defKo": "",
-  "countOT": 38,
+  "countOT": 220,
   "byBook": {
     "genesis": 26,
-    "psalms": 12
+    "kings2": 22,
+    "judges": 20,
+    "kings1": 16,
+    "leviticus": 15,
+    "proverbs": 14,
+    "deuteronomy": 13,
+    "chronicles2": 12,
+    "psalms": 12,
+    "ezekiel": 10,
+    "jeremiah": 9,
+    "exodus": 7,
+    "songofsolomon": 7,
+    "isaiah": 5,
+    "hosea": 4,
+    "samuel1": 4,
+    "job": 3,
+    "joshua": 3,
+    "lamentations": 3,
+    "samuel2": 3,
+    "chronicles1": 2,
+    "esther": 2,
+    "numbers": 2,
+    "ruth": 2,
+    "zechariah": 2,
+    "ecclesiastes": 1,
+    "micah": 1
   },
   "phrases": [
     {
-      "hebrew": "לְאָחִ֖יהָ וּלְאִמָּֽהּ",
-      "pron": "르에하위 임미위",
+      "hebrew": "אָבִ֛יו וְאִמּ֖וֹ",
+      "pron": "아비브 임모",
       "lemmas": [
-        "אָח",
+        "אָב",
         "אֵם"
       ],
       "words": [
         {
-          "word": "לְאָחִ֖יהָ",
-          "lemma": "אָח",
-          "strong": "H251",
-          "pron": "르에하위"
+          "word": "אָבִ֛יו",
+          "lemma": "אָב",
+          "strong": "H1",
+          "pron": "아비브"
         },
         {
-          "word": "וּלְאִמָּֽהּ",
+          "word": "וְאִמּ֖וֹ",
           "lemma": "אֵם",
           "strong": "H517",
-          "pron": "임미위"
+          "pron": "임모"
         }
       ],
-      "count": 6,
+      "count": 33,
       "refs": [
-        "genesis 24:53",
-        "genesis 24:55",
         "genesis 28:2",
-        "genesis 29:10"
+        "exodus 21:15",
+        "exodus 21:17",
+        "leviticus 20:9",
+        "leviticus 21:11",
+        "numbers 6:7",
+        "deuteronomy 21:19",
+        "deuteronomy 27:16",
+        "deuteronomy 33:9",
+        "judges 9:1",
+        "judges 14:2",
+        "judges 14:3"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "בְּבֶֽן אִ֝מְּךָ֗",
-      "pron": "베니위 임미위",
+      "hebrew": "וְשֵׁ֣ם אִמּ֔וֹ",
+      "pron": "솀 임모",
       "lemmas": [
-        "בֵּן",
+        "שֵׁם",
         "אֵם"
       ],
       "words": [
         {
-          "word": "בְּבֶֽן",
-          "lemma": "בֵּן",
-          "strong": "H1121",
-          "pron": "베니위"
+          "word": "וְשֵׁ֣ם",
+          "lemma": "שֵׁם",
+          "strong": "H8034",
+          "pron": "솀"
         },
         {
-          "word": "אִ֝מְּךָ֗",
+          "word": "אִמּ֔וֹ",
           "lemma": "אֵם",
           "strong": "H517",
-          "pron": "임미위"
+          "pron": "임모"
         }
       ],
-      "count": 4,
+      "count": 30,
       "refs": [
-        "psalms 50:20",
-        "psalms 69:8",
-        "genesis 27:29",
-        "genesis 43:29"
+        "leviticus 24:11",
+        "kings1 11:26",
+        "kings1 14:21",
+        "kings1 14:31",
+        "kings1 15:2",
+        "kings1 15:10",
+        "kings1 22:42",
+        "kings2 8:26",
+        "kings2 12:1",
+        "kings2 14:2",
+        "kings2 15:2",
+        "kings2 15:33"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "לָבָ֖ן אֲחִ֥י אִמֶּֽךָ",
-      "pron": "라반 르에하위 임미위",
+      "hebrew": "בִּירוּשָׁלִָ֑ם וְשֵׁ֣ם אִמּ֔וֹ",
+      "pron": "예루살렘 솀 임모",
       "lemmas": [
-        "לָבָן",
-        "אָח",
+        "יְרוּשָׁלִַ͏ם",
+        "שֵׁם",
         "אֵם"
       ],
       "words": [
         {
-          "word": "לָבָ֖ן",
-          "lemma": "לָבָן",
-          "strong": "H3837",
-          "pron": "라반"
+          "word": "בִּירוּשָׁלִָ֑ם",
+          "lemma": "יְרוּשָׁלִַ͏ם",
+          "strong": "H3389",
+          "pron": "예루살렘"
         },
         {
-          "word": "אֲחִ֥י",
-          "lemma": "אָח",
-          "strong": "H251",
-          "pron": "르에하위"
+          "word": "וְשֵׁ֣ם",
+          "lemma": "שֵׁם",
+          "strong": "H8034",
+          "pron": "솀"
         },
         {
-          "word": "אִמֶּֽךָ",
+          "word": "אִמּ֔וֹ",
           "lemma": "אֵם",
           "strong": "H517",
-          "pron": "임미위"
+          "pron": "임모"
         }
       ],
-      "count": 4,
+      "count": 25,
       "refs": [
-        "genesis 28:2",
-        "genesis 29:10"
+        "kings1 15:2",
+        "kings1 15:10",
+        "kings1 22:42",
+        "kings2 8:26",
+        "kings2 12:1",
+        "kings2 14:2",
+        "kings2 15:2",
+        "kings2 15:33",
+        "kings2 18:2",
+        "kings2 21:1",
+        "kings2 21:19",
+        "kings2 22:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאֶת אִמָּ֖הּ",
+      "pron": "에트 임모",
+      "lemmas": [
+        "אֵת",
+        "אֵם"
+      ],
+      "words": [
+        {
+          "word": "וְאֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "אִמָּ֖הּ",
+          "lemma": "אֵם",
+          "strong": "H517",
+          "pron": "임모"
+        }
+      ],
+      "count": 14,
+      "refs": [
+        "genesis 2:24",
+        "exodus 2:8",
+        "exodus 20:12",
+        "leviticus 20:9",
+        "leviticus 20:14",
+        "deuteronomy 5:16",
+        "deuteronomy 21:13",
+        "deuteronomy 22:7",
+        "joshua 2:13",
+        "joshua 2:18",
+        "joshua 6:23",
+        "kings2 24:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אִמּ֑וֹ וַתֹּ֤אמֶר",
+      "pron": "임모 바요메르",
+      "lemmas": [
+        "אֵם",
+        "אָמַר"
+      ],
+      "words": [
+        {
+          "word": "אִמּ֑וֹ",
+          "lemma": "אֵם",
+          "strong": "H517",
+          "pron": "임모"
+        },
+        {
+          "word": "וַתֹּ֤אמֶר",
+          "lemma": "אָמַר",
+          "strong": "H559",
+          "pron": "바요메르"
+        }
+      ],
+      "count": 11,
+      "refs": [
+        "genesis 30:14",
+        "genesis 43:29",
+        "deuteronomy 27:16",
+        "deuteronomy 27:22",
+        "judges 9:1",
+        "judges 14:2",
+        "judges 17:3",
+        "kings1 17:23",
+        "kings2 3:13",
+        "proverbs 28:24",
+        "lamentations 2:12"
       ],
       "glossKo": ""
     }

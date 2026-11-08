@@ -2,7 +2,7 @@
   "lemma": "קֶדֶשׁ",
   "pron": "케데쉬",
   "strong": "H6943",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "קָדַשׁ",
     "strong": "H6942",
@@ -12,13 +12,13 @@
     {
       "lemma": "מִקְדָּשׁ",
       "strong": "H4720",
-      "pron": "미미켇다셰이카",
-      "glossKo": "너의 성소"
+      "pron": "믹케다쉬",
+      "glossKo": "성소"
     },
     {
       "lemma": "קָדוֹשׁ",
       "strong": "H6918",
-      "pron": "리케도심",
+      "pron": "카도쉬",
       "glossKo": "거룩한"
     },
     {
@@ -30,19 +30,121 @@
     {
       "lemma": "קֹדֶשׁ",
       "strong": "H6944",
-      "pron": "칻시위",
-      "glossKo": "나의 거룩"
+      "pron": "코데쉬",
+      "glossKo": "거룩"
     },
     {
       "lemma": "קָדֵשׁ",
       "strong": "H6945",
-      "pron": "",
+      "pron": "카데쉬",
       "glossKo": "신전 창기"
     }
   ],
   "defEn": "Kedesh",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 12,
+  "byBook": {
+    "joshua": 5,
+    "judges": 4,
+    "chronicles1": 2,
+    "kings2": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "אֶת קֶ֤דֶשׁ",
+      "pron": "에트 케데쉬",
+      "lemmas": [
+        "אֵת",
+        "קֶדֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "קֶ֤דֶשׁ",
+          "lemma": "קֶדֶשׁ",
+          "strong": "H6943",
+          "pron": "케데쉬"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "joshua 20:7",
+        "joshua 21:32",
+        "kings2 15:29",
+        "chronicles1 6:72",
+        "chronicles1 6:76"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶת קֶ֤דֶשׁ בַּגָּלִיל֙",
+      "pron": "에트 케데쉬 바갈릴",
+      "lemmas": [
+        "אֵת",
+        "קֶדֶשׁ",
+        "גָּלִיל"
+      ],
+      "words": [
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "קֶ֤דֶשׁ",
+          "lemma": "קֶדֶשׁ",
+          "strong": "H6943",
+          "pron": "케데쉬"
+        },
+        {
+          "word": "בַּגָּלִיל֙",
+          "lemma": "גָּלִיל",
+          "strong": "H1551",
+          "pron": "바갈릴"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 20:7",
+        "joshua 21:32",
+        "chronicles1 6:76"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "קֶ֤דֶשׁ בַּגָּלִיל֙",
+      "pron": "케데쉬 바갈릴",
+      "lemmas": [
+        "קֶדֶשׁ",
+        "גָּלִיל"
+      ],
+      "words": [
+        {
+          "word": "קֶ֤דֶשׁ",
+          "lemma": "קֶדֶשׁ",
+          "strong": "H6943",
+          "pron": "케데쉬"
+        },
+        {
+          "word": "בַּגָּלִיל֙",
+          "lemma": "גָּלִיל",
+          "strong": "H1551",
+          "pron": "바갈릴"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joshua 20:7",
+        "joshua 21:32",
+        "chronicles1 6:76"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

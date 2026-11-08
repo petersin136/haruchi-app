@@ -1,8 +1,8 @@
 {
   "lemma": "אֲדַמְדָּם",
-  "pron": "아담담",
+  "pron": "아담다메트",
   "strong": "H125",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "אָדַם",
     "strong": "H119",
@@ -12,7 +12,7 @@
     {
       "lemma": "אָדַם",
       "strong": "H119",
-      "pron": "",
+      "pron": "메앋다밈",
       "glossKo": "붉다"
     },
     {
@@ -30,19 +30,58 @@
     {
       "lemma": "אֹדֶם",
       "strong": "H124",
-      "pron": "",
+      "pron": "오뎀",
       "glossKo": "홍보석"
     },
     {
       "lemma": "אֲדָמָה",
       "strong": "H127",
-      "pron": "아다모트",
+      "pron": "하아다마",
       "glossKo": "땅"
+    },
+    {
+      "lemma": "אַדְמֹנִי",
+      "strong": "H132",
+      "pron": "앋모니",
+      "glossKo": "붉은"
     }
   ],
   "defEn": "reddish",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 6,
+  "byBook": {
+    "leviticus": 6
+  },
+  "phrases": [
+    {
+      "hebrew": "לְבָנָ֣ה אֲדַמְדָּ֑מֶת",
+      "pron": "라반 아담다메트",
+      "lemmas": [
+        "לָבָן",
+        "אֲדַמְדָּם"
+      ],
+      "words": [
+        {
+          "word": "לְבָנָ֣ה",
+          "lemma": "לָבָן",
+          "strong": "H3836",
+          "pron": "라반"
+        },
+        {
+          "word": "אֲדַמְדָּ֑מֶת",
+          "lemma": "אֲדַמְדָּם",
+          "strong": "H125",
+          "pron": "아담다메트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 13:19",
+        "leviticus 13:24",
+        "leviticus 13:42",
+        "leviticus 13:43"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

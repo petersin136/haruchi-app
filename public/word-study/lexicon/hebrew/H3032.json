@@ -1,8 +1,8 @@
 {
   "lemma": "יָדַד",
-  "pron": "야닫",
+  "pron": "얃두",
   "strong": "H3032",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "יָדָה",
     "strong": "H3034",
@@ -12,37 +12,77 @@
     {
       "lemma": "הָדָה",
       "strong": "H1911",
-      "pron": "",
+      "pron": "하다",
       "glossKo": "내밀다"
     },
     {
       "lemma": "יְדָא",
       "strong": "H3029",
-      "pron": "",
+      "pron": "메호데",
       "glossKo": "찬양하다(아람)"
     },
     {
       "lemma": "יָדָה",
       "strong": "H3034",
-      "pron": "요데",
+      "pron": "오데",
       "glossKo": "찬송하다"
     },
     {
       "lemma": "יִדּוֹ",
       "strong": "H3035",
-      "pron": "",
+      "pron": "읻도",
       "glossKo": "잇도"
     },
     {
       "lemma": "יָדוֹן",
       "strong": "H3036",
-      "pron": "",
+      "pron": "브야돈",
       "glossKo": "야돈"
+    },
+    {
+      "lemma": "יְדוּתוּן",
+      "strong": "H3038",
+      "pron": "예두툰",
+      "glossKo": "여두둔"
     }
   ],
   "defEn": "handle; throw; lots",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 3,
+  "byBook": {
+    "joel": 1,
+    "nahum": 1,
+    "obadiah": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "יַדּ֣וּ גוֹרָ֔ל",
+      "pron": "얃두 고랄로트",
+      "lemmas": [
+        "יָדַד",
+        "גּוֹרָל"
+      ],
+      "words": [
+        {
+          "word": "יַדּ֣וּ",
+          "lemma": "יָדַד",
+          "strong": "H3032",
+          "pron": "얃두"
+        },
+        {
+          "word": "גוֹרָ֔ל",
+          "lemma": "גּוֹרָל",
+          "strong": "H1486",
+          "pron": "고랄로트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "joel 3:3",
+        "obadiah 1:11",
+        "nahum 3:10"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

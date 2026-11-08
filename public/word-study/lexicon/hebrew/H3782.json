@@ -1,6 +1,6 @@
 {
   "lemma": "כָּשַׁל",
-  "pron": "익카셸루",
+  "pron": "브카셸루",
   "strong": "H3782",
   "posKo": "동사",
   "root": null,
@@ -14,7 +14,7 @@
     {
       "lemma": "כִּשָּׁלוֹן",
       "strong": "H3783",
-      "pron": "",
+      "pron": "킷샬론",
       "glossKo": "넘어짐"
     },
     {
@@ -26,15 +26,180 @@
     {
       "lemma": "מַכְשֵׁלָה",
       "strong": "H4384",
-      "pron": "",
+      "pron": "브아마케셸라",
       "glossKo": "걸려 넘어지는 것"
     }
   ],
   "defEn": "totter; waver",
   "defKo": "",
-  "countOT": 7,
+  "countOT": 65,
   "byBook": {
-    "psalms": 7
+    "isaiah": 11,
+    "jeremiah": 11,
+    "psalms": 7,
+    "daniel": 6,
+    "hosea": 6,
+    "proverbs": 6,
+    "chronicles2": 4,
+    "ezekiel": 3,
+    "nahum": 3,
+    "lamentations": 2,
+    "job": 1,
+    "leviticus": 1,
+    "malachi": 1,
+    "nehemiah": 1,
+    "samuel1": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "לֹ֣א תִכָּשֵֽׁל",
+      "pron": "로 브카셸루",
+      "lemmas": [
+        "לֹא",
+        "כָּשַׁל"
+      ],
+      "words": [
+        {
+          "word": "לֹ֣א",
+          "lemma": "לֹא",
+          "strong": "H3808",
+          "pron": "로"
+        },
+        {
+          "word": "תִכָּשֵֽׁל",
+          "lemma": "כָּשַׁל",
+          "strong": "H3782",
+          "pron": "브카셸루"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "proverbs 4:12",
+        "proverbs 4:16",
+        "isaiah 63:13",
+        "jeremiah 31:9",
+        "ezekiel 33:12",
+        "ezekiel 36:14",
+        "ezekiel 36:15"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יכשולו יַכְשִֽׁילוּ",
+      "pron": "브카셸루 브카셸루",
+      "lemmas": [
+        "כָּשַׁל",
+        "כָּשַׁל"
+      ],
+      "words": [
+        {
+          "word": "יכשולו",
+          "lemma": "כָּשַׁל",
+          "strong": "H3782",
+          "pron": "브카셸루"
+        },
+        {
+          "word": "יַכְשִֽׁילוּ",
+          "lemma": "כָּשַׁל",
+          "strong": "H3782",
+          "pron": "브카셸루"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "proverbs 4:16",
+        "isaiah 40:30",
+        "nahum 3:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הָֽיוּ לְהַכְשִׁיל֖וֹ",
+      "pron": "하에타 브카셸루",
+      "lemmas": [
+        "הָיָה",
+        "כָּשַׁל"
+      ],
+      "words": [
+        {
+          "word": "הָֽיוּ",
+          "lemma": "הָיָה",
+          "strong": "H1961",
+          "pron": "하에타"
+        },
+        {
+          "word": "לְהַכְשִׁיל֖וֹ",
+          "lemma": "כָּשַׁל",
+          "strong": "H3782",
+          "pron": "브카셸루"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles2 28:23",
+        "jeremiah 18:23",
+        "zechariah 12:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִכָּ֣שֶׁל בְּי֖וֹם",
+      "pron": "브카셸루 욤",
+      "lemmas": [
+        "כָּשַׁל",
+        "יוֹם"
+      ],
+      "words": [
+        {
+          "word": "יִכָּ֣שֶׁל",
+          "lemma": "כָּשַׁל",
+          "strong": "H3782",
+          "pron": "브카셸루"
+        },
+        {
+          "word": "בְּי֖וֹם",
+          "lemma": "יוֹם",
+          "strong": "H3117",
+          "pron": "욤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 33:12",
+        "hosea 4:5",
+        "zechariah 12:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "כּוֹשֵׁ֑ל גַּם",
+      "pron": "브카셸루 감",
+      "lemmas": [
+        "כָּשַׁל",
+        "גַּם"
+      ],
+      "words": [
+        {
+          "word": "כּוֹשֵׁ֑ל",
+          "lemma": "כָּשַׁל",
+          "strong": "H3782",
+          "pron": "브카셸루"
+        },
+        {
+          "word": "גַּם",
+          "lemma": "גַּם",
+          "strong": "H1571",
+          "pron": "감"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "jeremiah 46:16",
+        "hosea 4:5",
+        "hosea 5:5"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "חָצֵר",
-  "pron": "하체림",
+  "pron": "베하체레헴",
   "strong": "H2691",
   "posKo": "명사",
   "root": {
@@ -12,46 +12,252 @@
     {
       "lemma": "חָצוֹר",
       "strong": "H2674",
-      "pron": "",
+      "pron": "하초르",
       "glossKo": "하솔"
     },
     {
       "lemma": "חָצִיר",
       "strong": "H2681",
-      "pron": "",
+      "pron": "하치르",
       "glossKo": "초장"
     },
     {
       "lemma": "חֲצֹצְרָה",
       "strong": "H2689",
-      "pron": "바하초체로트",
+      "pron": "하초체로트",
       "glossKo": "나팔"
     },
     {
       "lemma": "חָצַר",
       "strong": "H2690",
-      "pron": "",
+      "pron": "믛츳림",
       "glossKo": "나팔을 불다"
     },
     {
       "lemma": "חֲצַר אַדָּר",
       "strong": "H2692",
-      "pron": "",
+      "pron": "하차르",
       "glossKo": "하살아달"
     },
     {
       "lemma": "חֲצַר גַּדָּה",
       "strong": "H2693",
-      "pron": "",
+      "pron": "바하차르",
       "glossKo": "하살갓다"
     }
   ],
   "defEn": "yard",
   "defKo": "",
-  "countOT": 10,
+  "countOT": 190,
   "byBook": {
+    "ezekiel": 48,
+    "joshua": 32,
+    "exodus": 29,
+    "jeremiah": 15,
+    "chronicles1": 9,
+    "nehemiah": 9,
     "psalms": 9,
-    "genesis": 1
+    "esther": 8,
+    "chronicles2": 7,
+    "kings1": 6,
+    "numbers": 6,
+    "isaiah": 3,
+    "kings2": 3,
+    "leviticus": 3,
+    "genesis": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "חַצְר֥וֹת בֵּית",
+      "pron": "베하체레헴 미바이트",
+      "lemmas": [
+        "חָצֵר",
+        "בַּיִת"
+      ],
+      "words": [
+        {
+          "word": "חַצְר֥וֹת",
+          "lemma": "חָצֵר",
+          "strong": "H2691",
+          "pron": "베하체레헴"
+        },
+        {
+          "word": "בֵּית",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        }
+      ],
+      "count": 18,
+      "refs": [
+        "kings1 7:12",
+        "kings2 21:5",
+        "kings2 23:12",
+        "chronicles1 28:12",
+        "chronicles2 23:5",
+        "chronicles2 24:21",
+        "chronicles2 29:16",
+        "chronicles2 33:5",
+        "nehemiah 8:16",
+        "nehemiah 13:7",
+        "esther 2:11",
+        "esther 5:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֶל הֶֽחָצֵר֙",
+      "pron": "엘 베하체레헴",
+      "lemmas": [
+        "אֵל",
+        "חָצֵר"
+      ],
+      "words": [
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "הֶֽחָצֵר֙",
+          "lemma": "חָצֵר",
+          "strong": "H2691",
+          "pron": "베하체레헴"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "nehemiah 11:25",
+        "esther 4:11",
+        "jeremiah 32:8",
+        "ezekiel 8:16",
+        "ezekiel 40:17",
+        "ezekiel 40:28",
+        "ezekiel 40:31",
+        "ezekiel 40:32",
+        "ezekiel 42:1",
+        "ezekiel 42:14",
+        "ezekiel 43:5",
+        "ezekiel 44:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֶחָצֵ֣ר הַפְּנִימִ֔ית",
+      "pron": "베하체레헴 아페니미",
+      "lemmas": [
+        "חָצֵר",
+        "פְּנִימִי"
+      ],
+      "words": [
+        {
+          "word": "הֶחָצֵ֣ר",
+          "lemma": "חָצֵר",
+          "strong": "H2691",
+          "pron": "베하체레헴"
+        },
+        {
+          "word": "הַפְּנִימִ֔ית",
+          "lemma": "פְּנִימִי",
+          "strong": "H6442",
+          "pron": "아페니미"
+        }
+      ],
+      "count": 17,
+      "refs": [
+        "kings1 6:36",
+        "esther 4:11",
+        "ezekiel 10:3",
+        "ezekiel 40:19",
+        "ezekiel 40:23",
+        "ezekiel 40:27",
+        "ezekiel 40:28",
+        "ezekiel 40:32",
+        "ezekiel 40:44",
+        "ezekiel 42:3",
+        "ezekiel 43:5",
+        "ezekiel 44:17"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "הֶֽחָצֵר֙ הַחִ֣יצוֹנָ֔ה",
+      "pron": "베하체레헴 브라히촌",
+      "lemmas": [
+        "חָצֵר",
+        "חִיצוֹן"
+      ],
+      "words": [
+        {
+          "word": "הֶֽחָצֵר֙",
+          "lemma": "חָצֵר",
+          "strong": "H2691",
+          "pron": "베하체레헴"
+        },
+        {
+          "word": "הַחִ֣יצוֹנָ֔ה",
+          "lemma": "חִיצוֹן",
+          "strong": "H2435",
+          "pron": "브라히촌"
+        }
+      ],
+      "count": 16,
+      "refs": [
+        "ezekiel 10:5",
+        "ezekiel 40:17",
+        "ezekiel 40:20",
+        "ezekiel 40:31",
+        "ezekiel 40:34",
+        "ezekiel 40:37",
+        "ezekiel 42:1",
+        "ezekiel 42:3",
+        "ezekiel 42:7",
+        "ezekiel 42:8",
+        "ezekiel 42:9",
+        "ezekiel 42:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "שַׁ֥עַר הֶחָצֵֽר",
+      "pron": "브샤아르 베하체레헴",
+      "lemmas": [
+        "שַׁעַר",
+        "חָצֵר"
+      ],
+      "words": [
+        {
+          "word": "שַׁ֥עַר",
+          "lemma": "שַׁעַר",
+          "strong": "H8179",
+          "pron": "브샤아르"
+        },
+        {
+          "word": "הֶחָצֵֽר",
+          "lemma": "חָצֵר",
+          "strong": "H2691",
+          "pron": "베하체레헴"
+        }
+      ],
+      "count": 15,
+      "refs": [
+        "exodus 27:16",
+        "exodus 35:17",
+        "exodus 38:15",
+        "exodus 38:18",
+        "exodus 38:31",
+        "exodus 39:40",
+        "exodus 40:8",
+        "exodus 40:33",
+        "numbers 4:26",
+        "ezekiel 40:23",
+        "ezekiel 40:27",
+        "ezekiel 44:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

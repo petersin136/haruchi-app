@@ -1,6 +1,6 @@
 {
   "lemma": "אָוָה",
-  "pron": "브이테아브",
+  "pron": "히테아우우",
   "strong": "H183",
   "posKo": "동사",
   "root": null,
@@ -8,25 +8,25 @@
     {
       "lemma": "אַוָּה",
       "strong": "H185",
-      "pron": "",
+      "pron": "아바트",
       "glossKo": "탐심"
     },
     {
       "lemma": "אוֹי",
       "strong": "H188",
-      "pron": "",
+      "pron": "오이",
       "glossKo": "오호라"
     },
     {
       "lemma": "אֱוִי",
       "strong": "H189",
-      "pron": "",
+      "pron": "에비",
       "glossKo": "에위"
     },
     {
       "lemma": "אִי",
       "strong": "H339",
-      "pron": "브이임",
+      "pron": "이에",
       "glossKo": "섬"
     },
     {
@@ -34,13 +34,194 @@
       "strong": "H1933",
       "pron": "헤베",
       "glossKo": "되다"
+    },
+    {
+      "lemma": "מַאֲוַי",
+      "strong": "H3970",
+      "pron": "마아바에",
+      "glossKo": "욕망"
     }
   ],
   "defEn": "wish for",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 28,
   "byBook": {
-    "psalms": 4
+    "proverbs": 8,
+    "psalms": 4,
+    "deuteronomy": 3,
+    "chronicles1": 2,
+    "numbers": 2,
+    "samuel2": 2,
+    "amos": 1,
+    "ecclesiastes": 1,
+    "isaiah": 1,
+    "jeremiah": 1,
+    "job": 1,
+    "kings1": 1,
+    "micah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "תתאו תִּ֝תְאָ֗יו",
+      "pron": "히테아우우 히테아우우",
+      "lemmas": [
+        "אָוָה",
+        "אָוָה"
+      ],
+      "words": [
+        {
+          "word": "תתאו",
+          "lemma": "אָוָה",
+          "strong": "H183",
+          "pron": "히테아우우"
+        },
+        {
+          "word": "תִּ֝תְאָ֗יו",
+          "lemma": "אָוָה",
+          "strong": "H183",
+          "pron": "히테아우우"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "chronicles1 11:17",
+        "proverbs 23:6",
+        "proverbs 24:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "תְּאַוֶּ֖ה נַפְשֶׁ֑ךָ",
+      "pron": "히테아우우 네페쉬",
+      "lemmas": [
+        "אָוָה",
+        "נֶפֶשׁ"
+      ],
+      "words": [
+        {
+          "word": "תְּאַוֶּ֖ה",
+          "lemma": "אָוָה",
+          "strong": "H183",
+          "pron": "히테아우우"
+        },
+        {
+          "word": "נַפְשֶׁ֑ךָ",
+          "lemma": "נֶפֶשׁ",
+          "strong": "H5315",
+          "pron": "네페쉬"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 12:20",
+        "deuteronomy 14:26",
+        "samuel2 3:21",
+        "kings1 11:37",
+        "micah 7:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁר תְּאַוֶּ֖ה",
+      "pron": "아셰르 히테아우우",
+      "lemmas": [
+        "אֲשֶׁר",
+        "אָוָה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "תְּאַוֶּ֖ה",
+          "lemma": "אָוָה",
+          "strong": "H183",
+          "pron": "히테아우우"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 14:26",
+        "samuel2 3:21",
+        "kings1 11:37",
+        "ecclesiastes 6:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּכֹ֥ל אֲשֶׁר תְּאַוֶּ֖ה",
+      "pron": "칼 아셰르 히테아우우",
+      "lemmas": [
+        "כֹּל",
+        "אֲשֶׁר",
+        "אָוָה"
+      ],
+      "words": [
+        {
+          "word": "בְּכֹ֥ל",
+          "lemma": "כֹּל",
+          "strong": "H3605",
+          "pron": "칼"
+        },
+        {
+          "word": "אֲשֶׁר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "תְּאַוֶּ֖ה",
+          "lemma": "אָוָה",
+          "strong": "H183",
+          "pron": "히테아우우"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 14:26",
+        "samuel2 3:21",
+        "kings1 11:37",
+        "ecclesiastes 6:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְאַל תתאו תִּ֝תְאָ֗יו",
+      "pron": "엘 히테아우우 히테아우우",
+      "lemmas": [
+        "אַל",
+        "אָוָה",
+        "אָוָה"
+      ],
+      "words": [
+        {
+          "word": "וְאַל",
+          "lemma": "אַל",
+          "strong": "H408",
+          "pron": "엘"
+        },
+        {
+          "word": "תתאו",
+          "lemma": "אָוָה",
+          "strong": "H183",
+          "pron": "히테아우우"
+        },
+        {
+          "word": "תִּ֝תְאָ֗יו",
+          "lemma": "אָוָה",
+          "strong": "H183",
+          "pron": "히테아우우"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "proverbs 23:6",
+        "proverbs 24:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

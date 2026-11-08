@@ -2,7 +2,7 @@
   "lemma": "מְשֶׁלֶמְיָה",
   "pron": "메셸렘아",
   "strong": "H4920",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁלַם",
     "strong": "H7999",
@@ -12,25 +12,25 @@
     {
       "lemma": "מְשֻׁלָּם",
       "strong": "H4918",
-      "pron": "",
+      "pron": "메슐람",
       "glossKo": "므술람"
     },
     {
       "lemma": "מְשִׁלֵּמוֹת",
       "strong": "H4919",
-      "pron": "",
+      "pron": "메실레모트",
       "glossKo": "므실레못"
     },
     {
       "lemma": "מְשִׁלֵּמִית",
       "strong": "H4921",
-      "pron": "",
+      "pron": "메실레미트",
       "glossKo": "므실레밋"
     },
     {
       "lemma": "שׁוּלַמִּית",
       "strong": "H7759",
-      "pron": "",
+      "pron": "아슐람미트",
       "glossKo": "술람미 여인"
     },
     {
@@ -42,13 +42,45 @@
     {
       "lemma": "שִׁלּוּם",
       "strong": "H7966",
-      "pron": "",
+      "pron": "실루밈",
       "glossKo": "보답"
     }
   ],
   "defEn": "Meshelemjah",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "chronicles1": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "מְשֶֽׁלֶמְיָ֥הוּ בֶן",
+      "pron": "메셸렘아 바님",
+      "lemmas": [
+        "מְשֶׁלֶמְיָה",
+        "בֵּן"
+      ],
+      "words": [
+        {
+          "word": "מְשֶֽׁלֶמְיָ֥הוּ",
+          "lemma": "מְשֶׁלֶמְיָה",
+          "strong": "H4920",
+          "pron": "메셸렘아"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "chronicles1 26:1",
+        "chronicles1 26:2",
+        "chronicles1 26:9"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

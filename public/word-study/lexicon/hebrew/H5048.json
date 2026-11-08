@@ -1,8 +1,8 @@
 {
   "lemma": "נֶגֶד",
-  "pron": "미넥드오",
+  "pron": "케넥도",
   "strong": "H5048",
-  "posKo": "접미대명사",
+  "posKo": "전치사",
   "root": {
     "lemma": "נָגַד",
     "strong": "H5046",
@@ -12,39 +12,67 @@
     {
       "lemma": "נָגַד",
       "strong": "H5046",
-      "pron": "학기두",
+      "pron": "힉긷",
       "glossKo": "고하다"
     },
     {
       "lemma": "נְגַד",
       "strong": "H5047",
-      "pron": "",
+      "pron": "나겓",
       "glossKo": "흐르다(아람)"
     },
     {
       "lemma": "נֶגֶד",
       "strong": "H5049",
-      "pron": "",
+      "pron": "네겓",
       "glossKo": "맞은편(아람)"
     },
     {
       "lemma": "נָגִיד",
       "strong": "H5057",
-      "pron": "네기딤",
+      "pron": "르나긷",
       "glossKo": "지도자"
     }
   ],
   "defEn": "front; part opposite; counterpart; mate; over against; before",
   "defKo": "",
-  "countOT": 43,
+  "countOT": 150,
   "byBook": {
     "psalms": 35,
-    "genesis": 8
+    "nehemiah": 19,
+    "isaiah": 9,
+    "genesis": 8,
+    "ezekiel": 7,
+    "joshua": 7,
+    "samuel1": 6,
+    "samuel2": 6,
+    "kings1": 5,
+    "kings2": 5,
+    "chronicles2": 4,
+    "proverbs": 4,
+    "chronicles1": 3,
+    "daniel": 3,
+    "deuteronomy": 3,
+    "exodus": 3,
+    "job": 3,
+    "numbers": 3,
+    "amos": 2,
+    "ecclesiastes": 2,
+    "jeremiah": 2,
+    "judges": 2,
+    "ruth": 2,
+    "habakkuk": 1,
+    "hosea": 1,
+    "joel": 1,
+    "jonah": 1,
+    "lamentations": 1,
+    "obadiah": 1,
+    "songofsolomon": 1
   },
   "phrases": [
     {
-      "hebrew": "לְנֶ֣גֶד עֵינָֽיו",
-      "pron": "미넥드오 에네카",
+      "hebrew": "לְנֶ֣גֶד עֵינָ֑י",
+      "pron": "케넥도 에네켐",
       "lemmas": [
         "נֶגֶד",
         "עַיִן"
@@ -54,111 +82,161 @@
           "word": "לְנֶ֣גֶד",
           "lemma": "נֶגֶד",
           "strong": "H5048",
-          "pron": "미넥드오"
+          "pron": "케넥도"
         },
         {
-          "word": "עֵינָֽיו",
+          "word": "עֵינָ֑י",
           "lemma": "עַיִן",
           "strong": "H5869",
-          "pron": "에네카"
+          "pron": "에네켐"
         }
       ],
-      "count": 6,
+      "count": 13,
       "refs": [
+        "samuel2 22:25",
+        "job 4:16",
         "psalms 18:24",
         "psalms 26:3",
         "psalms 31:22",
         "psalms 36:1",
         "psalms 101:3",
-        "psalms 101:7"
+        "psalms 101:7",
+        "isaiah 1:16",
+        "jeremiah 16:17",
+        "joel 1:16",
+        "amos 9:3"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "נֶגְדִּ֣י תָמִֽיד",
-      "pron": "미넥드오 타믿",
-      "lemmas": [
-        "נֶגֶד",
-        "תָּמִיד"
-      ],
-      "words": [
-        {
-          "word": "נֶגְדִּ֣י",
-          "lemma": "נֶגֶד",
-          "strong": "H5048",
-          "pron": "미넥드오"
-        },
-        {
-          "word": "תָמִֽיד",
-          "lemma": "תָּמִיד",
-          "strong": "H8548",
-          "pron": "타믿"
-        }
-      ],
-      "count": 4,
-      "refs": [
-        "psalms 16:8",
-        "psalms 38:17",
-        "psalms 50:8",
-        "psalms 51:3"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אֲשַׁלֵּ֑ם נֶגְדָה",
-      "pron": "숄미위 미넥드오",
-      "lemmas": [
-        "שָׁלַם",
-        "נֶגֶד"
-      ],
-      "words": [
-        {
-          "word": "אֲשַׁלֵּ֑ם",
-          "lemma": "שָׁלַם",
-          "strong": "H7999",
-          "pron": "숄미위"
-        },
-        {
-          "word": "נֶגְדָה",
-          "lemma": "נֶגֶד",
-          "strong": "H5048",
-          "pron": "미넥드오"
-        }
-      ],
-      "count": 3,
-      "refs": [
-        "psalms 22:25",
-        "psalms 116:14",
-        "psalms 116:18"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "מִנֶּגְדּ֑וֹ כָּל",
-      "pron": "미넥드오 브콜",
+      "hebrew": "נֶ֖גֶד כָּל",
+      "pron": "케넥도 칼",
       "lemmas": [
         "נֶגֶד",
         "כֹּל"
       ],
       "words": [
         {
-          "word": "מִנֶּגְדּ֑וֹ",
+          "word": "נֶ֖גֶד",
           "lemma": "נֶגֶד",
           "strong": "H5048",
-          "pron": "미넥드오"
+          "pron": "케넥도"
         },
         {
           "word": "כָּל",
           "lemma": "כֹּל",
           "strong": "H3605",
-          "pron": "브콜"
+          "pron": "칼"
         }
       ],
-      "count": 3,
+      "count": 12,
       "refs": [
+        "exodus 34:10",
+        "deuteronomy 31:11",
+        "joshua 8:35",
+        "samuel2 12:12",
+        "kings1 8:22",
+        "chronicles2 6:12",
+        "chronicles2 6:13",
+        "chronicles2 7:6",
         "psalms 10:5",
         "psalms 38:9",
-        "psalms 69:19"
+        "psalms 69:19",
+        "isaiah 61:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עֹמֵ֣ד לְנֶגְדּ֔וֹ",
+      "pron": "오멛 케넥도",
+      "lemmas": [
+        "עָמַד",
+        "נֶגֶד"
+      ],
+      "words": [
+        {
+          "word": "עֹמֵ֣ד",
+          "lemma": "עָמַד",
+          "strong": "H5975",
+          "pron": "오멛"
+        },
+        {
+          "word": "לְנֶגְדּ֔וֹ",
+          "lemma": "נֶגֶד",
+          "strong": "H5048",
+          "pron": "케넥도"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "joshua 5:13",
+        "kings2 2:7",
+        "ecclesiastes 4:12",
+        "daniel 8:15",
+        "daniel 10:13",
+        "daniel 10:16",
+        "obadiah 1:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְנֶ֣גֶד בֵּית֑וֹ",
+      "pron": "케넥도 미바이트",
+      "lemmas": [
+        "נֶגֶד",
+        "בַּיִת"
+      ],
+      "words": [
+        {
+          "word": "וְנֶ֣גֶד",
+          "lemma": "נֶגֶד",
+          "strong": "H5048",
+          "pron": "케넥도"
+        },
+        {
+          "word": "בֵּית֑וֹ",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "미바이트"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "nehemiah 3:10",
+        "nehemiah 3:23",
+        "nehemiah 3:28",
+        "nehemiah 3:29",
+        "nehemiah 7:3"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַתֵּ֨שֶׁב מִנֶּ֗גֶד",
+      "pron": "바예솁 케넥도",
+      "lemmas": [
+        "יָשַׁב",
+        "נֶגֶד"
+      ],
+      "words": [
+        {
+          "word": "וַתֵּ֨שֶׁב",
+          "lemma": "יָשַׁב",
+          "strong": "H3427",
+          "pron": "바예솁"
+        },
+        {
+          "word": "מִנֶּ֗גֶד",
+          "lemma": "נֶגֶד",
+          "strong": "H5048",
+          "pron": "케넥도"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 21:16",
+        "ruth 4:4",
+        "kings1 21:13",
+        "isaiah 47:14"
       ],
       "glossKo": ""
     }

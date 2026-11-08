@@ -1,6 +1,6 @@
 {
   "lemma": "רוּק",
-  "pron": "아리케므",
+  "pron": "바야레크",
   "strong": "H7324",
   "posKo": "동사",
   "root": null,
@@ -8,13 +8,13 @@
     {
       "lemma": "יׇרְקְעָם",
       "strong": "H3421",
-      "pron": "",
+      "pron": "야레코암",
       "glossKo": "욜그암"
     },
     {
       "lemma": "רִיק",
       "strong": "H7385",
-      "pron": "리크",
+      "pron": "라리크",
       "glossKo": "공허"
     },
     {
@@ -26,10 +26,145 @@
   ],
   "defEn": "pour; empty",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 19,
   "byBook": {
+    "ezekiel": 5,
     "genesis": 2,
-    "psalms": 2
+    "jeremiah": 2,
+    "psalms": 2,
+    "ecclesiastes": 1,
+    "exodus": 1,
+    "habakkuk": 1,
+    "isaiah": 1,
+    "leviticus": 1,
+    "malachi": 1,
+    "songofsolomon": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אָרִ֥יק אַחֲרֵיהֶֽם",
+      "pron": "바야레크 아하레",
+      "lemmas": [
+        "רוּק",
+        "אַחַר"
+      ],
+      "words": [
+        {
+          "word": "אָרִ֥יק",
+          "lemma": "רוּק",
+          "strong": "H7324",
+          "pron": "바야레크"
+        },
+        {
+          "word": "אַחֲרֵיהֶֽם",
+          "lemma": "אַחַר",
+          "strong": "H310",
+          "pron": "아하레"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "leviticus 26:33",
+        "ezekiel 5:2",
+        "ezekiel 5:12",
+        "ezekiel 12:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהֵרִ֤יקוּ חַרְבוֹתָם֙",
+      "pron": "바야레크 아헤렙",
+      "lemmas": [
+        "רוּק",
+        "חֶרֶב"
+      ],
+      "words": [
+        {
+          "word": "וְהֵרִ֤יקוּ",
+          "lemma": "רוּק",
+          "strong": "H7324",
+          "pron": "바야레크"
+        },
+        {
+          "word": "חַרְבוֹתָם֙",
+          "lemma": "חֶרֶב",
+          "strong": "H2719",
+          "pron": "아헤렙"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 15:9",
+        "ezekiel 28:7",
+        "ezekiel 30:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְחֶ֖רֶב אָרִ֥יק",
+      "pron": "아헤렙 바야레크",
+      "lemmas": [
+        "חֶרֶב",
+        "רוּק"
+      ],
+      "words": [
+        {
+          "word": "וְחֶ֖רֶב",
+          "lemma": "חֶרֶב",
+          "strong": "H2719",
+          "pron": "아헤렙"
+        },
+        {
+          "word": "אָרִ֥יק",
+          "lemma": "רוּק",
+          "strong": "H7324",
+          "pron": "바야레크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 5:2",
+        "ezekiel 5:12",
+        "ezekiel 12:14"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְחֶ֖רֶב אָרִ֥יק אַחֲרֵיהֶֽם",
+      "pron": "아헤렙 바야레크 아하레",
+      "lemmas": [
+        "חֶרֶב",
+        "רוּק",
+        "אַחַר"
+      ],
+      "words": [
+        {
+          "word": "וְחֶ֖רֶב",
+          "lemma": "חֶרֶב",
+          "strong": "H2719",
+          "pron": "아헤렙"
+        },
+        {
+          "word": "אָרִ֥יק",
+          "lemma": "רוּק",
+          "strong": "H7324",
+          "pron": "바야레크"
+        },
+        {
+          "word": "אַחֲרֵיהֶֽם",
+          "lemma": "אַחַר",
+          "strong": "H310",
+          "pron": "아하레"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 5:2",
+        "ezekiel 5:12",
+        "ezekiel 12:14"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "lemma": "יָדָה",
-  "pron": "요데",
+  "pron": "오데",
   "strong": "H3034",
   "posKo": "동사",
   "root": {
@@ -12,51 +12,66 @@
     {
       "lemma": "הָדָה",
       "strong": "H1911",
-      "pron": "",
+      "pron": "하다",
       "glossKo": "내밀다"
     },
     {
       "lemma": "יָד",
       "strong": "H3027",
-      "pron": "야데카",
-      "glossKo": "너의 손"
+      "pron": "야도",
+      "glossKo": "그의 손"
     },
     {
       "lemma": "יַד",
       "strong": "H3028",
-      "pron": "",
-      "glossKo": "손(아람)"
+      "pron": "베엗홈",
+      "glossKo": "그들의 손(아람)"
     },
     {
       "lemma": "יְדָא",
       "strong": "H3029",
-      "pron": "",
+      "pron": "메호데",
       "glossKo": "찬양하다(아람)"
     },
     {
       "lemma": "יָדַד",
       "strong": "H3032",
-      "pron": "",
+      "pron": "얃두",
       "glossKo": "제비뽑다"
     },
     {
       "lemma": "יִדּוֹ",
       "strong": "H3035",
-      "pron": "",
+      "pron": "읻도",
       "glossKo": "잇도"
     }
   ],
   "defEn": "throw; revere; worship; bemoan",
   "defKo": "",
-  "countOT": 69,
+  "countOT": 114,
   "byBook": {
     "psalms": 67,
-    "genesis": 2
+    "chronicles1": 9,
+    "chronicles2": 8,
+    "nehemiah": 6,
+    "isaiah": 5,
+    "leviticus": 3,
+    "daniel": 2,
+    "ezra": 2,
+    "genesis": 2,
+    "jeremiah": 2,
+    "kings1": 2,
+    "job": 1,
+    "lamentations": 1,
+    "numbers": 1,
+    "proverbs": 1,
+    "samuel2": 1,
+    "zechariah": 1
   },
   "phrases": [
     {
       "hebrew": "הוֹד֣וּ לַיהוָ֣ה",
-      "pron": "요데 여호와",
+      "pron": "오데 여호와",
       "lemmas": [
         "יָדָה",
         "יְהֹוָה"
@@ -66,7 +81,7 @@
           "word": "הוֹד֣וּ",
           "lemma": "יָדָה",
           "strong": "H3034",
-          "pron": "요데"
+          "pron": "오데"
         },
         {
           "word": "לַיהוָ֣ה",
@@ -75,87 +90,26 @@
           "pron": "여호와"
         }
       ],
-      "count": 18,
+      "count": 31,
       "refs": [
-        "psalms 7:17",
-        "psalms 9:1",
-        "psalms 33:2",
-        "psalms 92:1",
-        "psalms 105:1",
-        "psalms 106:1",
-        "psalms 107:1",
-        "psalms 107:8",
-        "psalms 107:15",
-        "psalms 107:21",
-        "psalms 107:31",
-        "psalms 109:30"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "אוֹדְךָ֖ בָעַמִּ֥ים",
-      "pron": "요데 암",
-      "lemmas": [
-        "יָדָה",
-        "עַם"
-      ],
-      "words": [
-        {
-          "word": "אוֹדְךָ֖",
-          "lemma": "יָדָה",
-          "strong": "H3034",
-          "pron": "요데"
-        },
-        {
-          "word": "בָעַמִּ֥ים",
-          "lemma": "עַם",
-          "strong": "H5971",
-          "pron": "암"
-        }
-      ],
-      "count": 6,
-      "refs": [
-        "psalms 57:9",
-        "psalms 67:3",
-        "psalms 67:5",
-        "psalms 108:3"
-      ],
-      "glossKo": ""
-    },
-    {
-      "hebrew": "א֤וֹדֶה שִּׁמְךָ֖",
-      "pron": "요데 셰메카",
-      "lemmas": [
-        "יָדָה",
-        "שֵׁם"
-      ],
-      "words": [
-        {
-          "word": "א֤וֹדֶה",
-          "lemma": "יָדָה",
-          "strong": "H3034",
-          "pron": "요데"
-        },
-        {
-          "word": "שִּׁמְךָ֖",
-          "lemma": "שֵׁם",
-          "strong": "H8034",
-          "pron": "셰메카"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 54:6",
-        "psalms 99:3",
-        "psalms 106:47",
-        "psalms 122:4",
-        "psalms 140:13"
+        "samuel2 22:50",
+        "chronicles1 16:7",
+        "chronicles1 16:8",
+        "chronicles1 16:34",
+        "chronicles1 16:41",
+        "chronicles2 5:13",
+        "chronicles2 7:3",
+        "chronicles2 7:6",
+        "chronicles2 20:21",
+        "chronicles2 30:22",
+        "ezra 3:11",
+        "psalms 7:17"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "הוֹד֣וּ לַיהוָ֣ה כִּי",
-      "pron": "요데 여호와 키",
+      "pron": "오데 여호와 키",
       "lemmas": [
         "יָדָה",
         "יְהֹוָה",
@@ -166,7 +120,7 @@
           "word": "הוֹד֣וּ",
           "lemma": "יָדָה",
           "strong": "H3034",
-          "pron": "요데"
+          "pron": "오데"
         },
         {
           "word": "לַיהוָ֣ה",
@@ -181,50 +135,120 @@
           "pron": "키"
         }
       ],
-      "count": 5,
+      "count": 12,
       "refs": [
+        "chronicles1 16:34",
+        "chronicles1 16:41",
+        "chronicles2 7:3",
+        "chronicles2 7:6",
+        "chronicles2 20:21",
+        "ezra 3:11",
         "psalms 106:1",
         "psalms 107:1",
         "psalms 118:1",
         "psalms 118:29",
-        "psalms 136:1"
+        "psalms 136:1",
+        "isaiah 12:1"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אוֹדֶ֣ה יְ֭הוָה בְּכָל",
-      "pron": "요데 여호와 브콜",
+      "hebrew": "וְהוֹד֣וּ אֶת",
+      "pron": "오데 에트",
       "lemmas": [
         "יָדָה",
-        "יְהֹוָה",
-        "כֹּל"
+        "אֵת"
       ],
       "words": [
         {
-          "word": "אוֹדֶ֣ה",
+          "word": "וְהוֹד֣וּ",
           "lemma": "יָדָה",
           "strong": "H3034",
-          "pron": "요데"
+          "pron": "오데"
         },
         {
-          "word": "יְ֭הוָה",
-          "lemma": "יְהֹוָה",
-          "strong": "H3068",
-          "pron": "여호와"
-        },
-        {
-          "word": "בְּכָל",
-          "lemma": "כֹּל",
-          "strong": "H3605",
-          "pron": "브콜"
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
         }
       ],
-      "count": 4,
+      "count": 11,
       "refs": [
-        "psalms 9:1",
-        "psalms 111:1",
-        "psalms 138:4",
-        "psalms 145:10"
+        "genesis 29:35",
+        "leviticus 26:40",
+        "numbers 5:7",
+        "kings1 8:33",
+        "kings1 8:35",
+        "chronicles2 6:24",
+        "chronicles2 6:26",
+        "psalms 138:2",
+        "psalms 142:7",
+        "jeremiah 33:11",
+        "zechariah 1:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְהֹדוֹת֙ לְשֵׁ֣ם",
+      "pron": "오데 솀",
+      "lemmas": [
+        "יָדָה",
+        "שֵׁם"
+      ],
+      "words": [
+        {
+          "word": "לְהֹדוֹת֙",
+          "lemma": "יָדָה",
+          "strong": "H3034",
+          "pron": "오데"
+        },
+        {
+          "word": "לְשֵׁ֣ם",
+          "lemma": "שֵׁם",
+          "strong": "H8034",
+          "pron": "솀"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "chronicles1 16:35",
+        "psalms 54:6",
+        "psalms 99:3",
+        "psalms 106:47",
+        "psalms 122:4",
+        "psalms 140:13",
+        "isaiah 25:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אוֹדְךָ֖ בָעַמִּ֥ים",
+      "pron": "오데 암",
+      "lemmas": [
+        "יָדָה",
+        "עַם"
+      ],
+      "words": [
+        {
+          "word": "אוֹדְךָ֖",
+          "lemma": "יָדָה",
+          "strong": "H3034",
+          "pron": "오데"
+        },
+        {
+          "word": "בָעַמִּ֥ים",
+          "lemma": "עַם",
+          "strong": "H5971",
+          "pron": "암"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "psalms 57:9",
+        "psalms 67:3",
+        "psalms 67:5",
+        "psalms 108:3"
       ],
       "glossKo": ""
     }

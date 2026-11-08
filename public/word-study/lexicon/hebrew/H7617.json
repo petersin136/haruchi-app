@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁבָה",
-  "pron": "샤비타",
+  "pron": "니솁바",
   "strong": "H7617",
   "posKo": "동사",
   "root": null,
@@ -8,34 +8,211 @@
     {
       "lemma": "שְׁבוּ",
       "strong": "H7618",
-      "pron": "",
+      "pron": "셰보",
       "glossKo": "마노"
     },
     {
       "lemma": "שְׁבוּאֵל",
       "strong": "H7619",
-      "pron": "",
+      "pron": "셰부엘",
       "glossKo": "스바"
     },
     {
       "lemma": "שְׁבוּת",
       "strong": "H7622",
-      "pron": "셰부트",
-      "glossKo": "사로잡힘"
+      "pron": "셰부테카",
+      "glossKo": "너의 사로잡힘"
     },
     {
       "lemma": "שֹׁבִי",
       "strong": "H7629",
-      "pron": "",
+      "pron": "브쇼비",
       "glossKo": "소비"
     }
   ],
   "defEn": "transport into captivity",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 47,
   "byBook": {
+    "chronicles2": 12,
+    "jeremiah": 6,
+    "kings1": 6,
     "genesis": 3,
-    "psalms": 3
+    "isaiah": 3,
+    "numbers": 3,
+    "psalms": 3,
+    "samuel1": 3,
+    "kings2": 2,
+    "chronicles1": 1,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "ezekiel": 1,
+    "judges": 1,
+    "obadiah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֲשֶׁ֣ר נִשְׁבּוּ",
+      "pron": "아셰르 니솁바",
+      "lemmas": [
+        "אֲשֶׁר",
+        "שָׁבָה"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֣ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "נִשְׁבּוּ",
+          "lemma": "שָׁבָה",
+          "strong": "H7617",
+          "pron": "니솁바"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "kings1 8:47",
+        "kings1 8:48",
+        "kings2 6:22",
+        "chronicles2 6:37",
+        "chronicles2 6:38",
+        "chronicles2 28:11",
+        "jeremiah 41:14",
+        "ezekiel 6:9"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְשָׁב֤וּם שֹֽׁבֵיהֶם֙",
+      "pron": "니솁바 니솁바",
+      "lemmas": [
+        "שָׁבָה",
+        "שָׁבָה"
+      ],
+      "words": [
+        {
+          "word": "וְשָׁב֤וּם",
+          "lemma": "שָׁבָה",
+          "strong": "H7617",
+          "pron": "니솁바"
+        },
+        {
+          "word": "שֹֽׁבֵיהֶם֙",
+          "lemma": "שָׁבָה",
+          "strong": "H7617",
+          "pron": "니솁바"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings1 8:46",
+        "chronicles2 6:36",
+        "isaiah 14:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אוֹיֵ֑ב וְשָׁב֤וּם שֹֽׁבֵיהֶם֙",
+      "pron": "오에바으브 니솁바 니솁바",
+      "lemmas": [
+        "אֹיֵב",
+        "שָׁבָה",
+        "שָׁבָה"
+      ],
+      "words": [
+        {
+          "word": "אוֹיֵ֑ב",
+          "lemma": "אֹיֵב",
+          "strong": "H341",
+          "pron": "오에바으브"
+        },
+        {
+          "word": "וְשָׁב֤וּם",
+          "lemma": "שָׁבָה",
+          "strong": "H7617",
+          "pron": "니솁바"
+        },
+        {
+          "word": "שֹֽׁבֵיהֶם֙",
+          "lemma": "שָׁבָה",
+          "strong": "H7617",
+          "pron": "니솁바"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 8:46",
+        "chronicles2 6:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְשָׁב֤וּם שֹֽׁבֵיהֶם֙ אֶל",
+      "pron": "니솁바 니솁바 엘",
+      "lemmas": [
+        "שָׁבָה",
+        "שָׁבָה",
+        "אֵל"
+      ],
+      "words": [
+        {
+          "word": "וְשָׁב֤וּם",
+          "lemma": "שָׁבָה",
+          "strong": "H7617",
+          "pron": "니솁바"
+        },
+        {
+          "word": "שֹֽׁבֵיהֶם֙",
+          "lemma": "שָׁבָה",
+          "strong": "H7617",
+          "pron": "니솁바"
+        },
+        {
+          "word": "אֶל",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "kings1 8:46",
+        "chronicles2 6:36"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְשָׁבִ֥יתָ שִׁבְיֽוֹ",
+      "pron": "니솁바 아셰비",
+      "lemmas": [
+        "שָׁבָה",
+        "שְׁבִי"
+      ],
+      "words": [
+        {
+          "word": "וְשָׁבִ֥יתָ",
+          "lemma": "שָׁבָה",
+          "strong": "H7617",
+          "pron": "니솁바"
+        },
+        {
+          "word": "שִׁבְיֽוֹ",
+          "lemma": "שְׁבִי",
+          "strong": "H7628",
+          "pron": "아셰비"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "deuteronomy 21:10",
+        "judges 5:12",
+        "chronicles2 28:17",
+        "psalms 68:18"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

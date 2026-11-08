@@ -1,6 +1,6 @@
 {
   "lemma": "רֶשֶׁת",
-  "pron": "브레셰트",
+  "pron": "레셰트",
   "strong": "H7568",
   "posKo": "명사",
   "root": {
@@ -12,45 +12,147 @@
     {
       "lemma": "יְרוּשָׁא",
       "strong": "H3388",
-      "pron": "",
+      "pron": "예루샤",
       "glossKo": "여루사"
     },
     {
       "lemma": "יָרַשׁ",
       "strong": "H3423",
-      "pron": "이라쉬",
-      "glossKo": "차지하다"
+      "pron": "요레쉬",
+      "glossKo": "차지하는 이"
     },
     {
       "lemma": "יְרֵשָׁה",
       "strong": "H3424",
-      "pron": "",
+      "pron": "예레샤",
       "glossKo": "소유"
     },
     {
       "lemma": "יְרֻשָּׁה",
       "strong": "H3425",
-      "pron": "예룻샤트",
+      "pron": "예룻샤",
       "glossKo": "기업"
     },
     {
       "lemma": "מוֹרָשׁ",
       "strong": "H4180",
-      "pron": "",
+      "pron": "모라셰이",
       "glossKo": "소유물"
     },
     {
       "lemma": "מוֹרֶשֶׁת גַּת",
       "strong": "H4182",
-      "pron": "",
+      "pron": "모레셰트",
       "glossKo": "모레셋가드"
     }
   ],
   "defEn": "net; catching",
   "defKo": "",
-  "countOT": 8,
+  "countOT": 22,
   "byBook": {
-    "psalms": 8
+    "psalms": 8,
+    "exodus": 4,
+    "ezekiel": 4,
+    "hosea": 2,
+    "proverbs": 2,
+    "job": 1,
+    "lamentations": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "עַל הָרֶ֗שֶׁת",
+      "pron": "알 레셰트",
+      "lemmas": [
+        "עַל",
+        "רֶשֶׁת"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "הָרֶ֗שֶׁת",
+          "lemma": "רֶשֶׁת",
+          "strong": "H7568",
+          "pron": "레셰트"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 27:4",
+        "ezekiel 17:20",
+        "ezekiel 19:8",
+        "hosea 7:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בְּרֶ֣שֶׁת בְּרַגְלָ֑יו",
+      "pron": "레셰트 락라흐",
+      "lemmas": [
+        "רֶשֶׁת",
+        "רֶגֶל"
+      ],
+      "words": [
+        {
+          "word": "בְּרֶ֣שֶׁת",
+          "lemma": "רֶשֶׁת",
+          "strong": "H7568",
+          "pron": "레셰트"
+        },
+        {
+          "word": "בְּרַגְלָ֑יו",
+          "lemma": "רֶגֶל",
+          "strong": "H7272",
+          "pron": "락라흐"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "job 18:8",
+        "psalms 25:15",
+        "lamentations 1:13"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּפָרַשְׂתִּ֤י עָלָיו֙ רִשְׁתִּ֔י",
+      "pron": "엡로스 알 레셰트",
+      "lemmas": [
+        "פָּרַשׂ",
+        "עַל",
+        "רֶשֶׁת"
+      ],
+      "words": [
+        {
+          "word": "וּפָרַשְׂתִּ֤י",
+          "lemma": "פָּרַשׂ",
+          "strong": "H6566",
+          "pron": "엡로스"
+        },
+        {
+          "word": "עָלָיו֙",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "רִשְׁתִּ֔י",
+          "lemma": "רֶשֶׁת",
+          "strong": "H7568",
+          "pron": "레셰트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "ezekiel 17:20",
+        "ezekiel 19:8",
+        "hosea 7:12"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

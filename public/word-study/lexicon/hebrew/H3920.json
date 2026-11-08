@@ -1,6 +1,6 @@
 {
   "lemma": "לָכַד",
-  "pron": "닐케다",
+  "pron": "바일케두",
   "strong": "H3920",
   "posKo": "동사",
   "root": null,
@@ -8,21 +8,214 @@
     {
       "lemma": "לֶכֶד",
       "strong": "H3921",
-      "pron": "",
+      "pron": "미라켇",
       "glossKo": "포로"
     },
     {
       "lemma": "מַלְכֹּדֶת",
       "strong": "H4434",
-      "pron": "",
-      "glossKo": "올무"
+      "pron": "우말쿧토",
+      "glossKo": "그의 올무"
     }
   ],
   "defEn": "catch; capture",
   "defKo": "",
-  "countOT": 3,
+  "countOT": 121,
   "byBook": {
-    "psalms": 3
+    "joshua": 24,
+    "jeremiah": 22,
+    "judges": 14,
+    "chronicles2": 8,
+    "samuel2": 7,
+    "samuel1": 6,
+    "isaiah": 4,
+    "job": 4,
+    "kings2": 4,
+    "numbers": 4,
+    "proverbs": 4,
+    "amos": 3,
+    "deuteronomy": 3,
+    "psalms": 3,
+    "chronicles1": 2,
+    "daniel": 2,
+    "kings1": 2,
+    "ecclesiastes": 1,
+    "habakkuk": 1,
+    "lamentations": 1,
+    "nehemiah": 1,
+    "zechariah": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וַיִּלְכֹּ֖ד אֶת",
+      "pron": "바일케두 에트",
+      "lemmas": [
+        "לָכַד",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וַיִּלְכֹּ֖ד",
+          "lemma": "לָכַד",
+          "strong": "H3920",
+          "pron": "바일케두"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 23,
+      "refs": [
+        "numbers 32:41",
+        "numbers 32:42",
+        "deuteronomy 2:34",
+        "deuteronomy 3:4",
+        "joshua 6:20",
+        "joshua 7:17",
+        "joshua 10:39",
+        "joshua 11:10",
+        "joshua 19:47",
+        "judges 1:8",
+        "judges 3:28",
+        "judges 7:24"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֲשֶׁ֥ר לָכַ֖ד",
+      "pron": "아셰르 바일케두",
+      "lemmas": [
+        "אֲשֶׁר",
+        "לָכַד"
+      ],
+      "words": [
+        {
+          "word": "אֲשֶׁ֥ר",
+          "lemma": "אֲשֶׁר",
+          "strong": "H834",
+          "pron": "아셰르"
+        },
+        {
+          "word": "לָכַ֖ד",
+          "lemma": "לָכַד",
+          "strong": "H3920",
+          "pron": "바일케두"
+        }
+      ],
+      "count": 8,
+      "refs": [
+        "deuteronomy 2:35",
+        "joshua 7:14",
+        "chronicles2 15:8",
+        "chronicles2 17:2",
+        "jeremiah 38:28"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "נִלְכְּדָ֣ה הָעִ֔יר",
+      "pron": "바일케두 이르",
+      "lemmas": [
+        "לָכַד",
+        "עִיר"
+      ],
+      "words": [
+        {
+          "word": "נִלְכְּדָ֣ה",
+          "lemma": "לָכַד",
+          "strong": "H3920",
+          "pron": "바일케두"
+        },
+        {
+          "word": "הָעִ֔יר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "kings1 16:18",
+        "nehemiah 9:25",
+        "proverbs 16:32",
+        "jeremiah 32:24",
+        "jeremiah 51:31",
+        "daniel 11:15",
+        "zechariah 14:2"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַֽיִּלְכְּד֖וּ אֶת הָעִֽיר",
+      "pron": "바일케두 에트 이르",
+      "lemmas": [
+        "לָכַד",
+        "אֵת",
+        "עִיר"
+      ],
+      "words": [
+        {
+          "word": "וַֽיִּלְכְּד֖וּ",
+          "lemma": "לָכַד",
+          "strong": "H3920",
+          "pron": "바일케두"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        },
+        {
+          "word": "הָעִֽיר",
+          "lemma": "עִיר",
+          "strong": "H5892",
+          "pron": "이르"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "joshua 6:20",
+        "judges 9:45",
+        "samuel2 12:26",
+        "samuel2 12:27",
+        "chronicles2 12:4",
+        "chronicles2 32:18"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וַיִּלְכֹּ֣ד דָּוִ֔ד",
+      "pron": "바일케두 다윗",
+      "lemmas": [
+        "לָכַד",
+        "דָּוִד"
+      ],
+      "words": [
+        {
+          "word": "וַיִּלְכֹּ֣ד",
+          "lemma": "לָכַד",
+          "strong": "H3920",
+          "pron": "바일케두"
+        },
+        {
+          "word": "דָּוִ֔ד",
+          "lemma": "דָּוִד",
+          "strong": "H1732",
+          "pron": "다윗"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "samuel2 5:7",
+        "samuel2 8:4",
+        "chronicles1 11:5",
+        "chronicles1 18:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

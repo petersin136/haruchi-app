@@ -1,8 +1,8 @@
 {
   "lemma": "זוּעַ",
-  "pron": "주아",
+  "pron": "즈은",
   "strong": "H2112",
-  "posKo": "",
+  "posKo": "동사",
   "root": {
     "lemma": "זוּעַ",
     "strong": "H2111",
@@ -12,19 +12,19 @@
     {
       "lemma": "זוּעַ",
       "strong": "H2111",
-      "pron": "",
+      "pron": "자",
       "glossKo": "두려워하다"
     },
     {
       "lemma": "זְוָעָה",
       "strong": "H2113",
-      "pron": "",
+      "pron": "르즈브",
       "glossKo": "공포"
     },
     {
       "lemma": "זִיעַ",
       "strong": "H2127",
-      "pron": "",
+      "pron": "브지아",
       "glossKo": "시아"
     },
     {
@@ -42,7 +42,108 @@
   ],
   "defEn": "shake",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 4,
+  "byBook": {
+    "daniel": 4
+  },
+  "phrases": [
+    {
+      "hebrew": "הֲו֛וֹ זאעין זָיְעִ֥ין",
+      "pron": "레헤베 즈은 즈은",
+      "lemmas": [
+        "הָוָא",
+        "זוּעַ",
+        "זוּעַ"
+      ],
+      "words": [
+        {
+          "word": "הֲו֛וֹ",
+          "lemma": "הָוָא",
+          "strong": "H1934",
+          "pron": "레헤베"
+        },
+        {
+          "word": "זאעין",
+          "lemma": "זוּעַ",
+          "strong": "H2112",
+          "pron": "즈은"
+        },
+        {
+          "word": "זָיְעִ֥ין",
+          "lemma": "זוּעַ",
+          "strong": "H2112",
+          "pron": "즈은"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 5:19",
+        "daniel 6:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זאעין זָיְעִ֥ין",
+      "pron": "즈은 즈은",
+      "lemmas": [
+        "זוּעַ",
+        "זוּעַ"
+      ],
+      "words": [
+        {
+          "word": "זאעין",
+          "lemma": "זוּעַ",
+          "strong": "H2112",
+          "pron": "즈은"
+        },
+        {
+          "word": "זָיְעִ֥ין",
+          "lemma": "זוּעַ",
+          "strong": "H2112",
+          "pron": "즈은"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 5:19",
+        "daniel 6:26"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "זאעין זָיְעִ֥ין וְדָחֲלִ֖ין",
+      "pron": "즈은 즈은 데힐",
+      "lemmas": [
+        "זוּעַ",
+        "זוּעַ",
+        "דְּחַל"
+      ],
+      "words": [
+        {
+          "word": "זאעין",
+          "lemma": "זוּעַ",
+          "strong": "H2112",
+          "pron": "즈은"
+        },
+        {
+          "word": "זָיְעִ֥ין",
+          "lemma": "זוּעַ",
+          "strong": "H2112",
+          "pron": "즈은"
+        },
+        {
+          "word": "וְדָחֲלִ֖ין",
+          "lemma": "דְּחַל",
+          "strong": "H1763",
+          "pron": "데힐"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "daniel 5:19",
+        "daniel 6:26"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

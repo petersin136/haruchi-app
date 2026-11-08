@@ -2,7 +2,7 @@
   "lemma": "אָמוֹץ",
   "pron": "아모츠",
   "strong": "H531",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "אָמַץ",
     "strong": "H553",
@@ -12,43 +12,202 @@
     {
       "lemma": "אַמִּיץ",
       "strong": "H533",
-      "pron": "",
+      "pron": "암미츠",
       "glossKo": "강한"
     },
     {
       "lemma": "אָמַץ",
       "strong": "H553",
-      "pron": "암추",
+      "pron": "예에마츠",
       "glossKo": "강하다"
     },
     {
       "lemma": "אָמֹץ",
       "strong": "H554",
-      "pron": "",
+      "pron": "아뭇침",
       "glossKo": "강한"
     },
     {
       "lemma": "אֹמֶץ",
       "strong": "H555",
-      "pron": "",
+      "pron": "오메츠",
       "glossKo": "용기"
     },
     {
       "lemma": "אַמְצָה",
       "strong": "H556",
-      "pron": "",
+      "pron": "암차",
       "glossKo": "강함"
     },
     {
       "lemma": "אַמְצִי",
       "strong": "H557",
-      "pron": "",
+      "pron": "암치",
       "glossKo": "암시"
     }
   ],
   "defEn": "Amots",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 13,
+  "byBook": {
+    "isaiah": 7,
+    "chronicles2": 3,
+    "kings2": 3
+  },
+  "phrases": [
+    {
+      "hebrew": "בֶן אָמ֔וֹץ",
+      "pron": "바님 아모츠",
+      "lemmas": [
+        "בֵּן",
+        "אָמוֹץ"
+      ],
+      "words": [
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "אָמ֔וֹץ",
+          "lemma": "אָמוֹץ",
+          "strong": "H531",
+          "pron": "아모츠"
+        }
+      ],
+      "count": 13,
+      "refs": [
+        "kings2 19:2",
+        "kings2 19:20",
+        "kings2 20:1",
+        "chronicles2 26:22",
+        "chronicles2 32:20",
+        "chronicles2 32:32",
+        "isaiah 1:1",
+        "isaiah 2:1",
+        "isaiah 13:1",
+        "isaiah 20:2",
+        "isaiah 37:2",
+        "isaiah 37:21"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְשַֽׁעְיָ֣הוּ בֶן אָמ֔וֹץ",
+      "pron": "예샤에아후 바님 아모츠",
+      "lemmas": [
+        "יְשַׁעְיָה",
+        "בֵּן",
+        "אָמוֹץ"
+      ],
+      "words": [
+        {
+          "word": "יְשַֽׁעְיָ֣הוּ",
+          "lemma": "יְשַׁעְיָה",
+          "strong": "H3470",
+          "pron": "예샤에아후"
+        },
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "אָמ֔וֹץ",
+          "lemma": "אָמוֹץ",
+          "strong": "H531",
+          "pron": "아모츠"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "kings2 19:20",
+        "kings2 20:1",
+        "chronicles2 26:22",
+        "chronicles2 32:20",
+        "chronicles2 32:32",
+        "isaiah 1:1",
+        "isaiah 2:1",
+        "isaiah 13:1",
+        "isaiah 20:2",
+        "isaiah 37:2",
+        "isaiah 37:21",
+        "isaiah 38:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אָמ֜וֹץ הַנָּבִ֗יא",
+      "pron": "아모츠 나비",
+      "lemmas": [
+        "אָמוֹץ",
+        "נָבִיא"
+      ],
+      "words": [
+        {
+          "word": "אָמ֜וֹץ",
+          "lemma": "אָמוֹץ",
+          "strong": "H531",
+          "pron": "아모츠"
+        },
+        {
+          "word": "הַנָּבִ֗יא",
+          "lemma": "נָבִיא",
+          "strong": "H5030",
+          "pron": "나비"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings2 20:1",
+        "chronicles2 26:22",
+        "chronicles2 32:20",
+        "chronicles2 32:32",
+        "isaiah 37:2",
+        "isaiah 38:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בֶן אָמ֜וֹץ הַנָּבִ֗יא",
+      "pron": "바님 아모츠 나비",
+      "lemmas": [
+        "בֵּן",
+        "אָמוֹץ",
+        "נָבִיא"
+      ],
+      "words": [
+        {
+          "word": "בֶן",
+          "lemma": "בֵּן",
+          "strong": "H1121",
+          "pron": "바님"
+        },
+        {
+          "word": "אָמ֜וֹץ",
+          "lemma": "אָמוֹץ",
+          "strong": "H531",
+          "pron": "아모츠"
+        },
+        {
+          "word": "הַנָּבִ֗יא",
+          "lemma": "נָבִיא",
+          "strong": "H5030",
+          "pron": "나비"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "kings2 20:1",
+        "chronicles2 26:22",
+        "chronicles2 32:20",
+        "chronicles2 32:32",
+        "isaiah 37:2",
+        "isaiah 38:1"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

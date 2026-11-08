@@ -1,8 +1,8 @@
 {
   "lemma": "יָבֵשׁ",
-  "pron": "야베쉬",
+  "pron": "비위베심",
   "strong": "H3002",
-  "posKo": "",
+  "posKo": "형용사",
   "root": {
     "lemma": "יָבֵשׁ",
     "strong": "H3001",
@@ -12,19 +12,61 @@
     {
       "lemma": "יָבֵשׁ",
       "strong": "H3001",
-      "pron": "야베쉬",
+      "pron": "예보셰트",
       "glossKo": "마르다"
+    },
+    {
+      "lemma": "יָבֵשׁ",
+      "strong": "H3003",
+      "pron": "미야베쉬",
+      "glossKo": "야베스"
     },
     {
       "lemma": "יַבָּשָׁה",
       "strong": "H3004",
-      "pron": "르얍바샤",
+      "pron": "아얍바샤",
       "glossKo": "마른땅"
     }
   ],
   "defEn": "dry",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 9,
+  "byBook": {
+    "ezekiel": 4,
+    "numbers": 2,
+    "isaiah": 1,
+    "job": 1,
+    "nahum": 1
+  },
+  "phrases": [
+    {
+      "hebrew": "עֵ֥ץ יָבֵֽשׁ",
+      "pron": "에츠 비위베심",
+      "lemmas": [
+        "עֵץ",
+        "יָבֵשׁ"
+      ],
+      "words": [
+        {
+          "word": "עֵ֥ץ",
+          "lemma": "עֵץ",
+          "strong": "H6086",
+          "pron": "에츠"
+        },
+        {
+          "word": "יָבֵֽשׁ",
+          "lemma": "יָבֵשׁ",
+          "strong": "H3002",
+          "pron": "비위베심"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "isaiah 56:3",
+        "ezekiel 17:24",
+        "ezekiel 20:47"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

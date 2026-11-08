@@ -1,6 +1,6 @@
 {
   "lemma": "לֶהָבָה",
-  "pron": "라하보트",
+  "pron": "레하바",
   "strong": "H3852",
   "posKo": "명사",
   "root": {
@@ -12,13 +12,13 @@
     {
       "lemma": "לַבָּה",
       "strong": "H3827",
-      "pron": "",
+      "pron": "브랍바트",
       "glossKo": "불꽃"
     },
     {
       "lemma": "לַהַב",
       "strong": "H3851",
-      "pron": "",
+      "pron": "아라합",
       "glossKo": "불꽃"
     },
     {
@@ -30,27 +30,97 @@
     {
       "lemma": "לַהַד",
       "strong": "H3855",
-      "pron": "",
+      "pron": "라핟",
       "glossKo": "라핫"
     },
     {
       "lemma": "שַׁלְהֶבֶת",
       "strong": "H7957",
-      "pron": "",
+      "pron": "샬하베트",
       "glossKo": "불꽃"
     },
     {
       "lemma": "תַּלְאוּבָה",
       "strong": "H8514",
-      "pron": "",
+      "pron": "탈우보트",
       "glossKo": "쇠약"
     }
   ],
   "defEn": "flame(-ming), head (of a spear).",
   "defKo": "",
-  "countOT": 4,
+  "countOT": 19,
   "byBook": {
-    "psalms": 4
+    "isaiah": 5,
+    "psalms": 4,
+    "joel": 2,
+    "daniel": 1,
+    "ezekiel": 1,
+    "hosea": 1,
+    "jeremiah": 1,
+    "lamentations": 1,
+    "numbers": 1,
+    "obadiah": 1,
+    "samuel1": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אֵ֖שׁ לֶהָב֣וֹת",
+      "pron": "에쉬 레하바",
+      "lemmas": [
+        "אֵשׁ",
+        "לֶהָבָה"
+      ],
+      "words": [
+        {
+          "word": "אֵ֖שׁ",
+          "lemma": "אֵשׁ",
+          "strong": "H784",
+          "pron": "에쉬"
+        },
+        {
+          "word": "לֶהָב֣וֹת",
+          "lemma": "לֶהָבָה",
+          "strong": "H3852",
+          "pron": "레하바"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "psalms 105:32",
+        "isaiah 4:5",
+        "lamentations 2:3",
+        "hosea 7:6"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּ֝כְלֶהָבָ֗ה תְּלַהֵ֥ט",
+      "pron": "레하바 바텔라헫",
+      "lemmas": [
+        "לֶהָבָה",
+        "לָהַט"
+      ],
+      "words": [
+        {
+          "word": "וּ֝כְלֶהָבָ֗ה",
+          "lemma": "לֶהָבָה",
+          "strong": "H3852",
+          "pron": "레하바"
+        },
+        {
+          "word": "תְּלַהֵ֥ט",
+          "lemma": "לָהַט",
+          "strong": "H3857",
+          "pron": "바텔라헫"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "psalms 83:14",
+        "psalms 106:18",
+        "joel 1:19"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

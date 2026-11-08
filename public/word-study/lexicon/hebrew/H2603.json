@@ -1,6 +1,6 @@
 {
   "lemma": "חָנַן",
-  "pron": "한네니",
+  "pron": "하난",
   "strong": "H2603",
   "posKo": "동사",
   "root": {
@@ -18,76 +18,62 @@
     {
       "lemma": "חָנָה",
       "strong": "H2583",
-      "pron": "타하네",
+      "pron": "바이한",
       "glossKo": "진치다"
     },
     {
       "lemma": "חַנָּה",
       "strong": "H2584",
-      "pron": "",
+      "pron": "한나",
       "glossKo": "한나"
     },
     {
       "lemma": "חָנוּן",
       "strong": "H2586",
-      "pron": "",
+      "pron": "하눈",
       "glossKo": "하눈"
     },
     {
       "lemma": "חַנּוּן",
       "strong": "H2587",
-      "pron": "브한눈",
+      "pron": "한눈",
       "glossKo": "은혜로운"
     },
     {
       "lemma": "חָנוּת",
       "strong": "H2588",
-      "pron": "",
+      "pron": "아하누오트",
       "glossKo": "지하실"
     }
   ],
   "defEn": "bend; favor; bestow; implore",
   "defKo": "",
-  "countOT": 36,
+  "countOT": 79,
   "byBook": {
     "psalms": 32,
-    "genesis": 4
+    "job": 7,
+    "isaiah": 6,
+    "proverbs": 6,
+    "genesis": 4,
+    "kings1": 4,
+    "deuteronomy": 3,
+    "chronicles2": 2,
+    "esther": 2,
+    "exodus": 2,
+    "kings2": 2,
+    "samuel2": 2,
+    "amos": 1,
+    "hosea": 1,
+    "jeremiah": 1,
+    "judges": 1,
+    "lamentations": 1,
+    "malachi": 1,
+    "numbers": 1
   },
   "phrases": [
     {
-      "hebrew": "חָנֵּ֣נִי אֱלֹהִ֣ים",
-      "pron": "한네니 베엘로힘",
-      "lemmas": [
-        "חָנַן",
-        "אֱלֹהִים"
-      ],
-      "words": [
-        {
-          "word": "חָנֵּ֣נִי",
-          "lemma": "חָנַן",
-          "strong": "H2603",
-          "pron": "한네니"
-        },
-        {
-          "word": "אֱלֹהִ֣ים",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        }
-      ],
-      "count": 5,
-      "refs": [
-        "psalms 51:1",
-        "psalms 56:1",
-        "psalms 57:1",
-        "genesis 33:5",
-        "genesis 33:11"
-      ],
-      "glossKo": ""
-    },
-    {
       "hebrew": "חָנֵּ֥נִי יְהוָה֮",
-      "pron": "한네니 여호와",
+      "pron": "하난 여호와",
       "lemmas": [
         "חָנַן",
         "יְהֹוָה"
@@ -97,7 +83,7 @@
           "word": "חָנֵּ֥נִי",
           "lemma": "חָנַן",
           "strong": "H2603",
-          "pron": "한네니"
+          "pron": "하난"
         },
         {
           "word": "יְהוָה֮",
@@ -106,19 +92,22 @@
           "pron": "여호와"
         }
       ],
-      "count": 5,
+      "count": 8,
       "refs": [
+        "samuel2 12:22",
+        "kings2 13:23",
         "psalms 6:2",
         "psalms 9:13",
         "psalms 30:10",
         "psalms 31:9",
-        "psalms 123:3"
+        "psalms 123:3",
+        "amos 5:15"
       ],
       "glossKo": ""
     },
     {
       "hebrew": "יְהוָ֥ה וְחָנֵּ֑נִי",
-      "pron": "여호와 한네니",
+      "pron": "여호와 하난",
       "lemmas": [
         "יְהֹוָה",
         "חָנַן"
@@ -134,75 +123,111 @@
           "word": "וְחָנֵּ֑נִי",
           "lemma": "חָנַן",
           "strong": "H2603",
-          "pron": "한네니"
+          "pron": "하난"
         }
       ],
-      "count": 5,
+      "count": 8,
       "refs": [
         "psalms 30:10",
         "psalms 41:4",
         "psalms 41:10",
         "psalms 123:3",
-        "psalms 142:1"
+        "psalms 142:1",
+        "proverbs 19:17",
+        "isaiah 30:18",
+        "isaiah 33:2"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "וְחָנֵּ֑נִי כִּֽי",
-      "pron": "한네니 키",
+      "hebrew": "וְהִֽתְחַנְּנ֣וּ אֵלֶ֗יךָ",
+      "pron": "하난 엘",
       "lemmas": [
         "חָנַן",
-        "כִּי"
+        "אֵל"
       ],
       "words": [
         {
-          "word": "וְחָנֵּ֑נִי",
+          "word": "וְהִֽתְחַנְּנ֣וּ",
           "lemma": "חָנַן",
           "strong": "H2603",
-          "pron": "한네니"
+          "pron": "하난"
         },
         {
-          "word": "כִּֽי",
-          "lemma": "כִּי",
-          "strong": "H3588",
-          "pron": "키"
+          "word": "אֵלֶ֗יךָ",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
         }
       ],
-      "count": 4,
+      "count": 6,
       "refs": [
-        "psalms 25:16",
-        "psalms 57:1",
-        "psalms 102:13",
-        "psalms 123:3"
+        "genesis 42:21",
+        "deuteronomy 3:23",
+        "kings1 8:33",
+        "kings1 8:47",
+        "kings2 1:13",
+        "chronicles2 6:37"
       ],
       "glossKo": ""
     },
     {
-      "hebrew": "אֱלֹהִ֨ים חָנֵּ֗נִי",
-      "pron": "베엘로힘 한네니",
+      "hebrew": "יחנני וְחַנַּ֥נִי",
+      "pron": "하난 하난",
       "lemmas": [
-        "אֱלֹהִים",
+        "חָנַן",
         "חָנַן"
       ],
       "words": [
         {
-          "word": "אֱלֹהִ֨ים",
-          "lemma": "אֱלֹהִים",
-          "strong": "H430",
-          "pron": "베엘로힘"
-        },
-        {
-          "word": "חָנֵּ֗נִי",
+          "word": "יחנני",
           "lemma": "חָנַן",
           "strong": "H2603",
-          "pron": "한네니"
+          "pron": "하난"
+        },
+        {
+          "word": "וְחַנַּ֥נִי",
+          "lemma": "חָנַן",
+          "strong": "H2603",
+          "pron": "하난"
         }
       ],
-      "count": 3,
+      "count": 6,
       "refs": [
-        "psalms 57:1",
-        "psalms 67:1",
-        "genesis 43:29"
+        "samuel2 12:22",
+        "job 19:21",
+        "isaiah 30:19"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֵלַ֥י וְחָנֵּ֑נִי",
+      "pron": "엘 하난",
+      "lemmas": [
+        "אֵל",
+        "חָנַן"
+      ],
+      "words": [
+        {
+          "word": "אֵלַ֥י",
+          "lemma": "אֵל",
+          "strong": "H413",
+          "pron": "엘"
+        },
+        {
+          "word": "וְחָנֵּ֑נִי",
+          "lemma": "חָנַן",
+          "strong": "H2603",
+          "pron": "하난"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "numbers 6:25",
+        "judges 21:22",
+        "psalms 25:16",
+        "psalms 86:16",
+        "psalms 119:132"
       ],
       "glossKo": ""
     }

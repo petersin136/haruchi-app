@@ -1,6 +1,6 @@
 {
   "lemma": "צָדַק",
-  "pron": "찯쿠",
+  "pron": "찯카",
   "strong": "H6663",
   "posKo": "동사",
   "root": null,
@@ -8,34 +8,192 @@
     {
       "lemma": "צָדוֹק",
       "strong": "H6659",
-      "pron": "",
+      "pron": "브차도크",
       "glossKo": "사독"
     },
     {
       "lemma": "צַדִּיק",
       "strong": "H6662",
-      "pron": "찯디킴",
+      "pron": "찯디크",
       "glossKo": "의인"
     },
     {
       "lemma": "צֶדֶק",
       "strong": "H6664",
-      "pron": "칟키위",
-      "glossKo": "나의 의"
+      "pron": "브체데크",
+      "glossKo": "의"
     },
     {
       "lemma": "צְדָקָה",
       "strong": "H6666",
-      "pron": "브칟카테카",
-      "glossKo": "너의 의"
+      "pron": "체다카",
+      "glossKo": "의"
     }
   ],
   "defEn": "be; make; right",
   "defKo": "",
-  "countOT": 6,
+  "countOT": 41,
   "byBook": {
+    "job": 17,
+    "isaiah": 6,
     "psalms": 4,
-    "genesis": 2
+    "ezekiel": 3,
+    "daniel": 2,
+    "genesis": 2,
+    "chronicles2": 1,
+    "deuteronomy": 1,
+    "exodus": 1,
+    "jeremiah": 1,
+    "kings1": 1,
+    "proverbs": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "אִם צָ֭דַקְתִּי",
+      "pron": "임 찯카",
+      "lemmas": [
+        "אִם",
+        "צָדַק"
+      ],
+      "words": [
+        {
+          "word": "אִם",
+          "lemma": "אִם",
+          "strong": "H518",
+          "pron": "임"
+        },
+        {
+          "word": "צָ֭דַקְתִּי",
+          "lemma": "צָדַק",
+          "strong": "H6663",
+          "pron": "찯카"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "job 9:15",
+        "job 9:20",
+        "job 27:5",
+        "job 35:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אַצְדִּ֖יק רָשָֽׁע",
+      "pron": "찯카 라샤",
+      "lemmas": [
+        "צָדַק",
+        "רָשָׁע"
+      ],
+      "words": [
+        {
+          "word": "אַצְדִּ֖יק",
+          "lemma": "צָדַק",
+          "strong": "H6663",
+          "pron": "찯카"
+        },
+        {
+          "word": "רָשָֽׁע",
+          "lemma": "רָשָׁע",
+          "strong": "H7563",
+          "pron": "라샤"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "exodus 23:7",
+        "proverbs 17:15",
+        "isaiah 5:23"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וְהִצְדִּ֨יקוּ֙ אֶת",
+      "pron": "찯카 에트",
+      "lemmas": [
+        "צָדַק",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "וְהִצְדִּ֨יקוּ֙",
+          "lemma": "צָדַק",
+          "strong": "H6663",
+          "pron": "찯카"
+        },
+        {
+          "word": "אֶת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "deuteronomy 25:1",
+        "job 27:5",
+        "ezekiel 16:51"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּלְהַצְדִּ֣יק צַדִּ֔יק",
+      "pron": "찯카 찯디크",
+      "lemmas": [
+        "צָדַק",
+        "צַדִּיק"
+      ],
+      "words": [
+        {
+          "word": "וּלְהַצְדִּ֣יק",
+          "lemma": "צָדַק",
+          "strong": "H6663",
+          "pron": "찯카"
+        },
+        {
+          "word": "צַדִּ֔יק",
+          "lemma": "צַדִּיק",
+          "strong": "H6662",
+          "pron": "찯디크"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "kings1 8:32",
+        "chronicles2 6:23",
+        "isaiah 53:11"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "וּמַה נִּצְטַדָּ֑ק",
+      "pron": "마 찯카",
+      "lemmas": [
+        "מָה",
+        "צָדַק"
+      ],
+      "words": [
+        {
+          "word": "וּמַה",
+          "lemma": "מָה",
+          "strong": "H4100",
+          "pron": "마"
+        },
+        {
+          "word": "נִּצְטַדָּ֑ק",
+          "lemma": "צָדַק",
+          "strong": "H6663",
+          "pron": "찯카"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 44:16",
+        "job 9:2",
+        "job 25:4"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

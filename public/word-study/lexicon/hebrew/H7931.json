@@ -1,6 +1,6 @@
 {
   "lemma": "שָׁכַן",
-  "pron": "야셱켄",
+  "pron": "바야셱켄",
   "strong": "H7931",
   "posKo": "동사",
   "root": {
@@ -12,46 +12,241 @@
     {
       "lemma": "מִשְׁכָּב",
       "strong": "H4904",
-      "pron": "미셱캅켐",
-      "glossKo": "너희의 침상"
+      "pron": "미셱케베",
+      "glossKo": "침상"
     },
     {
       "lemma": "מִשְׁכָּן",
       "strong": "H4908",
-      "pron": "미셱칸",
+      "pron": "아미셱칸",
       "glossKo": "성막"
     },
     {
       "lemma": "שָׁכַב",
       "strong": "H7901",
-      "pron": "샤캅티",
+      "pron": "이셱카부",
       "glossKo": "눕다"
     },
     {
       "lemma": "שְׁכָבָה",
       "strong": "H7902",
-      "pron": "",
+      "pron": "시케바트",
       "glossKo": "동침"
     },
     {
       "lemma": "שְׁכֹבֶת",
       "strong": "H7903",
-      "pron": "",
-      "glossKo": "누움"
+      "pron": "셰캅테카",
+      "glossKo": "너의 누움"
     },
     {
       "lemma": "שְׁכַן",
       "strong": "H7932",
-      "pron": "",
+      "pron": "샥킨",
       "glossKo": "거하다(아람)"
     }
   ],
   "defEn": "reside; permanently stay",
   "defKo": "",
-  "countOT": 31,
+  "countOT": 129,
   "byBook": {
     "psalms": 23,
-    "genesis": 8
+    "jeremiah": 14,
+    "isaiah": 13,
+    "deuteronomy": 11,
+    "job": 11,
+    "numbers": 10,
+    "genesis": 8,
+    "ezekiel": 6,
+    "exodus": 5,
+    "proverbs": 5,
+    "zechariah": 4,
+    "judges": 3,
+    "chronicles1": 2,
+    "joel": 2,
+    "joshua": 2,
+    "kings1": 2,
+    "micah": 2,
+    "chronicles2": 1,
+    "leviticus": 1,
+    "nahum": 1,
+    "nehemiah": 1,
+    "obadiah": 1,
+    "samuel2": 1
   },
-  "phrases": []
+  "phrases": [
+    {
+      "hebrew": "וְשָׁ֣כַנְתִּ֔י בְּת֖וֹךְ",
+      "pron": "바야셱켄 브토크",
+      "lemmas": [
+        "שָׁכַן",
+        "תָּוֶךְ"
+      ],
+      "words": [
+        {
+          "word": "וְשָׁ֣כַנְתִּ֔י",
+          "lemma": "שָׁכַן",
+          "strong": "H7931",
+          "pron": "바야셱켄"
+        },
+        {
+          "word": "בְּת֖וֹךְ",
+          "lemma": "תָּוֶךְ",
+          "strong": "H8432",
+          "pron": "브토크"
+        }
+      ],
+      "count": 12,
+      "refs": [
+        "exodus 25:8",
+        "exodus 29:45",
+        "exodus 29:46",
+        "numbers 5:3",
+        "numbers 35:34",
+        "kings1 6:13",
+        "ezekiel 43:9",
+        "zechariah 2:10",
+        "zechariah 2:11",
+        "zechariah 8:3",
+        "zechariah 8:8"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְשַׁכֵּ֥ן שְׁמ֖וֹ",
+      "pron": "바야셱켄 솀",
+      "lemmas": [
+        "שָׁכַן",
+        "שֵׁם"
+      ],
+      "words": [
+        {
+          "word": "לְשַׁכֵּ֥ן",
+          "lemma": "שָׁכַן",
+          "strong": "H7931",
+          "pron": "바야셱켄"
+        },
+        {
+          "word": "שְׁמ֖וֹ",
+          "lemma": "שֵׁם",
+          "strong": "H8034",
+          "pron": "솀"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "deuteronomy 12:11",
+        "deuteronomy 14:23",
+        "deuteronomy 16:2",
+        "deuteronomy 16:6",
+        "deuteronomy 16:11",
+        "deuteronomy 26:2",
+        "jeremiah 7:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "לְשַׁכֵּ֥ן שְׁמ֖וֹ שָֽׁם",
+      "pron": "바야셱켄 솀 샴",
+      "lemmas": [
+        "שָׁכַן",
+        "שֵׁם",
+        "שָׁם"
+      ],
+      "words": [
+        {
+          "word": "לְשַׁכֵּ֥ן",
+          "lemma": "שָׁכַן",
+          "strong": "H7931",
+          "pron": "바야셱켄"
+        },
+        {
+          "word": "שְׁמ֖וֹ",
+          "lemma": "שֵׁם",
+          "strong": "H8034",
+          "pron": "솀"
+        },
+        {
+          "word": "שָֽׁם",
+          "lemma": "שָׁם",
+          "strong": "H8033",
+          "pron": "샴"
+        }
+      ],
+      "count": 7,
+      "refs": [
+        "deuteronomy 12:11",
+        "deuteronomy 14:23",
+        "deuteronomy 16:2",
+        "deuteronomy 16:6",
+        "deuteronomy 16:11",
+        "deuteronomy 26:2",
+        "jeremiah 7:12"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יִשְׁכָּן שָׁם֙",
+      "pron": "바야셱켄 샴",
+      "lemmas": [
+        "שָׁכַן",
+        "שָׁם"
+      ],
+      "words": [
+        {
+          "word": "יִשְׁכָּן",
+          "lemma": "שָׁכַן",
+          "strong": "H7931",
+          "pron": "바야셱켄"
+        },
+        {
+          "word": "שָׁם֙",
+          "lemma": "שָׁם",
+          "strong": "H8033",
+          "pron": "샴"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "numbers 9:17",
+        "joshua 18:1",
+        "joshua 22:19",
+        "isaiah 13:21",
+        "isaiah 65:9",
+        "ezekiel 43:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "אֱלֹהֶ֔יךָ לְשַׁכֵּ֥ן",
+      "pron": "엘로힘 바야셱켄",
+      "lemmas": [
+        "אֱלֹהִים",
+        "שָׁכַן"
+      ],
+      "words": [
+        {
+          "word": "אֱלֹהֶ֔יךָ",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "לְשַׁכֵּ֥ן",
+          "lemma": "שָׁכַן",
+          "strong": "H7931",
+          "pron": "바야셱켄"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "deuteronomy 12:11",
+        "deuteronomy 16:6",
+        "deuteronomy 16:11",
+        "deuteronomy 26:2",
+        "joel 3:17"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

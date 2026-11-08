@@ -1,8 +1,8 @@
 {
   "lemma": "פִּי הַחִירֹת",
-  "pron": "피하히로트",
+  "pron": "피",
   "strong": "H6367",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "פֶּה",
     "strong": "H6310",
@@ -12,13 +12,13 @@
     {
       "lemma": "פֶּה",
       "strong": "H6310",
-      "pron": "브피후",
-      "glossKo": "그의 입"
+      "pron": "피하",
+      "glossKo": "그녀의 입"
     },
     {
       "lemma": "פֵּיָה",
       "strong": "H6366",
-      "pron": "",
+      "pron": "페오트",
       "glossKo": "검의 날"
     },
     {
@@ -26,11 +26,91 @@
       "strong": "H6369",
       "pron": "우피콜",
       "glossKo": "비골"
+    },
+    {
+      "lemma": "פִּינְחָס",
+      "strong": "H6372",
+      "pron": "핀핫",
+      "glossKo": "비느하스"
+    },
+    {
+      "lemma": "פֻּם",
+      "strong": "H6433",
+      "pron": "브품",
+      "glossKo": "입(아람)"
     }
   ],
   "defEn": "Pi-ha-Chiroth",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
-  "phrases": []
+  "countOT": 7,
+  "byBook": {
+    "exodus": 4,
+    "numbers": 3
+  },
+  "phrases": [
+    {
+      "hebrew": "פִּ֣י הַחִירֹ֔ת",
+      "pron": "피 피",
+      "lemmas": [
+        "פִּי הַחִירֹת",
+        "פִּי הַחִירֹת"
+      ],
+      "words": [
+        {
+          "word": "פִּ֣י",
+          "lemma": "פִּי הַחִירֹת",
+          "strong": "H6367",
+          "pron": "피"
+        },
+        {
+          "word": "הַחִירֹ֔ת",
+          "lemma": "פִּי הַחִירֹת",
+          "strong": "H6367",
+          "pron": "피"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "exodus 14:2",
+        "exodus 14:9",
+        "numbers 33:7"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "עַל פִּי֙ הַֽחִירֹ֔ת",
+      "pron": "알 피 피",
+      "lemmas": [
+        "עַל",
+        "פִּי הַחִירֹת",
+        "פִּי הַחִירֹת"
+      ],
+      "words": [
+        {
+          "word": "עַל",
+          "lemma": "עַל",
+          "strong": "H5921",
+          "pron": "알"
+        },
+        {
+          "word": "פִּי֙",
+          "lemma": "פִּי הַחִירֹת",
+          "strong": "H6367",
+          "pron": "피"
+        },
+        {
+          "word": "הַֽחִירֹ֔ת",
+          "lemma": "פִּי הַחִירֹת",
+          "strong": "H6367",
+          "pron": "피"
+        }
+      ],
+      "count": 4,
+      "refs": [
+        "exodus 14:9",
+        "numbers 33:7"
+      ],
+      "glossKo": ""
+    }
+  ]
 }

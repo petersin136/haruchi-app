@@ -1,8 +1,8 @@
 {
   "lemma": "אַשְׁדּוֹד",
-  "pron": "아셷돋",
+  "pron": "우브아셷돋",
   "strong": "H795",
-  "posKo": "",
+  "posKo": "명사",
   "root": {
     "lemma": "שָׁדַד",
     "strong": "H7703",
@@ -10,15 +10,21 @@
   },
   "family": [
     {
+      "lemma": "אַשְׁדּוֹדִי",
+      "strong": "H796",
+      "pron": "브하아셷도디",
+      "glossKo": "아스돗 사람"
+    },
+    {
       "lemma": "שָׁדַד",
       "strong": "H7703",
-      "pron": "샫두니",
-      "glossKo": "나를 약탈하다"
+      "pron": "샤둗",
+      "glossKo": "약탈하는 이"
     },
     {
       "lemma": "שִׁדָּה",
       "strong": "H7705",
-      "pron": "",
+      "pron": "싣다",
       "glossKo": "처첩"
     },
     {
@@ -30,7 +36,16 @@
   ],
   "defEn": "Ashdod",
   "defKo": "",
-  "countOT": 0,
-  "byBook": {},
+  "countOT": 17,
+  "byBook": {
+    "samuel1": 5,
+    "joshua": 3,
+    "amos": 2,
+    "chronicles2": 2,
+    "isaiah": 2,
+    "jeremiah": 1,
+    "zechariah": 1,
+    "zephaniah": 1
+  },
   "phrases": []
 }
