@@ -2,21 +2,23 @@
 // 유튜브 자막 타임스탬프 ↔ 개역한글 절 정렬 → public/watch-times/<bookId>.json
 //
 // 입력:
-//   .cache/transcript/<bookId>-json3.json (있으면 우선 — 유튜브 asr json3, 단어별 tOffsetMs)
-//   .cache/transcript/<bookId>.json  (또는 .txt — 수동 붙여넣기)
+//   public/watch-times/manifest.json          (videoId·장 범위)
+//   .cache/watch-manifest/videos-meta.json    (durationSec, 없으면 json3 마지막 시각)
+//   .cache/transcript/<bookId>-json3.json     (우선 — asr json3, 단어별 tOffsetMs)
+//   .cache/transcript/<bookId>.json|.txt      (json3 없을 때만)
 //   public/bible-study/chunks/<bookId>/<ch>/korean.json
-//   data/verse-times-fix/<bookId>.json (선택, {"1:14":121.3} 최우선)
+//   data/verse-times-fix/<bookId>.json       (선택, {"1:14":121.3} 최우선)
 //
 // 산출: public/watch-times/<bookId>.json  (숫자만, 자막 본문 미포함)
-//   chapters[장].src[i] — 절 시각 근거:
-//     "word"   자막 단어 시작 시각(절 첫 어절이 자막 단어 시작과 맞음)
-//     "seg"    자막 덩어리 안 비율 위치(덩어리 경계와 어긋나거나 첫 어절 오인식)
-//     "interp" 매칭 실패 — 앞뒤 기준점 사이 글자 수 비율 추정
-//     "fix"    data/verse-times-fix 수동 보정
+//   chapters[장].src[i] — word / seg / interp / fix
+//   chapters[장].videoId — 여러 편으로 나뉜 책만 (한 편이면 루트 videoId)
+//
+// 장 시작: 시편 "N편", 그 외 "N장". 1장짜리·라벨 없는 장은 1:1 첫 어절 시각.
+// 소개·책 제목 낭독은 1:1 이전(장 시작 ≠ 영상 0초).
 //
 // 사용:
 //   node scripts/align-verse-times.mjs genesis
-//   node scripts/align-verse-times.mjs exodus
+//   node scripts/align-verse-times.mjs leviticus ruth psalms jonah john1
 // =============================================================================
 
 import fs from "node:fs";
@@ -26,24 +28,111 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
 
-/** @type {Record<string, { videoId: string, totalChapters: number, durationSec: number, chapterLabelRe: RegExp }>} */
-const BOOK_CONFIG = {
-  genesis: {
-    videoId: "YslfYAunGF4",
-    bookName: "창세기",
-    totalChapters: 50,
-    durationSec: 14690,
-    // "창세기 N장" 또는 자막이 "46장 …"처럼만 말하는 경우
-    chapterLabelRe: /(?:창세기\s*)?(\d{1,2})\s*장/g,
-  },
-  exodus: {
-    videoId: "qN0W1g2wpmk",
-    bookName: "출애굽기",
-    totalChapters: 40,
-    durationSec: 11591,
-    chapterLabelRe: /(?:출애굽기\s*)?(\d{1,2})\s*장/g,
-  },
+/** books.ts 복사 — 이름·장수·장 단위(시편=편) */
+const BOOK_META = {
+  genesis: { bookName: "창세기", totalChapters: 50, unit: "장" },
+  exodus: { bookName: "출애굽기", totalChapters: 40, unit: "장" },
+  leviticus: { bookName: "레위기", totalChapters: 27, unit: "장" },
+  numbers: { bookName: "민수기", totalChapters: 36, unit: "장" },
+  deuteronomy: { bookName: "신명기", totalChapters: 34, unit: "장" },
+  joshua: { bookName: "여호수아", totalChapters: 24, unit: "장" },
+  judges: { bookName: "사사기", totalChapters: 21, unit: "장" },
+  ruth: { bookName: "룻기", totalChapters: 4, unit: "장" },
+  samuel1: { bookName: "사무엘상", totalChapters: 31, unit: "장" },
+  samuel2: { bookName: "사무엘하", totalChapters: 24, unit: "장" },
+  kings1: { bookName: "열왕기상", totalChapters: 22, unit: "장" },
+  kings2: { bookName: "열왕기하", totalChapters: 25, unit: "장" },
+  chronicles1: { bookName: "역대상", totalChapters: 29, unit: "장" },
+  chronicles2: { bookName: "역대하", totalChapters: 36, unit: "장" },
+  ezra: { bookName: "에스라", totalChapters: 10, unit: "장" },
+  nehemiah: { bookName: "느헤미야", totalChapters: 13, unit: "장" },
+  esther: { bookName: "에스더", totalChapters: 10, unit: "장" },
+  job: { bookName: "욥기", totalChapters: 42, unit: "장" },
+  psalms: { bookName: "시편", totalChapters: 150, unit: "편" },
+  proverbs: { bookName: "잠언", totalChapters: 31, unit: "장" },
+  ecclesiastes: { bookName: "전도서", totalChapters: 12, unit: "장" },
+  songofsolomon: { bookName: "아가", totalChapters: 8, unit: "장" },
+  isaiah: { bookName: "이사야", totalChapters: 66, unit: "장" },
+  jeremiah: { bookName: "예레미야", totalChapters: 52, unit: "장" },
+  lamentations: { bookName: "예레미야애가", totalChapters: 5, unit: "장" },
+  ezekiel: { bookName: "에스겔", totalChapters: 48, unit: "장" },
+  daniel: { bookName: "다니엘", totalChapters: 12, unit: "장" },
+  hosea: { bookName: "호세아", totalChapters: 14, unit: "장" },
+  joel: { bookName: "요엘", totalChapters: 3, unit: "장" },
+  amos: { bookName: "아모스", totalChapters: 9, unit: "장" },
+  obadiah: { bookName: "오바댜", totalChapters: 1, unit: "장" },
+  jonah: { bookName: "요나", totalChapters: 4, unit: "장" },
+  micah: { bookName: "미가", totalChapters: 7, unit: "장" },
+  nahum: { bookName: "나훔", totalChapters: 3, unit: "장" },
+  habakkuk: { bookName: "하박국", totalChapters: 3, unit: "장" },
+  zephaniah: { bookName: "스바냐", totalChapters: 3, unit: "장" },
+  haggai: { bookName: "학개", totalChapters: 2, unit: "장" },
+  zechariah: { bookName: "스가랴", totalChapters: 14, unit: "장" },
+  malachi: { bookName: "말라기", totalChapters: 4, unit: "장" },
+  matthew: { bookName: "마태복음", totalChapters: 28, unit: "장" },
+  mark: { bookName: "마가복음", totalChapters: 16, unit: "장" },
+  luke: { bookName: "누가복음", totalChapters: 24, unit: "장" },
+  john: { bookName: "요한복음", totalChapters: 21, unit: "장" },
+  acts: { bookName: "사도행전", totalChapters: 28, unit: "장" },
+  romans: { bookName: "로마서", totalChapters: 16, unit: "장" },
+  corinthians1: { bookName: "고린도전서", totalChapters: 16, unit: "장" },
+  corinthians2: { bookName: "고린도후서", totalChapters: 13, unit: "장" },
+  galatians: { bookName: "갈라디아서", totalChapters: 6, unit: "장" },
+  ephesians: { bookName: "에베소서", totalChapters: 6, unit: "장" },
+  philippians: { bookName: "빌립보서", totalChapters: 4, unit: "장" },
+  colossians: { bookName: "골로새서", totalChapters: 4, unit: "장" },
+  thessalonians1: { bookName: "데살로니가전서", totalChapters: 5, unit: "장" },
+  thessalonians2: { bookName: "데살로니가후서", totalChapters: 3, unit: "장" },
+  timothy1: { bookName: "디모데전서", totalChapters: 6, unit: "장" },
+  timothy2: { bookName: "디모데후서", totalChapters: 4, unit: "장" },
+  titus: { bookName: "디도서", totalChapters: 3, unit: "장" },
+  philemon: { bookName: "빌레몬서", totalChapters: 1, unit: "장" },
+  hebrews: { bookName: "히브리서", totalChapters: 13, unit: "장" },
+  james: { bookName: "야고보서", totalChapters: 5, unit: "장" },
+  peter1: { bookName: "베드로전서", totalChapters: 5, unit: "장" },
+  peter2: { bookName: "베드로후서", totalChapters: 3, unit: "장" },
+  john1: { bookName: "요한일서", totalChapters: 5, unit: "장" },
+  john2: { bookName: "요한이서", totalChapters: 1, unit: "장" },
+  john3: { bookName: "요한삼서", totalChapters: 1, unit: "장" },
+  jude: { bookName: "유다서", totalChapters: 1, unit: "장" },
+  revelation: { bookName: "요한계시록", totalChapters: 22, unit: "장" },
 };
+
+function loadBookConfig(bookId) {
+  const meta = BOOK_META[bookId];
+  if (!meta) throw new Error(`알 수 없는 bookId: ${bookId}`);
+  const manifestPath = path.join(repoRoot, "public", "watch-times", "manifest.json");
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+  const parts = manifest[bookId];
+  if (!Array.isArray(parts) || !parts.length) {
+    throw new Error(`manifest.json 에 ${bookId} 항목이 없습니다`);
+  }
+  const videosMetaPath = path.join(repoRoot, ".cache", "watch-manifest", "videos-meta.json");
+  const durById = {};
+  if (fs.existsSync(videosMetaPath)) {
+    const vm = JSON.parse(fs.readFileSync(videosMetaPath, "utf8"));
+    for (const v of vm.videos || []) durById[v.videoId] = v.durationSec;
+  }
+  const primaryVideoId = parts[0].videoId;
+  let durationSec = durById[primaryVideoId] || null;
+  const unit = meta.unit;
+  const escaped = meta.bookName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const chapterLabelRe = new RegExp(
+    `(?:${escaped}\\s*)?(\\d{1,3})\\s*${unit}`,
+    "g",
+  );
+  return {
+    bookId,
+    bookName: meta.bookName,
+    totalChapters: meta.totalChapters,
+    unit,
+    videoId: primaryVideoId,
+    parts,
+    durationSec,
+    chapterLabelRe,
+    multiVideo: parts.length > 1 || parts.some((p) => p.from !== 1 || p.to !== meta.totalChapters),
+  };
+}
 
 /** 절 글자 중 자막과 일치한 비율이 이보다 낮으면 매칭 실패로 보고 보간 */
 const MIN_MATCH_RATIO = Number(process.env.MIN_MATCH_RATIO ?? 0.2);
@@ -58,20 +147,22 @@ function normalize(text) {
     .toLowerCase();
 }
 
-function resolveBookId(argv) {
-  const arg = argv.find((a) => !a.startsWith("-"));
-  if (!arg) {
+function resolveBookIds(argv) {
+  const args = argv.filter((a) => !a.startsWith("-"));
+  if (!args.length) {
     console.error(
-      "사용법: node scripts/align-verse-times.mjs <bookId>\n" +
-        `지원: ${Object.keys(BOOK_CONFIG).join(", ")}`,
+      "사용법: node scripts/align-verse-times.mjs <bookId> [bookId…]\n" +
+        `지원: ${Object.keys(BOOK_META).join(", ")}`,
     );
     process.exit(1);
   }
-  if (!BOOK_CONFIG[arg]) {
-    console.error(`알 수 없는 bookId: ${arg}\n지원: ${Object.keys(BOOK_CONFIG).join(", ")}`);
-    process.exit(1);
+  for (const arg of args) {
+    if (!BOOK_META[arg]) {
+      console.error(`알 수 없는 bookId: ${arg}`);
+      process.exit(1);
+    }
   }
-  return arg;
+  return args;
 }
 
 function loadTranscript(bookId) {
@@ -203,23 +294,66 @@ function loadJson3Segs(bookId) {
   return segs;
 }
 
-/** 장 안내("창세기 N장" / "N장") 첫 단어 시각 */
-function extractChapterStartsFromSegs(segs, totalChapters, bookName) {
+/**
+ * 장/편 안내 첫 단어 시각.
+ * unit="장"|"편". 책 이름 직후 "N장/편"이면 책 이름 단어 시각을 시작으로.
+ */
+function extractChapterStartsFromSegs(segs, totalChapters, bookName, unit = "장") {
   /** @type {Map<number, number>} */
   const starts = new Map();
+  const reExact = new RegExp(`^(\\d{1,3})${unit}$`);
+  const reEnd = new RegExp(`(\\d{1,3})${unit}$`);
   let last = -1;
   for (let i = 0; i < segs.length; i++) {
-    const m = /^(\d{1,2})장/.exec(segs[i].norm) || /^.*?(\d{1,2})장$/.exec(segs[i].norm);
+    const m = reExact.exec(segs[i].norm) || reEnd.exec(segs[i].norm);
     if (!m) continue;
     const n = Number(m[1]);
     if (n < 1 || n > totalChapters || starts.has(n)) continue;
-    if (n !== last + 1 && !(last === -1 && n === 1)) continue;
+    // 순서: 1 다음부터는 last+1 만. 다만 last 가 비면 1부터, 또는 단일 장 책.
+    if (totalChapters > 1) {
+      if (n !== last + 1 && !(last === -1 && n === 1)) continue;
+    }
     const prev = segs[i - 1];
-    const t = prev && prev.norm.endsWith(bookName) && segs[i].t - prev.t < 3 ? prev.t : segs[i].t;
+    const t =
+      prev &&
+      (prev.norm === bookName || prev.norm.endsWith(bookName)) &&
+      segs[i].t - prev.t < 3
+        ? prev.t
+        : segs[i].t;
     starts.set(n, t);
     last = n;
   }
   return starts;
+}
+
+/**
+ * 라벨이 없는 장(특히 1장짜리·소개 뒤 1:1) — 절 앞 어절이 자막에 처음 나오는 시각.
+ * afterSec 이후만 검색(이전 장 끝 / 소개 구간 스킵).
+ */
+function findVerseStartInSegs(segs, verseText, afterSec = 0, beforeSec = Infinity) {
+  const words = String(verseText || "")
+    .trim()
+    .split(/\s+/)
+    .map((w) => normalize(w))
+    .filter(Boolean);
+  if (!words.length) return null;
+  const needle = words.slice(0, Math.min(4, words.length)).join("");
+  if (needle.length < 2) return null;
+  for (let i = 0; i < segs.length; i++) {
+    if (segs[i].t < afterSec || segs[i].t >= beforeSec) continue;
+    let joined = "";
+    for (let k = 0; k < 6 && i + k < segs.length; k++) {
+      joined += segs[i + k].norm;
+      if (joined.length < needle.length - 2) continue;
+      // 앞 글자 유사
+      const a = needle.slice(0, Math.min(needle.length, joined.length));
+      const b = joined.slice(0, a.length);
+      if (a === b || (a.length >= 4 && levenshtein(a, b) <= Math.max(1, Math.floor(a.length * 0.25)))) {
+        return segs[i].t;
+      }
+    }
+  }
+  return null;
 }
 
 /** 조각 → 문자 스트림. 문자마다 조각 번호·조각 내 위치·비율 시각 */
@@ -609,23 +743,142 @@ function applyFixes(times, verses, chapterNum, fixes, chapterStart, chapterEnd) 
   return times;
 }
 
-function main() {
-  const bookId = resolveBookId(process.argv.slice(2));
-  const cfg = BOOK_CONFIG[bookId];
-  const { videoId, totalChapters, durationSec, chapterLabelRe, bookName } = cfg;
+function videoIdForChapter(cfg, ch) {
+  const hit = cfg.parts.find((p) => ch >= p.from && ch <= p.to);
+  return hit?.videoId || cfg.videoId;
+}
 
-  const events = loadTranscript(bookId);
-  const segs = loadJson3Segs(bookId);
-  const chapterStarts = extractChapterStarts(events, totalChapters, chapterLabelRe);
-  if (segs) {
-    // json3 단어 시각으로 장 시작을 정밀화(없는 장은 기존 값 유지)
-    const precise = extractChapterStartsFromSegs(segs, totalChapters, bookName);
-    for (const [ch, t] of precise) {
-      const old = chapterStarts.get(ch);
-      if (old == null || Math.abs(old - t) < 15) chapterStarts.set(ch, t);
+function durationFromSegs(segs) {
+  if (!segs?.length) return null;
+  const last = segs[segs.length - 1];
+  return Math.max(last.t + 2, Math.ceil(last.t));
+}
+
+/**
+ * 장 시작 채우기:
+ * 1) 라벨(N장/N편)
+ * 2) 빠진 장은 해당 장 1:1 첫 어절 시각 (이전 장 끝 이후)
+ * 3) 그래도 없으면 null → missing
+ * 예외 로그를 exceptions 에 남김.
+ */
+function resolveChapterStarts(cfg, segs, events, exceptions) {
+  const { totalChapters, bookName, unit, chapterLabelRe } = cfg;
+  /** @type {Map<number, number>} */
+  const starts = new Map();
+
+  if (events?.length) {
+    for (const [ch, t] of extractChapterStarts(events, totalChapters, chapterLabelRe)) {
+      starts.set(ch, t);
     }
-    console.log(`[${bookId}] json3 단어 모드 (조각 ${segs.length}개)`);
   }
+  if (segs) {
+    const precise = extractChapterStartsFromSegs(segs, totalChapters, bookName, unit);
+    for (const [ch, t] of precise) {
+      const old = starts.get(ch);
+      if (old == null || Math.abs(old - t) < 15) starts.set(ch, t);
+      else {
+        exceptions.push({
+          type: "label-conflict",
+          ch,
+          keep: old,
+          discard: t,
+          note: `세그 라벨과 json3 라벨 차이 >15s → 기존 유지`,
+        });
+      }
+    }
+  }
+
+  // 빠진 장 → 1:1 첫 어절 (소개·제목 낭독은 1:1 이전이므로 여기로 잡히지 않음)
+  for (let ch = 1; ch <= totalChapters; ch++) {
+    if (starts.has(ch)) continue;
+    if (!segs) continue;
+    let after = 0;
+    for (let p = ch - 1; p >= 1; p--) {
+      if (starts.has(p)) {
+        after = starts.get(p) + 1;
+        break;
+      }
+    }
+    let before = Infinity;
+    for (let n = ch + 1; n <= totalChapters; n++) {
+      if (starts.has(n)) {
+        before = starts.get(n);
+        break;
+      }
+    }
+    try {
+      const verses = loadKoreanChapter(cfg.bookId, ch);
+      const t = findVerseStartInSegs(segs, verses[0]?.text, after, before);
+      if (t != null) {
+        starts.set(ch, t);
+        exceptions.push({
+          type: "verse1-fallback",
+          ch,
+          t,
+          note: totalChapters === 1
+            ? "1장짜리(또는 라벨 없음) → 1:1 첫 어절"
+            : `${unit} 라벨 없음 → ${ch}:1 첫 어절`,
+        });
+      }
+    } catch (e) {
+      exceptions.push({ type: "verse1-error", ch, note: String(e.message || e) });
+    }
+  }
+
+  // 1장 라벨이 영상 맨 앞(소개)에 너무 붙어 있으면, 1:1 첫 어절이 더 뒤일 때 1:1로 교정
+  if (segs && starts.has(1)) {
+    try {
+      const v1 = loadKoreanChapter(cfg.bookId, 1)[0]?.text;
+      const next = starts.get(2) ?? Infinity;
+      const v1t = findVerseStartInSegs(segs, v1, 0, next);
+      const labelT = starts.get(1);
+      // 라벨이 1:1보다 15초 이상 앞서고, 그 사이가 소개/제목으로 보이면
+      // 장 시작은 라벨 유지(사용자: 장 시작=N장 단어). 1:1은 절 정렬이 처리.
+      // 다만 라벨이 아예 없고 verse1-fallback 만 있으면 OK.
+      // 라벨이 0~2초(재생 직후 허위)이고 1:1이 훨씬 뒤면 1:1로 교체
+      if (v1t != null && labelT < 3 && v1t - labelT > 5) {
+        exceptions.push({
+          type: "ch1-relabel",
+          ch: 1,
+          from: labelT,
+          to: v1t,
+          note: "맨 앞 허위 라벨 → 1:1 첫 어절로 교정",
+        });
+        starts.set(1, v1t);
+      }
+    } catch {
+      /* noop */
+    }
+  }
+
+  return starts;
+}
+
+function alignOneBook(bookId) {
+  const cfg = loadBookConfig(bookId);
+  const { videoId, totalChapters, bookName, unit } = cfg;
+  const exceptions = [];
+
+  let events = null;
+  try {
+    events = loadTranscript(bookId);
+  } catch {
+    events = null;
+  }
+  const segs = loadJson3Segs(bookId);
+  if (!segs && !events) {
+    throw new Error(
+      `${bookId}: 자막 없음 (.cache/transcript/${bookId}-json3.json 또는 ${bookId}.json)`,
+    );
+  }
+  if (segs) console.log(`[${bookId}] json3 단어 모드 (조각 ${segs.length}개, unit=${unit})`);
+  else console.log(`[${bookId}] 세그먼트 모드`);
+
+  let durationSec = cfg.durationSec;
+  if (!durationSec) durationSec = durationFromSegs(segs) || (events?.[events.length - 1]?.start ?? 0) + 30;
+  cfg.durationSec = durationSec;
+
+  const chapterStarts = resolveChapterStarts(cfg, segs, events, exceptions);
   const fixes = loadFixes(bookId);
   const srcCount = { word: 0, seg: 0, interp: 0, fix: 0 };
   /** @type {{ref:string, from:number|null, fromSrc:string, to:number, simFrom:number, simTo:number}[]} */
@@ -636,15 +889,21 @@ function main() {
     startList.push(chapterStarts.has(ch) ? chapterStarts.get(ch) : null);
   }
 
-  console.log(`=== [${bookId}] 추출한 장 시작 (초) ===`);
+  console.log(`=== [${bookId}] ${bookName} 장/편 시작 (초) duration=${durationSec} ===`);
+  const nullCh = [];
   for (let ch = 1; ch <= totalChapters; ch++) {
     const s = startList[ch - 1];
-    console.log(`  ${ch}: ${s == null ? "null" : round1(s)}`);
+    if (s == null) nullCh.push(ch);
+    if (totalChapters <= 40 || ch <= 5 || ch % 10 === 0 || s == null) {
+      console.log(`  ${ch}: ${s == null ? "null" : round1(s)}`);
+    }
   }
+  if (nullCh.length) console.log(`  null 장: ${nullCh.join(", ")}`);
 
   const chapters = {};
   const missing = [];
   let unmatchedTotal = 0;
+  const multiVideo = new Set(cfg.parts.map((p) => p.videoId)).size > 1;
 
   for (let ch = 1; ch <= totalChapters; ch++) {
     const start = startList[ch - 1];
@@ -675,7 +934,6 @@ function main() {
       if (process.env.DEBUG_RATIO) {
         for (let i = 0; i < ratio.length; i++) console.log(`ratio ${ch}:${i + 1} ${ratio[i].toFixed(2)} ${src[i] || "-"}`);
       }
-      // 범위 밖·역순 매칭은 버리고 보간에 맡김
       let lastT = start - 0.5;
       for (let i = 0; i < times.length; i++) {
         const t = times[i];
@@ -704,7 +962,6 @@ function main() {
     src = src.map((s) => s || "interp");
 
     if (segs) {
-      // 수동 보정: 해당 절만 덮어씀(나머지 단어 시각은 유지)
       for (const [ref, t] of Object.entries(fixes)) {
         const m = /^(\d+):(\d+)$/.exec(ref);
         if (!m || Number(m[1]) !== ch) continue;
@@ -729,12 +986,14 @@ function main() {
     }
     for (const s of src) srcCount[s] += 1;
 
-    chapters[String(ch)] = {
+    const chOut = {
       start: round1(start),
       end: round1(end),
       verses: finalTimes.map(round1),
       src,
     };
+    if (multiVideo) chOut.videoId = videoIdForChapter(cfg, ch);
+    chapters[String(ch)] = chOut;
   }
 
   const outPath = path.join(repoRoot, "public", "watch-times", `${bookId}.json`);
@@ -743,10 +1002,19 @@ function main() {
   const json = JSON.stringify(out);
   fs.writeFileSync(outPath, json);
 
+  const excPath = path.join(repoRoot, ".cache", "watch-manifest", `${bookId}-align-log.json`);
+  fs.mkdirSync(path.dirname(excPath), { recursive: true });
+  fs.writeFileSync(
+    excPath,
+    JSON.stringify({ bookId, srcCount, unmatchedTotal, missing, exceptions, prefixLog }, null, 2),
+  );
+
   console.log(`\nwrote ${outPath} (${Buffer.byteLength(json)} bytes)`);
   console.log(`built chapters: ${Object.keys(chapters).length}, missing: ${missing.length}`);
   console.log(`unmatched verses (pre-fill): ${unmatchedTotal}`);
   console.log(`src: ${JSON.stringify(srcCount)}`);
+  console.log(`장 시작 예외: ${exceptions.length}`);
+  for (const e of exceptions) console.log(`  ${JSON.stringify(e)}`);
   console.log(`앞 ${PREFIX_CHARS}글자 검증으로 옮긴 절: ${prefixLog.length}`);
   for (const r of prefixLog) {
     console.log(
@@ -754,6 +1022,12 @@ function main() {
     );
   }
   if (missing.length) console.log(`missing: ${missing.join(", ")}`);
+  return { bookId, srcCount, missing, exceptions };
+}
+
+function main() {
+  const bookIds = resolveBookIds(process.argv.slice(2));
+  for (const id of bookIds) alignOneBook(id);
 }
 
 main();

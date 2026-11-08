@@ -3,7 +3,8 @@
 // books.ts 의 defaultStarts 는 파일을 못 받을 때(또는 파일에 빠진 장)의 대체값이다.
 // /watch/{book}?dev=1 의 기록 버튼으로 남긴 값은 장별 덮어쓰기로 localStorage 에 쌓인다.
 
-import { WATCH_BOOKS, type ChapterStarts, type WatchBookId } from "./books";
+import { BOOKS } from "@/app/bible-reading/books";
+import { defaultStartsFor, type ChapterStarts, type WatchBookId } from "./books";
 
 export type { ChapterStarts };
 /** 개발 모드 기록값. { 장: 초 } */
@@ -59,7 +60,8 @@ export function resolveChapterStarts(
   fileStarts: ChapterStarts | null,
   overrides: StartOverrides,
 ): ChapterStarts {
-  const { totalChapters, defaultStarts } = WATCH_BOOKS[book];
+  const totalChapters = BOOKS[book].totalChapters;
+  const defaultStarts = defaultStartsFor(book);
   const hasFile = !!fileStarts && fileStarts.some(isValidStart);
   const merged: (number | null)[] = hasFile
     ? Array.from({ length: totalChapters }, () => null)
@@ -68,6 +70,7 @@ export function resolveChapterStarts(
     fileStarts!.slice(0, totalChapters).forEach((v, i) => {
       if (isValidStart(v)) placeStart(merged, i + 1, v, "파일 장 시작");
     });
+    // 창세기 대체값은 파일에 빠진 칸에만 채운다.
     defaultStarts.forEach((v, i) => {
       if (merged[i] === null && v !== null) placeStart(merged, i + 1, v, "대체 장 시작");
     });
@@ -86,7 +89,7 @@ export function loadStartOverrides(book: WatchBookId): StartOverrides {
   try {
     const stored: unknown = JSON.parse(window.localStorage.getItem(startsKey(book)) ?? "{}");
     const out: Record<number, number> = {};
-    const defaults = WATCH_BOOKS[book].defaultStarts;
+    const defaults = defaultStartsFor(book);
     if (Array.isArray(stored)) {
       // 예전 형식(창세기): 대체값을 포함한 전체 배열 — 대체값과 다른 칸만 기록값으로 본다.
       stored.forEach((v, i) => {
@@ -132,7 +135,27 @@ export function sortedStarts(starts: ChapterStarts): ChapterTarget[] {
 
 /** 현재 시간 이하인 가장 큰 장 시작의 장(1부터). 첫 기록 이전이면 1장. */
 export function chapterAt(seconds: number, starts: ChapterStarts): number {
-  const list = sortedStarts(starts);
+  return chapterAtInRange(seconds, starts, 1, starts.length);
+}
+
+/**
+ * from~to 장(포함)만 보고 현재 장. 여러 영상으로 나뉜 책에서
+ * 현재 videoId 구간에만 적용할 때 쓴다.
+ */
+export function chapterAtInRange(
+  seconds: number,
+  starts: ChapterStarts,
+  fromChapter: number,
+  toChapter: number,
+): number {
+  const list: ChapterTarget[] = [];
+  const loCh = Math.max(1, fromChapter);
+  const hiCh = Math.min(starts.length, toChapter);
+  for (let c = loCh; c <= hiCh; c += 1) {
+    const s = starts[c - 1];
+    if (s !== null) list.push({ chapter: c, start: s });
+  }
+  list.sort((a, b) => a.start - b.start || a.chapter - b.chapter);
   let lo = 0;
   let hi = list.length - 1;
   let found = -1;
@@ -145,7 +168,7 @@ export function chapterAt(seconds: number, starts: ChapterStarts): number {
       hi = mid - 1;
     }
   }
-  return found === -1 ? 1 : list[found].chapter;
+  return found === -1 ? loCh : list[found].chapter;
 }
 
 export function findNextChapter(chapter: number, starts: ChapterStarts): ChapterTarget | null {

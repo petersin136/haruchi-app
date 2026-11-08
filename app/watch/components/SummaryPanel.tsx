@@ -48,7 +48,7 @@ function SummaryPanel({ bookId, chapter }: { bookId: BookId; chapter: number }) 
         </p>
       )}
 
-      {state.status === "done" && !summary && <p className="wt-sum-empty">요약 준비 중</p>}
+      {state.status === "done" && !summary && <p className="wt-sum-empty">준비 중</p>}
 
       {summary && <SummaryBody key={`${bookId}/${chapter}`} bookId={bookId} summary={summary} />}
     </div>

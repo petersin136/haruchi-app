@@ -20,6 +20,7 @@ import Dropdown, { type DropdownOption } from "./components/Dropdown";
 import VerseList from "./components/VerseList";
 import Link from "next/link";
 import MobileTopBar, {
+  useWatchAvailable,
   watchHrefFor,
 } from "./components/MobileTopBar";
 import BookChapterDrawer from "./components/BookChapterDrawer";
@@ -1759,6 +1760,8 @@ export default function BibleReadingPage() {
     };
   }, []);
 
+  const watchReady = useWatchAvailable(bookId);
+
   return (
     <main
       className={`brp-page ${mounted ? "brp-page--ready" : ""} ${
@@ -1791,12 +1794,22 @@ export default function BibleReadingPage() {
         </a>
         {/* 데스크탑/태블릿 (≥640px) — 풀 네비. 톱니바퀴 + 텍스트 링크들이 한 줄. */}
         <nav className="brp-nav brp-nav--desktop" aria-label="Account links">
-          <Link
-            href={watchHrefFor(bookId, chapterNumber)}
-            className="brp-nav-text-link brp-nav-link"
-          >
-            영상으로 보기
-          </Link>
+          {watchReady ? (
+            <Link
+              href={watchHrefFor(bookId, chapterNumber)}
+              className="brp-nav-text-link brp-nav-link"
+            >
+              영상으로 보기
+            </Link>
+          ) : (
+            <span
+              className="brp-nav-text-link brp-nav-link"
+              aria-disabled="true"
+              style={{ opacity: 0.45, cursor: "not-allowed" }}
+            >
+              영상으로 보기 · 준비 중
+            </span>
+          )}
           <Link href="/plan" className="brp-nav-text-link brp-nav-link">
             읽기표
           </Link>

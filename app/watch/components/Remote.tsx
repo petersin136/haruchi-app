@@ -21,8 +21,9 @@ type Props = {
   /** 이 장 길이(초) */
   chapterLength: number;
   chapterProgress: number;
-  prevChapter: number | null;
-  nextChapter: number | null;
+  /** null 이면 자리만 비움. 예: "‹ 2장" / "출애굽기 1장 ›" */
+  prevLabel: string | null;
+  nextLabel: string | null;
   onPrev: () => void;
   onNext: () => void;
   onTogglePlay: () => void;
@@ -86,8 +87,8 @@ export default function Remote({
   chapterElapsed,
   chapterLength,
   chapterProgress,
-  prevChapter,
-  nextChapter,
+  prevLabel,
+  nextLabel,
   onPrev,
   onNext,
   onTogglePlay,
@@ -226,15 +227,15 @@ export default function Remote({
 
           <div className="wt-rc-row2">
             <div className="wt-rc-slot">
-              {prevChapter !== null ? (
+              {prevLabel !== null ? (
                 <button
                   type="button"
                   className="wt-rc-chap"
                   onClick={onPrev}
                   disabled={disabled}
-                  aria-label={`${prevChapter}장으로 이동`}
+                  aria-label={prevLabel}
                 >
-                  ‹ {prevChapter}장
+                  {prevLabel}
                 </button>
               ) : null}
             </div>
@@ -276,15 +277,15 @@ export default function Remote({
             </button>
 
             <div className="wt-rc-slot">
-              {nextChapter !== null ? (
+              {nextLabel !== null ? (
                 <button
                   type="button"
                   className="wt-rc-chap"
                   onClick={onNext}
                   disabled={disabled}
-                  aria-label={`${nextChapter}장으로 이동`}
+                  aria-label={nextLabel}
                 >
-                  {nextChapter}장 ›
+                  {nextLabel}
                 </button>
               ) : null}
             </div>

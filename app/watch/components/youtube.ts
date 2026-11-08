@@ -5,6 +5,8 @@ export type YTPlayer = {
   playVideo(): void;
   pauseVideo(): void;
   seekTo(seconds: number, allowSeekAhead: boolean): void;
+  /** 다른 영상으로 바꿀 때 — startSeconds 부터 재생 */
+  loadVideoById(videoId: string, startSeconds?: number): void;
   getCurrentTime(): number;
   getDuration(): number;
   getPlayerState(): number;

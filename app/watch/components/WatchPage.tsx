@@ -1,7 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
+import { BOOKS, type BookId } from "@/app/bible-reading/books";
 import "../watch.css";
 import VideoPlayer from "./VideoPlayer";
 import SwipeTabs from "./SwipeTabs";
@@ -17,6 +26,7 @@ import {
   buildVerseIndex,
   clearVerseFix,
   entryAt,
+  hasVerseTimingData,
   loadVerseCounts,
   loadVerseFix,
   loadWatchTimes,
@@ -37,19 +47,28 @@ import {
   saveSpeed,
   type SpeedOption,
 } from "./watchStorage";
-import { WATCH_BOOKS, type WatchBookId } from "../data/books";
 import {
-  chapterAt,
+  isBookInManifest,
+  loadWatchManifest,
+  nextBookInManifest,
+  resolveChapterSeekStart,
+  segmentsFor,
+  videoIdForChapter,
+  watchTitleFor,
+  type VideoSegment,
+  type WatchBookId,
+  type WatchManifest,
+} from "../data/books";
+import {
+  chapterAtInRange,
   checkChapterStart,
   clearChapterStarts,
   describeStartCheck,
-  findNextChapter,
   loadStartOverrides,
   resolveChapterStarts,
   saveStartOverrides,
   type ChapterStarts,
   type StartOverrides,
-  type ChapterTarget,
 } from "../data/chapterStarts";
 
 const POLL_MS = 500;
@@ -96,17 +115,74 @@ async function copyText(text: string): Promise<boolean> {
   }
 }
 
-export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
-  const book = WATCH_BOOKS[bookId];
-  const { name, videoId, totalChapters, watchTitle } = book;
+function WatchShell({
+  title,
+  children,
+}: {
+  title: string;
+  children: ReactNode;
+}) {
+  return (
+    <div className="wt-page">
+      <header className="wt-top">
+        <Link href="/bible-reading" className="wt-back" aria-label="성경 읽기로 돌아가기">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden>
+            <path
+              d="M15 5l-7 7 7 7"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </Link>
+        <div className="wt-top-text">
+          <span className="wt-top-kicker">리딩지저스</span>
+          <span className="wt-top-title">{title}</span>
+        </div>
+      </header>
+      {children}
+    </div>
+  );
+}
 
-  const [bootStart, setBootStart] = useState<number | null>(null);
+function UnavailableWatch({ bookId }: { bookId: BookId }) {
+  const name = BOOKS[bookId].name;
+  return (
+    <WatchShell title={watchTitleFor(bookId)}>
+      <main className="wt-main wt-unavailable">
+        <h1 className="wt-unavailable-title">{name}</h1>
+        <p className="wt-unavailable-msg">영상 준비 중</p>
+        <Link href="/bible-reading" className="wt-unavailable-link">
+          성경 읽기로 돌아가기
+        </Link>
+      </main>
+    </WatchShell>
+  );
+}
+
+export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
+  const router = useRouter();
+  const name = BOOKS[bookId].name;
+  const totalChapters = BOOKS[bookId].totalChapters;
+  const watchTitle = watchTitleFor(bookId);
+
+  const [manifest, setManifest] = useState<WatchManifest | null>(null);
+  const [unavailable, setUnavailable] = useState(false);
+  const [boot, setBoot] = useState<{ videoId: string; start: number } | null>(null);
+  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
   const [fileStarts, setFileStarts] = useState<ChapterStarts | null>(null);
   const [overrides, setOverrides] = useState<StartOverrides>({});
   const starts = useMemo(
     () => resolveChapterStarts(bookId, fileStarts, overrides),
     [bookId, fileStarts, overrides],
   );
+  const segments = useMemo(
+    () => segmentsFor(manifest, bookId),
+    [manifest, bookId],
+  );
+
   const [speed, setSpeed] = useState<SpeedOption>(DEFAULT_SPEED);
   const [ready, setReady] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -119,14 +195,19 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
     missing: [],
     starts: [],
     src: {},
+    present: false,
   });
   const [verseFix, setVerseFix] = useState<VerseTimeMap>({});
   const [verseCounts, setVerseCounts] = useState<number[]>([]);
   const [verseSheetOpen, setVerseSheetOpen] = useState(false);
+  /** 절 시간 없을 때 장 목록·이전/다음으로 고른 장 */
+  const [pinnedChapter, setPinnedChapter] = useState<number | null>(null);
 
   const playerRef = useRef<YTPlayer | null>(null);
   const hasPlayedRef = useRef(false);
   const lastSavedRef = useRef(0);
+  const chapterRef = useRef(1);
+  const activeVideoRef = useRef<string | null>(null);
 
   const showToast = useCallback((text: string) => setToast({ id: Date.now(), text }), []);
 
@@ -136,40 +217,76 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
     return () => window.clearTimeout(id);
   }, [toast]);
 
-  // 저장값은 마운트 후에 읽는다(SSR 마크업과 어긋나지 않도록).
-  useEffect(() => {
-    const start = loadPosition(bookId);
-    setOverrides(loadStartOverrides(bookId));
-    setSpeed(loadSpeed(bookId));
-    setDevMode(new URLSearchParams(window.location.search).get("dev") === "1");
-    const resume = start >= RESUME_MIN_S ? start : 0;
-    setTime(resume);
-    lastSavedRef.current = resume;
-    setBootStart(resume);
-    if (resume > 0) showToast(`${formatTime(resume)}부터 이어서 봐요`);
-  }, [bookId, showToast]);
-
+  // manifest + watch-times + 저장값으로 부팅(영상 준비 여부·시작 위치).
   useEffect(() => {
     let stale = false;
-    setVerseFix(loadVerseFix(bookId));
+    setBoot(null);
+    setReady(false);
+    setUnavailable(false);
+    setManifest(null);
+    setActiveVideoId(null);
+    activeVideoRef.current = null;
     setFileStarts(null);
-    setFileTimes({ times: {}, missing: [], starts: [], src: {} });
-    loadWatchTimes(bookId).then(
-      (t) => {
+    setFileTimes({ times: {}, missing: [], starts: [], src: {}, present: false });
+    setPinnedChapter(null);
+    playerRef.current = null;
+    hasPlayedRef.current = false;
+
+    setOverrides(loadStartOverrides(bookId));
+    setSpeed(loadSpeed(bookId));
+    setVerseFix(loadVerseFix(bookId));
+    setDevMode(new URLSearchParams(window.location.search).get("dev") === "1");
+
+    const pos = loadPosition(bookId);
+
+    Promise.all([loadWatchManifest(), loadWatchTimes(bookId)])
+      .then(([man, times]) => {
         if (stale) return;
-        setFileTimes(t);
-        setFileStarts(t.starts);
-      },
-      () => undefined,
-    );
+        if (!isBookInManifest(man, bookId)) {
+          setUnavailable(true);
+          return;
+        }
+        setManifest(man);
+        setFileTimes(times);
+        setFileStarts(times.starts);
+
+        const segs = segmentsFor(man, bookId);
+        const resolved = resolveChapterStarts(bookId, times.starts, loadStartOverrides(bookId));
+        let ch = pos.c >= 1 && pos.c <= BOOKS[bookId].totalChapters ? pos.c : 0;
+        if (!ch) {
+          const first = segs[0];
+          ch = first
+            ? chapterAtInRange(pos.t, resolved, first.from, first.to)
+            : 1;
+        }
+        const vid = videoIdForChapter(segs, ch) ?? segs[0]?.videoId;
+        if (!vid) {
+          setUnavailable(true);
+          return;
+        }
+        const resume = pos.t >= RESUME_MIN_S ? pos.t : 0;
+        setActiveVideoId(vid);
+        activeVideoRef.current = vid;
+        setTime(resume);
+        lastSavedRef.current = resume;
+        chapterRef.current = ch;
+        setPinnedChapter(ch);
+        setBoot({ videoId: vid, start: resume });
+        if (resume > 0) showToast(`${formatTime(resume)}부터 이어서 봐요`);
+      })
+      .catch(() => {
+        if (!stale) setUnavailable(true);
+      });
+
     loadVerseCounts(bookId).then(
       (c) => !stale && setVerseCounts(c),
       () => undefined,
     );
+
     return () => {
       stale = true;
     };
-  }, [bookId]);
+  }, [bookId, showToast]);
 
   useEffect(() => {
     if (!ready) return;
@@ -180,9 +297,9 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
       if (!Number.isFinite(t)) return;
       if (!hasPlayedRef.current && t < 0.5) return;
       setTime(t);
-      setDuration((d) => (d > 0 ? d : p.getDuration() || 0));
+      setDuration(p.getDuration() || 0);
       if (hasPlayedRef.current && Math.abs(t - lastSavedRef.current) >= SAVE_EVERY_S) {
-        savePosition(bookId, t);
+        savePosition(bookId, t, chapterRef.current);
         lastSavedRef.current = t;
       }
     }, POLL_MS);
@@ -195,7 +312,7 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
       if (!p || !hasPlayedRef.current) return;
       try {
         const t = p.getCurrentTime();
-        if (t > 0) savePosition(bookId, t);
+        if (t > 0) savePosition(bookId, t, chapterRef.current);
       } catch {
         /* 플레이어가 이미 정리됨 */
       }
@@ -227,11 +344,14 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
   const handleState = useCallback(
     (state: number) => {
       setPlaying(state === YT_STATE.PLAYING || state === YT_STATE.BUFFERING);
-      if (state === YT_STATE.PLAYING) hasPlayedRef.current = true;
+      if (state === YT_STATE.PLAYING) {
+        hasPlayedRef.current = true;
+        setDuration(playerRef.current?.getDuration() || 0);
+      }
       if (state === YT_STATE.PAUSED) {
         const t = playerRef.current?.getCurrentTime() ?? 0;
         if (t > 0) {
-          savePosition(bookId, t);
+          savePosition(bookId, t, chapterRef.current);
           lastSavedRef.current = t;
         }
       }
@@ -244,43 +364,103 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
   );
 
   const handleRate = useCallback((_rate: number) => {
-    /* 배속은 리모컨·localStorage 가 소스 — 플레이어 이벤트는 무시 */
+    /* 배속은 리모컨·localStorage 가 소스 */
   }, []);
 
-  const chapter = useMemo(() => chapterAt(time, starts), [time, starts]);
-  const nextTarget = useMemo(() => findNextChapter(chapter, starts), [chapter, starts]);
+  const activeSeg = useMemo((): VideoSegment | null => {
+    if (!activeVideoId) return segments[0] ?? null;
+    return segments.find((s) => s.videoId === activeVideoId) ?? segments[0] ?? null;
+  }, [segments, activeVideoId]);
 
-  const chapterStart = starts[chapter - 1] ?? 0;
-  const chapterEnd = nextTarget?.start ?? duration;
+  const hasVerseTimes = useMemo(() => hasVerseTimingData(fileTimes), [fileTimes]);
+
+  const chapter = useMemo(() => {
+    if (!hasVerseTimes) {
+      if (pinnedChapter !== null) return pinnedChapter;
+      return activeSeg?.from ?? 1;
+    }
+    if (!activeSeg) return 1;
+    return chapterAtInRange(time, starts, activeSeg.from, activeSeg.to);
+  }, [hasVerseTimes, pinnedChapter, time, starts, activeSeg]);
+
+  useEffect(() => {
+    chapterRef.current = chapter;
+  }, [chapter]);
+
+  const nextInSameVideo = useMemo(() => {
+    if (!activeSeg) return null;
+    for (let i = chapter; i < activeSeg.to; i += 1) {
+      const s = starts[i];
+      if (s !== null) return { chapter: i + 1, start: s };
+    }
+    return null;
+  }, [chapter, starts, activeSeg]);
+
+  const chapterStart =
+    typeof starts[chapter - 1] === "number"
+      ? (starts[chapter - 1] as number)
+      : activeSeg && activeSeg.from === chapter
+        ? 0
+        : 0;
+  const chapterEnd = nextInSameVideo?.start ?? duration;
   const chapterLength = Math.max(0, chapterEnd - chapterStart);
   const chapterElapsed = Math.min(chapterLength, Math.max(0, time - chapterStart));
   const chapterProgress =
     chapterLength > 0 ? Math.min(1, Math.max(0, chapterElapsed / chapterLength)) : 0;
 
-  /** 1장·마지막 장에서는 버튼 숨김(자리만 비움). 라벨은 인접 장 번호. */
-  const prevChapterNum = chapter > 1 ? chapter - 1 : null;
-  const nextChapterNum = chapter < totalChapters ? chapter + 1 : null;
+  const nextBook = useMemo(
+    () => (chapter >= totalChapters ? nextBookInManifest(manifest, bookId) : null),
+    [chapter, totalChapters, manifest, bookId],
+  );
 
-  const seekToChapter = useCallback(
-    (target: ChapterTarget | null, opts?: { toast?: boolean }) => {
+  const prevLabel = chapter > 1 ? `‹ ${chapter - 1}장` : null;
+  const nextLabel =
+    chapter < totalChapters
+      ? `${chapter + 1}장 ›`
+      : nextBook
+        ? `${BOOKS[nextBook].name} 1장 ›`
+        : null;
+
+  /** 같은 영상이면 seekTo, 다르면 loadVideoById */
+  const playAt = useCallback(
+    (
+      chapterNum: number,
+      targetSec: number,
+      opts?: { toast?: boolean; toastText?: string },
+    ) => {
       const p = playerRef.current;
-      if (!p || !target) return;
-      const seekAt = seekPlayVerify(p, target.start - VERSE_LEAD_S);
-      setTime(seekAt);
-      savePosition(bookId, seekAt);
+      const vid = videoIdForChapter(segments, chapterNum);
+      if (!p || !vid) return;
+      const seekAt = Math.max(0, targetSec);
+      const curVid = activeVideoRef.current;
+      if (curVid && vid !== curVid) {
+        activeVideoRef.current = vid;
+        setActiveVideoId(vid);
+        p.loadVideoById(vid, seekAt);
+        setTime(seekAt);
+        setDuration(0);
+      } else {
+        seekPlayVerify(p, seekAt);
+        setTime(seekAt);
+      }
+      chapterRef.current = chapterNum;
+      setPinnedChapter(chapterNum);
+      savePosition(bookId, seekAt, chapterNum);
       lastSavedRef.current = seekAt;
-      if (opts?.toast !== false) showToast(`${name} ${target.chapter}장`);
+      if (opts?.toast !== false) {
+        showToast(opts?.toastText ?? `${name} ${chapterNum}장`);
+      }
     },
-    [bookId, name, showToast],
+    [segments, bookId, name, showToast],
   );
 
   const seekChapterByNumber = useCallback(
     (n: number, opts?: { toast?: boolean }) => {
-      const start = starts[n - 1];
-      if (typeof start !== "number") return;
-      seekToChapter({ chapter: n, start }, opts);
+      const start = resolveChapterSeekStart(starts, segments, n, hasVerseTimes);
+      if (start === null) return;
+      playAt(n, start - (hasVerseTimes ? VERSE_LEAD_S : 0), opts);
     },
-    [starts, seekToChapter],
+    [starts, segments, hasVerseTimes, playAt],
   );
 
   const togglePlay = useCallback(() => {
@@ -301,16 +481,24 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
 
   const seekInChapter = useCallback(
     (ratio: number) => {
-      const p = playerRef.current;
-      if (!p || chapterLength <= 0) return;
+      if (chapterLength <= 0) return;
       const target = chapterStart + Math.min(1, Math.max(0, ratio)) * chapterLength;
-      const seekAt = seekPlayVerify(p, target);
-      setTime(seekAt);
-      savePosition(bookId, seekAt);
-      lastSavedRef.current = seekAt;
+      playAt(chapter, target, { toast: false });
     },
-    [bookId, chapterStart, chapterLength],
+    [chapterLength, chapterStart, chapter, playAt],
   );
+
+  const goNext = useCallback(() => {
+    if (chapter < totalChapters) {
+      seekChapterByNumber(chapter + 1);
+      return;
+    }
+    if (nextBook) router.push(`/watch/${nextBook}`);
+  }, [chapter, totalChapters, seekChapterByNumber, nextBook, router]);
+
+  const goPrev = useCallback(() => {
+    if (chapter > 1) seekChapterByNumber(chapter - 1);
+  }, [chapter, seekChapterByNumber]);
 
   const recordChapter = useCallback(
     (n: number): boolean => {
@@ -352,7 +540,6 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
     () => buildVerseIndex(fileTimes, verseFix, starts),
     [fileTimes, verseFix, starts],
   );
-  // 절 표시도 seek 여유(VERSE_LEAD_S)와 같은 기준으로 — 앞당긴 구간에서도 해당 절
   const verseEntry = useMemo(
     () => entryAt(verseIndex, chapter, time + VERSE_LEAD_S),
     [verseIndex, chapter, time],
@@ -367,17 +554,13 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
 
   const seekVerse = useCallback(
     (c: number, v: number) => {
-      const p = playerRef.current;
       const t = verseTime(verseIndex, c, v);
-      if (!p || t === null) return;
-      const seekAt = seekPlayVerify(p, t - VERSE_LEAD_S);
-      setTime(seekAt);
-      savePosition(bookId, seekAt);
-      lastSavedRef.current = seekAt;
+      if (t === null) return;
+      // 절이 다른 영상에 있으면 영상 전환
+      playAt(c, t - VERSE_LEAD_S, { toastText: `${name} ${c}:${v}` });
       setVerseSheetOpen(false);
-      showToast(`${name} ${c}:${v}`);
     },
-    [bookId, name, verseIndex, showToast],
+    [verseIndex, playAt, name],
   );
 
   const nudgeCurrentVerse = useCallback(
@@ -391,16 +574,9 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
       const next = { ...verseFix, [key]: nextT };
       setVerseFix(next);
       saveVerseFix(bookId, next);
-      const p = playerRef.current;
-      if (p) {
-        const seekAt = seekPlayVerify(p, nextT - VERSE_LEAD_S);
-        setTime(seekAt);
-        savePosition(bookId, seekAt);
-        lastSavedRef.current = seekAt;
-      }
-      showToast(`${key} = ${formatTime(nextT)}`);
+      playAt(chapter, nextT - VERSE_LEAD_S, { toastText: `${key} = ${formatTime(nextT)}` });
     },
-    [bookId, chapter, currentVerse, verseFix, verseIndex, showToast],
+    [bookId, chapter, currentVerse, verseFix, verseIndex, playAt],
   );
 
   const replayCurrentVerse = useCallback(() => {
@@ -449,25 +625,16 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
 
   const closeVerseSheet = useCallback(() => setVerseSheetOpen(false), []);
 
-  return (
-    <div className="wt-page">
-      <header className="wt-top">
-        <Link href="/bible-reading" className="wt-back" aria-label="성경 읽기로 돌아가기">
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden>
-            <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </Link>
-        <div className="wt-top-text">
-          <span className="wt-top-kicker">리딩지저스</span>
-          <span className="wt-top-title">{watchTitle}</span>
-        </div>
-      </header>
+  if (unavailable) return <UnavailableWatch bookId={bookId} />;
 
+  return (
+    <WatchShell title={watchTitle}>
       <div className="wt-video">
-        {bootStart !== null ? (
+        {boot !== null ? (
           <VideoPlayer
-            videoId={videoId}
-            startSeconds={bootStart}
+            key={`${bookId}:${boot.videoId}`}
+            videoId={boot.videoId}
+            startSeconds={boot.start}
             onReady={handleReady}
             onStateChange={handleState}
             onRateChange={handleRate}
@@ -539,10 +706,10 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
         chapterElapsed={chapterElapsed}
         chapterLength={chapterLength}
         chapterProgress={chapterProgress}
-        prevChapter={prevChapterNum}
-        nextChapter={nextChapterNum}
-        onPrev={() => prevChapterNum !== null && seekChapterByNumber(prevChapterNum)}
-        onNext={() => nextChapterNum !== null && seekChapterByNumber(nextChapterNum)}
+        prevLabel={prevLabel}
+        nextLabel={nextLabel}
+        onPrev={goPrev}
+        onNext={goNext}
         onTogglePlay={togglePlay}
         onSelectSpeed={selectSpeed}
         onOpenVerseSheet={() => setVerseSheetOpen(true)}
@@ -558,14 +725,16 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
         verseCounts={verseCounts}
         index={verseIndex}
         starts={starts}
+        segments={segments}
+        hasVerseTimes={hasVerseTimes}
         currentChapter={chapter}
-        currentVerse={currentVerse}
+        currentVerse={hasVerseTimes ? currentVerse : null}
         onPickChapter={(c) => seekChapterByNumber(c, { toast: false })}
         onPickVerse={seekVerse}
         onClose={closeVerseSheet}
         devMode={devMode}
         verseSrc={fileTimes.src}
       />
-    </div>
+    </WatchShell>
   );
 }

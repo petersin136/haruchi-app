@@ -14,19 +14,55 @@ export type MobileModeChoice =
   | "hebrew"
   | "study";
 
-/** 영상(/watch)이 있는 책. 데스크탑 메뉴도 동일 배열을 쓴다. */
-export const WATCH_AVAILABLE_BOOKS = ["genesis"] as const;
+/** fetch 실패 시 활성으로 둘 책. */
+const WATCH_FALLBACK_BOOKS = ["genesis", "exodus"] as const;
 
-export function isWatchAvailable(bookId: string): boolean {
-  return (WATCH_AVAILABLE_BOOKS as readonly string[]).includes(bookId);
+let watchBooksPromise: Promise<ReadonlySet<string>> | null = null;
+
+function parseWatchBookIds(json: unknown): Set<string> {
+  const out = new Set<string>();
+  if (!json || typeof json !== "object" || Array.isArray(json)) return out;
+  for (const [k, v] of Object.entries(json as Record<string, unknown>)) {
+    if (Array.isArray(v) && v.length > 0) out.add(k);
+  }
+  return out;
 }
 
-/** 영상 입구 URL — 없는 책은 /watch/genesis 로 보낸다. */
+/** /watch-times/manifest.json 한 번 fetch 후 캐시. 실패·빈 목록이면 genesis·exodus. */
+export function loadWatchAvailableBooks(): Promise<ReadonlySet<string>> {
+  if (watchBooksPromise) return watchBooksPromise;
+  watchBooksPromise = fetch("/watch-times/manifest.json", { cache: "force-cache" })
+    .then((res) => {
+      if (!res.ok) throw new Error(`watch manifest: ${res.status}`);
+      return res.json();
+    })
+    .then((json) => {
+      const set = parseWatchBookIds(json);
+      if (set.size === 0) throw new Error("watch manifest empty");
+      return set as ReadonlySet<string>;
+    })
+    .catch(() => new Set<string>(WATCH_FALLBACK_BOOKS) as ReadonlySet<string>);
+  return watchBooksPromise;
+}
+
+/** manifest(또는 대체값)에 현재 책이 있으면 true. 로딩 중은 false. */
+export function useWatchAvailable(bookId: string): boolean {
+  const [available, setAvailable] = useState(false);
+  useEffect(() => {
+    let stale = false;
+    loadWatchAvailableBooks().then((ids) => {
+      if (!stale) setAvailable(ids.has(bookId));
+    });
+    return () => {
+      stale = true;
+    };
+  }, [bookId]);
+  return available;
+}
+
+/** 영상 입구 URL — 활성 책만 호출. */
 export function watchHrefFor(bookId: string, chapter: number): string {
-  if (isWatchAvailable(bookId)) {
-    return `/watch/${bookId}?chapter=${chapter}`;
-  }
-  return "/watch/genesis";
+  return `/watch/${bookId}?chapter=${chapter}`;
 }
 
 const MODE_OPTIONS: { value: MobileModeChoice; label: string }[] = [
@@ -178,6 +214,7 @@ function MobileTopBar({
     ? `${bookName} ${chapterNumber}장`
     : "책 선택";
 
+  const watchReady = useWatchAvailable(bookId);
   const watchHref = watchHrefFor(bookId, chapterNumber);
 
   return (
@@ -217,15 +254,27 @@ function MobileTopBar({
               size="sm"
             />
           </div>
-          <Link
-            href={watchHref}
-            className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon"
-            style={ICON_HIT}
-            aria-label="영상으로 보기"
-            title="영상으로 보기"
-          >
-            <PlayIcon />
-          </Link>
+          {watchReady ? (
+            <Link
+              href={watchHref}
+              className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon"
+              style={ICON_HIT}
+              aria-label="영상으로 보기"
+              title="영상으로 보기"
+            >
+              <PlayIcon />
+            </Link>
+          ) : (
+            <span
+              className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon"
+              style={{ ...ICON_HIT, opacity: 0.45, cursor: "not-allowed" }}
+              aria-label="영상으로 보기 · 준비 중"
+              title="영상으로 보기 · 준비 중"
+              aria-disabled="true"
+            >
+              <PlayIcon />
+            </span>
+          )}
           <button
             type="button"
             className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon brp-mobile-topbar-menu-btn"
@@ -252,13 +301,23 @@ function MobileTopBar({
             aria-label="계정·설정 메뉴"
             onClick={(e) => e.stopPropagation()}
           >
-            <Link
-              className="brp-mobile-topbar-sheet-item"
-              href={watchHref}
-              onClick={() => setMenuOpen(false)}
-            >
-              영상으로 보기
-            </Link>
+            {watchReady ? (
+              <Link
+                className="brp-mobile-topbar-sheet-item"
+                href={watchHref}
+                onClick={() => setMenuOpen(false)}
+              >
+                영상으로 보기
+              </Link>
+            ) : (
+              <span
+                className="brp-mobile-topbar-sheet-item"
+                aria-disabled="true"
+                style={{ opacity: 0.45, cursor: "not-allowed" }}
+              >
+                영상으로 보기 · 준비 중
+              </span>
+            )}
             <Link
               className="brp-mobile-topbar-sheet-item"
               href="/study/john1/1"

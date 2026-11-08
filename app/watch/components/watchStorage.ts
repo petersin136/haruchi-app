@@ -11,6 +11,13 @@ const LEGACY_SPEED_KEY = "haruchi:watch:speed";
 const speedKey = (book: WatchBookId) => `haruchi:watch:${book}:speed`;
 const positionKey = (book: WatchBookId) => `haruchi:watch:${book}:position`;
 
+export type WatchPosition = {
+  /** 현재 영상 안 초 */
+  t: number;
+  /** 마지막으로 본 장(1부터). 없으면 시간만으로 추정 */
+  c: number;
+};
+
 function read(key: string): string | null {
   try {
     return window.localStorage.getItem(key);
@@ -48,13 +55,34 @@ export function saveSpeed(book: WatchBookId, speed: SpeedOption): void {
   write(speedKey(book), String(speed));
 }
 
-export function loadPosition(book: WatchBookId): number {
-  const v = Number(read(positionKey(book)));
-  return Number.isFinite(v) && v > 0 ? v : 0;
+export function loadPosition(book: WatchBookId): WatchPosition {
+  const raw = read(positionKey(book));
+  if (!raw) return { t: 0, c: 0 };
+  try {
+    const parsed: unknown = JSON.parse(raw);
+    if (parsed && typeof parsed === "object") {
+      const o = parsed as { t?: unknown; c?: unknown };
+      const t = Number(o.t);
+      const c = Number(o.c);
+      return {
+        t: Number.isFinite(t) && t > 0 ? t : 0,
+        c: Number.isInteger(c) && c > 0 ? c : 0,
+      };
+    }
+  } catch {
+    /* 예전 형식: 초만 숫자 문자열 */
+  }
+  const t = Number(raw);
+  return { t: Number.isFinite(t) && t > 0 ? t : 0, c: 0 };
 }
 
-export function savePosition(book: WatchBookId, seconds: number): void {
-  write(positionKey(book), String(Math.floor(seconds)));
+export function savePosition(book: WatchBookId, seconds: number, chapter?: number): void {
+  const t = Math.floor(seconds);
+  if (chapter && chapter > 0) {
+    write(positionKey(book), JSON.stringify({ t, c: chapter }));
+  } else {
+    write(positionKey(book), String(t));
+  }
 }
 
 export function clearPosition(book: WatchBookId): void {

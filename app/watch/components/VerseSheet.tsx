@@ -3,7 +3,11 @@
 import { useEffect, useState } from "react";
 import { isChapterDone } from "@/app/lib/readLog";
 import { verseKey, verseTime, type VerseIndex } from "./verseTimes";
-import type { WatchBookId } from "../data/books";
+import {
+  canSelectChapter,
+  type VideoSegment,
+  type WatchBookId,
+} from "../data/books";
 import type { ChapterStarts } from "../data/chapterStarts";
 
 const ANIM_MS = 250;
@@ -16,6 +20,9 @@ type Props = {
   verseCounts: number[];
   index: VerseIndex;
   starts: ChapterStarts;
+  segments: readonly VideoSegment[];
+  /** false 면 절 격자 대신 「절 시간 준비 중」 */
+  hasVerseTimes: boolean;
   currentChapter: number;
   currentVerse: number | null;
   /** 장 선택 → 즉시 재생 (시트는 절 단계로 유지) */
@@ -37,6 +44,8 @@ export default function VerseSheet({
   verseCounts,
   index,
   starts,
+  segments,
+  hasVerseTimes,
   currentChapter,
   currentVerse,
   onPickChapter,
@@ -125,7 +134,7 @@ export default function VerseSheet({
             </div>
             <div className="wt-vs-grid">
               {Array.from({ length: totalChapters }, (_, i) => i + 1).map((c) => {
-                const available = starts[c - 1] !== null && starts[c - 1] !== undefined;
+                const available = canSelectChapter(starts, segments, c, hasVerseTimes);
                 const done = doneChapters.has(c);
                 return (
                   <button
@@ -164,32 +173,38 @@ export default function VerseSheet({
                 {bookName} {chapter}장
               </h2>
             </div>
-            <div className="wt-vs-grid">
-              {Array.from({ length: verseTotal }, (_, i) => i + 1).map((v) => {
-                const available = verseTime(index, chapter, v) !== null;
-                const current = chapter === currentChapter && v === currentVerse;
-                const kind = devMode ? verseSrc[verseKey(chapter, v)] : undefined;
-                const srcClass =
-                  kind === "interp" ||
-                  kind === "seg" ||
-                  kind === "fix" ||
-                  kind === "word"
-                    ? ` is-src-${kind}`
-                    : "";
-                return (
-                  <button
-                    key={v}
-                    type="button"
-                    className={`wt-vs-cell${current ? " is-verse-current" : ""}${srcClass}`}
-                    data-verse-src={kind || undefined}
-                    disabled={!available}
-                    onClick={() => onPickVerse(chapter, v)}
-                  >
-                    {v}
-                  </button>
-                );
-              })}
-            </div>
+            {!hasVerseTimes ? (
+              <p className="wt-vs-pending" role="status">
+                절 시간 준비 중
+              </p>
+            ) : (
+              <div className="wt-vs-grid">
+                {Array.from({ length: verseTotal }, (_, i) => i + 1).map((v) => {
+                  const available = verseTime(index, chapter, v) !== null;
+                  const current = chapter === currentChapter && v === currentVerse;
+                  const kind = devMode ? verseSrc[verseKey(chapter, v)] : undefined;
+                  const srcClass =
+                    kind === "interp" ||
+                    kind === "seg" ||
+                    kind === "fix" ||
+                    kind === "word"
+                      ? ` is-src-${kind}`
+                      : "";
+                  return (
+                    <button
+                      key={v}
+                      type="button"
+                      className={`wt-vs-cell${current ? " is-verse-current" : ""}${srcClass}`}
+                      data-verse-src={kind || undefined}
+                      disabled={!available}
+                      onClick={() => onPickVerse(chapter, v)}
+                    >
+                      {v}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </>
         )}
       </div>

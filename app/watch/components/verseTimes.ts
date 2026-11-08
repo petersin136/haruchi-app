@@ -16,6 +16,8 @@ export type WatchTimes = {
   missing: number[];
   starts: (number | null)[];
   src: VerseSrcMap;
+  /** public/watch-times/{book}.json 을 실제로 받았는지(404면 false) */
+  present: boolean;
 };
 export type VerseEntry = { verse: number; t: number; explicit: boolean };
 export type VerseIndex = Map<number, VerseEntry[]>;
@@ -65,13 +67,31 @@ function readVerseItem(
   };
 }
 
-function normalizeWatchTimes(raw: unknown): WatchTimes {
+/** 절·장 시작 시각 데이터가 있는지(파일 존재 + 내용). */
+export function hasVerseTimingData(w: WatchTimes): boolean {
+  if (!w.present) return false;
+  if (Object.keys(w.times).length > 0) return true;
+  return w.starts.some((s) => s !== null);
+}
+
+function emptyWatchTimes(present: boolean): WatchTimes {
+  return { times: {}, missing: [], starts: [], src: {}, present };
+}
+
+function normalizeWatchTimes(raw: unknown, present: boolean): WatchTimes {
   if (!raw || typeof raw !== "object") {
-    return { times: {}, missing: [], starts: [], src: {} };
+    return emptyWatchTimes(present);
   }
   const o = raw as Record<string, unknown>;
   if (!o.chapters || typeof o.chapters !== "object") {
-    return { times: normalizeTimes(raw), missing: [], starts: [], src: {} };
+    const times = normalizeTimes(raw);
+    return {
+      times,
+      missing: [],
+      starts: [],
+      src: {},
+      present: present && Object.keys(times).length > 0,
+    };
   }
 
   const times: VerseTimeMap = {};
@@ -109,7 +129,9 @@ function normalizeWatchTimes(raw: unknown): WatchTimes {
   const missing = Array.isArray(o.missing)
     ? o.missing.filter((n): n is number => Number.isInteger(n) && n > 0)
     : [];
-  return { times, missing, starts, src };
+  const hasContent =
+    Object.keys(times).length > 0 || starts.some((s) => s !== null);
+  return { times, missing, starts, src, present: present && hasContent };
 }
 
 // ── 원본 데이터 ──────────────────────────────────────────────────────────────
@@ -120,12 +142,12 @@ export function loadWatchTimes(book: BookId): Promise<WatchTimes> {
   const hit = timesCache.get(book);
   if (hit) return hit;
   const p = fetch(`/watch-times/${book}.json`)
-    .then((res) => {
-      if (res.status === 404) return {};
+    .then(async (res) => {
+      if (res.status === 404) return normalizeWatchTimes({}, false);
       if (!res.ok) throw new Error(`watch-times ${book}: ${res.status}`);
-      return res.json();
-    })
-    .then(normalizeWatchTimes);
+      const raw: unknown = await res.json();
+      return normalizeWatchTimes(raw, true);
+    });
   p.catch(() => timesCache.delete(book));
   timesCache.set(book, p);
   return p;

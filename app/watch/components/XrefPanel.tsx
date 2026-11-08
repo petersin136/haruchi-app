@@ -55,7 +55,7 @@ function XrefPanel({ bookId, chapter }: { bookId: BookId; chapter: number }) {
       )}
 
       {state.status === "done" && state.data.length === 0 && (
-        <p className="wt-xref-empty">이 장에는 관주가 없어요.</p>
+        <p className="wt-xref-empty">준비 중</p>
       )}
 
       {state.status === "done" && state.data.length > 0 && (
