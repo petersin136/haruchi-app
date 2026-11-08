@@ -540,7 +540,6 @@ export default function BibleReadingPage() {
   // 복사 토스트 자동 사라짐 타이머 — 연속 복사 시 이전 타이머 클리어.
   const copyToastTimerRef = useRef<number | null>(null);
   const readerSectionRef = useRef<HTMLElement | null>(null);
-  const sideRef = useRef<HTMLElement | null>(null);
   // 장 끝 센티널 — 진입 시각 / 현재 교차 여부 / 지연 완료 타이머.
   const chapterEnteredAtRef = useRef<number>(Date.now());
   const endVisibleRef = useRef(false);
@@ -1716,49 +1715,6 @@ export default function BibleReadingPage() {
     setOpenWordDrawers(new Set());
     setOpenTokenInfos(new Set());
   }, [bookId, chapterNumber, effectiveTranslation]);
-
-  // ───────────────────────────────────────────────────────────────────
-  // 우측 사이드바(.brp-side) sticky-top 계산.
-  //
-  // ⚠️ DEPRECATED — 2-pane 독립 스크롤 전환(≥960px) 후로는 .brp-side 의
-  //   position: sticky 가 제거되어, 여기서 설정하는 CSS 변수
-  //   --brp-side-top 은 더 이상 어떤 스타일에도 참조되지 않는다.
-  //   삭제하지 않고 남겨둔 이유: 만약 모바일/태블릿 세로(<960px) 에서
-  //   다시 sticky 모드를 도입하거나, A/B 테스트로 sticky 모드를 옵션화할
-  //   때 다시 살릴 수 있도록 한다. 현재로서는 effective-no-op.
-  // ───────────────────────────────────────────────────────────────────
-  useEffect(() => {
-    const update = () => {
-      const el = sideRef.current;
-      if (!el) return;
-      // 모바일(<960px) 에선 .brp-side 가 display: contents — sticky 무효.
-      if (typeof window === "undefined" || window.innerWidth < 960) {
-        el.style.removeProperty("--brp-side-top");
-        return;
-      }
-      const headerOffset = 80; // 헤더 / 미니바 위 여백
-      const bottomMargin = 20; // viewport 하단과 사이드바 바닥 사이 여유
-      const sideHeight = el.scrollHeight;
-      const viewport = window.innerHeight;
-      if (sideHeight + headerOffset + bottomMargin > viewport) {
-        // 사이드바가 viewport 보다 큼 → top 을 음수로
-        const top = viewport - sideHeight - bottomMargin;
-        el.style.setProperty("--brp-side-top", `${top}px`);
-      } else {
-        el.style.setProperty("--brp-side-top", `${headerOffset}px`);
-      }
-    };
-    update();
-    window.addEventListener("resize", update);
-    // 사이드바 콘텐츠(특히 prayer 카드 열림/닫힘, 책 변경) 가 바뀌면 재계산.
-    const ro =
-      typeof ResizeObserver !== "undefined" ? new ResizeObserver(update) : null;
-    if (ro && sideRef.current) ro.observe(sideRef.current);
-    return () => {
-      window.removeEventListener("resize", update);
-      if (ro) ro.disconnect();
-    };
-  }, []);
 
   const watchReady = useWatchAvailable(bookId);
 
