@@ -63,7 +63,6 @@ type ChapterFile =
   | { words?: WordStudyToken[]; tokens?: WordStudyToken[]; verses?: unknown }
   | Record<string, unknown>;
 
-const chapterCache = new Map<string, Promise<WordStudyToken[]>>();
 const lexCache = new Map<string, Promise<WordStudyLexicon | null>>();
 
 function verseNumFromRef(ref: unknown, fallback: number): number {
@@ -230,15 +229,23 @@ async function loadFromBibleV2(
   return out;
 }
 
+export type ChapterWordStudyLoad = {
+  tokens: WordStudyToken[];
+  /** public/word-study/{book}/{ch}.json 이 실제로 있었는지 */
+  hasFile: boolean;
+};
+
+const chapterCache = new Map<string, Promise<ChapterWordStudyLoad>>();
+
 export function loadChapterWordStudy(
   book: string,
   chapter: number,
-): Promise<WordStudyToken[]> {
+): Promise<ChapterWordStudyLoad> {
   const key = `${book}/${chapter}`;
   const hit = chapterCache.get(key);
   if (hit) return hit;
 
-  const p = (async () => {
+  const p = (async (): Promise<ChapterWordStudyLoad> => {
     try {
       const res = await fetch(`/word-study/${book}/${chapter}.json`, {
         cache: "default",
@@ -246,12 +253,13 @@ export function loadChapterWordStudy(
       if (res.ok) {
         const json = (await res.json()) as ChapterFile;
         const tokens = normalizeChapter(json);
-        if (tokens.length > 0) return tokens;
+        if (tokens.length > 0) return { tokens, hasFile: true };
       }
     } catch {
       /* fall through */
     }
-    return loadFromBibleV2(book, chapter);
+    const tokens = await loadFromBibleV2(book, chapter);
+    return { tokens, hasFile: false };
   })();
 
   p.catch(() => chapterCache.delete(key));

@@ -1,0 +1,124 @@
+{
+  "lemma": "יָלִיד",
+  "pron": "옐리데",
+  "strong": "H3211",
+  "posKo": "명사",
+  "root": {
+    "lemma": "יָלַד",
+    "strong": "H3205",
+    "glossKo": "낳다"
+  },
+  "family": [
+    {
+      "lemma": "יָלַד",
+      "strong": "H3205",
+      "pron": "옐릳티",
+      "glossKo": "낳다"
+    },
+    {
+      "lemma": "יֶלֶד",
+      "strong": "H3206",
+      "pron": "옐렏",
+      "glossKo": "아이"
+    },
+    {
+      "lemma": "יִלּוֹד",
+      "strong": "H3209",
+      "pron": "",
+      "glossKo": "갓난 아이"
+    },
+    {
+      "lemma": "מוֹלָדָה",
+      "strong": "H4137",
+      "pron": "",
+      "glossKo": "몰라다"
+    },
+    {
+      "lemma": "מוֹלֶדֶת",
+      "strong": "H4138",
+      "pron": "몰랃트",
+      "glossKo": "친족"
+    },
+    {
+      "lemma": "מוֹלִיד",
+      "strong": "H4140",
+      "pron": "",
+      "glossKo": "몰릿"
+    }
+  ],
+  "defEn": "born",
+  "defKo": "",
+  "countOT": 5,
+  "byBook": {
+    "genesis": 5
+  },
+  "phrases": [
+    {
+      "hebrew": "יְלִ֣יד בָּ֔יִת",
+      "pron": "옐리데 베테",
+      "lemmas": [
+        "יָלִיד",
+        "בַּיִת"
+      ],
+      "words": [
+        {
+          "word": "יְלִ֣יד",
+          "lemma": "יָלִיד",
+          "strong": "H3211",
+          "pron": "옐리데"
+        },
+        {
+          "word": "בָּ֔יִת",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "베테"
+        }
+      ],
+      "count": 5,
+      "refs": [
+        "genesis 14:14",
+        "genesis 17:12",
+        "genesis 17:13",
+        "genesis 17:23",
+        "genesis 17:27"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "יְלִ֣יד בָּ֔יִת מִקְנַת",
+      "pron": "옐리데 베테 미케나트",
+      "lemmas": [
+        "יָלִיד",
+        "בַּיִת",
+        "מִקְנָה"
+      ],
+      "words": [
+        {
+          "word": "יְלִ֣יד",
+          "lemma": "יָלִיד",
+          "strong": "H3211",
+          "pron": "옐리데"
+        },
+        {
+          "word": "בָּ֔יִת",
+          "lemma": "בַּיִת",
+          "strong": "H1004",
+          "pron": "베테"
+        },
+        {
+          "word": "מִקְנַת",
+          "lemma": "מִקְנָה",
+          "strong": "H4736",
+          "pron": "미케나트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 17:12",
+        "genesis 17:13",
+        "genesis 17:27"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

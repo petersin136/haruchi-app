@@ -12,7 +12,11 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
-import { BOOKS, type BookId } from "../../bible-reading/books";
+import {
+  BOOKS,
+  isOldTestament,
+  type BookId,
+} from "../../bible-reading/books";
 import {
   familyItem,
   loadWordLexicon,
@@ -431,6 +435,13 @@ export default function WordStudySheet({
     setActive(w);
   };
 
+  const useRtl =
+    (Object.prototype.hasOwnProperty.call(BOOKS, bookId) &&
+      isOldTestament(bookId as BookId)) ||
+    String(active.strong || "")
+      .toUpperCase()
+      .startsWith("H");
+
   return createPortal(
     <div className="study-ws-root" role="dialog" aria-label="원어 사전">
       <button
@@ -439,7 +450,11 @@ export default function WordStudySheet({
         aria-label="닫기"
         onClick={() => closeSheet()}
       />
-      <div ref={sheetRef} className="study-ws-sheet">
+      <div
+        ref={sheetRef}
+        className={`study-ws-sheet${useRtl ? " is-rtl" : ""}`}
+        dir={useRtl ? "rtl" : undefined}
+      >
         <div className="study-ws-top">
           <div
             className="study-ws-handle-hit"

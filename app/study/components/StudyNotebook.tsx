@@ -16,7 +16,7 @@ import {
 import { createPortal } from "react-dom";
 import { loadKoreanChapter } from "../../bible-reading/bibleData";
 import type { BookId } from "../../bible-reading/books";
-import { BOOKS, isNewTestament } from "../../bible-reading/books";
+import { BOOKS, isOldTestament } from "../../bible-reading/books";
 import ChapterEndSentinel from "../../bible-reading/components/ChapterEndSentinel";
 import {
   DEFAULT_HL,
@@ -178,7 +178,7 @@ function StudyNotebook({
   endSentinelNonce = 0,
   onMoveChapter,
 }: Props) {
-  const wordStudyOk = isNewTestament(bookId);
+  const isOtBook = isOldTestament(bookId);
   const bookMeta = BOOKS[bookId];
   const total = bookMeta.totalChapters;
   const [verses, setVerses] = useState<{ n: number; t: string }[] | null>(null);
@@ -281,6 +281,7 @@ function StudyNotebook({
   };
   const [bubble, setBubble] = useState<BubbleState | null>(null);
   const [wsTokens, setWsTokens] = useState<WordStudyToken[]>([]);
+  const [wsHasFile, setWsHasFile] = useState(false);
   const [wsOpen, setWsOpen] = useState(false);
   const [wsVerse, setWsVerse] = useState(1);
   const [wsInitial, setWsInitial] = useState<WordStudyToken | null>(null);
@@ -336,8 +337,11 @@ function StudyNotebook({
   useEffect(() => {
     let stale = false;
     setWsTokens([]);
-    loadChapterWordStudy(bookId, chapter).then((list) => {
-      if (!stale) setWsTokens(list);
+    setWsHasFile(false);
+    loadChapterWordStudy(bookId, chapter).then((loaded) => {
+      if (stale) return;
+      setWsTokens(loaded.tokens);
+      setWsHasFile(loaded.hasFile);
     });
     return () => {
       stale = true;
@@ -376,9 +380,11 @@ function StudyNotebook({
   }, [debugOn, debugHost]);
 
   useEffect(() => {
-    if (!debugOn || !wordStudyOk) return;
-    debugLog(`[원어] 버튼 렌더됨 ch=${chapter}`);
-  }, [debugOn, wordStudyOk, bookId, chapter, debugLog]);
+    if (!debugOn) return;
+    debugLog(
+      `[원어] 버튼 렌더됨 ch=${chapter} hasFile=${wsHasFile ? 1 : 0} ot=${isOtBook ? 1 : 0}`,
+    );
+  }, [debugOn, isOtBook, wsHasFile, bookId, chapter, debugLog]);
 
   const persist = useCallback(
     (next: ChapterStudyData) => {
@@ -1336,9 +1342,18 @@ function StudyNotebook({
     }
     wsActionAtRef.current = now;
     debugLog("[원어] open 시도");
-    if (!wordStudyOk) {
-      debugLog("[원어] NT 아님 — 중단");
-      return;
+    if (!wsHasFile) {
+      if (isOtBook) {
+        setToast("히브리어 사전은 준비 중이에요");
+        debugLog("[원어] OT word-study 파일 없음 — 토스트");
+        return;
+      }
+      if (wsTokens.length === 0) {
+        const path = `/word-study/${bookId}/${chapter}.json`;
+        setToast(`원어 자료 없음: ${path}`);
+        debugLog(`[원어] tokens 비어 있음 ${path}`);
+        return;
+      }
     }
     const pick = wsPickRef.current;
     const tb = toolbarActionTarget();
@@ -1985,17 +2000,11 @@ function StudyNotebook({
                       action: openNoteFromToolbar,
                       icon: <IconPen />,
                     },
-                    ...(wordStudyOk
-                      ? [
-                          {
-                            label: "원어",
-                            action: openWordStudyFromToolbar,
-                            icon: (
-                              <span className="study-toolbar-alpha">α</span>
-                            ),
-                          },
-                        ]
-                      : []),
+                    {
+                      label: "원어",
+                      action: openWordStudyFromToolbar,
+                      icon: <span className="study-toolbar-alpha">α</span>,
+                    },
                     {
                       label: "복사",
                       action: () => void copyFromToolbar(),

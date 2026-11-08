@@ -137,6 +137,19 @@
   }
 }
 
+/* A: 세로 태블릿 — 한 단 680, 크림 여백(바탕은 .study-root) */
+@media (min-width: 769px) and (max-width: 1023.98px),
+  (min-width: 769px) and (orientation: portrait) {
+  .study-shell {
+    max-width: 680px;
+  }
+  .study-layout {
+    grid-template-columns: minmax(0, 680px);
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .study-page {
   position: relative;
   /* 17px × 2.4 = 40.8 → 행간에 메모 16px 들어갈 자리 */
@@ -1071,8 +1084,21 @@ html:has(.study-root) body::-webkit-scrollbar,
   font-weight: 600;
   line-height: 1.15;
   color: var(--study-ink, #1c1917);
+  font-family: inherit;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
+}
+
+.study-ws-sheet.is-rtl .study-ws-chips {
+  direction: rtl;
+}
+
+.study-ws-sheet.is-rtl .study-ws-chip-g,
+.study-ws-sheet.is-rtl .study-ws-pron,
+.study-ws-sheet.is-rtl .study-ws-grammar,
+.study-ws-sheet.is-rtl .study-ws-sec h3 {
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .study-ws-chip.is-active .study-ws-chip-w {
@@ -1126,6 +1152,7 @@ html:has(.study-root) body::-webkit-scrollbar,
   font-weight: 700;
   line-height: 1.1;
   color: var(--study-red, #9e1b1b);
+  font-family: inherit;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
@@ -1152,6 +1179,7 @@ html:has(.study-root) body::-webkit-scrollbar,
   margin: 6px 0 0;
   font-size: 12px;
   color: #a08c78;
+  font-family: inherit;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }

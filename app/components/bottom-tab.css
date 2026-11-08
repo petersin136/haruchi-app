@@ -1,4 +1,4 @@
-/* 하단 탭바 — 모바일(≤768px)만. 공부 도구(z 50+)·원어 시트(z 70)보다 아래. */
+/* 하단 탭바 — 모바일·태블릿(<1280). 데스크탑은 헤더 nav. */
 
 :root {
   --brp-tabbar-h: calc(56px + env(safe-area-inset-bottom, 0px));
@@ -8,7 +8,7 @@
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1279.98px) {
   .brp-tabbar {
     position: fixed;
     left: 0;

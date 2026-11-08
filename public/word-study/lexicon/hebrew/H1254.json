@@ -1,0 +1,104 @@
+{
+  "lemma": "בָּרָא",
+  "pron": "베라",
+  "strong": "H1254",
+  "posKo": "동사",
+  "root": null,
+  "family": [
+    {
+      "lemma": "בְּרָאיָה",
+      "strong": "H1256",
+      "pron": "",
+      "glossKo": "브라야"
+    },
+    {
+      "lemma": "בָּרִיא",
+      "strong": "H1277",
+      "pron": "바리",
+      "glossKo": "살진"
+    },
+    {
+      "lemma": "בְּרִיאָה",
+      "strong": "H1278",
+      "pron": "",
+      "glossKo": "새 일"
+    }
+  ],
+  "defEn": "create, shape (God as subject)",
+  "defKo": "기본형(칼형)으로 쓰일 때는 주어가 언제나 하나님이에요. 무엇으로 만들었는지 재료도 말하지 않아요. 창세기 1장에서는 천지(1:1), 큰 바다 짐승(1:21), 사람(1:27)에만 쓰여요. 특히 사람을 지으실 때는 한 절에 세 번이나 나와요.",
+  "countOT": 17,
+  "byBook": {
+    "genesis": 11,
+    "psalms": 6
+  },
+  "phrases": [
+    {
+      "hebrew": "בְּרָא אֱלֹהִ֑ים",
+      "pron": "베라 엘로힘",
+      "lemmas": [
+        "בָּרָא",
+        "אֱלֹהִים"
+      ],
+      "words": [
+        {
+          "word": "בְּרָא",
+          "lemma": "בָּרָא",
+          "strong": "H1254",
+          "pron": "베라"
+        },
+        {
+          "word": "אֱלֹהִ֑ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        }
+      ],
+      "count": 6,
+      "refs": [
+        "psalms 51:10",
+        "genesis 1:1",
+        "genesis 1:21",
+        "genesis 1:27",
+        "genesis 2:3",
+        "genesis 5:1"
+      ],
+      "glossKo": ""
+    },
+    {
+      "hebrew": "בָּרָ֣א אֱלֹהִ֑ים אֵ֥ת",
+      "pron": "베라 엘로힘 에트",
+      "lemmas": [
+        "בָּרָא",
+        "אֱלֹהִים",
+        "אֵת"
+      ],
+      "words": [
+        {
+          "word": "בָּרָ֣א",
+          "lemma": "בָּרָא",
+          "strong": "H1254",
+          "pron": "베라"
+        },
+        {
+          "word": "אֱלֹהִ֑ים",
+          "lemma": "אֱלֹהִים",
+          "strong": "H430",
+          "pron": "엘로힘"
+        },
+        {
+          "word": "אֵ֥ת",
+          "lemma": "אֵת",
+          "strong": "H853",
+          "pron": "에트"
+        }
+      ],
+      "count": 3,
+      "refs": [
+        "genesis 1:1",
+        "genesis 1:21",
+        "genesis 1:27"
+      ],
+      "glossKo": ""
+    }
+  ]
+}

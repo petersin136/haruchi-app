@@ -421,9 +421,8 @@ function isFormulaOpening(text) {
   return /^(여호와께서모세에게|여호와께서모세와아론|여호와께서모세와)/.test(t);
 }
 
-/** 장 전체 절을 훑어 첫 매칭. 실패 시 null */
+/** 장 전체 절을 훑어 첫 매칭(내용 위치 참고용 — 장 시작으로 쓰지 않음). */
 function findChapterContentStart(segs, verses, afterSec, beforeSec) {
-  // 이전 장 구간 앞부분은 건너뜀(긴 장일수록 비율↑)
   const span = beforeSec < Infinity ? beforeSec - afterSec : 120;
   const minAfter = Math.min(Math.max(40, span * 0.25), span * 0.7);
   const ordered = [
@@ -439,6 +438,170 @@ function findChapterContentStart(segs, verses, afterSec, beforeSec) {
     if (t != null) return { t, via: "1-loose" };
   }
   return null;
+}
+
+/**
+ * 이전 장 끝 자막 단어 인덱스.
+ * 마지막 몇 절을 창 [after, bound) 에서 찾아, 그중 가장 늦은 매칭의 어절 꼬리.
+ */
+function findPrevChapterLastSegIndex(segs, prevVerses, afterSec, boundSec) {
+  if (!prevVerses?.length) return -1;
+  let bestIdx = -1;
+  let bestT = -1;
+  const fromV = Math.max(0, prevVerses.length - 6);
+  for (let vi = fromV; vi < prevVerses.length; vi++) {
+    const words = String(prevVerses[vi].text || "")
+      .trim()
+      .split(/\s+/)
+      .map((w) => normalize(w))
+      .filter(Boolean);
+    if (words.length < 2) continue;
+    const needle = words.slice(0, Math.min(4, words.length)).join("");
+    const needLen = Math.min(needle.length, Math.max(8, Math.floor(needle.length * 0.6)));
+    for (let i = 0; i < segs.length; i++) {
+      if (segs[i].t < afterSec + 5 || segs[i].t >= boundSec) continue;
+      let joined = "";
+      for (let k = 0; k < 10 && i + k < segs.length; k++) {
+        joined += segs[i + k].norm;
+        if (joined.length < needLen) continue;
+        const a = needle.slice(0, needLen);
+        const b = joined.slice(0, needLen);
+        const dist = levenshtein(a, b);
+        if (a === b || dist <= Math.max(1, Math.floor(needLen * 0.2))) {
+          const wordCount = Math.max(3, words.length);
+          let end = i;
+          while (
+            end + 1 < segs.length &&
+            end + 1 - i < wordCount + 4 &&
+            segs[end + 1].t < boundSec
+          ) {
+            end++;
+          }
+          if (segs[end].t >= bestT) {
+            bestT = segs[end].t;
+            bestIdx = end;
+          }
+        }
+        break;
+      }
+    }
+  }
+  return bestIdx;
+}
+
+/**
+ * 앞 장 마지막 단어 끝 직후 = 다음 장 시작.
+ * 연속이면 다음 단어 시작 − 0.2초, 공백이면 공백 시작(마지막 단어 직후).
+ */
+function chapterStartAfterPrevWord(segs, lastIdx) {
+  if (lastIdx < 0 || lastIdx >= segs.length) return null;
+  const last = segs[lastIdx];
+  if (lastIdx + 1 >= segs.length) return round1(last.t + 0.3);
+  const next = segs[lastIdx + 1];
+  const gap = next.t - last.t;
+  if (gap > 1.2) {
+    // 공백 시작 ≈ 마지막 단어 끝 (시작+짧은 지속)
+    return round1(last.t + Math.min(0.55, Math.max(0.2, gap * 0.05)));
+  }
+  return round1(Math.max(last.t + 0.05, next.t - 0.2));
+}
+
+/** [lo, hi] 안에서 가장 큰 자막 공백의 직전 조각 인덱스 */
+function findLargestGapBefore(segs, lo, hi) {
+  let bestGap = 0;
+  let bestIdx = -1;
+  for (let i = 1; i < segs.length; i++) {
+    if (segs[i - 1].t < lo || segs[i].t > hi) continue;
+    const gap = segs[i].t - segs[i - 1].t;
+    if (gap > bestGap) {
+      bestGap = gap;
+      bestIdx = i - 1;
+    }
+  }
+  return bestGap >= 1.5 ? bestIdx : -1;
+}
+
+/**
+ * 라벨 없는 장 시작: 중간 절 매칭 시각을 쓰지 않고,
+ * 앞 장 마지막 자막 단어 끝 직후를 쓴다.
+ * 앞부분 절은 이후 align+fillGaps 가 interp.
+ */
+function unlabeledChapterStart(segs, bookId, ch, unit, after, before, exceptions) {
+  const verses = loadKoreanChapter(bookId, ch);
+  const contentHit = findChapterContentStart(segs, verses, after, before);
+  const bound = contentHit ? Math.min(contentHit.t + 0.5, before) : before;
+  const viaNum = contentHit?.via && /^\d+$/.test(contentHit.via) ? Number(contentHit.via) : null;
+
+  let lastIdx = -1;
+  if (ch > 1) {
+    try {
+      const prevVerses = loadKoreanChapter(bookId, ch - 1);
+      lastIdx = findPrevChapterLastSegIndex(segs, prevVerses, after, bound);
+    } catch {
+      /* noop */
+    }
+  }
+
+  // 첫 내용이 2절 이후면 ASR 공백(앞 장 끝~본문)을 장 경계 후보로
+  let gapIdx = -1;
+  if (contentHit && (viaNum == null || viaNum > 1)) {
+    const lo = after + Math.max(20, (contentHit.t - after) * 0.15);
+    gapIdx = findLargestGapBefore(segs, lo, contentHit.t + 0.05);
+  }
+
+  let t = null;
+  let how = "";
+  const candidates = [];
+  if (lastIdx >= 0) {
+    const pt = chapterStartAfterPrevWord(segs, lastIdx);
+    if (pt != null) candidates.push({ t: pt, how: "prev-end", idx: lastIdx });
+  }
+  if (gapIdx >= 0) {
+    const gt = chapterStartAfterPrevWord(segs, gapIdx);
+    if (gt != null) candidates.push({ t: gt, how: "asr-gap", idx: gapIdx });
+  }
+
+  if (candidates.length) {
+    // 내용 매칭이 중간 절이면, 내용보다 충분히 앞선 후보를 선호
+    if (contentHit && viaNum > 1) {
+      const early = candidates.filter((c) => c.t < contentHit.t - 3);
+      const pick = (early.length ? early : candidates).sort((a, b) => a.t - b.t)[0];
+      t = pick.t;
+      how = pick.how;
+    } else {
+      // 1절 내용이면 prev-end 우선, 없으면 gap
+      const pref = candidates.find((c) => c.how === "prev-end") || candidates[0];
+      t = pref.t;
+      how = pref.how;
+    }
+  } else if (contentHit && viaNum === 1) {
+    // 1절이 바로 이어지면 그 직전 단어 기준 (내용은 장 시작으로 쓰지 않되 인접)
+    let idx = 0;
+    while (idx < segs.length && segs[idx].t < contentHit.t - 0.01) idx++;
+    if (idx > 0) {
+      t = chapterStartAfterPrevWord(segs, idx - 1);
+      how = "before-v1";
+    }
+  }
+  if (t == null && before < Infinity && before - after > 20) {
+    t = round1(after + (before - after) * 0.5);
+    how = "midpoint";
+  }
+  if (t == null) return null;
+
+  if (t <= after + 0.5) t = round1(after + 1);
+  if (before < Infinity && t >= before - 0.5) t = round1(before - 1);
+
+  exceptions.push({
+    type: "unlabeled-prev-end",
+    ch,
+    t,
+    contentVia: contentHit?.via ?? null,
+    contentT: contentHit?.t ?? null,
+    how,
+    note: `${unit} 라벨 없음 → 앞 장 끝/공백 직후 (내용 첫 매칭 ${contentHit ? ch + ":" + contentHit.via + "@" + round1(contentHit.t) : "없음"})`,
+  });
+  return t;
 }
 
 /** 조각 → 문자 스트림. 문자마다 조각 번호·조각 내 위치·비율 시각 */
@@ -873,7 +1036,7 @@ function resolveChapterStarts(cfg, segs, events, exceptions) {
     }
   }
 
-  // 빠진 장 → 본문 매칭 (1절 우선, 실패 시 다른 절) → 그래도 없으면 이웃 중점
+  // 빠진 장 → 앞 장 마지막 자막 직후 (중간 절 시각을 장 시작으로 쓰지 않음)
   for (let ch = 1; ch <= totalChapters; ch++) {
     if (starts.has(ch)) continue;
     if (!segs) continue;
@@ -892,28 +1055,8 @@ function resolveChapterStarts(cfg, segs, events, exceptions) {
       }
     }
     try {
-      const verses = loadKoreanChapter(cfg.bookId, ch);
-      const hit = findChapterContentStart(segs, verses, after, before);
-      if (hit) {
-        starts.set(ch, hit.t);
-        exceptions.push({
-          type: "verse-fallback",
-          ch,
-          t: hit.t,
-          via: hit.via,
-          note: `${unit} 라벨 없음 → ${ch}:${hit.via} 본문 매칭`,
-        });
-      } else if (before < Infinity && before - after > 60) {
-        // ASR 공백·번역 차이로 본문이 안 잡히면 이웃 사이 중점(최후)
-        const t = after + (before - after) * 0.5;
-        starts.set(ch, t);
-        exceptions.push({
-          type: "midpoint-fallback",
-          ch,
-          t,
-          note: `${unit} 라벨·본문 매칭 실패 → ${after.toFixed(0)}~${before.toFixed(0)} 중점`,
-        });
-      }
+      const t = unlabeledChapterStart(segs, cfg.bookId, ch, unit, after, before, exceptions);
+      if (t != null) starts.set(ch, t);
     } catch (e) {
       exceptions.push({ type: "verse1-error", ch, note: String(e.message || e) });
     }
