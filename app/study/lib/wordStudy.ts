@@ -330,8 +330,8 @@ export type MatchFailReason =
   | "titleShift"
   | "match-zero";
 
-/** gloss = ① 칩 glossKo, krv = ①-2 krvKo, lexicon = ② 사전 한글 필드, none = 못 고름 */
-export type GlossMatchStage = "gloss" | "krv" | "lexicon" | "none";
+/** gloss=①칩 glossKo, krv=①-2 krvKo, variant=①-3 대응표, lexicon=②사전, none=못 고름 */
+export type GlossMatchStage = "gloss" | "krv" | "variant" | "lexicon" | "none";
 
 export type GlossMatchResult = {
   token: WordStudyToken | null;
@@ -350,6 +350,11 @@ export type GlossMatchOpts = {
   verbal?: boolean;
   /** 같은 절에서 이 본체가 몇 번째로 나온 것인지(0부터). 같은 strong 칩이 여럿일 때 */
   occurrence?: number;
+  /**
+   * 옛말 대응표(테스트 주입). 있으면 fetch를 건너뛴다.
+   * 없으면 /data/krv-variants.json 등을 읽고, 없으면 빈 표.
+   */
+  krvVariants?: unknown;
 };
 
 const chapterCache = new Map<string, Promise<ChapterWordStudyLoad>>();
@@ -629,6 +634,120 @@ function lexiconKoFields(lex: WordStudyLexicon): { text: string; w: number }[] {
 }
 
 /**
+ * 옛말 대응표. `/study/krv-variants`가 data/krv-variants.json(및 public 사본)을 읽고,
+ * 없으면 빈 표(오류 throw 없음).
+ */
+const KRV_VARIANT_URLS = [
+  "/study/krv-variants",
+  "/data/krv-variants.json",
+  "/krv-variants.json",
+  "/word-study/krv-variants.json",
+];
+
+let krvVariantsPromise: Promise<Map<string, string[]>> | null = null;
+
+function addVariantPair(map: Map<string, string[]>, a: string, b: string) {
+  const ka = normalizeKo(a);
+  const kb = normalizeKo(b);
+  if (!ka || !kb || ka === kb) return;
+  const push = (k: string, v: string) => {
+    const arr = map.get(k) ?? [];
+    if (!arr.includes(v)) arr.push(v);
+    map.set(k, arr);
+  };
+  push(ka, kb);
+  push(kb, ka);
+}
+
+/** 객체 `{ 곡간: "곳간" }` · 배열 `[{from,to}]` · `{ map|variants|pairs }` */
+export function parseKrvVariants(raw: unknown): Map<string, string[]> {
+  const map = new Map<string, string[]>();
+  if (raw == null) return map;
+  if (Array.isArray(raw)) {
+    for (const item of raw) {
+      if (Array.isArray(item) && item.length >= 2) {
+        const a = item[0];
+        const b = item[1];
+        if (typeof a === "string" && typeof b === "string") addVariantPair(map, a, b);
+        continue;
+      }
+      if (!item || typeof item !== "object") continue;
+      const o = item as Record<string, unknown>;
+      const from = str(o.from ?? o.krv ?? o.old ?? o.a);
+      const to = o.to ?? o.gloss ?? o.modern ?? o.b;
+      if (!from) continue;
+      if (typeof to === "string") addVariantPair(map, from, to);
+      else if (Array.isArray(to)) {
+        for (const t of to) if (typeof t === "string") addVariantPair(map, from, t);
+      }
+    }
+    return map;
+  }
+  if (typeof raw !== "object") return map;
+  const o = raw as Record<string, unknown>;
+  if (o.map != null && typeof o.map === "object") return parseKrvVariants(o.map);
+  if (o.variants != null && typeof o.variants === "object") {
+    return parseKrvVariants(o.variants);
+  }
+  if (o.pairs != null && typeof o.pairs === "object") {
+    return parseKrvVariants(o.pairs);
+  }
+  for (const [k, v] of Object.entries(o)) {
+    if (typeof v === "string") addVariantPair(map, k, v);
+    else if (Array.isArray(v)) {
+      for (const t of v) if (typeof t === "string") addVariantPair(map, k, t);
+    }
+  }
+  return map;
+}
+
+async function loadKrvVariants(): Promise<Map<string, string[]>> {
+  if (!krvVariantsPromise) {
+    krvVariantsPromise = (async () => {
+      for (const url of KRV_VARIANT_URLS) {
+        try {
+          const res = await fetch(url, { cache: "force-cache" });
+          if (!res.ok) continue;
+          const map = parseKrvVariants(await res.json());
+          if (map.size > 0) return map;
+        } catch {
+          /* 404·파싱 실패: 다음 URL. 전부 실패하면 빈 표 */
+        }
+      }
+      return new Map<string, string[]>();
+    })();
+  }
+  return krvVariantsPromise;
+}
+
+async function variantsForMatch(
+  opts?: GlossMatchOpts,
+): Promise<Map<string, string[]>> {
+  if (opts && Object.prototype.hasOwnProperty.call(opts, "krvVariants")) {
+    return parseKrvVariants(opts.krvVariants);
+  }
+  return loadKrvVariants();
+}
+
+/** 대응표로 바꾼 gloss 후보(원문 + 동의어). 빈 표면 원문만 */
+export function glossKoAfterVariants(
+  glossKo: string,
+  table: Map<string, string[]>,
+): string[] {
+  const g = normalizeKo(glossKo);
+  if (!g) return [];
+  const gs = stripDictEnding(g);
+  const out = new Set<string>([g, gs]);
+  for (const base of [g, gs]) {
+    for (const alt of table.get(base) ?? []) {
+      out.add(alt);
+      out.add(stripDictEnding(alt));
+    }
+  }
+  return [...out];
+}
+
+/**
  * ①-2 칩 strong 사전의 krvKo에 선택 본체가 정확히 있는지.
  * 필드가 없거나 비어 있으면 후보 없음(오류 없음).
  */
@@ -667,6 +786,63 @@ export async function matchTokenByKrv(
       reason: "ok",
       score: best.score,
       stage: "krv",
+    };
+  }
+  return {
+    token: null,
+    reason: failReason(selectedKo, opts),
+    score: best.score,
+    stage: "none",
+    tiedStrongs: best.tied.length ? best.tied : undefined,
+  };
+}
+
+/**
+ * ①-3 칩 glossKo를 대응표로 바꾼 값이 선택 몸통과 일치하는지.
+ * 표가 없거나 비면 후보 없음(오류 없음).
+ */
+export async function matchTokenByGlossVariant(
+  tokens: WordStudyToken[],
+  verse: number,
+  selectedKo: string,
+  opts?: GlossMatchOpts,
+): Promise<GlossMatchResult> {
+  const q = normalizeKo(opts?.stem || selectedKo);
+  const pool = tokens.filter((t) => t.ref === verse);
+  if (!q || pool.length === 0) {
+    return {
+      token: null,
+      reason: failReason(selectedKo, opts),
+      score: 0,
+      stage: "none",
+    };
+  }
+  const table = await variantsForMatch(opts);
+  if (table.size === 0) {
+    return {
+      token: null,
+      reason: failReason(selectedKo, opts),
+      score: 0,
+      stage: "none",
+    };
+  }
+  const scored: Scored[] = [];
+  for (const t of pool) {
+    if (isFunctionWordToken(t)) continue;
+    const forms = glossKoAfterVariants(t.glossKo, table);
+    const g = normalizeKo(t.glossKo);
+    const gs = stripDictEnding(g);
+    const mappedHit = forms.some((f) => f === q && f !== g && f !== gs);
+    const hit = forms.includes(q);
+    if (hit) scored.push({ token: t, score: mappedHit ? 1000 : 900 });
+  }
+  const best = pickBest(scored, opts?.occurrence ?? 0);
+  if (best.token) {
+    return {
+      token: best.token,
+      reason: "ok",
+      score: best.score,
+      stage: "variant",
     };
   }
   return {
@@ -725,7 +901,7 @@ export async function matchTokenByLexicon(
   };
 }
 
-/** ① → ①-2 → ② 순서로 짝 칩 고르기. 모두 실패면 token null(자동 선택 없음) */
+/** ① → ①-2 → ①-3 → ② 순서로 짝 칩 고르기. 모두 실패면 token null(자동 선택 없음) */
 export async function matchTokenForSelection(
   tokens: WordStudyToken[],
   verse: number,
@@ -739,6 +915,8 @@ export async function matchTokenForSelection(
   if (first.tiedStrongs) return first;
   const krv = await matchTokenByKrv(tokens, verse, selectedKo, opts);
   if (krv.token || krv.tiedStrongs) return krv;
+  const variant = await matchTokenByGlossVariant(tokens, verse, selectedKo, opts);
+  if (variant.token || variant.tiedStrongs) return variant;
   return matchTokenByLexicon(tokens, verse, selectedKo, opts);
 }
 

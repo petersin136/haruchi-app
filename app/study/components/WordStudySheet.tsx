@@ -172,6 +172,25 @@ function usageChips(raw: unknown): string[] {
   return parts.length > 0 ? parts : [t];
 }
 
+/** 「신약에 6회 나와요」처럼 횟수 문장만인 칩 */
+function isCountUsageChip(chip: string): boolean {
+  const t = chip.replace(/\s+/g, "");
+  return /^(구약|신약|요한일서)?에?\d+회/.test(t);
+}
+
+function usageFromLex(lex: WordStudyLexicon | null): string[] {
+  if (!lex) return [];
+  const krv = Array.isArray(lex.krvKo)
+    ? lex.krvKo
+        .map((s) => (typeof s === "string" ? s.trim() : ""))
+        .filter(Boolean)
+    : [];
+  if (krv.length > 0) return [...new Set(krv)];
+  return usageChips(lex.usageKo || lex.compareKo).filter(
+    (c) => !isCountUsageChip(c),
+  );
+}
+
 export default function WordStudySheet({
   open,
   bookId,
@@ -709,7 +728,7 @@ export default function WordStudySheet({
   const root = lex?.root;
   const defKo = asText(lex?.defKo) || asText(lex?.note);
   const defEn = asText(lex?.defEn);
-  const usage = usageChips(lex?.usageKo || lex?.compareKo);
+  const usage = usageFromLex(lex);
   const noteSrc = asText(lex?.noteSrc);
   const properName =
     /고유명/.test(parseKo) || /고유명/.test(lex?.posKo || "");

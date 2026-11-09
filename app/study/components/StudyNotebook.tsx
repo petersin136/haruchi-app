@@ -2811,7 +2811,9 @@ function StudyNotebook({
             ? "①glossKo"
             : result.stage === "krv"
               ? "①-2 krvKo"
-              : "②사전";
+              : result.stage === "variant"
+                ? "①-3 대응표"
+                : "②사전";
         debugLog(
           `[원어] match ok stage=${stageKo} stem="${sq.stem}" strong=${result.token.strong || "-"} word=${result.token.word} score=${result.score} → setWsOpen(true)`,
         );
