@@ -188,12 +188,19 @@ export default function WordStudySheet({
   const onCloseRef = useRef(onClose);
   onCloseRef.current = onClose;
 
-  useEffect(() => {
-    if (!open) return;
-    setActive(initial ?? null);
-    setStack([]);
-    setBooksExpanded(false);
-  }, [open, initial, verseWords]);
+  // 여는 첫 렌더부터 고른 칩으로 그려야 부모가 시트 높이를 바로 잴 수 있다
+  const [openedWith, setOpenedWith] = useState<{
+    open: boolean;
+    initial: WordStudyToken | null;
+  }>({ open: false, initial: null });
+  if (openedWith.open !== open || openedWith.initial !== initial) {
+    setOpenedWith({ open, initial });
+    if (open) {
+      setActive(initial ?? null);
+      setStack([]);
+      setBooksExpanded(false);
+    }
+  }
 
   // 시트 열림 = 기록 한 칸. 단어를 따라 들어갈 때마다 한 칸씩 더 쌓음
   useEffect(() => {

@@ -14,6 +14,7 @@ export const KO_STEM_SUFFIXES = [
   "였더라",
   "었더라",
   "이라",
+  "이심",
   "이니",
   "이요",
   "이며",

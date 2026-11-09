@@ -2558,43 +2558,42 @@ function StudyNotebook({
   };
 
   // 원어 시트가 선택 줄을 가리면: 한 쪽 보기는 본문 스크롤, 스프레드는 시트 높이를 줄인다
-  useEffect(() => {
+  const selectionToolbarForRef = useRef(selectionToolbarFor);
+  selectionToolbarForRef.current = selectionToolbarFor;
+  useLayoutEffect(() => {
     if (!wsOpen) return;
     const range = wsRestoreRef.current?.range;
     if (!range) return;
-    const id = requestAnimationFrame(() => {
-      const box = selectionToolbarFor(range);
-      const sheet = document.querySelector<HTMLElement>(".study-ws-sheet");
-      if (!box || !sheet) return;
-      const selTop = box.rt;
-      const selBottom = box.rb - SEL_HANDLE_SIZE;
-      const vh = window.innerHeight;
-      const sheetTop = vh - sheet.getBoundingClientRect().height;
-      if (selBottom + WS_REVEAL_GAP <= sheetTop) return;
-      if (spreadOn) {
-        const h = Math.max(WS_SPREAD_MIN_SHEET_H, vh - selBottom - WS_REVEAL_GAP);
-        setWsSheetH(Math.round(h));
-        debugLogRef.current(
-          `[원어] 스프레드 시트 높이 ${Math.round(h)}px (선택 아래 ${Math.round(selBottom)})`,
-        );
-        return;
-      }
-      let chromeBottom = 0;
-      for (const s of [".brp-mobile-topbar", ".brp-header"]) {
-        const el = document.querySelector<HTMLElement>(s);
-        if (!el || getComputedStyle(el).display === "none") continue;
-        chromeBottom = Math.max(chromeBottom, el.getBoundingClientRect().bottom);
-      }
-      const want = selBottom + WS_REVEAL_GAP - sheetTop;
-      const room = selTop - chromeBottom - WS_REVEAL_GAP;
-      const dy = Math.max(0, Math.min(want, room));
-      if (dy > 0) scrollByY(scrollRootOf(bodyRef.current), dy);
+    const box = selectionToolbarForRef.current(range);
+    const sheet = document.querySelector<HTMLElement>(".study-ws-sheet");
+    if (!box || !sheet) return;
+    const selTop = box.rt;
+    const selBottom = box.rb - SEL_HANDLE_SIZE;
+    const vh = window.innerHeight;
+    const sheetTop = vh - sheet.getBoundingClientRect().height;
+    if (selBottom + WS_REVEAL_GAP <= sheetTop) return;
+    if (spreadOn) {
+      const h = Math.max(WS_SPREAD_MIN_SHEET_H, vh - selBottom - WS_REVEAL_GAP);
+      setWsSheetH(Math.round(h));
       debugLogRef.current(
-        `[원어] 선택 줄 보이게 스크롤 ${Math.round(dy)}px (시트 위 ${Math.round(sheetTop)})`,
+        `[원어] 스프레드 시트 높이 ${Math.round(h)}px (선택 아래 ${Math.round(selBottom)})`,
       );
-    });
-    return () => cancelAnimationFrame(id);
-  }, [wsOpen, spreadOn, selectionToolbarFor]);
+      return;
+    }
+    let chromeBottom = 0;
+    for (const s of [".brp-mobile-topbar", ".brp-header"]) {
+      const el = document.querySelector<HTMLElement>(s);
+      if (!el || getComputedStyle(el).display === "none") continue;
+      chromeBottom = Math.max(chromeBottom, el.getBoundingClientRect().bottom);
+    }
+    const want = selBottom + WS_REVEAL_GAP - sheetTop;
+    const room = selTop - chromeBottom - WS_REVEAL_GAP;
+    const dy = Math.max(0, Math.min(want, room));
+    if (dy > 0) scrollByY(scrollRootOf(bodyRef.current), dy);
+    debugLogRef.current(
+      `[원어] 선택 줄 보이게 스크롤 ${Math.round(dy)}px (시트 위 ${Math.round(sheetTop)})`,
+    );
+  }, [wsOpen, spreadOn]);
 
   const openWordStudyFromToolbar = () => {
     const now = Date.now();
