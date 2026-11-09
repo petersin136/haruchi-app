@@ -65,6 +65,11 @@ export type WordStudyLexicon = {
   note?: string;
   /** "auto" 이면 정의 아래 안내 문구 */
   noteSrc?: string;
+  /**
+   * 개역한글 번역어 목록(다른 에이전트가 채움).
+   * 없어도 오류 없이 동작 — 없으면 ①-2 단계를 건너뛴다.
+   */
+  krvKo?: string[];
   countNT?: number;
   countOT?: number;
   count1John?: number;
@@ -325,8 +330,8 @@ export type MatchFailReason =
   | "titleShift"
   | "match-zero";
 
-/** gloss = ① 칩 glossKo, lexicon = ② 사전 한글 필드, none = 못 고름 */
-export type GlossMatchStage = "gloss" | "lexicon" | "none";
+/** gloss = ① 칩 glossKo, krv = ①-2 krvKo, lexicon = ② 사전 한글 필드, none = 못 고름 */
+export type GlossMatchStage = "gloss" | "krv" | "lexicon" | "none";
 
 export type GlossMatchResult = {
   token: WordStudyToken | null;
@@ -431,10 +436,15 @@ export function loadWordLexicon(
         return null;
       }
       const raw = (await res.json()) as WordStudyLexicon;
+      const krvRaw = (raw as { krvKo?: unknown }).krvKo;
+      const krvKo = Array.isArray(krvRaw)
+        ? krvRaw.filter((x): x is string => typeof x === "string")
+        : undefined;
       return {
         ...raw,
         strong: normalizeStrong(raw.strong || id),
         lemma: raw.lemma || "",
+        ...(krvKo && krvKo.length ? { krvKo } : { krvKo: undefined }),
       };
     } catch (e) {
       if (metaOut) {
@@ -618,6 +628,56 @@ function lexiconKoFields(lex: WordStudyLexicon): { text: string; w: number }[] {
   return out;
 }
 
+/**
+ * ①-2 칩 strong 사전의 krvKo에 선택 본체가 정확히 있는지.
+ * 필드가 없거나 비어 있으면 후보 없음(오류 없음).
+ */
+export async function matchTokenByKrv(
+  tokens: WordStudyToken[],
+  verse: number,
+  selectedKo: string,
+  opts?: GlossMatchOpts,
+): Promise<GlossMatchResult> {
+  const q = normalizeKo(opts?.stem || selectedKo);
+  const pool = tokens.filter((t) => t.ref === verse && !!t.strong);
+  if (!q || pool.length === 0) {
+    return {
+      token: null,
+      reason: failReason(selectedKo, opts),
+      score: 0,
+      stage: "none",
+    };
+  }
+  const cands = pool.filter((t) => !isFunctionWordToken(t));
+  const lexes = await Promise.all(cands.map((t) => loadWordLexicon(t.strong)));
+  const scored: Scored[] = [];
+  cands.forEach((t, k) => {
+    const lex = lexes[k];
+    if (!lex || isFunctionWordToken(t, lex.posKo)) return;
+    const list = Array.isArray(lex.krvKo) ? lex.krvKo : [];
+    const hit = list.some(
+      (k0) => typeof k0 === "string" && normalizeKo(k0) === q,
+    );
+    if (hit) scored.push({ token: t, score: 1000 });
+  });
+  const best = pickBest(scored, opts?.occurrence ?? 0);
+  if (best.token) {
+    return {
+      token: best.token,
+      reason: "ok",
+      score: best.score,
+      stage: "krv",
+    };
+  }
+  return {
+    token: null,
+    reason: failReason(selectedKo, opts),
+    score: best.score,
+    stage: "none",
+    tiedStrongs: best.tied.length ? best.tied : undefined,
+  };
+}
+
 /** ② 칩 strong 사전의 한글 필드에 본체가 들어 있는지. 비동기(사전 fetch) */
 export async function matchTokenByLexicon(
   tokens: WordStudyToken[],
@@ -665,7 +725,7 @@ export async function matchTokenByLexicon(
   };
 }
 
-/** ① → ② 순서로 짝 칩 고르기. 둘 다 실패면 token null(자동 선택 없음) */
+/** ① → ①-2 → ② 순서로 짝 칩 고르기. 모두 실패면 token null(자동 선택 없음) */
 export async function matchTokenForSelection(
   tokens: WordStudyToken[],
   verse: number,
@@ -677,6 +737,8 @@ export async function matchTokenForSelection(
     return first;
   }
   if (first.tiedStrongs) return first;
+  const krv = await matchTokenByKrv(tokens, verse, selectedKo, opts);
+  if (krv.token || krv.tiedStrongs) return krv;
   return matchTokenByLexicon(tokens, verse, selectedKo, opts);
 }
 

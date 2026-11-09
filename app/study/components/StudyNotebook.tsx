@@ -64,7 +64,7 @@ import {
   type VerseWordStudyMeta,
   type WordStudyToken,
 } from "../lib/wordStudy";
-import WordStudySheet from "./WordStudySheet";
+import WordStudySheet, { type WsSidePanel } from "./WordStudySheet";
 import { stemOf } from "../lib/koStem";
 import {
   STUDY_SPREAD_ANIM_MS,
@@ -80,10 +80,8 @@ import "../study.css";
 
 /** 본체 뒤 꼬리가 동사를 만드는 말이면 원어 짝에서 동사 칩을 우선 */
 const VERBAL_TAIL_RE = /^(하|되|시키|케|함|한|할|합|해|했|치)/;
-/** 원어 시트 위로 선택 줄을 띄울 때 줄 아래 여백 */
+/** 원어 시트 위로 선택 줄을 띄울 때 줄 아래 여백(한 쪽 보기) */
 const WS_REVEAL_GAP = 12;
-/** 스프레드에서 시트를 줄여도 이보다 작게는 안 함 */
-const WS_SPREAD_MIN_SHEET_H = 280;
 
 /** 책별로 이미 로드된 장 본문을 모아 본체 검증에 쓴다 */
 const bookCorpusMap = new Map<string, string>();
@@ -166,6 +164,8 @@ type NotePos = {
 const NOTE_MIN_RATIO = 0.4;
 /** 같은 줄 앞 메모가 이 폭보다 좁아지면 뒤 메모는 번호 배지로 */
 const NOTE_MIN_ROOM = 56;
+/** 행간 메모 슬롯. 입력칸(22px+테두리)이 다음 줄 글자와 겹치지 않게 */
+const NOTE_SLOT_H = 28;
 
 const LONG_PRESS_MS = 350;
 const MOVE_CANCEL_PX = 8;
@@ -413,8 +413,8 @@ function StudyNotebook({
     GreekVerseKind
   > | null>(null);
   const [wsOpen, setWsOpen] = useState(false);
-  /** 스프레드: 선택 줄이 가리지 않게 줄인 시트 높이(px). null = 기본 70dvh */
-  const [wsSheetH, setWsSheetH] = useState<number | null>(null);
+  /** 스프레드: 선택 반대쪽 세로 패널. null = 아래 시트(한 쪽 보기) */
+  const [wsSidePanel, setWsSidePanel] = useState<WsSidePanel | null>(null);
   /** 원어 시트를 닫으면 되돌릴 도구 막대·선택 범위 */
   const wsRestoreRef = useRef<{
     toolbar: ToolbarMode | null;
@@ -573,46 +573,76 @@ function StudyNotebook({
   const measureNotes = useCallback(() => {
     const root = bodyRef.current;
     if (!root) return;
-    // 양쪽: 그 쪽이 보이는 PageView 안에서만 앵커를 잰다
+    // 형광펜(measureSel)과 같은 Range 줄 상자. 앵커 getClientRects/getBoundingClientRect 는
+    // CSS columns에서 열 밖 펼침 상자를 돌려 메모가 다음 단락 글자 위에 그어진다.
     const baseEl =
       spreadOn && spreadVpRef.current ? spreadVpRef.current : root;
     const base = baseEl.getBoundingClientRect();
-    const bodyW = root.clientWidth;
     const bodies: HTMLElement[] =
       spreadOn && spreadVpRef.current
         ? Array.from(
             spreadVpRef.current.querySelectorAll<HTMLElement>(
               ".study-page-view .study-body",
             ),
-          ).filter((body) => !body.closest(".is-covered, .study-spread-measure, .study-leaf"))
+          ).filter(
+            (body) =>
+              !body.closest(".is-covered, .study-spread-measure, .study-leaf"),
+          )
         : [root];
-    const items: { id: string; top: number; start: number }[] = [];
+    const marks = dataRef.current.marks.filter(
+      (m) => m.note || m.id === editingMarkId,
+    );
+    const items: {
+      id: string;
+      top: number;
+      start: number;
+      colLeft: number;
+      colRight: number;
+    }[] = [];
     const seen = new Set<string>();
-    for (const body of bodies) {
-      const clip = (body.closest(".study-page-view") as HTMLElement | null) ?? body;
-      const clipBox = clip.getBoundingClientRect();
-      body.querySelectorAll<HTMLElement>("[data-note-anchor]").forEach((el) => {
-        const rects = Array.from(el.getClientRects());
-        const first =
-          rects.find((r) => {
-            const cx = r.left + r.width / 2;
-            const cy = r.top + r.height / 2;
-            return (
-              r.width > 0 &&
-              cx >= clipBox.left &&
-              cx <= clipBox.right &&
-              cy >= clipBox.top &&
-              cy <= clipBox.bottom
-            );
-          }) ?? null;
-        if (!first) return;
-        const start = Math.max(0, first.left - base.left);
-        const top = first.bottom - base.top - 2;
-        for (const id of (el.dataset.noteAnchor ?? "").split(" ")) {
-          if (!id || seen.has(id)) continue;
-          seen.add(id);
-          items.push({ id, top, start });
+    for (const mark of marks) {
+      if (seen.has(mark.id)) continue;
+      const lines = collectRangeLineRects(
+        bodies,
+        { start: mark.start, end: Math.max(mark.end, mark.start + 1) },
+        spans,
+        base,
+        !!spreadVpRef.current,
+      );
+      if (lines.length === 0) continue;
+      const line = lines[0]!;
+      const clip = line.clip;
+      const ink = startGlyphBox(
+        bodies,
+        mark.start,
+        spans,
+        !!spreadVpRef.current,
+      );
+      const inkTop = ink?.top ?? line.absTop;
+      const inkBottom = ink?.bottom ?? line.absBottom;
+      const nextInk = nextLineInkTop(
+        bodies,
+        { absBottom: line.absBottom, absLeft: line.absLeft, absRight: line.absRight },
+        clip,
+      );
+      const lastOnPage =
+        nextInk == null || nextInk >= clip.bottom - 2;
+      let topVp: number;
+      if (lastOnPage) {
+        topVp = Math.max(clip.top, inkTop - NOTE_SLOT_H);
+      } else {
+        topVp = inkBottom;
+        if (nextInk != null && topVp + NOTE_SLOT_H > nextInk) {
+          topVp = nextInk - NOTE_SLOT_H;
         }
+      }
+      seen.add(mark.id);
+      items.push({
+        id: mark.id,
+        top: topVp - base.top,
+        start: Math.max(0, line.absLeft - base.left),
+        colLeft: clip.left - base.left,
+        colRight: clip.right - base.left,
       });
     }
     items.sort((a, b) => a.top - b.top || a.start - b.start);
@@ -621,20 +651,15 @@ function StudyNotebook({
     let badge = 0;
     let prevId: string | null = null;
     for (const it of items) {
+      const colW = Math.max(40, it.colRight - it.colLeft);
       let left = it.start;
-      let width = bodyW - it.start;
-      if (width < bodyW * NOTE_MIN_RATIO) {
-        left = 0;
-        width = bodyW;
+      let width = it.colRight - it.start;
+      if (width < colW * NOTE_MIN_RATIO) {
+        left = it.colLeft;
+        width = colW;
       }
-      // 양쪽: 메모가 그 쪽(열) 안에서만 가로로 이어지게
-      if (spreadOn && spreadVpRef.current) {
-        const mid = spreadVpRef.current.getBoundingClientRect().width / 2;
-        const colRight = it.start < mid ? mid - 8 : base.width;
-        const colLeft = it.start < mid ? 0 : mid + 8;
-        left = Math.max(left, colLeft);
-        width = Math.max(40, colRight - left);
-      }
+      left = Math.max(left, it.colLeft);
+      width = Math.max(40, Math.min(width, it.colRight - left));
       const prev = prevId ? next[prevId] : null;
       if (prev && Math.abs(prev.top - it.top) < 10) {
         const room = left - prev.left - 6;
@@ -667,7 +692,7 @@ function StudyNotebook({
       prevId = it.id;
     }
     setNotePos(next);
-  }, [spreadOn]);
+  }, [spreadOn, spans, data.marks, editingMarkId]);
 
   useLayoutEffect(() => {
     measureNotes();
@@ -688,20 +713,45 @@ function StudyNotebook({
     setExpandedNoteId(null);
   }, [bookId, chapter]);
 
+  const notePosRef = useRef(notePos);
+  notePosRef.current = notePos;
+
+  const placeNoteInputInViewport = useCallback(() => {
+    const input = editInputRef.current;
+    const id = editingMarkId;
+    if (!input || !id) return;
+    const pos = notePosRef.current[id];
+    if (pos) {
+      input.style.position = "absolute";
+      input.style.top = `${pos.top}px`;
+      input.style.left = `${pos.openLeft}px`;
+      input.style.width = `${pos.openWidth}px`;
+      input.style.zIndex = "";
+    }
+    const r = input.getBoundingClientRect();
+    const vv = window.visualViewport;
+    const vvTop = vv?.offsetTop ?? 0;
+    const limit = vvTop + (vv?.height ?? window.innerHeight) - 12;
+    if (r.bottom > limit) {
+      const h = r.height || 32;
+      input.style.position = "fixed";
+      input.style.top = `${Math.max(vvTop + 8, limit - h)}px`;
+      input.style.left = `${Math.max(8, r.left)}px`;
+      input.style.width = `${Math.max(96, r.width)}px`;
+      input.style.zIndex = "80";
+    }
+  }, [editingMarkId]);
+
+  useLayoutEffect(() => {
+    if (!editingMarkId) return;
+    placeNoteInputInViewport();
+  }, [editingMarkId, notePos, placeNoteInputInViewport]);
+
   useEffect(() => {
     if (!editingMarkId) return;
     const vv = window.visualViewport;
     if (!vv) return;
-    const place = () => {
-      const input = editInputRef.current;
-      if (!input) return;
-      const limit = vv.offsetTop + vv.height - 12;
-      const h = input.offsetHeight || 32;
-      const top = parseFloat(input.style.top || "0");
-      if (Number.isFinite(top) && top + h > limit) {
-        input.style.top = `${Math.max(vv.offsetTop + 8, limit - h)}px`;
-      }
-    };
+    const place = () => placeNoteInputInViewport();
     vv.addEventListener("resize", place);
     vv.addEventListener("scroll", place);
     place();
@@ -709,7 +759,7 @@ function StudyNotebook({
       vv.removeEventListener("resize", place);
       vv.removeEventListener("scroll", place);
     };
-  }, [editingMarkId]);
+  }, [editingMarkId, placeNoteInputInViewport]);
 
   useEffect(() => {
     if (!bubble) return;
@@ -794,30 +844,20 @@ function StudyNotebook({
         ).filter((body) => !body.closest(".is-covered, .study-spread-measure"))
       : [root];
     const rects: SelRect[] = [];
-    for (const body of bodies) {
-      const clip = (body.closest(".study-page-view") as HTMLElement | null) ?? body;
-      const clipBox = clip.getBoundingClientRect();
-      for (const range of ranges) {
-        const a = offsetToDomPoint(body, range.start, spans, false);
-        const b = offsetToDomPoint(body, range.end, spans, true);
-        if (!a || !b) continue;
-        const dom = document.createRange();
-        dom.setStart(a.node, a.offset);
-        dom.setEnd(b.node, b.offset);
-        for (const r of mergeLineRects(Array.from(dom.getClientRects()))) {
-          const cx = r.left + r.width / 2;
-          const cy = r.top + r.height / 2;
-          if (spreadVpRef.current) {
-            if (cx < clipBox.left || cx > clipBox.right || cy < clipBox.top || cy > clipBox.bottom)
-              continue;
-          }
-          rects.push({
-            top: r.top - base.top,
-            left: r.left - base.left,
-            width: r.width,
-            height: r.height,
-          });
-        }
+    for (const range of ranges) {
+      for (const line of collectRangeLineRects(
+        bodies,
+        range,
+        spans,
+        base,
+        !!spreadVpRef.current,
+      )) {
+        rects.push({
+          top: line.top,
+          left: line.left,
+          width: line.width,
+          height: line.height,
+        });
       }
     }
     selRectsRef.current = rects;
@@ -2402,26 +2442,10 @@ function StudyNotebook({
     setToast("복사했어요");
   };
 
-  const focusNoteInput = (markId?: string) => {
+  const focusNoteInput = () => {
     const input = editInputRef.current;
     if (!input) return;
-    if (markId) {
-      const anchor = document.querySelector<HTMLElement>(
-        `[data-note-anchor~="${markId}"]`,
-      );
-      if (anchor) {
-        const r = anchor.getBoundingClientRect();
-        const vv = window.visualViewport;
-        const limit = (vv ? vv.offsetTop + vv.height : window.innerHeight) - 12;
-        let top = r.bottom - 2;
-        if (top + 32 > limit) top = Math.max(8, limit - 32);
-        input.style.position = "fixed";
-        input.style.top = `${top}px`;
-        input.style.left = `${Math.max(8, r.left)}px`;
-        input.style.width = `${Math.max(140, Math.min(280, window.innerWidth - r.left - 16))}px`;
-        input.style.zIndex = "80";
-      }
-    }
+    placeNoteInputInViewport();
     noteGuardRef.current = performance.now() + 600;
     input.focus();
     const len = input.value.length;
@@ -2446,7 +2470,7 @@ function StudyNotebook({
     if (!tb) return;
     if (tb.kind === "mark") {
       flushSync(() => beginNoteEdit(tb.markId));
-      focusNoteInput(tb.markId);
+      focusNoteInput();
       return;
     }
     if (versePickRef.current && versePickRef.current.length > 1) {
@@ -2471,7 +2495,7 @@ function StudyNotebook({
         color: DEFAULT_HL,
       });
     flushSync(() => beginNoteEdit(mark.id, mark.note));
-    focusNoteInput(mark.id);
+    focusNoteInput();
   };
 
   const stashWordStudyPick = useCallback(() => {
@@ -2539,7 +2563,7 @@ function StudyNotebook({
   const closeWordStudy = () => {
     setWsOpen(false);
     setWsMatchHint(null);
-    setWsSheetH(null);
+    setWsSidePanel(null);
     const saved = wsRestoreRef.current;
     wsRestoreRef.current = null;
     const cur = selRef.current;
@@ -2557,11 +2581,63 @@ function StudyNotebook({
     }
   };
 
-  // 원어 시트가 선택 줄을 가리면: 한 쪽 보기는 본문 스크롤, 스프레드는 시트 높이를 줄인다
+  /** 스프레드: 선택이 있는 쪽의 반대 페이지 위에 세로 패널 좌표 */
+  const measureWsSidePanel = useCallback((): WsSidePanel | null => {
+    if (!spreadOn) return null;
+    const vp = spreadVpRef.current;
+    if (!vp) return null;
+    const leftEl = vp.querySelector<HTMLElement>(
+      ".study-sheet.is-left:not(.is-under)",
+    );
+    const rightEl = vp.querySelector<HTMLElement>(
+      ".study-sheet.is-right:not(.is-under)",
+    );
+    if (!leftEl || !rightEl) return null;
+    const leftBox = leftEl.getBoundingClientRect();
+    const rightBox = rightEl.getBoundingClientRect();
+    const midX = (leftBox.left + leftBox.right + rightBox.left + rightBox.right) / 4;
+    const rects = selRectsRef.current;
+    let selMidX = midX;
+    if (rects.length > 0) {
+      const vpBox = vp.getBoundingClientRect();
+      let sx = 0;
+      for (const r of rects) sx += vpBox.left + r.left + r.width / 2;
+      selMidX = sx / rects.length;
+    } else {
+      const range = wsRestoreRef.current?.range;
+      if (range) {
+        const box = selectionToolbarFor(range);
+        if (box) selMidX = box.x;
+      }
+    }
+    const selOnLeft = selMidX < midX;
+    const page = selOnLeft ? rightBox : leftBox;
+    const side: "left" | "right" = selOnLeft ? "right" : "left";
+    return {
+      side,
+      top: Math.round(page.top),
+      left: Math.round(page.left),
+      width: Math.round(page.width),
+      height: Math.round(page.height),
+    };
+  }, [spreadOn, selectionToolbarFor]);
+
+  // 스프레드: 세로 패널 좌표 갱신. 한 쪽: 선택 줄이 가리면 본문 스크롤
   const selectionToolbarForRef = useRef(selectionToolbarFor);
   selectionToolbarForRef.current = selectionToolbarFor;
   useLayoutEffect(() => {
     if (!wsOpen) return;
+    if (spreadOn) {
+      const panel = measureWsSidePanel();
+      setWsSidePanel(panel);
+      if (panel) {
+        debugLogRef.current(
+          `[원어] 스프레드 세로 패널 side=${panel.side} ${panel.width}×${panel.height}@${panel.left},${panel.top}`,
+        );
+      }
+      return;
+    }
+    setWsSidePanel(null);
     const range = wsRestoreRef.current?.range;
     if (!range) return;
     const box = selectionToolbarForRef.current(range);
@@ -2572,14 +2648,6 @@ function StudyNotebook({
     const vh = window.innerHeight;
     const sheetTop = vh - sheet.getBoundingClientRect().height;
     if (selBottom + WS_REVEAL_GAP <= sheetTop) return;
-    if (spreadOn) {
-      const h = Math.max(WS_SPREAD_MIN_SHEET_H, vh - selBottom - WS_REVEAL_GAP);
-      setWsSheetH(Math.round(h));
-      debugLogRef.current(
-        `[원어] 스프레드 시트 높이 ${Math.round(h)}px (선택 아래 ${Math.round(selBottom)})`,
-      );
-      return;
-    }
     let chromeBottom = 0;
     for (const s of [".brp-mobile-topbar", ".brp-header"]) {
       const el = document.querySelector<HTMLElement>(s);
@@ -2593,7 +2661,7 @@ function StudyNotebook({
     debugLogRef.current(
       `[원어] 선택 줄 보이게 스크롤 ${Math.round(dy)}px (시트 위 ${Math.round(sheetTop)})`,
     );
-  }, [wsOpen, spreadOn]);
+  }, [wsOpen, spreadOn, measureWsSidePanel, spreadIndex]);
 
   const openWordStudyFromToolbar = () => {
     const now = Date.now();
@@ -2640,7 +2708,7 @@ function StudyNotebook({
       setWsSelectedKo(selectedKo);
       setWsMatched(opts.matched);
       setWsMatchHint(opts.hint);
-      setWsSheetH(null);
+      setWsSidePanel(spreadOn ? measureWsSidePanel() : null);
       setWsOpen(true);
       toolStashRef.current = null;
       setToolbar(null);
@@ -2720,7 +2788,7 @@ function StudyNotebook({
         matched: result.reason === "ok" && !!result.token,
         hint: result.token
           ? null
-          : "정확한 단어를 못 찾았어요 · 칩에서 골라 주세요",
+          : `'${sq.stem || selectedKo}'에 해당하는 원어를 자동으로 찾지 못했어요. 위 단어 중 하나를 눌러 보세요.`,
       });
     };
     const reasonKo: Record<string, string> = {
@@ -2738,8 +2806,14 @@ function StudyNotebook({
           `[원어] 실패 사유=${reasonKo[result.reason] ?? result.reason} verse=${verse} ko="${selectedKo.slice(0, 24)}" stem="${sq.stem}" verbal=${sq.verbal} score=${result.score}${result.tiedStrongs ? ` tied=${result.tiedStrongs.join("/")}` : ""} → 칩 자동 선택 없음`,
         );
       } else {
+        const stageKo =
+          result.stage === "gloss"
+            ? "①glossKo"
+            : result.stage === "krv"
+              ? "①-2 krvKo"
+              : "②사전";
         debugLog(
-          `[원어] match ok stage=${result.stage === "gloss" ? "①glossKo" : "②사전"} stem="${sq.stem}" strong=${result.token.strong || "-"} word=${result.token.word} score=${result.score} → setWsOpen(true)`,
+          `[원어] match ok stage=${stageKo} stem="${sq.stem}" strong=${result.token.strong || "-"} word=${result.token.word} score=${result.score} → setWsOpen(true)`,
         );
       }
     };
@@ -3219,7 +3293,7 @@ function StudyNotebook({
             if (truncated) setExpandedNoteId(nid);
             else {
               flushSync(() => beginNoteEdit(nid));
-              focusNoteInput(nid);
+              focusNoteInput();
             }
           }}
         >
@@ -4078,7 +4152,12 @@ function StudyNotebook({
         selectedKo={wsSelectedKo}
         matched={wsMatched}
         matchHint={wsMatchHint}
-        sheetHeight={wsSheetH}
+        verseKo={spans.find((s) => s.n === wsVerse)?.text ?? ""}
+        verseOrig={tokensInVerse(wsTokens, wsVerse)
+          .map((t) => t.word)
+          .filter(Boolean)
+          .join(" ")}
+        sidePanel={wsSidePanel}
         onClose={closeWordStudy}
         onError={(msg) => setToast(msg)}
         onDebug={debugOn ? debugLog : undefined}
@@ -4534,6 +4613,141 @@ function offsetFromPointScan(
   }
   if (!best) return null;
   return domPointToOffset(root, best.node, best.offset, spans);
+}
+
+/**
+ * 형광펜·메모 공통: Range.getClientRects 를 줄마다 합친 상자.
+ * 요소 getClientRects/getBoundingClientRect 는 CSS columns 펼침 상자라 쓰지 않음.
+ */
+function collectRangeLineRects(
+  bodies: HTMLElement[],
+  range: { start: number; end: number },
+  spans: VerseSpan[],
+  base: DOMRect,
+  clipToPage: boolean,
+): {
+  top: number;
+  left: number;
+  width: number;
+  height: number;
+  absTop: number;
+  absBottom: number;
+  absLeft: number;
+  absRight: number;
+  clip: DOMRect;
+}[] {
+  const out: {
+    top: number;
+    left: number;
+    width: number;
+    height: number;
+    absTop: number;
+    absBottom: number;
+    absLeft: number;
+    absRight: number;
+    clip: DOMRect;
+  }[] = [];
+  for (const body of bodies) {
+    const clip =
+      (body.closest(".study-page-view") as HTMLElement | null) ?? body;
+    const clipBox = clip.getBoundingClientRect();
+    const a = offsetToDomPoint(body, range.start, spans, false);
+    const b = offsetToDomPoint(body, range.end, spans, true);
+    if (!a || !b) continue;
+    const dom = document.createRange();
+    try {
+      dom.setStart(a.node, a.offset);
+      dom.setEnd(b.node, b.offset);
+    } catch {
+      continue;
+    }
+    for (const r of mergeLineRects(Array.from(dom.getClientRects()))) {
+      const cx = r.left + r.width / 2;
+      const cy = r.top + r.height / 2;
+      if (clipToPage) {
+        if (
+          cx < clipBox.left ||
+          cx > clipBox.right ||
+          cy < clipBox.top ||
+          cy > clipBox.bottom
+        ) {
+          continue;
+        }
+      }
+      out.push({
+        top: r.top - base.top,
+        left: r.left - base.left,
+        width: r.width,
+        height: r.height,
+        absTop: r.top,
+        absBottom: r.bottom,
+        absLeft: r.left,
+        absRight: r.right,
+        clip: clipBox,
+      });
+    }
+  }
+  return out;
+}
+
+/** 선택 시작 글자의 실제 상자(형광펜과 같은 Range). */
+function startGlyphBox(
+  bodies: HTMLElement[],
+  start: number,
+  spans: VerseSpan[],
+  clipToPage: boolean,
+): DOMRect | null {
+  const lines = collectRangeLineRects(
+    bodies,
+    { start, end: start + 1 },
+    spans,
+    new DOMRect(0, 0, 0, 0),
+    clipToPage,
+  );
+  const l = lines[0];
+  if (!l) return null;
+  return new DOMRect(l.absLeft, l.absTop, l.width, l.absBottom - l.absTop);
+}
+
+/** 같은 쪽·같은 열에서 이 줄 아래에 있는 다음 글자 상단 */
+function nextLineInkTop(
+  bodies: HTMLElement[],
+  line: { absBottom: number; absLeft: number; absRight: number },
+  clip: DOMRect,
+): number | null {
+  let best = Infinity;
+  for (const body of bodies) {
+    const page =
+      (body.closest(".study-page-view") as HTMLElement | null) ?? body;
+    const pb = page.getBoundingClientRect();
+    if (Math.abs(pb.left - clip.left) > 2) continue;
+    const walker = document.createTreeWalker(body, NodeFilter.SHOW_TEXT);
+    let n: Node | null;
+    while ((n = walker.nextNode())) {
+      const t = n as Text;
+      if (
+        t.parentElement?.closest(
+          ".study-vnum, .study-mark-note, .study-mark-note-input",
+        )
+      ) {
+        continue;
+      }
+      const text = t.data;
+      for (let i = 0; i < text.length; i += 1) {
+        if (!/[가-힣A-Za-zΑ-ωἀ-῾]/.test(text[i]!)) continue;
+        const rng = document.createRange();
+        rng.setStart(t, i);
+        rng.setEnd(t, i + 1);
+        const r = rng.getBoundingClientRect();
+        if (r.width < 1 || r.height < 1) continue;
+        const cx = r.left + r.width / 2;
+        if (cx < clip.left || cx > clip.right) continue;
+        if (r.top >= line.absBottom - 1 && r.top < best) best = r.top;
+        break;
+      }
+    }
+  }
+  return Number.isFinite(best) ? best : null;
 }
 
 /** 장 평문 오프셋 → DOM 지점. isEnd면 절 경계에서 앞 절 끝을 고름 */
