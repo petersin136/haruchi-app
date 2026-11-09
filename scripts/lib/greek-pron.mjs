@@ -2023,11 +2023,16 @@ const INITIALS = [
 const MEDIALS = [
   "ㅏ","ㅐ","ㅑ","ㅒ","ㅓ","ㅔ","ㅕ","ㅖ","ㅗ","ㅘ","ㅙ","ㅚ","ㅛ","ㅜ","ㅝ","ㅞ","ㅟ","ㅠ","ㅡ","ㅢ","ㅣ",
 ];
-function syllable(initial, medial) {
+const FINALS = [
+  "", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ", "ㅀ",
+  "ㅁ", "ㅂ", "ㅄ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ",
+];
+function syllable(initial, medial, final = "") {
   const ii = INITIALS.indexOf(initial);
   const mi = MEDIALS.indexOf(medial);
-  if (ii < 0 || mi < 0) return initial + medial;
-  return String.fromCharCode(0xAC00 + (ii * 21 + mi) * 28);
+  const fi = FINALS.indexOf(final);
+  if (ii < 0 || mi < 0 || fi < 0) return initial + medial + final;
+  return String.fromCharCode(0xAC00 + (ii * 21 + mi) * 28 + fi);
 }
 
 // 헬라어 글자별 → 한글 자음/모음/(독립 발음).
