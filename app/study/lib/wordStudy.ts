@@ -325,11 +325,26 @@ export type MatchFailReason =
   | "titleShift"
   | "match-zero";
 
+/** gloss = ① 칩 glossKo, lexicon = ② 사전 한글 필드, none = 못 고름 */
+export type GlossMatchStage = "gloss" | "lexicon" | "none";
+
 export type GlossMatchResult = {
   token: WordStudyToken | null;
-  nearest: WordStudyToken | null;
   reason: MatchFailReason;
   score: number;
+  stage: GlossMatchStage;
+  /** 같은 점수로 겹친 다른 strong (있으면 자동 선택 안 함) */
+  tiedStrongs?: string[];
+};
+
+export type GlossMatchOpts = {
+  titleShift?: boolean;
+  /** 선택에서 뗀 본체(「핍박하거든」→「핍박」). 없으면 선택 전체 */
+  stem?: string;
+  /** 본체 뒤가 「하/되/시키/케」 — 동사 칩을 우선 */
+  verbal?: boolean;
+  /** 같은 절에서 이 본체가 몇 번째로 나온 것인지(0부터). 같은 strong 칩이 여럿일 때 */
+  occurrence?: number;
 };
 
 const chapterCache = new Map<string, Promise<ChapterWordStudyLoad>>();
@@ -461,126 +476,216 @@ function normalizeKo(s: string): string {
   return s.replace(/\s+/g, "").replace(/[.,;:!?·"'“”‘’()[\]{}]/g, "");
 }
 
-function scoreGloss(q: string, glossKo: string): number {
+/** 관사·전치사·접속사·대명사 칩은 본문 단어 짝 후보에서 뺀다 */
+const FUNCTION_POS_RE = /관사|전치사|접속사|대명사/;
+
+export function isFunctionWordToken(t: WordStudyToken, posKo?: string): boolean {
+  const head = (t.parseKo || "").split(/[,，·]/)[0] ?? "";
+  if (FUNCTION_POS_RE.test(head)) return true;
+  return !!posKo && FUNCTION_POS_RE.test(posKo);
+}
+
+/** 「사랑하다」→「사랑」, 「쫓다」→「쫓」 */
+function stripDictEnding(g: string): string {
+  if (g.length > 2 && g.endsWith("하다")) return g.slice(0, -2);
+  if (g.length > 1 && g.endsWith("다")) return g.slice(0, -1);
+  return g;
+}
+
+/** ① 칩 glossKo에 본체가 들어 있는지. 0 = 아님 */
+function scoreGloss(q: string, glossKo: string, verbal: boolean): number {
   const g = normalizeKo(glossKo);
-  if (!g) return -1;
+  if (!g || !q) return 0;
+  const gs = stripDictEnding(g);
   let score = 0;
   if (g === q) score = 1000;
-  else if (g.includes(q) || q.includes(g)) {
-    score = 500 + Math.min(g.length, q.length);
-  } else {
-    let overlap = 0;
-    for (let n = Math.min(g.length, q.length); n >= 1; n -= 1) {
-      if (g.includes(q.slice(0, n)) || q.includes(g.slice(0, n))) {
-        overlap = n;
-        break;
-      }
-    }
-    score = overlap * 10;
+  else if (gs === q) score = 900;
+  else if (q.length >= 2 && (gs.includes(q) || g.includes(q))) {
+    score = 500 + q.length;
   }
-  if (glossKo.length <= 1) score -= 50;
+  if (score > 0 && verbal && g.endsWith("다") && g !== q) score += 200;
   return score;
 }
 
-/**
- * 같은 절 토큰만. 한글 뜻 점수는 쓰지 않고,
- * 절 안 글자 위치(0..verseLen)에 가장 가까운 순번을 고른다.
- */
-function nearestByChar(
-  pool: WordStudyToken[],
-  charIndex: number,
-  verseLen: number,
-): WordStudyToken | null {
-  if (pool.length === 0) return null;
-  const ordered = [...pool].sort((a, b) => a.i - b.i);
-  const len = Math.max(1, verseLen);
-  const at = Math.max(0, Math.min(len - 1, charIndex));
-  let best = ordered[0];
-  let bestD = Infinity;
-  for (let k = 0; k < ordered.length; k++) {
-    const center = ((k + 0.5) / ordered.length) * len;
-    const d = Math.abs(center - at);
-    if (d < bestD) {
-      bestD = d;
-      best = ordered[k];
-    }
-  }
-  return best;
+type Scored = { token: WordStudyToken; score: number };
+
+/** 최고점이 한 strong으로 모이면 그 칩(같은 strong 여럿이면 occurrence 번째) */
+function pickBest(
+  scored: Scored[],
+  occurrence: number,
+): { token: WordStudyToken | null; score: number; tied: string[] } {
+  const top = scored.reduce((m, s) => Math.max(m, s.score), 0);
+  if (top <= 0) return { token: null, score: 0, tied: [] };
+  const best = scored
+    .filter((s) => s.score === top)
+    .map((s) => s.token)
+    .sort((a, b) => a.i - b.i);
+  const strongs = [...new Set(best.map((t) => t.strong || t.lemma))];
+  if (strongs.length > 1) return { token: null, score: top, tied: strongs };
+  const k = Math.max(0, Math.min(best.length - 1, occurrence));
+  return { token: best[k] ?? null, score: top, tied: [] };
 }
 
-/** 선택 한글 ↔ glossKo 유사도 + 실패 사유 */
+function failReason(
+  selectedKo: string,
+  opts?: GlossMatchOpts,
+): MatchFailReason {
+  if (opts?.titleShift) return "titleShift";
+  if (/[\s·・,/，]/.test(selectedKo.trim())) return "split";
+  return "match-zero";
+}
+
+/** ① 선택 본체 ↔ 칩 glossKo(끝 「하다/다」 뗀 것 포함). 동기 */
 export function matchTokenByGlossDetailed(
   tokens: WordStudyToken[],
   verse: number,
   selectedKo: string,
-  opts?: { titleShift?: boolean; charIndex?: number; verseLen?: number },
+  opts?: GlossMatchOpts,
 ): GlossMatchResult {
   const pool = tokens.filter((t) => t.ref === verse);
-  const nearest = nearestByChar(
-    pool,
-    opts?.charIndex ?? 0,
-    opts?.verseLen ?? 0,
-  );
-  const q = normalizeKo(selectedKo);
+  const q = normalizeKo(opts?.stem || selectedKo);
   if (!q) {
-    return {
-      token: null,
-      nearest,
-      reason: "empty-query",
-      score: 0,
-    };
+    return { token: null, reason: "empty-query", score: 0, stage: "none" };
   }
   if (pool.length === 0) {
-    return { token: null, nearest: null, reason: "no-verse", score: 0 };
+    return { token: null, reason: "no-verse", score: 0, stage: "none" };
   }
-
-  let best: WordStudyToken | null = null;
-  let bestScore = -1;
-  for (const t of pool) {
-    const score = scoreGloss(q, t.glossKo);
-    if (score > bestScore) {
-      bestScore = score;
-      best = t;
+  const scored = pool
+    .filter((t) => !isFunctionWordToken(t))
+    .map((t) => ({ token: t, score: scoreGloss(q, t.glossKo, !!opts?.verbal) }));
+  const best = pickBest(scored, opts?.occurrence ?? 0);
+  if (best.token) {
+    return { token: best.token, reason: "ok", score: best.score, stage: "gloss" };
+  }
+  if (!best.tied.length) {
+    // 본체를 못 뗀 어절(「창조하시니라」「사랑이심이라」): 앞부분이 칩 뜻과 똑같을 때만
+    for (let n = q.length - 1; n >= 2; n -= 1) {
+      const p = q.slice(0, n);
+      const verbal = /^(하|되|시키|케)/.test(q.slice(n));
+      const exact = pool
+        .filter((t) => !isFunctionWordToken(t))
+        .map((t) => {
+          const g = normalizeKo(t.glossKo);
+          const s = g === p ? 1000 : stripDictEnding(g) === p ? 900 : 0;
+          return {
+            token: t,
+            score: s > 0 && verbal && g.endsWith("다") && g !== p ? s + 200 : s,
+          };
+        });
+      const hit = pickBest(exact, opts?.occurrence ?? 0);
+      if (hit.token) {
+        return { token: hit.token, reason: "ok", score: hit.score, stage: "gloss" };
+      }
+      if (hit.tied.length) break;
     }
   }
+  return {
+    token: null,
+    reason: failReason(selectedKo, opts),
+    score: best.score,
+    stage: "none",
+    tiedStrongs: best.tied.length ? best.tied : undefined,
+  };
+}
 
-  const multi =
-    /[\s·・,/，]/.test(selectedKo.trim()) ||
-    (selectedKo.trim().length >= 4 && bestScore < 500);
+/** 따옴표·낫표 안 인용문(「…창조하시니라」, '이처럼 사랑하사')은 뜻풀이가 아니라서 뺀다 */
+function stripQuoted(s: string): string {
+  return s.replace(/'[^']*'|‘[^’]*’|"[^"]*"|“[^”]*”|「[^」]*」|『[^』]*』/g, " ");
+}
 
-  if (bestScore >= 500 && best) {
-    return { token: best, nearest: best, reason: "ok", score: bestScore };
+/**
+ * 사전 한글 필드별 가중치. family·root·etym 객체의 glossKo는
+ * 다른 낱말 뜻(「살인자」⊃「인자」 등)이라 넣지 않는다.
+ */
+function lexiconKoFields(lex: WordStudyLexicon): { text: string; w: number }[] {
+  const out: { text: string; w: number }[] = [];
+  const add = (v: unknown, w: number, prose: boolean) => {
+    const t = str(v);
+    if (t) out.push({ text: normalizeKo(prose ? stripQuoted(t) : t), w });
+  };
+  const raw = lex as WordStudyLexicon & { glossKo?: unknown };
+  add(raw.glossKo, 4, false);
+  add(lex.usageKo, 4, false);
+  for (const p of lex.phrases ?? []) {
+    add((p as { glossKo?: unknown }).glossKo, 3, false);
   }
-  if (opts?.titleShift) {
+  add(lex.defKo, 2, true);
+  add(lex.nameMeaning, 2, true);
+  add(lex.etymKo, 1, true);
+  if (typeof lex.etym === "string") add(lex.etym, 1, true);
+  add(lex.compareKo, 1, true);
+  add(lex.note, 1, true);
+  return out;
+}
+
+/** ② 칩 strong 사전의 한글 필드에 본체가 들어 있는지. 비동기(사전 fetch) */
+export async function matchTokenByLexicon(
+  tokens: WordStudyToken[],
+  verse: number,
+  selectedKo: string,
+  opts?: GlossMatchOpts,
+): Promise<GlossMatchResult> {
+  const q = normalizeKo(opts?.stem || selectedKo);
+  const pool = tokens.filter((t) => t.ref === verse && !!t.strong);
+  if (q.length < 2 || pool.length === 0) {
     return {
       token: null,
-      nearest,
-      reason: "titleShift",
-      score: Math.max(0, bestScore),
+      reason: failReason(selectedKo, opts),
+      score: 0,
+      stage: "none",
     };
   }
-  if (multi && bestScore < 500) {
+  const cands = pool.filter((t) => !isFunctionWordToken(t));
+  const lexes = await Promise.all(cands.map((t) => loadWordLexicon(t.strong)));
+  const scored: Scored[] = [];
+  cands.forEach((t, k) => {
+    const lex = lexes[k];
+    if (!lex || isFunctionWordToken(t, lex.posKo)) return;
+    let score = 0;
+    for (const f of lexiconKoFields(lex)) {
+      if (f.text.includes(q)) score = Math.max(score, f.w);
+    }
+    scored.push({ token: t, score });
+  });
+  const best = pickBest(scored, opts?.occurrence ?? 0);
+  if (best.token) {
     return {
-      token: null,
-      nearest,
-      reason: "split",
-      score: Math.max(0, bestScore),
+      token: best.token,
+      reason: "ok",
+      score: best.score,
+      stage: "lexicon",
     };
   }
   return {
     token: null,
-    nearest,
-    reason: "match-zero",
-    score: Math.max(0, bestScore),
+    reason: failReason(selectedKo, opts),
+    score: best.score,
+    stage: "none",
+    tiedStrongs: best.tied.length ? best.tied : undefined,
   };
 }
 
-/** 선택 한글 ↔ glossKo 유사도로 그 절 단어 하나 고르기(실패 시 null, nearest 없음) */
+/** ① → ② 순서로 짝 칩 고르기. 둘 다 실패면 token null(자동 선택 없음) */
+export async function matchTokenForSelection(
+  tokens: WordStudyToken[],
+  verse: number,
+  selectedKo: string,
+  opts?: GlossMatchOpts,
+): Promise<GlossMatchResult> {
+  const first = matchTokenByGlossDetailed(tokens, verse, selectedKo, opts);
+  if (first.token || first.reason === "empty-query" || first.reason === "no-verse") {
+    return first;
+  }
+  if (first.tiedStrongs) return first;
+  return matchTokenByLexicon(tokens, verse, selectedKo, opts);
+}
+
+/** 선택 한글 ↔ glossKo로 그 절 단어 하나 고르기(① 단계만, 실패 시 null) */
 export function matchTokenByGloss(
   tokens: WordStudyToken[],
   verse: number,
   selectedKo: string,
-  opts?: { titleShift?: boolean; charIndex?: number; verseLen?: number },
+  opts?: GlossMatchOpts,
 ): WordStudyToken | null {
   return matchTokenByGlossDetailed(tokens, verse, selectedKo, opts).token;
 }

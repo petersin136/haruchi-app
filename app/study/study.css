@@ -245,9 +245,11 @@
   overflow-wrap: anywhere;
 }
 
-/* 쪽·본문 맨 위 단락은 위 간격 없음 */
+/* 쪽·본문 맨 위 단락은 위 간격 없음.
+   장 첫 단락은 큰 장 번호 옆에서 시작하므로 들여쓰기도 없음 */
 .study-body > .study-para:first-child {
   margin-top: 0;
+  text-indent: 0;
 }
 
 .study-para:last-child {
@@ -1003,7 +1005,8 @@ html:has(.study-root) body::-webkit-scrollbar,
   border: none;
   padding: 0;
   margin: 0;
-  background: rgba(28, 25, 23, 0.35);
+  /* 선택한 본문 줄이 비쳐 보이게 옅게 */
+  background: rgba(28, 25, 23, 0.12);
   cursor: pointer;
 }
 
@@ -1019,6 +1022,12 @@ html:has(.study-root) body::-webkit-scrollbar,
   color: var(--study-ink, #1c1917);
   box-shadow: 0 -12px 40px rgba(28, 25, 23, 0.18);
   overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+/* 짝을 못 찾음: 안내 + 칩 줄만 */
+.study-ws-sheet.is-compact {
+  height: auto;
 }
 
 /* ?debug=1 원어 진단 로그 */
@@ -1047,9 +1056,15 @@ html:has(.study-root) body::-webkit-scrollbar,
   z-index: 2;
 }
 
+/* 터치 영역 44px(10+4+30). 아래 24px는 음수 여백으로 겹쳐 막대 아래 간격(6px)은 그대로 */
 .study-ws-handle-hit {
   touch-action: none;
-  padding: 10px 0 6px;
+  padding: 10px 0 30px;
+  margin-bottom: -24px;
+  cursor: grab;
+}
+
+.study-ws-top {
   cursor: grab;
 }
 

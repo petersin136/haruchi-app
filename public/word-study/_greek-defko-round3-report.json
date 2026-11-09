@@ -1,0 +1,197 @@
+{
+  "doxology": {
+    "annotatedChips": 53,
+    "source": "SBLGNT apparatus (WH/Treg/NIV reading), CC BY 4.0 · 형태소 수기",
+    "note": "SBLGNT 본문에 없음(각주 이문) — 교체 불필요"
+  },
+  "nameMeaningSync": {
+    "differedBefore": 26,
+    "unifiedToUsableHebrew": 17,
+    "skippedOrRevertedBadHeb": 9,
+    "stillMismatch": [],
+    "examples": {
+      "G1138": "사랑받는 자",
+      "G2424": "여호와께서 구원하신다",
+      "G3475": "건져 냄",
+      "G11": "많은 무리의 아버지",
+      "G4672": "평화로운"
+    }
+  },
+  "identityFixed": 19,
+  "periodFixed": 459,
+  "batchWindow": {
+    "fromRank": 901,
+    "toRank": 2400,
+    "size": 1500
+  },
+  "changed": 1500,
+  "nameFirstOnly": 167,
+  "tmplBefore": {
+    "뜻: X": 463,
+    "X라는/이라는 뜻이에요": 419,
+    "기본 뜻은 「X」": 450
+  },
+  "tmplAfter": {
+    "뜻: X": 0,
+    "X라는/이라는 뜻이에요": 0,
+    "기본 뜻은 「X」": 0
+  },
+  "skeletonTop3Before": [
+    [
+      "X X. 개역한글에서는 'X'X X(X).",
+      418
+    ],
+    [
+      "X 뜻은 X X. 처음 나오는 곳: X.",
+      163
+    ],
+    [
+      "기본 뜻은 「X」X. 개역한글에서는 'X'X X(X).",
+      93
+    ]
+  ],
+  "skeletonTop3After": [
+    [
+      "X X(X).",
+      1143
+    ],
+    [
+      "처음 나오는 곳: X.",
+      167
+    ],
+    [
+      "X X. 본문 예는 'X'(X).",
+      149
+    ]
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "range": "G4288–G4410",
+      "size": 300,
+      "changedCum": 300,
+      "batchChanged": 300,
+      "remainTemplatesIn1500": 1049,
+      "tmpl": {
+        "뜻: X": 369,
+        "X라는/이라는 뜻이에요": 318,
+        "기본 뜻은 「X」": 362
+      }
+    },
+    {
+      "batch": 2,
+      "range": "G4444–G2763",
+      "size": 300,
+      "changedCum": 600,
+      "batchChanged": 300,
+      "remainTemplatesIn1500": 788,
+      "tmpl": {
+        "뜻: X": 268,
+        "X라는/이라는 뜻이에요": 250,
+        "기본 뜻은 「X」": 270
+      }
+    },
+    {
+      "batch": 3,
+      "range": "G2767–G313",
+      "size": 300,
+      "changedCum": 900,
+      "batchChanged": 300,
+      "remainTemplatesIn1500": 525,
+      "tmpl": {
+        "뜻: X": 164,
+        "X라는/이라는 뜻이에요": 168,
+        "기본 뜻은 「X」": 193
+      }
+    },
+    {
+      "batch": 4,
+      "range": "G322–G2183",
+      "size": 300,
+      "changedCum": 1200,
+      "batchChanged": 300,
+      "remainTemplatesIn1500": 255,
+      "tmpl": {
+        "뜻: X": 82,
+        "X라는/이라는 뜻이에요": 74,
+        "기본 뜻은 「X」": 99
+      }
+    },
+    {
+      "batch": 5,
+      "range": "G2185–G4422",
+      "size": 300,
+      "changedCum": 1500,
+      "batchChanged": 300,
+      "remainTemplatesIn1500": 0,
+      "tmpl": {
+        "뜻: X": 0,
+        "X라는/이라는 뜻이에요": 0,
+        "기본 뜻은 「X」": 0
+      }
+    }
+  ],
+  "sample10": [
+    {
+      "strong": "G5328",
+      "lemma": "Φαραώ",
+      "nameMeaning": "",
+      "defKo": "바로는 애굽의 왕을 가리키는 칭호예요(행 7:10)."
+    },
+    {
+      "strong": "G6",
+      "lemma": "Ἅβελ",
+      "nameMeaning": "",
+      "defKo": "아벨은 아담의 아들로, 믿음으로 제사한 이로 나와요(마 23:35; 히 11:4)."
+    },
+    {
+      "strong": "G116",
+      "lemma": "Ἀθῆναι",
+      "nameMeaning": "",
+      "defKo": "아덴(아테네)은 바울이 설교한 그리스의 성읍이에요(행 17:15-34)."
+    },
+    {
+      "strong": "G4906",
+      "lemma": "συνεσθίω",
+      "nameMeaning": "",
+      "defKo": "취하다를 가리켜요. 본문 예는 '함께 먹다'(눅 15:2)."
+    },
+    {
+      "strong": "G636",
+      "lemma": "ἀποπλέω",
+      "nameMeaning": "",
+      "defKo": "배 떠나다를 가리켜요(행 13:4)."
+    },
+    {
+      "strong": "G1741",
+      "lemma": "ἔνδοξος",
+      "nameMeaning": "",
+      "defKo": "영광을 가리켜요. 본문 예는 '영광스러운'(눅 13:17)."
+    },
+    {
+      "strong": "G3333",
+      "lemma": "μετακαλέομαι",
+      "nameMeaning": "",
+      "defKo": "부르다를 가리켜요. 본문 예는 '청하다'(행 10:32)."
+    },
+    {
+      "strong": "G5079",
+      "lemma": "τεχνίτης",
+      "nameMeaning": "",
+      "defKo": "장인을 가리켜요(행 19:24)."
+    },
+    {
+      "strong": "G1185",
+      "lemma": "δελεάζω",
+      "nameMeaning": "",
+      "defKo": "미혹하다를 가리켜요(약 1:14)."
+    },
+    {
+      "strong": "G2420",
+      "lemma": "ἱερωσύνη",
+      "nameMeaning": "",
+      "defKo": "제사장직을 가리켜요(히 7:11)."
+    }
+  ],
+  "spaceFixedExtra": 0
+}

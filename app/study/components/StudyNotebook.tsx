@@ -14,7 +14,7 @@ import {
   type ReactNode,
 } from "react";
 import { createPortal, flushSync } from "react-dom";
-import { loadKoreanChapter } from "../../bible-reading/bibleData";
+import { loadBookData, loadKoreanChapter } from "../../bible-reading/bibleData";
 import type { BookId } from "../../bible-reading/books";
 import { BOOK_ORDER, BOOKS, isOldTestament } from "../../bible-reading/books";
 import ChapterEndSentinel from "../../bible-reading/components/ChapterEndSentinel";
@@ -58,7 +58,9 @@ import {
 import {
   loadChapterWordStudy,
   matchTokenByGlossDetailed,
+  matchTokenForSelection,
   tokensInVerse,
+  type GlossMatchResult,
   type VerseWordStudyMeta,
   type WordStudyToken,
 } from "../lib/wordStudy";
@@ -76,8 +78,17 @@ import {
 } from "../lib/studySpread";
 import "../study.css";
 
+/** 본체 뒤 꼬리가 동사를 만드는 말이면 원어 짝에서 동사 칩을 우선 */
+const VERBAL_TAIL_RE = /^(하|되|시키|케|함|한|할|합|해|했|치)/;
+/** 원어 시트 위로 선택 줄을 띄울 때 줄 아래 여백 */
+const WS_REVEAL_GAP = 12;
+/** 스프레드에서 시트를 줄여도 이보다 작게는 안 함 */
+const WS_SPREAD_MIN_SHEET_H = 280;
+
 /** 책별로 이미 로드된 장 본문을 모아 본체 검증에 쓴다 */
 const bookCorpusMap = new Map<string, string>();
+/** 책 전체 개역한글 — 「핍박+을/이」처럼 다른 장에만 나오는 근거까지 본다 */
+const bookFullCorpusMap = new Map<string, string>();
 function rememberBookText(bookId: string, chunk: string) {
   if (!chunk) return;
   const prev = bookCorpusMap.get(bookId) ?? "";
@@ -402,6 +413,13 @@ function StudyNotebook({
     GreekVerseKind
   > | null>(null);
   const [wsOpen, setWsOpen] = useState(false);
+  /** 스프레드: 선택 줄이 가리지 않게 줄인 시트 높이(px). null = 기본 70dvh */
+  const [wsSheetH, setWsSheetH] = useState<number | null>(null);
+  /** 원어 시트를 닫으면 되돌릴 도구 막대·선택 범위 */
+  const wsRestoreRef = useRef<{
+    toolbar: ToolbarMode | null;
+    range: { start: number; end: number } | null;
+  } | null>(null);
   const [wsMatchHint, setWsMatchHint] = useState<string | null>(null);
   const [wsMatched, setWsMatched] = useState(false);
   const [wsTitleShift, setWsTitleShift] = useState(false);
@@ -431,6 +449,23 @@ function StudyNotebook({
   useEffect(() => {
     rememberBookText(bookId, plain);
   }, [bookId, plain]);
+
+  useEffect(() => {
+    if (bookFullCorpusMap.has(bookId)) return;
+    let alive = true;
+    loadBookData(bookId)
+      .then((d) => {
+        if (!alive) return;
+        const text = d.chapters
+          .map((c) => (c.verses?.krv ?? []).map((v) => v.t).join(" "))
+          .join("\n");
+        if (text) bookFullCorpusMap.set(bookId, text);
+      })
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, [bookId]);
 
   const marksById = useMemo(() => {
     const map = new Map<string, StudyMark>();
@@ -1107,7 +1142,10 @@ function StudyNotebook({
         .map((p) => p!.verses.map((v) => v.t).join(" "))
         .join("\n");
       if (packText) rememberBookText(bookId, packText);
-      const corpus = bookCorpusMap.get(bookId) ?? plainRef.current;
+      const corpus =
+        bookFullCorpusMap.get(bookId) ??
+        bookCorpusMap.get(bookId) ??
+        plainRef.current;
       const local = stemOf(eojeol, corpus);
       const stem = {
         start: w.start + local.start,
@@ -1341,16 +1379,16 @@ function StudyNotebook({
     };
   }, [sel, dragging, clearSelection, selectionToolbarFor]);
 
-  // 도구 막대가 닫히면(버튼 동작 등) 임시 선택도 같이 지움
+  // 도구 막대가 닫히면(버튼 동작 등) 임시 선택도 같이 지움 — 원어 시트가 열려 있는 동안은 유지
   useEffect(() => {
-    if (dragging) return;
+    if (dragging || wsOpen) return;
     if (!toolbar || toolbar.kind !== "selection") {
       if (selRef.current) {
         selRef.current = null;
         setSel(null);
       }
     }
-  }, [toolbar, dragging]);
+  }, [toolbar, dragging, wsOpen]);
 
   // 스크롤해도 도구 막대가 선택 범위를 따라가게
   useEffect(() => {
@@ -2470,6 +2508,94 @@ function StudyNotebook({
     );
   }, [toolbar, marksById]);
 
+  /** 원어 짝 찾기용 본체 — 길게 눌러 고른 어절이면 그 어절 기준으로 뗀다 */
+  const selectionStemQuery = (
+    start: number,
+    end: number,
+    text: string,
+  ): { stem: string; verbal: boolean } => {
+    const t = text.trim();
+    if (!t || /\s/.test(t)) return { stem: t, verbal: false };
+    const plain = plainRef.current;
+    const corpus =
+      bookFullCorpusMap.get(bookId) ?? bookCorpusMap.get(bookId) ?? plain;
+    const w = wordAt(words, start);
+    if (w && start >= w.start && end <= w.end) {
+      const local = stemOf(plain.slice(w.start, w.end), corpus);
+      const s0 = w.start + local.start;
+      const s1 = w.start + local.end;
+      if (s1 > s0 && start <= s0 && end >= s1) {
+        return {
+          stem: plain.slice(s0, s1),
+          verbal: VERBAL_TAIL_RE.test(plain.slice(s1, w.end)),
+        };
+      }
+    }
+    const local = stemOf(t, corpus);
+    const stem = t.slice(local.start, local.end) || t;
+    return { stem, verbal: VERBAL_TAIL_RE.test(t.slice(local.end)) };
+  };
+
+  const closeWordStudy = () => {
+    setWsOpen(false);
+    setWsMatchHint(null);
+    setWsSheetH(null);
+    const saved = wsRestoreRef.current;
+    wsRestoreRef.current = null;
+    const cur = selRef.current;
+    if (cur && saved?.toolbar?.kind === "selection") {
+      setToolbar(selectionToolbarFor(cur) ?? saved.toolbar);
+      return;
+    }
+    if (saved?.toolbar?.kind === "mark" && saved.range) {
+      const m = selectionToolbarFor(saved.range);
+      setToolbar(
+        m
+          ? { kind: "mark", markId: saved.toolbar.markId, x: m.x, rt: m.rt, rb: m.rb }
+          : saved.toolbar,
+      );
+    }
+  };
+
+  // 원어 시트가 선택 줄을 가리면: 한 쪽 보기는 본문 스크롤, 스프레드는 시트 높이를 줄인다
+  useEffect(() => {
+    if (!wsOpen) return;
+    const range = wsRestoreRef.current?.range;
+    if (!range) return;
+    const id = requestAnimationFrame(() => {
+      const box = selectionToolbarFor(range);
+      const sheet = document.querySelector<HTMLElement>(".study-ws-sheet");
+      if (!box || !sheet) return;
+      const selTop = box.rt;
+      const selBottom = box.rb - SEL_HANDLE_SIZE;
+      const vh = window.innerHeight;
+      const sheetTop = vh - sheet.getBoundingClientRect().height;
+      if (selBottom + WS_REVEAL_GAP <= sheetTop) return;
+      if (spreadOn) {
+        const h = Math.max(WS_SPREAD_MIN_SHEET_H, vh - selBottom - WS_REVEAL_GAP);
+        setWsSheetH(Math.round(h));
+        debugLogRef.current(
+          `[원어] 스프레드 시트 높이 ${Math.round(h)}px (선택 아래 ${Math.round(selBottom)})`,
+        );
+        return;
+      }
+      let chromeBottom = 0;
+      for (const s of [".brp-mobile-topbar", ".brp-header"]) {
+        const el = document.querySelector<HTMLElement>(s);
+        if (!el || getComputedStyle(el).display === "none") continue;
+        chromeBottom = Math.max(chromeBottom, el.getBoundingClientRect().bottom);
+      }
+      const want = selBottom + WS_REVEAL_GAP - sheetTop;
+      const room = selTop - chromeBottom - WS_REVEAL_GAP;
+      const dy = Math.max(0, Math.min(want, room));
+      if (dy > 0) scrollByY(scrollRootOf(bodyRef.current), dy);
+      debugLogRef.current(
+        `[원어] 선택 줄 보이게 스크롤 ${Math.round(dy)}px (시트 위 ${Math.round(sheetTop)})`,
+      );
+    });
+    return () => cancelAnimationFrame(id);
+  }, [wsOpen, spreadOn, selectionToolbarFor]);
+
   const openWordStudyFromToolbar = () => {
     const now = Date.now();
     if (now - wsActionAtRef.current < 300) {
@@ -2506,11 +2632,16 @@ function StudyNotebook({
       matched: boolean;
       hint: string | null;
     }) => {
+      wsRestoreRef.current = {
+        toolbar: tb,
+        range: pick ? { start: pick.start, end: pick.end } : null,
+      };
       setWsVerse(verse);
       setWsInitial(opts.initial);
       setWsSelectedKo(selectedKo);
       setWsMatched(opts.matched);
       setWsMatchHint(opts.hint);
+      setWsSheetH(null);
       setWsOpen(true);
       toolStashRef.current = null;
       setToolbar(null);
@@ -2554,7 +2685,6 @@ function StudyNotebook({
     }
 
     const span = spans.find((s) => s.n === verse);
-    const verseLen = span ? Math.max(0, span.end - span.start) : 0;
     const absStart =
       pick?.start ??
       (tb?.kind === "selection"
@@ -2562,15 +2692,38 @@ function StudyNotebook({
         : tb?.kind === "mark"
           ? (marksById.get(tb.markId)?.start ?? 0)
           : 0);
-    const charIndex = span
-      ? Math.max(0, Math.min(Math.max(0, verseLen - 1), absStart - span.start))
-      : 0;
-    const result = matchTokenByGlossDetailed(
-      wsTokens,
-      verse,
-      selectedKo,
-      { titleShift: wsTitleShift, charIndex, verseLen },
-    );
+    const absEnd = pick?.end ?? absStart + selectedKo.length;
+    const sq = selectionStemQuery(absStart, absEnd, selectedKo);
+    const verseText = span
+      ? plainRef.current.slice(span.start, span.end)
+      : "";
+    let occurrence = 0;
+    if (span && sq.stem) {
+      const before = absStart - span.start;
+      for (
+        let k = verseText.indexOf(sq.stem);
+        k >= 0 && k < before;
+        k = verseText.indexOf(sq.stem, k + 1)
+      ) {
+        occurrence += 1;
+      }
+    }
+    const matchOpts = {
+      titleShift: wsTitleShift,
+      stem: sq.stem,
+      verbal: sq.verbal,
+      occurrence,
+    };
+    const finish = (result: GlossMatchResult) => {
+      logMatch(result);
+      openSheet({
+        initial: result.token,
+        matched: result.reason === "ok" && !!result.token,
+        hint: result.token
+          ? null
+          : "정확한 단어를 못 찾았어요 · 칩에서 골라 주세요",
+      });
+    };
     const reasonKo: Record<string, string> = {
       ok: "ok",
       "empty-query": "선택 텍스트 비어 있음",
@@ -2580,27 +2733,30 @@ function StudyNotebook({
       titleShift: "titleShift",
       "match-zero": "매칭 0",
     };
-    if (result.reason !== "ok") {
-      debugLog(
-        `[원어] 실패 사유=${reasonKo[result.reason] ?? result.reason} verse=${verse} ko="${selectedKo.slice(0, 24)}" score=${result.score} nearest=${result.nearest?.strong || "-"}`,
-      );
-    } else {
-      debugLog(
-        `[원어] match ok strong=${result.token?.strong || "-"} → setWsOpen(true)`,
-      );
-    }
+    const logMatch = (result: GlossMatchResult) => {
+      if (result.reason !== "ok" || !result.token) {
+        debugLog(
+          `[원어] 실패 사유=${reasonKo[result.reason] ?? result.reason} verse=${verse} ko="${selectedKo.slice(0, 24)}" stem="${sq.stem}" verbal=${sq.verbal} score=${result.score}${result.tiedStrongs ? ` tied=${result.tiedStrongs.join("/")}` : ""} → 칩 자동 선택 없음`,
+        );
+      } else {
+        debugLog(
+          `[원어] match ok stage=${result.stage === "gloss" ? "①glossKo" : "②사전"} stem="${sq.stem}" strong=${result.token.strong || "-"} word=${result.token.word} score=${result.score} → setWsOpen(true)`,
+        );
+      }
+    };
 
-    // split 절: 히브리어와 같이 칩을 보여 주고, 없으면 첫 칩을 고름
-    const pickToken =
-      result.token ?? result.nearest ?? verseToks[0] ?? null;
-    openSheet({
-      initial: pickToken,
-      matched: result.reason === "ok",
-      hint:
-        result.reason === "ok"
-          ? null
-          : "정확한 단어를 못 찾았어요 · 칩에서 골라 주세요",
-    });
+    const first = matchTokenByGlossDetailed(wsTokens, verse, selectedKo, matchOpts);
+    if (first.token || first.tiedStrongs || first.reason === "empty-query" || first.reason === "no-verse") {
+      finish(first);
+      return;
+    }
+    const seq = wsActionAtRef.current;
+    void matchTokenForSelection(wsTokens, verse, selectedKo, matchOpts).then(
+      (result) => {
+        if (wsActionAtRef.current !== seq) return;
+        finish(result);
+      },
+    );
   };
 
   const commitNoteEdit = () => {
@@ -3363,7 +3519,7 @@ function StudyNotebook({
                     />
                   ))}
                   {renderMarkNotes()}
-                  {selRects.length > 0 ? (
+                  {selRects.length > 0 && !wsOpen ? (
                     <>
                       <span
                         className="study-sel-handle is-start"
@@ -3572,7 +3728,7 @@ function StudyNotebook({
                     }}
                   />
                 ))}
-                {selRects.length > 0 ? (
+                {selRects.length > 0 && !wsOpen ? (
                   <>
                     <span
                       className="study-sel-handle is-start"
@@ -3923,10 +4079,8 @@ function StudyNotebook({
         selectedKo={wsSelectedKo}
         matched={wsMatched}
         matchHint={wsMatchHint}
-        onClose={() => {
-          setWsOpen(false);
-          setWsMatchHint(null);
-        }}
+        sheetHeight={wsSheetH}
+        onClose={closeWordStudy}
         onError={(msg) => setToast(msg)}
         onDebug={debugOn ? debugLog : undefined}
         onNavigate={(nextBook, nextChapter) => {

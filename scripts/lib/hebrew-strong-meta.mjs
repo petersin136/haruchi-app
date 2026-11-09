@@ -299,6 +299,8 @@ export function translateNameGloss(en) {
     [/well of an oath|well of (?:the )?oath/, "맹세의 우물"],
     [/let him add|he will add/, "더하리라"],
     [/self-?existent or eternal|self-?existent/, "스스로 계신 분, 영원하신 분"],
+    [/^asked$/, "물음을 받은 자"],
+    [/^asked;?$/, "물음을 받은 자"],
     [/god has heard/, "하나님이 들으셨다"],
     [/god almighty/, "전능하신 하나님"],
     [/ewe(?:[- ]lamb)?|female sheep/, "암양"],
@@ -578,40 +580,11 @@ export function translateNameGloss(en) {
     if (atom) return atom;
   }
 
-  // Strong에 실제 풀이가 있는데 사전 미등재인 경우:
-  // 「확실하지 않아요」로 비우지 않고, 원문 풀이를 짧게 보존
-  const cleaned = raw
-    .replace(/^\(with the article\)\s*/i, "")
-    .replace(/\s*\(see [^)]+\)\s*/gi, " ")
-    .replace(/\s*\(i\.e\.\s*[^)]+\)\s*/gi, " ")
-    .replace(/\s*\(compare [^)]+\)\s*/gi, " ")
-    .replace(/\s+/g, " ")
-    .trim()
-    .replace(/\.$/, "");
-  if (
-    cleaned.length >= 3 &&
-    cleaned.length <= 42 &&
-    !/orthographical|foreign|egyptian origin|corresponding|intensive|patron|uncertain|patrial|same as|probably for|contraction|feminine of|masculine of|persian|variation|xlit|transposition|reduplication|emphatic|collective|inhabitants of|unused root|primitive root|^a [A-Z][a-z]+ite$/i.test(
-      cleaned,
-    ) &&
-    !/^from\b/i.test(cleaned) &&
-    !/^\d+$/.test(cleaned) &&
-    !/^of\b/i.test(cleaned)
-  ) {
-    // 단어별 부분 번역 가능하면 혼합, 아니면 「영문 풀이」
-    const bits = cleaned
-      .toLowerCase()
-      .replace(/[^a-z\s-]/g, " ")
-      .split(/\s+/)
-      .filter((w) => w && !["a", "an", "the", "of", "in", "with", "or", "and"].includes(w));
-    const kos = bits.map((w) => translateAtom(w));
-    const hit = kos.filter(Boolean).length;
-    if (hit > 0 && hit >= Math.ceil(bits.length * 0.4)) {
-      const joined = bits.map((w, i) => kos[i] || `「${w}」`).join(" ");
-      if (!/「of」/.test(joined)) return joined;
-    }
-    if (!/\bof\b/i.test(cleaned)) return `「${cleaned}」`;
-  }
+  // to crowd upon / attack 등 동사구
+  if (/crowd upon|to attack|\battack\b/i.test(raw)) return "공격하다";
+  if (/to crowd/i.test(raw)) return "밀어붙이다";
+
+  // 영문 원문 「」 보존은 하지 않음 — 번역 실패 시 빈 값
   return "";
 }
 
