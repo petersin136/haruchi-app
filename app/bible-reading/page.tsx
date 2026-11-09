@@ -1346,18 +1346,44 @@ export default function BibleReadingPage() {
     if (searchOpen || selectionMode) return;
     if (typeof document !== "undefined") {
       const ds = document.documentElement.dataset;
-      if (ds.studySelecting === "1" || ds.studyWsOpen === "1") return;
+      if (
+        ds.studySelecting === "1" ||
+        ds.studyWsOpen === "1" ||
+        ds.studyNoteOpen === "1"
+      )
+        return;
     }
     setDrawerOpen(true);
   }, [searchOpen, selectionMode]);
   const closeDrawer = useCallback(() => setDrawerOpen(false), []);
 
-  // 공부 노트 선택이 시작되면 반쯤 열린 서랍을 바로 닫음
+  // 공부 노트 선택·원어 시트·메모 입력 중이면 서랍 닫기
   useEffect(() => {
+    const closeIfBusy = () => {
+      const ds = document.documentElement.dataset;
+      if (
+        ds.studySelecting === "1" ||
+        ds.studyWsOpen === "1" ||
+        ds.studyNoteOpen === "1"
+      ) {
+        setDrawerOpen(false);
+      }
+    };
     const onStudySelecting = () => setDrawerOpen(false);
     window.addEventListener("haruchi:study-selecting", onStudySelecting);
-    return () =>
+    const mo = new MutationObserver(closeIfBusy);
+    mo.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: [
+        "data-study-selecting",
+        "data-study-ws-open",
+        "data-study-note-open",
+      ],
+    });
+    return () => {
       window.removeEventListener("haruchi:study-selecting", onStudySelecting);
+      mo.disconnect();
+    };
   }, []);
 
   // 책 전환의 두 가지 의도를 구분한다 ─

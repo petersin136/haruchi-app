@@ -61,9 +61,10 @@ export function loadStrongMeta() {
       );
       const sourceText = stripTags(sourceRaw);
       // source 안 <def>가 이름 풀이인 경우가 많음 (meaning의 표제어 def보다 우선)
-      const sourceDef = stripTags(
-        sourceRaw.match(/<def>([\s\S]*?)<\/def>/)?.[1] || "",
-      );
+      const sourceDefs = [
+        ...sourceRaw.matchAll(/<def>([\s\S]*?)<\/def>/g),
+      ].map((x) => stripTags(x[1]));
+      const sourceDef = sourceDefs.join(" ") || "";
       const meaningRaw = body.match(/<meaning>([\s\S]*?)<\/meaning>/)?.[1] || "";
       const meaning = stripTags(meaningRaw) || _meta.get(id)?.meaning || "";
       const meaningDef = stripTags(
@@ -88,37 +89,79 @@ export function loadStrongMeta() {
 }
 
 /**
- * Strong source에서 이름 풀이(영어)만 뽑음.
- * 예: "dual of … 672; double fruit;" → "double fruit"
- *     "from 3068 and 1931; Jehovah (is) He;" → "Jehovah (is) He"
+ * Strong source 전체에서 이름 풀이(영어) 추출.
+ * 세미콜론 뒤뿐 아니라 괄호·i.e.·여러 <def>를 이어 붙임.
+ * 예: "drawing out (of the water), i.e. rescued"
+ *     "father of peace (i.e. friendly)"
+ *     "loving" / "see ye a son" / "well of an oath"
  */
 export function extractNameEtymEn(sourceText, sourceDef = "") {
-  if (sourceDef && !/^[A-Z][a-z]+$/.test(sourceDef)) {
-    // Urijah 같은 표제어만 있는 def는 제외, flame of Jah 등은 채택
-    if (!/^(?:a |an |the )?[A-Z][a-z]+(?:ites)?$/.test(sourceDef)) {
-      return sourceDef.replace(/\.$/, "").trim();
+  const src = String(sourceText || "").replace(/\s+/g, " ").trim();
+
+  // 1) 「from … ;」 이후 절 전체를 우선 (괄호 포함)
+  const afterFrom = src.match(
+    /(?:^|;)\s*from\b[^;]*;\s*([^;]+(?:;[^;]+)*?)\s*$/i,
+  );
+  if (afterFrom) {
+    let clause = afterFrom[1]
+      .replace(/\b(?:rarely|once|or|shortened|fully|prolonged)\b[^;]*/gi, "")
+      .replace(/^[;,\s]+/, "")
+      .replace(/\.$/, "")
+      .trim();
+    // 히브리 표기 조각 제거
+    clause = clause
+      .replace(/[\u0590-\u05FF]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (clause.length >= 3 && !/^[A-Z][a-z]+(?:ites)?$/.test(clause)) {
+      return clause;
     }
   }
-  const parts = String(sourceText || "")
+
+  // 2) sourceDef(여러 def 결합) — "drawing out … rescued"
+  if (sourceDef) {
+    let d = String(sourceDef).replace(/\s+/g, " ").trim();
+    if (
+      d.length >= 3 &&
+      !/^(?:a |an |the )?[A-Z][a-z]+(?:ites)?$/.test(d) &&
+      !/^a primitive root$/i.test(d)
+    ) {
+      // sourceText에서 def 앞뒤 수식어 복원
+      const enriched = src.match(
+        new RegExp(
+          String.raw`(?:^|;)\s*([^;]*\b${d.split(/\s+/)[0]}[^;]*)`,
+          "i",
+        ),
+      );
+      if (enriched?.[1] && enriched[1].length > d.length) {
+        d = enriched[1]
+          .replace(/^from\b[^,]*,?\s*/i, "")
+          .replace(/\.$/, "")
+          .trim();
+      }
+      return d.replace(/\.$/, "").trim();
+    }
+  }
+
+  // 3) 세미콜론 조각 역순
+  const parts = src
     .split(";")
     .map((s) => s.replace(/\.$/, "").trim())
     .filter(Boolean);
   for (let i = parts.length - 1; i >= 0; i--) {
     let p = parts[i];
     if (/^from\b/i.test(p)) continue;
-    if (/^(?:dual|plural|prolonged|contracted|or|compare|see|active|passive)\b/i.test(p))
+    if (
+      /^(?:dual|plural|prolonged|contracted|or|compare|see|active|passive|rarely|once)\b/i.test(
+        p,
+      )
+    )
       continue;
-    if (/^of\b/i.test(p) && p.length < 12) continue;
-    if (/^\d+$/.test(p)) continue;
-    if (/^H?\d+$/i.test(p)) continue;
-    // "apparently …" 같은 주석은 스킵
+    if (/^\d+$/.test(p) || /^H?\d+$/i.test(p)) continue;
     if (/^apparently\b/i.test(p)) continue;
-    p = p
-      .replace(/^\((?:the|a|an)\)\s*/i, "")
-      .replace(/\bi\.e\.\s*/gi, "")
-      .trim();
+    if (/^a primitive root$/i.test(p)) continue;
+    p = p.replace(/[\u0590-\u05FF]+/g, " ").replace(/\s+/g, " ").trim();
     if (p.length < 3) continue;
-    // 단독 고유명사 표기만 있으면 스킵
     if (/^[A-Z][a-z]+(?:ites)?$/.test(p)) continue;
     return p;
   }
@@ -199,8 +242,12 @@ export function translateNameGloss(en) {
     [/heel.?catcher|supplanter/, "발꿈치를 잡는 자"],
     [/laughter/, "웃음"],
     [/princess|noblewoman/, "공주, 귀부인"],
-    [/drawn out/, "건져 내어진 자"],
-    [/beloved/, "사랑받는 자"],
+    [/drawing out.*rescued|drawing out \(of the water\)|drawn out|rescued/, "건져 냄"],
+    [/^loving$|loving;|beloved/, "사랑받는 자"],
+    [/see ye a son|behold a son/, "보라 아들이다"],
+    [/father of peace/, "평화의 아버지"],
+    [/brother (?:\(.*?\) )?(?:of )?\(?his\)? ?father|friend\) of \(his\) father|brother .* father/, "아버지의 형제"],
+    [/well of an oath|well of (?:the )?oath/, "맹세의 우물"],
     [/god has heard/, "하나님이 들으셨다"],
     [/god almighty/, "전능하신 하나님"],
     [/ewe(?:[- ]lamb)?|female sheep/, "암양"],
@@ -224,7 +271,7 @@ export function translateNameGloss(en) {
     [/bitterness/, "씀"],
     [/peaceful|peaceable/, "평화로운"],
     [/pleasantness|pleasant/, "기쁨, 즐거움"],
-    [/rest/, "안식"],
+    [/^rest$/, "안식"],
     [/dew of jah/, "여호와의 이슬"],
     [/whom jehovah raised|jehovah has raised/, "여호와께서 일으키신"],
   ];
@@ -236,10 +283,24 @@ export function translateNameGloss(en) {
   const compound = translateCompound(raw);
   if (compound) return compound;
 
-  if (/^father of (?:a |the )?(.+)$/i.test(raw)) {
-    const rest = raw.replace(/^father of (?:a |the )?/i, "").trim();
+  // father of peace (i.e. friendly) → 평화의 아버지
+  if (/^father of /i.test(raw)) {
+    const rest = raw
+      .replace(/^father of (?:a |the )?/i, "")
+      .replace(/\s*\(.*?\)\s*/g, " ")
+      .trim()
+      .split(/\s+/)[0];
+    const rk = translateAtom(rest) || (/peace/i.test(raw) ? "평화" : "");
+    if (rk) return `${rk}의 아버지`;
+  }
+  if (/^brother\b/i.test(raw) && /father/i.test(raw)) {
+    return "아버지의 형제";
+  }
+  if (/^well of /i.test(raw)) {
+    const rest = raw.replace(/^well of (?:an |the )?/i, "").replace(/\s*\(.*?\)\s*/g, " ").trim();
+    if (/oath/i.test(rest)) return "맹세의 우물";
     const rk = translateAtom(rest);
-    return rk ? `${rk}의 아버지` : "";
+    if (rk) return `${rk}의 우물`;
   }
   if (/^son of (?:a |the )?(.+)$/i.test(raw)) {
     const rest = raw.replace(/^son of (?:a |the )?/i, "").trim();

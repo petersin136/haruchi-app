@@ -4,7 +4,8 @@
  * 책·장·절 선택 서랍 (상단 「책 n장 ⌄」).
  * - 제목 탭 → 현재 책의 장 목록부터
  * - 책 바꾸기 → 책 목록 / 장 → 절 / 「이 장 처음부터」·절 탭으로 이동
- * - ≤768: 가장자리 스와이프로도 열기 (상단 바 data-no-drawer-swipe 제외)
+ * - ≤768만: 가로 밀어서 열기 (상단 바 data-no-drawer-swipe 제외)
+ * - ≥769(양쪽 모드 포함): 제목 탭으로만 열기 — 가로 밀기는 페이지 넘김 전용
  */
 
 import {
@@ -343,6 +344,8 @@ function BookChapterDrawer({
     let velocity = 0;
 
     const onStart = (e: TouchEvent) => {
+      // ≥769: 리스너 자체가 없어야 하지만, 폭 전환 직전 한 프레임도 막음
+      if (window.innerWidth > 768) return;
       if (disabledRef.current) return;
       if (e.touches.length !== 1) return;
       const ds = document.documentElement.dataset;

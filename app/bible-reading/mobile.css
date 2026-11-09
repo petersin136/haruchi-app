@@ -70,10 +70,14 @@
   display: block;
   min-width: 0;
   max-width: 100%;
-  overflow-x: hidden;
+  /* overflow-x만 hidden이면 y가 auto로 계산되어 글리프가 잘림 → 한 줄 높이만 확보한 채 both hidden */
+  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   line-height: 1.35;
+  padding-top: 0.12em;
+  padding-bottom: 0.12em;
+  box-sizing: content-box;
 }
 
 .brp-mobile-topbar-chevron {
@@ -808,18 +812,29 @@
   .brp-mobile-topbar-book {
     grid-column: auto;
     justify-self: start;
+    align-items: center;
     max-width: none;
     font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
     font-size: 17px;
     font-weight: 600;
+    line-height: 1.35;
     color: #2a2420;
     gap: 4px;
+    overflow: visible;
   }
 
   .brp-mobile-topbar-book-label {
     line-height: 1.35;
     overflow: visible;
     text-box-trim: none;
+  }
+
+  .brp-mobile-topbar-book-clip {
+    overflow: hidden;
+    line-height: 1.35;
+    padding-top: 0.12em;
+    padding-bottom: 0.12em;
+    box-sizing: content-box;
   }
 
   .brp-mobile-topbar-book-ch {

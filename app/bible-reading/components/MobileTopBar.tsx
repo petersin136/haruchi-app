@@ -240,7 +240,12 @@ function MobileTopBar({
           className="brp-mobile-topbar-btn brp-mobile-topbar-book"
           onClick={() => {
             const ds = document.documentElement.dataset;
-            if (ds.studySelecting === "1" || ds.studyWsOpen === "1") return;
+            if (
+              ds.studySelecting === "1" ||
+              ds.studyWsOpen === "1" ||
+              ds.studyNoteOpen === "1"
+            )
+              return;
             onOpenDrawer();
           }}
           aria-label={`${bookLabel} — 책·장 선택`}

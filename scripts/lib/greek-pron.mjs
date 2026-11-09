@@ -6,11 +6,12 @@
 // - LEMMA_PRON : 표제어(lemma) 단위 보조 사전. PRON 에 없는 굴절형이 들어와도
 //                lemma 가 일치하면 lemma 의 발음을 그대로 쓴다. (격·시제에 따라
 //                실제 발음이 약간씩 달라지지만, 룩업 누락보다는 훨씬 낫다.)
-// - lookupPron(word, lemma?) : 두 사전 순차 조회.
+// - lookupPron(word, lemma?) : 두 사전 순차 조회 (lemma 폴백 포함 — lexicon용).
+// - surfacePron(word) : 본문 굴절형만. LEMMA_PRON 사용 금지. 칩 pron은 이것만.
 //
 // 발음 규칙(에라스무스식 한국 표기, 강세 무시):
 //   α=아, ε=에, η=에, ι=이, ο=오, ω=오, υ=위(어말 -υ=우)
-//   αι=아이, ει=에이, οι=오이, αυ=아우, ευ=에우, ου=우
+//   αι=아이, ει=에이, οι=오이, αυ=아우, ευ=에우(모음 앞 유), ου=우
 // =============================================================================
 
 export const PRON = {
@@ -1955,6 +1956,19 @@ Object.assign(PRON, {
   "οὐχ": "우크",
   "οὐχί": "우키",
   "μηκέτι": "메케티",
+  // 본문 굴절형 (요 3:16 등) — lemma 발음이 아닌 표면형
+  "ἠγάπησεν": "에가페센",
+  "ἔδωκεν": "에도켄",
+  "πιστεύων": "피스튜온",
+  "ἀπόληται": "아폴레타이",
+  "ἔχῃ": "에케",
+  "ζωὴν": "조엔",
+  "ζωή": "조에",
+  "αἰώνιον": "아이오니온",
+  "κόσμον": "코스몬",
+  "μονογενῆ": "모노게네",
+  "Οὕτως": "후토스",
+  "οὕτως": "후토스",
 });
 
 export function stripDiacritics(s) {
@@ -1962,20 +1976,29 @@ export function stripDiacritics(s) {
 }
 
 // 단어형 우선, lemma 폴백, 그리고 마지막으로 자동 음역 폴백.
-export function lookupPron(word, lemma) {
-  if (PRON[word]) return PRON[word];
+function pronFromDict(dict, word) {
+  if (!word) return "";
+  if (dict[word]) return dict[word];
   const strippedWord = stripDiacritics(word);
-  for (const k of Object.keys(PRON)) {
-    if (stripDiacritics(k) === strippedWord) return PRON[k];
+  for (const k of Object.keys(dict)) {
+    if (stripDiacritics(k) === strippedWord) return dict[k];
   }
+  return "";
+}
+
+/** 칩용: 본문에 쓰인 단어형만. lemma 발음 금지. */
+export function surfacePron(word) {
+  return pronFromDict(PRON, word) || transliterate(word);
+}
+
+/** lexicon·표제어용: 단어형 → lemma 폴백 → 자동 음역 */
+export function lookupPron(word, lemma) {
+  const fromWord = pronFromDict(PRON, word);
+  if (fromWord) return fromWord;
   if (lemma) {
-    if (LEMMA_PRON[lemma]) return LEMMA_PRON[lemma];
-    const strippedLemma = stripDiacritics(lemma);
-    for (const k of Object.keys(LEMMA_PRON)) {
-      if (stripDiacritics(k) === strippedLemma) return LEMMA_PRON[k];
-    }
+    const fromLemma = pronFromDict(LEMMA_PRON, lemma) || pronFromDict(PRON, lemma);
+    if (fromLemma) return fromLemma;
   }
-  // 사전 누락 — 자동 음역으로 폴백. 정확도는 떨어지지만 빈 발음보단 낫다.
   return transliterate(word);
 }
 

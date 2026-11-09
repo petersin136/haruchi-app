@@ -2894,7 +2894,8 @@ const TANAKH_OT_EXT = {
   H8527: { gloss: "제자", meanings: ["제자", "학생"] },
   H8537: { gloss: "온전함", meanings: ["완전함"] },
   H8543: { gloss: "어제", meanings: ["어제"] },
-  H8546: { gloss: "온전함", meanings: ["성숙"] },
+  // H8549(온전함)와 번호·철자 혼동 금지 — Strong: execution (as a doom) ← H4191 죽다
+  H8546: { gloss: "죽음", meanings: ["죽임", "사형"] },
   H8548: { gloss: "항상", meanings: ["계속", "항상"] },
   H8549: { gloss: "온전한", meanings: ["흠 없는", "완전한"] },
   H8551: { gloss: "붙들다", meanings: ["꽉 잡다", "붙들다"] },
@@ -7182,7 +7183,8 @@ const TANAKH_OT_EXT7 = {
   H7664: { gloss: "기대", meanings: ["바람"] },
   H8216: { gloss: "낮은 자리", meanings: ["겸손"] },
   H7454: { gloss: "생각", meanings: ["의도"] },
-  H4364: { gloss: "오븐", meanings: ["가마"] },
+  // H8574(화로/가마)와 혼동 금지 — Strong: a (hunter's) net; 사 51:20 「그물」
+  H4364: { gloss: "그물", meanings: ["올무", "그물"] },
   H2106: { gloss: "모퉁이", meanings: ["귀퉁이"] },
   H2210: { gloss: "일으키다", meanings: ["일으켜 세우다"] },
   H6374: { gloss: "두 입(검의 양날)", meanings: ["양날의 끝"] },

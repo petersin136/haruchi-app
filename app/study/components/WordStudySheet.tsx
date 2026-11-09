@@ -107,8 +107,13 @@ function grammarLine(parseKo: string): string {
     .join(" · ");
 }
 
-function usageChips(raw: string): string[] {
-  const t = raw.trim();
+/** 사전 JSON에 문자열 아닌 값이 와도 trim 오류 없이 빈 문자열로 */
+function asText(v: unknown): string {
+  return typeof v === "string" ? v.trim() : "";
+}
+
+function usageChips(raw: unknown): string[] {
+  const t = asText(raw);
   if (!t) return [];
   const parts = t
     .split(/\s*[·・]\s*|\n+/)
@@ -339,23 +344,36 @@ export default function WordStudySheet({
   const pron = top ? lex?.pron || top.pron || "" : active.pron || lex?.pron || "";
   const parseKo = top ? lex?.posKo || "" : active.parseKo || lex?.posKo || "";
   const root = lex?.root;
-  const defKo = (lex?.defKo || "").trim();
-  const defEn = (lex?.defEn || "").trim();
-  const usage = usageChips(lex?.usageKo || lex?.compareKo || "");
+  const defKo = asText(lex?.defKo) || asText(lex?.note);
+  const defEn = asText(lex?.defEn);
+  const usage = usageChips(lex?.usageKo || lex?.compareKo);
+  const noteSrc = asText(lex?.noteSrc);
   const properName =
     /고유명/.test(parseKo) || /고유명/.test(lex?.posKo || "");
   const missingLex = !!top && !lexLoading && !lex;
 
+  const etymRaw = lex?.etym;
+  const etymAsRoot =
+    etymRaw && typeof etymRaw === "object" && !Array.isArray(etymRaw)
+      ? (etymRaw as {
+          lemma?: string;
+          strong?: string;
+          pron?: string;
+          glossKo?: string;
+        })
+      : null;
+  const etymKo =
+    asText(lex?.etymKo) || (typeof etymRaw === "string" ? etymRaw.trim() : "");
+
   const rootShort = shortRootGloss(root?.glossKo);
   const nameMeaning =
-    (lex?.nameMeaning || "").trim() ||
+    asText(lex?.nameMeaning) ||
     (!defKo && properName && rootShort && !isProseGloss(rootShort)
       ? rootShort
       : "");
   const rootNote =
-    (typeof (lex as { rootNote?: string } | null)?.rootNote === "string"
-      ? (lex as { rootNote?: string }).rootNote
-      : "") ||
+    asText((lex as { rootNote?: unknown } | null)?.rootNote) ||
+    etymKo ||
     (root?.glossKo && isProseGloss(root.glossKo) ? root.glossKo : "");
 
   const byBook = lex?.byBook ?? {};
@@ -384,6 +402,18 @@ export default function WordStudySheet({
       strong: root.strong,
       pron: root.pron,
       glossKo: rootShort || undefined,
+    });
+  } else if (
+    etymAsRoot?.lemma &&
+    etymAsRoot.strong &&
+    etymAsRoot.strong !== viewStrong
+  ) {
+    rootChips.push({
+      key: `etym-${etymAsRoot.strong}`,
+      lemma: etymAsRoot.lemma,
+      strong: etymAsRoot.strong,
+      pron: etymAsRoot.pron,
+      glossKo: shortRootGloss(etymAsRoot.glossKo) || undefined,
     });
   }
   const familyChips: (NavEntry & { key: string })[] = [];
@@ -663,6 +693,9 @@ export default function WordStudySheet({
               <section className="study-ws-sec">
                 <h3>단어 정의</h3>
                 <p className="study-ws-def-ko">{defKo}</p>
+                {noteSrc === "auto" ? (
+                  <p className="study-ws-note-src">자동으로 작성된 설명이에요</p>
+                ) : null}
               </section>
             ) : nameMeaning ? (
               <section className="study-ws-sec">

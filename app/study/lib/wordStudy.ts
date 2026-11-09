@@ -46,6 +46,13 @@ export type WordStudyLexicon = {
   strong: string;
   posKo?: string;
   root?: WordStudyRoot | null;
+  /** 어원 설명(한글). 없어도 됨 */
+  etymKo?: string;
+  /**
+   * 구형 어원 필드.
+   * 문자열(설명)이거나 `{ lemma, strong, glossKo }` 뿌리 객체일 수 있음.
+   */
+  etym?: string | WordStudyRoot;
   family?: WordStudyFamilyItem[];
   defKo?: string;
   defEn?: string;
@@ -56,6 +63,8 @@ export type WordStudyLexicon = {
   compare?: string;
   compareKo?: string;
   note?: string;
+  /** "auto" 이면 정의 아래 안내 문구 */
+  noteSrc?: string;
   countNT?: number;
   countOT?: number;
   count1John?: number;
@@ -127,34 +136,67 @@ function normalizeStrong(s: string): string {
   return digits ? `G${digits[1]}` : t;
 }
 
+function verseEntries(
+  verses: unknown,
+): { ref: number; list: unknown[]; meta: Record<string, unknown> }[] {
+  const out: { ref: number; list: unknown[]; meta: Record<string, unknown> }[] =
+    [];
+  if (!verses) return out;
+  if (Array.isArray(verses)) {
+    for (const verse of verses) {
+      if (!verse || typeof verse !== "object") continue;
+      const v = verse as Record<string, unknown>;
+      const ref = num(v.n);
+      if (!ref) continue;
+      const list = Array.isArray(v.words)
+        ? (v.words as unknown[])
+        : Array.isArray(v.tokens)
+          ? (v.tokens as unknown[])
+          : [];
+      out.push({ ref, list, meta: v });
+    }
+    return out;
+  }
+  if (typeof verses !== "object") return out;
+  for (const [k, val] of Object.entries(verses as Record<string, unknown>)) {
+    if (!val || typeof val !== "object") continue;
+    if (Array.isArray(val)) {
+      const ref = Number(k);
+      if (!Number.isInteger(ref) || ref < 1) continue;
+      out.push({ ref, list: val, meta: {} });
+      continue;
+    }
+    const v = val as Record<string, unknown>;
+    const refFromN = num(v.n);
+    const refFromKey = Number(k);
+    const ref =
+      refFromN > 0
+        ? refFromN
+        : Number.isInteger(refFromKey) && refFromKey >= 1
+          ? refFromKey
+          : 0;
+    if (!ref) continue;
+    const list = Array.isArray(v.words)
+      ? (v.words as unknown[])
+      : Array.isArray(v.tokens)
+        ? (v.tokens as unknown[])
+        : [];
+    out.push({ ref, list, meta: v });
+  }
+  return out;
+}
+
 function readVerseMeta(raw: ChapterFile): Record<number, VerseWordStudyMeta> {
   const out: Record<number, VerseWordStudyMeta> = {};
   if (!raw || typeof raw !== "object" || Array.isArray(raw)) return out;
   const verses = (raw as { verses?: unknown }).verses;
-  if (!Array.isArray(verses)) return out;
-  for (const verse of verses) {
-    if (!verse || typeof verse !== "object") continue;
-    const v = verse as {
-      n?: unknown;
-      words?: unknown[];
-      tokens?: unknown[];
-      split?: unknown;
-      splitWith?: unknown;
-      wordSplit?: unknown;
-    };
-    const ref = num(v.n);
-    if (!ref) continue;
-    const list = Array.isArray(v.words)
-      ? v.words
-      : Array.isArray(v.tokens)
-        ? v.tokens
-        : [];
-    const splitWith = Array.isArray(v.splitWith)
-      ? v.splitWith.filter((n): n is number => typeof n === "number" && n > 0)
+  for (const { ref, list, meta } of verseEntries(verses)) {
+    const splitWith = Array.isArray(meta.splitWith)
+      ? meta.splitWith.filter((n): n is number => typeof n === "number" && n > 0)
       : [];
     out[ref] = {
       empty: list.length === 0,
-      split: !!v.split || !!v.wordSplit || splitWith.length >= 2,
+      split: !!meta.split || !!meta.wordSplit || splitWith.length >= 2,
       splitWith,
     };
   }
@@ -181,48 +223,25 @@ function normalizeChapter(raw: ChapterFile): WordStudyToken[] {
       .filter((t): t is WordStudyToken => !!t);
   }
 
-  const out: WordStudyToken[] = [];
-
-  // { verses: [{ n, words: [...] }, ...] }
-  if (Array.isArray(o.verses)) {
-    for (const verse of o.verses) {
-      if (!verse || typeof verse !== "object") continue;
-      const v = verse as { n?: unknown; words?: unknown[]; tokens?: unknown[] };
-      const ref = num(v.n) || 0;
-      const list = Array.isArray(v.words)
-        ? v.words
-        : Array.isArray(v.tokens)
-          ? v.tokens
-          : [];
+  // verses: 배열 | { "0": { n, words }, ... } | { "1": [...] }
+  // 객체 키(0,1,…)가 아니라 각 항목의 n / 토큰 ref 를 절 번호로 쓴다.
+  if (o.verses != null) {
+    const out: WordStudyToken[] = [];
+    for (const { ref, list } of verseEntries(o.verses)) {
       list.forEach((t, i) => {
-        const tok = asToken(t, ref || 1, i);
-        if (tok) out.push({ ...tok, ref: ref || tok.ref });
+        const tok = asToken(t, ref, i);
+        if (tok) out.push({ ...tok, ref });
       });
     }
-    return out.sort((a, b) => a.ref - b.ref || a.i - b.i);
+    if (out.length > 0) {
+      return out.sort((a, b) => a.ref - b.ref || a.i - b.i);
+    }
   }
 
-  // { "1": [...], "2": [...] } or verses: { "1": [...] }
-  const verses =
-    o.verses && typeof o.verses === "object" && !Array.isArray(o.verses)
-      ? (o.verses as Record<string, unknown>)
-      : o;
-
-  for (const [k, val] of Object.entries(verses)) {
-    const ref = Number(k);
-    if (!Number.isInteger(ref) || ref < 1) continue;
-    const list = Array.isArray(val)
-      ? val
-      : val &&
-          typeof val === "object" &&
-          Array.isArray((val as { tokens?: unknown }).tokens)
-        ? (val as { tokens: unknown[] }).tokens
-        : val &&
-            typeof val === "object" &&
-            Array.isArray((val as { words?: unknown }).words)
-          ? (val as { words: unknown[] }).words
-          : null;
-    if (!list) continue;
+  // 최상위가 절 맵인 경우
+  const out: WordStudyToken[] = [];
+  for (const { ref, list } of verseEntries(o)) {
+    if (ref < 1) continue;
     list.forEach((t, i) => {
       const tok = asToken(t, ref, i);
       if (tok) out.push({ ...tok, ref });
@@ -428,7 +447,14 @@ export function familyItem(f: WordStudyFamilyItem): {
   pron?: string;
   glossKo?: string;
 } {
-  return typeof f === "string" ? { lemma: f } : f;
+  if (typeof f === "string") return { lemma: f };
+  if (!f || typeof f !== "object") return { lemma: "" };
+  return {
+    lemma: typeof f.lemma === "string" ? f.lemma : "",
+    strong: typeof f.strong === "string" ? f.strong : undefined,
+    pron: typeof f.pron === "string" ? f.pron : undefined,
+    glossKo: typeof f.glossKo === "string" ? f.glossKo : undefined,
+  };
 }
 
 function normalizeKo(s: string): string {
@@ -549,14 +575,14 @@ export function matchTokenByGlossDetailed(
   };
 }
 
-/** 선택 한글 ↔ glossKo 유사도로 그 절 단어 하나 고르기 */
+/** 선택 한글 ↔ glossKo 유사도로 그 절 단어 하나 고르기(실패 시 null, nearest 없음) */
 export function matchTokenByGloss(
   tokens: WordStudyToken[],
   verse: number,
   selectedKo: string,
+  opts?: { titleShift?: boolean; charIndex?: number; verseLen?: number },
 ): WordStudyToken | null {
-  const r = matchTokenByGlossDetailed(tokens, verse, selectedKo);
-  return r.token ?? r.nearest;
+  return matchTokenByGlossDetailed(tokens, verse, selectedKo, opts).token;
 }
 
 export function tokensInVerse(

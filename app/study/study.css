@@ -152,12 +152,12 @@
 
 .study-page {
   position: relative;
-  /* 17px × 2.55 — 행간 메모 22px */
-  --study-lh: calc(17px * 2.55);
+  /* 17px × 2.4 — 행간 메모 22px */
+  --study-lh: calc(17px * 2.4);
   /* 장 제목 줄 위 반행간(+글꼴 위 여백)만큼 당겨 선 아래 24px를 글자 기준으로 */
   margin-top: -14.5px;
   padding: 0 18px 32px;
-  line-height: 2.55;
+  line-height: 2.4;
   font-size: 17px;
   text-align: justify;
   text-align-last: left;
@@ -235,7 +235,7 @@
 }
 
 .study-para {
-  margin: 0 0 0.8em;
+  margin: 0.6em 0 0;
   padding: 0;
   text-indent: 1em;
   text-align: justify;
@@ -243,6 +243,11 @@
   word-break: normal;
   line-break: strict;
   overflow-wrap: anywhere;
+}
+
+/* 쪽·본문 맨 위 단락은 위 간격 없음 */
+.study-body > .study-para:first-child {
+  margin-top: 0;
 }
 
 .study-para:last-child {
@@ -437,8 +442,8 @@ html:has(.study-root) body::-webkit-scrollbar,
   padding-bottom: 24px;
   font-family: var(--reader-font-family, inherit);
   font-size: calc(17px * var(--reader-size-scale, 1));
-  --study-lh: calc(17px * var(--reader-size-scale, 1) * 2.55);
-  line-height: 2.55;
+  --study-lh: calc(17px * var(--reader-size-scale, 1) * 2.4);
+  line-height: 2.4;
 }
 
 .study-root.is-embedded .study-io {
@@ -571,7 +576,7 @@ html:has(.study-root) body::-webkit-scrollbar,
   .study-page {
     padding-left: 18px;
     padding-right: 18px;
-    line-height: 2.55;
+    line-height: 2.4;
     font-size: 17px;
   }
 
@@ -1232,6 +1237,15 @@ html:has(.study-root) body::-webkit-scrollbar,
   color: #a08c78;
   text-box-trim: trim-both;
   text-box-edge: text alphabetic;
+}
+
+.study-ws-note-src {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #a89a86;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
 }
 
 .study-ws-etym-chips {
