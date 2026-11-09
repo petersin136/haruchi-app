@@ -18,7 +18,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { PRON, LEMMA_PRON, lookupPron, stripDiacritics } from "./lib/greek-pron.mjs";
+import { PRON, LEMMA_PRON, lookupPron, surfacePron, stripDiacritics } from "./lib/greek-pron.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
@@ -731,7 +731,8 @@ function tokenToWord(t, ch, verseN, i, lemmaIndex, lemmaStrong, uniqueLemmas) {
     lemmaStrong.get(lemma) ||
     "";
   if (lemma) uniqueLemmas.add(lemma);
-  const pron = t.p || lookupPron(t.w || "", lemma) || t.lemmaP || "";
+  // 칩 pron은 본문 표면형만 (lemma 발음·bible-v2의 lemmaP 금지)
+  const pron = surfacePron(t.w || "") || "";
   return {
     ref: `${ch}:${verseN}`,
     i,
@@ -771,7 +772,7 @@ function bibleDataTokensToWords(tokens, ch, verseN, lemmaIndex, lemmaStrong, uni
       }
     }
     if (lemma) uniqueLemmas.add(lemma);
-    const pron = t.p || lookupPron(w, lemma) || "";
+    const pron = surfacePron(w) || "";
     words.push({
       ref: `${ch}:${verseN}`,
       i,

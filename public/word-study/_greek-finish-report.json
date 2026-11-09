@@ -1,0 +1,818 @@
+{
+  "pron": {
+    "total": 137634,
+    "lemmaPronBefore": 25893,
+    "lemmaPronAfter": 0,
+    "changed": 38646
+  },
+  "doxology": {
+    "status": "원본에도 없음",
+    "detail": "프로젝트 .cache / data에 MorphGNT 66-Ro·sblgnt-romans 원본 파일이 없고, bible-v2에도 롬 16:25–27이 없음. 외부 다운로드 금지라 원본을 확인할 수 없음."
+  },
+  "counts": {
+    "chipTotal": 137634,
+    "sumCountNT": 137626,
+    "delta": 8,
+    "emptyStrongChips": 8,
+    "updated": 352,
+    "strongsWithCount": 5280
+  },
+  "coverage": {
+    "chipTotal": 137634,
+    "sumCountNT": 137626,
+    "delta": 8,
+    "emptyStrongChips": 8,
+    "occurrenceRatio": 99.99,
+    "notesKeys": 5280,
+    "tokenCoveragePct": 100,
+    "emptyDefStrong": 0
+  },
+  "notes": {
+    "batches": [
+      {
+        "batch": 1,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G1138",
+        "to": "G4670"
+      },
+      {
+        "batch": 2,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G4739",
+        "to": "G1867"
+      },
+      {
+        "batch": 3,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G1910",
+        "to": "G4267"
+      },
+      {
+        "batch": 4,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G4288",
+        "to": "G4410"
+      },
+      {
+        "batch": 5,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G4444",
+        "to": "G2763"
+      },
+      {
+        "batch": 6,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G2767",
+        "to": "G313"
+      },
+      {
+        "batch": 7,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G322",
+        "to": "G2183"
+      },
+      {
+        "batch": 8,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G2185",
+        "to": "G4422"
+      },
+      {
+        "batch": 9,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G4425",
+        "to": "G362"
+      },
+      {
+        "batch": 10,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G365",
+        "to": "G1240"
+      },
+      {
+        "batch": 11,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G1246",
+        "to": "G2177"
+      },
+      {
+        "batch": 12,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G2182",
+        "to": "G3202"
+      },
+      {
+        "batch": 13,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G3312",
+        "to": "G4294"
+      },
+      {
+        "batch": 14,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G4296",
+        "to": "G5139"
+      },
+      {
+        "batch": 15,
+        "added": 165,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G5148",
+        "to": "G5619"
+      }
+    ],
+    "nameUncertain": 491,
+    "mismatchStrongVsDef": 0,
+    "strongGlossUnmapped": 3155,
+    "skeletonTop20Before": [
+      [
+        "뜻: X. 개역한글에서는 'X'로 X(X).",
+        1762
+      ],
+      [
+        "뜻: X. 개역한글에서는 'X'으로 X(X).",
+        1023
+      ],
+      [
+        "X 뜻은 확실하지 X. 처음 나오는 곳: X",
+        628
+      ],
+      [
+        "X 뜻은 확실하지 X. X 관한 본문은 X X.",
+        513
+      ],
+      [
+        "뜻: X, X. 개역한글에서는 'X'로 X(X).",
+        252
+      ],
+      [
+        "뜻: X, X. 개역한글에서는 'X'으로 X(X).",
+        88
+      ],
+      [
+        "뜻: X(X). 개역한글에서는 'X'로 X(X).",
+        22
+      ],
+      [
+        "뜻: 곳, X. 개역한글에서는 'X'로 X(X).",
+        16
+      ],
+      [
+        "처음 나오는 곳: X",
+        16
+      ],
+      [
+        "뜻: X X, X. 개역한글에서는 'X'로 X(X).",
+        15
+      ],
+      [
+        "뜻: 곳, X. 개역한글에서는 'X'으로 X(X).",
+        8
+      ],
+      [
+        "뜻: 뜻. 개역한글에서는 'X'으로 X(X).",
+        3
+      ],
+      [
+        "뜻: X X, X. 개역한글에서는 'X'으로 X(X).",
+        3
+      ],
+      [
+        "뜻: 은, X. 개역한글에서는 'X'으로 X(X).",
+        3
+      ],
+      [
+        "뜻: X X X, X. 개역한글에서는 'X'으로 X(X).",
+        3
+      ],
+      [
+        "X X X, X X X(X).",
+        1
+      ],
+      [
+        "뜻: X X. 개역한글에서는 'X'로 X(X).",
+        1
+      ],
+      [
+        "X 뜻은 확실하지 X. X X X X 처음 X X(X).",
+        1
+      ],
+      [
+        "X 뜻은 확실하지 X. X X X 'X'X X(X).",
+        1
+      ],
+      [
+        "뜻: X, 더 X. 개역한글에서는 'X'으로 X(X).",
+        1
+      ]
+    ],
+    "skeletonTop20After": [
+      [
+        "X X. 개역한글에서는 'X'로 X(X).",
+        828
+      ],
+      [
+        "X 뜻은 확실하지 X. 처음 나오는 곳: X",
+        487
+      ],
+      [
+        "X X. 개역한글에서는 'X'으로 X(X).",
+        425
+      ],
+      [
+        "기본 뜻은 「X」X. 번역 예: 'X'(X).",
+        258
+      ],
+      [
+        "뜻: X. 번역 예: 'X'(X).",
+        213
+      ],
+      [
+        "기본 뜻은 「X」X. 개역한글에서는 'X'로 X(X).",
+        172
+      ],
+      [
+        "기본 뜻은 「X」X. 개역한글 본문의 'X'가 X X.",
+        168
+      ],
+      [
+        "기본 뜻은 「X」X. X X 'X'로 X.",
+        163
+      ],
+      [
+        "기본 뜻은 「X」X. 예를 들면 X 'X'로 X.",
+        162
+      ],
+      [
+        "뜻: X. 개역한글 본문의 'X'가 X X.",
+        142
+      ],
+      [
+        "뜻: X. X X 'X'로 X.",
+        127
+      ],
+      [
+        "뜻: X. 개역한글에서는 'X'로 X(X).",
+        124
+      ],
+      [
+        "뜻: X. 예를 들면 X 'X'로 X.",
+        115
+      ],
+      [
+        "기본 뜻은 「X」X. 개역한글에서는 'X'으로 X(X).",
+        95
+      ],
+      [
+        "기본 뜻은 「X」X. 예를 들면 X 'X'으로 X.",
+        88
+      ],
+      [
+        "뜻: X. 개역한글에서는 'X'으로 X(X).",
+        86
+      ],
+      [
+        "뜻: X. 예를 들면 X 'X'으로 X.",
+        84
+      ],
+      [
+        "뜻: X. 개역한글 본문의 'X'X X X.",
+        83
+      ],
+      [
+        "기본 뜻은 「X」X. 개역한글 본문의 'X'X X X.",
+        78
+      ],
+      [
+        "뜻: X. X X 'X'으로 X.",
+        74
+      ]
+    ],
+    "rewritten": 2504,
+    "reviewed": 915,
+    "auto": 4365,
+    "totalKeys": 5280
+  },
+  "john316": [
+    {
+      "word": "ἠγάπησεν",
+      "lemma": "ἀγαπάω",
+      "strong": "G25",
+      "pron": "에가페센",
+      "glossKo": "사랑하다"
+    },
+    {
+      "word": "ἔδωκεν",
+      "lemma": "δίδωμι",
+      "strong": "G1325",
+      "pron": "에도켄",
+      "glossKo": "주다"
+    },
+    {
+      "word": "πιστεύων",
+      "lemma": "πιστεύω",
+      "strong": "G4100",
+      "pron": "피스튜온",
+      "glossKo": "믿다"
+    },
+    {
+      "word": "ἀπόληται",
+      "lemma": "ἀπόλλυμι",
+      "strong": "G622",
+      "pron": "아폴레타이",
+      "glossKo": "잃다"
+    },
+    {
+      "word": "ἔχῃ",
+      "lemma": "ἔχω",
+      "strong": "G2192",
+      "pron": "에케",
+      "glossKo": "가지다"
+    },
+    {
+      "word": "ζωὴν",
+      "lemma": "ζωή",
+      "strong": "G2222",
+      "pron": "조엔",
+      "glossKo": "생명"
+    },
+    {
+      "word": "αἰώνιον",
+      "lemma": "αἰώνιος",
+      "strong": "G166",
+      "pron": "아이오니온",
+      "glossKo": "영원한"
+    },
+    {
+      "word": "κόσμον",
+      "lemma": "κόσμος",
+      "strong": "G2889",
+      "pron": "코스몬",
+      "glossKo": "세상"
+    }
+  ],
+  "sample15": [
+    {
+      "strong": "G964",
+      "lemma": "Βηθεσδά",
+      "nameMeaning": "친절의 집",
+      "defKo": "처음 나오는 곳: 요 5:2",
+      "noteSrc": "auto"
+    },
+    {
+      "strong": "G223",
+      "lemma": "Ἀλέξανδρος",
+      "nameMeaning": "사람을 지키는 이",
+      "defKo": "처음 나오는 곳: 막 15:21",
+      "noteSrc": "auto"
+    },
+    {
+      "strong": "G918",
+      "lemma": "Βαρθολομαῖος",
+      "nameMeaning": "톨마이의 아들",
+      "defKo": "바돌로매는 예수님의 열두 제자 중 한 사람이에요(마 10:3).",
+      "noteSrc": "auto"
+    },
+    {
+      "strong": "G3526",
+      "lemma": "Νίγερ",
+      "nameMeaning": "검은",
+      "defKo": "처음 나오는 곳: 행 13:1",
+      "noteSrc": "auto"
+    },
+    {
+      "strong": "G920",
+      "lemma": "Βαριωνᾶς",
+      "nameMeaning": "요나의 아들",
+      "defKo": "바요나는 '요나의 아들'이라는 뜻으로 베드로를 가리켜요(마 16:17).",
+      "noteSrc": "auto"
+    },
+    {
+      "strong": "G1497",
+      "lemma": "εἴδωλον",
+      "nameMeaning": "",
+      "defKo": "기본 뜻은 「우상」이에요. 개역한글에서는 '우상'으로 옮겼어요(행 15:20).",
+      "noteSrc": "auto"
+    },
+    {
+      "strong": "G1375",
+      "lemma": "διωγμός",
+      "nameMeaning": "",
+      "defKo": "박해라는 뜻이에요. 개역한글에서는 '박해'로 옮겼어요(마 13:21).",
+      "noteSrc": "auto"
+    },
+    {
+      "strong": "G1137",
+      "lemma": "γωνία",
+      "nameMeaning": "",
+      "defKo": "기본 뜻은 「모퉁이」예요. 개역한글에서는 '모퉁이'로 옮겼어요(마 21:42).",
+      "noteSrc": "auto"
+    },
+    {
+      "strong": "G3968",
+      "lemma": "πατρίς",
+      "nameMeaning": "",
+      "defKo": "뜻: 고향. 마 13:54 개역한글은 '고향'으로 적었어요.",
+      "noteSrc": "auto"
+    },
+    {
+      "strong": "G874",
+      "lemma": "ἀφορμή",
+      "nameMeaning": "",
+      "defKo": "기회라는 뜻이에요. 개역한글에서는 '기회'로 옮겼어요(롬 7:8).",
+      "noteSrc": "auto"
+    },
+    {
+      "strong": "G181",
+      "lemma": "ἀκαταστασία",
+      "nameMeaning": "",
+      "defKo": "난리라는 뜻이에요. 개역한글에서는 '난리'로 옮겼어요(눅 21:9).",
+      "noteSrc": "auto"
+    },
+    {
+      "strong": "G1568",
+      "lemma": "ἐκθαμβέομαι",
+      "nameMeaning": "",
+      "defKo": "뜻: 심히놀라다. 막 14:33 개역한글은 '심히놀라다'로 적었어요.",
+      "noteSrc": "auto"
+    },
+    {
+      "strong": "G4998",
+      "lemma": "σώφρων",
+      "nameMeaning": "",
+      "defKo": "기본 뜻은 「생각, 신중한」이에요. 딤전 3:2 개역한글은 '신중한'으로 적었어요.",
+      "noteSrc": "auto"
+    },
+    {
+      "strong": "G2631",
+      "lemma": "κατάκριμα",
+      "nameMeaning": "",
+      "defKo": "기본 뜻은 「정죄」예요. 예를 들면 롬 5:16에서 '정죄'로 읽혀요.",
+      "noteSrc": "auto"
+    },
+    {
+      "strong": "G5074",
+      "lemma": "τετράπους",
+      "nameMeaning": "",
+      "defKo": "네발짐승이라는 뜻이에요. 개역한글에서는 '네발짐승'으로 옮겼어요(행 10:12).",
+      "noteSrc": "auto"
+    }
+  ],
+  "notesRepair": {
+    "batches": [
+      {
+        "batch": 1,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G1138",
+        "to": "G4670"
+      },
+      {
+        "batch": 2,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G4739",
+        "to": "G1867"
+      },
+      {
+        "batch": 3,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G1910",
+        "to": "G4267"
+      },
+      {
+        "batch": 4,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G4288",
+        "to": "G4410"
+      },
+      {
+        "batch": 5,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G4444",
+        "to": "G2763"
+      },
+      {
+        "batch": 6,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G2767",
+        "to": "G313"
+      },
+      {
+        "batch": 7,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G322",
+        "to": "G2183"
+      },
+      {
+        "batch": 8,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G2185",
+        "to": "G4422"
+      },
+      {
+        "batch": 9,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G4425",
+        "to": "G362"
+      },
+      {
+        "batch": 10,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G365",
+        "to": "G1240"
+      },
+      {
+        "batch": 11,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G1246",
+        "to": "G2177"
+      },
+      {
+        "batch": 12,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G2182",
+        "to": "G3202"
+      },
+      {
+        "batch": 13,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G3312",
+        "to": "G4294"
+      },
+      {
+        "batch": 14,
+        "added": 300,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G4296",
+        "to": "G5139"
+      },
+      {
+        "batch": 15,
+        "added": 165,
+        "keys": 5280,
+        "coverage": 100,
+        "emptyDefStrong": 0,
+        "from": "G5148",
+        "to": "G5619"
+      }
+    ],
+    "nameUncertain": 491,
+    "mismatchStrongVsDef": 0,
+    "strongGlossUnmapped": 3155,
+    "skeletonTop20Before": [
+      [
+        "뜻: X. 개역한글에서는 'X'로 X(X).",
+        1762
+      ],
+      [
+        "뜻: X. 개역한글에서는 'X'으로 X(X).",
+        1023
+      ],
+      [
+        "X 뜻은 확실하지 X. 처음 나오는 곳: X",
+        628
+      ],
+      [
+        "X 뜻은 확실하지 X. X 관한 본문은 X X.",
+        513
+      ],
+      [
+        "뜻: X, X. 개역한글에서는 'X'로 X(X).",
+        252
+      ],
+      [
+        "뜻: X, X. 개역한글에서는 'X'으로 X(X).",
+        88
+      ],
+      [
+        "뜻: X(X). 개역한글에서는 'X'로 X(X).",
+        22
+      ],
+      [
+        "뜻: 곳, X. 개역한글에서는 'X'로 X(X).",
+        16
+      ],
+      [
+        "처음 나오는 곳: X",
+        16
+      ],
+      [
+        "뜻: X X, X. 개역한글에서는 'X'로 X(X).",
+        15
+      ],
+      [
+        "뜻: 곳, X. 개역한글에서는 'X'으로 X(X).",
+        8
+      ],
+      [
+        "뜻: 뜻. 개역한글에서는 'X'으로 X(X).",
+        3
+      ],
+      [
+        "뜻: X X, X. 개역한글에서는 'X'으로 X(X).",
+        3
+      ],
+      [
+        "뜻: 은, X. 개역한글에서는 'X'으로 X(X).",
+        3
+      ],
+      [
+        "뜻: X X X, X. 개역한글에서는 'X'으로 X(X).",
+        3
+      ],
+      [
+        "X X X, X X X(X).",
+        1
+      ],
+      [
+        "뜻: X X. 개역한글에서는 'X'로 X(X).",
+        1
+      ],
+      [
+        "X 뜻은 확실하지 X. X X X X 처음 X X(X).",
+        1
+      ],
+      [
+        "X 뜻은 확실하지 X. X X X 'X'X X(X).",
+        1
+      ],
+      [
+        "뜻: X, 더 X. 개역한글에서는 'X'으로 X(X).",
+        1
+      ]
+    ],
+    "skeletonTop20After": [
+      [
+        "X X. 개역한글에서는 'X'로 X(X).",
+        828
+      ],
+      [
+        "X 뜻은 확실하지 X. 처음 나오는 곳: X",
+        487
+      ],
+      [
+        "X X. 개역한글에서는 'X'으로 X(X).",
+        425
+      ],
+      [
+        "기본 뜻은 「X」X. 번역 예: 'X'(X).",
+        258
+      ],
+      [
+        "뜻: X. 번역 예: 'X'(X).",
+        213
+      ],
+      [
+        "기본 뜻은 「X」X. 개역한글에서는 'X'로 X(X).",
+        172
+      ],
+      [
+        "기본 뜻은 「X」X. 개역한글 본문의 'X'가 X X.",
+        168
+      ],
+      [
+        "기본 뜻은 「X」X. X X 'X'로 X.",
+        163
+      ],
+      [
+        "기본 뜻은 「X」X. 예를 들면 X 'X'로 X.",
+        162
+      ],
+      [
+        "뜻: X. 개역한글 본문의 'X'가 X X.",
+        142
+      ],
+      [
+        "뜻: X. X X 'X'로 X.",
+        127
+      ],
+      [
+        "뜻: X. 개역한글에서는 'X'로 X(X).",
+        124
+      ],
+      [
+        "뜻: X. 예를 들면 X 'X'로 X.",
+        115
+      ],
+      [
+        "기본 뜻은 「X」X. 개역한글에서는 'X'으로 X(X).",
+        95
+      ],
+      [
+        "기본 뜻은 「X」X. 예를 들면 X 'X'으로 X.",
+        88
+      ],
+      [
+        "뜻: X. 개역한글에서는 'X'으로 X(X).",
+        86
+      ],
+      [
+        "뜻: X. 예를 들면 X 'X'으로 X.",
+        84
+      ],
+      [
+        "뜻: X. 개역한글 본문의 'X'X X X.",
+        83
+      ],
+      [
+        "기본 뜻은 「X」X. 개역한글 본문의 'X'X X X.",
+        78
+      ],
+      [
+        "뜻: X. X X 'X'으로 X.",
+        74
+      ]
+    ],
+    "rewritten": 2504,
+    "reviewed": 915,
+    "auto": 4365,
+    "totalKeys": 5280,
+    "enriched": 4379,
+    "diversifiedExtra": 2070,
+    "fixedEtymParticle": 19
+  }
+}

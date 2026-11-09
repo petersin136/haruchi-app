@@ -1991,12 +1991,18 @@ export function surfacePron(word) {
   return pronFromDict(PRON, word) || transliterate(word);
 }
 
+/** 표제어(lemma) 발음만 — lexicon용. 칩에 쓰지 말 것. */
+export function lemmaPron(lemma) {
+  if (!lemma) return "";
+  return pronFromDict(LEMMA_PRON, lemma) || pronFromDict(PRON, lemma) || transliterate(lemma);
+}
+
 /** lexicon·표제어용: 단어형 → lemma 폴백 → 자동 음역 */
 export function lookupPron(word, lemma) {
   const fromWord = pronFromDict(PRON, word);
   if (fromWord) return fromWord;
   if (lemma) {
-    const fromLemma = pronFromDict(LEMMA_PRON, lemma) || pronFromDict(PRON, lemma);
+    const fromLemma = lemmaPron(lemma);
     if (fromLemma) return fromLemma;
   }
   return transliterate(word);
@@ -2062,79 +2068,98 @@ const TR = {
   ψ: { c: "ㅍ", solo: "프스" },
 };
 
-// 디프통: 두 모음을 한 음절(이중모음) 또는 두 음절로.
+// 디프통: 값 = 중성 문자열(한 음절) 또는 "ㅏㅣ"처럼 두 중성(두 음절).
+// ευ + 모음 → ㅠ(유) — πιστεύων = 피스튜온.
 const DIPHTHONGS = {
-  αι: "ㅐ",   // 아이 → ㅐ 한 음절(또는 두 음절 "아이")
-  ει: "ㅔㅣ", // "에이" (두 음절)
-  οι: "ㅗㅣ", // "오이"
+  αι: "ㅏㅣ", // 아이
+  ει: "ㅔㅣ", // 에이
+  οι: "ㅗㅣ", // 오이
   υι: "ㅟㅣ",
-  αυ: "ㅏㅜ", // "아우"
-  ευ: "ㅔㅜ", // "에우"
+  αυ: "ㅏㅜ", // 아우
+  ευ: "ㅔㅜ", // 에우 (기본); 모음 앞은 아래 분기에서 ㅠ
   ηυ: "ㅔㅜ",
-  ου: "ㅜ",  // "우" (한 음절)
+  ου: "ㅜ",
 };
+const VOWELS = new Set(["α", "ε", "η", "ι", "ο", "ω", "υ"]);
 
 function transliterate(rawWord) {
   if (!rawWord) return "";
-  const word = stripDiacritics(rawWord).toLowerCase();
+  const word = stripDiacritics(rawWord).toLowerCase().replace(/ς/g, "σ");
   if (!word.match(/[\u0370-\u03ff\u1f00-\u1fff]/)) return "";
 
-  // 단어를 음절 단위로 합쳐 나간다. 한 음절 = (선택)자음 + 모음(또는 디프통).
-  const out = [];
+/** @type {({ kind: "syl", init: string, med: string, fin: string } | { kind: "solo", text: string })[]} */
+  const parts = [];
   let i = 0;
+
+  function pushSyl(init, med) {
+    parts.push({ kind: "syl", init, med, fin: "" });
+  }
+
   while (i < word.length) {
     const ch = word[i];
     const next = word[i + 1];
 
-    // 자음 시작?
+    // 어말 ν → 직전 음절 받침
+    if (ch === "ν" && i === word.length - 1 && parts.length) {
+      const last = parts[parts.length - 1];
+      if (last.kind === "syl") last.fin = "ㄴ";
+      else parts.push({ kind: "solo", text: "ㄴ" });
+      i += 1;
+      continue;
+    }
+
     if (TR[ch] && TR[ch].c) {
       const cons = TR[ch].c;
-      // 다음 두 글자가 디프통인지 확인.
       if (next && TR[next] && TR[next].v) {
         const di = word.slice(i + 1, i + 3);
+        const afterDi = word[i + 3];
+        if (di === "ευ" && afterDi && VOWELS.has(afterDi)) {
+          pushSyl(cons, "ㅠ");
+          i += 3;
+          continue;
+        }
         if (DIPHTHONGS[di]) {
           const v = DIPHTHONGS[di];
-          if (v.length === 1) {
-            out.push(syllable(cons, v));
-          } else {
-            // 두 음절: cons + v[0], 이어서 ㅇ + v[1]
-            out.push(syllable(cons, v[0]));
-            for (const extra of v.slice(1)) out.push(syllable("ㅇ", extra));
+          if (v.length === 1) pushSyl(cons, v);
+          else {
+            pushSyl(cons, v[0]);
+            for (const extra of v.slice(1)) pushSyl("ㅇ", extra);
           }
           i += 3;
           continue;
         }
-        // 단순 자음+모음
-        out.push(syllable(cons, TR[next].v));
+        pushSyl(cons, TR[next].v);
         i += 2;
         continue;
       }
-      // 자음 다음에 모음 없음(어말이거나 다음 자음) — 자음 단독 발음 (예: γ → 그)
-      out.push(TR[ch].solo);
+      parts.push({ kind: "solo", text: TR[ch].solo });
       i += 1;
       continue;
     }
 
-    // 모음 시작 (단어 첫 모음 또는 자음 뒤 단독 모음)
     if (TR[ch] && TR[ch].v) {
       const di = word.slice(i, i + 2);
-      if (DIPHTHONGS[di]) {
-        const v = DIPHTHONGS[di];
-        if (v.length === 1) {
-          out.push(syllable("ㅇ", v));
-        } else {
-          for (const extra of v) out.push(syllable("ㅇ", extra));
-        }
+      const afterDi = word[i + 2];
+      if (di === "ευ" && afterDi && VOWELS.has(afterDi)) {
+        pushSyl("ㅇ", "ㅠ");
         i += 2;
         continue;
       }
-      out.push(syllable("ㅇ", TR[ch].v));
+      if (DIPHTHONGS[di]) {
+        const v = DIPHTHONGS[di];
+        if (v.length === 1) pushSyl("ㅇ", v);
+        else for (const extra of v) pushSyl("ㅇ", extra);
+        i += 2;
+        continue;
+      }
+      pushSyl("ㅇ", TR[ch].v);
       i += 1;
       continue;
     }
-
-    // 알 수 없는 글자 — 건너뜀.
     i += 1;
   }
-  return out.join("");
+
+  return parts
+    .map((p) => (p.kind === "solo" ? p.text : syllable(p.init, p.med, p.fin || "")))
+    .join("");
 }

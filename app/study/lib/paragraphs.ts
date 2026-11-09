@@ -30,6 +30,13 @@ export function loadParagraphMap(bookId: string): Promise<ParagraphMap | null> {
   })();
 
   cache.set(bookId, p);
+  // 실패(null)는 캐시하지 않음 — 파일이 나중에 생기거나 일시 오류 후 재시도 가능
+  p.then(
+    (v) => {
+      if (v == null) cache.delete(bookId);
+    },
+    () => cache.delete(bookId),
+  );
   return p;
 }
 

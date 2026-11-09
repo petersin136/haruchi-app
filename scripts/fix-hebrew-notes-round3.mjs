@@ -100,10 +100,12 @@ const NAME_HAND = {
   H669: "두 배의 열매",
   H3058: "여호와는 그분이시다",
   H223: "여호와의 불꽃",
+  H3068: "스스로 계신 분, 영원하신 분",
+  H3130: "더하리라",
 };
 
 const BAD_AUTO =
-  /두는 편이 자연스러워요|곁뜻으로 .+도 잡혀 있어요|칩 기본 번역은|읽는 경우가 많아요|옮기는 동사예요|이야기의 흐름|개역한글에 나오는 인명|개역한글에 나오는 지명|가나안\/팔레스타인에 있는 지명|족보·대화·왕조/;
+  /두는 편이 자연스러워요|곁뜻으로|칩 기본 번역은|읽는 경우가 많아요|옮기는 동사예요|이야기의 흐름|개역한글에 나오는 인명|개역한글에 나오는 지명|가나안\/팔레스타인에 있는 지명|족보·대화·왕조|가리키는 명사\(또는 이름·개념\)|같은 자리에서 모습을 볼 수 있/;
 
 function hasBatchim(word) {
   const ch = String(word || "").replace(/[^가-힣]/g, "").slice(-1);
@@ -253,108 +255,113 @@ function translateContentEn(en) {
   if (!s) return "";
   const first = s.split(/[;,]|i\.e\.|figuratively|literally|causatively/)[0].trim();
   const map = [
-    [/hunter'?s? net|^a net\b|net \(as/, "그물"],
-    [/\bnets?\b/, "그물"],
+    [/hunter'?s? net|^a net\b|net \(as|\bnets?\b/, "그물"],
     [/snare|gin\b/, "올무"],
-    [/execution|doom|death|to die|kill/, "죽음"],
+    [/execution|doom|^death\b|to die\b/, "죽음"],
     [/oven|furnace|fire-?pot|kiln/, "화로"],
-    [/entire|perfect|without blemish|complete/, "온전함"],
-    [/loving|beloved/, "사랑받는 자"],
-    [/father/, "아버지"],
-    [/mother/, "어머니"],
-    [/son\b/, "아들"],
-    [/king\b/, "왕"],
-    [/house\b/, "집"],
-    [/water/, "물"],
-    [/earth|land/, "땅"],
-    [/heaven|sky/, "하늘"],
-    [/hand\b/, "손"],
-    [/day\b/, "날"],
-    [/word|speech/, "말씀"],
-    [/god\b/, "하나님"],
-    [/man\b|person/, "사람"],
-    [/woman/, "여자"],
-    [/city|town/, "성읍"],
-    [/mountain/, "산"],
-    [/river/, "강"],
-    [/priest/, "제사장"],
-    [/prophet/, "선지자"],
-    [/servant/, "종"],
-    [/horse/, "말"],
-    [/bread/, "떡"],
-    [/wine/, "포도주"],
-    [/oil\b/, "기름"],
-    [/blood/, "피"],
-    [/sword/, "칼"],
-    [/stone/, "돌"],
-    [/tree|wood/, "나무"],
-    [/fire\b/, "불"],
-    [/light/, "빛"],
-    [/dark/, "어둠"],
-    [/peace/, "평안"],
-    [/truth/, "진리"],
-    [/grace|favour|favor/, "은혜"],
-    [/anger|wrath/, "진노"],
-    [/joy|glad/, "기쁨"],
-    [/fear/, "두려움"],
-    [/wisdom/, "지혜"],
-    [/strength|might|power/, "힘"],
-    [/holy/, "거룩"],
-    [/sin\b|iniquity/, "죄"],
-    [/sacrifice|offering/, "제물"],
-    [/altar/, "제단"],
-    [/temple|sanctuary/, "성소"],
-    [/covenant/, "언약"],
-    [/law\b|torah/, "율법"],
-    [/bless/, "축복하다"],
-    [/curse/, "저주하다"],
-    [/create/, "창조하다"],
-    [/make|do\b/, "하다"],
-    [/give/, "주다"],
-    [/take/, "취하다"],
-    [/come|go\b/, "가다"],
-    [/see\b|behold/, "보다"],
-    [/hear/, "듣다"],
-    [/speak|say\b/, "말하다"],
-    [/know/, "알다"],
-    [/love\b/, "사랑하다"],
-    [/hate/, "미워하다"],
-    [/kill|slay/, "죽이다"],
-    [/live|alive/, "살다"],
-    [/sit|dwell/, "앉다"],
-    [/stand/, "서다"],
-    [/rise|raise/, "일어나다"],
-    [/fall/, "떨어지다"],
-    [/open/, "열다"],
-    [/close|shut/, "닫다"],
-    [/send/, "보내다"],
-    [/call/, "부르다"],
-    [/eat/, "먹다"],
-    [/drink/, "마시다"],
-    [/write/, "쓰다"],
-    [/read/, "읽다"],
-    [/build/, "건축하다"],
-    [/break/, "깨뜨리다"],
-    [/keep|guard/, "지키다"],
-    [/seek/, "찾다"],
-    [/find/, "찾다"],
-    [/return|turn/, "돌아오다"],
-    [/judge/, "재판하다"],
-    [/reign|rule/, "다스리다"],
-    [/serve/, "섬기다"],
-    [/worship/, "예배하다"],
-    [/pray/, "기도하다"],
-    [/save|deliver/, "구원하다"],
-    [/redeem/, "속량하다"],
-    [/forgive/, "용서하다"],
-    [/trust/, "신뢰하다"],
-    [/hope/, "소망"],
-    [/wait/, "기다리다"],
+    [/^manger\b|crib\b/, "구유"],
+    [/^feather|^wing\b/, "날개"],
+    [/^mighty\b/, "전능자"],
+    [/^coil\b/, "감기다"],
+    [/pair of stones|^stone\b/, "돌"],
   ];
   for (const [re, ko] of map) {
     if (re.test(first) || re.test(s)) return ko;
   }
   return "";
+}
+
+/** Strong 첫 풀이 → 허용 한글 후보 (어긋남 검수) */
+function senseAllowList(en, expected) {
+  const s = String(en || "").toLowerCase();
+  const out = new Set();
+  if (expected) out.add(expected);
+  const pairs = [
+    [/\b(?:nets?|snare|gins?)\b/, ["그물", "올무", "망"]],
+    [/\b(?:death|execution|doom|die|kill|slay)\b/, ["죽음", "죽임", "사형", "처형", "죽다", "죽이다"]],
+    [/\b(?:oven|furnace|kiln|fire-?pot)\b/, ["화로", "가마", "풀무", "오븐"]],
+    [/\b(?:manger|crib)\b/, ["구유", "여물통"]],
+    [/\b(?:feathers?|wings?)\b/, ["날개", "깃"]],
+    [/\b(?:mighty|strength|power)\b/, ["힘", "능력", "강한", "전능", "용사"]],
+    [/\bcoil\b/, ["감기다", "꼬이다"]],
+    [/\bstones?\b/, ["돌", "반석"]],
+    [/\bwaters?\b/, ["물"]],
+    [/\bhouses?\b/, ["집", "집안"]],
+    [/\bkings?\b/, ["왕"]],
+    [/\bpriests?\b/, ["제사장"]],
+    [/\bprophets?\b/, ["선지자", "예언자"]],
+    [/\bblood\b/, ["피"]],
+    [/\bswords?\b/, ["칼"]],
+    [/\bbread\b/, ["떡", "빵"]],
+    [/\bwine\b/, ["포도주"]],
+    [/\boil\b/, ["기름"]],
+    [/\bfire\b/, ["불"]],
+    [/\blight\b/, ["빛"]],
+    [/\bdark(?:ness)?\b/, ["어둠", "흑암"]],
+    [/\bpeace\b/, ["평안", "평화"]],
+    [/\btruth\b/, ["진리", "진실"]],
+    [/\bwisdom\b/, ["지혜"]],
+    [/\bholy\b/, ["거룩"]],
+    [/\b(?:sin|iniquity)\b/, ["죄", "죄악"]],
+    [/\bcovenant\b/, ["언약"]],
+    [/\baltar\b/, ["제단"]],
+    [/\b(?:temple|sanctuary)\b/, ["성전", "성소"]],
+    [/\b(?:love|beloved)\b/, ["사랑"]],
+    [/\bhear(?:ing|d)?\b/, ["듣다", "들음", "청종"]],
+    [/\b(?:see|behold)\b/, ["보다", "바라", "목격"]],
+    [/\b(?:speak|say|word)\b/, ["말씀", "말하다", "이르다"]],
+    [/\bgive\b/, ["주다", "주시", "드림"]],
+    [/\btake\b/, ["취하다", "받다", "가져"]],
+    [/\b(?:come|go)\b/, ["가다", "오다", "나아가"]],
+    [/\bknow\b/, ["알다", "아는", "지식"]],
+    [/\blive\b/, ["살다", "생명", "살아"]],
+    [/\b(?:sit|dwell)\b/, ["앉다", "거하다", "거주"]],
+    [/\bstand\b/, ["서다", "서 있"]],
+    [/\beat\b/, ["먹다", "먹이"]],
+    [/\bdrink\b/, ["마시다"]],
+    [/\bwrite\b/, ["쓰다", "기록"]],
+    [/\bbuild\b/, ["건축", "세우다"]],
+    [/\bbreak\b/, ["깨뜨", "부수"]],
+    [/\b(?:keep|guard)\b/, ["지키다", "보존"]],
+    [/\b(?:seek|find)\b/, ["찾다", "구하다"]],
+    [/\b(?:return|turn)\b/, ["돌아오", "돌이"]],
+    [/\bjudge\b/, ["재판", "심판"]],
+    [/\b(?:reign|rule)\b/, ["다스리", "통치"]],
+    [/\bserve\b/, ["섬기"]],
+    [/\b(?:save|deliver)\b/, ["구원", "건져"]],
+    [/\bbless\b/, ["축복", "복 주"]],
+    [/\bcurse\b/, ["저주"]],
+    [/\bcreate\b/, ["창조"]],
+    [/\bfear\b/, ["두려움", "경외"]],
+    [/\b(?:joy|glad)\b/, ["기쁨", "즐거움"]],
+    [/\b(?:anger|wrath)\b/, ["진노", "분노"]],
+    [/\b(?:grace|favour|favor)\b/, ["은혜", "총애"]],
+    [/\b(?:earth|land)\b/, ["땅", "육지"]],
+    [/\b(?:heaven|sky)\b/, ["하늘"]],
+    [/\bhand\b/, ["손"]],
+    [/\bday\b/, ["날", "낮"]],
+    [/\bmountain\b/, ["산"]],
+    [/\briver\b/, ["강", "하수"]],
+    [/\b(?:city|town)\b/, ["성읍", "도성"]],
+    [/\bwoman\b/, ["여자", "여인"]],
+    [/\b(?:man|person)\b/, ["사람", "남자"]],
+    [/\bgod\b/, ["하나님", "엘로힘"]],
+    [/\bhorse\b/, ["말", "준마"]],
+    [/\b(?:tree|wood)\b/, ["나무", "목재"]],
+    [/\bservant\b/, ["종", "하인"]],
+    [/\blonging\b/, ["갈망", "사모"]],
+    [/\brushed?\b|\brush\b/, ["갈대", "골풀"]],
+    [/\bbasin\b/, ["양푼", "대야"]],
+    [/\bred(?:ness)?\b/, ["붉", "홍"]],
+    [/\barm\b/, ["팔", "능력"]],
+    [/\baffection\b/, ["사랑", "애정"]],
+    [/\bpoker\b/, ["부지깽이", "타다"]],
+  ];
+  for (const [re, kos] of pairs) {
+    if (re.test(s)) kos.forEach((k) => out.add(k));
+  }
+  // 1글자 후보는 오탐 → 제거
+  return [...out].filter((k) => k.length >= 2);
 }
 
 function primaryGloss(kr, note, lex) {
@@ -520,21 +527,25 @@ function main() {
       properSet.has(j.strong)
     )
       continue;
-    const en = firstSenseEn(meta?.def || meta?.meaning || j.defEn || "", 80);
+    // lexicon defEn / Strong meaning만 사용 (이름 etym 오염 금지)
+    const en = firstSenseEn(j.defEn || meta?.meaning || meta?.def || "", 80);
+    if (!en || en.length < 3) continue;
+    if (/probably an egyptian|a variation|compare |see /i.test(en)) continue;
     const expected = translateContentEn(en);
-    if (!expected) continue;
+    // 확장 검수: 영문 핵심 단어 → 허용 한글 후보
+    const allow = senseAllowList(en, expected);
+    if (!allow.length) continue;
     const cur = primaryGloss(kr, n, j);
     if (!cur) continue;
-    // fuzzy: expected head vs current
-    const eHead = expected.slice(0, 2);
-    const cHead = cur.slice(0, 2);
-    if (eHead && cHead && eHead !== cHead && !cur.includes(expected) && !expected.includes(cur.slice(0, 2))) {
+    const bundle = [cur, ...(kr.meanings || []), n?.usageKo || ""].join(" ");
+    const ok = allow.some((a) => bundle.includes(a));
+    if (!ok) {
       mismatches.push({
         strong: j.strong,
         lemma: j.lemma,
         en: en.slice(0, 60),
         before: cur,
-        expected,
+        expected: expected || allow[0],
         defEn: (j.defEn || "").slice(0, 70),
       });
     }
@@ -593,16 +604,18 @@ function main() {
       gloss = "죽음";
       meanings = ["죽음", "죽임", "사형"];
     }
-    // if mismatch and we have expected, prefer expected for auto content
+    // 고신뢰 오매칭(보수 map)만 gloss 교체 — 검수 목록 전부에 덮어쓰지 않음
     const mm = mismatches.find((x) => x.strong === strong);
-    if (!proper && mm?.expected) {
+    const highConf =
+      strong === "H4364" ||
+      strong === "H8546" ||
+      (mm?.expected &&
+        expectedFromStrong &&
+        mm.expected === expectedFromStrong &&
+        /그물|올무|죽음|화로|구유|날개|돌/.test(mm.expected));
+    if (!proper && highConf && mm?.expected) {
       gloss = mm.expected;
       if (!meanings.includes(gloss)) meanings = [gloss, ...meanings];
-    } else if (!proper && expectedFromStrong && gloss) {
-      const eh = expectedFromStrong.slice(0, 2);
-      if (eh && gloss.slice(0, 2) !== eh && !gloss.includes(expectedFromStrong)) {
-        // keep tanakh if not in mismatch list with high confidence map hit
-      }
     }
 
     if (proper) {
@@ -676,8 +689,45 @@ function main() {
       continue;
     }
 
-    // --- content / particle: auto 전부 + 오매칭 교정 대상 ---
-    if (prev.noteSrc === "reviewed" && strong !== "H4364" && strong !== "H8546" && !mm) {
+    // --- content / particle: auto 전부 + 틀문장·오매칭 교정 ---
+    const hasBadTmpl = BAD_AUTO.test(prev.defKo || "");
+    if (
+      prev.noteSrc === "reviewed" &&
+      strong !== "H4364" &&
+      strong !== "H8546" &&
+      !mm &&
+      !hasBadTmpl
+    ) {
+      continue;
+    }
+    // 강제 예문
+    if (strong === "H4364") {
+      const next = {
+        ...prev,
+        defKo: "뜻: 그물, 올무\n개역한글에서는 '그물'로 옮겼어요(사 51:20).",
+        usageKo: "그물, 올무",
+        etymKo: prev.etymKo || `${strong} 어원 표기는 Strong에 짧게 남아 있어요.`,
+        noteSrc: prev.noteSrc || "auto",
+      };
+      delete next.nameMeaning;
+      notes[strong] = next;
+      syncLex(strong, next);
+      autoRewritten += 1;
+      continue;
+    }
+    if (strong === "H8546") {
+      const next = {
+        ...prev,
+        defKo:
+          "뜻: 죽음, 죽임, 사형\n개역한글에서는 '죽이기로 정한 자'로 옮겼어요(시 79:11).",
+        usageKo: "죽음, 죽임, 사형",
+        etymKo: prev.etymKo || `${strong} 어원 표기는 Strong에 짧게 남아 있어요.`,
+        noteSrc: prev.noteSrc || "auto",
+      };
+      delete next.nameMeaning;
+      notes[strong] = next;
+      syncLex(strong, next);
+      autoRewritten += 1;
       continue;
     }
 
@@ -720,8 +770,11 @@ function main() {
           : `${ex.bookKo} ${ex.n}절`;
       const w = ex.word || gloss || uniq[0];
       exampleLine = `개역한글에서는 '${w}'${eulRo(w)} 옮겼어요(${ref}).`;
+    } else if (first && (gloss || uniq[0])) {
+      const w = gloss || uniq[0];
+      exampleLine = `개역한글에서는 '${w}'${eulRo(w)} 옮겼어요(${first.bookKo} ${first.ch}:${first.n}).`;
     } else if (first) {
-      exampleLine = `본문 예: ${first.bookKo} ${first.ch}:${first.n}`;
+      exampleLine = `처음 나오는 곳: ${first.bookKo} ${first.ch}:${first.n}`;
     }
 
     const defKo = exampleLine
@@ -854,11 +907,14 @@ function main() {
     };
   });
 
-  // particle check 보잘것없는도
+  // particle check: 받침 오류 (…없는도 / 보잘것없는도)
   let badParticle = 0;
   for (const j of corpus) {
     const d = notes[j.strong]?.defKo || "";
-    if (/보잘것없는도|없는도 |한도 /.test(d)) badParticle += 1;
+    if (/보잘것없는도|(?<![가-힣])없는도 |족한도 |끝없는도 /.test(d)) {
+      // 남아 있으면 즉시 교정 재작성 대상이었는데 남은 경우 카운트
+      badParticle += 1;
+    }
   }
 
   const mismatchTop30 = [

@@ -5,6 +5,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { EXTRA_NAME_ATOMS } from "./hebrew-name-atoms-extra.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const XML = path.join(__dirname, "../../.cache/oshb/HebrewStrong.xml");
@@ -79,7 +80,8 @@ export function loadStrongMeta() {
         rootStrongs: [...new Set(srcIds)],
         sourceText,
         meaning,
-        def: nameEtymEn || meaningDef || _meta.get(id)?.def || "",
+        // def = BDB/Strong 뜻 (이름 etym과 분리 — 오매칭 검사용)
+        def: meaningDef || meaning || _meta.get(id)?.def || "",
         pos,
         nameEtymEn,
       });
@@ -98,9 +100,21 @@ export function loadStrongMeta() {
 export function extractNameEtymEn(sourceText, sourceDef = "") {
   const src = String(sourceText || "").replace(/\s+/g, " ").trim();
 
-  // 1) 「from … ;」 이후 절 전체를 우선 (괄호 포함)
+  // 0) 출처 참조만 있는 절은 이름뜻이 아님
+  if (
+    /^(?:the same as|probably for|patrial from|an orthographical|orthographical variation|from an unused root)/i.test(
+      src,
+    ) &&
+    !/;\s*[^;]*(?:father|son|house|god|peace|well|loving|brother|flame|fruit)/i.test(
+      src,
+    )
+  ) {
+    // continue to try extracting a gloss after comma/semicolon anyway
+  }
+
+  // 1) 「from … ;」 또는 「from … ,」 이후 풀이 (끝 세미콜론 허용)
   const afterFrom = src.match(
-    /(?:^|;)\s*from\b[^;]*;\s*([^;]+(?:;[^;]+)*?)\s*$/i,
+    /(?:^|;)\s*from\b[^;,]*[;,]\s*([^;]+?)(?:\s*[;.]\s*)?$/i,
   );
   if (afterFrom) {
     let clause = afterFrom[1]
@@ -113,7 +127,15 @@ export function extractNameEtymEn(sourceText, sourceDef = "") {
       .replace(/[\u0590-\u05FF]+/g, " ")
       .replace(/\s+/g, " ")
       .trim();
-    if (clause.length >= 3 && !/^[A-Z][a-z]+(?:ites)?$/.test(clause)) {
+    // "and 5820" / "the feminine of 6083 …" 같은 참조만 남은 경우 제외
+    if (
+      clause.length >= 3 &&
+      !/^[A-Z][a-z]+(?:ites)?$/.test(clause) &&
+      !/^(?:and|or|the|with|compare|see)\b/i.test(clause) &&
+      !/\b(?:feminine|masculine|plural|dual|prolonged|contracted)\s+of\b/i.test(
+        clause,
+      )
+    ) {
       return clause;
     }
   }
@@ -163,6 +185,28 @@ export function extractNameEtymEn(sourceText, sourceDef = "") {
     p = p.replace(/[\u0590-\u05FF]+/g, " ").replace(/\s+/g, " ").trim();
     if (p.length < 3) continue;
     if (/^[A-Z][a-z]+(?:ites)?$/.test(p)) continue;
+    if (
+      /^(?:the same as|probably for|patrial|orthographical|an unused root|with the article|by contraction|patronymic|of uncertain|of foreign|intensive from|patron from|\(aramaic\)|aramaic corresponding|corresponding to)/i.test(
+        p,
+      )
+    )
+      continue;
+    if (/^(?:feminine|masculine|plural|dual|prolonged|contracted)\s+of\b/i.test(p))
+      continue;
+    if (
+      /\b(?:orthographical variation|foreign (?:derivation|origin)|egyptian origin|corresponding to|persian derivation|variation of|contraction of|xlit|intensive of|by (?:reduplication|transposition)|emphatic form|compare \d+|shortened\) from|for \d+)\b/i.test(
+        p,
+      )
+    )
+      continue;
+    // "a Jeminite" / "an Israelite" 단독 족속 표기는 이름뜻이 아님
+    if (/^(?:a|an)\s+[A-Z][a-z]+ite$/i.test(p)) continue;
+    if (/^perhaps meaning\b/i.test(p)) {
+      p = p.replace(/^perhaps meaning\s+/i, "").trim();
+      if (p.length < 3) continue;
+    }
+    // "(with the article) the weepers" → the weepers
+    p = p.replace(/^\(with the article\)\s*/i, "").trim();
     return p;
   }
   return "";
@@ -190,17 +234,18 @@ export function deriveNameMeaningKo(meta, _rootGlossKo = "") {
     meta.nameEtymEn ||
     extractNameEtymEn(meta.sourceText || "", "") ||
     "";
-  // source에 풀이가 없고 meaning 앞머리가 풀이인 경우 (이스라엘 등)
+  // source에 풀이가 없고 meaning 앞머리가 풀이인 경우 (이스라엘·여호와 등)
   if (!etymEn && meta.meaning) {
     const head = String(meta.meaning).split(";")[0].trim();
-    // "he will rule as God" / "Jehovah-saved" 형태만
-    if (
-      /^(?:he will|jah |jehovah|god |father |son |house |flame |heard |double )/i.test(
+    if (/self-?existent|eternal/i.test(head)) {
+      etymEn = "self-Existent or Eternal";
+    } else if (
+      /^(?:he will|jah |jehovah|god |father |son |house |flame |heard |double |\(the\) self)/i.test(
         head,
       ) &&
       !/^[A-Z][a-z]+,/.test(head)
     ) {
-      etymEn = head;
+      etymEn = head.replace(/^\(the\)\s*/i, "");
     } else if (/^he will rule as god/i.test(head)) {
       etymEn = "he will rule as God";
     }
@@ -208,6 +253,10 @@ export function deriveNameMeaningKo(meta, _rootGlossKo = "") {
   // "Jisraël, …" 앞에 풀이가 세미콜론으로 분리된 경우
   if (!etymEn && /he will rule as God/i.test(meta.meaning || "")) {
     etymEn = "he will rule as God";
+  }
+  // Joseph: future of 3254; let him add …
+  if (!etymEn && /let him add/i.test(meta.sourceText || "")) {
+    etymEn = "let him add";
   }
   if (!etymEn) return "";
   return translateNameGloss(etymEn);
@@ -248,6 +297,8 @@ export function translateNameGloss(en) {
     [/father of peace/, "평화의 아버지"],
     [/brother (?:\(.*?\) )?(?:of )?\(?his\)? ?father|friend\) of \(his\) father|brother .* father/, "아버지의 형제"],
     [/well of an oath|well of (?:the )?oath/, "맹세의 우물"],
+    [/let him add|he will add/, "더하리라"],
+    [/self-?existent or eternal|self-?existent/, "스스로 계신 분, 영원하신 분"],
     [/god has heard/, "하나님이 들으셨다"],
     [/god almighty/, "전능하신 하나님"],
     [/ewe(?:[- ]lamb)?|female sheep/, "암양"],
@@ -278,6 +329,14 @@ export function translateNameGloss(en) {
   for (const [re, ko] of exact) {
     if (re.test(s)) return ko;
   }
+  // 메타 문구(기원·대응·이형)는 이름뜻이 아님
+  if (
+    /^(?:of )?(?:egyptian|foreign|persian) origin|corresponding to|orthographical|uncertain derivation/i.test(
+      s,
+    )
+  ) {
+    return "";
+  }
 
   // 합성: Jehovah/Jah/El/God/house of …
   const compound = translateCompound(raw);
@@ -302,15 +361,215 @@ export function translateNameGloss(en) {
     const rk = translateAtom(rest);
     if (rk) return `${rk}의 우물`;
   }
-  if (/^son of (?:a |the )?(.+)$/i.test(raw)) {
-    const rest = raw.replace(/^son of (?:a |the )?/i, "").trim();
-    const rk = translateAtom(rest);
-    return rk ? `${rk}의 아들` : "";
+  {
+    const sonRaw = raw.replace(/^\((?:the|a)\)\s*/i, "").trim();
+    if (/^sons? of (?:a |the |\(the\) )?/i.test(sonRaw)) {
+      const rest = sonRaw
+        .replace(/^sons? of (?:a |the |\(the\) )?/i, "")
+        .replace(/\(the\)\s*/gi, "")
+        .replace(/\s*\(.*?\)\s*$/g, "")
+        .trim();
+      const rk = translateAtom(rest) || translitProper(rest);
+      if (rk) return `${rk}의 ${/^sons\b/i.test(sonRaw) ? "아들들" : "아들"}`;
+    }
   }
-  if (/^house of (?:a |the )?(.+)$/i.test(raw)) {
-    const rest = raw.replace(/^house of (?:a |the )?/i, "").trim();
-    const rk = translateAtom(rest);
-    return rk ? `${rk}의 집` : "";
+  if (/^daughters? of /i.test(raw)) {
+    const rest = raw
+      .replace(/^daughters? of (?:a |the |\(the\) )?/i, "")
+      .replace(/\s*\(.*?\)\s*/g, " ")
+      .trim();
+    const rk = translateAtom(rest) || translitProper(rest);
+    if (rk) return `${rk}의 딸`;
+    if (/jah|jehovah|god|el\b/i.test(raw)) return "여호와의 예배자(딸)";
+  }
+  if (/^lords? of /i.test(raw)) {
+    const rest = raw
+      .replace(/^lords? of (?:a |the |\(the\) )?/i, "")
+      .replace(/\s*\(.*?\)\s*/g, " ")
+      .trim();
+    const rk = translateAtom(rest) || translitProper(rest);
+    if (rk) return `${rk}의 주`;
+    if (/jah|jehovah/i.test(raw)) return "여호와의 예배자";
+  }
+  if (/^our son$/i.test(raw)) return "우리의 아들";
+  if (/^my son$/i.test(raw)) return "나의 아들";
+  if (/^not \(of the\) people|not of the people|foreigner/i.test(raw))
+    return "백성이 아닌 자, 이방인";
+  if (/^disciplined of god/i.test(raw)) return "하나님께 징계받은";
+  if (/^destroyed of god/i.test(raw)) return "하나님께 멸망당한";
+  if (/^heights? of /i.test(raw)) {
+    const rest = raw.replace(/^heights? of /i, "").trim();
+    const rk = translateAtom(rest) || translitProper(rest);
+    return rk ? `${rk}의 높은 곳` : "";
+  }
+  if (/^double mound/i.test(raw)) return "두 언덕";
+  if (/^with pruning/i.test(raw)) return "가지치기";
+  if (/^waster$/i.test(raw)) return "황폐케 하는 자";
+  if (/^built(?:\s+up)?$/i.test(raw)) return "세워진";
+  if (/^powerful$/i.test(raw)) return "강한";
+  // X of Jah / emptying of Jah / knee of Jah
+  {
+    const m = raw.match(
+      /^(.+?)\s+of\s+(?:Jah|Jehovah|Yahweh)\b/i,
+    );
+    if (m) {
+      const left = translateAtom(
+        m[1].replace(/\s*\(.*?\)\s*/g, " ").replace(/^(?:a|an|the)\s+/i, "").trim(),
+      );
+      if (left) return `여호와의 ${left}`;
+    }
+  }
+  // Baal has known / Jah has become great
+  {
+    const m = raw.match(/^Baal\s+has\s+(.+)$/i);
+    if (m) {
+      const rk = translateAtom(m[1]);
+      if (rk) return `바알이 ${rk}`;
+      if (/known/i.test(m[1])) return "바알이 아셨다";
+    }
+  }
+  if (/jah has become great|jehovah has become great/i.test(raw))
+    return "여호와께서 커지셨다";
+  if (/i have made great/i.test(raw)) return "내가 크게 하였다";
+  if (/iron[- ]hearted/i.test(raw)) return "쇠 같은 마음";
+  if (/^a jeminite$/i.test(raw)) return ""; // 족속 표기 — 이름뜻이 아님
+  if (/^house (?:of|to)\b/i.test(raw)) {
+    // house of Baal of (the) habitation → 바알 거처의 집
+    if (/baal/i.test(raw) && /habitation/i.test(raw)) return "바알 거처의 집";
+    if (/house of god/i.test(raw)) return "하나님의 집";
+    if (/house of baal/i.test(raw)) return "바알의 집";
+    let rest = raw
+      .replace(/^house (?:of|to)\s+/i, "")
+      .replace(/^\((?:the|a|an)\)\s*/i, "")
+      .replace(/^\(the\)\s*/i, "")
+      .replace(/^i\.e\.?\s*(?:of\s+)?/i, "")
+      .replace(/\s*\(.*?\)\s*/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    const rk =
+      translateAtom(rest) ||
+      (/dust/i.test(rest)
+        ? "티끌"
+        : /leopard/i.test(rest)
+          ? "표범"
+          : /replies|answer/i.test(rest)
+            ? "응답"
+            : /binding|sheep|escape/i.test(rest)
+              ? /escape/i.test(rest)
+                ? "피난"
+                : "결박"
+              : /habitation/i.test(rest)
+                ? "거처"
+                : /creative/i.test(rest)
+                  ? "창조하는 자"
+                  : /figcakes?/i.test(rest)
+                    ? "무화과 과자"
+                    : /chariots?/i.test(rest)
+                      ? "병거"
+                      : /maakah|maachah/i.test(rest)
+                        ? "마아가"
+                        : /peor/i.test(rest)
+                          ? "브올"
+                          : /azmaveth/i.test(rest)
+                            ? "아스마웹"
+                            : /baal/i.test(rest)
+                              ? "바알"
+                              : "");
+    if (rk && !/「of」| of /i.test(rk)) return `${rk}의 집`;
+    // Strong에 남은 영어 고유명사/명사구 — 음역 없이 뜻만 옮기기 어려우면 「…」의 집
+    if (
+      rest &&
+      rest.length <= 24 &&
+      !/patrial|variation|same as|\bof\b/i.test(rest)
+    ) {
+      return `「${rest}」의 집`;
+    }
+  }
+  if (/^god has blessed|^el has blessed/i.test(raw)) return "하나님이 복 주셨다";
+  if (/^place of /i.test(raw)) {
+    const rest = raw.replace(/^place of (?:a |the |\(the\) )?/i, "").trim();
+    const rk = translateAtom(rest) || (/chariot/i.test(rest) ? "병거" : "");
+    if (rk) return `${rk}의 장소`;
+  }
+
+  // Bel (is his) lord / X (is) Y
+  {
+    const bel = raw.match(/^([A-Za-z]+)\s*\((?:is(?:\s+his)?)\)\s*(.+)$/i);
+    if (bel) {
+      const a = translateAtom(bel[1]) || bel[1];
+      const b = translateAtom(bel[2]);
+      if (b) return `${a}이(가) ${/his/i.test(raw) ? "그의 " : ""}${b}`;
+    }
+  }
+  // the weepers / weepers
+  if (/weepers?/i.test(raw)) return "우는 자들";
+  if (/first[- ]?born|primogeniture/i.test(raw)) return "맏이, 장자권";
+  if (/youth-?ful|youthful/i.test(raw)) return "젊은";
+  if (/desistance|desistant/i.test(raw)) return "그침";
+  if (/of uncertain derivation|persian derivation|variation of|contraction of|xlit/i.test(raw))
+    return "";
+
+  // possessor of X / mistress of X / Baal of X
+  {
+    const m = raw.match(
+      /^(possessor|mistress(?:ship)?|baal|master|masters|destroyer)\s+of\s+(?:a |the |\(the\) )?(.+)$/i,
+    );
+    if (m) {
+      let rest = m[2].replace(/\s*\(.*?\)\s*/g, " ").replace(/\s+/g, " ").trim();
+      const rk = translateAtom(rest) || translitProper(rest);
+      const head = {
+        possessor: "소유자",
+        mistress: "여주인",
+        mistressship: "여주인",
+        baal: "바알",
+        master: "주인",
+        masters: "주인들",
+        destroyer: "멸하는 자",
+      }[m[1].toLowerCase()] || m[1];
+      if (rk) return `${rk}의 ${head}`;
+    }
+  }
+  // in (the) X of Y  /  with X  /  in X
+  {
+    let m = raw.match(/^in\s*\(?(?:the)?\)?\s*(.+?)\s+of\s+(?:Jah|Jehovah|God|El)\b/i);
+    if (m) {
+      const rk = translateAtom(m[1]);
+      if (rk && /jah|jehovah/i.test(raw)) return `여호와의 ${rk} 안에`;
+      if (rk) return `하나님의 ${rk} 안에`;
+    }
+    m = raw.match(/^in\s*\(?(?:the)?\)?\s*(.+)$/i);
+    if (m && m[1].length < 40) {
+      const rk = translateAtom(m[1].replace(/\s*\(.*?\)\s*/g, " ").trim());
+      if (rk) return `${rk} 안에`;
+    }
+    m = raw.match(/^with\s+(.+)$/i);
+    if (m) {
+      const rk = translateAtom(m[1]) || translitProper(m[1]);
+      if (rk) return `${rk}와 함께`;
+    }
+  }
+  // red (see Genesis…) → 붉음
+  if (/^red\b/i.test(raw)) return "붉음";
+  if (/^hail\b/i.test(raw)) return "우박";
+  if (/^earthy\b/i.test(raw)) return "흙의";
+  if (/^brutish\b/i.test(raw)) return "짐승 같은";
+  if (/^domineering\b/i.test(raw)) return "지배하는";
+  if (/^offensiveness\b/i.test(raw)) return "거슬림";
+  if (/^searcher\b/i.test(raw)) return "찾는 자";
+  if (/^wasteful\b/i.test(raw)) return "낭비하는";
+  if (/^a peeling\b/i.test(raw)) return "벗겨짐";
+  if (/^a swell of ground\b/i.test(raw)) return "땅의 부풂";
+  if (/cypress/i.test(raw)) return "잣나무";
+  if (/^mistresses?$/i.test(raw)) return "여주인들";
+
+  // 일반: X of Y (짧을 때)
+  {
+    const m = raw.match(/^([A-Za-z][A-Za-z' -]{1,20})\s+of\s+(?:a |the |\(the\) )?(.+)$/i);
+    if (m && !/^(from|son|sons|house|father|brother|well|place|heights?)$/i.test(m[1])) {
+      const left = translateAtom(m[1]) || translitProper(m[1]);
+      const right = translateAtom(m[2].replace(/\s*\(.*?\)\s*/g, " ").trim()) || translitProper(m[2].trim());
+      if (left && right) return `${right}의 ${left}`;
+    }
   }
 
   // 짧은 구만 원자 번역 시도 — 실패 시 빈 값(추측 금지)
@@ -318,13 +577,84 @@ export function translateNameGloss(en) {
     const atom = translateAtom(raw);
     if (atom) return atom;
   }
+
+  // Strong에 실제 풀이가 있는데 사전 미등재인 경우:
+  // 「확실하지 않아요」로 비우지 않고, 원문 풀이를 짧게 보존
+  const cleaned = raw
+    .replace(/^\(with the article\)\s*/i, "")
+    .replace(/\s*\(see [^)]+\)\s*/gi, " ")
+    .replace(/\s*\(i\.e\.\s*[^)]+\)\s*/gi, " ")
+    .replace(/\s*\(compare [^)]+\)\s*/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\.$/, "");
+  if (
+    cleaned.length >= 3 &&
+    cleaned.length <= 42 &&
+    !/orthographical|foreign|egyptian origin|corresponding|intensive|patron|uncertain|patrial|same as|probably for|contraction|feminine of|masculine of|persian|variation|xlit|transposition|reduplication|emphatic|collective|inhabitants of|unused root|primitive root|^a [A-Z][a-z]+ite$/i.test(
+      cleaned,
+    ) &&
+    !/^from\b/i.test(cleaned) &&
+    !/^\d+$/.test(cleaned) &&
+    !/^of\b/i.test(cleaned)
+  ) {
+    // 단어별 부분 번역 가능하면 혼합, 아니면 「영문 풀이」
+    const bits = cleaned
+      .toLowerCase()
+      .replace(/[^a-z\s-]/g, " ")
+      .split(/\s+/)
+      .filter((w) => w && !["a", "an", "the", "of", "in", "with", "or", "and"].includes(w));
+    const kos = bits.map((w) => translateAtom(w));
+    const hit = kos.filter(Boolean).length;
+    if (hit > 0 && hit >= Math.ceil(bits.length * 0.4)) {
+      const joined = bits.map((w, i) => kos[i] || `「${w}」`).join(" ");
+      if (!/「of」/.test(joined)) return joined;
+    }
+    if (!/\bof\b/i.test(cleaned)) return `「${cleaned}」`;
+  }
+  return "";
+}
+
+/** Strong에 남은 영어 고유명사 → 흔한 한글 음역 (없으면 「라틴」) */
+function translitProper(en) {
+  const key = String(en || "").replace(/[^A-Za-z' -]/g, "").trim();
+  if (!key) return "";
+  const map = {
+    Abinadab: "아비나답",
+    Hadad: "하닷",
+    Chur: "훌",
+    Hur: "훌",
+    Chanan: "하난",
+    Hanan: "하난",
+    Yaakan: "야아간",
+    Zocheth: "소헷",
+    Baal: "바알",
+    Peor: "브올",
+    Azmaveth: "아스마웹",
+    Maakah: "마아가",
+    Maachah: "마아가",
+    Dagon: "다곤",
+  };
+  if (map[key]) return map[key];
+  // 소문자 일반 명사는 제외
+  if (/^[a-z]/.test(key)) return "";
+  if (key.length <= 14) return `「${key}」`;
   return "";
 }
 
 function translateCompound(raw) {
   const s = raw.trim();
+  // Jah/Jehovah has built|heard|…
+  let m = s.match(/^(?:Jah|Jehovah|Yahweh)\s+has\s+(.+)$/i);
+  if (m) {
+    const rk = translateAtom(m[1]);
+    if (rk) return `여호와께서 ${rk}`;
+    if (/built/i.test(m[1])) return "여호와께서 세우셨다";
+    if (/heard/i.test(m[1])) return "여호와께서 들으셨다";
+    if (/helped/i.test(m[1])) return "여호와께서 도우셨다";
+  }
   // Jehovah/Jah + …
-  let m = s.match(
+  m = s.match(
     /^(?:Jehovah|Jah|Yahweh)\s*[\(（]?(?:is|has)?[\)）]?\s*(.+)$/i,
   );
   if (m) {
@@ -359,15 +689,32 @@ function translateAtom(en) {
     .replace(/[()]/g, "")
     .replace(/\bi\.e\.\s*/g, "")
     .replace(/^(?:a|an|the)\s+/, "")
+    .replace(/-/g, " ")
+    .replace(/\s+/g, " ")
     .trim();
   const map = {
     he: "그분",
     she: "그녀",
+    my: "나의",
+    our: "우리의",
+    his: "그의",
+    her: "그녀의",
+    their: "그들의",
+    sorrow: "슬픔",
+    might: "힘",
+    piercing: "찌름",
+    built: "세워진",
+    waster: "황폐케 하는 자",
+    powerful: "강한",
+    disciplined: "징계받은",
+    foreigner: "이방인",
+    people: "백성",
     god: "하나님",
     el: "하나님",
     jah: "여호와",
     jehovah: "여호와",
     yahweh: "여호와",
+    bel: "벨",
     flame: "불꽃",
     fire: "불",
     light: "빛",
@@ -388,7 +735,7 @@ function translateAtom(en) {
     salvation: "구원",
     strength: "힘",
     rock: "반석",
-    peace: "평안",
+    peace: "평화",
     rest: "안식",
     dew: "이슬",
     grace: "은혜",
@@ -432,12 +779,451 @@ function translateAtom(en) {
     lionesses: "암사자",
     figcakes: "무화과 과자",
     deserts: "황무지",
+    dust: "티끌",
+    leopard: "표범",
+    replies: "응답",
+    binding: "결박",
+    chariots: "병거",
+    chariot: "병거",
+    oath: "맹세",
+    well: "우물",
+    loving: "사랑",
+    friend: "친구",
+    brother: "형제",
+    failure: "실패",
+    timid: "겁 많음",
+    weeping: "울음",
+    weepers: "우는 자들",
+    weeper: "우는 자",
+    escape: "피난",
+    "first born": "맏이",
+    firstborn: "맏이",
+    primogeniture: "장자권",
+    youthful: "젊은",
+    "youth ful": "젊은",
+    desistance: "그침",
+    desistant: "그치는",
+    fortification: "요새",
+    fortress: "요새",
+    stronghold: "산성",
+    watchtower: "망대",
+    tower: "망대",
+    village: "마을",
+    city: "성읍",
+    place: "곳",
+    fountain: "샘",
+    spring: "샘",
+    river: "강",
+    mountain: "산",
+    hill: "언덕",
+    stone: "돌",
+    oak: "상수리",
+    palm: "종려",
+    cedar: "백향목",
+    olive: "감람",
+    myrrh: "몰약",
+    frankincense: "유향",
+    gold: "금",
+    silver: "은",
+    iron: "철",
+    copper: "구리",
+    brass: "놋",
+    blessing: "복",
+    blessed: "복 받은",
+    curse: "저주",
+    cursed: "저주받은",
+    hope: "소망",
+    life: "생명",
+    death: "죽음",
+    living: "살아 있는",
+    holy: "거룩",
+    holiness: "거룩함",
+    righteous: "의로운",
+    righteousness: "의",
+    wise: "지혜로운",
+    wisdom: "지혜",
+    fool: "어리석은 자",
+    folly: "어리석음",
+    power: "능력",
+    mighty: "강한",
+    greatness: "위대함",
+    great: "큰",
+    small: "작은",
+    little: "작은",
+    high: "높은",
+    low: "낮은",
+    deep: "깊은",
+    wide: "넓은",
+    narrow: "좁은",
+    new: "새",
+    old: "옛",
+    young: "젊은",
+    white: "흰",
+    black: "검은",
+    red: "붉은",
+    green: "푸른",
+    good: "좋은",
+    bad: "나쁜",
+    evil: "악",
+    beauty: "아름다움",
+    beautiful: "아름다운",
+    love: "사랑",
+    hated: "미움받은",
+    hatred: "미움",
+    fear: "두려움",
+    trust: "신뢰",
+    faith: "믿음",
+    praise: "찬양",
+    prayer: "기도",
+    sacrifice: "제사",
+    offering: "예물",
+    altar: "제단",
+    temple: "성전",
+    tent: "장막",
+    tabernacle: "성막",
+    priest: "제사장",
+    prophet: "선지자",
+    people: "백성",
+    nation: "민족",
+    tribe: "지파",
+    assembly: "회중",
+    congregation: "회중",
+    inheritance: "기업",
+    portion: "몫",
+    possession: "소유",
+    covenant: "언약",
+    testimony: "증거",
+    remembrance: "기념",
+    memorial: "기념",
+    sign: "표징",
+    wonder: "기사",
+    miracle: "이적",
+    vision: "환상",
+    dream: "꿈",
+    sleep: "잠",
+    night: "밤",
+    day: "날",
+    morning: "아침",
+    evening: "저녁",
+    year: "해",
+    month: "달",
+    week: "주",
+    time: "때",
+    forever: "영원",
+    eternity: "영원",
+    beginning: "시작",
+    end: "끝",
+    east: "동",
+    west: "서",
+    north: "북",
+    south: "남",
+    water: "물",
+    waters: "물들",
+    sea: "바다",
+    earth: "땅",
+    land: "땅",
+    heaven: "하늘",
+    heavens: "하늘들",
+    sun: "해",
+    moon: "달",
+    star: "별",
+    stars: "별들",
+    cloud: "구름",
+    wind: "바람",
+    spirit: "영",
+    breath: "호흡",
+    soul: "영혼",
+    heart: "마음",
+    hand: "손",
+    right: "오른편",
+    left: "왼편",
+    eye: "눈",
+    ear: "귀",
+    mouth: "입",
+    tongue: "혀",
+    foot: "발",
+    head: "머리",
+    face: "얼굴",
+    blood: "피",
+    flesh: "육체",
+    bone: "뼈",
+    man: "사람",
+    woman: "여자",
+    child: "아이",
+    children: "자녀",
+    infant: "유아",
+    virgin: "처녀",
+    widow: "과부",
+    orphan: "고아",
+    stranger: "나그네",
+    foreigner: "이방인",
+    enemy: "원수",
+    friend: "친구",
+    companion: "동무",
+    neighbor: "이웃",
+    shepherd: "목자",
+    sheep: "양",
+    lamb: "어린 양",
+    goat: "염소",
+    ox: "소",
+    bull: "수소",
+    cow: "암소",
+    horse: "말",
+    donkey: "나귀",
+    ass: "나귀",
+    camel: "낙타",
+    dog: "개",
+    lion: "사자",
+    bear: "곰",
+    wolf: "늑대",
+    bird: "새",
+    dove: "비둘기",
+    eagle: "독수리",
+    fish: "물고기",
+    serpent: "뱀",
+    snake: "뱀",
+    worm: "벌레",
+    tree: "나무",
+    forest: "숲",
+    field: "밭",
+    garden: "동산",
+    seed: "씨",
+    grain: "곡식",
+    wheat: "밀",
+    barley: "보리",
+    wine: "포도주",
+    oil: "기름",
+    milk: "젖",
+    honey: "꿀",
+    salt: "소금",
+    bread: "빵",
+    meat: "고기",
+    food: "음식",
+    hunger: "배고픔",
+    thirst: "목마름",
+    nakedness: "벌거벗음",
+    clothing: "옷",
+    garment: "옷",
+    robe: "겉옷",
+    crown: "면류관",
+    throne: "보좌",
+    scepter: "홀",
+    sword: "칼",
+    spear: "창",
+    bow: "활",
+    arrow: "화살",
+    shield: "방패",
+    armor: "갑옷",
+    war: "전쟁",
+    battle: "싸움",
+    victory: "승리",
+    defeat: "패배",
+    captivity: "포로",
+    exile: "사로잡힘",
+    deliverance: "구출",
+    redemption: "구속",
+    redeemer: "구속자",
+    savior: "구원자",
+    saviour: "구원자",
+    refuge: "피난처",
+    shelter: "은신처",
+    shadow: "그늘",
+    darkness: "어둠",
+    brightness: "광채",
+    glory: "영광",
+    honor: "존귀",
+    honour: "존귀",
+    shame: "수치",
+    reproach: "모욕",
+    silence: "잠잠",
+    voice: "소리",
+    word: "말씀",
+    speech: "말",
+    name: "이름",
+    number: "수",
+    measure: "측량",
+    weight: "무게",
+    work: "일",
+    labor: "수고",
+    labour: "수고",
+    rest: "안식",
+    sleep: "잠",
+    waking: "깨어 있음",
+    remembrance: "기념",
+    forgetfulness: "잊음",
+    understanding: "명철",
+    counsel: "모략",
+    work: "일",
+    shadow: "그늘",
+    protection: "보호",
+    affliction: "고난",
+    exultation: "환희",
+    grace: "은혜",
+    fly: "파리",
+    fortune: "운",
+    covenant: "언약",
+    hermon: "헤르몬",
+    village: "마을",
+    multitude: "무리",
+    breaches: "터진 곳",
+    "palm tree": "종려나무",
+    palm: "종려",
+    well: "우물",
+    mistress: "여주인",
+    possessor: "소유자",
+    destroyer: "멸하는 자",
+    known: "아신",
+    created: "창조하신",
+    red: "붉음",
+    hail: "우박",
+    earthy: "흙의",
+    brutish: "짐승 같은",
+    domineering: "지배하는",
+    offensiveness: "거슬림",
+    searcher: "찾는 자",
+    wasteful: "낭비하는",
+    peeling: "벗겨짐",
+    cypress: "잣나무",
+    sorrow: "슬픔",
+    grief: "근심",
+    weeping: "울음",
+    tear: "눈물",
+    tears: "눈물",
+    laughter: "웃음",
+    song: "노래",
+    affliction: "고난",
+    trouble: "환난",
+    comfort: "위로",
+    healing: "고침",
+    building: "세움",
+    destruction: "멸망",
+    presence: "임재",
+    absence: "부재",
+    peace: "평화",
+    war: "전쟁",
+    failure: "실패",
+    loving: "사랑",
+    friend: "친구",
+    enemy: "원수",
+    stranger: "나그네",
+    foreigner: "이방인",
+    slave: "노예",
+    master: "주인",
+    father: "아버지",
+    mother: "어머니",
+    brother: "형제",
+    sister: "자매",
+    husband: "남편",
+    wife: "아내",
+    widow: "과부",
+    orphan: "고아",
+    virgin: "처녀",
+    hero: "영웅",
+    kindness: "인자",
+    emptying: "비움",
+    wasting: "황폐",
+    holes: "구멍들",
+    knee: "무릎",
+    wickedness: "악",
+    cheerful: "즐거운",
+    fragrance: "향기",
+    fragrant: "향기로운",
+    firm: "견고한",
+    pit: "구덩이",
+    cisterns: "웅덩이들",
+    cistern: "웅덩이",
+    hillock: "작은 언덕",
+    hilly: "언덕진",
+    hilliness: "언덕짐",
+    rising: "일어남",
+    cutting: "자름",
+    cleft: "갈라진 틈",
+    fortunate: "행운의",
+    stout: "튼튼한",
+    feller: "베는 자",
+    warrior: "용사",
+    desolation: "황폐",
+    warlike: "호전적인",
+    justice: "공의",
+    majesty: "위엄",
+    wealth: "부",
+    worshipper: "예배자",
+    craggy: "험한",
+    spot: "자리",
+    meadow: "초원",
+    dwelling: "거처",
+    springs: "샘들",
+    given: "주신",
+    hidden: "숨은",
+    favored: "은혜 입은",
+    favor: "은혜",
+    delivered: "건져 냄",
+    whiteness: "희움",
+    seen: "본",
+    hot: "뜨거운",
+    knowing: "앎",
+    contend: "다툼",
+    liberal: "후한",
+    pleasure: "기쁨",
+    splendor: "광채",
+    strengthened: "강하게 된",
+    brotherly: "형제 같은",
+    female: "여성",
+    fertile: "비옥한",
+    station: "자리",
+    ruin: "폐허",
+    bitter: "쓴",
+    quiet: "고요한",
+    strong: "강한",
+    fountain: "샘",
+    made: "만든",
+    egyptian: "애굽의",
+    will: "뜻",
+    form: "형태",
+    heap: "무더기",
+    unity: "하나됨",
+    high: "높은",
+    open: "열린",
+    two: "둘",
+    seat: "자리",
+    hasty: "성급한",
+    him: "그를",
+    one: "하나",
+    be: "됨",
+    become: "됨",
+    great: "큰",
+    known: "아신",
+    created: "창조하신",
+    fire: "불",
+    perhaps: "",
+    probably: "",
+    meaning: "뜻",
+    sense: "의미",
+    compare: "",
+    origin: "기원",
+    derivation: "유래",
+    article: "관사",
+    mistressship: "여주인",
+    ...EXTRA_NAME_ATOMS,
   };
   if (map[s]) return map[s];
-  // 두 단어
-  const parts = s.split(/\s+/);
+  // 두·세 단어
+  const parts = s.split(/\s+/).filter((p) => p && map[p] !== "");
   if (parts.length === 2 && map[parts[0]] && map[parts[1]]) {
     return `${map[parts[0]]} ${map[parts[1]]}`;
+  }
+  if (parts.length === 3 && map[parts[0]] && map[parts[1]] && map[parts[2]]) {
+    return `${map[parts[0]]} ${map[parts[1]]} ${map[parts[2]]}`;
+  }
+  // 단일 토큰만 남은 경우
+  if (parts.length === 1 && map[parts[0]]) return map[parts[0]];
+  // 단어별 부분 번역 (최소 절반 이상 번역되면 채택)
+  if (parts.length >= 2 && parts.length <= 5) {
+    const kos = parts.map((p) => map[p] || "");
+    const hit = kos.filter(Boolean).length;
+    if (hit >= Math.ceil(parts.length / 2) && hit >= 1) {
+      return parts.map((p, i) => kos[i] || `「${p}」`).join(" ");
+    }
   }
   return "";
 }
