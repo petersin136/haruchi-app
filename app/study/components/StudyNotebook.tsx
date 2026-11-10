@@ -77,7 +77,6 @@ import WordStudySheet, {
   type WsSidePanel,
 } from "./WordStudySheet";
 import {
-  glossSnippet,
   loadWsLast,
   saveWsLast,
   type WsLast,
@@ -97,6 +96,8 @@ import {
   subscribeStudySpread,
   subscribeStudyWsCard,
 } from "../lib/studySpread";
+import { openStudyLoc } from "../lib/studyLocStore";
+import StudyLocHost from "./StudyLocHost";
 import "../study.css";
 
 /** 본체 뒤 꼬리가 동사를 만드는 말이면 원어 짝에서 동사 칩을 우선 */
@@ -344,6 +345,8 @@ function StudyNotebook({
   const flipMoveCountRef = useRef(0);
   const flipLostCapRef = useRef(0);
   const flipWatchdogRef = useRef(0);
+  /** handoff가 settleFlip을 직접 호출하면 auto effect 중복 settle 스킵 */
+  const skipAutoSettleRef = useRef(false);
   const lastFlipStartRef = useRef(0);
   const lastFlipEndRef = useRef(0);
   const spreadCaptureIdRef = useRef<number | null>(null);
@@ -2578,7 +2581,10 @@ function StudyNotebook({
     const t0 = performance.now();
     const loop = (now: number) => {
       const p = Math.min(1, (now - t0) / STUDY_SPREAD_ANIM_MS);
-      paintShade(from + (to - from) * bezierY(p));
+      const ang = from + (to - from) * bezierY(p);
+      // CSS transition과 동기 — release 이후 progress 모니터용
+      flipAngleRef.current = ang;
+      paintShade(ang);
       if (p < 1) flipRafRef.current = requestAnimationFrame(loop);
     };
     flipRafRef.current = requestAnimationFrame(loop);
@@ -2671,6 +2677,7 @@ function StudyNotebook({
   };
 
   const settleFlip = (commit: boolean) => {
+    clearFlipWatchdog();
     const leaf = leafRef.current;
     const dir = flipRef.current?.dir ?? 1;
     const animMs = reducedMotion() ? 200 : STUDY_SPREAD_ANIM_MS;
@@ -2721,14 +2728,17 @@ function StudyNotebook({
     commitFlip(commit);
   };
 
+  /** fromAngle: 끌기 확정 시 놓은 각도에서 이어 commit (progress 0으로 리셋 금지) */
   const goSpreadBy = useCallback(
-    (delta: number) => {
+    (delta: number, fromAngle?: number) => {
       if (dragRef.current) return;
       if (document.documentElement.dataset.studyWsOpen === "1") return;
       if (document.documentElement.dataset.studyNoteOpen === "1") return;
       const dir: 1 | -1 = delta > 0 ? 1 : -1;
+      const handoff =
+        typeof fromAngle === "number" && Number.isFinite(fromAngle);
       setSpreadNextBookUi(false);
-      if (flipRef.current) {
+      if (flipRef.current && !handoff) {
         logFlip(`연속입력 dir=${dir} → 현재 잎 즉시 확정 후 새 넘김`);
         window.clearTimeout(flipTimerRef.current);
         flipTimerRef.current = 0;
@@ -2736,15 +2746,115 @@ function StudyNotebook({
           commitFlip(true);
         });
       }
-      if (spreadBlocked(dir)) return;
+      if (spreadBlocked(dir)) {
+        if (handoff && flipRef.current) settleFlip(false);
+        return;
+      }
       flipBusyRef.current = false;
-      flipAngleRef.current = 0;
+      const startAngle = handoff ? fromAngle! : 0;
+      flipAngleRef.current = startAngle;
       flipPageWRef.current = Math.max(40, pageWRef.current);
+      const leaf = leafRef.current;
+      if (leaf) {
+        leaf.style.transition = "none";
+        leaf.style.transform = `rotateY(${startAngle}deg)`;
+        paintShade(startAngle);
+      }
       const next = { dir, auto: true as const };
       flipRef.current = next;
       lastFlipStartRef.current = performance.now();
       setFlip(next);
-      armFlipTimer(true);
+      // release 이후 progress 프레임 → sessionStorage (장 이동 후에도 유지)
+      const key = "haruchi/flip-progress-frames";
+      const startProg = Math.min(1, Math.abs(startAngle) / 180);
+      try {
+        const prev = JSON.parse(sessionStorage.getItem(key) || "[]");
+        prev.push({
+          path: location.pathname,
+          dir,
+          handoff,
+          startProg,
+          dips: null,
+          mono: null,
+          pending: true,
+          at: Date.now(),
+        });
+        sessionStorage.setItem(key, JSON.stringify(prev.slice(-40)));
+      } catch {
+        /* ignore */
+      }
+      const frames: { t: number; p: number; src: string }[] = [
+        { t: performance.now(), p: startProg, src: handoff ? "handoff" : "go" },
+      ];
+      hudProgressRef.current = {
+        v: dir > 0 ? -startProg : startProg,
+        signFlips: hudProgressRef.current.signFlips,
+        samples: hudProgressRef.current.samples + 1,
+        dragging: false,
+      };
+      let last = startProg;
+      let dips = 0;
+      let doneClimb = startProg >= 0.98;
+      const animMs = reducedMotion() ? 200 : STUDY_SPREAD_ANIM_MS;
+      const t0 = performance.now();
+      const tick = () => {
+        const elapsed = performance.now() - t0;
+        const ang = Math.abs(flipAngleRef.current);
+        const p = Math.min(1, ang / 180);
+        frames.push({ t: performance.now(), p, src: "raf" });
+        // commitFlip 직후 0 리셋은 감소로 치지 않음 — 올라가는 구간만 검사
+        if (!doneClimb && p + 0.001 < last) dips += 1;
+        if (p >= 0.98) doneClimb = true;
+        last = Math.max(last, p);
+        hudProgressRef.current.v = dir > 0 ? -p : p;
+        if (doneClimb || elapsed >= animMs + 80 || !flipRef.current) {
+          // fall through to persist
+        } else {
+          requestAnimationFrame(tick);
+          return;
+        }
+        try {
+          const prev = JSON.parse(sessionStorage.getItem(key) || "[]");
+          const i = prev.length - 1;
+          if (i >= 0 && prev[i]?.pending) {
+            prev[i] = {
+              path: location.pathname,
+              dir,
+              handoff,
+              startProg,
+              dips,
+              mono: dips === 0,
+              frames: frames.slice(0, 80),
+              at: Date.now(),
+            };
+          } else {
+            prev.push({
+              path: location.pathname,
+              dir,
+              handoff,
+              startProg,
+              dips,
+              mono: dips === 0,
+              frames: frames.slice(0, 80),
+              at: Date.now(),
+            });
+          }
+          sessionStorage.setItem(key, JSON.stringify(prev.slice(-40)));
+        } catch {
+          /* ignore */
+        }
+        logFlip(
+          `progress-frames start=${startProg.toFixed(3)} dips=${dips} n=${frames.length} handoff=${handoff ? 1 : 0}`,
+        );
+      };
+      requestAnimationFrame(tick);
+      // handoff: measureSpread 이후 layout effect에서 각도 복구+settle
+      // 일반 화살표: effect settle + 여기 타이머
+      if (handoff) {
+        skipAutoSettleRef.current = true;
+      } else {
+        armFlipTimer(true);
+      }
       armFlipWatchdog();
     },
     [chapter, total],
@@ -2752,6 +2862,23 @@ function StudyNotebook({
 
   useLayoutEffect(() => {
     if (!flip?.auto) return;
+    // 끌기 확정 handoff: 모든 layout(measureSpread 포함) 뒤에 각도 복구+settle
+    if (skipAutoSettleRef.current) {
+      skipAutoSettleRef.current = false;
+      const ang = flipAngleRef.current;
+      Promise.resolve().then(() => {
+        if (!flipRef.current?.auto) return;
+        flipAngleRef.current = ang;
+        const leaf = leafRef.current;
+        if (leaf) {
+          leaf.style.transition = "none";
+          leaf.style.transform = `rotateY(${ang}deg)`;
+          paintShade(ang);
+        }
+        settleFlip(true);
+      });
+      return;
+    }
     let cancel = false;
     const id = requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -2849,6 +2976,13 @@ function StudyNotebook({
     setSpreadPull(0);
   };
 
+  const hitWsRibbon = (x: number, y: number) => {
+    const tab = document.querySelector<HTMLElement>(".study-ws-tab.study-ws-ribbon");
+    if (!tab) return false;
+    const r = tab.getBoundingClientRect();
+    return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+  };
+
   const onSpreadPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
     if (!spreadOn) return;
     const ds = document.documentElement.dataset;
@@ -2856,6 +2990,7 @@ function StudyNotebook({
     if (ds.studyWsOpen === "1") return;
     if (ds.studyNoteOpen === "1") return;
     if (e.pointerType === "mouse" && e.button !== 0) return;
+    if (hitWsRibbon(e.clientX, e.clientY)) return;
     const t = e.target as HTMLElement;
     if (
       t.closest(
@@ -3053,16 +3188,31 @@ function StudyNotebook({
     }
     suppressClickRef.current = true;
     spreadEdgeTapRef.current = performance.now();
-    const width = Math.max(1, s.pageW);
+    const width = Math.max(1, s.pageW); // 끌기 시작 때 고정한 쪽 폭
     const dist = Math.abs(dx);
     const flick =
       dir > 0 ? s.vx < -STUDY_SPREAD_COMMIT_VEL : s.vx > STUDY_SPREAD_COMMIT_VEL;
-    const far = dist > width * STUDY_SPREAD_COMMIT_DIST;
-    const commit = !spreadBlocked(dir) && (far || flick);
+    const far = dist > width * STUDY_SPREAD_COMMIT_DIST; // 0.5
+    const blocked = spreadBlocked(dir);
+    const commitIntent = !blocked && (far || flick);
     logFlip(
-      `swipe-up cancel=${cancel} type=${e.pointerType} dx=${dx.toFixed(1)} dist=${dist.toFixed(1)} w=${width.toFixed(0)} far=${far} vx=${s.vx.toFixed(3)} flick=${flick} commit=${commit} moves=${flipMoveCountRef.current} lostCap=${flipLostCapRef.current}`,
+      `swipe-up cancel=${cancel} type=${e.pointerType} dx=${dx.toFixed(1)} dist=${dist.toFixed(1)} w=${width.toFixed(0)} pageW0=${s.pageW.toFixed(0)} flipW=${flipPageWRef.current} far=${far} thr=${(width * STUDY_SPREAD_COMMIT_DIST).toFixed(0)} vx=${s.vx.toFixed(3)} flick=${flick} commitIntent=${commitIntent} blocked=${blocked} → ${commitIntent ? "goSpreadBy" : "settleFlip(0)"} moves=${flipMoveCountRef.current} lostCap=${flipLostCapRef.current}`,
     );
-    settleFlip(commit);
+    // 확정은 ‹›/←→ 와 동일 goSpreadBy. 놓은 각도(fromAngle)를 넘겨 progress 리셋 0 방지.
+    if (commitIntent) {
+      window.clearTimeout(flipTimerRef.current);
+      flipTimerRef.current = 0;
+      clearFlipWatchdog();
+      const fromAngle = flipAngleRef.current;
+      logFlip(
+        `swipe-handoff dir=${dir} fromAngle=${fromAngle.toFixed(1)} prog=${(
+          Math.abs(fromAngle) / 180
+        ).toFixed(3)} type=${e.pointerType}`,
+      );
+      goSpreadBy(dir, fromAngle);
+      return;
+    }
+    settleFlip(false);
   };
 
   // 화면 좌우 12px 안으로 보정 + 꼬리는 선택 범위 쪽
@@ -3553,22 +3703,23 @@ function StudyNotebook({
   }, []);
 
   useLayoutEffect(() => {
-    if (wsOpen || !wsLast || !wsCardOn) {
+    if (wsOpen || !wsLast) {
       setWsTabPos(null);
       return;
     }
     const place = () => {
+      // 오른쪽 쪽(스프레드면 오른쪽 시트, 한쪽이면 그 페이지) 가장자리에 리본 부착
       let page: HTMLElement | null = null;
       if (spreadOn) {
         const vp = spreadVpRef.current;
         if (!vp) return;
-        const leftEl = vp.querySelector<HTMLElement>(
-          ".study-sheet.is-left:not(.is-under)",
-        );
         const rightEl = vp.querySelector<HTMLElement>(
           ".study-sheet.is-right:not(.is-under)",
         );
-        page = (wsLast.side === "left" ? leftEl : rightEl) ?? rightEl ?? leftEl;
+        const leftEl = vp.querySelector<HTMLElement>(
+          ".study-sheet.is-left:not(.is-under)",
+        );
+        page = rightEl ?? leftEl;
       } else {
         page =
           bodyRef.current?.closest<HTMLElement>(".study-page") ??
@@ -3576,17 +3727,33 @@ function StudyNotebook({
       }
       if (!page) return;
       const box = page.getBoundingClientRect();
-      const top = Math.round(box.top + Math.max(0, (box.height - 96) / 2));
-      const left =
-        wsLast.side === "left"
-          ? Math.round(box.left - 39)
-          : Math.round(box.right - 1);
+      const hitW = 44;
+      const ribbonH = 80;
+      // 한쪽 모드: 페이지가 길면 뷰포트에 보이는 구간의 세로 중앙에 붙임
+      const viewTop = Math.max(box.top, 0);
+      const viewBottom = Math.min(box.bottom, window.innerHeight);
+      const midY =
+        viewBottom > viewTop
+          ? (viewTop + viewBottom) / 2
+          : box.top + box.height / 2;
+      const top = Math.round(midY - ribbonH / 2);
+      const left = Math.round(
+        Math.min(box.right - hitW, window.innerWidth - hitW - 4),
+      );
       setWsTabPos({ top, left });
     };
     place();
+    const raf = requestAnimationFrame(() => place());
+    const retry = window.setTimeout(place, 120);
     window.addEventListener("resize", place);
-    return () => window.removeEventListener("resize", place);
-  }, [wsOpen, wsLast, wsCardOn, spreadOn, spreadIndex, chromeOn]);
+    window.addEventListener("scroll", place, true);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.clearTimeout(retry);
+      window.removeEventListener("resize", place);
+      window.removeEventListener("scroll", place, true);
+    };
+  }, [wsOpen, wsLast, spreadOn, spreadIndex, chromeOn]);
 
   const openWordStudyFromLast = () => {
     const last = wsLast ?? loadWsLast();
@@ -4527,17 +4694,51 @@ function StudyNotebook({
           )
         : null}
       {!embedded ? (
-        <div className="study-top">
-          <Link href="/bible-reading" className="study-top-back">
-            ← 읽기
-          </Link>
-          <div className="study-top-row">
-            <h1 className="study-book-title">{bookMeta.name}</h1>
-            <span className="study-top-count">
-              {chapter} / {total}
-            </span>
+        <>
+          <div className="study-top">
+            <Link href="/bible-reading" className="study-top-back">
+              ← 읽기
+            </Link>
+            <div className="study-top-row">
+              <button
+                type="button"
+                className="study-book-title study-loc-trigger"
+                aria-label={`${bookMeta.name} ${chapter}장 — 책·장 선택`}
+                onClick={() => {
+                  const ds = document.documentElement.dataset;
+                  if (
+                    ds.studySelecting === "1" ||
+                    ds.studyWsOpen === "1" ||
+                    ds.studyNoteOpen === "1"
+                  )
+                    return;
+                  openStudyLoc();
+                }}
+              >
+                {bookMeta.name}
+              </button>
+              <button
+                type="button"
+                className="study-top-count study-loc-trigger"
+                aria-label={`${chapter} / ${total} — 책·장 선택`}
+                onClick={() => {
+                  const ds = document.documentElement.dataset;
+                  if (
+                    ds.studySelecting === "1" ||
+                    ds.studyWsOpen === "1" ||
+                    ds.studyNoteOpen === "1"
+                  )
+                    return;
+                  openStudyLoc();
+                }}
+              >
+                {chapter} / {total}
+              </button>
+            </div>
           </div>
-        </div>
+          {/* study-top 밖: 스프레드에서 top display:none 이어도 서랍 호스트 유지 */}
+          <StudyLocHost bookId={bookId} chapter={chapter} />
+        </>
       ) : null}
 
       <div className="study-shell">
@@ -4755,13 +4956,56 @@ function StudyNotebook({
                 </div>
               ) : null}
               <div className="study-spread-fold" aria-hidden />
-              <div className="study-spread-runhead is-left" aria-hidden>
-                {bookMeta.name}
-              </div>
-              <div className="study-spread-runhead is-right" aria-hidden>
-                {chapter}
-                {bookId === "psalms" ? "편" : "장"}
-              </div>
+              {!embedded ? (
+                <button
+                  type="button"
+                  className="study-spread-runhead is-left study-loc-trigger"
+                  aria-label={`${bookMeta.name} — 책·장 선택`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const ds = document.documentElement.dataset;
+                    if (
+                      ds.studySelecting === "1" ||
+                      ds.studyWsOpen === "1" ||
+                      ds.studyNoteOpen === "1"
+                    )
+                      return;
+                    openStudyLoc();
+                  }}
+                >
+                  {bookMeta.name}
+                </button>
+              ) : (
+                <div className="study-spread-runhead is-left" aria-hidden>
+                  {bookMeta.name}
+                </div>
+              )}
+              {!embedded ? (
+                <button
+                  type="button"
+                  className="study-spread-runhead is-right study-loc-trigger"
+                  aria-label={`${chapter}${bookId === "psalms" ? "편" : "장"} — 책·장 선택`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const ds = document.documentElement.dataset;
+                    if (
+                      ds.studySelecting === "1" ||
+                      ds.studyWsOpen === "1" ||
+                      ds.studyNoteOpen === "1"
+                    )
+                      return;
+                    openStudyLoc();
+                  }}
+                >
+                  {chapter}
+                  {bookId === "psalms" ? "편" : "장"}
+                </button>
+              ) : (
+                <div className="study-spread-runhead is-right" aria-hidden>
+                  {chapter}
+                  {bookId === "psalms" ? "편" : "장"}
+                </div>
+              )}
               <div className="study-spread-folio is-left" aria-hidden>
                 {leftPageNum}
               </div>
@@ -4777,6 +5021,7 @@ function StudyNotebook({
                 style={{ width: `${spreadEdgePx(pageW)}px` }}
                 onClick={(e) => {
                   e.stopPropagation();
+                  if (hitWsRibbon(e.clientX, e.clientY)) return;
                   if (performance.now() - spreadEdgeTapRef.current < 450) return;
                   goSpreadBy(-1);
                 }}
@@ -4793,6 +5038,7 @@ function StudyNotebook({
                 style={{ width: `${spreadEdgePx(pageW)}px` }}
                 onClick={(e) => {
                   e.stopPropagation();
+                  if (hitWsRibbon(e.clientX, e.clientY)) return;
                   if (performance.now() - spreadEdgeTapRef.current < 450) return;
                   goSpreadBy(1);
                 }}
@@ -5253,15 +5499,11 @@ function StudyNotebook({
         ? createPortal(
             <button
               type="button"
-              className={`study-ws-tab${
-                wsCardOn ? ` is-${wsLast.side}` : " is-pill"
-              }`}
+              className="study-ws-tab study-ws-ribbon"
               style={
-                wsCardOn && wsTabPos
+                wsTabPos
                   ? { top: wsTabPos.top, left: wsTabPos.left }
-                  : wsCardOn
-                    ? { display: "none" }
-                    : undefined
+                  : { display: "none" }
               }
               data-no-drawer-swipe=""
               aria-label="원어 사전 다시 열기"
@@ -5274,15 +5516,7 @@ function StudyNotebook({
                 openWordStudyFromLast();
               }}
             >
-              <span className="study-ws-tab-word">{wsLast.word}</span>
-              {glossSnippet(wsLast.glossKo) ? (
-                <span className="study-ws-tab-g">
-                  {glossSnippet(wsLast.glossKo)}
-                </span>
-              ) : null}
-              <span className="study-ws-tab-chev" aria-hidden="true">
-                {wsCardOn && wsLast.side === "left" ? "›" : "‹"}
-              </span>
+              <span className="study-ws-ribbon-label">원어</span>
             </button>,
             document.body,
           )

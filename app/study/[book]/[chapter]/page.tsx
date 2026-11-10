@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import { BOOKS, type BookId } from "../../../bible-reading/books";
 import StudyNotebook from "../../components/StudyNotebook";
 import "../../study.css";
@@ -12,8 +12,12 @@ function isKnownBook(id: string): id is BookId {
 
 export default function StudyChapterPage() {
   const params = useParams<{ book: string; chapter: string }>();
+  const search = useSearchParams();
   const bookRaw = params?.book ?? "";
   const chapterRaw = Number(params?.chapter);
+  const verseRaw = Number(search.get("verse"));
+  const flashVerse =
+    Number.isFinite(verseRaw) && verseRaw >= 1 ? verseRaw : null;
 
   if (!isKnownBook(bookRaw)) {
     return (
@@ -47,5 +51,11 @@ export default function StudyChapterPage() {
     );
   }
 
-  return <StudyNotebook bookId={bookRaw} chapter={chapter} />;
+  return (
+    <StudyNotebook
+      bookId={bookRaw}
+      chapter={chapter}
+      flashVerse={flashVerse}
+    />
+  );
 }

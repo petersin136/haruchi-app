@@ -6,6 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadStrongMeta } from "./lib/hebrew-strong-meta.mjs";
+import { syncHebrewLexiconEntry } from "./lib/hebrew-lexicon-sync.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
@@ -124,17 +125,8 @@ function rebuildDef({ identity, nm, soft, first, extras = [] }) {
   return parts.join(" ").replace(/\s+/g, " ").trim();
 }
 function syncLex(id, note) {
-  const p = path.join(LEX, `${id}.json`);
-  if (!fs.existsSync(p)) return;
-  const j = JSON.parse(fs.readFileSync(p, "utf8"));
-  Object.assign(j, {
-    defKo: note.defKo || "",
-    etymKo: note.etymKo ?? "",
-    usageKo: note.usageKo ?? j.usageKo ?? "",
-    noteSrc: note.noteSrc || j.noteSrc || "",
-    nameMeaning: note.nameMeaning || "",
-  });
-  fs.writeFileSync(p, JSON.stringify(j, null, 2) + "\n");
+  // 쓰기 직전 재읽기·자기 필드만 — krvKo·krvForms(에이전트3) 미터치
+  syncHebrewLexiconEntry(id, note, { lexDir: LEX });
 }
 function displayName(lex) {
   const krv = lex?.krvKo?.[0];

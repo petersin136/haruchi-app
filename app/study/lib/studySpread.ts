@@ -22,8 +22,8 @@ export const STUDY_SPREAD_SETTLE_PAD_MS = 50;
 /** 넘김이 이 시간 지나도 남아 있으면 강제 정리 */
 export const STUDY_SPREAD_FLIP_WATCHDOG_MS = 600;
 export const STUDY_SPREAD_SWIPE_PX = 40;
-/** 놓을 때 넘김으로 보는 이동 거리(쪽 폭 대비) */
-export const STUDY_SPREAD_COMMIT_DIST = 0.25;
+/** 놓을 때 넘김으로 보는 이동 거리(쪽 폭 대비) — 끌기 시작 때 고정한 pageW의 50% */
+export const STUDY_SPREAD_COMMIT_DIST = 0.5;
 /** 놓을 때 넘김으로 보는 속도(px/ms) */
 export const STUDY_SPREAD_COMMIT_VEL = 0.35;
 export const STUDY_SPREAD_PERSPECTIVE = 1800;

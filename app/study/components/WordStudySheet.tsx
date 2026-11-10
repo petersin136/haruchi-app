@@ -29,8 +29,8 @@ import { type WsLast } from "../lib/wsLast";
 
 /** 스프레드 카드: 위·아래·바깥 여백 */
 export const WS_SIDE_INSET = 14;
-const WS_OPEN_MS = 320;
-const WS_CLOSE_MS = 240;
+const WS_OPEN_MS = 240;
+const WS_CLOSE_MS = 180;
 const WS_SETTLE_PAD_MS = 50;
 const WS_CONTENT_DELAY_MS = 60;
 const WS_REDUCED_MS = 150;
@@ -345,9 +345,9 @@ export default function WordStudySheet({
     el.style.transition = `transform ${ms}ms ${ease}, opacity ${ms}ms ${ease}`;
     if (closing) {
       el.classList.remove("is-entered");
-      el.style.opacity = "0.6";
-      if (side === "left") el.style.transform = `translateX(calc(-1 * ${dist}))`;
-      else if (side === "right") el.style.transform = `translateX(${dist})`;
+      el.style.opacity = "0";
+      // 사이드·하단 공통: 오른쪽으로 밀려 나감 (transform/opacity만)
+      if (side) el.style.transform = `translateX(${dist})`;
       else el.style.transform = "translateY(100%)";
     } else {
       el.classList.add("is-entered");
@@ -367,9 +367,8 @@ export default function WordStudySheet({
       el.style.opacity = "0";
       return;
     }
-    el.style.opacity = "0.6";
-    if (side === "left") el.style.transform = `translateX(calc(-1 * ${dist}))`;
-    else if (side === "right") el.style.transform = `translateX(${dist})`;
+    el.style.opacity = "0";
+    if (side) el.style.transform = `translateX(${dist})`;
     else el.style.transform = "translateY(100%)";
   };
 
@@ -1223,15 +1222,22 @@ export default function WordStudySheet({
         <div ref={bodyRef} className="study-ws-body study-ws-fadein">
           <div key={viewKey} className="study-ws-view">
             <header className="study-ws-hero">
-              <div className="study-ws-hero-row">
-                <p className="study-ws-word" lang="grc">
-                  {headWord}
+              {/* 순서: 원어 → 음역 → 뜻 → 품사 */}
+              <p className="study-ws-word" lang="grc">
+                {headWord}
+              </p>
+              {pron ? <p className="study-ws-pron">{pron}</p> : null}
+              {defKo || nameMeaning || active.glossKo ? (
+                <p className="study-ws-gloss-main">
+                  {defKo || nameMeaning || active.glossKo}
                 </p>
-                {pron ? <span className="study-ws-pron">{pron}</span> : null}
-                {viewStrong ? (
-                  <span className="study-ws-strong">{viewStrong}</span>
-                ) : null}
-              </div>
+              ) : null}
+              {parseKo ? (
+                <p className="study-ws-pos-main">{grammarLine(parseKo)}</p>
+              ) : null}
+              {viewStrong ? (
+                <span className="study-ws-strong">{viewStrong}</span>
+              ) : null}
               {bodyKo ? (
                 <p className="study-ws-bodyko">
                   본문: <strong>{bodyKo}</strong>
@@ -1245,13 +1251,6 @@ export default function WordStudySheet({
               ) : null}
             </header>
 
-            {parseKo ? (
-              <section className="study-ws-sec">
-                <h3>품사</h3>
-                <p className="study-ws-def-ko">{grammarLine(parseKo)}</p>
-              </section>
-            ) : null}
-
             {rootChips.length > 0 || rootNote ? (
               <section className="study-ws-sec">
                 <h3>어원</h3>
@@ -1262,18 +1261,9 @@ export default function WordStudySheet({
               </section>
             ) : null}
 
-            {defKo ? (
+            {defKo && noteSrc === "auto" ? (
               <section className="study-ws-sec">
-                <h3>단어 정의</h3>
-                <p className="study-ws-def-ko">{defKo}</p>
-                {noteSrc === "auto" ? (
-                  <p className="study-ws-note-src">자동으로 작성된 설명이에요</p>
-                ) : null}
-              </section>
-            ) : nameMeaning ? (
-              <section className="study-ws-sec">
-                <h3>이름 뜻</h3>
-                <p className="study-ws-def-ko">{nameMeaning}</p>
+                <p className="study-ws-note-src">자동으로 작성된 설명이에요</p>
               </section>
             ) : null}
 
