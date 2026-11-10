@@ -23,6 +23,7 @@ export const KO_STEM_SUFFIXES = [
   "으로",
   "로서",
   "에서",
+  "보다",
   "하는",
   "하여",
   "하고",
@@ -141,6 +142,7 @@ const KO_NOUN_PARTICLES = [
   "과",
   "와",
   "도",
+  "보다",
 ] as const;
 const KO_VERBALIZER_MIN_LEAD = 2;
 const KO_NOUN_PARTICLE_MIN_HITS = 2;
@@ -264,6 +266,14 @@ export function stemOf(
 
   const core = eojeol.slice(start, end);
   if (!core) return { start: 0, end: eojeol.length };
+
+  // 비교 조사 「보다」: 「너보다」처럼 1글자 본체는 isValidStem(bare≥2)을 건너뛴다
+  if (core.endsWith("보다") && core.length > 2) {
+    const stem = core.slice(0, -2);
+    if (stem.length === 1 && isHangul(stem)) {
+      return { start, end: start + stem.length };
+    }
+  }
 
   const rejectedHaCuts = new Set<number>();
   for (const { cut, v } of verbalizerCuts(core)) {

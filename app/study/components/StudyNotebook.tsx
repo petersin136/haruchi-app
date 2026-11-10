@@ -64,17 +64,30 @@ import {
   type VerseWordStudyMeta,
   type WordStudyToken,
 } from "../lib/wordStudy";
-import WordStudySheet, { type WsSidePanel } from "./WordStudySheet";
+import WordStudySheet, {
+  WS_SIDE_INSET,
+  type WsSidePanel,
+} from "./WordStudySheet";
+import {
+  glossSnippet,
+  loadWsLast,
+  saveWsLast,
+  type WsLast,
+} from "../lib/wsLast";
 import { stemOf } from "../lib/koStem";
 import {
   STUDY_SPREAD_ANIM_MS,
-  STUDY_SPREAD_COMMIT_DEG,
+  STUDY_SPREAD_COMMIT_DIST,
   STUDY_SPREAD_COMMIT_VEL,
-  STUDY_SPREAD_EDGE,
+  STUDY_SPREAD_FLIP_WATCHDOG_MS,
+  STUDY_SPREAD_SETTLE_PAD_MS,
   STUDY_SPREAD_OUTER,
+  STUDY_SPREAD_PAD_OUTER,
   STUDY_SPREAD_PGNUM_H,
   calcSpreadGeometry,
+  spreadEdgePx,
   subscribeStudySpread,
+  subscribeStudyWsCard,
 } from "../lib/studySpread";
 import "../study.css";
 
@@ -189,6 +202,19 @@ const MAG_FADE_MS = 150;
 
 type DragMode = "press" | "start" | "end";
 
+/** 왼쪽 쪽의 왼쪽 끝 / 오른쪽 쪽의 오른쪽 끝. 아니면 0 */
+function hitSpreadEdge(
+  clientX: number,
+  box: DOMRect,
+  pageW: number,
+): 0 | 1 | -1 {
+  const edge = spreadEdgePx(pageW);
+  const x = clientX - box.left;
+  if (x <= edge) return -1;
+  if (x >= box.width - edge) return 1;
+  return 0;
+}
+
 type SelRect = { top: number; left: number; width: number; height: number };
 
 /** 선택 범위 위에 둘 자리가 없으면 아래로 */
@@ -225,6 +251,8 @@ function StudyNotebook({
   const bookMeta = BOOKS[bookId];
   const total = bookMeta.totalChapters;
   const [spreadOn, setSpreadOn] = useState(false);
+  /** ≥769: 원어 세로 카드(스프레드·한 단 공통) */
+  const [wsCardOn, setWsCardOn] = useState(false);
   /** 펼침 번호(0-based). 한 번에 두 쪽 */
   const [spreadIndex, setSpreadIndex] = useState(0);
   const [pageCount, setPageCount] = useState(1);
@@ -278,7 +306,7 @@ function StudyNotebook({
   } | null>(null);
   const spreadEdgeTapRef = useRef(0);
   const flipRef = useRef(flip);
-  flipRef.current = flip;
+  /* commitFlip이 먼저 비운 값을 다음 렌더의 옛 flip state가 되살리지 않게, 여기서 동기화하지 않음 */
   const leafRef = useRef<HTMLDivElement | null>(null);
   const leafInkRef = useRef<HTMLDivElement | null>(null);
   const leafCastRef = useRef<HTMLDivElement | null>(null);
@@ -286,6 +314,17 @@ function StudyNotebook({
   const flipAngleRef = useRef(0);
   const flipRafRef = useRef(0);
   const flipBusyRef = useRef(false);
+  const flipTimerRef = useRef(0);
+  const flipTeCountRef = useRef(0);
+  const flipAeCountRef = useRef(0);
+  const flipMoveCountRef = useRef(0);
+  const flipLostCapRef = useRef(0);
+  const flipWatchdogRef = useRef(0);
+  const lastFlipStartRef = useRef(0);
+  const lastFlipEndRef = useRef(0);
+  const spreadCaptureIdRef = useRef<number | null>(null);
+  const hudRef = useRef<HTMLPreElement | null>(null);
+  const hudPtRef = useRef({ x: 0, y: 0 });
   const pageWRef = useRef(480);
   const versePickRef = useRef<number[] | null>(null);
   versePickRef.current = versePick;
@@ -388,6 +427,18 @@ function StudyNotebook({
   }, []);
   const debugLogRef = useRef(debugLog);
   debugLogRef.current = debugLog;
+  const logFlip = (line: string) => {
+    const w = window as Window & {
+      __studyFlipLog?: { t: number; line: string }[];
+    };
+    if (!w.__studyFlipLog) w.__studyFlipLog = [];
+    w.__studyFlipLog.push({ t: performance.now(), line });
+    try {
+      debugLogRef.current(`[넘김] ${line}`);
+    } catch {
+      /* 로그 실패가 넘김을 막지 않음 */
+    }
+  };
 
   const startToolTip = (label: string) => {
     window.clearTimeout(tipTimerRef.current);
@@ -426,6 +477,11 @@ function StudyNotebook({
   const [wsVerse, setWsVerse] = useState(1);
   const [wsInitial, setWsInitial] = useState<WordStudyToken | null>(null);
   const [wsSelectedKo, setWsSelectedKo] = useState("");
+  const [wsLast, setWsLast] = useState<WsLast | null>(null);
+  const [wsTabPos, setWsTabPos] = useState<{
+    top: number;
+    left: number;
+  } | null>(null);
   const bodyRef = useRef<HTMLDivElement | null>(null);
   const fileRef = useRef<HTMLInputElement | null>(null);
   const editInputRef = useRef<HTMLInputElement | null>(null);
@@ -438,6 +494,10 @@ function StudyNotebook({
     [verses],
   );
   plainRef.current = plain;
+  const spansRef = useRef(spans);
+  spansRef.current = spans;
+  const spreadOnRef = useRef(spreadOn);
+  spreadOnRef.current = spreadOn;
   const words = useMemo(() => buildWords(spans), [spans]);
   /** 길게 누른 어절의 본체↔전체 토글 */
   const stemToggleRef = useRef<{
@@ -561,6 +621,66 @@ function StudyNotebook({
       `[원어] 버튼 렌더됨 ch=${chapter} hasFile=${wsHasFile ? 1 : 0} ot=${isOtBook ? 1 : 0}`,
     );
   }, [debugOn, isOtBook, wsHasFile, bookId, chapter, debugLog]);
+
+  const paintA2Hud = useCallback((x?: number, y?: number) => {
+    const el = hudRef.current;
+    const spread = spreadVpRef.current;
+    const body = bodyRef.current;
+    if (typeof x === "number" && typeof y === "number") {
+      hudPtRef.current = { x, y };
+    }
+    const px = hudPtRef.current.x;
+    const py = hudPtRef.current.y;
+    const cap =
+      captureTargetRef.current ??
+      (spreadCaptureIdRef.current != null ? spread : null);
+    const pt = typeof document !== "undefined" ? document.elementFromPoint(px, py) : null;
+    const edge = spread
+      ? hitSpreadEdge(px, spread.getBoundingClientRect(), pageWRef.current)
+      : 0;
+    const turning = !!flipRef.current;
+    const snap = {
+      isTurning: turning,
+      flipStart: lastFlipStartRef.current,
+      flipEnd: lastFlipEndRef.current,
+      capture: cap
+        ? `${cap.tagName.toLowerCase()}.${(cap.className || "").toString().slice(0, 40)}`
+        : "none",
+      spreadUserSelect: spread ? getComputedStyle(spread).userSelect : "",
+      bodyUserSelect: body ? getComputedStyle(body).userSelect : "",
+      fromPoint: pt
+        ? `${pt.tagName.toLowerCase()}.${String(pt.className || "").slice(0, 48)}`
+        : "none",
+      inEdge: edge,
+      studySelecting: document.documentElement.dataset.studySelecting || "",
+      peBody: body ? getComputedStyle(body).pointerEvents : "",
+    };
+    (window as Window & { __studyA2?: typeof snap }).__studyA2 = snap;
+    if (!el) return;
+    el.textContent = [
+      `isTurning=${snap.isTurning ? "true" : "false"}`,
+      `flipStart=${snap.flipStart ? Math.round(snap.flipStart) : 0}`,
+      `flipEnd=${snap.flipEnd ? Math.round(snap.flipEnd) : 0}`,
+      `capture=${snap.capture}`,
+      `spread us=${snap.spreadUserSelect} pe=${spread ? getComputedStyle(spread).pointerEvents : ""}`,
+      `body us=${snap.bodyUserSelect} pe=${snap.peBody}`,
+      `fromPoint=${snap.fromPoint}`,
+      `inEdge=${snap.inEdge === 0 ? "no" : snap.inEdge > 0 ? "next" : "prev"}`,
+      `selecting=${snap.studySelecting || "0"}`,
+    ].join("\n");
+  }, []);
+
+  useEffect(() => {
+    if (!debugOn || !debugHost) return;
+    const onMove = (e: PointerEvent) => paintA2Hud(e.clientX, e.clientY);
+    window.addEventListener("pointermove", onMove);
+    paintA2Hud();
+    const id = window.setInterval(() => paintA2Hud(), 200);
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      window.clearInterval(id);
+    };
+  }, [debugOn, debugHost, paintA2Hud, flip, spreadOn]);
 
   const persist = useCallback(
     (next: ChapterStudyData) => {
@@ -873,6 +993,35 @@ function StudyNotebook({
     (range: { start: number; end: number }): ToolbarMode | null => {
       const root = bodyRef.current;
       if (!root) return null;
+      const baseEl = spreadVpRef.current ?? root;
+      const base = baseEl.getBoundingClientRect();
+      const bodies: HTMLElement[] = spreadVpRef.current
+        ? Array.from(
+            spreadVpRef.current.querySelectorAll<HTMLElement>(
+              ".study-page-view .study-body",
+            ),
+          ).filter((body) => !body.closest(".is-covered, .study-spread-measure"))
+        : [root];
+      const clipped = collectRangeLineRects(
+        bodies.length ? bodies : [root],
+        range,
+        spans,
+        base,
+        !!spreadVpRef.current,
+      );
+      const first = clipped[0];
+      const last = clipped[clipped.length - 1];
+      if (first && last) {
+        return {
+          kind: "selection",
+          start: range.start,
+          end: range.end,
+          ref: verseAtOffset(spans, range.start),
+          x: first.absLeft + first.width / 2,
+          rt: first.absTop,
+          rb: last.absBottom + SEL_HANDLE_SIZE,
+        };
+      }
       const a = offsetToDomPoint(root, range.start, spans, false);
       const b = offsetToDomPoint(root, range.end, spans, true);
       if (!a || !b) return null;
@@ -881,16 +1030,16 @@ function StudyNotebook({
       r.setEnd(b.node, b.offset);
       const lines = mergeLineRects(Array.from(r.getClientRects()));
       if (lines.length === 0) return null;
-      const first = lines[0];
-      const last = lines[lines.length - 1];
+      const f = lines[0];
+      const l = lines[lines.length - 1];
       return {
         kind: "selection",
         start: range.start,
         end: range.end,
         ref: verseAtOffset(spans, range.start),
-        x: first.left + first.width / 2,
-        rt: first.top,
-        rb: last.bottom + SEL_HANDLE_SIZE,
+        x: f.left + f.width / 2,
+        rt: f.top,
+        rb: l.bottom + SEL_HANDLE_SIZE,
       };
     },
     [spans],
@@ -903,6 +1052,61 @@ function StudyNotebook({
     setSel(null);
     setToolbar((t) => (t?.kind === "selection" ? null : t));
   }, []);
+
+  /** 마우스 mouseup: 브라우저 Range → 기존 offset + 도구막대(선택 상자 위) */
+  const applyNativeMouseSelection = useCallback(
+    (e?: Event) => {
+      if (!spreadOnRef.current) return;
+      const t = (e?.target as HTMLElement | null) ?? null;
+      if (
+        t?.closest?.(
+          ".study-toolbar, .study-sel-handle, .study-ws-root, .study-ws-tab, .study-spread-edge, .study-spread-pager, .study-mark-note-input",
+        )
+      ) {
+        return;
+      }
+      const root = bodyRef.current;
+      if (!root) return;
+      const mapped = nativeSelectionToOffsets(root, spansRef.current);
+      if (!mapped) return;
+      const next = { start: mapped.start, end: mapped.end };
+      selRef.current = next;
+      setSel(next);
+      setExpandedNoteId(null);
+      const box = spreadVpRef.current?.getBoundingClientRect();
+      const vis = box
+        ? mapped.rects.filter((r) => {
+            const cx = r.left + r.width / 2;
+            const cy = r.top + r.height / 2;
+            return (
+              cx >= box.left &&
+              cx <= box.right &&
+              cy >= box.top &&
+              cy <= box.bottom
+            );
+          })
+        : mapped.rects;
+      const lines = vis.length ? vis : mapped.rects;
+      const first = lines[0];
+      const last = lines[lines.length - 1];
+      if (first && last) {
+        setToolbar({
+          kind: "selection",
+          start: next.start,
+          end: next.end,
+          ref: verseAtOffset(spansRef.current, next.start),
+          x: first.left + first.width / 2,
+          rt: first.top,
+          rb: last.bottom + SEL_HANDLE_SIZE,
+        });
+      } else {
+        const tb = selectionToolbarFor(next);
+        if (tb) setToolbar(tb);
+      }
+      window.getSelection()?.removeAllRanges();
+    },
+    [selectionToolbarFor],
+  );
 
   const releasePointerCaptureSafe = useCallback(() => {
     const el = captureTargetRef.current;
@@ -1164,8 +1368,38 @@ function StudyNotebook({
       )
     )
       return;
+    if (spreadOn && spreadVpRef.current) {
+      const edge = hitSpreadEdge(
+        e.clientX,
+        spreadVpRef.current.getBoundingClientRect(),
+        pageWRef.current,
+      );
+      if (edge !== 0) return;
+    }
     const startX = e.clientX;
     const startY = e.clientY;
+    if (e.pointerType === "mouse") {
+      // PC 양쪽: 브라우저 기본 선택. preventDefault·setPointerCapture 금지.
+      if (spreadOn) return;
+      const off = offsetAtPoint(startX, startY);
+      if (off == null) return;
+      const max = plainRef.current.length;
+      if (max < 1) return;
+      const start = Math.max(0, Math.min(max - 1, off));
+      const first = { start, end: Math.min(max, start + 1) };
+      selRef.current = first;
+      setSel(first);
+      setExpandedNoteId(null);
+      beginDrag("end", first, startX, startY);
+      try {
+        e.currentTarget.setPointerCapture(e.pointerId);
+        captureTargetRef.current = e.currentTarget;
+        capturePointerIdRef.current = e.pointerId;
+      } catch {
+        /* ignore */
+      }
+      return;
+    }
     if (pressRef.current) window.clearTimeout(pressRef.current.timer);
     const timer = window.setTimeout(() => {
       pressRef.current = null;
@@ -1287,7 +1521,11 @@ function StudyNotebook({
           gestureFnsRef.current.updateDragTo(ev.clientX, ev.clientY);
         }
         gestureFnsRef.current.finishDrag();
+        return;
       }
+      const pe = e as PointerEvent | undefined;
+      if (pe && pe.pointerType === "touch") return;
+      applyNativeMouseSelection(e);
     };
 
     const onAbort = () => {
@@ -1340,17 +1578,17 @@ function StudyNotebook({
       document.removeEventListener("visibilitychange", onVis);
       gestureFnsRef.current.abortSelectGesture({ keepSelection: true });
     };
-  }, []);
+  }, [applyNativeMouseSelection]);
 
-  // 공부 노트 선택·손잡이·도구 막대 상태를 서랍 스와이프에 알림
+  // 끄는 중에만 넘김을 막음. 선택·도구막대가 남아 있으면 넘김이 영구 정지됐음.
   useEffect(() => {
-    const on = dragging || !!sel || !!toolbar || magState === "shown";
+    const on = dragging || magState === "shown";
     if (on) document.documentElement.dataset.studySelecting = "1";
     else delete document.documentElement.dataset.studySelecting;
     return () => {
       delete document.documentElement.dataset.studySelecting;
     };
-  }, [dragging, sel, toolbar, magState]);
+  }, [dragging, magState]);
 
   // 드래그 중 3초 무터치 → 강제 정리 (먹통 안전장치)
   useEffect(() => {
@@ -1379,7 +1617,7 @@ function StudyNotebook({
       down = null;
       if (moved >= MOVE_CANCEL_PX || !quick) return;
       const t = e.target as HTMLElement | null;
-      if (t?.closest?.(".study-toolbar, .study-sel-handle, .study-ws-root"))
+      if (t?.closest?.(".study-toolbar, .study-sel-handle, .study-ws-root, .study-ws-tab"))
         return;
       const cur = selRef.current;
       const tog = stemToggleRef.current;
@@ -1480,6 +1718,7 @@ function StudyNotebook({
   }, [flashVerse, verses, bookId, chapter, spreadOn]);
 
   useEffect(() => subscribeStudySpread(setSpreadOn), []);
+  useEffect(() => subscribeStudyWsCard(setWsCardOn), []);
 
   // 가로↔세로 전환 시 보던 절 유지
   useEffect(() => {
@@ -1650,13 +1889,12 @@ function StudyNotebook({
     const t = e.target as HTMLElement;
     if (
       t.closest(
-        ".brp-mobile-topbar, .brp-header, [data-no-drawer-swipe], .study-spread-edge, .study-spread-pager, .study-toolbar, .study-ws-root, .study-vnum, button, a, input, textarea",
+        ".brp-mobile-topbar, .brp-header, [data-no-drawer-swipe], .study-spread-edge, .study-spread-pager, .study-toolbar, .study-ws-root, .study-ws-tab, .study-vnum, .study-verse-text, .study-drop, .study-chapter-title, .study-seg, button, a, input, textarea",
       )
     )
       return;
     const box = e.currentTarget.getBoundingClientRect();
-    const rel = (e.clientX - box.left) / Math.max(1, box.width);
-    if (rel < STUDY_SPREAD_EDGE || rel > 1 - STUDY_SPREAD_EDGE) return;
+    if (hitSpreadEdge(e.clientX, box, pageWRef.current) !== 0) return;
     setChromeOn((v) => !v);
   };
 
@@ -1666,6 +1904,7 @@ function StudyNotebook({
       (vp?.querySelector("[data-spread-measure]") as HTMLElement | null) ??
       spreadFlowRef.current;
     if (!vp || !flow || !spreadOn) return;
+    if (flipRef.current) return;
 
     const vv = window.visualViewport;
     const vvTop = vv?.offsetTop ?? 0;
@@ -1700,17 +1939,27 @@ function StudyNotebook({
 
     pageWRef.current = g.pageW;
     setPageW(g.pageW);
+    const edgeW = spreadEdgePx(g.pageW);
     vp.style.setProperty("--study-page-w", `${g.pageW}px`);
+    vp.style.setProperty("--study-col-w", `${g.colW}px`);
+    vp.style.setProperty("--study-col-gap", `${g.colGap}px`);
+    vp.style.setProperty("--study-spread-h", `${g.spreadH}px`);
+    vp.style.setProperty("--study-spread-gap", `${g.gap}px`);
+    vp.style.setProperty("--study-edge-w", `${edgeW}px`);
     setSpreadBoxStyle({
       width: `${g.spreadW}px`,
       height: `${g.spreadH}px`,
       ["--study-spread-w" as string]: `${g.spreadW}px`,
       ["--study-page-w" as string]: `${g.pageW}px`,
+      ["--study-col-w" as string]: `${g.colW}px`,
+      ["--study-col-gap" as string]: `${g.colGap}px`,
+      ["--study-spread-h" as string]: `${g.spreadH}px`,
+      ["--study-spread-gap" as string]: `${g.gap}px`,
+      ["--study-edge-w" as string]: `${edgeW}px`,
     });
 
     const paintFlow = (node: HTMLElement) => {
-      node.style.width = "";
-      node.style.minWidth = `${Math.ceil(g.colW + g.padOuter * 2)}px`;
+      node.style.minWidth = `${Math.ceil(g.colW)}px`;
       node.style.height = `${g.spreadH}px`;
       node.style.maxHeight = `${g.spreadH}px`;
       node.style.columnWidth = `${g.colW}px`;
@@ -1901,19 +2150,66 @@ function StudyNotebook({
     flipRafRef.current = requestAnimationFrame(loop);
   };
 
+  const clearFlipWatchdog = () => {
+    window.clearTimeout(flipWatchdogRef.current);
+    flipWatchdogRef.current = 0;
+  };
+
+  const armFlipWatchdog = () => {
+    clearFlipWatchdog();
+    lastFlipStartRef.current = performance.now();
+    flipWatchdogRef.current = window.setTimeout(() => {
+      if (!flipRef.current) return;
+      logFlip("watchdog 600ms isTurning → leaf 제거·capture 해제");
+      window.clearTimeout(flipTimerRef.current);
+      flipTimerRef.current = 0;
+      const spread = spreadVpRef.current;
+      const capId = spreadCaptureIdRef.current;
+      if (spread && capId != null) releaseSpreadCapture(spread, capId);
+      spreadCaptureIdRef.current = null;
+      spreadSwipeRef.current = null;
+      resetSpreadDrag();
+      commitFlip(false);
+    }, STUDY_SPREAD_FLIP_WATCHDOG_MS);
+  };
+
+  const armFlipTimer = (commit: boolean) => {
+    window.clearTimeout(flipTimerRef.current);
+    const animMs = reducedMotion() ? 200 : STUDY_SPREAD_ANIM_MS;
+    const waitMs = animMs + STUDY_SPREAD_SETTLE_PAD_MS;
+    flipTimerRef.current = window.setTimeout(() => {
+      logFlip(
+        `timer fire +${STUDY_SPREAD_SETTLE_PAD_MS}ms te=${flipTeCountRef.current} ae=${flipAeCountRef.current}`,
+      );
+      commitFlip(commit);
+    }, waitMs);
+  };
+
   const commitFlip = (commit: boolean) => {
-    if (flipBusyRef.current) return;
-    flipBusyRef.current = true;
+    window.clearTimeout(flipTimerRef.current);
+    flipTimerRef.current = 0;
+    clearFlipWatchdog();
+    lastFlipEndRef.current = performance.now();
+    if (!flipRef.current) return;
     stopShade();
     const dir = flipRef.current?.dir ?? 0;
+    const had = !!flipRef.current;
     const spread = spreadVpRef.current;
     spread?.classList.remove("is-fade-turn");
+    if (spread) spread.style.opacity = "1";
+    const leaf = leafRef.current;
+    if (leaf) {
+      leaf.style.transition = "none";
+      leaf.style.transform = "";
+    }
+    flipRef.current = null;
     setFlip(null);
     flipAngleRef.current = 0;
-    if (!commit || !dir || spreadBlocked(dir)) {
-      flipBusyRef.current = false;
-      return;
-    }
+    flipBusyRef.current = false;
+    logFlip(
+      `commit commit=${commit} dir=${dir} had=${had} te=${flipTeCountRef.current} ae=${flipAeCountRef.current} move=${flipMoveCountRef.current} lostCap=${flipLostCapRef.current}`,
+    );
+    if (!commit || !dir || spreadBlocked(dir)) return;
     if (dir > 0 && spreadIndexRef.current >= spreadCountRef.current - 1) {
       if (chapter < total) {
         delete document.documentElement.dataset.studySpreadEnd;
@@ -1921,7 +2217,6 @@ function StudyNotebook({
         else if (!embedded)
           window.location.assign(`/study/${bookId}/${chapter + 1}`);
       }
-      flipBusyRef.current = false;
       return;
     }
     if (dir < 0 && spreadIndexRef.current <= 0) {
@@ -1931,16 +2226,37 @@ function StudyNotebook({
         else if (!embedded)
           window.location.assign(`/study/${bookId}/${chapter - 1}`);
       }
-      flipBusyRef.current = false;
       return;
     }
     setSpreadIndex((i) => i + dir);
-    flipBusyRef.current = false;
   };
 
   const settleFlip = (commit: boolean) => {
     const leaf = leafRef.current;
     const dir = flipRef.current?.dir ?? 1;
+    const animMs = reducedMotion() ? 200 : STUDY_SPREAD_ANIM_MS;
+    const waitMs = animMs + STUDY_SPREAD_SETTLE_PAD_MS;
+    flipTeCountRef.current = 0;
+    flipAeCountRef.current = 0;
+    logFlip(
+      `settle start commit=${commit} dir=${dir} leaf=${!!leaf} w=${leaf ? Math.round(leaf.offsetWidth) : 0} anim=${animMs} timer=${waitMs}`,
+    );
+    const onTe = (ev: TransitionEvent) => {
+      if (!leaf || ev.target !== leaf) return;
+      flipTeCountRef.current += 1;
+      logFlip(
+        `transitionend prop=${ev.propertyName} te=${flipTeCountRef.current} (타이머로 확정, 이벤트는 기록만)`,
+      );
+    };
+    const onAe = (ev: AnimationEvent) => {
+      if (!leaf || ev.target !== leaf) return;
+      flipAeCountRef.current += 1;
+      logFlip(`animationend name=${ev.animationName} ae=${flipAeCountRef.current}`);
+    };
+    if (leaf) {
+      leaf.addEventListener("transitionend", onTe);
+      leaf.addEventListener("animationend", onAe);
+    }
     if (reducedMotion()) {
       const spread = spreadVpRef.current;
       spread?.classList.add("is-fade-turn");
@@ -1948,51 +2264,48 @@ function StudyNotebook({
         spread.style.transition = "opacity 200ms ease";
         spread.style.opacity = "0.45";
       }
-      window.setTimeout(() => {
-        commitFlip(commit);
-        if (spread) spread.style.opacity = "1";
-      }, 200);
+      armFlipTimer(commit);
       return;
     }
-    if (!leaf) {
-      commitFlip(commit);
+    if (leaf && leaf.offsetWidth >= 8) {
+      const target = commit ? (dir > 0 ? -180 : 180) : 0;
+      const from = flipAngleRef.current;
+      leaf.style.transition = "none";
+      void leaf.offsetWidth;
+      leaf.style.transition = `transform ${animMs}ms cubic-bezier(0.2, 0.8, 0.2, 1)`;
+      leaf.style.transform = `rotateY(${target}deg)`;
+      trackShade(from, target);
+      armFlipTimer(commit);
       return;
     }
-    const target = commit ? (dir > 0 ? -180 : 180) : 0;
-    const from = flipAngleRef.current;
-    leaf.style.transition = "none";
-    void leaf.offsetWidth;
-    leaf.style.transition = `transform ${STUDY_SPREAD_ANIM_MS}ms cubic-bezier(0.2, 0.8, 0.2, 1)`;
-    leaf.style.transform = `rotateY(${target}deg)`;
-    trackShade(from, target);
-    let settled = false;
-    const done = () => {
-      if (settled) return;
-      settled = true;
-      leaf.removeEventListener("transitionend", onEnd);
-      window.clearTimeout(fallback);
-      commitFlip(commit);
-    };
-    const onEnd = (ev: TransitionEvent) => {
-      if (ev.target !== leaf || ev.propertyName !== "transform") return;
-      done();
-    };
-    leaf.addEventListener("transitionend", onEnd);
-    const fallback = window.setTimeout(done, STUDY_SPREAD_ANIM_MS + 80);
+    logFlip("settle no-leaf → 즉시 commit");
+    commitFlip(commit);
   };
 
   const goSpreadBy = useCallback(
     (delta: number) => {
-      if (document.documentElement.dataset.studySelecting === "1") return;
+      if (dragRef.current) return;
       if (document.documentElement.dataset.studyWsOpen === "1") return;
       if (document.documentElement.dataset.studyNoteOpen === "1") return;
-      if (flipRef.current) return;
       const dir: 1 | -1 = delta > 0 ? 1 : -1;
       setSpreadNextBookUi(false);
+      if (flipRef.current) {
+        logFlip(`연속입력 dir=${dir} → 현재 잎 즉시 확정 후 새 넘김`);
+        window.clearTimeout(flipTimerRef.current);
+        flipTimerRef.current = 0;
+        flushSync(() => {
+          commitFlip(true);
+        });
+      }
       if (spreadBlocked(dir)) return;
       flipBusyRef.current = false;
       flipAngleRef.current = 0;
-      setFlip({ dir, auto: true });
+      const next = { dir, auto: true as const };
+      flipRef.current = next;
+      lastFlipStartRef.current = performance.now();
+      setFlip(next);
+      armFlipTimer(true);
+      armFlipWatchdog();
     },
     [chapter, total],
   );
@@ -2001,15 +2314,26 @@ function StudyNotebook({
     if (!flip?.auto) return;
     let cancel = false;
     const id = requestAnimationFrame(() => {
-      if (!cancel) settleFlip(true);
+      requestAnimationFrame(() => {
+        if (!cancel) settleFlip(true);
+      });
     });
     return () => {
       cancel = true;
       cancelAnimationFrame(id);
     };
-    // settleFlip는 렌더마다 새로 만들어지지만, flip이 바뀔 때만 재생한다.
+    // 끝 타이머는 goSpreadBy/settleFlip의 flipTimerRef. cleanup에서 지우지 않음.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [flip]);
+
+    useEffect(() => {
+    return () => {
+      window.clearTimeout(flipTimerRef.current);
+      flipTimerRef.current = 0;
+      window.clearTimeout(flipWatchdogRef.current);
+      flipWatchdogRef.current = 0;
+    };
+  }, []);
 
   useLayoutEffect(() => {
     if (!flip || flip.auto) return;
@@ -2039,12 +2363,33 @@ function StudyNotebook({
       if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
       const t = e.target as HTMLElement | null;
       if (t?.closest?.("input, textarea, [contenteditable=true]")) return;
-      if (document.documentElement.dataset.studySelecting === "1") return;
+      if (dragRef.current) return;
       e.preventDefault();
       goSpreadBy(e.key === "ArrowRight" ? 1 : -1);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+  }, [spreadOn, goSpreadBy]);
+
+  useEffect(() => {
+    if (!spreadOn) return;
+    const el = spreadVpRef.current;
+    if (!el) return;
+    let acc = 0;
+    const onWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) + 1) return;
+      const ds = document.documentElement.dataset;
+      if (dragRef.current || ds.studyWsOpen === "1" || ds.studyNoteOpen === "1")
+        return;
+      e.preventDefault();
+      acc += e.deltaX;
+      if (Math.abs(acc) < 72) return;
+      const dir: 1 | -1 = acc > 0 ? 1 : -1;
+      acc = 0;
+      goSpreadBy(dir);
+    };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
   }, [spreadOn, goSpreadBy]);
 
   const releaseSpreadCapture = (
@@ -2067,17 +2412,35 @@ function StudyNotebook({
   const onSpreadPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
     if (!spreadOn) return;
     const ds = document.documentElement.dataset;
-    if (ds.studySelecting === "1") return;
+    if (dragRef.current) return;
     if (ds.studyWsOpen === "1") return;
     if (ds.studyNoteOpen === "1") return;
     if (e.pointerType === "mouse" && e.button !== 0) return;
     const t = e.target as HTMLElement;
     if (
       t.closest(
-        ".brp-mobile-topbar, .brp-header, [data-no-drawer-swipe], .study-toolbar, .study-ws-root, .study-sel-handle, .study-mark-note-input, .study-spread-pager, .study-vnum",
+        ".brp-mobile-topbar, .brp-header, [data-no-drawer-swipe], .study-toolbar, .study-ws-root, .study-ws-tab, .study-sel-handle, .study-mark-note-input, .study-spread-pager, .study-vnum",
       )
     )
       return;
+    if (
+      hitSpreadEdge(
+        e.clientX,
+        e.currentTarget.getBoundingClientRect(),
+        pageWRef.current,
+      ) === 0
+    ) {
+      return;
+    }
+    if (flipRef.current) {
+      logFlip("포인터다운 중 잎 있음 → 즉시 확정 후 새 제스처");
+      window.clearTimeout(flipTimerRef.current);
+      flipTimerRef.current = 0;
+      flushSync(() => {
+        commitFlip(true);
+      });
+    }
+    flipMoveCountRef.current = 0;
     const now = performance.now();
     const gesture = {
       id: e.pointerId,
@@ -2100,6 +2463,7 @@ function StudyNotebook({
     spreadSwipeRef.current = gesture;
     try {
       e.currentTarget.setPointerCapture(e.pointerId);
+      spreadCaptureIdRef.current = e.pointerId;
     } catch {
       /* ignore */
     }
@@ -2108,10 +2472,11 @@ function StudyNotebook({
   const onSpreadPointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
     const s = spreadSwipeRef.current;
     if (!s || s.id !== e.pointerId || s.done) return;
+    flipMoveCountRef.current += 1;
     if (s.mode === "hold" || s.mode === "ignore") return;
     const ds = document.documentElement.dataset;
     if (
-      ds.studySelecting === "1" ||
+      dragRef.current ||
       ds.studyWsOpen === "1" ||
       ds.studyNoteOpen === "1"
     ) {
@@ -2142,7 +2507,11 @@ function StudyNotebook({
         if (!flipRef.current) {
           flipBusyRef.current = false;
           flipAngleRef.current = 0;
-          setFlip({ dir: dragDir, auto: false });
+          const next = { dir: dragDir, auto: false as const };
+          flipRef.current = next;
+          lastFlipStartRef.current = performance.now();
+          setFlip(next);
+          armFlipWatchdog();
         }
       } else if (elapsed > 350 || (s.moved >= 8 && verticalish)) {
         s.mode = "ignore";
@@ -2184,33 +2553,39 @@ function StudyNotebook({
     window.clearTimeout(s.timer);
     spreadSwipeRef.current = null;
     releaseSpreadCapture(e.currentTarget, e.pointerId);
+    spreadCaptureIdRef.current = null;
     const wasDrag = s.mode === "drag";
     const dx = e.clientX - s.x;
     const dir: 1 | -1 =
       flipRef.current?.dir ?? (dx < 0 || (dx === 0 && s.vx < 0) ? 1 : -1);
     resetSpreadDrag();
     if (cancel || !wasDrag) {
+      logFlip(
+        `swipe-end cancel=${cancel} wasDrag=${wasDrag} type=${e.pointerType} moves=${flipMoveCountRef.current} lostCap=${flipLostCapRef.current}`,
+      );
       if (flipRef.current) settleFlip(false);
       if (!cancel && s.mode === "pending" && s.moved < 8) {
         const box = e.currentTarget.getBoundingClientRect();
-        const rel = (e.clientX - box.left) / Math.max(1, box.width);
+        const edge = hitSpreadEdge(e.clientX, box, pageWRef.current);
         const target = e.target as HTMLElement | null;
-        if (!target?.closest?.(".study-vnum")) {
-          if (rel < STUDY_SPREAD_EDGE || rel > 1 - STUDY_SPREAD_EDGE) {
-            spreadEdgeTapRef.current = performance.now();
-            goSpreadBy(rel < STUDY_SPREAD_EDGE ? -1 : 1);
-          }
+        if (edge !== 0 && !target?.closest?.(".study-vnum")) {
+          spreadEdgeTapRef.current = performance.now();
+          goSpreadBy(edge);
         }
       }
       return;
     }
     suppressClickRef.current = true;
     spreadEdgeTapRef.current = performance.now();
+    const width = Math.max(1, pageWRef.current);
+    const dist = Math.abs(dx);
     const flick =
       dir > 0 ? s.vx < -STUDY_SPREAD_COMMIT_VEL : s.vx > STUDY_SPREAD_COMMIT_VEL;
-    const commit =
-      !spreadBlocked(dir) &&
-      (Math.abs(flipAngleRef.current) > STUDY_SPREAD_COMMIT_DEG || flick);
+    const far = dist > width * STUDY_SPREAD_COMMIT_DIST;
+    const commit = !spreadBlocked(dir) && (far || flick);
+    logFlip(
+      `swipe-up cancel=${cancel} type=${e.pointerType} dx=${dx.toFixed(1)} dist=${dist.toFixed(1)} w=${width.toFixed(0)} far=${far} vx=${s.vx.toFixed(3)} flick=${flick} commit=${commit} moves=${flipMoveCountRef.current} lostCap=${flipLostCapRef.current}`,
+    );
     settleFlip(commit);
   };
 
@@ -2581,54 +2956,88 @@ function StudyNotebook({
     }
   };
 
-  /** 스프레드: 선택이 있는 쪽의 반대 페이지 위에 세로 패널 좌표 */
-  const measureWsSidePanel = useCallback((): WsSidePanel | null => {
-    if (!spreadOn) return null;
-    const vp = spreadVpRef.current;
-    if (!vp) return null;
-    const leftEl = vp.querySelector<HTMLElement>(
-      ".study-sheet.is-left:not(.is-under)",
-    );
-    const rightEl = vp.querySelector<HTMLElement>(
-      ".study-sheet.is-right:not(.is-under)",
-    );
-    if (!leftEl || !rightEl) return null;
-    const leftBox = leftEl.getBoundingClientRect();
-    const rightBox = rightEl.getBoundingClientRect();
-    const midX = (leftBox.left + leftBox.right + rightBox.left + rightBox.right) / 4;
-    const rects = selRectsRef.current;
-    let selMidX = midX;
-    if (rects.length > 0) {
-      const vpBox = vp.getBoundingClientRect();
-      let sx = 0;
-      for (const r of rects) sx += vpBox.left + r.left + r.width / 2;
-      selMidX = sx / rects.length;
-    } else {
-      const range = wsRestoreRef.current?.range;
-      if (range) {
-        const box = selectionToolbarFor(range);
-        if (box) selMidX = box.x;
+  /** ≥769: 책 쪽 위에 위·아래·바깥 14px 띄운 세로 카드 좌표 */
+  const measureWsSidePanel = useCallback(
+    (forceSide?: "left" | "right"): WsSidePanel | null => {
+      if (!wsCardOn) return null;
+      const inset = WS_SIDE_INSET;
+      const placeOn = (
+        page: DOMRect,
+        side: "left" | "right",
+      ): WsSidePanel => {
+        const top = Math.round(page.top + inset);
+        const height = Math.round(Math.max(80, page.height - inset * 2));
+        if (side === "right") {
+          return {
+            side,
+            top,
+            left: Math.round(page.left),
+            width: Math.round(Math.max(80, page.width - inset)),
+            height,
+          };
+        }
+        return {
+          side,
+          top,
+          left: Math.round(page.left + inset),
+          width: Math.round(Math.max(80, page.width - inset)),
+          height,
+        };
+      };
+      if (spreadOn) {
+        const vp = spreadVpRef.current;
+        if (!vp) return null;
+        const leftEl = vp.querySelector<HTMLElement>(
+          ".study-sheet.is-left:not(.is-under)",
+        );
+        const rightEl = vp.querySelector<HTMLElement>(
+          ".study-sheet.is-right:not(.is-under)",
+        );
+        if (!leftEl || !rightEl) return null;
+        const leftBox = leftEl.getBoundingClientRect();
+        const rightBox = rightEl.getBoundingClientRect();
+        const midX =
+          (leftBox.left + leftBox.right + rightBox.left + rightBox.right) / 4;
+        const rects = selRectsRef.current;
+        let selMidX = midX;
+        if (rects.length > 0) {
+          const vpBox = vp.getBoundingClientRect();
+          let sx = 0;
+          for (const r of rects) sx += vpBox.left + r.left + r.width / 2;
+          selMidX = sx / rects.length;
+        } else {
+          const range = wsRestoreRef.current?.range;
+          if (range) {
+            const box = selectionToolbarFor(range);
+            if (box) selMidX = box.x;
+          }
+        }
+        const selOnLeft = selMidX < midX;
+        const side: "left" | "right" =
+          forceSide ?? (selOnLeft ? "right" : "left");
+        return placeOn(side === "right" ? rightBox : leftBox, side);
       }
-    }
-    const selOnLeft = selMidX < midX;
-    const page = selOnLeft ? rightBox : leftBox;
-    const side: "left" | "right" = selOnLeft ? "right" : "left";
-    return {
-      side,
-      top: Math.round(page.top),
-      left: Math.round(page.left),
-      width: Math.round(page.width),
-      height: Math.round(page.height),
-    };
-  }, [spreadOn, selectionToolbarFor]);
+      const pageEl =
+        bodyRef.current?.closest<HTMLElement>(".study-page") ??
+        (typeof document !== "undefined"
+          ? document.querySelector<HTMLElement>(".study-page")
+          : null);
+      if (!pageEl) return null;
+      return placeOn(pageEl.getBoundingClientRect(), forceSide ?? "right");
+    },
+    [spreadOn, wsCardOn, selectionToolbarFor],
+  );
 
   // 스프레드: 세로 패널 좌표 갱신. 한 쪽: 선택 줄이 가리면 본문 스크롤
   const selectionToolbarForRef = useRef(selectionToolbarFor);
   selectionToolbarForRef.current = selectionToolbarFor;
   useLayoutEffect(() => {
     if (!wsOpen) return;
-    if (spreadOn) {
-      const panel = measureWsSidePanel();
+    if (wsCardOn) {
+      const hasSel =
+        selRectsRef.current.length > 0 || !!wsRestoreRef.current?.range;
+      const force = !hasSel ? wsLast?.side : undefined;
+      const panel = measureWsSidePanel(force);
       setWsSidePanel(panel);
       if (panel) {
         debugLogRef.current(
@@ -2661,7 +3070,74 @@ function StudyNotebook({
     debugLogRef.current(
       `[원어] 선택 줄 보이게 스크롤 ${Math.round(dy)}px (시트 위 ${Math.round(sheetTop)})`,
     );
-  }, [wsOpen, spreadOn, measureWsSidePanel, spreadIndex]);
+  }, [wsOpen, wsCardOn, wsLast?.side, measureWsSidePanel, spreadIndex]);
+
+  useEffect(() => {
+    setWsLast(loadWsLast());
+  }, []);
+
+  useLayoutEffect(() => {
+    if (wsOpen || !wsLast || !wsCardOn) {
+      setWsTabPos(null);
+      return;
+    }
+    const place = () => {
+      let page: HTMLElement | null = null;
+      if (spreadOn) {
+        const vp = spreadVpRef.current;
+        if (!vp) return;
+        const leftEl = vp.querySelector<HTMLElement>(
+          ".study-sheet.is-left:not(.is-under)",
+        );
+        const rightEl = vp.querySelector<HTMLElement>(
+          ".study-sheet.is-right:not(.is-under)",
+        );
+        page = (wsLast.side === "left" ? leftEl : rightEl) ?? rightEl ?? leftEl;
+      } else {
+        page =
+          bodyRef.current?.closest<HTMLElement>(".study-page") ??
+          document.querySelector<HTMLElement>(".study-page");
+      }
+      if (!page) return;
+      const box = page.getBoundingClientRect();
+      const top = Math.round(box.top + Math.max(0, (box.height - 96) / 2));
+      const left =
+        wsLast.side === "left"
+          ? Math.round(box.left - 39)
+          : Math.round(box.right - 1);
+      setWsTabPos({ top, left });
+    };
+    place();
+    window.addEventListener("resize", place);
+    return () => window.removeEventListener("resize", place);
+  }, [wsOpen, wsLast, wsCardOn, spreadOn, spreadIndex, chromeOn]);
+
+  const openWordStudyFromLast = () => {
+    const last = wsLast ?? loadWsLast();
+    if (!last) return;
+    const verseToks = tokensInVerse(wsTokens, last.ref);
+    const hit =
+      verseToks.find((t) => t.strong === last.strong) ??
+      verseToks.find((t) => t.word === last.word);
+    const initial: WordStudyToken = hit ?? {
+      ref: last.ref,
+      i: 0,
+      word: last.word,
+      lemma: last.word,
+      strong: last.strong,
+      pron: "",
+      parse: "",
+      parseKo: "",
+      glossKo: last.glossKo,
+    };
+    setWsVerse(last.ref);
+    setWsInitial(initial);
+    setWsSelectedKo(last.glossKo);
+    setWsMatched(true);
+    setWsMatchHint(null);
+    setWsSidePanel(wsCardOn ? measureWsSidePanel(last.side) : null);
+    setWsOpen(true);
+  };
 
   const openWordStudyFromToolbar = () => {
     const now = Date.now();
@@ -2708,7 +3184,7 @@ function StudyNotebook({
       setWsSelectedKo(selectedKo);
       setWsMatched(opts.matched);
       setWsMatchHint(opts.hint);
-      setWsSidePanel(spreadOn ? measureWsSidePanel() : null);
+      setWsSidePanel(wsCardOn ? measureWsSidePanel() : null);
       setWsOpen(true);
       toolStashRef.current = null;
       setToolbar(null);
@@ -3351,7 +3827,13 @@ function StudyNotebook({
       className="study-page study-spread-flow"
       data-measure-prev={measurePrev ? "" : undefined}
       data-study-chapter-inner={pack.chapter}
-      style={{ transform: `translate3d(${-local * pageStridePx}px,0,0)` }}
+      style={{
+        transform: `translate3d(${-local * pageStridePx}px,0,0)`,
+        paddingLeft: `${STUDY_SPREAD_PAD_OUTER}px`,
+        paddingRight: `${STUDY_SPREAD_PAD_OUTER}px`,
+        paddingTop: "32px",
+        paddingBottom: "36px",
+      }}
     >
       <span
         className={`study-drop${String(pack.chapter).length >= 3 ? " is-wide" : ""}`}
@@ -3378,7 +3860,13 @@ function StudyNotebook({
       className="study-page study-spread-flow"
       data-spread-measure={measure ? "" : undefined}
       data-study-chapter-inner={chapter}
-      style={{ transform: `translate3d(${-pageIndex * pageStridePx}px,0,0)` }}
+      style={{
+        transform: `translate3d(${-pageIndex * pageStridePx}px,0,0)`,
+        paddingLeft: `${STUDY_SPREAD_PAD_OUTER}px`,
+        paddingRight: `${STUDY_SPREAD_PAD_OUTER}px`,
+        paddingTop: "32px",
+        paddingBottom: "36px",
+      }}
     >
       <span
         className={`study-drop${digLen >= 3 ? " is-wide" : ""}`}
@@ -3421,6 +3909,7 @@ function StudyNotebook({
   );
 
   const renderFace = (pageIndex: number, measure: boolean) => {
+    if (pageW < 40) return <div className="study-page-view" />;
     let inner: ReactNode = null;
     if (pageIndex >= 0 && pageIndex < pageCount) {
       inner = renderCurrentFlow(pageIndex, measure);
@@ -3501,11 +3990,14 @@ function StudyNotebook({
     >
       {debugOn && debugHost && typeof document !== "undefined"
         ? createPortal(
-            <div className="study-debug-log" aria-live="polite">
-              {debugLines.length === 0
-                ? "debug=1 — 원어 로그 대기"
-                : debugLines.join("\n")}
-            </div>,
+            <>
+              <div className="study-debug-log" aria-live="polite">
+                {debugLines.length === 0
+                  ? "debug=1 — 원어 로그 대기"
+                  : debugLines.join("\n")}
+              </div>
+              <pre ref={hudRef} className="study-debug-hud" />
+            </>,
             document.body,
           )
         : null}
@@ -3532,9 +4024,25 @@ function StudyNotebook({
               style={spreadBoxStyle}
               onPointerDown={onSpreadPointerDown}
               onPointerMove={onSpreadPointerMove}
-              onPointerUp={(e) => finishSpreadSwipe(e, false)}
-              onPointerCancel={(e) => finishSpreadSwipe(e, true)}
-              onLostPointerCapture={(e) => finishSpreadSwipe(e, true)}
+              onPointerUp={(e) => {
+                logFlip(
+                  `pointerup type=${e.pointerType} moves=${flipMoveCountRef.current}`,
+                );
+                finishSpreadSwipe(e, false);
+              }}
+              onPointerCancel={(e) => {
+                logFlip(
+                  `pointercancel type=${e.pointerType} moves=${flipMoveCountRef.current}`,
+                );
+                finishSpreadSwipe(e, true);
+              }}
+              onLostPointerCapture={(e) => {
+                flipLostCapRef.current += 1;
+                logFlip(
+                  `lostpointercapture type=${e.pointerType} pid=${e.pointerId} moves=${flipMoveCountRef.current} → 취소 아님, pointerup로 커밋 판정`,
+                );
+                finishSpreadSwipe(e, false);
+              }}
               onClick={toggleChrome}
             >
               {prevPack && spreadIndex === 0 && !flip ? (
@@ -3548,24 +4056,36 @@ function StudyNotebook({
                   <div ref={leafCastRef} className="study-leaf-cast" />
                 </div>
               ) : (
-                <div className="study-sheet is-left">
-                  {renderFace(leftPage, true)}
-                </div>
+                <div className="study-sheet is-left" />
               )}
               {flip?.dir === 1 ? (
                 <div className="study-sheet is-right is-under">
                   {renderFace(leftPage + 3, false)}
                   <div ref={leafCastRef} className="study-leaf-cast" />
                 </div>
-              ) : (
+              ) : rightPageNum > pageCount ? (
                 <div className="study-sheet is-right">
-                  {renderFace(leftPage + 1, flip?.dir === -1)}
+                  {renderFace(leftPage + 1, false)}
                 </div>
+              ) : (
+                <div className="study-sheet is-right" />
               )}
+              <div
+                className={`study-spread-master${
+                  flip?.dir === 1
+                    ? " is-clip-left"
+                    : flip?.dir === -1
+                      ? " is-clip-right"
+                      : ""
+                }`}
+              >
+                {pageW >= 40 ? renderCurrentFlow(leftPage, true) : null}
+              </div>
               {flip ? (
                 <div
                   ref={leafRef}
                   className={`study-leaf is-hot ${flip.dir === 1 ? "is-next" : "is-prev"}`}
+                  style={{ width: `${pageW}px` }}
                 >
                   <div className="study-leaf-face is-front">
                     {renderFace(flip.dir === 1 ? leftPage + 1 : leftPage, false)}
@@ -3701,7 +4221,7 @@ function StudyNotebook({
                 type="button"
                 className="study-spread-edge is-prev"
                 aria-label="이전 쪽"
-                style={{ width: `${STUDY_SPREAD_EDGE * 100}%` }}
+                style={{ width: `${spreadEdgePx(pageW)}px` }}
                 onClick={(e) => {
                   e.stopPropagation();
                   if (performance.now() - spreadEdgeTapRef.current < 450) return;
@@ -3716,7 +4236,7 @@ function StudyNotebook({
                 type="button"
                 className="study-spread-edge is-next"
                 aria-label="다음 쪽"
-                style={{ width: `${STUDY_SPREAD_EDGE * 100}%` }}
+                style={{ width: `${spreadEdgePx(pageW)}px` }}
                 onClick={(e) => {
                   e.stopPropagation();
                   if (performance.now() - spreadEdgeTapRef.current < 450) return;
@@ -4160,6 +4680,10 @@ function StudyNotebook({
           .filter(Boolean)
           .join(" ")}
         sidePanel={wsSidePanel}
+        onLastChange={(row) => {
+          saveWsLast(row);
+          setWsLast(row);
+        }}
         onClose={closeWordStudy}
         onError={(msg) => setToast(msg)}
         onDebug={debugOn ? debugLog : undefined}
@@ -4177,6 +4701,45 @@ function StudyNotebook({
           window.location.assign(`/study/${nextBook}/${nextChapter}`);
         }}
       />
+
+      {!wsOpen && wsLast && typeof document !== "undefined"
+        ? createPortal(
+            <button
+              type="button"
+              className={`study-ws-tab${
+                wsCardOn ? ` is-${wsLast.side}` : " is-pill"
+              }`}
+              style={
+                wsCardOn && wsTabPos
+                  ? { top: wsTabPos.top, left: wsTabPos.left }
+                  : wsCardOn
+                    ? { display: "none" }
+                    : undefined
+              }
+              data-no-drawer-swipe=""
+              aria-label="원어 사전 다시 열기"
+              onPointerDown={(e) => {
+                e.stopPropagation();
+              }}
+              onPointerUp={(e) => e.stopPropagation()}
+              onClick={(e) => {
+                e.stopPropagation();
+                openWordStudyFromLast();
+              }}
+            >
+              <span className="study-ws-tab-word">{wsLast.word}</span>
+              {glossSnippet(wsLast.glossKo) ? (
+                <span className="study-ws-tab-g">
+                  {glossSnippet(wsLast.glossKo)}
+                </span>
+              ) : null}
+              <span className="study-ws-tab-chev" aria-hidden="true">
+                {wsCardOn && wsLast.side === "left" ? "›" : "‹"}
+              </span>
+            </button>,
+            document.body,
+          )
+        : null}
 
       {bubble ? (
         <div
@@ -4808,6 +5371,63 @@ function mergeLineRects(rects: DOMRect[]): DOMRect[] {
   return lines
     .sort((a, b) => a.top - b.top)
     .map((l) => new DOMRect(l.left, l.top, l.right - l.left, l.bottom - l.top));
+}
+
+/** 브라우저 기본 선택 Range → 장 평문 offset. 드롭캡·장 제목은 제외. */
+function nativeSelectionToOffsets(
+  root: HTMLElement,
+  spans: VerseSpan[],
+): { start: number; end: number; rects: DOMRect[] } | null {
+  const sel = window.getSelection();
+  if (!sel || sel.rangeCount < 1 || sel.isCollapsed) return null;
+  const range = sel.getRangeAt(0);
+  const hostEl =
+    range.commonAncestorContainer instanceof Element
+      ? range.commonAncestorContainer
+      : range.commonAncestorContainer.parentElement;
+  const hostBody = hostEl?.closest(".study-body") as HTMLElement | null;
+  const scanRoot =
+    hostBody &&
+    !hostBody.closest(".study-spread-measure, .is-covered, .study-leaf")
+      ? hostBody
+      : root;
+  const blocked = (n: Node | null) =>
+    !!(n &&
+      (n instanceof Element ? n : n.parentElement)?.closest(
+        ".study-drop, .study-chapter-title, .study-vnum",
+      ));
+  let startNode: Node | null = range.startContainer;
+  let startOff = range.startOffset;
+  let endNode: Node | null = range.endContainer;
+  let endOff = range.endOffset;
+  if (!closestVerseText(startNode, scanRoot) || blocked(startNode)) {
+    startNode = null;
+    for (const node of verseTextNodes(scanRoot)) {
+      if (!range.intersectsNode(node) || blocked(node)) continue;
+      startNode = node;
+      startOff = node === range.startContainer ? range.startOffset : 0;
+      break;
+    }
+  }
+  if (!closestVerseText(endNode, scanRoot) || blocked(endNode)) {
+    endNode = null;
+    const nodes = verseTextNodes(scanRoot);
+    for (let i = nodes.length - 1; i >= 0; i -= 1) {
+      const node = nodes[i]!;
+      if (!range.intersectsNode(node) || blocked(node)) continue;
+      endNode = node;
+      endOff = node === range.endContainer ? range.endOffset : node.length;
+      break;
+    }
+  }
+  if (!startNode || !endNode) return null;
+  const start = domPointToOffset(scanRoot, startNode, startOff, spans);
+  const end = domPointToOffset(scanRoot, endNode, endOff, spans);
+  if (start == null || end == null || end <= start) return null;
+  const rects = mergeLineRects(
+    Array.from(range.getClientRects()).filter((r) => r.width > 1 && r.height > 1),
+  );
+  return { start, end, rects };
 }
 
 function closestVerseText(node: Node, root: HTMLElement): HTMLElement | null {

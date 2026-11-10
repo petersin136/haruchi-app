@@ -327,6 +327,25 @@ export function translateNameGloss(en) {
     [/^rest$/, "안식"],
     [/dew of jah/, "여호와의 이슬"],
     [/whom jehovah raised|jehovah has raised/, "여호와께서 일으키신"],
+    [/a people has enlarged/, "백성이 넓어진다"],
+    [/founded of jah|founded of jehovah/, "여호와께서 세우신다"],
+    [/worker of edom/, "에돔의 일꾼"],
+    [/^rough\b|rough \(i\.e/, "털이 많은"],
+    [/jehovah-?fired|jah-?fired/, "여호와의 불"],
+    [/jehovah-?given|jah-?given/, "여호와께서 주신"],
+    [/god of supplication/, "간구의 하나님"],
+    [/heap of testimony/, "증거의 무더기"],
+    [/^extant$/, "있는 자"],
+    [/^faithful$/, "신실한"],
+    [/^walled$/, "성벽이 있는"],
+    [/^tempestuous$/, "거센"],
+    [/father of abundance/, "풍족의 아버지"],
+    [/jah has seized|jehovah has seized/, "여호와께서 붙잡으신"],
+    [/^perpetuity$/, "영원"],
+    [/hidden.*distant|hidden, i\.e\. distant/, "감추어진, 먼"],
+    [/fettering/, "매는"],
+    [/burnt \(i\.e\. volcanic/, "불탄"],
+    [/city of forests/, "숲의 성읍"],
   ];
   for (const [re, ko] of exact) {
     if (re.test(s)) return ko;
@@ -648,10 +667,45 @@ function translateCompound(raw) {
     const rk = translateAtom(m[1]);
     if (rk) return `하나님의 ${rk}`;
   }
-  m = s.match(/^(?:God|El)\s+(?:is\s+)?(.+)$/i);
+  m = s.match(/^(?:God|El)\s+of\s+(.+)$/i);
+  if (m) {
+    const rk = translateAtom(m[1].replace(/^\((?:is|has)\)\s*/i, ""));
+    if (rk) return `${rk}의 하나님`;
+  }
+  m = s.match(
+    /^(?:God|El)\s*(?:\((?:is|has)\)|(?:is|has))?\s*(.+)$/i,
+  );
+  if (m) {
+    const rest = m[1].replace(/^\((?:is|has)\)\s*/i, "").trim();
+    const rk = translateAtom(rest);
+    if (rk) return `하나님은 ${rk}`;
+  }
+  m = s.match(
+    /^(?:Jehovah|Jah|Yahweh)\s*\((?:is|has)\)\s*(.+)$/i,
+  );
   if (m) {
     const rk = translateAtom(m[1]);
-    if (rk) return `하나님은 ${rk}`;
+    if (rk) return `여호와는 ${rk}`;
+  }
+  m = s.match(/^who\s*\(?is\)?\s*like\s+(?:God|El)\??$/i);
+  if (m) return "누가 하나님과 같으랴";
+  m = s.match(/^brother of\s+(.+)$/i);
+  if (m) {
+    const rk = translateAtom(m[1]);
+    if (rk) return `${rk}의 형제`;
+  }
+  m = s.match(/^people of\s+(.+)$/i);
+  if (m) {
+    const rk = translateAtom(m[1]);
+    if (rk) return `${rk}의 백성`;
+  }
+  m = s.match(/^city of\s+(.+)$/i);
+  if (m) {
+    const rest = m[1].replace(/\s*\(.*?\)\s*/g, " ").trim();
+    if (/arba|four/i.test(rest)) return "아르바의 성읍, 네 명의 성읍";
+    if (/forests/i.test(rest)) return "숲의 성읍";
+    const rk = translateAtom(rest);
+    if (rk) return `${rk}의 성읍`;
   }
   return "";
 }
@@ -702,7 +756,9 @@ function translateAtom(en) {
     servant: "종",
     gift: "선물",
     help: "도움",
+    helper: "돕는 이",
     helped: "도우신 분",
+    hearing: "들으심",
     heard: "들으신 분",
     healed: "고치신 분",
     salvation: "구원",
@@ -718,6 +774,30 @@ function translateAtom(en) {
     king: "왕",
     lord: "주",
     height: "높음",
+    perfect: "완전하신",
+    goodness: "선하심",
+    prevailed: "이기신",
+    regarded: "돌아보신",
+    obtained: "얻으신",
+    said: "말씀하신",
+    promised: "약속하신",
+    anger: "노여움",
+    depression: "낮음",
+    elevations: "높임",
+    rushing: "급히 흐름",
+    liberality: "너그러움",
+    abundance: "풍족",
+    liberal: "후한",
+    successful: "성공한",
+    handling: "다루는",
+    coast: "해안",
+    "palm tree": "종려",
+    "palm-tree": "종려",
+    backbone: "등뼈",
+    "backbone-like": "등뼈 같은",
+    man: "사람",
+    carried: "옮겨진",
+    "carried away": "사로잡혀 간",
     vanity: "헛됨",
     bread: "빵",
     wall: "성벽",

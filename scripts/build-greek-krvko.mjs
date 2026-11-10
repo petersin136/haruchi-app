@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 헬라어 lexicon krvKo 채우기 + 옛말 대응표.
+ * 헬라어 lexicon krvKo 자동 생성 + 옛말/번역어 대응표 + 어긋남 재측정.
  * 칩 glossKo는 수정하지 않음.
  * 범위: scripts/, public/word-study/, data/
  */
@@ -13,7 +13,8 @@ const root = path.resolve(__dirname, "..");
 const OUT = path.join(root, "public", "word-study");
 const LEX = path.join(OUT, "lexicon", "greek");
 const BD = path.join(root, "public", "bible-data");
-const VARIANTS = path.join(root, "data", "krv-variants.json");
+const VARIANTS_DATA = path.join(root, "data", "krv-variants.json");
+const VARIANTS_PUBLIC = path.join(OUT, "krv-variants.json");
 const REPORT = path.join(OUT, "_greek-krvko-report.json");
 
 const NT = [
@@ -26,8 +27,23 @@ const NT = [
 
 const FUNCTION_POS_RE = /관사|전치사|접속사|대명사/;
 
-/** 사람이 봐도 같은 뜻인 옛말 대응 (자동 후보 중 확정분 + 요청 견본) */
-const HAND_VARIANTS = {
+/** 견본 — 기존 수동분과 함께 보호(덮어쓰지 않음) */
+const SAMPLE_KRV = {
+  G596: ["곡간"],
+  G1377: ["핍박"],
+  G5185: ["소경"],
+  G3015: ["문둥병", "문둥이"],
+};
+
+/** 지난 라운드 수동 33개 — 자동 결과와 비교만, 덮어쓰지 않음 */
+const PROTECTED_STRONGS = new Set(
+  `G281,G571,G596,G782,G907,G1188,G1201,G1375,G1377,G1515,G1605,G1839,G1887,G2279,G2284,G2288,G2296,G2360,G2570,G2614,G3015,G3500,G4413,G4422,G4459,G4561,G4567,G5054,G5185,G5273,G5353,G5438,G5456`.split(
+    ",",
+  ),
+);
+
+/** 옛말: 뜻이 같고 표기만 옛말 */
+const YETMAL = {
   곳간: ["곡간"],
   박해: ["핍박"],
   쫓다: ["핍박"],
@@ -38,31 +54,33 @@ const HAND_VARIANTS = {
   오른편: ["우편"],
   다음날: ["이튿날"],
   어떻게: ["어찌"],
-  좋은: ["선한"],
   감옥: ["옥"],
   죽음: ["사망"],
-  인사하다: ["문안"],
-  놀라다: ["기이히"],
-  위선자: ["외식"],
-  믿음없는: ["믿지"],
-  세례주다: ["세례"],
-  첫째: ["먼저"],
-  진실로: ["아멘"],
   평화: ["평강"],
   육체: ["육신"],
   소리: ["음성"],
+  위선자: ["외식"],
+  진실로: ["아멘"],
 };
 
-/** strong → 반드시 넣을 krvKo 견본 */
-const SAMPLE_KRV = {
-  G596: ["곡간"],
-  G1377: ["핍박"],
-  G5185: ["소경"],
-  G3015: ["문둥병", "문둥이"],
+/** 번역어: 같은 자리에서 다른 낱말을 고른 경우 */
+const BEONYEOK = {
+  좋은: ["선한"],
+  인사하다: ["문안"],
+  놀라다: ["기이히"],
+  첫째: ["먼저"],
+  믿음없는: ["믿지"],
 };
 
-const PARTICLE_RE =
-  /(으로|에서|에게서|에게|께서|부터|까지|이나|이나마|이라도|이라도|라도|로서|로써|이여|여|아|야|은|는|이|가|을|를|의|에|와|과|도|만|로|요|며|고|니|면|되|다|네|군|구나|라|어|아)$/;
+/** koStem.ts KO_STEM_SUFFIXES — 긴 것부터 */
+const KO_STEM_SUFFIXES = [
+  "하였더라", "하였으니", "이었더라", "이니라", "이로다",
+  "에게서", "으로서", "하시니", "하리라", "였더라", "었더라",
+  "이라", "이심", "이니", "이요", "이며", "에게", "께서",
+  "으로", "로서", "에서", "하는", "하여", "하고", "하며", "하라",
+  "께", "로", "에", "와", "과", "을", "를", "이", "가", "은", "는",
+  "의", "도", "만", "들", "히", "케",
+].sort((a, b) => b.length - a.length || a.localeCompare(b));
 
 function normalizeKo(s) {
   return String(s || "")
@@ -70,389 +88,550 @@ function normalizeKo(s) {
     .replace(/[.,;:!?·"'“”‘’()[\]{}「」『』]/g, "");
 }
 
-function stripDictEnding(g) {
+/** glossKo 몸통: -하다/-주다/-되다/-다 떼기 */
+function glossStem(g) {
   let x = normalizeKo(g);
-  if (x.endsWith("하다") && x.length > 2) x = x.slice(0, -2);
-  else if (x.endsWith("되다") && x.length > 2) x = x.slice(0, -2);
-  else if (x.endsWith("시키다") && x.length > 3) x = x.slice(0, -3);
-  else if (x.endsWith("당하다") && x.length > 3) x = x.slice(0, -3);
-  else if (x.endsWith("돌리다") && x.length > 3) x = x.slice(0, -3);
-  else if (x.endsWith("전하다") && x.length > 3) x = x.slice(0, -3);
-  else if (x.endsWith("짓다") && x.length > 2) x = x.slice(0, -2);
-  else if (x.endsWith("다") && x.length > 1) x = x.slice(0, -1);
+  for (const suf of ["시키다", "당하다", "돌리다", "전하다", "하다", "주다", "되다"]) {
+    if (x.endsWith(suf) && x.length > suf.length) return x.slice(0, -suf.length);
+  }
+  if (x.endsWith("다") && x.length > 1) return x.slice(0, -1);
   return x;
 }
 
-function stripParticle(tok) {
-  let t = normalizeKo(tok);
-  // peel common endings repeatedly (short)
-  for (let k = 0; k < 2; k++) {
-    const m = t.match(PARTICLE_RE);
-    if (!m) break;
-    if (t.length - m[1].length < 2) break;
-    t = t.slice(0, -m[1].length);
+function stripSuffixOnce(word) {
+  for (const suf of KO_STEM_SUFFIXES) {
+    if (word.length > suf.length && word.endsWith(suf)) return word.slice(0, -suf.length);
   }
-  // verbal endings 하는/하는자/한 → stem-ish
-  t = t.replace(/(하는|하며|하고|하여|하니|할|한|함|습니다|느니라|더라|리라|이라|니라)$/u, "");
-  return t.length >= 2 ? t : normalizeKo(tok);
+  return null;
 }
 
-function isFunction(w) {
-  const head = (w.parseKo || "").split(/[,，·]/)[0] || "";
+/** 개역 어절 → 몸통 (koStem 규칙 간이판) */
+function eojeolStem(eojeol) {
+  let w = String(eojeol || "").replace(/^["'“”‘’([{「『]+/, "").replace(/["'“”‘’)\]}」』.,?!;:·…~\-—,]+$/, "");
+  if (!w) return "";
+  // 「세례를」「핍박하거든」— 하/되/시키/케 앞이 길이≥2면 후보
+  for (const v of ["시키", "하", "되", "케"]) {
+    const i = w.indexOf(v);
+    if (i >= 2) {
+      const head = w.slice(0, i);
+      if (/^[가-힣]+$/.test(head)) return head;
+    }
+  }
+  let cur = w;
+  for (let stage = 0; stage < 2; stage++) {
+    const next = stripSuffixOnce(cur);
+    if (!next || next === cur) break;
+    cur = next;
+  }
+  return cur;
+}
+
+function verseStems(krvText) {
+  const toks = String(krvText || "").split(/\s+/).filter(Boolean);
+  const stems = [];
+  const seen = new Set();
+  for (const tok of toks) {
+    const s = eojeolStem(tok);
+    if (s.length < 1) continue;
+    if (seen.has(s)) continue;
+    seen.add(s);
+    stems.push(s);
+  }
+  return stems;
+}
+
+function diceBigram(a, b) {
+  if (!a || !b) return 0;
+  if (a === b) return 1;
+  if (a.length < 2 || b.length < 2) return a === b ? 1 : 0;
+  const bg = (s) => {
+    const m = new Map();
+    for (let i = 0; i < s.length - 1; i++) {
+      const g = s.slice(i, i + 2);
+      m.set(g, (m.get(g) || 0) + 1);
+    }
+    return m;
+  };
+  const A = bg(a);
+  const B = bg(b);
+  let inter = 0;
+  let sizeA = 0;
+  let sizeB = 0;
+  for (const n of A.values()) sizeA += n;
+  for (const n of B.values()) sizeB += n;
+  for (const [g, n] of A) inter += Math.min(n, B.get(g) || 0);
+  if (sizeA + sizeB === 0) return 0;
+  return (2 * inter) / (sizeA + sizeB);
+}
+
+function isFunctionWord(w) {
+  const head = ((w.parseKo || "").split(/[,，·]/)[0] || "").trim();
   return FUNCTION_POS_RE.test(head);
 }
 
-function formsInText(forms, krvNorm) {
+function isFunctionStrong(posKo, parses) {
+  if (FUNCTION_POS_RE.test(posKo || "")) return true;
+  if (!parses || !parses.size) return false;
+  let fn = 0;
+  let tot = 0;
+  for (const [p, n] of parses) {
+    tot += n;
+    if (FUNCTION_POS_RE.test((p || "").split(/[,，·]/)[0] || "")) fn += n;
+  }
+  return tot > 0 && fn / tot >= 0.6;
+}
+
+function formsHitStems(forms, stems, krvNorm) {
   for (const f of forms) {
     const n = normalizeKo(f);
-    if (!n) continue;
-    if (krvNorm.includes(n)) return true;
-    const s = stripDictEnding(n);
-    if (s.length >= 2 && krvNorm.includes(s)) return true;
+    const s = glossStem(f);
+    if (s && stems.includes(s)) return true;
+    if (n && stems.includes(n)) return true;
+    if (s && s.length >= 2 && krvNorm.includes(s)) return true;
+    if (n && n.length >= 2 && krvNorm.includes(n)) return true;
   }
   return false;
 }
 
-function glossInKrv(gloss, krvNorm) {
-  return formsInText([gloss], krvNorm);
+function glossHitsVerse(gloss, stems, krvNorm) {
+  return formsHitStems([gloss], stems, krvNorm);
 }
 
-function krvStems(text) {
-  const raw = String(text || "").match(/[가-힣]{2,}/g) || [];
-  const out = [];
-  const seen = new Set();
-  for (const tok of raw) {
-    const stem = stripParticle(tok);
-    if (stem.length < 2) continue;
-    if (seen.has(stem)) continue;
-    seen.add(stem);
-    out.push({ tok, stem });
-  }
-  return out;
-}
-
-function editDist(a, b) {
-  if (Math.abs(a.length - b.length) > 2) return 99;
-  const m = a.length;
-  const n = b.length;
-  const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
-  for (let i = 0; i <= m; i++) dp[i][0] = i;
-  for (let j = 0; j <= n; j++) dp[0][j] = j;
-  for (let i = 1; i <= m; i++) {
-    for (let j = 1; j <= n; j++) {
-      dp[i][j] =
-        a[i - 1] === b[j - 1]
-          ? dp[i - 1][j - 1]
-          : 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
-    }
-  }
-  return dp[m][n];
-}
-
-const STOP = new Set(
-  `하나님,예수,그리스도,주,사람,자들,내가,네가,우리가,너희가,저희,자기,이는,자는,가로되,이르되,하니라,하더라,있느니라,때에,안에,앞에,뒤에,위에,아래,또한,다시,이제,이미,바로,모든,하나`.split(
-    ",",
-  ),
-);
-
-function scanCorpus(krvKoByStrong) {
-  let totalContent = 0;
-  let missing = 0;
-  /** @type {Map<string, { gloss: string, missing: number, stemFreq: Map<string, number> }>} */
-  const byStrong = new Map();
-  /** @type {Map<string, number>} */
-  const pairCount = new Map();
-
+function loadCorpus() {
+  /** @type {{book:string,ch:number,n:number,krv:string,krvNorm:string,stems:string[],words:any[]}[]} */
+  const verses = [];
   for (const book of NT) {
     const bd = JSON.parse(fs.readFileSync(path.join(BD, `${book}.json`), "utf8"));
     const dir = path.join(OUT, book);
     for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".json"))) {
       const chN = Number(f.replace(".json", ""));
       const ch = JSON.parse(fs.readFileSync(path.join(dir, f), "utf8"));
-      const krvVerses = bd.chapters?.[chN - 1]?.verses?.krv || [];
-      const krvMap = new Map(krvVerses.map((x) => [x.n, x.t || ""]));
+      const krvMap = new Map((bd.chapters?.[chN - 1]?.verses?.krv || []).map((x) => [x.n, x.t || ""]));
       for (const v of ch.verses || []) {
         const krv = krvMap.get(v.n) || "";
-        const krvNorm = normalizeKo(krv);
-        const stems = krvStems(krv);
-        for (const w of v.words || []) {
-          if (isFunction(w)) continue;
-          const gloss = (w.glossKo || "").trim();
-          if (!gloss) continue;
-          totalContent += 1;
-          const strong = (w.strong || "").trim();
-          const krvForms = strong && krvKoByStrong?.get(strong) ? krvKoByStrong.get(strong) : [];
-          const ok =
-            glossInKrv(gloss, krvNorm) ||
-            (krvForms.length > 0 && formsInText(krvForms, krvNorm));
-          if (ok) continue;
-          missing += 1;
-          if (!strong) continue;
-          if (!byStrong.has(strong)) {
-            byStrong.set(strong, { gloss, missing: 0, stemFreq: new Map() });
-          }
-          const row = byStrong.get(strong);
-          row.missing += 1;
-          row.gloss = gloss;
-          const gStem = stripDictEnding(gloss);
-          for (const { stem } of stems) {
-            if (STOP.has(stem)) continue;
-            if (stem === gStem || stem === normalizeKo(gloss)) continue;
-            row.stemFreq.set(stem, (row.stemFreq.get(stem) || 0) + 1);
-            if (gStem.length >= 2 && stem.length >= 2 && editDist(gStem, stem) <= 2) {
-              const k = `${gloss}→${stem}`;
-              pairCount.set(k, (pairCount.get(k) || 0) + 1);
-            }
-          }
-        }
+        verses.push({
+          book,
+          ch: chN,
+          n: v.n,
+          krv,
+          krvNorm: normalizeKo(krv),
+          stems: verseStems(krv),
+          words: v.words || [],
+        });
       }
     }
   }
-
-  // synonym pairs from co-occurrence
-  const coPairs = [];
-  for (const [strong, row] of byStrong) {
-    if (row.missing < 3) continue;
-    const ranked = [...row.stemFreq.entries()]
-      .filter(([t, n]) => n >= Math.max(2, Math.ceil(row.missing * 0.3)))
-      .sort((a, b) => b[1] - a[1]);
-    if (!ranked.length) continue;
-    const [stem, n] = ranked[0];
-    const g = stripDictEnding(row.gloss);
-    const close = editDist(g, stem) <= 2 || g.slice(0, 2) === stem.slice(0, 2);
-    const coverage = n / row.missing;
-    if (close || coverage >= 0.45) {
-      coPairs.push({
-        strong,
-        gloss: row.gloss,
-        krv: stem,
-        n,
-        missing: row.missing,
-        coverage: +coverage.toFixed(2),
-        close,
-      });
-      const k = `${row.gloss}→${stem}`;
-      pairCount.set(k, (pairCount.get(k) || 0) + n);
-    }
-  }
-
-  const top30 = [...pairCount.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 30)
-    .map(([pair, n]) => {
-      const [gloss, krv] = pair.split("→");
-      return { n, gloss, krv, pair };
-    });
-
-  return { totalContent, missing, pct: +((100 * missing) / totalContent).toFixed(2), top30, coPairs, byStrong };
+  return verses;
 }
 
-function buildVariants(coPairs, top30) {
-  /** @type {Record<string, string[]>} */
-  const auto = {};
-  const ambiguous = [];
-  const accepted = [];
+function buildStrongStats(verses) {
+  /** @type {Map<string, {gloss:Map<string,number>, parse:Map<string,number>, stemInVerse:Map<string,number>, occ:number}>} */
+  const by = new Map();
+  /** @type {Map<string, number>} */
+  const stemDf = new Map();
+  let verseN = 0;
 
-  // 확정 옛말만 — 자동 광범위 확장은 하지 않음(노이즈 방지)
-  for (const [k, vs] of Object.entries(HAND_VARIANTS)) {
-    auto[k] = [...vs];
-    accepted.push({ gloss: k, krv: vs, source: "reviewed-same-sense" });
+  for (const v of verses) {
+    verseN += 1;
+    const stemSeen = new Set(v.stems);
+    for (const s of stemSeen) stemDf.set(s, (stemDf.get(s) || 0) + 1);
+
+    const strongsInVerse = new Set();
+    for (const w of v.words) {
+      if (!w.strong) continue;
+      if (!by.has(w.strong)) {
+        by.set(w.strong, {
+          gloss: new Map(),
+          parse: new Map(),
+          stemInVerse: new Map(),
+          occ: 0,
+        });
+      }
+      const row = by.get(w.strong);
+      row.occ += 1;
+      if (w.glossKo) row.gloss.set(w.glossKo, (row.gloss.get(w.glossKo) || 0) + 1);
+      if (w.parseKo) row.parse.set(w.parseKo, (row.parse.get(w.parseKo) || 0) + 1);
+      strongsInVerse.add(w.strong);
+    }
+    for (const strong of strongsInVerse) {
+      const row = by.get(strong);
+      for (const s of stemSeen) {
+        row.stemInVerse.set(s, (row.stemInVerse.get(s) || 0) + 1);
+      }
+    }
   }
+  return { by, stemDf, verseN };
+}
 
-  for (const p of coPairs.slice(0, 80)) {
-    const g = p.gloss;
-    const k = p.krv;
-    if (!g || !k) continue;
-    if (HAND_VARIANTS[g]) continue;
-    ambiguous.push({ gloss: g, krv: k, reason: "자동 후보·미확정", n: p.n, coverage: p.coverage });
+function majority(map) {
+  if (!map || !map.size) return "";
+  return [...map.entries()].sort((a, b) => b[1] - a[1])[0][0];
+}
+
+const STEM_STOP = new Set(
+  `그,이,저,것,수,줄,때,곳,안,못,아니,않,없,있,하,되,위,등,또,및,곧,잘,더,말,사람,예수,그리스도,하나님,주,저희,자기,우리,너희,내가,네가,이는,자는,모든,하나,같이,위해,대하,통하,인하,따라,따라,중에,앞에,뒤에,위에,아래,안에,밖에,또한,다시,이제,이미,바로,하니라,하더라,가로되,이르되,있느니라,없느니라,이루느니라,어디,어디서든지,다니사,참예한,전할`.split(
+    ",",
+  ),
+);
+
+function coveredByGloss(stem, gStem, glossNorm) {
+  if (!stem) return true;
+  if (stem === gStem || stem === glossNorm) return true;
+  // gloss 몸통이 이미 어절 앞에 있으면 ①단계 substring 매칭으로 충분
+  if (gStem.length >= 2 && stem.startsWith(gStem)) return true;
+  if (glossNorm.length >= 2 && stem.startsWith(glossNorm)) return true;
+  if (gStem.length >= 2 && gStem.startsWith(stem) && stem.length >= 2) return true;
+  return false;
+}
+
+function autoKrvKoForStrong(strong, row, stemDf, verseN, posKo) {
+  if (isFunctionStrong(posKo, row.parse)) return [];
+  const gloss = majority(row.gloss);
+  const gStem = glossStem(gloss);
+  const glossNorm = normalizeKo(gloss);
+  const scored = [];
+  for (const [stemRaw, cnt] of row.stemInVerse) {
+    if (cnt < 2) continue;
+    let stem = stemRaw;
+    const reduced = eojeolStem(stem) || stem;
+    if (reduced.length >= 2) stem = reduced;
+    // 어미 잔여(닫고→닫, 믿고→믿)
+    for (const suf of ["으로써", "까지", "부터", "면서", "으며", "거나", "든지", "느니", "리라", "도다", "하고", "하며", "하여", "하니", "하면", "하라", "인즉"]) {
+      if (stem.endsWith(suf) && stem.length - suf.length >= 2) stem = stem.slice(0, -suf.length);
+    }
+    for (const suf of ["고", "며", "니", "면", "다", "라", "네", "요", "지", "냐", "게", "치", "신", "심", "실"]) {
+      if (stem.endsWith(suf) && stem.length - suf.length >= 2) {
+        stem = stem.slice(0, -suf.length);
+        break;
+      }
+    }
+    if (stem.length < 2) continue;
+    if (STEM_STOP.has(stem) || STEM_STOP.has(stemRaw)) continue;
+    if (coveredByGloss(stem, gStem, glossNorm)) continue;
+
+    const dice = Math.max(
+      diceBigram(gStem, stem),
+      diceBigram(glossNorm, stem),
+      gStem.length >= 2 && stem.slice(0, 2) === gStem.slice(0, 2) ? 0.4 : 0,
+    );
+    const pStem = ((stemDf.get(stemRaw) || stemDf.get(stem) || 1) + 0.5) / (verseN + 1);
+    const pJoint = (cnt + 0.5) / (row.occ + 1);
+    const pmi = Math.log2(pJoint / pStem);
+    const coverage = cnt / Math.max(1, row.occ);
+    // Dice 유사형, 또는 절 커버가 높은 PMI 대응어
+    const keep =
+      dice >= 0.5 ||
+      (dice >= 0.4 && cnt >= 3) ||
+      (pmi >= 2.2 && coverage >= 0.25 && cnt >= 3);
+    if (!keep) continue;
+    const score = dice * 2.4 + Math.max(0, pmi) * 0.3 + coverage * 0.8 + Math.log2(1 + cnt) * 0.1;
+    scored.push({ stem, cnt, dice: +dice.toFixed(3), pmi: +pmi.toFixed(3), score });
   }
-
-  // dedupe accepted list for report
+  scored.sort((a, b) => b.score - a.score || b.cnt - a.cnt);
+  const top = [];
   const seen = new Set();
-  const acceptedUnique = [];
-  for (const a of accepted) {
-    const key = `${a.gloss}→${Array.isArray(a.krv) ? a.krv.join("/") : a.krv}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
-    acceptedUnique.push(a);
+  for (const s of scored) {
+    if (top.length >= 5) break;
+    if (seen.has(s.stem)) continue;
+    // 더 짧은 동이 접두가 이미 있으면 스킵
+    if ([...seen].some((x) => s.stem.startsWith(x) || x.startsWith(s.stem))) continue;
+    seen.add(s.stem);
+    top.push(s.stem);
   }
-
-  return { variants: auto, accepted: acceptedUnique, ambiguous: ambiguous.slice(0, 40) };
+  return top;
 }
 
-function fillKrvKo(variants, byStrong) {
-  let filled = 0;
-  let updated = 0;
-  const strongs = fs.readdirSync(LEX).filter((f) => f.endsWith(".json"));
-  /** @type {Map<string, string[]>} */
-  const map = new Map();
+function measure(verses, krvKoMap, yetmal, beonyeok) {
+  let total = 0;
+  let missing = 0;
+  let ga = 0;
+  let na = 0;
+  let da = 0;
+  /** after: gloss OR krvKo */
+  let missingAfter = 0;
 
-  for (const f of strongs) {
-    const fp = path.join(LEX, f);
-    const d = JSON.parse(fs.readFileSync(fp, "utf8"));
-    const strong = d.strong;
-    const row = byStrong.get(strong);
-    const gloss = row?.gloss || "";
-    /** @type {string[]} */
-    let list = [];
-
-    if (SAMPLE_KRV[strong]) list.push(...SAMPLE_KRV[strong]);
-    if (gloss && variants[gloss]) list.push(...variants[gloss]);
-    // also try majority chip gloss from lexicon phrases? skip
-
-    // from co-occurrence top stem if in variants values
-    if (row) {
-      const top = [...row.stemFreq.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
-      for (const [stem] of top) {
-        for (const [g, vs] of Object.entries(variants)) {
-          if (vs.includes(stem) && (g === gloss || stripDictEnding(g) === stripDictEnding(gloss))) {
-            list.push(stem);
+  for (const v of verses) {
+    for (const w of v.words) {
+      if (isFunctionWord(w)) continue;
+      const gloss = (w.glossKo || "").trim();
+      if (!gloss) continue;
+      total += 1;
+      const hit = glossHitsVerse(gloss, v.stems, v.krvNorm);
+      const forms = (w.strong && krvKoMap?.get(w.strong)) || [];
+      const hitKrv = forms.length > 0 && formsHitStems(forms, v.stems, v.krvNorm);
+      if (!hit && !hitKrv) missingAfter += 1;
+      if (hit) continue;
+      missing += 1;
+      const g = normalizeKo(gloss);
+      const gs = glossStem(gloss);
+      const yet = yetmal[gloss] || yetmal[g] || yetmal[gs] || [];
+      const beon = beonyeok[gloss] || beonyeok[g] || beonyeok[gs] || [];
+      if (yet.length && formsHitStems(yet, v.stems, v.krvNorm)) ga += 1;
+      else if (beon.length && formsHitStems(beon, v.stems, v.krvNorm)) na += 1;
+      else {
+        // (나) 표에 없어도, 절 안 다른 몸통과 Dice≥0.45이면 다른 낱말 선택으로 봄
+        let alt = false;
+        for (const s of v.stems) {
+          if (s === gs) continue;
+          if (diceBigram(gs, s) >= 0.45) {
+            alt = true;
+            break;
           }
         }
-        // if gloss maps via hand
-        if (variants[gloss]?.includes(stem)) list.push(stem);
+        if (alt) na += 1;
+        else da += 1;
       }
-    }
-
-    list = [...new Set(list.map((x) => normalizeKo(x)).filter(Boolean))];
-    // restore readable forms from SAMPLE / variants (without over-normalizing particles)
-    const pretty = [];
-    const add = (x) => {
-      const t = String(x || "").trim();
-      if (t && !pretty.includes(t)) pretty.push(t);
-    };
-    if (SAMPLE_KRV[strong]) SAMPLE_KRV[strong].forEach(add);
-    if (gloss && variants[gloss]) variants[gloss].forEach(add);
-    for (const x of list) {
-      // find original pretty
-      let found = false;
-      for (const vs of Object.values(variants)) {
-        for (const v of vs) {
-          if (normalizeKo(v) === x) {
-            add(v);
-            found = true;
-          }
-        }
-      }
-      if (!found) add(x);
-    }
-
-    if (!pretty.length) {
-      map.set(strong, []);
-      continue;
-    }
-
-    const prev = Array.isArray(d.krvKo) ? d.krvKo.join("|") : "";
-    d.krvKo = pretty;
-    map.set(strong, pretty);
-    filled += 1;
-    if (prev !== pretty.join("|")) {
-      fs.writeFileSync(fp, JSON.stringify(d, null, 2) + "\n");
-      updated += 1;
     }
   }
-  return { filled, updated, map };
+  return {
+    totalContent: total,
+    missing,
+    pct: +((100 * missing) / total).toFixed(2),
+    classes: { 가_옛말: ga, 나_다른낱말: na, 다_대응없음: da },
+    missingAfter,
+    pctAfter: +((100 * missingAfter) / total).toFixed(2),
+  };
 }
 
 function mattSamples(krvKoMap) {
-  const ch3 = JSON.parse(fs.readFileSync(path.join(OUT, "matthew", "3.json"), "utf8"));
-  const ch5 = JSON.parse(fs.readFileSync(path.join(OUT, "matthew", "5.json"), "utf8"));
-  const ch10 = JSON.parse(fs.readFileSync(path.join(OUT, "matthew", "10.json"), "utf8"));
   const bd = JSON.parse(fs.readFileSync(path.join(BD, "matthew.json"), "utf8"));
-  const pick = (ch, n, word) => {
+  const pick = (chFile, n, word) => {
+    const ch = JSON.parse(fs.readFileSync(path.join(OUT, "matthew", chFile), "utf8"));
     const v = ch.verses.find((x) => x.n === n);
-    const w = (v?.words || []).find((x) => x.word === word || x.word.replace(/[⸀⸂⸃]/g, "") === word);
+    const w = (v?.words || []).find((x) => x.word === word);
     const krv = bd.chapters[ch.chapter - 1]?.verses?.krv?.find((x) => x.n === n)?.t || "";
+    const stems = verseStems(krv);
+    const krvNorm = normalizeKo(krv);
     const strong = w?.strong || "";
     const krvKo = krvKoMap.get(strong) || [];
-    const krvNorm = normalizeKo(krv);
     return {
       ref: `마 ${ch.chapter}:${n}`,
       word: w?.word,
-      lemma: w?.lemma,
       strong,
       glossKo: w?.glossKo,
       krvKo,
-      krvVerse: krv,
-      glossInKrv: glossInKrv(w?.glossKo || "", krvNorm),
-      krvKoInKrv: formsInText(krvKo, krvNorm),
-      pairOk: !glossInKrv(w?.glossKo || "", krvNorm) && formsInText(krvKo, krvNorm),
+      glossInKrv: glossHitsVerse(w?.glossKo || "", stems, krvNorm),
+      krvKoInKrv: formsHitStems(krvKo, stems, krvNorm),
     };
   };
   return [
-    pick(ch3, 12, "ἀποθήκην"),
-    pick(ch5, 10, "δεδιωγμένοι"),
-    pick(ch10, 23, "διώκωσιν"),
+    pick("3.json", 12, "ἀποθήκην"),
+    pick("5.json", 10, "δεδιωγμένοι"),
+    pick("10.json", 23, "διώκωσιν"),
   ];
 }
 
+function mulberry32(a) {
+  return function () {
+    let t = (a += 0x6d2b79f5);
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
 function main() {
-  console.log("[0] before scan…");
-  const before = scanCorpus(null);
-  console.log(JSON.stringify({ totalContent: before.totalContent, missing: before.missing, pct: before.pct }));
-  console.log("top30:");
-  for (const p of before.top30) console.log(`  ${p.n}\t${p.gloss}→${p.krv}`);
+  console.log("[0] paths…");
+  const pathReport = {
+    krvKoFiles: "public/word-study/lexicon/greek/G*.json  (앱 fetch: /word-study/lexicon/greek/{strong}.json — 동일)",
+    variantsData: "data/krv-variants.json (원본)",
+    variantsPublic: "public/word-study/krv-variants.json (웹 fetch 사본)",
+  };
+  console.log(pathReport);
 
-  const { variants, accepted, ambiguous } = buildVariants(before.coPairs, before.top30);
-  fs.writeFileSync(VARIANTS, JSON.stringify(variants, null, 2) + "\n");
-  console.log("[2] wrote", VARIANTS, "keys", Object.keys(variants).length);
+  const variantsDoc = {
+    옛말: YETMAL,
+    번역어: BEONYEOK,
+    // 앱 parseKrvVariants 호환: variants 키가 있으면 평탄 합본을 씀
+    variants: { ...YETMAL, ...BEONYEOK },
+  };
+  fs.writeFileSync(VARIANTS_DATA, JSON.stringify(variantsDoc, null, 2) + "\n");
+  fs.writeFileSync(VARIANTS_PUBLIC, JSON.stringify(variantsDoc, null, 2) + "\n");
+  console.log("[3] wrote variants data+public", {
+    옛말: Object.keys(YETMAL).length,
+    번역어: Object.keys(BEONYEOK).length,
+  });
 
-  console.log("[1] fill krvKo…");
-  const { filled, updated, map } = fillKrvKo(variants, before.byStrong);
-  console.log({ filled, updated });
+  console.log("[load] corpus…");
+  const verses = loadCorpus();
+  const { by, stemDf, verseN } = buildStrongStats(verses);
 
-  // ensure samples
+  // 기존 수동 33개 스냅샷(보호)
+  /** @type {Map<string, string[]>} */
+  const protectedMap = new Map();
+  for (const strong of PROTECTED_STRONGS) {
+    const fp = path.join(LEX, `${strong}.json`);
+    if (!fs.existsSync(fp)) continue;
+    const d = JSON.parse(fs.readFileSync(fp, "utf8"));
+    protectedMap.set(strong, Array.isArray(d.krvKo) ? [...d.krvKo] : []);
+  }
+  console.log("[protect] existing krvKo strongs:", protectedMap.size);
+
+  console.log("[1] measure before (norm)…");
+  const before = measure(verses, null, YETMAL, BEONYEOK);
+  console.log(JSON.stringify(before));
+
+  console.log("[2] auto-generate krvKo…");
+  /** @type {Map<string, string[]>} */
+  const krvKoMap = new Map();
+  const protectedDiff = [];
+  let filledNew = 0;
+  let filledTotal = 0;
+  let emptiedFn = 0;
+
+  for (const f of fs.readdirSync(LEX).filter((x) => x.endsWith(".json"))) {
+    const fp = path.join(LEX, f);
+    const d = JSON.parse(fs.readFileSync(fp, "utf8"));
+    const strong = d.strong || f.replace(/\.json$/, "");
+    const row = by.get(strong);
+    if (!row) {
+      // 신약 칩에 없음 — 기존 유지
+      if (Array.isArray(d.krvKo) && d.krvKo.length) krvKoMap.set(strong, d.krvKo);
+      continue;
+    }
+
+    const auto = autoKrvKoForStrong(strong, row, stemDf, verseN, d.posKo);
+    if (PROTECTED_STRONGS.has(strong)) {
+      // 보호: 덮어쓰지 않음. 견본 보강만(없는 항목 추가)
+      const prev = protectedMap.get(strong) || [];
+      const sample = SAMPLE_KRV[strong] || [];
+      const merged = [...prev];
+      for (const s of sample) if (!merged.includes(s)) merged.push(s);
+      const setEq =
+        auto.length === merged.length && auto.every((x) => merged.includes(x));
+      if (!setEq) {
+        protectedDiff.push({
+          strong,
+          lemma: d.lemma,
+          glossKo: majority(row.gloss),
+          kept: merged,
+          auto,
+        });
+      }
+      d.krvKo = merged;
+      krvKoMap.set(strong, merged);
+      filledTotal += 1;
+      if (merged.join("|") !== prev.join("|")) {
+        fs.writeFileSync(fp, JSON.stringify(d, null, 2) + "\n");
+      }
+      continue;
+    }
+
+    if (isFunctionStrong(d.posKo, row.parse)) {
+      if (Array.isArray(d.krvKo) && d.krvKo.length) {
+        delete d.krvKo;
+        fs.writeFileSync(fp, JSON.stringify(d, null, 2) + "\n");
+        emptiedFn += 1;
+      }
+      krvKoMap.set(strong, []);
+      continue;
+    }
+
+    if (!auto.length) {
+      if (Array.isArray(d.krvKo)) {
+        delete d.krvKo;
+        fs.writeFileSync(fp, JSON.stringify(d, null, 2) + "\n");
+      }
+      krvKoMap.set(strong, []);
+      continue;
+    }
+
+    d.krvKo = auto;
+    fs.writeFileSync(fp, JSON.stringify(d, null, 2) + "\n");
+    krvKoMap.set(strong, auto);
+    filledNew += 1;
+    filledTotal += 1;
+  }
+
+  // 견본 보장(보호분에도)
   for (const [strong, forms] of Object.entries(SAMPLE_KRV)) {
     const fp = path.join(LEX, `${strong}.json`);
     const d = JSON.parse(fs.readFileSync(fp, "utf8"));
-    const set = new Set([...(d.krvKo || []), ...forms]);
-    d.krvKo = [...set];
+    const cur = Array.isArray(d.krvKo) ? [...d.krvKo] : [];
+    for (const f of forms) if (!cur.includes(f)) cur.push(f);
+    d.krvKo = cur;
     fs.writeFileSync(fp, JSON.stringify(d, null, 2) + "\n");
-    map.set(strong, d.krvKo);
+    krvKoMap.set(strong, cur);
   }
 
-  console.log("[0'] after scan (gloss OR krvKo in verse)…");
-  const after = scanCorpus(map);
-  console.log(JSON.stringify({ totalContent: after.totalContent, missing: after.missing, pct: after.pct }));
+  console.log("[1'] measure after…");
+  const after = measure(verses, krvKoMap, YETMAL, BEONYEOK);
 
-  const samples = mattSamples(map);
-  console.log("[3] matt samples", JSON.stringify(samples, null, 2));
+  // 검증 견본 + 무작위 30
+  const verifyIds = ["G25", "G2222", "G4100", "G1342", "G2098"];
+  const verifyTable = verifyIds.map((strong) => {
+    const d = JSON.parse(fs.readFileSync(path.join(LEX, `${strong}.json`), "utf8"));
+    const row = by.get(strong);
+    return {
+      strong,
+      lemma: d.lemma,
+      glossKo: majority(row?.gloss) || d.glossKo || "",
+      krvKo: d.krvKo || [],
+    };
+  });
+
+  const filledIds = [...krvKoMap.entries()].filter(([, v]) => v.length).map(([k]) => k);
+  const rnd = mulberry32(20261110);
+  const shuffled = [...filledIds].sort(() => rnd() - 0.5);
+  const random30 = shuffled.slice(0, 30).map((strong) => {
+    const d = JSON.parse(fs.readFileSync(path.join(LEX, `${strong}.json`), "utf8"));
+    const row = by.get(strong);
+    return {
+      strong,
+      lemma: d.lemma,
+      glossKo: majority(row?.gloss) || "",
+      krvKo: d.krvKo || [],
+    };
+  });
+
+  const matt = mattSamples(krvKoMap);
 
   const report = {
-    before: {
-      totalContent: before.totalContent,
-      missing: before.missing,
-      pct: before.pct,
-      top30: before.top30,
-    },
-    after: {
+    paths: pathReport,
+    beforeNorm: before,
+    afterNorm: {
       totalContent: after.totalContent,
-      missing: after.missing,
-      pct: after.pct,
+      missingGlossOnly: after.missing,
+      pctGlossOnly: after.pct,
+      missingGlossOrKrvKo: after.missingAfter,
+      pctGlossOrKrvKo: after.pctAfter,
+      classes: after.classes,
     },
-    krvKoFilledStrongs: filled,
-    krvKoUpdatedFiles: updated,
-    sampleKrvKo: Object.fromEntries(Object.keys(SAMPLE_KRV).map((s) => [s, map.get(s)])),
-    variantsAccepted: accepted,
-    variantsAmbiguousExcluded: ambiguous,
-    mattSamples: samples,
+    krvKo: {
+      protectedKept: protectedMap.size,
+      filledNew,
+      filledTotal,
+      emptiedFunction: emptiedFn,
+      protectedDiffCount: protectedDiff.length,
+      protectedDiff: protectedDiff.slice(0, 80),
+    },
+    sampleKrvKo: Object.fromEntries(
+      Object.keys(SAMPLE_KRV).map((s) => [s, krvKoMap.get(s)]),
+    ),
+    verifySamples: verifyTable,
+    random30,
+    variants: {
+      옛말: Object.keys(YETMAL).length,
+      번역어: Object.keys(BEONYEOK).length,
+      removedByNorm: [{ gloss: "세례주다", krv: "세례", reason: "정규화(-주다)로 일치" }],
+    },
+    mattSamples: matt,
   };
   fs.writeFileSync(REPORT, JSON.stringify(report, null, 2) + "\n");
+
   console.log("\n=== SUMMARY ===");
   console.log(JSON.stringify({
-    before: report.before,
-    after: report.after,
-    filled,
+    paths: pathReport,
+    before: before,
+    after: report.afterNorm,
+    filledTotal,
+    filledNew,
+    protectedDiff: protectedDiff.length,
+    variants: report.variants,
+    verifySamples: verifyTable,
+    random30,
+    matt,
     sampleKrvKo: report.sampleKrvKo,
-    variantsKeys: Object.keys(variants),
-    mattSamples: samples.map((s) => ({
-      ref: s.ref,
-      word: s.word,
-      glossKo: s.glossKo,
-      krvKo: s.krvKo,
-      glossInKrv: s.glossInKrv,
-      krvKoInKrv: s.krvKoInKrv,
-    })),
   }, null, 2));
 }
 

@@ -25,6 +25,16 @@ import {
   type WordStudyLexicon,
   type WordStudyToken,
 } from "../lib/wordStudy";
+import { type WsLast } from "../lib/wsLast";
+
+/** 스프레드 카드: 위·아래·바깥 여백 */
+export const WS_SIDE_INSET = 14;
+const WS_OPEN_MS = 320;
+const WS_CLOSE_MS = 240;
+const WS_SETTLE_PAD_MS = 50;
+const WS_CONTENT_DELAY_MS = 60;
+const WS_REDUCED_MS = 150;
+const WS_OPEN_EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
 
 /** 스프레드(≥1024 가로): 선택 반대쪽 페이지 위에 띄우는 세로 패널 */
 export type WsSidePanel = {
@@ -64,6 +74,8 @@ type Props = {
    * 375·768 한 쪽 보기는 null/undefined → 기존 아래 시트.
    */
   sidePanel?: WsSidePanel | null;
+  /** 닫힌 뒤 가장자리 탭에 쓸 마지막 표제어 */
+  onLastChange?: (row: WsLast) => void;
 };
 
 /** 놓을 때 닫힘: 시트 높이의 이 비율 이상 내렸거나 */
@@ -208,15 +220,21 @@ export default function WordStudySheet({
   onError,
   onDebug,
   sidePanel = null,
+  onLastChange,
 }: Props) {
   const router = useRouter();
   const onErrorRef = useRef(onError);
   onErrorRef.current = onError;
   const onDebugRef = useRef(onDebug);
   onDebugRef.current = onDebug;
+  const onLastChangeRef = useRef(onLastChange);
+  onLastChangeRef.current = onLastChange;
   const sidePanelRef = useRef(sidePanel);
   sidePanelRef.current = sidePanel;
   const isSide = !!sidePanel;
+  const chipsRef = useRef<HTMLDivElement | null>(null);
+  const animTimerRef = useRef(0);
+  const exitingRef = useRef(false);
   const verseWords = useMemo(
     () => tokensInVerse(tokens, verse),
     [tokens, verse],
@@ -300,6 +318,61 @@ export default function WordStudySheet({
     return () => window.removeEventListener("popstate", onPop);
   }, [open]);
 
+  const reducedMotion = () =>
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const hideOffscreen = (el: HTMLElement, closing: boolean) => {
+    const side = sidePanelRef.current?.side;
+    const ms = reducedMotion()
+      ? WS_REDUCED_MS
+      : closing
+        ? WS_CLOSE_MS
+        : WS_OPEN_MS;
+    const ease = reducedMotion()
+      ? "ease"
+      : closing
+        ? "ease-in"
+        : WS_OPEN_EASE;
+    const dist = `calc(100% + ${WS_SIDE_INSET}px)`;
+    if (reducedMotion()) {
+      el.style.transition = `opacity ${ms}ms ${ease}`;
+      el.style.transform = "none";
+      el.style.opacity = closing ? "0" : "1";
+      el.classList.toggle("is-entered", !closing);
+      return ms;
+    }
+    el.style.transition = `transform ${ms}ms ${ease}, opacity ${ms}ms ${ease}`;
+    if (closing) {
+      el.classList.remove("is-entered");
+      el.style.opacity = "0.6";
+      if (side === "left") el.style.transform = `translateX(calc(-1 * ${dist}))`;
+      else if (side === "right") el.style.transform = `translateX(${dist})`;
+      else el.style.transform = "translateY(100%)";
+    } else {
+      el.classList.add("is-entered");
+      el.style.opacity = "1";
+      el.style.transform = "translateX(0) translateY(0)";
+    }
+    return ms;
+  };
+
+  const parkOffscreen = (el: HTMLElement) => {
+    const side = sidePanelRef.current?.side;
+    const dist = `calc(100% + ${WS_SIDE_INSET}px)`;
+    el.style.transition = "none";
+    el.classList.remove("is-entered");
+    if (reducedMotion()) {
+      el.style.transform = "none";
+      el.style.opacity = "0";
+      return;
+    }
+    el.style.opacity = "0.6";
+    if (side === "left") el.style.transform = `translateX(calc(-1 * ${dist}))`;
+    else if (side === "right") el.style.transform = `translateX(${dist})`;
+    else el.style.transform = "translateY(100%)";
+  };
+
   /** 쌓아 둔 기록을 걷어낸 뒤 닫기 (닫힌 뒤 할 일은 after) */
   const closeSheet = useCallback((after?: () => void) => {
     if (!pushedRef.current) {
@@ -311,6 +384,25 @@ export default function WordStudySheet({
     closingRef.current = { after: after ?? null };
     window.history.go(-(stackRef.current.length + 1));
   }, []);
+
+  const requestClose = useCallback(
+    (after?: () => void) => {
+      if (exitingRef.current) return;
+      const sheet = sheetRef.current;
+      if (!sheet) {
+        closeSheet(after);
+        return;
+      }
+      exitingRef.current = true;
+      const ms = hideOffscreen(sheet, true);
+      window.clearTimeout(animTimerRef.current);
+      animTimerRef.current = window.setTimeout(() => {
+        exitingRef.current = false;
+        closeSheet(after);
+      }, ms + WS_SETTLE_PAD_MS);
+    },
+    [closeSheet],
+  );
 
   const top = stack.length > 0 ? stack[stack.length - 1] : null;
   const viewStrong = top ? top.strong : active?.strong;
@@ -388,11 +480,50 @@ export default function WordStudySheet({
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") closeSheet();
+      if (e.key === "Escape") requestClose();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open, closeSheet]);
+  }, [open, requestClose]);
+
+  useLayoutEffect(() => {
+    if (!open) return;
+    const sheet = sheetRef.current;
+    if (!sheet) return;
+    exitingRef.current = false;
+    parkOffscreen(sheet);
+    let cancel = false;
+    const id = requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (!cancel) hideOffscreen(sheet, false);
+      });
+    });
+    const fallback = window.setTimeout(() => {
+      if (!cancel) hideOffscreen(sheet, false);
+    }, 64);
+    return () => {
+      cancel = true;
+      cancelAnimationFrame(id);
+      window.clearTimeout(fallback);
+    };
+    // 위치만 잡고 책은 다시 재지 않음
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, isSide, sidePanel?.side]);
+
+  useEffect(() => {
+    if (!open || !active) return;
+    const strong = (top?.strong || active.strong || "").trim();
+    const word = (top?.lemma || active.word || "").trim();
+    if (!strong || !word) return;
+    onLastChangeRef.current?.({
+      lang: strong.toUpperCase().startsWith("H") ? "he" : "el",
+      strong,
+      word,
+      glossKo: (top?.glossKo || active.glossKo || "").trim(),
+      ref: active.ref || verse,
+      side: sidePanelRef.current?.side ?? "right",
+    });
+  }, [open, active, top, verse]);
 
   // 아래 시트: 아래로 끌기. 세로 패널: 바깥쪽(왼 패널→왼, 오른 패널→오른)으로 밀기
   const hasActive = !!active;
@@ -420,8 +551,13 @@ export default function WordStudySheet({
     const begin = (id: SheetDrag["id"], x: number, y: number, target: EventTarget | null) => {
       const el = target instanceof Element ? target : null;
       if (!el || !sheet.contains(el)) return;
+      // 세로 패널: 본문 pointerdown이 바깥쪽 가로 밀기로 잡히던 경로.
+      // 밀어 닫기는 안쪽 14px 손잡이(.study-ws-grip)에서만 시작.
+      if (sideNow() && !el.closest(".study-ws-grip")) return;
       window.clearTimeout(snapTimerRef.current);
-      const zone: SheetDrag["zone"] = el.closest(".study-ws-chips.is-wrap")
+      const zone: SheetDrag["zone"] = el.closest(".study-ws-grip")
+        ? "top"
+        : el.closest(".study-ws-chips.is-wrap")
         ? "top"
         : el.closest(".study-ws-chips")
           ? "chips"
@@ -518,8 +654,7 @@ export default function WordStudySheet({
         `[원어] 시트 놓음 dy=${Math.round(d.dy)}/${Math.round(size)} v=${v.toFixed(2)} → ${shouldClose ? "닫기" : "되돌림"}`,
       );
       if (shouldClose) {
-        setOffset(size, WS_SNAP_BACK_MS);
-        snapTimerRef.current = window.setTimeout(() => closeSheet(), WS_SNAP_BACK_MS);
+        requestClose();
         return;
       }
       setOffset(0, WS_SNAP_BACK_MS);
@@ -582,9 +717,10 @@ export default function WordStudySheet({
       window.removeEventListener("pointercancel", onPointerUp);
       sheet.removeEventListener("click", onClickCapture, true);
       window.clearTimeout(snapTimerRef.current);
+      window.clearTimeout(animTimerRef.current);
       dragRef.current = null;
     };
-  }, [open, hasActive, closeSheet, isSide]);
+  }, [open, hasActive, requestClose, isSide]);
 
   /** 시트 안 터치·포인터가 React 트리 위(본문 넘김·서랍)로 올라가지 않게 */
   const stopBubble = (e: { stopPropagation: () => void }) => e.stopPropagation();
@@ -605,6 +741,68 @@ export default function WordStudySheet({
     .filter(Boolean)
     .join(" ");
   const rootClass = `study-ws-root${sidePanel ? " is-side" : ""}`;
+
+  const onBackdropClick = () => {
+    const sel = window.getSelection();
+    const sheet = sheetRef.current;
+    if (
+      sel &&
+      !sel.isCollapsed &&
+      sheet &&
+      sel.anchorNode &&
+      sheet.contains(sel.anchorNode)
+    ) {
+      sel.removeAllRanges();
+      return;
+    }
+    requestClose();
+  };
+
+  const scrollChipsBy = (dir: -1 | 1) => {
+    chipsRef.current?.scrollBy({ left: dir * 160, behavior: "smooth" });
+  };
+
+  const gripEl = sidePanel ? (
+    <div
+      className="study-ws-grip"
+      data-no-drawer-swipe=""
+      aria-label="밀어 닫기"
+    >
+      <span className="study-ws-grip-bar" aria-hidden="true" />
+    </div>
+  ) : null;
+
+  const closeEl = (
+    <button
+      type="button"
+      className="study-ws-close"
+      aria-label="닫기"
+      onClick={() => requestClose()}
+    >
+      ×
+    </button>
+  );
+
+  const chipArrows = (
+    <>
+      <button
+        type="button"
+        className="study-ws-chips-arrow is-prev"
+        aria-label="이전 칩"
+        onClick={() => scrollChipsBy(-1)}
+      >
+        ‹
+      </button>
+      <button
+        type="button"
+        className="study-ws-chips-arrow is-next"
+        aria-label="다음 칩"
+        onClick={() => scrollChipsBy(1)}
+      >
+        ›
+      </button>
+    </>
+  );
 
   if (!open) return null;
   if (typeof document === "undefined") return null;
@@ -651,7 +849,7 @@ export default function WordStudySheet({
           type="button"
           className="study-ws-backdrop"
           aria-label="닫기"
-          onClick={() => closeSheet()}
+          onClick={onBackdropClick}
         />
         <div
           ref={sheetRef}
@@ -659,14 +857,18 @@ export default function WordStudySheet({
           data-no-drawer-swipe=""
           style={sheetStyle}
         >
-          <div className="study-ws-top" data-no-drawer-swipe="">
+          {gripEl}
+          <div className="study-ws-top study-ws-fadein" data-no-drawer-swipe="">
             {!sidePanel ? (
               <div className="study-ws-handle-hit" data-no-drawer-swipe="">
                 <div className="study-ws-handle" aria-hidden="true" />
               </div>
             ) : null}
+            <div className="study-ws-head-row">
             {ordered.length > 0 ? (
+              <div className="study-ws-chips-rail">
               <div
+                ref={chipsRef}
                 className="study-ws-chips is-wrap"
                 role="list"
                 aria-label="이 절의 원어"
@@ -690,9 +892,14 @@ export default function WordStudySheet({
                   </button>
                 ))}
               </div>
-            ) : null}
+              </div>
+            ) : (
+              <span className="study-ws-head-spacer" />
+            )}
+            {closeEl}
+            </div>
           </div>
-          <div ref={bodyRef} className="study-ws-body">
+          <div ref={bodyRef} className="study-ws-body study-ws-fadein">
             <p className="study-ws-miss-guide" role="status">
               {missGuide}
             </p>
@@ -839,10 +1046,10 @@ export default function WordStudySheet({
     const parsed = parsePhraseRef(ref, bookId);
     if (!parsed) return;
     if (onNavigate) {
-      closeSheet(() => onNavigate(parsed.book, parsed.chapter));
+      requestClose(() => onNavigate(parsed.book, parsed.chapter));
       return;
     }
-    closeSheet(() =>
+    requestClose(() =>
       router.push(`/study/${parsed.book}/${parsed.chapter}`),
     );
   };
@@ -906,7 +1113,7 @@ export default function WordStudySheet({
         type="button"
         className="study-ws-backdrop"
         aria-label="닫기"
-        onClick={() => closeSheet()}
+        onClick={onBackdropClick}
       />
       <div
         ref={sheetRef}
@@ -915,7 +1122,8 @@ export default function WordStudySheet({
         data-no-drawer-swipe=""
         style={sheetStyle}
       >
-        <div className="study-ws-top" data-no-drawer-swipe="">
+        {gripEl}
+        <div className="study-ws-top study-ws-fadein" data-no-drawer-swipe="">
           {!sidePanel ? (
             <div className="study-ws-handle-hit" data-no-drawer-swipe="">
               <div className="study-ws-handle" aria-hidden="true" />
@@ -928,8 +1136,12 @@ export default function WordStudySheet({
             </p>
           ) : null}
 
+          <div className="study-ws-head-row">
           {verseWords.length > 0 ? (
+            <div className="study-ws-chips-rail">
+            {chipArrows}
             <div
+              ref={chipsRef}
               className="study-ws-chips"
               role="list"
               aria-label="이 절의 원어"
@@ -958,7 +1170,12 @@ export default function WordStudySheet({
                 );
               })}
             </div>
-          ) : null}
+            </div>
+          ) : (
+            <span className="study-ws-head-spacer" />
+          )}
+          {closeEl}
+          </div>
 
           {stack.length > 0 || missPick ? (
             <div className="study-ws-nav">
@@ -1003,7 +1220,7 @@ export default function WordStudySheet({
           ) : null}
         </div>
 
-        <div ref={bodyRef} className="study-ws-body">
+        <div ref={bodyRef} className="study-ws-body study-ws-fadein">
           <div key={viewKey} className="study-ws-view">
             <header className="study-ws-hero">
               <div className="study-ws-hero-row">
@@ -1150,12 +1367,16 @@ export default function WordStudySheet({
                     aria-expanded={enOpen}
                     onClick={() => setEnOpen((v) => !v)}
                   >
-                    영어 원문
+                    {enOpen ? "▾" : "▸"} 영어 원문
                   </button>
                 </h3>
-                {enOpen ? (
-                  <p className="study-ws-en">{defEn}</p>
-                ) : null}
+                <div
+                  className={`study-ws-en-fold${enOpen ? " is-open" : ""}`}
+                >
+                  <div>
+                    <p className="study-ws-en">{defEn}</p>
+                  </div>
+                </div>
               </section>
             ) : null}
           </div>

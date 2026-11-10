@@ -2,11 +2,13 @@
 
 export const STUDY_SPREAD_MQ =
   "(min-width: 1024px) and (orientation: landscape)";
+/** ≥769 양쪽 모드: 원어를 아래 시트 대신 책 안 카드로 */
+export const STUDY_WS_CARD_MQ = "(min-width: 769px)";
 
 /** 가운데 여백(접힘선이 들어가는 골) */
 export const STUDY_SPREAD_GAP = 48;
-/** 쪽 바깥쪽 안여백 */
-export const STUDY_SPREAD_PAD_OUTER = 40;
+/** 쪽 바깥쪽 안여백 = 넘김 구역(글자와 겹치지 않음, 최소 48) */
+export const STUDY_SPREAD_PAD_OUTER = 48;
 /** 쪽 접힘쪽 안여백 */
 export const STUDY_SPREAD_PAD_FOLD = 32;
 /** 펼침 상자 좌우 바깥 여백 */
@@ -15,14 +17,24 @@ export const STUDY_SPREAD_TOPBAR = 46;
 export const STUDY_SPREAD_BAR_H = 30;
 export const STUDY_SPREAD_PGNUM_H = 28;
 export const STUDY_SPREAD_ANIM_MS = 420;
+/** 애니메이션 끝 확정 = 이 값 + 이 여유 */
+export const STUDY_SPREAD_SETTLE_PAD_MS = 50;
+/** 넘김이 이 시간 지나도 남아 있으면 강제 정리 */
+export const STUDY_SPREAD_FLIP_WATCHDOG_MS = 600;
 export const STUDY_SPREAD_SWIPE_PX = 40;
-/** 놓을 때 넘김으로 보는 각도 */
-export const STUDY_SPREAD_COMMIT_DEG = 70;
+/** 놓을 때 넘김으로 보는 이동 거리(쪽 폭 대비) */
+export const STUDY_SPREAD_COMMIT_DIST = 0.25;
 /** 놓을 때 넘김으로 보는 속도(px/ms) */
 export const STUDY_SPREAD_COMMIT_VEL = 0.35;
 export const STUDY_SPREAD_PERSPECTIVE = 1800;
-/** 좌우 가장자리 탭 영역 (펼침 폭 대비) */
-export const STUDY_SPREAD_EDGE = 0.18;
+/** 넘김 가장자리: 글자 밖 종이 여백. 쪽 폭 비율로 본문과 겹치지 않음 */
+export const STUDY_SPREAD_EDGE = 0;
+/** 넘김 가장자리 최소 폭 = 바깥 안여백 */
+export const STUDY_SPREAD_EDGE_MIN = 48;
+
+export function spreadEdgePx(_pageW?: number): number {
+  return Math.max(STUDY_SPREAD_EDGE_MIN, STUDY_SPREAD_PAD_OUTER);
+}
 
 export function matchStudySpread(
   win: Window | null | undefined = typeof window !== "undefined" ? window : null,
@@ -39,6 +51,24 @@ export function subscribeStudySpread(
     return () => {};
   }
   const mql = window.matchMedia(STUDY_SPREAD_MQ);
+  const fire = () => onChange(mql.matches);
+  fire();
+  if (typeof mql.addEventListener === "function") {
+    mql.addEventListener("change", fire);
+    return () => mql.removeEventListener("change", fire);
+  }
+  mql.addListener(fire);
+  return () => mql.removeListener(fire);
+}
+
+export function subscribeStudyWsCard(
+  onChange: (on: boolean) => void,
+): () => void {
+  if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+    onChange(false);
+    return () => {};
+  }
+  const mql = window.matchMedia(STUDY_WS_CARD_MQ);
   const fire = () => onChange(mql.matches);
   fire();
   if (typeof mql.addEventListener === "function") {

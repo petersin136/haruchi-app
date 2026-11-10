@@ -1,21 +1,18 @@
 #!/usr/bin/env node
 /**
- * 장별 단락 시작 절 (WEB USFM → raw → 보정 → public/paragraphs).
+ * 장별 단락 시작 절
+ *   WEB USFM \p/\b + BSB \s1(항상) + BSB \p(12절 초과 단락 안에서만)
  *
- * 원본(보정 전): .cache/paragraphs-raw/{bookId}.json
- * 보정본:       public/paragraphs/{bookId}.json
+ * 원본(WEB만): .cache/paragraphs-raw/
+ * 출처: .cache/paragraphs-sources/  (s|p|b|q1|bsb_s|bsb_p)
  *
- * 보정:
- *   1) \p 전용 1절·한글 60자 미만 단락 합치기 (\s 직후는 유지)
- *   2) 12절 초과 단락을 \b·\q1 후보 + 앞절 마침표로 6~10절 단위 분할
- *   3) 애가는 보정 생략
- *
- * 사용: node scripts/build-paragraphs.mjs --all | <bookId …>
+ * 사용: node scripts/build-paragraphs.mjs --all
  */
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { loadBsbBook, BOOK_TO_BSB } from "./lib-bsb-usfm.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
@@ -27,14 +24,9 @@ const BIBLE_DATA = path.join(repoRoot, "public", "bible-data");
 const FIX_DIR = path.join(repoRoot, "data", "paragraph-fix");
 const RAW_DIR = path.join(repoRoot, ".cache", "paragraphs-raw");
 const OUT_DIR = path.join(repoRoot, "public", "paragraphs");
-/** 시작 절별 출처(s/p/b/q1/fallback) */
 const SRC_DIR = path.join(repoRoot, ".cache", "paragraphs-sources");
+const REPORT_PATH = path.join(repoRoot, ".cache", "paragraphs-refine-report.json");
 
-/** 개역한글 담화 시작 — fallback 분할 우선 */
-const DISCOURSE_START =
-  /^(?:여호와의 말씀에|그 후에|그 날에|그 때에|보라(?:\s|,|、)|이제(?:\s|,|、)|이에(?:\s|,|、))/;
-
-/** 시가서 — 초기 단락은 \b·소제목만 (\q 무시) */
 const POETRY = new Set([
   "job",
   "psalms",
@@ -43,78 +35,9 @@ const POETRY = new Set([
   "songofsolomon",
   "lamentations",
 ]);
-
-/** 보정(합치기·나누기) 생략 */
 const SKIP_REFINE = new Set(["lamentations"]);
 
-const USFM_CODE = {
-  genesis: "GEN",
-  exodus: "EXO",
-  leviticus: "LEV",
-  numbers: "NUM",
-  deuteronomy: "DEU",
-  joshua: "JOS",
-  judges: "JDG",
-  ruth: "RUT",
-  samuel1: "1SA",
-  samuel2: "2SA",
-  kings1: "1KI",
-  kings2: "2KI",
-  chronicles1: "1CH",
-  chronicles2: "2CH",
-  ezra: "EZR",
-  nehemiah: "NEH",
-  esther: "EST",
-  job: "JOB",
-  psalms: "PSA",
-  proverbs: "PRO",
-  ecclesiastes: "ECC",
-  songofsolomon: "SNG",
-  isaiah: "ISA",
-  jeremiah: "JER",
-  lamentations: "LAM",
-  ezekiel: "EZK",
-  daniel: "DAN",
-  hosea: "HOS",
-  joel: "JOL",
-  amos: "AMO",
-  obadiah: "OBA",
-  jonah: "JON",
-  micah: "MIC",
-  nahum: "NAM",
-  habakkuk: "HAB",
-  zephaniah: "ZEP",
-  haggai: "HAG",
-  zechariah: "ZEC",
-  malachi: "MAL",
-  matthew: "MAT",
-  mark: "MRK",
-  luke: "LUK",
-  john: "JHN",
-  acts: "ACT",
-  romans: "ROM",
-  corinthians1: "1CO",
-  corinthians2: "2CO",
-  galatians: "GAL",
-  ephesians: "EPH",
-  philippians: "PHP",
-  colossians: "COL",
-  thessalonians1: "1TH",
-  thessalonians2: "2TH",
-  timothy1: "1TI",
-  timothy2: "2TI",
-  titus: "TIT",
-  philemon: "PHM",
-  hebrews: "HEB",
-  james: "JAS",
-  peter1: "1PE",
-  peter2: "2PE",
-  john1: "1JN",
-  john2: "2JN",
-  john3: "3JN",
-  jude: "JUD",
-  revelation: "REV",
-};
+const USFM_CODE = { ...BOOK_TO_BSB };
 
 function loadBooks() {
   const src = fs.readFileSync(BOOKS_TS, "utf8");
@@ -137,7 +60,6 @@ function ensureUsfm() {
   fs.mkdirSync(USFM_DIR, { recursive: true });
   const zip = path.join(USFM_DIR, "eng-web_usfm.zip");
   if (!fs.existsSync(zip)) {
-    console.log(`[usfm] download ${USFM_ZIP_URL}`);
     execFileSync("curl", ["-sSL", "-o", zip, USFM_ZIP_URL], { stdio: "inherit" });
   }
   execFileSync("unzip", ["-o", "-q", zip, "-d", USFM_DIR], { stdio: "inherit" });
@@ -167,44 +89,43 @@ function hasText(s) {
 function normalizeReason(raw) {
   if (raw === "b") return "b";
   if (raw === "d") return "d";
-  if (raw === "m") return "m";
-  if (raw === "p" || raw === "pc") return raw === "pc" ? "pc" : "p";
-  if (/^pi\d*$/.test(raw)) return "pi";
+  if (raw === "m" || raw === "pc" || /^pi\d*$/.test(raw)) return raw === "m" ? "m" : raw === "pc" ? "pc" : "pi";
+  if (raw === "p") return "p";
   if (/^s\d*$/.test(raw)) return "s";
   return raw;
 }
 
-/**
- * @param {string} text
- * @param {boolean} poetry
- */
+/** @returns {'s'|'p'|'b'|'q1'|null} */
+function primaryReason(reasons) {
+  if (!reasons || !reasons.size) return null;
+  if (reasons.has("s") || reasons.has("d")) return "s";
+  if (reasons.has("b")) return "b";
+  if (reasons.has("q1")) return "q1";
+  if (reasons.has("p") || reasons.has("pc") || reasons.has("m") || reasons.has("pi"))
+    return "p";
+  return null;
+}
+
 function parseUsfm(text, poetry) {
-  // 시가서 단락: b/s/d · 산문 단락: p/m/pi/pc/s
-  // 분할 후보: 모든 책에서 b/q1 + p/m/pi/pc/s (시가서의 \p 등도 긴 단락 분할에 사용)
   const paraMarker = poetry
     ? String.raw`(b|s\d*|d)`
     : String.raw`(p|m|pi\d*|pc|s\d*)`;
   const tokenRe = new RegExp(
-    String.raw`\\(c|v)\s+(\d+)(?:-\d+)?|\\(${paraMarker}|p|m|pi\d*|pc|b|q1)(?=[\s\\]|$)`,
+    String.raw`\\(c|v)\s+(\d+)(?:-\d+)?|\\(${paraMarker}|p|m|pi\d*|pc|b)(?=[\s\\]|$)`,
     "g",
   );
-
-  /** @type {Map<number, { starts: Map<number, Set<string>>, maxVerse: number, splitCandidates: Set<number> }>} */
+  /** @type {Map<number, { starts: Map<number, Set<string>>, maxVerse: number, splitAt: Map<number, Set<string>> }>} */
   const chapters = new Map();
-  /** @type {string[]} */
-  const midVerseBreaks = [];
   let ch = 0;
   let verse = 0;
   /** @type {Set<string>} */
   let pendingReasons = new Set();
-  let pendingSplit = false;
-
+  /** @type {Set<string>} */
+  let pendingSplit = new Set();
   /** @type {{ m: RegExpExecArray, end: number }[]} */
   const tokens = [];
   let m;
-  while ((m = tokenRe.exec(text)) !== null) {
-    tokens.push({ m, end: tokenRe.lastIndex });
-  }
+  while ((m = tokenRe.exec(text)) !== null) tokens.push({ m, end: tokenRe.lastIndex });
 
   for (let i = 0; i < tokens.length; i++) {
     const { m: t, end } = tokens[i];
@@ -212,12 +133,8 @@ function parseUsfm(text, poetry) {
       ch = Number(t[2]);
       verse = 0;
       pendingReasons = new Set();
-      pendingSplit = false;
-      chapters.set(ch, {
-        starts: new Map(),
-        maxVerse: 0,
-        splitCandidates: new Set(),
-      });
+      pendingSplit = new Set();
+      chapters.set(ch, { starts: new Map(), maxVerse: 0, splitAt: new Map() });
       continue;
     }
     if (!ch) continue;
@@ -231,48 +148,38 @@ function parseUsfm(text, poetry) {
         row.starts.set(verse, prev);
         pendingReasons = new Set();
       }
-      if (pendingSplit) {
-        row.splitCandidates.add(verse);
-        pendingSplit = false;
+      if (pendingSplit.size) {
+        const prev = row.splitAt.get(verse) ?? new Set();
+        for (const r of pendingSplit) prev.add(r);
+        row.splitAt.set(verse, prev);
+        pendingSplit = new Set();
       }
       continue;
     }
-
     const raw = t[3];
     const nextIndex = tokens[i + 1]?.m.index ?? text.length;
-    const between = text.slice(end, nextIndex);
-    const mid = verse > 0 && hasText(between);
+    const mid = verse > 0 && hasText(text.slice(end, nextIndex));
+    const reason = normalizeReason(raw);
+    const splitTag =
+      reason === "s" || reason === "d" ? "s" : reason === "b" ? "b" : "p";
 
-    if (raw === "q1") {
-      // 긴 단락 분할 후보(\q1 연 시작 → 다음 절)
-      pendingSplit = true;
-      continue;
-    }
     if (raw === "b") {
-      pendingSplit = true;
-      // 시가서에서 \b 는 단락 마커이기도 함
+      pendingSplit.add("b");
       if (poetry) {
-        if (mid) midVerseBreaks.push(`${ch}:${verse}`);
         pendingReasons.add("b");
       }
       continue;
     }
-
-    const reason = normalizeReason(raw);
-    // 긴 단락 분할: \b·\q1 외에 WEB \p/\m/\s 경계도 후보
-    // (시가서 초기 파싱에서  Ignored 된 \p 등을 보정 단계에서 활용)
-    pendingSplit = true;
-    if (poetry && (reason === "p" || reason === "pc" || reason === "m" || reason === "pi")) {
-      // 시가서 초기 단락에는 \p 등을 쓰지 않음 — 분할 후보만
-      if (mid) midVerseBreaks.push(`${ch}:${verse}`);
+    pendingSplit.add(splitTag);
+    if (
+      poetry &&
+      (reason === "p" || reason === "pc" || reason === "m" || reason === "pi")
+    ) {
       continue;
     }
-    if (mid) midVerseBreaks.push(`${ch}:${verse}`);
     pendingReasons.add(reason);
   }
-
-  /** @type {Map<number, { starts: Map<number, Set<string>>, maxVerse: number, splitCandidates: Set<number> }>} */
-  return { chapters, midVerseBreaks };
+  return { chapters };
 }
 
 function loadKoreanChapter(bookId, ch) {
@@ -300,61 +207,24 @@ function loadFix(bookId) {
 }
 
 function paraLengths(starts, maxVerse) {
-  const lens = [];
-  for (let i = 0; i < starts.length; i++) {
+  return starts.map((s, i) => {
     const end = (starts[i + 1] ?? maxVerse + 1) - 1;
-    lens.push(end - starts[i] + 1);
-  }
-  return lens;
+    return end - s + 1;
+  });
 }
 
-function endsWithPeriod(text) {
-  const t = String(text ?? "").trim();
-  if (!t) return false;
-  // 라틴/CJK 마침표
-  if (/[.。．!！?？]\s*$/.test(t)) return true;
-  // 개역한글 종결형(서양 마침표가 거의 없음)
-  return /(?:니라|리라|로다|도다|이랴|지어다|구나|노라|이니라|하시니라|하였더라|하더라|할지니라|을지어다|음이로다|음이니라)\s*$/.test(
-    t,
-  );
+function isSectionSrc(src) {
+  return src === "s" || src === "bsb_s";
 }
 
-function startsDiscourse(text) {
-  return DISCOURSE_START.test(String(text ?? "").trim());
+function isMergeableP(src) {
+  return src === "p" || src === "bsb_p";
 }
 
-/** reasonSet → s|p|b|q1 우선 태그 */
-function primaryReason(reasons) {
-  if (!reasons || reasons.size === 0) return null;
-  for (const tag of ["s", "d", "b", "q1", "p", "pc", "m", "pi"]) {
-    if (reasons.has(tag)) return tag === "d" ? "s" : tag === "pc" || tag === "m" || tag === "pi" ? "p" : tag;
-  }
-  const first = [...reasons][0];
-  if (first === "d") return "s";
-  if (first === "pc" || first === "m" || first === "pi") return "p";
-  return first;
-}
+/** 1절·짧은 p/bsb_p 합치기 (소제목 s/bsb_s 는 합치지 않음) */
+const MERGE_MAX_CHARS = 70; // BSB \s1 밀도 반영, 1절 단락 ≤1222 목표
 
-function isSectionReason(reasons) {
-  return reasons.has("s") || reasons.has("d");
-}
-
-function isPureP(reasons) {
-  if (!reasons.has("p")) return false;
-  for (const r of reasons) {
-    if (r !== "p") return false;
-  }
-  return true;
-}
-
-/**
- * 짧은 \p 단락 합치기
- * @param {number[]} starts
- * @param {Map<number, Set<string>>} reasonMap
- * @param {number} maxVerse
- * @param {Map<number, string>} texts
- */
-function mergeShortParas(starts, reasonMap, maxVerse, texts) {
+function mergeShortBySrc(starts, srcMap, maxVerse, texts) {
   let arr = [...starts];
   let guard = 0;
   while (guard++ < 10000) {
@@ -362,29 +232,24 @@ function mergeShortParas(starts, reasonMap, maxVerse, texts) {
     let changed = false;
     for (let i = 0; i < arr.length; i++) {
       const v = arr[i];
-      const reasons = reasonMap.get(v) ?? new Set();
-      if (isSectionReason(reasons)) continue;
-      if (!isPureP(reasons)) continue;
+      const src = srcMap.get(v) || "p";
+      if (isSectionSrc(src)) continue;
+      if (!isMergeableP(src)) continue;
       if (lens[i] !== 1) continue;
-      if ((texts.get(v) ?? "").length >= 60) continue;
-
+      if ((texts.get(v) ?? "").length >= MERGE_MAX_CHARS) continue;
       const next = arr[i + 1];
-      const nextReasons = next != null ? (reasonMap.get(next) ?? new Set()) : null;
-
-      if (next != null && nextReasons && isSectionReason(nextReasons)) {
-        // 다음이 \s → 앞 단락과 합침 (이 시작 제거)
+      const nextSrc = next != null ? srcMap.get(next) || "p" : null;
+      if (next != null && isSectionSrc(nextSrc)) {
         if (v === 1) continue;
         arr.splice(i, 1);
         changed = true;
         break;
       }
       if (next != null) {
-        // 다음 단락과 합침 (다음 시작 제거)
         arr.splice(i + 1, 1);
         changed = true;
         break;
       }
-      // 마지막 단락 → 앞과 합침
       if (v !== 1) {
         arr.splice(i, 1);
         changed = true;
@@ -396,89 +261,91 @@ function mergeShortParas(starts, reasonMap, maxVerse, texts) {
   return arr;
 }
 
-/**
- * 12절 초과 단락 분할.
- * 반환: { starts, splitSrc: Map<verse, 's'|'p'|'b'|'q1'|'fallback'> } — 이번에 나눈 절만 splitSrc.
- * @param {number[]} starts
- * @param {number} maxVerse
- * @param {Set<number>} candidates
- * @param {Map<number, Set<string>>} reasonMap
- * @param {Map<number, string>} texts
- */
-function splitLongParas(starts, maxVerse, candidates, reasonMap, texts) {
+/** 소제목 구간 안: 1절 단락→다음과 합침, 연속 1절 2개↑ 합침, 구간 끝 ≤2절 앞과 합침 */
+function mergeWithinSections(starts, srcMap, maxVerse) {
+  let arr = [...starts];
+  let guard = 0;
+  while (guard++ < 10000) {
+    const lens = paraLengths(arr, maxVerse);
+    let changed = false;
+
+    // 구간 끝의 짧은(≤2) 병합 가능 단락 → 앞에 합침
+    for (let i = 1; i < arr.length; i++) {
+      const v = arr[i];
+      const src = srcMap.get(v) || "p";
+      if (isSectionSrc(src)) continue;
+      if (!isMergeableP(src)) continue;
+      if (lens[i] > 2) continue;
+      const next = arr[i + 1];
+      const nextIsSection =
+        next == null || isSectionSrc(srcMap.get(next) || "p");
+      if (!nextIsSection) continue;
+      arr.splice(i, 1);
+      changed = true;
+      break;
+    }
+    if (changed) continue;
+
+    // 연속 1절 단락 2개 이상(같은 소제목 구간, 병합 가능) → 첫만 남김
+    for (let i = 0; i < arr.length; i++) {
+      const src = srcMap.get(arr[i]) || "p";
+      if (isSectionSrc(src)) continue;
+      if (!isMergeableP(src)) continue;
+      if (lens[i] !== 1) continue;
+      let j = i;
+      while (
+        j + 1 < arr.length &&
+        lens[j + 1] === 1 &&
+        isMergeableP(srcMap.get(arr[j + 1]) || "p") &&
+        !isSectionSrc(srcMap.get(arr[j + 1]) || "p")
+      ) {
+        j += 1;
+      }
+      if (j > i) {
+        arr.splice(i + 1, j - i);
+        changed = true;
+        break;
+      }
+    }
+    if (changed) continue;
+
+    // 1절 단락(소제목 시작 포함) → 다음 단락과 합침(다음이 소제목이면 제외)
+    for (let i = 0; i < arr.length; i++) {
+      if (lens[i] !== 1) continue;
+      const next = arr[i + 1];
+      if (next == null) continue;
+      const nextSrc = srcMap.get(next) || "p";
+      if (isSectionSrc(nextSrc)) continue;
+      if (!isMergeableP(nextSrc) && !isSectionSrc(srcMap.get(arr[i]) || "p")) {
+        // 다음이 병합 불가면 스킵 (단 현재가 소제목이면 다음 p 흡수)
+        continue;
+      }
+      const curSrc = srcMap.get(arr[i]) || "p";
+      if (!isSectionSrc(curSrc) && !isMergeableP(curSrc)) continue;
+      arr.splice(i + 1, 1);
+      changed = true;
+      break;
+    }
+    if (!changed) break;
+  }
+  return arr;
+}
+
+function splitLongWeb(starts, maxVerse, splitAt) {
   /** @type {number[]} */
   const out = [];
   /** @type {Map<number, string>} */
   const splitSrc = new Map();
-
   for (let i = 0; i < starts.length; i++) {
     const lo = starts[i];
     const hi = (starts[i + 1] ?? maxVerse + 1) - 1;
-    let pos = lo;
     out.push(lo);
-    while (hi - pos + 1 > 12) {
-      const from = pos + 6;
-      const toIdeal = Math.min(pos + 10, hi);
-      const toMax = Math.min(pos + 12, hi);
-      if (from > toMax) break;
-      const ideal = pos + 8;
-
-      /**
-       * @param {number} to
-       * @returns {{ v: number, src: string, rank: number }[]}
-       */
-      const collect = (to) => {
-        /** @type {{ v: number, src: string, rank: number }[]} */
-        const rows = [];
-        for (let v = from; v <= to; v++) {
-          if (v <= pos) continue;
-          const prevOk = endsWithPeriod(texts.get(v - 1) ?? "");
-          const discourse = startsDiscourse(texts.get(v) ?? "");
-          const inCand = candidates.has(v);
-          const tag = primaryReason(reasonMap.get(v));
-          // 앞 절 종결 + 담화 시작이 최우선 (USFM 후보 여부 무관)
-          let rank;
-          let src;
-          if (prevOk && discourse) {
-            rank = 1;
-            src = inCand ? tag || "p" : "fallback";
-          } else if (inCand && prevOk) {
-            rank = 2;
-            src = tag || "p";
-          } else if (inCand) {
-            rank = 3;
-            src = tag || "p";
-          } else if (prevOk) {
-            rank = 4;
-            src = "fallback";
-          } else {
-            rank = 5;
-            src = "fallback";
-          }
-          rows.push({ v, src, rank });
-        }
-        return rows;
-      };
-
-      // 12절 한도까지 모은 뒤 담화(rank1) 우선 — 이상 구간만 보면 12 등을 놓침
-      const wide = collect(toMax);
-      const discourse = wide.filter((r) => r.rank === 1);
-      let pool = discourse.length
-        ? discourse
-        : collect(toIdeal).filter((r) => r.rank <= 3);
-      if (!pool.length) pool = wide;
-      if (!pool.length) break;
-
-      pool.sort(
-        (a, b) =>
-          a.rank - b.rank ||
-          Math.abs(a.v - ideal) - Math.abs(b.v - ideal) ||
-          a.v - b.v,
-      );
-      const pick = pool[0];
-      out.push(pick.v);
-      splitSrc.set(pick.v, pick.src);
-      pos = pick.v;
+    if (hi - lo + 1 <= 12) continue;
+    for (let v = lo + 1; v <= hi; v++) {
+      const tags = splitAt.get(v);
+      if (!tags?.size) continue;
+      out.push(v);
+      splitSrc.set(v, primaryReason(tags) || "p");
     }
   }
   return {
@@ -488,66 +355,38 @@ function splitLongParas(starts, maxVerse, candidates, reasonMap, texts) {
 }
 
 function countSingles(starts, maxVerse) {
-  const lens = paraLengths(starts, maxVerse);
-  return lens.filter((n) => n === 1).length;
+  return paraLengths(starts, maxVerse).filter((n) => n === 1).length;
 }
-
 function countLong(starts, maxVerse) {
-  const lens = paraLengths(starts, maxVerse);
-  return lens.filter((n) => n > 12).length;
+  return paraLengths(starts, maxVerse).filter((n) => n > 12).length;
 }
 
-function seedRawFromPublic(bookIds) {
-  fs.mkdirSync(RAW_DIR, { recursive: true });
-  let seeded = 0;
-  for (const id of bookIds) {
-    const rawPath = path.join(RAW_DIR, `${id}.json`);
-    const pubPath = path.join(OUT_DIR, `${id}.json`);
-    if (fs.existsSync(rawPath)) continue;
-    if (!fs.existsSync(pubPath)) continue;
-    fs.copyFileSync(pubPath, rawPath);
-    seeded += 1;
-  }
-  if (seeded) console.log(`[raw] seeded ${seeded} files → ${RAW_DIR}`);
-  else console.log(`[raw] reuse ${RAW_DIR}`);
-}
-
-function buildRawBook(bookId, totalChapters) {
+function buildWebMeta(bookId, totalChapters) {
   const code = USFM_CODE[bookId];
-  if (!code) throw new Error(`USFM 코드 없음: ${bookId}`);
   const file = findUsfmFile(code);
-  if (!file) throw new Error(`USFM 파일 없음: ${code}`);
-
+  if (!file) throw new Error(`WEB USFM 없음: ${code}`);
   const poetry = POETRY.has(bookId);
   const { chapters } = parseUsfm(fs.readFileSync(file, "utf8"), poetry);
   const fix = loadFix(bookId);
-
   /** @type {Record<string, number[]>} */
   const out = {};
   /** @type {Map<number, Map<number, Set<string>>>} */
   const reasonsByCh = new Map();
-  /** @type {Map<number, Set<number>>} */
-  const candidatesByCh = new Map();
-  /** @type {string[]} */
+  /** @type {Map<number, Map<number, Set<string>>>} */
+  const splitAtByCh = new Map();
   const mismatches = [];
-  /** @type {string[]} */
-  const dropped = [];
 
   for (let ch = 1; ch <= totalChapters; ch++) {
     const web = chapters.get(ch);
     const ko = loadKoreanChapter(bookId, ch);
     const maxKo = ko?.max ?? null;
     if (web && maxKo != null && web.maxVerse !== maxKo) {
-      mismatches.push(`${ch}장 절 수: WEB ${web.maxVerse} / 한글 ${maxKo}`);
+      mismatches.push(`${bookId} ${ch}: WEB ${web.maxVerse} / KRV ${maxKo}`);
     }
-
-    /** @type {Map<number, Set<string>>} */
     const reasonMap = new Map();
-    if (web) {
-      for (const [v, rs] of web.starts) reasonMap.set(v, new Set(rs));
-    }
+    if (web) for (const [v, rs] of web.starts) reasonMap.set(v, new Set(rs));
     reasonsByCh.set(ch, reasonMap);
-    candidatesByCh.set(ch, new Set(web?.splitCandidates ?? []));
+    splitAtByCh.set(ch, web?.splitAt ?? new Map());
 
     let starts;
     const fixRow = fix?.[String(ch)];
@@ -556,94 +395,101 @@ function buildRawBook(bookId, totalChapters) {
     } else {
       starts = web ? [...web.starts.keys()] : [];
     }
-    if (maxKo != null) {
-      for (const n of starts) if (n > maxKo) dropped.push(`${ch}:${n}`);
-      starts = starts.filter((n) => n <= maxKo);
-    }
-    const final = [...new Set([1, ...starts])].sort((a, b) => a - b);
-    // verse 1 always present; ensure reason map has entry
+    if (maxKo != null) starts = starts.filter((n) => n <= maxKo);
+    out[String(ch)] = [...new Set([1, ...starts])].sort((a, b) => a - b);
     if (!reasonMap.has(1)) reasonMap.set(1, new Set());
-    out[String(ch)] = final;
   }
-
-  return {
-    out,
-    reasonsByCh,
-    candidatesByCh,
-    mismatches,
-    dropped,
-    usfmPath: file,
-  };
+  return { out, reasonsByCh, splitAtByCh, mismatches };
 }
 
-function refineBook(bookId, totalChapters, raw, meta) {
+function refineBook(bookId, totalChapters, raw, webMeta, bsb) {
   /** @type {Record<string, number[]>} */
   const out = {};
   /** @type {Record<string, Record<string, string>>} */
   const sources = {};
   const stillHigh = [];
-  /** @type {string[]} */
-  const fallbackOnlyChapters = [];
 
   for (let ch = 1; ch <= totalChapters; ch++) {
     const ko = loadKoreanChapter(bookId, ch);
     const maxVerse = ko?.max ?? raw[String(ch)]?.at(-1) ?? 1;
     const texts = ko?.texts ?? new Map();
     let starts = [...(raw[String(ch)] ?? [1])];
-    const reasonMap = meta.reasonsByCh.get(ch) ?? new Map();
-    const candidates = meta.candidatesByCh.get(ch) ?? new Set();
+    const reasonMap = webMeta.reasonsByCh.get(ch) ?? new Map();
+    const splitAt = webMeta.splitAtByCh.get(ch) ?? new Map();
     /** @type {Map<number, string>} */
     const srcMap = new Map();
 
-    // raw 시작 절 출처
     for (const v of starts) {
-      const tag = primaryReason(reasonMap.get(v));
-      srcMap.set(v, tag || (v === 1 ? "s" : "p"));
+      srcMap.set(v, primaryReason(reasonMap.get(v)) || "p");
     }
 
-    /** @type {Map<number, string>} */
-    let splitSrc = new Map();
     if (!SKIP_REFINE.has(bookId)) {
-      starts = mergeShortParas(starts, reasonMap, maxVerse, texts);
-      const split = splitLongParas(
-        starts,
-        maxVerse,
-        candidates,
-        reasonMap,
-        texts,
-      );
+      starts = mergeShortBySrc(starts, srcMap, maxVerse, texts);
+      const split = splitLongWeb(starts, maxVerse, splitAt);
       starts = split.starts;
-      splitSrc = split.splitSrc;
-      for (const [v, src] of splitSrc) srcMap.set(v, src);
-    }
+      for (const [v, src] of split.splitSrc) srcMap.set(v, src);
 
-    // 롬 16: 송영(25) 포함 고정 시작 [1,3,17,21,25]
-    if (bookId === "romans" && ch === 16) {
-      const fixed = [1, 3, 17, 21, 25].filter((n) => n <= maxVerse);
-      starts = fixed;
-      for (const v of fixed) {
-        if (!srcMap.has(v)) srcMap.set(v, v === 25 ? "s" : "p");
+      // BSB \s1 은 항상 단락 시작. BSB \p 는 12절 초과 단락 안에서만.
+      if (bsb) {
+        const bsbCh = bsb.starts.get(ch);
+        if (bsbCh) {
+          for (const [v, tags] of bsbCh) {
+            if (v < 1 || v > maxVerse) continue;
+            if (tags.has("s1")) {
+              if (!starts.includes(v)) starts.push(v);
+              srcMap.set(v, "bsb_s");
+            }
+          }
+          starts = [...new Set([1, ...starts])].sort((a, b) => a - b);
+          starts = mergeShortBySrc(starts, srcMap, maxVerse, texts);
+
+          // 12절 넘는 단락만 BSB \p 로 추가 분할
+          let guard = 0;
+          while (guard++ < 100) {
+            const lens = paraLengths(starts, maxVerse);
+            /** @type {number[]} */
+            const add = [];
+            for (let i = 0; i < starts.length; i++) {
+              if (lens[i] <= 12) continue;
+              const lo = starts[i];
+              const hi = (starts[i + 1] ?? maxVerse + 1) - 1;
+              for (const [v, tags] of bsbCh) {
+                if (v <= lo || v > hi) continue;
+                if (!tags.has("p")) continue;
+                if (starts.includes(v) || add.includes(v)) continue;
+                add.push(v);
+                if (!srcMap.has(v) || !isSectionSrc(srcMap.get(v))) {
+                  srcMap.set(v, "bsb_p");
+                }
+              }
+            }
+            if (!add.length) break;
+            starts = [...new Set([1, ...starts, ...add])].sort((a, b) => a - b);
+            starts = mergeShortBySrc(starts, srcMap, maxVerse, texts);
+          }
+        }
       }
-      splitSrc = new Map();
+
+      starts = mergeWithinSections(starts, srcMap, maxVerse);
+      starts = mergeShortBySrc(starts, srcMap, maxVerse, texts);
     }
 
-    // 한글에 없는 절 번호 제외
+    if (bookId === "romans" && ch === 16) {
+      starts = [1, 3, 17, 21, 25].filter((n) => n <= maxVerse);
+      for (const v of starts) {
+        if (v === 25) srcMap.set(v, srcMap.get(v) === "bsb_s" ? "bsb_s" : "s");
+        else if (!srcMap.has(v)) srcMap.set(v, "p");
+      }
+    }
+
     starts = starts.filter((n) => n >= 1 && n <= maxVerse);
     starts = [...new Set([1, ...starts])].sort((a, b) => a - b);
-    out[String(ch)] = starts;
-
+    // srcMap 정리: 남은 시작만
     /** @type {Record<string, string>} */
     const chSrc = {};
-    for (const v of starts) {
-      chSrc[String(v)] = srcMap.get(v) || (v === 1 ? "s" : "p");
-    }
+    for (const v of starts) chSrc[String(v)] = srcMap.get(v) || "p";
     sources[String(ch)] = chSrc;
-
-    // 이번에 나뉜 절이 모두 fallback이면 기록
-    if (splitSrc.size > 0) {
-      const onlyFb = [...splitSrc.values()].every((s) => s === "fallback");
-      if (onlyFb) fallbackOnlyChapters.push(`${bookId} ${ch}`);
-    }
+    out[String(ch)] = starts;
 
     const singles = countSingles(starts, maxVerse);
     if (starts.length && singles / starts.length > 0.3) {
@@ -652,19 +498,11 @@ function refineBook(bookId, totalChapters, raw, meta) {
         singles,
         total: starts.length,
         ratio: singles / starts.length,
+        starts: [...starts],
       });
     }
   }
-  return { out, stillHigh, sources, fallbackOnlyChapters };
-}
-
-function whichPara(starts, verse) {
-  let cur = starts[0] ?? 1;
-  for (const s of starts) {
-    if (s <= verse) cur = s;
-    else break;
-  }
-  return cur;
+  return { out, stillHigh, sources };
 }
 
 function main() {
@@ -674,228 +512,222 @@ function main() {
     ? [...books.keys()]
     : args.filter((a) => !a.startsWith("--"));
   if (!ids.length) {
-    console.error("사용: node scripts/build-paragraphs.mjs --all | <bookId …>");
+    console.error("사용: node scripts/build-paragraphs.mjs --all");
     process.exit(1);
   }
 
   ensureUsfm();
   fs.mkdirSync(OUT_DIR, { recursive: true });
   fs.mkdirSync(SRC_DIR, { recursive: true });
-  seedRawFromPublic(ids);
+  fs.mkdirSync(RAW_DIR, { recursive: true });
 
-  // raw가 비어 있으면(시드 실패) 파서로 생성
+  // raw 시드(없을 때만)
   for (const id of ids) {
     const rawPath = path.join(RAW_DIR, `${id}.json`);
     if (fs.existsSync(rawPath)) continue;
-    const total = books.get(id);
-    const { out } = buildRawBook(id, total);
-    fs.writeFileSync(rawPath, JSON.stringify(out) + "\n");
-    console.log(`[raw] built ${id}`);
+    const pub = path.join(OUT_DIR, `${id}.json`);
+    if (fs.existsSync(pub)) fs.copyFileSync(pub, rawPath);
   }
 
-  let singlesBefore = 0;
-  let singlesAfter = 0;
-  let longBefore = 0;
-  let longAfter = 0;
-  /** @type {{ key: string, before: number, after: number, totalAfter: number, ratio: number }[]} */
-  const chapterSingles = [];
-  /** @type {string[]} */
-  const stillOver30 = [];
-  /** @type {{ key: string, singles: number, total: number, ratio: number }[]} */
-  const over30Rows = [];
-  /** @type {Record<string, Record<string, number[]>>} */
-  const refinedAll = {};
   /** @type {Record<string, Record<string, number[]>>} */
   const beforeSnap = {};
-  const john1Public = fs.existsSync(path.join(OUT_DIR, "john1.json"))
-    ? JSON.parse(fs.readFileSync(path.join(OUT_DIR, "john1.json"), "utf8"))
-    : null;
-  /** @type {string[]} */
-  const mismatchLines = [];
-  /** @type {string[]} */
-  const allFallbackOnly = [];
+  let singlesBefore = 0;
+  let longBefore = 0;
+  let singlesAfter = 0;
+  let longAfter = 0;
+  /** @type {Record<string, Record<string, number[]>>} */
+  const refinedAll = {};
+  /** @type {{ key: string, singles: number, total: number, ratio: number, starts: number[] }[]} */
+  const over30 = [];
+  /** @type {Record<string, number>} */
+  const srcTotals = { s: 0, p: 0, b: 0, q1: 0, bsb_s: 0, bsb_p: 0 };
+  /** @type {{ key: string, before: number, after: number, beforeStarts: number[], afterStarts: number[] }[]} */
+  const longTop = [];
+  const bsbMismatches = [];
+  let bsbS1 = 0;
+  let bsbS2 = 0;
+  let bsbP = 0;
+
+  // BSB 전체 카운트·절수 차이
+  for (const id of ids) {
+    const bsb = loadBsbBook(id);
+    if (!bsb) continue;
+    bsbS1 += bsb.counts.s1;
+    bsbS2 += bsb.counts.s2;
+    bsbP += bsb.counts.p;
+    const total = books.get(id);
+    for (let ch = 1; ch <= total; ch++) {
+      const ko = loadKoreanChapter(id, ch);
+      const bMax = bsb.verseMax.get(ch) ?? 0;
+      const kMax = ko?.max ?? 0;
+      if (bMax !== kMax) {
+        bsbMismatches.push(`${id} ${ch}: BSB ${bMax} / KRV ${kMax}`);
+      }
+    }
+  }
 
   for (const id of ids) {
     const total = books.get(id);
-    if (!total) continue;
-    const raw = JSON.parse(
-      fs.readFileSync(path.join(RAW_DIR, `${id}.json`), "utf8"),
-    );
+    const raw = JSON.parse(fs.readFileSync(path.join(RAW_DIR, `${id}.json`), "utf8"));
     const pubBefore = fs.existsSync(path.join(OUT_DIR, `${id}.json`))
       ? JSON.parse(fs.readFileSync(path.join(OUT_DIR, `${id}.json`), "utf8"))
-      : null;
-    beforeSnap[id] = pubBefore || raw;
-    const meta = buildRawBook(id, total);
-    // raw 파일은 시드된 값 유지. 메타만 파서에서.
-    for (const line of meta.mismatches) mismatchLines.push(`${id} ${line}`);
-    for (const d of meta.dropped) mismatchLines.push(`${id} dropped ${d}`);
+      : raw;
+    beforeSnap[id] = pubBefore;
 
+    /** @type {{ ch: number, len: number, starts: number[] }[]} */
+    const longBeforeCh = [];
     for (let ch = 1; ch <= total; ch++) {
       const ko = loadKoreanChapter(id, ch);
       const maxV = ko?.max ?? 1;
-      const rawStarts = raw[String(ch)] ?? [1];
-      singlesBefore += countSingles(rawStarts, maxV);
-      longBefore += countLong(rawStarts, maxV);
+      const prev = pubBefore[String(ch)] ?? [1];
+      singlesBefore += countSingles(prev, maxV);
+      const lens = paraLengths(prev, maxV);
+      for (let i = 0; i < prev.length; i++) {
+        if (lens[i] > 12) {
+          longBefore += 1;
+          longBeforeCh.push({ ch, len: lens[i], starts: prev });
+        }
+      }
     }
 
-    // john1: 변경 없으면 기존 public 유지
-    if (id === "john1" && john1Public) {
-      refinedAll[id] = john1Public;
-      fs.writeFileSync(
-        path.join(OUT_DIR, "john1.json"),
-        JSON.stringify(john1Public) + "\n",
-      );
-      console.log(`[john1] 변경 없음 — public/paragraphs/john1.json 유지`);
-      continue;
-    }
-
-    const { out, stillHigh, sources, fallbackOnlyChapters } = refineBook(
-      id,
-      total,
-      raw,
-      meta,
-    );
+    const webMeta = buildWebMeta(id, total);
+    const bsb = SKIP_REFINE.has(id) ? null : loadBsbBook(id);
+    const { out, stillHigh, sources } = refineBook(id, total, raw, webMeta, bsb);
     refinedAll[id] = out;
-    allFallbackOnly.push(...fallbackOnlyChapters);
 
-    fs.writeFileSync(
-      path.join(SRC_DIR, `${id}.json`),
-      JSON.stringify(sources, null, 2) + "\n",
-    );
+    fs.writeFileSync(path.join(SRC_DIR, `${id}.json`), JSON.stringify(sources, null, 2) + "\n");
+    fs.writeFileSync(path.join(OUT_DIR, `${id}.json`), JSON.stringify(out) + "\n");
+
+    for (const chSrc of Object.values(sources)) {
+      for (const tag of Object.values(chSrc)) {
+        if (tag in srcTotals) srcTotals[tag] += 1;
+      }
+    }
 
     for (let ch = 1; ch <= total; ch++) {
       const ko = loadKoreanChapter(id, ch);
       const maxV = ko?.max ?? 1;
-      const before = countSingles(raw[String(ch)] ?? [1], maxV);
-      const after = countSingles(out[String(ch)], maxV);
-      singlesAfter += after;
-      longAfter += countLong(out[String(ch)], maxV);
-      const totalAfter = out[String(ch)].length;
-      const ratio = totalAfter ? after / totalAfter : 0;
-      if (before > 0 || after > 0) {
-        chapterSingles.push({
+      const after = out[String(ch)];
+      singlesAfter += countSingles(after, maxV);
+      const lens = paraLengths(after, maxV);
+      let longAfterCh = 0;
+      for (const L of lens) if (L > 12) {
+        longAfter += 1;
+        longAfterCh += 1;
+      }
+      const beforeStarts = pubBefore[String(ch)] ?? [1];
+      const beforeLong = paraLengths(beforeStarts, maxV).filter((n) => n > 12).length;
+      if (beforeLong || longAfterCh) {
+        longTop.push({
           key: `${id} ${ch}`,
-          before,
-          after,
-          totalAfter,
-          ratio,
+          before: beforeLong,
+          after: longAfterCh,
+          beforeStarts,
+          afterStarts: after,
         });
       }
     }
 
     for (const s of stillHigh) {
-      stillOver30.push(
-        `${id} ${s.ch}장: ${s.singles}/${s.total} (${(s.ratio * 100).toFixed(0)}%)`,
-      );
-      over30Rows.push({
+      over30.push({
         key: `${id} ${s.ch}`,
         singles: s.singles,
         total: s.total,
         ratio: s.ratio,
+        starts: s.starts,
       });
     }
 
-    fs.writeFileSync(
-      path.join(OUT_DIR, `${id}.json`),
-      JSON.stringify(out) + "\n",
-    );
-    const pc = Object.values(out).reduce((n, a) => n + a.length, 0);
-    console.log(`[${id}] raw→refined 단락 ${pc}개 → public/paragraphs/${id}.json`);
+    console.log(`[${id}] 단락 ${Object.values(out).reduce((n, a) => n + a.length, 0)}개`);
   }
 
-  // ── 보고 ──────────────────────────────────────────────────────────────
-  console.log("\n=== 1) fallback으로만 나뉜 장 ===");
-  console.log(`개수: ${allFallbackOnly.length}`);
-  if (allFallbackOnly.length) {
-    console.log(allFallbackOnly.join(", "));
-  } else {
-    console.log("(없음)");
-  }
-
-  console.log("\n=== 요엘 2 · 미가 6 · 호세아 4 전→후 ===");
-  for (const [id, ch] of [
-    ["joel", "2"],
-    ["micah", "6"],
-    ["hosea", "4"],
-  ]) {
-    const before = beforeSnap[id]?.[ch] ?? [];
-    const after = refinedAll[id]?.[ch] ?? [];
-    console.log(
-      `- ${id} ${ch}: [${before.join(", ")}] → [${after.join(", ")}]`,
-    );
-  }
-  {
-    const j2 = refinedAll.joel?.["2"] ?? [];
-    const need = [1, 12, 18, 28];
-    const ok = need.every((n) => j2.includes(n));
-    console.log(
-      `요엘 2 포함 검사 ${need.join(",")}: ${ok ? "OK" : "FAIL → " + JSON.stringify(j2)}`,
-    );
-  }
-
-  console.log("\n=== 2) 롬 16 ===");
-  console.log(
-    `romans 16: ${JSON.stringify(refinedAll.romans?.["16"] ?? [])}`,
-  );
-
-  console.log("\n=== 3) 1절 비율 >30% 장 ===");
-  over30Rows.sort((a, b) => b.ratio - a.ratio || b.singles - a.singles);
-  const over30NoLam = over30Rows.filter((r) => !r.key.startsWith("lamentations "));
-  console.log(`개수(전체): ${over30Rows.length}`);
-  console.log(`개수(애가 제외): ${over30NoLam.length}`);
-  console.log("상위 10:");
-  for (const row of over30Rows.slice(0, 10)) {
-    console.log(
-      `  ${row.key}장: ${row.singles}/${row.total} (${(row.ratio * 100).toFixed(0)}%)`,
-    );
-  }
-
-  console.log("\n=== 1절짜리 단락 개수 전→후 ===");
-  console.log(`합계: ${singlesBefore} → ${singlesAfter}`);
-  chapterSingles.sort((a, b) => b.after - a.after || b.before - a.before);
-  console.log("1절 단락 수 상위 10장 (보정 후):");
-  for (const row of chapterSingles.slice(0, 10)) {
-    console.log(
-      `  ${row.key}장: ${row.before} → ${row.after} (단락 ${row.totalAfter})`,
-    );
-  }
-
-  console.log("\n=== 12절 넘는 단락 개수 전→후 ===");
-  console.log(`${longBefore} → ${longAfter}`);
-
-  console.log("\n=== 장절 차이 처리 ===");
-  {
-    const rom = refinedAll.romans;
-    const j3 = refinedAll.john3;
-    const rev = refinedAll.revelation;
-    if (rom) {
-      console.log(`- 롬 14: ${JSON.stringify(rom["14"] ?? [])}`);
-      console.log(`- 롬 16: ${JSON.stringify(rom["16"] ?? [])}`);
-    }
-    if (j3) console.log(`- 요삼 1: ${JSON.stringify(j3["1"] ?? [])}`);
-    if (rev) console.log(`- 계 12: ${JSON.stringify(rev["12"] ?? [])}`);
-    if (mismatchLines.length) {
-      console.log("차이 목록:");
-      for (const l of mismatchLines) console.log(`  ${l}`);
+  // 12절 초과 상위 20 (보정 전 길이 기준)
+  const longRank = [];
+  for (const id of ids) {
+    const total = books.get(id);
+    for (let ch = 1; ch <= total; ch++) {
+      const ko = loadKoreanChapter(id, ch);
+      const maxV = ko?.max ?? 1;
+      const before = beforeSnap[id][String(ch)] ?? [1];
+      const after = refinedAll[id][String(ch)];
+      const bLens = paraLengths(before, maxV);
+      const maxB = Math.max(0, ...bLens.filter((n) => n > 12));
+      if (maxB > 12) {
+        longRank.push({
+          key: `${id} ${ch}`,
+          maxBefore: maxB,
+          beforeCount: bLens.filter((n) => n > 12).length,
+          afterCount: paraLengths(after, maxV).filter((n) => n > 12).length,
+          before,
+          after,
+        });
+      }
     }
   }
+  longRank.sort((a, b) => b.maxBefore - a.maxBefore);
+  const longTop20 = longRank.slice(0, 20);
 
-  console.log("\n=== 샘플 (보정 후) ===");
-  for (const [id, ch] of [
-    ["genesis", "30"],
-    ["ecclesiastes", "3"],
-    ["romans", "8"],
-    ["romans", "16"],
-    ["john1", "1"],
-  ]) {
-    console.log(`- ${id} ${ch}장: ${(refinedAll[id]?.[ch] ?? []).join(", ")}`);
-  }
+  over30.sort((a, b) => b.ratio - a.ratio || b.singles - a.singles);
+  const over30NoLam = over30.filter((r) => !r.key.startsWith("lamentations "));
 
-  if (john1Public && refinedAll.john1) {
-    const same =
-      JSON.stringify(john1Public) === JSON.stringify(refinedAll.john1);
-    console.log(`\n=== john1 유지: ${same ? "동일" : "변경됨(확인 필요)"} ===`);
+  const report = {
+    explainBefore:
+      "지난 보고(1절 1172, 12절초과 83)는 ‘합치기+담화/q1 창 분할’ 직후 public 수치. 이번 표의 「전」(당시 약 1175/2 또는 현재 스냅샷)은 fallback 제거 후·BSB 보강 직전 public. fallback을 끄면 12절 초과가 다시 늘고(경계 없으면 이어씀), 1절 수는 합치기만 남아 소폭 변동.",
+    singlesBefore,
+    singlesAfter,
+    longBefore,
+    longAfter,
+    srcTotals,
+    bsbCounts: { s1: bsbS1, s2: bsbS2, p: bsbP, s1s2: bsbS1 + bsbS2 },
+    bsbMismatches,
+    joel2: { before: beforeSnap.joel?.["2"], after: refinedAll.joel?.["2"] },
+    hosea2: { before: beforeSnap.hosea?.["2"], after: refinedAll.hosea?.["2"] },
+    longTop20: longTop20.map((r) => ({
+      chapter: r.key,
+      maxParaBefore: r.maxBefore,
+      longCount: `${r.beforeCount}→${r.afterCount}`,
+      before: r.before,
+      after: r.after,
+    })),
+    over30Top20: over30NoLam.slice(0, 20).map((r) => ({
+      chapter: r.key,
+      singles: r.singles,
+      totalParas: r.total,
+      ratio: `${(r.ratio * 100).toFixed(0)}%`,
+      starts: r.starts,
+    })),
+    romans16: refinedAll.romans?.["16"],
+  };
+  fs.writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2) + "\n");
+
+  console.log("\n=== 0) 「전」 수치 설명 ===");
+  console.log(report.explainBefore);
+
+  console.log("\n=== 1) BSB 마커 ===");
+  console.log(`\\s1 ${bsbS1} · \\s2 ${bsbS2} · 합 ${bsbS1 + bsbS2} · \\p ${bsbP}`);
+  console.log(`BSB↔KRV 절수 다른 장 ${bsbMismatches.length}:`);
+  for (const x of bsbMismatches) console.log(`  ${x}`);
+
+  console.log("\n=== 2) 단락 전→후 ===");
+  console.log(`1절짜리: ${singlesBefore} → ${singlesAfter}`);
+  console.log(`12절 초과: ${longBefore} → ${longAfter}`);
+  console.log(`출처: ${JSON.stringify(srcTotals)}`);
+  console.log(`요엘 2: [${(beforeSnap.joel?.["2"] ?? []).join(",")}] → [${(refinedAll.joel?.["2"] ?? []).join(",")}]`);
+  console.log(`호세아 2: [${(beforeSnap.hosea?.["2"] ?? []).join(",")}] → [${(refinedAll.hosea?.["2"] ?? []).join(",")}]`);
+  console.log("12절 초과 상위 20:");
+  for (const r of longTop20) {
+    console.log(
+      `  ${r.key}: 최장 ${r.maxBefore}절, 개수 ${r.beforeCount}→${r.afterCount} | [${r.before.join(",")}] → [${r.after.join(",")}]`,
+    );
   }
+  console.log("\n1절 비율 >30% 상위 20 (애가 제외):");
+  for (const r of over30NoLam.slice(0, 20)) {
+    console.log(
+      `  ${r.key}장: 1절 ${r.singles}/${r.total} (${(r.ratio * 100).toFixed(0)}%) 시작=${JSON.stringify(r.starts)}`,
+    );
+  }
+  console.log(`롬 16: ${JSON.stringify(refinedAll.romans?.["16"])}`);
+  console.log(`\n보고서: ${REPORT_PATH}`);
 }
 
 main();

@@ -167,40 +167,31 @@
 }
 
 /* 장 번호: 장 제목 줄 + 본문 두 줄 = 3줄 높이.
-   폭은 "88" 기준 고정(tabular) + 오른쪽 14px. 3자리(시편)는 같은 칸에 글자만 줄임 */
+   칸 폭 = 실제 숫자. 본문과의 간격 0.25em. 3자리(시편)도 같은 규칙 */
 .study-drop {
   float: left;
   box-sizing: content-box;
-  margin: 5px 14px 0 0;
+  margin: 5px 0.25em 0 0;
+  user-select: none;
+  -webkit-user-select: none;
   font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
-  font-size: calc(var(--study-lh) * 3 * 0.92);
+  font-size: inherit;
   font-weight: 700;
   line-height: 0.8;
   color: #9e1b1b;
-  text-align: center;
-  font-variant-numeric: tabular-nums;
-}
-
-/* 보이지 않는 "88"로 칸 폭을 고정 */
-.study-drop::before {
-  content: "88";
-  display: block;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  pointer-events: none;
+  text-align: left;
   font-variant-numeric: tabular-nums;
 }
 
 .study-drop-num {
   display: block;
-  width: 100%;
-  text-align: center;
+  width: max-content;
+  text-align: left;
+  font-size: calc(var(--study-lh) * 3 * 0.92);
+  line-height: 0.8;
   font-variant-numeric: tabular-nums;
-}
-
-.study-drop.is-wide .study-drop-num {
-  font-size: 0.68em;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* 첫 줄 = 장 번호 윗줄. 본문 줄 높이를 그대로 써서 3줄 격자를 맞춤 */
@@ -210,6 +201,8 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
   margin: 0;
+  user-select: none;
+  -webkit-user-select: none;
   font-size: 15px;
   font-weight: 500;
   line-height: var(--study-lh);
@@ -234,10 +227,18 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* PC 양쪽: 마우스는 브라우저 기본 선택. 375/768 한쪽은 위 none 유지 */
+@media (hover: hover) and (pointer: fine) {
+  .study-root.is-spread .study-body {
+    user-select: text;
+    -webkit-user-select: text;
+  }
+}
+
 .study-para {
   margin: 0.6em 0 0;
   padding: 0;
-  text-indent: 1em;
+  text-indent: 0;
   text-align: justify;
   text-align-last: left;
   word-break: normal;
@@ -245,11 +246,9 @@
   overflow-wrap: anywhere;
 }
 
-/* 쪽·본문 맨 위 단락은 위 간격 없음.
-   장 첫 단락은 큰 장 번호 옆에서 시작하므로 들여쓰기도 없음 */
+/* 쪽·본문 맨 위 단락은 위 간격 없음. 단락 구분은 간격 0.6em만 */
 .study-body > .study-para:first-child {
   margin-top: 0;
-  text-indent: 0;
 }
 
 .study-para:last-child {
@@ -261,8 +260,9 @@
   white-space: nowrap;
 }
 
+/* 절 사이 공백: 일반 공백. 줄 맨 앞에서는 접힘. nowrap 아님 */
 .study-v-gap {
-  white-space: pre;
+  white-space: normal;
 }
 
 .study-body.is-selecting {
@@ -1002,6 +1002,12 @@ html:has(.study-root) body::-webkit-scrollbar,
 /* 스프레드 세로 패널: 아래 정렬 그리드 대신 절대 위치 */
 .study-ws-root.is-side {
   display: block;
+  pointer-events: none;
+}
+
+.study-ws-root.is-side .study-ws-backdrop,
+.study-ws-root.is-side .study-ws-sheet {
+  pointer-events: auto;
 }
 
 .study-ws-backdrop {
@@ -1035,28 +1041,25 @@ html:has(.study-root) body::-webkit-scrollbar,
   height: auto;
 }
 
-/* 스프레드: 선택 반대쪽 페이지 위 세로 패널 */
+/* 스프레드: 책 안 14px 띄운 떠 있는 카드 */
 .study-ws-sheet.is-side {
   position: fixed;
-  border-radius: 0;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border: 1px solid rgba(120, 90, 50, 0.16);
   background: #fbf7ee;
   height: auto;
   max-height: none;
-}
-
-/* is-compact 여도 스프레드 패널은 쪽 높이(인라인 style)를 유지 */
-
-/* 안쪽(가운데 접힘) 가장자리 그림자 */
-.study-ws-sheet.is-side-left {
-  box-shadow: 10px 0 28px rgba(28, 25, 23, 0.16);
-}
-
-.study-ws-sheet.is-side-right {
-  box-shadow: -10px 0 28px rgba(28, 25, 23, 0.16);
+  overflow: hidden;
+  box-shadow:
+    0 14px 40px rgba(60, 40, 20, 0.18),
+    0 2px 6px rgba(60, 40, 20, 0.08);
 }
 
 .study-ws-sheet.is-side .study-ws-top {
   padding-top: 12px;
+  position: sticky;
+  top: 0;
 }
 
 /* ?debug=1 원어 진단 로그 */
@@ -1076,6 +1079,21 @@ html:has(.study-root) body::-webkit-scrollbar,
   pointer-events: none;
   white-space: pre-wrap;
   word-break: break-all;
+}
+
+.study-debug-hud {
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  z-index: 201;
+  max-width: 42vw;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.82);
+  color: #ffe7a3;
+  font: 10px/1.35 ui-monospace, Menlo, monospace;
+  pointer-events: none;
+  white-space: pre-wrap;
 }
 
 .study-ws-top {
@@ -1105,6 +1123,224 @@ html:has(.study-root) body::-webkit-scrollbar,
   background: #c8bfb0;
 }
 
+.study-ws-grip {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 14px;
+  z-index: 4;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.study-ws-sheet.is-side-right .study-ws-grip {
+  left: 0;
+}
+
+.study-ws-sheet.is-side-left .study-ws-grip {
+  right: 0;
+}
+
+.study-ws-grip-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 36px;
+  margin: -18px 0 0 -2px;
+  border-radius: 999px;
+  background: #c8bfb0;
+}
+
+.study-ws-head-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0 12px 0 16px;
+}
+
+.study-ws-head-spacer {
+  flex: 1;
+  min-width: 0;
+}
+
+.study-ws-chips-rail {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.study-ws-chips-arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 22px;
+  height: 28px;
+  margin-top: -14px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: rgba(251, 247, 238, 0.92);
+  color: #6b5e52;
+  font-size: 16px;
+  line-height: 28px;
+  cursor: pointer;
+}
+
+.study-ws-chips-arrow.is-prev {
+  left: 0;
+}
+
+.study-ws-chips-arrow.is-next {
+  right: 0;
+}
+
+@media (hover: hover) {
+  .study-ws-chips-rail:hover .study-ws-chips-arrow {
+    display: block;
+  }
+}
+
+.study-ws-close {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  margin-top: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #6b5e52;
+  font-size: 22px;
+  line-height: 32px;
+  cursor: pointer;
+}
+
+.study-ws-close:hover {
+  background: #f4ede1;
+}
+
+.study-ws-fadein {
+  opacity: 0;
+}
+
+.study-ws-sheet.is-entered .study-ws-fadein {
+  opacity: 1;
+  transition: opacity 180ms ease 60ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .study-ws-sheet.is-entered .study-ws-fadein {
+    transition: opacity 150ms ease;
+  }
+}
+
+.study-ws-en-fold {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 200ms ease;
+}
+
+.study-ws-en-fold.is-open {
+  grid-template-rows: 1fr;
+}
+
+.study-ws-en-fold > div {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.study-ws-body,
+.study-ws-def-ko,
+.study-ws-root-note,
+.study-ws-en,
+.study-ws-miss-guide,
+.study-ws-miss-verse,
+.study-ws-sec {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.study-ws-tab {
+  position: fixed;
+  z-index: 90;
+  box-sizing: border-box;
+  width: 40px;
+  height: 96px;
+  padding: 10px 6px;
+  border: 1px solid rgba(120, 90, 50, 0.16);
+  background: #fbf7ee;
+  box-shadow:
+    0 14px 40px rgba(60, 40, 20, 0.18),
+    0 2px 6px rgba(60, 40, 20, 0.08);
+  color: #2b2420;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.study-ws-tab.is-right {
+  border-radius: 16px 0 0 16px;
+}
+
+.study-ws-tab.is-left {
+  border-radius: 0 16px 16px 0;
+}
+
+.study-ws-tab-word {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.2;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  max-height: 52px;
+}
+
+.study-ws-tab-g {
+  font-size: 11px;
+  color: #6b5e52;
+  line-height: 1;
+}
+
+.study-ws-tab-chev {
+  font-size: 12px;
+  color: #9e1b1b;
+  line-height: 1;
+}
+
+.study-ws-tab.is-pill {
+  right: 16px;
+  bottom: 24px;
+  left: auto;
+  top: auto;
+  width: auto;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  flex-direction: row;
+  gap: 6px;
+}
+
+.study-ws-tab.is-pill .study-ws-tab-word {
+  writing-mode: horizontal-tb;
+  max-width: 7em;
+  max-height: none;
+}
+
+html[data-study-chrome="0"] .study-ws-tab:not(.is-pill) {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .study-ws-chips {
   display: flex;
   gap: 8px;
@@ -1114,6 +1350,18 @@ html:has(.study-root) body::-webkit-scrollbar,
   scrollbar-width: none;
   touch-action: pan-x;
   overscroll-behavior: contain;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 24px,
+    #000 calc(100% - 24px),
+    transparent
+  );
+}
+
+.study-ws-chips-rail .study-ws-chips {
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .study-ws-chips.is-wrap {
@@ -1122,6 +1370,7 @@ html:has(.study-root) body::-webkit-scrollbar,
   overflow-y: visible;
   touch-action: auto;
   row-gap: 8px;
+  mask-image: none;
 }
 
 .study-ws-chip.is-function {
@@ -1261,7 +1510,14 @@ html:has(.study-root) body::-webkit-scrollbar,
   min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 20px 20px 32px;
+  cursor: text;
+  padding: 20px 20px 24px;
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 calc(100% - 24px),
+    transparent 100%
+  );
   font-size: 15px;
   line-height: 1.75;
   word-break: keep-all;
@@ -2065,12 +2321,14 @@ html[data-study-spread="1"] .brp-tabbar {
 .study-leaf.is-prev {
   left: 0;
   width: var(--study-page-w, 50%);
+  min-width: var(--study-page-w, 0);
 }
 
 .study-sheet.is-right,
 .study-leaf.is-next {
   right: 0;
   width: var(--study-page-w, 50%);
+  min-width: var(--study-page-w, 0);
 }
 
 .study-sheet.is-under {
@@ -2093,19 +2351,40 @@ html[data-study-spread="1"] .brp-tabbar {
 }
 
 .study-spread-edge {
-  pointer-events: none;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .study-spread-edge .study-spread-turn {
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 .study-page-view {
   position: relative;
   width: 100%;
+  min-width: var(--study-page-w, 0);
   height: 100%;
   overflow: hidden;
   background: #fbf7ee;
+}
+
+.study-spread-master {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.study-spread-master.is-clip-left {
+  clip-path: inset(0 calc(100% - var(--study-page-w, 50%)) 0 0);
+}
+
+.study-spread-master.is-clip-right {
+  clip-path: inset(
+    0 0 0 calc(var(--study-page-w, 50%) + var(--study-spread-gap, 48px))
+  );
 }
 
 .study-leaf {
@@ -2398,14 +2677,18 @@ html[data-study-spread="1"] .brp-tabbar {
   to { opacity: 1; }
 }
 
-/* 안쪽 흐름 — column-width/gap/height 는 JS가 px로 지정 */
+/* 안쪽 흐름 — 측정값을 CSS 변수로 박아 첫 프레임부터 폭이 0이 되지 않게 */
 .study-root.is-spread .study-page.study-spread-flow {
   margin: 0;
   box-sizing: border-box;
   column-fill: auto;
   overflow: visible;
   background: #fbf7ee;
-  /* width/minWidth/height/columnWidth/columnGap/padding → inline */
+  height: var(--study-spread-h);
+  max-height: var(--study-spread-h);
+  column-width: var(--study-col-w);
+  column-gap: var(--study-col-gap);
+  min-width: var(--study-col-w);
 }
 
 .study-root.is-spread .study-drop,
@@ -2476,13 +2759,27 @@ html[data-study-spread="1"] .brp-tabbar {
   z-index: 5;
   display: flex;
   align-items: center;
-  width: 18%;
+  width: var(--study-edge-w, 48px);
   border: none;
   padding: 0;
   margin: 0;
   background: transparent;
   cursor: pointer;
   touch-action: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .study-spread:has(.study-spread-edge.is-next:hover) .study-sheet.is-right {
+    transform: perspective(1800px) rotateY(-6deg);
+    transform-origin: left center;
+    box-shadow: -10px 0 18px rgba(60, 40, 20, 0.12);
+  }
+
+  .study-spread:has(.study-spread-edge.is-prev:hover) .study-sheet.is-left {
+    transform: perspective(1800px) rotateY(6deg);
+    transform-origin: right center;
+    box-shadow: 10px 0 18px rgba(60, 40, 20, 0.12);
+  }
 }
 
 .study-spread-edge.is-prev {
