@@ -613,7 +613,7 @@ function main() {
     variants: {
       옛말: Object.keys(YETMAL).length,
       번역어: Object.keys(BEONYEOK).length,
-      removedByNorm: [{ gloss: "세례주다", krv: "세례", reason: "정규화(-주다)로 일치" }],
+      removedByNorm: [{ gloss: "세례를 주다", krv: "세례", reason: "정규화(-주다)로 일치" }],
     },
     mattSamples: matt,
   };

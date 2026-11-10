@@ -357,6 +357,26 @@ function StudyNotebook({
     dragging: false,
   });
   const pageWRef = useRef(480);
+  const flipPageWRef = useRef(480);
+  const gStatsRef = useRef({
+    enter: 0,
+    leave: 0,
+    renderNb: 0,
+    renderFace: 0,
+    measure: 0,
+    widthEmpty: 0,
+    ro: 0,
+    turnOn: 0,
+    turnOff: 0,
+    liftOn: 0,
+    liftOff: 0,
+    masterUnmount: 0,
+    sheetTfOnSamples: 0,
+    lastTurning: false,
+    lastLift: false,
+    hoverEl: ".study-spread-edge",
+    liftEl: ".study-spread-edge-hint (pe:none opacity)",
+  });
   const versePickRef = useRef<number[] | null>(null);
   versePickRef.current = versePick;
   const verseDragRef = useRef<{
@@ -721,6 +741,25 @@ function StudyNotebook({
       ? hitSpreadEdge(px, spread.getBoundingClientRect(), pageWRef.current)
       : 0;
     const turning = !!flipRef.current;
+    const g = gStatsRef.current;
+    if (turning !== g.lastTurning) {
+      if (turning) g.turnOn += 1;
+      else g.turnOff += 1;
+      g.lastTurning = turning;
+    }
+    let sheetLift = false;
+    if (spread) {
+      spread.querySelectorAll<HTMLElement>(".study-sheet").forEach((sheet) => {
+        const tf = getComputedStyle(sheet).transform;
+        if (tf && tf !== "none") sheetLift = true;
+      });
+    }
+    if (sheetLift !== g.lastLift) {
+      if (sheetLift) g.liftOn += 1;
+      else g.liftOff += 1;
+      g.lastLift = sheetLift;
+    }
+    if (sheetLift) g.sheetTfOnSamples += 1;
     const snap = {
       isTurning: turning,
       flipStart: lastFlipStartRef.current,
@@ -740,8 +779,11 @@ function StudyNotebook({
       signFlips: hudProgressRef.current.signFlips,
       progressN: hudProgressRef.current.samples,
       edgeDrag: hudProgressRef.current.dragging,
+      g: { ...g },
     };
-    (window as Window & { __studyA2?: typeof snap }).__studyA2 = snap;
+    (window as Window & { __studyA2?: typeof snap; __studyG?: typeof g }).__studyA2 =
+      snap;
+    (window as Window & { __studyG?: typeof g }).__studyG = g;
     if (!el) return;
     el.textContent = [
       `isTurning=${snap.isTurning ? "true" : "false"}`,
@@ -754,6 +796,13 @@ function StudyNotebook({
       `inEdge=${snap.inEdge === 0 ? "no" : snap.inEdge > 0 ? "next" : "prev"}`,
       `selecting=${snap.studySelecting || "0"}`,
       `progress=${snap.progress.toFixed(3)} flips=${snap.signFlips} n=${snap.progressN} drag=${snap.edgeDrag ? 1 : 0}`,
+      `G enter/leave=${g.enter}/${g.leave} renderNb/face=${g.renderNb}/${g.renderFace}`,
+      `G measure=${g.measure} wEmpty=${g.widthEmpty} ro=${g.ro}`,
+      `G turnOn/Off=${g.turnOn}/${g.turnOff} liftOn/Off=${g.liftOn}/${g.liftOff}`,
+      `G sheetTfSamples=${g.sheetTfOnSamples} masterUnmount=${g.masterUnmount}`,
+      `G hoverEl=${g.hoverEl}`,
+      `G liftEl=${g.liftEl}`,
+      `G sameEl=${g.hoverEl === g.liftEl ? "yes" : "no"}`,
     ].join("\n");
   }, []);
 
@@ -768,6 +817,176 @@ function StudyNotebook({
       window.clearInterval(id);
     };
   }, [debugOn, debugHost, paintA2Hud, flip, spreadOn]);
+
+  // G probe는 HUD host와 무관하게 펼침+debug 때 항상 노출
+  useEffect(() => {
+    if (!debugOn || !spreadOn) return;
+    type GWin = Window & {
+      __studyGReset?: () => void;
+      __studyGProbe?: (ms?: number) => Promise<Record<string, unknown>>;
+      __studyG?: typeof gStatsRef.current;
+      __studyGReady?: boolean;
+    };
+    const w = window as GWin;
+    const reset = () => {
+      const g = gStatsRef.current;
+      g.enter = 0;
+      g.leave = 0;
+      g.renderNb = 0;
+      g.renderFace = 0;
+      g.measure = 0;
+      g.widthEmpty = 0;
+      g.ro = 0;
+      g.turnOn = 0;
+      g.turnOff = 0;
+      g.liftOn = 0;
+      g.liftOff = 0;
+      g.masterUnmount = 0;
+      g.sheetTfOnSamples = 0;
+      g.lastTurning = !!flipRef.current;
+      g.lastLift = false;
+    };
+    const onEnter = () => {
+      gStatsRef.current.enter += 1;
+    };
+    const onLeave = () => {
+      gStatsRef.current.leave += 1;
+    };
+    const edgeRoot = () =>
+      spreadVpRef.current ??
+      (document.querySelector(".study-spread.spread") as HTMLElement | null);
+    const bindEdges = () => {
+      const root = edgeRoot();
+      if (!root) return () => {};
+      const edges = root.querySelectorAll<HTMLElement>(".study-spread-edge");
+      edges.forEach((edge) => {
+        edge.addEventListener("pointerenter", onEnter);
+        edge.addEventListener("pointerleave", onLeave);
+      });
+      return () => {
+        edges.forEach((edge) => {
+          edge.removeEventListener("pointerenter", onEnter);
+          edge.removeEventListener("pointerleave", onLeave);
+        });
+      };
+    };
+    let unbind = bindEdges();
+    let childMo: MutationObserver | null = null;
+    const master = edgeRoot()?.querySelector(".study-spread-master");
+    if (master) {
+      childMo = new MutationObserver((recs) => {
+        for (const r of recs) {
+          if (r.type === "childList" && r.removedNodes.length > 0) {
+            gStatsRef.current.masterUnmount += 1;
+          }
+        }
+      });
+      childMo.observe(master, { childList: true });
+    }
+    w.__studyGReset = reset;
+    w.__studyGReady = true;
+    w.__studyG = gStatsRef.current;
+    w.__studyGProbe = (ms = 10000) =>
+      new Promise((resolve) => {
+        reset();
+        unbind();
+        unbind = bindEdges();
+        const root = edgeRoot();
+        const edge =
+          root?.querySelector<HTMLElement>(".study-spread-edge.is-next") ??
+          root?.querySelector<HTMLElement>(".study-spread-edge") ??
+          null;
+        if (!edge || !root) {
+          resolve({ ...gStatsRef.current, error: "no-edge" });
+          return;
+        }
+        const box = edge.getBoundingClientRect();
+        const x = box.left + box.width * 0.5;
+        const y = box.top + box.height * 0.5;
+        const step = 1000 / 60;
+        let t = 0;
+        const sampleLift = () => {
+          let sheetLift = false;
+          root.querySelectorAll<HTMLElement>(".study-sheet").forEach((sheet) => {
+            const tf = getComputedStyle(sheet).transform;
+            if (tf && tf !== "none") sheetLift = true;
+          });
+          const g = gStatsRef.current;
+          if (sheetLift !== g.lastLift) {
+            if (sheetLift) g.liftOn += 1;
+            else g.liftOff += 1;
+            g.lastLift = sheetLift;
+          }
+          if (sheetLift) g.sheetTfOnSamples += 1;
+        };
+        const tick = () => {
+          edge.dispatchEvent(
+            new PointerEvent("pointermove", {
+              bubbles: true,
+              clientX: x,
+              clientY: y,
+              pointerType: "mouse",
+              pointerId: 1,
+            }),
+          );
+          edge.dispatchEvent(
+            new MouseEvent("mouseover", {
+              bubbles: true,
+              clientX: x,
+              clientY: y,
+            }),
+          );
+          sampleLift();
+          t += step;
+          if (t >= ms) {
+            // 합성 pointerleave는 리스너를 안 타는 환경이 있어 종료 leave를 직접 반영
+            edge.dispatchEvent(
+              new PointerEvent("pointerleave", {
+                bubbles: true,
+                clientX: x,
+                clientY: y,
+                pointerType: "mouse",
+                pointerId: 1,
+              }),
+            );
+            if (gStatsRef.current.enter > gStatsRef.current.leave) {
+              gStatsRef.current.leave += 1;
+            }
+            sampleLift();
+            resolve({ ...gStatsRef.current });
+            return;
+          }
+          window.setTimeout(tick, step);
+        };
+        edge.dispatchEvent(
+          new PointerEvent("pointerenter", {
+            bubbles: true,
+            clientX: x,
+            clientY: y,
+            pointerType: "mouse",
+            pointerId: 1,
+          }),
+        );
+        edge.dispatchEvent(
+          new MouseEvent("mouseenter", {
+            bubbles: false,
+            clientX: x,
+            clientY: y,
+          }),
+        );
+        sampleLift();
+        window.setTimeout(tick, step);
+      });
+    return () => {
+      unbind();
+      childMo?.disconnect();
+      if (w.__studyG === gStatsRef.current) {
+        delete w.__studyGReset;
+        delete w.__studyGProbe;
+        delete w.__studyGReady;
+      }
+    };
+  }, [debugOn, spreadOn, spreadIndex, chapter, bookId]);
 
   const persist = useCallback(
     (next: ChapterStudyData) => {
@@ -2088,6 +2307,8 @@ function StudyNotebook({
     if (flipRef.current) return;
     if (spreadSwipeRef.current) return;
 
+    gStatsRef.current.measure += 1;
+
     const vv = window.visualViewport;
     const vvTop = vv?.offsetTop ?? 0;
     const vvH = vv?.height ?? window.innerHeight;
@@ -2118,6 +2339,10 @@ function StudyNotebook({
     const spreadH = Math.max(120, Math.floor(contentBottom - contentTop));
     const spreadW = Math.max(200, Math.floor(vvW - outer * 2));
     const g = calcSpreadGeometry(spreadW, spreadH);
+
+    if (!(g.pageW >= 40) || !Number.isFinite(g.pageW)) {
+      gStatsRef.current.widthEmpty += 1;
+    }
 
     pageWRef.current = g.pageW;
     setPageW(g.pageW);
@@ -2251,20 +2476,33 @@ function StudyNotebook({
     const vv = window.visualViewport;
     vv?.addEventListener("resize", onResize);
     vv?.addEventListener("scroll", onResize);
-    const ro = new ResizeObserver(() => measureSpread());
-    ro.observe(document.documentElement);
+    const onRo = () => {
+      gStatsRef.current.ro += 1;
+      measureSpread();
+    };
+    const ro = new ResizeObserver(onRo);
+    // documentElement RO는 class/hover 부산물에 민감 → 실제 레이아웃 앵커만
     const topbar = document.querySelector(".brp-mobile-topbar");
     const header = document.querySelector(".brp-header");
     const pg = document.querySelector(".study-spread-pager");
     const reader = document.querySelector(".brp-reader");
-    for (const el of [topbar, header, pg, reader]) {
+    const vp = spreadVpRef.current;
+    for (const el of [topbar, header, pg, reader, vp]) {
       if (el) ro.observe(el);
     }
     document.fonts?.ready.then(measureSpread).catch(() => {});
-    const mo = new MutationObserver(() => measureSpread());
+    // hover/선택 class 변경으로 재실측하지 않음. 펼침 모드 토글만.
+    const mo = new MutationObserver((recs) => {
+      for (const r of recs) {
+        if (r.type === "attributes" && r.attributeName === "data-study-spread") {
+          measureSpread();
+          break;
+        }
+      }
+    });
     mo.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ["style", "class", "data-study-spread"],
+      attributeFilter: ["data-study-spread"],
     });
     const t0 = window.setTimeout(measureSpread, 50);
     const t1 = window.setTimeout(measureSpread, 200);
@@ -2501,6 +2739,7 @@ function StudyNotebook({
       if (spreadBlocked(dir)) return;
       flipBusyRef.current = false;
       flipAngleRef.current = 0;
+      flipPageWRef.current = Math.max(40, pageWRef.current);
       const next = { dir, auto: true as const };
       flipRef.current = next;
       lastFlipStartRef.current = performance.now();
@@ -2722,6 +2961,7 @@ function StudyNotebook({
         if (!flipRef.current) {
           flipBusyRef.current = false;
           flipAngleRef.current = 0;
+          flipPageWRef.current = Math.max(40, pageWRef.current);
           const next = { dir: dragDir, auto: false as const };
           flipRef.current = next;
           lastFlipStartRef.current = performance.now();
@@ -4191,7 +4431,9 @@ function StudyNotebook({
   );
 
   const renderFace = (pageIndex: number, measure: boolean) => {
-    if (pageW < 40) return <div className="study-page-view" />;
+    if (debugOn) gStatsRef.current.renderFace += 1;
+    const faceW = flip ? flipPageWRef.current : pageW;
+    if (faceW < 40) return <div className="study-page-view" />;
     let inner: ReactNode = null;
     if (pageIndex >= 0 && pageIndex < pageCount) {
       inner = renderCurrentFlow(pageIndex, measure);
@@ -4258,6 +4500,7 @@ function StudyNotebook({
   const liftOp = spreadDragging
     ? 0.04 * (1 - Math.abs(2 * spreadPull - 1))
     : 0;
+  if (debugOn) gStatsRef.current.renderNb += 1;
   const nextBookId =
     BOOK_ORDER.indexOf(bookId) >= 0 &&
     BOOK_ORDER.indexOf(bookId) < BOOK_ORDER.length - 1
@@ -4337,7 +4580,13 @@ function StudyNotebook({
                 </div>
               ) : null}
               {flip?.dir === -1 ? (
-                <div className="study-sheet is-left is-under">
+                <div
+                  className="study-sheet is-left is-under"
+                  style={{
+                    width: `${flipPageWRef.current}px`,
+                    minWidth: `${flipPageWRef.current}px`,
+                  }}
+                >
                   {renderFace(leftPage - 2, false)}
                   <div ref={leafCastRef} className="study-leaf-cast" />
                 </div>
@@ -4345,7 +4594,13 @@ function StudyNotebook({
                 <div className="study-sheet is-left" />
               )}
               {flip?.dir === 1 ? (
-                <div className="study-sheet is-right is-under">
+                <div
+                  className="study-sheet is-right is-under"
+                  style={{
+                    width: `${flipPageWRef.current}px`,
+                    minWidth: `${flipPageWRef.current}px`,
+                  }}
+                >
                   {renderFace(leftPage + 3, false)}
                   <div ref={leafCastRef} className="study-leaf-cast" />
                 </div>
@@ -4364,14 +4619,26 @@ function StudyNotebook({
                       ? " is-clip-right"
                       : ""
                 }`}
+                style={
+                  flip
+                    ? ({
+                        ["--study-page-w" as string]: `${flipPageWRef.current}px`,
+                      } as CSSProperties)
+                    : undefined
+                }
               >
-                {pageW >= 40 ? renderCurrentFlow(leftPage, true) : null}
+                {(flip ? flipPageWRef.current : pageW) >= 40
+                  ? renderCurrentFlow(leftPage, true)
+                  : null}
               </div>
               {flip ? (
                 <div
                   ref={leafRef}
                   className={`study-leaf is-hot ${flip.dir === 1 ? "is-next" : "is-prev"}`}
-                  style={{ width: `${pageW}px` }}
+                  style={{
+                    width: `${flipPageWRef.current}px`,
+                    minWidth: `${flipPageWRef.current}px`,
+                  }}
                 >
                   <div className="study-leaf-face is-front">
                     {renderFace(flip.dir === 1 ? leftPage + 1 : leftPage, false)}
@@ -4514,6 +4781,7 @@ function StudyNotebook({
                   goSpreadBy(-1);
                 }}
               >
+                <span className="study-spread-edge-hint" aria-hidden />
                 <span className="study-spread-turn" aria-hidden>
                   ‹
                 </span>
@@ -4529,6 +4797,7 @@ function StudyNotebook({
                   goSpreadBy(1);
                 }}
               >
+                <span className="study-spread-edge-hint" aria-hidden />
                 <span className="study-spread-turn" aria-hidden>
                   ›
                 </span>

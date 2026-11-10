@@ -166,12 +166,23 @@
   overflow-wrap: anywhere;
 }
 
+/* 장 번호 ↔ 본문 간격 — 375/768=8px, PC(≥769)=12px */
+.study-root {
+  --study-drop-gap: 8px;
+}
+
+@media (min-width: 769px) {
+  .study-root {
+    --study-drop-gap: 12px;
+  }
+}
+
 /* 장 번호: 장 제목 줄 + 본문 두 줄 = 3줄 높이.
-   칸 폭 = 실제 숫자. 본문과의 간격 0.25em. 3자리(시편)도 같은 규칙 */
+   칸 폭 = 실제 숫자. 본문과의 간격은 --study-drop-gap */
 .study-drop {
   float: left;
   box-sizing: content-box;
-  margin: 5px 0.25em 0 0;
+  margin: 5px var(--study-drop-gap) 0 0;
   font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
   font-size: inherit;
   font-weight: 700;
@@ -193,24 +204,32 @@
   -webkit-user-select: none;
 }
 
-/* 첫 줄 = 장 번호 윗줄. 본문 줄 높이를 그대로 써서 3줄 격자를 맞춤 */
+/* 첫 줄 = 장 번호 윗줄.
+   잘림 원인(실측): overflow:hidden + text-box-trim 으로
+   제목 상자 높이(~12px) < ink(~23px), 받침 4.48px 잘림 */
 .study-chapter-title {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
+  display: block;
+  overflow: visible;
   margin: 0;
+  padding-bottom: 0.15em;
   font-size: 16px;
   font-weight: 700;
-  line-height: var(--study-lh);
+  line-height: 1.5;
   color: rgba(158, 27, 27, 0.7);
   text-align: left;
   text-align-last: left;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
+  /* trim 제거 — 받침(식 등)이 overflow에 잘리지 않게 */
+  max-width: 100%;
 }
 
 .study-chapter-title-ink {
+  display: inline-block;
+  vertical-align: baseline;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-bottom: 0.15em;
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
@@ -2225,7 +2244,7 @@ html[data-study-spread="1"] .brp-tabbar {
   box-shadow:
     0 1px 2px rgba(0, 0, 0, 0.04),
     0 12px 32px rgba(60, 40, 20, 0.08);
-  /* overflow:hidden 은 preserve-3d를 평탄화한다 */
+  /* overflow:hidden 은 preserve-3d를 평탄화한다. 비스듬한 조각은 hover rotate 제거로 차단 */
   overflow: visible;
   perspective: 1800px;
   transform-style: preserve-3d;
@@ -2836,19 +2855,51 @@ html[data-study-spread="1"] .brp-tabbar {
   background: transparent;
   cursor: pointer;
   touch-action: none;
+  /* hover 판정 칸: 위치 고정, transform 없음 */
+  transform: none;
+}
+
+/* 들림 효과 전용 — pointer-events 없음. 종이는 움직이지 않음 */
+.study-spread-edge-hint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 160ms ease;
+  transform: none;
+}
+
+.study-spread-edge.is-next .study-spread-edge-hint {
+  background: linear-gradient(
+    to left,
+    rgba(60, 40, 20, 0.1),
+    rgba(60, 40, 20, 0.03) 55%,
+    transparent
+  );
+  box-shadow: inset -8px 0 14px rgba(60, 40, 20, 0.06);
+}
+
+.study-spread-edge.is-prev .study-spread-edge-hint {
+  background: linear-gradient(
+    to right,
+    rgba(60, 40, 20, 0.1),
+    rgba(60, 40, 20, 0.03) 55%,
+    transparent
+  );
+  box-shadow: inset 8px 0 14px rgba(60, 40, 20, 0.06);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .study-spread:not(.is-edge-drag):has(.study-spread-edge.is-next:hover) .study-sheet.is-right {
-    transform: perspective(1800px) rotateY(-6deg);
-    transform-origin: left center;
-    box-shadow: -10px 0 18px rgba(60, 40, 20, 0.12);
+  .study-spread:not(.is-edge-drag) .study-spread-edge:hover .study-spread-edge-hint,
+  .study-spread:not(.is-edge-drag) .study-spread-edge:focus-visible .study-spread-edge-hint {
+    opacity: 1;
   }
+}
 
-  .study-spread:not(.is-edge-drag):has(.study-spread-edge.is-prev:hover) .study-sheet.is-left {
-    transform: perspective(1800px) rotateY(6deg);
-    transform-origin: right center;
-    box-shadow: 10px 0 18px rgba(60, 40, 20, 0.12);
+@media (prefers-reduced-motion: reduce) {
+  .study-spread-edge-hint {
+    opacity: 0 !important;
+    transition: none;
   }
 }
 
