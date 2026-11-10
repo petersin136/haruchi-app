@@ -31,10 +31,10 @@ const EDGE_IGNORE_PX = 24;
 /** 가로가 세로의 1.5배보다 크고 이 값을 넘을 때만 서랍 제스처 */
 const LOCK_PX = 30;
 const FLICK_PX_PER_MS = 0.5;
-const OPEN_MS = 440;
-const CLOSE_MS = 320;
-/** 원목 서랍 스프링 — 고주사율에서도 끊김 적은 이징 */
-const OPEN_EASE = "cubic-bezier(0.22, 1.1, 0.36, 1)";
+const OPEN_MS = 480;
+const CLOSE_MS = 340;
+/** 글래스 서랍 스프링 — 고주사율에서도 끊김 적은 이징 */
+const OPEN_EASE = "cubic-bezier(0.16, 1, 0.3, 1)";
 const CLOSE_EASE = "cubic-bezier(0.4, 0, 0.2, 1)";
 
 type BookChapterDrawerProps = {
@@ -127,6 +127,30 @@ function BookChapterDrawer({
     },
     [bookConfirmed, bookId, chapterNumber],
   );
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const place = () => {
+      const spread = document.querySelector<HTMLElement>(".study-spread.spread");
+      const box = spread?.getBoundingClientRect();
+      const h = 120;
+      const midY =
+        box && box.height > 40
+          ? box.top + box.height / 2
+          : window.innerHeight / 2;
+      document.documentElement.style.setProperty(
+        "--brp-pull-top",
+        `${Math.round(midY - h / 2)}px`,
+      );
+    };
+    place();
+    const raf = requestAnimationFrame(place);
+    window.addEventListener("resize", place);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", place);
+    };
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -562,7 +586,8 @@ function BookChapterDrawer({
         aria-modal="true"
         aria-label="책·장 선택"
       >
-        <div className="brp-bcd-panel-rail" aria-hidden />
+        <div className="brp-bcd-col">
+          <p className="brp-bcd-col-head">성경</p>
         <ul
           ref={booksRef}
           className={
@@ -629,7 +654,10 @@ function BookChapterDrawer({
             );
           })}
         </ul>
+        </div>
 
+        <div className="brp-bcd-col">
+          <p className="brp-bcd-col-head">{previewMeta?.name ?? "장"}</p>
         <ul
           key={chapterStaggerKey}
           ref={chaptersRef}
@@ -647,9 +675,6 @@ function BookChapterDrawer({
         >
           {preview ? (
             <>
-              <li className="brp-bcd-section" aria-hidden="true">
-                {previewMeta?.name ?? "장"}
-              </li>
               {chapters.map((n, i) => {
                 const isCurrent =
                   bookConfirmed && preview === bookId && n === chapterNumber;
@@ -679,6 +704,7 @@ function BookChapterDrawer({
             <li className="brp-bcd-empty">책을 선택하세요</li>
           )}
         </ul>
+        </div>
       </aside>
     </div>
       ) : null}

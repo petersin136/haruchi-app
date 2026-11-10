@@ -1746,13 +1746,10 @@ export default function BibleReadingPage() {
     >
       <MobileTopBar
         bookId={bookId}
-        bookName={bookMeta.name}
         chapterNumber={chapterNumber}
-        bookConfirmed={bookConfirmed}
         modeChoice={currentModeChoice}
         onModeChange={handleModeChange}
         onSearch={openSearch}
-        onOpenDrawer={openDrawer}
       />
       <BookChapterDrawer
         open={drawerOpen}

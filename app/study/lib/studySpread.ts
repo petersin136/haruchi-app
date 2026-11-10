@@ -16,17 +16,15 @@ export const STUDY_SPREAD_OUTER = 20;
 export const STUDY_SPREAD_TOPBAR = 46;
 export const STUDY_SPREAD_BAR_H = 30;
 export const STUDY_SPREAD_PGNUM_H = 28;
-export const STUDY_SPREAD_ANIM_MS = 420;
+/** 장 전환 연출 등 (쪽 넘김은 현재 즉시) */
+export const STUDY_SPREAD_ANIM_MS = 250;
 /** 애니메이션 끝 확정 = 이 값 + 이 여유 */
 export const STUDY_SPREAD_SETTLE_PAD_MS = 50;
-/** 넘김이 이 시간 지나도 남아 있으면 강제 정리 */
-export const STUDY_SPREAD_FLIP_WATCHDOG_MS = 600;
 export const STUDY_SPREAD_SWIPE_PX = 40;
-/** 놓을 때 넘김으로 보는 이동 거리(쪽 폭 대비) — 끌기 시작 때 고정한 pageW의 50% */
+/** 놓을 때 넘김으로 보는 이동 거리(펼침 폭 대비) */
 export const STUDY_SPREAD_COMMIT_DIST = 0.5;
 /** 놓을 때 넘김으로 보는 속도(px/ms) */
 export const STUDY_SPREAD_COMMIT_VEL = 0.35;
-export const STUDY_SPREAD_PERSPECTIVE = 1800;
 /** 넘김 가장자리: 글자 밖 종이 여백. 쪽 폭 비율로 본문과 겹치지 않음 */
 export const STUDY_SPREAD_EDGE = 0;
 /** 넘김 가장자리 최소 폭 = 바깥 안여백 */

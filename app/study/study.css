@@ -222,10 +222,12 @@ button.study-loc-trigger {
   overflow: hidden;
   margin: 0;
   padding-bottom: 0.15em;
-  font-size: 16px;
+  /* 본문과 동일 크기(17px). 예전 16px라 소제목(inherit 17)보다 작아 보였음 */
+  font-size: inherit;
   font-weight: 700;
   line-height: 1.5;
-  color: rgba(158, 27, 27, 0.7);
+  /* 장 숫자와 같은 톤 — 진한 버건디 */
+  color: #9e1b1b;
   text-align: left;
   text-align-last: left;
 }
@@ -293,8 +295,9 @@ button.study-loc-trigger {
   overflow: hidden;
 }
 
+/* 문단은 유지하되, 본문 줄간격과 같게 — 위 여분 margin 없음 */
 .study-para {
-  margin: 0.6em 0 0;
+  margin: 0;
   padding: 0;
   text-indent: 0;
   text-align: justify;
@@ -304,27 +307,21 @@ button.study-loc-trigger {
   overflow-wrap: anywhere;
 }
 
-/* 쪽·본문 맨 위 단락은 위 간격 없음. 단락 구분은 간격 0.6em만 */
-.study-body > .study-para:first-child {
-  margin-top: 0;
-}
-
 .study-para:last-child {
   margin-bottom: 0;
 }
 
-/* 소제목: 단락 사이. 위는 단락 간격(0.6em)보다 넓고, 아래는 다음 단락에 붙임.
-   clear: 드롭캡 옆 3줄 안에 끼어 깨지지 않게 아래로 내림 */
+/* 소제목: 장 제목(본문 크기)보다 2pt 작게. 줄칸은 본문과 동일 */
 .study-subhead {
   display: block;
   clear: left;
-  margin: 0.9em 0 0.15em;
+  margin: 0;
   padding: 0;
-  font-family: inherit;
-  font-size: 0.85em;
-  font-weight: 400;
-  line-height: var(--study-lh);
-  color: #a89a86;
+  font: inherit;
+  font-size: calc(1em - 2pt);
+  font-weight: 500;
+  line-height: inherit;
+  color: rgba(158, 27, 27, 0.7);
   text-align: left;
   text-align-last: left;
   white-space: pre-wrap;
@@ -337,8 +334,6 @@ button.study-loc-trigger {
   -webkit-column-break-inside: avoid;
   page-break-after: avoid;
   page-break-inside: avoid;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
 }
 
 .study-body > .study-subhead:first-child {
@@ -1378,58 +1373,56 @@ html:has(.study-root) body::-webkit-scrollbar,
   -webkit-user-select: text;
 }
 
-/* 원어 손잡이 — 글씨 없는 작은 놋쇠 노브 (책 서랍 손잡이 아래) */
+/* 원어 — 뷰포트 맨 왼쪽. 한글 표기 없음, 오른쪽 서랍 손잡이와 같은 톤 */
 .study-ws-tab.study-ws-ribbon {
   position: fixed;
   z-index: 53;
+  top: var(--ws-tab-top, calc(50% - 60px));
+  left: 0 !important;
+  right: auto !important;
+  transform: none !important;
   box-sizing: border-box;
-  width: 44px;
-  height: 44px;
+  width: 22px;
+  height: 120px;
   padding: 0;
   margin: 0;
   border: none;
-  border-radius: 0;
-  background: transparent;
-  color: transparent;
+  border-radius: 0 14px 14px 0;
+  background: rgba(255, 252, 247, 0.94);
+  color: #6b6258;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  box-shadow: none;
+  justify-content: center;
+  box-shadow:
+    4px 6px 20px rgba(40, 28, 16, 0.08),
+    inset 0 0 0 1px rgba(40, 28, 16, 0.06);
   pointer-events: auto;
   touch-action: manipulation;
 }
 
-.study-ws-ribbon-knob {
-  position: relative;
-  z-index: 1;
-  width: 18px;
-  height: 18px;
-  margin-right: 4px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 35% 30%,
-    #f0d78a 0%,
-    #c9a227 45%,
-    #8a6508 100%
-  );
-  box-shadow:
-    0 1px 4px rgba(40, 22, 8, 0.35),
-    inset 0 1px 1px rgba(255, 245, 210, 0.55),
-    inset 0 -1px 1px rgba(60, 40, 0, 0.3);
+.study-ws-ribbon-grip {
+  width: 3px;
+  height: 36px;
+  border-radius: 999px;
+  background: rgba(120, 100, 80, 0.45);
 }
 
-/* 원어 노브는 크롬 숨김과 무관하게 항상 표시 */
+.study-ws-ribbon-mark,
+.study-ws-ribbon-label {
+  display: none;
+}
+
 html[data-study-chrome="0"] .study-ws-tab.study-ws-ribbon {
   opacity: 1;
   pointer-events: auto;
 }
 
 .study-ws-tab.study-ws-ribbon.is-dock-right {
-  top: calc(50% + 64px);
-  right: 0;
-  left: auto;
-  transform: none;
+  top: var(--ws-tab-top, calc(50% - 60px));
+  left: 0 !important;
+  right: auto !important;
+  transform: none !important;
 }
 
 .study-ws-gloss-main {
@@ -2175,7 +2168,7 @@ html[data-study-spread="1"] body {
 html[data-study-spread="1"] .brp-page {
   height: 100dvh !important;
   overflow: hidden !important;
-  padding-top: 52px !important;
+  padding-top: 56px !important;
   padding-bottom: 0 !important;
   background: #f3ede1 !important;
 }
@@ -2272,10 +2265,7 @@ html[data-study-spread="1"] .brp-tabbar {
   box-shadow:
     0 1px 2px rgba(0, 0, 0, 0.04),
     0 12px 32px rgba(60, 40, 20, 0.08);
-  /* overflow:hidden 은 preserve-3d를 평탄화한다. 비스듬한 조각은 hover rotate 제거로 차단 */
   overflow: visible;
-  perspective: 1800px;
-  transform-style: preserve-3d;
   touch-action: none;
 }
 
@@ -2315,17 +2305,20 @@ html[data-study-spread="1"] .brp-tabbar {
 
 .study-spread-runhead {
   position: absolute;
-  top: 8px;
+  top: 10px;
   z-index: 4;
   width: 46%;
   margin: 0;
   padding: 2px 0;
   font-size: 11px;
+  font-weight: 550;
   line-height: 1.35;
-  letter-spacing: 0.12em;
-  color: #a89a86;
+  letter-spacing: 0.08em;
+  color: rgba(120, 104, 88, 0.55);
   pointer-events: none;
   overflow: visible;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
 }
 
 .study-spread-runhead.is-left {
@@ -2354,13 +2347,15 @@ button.study-spread-runhead.study-loc-trigger {
 
 .study-spread-folio {
   position: absolute;
-  bottom: 10px;
+  bottom: 14px;
   z-index: 4;
   width: 40%;
   margin: 0;
   font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
-  font-size: 12px;
-  color: #a89a86;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(120, 104, 88, 0.55);
   text-align: center;
   pointer-events: none;
   text-box-trim: trim-both;
@@ -2379,61 +2374,74 @@ button.study-spread-runhead.study-loc-trigger {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   justify-content: flex-start;
+  gap: 0;
   height: auto;
   box-sizing: border-box;
-  margin: 0 auto;
-  color: #a89a86;
+  margin: 6px auto 10px;
+  padding: 0 12px;
+  color: #8a847c;
 }
 
 .study-spread-progress {
-  height: 2px;
-  width: 100%;
-}
-
-.study-spread-progress > span {
-  display: block;
-  height: 2px;
-  background: rgba(158, 27, 27, 0.6);
+  display: none;
 }
 
 .study-spread-pager-row {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 44px;
+  gap: 4px;
+  min-height: 36px;
+  padding: 0;
+  background: none;
+  box-shadow: none;
 }
 
 .study-spread-pager-label {
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: 500;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.16em;
+  color: #6f6962;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
-  min-width: 72px;
+  min-width: 108px;
+  padding: 0 6px;
   text-align: center;
+}
+
+.study-spread-pager-total {
+  font-weight: 500;
+  color: rgba(90, 78, 66, 0.45);
 }
 
 .study-spread-pager-btn {
   flex: none;
   box-sizing: border-box;
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
   margin: 0;
   padding: 0;
   border: none;
+  border-radius: 0;
   background: transparent;
-  color: #a89a86;
+  color: #1c1917;
   font: inherit;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1;
   cursor: pointer;
 }
 
+.study-spread-pager-btn:hover {
+  color: #1c1917;
+  opacity: 0.55;
+}
+
 .study-spread-track {
   height: 100%;
-  transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .study-sheet {
@@ -2445,22 +2453,16 @@ button.study-spread-runhead.study-loc-trigger {
   background: #fbf7ee;
 }
 
-.study-sheet.is-left,
-.study-leaf.is-prev {
+.study-sheet.is-left {
   left: 0;
   width: var(--study-page-w, 50%);
   min-width: var(--study-page-w, 0);
 }
 
-.study-sheet.is-right,
-.study-leaf.is-next {
+.study-sheet.is-right {
   right: 0;
   width: var(--study-page-w, 50%);
   min-width: var(--study-page-w, 0);
-}
-
-.study-sheet.is-under {
-  z-index: 2;
 }
 
 .study-sheet.is-covered {
@@ -2503,108 +2505,44 @@ button.study-spread-runhead.study-loc-trigger {
   z-index: 2;
   overflow: hidden;
   pointer-events: auto;
+  transform-origin: center center;
+  background: #fbf7ee;
 }
 
-.study-spread-master.is-clip-left {
-  clip-path: inset(0 calc(100% - var(--study-page-w, 50%)) 0 0);
-}
-
-.study-spread-master.is-clip-right {
-  clip-path: inset(
-    0 0 0 calc(var(--study-page-w, 50%) + var(--study-spread-gap, 48px))
-  );
-}
-
-.study-leaf {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 4;
-  transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
-}
-
-.study-leaf.is-hot {
-  will-change: transform;
-}
-
-.study-leaf.is-next {
-  right: 0;
-  transform-origin: left center;
-}
-
-.study-leaf.is-prev {
-  left: 0;
-  transform-origin: right center;
-}
-
-.study-leaf-face {
+/* 밀기+페이드+깊이: 움직이는 층은 under / over 두 개 */
+.study-turn-under,
+.study-turn-over {
   position: absolute;
   inset: 0;
   overflow: hidden;
   background: #fbf7ee;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
-}
-
-.study-leaf-face.is-front {
-  transform: rotateY(0deg);
-}
-
-.study-leaf-face.is-back {
-  transform: rotateY(180deg);
-}
-
-.study-leaf-ink,
-.study-leaf-cast,
-.study-leaf-rim {
-  position: absolute;
+  transform-origin: center center;
+  will-change: transform, opacity;
   pointer-events: none;
-  opacity: 0;
 }
 
-.study-leaf-ink,
-.study-leaf-cast {
+.study-turn-under {
+  z-index: 2;
+}
+
+.study-turn-over {
+  z-index: 5;
+}
+
+.study-turn-dim {
+  position: absolute;
   inset: 0;
-}
-
-.study-leaf.is-next .study-leaf-ink {
-  background: linear-gradient(to right, rgba(60, 40, 20, 0.22), transparent 62%);
-}
-
-.study-leaf.is-prev .study-leaf-ink {
-  background: linear-gradient(to left, rgba(60, 40, 20, 0.22), transparent 62%);
-}
-
-.study-sheet.is-under.is-right .study-leaf-cast {
-  background: linear-gradient(to right, rgba(60, 40, 20, 0.18), transparent 46%);
-}
-
-.study-sheet.is-under.is-left .study-leaf-cast {
-  background: linear-gradient(to left, rgba(60, 40, 20, 0.18), transparent 46%);
-}
-
-.study-leaf-rim {
-  top: 0;
-  bottom: 0;
-  width: 22px;
-}
-
-.study-leaf.is-next .study-leaf-rim {
-  right: 0;
-  background: linear-gradient(to left, rgba(255, 252, 245, 0.7), transparent);
-}
-
-.study-leaf.is-prev .study-leaf-rim {
-  left: 0;
-  background: linear-gradient(to right, rgba(255, 252, 245, 0.7), transparent);
+  z-index: 3;
+  pointer-events: none;
+  background: #000;
+  opacity: 0;
+  will-change: opacity;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .study-leaf,
-  .study-leaf.is-hot {
-    will-change: auto;
+  .study-turn-under,
+  .study-turn-over {
+    will-change: opacity;
   }
 }
 

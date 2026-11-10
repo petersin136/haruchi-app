@@ -77,13 +77,10 @@ const MODE_OPTIONS: { value: MobileModeChoice; label: string }[] = [
 
 type MobileTopBarProps = {
   bookId: string;
-  bookName: string;
   chapterNumber: number;
-  bookConfirmed: boolean;
   modeChoice: MobileModeChoice;
   onModeChange: (next: MobileModeChoice) => void;
   onSearch: () => void;
-  onOpenDrawer: () => void;
 };
 
 const STROKE = 1.75;
@@ -137,27 +134,6 @@ function PlayIcon() {
   );
 }
 
-function ChevronIcon() {
-  return (
-    <svg
-      className="brp-mobile-topbar-chevron"
-      viewBox="0 0 12 12"
-      width="12"
-      height="12"
-      aria-hidden="true"
-    >
-      <path
-        d="M2.5 4.5 L6 8 L9.5 4.5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={STROKE}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 function MoreIcon() {
   return (
     <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true">
@@ -191,13 +167,10 @@ function MoreIcon() {
 
 function MobileTopBar({
   bookId,
-  bookName,
   chapterNumber,
-  bookConfirmed,
   modeChoice,
   onModeChange,
   onSearch,
-  onOpenDrawer,
 }: MobileTopBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -209,11 +182,6 @@ function MobileTopBar({
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [menuOpen]);
-
-  const unit = bookId === "psalms" ? "편" : "장";
-  const bookLabel = bookConfirmed
-    ? `${bookName} ${chapterNumber}${unit}`
-    : "책 선택";
 
   const watchReady = useWatchAvailable(bookId);
   const watchHref = watchHrefFor(bookId, chapterNumber);
@@ -292,40 +260,6 @@ function MobileTopBar({
             <MoreIcon />
           </button>
         </div>
-
-        {/* 책·장 — 오른쪽 서랍과 맞춤 */}
-        <button
-          type="button"
-          className="brp-mobile-topbar-btn brp-mobile-topbar-book"
-          onClick={() => {
-            const ds = document.documentElement.dataset;
-            if (
-              ds.studySelecting === "1" ||
-              ds.studyWsOpen === "1" ||
-              ds.studyNoteOpen === "1"
-            )
-              return;
-            onOpenDrawer();
-          }}
-          aria-label={`${bookLabel} — 책·장 선택`}
-        >
-          {bookConfirmed ? (
-            <span className="brp-mobile-topbar-book-label">
-              <span className="brp-mobile-topbar-book-clip">
-                <span className="brp-mobile-topbar-book-name">{bookName}</span>{" "}
-                <span className="brp-mobile-topbar-book-ch">
-                  {chapterNumber}
-                  {unit}
-                </span>
-              </span>
-            </span>
-          ) : (
-            <span className="brp-mobile-topbar-book-label">
-              <span className="brp-mobile-topbar-book-clip">{bookLabel}</span>
-            </span>
-          )}
-          <ChevronIcon />
-        </button>
       </div>
 
       {menuOpen ? (

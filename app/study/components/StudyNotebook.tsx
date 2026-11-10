@@ -89,8 +89,6 @@ import {
   STUDY_SPREAD_ANIM_MS,
   STUDY_SPREAD_COMMIT_DIST,
   STUDY_SPREAD_COMMIT_VEL,
-  STUDY_SPREAD_FLIP_WATCHDOG_MS,
-  STUDY_SPREAD_SETTLE_PAD_MS,
   STUDY_SPREAD_OUTER,
   STUDY_SPREAD_PAD_OUTER,
   STUDY_SPREAD_PGNUM_H,
@@ -312,7 +310,7 @@ function StudyNotebook({
   const [spreadPull, setSpreadPull] = useState(0);
   /** 커밋 연출 방향. 1 다음, -1 이전 */
   const [spreadTurn, setSpreadTurn] = useState<0 | 1 | -1>(0);
-  /** 3D 잎이 떠 있는 동안만 4쪽을 마운트. 각도는 ref로만 갱신 */
+  /** 넘김 중 두 층만 마운트. 진행률은 ref로만 갱신(React 재렌더 없음) */
   const [flip, setFlip] = useState<{ dir: 1 | -1; auto: boolean } | null>(null);
   const [pageW, setPageW] = useState(480);
   const [nextPack, setNextPack] = useState<ContPack | null>(null);
@@ -357,23 +355,20 @@ function StudyNotebook({
     signFlips: number;
   } | null>(null);
   const spreadEdgeTapRef = useRef(0);
+  /** 연속 입력으로 여러 펼침이 한 번에 넘어가지 않게 */
+  const spreadNavLockRef = useRef(0);
   const flipRef = useRef(flip);
   /* commitFlip이 먼저 비운 값을 다음 렌더의 옛 flip state가 되살리지 않게, 여기서 동기화하지 않음 */
-  const leafRef = useRef<HTMLDivElement | null>(null);
-  const leafInkRef = useRef<HTMLDivElement | null>(null);
-  const leafCastRef = useRef<HTMLDivElement | null>(null);
-  const leafRimRef = useRef<HTMLDivElement | null>(null);
-  const flipAngleRef = useRef(0);
+  const masterLayerRef = useRef<HTMLDivElement | null>(null);
+  /** 0→1 끌기 진행(시각 애니 없음, 확정 판정용) */
+  const flipProgressRef = useRef(0);
+  const flipStyleRef = useRef<"drag" | "auto">("auto");
   const flipRafRef = useRef(0);
   const flipBusyRef = useRef(false);
   const flipTimerRef = useRef(0);
-  const flipTeCountRef = useRef(0);
-  const flipAeCountRef = useRef(0);
+  const flipSettleTidRef = useRef(0);
   const flipMoveCountRef = useRef(0);
   const flipLostCapRef = useRef(0);
-  const flipWatchdogRef = useRef(0);
-  /** handoff가 settleFlip을 직접 호출하면 auto effect 중복 settle 스킵 */
-  const skipAutoSettleRef = useRef(false);
   const lastFlipStartRef = useRef(0);
   const lastFlipEndRef = useRef(0);
   const spreadCaptureIdRef = useRef<number | null>(null);
@@ -387,7 +382,8 @@ function StudyNotebook({
     dragging: false,
   });
   const pageWRef = useRef(480);
-  const flipPageWRef = useRef(480);
+  /** 끌기 1:1 기준 폭 = 펼침 전체(양쪽을 한 덩어리) */
+  const flipSpreadWRef = useRef(480);
   const gStatsRef = useRef({
     enter: 0,
     leave: 0,
@@ -561,10 +557,6 @@ function StudyNotebook({
   const [wsInitial, setWsInitial] = useState<WordStudyToken | null>(null);
   const [wsSelectedKo, setWsSelectedKo] = useState("");
   const [wsLast, setWsLast] = useState<WsLast | null>(null);
-  const [wsTabPos, setWsTabPos] = useState<{
-    top: number;
-    left: number;
-  } | null>(null);
   const bodyRef = useRef<HTMLDivElement | null>(null);
   const fileRef = useRef<HTMLInputElement | null>(null);
   const editInputRef = useRef<HTMLInputElement | null>(null);
@@ -2720,123 +2712,42 @@ function StudyNotebook({
     onActiveChapterChange,
   ]);
 
-  const reducedMotion = () =>
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  const paintShade = (angle: number) => {
-    const t = Math.sin((Math.min(180, Math.abs(angle)) * Math.PI) / 180);
-    if (leafInkRef.current) leafInkRef.current.style.opacity = String(t);
-    if (leafCastRef.current) leafCastRef.current.style.opacity = String(t);
-    if (leafRimRef.current) leafRimRef.current.style.opacity = String(Math.min(1, t));
-  };
-
-  const stopShade = () => {
-    if (flipRafRef.current) cancelAnimationFrame(flipRafRef.current);
-    flipRafRef.current = 0;
-  };
-
-  const bezierY = (p: number) => {
-    const x1 = 0.2;
-    const y1 = 0.8;
-    const x2 = 0.2;
-    const y2 = 1;
-    const cx = 3 * x1;
-    const bx = 3 * (x2 - x1) - cx;
-    const ax = 1 - cx - bx;
-    const cy = 3 * y1;
-    const by = 3 * (y2 - y1) - cy;
-    const ay = 1 - cy - by;
-    const sampleX = (t: number) => ((ax * t + bx) * t + cx) * t;
-    const sampleY = (t: number) => ((ay * t + by) * t + cy) * t;
-    let t = p;
-    for (let i = 0; i < 5; i++) {
-      const dx = (3 * ax * t + 2 * bx) * t + cx;
-      if (Math.abs(dx) < 1e-4) break;
-      t = Math.min(1, Math.max(0, t - (sampleX(t) - p) / dx));
+  const clearTurnStyles = () => {
+    if (flipRafRef.current) {
+      cancelAnimationFrame(flipRafRef.current);
+      window.clearInterval(flipRafRef.current);
+      flipRafRef.current = 0;
     }
-    return sampleY(t);
-  };
-
-  const trackShade = (from: number, to: number) => {
-    stopShade();
-    const t0 = performance.now();
-    const loop = (now: number) => {
-      const p = Math.min(1, (now - t0) / STUDY_SPREAD_ANIM_MS);
-      const ang = from + (to - from) * bezierY(p);
-      // CSS transition과 동기 — release 이후 progress 모니터용
-      flipAngleRef.current = ang;
-      paintShade(ang);
-      if (p < 1) flipRafRef.current = requestAnimationFrame(loop);
-    };
-    flipRafRef.current = requestAnimationFrame(loop);
-  };
-
-  const clearFlipWatchdog = () => {
-    window.clearTimeout(flipWatchdogRef.current);
-    flipWatchdogRef.current = 0;
-  };
-
-  const armFlipWatchdog = () => {
-    clearFlipWatchdog();
-    lastFlipStartRef.current = performance.now();
-    flipWatchdogRef.current = window.setTimeout(() => {
-      if (!flipRef.current) return;
-      logFlip("watchdog 600ms isTurning → leaf 제거·capture 해제");
-      window.clearTimeout(flipTimerRef.current);
-      flipTimerRef.current = 0;
-      const spread = spreadVpRef.current;
-      const capId = spreadCaptureIdRef.current;
-      const capEl = spreadCaptureElRef.current ?? spread;
-      if (capEl && capId != null) releaseSpreadCapture(capEl, capId);
-      spreadCaptureIdRef.current = null;
-      spreadCaptureElRef.current = null;
-      spread?.classList.remove("is-edge-drag");
-      hudProgressRef.current.dragging = false;
-      spreadSwipeRef.current = null;
-      resetSpreadDrag();
-      commitFlip(false);
-    }, STUDY_SPREAD_FLIP_WATCHDOG_MS);
-  };
-
-  const armFlipTimer = (commit: boolean) => {
-    window.clearTimeout(flipTimerRef.current);
-    const animMs = reducedMotion() ? 200 : STUDY_SPREAD_ANIM_MS;
-    const waitMs = animMs + STUDY_SPREAD_SETTLE_PAD_MS;
-    flipTimerRef.current = window.setTimeout(() => {
-      logFlip(
-        `timer fire +${STUDY_SPREAD_SETTLE_PAD_MS}ms te=${flipTeCountRef.current} ae=${flipAeCountRef.current}`,
-      );
-      commitFlip(commit);
-    }, waitMs);
-  };
-
-  const commitFlip = (commit: boolean) => {
-    window.clearTimeout(flipTimerRef.current);
-    flipTimerRef.current = 0;
-    clearFlipWatchdog();
-    lastFlipEndRef.current = performance.now();
-    if (!flipRef.current) return;
-    stopShade();
-    const dir = flipRef.current?.dir ?? 0;
-    const had = !!flipRef.current;
+    const master = masterLayerRef.current;
+    if (master) {
+      master.style.transition = "none";
+      master.style.transform = "";
+      master.style.opacity = "";
+      master.style.zIndex = "";
+    }
     const spread = spreadVpRef.current;
-    spread?.classList.remove("is-fade-turn");
-    if (spread) spread.style.opacity = "1";
-    const leaf = leafRef.current;
-    if (leaf) {
-      leaf.style.transition = "none";
-      leaf.style.transform = "";
+    if (spread) {
+      spread.style.opacity = "";
+      spread.style.transition = "";
+      spread.classList.remove(
+        "is-turning",
+        "is-turning-forward",
+        "is-turning-back",
+        "is-edge-drag",
+      );
     }
+  };
+
+  /** 넘김 확정: 쪽 이동 또는 장 이동. 애니 레이어 없음(즉시). */
+  const applySpreadStep = (dir: 1 | -1) => {
+    clearTurnStyles();
     flipRef.current = null;
-    setFlip(null);
-    flipAngleRef.current = 0;
+    flipProgressRef.current = 0;
     flipBusyRef.current = false;
-    logFlip(
-      `commit commit=${commit} dir=${dir} had=${had} te=${flipTeCountRef.current} ae=${flipAeCountRef.current} move=${flipMoveCountRef.current} lostCap=${flipLostCapRef.current}`,
-    );
-    if (!commit || !dir || spreadBlocked(dir)) return;
+    setFlip(null);
+    lastFlipEndRef.current = performance.now();
     clearSelection();
+
     if (dir > 0 && spreadIndexRef.current >= spreadCountRef.current - 1) {
       const last = lastContChapter();
       if (last < total) {
@@ -2859,243 +2770,78 @@ function StudyNotebook({
     setSpreadIndex((i) => i + dir);
   };
 
+  const commitFlip = (commit: boolean) => {
+    window.clearTimeout(flipTimerRef.current);
+    flipTimerRef.current = 0;
+    window.clearTimeout(flipSettleTidRef.current);
+    flipSettleTidRef.current = 0;
+    const dir = flipRef.current?.dir ?? 0;
+    logFlip(`commit commit=${commit} dir=${dir}`);
+    if (!commit || !dir) {
+      clearTurnStyles();
+      flipRef.current = null;
+      setFlip(null);
+      return;
+    }
+    applySpreadStep(dir);
+  };
+
   const settleFlip = (commit: boolean) => {
-    clearFlipWatchdog();
-    const leaf = leafRef.current;
-    const dir = flipRef.current?.dir ?? 1;
-    const animMs = reducedMotion() ? 200 : STUDY_SPREAD_ANIM_MS;
-    const waitMs = animMs + STUDY_SPREAD_SETTLE_PAD_MS;
-    flipTeCountRef.current = 0;
-    flipAeCountRef.current = 0;
-    logFlip(
-      `settle start commit=${commit} dir=${dir} leaf=${!!leaf} w=${leaf ? Math.round(leaf.offsetWidth) : 0} anim=${animMs} timer=${waitMs}`,
-    );
-    const onTe = (ev: TransitionEvent) => {
-      if (!leaf || ev.target !== leaf) return;
-      flipTeCountRef.current += 1;
-      logFlip(
-        `transitionend prop=${ev.propertyName} te=${flipTeCountRef.current} (타이머로 확정, 이벤트는 기록만)`,
-      );
-    };
-    const onAe = (ev: AnimationEvent) => {
-      if (!leaf || ev.target !== leaf) return;
-      flipAeCountRef.current += 1;
-      logFlip(`animationend name=${ev.animationName} ae=${flipAeCountRef.current}`);
-    };
-    if (leaf) {
-      leaf.addEventListener("transitionend", onTe);
-      leaf.addEventListener("animationend", onAe);
-    }
-    if (reducedMotion()) {
-      const spread = spreadVpRef.current;
-      spread?.classList.add("is-fade-turn");
-      if (spread) {
-        spread.style.transition = "opacity 200ms ease";
-        spread.style.opacity = "0.45";
-      }
-      armFlipTimer(commit);
-      return;
-    }
-    if (leaf && leaf.offsetWidth >= 8) {
-      const target = commit ? (dir > 0 ? -180 : 180) : 0;
-      const from = flipAngleRef.current;
-      leaf.style.transition = "none";
-      void leaf.offsetWidth;
-      leaf.style.transition = `transform ${animMs}ms cubic-bezier(0.2, 0.8, 0.2, 1)`;
-      leaf.style.transform = `rotateY(${target}deg)`;
-      trackShade(from, target);
-      armFlipTimer(commit);
-      return;
-    }
-    logFlip("settle no-leaf → 즉시 commit");
+    // 애니 없이 즉시 확정/취소
     commitFlip(commit);
   };
 
-  /** fromAngle: 끌기 확정 시 놓은 각도에서 이어 commit (progress 0으로 리셋 금지) */
   const goSpreadBy = useCallback(
-    (delta: number, fromAngle?: number) => {
+    (delta: number, _fromProgress?: number) => {
       if (dragRef.current) return;
       if (document.documentElement.dataset.studyWsOpen === "1") return;
       if (document.documentElement.dataset.studyNoteOpen === "1") return;
-      const dir: 1 | -1 = delta > 0 ? 1 : -1;
-      const handoff =
-        typeof fromAngle === "number" && Number.isFinite(fromAngle);
-      setSpreadNextBookUi(false);
-      if (flipRef.current && !handoff) {
-        logFlip(`연속입력 dir=${dir} → 현재 잎 즉시 확정 후 새 넘김`);
-        window.clearTimeout(flipTimerRef.current);
-        flipTimerRef.current = 0;
-        flushSync(() => {
-          commitFlip(true);
-        });
-      }
-      if (spreadBlocked(dir)) {
-        if (handoff && flipRef.current) settleFlip(false);
+      const now = performance.now();
+      // pointerup+click / 연타로 한 번에 여러 펼침 넘어가는 것 방지
+      if (now - spreadNavLockRef.current < 320) {
+        logFlip(`go ignored (lock ${Math.round(now - spreadNavLockRef.current)}ms)`);
         return;
       }
-      flipBusyRef.current = false;
-      const startAngle = handoff ? fromAngle! : 0;
-      flipAngleRef.current = startAngle;
-      flipPageWRef.current = Math.max(40, pageWRef.current);
-      const leaf = leafRef.current;
-      if (leaf) {
-        leaf.style.transition = "none";
-        leaf.style.transform = `rotateY(${startAngle}deg)`;
-        paintShade(startAngle);
+      const dir: 1 | -1 = delta > 0 ? 1 : -1;
+      setSpreadNextBookUi(false);
+      window.clearTimeout(flipTimerRef.current);
+      window.clearTimeout(flipSettleTidRef.current);
+      if (flipRef.current) {
+        clearTurnStyles();
+        flipRef.current = null;
+        setFlip(null);
       }
-      const next = { dir, auto: true as const };
-      flipRef.current = next;
-      lastFlipStartRef.current = performance.now();
-      setFlip(next);
-      // release 이후 progress 프레임 → sessionStorage (장 이동 후에도 유지)
-      const key = "haruchi/flip-progress-frames";
-      const startProg = Math.min(1, Math.abs(startAngle) / 180);
-      try {
-        const prev = JSON.parse(sessionStorage.getItem(key) || "[]");
-        prev.push({
-          path: location.pathname,
-          dir,
-          handoff,
-          startProg,
-          dips: null,
-          mono: null,
-          pending: true,
-          at: Date.now(),
-        });
-        sessionStorage.setItem(key, JSON.stringify(prev.slice(-40)));
-      } catch {
-        /* ignore */
+
+      if (
+        dir < 0
+          ? spreadIndexRef.current <= 0 && chapter <= 1
+          : spreadIndexRef.current >= spreadCountRef.current - 1 &&
+            lastContChapter() >= total
+      ) {
+        logFlip(`go blocked dir=${dir}`);
+        return;
       }
-      const frames: { t: number; p: number; src: string }[] = [
-        { t: performance.now(), p: startProg, src: handoff ? "handoff" : "go" },
-      ];
-      hudProgressRef.current = {
-        v: dir > 0 ? -startProg : startProg,
-        signFlips: hudProgressRef.current.signFlips,
-        samples: hudProgressRef.current.samples + 1,
-        dragging: false,
-      };
-      let last = startProg;
-      let dips = 0;
-      let doneClimb = startProg >= 0.98;
-      const animMs = reducedMotion() ? 200 : STUDY_SPREAD_ANIM_MS;
-      const t0 = performance.now();
-      const tick = () => {
-        const elapsed = performance.now() - t0;
-        const ang = Math.abs(flipAngleRef.current);
-        const p = Math.min(1, ang / 180);
-        frames.push({ t: performance.now(), p, src: "raf" });
-        // commitFlip 직후 0 리셋은 감소로 치지 않음 — 올라가는 구간만 검사
-        if (!doneClimb && p + 0.001 < last) dips += 1;
-        if (p >= 0.98) doneClimb = true;
-        last = Math.max(last, p);
-        hudProgressRef.current.v = dir > 0 ? -p : p;
-        if (doneClimb || elapsed >= animMs + 80 || !flipRef.current) {
-          // fall through to persist
-        } else {
-          requestAnimationFrame(tick);
-          return;
-        }
-        try {
-          const prev = JSON.parse(sessionStorage.getItem(key) || "[]");
-          const i = prev.length - 1;
-          if (i >= 0 && prev[i]?.pending) {
-            prev[i] = {
-              path: location.pathname,
-              dir,
-              handoff,
-              startProg,
-              dips,
-              mono: dips === 0,
-              frames: frames.slice(0, 80),
-              at: Date.now(),
-            };
-          } else {
-            prev.push({
-              path: location.pathname,
-              dir,
-              handoff,
-              startProg,
-              dips,
-              mono: dips === 0,
-              frames: frames.slice(0, 80),
-              at: Date.now(),
-            });
-          }
-          sessionStorage.setItem(key, JSON.stringify(prev.slice(-40)));
-        } catch {
-          /* ignore */
-        }
-        logFlip(
-          `progress-frames start=${startProg.toFixed(3)} dips=${dips} n=${frames.length} handoff=${handoff ? 1 : 0}`,
-        );
-      };
-      requestAnimationFrame(tick);
-      // handoff: measureSpread 이후 layout effect에서 각도 복구+settle
-      // 일반 화살표: effect settle + 여기 타이머
-      if (handoff) {
-        skipAutoSettleRef.current = true;
-      } else {
-        armFlipTimer(true);
-      }
-      armFlipWatchdog();
+      spreadNavLockRef.current = now;
+      spreadEdgeTapRef.current = now;
+      lastFlipStartRef.current = now;
+      logFlip(`go instant dir=${dir} idx=${spreadIndexRef.current}`);
+      applySpreadStep(dir);
     },
-    [chapter, total],
+    [chapter, total, embedded, bookId, onMoveChapter],
   );
 
-  useLayoutEffect(() => {
-    if (!flip?.auto) return;
-    // 끌기 확정 handoff: 모든 layout(measureSpread 포함) 뒤에 각도 복구+settle
-    if (skipAutoSettleRef.current) {
-      skipAutoSettleRef.current = false;
-      const ang = flipAngleRef.current;
-      Promise.resolve().then(() => {
-        if (!flipRef.current?.auto) return;
-        flipAngleRef.current = ang;
-        const leaf = leafRef.current;
-        if (leaf) {
-          leaf.style.transition = "none";
-          leaf.style.transform = `rotateY(${ang}deg)`;
-          paintShade(ang);
-        }
-        settleFlip(true);
-      });
-      return;
-    }
-    let cancel = false;
-    const id = requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        if (!cancel) settleFlip(true);
-      });
-    });
-    return () => {
-      cancel = true;
-      cancelAnimationFrame(id);
-    };
-    // 끝 타이머는 goSpreadBy/settleFlip의 flipTimerRef. cleanup에서 지우지 않음.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [flip]);
-
-    useEffect(() => {
+  useEffect(() => {
     return () => {
       window.clearTimeout(flipTimerRef.current);
       flipTimerRef.current = 0;
-      window.clearTimeout(flipWatchdogRef.current);
-      flipWatchdogRef.current = 0;
+      window.clearTimeout(flipSettleTidRef.current);
+      clearTurnStyles();
     };
   }, []);
 
   useLayoutEffect(() => {
-    if (!flip || flip.auto) return;
-    const leaf = leafRef.current;
-    if (!leaf) return;
-    leaf.style.transition = "none";
-    leaf.style.transform = `rotateY(${flipAngleRef.current}deg)`;
-    paintShade(flipAngleRef.current);
-  }, [flip]);
-
-  useLayoutEffect(() => {
     if (!spreadOn) return;
+    if (flipRef.current) return;
     measureSpread();
   }, [flip, spreadOn, measureSpread, nextPack, prevPack]);
 
@@ -3177,7 +2923,7 @@ function StudyNotebook({
     const t = e.target as HTMLElement;
     if (
       t.closest(
-        ".brp-mobile-topbar, .brp-header, [data-no-drawer-swipe], .study-toolbar, .study-ws-root, .study-ws-tab, .study-sel-handle, .study-mark-note-input, .study-spread-pager, .study-vnum",
+        ".brp-mobile-topbar, .brp-header, [data-no-drawer-swipe], .study-toolbar, .study-ws-root, .study-ws-tab, .study-sel-handle, .study-mark-note-input, .study-spread-pager, .study-spread-edge, .study-vnum",
       )
     )
       return;
@@ -3191,16 +2937,19 @@ function StudyNotebook({
       return;
     }
     if (flipRef.current) {
-      logFlip("포인터다운 중 잎 있음 → 즉시 확정 후 새 제스처");
+      logFlip("포인터다운 중 잔여 넘김 → 해제");
       window.clearTimeout(flipTimerRef.current);
       flipTimerRef.current = 0;
-      flushSync(() => {
-        commitFlip(true);
-      });
+      clearTurnStyles();
+      flipRef.current = null;
+      setFlip(null);
     }
     flipMoveCountRef.current = 0;
     const now = performance.now();
-    const pageW0 = Math.max(1, pageWRef.current);
+    const unitW0 = Math.max(
+      1,
+      spreadVpRef.current?.offsetWidth || pageWRef.current * 2,
+    );
     const gesture = {
       id: e.pointerId,
       x: e.clientX,
@@ -3213,7 +2962,7 @@ function StudyNotebook({
       mode: "pending" as const,
       done: false,
       timer: 0,
-      pageW: pageW0,
+      pageW: unitW0,
       lastProgress: 0,
       signFlips: 0,
     };
@@ -3276,16 +3025,13 @@ function StudyNotebook({
           pressRef.current = null;
         }
         const dragDir: 1 | -1 = dx < 0 ? 1 : -1;
-        if (!flipRef.current) {
-          flipBusyRef.current = false;
-          flipAngleRef.current = 0;
-          flipPageWRef.current = Math.max(40, pageWRef.current);
-          const next = { dir: dragDir, auto: false as const };
-          flipRef.current = next;
-          lastFlipStartRef.current = performance.now();
-          setFlip(next);
-          armFlipWatchdog();
-        }
+        flipBusyRef.current = false;
+        flipProgressRef.current = 0;
+        flipStyleRef.current = "drag";
+        flipSpreadWRef.current = Math.max(40, s.pageW);
+        // 드래그 방향만 ref에 기록 — React flip 마운트/애니 레이어 없음
+        flipRef.current = { dir: dragDir, auto: false };
+        lastFlipStartRef.current = performance.now();
       } else if (elapsed > 350 || (s.moved >= 8 && verticalish)) {
         s.mode = "ignore";
         if (s.moved >= 8 && pressRef.current) {
@@ -3300,9 +3046,9 @@ function StudyNotebook({
     if (s.mode !== "drag") return;
     const active: 1 | -1 = flipRef.current?.dir ?? (dx < 0 ? 1 : -1);
     const width = Math.max(1, s.pageW);
-    let progress = dx / width;
-    if (active > 0) progress = Math.min(0, progress);
-    else progress = Math.max(0, progress);
+    let raw = active > 0 ? -dx / width : dx / width;
+    if (spreadBlocked(active)) raw *= 0.3;
+    const progress = Math.max(0, Math.min(1, raw));
     if (
       s.lastProgress !== 0 &&
       progress !== 0 &&
@@ -3312,25 +3058,12 @@ function StudyNotebook({
     }
     s.lastProgress = progress;
     hudProgressRef.current = {
-      v: progress,
+      v: active > 0 ? -progress : progress,
       signFlips: s.signFlips,
       samples: hudProgressRef.current.samples + 1,
       dragging: true,
     };
-    let angle = progress * 180;
-    if (active > 0) angle = Math.max(-180, Math.min(0, angle));
-    else angle = Math.min(180, Math.max(0, angle));
-    if (spreadBlocked(active)) angle *= 0.3;
-    flipAngleRef.current = angle;
-    if (flipRafRef.current) return;
-    flipRafRef.current = requestAnimationFrame(() => {
-      flipRafRef.current = 0;
-      const leaf = leafRef.current;
-      if (!leaf) return;
-      leaf.style.transition = "none";
-      leaf.style.transform = `rotateY(${flipAngleRef.current}deg)`;
-      paintShade(flipAngleRef.current);
-    });
+    flipProgressRef.current = progress;
   };
 
   const finishSpreadSwipe = (
@@ -3357,7 +3090,8 @@ function StudyNotebook({
       logFlip(
         `swipe-end cancel=${cancel} wasDrag=${wasDrag} type=${e.pointerType} moves=${flipMoveCountRef.current} lostCap=${flipLostCapRef.current}`,
       );
-      if (flipRef.current) settleFlip(false);
+      // 끌기로 시작한 잎만 원위치. 화살표·탭 auto 넘김은 건드리지 않음
+      if (flipRef.current && !flipRef.current.auto) settleFlip(false);
       if (!cancel && s.mode === "pending" && s.moved < 8) {
         const box = e.currentTarget.getBoundingClientRect();
         const edge = hitSpreadEdge(e.clientX, box, pageWRef.current);
@@ -3371,28 +3105,25 @@ function StudyNotebook({
     }
     suppressClickRef.current = true;
     spreadEdgeTapRef.current = performance.now();
-    const width = Math.max(1, s.pageW); // 끌기 시작 때 고정한 쪽 폭
+    const width = Math.max(1, s.pageW); // 끌기 시작 때 고정한 펼침 폭
     const dist = Math.abs(dx);
     const flick =
       dir > 0 ? s.vx < -STUDY_SPREAD_COMMIT_VEL : s.vx > STUDY_SPREAD_COMMIT_VEL;
     const far = dist > width * STUDY_SPREAD_COMMIT_DIST; // 0.5
     const blocked = spreadBlocked(dir);
     const commitIntent = !blocked && (far || flick);
+    const fromProg = flipProgressRef.current;
     logFlip(
-      `swipe-up cancel=${cancel} type=${e.pointerType} dx=${dx.toFixed(1)} dist=${dist.toFixed(1)} w=${width.toFixed(0)} pageW0=${s.pageW.toFixed(0)} flipW=${flipPageWRef.current} far=${far} thr=${(width * STUDY_SPREAD_COMMIT_DIST).toFixed(0)} vx=${s.vx.toFixed(3)} flick=${flick} commitIntent=${commitIntent} blocked=${blocked} → ${commitIntent ? "goSpreadBy" : "settleFlip(0)"} moves=${flipMoveCountRef.current} lostCap=${flipLostCapRef.current}`,
+      `swipe-up cancel=${cancel} type=${e.pointerType} dx=${dx.toFixed(1)} dist=${dist.toFixed(1)} w=${width.toFixed(0)} unitW0=${s.pageW.toFixed(0)} flipW=${flipSpreadWRef.current} far=${far} thr=${(width * STUDY_SPREAD_COMMIT_DIST).toFixed(0)} vx=${s.vx.toFixed(3)} flick=${flick} prog=${fromProg.toFixed(3)} commitIntent=${commitIntent} blocked=${blocked} → ${commitIntent ? "goSpreadBy" : "settleFlip(0)"} moves=${flipMoveCountRef.current} lostCap=${flipLostCapRef.current}`,
     );
-    // 확정은 ‹›/←→ 와 동일 goSpreadBy. 놓은 각도(fromAngle)를 넘겨 progress 리셋 0 방지.
+    // 확정은 놓은 진행률에서 이어감 (0으로 리셋 금지)
     if (commitIntent) {
       window.clearTimeout(flipTimerRef.current);
       flipTimerRef.current = 0;
-      clearFlipWatchdog();
-      const fromAngle = flipAngleRef.current;
       logFlip(
-        `swipe-handoff dir=${dir} fromAngle=${fromAngle.toFixed(1)} prog=${(
-          Math.abs(fromAngle) / 180
-        ).toFixed(3)} type=${e.pointerType}`,
+        `swipe-handoff dir=${dir} fromProg=${fromProg.toFixed(3)} type=${e.pointerType}`,
       );
-      goSpreadBy(dir, fromAngle);
+      goSpreadBy(dir, fromProg);
       return;
     }
     settleFlip(false);
@@ -3887,54 +3618,21 @@ function StudyNotebook({
 
   useLayoutEffect(() => {
     // 원어 시트 열린 동안에만 리본 숨김 — wsLast 없어도 오른쪽 고정 표시
-    if (wsOpen || !wsLayerOk) {
-      setWsTabPos(null);
-      return;
-    }
+    if (wsOpen || !wsLayerOk) return;
     const place = () => {
-      const hitW = 44;
-      const knobH = 44;
-      // 책 서랍 원목 손잡이(중앙) 바로 아래 — 글씨 없는 놋쇠 노브
-      const belowPull = 64;
-      let page: HTMLElement | null = null;
-      if (spreadOn) {
-        const vp = spreadVpRef.current;
-        const rightEl = vp
-          ? vp.querySelector<HTMLElement>(
-              ".study-sheet.is-right:not(.is-under)",
-            )
-          : null;
-        const leftEl = vp
-          ? vp.querySelector<HTMLElement>(
-              ".study-sheet.is-left:not(.is-under)",
-            )
-          : null;
-        page = rightEl ?? leftEl ?? null;
-      } else {
-        page =
-          bodyRef.current?.closest<HTMLElement>(".study-page") ??
-          document.querySelector<HTMLElement>(".study-page");
-      }
-      if (page) {
-        const box = page.getBoundingClientRect();
-        const viewTop = Math.max(box.top, 0);
-        const viewBottom = Math.min(box.bottom, window.innerHeight);
-        const midY =
-          viewBottom > viewTop
-            ? (viewTop + viewBottom) / 2
-            : box.top + box.height / 2;
-        setWsTabPos({
-          top: Math.round(midY + belowPull - knobH / 2),
-          left: Math.round(
-            Math.min(box.right - hitW, window.innerWidth - hitW),
-          ),
-        });
-        return;
-      }
-      setWsTabPos({
-        top: Math.round(window.innerHeight / 2 + belowPull - knobH / 2),
-        left: Math.round(window.innerWidth - hitW),
-      });
+      const knobH = 120;
+      const spread = document.querySelector<HTMLElement>(".study-spread.spread");
+      const box = spread?.getBoundingClientRect();
+      const midY =
+        box && box.height > 40
+          ? box.top + box.height / 2
+          : window.innerHeight / 2;
+      // 책 여백이 아니라 뷰포트 맨 왼쪽
+      document.documentElement.style.setProperty("--ws-tab-left", "0px");
+      document.documentElement.style.setProperty(
+        "--ws-tab-top",
+        `${Math.round(midY - knobH / 2)}px`,
+      );
     };
     place();
     const raf = requestAnimationFrame(() => place());
@@ -4873,8 +4571,7 @@ function StudyNotebook({
 
   const renderFace = (pageIndex: number, measure: boolean) => {
     if (debugOn) gStatsRef.current.renderFace += 1;
-    const faceW = flip ? flipPageWRef.current : pageW;
-    if (faceW < 40) return <div className="study-page-view" />;
+    if (pageW < 40) return <div className="study-page-view" />;
     let inner: ReactNode = null;
     if (pageIndex >= 0 && pageIndex < pageCount) {
       inner = renderCurrentFlow(pageIndex, measure);
@@ -5044,77 +4741,17 @@ function StudyNotebook({
                   {renderPlainFlow(prevPack, 0, true)}
                 </div>
               ) : null}
-              {flip?.dir === -1 ? (
-                <div
-                  className="study-sheet is-left is-under"
-                  style={{
-                    width: `${flipPageWRef.current}px`,
-                    minWidth: `${flipPageWRef.current}px`,
-                  }}
-                >
-                  {renderFace(leftPage - 2, false)}
-                  <div ref={leafCastRef} className="study-leaf-cast" />
-                </div>
-              ) : (
-                <div className="study-sheet is-left" />
-              )}
-              {flip?.dir === 1 ? (
-                <div
-                  className="study-sheet is-right is-under"
-                  style={{
-                    width: `${flipPageWRef.current}px`,
-                    minWidth: `${flipPageWRef.current}px`,
-                  }}
-                >
-                  {renderFace(leftPage + 3, false)}
-                  <div ref={leafCastRef} className="study-leaf-cast" />
-                </div>
-              ) : rightPageNum > pageCount ? (
+              <div className="study-sheet is-left" />
+              {rightPageNum > pageCount ? (
                 <div className="study-sheet is-right">
                   {renderFace(leftPage + 1, false)}
                 </div>
               ) : (
                 <div className="study-sheet is-right" />
               )}
-              <div
-                className={`study-spread-master${
-                  flip?.dir === 1
-                    ? " is-clip-left"
-                    : flip?.dir === -1
-                      ? " is-clip-right"
-                      : ""
-                }`}
-                style={
-                  flip
-                    ? ({
-                        ["--study-page-w" as string]: `${flipPageWRef.current}px`,
-                      } as CSSProperties)
-                    : undefined
-                }
-              >
-                {(flip ? flipPageWRef.current : pageW) >= 40
-                  ? renderCurrentFlow(leftPage, true)
-                  : null}
+              <div ref={masterLayerRef} className="study-spread-master">
+                {pageW >= 40 ? renderCurrentFlow(leftPage, true) : null}
               </div>
-              {flip ? (
-                <div
-                  ref={leafRef}
-                  className={`study-leaf is-hot ${flip.dir === 1 ? "is-next" : "is-prev"}`}
-                  style={{
-                    width: `${flipPageWRef.current}px`,
-                    minWidth: `${flipPageWRef.current}px`,
-                  }}
-                >
-                  <div className="study-leaf-face is-front">
-                    {renderFace(flip.dir === 1 ? leftPage + 1 : leftPage, false)}
-                    <div ref={leafInkRef} className="study-leaf-ink" />
-                    <div ref={leafRimRef} className="study-leaf-rim" />
-                  </div>
-                  <div className="study-leaf-face is-back">
-                    {renderFace(flip.dir === 1 ? leftPage + 2 : leftPage - 1, false)}
-                  </div>
-                </div>
-              ) : null}
 
               {spreadOn &&
               (selRects.length > 0 || Object.keys(notePos).length > 0) ? (
@@ -5283,10 +4920,11 @@ function StudyNotebook({
                 className="study-spread-edge is-prev"
                 aria-label="이전 쪽"
                 style={{ width: `${spreadEdgePx(pageW)}px` }}
+                onPointerDown={(e) => e.stopPropagation()}
                 onClick={(e) => {
+                  e.preventDefault();
                   e.stopPropagation();
                   if (hitWsRibbon(e.clientX, e.clientY)) return;
-                  if (performance.now() - spreadEdgeTapRef.current < 450) return;
                   goSpreadBy(-1);
                 }}
               >
@@ -5300,10 +4938,11 @@ function StudyNotebook({
                 className="study-spread-edge is-next"
                 aria-label="다음 쪽"
                 style={{ width: `${spreadEdgePx(pageW)}px` }}
+                onPointerDown={(e) => e.stopPropagation()}
                 onClick={(e) => {
+                  e.preventDefault();
                   e.stopPropagation();
                   if (hitWsRibbon(e.clientX, e.clientY)) return;
-                  if (performance.now() - spreadEdgeTapRef.current < 450) return;
                   goSpreadBy(1);
                 }}
               >
@@ -5448,22 +5087,31 @@ function StudyNotebook({
                   className="study-spread-pager-btn"
                   aria-label="이전 쪽"
                   onClick={(e) => {
+                    e.preventDefault();
                     e.stopPropagation();
                     goSpreadBy(-1);
                   }}
                 >
                   ‹
                 </button>
-                <span className="study-spread-pager-label">
+                <span
+                  className="study-spread-pager-label"
+                  title="지금 펼친 쪽 / 이 흐름의 전체 쪽 수"
+                >
                   {rightPageNum <= pageCount
-                    ? `${leftPageNum}–${rightPageNum} / ${pageCount}`
-                    : `${leftPageNum} / ${pageCount}`}
+                    ? `${leftPageNum}–${rightPageNum}쪽`
+                    : `${leftPageNum}쪽`}
+                  <span className="study-spread-pager-total">
+                    {" "}
+                    / {pageCount}쪽
+                  </span>
                 </span>
                 <button
                   type="button"
                   className="study-spread-pager-btn"
                   aria-label="다음 쪽"
                   onClick={(e) => {
+                    e.preventDefault();
                     e.stopPropagation();
                     goSpreadBy(1);
                   }}
@@ -5763,14 +5411,7 @@ function StudyNotebook({
         ? createPortal(
             <button
               type="button"
-              className={`study-ws-tab study-ws-ribbon${
-                wsTabPos ? "" : " is-dock-right"
-              }`}
-              style={
-                wsTabPos
-                  ? { top: wsTabPos.top, left: wsTabPos.left }
-                  : undefined
-              }
+              className="study-ws-tab study-ws-ribbon"
               data-no-drawer-swipe=""
               aria-label="원어 사전 열기"
               onPointerDown={(e) => {
@@ -5783,7 +5424,7 @@ function StudyNotebook({
                 else openWordStudyFromToolbar();
               }}
             >
-              <span className="study-ws-ribbon-knob" aria-hidden />
+              <span className="study-ws-ribbon-grip" aria-hidden />
             </button>,
             document.body,
           )
@@ -6471,7 +6112,12 @@ function visibleStudyBodies(
   );
   if (master && !master.closest(".study-spread-measure")) found.push(master);
   spread.querySelectorAll<HTMLElement>(".study-page-view .study-body").forEach((body) => {
-    if (body.closest(".is-covered, .study-spread-measure, .study-leaf")) return;
+    if (
+      body.closest(
+        ".is-covered, .study-spread-measure, .study-turn-under, .study-turn-over",
+      )
+    )
+      return;
     if (!found.includes(body)) found.push(body);
   });
   return found.length ? found : [root];
@@ -6492,7 +6138,9 @@ function nativeSelectionToOffsets(
   const hostBody = hostEl?.closest(".study-body") as HTMLElement | null;
   const scanRoot =
     hostBody &&
-    !hostBody.closest(".study-spread-measure, .is-covered, .study-leaf")
+    !hostBody.closest(
+      ".study-spread-measure, .is-covered, .study-turn-under, .study-turn-over",
+    )
       ? hostBody
       : root;
   const blocked = (n: Node | null) =>
