@@ -1353,7 +1353,8 @@ export default function BibleReadingPage() {
       )
         return;
     }
-    setDrawerOpen(true);
+    // 제목 다시 탭 → 닫기
+    setDrawerOpen((v) => !v);
   }, [searchOpen, selectionMode]);
   const closeDrawer = useCallback(() => setDrawerOpen(false), []);
 

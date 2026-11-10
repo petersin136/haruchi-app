@@ -206,30 +206,31 @@
 
 /* 첫 줄 = 장 번호 윗줄.
    잘림 원인(실측): overflow:hidden + text-box-trim 으로
-   제목 상자 높이(~12px) < ink(~23px), 받침 4.48px 잘림 */
+   제목 상자 높이(~12px) < ink(~23px), 받침 4.48px 잘림.
+   inline-block 으로 float 옆(drop margin-right 간격)에 붙인다. */
 .study-chapter-title {
-  display: block;
+  display: inline-block;
+  vertical-align: top;
   overflow: visible;
   margin: 0;
   padding-bottom: 0.15em;
+  max-width: calc(100% - 4em);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
   color: rgba(158, 27, 27, 0.7);
   text-align: left;
   text-align-last: left;
-  /* trim 제거 — 받침(식 등)이 overflow에 잘리지 않게 */
-  max-width: 100%;
 }
 
 .study-chapter-title-ink {
-  display: inline-block;
-  vertical-align: baseline;
+  display: block;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   padding-bottom: 0.15em;
+  line-height: 1.5;
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
@@ -2950,4 +2951,292 @@ html[data-study-spread="1"] .brp-tabbar {
 
 .brp-cont-krv.is-spread .study-root {
   height: 100%;
+}
+
+/* ── H: 책·장·절 선택 패널 ─────────────────────────────────────── */
+.study-loc {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  font: inherit;
+}
+
+.study-loc.is-open {
+  pointer-events: auto;
+}
+
+.study-loc-backdrop {
+  position: absolute;
+  inset: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: rgba(20, 14, 10, 0.25);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity var(--study-loc-open-ms, 260ms) var(--study-loc-ease, ease);
+}
+
+.study-loc.is-open .study-loc-backdrop {
+  opacity: 1;
+}
+
+.study-loc-sheet {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  background: #fbf7ee;
+  border-radius: 16px;
+  box-shadow:
+    0 8px 28px rgba(40, 28, 16, 0.16),
+    0 2px 8px rgba(40, 28, 16, 0.08);
+  opacity: 0;
+  transform: translate(-50%, -12px);
+  transition:
+    opacity var(--study-loc-open-ms, 260ms) var(--study-loc-ease, ease),
+    transform var(--study-loc-open-ms, 260ms) var(--study-loc-ease, ease);
+  will-change: opacity, transform;
+  overflow: hidden;
+  color: #2a2420;
+}
+
+.study-loc.is-open .study-loc-sheet {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.study-loc.is-reduce .study-loc-backdrop,
+.study-loc.is-reduce .study-loc-sheet {
+  transition: opacity 160ms ease;
+  transform: translate(-50%, 0);
+}
+
+.study-loc.is-pc .study-loc-sheet {
+  top: 56px;
+  width: min(720px, calc(100vw - 32px));
+  height: 70vh;
+  max-height: 70vh;
+}
+
+.study-loc.is-mobile .study-loc-sheet {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: none;
+  height: 80vh;
+  max-height: 80vh;
+  border-radius: 0 0 16px 16px;
+  transform: translate(0, -12px);
+}
+
+.study-loc.is-mobile.is-open .study-loc-sheet {
+  transform: translate(0, 0);
+}
+
+.study-loc.is-mobile.is-reduce .study-loc-sheet {
+  transform: translate(0, 0);
+}
+
+.study-loc-handle {
+  display: none;
+  flex-shrink: 0;
+  height: 16px;
+}
+
+.study-loc.is-mobile .study-loc-handle {
+  display: block;
+  background:
+    linear-gradient(#fbf7ee, #fbf7ee) center 8px / 36px 3px no-repeat;
+}
+
+.study-loc-body {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 0;
+}
+
+.study-loc.is-mobile .study-loc-body {
+  grid-template-columns: 1.15fr 1fr;
+}
+
+.study-loc-col {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(60, 40, 20, 0.1);
+}
+
+.study-loc-col:last-child {
+  border-right: none;
+}
+
+.study-loc-search {
+  flex-shrink: 0;
+  padding: 10px 10px 8px;
+  border-bottom: 1px solid rgba(60, 40, 20, 0.1);
+}
+
+.study-loc-search-input {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid rgba(60, 40, 20, 0.14);
+  border-radius: 8px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  font-size: 14px;
+}
+
+.study-loc-search-input:focus {
+  outline: 2px solid rgba(158, 27, 27, 0.35);
+  outline-offset: 1px;
+}
+
+.study-loc-col-head {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 12px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6a5e52;
+  border-bottom: 1px solid rgba(60, 40, 20, 0.1);
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.study-loc-back {
+  border: none;
+  margin: 0;
+  padding: 4px 6px;
+  background: transparent;
+  color: #9e1b1b;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.study-loc-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.study-loc-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 8px 12px 6px;
+  background: #fbf7ee;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #9a8f82;
+  border-bottom: 1px solid rgba(60, 40, 20, 0.08);
+}
+
+.study-loc-book {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  padding: 10px 12px;
+  border: none;
+  border-bottom: 1px solid rgba(60, 40, 20, 0.06);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.study-loc-book.is-active,
+.study-loc-book.is-current {
+  background: #9e1b1b;
+  color: #fff;
+}
+
+.study-loc-book-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.study-loc-book-n {
+  flex-shrink: 0;
+  font-size: 11px;
+  opacity: 0.65;
+  font-variant-numeric: tabular-nums;
+}
+
+.study-loc-book.is-active .study-loc-book-n,
+.study-loc-book.is-current .study-loc-book-n {
+  opacity: 0.85;
+}
+
+.study-loc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+  padding: 10px;
+}
+
+.study-loc-cell {
+  position: relative;
+  box-sizing: border-box;
+  aspect-ratio: 1;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(60, 40, 20, 0.1);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.study-loc-cell.is-active {
+  background: #9e1b1b;
+  border-color: #9e1b1b;
+  color: #fff;
+}
+
+.study-loc-done {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #9e1b1b;
+}
+
+.study-loc-cell.is-active .study-loc-done {
+  background: #fff;
+}
+
+.study-loc-empty {
+  padding: 24px 12px;
+  text-align: center;
+  font-size: 13px;
+  color: #9a8f82;
 }
