@@ -325,6 +325,8 @@ function StudyNotebook({
   contPacksRef.current = contPacks;
   /** measureSpread 가 반영한 contPacks.length — 측정 전 연속 장 폭주 방지 */
   const measuredContLenRef = useRef(0);
+  /** 마지막 쪽에 다음 장을 넣을 빈 칸이 남는지(짝수 쪽이어도 이어 붙여야 함) */
+  const lastPageSlackRef = useRef(false);
   const [prevPageCount, setPrevPageCount] = useState(0);
   const [versePick, setVersePick] = useState<number[] | null>(null);
   const [spreadHint, setSpreadHint] = useState(false);
@@ -645,11 +647,19 @@ function StudyNotebook({
     setWsOpen(false);
   }, [bookId, chapter]);
 
-  // 양면: 빈 오른쪽을 메울 만큼 다음 장들을 같은 흐름에 이어 붙임
+  // 양면: 다음 장이 있으면 최소 1장은 같은 흐름에 붙여 둠(빈 쪽·빈 칸 방지)
+  useEffect(() => {
+    if (!spreadOn || !verses) return;
+    if (chapter >= total) return;
+    setContWant((w) => Math.max(w, 1));
+  }, [spreadOn, verses, chapter, total]);
+
+  // 양면: 빈 오른쪽·마지막 쪽 남는 칸을 메울 만큼 다음 장들을 같은 흐름에 이어 붙임
   useEffect(() => {
     if (!spreadOn) {
       setContPacks([]);
       setContWant(0);
+      lastPageSlackRef.current = false;
       return;
     }
     if (!verses || contWant <= 0) {
@@ -680,11 +690,13 @@ function StudyNotebook({
     };
   }, [spreadOn, verses, contWant, chapter, bookId, total, textLayer]);
 
-  // 측정 결과 쪽 수가 홀수면 다음 장을 더 붙여 오른쪽을 채움
+  // 홀수 쪽(오른쪽 빔)이거나 마지막 쪽에 빈 칸이 남으면 다음 장을 더 붙임
   useLayoutEffect(() => {
     if (!spreadOn || !verses || flip) return;
     if (pageCount < 1) return;
-    if (pageCount % 2 === 0) return;
+    const needMore =
+      pageCount % 2 === 1 || lastPageSlackRef.current;
+    if (!needMore) return;
     const expect = Math.min(contWant, Math.max(0, total - chapter));
     // 요청분 로딩 중
     if (contPacks.length < expect) return;
@@ -2518,6 +2530,33 @@ function StudyNotebook({
       }
     }
     const spreads = Math.max(1, Math.ceil(pages / 2));
+    // 마지막 쪽 하단이 비면 다음 장을 이어 붙여야 함(짝수 쪽이어도)
+    let slack = false;
+    if (body && pages >= 1) {
+      const flowBox = flow.getBoundingClientRect();
+      const flowLeft2 = flowBox.left;
+      const lastCol = pages - 1;
+      let maxBottom = 0;
+      const nodes2 = body.querySelectorAll<HTMLElement>(
+        "[data-verse-num], .study-subhead, .study-ch-cont-gap, .study-drop",
+      );
+      nodes2.forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.width < 1 && r.height < 1) return;
+        const col = Math.max(
+          0,
+          Math.floor((r.left - flowLeft2 - g.padOuter + 1) / pageStride),
+        );
+        if (col === lastCol) maxBottom = Math.max(maxBottom, r.bottom);
+      });
+      // 쪽 하단(패딩 제외)까지 ~1.25행 이상 비면 slack
+      const usableBottom = flowBox.top + g.spreadH - 36;
+      const line = 17 * 2.4; // --study-lh
+      if (maxBottom > 0 && usableBottom - maxBottom > line * 1.25) {
+        slack = true;
+      }
+    }
+    lastPageSlackRef.current = slack;
     measuredContLenRef.current = contPacksRef.current.length;
     setPageCount(pages);
     setSpreadCount(spreads);
@@ -3847,44 +3886,55 @@ function StudyNotebook({
   }, []);
 
   useLayoutEffect(() => {
-    if (wsOpen || !wsLast) {
+    // 원어 시트 열린 동안에만 리본 숨김 — wsLast 없어도 오른쪽 고정 표시
+    if (wsOpen || !wsLayerOk) {
       setWsTabPos(null);
       return;
     }
     const place = () => {
-      // 오른쪽 쪽(스프레드면 오른쪽 시트, 한쪽이면 그 페이지) 가장자리에 리본 부착
+      const hitW = 44;
+      const knobH = 44;
+      // 책 서랍 원목 손잡이(중앙) 바로 아래 — 글씨 없는 놋쇠 노브
+      const belowPull = 64;
       let page: HTMLElement | null = null;
       if (spreadOn) {
         const vp = spreadVpRef.current;
-        if (!vp) return;
-        const rightEl = vp.querySelector<HTMLElement>(
-          ".study-sheet.is-right:not(.is-under)",
-        );
-        const leftEl = vp.querySelector<HTMLElement>(
-          ".study-sheet.is-left:not(.is-under)",
-        );
-        page = rightEl ?? leftEl;
+        const rightEl = vp
+          ? vp.querySelector<HTMLElement>(
+              ".study-sheet.is-right:not(.is-under)",
+            )
+          : null;
+        const leftEl = vp
+          ? vp.querySelector<HTMLElement>(
+              ".study-sheet.is-left:not(.is-under)",
+            )
+          : null;
+        page = rightEl ?? leftEl ?? null;
       } else {
         page =
           bodyRef.current?.closest<HTMLElement>(".study-page") ??
           document.querySelector<HTMLElement>(".study-page");
       }
-      if (!page) return;
-      const box = page.getBoundingClientRect();
-      const hitW = 44;
-      const ribbonH = 80;
-      // 한쪽 모드: 페이지가 길면 뷰포트에 보이는 구간의 세로 중앙에 붙임
-      const viewTop = Math.max(box.top, 0);
-      const viewBottom = Math.min(box.bottom, window.innerHeight);
-      const midY =
-        viewBottom > viewTop
-          ? (viewTop + viewBottom) / 2
-          : box.top + box.height / 2;
-      const top = Math.round(midY - ribbonH / 2);
-      const left = Math.round(
-        Math.min(box.right - hitW, window.innerWidth - hitW - 4),
-      );
-      setWsTabPos({ top, left });
+      if (page) {
+        const box = page.getBoundingClientRect();
+        const viewTop = Math.max(box.top, 0);
+        const viewBottom = Math.min(box.bottom, window.innerHeight);
+        const midY =
+          viewBottom > viewTop
+            ? (viewTop + viewBottom) / 2
+            : box.top + box.height / 2;
+        setWsTabPos({
+          top: Math.round(midY + belowPull - knobH / 2),
+          left: Math.round(
+            Math.min(box.right - hitW, window.innerWidth - hitW),
+          ),
+        });
+        return;
+      }
+      setWsTabPos({
+        top: Math.round(window.innerHeight / 2 + belowPull - knobH / 2),
+        left: Math.round(window.innerWidth - hitW),
+      });
     };
     place();
     const raf = requestAnimationFrame(() => place());
@@ -3897,7 +3947,7 @@ function StudyNotebook({
       window.removeEventListener("resize", place);
       window.removeEventListener("scroll", place, true);
     };
-  }, [wsOpen, wsLast, spreadOn, spreadIndex, chromeOn]);
+  }, [wsOpen, wsLayerOk, spreadOn, spreadIndex, chromeOn, verses]);
 
   const openWordStudyFromLast = () => {
     if (!wsLayerOk) return;
@@ -5709,28 +5759,31 @@ function StudyNotebook({
         }}
       />
 
-      {!wsOpen && wsLast && typeof document !== "undefined"
+      {!wsOpen && wsLayerOk && typeof document !== "undefined"
         ? createPortal(
             <button
               type="button"
-              className="study-ws-tab study-ws-ribbon"
+              className={`study-ws-tab study-ws-ribbon${
+                wsTabPos ? "" : " is-dock-right"
+              }`}
               style={
                 wsTabPos
                   ? { top: wsTabPos.top, left: wsTabPos.left }
-                  : { display: "none" }
+                  : undefined
               }
               data-no-drawer-swipe=""
-              aria-label="원어 사전 다시 열기"
+              aria-label="원어 사전 열기"
               onPointerDown={(e) => {
                 e.stopPropagation();
               }}
               onPointerUp={(e) => e.stopPropagation()}
               onClick={(e) => {
                 e.stopPropagation();
-                openWordStudyFromLast();
+                if (wsLast) openWordStudyFromLast();
+                else openWordStudyFromToolbar();
               }}
             >
-              <span className="study-ws-ribbon-label">원어</span>
+              <span className="study-ws-ribbon-knob" aria-hidden />
             </button>,
             document.body,
           )

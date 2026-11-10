@@ -226,49 +226,17 @@ function MobileTopBar({
         aria-label="모바일 읽기 바"
         data-no-drawer-swipe=""
       >
-        <button
-          type="button"
-          className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon brp-mobile-topbar-search is-phone"
-          onClick={onSearch}
-          aria-label="성경 단어 검색"
-          title="성경 단어 검색"
-        >
-          <SearchIcon />
-        </button>
-        <button
-          type="button"
-          className="brp-mobile-topbar-btn brp-mobile-topbar-book"
-          onClick={() => {
-            const ds = document.documentElement.dataset;
-            if (
-              ds.studySelecting === "1" ||
-              ds.studyWsOpen === "1" ||
-              ds.studyNoteOpen === "1"
-            )
-              return;
-            onOpenDrawer();
-          }}
-          aria-label={`${bookLabel} — 책·장 선택`}
-        >
-          {bookConfirmed ? (
-            <span className="brp-mobile-topbar-book-label">
-              <span className="brp-mobile-topbar-book-clip">
-                <span className="brp-mobile-topbar-book-name">{bookName}</span>{" "}
-                <span className="brp-mobile-topbar-book-ch">
-                  {chapterNumber}
-                  {unit}
-                </span>
-              </span>
-            </span>
-          ) : (
-            <span className="brp-mobile-topbar-book-label">
-              <span className="brp-mobile-topbar-book-clip">{bookLabel}</span>
-            </span>
-          )}
-          <ChevronIcon />
-        </button>
-
-        <div className="brp-mobile-topbar-end">
+        {/* 예전 오른쪽 버튼들 → 왼쪽 */}
+        <div className="brp-mobile-topbar-start">
+          <button
+            type="button"
+            className="brp-mobile-topbar-btn brp-mobile-topbar-btn--icon brp-mobile-topbar-search is-phone"
+            onClick={onSearch}
+            aria-label="성경 단어 검색"
+            title="성경 단어 검색"
+          >
+            <SearchIcon />
+          </button>
           <div
             className="brp-mobile-topbar-mode"
             style={{ flexShrink: 1, minWidth: 0 }}
@@ -278,7 +246,7 @@ function MobileTopBar({
               options={MODE_OPTIONS}
               onChange={onModeChange}
               ariaLabel="모드 선택"
-              align="center"
+              align="left"
               size="sm"
             />
           </div>
@@ -324,6 +292,40 @@ function MobileTopBar({
             <MoreIcon />
           </button>
         </div>
+
+        {/* 책·장 — 오른쪽 서랍과 맞춤 */}
+        <button
+          type="button"
+          className="brp-mobile-topbar-btn brp-mobile-topbar-book"
+          onClick={() => {
+            const ds = document.documentElement.dataset;
+            if (
+              ds.studySelecting === "1" ||
+              ds.studyWsOpen === "1" ||
+              ds.studyNoteOpen === "1"
+            )
+              return;
+            onOpenDrawer();
+          }}
+          aria-label={`${bookLabel} — 책·장 선택`}
+        >
+          {bookConfirmed ? (
+            <span className="brp-mobile-topbar-book-label">
+              <span className="brp-mobile-topbar-book-clip">
+                <span className="brp-mobile-topbar-book-name">{bookName}</span>{" "}
+                <span className="brp-mobile-topbar-book-ch">
+                  {chapterNumber}
+                  {unit}
+                </span>
+              </span>
+            </span>
+          ) : (
+            <span className="brp-mobile-topbar-book-label">
+              <span className="brp-mobile-topbar-book-clip">{bookLabel}</span>
+            </span>
+          )}
+          <ChevronIcon />
+        </button>
       </div>
 
       {menuOpen ? (

@@ -1,9 +1,10 @@
 "use client";
 
 /**
- * 모바일 PeekTree 스타일 책·장 서랍 (≤768px).
+ * PeekTree 스타일 책·장 서랍 (상단바 제목 탭 — 모든 폭).
  * - translateX + progress(0~1), 드래그 중 transition 없음 / 놓을 때만 스냅
  * - 플릭(≥0.5px/ms) 시 방향 우선, 아니면 절반 기준
+ * - 화면 가장자리 스와이프 제스처만 ≤768px
  */
 
 import {
@@ -30,8 +31,11 @@ const EDGE_IGNORE_PX = 24;
 /** 가로가 세로의 1.5배보다 크고 이 값을 넘을 때만 서랍 제스처 */
 const LOCK_PX = 30;
 const FLICK_PX_PER_MS = 0.5;
-const OPEN_MS = 380;
-const CLOSE_MS = 300;
+const OPEN_MS = 440;
+const CLOSE_MS = 320;
+/** 원목 서랍 스프링 — 고주사율에서도 끊김 적은 이징 */
+const OPEN_EASE = "cubic-bezier(0.22, 1.1, 0.36, 1)";
+const CLOSE_EASE = "cubic-bezier(0.4, 0, 0.2, 1)";
 
 type BookChapterDrawerProps = {
   open: boolean;
@@ -48,8 +52,9 @@ type BookChapterDrawerProps = {
 type AnimPhase = "open" | "close" | null;
 
 function drawerWidthPx() {
-  if (typeof window === "undefined") return 280;
-  return Math.round(window.innerWidth * DRAWER_RATIO);
+  if (typeof window === "undefined") return 320;
+  // 책|장 두 칸 파일철 — 좁은 폰에서도 최소 폭 확보, 넓은 화면 상한
+  return Math.min(420, Math.max(300, Math.round(window.innerWidth * DRAWER_RATIO)));
 }
 
 function prefersReducedMotion() {
@@ -88,6 +93,8 @@ function BookChapterDrawer({
   const draggingRef = useRef(false);
   const unmountTimerRef = useRef<number | null>(null);
   const animClearTimerRef = useRef<number | null>(null);
+  /** 손잡이 드래그 직후 click 오발 방지 */
+  const pullDraggedRef = useRef(false);
 
   progressRef.current = progress;
   openRef.current = open;
@@ -217,7 +224,6 @@ function BookChapterDrawer({
   }, [disabled, open, onClose]);
 
   useEffect(() => {
-    if (!isMobile) return;
     const page = document.querySelector(".brp-page") as HTMLElement | null;
     if (!page) return;
     const will =
@@ -240,14 +246,14 @@ function BookChapterDrawer({
         "brp-drawer-willchange",
       );
     };
-  }, [progress, dragging, isMobile, animPhase]);
+  }, [progress, dragging, animPhase]);
 
   // 애니메이션 시작 전 즉시 스크롤 (열림 / 미리보기 책 변경)
   useLayoutEffect(() => {
-    if (!mounted || !isMobile) return;
+    if (!mounted) return;
     if (!open && progress < 0.02) return;
     scrollListsToCurrent(previewBookId);
-  }, [mounted, open, isMobile, previewBookId, scrollListsToCurrent, progress]);
+  }, [mounted, open, previewBookId, scrollListsToCurrent, progress]);
 
   const snapTo = useCallback(
     (next: boolean) => {
@@ -271,8 +277,9 @@ function BookChapterDrawer({
       window.removeEventListener("haruchi:study-selecting", onStudySelecting);
   }, [snapTo]);
 
+  /** 손잡이·가장자리 드래그 (터치 + 포인터) */
   useEffect(() => {
-    if (!isMobile || disabled) return;
+    if (disabled) return;
 
     let startX = 0;
     let startY = 0;
@@ -283,17 +290,49 @@ function BookChapterDrawer({
     let lastX = 0;
     let lastT = 0;
     let velocity = 0;
+    let pointerId: number | null = null;
+    let fromPull = false;
+    let moved = false;
+
+    const blocked = () => {
+      const ds = document.documentElement.dataset;
+      return (
+        ds.studySelecting === "1" ||
+        ds.studyWsOpen === "1" ||
+        ds.studyNoteOpen === "1"
+      );
+    };
+
+    const begin = (clientX: number, clientY: number, pull: boolean) => {
+      if (disabledRef.current || blocked()) return false;
+      const sel = window.getSelection();
+      if (sel && !sel.isCollapsed && (sel.toString()?.length ?? 0) > 0) {
+        return false;
+      }
+      const w0 = window.innerWidth;
+      // 손잡이에서 시작했거나, 모바일에서 오른쪽 가장자리일 때만 열기
+      if (!openRef.current) {
+        if (!pull) {
+          if (!isMobile) return false;
+          if (clientX < w0 - (EDGE_IGNORE_PX + 48)) return false;
+        }
+      }
+      startX = clientX;
+      startY = clientY;
+      lastX = clientX;
+      lastT = performance.now();
+      velocity = 0;
+      startProgress = openRef.current ? 1 : progressRef.current;
+      mode = openRef.current ? "close" : "open";
+      locked = null;
+      tracking = true;
+      fromPull = pull;
+      moved = false;
+      return true;
+    };
 
     const onStart = (e: TouchEvent) => {
-      if (disabledRef.current) return;
       if (e.touches.length !== 1) return;
-      // 공부 노트 선택·원어 시트·메모 입력 중이면 서랍 제스처 금지
-      const ds = document.documentElement.dataset;
-      if (ds.studySelecting === "1") return;
-      if (ds.studyWsOpen === "1") return;
-      if (ds.studyNoteOpen === "1") return;
-      const t = e.touches[0];
-      if (t.clientX < EDGE_IGNORE_PX) return;
       const target = e.target;
       if (
         target instanceof Element &&
@@ -301,51 +340,40 @@ function BookChapterDrawer({
       ) {
         return;
       }
-      const sel = window.getSelection();
-      if (sel && !sel.isCollapsed && (sel.toString()?.length ?? 0) > 0) return;
-
-      // 선택 중이 아니면 예전처럼 화면 어디서든 열기 시작 가능
-      startX = t.clientX;
-      startY = t.clientY;
-      lastX = t.clientX;
-      lastT = performance.now();
-      velocity = 0;
-      startProgress = openRef.current ? 1 : progressRef.current;
-      mode = openRef.current ? "close" : "open";
-      locked = null;
-      tracking = true;
+      const pull = !!(
+        target instanceof Element && target.closest(".brp-bcd-pull")
+      );
+      const t = e.touches[0];
+      begin(t.clientX, t.clientY, pull);
     };
 
-    const onMove = (e: TouchEvent) => {
-      const ds = document.documentElement.dataset;
-      if (
-        ds.studySelecting === "1" ||
-        ds.studyWsOpen === "1" ||
-        ds.studyNoteOpen === "1"
-      ) {
+    const applyMove = (clientX: number, clientY: number, cancelable?: boolean) => {
+      if (blocked()) {
         tracking = false;
         locked = null;
+        pointerId = null;
         if (draggingRef.current || progressRef.current > 0.001) snapTo(false);
         return;
       }
-      if (!tracking || e.touches.length !== 1) return;
-      const t = e.touches[0];
+      if (!tracking) return;
       const now = performance.now();
       const dt = now - lastT;
       if (dt > 0) {
-        velocity = (t.clientX - lastX) / dt;
-        lastX = t.clientX;
+        velocity = (clientX - lastX) / dt;
+        lastX = clientX;
         lastT = now;
       }
 
-      const dx = t.clientX - startX;
-      const dy = t.clientY - startY;
+      const dx = clientX - startX;
+      const dy = clientY - startY;
+      const lockPx = fromPull ? 10 : LOCK_PX;
 
       if (!locked) {
-        if (Math.abs(dx) < LOCK_PX && Math.abs(dy) < LOCK_PX) return;
-        // 가로 > 세로×1.5 이고 30px 넘을 때만 서랍 (본문 선택 좌우 끌기와 분리)
-        if (Math.abs(dx) > Math.abs(dy) * 1.5 && Math.abs(dx) > LOCK_PX) {
+        if (Math.abs(dx) < lockPx && Math.abs(dy) < lockPx) return;
+        if (Math.abs(dx) > Math.abs(dy) * 1.5 && Math.abs(dx) > lockPx) {
           locked = "h";
+          moved = true;
+          if (fromPull) pullDraggedRef.current = true;
           draggingRef.current = true;
           setDragging(true);
           setAnimPhase(null);
@@ -368,32 +396,86 @@ function BookChapterDrawer({
       }
       progressRef.current = next;
       setProgress(next);
-      if (e.cancelable) e.preventDefault();
+      if (cancelable) {
+        // touchmove preventDefault
+      }
     };
 
-    const onEnd = () => {
+    const finish = () => {
       if (!tracking) return;
       tracking = false;
-      if (locked !== "h") {
-        locked = null;
-        return;
-      }
+      const wasH = locked === "h";
       locked = null;
+      pointerId = null;
+      if (!wasH) return;
       const p = progressRef.current;
       const flick = Math.abs(velocity) >= FLICK_PX_PER_MS;
       const nextOpen = flick ? velocity < 0 : p >= 0.5;
       snapTo(nextOpen);
     };
 
+    const onMove = (e: TouchEvent) => {
+      if (!tracking || e.touches.length !== 1) return;
+      const t = e.touches[0];
+      applyMove(t.clientX, t.clientY);
+      if (locked === "h" && e.cancelable) e.preventDefault();
+    };
+
+    const onPointerDown = (e: PointerEvent) => {
+      if (e.pointerType === "touch") return;
+      if (e.button !== 0) return;
+      const target = e.target;
+      if (!(target instanceof Element)) return;
+      if (target.closest("[data-no-drawer-swipe]")) return;
+      const pull = !!target.closest(".brp-bcd-pull");
+      if (!begin(e.clientX, e.clientY, pull)) return;
+      pointerId = e.pointerId;
+      if (pull) {
+        try {
+          (target.closest(".brp-bcd-pull") as HTMLElement | null)?.setPointerCapture?.(
+            e.pointerId,
+          );
+        } catch {
+          /* ignore */
+        }
+      }
+    };
+
+    const onPointerMove = (e: PointerEvent) => {
+      if (pointerId == null || e.pointerId !== pointerId) return;
+      applyMove(e.clientX, e.clientY);
+      if (locked === "h") e.preventDefault();
+    };
+
+    const onPointerUp = (e: PointerEvent) => {
+      if (pointerId == null || e.pointerId !== pointerId) return;
+      // 손잡이 탭(거의 안 움직임)은 click 핸들러에 맡김
+      if (fromPull && !moved && locked !== "h") {
+        tracking = false;
+        locked = null;
+        pointerId = null;
+        return;
+      }
+      finish();
+    };
+
     window.addEventListener("touchstart", onStart, { passive: true });
     window.addEventListener("touchmove", onMove, { passive: false });
-    window.addEventListener("touchend", onEnd, { passive: true });
-    window.addEventListener("touchcancel", onEnd, { passive: true });
+    window.addEventListener("touchend", finish, { passive: true });
+    window.addEventListener("touchcancel", finish, { passive: true });
+    window.addEventListener("pointerdown", onPointerDown, { passive: true });
+    window.addEventListener("pointermove", onPointerMove, { passive: false });
+    window.addEventListener("pointerup", onPointerUp, { passive: true });
+    window.addEventListener("pointercancel", onPointerUp, { passive: true });
     return () => {
       window.removeEventListener("touchstart", onStart);
       window.removeEventListener("touchmove", onMove);
-      window.removeEventListener("touchend", onEnd);
-      window.removeEventListener("touchcancel", onEnd);
+      window.removeEventListener("touchend", finish);
+      window.removeEventListener("touchcancel", finish);
+      window.removeEventListener("pointerdown", onPointerDown);
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerup", onPointerUp);
+      window.removeEventListener("pointercancel", onPointerUp);
     };
   }, [isMobile, disabled, snapTo, clearTimers]);
 
@@ -414,9 +496,9 @@ function BookChapterDrawer({
     [bookId, onClose, onSelectBookChapter, previewBookId],
   );
 
-  if (!isMobile || disabled) return null;
-  if (!mounted && progress <= 0.001 && !dragging) return null;
+  if (disabled) return null;
 
+  const showPanel = mounted || progress > 0.001 || dragging;
   const preview = previewBookId;
   const previewMeta = preview ? BOOKS[preview] : null;
   const total = previewMeta?.totalChapters ?? 0;
@@ -433,12 +515,36 @@ function BookChapterDrawer({
     .join(" ");
 
   return (
+    <>
+      {/* 오른쪽 원목 손잡이 — 글씨 없이 당기거나 탭하면 서랍 */}
+      <button
+        type="button"
+        className={`brp-bcd-pull${progress > 0.15 ? " is-open" : ""}`}
+        aria-label={progress > 0.5 ? "책·장 서랍 닫기" : "책·장 서랍 열기"}
+        aria-expanded={progress > 0.5}
+        onClick={() => {
+          if (pullDraggedRef.current) {
+            pullDraggedRef.current = false;
+            return;
+          }
+          if (progress > 0.5) onClose();
+          else onOpen();
+        }}
+      >
+        <span className="brp-bcd-pull-grip" aria-hidden />
+      </button>
+
+      {showPanel ? (
     <div
       className={rootClass}
       style={
         {
           ["--brp-drawer-p"]: String(progress),
           ["--brp-drawer-w"]: `${drawerWidthPx()}px`,
+          ["--brp-drawer-open-ms"]: `${OPEN_MS}ms`,
+          ["--brp-drawer-close-ms"]: `${CLOSE_MS}ms`,
+          ["--brp-drawer-open-ease"]: OPEN_EASE,
+          ["--brp-drawer-close-ease"]: CLOSE_EASE,
         } as CSSProperties
       }
       aria-hidden={progress < 0.05}
@@ -456,6 +562,7 @@ function BookChapterDrawer({
         aria-modal="true"
         aria-label="책·장 선택"
       >
+        <div className="brp-bcd-panel-rail" aria-hidden />
         <ul
           ref={booksRef}
           className={
@@ -484,7 +591,10 @@ function BookChapterDrawer({
                   role="option"
                   aria-selected={isPreview}
                 >
-                  {BOOKS[id].name}
+                  <span className="brp-bcd-book-name">{BOOKS[id].name}</span>
+                  <span className="brp-bcd-book-n">
+                    {BOOKS[id].totalChapters}
+                  </span>
                 </button>
               </li>
             );
@@ -510,7 +620,10 @@ function BookChapterDrawer({
                   role="option"
                   aria-selected={isPreview}
                 >
-                  {BOOKS[id].name}
+                  <span className="brp-bcd-book-name">{BOOKS[id].name}</span>
+                  <span className="brp-bcd-book-n">
+                    {BOOKS[id].totalChapters}
+                  </span>
                 </button>
               </li>
             );
@@ -533,32 +646,43 @@ function BookChapterDrawer({
           }
         >
           {preview ? (
-            chapters.map((n, i) => {
-              const isCurrent =
-                bookConfirmed && preview === bookId && n === chapterNumber;
-              return (
-                <li key={n} style={{ ["--i" as string]: i } as CSSProperties}>
-                  <button
-                    type="button"
-                    data-chapter={n}
-                    className={`brp-bcd-chapter${
-                      isCurrent ? " is-current" : ""
-                    }`}
-                    onClick={() => handleChapterClick(n)}
-                    role="option"
-                    aria-selected={isCurrent}
-                  >
-                    {n}
-                  </button>
-                </li>
-              );
-            })
+            <>
+              <li className="brp-bcd-section" aria-hidden="true">
+                {previewMeta?.name ?? "장"}
+              </li>
+              {chapters.map((n, i) => {
+                const isCurrent =
+                  bookConfirmed && preview === bookId && n === chapterNumber;
+                const unit = preview === "psalms" ? "편" : "장";
+                return (
+                  <li key={n} style={{ ["--i" as string]: i } as CSSProperties}>
+                    <button
+                      type="button"
+                      data-chapter={n}
+                      className={`brp-bcd-chapter${
+                        isCurrent ? " is-current" : ""
+                      }`}
+                      onClick={() => handleChapterClick(n)}
+                      role="option"
+                      aria-selected={isCurrent}
+                    >
+                      <span className="brp-bcd-book-name">
+                        {n}
+                        {unit}
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
+            </>
           ) : (
             <li className="brp-bcd-empty">책을 선택하세요</li>
           )}
         </ul>
       </aside>
     </div>
+      ) : null}
+    </>
   );
 }
 

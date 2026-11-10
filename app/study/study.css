@@ -275,14 +275,14 @@ button.study-loc-trigger {
   }
 }
 
-/* 양면 연속 장: 장 사이 2줄 간격 */
+/* 양면 연속 장: 장 사이 1줄 간격 */
 .study-ch-cont {
   clear: both;
 }
 .study-ch-cont-gap {
   display: block;
   clear: both;
-  height: calc(var(--study-lh) * 2);
+  height: var(--study-lh);
   width: 100%;
   pointer-events: none;
 }
@@ -1378,20 +1378,19 @@ html:has(.study-root) body::-webkit-scrollbar,
   -webkit-user-select: text;
 }
 
-/* 원어 리본 책갈피 — 쪽 오른쪽 가장자리 (시각 32×80, 터치 ≥44)
-   z-index > .study-spread-edge(8) — 히트 시 넘김 구역보다 위 */
+/* 원어 손잡이 — 글씨 없는 작은 놋쇠 노브 (책 서랍 손잡이 아래) */
 .study-ws-tab.study-ws-ribbon {
   position: fixed;
-  z-index: 120;
+  z-index: 53;
   box-sizing: border-box;
   width: 44px;
-  height: 80px;
+  height: 44px;
   padding: 0;
   margin: 0;
   border: none;
   border-radius: 0;
   background: transparent;
-  color: #fff;
+  color: transparent;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1401,46 +1400,36 @@ html:has(.study-root) body::-webkit-scrollbar,
   touch-action: manipulation;
 }
 
-.study-ws-tab.study-ws-ribbon::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 32px;
-  height: 80px;
-  background: #9e1b1b;
-  box-shadow: 0 2px 8px rgba(60, 20, 16, 0.22);
-  /* V자 홈 */
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - 12px),
-    50% 100%,
-    0 calc(100% - 12px)
-  );
-  pointer-events: none;
-}
-
-.study-ws-ribbon-label {
+.study-ws-ribbon-knob {
   position: relative;
   z-index: 1;
-  width: 32px;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  line-height: 1;
-  color: #fff;
-  transform: none;
-  text-align: center;
-  padding: 10px 0 16px;
-  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 30%,
+    #f0d78a 0%,
+    #c9a227 45%,
+    #8a6508 100%
+  );
+  box-shadow:
+    0 1px 4px rgba(40, 22, 8, 0.35),
+    inset 0 1px 1px rgba(255, 245, 210, 0.55),
+    inset 0 -1px 1px rgba(60, 40, 0, 0.3);
 }
 
+/* 원어 노브는 크롬 숨김과 무관하게 항상 표시 */
 html[data-study-chrome="0"] .study-ws-tab.study-ws-ribbon {
-  opacity: 0;
-  pointer-events: none;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.study-ws-tab.study-ws-ribbon.is-dock-right {
+  top: calc(50% + 64px);
+  right: 0;
+  left: auto;
+  transform: none;
 }
 
 .study-ws-gloss-main {
