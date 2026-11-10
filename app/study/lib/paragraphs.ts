@@ -49,3 +49,44 @@ export function paragraphStartsForChapter(
   if (!Array.isArray(raw) || raw.length === 0) return null;
   return raw;
 }
+
+/** 소제목 절이 단락 시작이 아니면 그 절에서 단락을 새로 연다. 1절 소제목은 표시하지 않으므로 시작 목록에는 넣지 않는다. */
+export function mergeParagraphStarts(
+  paraStarts: number[] | null | undefined,
+  headingVerses: number[],
+  firstN: number,
+): number[] | null {
+  const extra = headingVerses.filter(
+    (n) => Number.isFinite(n) && n > 1 && n >= firstN,
+  );
+  if ((!paraStarts || paraStarts.length === 0) && extra.length === 0) {
+    return paraStarts ?? null;
+  }
+  const set = new Set<number>(
+    paraStarts && paraStarts.length > 0 ? paraStarts : [firstN],
+  );
+  for (const n of extra) set.add(n);
+  return [...set].sort((a, b) => a - b);
+}
+
+export function groupByStarts<T extends { n: number }>(
+  items: T[],
+  starts: number[] | null,
+): { startN: number; items: T[] }[] {
+  if (items.length === 0) return [];
+  if (!starts || starts.length === 0) {
+    return [{ startN: items[0]!.n, items }];
+  }
+  const startSet = new Set(starts);
+  const groups: { startN: number; items: T[] }[] = [];
+  let cur: { startN: number; items: T[] } | null = null;
+  for (const item of items) {
+    if (!cur || startSet.has(item.n)) {
+      cur = { startN: item.n, items: [item] };
+      groups.push(cur);
+    } else {
+      cur.items.push(item);
+    }
+  }
+  return groups;
+}

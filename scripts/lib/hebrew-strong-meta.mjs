@@ -278,7 +278,7 @@ export function translateNameGloss(en) {
     [/flame of jah|flame of jehovah|fire of jah/, "여호와의 불꽃"],
     [/jehovah-?saved|jah-?saved|jehovah is salvation|jah is salvation/, "여호와께서 구원하신다"],
     [/jah will rise|jehovah will rise/, "여호와께서 일으키시리라"],
-    [/god of jehovah|god of jah/, "여호와의 하나님"],
+    [/god of jehovah|god of jah|my god is jah|my god is jehovah/, "나의 하나님은 여호와"],
     [/heard of god|god has heard/, "하나님이 들으셨다"],
     [/father of a multitude|father of multitudes/, "많은 무리의 아버지"],
     [/father of height|exalted father/, "높은 아버지"],
@@ -333,7 +333,7 @@ export function translateNameGloss(en) {
     [/^rough\b|rough \(i\.e/, "털이 많은"],
     [/jehovah-?fired|jah-?fired/, "여호와의 불"],
     [/jehovah-?given|jah-?given/, "여호와께서 주신"],
-    [/god of supplication/, "간구의 하나님"],
+    [/god of supplication/, "나의 하나님은 간구"],
     [/heap of testimony/, "증거의 무더기"],
     [/^extant$/, "있는 자"],
     [/^faithful$/, "신실한"],
@@ -664,13 +664,35 @@ function translateCompound(raw) {
   if (m) return "여호와의 불꽃";
   m = s.match(/^(.+?)\s+of\s+(?:God|El)$/i);
   if (m) {
-    const rk = translateAtom(m[1]);
-    if (rk) return `하나님의 ${rk}`;
+    // "X of God" (heard of God 등) — 하나님 소유 직역은 피하고 문장형 우선
+    const left = m[1].replace(/\s*\(.*?\)\s*/g, " ").trim();
+    if (/heard/i.test(left)) return "하나님이 들으셨다";
+    if (/gift/i.test(left)) return "하나님의 선물";
+    if (/man/i.test(left)) return "하나님의 사람";
+    if (/house/i.test(left)) return "하나님의 집";
+    const rk = translateAtom(left);
+    if (rk) return `하나님은 ${rk}`;
   }
   m = s.match(/^(?:God|El)\s+of\s+(.+)$/i);
   if (m) {
-    const rk = translateAtom(m[1].replace(/^\((?:is|has)\)\s*/i, ""));
-    if (rk) return `${rk}의 하나님`;
+    const rest = m[1]
+      .replace(/^\((?:his|the|a|an)\)\s*/i, "")
+      .replace(/\s*\(.*?\)\s*/g, " ")
+      .trim();
+    if (/jehovah|jah|yahweh/i.test(rest)) return "나의 하나님은 여호와";
+    if (/help/i.test(rest)) return "나의 하나님은 도움";
+    if (/king/i.test(rest)) return "나의 하나님은 왕";
+    if (/father/i.test(rest)) return "나의 하나님은 아버지";
+    if (/gold/i.test(rest)) return "나의 하나님은 금";
+    if (/rock/i.test(rest)) return "나의 하나님은 반석";
+    if (/supplication|prayer/i.test(rest)) return "나의 하나님은 간구";
+    if (/salvation|deliver/i.test(rest)) return "나의 하나님은 구원";
+    if (/oath/i.test(rest)) return "나의 하나님은 맹세";
+    if (/knowledge/i.test(rest)) return "나의 하나님은 지식";
+    if (/strength|might/i.test(rest)) return "나의 하나님은 힘";
+    if (/gift/i.test(rest)) return "나의 하나님은 선물";
+    const rk = translateAtom(rest);
+    if (rk) return `나의 하나님은 ${rk}`;
   }
   m = s.match(
     /^(?:God|El)\s*(?:\((?:is|has)\)|(?:is|has))?\s*(.+)$/i,
@@ -689,10 +711,19 @@ function translateCompound(raw) {
   }
   m = s.match(/^who\s*\(?is\)?\s*like\s+(?:God|El)\??$/i);
   if (m) return "누가 하나님과 같으랴";
-  m = s.match(/^brother of\s+(.+)$/i);
+  m = s.match(/^brother(?:\s*\([^)]*\))?\s+of\s+(.+)$/i);
   if (m) {
-    const rk = translateAtom(m[1]);
-    if (rk) return `${rk}의 형제`;
+    const rest = m[1].replace(/^\((?:the|a|an|his)\)\s*/i, "").replace(/\s*\(.*?\)\s*/g, " ").trim();
+    if (/father/i.test(rest) && !/jah|god/i.test(rest)) return "아버지의 형제";
+    if (/mother/i.test(rest)) return "어머니의 형제";
+    if (/jah|jehovah|yahweh/i.test(rest)) return "여호와는 나의 형제";
+    if (/pleasantness|pleasant/i.test(rest)) return "나의 형제는 기쁨이다";
+    if (/dawn/i.test(rest)) return "나의 형제는 새벽이다";
+    if (/singer|song/i.test(rest)) return "나의 형제는 노래하는 이";
+    if (/renown|fame/i.test(rest)) return "나의 형제는 유명하시다";
+    if (/riddle|mysterious/i.test(rest)) return "나의 형제는 신비롭다";
+    const rk = translateAtom(rest);
+    if (rk) return `나의 형제는 ${rk}이다`;
   }
   m = s.match(/^people of\s+(.+)$/i);
   if (m) {

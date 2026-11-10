@@ -172,8 +172,6 @@
   float: left;
   box-sizing: content-box;
   margin: 5px 0.25em 0 0;
-  user-select: none;
-  -webkit-user-select: none;
   font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
   font-size: inherit;
   font-weight: 700;
@@ -190,6 +188,7 @@
   font-size: calc(var(--study-lh) * 3 * 0.92);
   line-height: 0.8;
   font-variant-numeric: tabular-nums;
+  pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
 }
@@ -201,14 +200,27 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
   margin: 0;
-  user-select: none;
-  -webkit-user-select: none;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 700;
   line-height: var(--study-lh);
   color: rgba(158, 27, 27, 0.7);
   text-align: left;
   text-align-last: left;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.study-chapter-title-ink {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* 375/768 한쪽: 래퍼 none 유지. PC 양쪽은 래퍼에서 none을 걷어 옆 3줄 끌기 시작 */
+.study-root:not(.is-spread) .study-drop,
+.study-root:not(.is-spread) .study-chapter-title {
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .study-body {
@@ -253,6 +265,42 @@
 
 .study-para:last-child {
   margin-bottom: 0;
+}
+
+/* 소제목: 단락 사이. 위는 단락 간격(0.6em)보다 넓고, 아래는 다음 단락에 붙임.
+   clear: 드롭캡 옆 3줄 안에 끼어 깨지지 않게 아래로 내림 */
+.study-subhead {
+  display: block;
+  clear: left;
+  margin: 0.9em 0 0.15em;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.85em;
+  font-weight: 400;
+  line-height: var(--study-lh);
+  color: #a89a86;
+  text-align: left;
+  text-align-last: left;
+  white-space: pre-wrap;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+  break-after: avoid;
+  break-inside: avoid;
+  -webkit-column-break-after: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.study-body > .study-subhead:first-child {
+  margin-top: 0;
+}
+
+.study-subhead + .study-para {
+  margin-top: 0;
 }
 
 /* 절 번호 + 첫 글자 — 줄바꿈으로 갈라지지 않게 */
@@ -525,53 +573,74 @@ html:has(.study-root) body::-webkit-scrollbar,
   font-size: 22px;
   font-weight: 400;
   line-height: 1;
-  padding: 0 2px;
-  background: #fbf7ee;
+  padding: 0;
+  /* 행간 틈에 끼울 때는 배경·테두리 없이 글씨만 — 본문 가림 방지 */
+  background: transparent;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
   cursor: pointer;
   pointer-events: auto;
 }
 
-.study-mark-note.is-badge {
+.study-mark-note.is-badge,
+.study-mark-note.is-dot {
   overflow: visible;
+  width: 1.1em;
+  text-align: center;
+  background: #fbf7ee;
+  border-radius: 999px;
+  padding: 0 2px;
+  box-shadow: 0 0 0 1px rgba(179, 38, 30, 0.2);
 }
 
-.study-mark-note.is-open {
-  z-index: 4;
+.study-mark-note.is-dot {
+  font-size: 14px;
+  line-height: 1;
+  color: #b3261e;
+}
+
+.study-mark-note.is-open,
+.study-mark-note.is-card {
+  z-index: 12;
   overflow: visible;
   white-space: pre-wrap;
   word-break: keep-all;
   overflow-wrap: break-word;
   line-height: 1.3;
-  padding: 2px 8px 6px;
-  margin-left: -8px;
-  border-radius: 8px;
+  height: auto;
+  max-height: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(158, 27, 27, 0.22);
   background: #fbf7ee;
   box-shadow: 0 6px 18px rgba(28, 25, 23, 0.14);
+  text-box-trim: unset;
 }
 
 .study-mark-note-input {
   position: absolute;
-  z-index: 3;
+  z-index: 12;
   box-sizing: border-box;
   min-width: 96px;
-  padding: 0 2px 1px;
+  padding: 8px 10px;
   pointer-events: auto;
   user-select: text;
   -webkit-user-select: text;
   -webkit-touch-callout: default;
-  border: none;
-  border-bottom: 1px solid #b3261e;
-  border-radius: 0;
+  border: 1px solid rgba(158, 27, 27, 0.22);
+  border-radius: 10px;
   background: #fbf7ee;
   color: #b3261e;
   font-family: var(--font-nanum-pen), "Nanum Pen Script", cursive;
   font-size: 22px;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.25;
   outline: none;
-  box-shadow: none;
+  box-shadow: 0 6px 18px rgba(28, 25, 23, 0.14);
+}
+
+.study-mark-note-input.is-card {
+  border-bottom: 1px solid rgba(158, 27, 27, 0.22);
 }
 
 @media (max-width: 480px) {
@@ -582,9 +651,7 @@ html:has(.study-root) body::-webkit-scrollbar,
     font-size: 17px;
   }
 
-  .study-mark-note,
-  .study-mark-note-input,
-  .study-mark-note.is-badge {
+  .study-mark-note-input {
     font-size: 20px;
   }
 }
@@ -2692,7 +2759,8 @@ html[data-study-spread="1"] .brp-tabbar {
 }
 
 .study-root.is-spread .study-drop,
-.study-root.is-spread .study-chapter-title {
+.study-root.is-spread .study-chapter-title,
+.study-root.is-spread .study-subhead {
   break-inside: avoid;
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
@@ -2756,7 +2824,9 @@ html[data-study-spread="1"] .brp-tabbar {
   position: absolute;
   top: 0;
   bottom: 0;
-  z-index: 5;
+  height: 100%;
+  min-height: 100%;
+  z-index: 8;
   display: flex;
   align-items: center;
   width: var(--study-edge-w, 48px);
@@ -2769,13 +2839,13 @@ html[data-study-spread="1"] .brp-tabbar {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .study-spread:has(.study-spread-edge.is-next:hover) .study-sheet.is-right {
+  .study-spread:not(.is-edge-drag):has(.study-spread-edge.is-next:hover) .study-sheet.is-right {
     transform: perspective(1800px) rotateY(-6deg);
     transform-origin: left center;
     box-shadow: -10px 0 18px rgba(60, 40, 20, 0.12);
   }
 
-  .study-spread:has(.study-spread-edge.is-prev:hover) .study-sheet.is-left {
+  .study-spread:not(.is-edge-drag):has(.study-spread-edge.is-prev:hover) .study-sheet.is-left {
     transform: perspective(1800px) rotateY(6deg);
     transform-origin: right center;
     box-shadow: 10px 0 18px rgba(60, 40, 20, 0.12);

@@ -1,0 +1,126 @@
+{
+  "section1": {
+    "before": {
+      "notInText": 162,
+      "trunc": 396,
+      "noise": 19,
+      "mixed": 7,
+      "note": "trunc 396은 짧은 완결 낱말(서기관 등) 과대 포함 → 재판정 후 실오류만 수정"
+    },
+    "after": {
+      "notInText": 1,
+      "trunc": 0,
+      "noise": 0,
+      "mixed": 0,
+      "ok": 1552,
+      "values": 1553
+    },
+    "fixedSamples": [
+      {
+        "strong": "G2790",
+        "from": "거문",
+        "to": "거문고"
+      },
+      {
+        "strong": "G3155",
+        "from": "헛되",
+        "to": "헛되이"
+      },
+      {
+        "strong": "G5186",
+        "from": "멀게다",
+        "to": "멀게"
+      },
+      {
+        "strong": "G410",
+        "from": [
+          "없는",
+          "책망할"
+        ],
+        "to": "책망할 것이 없는"
+      },
+      {
+        "strong": "G2405",
+        "from": "제사장",
+        "to": "제사장의"
+      },
+      {
+        "strong": "G1011",
+        "from": [],
+        "to": "헤아리지"
+      },
+      {
+        "strong": "G1061",
+        "from": "시집보내",
+        "to": null
+      },
+      {
+        "strong": "G1127",
+        "from": "깨어있",
+        "to": null
+      },
+      {
+        "strong": "G1556",
+        "from": "원수갚",
+        "to": null
+      },
+      {
+        "strong": "G1188",
+        "from": "오른",
+        "to": "오른손"
+      },
+      {
+        "strong": "G3664",
+        "from": "같은",
+        "to": null
+      },
+      {
+        "strong": "G3756",
+        "from": "아니",
+        "to": null
+      },
+      {
+        "strong": "G3956",
+        "from": "모든",
+        "to": null
+      },
+      {
+        "strong": "G1089",
+        "from": "맛보",
+        "to": "맛보지"
+      },
+      {
+        "strong": "G1515",
+        "from": "평화/평강 정리",
+        "to": "평강"
+      }
+    ],
+    "ratios": {
+      "strongWithKrvBefore": 1553,
+      "strongWithKrvAfter": 1441,
+      "strongPct": 92.79,
+      "contentChips": 68652,
+      "contentWithKrv": 44415,
+      "contentPct": 64.7
+    }
+  },
+  "section2": {
+    "overlapBefore": 10,
+    "overlapAfter": 0,
+    "eyoyoReplaced": 404,
+    "eyoyoRemain": 0,
+    "particleWrongBefore": 1,
+    "particleWrongAfter": 0
+  },
+  "section3": {
+    "citeSwapped": 0,
+    "citeRemoved": 49,
+    "note": "이전 49건은 이미 인용 제거된 상태. krvKo로 바꿀 절 없음(해당 strong krvKo 비어 있음)."
+  },
+  "fullDefs": {
+    "G1011": "주로 의논하는 것을 말하고, 「헤아리다」로도 옮겨져요. 「…헤아리지 아니하겠느냐」(눅 14:31).",
+    "G2790": "거문고 타는 자를 말해요. 개역한글에서는 「거문고」로 옮겨져요(계 14:2). 「…거문고 타는 자들의 그 거문고 타는 것 같더라」(계 14:2).",
+    "G2405": "제사 직분을 말해요. 개역한글에서는 「제사장의」로 옮겨져요(눅 1:9). 「제사장의 전례를 따라 제비를 뽑아 주의 성소에 들어가 분향하고」(눅 1:9).",
+    "G3155": "헛되이 하는 것을 말해요. 개역한글에서는 「헛되이」로 옮겨져요(마 15:9). 「…헛되이 경배하는도다 하였느니라 하시고」(마 15:9)."
+  }
+}

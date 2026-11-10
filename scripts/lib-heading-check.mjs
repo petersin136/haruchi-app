@@ -95,26 +95,37 @@ export function isCompleteQuote(title, verseTexts) {
   return endsWithQuoteFinal(title);
 }
 
+const PARTICLE_START = /^[은는이가을를의미와과도만께도아여요시]/;
+
 /** 조사·어미 중간 절단 (절 앞머리 dump에서 단어 도중 끊김) */
 export function isMidParticleCut(title, verseTexts) {
   const t = String(title).trim();
   for (const vt of verseTexts) {
     const raw = String(vt).trim();
-    // 제목이 절 시작(또는 공백 무시 시작)과 같으면
+    // 공백 유지 prefix
     if (raw.startsWith(t)) {
       const after = raw.slice(t.length);
-      if (!after) return false;
-      // 공백 없이 한글이 이어지면 단어 중간 절단
+      if (!after) continue;
+      if (/^\s/.test(after)) continue;
+      if (PARTICLE_START.test(after)) continue;
+      if (/^[\,，。\.\!\?；;:]/.test(after)) continue;
       if (/^[가-힣]/.test(after)) return true;
-      // 「미디안 제」+「사장」처럼 공백 뒤 한 글자만 제목에 들어온 경우: 제목 끝 토큰 1글자 + 본문 연속
-      const m = t.match(/([가-힣]+)$/);
-      if (m && m[1].length === 1 && /^[가-힣]/.test(after.trim())) return true;
     }
+    // 공백 무시 + 절 앞머리: 「미디안제」↔「미디안 제사장」
     const ct = compact(t);
     const cv = compact(raw);
-    if (cv.startsWith(ct) && cv.length > ct.length) {
-      // 잘린 다음 글자가 한글이면 절단 가능 — 종결형으로 끝나는 완결 인용은 제외
-      if (!endsWithQuoteFinal(t)) return true;
+    if (
+      ct.length >= 6 &&
+      cv.startsWith(ct) &&
+      cv.length > ct.length &&
+      raw.replace(/\s+/g, " ").startsWith(t.split(/\s+/)[0])
+    ) {
+      const afterC = cv.slice(ct.length);
+      if (PARTICLE_START.test(afterC)) continue;
+      const last = (t.match(/[가-힣]+/g) || []).at(-1) || "";
+      if (last.length === 1 && /^[가-힣]/.test(afterC) && !PARTICLE_START.test(afterC)) {
+        return true;
+      }
     }
   }
   return false;
@@ -135,14 +146,29 @@ export function checkHeadingTitle(title, verseTexts) {
   if (chars.length < 4 || chars.length > 14) reasons.push("길이");
   if (endsWithIra(t)) reasons.push("이라종결");
 
-  const hit = findContiguousHit(t, verseTexts);
-  if (hit) {
-    if (!isCompleteQuote(t, verseTexts)) reasons.push("본문절단인용");
-  }
+  // 절 앞머리를 의미 없이 자른 dump만 실패.
+  // 말이 끝나는 곳(조사·어미 앞)에서 끊은 완결 인용은 허용.
+  const openingDump = verseTexts.some((vt) => {
+    const raw = String(vt).trim();
+    const body = compact(raw);
+    const titleC = compact(t);
+    if (titleC.length < 6) return false;
+    if (!body.startsWith(titleC)) return false;
+    if (body.length === titleC.length) return false;
+    if (isCompleteQuote(t, [vt])) return false;
+    // 원문에서 제목 직후가 조사·어미면 완결 인용
+    if (raw.startsWith(t)) {
+      const after = raw.slice(t.length);
+      if (PARTICLE_START.test(after) || /^\s/.test(after)) return false;
+    } else {
+      const afterC = body.slice(titleC.length);
+      if (PARTICLE_START.test(afterC)) return false;
+    }
+    // 직후가 한글 어간 연결이면 잘린 dump
+    return true;
+  });
+  if (openingDump) reasons.push("본문절단인용");
   if (isMidParticleCut(t, verseTexts)) reasons.push("어미중간절단");
-
-  // 명백한 잘림 꼬리: 공백+1글자
-  if (/\s[가-힣]$/.test(t)) reasons.push("어미중간절단");
 
   return { ok: reasons.length === 0, reasons: [...new Set(reasons)] };
 }

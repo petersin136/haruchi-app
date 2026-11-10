@@ -5504,7 +5504,7 @@ const TANAKH_OT_EXT6 = {
   H3099: person("요아하스"),
   H6322: person("불"),
   H5755: place("아와"),
-  H4693: { gloss: "곤경", meanings: ["에워쌈"] },
+  H4693: { gloss: "애굽 지경", meanings: ["경계", "애굽"] },
   H4964: { gloss: "재갈", meanings: ["고삐"] },
   H8272: person("사레셀"),
   H2657: { gloss: "헵시바", meanings: ["기쁨이 그 안에"] },

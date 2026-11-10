@@ -1,0 +1,1066 @@
+{
+  "count": 107,
+  "note": "감사 전후 strong 보유 1,553→1,441(Δ112). 목록은 HEAD 대비 완전비움·복구·기능어 후보 재판정 집합.",
+  "auditDelta": {
+    "before": 1553,
+    "after": 1441,
+    "wiped": 112
+  },
+  "verdictCounts": {
+    "restoreIntact": 11,
+    "restoreBase": 67,
+    "keepDeleted": 29
+  },
+  "items": [
+    {
+      "strong": "G20",
+      "lemma": "ἀγαλλίασις",
+      "posKo": "명사",
+      "lost": [
+        "기쁨"
+      ],
+      "glossKo": "큰기쁨",
+      "verdict": "restoreIntact"
+    },
+    {
+      "strong": "G69",
+      "lemma": "ἀγρυπνέω",
+      "posKo": "동사",
+      "lost": [
+        "깨어있"
+      ],
+      "glossKo": "깨어있다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G85",
+      "lemma": "ἀδημονέω",
+      "posKo": "동사",
+      "lost": [
+        "심히괴롭"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G198",
+      "lemma": "ἀκριβόω",
+      "posKo": "동사",
+      "lost": [
+        "자세히묻"
+      ],
+      "glossKo": "자세히묻다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G226",
+      "lemma": "ἀληθεύω",
+      "posKo": "동사",
+      "lost": [
+        "참된말"
+      ],
+      "glossKo": "참된말하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G349",
+      "lemma": "ἀνακράζω",
+      "posKo": "동사",
+      "lost": [
+        "소리치"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G364",
+      "lemma": "ἀνάμνησις",
+      "posKo": "명사",
+      "lost": [
+        "기념하다"
+      ],
+      "glossKo": "기념",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G402",
+      "lemma": "ἀναχωρέω",
+      "posKo": "동사",
+      "lost": [
+        "물러나"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G504",
+      "lemma": "ἄνυδρος",
+      "posKo": "형용사",
+      "lost": [
+        "없는"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G506",
+      "lemma": "ἀνυπότακτος",
+      "posKo": "형용사",
+      "lost": [
+        "복종하지 않는"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G533",
+      "lemma": "ἀπαρνέομαι",
+      "posKo": "동사",
+      "lost": [
+        "부인하다"
+      ],
+      "glossKo": "부인하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G537",
+      "lemma": "ἅπας",
+      "posKo": "형용사",
+      "lost": [
+        "모든",
+        "다",
+        "온"
+      ],
+      "glossKo": "모든",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G544",
+      "lemma": "ἀπειθέω",
+      "posKo": "동사",
+      "lost": [
+        "순종하지 않"
+      ],
+      "glossKo": "복종치않다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G548",
+      "lemma": "ἄπειμι",
+      "posKo": "동사",
+      "lost": [
+        "떠나있"
+      ],
+      "glossKo": "떠나있다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G569",
+      "lemma": "ἀπιστέω",
+      "posKo": "동사",
+      "lost": [
+        "믿지않"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G657",
+      "lemma": "ἀποτάσσομαι",
+      "posKo": "동사",
+      "lost": [
+        "작별하다"
+      ],
+      "glossKo": "작별하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G709",
+      "lemma": "ἀριστάω",
+      "posKo": "동사",
+      "lost": [
+        "조반먹다"
+      ],
+      "glossKo": "조반먹다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G720",
+      "lemma": "ἀρνέομαι",
+      "posKo": "동사",
+      "lost": [
+        "부인하다"
+      ],
+      "glossKo": "부인하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G763",
+      "lemma": "ἀσέβεια",
+      "posKo": "명사",
+      "lost": [
+        "경건하지 않음"
+      ],
+      "glossKo": "경건치않음",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G765",
+      "lemma": "ἀσεβής",
+      "posKo": "형용사",
+      "lost": [
+        "경건하지 않는"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G784",
+      "lemma": "ἄσπιλος",
+      "posKo": "형용사",
+      "lost": [
+        "없는"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G816",
+      "lemma": "ἀτενίζω",
+      "posKo": "동사",
+      "lost": [
+        "주목하다"
+      ],
+      "glossKo": "주목하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G832",
+      "lemma": "αὐλέω",
+      "posKo": "동사",
+      "lost": [
+        "피리불"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G875",
+      "lemma": "ἀφρίζω",
+      "posKo": "동사",
+      "lost": [
+        "거품물다"
+      ],
+      "glossKo": "거품물다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G886",
+      "lemma": "ἀχειροποίητος",
+      "posKo": "형용사",
+      "lost": [
+        "손으"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G928",
+      "lemma": "βασανίζω",
+      "posKo": "동사",
+      "lost": [
+        "괴롭히"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G1011",
+      "lemma": "βουλεύομαι",
+      "posKo": "동사",
+      "lost": [
+        "헤아리다"
+      ],
+      "verdict": "restoreBase",
+      "note": "HEAD 당시 이미 비어 있던 WT 감사 삭제 후보(1553 쪽)"
+    },
+    {
+      "strong": "G1061",
+      "lemma": "γαμίζω",
+      "posKo": "동사",
+      "lost": [
+        "시집보내"
+      ],
+      "glossKo": "시집보내다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G1127",
+      "lemma": "γρηγορεύω",
+      "posKo": "",
+      "lost": [
+        "깨어있"
+      ],
+      "glossKo": "깨어있다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G1201",
+      "lemma": "δεσμωτήριον",
+      "posKo": "명사",
+      "lost": [
+        "옥"
+      ],
+      "verdict": "restoreIntact",
+      "note": "HEAD 당시 이미 비어 있던 WT 감사 삭제 후보(1553 쪽)"
+    },
+    {
+      "strong": "G1519",
+      "lemma": "εἰς",
+      "posKo": "전치사",
+      "lost": [
+        "안으로"
+      ],
+      "glossKo": "안으로",
+      "note": "audit-drop-candidate",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G1556",
+      "lemma": "ἐκδικέω",
+      "posKo": "동사",
+      "lost": [
+        "원수갚"
+      ],
+      "glossKo": "원수갚다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G1581",
+      "lemma": "ἐκκόπτω",
+      "posKo": "동사",
+      "lost": [
+        "찍어내"
+      ],
+      "glossKo": "찍어내다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G2097",
+      "lemma": "εὐαγγελίζω",
+      "posKo": "동사",
+      "lost": [
+        "복음전함"
+      ],
+      "glossKo": "복음전하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G2343",
+      "lemma": "θησαυρίζω",
+      "posKo": "동사",
+      "lost": [
+        "쌓아두"
+      ],
+      "glossKo": "쌓아두다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G2553",
+      "lemma": "κακοπαθέω",
+      "posKo": "동사",
+      "lost": [
+        "고난받"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G2558",
+      "lemma": "κακουχέομαι",
+      "posKo": "동사",
+      "lost": [
+        "학대받"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G2592",
+      "lemma": "καρποφορέω",
+      "posKo": "동사",
+      "lost": [
+        "열매맺"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G2607",
+      "lemma": "καταγινώσκω",
+      "posKo": "동사",
+      "lost": [
+        "책망받"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G3107",
+      "lemma": "μακάριος",
+      "posKo": "형용사",
+      "lost": [
+        "있는"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G3114",
+      "lemma": "μακροθυμέω",
+      "posKo": "동사",
+      "lost": [
+        "오래참"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G3361",
+      "lemma": "μή",
+      "posKo": "부정어",
+      "lost": [
+        "아니"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G3367",
+      "lemma": "μηδείς",
+      "posKo": "형용사",
+      "lost": [
+        "아무"
+      ],
+      "glossKo": "아무도",
+      "verdict": "restoreIntact"
+    },
+    {
+      "strong": "G3570",
+      "lemma": "νυνί",
+      "posKo": "부사",
+      "lost": [
+        "이제"
+      ],
+      "glossKo": "이제",
+      "verdict": "restoreIntact"
+    },
+    {
+      "strong": "G3579",
+      "lemma": "ξενίζω",
+      "posKo": "동사",
+      "lost": [
+        "유숙시키"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G3661",
+      "lemma": "ὁμοθυμαδόν",
+      "posKo": "부사",
+      "lost": [
+        "마음"
+      ],
+      "glossKo": "한마음으로",
+      "verdict": "restoreIntact"
+    },
+    {
+      "strong": "G3664",
+      "lemma": "ὅμοιος",
+      "posKo": "형용사",
+      "lost": [
+        "같은"
+      ],
+      "glossKo": "같은",
+      "verdict": "restoreIntact"
+    },
+    {
+      "strong": "G3756",
+      "lemma": "οὐ",
+      "posKo": "부정어",
+      "lost": [
+        "아니"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G3762",
+      "lemma": "οὐδείς",
+      "posKo": "형용사",
+      "lost": [
+        "아무"
+      ],
+      "glossKo": "아무도",
+      "verdict": "restoreIntact"
+    },
+    {
+      "strong": "G3765",
+      "lemma": "οὐκέτι",
+      "posKo": "부사",
+      "lost": [
+        "아니요"
+      ],
+      "glossKo": "더는아니",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G3768",
+      "lemma": "οὔπω",
+      "posKo": "부사",
+      "lost": [
+        "아직~않"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G3780",
+      "lemma": "οὐχί",
+      "posKo": "소사",
+      "lost": [
+        "아니냐",
+        "아니뇨",
+        "아니"
+      ],
+      "glossKo": "아니",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G3825",
+      "lemma": "πάλιν",
+      "posKo": "부사",
+      "lost": [
+        "다시"
+      ],
+      "glossKo": "다시",
+      "verdict": "restoreIntact"
+    },
+    {
+      "strong": "G3849",
+      "lemma": "παραβιάζομαι",
+      "posKo": "동사",
+      "lost": [
+        "강권하다"
+      ],
+      "glossKo": "강권하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G3886",
+      "lemma": "παραλύομαι",
+      "posKo": "동사",
+      "lost": [
+        "중풍병들"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G3936",
+      "lemma": "παρίστημι",
+      "posKo": "동사",
+      "lost": [
+        "곁에있"
+      ],
+      "glossKo": "곁에있다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G3955",
+      "lemma": "παρρησιάζομαι",
+      "posKo": "동사",
+      "lost": [
+        "담대히말하다"
+      ],
+      "glossKo": "담대히말하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G3956",
+      "lemma": "πᾶς",
+      "posKo": "형용사",
+      "lost": [
+        "모든",
+        "다",
+        "온"
+      ],
+      "glossKo": "모든",
+      "verdict": "restoreIntact"
+    },
+    {
+      "strong": "G3958",
+      "lemma": "πάσχω",
+      "posKo": "동사",
+      "lost": [
+        "고난당하다",
+        "당하다"
+      ],
+      "glossKo": "고난당하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4013",
+      "lemma": "περιάγω",
+      "posKo": "동사",
+      "lost": [
+        "두루다니다"
+      ],
+      "glossKo": "두루다니다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4015",
+      "lemma": "περιαστράπτω",
+      "posKo": "동사",
+      "lost": [
+        "둘러비추다"
+      ],
+      "glossKo": "둘러비추다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4035",
+      "lemma": "περιλείπομαι",
+      "posKo": "동사",
+      "lost": [
+        "살아남"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G4199",
+      "lemma": "πορθέω",
+      "posKo": "동사",
+      "lost": [
+        "잔해하다"
+      ],
+      "glossKo": "잔해하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4243",
+      "lemma": "πρεσβεύω",
+      "posKo": "동사",
+      "lost": [
+        "사신노릇하다"
+      ],
+      "glossKo": "사신노릇하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4258",
+      "lemma": "προαμαρτάνω",
+      "posKo": "동사",
+      "lost": [
+        "전에범죄하다"
+      ],
+      "glossKo": "전에범죄하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4267",
+      "lemma": "προγινώσκω",
+      "posKo": "동사",
+      "lost": [
+        "미리아시"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G4279",
+      "lemma": "προεπαγγέλλομαι",
+      "posKo": "동사",
+      "lost": [
+        "미리약속하다"
+      ],
+      "glossKo": "미리약속하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4302",
+      "lemma": "προλέγω",
+      "posKo": "동사",
+      "lost": [
+        "미리말하다"
+      ],
+      "glossKo": "미리말하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4348",
+      "lemma": "πρόσκομμα",
+      "posKo": "명사",
+      "lost": [
+        "걸림"
+      ],
+      "glossKo": "거치는것",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4351",
+      "lemma": "προσκυλίω",
+      "posKo": "동사",
+      "lost": [
+        "굴려놓"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G4445",
+      "lemma": "πυρέσσω",
+      "posKo": "동사",
+      "lost": [
+        "열병들다"
+      ],
+      "glossKo": "열병들다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4492",
+      "lemma": "ῥιζόομαι",
+      "posKo": "동사",
+      "lost": [
+        "뿌리박다"
+      ],
+      "glossKo": "뿌리박다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4537",
+      "lemma": "σαλπίζω",
+      "posKo": "동사",
+      "lost": [
+        "나팔불"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G4601",
+      "lemma": "σιγάω",
+      "posKo": "동사",
+      "lost": [
+        "잠잠하다"
+      ],
+      "glossKo": "잠잠하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4623",
+      "lemma": "σιωπάω",
+      "posKo": "동사",
+      "lost": [
+        "잠잠하다"
+      ],
+      "glossKo": "잠잠하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4683",
+      "lemma": "σπαργανόω",
+      "posKo": "동사",
+      "lost": [
+        "강보로싸다"
+      ],
+      "glossKo": "강보로싸다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4775",
+      "lemma": "συγκάθημαι",
+      "posKo": "동사",
+      "lost": [
+        "함께앉다"
+      ],
+      "glossKo": "함께앉다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4776",
+      "lemma": "συγκαθίζω",
+      "posKo": "동사",
+      "lost": [
+        "함께앉다"
+      ],
+      "glossKo": "함께앉다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4796",
+      "lemma": "συγχαίρω",
+      "posKo": "동사",
+      "lost": [
+        "함께기뻐하다",
+        "기뻐하다"
+      ],
+      "glossKo": "함께기뻐하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4800",
+      "lemma": "συζάω",
+      "posKo": "동사",
+      "lost": [
+        "함께살다"
+      ],
+      "glossKo": "함께살다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4801",
+      "lemma": "συζεύγνυμι",
+      "posKo": "동사",
+      "lost": [
+        "짝지우다"
+      ],
+      "glossKo": "짝지우다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4814",
+      "lemma": "συλλαλέω",
+      "posKo": "동사",
+      "lost": [
+        "함께말하다"
+      ],
+      "glossKo": "함께말하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4842",
+      "lemma": "συμπέμπω",
+      "posKo": "동사",
+      "lost": [
+        "함께보내다"
+      ],
+      "glossKo": "함께보내다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4873",
+      "lemma": "συνανάκειμαι",
+      "posKo": "동사",
+      "lost": [
+        "함께앉"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G4880",
+      "lemma": "συναποθνῄσκω",
+      "posKo": "동사",
+      "lost": [
+        "함께죽다"
+      ],
+      "glossKo": "함께죽다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4891",
+      "lemma": "συνεγείρω",
+      "posKo": "동사",
+      "lost": [
+        "함께일으키"
+      ],
+      "glossKo": "함께일으키다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4895",
+      "lemma": "σύνειμι",
+      "posKo": "동사",
+      "lost": [
+        "함께있"
+      ],
+      "glossKo": "함께있다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4903",
+      "lemma": "συνεργέω",
+      "posKo": "동사",
+      "lost": [
+        "함께일하다"
+      ],
+      "glossKo": "함께일하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4906",
+      "lemma": "συνεσθίω",
+      "posKo": "동사",
+      "lost": [
+        "함께먹다"
+      ],
+      "glossKo": "함께먹다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4910",
+      "lemma": "συνευωχέομαι",
+      "posKo": "동사",
+      "lost": [
+        "함께먹다"
+      ],
+      "glossKo": "함께먹다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4916",
+      "lemma": "συνθάπτομαι",
+      "posKo": "동사",
+      "lost": [
+        "함께장사되다"
+      ],
+      "glossKo": "함께장사되다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4921",
+      "lemma": "συνίστημι",
+      "posKo": "동사",
+      "lost": [
+        "함께있"
+      ],
+      "glossKo": "함께있다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4936",
+      "lemma": "συντρέχω",
+      "posKo": "동사",
+      "lost": [
+        "달려모이다"
+      ],
+      "glossKo": "달려모이다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4952",
+      "lemma": "συσπαράσσω",
+      "posKo": "동사",
+      "lost": [
+        "경련다"
+      ],
+      "glossKo": "심히경련하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G4957",
+      "lemma": "συσταυρόομαι",
+      "posKo": "동사",
+      "lost": [
+        "함께못박히"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G4993",
+      "lemma": "σωφρονέω",
+      "posKo": "동사",
+      "lost": [
+        "정신차리"
+      ],
+      "verdict": "keepDeleted"
+    },
+    {
+      "strong": "G5089",
+      "lemma": "τίλλω",
+      "posKo": "동사",
+      "lost": [
+        "잘라먹다"
+      ],
+      "glossKo": "잘라먹다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G5091",
+      "lemma": "τιμάω",
+      "posKo": "동사",
+      "lost": [
+        "공경하다"
+      ],
+      "glossKo": "공경하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G5198",
+      "lemma": "ὑγιαίνω",
+      "posKo": "동사",
+      "lost": [
+        "건강하다"
+      ],
+      "glossKo": "건강하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G5302",
+      "lemma": "ὑστερέω",
+      "posKo": "동사",
+      "lost": [
+        "부족하다"
+      ],
+      "glossKo": "부족하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G5417",
+      "lemma": "φραγελλόω",
+      "posKo": "동사",
+      "lost": [
+        "채찍질하다"
+      ],
+      "glossKo": "채찍질하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G5438",
+      "lemma": "φυλακή",
+      "posKo": "명사",
+      "lost": [
+        "옥"
+      ],
+      "glossKo": "감옥",
+      "verdict": "restoreIntact"
+    },
+    {
+      "strong": "G5483",
+      "lemma": "χαρίζομαι",
+      "posKo": "동사",
+      "lost": [
+        "은혜베풀"
+      ],
+      "glossKo": "은혜베풀다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G5487",
+      "lemma": "χαριτόω",
+      "posKo": "동사",
+      "lost": [
+        "은혜다"
+      ],
+      "glossKo": "은혜받은",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G5537",
+      "lemma": "χρηματίζω",
+      "posKo": "동사",
+      "lost": [
+        "지시받다"
+      ],
+      "glossKo": "지시받다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G5576",
+      "lemma": "ψευδομαρτυρέω",
+      "posKo": "동사",
+      "lost": [
+        "거짓증언하다"
+      ],
+      "glossKo": "거짓증언하다",
+      "verdict": "restoreBase"
+    },
+    {
+      "strong": "G5580",
+      "lemma": "ψευδόχριστος",
+      "posKo": "명사",
+      "lost": [
+        "그리스도들"
+      ],
+      "glossKo": "거짓그리스도",
+      "verdict": "restoreIntact"
+    }
+  ]
+}

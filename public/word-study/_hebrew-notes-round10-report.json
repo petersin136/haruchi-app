@@ -1,0 +1,331 @@
+{
+  "1_eliAhi": {
+    "byPrefix": {
+      "아비": {
+        "target": 1,
+        "changed": 1
+      },
+      "엘리": {
+        "target": 44,
+        "changed": 24
+      },
+      "아히": {
+        "target": 24,
+        "changed": 10
+      },
+      "기타": {
+        "target": 23,
+        "changed": 23
+      }
+    },
+    "targetTotal": 92,
+    "changedTotal": 58,
+    "forbiddenCalqueFinal": 0,
+    "kept14FromRound9": [
+      {
+        "id": "H39",
+        "name": "아비마엘",
+        "round9": "",
+        "now": "",
+        "reason": "외래어(Mael) 어근 불명 → 공란 유지"
+      },
+      {
+        "id": "H42",
+        "name": "아비노암",
+        "round9": "기쁨, 즐거움",
+        "now": "나의 아버지는 기쁨이시다",
+        "reason": "5차 미변환 → 6차「나의 아버지는 기쁨이시다」"
+      },
+      {
+        "id": "H85",
+        "name": "아브라함",
+        "round9": "많은 무리의 아버지",
+        "now": "많은 무리의 아버지",
+        "reason": "아브라함 관용「많은 무리의 아버지」유지"
+      },
+      {
+        "id": "H137",
+        "name": "아도니베섹",
+        "round9": "주인의 번개",
+        "now": "주인의 번개",
+        "reason": "아도니-(주) 합성, 5·6차 아버지/형제 문장형 범위 밖"
+      },
+      {
+        "id": "H139",
+        "name": "아도니세덱",
+        "round9": "공의의 주",
+        "now": "공의의 주",
+        "reason": "아도니-(주) 합성, 5·6차 아버지/형제 문장형 범위 밖"
+      },
+      {
+        "id": "H140",
+        "name": "아도니감",
+        "round9": "일어남의 주",
+        "now": "일어남의 주",
+        "reason": "아도니-(주) 합성, 5·6차 아버지/형제 문장형 범위 밖"
+      },
+      {
+        "id": "H141",
+        "name": "아도니람",
+        "round9": "높음의 주",
+        "now": "높음의 주",
+        "reason": "아도니-(주) 합성, 5·6차 아버지/형제 문장형 범위 밖"
+      },
+      {
+        "id": "H256",
+        "name": "아합",
+        "round9": "아버지의 형제",
+        "now": "아버지의 형제",
+        "reason": "친족「아버지의 형제」유지"
+      },
+      {
+        "id": "H279",
+        "name": "아히암",
+        "round9": "형제의 어머니",
+        "now": "어머니의 형제",
+        "reason": "친족 → 6차「어머니의 형제」"
+      },
+      {
+        "id": "H282",
+        "name": "아히훗",
+        "round9": "형제의 위엄",
+        "now": "나의 형제는 유명하시다",
+        "reason": "5차 미변환 아히- → 6차 문장형"
+      },
+      {
+        "id": "H284",
+        "name": "아히훗",
+        "round9": "형제의 수수께끼를 내다",
+        "now": "나의 형제는 신비롭다",
+        "reason": "5차 미변환 아히- → 6차 문장형"
+      },
+      {
+        "id": "H293",
+        "name": "아히노암",
+        "round9": "기쁨, 즐거움",
+        "now": "나의 형제는 기쁨이다",
+        "reason": "5차 미변환 아히- → 6차 문장형"
+      },
+      {
+        "id": "H300",
+        "name": "아히사할",
+        "round9": "형제·새벽",
+        "now": "나의 형제는 새벽이다",
+        "reason": "5차 미변환 아히- → 6차 문장형"
+      },
+      {
+        "id": "H301",
+        "name": "아히살",
+        "round9": "형제·노래",
+        "now": "나의 형제는 노래하는 이",
+        "reason": "5차 미변환 아히- → 6차 문장형"
+      }
+    ],
+    "tableFile": "public/word-study/_hebrew-notes-round10-eli-ahi-table.json",
+    "samples15": [
+      {
+        "id": "H452",
+        "name": "엘리야",
+        "prefix": "엘리",
+        "source": "or prolonged אֵלִיָּהוּ; from 410 and 3050; God of Jehovah;",
+        "before": "여호와의 하나님",
+        "after": "나의 하나님은 여호와"
+      },
+      {
+        "id": "H477",
+        "name": "엘리사",
+        "prefix": "엘리",
+        "source": "contracted for 474.;",
+        "before": "간구의 하나님",
+        "after": "나의 하나님은 간구"
+      },
+      {
+        "id": "H446",
+        "name": "엘리압",
+        "prefix": "엘리",
+        "source": "from 410 and 1; God of (his) father;",
+        "before": "그의 아버지의 하나님",
+        "after": "나의 하나님은 아버지"
+      },
+      {
+        "id": "H302",
+        "name": "아히도벨",
+        "prefix": "아히",
+        "source": "from 251 and 8602; brother of folly;",
+        "before": "나의 형제는 어리석음과 관련되다",
+        "after": "나의 형제는 어리석음이다"
+      },
+      {
+        "id": "H3100",
+        "name": "요엘",
+        "prefix": "기타",
+        "source": "from 3068 and 410; Jehovah (is his) God;",
+        "before": "여호와는 그의 하나님",
+        "after": "나의 하나님은 여호와"
+      },
+      {
+        "id": "H290",
+        "name": "아히마아스",
+        "prefix": "아히",
+        "source": "from 251 and the equivalent of 4619; brother of anger;",
+        "before": "나의 형제는 노여움과 관련되다",
+        "after": "나의 형제는 노여움과 관련됨"
+      },
+      {
+        "id": "H464",
+        "name": "엘리바스",
+        "prefix": "엘리",
+        "source": "from 410 and 6337; God of gold;",
+        "before": "금의 하나님",
+        "after": "나의 하나님은 금"
+      },
+      {
+        "id": "H461",
+        "name": "엘리에셀",
+        "prefix": "엘리",
+        "source": "from 410 and 5828; God of help;",
+        "before": "도움의 하나님",
+        "after": "나의 하나님은 도움"
+      },
+      {
+        "id": "H471",
+        "name": "엘리야김",
+        "prefix": "엘리",
+        "source": "from 410 and 6965; God of raising;",
+        "before": "일으키시는 하나님",
+        "after": "하나님이 일으키신다"
+      },
+      {
+        "id": "H453",
+        "name": "엘리후",
+        "prefix": "엘리",
+        "source": "or (fully) אֱלִיהוּא; from 410 and 1931; God of him;",
+        "before": "그를의 하나님",
+        "after": "그분은 나의 하나님"
+      },
+      {
+        "id": "H447",
+        "name": "엘리엘",
+        "prefix": "엘리",
+        "source": "from 410 repeated; God of (his) God;",
+        "before": "그의 하나님의 하나님",
+        "after": "하나님은 나의 하나님"
+      },
+      {
+        "id": "H467",
+        "name": "엘리벨렛",
+        "prefix": "엘리",
+        "source": "or (shortened) אֱלְפֶּלֶט; from 410 and 6405; God of deliverance;",
+        "before": "구출의 하나님",
+        "after": "나의 하나님은 구원"
+      },
+      {
+        "id": "H293",
+        "name": "아히노암",
+        "prefix": "아히",
+        "source": "from 251 and 5278; brother of pleasantness;",
+        "before": "기쁨, 즐거움",
+        "after": "나의 형제는 기쁨이다"
+      },
+      {
+        "id": "H458",
+        "name": "엘리멜렉",
+        "prefix": "엘리",
+        "source": "from 410 and 4428; God of (the) king;",
+        "before": "왕의 하나님",
+        "after": "나의 하나님은 왕"
+      },
+      {
+        "id": "H469",
+        "name": "엘리사반",
+        "prefix": "엘리",
+        "source": "or (shortened) אֶלְצָפָן; from 410 and 6845; God of treasure;",
+        "before": "보배의 하나님",
+        "after": "나의 하나님은 보배"
+      }
+    ]
+  },
+  "2_identity": {
+    "noIdFile": "public/word-study/_hebrew-notes-round10-noid-by-count.json",
+    "sortedListed": 1010,
+    "countOTge10": 275,
+    "templateBefore": 379,
+    "templateAfter": 0,
+    "filled": 519,
+    "remain": 491,
+    "remainDist": {
+      "0": 0,
+      "1-9": 491,
+      "10+": 0
+    }
+  },
+  "3_nameForm": {
+    "daConverted": 66,
+    "mismatch": 63,
+    "H38": {
+      "defKo": "아비얌은 유다 왕 르호보암의 아들이에요(왕상 14:31). 이름 뜻은 확실하지 않아요. 아비야(H29)의 다른 표기로 보기도 해요. 처음 나오는 곳: 왕상 14:31.",
+      "etymKo": "H38은 H1 「아버지」·H3220 「바다」를 함께 가리키는 합성 표기로도 읽히나, 아비야(H29)의 다른 표기로 보기도 해요.",
+      "usageKo": "",
+      "noteSrc": "reviewed",
+      "nameMeaning": ""
+    },
+    "H3389nm": "평화의 기초",
+    "H3478nm": "하나님과 겨루어 이김"
+  },
+  "4_particles": {
+    "before": 2719,
+    "fixed": 2719,
+    "after": 0,
+    "note": "」로/으로 + H번호(2·4·5·9=는/가/를/와, 그 외=은/이/을/과)"
+  },
+  "fulltexts": {
+    "H452": {
+      "defKo": "엘리야는 아합 시대에 활동한 예언자예요(왕상 17장). 이름 뜻은 「나의 하나님은 여호와」예요. 처음 나오는 곳: 왕상 17:1.",
+      "etymKo": "H452는 H410 「하나님」·H3050 「여호와」를 함께 가리키는 합성 이름이에요.",
+      "usageKo": "",
+      "nameMeaning": "나의 하나님은 여호와",
+      "noteSrc": "reviewed"
+    },
+    "H175": {
+      "defKo": "아론은 모세의 형이며 첫 대제사장으로 세워져요(출 4장; 28장). 이름 뜻은 확실하지 않아요. 처음 나오는 곳: 출 4:14.",
+      "etymKo": "",
+      "usageKo": "",
+      "noteSrc": "reviewed"
+    },
+    "H4714": {
+      "defKo": "애굽은 이스라엘이 머물렀던 나라예요(창 12장; 출 1장). 이름 뜻은 「포위」예요. 처음 나오는 곳: 창 10:6.",
+      "etymKo": "H4714는 H4693 「곤경」과 연결된 표기예요.",
+      "usageKo": "",
+      "noteSrc": "reviewed",
+      "nameMeaning": "포위"
+    },
+    "H3389": {
+      "defKo": "예루살렘은 다윗이 도읍으로 삼은 성이에요(삼하 5장). 이름 뜻은 「평화의 기초」예요. 처음 나오는 곳: 수 10:1.",
+      "etymKo": "H3389는 H3384 「(기초를) 놓다」·H7999 「온전하다, 평화롭다」를 함께 가리키는 합성 이름이에요.",
+      "usageKo": "",
+      "nameMeaning": "평화의 기초",
+      "noteSrc": "reviewed"
+    },
+    "H3478": {
+      "defKo": "이스라엘은 야곱에게 주신 이름이며, 그 자손 백성과 나라를 가리켜요(창 32:28). 이름 뜻은 「하나님과 겨루어 이김」이에요. 창 32:28에서는 「겨루어 이기었음」으로 그 이름을 설명해요. 처음 나오는 곳: 창 32:28.",
+      "etymKo": "H3478은 H8280 「겨루어 이기다」·H410 「하나님」을 함께 가리키는 합성 이름이에요.",
+      "usageKo": "",
+      "noteSrc": "reviewed",
+      "nameMeaning": "하나님과 겨루어 이김"
+    },
+    "H38": {
+      "defKo": "아비얌은 유다 왕 르호보암의 아들이에요(왕상 14:31). 이름 뜻은 확실하지 않아요. 아비야(H29)의 다른 표기로 보기도 해요. 처음 나오는 곳: 왕상 14:31.",
+      "etymKo": "H38은 H1 「아버지」·H3220 「바다」를 함께 가리키는 합성 표기로도 읽히나, 아비야(H29)의 다른 표기로 보기도 해요.",
+      "usageKo": "",
+      "noteSrc": "reviewed",
+      "nameMeaning": ""
+    },
+    "H29": {
+      "defKo": "아비야는 사무엘의 아들이에요(삼상 8:2). 이름 뜻은 「여호와는 나의 아버지」예요. 처음 나오는 곳: 삼상 8:2.",
+      "etymKo": "H29는 H1 「아버지」·H3050 「여호와」를 함께 가리키는 합성 이름이에요.",
+      "usageKo": "",
+      "noteSrc": "auto",
+      "nameMeaning": "여호와는 나의 아버지"
+    }
+  }
+}
