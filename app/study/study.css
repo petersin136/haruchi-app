@@ -275,6 +275,24 @@ button.study-loc-trigger {
   }
 }
 
+/* 양면 연속 장: 장 사이 2줄 간격 */
+.study-ch-cont {
+  clear: both;
+}
+.study-ch-cont-gap {
+  display: block;
+  clear: both;
+  height: calc(var(--study-lh) * 2);
+  width: 100%;
+  pointer-events: none;
+}
+.study-ch-cont-anchor {
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 .study-para {
   margin: 0.6em 0 0;
   padding: 0;
@@ -538,10 +556,12 @@ html:has(.study-root) body::-webkit-scrollbar,
 .study-vnum {
   position: relative;
   z-index: 6;
-  font-size: 1em;
+  /* 본문보다 약 2pt 작게.
+     baseline에서 아주 조금만 올려 한글 글자 윗선에 맞춤(위첨자·줄 밖 돌출 금지). */
+  font-size: calc(1em - 2px);
   font-weight: 600;
-  line-height: inherit;
-  vertical-align: baseline;
+  line-height: 1;
+  vertical-align: 0.12em;
   color: #9e1b1b;
   margin: 0;
   padding: 0;

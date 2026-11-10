@@ -223,6 +223,30 @@ async function loadLayerChunk(
   const cached = chunkCache.get(k);
   if (cached) return cached;
   const p = (async () => {
+    // 어린이: bible-kids-v2 교정본 우선
+    if (layer === "kids") {
+      const v2res = await fetch(`/bible-kids-v2/${book}.json`, {
+        cache: "default",
+      });
+      if (v2res.ok) {
+        const v2 = (await v2res.json()) as {
+          bookKo?: string;
+          chapters?: { chapter: number; verses: { n: number; t: string }[] }[];
+        };
+        const chapter = v2.chapters?.find((c) => c.chapter === ch);
+        if (chapter?.verses?.length) {
+          const bookKo = v2.bookKo || book;
+          const verses: Record<string, TextLayer> = {};
+          for (const v of chapter.verses) {
+            verses[`${bookKo} ${ch}:${v.n}`] = {
+              type: "text",
+              content: String(v.t || ""),
+            };
+          }
+          return { chapter: ch, layer, verses } as LayerChunk;
+        }
+      }
+    }
     const url = buildId
       ? `/bible-study/chunks/${book}/${ch}/${layer}.json?v=${encodeURIComponent(buildId)}`
       : `/bible-study/chunks/${book}/${ch}/${layer}.json`;

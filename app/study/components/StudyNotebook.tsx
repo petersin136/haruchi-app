@@ -15,7 +15,10 @@ import {
   type ReactNode,
 } from "react";
 import { createPortal, flushSync } from "react-dom";
-import { loadBookData, loadKoreanChapter } from "../../bible-reading/bibleData";
+import {
+  loadBookData,
+  loadReaderChapter,
+} from "../../bible-reading/bibleData";
 import type { BookId } from "../../bible-reading/books";
 import { BOOK_ORDER, BOOKS, isOldTestament } from "../../bible-reading/books";
 import ChapterEndSentinel from "../../bible-reading/components/ChapterEndSentinel";
@@ -127,7 +130,26 @@ type Props = {
   onMoveChapter?: (chapter: number) => void;
   /** 스프레드: 책 마지막 장 다음 → 다음 책 */
   onGoNextBook?: () => void;
+  /**
+   * 스프레드 연속 채움에서 화면에 보이는 장이 바뀔 때(URL·톱바 동기화).
+   * 흐름 재시작(onMoveChapter)과 분리 — 호출해도 본문 창을 리마운트하지 말 것.
+   */
+  onActiveChapterChange?: (chapter: number) => void;
+  /**
+   * 본문 레이어. 기본 개역한글.
+   * kids = bible-kids-v2, web/kjv = 영어 청크. 원어 공부(단어카드)는 krv 전용.
+   */
+  textLayer?: "krv" | "kids" | "web" | "kjv";
 };
+
+type ContPack = {
+  chapter: number;
+  title: string;
+  verses: { n: number; t: string }[];
+};
+
+/** 양면 빈쪽 메우기용으로 한 흐름에 이어서 붙일 최대 뒤 장 수 */
+const SPREAD_CONT_MAX = 24;
 
 /** PC(≥960) 에서는 .brp-reader 가 스크롤 컨테이너 */
 function scrollRootOf(body: HTMLElement | null): HTMLElement | Window {
@@ -268,8 +290,11 @@ function StudyNotebook({
   endSentinelNonce = 0,
   onMoveChapter,
   onGoNextBook,
+  onActiveChapterChange,
+  textLayer = "krv",
 }: Props) {
   const isOtBook = isOldTestament(bookId);
+  const wsLayerOk = textLayer === "krv";
   const bookMeta = BOOKS[bookId];
   const total = bookMeta.totalChapters;
   const [spreadOn, setSpreadOn] = useState(false);
@@ -290,16 +315,16 @@ function StudyNotebook({
   /** 3D 잎이 떠 있는 동안만 4쪽을 마운트. 각도는 ref로만 갱신 */
   const [flip, setFlip] = useState<{ dir: 1 | -1; auto: boolean } | null>(null);
   const [pageW, setPageW] = useState(480);
-  const [nextPack, setNextPack] = useState<{
-    chapter: number;
-    title: string;
-    verses: { n: number; t: string }[];
-  } | null>(null);
-  const [prevPack, setPrevPack] = useState<{
-    chapter: number;
-    title: string;
-    verses: { n: number; t: string }[];
-  } | null>(null);
+  const [nextPack, setNextPack] = useState<ContPack | null>(null);
+  const [prevPack, setPrevPack] = useState<ContPack | null>(null);
+  /** 양면: 현재 장 뒤에 같은 흐름으로 이어 붙인 장들(빈 오른쪽 쪽 방지) */
+  const [contPacks, setContPacks] = useState<ContPack[]>([]);
+  /** 이어서 불러올 뒤 장 개수(측정 후 홀수 쪽이면 +1) */
+  const [contWant, setContWant] = useState(0);
+  const contPacksRef = useRef<ContPack[]>([]);
+  contPacksRef.current = contPacks;
+  /** measureSpread 가 반영한 contPacks.length — 측정 전 연속 장 폭주 방지 */
+  const measuredContLenRef = useRef(0);
   const [prevPageCount, setPrevPageCount] = useState(0);
   const [versePick, setVersePick] = useState<number[] | null>(null);
   const [spreadHint, setSpreadHint] = useState(false);
@@ -595,11 +620,14 @@ function StudyNotebook({
     setError(null);
     setToolbar(null);
     setEditingMarkId(null);
-    loadKoreanChapter(bookId, chapter)
+    setContPacks([]);
+    setContWant(0);
+    measuredContLenRef.current = 0;
+    loadReaderChapter(bookId, chapter, textLayer)
       .then((ch) => {
         if (cancelled) return;
         setTitle(ch.title ?? "");
-        setVerses(ch.verses.krv ?? []);
+        setVerses(ch.verses ?? []);
       })
       .catch((e: unknown) => {
         if (cancelled) return;
@@ -608,7 +636,7 @@ function StudyNotebook({
     return () => {
       cancelled = true;
     };
-  }, [bookId, chapter]);
+  }, [bookId, chapter, textLayer]);
 
   useEffect(() => {
     setData(loadChapterStudy(bookId, chapter));
@@ -616,6 +644,69 @@ function StudyNotebook({
     setBubble(null);
     setWsOpen(false);
   }, [bookId, chapter]);
+
+  // 양면: 빈 오른쪽을 메울 만큼 다음 장들을 같은 흐름에 이어 붙임
+  useEffect(() => {
+    if (!spreadOn) {
+      setContPacks([]);
+      setContWant(0);
+      return;
+    }
+    if (!verses || contWant <= 0) {
+      if (contWant <= 0) setContPacks([]);
+      return;
+    }
+    let cancel = false;
+    const want = contWant;
+    (async () => {
+      const packs: ContPack[] = [];
+      for (let c = chapter + 1; c <= Math.min(total, chapter + want); c++) {
+        try {
+          const ch = await loadReaderChapter(bookId, c, textLayer);
+          if (cancel) return;
+          packs.push({
+            chapter: c,
+            title: ch.title ?? "",
+            verses: ch.verses ?? [],
+          });
+        } catch {
+          break;
+        }
+      }
+      if (!cancel) setContPacks(packs);
+    })();
+    return () => {
+      cancel = true;
+    };
+  }, [spreadOn, verses, contWant, chapter, bookId, total, textLayer]);
+
+  // 측정 결과 쪽 수가 홀수면 다음 장을 더 붙여 오른쪽을 채움
+  useLayoutEffect(() => {
+    if (!spreadOn || !verses || flip) return;
+    if (pageCount < 1) return;
+    if (pageCount % 2 === 0) return;
+    const expect = Math.min(contWant, Math.max(0, total - chapter));
+    // 요청분 로딩 중
+    if (contPacks.length < expect) return;
+    // 방금 붙인 장이 아직 쪽 수에 안 들어갔으면 대기(폭주 방지)
+    if (measuredContLenRef.current !== contPacks.length) return;
+    const last =
+      contPacks.length > 0
+        ? contPacks[contPacks.length - 1]!.chapter
+        : chapter;
+    if (last >= total) return;
+    if (contPacks.length >= SPREAD_CONT_MAX) return;
+    setContWant(contPacks.length + 1);
+  }, [
+    spreadOn,
+    verses,
+    flip,
+    pageCount,
+    contPacks,
+    chapter,
+    total,
+    contWant,
+  ]);
 
   useEffect(() => {
     let stale = false;
@@ -2219,41 +2310,51 @@ function StudyNotebook({
     if (spreadCount > 0 && spreadIndex < spreadCount - 1 && !flip) return;
     let cancel = false;
     setNextChTitle("");
-    loadKoreanChapter(bookId, chapter + 1)
+    loadReaderChapter(bookId, chapter + 1, textLayer)
       .then((ch) => {
         if (cancel) return;
         setNextChTitle(ch.title ?? "");
         setNextPack({
           chapter: chapter + 1,
           title: ch.title ?? "",
-          verses: ch.verses.krv ?? [],
+          verses: ch.verses ?? [],
         });
       })
       .catch(() => {});
-    void loadChapterWordStudy(bookId, chapter + 1).catch(() => {});
+    if (wsLayerOk) void loadChapterWordStudy(bookId, chapter + 1).catch(() => {});
     return () => {
       cancel = true;
     };
-  }, [spreadOn, spreadIndex, spreadCount, chapter, bookId, total, flip]);
+  }, [
+    spreadOn,
+    spreadIndex,
+    spreadCount,
+    chapter,
+    bookId,
+    total,
+    flip,
+    textLayer,
+    wsLayerOk,
+  ]);
 
   useEffect(() => {
     if (!spreadOn || chapter <= 1) return;
     if (spreadIndex > 0 && flip?.dir !== -1) return;
     let cancel = false;
-    loadKoreanChapter(bookId, chapter - 1)
+    loadReaderChapter(bookId, chapter - 1, textLayer)
       .then((ch) => {
         if (cancel) return;
         setPrevPack({
           chapter: chapter - 1,
           title: ch.title ?? "",
-          verses: ch.verses.krv ?? [],
+          verses: ch.verses ?? [],
         });
       })
       .catch(() => {});
     return () => {
       cancel = true;
     };
-  }, [spreadOn, spreadIndex, chapter, bookId, flip]);
+  }, [spreadOn, spreadIndex, chapter, bookId, flip, textLayer]);
 
   useEffect(() => {
     document.documentElement.dataset.studyWsOpen = wsOpen ? "1" : "";
@@ -2417,6 +2518,7 @@ function StudyNotebook({
       }
     }
     const spreads = Math.max(1, Math.ceil(pages / 2));
+    measuredContLenRef.current = contPacksRef.current.length;
     setPageCount(pages);
     setSpreadCount(spreads);
     setSpreadStride(g.spreadStride);
@@ -2528,15 +2630,56 @@ function StudyNotebook({
     data.marks.length,
     paraMap,
     headingMap,
+    contPacks,
     measureSpread,
   ]);
+
+  const lastContChapter = () => {
+    const packs = contPacksRef.current;
+    return packs.length > 0 ? packs[packs.length - 1]!.chapter : chapter;
+  };
 
   const spreadBlocked = (dir: 1 | -1) => {
     if (dir < 0) return spreadIndexRef.current <= 0 && chapter <= 1;
     return (
-      spreadIndexRef.current >= spreadCountRef.current - 1 && chapter >= total
+      spreadIndexRef.current >= spreadCountRef.current - 1 &&
+      lastContChapter() >= total
     );
   };
+
+  // 양면: 현재 펼침에 보이는 장 → 톱바/URL (흐름 리마운트 없음)
+  useEffect(() => {
+    if (!spreadOn || !onActiveChapterChange) return;
+    const flow = spreadFlowRef.current;
+    if (!flow) return;
+    const gPad = STUDY_SPREAD_PAD_OUTER;
+    const stride = spreadStride > 0 ? spreadStride / 2 : pageW;
+    if (!(stride > 0)) return;
+    const flowLeft = flow.getBoundingClientRect().left;
+    const rightCol = spreadIndex * 2 + 1;
+    let active = chapter;
+    flow.querySelectorAll<HTMLElement>("[data-cont-ch]").forEach((el) => {
+      const ch = Number(el.dataset.contCh);
+      if (!Number.isFinite(ch)) return;
+      const r = el.getBoundingClientRect();
+      if (r.width < 1 && r.height < 1) return;
+      const col = Math.max(
+        0,
+        Math.floor((r.left - flowLeft - gPad + 1) / stride),
+      );
+      if (col <= rightCol) active = ch;
+    });
+    onActiveChapterChange(active);
+  }, [
+    spreadOn,
+    spreadIndex,
+    pageCount,
+    contPacks,
+    chapter,
+    spreadStride,
+    pageW,
+    onActiveChapterChange,
+  ]);
 
   const reducedMotion = () =>
     typeof window !== "undefined" &&
@@ -2656,11 +2799,12 @@ function StudyNotebook({
     if (!commit || !dir || spreadBlocked(dir)) return;
     clearSelection();
     if (dir > 0 && spreadIndexRef.current >= spreadCountRef.current - 1) {
-      if (chapter < total) {
+      const last = lastContChapter();
+      if (last < total) {
         delete document.documentElement.dataset.studySpreadEnd;
-        if (onMoveChapter) onMoveChapter(chapter + 1);
+        if (onMoveChapter) onMoveChapter(last + 1);
         else if (!embedded)
-          window.location.assign(`/study/${bookId}/${chapter + 1}`);
+          window.location.assign(`/study/${bookId}/${last + 1}`);
       }
       return;
     }
@@ -3756,6 +3900,7 @@ function StudyNotebook({
   }, [wsOpen, wsLast, spreadOn, spreadIndex, chromeOn]);
 
   const openWordStudyFromLast = () => {
+    if (!wsLayerOk) return;
     const last = wsLast ?? loadWsLast();
     if (!last) return;
     const verseToks = tokensInVerse(wsTokens, last.ref);
@@ -3783,6 +3928,10 @@ function StudyNotebook({
   };
 
   const openWordStudyFromToolbar = () => {
+    if (!wsLayerOk) {
+      debugLog("[원어] krv 외 레이어 — 원어 공부 비활성");
+      return;
+    }
     const now = Date.now();
     if (now - wsActionAtRef.current < 300) {
       debugLog("[원어] 중복 실행 방지");
@@ -4279,6 +4428,7 @@ function StudyNotebook({
           >
             {span.n}
           </span>
+          <span className="study-v-gap"> </span>
           {firstLen > 0 ? (
             <span className="study-verse-text" data-v={span.n} data-v-off="0">
               {renderSegNodes(firstSegs, `${span.n}-a`)}
@@ -4341,6 +4491,76 @@ function StudyNotebook({
           </Fragment>
         ))
       : paraGroups[0]?.verses.map((span, i) => renderVerse(span, i === 0));
+
+  /** 양면 연속: 현재 장 뒤에 2줄 띄우고 다음 장 본문 */
+  const renderContPacks = () =>
+    contPacks.map((pack) => {
+      const heads = headingsForChapter(headingMap, pack.chapter);
+      const starts = mergeParagraphStarts(
+        paragraphStartsForChapter(paraMap, pack.chapter),
+        [...heads.keys()],
+        pack.verses[0]?.n ?? 1,
+      );
+      const groups = groupByStarts(pack.verses, starts);
+      const dig = String(pack.chapter).length;
+      return (
+        <div
+          key={`cont-${pack.chapter}`}
+          className="study-ch-cont"
+          data-cont-ch={pack.chapter}
+        >
+          <div className="study-ch-cont-gap" aria-hidden />
+          <span
+            className={`study-drop${dig >= 3 ? " is-wide" : ""}`}
+            data-cont-ch={pack.chapter}
+            aria-hidden
+          >
+            <span className="study-drop-num">{pack.chapter}</span>
+          </span>
+          {pack.title ? (
+            <span className="study-chapter-title" data-chapter-anchor="">
+              <span className="study-chapter-title-ink">{pack.title}</span>
+            </span>
+          ) : (
+            <span data-chapter-anchor="" className="study-ch-cont-anchor" />
+          )}
+          {starts && starts.length > 0
+            ? groups.map((g) => (
+                <Fragment key={`cp-${pack.chapter}-${g.startN}`}>
+                  {renderSubhead(g.startN, heads)}
+                  <p className="study-para">
+                    {g.items.map((v, i) => (
+                      <span
+                        key={v.n}
+                        className="study-verse"
+                        data-verse-num={v.n}
+                        data-cont-ch={pack.chapter}
+                      >
+                        {i > 0 ? <span className="study-v-gap"> </span> : null}
+                        <span className="study-vnum">{v.n}</span>
+                        <span className="study-v-gap"> </span>
+                        {v.t}
+                      </span>
+                    ))}
+                  </p>
+                </Fragment>
+              ))
+            : pack.verses.map((v, i) => (
+                <span
+                  key={v.n}
+                  className="study-verse"
+                  data-verse-num={v.n}
+                  data-cont-ch={pack.chapter}
+                >
+                  {i > 0 ? <span className="study-v-gap"> </span> : null}
+                  <span className="study-vnum">{v.n}</span>
+                  <span className="study-v-gap"> </span>
+                  {v.t}
+                </span>
+              ))}
+        </div>
+      );
+    });
 
   const renderMarkNotes = (): ReactNode => {
     const rows = Object.entries(notePos).map(([nid, pos]) => {
@@ -4529,6 +4749,7 @@ function StudyNotebook({
                     <span key={v.n} className="study-verse" data-verse-num={v.n}>
                       {i > 0 ? <span className="study-v-gap"> </span> : null}
                       <span className="study-vnum">{v.n}</span>
+                      <span className="study-v-gap"> </span>
                       {v.t}
                     </span>
                   ))}
@@ -4540,6 +4761,7 @@ function StudyNotebook({
             <span key={v.n} className="study-verse" data-verse-num={v.n}>
               {i > 0 ? <span className="study-v-gap"> </span> : null}
               <span className="study-vnum">{v.n}</span>
+              <span className="study-v-gap"> </span>
               {v.t}
             </span>
           ));
@@ -4565,6 +4787,7 @@ function StudyNotebook({
       <span
         className={`study-drop${digLen >= 3 ? " is-wide" : ""}`}
         data-digits={digLen}
+        data-cont-ch={chapter}
         data-chapter-anchor={title ? undefined : ""}
         aria-hidden="true"
       >
@@ -4593,6 +4816,7 @@ function StudyNotebook({
         }}
       >
         {renderCurrentParas()}
+        {renderContPacks()}
       </div>
     </article>
   );
@@ -4607,29 +4831,18 @@ function StudyNotebook({
     } else if (pageIndex >= pageCount) {
       const over = pageIndex - pageCount;
       const oddBlank = pageCount % 2 === 1;
+      const lastInFlow =
+        contPacks.length > 0
+          ? contPacks[contPacks.length - 1]!.chapter
+          : chapter;
       if (oddBlank && over === 0) {
-        inner =
-          chapter < total ? (
-            <button
-              type="button"
-              className="study-spread-next-ch"
-              onClick={(e) => {
-                e.stopPropagation();
-                if (performance.now() - spreadEdgeTapRef.current < 450) return;
-                goSpreadBy(1);
-              }}
-            >
-              <span className="study-spread-next-kicker">다음 장</span>
-              <span className="study-spread-next-num">{chapter + 1}</span>
-              {nextChTitle ? (
-                <span className="study-spread-next-title">{nextChTitle}</span>
-              ) : null}
-              <span className="study-spread-next-cta">넘겨서 계속 읽기 →</span>
-            </button>
-          ) : (
-            <div className="study-page-blank" />
-          );
-      } else if (nextPack) {
+        // 연속 채움 중·가능하면 빈 카드 대신 잠깐 공백(다음 장 붙이면 메워짐)
+        if (lastInFlow < total) {
+          inner = <div className="study-page-blank" />;
+        } else {
+          inner = <div className="study-page-blank" />;
+        }
+      } else if (nextPack && lastInFlow >= total) {
         inner = renderPlainFlow(nextPack, oddBlank ? over - 1 : over);
       }
     } else if (prevPack && prevPageCount > 0) {
@@ -4661,7 +4874,8 @@ function StudyNotebook({
     Math.max(0, pageCount - Math.min(pageCount, rightPageNum)),
   );
   const blankRight = rightPageNum > pageCount;
-  const showNextCard = spreadOn && blankRight && chapter < total;
+  const showNextCard =
+    spreadOn && blankRight && lastContChapter() >= total && chapter < total;
   const spreadProgress =
     pageCount > 0 ? Math.min(pageCount, rightPageNum) / pageCount : 0;
   const liftOp = spreadDragging

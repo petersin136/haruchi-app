@@ -63,10 +63,6 @@ const LayeredBibleViewer = nextDynamic(
   () => import("../bible-study/components/LayeredBibleViewer"),
   { ssr: false, loading: DynamicViewLoading },
 );
-const EnglishOnlyView = nextDynamic(
-  () => import("../bible-study/components/EnglishOnlyView"),
-  { ssr: false, loading: DynamicViewLoading },
-);
 const SearchOverlay = nextDynamic(() => import("./SearchOverlay"), {
   ssr: false,
 });
@@ -364,9 +360,6 @@ type Chapter = {
 
 const readingScopeOf = (mode: ViewMode): ReadingScope =>
   mode === "english" ? "web" : mode === "kjv" ? "kjv" : "reader";
-
-const isEnglishReadingMode = (mode: ViewMode) =>
-  mode === "english" || mode === "kjv";
 
 const CURRENT_BOOK_KEY = "bible_current_book";
 // 양쪽 드롭다운(구약/신약)이 서로의 마지막 선택을 잊지 않도록, 각 testament 별
@@ -794,14 +787,7 @@ export default function BibleReadingPage() {
     }
     return chapter.verses[effectiveTranslation] ?? EMPTY_VERSES;
   }, [chapter, effectiveTranslation]);
-  // 영어(WEB/KJV) 화면의 절. EnglishOnlyView 가 청크를 받은 뒤 올려준다.
-  // 0/N 진도는 이 배열을 쓰고, 개역한글 verses 는 그대로 둔다.
-  const [englishVerses, setEnglishVerses] = useState<Verse[]>([]);
-  const handleEnglishVerses = useCallback((next: { n: number; t: string }[]) => {
-    setEnglishVerses(next);
-  }, []);
-  const englishReading = isEnglishReadingMode(viewMode);
-  const activeVerses = englishReading ? englishVerses : verses;
+  const activeVerses = verses;
   // greek 모드에서만 쓰는 보조 맵 — 절 번호 → 토큰 배열 / 절 전체 풀이.
   const greekTokensMap = useMemo(() => {
     if (effectiveTranslation !== "greek") return null;
@@ -1991,17 +1977,16 @@ export default function BibleReadingPage() {
             chapter={chapterNumber}
           />
         ) : viewMode === "english" || viewMode === "kjv" ? (
-          <EnglishOnlyView
-            bookId={
-              STUDY_BOOK_IDS.includes(bookId)
-                ? (bookId as StudyBookId)
-                : "romans"
-            }
+          <ContinuousKrvReader
+            bookId={bookId}
             chapter={chapterNumber}
-            translation={viewMode === "kjv" ? "kjv" : "web"}
-            onVerses={handleEnglishVerses}
-            onEndVisibilityChange={handleEndVisibilityChange}
-            endSentinelNonce={endSentinelNonce}
+            textLayer={viewMode === "kjv" ? "kjv" : "web"}
+            flashVerse={flashVerse}
+            alignNonce={krvAlignNonce}
+            bookConfirmed={bookConfirmed}
+            onActiveChapterChange={onKrvActiveChapterChange}
+            onChapterComplete={onKrvChapterComplete}
+            onGoNextBook={pickBookFromPanel}
           />
         ) : (
         <>
@@ -2014,20 +1999,15 @@ export default function BibleReadingPage() {
         {bookConfirmed &&
           !hasFilledText &&
           !bookDataLoading &&
-          // 히브리어 모드는 HebrewChapterV2 가 자체 본문을 렌더하므로 page 측의
-          // verses=[] 가 비어있다고 해서 "본문 준비 안 됨" 안내를 띄우면 잘못된
-          // 신호가 된다. 같은 이유로 헬라어 v2 도 해당 신약 책에서는 별도로
-          // 컴포넌트가 본문을 그린다(아래 분기 참고).
-          !(effectiveTranslation === "hebrew" && hasHebrew) && (
+          // 히브리어·헬라어 v2·개역/어린이(ContinuousKrvReader)는 자체 로드.
+          !(effectiveTranslation === "hebrew" && hasHebrew) &&
+          effectiveTranslation !== "krv" &&
+          effectiveTranslation !== "kids" && (
             <p className="brp-reader-empty">
               이 장의{" "}
-              {translation === "krv"
-                ? "개역한글"
-                : translation === "kids"
-                  ? "어린이 쉬운"
-                  : translation === "hebrew"
-                    ? "히브리어"
-                    : "헬라어"}{" "}
+              {translation === "hebrew"
+                ? "히브리어"
+                : "헬라어"}{" "}
               본문이 아직 준비되지 않았어요. 다른 번역을 선택해 보세요.
             </p>
           )}
@@ -2150,10 +2130,14 @@ export default function BibleReadingPage() {
               bookId === "jude" ||
               bookId === "revelation")
           ) &&
-          (effectiveTranslation === "krv" ? (
+          (effectiveTranslation === "krv" ||
+          effectiveTranslation === "kids" ? (
             <ContinuousKrvReader
               bookId={bookId}
               chapter={chapterNumber}
+              textLayer={
+                effectiveTranslation === "kids" ? "kids" : "krv"
+              }
               flashVerse={flashVerse}
               alignNonce={krvAlignNonce}
               bookConfirmed={bookConfirmed}

@@ -9,7 +9,7 @@ import {
   useState,
 } from "react";
 import { BOOKS, BOOK_ORDER, type BookId } from "../books";
-import { loadKoreanChapter } from "../bibleData";
+import { loadReaderChapter, type ReaderTextLayer } from "../bibleData";
 import { isChapterDone } from "../../lib/readLog";
 import StudyNotebook from "../../study/components/StudyNotebook";
 import { subscribeStudySpread } from "../../study/lib/studySpread";
@@ -31,6 +31,8 @@ type Props = {
   onChapterComplete: (bookId: BookId, chapter: number) => void;
   /** 다음 책으로 (1장) */
   onGoNextBook: (bookId: BookId) => void;
+  /** 개역/어린이/영어 — StudyNotebook 본문 레이어 */
+  textLayer?: ReaderTextLayer;
 };
 
 /** 보이는 본문 상단(고정 톱바 하단). 측정 실패 시 태블릿 52px. */
@@ -80,6 +82,7 @@ export default function ContinuousKrvReader({
   onActiveChapterChange,
   onChapterComplete,
   onGoNextBook,
+  textLayer = "krv",
 }: Props) {
   const total = BOOKS[bookId].totalChapters;
   const wrapRef = useRef<HTMLDivElement | null>(null);
@@ -88,6 +91,12 @@ export default function ContinuousKrvReader({
   const [spreadOn, setSpreadOn] = useState(false);
   const prevSpreadRef = useRef(false);
   useEffect(() => subscribeStudySpread(setSpreadOn), []);
+  /**
+   * 양면 연속 채움의 흐름 시작 장.
+   * 톱바 URL 장(chapter)과 분리 — 스크롤·넘김으로 장이 바뀌어도 리마운트하지 않음.
+   * 서랍·검색·URL 점프 때만 chapter 에 맞춤.
+   */
+  const [spreadBase, setSpreadBase] = useState(chapter);
   const lastEmittedRef = useRef(chapter);
   /** 검색·URL·서랍 등 외부 점프 후 해당 장 앵커로 맞출 목표. null 이면 정렬 불필요 */
   const pendingAlignRef = useRef<number | null>(chapter);
@@ -105,8 +114,8 @@ export default function ContinuousKrvReader({
   /** 창 재구성 직후 짧은 동결 — 4↔5 진동 방지 */
   const freezeUntilRef = useRef(0);
 
-  const lo = spreadOn ? chapter : Math.max(1, chapter - 1);
-  const hi = spreadOn ? chapter : Math.min(total, chapter + 1);
+  const lo = spreadOn ? spreadBase : Math.max(1, chapter - 1);
+  const hi = spreadOn ? spreadBase : Math.min(total, chapter + 1);
   const mounted = useMemo(() => {
     const list: number[] = [];
     for (let c = lo; c <= hi; c++) list.push(c);
@@ -131,7 +140,7 @@ export default function ContinuousKrvReader({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hi, total, heightTick, bookId]);
 
-  // 책 바뀌면 높이·완료 게이트 초기화
+  // 책·역본 바뀌면 높이·완료 게이트 초기화
   useEffect(() => {
     heightsRef.current = new Map();
     enteredAtRef.current = new Map();
@@ -142,18 +151,18 @@ export default function ContinuousKrvReader({
     pendingAlignRef.current = chapter;
     prevLoRef.current = Math.max(1, chapter - 1);
     setHeightTick((n) => n + 1);
-    // chapter intentionally only initial for this book switch
+    // chapter intentionally only initial for this book/layer switch
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bookId]);
+  }, [bookId, textLayer]);
 
   // 이전·다음 장 미리 받기 (창 이동 시 높이 0→본문 튀김 완화)
   useEffect(() => {
     for (const n of [chapter - 1, chapter + 1, chapter + 2]) {
       if (n >= 1 && n <= total) {
-        void loadKoreanChapter(bookId, n).catch(() => {});
+        void loadReaderChapter(bookId, n, textLayer).catch(() => {});
       }
     }
-  }, [bookId, chapter, total]);
+  }, [bookId, chapter, total, textLayer]);
 
   // 마운트된 장 높이 캐시 (spacer 용). 스크롤 보정은 lo 변경 useLayoutEffect 만.
   useEffect(() => {
@@ -291,20 +300,33 @@ export default function ContinuousKrvReader({
   useEffect(() => {
     if (chapter === lastEmittedRef.current) return;
     pendingAlignRef.current = chapter;
-  }, [bookId, chapter]);
+    if (spreadOn) setSpreadBase(chapter);
+  }, [bookId, chapter, spreadOn]);
+
+  // 책 바뀌면 양면 흐름 시작점도 맞춤
+  useEffect(() => {
+    setSpreadBase(chapter);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bookId]);
 
   // 같은 장이라도 서랍·검색·첫 진입 nonce → 큰 장 번호를 상단에
   useEffect(() => {
     if (alignNonce <= 0) return;
     pendingAlignRef.current = chapter;
-  }, [alignNonce, chapter]);
+    if (spreadOn) setSpreadBase(chapter);
+  }, [alignNonce, chapter, spreadOn]);
 
-  // 양쪽→이어읽기 전환 시 scrollTop≈0 이면 선택 장−1이 상단에 옴 → 재정렬
+  // 양쪽↔이어읽기 전환
   useEffect(() => {
     const was = prevSpreadRef.current;
     prevSpreadRef.current = spreadOn;
     if (was && !spreadOn) {
       pendingAlignRef.current = chapter;
+    }
+    if (!was && spreadOn) {
+      // 양면 진입: 현재 장부터 연속 채움 시작
+      setSpreadBase(chapter);
+      lastEmittedRef.current = chapter;
     }
   }, [spreadOn, chapter]);
 
@@ -543,9 +565,11 @@ export default function ContinuousKrvReader({
   const goChapter = useCallback(
     (ch: number) => {
       const n = Math.max(1, Math.min(total, ch));
+      lastEmittedRef.current = n;
+      if (spreadOn) setSpreadBase(n);
       onActiveRef.current(n);
     },
-    [total],
+    [total, spreadOn],
   );
 
   return (
@@ -577,12 +601,15 @@ export default function ContinuousKrvReader({
             }
           >
             <StudyNotebook
+              key={`${bookId}-${ch}-${textLayer}`}
               bookId={bookId}
               chapter={ch}
               embedded
+              textLayer={textLayer}
               flashVerse={ch === chapter ? flashVerse : null}
               onEndVisibilityChange={(vis) => handleEndVisibility(ch, vis)}
               onMoveChapter={spreadOn ? goChapter : undefined}
+              onActiveChapterChange={spreadOn ? emitActive : undefined}
               onGoNextBook={
                 spreadOn && nextBook
                   ? () => onGoNextBook(nextBook)

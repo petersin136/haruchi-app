@@ -178,6 +178,85 @@ export function loadKoreanIndex(bookId: BookId): Promise<KoreanChapterIndex> {
   return p;
 }
 
+/** 읽기 화면 본문 레이어 — StudyNotebook / ContinuousKrvReader 공통 */
+export type ReaderTextLayer = "krv" | "kids" | "web" | "kjv";
+
+type KidsBookFile = {
+  bookId: string;
+  chapters: { chapter: number; verses: Verse[] }[];
+};
+
+const kidsBookCache = new Map<BookId, Promise<KidsBookFile | null>>();
+
+/** public/bible-kids-v2/<bookId>.json — 에이전트5 교정본. 없으면 null */
+export function loadKidsBook(bookId: BookId): Promise<KidsBookFile | null> {
+  const cached = kidsBookCache.get(bookId);
+  if (cached) return cached;
+  const p = (async () => {
+    const res = await fetch(`/bible-kids-v2/${bookId}.json`, {
+      cache: "default",
+    });
+    if (!res.ok) return null;
+    return (await res.json()) as KidsBookFile;
+  })();
+  kidsBookCache.set(bookId, p);
+  p.catch(() => kidsBookCache.delete(bookId));
+  return p;
+}
+
+export async function loadKidsChapterVerses(
+  bookId: BookId,
+  chapter: number,
+): Promise<Verse[]> {
+  const book = await loadKidsBook(bookId);
+  const ch = book?.chapters?.find((c) => c.chapter === chapter);
+  return (ch?.verses ?? []).map((v) => ({ n: v.n, t: String(v.t || "") }));
+}
+
+type EnglishChunkFile = {
+  chapter: number;
+  verses: Record<string, { type?: string; content?: string } | string>;
+};
+
+const englishChapterCache = new Map<string, Promise<Verse[]>>();
+
+/** WEB/KJV 청크 → {n,t}[] */
+export function loadEnglishChapterVerses(
+  bookId: BookId,
+  chapter: number,
+  which: "web" | "kjv",
+): Promise<Verse[]> {
+  const file = which === "kjv" ? "kjv" : "english";
+  const key = `${bookId}:${chapter}:${file}`;
+  const cached = englishChapterCache.get(key);
+  if (cached) return cached;
+  const p = (async () => {
+    const res = await fetch(
+      `/bible-study/chunks/${bookId}/${chapter}/${file}.json`,
+      { cache: "default" },
+    );
+    if (!res.ok) return [];
+    const raw = (await res.json()) as EnglishChunkFile;
+    const out: Verse[] = [];
+    for (const [k, val] of Object.entries(raw.verses || {})) {
+      // 키: "로마서 1:1" 또는 "1" 등 — 끝의 :N 또는 숫자만
+      const m = String(k).match(/:(\d+)\s*$/) || String(k).match(/^(\d+)$/);
+      const n = m ? Number(m[1]) : NaN;
+      if (!Number.isFinite(n)) continue;
+      const t =
+        typeof val === "string"
+          ? val
+          : String((val as { content?: string })?.content ?? "");
+      if (t) out.push({ n, t });
+    }
+    out.sort((a, b) => a.n - b.n);
+    return out;
+  })();
+  englishChapterCache.set(key, p);
+  p.catch(() => englishChapterCache.delete(key));
+  return p;
+}
+
 export function loadKoreanChapter(
   bookId: BookId,
   chapter: number,
@@ -207,7 +286,11 @@ export function loadKoreanChapter(
     const verses: Chapter["verses"] = {
       krv: raw.verses?.krv ?? [],
     };
-    if (raw.verses?.kids && raw.verses.kids.length > 0) {
+    // 어린이: bible-kids-v2 우선, 없으면 청크/기존 kids
+    const kidsV2 = await loadKidsChapterVerses(bookId, chapter);
+    if (kidsV2.length > 0) {
+      verses.kids = kidsV2;
+    } else if (raw.verses?.kids && raw.verses.kids.length > 0) {
       verses.kids = raw.verses.kids;
     }
     if (raw.verses?.greekKr && raw.verses.greekKr.length > 0) {
@@ -222,4 +305,31 @@ export function loadKoreanChapter(
   koreanChapterCache.set(key, p);
   p.catch(() => koreanChapterCache.delete(key));
   return p;
+}
+
+/** StudyNotebook용 — 레이어별 절 + 제목 */
+export async function loadReaderChapter(
+  bookId: BookId,
+  chapter: number,
+  layer: ReaderTextLayer = "krv",
+): Promise<{ chapter: number; title: string; verses: Verse[] }> {
+  const base = await loadKoreanChapter(bookId, chapter);
+  const title = base.title ?? "";
+  if (layer === "kids") {
+    return {
+      chapter,
+      title,
+      verses: base.verses.kids?.length
+        ? base.verses.kids
+        : await loadKidsChapterVerses(bookId, chapter),
+    };
+  }
+  if (layer === "web" || layer === "kjv") {
+    return {
+      chapter,
+      title,
+      verses: await loadEnglishChapterVerses(bookId, chapter, layer),
+    };
+  }
+  return { chapter, title, verses: base.verses.krv ?? [] };
 }
