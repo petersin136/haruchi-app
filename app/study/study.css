@@ -205,16 +205,14 @@
 }
 
 /* 첫 줄 = 장 번호 윗줄.
-   잘림 원인(실측): overflow:hidden + text-box-trim 으로
-   제목 상자 높이(~12px) < ink(~23px), 받침 4.48px 잘림.
-   inline-block 으로 float 옆(drop margin-right 간격)에 붙인다. */
+   overflow:hidden BFC → float(.study-drop) 옆에 폭이 줄어 붙음.
+   2줄 clamp + lh 1.5 + padding-bottom 0.15em.
+   text-box-trim 금지(렘15에서 trim+clip 로 받침 +4.48px 잘림). */
 .study-chapter-title {
-  display: inline-block;
-  vertical-align: top;
-  overflow: visible;
+  display: block;
+  overflow: hidden;
   margin: 0;
   padding-bottom: 0.15em;
-  max-width: calc(100% - 4em);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
@@ -224,13 +222,14 @@
 }
 
 .study-chapter-title-ink {
-  display: block;
-  max-width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  margin: 0;
   padding-bottom: 0.15em;
   line-height: 1.5;
+  white-space: normal;
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
