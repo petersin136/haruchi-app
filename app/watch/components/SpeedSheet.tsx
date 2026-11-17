@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SPEED_OPTIONS, type SpeedOption } from "./watchStorage";
+import { clampSpeed, type SpeedOption } from "./watchStorage";
 import "./remote.css";
 
-const POP_SPEEDS = [1, 1.25, 1.5, 1.75, 2] as const;
+const POP_SPEEDS = [1, 1.5, 2, 2.5, 3] as const;
 
 type Props = {
   open: boolean;
@@ -55,9 +55,7 @@ export default function SpeedSheet({ open, speed, speedOn, onSelect, onToggle, o
       onClose();
       return;
     }
-    if ((SPEED_OPTIONS as readonly number[]).includes(v)) {
-      onSelect(v as SpeedOption);
-    }
+    onSelect(clampSpeed(v));
     onClose();
   };
 

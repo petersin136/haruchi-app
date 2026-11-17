@@ -41,6 +41,7 @@ import {
 } from "./verseTimes";
 import {
   DEFAULT_SPEED,
+  clampSpeed,
   clearPosition,
   formatTime,
   loadPosition,
@@ -542,11 +543,11 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
 
   const selectSpeed = useCallback(
     (v: SpeedOption) => {
-      setSpeed(v);
-      saveSpeed(bookId, v);
-      showToast(v === 1 ? "보통 속도 1.0×" : `${v}× 배속`);
+      const next = clampSpeed(v);
+      setSpeed(next);
+      saveSpeed(bookId, next);
     },
-    [bookId, showToast],
+    [bookId],
   );
 
   const seekInChapter = useCallback(

@@ -1908,10 +1908,10 @@
     overflow: hidden;
   }
 
-  /* 영상은 위·전체 너비 고정, 리모컨은 바로 아래 */
+  /* 영상 위·가로 100%, 리모컨이 아래 남는 높이 채움 */
   .wt-primary {
     min-height: 0;
-    overflow: auto;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1946,8 +1946,10 @@
   }
 
   .wt-primary .wt-rc-wrap {
-    flex: 0 0 auto;
+    flex: 1 1 auto;
     min-height: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .wt-aside {

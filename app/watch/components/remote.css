@@ -378,26 +378,26 @@
   cursor: default;
 }
 
-/* 배속 팝오버 — 리모컨 위 */
-.wt-rc-speed-pop {
-  display: flex;
-  flex-wrap: wrap;
+/* 배속 레버 — 리모컨 안 하단. 모바일은 열었을 때만 */
+.wt-rc-speed-dock {
+  display: none;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 6px;
-  padding: 10px 12px;
-  border-radius: 16px;
-  background: var(--wt-rc-cream);
-  border: 1px solid var(--wt-rc-line);
-  box-shadow: 0 8px 24px rgba(60, 40, 20, 0.14);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  animation: wt-rc-pop-in 200ms var(--wt-rc-ease);
+  align-items: center;
+  gap: 10px;
+  margin: 2px -4px 0;
+  padding: 10px 8px 4px;
+  border-top: 1px solid var(--wt-rc-line);
+  animation: wt-rc-pop-in 180ms var(--wt-rc-ease);
+}
+.wt-rc-speed-dock.is-open {
+  display: flex;
 }
 
 @keyframes wt-rc-pop-in {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(4px);
   }
   to {
     opacity: 1;
@@ -405,30 +405,95 @@
   }
 }
 
-.wt-rc-speed-opt {
-  min-width: 48px;
+.wt-rc-speed-nudge {
+  flex: none;
+  width: 36px;
   height: 36px;
-  padding: 0 10px;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--wt-rc-muted);
-  font-size: 13px;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
+  padding: 0;
+  border: 1px solid var(--line-strong, #d2d2cc);
+  border-radius: 50%;
+  background: var(--surface, #fff);
+  color: var(--wt-rc-ink);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
   cursor: pointer;
-  transition: transform 200ms var(--wt-rc-ease), background 200ms var(--wt-rc-ease),
-    color 200ms var(--wt-rc-ease);
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 160ms var(--wt-rc-ease), background 160ms var(--wt-rc-ease),
+    opacity 160ms var(--wt-rc-ease);
 }
-.wt-rc-speed-opt.is-selected {
-  background: var(--wt-rc-accent);
-  color: #fff;
-}
-.wt-rc-speed-opt:active {
+.wt-rc-speed-nudge:active:not(:disabled) {
   transform: scale(0.94);
 }
+.wt-rc-speed-nudge:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
 
-/* PC: 하단 fixed 해제 → 영상 바로 아래, 콘텐츠 높이로 단단하게 */
+.wt-rc-speed-lever {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 280px;
+  height: 28px;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+.wt-rc-speed-lever:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.wt-rc-speed-lever::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--wt-rc-line);
+}
+.wt-rc-speed-lever::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  margin-top: -9px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--wt-rc-accent);
+  box-shadow: 0 1px 4px rgba(22, 22, 26, 0.22);
+  cursor: grab;
+}
+.wt-rc-speed-lever:active::-webkit-slider-thumb {
+  cursor: grabbing;
+}
+.wt-rc-speed-lever::-moz-range-track {
+  height: 4px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--wt-rc-line);
+}
+.wt-rc-speed-lever::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--wt-rc-accent);
+  box-shadow: 0 1px 4px rgba(22, 22, 26, 0.22);
+  cursor: grab;
+}
+
+.wt-rc-speed-value {
+  flex: none;
+  min-width: 3.2em;
+  color: var(--wt-rc-ink);
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  text-align: right;
+}
+
+/* PC: 영상 바로 아래, 남는 높이 채우고 배속은 하단에 상시 */
 @media (min-width: 1024px) {
   .wt-page {
     --wt-remote-h: 0px;
@@ -446,12 +511,15 @@
     z-index: 2;
     width: 100%;
     margin: 0;
-    flex: none;
+    flex: 1 1 auto;
+    min-height: 0;
     display: flex;
     flex-direction: column;
   }
 
   .wt-rc {
+    flex: 1 1 auto;
+    min-height: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -468,6 +536,7 @@
   }
 
   .wt-rc-picks {
+    flex: none;
     gap: 8px;
   }
 
@@ -499,6 +568,7 @@
   }
 
   .wt-rc-scrub {
+    flex: none;
     height: 28px;
     margin: 0;
   }
@@ -531,10 +601,47 @@
     font-size: 10px;
   }
 
-  .wt-rc-speed-pop {
-    background: var(--surface, #fff);
-    border-color: var(--line, #e6e6e2);
-    box-shadow: var(--shadow-2, 0 6px 24px rgba(22, 22, 26, 0.08));
+  /* 아래 빈 칸을 배속 레버가 채움 — 위로 튀지 않음 */
+  .wt-rc-speed-dock,
+  .wt-rc-speed-dock.is-open {
+    display: flex;
+    flex: none;
+    margin-top: auto;
+    gap: 12px;
+    padding: 14px 8px 6px;
+    border-top: 1px solid var(--line, #e6e6e2);
+    animation: none;
+  }
+
+  .wt-rc-speed-nudge {
+    width: 40px;
+    height: 40px;
+  }
+
+  .wt-rc-speed-lever {
+    max-width: 360px;
+    height: 32px;
+  }
+
+  .wt-rc-speed-lever::-webkit-slider-runnable-track {
+    height: 5px;
+  }
+  .wt-rc-speed-lever::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+    margin-top: -10px;
+  }
+  .wt-rc-speed-lever::-moz-range-track {
+    height: 5px;
+  }
+  .wt-rc-speed-lever::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+  }
+
+  .wt-rc-speed-value {
+    min-width: 3.5em;
+    font-size: 15px;
   }
 }
 
@@ -545,8 +652,8 @@
   .wt-rc-play,
   .wt-rc-rate,
   .wt-rc-chip,
-  .wt-rc-speed-opt,
-  .wt-rc-speed-pop {
+  .wt-rc-speed-nudge,
+  .wt-rc-speed-dock {
     transition: none !important;
     animation: none !important;
   }

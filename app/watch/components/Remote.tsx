@@ -7,7 +7,14 @@ import {
   useState,
   type PointerEvent as ReactPointerEvent,
 } from "react";
-import { SPEED_OPTIONS, type SpeedOption } from "./watchStorage";
+import {
+  SPEED_MAX,
+  SPEED_MIN,
+  SPEED_STEP,
+  clampSpeed,
+  nudgeSpeed,
+  type SpeedOption,
+} from "./watchStorage";
 import "./remote.css";
 
 type Props = {
@@ -364,27 +371,50 @@ export default function Remote({
             </div>
           </div>
 
-          {/* 모바일: .is-open 일 때만 / PC: 아래 여백에 상시 */}
+          {/* 모바일: .is-open 일 때만 / PC: 아래 여백에 상시 — 0.5 단위 레버 */}
           <div
             className={`wt-rc-speed-dock${speedOpen ? " is-open" : ""}`}
-            role="listbox"
-            aria-label="배속 선택"
+            role="group"
+            aria-label="배속 조절"
           >
-            {SPEED_OPTIONS.map((v) => (
-              <button
-                key={v}
-                type="button"
-                role="option"
-                aria-selected={speed === v}
-                className={`wt-rc-speed-opt${speed === v ? " is-selected" : ""}`}
-                onClick={() => {
-                  onSelectSpeed(v);
-                  setSpeedOpen(false);
-                }}
-              >
-                {formatSpeed(v)}
-              </button>
-            ))}
+            <button
+              type="button"
+              className="wt-rc-speed-nudge"
+              disabled={disabled || speed <= SPEED_MIN}
+              aria-label="배속 0.5 낮추기"
+              onClick={() => onSelectSpeed(nudgeSpeed(speed, -1))}
+            >
+              −
+            </button>
+            <input
+              type="range"
+              className="wt-rc-speed-lever"
+              min={SPEED_MIN}
+              max={SPEED_MAX}
+              step={SPEED_STEP}
+              value={speed}
+              disabled={disabled}
+              aria-valuemin={SPEED_MIN}
+              aria-valuemax={SPEED_MAX}
+              aria-valuenow={speed}
+              aria-valuetext={formatSpeed(speed)}
+              aria-label="배속"
+              onChange={(e) =>
+                onSelectSpeed(clampSpeed(Number(e.target.value)))
+              }
+            />
+            <button
+              type="button"
+              className="wt-rc-speed-nudge"
+              disabled={disabled || speed >= SPEED_MAX}
+              aria-label="배속 0.5 높이기"
+              onClick={() => onSelectSpeed(nudgeSpeed(speed, 1))}
+            >
+              +
+            </button>
+            <span className="wt-rc-speed-value" aria-hidden>
+              {formatSpeed(speed)}
+            </span>
           </div>
         </div>
       </div>
