@@ -23,8 +23,7 @@ html.brp-reading body {
   overflow-x: hidden;
 }
 
-.brp-mobile-topbar,
-.brp-chrome-pill {
+.brp-mobile-topbar {
   display: none;
 }
 
@@ -76,72 +75,6 @@ html.brp-reading body {
   align-items: center;
   gap: 2px;
   min-width: 0;
-}
-
-.brp-mobile-topbar-book {
-  grid-column: 2;
-  justify-self: end;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  max-width: min(58vw, 300px);
-  min-height: 36px;
-  height: auto;
-  padding: 6px 12px 6px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.55);
-  box-shadow:
-    0 1px 2px rgba(40, 28, 16, 0.04),
-    inset 0 0 0 1px rgba(40, 28, 16, 0.06);
-  line-height: 1.35;
-  white-space: nowrap;
-  overflow: visible;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.brp-mobile-topbar-book:hover {
-  background: rgba(255, 255, 255, 0.78);
-}
-
-.brp-mobile-topbar-book-label {
-  display: flex;
-  align-items: center;
-  min-width: 0;
-  overflow: visible;
-  line-height: 1.35;
-  text-box-trim: none;
-}
-
-.brp-mobile-topbar-book-clip {
-  display: block;
-  min-width: 0;
-  max-width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  line-height: 1.35;
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
-  box-sizing: content-box;
-}
-
-.brp-mobile-topbar-book-name {
-  font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: #2a2420;
-}
-
-.brp-mobile-topbar-book-ch {
-  font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
-  font-weight: 600;
-  color: #9e1b1b;
-}
-
-.brp-mobile-topbar-chevron {
-  flex-shrink: 0;
-  opacity: 0.4;
-  color: #6b6258;
 }
 
 .brp-mobile-topbar-end {
@@ -323,8 +256,7 @@ html.brp-reading body {
 
   /* ── 상단 바 (표시) — 글래스, 보더 없음 ───────────── */
   .brp-mobile-topbar {
-    display: grid;
-    grid-template-columns: 1fr auto;
+    display: flex;
     align-items: center;
     gap: 8px;
     position: fixed;
@@ -352,57 +284,6 @@ html.brp-reading body {
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
-  }
-
-  .brp-chrome-pill {
-    position: fixed;
-    top: calc(8px + env(safe-area-inset-top));
-    left: 50%;
-    z-index: 51;
-    display: inline-flex;
-    align-items: baseline;
-    gap: 6px;
-    margin: 0;
-    padding: 6px 12px 6px 14px;
-    border: none;
-    border-radius: 999px;
-    background: rgba(251, 247, 238, 0.88);
-    box-shadow:
-      0 1px 2px rgba(40, 28, 16, 0.06),
-      inset 0 0 0 1px rgba(40, 28, 16, 0.06);
-    color: #2a2420;
-    font: inherit;
-    line-height: 1.2;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    transform: translate(-50%, -12px);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 220ms ease, opacity 220ms ease;
-  }
-
-  html[data-brp-chrome="0"] .brp-chrome-pill {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate(-50%, 0);
-  }
-
-  .brp-chrome-pill-name {
-    font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
-  }
-
-  .brp-chrome-pill-ch {
-    font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
-    font-size: 13px;
-    font-weight: 600;
-    color: #9e1b1b;
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
   }
 
   /* ── 본문 카드 제거 + 가로 inset 단일화(reader 14px만) ───────────── */
@@ -558,6 +439,7 @@ html.brp-reading body {
   pointer-events: auto;
   cursor: pointer;
   transition: none;
+  touch-action: none;
 }
 
 .brp-bcd.is-animating-open .brp-bcd-backdrop {
@@ -602,7 +484,13 @@ html.brp-reading body {
     -1px 0 0 rgba(40, 28, 16, 0.04);
   transform: translateX(calc((1 - var(--brp-drawer-p, 0)) * 100%));
   transition: none;
-  touch-action: pan-y;
+  touch-action: pan-x pan-y;
+}
+
+.brp-bcd.is-dragging .brp-bcd-panel,
+.brp-bcd.is-dragging .brp-bcd-books,
+.brp-bcd.is-dragging .brp-bcd-chapters {
+  touch-action: none;
 }
 
 @supports (padding: env(safe-area-inset-top)) {
@@ -945,35 +833,9 @@ html.brp-reading body {
     box-shadow: none !important;
   }
 
-  .brp-mobile-topbar-book {
-    grid-column: auto;
-    justify-self: end;
-    align-items: center;
-    max-width: none;
-    font-size: 16px;
-    line-height: 1.35;
-    gap: 6px;
-    padding: 8px 14px 8px 16px;
-    overflow: visible;
-  }
-
   .brp-mobile-topbar-start {
     justify-self: start;
     gap: 4px;
-  }
-
-  .brp-mobile-topbar-book-label {
-    line-height: 1.35;
-    overflow: visible;
-    text-box-trim: none;
-  }
-
-  .brp-mobile-topbar-book-clip {
-    overflow: hidden;
-    line-height: 1.35;
-    padding-top: 0.1em;
-    padding-bottom: 0.1em;
-    box-sizing: content-box;
   }
 
   .brp-mobile-topbar-end {

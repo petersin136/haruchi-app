@@ -15,6 +15,7 @@ import {
   useRef,
   useState,
   type CSSProperties,
+  type PointerEvent as ReactPointerEvent,
 } from "react";
 import {
   BOOKS,
@@ -106,6 +107,17 @@ function BookChapterDrawer({
   const animClearTimerRef = useRef<number | null>(null);
   /** 서랍 위에서 가로로 밀어 넣은 뒤 click 오발 방지 */
   const panelDraggedRef = useRef(false);
+  const closeCapElRef = useRef<HTMLElement | null>(null);
+  const closeDragRef = useRef<{
+    id: number;
+    x: number;
+    y: number;
+    startProgress: number;
+    locked: "h" | "v" | null;
+    lastX: number;
+    lastT: number;
+    velocity: number;
+  } | null>(null);
 
   progressRef.current = progress;
   openRef.current = open;
@@ -236,6 +248,10 @@ function BookChapterDrawer({
       setDragging(false);
       if (next) onOpen();
       else onClose();
+      // 이번 제스처의 click 은 막고, 다음 탭은 다시 받게
+      requestAnimationFrame(() => {
+        panelDraggedRef.current = false;
+      });
     },
     [onClose, onOpen],
   );
@@ -252,20 +268,131 @@ function BookChapterDrawer({
       window.removeEventListener("haruchi:study-selecting", onStudySelecting);
   }, [snapTo]);
 
-  /** 열기: 아무 곳 왼쪽 스와이프 / 닫기: 서랍·화면을 오른쪽으로 밀어 넣기 */
+  const releaseCloseCapture = (id: number) => {
+    const el = closeCapElRef.current;
+    closeCapElRef.current = null;
+    if (!el) return;
+    try {
+      if (el.hasPointerCapture(id)) el.releasePointerCapture(id);
+    } catch {
+      /* ignore */
+    }
+  };
+
+  const finishCloseDrag = useCallback(
+    (id: number, snap: boolean) => {
+      const d = closeDragRef.current;
+      closeDragRef.current = null;
+      releaseCloseCapture(id);
+      if (!snap || !d || d.locked !== "h") {
+        if (d?.locked !== "h") panelDraggedRef.current = false;
+        return;
+      }
+      const p = progressRef.current;
+      const flick = Math.abs(d.velocity) >= FLICK_PX_PER_MS;
+      snapTo(flick ? d.velocity < 0 : p >= 0.42);
+    },
+    [snapTo],
+  );
+
+  const onClosePointerDown = (e: ReactPointerEvent<HTMLElement>) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    if (disabledRef.current) return;
+    const ds = document.documentElement.dataset;
+    if (
+      ds.studySelecting === "1" ||
+      ds.studyWsOpen === "1" ||
+      ds.studyNoteOpen === "1"
+    ) {
+      return;
+    }
+    if (e.target instanceof Element && e.target.closest("input, textarea, select")) {
+      return;
+    }
+    const host = e.currentTarget;
+    closeDragRef.current = {
+      id: e.pointerId,
+      x: e.clientX,
+      y: e.clientY,
+      startProgress: Math.max(progressRef.current, openRef.current ? 1 : 0),
+      locked: null,
+      lastX: e.clientX,
+      lastT: performance.now(),
+      velocity: 0,
+    };
+    closeCapElRef.current = host;
+    try {
+      host.setPointerCapture(e.pointerId);
+    } catch {
+      /* ignore */
+    }
+  };
+
+  const onClosePointerMove = (e: ReactPointerEvent<HTMLElement>) => {
+    const d = closeDragRef.current;
+    if (!d || d.id !== e.pointerId) return;
+    const now = performance.now();
+    const dt = now - d.lastT;
+    if (dt > 0) {
+      d.velocity = (e.clientX - d.lastX) / dt;
+      d.lastX = e.clientX;
+      d.lastT = now;
+    }
+    const dx = e.clientX - d.x;
+    const dy = e.clientY - d.y;
+    if (!d.locked) {
+      if (Math.abs(dx) < LOCK_PX && Math.abs(dy) < LOCK_PX) return;
+      const horiz = dx > LOCK_PX && dx > Math.abs(dy) * 0.75;
+      const vert = Math.abs(dy) > LOCK_PX && Math.abs(dy) > dx * 1.15;
+      if (vert && !horiz) {
+        d.locked = "v";
+        releaseCloseCapture(e.pointerId);
+        closeDragRef.current = null;
+        return;
+      }
+      if (!horiz) {
+        d.locked = "v";
+        releaseCloseCapture(e.pointerId);
+        closeDragRef.current = null;
+        return;
+      }
+      d.locked = "h";
+      panelDraggedRef.current = true;
+      draggingRef.current = true;
+      setDragging(true);
+      setAnimPhase(null);
+      clearTimers();
+      setMounted(true);
+    }
+    if (d.locked !== "h") return;
+    if (e.cancelable) e.preventDefault();
+    const next = Math.min(
+      1,
+      Math.max(0, d.startProgress - dx / drawerWidthPx()),
+    );
+    progressRef.current = next;
+    setProgress(next);
+  };
+
+  const onClosePointerUp = (e: ReactPointerEvent<HTMLElement>) => {
+    const d = closeDragRef.current;
+    if (!d || d.id !== e.pointerId) return;
+    finishCloseDrag(e.pointerId, true);
+  };
+
+  /** 열기만 문서에서. 닫기는 패널·백드롭이 pointer-events:auto 위에서 캡처 */
   useEffect(() => {
     if (disabled) return;
 
     let startX = 0;
     let startY = 0;
-    let startProgress = 0;
-    let mode: "open" | "close" | null = null;
     let locked: "h" | "v" | null = null;
     let tracking = false;
     let lastX = 0;
     let lastT = 0;
     let velocity = 0;
     let pointerId: number | null = null;
+    let capEl: HTMLElement | null = null;
 
     const blocked = () => {
       const ds = document.documentElement.dataset;
@@ -278,49 +405,23 @@ function BookChapterDrawer({
 
     const openish = () => openRef.current || progressRef.current > 0.02;
 
-    const begin = (clientX: number, clientY: number) => {
-      if (disabledRef.current || blocked()) return false;
-      const sel = window.getSelection();
-      if (sel && !sel.isCollapsed && (sel.toString()?.length ?? 0) > 0) {
-        return false;
-      }
-      // 닫힌 상태: 터치폰·좁은 화면에서만 열기. PC 마우스 드래그는 제외.
-      if (!openish() && !canStartOpenGesture()) return false;
-      startX = clientX;
-      startY = clientY;
-      lastX = clientX;
-      lastT = performance.now();
-      velocity = 0;
-      startProgress = openish()
-        ? Math.max(progressRef.current, openRef.current ? 1 : 0)
-        : progressRef.current;
-      mode = openish() ? "close" : "open";
-      locked = null;
-      tracking = true;
-      return true;
-    };
-
     const ignoreTarget = (target: EventTarget | null) => {
       if (!(target instanceof Element)) return true;
-      if (target.closest(".brp-bcd")) {
-        return !!target.closest("input, textarea, select");
-      }
       return !!target.closest(
-        "[data-no-drawer-swipe], input, textarea, select, .brp-mobile-topbar, .brp-header, .study-toolbar, .study-ws-root, .study-sel-handle, .study-mark-note-input",
+        ".brp-bcd, [data-no-drawer-swipe], input, textarea, select, .brp-mobile-topbar, .brp-header, .study-toolbar, .study-ws-root, .study-sel-handle, .study-mark-note-input",
       );
     };
 
     const captureOn = (el: EventTarget | null, id: number) => {
       const node =
-        el instanceof Element
-          ? (el.closest(".brp-bcd") as HTMLElement | null) ??
-            (el as HTMLElement)
-          : document.documentElement;
+        el instanceof Element ? (el as HTMLElement) : document.documentElement;
+      capEl = node;
       try {
         node.setPointerCapture(id);
       } catch {
         try {
           document.documentElement.setPointerCapture(id);
+          capEl = document.documentElement;
         } catch {
           /* ignore */
         }
@@ -328,16 +429,11 @@ function BookChapterDrawer({
     };
 
     const releaseCap = (id: number) => {
-      const el = document.querySelector(".brp-bcd");
+      const el = capEl;
+      capEl = null;
+      if (!el) return;
       try {
-        if (el && el.hasPointerCapture(id)) el.releasePointerCapture(id);
-      } catch {
-        /* ignore */
-      }
-      try {
-        if (document.documentElement.hasPointerCapture(id)) {
-          document.documentElement.releasePointerCapture(id);
-        }
+        if (el.hasPointerCapture(id)) el.releasePointerCapture(id);
       } catch {
         /* ignore */
       }
@@ -362,29 +458,24 @@ function BookChapterDrawer({
 
       const dx = clientX - startX;
       const dy = clientY - startY;
-      const closing = mode === "close";
 
       if (!locked) {
         if (Math.abs(dx) < LOCK_PX && Math.abs(dy) < LOCK_PX) return;
-        const horiz = closing
-          ? dx > LOCK_PX && dx > Math.abs(dy) * 0.75
-          : Math.abs(dx) > Math.abs(dy) * 1.35 && Math.abs(dx) > LOCK_PX;
-        const vert = closing
-          ? Math.abs(dy) > LOCK_PX && Math.abs(dy) > dx * 1.15
-          : Math.abs(dy) >= Math.abs(dx) * 0.85;
+        const horiz =
+          Math.abs(dx) > Math.abs(dy) * 1.35 && Math.abs(dx) > LOCK_PX;
+        const vert = Math.abs(dy) >= Math.abs(dx) * 0.85;
         if (vert && !horiz) {
           locked = "v";
           tracking = false;
           return;
         }
         if (horiz) {
-          if (!closing && dx > 0) {
+          if (dx > 0) {
             locked = "v";
             tracking = false;
             return;
           }
           locked = "h";
-          if (closing) panelDraggedRef.current = true;
           draggingRef.current = true;
           setDragging(true);
           setAnimPhase(null);
@@ -398,13 +489,7 @@ function BookChapterDrawer({
       }
       if (locked !== "h") return;
 
-      const w = drawerWidthPx();
-      let next = startProgress;
-      if (mode === "open") {
-        next = Math.min(1, Math.max(0, -dx / w));
-      } else {
-        next = Math.min(1, Math.max(0, startProgress - dx / w));
-      }
+      const next = Math.min(1, Math.max(0, -dx / drawerWidthPx()));
       progressRef.current = next;
       setProgress(next);
     };
@@ -416,30 +501,35 @@ function BookChapterDrawer({
       const wasH = locked === "h";
       locked = null;
       pointerId = null;
-      if (!wasH) {
-        panelDraggedRef.current = false;
-        return;
-      }
+      if (!wasH) return;
       const p = progressRef.current;
       const flick = Math.abs(velocity) >= FLICK_PX_PER_MS;
-      const nextOpen = flick ? velocity < 0 : p >= 0.42;
-      snapTo(nextOpen);
+      snapTo(flick ? velocity < 0 : p >= 0.42);
     };
 
     const onPointerDown = (e: PointerEvent) => {
       if (e.pointerType === "mouse" && e.button !== 0) return;
+      if (openish()) return;
+      if (disabledRef.current || blocked()) return;
       if (ignoreTarget(e.target)) return;
-      if (!begin(e.clientX, e.clientY)) return;
+      const sel = window.getSelection();
+      if (sel && !sel.isCollapsed && (sel.toString()?.length ?? 0) > 0) return;
+      if (!canStartOpenGesture()) return;
+      startX = e.clientX;
+      startY = e.clientY;
+      lastX = e.clientX;
+      lastT = performance.now();
+      velocity = 0;
+      locked = null;
+      tracking = true;
       pointerId = e.pointerId;
-      // 열린 서랍 위 버튼이 pointercancel 을 내면 손 추적이 끊김 → 바로 캡처
-      if (mode === "close") captureOn(e.target, e.pointerId);
     };
 
     const onPointerMove = (e: PointerEvent) => {
       if (pointerId == null || e.pointerId !== pointerId) return;
       applyMove(e.clientX, e.clientY);
       if (locked === "h") {
-        if (mode === "open") captureOn(e.target, e.pointerId);
+        captureOn(e.target, e.pointerId);
         if (e.cancelable) e.preventDefault();
       }
     };
@@ -522,6 +612,10 @@ function BookChapterDrawer({
         type="button"
         className="brp-bcd-backdrop"
         aria-label="서랍 닫기"
+        onPointerDownCapture={onClosePointerDown}
+        onPointerMove={onClosePointerMove}
+        onPointerUp={onClosePointerUp}
+        onPointerCancel={onClosePointerUp}
         onClick={() => {
           if (panelDraggedRef.current) {
             panelDraggedRef.current = false;
@@ -536,6 +630,10 @@ function BookChapterDrawer({
         role="dialog"
         aria-modal="true"
         aria-label="책·장 선택"
+        onPointerDownCapture={onClosePointerDown}
+        onPointerMove={onClosePointerMove}
+        onPointerUp={onClosePointerUp}
+        onPointerCancel={onClosePointerUp}
       >
         <div className="brp-bcd-col">
           <p className="brp-bcd-col-head">성경</p>

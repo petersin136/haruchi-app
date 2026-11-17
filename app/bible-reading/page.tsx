@@ -1823,13 +1823,9 @@ export default function BibleReadingPage() {
       <MobileTopBar
         bookId={bookId}
         chapterNumber={chapterNumber}
-        bookName={bookMeta.name}
-        chapterLabel={`${chapterNumber}${bookId === "psalms" ? "편" : "장"}`}
-        drawerOpen={drawerOpen}
         modeChoice={currentModeChoice}
         onModeChange={handleModeChange}
         onSearch={openSearch}
-        onOpenDrawer={openDrawer}
       />
       <BookChapterDrawer
         open={drawerOpen}

@@ -411,15 +411,6 @@ function StudyNotebook({
   });
   const versePickRef = useRef<number[] | null>(null);
   versePickRef.current = versePick;
-  const verseDragRef = useRef<{
-    id: number;
-    n: number;
-    x: number;
-    y: number;
-    mode: "pending" | "drag";
-    wasSelected: boolean;
-    base: number[];
-  } | null>(null);
   const noteGuardRef = useRef(0);
   const spreadAnchorVerseRef = useRef<number | null>(null);
   spreadIndexRef.current = spreadIndex;
@@ -1530,6 +1521,38 @@ function StudyNotebook({
     setToolbar((t) => (t?.kind === "selection" ? null : t));
   }, []);
 
+  const applyVersePick = (nums: number[]) => {
+    const unique = [...new Set(nums)]
+      .filter((n) => spans.some((s) => s.n === n))
+      .sort((a, b) => a - b);
+    if (unique.length === 0) {
+      clearSelection();
+      return;
+    }
+    versePickRef.current = unique;
+    setVersePick(unique);
+    const first = spans.find((s) => s.n === unique[0]);
+    const last = spans.find((s) => s.n === unique[unique.length - 1]);
+    if (!first) return;
+    const range = { start: first.start, end: (last ?? first).end };
+    selRef.current = range;
+    setSel(range);
+    const tb = selectionToolbarFor(range);
+    if (tb) setToolbar(tb);
+  };
+
+  const selectVerseAtPoint = (startX: number, startY: number, fromMouse: boolean) => {
+    const off = offsetAtPoint(startX, startY);
+    if (off == null) return false;
+    const n = verseContaining(spans, off);
+    if (!fromMouse && isAndroid()) navigator.vibrate?.(10);
+    suppressClickRef.current = true;
+    setExpandedNoteId(null);
+    applyVersePick([n]);
+    window.getSelection()?.removeAllRanges();
+    return true;
+  };
+
   /** 마우스 mouseup: 브라우저 Range → 기존 offset + 도구막대(선택 상자 위) */
   const applyNativeMouseSelection = useCallback(
     (e?: Event) => {
@@ -1946,7 +1969,7 @@ function StudyNotebook({
           const p = pressRef.current;
           pressRef.current = null;
           if (!p) return;
-          selectStemAtPoint(startX, startY, true);
+          selectVerseAtPoint(startX, startY, true);
         }, LONG_PRESS_MS);
         pressRef.current = {
           timer,
@@ -1979,7 +2002,7 @@ function StudyNotebook({
     if (pressRef.current) window.clearTimeout(pressRef.current.timer);
     const timer = window.setTimeout(() => {
       pressRef.current = null;
-      selectStemAtPoint(startX, startY, false);
+      selectVerseAtPoint(startX, startY, false);
     }, LONG_PRESS_MS);
     pressRef.current = {
       timer,
@@ -2080,6 +2103,10 @@ function StudyNotebook({
           gestureFnsRef.current.updateDragTo(ev.clientX, ev.clientY);
         }
         gestureFnsRef.current.finishDrag();
+        return;
+      }
+      if (suppressClickRef.current) {
+        suppressClickRef.current = false;
         return;
       }
       const pe = e as PointerEvent | undefined;
@@ -4206,99 +4233,13 @@ function StudyNotebook({
     });
 
   /** 절 본문만 data-v — 번호·앞 공백은 오프셋 밖. 번호+첫 글자 nowrap. */
-  const applyVersePick = (nums: number[]) => {
-    const unique = [...new Set(nums)]
-      .filter((n) => spans.some((s) => s.n === n))
-      .sort((a, b) => a - b);
-    if (unique.length === 0) {
-      clearSelection();
-      return;
-    }
-    versePickRef.current = unique;
-    setVersePick(unique);
-    const first = spans.find((s) => s.n === unique[0]);
-    if (!first) return;
-    const range = { start: first.start, end: first.end };
-    selRef.current = range;
-    setSel(range);
-    const tb = selectionToolbarFor(range);
-    if (tb) setToolbar(tb);
-  };
-
-  const verseAtPointer = (x: number, y: number) => {
-    const root = (spreadOn ? spreadVpRef.current : bodyRef.current) ?? document.body;
-    const box = root.getBoundingClientRect();
-    const best = { n: -1, d: Infinity };
-    root.querySelectorAll<HTMLElement>(".study-vnum").forEach((el) => {
-      if (el.closest(".is-covered, .study-spread-measure")) return;
-      const r = el.getBoundingClientRect();
-      if (r.width < 1 || r.height < 1) return;
-      if (r.right < box.left || r.left > box.right || r.bottom < box.top || r.top > box.bottom)
-        return;
-      if (x < r.left - 140 || x > r.right + 320) return;
-      const num = Number(el.textContent);
-      if (!Number.isFinite(num)) return;
-      const d = Math.abs((r.top + r.bottom) / 2 - y);
-      if (d < best.d) {
-        best.n = num;
-        best.d = d;
-      }
-    });
-    return best.d < 100 ? best.n : null;
-  };
-
   const onVerseNumPointerDown = (n: number, e: ReactPointerEvent<HTMLSpanElement>) => {
     e.stopPropagation();
     e.preventDefault();
-    const base = versePickRef.current ?? [];
-    verseDragRef.current = {
-      id: e.pointerId,
-      n,
-      x: e.clientX,
-      y: e.clientY,
-      mode: "pending",
-      wasSelected: base.includes(n),
-      base,
-    };
-    try {
-      e.currentTarget.setPointerCapture(e.pointerId);
-    } catch {
-      /* ignore */
-    }
-  };
-
-  const onVerseNumPointerMove = (e: ReactPointerEvent<HTMLSpanElement>) => {
-    const d = verseDragRef.current;
-    if (!d || d.id !== e.pointerId) return;
-    if (d.mode === "pending" && Math.hypot(e.clientX - d.x, e.clientY - d.y) < 8) return;
-    d.mode = "drag";
-    const hit = verseAtPointer(e.clientX, e.clientY) ?? d.n;
-    const lo = Math.min(d.n, hit);
-    const hi = Math.max(d.n, hit);
-    applyVersePick(spans.filter((s) => s.n >= lo && s.n <= hi).map((s) => s.n));
-    if (spreadOn) return;
-    const sc = scrollRootOf(bodyRef.current);
-    const edge =
-      sc === window
-        ? { top: 0, bottom: window.innerHeight }
-        : (sc as HTMLElement).getBoundingClientRect();
-    if (e.clientY < edge.top + 48) scrollByY(sc, -16);
-    else if (e.clientY > edge.bottom - 48) scrollByY(sc, 16);
-  };
-
-  const onVerseNumPointerUp = (e: ReactPointerEvent<HTMLSpanElement>) => {
-    const d = verseDragRef.current;
-    if (!d || d.id !== e.pointerId) return;
-    verseDragRef.current = null;
-    try {
-      e.currentTarget.releasePointerCapture(e.pointerId);
-    } catch {
-      /* ignore */
-    }
-    if (d.mode === "drag") return;
-    if (d.base.length === 0) applyVersePick([d.n]);
-    else if (d.wasSelected) applyVersePick(d.base.filter((n) => n !== d.n));
-    else applyVersePick([...d.base, d.n]);
+    suppressClickRef.current = true;
+    setExpandedNoteId(null);
+    applyVersePick([n]);
+    window.getSelection()?.removeAllRanges();
   };
 
   const renderVerse = (span: VerseSpan, paraFirst: boolean) => {
@@ -4345,9 +4286,6 @@ function StudyNotebook({
           <span
             className="study-vnum"
             onPointerDown={(e) => onVerseNumPointerDown(span.n, e)}
-            onPointerMove={onVerseNumPointerMove}
-            onPointerUp={onVerseNumPointerUp}
-            onPointerCancel={onVerseNumPointerUp}
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
