@@ -23,7 +23,8 @@ html.brp-reading body {
   overflow-x: hidden;
 }
 
-.brp-mobile-topbar {
+.brp-mobile-topbar,
+.brp-chrome-pill {
   display: none;
 }
 
@@ -286,6 +287,57 @@ html.brp-reading body {
     pointer-events: none;
   }
 
+  .brp-chrome-pill {
+    position: fixed;
+    top: calc(8px + env(safe-area-inset-top));
+    left: 50%;
+    z-index: 51;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    margin: 0;
+    padding: 6px 12px 6px 14px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(251, 247, 238, 0.88);
+    box-shadow:
+      0 1px 2px rgba(40, 28, 16, 0.06),
+      inset 0 0 0 1px rgba(40, 28, 16, 0.06);
+    color: #2a2420;
+    font: inherit;
+    line-height: 1.2;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate(-50%, -12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 220ms ease, opacity 220ms ease;
+  }
+
+  html[data-brp-chrome="0"] .brp-chrome-pill {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+  }
+
+  .brp-chrome-pill-name {
+    font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+  }
+
+  .brp-chrome-pill-ch {
+    font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #9e1b1b;
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+  }
+
   /* ── 본문 카드 제거 + 가로 inset 단일화(reader 14px만) ───────────── */
   .brp-page .brp-side {
     display: contents !important;
@@ -416,10 +468,48 @@ html.brp-reading body {
   /* 서랍이 열려도 본문(성경 텍스트)은 밀리거나 작아지지 않음 — 서랍만 오버레이 */
 }
 
-/* 책·장 손잡이 — 상시 노출 없음. 화면 아무 곳 왼쪽 스와이프로 연다 */
-.brp-bcd-pull,
+/* 책·장 문고리 — PC·모바일 공통 (닫혀 있을 때 오른쪽 가장자리) */
+.brp-bcd-pull {
+  position: fixed;
+  z-index: 72;
+  top: var(--brp-pull-top, calc(50% - 60px));
+  right: 0;
+  left: auto;
+  width: 22px;
+  height: 120px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 14px 0 0 14px;
+  transform: none;
+  cursor: grab;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: auto;
+  background: rgba(255, 252, 247, 0.94);
+  box-shadow:
+    -4px 6px 20px rgba(40, 28, 16, 0.08),
+    inset 0 0 0 1px rgba(40, 28, 16, 0.06);
+}
+
+.brp-bcd-pull:active {
+  cursor: grabbing;
+}
+
+.brp-bcd-pull.is-open {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .brp-bcd-pull-grip {
-  display: none !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 36px;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  background: rgba(120, 100, 80, 0.45);
 }
 
 .brp-bcd {

@@ -2,9 +2,10 @@
 
 /**
  * PeekTree 스타일 책·장 서랍 (상단바 제목 탭 — 모든 폭).
- * - 상시 손잡이 없음. 모바일은 화면 아무 곳에서 왼쪽 스와이프로 연다
+ * - PC: 오른쪽 손잡이(문고리) 탭/드래그로 개폐
+ * - 모바일(≤1279 / coarse): 화면 왼쪽 스와이프로도 열림
  * - translateX + progress(0~1), 드래그 중 손가락 추적 / 놓을 때만 스냅
- * - 플릭(≥0.45px/ms) 시 방향·속도 우선, 아니면 절반 기준
+ * - 책·장 버튼에는 닫기 드래그·pointer capture 금지 (클릭 보장)
  */
 
 import {
@@ -107,6 +108,8 @@ function BookChapterDrawer({
   const animClearTimerRef = useRef<number | null>(null);
   /** 서랍 위에서 가로로 밀어 넣은 뒤 click 오발 방지 */
   const panelDraggedRef = useRef(false);
+  /** 손잡이 드래그 직후 click 오발 방지 */
+  const pullDraggedRef = useRef(false);
   const closeCapElRef = useRef<HTMLElement | null>(null);
   const closeDragRef = useRef<{
     id: number;
@@ -150,6 +153,30 @@ function BookChapterDrawer({
     },
     [bookConfirmed, bookId, chapterNumber],
   );
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const place = () => {
+      const spread = document.querySelector<HTMLElement>(".study-spread.spread");
+      const box = spread?.getBoundingClientRect();
+      const h = 120;
+      const midY =
+        box && box.height > 40
+          ? box.top + box.height / 2
+          : window.innerHeight / 2;
+      document.documentElement.style.setProperty(
+        "--brp-pull-top",
+        `${Math.round(midY - h / 2)}px`,
+      );
+    };
+    place();
+    const raf = requestAnimationFrame(place);
+    window.addEventListener("resize", place);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", place);
+    };
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -306,10 +333,15 @@ function BookChapterDrawer({
     ) {
       return;
     }
-    if (e.target instanceof Element && e.target.closest("input, textarea, select")) {
+    // 책·장 버튼 클릭을 가로채지 않음 (capture+drag 가 PC 클릭을 죽임)
+    if (
+      e.target instanceof Element &&
+      e.target.closest(
+        ".brp-bcd-book, .brp-bcd-chapter, input, textarea, select, a",
+      )
+    ) {
       return;
     }
-    const host = e.currentTarget;
     closeDragRef.current = {
       id: e.pointerId,
       x: e.clientX,
@@ -320,12 +352,8 @@ function BookChapterDrawer({
       lastT: performance.now(),
       velocity: 0,
     };
-    closeCapElRef.current = host;
-    try {
-      host.setPointerCapture(e.pointerId);
-    } catch {
-      /* ignore */
-    }
+    // pointer capture 는 가로 잠금 확정 후에만 (버튼 click 보장)
+    closeCapElRef.current = e.currentTarget;
   };
 
   const onClosePointerMove = (e: ReactPointerEvent<HTMLElement>) => {
@@ -363,6 +391,14 @@ function BookChapterDrawer({
       setAnimPhase(null);
       clearTimers();
       setMounted(true);
+      const host = closeCapElRef.current;
+      if (host) {
+        try {
+          host.setPointerCapture(e.pointerId);
+        } catch {
+          /* ignore */
+        }
+      }
     }
     if (d.locked !== "h") return;
     if (e.cancelable) e.preventDefault();
@@ -393,6 +429,7 @@ function BookChapterDrawer({
     let velocity = 0;
     let pointerId: number | null = null;
     let capEl: HTMLElement | null = null;
+    let fromPull = false;
 
     const blocked = () => {
       const ds = document.documentElement.dataset;
@@ -470,12 +507,14 @@ function BookChapterDrawer({
           return;
         }
         if (horiz) {
-          if (dx > 0) {
+          // 화면 스와이프는 왼쪽(열기)만. 손잡이는 드래그 방향 허용
+          if (!fromPull && dx > 0) {
             locked = "v";
             tracking = false;
             return;
           }
           locked = "h";
+          if (fromPull) pullDraggedRef.current = true;
           draggingRef.current = true;
           setDragging(true);
           setAnimPhase(null);
@@ -511,10 +550,15 @@ function BookChapterDrawer({
       if (e.pointerType === "mouse" && e.button !== 0) return;
       if (openish()) return;
       if (disabledRef.current || blocked()) return;
-      if (ignoreTarget(e.target)) return;
+      const target = e.target;
+      fromPull =
+        target instanceof Element && !!target.closest(".brp-bcd-pull");
+      // 손잡이는 ignore 밖에 두고, 그 외는 기존 ignore
+      if (!fromPull && ignoreTarget(target)) return;
       const sel = window.getSelection();
       if (sel && !sel.isCollapsed && (sel.toString()?.length ?? 0) > 0) return;
-      if (!canStartOpenGesture()) return;
+      // PC는 손잡이만, 모바일/coarse 는 화면 스와이프도
+      if (!fromPull && !canStartOpenGesture()) return;
       startX = e.clientX;
       startY = e.clientY;
       lastX = e.clientX;
@@ -523,6 +567,18 @@ function BookChapterDrawer({
       locked = null;
       tracking = true;
       pointerId = e.pointerId;
+      if (fromPull) {
+        pullDraggedRef.current = false;
+        try {
+          (
+            target instanceof Element
+              ? (target.closest(".brp-bcd-pull") as HTMLElement | null)
+              : null
+          )?.setPointerCapture?.(e.pointerId);
+        } catch {
+          /* ignore */
+        }
+      }
     };
 
     const onPointerMove = (e: PointerEvent) => {
@@ -593,6 +649,24 @@ function BookChapterDrawer({
 
   return (
     <>
+      {/* 오른쪽 문고리 — PC·모바일 공통. 탭/드래그로 개폐 */}
+      <button
+        type="button"
+        className={`brp-bcd-pull${progress > 0.15 ? " is-open" : ""}`}
+        aria-label={progress > 0.5 ? "책·장 서랍 닫기" : "책·장 서랍 열기"}
+        aria-expanded={progress > 0.5}
+        onClick={() => {
+          if (pullDraggedRef.current) {
+            pullDraggedRef.current = false;
+            return;
+          }
+          if (progress > 0.5) onClose();
+          else onOpen();
+        }}
+      >
+        <span className="brp-bcd-pull-grip" aria-hidden />
+      </button>
+
       {showPanel ? (
     <div
       className={rootClass}

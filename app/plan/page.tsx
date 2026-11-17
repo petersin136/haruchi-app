@@ -2,9 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { BOOKS, type BookId } from "../bible-reading/books";
-import ProgressGrid from "../bible-reading/components/ProgressGrid";
 import BottomTabBar from "../components/BottomTabBar";
 import {
   activityByDate,
@@ -69,7 +67,6 @@ function bookLabel(book: string): string {
 }
 
 export default function PlanPage() {
-  const router = useRouter();
   const [planId, setPlanId] = useState<string>("year365");
   const [startDate, setStartDate] = useState<string>(() => todayInputValue());
   const [plan, setPlan] = useState<PlanFile | null>(null);
@@ -77,7 +74,6 @@ export default function PlanPage() {
   const [tick, setTick] = useState(0);
   const [progressBookId, setProgressBookId] = useState<BookId | null>(null);
   const [progressChapter, setProgressChapter] = useState(1);
-  const [doneChapters, setDoneChapters] = useState<Set<number>>(new Set());
 
   useEffect(() => {
     try {
@@ -156,7 +152,6 @@ export default function PlanPage() {
     setProgressBookId(bookId);
     if (!bookId) {
       setProgressChapter(1);
-      setDoneChapters(new Set());
       return;
     }
     const rawCh = Number(window.localStorage.getItem(currentChapterKey(bookId)));
@@ -164,29 +159,7 @@ export default function PlanPage() {
     setProgressChapter(
       Number.isInteger(rawCh) && rawCh >= 1 && rawCh <= total ? rawCh : 1,
     );
-    const done = new Set<number>();
-    for (let n = 1; n <= total; n += 1) {
-      if (isChapterDone(bookId, n)) done.add(n);
-    }
-    setDoneChapters(done);
   }, [tick]);
-
-  const progressChapters = useMemo(() => {
-    if (!progressBookId) return [];
-    return Array.from({ length: BOOKS[progressBookId].totalChapters }, (_, i) => ({
-      chapter: i + 1,
-    }));
-  }, [progressBookId]);
-
-  const onSelectProgressChapter = useCallback(
-    (n: number) => {
-      if (!progressBookId) return;
-      router.push(
-        `/bible-reading?book=${encodeURIComponent(progressBookId)}&chapter=${n}`,
-      );
-    },
-    [progressBookId, router],
-  );
 
   const currentDayNumber = useMemo(() => {
     if (!plan || plan.days.length === 0) return 1;
@@ -229,18 +202,102 @@ export default function PlanPage() {
     setPlanId(id);
   }, []);
 
+  const startLabel = (() => {
+    const [y, m, d] = startDate.split("-");
+    if (!y || !m || !d) return startDate;
+    return `${y}. ${Number(m)}. ${Number(d)}.`;
+  })();
+
+  const todayDone = todayPlan ? areReadingsDone(todayPlan.readings) : false;
+  const firstOpen = todayPlan?.readings
+    .map((r) => {
+      const ch = r.chapters.find((n) => !isChapterDone(r.book, n)) ?? r.chapters[0];
+      return ch == null ? null : { book: r.book, ch };
+    })
+    .find(Boolean);
+
   return (
     <main className="plan-page" data-plan={planId}>
       <div className="plan-shell">
-        <p className="plan-eyebrow">Reading plan</p>
-        <h1 className="plan-title">성경 읽기표</h1>
-        <p className="plan-lead">
-          읽기 화면에서 장을 끝까지 읽으면 자동으로 체크돼요. 원하는 플랜과
-          시작일만 고르면 됩니다.
+        <header className="plan-hero">
+          <p className="plan-kicker">
+            {plan?.title ?? "읽기표"}
+            {plan ? ` · ${currentDayNumber}일차` : ""}
+            {todayDone ? " · 완료" : ""}
+          </p>
+          {loadError ? (
+            <h1 className="plan-hero-title">{loadError}</h1>
+          ) : !todayPlan ? (
+            <h1 className="plan-hero-title">불러오는 중</h1>
+          ) : (
+            <h1 className="plan-hero-title">
+              {todayPlan.readings.length === 1
+                ? bookLabel(todayPlan.readings[0].book)
+                : "오늘"}
+            </h1>
+          )}
+          {todayPlan && todayPlan.readings.length === 1 ? (
+            <p className="plan-hero-range">
+              {formatChapterRange(todayPlan.readings[0].chapters)}
+            </p>
+          ) : null}
+          {firstOpen ? (
+            <Link
+              className="plan-hero-go"
+              href={`/bible-reading?book=${encodeURIComponent(firstOpen.book)}&chapter=${firstOpen.ch}`}
+            >
+              {todayDone ? "다시 읽기" : "읽기"}
+            </Link>
+          ) : null}
+        </header>
+
+        <div className="plan-meter" aria-label="진행">
+          <span
+            className="plan-meter-fill"
+            style={{ width: `${progress.pct}%` }}
+          />
+        </div>
+        <p className="plan-meter-meta">
+          <span>
+            {progress.doneDays} / {progress.totalDays || "—"}일
+          </span>
+          <span>연속 {streak}일</span>
         </p>
 
-        <section className="plan-section" aria-label="플랜 선택">
-          <h2 className="plan-section-label">플랜</h2>
+        <section className="plan-block" aria-label="오늘 분량">
+          {todayPlan ? (
+            <ul className="plan-readings">
+              {todayPlan.readings.map((r) => {
+                const allDone = r.chapters.every((ch) =>
+                  isChapterDone(r.book, ch),
+                );
+                const jumpCh =
+                  r.chapters.find((ch) => !isChapterDone(r.book, ch)) ??
+                  r.chapters[0];
+                if (jumpCh == null) return null;
+                return (
+                  <li key={`${r.book}-${r.chapters.join("-")}`}>
+                    <Link
+                      className={`plan-reading${allDone ? " is-done" : ""}`}
+                      href={`/bible-reading?book=${encodeURIComponent(r.book)}&chapter=${jumpCh}`}
+                    >
+                      <span className="plan-reading-book">{bookLabel(r.book)}</span>
+                      <span className="plan-reading-ch">
+                        {formatChapterRange(r.chapters)}
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <p className="plan-empty">
+              {loadError ?? "플랜을 불러오는 중…"}
+            </p>
+          )}
+        </section>
+
+        <section className="plan-block" aria-label="플랜">
           <div className="plan-picker" role="list">
             {PLAN_OPTIONS.map((opt) => (
               <button
@@ -254,102 +311,21 @@ export default function PlanPage() {
               </button>
             ))}
           </div>
-        </section>
-
-        <section className="plan-section" aria-label="시작일">
-          <h2 className="plan-section-label">시작일</h2>
           <div className="plan-start-row">
-            <label htmlFor="plan-start">Day 1로 잡을 날짜</label>
+            <label htmlFor="plan-start">시작 {startLabel}</label>
             <input
               id="plan-start"
               type="date"
               value={startDate}
               onChange={(e) => setStartDate(e.target.value)}
+              aria-label="시작일"
             />
           </div>
         </section>
 
-        <section className="plan-section" aria-label="진행">
-          <h2 className="plan-section-label">진행</h2>
-          <div className="plan-stats">
-            <div>
-              <p className="plan-stat-value">{progress.pct}%</p>
-              <p className="plan-stat-label">
-                {progress.doneDays} / {progress.totalDays}일 완료
-              </p>
-            </div>
-            <div>
-              <p className="plan-stat-value">🔥 {streak}</p>
-              <p className="plan-stat-label">연속으로 읽은 날</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="plan-section" aria-label="오늘 분량">
-          <h2 className="plan-section-label">오늘 분량</h2>
-          {loadError ? (
-            <p className="plan-empty">{loadError}</p>
-          ) : !plan || !todayPlan ? (
-            <p className="plan-empty">플랜을 불러오는 중…</p>
-          ) : (
-            <>
-              <p className="plan-today-meta">
-                {plan.title} · {currentDayNumber}일차
-                {todayPlan.calendar ? ` · ${todayPlan.calendar}` : ""}
-                {areReadingsDone(todayPlan.readings) ? " · 오늘 분량 완료" : ""}
-              </p>
-              <ul className="plan-readings">
-                {todayPlan.readings.map((r) => {
-                  const allDone = r.chapters.every((ch) =>
-                    isChapterDone(r.book, ch),
-                  );
-                  const jumpCh =
-                    r.chapters.find((ch) => !isChapterDone(r.book, ch)) ??
-                    r.chapters[0];
-                  return (
-                    <li
-                      key={`${r.book}-${r.chapters.join("-")}`}
-                      className="plan-reading"
-                    >
-                      <div className="plan-reading-main">
-                        <p className="plan-reading-text">
-                          {bookLabel(r.book)} {formatChapterRange(r.chapters)}
-                          {allDone ? " ✓" : ""}
-                        </p>
-                        <ul className="plan-chapter-checks" aria-label="장별 완료">
-                          {r.chapters.map((ch) => {
-                            const done = isChapterDone(r.book, ch);
-                            return (
-                              <li
-                                key={`${r.book}-${ch}`}
-                                className={done ? "is-checked" : ""}
-                              >
-                                {done ? `✓ ${ch}장` : `${ch}장`}
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                      <div className="plan-reading-links">
-                        {jumpCh != null ? (
-                          <Link
-                            href={`/bible-reading?book=${encodeURIComponent(r.book)}&chapter=${jumpCh}`}
-                          >
-                            {allDone ? "다시 읽기" : "읽기"}
-                          </Link>
-                        ) : null}
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            </>
-          )}
-        </section>
-
-        <section className="plan-section" aria-label="최근 12주">
-          <h2 className="plan-section-label">최근 12주</h2>
-          <div className="plan-grass" aria-hidden="true">
+        <section className="plan-block" aria-label="최근 12주">
+          <h2 className="plan-section-label">12주</h2>
+          <div className="plan-grass">
             {grass.map((cell) => (
               <span
                 key={cell.key}
@@ -358,35 +334,16 @@ export default function PlanPage() {
               />
             ))}
           </div>
-          <p className="plan-grass-legend">한 칸 = 하루 · 색 = 그날 1장 이상 완료</p>
         </section>
 
-        <section className="plan-section" aria-label="이 책 진도">
-          <h2 className="plan-section-label">이 책 진도</h2>
-          {progressBookId ? (
-            <>
-              <p className="plan-book-progress-title">
-                {BOOKS[progressBookId].totalChapters}장 {BOOKS[progressBookId].name}{" "}
-                읽기
-              </p>
-              <div className="plan-book-grid">
-                <ProgressGrid
-                  chapters={progressChapters}
-                  chapterNumber={progressChapter}
-                  doneChapters={doneChapters}
-                  bookName={BOOKS[progressBookId].name}
-                  onSelectChapter={onSelectProgressChapter}
-                />
-              </div>
-            </>
-          ) : (
-            <p className="plan-empty">아직 읽은 책이 없어요. 성경 탭에서 시작해 보세요.</p>
-          )}
-        </section>
-
-        <Link className="plan-back" href="/bible-reading">
-          ← 성경 읽기로
-        </Link>
+        {progressBookId ? (
+          <Link
+            className="plan-continue"
+            href={`/bible-reading?book=${encodeURIComponent(progressBookId)}&chapter=${progressChapter}`}
+          >
+            이어서 · {BOOKS[progressBookId].name} {progressChapter}장
+          </Link>
+        ) : null}
       </div>
 
       <BottomTabBar active="plan" />

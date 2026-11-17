@@ -27,17 +27,27 @@ export function buildChapterPlain(verses: Verse[]): {
   return { plain, spans };
 }
 
+export type StudyCopyPayload = { plain: string; html: string };
+
+function escapeCopyHtml(s: string) {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
 /**
  * 절 선택 복사.
- * 한 장에서 이어지면 「1 본문 2 본문 (창 34:1-2)」,
- * 떨어지면 「1 본문\n5 본문 (창 34:1, 5)」,
- * 장을 넘으면 「(창 34:31–35:2)」.
+ * 「다니엘 1:5-8」바로 아래 절 본문(빈 줄 없음).
+ * 강제 폭 줄바꿈·표 없음. HTML은 내어쓰기 단락(화면 폭에 맞춰 감김, 번호 아래 비움).
  */
 export function formatStudyCopy(
-  shortName: string,
+  bookName: string,
   items: { chapter: number; n: number; text: string }[],
-): string {
+): StudyCopyPayload {
   const sorted = [...items].sort((a, b) => a.chapter - b.chapter || a.n - b.n);
+  if (sorted.length === 0) return { plain: "", html: "" };
   const clusters: (typeof sorted)[] = [];
   for (const it of sorted) {
     const last = clusters[clusters.length - 1];
@@ -45,21 +55,35 @@ export function formatStudyCopy(
     if (prev && prev.chapter === it.chapter && it.n === prev.n + 1) last.push(it);
     else clusters.push([it]);
   }
-  const gapped = clusters.length > 1;
-  const body = clusters
-    .map((c) => c.map((v) => `${v.n} ${v.text.trim()}`).join(" "))
-    .join(gapped ? "\n" : " ");
   const chapters = new Set(sorted.map((v) => v.chapter));
+  let cite: string;
   if (chapters.size <= 1) {
     const ch = sorted[0]?.chapter ?? 1;
     const parts = clusters.map((c) =>
       c.length === 1 ? `${c[0].n}` : `${c[0].n}-${c[c.length - 1].n}`,
     );
-    return `${body} (${shortName} ${ch}:${parts.join(", ")})`;
+    cite = `${bookName} ${ch}:${parts.join(", ")}`;
+  } else {
+    const first = sorted[0];
+    const last = sorted[sorted.length - 1];
+    cite = `${bookName} ${first.chapter}:${first.n}–${last.chapter}:${last.n}`;
   }
-  const first = sorted[0];
-  const last = sorted[sorted.length - 1];
-  return `${body} (${shortName} ${first.chapter}:${first.n}–${last.chapter}:${last.n})`;
+
+  const plain = `${cite}\n${sorted
+    .map((v) => `${v.n} ${v.text.trim()}`)
+    .join("\n")}`;
+
+  const numWidth = Math.max(...sorted.map((v) => String(v.n).length));
+  const hangEm = (0.85 + numWidth * 0.55).toFixed(2);
+  const verses = sorted
+    .map((v) => {
+      // NBSP: 번호와 본문이 줄 끝에서 어색하게 갈라지지 않게
+      const line = escapeCopyHtml(`${v.n}\u00A0${v.text.trim()}`);
+      return `<p style="margin:0;line-height:1.55;padding-left:${hangEm}em;text-indent:-${hangEm}em">${line}</p>`;
+    })
+    .join("");
+  const html = `<!DOCTYPE html><html><head><meta charset="utf-8" /></head><body style="margin:0;font-family:-apple-system,'Noto Serif KR',serif;font-size:16px;line-height:1.55"><p style="margin:0">${escapeCopyHtml(cite)}</p>${verses}</body></html>`;
+  return { plain, html };
 }
 
 /** 반개구간 [start, end). 경계 offset === end 는 다음 절 시작(마지막 절 끝만 그 절). */

@@ -78,9 +78,12 @@ const MODE_OPTIONS: { value: MobileModeChoice; label: string }[] = [
 type MobileTopBarProps = {
   bookId: string;
   chapterNumber: number;
+  bookName: string;
+  chapterLabel: string;
   modeChoice: MobileModeChoice;
   onModeChange: (next: MobileModeChoice) => void;
   onSearch: () => void;
+  onOpenDrawer: () => void;
 };
 
 const STROKE = 1.75;
@@ -168,9 +171,12 @@ function MoreIcon() {
 function MobileTopBar({
   bookId,
   chapterNumber,
+  bookName,
+  chapterLabel,
   modeChoice,
   onModeChange,
   onSearch,
+  onOpenDrawer,
 }: MobileTopBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -261,6 +267,15 @@ function MobileTopBar({
           </button>
         </div>
       </div>
+      <button
+        type="button"
+        className="brp-chrome-pill"
+        onClick={onOpenDrawer}
+        aria-label={`${bookName} ${chapterLabel}`}
+      >
+        <span className="brp-chrome-pill-name">{bookName}</span>
+        <span className="brp-chrome-pill-ch">{chapterLabel}</span>
+      </button>
 
       {menuOpen ? (
         <div

@@ -411,6 +411,25 @@ function StudyNotebook({
   });
   const versePickRef = useRef<number[] | null>(null);
   versePickRef.current = versePick;
+  const verseNumPressRef = useRef<{
+    id: number;
+    n: number;
+    x: number;
+    y: number;
+    timer: number;
+    mode: "pending" | "drag";
+    fromTouch: boolean;
+    lastHit: number;
+  } | null>(null);
+  const verseGestureFnsRef = useRef({
+    begin: (
+      _n: number,
+      _id: number,
+      _x: number,
+      _y: number,
+      _pointerType: string,
+    ) => {},
+  });
   const noteGuardRef = useRef(0);
   const spreadAnchorVerseRef = useRef<number | null>(null);
   spreadIndexRef.current = spreadIndex;
@@ -755,42 +774,63 @@ function StudyNotebook({
   }, [bookId]);
 
   useEffect(() => {
-    const onCopy = (e: ClipboardEvent) => {
-      const t = e.target as HTMLElement | null;
-      if (t?.closest?.("input, textarea, [contenteditable=true]")) return;
+    const buildCopyItems = () => {
+      const spans = spansRef.current;
+      const picks = versePickRef.current;
+      if (picks && picks.length) {
+        return picks.flatMap((n) => {
+          const sp = spans.find((s) => s.n === n);
+          return sp ? [{ chapter, n, text: sp.text }] : [];
+        });
+      }
       const root = bodyRef.current;
-      if (!root) return;
       const native = window.getSelection();
       const inStudy =
+        !!root &&
         !!native &&
         native.rangeCount > 0 &&
         !native.isCollapsed &&
         !!(native.anchorNode && root.contains(native.anchorNode));
       const mapped = inStudy
-        ? nativeSelectionToOffsets(root, spansRef.current)
+        ? nativeSelectionToOffsets(root!, spans)
         : null;
-      const cur = selRef.current;
-      const range = mapped
-        ? { start: mapped.start, end: mapped.end }
-        : cur && root.contains(document.activeElement)
-          ? cur
-          : null;
-      if (!range) return;
-      const items = [
-        {
-          chapter,
-          n: verseContaining(spansRef.current, range.start),
-          text: plainRef.current.slice(range.start, range.end),
-        },
-      ];
-      const payload = formatStudyCopy(bookMeta.shortName, items);
-      if (!payload.trim()) return;
-      e.preventDefault();
-      e.clipboardData?.setData("text/plain", payload);
+      const cur = mapped ?? selRef.current;
+      if (!cur) return null;
+      const hit = spans.filter((s) => s.start < cur.end && s.end > cur.start);
+      if (hit.length === 0) return null;
+      // 여러 절이면 절 단위로, 한 절 안 부분 선택이면 그 구간만
+      if (hit.length === 1) {
+        const sp = hit[0];
+        return [
+          {
+            chapter,
+            n: sp.n,
+            text: plainRef.current.slice(
+              Math.max(sp.start, cur.start),
+              Math.min(sp.end, cur.end),
+            ),
+          },
+        ];
+      }
+      return hit.map((sp) => ({ chapter, n: sp.n, text: sp.text }));
     };
+
+    const onCopy = (e: ClipboardEvent) => {
+      const t = e.target as HTMLElement | null;
+      if (t?.closest?.("input, textarea, [contenteditable=true]")) return;
+      const items = buildCopyItems();
+      if (!items?.length) return;
+      const payload = formatStudyCopy(bookMeta.name, items);
+      if (!payload.plain.trim()) return;
+      e.preventDefault();
+      e.clipboardData?.setData("text/plain", payload.plain);
+      e.clipboardData?.setData("text/html", payload.html);
+    };
+
+    // Cmd/Ctrl+C — 선택만 있어도 복사 이벤트에서 서식 주입
     document.addEventListener("copy", onCopy);
     return () => document.removeEventListener("copy", onCopy);
-  }, [bookId, chapter, bookMeta.shortName]);
+  }, [bookId, chapter, bookMeta.name]);
 
   useEffect(() => {
     const on = isStudyDebugOn();
@@ -1521,37 +1561,31 @@ function StudyNotebook({
     setToolbar((t) => (t?.kind === "selection" ? null : t));
   }, []);
 
-  const applyVersePick = (nums: number[]) => {
-    const unique = [...new Set(nums)]
-      .filter((n) => spans.some((s) => s.n === n))
-      .sort((a, b) => a - b);
-    if (unique.length === 0) {
-      clearSelection();
-      return;
-    }
-    versePickRef.current = unique;
-    setVersePick(unique);
-    const first = spans.find((s) => s.n === unique[0]);
-    const last = spans.find((s) => s.n === unique[unique.length - 1]);
-    if (!first) return;
-    const range = { start: first.start, end: (last ?? first).end };
-    selRef.current = range;
-    setSel(range);
-    const tb = selectionToolbarFor(range);
-    if (tb) setToolbar(tb);
-  };
-
-  const selectVerseAtPoint = (startX: number, startY: number, fromMouse: boolean) => {
-    const off = offsetAtPoint(startX, startY);
-    if (off == null) return false;
-    const n = verseContaining(spans, off);
-    if (!fromMouse && isAndroid()) navigator.vibrate?.(10);
-    suppressClickRef.current = true;
-    setExpandedNoteId(null);
-    applyVersePick([n]);
-    window.getSelection()?.removeAllRanges();
-    return true;
-  };
+  const applyVersePick = useCallback(
+    (nums: number[]) => {
+      const list = spansRef.current;
+      const unique = [...new Set(nums)]
+        .filter((n) => list.some((s) => s.n === n))
+        .sort((a, b) => a - b);
+      if (unique.length === 0) {
+        clearSelection();
+        return;
+      }
+      versePickRef.current = unique;
+      setVersePick(unique);
+      const first = list.find((s) => s.n === unique[0]);
+      const last = list.find((s) => s.n === unique[unique.length - 1]);
+      if (!first) return;
+      const range = { start: first.start, end: (last ?? first).end };
+      selRef.current = range;
+      setSel(range);
+      const tb = selectionToolbarFor(range);
+      if (tb) setToolbar(tb);
+    },
+    [clearSelection, selectionToolbarFor],
+  );
+  const applyVersePickRef = useRef(applyVersePick);
+  applyVersePickRef.current = applyVersePick;
 
   /** 마우스 mouseup: 브라우저 Range → 기존 offset + 도구막대(선택 상자 위) */
   const applyNativeMouseSelection = useCallback(
@@ -1679,6 +1713,18 @@ function StudyNotebook({
       if (pressRef.current) {
         window.clearTimeout(pressRef.current.timer);
         pressRef.current = null;
+      }
+      if (verseNumPressRef.current) {
+        const vp = verseNumPressRef.current;
+        window.clearTimeout(vp.timer);
+        try {
+          if (document.documentElement.hasPointerCapture(vp.id)) {
+            document.documentElement.releasePointerCapture(vp.id);
+          }
+        } catch {
+          /* ignore */
+        }
+        verseNumPressRef.current = null;
       }
       releasePointerCaptureSafe();
       const hadDrag = !!dragRef.current;
@@ -1969,7 +2015,7 @@ function StudyNotebook({
           const p = pressRef.current;
           pressRef.current = null;
           if (!p) return;
-          selectVerseAtPoint(startX, startY, true);
+          selectStemAtPoint(startX, startY, true);
         }, LONG_PRESS_MS);
         pressRef.current = {
           timer,
@@ -2002,7 +2048,7 @@ function StudyNotebook({
     if (pressRef.current) window.clearTimeout(pressRef.current.timer);
     const timer = window.setTimeout(() => {
       pressRef.current = null;
-      selectVerseAtPoint(startX, startY, false);
+      selectStemAtPoint(startX, startY, false);
     }, LONG_PRESS_MS);
     pressRef.current = {
       timer,
@@ -2123,7 +2169,8 @@ function StudyNotebook({
     };
 
     const onTouchMove = (e: TouchEvent) => {
-      if (dragRef.current && e.cancelable) e.preventDefault();
+      const vp = verseNumPressRef.current;
+      if ((dragRef.current || vp) && e.cancelable) e.preventDefault();
     };
 
     const onVis = () => {
@@ -2139,10 +2186,25 @@ function StudyNotebook({
     };
     const onMouseUp = (e: MouseEvent) => onUp(e);
 
+    const onLostCap = (e: Event) => {
+      // 절 숫자 드래그는 documentElement capture — 재렌더로 span capture 가 끊겨도 유지
+      const vp = verseNumPressRef.current;
+      const pe = e as PointerEvent;
+      if (vp && pe.pointerId === vp.id) {
+        try {
+          document.documentElement.setPointerCapture(vp.id);
+        } catch {
+          /* ignore */
+        }
+        return;
+      }
+      onUp(e);
+    };
+
     document.addEventListener("pointermove", onMove, { passive: false });
     document.addEventListener("pointerup", onUp);
     document.addEventListener("pointercancel", onUp);
-    document.addEventListener("lostpointercapture", onUp);
+    document.addEventListener("lostpointercapture", onLostCap);
     document.addEventListener("mousemove", onMouseMove, { passive: false });
     document.addEventListener("mouseup", onMouseUp);
     document.addEventListener("touchend", onUp, { passive: true });
@@ -2154,7 +2216,7 @@ function StudyNotebook({
       document.removeEventListener("pointermove", onMove);
       document.removeEventListener("pointerup", onUp);
       document.removeEventListener("pointercancel", onUp);
-      document.removeEventListener("lostpointercapture", onUp);
+      document.removeEventListener("lostpointercapture", onLostCap);
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseup", onMouseUp);
       document.removeEventListener("touchend", onUp);
@@ -2166,13 +2228,162 @@ function StudyNotebook({
     };
   }, [applyNativeMouseSelection]);
 
+  // 절 숫자 꾹→드래그: document 캡처 + non-passive preventDefault (재렌더·스크롤 경합 방지)
+  useEffect(() => {
+    const releaseCap = (id: number) => {
+      try {
+        if (document.documentElement.hasPointerCapture(id)) {
+          document.documentElement.releasePointerCapture(id);
+        }
+      } catch {
+        /* ignore */
+      }
+    };
+
+    const clear = () => {
+      const p = verseNumPressRef.current;
+      if (!p) return;
+      window.clearTimeout(p.timer);
+      releaseCap(p.id);
+      verseNumPressRef.current = null;
+      if (!dragRef.current) {
+        delete document.documentElement.dataset.studySelecting;
+      }
+    };
+
+    const verseAtPointer = (x: number, y: number) => {
+      const root =
+        (spreadOnRef.current ? spreadVpRef.current : bodyRef.current) ??
+        document.body;
+      const box = root.getBoundingClientRect();
+      const best = { n: -1, d: Infinity };
+      root.querySelectorAll<HTMLElement>(".study-vnum").forEach((el) => {
+        if (el.closest(".is-covered, .study-spread-measure")) return;
+        const r = el.getBoundingClientRect();
+        if (r.width < 1 || r.height < 1) return;
+        if (
+          r.right < box.left ||
+          r.left > box.right ||
+          r.bottom < box.top ||
+          r.top > box.bottom
+        )
+          return;
+        if (x < r.left - 140 || x > r.right + 320) return;
+        const num = Number(el.textContent);
+        if (!Number.isFinite(num)) return;
+        const d = Math.abs((r.top + r.bottom) / 2 - y);
+        if (d < best.d) {
+          best.n = num;
+          best.d = d;
+        }
+      });
+      return best.d < 140 ? best.n : null;
+    };
+
+    const extendTo = (anchor: number, hit: number) => {
+      const list = spansRef.current;
+      const lo = Math.min(anchor, hit);
+      const hi = Math.max(anchor, hit);
+      const nums = list.filter((s) => s.n >= lo && s.n <= hi).map((s) => s.n);
+      applyVersePickRef.current(nums);
+    };
+
+    verseGestureFnsRef.current.begin = (n, id, x, y, pointerType) => {
+      clear();
+      const fromTouch = pointerType !== "mouse";
+      const timer = window.setTimeout(() => {
+        const cur = verseNumPressRef.current;
+        if (!cur || cur.id !== id || cur.mode !== "pending") return;
+        cur.mode = "drag";
+        cur.timer = 0;
+        if (fromTouch && isAndroid()) navigator.vibrate?.(10);
+        suppressClickRef.current = true;
+        setExpandedNoteId(null);
+        document.documentElement.dataset.studySelecting = "1";
+        window.dispatchEvent(new Event("haruchi:study-selecting"));
+        applyVersePickRef.current([n]);
+        window.getSelection()?.removeAllRanges();
+      }, LONG_PRESS_MS);
+      verseNumPressRef.current = {
+        id,
+        n,
+        x,
+        y,
+        timer,
+        mode: "pending",
+        fromTouch,
+        lastHit: n,
+      };
+      try {
+        document.documentElement.setPointerCapture(id);
+      } catch {
+        /* ignore */
+      }
+    };
+
+    const onMove = (e: PointerEvent) => {
+      const p = verseNumPressRef.current;
+      if (!p || p.id !== e.pointerId) return;
+      if (p.mode === "pending") {
+        // 꾹 대기 중 미세 움직임은 스크롤에 뺏기지 않게 막고, 임계치면 취소
+        if (e.cancelable) e.preventDefault();
+        if (Math.hypot(e.clientX - p.x, e.clientY - p.y) >= MOVE_CANCEL_PX) {
+          clear();
+        }
+        return;
+      }
+      if (e.cancelable) e.preventDefault();
+      const hit = verseAtPointer(e.clientX, e.clientY) ?? p.n;
+      if (hit !== p.lastHit) {
+        p.lastHit = hit;
+        extendTo(p.n, hit);
+      }
+      if (spreadOnRef.current) return;
+      const sc = scrollRootOf(bodyRef.current);
+      const edge =
+        sc === window
+          ? { top: 0, bottom: window.innerHeight }
+          : (sc as HTMLElement).getBoundingClientRect();
+      if (e.clientY < edge.top + 48) scrollByY(sc, -16);
+      else if (e.clientY > edge.bottom - 48) scrollByY(sc, 16);
+    };
+
+    const onUp = (e: PointerEvent) => {
+      const p = verseNumPressRef.current;
+      if (!p || p.id !== e.pointerId) return;
+      clear();
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      if (verseNumPressRef.current && e.cancelable) e.preventDefault();
+    };
+
+    const opts = { capture: true, passive: false } as AddEventListenerOptions;
+    const optsUp = { capture: true } as AddEventListenerOptions;
+    document.addEventListener("pointermove", onMove, opts);
+    document.addEventListener("pointerup", onUp, optsUp);
+    document.addEventListener("pointercancel", onUp, optsUp);
+    document.addEventListener("touchmove", onTouchMove, opts);
+    return () => {
+      document.removeEventListener("pointermove", onMove, opts);
+      document.removeEventListener("pointerup", onUp, optsUp);
+      document.removeEventListener("pointercancel", onUp, optsUp);
+      document.removeEventListener("touchmove", onTouchMove, opts);
+      clear();
+    };
+  }, []);
+
   // 끄는 중에만 넘김을 막음. 선택·도구막대가 남아 있으면 넘김이 영구 정지됐음.
   useEffect(() => {
     const on = dragging || magState === "shown";
     if (on) document.documentElement.dataset.studySelecting = "1";
-    else delete document.documentElement.dataset.studySelecting;
-    return () => {
+    else if (!verseNumPressRef.current) {
       delete document.documentElement.dataset.studySelecting;
+    }
+    return () => {
+      if (!verseNumPressRef.current) {
+        delete document.documentElement.dataset.studySelecting;
+      }
     };
   }, [dragging, magState]);
 
@@ -3487,19 +3698,35 @@ function StudyNotebook({
               text: plainRef.current.slice(start, end),
             },
           ];
-    const payload = formatStudyCopy(bookMeta.shortName, items);
-    if (!payload.trim()) return;
+    const payload = formatStudyCopy(bookMeta.name, items);
+    if (!payload.plain.trim()) return;
+    let ok = false;
     try {
-      await navigator.clipboard.writeText(payload);
+      if (typeof ClipboardItem !== "undefined" && navigator.clipboard?.write) {
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            "text/html": new Blob([payload.html], { type: "text/html" }),
+            "text/plain": new Blob([payload.plain], { type: "text/plain" }),
+          }),
+        ]);
+        ok = true;
+      }
     } catch {
-      const ta = document.createElement("textarea");
-      ta.value = payload;
-      ta.style.position = "fixed";
-      ta.style.opacity = "0";
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand("copy");
-      ta.remove();
+      /* fall through */
+    }
+    if (!ok) {
+      try {
+        await navigator.clipboard.writeText(payload.plain);
+      } catch {
+        const ta = document.createElement("textarea");
+        ta.value = payload.plain;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+      }
     }
     toolStashRef.current = null;
     setToolbar(null);
@@ -4234,12 +4461,11 @@ function StudyNotebook({
 
   /** 절 본문만 data-v — 번호·앞 공백은 오프셋 밖. 번호+첫 글자 nowrap. */
   const onVerseNumPointerDown = (n: number, e: ReactPointerEvent<HTMLSpanElement>) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
     e.stopPropagation();
     e.preventDefault();
-    suppressClickRef.current = true;
-    setExpandedNoteId(null);
-    applyVersePick([n]);
-    window.getSelection()?.removeAllRanges();
+    // 실제 move/up 은 document 리스너 — span 재렌더로 capture 끊김 방지
+    verseGestureFnsRef.current.begin(n, e.pointerId, e.clientX, e.clientY, e.pointerType);
   };
 
   const renderVerse = (span: VerseSpan, paraFirst: boolean) => {

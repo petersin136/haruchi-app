@@ -592,6 +592,8 @@ html:has(.study-root) body::-webkit-scrollbar,
   user-select: none;
   pointer-events: auto;
   cursor: pointer;
+  /* 꾹→절 드래그 중 본문 pan-y 스크롤에 제스처를 뺏기지 않게 */
+  touch-action: none;
 }
 
 .study-vnum::before {
