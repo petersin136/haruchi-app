@@ -12,7 +12,6 @@ import {
   memo,
   useCallback,
   useEffect,
-  useLayoutEffect,
   useRef,
   useState,
   type CSSProperties,
@@ -137,23 +136,6 @@ function BookChapterDrawer({
     }
   }, []);
 
-  const scrollListsToCurrent = useCallback(
-    (preview: BookId | null) => {
-      const bookTarget = preview ?? (bookConfirmed ? bookId : null);
-      if (bookTarget) {
-        booksRef.current
-          ?.querySelector<HTMLElement>(`[data-book-id="${bookTarget}"]`)
-          ?.scrollIntoView({ block: "center" });
-      }
-      if (preview === bookId && bookConfirmed) {
-        chaptersRef.current
-          ?.querySelector<HTMLElement>(`[data-chapter="${chapterNumber}"]`)
-          ?.scrollIntoView({ block: "center" });
-      }
-    },
-    [bookConfirmed, bookId, chapterNumber],
-  );
-
   useEffect(() => {
     if (typeof window === "undefined") return;
     const place = () => {
@@ -261,13 +243,6 @@ function BookChapterDrawer({
       );
     };
   }, [progress, dragging, animPhase]);
-
-  // 애니메이션 시작 전 즉시 스크롤 (열림 / 미리보기 책 변경)
-  useLayoutEffect(() => {
-    if (!mounted) return;
-    if (!open && progress < 0.02) return;
-    scrollListsToCurrent(previewBookId);
-  }, [mounted, open, previewBookId, scrollListsToCurrent, progress]);
 
   const snapTo = useCallback(
     (next: boolean) => {
@@ -610,19 +585,14 @@ function BookChapterDrawer({
   }, [disabled, snapTo, clearTimers]);
 
   const handleBookClick = useCallback((id: BookId) => {
-    if (panelDraggedRef.current) {
-      panelDraggedRef.current = false;
-      return;
-    }
+    // 책·장 버튼은 닫기 드래그와 분리됨 — 클릭 항상 반영
+    panelDraggedRef.current = false;
     setPreviewBookId(id);
   }, []);
 
   const handleChapterClick = useCallback(
     (chapter: number) => {
-      if (panelDraggedRef.current) {
-        panelDraggedRef.current = false;
-        return;
-      }
+      panelDraggedRef.current = false;
       const target = previewBookId ?? bookId;
       onSelectBookChapter(target, chapter);
       onClose();
@@ -729,7 +699,7 @@ function BookChapterDrawer({
                   type="button"
                   data-book-id={id}
                   className={`brp-bcd-book${isPreview ? " is-active" : ""}${
-                    isCurrent ? " is-current" : ""
+                    isCurrent && !isPreview ? " is-current" : ""
                   }`}
                   onClick={() => handleBookClick(id)}
                   role="option"
@@ -755,7 +725,7 @@ function BookChapterDrawer({
                   type="button"
                   data-book-id={id}
                   className={`brp-bcd-book${isPreview ? " is-active" : ""}${
-                    isCurrent ? " is-current" : ""
+                    isCurrent && !isPreview ? " is-current" : ""
                   }`}
                   onClick={() => handleBookClick(id)}
                   role="option"

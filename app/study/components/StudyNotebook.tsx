@@ -815,6 +815,33 @@ function StudyNotebook({
       return hit.map((sp) => ({ chapter, n: sp.n, text: sp.text }));
     };
 
+    const writePayload = async (
+      payload: ReturnType<typeof formatStudyCopy>,
+      viaEvent?: ClipboardEvent,
+    ) => {
+      if (viaEvent?.clipboardData) {
+        viaEvent.preventDefault();
+        viaEvent.clipboardData.setData("text/plain", payload.plain);
+        viaEvent.clipboardData.setData("text/html", payload.html);
+        return true;
+      }
+      try {
+        if (typeof ClipboardItem !== "undefined" && navigator.clipboard?.write) {
+          await navigator.clipboard.write([
+            new ClipboardItem({
+              "text/html": new Blob([payload.html], { type: "text/html" }),
+              "text/plain": new Blob([payload.plain], { type: "text/plain" }),
+            }),
+          ]);
+          return true;
+        }
+        await navigator.clipboard.writeText(payload.plain);
+        return true;
+      } catch {
+        return false;
+      }
+    };
+
     const onCopy = (e: ClipboardEvent) => {
       const t = e.target as HTMLElement | null;
       if (t?.closest?.("input, textarea, [contenteditable=true]")) return;
@@ -822,14 +849,36 @@ function StudyNotebook({
       if (!items?.length) return;
       const payload = formatStudyCopy(bookMeta.name, items);
       if (!payload.plain.trim()) return;
-      e.preventDefault();
-      e.clipboardData?.setData("text/plain", payload.plain);
-      e.clipboardData?.setData("text/html", payload.html);
+      void writePayload(payload, e);
     };
 
-    // Cmd/Ctrl+C — 선택만 있어도 복사 이벤트에서 서식 주입
+    // 커스텀 선택만 있을 때(네이티브 Range 없음) Cmd/Ctrl+C 보강
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (!(e.metaKey || e.ctrlKey) || e.key.toLowerCase() !== "c") return;
+      if (e.altKey || e.shiftKey) return;
+      const t = e.target as HTMLElement | null;
+      if (t?.closest?.("input, textarea, [contenteditable=true]")) return;
+      const items = buildCopyItems();
+      if (!items?.length) return;
+      const native = window.getSelection();
+      // 네이티브 선택이 있으면 copy 이벤트에 맡김
+      if (native && !native.isCollapsed && (native.toString()?.length ?? 0) > 0) {
+        return;
+      }
+      const payload = formatStudyCopy(bookMeta.name, items);
+      if (!payload.plain.trim()) return;
+      e.preventDefault();
+      void writePayload(payload).then((ok) => {
+        if (ok) setToast("복사했어요");
+      });
+    };
+
     document.addEventListener("copy", onCopy);
-    return () => document.removeEventListener("copy", onCopy);
+    document.addEventListener("keydown", onKeyDown, true);
+    return () => {
+      document.removeEventListener("copy", onCopy);
+      document.removeEventListener("keydown", onKeyDown, true);
+    };
   }, [bookId, chapter, bookMeta.name]);
 
   useEffect(() => {
