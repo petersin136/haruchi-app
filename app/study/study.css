@@ -1574,11 +1574,12 @@ html[data-study-chrome="0"] .study-ws-tab.study-ws-ribbon {
 .study-ws-chip-w {
   font-size: 16px;
   font-weight: 600;
-  line-height: 1.15;
+  line-height: 1.25;
   color: var(--study-ink, #1c1917);
   font-family: inherit;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
+  /* 헬라어 악센트·내려쓰기 / 히브리 모음점 — cap·alphabetic trim 시 잘림·겹침 */
+  text-box-trim: unset;
+  text-box-edge: unset;
 }
 
 .study-ws-sheet.is-rtl .study-ws-chips {
@@ -1655,20 +1656,22 @@ html[data-study-chrome="0"] .study-ws-tab.study-ws-ribbon {
 }
 
 .study-ws-word {
-  margin: 0;
+  margin: 0 0 8px;
   font-size: 31px;
   font-weight: 700;
-  line-height: 1.1;
+  /* 헬라어 악센트·내려쓰기(γ/η/ρ…)·히브리 모음점이
+     cap/alphabetic trim 박스 밖으로 그려져 아래 음역과 겹침 */
+  line-height: 1.3;
   color: var(--study-red, #9e1b1b);
   font-family: inherit;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
+  text-box-trim: unset;
+  text-box-edge: unset;
 }
 
 .study-ws-pron {
-  margin: 0 0 4px;
+  margin: 0 0 8px;
   font-size: 15px;
-  line-height: 1.2;
+  line-height: 1.35;
   color: #6b5e52;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
