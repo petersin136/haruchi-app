@@ -4050,6 +4050,63 @@ function StudyNotebook({
     return map;
   }, [data.notes]);
 
+  const openWsBySwipeRef = useRef<() => void>(() => {});
+  openWsBySwipeRef.current = () => {
+    if (wsOpen) return;
+    if (wsLast) openWordStudyFromLast();
+    else openWordStudyFromToolbar();
+  };
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    let x0 = 0;
+    let y0 = 0;
+    let tracking = false;
+    const down = (e: PointerEvent) => {
+      if (!mq.matches || e.pointerType === "mouse") {
+        tracking = false;
+        return;
+      }
+      const t = e.target as HTMLElement | null;
+      if (
+        t?.closest(
+          "button, a, input, textarea, .brp-mobile-topbar, .study-ws-root, .study-toolbar, .study-sel-handle",
+        )
+      ) {
+        tracking = false;
+        return;
+      }
+      x0 = e.clientX;
+      y0 = e.clientY;
+      tracking = true;
+    };
+    const up = (e: PointerEvent) => {
+      if (!tracking) return;
+      tracking = false;
+      const ds = document.documentElement.dataset;
+      if (ds.studySelecting === "1" || ds.studyWsOpen === "1" || ds.studyNoteOpen === "1")
+        return;
+      // 책·장 서랍이 손 따라 열리는 중이면 원어 스와이프와 겹치지 않음
+      if (
+        document.querySelector(
+          ".brp-page.brp-drawer-dragging, .brp-page.brp-drawer-peek, .brp-bcd.is-dragging",
+        )
+      )
+        return;
+      const dx = e.clientX - x0;
+      const dy = e.clientY - y0;
+      if (dx > -72 || Math.abs(dy) > 36) return;
+      if (Math.abs(dx) < Math.abs(dy) * 1.6) return;
+      openWsBySwipeRef.current();
+    };
+    document.addEventListener("pointerdown", down);
+    document.addEventListener("pointerup", up);
+    return () => {
+      document.removeEventListener("pointerdown", down);
+      document.removeEventListener("pointerup", up);
+    };
+  }, []);
+
   if (error) {
     return (
       <div className={`study-root${embedded ? " is-embedded" : ""}`}>
@@ -5288,13 +5345,6 @@ function StudyNotebook({
         ) : null}
 
         <div className={`study-io${embedded ? " is-embedded" : ""}`}>
-          <button
-            type="button"
-            className="study-io-link"
-            onClick={() => setBackupOpen(true)}
-          >
-            노트 백업
-          </button>
           <input
             ref={fileRef}
             type="file"

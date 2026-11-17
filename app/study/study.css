@@ -834,9 +834,7 @@ html:has(.study-root) body::-webkit-scrollbar,
 }
 
 .study-io {
-  display: flex;
-  justify-content: center;
-  padding: 0 18px calc(48px + env(safe-area-inset-bottom, 0px));
+  display: none;
 }
 
 /* 글씨는 13px 그대로, 터치 영역만 바깥으로 넓힘 */
@@ -1422,6 +1420,13 @@ html:has(.study-root) body::-webkit-scrollbar,
 html[data-study-chrome="0"] .study-ws-tab.study-ws-ribbon {
   opacity: 1;
   pointer-events: auto;
+}
+
+/* 모바일: 원어 손잡이 상시 표시 안 함. 본문을 왼쪽으로 당기면 연다 */
+@media (max-width: 768px) {
+  .study-ws-tab.study-ws-ribbon {
+    display: none !important;
+  }
 }
 
 .study-ws-tab.study-ws-ribbon.is-dock-right {

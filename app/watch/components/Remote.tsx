@@ -1,10 +1,10 @@
 "use client";
 
 import {
-  useEffect,
   useLayoutEffect,
   useRef,
   useState,
+  type MouseEvent as ReactMouseEvent,
   type PointerEvent as ReactPointerEvent,
 } from "react";
 import {
@@ -133,31 +133,12 @@ export default function Remote({
   isChapterAvailable,
   isVerseAvailable,
 }: Props) {
-  const [speedOpen, setSpeedOpen] = useState(false);
+  /** 모바일: 재생 줄만 보이고, 누르면 장·절·배속이 올라옴. PC는 CSS로 항상 펼침 */
+  const [sheetOpen, setSheetOpen] = useState(false);
   const scrubbing = useRef(false);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const chapterRailRef = useRef<HTMLDivElement | null>(null);
   const verseRailRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (!speedOpen) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSpeedOpen(false);
-    };
-    const onPointer = (e: PointerEvent) => {
-      const t = e.target as Node | null;
-      if (!t) return;
-      const wrap = document.querySelector(".wt-rc-wrap");
-      if (wrap && wrap.contains(t)) return;
-      setSpeedOpen(false);
-    };
-    window.addEventListener("keydown", onKey);
-    window.addEventListener("pointerdown", onPointer);
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      window.removeEventListener("pointerdown", onPointer);
-    };
-  }, [speedOpen]);
 
   useLayoutEffect(() => {
     scrollChipIntoView(chapterRailRef.current, `[data-rc-ch="${chapter}"]`);
@@ -204,11 +185,26 @@ export default function Remote({
     </span>
   );
 
+  const onDockClick = (e: ReactMouseEvent<HTMLDivElement>) => {
+    if (window.matchMedia("(min-width: 1024px)").matches) return;
+    const t = e.target as HTMLElement | null;
+    if (t?.closest("button")) return;
+    setSheetOpen((open) => !open);
+  };
+
   return (
     <>
-      <div className="wt-rc-fade" aria-hidden />
-      <div className="wt-rc-wrap">
+      {sheetOpen ? (
+        <button
+          type="button"
+          className="wt-rc-scrim"
+          aria-label="리모컨 접기"
+          onClick={() => setSheetOpen(false)}
+        />
+      ) : null}
+      <div className={`wt-rc-wrap${sheetOpen ? " is-open" : ""}`}>
         <div className="wt-rc" role="group" aria-label="영상 리모컨">
+          <div className="wt-rc-sheet">
           <div className="wt-rc-meta">
             <h2 className="wt-rc-now">
               <span className="wt-rc-now-book">{bookName}</span>
@@ -311,7 +307,53 @@ export default function Remote({
             </div>
           </div>
 
-          <div className="wt-rc-row2">
+          <div
+            className="wt-rc-speed-dock"
+            role="group"
+            aria-label="배속 조절"
+          >
+            <button
+              type="button"
+              className="wt-rc-speed-nudge"
+              disabled={disabled || speed <= SPEED_MIN}
+              aria-label="배속 0.05 낮추기"
+              onClick={() => onSelectSpeed(nudgeSpeed(speed, -1))}
+            >
+              −
+            </button>
+            <input
+              type="range"
+              className="wt-rc-speed-lever"
+              min={SPEED_MIN}
+              max={SPEED_MAX}
+              step={SPEED_STEP}
+              value={speed}
+              disabled={disabled}
+              aria-valuemin={SPEED_MIN}
+              aria-valuemax={SPEED_MAX}
+              aria-valuenow={speed}
+              aria-valuetext={formatSpeed(speed)}
+              aria-label="배속"
+              onChange={(e) =>
+                onSelectSpeed(clampSpeed(Number(e.target.value)))
+              }
+            />
+            <button
+              type="button"
+              className="wt-rc-speed-nudge"
+              disabled={disabled || speed >= SPEED_MAX}
+              aria-label="배속 0.05 높이기"
+              onClick={() => onSelectSpeed(nudgeSpeed(speed, 1))}
+            >
+              +
+            </button>
+            <span className="wt-rc-speed-value" aria-hidden>
+              {formatSpeed(speed)}
+            </span>
+          </div>
+          </div>
+
+          <div className="wt-rc-row2" onClick={onDockClick}>
             <div className="wt-rc-slot">
               {prevLabel !== null ? (
                 <button
@@ -355,12 +397,11 @@ export default function Remote({
 
             <button
               type="button"
-              className={`wt-rc-rate${speedOpen ? " is-open" : ""}`}
-              onClick={() => setSpeedOpen((o) => !o)}
+              className="wt-rc-rate"
+              onClick={() => setSheetOpen(true)}
               disabled={disabled}
-              aria-expanded={speedOpen}
-              aria-haspopup="listbox"
-              aria-label={`배속 (현재 ${formatSpeed(speed)})`}
+              aria-expanded={sheetOpen}
+              aria-label={`배속 (현재 ${formatSpeed(speed)}). 리모컨 펼치기`}
             >
               {formatSpeed(speed)}
             </button>
@@ -378,52 +419,6 @@ export default function Remote({
                 </button>
               ) : null}
             </div>
-          </div>
-
-          {/* 모바일: .is-open 일 때만 / PC: 하단 상시 — 0.05 단위 레버 */}
-          <div
-            className={`wt-rc-speed-dock${speedOpen ? " is-open" : ""}`}
-            role="group"
-            aria-label="배속 조절"
-          >
-            <button
-              type="button"
-              className="wt-rc-speed-nudge"
-              disabled={disabled || speed <= SPEED_MIN}
-              aria-label="배속 0.05 낮추기"
-              onClick={() => onSelectSpeed(nudgeSpeed(speed, -1))}
-            >
-              −
-            </button>
-            <input
-              type="range"
-              className="wt-rc-speed-lever"
-              min={SPEED_MIN}
-              max={SPEED_MAX}
-              step={SPEED_STEP}
-              value={speed}
-              disabled={disabled}
-              aria-valuemin={SPEED_MIN}
-              aria-valuemax={SPEED_MAX}
-              aria-valuenow={speed}
-              aria-valuetext={formatSpeed(speed)}
-              aria-label="배속"
-              onChange={(e) =>
-                onSelectSpeed(clampSpeed(Number(e.target.value)))
-              }
-            />
-            <button
-              type="button"
-              className="wt-rc-speed-nudge"
-              disabled={disabled || speed >= SPEED_MAX}
-              aria-label="배속 0.05 높이기"
-              onClick={() => onSelectSpeed(nudgeSpeed(speed, 1))}
-            >
-              +
-            </button>
-            <span className="wt-rc-speed-value" aria-hidden>
-              {formatSpeed(speed)}
-            </span>
           </div>
         </div>
       </div>

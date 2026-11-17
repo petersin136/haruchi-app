@@ -27,6 +27,28 @@
   );
 }
 
+/* 모바일 기본은 재생 줄만. .is-open 이면 장·절·배속이 위로 펼쳐짐 */
+.wt-rc-sheet {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.wt-rc-wrap.is-open .wt-rc-sheet {
+  display: flex;
+}
+
+.wt-rc-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(22, 22, 26, 0.28);
+  cursor: pointer;
+}
+
 .wt-rc-wrap {
   position: fixed;
   left: 10px;
@@ -496,9 +518,38 @@
 }
 
 /* PC: 영상 바로 아래, 남는 높이 채우고 배속은 하단에 상시 */
+@media (max-width: 1023px) {
+  .wt-page {
+    --wt-remote-h: 84px;
+  }
+
+  .wt-rc-wrap.is-open .wt-rc {
+    animation: wt-rc-sheet-up 220ms var(--wt-rc-ease);
+  }
+}
+
+@keyframes wt-rc-sheet-up {
+  from {
+    transform: translateY(12px);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @media (min-width: 1024px) {
   .wt-page {
     --wt-remote-h: 0px;
+  }
+
+  .wt-rc-scrim {
+    display: none;
+  }
+
+  .wt-rc-sheet {
+    display: flex;
   }
 
   .wt-rc-fade {
@@ -517,14 +568,15 @@
     min-height: 0;
     display: flex;
     flex-direction: column;
-    flex: none;
+    /* 영상 아래 남는 높이를 채움 (.wt-primary 에서 flex: 1) */
+    flex: 1 1 0;
   }
 
   .wt-rc {
-    flex: none;
+    flex: 1 1 auto;
     width: 100%;
     min-height: 0;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -536,6 +588,14 @@
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     padding: 14px 14px 12px;
+    gap: 8px;
+  }
+
+  .wt-rc-sheet {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
     gap: 8px;
   }
 
@@ -588,6 +648,7 @@
     flex: none;
     height: 58px;
     gap: 8px;
+    margin-top: auto;
   }
 
   .wt-rc-play {

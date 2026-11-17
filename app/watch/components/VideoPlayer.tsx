@@ -16,13 +16,13 @@ type Props = {
   onRateChange: (rate: number) => void;
 };
 
-/** 재생 중이 아닐 때 유튜브 기본 오버레이(제목·공유·Watch on YouTube)를 덮음 */
+/** 시작 전·종료 시에만 포스터 커버.
+ *  일시정지는 프레임을 그대로 보여야 함(멈춰서 읽기) — PAUSED 에 커버 금지. */
 function coverForState(state: number | null): boolean {
   if (state == null) return true;
   return (
     state === YT_STATE.UNSTARTED ||
     state === YT_STATE.CUED ||
-    state === YT_STATE.PAUSED ||
     state === YT_STATE.ENDED
   );
 }
@@ -133,15 +133,19 @@ export default function VideoPlayer({
     }
   };
 
-  const onPlayingSurfaceClick = () => {
+  /** 재생 중 → 일시정지 / 일시정지 → 재생 (정지 화면 유지 위해 포스터 없이 토글) */
+  const onSurfaceClick = () => {
     const p = playerRef.current;
     if (!p || showCover) return;
     try {
-      p.pauseVideo();
+      if (ytState === YT_STATE.PAUSED) p.playVideo();
+      else p.pauseVideo();
     } catch {
       /* noop */
     }
   };
+
+  const isPaused = ytState === YT_STATE.PAUSED;
 
   /* maxresdefault = 16:9 (hqdefault 는 4:3 이라 커버에 흰 띠가 생김) */
   const posterUrl = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
@@ -154,8 +158,8 @@ export default function VideoPlayer({
         <button
           type="button"
           className="wt-video-hit"
-          aria-label="일시정지"
-          onClick={onPlayingSurfaceClick}
+          aria-label={isPaused ? "재생" : "일시정지"}
+          onClick={onSurfaceClick}
         />
       )}
 
