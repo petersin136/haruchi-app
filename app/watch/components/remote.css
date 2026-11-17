@@ -53,43 +53,60 @@
   color: var(--wt-rc-ink);
 }
 
+.wt-rc-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+}
+
+.wt-rc-now {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--wt-rc-ink);
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+.wt-rc-now-book {
+  font-weight: 600;
+}
+.wt-rc-now-ch {
+  margin-left: 0.2em;
+  font-weight: 800;
+}
+.wt-rc-now-verse {
+  margin-left: 0.15em;
+  color: var(--wt-rc-accent);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
 .wt-rc-picks {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   min-width: 0;
-}
-
-.wt-rc-pick-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
-}
-
-.wt-rc-pick-label {
-  flex: none;
-  width: 1.25em;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--wt-rc-clock);
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
 }
 
 .wt-rc-chip-rail {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
   min-width: 0;
-  flex: 1;
+  width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior-x: contain;
   touch-action: pan-x;
-  padding: 2px 0;
+  padding: 0;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
@@ -97,49 +114,49 @@
   display: none;
 }
 
+/* 테두리 동그라미 대신 소프트 탭 */
 .wt-rc-chip {
   flex: 0 0 auto;
-  min-width: 34px;
-  height: 30px;
-  padding: 0 10px;
-  border: 1px solid color-mix(in srgb, var(--line-strong, #d2d2cc) 85%, transparent);
-  border-radius: 999px;
-  background: var(--surface, #fff);
-  color: var(--wt-rc-ink, #16161a);
+  min-width: 28px;
+  height: 28px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--wt-rc-muted, #6b6b70);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   opacity: 1;
-  box-shadow: 0 1px 0 rgba(22, 22, 26, 0.04);
+  box-shadow: none;
   transition: transform 160ms var(--wt-rc-ease), background 160ms var(--wt-rc-ease),
-    color 160ms var(--wt-rc-ease), border-color 160ms var(--wt-rc-ease),
-    opacity 160ms var(--wt-rc-ease), box-shadow 160ms var(--wt-rc-ease);
+    color 160ms var(--wt-rc-ease), opacity 160ms var(--wt-rc-ease);
+}
+.wt-rc-chip-rail.is-chapter .wt-rc-chip {
+  height: 30px;
+  font-size: 14px;
+  font-weight: 600;
 }
 .wt-rc-chip.is-selected {
-  background: var(--wt-rc-accent);
-  border-color: var(--wt-rc-accent);
-  color: #fff;
-  opacity: 1;
-  box-shadow: 0 2px 8px color-mix(in srgb, var(--wt-rc-accent) 35%, transparent);
+  background: color-mix(in srgb, var(--wt-rc-accent) 12%, transparent);
+  color: var(--wt-rc-accent);
+  font-weight: 700;
+  box-shadow: none;
 }
 .wt-rc-chip:active:not(:disabled) {
   transform: scale(0.94);
 }
 .wt-rc-chip:disabled {
-  opacity: 0.35;
-  color: var(--wt-rc-clock, #9a9aa0);
-  border-color: var(--line, #e6e6e2);
-  box-shadow: none;
+  opacity: 0.3;
   cursor: default;
 }
 @media (hover: hover) {
   .wt-rc-chip:hover:not(:disabled):not(.is-selected) {
-    background: var(--surface-alt, #f4f4f0);
-    border-color: var(--line-strong, #d2d2cc);
-    box-shadow: 0 1px 2px rgba(22, 22, 26, 0.06);
+    background: color-mix(in srgb, var(--ink, #16161a) 5%, transparent);
+    color: var(--wt-rc-ink);
   }
 }
 
@@ -196,10 +213,6 @@
   margin-left: 2px;
   color: var(--wt-rc-muted);
   font-size: 12px;
-}
-
-.wt-rc-pick-row .wt-rc-clock {
-  margin-left: 4px;
 }
 
 .wt-rc-clock {
@@ -384,9 +397,9 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   margin: 2px -4px 0;
-  padding: 10px 8px 4px;
+  padding: 6px 4px 2px;
   border-top: 1px solid var(--wt-rc-line);
   animation: wt-rc-pop-in 180ms var(--wt-rc-ease);
 }
@@ -407,14 +420,14 @@
 
 .wt-rc-speed-nudge {
   flex: none;
-  width: 36px;
-  height: 36px;
+  width: 26px;
+  height: 26px;
   padding: 0;
   border: 1px solid var(--line-strong, #d2d2cc);
   border-radius: 50%;
   background: var(--surface, #fff);
   color: var(--wt-rc-ink);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1;
   cursor: pointer;
@@ -433,8 +446,8 @@
 .wt-rc-speed-lever {
   flex: 1 1 auto;
   min-width: 0;
-  max-width: 280px;
-  height: 28px;
+  max-width: 180px;
+  height: 20px;
   margin: 0;
   padding: 0;
   appearance: none;
@@ -447,46 +460,46 @@
   cursor: default;
 }
 .wt-rc-speed-lever::-webkit-slider-runnable-track {
-  height: 4px;
+  height: 3px;
   border-radius: 999px;
   background: var(--wt-rc-line);
 }
 .wt-rc-speed-lever::-webkit-slider-thumb {
   appearance: none;
   -webkit-appearance: none;
-  width: 22px;
-  height: 22px;
-  margin-top: -9px;
+  width: 14px;
+  height: 14px;
+  margin-top: -5.5px;
   border: 2px solid #fff;
   border-radius: 50%;
   background: var(--wt-rc-accent);
-  box-shadow: 0 1px 4px rgba(22, 22, 26, 0.22);
+  box-shadow: 0 1px 3px rgba(22, 22, 26, 0.2);
   cursor: grab;
 }
 .wt-rc-speed-lever:active::-webkit-slider-thumb {
   cursor: grabbing;
 }
 .wt-rc-speed-lever::-moz-range-track {
-  height: 4px;
+  height: 3px;
   border: 0;
   border-radius: 999px;
   background: var(--wt-rc-line);
 }
 .wt-rc-speed-lever::-moz-range-thumb {
-  width: 22px;
-  height: 22px;
+  width: 14px;
+  height: 14px;
   border: 2px solid #fff;
   border-radius: 50%;
   background: var(--wt-rc-accent);
-  box-shadow: 0 1px 4px rgba(22, 22, 26, 0.22);
+  box-shadow: 0 1px 3px rgba(22, 22, 26, 0.2);
   cursor: grab;
 }
 
 .wt-rc-speed-value {
   flex: none;
-  min-width: 3.2em;
+  min-width: 2.8em;
   color: var(--wt-rc-ink);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.01em;
@@ -511,15 +524,14 @@
     z-index: 2;
     width: 100%;
     margin: 0;
-    flex: 1 1 auto;
+    flex: none;
     min-height: 0;
     display: flex;
     flex-direction: column;
   }
 
   .wt-rc {
-    flex: 1 1 auto;
-    min-height: 0;
+    flex: none;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -531,39 +543,37 @@
       0 8px 24px rgba(22, 22, 26, 0.04);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    padding: 14px 16px 12px;
-    gap: 10px;
+    padding: 12px 14px 10px;
+    gap: 8px;
+  }
+
+  .wt-rc-now {
+    font-size: 16px;
   }
 
   .wt-rc-picks {
     flex: none;
-    gap: 8px;
-  }
-
-  .wt-rc-pick-row {
-    gap: 10px;
-  }
-
-  .wt-rc-pick-label {
-    width: 1.4em;
-    font-size: 12px;
-    color: var(--wt-rc-muted);
+    gap: 2px;
   }
 
   .wt-rc-chip-rail {
-    gap: 8px;
+    gap: 2px;
   }
 
   .wt-rc-chip {
-    min-width: 36px;
-    height: 32px;
-    padding: 0 11px;
+    min-width: 30px;
+    height: 28px;
+    padding: 0 9px;
     font-size: 13px;
-    letter-spacing: 0.03em;
+  }
+
+  .wt-rc-chip-rail.is-chapter .wt-rc-chip {
+    height: 30px;
+    font-size: 14px;
   }
 
   .wt-rc-clock {
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 0.01em;
   }
 
@@ -601,47 +611,47 @@
     font-size: 10px;
   }
 
-  /* 아래 빈 칸을 배속 레버가 채움 — 위로 튀지 않음 */
   .wt-rc-speed-dock,
   .wt-rc-speed-dock.is-open {
     display: flex;
     flex: none;
-    margin-top: auto;
-    gap: 12px;
-    padding: 14px 8px 6px;
+    margin-top: 0;
+    gap: 8px;
+    padding: 6px 4px 0;
     border-top: 1px solid var(--line, #e6e6e2);
     animation: none;
   }
 
   .wt-rc-speed-nudge {
-    width: 40px;
-    height: 40px;
+    width: 26px;
+    height: 26px;
+    font-size: 15px;
   }
 
   .wt-rc-speed-lever {
-    max-width: 360px;
-    height: 32px;
+    max-width: 200px;
+    height: 20px;
   }
 
   .wt-rc-speed-lever::-webkit-slider-runnable-track {
-    height: 5px;
+    height: 3px;
   }
   .wt-rc-speed-lever::-webkit-slider-thumb {
-    width: 24px;
-    height: 24px;
-    margin-top: -10px;
+    width: 14px;
+    height: 14px;
+    margin-top: -5.5px;
   }
   .wt-rc-speed-lever::-moz-range-track {
-    height: 5px;
+    height: 3px;
   }
   .wt-rc-speed-lever::-moz-range-thumb {
-    width: 24px;
-    height: 24px;
+    width: 14px;
+    height: 14px;
   }
 
   .wt-rc-speed-value {
-    min-width: 3.5em;
-    font-size: 15px;
+    min-width: 2.8em;
+    font-size: 12px;
   }
 }
 

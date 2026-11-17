@@ -796,6 +796,7 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
             disabled={!ready}
             playing={playing}
             speed={speed}
+            bookName={name}
             chapter={chapter}
             chapterUnit={unit}
             totalChapters={totalChapters}

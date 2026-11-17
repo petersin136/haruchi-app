@@ -21,6 +21,7 @@ type Props = {
   disabled: boolean;
   playing: boolean;
   speed: SpeedOption;
+  bookName: string;
   chapter: number;
   /** 시편=편, 그 외=장 */
   chapterUnit: "장" | "편";
@@ -88,9 +89,9 @@ function formatChapterClock(total: number): string {
 }
 
 function formatSpeed(v: number): string {
-  if (v === 1) return "1.0×";
-  if (Number.isInteger(v)) return `${v}×`;
-  return `${v}×`;
+  if (Number.isInteger(v)) return `${v}.0×`;
+  const s = (Math.round(v * 100) / 100).toFixed(2).replace(/\.?0+$/, "");
+  return `${s}×`;
 }
 
 function scrollChipIntoView(
@@ -109,6 +110,7 @@ export default function Remote({
   disabled,
   playing,
   speed,
+  bookName,
   chapter,
   chapterUnit,
   totalChapters,
@@ -207,75 +209,82 @@ export default function Remote({
       <div className="wt-rc-fade" aria-hidden />
       <div className="wt-rc-wrap">
         <div className="wt-rc" role="group" aria-label="영상 리모컨">
+          <div className="wt-rc-meta">
+            <h2 className="wt-rc-now">
+              <span className="wt-rc-now-book">{bookName}</span>
+              <strong className="wt-rc-now-ch">
+                {chapter}
+                {chapterUnit}
+              </strong>
+              {currentVerse !== null ? (
+                <span className="wt-rc-now-verse">
+                  · {chapter}:{currentVerse}
+                </span>
+              ) : null}
+            </h2>
+            {clockLabel}
+          </div>
+
           <div className="wt-rc-picks" aria-label={`${chapterUnit}·절 바로 선택`}>
-            <div className="wt-rc-pick-row">
-              <span className="wt-rc-pick-label">{chapterUnit}</span>
+            <div
+              ref={chapterRailRef}
+              className="wt-rc-chip-rail is-chapter"
+              role="listbox"
+              aria-label={`${chapterUnit} 선택`}
+            >
+              {Array.from({ length: totalChapters }, (_, i) => i + 1).map(
+                (c) => {
+                  const available = isChapterAvailable
+                    ? isChapterAvailable(c)
+                    : hasVerseTimes;
+                  const selected = c === chapter;
+                  return (
+                    <button
+                      key={c}
+                      type="button"
+                      role="option"
+                      data-rc-ch={c}
+                      aria-selected={selected}
+                      className={`wt-rc-chip${selected ? " is-selected" : ""}`}
+                      disabled={!available}
+                      onClick={() => onPickChapter(c)}
+                    >
+                      {c}
+                    </button>
+                  );
+                },
+              )}
+            </div>
+
+            {showVerseRail ? (
               <div
-                ref={chapterRailRef}
-                className="wt-rc-chip-rail"
+                ref={verseRailRef}
+                className="wt-rc-chip-rail is-verse"
                 role="listbox"
-                aria-label={`${chapterUnit} 선택`}
+                aria-label="절 선택"
               >
-                {Array.from({ length: totalChapters }, (_, i) => i + 1).map(
-                  (c) => {
-                    const available = isChapterAvailable
-                      ? isChapterAvailable(c)
-                      : hasVerseTimes;
-                    const selected = c === chapter;
+                {Array.from({ length: verseCount }, (_, i) => i + 1).map(
+                  (v) => {
+                    const available = isVerseAvailable
+                      ? isVerseAvailable(v)
+                      : true;
+                    const selected = currentVerse === v;
                     return (
                       <button
-                        key={c}
+                        key={v}
                         type="button"
                         role="option"
-                        data-rc-ch={c}
+                        data-rc-v={v}
                         aria-selected={selected}
                         className={`wt-rc-chip${selected ? " is-selected" : ""}`}
-                        /* 영상 ready 와 무관 — 시간 데이터만 있으면 바로 선택 */
                         disabled={!available}
-                        onClick={() => onPickChapter(c)}
+                        onClick={() => onPickVerse(chapter, v)}
                       >
-                        {c}
+                        {v}
                       </button>
                     );
                   },
                 )}
-              </div>
-              {clockLabel}
-            </div>
-
-            {showVerseRail ? (
-              <div className="wt-rc-pick-row">
-                <span className="wt-rc-pick-label">절</span>
-                <div
-                  ref={verseRailRef}
-                  className="wt-rc-chip-rail"
-                  role="listbox"
-                  aria-label="절 선택"
-                >
-                  {Array.from({ length: verseCount }, (_, i) => i + 1).map(
-                    (v) => {
-                      const available = isVerseAvailable
-                        ? isVerseAvailable(v)
-                        : true;
-                      const selected = currentVerse === v;
-                      return (
-                        <button
-                          key={v}
-                          type="button"
-                          role="option"
-                          data-rc-v={v}
-                          aria-selected={selected}
-                          className={`wt-rc-chip${selected ? " is-selected" : ""}`}
-                          /* 영상 ready 와 무관 — 절 시간만 있으면 바로 선택 */
-                          disabled={!available}
-                          onClick={() => onPickVerse(chapter, v)}
-                        >
-                          {v}
-                        </button>
-                      );
-                    },
-                  )}
-                </div>
               </div>
             ) : null}
           </div>
@@ -371,7 +380,7 @@ export default function Remote({
             </div>
           </div>
 
-          {/* 모바일: .is-open 일 때만 / PC: 아래 여백에 상시 — 0.5 단위 레버 */}
+          {/* 모바일: .is-open 일 때만 / PC: 하단 상시 — 0.05 단위 레버 */}
           <div
             className={`wt-rc-speed-dock${speedOpen ? " is-open" : ""}`}
             role="group"
@@ -381,7 +390,7 @@ export default function Remote({
               type="button"
               className="wt-rc-speed-nudge"
               disabled={disabled || speed <= SPEED_MIN}
-              aria-label="배속 0.5 낮추기"
+              aria-label="배속 0.05 낮추기"
               onClick={() => onSelectSpeed(nudgeSpeed(speed, -1))}
             >
               −
@@ -407,7 +416,7 @@ export default function Remote({
               type="button"
               className="wt-rc-speed-nudge"
               disabled={disabled || speed >= SPEED_MAX}
-              aria-label="배속 0.5 높이기"
+              aria-label="배속 0.05 높이기"
               onClick={() => onSelectSpeed(nudgeSpeed(speed, 1))}
             >
               +

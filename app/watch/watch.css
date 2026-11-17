@@ -1908,31 +1908,42 @@
     overflow: hidden;
   }
 
-  /* 영상 위·가로 100%, 리모컨이 아래 남는 높이 채움 */
+  /*
+   * 와이드에서도 플레이바가 잘리지 않게:
+   * 1행=영상(남는 높이만), 2행=리모컨(콘텐츠 높이 고정)
+   * 영상은 16:9 유지하며 가로·세로 둘 다 넘치지 않게 축소
+   */
   .wt-primary {
+    height: 100%;
     min-height: 0;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
     gap: 10px;
     padding-bottom: 0;
+    align-content: stretch;
   }
 
   .wt-video {
     position: relative;
     z-index: auto;
-    flex: 0 0 auto;
     min-height: 0;
+    min-width: 0;
     padding: 0;
     background: transparent;
+    overflow: hidden;
+    container-type: size;
+    display: grid;
+    place-items: start center;
   }
 
   .wt-video-frame {
     position: relative;
     inset: auto;
-    width: 100%;
+    /* 열 너비·남는 높이 중 작은 쪽에 맞춰 16:9 */
+    width: min(100cqw, calc(100cqh * 16 / 9));
     max-width: 100%;
+    max-height: 100%;
     height: auto;
     margin: 0;
     aspect-ratio: 16 / 9;
@@ -1940,16 +1951,15 @@
     box-shadow: var(--shadow-1);
   }
 
-  /* PC: 리모컨 바로 위 중복 제목 숨김 */
+  /* 제목은 리모컨 메타로 이동 */
   .wt-now {
     display: none;
   }
 
   .wt-primary .wt-rc-wrap {
-    flex: 1 1 auto;
+    min-width: 0;
     min-height: 0;
-    display: flex;
-    flex-direction: column;
+    margin-top: 0;
   }
 
   .wt-aside {

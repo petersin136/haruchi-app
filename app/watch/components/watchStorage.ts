@@ -1,11 +1,13 @@
 import type { WatchBookId } from "../data/books";
 
-/** 배속 레버 범위 (0.5 단위, 최대 4×) */
+/** 배속 레버 범위 (0.05 단위, 최대 4×) — 1 / 1.25 / 1.5 / 1.75 등도 포함 */
 export const SPEED_MIN = 0.5;
 export const SPEED_MAX = 4;
-export const SPEED_STEP = 0.5;
+export const SPEED_STEP = 0.05;
 /** @deprecated 레거시 시트용 — 새 UI는 레버 사용 */
-export const SPEED_OPTIONS = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4] as const;
+export const SPEED_OPTIONS = [
+  0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4,
+] as const;
 export type SpeedOption = number;
 export const DEFAULT_SPEED: SpeedOption = 1.5;
 
@@ -39,13 +41,12 @@ function write(key: string, value: string | null): void {
   }
 }
 
-/** 가장 가까운 0.5 단위로 맞추고 범위 안으로. */
+/** 가장 가까운 0.05 단위로 맞추고 범위 안으로. */
 export function clampSpeed(raw: number): SpeedOption {
   if (!Number.isFinite(raw)) return DEFAULT_SPEED;
-  const stepped =
-    Math.round(raw / SPEED_STEP) * SPEED_STEP;
+  const stepped = Math.round(raw / SPEED_STEP) * SPEED_STEP;
   const clamped = Math.min(SPEED_MAX, Math.max(SPEED_MIN, stepped));
-  return Math.round(clamped * 10) / 10;
+  return Math.round(clamped * 100) / 100;
 }
 
 export function nudgeSpeed(current: number, dir: -1 | 1): SpeedOption {
@@ -56,7 +57,6 @@ function parseSpeed(raw: string | null): SpeedOption | null {
   if (raw == null || raw === "") return null;
   const v = Number(raw);
   if (!Number.isFinite(v)) return null;
-  // 예전 0.75/1.25/1.75 도 가장 가까운 0.5 칸으로
   return clampSpeed(v);
 }
 
