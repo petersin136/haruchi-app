@@ -266,7 +266,9 @@ button.study-loc-trigger {
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
+  -webkit-user-drag: none;
   -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
 }
 
 /* PC 양쪽: 마우스는 브라우저 기본 선택. 375/768 한쪽은 위 none 유지 */
@@ -2301,7 +2303,8 @@ html[data-study-spread="1"] .brp-tabbar {
     0 1px 2px rgba(0, 0, 0, 0.04),
     0 12px 32px rgba(60, 40, 20, 0.08);
   overflow: visible;
-  touch-action: none;
+  /* 세로는 브라우저 스크롤, 가로는 JS 넘김. none 이면 삼성에서 세로도 드래그됨 */
+  touch-action: pan-y;
 }
 
 /* 접힘선: 펼침 종이 안에만. 위아래 24px 페이드 */

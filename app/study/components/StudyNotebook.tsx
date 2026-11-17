@@ -3100,16 +3100,9 @@ function StudyNotebook({
       samples: 0,
       dragging: true,
     };
-    const edgeEl = t.closest(".study-spread-edge") as HTMLElement | null;
-    const capEl = edgeEl ?? e.currentTarget;
-    try {
-      capEl.setPointerCapture(e.pointerId);
-      spreadCaptureIdRef.current = e.pointerId;
-      spreadCaptureElRef.current = capEl;
-    } catch {
-      /* ignore */
-    }
-    e.currentTarget.classList.add("is-edge-drag");
+    spreadCaptureIdRef.current = e.pointerId;
+    spreadCaptureElRef.current = t.closest(".study-spread-edge") as HTMLElement | null
+      ?? e.currentTarget;
   };
 
   const onSpreadPointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
@@ -3142,6 +3135,13 @@ function StudyNotebook({
       const verticalish = Math.abs(dx) <= Math.abs(dy) * 1.5;
       if (elapsed <= 350 && horizontal) {
         s.mode = "drag";
+        const capEl = spreadCaptureElRef.current ?? e.currentTarget;
+        try {
+          capEl.setPointerCapture(e.pointerId);
+        } catch {
+          /* ignore */
+        }
+        e.currentTarget.classList.add("is-edge-drag");
         if (pressRef.current) {
           window.clearTimeout(pressRef.current.timer);
           pressRef.current = null;

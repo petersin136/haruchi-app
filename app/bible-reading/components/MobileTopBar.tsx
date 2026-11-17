@@ -78,9 +78,13 @@ const MODE_OPTIONS: { value: MobileModeChoice; label: string }[] = [
 type MobileTopBarProps = {
   bookId: string;
   chapterNumber: number;
+  bookName: string;
+  chapterLabel: string;
+  drawerOpen: boolean;
   modeChoice: MobileModeChoice;
   onModeChange: (next: MobileModeChoice) => void;
   onSearch: () => void;
+  onOpenDrawer: () => void;
 };
 
 const STROKE = 1.75;
@@ -168,9 +172,13 @@ function MoreIcon() {
 function MobileTopBar({
   bookId,
   chapterNumber,
+  bookName,
+  chapterLabel,
+  drawerOpen,
   modeChoice,
   onModeChange,
   onSearch,
+  onOpenDrawer,
 }: MobileTopBarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -260,6 +268,23 @@ function MobileTopBar({
             <MoreIcon />
           </button>
         </div>
+        <button
+          type="button"
+          className="brp-mobile-topbar-book"
+          onClick={onOpenDrawer}
+          aria-label="책·장 선택"
+          aria-expanded={drawerOpen}
+        >
+          <span className="brp-mobile-topbar-book-label">
+            <span className="brp-mobile-topbar-book-clip">
+              <span className="brp-mobile-topbar-book-name">{bookName}</span>{" "}
+              <span className="brp-mobile-topbar-book-ch">{chapterLabel}</span>
+            </span>
+          </span>
+          <span className="brp-mobile-topbar-chevron" aria-hidden>
+            ▾
+          </span>
+        </button>
       </div>
 
       {menuOpen ? (

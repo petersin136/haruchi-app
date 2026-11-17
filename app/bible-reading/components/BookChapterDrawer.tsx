@@ -23,7 +23,8 @@ import {
   type BookId,
 } from "../books";
 
-const MQ = "(max-width: 768px)";
+const MQ = "(max-width: 1279.98px)";
+const COARSE_MQ = "(pointer: coarse)";
 const REDUCE_MQ = "(prefers-reduced-motion: reduce)";
 const DRAWER_RATIO = 0.55;
 /** 가로가 세로보다 충분히 크고 이 값을 넘을 때만 서랍 제스처로 잠금 */
@@ -60,6 +61,22 @@ function prefersReducedMotion() {
   return window.matchMedia(REDUCE_MQ).matches;
 }
 
+function onMqlChange(mql: MediaQueryList, fn: () => void) {
+  if (typeof mql.addEventListener === "function") {
+    mql.addEventListener("change", fn);
+    return () => mql.removeEventListener("change", fn);
+  }
+  mql.addListener(fn);
+  return () => mql.removeListener(fn);
+}
+
+function canStartOpenGesture() {
+  if (typeof window === "undefined") return false;
+  return (
+    window.matchMedia(MQ).matches || window.matchMedia(COARSE_MQ).matches
+  );
+}
+
 function BookChapterDrawer({
   open,
   onOpen,
@@ -70,7 +87,6 @@ function BookChapterDrawer({
   disabled,
   onSelectBookChapter,
 }: BookChapterDrawerProps) {
-  const [isMobile, setIsMobile] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
   const [progress, setProgress] = useState(0);
   const [dragging, setDragging] = useState(false);
@@ -125,18 +141,10 @@ function BookChapterDrawer({
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const mql = window.matchMedia(MQ);
     const rMql = window.matchMedia(REDUCE_MQ);
-    const sync = () => setIsMobile(mql.matches);
     const syncReduce = () => setReduceMotion(rMql.matches);
-    sync();
     syncReduce();
-    mql.addEventListener("change", sync);
-    rMql.addEventListener("change", syncReduce);
-    return () => {
-      mql.removeEventListener("change", sync);
-      rMql.removeEventListener("change", syncReduce);
-    };
+    return onMqlChange(rMql, syncReduce);
   }, []);
 
   // 열릴 때 미리보기 책 동기화 (open 토글과 분리 — 책 변경 시 재애니 방지)
@@ -276,8 +284,8 @@ function BookChapterDrawer({
       if (sel && !sel.isCollapsed && (sel.toString()?.length ?? 0) > 0) {
         return false;
       }
-      // 닫힌 상태: 모바일에서만 열기 제스처
-      if (!openish() && !isMobile) return false;
+      // 닫힌 상태: 터치폰·좁은 화면에서만 열기. PC 마우스 드래그는 제외.
+      if (!openish() && !canStartOpenGesture()) return false;
       startX = clientX;
       startY = clientY;
       lastX = clientX;
@@ -294,20 +302,12 @@ function BookChapterDrawer({
 
     const ignoreTarget = (target: EventTarget | null) => {
       if (!(target instanceof Element)) return true;
-      // 열린 서랍·백드롭 위에서는 가로로 밀어 넣기 허용 (목록 버튼 포함)
       if (target.closest(".brp-bcd")) {
         return !!target.closest("input, textarea, select");
       }
       return !!target.closest(
-        "[data-no-drawer-swipe], button, a, input, textarea, select, .brp-mobile-topbar, .brp-header, .study-toolbar, .study-ws-root, .study-sel-handle, .study-mark-note-input",
+        "[data-no-drawer-swipe], input, textarea, select, .brp-mobile-topbar, .brp-header, .study-toolbar, .study-ws-root, .study-sel-handle, .study-mark-note-input",
       );
-    };
-
-    const onStart = (e: TouchEvent) => {
-      if (e.touches.length !== 1) return;
-      if (ignoreTarget(e.target)) return;
-      const t = e.touches[0];
-      begin(t.clientX, t.clientY);
     };
 
     const applyMove = (clientX: number, clientY: number) => {
@@ -332,8 +332,13 @@ function BookChapterDrawer({
 
       if (!locked) {
         if (Math.abs(dx) < LOCK_PX && Math.abs(dy) < LOCK_PX) return;
+        // 위아래 스크롤은 서랍으로 잡지 않음
+        if (Math.abs(dy) >= Math.abs(dx) * 0.85) {
+          locked = "v";
+          tracking = false;
+          return;
+        }
         if (Math.abs(dx) > Math.abs(dy) * 1.35 && Math.abs(dx) > LOCK_PX) {
-          // 열기: 왼쪽 / 닫기(밀어 넣기): 오른쪽
           if (mode === "open" && dx > 0) {
             locked = "v";
             tracking = false;
@@ -364,7 +369,6 @@ function BookChapterDrawer({
       if (mode === "open") {
         next = Math.min(1, Math.max(0, -dx / w));
       } else {
-        // 오른쪽으로 민 만큼 서랍이 들어감 (progress → 0)
         next = Math.min(1, Math.max(0, startProgress - dx / w));
       }
       progressRef.current = next;
@@ -383,21 +387,14 @@ function BookChapterDrawer({
       }
       const p = progressRef.current;
       const flick = Math.abs(velocity) >= FLICK_PX_PER_MS;
-      // 오른쪽 플릭·충분히 밀어 넣으면 닫힘 / 왼쪽 플릭·절반 이상이면 열림
       const nextOpen = flick ? velocity < 0 : p >= 0.42;
       snapTo(nextOpen);
     };
 
-    const onMove = (e: TouchEvent) => {
-      if (!tracking || e.touches.length !== 1) return;
-      const t = e.touches[0];
-      applyMove(t.clientX, t.clientY);
-      if (locked === "h" && e.cancelable) e.preventDefault();
-    };
-
+    // 삼성 인터넷은 touch-action:none 요소에서 window touch 가 안 뜨고
+    // pointerType=touch 만 온다. 포인터만 capture 단계에서 듣는다.
     const onPointerDown = (e: PointerEvent) => {
-      if (e.pointerType === "touch") return;
-      if (e.button !== 0) return;
+      if (e.pointerType === "mouse" && e.button !== 0) return;
       if (ignoreTarget(e.target)) return;
       if (!begin(e.clientX, e.clientY)) return;
       pointerId = e.pointerId;
@@ -406,7 +403,7 @@ function BookChapterDrawer({
     const onPointerMove = (e: PointerEvent) => {
       if (pointerId == null || e.pointerId !== pointerId) return;
       applyMove(e.clientX, e.clientY);
-      if (locked === "h") e.preventDefault();
+      if (locked === "h" && e.cancelable) e.preventDefault();
     };
 
     const onPointerUp = (e: PointerEvent) => {
@@ -414,25 +411,19 @@ function BookChapterDrawer({
       finish();
     };
 
-    window.addEventListener("touchstart", onStart, { passive: true });
-    window.addEventListener("touchmove", onMove, { passive: false });
-    window.addEventListener("touchend", finish, { passive: true });
-    window.addEventListener("touchcancel", finish, { passive: true });
-    window.addEventListener("pointerdown", onPointerDown, { passive: true });
-    window.addEventListener("pointermove", onPointerMove, { passive: false });
-    window.addEventListener("pointerup", onPointerUp, { passive: true });
-    window.addEventListener("pointercancel", onPointerUp, { passive: true });
+    const optsCap = { capture: true } as AddEventListenerOptions;
+    const optsMove = { capture: true, passive: false } as AddEventListenerOptions;
+    document.addEventListener("pointerdown", onPointerDown, optsCap);
+    document.addEventListener("pointermove", onPointerMove, optsMove);
+    document.addEventListener("pointerup", onPointerUp, optsCap);
+    document.addEventListener("pointercancel", onPointerUp, optsCap);
     return () => {
-      window.removeEventListener("touchstart", onStart);
-      window.removeEventListener("touchmove", onMove);
-      window.removeEventListener("touchend", finish);
-      window.removeEventListener("touchcancel", finish);
-      window.removeEventListener("pointerdown", onPointerDown);
-      window.removeEventListener("pointermove", onPointerMove);
-      window.removeEventListener("pointerup", onPointerUp);
-      window.removeEventListener("pointercancel", onPointerUp);
+      document.removeEventListener("pointerdown", onPointerDown, optsCap);
+      document.removeEventListener("pointermove", onPointerMove, optsMove);
+      document.removeEventListener("pointerup", onPointerUp, optsCap);
+      document.removeEventListener("pointercancel", onPointerUp, optsCap);
     };
-  }, [isMobile, disabled, snapTo, clearTimers]);
+  }, [disabled, snapTo, clearTimers]);
 
   const handleBookClick = useCallback((id: BookId) => {
     if (panelDraggedRef.current) {

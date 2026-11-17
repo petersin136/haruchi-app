@@ -579,6 +579,8 @@ export default function BibleReadingPage() {
   // <style> 태그도 이미 DOM 에 주입돼 있다 (FOUC 없음).
   useEffect(() => {
     setMounted(true);
+    document.documentElement.classList.add("brp-reading");
+    return () => document.documentElement.classList.remove("brp-reading");
   }, []);
 
 
@@ -1821,9 +1823,13 @@ export default function BibleReadingPage() {
       <MobileTopBar
         bookId={bookId}
         chapterNumber={chapterNumber}
+        bookName={bookMeta.name}
+        chapterLabel={`${chapterNumber}${bookId === "psalms" ? "편" : "장"}`}
+        drawerOpen={drawerOpen}
         modeChoice={currentModeChoice}
         onModeChange={handleModeChange}
         onSearch={openSearch}
+        onOpenDrawer={openDrawer}
       />
       <BookChapterDrawer
         open={drawerOpen}

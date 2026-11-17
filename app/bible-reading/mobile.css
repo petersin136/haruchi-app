@@ -1,6 +1,28 @@
 /* 모바일·태블릿·중간 데스크탑(<1280) — 상단바 + 단일 본문.
    ≥1280 은 파일 하단 A 블록(상단바 유지 + 헤더 nav). */
 
+/* 스크롤바 숨김 — :has() 없는 삼성 인터넷 포함 */
+html.brp-reading,
+html.brp-reading body,
+.brp-page,
+.brp-page * {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html.brp-reading::-webkit-scrollbar,
+html.brp-reading body::-webkit-scrollbar,
+.brp-page::-webkit-scrollbar,
+.brp-page *::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+html.brp-reading,
+html.brp-reading body {
+  overflow-x: hidden;
+}
+
 .brp-mobile-topbar {
   display: none;
 }
@@ -264,6 +286,15 @@
 
 
 @media (max-width: 1279.98px) {
+  .brp-page .brp-reader,
+  .brp-page .study-body,
+  .brp-page .study-body * {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+  }
+
   .brp-header,
   .brp-mini-bar,
   .brp-top-row,
@@ -501,7 +532,10 @@
   display: flex;
   flex-direction: row;
   gap: 0;
-  padding: env(safe-area-inset-top, 0px) 10px env(safe-area-inset-bottom, 0px) 16px;
+  padding-top: 12px;
+  padding-right: 10px;
+  padding-bottom: 12px;
+  padding-left: 16px;
   box-sizing: border-box;
   color: #2a2420;
   border: none;
@@ -516,6 +550,13 @@
     -1px 0 0 rgba(40, 28, 16, 0.04);
   transform: translateX(calc((1 - var(--brp-drawer-p, 0)) * 100%));
   transition: none;
+}
+
+@supports (padding: env(safe-area-inset-top)) {
+  .brp-bcd-panel {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
 
 .brp-bcd-panel-rail {
