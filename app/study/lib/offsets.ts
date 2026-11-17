@@ -29,6 +29,39 @@ export function buildChapterPlain(verses: Verse[]): {
 
 export type StudyCopyPayload = { plain: string; html: string };
 
+/** 메모가 HTML 목록을 받도록 contentEditable + execCommand('copy') */
+export function copyStudyHtml(html: string): boolean {
+  if (typeof document === "undefined") return false;
+  const host = document.createElement("div");
+  host.setAttribute("contenteditable", "true");
+  host.innerHTML = html;
+  host.style.cssText =
+    "position:fixed;left:-9999px;top:0;width:360px;opacity:0;pointer-events:none";
+  document.body.appendChild(host);
+  const sel = window.getSelection();
+  const prev = sel?.rangeCount ? sel.getRangeAt(0).cloneRange() : null;
+  const range = document.createRange();
+  range.selectNodeContents(host);
+  sel?.removeAllRanges();
+  sel?.addRange(range);
+  let ok = false;
+  try {
+    ok = document.execCommand("copy");
+  } catch {
+    ok = false;
+  }
+  sel?.removeAllRanges();
+  if (prev && sel) {
+    try {
+      sel.addRange(prev);
+    } catch {
+      /* ignore */
+    }
+  }
+  host.remove();
+  return ok;
+}
+
 function escapeCopyHtml(s: string) {
   return s
     .replace(/&/g, "&amp;")
@@ -40,7 +73,7 @@ function escapeCopyHtml(s: string) {
 /**
  * 절 선택 복사.
  * 「다니엘 1:5-8」바로 아래 절 본문(빈 줄 없음).
- * 강제 폭 줄바꿈·표 없음. HTML은 내어쓰기 단락(화면 폭에 맞춰 감김, 번호 아래 비움).
+ * 강제 폭·표 없음. HTML은 목록(번호 바깥)이라 화면 폭에 감기고 번호 아래는 비움.
  */
 export function formatStudyCopy(
   bookName: string,
@@ -73,16 +106,14 @@ export function formatStudyCopy(
     .map((v) => `${v.n} ${v.text.trim()}`)
     .join("\n")}`;
 
-  const numWidth = Math.max(...sorted.map((v) => String(v.n).length));
-  const hangEm = (0.85 + numWidth * 0.55).toFixed(2);
-  const verses = sorted
+  // 메모는 평문을 고르면 번호 아래로 본문이 붙음 → 목록(outside)으로 번호 칸을 비우고 폭은 화면이 정함
+  const listItems = sorted
     .map((v) => {
-      // NBSP: 번호와 본문이 줄 끝에서 어색하게 갈라지지 않게
-      const line = escapeCopyHtml(`${v.n}\u00A0${v.text.trim()}`);
-      return `<p style="margin:0;line-height:1.55;padding-left:${hangEm}em;text-indent:-${hangEm}em">${line}</p>`;
+      const t = escapeCopyHtml(v.text.trim());
+      return `<li value="${v.n}"><p style="margin:0">${t}</p></li>`;
     })
     .join("");
-  const html = `<!DOCTYPE html><html><head><meta charset="utf-8" /></head><body style="margin:0;font-family:-apple-system,'Noto Serif KR',serif;font-size:16px;line-height:1.55"><p style="margin:0">${escapeCopyHtml(cite)}</p>${verses}</body></html>`;
+  const html = `<html><head><meta charset="utf-8"></head><body><!--StartFragment--><p style="margin:0">${escapeCopyHtml(cite)}</p><ol style="margin:0;padding-left:2.25em;list-style:decimal outside">${listItems}</ol><!--EndFragment--></body></html>`;
   return { plain, html };
 }
 

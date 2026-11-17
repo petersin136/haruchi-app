@@ -37,6 +37,7 @@ import {
 import {
   buildChapterPlain,
   circledNum,
+  copyStudyHtml,
   formatStudyCopy,
   segmentVerse,
   verseAtOffset,
@@ -821,10 +822,12 @@ function StudyNotebook({
     ) => {
       if (viaEvent?.clipboardData) {
         viaEvent.preventDefault();
-        viaEvent.clipboardData.setData("text/plain", payload.plain);
+        // HTML 목록 먼저 — 번호 아래 비움이 메모에 남게
         viaEvent.clipboardData.setData("text/html", payload.html);
+        viaEvent.clipboardData.setData("text/plain", payload.plain);
         return true;
       }
+      if (copyStudyHtml(payload.html)) return true;
       try {
         if (typeof ClipboardItem !== "undefined" && navigator.clipboard?.write) {
           await navigator.clipboard.write([
@@ -3749,19 +3752,21 @@ function StudyNotebook({
           ];
     const payload = formatStudyCopy(bookMeta.name, items);
     if (!payload.plain.trim()) return;
-    let ok = false;
-    try {
-      if (typeof ClipboardItem !== "undefined" && navigator.clipboard?.write) {
-        await navigator.clipboard.write([
-          new ClipboardItem({
-            "text/html": new Blob([payload.html], { type: "text/html" }),
-            "text/plain": new Blob([payload.plain], { type: "text/plain" }),
-          }),
-        ]);
-        ok = true;
+    let ok = copyStudyHtml(payload.html);
+    if (!ok) {
+      try {
+        if (typeof ClipboardItem !== "undefined" && navigator.clipboard?.write) {
+          await navigator.clipboard.write([
+            new ClipboardItem({
+              "text/html": new Blob([payload.html], { type: "text/html" }),
+              "text/plain": new Blob([payload.plain], { type: "text/plain" }),
+            }),
+          ]);
+          ok = true;
+        }
+      } catch {
+        /* fall through */
       }
-    } catch {
-      /* fall through */
     }
     if (!ok) {
       try {

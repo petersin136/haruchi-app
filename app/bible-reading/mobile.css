@@ -468,7 +468,7 @@ html.brp-reading body {
   /* 서랍이 열려도 본문(성경 텍스트)은 밀리거나 작아지지 않음 — 서랍만 오버레이 */
 }
 
-/* 책·장 문고리 — PC·모바일 공통 (닫혀 있을 때 오른쪽 가장자리) */
+/* 책·장 문고리 — PC만. 모바일(≤768)에서는 숨김 */
 .brp-bcd-pull {
   position: fixed;
   z-index: 72;
@@ -510,6 +510,12 @@ html.brp-reading body {
   border-radius: 999px;
   transform: translate(-50%, -50%);
   background: rgba(120, 100, 80, 0.45);
+}
+
+@media (max-width: 768px) {
+  .brp-bcd-pull {
+    display: none;
+  }
 }
 
 .brp-bcd {
