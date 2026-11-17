@@ -310,6 +310,39 @@ function BookChapterDrawer({
       );
     };
 
+    const captureOn = (el: EventTarget | null, id: number) => {
+      const node =
+        el instanceof Element
+          ? (el.closest(".brp-bcd") as HTMLElement | null) ??
+            (el as HTMLElement)
+          : document.documentElement;
+      try {
+        node.setPointerCapture(id);
+      } catch {
+        try {
+          document.documentElement.setPointerCapture(id);
+        } catch {
+          /* ignore */
+        }
+      }
+    };
+
+    const releaseCap = (id: number) => {
+      const el = document.querySelector(".brp-bcd");
+      try {
+        if (el && el.hasPointerCapture(id)) el.releasePointerCapture(id);
+      } catch {
+        /* ignore */
+      }
+      try {
+        if (document.documentElement.hasPointerCapture(id)) {
+          document.documentElement.releasePointerCapture(id);
+        }
+      } catch {
+        /* ignore */
+      }
+    };
+
     const applyMove = (clientX: number, clientY: number) => {
       if (blocked()) {
         tracking = false;
@@ -329,28 +362,29 @@ function BookChapterDrawer({
 
       const dx = clientX - startX;
       const dy = clientY - startY;
+      const closing = mode === "close";
 
       if (!locked) {
         if (Math.abs(dx) < LOCK_PX && Math.abs(dy) < LOCK_PX) return;
-        // 위아래 스크롤은 서랍으로 잡지 않음
-        if (Math.abs(dy) >= Math.abs(dx) * 0.85) {
+        const horiz = closing
+          ? dx > LOCK_PX && dx > Math.abs(dy) * 0.75
+          : Math.abs(dx) > Math.abs(dy) * 1.35 && Math.abs(dx) > LOCK_PX;
+        const vert = closing
+          ? Math.abs(dy) > LOCK_PX && Math.abs(dy) > dx * 1.15
+          : Math.abs(dy) >= Math.abs(dx) * 0.85;
+        if (vert && !horiz) {
           locked = "v";
           tracking = false;
           return;
         }
-        if (Math.abs(dx) > Math.abs(dy) * 1.35 && Math.abs(dx) > LOCK_PX) {
-          if (mode === "open" && dx > 0) {
-            locked = "v";
-            tracking = false;
-            return;
-          }
-          if (mode === "close" && dx < 0) {
+        if (horiz) {
+          if (!closing && dx > 0) {
             locked = "v";
             tracking = false;
             return;
           }
           locked = "h";
-          if (mode === "close") panelDraggedRef.current = true;
+          if (closing) panelDraggedRef.current = true;
           draggingRef.current = true;
           setDragging(true);
           setAnimPhase(null);
@@ -375,7 +409,8 @@ function BookChapterDrawer({
       setProgress(next);
     };
 
-    const finish = () => {
+    const finish = (id: number | null) => {
+      if (id != null) releaseCap(id);
       if (!tracking) return;
       tracking = false;
       const wasH = locked === "h";
@@ -391,24 +426,27 @@ function BookChapterDrawer({
       snapTo(nextOpen);
     };
 
-    // 삼성 인터넷은 touch-action:none 요소에서 window touch 가 안 뜨고
-    // pointerType=touch 만 온다. 포인터만 capture 단계에서 듣는다.
     const onPointerDown = (e: PointerEvent) => {
       if (e.pointerType === "mouse" && e.button !== 0) return;
       if (ignoreTarget(e.target)) return;
       if (!begin(e.clientX, e.clientY)) return;
       pointerId = e.pointerId;
+      // 열린 서랍 위 버튼이 pointercancel 을 내면 손 추적이 끊김 → 바로 캡처
+      if (mode === "close") captureOn(e.target, e.pointerId);
     };
 
     const onPointerMove = (e: PointerEvent) => {
       if (pointerId == null || e.pointerId !== pointerId) return;
       applyMove(e.clientX, e.clientY);
-      if (locked === "h" && e.cancelable) e.preventDefault();
+      if (locked === "h") {
+        if (mode === "open") captureOn(e.target, e.pointerId);
+        if (e.cancelable) e.preventDefault();
+      }
     };
 
     const onPointerUp = (e: PointerEvent) => {
       if (pointerId == null || e.pointerId !== pointerId) return;
-      finish();
+      finish(e.pointerId);
     };
 
     const optsCap = { capture: true } as AddEventListenerOptions;
@@ -484,7 +522,13 @@ function BookChapterDrawer({
         type="button"
         className="brp-bcd-backdrop"
         aria-label="서랍 닫기"
-        onClick={onClose}
+        onClick={() => {
+          if (panelDraggedRef.current) {
+            panelDraggedRef.current = false;
+            return;
+          }
+          onClose();
+        }}
         tabIndex={progress > 0.5 ? 0 : -1}
       />
       <aside

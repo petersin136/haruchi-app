@@ -286,6 +286,15 @@ function MobileTopBar({
           </span>
         </button>
       </div>
+      <button
+        type="button"
+        className="brp-chrome-pill"
+        onClick={onOpenDrawer}
+        aria-label={`${bookName} ${chapterLabel}`}
+      >
+        <span className="brp-chrome-pill-name">{bookName}</span>
+        <span className="brp-chrome-pill-ch">{chapterLabel}</span>
+      </button>
 
       {menuOpen ? (
         <div
