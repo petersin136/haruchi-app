@@ -364,12 +364,11 @@ export default function Remote({
             </div>
           </div>
 
-          {/* 모바일: 열었을 때만 / PC: 아래 여백에 상시 도킹 */}
+          {/* 모바일: .is-open 일 때만 / PC: 아래 여백에 상시 */}
           <div
             className={`wt-rc-speed-dock${speedOpen ? " is-open" : ""}`}
             role="listbox"
             aria-label="배속 선택"
-            hidden={!speedOpen}
           >
             {SPEED_OPTIONS.map((v) => (
               <button

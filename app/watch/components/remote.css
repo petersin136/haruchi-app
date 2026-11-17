@@ -89,16 +89,12 @@
   overflow-y: hidden;
   overscroll-behavior-x: contain;
   touch-action: pan-x;
-  padding: 2px 2px 4px;
-  scrollbar-width: thin;
+  padding: 2px 0;
+  scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
 .wt-rc-chip-rail::-webkit-scrollbar {
-  height: 3px;
-}
-.wt-rc-chip-rail::-webkit-scrollbar-thumb {
-  background: var(--line-strong, #d2d2cc);
-  border-radius: 999px;
+  display: none;
 }
 
 .wt-rc-chip {
