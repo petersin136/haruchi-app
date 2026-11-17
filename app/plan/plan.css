@@ -1,4 +1,4 @@
-/* /plan — 오늘 분량이 본문. 크림·버건디, 칸·이모지 없음 */
+/* /plan — 오늘 분량 한 덩어리. 크림·버건디. 기본 포커스 링 없음 */
 
 .plan-page {
   --plan-cream: #fbf7ee;
@@ -11,7 +11,7 @@
   background: var(--plan-cream);
   color: var(--plan-ink);
   font-family: var(--font-noto-sans-kr, "Noto Sans KR", sans-serif);
-  padding: 28px 22px calc(var(--brp-tabbar-h, 56px) + 28px);
+  padding: 28px 20px calc(var(--brp-tabbar-h, 56px) + 32px);
 }
 
 .plan-page[data-plan="year365"] { --plan-accent: #9e1b1b; }
@@ -20,68 +20,96 @@
 .plan-page[data-plan="mcheyne"] { --plan-accent: #8a6a12; }
 
 .plan-shell {
-  max-width: 440px;
+  max-width: 480px;
   margin: 0 auto;
 }
 
-.plan-hero {
-  padding-top: 12px;
+.plan-page-title {
+  margin: 8px 0 0;
+  font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
 }
 
-.plan-kicker {
-  margin: 0;
+.plan-today {
+  margin-top: 28px;
+}
+
+.plan-today-kicker {
+  margin: 0 0 14px;
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: -0.01em;
   color: var(--plan-mute);
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
 
-.plan-hero-title {
-  margin: 14px 0 0;
+.plan-readings {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.plan-reading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+  border-top: 1px solid var(--plan-line);
+  color: inherit;
+  text-decoration: none;
+}
+
+.plan-readings li:last-child .plan-reading {
+  border-bottom: 1px solid var(--plan-line);
+}
+
+.plan-reading-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.plan-reading-book {
   font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
-  font-size: 40px;
+  font-size: 26px;
   font-weight: 600;
   letter-spacing: -0.03em;
-  line-height: 1.15;
-  color: var(--plan-ink);
+  line-height: 1.2;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
 
-.plan-hero-range {
-  margin: 10px 0 0;
-  font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+.plan-reading-ch {
+  font-size: 15px;
   color: var(--plan-accent);
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
 
-.plan-hero-go {
-  display: inline-block;
-  margin-top: 22px;
-  font-size: 15px;
+.plan-reading-go {
+  flex-shrink: 0;
+  font-size: 14px;
   font-weight: 600;
   color: var(--plan-accent);
-  text-decoration: none;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
 
-.plan-hero-go:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.plan-reading.is-done .plan-reading-go {
+  color: var(--plan-mute);
 }
 
 .plan-meter {
-  margin-top: 28px;
+  margin-top: 22px;
   height: 2px;
   background: var(--plan-line);
-  overflow: hidden;
 }
 
 .plan-meter-fill {
@@ -101,117 +129,87 @@
 }
 
 .plan-block {
-  margin-top: 36px;
+  margin-top: 40px;
 }
 
-.plan-readings {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.plan-reading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 16px 0;
-  border-top: 1px solid var(--plan-line);
-  color: inherit;
-  text-decoration: none;
-}
-
-.plan-readings li:last-child .plan-reading {
-  border-bottom: 1px solid var(--plan-line);
-}
-
-.plan-reading-book {
-  font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
-  font-size: 20px;
+.plan-section-label {
+  margin: 0 0 14px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: -0.02em;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
-}
-
-.plan-reading-ch {
-  flex-shrink: 0;
-  font-size: 14px;
+  letter-spacing: 0.08em;
   color: var(--plan-mute);
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
 
-.plan-reading.is-done .plan-reading-book,
-.plan-reading.is-done .plan-reading-ch {
-  color: var(--plan-accent);
-}
-
 .plan-picker {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 18px;
+  gap: 8px;
 }
 
 .plan-picker button {
   margin: 0;
-  padding: 0 0 4px;
-  border: 0;
-  border-bottom: 1px solid transparent;
-  background: none;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
   font: inherit;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
+  color: var(--plan-mute);
+  cursor: pointer;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.plan-picker button:focus {
+  outline: none;
+}
+
+.plan-picker button:focus-visible {
+  outline: 2px solid rgba(158, 27, 27, 0.35);
+  outline-offset: 2px;
+}
+
+.plan-picker button.is-active {
+  color: var(--plan-accent);
+  background: color-mix(in srgb, var(--plan-accent) 10%, transparent);
+}
+
+.plan-start {
+  position: relative;
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 14px;
   color: var(--plan-mute);
   cursor: pointer;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
 
-.plan-picker button.is-active {
-  color: var(--plan-ink);
-  border-bottom-color: var(--plan-accent);
-}
-
-.plan-start-row {
-  position: relative;
-  margin-top: 18px;
-}
-
-.plan-start-row label {
-  font-size: 13px;
-  color: var(--plan-mute);
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
-}
-
-.plan-start-row input[type="date"] {
+.plan-start input {
   position: absolute;
   inset: 0;
   opacity: 0;
   cursor: pointer;
 }
 
-.plan-section-label {
-  margin: 0 0 12px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--plan-mute);
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
-}
-
 .plan-grass {
   display: grid;
-  grid-template-columns: repeat(7, 8px);
-  gap: 4px;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(7, 9px);
+  grid-auto-columns: 9px;
+  gap: 3px;
+  width: max-content;
+  max-width: 100%;
 }
 
 .plan-grass-cell {
-  width: 8px;
-  height: 8px;
-  border-radius: 1px;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
   background: rgba(28, 25, 23, 0.08);
 }
 
@@ -220,21 +218,31 @@
 }
 
 .plan-continue {
-  display: inline-block;
-  margin-top: 36px;
-  font-size: 14px;
-  color: var(--plan-mute);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--plan-line);
+  color: inherit;
   text-decoration: none;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
+  font-size: 15px;
 }
 
-.plan-continue:hover {
-  color: var(--plan-ink);
+.plan-continue span:first-child {
+  color: var(--plan-mute);
+}
+
+.plan-continue span:last-child {
+  font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
+  font-weight: 600;
 }
 
 .plan-empty {
   margin: 0;
+  padding: 18px 0;
   font-size: 15px;
   color: var(--plan-mute);
+  border-top: 1px solid var(--plan-line);
 }
