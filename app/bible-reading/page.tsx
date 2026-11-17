@@ -1539,15 +1539,20 @@ export default function BibleReadingPage() {
     [bookConfirmed, bookId, applyBookChangeShared],
   );
 
-  // 모바일 서랍: 책+장(+절). 절이 있으면 flashVerse 로 이동·1.5초 강조.
+  // 모바일 서랍: 책+장(+절). 1장으로 들렀다 다시 점프하지 않음(그 사이 빈 높이가 남음).
   const selectDrawerBookChapter = useCallback(
     (nextBook: BookId, chapter: number, verse?: number) => {
-      if (nextBook === bookId) {
-        onSelectChapter(chapter);
-      } else {
-        pickBookFromPanel(nextBook);
-        window.setTimeout(() => onSelectChapter(chapter), 0);
+      if (nextBook !== bookId) {
+        applyBookChangeShared(nextBook);
+        scrollMemoryByChapter.delete(scrollMemoryKey(nextBook, chapter));
+        pendingScrollRestoreRef.current = null;
+        try {
+          window.localStorage.setItem(currentChapterKey(nextBook), String(chapter));
+        } catch {
+          /* ignore */
+        }
       }
+      onSelectChapter(chapter);
       if (verse != null && verse >= 1) {
         setFlashVerse(verse);
         if (effectiveTranslation === "krv") {
@@ -1556,7 +1561,7 @@ export default function BibleReadingPage() {
       }
       setDrawerOpen(false);
     },
-    [bookId, onSelectChapter, pickBookFromPanel, effectiveTranslation],
+    [bookId, onSelectChapter, applyBookChangeShared, effectiveTranslation],
   );
 
   // 스크롤 저장 — 현재 (책, 장) 의 scrollY 를 RAF 디바운스로 메모리에 기록.

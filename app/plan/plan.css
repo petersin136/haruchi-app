@@ -1,4 +1,4 @@
-/* /plan — 오늘 분량이 본문. 크림·버건디, 칸·이모지 없음 */
+/* /plan — 오늘 분량, 플랜 세 개. 칸·잔디·맥체인 없음 */
 
 .plan-page {
   --plan-cream: #fbf7ee;
@@ -14,103 +14,38 @@
   padding: 28px 22px calc(var(--brp-tabbar-h, 56px) + 28px);
 }
 
-.plan-page[data-plan="year365"] { --plan-accent: #9e1b1b; }
-.plan-page[data-plan="days90"] { --plan-accent: #5f6f5c; }
-.plan-page[data-plan="days30"] { --plan-accent: #1e3a5f; }
-.plan-page[data-plan="mcheyne"] { --plan-accent: #8a6a12; }
-
 .plan-shell {
   max-width: 440px;
   margin: 0 auto;
 }
 
-.plan-hero {
-  padding-top: 12px;
+.plan-title {
+  margin: 8px 0 0;
+  font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
 }
 
 .plan-kicker {
-  margin: 0;
+  margin: 28px 0 0;
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: -0.01em;
   color: var(--plan-mute);
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
 
-.plan-hero-title {
-  margin: 14px 0 0;
-  font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
-  font-size: 40px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  color: var(--plan-ink);
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
-}
-
-.plan-hero-range {
-  margin: 10px 0 0;
-  font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--plan-accent);
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
-}
-
-.plan-hero-go {
-  display: inline-block;
-  margin-top: 22px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--plan-accent);
-  text-decoration: none;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
-}
-
-.plan-hero-go:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.plan-meter {
-  margin-top: 28px;
-  height: 2px;
-  background: var(--plan-line);
-  overflow: hidden;
-}
-
-.plan-meter-fill {
-  display: block;
-  height: 100%;
-  background: var(--plan-accent);
-}
-
-.plan-meter-meta {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0 0;
-  font-size: 12px;
-  color: var(--plan-mute);
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
-}
-
-.plan-block {
-  margin-top: 36px;
-}
-
-.plan-readings {
+.plan-list {
   list-style: none;
-  margin: 0;
+  margin: 16px 0 0;
   padding: 0;
 }
 
-.plan-reading {
+.plan-row {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -121,36 +56,43 @@
   text-decoration: none;
 }
 
-.plan-readings li:last-child .plan-reading {
+.plan-list li:last-child .plan-row {
   border-bottom: 1px solid var(--plan-line);
 }
 
-.plan-reading-book {
+.plan-book {
   font-family: var(--font-noto-serif-kr), "Noto Serif KR", serif;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
 
-.plan-reading-ch {
+.plan-range {
   flex-shrink: 0;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--plan-accent);
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.plan-meta {
+  display: flex;
+  justify-content: space-between;
+  margin: 14px 0 0;
+  font-size: 13px;
   color: var(--plan-mute);
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
 
-.plan-reading.is-done .plan-reading-book,
-.plan-reading.is-done .plan-reading-ch {
-  color: var(--plan-accent);
-}
-
 .plan-picker {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 18px;
+  gap: 18px;
+  margin-top: 36px;
 }
 
 .plan-picker button {
@@ -158,7 +100,8 @@
   padding: 0 0 4px;
   border: 0;
   border-bottom: 1px solid transparent;
-  background: none;
+  border-radius: 0;
+  background: transparent;
   font: inherit;
   font-size: 15px;
   font-weight: 500;
@@ -166,75 +109,38 @@
   cursor: pointer;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.plan-picker button:focus {
+  outline: none;
 }
 
 .plan-picker button.is-active {
   color: var(--plan-ink);
-  border-bottom-color: var(--plan-accent);
+  border-bottom-color: var(--plan-ink);
 }
 
-.plan-start-row {
+.plan-start {
   position: relative;
+  display: inline-block;
   margin-top: 18px;
-}
-
-.plan-start-row label {
   font-size: 13px;
   color: var(--plan-mute);
+  cursor: pointer;
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
 }
 
-.plan-start-row input[type="date"] {
+.plan-start input {
   position: absolute;
   inset: 0;
   opacity: 0;
   cursor: pointer;
 }
 
-.plan-section-label {
-  margin: 0 0 12px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--plan-mute);
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
-}
-
-.plan-grass {
-  display: grid;
-  grid-template-columns: repeat(7, 8px);
-  gap: 4px;
-}
-
-.plan-grass-cell {
-  width: 8px;
-  height: 8px;
-  border-radius: 1px;
-  background: rgba(28, 25, 23, 0.08);
-}
-
-.plan-grass-cell.is-active {
-  background: var(--plan-accent);
-}
-
-.plan-continue {
-  display: inline-block;
-  margin-top: 36px;
-  font-size: 14px;
-  color: var(--plan-mute);
-  text-decoration: none;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
-}
-
-.plan-continue:hover {
-  color: var(--plan-ink);
-}
-
 .plan-empty {
-  margin: 0;
+  margin: 16px 0 0;
   font-size: 15px;
   color: var(--plan-mute);
 }

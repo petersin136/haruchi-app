@@ -393,11 +393,9 @@ html.brp-reading body {
     margin-right: 14px;
   }
 
-  /* ── 본문 타이포 ─────────────────────────────────────────────────── */
+  /* 상단 바에 책 이름이 있음. 본문 위 큰 제목은 그 아래를 비워 보이므로 숨김 */
   .brp-page .brp-reader-hero {
-    margin: 18px 0 16px;
-    padding: 0;
-    text-align: center;
+    display: none !important;
   }
 
   .brp-page .brp-reader-hero h1 {
@@ -468,7 +466,7 @@ html.brp-reading body {
   /* 서랍이 열려도 본문(성경 텍스트)은 밀리거나 작아지지 않음 — 서랍만 오버레이 */
 }
 
-/* 책·장 문고리 — PC·모바일 공통 (닫혀 있을 때 오른쪽 가장자리) */
+/* 책·장 문고리 — PC만. 모바일(≤768)에서는 숨김. 열기는 가장자리 스와이프 */
 .brp-bcd-pull {
   position: fixed;
   z-index: 72;
@@ -510,6 +508,12 @@ html.brp-reading body {
   border-radius: 999px;
   transform: translate(-50%, -50%);
   background: rgba(120, 100, 80, 0.45);
+}
+
+@media (max-width: 768px) {
+  .brp-bcd-pull {
+    display: none;
+  }
 }
 
 .brp-bcd {
@@ -724,9 +728,11 @@ html.brp-reading body {
   color: #9a8b78;
 }
 
-.brp-bcd-book:hover,
-.brp-bcd-chapter:hover {
-  background: rgba(28, 25, 23, 0.04);
+@media (hover: hover) and (pointer: fine) {
+  .brp-bcd-book:hover,
+  .brp-bcd-chapter:hover {
+    background: rgba(28, 25, 23, 0.04);
+  }
 }
 
 .brp-bcd-book:active,
@@ -734,16 +740,15 @@ html.brp-reading body {
   background: rgba(40, 28, 16, 0.07);
 }
 
+/* 누른 책 하나만. 지금 읽는 책(is-current)은 같은 배경을 주지 않음 */
 .brp-bcd-book.is-active,
-.brp-bcd-book.is-current,
 .brp-bcd-chapter.is-current {
   color: #9e1b1b;
   font-weight: 650;
   background: rgba(158, 27, 27, 0.1);
 }
 
-.brp-bcd-book.is-active .brp-bcd-book-n,
-.brp-bcd-book.is-current .brp-bcd-book-n {
+.brp-bcd-book.is-active .brp-bcd-book-n {
   color: #9e1b1b;
 }
 

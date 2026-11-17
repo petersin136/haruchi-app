@@ -192,6 +192,11 @@ function BookChapterDrawer({
     setPreviewBookId(bookConfirmed ? bookId : (OT_BOOK_IDS[0] ?? null));
   }, [open, bookId, bookConfirmed]);
 
+  // 책을 바꾸면 장 목록은 1장부터. 이전 스크롤을 가운데로 당기지 않음
+  useEffect(() => {
+    if (chaptersRef.current) chaptersRef.current.scrollTop = 0;
+  }, [previewBookId]);
+
   // controlled open → mount / progress (목록은 mount 순간부터 채워진 상태)
   useEffect(() => {
     if (draggingRef.current) return;
@@ -649,7 +654,7 @@ function BookChapterDrawer({
 
   return (
     <>
-      {/* 오른쪽 문고리 — PC·모바일 공통. 탭/드래그로 개폐 */}
+      {/* 오른쪽 문고리 — PC만. 모바일(≤768)은 CSS에서 숨김 */}
       <button
         type="button"
         className={`brp-bcd-pull${progress > 0.15 ? " is-open" : ""}`}
@@ -728,12 +733,12 @@ function BookChapterDrawer({
                 <button
                   type="button"
                   data-book-id={id}
-                  className={`brp-bcd-book${isPreview ? " is-active" : ""}${
-                    isCurrent ? " is-current" : ""
-                  }`}
+                  className={`brp-bcd-book${isPreview ? " is-active" : ""}`}
+                  onMouseDown={(e) => e.preventDefault()}
                   onClick={() => handleBookClick(id)}
                   role="option"
                   aria-selected={isPreview}
+                  aria-current={isCurrent || undefined}
                 >
                   <span className="brp-bcd-book-name">{BOOKS[id].name}</span>
                   <span className="brp-bcd-book-n">
@@ -754,9 +759,8 @@ function BookChapterDrawer({
                 <button
                   type="button"
                   data-book-id={id}
-                  className={`brp-bcd-book${isPreview ? " is-active" : ""}${
-                    isCurrent ? " is-current" : ""
-                  }`}
+                  className={`brp-bcd-book${isPreview ? " is-active" : ""}`}
+                  onMouseDown={(e) => e.preventDefault()}
                   onClick={() => handleBookClick(id)}
                   role="option"
                   aria-selected={isPreview}
@@ -796,6 +800,7 @@ function BookChapterDrawer({
                       className={`brp-bcd-chapter${
                         isCurrent ? " is-current" : ""
                       }`}
+                      onMouseDown={(e) => e.preventDefault()}
                       onClick={() => handleChapterClick(n)}
                       role="option"
                       aria-selected={isCurrent}

@@ -217,8 +217,10 @@ type NotePos = {
 const NOTE_MIN_RATIO = 0.4;
 /** 같은 줄 앞 메모가 이 폭보다 좁아지면 뒤 메모는 번호 배지로 */
 const NOTE_MIN_ROOM = 56;
-/** 기본 손글씨 크기(CSS와 맞춤). 틈이 좁으면 줄임 */
+/** 입력·펼친 카드 손글씨(기존) */
 const NOTE_FONT_MAX = 22;
+/** 행간 메모. 손글씨라 같은 px도 본문보다 작아 보여 34px로 고정 */
+const NOTE_INLINE_MAX = 34;
 /** 이보다 좁은 틈에는 글씨 대신 점만 */
 const NOTE_GAP_MIN = 12;
 /** 입력 카드 대략 높이(패딩·테두리 포함) */
@@ -1202,17 +1204,11 @@ function StudyNotebook({
         nextInk != null && nextInk > inkBottom
           ? nextInk - inkBottom
           : Math.max(0, clip.bottom - inkBottom);
-      const fontSize =
-        gap < NOTE_GAP_MIN
-          ? 0
-          : Math.max(10, Math.min(NOTE_FONT_MAX, gap * 0.8));
+      // 틈에 비례해 줄이지 않음. 좁을 때만 점
+      const fontSize = gap < NOTE_GAP_MIN ? 0 : NOTE_INLINE_MAX;
       const modeHint: "full" | "dot" = gap < NOTE_GAP_MIN ? "dot" : "full";
-      // 표시: 틈 안에 끼움(윗줄 bottom ~ 아랫줄 top). 겹침 0.
-      let displayTopVp = inkBottom + Math.max(0, (gap - fontSize) / 2);
-      if (nextInk != null) {
-        displayTopVp = Math.min(displayTopVp, nextInk - fontSize);
-      }
-      displayTopVp = Math.max(inkBottom, displayTopVp);
+      // 주석처럼 윗줄 글자 바로 아래에 붙임
+      const displayTopVp = inkBottom;
 
       // 입력 카드: 선택 줄 바로 아래 떠 있는 카드(틈에 끼우지 않음).
       // 쪽 맨 아래라 카드가 잘리면 선택 위로. 375는 visualViewport로 추가 보정.
@@ -1280,7 +1276,7 @@ function StudyNotebook({
             mode: "badge",
             badge,
             gap: it.gap,
-            fontSize: it.fontSize || 14,
+            fontSize: it.fontSize || NOTE_FONT_MAX,
             cardTop: it.cardTop,
             cardPlace: it.cardPlace,
           };
@@ -1295,7 +1291,7 @@ function StudyNotebook({
         openWidth,
         mode: it.modeHint === "dot" ? "dot" : "full",
         gap: it.gap,
-        fontSize: it.fontSize || 14,
+        fontSize: it.fontSize || NOTE_FONT_MAX,
         cardTop: it.cardTop,
         cardPlace: it.cardPlace,
       };
@@ -4711,7 +4707,6 @@ function StudyNotebook({
               maxWidth: pos.width,
               fontSize: pos.fontSize,
               lineHeight: 1,
-              height: pos.fontSize,
             };
       return (
         <span

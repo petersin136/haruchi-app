@@ -117,6 +117,13 @@ export default function ContinuousKrvReader({
 
   const lo = spreadOn ? spreadBase : Math.max(1, chapter - 1);
   const hi = spreadOn ? spreadBase : Math.min(total, chapter + 1);
+
+  // 책 높이 캐시는 페인트 전에 비움. effect 이후까지 남으면 위쪽 spacer가 빈 칸이 됨
+  const heightsBookRef = useRef(bookId);
+  if (heightsBookRef.current !== bookId) {
+    heightsBookRef.current = bookId;
+    heightsRef.current = new Map();
+  }
   const mounted = useMemo(() => {
     const list: number[] = [];
     for (let c = lo; c <= hi; c++) list.push(c);

@@ -161,7 +161,7 @@ button.study-loc-trigger {
 
 .study-page {
   position: relative;
-  /* 17px × 2.4 — 행간 메모 22px */
+  /* 17px × 2.4 — 행간 메모 */
   --study-lh: calc(17px * 2.4);
   /* 장 제목 줄 위 반행간(+글꼴 위 여백)만큼 당겨 선 아래 24px를 글자 기준으로 */
   margin-top: -14.5px;
@@ -548,6 +548,10 @@ html:has(.study-root) body::-webkit-scrollbar,
   background-image: none;
 }
 
+.study-root.is-embedded .study-loading {
+  padding: 12px 0;
+}
+
 .study-root.is-embedded .study-shell,
 .study-root.is-embedded .study-layout {
   max-width: none;
@@ -644,14 +648,14 @@ html:has(.study-root) body::-webkit-scrollbar,
   white-space: nowrap;
   color: #b3261e;
   font-family: var(--font-nanum-pen), "Nanum Pen Script", cursive;
-  font-size: 22px;
+  font-size: 34px;
   font-weight: 400;
   line-height: 1;
   padding: 0;
   /* 행간 틈에 끼울 때는 배경·테두리 없이 글씨만 — 본문 가림 방지 */
   background: transparent;
-  text-box-trim: trim-both;
-  text-box-edge: cap alphabetic;
+  /* 손글씨 위쪽 빈칸을 당겨 윗줄에 붙임 */
+  transform: translateY(-0.22em);
   cursor: pointer;
   pointer-events: auto;
 }
@@ -665,6 +669,7 @@ html:has(.study-root) body::-webkit-scrollbar,
   border-radius: 999px;
   padding: 0 2px;
   box-shadow: 0 0 0 1px rgba(179, 38, 30, 0.2);
+  transform: none;
 }
 
 .study-mark-note.is-dot {
@@ -689,6 +694,7 @@ html:has(.study-root) body::-webkit-scrollbar,
   background: #fbf7ee;
   box-shadow: 0 6px 18px rgba(28, 25, 23, 0.14);
   text-box-trim: unset;
+  transform: none;
 }
 
 .study-mark-note-input {
