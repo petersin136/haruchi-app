@@ -7,8 +7,9 @@
 
 .wt-page {
   --wt-max: 720px;
-  --wt-remote-h: 132px;
+  --wt-remote-h: 220px;
   --wt-safe-b: env(safe-area-inset-bottom, 0px);
+  --wt-desk: 1024px;
 
   --tone-ref: #3d6fe0;
   --tone-orig: #b3121b;
@@ -28,6 +29,24 @@
 }
 .wt-page::-webkit-scrollbar {
   display: none;
+}
+
+/* 모바일: 세로 스택. PC(≥1024): 왼쪽 영상+리모컨 / 오른쪽 관주·원어·요약 */
+.wt-stage {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.wt-primary {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.wt-aside {
+  min-width: 0;
+  padding: 0 16px calc(var(--wt-remote-h) + var(--wt-safe-b) + 28px);
 }
 
 /* ── 상단 바 ─────────────────────────────────────────────────────────────── */
@@ -61,11 +80,40 @@
   }
 }
 
-.wt-top-text {
+.wt-top-text,
+.wt-top-loc {
   display: flex;
   flex-direction: column;
   gap: 4px;
   min-width: 0;
+}
+
+.wt-top-loc {
+  margin: 0;
+  padding: 2px 4px 2px 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease;
+}
+@media (hover: hover) {
+  .wt-top-loc:hover {
+    background: var(--surface-alt);
+  }
+}
+.wt-top-loc:active {
+  transform: scale(0.98);
+}
+
+.wt-top-caret {
+  margin-left: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-mute);
 }
 
 .wt-top-kicker {
@@ -88,6 +136,12 @@
 }
 
 /* ── 영상 없는 책 안내 ───────────────────────────────────────────────────── */
+
+.wt-main {
+  max-width: var(--wt-max);
+  margin: 0 auto;
+  padding: 20px 16px 48px;
+}
 
 .wt-unavailable {
   display: flex;
@@ -158,25 +212,84 @@
   border: 0;
 }
 
-.wt-video-poster {
+/* 재생 중 탭 → 일시정지 (유튜브 크롬 대신 우리 면) */
+.wt-video-hit {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.wt-video-buffer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
   display: grid;
   place-items: center;
-  background-color: #000;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+/* 대기·일시정지: 유튜브 제목/공유/Watch on YouTube 를 가리는 커버 */
+.wt-video-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  background-color: #111;
   background-size: cover;
   background-position: center;
 }
-.wt-video-poster::before {
-  content: "";
+
+.wt-video-cover-shade {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: linear-gradient(
+    160deg,
+    rgba(22, 22, 26, 0.35) 0%,
+    rgba(22, 22, 26, 0.55) 100%
+  );
+}
+
+.wt-video-play {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent-warm, #c2453e);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(22, 22, 26, 0.28);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.18s ease, background 0.15s ease;
+}
+.wt-video-play svg {
+  margin-left: 3px;
+}
+.wt-video-play:active {
+  transform: scale(0.94);
+}
+@media (hover: hover) {
+  .wt-video-play:hover {
+    background: color-mix(in srgb, var(--accent-warm, #c2453e) 88%, #000);
+  }
 }
 
 .wt-video-spinner {
   position: relative;
+  z-index: 1;
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -187,8 +300,10 @@
 
 .wt-video-msg {
   position: relative;
+  z-index: 1;
   padding: 0 24px;
   font-size: 14px;
+  font-weight: 600;
   color: #fff;
   text-align: center;
 }
@@ -199,7 +314,7 @@
   }
 }
 
-@media (min-width: 760px) {
+@media (min-width: 760px) and (max-width: 1023px) {
   .wt-video {
     padding: 12px 16px 0;
     background: var(--bg);
@@ -210,17 +325,12 @@
   }
 }
 
-/* ── 본문 ────────────────────────────────────────────────────────────────── */
+/* ── 현재 장 (영상 아래) ─────────────────────────────────────────────────── */
 
-.wt-main {
+.wt-now {
   max-width: var(--wt-max);
   margin: 0 auto;
-  padding: 20px 16px calc(var(--wt-remote-h) + var(--wt-safe-b) + 40px);
-}
-
-/* 현재 장 */
-.wt-now {
-  margin-bottom: 20px;
+  padding: 16px 16px 8px;
 }
 
 .wt-now-row {
@@ -1764,6 +1874,110 @@
 @keyframes wt-sheet-up {
   from {
     transform: translateY(100%);
+  }
+}
+
+/* ── PC: 유튜브형 — 왼쪽 큰 영상+리모컨 / 오른쪽 관주·원어·요약 ───────────── */
+
+@media (min-width: 1024px) {
+  .wt-page {
+    --wt-max: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .wt-top {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    flex: none;
+    padding: 14px 28px 12px;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+  }
+
+  .wt-stage {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(340px, 0.9fr);
+    gap: 20px;
+    align-items: stretch;
+    padding: 12px 24px 12px;
+    overflow: hidden;
+  }
+
+  /* 영상은 위·전체 너비 고정, 리모컨은 바로 아래 */
+  .wt-primary {
+    min-height: 0;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-bottom: 0;
+  }
+
+  .wt-video {
+    position: relative;
+    z-index: auto;
+    flex: 0 0 auto;
+    min-height: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+  .wt-video-frame {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-1);
+  }
+
+  /* PC: 리모컨 바로 위 중복 제목 숨김 */
+  .wt-now {
+    display: none;
+  }
+
+  .wt-primary .wt-rc-wrap {
+    flex: 0 0 auto;
+    min-height: 0;
+  }
+
+  .wt-aside {
+    min-height: 0;
+    height: 100%;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    padding: 0 4px 8px 0;
+    border-left: 1px solid var(--line);
+    padding-left: 24px;
+  }
+
+  .wt-tabs-head {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    margin-bottom: 14px;
+    padding: 0 0 10px;
+    background: var(--bg);
+  }
+
+  .wt-unavailable {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 48px 28px;
+  }
+
+  .wt-toast {
+    bottom: 28px;
   }
 }
 

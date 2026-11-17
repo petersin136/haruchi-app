@@ -1,18 +1,14 @@
 /* ── 하단 리모컨 (단일 디자인) ───────────────────────────────────────────── */
 
 .wt-page {
-  --wt-remote-h: 132px;
+  --wt-remote-h: 220px;
   --wt-rc-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --wt-rc-cream: rgba(251, 247, 238, 0.92);
-  --wt-rc-line: #ece4d6;
-  --wt-rc-ink: #2a2420;
-  --wt-rc-accent: #9e1b1b;
-  --wt-rc-muted: #5a4e44;
-  --wt-rc-clock: #8a8378;
-}
-
-.wt-main {
-  padding-bottom: calc(var(--wt-remote-h) + env(safe-area-inset-bottom, 0px) + 28px) !important;
+  --wt-rc-cream: rgba(250, 250, 248, 0.94);
+  --wt-rc-line: var(--line-strong, #d2d2cc);
+  --wt-rc-ink: var(--ink, #16161a);
+  --wt-rc-accent: var(--accent-warm, #c2453e);
+  --wt-rc-muted: var(--ink-soft, #6b6b70);
+  --wt-rc-clock: var(--ink-mute, #9a9aa0);
 }
 
 .wt-rc-fade {
@@ -25,8 +21,8 @@
   pointer-events: none;
   background: linear-gradient(
     to top,
-    rgba(251, 247, 238, 0.95) 0%,
-    rgba(251, 247, 238, 0.55) 45%,
+    color-mix(in srgb, var(--bg, #fafaf8) 96%, transparent) 0%,
+    color-mix(in srgb, var(--bg, #fafaf8) 55%, transparent) 45%,
     transparent 100%
   );
 }
@@ -46,8 +42,8 @@
 .wt-rc {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding: 12px 14px 10px;
+  gap: 6px;
+  padding: 10px 12px 8px;
   border-radius: 22px;
   background: var(--wt-rc-cream);
   border: 1px solid var(--wt-rc-line);
@@ -55,6 +51,100 @@
   backdrop-filter: blur(20px) saturate(160%);
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   color: var(--wt-rc-ink);
+}
+
+.wt-rc-picks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.wt-rc-pick-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.wt-rc-pick-label {
+  flex: none;
+  width: 1.25em;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--wt-rc-clock);
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+.wt-rc-chip-rail {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+  padding: 2px 2px 4px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.wt-rc-chip-rail::-webkit-scrollbar {
+  height: 3px;
+}
+.wt-rc-chip-rail::-webkit-scrollbar-thumb {
+  background: var(--line-strong, #d2d2cc);
+  border-radius: 999px;
+}
+
+.wt-rc-chip {
+  flex: 0 0 auto;
+  min-width: 34px;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid color-mix(in srgb, var(--line-strong, #d2d2cc) 85%, transparent);
+  border-radius: 999px;
+  background: var(--surface, #fff);
+  color: var(--wt-rc-ink, #16161a);
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 1;
+  box-shadow: 0 1px 0 rgba(22, 22, 26, 0.04);
+  transition: transform 160ms var(--wt-rc-ease), background 160ms var(--wt-rc-ease),
+    color 160ms var(--wt-rc-ease), border-color 160ms var(--wt-rc-ease),
+    opacity 160ms var(--wt-rc-ease), box-shadow 160ms var(--wt-rc-ease);
+}
+.wt-rc-chip.is-selected {
+  background: var(--wt-rc-accent);
+  border-color: var(--wt-rc-accent);
+  color: #fff;
+  opacity: 1;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--wt-rc-accent) 35%, transparent);
+}
+.wt-rc-chip:active:not(:disabled) {
+  transform: scale(0.94);
+}
+.wt-rc-chip:disabled {
+  opacity: 0.35;
+  color: var(--wt-rc-clock, #9a9aa0);
+  border-color: var(--line, #e6e6e2);
+  box-shadow: none;
+  cursor: default;
+}
+@media (hover: hover) {
+  .wt-rc-chip:hover:not(:disabled):not(.is-selected) {
+    background: var(--surface-alt, #f4f4f0);
+    border-color: var(--line-strong, #d2d2cc);
+    box-shadow: 0 1px 2px rgba(22, 22, 26, 0.06);
+  }
 }
 
 .wt-rc-row1 {
@@ -112,10 +202,14 @@
   font-size: 12px;
 }
 
+.wt-rc-pick-row .wt-rc-clock {
+  margin-left: 4px;
+}
+
 .wt-rc-clock {
   flex-shrink: 0;
   color: var(--wt-rc-clock);
-  font-size: 13px;
+  font-size: 12px;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.01em;
 }
@@ -338,12 +432,123 @@
   transform: scale(0.94);
 }
 
+/* PC: 하단 fixed 해제 → 영상 바로 아래, 콘텐츠 높이로 단단하게 */
+@media (min-width: 1024px) {
+  .wt-page {
+    --wt-remote-h: 0px;
+  }
+
+  .wt-rc-fade {
+    display: none;
+  }
+
+  .wt-rc-wrap {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    z-index: 2;
+    width: 100%;
+    margin: 0;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wt-rc {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 16px;
+    background: color-mix(in srgb, var(--surface, #fff) 92%, var(--bg, #fafaf8));
+    border: 1px solid var(--line, #e6e6e2);
+    box-shadow: 0 1px 2px rgba(22, 22, 26, 0.04),
+      0 8px 24px rgba(22, 22, 26, 0.04);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 14px 16px 12px;
+    gap: 10px;
+  }
+
+  .wt-rc-picks {
+    gap: 8px;
+  }
+
+  .wt-rc-pick-row {
+    gap: 10px;
+  }
+
+  .wt-rc-pick-label {
+    width: 1.4em;
+    font-size: 12px;
+    color: var(--wt-rc-muted);
+  }
+
+  .wt-rc-chip-rail {
+    gap: 8px;
+  }
+
+  .wt-rc-chip {
+    min-width: 36px;
+    height: 32px;
+    padding: 0 11px;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+
+  .wt-rc-clock {
+    font-size: 13px;
+    letter-spacing: 0.01em;
+  }
+
+  .wt-rc-scrub {
+    height: 28px;
+    margin: 0;
+  }
+
+  .wt-rc-scrub-track {
+    height: 4px;
+  }
+
+  .wt-rc-row2 {
+    flex: none;
+    height: 58px;
+    gap: 8px;
+  }
+
+  .wt-rc-play {
+    width: 56px;
+    height: 56px;
+  }
+
+  .wt-rc-chap {
+    font-size: 15px;
+  }
+
+  .wt-rc-rate {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .wt-rc-icon-label {
+    font-size: 10px;
+  }
+
+  .wt-rc-speed-pop {
+    background: var(--surface, #fff);
+    border-color: var(--line, #e6e6e2);
+    box-shadow: var(--shadow-2, 0 6px 24px rgba(22, 22, 26, 0.08));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .wt-rc-title,
   .wt-rc-chap,
   .wt-rc-icon-btn,
   .wt-rc-play,
   .wt-rc-rate,
+  .wt-rc-chip,
   .wt-rc-speed-opt,
   .wt-rc-speed-pop {
     transition: none !important;

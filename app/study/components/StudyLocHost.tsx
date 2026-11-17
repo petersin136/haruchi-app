@@ -55,7 +55,15 @@ export default function StudyLocHost({ bookId, chapter }: Props) {
   const onSelect = useCallback(
     (nextBook: BookId, nextChapter: number) => {
       setStudyLocOpen(false);
-      if (nextBook === bookId && nextChapter === chapter) return;
+      // 같은 장: 양면에서 cont(뒤 장) 보고 있어도 첫 쪽으로 (StudyNotebook이 구독)
+      if (nextBook === bookId && nextChapter === chapter) {
+        window.dispatchEvent(
+          new CustomEvent("haruchi:study-align", {
+            detail: { bookId: nextBook, chapter: nextChapter },
+          }),
+        );
+        return;
+      }
       router.push(`/study/${nextBook}/${nextChapter}`);
     },
     [bookId, chapter, router],

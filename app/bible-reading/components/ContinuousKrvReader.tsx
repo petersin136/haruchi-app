@@ -273,7 +273,9 @@ export default function ContinuousKrvReader({
         pendingEmitChRef.current = null;
         return;
       }
+      // 서랍·검색 직후: cont 오른쪽 장(19 옆 20) emit 이 spreadBase 를 다시 바꿔 깜빡임
       if (suppressScrollEmitRef.current) return;
+      if (Date.now() < freezeUntilRef.current) return;
       pendingEmitChRef.current = clamped;
       // 장 경계 진동 완화 — 짧게 디바운스
       if (emitTimerRef.current != null) {
@@ -285,6 +287,7 @@ export default function ContinuousKrvReader({
         pendingEmitChRef.current = null;
         if (next == null) return;
         if (suppressScrollEmitRef.current) return;
+        if (Date.now() < freezeUntilRef.current) return;
         if (next === lastEmittedRef.current) return;
         measureMounted();
         lastEmittedRef.current = next;
@@ -295,26 +298,48 @@ export default function ContinuousKrvReader({
     [measureMounted, total],
   );
 
+  /** 서랍·검색·URL 점프 — 흐름 시작장을 잠그고 cont emit 이 다시 옮기지 못하게 */
+  const lockSpreadJump = useCallback(
+    (target: number) => {
+      const n = Math.max(1, Math.min(total, target));
+      pendingAlignRef.current = n;
+      lastEmittedRef.current = n;
+      pendingEmitChRef.current = null;
+      if (emitTimerRef.current != null) {
+        window.clearTimeout(emitTimerRef.current);
+        emitTimerRef.current = null;
+      }
+      suppressScrollEmitRef.current = true;
+      freezeUntilRef.current = Date.now() + 1200;
+      if (spreadOn) setSpreadBase(n);
+      window.setTimeout(() => {
+        suppressScrollEmitRef.current = false;
+      }, 700);
+    },
+    [total, spreadOn],
+  );
+
   // 부모가 chapter 를 바꾼 경우(검색·서랍·URL) → 정렬 예약
   // 스크롤 emit 으로 바꾼 경우는 lastEmitted 와 같아 pending 안 걸림
   useEffect(() => {
     if (chapter === lastEmittedRef.current) return;
-    pendingAlignRef.current = chapter;
-    if (spreadOn) setSpreadBase(chapter);
-  }, [bookId, chapter, spreadOn]);
+    lockSpreadJump(chapter);
+  }, [bookId, chapter, lockSpreadJump]);
 
   // 책 바뀌면 양면 흐름 시작점도 맞춤
   useEffect(() => {
     setSpreadBase(chapter);
+    lastEmittedRef.current = chapter;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bookId]);
 
-  // 같은 장이라도 서랍·검색·첫 진입 nonce → 큰 장 번호를 상단에
+  // 같은 장이라도 서랍·검색 nonce 만 — chapter deps 금지.
+  // chapter 를 넣으면 cont 활성장(19→20→22) emit 때마다 setSpreadBase 되어 화면이 깜빡임.
   useEffect(() => {
     if (alignNonce <= 0) return;
-    pendingAlignRef.current = chapter;
-    if (spreadOn) setSpreadBase(chapter);
-  }, [alignNonce, chapter, spreadOn]);
+    lockSpreadJump(chapter);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [alignNonce]);
 
   // 양쪽↔이어읽기 전환
   useEffect(() => {
@@ -333,6 +358,22 @@ export default function ContinuousKrvReader({
   const alignToChapter = useCallback((target: number) => {
     const root = wrapRef.current;
     if (!root) return false;
+    // 양면: 세로 스크롤이 아니라 StudyNotebook spreadIndex — alignNonce 로 첫 쪽 점프
+    if (spreadOn) {
+      const host = root.querySelector<HTMLElement>(
+        `[data-study-chapter="${target}"]`,
+      );
+      if (!host || host.offsetHeight < 40) return false;
+      lastEmittedRef.current = target;
+      pendingAlignRef.current = null;
+      pendingEmitChRef.current = null;
+      suppressScrollEmitRef.current = true;
+      freezeUntilRef.current = Date.now() + 1200;
+      window.setTimeout(() => {
+        suppressScrollEmitRef.current = false;
+      }, 700);
+      return true;
+    }
     // 본문·큰 장 번호가 그려진 뒤에만 정렬 (로딩 플레이스홀더면 재시도)
     const host = root.querySelector<HTMLElement>(
       `[data-study-chapter="${target}"]`,
@@ -375,7 +416,7 @@ export default function ContinuousKrvReader({
       }, 400);
     });
     return true;
-  }, []);
+  }, [spreadOn]);
 
   // pending 정렬 — 장 본문이 준비될 때까지 재시도
   useLayoutEffect(() => {
@@ -607,6 +648,9 @@ export default function ContinuousKrvReader({
               embedded
               textLayer={textLayer}
               flashVerse={ch === chapter ? flashVerse : null}
+              alignNonce={
+                spreadOn && ch === spreadBase ? alignNonce : 0
+              }
               onEndVisibilityChange={(vis) => handleEndVisibility(ch, vis)}
               onMoveChapter={spreadOn ? goChapter : undefined}
               onActiveChapterChange={spreadOn ? emitActive : undefined}

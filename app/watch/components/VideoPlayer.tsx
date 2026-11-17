@@ -1,7 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { loadYouTubeApi, type YTPlayer } from "./youtube";
+import {
+  disableCaptions,
+  loadYouTubeApi,
+  YT_STATE,
+  type YTPlayer,
+} from "./youtube";
 
 type Props = {
   videoId: string;
@@ -11,6 +16,17 @@ type Props = {
   onRateChange: (rate: number) => void;
 };
 
+/** 재생 중이 아닐 때 유튜브 기본 오버레이(제목·공유·Watch on YouTube)를 덮음 */
+function coverForState(state: number | null): boolean {
+  if (state == null) return true;
+  return (
+    state === YT_STATE.UNSTARTED ||
+    state === YT_STATE.CUED ||
+    state === YT_STATE.PAUSED ||
+    state === YT_STATE.ENDED
+  );
+}
+
 export default function VideoPlayer({
   videoId,
   startSeconds,
@@ -19,11 +35,16 @@ export default function VideoPlayer({
   onRateChange,
 }: Props) {
   const hostRef = useRef<HTMLDivElement>(null);
+  const playerRef = useRef<YTPlayer | null>(null);
   const callbacks = useRef({ onReady, onStateChange, onRateChange });
   callbacks.current = { onReady, onStateChange, onRateChange };
   const startRef = useRef(startSeconds);
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
+  const [ytState, setYtState] = useState<number | null>(null);
+  const [buffering, setBuffering] = useState(false);
+
+  const showCover = !ready || failed || coverForState(ytState);
 
   useEffect(() => {
     const host = hostRef.current;
@@ -35,7 +56,17 @@ export default function VideoPlayer({
     const mount = document.createElement("div");
     host.appendChild(mount);
 
-    const playerVars: Record<string, number> = { playsinline: 1, rel: 0, modestbranding: 1 };
+    const playerVars: Record<string, number | string> = {
+      playsinline: 1,
+      rel: 0,
+      modestbranding: 1,
+      controls: 0,
+      fs: 0,
+      iv_load_policy: 3,
+      cc_load_policy: 0,
+      disablekb: 1,
+      autoplay: 0,
+    };
     const start = Math.floor(startRef.current);
     if (start > 0) playerVars.start = start;
 
@@ -49,13 +80,32 @@ export default function VideoPlayer({
           playerVars,
           events: {
             onReady: (e) => {
+              playerRef.current = e.target;
+              disableCaptions(e.target);
+              // 트랙 로드가 늦은 경우 한 번 더
+              window.setTimeout(() => disableCaptions(e.target), 400);
+              window.setTimeout(() => disableCaptions(e.target), 1200);
               setReady(true);
+              setYtState(YT_STATE.CUED);
               callbacks.current.onReady(e.target);
             },
-            onStateChange: (e) => callbacks.current.onStateChange(e.data),
-            onPlaybackRateChange: (e) => callbacks.current.onRateChange(e.data),
+            onStateChange: (e) => {
+              if (
+                e.data === YT_STATE.PLAYING ||
+                e.data === YT_STATE.BUFFERING ||
+                e.data === YT_STATE.CUED
+              ) {
+                disableCaptions(e.target);
+              }
+              setYtState(e.data);
+              setBuffering(e.data === YT_STATE.BUFFERING);
+              callbacks.current.onStateChange(e.data);
+            },
+            onPlaybackRateChange: (e) =>
+              callbacks.current.onRateChange(e.data),
           },
         });
+        playerRef.current = player;
       })
       .catch(() => {
         if (!cancelled) setFailed(true);
@@ -63,6 +113,7 @@ export default function VideoPlayer({
 
     return () => {
       cancelled = true;
+      playerRef.current = null;
       try {
         player?.destroy();
       } catch {
@@ -72,22 +123,74 @@ export default function VideoPlayer({
     };
   }, [videoId]);
 
+  const onCoverPlay = () => {
+    const p = playerRef.current;
+    if (!p || failed) return;
+    try {
+      p.playVideo();
+    } catch {
+      /* noop */
+    }
+  };
+
+  const onPlayingSurfaceClick = () => {
+    const p = playerRef.current;
+    if (!p || showCover) return;
+    try {
+      p.pauseVideo();
+    } catch {
+      /* noop */
+    }
+  };
+
+  /* maxresdefault = 16:9 (hqdefault 는 4:3 이라 커버에 흰 띠가 생김) */
+  const posterUrl = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+
   return (
-    <div className="wt-video-frame">
-      {!ready && (
+    <div className={`wt-video-frame${showCover ? " is-covered" : ""}`}>
+      <div ref={hostRef} className="wt-video-host" />
+
+      {!showCover && (
+        <button
+          type="button"
+          className="wt-video-hit"
+          aria-label="일시정지"
+          onClick={onPlayingSurfaceClick}
+        />
+      )}
+
+      {buffering && !showCover && (
+        <div className="wt-video-buffer" aria-hidden>
+          <span className="wt-video-spinner" />
+        </div>
+      )}
+
+      {showCover && (
         <div
-          className="wt-video-poster"
-          style={{ backgroundImage: `url(https://i.ytimg.com/vi/${videoId}/hqdefault.jpg)` }}
-          aria-hidden={!failed}
+          className="wt-video-cover"
+          style={{ backgroundImage: `url(${posterUrl})` }}
         >
+          <div className="wt-video-cover-shade" aria-hidden />
           {failed ? (
-            <span className="wt-video-msg">영상을 불러오지 못했어요. 네트워크를 확인해 주세요.</span>
+            <span className="wt-video-msg">
+              영상을 불러오지 못했어요. 네트워크를 확인해 주세요.
+            </span>
+          ) : !ready ? (
+            <span className="wt-video-spinner" aria-hidden />
           ) : (
-            <span className="wt-video-spinner" />
+            <button
+              type="button"
+              className="wt-video-play"
+              onClick={onCoverPlay}
+              aria-label="재생"
+            >
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden>
+                <path d="M8 5.5v13l11-6.5z" fill="currentColor" />
+              </svg>
+            </button>
           )}
         </div>
       )}
-      <div ref={hostRef} className="wt-video-host" />
     </div>
   );
 }

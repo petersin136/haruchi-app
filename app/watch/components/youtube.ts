@@ -13,7 +13,33 @@ export type YTPlayer = {
   getPlaybackRate(): number;
   setPlaybackRate(rate: number): void;
   destroy(): void;
+  /** 캡션 모듈 (HTML5) — 트랙을 비우면 자막 끔 */
+  setOption?(module: string, option: string, value: unknown): void;
+  unloadModule?(module: string): void;
+  loadModule?(module: string): void;
 };
+
+/** 화면 자막(CC) 강제 OFF. 계정 기본값이 켜져 있어도 끔. */
+export function disableCaptions(player: YTPlayer | null | undefined) {
+  if (!player) return;
+  try {
+    player.unloadModule?.("captions");
+  } catch {
+    /* noop */
+  }
+  try {
+    player.loadModule?.("captions");
+    player.setOption?.("captions", "track", {});
+  } catch {
+    /* noop */
+  }
+  try {
+    // 일부 빌드는 cc 모듈 이름을 씀
+    player.setOption?.("cc", "track", {});
+  } catch {
+    /* noop */
+  }
+}
 
 type YTEvent<T = unknown> = { target: YTPlayer; data: T };
 

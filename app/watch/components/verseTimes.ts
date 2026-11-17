@@ -11,10 +11,12 @@ export type VerseTimeMap = Record<string, number>;
 /** "1:14" → "interp" | "match" | … (파일에 있을 때만) */
 export type VerseSrcMap = Record<string, string>;
 /** starts[i] = (i+1)장 시작 초. 파일에 없으면 null. */
+/** ends[i] = (i+1)장 끝 초(선택). 파일 chapters[n].end */
 export type WatchTimes = {
   times: VerseTimeMap;
   missing: number[];
   starts: (number | null)[];
+  ends: (number | null)[];
   src: VerseSrcMap;
   /** public/watch-times/{book}.json 을 실제로 받았는지(404면 false) */
   present: boolean;
@@ -75,7 +77,7 @@ export function hasVerseTimingData(w: WatchTimes): boolean {
 }
 
 function emptyWatchTimes(present: boolean): WatchTimes {
-  return { times: {}, missing: [], starts: [], src: {}, present };
+  return { times: {}, missing: [], starts: [], ends: [], src: {}, present };
 }
 
 function normalizeWatchTimes(raw: unknown, present: boolean): WatchTimes {
@@ -89,6 +91,7 @@ function normalizeWatchTimes(raw: unknown, present: boolean): WatchTimes {
       times,
       missing: [],
       starts: [],
+      ends: [],
       src: {},
       present: present && Object.keys(times).length > 0,
     };
@@ -97,17 +100,23 @@ function normalizeWatchTimes(raw: unknown, present: boolean): WatchTimes {
   const times: VerseTimeMap = {};
   const src: VerseSrcMap = {};
   const starts: (number | null)[] = [];
+  const ends: (number | null)[] = [];
   for (const [ck, info] of Object.entries(o.chapters as Record<string, unknown>)) {
     const chapter = Number(ck);
     if (!Number.isInteger(chapter) || chapter < 1 || !info || typeof info !== "object") continue;
-    const { start, verses, src: srcList } = info as {
+    const { start, end, verses, src: srcList } = info as {
       start?: unknown;
+      end?: unknown;
       verses?: unknown;
       src?: unknown;
     };
     if (validTime(start)) {
       while (starts.length < chapter) starts.push(null);
       starts[chapter - 1] = start;
+    }
+    if (validTime(end)) {
+      while (ends.length < chapter) ends.push(null);
+      ends[chapter - 1] = end;
     }
     if (!Array.isArray(verses)) continue;
     // 장마다 verses 와 같은 길이의 src[] (word/seg/interp/fix)
@@ -131,7 +140,7 @@ function normalizeWatchTimes(raw: unknown, present: boolean): WatchTimes {
     : [];
   const hasContent =
     Object.keys(times).length > 0 || starts.some((s) => s !== null);
-  return { times, missing, starts, src, present: present && hasContent };
+  return { times, missing, starts, ends, src, present: present && hasContent };
 }
 
 // ── 원본 데이터 ──────────────────────────────────────────────────────────────

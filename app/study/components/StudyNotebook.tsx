@@ -134,6 +134,11 @@ type Props = {
    */
   onActiveChapterChange?: (chapter: number) => void;
   /**
+   * 서랍·검색 등으로 같은 장(흐름 시작 장)을 다시 고를 때 증가.
+   * 양면에서 뒤쪽 cont 장을 보고 있어도 해당 장 첫 쪽으로 되돌림.
+   */
+  alignNonce?: number;
+  /**
    * 본문 레이어. 기본 개역한글.
    * kids = bible-kids-v2, web/kjv = 영어 청크. 원어 공부(단어카드)는 krv 전용.
    */
@@ -289,6 +294,7 @@ function StudyNotebook({
   onMoveChapter,
   onGoNextBook,
   onActiveChapterChange,
+  alignNonce = 0,
   textLayer = "krv",
 }: Props) {
   const isOtBook = isOldTestament(bookId);
@@ -1346,6 +1352,12 @@ function StudyNotebook({
     (x: number, y: number): number | null => {
       const root = bodyRef.current;
       if (!root) return null;
+      // 연속 붙인 뒤 장(cont)은 data-v/spans 밖 — 여기 찍으면 현재 장으로 끌어오지 않음
+      const hitEl =
+        typeof document !== "undefined"
+          ? document.elementFromPoint(x, y)
+          : null;
+      if (hitEl?.closest?.("[data-cont-ch], .study-ch-cont")) return null;
       // 좌표는 viewport clientX/Y 만. pageY·scrollY·손가락 들림 보정 금지.
       const caret = caretFromPoint(x, y);
       let glyph: DOMRect | null = null;
@@ -1354,6 +1366,14 @@ function StudyNotebook({
         (caret?.node.parentElement?.closest(".study-body") as HTMLElement | null) ??
         root;
       if (caret && caret.node.nodeType === Node.TEXT_NODE) {
+        // caretRangeFromPoint 가 CSS columns에서 다른 열 글자를 돌려주는 경우 차단
+        if (
+          (caret.node.parentElement as HTMLElement | null)?.closest?.(
+            "[data-cont-ch], .study-ch-cont",
+          )
+        ) {
+          return null;
+        }
         glyph = glyphRectOf(caret.node as Text, caret.offset);
         const host = caret.node.parentElement;
         if (
@@ -1366,8 +1386,13 @@ function StudyNotebook({
           }
         }
       }
+      // Y만 보면 옆 페이지(다른 열) 같은 높이 절을 고름 → X도 글자 상자 안이어야 함
       const contains =
-        !!glyph && y >= glyph.top - 0.5 && y <= glyph.bottom + 0.5;
+        !!glyph &&
+        y >= glyph.top - 0.5 &&
+        y <= glyph.bottom + 0.5 &&
+        x >= glyph.left - 1 &&
+        x <= glyph.right + 1;
       const ch =
         caret && caret.node.nodeType === Node.TEXT_NODE
           ? (caret.node as Text).data.charAt(
@@ -1379,7 +1404,7 @@ function StudyNotebook({
           : "";
       const space = !ch || /\s/.test(ch);
       debugLogRef.current(
-        `[선택] pointer clientX=${Math.round(x)} clientY=${Math.round(y)} caretRangeFromPoint(${Math.round(x)},${Math.round(y)}) glyphRect=${glyph ? `${Math.round(glyph.left)},${Math.round(glyph.top)} ${Math.round(glyph.width)}×${Math.round(glyph.height)}` : "none"} ch=${JSON.stringify(ch)} containsY=${contains}`,
+        `[선택] pointer clientX=${Math.round(x)} clientY=${Math.round(y)} caretRangeFromPoint(${Math.round(x)},${Math.round(y)}) glyphRect=${glyph ? `${Math.round(glyph.left)},${Math.round(glyph.top)} ${Math.round(glyph.width)}×${Math.round(glyph.height)}` : "none"} ch=${JSON.stringify(ch)} contains=${contains}`,
       );
       // 공백의 줄 박스는 빈 칸까지 덮고, 그 오프셋에서 단어 스냅이 다음 줄로 간다
       if (raw != null && contains && !space) return raw;
@@ -1390,7 +1415,8 @@ function StudyNotebook({
         );
         return fixed.off;
       }
-      return raw ?? offsetFromPointScan(root, x, y, spans);
+      // 다른 열로 끌어오지 않음 — scan 폴백도 열 밖이면 null
+      return offsetFromPointScan(root, x, y, spans);
     },
     [spans],
   );
@@ -1516,10 +1542,45 @@ function StudyNotebook({
       ) {
         return;
       }
+      const pe = e as PointerEvent | MouseEvent | undefined;
+      const px = pe && typeof pe.clientX === "number" ? pe.clientX : null;
+      const py = pe && typeof pe.clientY === "number" ? pe.clientY : null;
+      // 이어 붙인 뒤 장·드롭캡 위 네이티브 선택은 버림 (CSS columns 오탐 → 앞 장으로 튐)
+      if (px != null && py != null) {
+        const hit =
+          typeof document !== "undefined"
+            ? document.elementFromPoint(px, py)
+            : null;
+        if (
+          hit?.closest?.(
+            "[data-cont-ch], .study-ch-cont, .study-drop, .study-chapter-title",
+          )
+        ) {
+          window.getSelection()?.removeAllRanges();
+          return;
+        }
+      }
       const root = bodyRef.current;
       if (!root) return;
       const mapped = nativeSelectionToOffsets(root, spansRef.current);
-      if (!mapped) return;
+      if (!mapped) {
+        window.getSelection()?.removeAllRanges();
+        return;
+      }
+      // 포인터와 동떨어진 Range는 옆 페이지 오탐 — 선택 확정하지 않음
+      if (px != null && py != null) {
+        const near = mapped.rects.some(
+          (r) =>
+            px >= r.left - 28 &&
+            px <= r.right + 28 &&
+            py >= r.top - 28 &&
+            py <= r.bottom + 28,
+        );
+        if (!near) {
+          window.getSelection()?.removeAllRanges();
+          return;
+        }
+      }
       const next = { start: mapped.start, end: mapped.end };
       selRef.current = next;
       setSel(next);
@@ -2280,6 +2341,37 @@ function StudyNotebook({
     }
   }, [bookId, chapter]);
 
+  // 서랍·검색: 같은 장(흐름 시작)을 다시 골라도 첫 쪽으로. cont로 20·21이 보여도 19 드롭으로.
+  // alignNonce 는 "값이 증가할 때만" — 마운트 시 잔여 nonce로 studySpreadEnd(뒤로 넘김)를 덮어쓰지 않음.
+  const prevAlignNonceRef = useRef(alignNonce);
+  const jumpSpreadToChapterStart = useCallback(() => {
+    delete document.documentElement.dataset.studySpreadEnd;
+    setSpreadIndex(0);
+    setSpreadDragDx(0);
+    setSpreadPull(0);
+    setSpreadNextBookUi(false);
+    spreadAnchorVerseRef.current = 1;
+    clearSelection();
+  }, [clearSelection]);
+
+  useEffect(() => {
+    const prev = prevAlignNonceRef.current;
+    prevAlignNonceRef.current = alignNonce;
+    if (alignNonce <= 0 || alignNonce === prev) return;
+    jumpSpreadToChapterStart();
+  }, [alignNonce, jumpSpreadToChapterStart]);
+
+  useEffect(() => {
+    const onAlign = (e: Event) => {
+      const d = (e as CustomEvent<{ bookId?: string; chapter?: number }>).detail;
+      if (d?.bookId && d.bookId !== bookId) return;
+      if (d?.chapter != null && d.chapter !== chapter) return;
+      jumpSpreadToChapterStart();
+    };
+    window.addEventListener("haruchi:study-align", onAlign);
+    return () => window.removeEventListener("haruchi:study-align", onAlign);
+  }, [bookId, chapter, jumpSpreadToChapterStart]);
+
   useEffect(() => {
     if (!spreadOn) return;
     let seen = false;
@@ -2573,9 +2665,17 @@ function StudyNotebook({
 
     const anchor = spreadAnchorVerseRef.current;
     if (anchor != null) {
-      const el = bodyRef.current?.querySelector<HTMLElement>(
-        `[data-verse-num="${anchor}"]`,
-      );
+      // cont 장 절 번호와 겹치지 않게 — 현재 장(.data-v / cont 아닌 verse)만
+      const el =
+        bodyRef.current?.querySelector<HTMLElement>(
+          `.study-verse[data-verse-num="${anchor}"]:not([data-cont-ch])`,
+        ) ??
+        bodyRef.current?.querySelector<HTMLElement>(
+          `[data-v="${anchor}"]`,
+        ) ??
+        bodyRef.current?.querySelector<HTMLElement>(
+          `[data-verse-num="${anchor}"]`,
+        );
       if (el) {
         const flowLeft = flow.getBoundingClientRect().left;
         const er = el.getBoundingClientRect();
@@ -2596,7 +2696,28 @@ function StudyNotebook({
       const laidOut =
         (body?.querySelectorAll("[data-verse-num]")?.length ?? 0) > 0;
       if (!laidOut) return;
-      setSpreadIndex(Math.max(0, spreads - 1));
+      // 현재 장 끝만. cont까지 포함한 맨 끝으로 가면
+      // 19←뒤로 올 때 20·21 채움 끝에 떨어져 19장을 영영 못 봄.
+      const flowLeftEnd = flow.getBoundingClientRect().left;
+      let maxBaseCol = 0;
+      let sawBase = false;
+      body
+        ?.querySelectorAll<HTMLElement>("[data-verse-num], .study-subhead, .study-drop")
+        .forEach((el) => {
+          if (el.closest("[data-cont-ch], .study-ch-cont")) return;
+          const r = el.getBoundingClientRect();
+          if (r.width < 1 && r.height < 1) return;
+          sawBase = true;
+          const col = Math.max(
+            0,
+            Math.floor((r.left - flowLeftEnd - g.padOuter + 1) / pageStride),
+          );
+          if (col > maxBaseCol) maxBaseCol = col;
+        });
+      const endSpread = sawBase
+        ? Math.max(0, Math.ceil((maxBaseCol + 1) / 2) - 1)
+        : Math.max(0, spreads - 1);
+      setSpreadIndex(endSpread);
       delete document.documentElement.dataset.studySpreadEnd;
       return;
     }
@@ -5746,11 +5867,12 @@ function offsetNearestLine(
     }
   }
   if (lines.length === 0) return null;
+  // 같은 열만. 열 밖(옆 페이지·cont 장)으로 폴백하면 19장 절이 20장 클릭을 가로챔
   const inCol = lines.filter((l) => x >= l.left - 12 && x <= l.right + 12);
-  const pool = inCol.length > 0 ? inCol : lines;
-  let best = pool[0];
+  if (inCol.length === 0) return null;
+  let best = inCol[0];
   let bestDy = Infinity;
-  for (const l of pool) {
+  for (const l of inCol) {
     const dy = Math.abs((l.top + l.bottom) / 2 - y);
     if (dy < bestDy) {
       bestDy = dy;
@@ -5841,8 +5963,15 @@ function offsetFromPointScan(
   for (const node of verseTextNodes(root)) {
     range.selectNodeContents(node);
     const boxes = Array.from(range.getClientRects());
+    // 세로만 가깝고 가로로 멀리 떨어진 열(옆 페이지)은 제외
     if (
-      !boxes.some((b) => y >= b.top - b.height && y <= b.bottom + b.height)
+      !boxes.some(
+        (b) =>
+          y >= b.top - b.height &&
+          y <= b.bottom + b.height &&
+          x >= b.left - 28 &&
+          x <= b.right + 28,
+      )
     ) {
       continue;
     }
@@ -5852,6 +5981,7 @@ function offsetFromPointScan(
       range.setEnd(node, i + 1);
       const r = range.getBoundingClientRect();
       if (r.width === 0 && r.height === 0) continue;
+      if (x < r.left - 28 || x > r.right + 28) continue;
       const dy =
         y < r.top ? r.top - y : y > r.bottom ? y - r.bottom : 0;
       const dx = x < r.left ? r.left - x : x > r.right ? x - r.right : 0;

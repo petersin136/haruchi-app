@@ -281,6 +281,12 @@ button.study-loc-trigger {
 .study-ch-cont {
   clear: both;
 }
+/* 이어 붙인 뒤 장은 선택 오프셋(spans) 밖 — body의 user-select:text 보다 우선 */
+.study-root.is-spread .study-ch-cont,
+.study-root.is-spread .study-ch-cont * {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
 .study-ch-cont-gap {
   display: block;
   clear: both;

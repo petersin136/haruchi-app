@@ -2,6 +2,7 @@
 
 import {
   useEffect,
+  useLayoutEffect,
   useRef,
   useState,
   type PointerEvent as ReactPointerEvent,
@@ -13,10 +14,13 @@ type Props = {
   disabled: boolean;
   playing: boolean;
   speed: SpeedOption;
-  bookName: string;
   chapter: number;
   /** 시편=편, 그 외=장 */
   chapterUnit: "장" | "편";
+  totalChapters: number;
+  /** 현재 장 절 수 (없으면 절 줄 숨김) */
+  verseCount: number;
+  hasVerseTimes: boolean;
   currentVerse: number | null;
   /** 이 장/편 안 경과(초) */
   chapterElapsed: number;
@@ -30,10 +34,13 @@ type Props = {
   onNext: () => void;
   onTogglePlay: () => void;
   onSelectSpeed: (speed: SpeedOption) => void;
-  onOpenVerseSheet: () => void;
   onReplayVerse: () => void;
   /** 0~1 — 장 안 위치 */
   onSeekInChapter: (ratio: number) => void;
+  onPickChapter: (chapter: number) => void;
+  onPickVerse: (chapter: number, verse: number) => void;
+  isChapterAvailable?: (chapter: number) => boolean;
+  isVerseAvailable?: (verse: number) => boolean;
 };
 
 const EASE = "cubic-bezier(0.2, 0.8, 0.2, 1)";
@@ -79,13 +86,27 @@ function formatSpeed(v: number): string {
   return `${v}×`;
 }
 
+function scrollChipIntoView(
+  scroller: HTMLElement | null,
+  sel: string,
+) {
+  if (!scroller) return;
+  const el = scroller.querySelector<HTMLElement>(sel);
+  if (!el) return;
+  const left =
+    el.offsetLeft - scroller.clientWidth / 2 + el.offsetWidth / 2;
+  scroller.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
+}
+
 export default function Remote({
   disabled,
   playing,
   speed,
-  bookName,
   chapter,
   chapterUnit,
+  totalChapters,
+  verseCount,
+  hasVerseTimes,
   currentVerse,
   chapterElapsed,
   chapterLength,
@@ -96,13 +117,18 @@ export default function Remote({
   onNext,
   onTogglePlay,
   onSelectSpeed,
-  onOpenVerseSheet,
   onReplayVerse,
   onSeekInChapter,
+  onPickChapter,
+  onPickVerse,
+  isChapterAvailable,
+  isVerseAvailable,
 }: Props) {
   const [speedOpen, setSpeedOpen] = useState(false);
   const scrubbing = useRef(false);
   const trackRef = useRef<HTMLDivElement | null>(null);
+  const chapterRailRef = useRef<HTMLDivElement | null>(null);
+  const verseRailRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!speedOpen) return;
@@ -123,6 +149,18 @@ export default function Remote({
       window.removeEventListener("pointerdown", onPointer);
     };
   }, [speedOpen]);
+
+  useLayoutEffect(() => {
+    scrollChipIntoView(chapterRailRef.current, `[data-rc-ch="${chapter}"]`);
+  }, [chapter, totalChapters]);
+
+  useLayoutEffect(() => {
+    if (currentVerse == null) return;
+    scrollChipIntoView(
+      verseRailRef.current,
+      `[data-rc-v="${currentVerse}"]`,
+    );
+  }, [chapter, currentVerse, verseCount]);
 
   const ratioFromClientX = (clientX: number) => {
     const el = trackRef.current;
@@ -148,63 +186,91 @@ export default function Remote({
     scrubbing.current = false;
   };
 
-  const versePart =
-    currentVerse !== null ? `${chapter}:${currentVerse}` : null;
+  const showVerseRail = hasVerseTimes && verseCount > 0;
+  const clockLabel = (
+    <span className="wt-rc-clock">
+      {formatChapterClock(chapterElapsed)}
+      <span className="wt-rc-clock-sep"> / </span>
+      {formatChapterClock(chapterLength)}
+    </span>
+  );
 
   return (
     <>
       <div className="wt-rc-fade" aria-hidden />
       <div className="wt-rc-wrap">
-        {speedOpen && (
-          <div className="wt-rc-speed-pop" role="listbox" aria-label="배속 선택">
-            {SPEED_OPTIONS.map((v) => (
-              <button
-                key={v}
-                type="button"
-                role="option"
-                aria-selected={speed === v}
-                className={`wt-rc-speed-opt${speed === v ? " is-selected" : ""}`}
-                onClick={() => {
-                  onSelectSpeed(v);
-                  setSpeedOpen(false);
-                }}
-              >
-                {formatSpeed(v)}
-              </button>
-            ))}
-          </div>
-        )}
-
         <div className="wt-rc" role="group" aria-label="영상 리모컨">
-          <div className="wt-rc-row1">
-            <button
-              type="button"
-              className="wt-rc-title"
-              onClick={onOpenVerseSheet}
-              disabled={disabled}
-              aria-haspopup="dialog"
-            >
-              <span className="wt-rc-title-book">
-                {bookName} {chapter}
-                {chapterUnit}
-              </span>
-              {versePart && (
-                <>
-                  <span className="wt-rc-title-dot" aria-hidden>
-                    ·
-                  </span>
-                  <span className="wt-rc-title-verse">{versePart}</span>
-                </>
-              )}
-              <span className="wt-rc-title-caret" aria-hidden>
-                ▾
-              </span>
-            </button>
-            <span className="wt-rc-clock">
-              {formatChapterClock(chapterElapsed)}
-              <span className="wt-rc-clock-sep"> / </span>
-              {formatChapterClock(chapterLength)}
-            </span>
+          <div className="wt-rc-picks" aria-label={`${chapterUnit}·절 바로 선택`}>
+            <div className="wt-rc-pick-row">
+              <span className="wt-rc-pick-label">{chapterUnit}</span>
+              <div
+                ref={chapterRailRef}
+                className="wt-rc-chip-rail"
+                role="listbox"
+                aria-label={`${chapterUnit} 선택`}
+              >
+                {Array.from({ length: totalChapters }, (_, i) => i + 1).map(
+                  (c) => {
+                    const available = isChapterAvailable
+                      ? isChapterAvailable(c)
+                      : hasVerseTimes;
+                    const selected = c === chapter;
+                    return (
+                      <button
+                        key={c}
+                        type="button"
+                        role="option"
+                        data-rc-ch={c}
+                        aria-selected={selected}
+                        className={`wt-rc-chip${selected ? " is-selected" : ""}`}
+                        /* 영상 ready 와 무관 — 시간 데이터만 있으면 바로 선택 */
+                        disabled={!available}
+                        onClick={() => onPickChapter(c)}
+                      >
+                        {c}
+                      </button>
+                    );
+                  },
+                )}
+              </div>
+              {clockLabel}
+            </div>
+
+            {showVerseRail ? (
+              <div className="wt-rc-pick-row">
+                <span className="wt-rc-pick-label">절</span>
+                <div
+                  ref={verseRailRef}
+                  className="wt-rc-chip-rail"
+                  role="listbox"
+                  aria-label="절 선택"
+                >
+                  {Array.from({ length: verseCount }, (_, i) => i + 1).map(
+                    (v) => {
+                      const available = isVerseAvailable
+                        ? isVerseAvailable(v)
+                        : true;
+                      const selected = currentVerse === v;
+                      return (
+                        <button
+                          key={v}
+                          type="button"
+                          role="option"
+                          data-rc-v={v}
+                          aria-selected={selected}
+                          className={`wt-rc-chip${selected ? " is-selected" : ""}`}
+                          /* 영상 ready 와 무관 — 절 시간만 있으면 바로 선택 */
+                          disabled={!available}
+                          onClick={() => onPickVerse(chapter, v)}
+                        >
+                          {v}
+                        </button>
+                      );
+                    },
+                  )}
+                </div>
+              </div>
+            ) : null}
           </div>
 
           <div
@@ -263,7 +329,10 @@ export default function Remote({
               disabled={disabled}
               aria-label={playing ? "일시정지" : "재생"}
             >
-              <span className="wt-rc-play-icon" style={{ transition: `opacity 180ms ${EASE}` }}>
+              <span
+                className="wt-rc-play-icon"
+                style={{ transition: `opacity 180ms ${EASE}` }}
+              >
                 {playing ? <PauseIcon /> : <PlayIcon />}
               </span>
             </button>
@@ -293,6 +362,30 @@ export default function Remote({
                 </button>
               ) : null}
             </div>
+          </div>
+
+          {/* 모바일: 열었을 때만 / PC: 아래 여백에 상시 도킹 */}
+          <div
+            className={`wt-rc-speed-dock${speedOpen ? " is-open" : ""}`}
+            role="listbox"
+            aria-label="배속 선택"
+            hidden={!speedOpen}
+          >
+            {SPEED_OPTIONS.map((v) => (
+              <button
+                key={v}
+                type="button"
+                role="option"
+                aria-selected={speed === v}
+                className={`wt-rc-speed-opt${speed === v ? " is-selected" : ""}`}
+                onClick={() => {
+                  onSelectSpeed(v);
+                  setSpeedOpen(false);
+                }}
+              >
+                {formatSpeed(v)}
+              </button>
+            ))}
           </div>
         </div>
       </div>

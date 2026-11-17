@@ -11,6 +11,8 @@ import {
   type ReactNode,
 } from "react";
 import { BOOKS, type BookId } from "@/app/bible-reading/books";
+import BookChapterDrawer from "@/app/bible-reading/components/BookChapterDrawer";
+import "@/app/bible-reading/mobile.css";
 import "../watch.css";
 import VideoPlayer from "./VideoPlayer";
 import SwipeTabs from "./SwipeTabs";
@@ -48,6 +50,7 @@ import {
   type SpeedOption,
 } from "./watchStorage";
 import {
+  canSelectChapter,
   chapterLabel,
   chapterUnit,
   isBookInManifest,
@@ -119,9 +122,11 @@ async function copyText(text: string): Promise<boolean> {
 
 function WatchShell({
   title,
+  onOpenBooks,
   children,
 }: {
   title: string;
+  onOpenBooks?: () => void;
   children: ReactNode;
 }) {
   return (
@@ -139,10 +144,28 @@ function WatchShell({
             />
           </svg>
         </Link>
-        <div className="wt-top-text">
-          <span className="wt-top-kicker">리딩지저스</span>
-          <span className="wt-top-title">{title}</span>
-        </div>
+        {onOpenBooks ? (
+          <button
+            type="button"
+            className="wt-top-loc"
+            onClick={onOpenBooks}
+            aria-haspopup="dialog"
+            aria-label={`${title} — 책·장 선택`}
+          >
+            <span className="wt-top-kicker">리딩지저스</span>
+            <span className="wt-top-title">
+              {title}
+              <span className="wt-top-caret" aria-hidden>
+                ▾
+              </span>
+            </span>
+          </button>
+        ) : (
+          <div className="wt-top-text">
+            <span className="wt-top-kicker">리딩지저스</span>
+            <span className="wt-top-title">{title}</span>
+          </div>
+        )}
       </header>
       {children}
     </div>
@@ -196,17 +219,26 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
     times: {},
     missing: [],
     starts: [],
+    ends: [],
     src: {},
     present: false,
   });
   const [verseFix, setVerseFix] = useState<VerseTimeMap>({});
   const [verseCounts, setVerseCounts] = useState<number[]>([]);
   const [verseSheetOpen, setVerseSheetOpen] = useState(false);
+  const [bookDrawerOpen, setBookDrawerOpen] = useState(false);
+  /** 칩 탭 직후 하이라이트(플레이어 시간 반영 전) */
+  const [pendingVerse, setPendingVerse] = useState<number | null>(null);
   const playerRef = useRef<YTPlayer | null>(null);
   const hasPlayedRef = useRef(false);
   const lastSavedRef = useRef(0);
   const chapterRef = useRef(1);
   const activeVideoRef = useRef<string | null>(null);
+  const pendingSeekRef = useRef<{
+    chapterNum: number;
+    targetSec: number;
+    opts?: { toast?: boolean; toastText?: string };
+  } | null>(null);
 
   const showToast = useCallback((text: string) => setToast({ id: Date.now(), text }), []);
 
@@ -226,9 +258,18 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
     setActiveVideoId(null);
     activeVideoRef.current = null;
     setFileStarts(null);
-    setFileTimes({ times: {}, missing: [], starts: [], src: {}, present: false });
+    setFileTimes({
+      times: {},
+      missing: [],
+      starts: [],
+      ends: [],
+      src: {},
+      present: false,
+    });
+    setPendingVerse(null);
     playerRef.current = null;
     hasPlayedRef.current = false;
+    pendingSeekRef.current = null;
 
     setOverrides(loadStartOverrides(bookId));
     setSpeed(loadSpeed(bookId));
@@ -403,7 +444,11 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
       : activeSeg && activeSeg.from === chapter
         ? 0
         : 0;
-  const chapterEnd = nextInSameVideo?.start ?? duration;
+  const fileChapterEnd = fileTimes.ends[chapter - 1];
+  const chapterEnd =
+    nextInSameVideo?.start ??
+    (typeof fileChapterEnd === "number" ? fileChapterEnd : null) ??
+    duration;
   const chapterLength = Math.max(0, chapterEnd - chapterStart);
   const chapterElapsed = Math.min(chapterLength, Math.max(0, time - chapterStart));
   const chapterProgress =
@@ -429,17 +474,24 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
         ? `${BOOKS[nextBook].name} ${chapterLabel(nextBook, 1)} ›`
         : null;
 
-  /** 같은 영상이면 seekTo, 다르면 loadVideoById */
+  /** 같은 영상이면 seekTo, 다르면 loadVideoById. 플레이어 없으면 준비 후 실행. */
   const playAt = useCallback(
     (
       chapterNum: number,
       targetSec: number,
       opts?: { toast?: boolean; toastText?: string },
     ) => {
-      const p = playerRef.current;
       const vid = videoIdForChapter(segments, chapterNum);
-      if (!p || !vid) return;
+      if (!vid) return;
       const seekAt = Math.max(0, targetSec);
+      const p = playerRef.current;
+      if (!p) {
+        pendingSeekRef.current = { chapterNum, targetSec: seekAt, opts };
+        setTime(seekAt);
+        chapterRef.current = chapterNum;
+        return;
+      }
+      pendingSeekRef.current = null;
       const curVid = activeVideoRef.current;
       if (curVid && vid !== curVid) {
         activeVideoRef.current = vid;
@@ -461,11 +513,21 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
     [segments, bookId, name, showToast],
   );
 
+  // 칩 탭 시 플레이어가 아직 없으면, ready 후 pending seek 실행
+  useEffect(() => {
+    if (!ready) return;
+    const pending = pendingSeekRef.current;
+    if (!pending) return;
+    pendingSeekRef.current = null;
+    playAt(pending.chapterNum, pending.targetSec, pending.opts);
+  }, [ready, playAt]);
+
   const seekChapterByNumber = useCallback(
     (n: number, opts?: { toast?: boolean }) => {
       if (!hasVerseTimes) return;
       const start = resolveChapterSeekStart(starts, segments, n, hasVerseTimes);
       if (start === null) return;
+      setPendingVerse(null);
       playAt(n, start - VERSE_LEAD_S, opts);
     },
     [starts, segments, hasVerseTimes, playAt],
@@ -552,7 +614,13 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
     () => entryAt(verseIndex, chapter, time + VERSE_LEAD_S),
     [verseIndex, chapter, time],
   );
-  const currentVerse = verseEntry?.explicit ? verseEntry.verse : null;
+  const trackedVerse = verseEntry?.explicit ? verseEntry.verse : null;
+  const currentVerse = pendingVerse ?? trackedVerse;
+
+  useEffect(() => {
+    if (pendingVerse === null) return;
+    if (trackedVerse === pendingVerse) setPendingVerse(null);
+  }, [trackedVerse, pendingVerse]);
 
   const nextVerse = (() => {
     const n = (verseEntry?.verse ?? 0) + 1;
@@ -569,6 +637,33 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
       setVerseSheetOpen(false);
     },
     [verseIndex, playAt, name],
+  );
+
+  /** 리모컨 칩: 시간 없는 절이면 가까운 절로 */
+  const pickVerseFromRemote = useCallback(
+    (c: number, v: number) => {
+      setPendingVerse(v);
+      if (verseTime(verseIndex, c, v) !== null) {
+        seekVerse(c, v);
+        return;
+      }
+      const max = verseCounts[c - 1] ?? 0;
+      for (let d = 1; d <= max; d += 1) {
+        if (v - d >= 1 && verseTime(verseIndex, c, v - d) !== null) {
+          setPendingVerse(v - d);
+          seekVerse(c, v - d);
+          return;
+        }
+        if (v + d <= max && verseTime(verseIndex, c, v + d) !== null) {
+          setPendingVerse(v + d);
+          seekVerse(c, v + d);
+          return;
+        }
+      }
+      setPendingVerse(null);
+      seekChapterByNumber(c, { toast: false });
+    },
+    [verseIndex, verseCounts, seekVerse, seekChapterByNumber],
   );
 
   const nudgeCurrentVerse = useCallback(
@@ -633,73 +728,135 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
 
   const closeVerseSheet = useCallback(() => setVerseSheetOpen(false), []);
 
+  const selectBookChapter = useCallback(
+    (nextBook: BookId, nextChapter: number) => {
+      setBookDrawerOpen(false);
+      if (nextBook === bookId) {
+        if (hasVerseTimes) {
+          seekChapterByNumber(nextChapter, { toast: false });
+        }
+        return;
+      }
+      router.push(`/watch/${nextBook}`);
+    },
+    [bookId, hasVerseTimes, seekChapterByNumber, router],
+  );
+
   if (unavailable) return <UnavailableWatch bookId={bookId} />;
 
   return (
-    <WatchShell title={watchTitle}>
-      <div className="wt-video">
-        {boot !== null ? (
-          <VideoPlayer
-            key={`${bookId}:${boot.videoId}`}
-            videoId={boot.videoId}
-            startSeconds={boot.start}
-            onReady={handleReady}
-            onStateChange={handleState}
-            onRateChange={handleRate}
-          />
-        ) : (
-          <div className="wt-video-frame" />
-        )}
-      </div>
-
-      <main className="wt-main">
-        <section className="wt-now" aria-live="polite">
-          <div className="wt-now-row">
-            <h1 className="wt-now-title">
-              {name}{" "}
-              <strong key={chapter} className="wt-now-num">
-                {chapterLabel(bookId, chapter)}
-              </strong>
-              {hasVerseTimes && currentVerse !== null && (
-                <span className="wt-now-verse">
-                  · {chapter}:{currentVerse}
-                </span>
-              )}
-            </h1>
-            <span className="wt-now-time">
-              {formatTime(time)}
-              {duration > 0 && <span className="wt-now-dur"> / {formatTime(duration)}</span>}
-            </span>
+    <WatchShell
+      title={watchTitle}
+      onOpenBooks={() => setBookDrawerOpen(true)}
+    >
+      <div className="wt-stage">
+        <div className="wt-primary">
+          <div className="wt-video">
+            {boot !== null ? (
+              <VideoPlayer
+                key={`${bookId}:${boot.videoId}`}
+                videoId={boot.videoId}
+                startSeconds={boot.start}
+                onReady={handleReady}
+                onStateChange={handleState}
+                onRateChange={handleRate}
+              />
+            ) : (
+              <div className="wt-video-frame" />
+            )}
           </div>
-          <div className="wt-now-bar" aria-hidden>
-            <span style={{ transform: `scaleX(${chapterProgress})` }} />
-          </div>
-        </section>
 
-        <VerseSeekContext.Provider value={seekApi}>
-          <SwipeTabs bookId={bookId} chapter={chapter} />
-        </VerseSeekContext.Provider>
+          <section className="wt-now" aria-live="polite">
+            <div className="wt-now-row">
+              <h1 className="wt-now-title">
+                {name}{" "}
+                <strong key={chapter} className="wt-now-num">
+                  {chapterLabel(bookId, chapter)}
+                </strong>
+                {hasVerseTimes && currentVerse !== null && (
+                  <span className="wt-now-verse">
+                    · {chapter}:{currentVerse}
+                  </span>
+                )}
+              </h1>
+              <span className="wt-now-time">
+                {formatTime(time)}
+                {duration > 0 && (
+                  <span className="wt-now-dur"> / {formatTime(duration)}</span>
+                )}
+              </span>
+            </div>
+            <div className="wt-now-bar" aria-hidden>
+              <span style={{ transform: `scaleX(${chapterProgress})` }} />
+            </div>
+          </section>
 
-        {devMode && (
-          <DevChapterRecorder
-            bookId={bookId}
+          <Remote
+            disabled={!ready}
+            playing={playing}
+            speed={speed}
+            chapter={chapter}
+            chapterUnit={unit}
             totalChapters={totalChapters}
-            starts={starts}
-            currentTime={time}
-            onRecord={recordChapter}
-            onReset={resetChapters}
-            nextVerseLabel={nextVerse !== null ? verseKey(chapter, nextVerse) : null}
-            verseFixCount={Object.keys(verseFix).length}
-            onRecordNextVerse={recordNextVerse}
-            onCopyVerseJson={copyVerseJson}
-            onResetVerses={resetVerses}
-            currentVerseLabel={currentVerseLabel}
-            currentVerseTime={currentVerseTime}
-            onNudgeVerse={nudgeCurrentVerse}
+            verseCount={verseCounts[chapter - 1] ?? 0}
+            hasVerseTimes={hasVerseTimes}
+            currentVerse={hasVerseTimes ? currentVerse : null}
+            chapterElapsed={hasVerseTimes ? chapterElapsed : time}
+            chapterLength={hasVerseTimes ? chapterLength : duration}
+            chapterProgress={
+              hasVerseTimes
+                ? chapterProgress
+                : duration > 0
+                  ? Math.min(1, Math.max(0, time / duration))
+                  : 0
+            }
+            prevLabel={prevLabel}
+            nextLabel={nextLabel}
+            onPrev={goPrev}
+            onNext={goNext}
+            onTogglePlay={togglePlay}
+            onSelectSpeed={selectSpeed}
             onReplayVerse={replayCurrentVerse}
+            onSeekInChapter={seekInChapter}
+            onPickChapter={(c) => seekChapterByNumber(c, { toast: false })}
+            onPickVerse={pickVerseFromRemote}
+            isChapterAvailable={(c) =>
+              canSelectChapter(starts, segments, c, hasVerseTimes)
+            }
+            isVerseAvailable={(v) =>
+              hasVerseTimes && verseTime(verseIndex, chapter, v) !== null
+            }
           />
-        )}
-      </main>
+        </div>
+
+        <aside className="wt-aside">
+          <VerseSeekContext.Provider value={seekApi}>
+            <SwipeTabs bookId={bookId} chapter={chapter} />
+          </VerseSeekContext.Provider>
+
+          {devMode && (
+            <DevChapterRecorder
+              bookId={bookId}
+              totalChapters={totalChapters}
+              starts={starts}
+              currentTime={time}
+              onRecord={recordChapter}
+              onReset={resetChapters}
+              nextVerseLabel={
+                nextVerse !== null ? verseKey(chapter, nextVerse) : null
+              }
+              verseFixCount={Object.keys(verseFix).length}
+              onRecordNextVerse={recordNextVerse}
+              onCopyVerseJson={copyVerseJson}
+              onResetVerses={resetVerses}
+              currentVerseLabel={currentVerseLabel}
+              currentVerseTime={currentVerseTime}
+              onNudgeVerse={nudgeCurrentVerse}
+              onReplayVerse={replayCurrentVerse}
+            />
+          )}
+        </aside>
+      </div>
 
       {toast && (
         <div key={toast.id} className="wt-toast" role="status">
@@ -707,32 +864,15 @@ export default function WatchPage({ bookId }: { bookId: WatchBookId }) {
         </div>
       )}
 
-      <Remote
-        disabled={!ready}
-        playing={playing}
-        speed={speed}
-        bookName={name}
-        chapter={chapter}
-        chapterUnit={unit}
-        currentVerse={hasVerseTimes ? currentVerse : null}
-        chapterElapsed={hasVerseTimes ? chapterElapsed : time}
-        chapterLength={hasVerseTimes ? chapterLength : duration}
-        chapterProgress={
-          hasVerseTimes
-            ? chapterProgress
-            : duration > 0
-              ? Math.min(1, Math.max(0, time / duration))
-              : 0
-        }
-        prevLabel={prevLabel}
-        nextLabel={nextLabel}
-        onPrev={goPrev}
-        onNext={goNext}
-        onTogglePlay={togglePlay}
-        onSelectSpeed={selectSpeed}
-        onOpenVerseSheet={() => setVerseSheetOpen(true)}
-        onReplayVerse={replayCurrentVerse}
-        onSeekInChapter={seekInChapter}
+      <BookChapterDrawer
+        open={bookDrawerOpen}
+        onOpen={() => setBookDrawerOpen(true)}
+        onClose={() => setBookDrawerOpen(false)}
+        bookId={bookId}
+        chapterNumber={chapter}
+        bookConfirmed
+        disabled={false}
+        onSelectBookChapter={selectBookChapter}
       />
 
       <VerseSheet

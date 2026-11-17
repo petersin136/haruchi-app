@@ -7,9 +7,9 @@ import WordPosterPanel from "./WordPosterPanel";
 import XrefPanel from "./XrefPanel";
 
 const TABS = [
-  { id: "ref", label: "관주" },
-  { id: "orig", label: "원어" },
   { id: "sum", label: "요약" },
+  { id: "orig", label: "원어" },
+  { id: "ref", label: "관주" },
 ] as const;
 
 function SwipeTabs({ bookId, chapter }: { bookId: BookId; chapter: number }) {
