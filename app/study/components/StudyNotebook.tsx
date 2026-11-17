@@ -2515,16 +2515,18 @@ function StudyNotebook({
     const vvW = vv?.width ?? window.innerWidth;
     const outer = STUDY_SPREAD_OUTER;
 
-    // 실제로 보이는 상단 요소(모바일 톱바 또는 데스크탑 헤더) 하단 Y
+    // 상단 바는 transform으로 숨겨도 자리는 유지한다.
+    // getBoundingClientRect 를 쓰면 숨긴 뒤 펼침 높이가 커져 다단이 다시 짜이고
+    // 장 제목·빈 칸이 중간에 고착된다.
     let topChrome = 0;
     for (const sel of [".brp-mobile-topbar", ".brp-header"]) {
       const el = document.querySelector(sel) as HTMLElement | null;
       if (!el) continue;
       const st = getComputedStyle(el);
-      if (st.display === "none" || st.visibility === "hidden") continue;
-      const r = el.getBoundingClientRect();
-      if (r.height < 1) continue;
-      topChrome = Math.max(topChrome, r.bottom);
+      if (st.display === "none") continue;
+      const reserved = el.offsetHeight;
+      if (reserved < 1) continue;
+      topChrome = Math.max(topChrome, reserved);
     }
     const pgEl = document.querySelector(
       ".study-spread-pager",
@@ -2633,10 +2635,11 @@ function StudyNotebook({
         );
         if (col === lastCol) maxBottom = Math.max(maxBottom, r.bottom);
       });
-      // 쪽 하단(패딩 제외)까지 ~1.25행 이상 비면 slack
+      // 다음 장 머리(간격 1 + 장번호 3 + 제목 2)가 실제로 들어갈 때만 이어 붙임.
+      // 그보다 좁으면 제목이 다음 열로 밀리며 이전 열이 하얗게 빈다.
       const usableBottom = flowBox.top + g.spreadH - 36;
       const line = 17 * 2.4; // --study-lh
-      if (maxBottom > 0 && usableBottom - maxBottom > line * 1.25) {
+      if (maxBottom > 0 && usableBottom - maxBottom > line * 5.5) {
         slack = true;
       }
     }
@@ -2732,7 +2735,6 @@ function StudyNotebook({
     window.addEventListener("orientationchange", onResize);
     const vv = window.visualViewport;
     vv?.addEventListener("resize", onResize);
-    vv?.addEventListener("scroll", onResize);
     const onRo = () => {
       gStatsRef.current.ro += 1;
       measureSpread();
@@ -2767,7 +2769,6 @@ function StudyNotebook({
       window.removeEventListener("resize", onResize);
       window.removeEventListener("orientationchange", onResize);
       vv?.removeEventListener("resize", onResize);
-      vv?.removeEventListener("scroll", onResize);
       ro.disconnect();
       mo.disconnect();
       window.clearTimeout(t0);
@@ -4435,6 +4436,7 @@ function StudyNotebook({
           className="study-ch-cont"
           data-cont-ch={pack.chapter}
         >
+          <div className="study-ch-head">
           <div className="study-ch-cont-gap" aria-hidden />
           <span
             className={`study-drop${dig >= 3 ? " is-wide" : ""}`}
@@ -4450,6 +4452,7 @@ function StudyNotebook({
           ) : (
             <span data-chapter-anchor="" className="study-ch-cont-anchor" />
           )}
+          </div>
           {starts && starts.length > 0
             ? groups.map((g) => (
                 <Fragment key={`cp-${pack.chapter}-${g.startN}`}>

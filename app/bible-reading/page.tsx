@@ -517,6 +517,12 @@ export default function BibleReadingPage() {
   //   flashVerse: 검색 결과로 이동했을 때 잠깐 강조(스크롤 타겟)할 절 번호.
   const [searchOpen, setSearchOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const searchOpenRef = useRef(false);
+  const drawerOpenRef = useRef(false);
+  const selectionModeRef = useRef(false);
+  searchOpenRef.current = searchOpen;
+  drawerOpenRef.current = drawerOpen;
+  selectionModeRef.current = selectionMode;
   const [flashVerse, setFlashVerse] = useState<number | null>(null);
   /** 개역한글 이어읽기: 장 선택·검색 시 큰 장 번호 상단 정렬 강제 */
   const [krvAlignNonce, setKrvAlignNonce] = useState(0);
@@ -676,6 +682,74 @@ export default function BibleReadingPage() {
       reader?.removeEventListener("scroll", onScroll);
     };
   }, [bookConfirmed]);
+
+  // 모바일: 본문을 위로 스크롤하며 읽을 때 상·하단 메뉴를 잠시 숨김.
+  // 아래로 되돌리거나 페이지 맨 위면 다시 나타남.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(max-width: 1279.98px)");
+    let lastY = Math.max(
+      window.scrollY,
+      readerSectionRef.current?.scrollTop ?? 0,
+    );
+    let hidden = false;
+    let raf = 0;
+
+    const setHidden = (next: boolean) => {
+      const cur = document.documentElement.dataset.brpChrome === "0";
+      if (cur === next && hidden === next) return;
+      hidden = next;
+      document.documentElement.dataset.brpChrome = next ? "0" : "1";
+    };
+
+    const compute = () => {
+      raf = 0;
+      if (!mq.matches) {
+        setHidden(false);
+        return;
+      }
+      if (
+        drawerOpenRef.current ||
+        searchOpenRef.current ||
+        selectionModeRef.current
+      ) {
+        setHidden(false);
+        return;
+      }
+      const reader = readerSectionRef.current;
+      const y = Math.max(window.scrollY, reader?.scrollTop ?? 0);
+      const dy = y - lastY;
+      lastY = y;
+      if (y < 24) setHidden(false);
+      else if (dy > 8) setHidden(true);
+      else if (dy < -8) setHidden(false);
+    };
+
+    const onScroll = () => {
+      if (raf) return;
+      raf = window.requestAnimationFrame(compute);
+    };
+
+    document.documentElement.dataset.brpChrome = "1";
+    compute();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    const reader = readerSectionRef.current;
+    reader?.addEventListener("scroll", onScroll, { passive: true });
+    mq.addEventListener("change", compute);
+    return () => {
+      if (raf) window.cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      reader?.removeEventListener("scroll", onScroll);
+      mq.removeEventListener("change", compute);
+      delete document.documentElement.dataset.brpChrome;
+    };
+  }, [bookConfirmed]);
+
+  useEffect(() => {
+    if (drawerOpen || searchOpen || selectionMode) {
+      document.documentElement.dataset.brpChrome = "1";
+    }
+  }, [drawerOpen, searchOpen, selectionMode]);
 
   const bookMeta = BOOKS[bookId];
 

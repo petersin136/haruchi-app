@@ -42,9 +42,10 @@ function topAnchorPx(): number {
   ) as HTMLElement | null;
   if (!bar) return 52;
   const st = getComputedStyle(bar);
-  if (st.display === "none" || st.visibility === "hidden") return 52;
-  const bottom = bar.getBoundingClientRect().bottom;
-  return bottom > 0 ? Math.round(bottom) : 52;
+  if (st.display === "none") return 52;
+  // transform으로 숨겨도 본문 시작 자리는 그대로
+  const h = bar.offsetHeight;
+  return h > 0 ? Math.round(h) : 52;
 }
 const COMPLETE_GATE_MS = 3000;
 

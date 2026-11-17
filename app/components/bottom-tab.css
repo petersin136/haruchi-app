@@ -25,6 +25,12 @@
     border-top: 1px solid #ece4d6;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    transition: transform 220ms ease;
+  }
+
+  html[data-brp-chrome="0"] .brp-tabbar {
+    transform: translateY(100%);
+    pointer-events: none;
   }
 
   .brp-tabbar-item {
