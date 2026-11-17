@@ -7,7 +7,7 @@
 
 .wt-page {
   --wt-max: 720px;
-  --wt-remote-h: 220px;
+  --wt-remote-h: 312px;
   --wt-safe-b: env(safe-area-inset-bottom, 0px);
   --wt-desk: 1024px;
 
@@ -327,10 +327,9 @@
 
 /* ── 현재 장 (영상 아래) ─────────────────────────────────────────────────── */
 
+/* 책·장 표기는 리모컨 메타로 통일 (모바일·PC) */
 .wt-now {
-  max-width: var(--wt-max);
-  margin: 0 auto;
-  padding: 16px 16px 8px;
+  display: none;
 }
 
 .wt-now-row {
